@@ -5,65 +5,65 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 0127ee4112c4b42a7a55b9233217ea1e02604042
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7bf04e7c22bf13ed681be7afb582176edc2f3072
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051339"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484704"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
-Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technologie najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
+Toto téma poskytuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technologie, kterou najdete [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]v tématu.  
 
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Přehled technologie  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je software technologie vyvinutá společností [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] , který zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Liquid Crystal), například Notebook obrazovky, obrazovky v prostředí Pocket PC a monitorování plochý.  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funguje díky přístupu do jednotlivých svislé barevné prvky stripe v každý pixel displeje. Před [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], nejnižší úroveň podrobností, který může zobrazit počítač byl jeden pixel, ale s [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] spuštěná na monitoru LCD, můžeme nyní můžete zobrazit funkce textu malá jako zlomek pixel šířku. Další řešení zvyšuje ostrost malý podrobnosti zobrazení textu, tím se velmi zjednoduší si přečíst dlouhé doby trvání.  
+ ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely.  Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Před technologií ClearType teď může být nejmenší úroveň podrobností, kterou by byl počítač zobrazený, jeden pixel, ale u technologie ClearType běžící na monitoru LCD teď můžeme zobrazovat funkce textu jako malého podílu v šířce pixelů. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání.  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] k dispozici v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je nejnovější generací [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] který má několik vylepšení přes verze nalezená v [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)].  
+ Technologie ClearType dostupná v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nástroji je nejnovější generace technologie ClearType s několika vylepšeními, která se nachází [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]v systému.  
   
 <a name="sub-pixel_positioning"></a>   
-## <a name="sub-pixel-positioning"></a>Umístění dílčí pixelů  
- Výrazné zlepšení průběhu předchozí verzi [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je použití dílčích pixel umístění. Na rozdíl od [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] součástí implementace [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)], [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] umožňuje glyfy ke spuštění v rámci obrazového bodu a nejen začátku hranice pixelu. Z důvodu této další řešení v umístění glyfů je mezery a rozměry glyfy přesné a konzistentní vzhledem k aplikacím.  
+## <a name="sub-pixel-positioning"></a>Umístění dílčích pixelů  
+ Výrazným vylepšením oproti předchozí verzi technologie ClearType je použití umístění s dílčími pixely. Na rozdíl od implementace technologie ClearType nalezené v [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]nástroji umožňuje technologie ClearType nalezená v v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pixelech, nikoli pouze počáteční hranici pixelu. Vzhledem k tomuto dodatečnému rozlišení v glyfech umístění jsou mezery a poměry glyfů přesnější a konzistentní.  
   
- Následující dva příklady ukazují, jak glyfy mohou začít na ohraničení dílčí pixel až dílčí pixel umístění se používá. V příkladu na levé straně je vykreslen pomocí předchozí verze [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] renderer, který není využívat umístění dílčí pixelů. V příkladu na pravé straně je vykreslen pomocí nové verze [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] renderer, použití dílčích pixel umístění. Všimněte si, jak každý **e** a **l** pravém obrázku je vykreslen trošku jinak vzhledem k tomu, že každý se spouští v různých dílčí pixelů. Při zobrazení textu v normální velikosti na obrazovce, tento rozdíl není patrné z důvodu vysoký kontrast piktogram image. To je možné pouze z důvodu sofistikované barva filtrování, který je součástí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)].  
+ Následující dva příklady ukazují, jak se glyfy můžou začínat na libovolné hranici dílčích pixelů při použití umístění v pixelech. Příklad na levé straně se vykreslí pomocí starší verze zobrazovací jednotky ClearType, která nevyužívá umístění dílčích pixelů. Příklad na pravé straně se vykreslí pomocí nové verze zobrazovací jednotky ClearType s použitím umístění dílčích pixelů. Všimněte si, jak se jednotlivé **e** a **l** v pravé imagi vykreslují mírně odlišně, protože každá začíná na jiném dílčím pixelu. Při prohlížení textu na obrazovce na normální velikosti není tento rozdíl znatelný kvůli vysokému kontrastu obrázku glyfu. To je možné jenom v důsledku sofistikovaného filtrování barev, které je součástí technologie ClearType.  
   
- ![Text zobrazený ve dvou verzích ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-01.png "wcpsdk_mmgraphics_text_cleartype_overview_01")  
-Text zobrazený v dříve a později verzích ClearType  
+ ![Text zobrazený se dvěma verzemi technologie ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-01.png "wcpsdk_mmgraphics_text_cleartype_overview_01")  
+Text zobrazený se staršími a novějšími verzemi technologie ClearType  
   
- Následující dva příklady porovnávají výstup z dříve [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nástroj pro vykreslování s novou verzi [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] zobrazovací jednotky. Umístění subpixel, zobrazí na pravé straně, se výrazně zlepšuje typu na obrazovce, zejména v malých velikostech, kde představuje rozdíl mezi dílčí pixelů a celý pixel podstatnou část piktogram šířku mezery. Všimněte si, že mezery mezi znaky se víc i v druhý obrázek. Kumulativní výhodu, že dílčí pixel umístění do celkového vzhledu obrazovky textu je výrazně vyšší a představuje významný krok ve vývoji [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] technologie.  
+ Následující dva příklady porovnávají výstupy ze staršího vykreslovacího modulu ClearType s novou verzí vykreslovacího modulu ClearType. Umístění v dolním pixelu zobrazené na pravé straně výrazně vylepšuje velikost písma na obrazovce, zvláště u malých velikostí, kde rozdíl mezi dílčím pixelem a celým pixelem představuje značný podíl šířky glyfu. Všimněte si, že mezery mezi písmeny jsou i v druhém obrázku. Kumulativní výhoda umístění podpixelu na celkový vzhled obrazovky textu se značně zvýšila a představuje významný vývoj technologie ClearType.  
   
- ![Text displayed with earlier version of ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
-Text s dříve a novějších verzích ClearType  
+ ![Text zobrazený v dřívější verzi technologie ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
+Text se staršími a novějšími verzemi technologie ClearType  
   
 <a name="y-direction_antialiasing"></a>   
-## <a name="y-direction-antialiasing"></a>Vyhlazení směru osy Y  
- Další vylepšení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je vyhlazení směru osy y. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] bez směru osy y vyhlazení poskytuje lepší řešení na osu x, ale ne osy y. Na horní a DNA bez podstruktury křivky ostrých hran zhoršit jeho čitelnost.  
+## <a name="y-direction-antialiasing"></a>Směr Y – antialiasing  
+ Dalším vylepšením technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji je anti-aliasing pro směr y. Technologie ClearType v [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] nástroji bez vyhlazení proti směru y nabízí lepší rozlišení na ose x, ale ne na ose y. Na horních a dolních obrazovkách bez podkřivek se zubaté okraje odvolávat od jejich čitelnosti.  
   
- Následující příklad ukazuje účinek s žádné vyhlazení směru osy y. V tomto případě jsou zřejmá ostrých hran na horní a dolní část písmeno.  
+ Následující příklad ukazuje účinek, který nemá žádné směrové antialiasing y. V takovém případě jsou zubaté okraje na horní a dolní straně písmen zjevné.  
   
- ![Text pomocí ostrých hran na bez podstruktury křivky](./media/wcpsdk-mmgraphics-text-cleartype-overview-03.png "wcpsdk_mmgraphics_text_cleartype_overview_03")  
-Text pomocí ostrých hran na bez podstruktury křivky  
+ ![Text s zubatými hranami na] neomezených křivkách (./media/wcpsdk-mmgraphics-text-cleartype-overview-03.png "wcpsdk_mmgraphics_text_cleartype_overview_03")  
+Text s zubatými hranami na neomezených křivkách  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vyhlazení na úrovni směru osy y vyhlazení jakékoli ostrých hran. To je zvlášť důležité pro zlepšení čitelnosti východoasijské jazyky, kde mají téměř stejné množství vodorovné a svislé bez podstruktury křivky ideografickými znaky.  
+ Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v systému poskytuje antialiasing na úrovni směr y, aby se vyplynuly zubaté hrany. To je obzvláště důležité pro zlepšení čitelnosti východoasijských jazyků, kde má znakové symboly skoro stejné množství vodorovné a svislé překrytí.  
   
- Následující příklad ukazuje účinek antialiasingu směru osy y. V takovém případě horní a dolní část písmeno zobrazit smooth křivky.  
+ Následující příklad ukazuje účinek y-Direction antialiasing. V tomto případě se v horní a dolní části písmen zobrazuje hladká křivka.  
   
  ![Text with ClearType y&#45;direction anti&#45;aliasing](./media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
-Text s ClearType směru osy y vyhlazení  
+Text pomocí technologie ClearType y-Direction antialiasing  
   
 <a name="hardware_acceleration"></a>   
 ## <a name="hardware-acceleration"></a>Hardwarová akcelerace  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] můžete využít výhod hardwarovou akceleraci pro lepší výkon a snížit požadavky na paměť procesoru zatížení a systému. S použitím pixel shaderů a grafické paměti grafické karty [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] poskytuje rychlejší vykreslování textu, zejména pokud se používá animace.  
+ Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v systému může využít hardwarovou akceleraci pro lepší výkon a snížení zatížení procesoru a systémových požadavků na paměť. Pomocí funkce pixel shadery a grafické paměti na kartě grafiky poskytuje technologie ClearType rychlejší vykreslování textu, zejména při použití animace.  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neupravuje celý systém [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení. Zakázání [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nastaví [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vyhlazení do režimu ve stupních šedi. Kromě toho [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neprovede žádné změny nastavení [ClearType Tuner PowerToy](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
+ Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji neupravuje nastavení technologie ClearType v rámci systému. Zakázání technologie [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v sadě antialiasing do režimu stupňů šedi. Kromě toho technologie ClearType v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neupravuje nastavení [PowerToy tuneru ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
   
- Jeden z [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhodnutí o návrhu architektury, je nezávislé rozložení zajištění lepší podpory pro vyšší rozlišení DPI monitorování, která stále se rozšiřujících rozlišení. Tato akce nemá důsledku [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nenabízí vykreslování textu s aliasem nebo rastrové obrázky v některých východoasijské písma vzhledem k tomu, že jsou oba závislé na rozlišení.  
+ Jedním z [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhodnutí o návrhu architektury je mít řešení nezávislé na rozlišení lépe podporovat monitory DPI s vyšším rozlišením, které se stávají širším řešením. To má [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] za následek nepodporu vykreslování textu s aliasy nebo rastrových obrázků v některých východoasijských písmech, protože obě rozlišení jsou závislé.  
   
 <a name="further_information"></a>   
 ## <a name="further-information"></a>Další informace  
- [ClearType – informace](https://www.microsoft.com/typography/ClearTypeInfo.mspx)  
+ [Informace o technologii ClearType](https://www.microsoft.com/typography/ClearTypeInfo.mspx)  
   
- [PowerToy ClearType Tuner](https://www.microsoft.com/typography/ClearTypePowerToy.mspx)  
+ [PowerToy tuneru ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx)  
   
 ## <a name="see-also"></a>Viz také:
 

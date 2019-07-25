@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 98e48060bbb82764e1e541797c666ca33f247c39
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 27e1a2e88beeacf8c2cd98f61b11542ee2341e8f
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400486"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433978"
 ---
 # <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Návod: Hostování hodin WPF ve Win32
 
@@ -85,7 +85,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)
 ```
 
-Tento atribut oznamuje modulu CLR (Common Language Runtime), který při inicializaci [!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)]používá jeden model Apartment s vláknem (STA), který je nezbytný pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]).
+Tento atribut oznamuje modulu CLR (Common Language Runtime), že při inicializaci modelu COM (Component Object Model) by měl používat jeden model Apartment (STA), který je nezbytný pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]).
 
 ## <a name="create-a-windows-presentation-framework-page"></a>Vytvoření stránky Windows Presentation Framework
 

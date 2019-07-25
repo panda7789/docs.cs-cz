@@ -6,15 +6,15 @@ helpviewer_keywords:
 - x:FieldModifier attribute [XAML Services]
 - XAML [XAML Services], x:FieldModifier attribute
 ms.assetid: ed427cd4-2f35-4d24-bd2f-0fa7b71ec248
-ms.openlocfilehash: 0394522b8a006d6b187219c8ef7dfccd6556ffca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 646ad1ca99d83f9fb2994f3c394eca27a60c0eac
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617077"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484725"
 ---
 # <a name="xfieldmodifier-directive"></a>x:FieldModifier – direktiva
-Upravuje chování sestavení XAML, takže pole pro odkazy na pojmenované objekty jsou definovány pomocí <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> přístup místo <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> výchozí chování.  
+Upraví chování kompilace XAML tak, aby pole pro pojmenované odkazy byla definována <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> s přístupem namísto <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> výchozího chování.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -26,29 +26,29 @@ Upravuje chování sestavení XAML, takže pole pro odkazy na pojmenované objek
   
 |||  
 |-|-|  
-|*Public*|Přesná předáte k určení <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> oproti <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> se liší v závislosti na použití modelu code-behind programovací jazyk, který se používá. Viz poznámky.|  
+|*Public*|Přesný řetězec, který předáte, <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> se <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> liší v závislosti na použitém programovacím jazyce s kódem na pozadí. Viz poznámky.|  
   
 ## <a name="dependencies"></a>Závislosti  
- Pokud používáte produkční XAML `x:FieldModifier` kdekoli, musí deklarovat kořenový prvek XAML výrobu [x: Class – direktiva](x-class-directive.md).  
+ Pokud výroba XAML používá `x:FieldModifier` kdekoli, kořenový prvek této výroby XAML musí deklarovat direktivu [x:Class](x-class-directive.md).  
   
 ## <a name="remarks"></a>Poznámky  
- `x:FieldModifier` není relevantní pro deklarování úroveň přístupu obecné třídy nebo její členy. Je relevantní pouze pro zpracování XAML chování při určitý objekt XAML, který je součástí výroby XAML zpracování a bude objekt, který je potenciálně nelze v grafu objektů aplikace. Ve výchozím nastavení referenční dokumentace polí pro takový objekt se ukládají privátní, která zabraňuje ovládacího prvku spotřebitele Úprava objektu grafu přímo. Místo toho ovládacího prvku spotřebitele se očekává, že upravit graf objektu pomocí standardní vzory, které jsou povolené pomocí programovacích modelů, jako například získáním kořenové rozložení podřízený prvek kolekce, vyhrazené veřejné vlastnosti a tak dále.  
+ `x:FieldModifier`není relevantní pro deklaraci obecné úrovně přístupu třídy nebo jejích členů. Je relevantní pouze pro chování zpracování XAML, je-li zpracován konkrétní objekt XAML, který je součástí výroby XAML, a je objekt, který je potenciálně přístupný v grafu objektu aplikace. Ve výchozím nastavení je odkaz na pole pro takový objekt uchováván jako soukromý, což brání řízení uživatelům v přímém upravování grafu objektů. Místo toho se očekává, že příjemci ovládacího prvku budou upravovat objekt grafu pomocí standardních vzorů, které jsou povoleny programovacími modely, jako je získání kořenového prvku rozložení, kolekce podřízených elementů, vyhrazených veřejných vlastností a tak dále.  
   
- Hodnota `x:FieldModifier` atributu se liší podle programovací jazyk a jejím účelem se může lišit v konkrétní rozhraní. Řetězec, který má použít, závisí na způsob implementace každý jazyk jeho <xref:System.CodeDom.Compiler.CodeDomProvider> a vrátí k definování význam pro typ převaděče <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, a zda je daný jazyk malá a velká písmena.  
+ Hodnota `x:FieldModifier` atributu se liší podle programovacího jazyka a jeho účelem se může v konkrétních rozhraních lišit. Řetězec, který se má použít, závisí na tom, <xref:System.CodeDom.Compiler.CodeDomProvider> jak jednotlivé jazyky implementují své a konvertory typů, které <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> vrátí <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, aby definovali význam pro a a zda se u tohoto jazyka rozlišují malá a velká písmena.  
   
-- Pro jazyk C#, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `public`.  
+- Řetězec C#, který se má předat k určení <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> , `public`je.  
   
-- Pro Microsoft Visual Basic .NET, řetězec, který má předat určit <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je `Public`.  
+- Pro Microsoft Visual Basic .NET je <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> `Public`řetězec, který se má předat, označovat.  
   
-- Pro [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], aktuálně neexistují žádné cíle pro XAML, proto není definováno řetězec, který má předat.  
+- Pro C++/CLI nejsou aktuálně k dispozici žádné cíle pro XAML; Proto je řetězec, který se má předat, nedefinovaný.  
   
- Můžete také určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> (`internal` v C#, `Friend` v jazyce Visual Basic) ale zadat <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> neobvyklá protože `NotPublic` je již výchozí chování.  
+ <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> Můžete také zadat (`internal` v C# <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> `NotPublic`VisualBasic) , ale určení je neobvyklé, protože chování je již výchozím nastavením. `Friend`  
   
- <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> je výchozí chování, protože je zřídka, že kód mimo sestavení, který zkompiluje XAML potřebuje přístup k prvku XAML vytvořit. Architektura WPF zabezpečení spolu s chování kompilace XAML nebude deklarovat pole, které ukládají instance elementu jako veřejné, pokud je výslovně nastavit `x:FieldModifier` umožní veřejný přístup.  
+ <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>je výchozí chování, protože je zřídka, že kód mimo sestavení, které kompiluje XAML, potřebuje přístup k elementu vytvořenému XAML. Architektura zabezpečení WPF společně s chováním kompilace XAML nebude deklarovat pole, která ukládají instance elementů jako Public, pokud výslovně nenastavíte `x:FieldModifier` , aby povolovala veřejný přístup.  
   
- `x:FieldModifier` platí pouze pro elementy se [x: Name – direktiva](x-name-directive.md) protože tento název slouží jako odkaz pole poté, co je veřejný.  
+ `x:FieldModifier`je relevantní pouze pro prvky s [direktivou x:Name](x-name-directive.md) , protože tento název se používá pro odkazování pole poté, co je veřejné.  
   
- Ve výchozím nastavení je veřejný; částečné třídy pro kořenový element ale můžete si je neveřejné pomocí [x: ClassModifier – direktiva](x-classmodifier-directive.md). [X: ClassModifier – direktiva](x-classmodifier-directive.md) ovlivní také úroveň přístupu je instance třídy kořenový element. Můžete umístit i `x:Name` a `x:FieldModifier` v kořenovém adresáři element, ale pouze ke zkopírování veřejné pole kořenový element s true kořenový element třídy úroveň přístupu stále řídí [x: ClassModifier – direktiva](x-classmodifier-directive.md).  
+ Ve výchozím nastavení je částečná třída kořenového prvku veřejná; můžete ji však NonPublic pomocí [direktivy x:ClassModifier –](x-classmodifier-directive.md). [Direktiva x:ClassModifier –](x-classmodifier-directive.md) má také vliv na úroveň přístupu instance třídy kořenového elementu. Můžete umístit obojí `x:Name` i `x:FieldModifier` na kořenový prvek, ale to pouze vytvoří veřejnou kopii kořenového prvku s skutečnou úrovní přístupu třídy kořenového elementu, která je stále řízena direktivou [x:ClassModifier –](x-classmodifier-directive.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 07/18/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 433936480aa1181370a6ebc2bd2ba9914a50dfa2
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 32b4f980061b0975c413a8cde436074f76cfabc9
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331740"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433942"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -29,7 +29,7 @@ Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Vis
 
 ![Snímek obrazovky přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
 
-Můžete také použít konzolovou aplikaci ApiPort, kterou si můžete stáhnout z [úložiště ApiPort](http://aka.ms/apiportdownload). Pomocí `listTargets` možnosti příkaz můžete zobrazit dostupný cílový seznam a pak vybrat cílové platformy zadáním `-t` možnosti nebo `--target` pomocí příkazu. 
+Můžete také použít konzolovou aplikaci ApiPort, kterou si můžete stáhnout z [úložiště ApiPort](https://aka.ms/apiportdownload). Pomocí `listTargets` možnosti příkaz můžete zobrazit dostupný cílový seznam a pak vybrat cílové platformy zadáním `-t` možnosti nebo `--target` pomocí příkazu. 
 
 ### <a name="analyze-portability"></a>Analýza přenositelnosti
 Chcete-li analyzovat celý projekt v aplikaci Visual Studio, klikněte pravým tlačítkem myši na projekt v **Průzkumník řešení** a vyberte možnost **analyzovat přenositelnost sestavení**. V opačném případě přejděte do nabídky **analyzovat** a vyberte možnost **analyzovat přenositelnost sestavení**. Odtud vyberte spustitelný soubor nebo knihovnu DLL vašeho projektu.

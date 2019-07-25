@@ -11,175 +11,175 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-ms.openlocfilehash: 67549e75244790973554d08de8f4dac99d28bd80
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 4835fb42a8976d94be223d8306d1eb16e330f8f5
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660763"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68434012"
 ---
 # <a name="optimizing-performance-text"></a>Optimalizace výkonu: Text
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje podporu pro prezentaci textový obsah prostřednictvím plně funkční [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládacích prvků. Lze obecně rozdělit vykreslování textu ve třech vrstvách:
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje podporu pro prezentaci textu obsahu pomocí ovládacích prvků s bohatou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] funkcí. Vykreslování textu můžete obecně rozdělit ve třech vrstvách:
 
-1. Použití <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> objekty přímo.
+1. Použití objektů <xref:System.Windows.Media.GlyphRun>apřímo. <xref:System.Windows.Documents.Glyphs>
 
-2. Použití <xref:System.Windows.Media.FormattedText> objektu.
+2. <xref:System.Windows.Media.FormattedText> Použití objektu.
 
-3. Použití vysoké úrovně ovládacích prvků, jako <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty.
+3. Použití ovládacích prvků na nejvyšší úrovni, například <xref:System.Windows.Controls.TextBlock> objektů a. <xref:System.Windows.Documents.FlowDocument>
 
-Toto téma obsahuje doporučení ohledně výkonu pro vykreslování textu.
+Toto téma poskytuje doporučení pro výkon vykreslování textu.
 
 <a name="Glyph_Level"></a>
 
-## <a name="rendering-text-at-the-glyph-level"></a>Vykreslení textu na úrovni glyfů
+## <a name="rendering-text-at-the-glyph-level"></a>Vykreslování textu na úrovni glyfů
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporuje rozšířené textové včetně úrovni piktogramu značky s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytit a zachovat po formátování textu. Tyto funkce umožňují podpory se zásadním jiným textovým požadavky na vykreslování v každém z těchto scénářů.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje rozšířenou podporu textu včetně značek na úrovni glyfů s přímým přístupem <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytit a uchovat text po formátování. Tyto funkce poskytují kritickou podporu pro různé požadavky na vykreslování textu v každém z následujících scénářů.
 
-- Zobrazování dokumentů pevného formátu.
+- Zobrazení dokumentů s pevným formátem
 
-- Tisk scénáře.
+- Scénáře tisku.
 
-  - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.
+  - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]jako jazyk tiskárny zařízení.
 
   - [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].
 
-  - Předchozí ovladače tiskárny, výstup z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací na pevném formátu.
+  - Předchozí ovladače tiskárny, výstup z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] aplikací do pevného formátu.
 
   - Formát zařazování tisku.
 
-- Reprezentace pevného formátu dokumentu, včetně klientů k předchozím verzím sady [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a další výpočetní zařízení.
+- Reprezentace dokumentu s pevným formátem, včetně klientů pro předchozí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] verze a dalších výpočetních zařízení.
 
 > [!NOTE]
-> <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro prezentaci pevného formátu dokumentu a tisku scénáře. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik elementů pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, naleznete v tématu [Typografie v rozhraní WPF](typography-in-wpf.md).
+> <xref:System.Windows.Documents.Glyphs>a <xref:System.Windows.Media.GlyphRun> jsou navržené pro scénáře s pevným formátem a prezentace a tisku. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje několik prvků pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře <xref:System.Windows.Controls.Label> , jako například <xref:System.Windows.Controls.TextBlock>a. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénářích najdete v tématu [Typografie v](typography-in-wpf.md)subsystému WPF.
 
-Následující příklady ukazují, jak definovat vlastnosti <xref:System.Windows.Documents.Glyphs> objekt [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. <xref:System.Windows.Documents.Glyphs> Objekt představuje výstup <xref:System.Windows.Media.GlyphRun> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. V příkladech se předpokládá, že Arial Kurýrní nové a časy New Roman písma jsou nainstalovány v **C:\WINDOWS\Fonts** složky na místním počítači.
+Následující příklady ukazují, jak definovat vlastnosti pro <xref:System.Windows.Documents.Glyphs> objekt v. [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Objekt představuje výstup <xref:System.Windows.Media.GlyphRun> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. <xref:System.Windows.Documents.Glyphs> V příkladech se předpokládá, že písma Arial, Courier New a Times New Roman se nainstalují do složky **C:\WINDOWS\Fonts** v místním počítači.
 
 [!code-xaml[GlyphsOvwSample1#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSample1/CS/default.xaml#1)]
 
-### <a name="using-drawglyphrun"></a>Pomocí DrawGlyphRun
+### <a name="using-drawglyphrun"></a>Použití DrawGlyphRun
 
-Pokud máte vlastní ovládací prvek a chcete se vykreslují glyfy, použijte <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> metody.
+Pokud máte vlastní ovládací prvek a chcete vykreslit glyfy, použijte <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> metodu.
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje služby nižší úrovně pro formátování prostřednictvím vlastního textu <xref:System.Windows.Media.FormattedText> objektu. Nejúčinnější způsob vykreslení textu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je generováním textový obsah na úrovni piktogram pomocí <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun>. Ale náklady na této efektivity je ztráta snadno použitelné RTF, které jsou integrované funkce z [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládací prvky, jako například <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument>.
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje také služby nižší úrovně pro vlastní formátování textu prostřednictvím použití <xref:System.Windows.Media.FormattedText> objektu. Nejúčinnější způsob, jak vykreslování textu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nástroji, je vygenerování textového obsahu na úrovni glyfu pomocí <xref:System.Windows.Media.GlyphRun> <xref:System.Windows.Documents.Glyphs> a. Náklady na tuto efektivitu však představují ztrátu snadného použití formátovaného textu, což jsou integrované funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, <xref:System.Windows.Controls.TextBlock> například a <xref:System.Windows.Documents.FlowDocument>.
 
 <a name="FormattedText_Object"></a>
 
 ## <a name="formattedtext-object"></a>Objekt FormattedText
 
-<xref:System.Windows.Media.FormattedText> Objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Další informace najdete v tématu [kreslení textu ve formátu](drawing-formatted-text.md).
+<xref:System.Windows.Media.FormattedText> Objekt umožňuje nakreslit víceřádkový text, ve kterém je každý znak v textu možné formátovat individuálně. Další informace najdete v tématu [Kreslení formátovaného textu](drawing-formatted-text.md).
 
-Chcete-li vytvořit formátovaný text, zavolejte <xref:System.Windows.Media.FormattedText.%23ctor%2A> konstruktor k vytvoření <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření počáteční formátovaný řetězec, můžete použít celou řadu formátování styly. Pokud aplikace chce implementovat vlastní rozložení, pak bude <xref:System.Windows.Media.FormattedText> objekt je vhodnější než použití ovládacího prvku, jako například <xref:System.Windows.Controls.TextBlock>. Další informace o <xref:System.Windows.Media.FormattedText> objektu, najdete v článku [kreslení textu ve formátu](drawing-formatted-text.md) .
+Chcete-li vytvořit formátovaný text, <xref:System.Windows.Media.FormattedText.%23ctor%2A> zavolejte konstruktor pro <xref:System.Windows.Media.FormattedText> vytvoření objektu. Po vytvoření počátečního formátovaného textového řetězce můžete použít rozsah stylů formátování. Pokud vaše aplikace chce implementovat své vlastní rozložení, <xref:System.Windows.Media.FormattedText> je objekt lepší volbou než použití ovládacího prvku, <xref:System.Windows.Controls.TextBlock>jako je například. Další informace o <xref:System.Windows.Media.FormattedText> objektu naleznete v tématu [Kreslení formátovaného textu](drawing-formatted-text.md) .
 
-<xref:System.Windows.Media.FormattedText> Objekt, který poskytuje nízké úrovně funkce pro formátování textu. Můžete změnit více styl na jeden nebo více znaků. Například lze zavolat i <xref:System.Windows.Media.FormattedText.SetFontSize%2A> a <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> metody, chcete-li změnit formátování prvních pěti znaků v textu.
+<xref:System.Windows.Media.FormattedText> Objekt poskytuje možnost formátování textu na nízké úrovni. Můžete použít více stylů formátování na jeden nebo více znaků. Například můžete zavolat <xref:System.Windows.Media.FormattedText.SetFontSize%2A> metodu a a <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> změnit tak formátování prvních pět znaků v textu.
 
-Následující příklad kódu vytvoří <xref:System.Windows.Media.FormattedText> objektu a vykreslí je.
+Následující příklad kódu vytvoří <xref:System.Windows.Media.FormattedText> objekt a vykreslí ho.
 
 [!code-csharp[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
 [!code-vb[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]
 
 <a name="FlowDocument_TextBlock_Label"></a>
 
-## <a name="flowdocument-textblock-and-label-controls"></a>FlowDocument TextBlock a ovládací prvky popisku
+## <a name="flowdocument-textblock-and-label-controls"></a>Ovládací prvky FlowDocument, TextBlock a Label
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje více ovládacích prvků pro vykreslení textu na obrazovce. Každý ovládací prvek je zacílený na jiný scénář a má svůj vlastní seznam funkcí a omezení.
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsahuje několik ovládacích prvků pro vykreslení textu na obrazovku. Každý ovládací prvek je zaměřený na jiný scénář a má svůj vlastní seznam funkcí a omezení.
 
-### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument ovlivňuje výkon více než prvku TextBlock nebo popisek
+### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument má dopad na výkon větší než TextBlock nebo popisek
 
-Obecně platí <xref:System.Windows.Controls.TextBlock> element by měl použít, pokud je text omezená podpora vyžadovat, například stručný větu v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> lze použít, když je nutné podporovat minimální text. <xref:System.Windows.Documents.FlowDocument> Elementu je kontejner pro znovu přizpůsobitelným dokumenty, které podporují bohatý prezentační obsahu a proto má větší dopad na výkon než při použití <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.Label> ovládacích prvků.
+Obecně platí, že <xref:System.Windows.Controls.TextBlock> element by měl být použit, pokud je vyžadována podpora omezeného textu, jako je například krátká [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]věta v. <xref:System.Windows.Controls.Label>dá se použít, když je potřeba podpora minimálního textu. Element je kontejner pro opětovné zpracování dokumentů, které podporují bohatou prezentaci obsahu, a proto má větší dopad na výkon než <xref:System.Windows.Controls.TextBlock> použití ovládacích prvků nebo <xref:System.Windows.Controls.Label>. <xref:System.Windows.Documents.FlowDocument>
 
-Další informace o <xref:System.Windows.Documents.FlowDocument>, naleznete v tématu [přehled toku dokumentů](flow-document-overview.md).
+Další informace o <xref:System.Windows.Documents.FlowDocument>najdete v tématu [Přehled flowového dokumentu](flow-document-overview.md).
 
-### <a name="avoid-using-textblock-in-flowdocument"></a>Vyhněte se použití TextBlock v FlowDocument
+### <a name="avoid-using-textblock-in-flowdocument"></a>Nepoužívejte TextBlock v FlowDocument
 
-<xref:System.Windows.Controls.TextBlock> Element je odvozen od <xref:System.Windows.UIElement>. <xref:System.Windows.Documents.Run> Element je odvozen od <xref:System.Windows.Documents.TextElement>, což je méně nákladný než <xref:System.Windows.UIElement>-odvozenému objektu. Pokud je to možné, použijte <xref:System.Windows.Documents.Run> spíše než <xref:System.Windows.Controls.TextBlock> pro zobrazení textu v obsahu <xref:System.Windows.Documents.FlowDocument>.
+Prvek je odvozen z <xref:System.Windows.UIElement>. <xref:System.Windows.Controls.TextBlock> Element je odvozen z, což je méně <xref:System.Windows.UIElement>nákladné pro použití než objekt odvozený od <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Run> Pokud je to možné <xref:System.Windows.Documents.Run> , použijte <xref:System.Windows.Controls.TextBlock> místo pro <xref:System.Windows.Documents.FlowDocument>zobrazení textového obsahu v.
 
-Následující příklad kódu ukazuje dva způsoby nastavení obsahu textu v rámci <xref:System.Windows.Documents.FlowDocument>:
+Následující ukázka kódu ukazuje dva způsoby nastavení textového obsahu v rámci <xref:System.Windows.Documents.FlowDocument>:
 
 [!code-xaml[Performance#PerformanceSnippet13](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/FlowDocument.xaml#performancesnippet13)]
 
-### <a name="avoid-using-run-to-set-text-properties"></a>Vyhněte se použití spuštění můžete nastavit vlastnosti textu
+### <a name="avoid-using-run-to-set-text-properties"></a>Nepoužívejte rutinu Run k nastavení vlastností textu
 
-Obecně platí, pomocí <xref:System.Windows.Documents.Run> v rámci <xref:System.Windows.Controls.TextBlock> je vyšší výkon než bez použití explicitní náročné <xref:System.Windows.Documents.Run> objektu. Pokud používáte <xref:System.Windows.Documents.Run> Pokud chcete nastavit vlastnosti text, nastavte tyto vlastnosti přímo na <xref:System.Windows.Controls.TextBlock> místo.
+Obecně platí, že <xref:System.Windows.Documents.Run> použití v <xref:System.Windows.Controls.TextBlock> rámci je větší výkon než při použití explicitního <xref:System.Windows.Documents.Run> objektu. Pokud používáte <xref:System.Windows.Documents.Run> , abyste mohli nastavit vlastnosti textu, nastavte tyto vlastnosti přímo <xref:System.Windows.Controls.TextBlock> na místo.
 
-Následující příklad kódu znázorňuje tyto dva způsoby nastavení vlastnosti textu, v tomto případě <xref:System.Windows.Controls.TextBlock.FontWeight%2A> vlastnost:
+Následující ukázka kódu znázorňuje tyto dva způsoby nastavení vlastnosti text, v tomto případě <xref:System.Windows.Controls.TextBlock.FontWeight%2A> vlastnost:
 
 [!code-xaml[Performance#PerformanceSnippet12](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml#performancesnippet12)]
 
-Následující tabulka zobrazuje náklady na zobrazení 1000 <xref:System.Windows.Controls.TextBlock> objekty s a bez explicitního <xref:System.Windows.Documents.Run>.
+V následující tabulce jsou uvedeny náklady na zobrazení 1000 <xref:System.Windows.Controls.TextBlock> objektů s a bez explicitního <xref:System.Windows.Documents.Run>.
 
-|**TextBlock – typ**|**Čas vytvoření (ms)**|**Vykreslení doba (ms)**|
+|**Typ TextBlock**|**Čas vytvoření (MS)**|**Čas vykreslování (MS)**|
 |------------------------|------------------------------|----------------------------|
-|Nastavení vlastností textu|146|540|
-|TextBlock – nastavení vlastností textu|43|453|
+|Vlastnosti textu pro nastavení spuštění|146|540|
+|Vlastnosti textu nastavení TextBlock|43|453|
 
-### <a name="avoid-databinding-to-the-labelcontent-property"></a>Vyhněte se datová vazba ovládacího prvku vlastnost Label.Content
+### <a name="avoid-databinding-to-the-labelcontent-property"></a>Vyhněte se vazbě na vlastnost Label. Content.
 
-Představte si situaci, kdy máte <xref:System.Windows.Controls.Label> objekt, který se často aktualizuje z <xref:System.String> zdroje. Při vytváření datových vazeb <xref:System.Windows.Controls.Label> elementu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.String> zdrojový objekt, může dojít ke špatnému výkonu. Pokaždé, když zdroj <xref:System.String> se aktualizuje, starý <xref:System.String> objekt je zrušený a nový <xref:System.String> se znovu vytvoří – protože <xref:System.String> objektu je neměnný, nelze ji změnit. To pak způsobí, že <xref:System.Windows.Controls.ContentPresenter> z <xref:System.Windows.Controls.Label> objekt zrušíte jeho starý obsah a znovu vygenerovat nový obsah zobrazit nové <xref:System.String>.
+Představte si situaci, kdy <xref:System.Windows.Controls.Label> máte objekt, který se často aktualizuje <xref:System.String> ze zdroje. Když data <xref:System.Windows.Controls.Label> sváže <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.String> elementu se zdrojovým objektem, může docházet ke špatnému výkonu. Pokaždé, když <xref:System.String> se zdroj aktualizuje, Starý <xref:System.String> objekt se zahodí a nový <xref:System.String> se znovu vytvoří – protože <xref:System.String> objekt je neměnný, nedá se změnit. To zase způsobí, že <xref:System.Windows.Controls.ContentPresenter> <xref:System.Windows.Controls.Label> objekt zahodí původní obsah a znovu vygeneruje nový obsah, aby zobrazil nový <xref:System.String>.
 
-Řešení tohoto problému je jednoduché. Pokud <xref:System.Windows.Controls.Label> není nastavená na vlastní <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> hodnota, nahraďte <xref:System.Windows.Controls.Label> s <xref:System.Windows.Controls.TextBlock> a svázat data jeho <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost zdrojový řetězec.
+Řešení tohoto problému je jednoduché. <xref:System.Windows.Controls.Label> <xref:System.Windows.Controls.TextBlock.Text%2A> <xref:System.Windows.Controls.TextBlock> Pokud není nastavená na vlastní <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> hodnotu, nahraďte pomocí data a datovou vlastnost navázáním na zdrojový řetězec. <xref:System.Windows.Controls.Label>
 
-|**Data svázána vlastnost**|**Čas aktualizace (ms)**|
+|**Vlastnost vázaná na data**|**Čas aktualizace (MS)**|
 |-----------------------------|----------------------------|
 |Label.Content|835|
-|TextBlock.Text|242|
+|TextBlock. text|242|
 
 <a name="Hyperlink"></a>
 
 ## <a name="hyperlink"></a>Hypertextový odkaz
 
-<xref:System.Windows.Documents.Hyperlink> Je objekt, který vám umožní hostitele hypertextové odkazy do plovoucího obsahu toku na úrovni vložení obsahu elementu.
+<xref:System.Windows.Documents.Hyperlink> Objekt je element obsahu toku na úrovni inline, který umožňuje hostovat hypertextové odkazy v rámci obsahu toku.
 
-### <a name="combine-hyperlinks-in-one-textblock-object"></a>Kombinovat hypertextové odkazy do jednoho objektu TextBlock
+### <a name="combine-hyperlinks-in-one-textblock-object"></a>Kombinování hypertextových odkazů v jednom objektu TextBlock
 
-Můžete optimalizovat použití více <xref:System.Windows.Documents.Hyperlink> prvky jejich seskupením společně v rámci stejného <xref:System.Windows.Controls.TextBlock>. Pomůžete tím minimalizovat počet objektů, které vytvoříte ve vaší aplikaci. Chcete třeba zobrazit více hypertextové odkazy, jako je následující:
+Můžete optimalizovat použití více <xref:System.Windows.Documents.Hyperlink> prvků seskupením mezi <xref:System.Windows.Controls.TextBlock>sebou. To pomáhá minimalizovat počet objektů, které vytvoříte v aplikaci. Například můžete chtít zobrazit více hypertextových odkazů, například následující:
 
-Domovská stránka služby MSN &#124; Moje MSN
+MSN domů &#124; můj MSN
 
-Následující příklad kódu ukazuje více <xref:System.Windows.Controls.TextBlock> prvků, které slouží k zobrazení hypertextové odkazy:
+Následující příklad kódu ukazuje více <xref:System.Windows.Controls.TextBlock> prvků, které slouží k zobrazení hypertextových odkazů:
 
 [!code-xaml[Performance#PerformanceSnippet9](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet9)]
 
-Následující příklad kódu ukazuje efektivnější způsob zobrazení hypertextové odkazy, tentokrát pomocí jediného <xref:System.Windows.Controls.TextBlock>:
+Následující příklad kódu ukazuje efektivnější způsob zobrazení hypertextových odkazů, tentokrát pomocí jediného <xref:System.Windows.Controls.TextBlock>:
 
 [!code-xaml[Performance#PerformanceSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet10)]
 
-### <a name="showing-underlines-on-hyperlinks-only-on-mouseenter-events"></a>Ukazuje na hypertextové odkazy pouze na události MouseEnter podtržení
+### <a name="showing-underlines-on-hyperlinks-only-on-mouseenter-events"></a>Zobrazení podtržení na hypertextových odkazech pouze u událostí MouseEnter
 
-A <xref:System.Windows.TextDecoration> objektu je vizuální dekoru, můžete přidat do textu, však může být pro vytvoření instance náročné na výkon. Pokud provedete rozsáhlé používání šířky <xref:System.Windows.Documents.Hyperlink> prvky, vezměte v úvahu zobrazující podtržení jenom v případě, že se aktivuje událost, například <xref:System.Windows.ContentElement.MouseEnter> událostí. Další informace najdete v tématu [podtržený zadejte hypertextového odkazu](how-to-specify-whether-a-hyperlink-is-underlined.md).
+<xref:System.Windows.TextDecoration> Objekt je vizuální ozdobné, které lze přidat do textu. může však být náročné na výkon při vytváření instancí. Pokud provedete rozsáhlé použití <xref:System.Windows.Documents.Hyperlink> elementů, zvažte zobrazení podtržení pouze při aktivaci události, jako je <xref:System.Windows.ContentElement.MouseEnter> například událost. Další informace najdete v tématu [určení, zda je hypertextový odkaz podtržený](how-to-specify-whether-a-hyperlink-is-underlined.md).
 
-Následující obrázek ukazuje, jak se aktivuje událost MouseEnter podtržení hypertextového odkazu:
+Následující obrázek ukazuje, jak událost MouseEnter aktivuje podtržený hypertextový odkaz:
 
-![Zobrazení TextDecorations hypertextových odkazů](./media/how-to-specify-whether-a-hyperlink-is-underlined/text-decorations-hyperlinks.png)
+![Hypertextové odkazy zobrazující TextDecorations](./media/how-to-specify-whether-a-hyperlink-is-underlined/text-decorations-hyperlinks.png)
 
-Následující ukázkový kód <xref:System.Windows.Documents.Hyperlink> definována a nemusíte podtržení:
+Následující ukázka kódu ukazuje, že <xref:System.Windows.Documents.Hyperlink> je definován s podtržením a bez něj:
 
 [!code-xaml[Performance#PerformanceSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]
 
-Následující tabulka zobrazuje náklady na zobrazení 1000 <xref:System.Windows.Documents.Hyperlink> elementy a nemusíte podtržení.
+V následující tabulce jsou uvedeny náklady na výkon při zobrazení <xref:System.Windows.Documents.Hyperlink> 1000 prvků s podtržením a bez něj.
 
-|**Hypertextový odkaz**|**Čas vytvoření (ms)**|**Vykreslení doba (ms)**|
+|**Cíl**|**Čas vytvoření (MS)**|**Čas vykreslování (MS)**|
 |-------------------|------------------------------|----------------------------|
-|S podtržení|289|1130|
+|S podtržením|289|1130|
 |Bez podtržení|299|776|
 
 <a name="Text_Formatting_Features"></a>
 
 ## <a name="text-formatting-features"></a>Funkce formátování textu
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje služby, jako je automatické dělení slov RTF. Tyto služby mohou ovlivnit výkon aplikace a by měla sloužit pouze v případě potřeby.
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje služby formátování formátovaného textu, například automatické dělení slov. Tyto služby mohou ovlivnit výkon aplikace a měly by být použity pouze v případě potřeby.
 
-### <a name="avoid-unnecessary-use-of-hyphenation"></a>Vyhněte se zbytečným použití dělení slov
+### <a name="avoid-unnecessary-use-of-hyphenation"></a>Vyhnout se zbytečnému použití dělení slov
 
-Automatické dělení slov vyhledá spojovník zarážky řádků textu a umožňuje další zalomení pozice pro řádky v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Ve výchozím nastavení je funkce Automatické dělení slov zakázaná v těchto objektů. Tuto funkci lze povolit nastavením vlastnosti objektu IsHyphenationEnabled na `true`. Povolení této funkce však způsobí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] k zahájení [!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)] vzájemná funkční spolupráce, což může ovlivnit výkon aplikace. Doporučuje se, že je velmi riskantní používat automatické dělení slov pokud ho potřebujete.
+Automatické dělení slov najde zarážky spojovníků pro řádky textu a umožňuje další pozice zalomení řádků v <xref:System.Windows.Controls.TextBlock> objektech a. <xref:System.Windows.Documents.FlowDocument> Ve výchozím nastavení je funkce Automatické dělení slov v těchto objektech zakázaná. Tuto funkci můžete povolit nastavením vlastnosti IsHyphenationEnabled objektu na `true`. Povolení této funkce ale způsobí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , že se spustí interoperabilita modelu objektu komponenty (com), což může mít vliv na výkon aplikace. Doporučuje se, abyste automatické dělení nepoužívali, pokud ho nepotřebujete.
 
-### <a name="use-figures-carefully"></a>Používejte opatrně, obrázky
+### <a name="use-figures-carefully"></a>Pečlivě používejte obrázky
 
-A <xref:System.Windows.Documents.Figure> element reprezentuje část plovoucího obsahu, který může být absolutně umístěné v rámci stránky obsahu. V některých případech <xref:System.Windows.Documents.Figure> může způsobit celé stránky automaticky přeformátovat pokud jeho pozice koliduje s obsahem, který již byl podle předem. Můžete minimalizovat zbytečné přeformátování buď seskupením možnost <xref:System.Windows.Documents.Figure> prvky vedle sebe nebo deklarace v horní části obsahu ve scénáři velikost pevné stránky.
+<xref:System.Windows.Documents.Figure> Element představuje část obsahu toku, která může být absolutně umístěna v rámci stránky obsahu. V některých případech může dojít <xref:System.Windows.Documents.Figure> k automatickému přeformátování celé stránky, pokud je její poloha v konfliktu s obsahem, který je už stanovený. Můžete minimalizovat možnost zbytečného přeformátování buď seskupením <xref:System.Windows.Documents.Figure> prvků vedle sebe, nebo jejich deklaraci v blízkosti horního okraje obsahu ve scénáři s pevnou velikostí stránky.
 
-### <a name="optimal-paragraph"></a>Optimální odstavce
+### <a name="optimal-paragraph"></a>Optimální odstavec
 
-Funkci optimální odstavce <xref:System.Windows.Documents.FlowDocument> objekt rozložen odstavce tak, aby se jako rovnoměrně distribuuje prázdné znaky. Ve výchozím nastavení optimální odstavec je zakázaná. Tuto funkci lze povolit nastavením objektu <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> vlastnost `true`. Povolení této funkce však ovlivňuje výkon aplikace. Je doporučeno, je velmi riskantní používat funkci optimální odstavec pokud ho potřebujete.
+Funkce optimálního odstavce <xref:System.Windows.Documents.FlowDocument> objektu odděluje odstavce tak, aby byly prázdné znaky distribuovány co nejrovnoměrněji. Ve výchozím nastavení je funkce optimálního odstavce zakázána. Tuto funkci můžete povolit nastavením <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> vlastnosti objektu na. `true` Povolení této funkce však ovlivní výkon aplikace. Doporučuje se, abyste funkci optimálních odstavců nepoužívali, pokud ji nepotřebujete.
 
 ## <a name="see-also"></a>Viz také:
 

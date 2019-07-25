@@ -4,149 +4,149 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 98dc2899fd2c6a294f9f878ccbf87f60520bbe78
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: ffbd59cb398d417a36d75ff0ef9ef4ef143c30c0
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238687"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484652"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
-Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří vylepšení kvality a výkonu při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Typografie support, rozšířené mezinárodní text, vylepšená podpora písma a rozhraní (API) nové application programming text.  
+V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] , podpora typografie, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
-## <a name="improved-quality-and-performance-of-text"></a>Zlepšení kvality a výkonu textu  
- Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], která vylepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je software technologie vyvinutá společností [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] , který zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Liquid Crystal), například Notebook obrazovky, obrazovky v prostředí Pocket PC a monitorování plochý. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá vykreslování dílčí pixel, což umožní text zobrazený větší věrně k jeho skutečný tvar znaky zarovnání v jiné části sekundového údaje o jeden pixel. Další řešení zvyšuje ostrost malý podrobnosti zobrazení textu, tím se velmi zjednoduší si přečíst dlouhé doby trvání. Další vylepšení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je směru osy y vyhlazení, který vyhladí tolní počítače a DNA bez podstruktury křivky v textové znaky. Podrobné informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce, najdete v článku [ClearType – přehled](cleartype-overview.md).  
+## <a name="improved-quality-and-performance-of-text"></a>Vylepšená kvalita a výkon textu  
+ Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což vylepšuje přehlednost a čitelnost textu. ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely. Technologie ClearType používá vykreslování v pixelech, které umožňuje zobrazení textu s větší věrnou přesností na jeho skutečný tvar zarovnáním znaků na zlomkové části pixelu. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání. Dalším vylepšením technologie ClearType [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v systému je antialiasing směru y, který vyhlazuje horní a dolní část neomezených křivek v textových znacích. Další podrobnosti o funkcích technologie ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
   
- ![Text s ClearType směru osy y vyhlazení](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
-Text s ClearType směru osy y vyhlazení  
+ ![Text pomocí technologie ClearType y-Direction anti-aliasing](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
+Text pomocí technologie ClearType y-Direction antialiasing  
   
- Kanál vykreslení celý text může být hardwarově urychlené v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] předpokladu, že váš počítač splňuje minimální hardwarové požadavky. Vykreslování, které nelze provést pomocí hardwaru vrátí k softwarové vykreslování. Hardwarovou akceleraci ovlivňuje všechny fáze kanálu vykreslování textu – ukládání jednotlivých glyfy skládání glyfy do šifer, použití efektů, k použití [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] prolnutí algoritmů a poslední zobrazený výstup. Další informace o hardwarovou akceleraci, naleznete v tématu [vrstvy vykreslování grafiky](graphics-rendering-tiers.md).  
+ Celý kanál vykreslování textu může být hardwarově urychlený, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Pokud počítač splňuje minimální požadovanou úroveň hardwaru. Vykreslování, které nelze provést pomocí hardwaru, se vrátí zpět do softwarového vykreslování. Hardwarová akcelerace má vliv na všechny fáze kanálu vykreslování textu – od uložení jednotlivých glyfů, skládání glyfů do glyfů, použití efektů pro aplikování algoritmu prolnutí ClearType na výsledný zobrazený výstup. Další informace o hardwarové akceleraci najdete v tématu [vrstvy vykreslování grafiky](graphics-rendering-tiers.md).  
   
  ![Diagram kanálu vykreslování textu](./media/typography-in-wpf/text-rendering-pipeline.png)  
   
- Kromě toho animovaný text podle znaku nebo glyf plně využívá grafiky schopnost hardwaru, kterou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Výsledkem je hladké textové animace.  
+ Kromě toho animovaný text, bez ohledu na znak nebo glyf, plně využívá schopnost hardwaru grafiky, která je povolená [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástrojem. Výsledkem je plynulá animace textu.  
   
 <a name="Rich_Typography"></a>   
-## <a name="rich-typography"></a>Bohaté Typografie  
- [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formát písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma byla vyvinuta společně za [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohaté zjistila typografickém pokročilých funkcí. <xref:System.Windows.Documents.Typography> Zpřístupňuje řadu pokročilých funkcí [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písma, jako je například stylových alternativ a ozdobná písmena. [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] Poskytuje sadu ukázkových [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písma, které jsou určeny pomocí bohatých funkcí, jako například Pericles a Pescadero písma. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+## <a name="rich-typography"></a>Bohatá typografie  
+ Formát písma je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma byl vyvinut společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Objekt zpřístupňuje mnoho pokročilých [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcí písem, jako jsou stylistické alternativy a ozdobné znaky. <xref:System.Windows.Documents.Typography> Poskytuje sadu ukázkových [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písem, která jsou navržená pomocí bohatých funkcí, jako jsou například písma Pericles a Pescadero. [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
- Pericles [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písmo obsahuje další glyfy, které poskytují stylových alternativ na standardní sadu glyphs. Zobrazí se následující text stylistické alternativních glyfů.  
+ Písmo Pericles [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
   
- ![Textu s použitím stylových alternativních glyfů OpenType](./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "textu s použitím stylových alternativních glyfů OpenType")  
+ ![Text používající stylistické alternativní glyfy písma OpenType](./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "Text používající stylistické alternativní glyfy písma OpenType")  
   
- Ozdobná písmena jsou dekorativní glyfy, které používají propracované dekoru často přidružený Kaligrafie. Následující text zobrazí standardní a swash glyfy Pescadero písma.  
+ Ozdobné znaky jsou ozdobné glyfy, které používají výtvarné ozdoby, které jsou často spojeny s kaligraficky. Následující text zobrazuje standardní a ozdobné glyfy pro písmo Pescadero.  
   
- ![Textu použitím piktogramů standard a swash OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "textu použitím piktogramů standard a swash OpenType")  
+ ![Text používající standardní a ozdobné glyfy OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "Text používající standardní a ozdobné glyfy OpenType")  
   
- Podrobné informace o [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkce, najdete v článku [funkce písma OpenType](opentype-font-features.md).  
+ Další informace o [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcích najdete v tématu [funkce písem OpenType](opentype-font-features.md).  
   
 <a name="Enhanced_International_Text_Support"></a>   
-## <a name="enhanced-international-text-support"></a>Podpora rozšířené mezinárodní Text  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje lepší mezinárodní text podporu tím, že poskytuje následující funkce:  
+## <a name="enhanced-international-text-support"></a>Vylepšená podpora pro mezinárodní text  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje vylepšenou podporu pro mezinárodní text tím, že poskytuje následující funkce:  
   
-- Automatické-řádkování ve všech systémech zápis pomocí adaptivního měření.  
+- Automatické rozestupy ve všech systémech pro psaní pomocí adaptivního měření.  
   
-- Rozsáhlá podpora pro mezinárodní text. Další informace najdete v tématu [globalizace pro WPF](globalization-for-wpf.md).  
+- Široká podpora pro mezinárodní text Další informace naleznete v tématu [globalizace pro WPF](globalization-for-wpf.md).  
   
-- Řádek s asistencí jazykové slov, dělení a zarovnání.  
+- Dělení na základě jazyka, dělení a zarovnání řádků s asistencí  
   
 <a name="Enhanced_Font_Support"></a>   
-## <a name="enhanced-font-support"></a>Podpora rozšířené písma  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje vylepšené písma podporu tím, že poskytuje následující funkce:  
+## <a name="enhanced-font-support"></a>Rozšířená podpora písem  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje vylepšenou podporu písem tím, že poskytuje následující funkce:  
   
-- Kódování Unicode pro veškerý text. Chování písma a výběr už vyžadují znaková sada nebo znakovou stránku.  
+- Kódování Unicode pro veškerý text Chování písem a výběr už nevyžadují znakovou sadu (charset) nebo znakovou stránku.  
   
-- Písmo chování nezávisle na globální nastavení, jako je například národního prostředí.  
+- Chování písem nezávislá na globálním nastavení, jako je například národní prostředí systému.  
   
-- Samostatné <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>, a <xref:System.Windows.FontStyle> typy pro definování <xref:System.Windows.Media.FontFamily>. To poskytuje větší flexibilitu než [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] programování, ve které datový typ Boolean kombinací tučné písmo a kurzíva se používají k definování rodinu písem.  
+- Samostatné <xref:System.Windows.FontWeight>typy <xref:System.Windows.FontStretch>, a<xref:System.Windows.FontStyle>pro definování .<xref:System.Windows.Media.FontFamily> To poskytuje větší flexibilitu než [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] při programování, při které se k definování rodiny písem používají logické kombinace kurzívy a tučného písma.  
   
-- Zápis směr (vodorovně a svisle) zpracovává nezávisle na název písma.  
+- Směr zápisu (vodorovně versus svisle) zpracovává nezávisle na názvu písma.  
   
-- Propojování písma a zpětné volání v přenosný [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] soubor, pomocí technologie složený font. Složená písma povolit pro tvorbu plný rozsah vícejazyčné písma. Složená písma taky mělo poskytovat mechanismus, který zabraňuje zobrazování chybějící glyphs. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
+- Propojení písma a Fallback písma v přenosném [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] souboru pomocí technologie kompozitního písma. Složená písma umožňují konstrukci celé škály vícejazyčných písem. Složená písma také poskytují mechanismus, který brání zobrazení chybějících glyfů. Další informace naleznete v tématu poznámky ve <xref:System.Windows.Media.FontFamily> třídě.  
   
-- Mezinárodní písma od složená písma pomocí skupiny písem v jednom jazyce. Toto uloží na nákladech na prostředky při vývoji písma pro různé jazyky.  
+- Mezinárodní písma vytvořená ze složených písem pomocí skupiny písem s jedním jazykem. Tím se šetří náklady na prostředky při vývoji písem pro více jazyků.  
   
-- Složená písma vložené v dokumentu, a tím zajištění přenositelnosti dokumentu. Další informace najdete v části poznámky v <xref:System.Windows.Media.FontFamily> třídy.  
+- Složená písma vložená v dokumentu, což zajišťuje přenositelnost dokumentu. Další informace naleznete v tématu poznámky ve <xref:System.Windows.Media.FontFamily> třídě.  
   
 <a name="New_Text_APIs"></a>   
-## <a name="new-text-application-programming-interfaces-apis"></a>Nový Text aplikační programovací rozhraní (API)  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje několik text rozhraní API pro vývojáře pro použití při včetně textu ve svých aplikacích. Tato rozhraní API jsou seskupené do tří kategorií:  
+## <a name="new-text-application-programming-interfaces-apis"></a>Nová programovací rozhraní pro aplikace v textu (rozhraní API)  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje několik textových rozhraní API, které můžou vývojáři použít při zahrnutí textu do svých aplikací. Tato rozhraní API se seskupují do tří kategorií:  
   
-- **Rozložení a uživatelské rozhraní**. Pro ovládací prvky společný text [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
+- **Rozložení a uživatelské rozhraní**. Společné textové ovládací prvky pro [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
   
-- **Zjednodušené vykreslování textu**. Umožňuje nakreslit text přímo k objektům.  
+- **Zjednodušené vykreslování textu**. Umožňuje kreslit text přímo do objektů.  
   
-- **Pokročilé formátování textu**. Umožňuje implementovat modul s vlastním textem.  
+- **Rozšířené formátování textu**. Umožňuje implementovat vlastní textový modul.  
   
-### <a name="layout-and-user-interface"></a>Rozložení a uživatelského rozhraní  
- Na nejvyšší úrovni funkčnosti, zadejte text API běžné [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládací prvky jako například <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBlock>, a <xref:System.Windows.Controls.TextBox>. Tyto ovládací prvky poskytují základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementů v rámci aplikace a nabídku snadný způsob, jak zobrazit a pracovat s textem. Ovládací prvky jako například <xref:System.Windows.Controls.RichTextBox> a <xref:System.Windows.Controls.PasswordBox> povolit více advanced nebo specializovaných zpracování textu. A třídy jako <xref:System.Windows.Documents.TextRange>, <xref:System.Windows.Documents.TextSelection>, a <xref:System.Windows.Documents.TextPointer> povolit manipulaci s textem užitečné. Tyto [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky, jako poskytují vlastnosti <xref:System.Windows.Controls.Control.FontFamily%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontStyle%2A>, které vám umožňují řídit písma, která se použije k vykreslení textu.  
+### <a name="layout-and-user-interface"></a>Rozložení a uživatelské rozhraní  
+ Na nejvyšší úrovni funkčnosti obsahují rozhraní API [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pro text běžné ovládací prvky <xref:System.Windows.Controls.Label>, jako jsou, <xref:System.Windows.Controls.TextBlock>a. <xref:System.Windows.Controls.TextBox> Tyto ovládací prvky poskytují základní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky v rámci aplikace a nabízejí snadný způsob, jak prezentovat text a pracovat s ním. Ovládací prvky, <xref:System.Windows.Controls.RichTextBox> jako <xref:System.Windows.Controls.PasswordBox> je a povolit pokročilejší nebo specializované zpracování textu. A třídy, jako <xref:System.Windows.Documents.TextRange>jsou <xref:System.Windows.Documents.TextSelection>, a <xref:System.Windows.Documents.TextPointer> umožňují užitečnou manipulaci s textem. Tyto [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky poskytují vlastnosti <xref:System.Windows.Controls.Control.FontFamily%2A>, jako <xref:System.Windows.Controls.Control.FontSize%2A>jsou, <xref:System.Windows.Controls.Control.FontStyle%2A>a, které umožňují řídit písmo, které se používá k vykreslování textu.  
   
-#### <a name="using-bitmap-effects-transforms-and-text-effects"></a>Pomocí bitmapových efektů, transformace a textových efektů  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] můžete vytvořit vizuálně zajímavé používá textu používá funkce, jako je například bitmapových efektů, transformace a textových efektů. Následující příklad ukazuje typické typu efektem stínu použitý pro text.  
+#### <a name="using-bitmap-effects-transforms-and-text-effects"></a>Použití bitmapových efektů, transformací a textových efektů  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]umožňuje vytvořit vizuálně zajímavé používání textu pomocí funkcí, jako jsou rastrové efekty, transformace a textové efekty. Následující příklad ukazuje typický typ efektu Vržený stín aplikovaný na text.  
   
- ![Stín Softness &#61; 0,25](./media/typography-in-wpf/drop-shadow-text-effect.jpg) 
+ ![Stín textu s měkkou &#61; 0,25](./media/typography-in-wpf/drop-shadow-text-effect.jpg) 
   
- Následující příklad ukazuje efektem stínu a šumu použitý pro text.  
+ Následující příklad ukazuje efekt Vržený stín a šum aplikovaný na text.  
   
- ![Stín textu s šumu](./media/typography-in-wpf/drop-shadow-noise-text.jpg) 
+ ![Stínování textu s hlukem](./media/typography-in-wpf/drop-shadow-noise-text.jpg) 
   
- Následující příklad ukazuje efekt vnější záře použitý pro text.  
+ Následující příklad ukazuje efekt vnější záře aplikovaný na text.  
   
- ![Stín textu pomocí OuterGlowBitmapEffect](./media/typography-in-wpf/text-shadow-glow-effect.jpg)
+ ![Stín textu s použitím OuterGlowBitmapEffect](./media/typography-in-wpf/text-shadow-glow-effect.jpg)
   
- Následující příklad ukazuje efekt rozostření použitý pro text.  
+ Následující příklad ukazuje efekt rozostření aplikovaný na text.  
   
- ![Pomocí BlurBitmapEffect Stín textu](./media/typography-in-wpf/text-shadow-blur-effect.jpg)  
+ ![Stín textu s použitím BlurBitmapEffect](./media/typography-in-wpf/text-shadow-blur-effect.jpg)  
 
- Následující příklad ukazuje, druhý řádek textu měřítkem řídit 150 % podél osy x a třetí řádek textu měřítkem řídit 150 % podél osy y.  
+ Následující příklad ukazuje druhý řádek textu škálované o 150% podél osy x a třetí řádek textu se škáluje o 150% podél osy y.  
   
- ![Škálování, použití ScaleTransform – text](./media/typography-in-wpf/scaled-text-scaletransform.jpg) 
+ ![Zvětšený text pomocí ScaleTransform](./media/typography-in-wpf/scaled-text-scaletransform.jpg) 
   
  Následující příklad ukazuje text zkosený podél osy x.  
   
  ![Text zkosený pomocí SkewTransform](./media/typography-in-wpf/skewed-transformed-text.jpg)
   
- A <xref:System.Windows.Media.TextEffect> objekt je objekt pomocné rutiny, která umožňuje zpracovávat text jako jeden nebo více skupin znaků v textovém řetězci. Následující příklad ukazuje jednotlivý znak se otočí. Každý znak v intervalech 1 sekundu otočena nezávisle na sobě.  
+ <xref:System.Windows.Media.TextEffect> Objekt je pomocný objekt, který umožňuje považovat text za jednu nebo více skupin znaků v textovém řetězci. Následující příklad ukazuje otočení jednotlivého znaku. Každý znak je otočen nezávisle v intervalu 1 – sekund.  
   
- ![Snímek obrazovky efekt textu otáčení textu](./media/typography-in-wpf/rotating-text-effect.jpg) 
+ ![Snímek obrazovky rotujícího textu textového efektu](./media/typography-in-wpf/rotating-text-effect.jpg) 
   
-#### <a name="using-flow-documents"></a>Použití toku dokumentů  
- Kromě společné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí rozložení ovládacího prvku pro textové prezentaci – <xref:System.Windows.Documents.FlowDocument> elementu. <xref:System.Windows.Documents.FlowDocument> Element ve spojení s <xref:System.Windows.Controls.DocumentViewer> element, obsahuje ovládací prvek pro velkého množství textu s použitím různých požadavkům na rozložení. Rozložení ovládacích prvků poskytují přístup k rozšířené Typografie prostřednictvím <xref:System.Windows.Documents.Typography> objektu a vlastnosti související se písmo jiných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládacích prvků.  
+#### <a name="using-flow-documents"></a>Používání dokumentů Flow  
+ Kromě běžných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků nabízí ovládací prvek rozložení <xref:System.Windows.Documents.FlowDocument> pro textové prezentace – element. Element ve spojení <xref:System.Windows.Controls.DocumentViewer> s elementem poskytuje ovládací prvek pro velké objemy textu s různými požadavky na rozložení. <xref:System.Windows.Documents.FlowDocument> Ovládací prvky rozložení poskytují přístup k pokročilým typografii <xref:System.Windows.Documents.Typography> prostřednictvím objektu a vlastností souvisejících s písmem [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] jiných ovládacích prvků.  
   
- Následující příklad ukazuje, textového obsahu konání <xref:System.Windows.Controls.FlowDocumentReader>, poskytující vyhledávání, navigace, stránkování a obsah škálování podpory.  
+ Následující příklad ukazuje textový obsah hostovaný v <xref:System.Windows.Controls.FlowDocumentReader>, který poskytuje podporu hledání, navigace, stránkování a škálování obsahu.  
   
- ![Snímek obrazovky zobrazující písem OpenType.](./media/typography-in-wpf/typography-text-flowdocumentreader.png)
+ ![Snímek obrazovky, který zobrazuje písma OpenType.](./media/typography-in-wpf/typography-text-flowdocumentreader.png)
   
- Další informace najdete v tématu [dokumenty v platformě WPF](documents-in-wpf.md).  
+ Další informace najdete v tématu [dokumenty v WPF](documents-in-wpf.md).  
   
-### <a name="lightweight-text-drawing"></a>Kreslení jednoduchý Text  
- Text lze nakreslit přímo na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů pomocí <xref:System.Windows.Media.DrawingContext.DrawText%2A> metodu <xref:System.Windows.Media.DrawingContext> objektu. Chcete-li použít tuto metodu, vytvoříte <xref:System.Windows.Media.FormattedText> objektu. Tento objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Funkce <xref:System.Windows.Media.FormattedText> objekt obsahuje většinu funkcí příznaky DrawText v rozhraní Windows API. Kromě toho <xref:System.Windows.Media.FormattedText> objekt obsahuje funkce, jako je například podpora tlačítko se třemi tečkami, ve kterém se třemi tečkami zobrazí, když text překročí jeho hranice. Následující příklad ukazuje, text, který má několik formátování, včetně lineárního přechodu na druhý a třetí slova.  
+### <a name="lightweight-text-drawing"></a>Zjednodušené vykreslování textu  
+ Můžete nakreslit text přímo do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů <xref:System.Windows.Media.DrawingContext.DrawText%2A> pomocí metody <xref:System.Windows.Media.DrawingContext> objektu. Chcete-li použít tuto metodu, vytvoříte <xref:System.Windows.Media.FormattedText> objekt. Tento objekt umožňuje nakreslit víceřádkový text, ve kterém je každý znak v textu možné formátovat individuálně. Funkce <xref:System.Windows.Media.FormattedText> objektu obsahuje většinu funkcí příznaků DrawText v rozhraní API systému Windows. Kromě toho <xref:System.Windows.Media.FormattedText> objekt obsahuje funkce, jako je například podpora tří teček, ve kterém se zobrazí tři tečky, když text překročí hranice. Následující příklad ukazuje text, který obsahuje několik formátů, včetně lineárního přechodu na druhý a třetí slova.  
   
  ![Text zobrazený pomocí objektu FormattedText](./media/typography-in-wpf/text-formatted-linear-gradient.jpg) 
   
- Můžete převést formátovaný text do <xref:System.Windows.Media.Geometry> objekty, které umožňuje vytvoření jiných typů vizuálně zajímavou text. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrysu textového řetězce.  
+ Formátovaný text můžete převést na <xref:System.Windows.Media.Geometry> objekty, což vám umožní vytvářet další typy vizuálně zajímavého textu. Můžete například vytvořit <xref:System.Windows.Media.Geometry> objekt na základě obrysu textového řetězce.  
   
- ![Text osnovy pomocí štětec lineárního přechodu](./media/typography-in-wpf/text-outline-linear-gradient.jpg)  
+ ![Obrys textu s použitím štětce s lineárním přechodem](./media/typography-in-wpf/text-outline-linear-gradient.jpg)  
   
- Následující příklady znázorňují několik možností, jak vytvářet zajímavé vizuální efekty úpravou stroke, výplň a zvýraznit text převedený.  
+ Následující příklady ilustrují několik způsobů vytváření zajímavých vizuálních efektů úpravou tahu, výplně a zvýraznění převedeného textu.  
   
- ![Text mají různé barvy výplně a tahu](./media/typography-in-wpf/fill-stroke-text-effect.jpg)  
+ ![Text s různými barvami pro výplň a tah](./media/typography-in-wpf/fill-stroke-text-effect.jpg)  
   
- ![Text použitý pro stroke obrázkový štětec](./media/typography-in-wpf/image-brush-application.jpg)
+ ![Text s obrázkem štětce aplikovaný na tah](./media/typography-in-wpf/image-brush-application.jpg)
   
- ![Text s použita k obtažení a zvýraznit obrázkový štětec](./media/typography-in-wpf/image-brush-text-application.jpg)
+ ![Text s obrázkem štětce aplikovaný na tah a zvýraznění](./media/typography-in-wpf/image-brush-text-application.jpg)
   
- Další informace o <xref:System.Windows.Media.FormattedText> objektu, najdete v článku [kreslení textu ve formátu](drawing-formatted-text.md).  
+ Další informace o <xref:System.Windows.Media.FormattedText> objektu naleznete v tématu [Kreslení formátovaného textu](drawing-formatted-text.md).  
   
 ### <a name="advanced-text-formatting"></a>Upřesněné formátování textu  
- Nanejvýš pokročilé úrovni členství textu rozhraní API, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí možnost vytvořit vlastní text rozložení pomocí <xref:System.Windows.Media.TextFormatting.TextFormatter> objektu a další typy v <xref:System.Windows.Media.TextFormatting> oboru názvů. <xref:System.Windows.Media.TextFormatting.TextFormatter> a přidružených tříd povolit další rozložení funkcí pro mezinárodní text a můžete implementovat vlastní text rozložení, který podporuje vlastní definice formátování, styly odstavec pravidel ukončování řádků. Velmi málo případech, ve kterých chcete přepsat výchozí implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podpora rozložení textu. Ale při vytváření ovládacího prvku nebo aplikace pro úpravy textu, můžete vyžadovat jinou implementaci než výchozí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace.  
+ Na nejpokročilejší úrovni textových rozhraní API [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí možnost vytvářet vlastní rozložení textu <xref:System.Windows.Media.TextFormatting.TextFormatter> pomocí objektu <xref:System.Windows.Media.TextFormatting> a dalších typů v oboru názvů. Třídy <xref:System.Windows.Media.TextFormatting.TextFormatter> a přidružené umožňují implementovat vlastní rozložení textu, které podporuje vaše vlastní definice formátů znaků, odstavcové styly, pravidla ukončování řádků a další funkce rozložení pro mezinárodní text. V některých případech je vhodné přepsat výchozí implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podpory rozložení textu. Pokud jste však vytvořili ovládací prvek pro úpravu textu nebo aplikaci, můžete vyžadovat odlišnou implementaci, než je výchozí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace.  
   
- Na rozdíl od tradičních text API <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje přes sadu metod zpětného volání klienta rozložení textu. Vyžaduje od klienta tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
+ Na <xref:System.Windows.Media.TextFormatting.TextFormatter> rozdíl od tradičního textového rozhraní API komunikuje s klientem rozložení textu prostřednictvím sady metod zpětného volání. Vyžaduje, aby klient poskytoval tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
- ![Diagram klienta rozložení textu a objektu TextFormatter](./media/typography-in-wpf/text-layout-text-formatter-interaction.png)  
+ ![Diagram klienta rozložení textu a TextFormatter](./media/typography-in-wpf/text-layout-text-formatter-interaction.png)  
   
- Další informace o vytváření rozložení vlastního textu, naleznete v tématu [pokročilé formátování textu](advanced-text-formatting.md).  
+ Další informace o vytváření vlastního rozložení textu najdete v tématu [Rozšířené formátování textu](advanced-text-formatting.md).  
   
 ## <a name="see-also"></a>Viz také:
 

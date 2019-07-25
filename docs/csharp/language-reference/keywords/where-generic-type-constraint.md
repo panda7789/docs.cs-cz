@@ -1,5 +1,5 @@
 ---
-title: kde (omezení obecného typu) - C# odkaz
+title: WHERE (omezení obecného typu) – C# referenční informace
 ms.custom: seodec18
 ms.date: 04/12/2018
 f1_keywords:
@@ -7,57 +7,57 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 3982c97bc56b42237700343b2572d1bba930bbbd
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: bccc22f5362b22540dadf08e6b21a07cbc578327
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422773"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433848"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 
-`where` Klauzule v definici obecného určuje omezení na typy, které se používají jako argumenty pro parametry typu v obecného typu, metody, delegáta nebo místní funkce. Omezení můžete určit základní třídy, rozhraní nebo vyžadují být typu odkaz, hodnota nebo nespravovaný typ obecného typu. Kterou deklarují funkce, které musí mít argument typu.
+`where` Klauzule v obecné definici určuje omezení pro typy, které se používají jako argumenty pro parametry typu v obecném typu, metodě, delegátu nebo místní funkci. Omezení mohou určovat rozhraní, základní třídy nebo vyžadovat, aby byl obecný typ odkaz, hodnota nebo nespravovaný typ. Deklaruje možnosti, které musí mít argument typu.
 
-Například je možné deklarovat obecná třída `MyGenericClass`, tak, aby parametr typu `T` implementuje <xref:System.IComparable%601> rozhraní:
+Můžete například deklarovat obecnou třídu `MyGenericClass`, například parametr `T` typu implementuje <xref:System.IComparable%601> rozhraní:
 
 [!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#1)]
 
 > [!NOTE]
-> Další informace o where – klauzule ve výrazu dotazu naleznete v tématu [kde klauzule](where-clause.md).
+> Další informace o klauzuli WHERE ve výrazu dotazu naleznete v tématu [Where klauzule](where-clause.md).
 
-`where` Klauzule může také obsahovat omezení základní třídy. Omezení základní třídy uvádí, že typ má být použit jako argument typu pro obecný typu má zadanou třídu jako základní třídu (nebo je, že základní třídy) má být použit jako argument typu pro obecný typu. Pokud se používá k omezení základní třídy, musí být uvedena před všemi ostatními omezeními u tohoto parametru typu. Některé typy nejsou povoleny jako základní třída omezení: <xref:System.Object>, <xref:System.Array>, a <xref:System.ValueType>. Před C# 7.3 <xref:System.Enum>, <xref:System.Delegate>, a <xref:System.MulticastDelegate> byly také povolena jako omezení základní třídy. Následující příklad ukazuje typy, které teď můžou být specifikované jako základní třídu:
+`where` Klauzule může také zahrnovat omezení základní třídy. Omezení základní třídy uvádí, že typ, který má být použit jako argument typu pro tento obecný typ, má zadanou třídu jako základní (nebo je základní třída) použitá jako argument typu pro tento obecný typ. Pokud je použito omezení základní třídy, musí být uvedena před všemi ostatními omezeními pro tento parametr typu. Některé typy nejsou povoleny jako omezení základní třídy: <xref:System.Object>, <xref:System.Array>a <xref:System.ValueType>. Před C# 7,3 <xref:System.Enum>,, <xref:System.Delegate>a bylytakézakázányjakoomezenízákladnítřídy.<xref:System.MulticastDelegate> Následující příklad ukazuje typy, které lze nyní zadat jako základní třídu:
 
 [!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#2)]
 
-`where` Klauzule můžete určit, že je typem `class` nebo `struct`. `struct` Omezení eliminuje nutnost zadat omezení základní třídy `System.ValueType`. `System.ValueType` Typ nelze použít jako omezení základní třídy. Následující příklad ukazuje, jak `class` a `struct` omezení:
+Klauzule může určit, že typ `class` je nebo `struct`. `where` Omezení eliminuje nutnost zadat `System.ValueType`omezení základní třídy. `struct` `System.ValueType` Typ nelze použít jako omezení základní třídy. Následující příklad ukazuje obě `class` omezení a: `struct`
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
 
-`where` Může také obsahovat klauzuli `unmanaged` omezení. `unmanaged` Omezení omezuje parametr typu pro typy označované jako **nespravovaného typy**. **Nespravovaný typ** je typ, který není typem odkazu a neobsahuje pole typu odkazu na libovolné úrovni vnoření. `unmanaged` Omezení usnadňuje psaní nízké úrovně vzájemné spolupráce kódu v jazyce C#. Toto omezení umožňuje opakovaně použitelných rutin do všech nespravovaných typů. `unmanaged` Omezení nelze kombinovat s `class` nebo `struct` omezení. `unmanaged` Vynucuje omezení, musí být typu `struct`:
+Klauzule může také `unmanaged` obsahovat omezení. `where` Omezení omezuje parametr typu na typy známé jako nespravované [typy.](../builtin-types/unmanaged-types.md) `unmanaged` Omezení usnadňuje psaní kódu spolupráce na nízké úrovni v C# `unmanaged` Toto omezení povoluje opakovaně použitelné rutiny ve všech nespravovaných typech. Omezení nelze kombinovat `class` s omezením or `struct`. `unmanaged` Omezení vynutilo, že typ musí `struct`být: `unmanaged`
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-`where` Klauzule může také obsahovat omezení konstruktoru `new()`. Že omezení díky tomu je možné vytvořit instanci typu pomocí parametru `new` operátor. [Omezení new()](new-constraint.md) umožňuje kompilátoru vědět, že všechny zadaný argument typu musí mít k dispozici přístup bez parametrů--nebo--výchozí konstruktor. Příklad:
+Klauzule může také zahrnovat `new()`omezení konstruktoru. `where` Toto omezení umožňuje vytvořit instanci parametru typu pomocí `new` operátoru. [Omezení New ()](new-constraint.md) umožňuje, aby kompilátor věděl, že libovolný zadaný argument typu musí mít přístupný parametr bez parametrů, nebo konstruktor default--. Příklad:
 
 [!code-csharp[using the new constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 
-`new()` Omezení, zobrazí se v poslední `where` klauzuli. `new()` Omezení nelze kombinovat s `struct` nebo `unmanaged` omezení. Všechny typy splňující tato omezení musí mít dostupný konstruktor bez parametrů, takže `new()` omezení redundantní.
+Omezení `new()` se`where` v klauzuli zobrazí jako poslední. Omezení nelze kombinovat `struct` s omezeními nebo `unmanaged`. `new()` Všechny typy vyhovující těmto omezením musí mít přístupný konstruktor bez parametrů, což omezení je `new()` redundantní.
 
-S více typy parametrů, použijte jednu `where` klauzule pro každý z parametrů typu, například:
+S více parametry typu použijte jednu `where` klauzuli pro každý parametr typu, například:
 
 [!code-csharp[using multiple where constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#6)]
 
-Můžete také připojit omezení k zadání parametrů Obecné metody, jak je znázorněno v následujícím příkladu:
+Omezení můžete také připojit k parametrům typu obecných metod, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#7)]
 
-Všimněte si, že syntaxe pro popis omezení parametru typu na delegáty je stejné jako u metod:
+Všimněte si, že syntaxe pro popis omezení parametrů typu na delegátech je stejná jako u metod:
 
 [!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#8)]
 
-Informace o obecných delegátů, naleznete v tématu [obecných delegátů](../../../csharp/programming-guide/generics/generic-delegates.md).
+Informace o obecných delegátech najdete v tématu [Obecné delegáty](../../../csharp/programming-guide/generics/generic-delegates.md).
 
-Podrobnosti o syntaxi a použití omezení najdete v tématu [omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).
+Podrobnosti o syntaxi a použití omezení naleznete v tématu [omezení u parametrů typu](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -65,7 +65,7 @@ Podrobnosti o syntaxi a použití omezení najdete v tématu [omezení parametr�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [C#Odkaz](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
 - [new – omezení](../../../csharp/language-reference/keywords/new-constraint.md)

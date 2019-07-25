@@ -5,115 +5,115 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: a776c3d4060b9ca291e4e919ab6ca33fb713434c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db7d6ec5663d657969e1508bd0b9f62c25e491b0
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051378"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484673"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
-Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru, které jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
+Toto téma poskytuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru používaných aplikacemi. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
 
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Přehled technologie  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, které vykreslují text, který má použít zařízení zobrazení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce a zajistit rozšířené čtení prostředí. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je software technologie vyvinutá společností [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] , který zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Liquid Crystal), například Notebook obrazovky, obrazovky v prostředí Pocket PC a monitorování plochý. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funguje díky přístupu do jednotlivých svislé barevné prvky stripe v každý pixel displeje. Další informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], naleznete v tématu [ClearType – přehled](cleartype-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace, které vykreslují text na zobrazovací zařízení, používají funkce technologie ClearType k zajištění vylepšeného prostředí pro čtení. ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely. Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Další informace o technologii ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
   
- Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] se může objevit výrazně liší při prohlížení na různá zobrazení zařízení. Například implementovat malý počet monitorů prvky stripe barvy v pořadí modrý, zelená, red spíše než běžné červená, zelená, modrá ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) pořadí.  
+ Text vykreslený pomocí technologie ClearType se může při zobrazení na různých displejích výrazně lišit. Například malý počet monitorů implementuje prvky barevného pruhu v modrém, zeleném a červeném pořadí, nikoli v běžnější červené, zelené, modré ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) objednávce.  
   
- Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] se může zobrazit i výrazně liší, při zobrazení jednotlivci s různými úrovněmi barva citlivosti. Některé jednotlivce dokáže rozpoznat mírné rozdíly v barva lepší než jiné.  
+ Text vykreslený pomocí technologie ClearType se může také výrazně lišit při prohlížení jednotlivci, kteří mají různou úroveň citlivosti barev. Někteří jednotlivci mohou detekovat mírné rozdíly v barvě lépe než jiné.  
   
- Ve všech těchto případech [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce je třeba upravit tak, aby poskytují to nejlepší prostředí pro čtení pro jednotlivé uživatele.  
+ V každém z těchto případů je potřeba upravit funkce technologie ClearType tak, aby poskytovaly nejlepší možnosti pro čtení jednotlivých jednotlivců.  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Nastavení registru  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Určuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Určuje čtyři nastavení registru pro řízení funkcí ClearType:  
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň|Popisuje úroveň [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] barva nejasnostem.|  
-|Funkce gamma úroveň|Popisuje úroveň složku barvy obrazových bodů pro zobrazovací zařízení.|  
-|Struktura pixelů|Popisuje uspořádání pixelů pro zobrazovací zařízení.|  
-|Úroveň kontrastu text|Popisuje úroveň kontrastu zobrazeného textu.|  
+|Úroveň ClearType|Popisuje úroveň srozumitelnosti barvy pro technologii ClearType.|  
+|Úroveň gamma|Popisuje úroveň složky pixel Color pro zobrazovací zařízení.|  
+|Pixel – struktura|Popisuje uspořádání pixelů pro zobrazovací zařízení.|  
+|Úroveň kontrastu textu|Popisuje úroveň kontrastu zobrazeného textu.|  
   
- Tato nastavení je možný přes externí konfigurační nástroj, který ví, jak odkazovat zjištěné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru. Tato nastavení také můžou vytvořit nebo upravit přístup k hodnoty přímo s použitím [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru.  
+ K těmto nastavením může mít přístup externí konfigurační nástroj, který ví, jak odkazovat na identifikované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nastavení registru ClearType. Tato nastavení lze také vytvořit nebo upravit přístupem k hodnotám přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] editoru registru.  
   
- Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru (což je výchozí stav), nejsou nastaveny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace dotazy [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] systému informace o parametrech pro font smoothing nastavení.  
+ Pokud nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] ClearType nejsou nastavená (což je výchozí stav), aplikace se dotazuje na informace o parametrech systému pro nastavení vyhlazení písma. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
   
 > [!NOTE]
->  Informace o vytváření výčtů zobrazované názvy zařízení, najdete v článku `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce.  
+>  Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
   
 <a name="ClearType_level"></a>   
-## <a name="cleartype-level"></a>ClearType – úrovně  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň umožňuje upravit vykreslení textu na základě citlivosti barvu a dojem jednotlivec. Několik jednotlivců, vykreslování textu, který používá [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] na nejvyšší úrovni nevytváří nejlepší prostředí pro čtení.  
+## <a name="cleartype-level"></a>Úroveň ClearType  
+ Úroveň ClearType umožňuje upravit vykreslování textu na základě citlivosti barev a vnímání jednotlivce. V případě některých jednotlivců neprodukuje vykreslování textu, který využívá technologii ClearType na nejvyšší úrovni, nejlepší možnosti pro čtení.  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň je celočíselnou hodnotu od 0 do 100. Výchozí úroveň je 100, což znamená, že [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá maximální funkce prvky stripe barev zobrazení zařízení. Ale [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň 0 generuje text jako šedé. Tím, že nastavíte [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úrovně někde mezi 0 a 100, můžete vytvořit pokročilou úroveň, který je vhodný pro jednotlivce barva citlivosti.  
+ Úroveň ClearType je celočíselná hodnota, která je v rozsahu od 0 do 100. Výchozí úroveň je 100, což znamená, že technologie ClearType používá maximální schopnost prvků barevného pruhu zobrazovacího zařízení. Úroveň technologie ClearType však 0 vykresluje text jako šedý stupnici. Nastavením úrovně ClearType v rozmezí od 0 do 100 můžete vytvořit pokročilou úroveň, která je vhodná pro Citlivost barvy jednotlivce.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň je nastavení jednotlivých uživatelů, která odpovídá názvu displeje konkrétního zařízení:  
+ Umístění nastavení registru pro úroveň ClearType je individuální uživatelské nastavení, které odpovídá určitému názvu zobrazovacího zařízení:  
   
  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `ClearTypeLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň.  
+ Pro každý zobrazovaný název zařízení pro uživatele `ClearTypeLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru pro úroveň ClearType.  
   
- ![ClearType – nastavení v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
+ ![Nastavení technologie ClearType v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslení textu v obou dvou režimech a nemusíte aplikace [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]. Když text je vykreslen bez [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], jsou označovány jako šedé vykreslování.  
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace vykreslí text v jednom z obou režimů s technologií ClearType a bez něj. Když se text vykresluje bez technologie ClearType, označuje se jako vykreslování v šedé škále.  
   
 <a name="gamma_level"></a>   
-## <a name="gamma-level"></a>Funkce gamma úroveň  
- Úroveň funkce gamma odkazuje na nelineárních vztah mezi hodnotami pixelů a světelnost. Nastavení úrovně gama by měl odpovídat fyzické charakteristiky zobrazovací zařízení; v opačném případě může dojít k narušení vykresleného výstupu. Například test může být příliš široké nebo příliš úzký, nebo barva třásněmi mohou zobrazit na okraji svislé kořeny glyphs.  
+## <a name="gamma-level"></a>Úroveň gamma  
+ Úroveň gamma odkazuje na nelineární vztah mezi hodnotou pixelu a světelností. Nastavení úrovně gamma by mělo odpovídat fyzickým charakteristikám zobrazovacího zařízení; v opačném případě může dojít k narušením vykresleného výstupu. Například test může být příliš velký nebo příliš úzký nebo se může zobrazit Barva olemování na hranách svislých stonků glyfů.  
   
- Úroveň funkce gamma je celočíselná hodnota od 1 000 až 2200. Výchozí úroveň je 1900.  
+ Úroveň gamma je celočíselná hodnota, která je v rozsahu od 1000 do 2200. Výchozí úroveň je 1900.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění funkce gamma úrovně registru je nastavení místního počítače, který odpovídá konkrétní zobrazovaný název zařízení:  
+ Umístění nastavení registru pro úroveň gamma je nastavení místního počítače, které odpovídá určitému názvu zobrazovacího zařízení:  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `GammaLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň funkce gamma.  
+ Pro každý zobrazovaný název zařízení pro uživatele `GammaLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru pro úroveň gamma.  
   
- ![ClearType – funkce gamma nastavení úrovně v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
+ ![Nastavení úrovně gamma technologie ClearType v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
 <a name="pixel_structure"></a>   
-## <a name="pixel-structure"></a>Struktura pixelů  
- Struktura pixel popisuje typ v pixelech, které tvoří zobrazovací zařízení. Struktura pixel je definován jako jeden ze tří typů:  
+## <a name="pixel-structure"></a>Pixel – struktura  
+ Struktura pixelu popisuje typ pixelů, ze kterého se tvoří zobrazovací zařízení. Struktura pixel je definována jako jeden ze tří typů:  
   
-|Type|Value|Popis|  
+|type|Value|Popis|  
 |----------|-----------|-----------------|  
-|Paušální|0|Zobrazovací zařízení nemá žádné struktura pixelů. To znamená, že zdroje světla u každé barvy jsou rovnoměrně v oblasti pixel – to se označuje jako šedé vykreslování. To je, jak se standardní zobrazí zařízení funguje. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nikdy použita na vykreslený text.|  
-|RGB|1|Zařízení má pixelů, které se skládají z tři pruhy v následujícím pořadí: červené, zelené a modré. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] platí pro vykreslený text.|  
-|BGR|2|Zařízení má pixelů, které se skládají z tři pruhy v následujícím pořadí: modrý, zelené a červený. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] platí pro vykreslený text. Všimněte si, jak je obrácený pořadí z typu RGB.|  
+|Kopie|0|Zobrazovací zařízení nemá strukturu pixelů. To znamená, že světlé zdroje pro každou barvu jsou rovnoměrně rozloženy v oblasti pixelů – to se označuje jako vykreslování v šedé škále. Toto je způsob, jakým funguje standardní zobrazovací zařízení. Technologie ClearType se pro vykreslený text nikdy nepoužívá.|  
+|RGB|1|Zobrazovací zařízení obsahuje pixely, které se skládají ze tří pruhů v následujícím pořadí: červená, zelená a modrá. Technologie ClearType se aplikuje na vykreslený text.|  
+|BGR|2|Zobrazovací zařízení obsahuje pixely, které se skládají ze tří pruhů v následujícím pořadí: modrá, zelená a červená. Technologie ClearType se aplikuje na vykreslený text. Všimněte si, jak je pořadí převráceno z typu RGB.|  
   
- Struktura pixel odpovídá na celočíselnou hodnotu od 0 do 2. Výchozí úroveň je 0, která reprezentuje strukturu plochých pixelů.  
+ Struktura pixelů odpovídá celočíselné hodnotě, která je v rozsahu od 0 do 2. Výchozí úroveň je 0, což představuje strukturu plochých pixelů.  
   
 > [!NOTE]
->  Informace o vytváření výčtů zobrazované názvy zařízení, najdete v článku `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce.  
+>  Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění pro strukturu pixel registru je nastavení místního počítače, který odpovídá názvu displeje konkrétního zařízení:  
+ Umístění nastavení registru pro strukturu pixelů je nastavení místního počítače, které odpovídá určitému názvu zobrazovacího zařízení:  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `PixelStructure` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro strukturu pixelů.  
+ Pro každý zobrazovaný název zařízení pro uživatele `PixelStructure` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru pro strukturu pixelů.  
   
- ![ClearType – funkce gamma nastavení úrovně v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
+ ![Nastavení úrovně gamma technologie ClearType v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
 <a name="text_contrast_level"></a>   
-## <a name="text-contrast-level"></a>Úroveň kontrastu text  
- Úroveň kontrastu text můžete upravit vykreslování textu podle šířky stem glyfů. Úroveň kontrastu text je celočíselnou hodnotu od 0 do 6 – Čím větší celočíselná hodnota, čím širší stem. Výchozí úroveň je 1.  
+## <a name="text-contrast-level"></a>Úroveň kontrastu textu  
+ Úroveň kontrastu textu umožňuje upravit vykreslování textu na základě šířky stonků glyfů. Úroveň kontrastu textu je celočíselná hodnota, která je v rozsahu od 0 do 6 – čím větší je celočíselná hodnota, tím širší je kmen. Výchozí úroveň je 1.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění pro úroveň kontrastu text registru je nastavení jednotlivých uživatelů, která odpovídá názvu displeje konkrétního zařízení:  
+ Umístění nastavení registru pro úroveň kontrastu textu je individuální uživatelské nastavení, které odpovídá určitému názvu zobrazovacího zařízení:  
   
  `HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `TextContrastLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň kontrastu text.  
+ Pro každý zobrazovaný název zařízení pro uživatele `TextContrastLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru pro úroveň kontrastu textu.  
   
- ![ClearType – nastavení v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
+ ![Nastavení technologie ClearType v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 ## <a name="see-also"></a>Viz také:
 
 - [ClearType – přehled](cleartype-overview.md)
-- [ClearType – vyhlazení](/windows/desktop/gdi/cleartype-antialiasing)
+- [Antialiasing ClearType](/windows/desktop/gdi/cleartype-antialiasing)

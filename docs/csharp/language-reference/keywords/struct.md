@@ -1,5 +1,5 @@
 ---
-title: struct – C# odkaz
+title: struktura – C# referenční informace
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 5317ea403575dca7ed64a5784fa9c993fa8d2f64
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 1f1c512e1995df07fc4b9e18e34a85119e270bda
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633850"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433773"
 ---
 # <a name="struct-c-reference"></a>struct (Referenční dokumentace jazyka C#)
 
-A `struct` typ je typ hodnoty, které se obvykle používá k zapouzdření malé skupiny příbuzných proměnných, jako je například souřadnice obdélník nebo vlastnosti položky v inventář. Následující příklad ukazuje deklaraci jednoduchá struktura:
+`struct` Typ je typ hodnoty, který se obvykle používá k zapouzdření malých skupin souvisejících proměnných, například souřadnicích obdélníku nebo vlastností položky v inventáři. Následující příklad ukazuje jednoduchou deklaraci struktury:
 
 ```csharp
 public struct Book
@@ -30,25 +30,25 @@ public struct Book
 
 ## <a name="remarks"></a>Poznámky
 
-Struktury mohou také obsahovat [konstruktory](../../programming-guide/classes-and-structs/constructors.md), [konstanty](../../programming-guide/classes-and-structs/constants.md), [pole](../../programming-guide/classes-and-structs/fields.md), [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [indexery](../../programming-guide/indexers/index.md), [operátory](../../programming-guide/statements-expressions-operators/operators.md), [události](../../programming-guide/events/index.md), a [vnořené typy](../../programming-guide/classes-and-structs/nested-types.md), i když je-li několik těchto členů jsou povinné, můžete Zvažte, Příprava vašeho typu třídy místo toho.
+Struktury mohou také obsahovat [konstruktory](../../programming-guide/classes-and-structs/constructors.md), [konstanty](../../programming-guide/classes-and-structs/constants.md), [pole](../../programming-guide/classes-and-structs/fields.md), [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [indexery](../../programming-guide/indexers/index.md), [operátory](../../programming-guide/statements-expressions-operators/operators.md), [události](../../programming-guide/events/index.md)a [vnořené typy](../../programming-guide/classes-and-structs/nested-types.md), i když je několik takových členů požadováno, měli byste zvážit, že místo toho napište třídu typu.
 
-Příklady najdete v tématu [pomocí struktury](../../programming-guide/classes-and-structs/using-structs.md).
+Příklady najdete v tématu [použití struktur](../../programming-guide/classes-and-structs/using-structs.md).
 
-Struktury můžou implementovat rozhraní, ale nemůže dědit z jiné struktury. Z tohoto důvodu členy struktury nelze deklarovat jako `protected`.
+Struktury můžou implementovat rozhraní, ale nemůžou dědit z jiné struktury. Z tohoto důvodu členy struktury nelze deklarovat jako `protected`.
 
 Další informace najdete v tématu [struktury](../../programming-guide/classes-and-structs/structs.md).
 
 ## <a name="examples"></a>Příklady
 
-Příklady a další informace najdete v tématu [pomocí struktury](../../programming-guide/classes-and-structs/using-structs.md).
+Příklady a další informace najdete v tématu [použití struktur](../../programming-guide/classes-and-structs/using-structs.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Příklady najdete v tématu [pomocí struktury](../../programming-guide/classes-and-structs/using-structs.md).
+Příklady najdete v tématu [použití struktur](../../programming-guide/classes-and-structs/using-structs.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Tabulka výchozích hodnot](default-values-table.md)

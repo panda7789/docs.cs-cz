@@ -6,24 +6,24 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 3cc8644a-34f3-4082-9ddc-77623e4df2d8
-ms.openlocfilehash: 390f63fca912de6de2a1349363e239eb603df549
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ee260d58cdb4dc971fc32ca5c889b459b6a48489
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750612"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484743"
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hostování obsahu Win32 v platformě WPF
 
 ## <a name="prerequisites"></a>Požadavky
 
-Zobrazit [WPF a systému Win32 vzájemná spolupráce grafického subsystému](wpf-and-win32-interoperation.md).
+Viz [spolupráce WPF a Win32](wpf-and-win32-interoperation.md).
 
-## <a name="a-walkthrough-of-win32-inside-windows-presentation-framework-hwndhost"></a>Názorný postup Win32 v rámci Windows Presentation Framework (HwndHost)
+## <a name="a-walkthrough-of-win32-inside-windows-presentation-framework-hwndhost"></a>Návod k Win32 v rámci Windows Presentation Framework (HwndHost)
 
-Pro opětovné použití [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] obsahu uvnitř [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, použijte <xref:System.Windows.Interop.HwndHost>, což je ovládací prvek, který umožňuje HWND vypadat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Jako <xref:System.Windows.Interop.HwndSource>, <xref:System.Windows.Interop.HwndHost> je jednoduché použití: jsou odvozeny z <xref:System.Windows.Interop.HwndHost> a implementovat `BuildWindowCore` a `DestroyWindowCore` metody, potom vytvořte instanci vaší <xref:System.Windows.Interop.HwndHost> odvozené třídy a umístěte ji uvnitř vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.
+Chcete- [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] li znovu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít obsah v <xref:System.Windows.Interop.HwndHost>aplikacích, použijte, což je ovládací prvek, který umožňuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , aby HWND vypadaly jako obsah. <xref:System.Windows.Interop.HwndSource> <xref:System.Windows.Interop.HwndHost> `BuildWindowCore` `DestroyWindowCore` [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Podobně jako <xref:System.Windows.Interop.HwndHost> je jednoduché použití: odvození z a implementace a metod, vytvoření instance odvozené třídy a její umístění uvnitř <xref:System.Windows.Interop.HwndHost> použití.
 
-Pokud vaše [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] logiky je už zabalené jako ovládací prvek, pak vaše `BuildWindowCore` implementace je poněkud složitější než volání `CreateWindow`. Například, chcete-li vytvořit [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ListBox – ovládací prvek v [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)]:
+Pokud je [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] vaše logika již zabalena jako ovládací prvek, je `BuildWindowCore` vaše implementace menší než volání `CreateWindow`. Například pro vytvoření [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ovládacího prvku ListBox v: C++
 
 ```cpp
 virtual HandleRef BuildWindowCore(HandleRef hwndParent) override {
@@ -46,29 +46,29 @@ virtual void DestroyWindowCore(HandleRef hwnd) override {
 }
 ```
 
-Předpokládejme, ale [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kód není úplně tak samostatná? Pokud ano, můžete vytvořit [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] dialogové okno pole a jeho obsah vložit do větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Tato ukázka vysvětluje to [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] a [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)], i když je také možné provést v jiném jazyce nebo na příkazovém řádku.
+Ale představte si, že [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kód není poměrně tak nezávislý? Pokud ano, můžete vytvořit [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] dialogové okno a vložit jeho obsah do větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Ukázka ukazuje tuto možnost v [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] a C++, i když je to možné, i v jiném jazyce nebo na příkazovém řádku.
 
-Začněte s jednoduchou dialog, který je zkompilován [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] projektu.
+Začněte jednoduchým dialogem, který se zkompiluje do C++ [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] projektu.
 
-V dalším kroku představovat dialogového okna na větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace:
+Dále zaveďte dialog do větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace:
 
-- Kompilace [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] jako spravovaný (`/clr`)
+- Zkompilovat jako spravovanou (`/clr`) [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]
 
-- Zapnout dialogového okna do ovládacího prvku
+- Přepněte dialog do ovládacího prvku.
 
-- Definice třídy odvozené z <xref:System.Windows.Interop.HwndHost> s `BuildWindowCore` a `DestroyWindowCore` metody
+- Definování odvozené třídy <xref:System.Windows.Interop.HwndHost> s `BuildWindowCore` metodami a `DestroyWindowCore`
 
-- Přepsat `TranslateAccelerator` metodu ke zpracování dialogové okno klíče
+- Přepsat `TranslateAccelerator` metodu pro zpracování klíčů dialogových oken
 
-- Přepsat `TabInto` metoda k podpoře tabulátoru
+- Přepsat `TabInto` metodu pro podporu tabulátorů
 
-- Přepsat `OnMnemonic` metody pro podporu klávesových zkratek
+- Přepsat `OnMnemonic` metodu pro podporu symbolických instrukcí
 
-- Vytvoření instance <xref:System.Windows.Interop.HwndHost> podtřídy a vložte ji pod vpravo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] – element
+- Vytvoření instance podtřídy a její umístění pod pravým [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prvkem <xref:System.Windows.Interop.HwndHost>
 
-### <a name="turn-the-dialog-into-a-control"></a>Zapnout dialogového okna do ovládacího prvku
+### <a name="turn-the-dialog-into-a-control"></a>Přepněte dialog do ovládacího prvku.
 
-Proměňte dialogového okna na podřízené HWND pomocí WS_CHILD a DS_CONTROL stylů. Přejděte do souboru prostředků (.rc), kde je definován dialogového okna a najít začátek definici dialogového okna:
+Můžete změnit dialogové okno na podřízeného HWND pomocí stylů WS_CHILD a DS_CONTROL. Přejít do souboru prostředků (. RC), kde je dialogové okno definováno, a najít začátek definice dialogového okna:
 
 ```
 IDD_DIALOG1 DIALOGEX 0, 0, 303, 121
@@ -81,9 +81,9 @@ Změňte druhý řádek na:
 STYLE DS_SETFONT | WS_CHILD | WS_BORDER | DS_CONTROL
 ```
 
-Tato akce není balíček plně ho do samostatné ovládacího prvku; je stále potřeba volat `IsDialogMessage()` tak [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] může zpracovat některé zprávy, ale poskytuje jednoduchý způsob, jak umístění těchto ovládacích prvků uvnitř jiného HWND Změna ovládacího prvku.
+Tato akce zcela nebalí do samostatného ovládacího prvku. Přesto je nutné volat `IsDialogMessage()` , aby bylo [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] možné zpracovat určité zprávy, ale změna ovládacího prvku poskytuje jednoduchý způsob, jak umístit tyto ovládací prvky do jiného prvku HWND.
 
-## <a name="subclass-hwndhost"></a>HwndHost podtřídy
+## <a name="subclass-hwndhost"></a>HwndHost podtříd
 
 Importujte následující obory názvů:
 
@@ -98,7 +98,7 @@ namespace ManagedCpp
     using namespace System::Runtime::InteropServices;
 ```
 
-Vytvořte třídu odvozenou z <xref:System.Windows.Interop.HwndHost> a přepsat `BuildWindowCore` a `DestroyWindowCore` metody:
+Pak vytvořte odvozenou třídu třídy <xref:System.Windows.Interop.HwndHost> a `BuildWindowCore` přepište metody `DestroyWindowCore` a:
 
 ```cpp
 public ref class MyHwndHost : public HwndHost, IKeyboardInputSink {
@@ -120,7 +120,7 @@ public ref class MyHwndHost : public HwndHost, IKeyboardInputSink {
         }
 ```
 
-Zde použijete `CreateDialog` vytvořit dialogové okno, které je ve skutečnosti ovládací prvek. Protože to je jedna z prvních metod volat [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)], by měl také provést některé standardní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] inicializace voláním funkce budou definovat později, volá `InitializeGlobals()`:
+Zde můžete použít `CreateDialog` k vytvoření dialogového okna, které je skutečně ovládacím prvkem. Vzhledem k tomu, že se jedná o jednu z prvních [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]metod, které jsou volány v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] rámci, měli byste také provést několik standardních inicializací voláním funkce, kterou budete definovat později, s názvem `InitializeGlobals()`:
 
 ```cpp
 bool initialized = false;
@@ -138,9 +138,9 @@ bool initialized = false;
         MyRegisterClass(hInstance);
 ```
 
-### <a name="override-translateaccelerator-method-to-handle-dialog-keys"></a>Potlačí metodu TranslateAccelerator za účelem zpracování dialogové okno klíče
+### <a name="override-translateaccelerator-method-to-handle-dialog-keys"></a>Přepsat metodu TranslateAccelerator pro zpracování klíčů dialogových oken
 
-Pokud jste spustili této ukázce nyní, získali byste ovládací prvek dialogového okna, která zobrazuje, ale ho by Přeskakovat vše klávesnice zpracování této vytvoří dialogové okno funkční dialogového okna. Teď byste měli přepsat `TranslateAccelerator` implementace (které pochází z `IKeyboardInputSink`, rozhraní, který <xref:System.Windows.Interop.HwndHost> implementuje). Tato metoda volána, když aplikace obdrží WM_KEYDOWN a WM_SYSKEYDOWN.
+Pokud jste teď spustili tuto ukázku, měli byste obdržet ovládací prvek dialog, který se zobrazí, ale bude ignorovat všechny funkce pro zpracování klávesnice, které vytvoří dialogové okno s funkčním seznamem. Nyní byste měli přepsat `TranslateAccelerator` implementaci (která pochází z `IKeyboardInputSink`rozhraní, které <xref:System.Windows.Interop.HwndHost> implementuje). Tato metoda se volá, když aplikace získá WM_KEYDOWN a WM_SYSKEYDOWN.
 
 ```cpp
 #undef TranslateAccelerator
@@ -193,15 +193,15 @@ Pokud jste spustili této ukázce nyní, získali byste ovládací prvek dialogo
         }
 ```
 
-To je velké množství kódu v jednu část, protože může využívat některé podrobnější vysvětlení. První, kód s využitím [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] a [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] makra; co potřebujete vědět, že už existuje s názvem makra `TranslateAccelerator`, který je definován v winuser:
+Toto je spousta kódu v jednom kusu, takže by mohla používat podrobnější vysvětlení. Nejprve kód pomocí C++ a C++ makra; je nutné si uvědomit, že již existuje makro s názvem `TranslateAccelerator`, které je definováno v Winuser. h:
 
 ```cpp
 #define TranslateAccelerator  TranslateAcceleratorW
 ```
 
-Tak definovat `TranslateAccelerator` – metoda a ne `TranslateAcceleratorW` metoda.
+Proto je nutné definovat `TranslateAccelerator` metodu a `TranslateAcceleratorW` nikoli metodu.
 
-Podobně je spravované i nespravované winuser MSG `Microsoft::Win32::MSG` struktury. Můžete odstranit nejednoznačnost mezi nimi pomocí [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] `::` operátor.
+Podobně platí, že se jedná o nespravovanou Winuser. h MSG a `Microsoft::Win32::MSG` spravovanou strukturu. C++ Pomocí`::` operátoru můžete odstranit nejednoznačnost mezi dvěma.
 
 ```cpp
 virtual bool TranslateAccelerator(System::Windows::Interop::MSG% msg,
@@ -231,7 +231,7 @@ Both MSGs have the same data, but sometimes it is easier to work with the unmana
 }
 ```
 
-Zpět na `TranslateAccelerator`. Základním principem je volání [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce `IsDialogMessage` tolik práci nejvíce, ale `IsDialogMessage` nemá přístup k ničemu mimo dialogového okna. Na kartě uživatele kolem dialogové okno, při procházení tabulátorem běží za poslední ovládací prvek v našich dialogového okna, je potřeba nastavit fokus na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] část voláním `IKeyboardInputSite::OnNoMoreStops`.
+Zpět na `TranslateAccelerator`. Základní princip je zavolat [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci `IsDialogMessage` , aby co nejvíce fungovala, ale `IsDialogMessage` nemá přístup k cokoli mimo dialog. Jako karta uživatele kolem dialogu, když se na kartách spouští poslední ovládací prvek v našem dialogu, musíte nastavit fokus na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] část voláním. `IKeyboardInputSite::OnNoMoreStops`
 
 ```cpp
 // Win32's IsDialogMessage() will handle most of the tabbing, but doesn't know
@@ -253,7 +253,7 @@ if (m.message == WM_KEYDOWN && m.wParam == VK_TAB) {
 }
 ```
 
-Nakonec proveďte volání `IsDialogMessage`. Jeden odpovědnosti `TranslateAccelerator` sděluje metoda [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Určuje, zda stisknutí kláves zpracována či nikoli. Pokud jste se nepodařilo zpracovat, můžete tunelového propojení událost vstupu a bubliny procházení zbývající části aplikace. Tady bude vystavovat datového toku zvuku nabízí messange zpracování klávesnice a povaze architektura vstupu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. Bohužel `IsDialogMessage` nevrací žádným způsobem, zda zpracovává konkrétní stisk klávesy. Ještě hůř, bude volat `DispatchMessage()` na stisknutí kláves by nemělo vyřizovat!  Proto budete muset provést zpětnou analýzu `IsDialogMessage`a pouze volání pro klíče, můžete ji znát zpracuje:
+Nakonec zavolejte `IsDialogMessage`. Jedna z odpovědností `TranslateAccelerator` metody ale oznamuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , zda jste vypustili klávesovou zkratku nebo ne. Pokud jste ho nezpracovali, vstupní událost může být tunelem a bublinou prostřednictvím zbytku aplikace. Tady vystavíte quirki zpracování messange klávesnice a povahu vstupní architektury v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. `IsDialogMessage` Bohužel nevrátí žádný způsob, zda zpracuje konkrétní klávesovou zkratku. Ještě horší voláním `DispatchMessage()` na stisknutí kláves by nemělo být zpracováno!  Proto budete muset provést zpětnou analýzu `IsDialogMessage`a volat ji jenom pro klíče, které víte, že budou pracovat:
 
 ```cpp
 // Only call IsDialogMessage for keys it will do something with.
@@ -276,9 +276,9 @@ if (msg.message == WM_SYSKEYDOWN || msg.message == WM_KEYDOWN) {
     }
 ```
 
-### <a name="override-tabinto-method-to-support-tabbing"></a>Potlačí metodu TabInto pro podporu tabulátor
+### <a name="override-tabinto-method-to-support-tabbing"></a>Přepsat metodu TabInto pro podporu tabulátorů
 
-Teď, když jste implementovali `TranslateAccelerator`, uživatel může kartě kolem v dialogovém okně pole a karty z ní do větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Ale uživatel nemůže kartě zpět do dialogového okna. Chcete-li to vyřešit, přepište `TabInto`:
+Teď, když jste nasadili `TranslateAccelerator`, uživatel může kolem dialogového okna a tabulátoru být v rámci větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace tabulátor. Uživatel ale nemůže kartu zpátky do dialogového okna. Chcete-li tento problém vyřešit `TabInto`, přepíšete:
 
 ```cpp
 public:
@@ -295,11 +295,11 @@ public:
     }
 ```
 
-`TraversalRequest` Parametr zjistíte, jestli akce karta je karta nebo shift tab.
+`TraversalRequest` Parametr oznamuje, zda je akce karty karta nebo klávesa SHIFT.
 
-### <a name="override-onmnemonic-method-to-support-mnemonics"></a>Potlačí metodu OnMnemonic za účelem podpory klávesových zkratek
+### <a name="override-onmnemonic-method-to-support-mnemonics"></a>Přepsat metodu s podporou symbolických instrukcí
 
-Zpracování pomocí klávesnice je skoro hotová, ale je jedna věc, kterou chybí – klávesových zkratek, nebudou fungovat. Pokud uživatel stiskne klávesu alt-F, doe fokus není přejít "křestní jméno:" upravit pole. Přepíšete tak, `OnMnemonic` metody:
+Zpracování klávesnice je skoro hotové, ale chybí jedna věc – symbolické symboly nefungují. Pokud uživatel stiskne ALT-F, fokus fokusu neskočí do textového pole "first name:". Proto přepíšete `OnMnemonic` metodu:
 
 ```cpp
 virtual bool OnMnemonic(System::Windows::Interop::MSG% msg, ModifierKeys modifiers) override {
@@ -329,11 +329,11 @@ virtual bool OnMnemonic(System::Windows::Interop::MSG% msg, ModifierKeys modifie
 };
 ```
 
-Případně proč bezpečná není volání `IsDialogMessage` tady?  Budete mít stejný problém před – potřebujete mít možnost informovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kódu, jestli váš kód zpracovává stisk klávesy nebo Ne, a `IsDialogMessage` nemůžete udělat. Existuje problém také druhý, protože `IsDialogMessage` odmítne zpracovat symbol, pokud není cílené HWND v dialogovém okně.
+Proč se sem `IsDialogMessage` nevolá?  Máte stejný problém jako předtím – musíte být schopni informovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kód o tom, jestli kód zpracoval klávesovou zkratku, a `IsDialogMessage` nemůže to udělat. Dojde také k druhému problému, protože `IsDialogMessage` odmítnutí zpracování instrukcí, pokud fokus HWND není uvnitř dialogového okna.
 
-### <a name="instantiate-the-hwndhost-derived-class"></a>Vytvoření instance HwndHost odvozené třídy
+### <a name="instantiate-the-hwndhost-derived-class"></a>Vytvoření instance odvozené třídy HwndHost
 
-A konečně, teď, když všechny klíče a kartu podporu na místě, můžete umístit vaše <xref:System.Windows.Interop.HwndHost> do větší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Pokud je hlavní aplikace napsané v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nejjednodušší způsob, jak vložit na správném místě je ponechat prázdnou <xref:System.Windows.Controls.Border> elementu, kam chcete umístit <xref:System.Windows.Interop.HwndHost>. Zde můžete vytvořit <xref:System.Windows.Controls.Border> s názvem `insertHwndHostHere`:
+Nakonec, když je teď všechna podpora klíče a karty, můžete do větší <xref:System.Windows.Interop.HwndHost> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace umístit své místo. Je-li hlavní aplikace napsána v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]nástroji, nejjednodušší způsob, jak ji umístit do správného místa, je opustit prázdný <xref:System.Windows.Controls.Border> prvek, kam chcete vložit <xref:System.Windows.Interop.HwndHost>. Tady vytvoříte <xref:System.Windows.Controls.Border> název `insertHwndHostHere`:
 
 ```xaml
 <Window x:Class="WPFApplication1.Window1"
@@ -350,7 +350,7 @@ A konečně, teď, když všechny klíče a kartu podporu na místě, můžete u
 </Window>
 ```
 
-Pak už jen zbývá k vyhledání vhodné místo v pořadí kód k vytvoření instance <xref:System.Windows.Interop.HwndHost> a propojte jej s <xref:System.Windows.Controls.Border>. V tomto příkladu je zařadí ho uvnitř konstruktoru pro <xref:System.Windows.Window> odvozené třídy:
+Pak vše zůstává k nalezení vhodného místa v sekvenci kódu pro vytvoření instance <xref:System.Windows.Interop.HwndHost> a připojení <xref:System.Windows.Controls.Border>k. V tomto příkladu se umístí do konstruktoru pro <xref:System.Windows.Window> odvozenou třídu:
 
 ```csharp
 public partial class Window1 : Window {
@@ -364,9 +364,9 @@ public partial class Window1 : Window {
 }
 ```
 
-– Umožňuje:
+Díky tomu máte následující:
 
-![Snímek obrazovky spuštěné aplikace WPF.](./media/hosting-win32-content-in-wpf/windows-presentation-foundation-application.png)
+![Snímek obrazovky aplikace WPF spuštěné.](./media/hosting-win32-content-in-wpf/windows-presentation-foundation-application.png)
 
 ## <a name="see-also"></a>Viz také:
 
