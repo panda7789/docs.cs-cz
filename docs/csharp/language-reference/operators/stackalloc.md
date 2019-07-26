@@ -6,54 +6,56 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: 3be4e827e75e4e26a34d9ed70423af5aa317e7fb
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: f211acaa8c47ab42a1f7f06cff6c35570cd22b75
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025003"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433832"
 ---
-# <a name="stackalloc-operator-c-reference"></a>operátor stackalloc (C# odkaz)
+# <a name="stackalloc-operator-c-reference"></a>stackalloc – operátorC# (Referenční dokumentace)
 
-`stackalloc` Operátor přiděluje blok paměti v zásobníku. Zásobníku přidělený blok paměti, vytvořené během provádění metody se automaticky zruší po návratu tato metoda. Nelze explicitně uvolnit paměť alokována `stackalloc` operátor. Blok paměti přidělené zásobník není podléhají [uvolňování](../../../standard/garbage-collection/index.md) a nemusí být připojená s [ `fixed` příkaz](../keywords/fixed-statement.md).
+`stackalloc` Operátor přiděluje blok paměti v zásobníku. Blok paměti přidělený zásobníkem, který byl vytvořen během provádění metody, je automaticky zahozen při návratu této metody. Nemůžete explicitně uvolnit paměť přidělenou `stackalloc` operátorem. Blok paměti přidělený zásobníku nepodléhá uvolňování [](../../../standard/garbage-collection/index.md) paměti a nemusí být připnutý s [ `fixed` příkazem](../keywords/fixed-statement.md).
 
-Můžete přiřadit výsledek `stackalloc` operátor proměnné jednu z následujících typů:
+Ve výrazu `stackalloc T[E]` `int` [](../builtin-types/unmanaged-types.md) `E` musí být nespravovaný typ a musí to být výraz typu. `T`
 
-- Počínaje C# 7.2, <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, jak je vidět v následujícím příkladu:
+Výsledek `stackalloc` operátoru můžete přiřadit proměnné jednoho z následujících typů:
+
+- Počínaje C# 7,2, <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, jak ukazuje následující příklad:
 
   [!code-csharp[stackalloc span](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToSpan)]
 
-  Není nutné používat [nebezpečné](../keywords/unsafe.md) kontextu při přiřazování zásobníku přidělený blok paměti k <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601> proměnné.
+  Nemusíte používat nezabezpečený kontext, když přiřadíte blok paměti přidělené zásobníku <xref:System.Span%601> k <xref:System.ReadOnlySpan%601> proměnné nebo. [](../keywords/unsafe.md)
 
-  Při práci s těmito typy, můžete použít `stackalloc` výrazu v [podmíněného](conditional-operator.md) nebo výrazy přiřazení, jak ukazuje následující příklad:
+  Při práci s těmito typy můžete použít `stackalloc` výraz ve výrazech [podmíněného](conditional-operator.md) nebo přiřazení, jak ukazuje následující příklad:
 
   [!code-csharp[stackalloc expression](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AsExpression)]
 
   > [!NOTE]
-  > Doporučujeme používat <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601> typy pro práci s zásobníku přidělenou paměť, kdykoli je to možné.
+  > Pokud je to <xref:System.Span%601> možné <xref:System.ReadOnlySpan%601> , doporučujeme používat typy nebo pro práci s přidělenou pamětí zásobníku.
 
-- A [typ ukazatele](../../programming-guide/unsafe-code-pointers/pointer-types.md), jak je vidět v následujícím příkladu:
+- [Typ ukazatele](../../programming-guide/unsafe-code-pointers/pointer-types.md), jak ukazuje následující příklad:
 
   [!code-csharp[stackalloc pointer](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToPointer)]
 
-  Jak ukazuje předchozí příklad, musíte použít `unsafe` kontextu při práci s typy ukazatelů.
+  Jak ukazuje předchozí příklad, je nutné použít `unsafe` kontext při práci s typy ukazatelů.
 
-Obsah nově přidělenou paměť není definován. Počínaje C# 7.3, můžete použít syntaxi inicializátoru pole definovat obsah nově přidělenou paměť. Následující příklad ukazuje různé způsoby, jak to udělat:
+Obsah nově přidělené paměti není definován. Počínaje C# 7,3 můžete použít syntaxi inicializátoru pole k definování obsahu nově přidělené paměti. Následující příklad ukazuje různé způsoby, jak to provést:
 
 [!code-csharp[stackalloc initialization](~/samples/csharp/language-reference/operators/StackallocOperator.cs#StackallocInit)]
 
 ## <a name="security"></a>Zabezpečení
 
-Použití `stackalloc` automaticky povoluje funkce detekce přetečení vyrovnávací paměti v modulu common language runtime (CLR). Pokud se zjistí přetečení vyrovnávací paměti, co nejrychleji, chcete-li minimalizovat pravděpodobnost, že je proveden škodlivý kód ukončení procesu.
+V modulu CLR `stackalloc` (Common Language Runtime) se použití funkce automaticky zapne k detekci přetečení vyrovnávací paměti. Pokud se zjistí přetečení vyrovnávací paměti, proces se ukončí co nejrychleji, aby se minimalizovala pravděpodobnost spuštění škodlivého kódu.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [zásobníku přidělení](~/_csharplang/spec/unsafe-code.md#stack-allocation) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [alokace zásobníku](~/_csharplang/spec/unsafe-code.md#stack-allocation) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Ukazatel související s operátory](pointer-related-operators.md)
+- [Operátory související s ukazateli](pointer-related-operators.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy související s Memory a Span](../../../standard/memory-and-spans/index.md)

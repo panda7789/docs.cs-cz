@@ -1,5 +1,5 @@
 ---
-title: C#Operators – C# odkaz
+title: C#operátory – C# referenční informace
 ms.date: 04/30/2019
 f1_keywords:
 - cs.operators
@@ -18,208 +18,208 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 0639becb1620daf7d457995392d134d40b90e826
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
-ms.translationtype: MT
+ms.openlocfilehash: b6a1cc3ced3205037eb5b83ac3841efbfbd1b5b9
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68235946"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331213"
 ---
-# <a name="c-operators-c-reference"></a>C#operátory (C# odkaz)
+# <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
-C#poskytuje řadu předdefinovaných operátory podporovaných předdefinovaných typů. Například [aritmetické operátory](arithmetic-operators.md) provádění aritmetických operací s operandy předdefinovaných číselných typů a [logické logické operátory](boolean-logical-operators.md) provádí logické operace s [bool ](../keywords/bool.md) operandy.
+C#poskytuje několik předdefinovaných operátorů podporovaných integrovanými typy. Například aritmetické [operátory](arithmetic-operators.md) provádějí aritmetické operace s operandy předdefinovaných číselných typů a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s logickými [operandy](../keywords/bool.md) .
 
-Uživatelem definovaný typ může přetížit některé operátory definovat odpovídající chování pro operandy typu. Další informace najdete v tématu [přetížení operátoru](operator-overloading.md).
+Uživatelsky definovaný typ může přetížit určité operátory pro definování odpovídajícího chování pro operandy daného typu. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
 
-Následující části seznamu C# operátory od nejvyšší prioritu, takže nejnižší. Operátory v jednotlivých částech sdílet stejnou úrovní priority.
+V následujících částech jsou uvedeny C# operátory začínající nejvyšší prioritou na nejnižší. Operátory v jednotlivých oddílech sdílí stejnou úroveň priority.
 
 ## <a name="primary-operators"></a>Primární operátory
 
-Jedná se o nejvyšší priorita operátorů.
+Toto jsou operátory s nejvyšší prioritou.
 
-[x.y](member-access-operators.md#member-access-operator-) – přístup ke členu.
+[x. y](member-access-operators.md#member-access-operator-) – přístup ke členu
 
-[x?. y](member-access-operators.md#null-conditional-operators--and-) – přístup Podmíněný člen s hodnotou null. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
+[x?. y](member-access-operators.md#null-conditional-operators--and-) – null přístup podmíněného člena. Vrátí `null` , zda je na levé straně operand vyhodnocen `null`.
 
-[x? [y] ](member-access-operators.md#null-conditional-operators--and-) – prvek Podmíněné pole s hodnotou null, nebo zadejte přístup indexeru. Vrátí `null` pokud levý operand je vyhodnocen jako `null`.
+[x? [y]](member-access-operators.md#null-conditional-operators--and-) – podmíněný element pole nebo typ přístupu indexeru typu null. Vrátí `null` , zda je na levé straně operand vyhodnocen `null`.
 
-[f(x)](member-access-operators.md#invocation-operator-) – metoda volání nebo vyvolání delegáta.
+[f (x)](member-access-operators.md#invocation-operator-) – volání metody nebo volání delegáta.
 
-[&#91;x&#93; ](member-access-operators.md#indexer-operator-) – element pole nebo typ přístup indexeru.
+přístup k elementu [&#91;x&#93; ](member-access-operators.md#indexer-operator-) -Array nebo k indexeru typů.
 
-[x ++](arithmetic-operators.md#increment-operator-) – Příponové operátory Inkrementace. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden znak větší (obvykle přidá na celé číslo 1).
+[x + +](arithmetic-operators.md#increment-operator-) – přírůstek přípony Vrátí hodnotu x a poté aktualizuje umístění úložiště hodnotou x, která je jedna větší (obvykle přidá celé číslo 1).
 
-[x--](arithmetic-operators.md#decrement-operator---) – snížení příponového operátora. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden méně (obvykle odečte 1 na celé číslo).
+[x--](arithmetic-operators.md#decrement-operator---) – – snížení přípony Vrátí hodnotu x a poté aktualizuje umístění úložiště hodnotou x, která je menší (obvykle se odečte celé číslo 1).
 
-[nové](new-operator.md) – typ vytváření instancí.
+[nové](new-operator.md) – vytvoření instance typu.
 
 [typeof](type-testing-and-conversion-operators.md#typeof-operator) – vrátí <xref:System.Type> objekt představující operand.
 
-[checked](../keywords/checked.md) – umožňuje pro celočíselné operace kontroly přetečení.
+[checked](../keywords/checked.md) – povolí kontrolu přetečení pro celočíselné operace.
 
-[unchecked](../keywords/unchecked.md) – zakáže pro celočíselné operace kontroly přetečení. Toto je výchozí chování kompilátoru.
+[nezaškrtnuto](../keywords/unchecked.md) – zakáže kontrolu přetečení pro celočíselné operace. Toto je výchozí chování kompilátoru.
 
-[Default(T)](../../programming-guide/statements-expressions-operators/default-value-expressions.md) – vytvoří výchozí hodnotu typu T.
+[Default (T)](../../programming-guide/statements-expressions-operators/default-value-expressions.md) – vytvoří výchozí hodnotu typu T.
 
-[nameof](nameof.md) -získá jednoduchého (nekvalifikovaného) název proměnné, typ nebo člena jako konstanty typu řetězec.
+[nameof](nameof.md) – získá jednoduchý (nekvalifikovaný) název proměnné, typu nebo členu jako konstantní řetězec.
 
-[Delegovat](../../programming-guide/statements-expressions-operators/anonymous-methods.md) – deklaruje a vrátí instanci delegáta.
+[Delegate](delegate-operator.md) – deklaruje a vrátí instanci delegáta.
 
-[operátor sizeof:](../keywords/sizeof.md) – vrátí velikost v bajtech typ operandu.
+[sizeof](../keywords/sizeof.md) – vrátí velikost operandu typu v bajtech.
 
-[stackalloc](stackalloc.md) -přiděluje blok paměti v zásobníku.
+[stackalloc](stackalloc.md) – přidělí blok paměti v zásobníku.
 
-[->](pointer-related-operators.md#pointer-member-access-operator--) – dereferenci ukazatele v kombinaci s přístup ke členu.
+[->](pointer-related-operators.md#pointer-member-access-operator--)– nepřímý odkaz v kombinaci s přístupem členů.
 
 ## <a name="unary-operators"></a>Unární operátory
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
 [+ x](addition-operator.md) – vrátí hodnotu x.
 
-[-x](subtraction-operator.md) – číselné negace.
+[-x](subtraction-operator.md) – číselná negace.
 
-[\!x](boolean-logical-operators.md#logical-negation-operator-) – Logická negace.
+x – logická negace. [ \!](boolean-logical-operators.md#logical-negation-operator-)
 
-[~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-) – bitového doplňku.
+[~ ×](bitwise-and-shift-operators.md#bitwise-complement-operator-) – bitový doplněk.
 
-[++ x](arithmetic-operators.md#increment-operator-) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je větší (obvykle přidá na celé číslo 1).
+[+ + x](arithmetic-operators.md#increment-operator-) – přírůstek předpony. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je jedna větší (obvykle přidá celé číslo 1).
 
-[--x](arithmetic-operators.md#decrement-operator---) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x je jeden méně (obvykle odečte 1 na celé číslo).
+[--x](arithmetic-operators.md#decrement-operator---) – snížení předpony. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je o jednu méně (obvykle odečte celé číslo 1).
 
-[(T) x](type-testing-and-conversion-operators.md#cast-operator-) – typ přetypování.
+[(T) x](type-testing-and-conversion-operators.md#cast-operator-) – přetypování typu.
 
-[operátor await](../keywords/await.md) – čeká `Task`.
+[await](../keywords/await.md) – čeká na `Task`.
 
-[& x](pointer-related-operators.md#address-of-operator-) – adresy proměnné.
+[& x](pointer-related-operators.md#address-of-operator-) – adresa proměnné.
 
-[* x](pointer-related-operators.md#pointer-indirection-operator-) – dereferenci ukazatele nebo přístup přes ukazatel.
+[* x](pointer-related-operators.md#pointer-indirection-operator-) – indirekce ukazatele nebo přereference.
 
-[True – – operátor](true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand.
+[true – operátor](true-false-operators.md) – vrátí [](../keywords/bool.md) logickou `true` hodnotu pro indikaci, že operand má jednoznačně hodnotu true.
 
-[false – – operátor](true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false.
+[false – operátor](true-false-operators.md) – vrátí [](../keywords/bool.md) logickou `true` hodnotu pro indikaci, že operand je jednoznačně nepravdivý.
 
 ## <a name="multiplicative-operators"></a>Operátory násobení
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
 [x * y](arithmetic-operators.md#multiplication-operator-) – násobení.
 
-[x a y](arithmetic-operators.md#division-operator-) – dělení. Pokud jsou operandy celých čísel, výsledek je celé číslo zkráceno směrem k nule (například `-7 / 2 is -3`).
+[x/y](arithmetic-operators.md#division-operator-) – dělení. Pokud jsou operandy celé číslo, výsledkem je celé číslo, které je zkráceno směrem k nule ( `-7 / 2 is -3`například).
 
-[x, % y](arithmetic-operators.md#remainder-operator-) – zbytek. Pokud jsou operandy celých čísel, vrátí zbytek dělicí x y.  Pokud `q = x / y` a `r = x % y`, pak `x = q * y + r`.
+[x% y](arithmetic-operators.md#remainder-operator-) – zbytek Pokud jsou operandy celé číslo, vrátí zbytek dělení x hodnotou y.  Pokud `q = x / y` a `r = x % y`, potom `x = q * y + r`.
 
 ## <a name="additive-operators"></a>Operátory sčítání
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
 [x + y](arithmetic-operators.md#addition-operator-) – přidání.
 
-[x-y](arithmetic-operators.md#subtraction-operator--) – odčítání.
+[x – y](arithmetic-operators.md#subtraction-operator--) – odčítání.
 
 ## <a name="shift-operators"></a>Operátory posunutí
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x <\< y](bitwise-and-shift-operators.md#left-shift-operator-) – posunutí bitů doleva a vyplnit nula na pravé straně.
+[x <\< y](bitwise-and-shift-operators.md#left-shift-operator-) – klávesy SHIFT vlevo a na pravé straně se vyplní nula.
 
-[x >> y](bitwise-and-shift-operators.md#right-shift-operator-) – posunutí bitů doprava. Pokud levý operand `int` nebo `long`, pak levé bity jsou vyplněny na bit znaménka. Pokud levý operand `uint` nebo `ulong`, pak levé bity jsou vyplněny hodnotou nula.
+[x > > y](bitwise-and-shift-operators.md#right-shift-operator-) – Shift + šipka doprava. Pokud je `int` levý operand nebo `long`, pak jsou levé bity vyplněny znaménkem. Pokud je `uint` levý operand nebo `ulong`, pak jsou levé bity vyplněny nulou.
 
-## <a name="relational-and-type-testing-operators"></a>Operátory relační a typové zkoušky
+## <a name="relational-and-type-testing-operators"></a>Relační operátory a operátory testování typů
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x \< y](comparison-operators.md#less-than-operator-) – menší než (true, pokud x je menší než y).
+[ x\< y](comparison-operators.md#less-than-operator-) – menší než (true, pokud je x menší než y).
 
-[x > y](comparison-operators.md#greater-than-operator-) – větší než (true, pokud x je větší než y).
+[x > y](comparison-operators.md#greater-than-operator-) – větší než (true, pokud je x větší než y).
 
-[x \<= y](comparison-operators.md#less-than-or-equal-operator-) – menší než nebo rovno.
+[ x\<= y](comparison-operators.md#less-than-or-equal-operator-) – je menší nebo rovno.
 
-[x > = y](comparison-operators.md#greater-than-or-equal-operator-) – větší než nebo rovna hodnotě.
+[x > = y](comparison-operators.md#greater-than-or-equal-operator-) – je větší než nebo rovno.
 
-[je](type-testing-and-conversion-operators.md#is-operator) – typ kompatibility. Vrátí `true` Pokud vyhodnocený levý operand může být převeden na typ určený pravého operandu.
+[je](type-testing-and-conversion-operators.md#is-operator) – kompatibilita typů. Vrátí `true` , zda je možné vyhodnocený levý operand přetypovat na typ zadaný pomocí pravého operandu.
 
-[jako](type-testing-and-conversion-operators.md#as-operator) – převod typu. Vrátí levý operand přetypování na typ určený pravý operand, ale `as` vrátí `null` kde `(T)x` by vyvolat výjimku.
+převod [jako](type-testing-and-conversion-operators.md#as-operator) – typ. Vrátí levý operand přetypování na typ určený pravý operandem, ale `as` vrátí `null` , kde `(T)x` by vyvolala výjimku.
 
 ## <a name="equality-operators"></a>Operátory rovnosti
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x == y](equality-operators.md#equality-operator-) – rovnosti. Ve výchozím nastavení, pro referenční typy jiné než `string`tento vrátí referenční rovnosti (identity test). Však můžete přetížit typy `==`, takže pokud máte v úmyslu k otestování identity, je nejvhodnější použít `ReferenceEquals` metodu na `object`.
+[x = = y](equality-operators.md#equality-operator-) – rovnost. Ve výchozím nastavení pro jiné typy odkazů než `string`, tato funkce vrátí rovnost odkazů (test identity). Typy však mohou přetížit `==`, takže pokud je váš záměr testovat identitu, je nejvhodnější `ReferenceEquals` použít metodu na `object`.
 
-[x! = y](equality-operators.md#inequality-operator-) – není rovno. Viz komentář `==`. Pokud typ přetížení `==`, pak musí přetížení `!=`.
+[x! = y](equality-operators.md#inequality-operator-) – nerovná se Viz komentář pro `==`. Je-li typ přetížen `==`, je nutné jej přetížit. `!=`
 
 ## <a name="logical-and-operator"></a>Logický operátor AND
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-`x & y` – [logický operátor AND](boolean-logical-operators.md#logical-and-operator-) pro `bool` operandy nebo [bitové logické AND](bitwise-and-shift-operators.md#logical-and-operator-) pro operandy integrální typy.
+`x & y`– [logická a](boolean-logical-operators.md#logical-and-operator-) pro `bool` operandy nebo [bitové logické a](bitwise-and-shift-operators.md#logical-and-operator-) pro operandy integrálních typů.
 
 ## <a name="logical-xor-operator"></a>Logický operátor XOR
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-`x ^ y` – [logické XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) pro `bool` operandy nebo [bitové logické XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) pro operandy integrální typy.
+`x ^ y`– [logické XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) pro `bool` operandy nebo [bitové logické XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) pro operandy integrálních typů.
 
 ## <a name="logical-or-operator"></a>Logický operátor OR
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-`x | y` – [logický operátor OR](boolean-logical-operators.md#logical-or-operator-) pro `bool` operandy nebo [bitové logické OR](bitwise-and-shift-operators.md#logical-or-operator-) pro operandy integrální typy.
+`x | y`– [logická nebo](boolean-logical-operators.md#logical-or-operator-) pro `bool` operandy nebo [bitové logické číslo nebo](bitwise-and-shift-operators.md#logical-or-operator-) pro operandy integrálních typů.
 
-## <a name="conditional-and-operator"></a>Podmiňovací operátor AND
+## <a name="conditional-and-operator"></a>Podmíněný operátor AND
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-) – logickým operátorem a. Pokud `x` vyhodnotí jako `false`, pak `y` , nebude hodnocen.
+[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-) – Logical a. Pokud `x` se vyhodnotí `false`jako `y` , pak se nevyhodnotí.
 
-## <a name="conditional-or-operator"></a>Podmiňovací operátor OR
+## <a name="conditional-or-operator"></a>Podmíněný operátor OR
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) – logický operátor OR. Pokud `x` vyhodnotí jako `true`, pak `y` , nebude hodnocen.
+[ &#124; x &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) – logická nebo. Pokud `x` se vyhodnotí `true`jako `y` , pak se nevyhodnotí.
 
-## <a name="null-coalescing-operator"></a>Operátoru nulového sjednocení
+## <a name="null-coalescing-operator"></a>Operátor slučování null
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[x?? y](null-coalescing-operator.md) – vrátí `x` jde-li jinou hodnotu než`null`; v opačném případě vrátí `y`.
+[x?? y](null-coalescing-operator.md) – vrátí `x` , pokud je`null`to jiné než; v opačném případě vrátí `y`.
 
 ## <a name="conditional-operator"></a>Podmíněný operátor
 
-Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tento operátor má vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
-[t? x: y](conditional-operator.md) – Pokud test `t` vyhodnotí jako true, pak vyhodnotí a vrátí `x`; v opačném případě vyhodnotí a vrátí `y`.
+[t? x: y](conditional-operator.md) – Pokud se `t` test vyhodnotí jako true, pak se `x`vyhodnotí a vrátí. `y`jinak se vyhodnotí a vrátí.
 
 ## <a name="assignment-and-lambda-operators"></a>Operátory přiřazení a lambda
 
-Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
+Tyto operátory mají vyšší prioritu než další oddíl a nižší prioritu než předchozí oddíl.
 
 [x = y](assignment-operator.md) – přiřazení.
 
-[x += y](arithmetic-operators.md#compound-assignment) – přírůstku. Přidat hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí [události](../keywords/event.md), pak `y` musí být odpovídající metodu, která C# přidá jako obslužné rutiny události.
+[x + = y](arithmetic-operators.md#compound-assignment) – přírůstek Přidejte hodnotu `y` do `x`hodnoty, uložte výsledek do `x`a vraťte novou hodnotu. Pokud `x` Určuje C# [událost, musí být](../keywords/event.md)vhodná metoda, která je přidána jako obslužná rutina události. `y`
 
-[x-= y](arithmetic-operators.md#compound-assignment) – sníží. Odečte hodnotu `y` od hodnoty `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí [události](../keywords/event.md), pak `y` musí být odpovídající metodu, která C# odebere jako obslužné rutiny události.
+[x-= y](arithmetic-operators.md#compound-assignment) – snížení. Odečte hodnotu `y` z `x`hodnoty, uloží výsledek do `x`a vrátí novou hodnotu. Pokud `x` Určuje C# [událost, musí být](../keywords/event.md)vhodná metoda, která se odebere jako obslužná rutina události. `y`
 
-[x * = y](arithmetic-operators.md#compound-assignment) – přiřazení násobení. Vynásobí hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x * = y](arithmetic-operators.md#compound-assignment) – přiřazení násobení. Vynásobte hodnotu `y` `x`hodnotou, uložte výsledek do `x`a vraťte novou hodnotu.
 
-[x / = y](arithmetic-operators.md#compound-assignment) – přiřazení dělení. Vydělí hodnotu `x` hodnotou `y`, uloží výsledek v `x`a vrátí novou hodnotu.
+přiřazení divize [x/= y](arithmetic-operators.md#compound-assignment) – dělení. Vydělte hodnotu `x` `y`hodnotou, uložte výsledek do `x`a vraťte novou hodnotu.
 
-[x % = y](arithmetic-operators.md#compound-assignment) – remainder přiřazení. Vydělí hodnotu `x` hodnotou `y`, uložení zbytku v `x`a vrátí novou hodnotu.
+[x% = y](arithmetic-operators.md#compound-assignment) – přiřazení zbytku Vydělte hodnotu `x` `y`hodnotou, uložte zbytek do `x`a vraťte novou hodnotu.
 
-[x & = y](boolean-logical-operators.md#compound-assignment) – a přiřazení. A hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x & = y](boolean-logical-operators.md#compound-assignment) – a přiřazení. A hodnotu `y` s `x`hodnotou, uložte výsledek do `x`a vraťte novou hodnotu.
 
-[x &#124;= y](boolean-logical-operators.md#compound-assignment) – přiřazení OR. NEBO hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x &#124;= y](boolean-logical-operators.md#compound-assignment) – nebo přiřazení. Nebo hodnotu `y` s `x`hodnotou, uložte výsledek do `x`a vraťte novou hodnotu.
 
-[x ^ = y](boolean-logical-operators.md#compound-assignment) – XOR přiřazení. XOR hodnotu z `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x ^ = y](boolean-logical-operators.md#compound-assignment) – přiřazení XOR XOR hodnotu `y` s `x`hodnotou, uložte výsledek do `x`a vraťte novou hodnotu.
 
-[x << = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doleva. Posune hodnotu `x` vlevo po `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
+[x < < = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doleva. Posune hodnotu `x` vlevo o `y` místa, uloží výsledek do `x`a vrátí novou hodnotu.
 
-[x >> = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doprava. Posune hodnotu `x` právo `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
+[x > > = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doprava. Posune hodnotu `x` vpravo podle `y` míst, uloží výsledek do `x`a vrátí novou hodnotu.
 
-[=>](lambda-operator.md) – deklaraci lambda.
+[=>](lambda-operator.md)– deklarace lambda
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory](../../programming-guide/statements-expressions-operators/operators.md)

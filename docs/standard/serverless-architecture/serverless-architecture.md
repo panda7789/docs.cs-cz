@@ -1,78 +1,78 @@
 ---
 title: Architektura bez serveru – aplikace bez serveru
-description: Zkoumání různých architekturách a aplikace, které podporuje architektury bez serveru, včetně webových aplikací, mobilních a IoT.
+description: Průzkum různých architektur a aplikací, které podporují architektury bez serveru, včetně webových aplikací, mobilních zařízení a IoT.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 60d225d9794d5c15b0cd8e42800ccad4d7872756
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b22fecfdc693154dbdeb3e872e0e246e8ca41f9
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967794"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68434071"
 ---
 # <a name="serverless-architecture"></a>Bezserverová architektura
 
-Existuje celá řada přístupů k použití [bez serveru](http://azure.com/serverless) architektury. Tato kapitola popisuje, příklady běžných architektur, které se integrují bez serveru. Věnuje se také, se kterými můžou představovat další výzvy, nebo vyžadují zvláštní pozornost při provádění bez serveru. Nakonec několik příkladů návrhu jsou k dispozici, které znázorňují různé případy použití bez serveru.
+K dispozici je mnoho přístupů k používání architektury bez [serveru](https://azure.com/serverless) . Tato kapitola popisuje příklady běžných architektur, které integrují bez serveru. Týká se taky otázek, které mohou při implementaci bez serveru způsobovat další výzvy nebo vyžadují další pozornost. Nakonec jsou k dispozici několik příkladů návrhů, které ilustrují různé případy použití bez serveru.
 
-Bez serveru hostitele často používají stávající založených na kontejnerech nebo vrstvu PaaS pro správu instancí bez serveru. Například je Azure Functions na základě [služby Azure App Service](https://docs.microsoft.com/azure/app-service/). App Service umožňuje horizontálně navýšit kapacitu instancí a spravovat modul runtime, která spustí kód Azure Functions. Spuštění hostitele jako PaaS a škálování pro funkce založené na Windows out modul .NET runtime. Pro funkce založené na Linuxu využívá hostitele kontejnery.
+Hostitelé bez serveru často používají ke správě instancí bez serveru existující vrstvu založenou na kontejnerech nebo PaaS. Například Azure Functions je založen na [Azure App Service](https://docs.microsoft.com/azure/app-service/). App Service slouží k horizontálnímu navýšení kapacity instancí a ke správě modulu runtime, který spouští kód Azure Functions. Pro funkce založené na systému Windows hostitel běží jako PaaS a škáluje prostředí .NET Runtime. Pro funkce založené na systému Linux hostitel využívá kontejnery.
 
-![Architektura služby Azure Functions](./media/azure-functions-architecture.png)
+![Architektura Azure Functions](./media/azure-functions-architecture.png)
 
-Základní WebJobs poskytuje kontext spuštění pro funkci. Language Runtime spustí skripty, provede knihovny a rozhraní pro cílový jazyk je hostitelem. Například Node.js se používá ke spuštění funkce jazyka JavaScript a rozhraní .NET Framework se používá ke spuštění funkcí jazyka C#. Informace o možnostech jazyka a libovolné platformy dále v této kapitole dozvíte.
+Jádro WebJobs poskytuje kontext spuštění funkce. Modul runtime jazyka spouští skripty, spouští knihovny a hostuje rozhraní pro cílový jazyk. Například Node. js slouží ke spouštění funkcí jazyka JavaScript a .NET Framework slouží ke spouštění C# funkcí. Další informace o možnostech jazyka a platformy najdete dále v této kapitole.
 
-Některé projekty můžou mít užitek z přesměrujeme "čistě" přístup bez serveru. Aplikace, které často využívají mikroslužeb může implementovat všechny mikroslužby pomocí technologie bez serverů. Většina aplikací jsou hybridní, následující při návrhu N-vrstvé a pomocí bez serveru pro součásti, které dávají smysl, protože se součásti modulární a nezávisle škálovatelné. Abychom pomohli vyznat se tyto scénáře, tato část vás provede několik běžných příkladů architektury, které používají bez serveru.
+Některé projekty můžou využít přístup "všechny" k serveru bez serveru. Aplikace, které se spoléhají na mikroslužby, můžou implementovat všechny mikroslužby pomocí technologie bez serveru. Většina aplikací je hybridní, za použití N-vrstvého návrhu a používání serveru bez serveru pro součásti, které dává smysl, protože komponenty jsou modulární a nezávisle škálovatelné. Tato část vás seznámí s některými běžnými příklady architektury, které používají bez serveru. Tyto scénáře vám pomůžou.
 
-## <a name="full-serverless-back-end"></a>Bez úplného serveru back-endu
+## <a name="full-serverless-back-end"></a>Úplný back-end bez serveru
 
-Bez úplného serveru back-endem je ideální pro různé druhy scénářů, zejména v případě, že nové sestavení nebo aplikace "zelené louce". Aplikace s velké plochy rozhraní API můžou mít užitek z implementace každé rozhraní API jako funkce bez serveru. Aplikace, které jsou založené na architektuře mikroslužeb jsou další příklad, který by mohl implementovat jako úplné bez serveru back-end. Mikroslužby komunikují přes různé protokoly, které mezi sebou. Konkrétní scénáře patří:
+Úplný back-end bez serveru je ideální pro několik typů scénářů, zejména při sestavování nových nebo "zelených" polí "aplikací. Aplikace s velkou plochou rozhraní API může přinést implementaci jednotlivých rozhraní API jako funkce bez serveru. Aplikace, které jsou založené na architektuře mikroslužeb, jsou další příklad, který by se mohl implementovat jako úplný back-end Server bez serveru. Mikroslužby komunikují přes různé protokoly navzájem. Mezi konkrétní scénáře patří:
 
-* Produktů založených na rozhraní API SaaS (například: finanční platby procesoru).
-* Aplikace řízené zprávami (Příklad: řešení pro monitorování zařízení).
-* Aplikace, zaměřuje na integraci mezi službami (Příklad: aplikace rezervace letenek).
-* Procesy, které pravidelně spouštět (Příklad: čištění databáze na základě časovače).
-* Aplikace, zaměřuje na transformaci dat (Příklad: import aktivované nahrání souboru).
-* Extrakce, transformace a načítání (ETL) procesů.
+* SaaS produkty založené na rozhraní API (příklad: procesor finančních plateb).
+* Aplikace řízené zprávami (příklad: řešení monitorování zařízení).
+* Aplikace zaměřené na integraci mezi službami (příklad: aplikace pro rezervaci letenek).
+* Procesy, které se spouštějí pravidelně (například: vyčištění databáze na základě časovače).
+* Aplikace zaměřené na transformaci dat (příklad: import aktivovaný při nahrávání souboru)
+* Extrakce procesů transformace a načítání (ETL).
 
-Existují jiné, konkrétnější případy použití, které jsou popsané dále v tomto dokumentu.
+Existují další, konkrétnější případy použití, které jsou pokryty dále v tomto dokumentu.
 
-## <a name="monoliths-and-starving-the-beast"></a>Monolitické a "omezují touchdown"
+## <a name="monoliths-and-starving-the-beast"></a>Monolitů a "omezují The touchdown"
 
-Běžné výzvy je migrace stávající monolitické aplikace do cloudu. Minimální rizikové přístupem je metodou "lift and shift" zcela do virtuálních počítačů. Mnoho kavárnách dávají přednost používání migrace jako příležitost k modernizaci jejich základu kódu. Praktický postup migrace se nazývá "omezují touchdown." V tomto scénáři je migrovat monolitu "tak jak jsou" začít. Potom se modernizovala vybrané služby. V některých případech je totožná s původní podpis služby: jednoduše je hostovaný jako funkce. Klienti jsou aktualizované na používání nové službě, nikoli monolitu koncového bodu. Prozatím povolit kroky, jako třeba replikace databáze mikroslužeb pro hostování své vlastní úložiště i v případě, že transakce jsou stále zpracována monolitu. Nakonec všichni klienti se migrují do nové služby. Monolitu je "vyčerpaná" (jejích služeb už volá) až se nahradil všechny funkce. Kombinace prostředí bez serveru a proxy serverů může usnadnit velkou část této migrace.
+Běžným problémem je migrace stávající aplikace v monolitické do cloudu. Minimální rizikový přístup je "zaznamenání a posunutí" výhradně na virtuální počítače. Řada prodejen preferuje použití migrace jako příležitosti k modernizovatí jejich základu kódu. Praktický přístup k migraci se nazývá "omezují The touchdown". V tomto scénáři se monolitu migruje "tak, jak je", aby se spouštěl. Pak jsou vybrané služby moderní. V některých případech je podpis služby stejný jako původní: stačí ho hostovat jako funkce. Klienti se aktualizují, aby používali novou službu, a ne koncový bod monolitu. V předběžných krocích, jako je třeba replikace databáze, umožňují mikroslužbám hostovat své vlastní úložiště i v případě, že monolitu transakce stále zpracovává. Nakonec se všechny klienty migrují na nové služby. Monolitu je "nedostatek" (jeho služby již nejsou volány), dokud nebudou nahrazeny všechny funkce. V kombinaci bez serveru a proxy serverů se dá tato migrace zjednodušit.
 
 ![Migrace monolitu bez serveru](./media/serverless-monolith-migration.png)
 
-Další informace o tento přístup, podívejte se na video: [Přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/Events/Connect/2017/E102).
+Pokud se chcete dozvědět víc o tomto přístupu, podívejte se na video: [Přeneste svou aplikaci do cloudu pomocí Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102).
 
 ## <a name="web-apps"></a>Webové aplikace
 
-Webové aplikace jsou skvělými kandidáty pro aplikace bez serveru. Existují dva běžné přístupy do webové aplikace ještě dnes: řízené serveru a klienta řízené (například jednostránkové aplikace nebo SPA). Řízených serverem webových aplikací obvykle používají vrstvu middleware vydat volání rozhraní API pro vykreslení ve webovém uživatelském rozhraní. Aplikace SPA volat rozhraní REST API přímo z prohlížeče. V obou případech bez serveru tím, že poskytuje nezbytné obchodní logiku zvládne middleware nebo požadavku REST API. Běžné architektury, je vytvoření statické odlehčeného webového serveru. Jediné stránce aplikace (SPA) slouží HTML, CSS, JavaScript a dalších zdrojů prohlížeče. Webové aplikace se pak připojí k back-end mikroslužeb.
+Webové aplikace jsou skvělými kandidáty pro aplikace bez serveru. Existují dva běžné přístupy k webovým aplikacím v dnešní době: na základě serveru a na straně klienta (například aplikace s jednou stránkou nebo SPA). Webové aplikace řízené serverem obvykle používají vrstvu middlewaru k vystavení volání rozhraní API pro vykreslení webového uživatelského rozhraní. Aplikace SPA vyvolají REST API volání přímo z prohlížeče. V obou scénářích může server bez serveru pojmout middleware nebo REST API požadavek poskytnutím potřebné obchodní logiky. Běžnou architekturou je vytvoření jednoduchého statického webového serveru. Jednostránkové aplikace (SPA) obsluhuje HTML, CSS, JavaScript a další prostředky prohlížeče. Webová aplikace se pak připojí k back-endu mikroslužeb.
 
-## <a name="mobile-back-ends"></a>Mobilní back-EndY
+## <a name="mobile-back-ends"></a>Mobilní back-endy
 
-Založený na událostech paradigma aplikace bez serveru jsou ideální jako mobilní back-endů. Mobilní zařízení se aktivuje události a spustí kód bez serveru ke splnění požadavků. Využití výhod modelu bez serveru umožňuje vývojářům ke zvýšení obchodní logiky bez nutnosti nasazovat aktualizace celou aplikaci. Bez serveru přístup také umožňuje týmům sdílet koncové body a paralelní práci.
+Paradigma aplikace bez serveru, které jsou založené na událostech, jsou ideální jako mobilní back-endy. Mobilní zařízení spustí události a kód bez serveru se spustí, aby splňoval požadavky. Využití modelu bez serveru umožňuje vývojářům vylepšit obchodní logiku, aniž by museli nasazovat úplnou aktualizaci aplikace. Přístup bez serveru taky umožňuje týmům sdílet koncové body a pracovat paralelně.
 
-Vývojáře mobilních aplikací můžete vytvářet obchodní logiku bez stát odborníci na straně serveru. Tradičně mobilní aplikace připojené k místní služby. Vytvoření vrstvy služby vyžaduje pochopení serverová platforma a programovacího paradigmatu. Vývojáři ve spolupráci s operacemi ke zřízení serverů a správně nakonfigurovat. Někdy dny nebo týdny i byly strávený na vytváření procesních toků pro nasazení. Všechny tyto problémy jsou vyřešeny bez serveru.
+Mobilní vývojáři můžou sestavovat obchodní logiku bez toho, aby se na straně serveru stali odborníky. Obvykle se jedná o mobilní aplikace připojené k místním službám. Sestavování vrstvy služby vyžaduje porozumění serverové platformě a paradigmatu programování. Vývojáři pracovali s operacemi pro zřízení serverů a jejich správné konfiguraci. Při vytváření kanálu nasazení byly někdy vyčerpány dny nebo dokonce týdny. Všechny tyto výzvy jsou řešeny bez serveru.
 
-Bez serveru abstrahuje závislostí na straně serveru a umožňuje vývojářům soustředit se na obchodní logiku. Například vývojáře mobilních aplikací, který vytváří aplikace s využitím Javascriptové architektury můžete sestavovat funkce bez serveru s použitím jazyka JavaScript také. Bez serveru hostitele spravuje operační systém Node.js instanci k hostování kódu, závislosti balíčků a další. Vývojář se poskytuje jednoduchou sadu vstupů a standardní šablony pro výstupy. Potom můžou soustředit na vytváření a testování obchodní logiku. Proto si mohou využívat stávající dovednosti můžete vytvářet logiku back-end mobilní aplikace bez nutnosti další nové platformy nebo se Staňte "vývojář na straně serveru."
+Server bez serveru vyabstrakce závislosti na straně serveru a umožňuje vývojářům soustředit se na obchodní logiku. Například mobilní vývojář, který sestavuje aplikace pomocí rozhraní JavaScript Framework, může také sestavovat funkce bez serveru pomocí JavaScriptu. Hostitel bez serveru spravuje operační systém, instanci Node. js, která hostuje kód, závislosti balíčků a další. Vývojář poskytuje jednoduchou sadu vstupů a standardní šablonu pro výstup. Pak se můžou soustředit na vytváření a testování obchodní logiky. Díky tomu je možné využít stávající dovednosti k sestavení logiky back-endu pro mobilní aplikaci, aniž by se museli učit nové platformy nebo se stát vývojářem na straně serveru.
 
-![Bez serveru mobilních back end](./media/serverless-mobile-backend.png)
+![Mobilní back-end bez serveru](./media/serverless-mobile-backend.png)
 
-Většina poskytovatelů cloudu nabízejí bez serveru produktů založených na mobilní zařízení, které Zjednodušte celý vývoj mobilních řešení životního cyklu. Produkty mohou automatizovat zřizování databází pro trvalé uchování dat, zpracování se týká DevOps, poskytovat cloudové sestavení a testování rozhraní a schopnost skript obchodních procesů pomocí vývojáře upřednostňovaného jazyka. Zaměřené na mobilní zařízení bez serveru přístupu může zjednodušit proces. Bez serveru odebere ohromné nároky na zřizování, konfigurace a údržby serverů pro mobilní back-endu.
+Většina poskytovatelů cloudových služeb nabízí mobilní produkty bez serveru, které zjednodušují celý životní cyklus vývoje mobilních aplikací. Produkty mohou automatizovat zřizování databází pro uchovávání dat, zpracovávat DevOps obavy a poskytovat cloudová sestavení a testovací architektury a možnost skriptování obchodních procesů pomocí preferovaného jazyka vývojáře. Tento proces může zjednodušit následující přístup k serveru, který je zaměřený na mobilní zařízení. Server bez serveru odebírá obrovské nároky na zřizování, konfiguraci a údržbu serverů pro mobilní back-end.
 
 ## <a name="internet-of-things-iot"></a>Internet věcí (IoT)
 
-IoT odkazuje na fyzických objektů, které jsou propojeny. Tyto jsou někdy označovány jako "připojených zařízení" nebo "inteligentní zařízení." Vše od automobilů a automaty může být připojen a odeslat informace od inventáře do data ze senzorů, jako je například teploty a vlhkosti. V podnikové síti IoT poskytuje obchodní proces vylepšení prostřednictvím monitorování a automatizace. IoT data může sloužit k regulovat podnebí velké skladu nebo sledování inventáře prostřednictvím dodavatelský řetězec. IoT můžete smysl chemických rozlévání a volat oddělení fire při zjištění kouře.
+IoT odkazuje na fyzické objekty, které jsou propojeny společně. Někdy se označují jako "připojená zařízení" nebo "inteligentní zařízení". Všechno od auta a prodejní automaty se může propojit a odesílat informace od inventáře až po data senzorů, jako je teplota a vlhkost. V podniku nabízí IoT vylepšení obchodních procesů prostřednictvím monitorování a automatizace. Data IoT se dají použít k regulaci klimatu ve velkém skladu nebo sledování inventáře prostřednictvím dodavatelského řetězce. IoT může pochopit chemické neoblasti a vyvolat požární oddělení, když se zjistí kouř.
 
-K velkému množství zařízení a informace o často přikazuje architektura založená na událostech trasy a zpracování zpráv. Bez serveru je ideálním řešením z několika důvodů:
+Sheer objem zařízení a informací často vykazuje architekturu řízenou událostmi pro směrování a zpracování zpráv. Neserveru je ideální řešení z několika důvodů:
 
-* Umožňuje škálovat podle objemu zařízení a dat zvyšuje.
-* Přizpůsobuje přidání nové koncových bodů pro podporu nové zařízení a senzorů.
-* Nezávislé správy verzí usnadňuje vývojářům mohli aktualizovat obchodní logiku pro konkrétní zařízení, aniž byste museli nasadit celý systém.
-* Odolnost proti chybám a méně výpadků.
+* Umožňuje škálování při zvyšování objemu zařízení a dat.
+* Přizpůsobí přidávání nových koncových bodů pro podporu nových zařízení a senzorů.
+* Usnadňuje nezávislé správy verzí, takže vývojáři můžou aktualizovat obchodní logiku pro konkrétní zařízení, aniž by museli nasazovat celý systém.
+* Odolnost a méně výpadků.
 
-Pronikavostí IoT přinesl několik produktů bez serveru, které se zaměřují konkrétně na IoT obavy, jako například [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub). Bez serveru automatizuje úlohy, jako je registrace zařízení, vynucení zásad, sledování a dokonce i nasazení kódu do zařízení v *na hraničních zařízeních*. Na hraničních zařízeních odkazuje na zařízení, senzory a Pohony, které jsou připojeny k, avšak není aktivní součástí z Internetu.
+Výsledkem pronikavostí IoT je několik produktů bez serveru, které se zaměřují konkrétně na problematiku IoT, jako je třeba [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub). Bez serveru se automatizují úlohy, jako je registrace zařízení, vynucování zásad, sledování a dokonce nasazení kódu do zařízení na *hraničních*zařízeních. Tato hrana odkazuje na zařízení, jako jsou senzory a poháněcí zařízení, která jsou připojená k Internetu, ale nejsou aktivní součástí.
 
 >[!div class="step-by-step"]
->[Předchozí](architecture-approaches.md)
->[další](serverless-architecture-considerations.md)
+>[Předchozí](architecture-approaches.md)Další
+>[](serverless-architecture-considerations.md)

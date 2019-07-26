@@ -1,34 +1,34 @@
 ---
 title: Co je ML.NET a jak to funguje?
-description: ML.NET dává možnost Přidat strojového učení pro aplikace .NET. Díky této funkci můžete vytvářet automatické predikce data dostupná pro vaše aplikace. Tento článek vysvětluje základy strojového učení v ML.NET.
-ms.date: 04/10/2019
+description: ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti, aby používala ML.NET. Tento článek vysvětluje základy strojového učení v ML.NET.
+ms.date: 07/17/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 30e96d85ecc04332bc5e6c8f57badd000f729904
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 23e71e86b75854042068b6a68f90cf995749ee58
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660640"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331578"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
-ML.NET dává možnost Přidat strojového učení pro aplikace .NET. Díky této funkci můžete vytvářet automatické predikce data dostupná pro vaše aplikace. Tento článek vysvětluje základy strojového učení v ML.NET. 
+ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti. Tento článek vysvětluje základy strojového učení v ML.NET. 
 
-Mezi příklady typu predikcí, které můžete použít s ML.NET patří:
+Příklady typů předpovědi, které můžete provést pomocí ML.NET, zahrnují:
 
 |||
 |-|-|
-|Klasifikace a kategorizaci|Automaticky dělit zpětné vazby od zákazníků do kladnou a zápornou kategorií|
-|Regrese/Predict průběžné hodnoty|Odhadnout cenu na základě velikosti a umístění Domů|
-|Detekce anomálií|Zjištění podvodné bankovních transakcí |
-|Doporučení|Navrhnout produktů, které si chcete koupit, může být vhodné nakupující online podle jejich předchozí nákupů|
+|Klasifikace/kategorizace|Automatické rozdělení zpětné vazby od zákazníků do pozitivních a záporných kategorií|
+|Regrese/předpověď souvislých hodnot|Předpověď ceny na pracoviště na základě velikosti a umístění|
+|Detekce anomálií|Rozpoznat podvodné bankovní transakce |
+|Doporučení|Návrhy produktů, které online nakupující může chtít koupit, na základě jejich předchozích nákupů|
 
 ## <a name="hello-mlnet-world"></a>Hello ML.NET World
 
-Kódu následující fragment kódu ukazuje nejjednodušší ML.NET aplikaci. Tento příklad vytvoří model lineární regrese k předvídání cen house pomocí velikosti a ceny dat organizace. V reálné aplikace data a model bude mnohem složitější.
+Kód v následujícím fragmentu kódu demonstruje nejjednodušší aplikaci ML.NET. V tomto příkladu se vytvoří model lineární regrese, který bude předpovídat ceny za domácnosti pomocí velikosti domu a dat o cenách. Vaše data a model budou v aplikacích v reálném čase mnohem složitější.
 
  ```csharp
     using System;
@@ -79,60 +79,60 @@ Kódu následující fragment kódu ukazuje nejjednodušší ML.NET aplikaci. Te
     } 
 ```
 
-## <a name="code-workflow"></a>Kód pracovního postupu
+## <a name="code-workflow"></a>Pracovní postup kódu
 
 Následující diagram představuje strukturu kódu aplikace a také iterativní proces vývoje modelu:
-- Shromažďování a načíst trénovacích dat do **IDataView** objektu
-- Zadat kanál operací pro extrakci funkce a použití algoritmu strojového učení
-- Trénování modelu voláním **Fit()** ke kanálu
-- Vyhodnocení modelu a iterovat ke zlepšení
+- Shromažďování a načítání školicích dat do objektu **IDataView**
+- Zadejte kanál operací pro extrakci funkcí a použití algoritmu strojového učení.
+- Výuka modelu voláním **přizpůsobení ()** na kanálu
+- Vyhodnocení modelu a iterace pro zlepšení
 - Uložit model do binárního formátu pro použití v aplikaci
-- Načtení modelu zpět do **ITransformer** objektu
-- Predikci voláním **CreatePredictionEngine.Predict()**
+- Načtení modelu zpátky do objektu **ITransformer**
+- Vytvoření předpovědi voláním **CreatePredictionEngine. předpověď ()**
 
-![Běh vývoj aplikace ML.NET včetně komponent pro generování dat, vývoj kanálu, model školení, vyhodnocení modelu a využití modelu](./media/mldotnet-annotated-workflow.png) 
+![ML.NET Flow pro vývoj aplikací, včetně komponent pro generování dat, vývoj kanálů, školení modelů, hodnocení modelů a využití modelu](./media/mldotnet-annotated-workflow.png) 
 
-Pojďme se podívat trochu hlouběji do těchto konceptů.
+Pojďme se do těchto konceptů dig trochu hlubší.
 
 ## <a name="machine-learning-model"></a>Model strojového učení
 
-ML.NET model je objekt, který obsahuje transformace provádět na vstupní data můžete přejít na výstup předpokládaná.
+Model ML.NET je objekt, který obsahuje transformace, které se mají provést na vašich vstupních datech, aby bylo možné dorazit na předpokládaný výstup.
 
 ### <a name="basic"></a>Základní
 
-Základní model je dvojrozměrné lineární regrese, kde je úměrný do jiného, stejně jako v výše uvedený příklad ceny uložení jednoho průběžné množství. 
+Nejzákladnější model je dvourozměrná lineární regrese, kde jedno průběžné množství je úměrné jinému, jako v příkladu ceny za domu. 
 
-![Lineární regrese Model s parametry posun a váhy záznamu](./media/linear-regression-model.svg)
+![Model lineární regrese s parametry bias a váhy](./media/linear-regression-model.svg)
 
-Model je jednoduše: $Price = b + velikost * w$. Posunout řádek na spektru jsou odhady parametry $b$ a $w$ (velikost, cena) dvojice. Data použitá k vyhledání parametrů model se nazývá **trénovacích dat**. Vstupy modelu strojového učení se nazývají **funkce**. V tomto příkladu je $Size$ pouze funkce. Hodnoty základu pravdy využívají k tréninku modelu strojového učení se nazývají **popisky**. Tady hodnoty $ $Price v trénovací datové sady jsou popisky.
+Model je jednoduchý: $Price = b + velikost * w $. Parametry $b $ a $w $ jsou odhadované vytvořením řádku na základě množiny párů (Size, Price). Data, která se používají k vyhledání parametrů modelu, se nazývají **školicí data**. Vstupy modelu strojového učení se nazývají **funkce**. V tomto příkladu je jedinou funkcí $Size $. Hodnoty terénu používané k výuce modelu Machine Learning se nazývají **popisky**. Tady jsou popisky. hodnoty $Price $ v sadě školicích dat.
 
 ### <a name="more-complex"></a>Složitější
 
-Složitější modelu klasifikuje finanční transakce do kategorií pomocí textový popis transakce.
+Složitější model klasifikuje finanční transakce do kategorií pomocí popisu textu transakce.
 
-Popis každého transakce je rozdělena do sadu funkcí odebráním redundantní slova a znaků a počítání kombinace aplikace word a znaků. Sada funkcí se používá pro trénování modelu lineární na základě sady kategorií v trénovací data. Čím více podobně jako nový popis v cvičnou sadou, tím spíše se přiřadí do stejné kategorie. 
+Každý popis transakce je rozdělen do sady funkcí odebráním redundantních slov a znaků a spočítá kombinace slov a znaků. Sada funkcí slouží ke výukě lineárního modelu na základě sady kategorií v školicích datech. Podobně jako nový popis patří na ty, které jsou v sadě školení. pravděpodobnější je, že bude přiřazen ke stejné kategorii. 
 
 ![Model klasifikace textu](./media/text-classification-model.svg)
 
-Cenový model house i textový model klasifikace jsou **lineární** modely. V závislosti na povaze vašich dat a jsou řešení problému, můžete také použít **rozhodovací strom** modely, **zobecněný additive** modely a další. Můžete najít další informace o modelů v [úlohy](./resources/tasks.md).
+Model cen domu i model klasifikace textu jsou **lineární** modely. V závislosti na povaze vašich dat a problému, který řešíte, můžete také použít modely **rozhodovacích stromů** , **generalizované doplňkové** modely a další. Další informace o modelech v úlohách najdete [](./resources/tasks.md)v části.
 
 ## <a name="data-preparation"></a>Příprava dat
 
-Ve většině případů se data, že máte k dispozici není vhodný pro použití přímo k natrénování modelu strojového učení. Nezpracovaná data musí být připravené nebo předem zpracovaných předtím, než je možné najít parametry modelu. Vaše data potřebovat pro převod z řetězcových hodnot na číselné vyjádření. Nadbytečné informace pravděpodobně ve vstupní data. Potřebujete omezit nebo rozšířit dimenze vstupní data. Normalizovaná nebo škálování může být potřeba data.
+Ve většině případů data, která máte k dispozici, nejsou vhodná pro použití přímo k výuce modelu Machine Learning. Nezpracovaná data musí být připravena nebo předem zpracována před tím, než je možné ji použít k vyhledání parametrů modelu. Vaše data možná budete muset převést z řetězcových hodnot na číselné znázornění. Vstupní data mohou obsahovat redundantní informace. Možná budete muset zmenšit nebo rozšířit rozměry vstupních dat. Vaše data možná budete muset normalizovat nebo škálovat.
 
-[ML.NET kurzy](./tutorials/index.md) naučit vás o kanálů jiné zpracování dat pro text, image, číselná a časových řad dat pro úlohy konkrétních strojového učení.
+[Výukové kurzy ml.NET](./tutorials/index.md) vás seznámí s různými kanály pro zpracování dat pro text, obrázky, numerické a časové řady, které se používají pro konkrétní úkoly strojového učení.
 
-[Postup přípravy dat](./how-to-guides/prepare-data-ml-net.md) vám ukáže, jak na použita přípravu dat obecně.
+[Postup přípravy dat](./how-to-guides/prepare-data-ml-net.md) vám ukáže, jak se obecně aplikuje Příprava dat.
 
-Dodatek všech můžete najít [dostupných transformací](./resources/transforms.md) v části prostředky.
+Přílohu všech [dostupných transformací](./resources/transforms.md) najdete v části Resources (prostředky).
 
 ## <a name="model-evaluation"></a>Vyhodnocení modelu
 
-Jakmile máte Trénink modelu, jak poznáte, jak dobře budou předpovědi budoucích? S ML.NET můžete si vyzkoušet model pro některé nové testovací data. 
+Jakmile svůj model provedete, dozvíte se, jak dobře bude předpovědi budoucí? Pomocí ML.NET můžete svůj model vyhodnotit před některými novými testovacími daty. 
 
-Každý typ úlohy machine learning má metriky k vyhodnocení, přesnost a přesnost modelu proti testovací datové sady.
+Každý typ úlohy strojového učení obsahuje metriky, které vyhodnocuje přesnost a přesnost modelu proti sadě testovacích dat.
 
-V našem příkladu cena house jsme použili **regrese** úloh. K vyhodnocení modelu, přidejte následující kód k původní ukázce.
+Pro náš příklad ceny za dům jsme použili **regresní** úlohu. Chcete-li tento model vyhodnotit, přidejte následující kód do původní ukázky.
 
 ```csharp
         HouseData[] testHouseData =
@@ -155,59 +155,59 @@ V našem příkladu cena house jsme použili **regrese** úloh. K vyhodnocení m
         // RMS error: 0.19
 ```
 
-Metrik hodnocení říct, že chyba je low-ish a této korelace mezi výstup předpokládaná a výstup testu je vysoká. To bylo snadné! V reálné příkladech trvá další ladění k dosažení dobré modelu metriky.
+Metriky vyhodnocení vám sdělí, že chyba je nízká-delšími a že korelace mezi předpokládaným výstupem a výstupem testu je vysoká. To bylo snadné. V reálných příkladech je větší optimalizace, aby se dosáhlo dobré metriky modelu.
 
 ## <a name="mlnet-architecture"></a>Architektura ML.NET
 
-V této části jsme projít architektury vzory ML.NET. Pokud jste vývojáři .NET, některé z těchto vzorců se se známými a některé budou méně známé. Podržte vysoké, můžeme začít!
+V této části projdeme vzory architektury ML.NET. Pokud jste zkušený vývojář .NET, budete znát některé z těchto vzorů a některé z nich budou méně známé. Držte se těsně, zatímco jsme podrobněi.
 
-Aplikace ML.NET začíná <xref:Microsoft.ML.MLContext> objektu. Tento objekt typu singleton obsahuje **katalogy**. Katalog je objekt pro vytváření dat, načítání a transformace, školitelé a součástí modelu operace ukládání. Každý objekt katalogu má metody k vytvoření různých typů komponent:
+Aplikace ml.NET začíná <xref:Microsoft.ML.MLContext> objektem. Tento objekt typu Singleton obsahuje katalogy. Katalog je továrna pro načítání dat a ukládání, transformaci, školitele a součásti operací s modelem. Každý objekt katalogu obsahuje metody pro vytvoření různých typů komponent:
 
 |||||
 |-|-|-|-|
-|Ukládání a načítání dat||<xref:Microsoft.ML.DataOperationsCatalog>||
+|Načítání a ukládání dat||<xref:Microsoft.ML.DataOperationsCatalog>||
 |Příprava dat||<xref:Microsoft.ML.TransformsCatalog>||
-|Trénování algoritmů|Binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>||
-||Klasifikace víc tříd|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
+|Školicí algoritmy|Binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>||
+||Klasifikace s více třídami|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
 ||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
-||Vytváření clusterů|<xref:Microsoft.ML.ClusteringCatalog>||
+||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
 ||Prognózování|<xref:Microsoft.ML.ForecastingCatalog>||
-||Hodnocení|<xref:Microsoft.ML.RankingCatalog>||
+||Pořadí|<xref:Microsoft.ML.RankingCatalog>||
 ||Regrese|<xref:Microsoft.ML.RegressionCatalog>||
-||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat `Microsoft.ML.Recommender` balíček NuGet|
-||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat `Microsoft.ML.TimeSeries` balíček NuGet|
+||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat balíček `Microsoft.ML.Recommender` NuGet|
+||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat balíček `Microsoft.ML.TimeSeries` NuGet|
 |Využití modelu ||<xref:Microsoft.ML.ModelOperationsCatalog>||
 
-Můžete přejít do metod vytváření v každé z výše uvedených kategoriích. Pomocí sady Visual Studio, katalogy zobrazí prostřednictvím technologie IntelliSense.
+Můžete přejít na metody vytváření v každé z výše uvedených kategorií. Pomocí sady Visual Studio se katalogy zobrazují prostřednictvím technologie IntelliSense.
 
-   ![Technologie IntelliSense pro školitele regrese](./media/catalog-intellisense.png)
+   ![IntelliSense pro regresní školitele](./media/catalog-intellisense.png)
 
 ### <a name="build-the-pipeline"></a>Vytvoření kanálu
 
-V každé katalogu je sadu rozšiřujících metod. Podívejme se na použití rozšiřující metody k vytvoření kanálu školení.
+Uvnitř každého katalogu je sada rozšiřujících metod. Pojďme se podívat, jak metody rozšíření slouží k vytvoření školicího kanálu.
 
 ```csharp
     var pipeline = mlContext.Transforms.Concatenate("Features", new[] { "Size" })
         .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "Price", maximumNumberOfIterations: 100));
 ```
 
-V tomto fragmentu kódu `Concatenate` a `Sdca` jsou obě metody v katalogu. Každá vytvořit [IEstimator](xref:Microsoft.ML.IEstimator%601) objekt, který se připojí k kanálu.
+Ve fragmentu kódu `Concatenate` a `Sdca` jsou obě metody v katalogu. Každý z nich vytvoří objekt [IEstimator](xref:Microsoft.ML.IEstimator%601) , který je připojen k kanálu.
 
-Objekty v tomto okamžiku se vytvoří pouze. Žádná spuštění se stalo.
+V tomto okamžiku jsou objekty vytvořeny pouze. Nedošlo k žádnému spuštění.
 
 ### <a name="train-the-model"></a>Trénování modelu
 
-Po vytvoření objektů v kanálu dat je možné pro trénování modelu.
+Jakmile se objekty v kanálu vytvoří, dají se data využít ke školení modelu.
 
 ```csharp
     var model = pipeline.Fit(trainingData);
 ```
 
-Volání `Fit()` používá vstupní trénovacích dat k odhadu parametry modelu. To se označuje jako trénování modelu. Nezapomeňte, že výše uvedené trénování modelu lineární regrese má dva parametry modelu: **posun** a **váha**. Po `Fit()` volání, jsou známé hodnoty parametrů. Většina modely mají mnoho dalších parametrů, než to.
+Volání `Fit()` používá vstupní školicí data k odhadování parametrů modelu. To se označuje jako školení modelu. Mějte na paměti, že výše uvedený model lineární regrese měl dva parametry modelu: **bias** a **váhy**. `Fit()` Po volání jsou známy hodnoty parametrů. Většina modelů bude mít mnoho dalších parametrů než toto.
 
-Další informace o tréninku modelu v [trénování modelu](./how-to-guides/train-machine-learning-model-ml-net.md)
+Další informace o školení modelů najdete v tématu [postup](./how-to-guides/train-machine-learning-model-ml-net.md) při výuce modelu.
 
-Výsledný objekt modelu implementuje <xref:Microsoft.ML.ITransformer> rozhraní. To znamená, že model transformuje vstupní data do predikce.
+Výsledný objekt modelu implementuje <xref:Microsoft.ML.ITransformer> rozhraní. To znamená, že model transformuje vstupní data do předpovědi.
 
 ```csharp
    IDataView predictions = model.Transform(inputData);
@@ -215,7 +215,7 @@ Výsledný objekt modelu implementuje <xref:Microsoft.ML.ITransformer> rozhraní
 
 ### <a name="use-the-model"></a>Použití modelu
 
-Najednou můžete transformovat vstupní data do predikce v hromadné nebo jeden vstup. V příkladu cena house jsme to udělali obojí: hromadné pro účely vyhodnocení modelu a jeden po druhém vytvoří předpověď nového. Podívejme se na provedení jednoho předpovědi.
+Vstupní data můžete transformovat do předpovědi hromadně nebo v jednom vstupním čase. V příkladu ceny na pracovišti jsme obě: hromadně vyhodnotili model a v jednu chvíli udělali novou předpověď. Pojďme se podívat, jak se na jeden předpovědi.
 
 ```csharp
     var size = new HouseData() { Size = 2.5F };
@@ -223,27 +223,27 @@ Najednou můžete transformovat vstupní data do predikce v hromadné nebo jeden
     var price = predEngine.Predict(size);
 ```
  
-`CreatePredictionEngine()` Metoda přijímá vstupní třídy a výstupu. Názvy polí a/nebo atributy kódu určete názvy sloupců dat, použita během cvičení modelu a předpovědi. Informace o [jak jeden předpověď](./how-to-guides/single-predict-model-ml-net.md) v části s postupy.
+`CreatePredictionEngine()` Metoda přebírá vstupní třídu a výstupní třídu. Názvy polí nebo atributy kódu určují názvy datových sloupců použitých během školení modelů a předpovědi. Informace o tom, [Jak udělat jednu předpověď](./how-to-guides/single-predict-model-ml-net.md) , najdete v části postupy.
 
-### <a name="data-models-and-schema"></a>Datové modely a schématu
+### <a name="data-models-and-schema"></a>Datové modely a schéma
 
-V jádru služby kanál ML.NET strojového učení se [DataView](xref:Microsoft.ML.IDataView) objekty.
+V jádru kanálu strojového učení ML.NET jsou objekty [DataView](xref:Microsoft.ML.IDataView) .
 
-Každá transformace v kanálu má vstupní schéma (názvy datových typů a velikostí, které transformací, která se očekává, že chcete zobrazit ve vzorci); a výstupní schéma (názvy datových typů a velikostí, mezi které transformací, která se vytváří po transformaci). 
+Každá transformace v kanálu má vstupní schéma (názvy dat, typy a velikost, které transformace očekává, aby se na jejím vstupu zobrazila); a výstupní schéma (názvy dat, typy a velikosti, které transformace vytvoří po transformaci). 
 
-Pokud schéma výstupu z jedna transformace v kanálu neodpovídá schématu vstupu další transformace, ML.NET vyvolá výjimku.
+Pokud výstupní schéma z jedné transformace v kanálu neodpovídá vstupnímu schématu další transformace, ML.NET vyvolá výjimku.
 
-Objekt dat zobrazení obsahuje sloupce a řádky. Název a typ a délku má každý sloupec. Příklad: vstupní sloupce v příkladu cena house **velikost** a **cena**. Jsou obě zadání a že jsou skalární spíše než těch, které jsou vektorové.
+Objekt zobrazení dat obsahuje sloupce a řádky. Každý sloupec má název a typ a délku. Například: vstupní sloupce v příkladu ceny na pracovišti mají **Velikost** a **cenu**. Jsou oba typy a jsou skalární množství namísto vektorů.
 
-   ![Příklad zobrazení dat ML.NET s daty predikce ceny house](./media/ml-net-dataview.png)
+   ![Příklad zobrazení dat ML.NET s daty předpovědi ceny domu](./media/ml-net-dataview.png)
 
-Všechny algoritmy ML.NET hledejte vstupní sloupec, který je vektor. Ve výchozím nastavení je volána v tomto sloupci vektoru **funkce**. To je důvod, proč jsme zřetězeny **velikost** názvem sloupce do nového sloupce **funkce** v našem příkladu house cena.
+Všechny algoritmy ML.NET hledají vstupní sloupec, který je vektorem. Ve výchozím nastavení se tento vektorový sloupec nazývá **funkce**. Z tohoto důvodu jsme ve sloupci velikost zřetězi sloupec **Size** na nový sloupec s názvem **funkce** v našem příkladu ceny za dům.
 
  ```csharp
     var pipeline = mlContext.Transforms.Concatenate("Features", new[] { "Size" })
  ```
 
-Po provedení predikcí, všechny algoritmy také vytvářet nové sloupce. Oprava názvy těchto nových sloupců závisí na typu algoritmu strojového učení. Pro úlohu regrese jedna nové sloupce se nazývá **skóre**. To je důvod, proč jsme s atributy naší cenové údaje s tímto názvem.
+Všechny algoritmy také vytvoří nové sloupce poté, co provedou předpovědi. Pevné názvy těchto nových sloupců závisí na typu algoritmu strojového učení. Pro úlohu regrese se jeden z nových sloupců nazývá **skóre**. Proto jsme s tímto názvem pojmenoval naše cenové údaje.
 
 ```csharp
     public class Prediction
@@ -253,28 +253,28 @@ Po provedení predikcí, všechny algoritmy také vytvářet nové sloupce. Opra
     }
 ```    
 
-Můžete najít další informace o výstupní sloupce úloh různých strojového učení v [Machine Learning úlohy](resources/tasks.md) průvodce.
+Další informace o výstupních sloupcích různých úloh strojového učení najdete v průvodci [Machine Learning úkoly](resources/tasks.md) .
 
-Důležité vlastnost DataView objekty je, že jsou vyhodnocovány **laxně**. Zobrazení dat jsou pouze načíst a zpracovat. během cvičení modelu a vyhodnocení a data předpovědi. Při psaní a testování vaší aplikace ML.NET ladicího programu sady Visual Studio můžete provést náhled na libovolný objekt dat zobrazení pomocí volání [ve verzi Preview](xref:Microsoft.ML.DebuggerExtensions.Preview*) metody.
+Důležitou vlastností objektů DataView je, že jsou vyhodnoceny jako **laxně vytvářená**. Zobrazení dat jsou načítána a provozována pouze při výuce a vyhodnocování modelů a předpovědi dat. Při psaní a testování aplikace ML.NET můžete použít ladicí program sady Visual Studio k prohlížení libovolného objektu zobrazení dat voláním metody [Preview](xref:Microsoft.ML.DebuggerExtensions.Preview*) .
 
 ```csharp
     var debug = testPriceDataView.Preview();
 ```
 
-Můžete se podívat `debug` proměnné v ladicím programu a prozkoumat její obsah. Nepoužívejte metodu ve verzi Preview v produkčním kódu, protože výrazně snižuje výkon.
+Můžete sledovat `debug` proměnnou v ladicím programu a prozkoumávat její obsah. Nepoužívejte metodu Preview v produkčním kódu, protože významně snižuje výkon.
 
 ### <a name="model-deployment"></a>Nasazení modelu
 
-V reálné aplikace bude váš kód trénování a vyhodnocování modelu nezávisle na predikci. Ve skutečnosti, že obě aktivity často provádějí mají samostatné týmy. Váš vývojový tým modelu můžete uložit model pro použití v aplikaci předpovědi.
+V aplikacích pracujících v reálném čase bude váš kód pro školení a vyhodnocení vašeho modelu oddělen od předpovědi. Ve skutečnosti tyto dvě aktivity často provádí samostatné týmy. Vývojový tým modelu může uložit model pro použití v aplikaci předpovědi.
 
 ```csharp   
    mlContext.Model.Save(model, trainingData.Schema,"model.zip");
 ```
 
-## <a name="where-to-now"></a>Kam chcete nyní?
+## <a name="where-to-now"></a>Kde začít?
 
-Zjistěte, jak vytvářet aplikace pomocí úlohy různých strojového učení s víc odpovídají realitě datovými sadami v [kurzy](./tutorials/index.md).
+Informace o tom, jak vytvářet aplikace s využitím různých úloh strojového učení s více realistickými [](./tutorials/index.md)datovými sadami, najdete v těchto kurzech.
 
-Nebo můžete informace o konkrétních tématech v části [příručky a návody](./how-to-guides/index.md).
+Případně si můžete přečíst konkrétní témata podrobněji v tématu [návody.](./how-to-guides/index.md)
 
-A pokud je pro vás velmi webu, můžete rovnou přímo do [dokumentaci Reference k rozhraní API](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet)!
+A pokud máte Super nás, můžete podrobně přímo do [Referenční dokumentace k rozhraní API](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet).

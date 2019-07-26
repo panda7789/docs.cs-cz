@@ -1,106 +1,106 @@
 ---
 title: Dekonstrukce řazených kolekcí členů a dalších typů
-description: Zjistěte, jak dekonstruovat řazených kolekcí členů a dalších typů.
+description: Naučte se, jak dekonstruovat řazené kolekce členů a jiné typy.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: d7c5946f5df8a94bf8b54c10f33234b40338a622
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 5d37f9567570666c280be437aa0472a620a16c63
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348152"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400401"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukce řazených kolekcí členů a dalších typů
 
-Řazená kolekce členů poskytuje jednoduchý způsob, jak načíst několik hodnot z volání metody. Ale po načtení řazené kolekce členů je potřeba zpracovat jeho jednotlivé prvky. Na základě prvek po prvku je to náročná, jak ukazuje následující příklad. `QueryCityData` Metoda vrátí hodnotu 3-n-tice a každý z jeho prvků je přiřazená k proměnné v samostatné operaci.
+Řazená kolekce členů poskytuje jednoduchý způsob, jak načíst více hodnot z volání metody. Po načtení řazené kolekce členů je ale nutné zpracovat jeho jednotlivé prvky. Provedení tohoto postupu na základě prvku je náročné, jak ukazuje následující příklad. `QueryCityData` Metoda vrací tři řazené kolekce členů a každý z jejích elementů je přiřazena proměnné v samostatné operaci.
 
 [!code-csharp[WithoutDeconstruction](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple1.cs)]
 
-Načítání více hodnot pole a vlastnosti z objektu může být stejně náročné: je potřeba přiřadit hodnotu pole nebo vlastnost každý člen členské proměnné.
+Načítání více hodnot polí a vlastností z objektu může být stejně náročné: je nutné přiřadit hodnotu pole nebo vlastnosti proměnné na členě v rámci člena.
 
-Od verze C# 7.0, můžete načíst několik elementů z řazené kolekce členů nebo načtení více pole, vlastnosti a vypočítané hodnoty z objektu do jediného *dekonstruovat* operace. Pokud jste dekonstruovat řazené kolekce členů, přiřadíte jeho prvky jednotlivé proměnné. Když jste dekonstruovat objektu, přiřadíte vybraných hodnot jednotlivé proměnné.
+Počínaje C# 7,0 můžete načíst více prvků z řazené kolekce členů nebo načíst více polí, vlastností a vypočítaných hodnot z objektu v rámci jediné operace *dekonstrukce* . Při dekonstrukci řazené kolekce členů přiřadíte jeho prvky jednotlivým proměnným. Při dekonstrukci objektu přiřadíte vybrané hodnoty jednotlivým proměnným.
 
 ## <a name="deconstructing-a-tuple"></a>Dekonstrukce řazené kolekce členů
 
-Funkce C# integrovanou podporu pro dekonstrukce řazených kolekcí členů, které umožňuje rozbalit všechny položky v řazené kolekce členů v rámci jedné operace. Obecná syntaxe dekonstrukce řazené kolekce členů je podobná syntaxe pro definování: uzavřete proměnné, ke kterým má být přiřazena v závorkách na levé straně příkazu přiřazení jednotlivých prvků. Například následující příkaz přiřadí prvky 4-řazenou kolekci členů na čtyřech samostatných proměnné:
+C#nabízí integrovanou podporu pro dekonstrukci řazených kolekcí členů, která umožňuje odbalit všechny položky v řazené kolekci členů v rámci jedné operace. Obecná syntaxe pro dekonstrukci řazené kolekce členů je podobná syntaxi pro definování jednoho: můžete uzavřít proměnné, ke kterým je každý element přiřazen v závorkách na levé straně příkazu přiřazení. Například následující příkaz přiřadí prvky množiny o 4-tice ke čtyřem samostatným proměnným:
 
 ```csharp
 var (name, address, city, zip) = contact.GetAddressInfo();
 ```
 
-Existují tři způsoby, jak dekonstruovat řazené kolekce členů:
+Existují tři způsoby, jak vytvořit řazenou kolekci členů:
 
-- Můžete explicitně deklarovat typ každého pole uvnitř závorek. Následující příklad používá tento přístup k dekonstruovat 3 řazené kolekce členů vrácené `QueryCityData` metody.
+- Můžete explicitně deklarovat typ každého pole uvnitř závorek. Následující příklad používá tento přístup k dekonstrukci 3 – řazené kolekce členů vráceného `QueryCityData` metodou.
 
     [!code-csharp[Deconstruction-Explicit](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple2.cs#1)]
 
-- Můžete použít `var` – klíčové slovo tak tohoto jazyka C# odvodí typ každou proměnnou. Umístíte `var` – klíčové slovo mimo závorky. Následující příklad používá odvození typu při dekonstrukce 3 řazené kolekce členů vrácené `QueryCityData` metody.
+- `var` Klíčové slovo lze použít tak, C# aby odvodí typ každé proměnné. `var` Klíčové slovo umístíte mimo závorky. Následující příklad používá odvození typu při dekonstrukci 3 – řazené kolekce členů vráceného `QueryCityData` metodou.
 
     [!code-csharp[Deconstruction-Infer](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple3.cs#1)]
 
-    Můžete také použít `var` – klíčové slovo samostatně pomocí některé nebo všechny deklarace proměnných v závorkách.
+    `var` Klíčové slovo lze použít také jednotlivě spolu se všemi nebo všemi deklaracemi proměnných uvnitř závorek.
 
     [!code-csharp[Deconstruction-Infer-Some](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple4.cs#1)]
 
-    To je náročné a nedoporučuje se používat.
+    To je náročné a nedoporučuje se.
 
-- A konečně může dekonstruovat řazené kolekce členů do proměnné, které už je deklarovaný.
+- Nakonec můžete vytvořit řazenou kolekci členů do proměnných, které již byly deklarovány.
 
     [!code-csharp[Deconstruction-Declared](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple5.cs#1)]
 
-Všimněte si, že nelze zadat konkrétní typ mimo závorky i v případě každé pole v n-tice stejného typu. Tím se vygeneruje Chyba kompilátoru CS8136 "formulář Dekonstrukce 'var (...)' zakazuje určitého typu pro"var".".
+Všimněte si, že nemůžete zadat konkrétní typ mimo závorky, a to ani v případě, že každé pole v řazené kolekci členů má stejný typ. Tím dojde k chybě kompilátoru CS8136, "Dekonstrukce ' var (...) Form nepovoluje konkrétní typ pro ' var '.
 
-Všimněte si, že musíte také přiřadit každý prvek řazené kolekce členů k proměnné. Pokud nezadáte žádné elementy, kompilátor vygeneruje chybu CS8132 "Nejde dekonstruovat se řazená kolekce členů"x"prvky do proměnné"y"."
+Všimněte si, že musíte také přiřadit každý prvek řazené kolekce členů k proměnné. Vynecháte-li nějaké prvky, kompilátor vygeneruje chybu CS8132, "nelze dekonstruovat řazenou kolekci členů" x "elementů do proměnných" y ".
 
-Všimněte si, že nejde kombinovat deklarace a přiřazení existujících proměnných na levé straně dekonstrukce. Kompilátor vygeneruje chybu CS8184 "při dekonstrukci nejde kombinovat deklarace a výrazy v levé straně." Když členy obsahovat nově deklarované a existující proměnné.
+Všimněte si, že nemůžete kombinovat deklarace a přiřazení k existujícím proměnným na levé straně dekonstrukce. Kompilátor generuje chybu CS8184, "Dekonstrukce nemůže kombinovat deklarace a výrazy na levé straně." Když členové obsahují nově deklarované a existující proměnné.
 
-## <a name="deconstructing-tuple-elements-with-discards"></a>Dekonstrukce elementů řazené kolekce členů se zahodí.
+## <a name="deconstructing-tuple-elements-with-discards"></a>Rekonstrukce elementů řazené kolekce členů s výměty
 
-Při dekonstrukce řazené kolekce členů, často máte zájem hodnoty jenom některé prvky. Od verze C# 7.0, můžete využít výhod podpory jazyka C# pro *zahodí*, které jsou jen pro zápis proměnné jehož hodnoty, které jste se rozhodli ignorovat. Zahození je určeno znakem podtržítka ("\_") v přiřazení. Zahodit libovolný počet hodnot, jak chcete; všechny jsou reprezentované pomocí jedné zahození `_`.
+Při dekonstrukci řazené kolekce členů se často zajímá hodnoty jenom některých prvků. Počínaje C# 7,0 můžete využít výhod C#podpory pro zahození, což jsou proměnné jen pro zápis, jejichž hodnoty jste se rozhodli ignorovat. Zahození je určeno znakem podtržítka (\_"") v přiřazení. Můžete zahodit libovolný počet hodnot, které chcete. Všechny jsou reprezentovány jediným zahozením, `_`.
 
-Následující příklad ukazuje použití řazených kolekcí členů se zahodí. `QueryCityDataForYears` Metoda vrátí 6-řazené kolekce členů s názvem Město, jeho oblast, rok, název města plnění pro daný rok, druhý rok a název města plnění pro daný druhý rok. Příklad ukazuje změnu počtu obyvatel mezi tyto dva roky. Data k dispozici z řazené kolekce členů, jsme unconcerned k oblasti města a víme název města a dvěma kalendářními daty v době návrhu. V důsledku toho jsme zajímá pouze dvě naplnění hodnoty uložené v řazené kolekci členů a dokáže zpracovat zbývající hodnoty jako zahození.  
+Následující příklad znázorňuje použití řazených kolekcí členů s výměty. `QueryCityDataForYears` Metoda vrátí 6 – řazené kolekce členů s názvem města, jeho oblastí, rokem, populacem města pro daný rok, druhým rokem a plněním města pro daný druhý rok. V tomto příkladu se zobrazuje změna populace mezi těmito dvěma roky. Z dat, která jsou k dispozici v rámci řazené kolekce členů, jsme nevěděli s oblastí město a znali jsme název města a dvě datum v době návrhu. V důsledku toho se zajímá jenom o dvě hodnoty populace uložené v řazené kolekci členů a můžou své zbývající hodnoty zpracovat jako zahozené.  
 
 [!code-csharp[Tuple-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-### <a name="deconstructing-user-defined-types"></a>Dekonstrukce uživatelem definované typy
+## <a name="deconstructing-user-defined-types"></a>Dekonstrukce uživatelem definovaných typů
 
-Typy bez řazené kolekce členů nejsou nabízejí integrovanou podporu pro zahodí. Jako autor třídy, struktury nebo rozhraní, můžete ale povolit instance daného typu, který možné dekonstruovat implementací jeden nebo více `Deconstruct` metody. Metoda vrací hodnotu void a každá hodnota na možné dekonstruovat. je označen [si](language-reference/keywords/out-parameter-modifier.md) parametr v podpisu metody. Například následující `Deconstruct` metodu `Person` vrátí první a poslední název třídy:
+C#nenabízí integrovanou podporu pro dekonstrukci typů, které nejsou řazené kolekce členů. Nicméně jako autor třídy, struktury nebo rozhraní můžete dovolit, aby byly instance typu dekonstruovány implementací jedné nebo více `Deconstruct` metod. Metoda vrací typ void a každá hodnota, která má být dekonstruována, je [](language-reference/keywords/out-parameter-modifier.md) v signatuře metody označena výstupním parametrem. Například následující `Deconstruct` metoda `Person` třídy vrátí první, střední a poslední název:
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class1.cs#1)]
 
-Potom můžete dekonstruovat instance `Person` třídu s názvem `p` s přiřazení následujícím postupem:
+Pak můžete dekonstruovat instanci `Person` třídy s názvem `p` s přiřazením, jako je následující:
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class1.cs#2)]
 
-Následující příklad přetížení `Deconstruct` metoda vrátí různé kombinace vlastností `Person` objektu. Vrátí jednotlivé přetížení:
+Následující příklad přetěžuje `Deconstruct` metodu pro vrácení různých kombinací vlastností `Person` objektu. Jednotlivá přetížení vrátí:
 
-- První a poslední název.
-- První, poslední a druhé křestní jméno.
+- Křestní jméno a příjmení.
+- První, poslední a prostřední jméno.
 - Křestní jméno, příjmení, název města a název stavu.
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class2.cs)]
 
-Vzhledem k tomu může dojít k přetížení `Deconstruct` metodu tak, aby odrážely skupin dat, která se běžně extrahují z objektu, je třeba pečlivě definovat `Deconstruct` metody s podpisy, které jsou charakteristické a jednoznačný. Více `Deconstruct` metody, které mají stejný počet `out` parametry nebo stejný počet a typ `out` parametry v jiném pořadí, může způsobit zmatení.
+Vzhledem k tomu, že `Deconstruct` metodu lze přetížit tak, aby odrážela skupiny dat, které jsou běžně extrahovány z objektu, měli `Deconstruct` byste pečlivě definovat metody s signaturami, které jsou charakteristické a jednoznačné. Více `Deconstruct` metod, které mají stejný `out` počet parametrů nebo `out` stejný počet a typ parametrů v jiném pořadí, může způsobit nejasnost.
 
-Přetížené `Deconstruct` metodu v následujícím příkladu znázorňuje jeden stávají možným zdrojem nejasnostem. První přetížení vrátí křestní jméno, křestní jméno, příjmení a věk `Person` objekt v tomto pořadí. Druhé přetížení vrátí informace o názvu pouze spolu s roční příjem, ale první a poslední název jsou v jiném pořadí. To umožňuje snadno zaměnit pořadí argumentů při dekonstrukce `Person` instance.
+Přetížená `Deconstruct` metoda v následujícím příkladu znázorňuje jeden možný zdroj nejasností. První přetížení vrátí křestní jméno, prostřední jméno, příjmení a stáří `Person` objektu v tomto pořadí. Druhé přetížení vrátí pouze informace o názvu společně s ročním příjmem, ale první, prostřední a příjmení jsou v jiném pořadí. Díky tomu je snadné Zaměňujte pořadí argumentů při dekonstrukci `Person` instance.
 
 [!code-csharp[Deconstruct-ambiguity](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-ambiguous.cs)]
 
-## <a name="deconstructing-a-user-defined-type-with-discards"></a>Dekonstrukce typ definovaný uživatelem se zahodí.
+## <a name="deconstructing-a-user-defined-type-with-discards"></a>Dekonstrukce uživatelsky definovaného typu s zahozením
 
-Stejně, jako je tomu u [řazených kolekcí členů](#deconstructing-tuple-elements-with-discards), můžete ignorovat vybrané položky vrácené zahození `Deconstruct` metoda. Každý zahození je určené proměnnou s názvem "\_", a jeden dekonstrukce operace může obsahovat více zahození.
+Stejně jako v případě [řazených kolekcí členů](#deconstructing-tuple-elements-with-discards)můžete použít zahození pro ignorování vybraných položek vrácených `Deconstruct` metodou. Každé zrušení je definováno proměnnou s názvem\_"" a jedinou operací dekonstrukce může zahrnovat více zahození.
 
-Následující příklad deconstructs `Person` objektu do čtyř řetězců (jména a příjmení, města a státu) ale zahodí poslední názvu a stavu.
+Následující příklad dekonstruuje `Person` objekt do čtyř řetězců (křestní jméno a příjmení, město a stav), ale zahodí příjmení a stav.
 
 [!code-csharp[Class-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/class-discard1.cs#1)]
 
-## <a name="deconstructing-a-user-defined-type-with-an-extension-method"></a>Uživatelem definovaný typ dekonstrukce s metodu rozšíření
+## <a name="deconstructing-a-user-defined-type-with-an-extension-method"></a>Dekonstrukce uživatelsky definovaného typu s metodou rozšíření
 
-Pokud jste neměli vytvářet třídy, struktury nebo rozhraní, můžete stále dekonstruovat objekty daného typu implementací jeden nebo více `Deconstruct` [rozšiřující metody](programming-guide/classes-and-structs/extension-methods.md) vracet hodnoty, které vás zajímá.
+Pokud jste nevytvořili třídu, strukturu nebo rozhraní, můžete stále dekonstruovat objekty tohoto typu implementací jedné nebo více `Deconstruct` [rozšiřujících metod](programming-guide/classes-and-structs/extension-methods.md) , které vrátí hodnoty, které vás zajímají.
 
-Následující příklad definuje dvě `Deconstruct` rozšiřující metody pro <xref:System.Reflection.PropertyInfo?displayProperty=nameWithType> třídy. Vrátí první sadu hodnot, které charakteristiku vlastnosti, včetně jeho typ, ať už jde o statické nebo instance, zda je jen pro čtení a určuje, zda se indexují. Druhý určuje vlastnosti usnadnění. Protože usnadnění get a přístupové objekty set se může lišit, logické hodnoty označuje, zda vlastnost má samostatné get i set přístupové objekty a pokud ano, ať už mají stejné usnadnění. Pokud existuje jenom jeden přistupující objekt nebo get i přístupový objekt set mají stejnou přístupností `access` proměnné označuje usnadnění vlastnost jako celek. V opačném případě usnadnění operace get a jsou označeny přístupové objekty set `getAccess` a `setAccess` proměnné.
+Následující příklad definuje dvě `Deconstruct` metody rozšíření <xref:System.Reflection.PropertyInfo?displayProperty=nameWithType> pro třídu. První vrátí sadu hodnot, které určují vlastnosti vlastnosti, včetně jejího typu, bez ohledu na to, zda je statická nebo instance, zda je pouze pro čtení a zda je indexována. Druhý označuje přístupnost vlastnosti. Vzhledem k tomu, že přístupnost přístupových objektů Get a set se může lišit, logické hodnoty označují, zda má vlastnost samostatné přístupové objekty get a set, a pokud má, zda mají stejné přístupnost. Je-li k dispozici pouze jeden přistupující objekt, nebo přistupující objekt get i Set musí mít stejné `access` přístupnost, proměnná označuje přístupnost vlastnosti jako celku. V opačném případě přístupnost přístupových objektů Get a set jsou označeny `getAccess` proměnnými a. `setAccess`
 
 [!code-csharp[Extension-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-extension1.cs)]
 
