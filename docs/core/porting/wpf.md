@@ -1,72 +1,74 @@
 ---
-title: Port aplikace WPF až po .NET Core 3.0
-description: Vás naučí, jak přenést aplikaci rozhraní .NET Framework Windows Presentation Foundation pro .NET Core 3.0 pro Windows.
+title: Portování aplikace WPF na .NET Core 3,0
+description: Naučíte se, jak portovat .NET Framework Windows Presentation Foundation aplikace do .NET Core 3,0 pro Windows.
 author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 5c7e3aca0a473abb831693244d1b194985f2ef7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9885f666e68b795b9b6aba9cf31f9750e30fd170
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614554"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68512287"
 ---
-# <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopovou aplikaci WPF až po .NET Core
+# <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopové aplikace WPF na .NET Core
 
-Tento článek popisuje, jak přenést na základě Windows Presentation Foundation (WPF) aplikaci klasické pracovní plochy z rozhraní .NET Framework do .NET Core 3.0. .NET Core 3.0 SDK obsahuje podporu pro aplikace WPF. WPF je stále rozhraní jen pro Windows a pouze běží na Windows. Tento příklad používá rozhraní příkazového řádku .NET Core SDK k vytváření a správě vašeho projektu.
+Tento článek popisuje, jak přenést vaši desktopovou aplikaci založenou na Windows Presentation Foundation (WPF) z .NET Framework na .NET Core 3,0. Sada .NET Core 3,0 SDK obsahuje podporu pro aplikace WPF. WPF je stále rozhraním jenom pro Windows a běží jenom v systému Windows. V tomto příkladu se k vytvoření a správě projektu používá rozhraní příkazového řádku .NET Core SDK.
 
-V tomto článku najdete různé názvy umožňují určit typy souborů se používá pro migraci. Při migraci vašeho projektu, soubory budou pojmenované jinak, takže duševně je přizpůsobit uvedené níže:
+V tomto článku se k identifikaci typů souborů používaných k migraci používají různé názvy. Při migraci projektu budou soubory pojmenovány jinak, takže je bude možné navzájem narovnávat na ty, které jsou uvedeny níže:
 
 | Soubor | Popis |
 | ---- | ----------- |
-| **MyApps.sln** | Název souboru řešení. |
-| **MyWPF.csproj** | Název projektu WPF rozhraní .NET Framework na port. |
+| **MyApps.sln** | Název souboru řešení |
+| **MyWPF.csproj** | Název .NET Frameworkho projektu WPF na port. |
 | **MyWPFCore.csproj** | Název nového projektu .NET Core, který vytvoříte. |
-| **MyAppCore.exe** | Spustitelný soubor aplikace .NET Core WPF. |
+| **MyAppCore.exe** | Spustitelný soubor aplikace WPF .NET Core |
+
+>[!IMPORTANT]
+>I když tento článek používá C# jako cílový jazyk, postup je stejný pro VB.NET, s tím rozdílem, že VB.NET používá soubory *. vbproj* a. *VB* namísto souborů *. csproj* a *. cs* v uvedeném pořadí.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro jakékoli návrháře práce, které chcete provést.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro každou práci návrháře, kterou chcete provést.
 
-  Instalace následujících úlohách sady Visual Studio:
+  Nainstalujte následující úlohy sady Visual Studio:
   - Vývoj desktopových aplikací .NET
   - Vývoj pro různé platformy .NET
 
-- Projekt WPF práci v řešení, které vytvoří a spustí bez problému.
-- Váš projekt musí být zakódované v C#. 
-- Nainstalujte nejnovější [.NET Core 3.0](https://aka.ms/netcore3download) ve verzi preview.
+- Pracovní projekt WPF v řešení, které sestaví a spouští bez problémů.
+- Nainstalujte nejnovější verzi [.NET Core 3,0](https://aka.ms/netcore3download) Preview.
 
 >[!NOTE]
->**Visual Studio 2017** nepodporuje projekty .NET Core 3.0. **Visual Studio 2019** podporuje projekty .NET Core 3.0, ale zatím nepodporuje vizuálního návrháře pro projekty .NET Core 3.0 WPF. Do vizuálního návrháře použít, musí mít projekt .NET WPF ve vašem řešení, která sdílí soubory s projektem .NET Core.
+>**Visual Studio 2017** nepodporuje projekty .net Core 3,0. **Visual Studio 2019** podporuje projekty .net Core 3,0, ale má omezené podpory pro vizuální návrháře WPF .NET Core. Chcete-li použít plně podporovaný vizuální Návrhář, musíte mít ve svém řešení .NET Framework projekt WPF, který sdílí své soubory s projektem .NET Core.
 
-### <a name="consider"></a>Vezměte v úvahu
+### <a name="consider"></a>Byste
 
-Při přenesení aplikace rozhraní .NET Framework WPF, existuje několik věcí, které musíte zvážit.
+Při přenosu .NET Framework aplikace WPF existuje několik věcí, které je třeba vzít v úvahu.
 
-01. Zkontrolujte, že vaše aplikace je vhodným kandidátem pro migraci.
+01. Ověřte, že je vaše aplikace vhodným kandidátem na migraci.
 
-    Použití [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md) chcete ověřit, jestli váš projekt bude migrovat na rozhraní .NET Core 3.0. Pokud váš projekt obsahuje problémy s .NET Core 3.0, analyzátor vám pomůže určit tyto problémy.
+    Pomocí [analyzátoru přenositelnosti .NET](../../standard/analyzers/portability-analyzer.md) určete, jestli se váš projekt migruje na .net Core 3,0. Pokud má váš projekt problémy s rozhraním .NET Core 3,0, analyzátor vám pomůže tyto problémy identifikovat.
 
 01. Používáte jinou verzi WPF.
 
-    Pokud byla vydána .NET Core 3.0 ve verzi Preview 1, WPF se nepovedlo open source na Githubu. Kód pro .NET Core WPF je základ kódu rozhraní .NET Framework WPF. Je možné, existují určité rozdíly a vaše aplikace nebude portu.
+    Po vydání .NET Core 3,0 Preview 1 se WPF na GitHubu otevře jako zdroj. Kód pro .NET Core WPF je rozvětvení .NET Framework základu kódu WPF. Je možné, že existují nějaké rozdíly a vaše aplikace nebude portem.
 
-01. [Windows Compatibility Pack] [ compat-pack] můžete migrovat.
+01. [Sada Windows Compatibility Pack][compat-pack] vám může při migraci trvat.
 
-    Některá rozhraní API, které jsou k dispozici v rozhraní .NET Framework nejsou k dispozici v rozhraní .NET Core 3.0. [Windows Compatibility Pack] [ compat-pack] přidá mnohé z těchto rozhraní API a může pomoct vaší aplikace WPF, budou kompatibilní s .NET Core.
+    V rozhraní .NET Core 3,0 nejsou k dispozici některá rozhraní API, která jsou k dispozici v .NET Framework. [Sada Windows Compatibility Pack][compat-pack] přidává mnoho těchto rozhraní API a může pomáhat vaší aplikaci WPF bude kompatibilní s .NET Core.
 
 01. Aktualizujte balíčky NuGet používané vaším projektem.
 
-    Je vždy vhodné použít nejnovější verzi balíčků NuGet před nějaká migrace. Pokud aplikace odkazuje na všechny balíčky NuGet, můžete je aktualizujte na nejnovější verzi. Zajistěte, aby že vaše aplikace sestavena úspěšně. Po upgradu, pokud nejsou žádné chyby balíčku, provést downgrade balíčku na nejnovější verzi, která nedojde k narušení kódu.
+    Před migrací je vždycky vhodné použít nejnovější verze balíčků NuGet. Pokud vaše aplikace odkazuje na balíčky NuGet, aktualizujte je na nejnovější verzi. Ujistěte se, že vaše aplikace byla úspěšně vytvořena. Pokud při upgradu dojde k chybám balíčku, proveďte downgrade balíčku na nejnovější verzi, která nepřerušila váš kód.
 
-01. Visual Studio 2019 zatím nepodporuje WPF Designer pro .NET Core 3.0
+01. Visual Studio 2019 zatím nepodporuje návrháře WPF pro .NET Core 3,0
 
-    V současné době je potřeba nechat existující soubor projektu WPF rozhraní .NET Framework, pokud chcete použít Návrhář WPF v sadě Visual Studio.
+    V současné době je nutné zachovat existující .NET Framework soubor projektu WPF, pokud chcete použít návrháře WPF ze sady Visual Studio.
 
-## <a name="create-a-new-sdk-project"></a>Vytvořte nový projekt sady SDK
+## <a name="create-a-new-sdk-project"></a>Vytvořit nový projekt SDK
 
-Nový projekt .NET Core 3.0, které vytvoříte, musí být v jiném adresáři z rozhraní .NET Framework projektu. Pokud jsou oba ve stejném adresáři, můžete jej spustit do je v konfliktu se soubory, které jsou generovány v **obj** adresáře. V tomto příkladu vytvoříte adresář s názvem **MyWPFAppCore** v **SolutionFolder** adresáře:
+Nový projekt .NET Core 3,0, který vytvoříte, musí být v jiném adresáři než váš .NET Framework projekt. Pokud oba jsou ve stejném adresáři, můžete spustit v konfliktu se soubory, které jsou generovány v adresáři **obj** . V tomto příkladu vytvoříte v adresáři **SolutionFolder –** adresář s názvem **MyWPFAppCore** :
 
 ```
 SolutionFolder
@@ -76,7 +78,7 @@ SolutionFolder
 └───MyWPFAppCore      <--- New folder for core project
 ```
 
-V dalším kroku je potřeba vytvořit **MyWPFCore.csproj** projekt **MyWPFAppCore** adresáře. Můžete tento soubor můžete vytvořit ručně pomocí text editoru. Vložte následující kód XML:
+Dále musíte vytvořit projekt **MyWPFCore. csproj** v adresáři **MyWPFAppCore** . Tento soubor můžete vytvořit ručně pomocí textového editoru výběru. Vložte následující kód XML:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
@@ -90,13 +92,13 @@ V dalším kroku je potřeba vytvořit **MyWPFCore.csproj** projekt **MyWPFAppCo
 </Project>
 ```
 
-Pokud nechcete vytvořit soubor projektu ručně, můžete použít ke generování projektu sady Visual Studio nebo .NET Core SDK. Nicméně je nutné odstranit všechny ostatní soubory vygenerovaná šablona projektu s výjimkou souboru projektu. Použití sady SDK, spusťte následující příkaz z **SolutionFolder** adresáře:
+Pokud nechcete vytvořit soubor projektu ručně, můžete použít aplikaci Visual Studio nebo .NET Core SDK k vygenerování projektu. Je však nutné odstranit všechny ostatní soubory vygenerované šablonou projektu s výjimkou souboru projektu. Chcete-li použít sadu SDK, spusťte následující příkaz z adresáře **SolutionFolder –** :
 
 ```cli
 dotnet new wpf -o MyWPFAppCore -n MyWPFCore
 ```
 
-Po vytvoření **MyWPFCore.csproj**, strukturu by měl vypadat nějak takto:
+Po vytvoření **MyWPFCore. csproj**by vaše adresářová struktura měla vypadat nějak takto:
 
 ```
 SolutionFolder
@@ -107,28 +109,28 @@ SolutionFolder
     └───MyWPFCore.csproj
 ```
 
-Bude potřeba přidat **MyWPFCore.csproj** projekt k **MyApps.sln** sadou Visual Studio nebo rozhraní příkazového řádku .NET Core z **SolutionFolder** adresáře:
+Projekt **MyWPFCore. csproj** budete chtít přidat do aplikace **MyApp. sln** pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
 ```cli
 dotnet sln add .\MyWPFAppCore\MyWPFCore.csproj
 ```
 
-## <a name="fix-assembly-info-generation"></a>Oprava generování informací o sestavení
+## <a name="fix-assembly-info-generation"></a>Opravit generování informací o sestavení
 
-Windows Presentation Foundation projekty, které byly vytvořeny pomocí rozhraní .NET Framework zahrnují `AssemblyInfo.cs` soubor, který obsahuje sestavení atributům, jako je verze sestavení, které má být vygenerována. Projekty založenými na sadě SDK automaticky vygenerovat tyto informace vám na základě souboru projektu sadu SDK. Oba typy "informace o sestavení" způsobí konflikt. Tento problém vyřešit tím, že zakážete automatické generování, která vynutí projekt, který používá vaše existující `AssemblyInfo.cs` souboru.
+Windows Presentation Foundation projekty, které byly vytvořeny pomocí .NET Framework obsahují `AssemblyInfo.cs` soubor, který obsahuje atributy sestavení, jako je například verze sestavení, která má být vygenerována. Projekty ve stylu sady SDK automaticky generují tyto informace na základě souboru projektu sady SDK. Pokud má oba typy "informace o sestavení", dojde ke konfliktu. Tento problém vyřešíte tak, že zakážete automatické generování, což vynutí `AssemblyInfo.cs` , aby projekt používal existující soubor.
 
-Existují tři nastavení, chcete-li přidat hlavní `<PropertyGroup>` uzlu. 
+Existují tři nastavení, která lze přidat do hlavního `<PropertyGroup>` uzlu. 
 
 - **GenerateAssemblyInfo**\
-Pokud nastavíte tuto vlastnost na `false`, nevygeneruje atributů sestavení. Tím předejdete konfliktu s existujícím `AssemblyInfo.cs` soubor z rozhraní .NET Framework projektu.
+Pokud nastavíte tuto vlastnost na `false`, nebudou vygenerovány atributy sestavení. Tím se vyhnete konfliktu se stávajícím `AssemblyInfo.cs` souborem z .NET Framework projektu.
 
-- **AssemblyName**\
-Hodnota této vlastnosti je binární výstup vytvořený při kompilaci. Název nemusí rozšíření do ní přidá. Například použití `MyCoreApp` vytváří `MyCoreApp.exe`.
+- **Doplňk**\
+Hodnota této vlastnosti je výstupní binární soubor vytvořený při kompilaci. Název nepotřebuje přidání rozšíření. Například použití `MyCoreApp` služby generuje `MyCoreApp.exe`.
 
 - **RootNamespace**\
-Výchozí obor názvů použitou vaším projektem. Ten by měl odpovídat výchozí obor názvů rozhraní .NET Framework projektu.
+Výchozí obor názvů používaný vaším projektem. Tato hodnota by měla odpovídat výchozímu oboru názvů projektu .NET Framework.
 
-Přidejte tyto tři prvky, aby `<PropertyGroup>` uzlu `MyWPFCore.csproj` souboru:
+Přidejte tyto tři prvky do `<PropertyGroup>` uzlu `MyWPFCore.csproj` v souboru:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
@@ -146,10 +148,10 @@ Přidejte tyto tři prvky, aby `<PropertyGroup>` uzlu `MyWPFCore.csproj` souboru
 </Project>
 ```
 
-## <a name="add-source-code"></a>Přidejte zdrojový kód
-Právě teď **MyWPFCore.csproj** projekt nebude kompilovat žádný kód. Ve výchozím nastavení projekty .NET Core automaticky zahrnout všechny zdrojového kódu v aktuálním adresáři a všechny podřízené adresáře. Je nutné nakonfigurovat projekt tak, aby zahrnout kód z rozhraní .NET Framework projektu pomocí relativní cesty. Pokud rozhraní .NET Framework projekt používá **RESX** soubory ikon a materiály pro windows a ovládací prvky, budete muset zahrnout ty příliš. 
+## <a name="add-source-code"></a>Přidat zdrojový kód
+Nyní projekt **MyWPFCore. csproj** nekompiluje žádný kód. Projekty .NET Core standardně do aktuálního adresáře a všech podřízených adresářů automaticky zahrnují veškerý zdrojový kód. Je nutné nakonfigurovat projekt tak, aby zahrnoval kód z .NET Framework projektu pomocí relativní cesty. Pokud váš .NET Framework projekt používal pro ikony a prostředky pro vaše Windows a ovládací prvky soubory **. resx** , budete je muset zahrnout. 
 
-První `<ItemGroup>` obsahuje uzel, je třeba přidat do projektu **App.xaml** soubor, který představuje spuštění config a prostředky aplikace používá. **App.xaml** soubor má také je v doprovodné **App.xaml.cs** soubor, ale budou automaticky zahrnuty v jiné `<ItemGroup>`.
+První `<ItemGroup>` uzel, který je třeba přidat do projektu, zahrnuje soubor **App. XAML** , který představuje spouštěcí konfiguraci a prostředky, které vaše aplikace používá. Soubor **App. XAML** má také doprovodný soubor **App.XAML.cs** , ale bude automaticky zahrnut do jiného `<ItemGroup>`.
 
 ```xml
   <ItemGroup>
@@ -159,7 +161,7 @@ První `<ItemGroup>` obsahuje uzel, je třeba přidat do projektu **App.xaml** s
   </ItemGroup>
 ```
 
-V dalším kroku přidejte následující `<ItemGroup>` uzlu do projektu. Každý výpis obsahuje vzor glob souboru, který obsahuje podadresáře. Obsahuje zdrojový kód pro váš projekt, všechny soubory nastavení a všechny prostředky. **Obj** adresář je explicitně vyloučeny.
+Dále do svého projektu přidejte `<ItemGroup>` následující uzel. Každý příkaz zahrnuje vzor glob souboru, který obsahuje podřízené adresáře. Obsahuje zdrojový kód pro váš projekt, všechny soubory nastavení a všechny prostředky. Adresář **obj** je explicitně vyloučený.
 
 ```xml
   <ItemGroup>
@@ -169,7 +171,7 @@ V dalším kroku přidejte následující `<ItemGroup>` uzlu do projektu. Každ�
   </ItemGroup>
 ```
 
-V dalším kroku obsahovat jiné `<ItemGroup>` uzel, který obsahuje `<Page>` záznam pro každý **xaml** soubor v projektu s výjimkou **App.xaml** souboru. Ty obsahují všechny windows, stránek a prostředky, které jsou v **xaml** formátu. Nelze použít model glob tady a musíte přidat záznam pro každý soubor a označení `<Generator>` použít.
+Dále zahrňte jiný `<ItemGroup>` uzel, který `<Page>` obsahuje položku pro každý soubor **XAML** v projektu s výjimkou souboru **App. XAML** . Ty obsahují všechny systémy Windows, stránky a prostředky, které jsou ve formátu **XAML** . Zde nemůžete použít vzor glob a musíte přidat položku pro každý soubor a označit `<Generator>` použitou hodnotu.
 
 ```xml
   <ItemGroup>
@@ -179,17 +181,17 @@ V dalším kroku obsahovat jiné `<ItemGroup>` uzel, který obsahuje `<Page>` z�
   </ItemGroup>
 ```
 
-## <a name="add-nuget-packages"></a>Přidání balíčků NuGet
+## <a name="add-nuget-packages"></a>Přidat balíčky NuGet
 
-Přidejte každý balíček NuGet rozhraní .NET Framework projektu do projektu .NET Core. 
+Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do projektu .NET Core. 
 
-Pravděpodobně má vaše aplikace rozhraní .NET Framework WPF **souboru packages.config** soubor, který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete si prohlédnout tento seznam a určit, které balíčky NuGet pro přidání do projektu .NET Core. Například, pokud rozhraní .NET Framework projekt odkazuje `MahApps.Metro` NuGet balíček, přidejte do projektu pomocí sady Visual Studio. Můžete také přidat odkaz na balíček pomocí rozhraní příkazového řádku .NET Core z **SolutionFolder** adresáře:
+Nejpravděpodobnější .NET Framework aplikace WPF má soubor **Packages. config** , který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Například pokud projekt .NET Framework odkazuje na `MahApps.Metro` balíček NuGet, přidejte ho do projektu pomocí sady Visual Studio. Odkaz na balíček můžete přidat také pomocí .NET Core CLI v adresáři **SolutionFolder –** :
 
 ```cli
 dotnet add .\MyWPFAppCore\MyWPFCore.csproj package MahApps.Metro -v 2.0.0-alpha0262
 ```
 
-Předchozí příkaz přidejte následující odkaz NuGet na **MyWPFCore.csproj** projektu:
+Předchozí příkaz přidá následující odkaz NuGet do projektu **MyWPFCore. csproj** :
 
 ```xml
   <ItemGroup>
@@ -197,15 +199,15 @@ Předchozí příkaz přidejte následující odkaz NuGet na **MyWPFCore.csproj*
   </ItemGroup>
 ```
 
-## <a name="problems-compiling"></a>Problémy kompilace
+## <a name="problems-compiling"></a>Kompilace problémů
 
-Pokud máte problémy sestavování vašich projektů, může pomocí některé API jen pro Windows, které jsou k dispozici v rozhraní .NET Framework, ale není k dispozici v .NET Core. Můžete zkusit přidat [Windows Compatibility Pack] [ compat-pack] do svého projektu balíček NuGet. Tento balíček pouze běží na Windows a přidá přibližně 20 000 rozhraní Windows API pro projekty .NET Core a .NET Standard.
+Pokud máte problémy s kompilací vašich projektů, můžete používat jenom některá rozhraní API jenom pro Windows, která jsou k dispozici v .NET Framework, ale nejsou dostupná v .NET Core. Do projektu se můžete pokusit přidat balíček NuGet [sady Windows Compatibility Pack][compat-pack] . Tento balíček se spouští jenom ve Windows a přidává asi 20 000 rozhraní API Windows do projektů .NET Core a .NET Standard.
 
 ```cli
 dotnet add .\MyWPFAppCore\MyWPFCore.csproj package Microsoft.Windows.Compatibility
 ```
 
-Předchozí příkaz přidá následující **MyWPFCore.csproj** projektu:
+Předchozí příkaz přidá následující do projektu **MyWPFCore. csproj** :
 
 ```xml
   <ItemGroup>
@@ -215,13 +217,13 @@ Předchozí příkaz přidá následující **MyWPFCore.csproj** projektu:
 
 ## <a name="wpf-designer"></a>návrhář WPF
 
-Jak je uvedeno v tomto článku podporuje Visual Studio 2019 Návrhář WPF pouze v projektech .NET Framework. Tím, že vytvoříte projekt .NET Core vedle sebe, můžete otestovat projekt pomocí .NET Core při použití rozhraní .NET Framework projektu pro návrh formulářů. Soubor řešení obsahuje projekty rozhraní .NET Framework a .NET Core. Přidat a návrh formulářů a ovládacích prvků v rozhraní .NET Framework projektu a na základě na vzory souborů glob jsme přidali do projektů .NET Core, všechny nové nebo změněné soubory se automaticky zahrnou v projektech .NET Core.
+Jak je popsáno v tomto článku, Visual Studio 2019 podporuje pouze návrháře WPF v .NET Frameworkch projektech. Vytvořením souběžného projektu .NET Core můžete testovat projekt pomocí .NET Core při použití projektu .NET Framework k návrhu formulářů. Váš soubor řešení zahrnuje projekty .NET Framework i .NET Core. Přidejte a navrhněte formuláře a ovládací prvky v projektu .NET Framework a na základě vzorů glob souborů, které jsme přidali do projektů .NET Core, budou všechny nové nebo změněné soubory automaticky zahrnuty v projektech .NET Core.
 
-Jakmile Visual Studio 2019 podporuje návrháře WPF, můžete zkopírovat a vložit obsah souboru projektu .NET Core do souboru projektu rozhraní .NET Framework. Odstraňte glob vzory souborů, přidá se `<Source>` a `<EmbeddedResource>` položky. Vyřešte cest pro všechny odkazy projektu používají ve vaší aplikaci. To efektivně provede upgrade rozhraní .NET Framework projektu do projektu .NET Core.
- 
-## <a name="next-steps"></a>Další kroky
+Jakmile aplikace Visual Studio 2019 podporuje návrháře WPF, můžete zkopírovat nebo vložit obsah souboru projektu .NET Core do souboru projektu .NET Framework. Pak odstraňte vzory glob souborů přidané s `<Source>` položkami a. `<EmbeddedResource>` Opravte cesty pro všechny odkazy na projekt, které vaše aplikace používá. Tím se efektivně upgraduje .NET Framework projekt na projekt .NET Core.
 
-* Další informace najdete [Windows Compatibility Pack][compat-pack].
-* Sledování [videa na přenos](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) WPF rozhraní .NET Framework projektu .NET Core.
+## <a name="next-steps"></a>Další postup
+
+- Přečtěte si další informace o sadě [Windows Compatibility Pack][compat-pack].
+- Podívejte se [na video o přenosu](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) .NET Frameworkho projektu WPF do .NET Core.
 
 [compat-pack]: windows-compat-pack.md

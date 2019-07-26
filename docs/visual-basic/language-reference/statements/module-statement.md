@@ -13,15 +13,15 @@ helpviewer_keywords:
 - classes [Visual Basic], vs. modules
 - declarations [Visual Basic], modules
 ms.assetid: a1243afc-14a5-45df-95d5-51118aeac362
-ms.openlocfilehash: 73d4a5cc8fd4bad41ead1fda830504b19877a8d8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 08268fd473a3a916f41f2f46090e3245acda07dd
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625473"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68513008"
 ---
 # <a name="module-statement"></a>Module – příkaz
-Deklaruje název modulu a zavádí definici proměnných, vlastností, událostí a postupů, které se skládá z modulu.  
+Deklaruje název modulu a zavádí definici proměnných, vlastností, událostí a procedur, které modul zahrnuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ End Module
   
 ## <a name="parts"></a>Součásti  
  `attributelist`  
- Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
+ Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
  `accessmodifier`  
  Volitelné. Může být jedna z následujících akcí:  
@@ -42,56 +42,56 @@ End Module
   
 - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
- Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `name`  
- Povinný parametr. Název tohoto modulu. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Povinný parametr. Název tohoto modulu Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
  `statements`  
- Volitelné. Příkazy, které definují proměnné, vlastnosti, události, postupy a vnořené typy tohoto modulu.  
+ Volitelné. Příkazy definující proměnné, vlastnosti, události, procedury a vnořené typy tohoto modulu.  
   
  `End Module`  
- Ukončuje `Module` definice.  
+ `Module` Ukončí definici.  
   
 ## <a name="remarks"></a>Poznámky  
- A `Module` prohlášení definuje typ odkazu, který je k dispozici v rámci svého oboru názvů. A *modulu* (říká se jim *standardní modul*) se podobá do třídy, ale některé důležité rozdíly. Každý modul nemá přesně jednu instanci a není nutné vytvořit či přiřazen proměnné. Moduly nepodporují dědičnosti nebo implementovat rozhraní. Všimněte si, že je modul *typ* v tom smyslu, že třídu nebo strukturu – programovací element má datový typ modulu nelze deklarovat.  
+ `Module` Příkaz definuje typ odkazu dostupný v celém svém oboru názvů. *Modul* (někdy označovaný jako *Standardní modul*) je podobný třídě, ale s některými důležitými odlišnostmi. Každý modul obsahuje přesně jednu instanci a není nutné jej vytvářet ani přiřazovat proměnné. Moduly nepodporují dědičnost ani implementují rozhraní. Všimněte si, že modul není *typu* v tom smyslu, že třída nebo struktura je – nelze deklarovat programový prvek tak, aby měl datový typ modulu.  
   
- Můžete použít `Module` pouze na úrovni oboru názvů. To znamená, že *kontext deklarace* modulu musí být zdrojový soubor nebo obor názvů a nemůže být třída, struktura, modulu, rozhraní, procedura nebo blok. Nelze vnořovat modulu jiný modul, nebo v rámci libovolného typu. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ Můžete použít `Module` pouze na úrovni oboru názvů. To znamená, že *kontext deklarace* pro modul musí být zdrojový soubor nebo obor názvů a nemůže být třída, struktura, modul, rozhraní, procedura nebo blok. Nemůžete vnořovat modul v jiném modulu nebo v žádném typu. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Modul má stejnou dobu života jako aplikaci. Protože všechny její členy jsou `Shared`, mají také životnosti rovna vlastnosti programu.  
+ Modul má stejnou životnost jako váš program. Vzhledem k tomu, že `Shared`se jedná o všechny členy, mají také životní cyklus stejné jako u programu.  
   
- Moduly ve výchozím nastavení [Friend](../../../visual-basic/language-reference/modifiers/friend.md) přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Moduly jako výchozí mají přístup [typu Friend](../../../visual-basic/language-reference/modifiers/friend.md) . Můžete upravit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  Všichni členové modulu jsou implicitně `Shared`.  
   
 ## <a name="classes-and-modules"></a>Třídy a moduly  
- Tyto prvky řada podobností, ale existuje několik důležitých rozdílů.  
+ Tyto prvky mají hodně podobnosti, ale existují i některé důležité rozdíly.  
   
-- **Terminologie.** Předchozí verzí jazyka Visual Basic rozpoznat dva typy modulů: *moduly tříd* (.cls soubory) a *standardní moduly* (BAS soubory). Aktuální verze volá tyto *třídy* a *moduly*v uvedeném pořadí.  
+- **Vede.** Předchozí verze Visual Basic rozpoznávají dva typy modulů: *moduly tříd* (soubory. CLS) a *standardní moduly* (soubory. bas). Aktuální verze volá tyto *třídy* a *moduly*, v uvedeném pořadí.  
   
-- **Sdílené členy.** Můžete řídit, jestli je sdílené člen třídy nebo člena instance.  
+- **Sdílené členy.** Můžete určit, zda je člen třídy sdíleným členem nebo členem instance.  
   
-- **Objekt orientace.** Třídy jsou objektově orientované, ale nejsou moduly. Proto pouze třídy může být vytvořen jako objekty. Další informace najdete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+- **Orientace objektu.** Třídy jsou objektově orientované, ale moduly nejsou. Takže pouze třídy mohou být vytvořeny jako objekty. Další informace naleznete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Modifikátory.** Všichni členové modulu jsou implicitně [Shared](../../../visual-basic/language-reference/modifiers/shared.md). Nelze použít `Shared` – klíčové slovo deklarace člena a není možné pozměnit sdílený stav kteréhokoli člena.  
+- **Modifikátory.** Všechny členy modulů jsou implicitně [sdíleny](../../../visual-basic/language-reference/modifiers/shared.md). `Shared` Klíčové slovo nelze použít při deklaraci člena a nelze změnit sdílený stav žádného člena.  
   
-- **Dědičnost.** Modul nemůže dědit z libovolného typu jiného než <xref:System.Object>, ze které všechny moduly dědit. Konkrétně se jeden modul nemůže dědit z jiné.  
+- **Dědičnost.** Modul nemůže dědit z jiného typu než <xref:System.Object>, ze kterého všechny moduly dědí. Konkrétně jeden modul nemůže dědit z jiného modulu.  
   
-     Nelze použít [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md) v definici modulu ani k určení <xref:System.Object>.  
+     [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md) nelze použít v definici modulu, ani když zadáte <xref:System.Object>.  
   
-- **Výchozí vlastnost.** V modulu nejde definovat žádné výchozí vlastnosti. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
+- **Výchozí vlastnost.** V modulu nelze definovat žádné výchozí vlastnosti. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
   
 ## <a name="behavior"></a>Chování  
   
-- **Úroveň přístupu.** V rámci modulu můžete deklarovat každého člena se svou vlastní úroveň přístupu. Modul členy ve výchozím nastavení [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnné a konstanty, které výchozí [privátní](../../../visual-basic/language-reference/modifiers/private.md) přístup. Pokud modul má omezený přístup k více než jeden z jejích členů, úroveň přístupu zadaného modulu přednost.  
+- **Úroveň přístupu.** V rámci modulu můžete deklarovat každého člena s vlastní úrovní přístupu. Členy modulu jsou ve výchozím nastavení [veřejný](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnných a konstant, které jsou ve výchozím nastavení [privátním](../../../visual-basic/language-reference/modifiers/private.md) přístupem. Pokud má modul více omezený přístup než jeden z jeho členů, má zadaná úroveň přístupu k modulu přednost.  
   
-- **Obor.** Modul je v oboru v rámci svého oboru názvů.  
+- **Oboru.** Modul je v rozsahu celého oboru názvů.  
   
-     Obor každého člena modulu je celý modul. Všimněte si, že všichni členové této oblasti podstupovali *zadejte povýšení*, což způsobí, že jejich obor má být převeden na obor názvů obsahující modul. Další informace najdete v tématu [propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
+     Rozsah každého člena modulu je celý modul. Všimněte si, že všichni členové přecházejí na povýšení *typu*, což způsobí, že jejich obor bude povýšen na obor názvů obsahující modul. Další informace najdete v tématu o [typu propagace](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
   
-- **Kvalifikace.** Máte více modulů v projektu a je možné deklarovat členy se stejným názvem ve dvou nebo více modulů. Pokud je odkaz z mimo modul, však musí kvalifikovat všechny odkazy na tento člen s názvem příslušný modul. Další informace najdete v tématu [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+- **Vydal.** V projektu může být více modulů a můžete deklarovat členy se stejným názvem ve dvou nebo více modulech. Pokud je však odkaz z vnějšku tohoto modulu, musíte kvalifikovat jakýkoliv odkaz na takový člen s odpovídajícím názvem modulu. Další informace naleznete v tématu [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrStatements#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#69)]  

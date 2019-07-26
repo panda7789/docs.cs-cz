@@ -10,62 +10,67 @@ helpviewer_keywords:
 - Object data type
 - Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
-ms.openlocfilehash: 593fda6a4949a55d77ae70edd19159a618cc6b6d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ac906494c49810e3d389591b1044f412e7320bc
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592083"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68513052"
 ---
 # <a name="object-data-type"></a>Datový typ objektu
-Obsahuje adresy, které odkazují na objekty. Jakýkoli odkaz na typ (řetězec, pole, třídy nebo rozhraní) můžete přiřadit `Object` proměnné. `Object` Proměnné lze také odkazovat na data libovolného typu hodnoty (číselné, `Boolean`, `Char`, `Date`, struktury nebo výčet).  
-  
-## <a name="remarks"></a>Poznámky  
- `Object` Datový typ může odkazovat na data z libovolného datového typu, včetně všechny instance objektu rozpozná vaší aplikace. Použití `Object` Pokud si nejste jisti v době kompilace, jaký datový typ proměnné může ukazovat na.  
-  
- Výchozí hodnota `Object` je `Nothing` (odkaz s hodnotou null).  
-  
-## <a name="data-types"></a>Datové typy  
- Můžete přiřadit proměnné, konstanty nebo výrazu libovolného datového typu pro `Object` proměnné. Určit typ dat `Object` proměnná aktuálně odkazuje, můžete použít <xref:System.Type.GetTypeCode%2A> metodu <xref:System.Type?displayProperty=nameWithType> třídy. Toto dokládá následující příklad.  
-  
-```  
-Dim myObject As Object  
-' Suppose myObject has now had something assigned to it.  
-Dim datTyp As Integer  
-datTyp = Type.GetTypeCode(myObject.GetType())  
-```  
-  
- `Object` Datový typ je typ odkazu. Však zpracovává jazyka Visual Basic `Object` proměnné jako typ hodnoty, když se odkazuje na datový typ hodnoty.  
-  
-## <a name="storage"></a>Úložiště  
- Jakýkoli datový typ, na který odkazuje, `Object` proměnné samotné, ale spíše ukazatel na hodnotu neobsahuje hodnotu data. Vždy používá čtyři bajty v paměti počítače, ale nezahrnuje úložiště pro data představující hodnotu proměnné. Z důvodu kód, který používá ukazatel vyhledejte data `Object` proměnné obsahující typy hodnot jsou o něco pomalejší než explicitně přístup k zadané proměnné.  
-  
-## <a name="programming-tips"></a>Tipy k programování  
-  
-- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy ukazatelů v jiných prostředích nejsou kompatibilní s jazykem Visual Basic `Object` typu.  
-  
-- **Výkon.** Proměnná deklarovaná pomocí `Object` typ je dostatečně flexibilní, aby obsahují odkaz na libovolný objekt. Nicméně při vyvolání metody nebo vlastnosti na tyto proměnné se vždy vynakládají *pozdní vazby* (za běhu). Chcete-li vynutit *časné vazby* (v době kompilace) a lepšího výkonu, deklarujte proměnnou s názvem určité třídy nebo přetypován na určitý datový typ.  
-  
-     Při deklaraci proměnné objektu, zkuste použít určitý typ třídy, například <xref:System.OperatingSystem>, místo zobecněný `Object` typu. By měl také použít k dispozici, například na třídu nejspecifičtější <xref:System.Windows.Forms.TextBox> místo <xref:System.Windows.Forms.Control>, aby přístup k jeho vlastnosti a metody. Můžete obvykle použít **třídy** v seznamu **prohlížeče objektů** najít názvy tříd k dispozici.  
-  
-- **Rozšíření.** Všechny typy dat a všechny typy odkazů rozšířit na `Object` datového typu. To znamená, že lze převést libovolný typ `Object` aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
-  
-     Ale při převodu mezi typy hodnot a `Object`, Visual Basic provádí operace volat *zabalení* a *rozbalení*, ujistěte se, které provádění pomalejší.  
-  
-- **Znaky typu.** `Object` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
-  
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Object?displayProperty=nameWithType> třídy.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje `Object` proměnná odkazuje na instanci objektu.  
-  
-```  
-Dim objDb As Object  
-Dim myCollection As New Collection()  
-' Suppose myCollection has now been populated.  
-objDb = myCollection.Item(1)  
-```  
-  
+
+Obsahuje adresy, které odkazují na objekty. `Object` Proměnné můžete přiřadit libovolný typ odkazu (řetězec, pole, třída nebo rozhraní). Proměnná může také odkazovat na data libovolného typu hodnoty ( `Char`číselná, `Boolean` `Date`,,, struktura nebo výčet). `Object`
+
+## <a name="remarks"></a>Poznámky
+
+`Object` Datový typ může ukazovat na data libovolného datového typu, včetně jakékoli instance objektu, kterou vaše aplikace rozpoznává. Použijte `Object` , pokud v době kompilace neznáte, na jaký datový typ proměnné může odkazovat.
+
+Výchozí hodnota `Object` je `Nothing` (odkaz s hodnotou null).
+
+## <a name="data-types"></a>Datové typy
+
+Proměnné, konstanty nebo výrazy libovolného datového typu `Object` můžete přiřadit proměnné. Chcete-li určit datový typ `Object` , na který proměnná aktuálně odkazuje, můžete <xref:System.Type.GetTypeCode%2A> použít metodu <xref:System.Type?displayProperty=nameWithType> třídy. Toto dokládá následující příklad.
+
+```vb
+Dim myObject As Object
+' Suppose myObject has now had something assigned to it.
+Dim datTyp As Integer
+datTyp = Type.GetTypeCode(myObject.GetType())
+```
+
+`Object` Datový typ je odkazový typ. Nicméně Visual Basic považuje `Object` proměnnou jako typ hodnoty, když odkazuje na data typu hodnoty.
+
+## <a name="storage"></a>Úložiště
+
+Libovolný datový typ, na který odkazuje, `Object` proměnná neobsahuje datovou hodnotu samotnou, ale spíše ukazatel na hodnotu. Vždycky používá čtyři bajty v paměti počítače, ale nezahrnuje úložiště dat, která představují hodnotu proměnné. Z důvodu kódu, který používá ukazatel k vyhledání dat, jsou proměnné `Object` , které mají typy hodnot, mírně pomalejší pro přístup, než explicitně typované proměnné.
+
+## <a name="programming-tips"></a>Tipy k programování
+
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy ukazatelů v jiných prostředích nejsou kompatibilní s typem Visual Basic `Object` .
+
+- **Výkon.** Proměnná, kterou deklarujete s `Object` typem, je dostatečně flexibilní, aby obsahovala odkaz na libovolný objekt. Nicméně pokud pro takovou proměnnou vyvoláte metodu nebo vlastnost, vždy se vám bude účtovat *pozdní vazba* (za běhu). Chcete-li vynutit *počáteční vazbu* (v době kompilace) a lepší výkon, deklarujte proměnnou pomocí konkrétního názvu třídy nebo ji přetypujte na konkrétní datový typ.
+
+  Pokud deklarujete proměnnou objektu, zkuste použít konkrétní typ třídy, <xref:System.OperatingSystem>například namísto `Object` zobecněného typu. Měli byste také použít nejvíce dostupné třídy, <xref:System.Windows.Forms.TextBox> jako je například <xref:System.Windows.Forms.Control>namísto, abyste měli přístup k jeho vlastnostem a metodám. Můžete obvykle použít seznam **třídy** v **Prohlížeč objektů** k vyhledání dostupných názvů tříd.
+
+- **Rozšiřující.** Všechny datové typy a všechny typy odkazů se rozšíří na `Object` datový typ. To znamená, že můžete převést libovolný typ `Object` na bez výskytu <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+
+  Nicméně pokud převedete mezi typy hodnot a `Object`, Visual Basic provádí operace s názvem zabalení a rozbalení, které provádějí zpracování pomaleji.
+
+- **Znaky typu.** `Object`nemá žádný znak typu literálu nebo znak typu identifikátoru.
+
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Object?displayProperty=nameWithType> třída.
+
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje `Object` proměnnou odkazující na instanci objektu.
+
+```vb
+Dim objDb As Object
+Dim myCollection As New Collection()
+' Suppose myCollection has now been populated.
+objDb = myCollection.Item(1)
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Object>
@@ -74,4 +79,4 @@ objDb = myCollection.Item(1)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
 - [Postupy: Určení, zda dva objekty souvisejí](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)
-- [Postupy: Určení, zda dva objekty jsou identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+- [Postupy: Určení, zda jsou dva objekty identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
