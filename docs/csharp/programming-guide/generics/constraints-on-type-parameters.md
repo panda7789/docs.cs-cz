@@ -1,5 +1,5 @@
 ---
-title: Omezení parametrů typů - C# Průvodce programováním
+title: Omezení parametrů typu – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 04/12/2018
 helpviewer_keywords:
@@ -7,104 +7,104 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 44ab9766bead15c97a1397ef1f47de75f72643a3
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: f09f93f27aa4f50cfb7e09b9d6d4f98f22e1ac9a
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423539"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433558"
 ---
-# <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typů (C# Programming Guide)
+# <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (C# Průvodce programováním)
 
-Omezení kompilátoru informuje o možnosti, které argument typu musí mít. Bez jakýchkoliv omezení typu argument může být libovolného typu. Kompilátor může převzít jenom jako objekty její členové <xref:System.Object?displayProperty=nameWithType>, což je základní třídy ultimate pro jakýkoli typ .NET. Další informace najdete v tématu [Proč používat omezení](#why-use-constraints). Pokud klientský kód se pokusí vytvořit instanci své třídy pomocí typu, který není povolen omezením, výsledkem je chyba kompilace. Omezení je určené vlastností `where` kontextové klíčové slovo. V následující tabulce jsou uvedeny sedm typy omezujících podmínek:
+Omezení informují kompilátor o možnostech, které musí mít argument typu. Bez omezení může být argumentem typu libovolný typ. Kompilátor může předpokládat pouze členy <xref:System.Object?displayProperty=nameWithType>, což je maximální základní třída pro libovolný typ rozhraní .NET. Další informace najdete v tématu [Proč použít omezení](#why-use-constraints). Pokud se klientský kód pokusí vytvořit instanci vaší třídy pomocí typu, který není povolen omezením, výsledkem je chyba při kompilaci. Omezení jsou určena pomocí `where` klíčového slova kontextové. V následující tabulce jsou uvedeny sedm typů omezení:
 
-|Omezení|Popis|
+|Jedinečn|Popis|
 |----------------|-----------------|
-|`where T : struct`|Argument typu musí být typem hodnoty. Některá hodnota typu s výjimkou <xref:System.Nullable%601> lze zadat. Další informace o typech s povolenou hodnotou Null, naleznete v tématu [typy připouštějící hodnotu Null](../nullable-types/index.md).|
-|`where T : class`|Argument typu musí být typ odkazu. Toto omezení platí také pro třídy, rozhraní, delegáta nebo typ pole.|
-|`where T : unmanaged`|Argument typu nemůže být odkazovým typem a nesmí obsahovat žádné členy typu odkazu na libovolné úrovni vnoření.|
-|`where T : new()`|Argument typu musí mít veřejný konstruktor bez parametrů. Při použití s dalšími omezeními `new()` omezení musí být uvedený jako poslední.|
-|`where T :` *\<Název základní třídy >*|Argument typu musí být nebo odvozen od zadané základní třídy.|
-|`where T :` *\<Název rozhraní >*|Argument typu musí být nebo implementovat rozhraní zadané. Je možné zadat více omezením rozhraní. Omezující rozhraní může být obecný.|
-|`where T : U`|Argument typu zadaný pro T musí být nebo odvozené z argument zadaný pro U.|
+|`where T : struct`|Argument typu musí být typ hodnoty. Jakýkoli typ hodnoty s <xref:System.Nullable%601> výjimkou lze zadat. Další informace o typech Nullable naleznete v tématu [typy s možnou hodnotou null](../nullable-types/index.md).|
+|`where T : class`|Argument typu musí být typ odkazu. Toto omezení platí také pro libovolnou třídu, rozhraní, delegáta nebo typ pole.|
+|`where T : unmanaged`|Argument typu musí být nespravovaný [typ](../../language-reference/builtin-types/unmanaged-types.md).|
+|`where T : new()`|Argument typu musí mít veřejný konstruktor bez parametrů. Při použití společně s jinými omezeními je `new()` třeba omezení zadat jako poslední.|
+|`where T :`název základní třídy >  *\<*|Argument typu musí být nebo odvozen ze zadané základní třídy.|
+|`where T :` *názevrozhraní\<>*|Argument typu musí být nebo implementovat zadané rozhraní. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|
+|`where T : U`|Argument typu zadaný pro T musí být nebo odvozen od argumentu zadaného pro U.|
 
-Některá omezení se vzájemně vylučují. Všechny hodnotové typy musí mít dostupný konstruktor bez parametrů. `struct` Znamená omezení `new()` omezení a `new()` omezení nelze kombinovat s `struct` omezení. `unmanaged` Omezení znamená, `struct` omezení. `unmanaged` Omezení nelze kombinovat s buď `struct` nebo `new()` omezení.
+Některá omezení se vzájemně vylučují. Všechny typy hodnot musí mít přístupný konstruktor bez parametrů. Omezení implikuje `new()`omezenía omezení nelze kombinovat s `struct` omezením. `new()` `struct` `unmanaged` Omezení implikuje omezení. `struct` Omezení nelze kombinovat s `struct` omezeními nebo `new()`. `unmanaged`
 
-## <a name="why-use-constraints"></a>Proč používat omezení
+## <a name="why-use-constraints"></a>Proč použít omezení
 
-Pomocí omezení parametru typu, zvyšte počet povolených operací a volání metody, které jsou podporovány omezující typ a všechny typy v hierarchii dědičnosti. Při návrhu obecných tříd nebo metod, pokud jste se všechny operace na obecné členy nad rámec jednoduché přiřazení nebo voláním jakékoli metody, které nepodporují <xref:System.Object?displayProperty=nameWithType>, budete muset použít omezení parametru typu. Například omezení základní třídy instruuje kompilátor, že pouze objekty tohoto typu nebo odvozený z tohoto typu se použije jako argumenty typu. Jakmile kompilátor této záruky, můžete povolit metody tohoto typu k volání v obecné třídě. Následující příklad kódu ukazuje funkce, můžete přidat `GenericList<T>` třídy (v [Úvod do obecných typů](introduction-to-generics.md)) s použitím omezení základní třídy.
+Omezením parametru typu zvýšíte počet povolených operací a volání metod do těch, které jsou podporovány typem omezení a všemi typy v její hierarchii dědičnosti. Pokud navrhujete obecné třídy nebo metody, pokud budete provádět jakoukoli operaci u obecných členů nad rámec jednoduchého přiřazení nebo volání jakékoli metody <xref:System.Object?displayProperty=nameWithType>, kterou nepodporuje, budete muset použít omezení na parametr typu. Například omezení základní třídy říká kompilátoru, že jako argumenty typu budou použity pouze objekty tohoto typu nebo odvozené z tohoto typu. Jakmile má kompilátor tuto záruku, může dovolit volání metod tohoto typu v obecné třídě. Následující příklad kódu ukazuje funkce, které lze přidat do `GenericList<T>` třídy (v části [Úvod do obecných](introduction-to-generics.md)) pomocí omezení základní třídy.
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#9)]
 
-Omezení umožňuje použití obecné třídy `Employee.Name` vlastnost. Omezení, která určuje všechny položky typu `T` je zaručeno, že se buď `Employee` objektu nebo objekt, který dědí z `Employee`.
+Omezení umožňuje, aby obecná třída používala `Employee.Name` vlastnost. Omezení určuje, že všechny položky typu `T` jsou zaručeny `Employee` buď objekt, nebo objekt, který dědí z `Employee`.
 
-Více omezení můžete použít pro stejný parametr typu a omezení sami může být obecné typy, následujícím způsobem:
+U stejného parametru typu lze použít více omezení a samotné omezení mohou být obecné typy, a to takto:
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#10)]
 
-Při použití `where T : class` omezení, vyhněte `==` a `!=` operátory u parametru typu vzhledem k tomu, že tyto operátory testovat odkaz identity jenom, ne pro rovnost hodnot. K tomuto chování dochází i v případě, že jsou tyto operátory přetíženy v typu, který se používá jako argument. Následující kód znázorňuje tento bod; i když má hodnotu false výstup <xref:System.String> třídy přetížení `==` operátor.
+Při použití `where T : class` omezení se `==` Vyhněte operátorům `!=` a v parametru typu, protože tyto operátory budou testovat pouze referenční identitu, nikoli pro rovnost hodnot. K tomuto chování dochází, i když jsou tyto operátory přetíženy v typu, který se používá jako argument. Následující kód ilustruje tento bod; výstup je false, i když <xref:System.String> třída přetěžuje `==` operátor.
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#11)]
 
-Kompilátor ví pouze, že T je typ odkazu v době kompilace a musí používat výchozí operátory, které jsou platné pro všechny typy odkazů. Pokud musíte otestovat pro hodnotu rovnosti, doporučený postup je také použít `where T : IEquatable<T>` nebo `where T : IComparable<T>` omezení a implementovat rozhraní do třídy, která se použije k vytvoření obecné třídy.
+Kompilátor ví pouze, že T je odkazový typ v době kompilace a musí používat výchozí operátory, které jsou platné pro všechny typy odkazů. Pokud je nutné testovat rovnost hodnot, doporučuje se také použít `where T : IEquatable<T>` omezení nebo `where T : IComparable<T>` a implementovat rozhraní v jakékoli třídě, která bude použita k vytvoření obecné třídy.
 
 ## <a name="constraining-multiple-parameters"></a>Omezení více parametrů
 
-Více parametrů a více omezení na jeden parametr, můžete použít omezení, jak je znázorněno v následujícím příkladu:
+Můžete použít omezení na více parametrů a více omezení na jeden parametr, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#12)]
 
-## <a name="unbounded-type-parameters"></a>Parametry typu bez vazby
+## <a name="unbounded-type-parameters"></a>Neohraničené parametry typu
 
- Zadejte parametry, které obsahují bez omezení, jako je například T v veřejnou třídu `SampleClass<T>{}`, jsou označované jako parametry typu bez vazby. Parametry typu bez vazby mají následující pravidla:
+ Parametry typu, které nemají žádná omezení, jako je například T ve `SampleClass<T>{}`veřejné třídě, se nazývají neohraničené parametry typu. Neohraničené parametry typu mají následující pravidla:
 
-- `!=` a `==` operátory nelze použít, protože neexistuje žádná záruka, že argument typu implementujícího typ bude podporovat tyto operátory.
-- Může být převeden do a z `System.Object` nebo explicitně převést na libovolný typ rozhraní.
-- Můžete porovnat jim [null](../../language-reference/keywords/null.md). Pokud bez vazby parametru je ve srovnání s `null`, porovnání vždy vrátí hodnotu false, pokud typ argumentu je typ hodnoty.
+- Operátory `!=` a`==` nelze použít, protože není nijak zaručeno, že konkrétní argument typu bude podporovat tyto operátory.
+- Lze je převést na nebo z `System.Object` nebo explicitně převést na libovolný typ rozhraní.
+- Můžete je porovnat s [hodnotou null](../../language-reference/keywords/null.md). Pokud je neohraničený parametr porovnán `null`, porovnávání vždy vrátí hodnotu false, pokud je argumentem typu hodnotový typ.
 
 ## <a name="type-parameters-as-constraints"></a>Parametry typu jako omezení
 
-Použití parametru obecného typu je užitečné, když členské funkce s vlastním parametrem typu omezení má omezení parametru pro parametr typu nadřazeného typu, jak je znázorněno v následujícím příkladu:
+Použití parametru obecného typu jako omezení je užitečné, pokud členská funkce s vlastním parametrem typu musí omezit tento parametr na parametr typu nadřazeného typu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#13)]
 
-V předchozím příkladu `T` se omezení typu v kontextu `Add` metoda a parametr typu bez vazby v kontextu `List` třídy.
+V předchozím příkladu `T` je omezení typu v kontextu `Add` metody a parametr nevázaného typu `List` v kontextu třídy.
 
-Parametry typu lze také použít jako omezení pro definice obecných tříd. Parametr typu musí být deklarována v lomených závorkách společně s další parametry typu:
+Parametry typu lze také použít jako omezení v definicích obecných tříd. Parametr typu musí být deklarovaný v lomených závorkách spolu s jinými parametry typu:
 
 [!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#14)]
 
-Užitečnost parametry typu jako omezení pomocí obecných tříd je omezený, protože kompilátor může převzít nic neříká o parametr typu s tím rozdílem, že se odvozuje od `System.Object`. Parametry typu použijte jako omezení u obecných tříd ve scénářích, ve kterých chcete vynutit vztah dědičnosti mezi dvěma parametry typu.
+Užitečnost parametrů typu jako omezení s obecnými třídami je omezená, protože kompilátor může předpokládat nic o parametru typu s výjimkou toho, že je `System.Object`odvozen z. Použijte parametry typu jako omezení pro obecné třídy ve scénářích, ve kterých chcete vynutit vztah dědičnosti mezi dvěma parametry typu.
 
 ## <a name="unmanaged-constraint"></a>Nespravované omezení
 
-Od verze C# 7.3, můžete použít `unmanaged` omezení, které chcete určit, že musí být parametr typu **nespravovaný typ**. **Nespravovaný typ** je typ, který není typem odkazu a neobsahuje pole typu odkazu na libovolné úrovni vnoření. `unmanaged` Omezení umožňuje zapisovat opakovaně použitelných rutin pro práci s typy, které lze manipulovat jako bloky paměti, jak je znázorněno v následujícím příkladu:
+Počínaje C# 7,3 můžete `unmanaged` omezení použít k určení, že parametr typu musí být nespravovaného [typu](../../language-reference/builtin-types/unmanaged-types.md). `unmanaged` Omezení umožňuje napsat opakovaně použitelné rutiny pro práci s typy, které mohou být manipulovány jako bloky paměti, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#15)]
 
-Předchozí metoda musí být zkompilovány do `unsafe` kontextu protože používá `sizeof` operátor pro typ není známé jako předdefinovaný typ. Bez `unmanaged` omezení, `sizeof` operátor není k dispozici.
+Předchozí metoda musí být zkompilována v `unsafe` kontextu, protože `sizeof` používá operátor u typu, který není známý jako vestavěný typ. `unmanaged` Bez omezení`sizeof` není operátor k dispozici.
 
-## <a name="delegate-constraints"></a>Omezení delegáta
+## <a name="delegate-constraints"></a>Omezení delegování
 
-Také od verze C# 7.3, můžete použít <xref:System.Delegate?displayProperty=nameWithType> nebo <xref:System.MulticastDelegate?displayProperty=nameWithType> jako základní třída omezení. Modul CLR je vždycky povolená omezení, ale jazyk C# je zakázané. `System.Delegate` Omezení umožňuje napsat kód, který funguje s delegáty způsobem typově bezpečné. Následující kód definuje metodu rozšíření, která kombinuje dva delegáty předpokladu, že jsou stejného typu:
+Počínaje C# 7,3 můžete také použít <xref:System.Delegate?displayProperty=nameWithType> nebo <xref:System.MulticastDelegate?displayProperty=nameWithType> jako omezení základní třídy. CLR vždy povoluje toto omezení, ale C# jazyk ho nepovolil. `System.Delegate` Omezení umožňuje napsat kód, který pracuje s delegáty způsobem bezpečným pro typ. Následující kód definuje metodu rozšíření, která kombinuje dva delegáty, pokud jsou stejného typu:
 
 [!code-csharp[using the delegate constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#16)]
 
-Výše uvedené metody můžete kombinovat delegáty, kteří jsou stejného typu:
+K kombinování delegátů, kteří mají stejný typ, můžete použít výše uvedenou metodu:
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#17)]
 
-Pokud můžete zrušit komentář na posledním řádku, nebude kompilovat. Obě `first` a `test` jsou typy delegátů, ale jsou typy různých delegáta.
+Pokud Odkomentujete poslední řádek, nebude zkompilován. `first` A`test` jsou typy delegátů, ale jsou různými typy delegátů.
 
-## <a name="enum-constraints"></a>Omezení enum
+## <a name="enum-constraints"></a>Omezení výčtu
 
-Od C# 7.3, můžete také určit <xref:System.Enum?displayProperty=nameWithType> typ jako základní třída omezení. Modul CLR je vždycky povolená omezení, ale jazyk C# je zakázané. Použití obecných typů `System.Enum` poskytují zajišťující bezpečnost typů programování výsledky do mezipaměti pomocí statické metody v `System.Enum`. Následující příklad vyhledá všechny platné hodnoty pro typ výčtu a poté sestaví slovník, který mapuje tyto hodnoty na řetězcové vyjádření.
+Počínaje C# 7,3 můžete také zadat <xref:System.Enum?displayProperty=nameWithType> typ jako omezení základní třídy. CLR vždy povoluje toto omezení, ale C# jazyk ho nepovolil. Obecné typy pomocí `System.Enum` poskytují programování zajišťující bezpečnost typů pro ukládání výsledků z použití statických metod v `System.Enum`. Následující ukázka vyhledá všechny platné hodnoty pro typ výčtu a potom vytvoří slovník, který tyto hodnoty mapuje na jeho řetězcovou reprezentaci.
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-Ujistěte se, metod používaných využívání reflection, což má vliv na výkon. Můžete volat tuto metodu za účelem vytvoření kolekce, která je do mezipaměti a znovu použít namísto opakování volání, které vyžadují reflexe.
+Používané metody využívají reflexi, což má dopad na výkon. Tuto metodu lze zavolat pro sestavení kolekce, která je uložena v mezipaměti a znovu použita, nikoli volání, která vyžadují reflexi.
 
-Můžete ji třeba použít jak je znázorněno v následujícím příkladu vytvořit výčet a vytvářet slovník jeho hodnoty a názvy:
+Můžete ji použít, jak je znázorněno v následujícím příkladu, pro vytvoření výčtu a sestavení slovníku jeho hodnot a názvů:
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
 
