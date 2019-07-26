@@ -68,12 +68,7 @@
     - name: Zpracování a vyvolání výjimek
       href: standard/exceptions/
     - name: Sestavení v .NET
-      href: standard/assembly/index.md
-      items:
-        - name: Formát souborů sestavení .NET
-          href: standard/assembly/file-format.md
-        - name: 'Postupy: Použití a ladění funkce zrušení načtení sestavení v .NET Core'
-          href: standard/assembly/unloadability-howto.md
+      href: standard/assembly/
     - name: Kolekce paměti
       href: standard/garbage-collection/
     - name: Obecné typy

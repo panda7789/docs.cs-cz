@@ -121,352 +121,352 @@
           href: linq-to-xml-vs-dom.md
         - name: Technologie LINQ to XML vs. jiné technologie XML
           href: linq-to-xml-vs-other-xml-technologies.md
-- name: Průvodce programováním (LINQ to XML)
-  href: programming-guide-linq-to-xml.md
-  items:
-    - name: Přehled programování LINQ to XML
-      href: linq-to-xml-programming-overview.md
-    - name: Funkční vs. procedurální programování (LINQ to XML)
-      href: functional-vs-procedural-programming-linq-to-xml.md
-    - name: Přehled tříd LINQ to XML
-      href: linq-to-xml-classes-overview.md
-    - name: Přehled třídy XElement
-      href: xelement-class-overview.md
-    - name: Přehled třídy XAttribute
-      href: xattribute-class-overview.md
+    - name: Průvodce programováním (LINQ to XML)
+      href: programming-guide-linq-to-xml.md
       items:
-        - name: Přehled třídy XDocument
-          href: xdocument-class-overview.md
-        - name: 'Postupy: Příklady vytvoření LINQ to XML'
-          href: how-to-build-linq-to-xml-examples.md
-    - name: Vytváření stromů XML
-      href: creating-xml-trees.md
-      items:
-        - name: Funkční konstrukce (LINQ to XML)
-          href: functional-construction-linq-to-xml.md
-        - name: Úvod k literálům XML
-          href: introduction-to-xml-literals.md
-        - name: Klonování versus připojení
-          href: cloning-vs-attaching.md
-        - name: Analýza XML
-          href: parsing-xml.md
+        - name: Přehled programování LINQ to XML
+          href: linq-to-xml-programming-overview.md
+        - name: Funkční vs. procedurální programování (LINQ to XML)
+          href: functional-vs-procedural-programming-linq-to-xml.md
+        - name: Přehled tříd LINQ to XML
+          href: linq-to-xml-classes-overview.md
+        - name: Přehled třídy XElement
+          href: xelement-class-overview.md
+        - name: Přehled třídy XAttribute
+          href: xattribute-class-overview.md
           items:
-            - name: 'Postupy: Analýza řetězce'
-              href: how-to-parse-a-string.md
-            - name: 'Postupy: Načtení XML ze souboru'
-              href: how-to-load-xml-from-a-file.md
-            - name: Zachování prázdných znaků při načítání nebo analýze XML
-              href: preserving-white-space-while-loading-or-parsing-xml.md
-            - name: 'Postupy: Zachycení chyb při analýze'
-              href: how-to-catch-parsing-errors.md
-            - name: 'Postupy: Vytvoření stromu ze třídy XmlReader'
-              href: how-to-create-a-tree-from-an-xmlreader.md
-            - name: 'Postupy: Streamování fragmentů XML ze třídy XmlReader'
-              href: how-to-stream-xml-fragments-from-an-xmlreader.md
-        - name: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML)'
-          href: how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md
-        - name: 'Postupy: Ověření pomocí XSD (LINQ to XML)'
-          href: how-to-validate-using-xsd-linq-to-xml.md
-        - name: Platný obsah objektů XElement a XDocument
-          href: valid-content-of-xelement-and-xdocument-objects.md
-- name: Práce s názvovými prostory XML
-  href: working-with-xml-namespaces.md
-  items:
-    - name: Přehled názvových prostorů (LINQ to XML)
-      href: namespaces-overview-linq-to-xml.md
-    - name: 'Postupy: Vytvoření dokumentu pomocí názvových prostorů (LINQ to XML)'
-      href: how-to-create-a-document-with-namespaces.md
-    - name: 'Postupy: Řízení předpon názvového prostoru (LINQ to XML)'
-      href: how-to-control-namespace-prefixes-linq-to-xml.md
-    - name: Obor výchozích názvových prostorů
-      href: scope-of-default-namespaces.md
-    - name: Práce s globálními názvovými prostory (LINQ to XML)
-      href: working-with-global-namespaces-linq-to-xml.md
-    - name: 'Postupy: Vytváření dotazů na XML v názvových prostorech'
-      href: how-to-write-queries-on-xml-in-namespaces.md
-- name: Serializace stromů XML
-  href: serializing-xml-trees.md
-  items:
-    - name: Zachování prázdných znaků při serializaci
-      href: preserving-white-space-while-serializing.md
-    - name: Serializace pomocí deklarace XML
-      href: serializing-with-an-xml-declaration.md
-    - name: 'Serializace do tříd File, TextWriter a XmlWriter'
-      href: serializing-to-files-textwriters-and-xmlwriters.md
-    - name: Serializace do třídy XmlReader (vyvolání XSLT)
-      href: serializing-to-an-xmlreader-invoking-xslt.md
-- name: Osy LINQ to XML
-  href: linq-to-xml-axes.md
-  items:
-    - name: Přehled os LINQ to XML
-      href: linq-to-xml-axes-overview.md
-    - name: 'Postupy: Načtení kolekce elementů (LINQ to XML)'
-      href: how-to-retrieve-a-collection-of-elements-linq-to-xml.md
-    - name: 'Postupy: Načtení hodnoty elementu (LINQ to XML)'
-      href: how-to-retrieve-the-value-of-an-element-linq-to-xml.md
-    - name: 'Postupy: Filtrování názvů elementů (LINQ to XML)'
-      href: how-to-filter-on-element-names-linq-to-xml.md
-    - name: 'Postupy: Zřetězení volání metod osy (LINQ to XML)'
-      href: how-to-chain-axis-method-calls-linq-to-xml.md
-    - name: 'Postupy: Načtení jednoho podřízeného elementu (LINQ to XML)'
-      href: how-to-retrieve-a-single-child-element-linq-to-xml.md
-    - name: 'Postupy: Načtení kolekce atributů (LINQ to XML)'
-      href: how-to-retrieve-a-collection-of-attributes-linq-to-xml.md
-    - name: 'Postupy: Načtení jednoho atributu (LINQ to XML)'
-      href: how-to-retrieve-a-single-attribute-linq-to-xml.md
-    - name: 'Postupy: Načtení hodnoty atributu (LINQ to XML)'
-      href: how-to-retrieve-the-value-of-an-attribute-linq-to-xml.md
-    - name: 'Postupy: Načtení mělké hodnoty elementu (LINQ to XML)'
-      href: how-to-retrieve-the-shallow-value-of-an-element.md
-    - name: Osy integrované v jazyce (LINQ to XML)
-      href: language-integrated-axes.md
-- name: Dotazování na stromy XML
-  href: querying-xml-trees.md
-  items:
-    - name: Základní dotazy (LINQ to XML)
-      href: basic-queries-linq-to-xml.md
-      items:
-        - name: 'Postupy: Vyhledání elementu s konkrétním atributem'
-          href: how-to-find-an-element-with-a-specific-attribute.md
-        - name: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem'
-          href: how-to-find-an-element-with-a-specific-child-element.md
-        - name: Dotazování na XDocument vs. dotazování na XElement
-          href: querying-an-xdocument-vs-querying-an-xelement.md
-        - name: 'Postupy: Vyhledání potomků s konkrétním názvem elementu'
-          href: how-to-find-descendants-with-a-specific-element-name.md
-        - name: 'Postupy: Vyhledání jednoho potomka pomocí metody Descendants'
-          href: how-to-find-a-single-descendant-using-the-descendants-method.md
-        - name: 'Postupy: Vytváření dotazů s komplexním filtrováním'
-          href: how-to-write-queries-with-complex-filtering.md
-        - name: 'Postupy: Filtrování volitelného elementu'
-          href: how-to-filter-on-an-optional-element.md
-        - name: 'Postupy: Vyhledání všech uzlů v názvovém prostoru'
-          href: how-to-find-all-nodes-in-a-namespace.md
-        - name: 'Postupy: Řazení elementů'
-          href: how-to-sort-elements.md
-        - name: 'Postupy: Řazení elementů u více klíčů'
-          href: how-to-sort-elements-on-multiple-keys.md
-        - name: 'Postupy: Výpočet mezilehlých hodnot'
-          href: how-to-calculate-intermediate-values.md
-        - name: 'Postupy: Vytvoření dotazu, který vyhledá elementy na základě kontextu'
-          href: how-to-write-a-query-that-finds-elements-based-on-context.md
-        - name: 'Postupy: Ladění prázdných sad výsledků dotazu'
-          href: how-to-debug-empty-query-results-sets.md
-    - name: Projekce a transformace (LINQ to XML)
-      href: projections-and-transformations-linq-to-xml.md
-    - name: 'Postupy: Práce se slovníky pomocí LINQ to XML'
-      href: how-to-work-with-dictionaries-using-linq-to-xml.md
-      items:
-        - name: 'Postupy: Transformace tvaru stromu XML'
-          href: how-to-transform-the-shape-of-an-xml-tree.md
-        - name: 'Postupy: Řízení typu projekce'
-          href: how-to-control-the-type-of-a-projection.md
-        - name: 'Postupy: Projektování nového typu (LINQ to XML)'
-          href: how-to-project-a-new-type-linq-to-xml.md
-        - name: 'Postupy: Projektování grafu objektu'
-          href: how-to-project-an-object-graph.md
-        - name: 'Postupy: Projektování anonymního typu'
-          href: how-to-project-an-anonymous-type.md
-        - name: 'Postupy: Generování textových souborů z XML'
-          href: how-to-generate-text-files-from-xml.md
-        - name: 'Postupy: Generování XML ze souborů CSV'
-          href: how-to-generate-xml-from-csv-files.md
-    - name: Pokročilé techniky dotazování (LINQ to XML)
-      href: advanced-query-techniques-linq-to-xml.md
-      items:
-        - name: 'Postupy: Spojení dvou kolekcí (LINQ to XML)'
-          href: how-to-join-two-collections-linq-to-xml.md
+            - name: Přehled třídy XDocument
+              href: xdocument-class-overview.md
+            - name: 'Postupy: Příklady vytvoření LINQ to XML'
+              href: how-to-build-linq-to-xml-examples.md
+        - name: Vytváření stromů XML
+          href: creating-xml-trees.md
           items:
-            - name: 'Postupy: Vytvoření hierarchie pomocí seskupení'
-              href: how-to-create-hierarchy-using-grouping.md
-            - name: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath'
-              href: how-to-query-linq-to-xml-using-xpath.md
-            - name: 'Postupy: Zápis metody osy LINQ to XML'
-              href: how-to-write-a-linq-to-xml-axis-method.md
-            - name: 'Postupy: Výpis všech uzlů ve stromu'
-              href: how-to-list-all-nodes-in-a-tree.md
-            - name: 'Postupy: Načtení odstavců z dokumentu Office Open XML'
-              href: how-to-retrieve-paragraphs-from-an-office-open-xml-document.md
-            - name: 'Postupy: Změna dokumentu Office Open XML'
-              href: how-to-modify-an-office-open-xml-document.md
-            - name: 'Postupy: Naplnění stromu XML ze souborového systému'
-              href: how-to-populate-an-xml-tree-from-the-file-system.md
-    - name: LINQ to XML pro uživatele jazyka XPath
-      href: linq-to-xml-for-xpath-users.md
+            - name: Funkční konstrukce (LINQ to XML)
+              href: functional-construction-linq-to-xml.md
+            - name: Úvod k literálům XML
+              href: introduction-to-xml-literals.md
+            - name: Klonování versus připojení
+              href: cloning-vs-attaching.md
+            - name: Analýza XML
+              href: parsing-xml.md
+              items:
+                - name: 'Postupy: Analýza řetězce'
+                  href: how-to-parse-a-string.md
+                - name: 'Postupy: Načtení XML ze souboru'
+                  href: how-to-load-xml-from-a-file.md
+                - name: Zachování prázdných znaků při načítání nebo analýze XML
+                  href: preserving-white-space-while-loading-or-parsing-xml.md
+                - name: 'Postupy: Zachycení chyb při analýze'
+                  href: how-to-catch-parsing-errors.md
+                - name: 'Postupy: Vytvoření stromu ze třídy XmlReader'
+                  href: how-to-create-a-tree-from-an-xmlreader.md
+                - name: 'Postupy: Streamování fragmentů XML ze třídy XmlReader'
+                  href: how-to-stream-xml-fragments-from-an-xmlreader.md
+            - name: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML)'
+              href: how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md
+            - name: 'Postupy: Ověření pomocí XSD (LINQ to XML)'
+              href: how-to-validate-using-xsd-linq-to-xml.md
+            - name: Platný obsah objektů XElement a XDocument
+              href: valid-content-of-xelement-and-xdocument-objects.md
+    - name: Práce s názvovými prostory XML
+      href: working-with-xml-namespaces.md
       items:
-        - name: Porovnání jazyka XPath a technologie LINQ to XML
-          href: comparison-of-xpath-and-linq-to-xml.md
-        - name: 'Postupy: Vyhledání podřízeného elementu (XPath – LINQ to XML)'
-          href: how-to-find-a-child-element-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání seznamu podřízených elementů (XPath – LINQ to XML)'
-          href: how-to-find-a-list-of-child-elements-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML)'
-          href: how-to-find-the-root-element-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání následnických elementů (XPath – LINQ to XML)'
-          href: how-to-find-descendant-elements-xpath-linq-to-xml.md
-        - name: 'Postupy: Filtrování atributu (XPath – LINQ to XML)'
-          href: how-to-filter-on-an-attribute-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML)'
-          href: how-to-find-related-elements-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání elementů v názvovém prostoru (XPath – LINQ to XML)'
-          href: how-to-find-elements-in-a-namespace.md
-        - name: 'Postupy: Vyhledání předcházejících elementů na stejné úrovni (XPath – LINQ to XML)'
-          href: how-to-find-preceding-siblings-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML)'
-          href: how-to-find-descendants-of-a-child-element-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML)'
-          href: how-to-find-a-union-of-two-location-paths-xpath.md
-        - name: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML)'
-          href: how-to-find-sibling-nodes-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML)'
-          href: how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml.md
-        - name: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML)'
-          href: how-to-find-attributes-of-siblings-with-a-specific-name.md
-        - name: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML)'
-          href: how-to-find-elements-with-a-specific-attribute.md
-        - name: 'Postupy: Vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML)'
-          href: how-to-find-child-elements-based-on-position.md
-        - name: 'Postupy: Vyhledání bezprostředně předcházejícího uzlu na stejné úrovni (XPath – LINQ to XML)'
-          href: how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml.md
-    - name: Čistě funkční transformace XML
-      href: pure-functional-transformations-of-xml.md
+        - name: Přehled názvových prostorů (LINQ to XML)
+          href: namespaces-overview-linq-to-xml.md
+        - name: 'Postupy: Vytvoření dokumentu pomocí názvových prostorů (LINQ to XML)'
+          href: how-to-create-a-document-with-namespaces.md
+        - name: 'Postupy: Řízení předpon názvového prostoru (LINQ to XML)'
+          href: how-to-control-namespace-prefixes-linq-to-xml.md
+        - name: Obor výchozích názvových prostorů
+          href: scope-of-default-namespaces.md
+        - name: Práce s globálními názvovými prostory (LINQ to XML)
+          href: working-with-global-namespaces-linq-to-xml.md
+        - name: 'Postupy: Vytváření dotazů na XML v názvových prostorech'
+          href: how-to-write-queries-on-xml-in-namespaces.md
+    - name: Serializace stromů XML
+      href: serializing-xml-trees.md
       items:
-        - name: Úvod k čistě funkčním transformacím
-          href: introduction-to-pure-functional-transformations.md
-        - name: Koncepty a terminologie (funkční transformace)
-          href: concepts-and-terminology-functional-transformation.md
-        - name: Funkční programování vs. imperativní programování
-          href: functional-programming-vs-imperative-programming.md
-        - name: Refaktoring do čistých funkcí
-          href: refactoring-into-pure-functions.md
-        - name: Použitelnost funkční transformace
-          href: applicability-of-functional-transformation.md
-        - name: Funkční transformace XML
-          href: functional-transformation-of-xml.md
-        - name: 'Kurz: Odložené provedení'
-          href: tutorial-deferred-execution.md
-        - name: Odložené provedení a opožděné vyhodnocení v LINQ to XML
-          href: deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
-        - name: Příklad odloženého provedení
-          href: deferred-execution-example.md
-        - name: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML'
-          href: tutorial-manipulating-content-in-a-wordprocessingml-document.md
-        - name: Tvar dokumentů WordprocessingML
-          href: shape-of-wordprocessingml-documents.md
-        - name: Vytvoření zdrojového dokumentu Office Open XML
-          href: creating-the-source-office-open-xml-document.md
-        - name: Vyhledání výchozího stylu odstavce
-          href: finding-the-default-paragraph-style.md
-        - name: Načtení odstavců a jejich stylů
-          href: retrieving-the-paragraphs-and-their-styles.md
-        - name: Načtení textu odstavců
-          href: retrieving-the-text-of-the-paragraphs.md
-        - name: Refaktoring pomocí rozšiřující metody
-          href: refactoring-using-an-extension-method.md
-        - name: Refaktoring pomocí čisté funkce
-          href: refactoring-using-a-pure-function.md
-        - name: Projektování XML v odlišném tvaru
-          href: projecting-xml-in-a-different-shape.md
-        - name: Vyhledání textu v dokumentech Wordu
-          href: finding-text-in-word-documents.md
-        - name: Podrobnosti o dokumentech Office Open XML WordprocessingML
-          href: details-of-office-open-xml-wordprocessingml-documents.md
-        - name: Dokument WordprocessingML se styly
-          href: wordprocessingml-document-with-styles.md
-        - name: Část stylu dokumentu WordprocessingML
-          href: style-part-of-a-wordprocessingml-document.md
-        - name: 'Příklad, jehož výstupem jsou části dokumentu Office Open XML'
-          href: example-that-outputs-office-open-xml-document-parts.md
-- name: Změna stromů XML (LINQ to XML)
-  href: modifying-xml-trees-linq-to-xml.md
-  items:
-    - name: Změna stromu XML v paměti vs. funkční konstrukce (LINQ to XML)
-      href: in-memory-xml-tree-modification-vs-functional-construction.md
-    - name: 'Přidání elementů, atributů a uzlů do stromu XML'
-      href: adding-elements-attributes-and-nodes-to-an-xml-tree.md
-    - name: 'Změna elementů, atributů a uzlů ve stromu XML'
-      href: modifying-elements-attributes-and-nodes-in-an-xml-tree.md
-    - name: 'Odebrání elementů, atributů a uzlů ze stromu XML'
-      href: removing-elements-attributes-and-nodes-from-an-xml-tree.md
-    - name: Zachování dvojic název a hodnota
-      href: maintaining-name-value-pairs.md
-    - name: 'Postupy: Změna názvového prostoru pro celý strom XML'
-      href: how-to-change-the-namespace-for-an-entire-xml-tree.md
-- name: Výkon (LINQ to XML)
-  href: performance-linq-to-xml.md
-  items:
-    - name: Výkon zřetězených dotazů (LINQ to XML)
-      href: performance-of-chained-queries-linq-to-xml.md
-    - name: Atomizované objekty XName a XNamespace (LINQ to XML)
-      href: atomized-xname-and-xnamespace-objects-linq-to-xml.md
-    - name: Předběžná atomizace objektů XName (LINQ to XML)
-      href: pre-atomization-of-xname-objects-linq-to-xml.md
-    - name: Staticky kompilované dotazy (LINQ to XML)
-      href: statically-compiled-queries-linq-to-xml.md
-- name: Rozšířené programování LINQ to XML
-  href: advanced-linq-to-xml-programming.md
-  items:
-    - name: Poznámky v LINQ to XML
-      href: linq-to-xml-annotations.md
-    - name: Události LINQ to XML
-      href: linq-to-xml-events.md
-    - name: Programování s uzly
-      href: programming-with-nodes.md
-    - name: Chyby smíšeného deklarativního a imperativního kódu (LINQ to XML)
-      href: mixed-declarative-code-imperative-code-bugs-linq-to-xml.md
-    - name: 'Postupy: Streamování fragmentů XML pomocí přístupu k informacím hlavičky'
-      href: how-to-stream-xml-fragments-with-access-to-header-information.md
-    - name: 'Postupy: Provedení streamované transformace velkých dokumentů XML'
-      href: how-to-perform-streaming-transform-of-large-xml-documents.md
-    - name: 'Postupy: Čtení a zápis kódovaného dokumentu'
-      href: how-to-read-and-write-an-encoded-document.md
-    - name: Transformace stromu XML pomocí XSLT
-      href: using-xslt-to-transform-an-xml-tree.md
-    - name: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek'
-      href: how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md
-    - name: 'Serializace grafů objektů, které obsahují objekty XElement'
-      href: serializing-object-graphs-that-contain-xelement-objects.md
+        - name: Zachování prázdných znaků při serializaci
+          href: preserving-white-space-while-serializing.md
+        - name: Serializace pomocí deklarace XML
+          href: serializing-with-an-xml-declaration.md
+        - name: 'Serializace do tříd File, TextWriter a XmlWriter'
+          href: serializing-to-files-textwriters-and-xmlwriters.md
+        - name: Serializace do třídy XmlReader (vyvolání XSLT)
+          href: serializing-to-an-xmlreader-invoking-xslt.md
+    - name: Osy LINQ to XML
+      href: linq-to-xml-axes.md
       items:
-        - name: 'Postupy: Serializace pomocí třídy XmlSerializer'
-          href: how-to-serialize-using-xmlserializer.md
-        - name: 'Postupy: Serializace pomocí třídy DataContractSerializer'
-          href: how-to-serialize-using-datacontractserializer.md
-    - name: Zabezpečení LINQ to XML
-      href: linq-to-xml-security.md
-    - name: Ukázkové dokumenty XML (LINQ to XML)
-      href: sample-xml-documents-linq-to-xml.md
+        - name: Přehled os LINQ to XML
+          href: linq-to-xml-axes-overview.md
+        - name: 'Postupy: Načtení kolekce elementů (LINQ to XML)'
+          href: how-to-retrieve-a-collection-of-elements-linq-to-xml.md
+        - name: 'Postupy: Načtení hodnoty elementu (LINQ to XML)'
+          href: how-to-retrieve-the-value-of-an-element-linq-to-xml.md
+        - name: 'Postupy: Filtrování názvů elementů (LINQ to XML)'
+          href: how-to-filter-on-element-names-linq-to-xml.md
+        - name: 'Postupy: Zřetězení volání metod osy (LINQ to XML)'
+          href: how-to-chain-axis-method-calls-linq-to-xml.md
+        - name: 'Postupy: Načtení jednoho podřízeného elementu (LINQ to XML)'
+          href: how-to-retrieve-a-single-child-element-linq-to-xml.md
+        - name: 'Postupy: Načtení kolekce atributů (LINQ to XML)'
+          href: how-to-retrieve-a-collection-of-attributes-linq-to-xml.md
+        - name: 'Postupy: Načtení jednoho atributu (LINQ to XML)'
+          href: how-to-retrieve-a-single-attribute-linq-to-xml.md
+        - name: 'Postupy: Načtení hodnoty atributu (LINQ to XML)'
+          href: how-to-retrieve-the-value-of-an-attribute-linq-to-xml.md
+        - name: 'Postupy: Načtení mělké hodnoty elementu (LINQ to XML)'
+          href: how-to-retrieve-the-shallow-value-of-an-element.md
+        - name: Osy integrované v jazyce (LINQ to XML)
+          href: language-integrated-axes.md
+    - name: Dotazování na stromy XML
+      href: querying-xml-trees.md
       items:
-        - name: 'Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)'
-          href: sample-xml-file-typical-purchase-order-linq-to-xml.md
-        - name: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
-          href: sample-xml-file-typical-purchase-order-in-a-namespace.md
-        - name: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
-          href: sample-xml-file-multiple-purchase-orders-linq-to-xml.md
-        - name: 'Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru'
-          href: sample-xml-file-multiple-purchase-orders-in-a-namespace.md
-        - name: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
-          href: sample-xml-file-test-configuration-linq-to-xml.md
-        - name: 'Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru'
-          href: sample-xml-file-test-configuration-in-a-namespace.md
-        - name: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
-          href: sample-xml-file-customers-and-orders-linq-to-xml.md
-        - name: 'Ukázkový soubor XSD: Zákazníci a objednávky'
-          href: sample-xsd-file-customers-and-orders.md
-        - name: 'Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru'
-          href: sample-xml-file-customers-and-orders-in-a-namespace.md
-        - name: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
-          href: sample-xml-file-numerical-data-linq-to-xml.md
-        - name: 'Ukázkový soubor XML: Numerická data v názvovém prostoru'
-          href: sample-xml-file-numerical-data-in-a-namespace.md
-        - name: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
-          href: sample-xml-file-books-linq-to-xml.md
-        - name: 'Ukázkový soubor XML: Konsolidované nákupní objednávky'
-          href: sample-xml-file-consolidated-purchase-orders.md
-        - name: Referenční informace (LINQ to XML)
-          href: reference-linq-to-xml.md
-    - name: LINQ to ADO.NET (stránka portálu)
-      href: linq-to-adonet-portal-page.md
-    - name: Povolení zdroje dat pro dotazy LINQ
-      href: enabling-a-data-source-for-linq-querying.md
-    - name: Podpora integrovaného vývojového prostředí a nástrojů sady Visual Studio pro LINQ
-      href: visual-studio-ide-and-tools-support-for-linq.md
+        - name: Základní dotazy (LINQ to XML)
+          href: basic-queries-linq-to-xml.md
+          items:
+            - name: 'Postupy: Vyhledání elementu s konkrétním atributem'
+              href: how-to-find-an-element-with-a-specific-attribute.md
+            - name: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem'
+              href: how-to-find-an-element-with-a-specific-child-element.md
+            - name: Dotazování na XDocument vs. dotazování na XElement
+              href: querying-an-xdocument-vs-querying-an-xelement.md
+            - name: 'Postupy: Vyhledání potomků s konkrétním názvem elementu'
+              href: how-to-find-descendants-with-a-specific-element-name.md
+            - name: 'Postupy: Vyhledání jednoho potomka pomocí metody Descendants'
+              href: how-to-find-a-single-descendant-using-the-descendants-method.md
+            - name: 'Postupy: Vytváření dotazů s komplexním filtrováním'
+              href: how-to-write-queries-with-complex-filtering.md
+            - name: 'Postupy: Filtrování volitelného elementu'
+              href: how-to-filter-on-an-optional-element.md
+            - name: 'Postupy: Vyhledání všech uzlů v názvovém prostoru'
+              href: how-to-find-all-nodes-in-a-namespace.md
+            - name: 'Postupy: Řazení elementů'
+              href: how-to-sort-elements.md
+            - name: 'Postupy: Řazení elementů u více klíčů'
+              href: how-to-sort-elements-on-multiple-keys.md
+            - name: 'Postupy: Výpočet mezilehlých hodnot'
+              href: how-to-calculate-intermediate-values.md
+            - name: 'Postupy: Vytvoření dotazu, který vyhledá elementy na základě kontextu'
+              href: how-to-write-a-query-that-finds-elements-based-on-context.md
+            - name: 'Postupy: Ladění prázdných sad výsledků dotazu'
+              href: how-to-debug-empty-query-results-sets.md
+        - name: Projekce a transformace (LINQ to XML)
+          href: projections-and-transformations-linq-to-xml.md
+        - name: 'Postupy: Práce se slovníky pomocí LINQ to XML'
+          href: how-to-work-with-dictionaries-using-linq-to-xml.md
+          items:
+            - name: 'Postupy: Transformace tvaru stromu XML'
+              href: how-to-transform-the-shape-of-an-xml-tree.md
+            - name: 'Postupy: Řízení typu projekce'
+              href: how-to-control-the-type-of-a-projection.md
+            - name: 'Postupy: Projektování nového typu (LINQ to XML)'
+              href: how-to-project-a-new-type-linq-to-xml.md
+            - name: 'Postupy: Projektování grafu objektu'
+              href: how-to-project-an-object-graph.md
+            - name: 'Postupy: Projektování anonymního typu'
+              href: how-to-project-an-anonymous-type.md
+            - name: 'Postupy: Generování textových souborů z XML'
+              href: how-to-generate-text-files-from-xml.md
+            - name: 'Postupy: Generování XML ze souborů CSV'
+              href: how-to-generate-xml-from-csv-files.md
+        - name: Pokročilé techniky dotazování (LINQ to XML)
+          href: advanced-query-techniques-linq-to-xml.md
+          items:
+            - name: 'Postupy: Spojení dvou kolekcí (LINQ to XML)'
+              href: how-to-join-two-collections-linq-to-xml.md
+              items:
+                - name: 'Postupy: Vytvoření hierarchie pomocí seskupení'
+                  href: how-to-create-hierarchy-using-grouping.md
+                - name: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath'
+                  href: how-to-query-linq-to-xml-using-xpath.md
+                - name: 'Postupy: Zápis metody osy LINQ to XML'
+                  href: how-to-write-a-linq-to-xml-axis-method.md
+                - name: 'Postupy: Výpis všech uzlů ve stromu'
+                  href: how-to-list-all-nodes-in-a-tree.md
+                - name: 'Postupy: Načtení odstavců z dokumentu Office Open XML'
+                  href: how-to-retrieve-paragraphs-from-an-office-open-xml-document.md
+                - name: 'Postupy: Změna dokumentu Office Open XML'
+                  href: how-to-modify-an-office-open-xml-document.md
+                - name: 'Postupy: Naplnění stromu XML ze souborového systému'
+                  href: how-to-populate-an-xml-tree-from-the-file-system.md
+        - name: LINQ to XML pro uživatele jazyka XPath
+          href: linq-to-xml-for-xpath-users.md
+          items:
+            - name: Porovnání jazyka XPath a technologie LINQ to XML
+              href: comparison-of-xpath-and-linq-to-xml.md
+            - name: 'Postupy: Vyhledání podřízeného elementu (XPath – LINQ to XML)'
+              href: how-to-find-a-child-element-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání seznamu podřízených elementů (XPath – LINQ to XML)'
+              href: how-to-find-a-list-of-child-elements-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML)'
+              href: how-to-find-the-root-element-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání následnických elementů (XPath – LINQ to XML)'
+              href: how-to-find-descendant-elements-xpath-linq-to-xml.md
+            - name: 'Postupy: Filtrování atributu (XPath – LINQ to XML)'
+              href: how-to-filter-on-an-attribute-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML)'
+              href: how-to-find-related-elements-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání elementů v názvovém prostoru (XPath – LINQ to XML)'
+              href: how-to-find-elements-in-a-namespace.md
+            - name: 'Postupy: Vyhledání předcházejících elementů na stejné úrovni (XPath – LINQ to XML)'
+              href: how-to-find-preceding-siblings-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML)'
+              href: how-to-find-descendants-of-a-child-element-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML)'
+              href: how-to-find-a-union-of-two-location-paths-xpath.md
+            - name: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML)'
+              href: how-to-find-sibling-nodes-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML)'
+              href: how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml.md
+            - name: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML)'
+              href: how-to-find-attributes-of-siblings-with-a-specific-name.md
+            - name: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML)'
+              href: how-to-find-elements-with-a-specific-attribute.md
+            - name: 'Postupy: Vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML)'
+              href: how-to-find-child-elements-based-on-position.md
+            - name: 'Postupy: Vyhledání bezprostředně předcházejícího uzlu na stejné úrovni (XPath – LINQ to XML)'
+              href: how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml.md
+        - name: Čistě funkční transformace XML
+          href: pure-functional-transformations-of-xml.md
+          items:
+            - name: Úvod k čistě funkčním transformacím
+              href: introduction-to-pure-functional-transformations.md
+            - name: Koncepty a terminologie (funkční transformace)
+              href: concepts-and-terminology-functional-transformation.md
+            - name: Funkční programování vs. imperativní programování
+              href: functional-programming-vs-imperative-programming.md
+            - name: Refaktoring do čistých funkcí
+              href: refactoring-into-pure-functions.md
+            - name: Použitelnost funkční transformace
+              href: applicability-of-functional-transformation.md
+            - name: Funkční transformace XML
+              href: functional-transformation-of-xml.md
+            - name: 'Kurz: Odložené provedení'
+              href: tutorial-deferred-execution.md
+            - name: Odložené provedení a opožděné vyhodnocení v LINQ to XML
+              href: deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
+            - name: Příklad odloženého provedení
+              href: deferred-execution-example.md
+            - name: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML'
+              href: tutorial-manipulating-content-in-a-wordprocessingml-document.md
+            - name: Tvar dokumentů WordprocessingML
+              href: shape-of-wordprocessingml-documents.md
+            - name: Vytvoření zdrojového dokumentu Office Open XML
+              href: creating-the-source-office-open-xml-document.md
+            - name: Vyhledání výchozího stylu odstavce
+              href: finding-the-default-paragraph-style.md
+            - name: Načtení odstavců a jejich stylů
+              href: retrieving-the-paragraphs-and-their-styles.md
+            - name: Načtení textu odstavců
+              href: retrieving-the-text-of-the-paragraphs.md
+            - name: Refaktoring pomocí rozšiřující metody
+              href: refactoring-using-an-extension-method.md
+            - name: Refaktoring pomocí čisté funkce
+              href: refactoring-using-a-pure-function.md
+            - name: Projektování XML v odlišném tvaru
+              href: projecting-xml-in-a-different-shape.md
+            - name: Vyhledání textu v dokumentech Wordu
+              href: finding-text-in-word-documents.md
+            - name: Podrobnosti o dokumentech Office Open XML WordprocessingML
+              href: details-of-office-open-xml-wordprocessingml-documents.md
+            - name: Dokument WordprocessingML se styly
+              href: wordprocessingml-document-with-styles.md
+            - name: Část stylu dokumentu WordprocessingML
+              href: style-part-of-a-wordprocessingml-document.md
+            - name: 'Příklad, jehož výstupem jsou části dokumentu Office Open XML'
+              href: example-that-outputs-office-open-xml-document-parts.md
+    - name: Změna stromů XML (LINQ to XML)
+      href: modifying-xml-trees-linq-to-xml.md
+      items:
+        - name: Změna stromu XML v paměti vs. funkční konstrukce (LINQ to XML)
+          href: in-memory-xml-tree-modification-vs-functional-construction.md
+        - name: 'Přidání elementů, atributů a uzlů do stromu XML'
+          href: adding-elements-attributes-and-nodes-to-an-xml-tree.md
+        - name: 'Změna elementů, atributů a uzlů ve stromu XML'
+          href: modifying-elements-attributes-and-nodes-in-an-xml-tree.md
+        - name: 'Odebrání elementů, atributů a uzlů ze stromu XML'
+          href: removing-elements-attributes-and-nodes-from-an-xml-tree.md
+        - name: Zachování dvojic název a hodnota
+          href: maintaining-name-value-pairs.md
+        - name: 'Postupy: Změna názvového prostoru pro celý strom XML'
+          href: how-to-change-the-namespace-for-an-entire-xml-tree.md
+    - name: Výkon (LINQ to XML)
+      href: performance-linq-to-xml.md
+      items:
+        - name: Výkon zřetězených dotazů (LINQ to XML)
+          href: performance-of-chained-queries-linq-to-xml.md
+        - name: Atomizované objekty XName a XNamespace (LINQ to XML)
+          href: atomized-xname-and-xnamespace-objects-linq-to-xml.md
+        - name: Předběžná atomizace objektů XName (LINQ to XML)
+          href: pre-atomization-of-xname-objects-linq-to-xml.md
+        - name: Staticky kompilované dotazy (LINQ to XML)
+          href: statically-compiled-queries-linq-to-xml.md
+    - name: Rozšířené programování LINQ to XML
+      href: advanced-linq-to-xml-programming.md
+      items:
+        - name: Poznámky v LINQ to XML
+          href: linq-to-xml-annotations.md
+        - name: Události LINQ to XML
+          href: linq-to-xml-events.md
+        - name: Programování s uzly
+          href: programming-with-nodes.md
+        - name: Chyby smíšeného deklarativního a imperativního kódu (LINQ to XML)
+          href: mixed-declarative-code-imperative-code-bugs-linq-to-xml.md
+        - name: 'Postupy: Streamování fragmentů XML pomocí přístupu k informacím hlavičky'
+          href: how-to-stream-xml-fragments-with-access-to-header-information.md
+        - name: 'Postupy: Provedení streamované transformace velkých dokumentů XML'
+          href: how-to-perform-streaming-transform-of-large-xml-documents.md
+        - name: 'Postupy: Čtení a zápis kódovaného dokumentu'
+          href: how-to-read-and-write-an-encoded-document.md
+        - name: Transformace stromu XML pomocí XSLT
+          href: using-xslt-to-transform-an-xml-tree.md
+        - name: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek'
+          href: how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md
+        - name: 'Serializace grafů objektů, které obsahují objekty XElement'
+          href: serializing-object-graphs-that-contain-xelement-objects.md
+          items:
+            - name: 'Postupy: Serializace pomocí třídy XmlSerializer'
+              href: how-to-serialize-using-xmlserializer.md
+            - name: 'Postupy: Serializace pomocí třídy DataContractSerializer'
+              href: how-to-serialize-using-datacontractserializer.md
+        - name: Zabezpečení LINQ to XML
+          href: linq-to-xml-security.md
+        - name: Ukázkové dokumenty XML (LINQ to XML)
+          href: sample-xml-documents-linq-to-xml.md
+          items:
+            - name: 'Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)'
+              href: sample-xml-file-typical-purchase-order-linq-to-xml.md
+            - name: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
+              href: sample-xml-file-typical-purchase-order-in-a-namespace.md
+            - name: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
+              href: sample-xml-file-multiple-purchase-orders-linq-to-xml.md
+            - name: 'Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru'
+              href: sample-xml-file-multiple-purchase-orders-in-a-namespace.md
+            - name: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
+              href: sample-xml-file-test-configuration-linq-to-xml.md
+            - name: 'Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru'
+              href: sample-xml-file-test-configuration-in-a-namespace.md
+            - name: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
+              href: sample-xml-file-customers-and-orders-linq-to-xml.md
+            - name: 'Ukázkový soubor XSD: Zákazníci a objednávky'
+              href: sample-xsd-file-customers-and-orders.md
+            - name: 'Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru'
+              href: sample-xml-file-customers-and-orders-in-a-namespace.md
+            - name: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
+              href: sample-xml-file-numerical-data-linq-to-xml.md
+            - name: 'Ukázkový soubor XML: Numerická data v názvovém prostoru'
+              href: sample-xml-file-numerical-data-in-a-namespace.md
+            - name: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
+              href: sample-xml-file-books-linq-to-xml.md
+            - name: 'Ukázkový soubor XML: Konsolidované nákupní objednávky'
+              href: sample-xml-file-consolidated-purchase-orders.md
+            - name: Referenční informace (LINQ to XML)
+              href: reference-linq-to-xml.md
+- name: LINQ to ADO.NET (stránka portálu)
+  href: linq-to-adonet-portal-page.md
+- name: Povolení zdroje dat pro dotazy LINQ
+  href: enabling-a-data-source-for-linq-querying.md
+- name: Podpora integrovaného vývojového prostředí a nástrojů sady Visual Studio pro LINQ
+  href: visual-studio-ide-and-tools-support-for-linq.md
