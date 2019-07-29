@@ -1,0 +1,11 @@
+- name: Sestavení v .NET
+  href: index.md
+  items:
+    - name: Přátelská sestavení
+      items:
+        - name: Přehled
+          href: friend-assemblies.md
+    - name: Formát souborů sestavení .NET
+      href: file-format.md
+    - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
+      href: unloadability-howto.md
