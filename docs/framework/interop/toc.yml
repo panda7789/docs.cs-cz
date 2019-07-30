@@ -19,10 +19,6 @@
     - name: Vystavení komponent architektury .NET Framework pro COM
       href: exposing-dotnet-components-to-com.md
       items:
-        - name: Kvalifikace typů .NET pro spolupráci
-          href: qualifying-net-types-for-interoperation.md
-        - name: Použití atributů spolupráce
-          href: applying-interop-attributes.md
         - name: Zabalení sestavení pro model COM
           href: packaging-an-assembly-for-com.md
         - name: Registrování sestav pomocí modelu COM
@@ -94,15 +90,8 @@
               href: how-to-migrate-managed-code-dcom-to-wcf.md
     - name: 'Postupy: Mapování výsledků HRESULT a výjimek'
       href: how-to-map-hresults-and-exceptions.md
-    - name: Obálky COM
-      href: com-wrappers.md
-      items:
-        - name: Obálka volatelná za běhu
-          href: runtime-callable-wrapper.md
-        - name: Obálka volatelná aplikacemi COM
-          href: com-callable-wrapper.md
-        - name: 'Postupy: Vytváření obálek COM'
-          href: how-to-create-com-wrappers.md
+    - name: 'Postupy: Vytváření obálek COM'
+      href: how-to-create-com-wrappers.md
     - name: Ekvivalence typů a vestavěné typy spolupráce
       href: type-equivalence-and-embedded-interop-types.md
     - name: 'Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe'

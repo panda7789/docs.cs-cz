@@ -1,0 +1,159 @@
+- name: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
+  href: index.md
+  items:
+    - name: Úvod ke kontejnerům a Dockeru
+      href: container-docker-introduction/index.md
+      items:
+        - name: Co je Docker?
+          href: container-docker-introduction/docker-defined.md
+        - name: Terminologie Dockeru
+          href: container-docker-introduction/docker-terminology.md
+        - name: 'Registry, image a kontejnery Dockeru'
+          href: container-docker-introduction/docker-containers-images-registries.md
+    - name: Volba mezi .NET Core a .NET Framework pro kontejnery Dockeru
+      href: net-core-net-framework-containers/index.md
+      items:
+        - name: Obecné pokyny
+          href: net-core-net-framework-containers/general-guidance.md
+        - name: Kdy pro kontejnery Dockeru zvolit .NET Core
+          href: net-core-net-framework-containers/net-core-container-scenarios.md
+        - name: Kdy pro kontejnery Dockeru zvolit .NET Framework
+          href: net-core-net-framework-containers/net-framework-container-scenarios.md
+        - name: 'Tabulka rozhodnutí: Rozhraní .NET Framework, která se mají použít pro Docker'
+          href: net-core-net-framework-containers/container-framework-choice-factors.md
+        - name: 'Operační systém, na který mají cílit kontejnery .NET'
+          href: net-core-net-framework-containers/net-container-os-targets.md
+        - name: Oficiální image .NET Dockeru
+          href: net-core-net-framework-containers/official-net-docker-images.md
+    - name: Návrh aplikací založených na kontejnerech a mikroslužbách
+      href: architect-microservice-container-applications/index.md
+      items:
+        - name: Kontejnerizování monolitických aplikací
+          href: architect-microservice-container-applications/containerize-monolithic-applications.md
+        - name: Stav a data v aplikacích Dockeru
+          href: architect-microservice-container-applications/docker-application-state-data.md
+        - name: Architektura orientovaná na služby
+          href: architect-microservice-container-applications/service-oriented-architecture.md
+        - name: Architektura mikroslužeb
+          href: architect-microservice-container-applications/microservices-architecture.md
+        - name: Svrchovanost dat v jednotlivých mikroslužbách
+          href: architect-microservice-container-applications/data-sovereignty-per-microservice.md
+        - name: Logická architektura vs. fyzická architektura
+          href: architect-microservice-container-applications/logical-versus-physical-architecture.md
+        - name: Výzvy a řešení správy distribuovaných dat
+          href: architect-microservice-container-applications/distributed-data-management.md
+        - name: Identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb
+          href: architect-microservice-container-applications/identify-microservice-domain-model-boundaries.md
+        - name: Přímá komunikace mezi klientem a mikroslužbou vs. vzor brány rozhraní API
+          href: architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md
+        - name: Komunikace v architektuře mikroslužeb
+          href: architect-microservice-container-applications/communication-in-microservice-architecture.md
+        - name: Asynchronní komunikace založená na zprávách
+          href: architect-microservice-container-applications/asynchronous-message-based-communication.md
+        - name: 'Vytváření, vývoj a správa verzí rozhraní API a kontraktů mikroslužeb'
+          href: architect-microservice-container-applications/maintain-microservice-apis.md
+        - name: Adresovatelnost mikroslužeb a registr služeb
+          href: architect-microservice-container-applications/microservices-addressability-service-registry.md
+        - name: 'Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách včetně tvaru a rozložení, které generují různé mikroslužby'
+          href: architect-microservice-container-applications/microservice-based-composite-ui-shape-layout.md
+        - name: Odolnost a vysoká dostupnost v mikroslužbách
+          href: architect-microservice-container-applications/resilient-high-availability-microservices.md
+        - name: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
+          href: architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md
+    - name: Proces vývoje aplikací založených na Dockeru
+      href: docker-application-development-process/index.md
+      items:
+        - name: Pracovní postup vývoje aplikací Dockeru
+          href: docker-application-development-process/docker-app-development-workflow.md
+    - name: Návrh a vývoj aplikací .NET založených na více kontejnerech a mikroslužbách
+      href: multi-container-microservice-net-applications/index.md
+      items:
+        - name: Návrh aplikace orientované na mikroslužby
+          href: multi-container-microservice-net-applications/microservice-application-design.md
+        - name: Vytvoření jednoduché mikroslužby CRUD řízené daty
+          href: multi-container-microservice-net-applications/data-driven-crud-microservice.md
+        - name: Definování vícekontejnerové aplikace pomocí docker-compose.yml
+          href: multi-container-microservice-net-applications/multi-container-applications-docker-compose.md
+        - name: 'Použití databázového serveru, který se používá jako kontejner'
+          href: multi-container-microservice-net-applications/database-server-container.md
+        - name: Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
+          href: multi-container-microservice-net-applications/integration-event-based-microservice-communications.md
+        - name: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
+          href: multi-container-microservice-net-applications/rabbitmq-event-bus-development-test-environment.md
+        - name: Přihlášení k odběru událostí
+          href: multi-container-microservice-net-applications/subscribe-events.md
+        - name: Testování služeb a webových aplikací ASP.NET Core
+          href: multi-container-microservice-net-applications/test-aspnet-core-services-web-apps.md
+        - name: Implementace úloh na pozadí v rámci mikroslužeb pomocí rozhraní IHostedService
+          href: multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md
+        - name: Implementace bran rozhraní API s Ocelotem
+          href: multi-container-microservice-net-applications/implement-api-gateways-with-ocelot.md
+    - name: Zvládnutí firemní složitosti v mikroslužbě pomocí vzorů DDD a CQRS
+      href: microservice-ddd-cqrs-patterns/index.md
+      items:
+        - name: Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
+          href: microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns.md
+        - name: Použití přístupů CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
+          href: microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice.md
+        - name: Implementace čtení nebo dotazů v mikroslužbě CQRS
+          href: microservice-ddd-cqrs-patterns/cqrs-microservice-reads.md
+        - name: Návrh mikroslužby orientované na DDD
+          href: microservice-ddd-cqrs-patterns/ddd-oriented-microservice.md
+        - name: Návrh doménového modelu mikroslužby
+          href: microservice-ddd-cqrs-patterns/microservice-domain-model.md
+        - name: Implementace doménového modelu mikroslužby pomocí .NET Core
+          href: microservice-ddd-cqrs-patterns/net-core-microservice-domain-model.md
+        - name: Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
+          href: microservice-ddd-cqrs-patterns/seedwork-domain-model-base-classes-interfaces.md
+        - name: Implementace objektů hodnot
+          href: microservice-ddd-cqrs-patterns/implement-value-objects.md
+        - name: Použití tříd Enumeration místo typů výčtů
+          href: microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types.md
+        - name: Návrh ověřování ve vrstvě doménového modelu
+          href: microservice-ddd-cqrs-patterns/domain-model-layer-validations.md
+        - name: Ověřování na straně klienta (ověřování v prezentačních vrstvách)
+          href: microservice-ddd-cqrs-patterns/client-side-validation.md
+        - name: 'Doménové události: Návrh a implementace'
+          href: microservice-ddd-cqrs-patterns/domain-events-design-implementation.md
+        - name: Návrh vrstvy trvalosti infrastruktury
+          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design.md
+        - name: Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
+          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implemenation-entity-framework-core.md
+        - name: Použití databází NoSQL jako infrastruktury trvalosti
+          href: microservice-ddd-cqrs-patterns/nosql-database-persistence-infrastructure.md
+        - name: Návrh aplikační vrstvy a webového rozhraní API mikroslužby
+          href: microservice-ddd-cqrs-patterns/microservice-application-layer-web-api-design.md
+        - name: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
+          href: microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md
+    - name: Implementace odolných aplikací
+      href: implement-resilient-applications/index.md
+      items:
+        - name: Zpracování částečného selhání
+          href: implement-resilient-applications/handle-partial-failure.md
+        - name: Strategie pro zpracování částečného selhání
+          href: implement-resilient-applications/partial-failure-strategies.md
+        - name: Implementace opakování s exponenciálním zpomalováním
+          href: implement-resilient-applications/implement-retries-exponential-backoff.md
+        - name: Implementace odolných připojení SQL Entity Framework Core
+          href: implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md
+        - name: Průzkum vlastních opakovaných volání HTTP s exponenciálním zpomalováním
+          href: implement-resilient-applications/explore-custom-http-call-retries-exponential-backoff.md
+        - name: Použití HttpClientFactory k implementaci odolných požadavků HTTP
+          href: implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests.md
+        - name: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
+          href: implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md
+        - name: Implementace systému jističe
+          href: implement-resilient-applications/implement-circuit-breaker-pattern.md
+        - name: Monitorování stavu
+          href: implement-resilient-applications/monitor-app-health.md
+    - name: Zabezpečení mikroslužeb a webových aplikací .NET
+      href: secure-net-microservices-web-applications/index.md
+      items:
+        - name: O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
+          href: secure-net-microservices-web-applications/authorization-net-microservices-web-applications.md
+        - name: Bezpečné ukládání tajných kódů aplikace během vývoje
+          href: secure-net-microservices-web-applications/developer-app-secrets-storage.md
+        - name: Ochrana tajných kódů při produkci pomocí Azure Key Vault
+          href: secure-net-microservices-web-applications/azure-key-vault-protects-secrets.md
+    - name: Základní poznatky
+      href: key-takeaways.md
