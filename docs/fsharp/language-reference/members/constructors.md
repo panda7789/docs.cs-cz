@@ -2,12 +2,12 @@
 title: Konstruktory
 description: Naučte se definovat a používat konstruktory v F# pro vytváření a inicializaci objektů tříd a struktur.
 ms.date: 05/16/2016
-ms.openlocfilehash: ef5dc134ad98179b6a365c4c34a9eca22fe5f7f6
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c25fdcb95c2873eb69a94f30c87735e5c04d391b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364356"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627592"
 ---
 # <a name="constructors"></a>Konstruktory
 
@@ -23,7 +23,7 @@ Bez ohledu na to, zda je konstruktor, který chcete volat, primární konstrukto
 
 Následující kód ilustruje třídu, která má konstruktor a různé způsoby vytváření objektů.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3501.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3501.fs)]
 
 Výstup je následující.
 
@@ -40,7 +40,7 @@ Struktury dodržují všechna pravidla tříd. Proto můžete mít primární ko
 
 Struktury také často obsahují pole, která jsou vytvořena pomocí `val` klíčového slova; třídy mohou také obsahovat tato pole. Struktury a třídy, které mají pole definovaná pomocí `val` klíčového slova, lze také inicializovat v dalších konstruktorech pomocí výrazů záznamu, jak je znázorněno v následujícím kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3502.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3502.fs)]
 
 Další informace najdete v tématu [explicitní pole: `val` Klíčové slovo](explicit-fields-the-val-keyword.md).
 
@@ -48,7 +48,7 @@ Další informace najdete v tématu [explicitní pole: `val` Klíčové slovo](e
 
 Primární konstruktor ve třídě může spouštět kód ve `do` vazbě. Co když ale budete muset spustit kód v dalším konstruktoru bez `do` vazby? K tomu použijte `then` klíčové slovo.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3503.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3503.fs)]
 
 Vedlejší účinky primárního konstruktoru se pořád spouštějí. Výstup je proto následující:
 
@@ -62,11 +62,11 @@ Created an invalid person object.
 
 V jiných členech zadáte název pro aktuální objekt v definici každého člena. Identifikátor sami můžete také umístit na první řádek definice třídy pomocí `as` klíčového slova hned za parametry konstruktoru. Následující příklad ilustruje tuto syntaxi.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3504.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3504.fs)]
 
 V dalších konstruktorech můžete také definovat identifikátor sami vložením `as` klauzule hned za parametry konstruktoru. Následující příklad ilustruje tuto syntaxi.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3505.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3505.fs)]
 
 K problémům může dojít při pokusu o použití objektu před jeho úplným definováním. Proto použití identifikátoru autoidentifier může způsobit, že kompilátor vygeneruje upozornění a vloží další kontroly, aby před inicializací objektu nebyly k dispozici členové objektu. V `do` vazbách primárního konstruktoru nebo `then` za klíčovým slovem v dalších konstruktorech byste měli použít pouze samotný identifikátor.
 
@@ -76,11 +76,11 @@ Název automatického identifikátoru nemusí být `this`. Může to být libovo
 
 Můžete přiřadit hodnoty k vlastnostem objektu třídy v inicializačním kódu připojením seznamu přiřazení formuláře `property = value` k seznamu argumentů pro konstruktor. Toto je znázorněno v následujícím příkladu kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3506.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3506.fs)]
 
 Následující verze předchozího kódu ilustruje kombinaci běžných argumentů, volitelných argumentů a nastavení vlastností v jednom volání konstruktoru.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3507.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3507.fs)]
 
 ## <a name="constructors-in-inherited-class"></a>Konstruktory v zděděné třídě
 

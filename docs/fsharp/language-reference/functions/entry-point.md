@@ -1,17 +1,17 @@
 ---
 title: Vstupní bod
-description: Zjistěte, jak nastavit vstupní bod F# program zkompilovaný jako spustitelný soubor, ve kterém formálně spuštění.
+description: Naučte se, jak nastavit vstupní bod na F# program, který je kompilován jako spustitelný soubor, kde se spouští formulář pro spuštění.
 ms.date: 05/16/2016
-ms.openlocfilehash: c7aedda5834fb224507bfcecd4688978efa26547
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5e13416131d4dfd22583439fedf51f18f7a461da
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645443"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630517"
 ---
 # <a name="entry-point"></a>Vstupní bod
 
-Toto téma popisuje metody, která se používá k nastavení vstupní bod F# programu.
+Toto téma popisuje metodu, kterou použijete k nastavení vstupního bodu na F# program.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,17 +22,17 @@ let-function-binding
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *vazba funkce umožňují* je definice funkce v `let` vazby.
+V předchozí syntaxi je *let-Function-Binding* definicí funkce ve `let` vazbě.
 
-Vstupní bod programu, který je zkompilován je spustitelný soubor, ve kterém formálně spuštění. Zadejte vstupní bod do F# aplikace s použitím `EntryPoint` atribut programu `main` funkce. Tato funkce (vytvořené využitím `let` vazby) musí být poslední funkci v poslední zkompilovaný soubor. Poslední zkompilovaný soubor je poslední soubor v projektu nebo poslední soubor, který je předán do příkazového řádku.
+Vstupním bodem programu, který je kompilován jako spustitelný soubor, je místo, kde se spouští formulář pro spuštění. Vstupní bod do F# aplikace určíte tak, že použijete `EntryPoint` atribut `main` pro funkci programu. Tato funkce (vytvořená pomocí `let` vazby) musí být poslední funkcí v posledním kompilovaném souboru. Poslední kompilovaný soubor je poslední soubor v projektu nebo poslední soubor, který je předán do příkazového řádku.
 
-Funkci vstupního bodu má typ `string array -> int`. Argumenty příkazového řádku k dispozici jsou předány `main` funkce v poli řetězců. Prvním prvkem pole je první argument; název spustitelného souboru, který není zahrnutý v poli, je to v některých jiných jazycích. Návratová hodnota se používá jako ukončovací kód procesu. Nula obvykle znamená úspěšné nenulové hodnoty udávající chybu. Neexistuje žádné vytváření názvů pro zvláštní význam nenulové návratové kódy; význam návratové kódy jsou specifické pro aplikaci.
+Funkce vstupního bodu má typ `string array -> int`. Argumenty uvedené na příkazovém řádku jsou předány `main` funkci v poli řetězců. Prvním prvkem pole je první argument; název spustitelného souboru není zahrnutý v poli, protože je v některých jiných jazycích. Návratová hodnota se používá jako ukončovací kód pro daný proces. Nula obvykle indikuje úspěch; nenulové hodnoty označují chybu. Neexistuje žádná úmluva pro konkrétní význam nenulových návratových kódů; význam návratových kódů je specifický pro aplikaci.
 
-Následující příklad ukazuje jednoduchý `main` funkce.
+Následující příklad ilustruje jednoduchou `main` funkci.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/entry-point/snippet501.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/entry-point/snippet501.fs)]
 
-Při spuštění tohoto kódu s příkazovým řádkem `EntryPoint.exe 1 2 3`, výstup je následující.
+Když se tento kód spustí s příkazovým řádkem `EntryPoint.exe 1 2 3`, výstup je následující.
 
 ```console
 Arguments passed to function : [|"1"; "2"; "3"|]
@@ -40,7 +40,7 @@ Arguments passed to function : [|"1"; "2"; "3"|]
 
 ## <a name="implicit-entry-point"></a>Implicitní vstupní bod
 
-Pokud program nemá žádné **EntryPoint** atribut, který explicitně určuje vstupní bod vazeb nejvyšší úrovně v posledním souboru ke kompilaci se používají jako vstupní bod.
+Pokud program nemá žádný atribut **EntryPoint** , který explicitně indikuje vstupní bod, použijí se jako vstupní bod vazby nejvyšší úrovně v posledním souboru, který se má zkompilovat.
 
 ## <a name="see-also"></a>Viz také:
 

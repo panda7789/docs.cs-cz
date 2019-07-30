@@ -1,67 +1,67 @@
 ---
-title: Začínáme s F# v sadě Visual Studio pro Mac
-description: Další informace o použití F# pomocí sady Visual Studio pro Mac.
+title: Začínáme s nástrojem F# v Visual Studio pro Mac
+description: Naučte se používat F# s Visual Studio pro Mac.
 ms.date: 07/03/2018
-ms.openlocfilehash: a6997f139d7e6c5fdf77878442db0b0b75b3d727
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 679ed1ea28f5d0e0d910dbd407b38d1d2f0314f6
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949718"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629750"
 ---
-# <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s F# v sadě Visual Studio pro Mac
+# <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s nástrojem F# v Visual Studio pro Mac
 
-F#a vizuál F# nástroje jsou podporovány v sadě Visual Studio pro Mac integrovaného vývojového prostředí. Ujistěte se, že máte [Visual Studio for Mac nainstalovat](install-fsharp.md#install-f-with-visual-studio-for-mac).
+F#a vizuální F# nástroje jsou podporovány v Visual Studio pro Mac integrovaném vývojovém prostředí. Ujistěte se, že máte [nainstalovanou Visual Studio pro Mac](install-fsharp.md#install-f-with-visual-studio-for-mac).
 
 ## <a name="creating-a-console-application"></a>Vytvoření konzolové aplikace
 
-Jeden z nejzákladnější projektů v sadě Visual Studio for Mac je konzolová aplikace.  Tady je postup.  Jakmile se otevře Visual Studio pro Mac:
+Jedním z nejvíce základních projektů v Visual Studio pro Mac je Konzolová aplikace.  Tady je postup, jak to provést.  Jakmile Visual Studio pro Mac otevřete:
 
-1. Na **souboru** nabídky, přejděte k **nové řešení**.
+1. V nabídce **soubor** přejděte na příkaz **nové řešení**.
 
-2. V dialogovém okně Nový projekt existují 2 různé šablony služby pro konzolové aplikace.  V části Další existuje -> .NET, který cílí na .NET Framework.  Druhá šablona se v .NET Core -> aplikace, které cílí na .NET Core.  Buď šablona by měla fungovat pro účely tohoto článku.
+2. V dialogovém okně Nový projekt existují 2 různé šablony pro konzolovou aplikaci.  Existuje jeden pod > .NET, který cílí na .NET Framework.  Druhá šablona je v rámci aplikace .NET Core->, která cílí na .NET Core.  Každá šablona by měla fungovat pro účely tohoto článku.
 
-3. V rámci konzolové aplikace, změnit C# k F# v případě potřeby.  Zvolte **Další** tlačítka vpřed!  
+3. V části Konzolová aplikace C# v F# případě potřeby změňte na.  Kliknutím na tlačítko **Další** přesunete vpřed.  
 
-4. Pojmenujte svůj projekt a zvolte možnosti, které chcete pro aplikaci.  Všimněte si, v podokně náhledu na okraji obrazovky, který se zobrazí adresářovou strukturu, která bude vytvořena podle vybrané možnosti.  
+4. Zadejte název vašeho projektu a vyberte požadované možnosti pro aplikaci.  Všimněte si, že podokno náhledu na stranu obrazovky, ve kterém se zobrazí struktura adresáře, která bude vytvořena na základě vybraných možností.  
 
-5. Klikněte na možnost **Vytvořit**.  Teď byste měli vidět F# projekt v Průzkumníku řešení.
+5. Klikněte na možnost **Vytvořit**.  V Průzkumník řešení by se teď F# měl zobrazit projekt.
 
 ## <a name="writing-your-code"></a>Psaní kódu
 
-Začněme napsáním nějakého kódu.  Ujistěte se, že `Program.fs` soubor je otevřený a potom nahraďte jeho obsah následujícím kódem:
+Pojďme začít vytvořením kódu jako prvního.  Ujistěte se, že `Program.fs` je soubor otevřený, a pak jeho obsah nahraďte následujícím:
 
-[!code-fsharp[HelloSquare](../../../samples/snippets/fsharp/getting-started/hello-square.fs)]
+[!code-fsharp[HelloSquare](~/samples/snippets/fsharp/getting-started/hello-square.fs)]
 
-V předchozí ukázce kódu, funkce `square` byla definována desetinný vstup s názvem `x` a vynásobí samostatně.  Protože F# používá [odvození typu](../language-reference/type-inference.md), typ `x` nemusí být zadán.  F# Kompilátoru rozumí typy, kde je platný násobení a to typu `x` podle toho, jak `square` je volána.  Pokud najedete myší `square`, byste měli vidět následující:
+V předchozím příkladu kódu byla definována funkce `square` , která přebírá vstup s názvem `x` a násobí ho sám sebou.  Vzhledem F# [k tomu](../language-reference/type-inference.md), že používá odvození typu, nenítřebazadávattyp.`x`  F# Kompilátor rozumí typům, kde je násobení platné, a přiřadí typ `x` podle toho, jak `square` je volána.  Pokud najedete `square`myší na, měli byste vidět následující:
 
 ```
 val square: x:int -> int
 ```
 
-Je to, co se označuje jako typ signatury funkce.  Najdete takto: "Čtverec je funkce, která přebírá celočíselným parametrem s názvem x a vytváří integer".  Všimněte si, že kompilátor přiřadil `square` `int` typ prozatím - totiž násobení není obecná napříč *všechny* typy, ale místo toho je obecný zavřené sadě typy.  F# Kompilátoru vyberou `int` v tomto bodu, ale budou upraveny podpis typu při volání `square` s jiným typ vstupu, například `float`.
+Jedná se o to, co se říká signatura typu funkce.  Dá se číst takto: "Square je funkce, která přebírá celé číslo s názvem x a vytvoří celé číslo".  Všimněte si, že kompilátor `square` tento `int` typ nyní přiřadil – je to proto, že násobení není obecné napříč *všemi* typy, ale spíše je obecné napříč uzavřenou sadou typů.  F# Kompilátor vybral `int` v tomto okamžiku, ale upraví signaturu typu, pokud voláte `square` s jiným typem vstupu, jako je `float`například.
 
-Další funkci `main`, je definován, která je upravena pomocí `EntryPoint` atribut říct F# kompilátor, který provádění programu by se měl spustit existuje.  Řídí stejnou konvencí jako ostatní [programovacích jazyků C-style](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), kde můžete předávat argumenty příkazového řádku pro tuto funkci a vrátí kód celé číslo (obvykle `0`).
+Je definována jiná `main`funkce,,, která je upravena `EntryPoint` s atributem, aby F# informovala kompilátor, že by měl spustit program, který by měl spustit.  Odpovídá stejné konvenci jako jiné [programovací jazyky ve stylu jazyka C](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), kde argumenty příkazového řádku lze předat této funkci a je vrácen celočíselný kód (obvykle `0`).
 
-Je v této funkce, které označujeme jako `square` funkci s argumentem `12`.  F# Kompilátor poté přiřadí typu `square` bude `int -> int` (to znamená, funkce, která přebírá `int` a vytváří `int`).  Volání `printfn` je formátovaný tisk funkci, která používá řetězec formátu, podobně jako C-style programovacích jazyků, parametry, které odpovídají jsou uvedeny ve formátovacím řetězci a potom zobrazí výsledek a nový řádek.
+Je touto funkcí, která volá `square` funkci s `12`argumentem.  F# Kompilátor potom `square` přiřadí typ `int -> int` , který `int` je (to znamená `int`funkce, která přijímá a vytvoří).  Volání je naformátovaná funkce pro `printfn` tisk, která používá formátovací řetězec, podobně jako programovací jazyky ve stylu jazyka C, parametry, které odpovídají těm, které jsou zadány ve formátu řetězce, a pak vytiskne výsledek a nový řádek.
 
 ## <a name="running-your-code"></a>Spuštění kódu
 
-Můžete spustit kód a zobrazit výsledky kliknutím na **spustit** z nabídky na nejvyšší úrovni a následně **spustit bez ladění**.  Tím se spustí program bez ladění a vám umožní vidět výsledky.
+Můžete spustit kód a zobrazit výsledky kliknutím na **Spustit** v nabídce nejvyšší úrovně a pak **Spustit bez ladění**.  Tím se spustí program bez ladění a umožní vám zobrazit výsledky.
 
-Teď byste měli vidět následující zobrazeny v okně konzoly, který Visual Studio for Mac odebrány nahoru:
+Nyní byste měli vidět následující vytištěné okno konzoly, které Visual Studio pro Mac odebráno:
 
 ```
 12 squared is 144!
 ```
 
-Blahopřejeme!  Vytvoření vaší první F# projektu v sadě Visual Studio pro Mac, zapsán F# funkce vytisknout výsledky volání funkce, které funkce a spuštění projektu zobrazíte některé výsledky.
+Blahopřejeme!  Vytvořili jste svůj první F# projekt v Visual Studio pro Mac, napsali jste F# funkci, která vytiskla výsledky volání funkce a spustí projekt, aby se zobrazily nějaké výsledky.
 
-## <a name="using-f-interactive"></a>Pomocí F# interaktivní
+## <a name="using-f-interactive"></a>Pomocí F# Interactive
 
-Jednou z nejlepších funkcí Vizuálu F# nástrojů v sadě Visual Studio pro Mac je F# interaktivního okna.  Umožňuje poslat kód prostřednictvím procesu, kde můžete tento kód a interaktivně zobrazit výsledek.
+Jednou z nejlepších funkcí vizuálních F# nástrojů v Visual Studio pro Mac je F# interaktivní okno.  Umožňuje odeslat kód do procesu, kde můžete zavolat tento kód a interaktivně zobrazit výsledek.
 
-Chcete-li začít s používáním, zvýrazněte `square` funkci definovanou ve vašem kódu.  Pak klikněte na **upravit** z nabídky nejvyšší úrovně.  Dále vyberte **odeslat výběr do F# interaktivní**.  To spustí kód v F# interaktivního okna.  Alternativně klikněte pravým tlačítkem na výběr a zvolte **odeslat výběr do F# interaktivní**.  Měli byste vidět F# interaktivní okno se zobrazí v něm následujícím kódem:
+Pokud ho chcete začít používat, zvýrazněte `square` funkci definovanou ve vašem kódu.  Potom v nabídce nejvyšší úrovně klikněte na **Upravit** .  V dalším kroku vyberte **Odeslat F# výběr do interaktivního**.  Tím se spustí kód v F# interaktivním okně.  Případně můžete kliknout pravým tlačítkem na výběr a vybrat **Odeslat výběr do F# interaktivní**.  Mělo by se zobrazit F# interaktivní okno s následujícím:
 
 ```
 >
@@ -71,7 +71,7 @@ val square : x:int -> int
 >
 ```
 
-Zobrazí se stejným podpisem funkce pro `square` funkci, kterou jste předtím viděli při přechodu myši nad funkce.  Protože `square` je nyní definována ve F# interaktivní proces, můžete ji volat s různými hodnotami:
+To ukazuje stejnou signaturu funkce pro `square` funkci, kterou jste viděli dříve při přechodu na funkci.  Vzhledem `square` k tomu, že je F# nyní definováno v interaktivním procesu, můžete ho zavolat s různými hodnotami:
 
 ```
 > square 12;;
@@ -80,7 +80,7 @@ val it : int = 144
 val it : int = 169
 ```
 
-To spustí funkci, sváže výsledek s novým názvem `it`a zobrazí se typ a hodnotu `it`.  Všimněte si, že každý řádek musí být ukončen `;;`.  To je jak F# interaktivní ví, dokončení volání funkce.  Můžete také definovat nové funkce v F# Interactive:
+Tím se spustí funkce, vytvoří se výsledek k novému názvu `it`a zobrazí typ a `it`hodnotu.  Všimněte si, že je nutné ukončit každý `;;`řádek pomocí.  To je způsob F# , jak interaktivní ví, kdy bylo volání funkce dokončeno.  Můžete také definovat nové funkce v F# Interactive:
 
 ```
 > let isOdd x = x % 2 <> 0;;
@@ -91,32 +91,32 @@ val isOdd : x:int -> bool
 val it : bool = false
 ```
 
-Výše uvedené definuje novou funkci, `isOdd`, který přebírá `int` a kontroluje, jestli je liché!  Můžete volat tuto funkci chcete zobrazit, co vrátí s různými vstupy.  Bude možné volat funkce v rámci volání funkce:
+Výše uvedený postup definuje novou funkci, `isOdd`která `int` přijímá a kontroluje, jestli je lichá.  Voláním této funkce můžete zjistit, co se vrátí s různými vstupy.  Můžete volat funkce v volání funkce:
 
 ```
 > isOdd (square 15);;
 val it : bool = true
 ```
 
-Můžete také použít [operátor kanálu vpřed](../language-reference/symbol-and-operator-reference/index.md) do kanálu hodnotu do dvou funkcí:
+K zřetězení hodnoty do dvou funkcí můžete použít také [operátor předávání kanálu](../language-reference/symbol-and-operator-reference/index.md) :
 
 ```
 > 15 |> square |> isOdd;;
 val it : bool = true
 ```
 
-Operátor kanálu vpřed a další, jsou popsané v dalších kurzech.
+Operátor s přesměrováním na kanál a další jsou uvedené v dalších kurzech.
 
-Toto je pouze se stručně zmíníme co můžete dělat s F# interaktivní.  Další informace, podívejte se na [interaktivní programování s F# ](../tutorials/fsharp-interactive/index.md).
+To je jenom nakoukněte, co můžete dělat s F# interaktivními.  Pokud se chcete dozvědět víc, podívejte [se na F#interaktivní programování pomocí ](../tutorials/fsharp-interactive/index.md).
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-Pokud jste to ještě neudělali, podívejte se [prohlídka F# ](../tour.md), která uvádí i některé základní funkce F# jazyka.  Poskytne vám přehled některých možností F#a poskytnout ukázky ukázku kódu, které můžete zkopírovat do sady Visual Studio pro Mac a spustit.  Existují také některé skvělé externí prostředky můžete použít, zobrazují v [ F# průvodce](../index.md).
+Pokud jste to ještě neudělali, podívejte se na prohlídku [ F# ](../tour.md), která se zabývá některými základními F# funkcemi daného jazyka.  Poskytne vám přehled některých možností F#nástroje a poskytne vám podrobné ukázky kódu, které můžete zkopírovat do Visual Studio pro Mac a spustit.  K dispozici jsou také některé skvělé externí prostředky, které můžete použít v [ F# průvodci](../index.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Visual F#](../index.md)
 - [Prohlídka jazyka F#](../tour.md)
-- [F#referenční dokumentace jazyka](../language-reference/index.md)
+- [F#Referenční dokumentace jazyka](../language-reference/index.md)
 - [Odvození typu](../language-reference/type-inference.md)
-- [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)
+- [Reference k symbolům a operátorovi](../language-reference/symbol-and-operator-reference/index.md)

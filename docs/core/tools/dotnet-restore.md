@@ -1,23 +1,23 @@
 ---
-title: příkaz DotNet restore
-description: Zjistěte, jak obnovit závislostí a specifické pro projekt nástroje pomocí příkazu dotnet restore.
+title: dotnet restore – příkaz
+description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 3ddb9f679cfcab972483a4cb53ffe2b075867614
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17bbbe33e7cb7b13d6fb1c0e44bb77dd2bbe7020
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664802"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626349"
 ---
-# <a name="dotnet-restore"></a>DotNet restore
+# <a name="dotnet-restore"></a>dotnet restore
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet restore` -Obnoví závislostí a nástrojů projektu.
+`dotnet restore`– Obnoví závislosti a nástroje projektu.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
@@ -39,21 +39,37 @@ dotnet restore [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet restore` Příkaz používá NuGet pro obnovení závislostí, stejně jako nástroje specifické pro projekt, které jsou uvedeny v souboru projektu. Ve výchozím nastavení obnovení závislostí a tools spouští paralelně.
+`dotnet restore` Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu. Ve výchozím nastavení jsou obnovení závislostí a nástrojů spouštěny paralelně.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-K obnovení závislosti, potřebuje NuGet informační kanály, kde se nacházejí balíčky. Informační kanály jsou obvykle k dispozici prostřednictvím *NuGet.config* konfigurační soubor. Výchozí konfigurační soubor je k dispozici při instalaci nástroje rozhraní příkazového řádku. Zadejte další informační kanály tím, že vytvoříte vlastní *NuGet.config* soubor v adresáři projektu. Zadejte také další kanály na vyvolání z příkazového řádku.
+Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* . Výchozí konfigurační soubor se poskytne při instalaci nástrojů rozhraní příkazového řádku. Další kanály určíte tak, že vytvoříte vlastní soubor *NuGet. config* v adresáři projektu. Na příkazovém řádku můžete zadat také další kanály na vyvolání.
 
-Pro závislosti, zadáte umístění obnoveného balíčky při použití operace obnovení `--packages` argument. Pokud není zadán, výchozí mezipaměti balíčku NuGet se používá, která byla nalezena v `.nuget/packages` adresáře do domovského adresáře uživatele ve všech operačních systémech. Například */home/user1* v Linuxu nebo *C:\Users\user1* na Windows.
+U závislostí určíte, kde se obnovené balíčky umístí během operace obnovení pomocí `--packages` argumentu. Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v `.nuget/packages` adresáři domovského adresáře uživatele ve všech operačních systémech. Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.
 
-Pro nástroje specifické pro projekt `dotnet restore` nejprve obnoví balíček, ve které je zabalena nástroj a pak pokračuje k obnovení závislostí nástroje uvedené v souboru projektu.
+U nástrojů `dotnet restore` specifických pro projekt nejprve obnovte balíček, ve kterém je nástroj zabalen, a poté pokračuje v obnovování závislostí nástroje, jak je uvedeno v souboru projektu.
 
-Chování `dotnet restore` příkaz je ovlivněna některá nastavení v *Nuget.Config* soubor, pokud jsou k dispozici. Například nastavení `globalPackagesFolder` v *NuGet.Config* umístí obnovené balíčky NuGet v zadané složce. Jedná se o alternativu k určení `--packages` možnost `dotnet restore` příkazu. Další informace najdete v tématu [odkaz na soubor NuGet.Config](/nuget/schema/nuget-config-file).
+### <a name="nugetconfig-differences"></a>rozdíly v NuGet. config
 
-## <a name="implicit-dotnet-restore"></a>Implicitní `dotnet restore`
+Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *NuGet. config* , pokud je k dispozici. Například nastavení `globalPackagesFolder` v *souboru NuGet. config* umístí obnovené balíčky NuGet do zadané složky. Toto je alternativa k zadání `--packages` možnosti `dotnet restore` příkazu. Další informace najdete v referenčních informacích k [NuGet. config](/nuget/schema/nuget-config-file).
 
-Od verze rozhraní .NET Core 2.0, `dotnet restore` spuštění implicitně v případě potřeby při vydání následující příkazy:
+Existují tři specifická nastavení, která `dotnet restore` ignorují:
+
+* [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
+
+  Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje `<PackageReference>` pouze prvky pro balíčky NuGet.
+
+* [řešení](/nuget/schema/nuget-config-file#solution-section)
+
+  Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core. .NET Core nepoužívá `packages.config` soubor a místo toho používá `<PackageReference>` elementy pro balíčky NuGet.
+
+* [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
+
+  Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.
+
+## <a name="implicit-dotnet-restore"></a>Nepřímo`dotnet restore`
+
+Počínaje rozhraním .NET Core 2,0 `dotnet restore` se v případě potřeby spouští implicitně, když vydáte následující příkazy:
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -63,15 +79,15 @@ Od verze rozhraní .NET Core 2.0, `dotnet restore` spuštění implicitně v př
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-Ve většině případů už nepotřebujete explicitně `dotnet restore` příkazu.
+Ve většině případů už nemusíte explicitně používat `dotnet restore` příkaz.
 
-V některých případech může být nepraktické spustit `dotnet restore` implicitně. Například některé automatizované systémy, jako jsou systémy sestavení potřebné k volání `dotnet restore` explicitně k řízení, pokud dojde k obnovení tak, aby se můžete řídit využití sítě. Aby se zabránilo `dotnet restore` ve spuštění implicitně, můžete použít `--no-restore` příznak s žádným z těchto příkazů můžete zakázat implicitní obnovení.
+V některých případech může být nepraktické spustit `dotnet restore` implicitně. Například některé automatizované systémy, například systémy sestavení, musí volat `dotnet restore` explicitně k řízení, když dojde k obnovení, aby bylo možné řídit využití sítě. Chcete- `dotnet restore` li zabránit spuštění implicitně, můžete `--no-restore` použít příznak s některým z těchto příkazů k zakázání implicitního obnovení.
 
 ## <a name="arguments"></a>Arguments
 
 `ROOT`
 
-Volitelná cesta k souboru projektu, chcete-li obnovit.
+Volitelná cesta k souboru projektu, který má být obnoven.
 
 ## <a name="options"></a>Možnosti
 
@@ -79,114 +95,114 @@ Volitelná cesta k souboru projektu, chcete-li obnovit.
 
 `--configfile <FILE>`
 
-Konfigurační soubor NuGet (*NuGet.config*) pro operaci obnovení.
+Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.
 
 `--disable-parallel`
 
-Zakáže obnovování několika projektů najednou.
+Zakáže obnovení více projektů paralelně.
 
 `--force`
 
-Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
+Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
 
 `-h|--help`
 
-Vytiskne krátký nápovědy pro příkaz.
+Vypíše krátkou nápovědu k příkazu.
 
 `--ignore-failed-sources`
 
-Pouze upozornění na neúspěšné zdroje, pokud existují balíčky, které splňují požadavek na verzi.
+Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.
 
 `--no-cache`
 
-Určuje, balíčky a požadavky HTTP do mezipaměti.
+Určuje, že nejsou balíčky mezipaměti a požadavky HTTP.
 
 `--no-dependencies`
 
-Při obnovování projekt s odkazy typu projekt projekt (P2P), obnoví kořenového projektu a nikoli odkazy.
+Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
 
 `--packages <PACKAGES_DIRECTORY>`
 
-Určuje adresář pro obnovený balíčky.
+Určuje adresář pro obnovené balíčky.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Určuje modul runtime pro obnovení balíčků. Tento parametr slouží k obnovení balíčků pro moduly runtime, které nejsou výslovně uvedené v `<RuntimeIdentifiers>` značku *.csproj* souboru. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md). Poskytuje více identifikátorů RID, protože zadání této možnosti více než jednou.
+Určuje modul runtime pro obnovení balíčku. Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* . Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Zadáním této možnosti několikrát zadejte víc identifikátorů RID.
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet pro použití během operace obnovení. Toto nastavení potlačí všechny zdroje podle *NuGet.config* soubory. Více zdrojů můžete zadat tak, že zadáte tuto možnost vícekrát.
+Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
 
 `--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
 
 `--interactive`
 
-Povoluje příkazu zastavit a počkat na vstup uživatele nebo akci (třeba k dokončení ověřování). Od .NET Core 2.1.400.
+Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). Vzhledem k tomu, že .NET Core 2.1.400.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--configfile <FILE>`
 
-Konfigurační soubor NuGet (*NuGet.config*) pro operaci obnovení.
+Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.
 
 `--disable-parallel`
 
-Zakáže obnovování několika projektů najednou.
+Zakáže obnovení více projektů paralelně.
 
 `-h|--help`
 
-Vytiskne krátký nápovědy pro příkaz.
+Vypíše krátkou nápovědu k příkazu.
 
 `--ignore-failed-sources`
 
-Pouze upozornění na neúspěšné zdroje, pokud existují balíčky, které splňují požadavek na verzi.
+Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.
 
 `--no-cache`
 
-Určuje, balíčky a požadavky HTTP do mezipaměti.
+Určuje, že nejsou balíčky mezipaměti a požadavky HTTP.
 
 `--no-dependencies`
 
-Při obnovování projekt s odkazy typu projekt projekt (P2P), obnoví kořenového projektu a nikoli odkazy.
+Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
 
 `--packages <PACKAGES_DIRECTORY>`
 
-Určuje adresář pro obnovený balíčky.
+Určuje adresář pro obnovené balíčky.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Určuje modul runtime pro obnovení balíčků. Tento parametr slouží k obnovení balíčků pro moduly runtime, které nejsou výslovně uvedené v `<RuntimeIdentifiers>` značku *.csproj* souboru. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md). Poskytuje více identifikátorů RID, protože zadání této možnosti více než jednou.
+Určuje modul runtime pro obnovení balíčku. Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* . Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Zadáním této možnosti několikrát zadejte víc identifikátorů RID.
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet pro použití během operace obnovení. Tím se přepíše všechny zdroje podle *NuGet.config* soubory. Více zdrojů můžete zadat tak, že zadáte tuto možnost vícekrát.
+Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Tím se přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
 
 `--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
 
 ---
 
 ## <a name="examples"></a>Příklady
 
-Obnovte závislosti a nástroje pro projekt v aktuálním adresáři:
+Obnovit závislosti a nástroje pro projekt v aktuálním adresáři:
 
 `dotnet restore`
 
-Obnovte závislosti a nástroje pro `app1` projekt najít v zadané cestě:
+Obnovit závislosti a nástroje pro `app1` projekt nalezené v dané cestě:
 
 `dotnet restore ~/projects/app1/app1.csproj`
 
-Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí jako zdroj zadaná cesta k souboru:
+Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, který jste zadali jako zdroj:
 
 `dotnet restore -s c:\packages\mypackages`
 
-Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souborům dvou zdrojů ve formě:
+Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí dvou cest k souborům, které jsou k dispozici jako zdroje:
 
 `dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages`
 
-Obnovte závislosti a nástroje pro projekt do aktuálního adresáře a zobrazuje pouze minimální výstupu:
+Obnoví závislosti a nástroje pro projekt v aktuálním adresáři a zobrazí jenom minimální výstup:
 
 `dotnet restore --verbosity minimal`

@@ -1,17 +1,17 @@
 ---
 title: Identifikátory zdrojového řádku, souboru a cesty
-description: Zjistěte, jak použít integrovaný F# hodnoty identifikátorů, které vám umožní přístup ke zdroji řádek číslo, adresář a název souboru ve vašem kódu.
+description: Naučte se používat předdefinované hodnoty F# identifikátorů, které vám umožní přístup ke zdrojovému číslu, adresáři a názvu souboru ve vašem kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 3f2048aed9ef75037b43cd091a749e3d6bbaf9a3
-ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
+ms.openlocfilehash: 5ff36210edc75370f8baf9ee7be057f3ac0c3979
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152056"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627112"
 ---
 # <a name="source-line-file-and-path-identifiers"></a>Identifikátory zdrojového řádku, souboru a cesty
 
-Identifikátory `__LINE__`, `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__` jsou předdefinované hodnoty, které vám umožní přístup ke zdrojové řádek číslo, adresář a název souboru ve vašem kódu.
+Identifikátory `__LINE__` `__SOURCE_DIRECTORY__` a jsoupředdefinovanéhodnoty,kterévámumožnípřístupkezdrojovémučísluřádku,adresářianázvusouboruvevašemkódu.`__SOURCE_FILE__`
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -23,23 +23,23 @@ __SOURCE_FILE__
 
 ## <a name="remarks"></a>Poznámky
 
-Každá z těchto hodnot obsahuje typ `string`.
+Každá z těchto hodnot je typu `string`.
 
-Následující tabulka shrnuje zdrojového řádku, souboru a cestu identifikátory, které jsou k dispozici v F#. Tyto identifikátory nejsou makra preprocesoru; jsou předdefinované hodnoty, které jsou rozpoznávány kompilátorem.
+Následující tabulka shrnuje identifikátory zdrojového řádku, souboru a cesty, které jsou k dispozici v F#. Tyto identifikátory neobsahují makra preprocesoru; jsou to předdefinované hodnoty, které kompilátor rozpozná.
 
 |Předdefinovaný identifikátor|Popis|
 |---------------------|-----------|
-|`__LINE__`|Aktuální číslo řádku, je vyhodnocen jako zvážení `#line` direktivy.|
-|`__SOURCE_DIRECTORY__`|Vyhodnotí jako aktuální úplná cesta zdrojového adresáře, vzhledem k tomu `#line` direktivy.|
-|`__SOURCE_FILE__`|Vyhodnotí jako aktuální název zdrojového souboru, bez jeho cestu vzhledem k tomu `#line` direktivy.|
+|`__LINE__`|Vyhodnotí na aktuální číslo řádku a zváží `#line` direktivy.|
+|`__SOURCE_DIRECTORY__`|Vyhodnotí na aktuální úplnou cestu ke zdrojovému adresáři, který `#line` zvažuje direktivy.|
+|`__SOURCE_FILE__`|Vyhodnotí na aktuální název zdrojového souboru bez cesty, kde se `#line` dotýkají direktiv.|
 
-Další informace o `#line` direktiv, viz [direktivy kompilátoru](compiler-directives.md).
+Další informace o `#line` direktivě naleznete v tématu [direktivy kompilátoru](compiler-directives.md).
 
 ## <a name="example"></a>Příklad
 
 Následující příklad kódu ukazuje použití těchto hodnot.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7401.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7401.fs)]
 
 Výstup:
 

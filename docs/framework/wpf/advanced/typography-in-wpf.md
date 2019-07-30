@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: ffbd59cb398d417a36d75ff0ef9ef4ef143c30c0
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.openlocfilehash: 743b9ec45c138053fcfcb5cbb1ea9c8490ba919e
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484652"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629915"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] , podpora typografie, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Vylepšená kvalita a výkon textu  
- Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což vylepšuje přehlednost a čitelnost textu. ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely. Technologie ClearType používá vykreslování v pixelech, které umožňuje zobrazení textu s větší věrnou přesností na jeho skutečný tvar zarovnáním znaků na zlomkové části pixelu. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání. Dalším vylepšením technologie ClearType [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v systému je antialiasing směru y, který vyhlazuje horní a dolní část neomezených křivek v textových znacích. Další podrobnosti o funkcích technologie ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
+ Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu. ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely. Technologie ClearType používá vykreslování v pixelech, které umožňuje zobrazení textu s větší věrnou přesností na jeho skutečný tvar zarovnáním znaků na zlomkové části pixelu. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání. Dalším vylepšením technologie ClearType [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v systému je antialiasing směru y, který vyhlazuje horní a dolní část neomezených křivek v textových znacích. Další podrobnosti o funkcích technologie ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
   
  ![Text pomocí technologie ClearType y-Direction anti-aliasing](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
 Text pomocí technologie ClearType y-Direction antialiasing  

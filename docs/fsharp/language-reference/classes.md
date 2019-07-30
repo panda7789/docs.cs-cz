@@ -1,13 +1,13 @@
 ---
 title: Třídy
-description: Zjistěte, jak F# třídy jsou typy, které představují objekty, které mohou mít vlastnosti, metody a události.
+description: Zjistěte, F# jak třídy jsou typy reprezentující objekty, které mohou mít vlastnosti, metody a události.
 ms.date: 05/16/2016
-ms.openlocfilehash: a233fea538274216db3c6751f6fbabbf70cc2841
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5c012d028bc1f89e3e9f5969b3461faab9aad3a0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645533"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630443"
 ---
 # <a name="classes"></a>Třídy
 
@@ -33,51 +33,51 @@ and [access-modifier] type-name2 ...
 
 ## <a name="remarks"></a>Poznámky
 
-Třídy představují základní popis typů objektů .NET; Třída je koncept primární typ, který podporuje objektově orientované programování v F#.
+Třídy reprezentují základní popis typů objektů .NET. Třída je primární typ koncept, který podporuje objektově orientované programování v F#.
 
-V předchozí syntaxi `type-name` je libovolný platný identifikátor. `type-params` Popisuje volitelné obecné parametry typu. Zahrnuje názvy parametrů typů a omezením uzavřen do lomených závorek (`<` a `>`). Další informace najdete v tématu [obecných typů](generics/index.md) a [omezení](generics/constraints.md). `parameter-list` Popisuje parametry konstruktoru. První modifikátor přístupu vztahují na daný typ druhý se vztahují k primárnímu konstruktoru. V obou případech se výchozí hodnota je `public`.
+V předchozí syntaxi `type-name` je platný identifikátor. `type-params` Popisuje volitelné parametry obecného typu. Skládá se z názvů parametrů typu a omezení uzavřených do lomených závorek `>`(`<` a). Další informace najdete v tématu [Obecné typy](./generics/index.md) a [omezení](./generics/constraints.md). `parameter-list` Popisuje parametry konstruktoru. První modifikátor přístupu se vztahuje k typu; druhý se vztahuje k primárnímu konstruktoru. V obou případech je `public`výchozí hodnota.
 
-Zadejte základní třídu pro třídy pomocí `inherit` – klíčové slovo. Je nutné zadat argumenty, v závorkách, pro konstruktor základní třídy.
+Základní třídu pro třídu určíte pomocí `inherit` klíčového slova. Pro konstruktor základní třídy je nutné dodat argumenty v závorkách.
 
-Deklarace pole nebo hodnoty, které jsou místní pro třídu pomocí funkce `let` vazby a musí následovat po obecná pravidla pro `let` vazby. `do-bindings` Části obsahuje kód, který se spustí při vytváření objektu.
+Deklarujete pole nebo hodnoty funkcí, které jsou lokální pro třídu, pomocí `let` vazeb a musíte dodržovat obecná pravidla pro `let` vazby. `do-bindings` Oddíl obsahuje kód, který má být proveden při vytváření objektu.
 
-`member-list` Se skládá z dalších konstruktory, instanci a deklarace statické metody, deklarace rozhraní, abstraktní vazby a deklaracích vlastností a událostí. Tyto možnosti jsou popsány v [členy](members/index.md).
+`member-list` Obsahuje další konstruktory, instance a deklarace statických metod, deklarace rozhraní, abstraktní vazby a deklarace vlastností a událostí. Ty jsou popsány v tématu [members](./members/index.md).
 
-`identifier` , Který se používá s nepovinným `as` – klíčové slovo udává název proměnnou instance nebo vlastní identifikátor, který je možné odkazovat na instanci typu v definici typu. Další informace najdete v části identifikátory Self dále v tomto tématu.
+Rozhraní `identifier` , které je použito s klíčovým slovem volitelné `as` , poskytuje název proměnné instance nebo identifikátor autotest, který lze použít v definici typu pro odkazování na instanci typu. Další informace najdete v části hlavní identifikátory níže v tomto tématu.
 
-Klíčová slova `class` a `end` toto označení začátku a konce definice jsou volitelné.
+Klíčová `class` slova `end` , která označují začátek a konec definice, jsou volitelná.
 
-Vzájemně rekurzivních typů, které jsou typy, které odkazují na sobě navzájem, jsou spojeny spolu s `and` – klíčové slovo pouze jsou vzájemně rekurzivní funkce. Příklad najdete v části vzájemně rekurzivních typů.
+Vzájemně se rekurzivní typy, které odkazují na sebe navzájem, spolu s `and` klíčovým slovem spojí stejně jako vzájemně rekurzivní funkce. Příklad naleznete v části vzájemně rekurzivní typy.
 
 ## <a name="constructors"></a>Konstruktory
 
-Konstruktor je kód, který vytvoří instanci typu třídy. Konstruktory pro třídy fungují trochu jinak F# než v jiných jazycích rozhraní .NET. V F# třídy, je vždy primární konstruktor, jehož argumenty jsou popsány v `parameter-list` , který následuje název typu a jehož subjekt se skládá z `let` (a `let rec`) vazby na začátku deklarace třídy a `do` vazby, které následují. Argumenty konstruktoru primární jsou v oboru v rámci deklarace třídy.
+Konstruktor je kód, který vytvoří instanci typu třídy. Konstruktory pro třídy fungují trochu jinak F# než v jiných jazycích .NET. Ve F# třídě je vždy primární konstruktor, jehož argumenty jsou popsány v `parameter-list` , které následují za názvem typu a jejichž `let` tělo se skládá z vazeb (a `let rec`) na začátku deklarace třídy a `do` následující vazby. Argumenty primárního konstruktoru jsou v oboru v rámci deklarace třídy.
 
-Můžete přidat další konstruktory pomocí `new` – klíčové slovo přidání člena, následujícím způsobem:
+Můžete přidat další konstruktory pomocí `new` klíčového slova pro přidání člena následujícím způsobem:
 
 `new`(`argument-list`) = `constructor-body`
 
-Tělo konstruktoru new musí vyvolat primární konstruktor, který je zadán v horní části deklarace třídy.
+Tělo nového konstruktoru musí vyvolat primární konstruktor, který je určen v horní části deklarace třídy.
 
-Tento koncept znázorňuje následující příklad. V následujícím kódu `MyClass` má dva konstruktory, primárního konstruktoru, který přebírá dva argumenty a jiného konstruktoru, který nepřijímá žádné argumenty.
+Následující příklad znázorňuje tento koncept. V následujícím kódu `MyClass` má dva konstruktory, primární konstruktor, který přebírá dva argumenty a jiný konstruktor, který nepřijímá žádné argumenty.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2401.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2401.fs)]
 
-## <a name="let-and-do-bindings"></a>let a do – vazby
+## <a name="let-and-do-bindings"></a>Vazby let a dělat
 
-`let` a `do` vazby v definici třídy formuláře těla konstruktoru třídy primární, a spouští se proto vždy, když je vytvořena instance třídy. Pokud `let` vazby je funkce, pak se zkompiluje do člena. Pokud `let` vazby má hodnotu, která se nepoužívá žádné funkce nebo člen, bude se zkompiluje do proměnné, která je místní pro konstruktor. V opačném případě je zkompilován do pole třídy. `do` Výrazy, které následují jsou kompilovány do primárního konstruktoru a spustit kód inicializace pro každou instanci. Protože žádné další konstruktory vždy volat primárnímu konstruktoru `let` vazby a `do` vazby vždy bude provedena bez ohledu na to, které se nazývá konstruktor.
+Vazby `let` a`do` v definici třídy tvoří tělo konstruktoru primární třídy, a proto jsou spouštěny pokaždé, když je vytvořena instance třídy. Pokud je `let` vazba funkce, je zkompilována do členu. Pokud je `let` vazba hodnota, která není použita v žádné funkci nebo členu, je zkompilována do proměnné, která je místní pro konstruktor. V opačném případě je zkompilována do pole třídy. `do` Výrazy, které následují, jsou zkompilovány do primárního konstruktoru a spouštějí inicializační kód pro každou instanci. Vzhledem k tomu, že všechny další konstruktory vždy volají primární `let` konstruktor, `do` vazby a vazby se vždy spouštějí bez ohledu na to, který konstruktor je volán.
 
-Pole, která vytvořila `let` vazby je přístupná v rámci metody a vlastnosti třídy, ale jsou přístupné z statické metody, i v případě, že statické metody přijímají proměnnou instance jako parametr. K nim nelze přistupovat pomocí identifikátoru samotného, pokud existuje.
+Pole, která jsou vytvořena `let` pomocí vazeb, mohou být k dispozici v rámci metod a vlastností třídy. nelze je však získat z statických metod, i když statické metody přebírají proměnnou instance jako parametr. K nim nelze přistupovat pomocí automatického identifikátoru, pokud existuje.
 
-## <a name="self-identifiers"></a>Self – identifikátory
+## <a name="self-identifiers"></a>Osobní identifikátory
 
-A *identifikátoru samotného* je název, který představuje aktuální instanci. Self – identifikátory vypadat podobně jako `this` – klíčové slovo v jazyce C# nebo C++ nebo `Me` v jazyce Visual Basic. Můžete definovat vlastní identifikátor dvěma různými způsoby v závislosti na tom, zda chcete identifikátoru samotného v oboru pro definici celé jedné třídy nebo pouze pro jednotlivé metody.
+*Samotný identifikátor* je název, který představuje aktuální instanci. `this` Identifikátory sebe připomínají klíčové slovo v C# nebo C++ nebo `Me` v Visual Basic. Vlastní identifikátor můžete definovat dvěma různými způsoby, v závislosti na tom, zda chcete, aby byl vlastní identifikátor v rozsahu pro celou definici třídy nebo pouze pro jednotlivé metody.
 
-Chcete-li definovat vlastní identifikátor pro celou třídu, použijte `as` – klíčové slovo po pravých závorek parametru konstruktoru seznamu a zadejte název identifikátoru.
+Chcete-li definovat identifikátor osobníku pro celou třídu, použijte `as` klíčové slovo za pravou závorku seznamu parametrů konstruktoru a zadejte název identifikátoru.
 
-Pokud chcete definovat vlastní identifikátor pro právě jedna metoda, poskytují identifikátoru samotného v deklaraci člena, těsně před název metody a tečku (.) jako oddělovač.
+Chcete-li definovat identifikátor sebe samo pro jednu metodu, zadejte identifikátor samotné v deklaraci členu, těsně před názvem metody a tečkou (.) jako oddělovač.
 
-Následující příklad kódu ukazuje dva způsoby vytvoření identifikátoru samotného. V prvním řádku `as` – klíčové slovo se používá k definování vlastní identifikátor. V pátém řádku identifikátor `this` se používá k definování vlastní identifikátor, jejichž rozsah je omezen na metodu `PrintMessage`.
+Následující příklad kódu ukazuje dva způsoby, jak vytvořit identifikátor sebe. Na prvním řádku `as` se klíčové slovo používá k definování identifikátoru sebe. Na pátém řádku je identifikátor `this` použit k definování identifikátoru samočinného rozsahu, jehož rozsah je omezen na metodu. `PrintMessage`
 
 ```fsharp
 type MyClass2(dataIn) as self =
@@ -88,53 +88,53 @@ type MyClass2(dataIn) as self =
         printf "Creating MyClass2 with Data %d" data
 ```
 
-Na rozdíl od v jiných jazycích technologie .NET můžete pojmenovat identifikátoru samotného představ; můžete omezit na názvy, jako `self`, `Me`, nebo `this`.
+Na rozdíl od jiných jazyků .NET můžete sami pojmenovat identifikátor, který chcete, ale. Nejste omezeni na názvy `self`, `Me`například, nebo `this`.
 
-Vlastní identifikátor, který je deklarován s `as` – klíčové slovo není inicializována až po `let` vazby jsou spouštěny. Proto jej nelze použít v `let` vazby. Můžete použít vlastní identifikátor v `do` část vazby.
+Identifikátor autotest, který je deklarován s `as` klíčovým slovem, není inicializován `let` až po provedení vazeb. Proto jej nelze použít ve `let` vazbách. V `do` části Bindings (vazby) můžete použít samotný identifikátor.
 
 ## <a name="generic-type-parameters"></a>Parametry obecného typu
 
-Parametry obecného typu jsou určené v lomených závorkách (`<` a `>`), ve formě jednoduché uvozovky, za nímž následuje identifikátor. Více parametrů obecného typu jsou odděleny čárkami. Parametr obecného typu je v oboru v celém deklarace. Následující příklad kódu ukazuje, jak zadat parametry obecného typu.
+Parametry obecného typu jsou zadány v lomených`<` závorkách (a `>`) ve formě jednoduché uvozovky následované identifikátorem. Více parametrů obecného typu je odděleno čárkami. Parametr obecného typu je v oboru v celé deklaraci. Následující příklad kódu ukazuje, jak určit parametry obecného typu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2403.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2403.fs)]
 
-Argumenty typu jsou odvozeny při použití typu. V následujícím kódu je odvozený typ posloupnost řazené kolekce členů.
+Argumenty typu jsou odvozeny při použití typu. V následujícím kódu je odvozený typ sekvencí řazených kolekcí členů.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet24031.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet24031.fs)]
 
 ## <a name="specifying-inheritance"></a>Určení dědičnosti
 
-`inherit` Klauzule určuje přímou základní třídu, pokud existuje. V F#, pouze jeden Přímá základní třída je povolená. Rozhraní, která třída implementuje nejsou považovány za základní třídy. Rozhraní jsou popsány v [rozhraní](Interfaces.md) tématu.
+`inherit` Klauzule identifikuje přímou základní třídu, pokud existuje. V F#nástroji je povolena pouze jedna přímá základní třída. Rozhraní, která třída implementuje, nejsou považovány za základní třídy. Rozhraní jsou popsána v tématu [rozhraní](Interfaces.md) .
 
-Metody a vlastnosti ze základní třídy lze přistupovat z odvozené třídy pomocí klíčového slova jazyka `base` jako identifikátor, následované tečkou (.) a název členu.
+K metodám a vlastnostem základní třídy můžete přistupovat z odvozené třídy pomocí klíčového slova `base` Language jako identifikátoru následovaného tečkou (.) a názvem člena.
 
-Další informace najdete v tématu [dědičnosti](inheritance.md).
+Další informace najdete v tématu [Dědičnost](inheritance.md).
 
-## <a name="members-section"></a>Oddíl členové
+## <a name="members-section"></a>Oddíl members
 
-V této části můžete definovat statické nebo instanci metody, vlastnosti, implementace rozhraní, abstraktní členy, deklarace události a další konstruktory. Umožní a proveďte vazby nemůže být použit v této části. Vzhledem k tomu, že členové mohou být přidány do různých F# typy kromě třídy, jsou popsány v samostatném tématu [členy](members/index.md).
+V této části můžete definovat statické nebo instanční metody, vlastnosti, implementace rozhraní, abstraktní členy, deklarace událostí a další konstruktory. V této části se nemůžou objevit vazby let a do. Vzhledem k tomu, že členy mohou být přidány F# do různých typů kromě tříd, jsou popsány v samostatném tématu, [členy](./members/index.md).
 
 ## <a name="mutually-recursive-types"></a>Vzájemně rekurzivní typy
 
-Při definování typů, které odkazovat na sebe navzájem cyklické způsobem je řetězec společně definice typu s použitím `and` – klíčové slovo. `and` Nahradí – klíčové slovo `type` – klíčové slovo pro všechny s výjimkou první definici následujícím způsobem.
+Při definování typů, které na sobě navzájem odkazují, se řetězcem spojí definice typu pomocí `and` klíčového slova. `and` Klíčové slovo `type` nahrazuje klíčové slovo pro všechny kromě první definice, a to následujícím způsobem.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2404.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2404.fs)]
 
 Výstupem je seznam všech souborů v aktuálním adresáři.
 
-## <a name="when-to-use-classes-unions-records-and-structures"></a>Kdy použít třídy, sjednocení, záznamů a struktury
+## <a name="when-to-use-classes-unions-records-and-structures"></a>Kdy použít třídy, sjednocení, záznamy a struktury
 
-S ohledem na celou řadu typů lze vybírat, musíte mít dostatečné povědomí o co každý typ je určen pro vyberte požadovaný typ pro konkrétní situaci. Třídy jsou určeny k použití v objektově orientované programování kontextech. Objektově orientované programování je dominantní paradigma použít v aplikacích, které jsou určeny pro rozhraní .NET Framework. Pokud vaše F# kód má úzce spolupracovat rozhraní .NET Framework nebo jiné objektově orientované knihovny a zejména v případě, že budete muset rozšířit z objektově orientované typu systému, jako je například knihovna uživatelského rozhraní, třídy jsou pravděpodobně vhodné.
+Vzhledem k nejrůznějším typům, ze kterých si můžete vybrat, je potřeba mít dobré znalosti o tom, k čemu je každý typ navržený, aby se dal vybrat vhodný typ pro konkrétní situaci. Třídy jsou navrženy pro použití v objektově orientovaných kontextech programování. Objektově orientované programování je dominantní paradigma používaný v aplikacích, které jsou zapsány pro .NET Framework. Pokud váš F# kód musí úzce fungovat s .NET Framework nebo jinou knihovnou orientovanou na objekt, a zejména v případě, že je nutné roztáhnout z objektově orientovaného systému typů, jako je například knihovna uživatelského rozhraní, třídy jsou pravděpodobně vhodné.
 
-Pokud nejsou úzce spolupráce s objektově orientované kódu nebo pokud píšete kód, který je samostatná a proto chráněný před častá interakce s kódem objektově orientované, zvažte použití záznamů a rozlišovaná sjednocení. Jediné, dobře přiměje – out jako jednodušší alternativu k hierarchii objektů lze často použít diskriminované sjednocení, společně s odpovídající vzor odpovídající kód. Další informace o rozlišovaná sjednocení, naleznete v tématu [Rozlišované sjednocení](discriminated-unions.md).
+Pokud nejste úzce spolupracujete s objektově orientovaným kódem, nebo pokud píšete kód, který je samostatný a je proto chráněn před častými interakcemi s objektově orientovaným kódem, měli byste zvážit použití záznamů a rozlišených sjednocení. Jedno, dobře považované za rozlišené sjednocení spolu s odpovídajícím kódem odpovídajícím vzoru lze často použít jako jednodušší alternativu k hierarchii objektů. Další informace o rozlišených sjednoceních naleznete v tématu [rozlišené sjednocení](discriminated-unions.md).
 
-Výhodou je jednodušší než třídy jsou záznamy, ale záznamy nejsou vhodné, když požadavky typu překročí, co lze provést pomocí jejich jednoduchost. Záznamy jsou v podstatě jednoduchá agregace hodnot, bez samostatné konstruktory, které můžete provést vlastní akce, bez skrytých polí a bez implementace dědičnosti nebo rozhraní. Pro záznamy, aby bylo mnohem složitější jejich chování je možné přidat členy jako jsou vlastnosti a metody, pole, uložená v záznamu jsou stále jednoduché agregace hodnot. Další informace o záznamech najdete v tématu [záznamy](records.md).
+Záznamy mají výhodu, že je jednodušší než třídy, ale záznamy nejsou vhodné, pokud požadavky typu překračují, co je možné dosáhnout s jejich jednoduchostí. Záznamy jsou v podstatě jednoduché agregace hodnot bez samostatných konstruktorů, které mohou provádět vlastní akce, bez skrytých polí a bez implementace dědičnosti nebo rozhraní. I když mohou být členy, jako jsou vlastnosti a metody, přidány do záznamů, aby jejich chování bylo složitější, pole uložená v záznamu jsou stále jednoduchou agregací hodnot. Další informace o záznamech najdete v tématu [záznamy](records.md).
 
-Struktury jsou také užitečné pro malá agregace dat, ale liší od třídy a záznamy, že jsou typy hodnot .NET. Záznamy a třídy jsou odkazové typy .NET. Sémantika typy hodnot a odkazové typy se liší v tom, že typy hodnot jsou předávány hodnotou. To znamená, že se zkopírují bit bitu, když se předá jako parametr nebo vrácená z funkce. Jsou také uloženy do zásobníku nebo, pokud jsou použity jako pole, vložená do nadřazeného objektu namísto uložené v samostatném umístění na haldě. Struktury jsou proto vhodné pro často používaná data při režijní náklady na přístup k haldě je nějaký problém. Další informace o strukturách naleznete v tématu [struktury](structures.md).
+Struktury jsou také užitečné pro malé agregované údaje, ale liší se od tříd a záznamů v tom, že jsou typy hodnot .NET. Třídy a záznamy jsou typy odkazů .NET. Sémantika typů hodnot a odkazových typů se liší v tom, že typy hodnot jsou předány hodnotou. To znamená, že se kopírují bit pro bitovou kopii, když jsou předány jako parametr nebo vráceny z funkce. Jsou také uloženy v zásobníku nebo, jsou-li použity jako pole, vloženy do nadřazeného objektu místo uložení do jejich samostatného umístění v haldě. Proto jsou struktury vhodné pro často používaná data v případě, že režie přístupu k haldě je problém. Další informace o strukturách naleznete v tématu [struktury](structures.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Členové](members/index.md)
+- [Členové](./members/index.md)
 - [Dědičnost](inheritance.md)
 - [Rozhraní](interfaces.md)

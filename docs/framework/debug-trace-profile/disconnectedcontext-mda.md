@@ -11,32 +11,32 @@ helpviewer_keywords:
 ms.assetid: 1887d31d-7006-4491-93b3-68fd5b05f71d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cb42c04df6e02ff43421b7af6bf2d51b53aa3e69
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d97ee808ef7d2a14902259c47227b787f0830fb
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755126"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629375"
 ---
 # <a name="disconnectedcontext-mda"></a>disconnectedContext – pomocník spravovaného ladění (MDA)
-`disconnectedContext` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR se pokusí o přechod do odpojeného oddílu nebo kontextu během obsluhy žádost o objekt modelu COM.  
+Pomocník `disconnectedContext` spravovaného ladění (MDA) se aktivuje, když se modul CLR pokusí přejít do odpojeného izolovaného modelu nebo kontextu a přitom obsluhuje požadavek týkající se objektu com.  
   
 ## <a name="symptoms"></a>Příznaky  
- Volání [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) se doručí nadřazená komponenta modelu COM v aktuálním oddílu nebo kontextu místo ten, ve kterém existují. To může způsobit poškození a nebo ztrátu nejsou-li komponenta modelu COM s více vlákny, stejně jako v případě komponenty jednovláknový apartment (STA). Případně, pokud Obálka RCW je samotný proxy serveru, volání může vést vyvolání sady <xref:System.Runtime.InteropServices.COMException> s HRESULT RPC_E_WRONG_THREAD.  
+ Volání na obálku s voláním [za běhu](../../../docs/standard/native-interop/runtime-callable-wrapper.md) (RCW) se doručí do základní komponenty modelu COM v aktuálním objektu Apartment nebo kontextu, nikoli v takovém případě, ve kterém existují. To může způsobit poškození nebo ztrátu dat, pokud komponenta modelu COM není Vícevláknová, jako v případě komponent typu STA (Single-threaded Apartment). Alternativně, pokud je RCW samotný proxy, volání může způsobit vyvolání a <xref:System.Runtime.InteropServices.COMException> s hodnotou HRESULT z RPC_E_WRONG_THREAD.  
   
-## <a name="cause"></a>Příčina  
- OLE oddílu nebo kontextu má byla ukončena, když modul CLR se pokusí přejít do něj. To je nejčastěji způsobeno objekty apartment STA vypíná před všechny komponenty modelu COM typu apartment vlastněné byly zcela to může nastat v důsledku explicitního volání z uživatelského kódu na obálky RCW, nebo když samotný modul CLR je manipulace s komponenty modelu COM , třeba když CLR vydává komponenty modelu COM při přidružené RCW byla uvolněna z paměti.  
+## <a name="cause"></a>příčina  
+ Objekt Apartment nebo kontext OLE byl vypnut, když se modul CLR pokusí přejít do něj. To je nejčastěji způsobeno tím, že se neukončí všechny komponenty modelu COM vlastněné objektem Apartment. Tato situace může nastat jako výsledek explicitního volání z uživatelského kódu na RCW nebo v případě, že samotný CLR pracuje s komponentou COM. , například když modul CLR uvolňuje komponentu COM, když je přidružený RCW uvolněn z paměti.  
   
 ## <a name="resolution"></a>Řešení  
- K tomuto problému vyhnout, zajistěte, aby vlákno, které vlastní STA nebyl ukončen před dokončením příkazu se u všech objektů, kteří žijí v typu apartment aplikace. Totéž platí i pro kontexty; Zajistěte, aby kontexty nevypnou, než se aplikace úplně dokončená všechny komponenty modelu COM, kteří žijí v kontextu.  
+ Chcete-li se tomuto problému vyhnout, zajistěte, aby vlákno, které vlastní STA, neukončilo před dokončením aplikace všemi objekty, které jsou v objektu Apartment v provozu. Totéž platí pro kontexty; Ujistěte se, že kontexty nejsou vypnuté předtím, než se aplikace kompletně dokončí všemi komponentami modelu COM, které jsou v daném kontextu aktivní.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o odpojený kontext.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o odpojeném kontextu.  
   
 ## <a name="output"></a>Výstup  
- Sestavy soubor cookie kontextu odpojeného oddílu nebo kontextu.  
+ Oznamuje kontextový soubor cookie odpojeného objektu Apartment nebo kontextu.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  

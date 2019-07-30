@@ -1,17 +1,17 @@
 ---
 title: 'Smyčky: Výraz for...to'
-description: V tématu Jak F# for... výraz se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.
+description: Podívejte se, F# jak pro... na výraz se používá k iterování ve smyčce přes rozsah hodnot proměnné smyčky.
 ms.date: 05/16/2016
-ms.openlocfilehash: 5b7bb9bac659ddf1d457be1ce17e90a2593666de
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 910c04aa4ea6b2c637dcad147347c1c317b5e0c0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645239"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626622"
 ---
 # <a name="loops-forto-expression"></a>Smyčky: Výraz for...to
 
-`for...to` Výrazu se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.
+`for...to` Výraz se používá k iterování smyčky v rámci rozsahu hodnot proměnné smyčky.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,11 +22,11 @@ for identifier = start [ to | downto ] finish do
 
 ## <a name="remarks"></a>Poznámky
 
-Typ identifikátoru je odvozen z typu *start* a *Dokončit* výrazy. Typy pro tyto výrazy musí být 32bitová celá čísla.
+Typ identifikátoru je odvozen od typu výrazů *zahájení* a *dokončení* . Typy pro tyto výrazy musí být 32 celých čísel.
 
-I když technicky výraz `for...to` je více než tradiční výroky imperativní programovací jazyk. Návratový typ *výraz těla* musí být `unit`. Následující příklady znázorňují různé způsoby použití `for...to` výrazu.
+I když je technicky výraz `for...to` , je více podobný jako tradiční příkaz v imperativním programovacím jazyce. Návratový typ pro *výraz body* musí být `unit`. Následující příklady znázorňují různá použití `for...to` výrazu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5101.fs)]
 
 Výstup předchozího kódu vypadá takto.
 
@@ -39,5 +39,5 @@ Výstup předchozího kódu vypadá takto.
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Smyčky: `for...in` Výraz](loops-for-in-expression.md)
-- [Smyčky: `while...do` Výraz](loops-while-do-expression.md)
+- [Smyčky `for...in`Vyjádření](loops-for-in-expression.md)
+- [Smyčky `while...do`Vyjádření](loops-while-do-expression.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 68bb3b8cd080e5b454776433e65027b7d18e7c3b
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 749ba2dd9318976289d9d4140cfadd711e0548d4
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331564"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629875"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroje LocBaml.  
@@ -66,7 +66,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
 ## <a name="create-the-neutral-language-resources-satellite-assembly"></a>Vytvoření satelitního sestavení pro prostředky v neutrálním jazyce  
  Po nakonfigurování aplikace pro generování satelitního sestavení prostředků v neutrálním jazyce sestavíte aplikaci. Tím se vygeneruje hlavní sestavení aplikace, stejně jako satelitní sestavení pro prostředky neutrálních jazyků, které je vyžadováno LocBaml pro lokalizaci. Sestavení aplikace:  
   
-1. Zkompilujte HelloApp pro vytvoření [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)]:  
+1. Zkompiluje HelloApp a vytvoří dynamickou knihovnu (DLL):  
   
      **MSBuild helloapp. csproj**  
   
@@ -91,7 +91,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
   
 4. Možnosti, které můžete zadat při spuštění LocBaml, jsou následující:  
   
-    - **analyzovat** nebo **-p:** Analyzuje soubor CSV, prostředky nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory, aby vygeneroval soubor. csv nebo. txt.  
+    - **analyzovat** nebo **-p:** Analyzuje soubory BAML, prostředků nebo DLL pro vygenerování souboru. csv nebo. txt.  
   
     - **Generovat** nebo **-g:** Generuje lokalizovaný binární soubor pomocí přeloženého souboru.  
   
@@ -152,8 +152,8 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
    |Název BAML|Klíč prostředku|Kategorie|Čitelnost|Upravitelnost|Komentáře|Value|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|CHYBNÉ|CHYBNÉ||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádný|PODMÍNKA|PODMÍNKA||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádné|PODMÍNKA|PODMÍNKA||Vylučte ze světa|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|PODMÍNKA|PODMÍNKA||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádný|PODMÍNKA|PODMÍNKA||Vylučte ze světa|
   
    Všimněte si, že všechny hodnoty pole **Komentáře** neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdné. Všimněte si také, že položka v prvním řádku není čitelná ani upravitelná a má "Ignore" jako hodnotu **kategorie** , všechny, které označují, že hodnotu nelze lokalizovat.  
   

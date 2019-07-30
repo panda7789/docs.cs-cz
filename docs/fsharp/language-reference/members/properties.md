@@ -1,13 +1,13 @@
 ---
 title: Vlastnosti
-description: Další informace o F# vlastnosti, které jsou členy, které představují hodnoty přidružené k objektu.
+description: Přečtěte F# si o vlastnostech, které jsou členy, kteří představují hodnoty přidružené k objektu.
 ms.date: 05/16/2016
-ms.openlocfilehash: bf605ee1135bd3b3561bde9a8ae66353497931b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c202927fd0022e042703640cd55fb632c7e36068
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666362"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627422"
 ---
 # <a name="properties"></a>Vlastnosti
 
@@ -57,17 +57,17 @@ with set parameter =
 
 ## <a name="remarks"></a>Poznámky
 
-Vlastnosti představují "má" relace v objektově orientované programování, představující data, která souvisí s instancí objektů nebo statických vlastností s typem.
+Vlastnosti představují relaci "má" v objektově orientovaném programování reprezentující data, která jsou přidružena k instancím objektů nebo pro statické vlastnosti s typem.
 
-Můžete deklarovat vlastnosti dvěma způsoby v závislosti na tom, jestli chcete explicitně zadat zdrojovou hodnotu (také nazývané záložní úložiště) pro vlastnost, nebo pokud budete chtít povolit kompilátor automaticky generovat záložní úložiště pro vás. Obecně platí měli byste použít více explicitní způsob, pokud má vlastnost nejsou v netriviálních implementace a automatický způsob při vlastnost je stejně jednoduchá obálka pro hodnotu nebo proměnnou. Chcete-li explicitně deklarovat vlastnost, použijte `member` – klíčové slovo. Tato deklarativní syntaxe je následována syntaxi, která určuje, `get` a `set` metody, také s názvem *přistupující objekty*. Různé formy explicitní syntaxe uvedené v části Syntaxe se používají pro vlastnosti jen pro čtení a zápisu jen pro čtení a zápis. Pro vlastnosti jen pro čtení, můžete definovat pouze `get` metoda; pouze pro vlastnosti jen pro zápis, definovat `set` metoda. Všimněte si, že pokud má vlastnost obě `get` a `set` přístupové objekty, alternativní syntaxi vám umožní určit atributy a modifikátory dostupnosti, které se liší pro každý přistupující objekt, jak je znázorněno v následujícím kódu.
+Vlastnosti lze deklarovat dvěma způsoby v závislosti na tom, zda chcete explicitně zadat základní hodnotu (označovanou také jako záložní úložiště) pro vlastnost, nebo pokud chcete, aby kompilátor pro vás automaticky vygeneroval záložní úložiště. Obecně byste měli použít explicitní způsob, pokud má vlastnost netriviální implementaci a automatický způsob, pokud je vlastnost pouze jednoduchá obálka pro hodnotu nebo proměnnou. K deklaraci vlastnosti explicitně použijte `member` klíčové slovo. Tato deklarativní syntaxe následuje syntaxí, která určuje `get` metody a `set` , také pojmenované *přistupující objekty*. Různé formuláře explicitní syntaxe zobrazené v oddílu syntax jsou používány pro čtení a zápis, vlastnosti jen pro čtení a pouze pro zápis. Pro vlastnosti jen pro čtení definujete pouze `get` metodu, pro vlastnosti jen pro zápis definujte `set` pouze metodu. Všimněte si, že pokud má vlastnost `get` oba `set` i přistupující objekty, alternativní syntaxe vám umožní určit atributy a Modifikátory dostupnosti, které jsou pro každý přistupující objekt rozdílné, jak je uvedeno v následujícím kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3201.fs)]
 
-Pro vlastnosti čtení/zápis, které mají obojí `get` a `set` metody, pořadí `get` a `set` je možné vrátit zpět. Alternativně můžete poskytnout tomu syntaxe uvedená pro `get` pouze a syntaxe pro `set` pouze místo kombinované syntaxe. To usnadňuje Odkomentujte jednotlivých `get` nebo `set` metodu, pokud je to něco možná bude potřeba provést. Tuto alternativu k použití kombinované syntaxe se zobrazí v následujícím kódu.
+Pro vlastnosti pro čtení a `get` zápis, které mají `set` `get` metodu a, pořadí a `set` lze obrátit. Alternativně můžete zadat syntaxi zobrazenou pouze pro `get` a syntaxi zobrazenou pouze pro `set` místo použití kombinované syntaxe. Díky tomu je snazší komentovat jednotlivec `get` nebo `set` metodu, pokud je to něco, co možná budete muset udělat. Tato alternativa k použití kombinované syntaxe je uvedena v následujícím kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
 
-Soukromé hodnoty tohoto uchování dat pro vlastnosti se nazývají *zálohování úložišť*. Pokud chcete, aby kompilátor automaticky vytvořit záložní úložiště, pomocí klíčových slov `member val`, vynechejte vlastní identifikátor a pak zadejte výraz k inicializaci vlastnosti. Pokud je vlastnost má být proměnlivá, obsahovat `with get, set`. Například následující typ třída obsahuje dva automaticky implementované vlastnosti. `Property1` je jen pro čtení a je inicializován na argumentu poskytnutému metodě primárnímu konstruktoru a `Property2` je nastavitelnou vlastnost inicializovat na prázdný řetězec:
+Soukromé hodnoty, které uchovávají data pro vlastnosti, se nazývají *záložní úložiště*. Chcete-li, aby kompilátor vytvořil záložní úložiště automaticky, použijte klíčová slova `member val`, vynechejte identifikátor držitele a potom zadejte výraz pro inicializaci vlastnosti. Pokud má být vlastnost proměnlivá, zahrňte `with get, set`. Například následující typ třídy obsahuje dvě automaticky implementované vlastnosti. `Property1`je jen pro čtení a je inicializována na argument poskytnutý primárnímu konstruktoru a `Property2` je nastavitelnou vlastností inicializovaným na prázdný řetězec:
 
 ```fsharp
 type MyClass(property1 : int) =
@@ -75,7 +75,7 @@ member val Property1 = property1
 member val Property2 = "" with get, set
 ```
 
-Automaticky implementované vlastnosti jsou součástí inicializace typu, takže musí být obsažena před další definice členů stejně jako `let` vazby a `do` vazby v definici typu. Všimněte si, že výraz, který inicializuje automaticky implementovanou vlastnost je vyhodnocen pouze při inicializaci, a ne vždy, když přistupuje k vlastnosti. Toto chování se liší od chování explicitně implementovaná vlastnost. Co to efektivně znamená, že kód pro inicializaci tyto vlastnosti se přidá do konstruktoru třídy. Vezměte v úvahu následující kód, který ukazuje rozdíl:
+Automaticky implementované vlastnosti jsou součástí inicializace typu, takže musí být zahrnuty před ostatními definicemi členů, stejně jako `let` vazby a `do` vazby v definici typu. Všimněte si, že výraz, který inicializuje automaticky implementovanou vlastnost, je vyhodnocen pouze při inicializaci, a ne pokaždé, když je vlastnost k dispozici. Toto chování je v kontrastu s chováním explicitně implementované vlastnosti. To znamená, že kód k inicializaci těchto vlastností je přidán do konstruktoru třídy. Vezměte v úvahu následující kód, který ukazuje tento rozdíl:
 
 ```fsharp
 type MyClass() =
@@ -100,48 +100,48 @@ class1.ExplicitProperty = 978922705
 class1.ExplicitProperty = 1131210765
 ```
 
-Výstup předcházejícího kódu ukazuje, že hodnota AutoProperty beze změny při volání opakovaně, že ExplicitProperty změní pokaždé, když je volána. Tento příklad ukazuje, že výraz pro automaticky implementovanou vlastnost není vyhodnocen pokaždé, když, jako je metoda getter pro explicitní vlastnost.
+Výstup předcházejícího kódu ukazuje, že hodnota autoproperty není při opakovaném volání změněna, zatímco ExplicitProperty se mění pokaždé, když je volána. To ukazuje, že výraz pro automaticky implementovanou vlastnost není vyhodnocen pokaždé, jak je metoda getter pro vlastnost Explicit.
 
 >[!WARNING]
->Existují některé knihovny, jako je například rozhraní Entity Framework (`System.Data.Entity`), které provádí vlastní operace v konstruktory základní třídy, které nefungují dobře v inicializaci automaticky implementované vlastnosti. V těchto případech použijte explicitní vlastnosti.
+>Existují některé knihovny, například Entity Framework (`System.Data.Entity`), které provádějí vlastní operace v konstruktorech základní třídy, které nefungují dobře s inicializací automaticky implementovaných vlastností. V těchto případech se pokuste použít explicitní vlastnosti.
 
-Vlastnosti můžou být členy třídy, struktury, rozlišovaná sjednocení, záznamy, rozhraní a rozšíření typu a lze také definovat v objektových výrazech.
+Vlastnosti mohou být členy tříd, struktur, rozlišených sjednocení, záznamů, rozhraní a přípon typů a lze také definovat ve výrazech objektů.
 
-Atributy lze použít k vlastnosti. Použijte atribut na vlastnost, zapisovat atribut na samostatný řádek před vlastnost. Další informace najdete v tématu [atributy](../attributes.md).
+Atributy lze použít pro vlastnosti. Chcete-li použít atribut na vlastnost, napište atribut na samostatném řádku před vlastností. Další informace najdete v tématu [atributy](../attributes.md).
 
-Ve výchozím nastavení jsou veřejné vlastnosti. Modifikátory dostupnosti lze použít také k vlastnostem. Použít modifikátor přístupnosti, vraťte ho bezprostředně před název vlastnosti, pokud je určená k použití pro obě `get` a `set` metody; přidat před `get` a `set` klíčová slova, pokud je různou přístupností. vyžaduje se pro každý přistupující objekt. *Modifikátor dostupnosti* může být jedna z následujících akcí: `public`, `private`, `internal`. Další informace najdete v tématu [řízení přístupu](../access-control.md).
+Ve výchozím nastavení jsou vlastnosti veřejné. Modifikátory dostupnosti lze použít také pro vlastnosti. Chcete-li použít modifikátor přístupnosti, přidejte jej těsně před název vlastnosti, pokud má `get` být použita pro metody a `set` `get` ; přidejte před klíčovým slovem a `set` , pokud je různá přístupnost vyžaduje se pro každý přistupující objekt. *Modifikátor* přístupnosti může být jedna z následujících: `public`, `private`, `internal`. Další informace najdete v tématu [Access Control](../access-control.md).
 
-Implementace vlastnosti provádějí pokaždé, když přistupuje k vlastnosti.
+Implementace vlastností jsou spouštěny pokaždé, když je k vlastnosti přistupovaná.
 
-## <a name="static-and-instance-properties"></a>Statické a vlastnosti Instance
+## <a name="static-and-instance-properties"></a>Statické a vlastnosti instance
 
-Vlastnosti mohou být statické nebo vlastnosti instance. Statické vlastnosti může být vyvolána bez instance a používají se pro hodnoty přidružené k typu, nikoli se jednotlivé objekty. Statické vlastnosti vynechejte vlastní identifikátor. Je vyžadován pro vlastnosti instance vlastní identifikátor.
+Vlastnosti mohou být statické nebo vlastnosti instance. Statické vlastnosti lze vyvolat bez instance a jsou použity pro hodnoty přidružené k typu, nikoli s jednotlivými objekty. V případě statických vlastností vynechejte identifikátor držitele. Pro vlastnosti instance je vyžadován samočinný identifikátor.
 
-Následující definice statickou vlastnost je založena na situaci, ve kterém máte statické pole `myStaticValue` , který je záložní úložiště pro vlastnost.
+Následující definice statických vlastností je založena na scénáři, ve kterém máte statické pole `myStaticValue` , které je záložním úložištěm pro danou vlastnost.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3204.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3204.fs)]
 
-Vlastnosti může být také jako pole, v takovém případě se nazývají *indexovaných vlastností*. Další informace najdete v tématu [indexované vlastnosti](indexed-properties.md).
+Vlastnosti mohou být také typu pole. v takovém případě se nazývají *indexované vlastnosti*. Další informace najdete v tématu [indexované vlastnosti](indexed-properties.md).
 
-## <a name="type-annotation-for-properties"></a>Anotace typu vlastnosti
+## <a name="type-annotation-for-properties"></a>Anotace typu pro vlastnosti
 
-V mnoha případech kompilátor má dostatek informací k odvození typu vlastnosti z typu záložního úložiště, ale typ můžete explicitně nastavit tak, že přidáte anotaci typu.
+V mnoha případech má kompilátor dostatek informací pro odvození typu vlastnosti z typu záložního úložiště, ale můžete nastavit typ explicitně přidáním anotace typu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3205.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3205.fs)]
 
-## <a name="using-property-set-accessors"></a>Pomocí vlastnosti přístupové objekty set
+## <a name="using-property-set-accessors"></a>Použití přístupových objektů sady vlastností
 
-Můžete nastavit vlastnosti, které poskytují `set` přístupové objekty pomocí `<-` operátor.
+Můžete nastavit vlastnosti, které poskytují `set` přístupové objekty `<-` pomocí operátoru.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3206.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3206.fs)]
 
 Výstup je **20**.
 
 ## <a name="abstract-properties"></a>Abstraktní vlastnosti
 
-Vlastnosti mohou být abstraktní. Stejně jako u metod, `abstract` právě znamená, že je virtuální odeslání přidružený k vlastnosti. Může být abstraktních a vlastností skutečně abstract, to znamená bez definice ve stejné třídě. Třída, která obsahuje tato vlastnost je proto abstraktní třídu. Abstraktní Alternativně právě může znamenat, že vlastnost je virtuální a v takovém případě definice musí existovat ve stejné třídě. Všimněte si, že abstraktních a vlastností nesmí být privátní, a pokud jeden přistupující objekt je abstraktní, ostatní musí také být abstraktní. Další informace o abstraktních tříd naleznete v tématu [abstraktní třídy](../abstract-classes.md).
+Vlastnosti mohou být abstraktní. Stejně jako u metod `abstract` stačí pouze, když je k této vlastnosti přidruženo virtuální odeslání. Abstraktní vlastnosti mohou být skutečně abstraktní, to znamená bez definice ve stejné třídě. Třída, která obsahuje taková vlastnost, je tedy abstraktní třída. Alternativně může abstraktní pouze znamenat, že vlastnost je virtuální a v takovém případě musí být definice přítomna ve stejné třídě. Všimněte si, že abstraktní vlastnosti nesmí být privátní a pokud je jeden přistupující objekt abstraktní, druhý musí být také abstraktní. Další informace o abstraktních třídách naleznete v tématu [abstraktní třídy](../abstract-classes.md).
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3207.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3207.fs)]
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,43 +1,43 @@
 ---
 title: Vložené funkce
-description: Další informace o použití F# vložené funkce, které jsou integrované přímo do kódu volání.
+description: Naučte se používat F# vložené funkce, které jsou integrovány přímo do kódu volajícího.
 ms.date: 05/16/2016
-ms.openlocfilehash: d1c3fb3d2721024febc95b3c5e01e06cd547f81e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2830d1ada5b3005c3fcae975a44e85a7c84554f7
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642066"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630675"
 ---
 # <a name="inline-functions"></a>Vložené funkce
 
-*Vložené funkce* jsou funkce, které jsou integrované přímo do kódu volajícího.
+*Vložené funkce* jsou funkce, které jsou integrovány přímo do kódu volajícího.
 
-## <a name="using-inline-functions"></a>Použití vložených funkcí
+## <a name="using-inline-functions"></a>Používání vložených funkcí
 
-Při použití parametrů statického typu musí být všechny funkce, které jsou parametrizovány parametry typu inline. Zaručí se tak, že kompilátor může rozpoznat tyto parametry typu. Při použití parametrů obecného typu obyčejné neexistuje žádné takové omezení.
+Při použití parametrů statického typu musí být všechny funkce, které jsou parametrizované parametry typu, vloženy. To zaručuje, že kompilátor dokáže tyto parametry typu vyřešit. Pokud používáte běžné parametry obecného typu, neexistuje takové omezení.
 
-Než povoluje použití členská omezení, může být užitečné při optimalizaci kódu vložených funkcí. Nadměrné využití vložených funkcí však může způsobit menší odolné vůči změny v optimalizace kompilátoru a implementaci funkce knihovny kódu. Z tohoto důvodu byste neměli používat vložené funkce optimalizace, pokud jste vyzkoušeli všechny jiné techniky optimalizace. Provádění vložené funkce nebo metoda může někdy zlepšit výkon, ale není to vždy. Měření výkonu proto měli také používat k ověření pozitivní účinek nemá ve skutečnosti provádění jakékoli vložené dané funkce.
+Kromě povolení použití omezení členů mohou být vložené funkce užitečné v rámci optimalizace kódu. Nicméně nadměrné využití vložených funkcí může způsobit, že váš kód bude méně odolný vůči změnám v optimalizacích kompilátoru a implementaci funkcí knihovny. Z tohoto důvodu byste se měli vyhnout použití vložených funkcí pro optimalizaci, pokud jste nezkoušeli všechny ostatní techniky optimalizace. Vytvoření vložené funkce nebo metody může někdy zlepšit výkon, ale to není vždy v případě případu. Proto byste měli použít také měření výkonu k ověření, že je fakt, že by jakákoli z vložených funkcí měla pozitivní účinek.
 
-`inline` Modifikátor lze použít u funkcí na nejvyšší úrovni, na úrovni modulu nebo na úrovni metody ve třídě.
+`inline` Modifikátor lze použít na funkce na nejvyšší úrovni, na úrovni modulu nebo na úrovni metody ve třídě.
 
-Následující příklad kódu ukazuje vloženou funkcí na nejvyšší úrovni, vložená metoda instance a vložená metoda statická.
+Následující příklad kódu ukazuje vloženou funkci na nejvyšší úrovni, vloženou metodu instance a vloženou statickou metodu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet201.fs)]
 
 ## <a name="inline-functions-and-type-inference"></a>Vložené funkce a odvození typu
 
-Přítomnost `inline` odvození typu ovlivňuje. Je to proto vložených funkcí lze staticky řešené parametry typu, že nelze jiných než vložených funkcí. Následující příklad kódu ukazuje případ kde `inline` je užitečné, protože používáte funkci, která má parametr staticky řešeného typu `float` operátoru převodu.
+Přítomnost `inline` má vliv na odvození typu. Je to proto, že vložené funkce mohou mít staticky vyřešené parametry typu, zatímco nevložená funkce nemůže. Následující příklad kódu ukazuje případ, kde `inline` je užitečné, protože používáte funkci, která má staticky vyřešený parametr typu `float` , operátor převodu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet202.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet202.fs)]
 
-Bez `inline` modifikátor, vynutí odvození typu funkce v tomto případě se konkrétní typ `int`. Ale `inline` modifikátor funkce je také odvozen, aby měl parametr staticky řešeného typu. S `inline` modifikátor, typ je odvozen bude následující:
+Bez modifikátoru vynutí odvození typu funkci, aby v tomto případě `int`vybrala konkrétní typ. `inline` Ale s `inline` modifikátorem, je funkce také odvozena pro statický vyřešený parametr typu. `inline` Pomocí modifikátoru je typ odvozen jako následující:
 
 ```fsharp
 ^a -> unit when ^a : (static member op_Explicit : ^a -> float)
 ```
 
-To znamená, že funkce přijímá libovolný typ, který podporuje převod na **float**.
+To znamená, že funkce přijímá libovolný typ, který podporuje převod na typ **float**.
 
 ## <a name="see-also"></a>Viz také:
 

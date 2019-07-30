@@ -1,17 +1,17 @@
 ---
 title: Statisticky vyřešené parametry typu
-description: Další informace o použití F# parametr staticky řešeného typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.
+description: Naučte se používat F# staticky vyřešený parametr typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 337d4f40418ee76cb18397add27acba75f756091
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 43ed79b6e5f43a499a27b05e26472b021c455e44
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645262"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630591"
 ---
 # <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
 
-A *parametr staticky řešeného typu* je parametr typu, který je nahrazen skutečným typem v době kompilace místo v době běhu. Předchází jim symbol stříšky (^).
+*Staticky vyřešený parametr typu* je parametr typu, který je nahrazen skutečným typem v době kompilace místo v době běhu. Předcházejí jim symbolem stříšky (^).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,28 +21,28 @@ A *parametr staticky řešeného typu* je parametr typu, který je nahrazen skut
 
 ## <a name="remarks"></a>Poznámky
 
-V F# jazyka, existují dva odlišné typy parametrů typu. První druh je standardní obecný typ parametru. Ty jsou označeny apostrofem ('), stejně jako v `'T` a `'U`. Jsou ekvivalentní parametrům obecného typu v jiných jazycích rozhraní .NET Framework. Jiný typ je staticky řešen a je označen symbolem stříšky, stejně jako v `^T` a `^U`.
+V F# jazyce existují dva různé druhy parametrů typu. Prvním druhem je standardní parametr obecného typu. Jsou označeny apostrofem ('), jako v `'T` a. `'U` Jsou rovnocenné parametrům obecného typu v jiných .NET Framework jazycích. Druhý druh je staticky vyřešen a je označen symbolem blikajícího kurzoru, jako v `^T` a. `^U`
 
-Staticky rozpoznávané parametry typu jsou především užitečné ve spojení s omezeními členů, což jsou omezení, které vám umožňují určit, že argument typu musí mít určitého člena nebo členy jinak se nedá použít. Neexistuje žádný způsob, jak vytvořit tento druh omezení pomocí parametru obecného typu.
+Staticky řešené parametry typu jsou primárně užitečné ve spojení s omezeními členů, což jsou omezení, která umožňují určit, že argument typu musí mít konkrétního člena nebo členy, aby jej bylo možné použít. Neexistuje žádný způsob, jak vytvořit tento typ omezení pomocí běžného parametru obecného typu.
 
-Následující tabulka shrnuje podobnosti a rozdíly mezi těmito dvěma typy parametrů typu.
+Následující tabulka shrnuje podobnosti a rozdíly mezi dvěma druhy parametrů typu.
 
-|Funkce|Obecné|Statisticky vyřešené|
+|Funkce|Obecné|Staticky vyřešeno|
 |-------|-------|-------------------|
 |Syntaxe|`'T`, `'U`|`^T`, `^U`|
-|Doba řešení|Za běhu|Doba kompilace|
-|Členská omezení|Nelze použít s omezeními člena.|Můžete použít s omezeními člena.|
-|Generování kódu|Typ (nebo metoda) se standardními parametry obecného typu způsobí generování jednoho obecného typu nebo metody.|Více instancí typů a metod jsou generovány, jeden pro každý typ, který je potřeba.|
-|Použít s typy|Můžete použít u typů.|Nelze použít u typů.|
-|Použít s vloženými funkcemi|Ne. Vložená funkce nemůže být parametrizována pomocí standardního obecného parametru typu.|Ano. Staticky rozpoznávané parametry typu nelze použít na funkce ani metody, které nejsou vložené.|
+|Doba řešení|Za běhu|Čas kompilace|
+|Omezení členů|Nelze použít s omezeními členů.|Dá se použít s omezeními členů.|
+|Generování kódu|Typ (nebo metoda) se standardními parametry obecného typu mají za následek generování jednoho obecného typu nebo metody.|Je vygenerováno více instancí typů a metod, jeden pro každý typ, který je třeba.|
+|Použít s typy|Lze použít pro typy.|Nelze použít pro typy.|
+|Použití s vloženými funkcemi|Ne. Vložená funkce nemůže být Parametrizovaná s parametrem standardního obecného typu.|Ano. Staticky vyřešené parametry typu nelze použít pro funkce nebo metody, které nejsou vloženy.|
 
-Mnoho F# základních knihovních funkcí, hlavně operátory, má staticky řešené parametry typu. Tyto funkce a operátory jsou vložené a výsledkem efektivní generování kódu pro numerické výpočty.
+Mnoho F# základních funkcí knihovny, zejména operátory, mají staticky vyřešené parametry typu. Tyto funkce a operátory jsou vložené a výsledkem je efektivní generování kódu pro číselné výpočty.
 
-Vložené metody a funkce, které používají operátory nebo jiné funkce, které mají staticky řešené parametry typu, můžete také použít staticky rozpoznávané parametry typu sami. Často odvození typu odvodí tyto vložené funkce pro staticky řešené parametry typu. Následující příklad ukazuje definici operátoru, který je odvozen, aby měl parametr staticky řešeného typu.
+Vložené metody a funkce, které používají operátory, nebo používají jiné funkce, které mají staticky vyřešené parametry typu, mohou také používat samotné staticky vyřešené parametry typu. Často odvození typu odvodí takové vložené funkce pro staticky vyřešené parametry typu. Následující příklad ukazuje definici operátoru, která je odvozena pro statický přeložený parametr typu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
 
-Rozpoznaný typ `(+@)` je založen na použití obou `(+)` a `(*)`, o což vedlo odvození typu odvozuje členská omezení na staticky rozpoznávaných typových parametrů. Rozpoznaný typ, jak je znázorněno F# interpret, vypadá takto.
+Vyřešený typ `(+@)` je založen na použití obou `(+)` a `(*)`, z nichž obě způsobují odvození typu pro odvození omezení členů u staticky vyřešených parametrů typu. Vyřešený typ, jak je znázorněno v F# Překladači, je následující.
 
 ```fsharp
 ^a -> ^c -> ^d
@@ -57,7 +57,7 @@ Výstup je následující.
 1.500000
 ```
 
-Počínaje F# 4.1, můžete také zadat názvy konkrétních typů v signaturách parametr staticky řešeného typu.  V předchozích verzích jazyka název typu nebylo možné odvodit skutečně kompilátorem, ale nemůže ve skutečnosti zadaná v signatuře.  Od verze F# 4.1, můžete také zadat názvy konkrétních typů v signaturách parametr staticky řešeného typu. Tady je příklad:
+Počínaje F# 4,1 můžete také zadat názvy konkrétních typů ve staticky vyřešených podpisech parametrů typu.  V předchozích verzích jazyka mohl být název typu ve skutečnosti odvozen kompilátorem, ale v signatuře se v něm nedala zadat skutečná definice.  Od F# 4,1 můžete zadat také konkrétní názvy typů ve staticky vyřešených podpisech parametrů typu. Tady je příklad:
 
 ```fsharp
 let inline konst x _ = x

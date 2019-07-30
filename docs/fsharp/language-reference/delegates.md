@@ -1,17 +1,17 @@
 ---
 title: Delegáty
-description: Zjistěte, jak pracovat s Delegáti v F#.
+description: Naučte se pracovat s delegáty F#v.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0596b67530b0399df41dffdf855a07bce2bf4761
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 65875897d5fc4b2ac66f1dfbe913f29fb74137cd
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641975"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630367"
 ---
 # <a name="delegates"></a>Delegáty
 
-Delegát představuje volání funkce, jako objekt. V F#, obvykle používejte funkce hodnoty k reprezentaci funkce jako hodnoty první třídy; ale delegáty se používají v rozhraní .NET Framework a proto jsou potřeba při spolupráci s rozhraní API, která je. Může také používají při vytváření knihovny určená pro použití z jiných jazycích rozhraní .NET Framework.
+Delegát představuje volání funkce jako objekt. V F#aplikaci je obvykle vhodné použít hodnoty funkcí k reprezentování funkcí jako hodnot první třídy; Delegáti se ale používají v .NET Framework, takže je potřeba, když pracujete s rozhraními API, která je očekávají. Můžou se používat taky při vytváření knihoven určených pro použití z jiných .NET Frameworkch jazyků.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,21 +21,21 @@ type delegate-typename = delegate of type1 -> type2
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi `type1` reprezentuje typ argumentu nebo typy a `type2` představuje návratovým typem. Typy argumentů, které jsou reprezentovány `type1` jsou automaticky curryfikované. To naznačuje, který pro tento typ použít formulář řazené kolekce členů, pokud jsou curryfikované argumenty cílová funkce a řazené kolekce členů v závorkách pro argumenty, které jsou již v podobě řazené kolekce členů. Automatické curryfikace odebere závorka, byste museli opustit argumentem řazené kolekce členů, která odpovídá cílové metody. Naleznete v příkladu kódu pro syntaxi, kterou byste měli použít ve všech případech.
+V předchozí syntaxi `type1` představuje typ argumentu nebo typy a `type2` představuje návratový typ. Typy argumentů, které jsou reprezentovány `type1` , jsou automaticky curryfikované. To naznačuje, že pro tento typ použijete formulář řazené kolekce členů, pokud jsou argumenty cílové funkce curryfikované a řazená kolekce členů v závorkách pro argumenty, které jsou již ve formuláři řazené kolekce členů. Automatický procesu curryfikace odebere sadu závorek a ponechává argument řazené kolekce členů, který odpovídá cílové metodě. Podívejte se na příklad kódu pro syntaxi, kterou byste měli použít v každém případě.
 
-Delegáty lze připojit k F# hodnoty a statické funkce nebo instanci metody. F#Funkce hodnot je možné předat přímo jako argumenty pro delegování konstruktorů. Pro statické metody vytvoříte pomocí názvu třídy a metody delegáta. Pro metodu instance zadejte instanci objektu a metoda v jeden argument. V obou případech se člen přístup – operátor (`.`) se používá.
+Delegáty lze připojit k F# hodnotám funkcí a statickým nebo instančním metodám. F#hodnoty funkcí lze předat přímo jako argumenty pro konstruktory Delegate. Pro statickou metodu sestavíte delegáty pomocí názvu třídy a metody. V případě metody instance poskytujete instanci objektu a metodu v jednom argumentu. V obou případech je použit operátor přístupu ke členu (`.`).
 
-`Invoke` Metodu na typ delegáta volá funkci zapouzdřený objekt. Také delegáty lze předat jako hodnoty funkcí odkazem název metody Invoke bez závorek.
+`Invoke` Metoda na typu delegáta volá zapouzdřenou funkci. Delegáty lze také předat jako hodnoty funkcí odkazem na název metody Invoke bez závorek.
 
-Následující kód ukazuje syntaxi pro vytvoření delegáty, které představují různé metody ve třídě. V závislosti na tom, jestli je metoda statickou metodu nebo metodu instance a určuje, zda má argumenty v podobě řazené kolekce členů nebo curryfikované formuláře syntaxi pro deklaraci a přiřazení delegáta se mírně liší.
+Následující kód ukazuje syntaxi pro vytváření delegátů, kteří reprezentují různé metody ve třídě. V závislosti na tom, zda je metoda statickou metodou nebo metodou instance a zda má argumenty ve formuláři řazené kolekce členů nebo ve formuláři curryfikované, syntaxe pro deklaraci a přiřazení delegáta je trochu odlišná.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4201.fs)]
 
-Následující kód ukazuje některé z různými způsoby, kterými můžete pracovat s delegátů.
+Následující kód ukazuje některé z různých způsobů, jak můžete s delegáty pracovat.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4202.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4202.fs)]
 
-Výstup z předchozího příkladu kódu vypadá takto.
+Výstup předchozího příkladu kódu je následující.
 
 ```console
 aaaaa
@@ -48,4 +48,4 @@ ccccc
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Parametry a argumenty](parameters-and-arguments.md)
-- [Události](members/events.md)
+- [Události](./members/events.md)

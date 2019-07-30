@@ -1,5 +1,5 @@
 ---
-title: Zabalení sestavení pro model COM
+title: Balení .NET Framework sestavení pro model COM
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -18,85 +18,85 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb45fc253e24c9770436432d2734ba8fce249453
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 1ca87d688d6802df967ea81b8297b099350f1c86
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662369"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629326"
 ---
-# <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
+# <a name="packaging-a-net-framework-assembly-for-com"></a>Balení .NET Framework sestavení pro model COM
 
-Následující informace o spravované typy, že chtějí začlenit ve svých aplikacích využívat vývojáři COM:
+Vývojáři modelu COM můžou těžit z následujících informací o spravovaných typech, které plánuje začlenit do své aplikace:
 
-- Seznam typů, které využívají aplikace modelu COM
+- Seznam typů, které mohou využívat aplikace modelu COM
 
-  Některé spravované typy nejsou viditelná modelu COM; Některé jsou zobrazena, ale není vytvořitelný; a některé jsou viditelné a vytvořitelné. Sestavení může obsahovat libovolnou kombinaci typů neviditelné, není možné vytvořit, přehledné a vytvořitelné. Pro úplnost jaké typy v sestavení, které chcete vystavit rozhraní COM, zejména v případě, že tyto typy jsou podmnožinou typy, které jsou vystaveny rozhraní .NET Framework.
+  Některé spravované typy jsou pro COM neviditelné; Některé jsou viditelné, ale nelze je vytvořit. a některé jsou viditelné i vytvořitelné. Sestavení může obsahovat libovolnou kombinaci neviditelných, viditelných, nevytvořitelné a vytvořitelné typy. Pro úplnost Identifikujte typy v sestavení, které chcete zpřístupnit modelu COM, zejména v případě, že jsou tyto typy podmnožinou typů vystavených .NET Framework.
 
-  Další informace najdete v tématu [kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md).
+  Další informace naleznete v tématu [kvalifikační typy rozhraní .NET pro](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)spoluprovozování.
 
-- Správa verzí pokyny
+- Pokyny pro správu verzí
 
-  Spravované třídy, které implementují rozhraní třídy (rozhraní modelu COM interop generované) se vztahují omezení správy verzí.
+  Spravované třídy, které implementují rozhraní třídy (rozhraní generované zprostředkovatelem komunikace s objekty COM), podléhají omezením správy verzí.
 
-  Pokyny k používání rozhraní, naleznete v tématu [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).
+  Pokyny k používání rozhraní třídy naleznete v tématu [Představujeme rozhraní třídy](../../../docs/standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).
 
 - Pokyny k nasazení
 
-  Sestavení se silným názvem, které jsou podepsané vydavatelem je možné nainstalovat do globální mezipaměti sestavení. Nepodepsaná sestavení musí být nainstalována na počítač uživatele jako soukromá sestavení.
+  Sestavení se silným názvem, která jsou podepsaná vydavatelem, mohou být nainstalována do globální mezipaměti sestavení (GAC). Nepodepsaná sestavení musí být nainstalována v počítači uživatele jako soukromá sestavení.
 
-  Další informace najdete v tématu [důležité informace o zabezpečení sestavení](../app-domains/assembly-security-considerations.md).
+  Další informace najdete v tématu [požadavky na zabezpečení sestavení](../app-domains/assembly-security-considerations.md).
 
 - Zahrnutí knihovny typů
 
-  Většina typů vyžadují knihovny typů při používané aplikace modelu COM. Můžete generovat knihovnu typů nebo mají vývojáři COM provedení této úlohy. Windows Software Development Kit (SDK) poskytuje následující možnosti pro vytváření knihovny typů:
+  Většina typů vyžaduje knihovnu typů, pokud je využívána aplikací modelu COM. Můžete vygenerovat knihovnu typů nebo použít tuto úlohu vývojáři modelu COM. Sada Windows Software Development Kit (SDK) poskytuje následující možnosti pro vygenerování knihovny typů:
 
   - [Exportér knihovny typů](#cpconpackagingassemblyforcomanchor1)
 
-  - [Typelibconverter – třída](#cpconpackagingassemblyforcomanchor2)
+  - [TypeLibConverter – třída](#cpconpackagingassemblyforcomanchor2)
 
-  - [Nástroj registrace sestavení](#cpconpackagingassemblyforcomanchor3)
+  - [Nástroj pro registraci sestavení](#cpconpackagingassemblyforcomanchor3)
 
   - [Nástroj pro instalaci služeb .NET](#cpconpackagingassemblyforcomanchor4)
 
-  Bez ohledu na to mechanismus, který zvolíte jsou pouze veřejné typy definované v sestavení, ve kterém zadáte součástí vygenerovanou knihovnu typů.
+  Bez ohledu na to, jaký mechanismus zvolíte, jsou do generované knihovny typů zahrnuty pouze veřejné typy definované v sestavení, které zadáte.
 
-Pokyny najdete v tématu [jak: Vložte jako prostředky systému Win32 v knihovny typů. Aplikace založené na NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).
+Pokyny najdete v tématu [postup: Vložte knihovny typů jako prostředky Win32 do. Aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))založené na síti.
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 
 ## <a name="type-library-exporter"></a>knihovna typů – exportér
 
-[Exportér knihovny typů (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md) je nástroj příkazového řádku, který převede třídy a rozhraní, které jsou obsaženy v sestavení na knihovnu typů modelu COM. Jakmile je k dispozici informace o typu třídy, klientům modelu COM můžete vytvořit instance třídy .NET a volání metod instance, stejně jako by šlo objekt modelu COM. Tlbexp.exe převede celé sestavení najednou. Pomocí nástroje Tlbexp.exe nelze generovat informace o typu pro podtypy definované v sestavení.
+[Exportér knihovny typů (Tlbexp. exe)](../tools/tlbexp-exe-type-library-exporter.md) je nástroj příkazového řádku, který převádí třídy a rozhraní obsažená v sestavení na knihovnu typů modelu COM. Jakmile jsou informace o typu třídy k dispozici, mohou klienti modelu COM vytvořit instanci třídy .NET a volat metody instance stejně, jako by šlo o objekt modelu COM. Tlbexp. exe převede v jednom okamžiku celé sestavení. Pomocí nástroje Tlbexp.exe nelze generovat informace o typu pro podtypy definované v sestavení.
 
 <a name="cpconpackagingassemblyforcomanchor2"></a>
 
-## <a name="typelibconverter-class"></a>Typelibconverter – třída
+## <a name="typelibconverter-class"></a>TypeLibConverter – třída
 
-<xref:System.Runtime.InteropServices.TypeLibConverter> Třídy, které jsou umístěné v **System.Runtime.Interop** převede obor názvů, třídy a rozhraní, které jsou obsaženy v sestavení na knihovnu typů modelu COM. Toto rozhraní API poskytuje stejné informace o typu jako Exportér knihovny typů, je popsáno v předchozí části.
+Třída, která je umístěna v oboru názvů **System. Runtime. Interop** , převede třídy a rozhraní obsažené v sestavení na knihovnu typů modelu COM. <xref:System.Runtime.InteropServices.TypeLibConverter> Toto rozhraní API vytváří stejné informace o typu jako Exportér knihovny typů, jak je popsáno v předchozí části.
 
-**Typelibconverter – třída** implementuje <xref:System.Runtime.InteropServices.ITypeLibConverter>.
+**Třída TypeLibConverter** implementuje rozhraní <xref:System.Runtime.InteropServices.ITypeLibConverter>.
 
 <a name="cpconpackagingassemblyforcomanchor3"></a>
 
-## <a name="assembly-registration-tool"></a>Nástroj registrace sestavení
+## <a name="assembly-registration-tool"></a>Nástroj pro registraci sestavení
 
-[Nástroj registrace sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) můžete vygenerovat a zaregistrovat knihovnu typů, při použití **/tlb:** možnost. Klienti modelu COM vyžadují instalaci knihoven typů v registru Windows. Bez této možnosti Regasm.exe pouze registruje typy v sestavení, nikoli knihovnu typů. Registrace typů v sestavení a registraci knihovny typů jsou různé aktivity.
+[Nástroj pro registraci sestavení (Regasm. exe)](../tools/regasm-exe-assembly-registration-tool.md) může generovat a registrovat knihovnu typů při použití možnosti **/TLB:** . Klienti modelu COM vyžadují, aby byly knihovny typů nainstalovány v registru systému Windows. Bez této možnosti nástroj Regasm. exe zaregistruje pouze typy v sestavení, nikoli v knihovně typů. Registrace typů v sestavení a registrace knihovny typů jsou odlišné aktivity.
 
 <a name="cpconpackagingassemblyforcomanchor4"></a>
 
-## <a name="net-services-installation-tool"></a>.NET Services Installation Tool
+## <a name="net-services-installation-tool"></a>Nástroj pro instalaci služeb .NET
 
-[Nástroj pro instalaci služeb .NET (Regsvcs.exe)](../tools/regsvcs-exe-net-services-installation-tool.md) přidá spravované třídy Služba komponent Windows 2000 a kombinuje několik úkolů v rámci jediného nástroje. Kromě načítá a registruje sestavení, Regsvcs.exe generovat, registrace a instalace do existující aplikace modelu COM + 1.0 knihovny typů.
+[Nástroj pro instalaci služeb .NET (Regsvcs. exe)](../tools/regsvcs-exe-net-services-installation-tool.md) přidává spravované třídy do služby komponent Windows 2000 a kombinuje několik úloh v rámci jediného nástroje. Kromě načítání a registrace sestavení může Regsvcs. exe vygenerovat, zaregistrovat a nainstalovat knihovnu typů do existující aplikace COM+ 1,0.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - <xref:System.Runtime.InteropServices.ITypeLibConverter>
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
-- [Kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md)
-- [Představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface)
+- [Kvalifikace typů .NET pro spolupráci](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
+- [Představení rozhraní třídy](../../../docs/standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)
 - [Důležité informace o zabezpečení sestavení](../app-domains/assembly-security-considerations.md)
 - [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Registrování sestav pomocí modelu COM](registering-assemblies-with-com.md)
-- [Postupy: Knihovny typů vkládání jako prostředky systému Win32 do aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))
+- [Postupy: Vložení knihoven typů jako prostředků Win32 do aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

@@ -1,23 +1,23 @@
 ---
 title: Porovnávání vzorů
-description: Zjistěte, jak vzorky se používají v F# k porovnání dat pomocí logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.
+description: Naučte se, jak se F# používají vzory pro porovnání dat s logickými strukturami, rozložení dat na části prvků nebo extrakce informací z dat.
 ms.date: 05/16/2016
-ms.openlocfilehash: f76a5fb675f83df87dd896f471a3552495f39e7e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 156bb670e0c494a3d515eab03e2e4672d6743dec
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641771"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627295"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
-Vzorky jsou pravidla pro transformování vstupních dat. Používají se v průběhu F# jazyk k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na základní části nebo extrahovat informace z dat různými způsoby.
+Vzory jsou pravidla pro transformaci vstupních dat. Používají se v celém F# jazyce k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na části prvků nebo extrakce informací z dat různými způsoby.
 
 ## <a name="remarks"></a>Poznámky
 
-Vzorky se používají v mnoha konstrukcích jazyka, jako `match` výrazu. Používají se při zpracování argumentů pro funkce v `let` vazeb, lambda výrazy a v obslužných rutinách výjimek spojených s `try...with` výrazu. Další informace najdete v tématu [odpovídající výrazy](match-expressions.md), [vazby let](functions/let-bindings.md), [výrazy Lambda: `fun` – Klíčové slovo](functions/lambda-expressions-the-fun-keyword.md), a [výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md).
+Vzory se používají v mnoha konstrukcích jazyka, jako je `match` například výraz. Používají se při zpracovávání argumentů pro funkce v `let` Bindings, lambda výrazech a v obslužných rutinách výjimek přidružených `try...with` k výrazu. Další informace naleznete v tématu [Match Expressions](match-expressions.md), [let Bindings](./functions/let-bindings.md), [lambda Expressions: Klíčové slovo](./functions/lambda-expressions-the-fun-keyword.md) a[výjimky: `fun` `try...with` Výraz.](/.exception-handling/the-try-with-expression.md)
 
-Například v `match` výrazu, *vzor* co následuje symbol svislé čáry.
+Například ve `match` výrazu je *vzor* následujícím způsobem jako symbol kanálu.
 
 ```fsharp
 match expression with
@@ -25,56 +25,56 @@ match expression with
 ...
 ```
 
-Každý vzorek se chová jako pravidlo pro transformování vstupu nějakým způsobem. V `match` výrazu, každý vzorek je zkoumán zjistit, jestli se vstupní data kompatibilní se vzorkem. Pokud se najde shoda, výsledkem spuštění výrazu. Pokud není nalezena shoda, je testováno další pravidlo vzorku. Volitelně při *podmínku* části je vysvětlen v [odpovídající výrazy](match-expressions.md).
+Každý vzor funguje jako pravidlo pro transformaci vstupu nějakým způsobem. `match` Ve výrazu je každý vzor zkontrolován a je možné zjistit, zda jsou vstupní data kompatibilní se vzorem. Pokud je nalezena shoda, je proveden výsledek výrazu. Pokud se shoda nenajde, otestuje se další pravidlo vzoru. Volitelná část when *podmínky* je vysvětlena ve [výrazech shody](match-expressions.md).
 
-Podporované vzory jsou uvedeny v následující tabulce. V době běhu vstup je testován oproti každému z následujících vzorů v uvedeném pořadí v tabulce a vzory se používají rekurzivně, od nejprve na poslední, jak se objeví ve vašem kódu a zleva doprava pro vzory na každém řádku.
+V následující tabulce jsou uvedeny podporované vzory. V době spuštění je vstup testován proti každému z následujících vzorů v pořadí uvedeném v tabulce a vzory jsou aplikovány rekurzivně, od první až po zobrazení ve vašem kódu a zleva doprava pro vzorce na každém řádku.
 
 |Name|Popis|Příklad|
 |----|-----------|-------|
-|Konstantní vzorek|Všechny číselné, znak, nebo textový literál, konstanta výčtu nebo definovaný identifikátor literálu|`1.0`, `"test"`, `30`, `Color.Red`|
-|Vzor identifikátoru|Hodnota case diskriminované sjednocení, popisku výjimky nebo případ aktivního vzoru|`Some(x)`<br /><br />`Failure(msg)`|
-|Variabilní vzor|*identifier*|`a`|
-|`as` Vzor|*vzor* jako *identifikátor*|`(a, b) as tuple1`|
+|Konstantní vzorek|Jakýkoli numerický, znakový nebo řetězcový literál, konstanta výčtu nebo definovaný identifikátor literálu|`1.0`, `"test"`, `30`, `Color.Red`|
+|Vzor identifikátoru|Hodnota případu rozlišeného sjednocení, popisek výjimky nebo aktivní vzor případu|`Some(x)`<br /><br />`Failure(msg)`|
+|Vzorec proměnné|*RID*|`a`|
+|`as`vzorku|*vzor* jako *identifikátor*|`(a, b) as tuple1`|
 |NEBO vzor|*pattern1* &#124; *pattern2*|<code>([h] &#124; [h; _])</code>|
-|Vzor AND|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
-|Nevýhody vzoru|*identifikátor* :: *identifikátor seznamu*|`h :: t`|
-|Vzor seznamu|[ *pattern_1*; ... ; *pattern_n* ]|`[ a; b; c ]`|
-|Vzor pole|[&#124; *pattern_1*;.; *pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
+|AND – vzor|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
+|Model nevýhody|*identifikátor* :: *list-Identifier*|`h :: t`|
+|Vzor seznamu|[ *pattern_1*;...; *pattern_n* ]|`[ a; b; c ]`|
+|Vzor pole|[&#124; *pattern_1*;..; *pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
 |Vzor v závorce|( *vzor* )|`( a )`|
 |Vzor řazené kolekce členů|( *pattern_1*,..., *pattern_n* )|`( a, b )`|
-|Vzor záznamu|{ *identifier1* = *pattern_1*;...; *identifier_n* = *pattern_n* }|`{ Name = name; }`|
-|Vzorec zástupných znaků|\_|`_`|
-|Vzorek společně s anotací typu|*vzor* : *typu*|`a : int`|
-|Testovací vzorek typu|:? *typ* [jako *identifikátor* ]|`:? System.DateTime as dt`|
-|Vzor Null|null|`null`|
+|Vzor záznamu|{ *identifier1* = *pattern_1*;...; *identifier_n*  =  *pattern_n* }|`{ Name = name; }`|
+|Vzor zástupných znaků|\_|`_`|
+|Vzor spolu s anotací typu|*vzor* : *typ*|`a : int`|
+|Vzorek testu typu|:? *typ* [as *identifikátor* ]|`:? System.DateTime as dt`|
+|Vzor null|null|`null`|
 
-## <a name="constant-patterns"></a>Konstantní vzorky
+## <a name="constant-patterns"></a>Konstantní vzorce
 
-Konstantní vzorky jsou číselné, znakové a řetězcové literály výčtu konstant (se zahrnutým názvem výčtu typu). A `match` výraz, který má pouze konstantní vzory, je možné porovnat s příkazy case v jiných jazycích. Vstup je porovnán s hodnotou literálu a vzor odpovídá, pokud jsou hodnoty stejné. Typ literálu musí být kompatibilní s typem vstupu.
+Konstantní vzorce jsou číselné, znakové a řetězcové literály, výčty výčtu (včetně názvu typu výčtu). `match` Výraz, který má pouze konstantní vzorce, lze porovnat s příkazem Case v jiných jazycích. Vstup je porovnán s hodnotou literálu a vzor se shoduje, pokud jsou hodnoty stejné. Typ literálu musí být kompatibilní s typem vstupu.
 
-Následující příklad ukazuje použití vzorů literálu a také používá vzory proměnné a vzor OR.
+Následující příklad ukazuje použití vzorů literálu a také používá vzorec proměnné a vzor nebo.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4801.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4801.fs)]
 
-Dalším příkladem vzoru literálu je vzor založený na výčtu konstant. Při použití konstant výčtu, musíte zadat název typu výčtu.
+Dalším příkladem literálního vzoru je vzor založený na konstantách výčtu. Pokud používáte konstanty výčtu, je nutné zadat název typu výčtu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4802.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4802.fs)]
 
-## <a name="identifier-patterns"></a>Vzorky identifikátoru
+## <a name="identifier-patterns"></a>Vzory identifikátorů
 
-Pokud vzorek je řetězec znaků, který tvoří platný identifikátor, forma identifikátoru Určuje, jak je vzorek párován. Pokud identifikátor je delší než jeden znak a začíná velkým písmenem, kompilátor se pokusí spárovat se vzorkem identifikátoru. Identifikátor pro tento model může být hodnota označená jako literální atribut, případ diskriminovaného sjednocení, identifikátor výjimky nebo případ aktivního vzoru. Pokud není nalezen žádný odpovídající identifikátor, shoda se nezdaří a další pravidlo pro vzorek, vzorek proměnné, se porovná se vstupem.
+Je-li vzor řetězcem znaků, které tvoří platný identifikátor, forma identifikátoru určuje, jak odpovídá vzor. Pokud je identifikátor delší než jeden znak a začíná velkým znakem, kompilátor se pokusí provést shodu se vzorem identifikátoru. Identifikátor pro tento vzor může být hodnota označená atributem literálu, případem rozlišeného sjednocení, identifikátorem výjimky nebo aktivním vzorem případu. Pokud není nalezen žádný odpovídající identifikátor, shoda se nezdařila a další pravidlo vzoru, proměnná vzor, je porovnána se vstupem.
 
-Vzorky rozlišeného sjednocení mohou být jednoduše pojmenované případy nebo mají hodnotu či n-tici obsahující více hodnot. Pokud je hodnota, je nutné zadat identifikátor pro hodnotu. V případě řazené kolekce členů je nutné zadat vzor n-tice s identifikátor pro každý element n-tice nebo identifikátor s názvem pole pro jedno nebo více sjednocených polí. Podívejte se na příklady kódu v této části s příklady.
+Vzorce rozlišených sjednocení mohou být jednoduché pojmenované případy nebo mohou mít hodnotu nebo řazené kolekce členů obsahující více hodnot. Pokud je hodnota, je nutné zadat identifikátor hodnoty. V případě řazené kolekce členů je nutné dodat vzor řazené kolekce členů s identifikátorem pro každý prvek řazené kolekce členů nebo identifikátor s názvem pole pro jedno nebo více pojmenovaných polí Union. Příklady najdete v příkladech kódu v této části.
 
-`option` Typ je diskriminovaným sjednocením, které má dva případy `Some` a `None`. Jeden případ (`Some`) má hodnotu, ale další (`None`) je pouze pojmenovaný případ. Proto `Some` musí mít proměnnou pro hodnotu spojenou s `Some` případu, ale `None` musí zobrazovat samostatně. V následujícím kódu, proměnná `var1` přiřazena hodnota získaná pomocí odpovídajícího `Some` případ.
+Typ je rozlišené sjednocení, které má dva `Some` případy a `None`. `option` Jeden případ (`Some`) má hodnotu, ale druhý (`None`) je pouze pojmenovaný případ. Proto musí mít proměnnou pro hodnotu přidruženou `Some` k případu, ale `None` musí být uvedena samostatně. `Some` V následujícím kódu je proměnná `var1` udělena hodnotě, která je získána spárováním `Some` s případem.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4803.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4803.fs)]
 
-V následujícím příkladu `PersonName` diskriminované sjednocení obsahuje směs řetězců a znaků, které představují možné formy jména. Případy diskriminovaného sjednocení jsou `FirstOnly`, `LastOnly`, a `FirstLast`.
+V následujícím příkladu `PersonName` obsahuje rozlišené sjednocení kombinaci řetězců a znaků, které reprezentují možné formy názvů. Případy rozlišeného sjednocení jsou `FirstOnly`, `LastOnly`a `FirstLast`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4804.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4804.fs)]
 
-Pro rozlišovaná sjednocení, které mají pojmenované názvy polí použijte znaménko rovná se (=) k získání hodnoty pojmenovaného pole. Zvažte například diskriminované sjednocení s deklarací, jako následující.
+Pro rozlišené sjednocení, která mají pojmenovaná pole, použijte znaménko rovná se (=) k extrakci hodnoty pojmenovaného pole. Zvažte například rozlišené sjednocení s deklarací, jako je následující.
 
 ```fsharp
 type Shape =
@@ -82,7 +82,7 @@ type Shape =
     | Circle of radius : float
 ```
 
-Můžete použít pojmenovaná pole ve výrazu odpovídajícímu vzorci následujícím způsobem.
+Pojmenovaná pole ve výrazu pro porovnávání se vzorci můžete použít následujícím způsobem.
 
 ```fsharp
 let matchShape shape =
@@ -91,7 +91,7 @@ let matchShape shape =
     | Circle(r) -> printfn "Circle with radius %f" r
 ```
 
-Použití pojmenovaného pole je volitelné, protože v předchozím příkladu obě `Circle(r)` a `Circle(radius = r)` stejný efekt.
+Použití pojmenovaného pole je volitelné, takže v předchozím příkladu má obojí `Circle(r)` a `Circle(radius = r)` má stejný účinek.
 
 Pokud zadáte více polí, použijte středník (;) jako oddělovač.
 
@@ -101,105 +101,105 @@ match shape with
 | _ -> ()
 ```
 
-Aktivní vzorky umožňují definovat složitější vlastní porovnávání vzorů. Další informace o aktivních vzorech naleznete v tématu [aktivní vzory](active-patterns.md).
+Aktivní vzory umožňují definovat komplexnější vlastní porovnávání vzorů. Další informace o aktivních vzorech najdete v tématu [aktivní vzory](active-patterns.md).
 
-Případ, ve kterém je identifikátor výjimkou se používá v porovnávání vzorů v kontextu obslužné rutiny výjimek. Informace o vzoru porovnávání ve zpracování výjimek naleznete v tématu [výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md).
+Případ, ve kterém je identifikátor výjimkou, se používá v porovnávání vzorů v kontextu obslužných rutin výjimek. Informace o porovnávání vzorů při zpracování výjimek naleznete v [tématu výjimky: `try...with` Výraz.](/.exception-handling/the-try-with-expression.md)
 
-## <a name="variable-patterns"></a>Vzorce proměnné
+## <a name="variable-patterns"></a>Vzorce proměnných
 
-Variabilní vzor přiřadí hodnotu porovnávanou s názvem proměnné, který je k dispozici pro použití v prováděném výrazu vpravo od `->` symbol. Variabilní vzor odpovídá jakémukoliv vstupu, ale variabilní vzorky se často objevuje v rámci jiných vzorků, proto umožňuje složitější struktury, jako například záznamy a pole, které lze rozložit na proměnné.
+Vzorec proměnné přiřadí hodnotu, která odpovídá názvu proměnné, který je pak k dispozici pro použití ve výrazu spuštění napravo od `->` symbolu. Proměnlivý vzorek se shoduje se všemi vstupy, ale vzory proměnných se často zobrazují v rámci jiných vzorů, čímž je umožněno rozložit komplexnější struktury, jako jsou například řazené kolekce členů a pole, aby byly rozložené do proměnných
 
-Následující příklad ukazuje vzor proměnné v rámci vzoru n-tice.
+Následující příklad ukazuje vzor proměnné v rámci vzoru řazené kolekce členů.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4805.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4805.fs)]
 
 ## <a name="as-pattern"></a>jako vzor
 
-`as` Vzor je vzor, který má `as` připojena k němu klauzule. `as` Klauzule váže odpovídající hodnotu pro název, který lze použít ve výrazu spuštění `match` výrazu, nebo v případě, kdy se tento model používá v `let` vazby, přidání názvu jako vazby v místním rozsahu.
+Vzor je vzor, ke kterému `as` je připojena klauzule. `as` Klauzule váže odpovídající hodnotu k názvu, který lze použít ve výrazu `match` provedení výrazu, nebo v případě, že je tento `let` vzor použit ve vazbě, je název přidán jako vazba do místního oboru. `as`
 
 Následující příklad používá `as` vzor.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4806.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4806.fs)]
 
 ## <a name="or-pattern"></a>NEBO vzor
 
-Vzor OR se používá, když vstupní data mohou odpovídat více vzorům a chcete provést ve výsledku stejný kód. Typy obou stran vzoru operátoru OR musí být kompatibilní.
+Vzor nebo se používá, pokud vstupní data mohou odpovídat více vzorům a chcete spustit stejný kód jako výsledek. Typy obou stran vzoru OR musí být kompatibilní.
 
-Následující příklad demonstruje vzory OR.
+Následující příklad znázorňuje vzor nebo.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4807.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4807.fs)]
 
-## <a name="and-pattern"></a>Vzor AND
+## <a name="and-pattern"></a>AND – vzor
 
-Vzor AND vyžaduje, aby vstupu shoda dvou vzorků. Typy obou stran vzoru operátoru AND musí být kompatibilní.
+Vzor a vyžaduje, aby vstup odpovídal dvěma vzorům. Typy obou stran vzoru a musí být kompatibilní.
 
-Následující příklad je podobný `detectZeroTuple` ukazuje [vzor n-tice](https://msdn.microsoft.com/library/#tuple) dále v tomto tématu, ale zde jsou `var1` a `var2` získány jako hodnoty pomocí vzoru.
+Následující příklad je podobný jako `detectZeroTuple` v části [vzor řazené kolekce členů](https://msdn.microsoft.com/library/#tuple) dále v tomto tématu `var1` , ale tady a `var2` se získává jako hodnoty pomocí vzoru a.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4808.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4808.fs)]
 
-## <a name="cons-pattern"></a>Nevýhody vzoru
+## <a name="cons-pattern"></a>Model nevýhody
 
-Vzorek nevýhod se používá rozložení seznamu na první prvek *head*a seznam, který obsahuje zbývající prvky *tail*.
+Vzorec nevýhody slouží k rozloží seznamu do prvního prvku, *záhlaví*a seznamu, který obsahuje zbývající prvky, *konec*.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4809.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4809.fs)]
 
 ## <a name="list-pattern"></a>Vzor seznamu
 
-Vzor seznamu umožňuje seznamů lze rozložit na počet prvků. Vzor seznamu sám může odpovídat pouze seznamům určitého počtu prvků.
+Vzor seznamu umožňuje rozložit seznamy na několik prvků. Samotný vzor seznamu může odpovídat pouze seznamům určitého počtu prvků.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4810.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4810.fs)]
 
 ## <a name="array-pattern"></a>Vzor pole
 
-Vzor pole podobá vzoru seznamu a lze použít k rozložení polí určité délky.
+Vzor pole se podobá vzoru seznamu a lze jej použít k rozložení polí určité délky.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4811.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4811.fs)]
 
 ## <a name="parenthesized-pattern"></a>Vzor v závorce
 
-Závorky mohou být seskupeny kolem vzorků k dosažení požadované asociativity. V následujícím příkladu jsou použity závorky pro řízení asociativity mezi vzorcem a nevýhody vzoru.
+Závorky lze seskupit kolem vzorů, abyste dosáhli požadovaného asociativita. V následujícím příkladu jsou použity kulaté závorky k řízení asociativita mezi vzorem a a modelem nevýhody.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4812.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4812.fs)]
 
 ## <a name="tuple-pattern"></a>Vzor řazené kolekce členů
 
-Vzor řazené kolekce členů odpovídá formě řazené kolekce členů a umožňuje řazené kolekce členů, které lze rozložit na jeho základní prvky pomocí proměnných porovnání vzorce pro každou pozici v řazené kolekci členů.
+Vzor řazené kolekce členů odpovídá vstupu ve formuláři řazené kolekce členů a umožňuje rozdělit řazené kolekce členů pomocí proměnných pro porovnávání vzorů pro každou pozici v řazené kolekci členů.
 
-Následující příklad ukazuje vzor n-tice a také používá vzor literálu, vzory proměnné a vzor zástupných znaků.
+Následující příklad znázorňuje vzor řazené kolekce členů a také používá vzory literálů, vzorce proměnných a vzor zástupného znaku.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4813.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4813.fs)]
 
 ## <a name="record-pattern"></a>Vzor záznamu
 
-Vzor záznamu slouží k rozložení záznamů pro extrahování hodnot polí. Vzor nemá odkaz na všechna pole záznamu; Vynechaná pole pouze nejsou součástí srovnávání a nejsou extrahována.
+Vzor záznamu slouží k rozbalování záznamů pro extrakci hodnot polí. Vzor nemusí odkazovat na všechna pole záznamu; všechna vynechaná pole se nepodílejí na shodě a nejsou extrahována.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4814.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4814.fs)]
 
-## <a name="wildcard-pattern"></a>Vzorec zástupných znaků
+## <a name="wildcard-pattern"></a>Vzor zástupných znaků
 
-Vzorec zástupných znaků je vyjádřen podtržítkem (`_`) znak a odpovídá jakémukoli zadání, stejně jako vzorec proměnné s tím rozdílem, že je vstup ignorován místo přiřazen proměnné. Vzorec zástupných znaků se často používá v rámci jiných vzorků jako zástupný symbol pro hodnoty, které nejsou potřeba ve výrazu vpravo od `->` symbol. Vzorec zástupných znaků se také často používá na konci seznamu vzorků tak, aby odpovídaly jakémukoli neodpovídajícímu vstupu. Vzorec zástupných znaků je znázorněna v mnoha příkladech kódu v tomto tématu. Viz předchozí kód pro jedním z příkladů.
+Vzor zástupných znaků je reprezentován znakem podtržítka (`_`) a odpovídá jakémukoli vstupu, stejně jako variabilní vzorek, s tím rozdílem, že vstup je zahozen namísto přiřazení proměnné. Vzor zástupných znaků se často používá v jiných vzorcích jako zástupný symbol pro hodnoty, které nejsou nutné ve výrazu napravo `->` od symbolu. Vzor zástupných znaků se také často používá na konci seznamu vzorů, aby odpovídal jakémukoli neodpovídajícímu vstupu. Vzor zástupných znaků je znázorněn v mnoha příkladech kódu v tomto tématu. Viz předchozí kód pro jeden příklad.
 
-## <a name="patterns-that-have-type-annotations"></a>Vzorky, které mají anotace typu
+## <a name="patterns-that-have-type-annotations"></a>Vzory, které mají anotace typu
 
-Vzorky mohou mít anotace typu. Ty se chovají stejně jako ostatní poznámky typu a příručka pro odvození stejně jako ostatní poznámky typu. Jsou vyžadovány závorky kolem anotace typu ve vzorcích. Následující kód popisuje vzor, který má anotaci typu.
+Vzory mohou mít anotace typu. Chovají se podobně jako jiné anotace typu a odvozené vodítko jako jiné anotace typu. Pro anotace typu ve vzorcích jsou vyžadovány kulaté závorky. Následující kód ukazuje vzor, který má anotaci typu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4815.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4815.fs)]
 
-## <a name="type-test-pattern"></a>Testovací vzorek typu
+## <a name="type-test-pattern"></a>Vzorek testu typu
 
-Vzor testovacího typu slouží k porovnání vstupu oproti typu. Pokud je vstupní typ pro vyhledání shody (nebo odvozeným typem) typem určeným ve vzorku, porovnávání úspěšné.
+Vzor testu typu se používá pro porovnání vstupu proti typu. Pokud je vstupní typ shodný s typem (nebo odvozeného typu) typu zadaného ve vzorku, shoda se zdaří.
 
-Následující příklad ukazuje vzor testu typu.
+Následující příklad ukazuje vzorek testu typu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4816.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4816.fs)]
 
-## <a name="null-pattern"></a>Vzor Null
+## <a name="null-pattern"></a>Vzor null
 
-Vzor null odpovídá hodnotě null, který může zobrazit při práci s typy, které umožňují hodnotu null. Vzory Null jsou často používány při spolupráci s kódu rozhraní .NET Framework. Návratová hodnota rozhraní API .NET může být například vstup do `match` výrazu. Můžete řídit tok programu na základě, zda je návratová hodnota null a také na jiných vlastnostech vrácené hodnoty. Vzor null můžete zabránit ostatních částí programu šíření hodnoty null.
+Vzor null odpovídá hodnotě null, která se může zobrazit při práci s typy, které povolují hodnotu null. Vzory null jsou často používány při spolupráci s .NET Framework kódem. Například návratová hodnota rozhraní .NET API může být vstupní `match` hodnotou výrazu. Můžete řídit tok programu na základě toho, zda vrácená hodnota je null, a také na dalších charakteristikách vrácené hodnoty. Pomocí vzoru null můžete zabránit šíření hodnot null do zbytku programu.
 
-Následující příklad používá vzor null a vzor proměnné.
+Následující příklad používá vzory null a variabilní vzorek.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4817.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4817.fs)]
 
 ## <a name="see-also"></a>Viz také:
 

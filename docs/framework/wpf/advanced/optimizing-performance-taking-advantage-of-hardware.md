@@ -9,50 +9,50 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: 13812fa5429bbe33341e51e4b3be14fbbcb361cb
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 7acf5a3f48ac4987037873c63111d988ec3a4979
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238454"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629649"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimalizace výkonu: Využití výhod hardwaru
-Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má dvě vykreslování kanály, hardware a software. Toto téma obsahuje informace o těchto kanálech vykreslování můžete rozhodovat o optimalizaci výkonu vašich aplikací.  
+Interní architektura nástroje má [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dva kanály pro vykreslování, hardware a software. V tomto tématu najdete informace o těchto kanálech pro vykreslování, které vám pomůžou dělat rozhodnutí o optimalizaci výkonu vašich aplikací.  
   
-## <a name="hardware-rendering-pipeline"></a>Kanál hardwarového vykreslení  
- Jedním z nejdůležitějších faktorů při určování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkonu je, že se jedná o vykreslování vázán – více pixelů, je nutné vykreslit, tím větší výkon, náklady. Však můžete více vykreslování, která přebírá [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)], můžete získat více výhod výkonu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Aplikací kanál hardwarového vykreslení plně využívá [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] funkcí na hardwaru, který podporuje alespoň [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] verze 7.0. Další optimalizace může být díky hardwaru, který podporuje [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] verze 7.0 a u objektu Shadereffect 2.0 + funkce.  
+## <a name="hardware-rendering-pipeline"></a>Kanál pro vykreslování hardwaru  
+ Jedním z nejdůležitějších faktorů při určování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkonu je, že je vykreslování svázáno – více pixelů, které je třeba vykreslit, jsou vyššími náklady na výkon. Další vykreslování, které lze přesměrovat na [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)], je ale více výhod, které můžete získat. Kanál pro vykreslování hardwaru aplikaceplněvyužíváfunkcerozhraníMicrosoftDirectXnahardwaru,kterýpodporujeminimálněrozhraníMicrosoftDirectXverze7,0.[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Další optimalizace je možné obvěřit hardwarem, který podporuje funkce rozhraní Microsoft DirectX verze 7,0 a funkce PixelShader akceptuje 2.0 +.  
   
-## <a name="software-rendering-pipeline"></a>Kanál softwarového vykreslení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Kanál softwarového vykreslení je zcela závislá na procesoru. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] využívá registrů instrukce SSE a SSE2 nastaví v procesoru pro implementaci rasterizéru optimalizovaný, plně funkční software. Nouzového řešení ověření pomocí softwaru je bezproblémové pokaždé, když funkčnost aplikace nemůže být vykreslen pomocí kanál hardwarového vykreslení.  
+## <a name="software-rendering-pipeline"></a>Kanál pro vykreslování softwaru  
+ Kanál [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro vykreslování softwaru je zcela vázaný na procesor. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]využívá sady SSE a SSE2 instrukcí v CPU k implementaci optimalizovaného a plně vybaveného rastrového rastrového softwaru. Přechod na software je bezproblémové, kdykoli nemůžete pomocí kanálu pro vykreslování hardwaru vykreslovat funkce aplikace.  
   
- Největším problémem výkonu můžete narazit při vykreslování v režimu software má vztah k vyplnění sazba, která je definována jako počet pixelů, které jsou vykreslování. Pokud máte obavy o výkonu v režimu vykreslování software, zkuste minimalizovat počet pokusů, které se překreslí pixel. Například pokud máte aplikace s modrým pozadím, který pak vykreslí mírně průhledný obrázek nad ním, můžete se vykreslit všechny pixely aplikace dvakrát. Díky tomu bude trvat dvakrát tak dlouho k vykreslení aplikace s imagí, než kdybyste pouze modré pozadí.  
+ Největší problémy s výkonem, se kterými se setkáte při vykreslování v softwarovém režimu, souvisí s sazbou výplně, která je definována jako počet pixelů, které vygenerujete. Pokud máte obavy o výkon v režimu vykreslování softwaru, pokuste se minimalizovat počet překreslování pixelu. Například pokud máte aplikaci s modrým pozadím, která následně vykreslí mírně transparentní obrázek, budou všechny pixely v aplikaci vykresleny dvakrát. V důsledku toho bude trvat dvojnásobnou dobu pro vykreslování aplikace s imagí, než kdyby bylo pouze modré pozadí.  
   
 ### <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky  
- Může být velmi obtížné odhadnout, vaše aplikace poběží na konfiguraci hardwaru. Můžete však chtít zvažte návrh, který umožňuje vaší aplikaci bez problémů přepínač funkce při spuštění na jiný hardware, tak, aby ho využívat všech výhod každou konfiguraci jiný hardware.  
+ Může být velmi obtížné odhadnout hardwarovou konfiguraci, na které bude vaše aplikace běžet. Můžete ale chtít zvážit návrh, který vaší aplikaci umožní hladce přepínat funkce při spuštění na jiném hardwaru, aby mohl plně využít všechny různé konfigurace hardwaru.  
   
- Chcete-li toho dosáhnout [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje funkce určující grafické možnosti systému v době běhu. Grafické možnosti se určuje podle kategorizace grafická karta jako jeden ze tří vykreslování funkce úrovně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zpřístupňuje rozhraní API, které umožňuje aplikaci k dotazování na úrovni funkce vykreslování. Aplikace pak můžou cesty odlišný kód za běhu v závislosti na úrovni vykreslování podporovaný hardware.  
+ K tomuto [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] účelu poskytuje funkce pro určení schopnosti grafiky systému v době běhu. Funkce grafiky se určuje tak, že se tato grafická karta roztřídí jako jedna ze tří vrstev schopností vykreslování. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zpřístupňuje rozhraní API, které aplikaci umožňuje dotazovat se na úroveň schopností vykreslování. V závislosti na vrstvě vykreslování podporovanou hardwarem pak může aplikace v době běhu převzít různé cesty kódu.  
   
- Funkce, že mají největší dopad na úrovně vrstvy vykreslování grafiky hardware patří:  
+ Funkce grafického hardwaru, které mají největší vliv na úrovně vrstev vykreslování:  
   
-- **Video RAM** množství grafické paměti na hardwarovou akceleraci Určuje velikost a počet vyrovnávacích pamětí, které lze použít pro skládání grafiky.  
+- **Video RAM** Množství videopaměti v grafickém hardwaru určuje velikost a počet vyrovnávacích pamětí, které lze použít k skládání grafiky.  
   
-- **Pixel Shader** pixel shader je grafických funkce, která vypočítá účinky na základě jednotlivých pixelů. V závislosti na řešení zobrazených grafiky může být několik milionů pixelů, které potřebují ke zpracování pro každý snímek pro zobrazení.  
+- **Pixel shader** Pixel shader je funkce pro zpracování grafiky, která počítá efekty na základě jednotlivých pixelů. V závislosti na rozlišení zobrazené grafiky může být pro každý zobrazovací rámeček zpracováno několik milionů pixelů, které je třeba zpracovat.  
   
-- **Vertex Shader** vertex shader je grafických funkce, která provádí matematických operací s daty vrcholu objektu.  
+- **Vertex shader** Vertex shader je funkce pro zpracování grafiky, která provádí matematické operace s daty vrcholu objektu.  
   
-- **Podpora násobnou** násobnou podporu odkazuje na možnost použít dva nebo více jedinečných textury během prolnutí operace u objektu 3D grafiky. Stupeň multitexture podpory se určuje podle počtu jednotek multitexture na hardwarovou akceleraci.  
+- **Podpora více textur** Podpora více textur odkazuje na možnost použití dvou nebo více různých textur během operace prolnutí u objektu 3D grafiky. Úroveň podpory více textur je určena počtem jednotek s více texturami v grafickém hardwaru.  
   
- Pixel shader, vertex shaderu a multitexture funkce se používají k definování zvláštní [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] úrovně, verze, která zase slouží k určení vrstvy různých vykreslování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ Funkce pixel shader, vertex shader a s více texturami slouží k definování specifických úrovní verze DirectX, které jsou pak použity k definování různých vrstev vykreslování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- Funkce hardwarovou akceleraci definují možností vykreslování objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Systém definuje tři vrstvy vykreslování:  
+ Funkce grafického hardwaru určují schopnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování aplikace. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Systém definuje tři úrovně vykreslování:  
   
-- **Vykreslování vrstvy 0** žádné hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je starší než verze 7.0.  
+- **Vrstva vykreslování 0** Žádná hardwarová akcelerace grafiky Úroveň verze DirectX je nižší než verze 7,0.  
   
-- **Vykreslování vrstvy 1** hardwarovou akceleraci grafiky částečné. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 7.0, a **menší** než verze 9.0.  
+- **Vrstva vykreslování 1** Hardwarová akcelerace částečné grafiky. Úroveň verze DirectX je větší nebo rovna verzi 7,0 a **nižší** než verze 9,0.  
   
-- **Vykreslování vrstva 2** většinu funkcí grafiky použít hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
+- **Vrstva vykreslování 2** Většina grafických funkcí používá hardwarovou akceleraci grafiky. Úroveň verze DirectX je větší nebo rovna verzi 9,0.  
   
- Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování úrovně, naleznete v tématu [vrstvy vykreslování grafiky](graphics-rendering-tiers.md).  
+ Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] úrovních vykreslování naleznete v tématu [úrovně vykreslování grafiky](graphics-rendering-tiers.md).  
   
 ## <a name="see-also"></a>Viz také:
 

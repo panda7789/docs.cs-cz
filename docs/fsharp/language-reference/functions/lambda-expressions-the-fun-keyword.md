@@ -1,17 +1,17 @@
 ---
 title: 'Výrazy lambda: Klíčové slovo fun'
-description: Další informace o použití F# "zábavu" – klíčové slovo k definování výraz lambda, který je anonymní funkce.
+description: Naučte se používat F# klíčové slovo fun k definování výrazu lambda, který je anonymní funkce.
 ms.date: 05/16/2016
-ms.openlocfilehash: c59d32bd4226384213453f1a9d362209e68a6fb5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9818724686dd83a7e352fb36819289fa19b002df
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645381"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630660"
 ---
-# <a name="lambda-expressions-the-fun-keyword-f"></a>Výrazy lambda: Klíčové slovo fun (F#)
+# <a name="lambda-expressions-the-fun-keyword-f"></a>Výrazy lambda: Klíčové slovo Fun (F#)
 
-`fun` – Klíčové slovo se používá k definování výraz lambda, to znamená, anonymní funkce.
+`fun` Klíčové slovo slouží k definování výrazu lambda, tedy anonymní funkce.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,7 +21,7 @@ fun parameter-list -> expression
 
 ## <a name="remarks"></a>Poznámky
 
-*Seznam parametrů* se obvykle skládá z názvů a volitelně typy parametrů. Obecně platí *seznam parametrů* může skládat z libovolné F# vzory. Úplný seznam možných vzory, naleznete v tématu [porovnávání vzorů](../pattern-matching.md). Seznam platných parametrů zahrnují následující příklady.
+*Seznam parametrů* se obvykle skládá z názvů a volitelně typů parametrů. Obecně platí, že *seznam parametrů* se může skládat z libovolného F# vzoru. Úplný seznam možných vzorů naleznete v tématu [porovnávání vzorů](../pattern-matching.md). K seznamům platných parametrů patří následující příklady.
 
 ```fsharp
 // Lambda expressions with parameter lists.
@@ -36,15 +36,15 @@ fun (a, b) -> …
 fun head :: tail -> …
 ```
 
-*Výraz* tělo funkce posledního výrazu z nich generuje návratovou hodnotu. Příklady výrazů lambda platné patří:
+*Výraz* je tělo funkce, poslední výraz, který generuje návratovou hodnotu. Příklady platných výrazů lambda jsou následující:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet301.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet301.fs)]
 
 ## <a name="using-lambda-expressions"></a>Používání výrazů lambda
 
-Výrazy lambda jsou zvláště užitečné, pokud chcete provádět operace v seznamu nebo z jiné kolekce a chcete se vyhnout nadbytečné práci spojené se definice funkce. Mnoho F# přijmout hodnoty funkcí jako argumenty funkce knihovny, a může být zvláště praktické použití lambda výrazů v těchto případech. Následující kód platí pro prvky seznamu výraz lambda. V takovém případě anonymní funkce přičte 1 k každý prvek seznamu.
+Výrazy lambda jsou obzvláště užitečné, pokud chcete provádět operace na seznamu nebo jiné kolekci a chcete se vyhnout nadbytečné práci s definováním funkce. Mnoho F# funkcí knihovny přijímá hodnoty funkcí jako argumenty a v těchto případech může být obzvláště užitečná pro použití výrazu lambda. Následující kód použije výraz lambda na prvky seznamu. V tomto případě anonymní funkce přidá 1 do každého prvku seznamu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet302.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet302.fs)]
 
 ## <a name="see-also"></a>Viz také:
 

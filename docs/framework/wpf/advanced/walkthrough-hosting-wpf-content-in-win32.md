@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 3a0a6d09fe34fed9f5b0d353252461fdffbeb5e1
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.openlocfilehash: 9ab046c6f7c070ade9d3e474309b33afbf78370e
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484622"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629645"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF ve Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce do aplikace namísto přepisu původního kódu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v okně.  
@@ -58,7 +58,7 @@ ms.locfileid: "68484622"
 8. Komunikujte s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahem pomocí odkazu, který jste uložili do statického pole pro nastavení vlastností a tak dále.  
   
 > [!NOTE]
->  K implementaci vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít také. Budete je však muset zkompilovat samostatně jako [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)] a [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] odkazem z [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Zbytek postupu je podobný jako uvedený výše.
+>  K implementaci vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít také. Bude však nutné jej zkompilovat samostatně jako dynamickou knihovnu (DLL) a odkazovat na tuto knihovnu DLL z vaší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Zbytek postupu je podobný jako uvedený výše.
 
 <a name="implementing_the_application"></a>
 ## <a name="implementing-the-host-application"></a>Implementace hostitelské aplikace
@@ -79,7 +79,7 @@ ms.locfileid: "68484622"
 
 1. Otevřete Visual Studio 2005 a v nabídce **soubor** vyberte **Nový projekt** .
 
-2. V  seznamu [!INCLUDE[TLA2#tla_visualcpp](../../../../includes/tla2sharptla-visualcpp-md.md)] typů projektů vyberte Win32. Pokud váš výchozí jazyk není C++, najdete tyto typy projektů v části **jiné jazyky**.
+2. V seznamu [!INCLUDE[TLA2#tla_visualcpp](../../../../includes/tla2sharptla-visualcpp-md.md)] typů projektů vyberte Win32. Pokud váš výchozí jazyk není C++, najdete tyto typy projektů v části **jiné jazyky**.
 
 3. Vyberte šablonu **projektu Win32** , přiřaďte k projektu název a kliknutím na tlačítko **OK** spusťte **Průvodce aplikací Win32**.
 
@@ -129,7 +129,7 @@ ms.locfileid: "68484622"
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah nemůžete hostovat přímo v okně aplikace. Místo toho nejprve vytvoříte <xref:System.Windows.Interop.HwndSource> objekt pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zabalení obsahu. Tento objekt je v podstatě okno, které je navrženo pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu. <xref:System.Windows.Interop.HwndSource> Objekt můžete hostovat v nadřazeném okně jeho vytvořením jako podřízeného [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna, které je součástí vaší aplikace. Parametry konstruktoru obsahují mnohem stejné informace, které byste při [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] vytváření podřízeného okna předávali funkci CreateWindow. <xref:System.Windows.Interop.HwndSource>
 
- Dále vytvoříte instanci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektu Content. V tomto případě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je obsah implementován jako samostatná `WPFPage`třída, pomocí/CLI. C++ Můžete také implementovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. K tomu však potřebujete nastavit samostatný projekt a vytvořit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]jako. Můžete přidat odkaz na [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] projekt a použít tento odkaz k vytvoření instance [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu.
+ Dále vytvoříte instanci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektu Content. V tomto případě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je obsah implementován jako samostatná `WPFPage`třída, pomocí/CLI. C++ Můžete také implementovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. K tomu však potřebujete nastavit samostatný projekt a vytvořit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah jako knihovnu DLL. Můžete přidat odkaz na tuto knihovnu DLL do projektu a použít tento odkaz k vytvoření instance [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu.
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah v podřízeném okně zobrazíte tak, že přiřadíte odkaz [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na obsah <xref:System.Windows.Interop.HwndSource>k <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnosti objektu.
 
@@ -167,7 +167,7 @@ ms.locfileid: "68484622"
 
 <a name="implementing_the_wpf_page"></a>
 ## <a name="implementing-the-wpf-page"></a>Implementace stránky WPF
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah můžete hostovat a používat bez znalosti skutečné implementace. [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]Pokud byl [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah zabalen samostatně, mohl by být sestaven v jakémkoli jazyce modulu CLR (Common Language Runtime). Následuje stručný návod k implementaci C++/CLI, která se používá v ukázce. Tato část obsahuje následující pododdíly.
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah můžete hostovat a používat bez znalosti skutečné implementace. Pokud byl [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah zabalen v samostatné knihovně DLL, mohl by být sestaven v jakémkoli jazyce modulu CLR (Common Language Runtime). Následuje stručný návod k implementaci C++/CLI, která se používá v ukázce. Tato část obsahuje následující pododdíly.
 
 <a name="autoNestedSectionsOUTLINE2"></a>
 - [Rozložení](#page_layout)

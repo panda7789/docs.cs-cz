@@ -9,144 +9,144 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 93556d8345b09dcd196354e618f4d20f5db68998
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 1aa182ced462e5fc90b22019aaf424d400bb4fd5
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348517"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629660"
 ---
 # <a name="layout"></a>Rozložení
-Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Porozumění tomu, jak a kdy dojde k výpočtům rozložení, je zásadní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pro vytváření uživatelských rozhraní v nástroji.  
   
  Toto téma obsahuje následující oddíly:  
   
-- [Element ohraničující polí](#LayoutSystem_BoundingBox)  
+- [Prvky ohraničující pole](#LayoutSystem_BoundingBox)  
   
 - [Systém rozložení](#LayoutSystem_Overview)  
   
-- [Měření a uspořádání podřízených](#LayoutSystem_Measure_Arrange)  
+- [Měření a uspořádání podřízených objektů](#LayoutSystem_Measure_Arrange)  
   
-- [Prvky panel a chování vlastní rozložení](#LayoutSystem_PanelsCustom)  
+- [Prvky panelu a chování vlastního rozložení](#LayoutSystem_PanelsCustom)  
   
-- [Důležité informace o výkonu rozložení](#LayoutSystem_Performance)  
+- [Požadavky na výkon rozložení](#LayoutSystem_Performance)  
   
-- [Dílčí pixel vykreslování a rozložení zaokrouhlení](#LayoutSystem_LayoutRounding)  
+- [Vykreslování dílčích pixelů a zaoblení rozložení](#LayoutSystem_LayoutRounding)  
   
-- [Co se chystá](#LayoutSystem_whatsnext)  
+- [Co dál](#LayoutSystem_whatsnext)  
   
 <a name="LayoutSystem_BoundingBox"></a>   
-## <a name="element-bounding-boxes"></a>Element ohraničující polí  
- Pokud uvažujete o rozložení v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], je důležité pochopit ohraničujícího rámečku, který obklopuje všechny elementy. Každý <xref:System.Windows.FrameworkElement> spotřebované podle rozložení systému můžete představit jako obdélníku, který je s drážkou do požadovaného rozložení. <xref:System.Windows.Controls.Primitives.LayoutInformation> Třída vrací hranice přidělení rozložení elementu nebo slotu. Velikost obdélníku je určeno výpočet prostor obrazovku, velikost žádná omezení, vlastnosti specifické pro rozložení (například okraje a odsazení) a jednotlivé chování nadřazené <xref:System.Windows.Controls.Panel> elementu. Zpracování těchto dat, systém rozložení je schopný vypočítat pozice všech podřízených objektů konkrétní <xref:System.Windows.Controls.Panel>. Je dobré si uvědomit, že změny velikosti vlastnosti definované na nadřazený prvek, například <xref:System.Windows.Controls.Border>, vliv na jeho podřízené položky.  
+## <a name="element-bounding-boxes"></a>Prvky ohraničující pole  
+ Při zamyšlení na rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]v nástroji je důležité pochopit ohraničující rámeček, který obklopuje všechny prvky. Z <xref:System.Windows.FrameworkElement> každého spotřebovaného systémem pro rozložení si můžete představit jako obdélník, který je v rozložení drážký. <xref:System.Windows.Controls.Primitives.LayoutInformation> Třída vrací hranice rozvržení rozložení prvku nebo slot. Velikost obdélníku je určena výpočtem dostupného místa na obrazovce, velikosti všech omezení, vlastností specifických pro rozložení (například okraje a odsazení) a jednotlivého chování nadřazeného <xref:System.Windows.Controls.Panel> prvku. Zpracování těchto dat, systém rozložení dokáže vypočítat pozici všech podřízených objektů konkrétního <xref:System.Windows.Controls.Panel>. Je důležité si uvědomit, že charakteristiky změny velikosti definované v nadřazeném elementu, například a <xref:System.Windows.Controls.Border>, ovlivňují jeho podřízené objekty.  
   
- Následující obrázek znázorňuje jednoduché rozložení.  
+ Na následujícím obrázku je znázorněno jednoduché rozložení.  
   
- ![Snímek obrazovky zobrazující typické mřížky, žádné ohraničujícího rámečku, který bude zobrazen.](./media/layout/grid-no-bounding-box-superimpose.png)  
+ ![Snímek obrazovky, který zobrazuje typickou mřížku bez ohraničujícího pole.](./media/layout/grid-no-bounding-box-superimpose.png)  
   
- Toto rozložení lze dosáhnout pomocí následujících [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ Toto rozložení lze dosáhnout pomocí následujícího [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  [!code-xaml[LayoutInformation#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml#1)]  
   
- Jediný <xref:System.Windows.Controls.TextBlock> element hostována v rámci <xref:System.Windows.Controls.Grid>. Zatímco vyplní pouze levém horním rohu prvního sloupce do přiděleného místa pro text <xref:System.Windows.Controls.TextBlock> je ve skutečnosti mnohem větší. Ohraničující rámeček žádné <xref:System.Windows.FrameworkElement> lze načíst s použitím <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Následující obrázek znázorňuje rámeček ohraničující konkrétní <xref:System.Windows.Controls.TextBlock> elementu.  
+ Jeden <xref:System.Windows.Controls.TextBlock> element je hostován <xref:System.Windows.Controls.Grid>v rámci. I když text vyplní pouze levý horní roh prvního sloupce, je přidělený prostor pro, <xref:System.Windows.Controls.TextBlock> který je ve skutečnosti mnohem větší. Ohraničující rámeček Any <xref:System.Windows.FrameworkElement> lze načíst <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> pomocí metody. Následující ilustrace znázorňuje ohraničující rámeček pro <xref:System.Windows.Controls.TextBlock> element.  
   
- ![Snímek obrazovky zobrazující ohraničující rámeček TextBlock je nyní viditelné.](./media/layout/visible-textblock-bounding-box.png)  
+ ![Snímek obrazovky, který ukazuje, že se teď zobrazuje ohraničovací rámeček TextBlock](./media/layout/visible-textblock-bounding-box.png)  
   
- Jak je uvedeno žlutý obdélníku do přiděleného místa pro <xref:System.Windows.Controls.TextBlock> prvek je ve skutečnosti mnohem větší, než se zobrazí. Jako další prvky jsou přidány do <xref:System.Windows.Controls.Grid>, toto přidělení může zmenšit nebo zvětšit, v závislosti na typu a velikosti prvků, které jsou přidány.  
+ Jak je znázorněno žlutým obdélníkem, přidělený prostor <xref:System.Windows.Controls.TextBlock> pro element je skutečně mnohem větší, než se zobrazí. Stejně jako další prvky jsou přidány do <xref:System.Windows.Controls.Grid>, toto přidělení může zmenšit nebo rozšířit v závislosti na typu a velikosti přidaných prvků.  
   
- Pozici rozložení <xref:System.Windows.Controls.TextBlock> je přeložit na <xref:System.Windows.Shapes.Path> pomocí <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Tato technika může být užitečné při zobrazování ohraničující rámeček elementu.  
+ Pozice <xref:System.Windows.Controls.TextBlock> rozložení je přeložena do a <xref:System.Windows.Shapes.Path> pomocí <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Tato technika může být užitečná pro zobrazení ohraničovacího rámečku prvku.  
   
  [!code-csharp[LayoutInformation#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml.cs#2)]
  [!code-vb[LayoutInformation#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/LayoutInformation/VisualBasic/Window1.xaml.vb#2)]  
   
 <a name="LayoutSystem_Overview"></a>   
 ## <a name="the-layout-system"></a>Systém rozložení  
- V nejjednodušším rozložení je rekurzivní, která vede k elementu se velikost, umístěn a vykreslit. Přesněji řečeno, rozložení popisuje proces měření a uspořádání členů <xref:System.Windows.Controls.Panel> elementu <xref:System.Windows.Controls.Panel.Children%2A> kolekce. Rozložení je náročné na zpracování. Čím větší <xref:System.Windows.Controls.Panel.Children%2A> kolekce, tím větší počet výpočty, které je třeba. Složitost je také možné vytvářet na základě rozložení chování definované <xref:System.Windows.Controls.Panel> element, který vlastní kolekce. Poměrně jednoduchá <xref:System.Windows.Controls.Panel>, například <xref:System.Windows.Controls.Canvas>, mají výrazně lepší výkon než komplexnější <xref:System.Windows.Controls.Panel>, jako například <xref:System.Windows.Controls.Grid>.  
+ V nejjednodušším případě je rozložení rekurzivní systém, který vede na velikost, umístění a vykreslení prvku. Přesněji řečeno, rozložení popisuje proces měření a uspořádání členů <xref:System.Windows.Controls.Panel> <xref:System.Windows.Controls.Panel.Children%2A> kolekce prvků. Rozložení je náročný proces. Čím větší je <xref:System.Windows.Controls.Panel.Children%2A> kolekce, tím větší je počet výpočtů, které je třeba provést. Složitost je také možné začlenit na základě chování rozložení definovaného <xref:System.Windows.Controls.Panel> prvkem, který je vlastníkem kolekce. Relativně jednoduché <xref:System.Windows.Controls.Panel>, <xref:System.Windows.Controls.Canvas>například, může mít výrazně lepší <xref:System.Windows.Controls.Panel>výkon než složitější, <xref:System.Windows.Controls.Grid>jako je například.  
   
- Pokaždé, když, který podřízený <xref:System.Windows.UIElement> změní pozici, má potenciál pro aktivaci nové předáván systém rozložení. Proto je důležité pochopit, události, které můžete vyvolat rozložení systému, jak je zbytečné volání může mít za následek nízký výkon aplikace. Následující část popisuje proces, který nastane, pokud je vyvolána systém rozložení.  
+ Pokaždé, když dítě <xref:System.Windows.UIElement> změní svou pozici, má potenciál aktivovat nové průchod systémem rozložení. Proto je důležité pochopit události, které mohou vyvolat systém rozložení, protože zbytečné vyvolání může vést k špatnému výkonu aplikace. Následující článek popisuje proces, který nastane, když je vyvolán systém rozložení.  
   
-1. Podřízený <xref:System.Windows.UIElement> zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
+1. Podřízená <xref:System.Windows.UIElement> položka zahájí proces rozložení, protože nejprve má měřené základní vlastnosti.  
   
-2. Velikost vlastnosti definované v <xref:System.Windows.FrameworkElement> jsou vyhodnoceny jako <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>.  
+2. Vlastnosti změny velikosti definované <xref:System.Windows.FrameworkElement> v jsou vyhodnocovány, <xref:System.Windows.FrameworkElement.Width%2A>například <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>.  
   
-3. <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako například <xref:System.Windows.Controls.Dock> směr nebo překrývání <xref:System.Windows.Controls.StackPanel.Orientation%2A>.  
+3. <xref:System.Windows.Controls.Panel>-používá se specifická logika, <xref:System.Windows.Controls.Dock> jako je například směr nebo <xref:System.Windows.Controls.StackPanel.Orientation%2A>skládání.  
   
-4. Obsah je uspořádaná Po změření všechny podřízené objekty.  
+4. Obsah je uspořádán po měření všech podřízených objektů.  
   
-5. <xref:System.Windows.Controls.Panel.Children%2A> Kolekce je vykreslen na obrazovce.  
+5. <xref:System.Windows.Controls.Panel.Children%2A> Kolekce se vykresluje na obrazovce.  
   
-6. Proces je znovu vyvolána, pokud další <xref:System.Windows.Controls.Panel.Children%2A> jsou přidána do kolekce, <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije, nebo <xref:System.Windows.UIElement.UpdateLayout%2A> metoda je volána.  
+6. Proces je znovu vyvolán, pokud <xref:System.Windows.Controls.Panel.Children%2A> je přidána další do kolekce <xref:System.Windows.FrameworkElement.LayoutTransform%2A> , <xref:System.Windows.UIElement.UpdateLayout%2A> je použita nebo je volána metoda.  
   
- Tento proces a jak je vyvolán jsou definovány podrobněji v následujících částech.  
+ Tento proces a jeho vyvolání jsou podrobněji definovány v následujících oddílech.  
   
 <a name="LayoutSystem_Measure_Arrange"></a>   
-## <a name="measuring-and-arranging-children"></a>Měření a uspořádání podřízených  
- Systém rozložení dokončení dva průchody pro každého člena <xref:System.Windows.Controls.Panel.Children%2A> kolekce, míru pass a průchodu uspořádat. Jednotlivých podřízených <xref:System.Windows.Controls.Panel> poskytuje vlastní <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> způsobů dosažení chování specifické rozložení.  
+## <a name="measuring-and-arranging-children"></a>Měření a uspořádání podřízených objektů  
+ Systém rozložení dokončí dvě průchody pro každého člena <xref:System.Windows.Controls.Panel.Children%2A> kolekce, míra je úspěšná a uspořádání bude úspěšné. Každý podřízený <xref:System.Windows.Controls.Panel> objekt poskytuje vlastní <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metody <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> a, aby bylo možné dosáhnout vlastního chování rozložení.  
   
- Při průchodu měr každý člen <xref:System.Windows.Controls.Panel.Children%2A> kolekce je vyhodnocen. Proces začíná volání <xref:System.Windows.UIElement.Measure%2A> metody. Tato metoda je volána v rámci implementace nadřazené <xref:System.Windows.Controls.Panel> elementu a není nutné explicitně volat pro rozložení dojde k.  
+ Během úspěšnosti míry se vyhodnotí každý <xref:System.Windows.Controls.Panel.Children%2A> člen kolekce. Proces začíná voláním <xref:System.Windows.UIElement.Measure%2A> metody. Tato metoda je volána v rámci implementace nadřazeného <xref:System.Windows.Controls.Panel> elementu a není nutné ji explicitně volat, aby bylo možné rozložení provést.  
   
- První, nativní velikosti vlastnosti <xref:System.Windows.UIElement> jsou vyhodnoceny jako <xref:System.Windows.UIElement.Clip%2A> a <xref:System.Windows.UIElement.Visibility%2A>. Tím se vygeneruje hodnotu s názvem `constraintSize` , který je předán <xref:System.Windows.FrameworkElement.MeasureCore%2A>.  
+ Nejprve <xref:System.Windows.UIElement> jsou vyhodnoceny vlastnosti nativní velikosti, <xref:System.Windows.UIElement.Clip%2A> například a <xref:System.Windows.UIElement.Visibility%2A>. Tím se vygeneruje hodnota `constraintSize` s názvem, která <xref:System.Windows.FrameworkElement.MeasureCore%2A>je předána do.  
   
- Za druhé, framework vlastnosti definované v <xref:System.Windows.FrameworkElement> zpracování, což má vliv na hodnotu `constraintSize`. Tyto vlastnosti obvykle popisují základní vlastnosti velikosti <xref:System.Windows.UIElement>, například jeho <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, a <xref:System.Windows.FrameworkElement.Style%2A>. Každá z těchto vlastností můžete změnit místo, které jsou nezbytné k zobrazení elementu. <xref:System.Windows.FrameworkElement.MeasureOverride%2A> následném zavolání s `constraintSize` jako parametr.  
+ Druhý, vlastnosti rozhraní definované na <xref:System.Windows.FrameworkElement> jsou zpracovávány, což má vliv na `constraintSize`hodnotu. Tyto vlastnosti obecně <xref:System.Windows.UIElement>popisují charakteristiky velikosti základního, jako <xref:System.Windows.FrameworkElement.Height%2A>je například, <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.Margin%2A>, a <xref:System.Windows.FrameworkElement.Style%2A>. Každá z těchto vlastností může změnit prostor, který je nezbytný k zobrazení elementu. <xref:System.Windows.FrameworkElement.MeasureOverride%2A>je pak volána s `constraintSize` parametrem.  
   
 > [!NOTE]
->  Existuje rozdíl mezi vlastností <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A> a <xref:System.Windows.FrameworkElement.ActualWidth%2A>. Například <xref:System.Windows.FrameworkElement.ActualHeight%2A> počítané hodnoty na základě ostatní vstupy výšku a systém rozložení je vlastnost. Hodnota je nastavena rozložení samotný systém, podle skutečný vykreslování pass a může proto bude tak hrozit mírně sadu hodnot vlastností, jako například <xref:System.Windows.FrameworkElement.Height%2A>, které jsou základem vstupní změnit.  
+>  <xref:System.Windows.FrameworkElement.Height%2A> Existuje rozdíl mezi vlastnostmi <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.ActualHeight%2A> a a a. <xref:System.Windows.FrameworkElement.ActualWidth%2A> Například <xref:System.Windows.FrameworkElement.ActualHeight%2A> vlastnost je vypočtená hodnota založená na dalších vstupech výšky a v systému rozložení. Hodnota je nastavena samotným systémem rozložení na základě skutečného průchodu vykreslování a může proto mírně prodleva za nastavenou hodnotou vlastností, například <xref:System.Windows.FrameworkElement.Height%2A>, které jsou základem změny vstupu.  
 >   
->  Protože <xref:System.Windows.FrameworkElement.ActualHeight%2A> je vypočítaná hodnota, je třeba si uvědomit, že může být více přírůstkové hlášené změní nebo k ní v důsledku různých operací systém rozložení. Systém rozložení může výpočet požadovaná míra místo pro podřízené prvky, omezení nadřazeného elementu a tak dále.  
+>  Vzhledem <xref:System.Windows.FrameworkElement.ActualHeight%2A> k tomu, že je vypočtená hodnota, měli byste si uvědomit, že v důsledku různých operací se systémem rozložení může dojít k několika nebo přírůstkovým změnám. Systém rozložení může vypočítat požadované místo měření pro podřízené elementy, omezení nadřazeného elementu atd.  
   
- Konečným cílem průchodu měr je podřízený k určení jeho <xref:System.Windows.UIElement.DesiredSize%2A>, která spadá <xref:System.Windows.FrameworkElement.MeasureCore%2A> volání. <xref:System.Windows.UIElement.DesiredSize%2A> Hodnota se ukládá pomocí <xref:System.Windows.UIElement.Measure%2A> pro používání průchodu obsahu uspořádat.  
+ Konečný cíl míry úspěšnosti je pro podřízený element k určení <xref:System.Windows.UIElement.DesiredSize%2A>, ke kterému dojde <xref:System.Windows.FrameworkElement.MeasureCore%2A> během volání. Hodnota je uložena v <xref:System.Windows.UIElement.Measure%2A> pro použití během uspořádání obsahu. <xref:System.Windows.UIElement.DesiredSize%2A>  
   
- Průchod uspořádat začíná volání <xref:System.Windows.UIElement.Arrange%2A> metody. Při průchodu uspořádat nadřazené <xref:System.Windows.Controls.Panel> element generuje obdélník, který představuje hranice podřízené. Tato hodnota je předán <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metody pro zpracování.  
+ Průchod uspořádání začíná voláním <xref:System.Windows.UIElement.Arrange%2A> metody. Během uspořádání je nadřazený <xref:System.Windows.Controls.Panel> prvek vygenerován obdélník, který představuje hranice podřízeného objektu. Tato hodnota je předána <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metodě pro zpracování.  
   
- <xref:System.Windows.FrameworkElement.ArrangeCore%2A> Metoda vyhodnocuje <xref:System.Windows.UIElement.DesiredSize%2A> podřízené a vyhodnotí další okraje, které mohou ovlivnit vykreslené velikost prvku. <xref:System.Windows.FrameworkElement.ArrangeCore%2A> generuje `arrangeSize`, které se předává <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metodu <xref:System.Windows.Controls.Panel> jako parametr. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> generuje `finalSize` podřízeného. Nakonec <xref:System.Windows.FrameworkElement.ArrangeCore%2A> metoda nemá konečného hodnocení posunu vlastnosti, jako je například okraje a zarovnání a umístí podřízené ve slotu rozložení. Podřízený objekt není nutné (a často není) zadejte celý přidělené místo. Ovládací prvek se potom vrátí do nadřazeného <xref:System.Windows.Controls.Panel> a dokončení procesu rozložení.  
+ Metoda vyhodnocuje <xref:System.Windows.UIElement.DesiredSize%2A> podřízenou položku a vyhodnotí další okraje, které mohou ovlivnit vykreslenou velikost elementu. <xref:System.Windows.FrameworkElement.ArrangeCore%2A> <xref:System.Windows.FrameworkElement.ArrangeCore%2A>vygeneruje `arrangeSize`objekt, který je předán <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metodě <xref:System.Windows.Controls.Panel> jako parametru. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>`finalSize` vygeneruje podřízenou položku. <xref:System.Windows.FrameworkElement.ArrangeCore%2A> Nakonec metoda provede konečné vyhodnocení vlastností posunutí, jako je například marže a zarovnání, a umístí podřízenou položku do jejího slotu rozložení. Podřízená položka nemusí (a často neumožňuje) vyplnit celé přidělené místo. Ovládací prvek se pak vrátí nadřazenému <xref:System.Windows.Controls.Panel> procesu a proces rozložení je dokončený.  
   
 <a name="LayoutSystem_PanelsCustom"></a>   
-## <a name="panel-elements-and-custom-layout-behaviors"></a>Prvky panel a chování vlastní rozložení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje skupinu prvky, které jsou odvozeny z <xref:System.Windows.Controls.Panel>. Tyto <xref:System.Windows.Controls.Panel> prvky povolit mnoho složitá rozložení. Například ukládání elementů můžete snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco další složité a bez průchodu rozložení je možné pomocí <xref:System.Windows.Controls.Canvas>.  
+## <a name="panel-elements-and-custom-layout-behaviors"></a>Prvky panelu a chování vlastního rozložení  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje skupinu prvků, které jsou odvozeny <xref:System.Windows.Controls.Panel>z. Tyto <xref:System.Windows.Controls.Panel> prvky umožňují mnoho složitých rozložení. Například prvky Stack lze snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco složitější a bezplatná rozložení toků jsou možné <xref:System.Windows.Controls.Canvas>pomocí.  
   
- Následující tabulka shrnuje dostupné rozložení <xref:System.Windows.Controls.Panel> elementy.  
+ Následující tabulka shrnuje dostupné prvky rozložení <xref:System.Windows.Controls.Panel> .  
   
 |Název panelu|Popis|  
 |----------------|-----------------|  
-|<xref:System.Windows.Controls.Canvas>|Vymezuje oblast, ve kterém můžete explicitně umísťovat podřízené prvky podle souřadnic vzhledem k <xref:System.Windows.Controls.Canvas> oblasti.|  
-|<xref:System.Windows.Controls.DockPanel>|Vymezuje oblast, ve kterém můžete uspořádat podřízené elementy vodorovně nebo svisle, relativně vůči sobě navzájem.|  
+|<xref:System.Windows.Controls.Canvas>|Definuje oblast, ve které můžete explicitně umístit podřízené prvky souřadnicemi relativními k <xref:System.Windows.Controls.Canvas> oblasti.|  
+|<xref:System.Windows.Controls.DockPanel>|Definuje oblast, ve které můžete uspořádat podřízené prvky buď vodorovně, nebo svisle, relativně k sobě navzájem.|  
 |<xref:System.Windows.Controls.Grid>|Definuje flexibilní oblast mřížky, která se skládá ze sloupců a řádků.|  
-|<xref:System.Windows.Controls.StackPanel>|Uspořádává podřízené prvky do jednoho řádku, který může být orientovaný vodorovně nebo svisle.|  
+|<xref:System.Windows.Controls.StackPanel>|Uspořádá podřízené prvky na jeden řádek, který může být orientovaný vodorovně nebo svisle.|  
 |<xref:System.Windows.Controls.VirtualizingPanel>|Poskytuje rozhraní pro <xref:System.Windows.Controls.Panel> prvky, které virtualizují jejich podřízenou kolekci dat. Toto je abstraktní třída.|  
-|<xref:System.Windows.Controls.WrapPanel>|Umísťuje podřízené prvky do sekvenční Pozice zleva doprava, rozdělení obsahu na další řádek na okraji obsahujícího pole. Následné řazení vyvolá sekvenčně shora dolů nebo zprava doleva v závislosti na hodnotu <xref:System.Windows.Controls.WrapPanel.Orientation%2A> vlastnost.|  
+|<xref:System.Windows.Controls.WrapPanel>|Umístí podřízené prvky v sekvenčním umístění zleva doprava a oddělí obsah na další řádek na okraji obsahujícího pole. Následné řazení probíhá postupně shora dolů nebo zprava doleva v závislosti na hodnotě <xref:System.Windows.Controls.WrapPanel.Orientation%2A> vlastnosti.|  
   
- Pro aplikace, které vyžadují rozložení, který není možné s použitím některých z předdefinovaných <xref:System.Windows.Controls.Panel> prvky, vlastní rozložení chování se dá dosáhnout dědění z <xref:System.Windows.Controls.Panel> a přepsáním <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody. Příklad najdete v tématu [vlastní kruhové panelu ukázkové](https://go.microsoft.com/fwlink/?LinkID=159982).  
+ Pro aplikace, které vyžadují rozložení, které není možné pomocí některého z předdefinovaných <xref:System.Windows.Controls.Panel> prvků, lze chování vlastního rozložení dosáhnout děděním z <xref:System.Windows.Controls.Panel> a přepsáním <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metod a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> . Příklad najdete v tématu [Ukázka vlastního paprskového panelu](https://go.microsoft.com/fwlink/?LinkID=159982).  
   
 <a name="LayoutSystem_Performance"></a>   
-## <a name="layout-performance-considerations"></a>Důležité informace o výkonu rozložení  
- Rozložení je rekurzivní proces. Každý podřízený prvek <xref:System.Windows.Controls.Panel.Children%2A> zpracuje kolekce při každém vyvolání systém rozložení. V důsledku toho aktivuje systém rozložení mělo by se vyhnout při není nutné. Následující aspekty pomáhá dosahovat lepšího výkonu.  
+## <a name="layout-performance-considerations"></a>Požadavky na výkon rozložení  
+ Rozložení je rekurzivní proces. Každý podřízený element v kolekci <xref:System.Windows.Controls.Panel.Children%2A> se zpracuje během každého vyvolání systému rozložení. V důsledku toho by se měl spustit systém rozložení, pokud není potřeba. Následující požadavky vám pomůžou dosáhnout lepšího výkonu.  
   
-- Mějte které změně hodnoty vlastnosti rekurzivní aktualizace vynutí systém rozložení.  
+- Mějte na paměti, které změny hodnot vlastností vynutí rekurzivní aktualizaci systémem rozložení.  
   
-     Vlastnosti závislostí, jejichž hodnoty může způsobit, že systém rozložení inicializovat jsou označené veřejné příznaky. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné příčiny, vlastností, které vynutí změny hodnot rekurzivního aktualizovat tak, že systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která mohou ovlivnit velikost elementu ohraničující rámeček <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).  
+     Vlastnosti závislosti, jejichž hodnoty mohou způsobit inicializaci systému rozložení, jsou označeny veřejnými příznaky. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné ovládací předpisy, kterými se změny hodnot vlastností vynutí rekurzivní aktualizace systémem rozložení. Obecně platí, že jakákoli vlastnost, která může ovlivnit velikost ohraničujícího pole prvku, by měla mít <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [Přehled vlastností závislosti](dependency-properties-overview.md).  
   
-- Pokud je to možné, používat <xref:System.Windows.UIElement.RenderTransform%2A> místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
+- Pokud je to možné, <xref:System.Windows.UIElement.RenderTransform%2A> použijte místo a <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
   
-     A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> může být velmi užitečný způsob, jak ovlivnit obsah [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Pokud efekt transformace není nutné mít vliv na umístění dalších prvků, je však nejvhodnější použít <xref:System.Windows.UIElement.RenderTransform%2A> místo, protože <xref:System.Windows.UIElement.RenderTransform%2A> systém rozložení se nevyvolá. <xref:System.Windows.FrameworkElement.LayoutTransform%2A> použije vlastní transformaci a vynutí aktualizaci rozložení s rekurzivní pro novou pozici ovlivněný prvek.  
+     Může být velmi užitečný způsob, jak ovlivnit obsah [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.FrameworkElement.LayoutTransform%2A> Nicméně pokud efekt transformace nemá vliv na pozici jiných prvků, je nejvhodnější použít <xref:System.Windows.UIElement.RenderTransform%2A> místo toho, protože <xref:System.Windows.UIElement.RenderTransform%2A> nevyvolává systém rozložení. <xref:System.Windows.FrameworkElement.LayoutTransform%2A>Použije transformaci a vynutí aktualizaci rekurzivního rozložení na účet pro novou pozici ovlivněného prvku.  
   
-- Vyhněte se volání zbytečných <xref:System.Windows.UIElement.UpdateLayout%2A>.  
+- Vyhněte se zbytečnému volání <xref:System.Windows.UIElement.UpdateLayout%2A>.  
   
-     <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda vynutí aktualizaci rozložení rekurzivní a není často nutné. Pokud si nejste jistí, že úplná aktualizace je vyžadována, využívají systém rozložení mohli volat tuto metodu za vás.  
+     <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda vynutí aktualizaci rekurzivního rozložení a často není nutná. Pokud si nejste jistí, jestli je nutná úplná aktualizace, spoléhá na to, že systém rozložení volá tuto metodu za vás.  
   
-- Při práci s velkým <xref:System.Windows.Controls.Panel.Children%2A> kolekci, zvažte použití <xref:System.Windows.Controls.VirtualizingStackPanel> místo běžný <xref:System.Windows.Controls.StackPanel>.  
+- Při práci s velkou <xref:System.Windows.Controls.Panel.Children%2A> kolekcí zvažte <xref:System.Windows.Controls.VirtualizingStackPanel> použití namísto obyčejného <xref:System.Windows.Controls.StackPanel>.  
   
-     Prostřednictvím virtualizace podřízené kolekce <xref:System.Windows.Controls.VirtualizingStackPanel> pouze objekty udržuje v paměti, které jsou aktuálně v rámci nadřazeného zobrazení. V důsledku toho se podstatně výkon ve většině scénářů.  
+     Virtualizací podřízené kolekce <xref:System.Windows.Controls.VirtualizingStackPanel> zachovává pouze objekty v paměti, které jsou aktuálně v zobrazení nadřazeného objektu. V důsledku toho se ve většině scénářů výrazně vylepšuje výkon.  
   
 <a name="LayoutSystem_LayoutRounding"></a>   
-## <a name="sub-pixel-rendering-and-layout-rounding"></a>Dílčí pixel vykreslování a rozložení zaokrouhlení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Grafiky systém využívá jednotkách nezávislých na zařízení k zajištění nezávislosti překlad IP adres a zařízení. Každý pixel nezávislé zařízení se automaticky škáluje s systému [!INCLUDE[TLA#tla_dpi](../../../../includes/tlasharptla-dpi-md.md)] nastavení. To poskytuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] správné škálování aplikací pro různé [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] nastavení a způsobí, že aplikace automaticky [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)]-vědět.  
+## <a name="sub-pixel-rendering-and-layout-rounding"></a>Vykreslování dílčích pixelů a zaoblení rozložení  
+ Systém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky používá jednotky nezávislé na zařízení k umožnění rozlišení a nezávislosti zařízení. Každé zařízení nezávislé na pixelech se automaticky škáluje s nastavením počet bodů na palec (dpi) v systému. To poskytuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacím správné škálování pro různá nastavení dpi a umožňuje aplikaci automaticky rozpoznat dpi.  
   
- Nicméně to [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] nezávislost můžete vytvořit nestandardní edge vykreslování kvůli anti-aliasing. Tyto artefakty, které jsou obvykle zobrazena jako fuzzy nebo poloprůhledného hrany, může dojít, pokud umístění okraj spadá uprostřed pixelů zařízení místo mezi pixelů zařízení. Systém rozložení poskytuje způsob, jak nastavit pro tuto se zaokrouhlováním rozložení. Zaokrouhlení rozložení je, kde systém rozložení zaokrouhlí žádné pixelech – neintegrální průchodu rozložení.  
+ Tato nezávislost v DPI však může vytvořit nepravidelné vykreslování z důvodu vyhlazení. Tyto artefakty, které se obvykle zobrazují jako rozostřené nebo částečně transparentní okraje, mohou nastat, pokud umístění okraje spadá do středu zařízení v pixelu místo mezi pixely zařízení. Systém rozložení poskytuje způsob, jak ho upravit pomocí zaokrouhlování rozložení. Zaoblení rozložení je místo, kde systém rozložení zaokrouhlí jakékoli Neceločíselné hodnoty pixelů během průchodu rozložení.  
   
- Zaokrouhlení rozložení je ve výchozím nastavení zakázána. Chcete-li povolit zaokrouhlení rozložení, nastavte <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> vlastnost `true` na žádném <xref:System.Windows.FrameworkElement>. Protože je vlastnost závislosti, hodnota rozšíří na všechny podřízené objekty ve vizuálním stromu. Chcete-li povolit rozložení zaokrouhlení pro celé uživatelské rozhraní, nastavte <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> k `true` na kořenový kontejner. Příklad naleznete v tématu <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A>.  
+ Zaoblení rozložení je ve výchozím nastavení zakázáno. Chcete-li povolit zaokrouhlování rozložení, <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> nastavte `true` vlastnost na hodnotu <xref:System.Windows.FrameworkElement>on. Vzhledem k tomu, že se jedná o vlastnost závislosti, bude hodnota rozšířena do všech podřízených prvků ve vizuálním stromu. Chcete-li povolit zaokrouhlování rozložení pro celé uživatelské rozhraní <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> , `true` nastavte na kořenovém kontejneru. Příklad naleznete v tématu <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A>.  
   
 <a name="LayoutSystem_whatsnext"></a>   
-## <a name="whats-next"></a>Co se chystá  
- Vysvětlení, jak prvky se měří a uspořádat je prvním krokem při Principy rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../controls/panels-overview.md). Chcete-li lépe pochopit různé vlastnosti umístění, které můžou ovlivnit rozložení, naleznete v tématu [zarovnání, okrajů a odsazení přehled](alignment-margins-and-padding-overview.md). Příklad vlastní <xref:System.Windows.Controls.Panel> prvku, naleznete v tématu [paprskového ukázková Panel](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připravení na všech součástí dohromady v jednoduché aplikace, najdete v článku [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+## <a name="whats-next"></a>Co dál  
+ Porozumění způsobu měření a uspořádání prvků je prvním krokem při porozumění rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvcích najdete v tématu [Přehled panelů](../controls/panels-overview.md). Chcete-li lépe porozumět různým vlastnostem umístění, které mohou ovlivnit rozložení, přečtěte si téma [zarovnání, okraje a přehled odsazení](alignment-margins-and-padding-overview.md). Příklad vlastního <xref:System.Windows.Controls.Panel> prvku naleznete v tématu [Ukázka vlastního paprskového panelu](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připraveni ho umístit dohromady do zjednodušené aplikace, přečtěte si [Návod: Moje první desktopová aplikace](../getting-started/walkthrough-my-first-wpf-desktop-application.md)WPF.  
   
 ## <a name="see-also"></a>Viz také:
 

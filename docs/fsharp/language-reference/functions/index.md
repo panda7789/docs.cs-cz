@@ -1,19 +1,19 @@
 ---
 title: Funkce
-description: Další informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
+description: Přečtěte si o F# funkcích v F# tématu a o tom, jak podporují běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
-ms.openlocfilehash: f68a36de7af2bdb803b0b633929aa472806f61aa
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 6f65ce692169b71abe8d2eff7ef07b66975d478b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645403"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630701"
 ---
 # <a name="functions"></a>Funkce
 
-Funkce je základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích F# funkce s názvem, mohou mít parametry a argumenty vzít a má tělo. F#také podporuje konstrukce funkčního programování, jako je zpracování funkce jako hodnoty pomocí nepojmenované funkce ve výrazech, složení funkcí k vytvoření nové funkce, curryfikované funkce a implicitní definice funkce prostřednictvím částečnou použití argumentů funkce.
+Funkce jsou základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích má F# funkce název, může mít parametry a přebírat argumenty a má tělo. F#také podporuje konstrukce funkčního programování, jako je zpracování funkcí jako hodnot, použití nepojmenovaných funkcí ve výrazech, složení funkcí pro vytváření nových funkcí, funkcí curryfikované a implicitní definice funkcí pomocí možností částečného. použití argumentů funkce.
 
-Definování funkcí s použitím `let` – klíčové slovo, nebo v případě, funkce je rekurzivní, `let rec` – kombinace klíčových slov.
+Funkce definujete pomocí `let` klíčového slova, nebo pokud je funkce rekurzivní `let rec` , kombinace klíčového slova.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,67 +26,67 @@ let rec function-name parameter-list = recursive-function-body
 
 ## <a name="remarks"></a>Poznámky
 
-*Název funkce* je identifikátor, který představuje funkci. *Seznam parametrů* se skládá z po sobě jdoucích parametry, které jsou odděleny mezer. Explicitní typ pro každý parametr, můžete určit, jak je popsáno v oddílu parametry. Pokud nezadáte konkrétní argument typu, kompilátor se pokusí odvodit typ z těla funkce. *Tělo funkce* se skládá z výrazu. Výraz, který tvoří tělo funkce je obvykle ze složeného výrazu, který se skládá z počet výrazů, které přineslo výsledný výraz, který je návratová hodnota. *Návratový typ* dvojtečku následovanou typ a je volitelný. Pokud explicitně nezadáte typ vrácené hodnoty, kompilátor Určuje typ návratové hodnoty z: výsledný výraz.
+*Název funkce* je identifikátor, který představuje funkci. *Seznam parametrů* se skládá z dalších parametrů, které jsou odděleny mezerami. Můžete zadat explicitní typ pro každý parametr, jak je popsáno v oddílu Parameters. Pokud nezadáte konkrétní typ argumentu, kompilátor se pokusí odvodit typ z těla funkce. *Tělo funkce* se skládá z výrazu. Výraz, který tvoří tělo funkce, je typicky složený výraz sestávající z řady výrazů, který je ukončen finálním výrazem, který je návratovou hodnotou. *Návratový typ* je dvojtečka následovaná typem a je volitelná. Pokud nezadáte typ vrácené hodnoty explicitně, kompilátor určí návratový typ z finálního výrazu.
 
-Definice jednoduchý funkce vypadá přibližně takto:
+Jednoduchá definice funkce se podobá následující:
 
 ```fsharp
 let f x = x + 1
 ```
 
-V předchozím příkladu je název funkce `f`, má argument hodnotu `x`, která má typ `int`, je tělo funkce `x + 1`, a návratová hodnota je typu `int`.
+V předchozím příkladu je název `f`funkce, argument je `x`, který má typ `int`, tělo `x + 1`funkce a návratová hodnota je typu `int`.
 
-Funkce mohou být označeny `inline`. Informace o `inline`, naleznete v tématu [vložené funkce](../functions/inline-functions.md).
+Funkce mohou být označeny `inline`. Další informace o `inline`naleznete v tématu inline [Functions](../functions/inline-functions.md).
 
 ## <a name="scope"></a>Scope
 
-Na libovolné úrovni oboru, než je rozsah modulu není chybu pro opětovné použití názvu hodnotě nebo funkci. Pokud je znovu použít název, název deklarován později zastiňuje název deklarovaný dříve. V oboru nejvyšší úrovně v modulu, musí být jedinečné názvy. Například následující kód vygeneruje chybu, když se objeví v oboru modulu, ale ne v případě, že se zobrazí uvnitř funkce:
+Na jakékoli úrovni oboru jiné než obor modulu není k dispozici chyba pro opakované použití hodnoty nebo názvu funkce. Pokud použijete název znovu, název deklarovaný později vystínuje dříve deklarovaný název. Nicméně v oboru nejvyšší úrovně v modulu musí být názvy jedinečné. Například následující kód vyvolá chybu, když se zobrazí v oboru modulu, ale ne, pokud se zobrazí uvnitř funkce:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet101.fs)]
 
-Ale následující kód je přijatelné na libovolné úrovni rozsahu:
+Ale následující kód je přijatelný na libovolné úrovni oboru:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet102.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet102.fs)]
 
 ### <a name="parameters"></a>Parametry
 
-Názvy parametrů jsou uvedeny za názvem funkce. Typ pro parametr, můžete určit, jak je znázorněno v následujícím příkladu:
+Názvy parametrů jsou uvedeny za názvem funkce. Můžete určit typ pro parametr, jak je znázorněno v následujícím příkladu:
 
 ```fsharp
 let f (x : int) = x + 1
 ```
 
-Pokud chcete zadat typ, následuje název parametru a od názvu oddělené dvojtečkou. Vynecháte-li typ pro parametr, typ parametru je odvozen kompilátorem. Například v následující definici funkce, argument `x` odvodit typ `int` protože 1 je typu `int`.
+Pokud zadáte typ, následuje za názvem parametru a je oddělen od názvu dvojtečkou. Pokud vynecháte typ pro parametr, typ parametru je odvozen kompilátorem. Například v následující definici funkce je argument `x` odvozen jako typ `int` , protože 1 je typu `int`.
 
 ```fsharp
 let f x = x + 1
 ```
 
-Však kompilátor se pokusí provést funkci co je to možné. Například vezměte na vědomí následující kód:
+Kompilátor se ale pokusí tuto funkci nastavit jako obecnou. Poznamenejte si například následující kód:
 
 ```fsharp
 let f x = (x, x)
 ```
 
-Funkce vytvoří řazenou kolekci členů ze jedním argumentem libovolného typu. Protože není zadaný typ, funkci lze použít s žádným typem argumentu. Další informace najdete v tématu [Automatická generalizace](../generics/automatic-generalization.md).
+Funkce vytvoří řazenou kolekci členů z jednoho argumentu libovolného typu. Vzhledem k tomu, že není zadán typ, lze funkci použít s libovolným typem argumentu. Další informace najdete v tématu [Automatická generalizace](../generics/automatic-generalization.md).
 
 ## <a name="function-bodies"></a>Těla funkcí
 
-Tělo funkce může obsahovat definice lokální proměnné a funkce. Tyto proměnné a funkce jsou v rozsahu aktuální funkce, ale ne mimo tělo. Až budete mít povolenou možností nenáročném syntaxi, musíte použít odsazení označuje, že definice v těle funkce, jak je znázorněno v následujícím příkladu:
+Tělo funkce může obsahovat definice místních proměnných a funkcí. Tyto proměnné a funkce jsou v rozsahu v těle aktuální funkce, ale nejsou mimo ni. Pokud máte povolenou možnost odlehčené syntaxe, je nutné použít odsazení k označení, že definice je v těle funkce, jak je znázorněno v následujícím příkladu:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet103.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet103.fs)]
 
-Další informace najdete v tématu [pravidla formátování kódu](../code-formatting-guidelines.md) a [podrobná syntaxe](../verbose-syntax.md).
+Další informace najdete v tématu [pokyny pro formátování kódu](../code-formatting-guidelines.md) a podrobnou [syntaxi](../verbose-syntax.md).
 
 ## <a name="return-values"></a>Návratové hodnoty
 
-Kompilátor používá k určení návratovou hodnotu a typ výsledný výraz v těle funkce. Kompilátor může odvodit typ výrazu konečné z předchozích výrazů. Ve funkci `cylinderVolume`, jak je znázorněno v předchozí části, typ `pi` se určí na základě typu literál `3.14159` bude `float`. Kompilátor používá typ `pi` určit typ výrazu `h * pi * r * r` bude `float`. Proto celkové návratový typ funkce je `float`.
+Kompilátor používá konečný výraz v těle funkce k určení návratové hodnoty a typu. Kompilátor může odvodit typ finálního výrazu z předchozích výrazů. Ve funkci `cylinderVolume`, která `pi` je uvedena v předchozí části, je typ typu určen z typu literálu `3.14159` , který má být `float`. Kompilátor používá typ `pi` k určení typu výrazu `h * pi * r * r` , který má být `float`. Proto je `float`celkový návratový typ funkce.
 
-K určení návratovou hodnotu explicitně, napište kód následujícím způsobem:
+Chcete-li zadat návratovou hodnotu explicitně, napište kód následujícím způsobem:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet105.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet105.fs)]
 
-Kód je uvedená výše, použije kompilátor **float** na celou funkci; Pokud jste v úmyslu použít typům parametrů, použijte následující kód:
+Jak je kód uveden výše, kompilátor použije **float** na celou funkci; Pokud je to vhodné pro použití s typy parametrů, použijte následující kód:
 
 ```fsharp
 let cylinderVolume (radius : float) (length : float) : float
@@ -94,7 +94,7 @@ let cylinderVolume (radius : float) (length : float) : float
 
 ## <a name="calling-a-function"></a>Volání funkce
 
-Volání funkce tak, že zadáte název funkce, za nímž následuje mezera a potom všechny argumenty oddělené mezerami. Například volání funkce **cylinderVolume** a výsledek přiřaďte hodnotu **. denní obj.**, napište následující kód:
+Zavoláte funkce zadáním názvu funkce následovaného mezerou a následnými argumenty, které jsou oddělené mezerami. Například pro volání funkce **cylinderVolume** a přiřazení výsledku k hodnotě **Vol**, napíšete následující kód:
 
 ```fsharp
 let vol = cylinderVolume 2.0 3.0
@@ -102,65 +102,65 @@ let vol = cylinderVolume 2.0 3.0
 
 ## <a name="partial-application-of-arguments"></a>Částečné použití argumentů
 
-Pokud zadáte méně než zadaný počet argumentů, vytvoříte novou funkci, která očekává zbývajících argumentů. Tento způsob zpracování argumentů se označuje jako *curryfikace* a je znakem funkčních programovacích jazyků, jako je F#. Předpokládejme například, že pracujete s dvou velikostech kanálu: jeden má poloměr **2.0** a druhý má poloměr **3.0**. Můžete například vytvořit funkce, které určují objem kanálu následujícím způsobem:
+Pokud zadáte méně, než je zadaný počet argumentů, vytvoříte novou funkci, která očekává zbývající argumenty. Tato metoda zpracování argumentů je označována jako *procesu curryfikace* a je charakteristická charakteristika funkčních programovacích F#jazyků, jako je. Předpokládejme například, že pracujete se dvěma velikostmi kanálu: jeden má poloměr **2,0** a druhý má poloměr **3,0**. Mohli byste vytvořit funkce, které určí objem kanálu následujícím způsobem:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet106.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet106.fs)]
 
-Další argument by pak poskytnete podle potřeby pro různé délky kanálu pro dvě různé velikosti:
+Pak zadejte další argument potřebný pro různé délky kanálu dvou různých velikostí:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
 
 ## <a name="recursive-functions"></a>Rekurzivní funkce
 
-*Rekurzivní funkce* jsou funkce, které volání sebe sama. Vyžadují, abyste určili **rec** následující klíčové slovo **nechat** – klíčové slovo. Volání rekurzivní funkce v rámci těla funkce stejně, jako by volání jakékoli volání funkce. Následující rekurzivní funkce vypočítá *n*<sup>th</sup> Fibonacciho číslo. Pořadí Fibonacciho číslo bylo zjištěno od antiquity a je pořadí, ve kterém je každý po sobě jdoucí čísla součtu předchozích dvou čísel v sekvenci.
+*Rekurzivní funkce* jsou funkce, které volají samy sebe. Vyžadují, abyste zadali klíčové slovo **REC** za klíčovým slovem **let** . Vyvolejte rekurzivní funkci z těla funkce stejně, jako byste vyvolali jakékoli volání funkce. Následující rekurzivní funkce vypočítá *n*-<sup>tý</sup> Fibonacci číslo. Sekvenci Fibonacci Number bylo známo od poslední chvíle a je sekvence, ve které je každé z následných čísel součtem předchozích dvou čísel v sekvenci.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
-Některé rekurzivní funkce mohou přetečení zásobníku programu nebo provést neefektivně, pokud nenapíšete je s opatrností a s povědomí o speciální techniky, jako je například používání průběžné součty a pokračování.
+Některé rekurzivní funkce mohou přetečení zásobníku programu nebo provádět neefektivně, pokud je nezapisujete se péči a s vědomím speciálních technik, jako je například použití akumulátorů a pokračování.
 
 ## <a name="function-values"></a>Hodnoty funkcí
 
-V F#, všechny funkce jsou považovány za hodnot. ve skutečnosti jsou označovány jako *funkce hodnoty*. Protože funkce jsou hodnoty, se může sloužit jako argumenty dalších funkcí nebo v jiném kontextu použití hodnot. Tady je příklad, který přijímá hodnotu funkce jako argument funkce:
+V F#platí, že všechny funkce jsou považovány za hodnoty; ve skutečnosti jsou známé jako *hodnoty funkcí*. Vzhledem k tomu, že funkce jsou hodnoty, mohou být použity jako argumenty pro jiné funkce nebo v jiných kontextech, kde jsou použity hodnoty. Následuje příklad funkce, která přebírá hodnotu funkce jako argument:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet109.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet109.fs)]
 
-Určení typu hodnota funkce s použitím `->` token. Na levé straně tohoto tokenu je typ argumentu a na pravé straně je návratová hodnota. V předchozím příkladu `apply1` je funkce, která má funkci `transform` jako argument, ve kterém `transform` je funkce, která přebírá celé číslo a vrátí jinou celé číslo. Následující kód ukazuje, jak používat `apply1`:
+Zadejte typ hodnoty funkce pomocí `->` tokenu. Na levé straně tohoto tokenu je typ argumentu a na pravé straně je návratová hodnota. V předchozím příkladu `apply1` je funkce, která přebírá funkci `transform` jako argument, kde `transform` je funkce, která přebírá celé číslo a vrací jiné celé číslo. Následující kód ukazuje, jak použít `apply1`:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet110.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet110.fs)]
 
-Hodnota `result` bude 101 po spuštění předchozího kódu.
+Hodnota `result` bude 101 až po spuštění předchozího kódu.
 
-Více argumentů jsou odděleny po sobě jdoucích `->` tokeny, jak je znázorněno v následujícím příkladu:
+Více argumentů je odděleno pomocí následných `->` tokenů, jak je znázorněno v následujícím příkladu:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet111.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet111.fs)]
 
-Výsledkem je 200.
+Výsledek je 200.
 
 ## <a name="lambda-expressions"></a>Lambda – výrazy
 
-A *výraz lambda* je nepojmenovaný funkce. V předchozích příkladech místo definování pojmenované funkce **přírůstek** a **mul**, můžete použít výrazy lambda následujícím způsobem:
+*Výraz lambda* je nepojmenovaná funkce. V předchozích příkladech se místo definování pojmenovaných funkcí **zvýší** a **mul**můžete použít lambda výrazy následujícím způsobem:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-Můžete definovat pomocí výrazů lambda `fun` – klíčové slovo. Výraz lambda se podobá definici funkce, s výjimkou, že místo `=` token, `->` token se používá k oddělení seznamu argumentů z těla funkce. Stejně jako v definici normální funkce typy argumentů lze odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozen z typu posledního výrazu v textu. Další informace najdete v tématu [výrazy Lambda: `fun` – Klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md).
+Lambda výrazy definujete pomocí `fun` klíčového slova. Výraz lambda se podobá definici funkce, s tím rozdílem, že `=` místo tokenu `->` se token používá k oddělení seznamu argumentů od těla funkce. Stejně jako v definici regulární funkce lze typy argumentů odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozený od typu posledního výrazu v těle. Další informace naleznete v tématu [lambda Expressions: `fun` Klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md).
 
 ## <a name="function-composition-and-pipelining"></a>Skládání a paralelní zpracování funkcí
 
-Funkce v F# může skládat z dalších funkcí. Složení dvou funkcí **function1** a **function2** je další funkci, která představuje použití **function1** a potom aplikaci **function2**:
+Funkce v F# můžou být složené z jiných funkcí. Složení dvou funkcí **Function1** a **function2** je další funkce, která představuje aplikaci **Function1** , která následuje po použití **function2**:
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet113.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet113.fs)]
 
-Výsledkem je 202.
+Výsledek je 202.
 
-Paralelní zpracování volání funkce umožňuje být zřetězen dohromady jako následných operací. Paralelní zpracování funguje takto:
+Přesměrování umožňuje zřetězení volání funkcí jako po sobě jdoucích operací. Přesměrování funguje následujícím způsobem:
 
 ```fsharp
 let result = 100 |> function1 |> function2
 ```
 
-Výsledkem je znovu 202.
+Výsledek je znovu 202.
 
-Operátory složení dvou funkcí používají a vrací funkci. operátory kanálu oproti tomu funkce a argument a vrátí hodnotu. Následující příklad kódu ukazuje rozdíl mezi operátory kanálu a skládání tím, že zobrazuje rozdíly v podpisech funkcí a využití.
+Operátory kompozice přijímají dvě funkce a vracejí funkci. Naproti tomu operátory kanálu přebírají funkci a argument a vracejí hodnotu. Následující příklad kódu ukazuje rozdíl mezi operátory kanálu a sestavování zobrazením rozdílů v části signatury a využití funkce.
 
 ```fsharp
 // Function composition and pipeline operators compared.
@@ -200,7 +200,7 @@ let result4 = Pipeline2 2
 
 ## <a name="overloading-functions"></a>Přetížení funkcí
 
-Můžete použít přetížení metody typu, ale není funkce. Další informace najdete v tématu [metody](../members/methods.md).
+Můžete přetížit metody typu, ale ne funkce. Další informace naleznete v tématu [metody](../members/methods.md).
 
 ## <a name="see-also"></a>Viz také:
 

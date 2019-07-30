@@ -10,28 +10,28 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], types of errors
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
-ms.openlocfilehash: 07db963ac3cf9d1c0d17c420480189d362cdaf2c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 030986111a50ab59c605a1d683fedc118d10b260
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973170"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626609"
 ---
 # <a name="error-types-visual-basic"></a>Typy chyb (Visual Basic)
-V jazyce Visual Basic, chyby (také nazývané *výjimky*) spadají do jedné ze tří kategorií: chyby syntaxe, chyby za běhu a chyby logiky.  
-  
-## <a name="syntax-errors"></a>Chyby syntaxe  
- *Chyby syntaxe* jsou ty, které se zobrazí při psaní kódu. Visual Basic zkontroluje váš kód během psaní v **Editor kódu** okno a upozorní vás, pokud uděláte chybu, jako je například Chyba v pravopisu slova nebo nesprávně pomocí prvku jazyka. Chyby syntaxe jsou nejběžnějším typem chyby. Je lze opravit snadno v kódování prostředí Jakmile k nim dojde.  
-  
+V Visual Basic chyby spadají do jedné ze tří kategorií: syntaktické chyby, běhové chyby a logické chyby.
+
+## <a name="syntax-errors"></a>Chyby syntaxe
+ *Chyby syntaxe* jsou ty, které se zobrazí při psaní kódu. Pokud používáte aplikaci Visual Studio, Visual Basic zkontroluje kód při jeho psaní v okně **editoru kódu** a upozorní vás, pokud uděláte chybu, jako je například chybné zadání slova nebo použití nesprávně používaného prvku jazyka. Pokud kompilujete z příkazového řádku, Visual Basic zobrazí chybu kompilátoru s informacemi o chybě syntaxe. Nejběžnějším typem chyb jsou chyby syntaxe. Můžete je snadno opravit v prostředí kódování ihned po jejich výskytu.
+
 > [!NOTE]
->  `Option Explicit` Příkaz je jeden způsob jak se vyhnout chyby syntaxe. Vynutí předem deklarovat všechny proměnné, který se má použít v aplikaci. Proto při těchto proměnných se používá v kódu, jsou zachyceny okamžitě typografické chyby a lze napravit.  
+>  `Option Explicit` Příkaz je jedním ze způsobů, jak zabránit chybám syntaxe. Vynutí vám deklarovat předem všechny proměnné, které mají být použity v aplikaci. Proto pokud jsou tyto proměnné použity v kódu, jakékoli typografické chyby jsou okamžitě zachyceny a lze je opravit.
+
+## <a name="run-time-errors"></a>Běhové chyby
+ *Běhové chyby* jsou ty, které se zobrazí až po zkompilování a spuštění kódu. Ty zahrnují kód, který může být v tom, že neobsahuje žádné chyby syntaxe, ale který nebude proveden. Například můžete správně napsat řádek kódu pro otevření souboru. Pokud však soubor neexistuje, aplikace nemůže soubor otevřít a vyvolá výjimku. Většinu chyb za běhu můžete opravit přepsáním chybného kódu nebo pomocí [zpracování výjimek](../../language-reference/statements/try-catch-finally-statement.md)a pak ho znovu zkompilovat a znovu spustit.
   
-## <a name="run-time-errors"></a>Chyby za běhu  
- *Chyby za běhu* jsou ty, které se zobrazí pouze po kompilaci a spuštění kódu. To zahrnuje kód, který se zdá být správná, nemá žádné chyby syntaxe, ale nelze jej provést. Například můžete například napsat správně psát kód pro otevření souboru. Pokud soubor je poškozený, aplikace nelze provést, ale `Open` funkce a zastaví se. Většina chyb za běhu můžete vyřešit přepsání chybného kódu zkompilováním a spuštěním.  
-  
-## <a name="logic-errors"></a>Logické chyby  
- *Logické chyby* jsou ty, které se zobrazí, až se aplikace nepoužívá. Jsou to většina často nežádoucí nebo neočekávané výsledky v reakci na akce uživatele. Chybným zadáním klíče nebo jiných mimo vliv například může způsobit, že aplikace přestane fungovat během očekávané parametry, nebo úplně se vynechá. Logické chyby jsou obvykle nejtěžší typ k vyřešení, protože není vždy jasné kde pocházejí.  
-  
+## <a name="logic-errors"></a>Logické chyby
+ *Logické chyby* jsou ty, které se zobrazí, jakmile se aplikace používá. Jsou to nejčastěji vadné předpoklady, které vývojář udělal, nebo nechtěné nebo neočekávané výsledky v reakci na akce uživatele. Například nesprávně natypový klíč může poskytnout nesprávné informace metodě nebo můžete předpokládat, že platná hodnota je vždy dodána metodě, pokud to není případ. I když mohou být logické chyby zpracovávány pomocí [zpracování výjimek](../../language-reference/statements/try-catch-finally-statement.md) (například otestováním, zda je `Nothing` argument a vyvolání <xref:System.ArgumentNullException>), nejčastěji by měly být řešeny opravou chyby v logice a opětovnou kompilací použití.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

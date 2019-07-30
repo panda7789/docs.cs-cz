@@ -1,57 +1,57 @@
 ---
 title: Odvození typu
-description: Zjistěte, jak F# kompilátor odvodí typ hodnoty, proměnné, parametry a návratové hodnoty.
+description: Zjistěte, jak F# kompilátor odvodí typy hodnot, proměnných, parametrů a vrácených hodnot.
 ms.date: 05/16/2016
-ms.openlocfilehash: ab1a4aa8df4312287df749d5d6d0ea2858091152
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4b18c1a67a8b7ddadb4fb334ea4736e9fd29feb0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641676"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630180"
 ---
 # <a name="type-inference"></a>Odvození typu
 
-Toto téma popisuje, jak F# kompilátor odvodí typ hodnoty, proměnné, parametry a návratové hodnoty.
+Toto téma popisuje, jak F# kompilátor odvodí typy hodnot, proměnných, parametrů a vrácených hodnot.
 
-## <a name="type-inference-in-general"></a>Odvození typu, obecné
+## <a name="type-inference-in-general"></a>Odvození typu obecně
 
-Představu o odvození typu je, že není nutné určit typy F# konstruktory s výjimkou případů, kdy kompilátor nemůže odvodit jednoznačně typ. Vynechání explicitního typu informace neznamená F# je dynamicky zadávaných jazyk nebo hodnoty, které budou v F# jsou slabě typované. F#je staticky psaný jazyk, což znamená, že kompilátor odvodí přesný typ pro každou konstrukci během kompilace. Pokud není k dispozici dostatek informací pro kompilátor k odvození typů každý konstrukce, musíte zadat informace o dalších typu, obvykle tak, že přidáte anotace explicitního typu někde v kódu.
+Účelem odvození typu je, že nemusíte určovat typy F# konstrukcí s výjimkou případů, kdy kompilátor nemůže jednoznačně odvodit typ. Vynechání explicitních informací o typu neznamená F# , že je to dynamicky typový jazyk nebo že F# hodnoty v jsou slabě typované. F#je jazyk staticky typu, což znamená, že kompilátor při kompilaci odvodit přesný typ pro každý konstruktor. Není-li pro kompilátor k dispozici dostatek informací pro odvození typů každé konstrukce, je nutné zadat další informace o typu, obvykle přidáním explicitních anotací typu někam do kódu.
 
-## <a name="inference-of-parameter-and-return-types"></a>Odvozování parametrů a návratové typy
+## <a name="inference-of-parameter-and-return-types"></a>Odvození parametrů a návratových typů
 
-V seznamu parametrů není nutné zadat typ každého parametru. A ještě F# je staticky psaný jazyk a tedy každý hodnotu a výraz jednoznačného typu v době kompilace. Pro tyto typy, které explicitně nezadáte kompilátor odvodí typ na základě kontextu. Pokud typ není jinak zadán, je odvozen je obecný. Pokud tento kód použije hodnotu nekonzistentně, tak, že neexistuje žádné jeden odvodit typ, který splňuje všechna použití hodnoty, že kompilátor nahlásí chybu.
+V seznamu parametrů není nutné zadávat typ každého parametru. A dosud F# je jazyk staticky typu, a proto každá hodnota a výraz má v době kompilace určitý typ. Pro typy, které neurčíte explicitně, kompilátor odvodí typ na základě kontextu. Pokud není typ uveden jinak, je odvozena jako obecná. Pokud kód používá hodnotu nekonzistentní, takovým způsobem, že neexistuje žádný odvozený typ, který splňuje všechna použití hodnoty, kompilátor ohlásí chybu.
 
-Návratový typ funkce je určen podle typu posledního výrazu ve funkci.
+Návratový typ funkce je určen typem posledního výrazu ve funkci.
 
-Například v následujícím kódu, typy parametrů `a` a `b` a návratový typ je odvozen bude `int` protože literál `100` je typu `int`.
+Například v `a` následujícím kódu jsou typy parametrů a `b` a návratový typ odvoditelné `int` , protože literál `100` je typu `int`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet301.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet301.fs)]
 
-Odvození typu proměnné můžete ovlivnit tak, že změníte literály. Pokud provedete `100` `uint32` přidáním přípona `u`, typy `a`, `b`, a návratová hodnota jsou odvozena jako `uint32`.
+Odvození typu můžete ovlivnit změnou literálů. `u` `b` Pokudvytvoříte`a`připojením k příponě, jsou typy, a návratové hodnoty odvozeny `uint32`. `100` `uint32`
 
-Můžete také ovlivnit odvození typu pomocí jiných objektů, které znamenají omezení typu, například funkcí a metod, které pracují s pouze určitého typu.
+Odvození typu můžete také ovlivnit pomocí jiných konstrukcí, které zaznamenají omezení typu, jako jsou funkce a metody, které pracují pouze s konkrétním typem.
 
-Navíc můžete použít anotace explicitního typu funkce nebo metoda parametry a proměnné ve výrazech, jak je znázorněno v následujícím příkladu. Pokud dochází ke konfliktům mezi jiná omezení dojít k chybám.
+Můžete také použít explicitní anotace typu na parametry Function nebo Method nebo na proměnné ve výrazech, jak je znázorněno v následujících příkladech. Při výskytu konfliktů mezi různými omezeními dojde k chybám.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet302.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet302.fs)]
 
-Můžete také explicitně určit návratové hodnoty funkce tím, že poskytuje anotaci typu všechny parametry.
+Můžete také explicitně zadat návratovou hodnotu funkce poskytnutím anotace typu po všech parametrech.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet303.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet303.fs)]
 
-Běžný případ, kdy je užitečné u parametru anotaci typu je, když je parametr typu objektu a chcete, použijte člena.
+Běžný případ, kdy je anotace typu užitečná pro parametr, je, když je parametr typem objektu a chcete použít člena.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet304.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet304.fs)]
 
 ## <a name="automatic-generalization"></a>Automatická generalizace
 
-Pokud kód této funkce není závislá na typ parametru, kompilátor považuje za parametr je obecný. Tento postup se nazývá *Automatická generalizace*, a může být výkonná Podpora zápisu obecný kód bez zvýšení složitosti.
+Pokud kód funkce není závislý na typu parametru, kompilátor považuje parametr za obecný. To se nazývá *Automatická generalizace*a může to být účinná podpora pro psaní obecného kódu bez zvýšené složitosti.
 
-Například následující funkce kombinuje dva parametry typu do řazené kolekce členů.
+Například následující funkce kombinuje dva parametry libovolného typu do řazené kolekce členů.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet305.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet305.fs)]
 
-Typ je odvozen bude
+Typ je odvozený.
 
 ```fsharp
 'a -> 'b -> 'a * 'b
@@ -59,8 +59,8 @@ Typ je odvozen bude
 
 ## <a name="additional-information"></a>Další informace
 
-Odvození typu je popsána podrobněji F# specifikace jazyka.
+Odvození typu je podrobněji popsáno ve specifikaci F# jazyka.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Automatická generalizace](generics/automatic-generalization.md)
+- [Automatická generalizace](./generics/automatic-generalization.md)

@@ -13,41 +13,41 @@ helpviewer_keywords:
 - data types [Visual Basic], optimizing
 - ChrW function [Visual Basic], preferred to Chr
 ms.assetid: 28f5e4ba-ec24-4f37-b90a-e8ee822f778a
-ms.openlocfilehash: f85acfe7592d7b90423107e0d45bb007fce5f4a8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 68371a9f8d4dcc5d0a2b67955d5e88943a83b085
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601146"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68631104"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Účinné používání datových typů (Visual Basic)
-Jsou přiřazeny nedeklarované proměnné a proměnné deklarované bez datový typ `Object` datového typu. To usnadňuje psaní programů rychle, ale může to způsobit je ke spuštění pomaleji.  
-  
-## <a name="strong-typing"></a>Silné typování  
- Určení typů dat pro všechny proměnné se označuje jako *silné typování*. Pomocí silných typů má několik výhod:  
-  
-- Umožňuje podporu technologie IntelliSense pro proměnných. To umožňuje zobrazit jejich vlastnosti a ostatní členové při psaní v kódu.  
-  
-- Využívá kontrola typu v kompilátoru. To zachycuje příkazy, které může selhat v době běhu z důvodu chyby jako např. přetečení. Také zachytí volání metod na objekty, které je nepodporují.  
-  
-- To má za následek rychlejší provádění kódu.  
-  
-## <a name="most-efficient-data-types"></a>Nejúčinnější datové typy  
- Pro proměnné, které obsahují nikdy zlomky jsou účinnější než nonintegral typy celočíselnými datovými typy. V jazyce Visual Basic `Integer` a `UInteger` nejúčinnější číselné typy.  
-  
- Pro desetinná čísla `Double` je nejúčinnější datového typu, protože procesory na aktuální platformy provádět operace s plovoucí desetinnou čárkou v dvojité přesnosti. Nicméně operace s `Double` nejsou tak rychle, stejně jako u celočíselných typů, jako `Integer`.  
-  
-## <a name="specifying-data-type"></a>Určení datového typu  
- Použití [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) k deklaraci proměnné určitého typu. Najednou můžete zadat jeho úroveň přístupu s použitím [veřejné](../../../../visual-basic/language-reference/modifiers/public.md), [chráněné](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo, jako v Následující příklad.  
-  
-```  
-Private x As Double  
-Protected s As String  
-```  
-  
-## <a name="character-conversion"></a>Převod znaků  
- `AscW` a `ChrW` funkce pracují v kódování Unicode. Jejich preference pro použití `Asc` a `Chr`, které musí překládat do proměnné a z kódování Unicode.  
-  
+Nedeklarované proměnné a proměnné deklarované bez datového typu jsou přiřazeny k `Object` datovému typu. To usnadňuje psaní programů rychleji, ale může způsobit pomalejší spouštění.
+
+## <a name="strong-typing"></a>Silné zadání
+ Zadání datových typů pro všechny proměnné se označuje jako *silné zadání*. Použití silného psaní má několik výhod:
+
+- Umožňuje podporu technologie IntelliSense pro vaše proměnné. To umožňuje zobrazit jejich vlastnosti a další členy při psaní do kódu.
+
+- Využívá kontrolu typu kompilátoru. Tato zachycení příkazy, které mohou selhat v době běhu z důvodu chyb, jako je například přetečení. Také zachytí volání metod pro objekty, které je nepodporují.
+
+- Výsledkem je rychlejší provádění kódu.
+
+## <a name="most-efficient-data-types"></a>Nejúčinnější datové typy
+ Pro proměnné, které nikdy neobsahují zlomky, jsou integrální datové typy efektivnější než Neceločíselné typy. V Visual Basic `Integer` a `UInteger` jsou nejúčinnější číselné typy.
+
+ Pro zlomková čísla `Double` je nejúčinnější datový typ, protože procesory na současných platformách provádějí operace s plovoucí desetinnou čárkou s dvojitou přesností. Operace s `Double` ale nejsou stejně rychlé jako u integrálních typů `Integer`, jako je.
+
+## <a name="specifying-data-type"></a>Určení datového typu
+ Použijte [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) k deklaraci proměnné konkrétního typu. Úroveň přístupu můžete určit současně pomocí klíčového slova [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../../visual-basic/language-reference/modifiers/private.md) , jak je uvedeno v následujícím příkladu.
+
+```vb
+Private x As Double
+Protected s As String
+```
+
+## <a name="character-conversion"></a>Převod znaků
+ Funkce `AscW` a`ChrW` fungují v kódování Unicode. Měli byste je používat v předvolbách `Asc` a `Chr`, které se musí překládat do kódování Unicode a z něj.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Strings.Asc%2A>

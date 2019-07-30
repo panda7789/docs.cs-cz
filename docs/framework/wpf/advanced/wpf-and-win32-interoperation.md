@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-ms.openlocfilehash: a942d72f27d394d31a52fd02ecaa158add4d2e0f
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.openlocfilehash: 860e8f11859bfbd85d6a5f0e4420fda3047bb236
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484637"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629830"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
 Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] s kódem. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější použít některý z těchto kódů.  
@@ -33,9 +33,9 @@ Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](
   
  Jedna komplikace na úrovni projektu je taková, že nemůžete [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] kompilovat C++ soubory do projektu.  K dispozici je několik technik dělení projektu.  
   
-- Vytvořte C# knihovnu DLL, která obsahuje všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vaše stránky, jako zkompilované sestavení a potom uložte C++ spustitelný soubor, který [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] bude obsahovat odkaz.  
+- Vytvořte C# knihovnu DLL, která obsahuje všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vaše stránky, jako zkompilované sestavení a pak svůj C++ spustitelný soubor zahrne tuto knihovnu DLL jako referenci.  
   
-- Vytvořte C# spustitelný soubor [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro obsah a pak na něj odkaz C++ [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] , který obsahuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] obsah.  
+- Vytvořte C# spustitelný soubor pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah a pokažte na C++ něj knihovnu DLL, která obsahuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] obsah.  
   
 - Použijte <xref:System.Windows.Markup.XamlReader.Load%2A> k [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]načtení v době běhu, namísto kompilování. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]  
   
@@ -48,7 +48,7 @@ Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](
   
 <a name="hwnds"></a>   
 ## <a name="how-wpf-uses-hwnds"></a>Jak WPF používá HWND  
- Pro zajištění většiny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] "interoperability s funkcí HWND" potřebujete pochopit, jak [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá HWND. Pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] libovolný HWND nelze kombinovat vykreslování s [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslováním nebo [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]  /  [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] vykreslováním. To má řadu dopadů. Primárně, aby bylo možné tyto vykreslovací modely vzájemně kombinovat, musíte vytvořit řešení vzájemného provozu a použít určené segmenty vzájemného provozu pro každý model vykreslování, který se rozhodnete použít. Také chování vykreslování vytvoří omezení vzdušného prostoru pro to, co vaše řešení pro vzájemnou práci může dosáhnout. Koncept "vzdušného prostoru" je podrobněji vysvětlen v tématu [Přehled technologických oblastí](technology-regions-overview.md).  
+ Pro zajištění většiny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] "interoperability s funkcí HWND" potřebujete pochopit, jak [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá HWND. Pro libovolný HWND nelze [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kombinovat vykreslování s vykreslováním nebo [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]  /  [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] vykreslováním rozhraní DirectX. To má řadu dopadů. Primárně, aby bylo možné tyto vykreslovací modely vzájemně kombinovat, musíte vytvořit řešení vzájemného provozu a použít určené segmenty vzájemného provozu pro každý model vykreslování, který se rozhodnete použít. Také chování vykreslování vytvoří omezení vzdušného prostoru pro to, co vaše řešení pro vzájemnou práci může dosáhnout. Koncept "vzdušného prostoru" je podrobněji vysvětlen v tématu [Přehled technologických oblastí](technology-regions-overview.md).  
   
  Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy na obrazovce jsou nakonec zazálohovány HWND. Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytváření <xref:System.Windows.Window> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří nástroj NástrojHWND<xref:System.Windows.Interop.HwndSource> nejvyšší úrovně a použije objekt k vložení a jeho obsahu do HWND. <xref:System.Windows.Window> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  Zbytek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu ve sdílených složkách aplikace v jednotném HWND. Výjimkou jsou nabídky, rozevírací seznamy pole se seznamem a další automaticky otevíraná okna. Tyto prvky vytvoří vlastní okno nejvyšší úrovně, což je důvod, proč [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] by nabídka mohla jít po okraji HWND okna, který ho obsahuje. Když použijete <xref:System.Windows.Interop.HwndHost> k vložení HWND dovnitř [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] informuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] o tom, jak umístit nový podřízený HWND relativní k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> HWND.  
   

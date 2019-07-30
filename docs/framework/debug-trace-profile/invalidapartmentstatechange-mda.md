@@ -13,44 +13,44 @@ helpviewer_keywords:
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1d55329fd64176ad0a366c4b80453c2be34c166e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6a7be97ef3184c6836cd67e47b4e9383214f1b5f
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614345"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629407"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange – pomocník spravovaného ladění (MDA)
-`invalidApartmentStateChange` Pomocníka spravovaného ladění (MDS) je aktivován některý z dva problémy:  
+Pomocník `invalidApartmentStateChange` spravovaného ladění (MDS) se aktivuje jedním z těchto dvou problémů:  
   
-- Chcete-li změnit stavu apartment modelu COM, který již byl inicializován pomocí modelu COM do stavu různých apartment vlákna je proveden pokus o.  
+- Došlo k pokusu o změnu stavu objektu COM apartment vlákna, které již bylo inicializováno modelem COM, do jiného stavu objektu apartment.  
   
-- Neočekávaně se změní stav objektu apartment modelu COM vlákna.  
+- Stav objektu COM Apartment v vlákně se neočekávaně mění.  
   
 ## <a name="symptoms"></a>Příznaky  
   
-- Stav objektu apartment modelu COM vlákna je co nebyl požadován. To může způsobit proxy má být použit pro komponenty modelu COM, které mají jiný než aktuální model vlákna. Pak může dojít <xref:System.InvalidCastException> vyvolání při volání objektu COM prostřednictvím rozhraní, které nejsou nastaveny pro zařazování mezi objektu apartment.  
+- Stav objektu COM v vlákně vlákna není to, co bylo vyžádáno. To může způsobit, že se proxy budou používat pro komponenty modelu COM, které mají model podprocesů odlišný od aktuálního typu. To může způsobit <xref:System.InvalidCastException> , že bude vyvolána výjimka při volání objektu COM prostřednictvím rozhraní, která nejsou nastavena pro zařazování mezi platformami.  
   
-- Stav objektu apartment modelu COM vlákna je jiný, než se očekávalo. To může způsobit <xref:System.Runtime.InteropServices.COMException> s HRESULT RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při provádění volání na [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW). To může způsobit také některé komponenty modelu COM s jedním vláknem přístup více vláken ve stejnou dobu, což může vést k poškození nebo ztrátě dat k.  
+- Stav objektu COM apartment vlákna je jiný, než se očekávalo. To může způsobit neočekávanou hodnotu <xref:System.Runtime.InteropServices.COMException> RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při volání na obálku, která je volána za [běhu](../../../docs/standard/native-interop/runtime-callable-wrapper.md) (RCW). To může také způsobit, že některé komponenty modelu COM s jedním vláknem mají přístup více vlákny ve stejnou dobu, což může vést k poškození nebo ztrátě dat.  
   
-## <a name="cause"></a>Příčina  
+## <a name="cause"></a>příčina  
   
-- K jiným stavem objektu apartment modelu COM byl dřív inicializovaný vlákna. Všimněte si, že stav oddílu vlákna lze nastavit explicitně nebo implicitně. Explicitní operace zahrnují <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost a <xref:System.Threading.Thread.SetApartmentState%2A> a <xref:System.Threading.Thread.TrySetApartmentState%2A> metody. Vlákna vytvořeného <xref:System.Threading.Thread.Start%2A> metoda je implicitně nastavena na <xref:System.Threading.ApartmentState.MTA> Pokud <xref:System.Threading.Thread.SetApartmentState%2A> je volána před spuštěním podprocesu. Hlavního vlákna aplikace je také implicitně inicializován na <xref:System.Threading.ApartmentState.MTA> není-li <xref:System.STAThreadAttribute> je zadán atribut v hlavní metodě.  
+- Vlákno bylo dříve inicializováno do jiného stavu apartment modelu COM. Všimněte si, že stav objektu apartment vlákna lze nastavit buď explicitně, nebo implicitně. Mezi explicitní operace patří <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost <xref:System.Threading.Thread.SetApartmentState%2A> a metody a <xref:System.Threading.Thread.TrySetApartmentState%2A> . Vlákno vytvořené pomocí <xref:System.Threading.Thread.Start%2A> metody je implicitně nastaveno na hodnotu, <xref:System.Threading.ApartmentState.MTA> Pokud <xref:System.Threading.Thread.SetApartmentState%2A> není voláno před spuštěním vlákna. Hlavní vlákno aplikace je také implicitně inicializováno na hodnotu, <xref:System.Threading.ApartmentState.MTA> <xref:System.STAThreadAttribute> Pokud atribut není zadán v metodě Main.  
   
-- `CoUninitialize` – Metoda (nebo `CoInitializeEx` metoda) s jinou souběžnosti se nazývá modelu ve vlákně.  
+- `CoUninitialize` Metoda (`CoInitializeEx` nebo metoda) s jiným modelem souběžnosti je volána ve vlákně.  
   
 ## <a name="resolution"></a>Řešení  
- Před zahájením provádění se nastavit stav objektu apartment vlákna, nebo použít buď <xref:System.STAThreadAttribute> atribut nebo <xref:System.MTAThreadAttribute> atribut do metody main aplikace.  
+ Nastavte stav objektu apartment vlákna předtím, než se spustí jeho spuštění, nebo použijte <xref:System.STAThreadAttribute> atribut <xref:System.MTAThreadAttribute> nebo atribut na metodu Main aplikace.  
   
- Pro druhý příčinu v ideálním případě by kód, který volá `CoUninitialize` metoda by měla upravit tak, aby zpoždění volání, dokud vlákno se chystá ukončit a neexistují žádné RCW a jejich základní komponenty modelu COM stále používá v vlákna. Ale pokud to není možné upravovat kód, který volá `CoUninitialize` metoda pak žádné RCW by měla sloužit z vláken, které jsou neinicializované tímto způsobem.  
+ V případě druhé příčiny by v ideálním případě by měl být kód `CoUninitialize` , který volá metodu, upraven tak, aby zpozdil volání, dokud vlákno nekončí a neexistují žádné RCW a jejich podkladové komponenty COM jsou stále používány vláknem. Nicméně pokud není možné upravit kód, který volá `CoUninitialize` metodu, pak by neměl být použit žádný RCW z vláken, která jsou tímto způsobem neinicializována.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Stavu apartment modelu COM aktuálního vlákna a stav, který byl pokus o přidání kódu.  
+ Stav objektu COM Apartment aktuálního vlákna a stav, který byl proveden pokus o použití kódu.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -61,7 +61,7 @@ ms.locfileid: "64614345"
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje situaci, která může aktivovat toto MDA.  
+ Následující příklad kódu ukazuje situaci, která může aktivovat Tento MDA.  
   
 ```csharp
 using System.Threading;  

@@ -8,130 +8,130 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: 77694b2a86c91f3e6946ecd50f4765404750f37b
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: b5bedae16a6c53aebf4d577b8cd812da992106f2
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664156"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629893"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
-Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zařízení, na kterém běží [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
 
 <a name="graphics_hardware"></a>   
-## <a name="graphics-hardware"></a>Grafický Hardware  
- Funkce, že mají největší dopad na úrovně vrstvy vykreslování grafiky hardware patří:  
+## <a name="graphics-hardware"></a>Grafický hardware  
+ Funkce grafického hardwaru, které mají největší vliv na úrovně vrstev vykreslování:  
   
-- **Video RAM** množství grafické paměti na hardwarovou akceleraci Určuje velikost a počet vyrovnávacích pamětí, které lze použít pro skládání grafiky.  
+- **Video RAM** Množství videopaměti v grafickém hardwaru určuje velikost a počet vyrovnávacích pamětí, které lze použít k skládání grafiky.  
   
-- **Pixel Shader** pixel shader je grafických funkce, která vypočítá účinky na základě jednotlivých pixelů. V závislosti na řešení zobrazených grafiky může být několik milionů pixelů, které potřebují ke zpracování pro každý snímek pro zobrazení.  
+- **Pixel shader** Pixel shader je funkce pro zpracování grafiky, která počítá efekty na základě jednotlivých pixelů. V závislosti na rozlišení zobrazené grafiky může být pro každý zobrazovací rámeček zpracováno několik milionů pixelů, které je třeba zpracovat.  
   
-- **Vertex Shader** vertex shader je grafických funkce, která provádí matematických operací s daty vrcholu objektu.  
+- **Vertex shader** Vertex shader je funkce pro zpracování grafiky, která provádí matematické operace s daty vrcholu objektu.  
   
-- **Podpora násobnou** násobnou podporu odkazuje na možnost použít dva nebo více jedinečných textury během prolnutí operace u objektu 3D grafiky. Stupeň multitexture podpory se určuje podle počtu jednotek multitexture na hardwarovou akceleraci.  
+- **Podpora více textur** Podpora více textur odkazuje na možnost použití dvou nebo více různých textur během operace prolnutí u objektu 3D grafiky. Úroveň podpory více textur je určena počtem jednotek s více texturami v grafickém hardwaru.  
   
 <a name="rendering_tier_definitions"></a>   
-## <a name="rendering-tier-definitions"></a>Definice úrovní vykreslování  
- Funkce hardwarovou akceleraci definují možností vykreslování objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Systém definuje tři vrstvy vykreslování:  
+## <a name="rendering-tier-definitions"></a>Definice vrstev vykreslování  
+ Funkce grafického hardwaru určují schopnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování aplikace. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Systém definuje tři úrovně vykreslování:  
   
-- **Vykreslování vrstvy 0** žádné hardwarovou akceleraci grafiky. Všechny funkce grafiky použít softwarové akcelerace. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je starší než verze 9.0.  
+- **Vrstva vykreslování 0** Žádná hardwarová akcelerace grafiky Všechny grafické funkce používají akceleraci softwaru. Úroveň verze DirectX je nižší než verze 9,0.  
   
-- **Vykreslování vrstvy 1** některé grafické funkce využívají hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
+- **Vrstva vykreslování 1** Některé grafické funkce využívají hardwarovou akceleraci grafiky. Úroveň verze DirectX je větší nebo rovna verzi 9,0.  
   
-- **Vykreslování vrstva 2** většinu funkcí grafiky použít hardwarovou akceleraci grafiky. [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Úrovni verze je větší než nebo rovna verzi 9.0.  
+- **Vrstva vykreslování 2** Většina grafických funkcí používá hardwarovou akceleraci grafiky. Úroveň verze DirectX je větší nebo rovna verzi 9,0.  
   
- <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType> Vlastnost umožňuje načíst úroveň vykreslování v době spuštění aplikace. Používáte k určení, jestli zařízení podporuje některé funkce grafiky hardwarově urychlené vykreslování úroveň. Vaše aplikace potom může provést různý kód cesty v době běhu v závislosti na úrovni vykreslování zařízení podporuje.  
+ <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType> Vlastnost umožňuje načíst úroveň vykreslování při běhu aplikace. Pomocí vrstvy vykreslování zjistíte, jestli zařízení podporuje určité grafické funkce akcelerované hardwarem. Aplikace pak může v době běhu v závislosti na vrstvě vykreslování, kterou zařízení podporuje, použít různé cesty kódu.  
   
-### <a name="rendering-tier-0"></a>Vykreslování vrstvy 0  
- Vrstvy vykreslování hodnota 0 znamená, že neexistuje žádná grafiky hardwarová akcelerace, které jsou k dispozici pro aplikaci na zařízení. Na této úrovni úroveň by měl předpokládat, že všechny grafiky bude vykreslen softwarem s žádné hardwarovou akceleraci. Tato úroveň funkce odpovídá [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] verzi, která je menší než 9.0.  
+### <a name="rendering-tier-0"></a>Vrstva vykreslování 0  
+ Hodnota vrstvy vykreslování 0 znamená, že pro aplikaci na zařízení není k dispozici hardwarová akcelerace grafiky. Na této úrovni vrstvy byste měli předpokládat, že všechny grafiky budou vykresleny softwarem bez hardwarové akcelerace. Funkce této vrstvy odpovídají verzi rozhraní DirectX, která je menší než 9,0.  
   
-### <a name="rendering-tier-1-and-rendering-tier-2"></a>Vykreslení vrstvy 1 a vykreslování vrstvy 2  
+### <a name="rendering-tier-1-and-rendering-tier-2"></a>Vrstva vykreslování 1 a vrstva vykreslování 2  
   
 > [!NOTE]
->  Spuštění v rozhraní .NET Framework 4, vykreslování vrstvy 1 podřízených zahrnout grafiky hardware, který podporuje pouze [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 9.0 či vyšší. Grafický hardware, který podporuje [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 nebo 8 je teď definovaný jako vykreslování vrstvy 0.  
+>  Počínaje .NET Framework 4 byla vrstva vykreslování 1 Předefinovaná tak, aby obsahovala pouze grafický hardware, který podporuje rozhraní DirectX 9,0 nebo vyšší. Grafický hardware, který podporuje rozhraní DirectX 7 nebo 8, je nyní definován jako vrstva vykreslování 0.  
   
- Hodnota vykreslování vrstvy 1 nebo 2 znamená, že většina funkcí grafiky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použije hardwarovou akceleraci v případě potřeby systémové prostředky jsou k dispozici a nebyly byl vyčerpán. To odpovídá [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] verzi, která je větší než nebo rovna hodnotě 9.0.  
+ Hodnota vrstvy vykreslování 1 nebo 2 znamená, že většina grafických funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] bude používat hardwarovou akceleraci, pokud jsou k dispozici potřebné systémové prostředky a nebyly vyčerpány. To odpovídá verzi rozhraní DirectX, která je větší nebo rovna 9,0.  
   
- V následující tabulce jsou uvedeny rozdíly v grafickém požadavky na hardware pro vykreslování vrstvy 1 a vykreslování vrstvy 2:  
+ V následující tabulce jsou uvedeny rozdíly v požadavcích na hardware grafiky pro vrstvu vykreslování 1 a vrstvu vykreslování 2:  
   
 |Funkce|Úroveň 1|Úroveň 2|  
 |-------------|------------|------------|  
-|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Verze|Musí být větší než nebo rovna hodnotě 9.0.|Musí být větší než nebo rovna hodnotě 9.0.|  
-|Video paměti RAM|Musí být větší než nebo rovno 60MB.|Musí být větší než nebo roven 120MB.|  
-|Pixel shader|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|  
-|Vertex shaderu|Žádný požadavek.|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|  
-|Multitexture jednotky|Žádný požadavek.|Počet jednotek musí být větší než nebo rovna 4.|  
+|Verze DirectX|Musí být větší než nebo rovno 9,0.|Musí být větší než nebo rovno 9,0.|  
+|Video RAM|Musí být větší než nebo rovno 60MB.|Musí být větší než nebo rovno 120MB.|  
+|Pixel shader|Úroveň verze musí být větší než nebo rovna 2,0.|Úroveň verze musí být větší než nebo rovna 2,0.|  
+|Vertex shader|Žádný požadavek.|Úroveň verze musí být větší než nebo rovna 2,0.|  
+|Jednotky s více texturami|Žádný požadavek.|Počet jednotek musí být větší nebo roven 4.|  
   
- Následující funkce a možnosti jsou hardware accelerated pro vykreslování vrstvy 1 a vykreslování vrstvy 2:  
-  
-|Funkce|Poznámky|  
-|-------------|-----------|  
-|2D vykreslování|Většina 2D vykreslování je podporováno.|  
-|3D rastrování|Většina 3D rasterizační je podporována.|  
-|3D anizotropní filtrování|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pokusí se použít anisotropního filtrování při vykreslování 3D obsahu. Anizotropní filtrování odkazuje na zlepšení kvality obrázku textur na površích, které jsou daleko a příkře lomených s ohledem na fotoaparátu/kamery.|  
-|3D mapování MIP|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pokusí se použít mapování MIP při 3D vykreslování obsahu. Mapování MIP zdokonaluje kvalitu vykreslování textury, když textury zabírá menší pole zobrazení v <xref:System.Windows.Controls.Viewport3D>.|  
-|Radiálními přechody|I když se podporuje, nepoužívejte <xref:System.Windows.Media.RadialGradientBrush> na velké objekty.|  
-|3D osvětlení výpočty|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádí osvětlení na vrchol, což znamená, že každý vrchol pro každý materiál použitý pro sítě je nutné vypočítat intenzita světla.|  
-|Vykreslování textu|Dílčí pixel písma vykreslování používá k dispozici pixel shaderů na hardwarovou akceleraci.|  
-  
- Následující funkce a možnosti jsou hardware accelerated pouze pro vykreslování vrstvy 2:  
+ Následující funkce a možnosti jsou hardwarově urychlené pro vykreslování vrstvy 1 a vrstvu vykreslování 2:  
   
 |Funkce|Poznámky|  
 |-------------|-----------|  
-|3D vyhlazení|3D vyhlazení je podporována pouze v operačních systémech, které podporují Windows zobrazení ovladač WDDM (Model), jako je například [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] a [!INCLUDE[win7](../../../../includes/win7-md.md)].|  
+|2D vykreslování|Je podporováno nejvíce 2D vykreslování.|  
+|3D rastrování|Je podporována většina 3D rastrování.|  
+|filtrování 3D anisotropního|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pokusí se použít filtrování anisotropního při vykreslování 3D obsahu. Filtrování anisotropního odkazuje na vylepšení kvality obrazu na površích, které jsou daleko od začátku do steeply, s ohledem na kameru.|  
+|mapování 3D MIP|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Při vykreslování 3D obsahu se pokusí použít mapování MIP. Mapování MIP vylepšuje kvalitu vykreslování textury, když textura zabírá menší pole zobrazení v <xref:System.Windows.Controls.Viewport3D>.|  
+|Paprskové přechody|I když se podporuje, vyhněte <xref:System.Windows.Media.RadialGradientBrush> se použití na velkých objektech.|  
+|výpočty prostorového osvětlení|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]provádí osvětlení po vrcholu, což znamená, že se u každého vrcholu pro každý materiál aplikovaný na síť musí vypočítat intenzita světla.|  
+|Vykreslování textu|Vykreslování písma v pixelech používá k grafickému hardwaru dostupné pixel shadery.|  
   
- Následující funkce a možnosti jsou **není** hardware accelerated:  
+ Následující funkce a možnosti jsou hardwarově urychlené jenom pro vykreslování úrovně 2:  
   
 |Funkce|Poznámky|  
 |-------------|-----------|  
-|Tisk obsahu|Veškerý obsah tištěné je vykreslen pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] softwaru kanálu.|  
-|Rastrový obsah, který používá <xref:System.Windows.Media.Imaging.RenderTargetBitmap>|Žádný obsah vykreslovány <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> metoda <xref:System.Windows.Media.Imaging.RenderTargetBitmap>.|  
-|Vedle sebe obsah, který používá <xref:System.Windows.Media.TileBrush>|Žádný obsah, ve kterém vedle sebe <xref:System.Windows.Media.TileBrush.TileMode%2A> vlastnost <xref:System.Windows.Media.TileBrush> je nastavena na <xref:System.Windows.Media.TileMode.Tile>.|  
-|Zařízení Surface, které překračují maximální velikost textury hardwarovou akceleraci|Pro většinu hardwarovou akceleraci jsou velké povrchy velikost 2048 x 2048 nebo 4096 × 4096 pixelů.|  
-|Všechny operace, jejichž video RAM požadavek překračuje paměť hardwarovou akceleraci|Využití paměti RAM video aplikace můžete monitorovat pomocí nástroje Perforator nástroj, který je součástí [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) v sadě Windows SDK.|  
-|Vrstvené windows|Povolit vrstvami windows [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací k vykreslení obsahu na obrazovku neobdélníkových oken. V operačních systémech, které podporují Windows zobrazení ovladač WDDM (Model), jako je například [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] a [!INCLUDE[win7](../../../../includes/win7-md.md)]rozvrstvenou windows jsou hardware accelerated. V ostatních systémech jako například [!INCLUDE[winxp](../../../../includes/winxp-md.md)]rozvrstvenou windows jsou vykreslovány software s žádné hardwarovou akceleraci.<br /><br /> Můžete povolit vrstvy systému windows v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tak, že nastavíte následující <xref:System.Windows.Window> vlastnosti:<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|vyhlazení 3D|vytváření koncových aliasů pro 3D se podporuje jenom v operačních systémech, které podporují WDDM (Windows Display Driver Model) [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] , [!INCLUDE[win7](../../../../includes/win7-md.md)]jako je a.|  
+  
+ Následující funkce a možnosti **nejsou hardwarově** urychleny:  
+  
+|Funkce|Poznámky|  
+|-------------|-----------|  
+|Vytištěný obsah|Veškerý tištěný obsah se vykreslí pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] softwarového kanálu.|  
+|Rastrový obsah, který používá<xref:System.Windows.Media.Imaging.RenderTargetBitmap>|Veškerý obsah vykreslený pomocí <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> <xref:System.Windows.Media.Imaging.RenderTargetBitmap>metody.|  
+|Obsah v dlaždicích, který používá<xref:System.Windows.Media.TileBrush>|Veškerý obsah v dlaždicích, <xref:System.Windows.Media.TileBrush.TileMode%2A> ve kterém <xref:System.Windows.Media.TileBrush> je vlastnost nastavena na <xref:System.Windows.Media.TileMode.Tile>hodnotu.|  
+|Plochy, které překračují maximální velikost textury grafického hardwaru|Pro většinu grafických hardwarových zařízení jsou velikosti velkých povrchů 2048x2048 nebo 4096x4096 pixelů.|  
+|Jakákoli operace, jejíž požadavek na video RAM překračuje paměť hardwaru grafiky|Pomocí nástroje pro perforaci, který je součástí [sady Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) v Windows SDK, můžete monitorovat využití paměti aplikace video.|  
+|Vrstvená okna|Vrstvená okna umožňují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacím vykreslovat obsah na obrazovku v neobdélníkovém okně. V operačních systémech, které podporují Windows Display Driver Model (WDDM), [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] jako jsou a [!INCLUDE[win7](../../../../includes/win7-md.md)], vrstvená okna jsou hardwarově urychlená. V jiných systémech, [!INCLUDE[winxp](../../../../includes/winxp-md.md)]jako je například, jsou vrstvená okna vykreslována softwarem bez hardwarové akcelerace.<br /><br /> Můžete povolit vrstvená okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nástroji nastavením následujících <xref:System.Windows.Window> vlastností:<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
 ## <a name="other-resources"></a>Další zdroje  
- Následující prostředky vám může pomoct analyzovat charakteristiky výkonu vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+ Následující prostředky vám pomohou analyzovat charakteristiky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkonu aplikace.  
   
 ### <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování:  
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|**Zakázat možnost hardwarové akcelerace**|Určuje, zda by měla být povolená hardwarová akcelerace.|  
-|**Maximální hodnota Multisample**|Určuje úroveň multisampling vyhlazení 3D obsahu.|  
-|**Vyžaduje ovladačem grafické karty data nastavení**|Určuje, zda systém zakáže hardwarovou akceleraci ovladače vydané před listopadem 2004.|  
-|**Pomocí možnosti odkaz rasterizéru**|Určuje, zda [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používejte rasterizéru referenčního.|  
+|**Zakázat možnost hardwarové akcelerace**|Určuje, jestli má být povolená hardwarová akcelerace.|  
+|**Maximální hodnota pro více vzorků**|Určuje stupeň vícenásobného vzorkování pro antialiasing 3D obsah.|  
+|**Požadované nastavení data ovladače videa**|Určuje, jestli systém zakáže hardwarovou akceleraci pro ovladače vydané před listopadu 2004.|  
+|**Použít možnost rastrového odkazu**|Určuje, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jestli se má použít rastrový rastrový odkaz.|  
   
- Tato nastavení je možný přes všechny externí konfigurační nástroj, který se ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru. Tato nastavení také můžou vytvořit nebo upravit přístup k hodnoty přímo s použitím [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru. Další informace najdete v tématu [nastavení registru pro vykreslení grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
+ K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na nastavení registru. Tato nastavení lze také vytvořit nebo upravit přístupem k hodnotám přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] editoru registru. Další informace najdete v tématu [nastavení registru pro vykreslování grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
   
 ### <a name="wpf-performance-profiling-tools"></a>Nástroje pro profilaci výkonu WPF  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje sadu nástrojů, které vám umožní analyzovat chování za běhu aplikace a určete typy optimalizace výkonu, které můžete použít profilování výkonu. V následující tabulce jsou uvedeny výkonu profilování nástroje, které jsou součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] nástrojů WPF – výkonnostní sada:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu nástrojů pro profilaci výkonu, které umožňují analyzovat chování aplikace za běhu a určují typy optimalizací výkonu, které můžete použít. V následující tabulce jsou uvedeny nástroje pro profilaci výkonu, které jsou součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] nástroje, sady Performance Suite WPF:  
   
 |Nástroj|Popis|  
 |----------|-----------------|  
 |Perforator|Slouží k analýze chování vykreslování.|  
-|Visual Profiler|Použijte pro profilaci použití [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] služby, jako je rozložení a elementy ve vizuálním stromu zpracování událostí.|  
+|Visual Profiler|Slouží k profilaci použití [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] služeb, jako je například rozložení a zpracování událostí, podle prvků ve vizuálním stromu.|  
   
- WPF – výkonnostní sada poskytuje bohaté a grafické zobrazení dat výkonu. Další informace o výkonu WPF – nástroje najdete v tématu [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)).  
+ Sada Performance Suite WPF poskytuje bohatou a grafickou zobrazení dat výkonu. Další informace o nástrojích výkonu WPF naleznete v tématu [sada Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)).  
   
-### <a name="directx-diagnostic-tool"></a>Nástroje pro diagnostiku DirectX  
- [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Diagnostický nástroj, Dxdiag.exe, je účelem je pomoci při řešení problémů [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]– související problémy. Výchozí instalační složku pro [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] je nástroj pro diagnostiku:  
+### <a name="directx-diagnostic-tool"></a>Nástroj pro diagnostiku rozhraní DirectX  
+ Nástroj Dxdiag. exe pro diagnostiku rozhraní DirectX je navržený tak, aby pomohl řešit problémy související s rozhraním DirectX. Výchozí instalační složka nástroje pro diagnostiku rozhraní DirectX:  
   
  `~\Windows\System32`  
   
- Při spuštění [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] diagnostický nástroj, hlavní okno obsahuje sadu karet, které vám umožní zobrazit a diagnostikovat [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]-související informace. Například **systému** karta poskytuje systémové informace o počítači a určuje verzi modulu [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] , která je nainstalovaná ve vašem počítači.  
+ Když spustíte nástroj pro diagnostiku rozhraní DirectX, hlavní okno obsahuje sadu karet, které vám umožní zobrazit a diagnostikovat informace týkající se rozhraní DirectX. Například karta **systém** poskytuje systémové informace o počítači a určuje verzi rozhraní DirectX, která je nainstalována v počítači.  
   
- ![Screenhot: Nástroje pro diagnostiku DirectX](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
-Hlavní okno diagnostické nástroje DirectX  
+ ![Screenhot: Nástroj]pro diagnostiku rozhraní DirectX(./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
+Hlavní okno nástroje pro diagnostiku rozhraní DirectX  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Media.RenderCapability>
 - <xref:System.Windows.Media.RenderOptions>
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
-- [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))
+- [Sada Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))
 - [Nastavení registru pro vykreslení grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md)
 - [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)

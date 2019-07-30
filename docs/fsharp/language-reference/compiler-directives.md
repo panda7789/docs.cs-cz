@@ -1,52 +1,52 @@
 ---
 title: Direktivy kompilátoru
-description: Další informace o F# direktivy preprocesoru jazyka, direktivy podmíněné kompilace, direktivy line a direktivy kompilátoru.
+description: Přečtěte F# si o direktivách preprocesoru jazyka, direktivách podmíněné kompilace, direktivách řádků a direktivách kompilátoru.
 ms.date: 12/10/2018
-ms.openlocfilehash: 2b62fb930a3b0c55103d6b0edbe20ae056ba86bd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 16db2efb2fee2c2c5e94aa98eb0a13183a4e0e0b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645500"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630412"
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
-Toto téma popisuje procesor směrnic a direktivy kompilátoru.
+Toto téma popisuje direktivy procesoru a direktivy kompilátoru.
 
 ## <a name="preprocessor-directives"></a>Preprocesor – direktivy
 
-Direktivy preprocesoru je symbolů # předponu a zobrazí se v řádku samostatně. Je interpretován pomocí preprocesoru, který se spouští před kompilátor sám.
+Direktiva preprocesoru je předponou # a na řádku se zobrazuje samostatně. Je interpretována preprocesorem, který se spouští před samotným kompilátorem.
 
-Následující tabulka uvádí direktivy preprocesoru, které jsou k dispozici v F#.
+V následující tabulce jsou uvedeny direktivy preprocesoru, které jsou k F#dispozici v.
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#if` *symbol*|Podporuje podmíněné kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována. Můžete také bude negovat symbol s `!`.|
-|`#else`|Podporuje podmíněné kompilace. Označí části kódu, které chcete zahrnout, pokud symbol použili s předchozí `#if` není definován.|
-|`#endif`|Podporuje podmíněné kompilace. Označuje konec podmíněné části kódu.|
-|`#`[řádku] *int*,<br/>`#`[řádku] *int* *řetězec*,<br/>`#`[řádku] *int* *doslovný řetězec*|Určuje původní zdrojový kód řádku a název souboru, pro ladění. Tato funkce je k dispozici pro nástroje, které generují F# zdrojový kód.|
-|`#nowarn` *warningcode*|Zakáže upozornění kompilátoru nebo upozornění. Zakázat upozornění, vyhledejte příslušného čísla z výstupu kompilátoru a uzavřete do uvozovek. Vynechte předpony "FS". Zakázat více čísel upozornění na stejném řádku, zahrnout každého čísla v uvozovkách a oddělte každý řetězec oddělte mezerou. Příklad:
+|`#if` *symbol*|Podporuje podmíněnou kompilaci. Kód v sekci po `#if` je zahrnut, pokud je *symbol* definován. Symbol může být také negace s `!`.|
+|`#else`|Podporuje podmíněnou kompilaci. Označí oddíl kódu, který se má zahrnout, pokud není definovaný symbol použitý `#if` s předchozí.|
+|`#endif`|Podporuje podmíněnou kompilaci. Označuje konec podmíněné části kódu.|
+|`#`Link *int*,<br/>`#`Link *int* *řetězec*,<br/>`#`Link *int* *doslovné znění – řetězec*|Označuje původní řádek zdrojového kódu a název souboru pro ladění. Tato funkce je k dispozici pro nástroje F# , které generují zdrojový kód.|
+|`#nowarn`*warningcode*|Zakáže upozornění kompilátoru nebo upozornění. Chcete-li zakázat upozornění, vyhledejte jeho číslo z výstupu kompilátoru a vložte ho do uvozovek. Vynechejte předponu FS. Chcete-li zakázat více čísel upozornění na jednom řádku, zahrňte každé číslo do uvozovek a jednotlivé řetězce oddělte mezerou. Příklad:
 
 `#nowarn "9" "40"`
 
-Výsledek vypnutí upozornění se vztahuje na celý soubor, včetně části souboru, které předcházet direktiva. |
+Účinek vypnutí upozornění se vztahuje na celý soubor, včetně částí souboru, které předcházejí této direktivě. |
 
 ## <a name="conditional-compilation-directives"></a>Direktivy podmíněné kompilace
 
-Kód, který je deaktivováno pomocí jedné z těchto směrnic zobrazeno šedě v editoru kódu sady Visual Studio.
+Kód, který je dezaktivován jednou z těchto direktiv, se v editoru Visual Studio Code jeví šedě.
 
 > [!NOTE]
-> Chování direktivy podmíněné kompilace není stejný jako v jiných jazycích. Například nelze použít logické výrazy zahrnující symbolů, a `true` a `false` nemají zvláštní význam. Symboly, které můžete použít `if` – direktiva musí být definován pomocí příkazového řádku nebo v nastavení projektu, neexistuje žádný `define` direktiva preprocesoru.
+> Chování direktiv podmíněné kompilace není stejné jako v jiných jazycích. Například nemůžete použít logické výrazy, `true` `false` které obsahují symboly a nemají žádný zvláštní význam. Symboly, které použijete v `if` direktivě, musí být definovány pomocí příkazového řádku nebo v nastavení projektu. neexistuje žádná `define` direktiva preprocesoru.
 
-Následující kód ukazuje použití `#if`, `#else`, a `#endif` direktivy. V tomto příkladu kód obsahuje dvě verze definice `function1`. Při `VERSION1` se definuje pomocí [-define – možnost kompilátoru](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04), kód mezi `#if` – direktiva a `#else` – direktiva je aktivován. V opačném případě kód mezi `#else` a `#endif` aktivován.
+Následující kód ilustruje použití `#if` `#endif` direktiv, `#else`a. V tomto příkladu kód obsahuje dvě verze definice `function1`. Při `VERSION1` definování pomocí [Možnosti kompilátoru-define](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04)je kód mezi `#if` direktivou a `#else` direktivou aktivovaný. V opačném případě je `#else` kód `#endif` mezi a aktivovaný.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
 
-Neexistuje žádná `#define` direktivy preprocesoru v F#. Nastavení kompilátoru možnost nebo projektu musíte použít k definování symboly používají `#if` směrnice.
+V F#neexistuje žádná `#define` direktiva preprocesoru. Chcete-li definovat symboly používané `#if` direktivou, je nutné použít možnost kompilátoru nebo nastavení projektu.
 
-Mohou být vnořené direktivy podmíněné kompilace. Odsazení není významné pro preprocesor – direktivy.
+Direktivy podmíněné kompilace můžou být vnořené. Odsazení není pro direktivy preprocesoru významné.
 
-Můžete také negate – symbol s `!`. V tomto příkladu je řetězcovou hodnotu něco jenom v případě _není_ ladění:
+Můžete také negaci symbolu pomocí `!`. V tomto příkladu je hodnota řetězce něco _pouze při ladění_ :
 
 ```fsharp
 #if !DEBUG
@@ -56,27 +56,27 @@ let str = "Debugging!"
 #endif
 ```
 
-## <a name="line-directives"></a>Direktivy Line
+## <a name="line-directives"></a>Line – direktivy
 
-Při sestavování, kompilátor oznámí chyby v F# čísla kód pomocí odkazu na řádku, na které dojde k každé chybě. Tato čísla řádku začínají znakem 1 pro první řádek v souboru. Nicméně pokud generujete F# zdrojový kód z jiného nástroje, čísla řádků ve vygenerovaném kódu nejsou obecně zájmu, protože chyby v generované F# kódu pravděpodobně vznikají z jiného zdroje. `#line` Směrnice poskytuje způsob pro autory nástroje, které generují F# zdrojový kód k předávání informací o původní řádek čísla a zdrojové soubory do vytvořeného F# kódu.
+Při sestavování ohlásí kompilátor chyby v F# kódu odkazem na čísla řádků, u kterých dojde k chybě. Tato čísla řádků začínají 1 pro první řádek v souboru. Nicméně pokud generujete F# zdrojový kód z jiného nástroje, čísla řádků ve vygenerovaném kódu jsou obecně nezajímavá, protože chyby v generovaném F# kódu budou pravděpodobně způsobeny jiným zdrojem. Tato `#line` direktiva poskytuje autorům nástrojů, které generují F# zdrojový kód k předávání informací o původních číslech řádků a zdrojových souborech do generovaného F# kódu.
 
-Při použití `#line` direktiv, názvy souborů musí být uzavřen v uvozovkách. Pokud verbatim token (`@`) se zobrazí před řetězec pomocí dvou znaků zpětného lomítka místo aby bylo možné používat v cestě musí řídicí znaky zpětného lomítka. Toto jsou tokeny platné řádku. V těchto příkladech se předpokládá, že původní soubor `Script1` výsledky v automaticky generované F# kódu souboru při spuštění pomocí některého nástroje, a kód v umístění tyto direktivy je generován z některých tokenů na řádku 25 v souboru `Script1`.
+Když použijete `#line` direktivu, názvy souborů musí být uzavřeny v uvozovkách. Pokud se před řetězcem`@`objeví doslovné token (), je nutné, aby se znaky zpětného lomítka použily pomocí dvou zpětného lomítka místo jednoho, aby je bylo možné použít v cestě. Níže jsou uvedeny platné tokeny řádků. V těchto příkladech předpokládáme, že původní `Script1` soubor má za následek automaticky F# generovaný soubor kódu, když je spuštěn prostřednictvím nástroje a že kód na umístění těchto direktiv je vygenerován z některých tokenů na řádku 25 v souboru `Script1`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7303.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7303.fs)]
 
-Tyto tokeny označuje, že F# kódu generovaného na tomto místě je odvozen z některé konstrukce nebo blízko řádku `25` v `Script1`.
+Tyto tokeny označují, F# že kód vygenerovaný v tomto umístění je odvozen z některých konstrukcí na nebo blízko `25` řádku `Script1`v.
 
 ## <a name="compiler-directives"></a>Direktivy kompilátoru
 
-Direktivy kompilátoru vypadat podobně jako direktivy preprocesoru, protože mají předponu znaménko #, ale nebude interpretován pomocí preprocesoru, jsou ponechána pro kompilátor interpretovat a zpracovat.
+Direktivy kompilátoru připomínají direktivy preprocesoru, protože jsou opatřeny předponou #, ale namísto interpretace preprocesoru, jsou ponechány pro interpretaci a fungování.
 
-Následující tabulka uvádí direktivy kompilátoru, která je k dispozici v F#.
+V následující tabulce jsou uvedeny direktivy kompilátoru, které jsou F#k dispozici v.
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#light` ["na"&#124;"off"]|Povolí nebo zakáže jednoduché syntaxe, pro kompatibilitu s jinými verzemi ML. Prostá syntaxe je ve výchozím nastavení povolené. Podrobná syntaxe je vždy povolena. Proto můžete použít nenáročném syntaxi a podrobná syntaxe. Direktiva `#light` sám o sobě je ekvivalentní `#light "on"`. Pokud zadáte `#light "off"`, je nutné použít podrobné syntaxi pro všechny jazykové konstrukce. Syntaxe v dokumentaci k F# se předpokládá, že používáte nenáročném syntaxi. Další informace najdete v tématu [podrobná syntaxe](verbose-syntax.md).|
+|`#light`["on"&#124;"off"]|Povolí nebo zakáže zjednodušenou syntaxi pro kompatibilitu s jinými verzemi ML. Ve výchozím nastavení je zjednodušená syntaxe povolena. Podrobná syntaxe je vždy povolena. Proto můžete použít jak zjednodušenou syntaxi, tak podrobnou syntaxi. Direktiva `#light` sama o sobě `#light "on"`odpovídá. Pokud zadáte `#light "off"`, je nutné použít podrobnou syntaxi pro všechny jazykové konstrukce. Syntaxe v dokumentaci pro F# se zobrazí s předpokladem, že používáte zjednodušenou syntaxi. Další informace naleznete v tématu [verbose syntaxe](verbose-syntax.md).|
 
-Direktivy interpretu (fsi.exe), najdete v části [interaktivní programování s F# ](../tutorials/fsharp-interactive/index.md).
+Direktivy překladače (fsi. exe) naleznete v tématu [interaktivní programování F#s ](../tutorials/fsharp-interactive/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

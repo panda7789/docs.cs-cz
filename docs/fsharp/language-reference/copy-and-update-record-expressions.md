@@ -1,18 +1,18 @@
 ---
 title: Kopírování a aktualizace výrazů záznamů
-description: Další informace o zápisu "kopírování a aktualizace výraz", který zkopíruje existující záznam nebo anonymní záznamu, aktualizace zadaná pole a vrátí aktualizovaný záznam nebo anonymní záznamu.
+description: Přečtěte si, jak napsat výraz kopírování a aktualizace, který zkopíruje existující záznam nebo anonymní záznam, aktualizuje zadaná pole a vrátí aktualizovaný záznam nebo anonymní záznam.
 author: ChrSteinert
 ms.date: 06/12/2019
-ms.openlocfilehash: d16f5ca337047ab2eecc8828b21d8a423bf39a1f
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: dfb20a6ff8282ae5988772cc0f0841db23aad942
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041740"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630374"
 ---
 # <a name="copy-and-update-record-expressions"></a>Kopírování a aktualizace výrazů záznamů
 
-A *kopírování a aktualizace výrazů záznamů* je výraz, který zkopíruje existující záznam, aktualizuje zadaná pole a vrátí aktualizovaný záznam.
+*Výraz záznamu kopírování a aktualizace* je výraz, který zkopíruje existující záznam, aktualizuje zadaná pole a vrátí aktualizovaný záznam.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,20 +26,20 @@ A *kopírování a aktualizace výrazů záznamů* je výraz, který zkopíruje 
 
 ## <a name="remarks"></a>Poznámky
 
-Anonymní záznamů a záznamů jsou neměnné ve výchozím nastavení, takže není možné žádná aktualizace s existujícím záznamem. Chcete-li vytvořit všechna pole záznamu aktualizovaný záznam byste museli znovu zadat. Pro zjednodušení tohoto úkolu *kopírování a aktualizace výrazů* lze použít. Tento výraz má existující záznam, vytvoří nový stejného typu pomocí zadaná pole z výrazu a chybějící pole určeného výrazu.
+Záznamy a anonymní záznamy jsou ve výchozím nastavení neměnné, takže není možné aktualizovat existující záznam. Chcete-li vytvořit aktualizovaný záznam, bude nutné znovu zadat všechna pole záznamu. Pro zjednodušení této úlohy lze použít *výraz kopírování a aktualizace* . Tento výraz přebírá existující záznam, vytvoří nový stejný typ pomocí zadaných polí z výrazu a chybějící pole určené výrazem.
 
-To může být užitečné, když je nutné zkopírovat existující záznam a případně změnit některé z hodnot pole.
+To může být užitečné v případě, že je nutné zkopírovat existující záznam a případně změnit některé hodnoty polí.
 
-Provést pro instanci nově vytvořený záznam.
+Proveďte instanci nově vytvořeného záznamu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
-Pokud chcete aktualizovat pouze na pole daného záznamu můžete použít *kopírování a aktualizace výrazů záznamů* podobně jako následující:
+Pokud jste chtěli aktualizovat pouze v poli tohoto záznamu, můžete použít *výraz záznamu kopírování a aktualizace* , jako je následující:
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
 ## <a name="see-also"></a>Viz také:
 
 - [Záznamy](records.md)
-- [Anonymní záznamů](anonymous-records.md)
+- [Anonymní záznamy](anonymous-records.md)
 - [Referenční dokumentace jazyka F#](index.md)

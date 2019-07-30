@@ -5,12 +5,12 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: 0fe09c0c261f36f1e9f241a6a6a8aacf3bf07d29
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: a29c31e93523e0843728d2fd7fa555946b139c55
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331496"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629598"
 ---
 # <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
 > [!NOTE]
@@ -66,7 +66,7 @@ ms.locfileid: "68331496"
   
 <a name="Ensure_all_UI_Correctly_Scales_by_any_DPI_Setting"></a>   
 ### <a name="ensure-all-ui-correctly-scales-by-any-dpi-setting"></a>Ujistěte se, že se všechna uživatelská rozhraní správně škálují podle nastavení DPI.  
- Ujistěte se, [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] že vše se může správně [!INCLUDE[TLA#tla_dpi](../../../includes/tlasharptla-dpi-md.md)] škálovat podle libovolného nastavení. Také zajistěte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] , aby se prvky vešly na obrazovku 1024 x 768 [!INCLUDE[TLA#tla_dpi](../../../includes/tlasharptla-dpi-md.md)]s 120.  
+ Zajistěte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] , aby vše bylo možné správně škálovat podle nastavení bodů na palec (dpi). Také zajistěte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] , aby se prvky vešly na obrazovku 1024 x 768 a 120 bodů na palec (dpi).  
   
 <a name="Navigation"></a>   
 ## <a name="navigation"></a>Navigace  

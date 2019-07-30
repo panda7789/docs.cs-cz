@@ -1,64 +1,64 @@
 ---
 title: Automatická generalizace
-description: Zjistěte, jak F# automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy, pokud je to možné.
+description: Přečtěte F# si, jak automaticky zobecnit argumenty a typy funkcí tak, aby fungovaly s více typy, pokud je to možné.
 ms.date: 05/16/2016
-ms.openlocfilehash: 8fc61b5e0c227474a5e913b37f4c0dad9b235a6f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 501749a190d9770cbcd9848e3d528cba32fe6762
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641875"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630621"
 ---
 # <a name="automatic-generalization"></a>Automatická generalizace
 
-F#používá typ odvození posoudíte typy vašich funkce a výrazy. Toto téma popisuje, jak F# automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy kdykoli je to možné.
+F#používá odvození typu pro vyhodnocení typů funkcí a výrazů. Toto téma popisuje, F# jak automaticky zobecnit argumenty a typy funkcí tak, aby fungovaly s více typy, pokud je to možné.
 
 ## <a name="automatic-generalization"></a>Automatická generalizace
 
-F# Kompilátoru, když ji provede odvození typu na funkci, určuje, zda daný parametr může být obecný. Kompilátor zkontroluje každý parametr a určuje, zda funkce má závislosti na konkrétní typ tohoto parametru. Pokud tomu tak není, typ je odvozen je obecný.
+F# Kompilátor, když provádí odvození typu na funkci, určuje, zda daný parametr může být obecný. Kompilátor prověřuje každý parametr a určí, zda má funkce závislost na konkrétním typu daného parametru. Pokud tomu tak není, typ je odvozen jako obecný.
 
-Následující příklad kódu ukazuje funkci, která kompilátor odvodí z nich je obecný.
+Následující příklad kódu ukazuje funkci, která kompilátor odvodí jako obecný.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet101.fs)]
 
-Typ je odvozen bude `'a -> 'a -> 'a`.
+Typ je odvozený `'a -> 'a -> 'a`.
 
-Typ uvádí, že se jedná o funkci, která přebírá dva argumenty stejného Neznámý typ a vrátí hodnotu stejného typu. Jedním z důvodů, které mohou být předchozí funkce obecného je, že větší-než – operátor (`>`) je samotný obecný. Větší-než operátor nemá podpis `'a -> 'a -> bool`. Ne všechny operátory jsou obecné, a pokud kód ve funkci používá typ parametru spolu s neobecné funkce nebo operátoru, tento typ parametru nelze zobecněný.
+Typ označuje, že se jedná o funkci, která přijímá dva argumenty stejného neznámého typu a vrací hodnotu stejného typu. Jedním z důvodů, proč může být funkce Previous obecná, je, že operátor větší než (`>`) je obecný. Operátor větší než má signaturu `'a -> 'a -> bool`. Ne všechny operátory jsou obecné a pokud kód ve funkci používá typ parametru společně s neobecnou funkcí nebo operátorem, tento typ parametru nejde zobecnit.
 
-Protože `max` je obecný, ho jde použít s typy, jako `int`, `float`, a tak dále, jak je znázorněno v následujícím příkladu.
+Vzhledem `max` k tomu, že je obecný, lze použít s typy `int`, `float`jako jsou, a tak dále, jak je znázorněno v následujících příkladech.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet102.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet102.fs)]
 
-Dva argumenty, ale musí být stejného typu. Podpis je `'a -> 'a -> 'a`, nikoli `'a -> 'b -> 'a`. Následující kód proto vygeneruje chybu, protože typy se neshodují.
+Dva argumenty však musí být stejného typu. Podpis není `'a -> 'a -> 'a`. `'a -> 'b -> 'a` Proto následující kód vytvoří chybu, protože typy se neshodují.
 
 ```fsharp
 // Error: type mismatch.
 let biggestIntFloat = max 2.0 3
 ```
 
-`max` Funkce také funguje s jakýmkoli typem, který podporuje větší-než operátor. Proto můžete také použít ho na řetězec, jak je znázorněno v následujícím kódu.
+`max` Funkce také funguje s jakýmkoli typem, který podporuje operátor větší než. Proto jej můžete použít také na řetězec, jak je znázorněno v následujícím kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet104.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet104.fs)]
 
 ## <a name="value-restriction"></a>Omezení hodnoty
 
-Kompilátor provede automatická generalizace jenom u definic dokončení funkcí, které mají explicitní argumenty a na jednoduché neměnné hodnoty.
+Kompilátor provádí automatickou generalizaci pouze v úplných definicích funkcí, které mají explicitní argumenty a na jednoduchých neměnných hodnotách.
 
-To znamená, že kompilátor vyvolá chybu při kompilaci kódu, který není dostatečně omezen na konkrétní typ, ale není také generalizovatelného. Chybová zpráva pro tento problém odkazuje na toto omezení na automatická generalizace pro hodnoty jako *hodnota omezení*.
+To znamená, že kompilátor vyvolá chybu, pokud se pokusíte zkompilovat kód, který není dostatečně omezený na konkrétní typ, ale není možné jej zobecnit. Chybová zpráva pro tento problém odkazuje na toto omezení automatické generalizace pro hodnoty jako *omezení hodnoty*.
 
-Na hodnotu omezení chybě obvykle dochází, když chcete použít konstrukce je obecný, ale kompilátor má dostatek informací k zobecnění ho nebo Pokud vynecháte neúmyslně dostatek informací o typu v neobecné konstrukce. Řešení tak, aby chyba omezení hodnoty má obsahují podrobnější informace, které podrobněji omezit problém odvození typu, v jednom z následujících způsobů:
+Obvykle dojde k chybě omezení hodnoty, pokud chcete, aby konstrukce byla obecná, ale kompilátor nemá dostatek informací pro generalizaci, nebo Pokud neúmyslně vynecháte dostatečné informace o typu v neobecném konstruktoru. Řešení chyby omezení hodnoty je poskytnout explicitní informace pro větší omezení problému typu odvození typu jedním z následujících způsobů:
 
-- Omezení typu bude neobecné přidáním anotace explicitního typu hodnoty nebo parametr.
+- Omezení typu na neobecný přidáním anotace explicitního typu k hodnotě nebo parametru.
 
-- Pokud se problém nongeneralizable konstruktor používá k definování obecné funkce, jako je například funkce – složení nebo neúplně použita curryfikované argumenty, zkuste přepsání funkce jako definici běžné funkce.
+- Pokud problém používá nezobecnitelné konstrukce k definování obecné funkce, jako je například složení funkce nebo nedokončené použití argumentů funkce curryfikované, zkuste funkci přepsat jako běžnou definici funkce.
 
-- Pokud se jedná o výraz, který je příliš složitý pro zobecnit, převeďte na funkci tak, že přidáte další, nepoužité parametr.
+- Pokud je problém výrazem, který je příliš složitý, aby jej bylo možné zobecnit, udělejte ho do funkce přidáním nadbytečného, nepoužívaného parametru.
 
-- Přidáte explicitní obecné parametry typu. Tato možnost se používá jen zřídka.
+- Přidejte explicitní parametry obecného typu. Tato možnost se používá zřídka.
 
-- Následující příklady kódu ukazují každý z těchto scénářů.
+- Následující příklady kódu ilustrují každý z těchto scénářů.
 
-Případ 1: Příliš složitý výraz. V tomto příkladu seznamu `counter` má být `int option ref`, ale není definován jako jednoduchý neměnný hodnota.
+Případ 1: Výraz je příliš složitý. V tomto příkladu je seznam `counter` určen `int option ref`jako, ale není definován jako jednoduchá neměnná hodnota.
 
 ```fsharp
 let counter = ref None
@@ -66,7 +66,7 @@ let counter = ref None
 let counter : int option ref = ref None
 ```
 
-Případ 2: Chcete-li definovat obecnou funkci pomocí konstrukce nongeneralizable. V tomto příkladu je konstrukce nongeneralizable, protože se týká částečné použití argumentů funkce.
+Případ 2: Použití negeneralizované konstrukce k definování obecné funkce. V tomto příkladu je konstrukce negeneralizovaná, protože zahrnuje částečnou aplikaci argumentů funkce.
 
 ```fsharp
 let maxhash = max << hash
@@ -74,7 +74,7 @@ let maxhash = max << hash
 let maxhash obj = (max << hash) obj
 ```
 
-Případ 3: Přidat parametr navíc, nevyužité. Vzhledem k tomu, že tento výraz není dostatečně jednoduchá pro generalizaci, kompilátor vyvolá chybu omezení hodnoty.
+Případ 3: Přidání nadbytečného, nepoužívaného parametru. Vzhledem k tomu, že tento výraz není pro generalizaci dostatečně jednoduchý, vyvolá kompilátor chybu omezení hodnoty.
 
 ```fsharp
 let emptyList10 = Array.create 10 []
@@ -82,7 +82,7 @@ let emptyList10 = Array.create 10 []
 let emptyList10 () = Array.create 10 []
 ```
 
-Případ 4: Přidání parametrů typu.
+Případ 4: Přidávání parametrů typu.
 
 ```fsharp
 let arrayOf10Lists = Array.create 10 []
@@ -90,7 +90,7 @@ let arrayOf10Lists = Array.create 10 []
 let arrayOf10Lists<'T> = Array.create 10 ([]:'T list)
 ```
 
-V posledním případě tato hodnota začne – funkce typu, který může být použit k vytvoření hodnot typu mnoho různých typů, třeba takto:
+V posledním případě se hodnota stala funkcí typu, která může být použita k vytvoření hodnot mnoha různých typů, například následujícím způsobem:
 
 ```fsharp
 let intLists = arrayOf10Lists<int>

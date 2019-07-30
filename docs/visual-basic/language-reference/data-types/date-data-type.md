@@ -15,65 +15,73 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: 970c69b36eecd110dd81b6a3700fbb0a7eea2834
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: ee966cdfcc957f1164c73f577fa668b203a82113
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66424032"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630117"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
-IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 0001 roku do 31. prosince 9999 roku a časy od 12:00:00: 00 (půlnoc) obsahuje prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekund uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna roku 10000.  
-  
-## <a name="remarks"></a>Poznámky  
- Použití `Date` datový typ obsahující hodnoty data, času hodnoty nebo hodnoty data a času.  
-  
- Výchozí hodnota `Date` je 0:00:00 (půlnoc) na 1. ledna 0001.  
-  
- Můžete získat aktuální datum a čas <xref:Microsoft.VisualBasic.DateAndTime> třídy.  
-  
-## <a name="format-requirements"></a>Požadavky na formát  
- Je nutné uzavřít `Date` literálu v rámci symboly čísla (`# #`). Hodnota kalendářního data ve formátu M/d/rrrr, musíte zadat například `#5/31/1993#`, nebo RRRR MM-dd, například `#1993-5-31#`. Při zadávání první rok, můžete použít lomítka.  Tento požadavek je nezávislé na národní prostředí a počítače nastavení data a času formátu.  
-  
- Důvodem tohoto omezení je, že by měl význam kódu nikdy nezmění v závislosti na národním prostředí, ve kterém je aplikace spuštěna. Předpokládejme pevně zakódovat `Date` literál o `#3/4/1998#` a chcete-li znamenat 4. března 1998. V národním prostředí, která používá mm/dd/rrrr zkompiluje 3/4/1998 tak, jak zamýšlíte. Ale Předpokládejme, že nasadíte svou aplikaci ve více zemích a oblastech. V národním prostředí, která používá dd/mm/rrrr by vaše pevně zakódované literál zkompilovat do 3. dubna 1998. V národním prostředí, která používá rrrr/mm/dd, by byl literál neplatný (1998. dubna, 0003) a způsobí chybu kompilátoru.  
-  
-## <a name="workarounds"></a>Alternativní řešení  
- Převést `Date` zadat literál na literál na formát národní prostředí nebo na vlastní formát, <xref:Microsoft.VisualBasic.Strings.Format%2A> funkce určující formát předdefinovaných nebo uživatelem definovaný datum. Následující příklad ukazuje to.  
-  
-```  
-MsgBox("The formatted date is " & Format(#5/31/1993#, "dddd, d MMM yyyy"))  
-```  
-  
- Alternativně můžete použít jednu z přetížených konstruktorů z <xref:System.DateTime> struktura sestavení hodnoty data a času. Následující příklad vytvoří hodnotu představující 31. května 1993 ve 12:14 odpoledne.  
-  
-```  
-Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)  
-```  
-  
-## <a name="hour-format"></a>H formátu  
- Hodnota času ve formátu 12 hodin nebo 24 hodin, můžete zadat například `#1:15:30 PM#` nebo `#13:15:30#`. Nicméně pokud nezadáte, minuty nebo sekundy, musíte zadat dop.  
-  
-## <a name="date-and-time-defaults"></a>Datum a čas výchozích hodnot  
- Pokud literál datum/čas neobsahují datum, Visual Basic nastaví datum část hodnoty 1. ledna 0001. Pokud literál datum a čas nezahrnují čas, Visual Basic nastaví časovou část hodnoty na začátek dne, tedy půlnoci (0: 00:00).  
-  
-## <a name="type-conversions"></a>Převody typu  
- Při převodu `Date` hodnota, která se `String` typu, vykreslí datum podle používaného formátu krátkého data určené národní prostředí runtime jazyka Visual Basic a vykreslí podle formátu času (12 hodin nebo 24 hodin) časový limit určený parametrem národní prostředí runtime.  
-  
-## <a name="programming-tips"></a>Tipy k programování  
-  
-- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, uvědomte si, že datum a čas v jiných prostředích typy nejsou kompatibilní s jazykem Visual Basic `Date` typu. Pokud takové součásti předáváte data a času argument, deklarujte ho jako `Double` místo `Date` v jazyce Visual Basic code a použít metody převodu <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.  
-  
-- **Znaky typu.** `Date` nemá žádný – znak typu literálu nebo – znak typu identifikátoru. Ale kompilátor zpracovává literály, které jsou uzavřeny v rámci symboly čísla (`# #`) jako `Date`.  
-  
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.DateTime?displayProperty=nameWithType> struktury.  
-  
-## <a name="example"></a>Příklad  
- Proměnnou nebo konstantu `Date` obsahuje datový typ datum a čas. Toto dokládá následující příklad.  
-  
-```  
-Dim someDateAndTime As Date = #8/13/2002 12:14 PM#  
-```  
-  
+
+Obsahuje hodnoty IEEE 64 (8 bajtů), které reprezentují data od 1. ledna do 31. prosince 9999 a časy od 12:00:00 (půlnoc) do 11:59:59.9999999 ODP. Každý přírůstek představuje 100 nanosekund, uplynulý čas od začátku 1. ledna v roce 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna v roce 10000.
+
+## <a name="remarks"></a>Poznámky
+
+`Date` Datový typ použijte k zahrnutí hodnot data, času nebo hodnoty data a času.
+
+Výchozí hodnota `Date` je 0:00:00 (půlnoc) od 1. ledna 0001.
+
+Aktuální datum a čas můžete získat z <xref:Microsoft.VisualBasic.DateAndTime> třídy.
+
+## <a name="format-requirements"></a>Požadavky na formát
+
+Je nutné uzavřít `Date` literál v rámci znaménka čísla (`# #`). Je třeba zadat hodnotu data ve formátu M/d/rrrr, `#5/31/1993#`například nebo rrrr-mm-dd, `#1993-5-31#`například. Při prvním zadání roku můžete použít lomítka.  Tento požadavek nezávisí na vašem národním prostředí a na nastavení formátu data a času vašeho počítače.
+
+Důvodem tohoto omezení je, že význam vašeho kódu by se nikdy neměl měnit v závislosti na národním prostředí, ve kterém je vaše aplikace spuštěná. Předpokládejme, že máte pevně zavedený `#3/4/1998#` kód `Date` literálu a máte v úmyslu do 4. března 1998. V národním prostředí, které používá mm/dd/rrrr, se 3/4/1998 zkompiluje jako zamýšlená. Ale Předpokládejme, že nasadíte aplikaci v mnoha zemích nebo oblastech. V národním prostředí, které používá dd/mm/rrrr, je pevně zakódovaný literál zkompilován do 3. dubna 1998. V národním prostředí, které používá rrrr/mm/dd, bude literál neplatný (duben 1998, 0003) a způsobit chybu kompilátoru.
+
+## <a name="workarounds"></a>Alternativní řešení
+
+Chcete-li `Date` převést literál na formát národního prostředí nebo na vlastní formát, zadejte do <xref:Microsoft.VisualBasic.Strings.Format%2A> funkce literál a zadejte buď předdefinovaný nebo uživatelsky definovaný formát data. Následující příklad ukazuje to.
+
+```vb
+MsgBox("The formatted date is " & Format(#5/31/1993#, "dddd, d MMM yyyy"))
+```
+
+Alternativně můžete použít jeden z přetížených konstruktorů <xref:System.DateTime> struktury k sestavení hodnoty data a času. Následující příklad vytvoří hodnotu, která představuje 31. května 1993 v 12:14 za odpoledne.
+
+```vb
+Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
+```
+
+## <a name="hour-format"></a>Formát hodiny
+
+Hodnotu času můžete zadat buď v 12 hodinách, nebo ve 24hodinovém formátu, například `#1:15:30 PM#` nebo. `#13:15:30#` Pokud však nezadáte buď minuty, nebo sekundy, je nutné zadat dop nebo PM.
+
+## <a name="date-and-time-defaults"></a>Výchozí hodnoty data a času
+
+Pokud nezahrnete datum do literálu data a času, Visual Basic nastaví část hodnoty data na 1. ledna 0001. Pokud nezahrnete čas do literálu data a času, Visual Basic nastaví časovou část hodnoty na začátek dne, tj. půlnoc (0:00:00).
+
+## <a name="type-conversions"></a>Převody typu
+
+Převedete `Date` -li hodnotu `String` na typ, Visual Basic vykreslí datum podle formátu krátkého data určeného národním prostředím runtime a vykreslí čas podle formátu času (12 hodin nebo 24 hodin) určeného parametrem národní prostředí v době běhu.
+
+## <a name="programming-tips"></a>Tipy k programování
+
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte na to, že typy data a času v jiných prostředích nejsou kompatibilní s `Date` typem Visual Basic. Pokud předáváte argument typu datum/čas pro takovou komponentu, deklarujte ji jako `Double` `Date` místo v novém Visual Basic kódu a použijte metody <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> převodu a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
+
+- **Znaky typu.** `Date`nemá žádný znak typu literálu nebo znak typu identifikátoru. Nicméně kompilátor zpracovává literály, které jsou uzavřeny v symbolech`# #`čísla ( `Date`) jako.
+
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.DateTime?displayProperty=nameWithType> struktura.
+
+## <a name="example"></a>Příklad
+
+Proměnná nebo konstanta `Date` datového typu obsahuje datum i čas. Toto dokládá následující příklad.
+
+```vb
+Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.DateTime?displayProperty=nameWithType>

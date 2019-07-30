@@ -9,52 +9,54 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - variables [Visual Basic], accessing hidden
 ms.assetid: ae21a8ac-9cd4-4fba-a3ec-ecc4321ef93c
-ms.openlocfilehash: 43f7af1a1b540dd630cc2f228f1e5a6018d7c5d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 68f92142cdc435ebd82101eea83035e1d09dcf25
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610457"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630016"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>Postupy: Přístup k proměnné skryté odvozenou třídou (Visual Basic)
-Když kód v odvozené třídě získá přístup k proměnné, obvykle přeloží kompilátor odkaz na nejbližší dostupné verzi, to znamená, že dostupné verze nejmíň derivational kroky zpětně ze třídy přístup. Pokud je proměnná definovaná v odvozené třídě, kód obvykle přistupuje k tuto definici.  
-  
- Pokud proměnná odvozené třídy zastiňuje proměnná v základní třídě, skryje verze základní třídy. Však může přistupovat k proměnné základní třídy s kvalifikaci `MyBase` – klíčové slovo.  
-  
-### <a name="to-access-a-base-class-variable-hidden-by-a-derived-class"></a>Pro přístup k základní třídě proměnné skryté odvozenou třídou  
-  
-- Ve výrazu nebo příkazu přiřazení, zadejte před název proměnné `MyBase` – klíčové slovo a tečku (`.`).  
-  
-     Přeloží kompilátor odkaz na verzi základní třídy proměnné.  
-  
-     Následující příklad ukazuje stínový provoz prostřednictvím dědičnosti. Umožňuje dva odkazy, ten, který přistupuje k stínového provozu proměnné a ten, který obchází stínováním.  
-  
-    ```  
-    Public Class shadowBaseClass  
-        Public shadowString As String = "This is the base class string."  
-    End Class  
-    Public Class shadowDerivedClass  
-        Inherits shadowBaseClass  
-        Public Shadows shadowString As String = "This is the derived class string."  
-        Public Sub showStrings()  
-            Dim s As String = "Unqualified shadowString: " & shadowString &  
-                vbCrLf & "MyBase.shadowString: " & MyBase.shadowString  
-            MsgBox(s)  
-        End Sub  
-    End Class  
-    ```  
-  
-     Předchozí příklad deklaruje proměnnou `shadowString` v základní třídě a stíní v odvozené třídě. Postup `showStrings` v odvozené třídě Zobrazí verzi stínového provozu řetězce při název `shadowString` není kvalifikován. Potom zobrazí stínovaný verze při `shadowString` je kvalifikována `MyBase` – klíčové slovo.  
-  
-## <a name="robust-programming"></a>Robustní programování  
- Chcete-li snížit riziko odkazující na stínové proměnné a nežádoucí verzi, plně kvalifikovat všechny odkazy na stínové proměnné. Stínový provoz přináší více než jedna verze proměnné se stejným názvem. Když příkaz kódu odkazuje na název proměnné, verze, na který přeloží kompilátor odkaz na závisí na faktorech, jako je například umístění příkaz kódu a přítomnost oprávněným řetězec. To může zvýšit riziko odkazující na nesprávnou verzi proměnné.  
-  
+
+Když kód v odvozené třídě přistupuje k proměnné, kompilátor obvykle vyřeší odkaz na nejbližší dostupnou verzi, to znamená, že dostupná verze je nejmenší odvozený postup zpět od třídy přístupu. Pokud je proměnná definována v odvozené třídě, kód obvykle přistupuje k této definici.
+
+Pokud proměnná odvozené třídy Stínuje proměnnou v základní třídě, skryje verzi základní třídy. K proměnné základní třídy ale můžete přistupovat tak, že ji zařadíte pomocí `MyBase` klíčového slova.
+
+### <a name="to-access-a-base-class-variable-hidden-by-a-derived-class"></a>Přístup k proměnné základní třídy skryté odvozenou třídou
+
+- V příkazu výrazu nebo přiřazení uveďte před názvem `MyBase` proměnné klíčové slovo a tečku (`.`).
+
+    Kompilátor vyřeší odkaz na verzi základní třídy proměnné.
+
+    Následující příklad znázorňuje stínování prostřednictvím dědičnosti. Vytvoří dva odkazy, jeden, který přistupuje ke stínové proměnné a druhý, který obchází stín.
+
+    ```vb
+    Public Class shadowBaseClass
+        Public shadowString As String = "This is the base class string."
+    End Class
+    Public Class shadowDerivedClass
+        Inherits shadowBaseClass
+        Public Shadows shadowString As String = "This is the derived class string."
+        Public Sub showStrings()
+            Dim s As String = "Unqualified shadowString: " & shadowString &
+                vbCrLf & "MyBase.shadowString: " & MyBase.shadowString
+            MsgBox(s)
+        End Sub
+    End Class
+    ```
+
+    Předchozí příklad deklaruje proměnnou `shadowString` v základní třídě a nastínuje ji v odvozené třídě. Procedura `showStrings` v odvozené třídě zobrazuje stínovou verzi řetězce, pokud název `shadowString` není kvalifikován. Pak zobrazí stínovou verzi, pokud `shadowString` je kvalifikován `MyBase` pomocí klíčového slova.
+
+## <a name="robust-programming"></a>Robustní programování
+
+Chcete-li snížit riziko odkazování na neúmyslnou verzi stínové proměnné, můžete plně kvalifikovat všechny odkazy na stínovou proměnnou. Stíning zavádí více než jednu verzi proměnné se stejným názvem. Pokud příkaz kódu odkazuje na název proměnné, verze, na kterou kompilátor vyřeší odkaz, závisí na faktorech, jako je například umístění příkazu kódu a přítomnost opravňujícího řetězce. To může zvýšit riziko odkazování na nesprávnou verzi proměnné.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Rozdíly mezi stínováním a přepsáním](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)
-- [Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
+- [Postupy: Skrýt proměnnou se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
 - [Postupy: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
 - [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)

@@ -1,28 +1,26 @@
 ---
-title: Testování částí F# v .NET Core pomocí příkazu dotnet test a xUnit
-description: Další koncepty testů jednotek pro F# v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a xUnit.
+title: Testování F# částí v .NET Core pomocí příkazu dotnet test a xUnit
+description: Seznamte se s koncepty F# testování částí v .NET Core pomocí interaktivního prostředí, které vytváří ukázkové řešení pomocí příkazu dotnet test a xUnit.
 author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
-dev_langs:
-- fsharp
 ms.custom: seodec18
-ms.openlocfilehash: 9765c463bb427f79dcd0308e7e4fc643fdc06968
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a9744bfebd93c5004011819b8c6e739e84b97d0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665907"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626490"
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a xUnit
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 
-Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů. Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp/) předtím, než začnete. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz vás provede interaktivním vytvořením ukázkového řešení, které vás seznámí s koncepty testování částí. Pokud chcete postupovat podle kurzu s předdefinovaným řešením, zobrazte si [ukázkový kód](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp/) před jeho zahájením nebo si ho stáhněte. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
+## <a name="creating-the-source-project"></a>Vytvoření zdrojového projektu
 
-Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testování s fsharp* pro uložení řešení.
-Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) k vytvoření nového řešení. Díky tomu usnadňují správu knihovny tříd a projekt testu jednotek.
-V adresáři řešení, vytvářet *MathService* adresáře. Struktura adresářů a souborů je dosavadním vidíte níže:
+Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-with-FSharp* , který bude obsahovat řešení.
+V tomto novém adresáři spusťte příkaz [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nové řešení. To usnadňuje správu knihovny tříd i projektu testu jednotek.
+V adresáři řešení vytvořte adresář *MathService* . Struktura adresářů a souborů je tedy uvedena níže:
 
 ```
 /unit-testing-with-fsharp
@@ -30,18 +28,18 @@ V adresáři řešení, vytvářet *MathService* adresáře. Struktura adresář
     /MathService
 ```
 
-Ujistěte se, *MathService* aktuální adresář a spusťte [ `dotnet new classlib -lang F#` ](../tools/dotnet-new.md) vytvoření zdrojového projektu.  Vytvoříte selhání provádění matematických služby:
+Vytvořte *MathService* aktuální adresář a spusťte příkaz [`dotnet new classlib -lang F#`](../tools/dotnet-new.md) k vytvoření zdrojového projektu.  Vytvoříte nefunkční implementaci služby Math Service:
 
 ```fsharp
 module MyMath =
     let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
-Vraťte do adresáře *jednotky – testování s fsharp* adresáře. Spustit [ `dotnet sln add .\MathService\MathService.fsproj` ](../tools/dotnet-sln.md) přidat do řešení projekt knihovny tříd.
+Změňte adresář zpátky na adresář *testování částí s* adresářem-FSharp. Spusťte [`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) , chcete-li přidat projekt knihovny tříd do řešení.
 
-## <a name="creating-the-test-project"></a>Vytvoření testovacího projektu
+## <a name="creating-the-test-project"></a>Vytváření testovacího projektu
 
-Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova adresářovou strukturu:
+Dále vytvořte adresář *MathService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
 ```
 /unit-testing-with-fsharp
@@ -52,7 +50,7 @@ Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova a
     /MathService.Tests
 ```
 
-Ujistěte se, *MathService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new xunit -lang F#` ](../tools/dotnet-new.md). Tím se vytvoří projekt testů, který používá xUnit jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *MathServiceTests.fsproj*:
+Nastavte adresář *MathService. Tests* na aktuální adresář a vytvořte nový projekt pomocí [`dotnet new xunit -lang F#`](../tools/dotnet-new.md). Tím se vytvoří testovací projekt, který jako knihovnu testů používá xUnit. Vygenerovaná šablona konfiguruje Test Runner v *MathServiceTests. fsproj*:
 
 ```xml
 <ItemGroup>
@@ -62,15 +60,15 @@ Ujistěte se, *MathService.Tests* adresář aktuálního adresáře a vytvořte 
 </ItemGroup>
 ```
 
-Projekt testů vyžaduje další balíčky pro vytváření a spouštění testování částí. `dotnet new` v předchozím kroku přidat xUnit a xUnit runner. Teď přidejte `MathService` knihovny tříd jako další závislost do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali xUnit a xUnit Runner. Nyní přidejte `MathService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
 ```
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-Zobrazí celý soubor v [úložiště ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na Githubu.
+Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na GitHubu.
 
-Máte následující rozložení konečné řešení:
+Máte následující konečné rozložení řešení:
 
 ```
 /unit-testing-with-fsharp
@@ -83,11 +81,11 @@ Máte následující rozložení konečné řešení:
         MathServiceTests.fsproj
 ```
 
-Spustit [ `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` ](../tools/dotnet-sln.md) v *jednotky – testování s fsharp* adresáře. 
+Spusťte [`dotnet sln add .\MathService.Tests\MathService.Tests.fsproj`](../tools/dotnet-sln.md) v adresáři *Unit-Testing-with-FSharp* . 
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Jeden zápis služeb při selhání testu, nastavte ji pass a postup se opakuje. Otevřít *Tests.fs* a přidejte následující kód:
+Napíšete jeden neúspěšný test, udělejte ho a pak proces opakujte. Otevřete *Tests. FS* a přidejte následující kód:
 
 ```fsharp
 [<Fact>]
@@ -98,11 +96,11 @@ let ``My test`` () =
 let ``Fail every time`` () = Assert.True(false)
 ```
 
-`[<Fact>]` Označuje atribut testovací metody, která se spouští pomocí nástroje test runner. Z *jednotky – testování s fsharp*, spusťte [ `dotnet test` ](../tools/dotnet-test.md) pro sestavení, testy a knihovny tříd a následné spuštění testů. Nástroj test runner xUnit obsahuje vstupní bod programu pro spouštění vašich testů. `dotnet test` Spustí nástroj test runner pomocí projektu testování částí, kterou jste vytvořili.
+`[<Fact>]` Atribut označuje testovací metodu, která je spuštěna nástrojem Test Runner. Z rutiny *testování částí-with-FSharp*spusťte [`dotnet test`](../tools/dotnet-test.md) pro sestavení testů a knihovny tříd a potom spusťte testy. XUnit Test Runner obsahuje vstupní bod programu pro spuštění testů. `dotnet test`spustí Test Runner pomocí projektu testování částí, který jste vytvořili.
 
-Tyto dva testy zobrazit naprosto základní předáním hodnoty a neúspěšné testy. `My test` úspěšně proběhne, a `Fail every time` selže. Teď vytvořte test `squaresOfOdds` metody. `squaresOfOdds` Metoda vrátí sekvenci druhých mocnin hodnot liché celé číslo, které jsou součástí vstupní sekvence. Namísto pokusu o zápis všechny tyto funkce současně, můžete interaktivně vytvořit testy, které ověří funkčnost. Provedení každého testu předat znamená vytvoření potřebné funkce k metodě.
+Tyto dva testy znázorňují základní a neúspěšné testy. `My test`projde a `Fail every time` dojde k chybě. Nyní vytvořte test pro `squaresOfOdds` metodu. `squaresOfOdds` Metoda vrací sekvenci čtverců všech lichých celočíselných hodnot, které jsou součástí vstupní sekvence. Místo toho, abyste se pokusili zapsat všechny tyto funkce najednou, můžete iteračním vytvořit testy, které ověřují funkčnost. Provedení každého testovacího průchodu znamená vytvoření nezbytné funkce pro metodu.
 
-Nejjednodušší nám můžete napsat test je volání `squaresOfOdds` s všechna sudá čísla, kde výsledkem by měl být k prázdné sekvenci celých čísel.  Tady je tento test:
+Nejjednodušší test, který můžeme napsat, je zavolat `squaresOfOdds` se všemi sudými čísly, kde výsledek by měl být prázdná sekvence celých čísel.  Zde je tento test:
 
 ```fsharp
 [<Fact>]
@@ -112,18 +110,18 @@ let ``Sequence of Evens returns empty collection`` () =
     Assert.Equal<Collections.Generic.IEnumerable<int>>(expected, actual)
 ```
 
-Test se nezdaří. Nevytvořili jste ještě implementace. Tento test provést napsáním kódu nejjednodušší v `MathService` třídu, která funguje:
+Test se nezdařil. Ještě jste nevytvořili implementaci. Proveďte tento test průchodu vytvořením nejjednoduššího kódu `MathService` ve třídě, která funguje:
 
-```csharp
+```fsharp
 let squaresOfOdds xs =
     Seq.empty<int>
 ```
 
-V *jednotky – testování s fsharp* adresáře, spusťte `dotnet test` znovu. `dotnet test` Sestavení pro spuštění příkazu `MathService` projekt a potom `MathService.Tests` projektu. Po vytvoření oba projekty, poběží tento jeden test. Předá.
+V adresáři *Unit-Testing-with-FSharp* spusťte `dotnet test` znovu. Příkaz spustí sestavení `MathService` pro`MathService.Tests` projekt a potom pro projekt. `dotnet test` Po sestavení obou projektů spustí tento jediný test. Předá.
 
-## <a name="completing-the-requirements"></a>Dokončuje požadavky
+## <a name="completing-the-requirements"></a>Splnění požadavků
 
-Teď, když jste provedli, předejte jeden test, je čas zápisu informace. Další jednoduchý případ funguje s pořadím, jehož jen liché číslo je `1`. Číslo 1 je jednodušší, protože druhou mocninu 1 je 1. Tady je další testu:
+Teď, když jste udělali jeden test Pass, je čas zapsat další. Následující jednoduchý případ funguje s posloupností, jejíž pouze liché číslo `1`je. Číslo 1 je snazší, protože čtvercem 1 je 1. Následující test:
 
 ```fsharp
 [<Fact>]
@@ -133,7 +131,7 @@ let ``Sequences of Ones and Evens returns Ones`` () =
     Assert.Equal<Collections.Generic.IEnumerable<int>>(expected, actual)
 ```
 
-Provádění `dotnet test` spouští testy a ukazuje, že nový test se nezdaří. Teď, aktualizovat `squaresOfOdds` metodu ke zpracování tohoto nového testu. Filtrovat všechna sudá čísla mimo pořadí, aby tento test předat. Můžete to udělat tak, že funkce malé filtru zápisu a pomocí `Seq.filter`:
+Spuštění `dotnet test` spustí testy a ukáže vás, že nový test se nezdařil. Nyní aktualizujte `squaresOfOdds` metodu pro zpracování tohoto nového testu. Vyfiltrujete všechna sudá čísla mimo sekvenci k provedení tohoto testu. Můžete to udělat tak, že napíšete malou funkci filtru `Seq.filter`a použijete:
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
@@ -143,7 +141,7 @@ let squaresOfOdds xs =
     |> Seq.filter isOdd
 ```
 
-Existuje jeden další krok: čtvercové všech lichých čísel. Začněte vytvořením nového testu:
+K dispozici je ještě ještě jeden krok: čtverce každé liché číslice. Začněte zápisem nového testu:
 
 ```fsharp
 [<Fact>]
@@ -153,7 +151,7 @@ let ``SquaresOfOdds works`` () =
     Assert.Equal(expected, actual)
 ```
 
-Test můžete vyřešit přesměrujete filtrované pořadí prostřednictvím operace mapy vypočítat druhou mocninu každý liché číslo:
+Test můžete vyřešit tak, že provedete vyfiltrování filtrované sekvence pomocí operace mapování pro výpočet čtverce každého lichého čísla:
 
 ```fsharp
 let private square x = x * x
@@ -165,4 +163,4 @@ let squaresOfOdds xs =
     |> Seq.map square
 ```
 
-Začlenění malé knihovny a sadu testů jednotek pro knihovny. Řešení jsme strukturovaná, takže přidání nové balíčky a testů je součástí normálního pracovního postupu. Jste koncentrované většinu času a úsilí na řešení cíle aplikace.
+Vytvořili jste malou knihovnu a sadu testů jednotek pro tuto knihovnu. Rozpracovali jste řešení, aby přidávání nových balíčků a testů bylo součástí normálního pracovního postupu. Vyrostli jste většinu času a úsilí při řešení cílů aplikace.

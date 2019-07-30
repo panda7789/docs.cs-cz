@@ -1,5 +1,5 @@
 ---
-title: Uživatelský datový typ (Visual Basic)
+title: Uživatelsky definovaný datový typ (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - UserDefined
@@ -23,54 +23,59 @@ helpviewer_keywords:
 - user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
-ms.openlocfilehash: 42aecd0a5d948ab76d7bd11990d4cdbdce611015
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 76073037dcaac0e87bc8a352f3b438332d11d881
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646953"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630139"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
-Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje formát.  
-  
- Předchozí verze jazyka Visual Basic podporují uživatelem definovaný typ (UDT). Rozbalí UDT na aktuální verzi *struktura*. Struktura je složen z jednoho nebo více *členy* různých datových typů. Jazyka Visual Basic struktury považuje za jednu jednotku, i když se dá dostat taky jejích členů jednotlivě.  
-  
-## <a name="remarks"></a>Poznámky  
- Definujte a použijte datový typ struktura, když je nutné sloučit různé datové typy do jedné jednotky, nebo když žádný základní datové typy sloužit vašim potřebám.  
-  
- Výchozí hodnota datového typu Struktura se skládá z kombinace výchozí hodnoty všech jejích členů.  
-  
-## <a name="declaration-format"></a>Formát deklarace  
- Deklarace struktury začíná [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md) a končí `End Structure` příkaz. `Structure` Příkaz poskytuje název struktury, což je také identifikátor datového typu, který definuje strukturu. Ostatní části kódu můžete použít tento identifikátor pro deklaraci proměnné, parametry a funkce vrátí hodnoty, které mají být tato struktura datového typu.  
-  
- Deklarace mezi `Structure` a `End Structure` příkazů definovat členy struktury.  
-  
-## <a name="member-access-levels"></a>Úrovně přístupu členů  
- Je třeba deklarovat každého člena pomocí [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md) nebo příkaz, který určuje úroveň přístupu, jako například [veřejné](../../../visual-basic/language-reference/modifiers/public.md), [typu Friend](../../../visual-basic/language-reference/modifiers/friend.md), nebo [privátní](../../../visual-basic/language-reference/modifiers/private.md). Pokud používáte `Dim` prohlášení, výchozí úrovně přístupu na veřejnou.  
-  
-## <a name="programming-tips"></a>Tipy k programování  
-  
-- **Využití paměti.** Stejně jako u všech složených datových typů nelze bezpečně vypočítat celkovou spotřebu paměti struktury sečtením nominálních přidělení úložiště jejích členů. Kromě toho nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` příkazu.  
-  
-- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že v jiných prostředích, uživatelem definované typy nejsou kompatibilní s jazykem Visual Basic struktury typů.  
-  
-- **Rozšíření.** Neexistuje žádný automatický převod do nebo z libovolného datového typu Struktura. Můžete definovat operátory převodu na váš pomocí struktury [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md), a deklarujete každý operátor převodu na `Widening` nebo `Narrowing`.  
-  
-- **Znaky typu.** Struktura datové typy mít žádné – znak typu literálu nebo – znak typu identifikátoru.  
-  
-- **Typ architektury.** Neexistuje žádný odpovídající typ v rozhraní .NET Framework. Všechny struktury dědí z třídy rozhraní .NET Framework <xref:System.ValueType?displayProperty=nameWithType>, ale žádné jednotlivých struktura odpovídá <xref:System.ValueType?displayProperty=nameWithType>.  
-  
-## <a name="example"></a>Příklad  
- Následující paradigma ukazuje obrys deklaraci struktury.  
-  
-```  
-[Public | Protected | Friend | Protected Friend | Private] Structure structname  
-    {Dim | Public | Friend | Private} member1 As datatype1  
-    ' ...  
-    {Dim | Public | Friend | Private} memberN As datatypeN  
-End Structure  
-```  
-  
+
+Obsahuje data ve formátu, který definujete. `Structure` Příkaz definuje formát.
+
+Předchozí verze Visual Basic podporují uživatelsky definovaný typ (UDT). Aktuální verze rozbalí UDT do *struktury*. Struktura je zřetězení jednoho nebo více *členů* různých datových typů. Visual Basic zachází se strukturou jako s jednou jednotkou, i když ke svým členům můžete přistupovat také jednotlivě.
+
+## <a name="remarks"></a>Poznámky
+
+Definujte a použijte datový typ struktura, pokud potřebujete zkombinovat různé datové typy do jedné jednotky nebo když žádný z základních datových typů nevyhovuje vašim potřebám.
+
+Výchozí hodnota datového typu struktury se skládá z kombinace výchozích hodnot každého z jeho členů.
+
+## <a name="declaration-format"></a>Formát deklarace
+
+Deklarace struktury začíná [příkazem Structure](../../../visual-basic/language-reference/statements/structure-statement.md) a končí `End Structure` příkazem. `Structure` Příkaz poskytuje název struktury, což je také identifikátor datového typu, ve kterém je struktura definovaná. Jiné části kódu mohou použít tento identifikátor k deklarování proměnných, parametrů a návratových hodnot funkce, které mají být typu dat této struktury.
+
+Deklarace mezi `Structure` příkazy a `End Structure` definují členy struktury.
+
+## <a name="member-access-levels"></a>Úrovně přístupu členů
+
+Každý člen musíte deklarovat pomocí [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md) nebo příkazu, který určuje úroveň přístupu, jako je například [Public](../../../visual-basic/language-reference/modifiers/public.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../visual-basic/language-reference/modifiers/private.md). Pokud použijete `Dim` příkaz, nastaví se výchozí úroveň přístupu na veřejné.
+
+## <a name="programming-tips"></a>Tipy k programování
+
+- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` na příkaz.
+
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že uživatelsky definované typy v jiných prostředích nejsou kompatibilní s typy Visual Basic struktury.
+
+- **Rozšiřující.** Neexistuje žádný automatický převod na nebo z žádného datového typu struktury. Operátory převodu můžete definovat ve své struktuře pomocí [příkazu operátoru](../../../visual-basic/language-reference/statements/operator-statement.md)a každý operátor `Widening` převodu lze deklarovat jako nebo `Narrowing`.
+
+- **Znaky typu.** Datové typy struktury nemají znak typu literálu ani znak typu identifikátoru.
+
+- **Typ rozhraní.** V .NET Framework neexistuje žádný odpovídající typ. Všechny struktury dědí z třídy <xref:System.ValueType?displayProperty=nameWithType>.NET Framework, ale žádná z nich neodpovídá. <xref:System.ValueType?displayProperty=nameWithType>
+
+## <a name="example"></a>Příklad
+
+Následující paradigma znázorňuje obrys deklarace struktury.
+
+```
+[Public | Protected | Friend | Protected Friend | Private] Structure structname
+    {Dim | Public | Friend | Private} member1 As datatype1
+    ' ...
+    {Dim | Public | Friend | Private} memberN As datatypeN
+End Structure
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ValueType>

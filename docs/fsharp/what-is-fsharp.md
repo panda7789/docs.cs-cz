@@ -1,19 +1,19 @@
 ---
 title: Co je F#
-description: Další informace o tom, co F# programovací jazyk je a co F# programování je stejná jako. Další informace o bohaté datové typy, funkce a jak jsou zapadají.
+description: Přečtěte si, F# co je programovací jazyk a F# jaké je programování. Přečtěte si o bohatých datových typech, funkcích a o tom, jak se vejdou dohromady.
 ms.date: 08/03/2018
-ms.openlocfilehash: fc4f4db771c43a4ec08cc9d3a247cf1f38e60457
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 0c576fe49fadebd68e4fc9d2b20ea8f0cb991af5
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486835"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630460"
 ---
 # <a name="what-is-f"></a>Co je F\#
 
-F#je funkcionální programovací jazyk, který usnadňuje zápis správné a udržovatelný kód.
+F#je funkční programovací jazyk, který usnadňuje psaní správného a udržovatelného kódu.
 
-F#programování primárně potřeba definovat typy a funkce, které se odvodit typ a automaticky zobecněný. Díky tomu váš výběr zůstat na domény a manipulace s nimi svoje data, spíše než o programování.
+F#programování primárně zahrnuje definování typů a funkcí, které jsou odvozeny a zobecněny automaticky. Díky tomu může být zaostření v doméně problému a manipulaci s daty namísto podrobností programování.
 
 ```fsharp
 open System // Gets access to functionality in System namespace.
@@ -35,21 +35,21 @@ let main args =
     0
 ```
 
-F#má řadu funkcí, včetně:
+F#obsahuje mnoho funkcí, včetně:
 
 * Prostá syntaxe
 * Neměnné ve výchozím nastavení
-* Odvození typu proměnné a Automatická generalizace
+* Odvození typu a Automatická generalizace
 * Funkce první třídy
 * Výkonné datové typy
 * Porovnávání vzorů
 * Asynchronní programování
 
-Úplná sada funkcí jsou dokumentovány v článku [ F# referenční informace k jazyku](language-reference/index.md).
+V [ F# referenční příručce](./language-reference/index.md)k jazyku jsou popsány úplné sady funkcí.
 
-## <a name="rich-data-types"></a>Bohaté datové typy
+## <a name="rich-data-types"></a>Formátované datové typy
 
-Datové typy, jako [záznamy](language-reference/records.md) a [Rozlišované sjednocení](language-reference/discriminated-unions.md) umožňují představují komplexní data a domén.
+Datové typy, jako jsou [záznamy](./language-reference/records.md) a [rozlišené sjednocení](./language-reference/discriminated-unions.md) , umožňují reprezentovat složitá data a domény.
 
 ```fsharp
 // Group data with Records
@@ -72,11 +72,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-F#záznamy a rozlišovaná sjednocení jsou nenulové, neměnné a srovnatelné ve výchozím nastavení, díky kterým jsou velmi snadné použití.
+F#záznamy a rozlišené sjednocení jsou ve výchozím nastavení nenulové, neměnné a srovnatelné, takže je velmi snadné je používat.
 
-## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Vynucené správnosti s funkcemi a porovnávání vzorů
+## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Vynutila správnost pomocí funkcí a porovnávání vzorů.
 
-F#funkce jsou snadno deklarovat a výkonné v praxi. V kombinaci s [porovnávání vzorů](language-reference/pattern-matching.md), umožňují definovat chování, jehož správnosti je vynucena kompilátorem.
+F#funkce jsou v praxi snadno deklarované a výkonné. V kombinaci se [porovnáváním vzorů](./language-reference/pattern-matching.md)umožňuje definovat chování, jehož správnost je vynutila kompilátorem.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -93,11 +93,11 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown :("
 ```
 
-F#funkce jsou také první třídy, což znamená, mohou být předány jako parametry a vrácená z dalších funkcí.
+F#funkce jsou také první třídy, což znamená, že mohou být předány jako parametry a vráceny z jiných funkcí.
 
-## <a name="functions-to-define-operations-on-objects"></a>Funkce k definování operací s objekty
+## <a name="functions-to-define-operations-on-objects"></a>Funkce pro definování operací s objekty
 
-F#obsahuje plnou podporu pro objekty, které jsou užitečné datové typy, pokud chcete kombinovat data a funkce. F#funkce se používají k práci s objekty.
+F#má plnou podporu pro objekty, které jsou užitečné datové typy, pokud potřebujete Blend data a funkce. F#funkce se používají k manipulaci s objekty.
 
 ```fsharp
 type Set<[<EqualityConditionOn>] 'T when 'T: comparison>(elements: seq<'T>) =
@@ -119,8 +119,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Místo psaní kódu, který je objektově orientované, v F#, budete často psát kód, který zpracovává objekty jako jiný typ dat pro funkce pro manipulaci s. Funkce, jako [obecných rozhraní](language-reference/interfaces.md), [výrazy objektu](language-reference/object-expressions.md)a rozumné využití [členy](language-reference/members/index.md) jsou běžné ve větší F# programy.
+Místo psaní kódu, který je objektově orientovaný, v F#nástroji budete často psát kód, který bude zpracovávat objekty jako jiný datový typ pro zpracování funkcí. Funkce, jako jsou [Obecná rozhraní](./language-reference/interfaces.md), [výrazy objektů](./language-reference/object-expressions.md)a rozumné použití [členů](./language-reference/members/index.md) , jsou běžné ve větších F# programech.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-Další informace o s větším počtem F# funkcí, podívejte se [ F# Tour](tour.md).
+Pokud se chcete dozvědět víc o větší sadě F# funkcí, podívejte se na [ F# prohlídku](tour.md).

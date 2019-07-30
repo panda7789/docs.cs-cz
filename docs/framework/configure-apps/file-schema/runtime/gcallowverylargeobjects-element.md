@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2988b054030df23ae8ccd8840f83c239f0401321
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 70c60461f3ddd6bdabd151f60c7bc81eef18e650
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607266"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629467"
 ---
 # <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects> Element
 Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
 \<gcAllowVeryLargeObjects> Element  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -77,6 +77,10 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
 </configuration>  
 ```  
   
+## <a name="supported-in"></a>Podporováno v:
+
+.NET Framework 4,5 a novější verze
+
 ## <a name="see-also"></a>Viz také:
 
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)

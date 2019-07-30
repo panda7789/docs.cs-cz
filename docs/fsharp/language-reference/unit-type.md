@@ -1,17 +1,17 @@
 ---
 title: Typ jednotky
-description: Zjistěte, jak F# typu "jednotka" se často používá k uložení na místě, kde hodnota vyžaduje syntaxi jazyka při je potřeba nebo požadovaných žádná hodnota.
+description: Zjistěte, F# jak se typ Unit často používá k uchování místa, kde je hodnota požadovaná syntaxí jazyka, když není nutná žádná hodnota.
 ms.date: 05/16/2016
-ms.openlocfilehash: d515e19489bfa7de6f17194fd74176cfa0bcd7c9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4e586702324565b8dcd4f6c7e11a0e1754f89c58
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645127"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630172"
 ---
 # <a name="unit-type"></a>Typ jednotky
 
-`unit` Typ je typ, který ukazuje na nepřítomnost určitou hodnotu; `unit` typ má pouze jednu hodnotu, která funguje jako zástupný symbol, pokud neexistuje žádná hodnota nebo je potřeba.
+Typ je typ, který označuje absenci konkrétní hodnoty `unit` ; typ má pouze jednu hodnotu, která funguje jako zástupný symbol, pokud žádná jiná hodnota neexistuje nebo je vyžadována. `unit`
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,17 +22,17 @@ ms.locfileid: "65645127"
 
 ## <a name="remarks"></a>Poznámky
 
-Každý F# výraz se musí vyhodnotit na hodnotu. Pro výrazy, které nejsou generovány hodnotu, která je zapotřebí, hodnota typu `unit` se používá. `unit` Vypadá podobně jako typ `void` typ v jazycích, jako je C# a C++.
+Každý F# výraz se musí vyhodnotit na hodnotu. Pro výrazy, které negenerují hodnotu, která je zajímavá, je použita hodnota typu `unit` . Typ se podobá `void` typu v jazycích, jako jsou C# a C++ `unit`
 
-`unit` Typ má jednu hodnotu a tuto hodnotu je indikován token `()`.
+Typ má jedinou hodnotu a tato hodnota je označena tokenem `()`. `unit`
 
-Hodnota `unit` typ se často používá v F# programování pro uložení místa kde syntaxe jazyka vyžaduje hodnotu, ale v případě, že je potřeba nebo požadovaných žádná hodnota. Příkladem mohou být návratovou hodnotu `printf` funkce. Protože důležité akce `printf` ve funkci, dojde k operaci, funkce nemusí vrátit skutečnou hodnotu. Proto, že návratová hodnota je typu `unit`.
+Hodnota `unit` typu se často používá při F# programování k uchování místa, kde je hodnota požadovaná syntaxí jazyka, ale když není potřebná nebo požadovaná hodnota. Příkladem může být návratová hodnota `printf` funkce. Vzhledem k tomu, že ve `printf` funkci dojde k důležitým akcím operace, funkce nemusí vracet skutečnou hodnotu. Proto je návratová hodnota typu `unit`.
 
-Očekávat některé konstrukce `unit` hodnotu. Například `do` vazby nebo jakéhokoli kódu na nejvyšší úrovni modulu se má vyhodnotit `unit` hodnotu. Kompilátor oznámí upozornění při `do` vazbami nebo kódem na nejvyšší úrovni modulu vytváří výsledek, než `unit` hodnotu, která se nepoužívá, jak je znázorněno v následujícím příkladu.
+Některé konstruktory očekávají `unit` hodnotu. Například `do` vazba nebo jakýkoli kód na nejvyšší úrovni modulu se očekává pro vyhodnocení `unit` na hodnotu. Kompilátor ohlásí upozornění, pokud `do` vazba nebo kód na nejvyšší úrovni modulu vytvoří výsledek jiný `unit` než hodnota, která není použita, jak je znázorněno v následujícím příkladu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet901.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet901.fs)]
 
-Toto upozornění je typické pro funkční programování. nezobrazí se v jiných .NET programovacích jazyků. Čistě funkční aplikaci, ve kterém funkce nemají žádné vedlejší účinky, poslední vrácená hodnota je jediným výsledkem volání funkce. Proto když výsledek je ignorován, je možné programovací chyba. I když F# nebude plně funkční, programovacího jazyka, je vhodné provést funkční styl programování, kdykoli je to možné.
+Toto upozornění je charakteristické pro funkční programování; nezobrazuje se v jiných programovacích jazycích .NET. V čistě funkčním programu, ve kterém funkce nemají žádné vedlejší účinky, je konečný návratová hodnota jediným výsledkem volání funkce. Proto pokud je výsledek ignorován, může to být chyba programování. I F# když není čistě funkční jazyk programování, je dobrým zvykem sledovat funkční styl programování, kdykoli je to možné.
 
 ## <a name="see-also"></a>Viz také:
 

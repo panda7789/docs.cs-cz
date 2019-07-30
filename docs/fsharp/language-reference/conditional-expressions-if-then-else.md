@@ -1,17 +1,17 @@
 ---
-title: 'Podmíněné výrazy: if... then... else'
-description: Další informace o zápisu podmíněné výrazy F# provést různými větvemi kódu.
+title: 'Podmíněné výrazy: if... pak... ostatních'
+description: Naučte se psát podmíněné výrazy v F# pro spouštění různých větví kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: db2d5ce5b75ecda171f2623c986878dcee1cf4d9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 825149bf296eded3cc2b4d8847ba4d82bea40cdc
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641994"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630392"
 ---
-# <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy: `if...then...else`
+# <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy:`if...then...else`
 
-`if...then...else` Výraz spouští různými větvemi kódu a také vyhodnotí na jinou hodnotu v závislosti na logický výraz zadaný.
+`if...then...else` Výraz spustí různé větve kódu a také se vyhodnotí na jinou hodnotu v závislosti na daném logickém výrazu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,15 +21,15 @@ if boolean-expression then expression1 [ else expression2 ]
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *expression1* spustí, když logický výraz je vyhodnocen jako `true`; v opačném případě *expression2* běží.
+V předchozí syntaxi je *Výraz1* spuštěna při vyhodnocování logického výrazu. v `true`opačném případě je možné spustit *Výraz2* .
 
-Na rozdíl od v jiných jazycích `if...then...else` konstruktor je výraz, ne příkaz. To znamená, že vytvoří hodnotu, což je hodnota posledního výrazu ve větvi, který se spustí. Typy hodnot v jednotlivých větví se musí shodovat. Pokud neexistuje žádné explicitní `else` větev, jeho typ je `unit`. Proto pokud typ `then` větev je libovolného typu jiného než `unit`, musí existovat `else` větev s vracet hodnotu stejného typu. Při zřetězení `if...then...else` výrazů společně, můžete použít klíčové slovo `elif` místo `else if`; jsou ekvivalentní.
+Na `if...then...else` rozdíl od jiných jazyků konstrukce je výraz, nikoli příkaz. To znamená, že vytvoří hodnotu, což je hodnota posledního výrazu ve větvi, která se spustí. Typy hodnot vytvořených v každé větvi se musí shodovat. Pokud není k dispozici `else` žádná explicitní větev, je `unit`její typ. Proto pokud je typ `then` větve libovolný typ jiný než `unit` `else` , musí existovat větev se stejným návratovým typem. Při zřetězení `if...then...else` výrazů můžete místo `else if`použít klíčové slovo `elif` , které je ekvivalentní.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití `if...then...else` výrazu.
+Následující příklad ukazuje, jak použít `if...then...else` výraz.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4501.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4501.fs)]
 
 ```
 10 is less than 20

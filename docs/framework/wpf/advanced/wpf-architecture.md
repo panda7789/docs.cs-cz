@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 987e48f163d35d27f6736464d7497451cca82c0c
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 440a6d76e5295613d2887c0a77d9a49e870e580b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400859"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629816"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje jejich interakci. Také podrobně popisuje některé z možností provedených architekty [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -30,7 +30,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
 ## <a name="systemobject"></a>System.Object  
  Primární [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] programovací model je zveřejněn prostřednictvím spravovaného kódu. Brzy ve fázi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] návrhu existovalo několik informací o tom, kde by měl být řádek vykreslen mezi spravovanými komponentami systému a nespravovanými systémy. CLR nabízí celou řadu funkcí, které zvýší produktivitu a robustní vývoj (včetně správy paměti, zpracování chyb, společného systému typů atd.), ale dostanou za cenu.  
   
- Hlavní součásti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroje jsou znázorněny na následujícím obrázku. Červené části diagramu (PresentationFramework, PresentationCore a milcore) jsou hlavní části kódu v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Z těchto, pouze jedna je nespravovanou komponentou – milcore. Milcore je zapsána v nespravovaném kódu, aby bylo [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]možné povolit úzkou integraci s. Veškeré zobrazení v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroji se provádí [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] prostřednictvím modulu, což umožňuje efektivní vykreslování hardwaru a softwaru. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]také je vyžadována přesnější kontrola nad pamětí a prováděním. Modul kompozice v milcore je extrémně citlivý na výkon a vyžaduje mnoho výhod CLR pro získání výkonu.  
+ Hlavní součásti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroje jsou znázorněny na následujícím obrázku. Červené části diagramu (PresentationFramework, PresentationCore a milcore) jsou hlavní části kódu v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Z těchto, pouze jedna je nespravovanou komponentou – milcore. Milcore je zapsán v nespravovaném kódu, aby bylo možné povolit úzkou integraci s rozhraním DirectX. Všechna zobrazení v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] nástroji se provádí prostřednictvím modulu DirectX, což umožňuje efektivní vykreslování hardwaru a softwaru. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]také je vyžadována přesnější kontrola nad pamětí a prováděním. Modul kompozice v milcore je extrémně citlivý na výkon a vyžaduje mnoho výhod CLR pro získání výkonu.  
   
  ![Pozice WPF v rámci .NET Framework.](./media/wpf-architect1.PNG "wpf_architect1")  
   

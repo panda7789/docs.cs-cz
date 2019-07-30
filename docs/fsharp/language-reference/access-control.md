@@ -1,56 +1,56 @@
 ---
 title: Řízení přístupu
-description: Zjistěte, jak řídit přístup k programovací prvky, jako jsou typy, metody a funkce, F# programovací jazyk.
+description: Naučte se řídit přístup k programovacím prvkům, jako jsou typy, metody a funkce, v F# programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: a284d2fa4f98e444279276f58b70a15560537ca4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ed77a09cf87aabf9a4134276e89e84aa42abd3c3
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645599"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629970"
 ---
 # <a name="access-control"></a>Řízení přístupu
 
-*Řízení přístupu* odkazuje na deklarace, které klienty můžete použít některé prvky programu, jako jsou typy, metody a funkce.
+*Řízení přístupu* odkazuje na deklaraci toho, kteří klienti můžou používat určité prvky programu, jako jsou typy, metody a funkce.
 
-## <a name="basics-of-access-control"></a>Základní informace o řízení přístupu
+## <a name="basics-of-access-control"></a>Základy Access Control
 
-V F#, specifikátorů řízení přístupu `public`, `internal`, a `private` lze použít u modulů, typy, metody, definice hodnot, funkce, vlastnosti a explicitní pole.
+V F#nástroji specifikátory `public`řízení přístupu, `internal`a `private` lze použít na moduly, typy, metody, definice hodnot, funkce, vlastnosti a explicitní pole.
 
-- `public` Označuje, že entita je přístupný všem volajícím.
+- `public`označuje, že k entitě lze přistupovat všichni volající.
 
-- `internal` Označuje, že entita je přístupný jenom ze stejného sestavení.
+- `internal`označuje, že k entitě lze přistupovat pouze ze stejného sestavení.
 
-- `private` Označuje, že entita je přístupný pouze z nadřazeného typu nebo modulu.
+- `private`označuje, že k entitě lze přistupovat pouze z ohraničujícího typu nebo modulu.
 
 > [!NOTE]
-> Specifikátor přístupu `protected` se nepoužívá v F#, i když je přijatelné, pokud používáte typů definovaných v jazycích, které podporují `protected` přístup. Proto pokud je přepsat chráněnou metodu, metodu zůstane dostupný jenom v rámci třídy a jeho následovníky.
+> Specifikátor `protected` přístupu se nepoužívá v F#, i když je přijatelný, pokud používáte typy vytvořené v `protected` jazycích, které podporují přístup. Proto pokud přepíšete chráněnou metodu, vaše metoda zůstane přístupná pouze v rámci třídy a jejích následníků.
 
-Obecně platí, je specifikátor umístit před název sady entit, kromě případů, kdy `mutable` nebo `inline` specifikátor se používá, které se zobrazí po specifikátoru přístupu ovládacího prvku.
+Obecně je specifikátor umístěn před název entity, s výjimkou případu, kdy `mutable` se používá specifikátor nebo `inline` , který se zobrazí po specifikátoru řízení přístupu.
 
-Pokud není použit žádný specifikátor přístupu, výchozí hodnota je `public`, s výjimkou `let` vazby v typu, které jsou vždy `private` typu.
+Pokud není použit žádný specifikátor přístupu, je `public`výchozí hodnota, `let` s výjimkou vazeb v typu, které jsou vždy `private` typu.
 
-Podpisy v F# jiný mechanismus pro řízení přístupu k F# prvky programu. Podpisy nejsou požadována pro řízení přístupu. Další informace najdete v tématu [podpisy](signatures.md).
+Signatury F# v nástroji poskytují jiný mechanismus řízení přístupu F# k prvkům programu. Pro řízení přístupu se signatury nevyžadují. Další informace najdete v tématu [signatury](signatures.md).
 
-## <a name="rules-for-access-control"></a>Pravidla pro řízení přístupu
+## <a name="rules-for-access-control"></a>Pravidla pro Access Control
 
-Řízení přístupu se vztahují následující pravidla:
+Řízení přístupu podléhá následujícím pravidlům:
 
-- Deklarace dědičnosti (to znamená použití `inherit` k určení základní třída pro třídu), deklarace (které se určuje, že třída implementuje rozhraní) rozhraní a abstraktní členové mají vždy stejnou přístupností jako nadřazený typ. Proto nelze použít specifikátor řízení přístupu na tyto konstrukce.
+- Deklarace dědičnosti (to znamená použití `inherit` k určení základní třídy pro třídu), deklarace rozhraní (to znamená, že třída implementuje rozhraní) a abstraktní členové mají vždy stejné přístupnost jako nadřazený typ. Proto specifikátor řízení přístupu nelze použít na těchto konstrukcích.
 
-- Usnadnění pro jednotlivé případy diskriminovaného sjednocení se určuje podle usnadnění diskriminované sjednocení, samotného. To znamená je konkrétní – případ typu union ne míň dostupný než samotné sjednocení.
+- Přístupnost pro jednotlivé případy v rozlišeném sjednocení je určena přístupným přístupu přímo k rozlišenému sjednocení. To znamená, že konkrétní případ typu Union není méně dostupný než samotný sjednocení.
 
-- Usnadnění pro jednotlivá pole záznamu typu nelze je určena dostupnost samotného záznamu. Popisek konkrétního záznamu je tedy ne míň dostupný než samotného záznamu.
+- Přístupnost pro jednotlivá pole typu záznamu nemůže být určena přístupností samotného záznamu. To znamená, že konkrétní popisek záznamu není méně dostupný než samotný záznam.
 
 ## <a name="example"></a>Příklad
 
-Následující kód ukazuje použití specifikátorů řízení přístupu. Existují dva soubory v projektu `Module1.fs` a `Module2.fs`. Každý soubor je implicitně modul. Proto existují dva moduly `Module1` a `Module2`. Typ privátní a interní typ jsou definovány v `Module1`. Privátní typ nejde přistupovat z `Module2`, ale můžete vnitřního typu.
+Následující kód ilustruje použití specifikátorů řízení přístupu. V projektu jsou dva soubory, `Module1.fs` a. `Module2.fs` Každý soubor je implicitně modulem. Proto existují dva moduly `Module1` a. `Module2` Privátní typ a interní typ jsou definovány v `Module1`. K privátnímu typu nelze přicházet `Module2`z, ale interní typ může.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/access-control/snippet1.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/access-control/snippet1.fs)]
 
-Následující kód testy přístupnost typů vytvořených v `Module1.fs`.
+Následující kód testuje přístupnost typů vytvořených v `Module1.fs`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/access-control/snippet2.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/access-control/snippet2.fs)]
 
 ## <a name="see-also"></a>Viz také:
 

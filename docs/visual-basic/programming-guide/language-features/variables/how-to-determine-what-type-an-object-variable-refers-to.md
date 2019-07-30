@@ -1,57 +1,59 @@
 ---
-title: 'Postupy: Určit, jaký typ proměnná objektu odkazuje (Visual Basic)'
+title: 'Postupy: Určete, na jaký typ proměnná objektu odkazuje (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TypeOf operator [Visual Basic], determining object variable type
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-ms.openlocfilehash: 4ae73e6b3dec7864eb670bed67630b1cc96e5e61
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 935623dd4b6edca188f932aca0e560130199e8f6
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663540"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626566"
 ---
-# <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určit, jaký typ proměnná objektu odkazuje (Visual Basic)
-Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném místě. Typ těchto dat můžete změnit za běhu. V daném okamžiku provádějí, můžete použít <xref:System.Type.GetTypeCode%2A> metodou ke zjištění aktuálního typu za běhu nebo [TypeOf – operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) zjistit, jestli aktuální run-time typu je kompatibilní s zadaného typu.  
-  
-### <a name="to-determine-the-exact-type-an-object-variable-currently-refers-to"></a>Chcete-li zjistit, konkrétní typ proměnná objektu aktuálně odkazuje na  
-  
-1. Proměnné objektu volat <xref:System.Object.GetType%2A> metodu pro načtení <xref:System.Type?displayProperty=nameWithType> objektu.  
-  
-    ```  
-    Dim myObject As Object  
-    myObject.GetType()  
-    ```  
-  
-2. Na <xref:System.Type?displayProperty=nameWithType> třídy, zavolejte metodu sdílené <xref:System.Type.GetTypeCode%2A> načíst <xref:System.TypeCode> hodnotu výčtu pro typ objektu.  
-  
-    ```  
-    Dim myObject As Object  
-    Dim datTyp As Integer = Type.GetTypeCode(myObject.GetType())  
-    MsgBox("myObject currently has type code " & CStr(datTyp))  
-    ```  
-  
-     Můžete testovat <xref:System.TypeCode> hodnoty výčtu s libovolným členy výčtu jsou zajímavé, jako je například `Double`.  
-  
-### <a name="to-determine-whether-an-object-variables-type-is-compatible-with-a-specified-type"></a>K určení, zda objekt je kompatibilní s typem zadaný typ proměnné  
-  
-- Použití `TypeOf` operátor v kombinaci s [je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) otestovat objekt s `TypeOf`... `Is` výrazu.  
-  
-    ```  
-    If TypeOf objA Is System.Windows.Forms.Control Then  
-        MsgBox("objA is compatible with the Control class")  
-    End If  
-    ```  
-  
-     `TypeOf`... `Is` výraz vrátí `True` Pokud objektu za běhu typ je kompatibilní se zadaným typem.  
-  
-     Kritéria pro kompatibilitu závisí na tom, zda zadaný typ třídy, struktury nebo rozhraní. Obecně platí jsou kompatibilní typy, pokud objekt je stejného typu jako, dědí z nebo implementuje zadaného typu. Další informace najdete v tématu [TypeOf operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md).  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Všimněte si, že zadaný typ nemůže být proměnné nebo výrazu. Musí být název definovaný typ, jako jsou třídy, struktury nebo rozhraní. To zahrnuje vnitřní typy jako `Integer` a `String`.  
-  
+# <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určete, na jaký typ proměnná objektu odkazuje (Visual Basic)
+
+Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ těchto dat se může během běhu změnit. V každém okamžiku můžete použít <xref:System.Type.GetTypeCode%2A> metodu k určení aktuálního typu za běhu nebo operátora [typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md) k zjištění, zda je aktuální typ běhu kompatibilní se zadaným typem.
+
+### <a name="to-determine-the-exact-type-an-object-variable-currently-refers-to"></a>Určení přesného typu, na který aktuálně odkazuje proměnná objektu
+
+1. Na objektovou proměnnou volejte <xref:System.Object.GetType%2A> metodu pro <xref:System.Type?displayProperty=nameWithType> načtení objektu.
+
+    ```vb
+    Dim myObject As Object
+    myObject.GetType()
+    ```
+
+2. U třídy zavolejte sdílenou metodu <xref:System.Type.GetTypeCode%2A> pro načtení <xref:System.TypeCode> hodnoty výčtu pro typ objektu. <xref:System.Type?displayProperty=nameWithType>
+
+    ```vb
+    Dim myObject As Object
+    Dim datTyp As Integer = Type.GetTypeCode(myObject.GetType())
+    MsgBox("myObject currently has type code " & CStr(datTyp))
+    ```
+
+    Můžete otestovat hodnotu výčtu <xref:System.TypeCode> na základě toho, co členové výčtu mají zájem, `Double`například.
+
+### <a name="to-determine-whether-an-object-variables-type-is-compatible-with-a-specified-type"></a>Určení, zda je typ objektové proměnné kompatibilní se zadaným typem
+
+- Použijte operátor v kombinaci s operátorem [is](../../../../visual-basic/language-reference/operators/is-operator.md) k otestování objektu s `TypeOf`... `TypeOf` `Is` výraz.
+
+    ```vb
+    If TypeOf objA Is System.Windows.Forms.Control Then
+        MsgBox("objA is compatible with the Control class")
+    End If
+    ```
+
+    `TypeOf`... `Is` výraz vrátí`True` , pokud je typ modulu runtime objektu kompatibilní se zadaným typem.
+
+    Kritérium kompatibility závisí na tom, zda je zadaný typ třída, struktura nebo rozhraní. Obecně jsou typy kompatibilní, pokud je objekt stejného typu jako, dědí z nebo implementuje zadaný typ. Další informace naleznete v tématu [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md).
+
+## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+
+Všimněte si, že zadaný typ nemůže být proměnná nebo výraz. Musí se jednat o název definovaného typu, jako je například třída, struktura nebo rozhraní. To zahrnuje vnitřní typy, jako `Integer` jsou `String`a.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Object.GetType%2A>

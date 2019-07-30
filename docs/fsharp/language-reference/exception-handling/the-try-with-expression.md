@@ -1,17 +1,17 @@
 ---
-title: 'Výjimky: Try... with – výraz'
-description: Další informace o použití F# "try... with" výraz pro zpracování výjimek.
+title: 'Výjimky: Výraz try...with'
+description: Naučte se používat F# try... výraz with pro zpracování výjimek.
 ms.date: 05/16/2016
-ms.openlocfilehash: 3ba13227ac55eff770ceb7631d3406ad80b6ea45
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e4d615086a93e26b76cca460e797659ca13792b5
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641939"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630244"
 ---
-# <a name="exceptions-the-trywith-expression"></a>Výjimky: Try... with – výraz
+# <a name="exceptions-the-trywith-expression"></a>Výjimky: Výraz try...with
 
-Toto téma popisuje `try...with` výraz, výraz, který se používá pro zpracování výjimek v F# jazyka.
+Toto téma popisuje `try...with` výraz, který se používá pro zpracování výjimek v F# jazyce.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,35 +26,35 @@ with
 
 ## <a name="remarks"></a>Poznámky
 
-`try...with` Výraz je použit pro zpracování výjimek v F#. Se podobá `try...catch` příkaz v jazyce C#. V předchozí syntaxi, kód v *expression1* může vygenerovat výjimku. `try...with` Výraz vrátí hodnotu. Pokud není vyvolána žádná výjimka, celý výraz vrátí hodnotu *expression1*. Pokud je vyvolána výjimka, každý *vzor* je pak porovnána s výjimkou a pro první odpovídající vzor odpovídající *výraz*, označované jako *obslužnérutinyvýjimek*, je proveden tuto větev a celkové výraz vrací hodnotu výrazu v této obslužné rutiny výjimky. Pokud žádný vzor odpovídá, výjimka šíří výše v zásobníku volání, dokud není nalezena odpovídající obslužná rutina. Typy hodnot vrácených z každého výrazu v obslužných rutinách výjimek musí shodovat s typem vrácená z výrazu v `try` bloku.
+Výraz se používá ke zpracování výjimek v F# `try...with` Je podobný `try...catch` příkazu v. C# V předchozí syntaxi kód v *Výraz1* může generovat výjimku. `try...with` Výraz vrací hodnotu. Pokud není vyvolána žádná výjimka, vrátí celý výraz hodnotu *Výraz1*. Je-li vyvolána výjimka, je každý *vzor* porovnán s výjimkou a pro první odpovídající vzor, odpovídající *výraz*, který je známý jako *obslužná rutina výjimky*, pro tuto větev je spuštěn a celkový výraz Vrátí hodnotu výrazu v této obslužné rutině výjimky. Pokud žádný vzor neodpovídá, výjimka rozšíří zásobník volání, dokud není nalezena odpovídající obslužná rutina. Typy hodnot vrácených z každého výrazu v obslužných rutinách výjimek se musí shodovat s typem vráceným z výrazu v `try` bloku.
 
-Fakt, že došlo k chybě také často, znamená, že neexistuje platná hodnota vrácená z výrazů v každé obslužné rutiny výjimky. Časté je typu výrazu možné typ možnosti. Následující příklad kódu ukazuje tento model.
+Často skutečnost, že došlo k chybě, také znamená, že neexistuje žádná platná hodnota, která může být vrácena z výrazů v každé obslužné rutině výjimky. Častým vzorem je, že typ výrazu je typ možnosti. Následující příklad kódu ukazuje tento model.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5601.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5601.fs)]
 
-Výjimky mohou být výjimky .NET, nebo může být F# výjimky. Můžete definovat F# výjimky pomocí `exception` – klíčové slovo.
+Výjimky mohou být výjimky rozhraní .NET nebo mohou být F# výjimky. Výjimky lze definovat F# pomocí `exception` klíčového slova.
 
-Různé vzorce můžete použít k filtrování podle typu výjimky a dalších podmínek; Možnosti jsou shrnuty v následující tabulce.
+Můžete použít celou řadu vzorů k filtrování typu výjimky a dalších podmínek. Tyto možnosti jsou shrnuté v následující tabulce.
 
 |Vzor|Popis|
 |-------|-----------|
-|:? *exception-type*|Neodpovídá zadanému typu výjimky .NET.|
-|:? *Typ výjimky* jako *identifikátor*|Neodpovídá zadanému typu výjimky .NET, ale dává výjimku pojmenovaná hodnota.|
-|*exception-name*(*arguments*)|Shody F# typ výjimky a vytvoří vazbu argumenty.|
-|*identifier*|Odpovídá jakékoli výjimce a sváže s názvem objektu výjimky. Ekvivalentní **:? System.Exception jako**_identifikátor_|
-|*identifikátor* při *podmínku*|Odpovídá jakoukoliv výjimku, pokud je podmínka pravdivá.|
+|:? *exception-type*|Odpovídá zadanému typu výjimky .NET.|
+|:? *Typ výjimky* jako *identifikátoru*|Odpovídá zadanému typu výjimky .NET, ale poskytuje výjimku jako pojmenovanou hodnotu.|
+|*název výjimky* (*argumenty*)|Odpovídá typu F# výjimky a váže argumenty.|
+|*RID*|Odpovídá jakékoli výjimce a váže název objektu výjimky. **Ekvivalent:? System. Exception**–_identifikátor_|
+|*identifikátor* za *podmínkou*|Odpovídá jakékoli výjimce, pokud je podmínka pravdivá.|
 
 ## <a name="examples"></a>Příklady
 
-Následující příklady ilustrují použití různých vzorů obslužné rutiny výjimky.
+Následující příklady kódu ilustrují použití různých vzorů obslužných rutin výjimek.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5602.fs)]
-
-> [!NOTE]
-> `try...with` Konstruktor je zvláštní výraz z `try...finally` výrazu. Proto pokud váš kód vyžaduje obě `with` bloku a `finally` bloku, budete muset vnořit dvou výrazů.
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5602.fs)]
 
 > [!NOTE]
-> Můžete použít `try...with` v asynchronních pracovních postupech a jiných výrazech výpočtu, ve kterém malá a velká přizpůsobenou verzi `try...with` výraz je použit. Další informace najdete v tématu [asynchronní pracovní postupy](../asynchronous-workflows.md), a [výrazech výpočtu](../computation-expressions.md).
+> Konstrukce je samostatný výraz `try...finally` z výrazu. `try...with` Proto pokud váš kód vyžaduje `with` blok `finally` i blok, bude nutné vnořené dva výrazy vnořit.
+
+> [!NOTE]
+> Můžete použít `try...with` v asynchronních pracovních postupech a jiných výrazech výpočtu. v takovém případě se používá `try...with` přizpůsobená verze výrazu. Další informace najdete v tématu [asynchronní pracovní postupy](../asynchronous-workflows.md)a [výpočetní výrazy](../computation-expressions.md).
 
 ## <a name="see-also"></a>Viz také:
 

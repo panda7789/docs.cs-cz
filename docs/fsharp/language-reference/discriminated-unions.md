@@ -1,17 +1,17 @@
 ---
 title: Rozlišovaná sjednocení
-description: Další informace o použití F# rozlišovaná sjednocení.
+description: Naučte se používat F# rozlišené sjednocení.
 ms.date: 05/16/2016
-ms.openlocfilehash: a3958a9ffb021c0c46c24216f17a1e7ee5605dd3
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 940bc51f49e283c31846dd2047b749769b919838
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816243"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630360"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
-Rozlišovaná sjednocení poskytují podporu pro hodnoty, které může být jedna z počty pojmenovaných případů, případně každý má jiné hodnoty a typy. Rozlišovaná sjednocení jsou užitečná pro heterogenní data; data, která mohou mít zvláštní případy, včetně platných a chybových případů; data, která se liší v typu z jedné instance do druhé; a jako alternativu pro malé hierarchie objektů. Navíc rekurzivně diskriminovaná sjednocení se používají ke znázornění stromových struktur dat.
+Rozlišené sjednocení poskytují podporu pro hodnoty, které mohou být jedním z mnoha pojmenovaných případů, případně každý s různými hodnotami a typy. Rozlišené sjednocení jsou užitečné pro heterogenní data; data, která mohou mít zvláštní případy, včetně platných a chybových případů; data, která se liší v typu z jedné instance do druhé; a jako alternativu pro malé hierarchie objektů. Kromě toho rekurzivní rozlišené sjednocení slouží k reprezentaci stromových struktur dat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,11 +26,11 @@ type [accessibility-modifier] type-name =
 
 ## <a name="remarks"></a>Poznámky
 
-Rozlišovaná sjednocení jsou podobná sjednocovacím typům v jiných jazycích, ale existují rozdíly. Jako s sjednocovacího typu v C++ nebo variantním typu v jazyce Visual Basic, data uložená v hodnotě nejsou pevná; To může být jedna z několika různých možností. Na rozdíl od sjednocení v těchto jazycích však každé možnosti dostane *identifikátor případu*. Identifikátory velikosti písmen jsou názvy pro různé typy hodnot, které by mohly být objekty tohoto typu; hodnoty jsou volitelné. Pokud hodnoty nejsou k dispozici, případ je ekvivalentní případu výčtu. Pokud existují hodnoty, každá hodnota může být buď samostatná hodnota ze zadaného typu nebo n-tice, která agreguje více polí stejných nebo různých typů. Jednotlivá pole můžete dát název, ale název je volitelný, i když jsou pojmenovány jiná pole v malých písmen.
+Rozlišené sjednocení jsou podobné typům sjednocení v jiných jazycích, ale existují rozdíly. Stejně jako u typu sjednocení C++ nebo v typu variant v Visual Basic, nejsou data uložená v hodnotě pevná; může to být jedna z několika různých možností. Na rozdíl od sjednocení v těchto jiných jazycích ale každá z možných možností má za následek *identifikátor případu*. Identifikátory případů jsou názvy různých možných typů hodnot, které mohou být objekty tohoto typu. hodnoty jsou volitelné. Pokud hodnoty nejsou k dispozici, je případ ekvivalentní s případem výčtu. Pokud jsou zadány hodnoty, každá hodnota může být buď jediná hodnota zadaného typu, nebo řazená kolekce členů, která agreguje více polí stejného nebo různých typů. Individuálnímu poli můžete zadat název, ale název je nepovinný, i když se pojmenují další pole ve stejném případě.
 
-Usnadnění pro rozlišovaná sjednocení výchozí hodnota je `public`.
+Přístupnost pro rozlišené sjednocení je ve `public`výchozím nastavení.
 
-Zvažte například následující deklaraci typu obrazce.
+Zvažte například následující deklaraci typu tvaru.
 
 ```fsharp
 type Shape =
@@ -39,9 +39,9 @@ type Shape =
     | Prism of width : float * float * height : float
 ```
 
-Předchozí kód deklaruje diskriminované sjednocení tvar, který může nabývat hodnot ve všech třech případech: Obdélník, kruh a hranol. Každý případ má jinou sadu polí. Obdélník využívá dvě s názvem pole, oba typu `float`, které mají názvy šířka a délka. Případ kruh má pouze jedno pole s názvem, poloměr. Případ hranolu obsahuje tři pole dvě z které (šířka a výška) jsou pojmenované názvy polí. Nepojmenované pole jsou označovány jako anonymní pole.
+Předchozí kód deklaruje nerozlišený obrazec sjednocení, který může mít hodnoty ze tří případů: Obdélník, Circle a Prism. Každý případ má jinou sadu polí. V případě obdélníku jsou k dispozici dvě pojmenovaná pole, obě typu `float`, jejichž názvy mají šířku a délku. KRUHOVÁ velikost má pouze jedno pojmenované pole, poloměr. PRISM případ obsahuje tři pole, z nichž dva mají (šířka a výška) pojmenovaná pole. Nepojmenovaná pole se nazývají anonymní pole.
 
-Objekty je možné vytvořit zadáním hodnot pro pojmenované a anonymní pole podle následujících příkladů.
+Sestavíte objekty zadáním hodnot pro pojmenované a anonymní pole podle následujících příkladů.
 
 ```fsharp
 let rect = Rectangle(length = 1.3, width = 10.0)
@@ -49,9 +49,9 @@ let circ = Circle (1.0)
 let prism = Prism(5., 2.0, height = 3.0)
 ```
 
-Tento kód ukazuje, že můžete použít buď pojmenovaná pole v inicializaci, nebo můžete spoléhat na pořadí polí v deklaraci a stačí zadat hodnoty pro každé pole zase. Volání konstruktoru pro `rect` v předcházejícím kódu používá pojmenovaná pole, ale volání konstruktoru pro `circ` používá řazení. Můžete kombinovat objednaná pole a pojmenovaná pole jako v konstrukci `prism`.
+Tento kód ukazuje, že můžete buď použít pojmenovaná pole v inicializaci, nebo můžete spoléhat na řazení polí v deklaraci a zadat pouze hodnoty pro každé pole. Volání `rect` konstruktoru v předchozím kódu používá pojmenovaná pole, ale `circ` volání konstruktoru používá řazení. Můžete kombinovat uspořádaná pole a pojmenovaná pole, jako v konstrukci `prism`.
 
-`option` Typ je jednoduchým diskriminovaným sjednocením v F# základní knihovny. `option` Typ je deklarován následujícím způsobem.
+Typ je jednoduché rozlišené sjednocení v F# základní knihovně. `option` `option` Typ je deklarován následujícím způsobem.
 
 ```fsharp
 // The option type is a discriminated union.
@@ -60,17 +60,17 @@ type Option<'a> =
     | None
 ```
 
-Předchozí kód, který určuje typ `Option` je diskriminovaným sjednocením, které má dva případy `Some` a `None`. `Some` Případ má přidruženou hodnotu, která se skládá z jednoho anonymní pole, jehož typ je vyjádřen parametrem typu `'a`. `None` Případ nemá přidruženou hodnotu. Proto `option` typ určuje obecný typ, který má buď hodnotu některého typu nebo žádnou hodnotu. Typ `Option` má také alias psaný malými písmeny `option`, to znamená informace, které se běžně používají.
+Předchozí kód určuje, že typ `Option` je rozlišené sjednocení, které má dva `Some` případy a `None`. Případ má přidruženou hodnotu, která se skládá z jednoho anonymního pole, jehož typ je reprezentován parametrem `'a`typu. `Some` K `None` případu není přidružena žádná hodnota. `option` Proto typ určuje obecný typ, který má buď hodnotu nějakého typu, nebo žádnou hodnotu. Typ `Option` má také alias typu malý malý typ, `option`který se častěji používá.
 
-Identifikátory velikosti písmen lze jako konstruktory diskriminovaného typu sjednocení. Například následující kód slouží k vytvoření hodnoty `option` typu.
+Identifikátory případu lze použít jako konstruktory pro rozlišený typ sjednocení. Například následující kód se používá k vytvoření hodnot `option` typu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2001.fs)]
 
-Identifikátory velikosti písmen se také používají ve vzorech porovnávání výrazů. Ve vzoru porovnávání výrazů jsou k dispozici identifikátory hodnot spojené s jednotlivými případy. Například v následujícím kódu `x` identifikátorem přiřazené hodnoty, který je přidružen `Some` případě `option` typu.
+Identifikátory Case se používají také ve výrazech pro porovnávání vzorů. Ve výrazu pro porovnávání vzorů jsou identifikátory k dispozici pro hodnoty přidružené k jednotlivým případům. Například v následujícím kódu `x` je identifikátor přiřazený k hodnotě, která je spojena `Some` s případem `option` typu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2002.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2002.fs)]
 
-Ve vzoru porovnávání výrazů můžete použít pojmenovaná pole k určení diskriminovaných sjednocených shod. Pro typ tvar, který byl deklarován dříve můžete použít pojmenovaná pole, jak ukazuje následující kód k extrahování hodnot polí.
+Ve výrazech porovnávání se vzorci můžete použít pojmenovaná pole k určení shod rozlišených sjednocení. Pro typ obrazce, který byl dřív deklarovaný, můžete použít pojmenovaná pole, jak ukazuje následující kód k extrakci hodnot polí.
 
 ```fsharp
 let getShapeHeight shape =
@@ -80,11 +80,11 @@ let getShapeHeight shape =
     | Prism(height = h) -> h
 ```
 
-Za normálních okolností lze identifikátory velikosti písmen použít bez jejich kvalifikace názvu unie. Pokud chcete, aby název, který má být vždy kvalifikovaným názvem sjednocení, můžete použít [RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp]) atributu na definici typu sjednocení.
+V normálním případě lze identifikátory případu použít bez kvalifikovaného názvu sjednocení. Pokud chcete, aby byl název vždy kvalifikován s názvem sjednocení, můžete použít atribut [RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp]) na definici typu sjednocení.
 
-### <a name="unwrapping-discriminated-unions"></a>Rozbalení rozlišovaná sjednocení
+### <a name="unwrapping-discriminated-unions"></a>Rozbalení rozlišených sjednocení
 
-V F# Rozlišované sjednocení se často používají v doméně modelování pro obtékání jednoho typu. Je snadné získání základní hodnoty přes porovnávání vzorů také. Není nutné použít odpovídající výraz pro jeden případ:
+V F# rozlišených sjednoceních se často používají modelování domén pro zabalení jednoho typu. Základní hodnotu lze snadno extrahovat také pomocí porovnávání vzorů. Výraz shody nemusíte používat pro jeden případ:
 
 ```fsharp
 let ([UnionCaseName] [values]) = [UnionValue]
@@ -101,7 +101,7 @@ let someFunctionUsingShaderProgram shaderProgram =
     ...
 ```
 
-Porovnávání vzorů je povolen také přímo v parametry funkce, takže můžete rozbalit jeden případ:
+Porovnávání vzorů je také povoleno přímo v parametrech funkcí, takže můžete rozbalit jeden případ:
 
 ```fsharp
 let someFunctionUsingShaderProgram (ShaderProgram id) =
@@ -109,9 +109,9 @@ let someFunctionUsingShaderProgram (ShaderProgram id) =
     ...
 ```
 
-## <a name="struct-discriminated-unions"></a>Rozlišovaná sjednocení – struktura
+## <a name="struct-discriminated-unions"></a>Struktury rozlišených sjednocení
 
-Rozlišované sjednocení může také představovat jako struktury.  Používá se k tomu `[<Struct>]` atribut.
+Můžete také znázornit rozlišené sjednocení jako struktury.  To se provádí s `[<Struct>]` atributem.
 
 ```fsharp
 [<Struct>]
@@ -124,21 +124,21 @@ type Multicase =
     | Case3 of Case3 : double
 ```
 
-Protože jsou typy hodnot a typy odkazů nikoli, jsou doplňující aspekty, které jsou ve srovnání s odkazem na rozlišovaná sjednocení:
+Vzhledem k tomu, že se jedná o typy hodnot a typy odkazů, existují další požadavky v porovnání s referenčními sjednoceními:
 
-1. Tyto jsou zkopírovány jako typy hodnot a mít Sémantika typu hodnoty.
-2. Definice rekurzivního typu nelze použít s multicase struct Discriminated Union.
-3. Musíte zadat jedinečné názvy případu pro multicase struct Discriminated Union.
+1. Jsou zkopírovány jako typy hodnot a mají sémantiku typu hodnoty.
+2. Nemůžete použít definici rekurzivního typu s neomezeným sjednocením struktury s více případy.
+3. Je nutné zadat jedinečné názvy případů pro rozlišené sjednocení ve více případech.
 
-## <a name="using-discriminated-unions-instead-of-object-hierarchies"></a>Použití rozlišovaných Unionů místo hierarchií objektu
+## <a name="using-discriminated-unions-instead-of-object-hierarchies"></a>Použití rozlišených sjednocení místo hierarchií objektů
 
-Můžete často použít diskriminované sjednocení jako jednodušší alternativu k malé hierarchii objektu. Například následující diskriminované sjednocení může místo `Shape` základní třída, která obsahuje odvozené typy pro kruh, čtverec, a tak dále.
+Můžete často použít rozlišené sjednocení jako jednodušší alternativu k malé hierarchii objektů. Například následující rozlišené sjednocení lze použít místo `Shape` základní třídy, která má odvozené typy pro kruh, čtverce a tak dále.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2003.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2003.fs)]
 
-Místo toho virtuální metody pro výpočet plochy nebo obvodu, jako byste použili pro objektově orientované implementaci, můžete k výpočtu těchto množství porovnávání vzorce pro větvení příslušných vzorců. V následujícím příkladu se používají různé vzorce pro výpočet plochy v závislosti na tvaru.
+Místo virtuální metody pro výpočet oblasti nebo hraničního prostředí, stejně jako při použití v objektově orientované implementaci, můžete použít porovnávání vzorů pro větvení s vhodnými vzorci k výpočtu těchto množství. V následujícím příkladu jsou pro výpočet oblasti použity různé vzorce v závislosti na tvaru.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2004.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2004.fs)]
 
 Výstup je následující:
 
@@ -148,25 +148,25 @@ Area of square that has side 10.000000: 100.000000
 Area of rectangle that has height 5.000000 and width 10.000000 is 50.000000
 ```
 
-## <a name="using-discriminated-unions-for-tree-data-structures"></a>Použití rozlišovaných Unionů pro struktury dat stromu
+## <a name="using-discriminated-unions-for-tree-data-structures"></a>Použití rozlišených sjednocení pro struktury dat stromu
 
-Rozlišovaná sjednocení mohou být rekurzivní, což znamená, že samotné sjednocení mohou být součástí typů jednoho nebo více případů. Rekurzivní rozlišovaná sjednocení lze použít k vytvoření stromových struktur, které se používají pro modelování výrazů v programovacích jazycích. V následujícím kódu je rekurzivní diskriminované sjednocení použito k vytvoření struktury dat binárního stromu. Union se skládá ze dvou případech `Node`, což je uzel s celočíselnou hodnotou a levým a pravým podstromem, a `Tip`, který ukončí strom.
+Rozlišené sjednocení mohou být rekurzivní, což znamená, že samotné sjednocení lze zahrnout do typu jednoho nebo více případů. Rekurzivní rozlišené sjednocení lze použít k vytvoření stromové struktury, které se používají k modelování výrazů v programovacích jazycích. V následujícím kódu se rekurzivní rozlišené sjednocení používá k vytvoření binární struktury dat stromu. Sjednocení se skládá ze dvou případů `Node`, který je uzel s celočíselnou hodnotou, levým a pravým podstromem `Tip`a, který ukončí strom.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2005.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2005.fs)]
 
-V předchozím kódu `resultSumTree` má hodnotu 10. Následující obrázek znázorňuje stromovou strukturu `myTree`.
+V předchozím kódu `resultSumTree` má hodnotu 10. Následující ilustrace znázorňuje stromovou strukturu pro `myTree`.
 
-![Diagram zobrazující průběh stromová struktura pro myTree.](../media/discriminated-unions/tree-structure-mytree.png)
+![Diagram, který zobrazuje stromovou strukturu pro myTree.](../media/discriminated-unions/tree-structure-mytree.png)
 
-Rozlišovaná sjednocení pracují dobře, pokud uzly ve stromu jsou heterogenní. V následujícím kódu, typ `Expression` představuje abstraktní strom syntaxe výrazu v jednoduchém programovacím jazyce, který podporuje sčítání a násobení čísel a proměnných. Některé sjednocovací případy nejsou rekurzivní a představují buď čísla (`Number`) nebo proměnné (`Variable`). Ostatní případy jsou rekurzivní a představují operace (`Add` a `Multiply`), kde jsou jako operandy také výrazy. `Evaluate` Funkce používá odpovídající výraz pro rekurzivní zpracování stromu syntaxe.
+Rozlišené sjednocení dobře fungují, pokud jsou uzly ve stromové struktuře heterogenní. V následujícím kódu typ `Expression` představuje abstraktní strom syntaxe výrazu v jednoduchém programovacím jazyce, který podporuje sčítání a násobení čísel a proměnných. Některé případy sjednocení nejsou rekurzivní a představují buď čísla (`Number`) nebo proměnné (`Variable`). Jiné případy jsou rekurzivní a představují operace (`Add` a `Multiply`), kde operandy jsou také výrazy. `Evaluate` Funkce používá výraz shody k rekurzivnímu zpracování stromu syntaxe.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2006.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2006.fs)]
 
-Při spuštění tohoto kódu, hodnota `result` je 5.
+Při spuštění tohoto kódu `result` je hodnota 5.
 
 ## <a name="members"></a>Členové
 
-Je možné definovat členy pro rozlišovaná sjednocení. Následující příklad ukazuje, jak definovat vlastnost a implementovat rozhraní:
+Je možné definovat členy v rozlišených sjednoceních. Následující příklad ukazuje, jak definovat vlastnost a implementovat rozhraní:
 
 ```fsharp
 open System
@@ -196,9 +196,9 @@ type Shape =
             | Rectangle(l, w) -> printfn "Rectangle with length %f and width %f" l w
 ```
 
-## <a name="common-attributes"></a>Běžné atributy
+## <a name="common-attributes"></a>Společné atributy
 
-Následující atributy se běžně zobrazují v rozlišovaných sjednoceních:
+Následující atributy se běžně zobrazují v rozlišených sjednoceních:
 
 * `[<RequireQualifiedAccess>]`
 * `[<NoEquality>]`

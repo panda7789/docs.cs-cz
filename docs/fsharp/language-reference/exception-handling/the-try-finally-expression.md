@@ -1,17 +1,17 @@
 ---
-title: 'Výjimky: Try... finally výraz'
-description: Zjistěte, jak F# "try... finally" výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
+title: 'Výjimky: Výraz try...finally'
+description: Podívejte se, F# jak se "Try... finally ' Expression umožňuje spustit čistý kód, i když blok kódu vyvolá výjimku.
 ms.date: 05/16/2016
-ms.openlocfilehash: d246bce52b5f30d5e8d7e3c36e9f7d7c48627913
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 03fbda1ef5d55560232f0217f603fc04c0af0eb4
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645465"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630271"
 ---
-# <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Try... finally výraz
+# <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Výraz try...finally
 
-`try...finally` Výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
+`try...finally` Výraz umožňuje spustit čistý kód i v případě, že blok kódu vyvolá výjimku.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,28 +24,28 @@ finally
 
 ## <a name="remarks"></a>Poznámky
 
-`try...finally` Výraz lze použít ke spouštění kódu vytvořeného v *expression2* v předchozí syntaxi bez ohledu na to, zda je vygenerována výjimka při provádění *expression1*.
+Výraz lze použít ke spuštění kódu v příkazu *Výraz2* v předchozí syntaxi bez ohledu na to, zda je výjimka generována během provádění *Výraz1.* `try...finally`
 
-Typ *expression2* není přispívat k hodnotě celý výraz; typ vrácený při výjimce nedochází je poslední hodnotu v *expression1*. Pokud dojde k výjimce, není vrácena žádná hodnota a tok řízení přenosů na další odpovídající obslužnou rutinu výjimky v zásobníku volání. Pokud se nenajde žádná obslužná rutina výjimky, program se ukončí. Předtím, než kód v odpovídající obslužná rutina se spustí nebo ukončí program, kód `finally` větev provést.
+Typ *Výraz2* nepřispívá k hodnotě celého výrazu; typ vrácený při výskytu výjimky je poslední hodnota v *Výraz1*. Pokud dojde k výjimce, není vrácena žádná hodnota a tok řízení přenáší do další shodné výjimky obslužné rutiny v zásobníku volání. Pokud není nalezena žádná obslužná rutina výjimky, program skončí. Předtím, než je proveden kód v rámci vyhovující obslužné rutiny nebo program skončí, je spuštěn kód `finally` ve větvi.
 
 Následující kód demonstruje použití `try...finally` výrazu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5701.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5701.fs)]
 
-Výstup do konzoly nástroje je následující.
+Výstup do konzoly je následující.
 
 ```
 Closing stream
 Exception handled.
 ```
 
-Jak je vidět z výstupu datového proudu se zavřel před vnější výjimka byla zpracována a soubor `test.txt` obsahuje text `test1`, která označuje, že byly vyrovnávací paměti vyprázdněných a zapíšou na disk i v případě, že přenést výjimku řízení na obslužnou rutinu vnější výjimky.
+Jak vidíte z výstupu, datový proud byl ukončen před tím, než byla zpracována vnější výjimka, a soubor `test.txt` obsahuje text `test1`, který označuje, že byly vyrovnávací paměti vyprázdněny a zapsány na disk, i když byla výjimka převedena. řízení vnější obslužné rutiny výjimky.
 
-Všimněte si, že `try...with` konstruktor je samostatnou konstrukci z `try...finally` vytvořit. Proto pokud váš kód vyžaduje obě `with` bloku a `finally` bloku, budete muset vnořit dvě konstrukce, jako v následujícím příkladu kódu.
+Všimněte si, `try...with` že konstrukce je samostatná konstrukce `try...finally` ze konstrukce. Proto pokud váš kód vyžaduje `with` blok `finally` i blok, je nutné vnořit dvě konstrukce, jako v následujícím příkladu kódu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5702.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5702.fs)]
 
-V rámci výrazech výpočtu, včetně výrazech pořadí a asynchronní pracovní postupy **try... finally** výrazy mohou mít vlastní implementaci. Další informace najdete v tématu [výrazech výpočtu](../computation-expressions.md).
+V kontextu výrazů výpočtu, včetně sekvenčních výrazů a asynchronních pracovních postupů, **zkuste... výrazy finally** mohou mít vlastní implementaci. Další informace najdete v tématu [výrazy výpočtu](../computation-expressions.md).
 
 ## <a name="see-also"></a>Viz také:
 

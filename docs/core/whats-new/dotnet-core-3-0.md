@@ -6,30 +6,35 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 06/14/2019
-ms.openlocfilehash: b1dd243d754bfc3b682c084820547f6b7846f0ea
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.date: 07/25/2019
+ms.openlocfilehash: 5300ddd83330b9564e7154008c59737d0d642138
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484663"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626343"
 ---
-# <a name="whats-new-in-net-core-30-preview-6"></a>Co je nového v .NET Core 3,0 (Preview 6)
+# <a name="whats-new-in-net-core-30-preview-7"></a>Co je nového v .NET Core 3,0 (Preview 7)
 
-Tento článek popisuje, co je v .NET Core 3,0 (v Preview 6) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 (v Preview 7) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
 .NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme použít [nejnovější verzi sady Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview)nebo Visual Studio Code s rozšířením OmniSharp.
 
-[Stáhněte si a začněte používat .NET Core 3,0 Preview 6](https://aka.ms/netcore3download) hned teď v systémech Windows, Mac a Linux.
+[Stáhněte si a začněte používat .NET Core 3,0 Preview 7](https://aka.ms/netcore3download) hned v systémech Windows, Mac a Linux.
 
 Další informace o jednotlivých vydaných verzích Preview najdete v následujících oznámeních:
 
+- [Oznámení .NET Core 3,0 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/)
 - [Oznámení .NET Core 3,0 Preview 6](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/)
 - [Oznámení .NET Core 3,0 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-5/)
 - [Oznámení .NET Core 3,0 Preview 4](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
 - [Oznámení .NET Core 3,0 Preview 3](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
 - [Oznámení .NET Core 3,0 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
 - [Oznámení .NET Core 3,0 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
+
+## <a name="production-supported-preview"></a>Verze Preview podporovaná v produkci
+
+.NET Core Preview 7 se považuje za produkční, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo ve verzi Preview 7, najdete v [oznámení verze Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/).
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
@@ -174,23 +179,23 @@ Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru pro
 
 Můžete zlepšit čas spuštění aplikace .NET Core kompilováním sestavení aplikace jako formátu ReadyToRun (R2R). R2R je forma kompilace v čase před zahájením (AOT).
 
-R2R binární soubory zlepšují výkon při spuštění tím, že snižují množství práce, které kompilátor JIT (just-in-time) potřebuje k tomu, aby se vaše aplikace načítají. Binární soubory obsahují podobný nativní kód v porovnání s tím, co by kompilátor JIT vytvořil.
+R2R binární soubory zlepšují výkon při spuštění tím, že snižují množství práce, které kompilátor JIT (just-in-time) potřebuje k tomu, aby se vaše aplikace načítají. Binární soubory obsahují podobný nativní kód v porovnání s tím, co by kompilátor JIT vytvořil. R2R binární soubory jsou však větší, protože obsahují kód pro mezilehlé jazyky (IL), který je stále potřeba pro některé scénáře, a nativní verzi stejného kódu. R2R je k dispozici pouze v případě, že publikujete samostatnou aplikaci, která cílí na konkrétní běhové prostředí (RID), jako je Linux x64 nebo Windows x64.
 
-Binární soubory R2R jsou větší, protože obsahují kód jazyka IL (Intermediate Language), který je stále potřeba pro některé scénáře, a nativní verzi stejného kódu. R2R je k dispozici jenom v případě, že publikujete samostatnou aplikaci, která cílí na konkrétní běhové prostředí (RID), jako je Linux x64 nebo Windows x64.
+Chcete-li zkompilovat projekt jako ReadyToRun, postupujte takto:
 
-Pokud chcete svou aplikaci zkompilovat jako R2R, přidejte `<PublishReadyToRun>` nastavení:
+01. `<PublishReadyToRun>` Přidat nastavení do projektu
 
-```xml
-<PropertyGroup>
-  <PublishReadyToRun>true</PublishReadyToRun>
-</PropertyGroup>
-```
+    ```xml
+    <PropertyGroup>
+      <PublishReadyToRun>true</PublishReadyToRun>
+    </PropertyGroup>
+    ```
 
-Publikujte samostatně uzavřenou aplikaci. Tento příkaz například vytvoří samostatnou aplikaci pro 64 verzi Windows:
+01. Publikujte samostatně uzavřenou aplikaci. Tento příkaz například vytvoří samostatnou aplikaci pro 64 verzi Windows:
 
-```console
-dotnet publish -c Release -r win-x64 --self-contained true
-```
+    ```console
+    dotnet publish -c Release -r win-x64 --self-contained true
+    ```
 
 ### <a name="cross-platformarchitecture-restrictions"></a>Omezení pro různé platformy a architektury
 
@@ -232,7 +237,7 @@ U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu r
 - Proměnná prostředí:`DOTNET_ROLL_FORWARD`
 - Argument příkazového řádku:`--roll-forward`
 
-Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je  výchozí hodnota podverze.
+Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je výchozí hodnota podverze.
 
 - **LatestPatch**\
 Vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.

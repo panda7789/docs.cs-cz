@@ -14,44 +14,37 @@ helpviewer_keywords:
 - exception handling, unstructured
 - throw statement [Visual Basic]
 ms.assetid: a6e07406-5c8a-4498-87a2-8339f3651d62
-ms.openlocfilehash: 2494eac2f61f112f3ba6321ada7404f8cd618049
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6d10982cf199e9285334e0d72e6622275d51b4d
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766633"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626193"
 ---
 # <a name="throw-statement-visual-basic"></a>Throw – příkaz (Visual Basic)
-Generuje výjimku uvnitř procedury.  
+Vyvolá výjimku v rámci procedury.
+
+## <a name="syntax"></a>Syntaxe
+
+```vb
+Throw [ expression ]
+```
+
+## <a name="part"></a>Částí
+ `expression`Poskytuje informace o výjimce, která má být vyvolána. Volitelné, pokud je umístěn v `Catch` příkazu, v opačném případě vyžadováno.
   
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-Throw [ expression ]  
-```  
-  
-## <a name="part"></a>Část  
- `expression`  
- Poskytuje informace o vyvolání výjimky. Volitelné, při které se nacházejí v `Catch` příkaz, jinak povinné.  
-  
-## <a name="remarks"></a>Poznámky  
- `Throw` Příkazu vyvolá výjimku, který dokáže pracovat s kódem strukturované zpracování výjimek (`Try`... `Catch`... `Finally`) nebo nestrukturovaných kód zpracování výjimek (`On Error GoTo`). Můžete použít `Throw` příkaz zachytávat chyby v kódu, protože Visual Basic přesune výše v zásobníku volání, dokud nenajde odpovídající kód zpracování výjimek.  
-  
- A `Throw` příkazem žádný výraz lze použít pouze v `Catch` příkazu, ve kterém příkazu case znovu vyvolá výjimku, teď nezpracovává nástrojem `Catch` příkazu.  
-  
- `Throw` Příkaz obnoví zásobník volání pro `expression` výjimky. Pokud `expression` není k dispozici, zásobník volání je vlevo beze změny. Zásobník volání výjimky prostřednictvím můžete přistupovat <xref:System.Exception.StackTrace%2A> vlastnost.  
-  
-## <a name="example"></a>Příklad  
- Následující kód používá `Throw` příkaz vyvolání výjimky:  
-  
- [!code-vb[VbVbalrStatements#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#84)]  
-  
-## <a name="requirements"></a>Požadavky  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
-  
- **Modul:** `Interaction`  
-  
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+## <a name="remarks"></a>Poznámky
+ Příkaz vyvolá výjimku, kterou lze zpracovat pomocí strukturovaného kódu zpracování výjimek (`Try`... `Throw` `Catch`... ) nebo nestrukturovaný kód pro ošetření výjimek (`On Error GoTo`). `Finally` Můžete použít `Throw` příkaz k zachycení chyb v rámci kódu, protože Visual Basic přesune zásobník volání, dokud nenajde příslušný kód pro zpracování výjimek.
+ 
+ Příkaz bez výrazu lze použít pouze `Catch` v příkazu. v takovém případě příkaz znovu vyvolá výjimku, která je `Catch` aktuálně zpracována příkazem. `Throw`
+
+ Příkaz obnoví zásobník volání `expression` pro výjimku. `Throw` Pokud `expression` není zadán, zásobník volání zůstane beze změny. Můžete získat přístup k zásobníku volání pro výjimku prostřednictvím <xref:System.Exception.StackTrace%2A> vlastnosti.
+
+## <a name="example"></a>Příklad
+ Následující kód používá `Throw` příkaz k vyvolání výjimky:
+ 
+ [!code-vb[VbVbalrStatements#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#84)]
+
   
 ## <a name="see-also"></a>Viz také:
 

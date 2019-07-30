@@ -1,17 +1,17 @@
 ---
 title: Výrazy shody
-description: Zjistěte, jak F# výrazu shody poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.
+description: Přečtěte si F# , jak výraz shody poskytuje řízení větvení, které je založené na porovnání výrazu se sadou vzorů.
 ms.date: 04/19/2018
-ms.openlocfilehash: 69ff8de1617e6b55d112d310bfcd8b2f967b6e8a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 222cb0604300039d86ed0c80293651631d212eb6
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645205"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627610"
 ---
 # <a name="match-expressions"></a>Výrazy shody
 
-`match` Výraz poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.
+`match` Výraz poskytuje řízení větvení, které je založeno na porovnání výrazu se sadou vzorů.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,9 +31,9 @@ function
 
 ## <a name="remarks"></a>Poznámky
 
-Vzor odpovídající výrazy umožňují na základě porovnání výrazu testovací sadu vzorů komplexní větvení. V `match` výrazu, *výrazu testu* se porovná se každý vzorek, v důsledku, a když je nalezena shoda, odpovídající *výsledek výrazu* je vyhodnocen a je výsledná hodnota Vrátí jako hodnota výrazu match.
+Výrazy vyhovující vzorům umožňují složitou větev na základě porovnání testovacího výrazu se sadou vzorů. Ve výrazu je *výraz testu* porovnán s každým vzorem a když je nalezena shoda, je vyhodnocen odpovídající *výraz Result* a výsledná hodnota je vrácena jako hodnota výrazu Match. `match`
 
-Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je výraz lambda, který vzoru porovnávání je okamžitě na argumentu provedeno. Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je ekvivalentní následujícímu zápisu.
+Funkce porovnávání vzorů zobrazená v předchozí syntaxi je výraz lambda, ve kterém se porovnávání vzorů provádí okamžitě na argumentu. Funkce porovnávání vzorů zobrazená v předchozí syntaxi je ekvivalentní následujícímu.
 
 ```fsharp
 fun arg ->
@@ -43,27 +43,27 @@ fun arg ->
     | ...
 ```
 
-Další informace o výrazech lambda naleznete v tématu [výrazy Lambda: `fun` – Klíčové slovo](functions/lambda-expressions-the-fun-keyword.md).
+Další informace o výrazech lambda naleznete v [tématu lambda Expressions: `fun` Klíčové slovo](./functions/lambda-expressions-the-fun-keyword.md).
 
-Možných shod je vstupní proměnná by měla zahrnovat celou sadu vzorů. Často, použijte vzor zástupných znaků (`_`) jako poslední vzorek tak, aby odpovídaly všechny dříve bezkonkurenční vstupní hodnoty.
+Celá sada vzorů by měla pokrývat všechny možné shody vstupní proměnné. Často se používá jako poslední vzorek zástupný znak`_`(), který porovnává všechny dříve neshodné vstupní hodnoty.
 
-Následující kód ukazuje několik způsobů jak, ve kterém `match` výraz je použit. Odkaz a příklady možných vzory, které lze použít, naleznete v tématu [porovnávání vzorů](pattern-matching.md).
+Následující kód ilustruje některé způsoby `match` použití výrazu. Odkaz a příklady všech možných vzorů, které lze použít, naleznete v tématu [porovnávání vzorů](pattern-matching.md).
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4601.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4601.fs)]
 
-## <a name="guards-on-patterns"></a>Výrazy guard na vzory
+## <a name="guards-on-patterns"></a>Guard na vzorcích
 
-Můžete použít `when` klauzule zadat další podmínku, která proměnná musí splňovat odpovídající vzorku. Tato klauzule se označuje jako *guard*. Následující výraz `when` – klíčové slovo není vyhodnocen, pokud není shoda vzoru přidružené k této guard.
+`when` Klauzuli můžete použít k určení další podmínky, kterou musí proměnná splňovat, aby odpovídala vzoru. Taková klauzule se označuje jako *Guard*. Výraz následující `when` za klíčovým slovem není vyhodnocen, pokud není provedeno porovnávání vzoru přidruženého k tomuto Guard.
 
-Následující příklad ukazuje použití ochranného zařízení můžete určit číselný rozsah pro vzor proměnné. Všimněte si, že jsou více podmínek kombinovat pomocí logické operátory.
+Následující příklad ilustruje použití Guard k určení číselného rozsahu pro vzorec proměnné. Všimněte si, že několik podmínek je kombinováno pomocí logických operátorů.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4602.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4602.fs)]
 
-Mějte na paměti, protože hodnoty jiné než literály nelze použít ve vzoru, je nutné použít `when` klauzule, pokud máte k porovnání některá část vstup podle dokumentu hodnotu. To je ukázáno v následujícím kódu:
+Všimněte si, že vzhledem k tomu, že jiné hodnoty než literály nelze použít ve vzoru, `when` je nutné použít klauzuli, pokud je nutné porovnat část vstupu s hodnotou. Zobrazuje se v následujícím kódu:
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4603.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4603.fs)]
 
-Všimněte si, že pokud vzor sjednocení se bude vztahovat ochranu, ochranného zařízení platí pro **všechny** vzorů, ne jenom poslední z nich. Mějme například následující kód, ochranného zařízení `when a > 12` platí jak `A a` a `B a`:
+Všimněte si, že když je vzor sjednocení kryt ochranou, vztahuje se ochrana na **všechny** vzory, nikoli jenom na poslední z nich. Například s ohledem na následující kód platí, že Guard `when a > 12` platí pro `B a`i `A a` :
 
 ```fsharp
 type Union =

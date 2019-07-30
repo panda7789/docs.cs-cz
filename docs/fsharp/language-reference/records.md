@@ -1,17 +1,17 @@
 ---
 title: Záznamy
-description: Zjistěte, jak F# záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.
+description: Přečtěte F# si, jak záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy.
 ms.date: 06/09/2019
-ms.openlocfilehash: cfb8de8272b479571119ae4cf91ea1d6fd5db73c
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: d92a1a7517e5b05ee687926df29f33fab123b4dd
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816188"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627282"
 ---
 # <a name="records"></a>Záznamy
 
-Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy. Může být buď struktury nebo referenční typy.  Jsou odkazové typy ve výchozím nastavení.
+Záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy. Můžou být buď struktury, nebo typy odkazů.  Ve výchozím nastavení jsou odkazové typy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,55 +26,55 @@ type [accessibility-modifier] typename =
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *typename* je název typu záznamu *label1* a *label2* jsou názvy hodnot, označuje jako *popisky*, a *type1* a *type2* typy těchto hodnot. *seznam členů* je volitelný seznam členů typu.  Můžete použít `[<Struct>]` atributu k vytvoření záznamu – struktura, nikoli záznam, který je typem odkazu.
+V předchozí syntaxi je *TypeName* názvem typu záznamu, *Label1* a *Label2* jsou názvy hodnot, označované jako *popisky*a *typ1* a *typ2* jsou typy těchto hodnot. *Member-list* je volitelný seznam členů pro daný typ.  `[<Struct>]` Atribut můžete použít k vytvoření záznamu struktury namísto záznamu, který je odkazovým typem.
 
 Dále je uvedeno několik příkladů.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1901.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1901.fs)]
 
-Když každému popisku je na samostatném řádku, středník je volitelné.
+Když je každý popisek na samostatném řádku, je středník volitelný.
 
-Můžete nastavit hodnoty ve výrazech říká *zaznamenat výrazy*. Kompilátor odvodí typ z popisky použít (v případě, že popisky jsou dostatečně liší od těch, které další typy záznamů). Složené závorky ({}) uzavřete výrazu záznamu. Následující kód ukazuje výraz záznamu, která inicializuje záznam s tři prvky typu float s popisky `x`, `y` a `z`.
+Můžete nastavit hodnoty ve výrazech známých jako *výrazy záznamu*. Kompilátor odvodí typ z použitých popisků (pokud jsou popisky dostatečně odlišné od jiných typů záznamů). Složené závorky ({}) uzavírají výraz záznamu. Následující kód ukazuje výraz záznamu, který inicializuje záznam se třemi elementy float s popisky `x` `y` a `z`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
-Zkrácený tvar nepoužívejte, pokud může být jiný typ, který má také stejné popisky.
+Nepoužívejte zkrácený tvar, pokud může existovat jiný typ, který má také stejné popisky.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-Popisky nedávno deklarovaného typu přednost dříve deklarovaný typ, tak v předchozím příkladu `mypoint3D` odvozena jako `Point3D`. Můžete explicitně určit typ záznamu, stejně jako v následujícím kódu.
+Popisky posledního deklarovaného typu mají přednost před dříve deklarovaným typem, takže v předchozím příkladu `mypoint3D` je odvozeno. `Point3D` Typ záznamu lze explicitně zadat, jak je uvedeno v následujícím kódu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
-Metody lze definovat pro typy záznamů pouze jako typy tříd.
+Metody lze definovat pro typy záznamů stejně jako pro typy tříd.
 
-## <a name="creating-records-by-using-record-expressions"></a>Vytváření záznamů pomocí výrazů záznamů
+## <a name="creating-records-by-using-record-expressions"></a>Vytváření záznamů pomocí výrazů záznamu
 
-Záznamy můžete inicializovat pomocí popisků, které jsou definovány v záznamu. Výraz, který se k tomu se říká *zaznamenat výraz*. Použijte složené závorky a uzavřete výrazu záznamu použijte jako oddělovač středník.
+Záznamy můžete inicializovat pomocí popisků, které jsou definovány v záznamu. Výraz, který to dělá, se označuje jako *výraz záznamu*. K uzavření výrazu záznamu použijte složené závorky a jako oddělovač použijte středník.
 
 Následující příklad ukazuje, jak vytvořit záznam.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1904.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1904.fs)]
 
-Středníky po poslední pole ve výrazu záznamu a v definici typu jsou volitelné, bez ohledu na to, jestli jsou tato pole vše na jednom řádku.
+Středníky za posledním polem v rámci výrazu záznamu a definice typu jsou volitelné, bez ohledu na to, zda jsou všechna pole na jednom řádku.
 
-Při vytváření záznamu je třeba zadat hodnoty pro každé pole. Nelze se odkazovat na hodnoty jiných polí ve výrazu inicializace pro všechna pole.
+Když vytvoříte záznam, je nutné zadávat hodnoty pro každé pole. Nelze odkazovat na hodnoty jiných polí v inicializačním výrazu pro každé pole.
 
-V následujícím kódu, typ `myRecord2` je odvozen z názvy polí. Volitelně můžete zadat název typu explicitně.
+V následujícím kódu `myRecord2` je typ odvozen z názvů polí. Volitelně můžete zadat název typu explicitně.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
-Jiná forma konstrukce záznamu může být užitečné, když je nutné zkopírovat existující záznam a případně změnit některé z hodnot pole. To ukazuje následující řádek kódu.
+Další forma konstrukce záznamu může být užitečná v případě, že je nutné zkopírovat existující záznam a případně změnit některé hodnoty polí. Tento příklad ilustruje následující řádek kódu.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
-Tato forma výrazu záznamu je volána *kopírování a aktualizace výrazů záznamů*.
+Tato forma výrazu záznamu se nazývá *výraz pro kopírování a aktualizaci záznamů*.
 
-Záznamy jsou neměnné ve výchozím nastavení; změněné záznamy však můžete snadno vytvořit pomocí výrazu kopírování a aktualizace. Můžete také explicitně určit proměnlivé pole.
+Ve výchozím nastavení jsou záznamy neměnné. Můžete však snadno vytvářet upravené záznamy pomocí výrazu kopírování a aktualizace. Můžete také explicitně zadat proměnlivé pole.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1909.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1909.fs)]
 
-Nepoužívejte atribut DefaultValue u polí záznamu. Lepším řešením je definovat výchozí instance záznamy s poli, které jsou inicializovány na výchozí hodnoty a pak použijte kopii a aktualizovat výrazu záznamu pro nastavení všechna pole, která se liší od výchozí hodnoty.
+Nepoužívejte atribut DefaultValue s poli záznamu. Lepším řešením je definování výchozích instancí záznamů s poli, která jsou inicializovaná na výchozí hodnoty, a pak pomocí výrazu záznamu pro kopírování a aktualizace nastavit pole, která se liší od výchozích hodnot.
 
 ```fsharp
 // Rather than use [<DefaultValue>], define a default record.
@@ -90,13 +90,13 @@ let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
 
-## <a name="creating-mutually-recursive-records"></a>Vytvoření vzájemně rekurzivní záznamů
+## <a name="creating-mutually-recursive-records"></a>Vytváření vzájemně rekurzivních záznamů
 
-Nějakou dobu, během vytváření záznamu, můžete na něm závisí na jiný typ, který chcete definovat později. Jedná se o chybu kompilace, není-li definovat typy záznamů bude vzájemně rekurzivní.
+Při vytváření záznamu můžete chtít, aby byl závislý na jiném typu, který chcete později definovat. Jedná se o chybu kompilace, pokud nedefinujete typy záznamů, které se mají vzájemně rekurzivně.
 
-Definování vzájemně rekurzivní záznamy se použije `and` – klíčové slovo. Díky tomu můžete propojit typy 2 nebo více záznamů.
+Definování vzájemně rekurzivních záznamů se provádí `and` pomocí klíčového slova. To umožňuje propojit 2 nebo více typů záznamů dohromady.
 
-Například následující kód definuje `Person` a `Address` typ jako vzájemně rekurzivní:
+Například následující kód definuje `Person` typ a `Address` jako vzájemně rekurzivní:
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -111,15 +111,15 @@ and Address =
     PostCode: string }
 ```
 
-Pokud byste chtěli definovat bez předchozího příkladu `and` – klíčové slovo, pak nebude kompilovat. `and` – Klíčové slovo je vyžadován pro vzájemně rekurzivní definice.
+Pokud jste definovali předchozí příklad bez `and` klíčového slova, pak nebylo zkompilováno. `and` Klíčové slovo je vyžadováno pro vzájemně rekurzivní definice.
 
-## <a name="pattern-matching-with-records"></a>Porovnávání vzorů s záznamů
+## <a name="pattern-matching-with-records"></a>Porovnávání vzorů se záznamy
 
-Záznamy můžete použití s porovnáváním vzorů. Můžete explicitně určit některá pole a zadejte proměnné pro další pole, která se přiřadí, když je nalezena shoda. Následující příklad kódu to dokládá.
+Záznamy lze použít se porovnáváním vzorů. Můžete určit některá pole explicitně a zadat proměnné pro jiná pole, která budou přiřazena při výskytu shody. Následující příklad kódu to dokládá.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
 
-Výstup tohoto kódu vypadá takto.
+Výstup tohoto kódu je následující.
 
 ```
 Point is at the origin.
@@ -127,28 +127,28 @@ Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
 ```
 
-## <a name="differences-between-records-and-classes"></a>Rozdíly mezi třídami a záznamů
+## <a name="differences-between-records-and-classes"></a>Rozdíly mezi záznamy a třídami
 
-Pole záznamu se liší od tříd jsou automaticky vystaveny jako vlastnosti a jsou použité k vytvoření a zkopírování záznamů. Konstrukce záznamu se také liší od konstrukci třídy. V typu záznamu nelze definovat konstruktor. Místo toho použije konstrukce zapsána syntaxí popsanou v tomto tématu. Třídy nemají žádný přímý vztah mezi parametry konstruktoru, pole a vlastnosti.
+Pole záznamu se liší od tříd v tom, že jsou automaticky vystavena jako vlastnosti a používají se při vytváření a kopírování záznamů. Konstrukce záznamu se také liší od konstrukce třídy. V typu záznamu nelze definovat konstruktor. Místo toho se použije syntaxe konstrukce popsaná v tomto tématu. Třídy nemají žádný přímý vztah mezi parametry konstruktoru, poli a vlastnostmi.
 
-Podobně jako typy sjednocení a struktura záznamy mají sémantiku strukturální rovnost. Třídy mají referenční rovnost sémantiku. Následující příklad kódu ukazuje to.
+Podobně jako typy sjednocení a struktury mají záznamy strukturální sémantiku rovnosti. Třídy mají odkaz na sémantiku rovnosti. Následující příklad kódu to demonstruje.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
-Výstup tohoto kódu vypadá takto:
+Výstup tohoto kódu je následující:
 
 ```
 The records are equal.
 ```
 
-Pokud píšete stejný kód s třídami, objekty dvou tříd by nerovnost, protože tyto dvě hodnoty by představují dva objekty v haldě a by jde porovnat jenom adresy (Pokud není typ třídy přepíše `System.Object.Equals` metoda).
+Pokud píšete stejný kód s třídami, objekty obou tříd by byly neshodné, protože dvě hodnoty by představovaly dva objekty na haldě a byly porovnány pouze adresy (Pokud typ třídy Přepisuje `System.Object.Equals` metodu).
 
-Pokud potřebujete referenční rovnost pro záznamy, přidejte atribut `[<ReferenceEquality>]` výše záznam.
+Pokud potřebujete referenční rovnost záznamů, přidejte atribut `[<ReferenceEquality>]` nad záznam.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Typy F#](fsharp-types.md)
 - [Třídy](classes.md)
 - [Referenční dokumentace jazyka F#](index.md)
-- [Referenční rovnost](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+- [Rovnost odkazů](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
 - [Porovnávání vzorů](pattern-matching.md)

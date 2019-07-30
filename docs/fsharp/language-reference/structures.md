@@ -1,17 +1,17 @@
 ---
 title: Struktury
-description: Další informace o F# struktury, typ compact objektu, který je často efektivnější než třída pro typy s menším objemem dat a jednoduché chování.
+description: Přečtěte si F# o struktuře, je typ kompaktního objektu často efektivnější než třída pro typy s malým množstvím dat a jednoduchým chováním.
 ms.date: 05/16/2016
-ms.openlocfilehash: dc302b975604bebcd145a385fb59b21417547c5e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e638b450fe43e0993c9980cade246c3f26d25e2d
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645334"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630770"
 ---
 # <a name="structures"></a>Struktury
 
-A *struktura* typ compact objekt, který může být efektivnější než třída pro typy, které mají malé množství dat a jednoduché chování.
+*Struktura* je typ kompaktního objektu, který může být efektivnější než třída pro typy, které mají malé množství dat a jednoduché chování.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,27 +30,27 @@ type [accessibility-modifier] type-name =
 
 ## <a name="remarks"></a>Poznámky
 
-Struktury jsou *typů hodnot*, to znamená, že se ukládají přímo na zásobníku, nebo když se používají jako pole nebo typ prvků pole, vložený v nadřazeném prvku. Na rozdíl od třídy a záznamů struktury mají sémantiku pass podle hodnoty. To znamená, že jsou užitečné především pro malé agregace dat, které jsou přístupné a často zkopírován.
+Struktury jsou *typy hodnot*, což znamená, že jsou uloženy přímo v zásobníku nebo, když se používají jako pole nebo prvky pole, vložené v nadřazeném typu. Na rozdíl od tříd a záznamů mají struktury sémantiku předávaných hodnot. To znamená, že jsou vhodné hlavně pro malé agregované údaje, ke kterým se často používá a kopírují.
 
-V předchozí syntaxi jsou uvedeny dva formuláře. První není nenáročném syntaxi, ale přesto často se používá proto, že při použití `struct` a `end` klíčová slova, můžete vynechat `StructAttribute` atribut, který se zobrazí ve formuláři druhý. Můžete zkrátit `StructAttribute` jenom `Struct`.
+V předchozí syntaxi jsou zobrazeny dva formuláře. První není prostá syntaxe, ale je však často používána, protože při použití `struct` klíčových slov a `end` můžete vynechat `StructAttribute` atribut, který se zobrazí ve druhém formuláři. Můžete zkrátit `StructAttribute` jenom `Struct`na.
 
-*– Definice – elementy a členy typu* v předchozí syntaxi představuje člen deklarace a definice. Struktury mohou mít konstruktory a pole proměnlivé a neměnné a lze deklarovat členy a implementace rozhraní. Další informace najdete v tématu [členy](members/index.md).
+*Prvky Type-Definition-a-Members* v předchozí syntaxi představují deklarace členů a definice. Struktury můžou mít konstruktory a proměnlivé a neměnné pole a můžou deklarovat implementace členů a rozhraní. Další informace naleznete v tématu [Členové](./members/index.md).
 
-Struktury nemůže být součástí dědičnosti, nesmí obsahovat `let` nebo `do` vazby, a nemůže rekurzivně obsahovat pole vlastní typu (i když mohou obsahovat odkazové buňky, které odkazují na své vlastní typ).
+Struktury se nemůžou účastnit dědičnosti, `let` nemůžou obsahovat ani `do` vazby a nemůžou rekurzivně obsahovat pole vlastního typu (i když můžou obsahovat referenční buňky, které odkazují na jejich vlastní typ).
 
-Protože struktury nejsou povoleny `let` vazby, je třeba deklarovat s použitím pole ve strukturách `val` – klíčové slovo. `val` – Klíčové slovo definuje pole a jeho typ, ale neumožňuje inicializace. Místo toho `val` deklarace jsou inicializována na hodnotu nula nebo mít hodnotu null. Z tohoto důvodu struktury, které mají implicitní konstruktor (to znamená, parametrů, která jsou uvedena ihned po název struktury v deklaraci) vyžadují, aby `val` deklarace být komentována atributem `DefaultValue` atribut. Struktury, které mají definovanou konstruktor podporovat inicializace nula. Proto `DefaultValue` atribut je deklarace platnost těchto nulová hodnota pro pole. Implicitní konstruktory pro struktury nebudete provádět všechny akce, protože `let` a `do` vazby nejsou povolené pro typ, ale jsou k dispozici jako privátní pole předané hodnoty parametrů implicitní konstruktor.
+Vzhledem k `let` `val` tomu, že struktury neumožňují vazby, je nutné deklarovat pole ve strukturách pomocí klíčového slova. `val` Klíčové slovo definuje pole a jeho typ, ale nepovoluje inicializaci. Místo toho jsou deklarace inicializovány na hodnotu nula nebo null. `val` Z tohoto důvodu vyžadují struktury, které mají implicitní konstruktor (tj. parametry, které jsou uvedeny ihned po názvu struktury v deklaraci), vyžaduje, `val` aby deklarace byly opatřeny `DefaultValue` atributem. Struktury, které mají definovaný konstruktor, stále podporují nulovou inicializaci. Proto je `DefaultValue` atributem deklarace, že tato nulová hodnota je pro pole platná. Implicitní konstruktory pro struktury neprovádí žádné akce, protože `let` a `do` pro daný typ nejsou vazby povoleny, ale hodnoty parametrů implicitního konstruktoru předané jsou k dispozici jako soukromá pole.
 
-Explicitní konstruktory může zahrnovat inicializace hodnot polí. Pokud máte strukturu, která má explicitní konstruktor, stále podporuje inicializace nula; ale je velmi riskantní používat `DefaultValue` atribut na `val` deklarace vzhledem k tomu, že je v konfliktu s explicitní konstruktor. Další informace o `val` deklarací, naleznete v tématu [explicitní pole: `val` – Klíčové slovo](members/explicit-fields-the-val-keyword.md).
+Explicitní konstruktory mohou zahrnovat inicializaci hodnot polí. Pokud máte strukturu, která má explicitní konstruktor, stále podporuje nulovou inicializaci; Nepoužívejte `DefaultValue` však atribut `val` pro deklarace, protože je v konfliktu s explicitním konstruktorem. Další informace o `val` deklaracích naleznete v [tématu explicitní pole: `val` Klíčové slovo](./members/explicit-fields-the-val-keyword.md).
 
-Atributy a modifikátory dostupnosti pro struktury jsou povolené a řídit stejnými pravidly jako u jiných typů. Další informace najdete v tématu [atributy](attributes.md) a [řízení přístupu](access-control.md).
+Atributy a Modifikátory dostupnosti jsou povoleny ve strukturách a používají stejná pravidla jako pro jiné typy. Další informace naleznete v tématu [atributy](attributes.md) a [Access Control](access-control.md).
 
-Následující příklady kódu znázorňují definice struktury.
+Následující příklady kódu ilustrují definice struktury.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2501.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2501.fs)]
 
-## <a name="byreflike-structs"></a>ByRefLike struktury
+## <a name="byreflike-structs"></a>Struktury ByRefLike
 
-Můžete definovat vlastní struktury, která může splňovat `byref`-sémantiky, jako jsou: naleznete v tématu [ByRef](byrefs.md) Další informace. Používá se k tomu <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> atribut:
+Můžete definovat vlastní struktury, které mohou splňovat `byref`sémantické sémantiky: Další informace naleznete v tématu [byrefs](byrefs.md) . To se provádí s <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> atributem:
 
 ```fsharp
 open System
@@ -62,20 +62,20 @@ type S(count1: Span<int>, count2: Span<int>) =
     member x.Count2 = count2
 ```
 
-`IsByRefLike` neznamená `Struct`. Oba musí být k dispozici u typu.
+`IsByRefLike``Struct`neznamená. Oba typy musí být k dispozici na typu.
 
-A "`byref`– stejně jako" struktura v F# je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
+Struktura "`byref`-like" v F# je typ hodnoty vázaný na zásobník. Nikdy se nepřiřazuje na spravovanou haldu. `byref`Struktura podobná struktuře je užitečná pro vysoce výkonné programování, protože je vynutila sadou silných kontrol životního cyklu životnosti a nezachycení. Pravidla jsou:
 
-* Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
-* Nemohou být statické nebo členy třídy či struktury normální instance.
-* Nemůže být zachyceno libovolné konstrukce uzavření (`async` metodách a výrazech lambda).
-* Nelze je použít jako na generický parametr.
+* Mohou být použity jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
+* Nemohou být statické nebo členy instance třídy nebo normální struktury.
+* Nemohou být zachyceny žádnou uzavírací konstrukcí (`async` metody nebo výrazy lambda).
+* Nelze je použít jako obecný parametr.
 
-I když tato pravidla omezují velmi silného využití, dělají to ke splnění uskutečnění vysokovýkonného výpočetního prostředí bezpečným způsobem.
+I když tato pravidla velmi silně omezují využití, jejich účelem je plnit vysoce výkonné výpočetní prostředí bezpečným způsobem.
 
 ## <a name="readonly-structs"></a>Struktury jen pro čtení
 
-Může opatřit poznámkami struktury s <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute> atribut. Příklad:
+Pomocí <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute> atributu můžete přidávat poznámky k strukturám. Příklad:
 
 ```fsharp
 [<IsReadOnly; Struct>]
@@ -84,19 +84,19 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-`IsReadOnly` neznamená `Struct`. Je nutné přidat mít `IsReadOnly` struktury.
+`IsReadOnly``Struct`neznamená. Aby bylo `IsReadOnly` možné vytvořit strukturu, musíte přidat obojí.
 
-Pomocí tohoto atributu vysílá metadat s informacemi F# a C# vědět, abyste ji považovat za `inref<'T>` a `in ref`v uvedeném pořadí.
+Použití tohoto atributu emituje metadata, která F# zasílají a C# vědí, že `inref<'T>` se `in ref`považují za a v uvedeném pořadí.
 
-Definování proměnlivé hodnoty uvnitř struktury jen pro čtení, dojde k chybě.
+Definování proměnlivé hodnoty v rámci struktury jen pro čtení vyvolá chybu.
 
-## <a name="struct-records-and-discriminated-unions"></a>Rozlišovaná sjednocení a struktura záznamů
+## <a name="struct-records-and-discriminated-unions"></a>Záznamy struktury a rozlišené sjednocení
 
-Může představovat [záznamy](records.md) a [Rozlišované sjednocení](discriminated-unions.md) jako struktury s `[<Struct>]` atribut.  Další informace v každého článku.
+Můžete reprezentovat [záznamy](records.md) a [rozlišené sjednocení](discriminated-unions.md) jako struktury s `[<Struct>]` atributem.  Další informace najdete v každém článku.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Třídy](classes.md)
 - [Záznamy](records.md)
-- [Členové](members/index.md)
+- [Členové](./members/index.md)

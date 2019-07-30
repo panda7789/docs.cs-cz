@@ -1,17 +1,17 @@
 ---
-title: Opožděné výrazy
-description: Zjistěte, jak F# opožděné výrazů může zlepšit výkon aplikací a knihoven.
+title: Výrazy Lazy
+description: Přečtěte F# si, jak opožděné výrazy můžou zlepšit výkon vašich aplikací a knihoven.
 ms.date: 03/13/2019
-ms.openlocfilehash: 6d53d53093f4e93f53e1c956b94e2f1e4a1bbd55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97429e9a4c3838cbaa2ead197db4443e0820e8b3
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904108"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630750"
 ---
-# <a name="lazy-expressions"></a>Opožděné výrazy
+# <a name="lazy-expressions"></a>Výrazy Lazy
 
-*Opožděné výrazy* jsou výrazy, které není u nich vyhodnoceno okamžitě, ale místo toho se vyhodnocují v případě potřeby výsledek. To může pomoct zlepšit výkon kódu.
+*Opožděné výrazy* jsou výrazy, které nejsou vyhodnocovány okamžitě, ale jsou vyhodnoceny, když je výsledek požadován. To může pomoci zvýšit výkon kódu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,19 +21,19 @@ let identifier = lazy ( expression )
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *výraz* je kód, který je vyhodnocen pouze v případě, že výsledek je nutné použít, a *identifikátor* je hodnota, která ukládá výsledek. Hodnota je typu [ `Lazy<'T>` ](https://msdn.microsoft.com/library/b29d0af5-6efb-4a55-a278-2662a4ecc489), kde skutečný typ, který se používá pro `'T` se určí na základě výsledku výrazu.
+V předchozí syntaxi je *výraz* kódem, který je vyhodnocován pouze v případě, že je požadován výsledek, a *identifikátor* je hodnota, která ukládá výsledek. Hodnota je typu [`Lazy<'T>`](https://msdn.microsoft.com/library/b29d0af5-6efb-4a55-a278-2662a4ecc489), kde skutečný typ, který je použit pro `'T` , je určen z výsledku výrazu.
 
-Opožděné výrazy umožňují zvýšit výkon tím, že omezují spuštění výrazy pouze takové situace, ve kterých je potřeba výsledku.
+Opožděné výrazy umožňují zvýšit výkon omezením spouštění výrazů pouze na případy, kdy je zapotřebí výsledek.
 
-K vynucení výrazů, která se má provést, zavolejte metodu `Force`. `Force` způsobí, že spuštění provést pouze jednou. Následující volání `Force` vrátit stejný výsledek, ale neprovádět je jakýkoli kód.
+Chcete-li vynutit, aby byly výrazy provedeny, zavolejte `Force`metodu. `Force`způsobí, že se provádění provede jenom jednou. Následná volání `Force` vrátí stejný výsledek, ale nespustí žádný kód.
 
-Následující kód ukazuje použití opožděné výrazů a použití `Force`. V tomto kódu typu `result` je `Lazy<int>`a `Force` vrátí metoda `int`.
+Následující kód ilustruje použití opožděných výrazů a použití `Force`. V tomto kódu `result` typ je `Lazy<int>` `Force`ametoda vrátí. `int`
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet73011.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet73011.fs)]
 
-Opožděné vyhodnocení, ale ne `Lazy` zadejte, se také používá pro pořadí. Další informace najdete v tématu [pořadí](sequences.md).
+Opožděné vyhodnocení, ale ne `Lazy` typ, se používá také pro sekvence. Další informace najdete v tématu [sekvence](sequences.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Lazyextensions – modul](https://msdn.microsoft.com/library/86671f40-84a0-402a-867d-ae596218d948)
+- [Modul LazyExtensions](https://msdn.microsoft.com/library/86671f40-84a0-402a-867d-ae596218d948)

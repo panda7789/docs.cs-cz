@@ -1,17 +1,17 @@
 ---
 title: Vazby let ve třídách
-description: Zjistěte, jak definovat privátní pole a soukromé funkce pro F# třídy pomocí vazeb let' v definici třídy.
+description: Naučte se definovat soukromá pole a soukromé funkce pro F# třídy pomocí vazeb let v definici třídy.
 ms.date: 05/16/2016
-ms.openlocfilehash: 29f843e3e065837a53fd5eb26c79088bc0778c76
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0086d3a91f85395c2bd0555f978c5d951c363357
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645178"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627480"
 ---
 # <a name="let-bindings-in-classes"></a>Vazby let ve třídách
 
-Můžete definovat privátní pole a soukromé funkce pro F# třídy pomocí `let` vazby v definici třídy.
+Můžete definovat soukromá pole a soukromé funkce pro F# třídy pomocí `let` vazeb v definici třídy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -25,17 +25,17 @@ Můžete definovat privátní pole a soukromé funkce pro F# třídy pomocí `le
 
 ## <a name="remarks"></a>Poznámky
 
-Předchozí syntaxi se zobrazí po deklarace záhlaví a dědičnost tříd, ale před všechny definice členů. Syntaxe je stejně jako u `let` vazby mimo třídy, ale názvy definované ve třídě mají obor, který je omezená na třídu. A `let` vazbou soukromé pole nebo funkce; ke zveřejňování dat nebo funkce deklarovat veřejně, vlastnost nebo metodu member.
+Předchozí syntaxe se zobrazí za záhlavím třídy a deklaracemi dědičnosti, ale před jakýmikoli definicemi členů. Syntaxe je stejná jako u `let` vazeb mimo třídy, ale názvy definované ve třídě mají obor, který je omezen na třídu. `let` Vazba vytvoří soukromé pole nebo funkci; k veřejnému vystavení dat nebo funkcí, deklaraci vlastnosti nebo metody člena.
 
-A `let` vazby, která není statická nazývá instance `let` vazby. Instance `let` vazby spustí, když jsou vytvořeny objekty. Statické `let` vazby jsou součástí statický inicializátor pro třídu, která je zaručeno, že ke spuštění před první typ slouží.
+Vazba, která není statická, se nazývá vazba instance `let`. `let` Vazby `let` instance jsou spouštěny při vytváření objektů. Statické `let` vazby jsou součástí statického inicializátoru pro třídu, která je zaručena k provedení před prvním použitím typu.
 
-Kód v rámci instance `let` vazby můžete použít parametry primárního konstruktoru.
+Kód v rámci vazeb `let` instance může používat parametry primárního konstruktoru.
 
-Atributy a modifikátory dostupnosti nejsou u povolené `let` vazby ve třídách.
+Atributy a Modifikátory dostupnosti nejsou u `let` vazeb ve třídách povoleny.
 
-Následující příklady kódu znázorňují několik typů `let` vazby ve třídách.
+Následující příklady kódu ilustrují několik typů `let` vazeb ve třídách.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3001.fs)]
 
 Výstup je následující.
 
@@ -43,14 +43,14 @@ Výstup je následující.
 10 52 1 204
 ```
 
-## <a name="alternative-ways-to-create-fields"></a>Alternativní způsoby, jak vytvořit pole
+## <a name="alternative-ways-to-create-fields"></a>Alternativní způsoby vytváření polí
 
-Můžete také použít `val` – klíčové slovo vytvořit soukromé pole. Při použití `val` – klíčové slovo, pole není zadána hodnota, pokud objekt je vytvořen, ale místo toho se inicializuje s výchozí hodnotou. Další informace najdete v tématu [explicitní pole: Val – klíčové slovo](explicit-fields-the-val-keyword.md).
+`val` Klíčové slovo můžete také použít k vytvoření soukromého pole. Při použití `val` klíčového slova není pole při vytvoření objektu přidělena hodnota, ale místo toho je inicializována s výchozí hodnotou. Další informace najdete v tématu [explicitní pole: Klíčové slovo](explicit-fields-the-val-keyword.md)Val
 
-Můžete také definovat privátní pole v třídě pomocí definice členské a přidáním klíčového slova `private` na definici. To může být užitečné, pokud očekáváte, změňte přístupnost člena bez přepsání kódu. Další informace najdete v tématu [řízení přístupu](../access-control.md).
+Můžete také definovat soukromá pole ve třídě pomocí definice člena a přidat klíčové slovo `private` do definice. To může být užitečné, pokud očekáváte, že změníte přístupnost člena, aniž byste museli přepisovat kód. Další informace najdete v tématu [Access Control](../access-control.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Členové](index.md)
-- [`do` Vazby ve třídách](do-bindings-in-classes.md)
-- [`let` Vazby](../functions/let-bindings.md)
+- [`do`Vazby ve třídách](do-bindings-in-classes.md)
+- [`let`Vazeb](../functions/let-bindings.md)

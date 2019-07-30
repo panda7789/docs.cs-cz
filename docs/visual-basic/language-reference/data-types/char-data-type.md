@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-ms.openlocfilehash: ca40e6c8dcba3da29bdb68b29c91c852e477f8f7
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 8313c2282a3b4b7b035f9f3b685a786c4471f53a
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512794"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630151"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 
@@ -37,16 +37,22 @@ K určení klasifikace Unicode můžete <xref:System.Char.IsDigit%2A> použít <
 
 Visual Basic nepřevádí přímo mezi `Char` a číselnými typy. Můžete použít <xref:Microsoft.VisualBasic.Strings.Asc%2A> funkci nebo <xref:Microsoft.VisualBasic.Strings.AscW%2A> `Char` pro`Integer` převod hodnoty na, která představuje jeho bod kódu. Můžete použít <xref:Microsoft.VisualBasic.Strings.Chr%2A> funkci nebo <xref:Microsoft.VisualBasic.Strings.ChrW%2A> `Integer` pro`Char` převod hodnoty na, která má tento kódový bod.
 
-Pokud je zapnut přepínač pro kontrolu typu ([příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)), je nutné připojit znak literálového typu k řetězcovému literálu s jedním znakem, aby byl `Char` identifikován jako datový typ. Toto dokládá následující příklad.
+Pokud je přepínač pro kontrolu typu ( [příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)) zapnutý, je nutné připojit znak literálového typu k řetězcovému literálu s jedním znakem a identifikovat ho `Char` jako datový typ. Toto dokládá následující příklad. První přiřazení k `charVar` proměnné generuje chybu kompilátoru [BC30512](../../misc/bc30512.md) , protože `Option Strict` je zapnuto. Druhé kompilování bylo úspěšné, protože `c` literální znak literálu identifikuje literál `Char` jako hodnotu.
 
 ```vb
 Option Strict On
-Dim charVar As Char
-' The following statement attempts to convert a String literal to Char.
-' Because Option Strict is On, it generates a compiler error.
-charVar = "Z"
-' The following statement succeeds because it specifies a Char literal.
-charVar = "Z"C
+
+Module CharType
+    Public Sub Main()
+        Dim charVar As Char
+
+        ' This statement generates compiler error BC30512 because Option Strict is On.  
+        charVar = "Z"  
+
+        ' The following statement succeeds because it specifies a Char literal.  
+        charVar = "Z"c
+    End Sub
+End Module
 ```
 
 ## <a name="programming-tips"></a>Tipy k programování
@@ -55,7 +61,7 @@ charVar = "Z"C
 
 - **Problematika spolupráce.** Pokud rozhraní s komponentami, které nejsou zapsány pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy znaků mají v jiných prostředích jinou šířku dat (8 bitů). Pokud předáte 8bitovému argumentu takové součásti, deklarujte ji jako `Byte` `Char` místo v novém Visual Basic kódu.
 
-- **Rozšiřující.** Datový typ se rozšíří na `String`. `Char` To znamená, že můžete `Char` převést `String` na a nemůžete <xref:System.OverflowException?displayProperty=nameWithType> se setkat s chybou.
+- **Rozšiřující.** Datový typ se rozšíří na `String`. `Char` To znamená, že můžete `Char` převést `String` na a nemůžete <xref:System.OverflowException?displayProperty=nameWithType>se setkat s.
 
 - **Znaky typu.** Připojení znaku `C` literálového typu k řetězcovému literálu s jedním znakem vynutí `Char` datový typ. `Char`nemá žádný znak typu identifikátoru.
 
