@@ -1,37 +1,37 @@
 ---
-title: Testování částí F# v .NET Core pomocí příkazu dotnet test a NUnit
-description: Další koncepty testů jednotek pro F# v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a NUnit.
+title: Testování F# částí v .NET Core pomocí příkazu dotnet test a nunit
+description: Seznamte se s koncepty F# testování částí v .NET Core pomocí interaktivního prostředí, které vytváří ukázkové řešení pomocí příkazu dotnet test a nunit.
 author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - fsharp
 ms.custom: seodec18
-ms.openlocfilehash: 926e47c277c8649627482a8036ca3704be142f33
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7b559d94c03081a8ef67cf91ccfb7d08ff5b6c60
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631871"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626460"
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a><span data-ttu-id="7a2dc-103">Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a NUnit</span><span class="sxs-lookup"><span data-stu-id="7a2dc-103">Unit testing F# libraries in .NET Core using dotnet test and NUnit</span></span>
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a><span data-ttu-id="582c9-103">Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a nunit</span><span class="sxs-lookup"><span data-stu-id="582c9-103">Unit testing F# libraries in .NET Core using dotnet test and NUnit</span></span>
 
-<span data-ttu-id="7a2dc-104">Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-104">This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts.</span></span> <span data-ttu-id="7a2dc-105">Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/) předtím, než začnete.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-105">If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/) before you begin.</span></span> <span data-ttu-id="7a2dc-106">Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span><span class="sxs-lookup"><span data-stu-id="7a2dc-106">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
+<span data-ttu-id="582c9-104">Tento kurz vás provede interaktivním vytvořením ukázkového řešení, které vás seznámí s koncepty testování částí.</span><span class="sxs-lookup"><span data-stu-id="582c9-104">This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts.</span></span> <span data-ttu-id="582c9-105">Pokud chcete postupovat podle kurzu s předdefinovaným řešením, zobrazte si [ukázkový kód](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/) před jeho zahájením nebo si ho stáhněte.</span><span class="sxs-lookup"><span data-stu-id="582c9-105">If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/) before you begin.</span></span> <span data-ttu-id="582c9-106">Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span><span class="sxs-lookup"><span data-stu-id="582c9-106">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7a2dc-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7a2dc-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="582c9-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="582c9-107">Prerequisites</span></span>
 
-- <span data-ttu-id="7a2dc-108">[Sady SDK .NET core 2.1](https://www.microsoft.com/net/download) nebo novější verze.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-108">[.NET Core 2.1 SDK](https://www.microsoft.com/net/download) or later versions.</span></span>
-- <span data-ttu-id="7a2dc-109">Textového editoru nebo editoru kódu podle vašeho výběru.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-109">A text editor or code editor of your choice.</span></span>
+- <span data-ttu-id="582c9-108">[.NET Core 2,1 SDK](https://www.microsoft.com/net/download) nebo novější verze.</span><span class="sxs-lookup"><span data-stu-id="582c9-108">[.NET Core 2.1 SDK](https://www.microsoft.com/net/download) or later versions.</span></span>
+- <span data-ttu-id="582c9-109">Textový editor nebo Editor kódu dle vašeho výběru.</span><span class="sxs-lookup"><span data-stu-id="582c9-109">A text editor or code editor of your choice.</span></span>
 
-## <a name="creating-the-source-project"></a><span data-ttu-id="7a2dc-110">Vytvoření projektu zdroje</span><span class="sxs-lookup"><span data-stu-id="7a2dc-110">Creating the source project</span></span>
+## <a name="creating-the-source-project"></a><span data-ttu-id="582c9-110">Vytvoření zdrojového projektu</span><span class="sxs-lookup"><span data-stu-id="582c9-110">Creating the source project</span></span>
 
-<span data-ttu-id="7a2dc-111">Otevřete okno prostředí.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-111">Open a shell window.</span></span> <span data-ttu-id="7a2dc-112">Vytvořte adresář s názvem *jednotky – testování s fsharp* pro uložení řešení.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-112">Create a directory called *unit-testing-with-fsharp* to hold the solution.</span></span>
-<span data-ttu-id="7a2dc-113">Uvnitř tohoto nového adresáře spuštěním následujícího příkazu vytvořte nový soubor řešení pro knihovny tříd a testovacího projektu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-113">Inside this new directory, run the following command to create a new solution file for the class library and the test project:</span></span>
+<span data-ttu-id="582c9-111">Otevřete okno prostředí.</span><span class="sxs-lookup"><span data-stu-id="582c9-111">Open a shell window.</span></span> <span data-ttu-id="582c9-112">Vytvořte adresář s názvem *Unit-Testing-with-FSharp* , který bude obsahovat řešení.</span><span class="sxs-lookup"><span data-stu-id="582c9-112">Create a directory called *unit-testing-with-fsharp* to hold the solution.</span></span>
+<span data-ttu-id="582c9-113">V tomto novém adresáři spusťte následující příkaz, který vytvoří nový soubor řešení pro knihovnu tříd a testovací projekt:</span><span class="sxs-lookup"><span data-stu-id="582c9-113">Inside this new directory, run the following command to create a new solution file for the class library and the test project:</span></span>
 
 ```console
 dotnet new sln
 ```
 
-<span data-ttu-id="7a2dc-114">Dále vytvořte *MathService* adresáře.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-114">Next, create a *MathService* directory.</span></span> <span data-ttu-id="7a2dc-115">Následující osnovy zatím znázorňuje strukturu adresáře a souboru:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-115">The following outline shows the directory and file structure so far:</span></span>
+<span data-ttu-id="582c9-114">Potom vytvořte adresář *MathService* .</span><span class="sxs-lookup"><span data-stu-id="582c9-114">Next, create a *MathService* directory.</span></span> <span data-ttu-id="582c9-115">Následující osnova ukazuje strukturu adresářů a souborů, které jsou tak daleko:</span><span class="sxs-lookup"><span data-stu-id="582c9-115">The following outline shows the directory and file structure so far:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -39,28 +39,28 @@ dotnet new sln
     /MathService
 ```
 
-<span data-ttu-id="7a2dc-116">Ujistěte se, *MathService* aktuální adresář a spusťte následující příkaz k vytvoření zdrojového projektu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-116">Make *MathService* the current directory and run the following command to create the source project:</span></span>
+<span data-ttu-id="582c9-116">Vytvořte *MathService* aktuální adresář a spusťte následující příkaz pro vytvoření zdrojového projektu:</span><span class="sxs-lookup"><span data-stu-id="582c9-116">Make *MathService* the current directory and run the following command to create the source project:</span></span>
 
 ```console
 dotnet new classlib -lang F#
 ```
 
-<span data-ttu-id="7a2dc-117">Můžete vytvořit selhání provádění matematických služby:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-117">You create a failing implementation of the math service:</span></span>
+<span data-ttu-id="582c9-117">Vytvoříte nefunkční implementaci služby Math Service:</span><span class="sxs-lookup"><span data-stu-id="582c9-117">You create a failing implementation of the math service:</span></span>
 
 ```fsharp
 module MyMath =
     let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
-<span data-ttu-id="7a2dc-118">Vraťte do adresáře *jednotky – testování s fsharp* adresáře.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-118">Change the directory back to the *unit-testing-with-fsharp* directory.</span></span> <span data-ttu-id="7a2dc-119">Spusťte následující příkaz pro přidání do řešení projekt knihovny tříd:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-119">Run the following command to add the class library project to the solution:</span></span>
+<span data-ttu-id="582c9-118">Změňte adresář zpátky na adresář *testování částí s* adresářem-FSharp.</span><span class="sxs-lookup"><span data-stu-id="582c9-118">Change the directory back to the *unit-testing-with-fsharp* directory.</span></span> <span data-ttu-id="582c9-119">Spuštěním následujícího příkazu přidejte projekt knihovny tříd do řešení:</span><span class="sxs-lookup"><span data-stu-id="582c9-119">Run the following command to add the class library project to the solution:</span></span>
 
 ```console
 dotnet sln add .\MathService\MathService.fsproj
 ```
 
-## <a name="creating-the-test-project"></a><span data-ttu-id="7a2dc-120">Vytvoření testovacího projektu</span><span class="sxs-lookup"><span data-stu-id="7a2dc-120">Creating the test project</span></span>
+## <a name="creating-the-test-project"></a><span data-ttu-id="582c9-120">Vytváření testovacího projektu</span><span class="sxs-lookup"><span data-stu-id="582c9-120">Creating the test project</span></span>
 
-<span data-ttu-id="7a2dc-121">Dále vytvořte *MathService.Tests* adresáře.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-121">Next, create the *MathService.Tests* directory.</span></span> <span data-ttu-id="7a2dc-122">Zobrazí následující osnova adresářovou strukturu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-122">The following outline shows the directory structure:</span></span>
+<span data-ttu-id="582c9-121">Dále vytvořte adresář *MathService. Tests* .</span><span class="sxs-lookup"><span data-stu-id="582c9-121">Next, create the *MathService.Tests* directory.</span></span> <span data-ttu-id="582c9-122">Následující osnova znázorňuje adresářovou strukturu:</span><span class="sxs-lookup"><span data-stu-id="582c9-122">The following outline shows the directory structure:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -71,13 +71,13 @@ dotnet sln add .\MathService\MathService.fsproj
     /MathService.Tests
 ```
 
-<span data-ttu-id="7a2dc-123">Ujistěte se, *MathService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-123">Make the *MathService.Tests* directory the current directory and create a new project using the following command:</span></span>
+<span data-ttu-id="582c9-123">Vytvořte adresář *MathService. Tests* pro aktuální adresář a vytvořte nový projekt pomocí následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="582c9-123">Make the *MathService.Tests* directory the current directory and create a new project using the following command:</span></span>
 
 ```console
 dotnet new nunit -lang F#
 ```
 
-<span data-ttu-id="7a2dc-124">Tím se vytvoří projekt testů, který se používá jako testovací rozhraní NUnit.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-124">This creates a test project that uses NUnit as the test framework.</span></span> <span data-ttu-id="7a2dc-125">Nakonfiguruje nástroj test runner v vygenerovanou šablonu *MathServiceTests.fsproj*:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-125">The generated template configures the test runner in the *MathServiceTests.fsproj*:</span></span>
+<span data-ttu-id="582c9-124">Tím se vytvoří testovací projekt, který jako testovací rozhraní používá NUnit.</span><span class="sxs-lookup"><span data-stu-id="582c9-124">This creates a test project that uses NUnit as the test framework.</span></span> <span data-ttu-id="582c9-125">Vygenerovaná šablona konfiguruje Test Runner v *MathServiceTests. fsproj*:</span><span class="sxs-lookup"><span data-stu-id="582c9-125">The generated template configures the test runner in the *MathServiceTests.fsproj*:</span></span>
 
 ```xml
 <ItemGroup>
@@ -87,15 +87,15 @@ dotnet new nunit -lang F#
 </ItemGroup>
 ```
 
-<span data-ttu-id="7a2dc-126">Projekt testů vyžaduje další balíčky pro vytváření a spouštění testování částí.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-126">The test project requires other packages to create and run unit tests.</span></span> <span data-ttu-id="7a2dc-127">`dotnet new` v předchozím kroku přidat že nunit a NUnit testovací adaptér.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-127">`dotnet new` in the previous step added NUnit and the NUnit test adapter.</span></span> <span data-ttu-id="7a2dc-128">Teď přidejte `MathService` knihovny tříd jako další závislost do projektu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-128">Now, add the `MathService` class library as another dependency to the project.</span></span> <span data-ttu-id="7a2dc-129">Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-129">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
+<span data-ttu-id="582c9-126">Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky.</span><span class="sxs-lookup"><span data-stu-id="582c9-126">The test project requires other packages to create and run unit tests.</span></span> <span data-ttu-id="582c9-127">`dotnet new`v předchozím kroku jste přidali NUnit a testovací adaptér NUnit.</span><span class="sxs-lookup"><span data-stu-id="582c9-127">`dotnet new` in the previous step added NUnit and the NUnit test adapter.</span></span> <span data-ttu-id="582c9-128">Nyní přidejte `MathService` knihovnu tříd jako jinou závislost do projektu.</span><span class="sxs-lookup"><span data-stu-id="582c9-128">Now, add the `MathService` class library as another dependency to the project.</span></span> <span data-ttu-id="582c9-129">[`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:</span><span class="sxs-lookup"><span data-stu-id="582c9-129">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```console
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-<span data-ttu-id="7a2dc-130">Zobrazí celý soubor v [úložiště ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na Githubu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-130">You can see the entire file in the [samples repository](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) on GitHub.</span></span>
+<span data-ttu-id="582c9-130">Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na GitHubu.</span><span class="sxs-lookup"><span data-stu-id="582c9-130">You can see the entire file in the [samples repository](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) on GitHub.</span></span>
 
-<span data-ttu-id="7a2dc-131">Máte následující rozložení konečné řešení:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-131">You have the following final solution layout:</span></span>
+<span data-ttu-id="582c9-131">Máte následující konečné rozložení řešení:</span><span class="sxs-lookup"><span data-stu-id="582c9-131">You have the following final solution layout:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -108,15 +108,15 @@ dotnet add reference ../MathService/MathService.fsproj
         MathService.Tests.fsproj
 ```
 
-<span data-ttu-id="7a2dc-132">Spusťte následující příkaz v *jednotky – testování s fsharp* adresáře:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-132">Execute the following command in the *unit-testing-with-fsharp* directory:</span></span>
+<span data-ttu-id="582c9-132">Spusťte následující příkaz v adresáři *Unit-Testing-with-FSharp* :</span><span class="sxs-lookup"><span data-stu-id="582c9-132">Execute the following command in the *unit-testing-with-fsharp* directory:</span></span>
 
 ```console
 dotnet sln add .\MathService.Tests\MathService.Tests.fsproj
 ```
 
-## <a name="creating-the-first-test"></a><span data-ttu-id="7a2dc-133">Vytvoření prvního testu</span><span class="sxs-lookup"><span data-stu-id="7a2dc-133">Creating the first test</span></span>
+## <a name="creating-the-first-test"></a><span data-ttu-id="582c9-133">Vytvoření prvního testu</span><span class="sxs-lookup"><span data-stu-id="582c9-133">Creating the first test</span></span>
 
-<span data-ttu-id="7a2dc-134">Jeden zápis služeb při selhání testu, nastavte ji pass a postup se opakuje.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-134">You write one failing test, make it pass, then repeat the process.</span></span> <span data-ttu-id="7a2dc-135">Otevřít *UnitTest1.fs* a přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-135">Open *UnitTest1.fs* and add the following code:</span></span>
+<span data-ttu-id="582c9-134">Napíšete jeden neúspěšný test, udělejte ho a pak proces opakujte.</span><span class="sxs-lookup"><span data-stu-id="582c9-134">You write one failing test, make it pass, then repeat the process.</span></span> <span data-ttu-id="582c9-135">Otevřete *UnitTest1. FS* a přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="582c9-135">Open *UnitTest1.fs* and add the following code:</span></span>
 
 ```fsharp
 namespace MathService.Tests
@@ -136,11 +136,11 @@ type TestClass () =
      member this.FailEveryTime() = Assert.True(false)
 ```
 
-<span data-ttu-id="7a2dc-136">`[<TestFixture>]` Atribut označuje třídu, která obsahuje testy.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-136">The `[<TestFixture>]` attribute denotes a class that contains tests.</span></span> <span data-ttu-id="7a2dc-137">`[<Test>]` Označuje atribut testovací metody, která se spouští pomocí nástroje test runner.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-137">The `[<Test>]` attribute denotes a test method that is run by the test runner.</span></span> <span data-ttu-id="7a2dc-138">Z *jednotky – testování s fsharp* adresáře, spusťte [ `dotnet test` ](../tools/dotnet-test.md) pro sestavení, testy a knihovny tříd a následné spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-138">From the *unit-testing-with-fsharp* directory, execute [`dotnet test`](../tools/dotnet-test.md) to build the tests and the class library and then run the tests.</span></span> <span data-ttu-id="7a2dc-139">Nástroj test runner NUnit obsahuje vstupní bod programu pro spouštění vašich testů.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-139">The NUnit test runner contains the program entry point to run your tests.</span></span> <span data-ttu-id="7a2dc-140">`dotnet test` Spustí nástroj test runner pomocí projektu testování částí, kterou jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-140">`dotnet test` starts the test runner using the unit test project you've created.</span></span>
+<span data-ttu-id="582c9-136">`[<TestFixture>]` Atribut označuje třídu, která obsahuje testy.</span><span class="sxs-lookup"><span data-stu-id="582c9-136">The `[<TestFixture>]` attribute denotes a class that contains tests.</span></span> <span data-ttu-id="582c9-137">`[<Test>]` Atribut označuje testovací metodu, která je spuštěna nástrojem Test Runner.</span><span class="sxs-lookup"><span data-stu-id="582c9-137">The `[<Test>]` attribute denotes a test method that is run by the test runner.</span></span> <span data-ttu-id="582c9-138">Z adresáře *Unit-Testing-with-FSharp* spusťte [`dotnet test`](../tools/dotnet-test.md) příkaz pro sestavení testů a knihovny tříd a poté spusťte testy.</span><span class="sxs-lookup"><span data-stu-id="582c9-138">From the *unit-testing-with-fsharp* directory, execute [`dotnet test`](../tools/dotnet-test.md) to build the tests and the class library and then run the tests.</span></span> <span data-ttu-id="582c9-139">NUnit Test Runner obsahuje vstupní bod programu pro spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="582c9-139">The NUnit test runner contains the program entry point to run your tests.</span></span> <span data-ttu-id="582c9-140">`dotnet test`spustí Test Runner pomocí projektu testování částí, který jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="582c9-140">`dotnet test` starts the test runner using the unit test project you've created.</span></span>
 
-<span data-ttu-id="7a2dc-141">Tyto dva testy zobrazit naprosto základní předáním hodnoty a neúspěšné testy.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-141">These two tests show the most basic passing and failing tests.</span></span> <span data-ttu-id="7a2dc-142">`My test` úspěšně proběhne, a `Fail every time` selže.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-142">`My test` passes, and `Fail every time` fails.</span></span> <span data-ttu-id="7a2dc-143">Teď vytvořte test `squaresOfOdds` metody.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-143">Now, create a test for the `squaresOfOdds` method.</span></span> <span data-ttu-id="7a2dc-144">`squaresOfOdds` Metoda vrátí sekvenci druhých mocnin hodnot liché celé číslo, které jsou součástí vstupní sekvence.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-144">The `squaresOfOdds` method returns a sequence of the squares of all odd integer values that are part of the input sequence.</span></span> <span data-ttu-id="7a2dc-145">Namísto pokusu o zápis všechny tyto funkce současně, můžete interaktivně vytvořit testy, které ověří funkčnost.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-145">Rather than trying to write all of those functions at once, you can iteratively create tests that validate the functionality.</span></span> <span data-ttu-id="7a2dc-146">Provedení každého testu předat znamená vytvoření potřebné funkce k metodě.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-146">Making each test pass means creating the necessary functionality for the method.</span></span>
+<span data-ttu-id="582c9-141">Tyto dva testy znázorňují základní a neúspěšné testy.</span><span class="sxs-lookup"><span data-stu-id="582c9-141">These two tests show the most basic passing and failing tests.</span></span> <span data-ttu-id="582c9-142">`My test`projde a `Fail every time` dojde k chybě.</span><span class="sxs-lookup"><span data-stu-id="582c9-142">`My test` passes, and `Fail every time` fails.</span></span> <span data-ttu-id="582c9-143">Nyní vytvořte test pro `squaresOfOdds` metodu.</span><span class="sxs-lookup"><span data-stu-id="582c9-143">Now, create a test for the `squaresOfOdds` method.</span></span> <span data-ttu-id="582c9-144">`squaresOfOdds` Metoda vrací sekvenci čtverců všech lichých celočíselných hodnot, které jsou součástí vstupní sekvence.</span><span class="sxs-lookup"><span data-stu-id="582c9-144">The `squaresOfOdds` method returns a sequence of the squares of all odd integer values that are part of the input sequence.</span></span> <span data-ttu-id="582c9-145">Místo toho, abyste se pokusili zapsat všechny tyto funkce najednou, můžete iteračním vytvořit testy, které ověřují funkčnost.</span><span class="sxs-lookup"><span data-stu-id="582c9-145">Rather than trying to write all of those functions at once, you can iteratively create tests that validate the functionality.</span></span> <span data-ttu-id="582c9-146">Provedení každého testovacího průchodu znamená vytvoření nezbytné funkce pro metodu.</span><span class="sxs-lookup"><span data-stu-id="582c9-146">Making each test pass means creating the necessary functionality for the method.</span></span>
 
-<span data-ttu-id="7a2dc-147">Nejjednodušší nám můžete napsat test je volání `squaresOfOdds` s všechna sudá čísla, kde výsledkem by měl být k prázdné sekvenci celých čísel.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-147">The simplest test we can write is to call `squaresOfOdds` with all even numbers, where the result should be an empty sequence of integers.</span></span>  <span data-ttu-id="7a2dc-148">Tady je tento test:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-148">Here's that test:</span></span>
+<span data-ttu-id="582c9-147">Nejjednodušší test, který můžeme napsat, je zavolat `squaresOfOdds` se všemi sudými čísly, kde výsledek by měl být prázdná sekvence celých čísel.</span><span class="sxs-lookup"><span data-stu-id="582c9-147">The simplest test we can write is to call `squaresOfOdds` with all even numbers, where the result should be an empty sequence of integers.</span></span>  <span data-ttu-id="582c9-148">Zde je tento test:</span><span class="sxs-lookup"><span data-stu-id="582c9-148">Here's that test:</span></span>
 
 ```fsharp
 [<Test>]
@@ -150,20 +150,20 @@ member this.TestEvenSequence() =
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
-<span data-ttu-id="7a2dc-149">Všimněte si, že `expected` pořadí byl převeden do seznamu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-149">Notice that the `expected` sequence has been converted to a list.</span></span> <span data-ttu-id="7a2dc-150">Rozhraní NUnit spoléhá na mnoho standardních typů .NET.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-150">The NUnit framework relies on many standard .NET types.</span></span> <span data-ttu-id="7a2dc-151">Že závislostí znamená, že vaše veřejné rozhraní a očekávané výsledky podporu <xref:System.Collections.ICollection> spíše než <xref:System.Collections.IEnumerable>.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-151">That dependency means that your public interface and expected results support <xref:System.Collections.ICollection> rather than <xref:System.Collections.IEnumerable>.</span></span>
+<span data-ttu-id="582c9-149">Všimněte si, `expected` že se sekvence převedla na seznam.</span><span class="sxs-lookup"><span data-stu-id="582c9-149">Notice that the `expected` sequence has been converted to a list.</span></span> <span data-ttu-id="582c9-150">NUnit Framework spoléhá na mnoho standardních typů .NET.</span><span class="sxs-lookup"><span data-stu-id="582c9-150">The NUnit framework relies on many standard .NET types.</span></span> <span data-ttu-id="582c9-151">Tato závislost znamená, že vaše veřejné rozhraní a očekávané výsledky <xref:System.Collections.ICollection> podporují spíše <xref:System.Collections.IEnumerable>než.</span><span class="sxs-lookup"><span data-stu-id="582c9-151">That dependency means that your public interface and expected results support <xref:System.Collections.ICollection> rather than <xref:System.Collections.IEnumerable>.</span></span>
 
-<span data-ttu-id="7a2dc-152">Při spuštění testu se zobrazí, že váš test se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-152">When you run the test, you see that your test fails.</span></span> <span data-ttu-id="7a2dc-153">Nevytvořili jste ještě implementace.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-153">You haven't created the implementation yet.</span></span> <span data-ttu-id="7a2dc-154">Ujistěte se, tento test předat napsáním kódu nejjednodušší v *Library.fs* třídu v projektu MathService, která funguje:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-154">Make this test pass by writing the simplest code in the *Library.fs* class in your MathService project that works:</span></span>
+<span data-ttu-id="582c9-152">Když spustíte test, uvidíte, že test se nezdařil.</span><span class="sxs-lookup"><span data-stu-id="582c9-152">When you run the test, you see that your test fails.</span></span> <span data-ttu-id="582c9-153">Ještě jste nevytvořili implementaci.</span><span class="sxs-lookup"><span data-stu-id="582c9-153">You haven't created the implementation yet.</span></span> <span data-ttu-id="582c9-154">Proveďte tento test průchodu tak, že napíšete nejjednodušší kód v *knihovně Library. FS* v projektu MathService, který funguje:</span><span class="sxs-lookup"><span data-stu-id="582c9-154">Make this test pass by writing the simplest code in the *Library.fs* class in your MathService project that works:</span></span>
 
-```csharp
+```fsharp
 let squaresOfOdds xs =
     Seq.empty<int>
 ```
 
-<span data-ttu-id="7a2dc-155">V *jednotky – testování s fsharp* adresáře, spusťte `dotnet test` znovu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-155">In the *unit-testing-with-fsharp* directory, run `dotnet test` again.</span></span> <span data-ttu-id="7a2dc-156">`dotnet test` Sestavení pro spuštění příkazu `MathService` projekt a potom `MathService.Tests` projektu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-156">The `dotnet test` command runs a build for the `MathService` project and then for the `MathService.Tests` project.</span></span> <span data-ttu-id="7a2dc-157">Po vytvoření oba projekty, spouští testy.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-157">After building both projects, it runs your tests.</span></span> <span data-ttu-id="7a2dc-158">Dva testy jsou nyní úspěšné.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-158">Two tests pass now.</span></span>
+<span data-ttu-id="582c9-155">V adresáři *Unit-Testing-with-FSharp* spusťte `dotnet test` znovu.</span><span class="sxs-lookup"><span data-stu-id="582c9-155">In the *unit-testing-with-fsharp* directory, run `dotnet test` again.</span></span> <span data-ttu-id="582c9-156">Příkaz spustí sestavení `MathService` pro`MathService.Tests` projekt a potom pro projekt. `dotnet test`</span><span class="sxs-lookup"><span data-stu-id="582c9-156">The `dotnet test` command runs a build for the `MathService` project and then for the `MathService.Tests` project.</span></span> <span data-ttu-id="582c9-157">Po sestavení obou projektů spustí vaše testy.</span><span class="sxs-lookup"><span data-stu-id="582c9-157">After building both projects, it runs your tests.</span></span> <span data-ttu-id="582c9-158">Dva testy proběhnou nyní.</span><span class="sxs-lookup"><span data-stu-id="582c9-158">Two tests pass now.</span></span>
 
-## <a name="completing-the-requirements"></a><span data-ttu-id="7a2dc-159">Dokončuje požadavky</span><span class="sxs-lookup"><span data-stu-id="7a2dc-159">Completing the requirements</span></span>
+## <a name="completing-the-requirements"></a><span data-ttu-id="582c9-159">Splnění požadavků</span><span class="sxs-lookup"><span data-stu-id="582c9-159">Completing the requirements</span></span>
 
-<span data-ttu-id="7a2dc-160">Teď, když jste provedli, předejte jeden test, je čas zápisu informace.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-160">Now that you've made one test pass, it's time to write more.</span></span> <span data-ttu-id="7a2dc-161">Další jednoduchý případ funguje s pořadím, jehož jen liché číslo je `1`.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-161">The next simple case works with a sequence whose only odd number is `1`.</span></span> <span data-ttu-id="7a2dc-162">Číslo 1 je jednodušší, protože druhou mocninu 1 je 1.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-162">The number 1 is easier because the square of 1 is 1.</span></span> <span data-ttu-id="7a2dc-163">Tady je další testu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-163">Here's that next test:</span></span>
+<span data-ttu-id="582c9-160">Teď, když jste udělali jeden test Pass, je čas zapsat další.</span><span class="sxs-lookup"><span data-stu-id="582c9-160">Now that you've made one test pass, it's time to write more.</span></span> <span data-ttu-id="582c9-161">Následující jednoduchý případ funguje s posloupností, jejíž pouze liché číslo `1`je.</span><span class="sxs-lookup"><span data-stu-id="582c9-161">The next simple case works with a sequence whose only odd number is `1`.</span></span> <span data-ttu-id="582c9-162">Číslo 1 je snazší, protože čtvercem 1 je 1.</span><span class="sxs-lookup"><span data-stu-id="582c9-162">The number 1 is easier because the square of 1 is 1.</span></span> <span data-ttu-id="582c9-163">Následující test:</span><span class="sxs-lookup"><span data-stu-id="582c9-163">Here's that next test:</span></span>
 
 ```fsharp
 [<Test>]
@@ -173,7 +173,7 @@ member public this.TestOnesAndEvens() =
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
-<span data-ttu-id="7a2dc-164">Provádění `dotnet test` nový test se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-164">Executing `dotnet test` fails the new test.</span></span> <span data-ttu-id="7a2dc-165">Je nutné aktualizovat `squaresOfOdds` metodu ke zpracování tohoto nového testu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-165">You must update the `squaresOfOdds` method to handle this new test.</span></span> <span data-ttu-id="7a2dc-166">Všechna sudá čísla mimo pořadí, aby tento test předat musí filtrovat.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-166">You must filter all the even numbers out of the sequence to make this test pass.</span></span> <span data-ttu-id="7a2dc-167">Můžete to udělat tak, že funkce malé filtru zápisu a pomocí `Seq.filter`:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-167">You can do that by writing a small filter function and using `Seq.filter`:</span></span>
+<span data-ttu-id="582c9-164">Spuštění `dotnet test` selhalo v novém testu.</span><span class="sxs-lookup"><span data-stu-id="582c9-164">Executing `dotnet test` fails the new test.</span></span> <span data-ttu-id="582c9-165">Je nutné aktualizovat `squaresOfOdds` metodu pro zpracování tohoto nového testu.</span><span class="sxs-lookup"><span data-stu-id="582c9-165">You must update the `squaresOfOdds` method to handle this new test.</span></span> <span data-ttu-id="582c9-166">Chcete-li provést tento test, je nutné vyfiltrovat všechna sudá čísla mimo sekvenci.</span><span class="sxs-lookup"><span data-stu-id="582c9-166">You must filter all the even numbers out of the sequence to make this test pass.</span></span> <span data-ttu-id="582c9-167">Můžete to udělat tak, že napíšete malou funkci filtru `Seq.filter`a použijete:</span><span class="sxs-lookup"><span data-stu-id="582c9-167">You can do that by writing a small filter function and using `Seq.filter`:</span></span>
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
@@ -183,9 +183,9 @@ let squaresOfOdds xs =
     |> Seq.filter isOdd
 ```
 
-<span data-ttu-id="7a2dc-168">Všimněte si, že volání `Seq.toList`.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-168">Notice the call to `Seq.toList`.</span></span> <span data-ttu-id="7a2dc-169">Který vytváří seznam, který implementuje <xref:System.Collections.ICollection> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-169">That creates a list, which implements the <xref:System.Collections.ICollection> interface.</span></span>
+<span data-ttu-id="582c9-168">Všimněte si volání `Seq.toList`.</span><span class="sxs-lookup"><span data-stu-id="582c9-168">Notice the call to `Seq.toList`.</span></span> <span data-ttu-id="582c9-169">Tím se vytvoří seznam, který implementuje <xref:System.Collections.ICollection> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="582c9-169">That creates a list, which implements the <xref:System.Collections.ICollection> interface.</span></span>
 
-<span data-ttu-id="7a2dc-170">Existuje jeden další krok: čtvercové všech lichých čísel.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-170">There's one more step to go: square each of the odd numbers.</span></span> <span data-ttu-id="7a2dc-171">Začněte vytvořením nového testu:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-171">Start by writing a new test:</span></span>
+<span data-ttu-id="582c9-170">K dispozici je ještě ještě jeden krok: čtverce každé liché číslice.</span><span class="sxs-lookup"><span data-stu-id="582c9-170">There's one more step to go: square each of the odd numbers.</span></span> <span data-ttu-id="582c9-171">Začněte zápisem nového testu:</span><span class="sxs-lookup"><span data-stu-id="582c9-171">Start by writing a new test:</span></span>
 
 ```fsharp
 [<Test>]
@@ -195,7 +195,7 @@ member public this.TestSquaresOfOdds() =
     Assert.That(actual, Is.EqualTo(expected))
 ```
 
-<span data-ttu-id="7a2dc-172">Test můžete vyřešit přesměrujete filtrované pořadí prostřednictvím operace mapy vypočítat druhou mocninu každý liché číslo:</span><span class="sxs-lookup"><span data-stu-id="7a2dc-172">You can fix the test by piping the filtered sequence through a map operation to compute the square of each odd number:</span></span>
+<span data-ttu-id="582c9-172">Test můžete vyřešit tak, že provedete vyfiltrování filtrované sekvence pomocí operace mapování pro výpočet čtverce každého lichého čísla:</span><span class="sxs-lookup"><span data-stu-id="582c9-172">You can fix the test by piping the filtered sequence through a map operation to compute the square of each odd number:</span></span>
 
 ```fsharp
 let private square x = x * x
@@ -207,4 +207,4 @@ let squaresOfOdds xs =
     |> Seq.map square
 ```
 
-<span data-ttu-id="7a2dc-173">Začlenění malé knihovny a sadu testů jednotek pro knihovny.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-173">You've built a small library and a set of unit tests for that library.</span></span> <span data-ttu-id="7a2dc-174">Řešení jsme strukturovaná, takže přidání nové balíčky a testů je součástí normálního pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-174">You've structured the solution so that adding new packages and tests is part of the normal workflow.</span></span> <span data-ttu-id="7a2dc-175">Jste koncentrované většinu času a úsilí na řešení cíle aplikace.</span><span class="sxs-lookup"><span data-stu-id="7a2dc-175">You've concentrated most of your time and effort on solving the goals of the application.</span></span>
+<span data-ttu-id="582c9-173">Vytvořili jste malou knihovnu a sadu testů jednotek pro tuto knihovnu.</span><span class="sxs-lookup"><span data-stu-id="582c9-173">You've built a small library and a set of unit tests for that library.</span></span> <span data-ttu-id="582c9-174">Rozpracovali jste řešení, aby přidávání nových balíčků a testů bylo součástí normálního pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="582c9-174">You've structured the solution so that adding new packages and tests is part of the normal workflow.</span></span> <span data-ttu-id="582c9-175">Vyrostli jste většinu času a úsilí při řešení cílů aplikace.</span><span class="sxs-lookup"><span data-stu-id="582c9-175">You've concentrated most of your time and effort on solving the goals of the application.</span></span>

@@ -1,25 +1,25 @@
 ---
-title: příkaz DotNet restore
-description: Zjistěte, jak obnovit závislostí a specifické pro projekt nástroje pomocí příkazu dotnet restore.
+title: dotnet restore – příkaz
+description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 3ddb9f679cfcab972483a4cb53ffe2b075867614
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17bbbe33e7cb7b13d6fb1c0e44bb77dd2bbe7020
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664802"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626349"
 ---
-# <a name="dotnet-restore"></a><span data-ttu-id="476ff-103">DotNet restore</span><span class="sxs-lookup"><span data-stu-id="476ff-103">dotnet restore</span></span>
+# <a name="dotnet-restore"></a><span data-ttu-id="5b914-103">dotnet restore</span><span class="sxs-lookup"><span data-stu-id="5b914-103">dotnet restore</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="476ff-104">Název</span><span class="sxs-lookup"><span data-stu-id="476ff-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="5b914-104">Name</span><span class="sxs-lookup"><span data-stu-id="5b914-104">Name</span></span>
 
-<span data-ttu-id="476ff-105">`dotnet restore` -Obnoví závislostí a nástrojů projektu.</span><span class="sxs-lookup"><span data-stu-id="476ff-105">`dotnet restore` - Restores the dependencies and tools of a project.</span></span>
+<span data-ttu-id="5b914-105">`dotnet restore`– Obnoví závislosti a nástroje projektu.</span><span class="sxs-lookup"><span data-stu-id="5b914-105">`dotnet restore` - Restores the dependencies and tools of a project.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="476ff-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="476ff-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="5b914-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="5b914-106">Synopsis</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="476ff-107">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="476ff-107">.NET Core 2.x</span></span>](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="5b914-107">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="5b914-107">.NET Core 2.x</span></span>](#tab/netcore2x)
 
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
@@ -27,7 +27,7 @@ dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-
 dotnet restore [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="476ff-108">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="476ff-108">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="5b914-108">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="5b914-108">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
@@ -37,23 +37,39 @@ dotnet restore [-h|--help]
 
 ---
 
-## <a name="description"></a><span data-ttu-id="476ff-109">Popis</span><span class="sxs-lookup"><span data-stu-id="476ff-109">Description</span></span>
+## <a name="description"></a><span data-ttu-id="5b914-109">Popis</span><span class="sxs-lookup"><span data-stu-id="5b914-109">Description</span></span>
 
-<span data-ttu-id="476ff-110">`dotnet restore` Příkaz používá NuGet pro obnovení závislostí, stejně jako nástroje specifické pro projekt, které jsou uvedeny v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="476ff-110">The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file.</span></span> <span data-ttu-id="476ff-111">Ve výchozím nastavení obnovení závislostí a tools spouští paralelně.</span><span class="sxs-lookup"><span data-stu-id="476ff-111">By default, the restoration of dependencies and tools are executed in parallel.</span></span>
+<span data-ttu-id="5b914-110">`dotnet restore` Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="5b914-110">The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file.</span></span> <span data-ttu-id="5b914-111">Ve výchozím nastavení jsou obnovení závislostí a nástrojů spouštěny paralelně.</span><span class="sxs-lookup"><span data-stu-id="5b914-111">By default, the restoration of dependencies and tools are executed in parallel.</span></span>
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-<span data-ttu-id="476ff-112">K obnovení závislosti, potřebuje NuGet informační kanály, kde se nacházejí balíčky.</span><span class="sxs-lookup"><span data-stu-id="476ff-112">To restore the dependencies, NuGet needs the feeds where the packages are located.</span></span> <span data-ttu-id="476ff-113">Informační kanály jsou obvykle k dispozici prostřednictvím *NuGet.config* konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="476ff-113">Feeds are usually provided via the *NuGet.config* configuration file.</span></span> <span data-ttu-id="476ff-114">Výchozí konfigurační soubor je k dispozici při instalaci nástroje rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="476ff-114">A default configuration file is provided when the CLI tools are installed.</span></span> <span data-ttu-id="476ff-115">Zadejte další informační kanály tím, že vytvoříte vlastní *NuGet.config* soubor v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="476ff-115">You specify additional feeds by creating your own *NuGet.config* file in the project directory.</span></span> <span data-ttu-id="476ff-116">Zadejte také další kanály na vyvolání z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="476ff-116">You also specify additional feeds per invocation at a command prompt.</span></span>
+<span data-ttu-id="5b914-112">Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí.</span><span class="sxs-lookup"><span data-stu-id="5b914-112">To restore the dependencies, NuGet needs the feeds where the packages are located.</span></span> <span data-ttu-id="5b914-113">Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* .</span><span class="sxs-lookup"><span data-stu-id="5b914-113">Feeds are usually provided via the *nuget.config* configuration file.</span></span> <span data-ttu-id="5b914-114">Výchozí konfigurační soubor se poskytne při instalaci nástrojů rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5b914-114">A default configuration file is provided when the CLI tools are installed.</span></span> <span data-ttu-id="5b914-115">Další kanály určíte tak, že vytvoříte vlastní soubor *NuGet. config* v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="5b914-115">You specify additional feeds by creating your own *nuget.config* file in the project directory.</span></span> <span data-ttu-id="5b914-116">Na příkazovém řádku můžete zadat také další kanály na vyvolání.</span><span class="sxs-lookup"><span data-stu-id="5b914-116">You also specify additional feeds per invocation at a command prompt.</span></span>
 
-<span data-ttu-id="476ff-117">Pro závislosti, zadáte umístění obnoveného balíčky při použití operace obnovení `--packages` argument.</span><span class="sxs-lookup"><span data-stu-id="476ff-117">For dependencies, you specify where the restored packages are placed during the restore operation using the `--packages` argument.</span></span> <span data-ttu-id="476ff-118">Pokud není zadán, výchozí mezipaměti balíčku NuGet se používá, která byla nalezena v `.nuget/packages` adresáře do domovského adresáře uživatele ve všech operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="476ff-118">If not specified, the default NuGet package cache is used, which is found in the `.nuget/packages` directory in the user's home directory on all operating systems.</span></span> <span data-ttu-id="476ff-119">Například */home/user1* v Linuxu nebo *C:\Users\user1* na Windows.</span><span class="sxs-lookup"><span data-stu-id="476ff-119">For example, */home/user1* on Linux or *C:\Users\user1* on Windows.</span></span>
+<span data-ttu-id="5b914-117">U závislostí určíte, kde se obnovené balíčky umístí během operace obnovení pomocí `--packages` argumentu.</span><span class="sxs-lookup"><span data-stu-id="5b914-117">For dependencies, you specify where the restored packages are placed during the restore operation using the `--packages` argument.</span></span> <span data-ttu-id="5b914-118">Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v `.nuget/packages` adresáři domovského adresáře uživatele ve všech operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="5b914-118">If not specified, the default NuGet package cache is used, which is found in the `.nuget/packages` directory in the user's home directory on all operating systems.</span></span> <span data-ttu-id="5b914-119">Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.</span><span class="sxs-lookup"><span data-stu-id="5b914-119">For example, */home/user1* on Linux or *C:\Users\user1* on Windows.</span></span>
 
-<span data-ttu-id="476ff-120">Pro nástroje specifické pro projekt `dotnet restore` nejprve obnoví balíček, ve které je zabalena nástroj a pak pokračuje k obnovení závislostí nástroje uvedené v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="476ff-120">For project-specific tooling, `dotnet restore` first restores the package in which the tool is packed, and then proceeds to restore the tool's dependencies as specified in its project file.</span></span>
+<span data-ttu-id="5b914-120">U nástrojů `dotnet restore` specifických pro projekt nejprve obnovte balíček, ve kterém je nástroj zabalen, a poté pokračuje v obnovování závislostí nástroje, jak je uvedeno v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="5b914-120">For project-specific tooling, `dotnet restore` first restores the package in which the tool is packed, and then proceeds to restore the tool's dependencies as specified in its project file.</span></span>
 
-<span data-ttu-id="476ff-121">Chování `dotnet restore` příkaz je ovlivněna některá nastavení v *Nuget.Config* soubor, pokud jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="476ff-121">The behavior of the `dotnet restore` command is affected by some of the settings in the *Nuget.Config* file, if present.</span></span> <span data-ttu-id="476ff-122">Například nastavení `globalPackagesFolder` v *NuGet.Config* umístí obnovené balíčky NuGet v zadané složce.</span><span class="sxs-lookup"><span data-stu-id="476ff-122">For example, setting the `globalPackagesFolder` in *NuGet.Config* places the restored NuGet packages in the specified folder.</span></span> <span data-ttu-id="476ff-123">Jedná se o alternativu k určení `--packages` možnost `dotnet restore` příkazu.</span><span class="sxs-lookup"><span data-stu-id="476ff-123">This is an alternative to specifying the `--packages` option on the `dotnet restore` command.</span></span> <span data-ttu-id="476ff-124">Další informace najdete v tématu [odkaz na soubor NuGet.Config](/nuget/schema/nuget-config-file).</span><span class="sxs-lookup"><span data-stu-id="476ff-124">For more information, see the [NuGet.Config reference](/nuget/schema/nuget-config-file).</span></span>
+### <a name="nugetconfig-differences"></a><span data-ttu-id="5b914-121">rozdíly v NuGet. config</span><span class="sxs-lookup"><span data-stu-id="5b914-121">nuget.config differences</span></span>
 
-## <a name="implicit-dotnet-restore"></a><span data-ttu-id="476ff-125">Implicitní `dotnet restore`</span><span class="sxs-lookup"><span data-stu-id="476ff-125">Implicit `dotnet restore`</span></span>
+<span data-ttu-id="5b914-122">Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *NuGet. config* , pokud je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="5b914-122">The behavior of the `dotnet restore` command is affected by the settings in the *nuget.config* file, if present.</span></span> <span data-ttu-id="5b914-123">Například nastavení `globalPackagesFolder` v *souboru NuGet. config* umístí obnovené balíčky NuGet do zadané složky.</span><span class="sxs-lookup"><span data-stu-id="5b914-123">For example, setting the `globalPackagesFolder` in *nuget.config* places the restored NuGet packages in the specified folder.</span></span> <span data-ttu-id="5b914-124">Toto je alternativa k zadání `--packages` možnosti `dotnet restore` příkazu.</span><span class="sxs-lookup"><span data-stu-id="5b914-124">This is an alternative to specifying the `--packages` option on the `dotnet restore` command.</span></span> <span data-ttu-id="5b914-125">Další informace najdete v referenčních informacích k [NuGet. config](/nuget/schema/nuget-config-file).</span><span class="sxs-lookup"><span data-stu-id="5b914-125">For more information, see the [nuget.config reference](/nuget/schema/nuget-config-file).</span></span>
 
-<span data-ttu-id="476ff-126">Od verze rozhraní .NET Core 2.0, `dotnet restore` spuštění implicitně v případě potřeby při vydání následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="476ff-126">Starting with .NET Core 2.0, `dotnet restore` is run implicitly if necessary when you issue the following commands:</span></span>
+<span data-ttu-id="5b914-126">Existují tři specifická nastavení, která `dotnet restore` ignorují:</span><span class="sxs-lookup"><span data-stu-id="5b914-126">There are three specific settings that `dotnet restore` ignores:</span></span>
+
+* [<span data-ttu-id="5b914-127">bindingRedirects</span><span class="sxs-lookup"><span data-stu-id="5b914-127">bindingRedirects</span></span>](/nuget/schema/nuget-config-file#bindingredirects-section)
+
+  <span data-ttu-id="5b914-128">Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje `<PackageReference>` pouze prvky pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="5b914-128">Binding redirects don't work with `<PackageReference>` elements and .NET Core only supports `<PackageReference>` elements for NuGet packages.</span></span>
+
+* [<span data-ttu-id="5b914-129">řešení</span><span class="sxs-lookup"><span data-stu-id="5b914-129">solution</span></span>](/nuget/schema/nuget-config-file#solution-section)
+
+  <span data-ttu-id="5b914-130">Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core.</span><span class="sxs-lookup"><span data-stu-id="5b914-130">This setting is Visual Studio specific and doesn't apply to .NET Core.</span></span> <span data-ttu-id="5b914-131">.NET Core nepoužívá `packages.config` soubor a místo toho používá `<PackageReference>` elementy pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="5b914-131">.NET Core doesn't use a `packages.config` file and instead uses `<PackageReference>` elements for NuGet packages.</span></span>
+
+* [<span data-ttu-id="5b914-132">trustedSigners</span><span class="sxs-lookup"><span data-stu-id="5b914-132">trustedSigners</span></span>](/nuget/schema/nuget-config-file#trustedsigners-section)
+
+  <span data-ttu-id="5b914-133">Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.</span><span class="sxs-lookup"><span data-stu-id="5b914-133">This setting isn't applicable as [NuGet doesn't yet support cross-platform verification](https://github.com/NuGet/Home/issues/7939) of trusted packages.</span></span>
+
+## <a name="implicit-dotnet-restore"></a><span data-ttu-id="5b914-134">Nepřímo`dotnet restore`</span><span class="sxs-lookup"><span data-stu-id="5b914-134">Implicit `dotnet restore`</span></span>
+
+<span data-ttu-id="5b914-135">Počínaje rozhraním .NET Core 2,0 `dotnet restore` se v případě potřeby spouští implicitně, když vydáte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="5b914-135">Starting with .NET Core 2.0, `dotnet restore` is run implicitly if necessary when you issue the following commands:</span></span>
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -63,130 +79,130 @@ dotnet restore [-h|--help]
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-<span data-ttu-id="476ff-127">Ve většině případů už nepotřebujete explicitně `dotnet restore` příkazu.</span><span class="sxs-lookup"><span data-stu-id="476ff-127">In most cases, you no longer need to explicitly use the `dotnet restore` command.</span></span>
+<span data-ttu-id="5b914-136">Ve většině případů už nemusíte explicitně používat `dotnet restore` příkaz.</span><span class="sxs-lookup"><span data-stu-id="5b914-136">In most cases, you no longer need to explicitly use the `dotnet restore` command.</span></span>
 
-<span data-ttu-id="476ff-128">V některých případech může být nepraktické spustit `dotnet restore` implicitně.</span><span class="sxs-lookup"><span data-stu-id="476ff-128">Sometimes, it might be inconvenient to run `dotnet restore` implicitly.</span></span> <span data-ttu-id="476ff-129">Například některé automatizované systémy, jako jsou systémy sestavení potřebné k volání `dotnet restore` explicitně k řízení, pokud dojde k obnovení tak, aby se můžete řídit využití sítě.</span><span class="sxs-lookup"><span data-stu-id="476ff-129">For example, some automated systems, such as build systems, need to call `dotnet restore` explicitly to control when the restore occurs so that they can control network usage.</span></span> <span data-ttu-id="476ff-130">Aby se zabránilo `dotnet restore` ve spuštění implicitně, můžete použít `--no-restore` příznak s žádným z těchto příkazů můžete zakázat implicitní obnovení.</span><span class="sxs-lookup"><span data-stu-id="476ff-130">To prevent `dotnet restore` from running implicitly, you can use the `--no-restore` flag with any of these commands to disable implicit restore.</span></span>
+<span data-ttu-id="5b914-137">V některých případech může být nepraktické spustit `dotnet restore` implicitně.</span><span class="sxs-lookup"><span data-stu-id="5b914-137">Sometimes, it might be inconvenient to run `dotnet restore` implicitly.</span></span> <span data-ttu-id="5b914-138">Například některé automatizované systémy, například systémy sestavení, musí volat `dotnet restore` explicitně k řízení, když dojde k obnovení, aby bylo možné řídit využití sítě.</span><span class="sxs-lookup"><span data-stu-id="5b914-138">For example, some automated systems, such as build systems, need to call `dotnet restore` explicitly to control when the restore occurs so that they can control network usage.</span></span> <span data-ttu-id="5b914-139">Chcete- `dotnet restore` li zabránit spuštění implicitně, můžete `--no-restore` použít příznak s některým z těchto příkazů k zakázání implicitního obnovení.</span><span class="sxs-lookup"><span data-stu-id="5b914-139">To prevent `dotnet restore` from running implicitly, you can use the `--no-restore` flag with any of these commands to disable implicit restore.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="476ff-131">Arguments</span><span class="sxs-lookup"><span data-stu-id="476ff-131">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="5b914-140">Arguments</span><span class="sxs-lookup"><span data-stu-id="5b914-140">Arguments</span></span>
 
 `ROOT`
 
-<span data-ttu-id="476ff-132">Volitelná cesta k souboru projektu, chcete-li obnovit.</span><span class="sxs-lookup"><span data-stu-id="476ff-132">Optional path to the project file to restore.</span></span>
+<span data-ttu-id="5b914-141">Volitelná cesta k souboru projektu, který má být obnoven.</span><span class="sxs-lookup"><span data-stu-id="5b914-141">Optional path to the project file to restore.</span></span>
 
-## <a name="options"></a><span data-ttu-id="476ff-133">Možnosti</span><span class="sxs-lookup"><span data-stu-id="476ff-133">Options</span></span>
+## <a name="options"></a><span data-ttu-id="5b914-142">Možnosti</span><span class="sxs-lookup"><span data-stu-id="5b914-142">Options</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="476ff-134">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="476ff-134">.NET Core 2.x</span></span>](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="5b914-143">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="5b914-143">.NET Core 2.x</span></span>](#tab/netcore2x)
 
 `--configfile <FILE>`
 
-<span data-ttu-id="476ff-135">Konfigurační soubor NuGet (*NuGet.config*) pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="476ff-135">The NuGet configuration file (*NuGet.config*) to use for the restore operation.</span></span>
+<span data-ttu-id="5b914-144">Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="5b914-144">The NuGet configuration file (*nuget.config*) to use for the restore operation.</span></span>
 
 `--disable-parallel`
 
-<span data-ttu-id="476ff-136">Zakáže obnovování několika projektů najednou.</span><span class="sxs-lookup"><span data-stu-id="476ff-136">Disables restoring multiple projects in parallel.</span></span>
+<span data-ttu-id="5b914-145">Zakáže obnovení více projektů paralelně.</span><span class="sxs-lookup"><span data-stu-id="5b914-145">Disables restoring multiple projects in parallel.</span></span>
 
 `--force`
 
-<span data-ttu-id="476ff-137">Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné.</span><span class="sxs-lookup"><span data-stu-id="476ff-137">Forces all dependencies to be resolved even if the last restore was successful.</span></span> <span data-ttu-id="476ff-138">Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="476ff-138">Specifying this flag is the same as deleting the *project.assets.json* file.</span></span>
+<span data-ttu-id="5b914-146">Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné.</span><span class="sxs-lookup"><span data-stu-id="5b914-146">Forces all dependencies to be resolved even if the last restore was successful.</span></span> <span data-ttu-id="5b914-147">Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .</span><span class="sxs-lookup"><span data-stu-id="5b914-147">Specifying this flag is the same as deleting the *project.assets.json* file.</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="476ff-139">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="476ff-139">Prints out a short help for the command.</span></span>
+<span data-ttu-id="5b914-148">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="5b914-148">Prints out a short help for the command.</span></span>
 
 `--ignore-failed-sources`
 
-<span data-ttu-id="476ff-140">Pouze upozornění na neúspěšné zdroje, pokud existují balíčky, které splňují požadavek na verzi.</span><span class="sxs-lookup"><span data-stu-id="476ff-140">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
+<span data-ttu-id="5b914-149">Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.</span><span class="sxs-lookup"><span data-stu-id="5b914-149">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
 
 `--no-cache`
 
-<span data-ttu-id="476ff-141">Určuje, balíčky a požadavky HTTP do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="476ff-141">Specifies to not cache packages and HTTP requests.</span></span>
+<span data-ttu-id="5b914-150">Určuje, že nejsou balíčky mezipaměti a požadavky HTTP.</span><span class="sxs-lookup"><span data-stu-id="5b914-150">Specifies to not cache packages and HTTP requests.</span></span>
 
 `--no-dependencies`
 
-<span data-ttu-id="476ff-142">Při obnovování projekt s odkazy typu projekt projekt (P2P), obnoví kořenového projektu a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="476ff-142">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
+<span data-ttu-id="5b914-151">Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="5b914-151">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
 
 `--packages <PACKAGES_DIRECTORY>`
 
-<span data-ttu-id="476ff-143">Určuje adresář pro obnovený balíčky.</span><span class="sxs-lookup"><span data-stu-id="476ff-143">Specifies the directory for restored packages.</span></span>
+<span data-ttu-id="5b914-152">Určuje adresář pro obnovené balíčky.</span><span class="sxs-lookup"><span data-stu-id="5b914-152">Specifies the directory for restored packages.</span></span>
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-<span data-ttu-id="476ff-144">Určuje modul runtime pro obnovení balíčků.</span><span class="sxs-lookup"><span data-stu-id="476ff-144">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="476ff-145">Tento parametr slouží k obnovení balíčků pro moduly runtime, které nejsou výslovně uvedené v `<RuntimeIdentifiers>` značku *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="476ff-145">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="476ff-146">Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="476ff-146">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="476ff-147">Poskytuje více identifikátorů RID, protože zadání této možnosti více než jednou.</span><span class="sxs-lookup"><span data-stu-id="476ff-147">Provide multiple RIDs by specifying this option multiple times.</span></span>
+<span data-ttu-id="5b914-153">Určuje modul runtime pro obnovení balíčku.</span><span class="sxs-lookup"><span data-stu-id="5b914-153">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="5b914-154">Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* .</span><span class="sxs-lookup"><span data-stu-id="5b914-154">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="5b914-155">Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="5b914-155">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="5b914-156">Zadáním této možnosti několikrát zadejte víc identifikátorů RID.</span><span class="sxs-lookup"><span data-stu-id="5b914-156">Provide multiple RIDs by specifying this option multiple times.</span></span>
 
 `-s|--source <SOURCE>`
 
-<span data-ttu-id="476ff-148">Určuje zdroj balíčku NuGet pro použití během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="476ff-148">Specifies a NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="476ff-149">Toto nastavení potlačí všechny zdroje podle *NuGet.config* soubory.</span><span class="sxs-lookup"><span data-stu-id="476ff-149">This setting overrides all of the sources specified in the *NuGet.config* files.</span></span> <span data-ttu-id="476ff-150">Více zdrojů můžete zadat tak, že zadáte tuto možnost vícekrát.</span><span class="sxs-lookup"><span data-stu-id="476ff-150">Multiple sources can be provided by specifying this option multiple times.</span></span>
+<span data-ttu-id="5b914-157">Určuje zdroj balíčku NuGet, který se použije během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="5b914-157">Specifies a NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="5b914-158">Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* .</span><span class="sxs-lookup"><span data-stu-id="5b914-158">This setting overrides all of the sources specified in the *nuget.config* files.</span></span> <span data-ttu-id="5b914-159">Více zdrojů lze zadat zadáním této možnosti několikrát.</span><span class="sxs-lookup"><span data-stu-id="5b914-159">Multiple sources can be provided by specifying this option multiple times.</span></span>
 
 `--verbosity <LEVEL>`
 
-<span data-ttu-id="476ff-151">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="476ff-151">Sets the verbosity level of the command.</span></span> <span data-ttu-id="476ff-152">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="476ff-152">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="5b914-160">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="5b914-160">Sets the verbosity level of the command.</span></span> <span data-ttu-id="5b914-161">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`</span><span class="sxs-lookup"><span data-stu-id="5b914-161">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
 `--interactive`
 
-<span data-ttu-id="476ff-153">Povoluje příkazu zastavit a počkat na vstup uživatele nebo akci (třeba k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="476ff-153">Allows the command to stop and wait for user input or action (for example to complete authentication).</span></span> <span data-ttu-id="476ff-154">Od .NET Core 2.1.400.</span><span class="sxs-lookup"><span data-stu-id="476ff-154">Since .NET Core 2.1.400.</span></span>
+<span data-ttu-id="5b914-162">Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="5b914-162">Allows the command to stop and wait for user input or action (for example to complete authentication).</span></span> <span data-ttu-id="5b914-163">Vzhledem k tomu, že .NET Core 2.1.400.</span><span class="sxs-lookup"><span data-stu-id="5b914-163">Since .NET Core 2.1.400.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="476ff-155">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="476ff-155">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="5b914-164">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="5b914-164">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 `--configfile <FILE>`
 
-<span data-ttu-id="476ff-156">Konfigurační soubor NuGet (*NuGet.config*) pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="476ff-156">The NuGet configuration file (*NuGet.config*) to use for the restore operation.</span></span>
+<span data-ttu-id="5b914-165">Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="5b914-165">The NuGet configuration file (*nuget.config*) to use for the restore operation.</span></span>
 
 `--disable-parallel`
 
-<span data-ttu-id="476ff-157">Zakáže obnovování několika projektů najednou.</span><span class="sxs-lookup"><span data-stu-id="476ff-157">Disables restoring multiple projects in parallel.</span></span>
+<span data-ttu-id="5b914-166">Zakáže obnovení více projektů paralelně.</span><span class="sxs-lookup"><span data-stu-id="5b914-166">Disables restoring multiple projects in parallel.</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="476ff-158">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="476ff-158">Prints out a short help for the command.</span></span>
+<span data-ttu-id="5b914-167">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="5b914-167">Prints out a short help for the command.</span></span>
 
 `--ignore-failed-sources`
 
-<span data-ttu-id="476ff-159">Pouze upozornění na neúspěšné zdroje, pokud existují balíčky, které splňují požadavek na verzi.</span><span class="sxs-lookup"><span data-stu-id="476ff-159">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
+<span data-ttu-id="5b914-168">Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.</span><span class="sxs-lookup"><span data-stu-id="5b914-168">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
 
 `--no-cache`
 
-<span data-ttu-id="476ff-160">Určuje, balíčky a požadavky HTTP do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="476ff-160">Specifies to not cache packages and HTTP requests.</span></span>
+<span data-ttu-id="5b914-169">Určuje, že nejsou balíčky mezipaměti a požadavky HTTP.</span><span class="sxs-lookup"><span data-stu-id="5b914-169">Specifies to not cache packages and HTTP requests.</span></span>
 
 `--no-dependencies`
 
-<span data-ttu-id="476ff-161">Při obnovování projekt s odkazy typu projekt projekt (P2P), obnoví kořenového projektu a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="476ff-161">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
+<span data-ttu-id="5b914-170">Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="5b914-170">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
 
 `--packages <PACKAGES_DIRECTORY>`
 
-<span data-ttu-id="476ff-162">Určuje adresář pro obnovený balíčky.</span><span class="sxs-lookup"><span data-stu-id="476ff-162">Specifies the directory for restored packages.</span></span>
+<span data-ttu-id="5b914-171">Určuje adresář pro obnovené balíčky.</span><span class="sxs-lookup"><span data-stu-id="5b914-171">Specifies the directory for restored packages.</span></span>
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-<span data-ttu-id="476ff-163">Určuje modul runtime pro obnovení balíčků.</span><span class="sxs-lookup"><span data-stu-id="476ff-163">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="476ff-164">Tento parametr slouží k obnovení balíčků pro moduly runtime, které nejsou výslovně uvedené v `<RuntimeIdentifiers>` značku *.csproj* souboru.</span><span class="sxs-lookup"><span data-stu-id="476ff-164">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="476ff-165">Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="476ff-165">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="476ff-166">Poskytuje více identifikátorů RID, protože zadání této možnosti více než jednou.</span><span class="sxs-lookup"><span data-stu-id="476ff-166">Provide multiple RIDs by specifying this option multiple times.</span></span>
+<span data-ttu-id="5b914-172">Určuje modul runtime pro obnovení balíčku.</span><span class="sxs-lookup"><span data-stu-id="5b914-172">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="5b914-173">Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* .</span><span class="sxs-lookup"><span data-stu-id="5b914-173">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="5b914-174">Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="5b914-174">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="5b914-175">Zadáním této možnosti několikrát zadejte víc identifikátorů RID.</span><span class="sxs-lookup"><span data-stu-id="5b914-175">Provide multiple RIDs by specifying this option multiple times.</span></span>
 
 `-s|--source <SOURCE>`
 
-<span data-ttu-id="476ff-167">Určuje zdroj balíčku NuGet pro použití během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="476ff-167">Specifies a NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="476ff-168">Tím se přepíše všechny zdroje podle *NuGet.config* soubory.</span><span class="sxs-lookup"><span data-stu-id="476ff-168">This overrides all of the sources specified in the *NuGet.config* files.</span></span> <span data-ttu-id="476ff-169">Více zdrojů můžete zadat tak, že zadáte tuto možnost vícekrát.</span><span class="sxs-lookup"><span data-stu-id="476ff-169">Multiple sources can be provided by specifying this option multiple times.</span></span>
+<span data-ttu-id="5b914-176">Určuje zdroj balíčku NuGet, který se použije během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="5b914-176">Specifies a NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="5b914-177">Tím se přepíše všechny zdroje zadané v souborech *NuGet. config* .</span><span class="sxs-lookup"><span data-stu-id="5b914-177">This overrides all of the sources specified in the *nuget.config* files.</span></span> <span data-ttu-id="5b914-178">Více zdrojů lze zadat zadáním této možnosti několikrát.</span><span class="sxs-lookup"><span data-stu-id="5b914-178">Multiple sources can be provided by specifying this option multiple times.</span></span>
 
 `--verbosity <LEVEL>`
 
-<span data-ttu-id="476ff-170">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="476ff-170">Sets the verbosity level of the command.</span></span> <span data-ttu-id="476ff-171">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="476ff-171">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="5b914-179">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="5b914-179">Sets the verbosity level of the command.</span></span> <span data-ttu-id="5b914-180">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`</span><span class="sxs-lookup"><span data-stu-id="5b914-180">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
 ---
 
-## <a name="examples"></a><span data-ttu-id="476ff-172">Příklady</span><span class="sxs-lookup"><span data-stu-id="476ff-172">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="5b914-181">Příklady</span><span class="sxs-lookup"><span data-stu-id="5b914-181">Examples</span></span>
 
-<span data-ttu-id="476ff-173">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="476ff-173">Restore dependencies and tools for the project in the current directory:</span></span>
+<span data-ttu-id="5b914-182">Obnovit závislosti a nástroje pro projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="5b914-182">Restore dependencies and tools for the project in the current directory:</span></span>
 
 `dotnet restore`
 
-<span data-ttu-id="476ff-174">Obnovte závislosti a nástroje pro `app1` projekt najít v zadané cestě:</span><span class="sxs-lookup"><span data-stu-id="476ff-174">Restore dependencies and tools for the `app1` project found in the given path:</span></span>
+<span data-ttu-id="5b914-183">Obnovit závislosti a nástroje pro `app1` projekt nalezené v dané cestě:</span><span class="sxs-lookup"><span data-stu-id="5b914-183">Restore dependencies and tools for the `app1` project found in the given path:</span></span>
 
 `dotnet restore ~/projects/app1/app1.csproj`
 
-<span data-ttu-id="476ff-175">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí jako zdroj zadaná cesta k souboru:</span><span class="sxs-lookup"><span data-stu-id="476ff-175">Restore the dependencies and tools for the project in the current directory using the file path provided as the source:</span></span>
+<span data-ttu-id="5b914-184">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, který jste zadali jako zdroj:</span><span class="sxs-lookup"><span data-stu-id="5b914-184">Restore the dependencies and tools for the project in the current directory using the file path provided as the source:</span></span>
 
 `dotnet restore -s c:\packages\mypackages`
 
-<span data-ttu-id="476ff-176">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souborům dvou zdrojů ve formě:</span><span class="sxs-lookup"><span data-stu-id="476ff-176">Restore the dependencies and tools for the project in the current directory using the two file paths provided as sources:</span></span>
+<span data-ttu-id="5b914-185">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí dvou cest k souborům, které jsou k dispozici jako zdroje:</span><span class="sxs-lookup"><span data-stu-id="5b914-185">Restore the dependencies and tools for the project in the current directory using the two file paths provided as sources:</span></span>
 
 `dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages`
 
-<span data-ttu-id="476ff-177">Obnovte závislosti a nástroje pro projekt do aktuálního adresáře a zobrazuje pouze minimální výstupu:</span><span class="sxs-lookup"><span data-stu-id="476ff-177">Restore dependencies and tools for the project in the current directory and shows only minimal output:</span></span>
+<span data-ttu-id="5b914-186">Obnoví závislosti a nástroje pro projekt v aktuálním adresáři a zobrazí jenom minimální výstup:</span><span class="sxs-lookup"><span data-stu-id="5b914-186">Restore dependencies and tools for the project in the current directory and shows only minimal output:</span></span>
 
 `dotnet restore --verbosity minimal`

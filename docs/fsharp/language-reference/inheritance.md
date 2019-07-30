@@ -1,40 +1,40 @@
 ---
 title: Dědičnost
-description: Zjistěte, jak určit F# vztahy dědičnosti pomocí klíčového slova 'inherit'.
+description: Naučte se určit F# vztahy dědičnosti pomocí klíčového slova Inherit.
 ms.date: 05/16/2016
-ms.openlocfilehash: 2fad2ddafbc0174903d3d24be3ce5412f7e1f9ed
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5ab891a93528427a66e4eb8f7bfeccbf6e4d2c7e
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641825"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627664"
 ---
-# <a name="inheritance"></a><span data-ttu-id="36788-103">Dědičnost</span><span class="sxs-lookup"><span data-stu-id="36788-103">Inheritance</span></span>
+# <a name="inheritance"></a><span data-ttu-id="bdb3d-103">Dědičnost</span><span class="sxs-lookup"><span data-stu-id="bdb3d-103">Inheritance</span></span>
 
-<span data-ttu-id="36788-104">Dědičnost se používají k modelování vztah "je a", nebo vytvoření podtypů v objektově orientované programování.</span><span class="sxs-lookup"><span data-stu-id="36788-104">Inheritance is used to model the "is-a" relationship, or subtyping, in object-oriented programming.</span></span>
+<span data-ttu-id="bdb3d-104">Dědičnost slouží k modelování vztahu "je-a", nebo v objektově orientovaném programování.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-104">Inheritance is used to model the "is-a" relationship, or subtyping, in object-oriented programming.</span></span>
 
-## <a name="specifying-inheritance-relationships"></a><span data-ttu-id="36788-105">Určení vztahy dědičnosti</span><span class="sxs-lookup"><span data-stu-id="36788-105">Specifying Inheritance Relationships</span></span>
+## <a name="specifying-inheritance-relationships"></a><span data-ttu-id="bdb3d-105">Určení vztahů dědičnosti</span><span class="sxs-lookup"><span data-stu-id="bdb3d-105">Specifying Inheritance Relationships</span></span>
 
-<span data-ttu-id="36788-106">Zadejte vztahy dědičnosti pomocí `inherit` – klíčové slovo v deklaraci třídy.</span><span class="sxs-lookup"><span data-stu-id="36788-106">You specify inheritance relationships by using the `inherit` keyword in a class declaration.</span></span> <span data-ttu-id="36788-107">Základní formulář syntaktické je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="36788-107">The basic syntactical form is shown in the following example.</span></span>
+<span data-ttu-id="bdb3d-106">Vztahy dědičnosti určíte pomocí `inherit` klíčového slova v deklaraci třídy.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-106">You specify inheritance relationships by using the `inherit` keyword in a class declaration.</span></span> <span data-ttu-id="bdb3d-107">V následujícím příkladu je uvedena základní syntaktická forma.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-107">The basic syntactical form is shown in the following example.</span></span>
 
 ```fsharp
 type MyDerived(...) =
     inherit MyBase(...)
 ```
 
-<span data-ttu-id="36788-108">Třída může mít maximálně jednu přímou základní třídu.</span><span class="sxs-lookup"><span data-stu-id="36788-108">A class can have at most one direct base class.</span></span> <span data-ttu-id="36788-109">Pokud nezadáte základní třídy pomocí `inherit` – klíčové slovo, třídy implicitně dědí z `System.Object`.</span><span class="sxs-lookup"><span data-stu-id="36788-109">If you do not specify a base class by using the `inherit` keyword, the class implicitly inherits from `System.Object`.</span></span>
+<span data-ttu-id="bdb3d-108">Třída může mít maximálně jednu přímou základní třídu.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-108">A class can have at most one direct base class.</span></span> <span data-ttu-id="bdb3d-109">Pokud nezadáte základní třídu pomocí `inherit` klíčového slova, třída implicitně dědí z. `System.Object`</span><span class="sxs-lookup"><span data-stu-id="bdb3d-109">If you do not specify a base class by using the `inherit` keyword, the class implicitly inherits from `System.Object`.</span></span>
 
-## <a name="inherited-members"></a><span data-ttu-id="36788-110">Zděděné členy</span><span class="sxs-lookup"><span data-stu-id="36788-110">Inherited Members</span></span>
+## <a name="inherited-members"></a><span data-ttu-id="bdb3d-110">Zděděné členy</span><span class="sxs-lookup"><span data-stu-id="bdb3d-110">Inherited Members</span></span>
 
-<span data-ttu-id="36788-111">Pokud třída dědí z jiné třídy, metody a členy základní třídy jsou dostupné uživatelům odvozené třídy, jako by byly přímé členy odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="36788-111">If a class inherits from another class, the methods and members of the base class are available to users of the derived class as if they were direct members of the derived class.</span></span>
+<span data-ttu-id="bdb3d-111">Pokud třída dědí z jiné třídy, metody a členy základní třídy jsou k dispozici uživatelům odvozené třídy, jako kdyby byly přímými členy odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-111">If a class inherits from another class, the methods and members of the base class are available to users of the derived class as if they were direct members of the derived class.</span></span>
 
-<span data-ttu-id="36788-112">Některé vazby let a parametry konstruktoru jsou privátní pro třídu a proto ji nejde přistupovat z odvozených tříd.</span><span class="sxs-lookup"><span data-stu-id="36788-112">Any let bindings and constructor parameters are private to a class and, therefore, cannot be accessed from derived classes.</span></span>
+<span data-ttu-id="bdb3d-112">Všechny vazby let a parametry konstruktoru jsou soukromé pro třídu, a proto nemohou být z odvozených tříd k dispozici.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-112">Any let bindings and constructor parameters are private to a class and, therefore, cannot be accessed from derived classes.</span></span>
 
-<span data-ttu-id="36788-113">Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na základní třídu instance.</span><span class="sxs-lookup"><span data-stu-id="36788-113">The keyword `base` is available in derived classes and refers to the base class instance.</span></span> <span data-ttu-id="36788-114">Používá se jako vlastní identifikátor.</span><span class="sxs-lookup"><span data-stu-id="36788-114">It is used like the self-identifier.</span></span>
+<span data-ttu-id="bdb3d-113">Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na instanci základní třídy.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-113">The keyword `base` is available in derived classes and refers to the base class instance.</span></span> <span data-ttu-id="bdb3d-114">Používá se jako identifikátor držitele.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-114">It is used like the self-identifier.</span></span>
 
-## <a name="virtual-methods-and-overrides"></a><span data-ttu-id="36788-115">Virtuální metody a přepsání</span><span class="sxs-lookup"><span data-stu-id="36788-115">Virtual Methods and Overrides</span></span>
+## <a name="virtual-methods-and-overrides"></a><span data-ttu-id="bdb3d-115">Virtuální metody a přepsání</span><span class="sxs-lookup"><span data-stu-id="bdb3d-115">Virtual Methods and Overrides</span></span>
 
-<span data-ttu-id="36788-116">Virtuální metody (a vlastnosti) pracují trochu odlišně v F# porovnání s jinými jazyky rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="36788-116">Virtual methods (and properties) work somewhat differently in F# as compared to other .NET languages.</span></span> <span data-ttu-id="36788-117">Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="36788-117">To declare a new virtual member, you use the `abstract` keyword.</span></span> <span data-ttu-id="36788-118">Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu.</span><span class="sxs-lookup"><span data-stu-id="36788-118">You do this regardless of whether you provide a default implementation for that method.</span></span> <span data-ttu-id="36788-119">Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:</span><span class="sxs-lookup"><span data-stu-id="36788-119">Thus a complete definition of a virtual method in a base class follows this pattern:</span></span>
+<span data-ttu-id="bdb3d-116">Virtuální metody (a vlastnosti) fungují trochu jinak v F# porovnání s jinými jazyky .NET.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-116">Virtual methods (and properties) work somewhat differently in F# as compared to other .NET languages.</span></span> <span data-ttu-id="bdb3d-117">Chcete-li deklarovat nového virtuálního člena, použijte `abstract` klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-117">To declare a new virtual member, you use the `abstract` keyword.</span></span> <span data-ttu-id="bdb3d-118">Provedete to bez ohledu na to, zda pro tuto metodu zadáte výchozí implementaci.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-118">You do this regardless of whether you provide a default implementation for that method.</span></span> <span data-ttu-id="bdb3d-119">Tedy úplná definice virtuální metody v základní třídě se řídí tímto vzorem:</span><span class="sxs-lookup"><span data-stu-id="bdb3d-119">Thus a complete definition of a virtual method in a base class follows this pattern:</span></span>
 
 ```fsharp
 abstract member [method-name] : [type]
@@ -42,27 +42,27 @@ abstract member [method-name] : [type]
 default [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-<span data-ttu-id="36788-120">A přepsání této virtuální metody v odvozené třídě, následuje tento model:</span><span class="sxs-lookup"><span data-stu-id="36788-120">And in a derived class, an override of this virtual method follows this pattern:</span></span>
+<span data-ttu-id="bdb3d-120">A v odvozené třídě, toto přepsání této virtuální metody se řídí tímto vzorem:</span><span class="sxs-lookup"><span data-stu-id="bdb3d-120">And in a derived class, an override of this virtual method follows this pattern:</span></span>
 
 ```fsharp
 override [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-<span data-ttu-id="36788-121">Vynecháte-li výchozí implementace v základní třídě, stane základní třídy abstraktní třídy.</span><span class="sxs-lookup"><span data-stu-id="36788-121">If you omit the default implementation in the base class, the base class becomes an abstract class.</span></span>
+<span data-ttu-id="bdb3d-121">Vynecháte-li výchozí implementaci v základní třídě, bude základní třídou abstraktní třída.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-121">If you omit the default implementation in the base class, the base class becomes an abstract class.</span></span>
 
-<span data-ttu-id="36788-122">Následující příklad kódu znázorňuje deklaraci novou virtuální metodu `function1` v základní třídě a jak přepsat v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="36788-122">The following code example illustrates the declaration of a new virtual method `function1` in a base class and how to override it in a derived class.</span></span>
+<span data-ttu-id="bdb3d-122">Následující příklad kódu ukazuje deklaraci nové virtuální metody `function1` v základní třídě a jak ji přepsat v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-122">The following code example illustrates the declaration of a new virtual method `function1` in a base class and how to override it in a derived class.</span></span>
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2601.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2601.fs)]
 
-## <a name="constructors-and-inheritance"></a><span data-ttu-id="36788-123">Konstruktory a dědičnost</span><span class="sxs-lookup"><span data-stu-id="36788-123">Constructors and Inheritance</span></span>
+## <a name="constructors-and-inheritance"></a><span data-ttu-id="bdb3d-123">Konstruktory a dědičnost</span><span class="sxs-lookup"><span data-stu-id="bdb3d-123">Constructors and Inheritance</span></span>
 
-<span data-ttu-id="36788-124">Musí být volána konstruktor základní třídy v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="36788-124">The constructor for the base class must be called in the derived class.</span></span> <span data-ttu-id="36788-125">Argumenty pro konstruktor základní třídy se zobrazí v seznamu argumentů v `inherit` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="36788-125">The arguments for the base class constructor appear in the argument list in the `inherit` clause.</span></span> <span data-ttu-id="36788-126">Argumenty předány konstruktoru odvozené třídy musí určit hodnoty, které se používají.</span><span class="sxs-lookup"><span data-stu-id="36788-126">The values that are used must be determined from the arguments supplied to the derived class constructor.</span></span>
+<span data-ttu-id="bdb3d-124">V odvozené třídě musí být volán konstruktor pro základní třídu.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-124">The constructor for the base class must be called in the derived class.</span></span> <span data-ttu-id="bdb3d-125">Argumenty konstruktoru základní třídy se zobrazí v seznamu argumentů v `inherit` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-125">The arguments for the base class constructor appear in the argument list in the `inherit` clause.</span></span> <span data-ttu-id="bdb3d-126">Hodnoty, které se používají, musí být určeny z argumentů dodaných konstruktoru odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-126">The values that are used must be determined from the arguments supplied to the derived class constructor.</span></span>
 
-<span data-ttu-id="36788-127">Následující kód ukazuje základní třídu a odvozené třídy, kde odvozená třída volá konstruktor základní třídy v klauzuli dědičnosti:</span><span class="sxs-lookup"><span data-stu-id="36788-127">The following code shows a base class and a derived class, where the derived class calls the base class constructor in the inherit clause:</span></span>
+<span data-ttu-id="bdb3d-127">Následující kód ukazuje základní třídu a odvozenou třídu, kde odvozená třída volá konstruktor základní třídy v klauzuli Inherit:</span><span class="sxs-lookup"><span data-stu-id="bdb3d-127">The following code shows a base class and a derived class, where the derived class calls the base class constructor in the inherit clause:</span></span>
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2602.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2602.fs)]
 
-<span data-ttu-id="36788-128">V případě více konstruktorů můžete použít následující kód.</span><span class="sxs-lookup"><span data-stu-id="36788-128">In the case of multiple constructors, the following code can be used.</span></span> <span data-ttu-id="36788-129">První řádek konstruktory odvozené třídy je `inherit` klauzule a pole se zobrazí jako explicitní pole, které jsou deklarovány pomocí `val` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="36788-129">The first line of the derived class constructors is the `inherit` clause, and the fields appear as explicit fields that are declared with the `val` keyword.</span></span> <span data-ttu-id="36788-130">Další informace najdete v tématu [explicitní pole: `val` – Klíčové slovo](members/explicit-fields-the-val-keyword.md).</span><span class="sxs-lookup"><span data-stu-id="36788-130">For more information, see [Explicit Fields: The `val` Keyword](members/explicit-fields-the-val-keyword.md).</span></span>
+<span data-ttu-id="bdb3d-128">V případě více konstruktorů lze použít následující kód.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-128">In the case of multiple constructors, the following code can be used.</span></span> <span data-ttu-id="bdb3d-129">První řádek konstruktorů odvozené třídy je `inherit` klauzule a pole se zobrazí jako explicitní pole, která jsou deklarována `val` pomocí klíčového slova.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-129">The first line of the derived class constructors is the `inherit` clause, and the fields appear as explicit fields that are declared with the `val` keyword.</span></span> <span data-ttu-id="bdb3d-130">Další informace najdete v tématu [explicitní pole: `val` Klíčové slovo](./members/explicit-fields-the-val-keyword.md).</span><span class="sxs-lookup"><span data-stu-id="bdb3d-130">For more information, see [Explicit Fields: The `val` Keyword](./members/explicit-fields-the-val-keyword.md).</span></span>
 
 ```fsharp
 type BaseClass =
@@ -81,17 +81,17 @@ let obj1 = DerivedClass("A", "B")
 let obj2 = DerivedClass("A")
 ```
 
-## <a name="alternatives-to-inheritance"></a><span data-ttu-id="36788-131">Alternativy k dědičnosti</span><span class="sxs-lookup"><span data-stu-id="36788-131">Alternatives to Inheritance</span></span>
+## <a name="alternatives-to-inheritance"></a><span data-ttu-id="bdb3d-131">Alternativy dědičnosti</span><span class="sxs-lookup"><span data-stu-id="bdb3d-131">Alternatives to Inheritance</span></span>
 
-<span data-ttu-id="36788-132">V případech, kdy se vyžaduje méně závažnou změnu typu zvažte použití výrazu objektu jako alternativu k dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="36788-132">In cases where a minor modification of a type is required, consider using an object expression as an alternative to inheritance.</span></span> <span data-ttu-id="36788-133">Následující příklad ukazuje použití výrazu objektu jako alternativu k vytváření nového odvozeného typu:</span><span class="sxs-lookup"><span data-stu-id="36788-133">The following example illustrates the use of an object expression as an alternative to creating a new derived type:</span></span>
+<span data-ttu-id="bdb3d-132">V případech, kdy je vyžadován menší modifikace typu, zvažte použití výrazu objektu jako alternativy dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-132">In cases where a minor modification of a type is required, consider using an object expression as an alternative to inheritance.</span></span> <span data-ttu-id="bdb3d-133">Následující příklad ilustruje použití výrazu objektu jako alternativu k vytvoření nového odvozeného typu:</span><span class="sxs-lookup"><span data-stu-id="bdb3d-133">The following example illustrates the use of an object expression as an alternative to creating a new derived type:</span></span>
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2603.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2603.fs)]
 
-<span data-ttu-id="36788-134">Další informace o objektových výrazů naleznete v tématu [objektové výrazy](object-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="36788-134">For more information about object expressions, see [Object Expressions](object-expressions.md).</span></span>
+<span data-ttu-id="bdb3d-134">Další informace o objektových výrazech naleznete v tématu [Object Expressions](object-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="bdb3d-134">For more information about object expressions, see [Object Expressions](object-expressions.md).</span></span>
 
-<span data-ttu-id="36788-135">Při vytváření hierarchie objektů, zvažte použití diskriminované sjednocení namísto dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="36788-135">When you are creating object hierarchies, consider using a discriminated union instead of inheritance.</span></span> <span data-ttu-id="36788-136">Rozlišovaná sjednocení můžou také modelu měnit chování různých objektů, které sdílejí společný typ celkové.</span><span class="sxs-lookup"><span data-stu-id="36788-136">Discriminated unions can also model varied behavior of different objects that share a common overall type.</span></span> <span data-ttu-id="36788-137">Jeden diskriminované sjednocení může často eliminovat potřebu počet odvozených tříd, které jsou menší variant.</span><span class="sxs-lookup"><span data-stu-id="36788-137">A single discriminated union can often eliminate the need for a number of derived classes that are minor variations of each other.</span></span> <span data-ttu-id="36788-138">Informace o rozlišovaná sjednocení, naleznete v tématu [Rozlišované sjednocení](discriminated-unions.md).</span><span class="sxs-lookup"><span data-stu-id="36788-138">For information about discriminated unions, see [Discriminated Unions](discriminated-unions.md).</span></span>
+<span data-ttu-id="bdb3d-135">Při vytváření hierarchií objektů zvažte použití rozlišeného sjednocení namísto dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-135">When you are creating object hierarchies, consider using a discriminated union instead of inheritance.</span></span> <span data-ttu-id="bdb3d-136">Rozlišené sjednocení mohou také modelovat proměnlivé chování různých objektů, které sdílejí společný celkový typ.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-136">Discriminated unions can also model varied behavior of different objects that share a common overall type.</span></span> <span data-ttu-id="bdb3d-137">Jedno rozlišené sjednocení často může eliminovat potřebu řady odvozených tříd, které jsou drobné variace.</span><span class="sxs-lookup"><span data-stu-id="bdb3d-137">A single discriminated union can often eliminate the need for a number of derived classes that are minor variations of each other.</span></span> <span data-ttu-id="bdb3d-138">Informace o rozlišených sjednoceních naleznete v tématu [rozlišené sjednocení](discriminated-unions.md).</span><span class="sxs-lookup"><span data-stu-id="bdb3d-138">For information about discriminated unions, see [Discriminated Unions](discriminated-unions.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="36788-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="36788-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bdb3d-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bdb3d-139">See also</span></span>
 
-- [<span data-ttu-id="36788-140">Objektové výrazy</span><span class="sxs-lookup"><span data-stu-id="36788-140">Object Expressions</span></span>](object-expressions.md)
-- [<span data-ttu-id="36788-141">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="36788-141">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="bdb3d-140">Objektové výrazy</span><span class="sxs-lookup"><span data-stu-id="bdb3d-140">Object Expressions</span></span>](object-expressions.md)
+- [<span data-ttu-id="bdb3d-141">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="bdb3d-141">F# Language Reference</span></span>](index.md)
