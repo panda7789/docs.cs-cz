@@ -1,0 +1,35 @@
+- name: Elektronická kniha o aplikacích bez serveru
+  href: index.md
+  items:
+    - name: Přístupy k architektuře
+      href: architecture-approaches.md
+      items:
+        - name: Přístupy k nasazení architektury
+          href: architecture-deployment-approaches.md
+    - name: Bezserverová architektura
+      href: serverless-architecture.md
+      items:
+        - name: Důležité informace o bezserverové architektuře
+          href: serverless-architecture-considerations.md
+        - name: Příklady bezserverového návrhu
+          href: serverless-design-examples.md
+    - name: Bezserverová platforma Azure
+      href: azure-serverless-platform.md
+      items:
+        - name: Azure Functions
+          href: azure-functions.md
+        - name: Application Insights
+          href: application-insights.md
+        - name: Azure Logic Apps
+          href: logic-apps.md
+        - name: Azure Event Grid
+          href: event-grid.md
+    - name: Odolné funkce Azure
+      href: durable-azure-functions.md
+      items:
+        - name: Vzory orchestrace
+          href: orchestration-patterns.md
+    - name: Obchodní scénáře aplikací bez serveru a případy použití
+      href: serverless-business-scenarios.md
+    - name: Závěr
+      href: serverless-conclusion.md
