@@ -1,17 +1,17 @@
 ---
 title: 'Výjimky: Funkce failwith'
-description: Zjistěte, jak funkce "failwith" generuje F# výjimky.
+description: Přečtěte si, jak funkce failwith generuje F# výjimku.
 ms.date: 05/16/2016
-ms.openlocfilehash: 08107966ddc2f55625347deb92d224b286df7761
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f2c86362d5bdde7bab55751f019965a5f4ca6236
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641953"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630322"
 ---
 # <a name="exceptions-the-failwith-function"></a>Výjimky: Funkce failwith
 
-`failwith` Funkce generuje F# výjimky.
+`failwith` Funkce vygeneruje F# výjimku.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,11 +21,11 @@ failwith error-message-string
 
 ## <a name="remarks"></a>Poznámky
 
-*Řetězec chybové zprávy* v předchozí syntaxi je řetězcový literál nebo hodnota typu `string`. Stane `Message` vlastnosti výjimky.
+*Řetězec chybové zprávy* v předchozí syntaxi je řetězcový literál nebo hodnota typu `string`. Bude se jednat o vlastnostvýjimky.`Message`
 
-Výjimka, která je generován `failwith` je `System.Exception` výjimku, která je odkaz, který má název `Failure` v F# kódu. Následující kód ukazuje použití `failwith` vyvolají výjimku.
+Výjimka, která je generována `failwith` nástrojem `System.Exception` je výjimka, která je odkazem, který má název `Failure` v F# kódu. Následující kód ilustruje použití `failwith` k vyvolání výjimky.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6001.fs)]
 
 ## <a name="see-also"></a>Viz také:
 
@@ -33,4 +33,4 @@ Výjimka, která je generován `failwith` je `System.Exception` výjimku, která
 - [Typy výjimek](exception-types.md)
 - [Výjimky: `try...with` Výraz](the-try-with-expression.md)
 - [Výjimky: `try...finally` Výraz](the-try-finally-expression.md)
-- [Výjimky: `raise` – funkce](the-raise-function.md)
+- [Výjimky: `raise` funkce](the-raise-function.md)
