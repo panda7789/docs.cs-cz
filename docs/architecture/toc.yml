@@ -1,0 +1,15 @@
+- name: Průvodce architekturou aplikací .NET
+  href: index.yml
+- name: Elektronické knihy
+  expanded: true
+  items:
+    - name: Navrhování moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure
+      href: modern-web-apps-azure/
+    - name: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
+      href: modernize-with-azure-containers/
+    - name: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
+      href: containerized-lifecycle/
+    - name: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
+      href: microservices/
+    - name: 'Bezserverové aplikace: Architektura, vzory a implementace v Azure'
+      href: serverless/

@@ -9,6 +9,25 @@
         - name: Prohlížeč rozhraní API pro .NET
           tocHref: /dotnet/api/
           topicHref: /dotnet/api/index
+        - name: Průvodce architekturou aplikací .NET
+          tocHref: /dotnet/architecture/
+          topicHref: /dotnet/architecture/index
+          items:
+            - name: Moderní webové aplikace ASP.NET (elektronická kniha)
+              tocHref: /dotnet/architecture/modern-web-apps-azure/
+              topicHref: /dotnet/architecture/modern-web-apps-azure/index
+            - name: Mikroslužby .NET – architektura (elektronická kniha)
+              tocHref: /dotnet/architecture/microservices/
+              topicHref: /dotnet/architecture/microservices/index
+            - name: Modernizace aplikací .NET (elektronická kniha)
+              tocHref: /dotnet/architecture/modernize-with-azure-containers/
+              topicHref: /dotnet/architecture/modernize-with-azure-containers/index
+            - name: Mikroslužby .NET – DevOps (elektronická kniha)
+              tocHref: /dotnet/architecture/containerized-lifecycle/
+              topicHref: /dotnet/architecture/containerized-lifecycle/index
+            - name: Elektronická kniha o aplikacích bez serveru
+              tocHref: /dotnet/architecture/serverless/
+              topicHref: /dotnet/architecture/serverless/index
         - name: Průvodce technologií .NET
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
@@ -19,21 +38,6 @@
             - name: Pokyny pro open-source knihovnu
               tocHref: /dotnet/standard/library-guidance/
               topicHref: /dotnet/standard/library-guidance/index
-            - name: Moderní webové aplikace ASP.NET (elektronická kniha)
-              tocHref: /dotnet/standard/modern-web-apps-azure-architecture/
-              topicHref: /dotnet/standard/modern-web-apps-azure-architecture/index
-            - name: Mikroslužby .NET – architektura (elektronická kniha)
-              tocHref: /dotnet/standard/microservices-architecture/
-              topicHref: /dotnet/standard/microservices-architecture/index
-            - name: Modernizace aplikací .NET (elektronická kniha)
-              tocHref: /dotnet/standard/modernize-with-azure-and-containers/
-              topicHref: /dotnet/standard/modernize-with-azure-and-containers/index
-            - name: Mikroslužby .NET – DevOps (elektronická kniha)
-              tocHref: /dotnet/standard/containerized-lifecycle-architecture/
-              topicHref: /dotnet/standard/containerized-lifecycle-architecture/index
-            - name: Elektronická kniha o aplikacích bez serveru
-              tocHref: /dotnet/standard/serverless-architecture/
-              topicHref: /dotnet/standard/serverless-architecture/index
             - name: Vzory asynchronního programování
               tocHref: /dotnet/standard/asynchronous-programming-patterns/
               topicHref: /dotnet/standard/asynchronous-programming-patterns/index
@@ -439,7 +443,7 @@
                   tocHref: /dotnet/csharp/programming-guide/concepts/
                   topicHref: /dotnet/csharp/programming-guide/concepts/index
                   items:
-                    - name: Sestavení a globální mezipaměť sestavení (GAC)
+                    - name: Sestavení
                       tocHref: /dotnet/csharp/programming-guide/concepts/assemblies-gac/
                       topicHref: /dotnet/csharp/programming-guide/concepts/assemblies-gac/index
                     - name: Asynchronní programování
@@ -535,7 +539,7 @@
               tocHref: /dotnet/visual-basic/programming-guide/concepts/
               topicHref: /dotnet/visual-basic/programming-guide/concepts/index
               items:
-                - name: Sestavení a globální mezipaměť sestavení (GAC)
+                - name: Sestavení
                   tocHref: /dotnet/visual-basic/programming-guide/concepts/assemblies-gac/
                   topicHref: /dotnet/visual-basic/programming-guide/concepts/assemblies-gac/index
                 - name: Asynchronní programování
