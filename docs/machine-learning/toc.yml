@@ -23,6 +23,8 @@
       href: tutorials/image-classification.md
     - name: Analýza prodeje produktu (detekce anomálií)
       href: tutorials/sales-anomaly-detection.md
+    - name: Detekce objektů v obrázcích (detekce objektů)
+      href: tutorials/object-detection-onnx.md
 - name: Návody
   items:
     - name: Načtení dat
