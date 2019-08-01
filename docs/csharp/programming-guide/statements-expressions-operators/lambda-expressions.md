@@ -1,7 +1,7 @@
 ---
 title: Výrazy lambda – C# Průvodce programováním
 ms.custom: seodec18
-ms.date: 03/14/2019
+ms.date: 07/29/2019
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,38 +9,44 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 546feb6f3c4515ceecdb5b5afa14c0fc99ab7020
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 36dab520d67d08d1b3304f1453bfb2c07a2f1c32
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363911"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671698"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Průvodce programováním)
 
-*Výraz lambda* je blok kódu (výraz nebo blok příkazu), který je považován za objekt. Může být předán jako argument metodám a může být také vrácen voláním metody. Výrazy lambda se používají rozsáhle pro:
+*Výraz lambda* je výraz kterékoli z následujících dvou forem:
 
-- Předání kódu, který má být proveden na asynchronní metody, například <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType>.
+- [Výraz lambda výrazu](#expression-lambdas) , který má výraz jako tělo:
 
-- Zápis [výrazů dotazů LINQ](../../linq/index.md).
+  ```csharp
+  (input-parameters) => expression
+  ```
 
-- Vytváření [stromů výrazů](../concepts/expression-trees/index.md).
+- Výraz [lambda](#statement-lambdas) , který má blok příkazu jako jeho tělo:
 
-Lambda výrazy jsou kód, který lze reprezentovat buď jako delegát, nebo jako strom výrazu, který se zkompiluje do delegáta. Konkrétní typ delegáta výrazu lambda závisí na jeho parametrech a návratové hodnotě. Lambda výrazy, které nevracejí hodnotu odpovídají konkrétnímu `Action` delegátu, v závislosti na počtu parametrů. Lambda výrazy, které vracejí hodnotu odpovídají konkrétnímu `Func` delegátu v závislosti na počtu parametrů. Například výraz lambda, který má dva parametry, ale nevrací žádnou hodnotu, <xref:System.Action%602> odpovídá delegátu. Výraz lambda, který má jeden parametr a vrací hodnotu, odpovídá <xref:System.Func%602> delegátu.
+  ```csharp  
+  (input-parameters) => { <sequence-of-statements> }
+  ```
 
-Výraz lambda používá `=>` [operátor deklarace lambda](../../language-reference/operators/lambda-operator.md), který odděluje seznam parametrů lambda ze spustitelného kódu. Chcete-li vytvořit výraz lambda, zadejte vstupní parametry (pokud existují) na levé straně operátoru lambda a umístěte blok výrazu nebo příkazu na druhou stranu. Například výraz `x => x * x` lambda s jedním řádkem určuje parametr s názvem `x` `x` a vrátí hodnotu Square. Tento výraz můžete přiřadit typu delegátu, jak ukazuje následující příklad:
+Pomocí [ `=>` operátoru deklarace lambda](../../language-reference/operators/lambda-operator.md) oddělte seznam parametrů lambda od jeho těla. Chcete-li vytvořit výraz lambda, zadejte vstupní parametry (pokud existují) na levé straně operátoru lambda a výraz nebo blok příkazu na druhé straně.
+
+Libovolný výraz lambda lze převést na typ [delegáta](../../language-reference/builtin-types/reference-types.md#the-delegate-type) . Typ delegáta, na který lze výraz lambda převést, je definován typy jeho parametrů a návratové hodnoty. Pokud výraz lambda nevrací hodnotu, lze jej převést na jeden z `Action` typů delegátů. v opačném případě jej lze převést na jeden `Func` z typů delegátů. Například lambda výraz, který má dva parametry a nevrací žádnou hodnotu, lze převést na <xref:System.Action%602> delegáta. Lambda výraz, který má jeden parametr a vrací hodnotu, lze převést na <xref:System.Func%602> delegáta. V následujícím příkladu lambda výraz `x => x * x`, který určuje parametr s názvem `x` `x` a vrací hodnotu Square, je přiřazen proměnné typu delegáta:
 
 [!code-csharp-interactive[lambda is delegate](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Delegate)]
 
-Lambda výraz můžete také přiřadit typu stromu výrazu:
+Lambda výrazy lze také převést na typy [stromu výrazů](../concepts/expression-trees/index.md) , jak ukazuje následující příklad:
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Nebo ho můžete předat přímo jako argument metody:
+Můžete použít výrazy lambda v jakémkoli kódu, který vyžaduje instance typů delegátů nebo stromů výrazů, například jako argument <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> metody k předání kódu, který by měl být proveden na pozadí. Lambda výrazy můžete použít také při psaní [výrazů LINQ Query](../../linq/index.md), jak ukazuje následující příklad:
 
-[!code-csharp-interactive[lambda is argument](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
+[!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
-Použijete-li syntaxi založenou na metodě pro <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> volání metody <xref:System.Linq.Enumerable?displayProperty=nameWithType> ve třídě (stejně jako v LINQ to Objects a LINQ to XML), parametr je typ <xref:System.Func%602?displayProperty=nameWithType>delegáta. Výraz lambda je nejvhodnějším způsobem vytvoření tohoto delegátu. Při volání <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> metody <xref:System.Linq.Queryable?displayProperty=nameWithType> ve třídě (stejně jako v LINQ to SQL) je typ parametru typ [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>)stromu výrazu. Výraz lambda je opět pouze velmi stručným způsobem vytvoření tohoto stromu výrazu. Výrazy lambda umožňují, `Select` aby volání vypadaly podobně, i když ve skutečnosti typ objektu vytvořeného z výrazu lambda je jiný.
+Použijete-li syntaxi založenou na metodě pro <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> volání metody <xref:System.Linq.Enumerable?displayProperty=nameWithType> ve třídě, například v LINQ to Objects a LINQ to XML, je parametr typu <xref:System.Func%602?displayProperty=nameWithType>delegát. Při volání <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> metody <xref:System.Linq.Queryable?displayProperty=nameWithType> ve třídě, například v LINQ to SQL, je typ parametru typ [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>)stromu výrazu. V obou případech můžete použít stejný výraz lambda k zadání hodnoty parametru. To umožňuje, aby `Select` dvě volání vypadaly podobně, i když ve skutečnosti se typ objektů vytvořených z výrazů lambda liší.
   
 ## <a name="expression-lambdas"></a>Výrazy lambda výrazu
 
@@ -73,7 +79,7 @@ Tělo výrazu lambda se může skládat z volání metody. Pokud však vytvář�
 Příkazová lambda se podobá výrazové lambdě s tím rozdílem, že výrazy jsou uzavřeny ve složených závorkách:
 
 ```csharp  
-(input-parameters) => { statement; }
+(input-parameters) => { <sequence-of-statements> }
 ```
 
 Text příkazové lambdy může obsahovat libovolný počet příkazů. V praxi jich však není obvykle více než dva nebo tři.

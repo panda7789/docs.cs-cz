@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: c9d86cadd5f2115d0214d9a1b1dce7e6682341e0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 405d06a8da8ec5c428c1565bcd08236de0f1fa88
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629724"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68672049"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma poskytuje přehled technologie Microsoft ClearType, kterou najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]tématu.  
@@ -19,11 +19,11 @@ Toto téma poskytuje přehled technologie Microsoft ClearType, kterou najdete v 
 ## <a name="technology-overview"></a>Přehled technologie  
  ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely.  Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Před technologií ClearType teď může být nejmenší úroveň podrobností, kterou by byl počítač zobrazený, jeden pixel, ale u technologie ClearType běžící na monitoru LCD teď můžeme zobrazovat funkce textu jako malého podílu v šířce pixelů. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání.  
   
- Technologie ClearType dostupná v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nástroji je nejnovější generace technologie ClearType s několika vylepšeními, která se nachází [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]v systému.  
+ Technologie ClearType dostupná v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nástroji je nejnovější generace technologie ClearType, která má několik vylepšení verze v Microsoft Windows GDI (GDI).  
   
 <a name="sub-pixel_positioning"></a>   
 ## <a name="sub-pixel-positioning"></a>Umístění dílčích pixelů  
- Výrazným vylepšením oproti předchozí verzi technologie ClearType je použití umístění s dílčími pixely. Na rozdíl od implementace technologie ClearType nalezené v [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]nástroji umožňuje technologie ClearType nalezená v v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pixelech, nikoli pouze počáteční hranici pixelu. Vzhledem k tomuto dodatečnému rozlišení v glyfech umístění jsou mezery a poměry glyfů přesnější a konzistentní.  
+ Výrazným vylepšením oproti předchozí verzi technologie ClearType je použití umístění s dílčími pixely. Na rozdíl od implementace technologie ClearType nalezené v rozhraní GDI umožňuje technologie [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ClearType nalezená v v obrazovém obrazci, nikoli pouze počáteční hranici pixelu. Vzhledem k tomuto dodatečnému rozlišení v glyfech umístění jsou mezery a poměry glyfů přesnější a konzistentní.  
   
  Následující dva příklady ukazují, jak se glyfy můžou začínat na libovolné hranici dílčích pixelů při použití umístění v pixelech. Příklad na levé straně se vykreslí pomocí starší verze zobrazovací jednotky ClearType, která nevyužívá umístění dílčích pixelů. Příklad na pravé straně se vykreslí pomocí nové verze zobrazovací jednotky ClearType s použitím umístění dílčích pixelů. Všimněte si, jak se jednotlivé **e** a **l** v pravé imagi vykreslují mírně odlišně, protože každá začíná na jiném dílčím pixelu. Při prohlížení textu na obrazovce na normální velikosti není tento rozdíl znatelný kvůli vysokému kontrastu obrázku glyfu. To je možné jenom v důsledku sofistikovaného filtrování barev, které je součástí technologie ClearType.  
   
@@ -37,7 +37,7 @@ Text se staršími a novějšími verzemi technologie ClearType
   
 <a name="y-direction_antialiasing"></a>   
 ## <a name="y-direction-antialiasing"></a>Směr Y – antialiasing  
- Dalším vylepšením technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji je anti-aliasing pro směr y. Technologie ClearType v [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] nástroji bez vyhlazení proti směru y nabízí lepší rozlišení na ose x, ale ne na ose y. Na horních a dolních obrazovkách bez podkřivek se zubaté okraje odvolávat od jejich čitelnosti.  
+ Dalším vylepšením technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji je anti-aliasing pro směr y. Technologie ClearType v GDI bez vyhlazení proti směru y nabízí lepší rozlišení na ose x, ale ne na ose y. Na horních a dolních obrazovkách bez podkřivek se zubaté okraje odvolávat od jejich čitelnosti.  
   
  Následující příklad ukazuje účinek, který nemá žádné směrové antialiasing y. V takovém případě jsou zubaté okraje na horní a dolní straně písmen zjevné.  
   

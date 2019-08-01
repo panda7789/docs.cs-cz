@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 440a6d76e5295613d2887c0a77d9a49e870e580b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 39cf4b60262afb1e3745a82c734391385669f5d3
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629816"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671911"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje jejich interakci. Také podrobně popisuje některé z možností provedených architekty [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -76,9 +76,9 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Další důležité podrobnosti, které v diagramu opravdu nevšimnete, je způsob, jakým systém skutečně provádí složení.  
   
- V User32 a [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]systém funguje v režimu ořezového systému přímo v režimu. V případě, že je nutné vykreslit komponentu, systém vytvoří ořezové meze mimo prvek, který není povolen k dotyku s pixely, a poté, co je komponenta požádána o Malování pixelů v tomto poli. Tento systém funguje velmi dobře v omezených systémech paměti, protože když se něco změní jenom na ovlivněnou součást – žádné dvě komponenty nepřispívají k barvě jednoho pixelu.  
+ V User32 a GDI systém funguje v režimu ořezového systému přímo v režimu. V případě, že je nutné vykreslit komponentu, systém vytvoří ořezové meze mimo prvek, který není povolen k dotyku s pixely, a poté, co je komponenta požádána o Malování pixelů v tomto poli. Tento systém funguje velmi dobře v omezených systémech paměti, protože když se něco změní jenom na ovlivněnou součást – žádné dvě komponenty nepřispívají k barvě jednoho pixelu.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]používá model Malování "Algorithm 's". To znamená, že místo oříznutí jednotlivých komponent je každá komponenta požádána o vykreslení od zpátky po začátek zobrazení. Díky tomu mohou jednotlivé komponenty malovat přes zobrazení předchozí součásti. Výhodou tohoto modelu je, že můžete mít složité a částečně transparentní tvary. Díky dnešnímu modernímu grafickému hardwaru je tento model poměrně rychlý (což nevedlo v případě [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] vytvoření user32/).  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]používá model Malování "Algorithm 's". To znamená, že místo oříznutí jednotlivých komponent je každá komponenta požádána o vykreslení od zpátky po začátek zobrazení. Díky tomu mohou jednotlivé komponenty malovat přes zobrazení předchozí součásti. Výhodou tohoto modelu je, že můžete mít složité a částečně transparentní tvary. Díky dnešnímu modernímu grafickému hardwaru je tento model poměrně rychlý (což neplatí při vytvoření User32/GDI).  
   
  Jak již [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] bylo zmíněno dříve, základní filozofie je třeba přesunout na více deklarativní model programování "vlastností" orientovaný na "vlastnosti". V vizuálním systému se to zobrazuje na několika zajímavých místech.  
   

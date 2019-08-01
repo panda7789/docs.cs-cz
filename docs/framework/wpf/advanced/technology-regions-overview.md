@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-ms.openlocfilehash: e2c93f4471db2d72851a5d5bd8806b59a3e5ee28
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a169064052a567694b1cbd1e2f8ac2f00b047a68
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629859"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671836"
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud je v aplikaci použito více prezentačních technologií, například WPF, Win32 nebo DirectX, musí sdílet oblasti vykreslování v rámci společného okna nejvyšší úrovně. Toto téma popisuje problémy, které mohou ovlivnit prezentaci a vstup pro vaši aplikaci WPF pro zpracování.  
@@ -52,13 +52,13 @@ Pokud je v aplikaci použito více prezentačních technologií, například WPF
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje HRGNs; pro tuto funkci ale neexistují žádná spravovaná rozhraní API. Můžete použít vyvolání platformy a <xref:System.Windows.Interop.HwndSource> volat relevantní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] rozhraní API. Další informace naleznete v tématu [volání nativních funkcí ze spravovaného kódu](/cpp/dotnet/calling-native-functions-from-managed-code).  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vrstvená okna mají různé možnosti v různých operačních systémech. Důvodem je to [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , že nástroj používá rozhraní DirectX k vykreslování a vrstvená okna byla [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] primárně navržena pro vykreslování, nikoli pro vykreslování rozhraní DirectX.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vrstvená okna mají různé možnosti v různých operačních systémech. Důvodem je to [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , že používá rozhraní DirectX k vykreslování a vrstvená okna byla primárně navržena pro vykreslování GDI, nikoli pro vykreslování rozhraní DirectX.  
   
 - [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje hardwarově akcelerovaná vrstvená okna [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] v systémech a novějších. Hardwarově akcelerovaná vrstvená okna [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] na vyžádání podpory od rozhraní Microsoft DirectX, takže tyto možnosti budou záviset na verzi rozhraní Microsoft DirectX na daném počítači.  
   
 - [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroj nepodporuje barevné klíče transparentnosti, protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nemůže zaručit, aby vygeneroval přesnou barvu, zejména když je vykreslování hardwarové-urychlené.  
   
-- Pokud je vaše aplikace spuštěná [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)]v systému, vrstvení oken na povrchu rozhraní DirectX blikání se při vykreslování aplikace DirectX vykreslí.  (Vlastní sekvence [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] vykreslování skrývá rozvrstvené okno, pak rozhraní DirectX nakreslí a následně [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] přenese do vrstev okno).  Toto omezení má také okna bezvrstev.[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
+- Pokud je vaše aplikace spuštěná [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)]v systému, vrstvení oken na povrchu rozhraní DirectX blikání se při vykreslování aplikace DirectX vykreslí.  (Vlastní sekvence vykreslování znamená, že systém Microsoft Windows GDI (GDI) skrývá rozvrstvené okno, pak rozhraní DirectX nakreslí a pak Microsoft Windows GDI (GDI) vloží vrstvené okno zpět.  Toto omezení má také okna bezvrstev.[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

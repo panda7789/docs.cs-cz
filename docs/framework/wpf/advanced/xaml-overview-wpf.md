@@ -19,19 +19,20 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: 4f3d8a9f275a41b96b6518d63552ce9873cca0fb
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: ee5318b8ba1284f2805b80b3e41fab3ae739158c
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400814"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671996"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
+
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak lze použít XAML k psaní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma konkrétně popisuje XAML, jak je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]implementováno. Samotný kód XAML je větší jazyk konceptu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]než.  
 
 <a name="what_is_xaml"></a>   
 ## <a name="what-is-xaml"></a>Co je XAML?  
- XAML je deklarativní jazyk značení. Jak je použito pro model .NET Framework programovací model, XAML zjednodušuje vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro .NET Framework aplikace. Můžete vytvořit viditelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky v deklarativním kódu XAML a potom [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] oddělit definici z logiky run-time pomocí souborů kódu na pozadí, které jsou připojeny ke značkám prostřednictvím definic dílčí třídy. XAML přímo představuje instanci objektů v konkrétní sadě typů zálohování definovaných v sestaveních. To se na rozdíl od většiny ostatních jazyků značek, což je obvykle interpretovaný jazyk bez přímé propojení na systém back-Type. XAML umožňuje pracovní postup, ve kterém mohou jednotlivé strany pracovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] na a logice aplikace pomocí potenciálně různých nástrojů.  
+ XAML je deklarativní jazyk značení. Jak je použito pro model .NET Framework programovací model, XAML zjednodušuje vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro .NET Framework aplikace. Můžete vytvořit viditelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky v deklarativním kódu XAML a potom [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] oddělit definici z logiky run-time pomocí souborů kódu na pozadí, které jsou připojeny k značkám prostřednictvím definic částečné třídy. XAML přímo představuje instanci objektů v konkrétní sadě typů zálohování definovaných v sestaveních. To se na rozdíl od většiny ostatních jazyků značek, což je obvykle interpretovaný jazyk bez přímé propojení na systém back-Type. XAML umožňuje pracovní postup, ve kterém mohou jednotlivé strany pracovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] na a logice aplikace pomocí potenciálně různých nástrojů.  
   
  V případě, že jsou reprezentovány jako text, soubory XAML jsou `.xaml` soubory XML, které mají obvykle příponu. Soubory mohou být kódovány jakýmkoli kódováním XML, ale kódování jako UTF-8 je typické.  
   
@@ -104,7 +105,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak lze použít XAML k psaní
   
  Jako pravidlo jazyka XAML musí být hodnota vlastnosti obsahu XAML předána zcela před nebo zcela po všech ostatních prvcích vlastností na daném objektovém prvku. Například následující kód není zkompilován:  
   
-```  
+```xaml
 <Button>I am a   
   <Button.Background>Blue</Button.Background>  
   blue button</Button>  
@@ -188,7 +189,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak lze použít XAML k psaní
  [!code-xaml[XAMLOvwSupport#MarginVerbose](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#marginverbose)]  
   
 > [!NOTE]
->  Existuje také omezený počet objektů, kde je převod typu jediným veřejným způsobem, jak nastavit vlastnost na tento typ bez použití podtřídy, protože samotný typ nemá konstruktor bez parametrů. Příklad: <xref:System.Windows.Input.Cursor>.  
+> Existuje také omezený počet objektů, kde je převod typu jediným veřejným způsobem, jak nastavit vlastnost na tento typ bez použití podtřídy, protože samotný typ nemá konstruktor bez parametrů. Příklad: <xref:System.Windows.Input.Cursor>.  
   
  Další informace o tom, jak je podporován převod typu a jeho použití pro syntaxi atributu, naleznete v tématu [TypeConverters a XAML](typeconverters-and-xaml.md).  
   
@@ -228,7 +229,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak lze použít XAML k psaní
   
  Následuje velmi základní příklad toho, jak vlastní předpony fungují v kódu XAML. Předpona `custom` je definována ve značce kořenového prvku a namapována na konkrétní sestavení, které je zabaleno a k dispozici v aplikaci. Toto sestavení obsahuje typ `NumericUpDown`, který je implementován pro podporu obecného použití jazyka XAML, a také použití dědičnosti třídy, která umožňuje jeho vložení na tento konkrétní bod v modelu obsahu WPF XAML. Instance tohoto `NumericUpDown` ovládacího prvku je deklarována jako element Object s použitím předpony tak, aby analyzátor XAML věděl, který obor názvů XAML obsahuje typ, a proto, kde záložní sestavení obsahuje definici typu.  
   
-```  
+```xaml
 <Page  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"   
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"   

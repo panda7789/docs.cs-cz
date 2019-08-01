@@ -21,25 +21,25 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: d1fcf15db750167a93344ff8efd5957933bed6c0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b6fb530bbc4132b09cc17ad692e6e9e23cd75598
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629842"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671842"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
 
 <a name="_wpfImaging"></a>   
 ## <a name="wpf-imaging-component"></a>Komponenta WPF Imaging  
- [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]poskytuje významná vylepšení funkcí [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]pro vytváření bitových kopií v nástroji. Funkce pro vytváření imagí, jako je zobrazení rastrového obrázku nebo použití obrázku na běžném ovládacím prvku, byly dřív [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] závislé [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] na knihovnách nebo. Tato rozhraní API poskytují základní funkce pro zpracování obrazu, ale chybí funkce, jako je podpora rozšiřitelnosti kodeku a podpora obrázků s vysokou kvalitou. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]je navržený tak, aby překonal [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] nedostatky [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a a poskytoval novou sadu rozhraní API pro zobrazení a používání imagí v rámci svých aplikací.  
+ [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]poskytuje významná vylepšení funkcí [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]pro vytváření bitových kopií v nástroji. Možnosti imagí, jako je zobrazení rastrového obrázku nebo použití obrázku na běžném ovládacím prvku, byly dřív závislé na knihovnách Microsoft Windows GDI (GDI) nebo Microsoft Windows GDI+. Tato rozhraní API poskytují základní funkce pro zpracování obrazu, ale chybí funkce, jako je podpora rozšiřitelnosti kodeku a podpora obrázků s vysokou kvalitou. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]je navržený tak, aby překonal nedostatky GDI a GDI+ a poskytoval novou sadu rozhraní API pro zobrazení a používání imagí v rámci aplikací.  
   
  Existují dva způsoby, jak získat přístup [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] k rozhraní API, spravované komponentě a nespravované součásti. Nespravované komponenty poskytují následující funkce.  
   
 - Model rozšiřitelnosti pro nové nebo speciální formáty obrázků.  
   
-- Vylepšený výkon a zabezpečení v nativních formátech bitových kopií, včetně [!INCLUDE[TLA#tla_jpegorg](../../../../includes/tlasharptla-jpegorg-md.md)]rastrových obrázků [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)]( [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)]BMP),, [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)], [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)],, a ikon (. ico).  
+- Vylepšený výkon a zabezpečení v nativních formátech obrázků, včetně rastrového [!INCLUDE[TLA#tla_jpegorg](../../../../includes/tlasharptla-jpegorg-md.md)]obrázku ( [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)]BMP [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)]),, [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)],,, GIF (Graphics Interchange Format) a ikony (. ico).  
   
 - Uchovávání dat bitové kopie s vysokou bitovou hloubkou až na 8 bitů na kanál (32 bitů na pixel).  
   
@@ -57,11 +57,11 @@ Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasha
   
 <a name="_imageformats"></a>   
 ## <a name="wpf-image-formats"></a>Formáty obrázků WPF  
- Kodek slouží k dekódování nebo kódování konkrétního formátu média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]obsahuje kodek pro formáty obrázků BMP [!INCLUDE[TLA2#tla_jpeg](../../../../includes/tla2sharptla-jpeg-md.md)], [!INCLUDE[TLA2#tla_png](../../../../includes/tla2sharptla-png-md.md)], [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)], [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)] [!INCLUDE[TLA2#tla_gif](../../../../includes/tla2sharptla-gif-md.md)],, a Icon. Každý z těchto kodeků umožňuje aplikacím dekódovat a s výjimkou ikony zakódovat příslušné formáty obrázků.  
+ Kodek slouží k dekódování nebo kódování konkrétního formátu média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]obsahuje kodek pro formáty obrázků BMP [!INCLUDE[TLA2#tla_jpeg](../../../../includes/tla2sharptla-jpeg-md.md)], [!INCLUDE[TLA2#tla_png](../../../../includes/tla2sharptla-png-md.md)], [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)], [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)], GIF a Icon. Každý z těchto kodeků umožňuje aplikacím dekódovat a s výjimkou ikony zakódovat příslušné formáty obrázků.  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>je důležitou třídou použitou při dekódování a kódování imagí. Je to základní stavební blok [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] kanálu a představuje jednu konstantní sadu pixelů v určité velikosti a rozlišení. Může to být individuální rámec obrázku s více snímky, nebo může být výsledkem transformace provedené <xref:System.Windows.Media.Imaging.BitmapSource>na. <xref:System.Windows.Media.Imaging.BitmapSource> Je nadřazeným prvkem mnoha primárních tříd používaných v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rámci imagí, jako je například. <xref:System.Windows.Media.Imaging.BitmapFrame>  
   
- <xref:System.Windows.Media.Imaging.BitmapFrame> Slouží k uložení skutečných dat bitmapy formátu obrázku. Mnoho formátů obrázků podporuje pouze jeden <xref:System.Windows.Media.Imaging.BitmapFrame>, i když formáty [!INCLUDE[TLA2#tla_gif](../../../../includes/tla2sharptla-gif-md.md)] jako a [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] podporují více snímků na obrázek. Tyto rámce jsou používány dekodéry jako vstupní data a jsou předávány kodérům pro vytváření souborů imagí.  
+ <xref:System.Windows.Media.Imaging.BitmapFrame> Slouží k uložení skutečných dat bitmapy formátu obrázku. Mnoho formátů obrázků podporuje pouze jeden <xref:System.Windows.Media.Imaging.BitmapFrame>, i když formáty jako formát GIF a [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] podporují více snímků na obrázek. Tyto rámce jsou používány dekodéry jako vstupní data a jsou předávány kodérům pro vytváření souborů imagí.  
   
  Následující příklad ukazuje, jak <xref:System.Windows.Media.Imaging.BitmapFrame> je vytvořen <xref:System.Windows.Media.Imaging.BitmapSource> z [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] a poté přidán do obrázku.  
   
