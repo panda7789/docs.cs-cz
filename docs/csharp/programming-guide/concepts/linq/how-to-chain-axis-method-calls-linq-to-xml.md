@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Zřetězení volání metod osy (LINQ to XML) (C#)'
+title: 'Postupy: Volání metody osy řetězu (LINQ to XML)C#()'
 ms.date: 07/20/2015
 ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
-ms.openlocfilehash: 39113c1b96ea7376d61c606aaa5f79715dbe3cab
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 93b05a39baea5c3ee75224562d27365e8936bc92
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485918"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710149"
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a><span data-ttu-id="edc74-102">Postupy: Zřetězení volání metod osy (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="edc74-102">How to: Chain Axis Method Calls (LINQ to XML) (C#)</span></span>
-<span data-ttu-id="edc74-103">Běžným vzorem, který budete používat ve vašem kódu je volání metodu osy, následná volání, jeden z OS – metoda rozšíření.</span><span class="sxs-lookup"><span data-stu-id="edc74-103">A common pattern that you will use in your code is to call an axis method, then call one of the extension method axes.</span></span>  
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a><span data-ttu-id="ade10-102">Postupy: Volání metody osy řetězu (LINQ to XML)C#()</span><span class="sxs-lookup"><span data-stu-id="ade10-102">How to: Chain Axis Method Calls (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="ade10-103">Běžným vzorem, který použijete v kódu, je zavolat metodu osy a pak zavolat jednu z OS rozšiřujících metod.</span><span class="sxs-lookup"><span data-stu-id="ade10-103">A common pattern that you will use in your code is to call an axis method, then call one of the extension method axes.</span></span>  
   
- <span data-ttu-id="edc74-104">Existují dvě osy názvem `Elements` , které vracejí kolekci elementů: <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metoda a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metoda.</span><span class="sxs-lookup"><span data-stu-id="edc74-104">There are two axes with the name of `Elements` that return a collection of elements: the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method and the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="edc74-105">Tyto dvě osy najít všechny prvky zadaný název daného hloubce ve stromové struktuře můžete kombinovat.</span><span class="sxs-lookup"><span data-stu-id="edc74-105">You can combine these two axes to find all elements of a specified name at a given depth in the tree.</span></span>  
+ <span data-ttu-id="ade10-104">Existují dvě osy s názvem `Elements` , který vrací kolekci prvků <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> : metoda a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metoda.</span><span class="sxs-lookup"><span data-stu-id="ade10-104">There are two axes with the name of `Elements` that return a collection of elements: the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method and the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="ade10-105">Tyto dvě osy můžete kombinovat a vyhledat všechny prvky zadaného názvu v dané hloubce stromu.</span><span class="sxs-lookup"><span data-stu-id="ade10-105">You can combine these two axes to find all elements of a specified name at a given depth in the tree.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="edc74-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="edc74-106">Example</span></span>  
- <span data-ttu-id="edc74-107">Tento příklad používá <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> k nalezení všech `Name` elementy ve všech `Address` elementy ve všech `PurchaseOrder` elementy.</span><span class="sxs-lookup"><span data-stu-id="edc74-107">This example uses <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> and <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> to find all `Name` elements in all `Address` elements in all `PurchaseOrder` elements.</span></span>  
+## <a name="example"></a><span data-ttu-id="ade10-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="ade10-106">Example</span></span>  
+ <span data-ttu-id="ade10-107">Tento příklad používá <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> k `Name` `PurchaseOrder` nalezení všech prvků všech prvků ve všech prvcích. `Address`</span><span class="sxs-lookup"><span data-stu-id="ade10-107">This example uses <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> and <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> to find all `Name` elements in all `Address` elements in all `PurchaseOrder` elements.</span></span>  
   
- <span data-ttu-id="edc74-108">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="edc74-108">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="ade10-108">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="ade10-108">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement purchaseOrders = XElement.Load("PurchaseOrders.xml");  
@@ -31,7 +31,7 @@ foreach (XElement e in names)
     Console.WriteLine(e);  
 ```  
   
- <span data-ttu-id="edc74-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="edc74-109">This example produces the following output:</span></span>  
+ <span data-ttu-id="ade10-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ade10-109">This example produces the following output:</span></span>  
   
 ```xml  
 <Name>Ellen Adams</Name>  
@@ -42,10 +42,10 @@ foreach (XElement e in names)
 <Name>Jessica Arnold</Name>  
 ```  
   
- <span data-ttu-id="edc74-110">Tento postup funguje, protože jeden z implementace `Elements` osy je jako metodu rozšíření na <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="edc74-110">This works because one of the implementations of the `Elements` axis is as an extension method on <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XContainer>.</span></span> <span data-ttu-id="edc74-111"><xref:System.Xml.Linq.XElement> je odvozen od <xref:System.Xml.Linq.XContainer>, takže můžete volat <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metodu na výsledky volání <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="edc74-111"><xref:System.Xml.Linq.XElement> derives from <xref:System.Xml.Linq.XContainer>, so you can call the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method on the results of a call to the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method.</span></span>  
+ <span data-ttu-id="ade10-110">To funguje, protože jedna z implementací `Elements` osy je jako metoda rozšíření <xref:System.Xml.Linq.XContainer>na <xref:System.Collections.Generic.IEnumerable%601> .</span><span class="sxs-lookup"><span data-stu-id="ade10-110">This works because one of the implementations of the `Elements` axis is as an extension method on <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XContainer>.</span></span> <span data-ttu-id="ade10-111"><xref:System.Xml.Linq.XElement>je odvozen z <xref:System.Xml.Linq.XContainer>, takže můžete <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> volat metodu pro výsledky volání <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="ade10-111"><xref:System.Xml.Linq.XElement> derives from <xref:System.Xml.Linq.XContainer>, so you can call the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method on the results of a call to the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="edc74-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="edc74-112">Example</span></span>  
- <span data-ttu-id="edc74-113">Někdy budete chtít získat všechny prvky v hloubce konkrétní element když existuje může nebo nemusí být použité předchůdce.</span><span class="sxs-lookup"><span data-stu-id="edc74-113">Sometimes you want to retrieve all elements at a particular element depth when there might or might not be intervening ancestors.</span></span> <span data-ttu-id="edc74-114">Například v následujícím dokumentu, můžete chtít načíst všechny `ConfigParameter` prvky, které jsou podřízené objekty daného `Customer` elementu, ale ne `ConfigParameter` , který je podřízený `Root` elementu.</span><span class="sxs-lookup"><span data-stu-id="edc74-114">For example, in the following document, you might want to retrieve all the `ConfigParameter` elements that are children of the `Customer` element, but not the `ConfigParameter` that is a child of the `Root` element.</span></span>  
+## <a name="example"></a><span data-ttu-id="ade10-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="ade10-112">Example</span></span>  
+ <span data-ttu-id="ade10-113">Někdy je vhodné načíst všechny prvky na konkrétní hloubku prvku, pokud může nebo nemusí být zasahovat do nadřazených prvků.</span><span class="sxs-lookup"><span data-stu-id="ade10-113">Sometimes you want to retrieve all elements at a particular element depth when there might or might not be intervening ancestors.</span></span> <span data-ttu-id="ade10-114">Například v následujícím dokumentu můžete `ConfigParameter` chtít načíst všechny prvky, které jsou podřízené `Customer` `ConfigParameter` prvku, ale nikoli podřízený `Root` prvek elementu.</span><span class="sxs-lookup"><span data-stu-id="ade10-114">For example, in the following document, you might want to retrieve all the `ConfigParameter` elements that are children of the `Customer` element, but not the `ConfigParameter` that is a child of the `Root` element.</span></span>  
   
 ```xml  
 <Root>  
@@ -69,7 +69,7 @@ foreach (XElement e in names)
 </Root>  
 ```  
   
- <span data-ttu-id="edc74-115">K tomuto účelu můžete použít <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> osy, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="edc74-115">To do this, you can use the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> axis, as follows:</span></span>  
+ <span data-ttu-id="ade10-115">K tomu můžete použít <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> osu následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="ade10-115">To do this, you can use the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> axis, as follows:</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("Irregular.xml");  
@@ -80,17 +80,17 @@ foreach (XElement cp in configParameters)
     Console.WriteLine(cp);  
 ```  
   
- <span data-ttu-id="edc74-116">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="edc74-116">This example produces the following output:</span></span>  
+ <span data-ttu-id="ade10-116">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ade10-116">This example produces the following output:</span></span>  
   
 ```xml  
 <ConfigParameter>FirstConfigParameter</ConfigParameter>  
 <ConfigParameter>SecondConfigParameter</ConfigParameter>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="edc74-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="edc74-117">Example</span></span>  
- <span data-ttu-id="edc74-118">Následující příklad ukazuje stejný postup pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="edc74-118">The following example shows the same technique for XML that is in a namespace.</span></span> <span data-ttu-id="edc74-119">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="edc74-119">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="ade10-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="ade10-117">Example</span></span>  
+ <span data-ttu-id="ade10-118">Následující příklad ukazuje stejnou techniku pro XML, která je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ade10-118">The following example shows the same technique for XML that is in a namespace.</span></span> <span data-ttu-id="ade10-119">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="ade10-119">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="edc74-120">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="edc74-120">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span></span>  
+ <span data-ttu-id="ade10-120">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Několik nákupních objednávek v oboru názvů](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="ade10-120">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span></span>  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -105,7 +105,7 @@ foreach (XElement e in names)
     Console.WriteLine(e);  
 ```  
   
- <span data-ttu-id="edc74-121">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="edc74-121">This example produces the following output:</span></span>  
+ <span data-ttu-id="ade10-121">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ade10-121">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Ellen Adams</aw:Name>  
@@ -116,6 +116,6 @@ foreach (XElement e in names)
 <aw:Name xmlns:aw="http://www.adventure-works.com">Jessica Arnold</aw:Name>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="edc74-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="edc74-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ade10-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ade10-122">See also</span></span>
 
-- [<span data-ttu-id="edc74-123">Osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="edc74-123">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [<span data-ttu-id="ade10-123">LINQ to XML osy (C#)</span><span class="sxs-lookup"><span data-stu-id="ade10-123">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

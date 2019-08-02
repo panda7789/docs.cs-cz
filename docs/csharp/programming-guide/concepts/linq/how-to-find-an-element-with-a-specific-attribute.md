@@ -2,20 +2,20 @@
 title: 'Postupy: Vyhledání elementu s konkrétním atributem (C#)'
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 7ec6240bf399058ca94cc52c66e6029f924fcd29
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 0362ded5984ff797a1ced93076679b7b975b998c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485555"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709955"
 ---
-# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a><span data-ttu-id="48ec6-102">Postupy: Vyhledání elementu s konkrétním atributem (C#)</span><span class="sxs-lookup"><span data-stu-id="48ec6-102">How to: Find an Element with a Specific Attribute (C#)</span></span>
-<span data-ttu-id="48ec6-103">Toto téma ukazuje, jak najít element, který má atribut, který obsahuje určitou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="48ec6-103">This topic shows how to find an element that has an attribute that has a specific value.</span></span>  
+# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a><span data-ttu-id="8effa-102">Postupy: Vyhledání elementu s konkrétním atributem (C#)</span><span class="sxs-lookup"><span data-stu-id="8effa-102">How to: Find an Element with a Specific Attribute (C#)</span></span>
+<span data-ttu-id="8effa-103">Toto téma ukazuje, jak najít element, který má atribut, který má konkrétní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8effa-103">This topic shows how to find an element that has an attribute that has a specific value.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="48ec6-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="48ec6-104">Example</span></span>  
- <span data-ttu-id="48ec6-105">Tento příklad ukazuje, jak najít `Address` element, který má `Type` atributu s hodnotou "Billing".</span><span class="sxs-lookup"><span data-stu-id="48ec6-105">The example shows how to find the `Address` element that has a `Type` attribute with a value of "Billing".</span></span>  
+## <a name="example"></a><span data-ttu-id="8effa-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="8effa-104">Example</span></span>  
+ <span data-ttu-id="8effa-105">Příklad ukazuje, jak najít `Address` prvek, který `Type` má atribut s hodnotou "vyúčtování".</span><span class="sxs-lookup"><span data-stu-id="8effa-105">The example shows how to find the `Address` element that has a `Type` attribute with a value of "Billing".</span></span>  
   
- <span data-ttu-id="48ec6-106">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="48ec6-106">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
+ <span data-ttu-id="8effa-106">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="8effa-106">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrder.xml");  
@@ -27,7 +27,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="48ec6-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="48ec6-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="8effa-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8effa-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Address Type="Billing">  
@@ -40,10 +40,10 @@ foreach (XElement el in address)
 </Address>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="48ec6-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="48ec6-108">Example</span></span>  
- <span data-ttu-id="48ec6-109">Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="48ec6-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="48ec6-110">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="48ec6-110">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="8effa-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="8effa-108">Example</span></span>  
+ <span data-ttu-id="8effa-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="8effa-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="8effa-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8effa-110">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="48ec6-111">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="48ec6-111">This example uses the following XML document: [Sample XML File: Typical Purchase Order in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span></span>  
+ <span data-ttu-id="8effa-111">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka v oboru názvů](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="8effa-111">This example uses the following XML document: [Sample XML File: Typical Purchase Order in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrderInNamespace.xml");  
@@ -56,7 +56,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="48ec6-112">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="48ec6-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="8effa-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8effa-112">This code produces the following output:</span></span>  
   
 ```xml  
 <aw:Address aw:Type="Billing" xmlns:aw="http://www.adventure-works.com">  
@@ -69,9 +69,9 @@ foreach (XElement el in address)
 </aw:Address>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="48ec6-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="48ec6-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8effa-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8effa-113">See also</span></span>
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [<span data-ttu-id="48ec6-114">Přehled standardních operátorů dotazu (C#)</span><span class="sxs-lookup"><span data-stu-id="48ec6-114">Standard Query Operators Overview (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [<span data-ttu-id="48ec6-115">Operace projekce (C#)</span><span class="sxs-lookup"><span data-stu-id="48ec6-115">Projection Operations (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)
+- [<span data-ttu-id="8effa-114">Přehled standardních operátorů dotazůC#()</span><span class="sxs-lookup"><span data-stu-id="8effa-114">Standard Query Operators Overview (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [<span data-ttu-id="8effa-115">Operace projekce (C#)</span><span class="sxs-lookup"><span data-stu-id="8effa-115">Projection Operations (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)

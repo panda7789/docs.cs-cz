@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], GroupBox
 - GroupBox control [WPF]
 ms.assetid: 1f4ed3d9-a171-4623-bc4f-3314e3576271
-ms.openlocfilehash: 6baee12c04e93a94736acacb1e4774b3cc20a3ac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1808fefab2d15ce57da4b381f258dc8e5207e358
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008721"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709107"
 ---
-# <a name="groupbox"></a><span data-ttu-id="2695f-102">GroupBox</span><span class="sxs-lookup"><span data-stu-id="2695f-102">GroupBox</span></span>
-<span data-ttu-id="2695f-103"><xref:System.Windows.Controls.GroupBox> Je ovládací prvek <xref:System.Windows.Controls.HeaderedContentControl> poskytující kontejner s názvem pro [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] obsah.</span><span class="sxs-lookup"><span data-stu-id="2695f-103">The <xref:System.Windows.Controls.GroupBox> control is a <xref:System.Windows.Controls.HeaderedContentControl> that provides a titled container for [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] content.</span></span>  
+# <a name="groupbox"></a><span data-ttu-id="76b32-102">GroupBox</span><span class="sxs-lookup"><span data-stu-id="76b32-102">GroupBox</span></span>
+<span data-ttu-id="76b32-103"><xref:System.Windows.Controls.GroupBox> Ovládací prvek <xref:System.Windows.Controls.HeaderedContentControl> je, který poskytuje kontejner s názvem pro obsah grafického uživatelského rozhraní (GUI).</span><span class="sxs-lookup"><span data-stu-id="76b32-103">The <xref:System.Windows.Controls.GroupBox> control is a <xref:System.Windows.Controls.HeaderedContentControl> that provides a titled container for graphical user interface (GUI) content.</span></span>  
   
- <span data-ttu-id="2695f-104">Je vidět na následujícím obrázku <xref:System.Windows.Controls.GroupBox> , která obsahuje <xref:System.Windows.Controls.TabControl> a <xref:System.Windows.Controls.Button> , které jsou uzavřeny v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="2695f-104">The following illustration shows a <xref:System.Windows.Controls.GroupBox> that contains a <xref:System.Windows.Controls.TabControl> and a <xref:System.Windows.Controls.Button> that are enclosed in a <xref:System.Windows.Controls.StackPanel>.</span></span>  
+ <span data-ttu-id="76b32-104">Následující obrázek ukazuje <xref:System.Windows.Controls.GroupBox> , který <xref:System.Windows.Controls.TabControl> obsahuje a <xref:System.Windows.Controls.Button> , které jsou uzavřeny v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="76b32-104">The following illustration shows a <xref:System.Windows.Controls.GroupBox> that contains a <xref:System.Windows.Controls.TabControl> and a <xref:System.Windows.Controls.Button> that are enclosed in a <xref:System.Windows.Controls.StackPanel>.</span></span>  
   
- ![Snímek obrazovky zobrazující groupbox.](./media/groupbox/groupbox-tab-button-stackpanel.jpg)  
+ ![Snímek obrazovky, který zobrazuje skupinový rámeček](./media/groupbox/groupbox-tab-button-stackpanel.jpg)  
   
-## <a name="in-this-section"></a><span data-ttu-id="2695f-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2695f-106">In This Section</span></span>  
- [<span data-ttu-id="2695f-107">Definice šablony GroupBox</span><span class="sxs-lookup"><span data-stu-id="2695f-107">Define a GroupBox Template</span></span>](how-to-define-a-groupbox-template.md)  
+## <a name="in-this-section"></a><span data-ttu-id="76b32-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="76b32-106">In This Section</span></span>  
+ [<span data-ttu-id="76b32-107">Definice šablony GroupBox</span><span class="sxs-lookup"><span data-stu-id="76b32-107">Define a GroupBox Template</span></span>](how-to-define-a-groupbox-template.md)  
   
-## <a name="reference"></a><span data-ttu-id="2695f-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2695f-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="76b32-108">Reference</span><span class="sxs-lookup"><span data-stu-id="76b32-108">Reference</span></span>  
  <xref:System.Windows.Controls.GroupBox>  
   
-## <a name="related-sections"></a><span data-ttu-id="2695f-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="2695f-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="76b32-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="76b32-109">Related Sections</span></span>
