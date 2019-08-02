@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 8d01e018e570a1ab530f476368d80f4082a73bda
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: ec026fd9273e99c88ec2e30cf46c3147419ace94
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400790"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629808"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]samostatné aplikace se spouštějí s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit částečnou důvěryhodnost <xref:System.AppDomain> pomocí modelu doplňku .NET Framework. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -216,9 +216,9 @@ ms.locfileid: "68400790"
   
 <a name="APTCA"></a>   
 ## <a name="disabling-aptca-assemblies-for-partially-trusted-client-applications"></a>Zakázání sestavení APTCA pro částečně důvěryhodné klientské aplikace  
- Když jsou spravovaná sestavení nainstalována do [!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)]nástroje, stanou se jejich plně důvěryhodná, protože uživatel musí poskytnout explicitní oprávnění k jejich instalaci. Vzhledem k tomu, že jsou plně důvěryhodné, můžou je používat jenom plně důvěryhodní klientské aplikace. Aby je bylo možné použít částečně důvěryhodné aplikace, musí být označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atributem (APTCA). Pouze sestavení, která byla testována jako bezpečná pro spuštění v částečném vztahu důvěryhodnosti, by měla být označena tímto atributem.  
+ Když jsou spravovaná sestavení nainstalována do globální mezipaměti sestavení (GAC), stanou se plně důvěryhodná, protože uživatel musí poskytnout explicitní oprávnění k jejich instalaci. Vzhledem k tomu, že jsou plně důvěryhodné, můžou je používat jenom plně důvěryhodní klientské aplikace. Aby je bylo možné použít částečně důvěryhodné aplikace, musí být označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atributem (APTCA). Pouze sestavení, která byla testována jako bezpečná pro spuštění v částečném vztahu důvěryhodnosti, by měla být označena tímto atributem.  
   
- Nicméně je možné, že sestavení APTCA vykazuje chybu zabezpečení po instalaci do [!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)]nástroje. Po zjištění chyby zabezpečení mohou vydavatelé sestavení vytvořit aktualizaci zabezpečení, která vyřeší problém s existujícími instalacemi, a chránit před instalacemi, které mohou nastat po zjištění problému. Jednou z možností aktualizace je odinstalování sestavení, i když by mohlo dojít k přerušení jiných plně důvěryhodných klientských aplikací, které používají sestavení.  
+ Nicméně je možné, že sestavení APTCA vykazuje chybu zabezpečení po instalaci do GAC. Po zjištění chyby zabezpečení mohou vydavatelé sestavení vytvořit aktualizaci zabezpečení, která vyřeší problém s existujícími instalacemi, a chránit před instalacemi, které mohou nastat po zjištění problému. Jednou z možností aktualizace je odinstalování sestavení, i když by mohlo dojít k přerušení jiných plně důvěryhodných klientských aplikací, které používají sestavení.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]poskytuje mechanismus, pomocí kterého může být sestavení APTCA neaktivní pro částečně důvěryhodné [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] bez odinstalování sestavení APTCA.  
   

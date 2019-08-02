@@ -11,27 +11,27 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a057f872d15ca1fcd49d86d08606776a0c0bea0
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 13f1b2c3e3e651cb6c25b966d778cb436967509e
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063317"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629415"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
-Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
+Zařazování Interop funguje s pravidly, která určují, jak se data přidružená k parametrům metody chovají při průchodu mezi spravovanou a nespravovanou pamětí. Tato Vestavěná pravidla řídí tyto aktivity zařazování jako transformace datových typů, ať už volaný může změnit předaných dat a vracet tyto změny volajícímu a za kterých okolnosti zařazování poskytuje optimalizace výkonu.  
   
- Tato část popisuje výchozí chování vlastnosti zprostředkovatele komunikace s objekty zařazování služby. Představuje podrobné informace o zařazování polí, logické typy, typy char, delegátů, tříd, objektů, řetězce a struktury.  
+ Tato část identifikuje výchozí charakteristiky chování služby interop marshaling. Zobrazuje podrobné informace o zařazovacích polích, logických typech, typech znaků, delegátů, třídách, objektech, řetězcích a strukturách.  
   
 > [!NOTE]
->  Zařazování obecných typů není podporováno. Další informace najdete v tématu [spolupráce pomocí obecných typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
+>  Zařazování obecných typů se nepodporuje. Další informace najdete v tématu [spolupráce pomocí obecných typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
   
-## <a name="memory-management-with-the-interop-marshaler"></a>Správa paměti zařazovacím modulem spolupráce  
- Interoperační zařazovač se vždy pokusí uvolnit paměť přidělaná nespravovaného kódu. Toto chování v souladu s pravidly správy paměti modelu COM, ale liší se od pravidel, kterými se řídí nativní kód C++.  
+## <a name="memory-management-with-the-interop-marshaler"></a>Správa paměti pomocí zařazovacího modulu spolupráce  
+ Zařazování Interop se vždy pokouší uvolnit paměť přidělenou nespravovaným kódem. Toto chování je v souladu s pravidly správy paměti modelu COM, ale liší se od pravidel, C++která se řídí nativním.  
   
- Pokud očekáváte, že nativní chování jazyka C++ (žádná uvolnění paměti) může dojít k záměně při používání platformy vyvolat, který automaticky uvolní paměť pro ukazatele. Například volání následující nespravované metody z knihovny DLL C++ neuvolní automaticky paměti.  
+ K záměně může dojít, pokud při C++ použití vyvolání platformy očekáváte nativní chování (bez uvolnění paměti), které automaticky uvolňuje paměť pro ukazatele. Například volání následující nespravované metody z C++ knihovny DLL automaticky neuvolní žádnou paměť.  
   
-### <a name="unmanaged-signature"></a>Nespravovanému podpisu  
+### <a name="unmanaged-signature"></a>Nespravovaný podpis  
   
 ```cpp  
 BSTR MethodOne (BSTR b) {  
@@ -39,52 +39,52 @@ BSTR MethodOne (BSTR b) {
 }  
 ```  
   
- Nicméně pokud definujete metodu jako prototyp vyvolání platformy, nahraďte, každé **BSTR** typ s <xref:System.String> zadejte a volat `MethodOne`, modul common language runtime pokusí uvolnit `b` dvakrát. Můžete změnit chování zařazování pomocí <xref:System.IntPtr> typy spíše než **řetězec** typy.  
+ Pokud však definujete metodu jako prototyp vyvolání platformy, nahraďte každý typ <xref:System.String> **BSTR** typem a voláním `MethodOne`, modul CLR (Common Language Runtime) se pokusí uvolnit `b` dvakrát. Chování zařazování lze změnit pomocí <xref:System.IntPtr> typů namísto **řetězcových** typů.  
   
- Vždy používá modul runtime **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyla přidělena paměť pracujete s **CoTaskMemAlloc** metoda, je nutné použít **IntPtr** a uvolňují paměť ručně pomocí odpovídající metodu. Podobně můžete vyhnout automatické paměti uvolnění v situacích, kde by nikdy být uvolnit paměť, například jako při použití **GetCommandLine** funkce ze souboru Kernel32.dll, které vrací ukazatel na paměť jádra. Podrobnosti o ručně uvolnění paměti, najdete v článku [vyrovnávací paměti – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
+ Modul runtime vždy používá metodu **CoTaskMemFree** k uvolnění paměti. Pokud paměť, se kterou pracujete, nebyla přidělena pomocí metody **CoTaskMemAlloc** , musíte použít **IntPtr** a uvolnit paměť ručně pomocí vhodné metody. Podobně se můžete vyhnout automatickému uvolňování paměti v situacích, kdy by paměť neměla být nikdy uvolněna, například při použití funkce GetCommandLine z Kernel32. dll, která vrací ukazatel na paměť jádra. Podrobnosti o ručním uvolnění paměti najdete v [ukázce vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Výchozí zařazování pro třídy  
- Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařadit jako rozhraní. V některých případech rozhraní použitý k zařazování třídy se nazývá třídy rozhraní. Informace o přepsání rozhraní třídy s rozhraním podle vašeho výběru, najdete v části [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
+ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařazeny jako rozhraní. V některých případech je rozhraní použité k zařazení třídy známé jako rozhraní třídy. Informace o přepsání rozhraní třídy s rozhraním dle vašeho výběru naleznete v tématu [Představujeme rozhraní třídy](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).  
   
-### <a name="passing-classes-to-com"></a>Předání třídy modelu COM  
- Pokud spravované třídy je předán do modelu COM, interoperační zařazovač automaticky zabalí třídy pomocí serveru proxy modelu COM a předává třídu rozhraní vytvořené metodou proxy k volání metody COM. Proxy server potom postoupí všechna volání rozhraní třídy zpět do spravovaného objektu. Proxy server také poskytuje jiného rozhraní, které nejsou explicitně implementováno třídou. Proxy server automaticky implementuje rozhraní, jako například **IUnknown** a **IDispatch** jménem třídy.  
+### <a name="passing-classes-to-com"></a>Předávání tříd do modelu COM  
+ Když je do modelu COM předána spravovaná třída, zařazovací služba interoperability automaticky zabalí třídu s proxy COM a předá rozhraní třídy vytvořené proxy serverem volání metody COM. Proxy potom deleguje všechna volání rozhraní třídy zpátky do spravovaného objektu. Proxy také zveřejňuje jiná rozhraní, která nejsou explicitně implementována třídou. Proxy automaticky implementuje rozhraní, jako je **IUnknown** a **IDispatch** jménem třídy.  
   
-### <a name="passing-classes-to-net-code"></a>Předávání tříd pro kód .NET  
- Třídy typu coclass nejsou obvykle používají jako argumenty metody v modelu COM. Místo toho výchozí rozhraní se obvykle předává místo coclass.  
+### <a name="passing-classes-to-net-code"></a>Předávání tříd do kódu .NET  
+ Třídy coclass nejsou obvykle používány jako argumenty metody v modelu COM. Místo toho je obvykle předán výchozí rozhraní místo třídy typu coclass.  
   
- Rozhraní je předána do spravovaného kódu, interoperační zařazovač zodpovídá za obtékání rozhraní s obálkou správné a předání obálku spravované metody. Určení, které obálky použití může být obtížné. Každá instance objektu COM má jeden, jedinečné obálku, bez ohledu na to, kolik rozhraní implementuje objekt. Například jeden objekt modelu COM, který implementuje rozhraní pět různých má pouze jeden obálky. Zpřístupňuje stejné obálky všech pět rozhraní. Pokud se vytvoří dvě instance objektu COM, jsou vytvořeny dva výskyty obálku.  
+ Když je rozhraní předáno do spravovaného kódu, zařazovací modul Interop zodpovídá za balení rozhraní se správnou obálkou a předání obálky spravované metodě. Určení, která obálka se má použít, může být obtížné. Každá instance objektu COM má jedinou jedinečnou obálku bez ohledu na to, kolik rozhraní objekt implementuje. Například jeden objekt COM, který implementuje pět různých rozhraní, má pouze jednu obálku. Stejná obálka zpřístupňuje všechna pět rozhraní. Pokud se vytvoří dvě instance objektu COM, vytvoří se dvě instance obálky.  
   
- Pro obálku zachovat stejný typ v průběhu svého životního cyklu interoperační zařazovač musí zjistit správné obálky, při prvním rozhraní vystavené objektu předána zařazování. Aby zařazování odvozovalo identifikuje objekt podle jednoho z rozhraní, které implementuje objekt.  
+ Aby obálka zachovala stejný typ během své životnosti, musí zařazovací modul Interop identifikovat správnou obálku, když je rozhraní vystavené objektem předáno prostřednictvím zařazovacího modulu. Zařazovací modul identifikuje objekt tím, že prohlíží jedno z rozhraní, které objekt implementuje.  
   
- V následujícím příkladu, aby zařazování odvozovalo Určuje, že by měl být obálkové třídy slouží k zabalení rozhraní, které bylo předáno do spravovaného kódu. Při zařazování se nejprve předává rozhraní, aby zařazování odvozovalo kontroluje, zda rozhraní pochází ze známého objektu. Tato kontrola probíhá ve dvou situacích:  
+ Například zařazovací modul určí, že obálka třídy by měla být použita k zabalení rozhraní, které bylo předáno do spravovaného kódu. Když je rozhraní nejprve předáno prostřednictvím zařazovacího modulu, zařazovací modul zkontroluje, zda rozhraní přichází ze známého objektu. Tato kontrolu probíhá ve dvou situacích:  
   
-- Rozhraní je prováděna jiný spravovaný objekt, který byl předán COM jinde. Zařazování mohli snadno identifikovat rozhraní vystavené spravovaných objektů a bude schopen odpovídat rozhraní s spravovaný objekt, který poskytuje implementaci. Spravovaný objekt je pak předán do metody a je zapotřebí žádné obálky.  
+- Rozhraní je implementováno jiným spravovaným objektem, který byl předán do modelu COM jinde. Zařazovací modul může snadno identifikovat rozhraní vystavená spravovanými objekty a může odpovídat rozhraní se spravovaným objektem, který poskytuje implementaci. Spravovaný objekt je pak předán metodě a není nutná žádná obálka.  
   
-- Objekt, který už je zabalená implementuje rozhraní. Pokud chcete zjistit, zda se jedná o tento případ, aby zařazování odvozovalo dotaz se týká objektu pro jeho **IUnknown** rozhraní a porovnává rozhraní vrácená rozhraním jiné objekty, které už jsou zabaleny. Pokud rozhraní je stejný jako u jiného obálky, objekty mají stejnou identitu a existující obálky je předán metodě.  
+- Objekt, který již byl zabalen, implementuje rozhraní. Chcete-li zjistit, zda se jedná o tento případ, zařazovací modul dotazuje objekt pro jeho rozhraní **IUnknown** a porovná vrácené rozhraní s rozhraními jiných objektů, které jsou již zabaleny. Pokud je rozhraní stejné jako jiné obálky, objekty mají stejnou identitu a stávající obálka je předána metodě.  
   
- Pokud rozhraní není od známých objektu, aby zařazování odvozovalo provede následující akce:  
+ Pokud rozhraní nepochází ze známého objektu, zařazovací modul provede následující:  
   
-1. Aby zařazování odvozovalo dotaz se týká objektu pro **IProvideClassInfo2** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá CLSID vrácená z **IProvideClassInfo2.GetGUID** k identifikaci coclass poskytuje rozhraní. S identifikátorem CLSID aby zařazování odvozovalo najdou obálky z registru Pokud sestavení byl dříve zaregistrován.  
+1. Zařazovací modul se dotazuje objektu pro rozhraní **IProvideClassInfo2** . Pokud je k dispozici, zařazovací modul používá identifikátor CLSID vrácený z **IProvideClassInfo2. GetGUID** k identifikaci třídy coclass poskytující rozhraní. S identifikátorem CLSID může zařazovací modul najít obálku z registru, pokud bylo sestavení dříve registrováno.  
   
-2. Aby zařazování odvozovalo dotazuje rozhraní pro **iprovideclassinfo –** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá **ITypeInfo** vrácená **IProvideClassInfo.GetClassinfo** určit identifikátor CLSID třídy vystavení rozhraní. Zařazování lze použít k vyhledání metadat pro obálku identifikátor CLSID.  
+2. Zařazovací modul vyžádá rozhraní pro rozhraní **IProvideClassInfo** . Pokud je k dispozici, zařazovací modul používá **volání ITypeInfo** vrácenou z **IProvideClassInfo. GetClassInfo** k určení identifikátoru CLSID třídy, která toto rozhraní zveřejňuje. Zařazovací modul může pomocí identifikátoru CLSID najít metadata pro obálku.  
   
-3. Pokud stále zařazování nemůže určovat třídu, zabalí rozhraní s obecný Obálkový třídu s názvem **System.__ComObject**.  
+3. Pokud zařazovací modul stále nemůže identifikovat třídu, zabalí rozhraní s obecnou obálkovou třídou s názvem **System. __ComObject**.  
   
 ## <a name="default-marshaling-for-delegates"></a>Výchozí zařazování pro delegáty  
- Spravované delegáta je zařadit jako rozhraní modelu COM nebo jako ukazatel na funkci, na základě mechanismu volání:  
+ Spravovaný delegát je zařazen jako rozhraní modelu COM nebo jako ukazatel na funkci na základě volajícího mechanismu:  
   
-- Pro platformu vyvolání, delegát je zařadit jako ukazatele nespravované funkce ve výchozím nastavení.  
+- V případě vyvolání platformy je delegát ve výchozím nastavení zařazen jako nespravovaný ukazatel na funkci.  
   
-- Pro komunikace s objekty COM, delegát zařadit jako rozhraní modelu COM typu **_Delegate** ve výchozím nastavení. **_Delegate** rozhraní je definovaný v knihovně typů Mscorlib.tlb a obsahuje <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> metodu, která umožňuje volat metodu, která odkazuje na delegáta.  
+- Pro zprostředkovatele komunikace s objekty COM je delegát ve výchozím nastavení zařazen jako rozhraní COM typu **_Delegate** . Rozhraní **_Delegate** je definováno v knihovně typů mscorlib. tlb a obsahuje <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> metodu, která umožňuje zavolat metodu, na kterou odkazuje delegát.  
   
- V následující tabulce jsou uvedeny zařazování možnosti pro datový typ spravovaného delegáta. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> zařazování delegátů hodnot výčtu.  
+ V následující tabulce jsou uvedeny možnosti zařazování pro datový typ spravovaného delegáta. Atribut poskytuje několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazení delegátů. <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
   
-|Typ výčtu|Popis nespravované formátu|  
+|Typ výčtu|Popis nespravovaného formátu|  
 |----------------------|-------------------------------------|  
-|**UnmanagedType.FunctionPtr**|Ukazatel nespravované funkci.|  
-|**UnmanagedType.Interface**|Rozhraní typu **_Delegate**, jak jsou definovány v knihovnu Mscorlib.tlb.|  
+|**UnmanagedType.FunctionPtr**|Nespravovaný ukazatel na funkci.|  
+|**UnmanagedType.Interface**|Rozhraní typu **_Delegate**, jak je definováno v mscorlib. tlb.|  
   
- Zvažte následující příklad kódu, ve kterém metody `DelegateTestInterface` jsou exportovány do knihovny typů modelu COM. Všimněte si, že pouze deleguje označené **ref** (nebo **ByRef**) – klíčové slovo jsou předány jako vstup a výstup parametry.  
+ Vezměte v úvahu následující vzorový kód, ve kterém metody `DelegateTestInterface` jsou exportovány do knihovny typů modelu COM. Všimněte si, že jako vstupně-výstupní parametry jsou předány pouze Delegáti označeni klíčovým slovem **ref** (nebo **ByRef**).  
   
 ```csharp  
 using System;  
@@ -99,7 +99,7 @@ void m5([MarshalAs(UnmanagedType.FunctionPtr)] ref Delegate d);
 }  
 ```  
   
-### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
+### <a name="type-library-representation"></a>Reprezentace knihovny typů  
   
 ```cpp  
 importlib("mscorlib.tlb");  
@@ -112,14 +112,14 @@ interface DelegateTest : IDispatch {
    };  
 ```  
   
- Ukazatel na funkci může být dereferencován, stejně jako může být dereferencován druhý ukazatel nespravované funkci.  
+ Na ukazatel na funkci lze odkázat stejným způsobem, jako jakýkoli jiný nespravovaný ukazatel na funkci lze odkázat.  
 
-V tomto příkladu, pokud dva delegáty, které jsou zařazeny jako <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType>, výsledek je `int` a ukazatel `int`. Protože se právě zařazovat typy delegátů, `int` zde představuje ukazatel na typu void (`void*`), což je adresa delegáta v paměti. Jinými slovy, tento výsledek je specifická pro 32bitové systémy Windows, v od té doby `int` zde představuje velikost ukazatele funkce.
+V tomto příkladu, když jsou dva Delegáti zařazeni jako <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType>, výsledek `int` je `int`a ukazatel na. Vzhledem k tomu, že typy delegátů `int` jsou zařazeny, zde představuje ukazatel na`void*`typ void (), což je adresa delegáta v paměti. Jinými slovy, tento výsledek je specifický pro 32 systémy Windows, protože `int` tady představuje velikost ukazatele na funkci.
 
 > [!NOTE]
->  Odkaz na ukazatel funkce na spravované delegáta drží nespravovaný kód nezabrání modul common language runtime v provádění uvolnění paměti na spravovaný objekt.  
+>  Odkaz na ukazatel funkce na spravovaný delegát, který uchovává nespravovaný kód, nebrání modulu Common Language Runtime v provádění uvolňování paměti ve spravovaném objektu.  
   
- Například následující kód je nesprávný protože odkaz na `cb` objekt předaný `SetChangeHandler` metody neudržuje `cb` aktivní za dobu životnosti `Test` – metoda. Jednou `cb` vynuceno uvolnění paměti je objekt, předán ukazatel funkce `SetChangeHandler` již není platný.  
+ Například následující kód je nesprávný, `cb` protože odkaz na objekt, který je předán `SetChangeHandler` metodě, nezůstane `cb` po dobu životnosti `Test` metody aktivní. Jakmile je `SetChangeHandler` objekt uvolněn z paměti, ukazatel funkce předaný do již není platný. `cb`  
   
 ```csharp  
 public class ExternalAPI {  
@@ -142,7 +142,7 @@ internal class DelegateTest {
 }  
 ```  
   
- Pro kompenzaci neočekávané uvolňování paměti, volající musíte zajistit, aby `cb` objektu, zůstane aktivní, dokud se ukazatel Nespravované funkce používá. Volitelně můžete mít nespravovaný kód upozornit spravovaného kódu na ukazatel funkce už je nepotřebujete, jak ukazuje následující příklad.  
+ Aby bylo možné kompenzovat neočekávané uvolňování paměti, volající musí zajistit `cb` , že objekt zůstane aktivní, dokud se nepoužívá ukazatel nespravované funkce. V případě potřeby může být nespravovaný kód upozorněn na spravovaný kód, pokud ukazatel na funkci již není potřeba, jak ukazuje následující příklad.  
   
 ```csharp  
 internal class DelegateTest {  
@@ -162,32 +162,32 @@ internal class DelegateTest {
 ```  
   
 ## <a name="default-marshaling-for-value-types"></a>Výchozí zařazování pro typy hodnot  
- Většina typy hodnot, jako jsou celá čísla a čísla s plovoucí desetinnou čárkou, jsou [blittable](blittable-and-non-blittable-types.md) a nevyžadují, aby zařazování. Další [nepřenositelné](blittable-and-non-blittable-types.md) typy mají odlišné reprezentace v spravované a nespravované paměti a nevyžadují zařazování. Jiné typy stále vyžadují explicitní formátování napříč hranicemi.  
+ Většina typů hodnot, jako jsou celá čísla a čísla s plovoucí desetinnou čárkou, jsou přenositelná a nevyžadují zařazování. [](blittable-and-non-blittable-types.md) Jiné [](blittable-and-non-blittable-types.md) nepřenositelní typy mají odlišné reprezentace ve spravované a nespravované paměti a vyžadují zařazování. Stále jiné typy vyžadují explicitní formátování napříč hranicí vzájemných operací.  
   
- Tato část obsahuje informace o následujících typech formátovaná hodnota:  
+ Tato část poskytuje informace o následujících formátovaných hodnotách:  
   
-- [Typy hodnot používá v platformě vyvolání](#value-types-used-in-platform-invoke)  
+- [Typy hodnot používané při vyvolání platformy](#value-types-used-in-platform-invoke)  
   
-- [Typy hodnot používá ve spolupráci s COM](#value-types-used-in-com-interop)  
+- [Typy hodnot používané při zprostředkovateli komunikace s objekty COM](#value-types-used-in-com-interop)  
   
- Kromě popisující typy formátovaný, toto téma popisuje [systém hodnotou typy](#system-value-types) , které mají neobvyklé chování zařazování.  
+ Kromě popisných formátovaných typů toto téma identifikuje [typy systémových hodnot](#system-value-types) , které mají neobvyklé chování při zařazování.  
   
- Formátovaný typ je komplexní typ, který obsahuje informace, které explicitně určuje rozložení z jejích členů v paměti. Informace o rozložení člen je prováděno pomocí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
+ Zformátovaný typ je komplexní typ, který obsahuje informace, které explicitně řídí rozložení jeho členů v paměti. Informace o rozložení členů jsou k dispozici <xref:System.Runtime.InteropServices.StructLayoutAttribute> pomocí atributu. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
   
-- **LayoutKind.Automatic**  
+- **LayoutKind. Automatic**  
   
-     Označuje, že je modul common language runtime můžete změnit pořadí členů typu efektivitu. Pokud typ hodnoty je předán do nespravovaného kódu, rozložení členy ale předvídatelné. Pokus o zařazení takovouto strukturu automaticky dojde k výjimce.  
+     Označuje, že modul CLR (Common Language Runtime) je bezplatný pro změnu pořadí členů typu pro zajištění efektivity. Pokud je však typ hodnoty předán nespravovanému kódu, je rozložení členů předvídatelné. Pokus o zařazení takové struktury automaticky způsobí výjimku.  
   
 - **LayoutKind.Sequential**  
   
-     Označuje, že členy typu rozloží v nespravované paměti ve stejném pořadí, v jakém jsou uvedeny v definici spravovaného typu.  
+     Označuje, že členové typu mají být rozloženi v nespravované paměti ve stejném pořadí, v jakém jsou uvedeny v definici spravovaného typu.  
   
-- **LayoutKind.Explicit**  
+- **LayoutKind. Explicit**  
   
-     Označuje, že členové jsou rozloženy podle <xref:System.Runtime.InteropServices.FieldOffsetAttribute> součástí každé pole.  
+     Označuje, že jsou členové rozloženi podle <xref:System.Runtime.InteropServices.FieldOffsetAttribute> zadaného pole.  
   
-### <a name="value-types-used-in-platform-invoke"></a>Typy hodnot používá v platformě vyvolání  
- V následujícím příkladu `Point` a `Rect` typy poskytují člen informace o rozložení pomocí **StructLayoutAttribute –**.  
+### <a name="value-types-used-in-platform-invoke"></a>Typy hodnot používané při vyvolání platformy  
+ V následujícím příkladu `Point` typy a `Rect` poskytují informace o rozložení členů pomocí **StructLayoutAttribute**.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -220,13 +220,13 @@ public struct Rect {
 }  
 ```  
   
- Při zařazení na nespravovaný kód, jsou tyto typy formátovaný zařadit jako struktury C-style. To poskytuje snadný způsob volání nespravovaného rozhraní API, která má strukturu argumenty. Například `POINT` a `RECT` struktury mohou být předány do rozhraní API Microsoft Windows **PtInRect** funkce takto:  
+ Při zařazení do nespravovaného kódu jsou tyto formátované typy zařazeny jako struktury ve stylu jazyka C. To poskytuje snadný způsob volání nespravovaného rozhraní API, které má argumenty struktury. Například `POINT` struktury a `RECT` lze předat funkci **PtInRect** rozhraní API systému Microsoft Windows následujícím způsobem:  
   
 ```cpp  
 BOOL PtInRect(const RECT *lprc, POINT pt);  
 ```  
   
- Můžete předat struktury použití následující platformy vyvolat definice:  
+ Struktury můžete předat pomocí následující definice vyvolání platformy:  
   
 ```vb
 Friend Class NativeMethods
@@ -243,17 +243,17 @@ internal static class NativeMethods
 }
 ```
   
- `Rect` Hodnotový typ musí být předány podle odkazu, protože nespravované rozhraní API očekává ukazatel `RECT` má být předán funkci. `Point` Typ hodnoty je předán podle hodnoty, protože nespravované rozhraní API očekává, že `POINT` mají být předány do zásobníku. Tento malý rozdíl je velmi důležité. Odkazy jsou předány do nespravovaného kódu jako ukazatele. Hodnoty jsou předány na nespravovaný kód v zásobníku.  
+ Typ hodnoty musí být předán odkazem, protože nespravované rozhraní API očekává ukazatel na objekt `RECT` , který má být předán funkci. `Rect` Typ hodnoty je předán podle hodnoty, protože nespravované rozhraní API očekává `POINT` , že má být předán do zásobníku. `Point` Tento drobný rozdíl je velmi důležitý. Odkazy jsou předány nespravovanému kódu jako ukazatelé. Hodnoty jsou předány nespravovanému kódu v zásobníku.  
   
 > [!NOTE]
->  Když formátovaný typ je zařazen jako strukturu, jsou přístupné pouze na pole v rámci typu. Pokud má typ metody, vlastnosti nebo události, je přístupný z nespravovaného kódu.  
+>  Při zařazování formátovaného typu jako struktury jsou k dispozici pouze pole v rámci tohoto typu. Pokud typ obsahuje metody, vlastnosti nebo události, jsou nepřístupné z nespravovaného kódu.  
   
- Třídy mohou také být zařazení na nespravovaný kód jako struktury stylu C, pokud došlo k nápravě rozložení. Informace o rozložení člen třídy je také součástí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut. Hlavní rozdíl mezi typy hodnot s pevně rozložení a třídy s pevným rozložením je způsob, ve kterém jsou zařazení na nespravovaný kód. Typy hodnot jsou předávány hodnotou (v zásobníku), a proto neuvidí všechny změny provedené členy typu volaným volajícím. Typy odkazů jsou předány podle odkazu (odkaz na typ je předány do zásobníku); v důsledku toho se zobrazují všechny změny provedené na členy typu typu blittable volaným volajícím.  
+ Třídy lze také zařadit do nespravovaného kódu jako struktury ve stylu jazyka C za předpokladu, že mají pevně dané rozložení členů. Informace o rozložení členů pro třídu jsou také k dispozici s <xref:System.Runtime.InteropServices.StructLayoutAttribute> atributem. Hlavní rozdíl mezi typy hodnot s pevným rozložením a třídami s pevným rozložením je způsob, jakým jsou zařazeny do nespravovaného kódu. Typy hodnot jsou předávány hodnotou (v zásobníku) a v důsledku toho se žádné změny provedené u členů typu volaného nevidí volajícím. Odkazové typy jsou předávány odkazem (odkaz na typ je předán do zásobníku); v důsledku toho volající vytvoří všechny změny provedené u členů typu přenositelné jako typ volaný.  
   
 > [!NOTE]
->  Pokud je odkazový typ členy nepřenositelné typy, je vyžadován převod dvakrát: poprvé, když je argument předaný do nespravované oblasti a druhý čas při návratu z volání. Kvůli tomu nároky parametry In nebo Out musí explicitně použít pro argument Pokud volající požaduje zobrazíte změny volaným.  
+>  Pokud typ odkazu obsahuje členy nepřenositelného typu, je převod požadován dvakrát: při prvním předání argumentu na nespravovanou stranu a při návratu z volání. Z důvodu těchto přidaných režijních nákladů musí být parametry nebo výstupy explicitně aplikovány na argument, pokud volající chce zobrazit změny provedené volaným.  
   
- V následujícím příkladu `SystemTime` třída má sekvenční rozložení a mohou být předány do rozhraní API Windows **GetSystemTime** funkce.  
+ V následujícím příkladu `SystemTime` má třída sekvenční rozložení členů a může být předána funkci **GetSystemTime** rozhraní API systému Windows.  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class SystemTime  
@@ -282,13 +282,13 @@ End Class
 }  
 ```  
   
- **GetSystemTime** funkce je definována takto:  
+ Funkce **GetSystemTime** je definována takto:  
   
 ```cpp  
 void GetSystemTime(SYSTEMTIME* SystemTime);  
 ```  
   
- Definice pro vyvolání ekvivalentní platformy **GetSystemTime** vypadá takto:  
+ Ekvivalentní definice vyvolání platformy pro **GetSystemTime** je následující:  
   
 ```vb
 Friend Class NativeMethods
@@ -305,9 +305,9 @@ internal static class NativeMethods
 }
 ```
   
- Všimněte si, že `SystemTime` argument není zadána jako argument typu odkaz, protože `SystemTime` je třída, nikoli typu hodnoty. Na rozdíl od typy hodnot jsou vždy třídy předány podle odkazu.  
+ Všimněte si, `SystemTime` že argument není zadán jako argument odkazu, protože `SystemTime` je třída, nikoli typ hodnoty. Na rozdíl od hodnotových typů jsou třídy vždy předány odkazem.  
   
- Následující příklad kódu ukazuje jiné `Point` třídu, která obsahuje metodu nazvanou `SetXY`. Protože tento typ nemá sekvenční rozložení, může být předán nespravovanému kódu a zařadit jako struktury. Ale `SetXY` člen se nedá volat z nespravovaného kódu i v případě, že objekt je předán odkazem.  
+ Následující příklad kódu ukazuje jinou `Point` třídu, která má metodu s názvem. `SetXY` Vzhledem k tomu, že typ má sekvenční rozložení, lze jej předat nespravovanému kódu a zařadit jako strukturu. `SetXY` Člen však nelze volat z nespravovaného kódu, i když je objekt předán odkazem.  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class Point  
@@ -330,10 +330,10 @@ public class Point {
 }  
 ```  
   
-### <a name="value-types-used-in-com-interop"></a>Typy hodnot používá ve spolupráci s COM  
- Volání metody vzájemné spolupráce COM může být předán také formátovaný typy. Ve skutečnosti při exportu do knihovny typů, typů hodnot se automaticky převedou na struktury. Jak ukazuje následující příklad `Point` typ hodnoty změní typ definice (typedef) s názvem `Point`. Všude, kde `Point` jsou nahrazeny typ hodnoty jinde v knihovně typů `Point` typedef.  
+### <a name="value-types-used-in-com-interop"></a>Typy hodnot používané při zprostředkovateli komunikace s objekty COM  
+ Naformátované typy lze také předat voláním metody spolupráce modelu COM. Ve skutečnosti platí, že při exportu do knihovny typů jsou typy hodnot automaticky převedeny na struktury. Jak ukazuje následující příklad, `Point` typ hodnoty se stal definicí typu (typedef) s názvem. `Point` Všechny odkazy na `Point` typ hodnoty jinde v knihovně typů jsou nahrazeny `Point` definicí typedef.  
   
- **Knihovna reprezentaci typu**  
+ **Reprezentace knihovny typů**  
   
 ```cpp  
 typedef struct tagPoint {  
@@ -348,15 +348,15 @@ interface _Graphics {
 }  
 ```  
   
- Stejná pravidla použitý k zařazování hodnoty a odkazy na platformu vyvolání volání se používají při zařazování prostřednictvím rozhraní modelu COM. Například, pokud instance `Point` z rozhraní .NET Framework do modelu COM, je předán typ hodnoty `Point` je předán podle hodnoty. Pokud `Point` typ hodnoty je předána odkazem, ukazatel `Point` předány v zásobníku. Interoperační zařazovač nepodporuje vyšší úrovní dereference (**bodu** \* \*) v obou směrech.  
+ Stejná pravidla, která se používají k zařazování hodnot a odkazů na volání vyvolání platformy, se používají při zařazování přes rozhraní COM. Například když je instance `Point` typu hodnoty předána z .NET Framework do modelu COM `Point` , je předána hodnotou. Pokud je typ `Point` hodnotypředánpomocíodkazu,ukazatelnaobjektje`Point` předán do zásobníku. Zařazovací modul Interop nepodporuje v obou směrech vyšší úroveň dereference (**Point** \* \*).  
   
 > [!NOTE]
->  Struktury s <xref:System.Runtime.InteropServices.LayoutKind> nastavena na hodnotu výčtu **explicitní** nelze použít ve spolupráci s COM, protože exportované knihovny typů nemůže express s explicitním rozložením.  
+>  Struktury s <xref:System.Runtime.InteropServices.LayoutKind> hodnotou výčtu nastavenou na hodnotu **Explicit** nelze použít v zprostředkovatele komunikace s objekty COM, protože exportovaná knihovna typů nemůže vyjádřit explicitní rozložení.  
   
-### <a name="system-value-types"></a>Systém typů hodnot  
- <xref:System> Obor názvů má několik typy hodnot, které představují v podobě boxed primitivních typů modulu runtime. Například typ hodnoty <xref:System.Int32?displayProperty=nameWithType> struktura představuje v podobě boxed z **ELEMENT_TYPE_I4**. Místo zařazování typů jako struktury, jako ostatní typy formátovaný můžete přeuspořádat je stejným způsobem jako primitivní typy, které jsou pole. **System.Int32** proto zařazena jako **ELEMENT_TYPE_I4** místo jako struktura obsahující jednoho člena typu **dlouhé**. Následující tabulka obsahuje seznam typů hodnot v **systému** obor názvů, který jsou zabalené reprezentace primitivní typy.  
+### <a name="system-value-types"></a>Typy systémových hodnot  
+ <xref:System> Obor názvů má několik typů hodnot, které reprezentují zabalený formát primitivních typů modulu runtime. Například struktura typu <xref:System.Int32?displayProperty=nameWithType> hodnoty představuje pevně podobu **ELEMENT_TYPE_I4**. Namísto zařazování těchto typů jako struktur, jako jiné formátované typy, jste je zařadíi stejným způsobem jako primitivní typy, které jsou v poli. Hodnota **System. Int32** je proto zařazena jako **ELEMENT_TYPE_I4** namísto struktury obsahující jednoho člena typu **Long**. Následující tabulka obsahuje seznam typů hodnot v oboru názvů **System** , které jsou zabaleny do reprezentace primitivních typů.  
   
-|Typ hodnoty systému|Typ elementu|  
+|Typ systémové hodnoty|Typ elementu|  
 |-----------------------|------------------|  
 |<xref:System.Boolean?displayProperty=nameWithType>|**ELEMENT_TYPE_BOOLEAN**|  
 |<xref:System.SByte?displayProperty=nameWithType>|**ELEMENT_TYPE_I1**|  
@@ -374,18 +374,18 @@ interface _Graphics {
 |<xref:System.IntPtr?displayProperty=nameWithType>|**ELEMENT_TYPE_I**|  
 |<xref:System.UIntPtr?displayProperty=nameWithType>|**ELEMENT_TYPE_U**|  
   
- Některé hodnoty typů v **systému** obor názvů jsou zpracovány jinak. Protože nespravovaný kód už má zavedené formáty pro tyto typy, aby zařazování odvozovalo má zvláštní pravidla pro zařazování je. Následující tabulka uvádí typy zvláštní hodnota v **systému** obor názvů, a také jsou zařazeny do nespravovaného typu.  
+ Některé jiné typy hodnot v oboru názvů **System** jsou zpracovávány jinak. Vzhledem k tomu, že nespravovaný kód již obsahuje dobře zavedený formát pro tyto typy, má zařazovací modul zvláštní pravidla pro jejich zařazování. V následující tabulce jsou uvedeny typy zvláštních hodnot v oboru názvů **System** a také nespravovaný typ, na který jsou zařazeny.  
   
-|Typ hodnoty systému|IDL – typ|  
+|Typ systémové hodnoty|Typ IDL|  
 |-----------------------|--------------|  
 |<xref:System.DateTime?displayProperty=nameWithType>|**DATUM**|  
-|<xref:System.Decimal?displayProperty=nameWithType>|**DECIMAL**|  
+|<xref:System.Decimal?displayProperty=nameWithType>|**NOTACI**|  
 |<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  
   
- Následující kód znázorňuje definici nespravovaných typů **datum**, **GUID**, **DESÍTKOVÉ**, a **OLE_COLOR** Stdole2 typu Knihovna.  
+ Následující kód ukazuje definici nespravovaných typů **Date**, **GUID**, **Decimal**a **OLE_COLOR** v knihovně typů Stdole2.  
   
-#### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
+#### <a name="type-library-representation"></a>Reprezentace knihovny typů  
   
 ```cpp  
 typedef double DATE;  
@@ -407,7 +407,7 @@ typedef struct tagGUID {
 } GUID;  
 ```  
   
- Následující kód ukazuje odpovídající definice v spravovanou `IValueTypes` rozhraní.  
+ Následující kód ukazuje odpovídající definice ve spravovaném `IValueTypes` rozhraní.  
   
 ```vb  
 Public Interface IValueTypes  
@@ -427,7 +427,7 @@ public interface IValueTypes {
 }  
 ```  
   
-#### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
+#### <a name="type-library-representation"></a>Reprezentace knihovny typů  
   
 ```cpp  
 […]  
