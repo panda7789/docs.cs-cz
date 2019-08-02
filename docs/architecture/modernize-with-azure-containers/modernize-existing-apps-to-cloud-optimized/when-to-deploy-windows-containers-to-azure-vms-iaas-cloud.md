@@ -1,0 +1,25 @@
+---
+title: Kdy nasadit kontejnery Windows na virtuální počítače Azure (cloud IaaS)
+description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit kontejnery Windows na virtuální počítače Azure (IaaS Cloud)
+ms.date: 04/28/2018
+ms.openlocfilehash: e9a2903662306b607977a7751018e24161ab80ab
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68676898"
+---
+# <a name="when-to-deploy-windows-containers-to-azure-vms-iaas-cloud"></a><span data-ttu-id="3fe17-103">Kdy nasadit kontejnery Windows na virtuální počítače Azure (cloud IaaS)</span><span class="sxs-lookup"><span data-stu-id="3fe17-103">When to deploy Windows Containers to Azure VMs (IaaS cloud)</span></span>
+
+<span data-ttu-id="3fe17-104">Pokud vaše organizace používá virtuální počítače Azure, a to i v případě, že používáte kontejnery Windows, stále pracujete s IaaS.</span><span class="sxs-lookup"><span data-stu-id="3fe17-104">If your organization is using Azure VMs, even if you are also using Windows Containers, you are still dealing with IaaS.</span></span> <span data-ttu-id="3fe17-105">To znamená, že pro vysoce škálovatelné aplikace v případě potřeby nasazení na více virtuálních počítačů v infrastruktuře s vyrovnáváním zatížení se jedná o operace infrastruktury, opravy operačního systému virtuálních počítačů a složitost infrastruktury.</span><span class="sxs-lookup"><span data-stu-id="3fe17-105">That means that dealing with infrastructure operations, VM OS patches, and infrastructure complexity for highly scalable applications when you need to deploy to multiple VMs in a load balanced infrastructure.</span></span> <span data-ttu-id="3fe17-106">V hlavních scénářích použití kontejnerů Windows ve virtuálním počítači Azure jsou tyto:</span><span class="sxs-lookup"><span data-stu-id="3fe17-106">The main scenarios for using Windows Containers in an Azure VM are:</span></span>
+
+- <span data-ttu-id="3fe17-107">**Vývojové a testovací prostředí**: Virtuální počítač v cloudu je ideální pro vývoj a testování v cloudu.</span><span class="sxs-lookup"><span data-stu-id="3fe17-107">**Dev/test environment**: A VM in the cloud is perfect for development and testing in the cloud.</span></span> <span data-ttu-id="3fe17-108">V závislosti na vašich potřebách můžete prostředí rychle vytvořit nebo zastavit.</span><span class="sxs-lookup"><span data-stu-id="3fe17-108">You can rapidly create or stop the environment depending on your needs.</span></span>
+
+- <span data-ttu-id="3fe17-109">**Menší a střední požadavky na škálovatelnost**: Ve scénářích, kdy budete možná potřebovat několik virtuálních počítačů pro produkční prostředí, může být Správa malého počtu virtuálních počítačů cenově dostupná, dokud se nebudete moct přesunout na pokročilejší PaaS prostředí, jako jsou orchestrace.</span><span class="sxs-lookup"><span data-stu-id="3fe17-109">**Small and medium scalability needs**: In scenarios where you might need just a couple of VMs for your production environment, managing a small number of VMs might be affordable until you can move to more advanced PaaS environments, like orchestrators.</span></span>
+
+- <span data-ttu-id="3fe17-110">**Produkční prostředí s existujícími nástroji pro nasazení**: Můžete se pohybovat z místního prostředí, ve kterém jste investovali do nástrojů, abyste mohli provádět složitá nasazení na virtuální počítače nebo holé servery (například Puppet nebo podobné nástroje).</span><span class="sxs-lookup"><span data-stu-id="3fe17-110">**Production environment with existing deployment tools**: You might be moving from an on-premises environment in which you have invested in tools to make complex deployments to VMs or bare-metal servers (like Puppet or similar tools).</span></span> <span data-ttu-id="3fe17-111">Pokud chcete přejít do cloudu s minimálními změnami postupů nasazení v produkčním prostředí, můžete tyto nástroje dál používat k nasazení na virtuální počítače Azure.</span><span class="sxs-lookup"><span data-stu-id="3fe17-111">To move to the cloud with minimal changes to production environment deployment procedures, you might continue to use those tools to deploy to Azure VMs.</span></span> <span data-ttu-id="3fe17-112">Pro zlepšení prostředí nasazení ale budete chtít použít kontejnery Windows jako jednotku nasazení.</span><span class="sxs-lookup"><span data-stu-id="3fe17-112">However, you'll want to use Windows Containers as the unit of deployment to improve the deployment experience.</span></span>
+
+>[!div class="step-by-step"]
+><span data-ttu-id="3fe17-113">[Předchozí](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)Další
+>[](when-to-deploy-windows-containers-to-azure-container-instances-ACI.md)</span><span class="sxs-lookup"><span data-stu-id="3fe17-113">[Previous](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)
+[Next](when-to-deploy-windows-containers-to-azure-container-instances-ACI.md)</span></span>
