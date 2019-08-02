@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: b6a1cc3ced3205037eb5b83ac3841efbfbd1b5b9
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
-ms.translationtype: HT
+ms.openlocfilehash: 13ad16ab768cdaee96cab29811e2ed058dee977a
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331213"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68512243"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
@@ -65,7 +65,7 @@ přístup k elementu [&#91;x&#93; ](member-access-operators.md#indexer-operator-
 
 [Delegate](delegate-operator.md) – deklaruje a vrátí instanci delegáta.
 
-[sizeof](../keywords/sizeof.md) – vrátí velikost operandu typu v bajtech.
+[sizeof](sizeof.md) – vrátí velikost operandu typu v bajtech.
 
 [stackalloc](stackalloc.md) – přidělí blok paměti v zásobníku.
 

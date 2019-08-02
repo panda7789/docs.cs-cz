@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná (Visual Basic)'
+title: 'Postupy: Skrýt proměnnou se stejným názvem jako má vaše proměnná (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - qualification [Visual Basic], of element names
@@ -12,101 +12,103 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - declared elements [Visual Basic], about declared elements
 ms.assetid: e39c0752-f19f-4d2e-a453-00df1b5fc7ee
-ms.openlocfilehash: 3230dac924e9c22231494bfc8b81cd74e356bca3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 487e0a15ba6b52f92ab39fe0bae4ab15fa92707f
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610319"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629996"
 ---
-# <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a>Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná (Visual Basic)
-Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměnnou se stejným názvem. Můžete stínové proměnné, které chcete skrýt dvěma způsoby:  
-  
-- **Stínový provoz prostřednictvím oboru.** Můžete ho stínové prostřednictvím oboru ve změně deklarace je uvnitř podoblasti oblasti, který obsahuje proměnné, které chcete skrýt.  
-  
-- **Stínový provoz prostřednictvím dědičnosti.** Pokud chcete skrýt proměnné je definován na úrovni třídy, je můžete stínové ji prostřednictvím dědičnosti ve změně deklarace s [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v odvozené třídě.  
-  
-## <a name="two-ways-to-hide-a-variable"></a>Dva způsoby, jak skrýt proměnné  
-  
-#### <a name="to-hide-a-variable-by-shadowing-it-through-scope"></a>Chcete-li skrýt proměnné tak, že stínování prostřednictvím oboru  
-  
-1. Určit oblast definující proměnné, které chcete skrýt a určete podoblasti, ve kterém k předefinování se vaše proměnná.  
-  
-    |Proměnné oblasti|Pro předefinování ho povolený podoblast|  
-    |-----------------------|-------------------------------------------|  
-    |Modul|Třídy v rámci modulu|  
-    |Třída|Podtřída v rámci třídy<br /><br /> Postup v rámci třídy|  
-  
-     Nelze předefinovat postupu proměnnou v bloku, v rámci tohoto postupu, například v `If`... `End If` konstrukce nebo `For` smyčky.  
-  
-2. Pokud ještě neexistuje, vytvořte podoblasti.  
-  
-3. V rámci podoblasti, zápisu [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklarování proměnné stínového provozu.  
-  
-     Když kód uvnitř podoblasti odkazuje na název proměnné, přeloží kompilátor odkaz na proměnnou stínového provozu.  
-  
-     Následující příklad ukazuje stínování prostřednictvím oboru, stejně jako odkaz, který obchází stínováním.  
-  
-    ```  
-    Module shadowByScope  
-        ' The following statement declares num as a module-level variable.  
-        Public num As Integer  
-        Sub show()  
-            ' The following statement declares num as a local variable.  
-            Dim num As Integer  
-            ' The following statement sets the value of the local variable.  
-            num = 2  
-            ' The following statement displays the module-level variable.  
-            MsgBox(CStr(shadowByScope.num))  
-        End Sub  
-        Sub useModuleLevelNum()  
-            ' The following statement sets the value of the module-level variable.  
-            num = 1  
-            show()  
-        End Sub  
-    End Module  
-    ```  
-  
-     Předchozí příklad deklaruje proměnnou `num` na úrovni modulu i na úrovni postup (v postupu `show`). Lokální proměnná `num` zastiňuje proměnnou úrovni modulu `num` v rámci `show`, takže místní proměnná je nastavená na 2. Neexistuje však žádný místní proměnnou stínové `num` v `useModuleLevelNum` postup. Proto `useModuleLevelNum` nastaví hodnotu proměnné úrovni modulu na 1.  
-  
-     `MsgBox` Volat v `show` obchází stínového provozu mechanismus kvalifikaci `num` s názvem modulu. Proto se zobrazí úrovni modulu proměnnou místo do místní proměnné.  
-  
-#### <a name="to-hide-a-variable-by-shadowing-it-through-inheritance"></a>Chcete-li skrýt proměnné tak, že stínování prostřednictvím dědičnosti  
-  
-1. Ujistěte se, že proměnné, které chcete skrýt je deklarovaná ve třídě a na úrovni třídy (mimo všechny procedury). V opačném případě nemůže zastiňovat prostřednictvím dědičnosti.  
-  
-2. Definujte třídu odvozenou z třídy proměnné, pokud ještě neexistuje.  
-  
-3. V odvozených třídách, zápisu `Dim` deklarace proměnné příkazu. Zahrnout [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v deklaraci.  
-  
-     Když kód v odvozené třídě odkazuje na název proměnné, přeloží kompilátor odkaz na vaše proměnná.  
-  
-     Následující příklad ukazuje stínový provoz prostřednictvím dědičnosti. Umožňuje dva odkazy, ten, který přistupuje k stínového provozu proměnné a ten, který obchází stínováním.  
-  
-    ```  
-    Public Class shadowBaseClass  
-        Public shadowString As String = "This is the base class string."  
-    End Class  
-    Public Class shadowDerivedClass  
-        Inherits shadowBaseClass  
-        Public Shadows shadowString As String = "This is the derived class string."  
-        Public Sub showStrings()  
-            Dim s As String = "Unqualified shadowString: " & shadowString &  
-                 vbCrLf & "MyBase.shadowString: " & MyBase.shadowString  
-            MsgBox(s)  
-        End Sub  
-    End Class  
-    ```  
-  
-     Předchozí příklad deklaruje proměnnou `shadowString` v základní třídě a stíní v odvozené třídě. Postup `showStrings` v odvozené třídě Zobrazí verzi stínového provozu řetězce při název `shadowString` není kvalifikován. Potom zobrazí stínovaný verze při `shadowString` je kvalifikována `MyBase` – klíčové slovo.  
-  
-## <a name="robust-programming"></a>Robustní programování  
- Stínový provoz přináší více než jedna verze proměnné se stejným názvem. Když příkaz kódu odkazuje na název proměnné, verze, na který přeloží kompilátor odkaz na závisí na faktorech, jako je například umístění příkaz kódu a přítomnost oprávněným řetězec. To může zvýšit riziko odkazující na stínové proměnné a nežádoucí verzi. Plně kvalifikovaný všechny odkazy na stínové proměnné můžete snížit rizika.  
-  
+# <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a>Postupy: Skrýt proměnnou se stejným názvem jako má vaše proměnná (Visual Basic)
+
+Proměnnou můžete *Skrýt tak,* že ji nakonfigurujete tak, že ji převedete pomocí proměnné se stejným názvem. Proměnnou, kterou chcete skrýt, můžete vystínovat dvěma způsoby:
+
+- **Vytváření stínů prostřednictvím rozsahu.** Můžete ho vytvořit pomocí oboru tím, že ho znovu deklarujete v podoblasti oblasti, která obsahuje proměnnou, kterou chcete skrýt.
+
+- **Stínování prostřednictvím dědičnosti.** Pokud je proměnná, kterou chcete skrýt, definovaná na úrovni třídy, můžete ji stínovat pomocí dědičnosti tím, že ji předeklarujete pomocí klíčového slova [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md) v odvozené třídě.
+
+## <a name="two-ways-to-hide-a-variable"></a>Dva způsoby, jak skrýt proměnnou
+
+#### <a name="to-hide-a-variable-by-shadowing-it-through-scope"></a>Skrytí proměnné pomocí jejího stínového rozsahu
+
+1. Určete oblast definující proměnnou, kterou chcete skrýt, a určete podoblast, ve které se má proměnná znovu definovat.
+
+    |Oblast proměnné|Povolená podoblast pro předefinování|
+    |-----------------------|-------------------------------------------|
+    |Modul|Třída v modulu|
+    |Třída|Podtřída v rámci třídy<br /><br /> Procedura v rámci třídy|
+
+    Nelze předefinovat proměnnou procedury v bloku v rámci této procedury, například v `If`... `End If` konstrukce`For` nebo smyčka.
+
+2. Pokud ještě neexistuje, vytvořte podoblast.
+
+3. V rámci suboblasti napište [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) , který deklaruje proměnnou Shadow.
+
+    Když kód v suboblasti odkazuje na název proměnné, kompilátor přeloží odkaz na stínovou proměnnou.
+
+    Následující příklad znázorňuje stínování v oboru a také odkaz, který obchází stíning.
+
+    ```vb
+    Module shadowByScope
+        ' The following statement declares num as a module-level variable.
+        Public num As Integer
+        Sub show()
+            ' The following statement declares num as a local variable.
+            Dim num As Integer
+            ' The following statement sets the value of the local variable.
+            num = 2
+            ' The following statement displays the module-level variable.
+            MsgBox(CStr(shadowByScope.num))
+        End Sub
+        Sub useModuleLevelNum()
+            ' The following statement sets the value of the module-level variable.
+            num = 1
+            show()
+        End Sub
+    End Module
+    ```
+
+    Předchozí příklad deklaruje proměnnou `num` na úrovni modulu i na úrovni procedury (v postupu `show`). Lokální proměnná `num` nastínuje proměnnou `num` na úrovni modulu v `show`, takže místní proměnná je nastavená na 2. V proceduře ale neexistuje žádná místní proměnná pro stín `num`. `useModuleLevelNum` `useModuleLevelNum` Proto nastaví hodnotu proměnné na úrovni modulu na 1.
+
+    Volání uvnitř `show` obchází mechanismus stínování tím, že je kvalifikován `num` s názvem modulu. `MsgBox` Proto zobrazuje proměnnou na úrovni modulu namísto místní proměnné.
+
+#### <a name="to-hide-a-variable-by-shadowing-it-through-inheritance"></a>Skrytí proměnné stínovou kopií prostřednictvím dědičnosti
+
+1. Ujistěte se, že je proměnná, kterou chcete skrýt, deklarována ve třídě a na úrovni třídy (mimo jakýkoli postup). V opačném případě nelze stínové IT pomocí dědičnosti.
+
+2. Definujte třídu odvozenou z třídy proměnné, pokud ještě neexistuje.
+
+3. V odvozené třídě napište příkaz, který `Dim` deklaruje vaši proměnnou. Do deklarace [](../../../../visual-basic/language-reference/modifiers/shadows.md) zahrňte klíčové slovo Shadows.
+
+    Pokud kód v odvozené třídě odkazuje na název proměnné, kompilátor vyřeší odkaz na vaši proměnnou.
+
+    Následující příklad znázorňuje stínování prostřednictvím dědičnosti. Vytvoří dva odkazy, jeden, který přistupuje ke stínové proměnné a druhý, který obchází stín.
+
+    ```vb
+    Public Class shadowBaseClass
+        Public shadowString As String = "This is the base class string."
+    End Class
+    Public Class shadowDerivedClass
+        Inherits shadowBaseClass
+        Public Shadows shadowString As String = "This is the derived class string."
+        Public Sub showStrings()
+            Dim s As String = "Unqualified shadowString: " & shadowString &
+                 vbCrLf & "MyBase.shadowString: " & MyBase.shadowString
+            MsgBox(s)
+        End Sub
+    End Class
+    ```
+
+    Předchozí příklad deklaruje proměnnou `shadowString` v základní třídě a nastínuje ji v odvozené třídě. Procedura `showStrings` v odvozené třídě zobrazuje stínovou verzi řetězce, pokud název `shadowString` není kvalifikován. Pak zobrazí stínovou verzi, pokud `shadowString` je kvalifikován `MyBase` pomocí klíčového slova.
+
+## <a name="robust-programming"></a>Robustní programování
+
+Stíning zavádí více než jednu verzi proměnné se stejným názvem. Pokud příkaz kódu odkazuje na název proměnné, verze, na kterou kompilátor vyřeší odkaz, závisí na faktorech, jako je například umístění příkazu kódu a přítomnost opravňujícího řetězce. To může zvýšit riziko odkazování na neúmyslnou verzi stínové proměnné. Toto riziko můžete snížit tím, že plně zadáte všechny odkazy na stínovou proměnnou.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Rozdíly mezi stínováním a přepsáním](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)
 - [Postupy: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
 - [Postupy: Přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)

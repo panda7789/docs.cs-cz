@@ -1,17 +1,17 @@
 ---
 title: Referenční buňky
-description: Zjistěte, jak F# odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.
+description: Přečtěte F# si, jak jsou referenční buňky umístění úložiště, která umožňují vytvářet proměnlivé hodnoty pomocí referenční sémantiky.
 ms.date: 05/16/2016
-ms.openlocfilehash: e4fcd3cf1abcf5f5e3b4d5439c9215b79ff8dbcd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: faaa4a6b54ff0366163b6821edff7fa4cb2f5a88
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795395"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627247"
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
-*Odkazové buňky* jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.
+*Odkazové buňky* jsou umístění úložiště, která umožňují vytvářet proměnlivé hodnoty pomocí referenční sémantiky.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,19 +21,19 @@ ref expression
 
 ## <a name="remarks"></a>Poznámky
 
-Můžete použít `ref` operátor před hodnotou, má-li vytvořit novou odkazovou buňku, která zapouzdřuje hodnotu. Zdrojovou hodnotu pak můžete změnit, protože je proměnlivá.
+`ref` Operátor použijete před hodnotou k vytvoření nové referenční buňky, která tuto hodnotu zapouzdří. Zdrojovou hodnotu pak můžete změnit, protože je proměnlivá.
 
-Odkazové buňky obsahují skutečnou hodnotu; není to pouze adresa. Při vytvoření odkazové buňky pomocí `ref` operátoru, vytvoření kopie zdrojové hodnoty ve formě zapouzdřené proměnlivé hodnoty.
+Odkazové buňky obsahují skutečnou hodnotu; není to pouze adresa. Když vytvoříte odkazovou buňku pomocí `ref` operátoru, vytvoříte kopii základní hodnoty jako zapouzdřenou proměnlivou hodnotu.
 
-Že přestoupíte odkazové buňky pomocí `!` – operátor (vykřičník).
+Můžete odkázat na odkazovou buňku pomocí `!` operátoru (vykřičník).
 
 Následující příklad kódu znázorňuje deklaraci a použití odkazových buněk.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2201.fs)]
 
 Výstup je `50`.
 
-Odkazové buňky jsou instance `Ref` generického typu záznamu, který je deklarován následujícím způsobem.
+Odkazové buňky jsou instancemi `Ref` obecného typu záznamu, který je deklarován následujícím způsobem.
 
 ```fsharp
 type Ref<'a> =
@@ -42,7 +42,7 @@ type Ref<'a> =
 
 Typ `'a ref` je synonymum pro `Ref<'a>`. Kompilátor a technologie IntelliSense v integrovaném vývojovém prostředí zobrazují nejprve tento typ a následně zdrojovou definici.
 
-`ref` Operátor vytvoří novou odkazovou buňku. Následující kód je deklarace `ref` operátor.
+`ref` Operátor vytvoří novou odkazovou buňku. Následující kód je deklarace `ref` operátoru.
 
 ```fsharp
 let ref x = { contents = x }
@@ -50,19 +50,19 @@ let ref x = { contents = x }
 
 V následující tabulce jsou uvedeny funkce, které jsou u odkazové buňky dostupné.
 
-|Operátor, člen nebo pole|Popis|Type|Definice|
+|Operátor, člen nebo pole|Popis|type|Definice|
 |--------------------------|-----------|----|----------|
-|`!` (operátor zrušení odkazu)|Vrátí zdrojovou hodnotu.|`'a ref -> 'a`|`let (!) r = r.contents`|
-|`:=` (operátor přiřazení)|Změní zdrojovou hodnotu.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
-|`ref` (operátor)|Zapouzdří hodnotu do nové odkazové buňky.|`'a -> 'a ref`|`let ref x = { contents = x }`|
-|`Value` (vlastnost)|Získá nebo nastaví zdrojovou hodnotu.|`unit -> 'a`|`member x.Value = x.contents`|
-|`contents` (pole záznamu)|Získá nebo nastaví zdrojovou hodnotu.|`'a`|`let ref x = { contents = x }`|
+|`!`(operátor zpětného odkazování)|Vrátí zdrojovou hodnotu.|`'a ref -> 'a`|`let (!) r = r.contents`|
+|`:=`(operátor přiřazení)|Změní zdrojovou hodnotu.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
+|`ref`podnikatel|Zapouzdří hodnotu do nové odkazové buňky.|`'a -> 'a ref`|`let ref x = { contents = x }`|
+|`Value`majetek|Získá nebo nastaví zdrojovou hodnotu.|`unit -> 'a`|`member x.Value = x.contents`|
+|`contents`(pole záznamu)|Získá nebo nastaví zdrojovou hodnotu.|`'a`|`let ref x = { contents = x }`|
 
-Ke zdrojové hodnotě lze získat přístup několika způsoby. Hodnota vrácená operátorem zrušení odkazu (`!`) není Přiřaditelná. Proto se při změně zdrojové hodnoty, musíte použít operátor přiřazení (`:=`) místo toho.
+Ke zdrojové hodnotě lze získat přístup několika způsoby. Hodnota vrácená operátorem dereference (`!`) není hodnotou, kterou lze přiřadit. Proto pokud upravujete podkladovou hodnotu, je místo toho nutné použít operátor přiřazení (`:=`).
 
-Oba `Value` vlastnost a `contents` pole jsou Přiřaditelné hodnoty. Můžete je proto použít ke zpřístupnění nebo změně zdrojové hodnoty, jak znázorňuje následující kód.
+`Value` Obě vlastnosti`contents` i pole jsou přiřaditelné hodnoty. Můžete je proto použít ke zpřístupnění nebo změně zdrojové hodnoty, jak znázorňuje následující kód.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2203.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2203.fs)]
 
 Výstup je následující.
 
@@ -73,15 +73,15 @@ Výstup je následující.
 12
 ```
 
-Pole `contents` zajišťuje kompatibilitu s jinými verzemi ML a během kompilace zobrazí upozornění. Chcete-li toto upozornění zakážete, použijte `--mlcompatibility` – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
+Pole `contents` je k dispozici pro kompatibilitu s jinými verzemi ml a během kompilace vytvoří upozornění. Chcete-li zakázat upozornění, použijte `--mlcompatibility` možnost kompilátoru. Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).
 
-C#Programátoři by měl vědět, že `ref` v C# není totéž jako `ref` v F#. Ekvivalent konstrukce F# jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
+C#Programátoři by měli znát `ref` , C# že v nástroji není totéž jako `ref` v F#nástroji. Ekvivalentní konstrukce v F# jsou byrefs [](byrefs.md), což jsou jiný koncept z referenčních buněk.
 
-Hodnoty označeny jako `mutable`může automaticky povýšen na `'a ref` nezachytává uzavření; naleznete v tématu [hodnoty](values/index.md).
+Hodnoty označené jako `mutable`mohou být automaticky povýšeny `'a ref` na hodnotu, je-li zachycena uzávěrkou; viz [hodnoty](./values/index.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Parametry a argumenty](parameters-and-arguments.md)
-- [Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)
-- [Hodnoty](values/index.md)
+- [Referenční dokumentace symbolů a operátorů](./symbol-and-operator-reference/index.md)
+- [Hodnoty](./values/index.md)
