@@ -1,60 +1,60 @@
 ---
 title: Dokumentace XML (F#)
-description: Další informace o podpoře v F# pro generování dokumentace z komentářů.
+description: Přečtěte si informace F# o podpoře pro generování dokumentace z komentářů.
 ms.date: 05/16/2016
-ms.openlocfilehash: c5305dea8832112644710b2863269ef00feddd10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b89ab4117f4dd71126f8e203f4a5271ab3c30021
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902171"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630816"
 ---
 # <a name="xml-documentation"></a>dokumentace XML
 
-Dokumentace ke službě z třemi lomítky (/ / / / /) můžete vytvářet v komentářích ke kódu F#. Komentáře XML můžete před deklaracemi v kódu souborů (.fs) nebo podpisem (.fsi).
+Můžete získat dokumentaci z komentáře kódu třikrát lomítka (///) v F#. Komentáře XML mohou předcházet deklarace v souborech Code (. FS) nebo signaturách (. fsi).
 
 ## <a name="generating-documentation-from-comments"></a>Generování dokumentace z komentářů
 
-Podpora v F# pro generování dokumentace z komentářů je stejný jako v jiných jazycích rozhraní .NET Framework. Stejně jako v jiných jazycích rozhraní .NET Framework [-doc – možnost kompilátoru](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04) umožňuje vytvořit soubor XML, který obsahuje informace, které můžete převést do dokumentace, pomocí nástroje, jako například [DocFX](https://dotnet.github.io/docfx/) nebo [ Sandcastle](https://github.com/EWSoftware/SHFB). Dokumentace ke službě vygenerovat pomocí nástrojů, které jsou navrženy pro použití se sestaveními, která jsou napsané v jiných jazycích rozhraní .NET Framework, obecně vytvořit zobrazení rozhraní API, která je založena na kompilovaný formy F# vytvoří. Pokud nástroje specificky podporují F#, dokumentace generovaná tyto nástroje se neshoduje s F# zobrazení rozhraní API.
+Podpora F# pro generování dokumentace z komentářů je stejná jako v jiných .NET Framework jazycích. Stejně jako v jiných .NET Framework jazycích vám [možnost kompilátoru-doc](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04) umožňuje vytvořit soubor XML, který obsahuje informace, které můžete převést do dokumentace pomocí nástroje, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB). Dokumentace vygenerovaná pomocí nástrojů, které jsou navrženy pro použití se sestaveními, která jsou napsána v jiných .NET Framework jazycích, obecně vytvářejí zobrazení rozhraní API, které je založeno na F# zkompilované formě konstrukcí. Pokud nástroje specificky F#nepodporují, dokumentace vygenerovaná těmito nástroji neodpovídá F# zobrazení rozhraní API.
 
-Další informace o tom, jak generovat dokumentaci ze souboru XML, naleznete v tématu [dokumentační komentáře XML &#40;C&#35; Průvodce programováním pro službu&#41;](https://msdn.microsoft.com/library/b2s063f7).
+Další informace o tom, jak vygenerovat dokumentaci z XML, najdete v tématu [ &#40;průvodce&#35; &#41;programováním dokumentačních komentářů jazyka C](https://msdn.microsoft.com/library/b2s063f7).
 
 ## <a name="recommended-tags"></a>Doporučené značky
 
-Existují dva způsoby, jak psát komentáře dokumentace XML. Jeden je zapsat dokumentaci přímo třemi lomítky komentář, bez použití značky XML. Pokud to uděláte, celý komentář je považován za souhrnné dokumentaci pro konstrukci kódu, který následuje. Tuto metodu použijte, pokud chcete zapsat jenom stručný popis pro každou konstrukci. Jiné metody je použití značky XML jako více strukturovaných dokumentace. Druhá metoda vám umožňuje určit samostatné poznámky stručně shrnuje, další poznámky, dokumentaci pro každý parametr a typ parametrů a výjimky vyvolané a popis návratovou hodnotu. Následující tabulka popisuje značky XML, které jsou rozpoznány ve F# komentářů ke kódu XML.
+Existují dva způsoby, jak zapsat dokumentační komentáře XML. Jedním z nich je pouze zápis dokumentace přímo v komentáři se třemi lomítky bez použití značek XML. Pokud to uděláte, celý text komentáře je pořízen jako souhrnná dokumentace pro konstrukci kódu, který následuje bezprostředně po. Tuto metodu použijte, pokud chcete zapsat pouze stručný souhrn pro každou konstrukci. Druhou metodou je použití značek XML k poskytnutí další strukturované dokumentace. Druhá metoda umožňuje zadat samostatné poznámky pro krátký souhrn, další poznámky, dokumentaci pro každý parametr a parametr typu a vyvolané výjimky a popis návratové hodnoty. V následující tabulce jsou popsány značky XML, F# které jsou rozpoznány v komentářích kódu XML.
 
-|Syntaxe značek|Popis|
+|Syntaxe značky|Popis|
 |----------|-----------|
-|**\<c\>**_text_**\</c\>**|Určuje, že *text* je kód. Toto klíčové slovo lze generátorů dokumentace k zobrazení textu v písma, která je vhodná pro kód.|
-|**\<summary\>**_text_**\</summary\>**|Určuje, že *text* je stručný popis ovládací prvek programu. Popis je obvykle jednu nebo dvě věty.|
-|**\<remarks\>**_text_**\</remarks\>**|Určuje, že *text* obsahuje doplňující informace o prvku programu.|
-|**\<Param name = "**_název_**"\>**_popis_**\</param\>**|Určuje název a popis parametru funkce nebo metody.|
-|**\<typeparam name = "**_název_**"\>**_popis_**\</typeparam\>**|Určuje název a popis pro parametr typu.|
-|**\<Vrátí\>**_text_ **\< /returns\>**|Určuje, že *text* popisuje návratovou hodnotu funkce nebo metody.|
-|**\<Výjimka cref = "**_typ_**"\>**_popis_**\</exception\>**|Určuje typ výjimky, která je možné generovat a podmínek, za kterých je vyvolána výjimka.|
-|**\<Zobrazit cref = "**_odkaz_**"\>**_text_ **\< /naleznete v tématu\>**|Určuje vložený odkaz na jiný prvek programu. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. *Text* je text zobrazený v odkazu.|
-|**\<SeeAlso cref = "**_odkaz_**" /\>**|Uvádí v části Viz také odkaz na dokumentaci k jinému typu. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. Další informace najdete v článku odkazy obvykle zobrazují v dolní části stránky dokumentace.|
-|**\<para\>**_text_**\</para\>**|Určuje odstavci textu. To se používá k oddělení text mezi **poznámky** značky.|
+|**\<c\>** _text_ **\</c\>**|Určuje, že *text* je kód. Tuto značku mohou použít generátory dokumentace k zobrazení textu v písmu, které je vhodné pro kód.|
+|**souhrnnýtext\>/Summary \<** **\<\>**|Určuje, zda je *text* stručným popisem prvku programu. Popis je obvykle jedna nebo dvě věty.|
+|_text_ **poznámky/Remarks\> \<** **\<\>**|Určuje, že *text* obsahuje doplňkové informace o prvku programu.|
+|**\>** **názevparam\> = "Name" Description/param\<**  **\<**|Určuje název a popis pro funkci nebo parametr metody.|
+|**\>**  **typeparam\<Name = "** název"**Popis/typeparam\<\>**|Určuje název a popis parametru typu.|
+| **vrátí\</Returns\>** textu **.\<\>**|Určuje, že *text* popisuje návratovou hodnotu funkce nebo metody.|
+|**\>**  **Exception\<cref = "** Type"**Description/Exception\<\>**|Určuje typ výjimky, která může být vygenerována a podmínky, za kterých je vyvolána.|
+|**\>**  **Viz\<cref = "** Reference"**text/See\<\>**|Určuje vložený odkaz na jiný prvek programu. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. *Text* je text zobrazený v odkazu.|
+|**\>** SeeAlso cref = "Reference"/  **\<**|Určuje odkaz na další typ, který se zobrazí také v dokumentaci. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. Viz také odkazy obvykle se zobrazí v dolní části stránky dokumentace.|
+|**\<para\>** _text_ **\</para\>**|Určuje odstavec textu. Slouží k oddělení textu uvnitř značky **poznámky** .|
 
 ## <a name="example"></a>Příklad
 
 ### <a name="description"></a>Popis
 
-Následuje Typická Dokumentační komentář XML v souboru signatury.
+Následuje typický dokumentační komentář XML v souboru signatury.
 
 ### <a name="code"></a>Kód
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7101.fs)]
 
 ## <a name="example"></a>Příklad
 
 ### <a name="description"></a>Popis
 
-Následující příklad ukazuje alternativní metody bez značky XML. V tomto příkladu je celý text v komentáři považován za souhrn. Všimněte si, že pokud explicitně neurčíte souhrn značky, by neměla zadat jiné značky jako **param** nebo **vrátí** značky.
+Následující příklad ukazuje alternativní metodu bez značek XML. V tomto příkladu je celý text v komentáři považován za souhrn. Všimněte si, že pokud nezadáte souhrnnou značku explicitně, neměli byste zadávat jiné značky, jako je například **param** nebo **vracet** značky.
 
 ### <a name="code"></a>Kód
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7102.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7102.fs)]
 
 ## <a name="see-also"></a>Viz také:
 
