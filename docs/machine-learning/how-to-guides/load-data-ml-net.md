@@ -1,14 +1,14 @@
 ---
 title: Načtení dat ze souborů a jiných zdrojů
 description: V tomto postupu se dozvíte, jak načíst data pro zpracování a školení do ML.NET. Data se původně ukládají do souborů nebo jiných zdrojů dat, jako jsou databáze, JSON, XML nebo kolekce v paměti.
-ms.date: 07/31/2019
+ms.date: 08/01/2019
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: f1fc99eb07af98b97484ee74e900b81342990cdb
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: d5f3aab14a60a8c9860dc67f1cc98f3b1b3188ed
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710204"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733373"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a jiných zdrojů
 
@@ -55,7 +55,7 @@ Načíst sloupce jako:
 - Jednotlivé sloupce jako `Size` a `CurrentPrices` ve `HousingData` třídě.
 - Více sloupců v čase ve formě vektoru, jako `HistoricalPrices` `HousingData` ve třídě.
 
-Máte-li vlastnost Vector, použijte [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) atribut na vlastnost v datovém modelu. Je důležité si uvědomit, že všechny prvky ve vektoru musí být stejného typu. Udržování sloupců umožňuje snadnou a flexibilitu, ale pro velmi velký počet sloupců, který pracuje na jednotlivých sloupcích, způsobuje dopad na výkon.
+Máte-li vlastnost Vector, použijte [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) atribut na vlastnost v datovém modelu. Je důležité si uvědomit, že všechny prvky ve vektoru musí být stejného typu. Udržování sloupců s oddělovači umožňuje snadnou a flexibilitu funkcí, ale pro velmi velký počet sloupců, který pracuje na jednotlivých sloupcích, způsobuje vliv na rychlost školení.
 
 ML.NET funguje prostřednictvím názvů sloupců. Pokud chcete změnit název sloupce na jinou hodnotu než název vlastnosti, použijte [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut. Při vytváření objektů v paměti stále vytváříte objekty pomocí názvu vlastnosti. Pro zpracování dat a vytváření modelů strojového učení však ml.NET Přepisuje a odkazuje na vlastnost s hodnotou poskytnutou v [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) atributu.
 

@@ -4,12 +4,12 @@ description: Seznamte se s koncepty C# testování částí v a .NET Core pomoc�
 author: rprouse
 ms.date: 08/31/2018
 ms.custom: seodec18
-ms.openlocfilehash: 283a8f92025dce2243ac55317f0b103e24000cd7
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 927facd271d6590cac2b0ce10790a16c88482020
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626318"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733418"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# částí pomocí nunit a .NET Core
 
@@ -143,7 +143,7 @@ namespace Prime.UnitTests.Services
         
         private PrimeService CreatePrimeService()
         {
-             return new PrimerService();
+             return new PrimeService();
         }
     }
 }

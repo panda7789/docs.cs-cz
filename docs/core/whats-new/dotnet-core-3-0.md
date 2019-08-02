@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 07/25/2019
-ms.openlocfilehash: 5300ddd83330b9564e7154008c59737d0d642138
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 29e62f01ab6a749c252aa488dfbccd5b27cb9dba
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626343"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733379"
 ---
 # <a name="whats-new-in-net-core-30-preview-7"></a>Co je nového v .NET Core 3,0 (Preview 7)
 
@@ -411,7 +411,7 @@ Tady je příklad C# 8,0 souboru [Launch. JSON](https://github.com/dotnet/sample
 
 ### <a name="jsonserializer"></a>JsonSerializer
 
-<xref:System.Text.Json.Serialization.JsonSerializer?displayProperty=nameWithType>je postaven na začátku <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> k poskytnutí rychlé možnosti serializace v nízké paměti při práci s dokumenty a fragmenty JSON.
+<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType>je postaven na začátku <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> k poskytnutí rychlé možnosti serializace v nízké paměti při práci s dokumenty a fragmenty JSON.
 
 Projděte https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/docs/SerializerProgrammingModel.md si příklad pro přenos do tohoto článku.
 

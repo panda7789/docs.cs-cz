@@ -3,15 +3,15 @@ title: 'Kurz: Rozpoznávání objektů pomocí hloubkového učení s ONNX a ML.
 description: V tomto kurzu se dozvíte, jak pomocí předem připraveného modelu ONNX hloubkového učení v ML.NET detekovat objekty v obrázcích.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/31/2019
+ms.date: 08/01/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: acfff6d409a56e7676c7d38296ecc2085fa131ea
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 3e5b6b482dfbd1ff06347883a93a561944200a9f
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672136"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733401"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: Rozpoznávání objektů pomocí ONNX v ML.NET
 
@@ -75,7 +75,7 @@ Open neuronové Network Exchange (ONNX) je open source formát pro modely AI. ON
 
 ![](./media/object-detection-onnx/onnx-frameworks.png)
 
-Předem vyškolený neYOLOv2 model je uložený ve formátu ONNX, serializovaná reprezentace vrstev a zjištěné vzory těchto vrstev. V ml.NET se vzájemná spolupráce s ONNX dosahuje [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) pomocí [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) balíčků NuGet a. [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) Balíček obsahuje řadu transformací, které přijímají obrázek a zakódují je do číselných hodnot, které lze použít jako vstup do modelu nebo školicího kanálu. [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) Balíček využívá modul runtime ONNX k načtení modelu ONNX a použije ho k tomu, aby předpovědi na základě poskytnutého vstupu. 
+Předem vyškolený neYOLOv2 model je uložený ve formátu ONNX, serializovaná reprezentace vrstev a zjištěné vzory těchto vrstev. V ml.NET se vzájemná spolupráce s ONNX dosahuje [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) pomocí [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) balíčků NuGet a. [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) Balíček obsahuje řadu transformací, které přijímají obrázek a zakódují je do numerických hodnot, které lze použít jako vstup do předpovědi nebo školicího kanálu. [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) Balíček využívá modul runtime ONNX k načtení modelu ONNX a použije ho k tomu, aby předpovědi na základě poskytnutého vstupu. 
 
 ![](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
@@ -259,7 +259,7 @@ Model segmentuje obrázek do `13 x 13` mřížky, kde je `32px x 32px`každá bu
 - `y`pozice y ohraničovacího boxu v středu vzhledem k buňce mřížky, ke které je přidružena.
 - `w`Šířka ohraničovacího rámečku
 - `h`Výška ohraničovacího rámečku 
-- `o`Hodnota spolehlivosti, kterou objekt existuje v ohraničujícím poli, označované také jako Abjectness skóre.
+- `o`Hodnota spolehlivosti, kterou objekt existuje v ohraničujícím poli, označované také jako skóre objektu.
 - `p1-p20`pravděpodobnost třídy pro každou 20 tříd, které jsou předpovězeny modelem.
 
 Celkem 25 prvků popisujících každé 5 ohraničujících polí tvoří prvky 125 obsažené v každé buňce mřížky.

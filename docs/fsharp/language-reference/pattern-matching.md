@@ -2,12 +2,12 @@
 title: Porovnávání vzorů
 description: Naučte se, jak se F# používají vzory pro porovnání dat s logickými strukturami, rozložení dat na části prvků nebo extrakce informací z dat.
 ms.date: 05/16/2016
-ms.openlocfilehash: 156bb670e0c494a3d515eab03e2e4672d6743dec
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 60e0d6cd550724bc8448fddd7b163c2c9f1637be
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627295"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733470"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -15,7 +15,7 @@ Vzory jsou pravidla pro transformaci vstupních dat. Používají se v celém F#
 
 ## <a name="remarks"></a>Poznámky
 
-Vzory se používají v mnoha konstrukcích jazyka, jako je `match` například výraz. Používají se při zpracovávání argumentů pro funkce v `let` Bindings, lambda výrazech a v obslužných rutinách výjimek přidružených `try...with` k výrazu. Další informace naleznete v tématu [Match Expressions](match-expressions.md), [let Bindings](./functions/let-bindings.md), [lambda Expressions: Klíčové slovo](./functions/lambda-expressions-the-fun-keyword.md) a[výjimky: `fun` `try...with` Výraz.](/.exception-handling/the-try-with-expression.md)
+Vzory se používají v mnoha konstrukcích jazyka, jako je `match` například výraz. Používají se při zpracovávání argumentů pro funkce v `let` Bindings, lambda výrazech a v obslužných rutinách výjimek přidružených `try...with` k výrazu. Další informace naleznete v tématu [Match Expressions](match-expressions.md), [let Bindings](./functions/let-bindings.md), [lambda Expressions: Klíčové slovo](./functions/lambda-expressions-the-fun-keyword.md) a[výjimky: `fun` `try...with` Výraz.](./exception-handling/the-try-with-expression.md)
 
 Například ve `match` výrazu je *vzor* následujícím způsobem jako symbol kanálu.
 
@@ -103,7 +103,7 @@ match shape with
 
 Aktivní vzory umožňují definovat komplexnější vlastní porovnávání vzorů. Další informace o aktivních vzorech najdete v tématu [aktivní vzory](active-patterns.md).
 
-Případ, ve kterém je identifikátor výjimkou, se používá v porovnávání vzorů v kontextu obslužných rutin výjimek. Informace o porovnávání vzorů při zpracování výjimek naleznete v [tématu výjimky: `try...with` Výraz.](/.exception-handling/the-try-with-expression.md)
+Případ, ve kterém je identifikátor výjimkou, se používá v porovnávání vzorů v kontextu obslužných rutin výjimek. Informace o porovnávání vzorů při zpracování výjimek naleznete v [tématu výjimky: `try...with` Výraz.](./exception-handling/the-try-with-expression.md)
 
 ## <a name="variable-patterns"></a>Vzorce proměnných
 

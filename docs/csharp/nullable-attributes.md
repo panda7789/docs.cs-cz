@@ -2,12 +2,12 @@
 title: Upgradovat rozhraní API s atributy pro definování očekávání null
 description: Tento článek vysvětluje podněty a techniky pro přidání popisných atributů k popisu nulového stavu argumentů a vrácených hodnot z rozhraní API.
 ms.date: 07/31/2019
-ms.openlocfilehash: f8ff2063a3859954a5ccab006cd21c6a29dbc6b1
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 9a5eded385d5eac7a493a36876557cadf083afad
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710931"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733436"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
@@ -89,7 +89,7 @@ Pravidla pro vaše rozhraní API jsou pravděpodobně složitější, jak jste v
 - [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): Návratová hodnota s možnou hodnotou null nikdy nebude null.
 - [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Pokud vrácená hodnota splňuje podmínku `ref` , může být hodnota null neboargumentunull.`out`
 - [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Pokud vrácená hodnota `ref` splňuje podmínku, nemůže být hodnota null neboargumentunull.`out`
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): hodnota návratového řetězce není null, pokud argument vstupního řetězce není null.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.
 
 Předchozí popisy představují rychlý odkaz na to, co každý atribut dělá. Každá z následujících částí popisuje chování a lepší význam.
 
