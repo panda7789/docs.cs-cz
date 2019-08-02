@@ -9,27 +9,31 @@ helpviewer_keywords:
 - WPF programming model [WPF]
 - XAML [WPF], content models
 ms.assetid: 58843391-b28c-4d32-adf5-87acaf6578a1
-ms.openlocfilehash: 13225779cb3ed844e6ea8622ad559db83fadc166
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 800711df51326e09546f559a9d4d1d84af173d4c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942802"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710216"
 ---
 # <a name="advanced-windows-presentation-foundation"></a>Rozšířené (Windows Presentation Foundation)
-Tato část popisuje některé pokročilé oblastí v subsystému WPF.  
+Tato část popisuje některé z pokročilých oblastí WPF.  
   
-## <a name="in-this-section"></a>V tomto oddílu  
- [Architektura WPF](wpf-architecture.md)  
- [Základní elementy](base-elements.md)  
- [Strom elementu a serializace](element-tree-and-serialization.md)  
- [Přetažení](drag-and-drop.md)  
- [Dokumenty](documents.md)  
- [Globalizace a lokalizace](globalization-and-localization.md)  
- [Migrace a interoperabilita](migration-and-interoperability.md)  
- [Výkon](performance.md)  
- [Model vláken](threading-model.md)  
- [Přehled doplňků WPF](../app-development/wpf-add-ins-overview.md)  
- [Reference k rozhraní API nespravované WPF](wpf-unmanaged-api-reference.md)  
-  
-## <a name="related-sections"></a>Související oddíly
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Architektura WPF](wpf-architecture.md)  
+[XAML ve WPF](xaml-in-wpf.md)  
+[Třídy základních prvků](base-elements.md)  
+[Strom elementu a serializace](element-tree-and-serialization.md)  
+[WPF – systém vlastností](properties-wpf.md)  
+[Události v subsystému WPF](events-wpf.md)  
+[Vstup](input-wpf.md)  
+[Přetažení](drag-and-drop.md)  
+[Prostředky](resources-wpf.md)  
+[Dokumenty](documents.md)  
+[Globalizace a lokalizace](globalization-and-localization.md)  
+[Rozložení](layout.md)  
+[Migrace a interoperabilita](migration-and-interoperability.md)  
+[Výkon](performance.md)  
+[Model vláken](threading-model.md)  
+[Reference nespravovaného rozhraní WPF API](wpf-unmanaged-api-reference.md)  

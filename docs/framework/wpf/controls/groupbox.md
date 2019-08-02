@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], GroupBox
 - GroupBox control [WPF]
 ms.assetid: 1f4ed3d9-a171-4623-bc4f-3314e3576271
-ms.openlocfilehash: 6baee12c04e93a94736acacb1e4774b3cc20a3ac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1808fefab2d15ce57da4b381f258dc8e5207e358
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008721"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709107"
 ---
 # <a name="groupbox"></a>GroupBox
-<xref:System.Windows.Controls.GroupBox> Je ovládací prvek <xref:System.Windows.Controls.HeaderedContentControl> poskytující kontejner s názvem pro [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] obsah.  
+<xref:System.Windows.Controls.GroupBox> Ovládací prvek <xref:System.Windows.Controls.HeaderedContentControl> je, který poskytuje kontejner s názvem pro obsah grafického uživatelského rozhraní (GUI).  
   
- Je vidět na následujícím obrázku <xref:System.Windows.Controls.GroupBox> , která obsahuje <xref:System.Windows.Controls.TabControl> a <xref:System.Windows.Controls.Button> , které jsou uzavřeny v <xref:System.Windows.Controls.StackPanel>.  
+ Následující obrázek ukazuje <xref:System.Windows.Controls.GroupBox> , který <xref:System.Windows.Controls.TabControl> obsahuje a <xref:System.Windows.Controls.Button> , které jsou uzavřeny v <xref:System.Windows.Controls.StackPanel>.  
   
- ![Snímek obrazovky zobrazující groupbox.](./media/groupbox/groupbox-tab-button-stackpanel.jpg)  
+ ![Snímek obrazovky, který zobrazuje skupinový rámeček](./media/groupbox/groupbox-tab-button-stackpanel.jpg)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Definice šablony GroupBox](how-to-define-a-groupbox-template.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Controls.GroupBox>  
   
 ## <a name="related-sections"></a>Související oddíly

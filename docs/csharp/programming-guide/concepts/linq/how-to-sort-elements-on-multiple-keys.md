@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Řazení elementů u více klíčů (C#)'
+title: 'Postupy: Seřadit elementy ve více klíčíchC#()'
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: 5ea01055eae0c91fac274f8c38a1d8112c4aaa0a
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 2325417fa2ed8a6c3ca13504cada4d4e1a49be42
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690090"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709914"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Postupy: Řazení elementů u více klíčů (C#)
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Postupy: Seřadit elementy ve více klíčíchC#()
 
-Toto téma ukazuje, jak se budou řadit několik klíčů.
+V tomto tématu se dozvíte, jak řadit podle více klíčů.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu výsledky jsou řazeny první podle přesouvání PSČ, pak k datu objednávky.
+V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.
 
-Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).
+V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -36,7 +36,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-Tento kód vytvoří následující výstup:
+Tento kód generuje následující výstup:
 
 ```
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
@@ -65,9 +65,9 @@ CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).
+Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).
 
-Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).
+V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");
@@ -88,7 +88,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-Tento kód vytvoří následující výstup:
+Tento kód generuje následující výstup:
 
 ```
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997

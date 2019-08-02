@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 743b9ec45c138053fcfcb5cbb1ea9c8490ba919e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 818d013356c3ca8151e9b5bb675bce4726759f6c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629915"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710337"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] , podpora typografie, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
@@ -73,7 +73,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
 ## <a name="new-text-application-programming-interfaces-apis"></a>Nová programovací rozhraní pro aplikace v textu (rozhraní API)  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje několik textových rozhraní API, které můžou vývojáři použít při zahrnutí textu do svých aplikací. Tato rozhraní API se seskupují do tří kategorií:  
   
-- **Rozložení a uživatelské rozhraní**. Společné textové ovládací prvky pro [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)].  
+- **Rozložení a uživatelské rozhraní**. Běžné textové ovládací prvky grafického uživatelského rozhraní (GUI).  
   
 - **Zjednodušené vykreslování textu**. Umožňuje kreslit text přímo do objektů.  
   

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: 7acf5a3f48ac4987037873c63111d988ec3a4979
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a47a4aae785d817904c30fe7c865a1c033eb3cca
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629649"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709228"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimalizace výkonu: Využití výhod hardwaru
 Interní architektura nástroje má [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dva kanály pro vykreslování, hardware a software. V tomto tématu najdete informace o těchto kanálech pro vykreslování, které vám pomůžou dělat rozhodnutí o optimalizaci výkonu vašich aplikací.  
   
 ## <a name="hardware-rendering-pipeline"></a>Kanál pro vykreslování hardwaru  
- Jedním z nejdůležitějších faktorů při určování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkonu je, že je vykreslování svázáno – více pixelů, které je třeba vykreslit, jsou vyššími náklady na výkon. Další vykreslování, které lze přesměrovat na [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)], je ale více výhod, které můžete získat. Kanál pro vykreslování hardwaru aplikaceplněvyužíváfunkcerozhraníMicrosoftDirectXnahardwaru,kterýpodporujeminimálněrozhraníMicrosoftDirectXverze7,0.[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Další optimalizace je možné obvěřit hardwarem, který podporuje funkce rozhraní Microsoft DirectX verze 7,0 a funkce PixelShader akceptuje 2.0 +.  
+ Jedním z nejdůležitějších faktorů při určování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkonu je, že je vykreslování svázáno – více pixelů, které je třeba vykreslit, jsou vyššími náklady na výkon. Další vykreslování, které je možné přesměrovat na grafický procesor (GPU), vám ale umožní získat další výhody výkonu. Kanál pro vykreslování hardwaru aplikaceplněvyužíváfunkcerozhraníMicrosoftDirectXnahardwaru,kterýpodporujeminimálněrozhraníMicrosoftDirectXverze7,0.[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Další optimalizace je možné obvěřit hardwarem, který podporuje funkce rozhraní Microsoft DirectX verze 7,0 a funkce PixelShader akceptuje 2.0 +.  
   
 ## <a name="software-rendering-pipeline"></a>Kanál pro vykreslování softwaru  
  Kanál [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro vykreslování softwaru je zcela vázaný na procesor. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]využívá sady SSE a SSE2 instrukcí v CPU k implementaci optimalizovaného a plně vybaveného rastrového rastrového softwaru. Přechod na software je bezproblémové, kdykoli nemůžete pomocí kanálu pro vykreslování hardwaru vykreslovat funkce aplikace.  

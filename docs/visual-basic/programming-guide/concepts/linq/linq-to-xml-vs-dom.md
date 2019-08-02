@@ -1,21 +1,21 @@
 ---
-title: Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
+title: Technologie LINQ to XML vs. DOM (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 18c36130-d598-40b7-9007-828232252978
-ms.openlocfilehash: 8a7d15a8eca8e7d9bcbba068305357ff766a9d9d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ca04991fb012aa522e7c0e35eea08d790007f7a
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623069"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710363"
 ---
-# <a name="linq-to-xml-vs-dom-visual-basic"></a>Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
-Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
+# <a name="linq-to-xml-vs-dom-visual-basic"></a>Technologie LINQ to XML vs. DOM (Visual Basic)
+Tato část popisuje některé klíčové rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající rozhraní API pro programování XML, model DOM (Document Object Model) W3C (DOM).  
   
-## <a name="new-ways-to-construct-xml-trees"></a>Nové způsoby, jak vytvořit stromů XML  
- V modelu DOM W3C při vytváření stromu XML zdola; To znamená vytvořte dokument, vytvořit prvky a potom přidat prvky v dokumentu.  
+## <a name="new-ways-to-construct-xml-trees"></a>Nové způsoby vytváření stromů XML  
+ Ve formátu W3C DOM sestavíte strom XML od dolní části. To znamená, že vytvoříte dokument, vytvoříte prvky a potom přidáte prvky do dokumentu.  
   
- Například následující by typické způsob, jak vytvořit stromu XML pomocí modelu DOM, implementace Microsoft <xref:System.Xml.XmlDocument>:  
+ Následující příklad by byl typický způsob, jak vytvořit strom XML pomocí implementace modelu DOM <xref:System.Xml.XmlDocument>od společnosti Microsoft:  
   
 ```vb  
 Dim doc As XmlDocument = New XmlDocument()  
@@ -51,9 +51,9 @@ doc.AppendChild(contacts)
 Console.WriteLine(doc.OuterXml)  
 ```  
   
- Tento styl psaní kódu vizuálně neposkytuje mnoho informací o struktuře stromu XML. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podporuje tento přístup k sestavením stromu XML, ale také podporuje alternativním přístupem *funkční konstrukce*. Funkční konstrukce v jazyce Visual Basic používá literály XML k vytvoření stromu XML.  
+ Tento styl kódování vizuálně neposkytuje mnoho informací o struktuře stromu XML. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]podporuje tento přístup k sestavení stromu XML, ale také podporuje alternativní přístup, *funkční konstrukci*. V Visual Basic konstrukce funkčnosti používá literály XML k sestavení stromu XML.  
   
- Zde je, jak je vytvořit stejném stromu XML pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] funkční konstrukce:  
+ Tady je postup vytvoření stejného stromu XML pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] funkční konstrukce:  
   
 ```vb  
 Dim contacts = _  
@@ -72,20 +72,20 @@ Dim contacts = _
     </Contacts>  
 ```  
   
- Všimněte si, že odsazení kódu k sestavení kompletních stromu XML ukazuje strukturu základní XML.  
+ Všimněte si, že odsazení kódu pro sestavení stromu XML ukazuje strukturu podkladového XML.  
   
- Další informace najdete v tématu [vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md).  
+ Další informace naleznete v tématu [vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md).  
   
-## <a name="working-directly-with-xml-elements"></a>Práce přímo se elementů XML  
- Když je program s XML, hlavním cílem je obvykle na prvky XML a případně na atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], může spolupracovat přímo s XML elementů a atributů. Například můžete provést následující:  
+## <a name="working-directly-with-xml-elements"></a>Práce přímo s prvky XML  
+ Při programování v jazyce XML je primární fokus obvykle na prvcích XML a případně na atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]aplikaci můžete pracovat přímo s prvky a atributy XML. Můžete například provést následující akce:  
   
-- Vytvořte prvky XML bez použití objektu dokumentu vůbec. Tato funkce usnadňuje programování v případě, že máte pro práci s fragmenty stromů XML.  
+- Vytvářejte XML elementy bez použití objektu dokumentu vůbec. To zjednodušuje programování, pokud je třeba pracovat s fragmenty stromů XML.  
   
-- Zatížení `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
+- Načíst `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
   
-- Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datový proud.  
+- Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datového proudu.  
   
- Porovnejte W3C v modelu DOM, ve kterém se používá dokumentu XML jako logický kontejner pro stromové struktuře XML. V modelu DOM z uzlů XML, včetně elementů a atributů, musí být vytvořeny v rámci dokumentu XML. Tady je fragment kódu pro vytvoření názvu elementu v modelu DOM:  
+ Porovnejte je s konsorciem W3C DOM, ve kterém je dokument XML použit jako logický kontejner pro strom XML. V modelu DOM, uzly XML, včetně elementů a atributů, musí být vytvořeny v kontextu dokumentu XML. Tady je fragment kódu pro vytvoření elementu Name v modelu DOM:  
   
 ```vb  
 Dim doc As XmlDocument = New XmlDocument()  
@@ -94,41 +94,41 @@ name.InnerText = "Patrick Hines"
 doc.AppendChild(name)  
 ```  
   
- Pokud chcete použít prvek napříč více dokumentů, je nutné naimportovat uzly v dokumentech. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Tato vrstva složitost se vyhnete.  
+ Chcete-li použít prvek v rámci více dokumentů, je nutné importovat uzly mezi dokumenty. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zabrání této vrstvě složitosti.  
   
- Při použití technologie LINQ to XML, je použít <xref:System.Xml.Linq.XDocument> třídy pouze v případě, že chcete přidat komentář nebo zpracování instrukcí na kořenové úrovni dokumentu.  
+ Při použití LINQ to XML použijte <xref:System.Xml.Linq.XDocument> třídu pouze v případě, že chcete přidat komentář nebo pokyn ke zpracování na kořenové úrovni dokumentu.  
   
-## <a name="simplified-handling-of-names-and-namespaces"></a>Zjednodušená zpracování názvy a obory názvů  
- Zpracování názvy oborů názvů a předpony oboru názvů je obecně komplexní součástí XML programování. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zjednodušuje názvy a obory názvů tím, že eliminuje požadavek na řešení předpony oboru názvů. Pokud chcete řídit předpony oboru názvů, můžete. Ale pokud se rozhodnete řízení předpon názvového prostoru, není explicitně [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] přiřadí předpony oboru názvů při serializaci, pokud jsou požadované, nebo se serializace pomocí výchozích názvových prostorů, pokud nejsou. Pokud se používají výchozí obory názvů, nebudou bez předpony oboru názvů ve výsledném dokumentu. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+## <a name="simplified-handling-of-names-and-namespaces"></a>Zjednodušené zpracování názvů a oborů názvů  
+ Zpracování názvů, oborů názvů a předpon oboru názvů je všeobecně složitou součástí programování XML. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zjednodušuje názvy a obory názvů tím, že eliminuje nutnost zabývat se předponami oboru názvů. Pokud chcete řídit předpony oboru názvů, můžete. Ale pokud se rozhodnete, že nechcete explicitně řídit předpony oboru názvů, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] přiřadí předpony oboru názvů během serializace, pokud jsou požadovány, nebo budou serializovány pomocí výchozích oborů názvů, pokud nejsou. Pokud jsou použity výchozí obory názvů, nebudou ve výsledném dokumentu žádné předpony oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- Dalším problémem modelu DOM se, že neumožní můžete změnit název uzlu. Místo toho budete muset vytvořit nový uzel a zkopírujte všechny podřízené uzly, ztráty původní uzel identitu. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tomuto problému se vyhnete tím, že vám umožní nastavit <xref:System.Xml.Linq.XName> vlastnost uzlu.  
+ Dalším problémem s modelem DOM je, že neumožňuje změnit název uzlu. Místo toho je nutné vytvořit nový uzel a zkopírovat do něj všechny podřízené uzly a ztratit tak původní identitu uzlu. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]tomuto problému se vyhnete tím, že vám umožní <xref:System.Xml.Linq.XName> nastavit vlastnost na uzlu.  
   
-## <a name="static-method-support-for-loading-xml"></a>Podpora statické metody pro načítání dat XML  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje načíst XML pomocí statické metody, namísto metody instance. To zjednodušuje, načítání a analýzu. Další informace najdete v tématu [jak: Načtení XML ze souboru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md).  
+## <a name="static-method-support-for-loading-xml"></a>Podpora statické metody pro načítání XML  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje načíst XML pomocí statických metod namísto instančních metod. Tím se zjednodušuje načítání a analýza. Další informace najdete v tématu [jak: Načíst XML ze souboru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md).  
   
-## <a name="removal-of-support-for-dtd-constructs"></a>Odebrání podpory pro DTD konstrukce  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Další zjednodušuje programování tak, že odeberete podporu pro entity a odkazy na entity XML. Správa entit je složitá a zřídka se používá. Odebírá se jejich podpora zvyšuje výkon a zjednodušuje programovací rozhraní. Když [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] naplnění stromu, jsou rozbaleny všechny entity DTD.  
+## <a name="removal-of-support-for-dtd-constructs"></a>Odebrání podpory pro konstrukce DTD  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]dále zjednodušuje programování XML odebráním podpory entit a odkazů na entity. Správa entit je složitá a používá se zřídka. Odebrání podpory zvyšuje výkon a zjednodušuje programovací rozhraní. Po naplnění [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] stromu se rozšíří všechny entity DTD.  
   
-## <a name="support-for-fragments"></a>Podpora pro fragmenty  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nenabízí ekvivalent pro `XmlDocumentFragment` třídy. V mnoha případech se však `XmlDocumentFragment` koncept zpracovat výsledek dotazu, který je zadán jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XNode>, nebo <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>.  
+## <a name="support-for-fragments"></a>Podpora fragmentů  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]neposkytuje ekvivalent pro `XmlDocumentFragment` třídu. `XmlDocumentFragment` V mnoha případech však koncept může být zpracován výsledkem dotazu, který je zadán <xref:System.Xml.Linq.XNode>jako <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>.  
   
-## <a name="support-for-xpathnavigator"></a>Podpora pro objektem XPathNavigator nastaveným na  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje podporu pro <xref:System.Xml.XPath.XPathNavigator> prostřednictvím metody rozšíření v <xref:System.Xml.XPath?displayProperty=nameWithType> oboru názvů. Další informace naleznete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
+## <a name="support-for-xpathnavigator"></a>Podpora pro XPathNavigator  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje podporu pro <xref:System.Xml.XPath.XPathNavigator> metody rozšíření <xref:System.Xml.XPath?displayProperty=nameWithType> v oboru názvů. Další informace naleznete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
   
 ## <a name="support-for-white-space-and-indentation"></a>Podpora pro prázdné znaky a odsazení  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zpracovává prázdných jednodušeji než modelu DOM.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zpracovává prázdné znaky více než DOM.  
   
- Běžný scénář, kdy je pro čtení odsazený XML, vytvoření stromu XML v paměti bez ostatní uzly text prázdné znaky (tedy ne zachování prázdné znaky), provádění některých operací na XML a pak uložte soubor XML s odsazením. Při serializaci XML s formátováním je zachována pouze významný prázdný znak ve stromové struktuře XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+ Běžným scénářem je čtení odsazeného XML, vytvoření stromu XML v paměti bez jakýchkoli textových uzlů s prázdnými znaky (tj. bez zachovávání prázdných znaků), provedení některých operací v XML a následné uložení XML s odsazením. Při serializaci XML s formátováním je zachováno pouze významné prázdné znaky ve stromu XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
- Další z typických možností je číst a upravovat kód XML, který již byl záměrně odsazeny. Nebudete chtít změnit tento odsazení žádným způsobem. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete to provést tak, že zachování prázdných znaků při načtení nebo analyzovat kód XML a zakázání formátování při serializaci kódu XML.  
+ Dalším běžným scénářem je číst a upravovat kód XML, který již byl záměrně odsazen. Toto odsazení nebudete chtít nijak měnit. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]můžete to provést tak, že zachováte prázdné místo při načítání nebo analýze XML a zakážete formátování při serializaci kódu XML.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ukládá prázdný znak jako <xref:System.Xml.Linq.XText> uzlu, namísto nutnosti specializovaný <xref:System.Xml.XmlNodeType.Whitespace> typ uzlu, jako v modelu DOM nemá.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]ukládá prázdné znaky jako <xref:System.Xml.Linq.XText> uzel namísto typu specializovaného <xref:System.Xml.XmlNodeType.Whitespace> uzlu jako Dom.  
   
-## <a name="support-for-annotations"></a>Podporu pro poznámky  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prvky podporují rozšiřitelnou sadu poznámky. To je užitečné pro sledování různé informace o elementu, jako je například informace o schématu, informace o tom, zda elementu je vázán na uživatelské rozhraní nebo nějakých jiných informací druh specifické pro aplikaci. Další informace najdete v tématu [LINQ to XML poznámky](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-annotations.md).  
+## <a name="support-for-annotations"></a>Podpora poznámek  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]prvky podporují rozšiřitelnou sadu poznámek. To je užitečné pro sledování různých informací o prvku, například informace o schématu, informace o tom, zda je element svázán s uživatelským rozhraním, nebo jakýkoli jiný druh informací specifických pro aplikaci. Další informace najdete v tématu [LINQ to XML poznámky](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-annotations.md).  
   
-## <a name="support-for-schema-information"></a>Podpora pro informace o schématu  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje podporu pro ověření XSD prostřednictvím metody rozšíření v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Můžete ověřit, že stromu XML v souladu s XSD. Můžete naplnit stromu XML pomocí informační sadu po ověření (PSVI). Další informace najdete v tématu [jak: Ověření pomocí XSD](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a <xref:System.Xml.Schema.Extensions>.  
+## <a name="support-for-schema-information"></a>Podpora informací o schématu  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje podporu pro ověřování XSD prostřednictvím metod rozšíření v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Můžete ověřit, že strom XML odpovídá XSD. Ke stromu XML můžete naplnit informační sadu po PSVI (post-Schema-Revalidace). Další informace najdete v tématu [jak: Ověřte pomocí XSD](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a <xref:System.Xml.Schema.Extensions>.  
   
 ## <a name="see-also"></a>Viz také:
 

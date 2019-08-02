@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Ovládací prvek Namespace předpony (Visual Basic) (LINQ to XML)'
+title: 'Postupy: Předpony oboru názvů ovládacího prvku (Visual Basic) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2fcf28a5-31b6-409d-84ea-27c22f71fc9f
-ms.openlocfilehash: 7e5a05d2fa93e61338f450d0a4d890fa94c04fd2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b89b49aa76df526c08143cad49685386ffd5e7c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855397"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709820"
 ---
-# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Postupy: Ovládací prvek Namespace předpony (Visual Basic) (LINQ to XML)
-Toto téma popisuje, jak můžete řídit předpony oboru názvů.  
+# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Postupy: Předpony oboru názvů ovládacího prvku (Visual Basic) (LINQ to XML)
+Toto téma popisuje, jak lze řídit předpony oboru názvů.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- V tomto příkladu deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` má předponu oboru názvů `aw`a že `www.fourthcoffee.com` obor názvů má předponu `fc`.  
+ Tento příklad deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` obor názvů má předponu `aw`a že `www.fourthcoffee.com` má obor názvů předponu `fc`.  
   
 ### <a name="code"></a>Kód  
   
@@ -55,4 +55,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

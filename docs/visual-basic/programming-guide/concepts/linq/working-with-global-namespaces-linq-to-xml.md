@@ -1,27 +1,27 @@
 ---
-title: Práce s globálními názvovými prostory (Visual Basic) (LINQ to XML)
+title: Práce s globálním oborem názvů (Visual Basic) (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 0a8064d5-e02f-4315-ad48-6deaa443a2f0
-ms.openlocfilehash: d8e74e949815d36f06f522460cc31ca6c3ccabb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9aab6f7175c905fcb3e82829f131f52b3d9368ac
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61908008"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710384"
 ---
-# <a name="working-with-global-namespaces-visual-basic-linq-to-xml"></a>Práce s globálními názvovými prostory (Visual Basic) (LINQ to XML)
-Jednou z klíčových funkcí literálů XML v jazyce Visual Basic je možnost deklarovat obory názvů XML pomocí `Imports` příkazu. Díky této funkci lze deklarovat obor názvů XML, který používá předponu nebo je možné deklarovat výchozí názvový prostor XML.  
+# <a name="working-with-global-namespaces-visual-basic-linq-to-xml"></a>Práce s globálním oborem názvů (Visual Basic) (LINQ to XML)
+Jedna z klíčových funkcí literálů XML v Visual Basic je schopnost deklarovat obory názvů XML pomocí `Imports` příkazu. Pomocí této funkce můžete deklarovat obor názvů XML, který používá předponu, nebo můžete deklarovat výchozí obor názvů XML.  
   
- Tato možnost je užitečná ve dvou situacích. Nejprve obory názvů deklarovaný v literálech XML se nepřenesou do vložené výrazy. Deklarace oborů názvů globální snižuje množství práce, které budete muset udělat, abyste použijte vložené výrazy s obory názvů. Za druhé je třeba deklarovat globálními názvovými prostory k použití oborů názvů pomocí vlastnosti XML.  
+ Tato funkce je užitečná ve dvou situacích. Nejprve se obory názvů deklarované v literálech XML nepřenášejí do vložených výrazů. Deklarace globálních oborů názvů snižuje množství práce, které je třeba provést, aby bylo možné použít vložené výrazy s obory názvů. Za druhé musíte deklarovat globální obory názvů, aby bylo možné používat obory názvů s vlastnostmi XML.  
   
- Je možné deklarovat globální obory názvů na úrovni projektu. Můžete také deklarovat globální obory názvů na úrovni modulu, který přepíše globálními názvovými prostory na úrovni projektu. Nakonec můžete přepsat globální obory názvů v literálu XML.  
+ Globální obory názvů můžete deklarovat na úrovni projektu. Můžete také deklarovat globální obory názvů na úrovni modulu, který přepíše globální obory názvů na úrovni projektu. Nakonec můžete přepsat globální obory názvů v literálu XML.  
   
- Při použití literály XML a vlastnosti XML, které jsou v oborech názvů globálně deklarované, zobrazí se rozbalený název vlastnosti nebo literály XML podržením ukazatele nad nich v sadě Visual Studio. Rozbalený název v popisku se zobrazí.  
+ Při použití literálů XML nebo vlastností XML, které jsou v globálně deklarovaných oborech názvů, můžete zobrazit rozbalený název literálů XML nebo vlastností tak, že na ně najedete myší v aplikaci Visual Studio. Rozbalený název se zobrazí v popisu tlačítka.  
   
- Můžete získat <xref:System.Xml.Linq.XNamespace> objekt, který odpovídá globálního oboru názvů pomocí `GetXmlNamespace` metody.  
+ Můžete získat <xref:System.Xml.Linq.XNamespace> objekt, který odpovídá globálnímu oboru názvů `GetXmlNamespace` pomocí metody.  
   
-## <a name="examples-of-global-namespaces"></a>Příklady globálními názvovými prostory  
- Následující příklad deklaruje s použitím výchozí globální obor názvů `Imports` příkazu a použití literálu XML k inicializaci <xref:System.Xml.Linq.XElement> objekt v tomto oboru názvů:  
+## <a name="examples-of-global-namespaces"></a>Příklady globálních oborů názvů  
+ Následující příklad deklaruje výchozí globální obor názvů pomocí `Imports` příkazu a poté používá literál XML pro <xref:System.Xml.Linq.XElement> inicializaci objektu v tomto oboru názvů:  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -40,7 +40,7 @@ End Module
 <Root xmlns="http://www.adventure-works.com" />  
 ```  
   
- Následující příklad deklaruje globální obor názvů s předponou a potom použije literál XML elementu inicializace:  
+ Následující příklad deklaruje globální obor názvů s předponou a poté používá literál XML pro inicializaci elementu:  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -60,7 +60,7 @@ End Module
 ```  
   
 ## <a name="global-namespaces-and-embedded-expressions"></a>Globální obory názvů a vložené výrazy  
- Obory názvů, které jsou deklarovány v literálech XML není přenesou do vložené výrazy. Následující příklad deklaruje výchozí obor názvů. Poté použije pro vložený výraz `Child` elementu.  
+ Obory názvů, které jsou deklarovány v literálech XML, se nepřenášejí do vložených výrazů. Následující příklad deklaruje výchozí obor názvů. Potom používá vložený výraz pro `Child` element.  
   
 ```vb  
 Dim root As XElement = _  
@@ -78,9 +78,9 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
- Jak je vidět, výsledný XML obsahuje deklaraci výchozí obor názvů tak, aby `Child` elementu je bez oboru názvů.  
+ Jak vidíte, výsledný kód XML obsahuje deklaraci výchozího oboru názvů, `Child` takže element není v oboru názvů.  
   
- Obor názvů v vložený výraz může znovu deklarovat následujícím způsobem:  
+ Můžete znovu deklarovat obor názvů ve vloženém výrazu následujícím způsobem:  
   
 ```vb  
 Dim root As XElement = _  
@@ -98,7 +98,7 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
- Je to ale těžkopádnější použití než globální výchozí obor názvů, který není lepším řešením. Globální výchozí obor názvů můžete pomocí literálů XML bez deklarace oborů názvů. Výsledného kódu XML se bude v globálně deklarované výchozí obor názvů.  
+ Je to ale více náročný na použití než globální výchozí obor názvů, což je lepší přístup. S globálním výchozím oborem názvů můžete použít literály XML bez deklarování oborů názvů. Výsledný kód XML bude v globálně deklarovaném výchozím oboru názvů.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -121,8 +121,8 @@ End Module
 </Root>  
 ```  
   
-## <a name="using-namespaces-with-xml-properties"></a>Použití oboru názvů s vlastností XML  
- Pokud pracujete s stromu XML, který je v oboru názvů, a použití vlastností XML, pak musíte použít globální obor názvů tak, aby vlastností XML bude mít i správný obor názvů. Následující příklad deklaruje stromu XML v oboru názvů. Potom zobrazí počet `Child` elementy.  
+## <a name="using-namespaces-with-xml-properties"></a>Používání oborů názvů s vlastnostmi XML  
+ Pokud pracujete se stromovou strukturou XML, která je v oboru názvů a používáte vlastnosti XML, je nutné použít globální obor názvů tak, aby vlastnosti XML byly také ve správném oboru názvů. Následující příklad deklaruje strom XML v oboru názvů. Pak vytiskne počet `Child` prvků.  
   
 ```vb  
 Dim root As XElement = _  
@@ -132,13 +132,13 @@ Dim root As XElement = _
 Console.WriteLine(root.<Child>.Count())  
 ```  
   
- V tomto příkladu znamená, že neexistují žádné `Child` elementy. Vytvoří následující výstup:  
+ Tento příklad označuje, že nejsou k `Child` dispozici žádné elementy. Generuje následující výstup:  
   
 ```  
 0  
 ```  
   
- Pokud však deklarovat výchozí globální obor názvů, pak literál XML a vlastnosti XML jsou ve výchozím globálním oboru názvů:  
+ Pokud však deklarujete výchozí globální obor názvů, pak je literál XML i vlastnost XML ve výchozím globálním oboru názvů:  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -154,7 +154,7 @@ Module Module1
 End Module  
 ```  
   
- V tomto příkladu znamená, že existuje jedna `Child` elementu. Vytvoří následující výstup:  
+ Tento příklad označuje, že existuje jeden `Child` prvek. Generuje následující výstup:  
   
 ```  
 1  
@@ -176,8 +176,8 @@ Module Module1
 End Module  
 ```  
   
-## <a name="xnamespace-and-global-namespaces"></a>XNamespace a globálními názvovými prostory  
- Můžete získat <xref:System.Xml.Linq.XNamespace> s použitím `GetXmlNamespace` metody:  
+## <a name="xnamespace-and-global-namespaces"></a>XNamespace a globální obory názvů  
+ <xref:System.Xml.Linq.XNamespace> Objekt můžete získat `GetXmlNamespace` pomocí metody:  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -199,4 +199,4 @@ http://www.adventure-works.com
   
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

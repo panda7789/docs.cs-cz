@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vytváření dotazů na XML v oborech názvů (Visual Basic)'
+title: 'Postupy: Zápis dotazů do XML v oborech názvů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-ms.openlocfilehash: 4efa1de254a0264752514c5ae6e601a66fa56f95
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b910e8b46632fbff2228baef44a45e8c22d731e
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614827"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709875"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Postupy: Vytváření dotazů na XML v oborech názvů (Visual Basic)
-Chcete-li napsat dotaz na XML, který je v oboru názvů, musíte použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
+# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Postupy: Zápis dotazů do XML v oborech názvů (Visual Basic)
+Chcete-li zapsat dotaz na XML, který je v oboru názvů, je <xref:System.Xml.Linq.XName> nutné použít objekty, které mají správný obor názvů.  
   
- V jazyce Visual Basic je nejběžnější přístup k definování globální obor názvů a pak použijte literály XML a vlastnosti XML, které používají globální obor názvů. Můžete definovat globální výchozí obor názvů, v takovém případě se v oboru názvů ve výchozím nastavení bude prvků v literálech XML. Alternativně můžete definovat globální obor názvů s předponou a pak použijte předponu podle potřeby literály XML a vlastnosti XML. Stejně jako u jiných forem XML atributy se vždycky nacházejí v žádný obor názvů, ve výchozím nastavení.  
+ V Visual Basic Nejběžnějším přístupem je definování globálního oboru názvů a pak použití literálů XML a vlastností XML, které používají globální obor názvů. Můžete definovat globální výchozí obor názvů. v takovém případě prvky v literálech XML budou ve výchozím nastavení v oboru názvů. Alternativně můžete definovat globální obor názvů s předponou a potom použít předponu podle požadavků v literálech XML a ve vlastnostech XML. Stejně jako u jiných forem XML nejsou atributy ve výchozím nastavení vždy v žádném oboru názvů.  
   
- První sada příklady v tomto tématu ukazuje, jak vytvořit stromu XML ve výchozím oboru názvů. Druhá sada ukazuje postup vytvoření stromu XML v oboru názvů s předponou.  
+ První sada příkladů v tomto tématu ukazuje, jak vytvořit strom XML ve výchozím oboru názvů. Druhá sada ukazuje, jak vytvořit strom XML v oboru názvů s předponou.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří stromu XML, který je ve výchozím oboru názvů. Potom načte kolekci elementů.  
+ Následující příklad vytvoří strom XML, který je ve výchozím oboru názvů. Poté načte kolekci prvků.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -52,9 +52,9 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- V jazyce Visual Basic však zápis dotazů ve stromu XML, který používá obor názvů s předponou je značně odlišná z dotazu stromu XML ve výchozím oboru názvů. Obvykle použijete `Imports` smlouvu pro import oboru názvů s předponou. Pak použijete předponu v názvech prvků a atributů při vytváření stromu XML. Použijete také předponu, při dotazování stromu XML pomocí vlastnosti XML.  
+ V Visual Basic však zápis dotazů ve stromu XML, který používá obor názvů s předponou, je poměrně jiný než dotazování stromu XML ve výchozím oboru názvů. Obvykle použijete `Imports` příkaz pro import oboru názvů s předponou. Pak použijte předponu v názvu elementu a atributu při vytváření stromu XML. Také použijte předponu při dotazování stromu XML pomocí vlastností XML.  
   
- Následující příklad vytvoří stromu XML, který je v oboru názvů s předponou. Potom načte kolekci elementů.  
+ Následující příklad vytvoří strom XML, který je v oboru názvů s předponou. Poté načte kolekci prvků.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -90,4 +90,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

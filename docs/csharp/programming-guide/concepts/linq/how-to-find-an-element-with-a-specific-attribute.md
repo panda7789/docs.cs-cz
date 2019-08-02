@@ -2,20 +2,20 @@
 title: 'Postupy: Vyhledání elementu s konkrétním atributem (C#)'
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: 7ec6240bf399058ca94cc52c66e6029f924fcd29
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 0362ded5984ff797a1ced93076679b7b975b998c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485555"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709955"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Postupy: Vyhledání elementu s konkrétním atributem (C#)
-Toto téma ukazuje, jak najít element, který má atribut, který obsahuje určitou hodnotu.  
+Toto téma ukazuje, jak najít element, který má atribut, který má konkrétní hodnotu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak najít `Address` element, který má `Type` atributu s hodnotou "Billing".  
+ Příklad ukazuje, jak najít `Address` prvek, který `Type` má atribut s hodnotou "vyúčtování".  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrder.xml");  
@@ -27,7 +27,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Address Type="Billing">  
@@ -41,9 +41,9 @@ foreach (XElement el in address)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka v oboru názvů](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrderInNamespace.xml");  
@@ -56,7 +56,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <aw:Address aw:Type="Billing" xmlns:aw="http://www.adventure-works.com">  
@@ -73,5 +73,5 @@ foreach (XElement el in address)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazůC#()](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Operace projekce (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 2667417c5d25821f2fed2101e1d485280e171eab
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 6bea25fbd321eead9137caaeb212b76a9d528e88
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400644"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710396"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]je navržena pro ukládání vývojářů z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojářů nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.  
@@ -56,7 +56,7 @@ ms.locfileid: "68400644"
   
 <a name="prime_number"></a>   
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Aplikace s jedním vláknem s dlouhodobou kalkulací  
- Většina [!INCLUDE[TLA#tla_gui#plural](../../../../includes/tlasharptla-guisharpplural-md.md)] stráví velkou část času nečinnosti při čekání na události, které jsou vygenerovány v reakci na interakci uživatele. S pečlivým programováním je možné tento čas nečinnosti použít, aniž by to ovlivnilo odezvu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Model vláken nepovoluje vstup k přerušení operace, která se odehrává [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] To znamená, že musíte mít jistotu, že se <xref:System.Windows.Threading.Dispatcher> budete muset pravidelně vracet do procesu probíhajících vstupních událostí.  
+ Většina grafických uživatelských rozhraní (GUI) stráví velkou část času nečinnosti při čekání na události, které jsou vygenerovány v reakci na interakci uživatele. S pečlivým programováním je možné tento čas nečinnosti použít, aniž by to ovlivnilo odezvu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Model vláken nepovoluje vstup k přerušení operace, která se odehrává [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ve vlákně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] To znamená, že musíte mít jistotu, že se <xref:System.Windows.Threading.Dispatcher> budete muset pravidelně vracet do procesu probíhajících vstupních událostí.  
   
  Vezměte v úvahu v následujícím příkladu:  
   
@@ -103,7 +103,7 @@ ms.locfileid: "68400644"
   
 <a name="weather_sim"></a>   
 ### <a name="handling-a-blocking-operation-with-a-background-thread"></a>Zpracování blokující operace s vláknem na pozadí  
- Manipulace s blokujícími operacemi v grafické aplikaci může být obtížné. Nechceme volat metody blokování z obslužných rutin událostí, protože se zdá, že se aplikace zablokuje. Pro zpracování těchto operací můžeme použít samostatné vlákno, ale po dokončení musíme provést synchronizaci s [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vláknem, protože nemůžeme přímo [!INCLUDE[TLA2#tla_gui](../../../../includes/tla2sharptla-gui-md.md)] změnit z našeho pracovního vlákna. Můžeme použít <xref:System.Windows.Threading.Dispatcher.Invoke%2A> nebo <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> provkládání[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] delegátů do vlákna.<xref:System.Windows.Threading.Dispatcher> Nakonec se tyto delegáty spustí s oprávněním pro úpravu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků.  
+ Manipulace s blokujícími operacemi v grafické aplikaci může být obtížné. Nechceme volat metody blokování z obslužných rutin událostí, protože se zdá, že se aplikace zablokuje. Pro zpracování těchto operací můžeme použít samostatné vlákno, ale po dokončení musíme synchronizaci s [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vláknem, protože nemůžeme přímo změnit grafické uživatelské rozhraní z našeho pracovního vlákna. Můžeme použít <xref:System.Windows.Threading.Dispatcher.Invoke%2A> nebo <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> provkládání[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] delegátů do vlákna.<xref:System.Windows.Threading.Dispatcher> Nakonec se tyto delegáty spustí s oprávněním pro úpravu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků.  
   
  V tomto příkladu Napodobme vzdálené volání procedur, které načte předpověď počasí. K provedení tohoto volání používáme samostatné pracovní vlákno a při dokončení naplánujeme metodu aktualizace ve <xref:System.Windows.Threading.Dispatcher> [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákně.  
   

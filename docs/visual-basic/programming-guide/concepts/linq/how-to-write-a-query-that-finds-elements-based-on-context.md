@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (Visual Basic)'
+title: 'Postupy: Napsat dotaz, který najde elementy na základě kontextu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
-ms.openlocfilehash: 0981da1e35f2c0b6023c009d4f62c95a612d8971
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1743a0793a8b572cb212d45a31924fe8eb93bf45
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614880"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710406"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (Visual Basic)
-V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: Napsat dotaz, který najde elementy na základě kontextu (Visual Basic)
+Někdy může být nutné napsat dotaz, který vybere prvky na základě jejich kontextu. Je možné, že budete chtít filtrovat na základě předchozích nebo následujících prvků na stejné úrovni. Je možné, že budete chtít filtrovat na základě podřízených nebo nadřazených prvků.  
   
- To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli. Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.  
+ To můžete provést vytvořením dotazu a použitím výsledků dotazu v `where` klauzuli. Pokud je třeba otestovat proti hodnotě null a potom otestovat hodnotu, je vhodnější provést dotaz v `let` klauzuli a potom použít výsledky `where` v klauzuli.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu vybere všechny `p` prvky, které jsou okamžitě následovat `ul` elementu.  
+ Následující příklad vybere všechny `p` prvky, které jsou bezprostředně následovány `ul` elementem.  
   
 ```vb  
 Dim doc As XElement = _  
@@ -49,7 +49,7 @@ For Each e As XElement In items
 Next  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 id = 1  
@@ -58,7 +58,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -98,7 +98,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 id = 1  

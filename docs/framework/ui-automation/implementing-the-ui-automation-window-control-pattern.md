@@ -6,62 +6,62 @@ helpviewer_keywords:
 - UI Automation, Window control pattern
 - Window control pattern
 ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
-ms.openlocfilehash: 07b17ae1ed89c84bac4ac40e9934a0d36fda357f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9cab4dbbcd3302a6e74783eaefdbbd8463332224
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625843"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710244"
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>, včetně informací o <xref:System.Windows.Automation.WindowPattern> vlastnosti, metody a události. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
+ Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IWindowProvider>implementaci, včetně informací <xref:System.Windows.Automation.WindowPattern> o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- <xref:System.Windows.Automation.WindowPattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které poskytuje základní funkce založené na oknech v rámci tradičního [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)]. Příklady ovládacích prvků, které musí implementovat toto – vzor ovládacích prvků nejvyšší úrovně aplikace pro windows, [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] podřízených oken, ovládací prvky umožňující změnu velikosti rozdělení podokně, modální dialogová okna a bubliny pomáhají systému windows.  
+ Vzor <xref:System.Windows.Automation.WindowPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které poskytují základní funkce založené na oknech v tradičním grafickém uživatelském rozhraní (GUI). Příklady ovládacích prvků, které musí implementovat tento vzor ovládacích prvků, zahrnují okna [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] aplikace nejvyšší úrovně, podřízená okna, měnitelné ovládací prvky podokna pro změnu velikosti, modální dialogová okna a okna nápovědy k bublinám.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
- Při implementaci vzoru ovládacích prvků okno, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzoru ovládacího prvku okna si všimněte následujících pokynů a konvencí:  
   
-- Chcete-li podporují možnost změnit velikost obě okna a obrazovky pozice použitím automatizace uživatelského rozhraní, musí implementovat ovládací prvek <xref:System.Windows.Automation.Provider.ITransformProvider> kromě <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Aby bylo možné podporovat možnost upravit velikost okna a umístění obrazovky pomocí automatizace uživatelského rozhraní, musí ovládací prvek implementovat <xref:System.Windows.Automation.Provider.ITransformProvider> <xref:System.Windows.Automation.Provider.IWindowProvider>kromě.  
   
-- Ovládací prvky, které obsahují záhlaví a prvky název panelu, které povolte stažení ovládacího prvku přesune, velikost, maximalizované, minimalizovat nebo uzavřel jsou zpravidla vyžadovány k implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Pro implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>jsou obvykle vyžadovány ovládací prvky, které obsahují záhlaví a prvky záhlaví, které umožňují přesunutí ovládacího prvku, jeho velikost, maximalizaci, minimalizaci nebo zavření.  
   
-- Ovládací prvky, jako je například automaticky otevíraná okna popisu tlačítka a pole se seznamem pole nebo nabídky rozevíracích neimplementují obvykle <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Ovládací prvky, jako jsou například automaticky otevíraná okna s popisem tlačítka a pole se seznamem nebo nabídky, <xref:System.Windows.Automation.Provider.IWindowProvider>nejsou obvykle implementovány.  
   
-- Bublině nápovědy systému windows jsou rozlišené ze základní popis automaticky otevíraná okna tak, že zřídíte jako okno zavřít.  
+- Okna nápovědy k bublinám jsou odlišená od základních popsaných tlačítek pomocí překryvných tlačítek pro tlačítko Zavřít.  
   
-- Režim celé obrazovky není podporována IWindowProvider je specifické pro funkce k aplikaci a není chování typické okna.  
+- Režim zobrazení na celé obrazovce není podporován IWindowProvider, protože se jedná o konkrétní funkci pro aplikaci a nejedná se o typické chování okna.  
   
 <a name="Required_Members_for_IWindowProvider"></a>   
-## <a name="required-members-for-iwindowprovider"></a>Požadované členy pro IWindowProvider  
- Následující vlastnosti, metody a události jsou požadovány pro IWindowProvider rozhraní.  
+## <a name="required-members-for-iwindowprovider"></a>Vyžadovaná členové pro IWindowProvider  
+ Pro rozhraní IWindowProvider jsou vyžadovány následující vlastnosti, metody a události.  
   
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Událost|Žádný|  
-|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Událost|Žádný|  
-|<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručeno, že bude <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Událost|Žádné|  
+|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Událost|Žádné|  
+|<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručeno být<xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Poskytovatelé musí vyvolání následující výjimky.  
+ Zprostředkovatelé musí vyvolat následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
 |<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> – Když ovládací prvek nepodporuje požadované chování.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> -Pokud parametr není platné číslo.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> – Pokud parametr není platným číslem.|  
   
 ## <a name="see-also"></a>Viz také:
 
