@@ -254,7 +254,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  `<Button Style="{StaticResource MyStyle}">My button</Button>`  
   
- `StaticResource` Zde<xref:System.Windows.StaticResourceExtension> identifikuje třídu, která poskytuje implementaci rozšíření značek. Následující řetězec `MyStyle` je použit jako vstup pro nevýchozí <xref:System.Windows.StaticResourceExtension> konstruktor, kde parametr, který je pořízen z řetězce přípony, deklaruje požadované <xref:System.Windows.ResourceKey>. `MyStyle`očekává se, že bude [](../../xaml-services/x-key-directive.md) hodnota <xref:System.Windows.Style> x:Key – definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí <xref:System.Windows.Style> hodnoty vlastnosti prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
+ `StaticResource` Zde<xref:System.Windows.StaticResourceExtension> identifikuje třídu, která poskytuje implementaci rozšíření značek. Následující řetězec `MyStyle` je použit jako vstup pro nevýchozí <xref:System.Windows.StaticResourceExtension> konstruktor, kde parametr, který je pořízen z řetězce přípony, deklaruje požadované <xref:System.Windows.ResourceKey>. `MyStyle`očekává se, že bude [x:Key](../../xaml-services/x-key-directive.md) hodnota <xref:System.Windows.Style> – definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí <xref:System.Windows.Style> hodnoty vlastnosti prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
   
  Další informace o rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md). Odkaz na rozšíření značek a jiné programovací funkce XAML povolené v obecné implementaci .NET XAML naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md). Pro rozšíření značek specifická pro WPF naleznete informace v tématu [rozšíření WPF XAML](wpf-xaml-extensions.md).  
   
@@ -305,7 +305,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
  <xref:System.Windows.Controls.Label>je jinou odvozenou třídou třídy <xref:System.Windows.Controls.Control>, a pokud jste zadali `Label.Background` v <xref:System.Windows.Controls.Label> rámci prvku objektu, toto použití by fungovalo. Vzhledem k tomu <xref:System.Windows.Controls.Label> , že se nejedná o třídu nebo <xref:System.Windows.Controls.Button>základní třídu třídy, je v zadaném chování procesoru XAML `Label.Background` zpracována jako připojená vlastnost. `Label.Background`není dostupná připojená vlastnost a toto použití se nezdařilo.  
   
 ### <a name="basetypenamemembername-property-elements"></a>baseType. Member – vlastnost Elements  
- Podobným způsobem jako *TypeName*.  atribut membere pracuje pro syntaxi atributu, *BaseType*. syntaxe *Member* je funkční pro syntaxi elementu vlastnosti. Například následující syntaxe funguje:  
+ Podobným způsobem jako *TypeName*. atribut membere pracuje pro syntaxi atributu, *BaseType*. syntaxe *Member* je funkční pro syntaxi elementu vlastnosti. Například následující syntaxe funguje:  
   
  [!code-xaml[XAMLOvwSupport#GoofyPE](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofype)]  
   

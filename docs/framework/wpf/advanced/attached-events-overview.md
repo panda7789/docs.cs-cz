@@ -64,15 +64,15 @@ ms.locfileid: "68401398"
   
  Vzor je následující:  
   
-- Metoda **přidávají obslužnou rutinu*EventName*** se dvěma parametry. První parametr je instance, ke které je přidána obslužná rutina události. Druhý parametr je obslužná rutina události, která se má přidat. Metoda musí být `public` a `static`, bez návratové hodnoty.  
+- Metoda **přidávají obslužnou rutinu*EventName***  se dvěma parametry. První parametr je instance, ke které je přidána obslužná rutina události. Druhý parametr je obslužná rutina události, která se má přidat. Metoda musí být `public` a `static`, bez návratové hodnoty.  
   
-- Metoda **odebrání obslužné rutiny*EventName*** se dvěma parametry. První parametr je instance, ze které je obslužná rutina události odebrána. Druhý parametr je obslužná rutina události, která se má odebrat. Metoda musí být `public` a `static`, bez návratové hodnoty.  
+- Metoda **odebrání obslužné rutiny*EventName***  se dvěma parametry. První parametr je instance, ze které je obslužná rutina události odebrána. Druhý parametr je obslužná rutina události, která se má odebrat. Metoda musí být `public` a `static`, bez návratové hodnoty.  
   
- Metoda **Přidat přístupový objekt obslužné rutiny*EventName*** usnadňuje zpracování, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] když jsou připojené atributy obslužné rutiny události deklarovány u elementu. Metoda **Přidáníobslužné** rutiny EventName a **odebrat obslužné rutiny*EventName*** také umožňuje přístup kódu k úložišti obslužných rutin událostí pro připojenou událost.  
+ Metoda **Přidat přístupový objekt obslužné rutiny*EventName***  usnadňuje zpracování, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] když jsou připojené atributy obslužné rutiny události deklarovány u elementu. Metoda **Přidání obslužné** rutiny *EventName* a **odebrat obslužné rutiny*EventName***  také umožňuje přístup kódu k úložišti obslužných rutin událostí pro připojenou událost.  
   
  Tento obecný vzor není zatím dostatečně přesný pro praktické implementace v rámci architektury, protože jakákoli [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace čtecího modulu může mít různá schémata pro identifikaci základních událostí v podpůrném jazyce a architektuře. Toto je jeden z důvodů, který [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementuje připojené události jako směrované události. identifikátor, který má být použit pro událost<xref:System.Windows.RoutedEvent>(), [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je již definován systémem událostí. Směrování události je také rozšířením přirozené implementace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] konceptu na úrovni jazyka připojené události.  
   
- Implementace **obslužné rutiny*EventName*** pro <xref:System.Windows.UIElement.AddHandler%2A> připojenouudálostseskládázvolánímetodyssměrovanouudálostíaobslužnérutiny[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jako argumentů.  
+ Implementace **obslužné rutiny*EventName***  pro <xref:System.Windows.UIElement.AddHandler%2A> připojenouudálostseskládázvolánímetodyssměrovanouudálostíaobslužnérutiny[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jako argumentů.  
   
  Tato strategie implementace a systém směrovaného systému událostí obecně omezují manipulaci s připojenými událostmi <xref:System.Windows.UIElement> buď na odvozené <xref:System.Windows.ContentElement> třídy, nebo na odvozené třídy, protože <xref:System.Windows.UIElement.AddHandler%2A> pouze tyto třídy mají implementace.  
   

@@ -595,14 +595,16 @@
       items:
         - name: 'Systém typů jazyka C#'
           href: csharp/programming-guide/types/index.md
+        - name: Odkazové typy s možnou hodnotou null
+          href: csharp/nullable-references.md
+        - name: Popisování rozhraní API s možnou hodnotou null pomocí atributů a omezení
+          href: csharp/nullable-attributes.md
         - name: Jmenné prostory
           href: csharp/programming-guide/namespaces/index.md
         - name: Základní typy
           href: csharp/basic-types.md
         - name: Třídy
           href: csharp/programming-guide/classes-and-structs/classes.md
-        - name: Odkazové typy s možnou hodnotou null
-          href: csharp/nullable-references.md
         - name: Struktury
           href: csharp/structs.md
         - name: N-tice
