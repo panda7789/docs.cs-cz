@@ -7,75 +7,75 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: 81d8cdb8d2dfc593d37322b70c070bc0b9f10b25
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 077f19690d204d3b8f682d01c51feee9e9edbfd4
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659690"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796822"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
-Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
+Jazyková pravidla pro stav XAML, která významné prázdné znaky musí být zpracována [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementací procesoru. Toto téma obsahuje dokumentaci těchto pravidel jazyka XAML. Také dokumentuje další zpracování prázdných znaků, které je definováno [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] implementací procesoru XAML a zapisovačem XAML pro serializaci.  
   
 <a name="whitespace_definition"></a>   
-## <a name="white-space-definition"></a>Definice prázdné znaky  
- Konzistentní s [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)], prázdných znaků v [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] jsou místa, odřádkování a karty. Tyto weby odpovídají [!INCLUDE[TLA#tla_unicode](../../../includes/tlasharptla-unicode-md.md)] hodnoty 0020 000A a 0009 v uvedeném pořadí.  
+## <a name="white-space-definition"></a>Definice prázdného místa  
+ V souladu [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]s, prázdné znaky v [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] jsou mezery, odřádkování a tabulátor. Tyto [!INCLUDE[TLA#tla_unicode](../../../includes/tlasharptla-unicode-md.md)] hodnoty odpovídají hodnotám 0020, 000a a 0009.  
   
 <a name="whitespace_normalization"></a>   
-## <a name="white-space-normalization"></a>Normalizace prázdné znaky  
- Ve výchozím nastavení dojde k následujícím normalizace prázdných při [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesů procesoru [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] souboru:  
+## <a name="white-space-normalization"></a>Normalizace bílého prostoru  
+ Ve výchozím nastavení dojde k následujícímu normálnímu vykonání [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] v případě, [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] kdy procesor zpracovává soubor:  
   
-1. Znaky odřádkování mezi východoasijské znaky jsou odebrány. V části "Východoasijské znaky" dále v tomto tématu pro definici tento termín.  
+1. Znaky odřádkování mezi východoasijskými znaky jsou odebrány. V části "východoasijské znaky" dále v tomto tématu najdete definice tohoto termínu.  
   
-2. Všechny prázdné znaky (místo, odřádkování, karta) budou převedeny na mezery.  
+2. Všechny prázdné znaky (mezera, odřádkování, Tab) se převedou na mezery.  
   
-3. Všechny po sobě následující mezery jsou odstraněna a nahrazuje jednu mezeru.  
+3. Všechny po sobě jdoucí mezery se odstraní a nahradí o jednu mezeru.  
   
-4. Místo ihned po počáteční značce se odstraní.  
+4. Místo, které následuje hned za počáteční značkou, se odstraní.  
   
-5. Odstraní se místo těsně před koncovou značku.  
+5. Místo, které se bezprostředně před koncovou značkou odstraní.  
   
- "Výchozí" odpovídá stavu udávají výchozí hodnota [XML: Space](xml-space-handling-in-xaml.md) atribut.  
+ "Výchozí" odpovídá stavu označenému výchozí hodnotou atributu [XML: Space](xml-space-handling-in-xaml.md) .  
   
 <a name="whitespace_in_inner_text_and_string_primitives"></a>   
-## <a name="white-space-in-inner-text-and-string-primitives"></a>Prázdný znak ve vnitřním textu a řetězce primitiv  
- Předchozí normalizace pravidla se vztahují na vnitřní text, který se nachází v rámci elementů XAML. Po normalizace procesor XAML převede všechny vnitřní text do příslušného typu následujícím způsobem:  
+## <a name="white-space-in-inner-text-and-string-primitives"></a>Prázdné znaky ve vnitřním textu a primitivních řetězcích  
+ Předchozí normalizační pravidla platí pro vnitřní text, který je nalezen v rámci prvků XAML. Po normalizaci převede procesor XAML libovolný vnitřní text na odpovídající typ následujícím způsobem:  
   
-- Pokud typ vlastnosti není kolekce, ale není přímo <xref:System.Object> typ procesoru XAML pokusí převést na daný typ pomocí jeho typ převaděče. Selhal převod způsobí chybu kompilace.  
+- Pokud typ vlastnosti není kolekce, ale není přímo <xref:System.Object> typu, pokusí se procesor XAML převést na tento typ pomocí konvertoru typu. Neúspěšný převod tady způsobí chybu při kompilaci.  
   
-- Pokud typ vlastnosti je kolekce a vnitřní text je souvislý (žádná síťová značky elementů), vnitřní text analyzován jako jediný <xref:System.String>. Pokud typ kolekce nelze přijmout <xref:System.String>, to také způsobí chybu kompilace.  
+- Pokud je typ vlastnosti kolekce a vnitřní text je souvislý (žádné zadané značky elementu), je vnitřní text analyzován jako jeden <xref:System.String>. Pokud typ kolekce nemůže přijmout <xref:System.String>, způsobí to také chybu při kompilaci.  
   
-- Pokud je typ proměnné <xref:System.Object>, vnitřní text analyzován jako jediný <xref:System.String>. Pokud existuje jsou intervenující značky elementů, to způsobí chybu kompilace, protože <xref:System.Object> typ znamená jeden objekt (<xref:System.String> nebo jinak).  
+- Pokud je <xref:System.Object>typ vlastnosti, je vnitřní text analyzován jako jeden <xref:System.String>. V případě, že existují značky prvků, způsobí to chybu při kompilaci, protože <xref:System.Object> typ implikuje jeden objekt (<xref:System.String> nebo jinak).  
   
-- Pokud typ vlastnosti je kolekce a vnitřní text není souvislé, prvního podřetězce je převeden do <xref:System.String> a přidány jako položky kolekce, použité prvek je přidán jako kolekce položek, a nakonec koncové dílčí řetězec (pokud existuje) je Přidat do kolekce jako třetí <xref:System.String> položky.  
+- Pokud je typ vlastnosti kolekce a vnitřní text není souvislý, první podřetězec je převeden na <xref:System.String> typ a přidán jako položka kolekce, přidaný prvek je přidán jako položka kolekce a nakonec koncový podřetězec (pokud existuje) je přidáno do kolekce jako třetí <xref:System.String> položka.  
   
 <a name="preserving_whitespace"></a>   
-## <a name="preserving-white-space"></a>Zachování prázdných znaků  
- Existuje několik postupů pro zachování prázdných znaků ve zdroji [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] pro konečné prezentace, které nejsou ovlivněny [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] normalizace procesoru prázdné znaky.  
+## <a name="preserving-white-space"></a>Zachování mezer  
+ K dispozici je několik postupů pro zachování prázdných znaků ve [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] zdroji pro případnou úpravu, která není [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ovlivněna normalizací prázdných prostorů procesoru.  
   
- **xml:space="preserve"**: Zadejte tento atribut na úrovni elementu, kde je žádoucí zachování prázdných znaků. Tato uchovává všechny prázdné znaky, které obsahuje mezery, které mohou být přidány úpravy kódu aplikace "pretty print" Zarovnat elementy jako vizuální intuitivní vnoření. Však, zda tyto prostory vykreslení se určuje podle obsahu modelu pro nadřazeného elementu. Neurčujte `xml:space="preserve"` na kořenové úrovni protože většina objektové modely nebere v úvahu bílý prostor významné bez ohledu na to, jak nastavit atribut. Nastavení `xml:space` globálně mohou mít následky výkonu na zpracování (zejména serializace) v některých implementacích XAML. Je doporučeno nastavit pouze atribut konkrétně na úrovni prvků, které se vykreslují mezer v rámci řetězce nebo jsou prázdné místo důležité kolekce.  
+ **xml:space="preserve"** : Zadejte tento atribut na úrovni prvku, kde je požadováno zachování volného místa. Tím se zachová všechny prázdné znaky, což zahrnuje mezery, které mohou být přidány aplikacemi pro úpravu kódu do "poměrně tištěné" prvky pro zarovnání prvků jako vizuálně intuitivní vnořování. Bez ohledu na to, zda je vykreslení těchto prostorů určeno modelem obsahu pro element, který jej obsahuje. Vyhněte `xml:space="preserve"` se zadání na kořenové úrovni, protože většina modelů objektů nepovažuje prázdné znaky za významné bez ohledu na to, jak jste nastavili atribut. Globální `xml:space` nastavení může mít dopad na výkon při zpracování XAML (zejména serializace) v některých implementacích. Je vhodnější pouze nastavit atribut specificky na úrovni prvků, které vykreslují prázdné znaky v rámci řetězců, nebo jsou prázdné kolekce.  
   
- **Entity a jiných pevné mezery**: [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny uvedení [!INCLUDE[TLA#tla_unicode](../../../includes/tlasharptla-unicode-md.md)] entity v rámci modelu objektu text. Můžete použít vyhrazený entity jako jsou pevné mezery (&\#160; v kódování UTF-8). Můžete také použít ovládací prvky s formátovaným textem, které podporují znaky pevné. Měli byste být opatrní Pokud používáte entity pro simulaci vlastnosti rozložení, jako je například odsazení, protože za běhu výstup entity, které budou záviset na větší počet faktory než by funkce pro výsledky odsazení v typické systém rozložení, jako je například správné použití operátoru panelů a okraje. Pro instanci entity se mapují na písma a můžete změnit velikost v reakci na výběr písma uživatele.  
+ **Entity a nepevné mezery**: [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] podporuje umístění libovolné [!INCLUDE[TLA#tla_unicode](../../../includes/tlasharptla-unicode-md.md)] entity v rámci textového objektového modelu. Můžete použít vyhrazené entity, jako je například nerozdělitelné místo (\#& 160; v kódování UTF-8). Lze také použít ovládací prvky formátovaného textu, které podporují znaky pro nerozdělení na místo. Měli byste být opatrní při použití entit pro simulaci vlastností rozložení, jako je například odsazení, protože výstup za běhu entit se bude lišit v závislosti na větším počtu faktorů, než by funkce pro vytváření odsazení vedlo k typickému systém rozložení, například správné použití panelů a okrajů. Například entity jsou mapovány na písma a mohou změnit velikost v reakci na výběr písem uživatele.  
   
 <a name="east_asian_characters"></a>   
 ## <a name="east-asian-characters"></a>Východoasijské znaky  
- "Východoasijské znaky" je definován jako sada [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] 20000 U + do U + 2FFFD a U + 30000 U + 3FFFD rozsahy adres znak. Tato podmnožina je někdy označovány jako "Ideografické". Další informace naleznete v tématu <https://www.unicode.org>.  
+ "Východoasijské znaky" jsou definovány jako množina [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] rozsahů znaků u + 20000 až u + 2FFFD a u + 30000 až u + 3FFFD. Tato podmnožina se také někdy označuje jako "znakové Symboly CJK". Další informace naleznete v tématu <https://www.unicode.org>.  
   
 <a name="whitespace_and_text_content_models"></a>   
-## <a name="white-space-and-text-content-models"></a>Modely obsahu prázdné znaky a text  
- V praxi zachování prázdných znaků je pouze z hlediska podmnožina všech možných modely obsahu. Tuto podmnožinu se skládá z obsahu modely, které mohou provádět jednotlivý prvek <xref:System.String> typ v nějaké podobě vyhrazené <xref:System.String> kolekce nebo kombinaci <xref:System.String> a další typy v <xref:System.Collections.IList> nebo <xref:System.Collections.Generic.ICollection%601> kolekce.  
+## <a name="white-space-and-text-content-models"></a>Prázdné znaky a modely textových obsahu  
+ V praxi se zachováním prázdných znaků týká pouze podmnožiny všech možných modelů obsahu. Tato podmnožina se skládá z modelů obsahu, které mohou <xref:System.String> převzít typ singleton v některém formuláři <xref:System.String> , vyhrazené kolekci nebo kombinaci <xref:System.String> a jiné typy v <xref:System.Collections.IList> kolekci nebo <xref:System.Collections.Generic.ICollection%601> .  
   
-### <a name="white-space-and-text-content-models-in-wpf"></a>Modely obsahu prázdné znaky a text v subsystému WPF  
- Pro ilustraci zbytek tohoto oddílu odkazuje na konkrétní typy, které jsou definovány ve WPF. Zpracování prázdných funkce, které jsou popsány v tomto tématu jsou obecně vztahujících se k rozhraní .NET Framework XAML Services a WPF. Toto chování v akci najdete může vyzkoušet několik značek WPF XAML, zobrazte výsledky v grafu objektů a potom serializovat zpět do kódu znovu.  
+### <a name="white-space-and-text-content-models-in-wpf"></a>Prázdné znaky a modely textových obsahu v subsystému WPF  
+ Pro ilustraci zbytek tohoto oddílu odkazuje na konkrétní typy, které jsou definovány WPF. Funkce pro zpracování prázdných prostorů, které jsou popsány v tomto tématu, jsou obecně relevantní pro .NET Framework služby XAML i WPF. Chcete-li zobrazit toto chování v akci, můžete experimentovat s některými značkami jazyka XAML WPF, zobrazit výsledky v grafu objektů a poté znovu serializovat zpět na označení.  
   
- Dokonce i pro obsah, který modeluje může trvat řetězce, je výchozí chování v rámci těchto modelů obsahu, že všechny prázdné znaky, které zůstává nepovažoval za významné. Například <xref:System.Windows.Controls.ListBox> přebírá <xref:System.Collections.IList>, ale prázdné znaky (například přečtené mezi jednotlivými <xref:System.Windows.Controls.ListBoxItem>) je Nezachované a není vykresleno. Pokud se pokusíte použít přečtené jako oddělovače mezi řetězce pro <xref:System.Windows.Controls.ListBoxItem> položky, nebude vůbec fungovat; řetězce, které jsou oddělené přečtené jsou považovány za jeden řetězec a jednu položku.  
+ I pro modely obsahu, které mohou přijímat řetězce, je výchozím chováním v těchto modelech obsahu, že jakékoli prázdné znaky nejsou považovány za významné. Například <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.ListBoxItem>přebírá, ale prázdné znaky (například přeloženy mezi jednotlivými) nejsou zachovány a nejsou vykresleny. <xref:System.Collections.IList> Pokud se pokusíte použít přeloženy jako oddělovače mezi řetězci pro <xref:System.Windows.Controls.ListBoxItem> položky, nefunguje vůbec. řetězce, které jsou oddělené přeloženy, jsou považovány za jeden řetězec a jednu položku.  
   
- Těchto kolekcí, které považovat za prázdné místo důležité jsou obvykle součástí modelu dokumentu toku. Primární kolekce, která podporuje zachování prázdných chování je <xref:System.Windows.Documents.InlineCollection>. Tato kolekce třída je deklarována s <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>; Pokud tento atribut je nalezen, [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesor bude považovat za mezer v rámci kolekce významné. Kombinace `xml:space="preserve"` a mezer v rámci <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> označený kolekce je, že se zachovají a vykreslí všechny prázdné znaky. Kombinace `xml:space="default"` a mezer v rámci <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> způsobí, že počáteční normalizace prázdné místo je popsáno výše, a které opustí prostorů na některých místech a tyto mezery jsou zachovány a vykreslí. Jaké chování je žádoucí, je na vás a měli byste použít `xml:space` selektivně Chcete-li povolit chování, které chcete.  
+ Tyto kolekce, které jsou zpracovávány prázdnými znaky jako významné, jsou obvykle součástí modelu flowového dokumentu. Primární kolekce, která podporuje chování uchovávání prázdných míst <xref:System.Windows.Documents.InlineCollection>, je. Tato třída kolekce je deklarována s <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>příponou. Pokud je tento atribut nalezen [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] , procesor bude v rámci kolekce považovat prázdné znaky za významné. Kombinace `xml:space="preserve"` a prázdných znaků <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> v rámci označené kolekce je, že všechny prázdné znaky jsou zachovány a vykresleny. Kombinace `xml:space="default"` a prázdných znaků <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> v rámci způsobí, že počáteční normalizovaná mezera popsaná výše, která opustí jednu mezeru v určitých pozicích, a tyto mezery se zachovají a vykreslí. To, jaké chování je žádoucí, je až vám, a pokud `xml:space` chcete povolit požadované chování, měli byste použít selektivně.  
   
- Navíc některé vložené prvky, které connote linebreak v modelu dokument toku by měl záměrně kritickému mezeru i v kolekci významné prázdné znaky. Například <xref:System.Windows.Documents.LineBreak> element má ke stejnému účelu jako \<BR / > značku [!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]a pro lepší čitelnost v kódu, obvykle <xref:System.Windows.Documents.LineBreak> je oddělen od všechny následující text vytvořené znak odřádkování. Tento znak odřádkování by neměl být normalizovány na stát přední místa na následujícím řádku. Povolit chování, definice třídy pro <xref:System.Windows.Documents.LineBreak> element se vztahuje <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>, který je pak interpretována [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesoru k označení tohoto mezery kolem <xref:System.Windows.Documents.LineBreak> vždy oříznut.  
+ Některé vložené prvky, které označují LineBreak v modelu toku dokumentů, by také neměly vést k nadbytečnému prostoru, a to i v prázdné kolekci. Například <xref:System.Windows.Documents.LineBreak> element má stejný účel \<jako značka br/> ve formátu HTML a pro čitelnost <xref:System.Windows.Documents.LineBreak> v kódu, obvykle je oddělen od následného textu pomocí vytvořeného odřádkování. Tento řádek by neměl být normalizován na počáteční místo na následujícím řádku. Chcete-li toto chování povolit, definice třídy pro <xref:System.Windows.Documents.LineBreak> prvek <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>aplikuje třídu, která [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] je následně interpretována procesorem, aby to znamenalo <xref:System.Windows.Documents.LineBreak> , že okolní prázdné znaky jsou vždy oříznuty.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
 - [Znakové entity XML a XAML](xml-character-entities-and-xaml.md)
-- [XML: space v XAML](xml-space-handling-in-xaml.md)
+- [XML: zpracování prostoru v jazyce XAML](xml-space-handling-in-xaml.md)

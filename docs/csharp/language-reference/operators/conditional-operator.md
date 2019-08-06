@@ -1,5 +1,5 @@
 ---
-title: '?: – operátor - C# odkaz'
+title: '?: operátor- C# reference'
 ms.custom: seodec18
 ms.date: 11/20/2018
 f1_keywords:
@@ -10,28 +10,28 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 2717505a0a09b9ac1c6ad43153c52771c13f7b5c
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 923591634599a6bbac74d43b105f4e46b492fa1a
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025199"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796463"
 ---
-# <a name="-operator-c-reference"></a>?: – operátor (C# odkaz)
+# <a name="-operator-c-reference"></a>?: – operátorC# (Referenční dokumentace)
 
-Podmiňovací operátor `?:`, běžně označované jako Ternární podmiňovací operátor vyhodnocuje logický výraz a vrátí výsledek vyhodnocení výrazu jeden ze dvou výrazů v závislosti na tom, jestli logický výraz vyhodnocen jako `true` nebo `false`. Počínaje C# 7.2, [ref podmíněný výraz](#conditional-ref-expression) vrátí odkaz na výsledek jednoho ze dvou výrazů.
+Podmíněný operátor `?:`, který `true` se běžně označuje jako Ternární podmíněný operátor, vyhodnocuje logický výraz a vrátí výsledek vyhodnocení jednoho ze dvou výrazů v závislosti na tom, zda se logický výraz vyhodnotí jako nebo `false`. Počínaje C# 7,2, [podmíněný výraz ref](#conditional-ref-expression) vrátí odkaz na výsledek jednoho ze dvou výrazů.
 
-Syntaxe pro podmiňovací operátor je následující:
+Syntaxe podmíněného operátoru je následující:
 
 ```csharp
 condition ? consequent : alternative
 ```
 
-`condition` Výraz se musí vyhodnotit na `true` nebo `false`. Pokud `condition` vyhodnotí jako `true`, `consequent` výraz je vyhodnocen a výsledek bude výsledek operace. Pokud `condition` vyhodnotí jako `false`, `alternative` výraz je vyhodnocen a výsledek bude výsledek operace. Pouze `consequent` nebo `alternative` vyhodnocena.
+Výraz musí být vyhodnocen `true` jako `false`nebo. `condition` Pokud `condition` se vyhodnotí `true`jako `consequent` , vyhodnotí se výraz a jeho výsledek se projeví v důsledku operace. Pokud `condition` se vyhodnotí `false`jako `alternative` , vyhodnotí se výraz a jeho výsledek se projeví v důsledku operace. Je `consequent` vyhodnocena pouze nebo `alternative` .
 
-Typ `consequent` a `alternative` musí být musí být stejné nebo existovat implicitní převod z jednoho typu na druhý.
+Typ `consequent` a`alternative` musí být stejný, nebo musí být implicitní převod z jednoho typu na druhý.
 
-Podmíněný operátor je asociativní zprava, to znamená, výraz ve tvaru
+Podmíněný operátor je asociativní zprava, to znamená výraz formuláře.
 
 ```csharp
 a ? b : c ? d : e
@@ -44,55 +44,55 @@ a ? b : (c ? d : e)
 ```
 
 > [!TIP]
-> Vám pomůže následující mnemotechnická mějte na paměti, jak se vyhodnocují podmíněný operátor:
+> K zapamatování, jak podmíněný operátor je vyhodnoceno, můžete použít následující symbolické zařízení:
 >
 > ```text
 > is this condition true ? yes : no
 > ```
 
-Následující příklad ukazuje použití podmíněný operátor:
+Následující příklad ukazuje použití podmíněného operátoru:
 
 [!code-csharp-interactive[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
 
-## <a name="conditional-ref-expression"></a>Ref podmíněný výraz
+## <a name="conditional-ref-expression"></a>Podmíněný výraz ref
 
-Počínaje C# 7.2, vám pomůže ref podmíněný výraz vrátí odkaz na výsledek jednoho ze dvou výrazů. Přiřadíte tento odkaz na [lokální proměnná podle odkazu](../keywords/ref.md#ref-locals) nebo [lokální proměnná podle odkazu jen pro čtení](../keywords/ref.md#ref-readonly-locals) proměnnou, nebo jej použít jako [odkazovat na návratovou hodnotu](../keywords/ref.md#reference-return-values) nebo jako [ `ref` – metoda Parametr](../keywords/ref.md#passing-an-argument-by-reference).
+Počínaje C# 7,2 můžete použít výraz podmíněného odkazu k vrácení odkazu na výsledek jednoho ze dvou výrazů. Tento odkaz můžete přiřadit k místní proměnné [ref](../keywords/ref.md#ref-locals) nebo [ref jen pro čtení](../keywords/ref.md#ref-readonly-locals) nebo použít jako [návratovou](../keywords/ref.md#reference-return-values) [ `ref` ](../keywords/ref.md#passing-an-argument-by-reference)hodnotu odkazu nebo jako parametr metody.
 
-Syntaxe ref podmíněného výrazu je následujícím způsobem:
+Syntaxe pro podmíněný výraz ref je následující:
 
 ```csharp
 condition ? ref consequent : ref alternative
 ```
 
-Stejně jako původní podmíněný operátor ref podmíněný výraz je vyhodnocen jako pouze jeden ze dvou výrazů: buď `consequent` nebo `alternative`.
+Podobně jako původní podmíněný operátor, podmíněný výraz ref vyhodnocuje pouze jeden ze dvou výrazů: `consequent` nebo. `alternative`
 
-V případě ref podmíněný výraz typu `consequent` a `alternative` se musí shodovat.
+V případě podmíněného výrazu ref musí být typ `consequent` a. `alternative`
 
-Následující příklad ukazuje použití ref podmíněný výraz:
+Následující příklad ukazuje použití podmíněného ref výrazu:
 
 [!code-csharp-interactive[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
 
-Další informace najdete v tématu [Poznámka návrh funkce](../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md).
+Další informace najdete v poznámkách k [návrhu funkcí](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
 
-## <a name="conditional-operator-and-an-ifelse-statement"></a>Podmíněný operátor a `if..else` – příkaz
+## <a name="conditional-operator-and-an-ifelse-statement"></a>Podmíněný operátor a `if..else` příkaz
 
-Použití podmíněného operátoru přes [if-else](../keywords/if-else.md) příkaz může způsobit stručnější kód v případech, když potřebujete podmíněně k výpočtu hodnoty. Následující příklad ukazuje dva způsoby, jak klasifikovat jako záporné nebo nezáporné celé číslo:
+Použití podmíněného operátoru přes příkaz [if-else](../keywords/if-else.md) může mít za následek přesnější kód v případech, kdy budete potřebovat podmíněně k výpočtu hodnoty. Následující příklad ukazuje dva způsoby, jak klasifikovat celé číslo jako záporné nebo nezáporné:
 
 [!code-csharp[conditional and if-else](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
 
-## <a name="operator-overloadability"></a>Overloadability – operátor
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
 Podmiňovací operátor nelze přetížit.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec/expressions.md#conditional-operator) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [podmíněný operátor](~/_csharplang/spec/expressions.md#conditional-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
-- [?. a? operátory]](member-access-operators.md#null-conditional-operators--and-)
-- [?? – operátor](null-coalescing-operator.md)
-- [ref keyword](../keywords/ref.md)
+- [?. a ?[] operátory](member-access-operators.md#null-conditional-operators--and-)
+- [?? podnikatel](null-coalescing-operator.md)
+- [ref – klíčové slovo](../keywords/ref.md)

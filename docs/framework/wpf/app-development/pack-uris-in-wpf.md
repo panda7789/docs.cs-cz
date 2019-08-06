@@ -9,176 +9,176 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 2a0fa9b67f4fa1f3b701cb64579727bedbf5028c
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: f9ea4acfc7ba86d3424bb11af0de685651f99c61
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663788"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796752"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
-Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:
+V Windows Presentation Foundation (WPF) [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načítání souborů v mnoha ohledech, včetně následujících:
 
-- Zadání [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] zobrazit při prvním spuštění aplikace.
+- Určení, [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] které se má zobrazit při prvním spuštění aplikace
 
-- Načtení obrázků.
+- Načítají se obrázky.
 
-- Přejděte na stránky.
+- Navigace na stránky.
 
-- Načítají se soubory dat – spustitelný soubor.
+- Načítání nespustitelných datových souborů.
 
-Kromě toho [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] slouží k identifikaci a nahrajte soubory z různých umístěních, včetně následujících:
+Kromě toho [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] je možné použít k identifikaci a načítání souborů z nejrůznějších umístění, včetně následujících:
 
 - Aktuální sestavení.
 
 - Odkazované sestavení.
 
-- Umístění relativně k sestavení.
+- Umístění relativní k sestavení
 
-- Aplikace webovou stránku původu.
+- Původní lokalita aplikace.
 
-K zajištění konzistentní mechanismus pro identifikaci a načítání těchto typů souborů z těchto míst [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá rozšiřitelnosti aplikace *schéma URI balíku*. Toto téma obsahuje základní informace o schématu, popisuje, jak vytvořit balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro širokou škálu scénářů, tento článek popisuje absolutní a relativní [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] a [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení před zobrazením jak používat balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] z obou značek a kódu.
+Pro zajištění konzistentního mechanismu pro identifikaci a načítání těchto typů souborů z těchto umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá rozšíření *schématu identifikátoru URI*. Toto téma obsahuje přehled schématu, popisuje [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , jak vytvořit balíček pro celou řadu scénářů, popisuje absolutní a relativní [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] a [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] rozlišení před zobrazením způsobu použití balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] z obou značek. a kód.
 
 <a name="The_Pack_URI_Scheme"></a>
 
-## <a name="the-pack-uri-scheme"></a>Schéma URI balíku
+## <a name="the-pack-uri-scheme"></a>Schéma identifikátoru URI balíčku
 
-Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] používá schéma [Open Packaging Conventions](https://go.microsoft.com/fwlink/?LinkID=71255) specifikace (OPC), který popisuje model pro organizaci a identifikaci obsahu. Klíčové prvky tohoto modelu jsou balíčky a části, kde *balíčku* je logický kontejner pro jeden nebo více logických *částí*. Tento koncept znázorňuje následující obrázek.
+Schéma balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] se používá ve specifikaci OPC ( [Open balící konvence](https://go.microsoft.com/fwlink/?LinkID=71255) ), která popisuje model pro organizování a identifikaci obsahu. Klíčové prvky tohoto modelu jsou balíčky a části, kde *balíček* je logický kontejner pro jednu nebo více logických *částí*. Tento koncept znázorňuje následující obrázek.
 
-![Balíček a části diagramu](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)
+![Diagram balíčků a částí](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)
 
-K identifikaci částí specifikace OPC využívá rozšiřitelnosti RFC 2396 (identifikátory URI (Uniform Resource): Obecná syntaxe) pro definování sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schéma.
+K identifikaci částí OPC Specification využívá rozšiřitelnost RFC 2396 (Uniform resource identifiers (URI): Obecná syntaxe) pro definování schématu balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] .
 
-Schéma, která je zadána [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je reprezentován jeho předponu http, ftp a souboru jsou známých příkladů. Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schématu jako jeho schéma používá "balíček" a obsahuje dvě součásti: autorita a cestu. Tady je formát pro sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Schéma, které je určeno parametrem [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , je definováno jeho předponou. mezi známé příklady jsou http, FTP a File. Schéma balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] používá jako své schéma "sadu" a obsahuje dvě komponenty: autorita a cesta. Následuje formát balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
 
-balíček: / /*autority*/*cesta*
+*cesta* k*autoritě*/Pack://
 
-*Autority* Určuje typ balíčku, který je obsažen část, zatímco *cesta* Určuje umístění části v rámci balíčku.
+*Autorita* určuje typ balíčku, který součást obsahuje, zatímco *cesta* určuje umístění součásti v rámci balíčku.
 
-Tento koncept je znázorněn v následujícím obrázku:
+Tento koncept je znázorněný na následujícím obrázku:
 
-![Vztah mezi balíčku, autority a cesty](./media/pack-uris-in-wpf/wpf-relationship-diagram.png)
+![Vztah mezi balíčkem, autoritou a cestou](./media/pack-uris-in-wpf/wpf-relationship-diagram.png)
 
-Balíčky a části jsou podobná aplikace a soubory, kde aplikace (balíček) může obsahovat jeden nebo více souborů (částí), včetně:
+Balíčky a části jsou analogické pro aplikace a soubory, kde aplikace (balíček) může obsahovat jeden nebo více souborů (částí), včetně:
 
-- Soubory prostředků, které jsou kompilovány do místní sestavení.
+- Soubory prostředků, které jsou zkompilovány do místního sestavení.
 
-- Soubory prostředků, které jsou kompilovány do odkazované sestavení.
+- Soubory prostředků, které jsou zkompilovány do odkazovaného sestavení.
 
-- Soubory prostředků, které jsou kompilovány do odkazující sestavení.
+- Soubory prostředků, které jsou zkompilovány do odkazujícího sestavení.
 
 - Soubory obsahu.
 
-- Lokalita zdroje souborů.
+- Lokalita se zdrojovými soubory.
 
-Pro přístup k tyto typy souborů, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje dva orgány: aplikace: / / / / / a siteoforigin: / / / / /. Aplikace: / / / / / autority identifikuje datové soubory aplikace, která jsou známá v době kompilace, včetně souborů prostředků a obsahu. Siteoforigin: / / / / / autority identifikuje lokality původní soubory. Rozsah každé oprávnění je znázorněno na následujícím obrázku.
+Pro přístup k těmto typům souborů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje dva autority: Application:///a siteoforigin:///. Autorita application:///identifikuje datové soubory aplikace, které jsou známy v době kompilace, včetně souborů prostředků a obsahu. Autorita siteoforigin:///identifikuje web se zdrojovými soubory. Rozsah jednotlivých autorit je znázorněn na následujícím obrázku.
 
 ![Diagram identifikátoru URI balíčku](./media/pack-uris-in-wpf/wpf-pack-uri-scheme.png)
 
 > [!NOTE]
-> Komponenta autority sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je vložený [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který odkazuje na balíček a musí odpovídat specifikaci RFC 2396. Kromě toho musí být nahrazen znakem "," znak "/" a vyhrazené znaky, jako je například "%" a "?" musí být uvozeny řídicími znaky. Zobrazit OPC podrobnosti.
+> Součást [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] autority balíčku je vložená [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , která odkazuje na balíček a musí odpovídat specifikaci RFC 2396. Kromě toho musí být znak "/" nahrazen znakem "," a vyhrazené znaky, například "%" a "?" musí být uvozeny řídicím znakem. Podrobnosti najdete v OPC.
 
-Následující části popisují, jak vytvořit balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pomocí těchto dvou orgány ve spojení s příslušné cesty pro identifikaci prostředků, obsah a lokality původní soubory.
+V následujících částech se dozvíte, jak [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] sestavit sadu pomocí těchto dvou úřadů ve spojení s příslušnými cestami k určení prostředků, obsahu a umístění souborů původu.
 
 <a name="Resource_File_Pack_URIs___Local_Assembly"></a>
 
-## <a name="resource-file-pack-uris"></a>Identifikátory URI prostředků soubor balíčku
+## <a name="resource-file-pack-uris"></a>Identifikátory URI sad prostředků souboru
 
-Soubory prostředků, které jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Resource` položek a jsou zkompilovány do sestavení. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje vytváření sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , který je možné určit soubory prostředků, které jsou kompilovány do místní sestavení nebo zkompilovány do sestavení, které se odkazuje z místní sestavení.
+Soubory prostředků jsou konfigurovány [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako `Resource` položky a zkompilovány do sestavení. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporuje konstrukci balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , který lze použít k identifikaci souborů prostředků, které jsou zkompilovány do místního sestavení nebo zkompilovány do sestavení, které je odkazováno z místního sestavení.
 
 <a name="Local_Assembly_Resource_File"></a>
 
-### <a name="local-assembly-resource-file"></a>Soubor prostředků místní sestavení
+### <a name="local-assembly-resource-file"></a>Soubor prostředků místního sestavení
 
-Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředek soubor, který se zkompiluje do místní sestavení používá následující autority a cesta:
+Balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor prostředků kompilovaný do místního sestavení používá následující autoritu a cestu:
 
-- **Autorita**: aplikace: / / / / /.
+- **Autorita**: Application:///.
 
-- **Cesta**: Název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce místní sestavení projektu.
+- **Cesta**: Název souboru prostředků, včetně jeho cesty, vzhledem k kořenovému adresáři složky projektu místní sestavení.
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce místní sestavení projektu.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor prostředků, který je umístěn v kořenovém adresáři složky projektu místního sestavení.
 
 `pack://application:,,,/ResourceFile.xaml`
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který je umístěný v podsložce složky místní sestavení projektu.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor prostředků, který je umístěn v podsložce složky projektu místního sestavení.
 
 `pack://application:,,,/Subfolder/ResourceFile.xaml`
 
 <a name="Resource_File_Pack_URIs___Referenced_Assembly"></a>
 
-### <a name="referenced-assembly-resource-file"></a>Soubor prostředků odkazovaných sestavení
+### <a name="referenced-assembly-resource-file"></a>Odkazovaný soubor prostředků sestavení
 
-Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředek soubor, který se zkompiluje do odkazované sestavení používá následující autority a cesta:
+Balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor prostředků kompilovaný do odkazovaného sestavení používá následující autoritu a cestu:
 
-- **Autorita**: aplikace: / / / / /.
+- **Autorita**: Application:///.
 
-- **Cesta**: Název zdrojového souboru, který se zkompiluje do odkazovaných sestavení. Cestou musí být v následujícím formátu:
+- **Cesta**: Název souboru prostředků, který je zkompilován do odkazovaného sestavení. Cesta musí odpovídat následujícímu formátu:
 
-  *AssemblyShortName*{ *; Verze*] { *; PublicKey*]; component /*cesta*
+  *AssemblyShortName* { *; Verze*] { *; PublicKey*]; součást/*cesta*
 
   - **AssemblyShortName**: krátký název odkazovaného sestavení.
 
-  - **; Verze** [volitelný]: verze odkazovaného sestavení, která obsahuje soubor prostředků. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.
+  - **; Verze** [volitelné]: verze odkazovaného sestavení, které obsahuje soubor prostředků. To se používá, když jsou načtena dvě nebo více odkazovaných sestavení se stejným krátkým názvem.
 
-  - **; PublicKey** [volitelný]: veřejný klíč, který se použil k podepsání odkazovaných sestavení. To se používá, když dva nebo víc odkazovaných sestavení se stejným názvem, short jsou načteny.
+  - **; PublicKey** [volitelné]: veřejný klíč, který se použil k podepsání odkazovaného sestavení. To se používá, když jsou načtena dvě nebo více odkazovaných sestavení se stejným krátkým názvem.
 
-  - **; součást**: Určuje, že se z místní sestavení odkazuje sestavení, který se odkazuje.
+  - **; Component**: Určuje, zda je na odkazované sestavení odkazováno z místního sestavení.
 
-  - **/ Cesta**: název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce projektu odkazované sestavení.
+  - **/Path**: název souboru prostředků, včetně jeho cesty, vzhledem k kořenu složky projektu odkazovaného sestavení.
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce projektu odkazované sestavení.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor prostředků, který je umístěn v kořenovém adresáři složky projektu odkazovaného sestavení.
 
 `pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml`
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který je umístěný v podsložce složky odkazované sestavení projektu.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor prostředků, který je umístěn v podsložce složky projektu odkazovaného sestavení.
 
 `pack://application:,,,/ReferencedAssembly;component/Subfolder/ResourceFile.xaml`
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce složky specifické pro verzi, odkazovaná sestavení projektu.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor prostředků, který je umístěn v kořenové složce odkazovaného projektu složky sestavení pro konkrétní verzi.
 
 `pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml`
 
-Všimněte si, že sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] syntaxe pro zdrojové soubory odkazované sestavení lze použít pouze s aplikací: / / / / / autoritu. Například následující se nepodporuje v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+Všimněte si, že [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] syntaxe balíčku pro odkazované soubory prostředků sestavení se dá použít jenom s autoritou Application:///. Následující příklad není podporován v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji.
 
 `pack://siteoforigin:,,,/SomeAssembly;component/ResourceFile.xaml`
 
 <a name="Content_File_Pack_URIs"></a>
 
-## <a name="content-file-pack-uris"></a>Identifikátory URI souboru balíčku obsahu
+## <a name="content-file-pack-uris"></a>Identifikátory URI sady souborů obsahu
 
-Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor s obsahem používá následující autority a cesta:
+Balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor obsahu používá následující autoritu a cestu:
 
-- **Autorita**: aplikace: / / / / /.
+- **Autorita**: Application:///.
 
-- **Cesta**: Název souboru obsahu, včetně jeho cesty relativní k umístění systému souboru hlavního spustitelného sestavení aplikace.
+- **Cesta**: Název souboru obsahu, včetně jeho cesty vzhledem k umístění systému souborů v hlavním spustitelném sestavení aplikace.
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahu soubor umístěný ve stejné složce jako spustitelného sestavení.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor obsahu umístěný ve stejné složce jako spustitelné sestavení.
 
 `pack://application:,,,/ContentFile.xaml`
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor obsahu, umístěné v podsložce, která je relativní vzhledem k sestavení spustitelného souboru aplikace.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro soubor obsahu umístěný v podsložce, která je relativní vzhledem ke spustitelnému sestavení aplikace.
 
 `pack://application:,,,/Subfolder/ContentFile.xaml`
 
 > [!NOTE]
-> [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] Nelze nalézt soubory obsahu do. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] Schéma podporuje pouze navigaci na [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] soubory, které jsou k dispozici na webovou stránku původu.
+> Soubory obsahu HTML nelze přejít na. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] Schéma podporuje pouze navigaci na soubory HTML, které jsou umístěny v lokalitě původu.
 
 <a name="The_siteoforigin_____Authority"></a>
 
-## <a name="site-of-origin-pack-uris"></a>Lokality identifikátorů URI zdroje balíčku
+## <a name="site-of-origin-pack-uris"></a>Server sad identifikátorů URI pro původní sadu
 
-Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] ke stránce původu soubor používá následující autority a cesta:
+Balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro lokalitu zdrojového souboru používá následující autoritu a cestu:
 
-- **Autorita**: siteoforigin: / / / / /.
+- **Autorita**: siteoforigin:///.
 
-- **Cesta**: Název lokality zdrojový soubor, včetně jeho cesty relativní k umístění, ze kterého byl spuštěn spustitelný soubor sestavení.
+- **Cesta**: Název lokality zdrojového souboru, včetně cesty vzhledem k umístění, ze kterého bylo spuštěno spustitelné sestavení.
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokality zdrojový soubor, uložené v umístění, ze kterého je spuštěn spustitelný soubor sestavení.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro lokalitu zdrojového souboru, uložený v umístění, ze kterého se spouští spustitelné sestavení.
 
 `pack://siteoforigin:,,,/SiteOfOriginFile.xaml`
 
-Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokality původu souborů uložených ve podsložky, která je relativní vzhledem k umístění, ze kterého se spustí spustitelný soubor sestavení aplikace.
+Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro lokalitu zdrojového souboru, uložený v podsložce, která je relativní k umístění, ze kterého se spouští sestavení spustitelného objektu aplikace.
 
 `pack://siteoforigin:,,,/Subfolder/SiteOfOriginFile.xaml`
 
@@ -186,9 +186,9 @@ Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../inclu
 
 ## <a name="page-files"></a>Stránkovací soubory
 
-[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky lze identifikovat pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro soubory prostředků.
+[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]soubory, které jsou konfigurovány jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho mohou být [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] položkyidentifikoványpomocíbalíčkuprosouboryprostředků.`Page` [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]
 
-Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které jsou běžně nakonfigurována jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky mají jeden z následujících jako jeho kořenový element:
+Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně konfigurovány jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky, mají jeden z následujících prvků jako svůj kořenový prvek:
 
 - <xref:System.Windows.Window?displayProperty=nameWithType>
 
@@ -204,22 +204,22 @@ Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sou
 
 <a name="Absolute_vs_Relative_Pack_URIs"></a>
 
-## <a name="absolute-vs-relative-pack-uris"></a>Absolutní vs. Identifikátory relativních Pack URI
+## <a name="absolute-vs-relative-pack-uris"></a>Absolutní vs. Identifikátory URI relativního balíčku
 
-Plně kvalifikovaný pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] obsahuje schéma, oprávnění a cesty, a bude považován za absolutní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]. Jako zjednodušení pro vývojáře [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvky obvykle umožňují nastavit příslušné atributy s relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)], který obsahuje pouze cestu.
+Plně kvalifikovaná sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] zahrnuje schéma, autoritu a cestu a je považována za absolutní sadu. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] V rámci zjednodušení pro vývojáře [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvky obvykle umožňují nastavit odpovídající atributy s relativním balíčkem [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)], který obsahuje pouze cestu.
 
-Představte si třeba následující absolutní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] soubor prostředků v místní sestavení.
+Zvažte například následující absolutní balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro soubor prostředků v místním sestavení.
 
 `pack://application:,,,/ResourceFile.xaml`
 
-Relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který odkazuje na tento prostředek soubor by.
+Relativní balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který odkazuje na tento soubor prostředků, by byl následující.
 
 `/ResourceFile.xaml`
 
 > [!NOTE]
-> Protože lokality původu soubory nejsou přiřazeny k sestavení, se může odkazovat jenom na absolutní Pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)].
+> Vzhledem k tomu, že lokalita původních souborů není přidružena k sestavením, mohou být pouze odkazována pouze s absolutním balíčkem [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)].
 
-Ve výchozím nastavení, relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] se považuje za relativní k umístění značek nebo kódu, který obsahuje odkaz na. Pokud se používá počáteční zpětné lomítko, ale relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkaz se považovat za kořeni aplikace. Zvažte například následující strukturu projektu.
+Ve výchozím nastavení je relativní balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] považován za relativní k umístění značky nebo kódu, který obsahuje odkaz. Je-li použito počáteční zpětné lomítko, je však odkaz na [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] relativní sadu považován za relativní ke kořenu aplikace. Zvažte například následující strukturu projektu.
 
 `App.xaml`
 
@@ -231,53 +231,53 @@ Ve výchozím nastavení, relativní pack [!INCLUDE[TLA2#tla_uri](../../../../in
 
 `+ Page2.xaml`
 
-Pokud obsahuje Page1.xaml [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , která odkazuje na *kořenové*\SubFolder\Page2.xaml, odkaz můžete použít následující relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Pokud Page1. XAML obsahuje [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkaz, který odkazuje na *kořenový*\SubFolder\Page2.XAML, může odkaz použít následující relativní sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
 
 `Page2.xaml`
 
-Pokud obsahuje Page1.xaml [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , která odkazuje na *kořenové*\Page2.xaml, odkaz můžete použít následující relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Pokud Page1. XAML obsahuje [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkaz, který odkazuje na *kořenový*\Page2.XAML, může odkaz použít následující relativní sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
 
 `/Page2.xaml`
 
 <a name="Pack_URI_Resolution"></a>
 
-## <a name="pack-uri-resolution"></a>Identifikátor URI rozlišení Pack
+## <a name="pack-uri-resolution"></a>Rozlišení URI balíčku
 
-Formát balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] umožňuje pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro různé typy souborů, které vypadají stejně. Představte si třeba následující absolutní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Formát balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] umožňuje, aby balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro různé typy souborů vypadal stejně. Zvažte například následující absolutní sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
 
 `pack://application:,,,/ResourceOrContentFile.xaml`
 
-Tento balíček absolutní [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] může odkazovat na soubor prostředků v místní sestavení nebo souboru obsahu. Totéž platí pro následující relativní [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Tento absolutní balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] může odkazovat buď na soubor prostředků v místním sestavení, nebo v souboru obsahu. Totéž platí pro následující relativní [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
 
 `/ResourceOrContentFile.xaml`
 
-Aby bylo možné určit typ souboru, který sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] řeší [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro soubory prostředků v místní sestavení a soubory obsahu pomocí heuristiky následující:
+Aby bylo možné určit typ souboru, na který balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] řeší [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] soubory prostředků v místních sestaveních a souborech obsahu pomocí následujících heuristik:
 
-1. Metadata sestavení testu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut, který odpovídá této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+1. Sondujte metadata sestavení pro <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut, který odpovídá balíčku. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]
 
-2. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nenajde, cesta balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor s obsahem.
+2. Pokud je [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] atribut nalezen, cesta k balíčku odkazuje na soubor obsahu. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>
 
-3. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nebyl nalezen, testovat soubory sady prostředků, které jsou kompilovány do místní sestavení.
+3. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> Pokud atribut nebyl nalezen, proveďte test souborů prostředků sady, které jsou zkompilovány do místního sestavení.
 
-4. Pokud soubor prostředků, která odpovídá cestu sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je najít cestu balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor prostředků.
+4. Pokud je nalezen soubor prostředků, který odpovídá cestě k balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , cesta k balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor prostředků.
 
-5. Pokud se prostředek nenajde, interně vytvořené <xref:System.Uri> je neplatný.
+5. Pokud se prostředek nenajde, interně vytvořené <xref:System.Uri> pole je neplatné.
 
-[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení se nedá použít pro [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které odkazují na následující:
+[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]řešení [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které se nevztahuje na tyto informace:
 
-- Obsah souborů v odkazovaných sestaveních: Služba nepodporuje tyto typy souborů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+- Soubory obsahu v odkazovaných sestaveních: tyto typy souborů nejsou podporovány [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástrojem.
 
-- Vložené soubory v odkazovaných sestaveních: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, která jsou jedinečná, vzhledem k tomu, aby obsahovaly název odkazovaného sestavení a `;component` příponu.
+- Vložené soubory v odkazovaných sestaveních: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] které identifikují jsou jedinečné, protože zahrnují název odkazovaného sestavení `;component` a příponu.
 
-- Lokality původu souborů: [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] poznají, které byly jedinečné, protože jsou pouze soubory, které lze identifikovat podle sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které obsahují siteoforigin: / / / / / autority.
+- Lokalita se zdrojovými [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] soubory: které identifikují jsou jedinečné, protože se jedná o jediné soubory, které je [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] možné identifikovat pomocí balíčku, který obsahuje autoritu siteoforigin:///.
 
-Jeden zápis, který pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení umožňuje, je pro kód je poněkud nezávislé na umístění prostředků a obsahu souborů. Například, pokud máte soubor prostředků v místním sestavení, které je překonfigurovat tak, aby se soubor s obsahem, sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředku zůstala stejná, stejně jako kód, který používá sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Jedno zjednodušení, které [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] umožňuje rozlišení balíčku, je, že kód může být trochu nezávislý na umístění souborů prostředků a obsahu. Například pokud máte soubor prostředků v lokálním sestavení, které je překonfigurováno na soubor obsahu, zůstane balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro prostředek stejný, jako kód, který používá sadu. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]
 
 <a name="Programming_with_Pack_URIs"></a>
 
-## <a name="programming-with-pack-uris"></a>Programování s identifikátory Pack URI
+## <a name="programming-with-pack-uris"></a>Programování s identifikátory URI balíčku
 
-Mnoho [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] třídy implementovat vlastnosti, které lze nastavit s aktualizací Service pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], včetně:
+Mnoho [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tříd implementuje vlastnosti, které lze nastavit pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], včetně:
 
 - <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>
 
@@ -291,62 +291,62 @@ Mnoho [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tř�
 
 - <xref:System.Windows.Controls.Image.Source%2A?displayProperty=nameWithType>
 
-Tyto vlastnosti můžete nastavit od značek a kódu. Tato část ukazuje základní konstrukce pro oba a potom jsou uvedeny příklady běžným scénářům.
+Tyto vlastnosti lze nastavit z kódu i kódu. Tato část ukazuje základní konstrukce pro obojí a pak ukazuje příklady běžných scénářů.
 
 <a name="Using_Pack_URIs_in_Markup"></a>
 
-### <a name="using-pack-uris-in-markup"></a>Pomocí identifikátory Pack URI v kódu
+### <a name="using-pack-uris-in-markup"></a>Použití identifikátorů URI Pack v kódu
 
-Aktualizací Service pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je zadán v kódu tak, že nastavíte elementu atributu s balíčkem [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]. Příklad:
+Sada [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je určena v označení pomocí nastavení elementu atributu s balíčkem [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]. Příklad:
 
 `<element attribute="pack://application:,,,/File.xaml" />`
 
-Tabulka 1 znázorňuje různé absolutní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu.
+Tabulka 1 znázorňuje různé absolutní balíky [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které lze zadat v označení.
 
-Tabulka 1: Absolutní Pack identifikátory URI v kódu
+Tabulka 1: Absolutní identifikátory URI Pack v kódu
 
-|Soubor|Absolutní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
+|Soubor|Absolutní sada[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
-|Soubor prostředků – místní sestavení|`"pack://application:,,,/ResourceFile.xaml"`|
-|Soubor prostředků v podsložce – místní sestavení|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
-|Soubor prostředků – odkazovaného sestavení|`"pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml"`|
+|Místní sestavení souboru prostředků|`"pack://application:,,,/ResourceFile.xaml"`|
+|Soubor prostředků v sestavení místních podsložek|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
+|Soubor prostředků – odkazované sestavení|`"pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml"`|
 |Soubor prostředků v podsložce odkazovaného sestavení|`"pack://application:,,,/ReferencedAssembly;component/Subfolder/ResourceFile.xaml"`|
-|Soubor prostředků v verze odkazovaného sestavení|`"pack://application:,,,/ReferencedAssembly;v1.0.0.0;component/ResourceFile.xaml"`|
-|Soubor s obsahem|`"pack://application:,,,/ContentFile.xaml"`|
-|Obsah souboru do podsložky|`"pack://application:,,,/Subfolder/ContentFile.xaml"`|
-|Lokality zdrojový soubor|`"pack://siteoforigin:,,,/SOOFile.xaml"`|
-|Lokality zdrojový soubor v podsložce|`"pack://siteoforigin:,,,/Subfolder/SOOFile.xaml"`|
+|Soubor prostředků ve verzi odkazovaného sestavení|`"pack://application:,,,/ReferencedAssembly;v1.0.0.0;component/ResourceFile.xaml"`|
+|Soubor obsahu|`"pack://application:,,,/ContentFile.xaml"`|
+|Soubor obsahu v podsložce|`"pack://application:,,,/Subfolder/ContentFile.xaml"`|
+|Lokalita zdrojového souboru|`"pack://siteoforigin:,,,/SOOFile.xaml"`|
+|Lokalita zdrojového souboru v podsložce|`"pack://siteoforigin:,,,/Subfolder/SOOFile.xaml"`|
 
-Tabulka 2 ukazuje různé relativní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu.
+Tabulka 2 znázorňuje různé relativní sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které lze zadat v označení.
 
-Tabulka 2: Balíček relativní identifikátory URI v kódu
+Tabulka 2: Identifikátory URI relativních balíčků v kódu
 
-|Soubor|Relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
+|Soubor|Relativní balíček[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
-|Soubor prostředků v místní sestavení|`"/ResourceFile.xaml"`|
-|Soubor prostředků v podsložce místní sestavení|`"/Subfolder/ResourceFile.xaml"`|
+|Soubor prostředků v místním sestavení|`"/ResourceFile.xaml"`|
+|Soubor prostředků v podsložce místního sestavení|`"/Subfolder/ResourceFile.xaml"`|
 |Soubor prostředků v odkazovaném sestavení|`"/ReferencedAssembly;component/ResourceFile.xaml"`|
 |Soubor prostředků v podsložce odkazovaného sestavení|`"/ReferencedAssembly;component/Subfolder/ResourceFile.xaml"`|
-|Soubor s obsahem|`"/ContentFile.xaml"`|
-|Obsah souboru do podsložky|`"/Subfolder/ContentFile.xaml"`|
+|Soubor obsahu|`"/ContentFile.xaml"`|
+|Soubor obsahu v podsložce|`"/Subfolder/ContentFile.xaml"`|
 
 <a name="Using_Pack_URIs_in_Code"></a>
 
-### <a name="using-pack-uris-in-code"></a>Použití identifikátory Pack URI v kódu
+### <a name="using-pack-uris-in-code"></a>Použití identifikátorů URI Pack v kódu
 
-Zadejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] v kódu po vytvoření instance <xref:System.Uri> třídy a předáním této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] jako parametr do konstruktoru. To je patrné z následujícího příkladu.
+Zadáte balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] v kódu vytvořením instance <xref:System.Uri> třídy a předáním balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] jako parametru do konstruktoru. To je patrné z následujícího příkladu.
 
 ```csharp
 Uri uri = new Uri("pack://application:,,,/File.xaml");
 ```
 
-Ve výchozím nastavení <xref:System.Uri> třídy bere v úvahu pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] být absolutní. V důsledku toho je vyvolána výjimka, pokud instance <xref:System.Uri> třída se vytvoří s relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].
+Ve výchozím nastavení <xref:System.Uri> třída považuje balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] za absolutní. V důsledku toho je vyvolána výjimka, když je vytvořena instance <xref:System.Uri> třídy s relativním balíčkem. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]
 
 ```csharp
 Uri uri = new Uri("/File.xaml");
 ```
 
-Naštěstí <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29> přetížení <xref:System.Uri> konstruktoru třídy přijímá parametr typu <xref:System.UriKind> aby bylo možné určit, zda sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je absolutní nebo relativní.
+Naštěstí přetížení konstruktoru třídy přijímá parametr typu <xref:System.UriKind> , který umožňuje určit, zda je balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] buď absolutní, nebo relativní. <xref:System.Uri> <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29>
 
 ```csharp
 // Absolute URI (default)
@@ -356,7 +356,7 @@ Uri relativeUri = new Uri("/File.xaml",
                         UriKind.Relative);
 ```
 
-Měli byste zadat jenom <xref:System.UriKind.Absolute> nebo <xref:System.UriKind.Relative> když jste si jisti, že zadaný balíček [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je jeden z nich. Pokud neznáte typ sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který se používá, například když uživatel zadá sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] v době běhu použít <xref:System.UriKind.RelativeOrAbsolute> místo.
+Měli byste zadat jenom <xref:System.UriKind.Absolute> nebo <xref:System.UriKind.Relative> , pokud jste si jisti, že zadaný [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] Pack je jeden nebo druhý. Pokud nevíte, který typ balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] se používá, například když uživatel zadá do balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] za běhu, použijte <xref:System.UriKind.RelativeOrAbsolute> místo toho.
 
 ```csharp
 // Relative or Absolute URI provided by user via a text box
@@ -364,58 +364,58 @@ TextBox userProvidedUriTextBox = new TextBox();
 Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 ```
 
-Tabulka 3 znázorňuje různé relativní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu s použitím <xref:System.Uri?displayProperty=nameWithType>.
+Tabulka 3 znázorňuje různé relativní sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které lze zadat v kódu pomocí. <xref:System.Uri?displayProperty=nameWithType>
 
-Tabulka 3: Absolutní Pack identifikátory URI v kódu
+Tabulka 3: Absolutní identifikátory URI Pack v kódu
 
-|Soubor|Absolutní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
+|Soubor|Absolutní sada[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
-|Soubor prostředků – místní sestavení|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
-|Soubor prostředků v podsložce – místní sestavení|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
-|Soubor prostředků – odkazovaného sestavení|`Uri uri = new Uri("pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml", UriKind.Absolute);`|
+|Místní sestavení souboru prostředků|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
+|Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
+|Soubor prostředků – odkazované sestavení|`Uri uri = new Uri("pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml", UriKind.Absolute);`|
 |Soubor prostředků v podsložce odkazovaného sestavení|`Uri uri = new Uri("pack://application:,,,/ReferencedAssembly;component/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
-|Soubor prostředků v verze odkazovaného sestavení|`Uri uri = new Uri("pack://application:,,,/ReferencedAssembly;v1.0.0.0;component/ResourceFile.xaml", UriKind.Absolute);`|
-|Soubor s obsahem|`Uri uri = new Uri("pack://application:,,,/ContentFile.xaml", UriKind.Absolute);`|
-|Obsah souboru do podsložky|`Uri uri = new Uri("pack://application:,,,/Subfolder/ContentFile.xaml", UriKind.Absolute);`|
-|Lokality zdrojový soubor|`Uri uri = new Uri("pack://siteoforigin:,,,/SOOFile.xaml", UriKind.Absolute);`|
-|Lokality zdrojový soubor v podsložce|`Uri uri = new Uri("pack://siteoforigin:,,,/Subfolder/SOOFile.xaml", UriKind.Absolute);`|
+|Soubor prostředků ve verzi odkazovaného sestavení|`Uri uri = new Uri("pack://application:,,,/ReferencedAssembly;v1.0.0.0;component/ResourceFile.xaml", UriKind.Absolute);`|
+|Soubor obsahu|`Uri uri = new Uri("pack://application:,,,/ContentFile.xaml", UriKind.Absolute);`|
+|Soubor obsahu v podsložce|`Uri uri = new Uri("pack://application:,,,/Subfolder/ContentFile.xaml", UriKind.Absolute);`|
+|Lokalita zdrojového souboru|`Uri uri = new Uri("pack://siteoforigin:,,,/SOOFile.xaml", UriKind.Absolute);`|
+|Lokalita zdrojového souboru v podsložce|`Uri uri = new Uri("pack://siteoforigin:,,,/Subfolder/SOOFile.xaml", UriKind.Absolute);`|
 
-Tabulka 4 znázorňuje různé relativní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType>.
+Tabulka 4 znázorňuje různé relativní sady [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které lze zadat v kódu pomocí. <xref:System.Uri?displayProperty=nameWithType>
 
-Tabulka 4: Balíček relativní identifikátory URI v kódu
+Tabulka 4: Identifikátory URI relativních balíčků v kódu
 
-|Soubor|Relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
+|Soubor|Relativní balíček[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
-|Soubor prostředků – místní sestavení|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
-|Soubor prostředků v podsložce – místní sestavení|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
-|Soubor prostředků – odkazovaného sestavení|`Uri uri = new Uri("/ReferencedAssembly;component/ResourceFile.xaml", UriKind.Relative);`|
-|Soubor prostředků v podsložce - odkazovaného sestavení|`Uri uri = new Uri("/ReferencedAssembly;component/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
-|Soubor s obsahem|`Uri uri = new Uri("/ContentFile.xaml", UriKind.Relative);`|
-|Obsah souboru do podsložky|`Uri uri = new Uri("/Subfolder/ContentFile.xaml", UriKind.Relative);`|
+|Místní sestavení souboru prostředků|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
+|Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
+|Soubor prostředků – odkazované sestavení|`Uri uri = new Uri("/ReferencedAssembly;component/ResourceFile.xaml", UriKind.Relative);`|
+|Soubor prostředků v sestavení odkazovaném podsložkou|`Uri uri = new Uri("/ReferencedAssembly;component/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
+|Soubor obsahu|`Uri uri = new Uri("/ContentFile.xaml", UriKind.Relative);`|
+|Soubor obsahu v podsložce|`Uri uri = new Uri("/Subfolder/ContentFile.xaml", UriKind.Relative);`|
 
 <a name="Common_Pack_URI_Scenarios"></a>
 
-### <a name="common-pack-uri-scenarios"></a>Běžné scénáře identifikátoru URI balíčku
+### <a name="common-pack-uri-scenarios"></a>Scénáře identifikátoru URI pro Common Pack
 
-V předchozích částech projednat tom, jak vytvořit balíček [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro identifikaci prostředků, obsah a lokality původní soubory. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], tyto konstrukce se používají v mnoha různými způsoby, a následující části se věnují několika běžných použití.
+V předchozích částech jsme probrali postup sestavení [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] balíčku k identifikaci prostředků, obsahu a umístění původních souborů. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji se tyto konstrukce používají v různých způsobech a následující oddíly obsahují několik běžných použití.
 
 <a name="Specifying_the_UI_to_Show_when_an_Application_Starts"></a>
 
-#### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>Určení uživatelské rozhraní k zobrazení při spuštění aplikace
+#### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>Určení uživatelského rozhraní, které se zobrazí při spuštění aplikace
 
-<xref:System.Windows.Application.StartupUri%2A> Určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] zobrazíte, když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spuštění aplikace. Pro samostatné aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] může být okno, jak je znázorněno v následujícím příkladu.
+<xref:System.Windows.Application.StartupUri%2A>Určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , který se má zobrazit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] při spuštění aplikace. Pro samostatné aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] může být okno, jak je znázorněno v následujícím příkladu.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
-Samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] můžete také určit stránku jako počáteční uživatelského rozhraní, jak je znázorněno v následujícím příkladu.
+Samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] také můžete určit stránku jako počáteční uživatelské rozhraní, jak je znázorněno v následujícím příkladu.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-Pokud aplikace je samostatná aplikace, a stránka není zadán s <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] otevře <xref:System.Windows.Navigation.NavigationWindow> hostovat na stránce. Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], stránka se zobrazí v prohlížeči hostitele.
+Pokud se jedná o samostatnou aplikaci a je určena Stránka s nástrojem <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace otevře <xref:System.Windows.Navigation.NavigationWindow> a bude hostovat stránku. [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]V případě se stránka zobrazuje v prohlížeči hostitele.
 
 <a name="Navigating_to_a_Page"></a>
 
-#### <a name="navigating-to-a-page"></a>Přejděte na stránku
+#### <a name="navigating-to-a-page"></a>Navigace na stránku
 
 Následující příklad ukazuje, jak přejít na stránku.
 
@@ -423,13 +423,13 @@ Následující příklad ukazuje, jak přejít na stránku.
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml2)]
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml3)]
 
-Další informace o různých způsobů, jak procházet v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], naleznete v tématu [Přehled navigace](navigation-overview.md).
+Další informace o různých způsobech navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji najdete v tématu [Přehled navigace](navigation-overview.md).
 
 <a name="Specifying_a_Window_Icon"></a>
 
-#### <a name="specifying-a-window-icon"></a>Určení ikonu okna.
+#### <a name="specifying-a-window-icon"></a>Určení ikony okna
 
-Následující příklad ukazuje, jak pomocí identifikátoru URI můžete určit ikonu okna.
+Následující příklad ukazuje, jak použít identifikátor URI k určení ikony okna.
 
 [!code-xaml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]
 
@@ -437,9 +437,9 @@ Další informace naleznete v tématu <xref:System.Windows.Window.Icon%2A>.
 
 <a name="Loading_Image__Audio__and_Video_Files"></a>
 
-#### <a name="loading-image-audio-and-video-files"></a>Načítají se obrázek, zvuk a Video soubory
+#### <a name="loading-image-audio-and-video-files"></a>Načítání obrázků, zvukových souborů a videosouborů
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje aplikacím používat celou řadu typů médií, které můžete identifikovat a načítají s aktualizací Service pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], jak je znázorněno v následujícím příkladu.
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]umožňuje aplikacím využívat širokou škálu typů médií, které je možné identifikovat a načíst pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], jak je znázorněno v následujících příkladech.
 
 [!code-xaml[MediaPlayerVideoSample#VideoPackURIAtSOO](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaPlayerVideoSample/CS/HomePage.xaml#videopackuriatsoo)]
 
@@ -447,17 +447,17 @@ Další informace naleznete v tématu <xref:System.Windows.Window.Icon%2A>.
 
 [!code-xaml[ImageSample#ImagePackURIContent](~/samples/snippets/csharp/VS_Snippets_Wpf/ImageSample/CS/HomePage.xaml#imagepackuricontent)]
 
-Další informace o práci s mediálního obsahu, najdete v části [grafika a multimédia](../graphics-multimedia/index.md).
+Další informace o práci s mediálním obsahem najdete v tématu [grafika a multimédia](../graphics-multimedia/index.md).
 
 <a name="Loading_a_Resource_Dictionary_from_the_Site_of_Origin"></a>
 
-#### <a name="loading-a-resource-dictionary-from-the-site-of-origin"></a>Načítání z umístění původních slovník prostředků
+#### <a name="loading-a-resource-dictionary-from-the-site-of-origin"></a>Načítání slovníku prostředků z lokality původu
 
-Slovníky sloučených prostředků (<xref:System.Windows.ResourceDictionary>) lze použít pro podporu motivů aplikace. Jeden způsob, jak vytvářet a spravovat motivy, je vytvořit víc motivů jako slovníky prostředků, které jsou umístěné v lokalitě aplikace původu. To umožňuje motivy, které chcete přidat a aktualizovat bez nutnosti opětovné kompilace a opětovné nasazení aplikace. Tyto slovníky prostředků je možné identifikovat a načíst pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], která je uvedena v následujícím příkladu.
+Slovníky prostředků<xref:System.Windows.ResourceDictionary>() lze použít k podpoře motivů aplikace. Jedním ze způsobů, jak vytvářet a spravovat motivy, je vytvořit několik motivů jako slovníky prostředků nacházející se v lokalitě aplikace, kde je původ. To umožňuje přidat a aktualizovat motivy bez nutnosti opětovné kompilace a opětovného nasazení aplikace. Tyto slovníky prostředků lze identifikovat a načíst pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], který je znázorněn v následujícím příkladu.
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
-Přehled motivy obsažené v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], naleznete v tématu [styly a šablony](../controls/styling-and-templating.md).
+Přehled motivů v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]naleznete v tématu [stylování a šablonování](../controls/styling-and-templating.md).
 
 ## <a name="see-also"></a>Viz také:
 

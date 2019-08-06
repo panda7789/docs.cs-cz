@@ -5,208 +5,208 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: a3a991a841182438dca4ef0a4067d333180f4f60
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: d2b35a50d9d09bffd69ae8b8217d6e778ce66ea0
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380184"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796401"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
-Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrné obsah, například smíšené zleva doprava a klikněte pravým tlačítkem myši na zbývající data ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština nebo hebrejština mluvený uživatelů.  
+Na rozdíl od jakékoli jiné vývojové platformy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšenou levou a pravou a zprava doleva data ve stejném dokumentu. Ve stejnou chvíli [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří Skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako jsou arabské a hebrejské speaking Users.  
   
- Následující části popisují mnoho obousměrné funkce spolu s příklady znázorňující způsob k dosažení nejlepšího zobrazení obsahu obousměrné. Většina ukázek používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], i když můžete snadno použít koncepty C# nebo kódu jazyka Visual Basic.  
+ Následující části vysvětlují mnoho obousměrných funkcí společně s příklady ilustrující, jak dosáhnout nejlepšího zobrazení obousměrného obsahu. Většina ukázek používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], i když můžete snadno použít koncepty nástroje C# nebo kód Microsoft Visual Basic.  
 
 <a name="FlowDirection"></a>   
 ## <a name="flowdirection"></a>FlowDirection  
- Základní vlastnost, která definuje směr tok obsahu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace je <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Tuto vlastnost lze nastavit na jednu ze dvou hodnot výčtu, <xref:System.Windows.FlowDirection.LeftToRight> nebo <xref:System.Windows.FlowDirection.RightToLeft>. Vlastnost je k dispozici všem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky, které dědí <xref:System.Windows.FrameworkElement>.  
+ Základní vlastnost definující směr toku obsahu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci je. <xref:System.Windows.FrameworkElement.FlowDirection%2A> Tato vlastnost může být nastavena na jednu ze dvou hodnot <xref:System.Windows.FlowDirection.LeftToRight> výčtu nebo. <xref:System.Windows.FlowDirection.RightToLeft> Vlastnost je k dispozici pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] všechny prvky, které <xref:System.Windows.FrameworkElement>dědí z.  
   
- Následující příklady nastavují směr toku <xref:System.Windows.Controls.TextBox> elementu.  
+ Následující příklady nastaví směr <xref:System.Windows.Controls.TextBox> toku prvku.  
   
- **Směr zleva doprava**  
+ **Směr toku zleva doprava**  
   
  [!code-xaml[LTRRTL#LTR](~/samples/snippets/csharp/VS_Snippets_Wpf/LTRRTL/CS/Pane1.xaml#ltr)]  
   
- **Směr zprava doleva**  
+ **Směr toku zprava doleva**  
   
  [!code-xaml[LTRRTL#RTL](~/samples/snippets/csharp/VS_Snippets_Wpf/LTRRTL/CS/Pane1.xaml#rtl)]  
   
- Následující obrázek ukazuje, jak předchozí kód vykreslí.  
+ Následující obrázek ukazuje, jak se vykreslí předchozí kód.  
     
- ![Obrázek, který ukazuje směry různých toku.](./media/bidirectional-features-in-wpf-overview/left-right-right-left.png)  
+ ![Obrázek, který znázorňuje různé směry toku.](./media/bidirectional-features-in-wpf-overview/left-right-right-left.png)  
   
- Prvek v rámci [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] stromu zdědí <xref:System.Windows.FrameworkElement.FlowDirection%2A> ze svého kontejneru. V následujícím příkladu <xref:System.Windows.Controls.TextBlock> se nachází uvnitř <xref:System.Windows.Controls.Grid>, který se nachází v <xref:System.Windows.Window>. Nastavení <xref:System.Windows.FrameworkElement.FlowDirection%2A> pro <xref:System.Windows.Window> zahrnuje nastavení pro <xref:System.Windows.Controls.Grid> a <xref:System.Windows.Controls.TextBlock> také.  
+ Element v rámci [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] stromu <xref:System.Windows.FrameworkElement.FlowDirection%2A> zdědí z jeho kontejneru. V následujícím příkladu <xref:System.Windows.Controls.TextBlock> je <xref:System.Windows.Controls.Grid>uvnitř a, který se nachází v <xref:System.Windows.Window>. <xref:System.Windows.FrameworkElement.FlowDirection%2A> Nastavení proparametr<xref:System.Windows.Controls.Grid> implikujes pro a <xref:System.Windows.Controls.TextBlock> také. <xref:System.Windows.Window>  
   
  Následující příklad ukazuje nastavení <xref:System.Windows.FrameworkElement.FlowDirection%2A>.  
   
  [!code-xaml[FlowDirection#FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDirection/CS/Window1.xaml#flowdirection)]  
   
- Na nejvyšší úrovni <xref:System.Windows.Window> má <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection>, takže všechny prvky, které jsou v něm obsažena také dědí stejné <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Pro element, který má zadané přepsání <xref:System.Windows.FrameworkElement.FlowDirection%2A> ho musí přidat explicitní směr změnu, jako je například druhý <xref:System.Windows.Controls.TextBlock> v předchozím příkladem, kdy se změní na <xref:System.Windows.FlowDirection.LeftToRight>. Pokud ne <xref:System.Windows.FrameworkElement.FlowDirection%2A> je definován výchozí <xref:System.Windows.FlowDirection.LeftToRight> platí.  
+ <xref:System.Windows.Window> Nejvyšší úroveň má, takže <xref:System.Windows.FlowDirection.RightToLeft>všechny prvky obsažené v ní také dědí stejný <xref:System.Windows.FrameworkElement.FlowDirection%2A>objekt <xref:System.Windows.FlowDirection>. Pro prvek, který má přepsat specifikovanou <xref:System.Windows.FrameworkElement.FlowDirection%2A> , musí přidat explicitní změnu směru, jako je například druhý <xref:System.Windows.Controls.TextBlock> v předchozím příkladu, který se <xref:System.Windows.FlowDirection.LeftToRight>změní na. Pokud není definován, použije se výchozí <xref:System.Windows.FlowDirection.LeftToRight>hodnota. <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
- Následující obrázek znázorňuje výstup z předchozího příkladu:
+ Následující obrázek ukazuje výstup předchozího příkladu:
 
- ![Obrázek, který znázorňuje směr změnu explicitní toku.](./media/bidirectional-features-in-wpf-overview/explicit-direction-change.png)  
+ ![Obrázek, který znázorňuje explicitní změnu směru toku.](./media/bidirectional-features-in-wpf-overview/explicit-direction-change.png)  
 
 <a name="FlowDocument"></a>   
 ## <a name="flowdocument"></a>FlowDocument  
- Mnoho vývojových platformách, jako [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)], [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] a Java poskytuje zvláštní podporu pro vývoj obsahu obousměrné. Značkovacích jazycích, jako [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] poskytnout obsahu zapisovače potřebné značky k zobrazení textu v požadovaném směru, například [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] 4.0 značky, "dir", který přijímá jako hodnoty "rtl" nebo "ltr". Tato značka je podobný <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastností, ale <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost funguje v pokročilejší způsob, jak rozložení textový obsah a je možné pro obsah než text.  
+ Řada vývojových platforem, jako jsou [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] HTML a Java, nabízí speciální podporu pro vývoj obousměrného obsahu. Jazyky značek, jako je například HTML, poskytují zapisovači obsahu potřebné značky k zobrazení textu v libovolném požadovaném směru, například značka HTML 4,0, "dir", který přijímá "RTL" nebo "ltr" jako hodnoty. Tato značka je podobná <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnosti, <xref:System.Windows.FrameworkElement.FlowDirection%2A> ale vlastnost pracuje s pokročilejším způsobem rozložení textového obsahu a lze ji použít pro jiný obsah než text.  
   
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], <xref:System.Windows.Documents.FlowDocument> všestranný [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] element, který může hostovat kombinaci textu, tabulky, obrázky a další prvky. Ukázky v následujících částech použijte tento prvek.  
+ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]je univerzální prvek[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , který může hostovat kombinaci textu, tabulek, obrázků a dalších prvků. <xref:System.Windows.Documents.FlowDocument> Ukázky v následujících částech používají tento prvek.  
   
- Přidání text, který má <xref:System.Windows.Documents.FlowDocument> lze provést více této jedním způsobem. Je jednoduchý způsob, jak to provést prostřednictvím <xref:System.Windows.Documents.Paragraph> tedy blokových element sloužící k seskupení obsahu například podle textu. Chcete-li přidat text na úrovni vložení prvky pomocí ukázky <xref:System.Windows.Documents.Span> a <xref:System.Windows.Documents.Run>. <xref:System.Windows.Documents.Span> je určena k seskupování další prvky vložené toku na úrovni vložení obsahu elementu při <xref:System.Windows.Documents.Run> je tok, který na úrovni vložení obsahu, měla by obsahovat spuštění neformátovaný textový prvek. A <xref:System.Windows.Documents.Span> může obsahovat více <xref:System.Windows.Documents.Run> elementy.  
+ Přidání textu do <xref:System.Windows.Documents.FlowDocument> může být provedeno tím, že je jedním způsobem. Jediným způsobem, jak to provést, je prostřednictvím <xref:System.Windows.Documents.Paragraph> prvku, který je prvkem na úrovni bloku, který slouží k seskupení obsahu, jako je například text. Chcete-li přidat text do prvků na úrovni vložené pomocí <xref:System.Windows.Documents.Span> vzorků <xref:System.Windows.Documents.Run>a. <xref:System.Windows.Documents.Span>je element obsahu toku na úrovni vloženého objektu, který se používá pro seskupení dalších vložených <xref:System.Windows.Documents.Run> prvků, zatímco je element obsahu toku na úrovni vloženého objektu, který je určen pro spuštění neformátovaného textu. Může obsahovat více <xref:System.Windows.Documents.Run>elementů. <xref:System.Windows.Documents.Span>  
   
- První příklad dokumentu obsahuje dokument, který má několik síťových sdílet názvy; například `\\server1\folder\file.ext`. Určuje, zda máte tento odkaz sítě v dokumentu arabština nebo angličtina je vždy bude zobrazovat stejným způsobem. Následující obrázek znázorňuje použití elementu značky Span a zobrazuje odkaz v Arabský <xref:System.Windows.FlowDirection.RightToLeft> dokumentu:
+ Příklad prvního dokumentu obsahuje dokument, který má několik názvů síťových sdílených složek; například `\\server1\folder\file.ext`. Bez ohledu na to, jestli máte tento odkaz na síť v dokumentu arabštiny nebo angličtiny, je vždycky vhodné ho zobrazovat stejným způsobem. Následující obrázek znázorňuje použití prvku span a ukazuje odkaz v dokumentu arabštiny <xref:System.Windows.FlowDirection.RightToLeft> :
 
- ![Obrázek, který znázorňuje použití Span element. ](./media/bidirectional-features-in-wpf-overview/flow-direction-span-element.png "FlowDocument")  
+ ![Obrázek, který znázorňuje použití prvku span.](./media/bidirectional-features-in-wpf-overview/flow-direction-span-element.png "FlowDocument")  
   
- Vzhledem k tomu, že text je <xref:System.Windows.FlowDirection.RightToLeft>, všechny speciální znaky, jako "\\", oddělení textu v právo na levém pořadí. Který vede odkaz, nejsou zobrazeny ve správném pořadí, proto k vyřešení problému, text musí být vložen pro zachování samostatné <xref:System.Windows.Documents.Run> toku <xref:System.Windows.FlowDirection.LeftToRight>. Namísto toho, aby samostatné <xref:System.Windows.Documents.Run> pro jednotlivé jazyky, lepší způsob, jak problém vyřešit, je vložit méně často používané anglický text do větší arabština <xref:System.Windows.Documents.Span>.  
+ Vzhledem k tomu, <xref:System.Windows.FlowDirection.RightToLeft>že text je, všechny speciální znaky, například\\"", oddělte text vpravo k levému pořadí. To znamená, že odkaz není zobrazen ve správném pořadí, proto je nutné tento problém vyřešit tak, aby se zachovalo samostatné <xref:System.Windows.Documents.Run> <xref:System.Windows.FlowDirection.LeftToRight>toky. Místo toho, aby se <xref:System.Windows.Documents.Run> pro každý jazyk používala samostatná, je vhodnější tento problém vyřešit tak, že do větší arabského <xref:System.Windows.Documents.Span>textu vložíte méně často používaný anglický text.  
   
- Následující obrázek ukazuje to pomocí elementu spuštění součástí Span element:
+ Následující obrázek znázorňuje to pomocí elementu Run vloženého v elementu span:
 
- ![Symbol, který ukazuje spuštění prvek vložit Span element.](./media/bidirectional-features-in-wpf-overview/embedded-span-element.png)  
+ ![Obrázek, který znázorňuje element Run vložený v elementu span.](./media/bidirectional-features-in-wpf-overview/embedded-span-element.png)  
   
- Následující příklad ukazuje použití <xref:System.Windows.Documents.Run> a <xref:System.Windows.Documents.Span> prvky v dokumentech.  
+ Následující příklad ukazuje použití <xref:System.Windows.Documents.Run> elementů a <xref:System.Windows.Documents.Span> v dokumentech.  
   
  [!code-xaml[RunSpan#RunSpan](~/samples/snippets/csharp/VS_Snippets_Wpf/RunSpan/CS/Window1.xaml#runspan)]  
   
 <a name="SpanElements"></a>   
-## <a name="span-elements"></a>Elementy rozpětí  
- <xref:System.Windows.Documents.Span> Element funguje jako oddělovač hranice mezi texty s různými směry toku.  I <xref:System.Windows.Documents.Span> elementy se stejným směr toku jsou považovány za obousměrné různých oborů, což znamená, <xref:System.Windows.Documents.Span> prvky jsou uspořádány v kontejneru <xref:System.Windows.FlowDirection>, pouze obsah v rámci <xref:System.Windows.Documents.Span> – element Následuje <xref:System.Windows.FlowDirection> z <xref:System.Windows.Documents.Span>.  
+## <a name="span-elements"></a>Span – elementy  
+ <xref:System.Windows.Documents.Span> Prvek funguje jako oddělovač hranice mezi textem s různými směry toku.  I <xref:System.Windows.Documents.Span> prvky se stejným směrem toku jsou považovány za mají různé obousměrné obory <xref:System.Windows.FlowDirection>, <xref:System.Windows.Documents.Span> což znamená, že prvky jsou uspořádány v kontejneru, pouze obsah <xref:System.Windows.Documents.Span> v rámci elementu. <xref:System.Windows.FlowDirection> následuje<xref:System.Windows.Documents.Span>po.  
   
- Následující obrázek znázorňuje směr toku několik <xref:System.Windows.Controls.TextBlock> elementy.  
+ Následující obrázek znázorňuje směr toku několika <xref:System.Windows.Controls.TextBlock> prvků.  
     
- ![Obrázek, který ukazuje textové bloky s různými směry toku.](./media/bidirectional-features-in-wpf-overview/flow-direction-text-blocks.png)  
+ ![Obrázek, který znázorňuje textové bloky s různými směry toku.](./media/bidirectional-features-in-wpf-overview/flow-direction-text-blocks.png)  
   
- Následující příklad ukazuje způsob použití <xref:System.Windows.Documents.Span> a <xref:System.Windows.Documents.Run> prvků, které se výsledky, jak je znázorněno na předchozím obrázku.  
+ Následující příklad ukazuje, jak použít <xref:System.Windows.Documents.Span> prvky a <xref:System.Windows.Documents.Run> k vytvoření výsledků zobrazených v předchozím obrázku.  
   
  [!code-xaml[Span#Span](~/samples/snippets/csharp/VS_Snippets_Wpf/Span/CS/Window1.xaml#span)]  
   
- V <xref:System.Windows.Controls.TextBlock> prvky v ukázce <xref:System.Windows.Documents.Span> prvky jsou podrobně popsány podle <xref:System.Windows.FlowDirection> svých nadřazených složek, ale text v každé <xref:System.Windows.Documents.Span> element toky podle vlastní <xref:System.Windows.FlowDirection>. To se vztahuje na Latin a arabština – nebo jakéhokoli jiného jazyka.  
+ <xref:System.Windows.FlowDirection> <xref:System.Windows.FlowDirection> <xref:System.Windows.Documents.Span> V prvcích v ukázce <xref:System.Windows.Documents.Span> jsou prvky rozloženy podle jejich nadřazených prvků, ale text v rámci každého prvku toků pracuje podle vlastního typu. <xref:System.Windows.Controls.TextBlock> To platí pro Latinská a arabské jazyky – případně pro jiný jazyk.  
   
 ### <a name="adding-xmllang"></a>Přidání XML: lang  
- Následující obrázek znázorňuje další příklad, který se používá jako čísla a aritmetických výrazech `"200.0+21.4=221.4"`. Všimněte si, že pouze <xref:System.Windows.FlowDirection> nastavena.  
+ Následující obrázek ukazuje jiný příklad, který používá čísla a aritmetické výrazy, například `"200.0+21.4=221.4"`. Všimněte si, že <xref:System.Windows.FlowDirection> je nastavena pouze sada.  
     
- ![Obrázek, který se zobrazí pouze FlowDirection pomocí čísla.](./media/bidirectional-features-in-wpf-overview/numbers-flow-right-left.png)  
+ ![Obrázek, který zobrazuje čísla pouze pomocí FlowDirection.](./media/bidirectional-features-in-wpf-overview/numbers-flow-right-left.png)  
   
- Uživatelé tuto aplikaci bude možné zklamání výstup, i když <xref:System.Windows.FlowDirection> správná čísla nejsou upravená podle Arabské čísla by měla ve tvaru.  
+ Uživatelé této aplikace budou Disappointed výstupem, i když <xref:System.Windows.FlowDirection> je Opravná, i když je třeba, aby čísla nebyla ve tvaru arabského čísla.  
   
- Můžete například XAML prvky [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] atribut (`xml:lang`), který definuje jazyk jednotlivých prvků. XAML podporuje také [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] Princip jazyka kterým `xml:lang` hodnoty u nadřazené elementy ve stromové struktuře používají podřízené prvky. V předchozím příkladu protože jazyk nebyl definován pro <xref:System.Windows.Documents.Run> prvek nebo některý z jeho nejvyšší úrovně prvky, výchozí `xml:lang` bylo použito, což je `en-US` pro XAML. Interní číslo tvarování algoritmus [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vybere čísla v odpovídající jazyk – v tomto případě angličtina. Ujistěte se, arabština čísel vykreslení správně `xml:lang` musí být nastavena.  
+ Prvky XAML mohou zahrnovat [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] atribut (`xml:lang`), který definuje jazyk každého prvku. XAML také podporuje `xml:lang` princip [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] jazyka, který umožňuje, aby hodnoty použité pro nadřazené prvky ve stromu byly používány podřízenými prvky. V předchozím příkladu, protože jazyk nebyl definován pro <xref:System.Windows.Documents.Run> element nebo žádný z jeho elementů nejvyšší úrovně, byla použita výchozí hodnota `xml:lang` , která je určena `en-US` pro jazyk XAML. Algoritmus interního čísla tvarování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vybere čísla v odpovídajícím jazyku, v tomto případě v angličtině. Aby bylo možné správně vykreslit arabské `xml:lang` číslice, je třeba nastavit jejich správné nastavení.  
   
- Následující obrázek znázorňuje příklad s `xml:lang` přidán.  
+ Následující obrázek znázorňuje příklad s `xml:lang` přidáním.  
     
- ![Grafické, který znázorňuje Arabské čísla, která tok zprava doleva.](./media/bidirectional-features-in-wpf-overview/arabic-numbers-flow-right-left.png)  
+ ![Obrázek, který znázorňuje arabské čísla, která se směrují zprava doleva.](./media/bidirectional-features-in-wpf-overview/arabic-numbers-flow-right-left.png)  
   
  Následující příklad přidá `xml:lang` do aplikace.  
   
  [!code-xaml[LangAttribute#LangAttribute](~/samples/snippets/csharp/VS_Snippets_Wpf/LangAttribute/CS/Window1.xaml#langattribute)]  
   
- Mějte na paměti, že mnoho jazyky mají různé `xml:lang` hodnoty v závislosti na cílové oblasti, například `"ar-SA"` a `"ar-EG"` představují dvě varianty arabština. Předchozí příklady ukazují, že budete muset definovat jak `xml:lang` a <xref:System.Windows.FlowDirection> hodnoty.  
+ Počítejte s tím, že mnoho jazyků `xml:lang` má různé hodnoty v závislosti na cílové oblasti, `"ar-SA"` například a `"ar-EG"` představuje dvě varianty arabštiny. Předchozí příklady ilustrují, že je nutné definovat `xml:lang` hodnoty a. <xref:System.Windows.FlowDirection>  
   
 <a name="FlowDirectionNontext"></a>   
-## <a name="flowdirection-with-non-text-elements"></a>FlowDirection s prvky  
- <xref:System.Windows.FlowDirection> Definuje nejen tok text v textové element, ale také směr toku téměř všechny ostatní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] elementu. Ukazuje následující grafické <xref:System.Windows.Controls.ToolBar> , která používá vodorovnou <xref:System.Windows.Media.LinearGradientBrush> Chcete-li nakreslit jeho pozadí s levou správné přechod.  
+## <a name="flowdirection-with-non-text-elements"></a>FlowDirection s prvky, které nejsou textové  
+ <xref:System.Windows.FlowDirection>definuje nejen to, jak text toky v textovém elementu, ale také směr toku téměř všech ostatních [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků. Následující obrázek ukazuje <xref:System.Windows.Controls.ToolBar> , který používá vodorovný <xref:System.Windows.Media.LinearGradientBrush> k nakreslení pozadí s levým a pravým přechodem.  
 
- ![Obrázek znázorňující, panel nástrojů s zleva doprava přechodu.](./media/bidirectional-features-in-wpf-overview/toolbar-left-right-gradient.png)  
+ ![Obrázek, který zobrazuje panel nástrojů s levým a pravým přechodem.](./media/bidirectional-features-in-wpf-overview/toolbar-left-right-gradient.png)  
   
- Po nastavení <xref:System.Windows.FlowDirection> k <xref:System.Windows.FlowDirection.RightToLeft>, nejen <xref:System.Windows.Controls.ToolBar> jsou tlačítka uspořádány zprava doleva, ale i <xref:System.Windows.Media.LinearGradientBrush> změněné zarovnání jeho posuny tok zprava doleva.  
+ Po nastavení <xref:System.Windows.FlowDirection> na <xref:System.Windows.FlowDirection.RightToLeft>, nejen <xref:System.Windows.Controls.ToolBar> tlačítka jsou uspořádána zprava doleva, ale i v případě, že <xref:System.Windows.Media.LinearGradientBrush> se jejich posuny přemění na tok zprava doleva.  
   
- Následující obrázek ukazuje přibližování <xref:System.Windows.Media.LinearGradientBrush>.  
+ Následující obrázek znázorňuje nové zarovnání <xref:System.Windows.Media.LinearGradientBrush>.  
     
- ![Obrázek znázorňující, panel nástrojů s právo na levém přechodu.](./media/bidirectional-features-in-wpf-overview/toolbar-right-left-gradient.png)  
+ ![Obrázek, který zobrazuje panel nástrojů se směrem k levému barevnému přechodu.](./media/bidirectional-features-in-wpf-overview/toolbar-right-left-gradient.png)  
   
- Kreslení v následujícím příkladu <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.Controls.ToolBar>. (Nakreslete vlevo doprava, odeberte <xref:System.Windows.FlowDirection> atribut na <xref:System.Windows.Controls.ToolBar>.  
+ Následující příklad kreslí <xref:System.Windows.FlowDirection.RightToLeft>. <xref:System.Windows.Controls.ToolBar> (Chcete-li ji nakreslit vlevo, odeberte <xref:System.Windows.FlowDirection> atribut <xref:System.Windows.Controls.ToolBar>v.  
   
  [!code-xaml[Gradient#Gradient](~/samples/snippets/csharp/VS_Snippets_Wpf/Gradient/CS/Window1.xaml#gradient)]  
   
 <a name="FlowDirectionExceptions"></a>   
-### <a name="flowdirection-exceptions"></a>FlowDirection výjimky  
- Existuje několik případů kde <xref:System.Windows.FlowDirection> nechová podle očekávání. Tato část popisuje dva z těchto výjimek.  
+### <a name="flowdirection-exceptions"></a>Výjimky FlowDirection  
+ V některých případech <xref:System.Windows.FlowDirection> se nechová podle očekávání. Tato část se zabývá dvěma výjimkami.  
   
  **Obrázek**  
   
- <xref:System.Windows.Controls.Image> Představuje ovládací prvek, který zobrazí obrázek. V [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] jde použít s <xref:System.Windows.Controls.Image.Source%2A> vlastnost, která definuje [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] z <xref:System.Windows.Controls.Image> k zobrazení.  
+ <xref:System.Windows.Controls.Image> Představuje ovládací prvek, který zobrazuje obrázek. V [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] takovém případě lze použít <xref:System.Windows.Controls.Image.Source%2A> s vlastností <xref:System.Windows.Controls.Image> , která definuje [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] vlastnost, která má být zobrazena.  
   
- Na rozdíl od jiných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, <xref:System.Windows.Controls.Image> nedědí <xref:System.Windows.FlowDirection> z kontejneru. Ale pokud <xref:System.Windows.FlowDirection> nastavený explicitně na <xref:System.Windows.FlowDirection.RightToLeft>, <xref:System.Windows.Controls.Image> zobrazený Vodorovně obráceně. To je implementováno jako praktické funkce pro vývojáře obousměrné obsahu; vzhledem k tomu, že v některých případech se vytvoří vodorovně překlopení obrázku požadovaný efekt.  
+ Na <xref:System.Windows.Controls.Image> [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rozdílodjinýchprvkůnedědízkontejneru.<xref:System.Windows.FlowDirection> Pokud <xref:System.Windows.FlowDirection> je však nastavena explicitně na <xref:System.Windows.FlowDirection.RightToLeft>hodnotu, <xref:System.Windows.Controls.Image> je zobrazena překlopení vodorovně. To je implementováno jako pohodlnější funkce pro vývojáře obousměrného obsahu. vzhledem k tomu, že v některých případech je vodorovný překlopení obrázku požadovaným efektem.  
   
- Následující obrázek znázorňuje přetočený <xref:System.Windows.Controls.Image>.  
+ Následující obrázek ukazuje překlopení <xref:System.Windows.Controls.Image>.  
     
- ![Obrázek, který znázorňuje přetočený obrázek.](./media/bidirectional-features-in-wpf-overview/flipped-image-example.png)  
+ ![Obrázek, který ilustruje převrácenou bitovou kopii.](./media/bidirectional-features-in-wpf-overview/flipped-image-example.png)  
   
- Následující příklad ukazuje, že <xref:System.Windows.Controls.Image> nepodaří dědit <xref:System.Windows.FlowDirection> z <xref:System.Windows.Controls.StackPanel> , který jej obsahuje. **Poznámka:** musí mít soubor s názvem **ms_logo.jpg** na vaše C:\ jednotky spuštění tohoto příkladu.  
+ Následující příklad ukazuje, že <xref:System.Windows.Controls.Image> <xref:System.Windows.FlowDirection> nedědí z rozhraní <xref:System.Windows.Controls.StackPanel> , které ho obsahuje. **Poznámka:** V C:\ musíte mít soubor s názvem **ms_logo. jpg.** jednotku pro spuštění tohoto příkladu.  
   
  [!code-xaml[Image#Image](~/samples/snippets/csharp/VS_Snippets_Wpf/Image/CS/Window1.xaml#image)]  
   
- **Poznámka:** zahrnuté v souborech ke stažení je **ms_logo.jpg** souboru. Kód předpokládá, že je soubor .jpg ne uvnitř projektu, ale někam na jednotce C:\. Musíte zkopírovat .jpg ze souborů projektu na jednotce C:\ nebo změnou kódu vyhledejte soubor v projektu. Chcete-li provést tuto změnu `Source="file://c:/ms_logo.jpg"` k `Source="ms_logo.jpg"`.  
+ **Poznámka:** Součástí souborů ke stažení je soubor **ms_logo. jpg** . Kód předpokládá, že soubor. jpg není v projektu, ale někde na C:\ disky. Je nutné zkopírovat soubor. jpg ze souborů projektu do C:\ disk nebo změňte kód tak, aby byl soubor v projektu hledán. Chcete-li provést `Source="file://c:/ms_logo.jpg"` tuto `Source="ms_logo.jpg"`změnu na.  
   
- **Cesty**  
+ **Ruky**  
   
- Kromě <xref:System.Windows.Controls.Image>, je jiný element zajímavé <xref:System.Windows.Shapes.Path>. Cesta je objekt, který lze nakreslit řadu připojené čar a křivek. Se chová způsobem, který je podobný <xref:System.Windows.Controls.Image> týkající se jeho <xref:System.Windows.FlowDirection>, třeba jeho <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> vodorovné odráží její <xref:System.Windows.FlowDirection.LeftToRight> jeden. Ale na rozdíl od <xref:System.Windows.Controls.Image>, <xref:System.Windows.Shapes.Path> dědí její <xref:System.Windows.FlowDirection> z kontejneru a ten není potřeba explicitně zadat.  
+ Kromě <xref:System.Windows.Controls.Image>jiného zajímavého prvku je <xref:System.Windows.Shapes.Path>. Cesta je objekt, který může nakreslit řadu propojených čar a křivek. Se chová způsobem <xref:System.Windows.FlowDirection>, který se podobá tomu <xref:System.Windows.Controls.Image> , že se týká. například <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> je to horizontální zrcadlení jeho <xref:System.Windows.FlowDirection.LeftToRight> . Nicméně na rozdíl <xref:System.Windows.Controls.Image>od, <xref:System.Windows.Shapes.Path> dědí <xref:System.Windows.FlowDirection> z kontejneru a druhý jej nepotřebuje explicitně zadat.  
   
- Následující příklad nakreslí jednoduchý šipku pomocí 3 řádky. Na první šipku dědí <xref:System.Windows.FlowDirection.RightToLeft> směr z toku <xref:System.Windows.Controls.StackPanel> tak, aby jeho počátečního a koncového bodu se měří z kořenového adresáře na pravé straně. Druhá šipka, který má explicitní <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> také začne na pravé straně. Třetí šipka má ale jeho výchozí kořenové složky na levé straně. Další informace o vykreslování viz <xref:System.Windows.Media.LineGeometry> a <xref:System.Windows.Media.GeometryGroup>.  
+ V následujícím příkladu je nakreslena Jednoduchá šipka pomocí 3 čáry. První šipka zdědí <xref:System.Windows.FlowDirection.RightToLeft> směr toku <xref:System.Windows.Controls.StackPanel> od, takže počáteční a koncový bod se měří od kořene na pravé straně. Druhá šipka, která má explicitní <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> , začíná také na pravé straně. Třetí šipka ale má svůj počáteční kořen na levé straně. Další informace o kreslení naleznete v <xref:System.Windows.Media.LineGeometry> tématu <xref:System.Windows.Media.GeometryGroup>a.  
   
  [!code-xaml[Paths#Paths](~/samples/snippets/csharp/VS_Snippets_Wpf/Paths/CS/Window1.xaml#paths)]  
   
- Následující obrázek znázorňuje výstup z předchozího příkladu s vykresleno pomocí šipky `Path` element:
+ Následující obrázek znázorňuje výstup předchozího příkladu se šipkami nakreslenými pomocí `Path` elementu:
 
- ![Grafické, které ukazují vykreslen Path element šipky.](./media/bidirectional-features-in-wpf-overview/arrows-drawn-path-element.png)  
+ ![Obrázek, který znázorňuje šipky vykreslené pomocí elementu Path.](./media/bidirectional-features-in-wpf-overview/arrows-drawn-path-element.png)  
   
- <xref:System.Windows.Controls.Image> a <xref:System.Windows.Shapes.Path> jsou dva příklady o tom [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] používá <xref:System.Windows.FlowDirection>. Vedle vytváření rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků v konkrétní směr v rámci kontejneru, <xref:System.Windows.FlowDirection> lze použít s prvky, jako <xref:System.Windows.Controls.InkPresenter> které vykreslí rukopis na povrchu, <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>. Pokaždé, když potřebujete právo na levém chování pro obsah, který napodobuje zleva doprava chování, nebo naopak [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tuto funkci.  
+ A jsou dva příklady použití .<xref:System.Windows.FlowDirection> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.Image> <xref:System.Windows.Shapes.Path> Vedle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rozložení prvků v určitém směru v rámci <xref:System.Windows.FlowDirection> kontejneru lze použít s prvky, jako je například <xref:System.Windows.Controls.InkPresenter> vykreslí rukopis na povrchu, <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>. Kdykoli budete potřebovat právo k levému chování obsahu, který napodobuje chování zleva doprava nebo naopak, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tuto schopnost.  
   
 <a name="NumberSubstitution"></a>   
-## <a name="number-substitution"></a>Číslo nahrazení  
- V minulosti [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] obsahoval podporované číslo nahrazení tím, že znázornění různých tvarů jazykové verze pro stejné číslic a zajistit přitom ochranu interní úložiště tyto číslice unified mezi různá národní prostředí pro příklady čísel jsou uloženy v jejich dobře známé šestnáctkových hodnot, 0x40, 0x41, ale zobrazeného podle vybraný jazyk.  
+## <a name="number-substitution"></a>Nahrazování čísel  
+ Historicky se [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] zavedlo substituce čísel tím, že umožňuje reprezentace různých kulturních tvarů pro stejné číslice a přitom zachovat interní úložiště těchto číslic v různých národních prostředích, jako jsou například čísla uložená v jejich dobře známé hexadecimální hodnoty, 0x40, 0x41, ale zobrazeny podle vybraného jazyka.  
   
- To je povoleno aplikace ke zpracování číselných hodnot, aniž by bylo nutné je převést z jednoho jazyka do druhého, například může uživatel otevřít [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] tabulky v lokalizovaných arabština [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a zobrazit čísla ve tvaru v arabštině, ale jej otevřít v Evropská verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a podívejte se, Evropského reprezentace stejná čísla. To je také nutné pro další symboly, jako je oddělovací čárky a procento symbol, protože jsou obvykle připojeny čísla ve stejném dokumentu.  
+ To umožňuje aplikacím zpracovávat číselné hodnoty, aniž by je museli převést z jednoho jazyka na jiný, například uživatel může otevřít [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] tabulku v lokalizované arabštině [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a zobrazit čísla v arabštině, ale otevřít ji v Evropská verze [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nástroje a viz Evropské vyjádření stejných čísel. To je také nutné pro jiné symboly, jako jsou oddělovače čárky a symbol procenta, protože obvykle doprovázejí čísla ve stejném dokumentu.  
   
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pokračuje v tradici stejné a přidává další podporu pro tuto funkci, která umožní další kontrola uživatele nad kdy a jak se používá nahrazení. Zatímco tato funkce je navržená pro libovolný jazyk, je to užitečné zejména v obousměrné obsahu, kde tvarování čísla linky pro konkrétní jazyk obvykle představuje výzvu pro vývojáře aplikací z důvodu různé jazykové verze, které v můžou spouštět aplikace.  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]pokračuje v rámci stejné tradice a přidá další podporu pro tuto funkci, která umožňuje větší kontrolu nad tím, kdy a jak se použije náhrada. I když je tato funkce navržena pro libovolný jazyk, je zvláště užitečná v obousměrném obsahu, kde tvarování číslic pro určitý jazyk je obvykle výzvou pro vývojáře aplikací z důvodu různých kultur, na kterých může aplikace běžet.  
   
- Základní vlastnosti řízení jak číslo nahrazení funguje v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> vlastnost závislosti. <xref:System.Windows.Media.NumberSubstitution> Třída určuje, jak mají být zobrazeny čísla v textu. Má tři veřejné vlastnosti, které definují chování aplikace. Toto je souhrn všech vlastností.  
+ Základní vlastnost řídící, jak nahrazování čísel funguje v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rámci, <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> je vlastnost závislosti. <xref:System.Windows.Media.NumberSubstitution> Třída určuje, jak se mají zobrazovat čísla v textu. Má tři veřejné vlastnosti, které definují jeho chování. Následuje souhrn každé z vlastností.  
   
  **CultureSource:**  
   
- Tato vlastnost určuje, jak se určuje jazykovou verzi pro čísla. Bude mít jednu ze tří <xref:System.Windows.Media.NumberCultureSource> hodnot výčtu.  
+ Tato vlastnost určuje, jak je určena jazyková verze pro čísla. Přebírá jednu ze tří <xref:System.Windows.Media.NumberCultureSource> hodnot výčtu.  
   
-- Přepsání: Číslo jazykovou verzi je <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> vlastnost.  
+- Prioritu Jazyková verze Number je <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> vlastnost.  
   
-- Text: Číslo jazyková verze představuje jazykovou verzi textu spustit. Ve značce, to může být `xml:lang`, nebo její alias `Language` vlastnosti (<xref:System.Windows.FrameworkElement.Language%2A> nebo <xref:System.Windows.FrameworkContentElement.Language%2A>). Je také na výchozí hodnoty pro třídy odvozené od <xref:System.Windows.FrameworkContentElement>. Tyto třídy zahrnují <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType>, <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, <xref:System.Windows.Documents.TableCell?displayProperty=nameWithType> a tak dále.  
+- Text: Číslo jazykové verze je jazyková verze běhu textu. V označení by to `xml:lang`byla nebo jeho vlastnost aliasu `Language` (<xref:System.Windows.FrameworkElement.Language%2A> nebo <xref:System.Windows.FrameworkContentElement.Language%2A>). Také je výchozím nastavením pro třídy, které jsou odvozeny <xref:System.Windows.FrameworkContentElement>z. Takové třídy zahrnují <xref:System.Windows.Documents.Paragraph?displayProperty=nameWithType> <xref:System.Windows.Documents.Table?displayProperty=nameWithType>, atakdále.<xref:System.Windows.Documents.TableCell?displayProperty=nameWithType>  
   
-- Uživatel: Číslo jazykovou verzi je jazykové verze aktuálního vlákna. Tato vlastnost je výchozí nastavení pro všechny dílčí <xref:System.Windows.FrameworkElement> například <xref:System.Windows.Controls.Page>, <xref:System.Windows.Window> a <xref:System.Windows.Controls.TextBlock>.  
+- Uživatelský Číslo jazykové verze je jazyková verze aktuálního vlákna. Tato vlastnost je výchozím nastavením pro všechny podtřídy <xref:System.Windows.FrameworkElement> <xref:System.Windows.Controls.Page>, <xref:System.Windows.Window> jako jsou a <xref:System.Windows.Controls.TextBlock>.  
   
  **CultureOverride**:  
   
- <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> Vlastnost se používá jenom v případě <xref:System.Windows.Media.NumberSubstitution.CultureSource%2A> je nastavena na <xref:System.Windows.Media.NumberCultureSource.Override> a v opačném případě se ignoruje. Určuje číslo jazykovou verzi. Hodnota `null`, výchozí hodnota je interpretován jako en US.  
+ Vlastnost se používá pouze v případě, <xref:System.Windows.Media.NumberSubstitution.CultureSource%2A> že je vlastnost nastavena <xref:System.Windows.Media.NumberCultureSource.Override> na hodnotu a je ignorována v opačném případě. <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A> Určuje číselnou verzi. Hodnota `null`, výchozí hodnota, je interpretována jako en-US.  
   
  **Nahrazení**:  
   
- Tato vlastnost určuje typ čísla nahrazení provádět. Bude mít jednu z následujících <xref:System.Windows.Media.NumberSubstitutionMethod> hodnot výčtu:  
+ Tato vlastnost určuje typ nahrazování čísla, který má být proveden. Používá jednu z následujících <xref:System.Windows.Media.NumberSubstitutionMethod> hodnot výčtu:  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: Metoda nahrazení závisí na číslo jazykovou verzi <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> vlastnost. Toto nastavení je výchozí.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: Substituční metoda je určena na základě <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> vlastnosti číselné jazykové verze. Toto nastavení je výchozí.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud číslo jazykovou verzi je arabština nebo perština jazykové verze, určuje, že číslice závisí na kontextu.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Pokud je jazyková verze číselná nebo Perština, určuje, že číslice závisí na kontextu.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Čísla jsou vždy vykresleny jako Evropské číslice.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Číslice se vždycky vykreslují jako Evropské číslice.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>: Čísla jsou vykreslovány pomocí národní číslic čísla jazykové verze, jak jsou určené pro jazykovou verzi <xref:System.Globalization.CultureInfo.NumberFormat%2A>.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>: Čísla se vykreslují pomocí národních číslic pro číslo jazykové verze, jak je určeno v jazykové <xref:System.Globalization.CultureInfo.NumberFormat%2A>verzi.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>: Čísla jsou vykreslovány pomocí tradiční číslic čísla jazykové verze. Pro většinu jazykové verze, to je stejný jako <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Ale <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> výsledkem latinky číslic pro některé Arabské jazykové verze, že tato hodnota vede Arabské čísla linky pro všechny Arabské jazykové verze.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>: Čísla se vykreslují pomocí tradičních číslic pro jazykovou verzi. Pro většinu jazykových verzí je to stejné jako <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Výsledkem ale <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> jsou číslice latinky pro některé Arabské jazykové verze, zatímco tato hodnota má za následek arabské číslice pro všechny Arabské jazykové verze.  
   
- Co znamenají tyto hodnoty pro obousměrné obsahu pro vývojáře? Ve většině případů vývojář potřebovat pouze k definování <xref:System.Windows.FlowDirection> a jazyk každý textové [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvek, například `Language="ar-SA"` a <xref:System.Windows.Media.NumberSubstitution> logiky postará o zobrazování čísel podle správné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující příklad ukazuje použití arabština a angličtině čísla v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci spuštěnou na platformě arabské verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)].  
+ Co tyto hodnoty znamenají pro vývojáře s obousměrným obsahem? Ve většině případů může vývojář potřebovat definovat <xref:System.Windows.FlowDirection> a jazyk každého textového [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvku <xref:System.Windows.Media.NumberSubstitution> , například `Language="ar-SA"` a logika se postará o zobrazení čísel podle správné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]hodnoty. Následující příklad ukazuje použití arabských a anglické číslice v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci běžící v arabštině verze systému. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]  
   
  [!code-xaml[Numbers#Numbers](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers/CS/Window1.xaml#numbers)]  
   
- Následující obrázek znázorňuje výstup v předchozím příkladu, pokud máte spuštěný v Arabská verzi systému Windows s čísly arabština a angličtině zobrazí:
+ Následující obrázek ukazuje výstup předchozí ukázky, pokud používáte arabskou verzi Windows s zobrazenými arabskými a anglickými čísly:
 
- ![Obrázek znázorňující, arabština a angličtině čísla.](./media/bidirectional-features-in-wpf-overview/arabic-english-numbers.png)  
+ ![Obrázek zobrazující arabské a anglické číslo.](./media/bidirectional-features-in-wpf-overview/arabic-english-numbers.png)  
   
- <xref:System.Windows.FlowDirection> Byl důležité v tomto případě, protože nastavení <xref:System.Windows.FlowDirection> k <xref:System.Windows.FlowDirection.LeftToRight> místo toho by jste obdrželi Evropské číslice. Následující části popisují, jak vám má jednotné zobrazení číslic v celém dokumentu. Pokud v tomto příkladu není spuštěna na Windows arabština, zobrazí všechny číslice jako Evropské číslice.  
+ V <xref:System.Windows.FlowDirection> tomto případě bylo důležité, protože <xref:System.Windows.FlowDirection> nastavení na <xref:System.Windows.FlowDirection.LeftToRight> místo toho způsobilo, že by byly získány Evropské číslice. Následující části popisují, jak mít v celém dokumentu jednotný displej číslic. Pokud tento příklad není v arabštině Windows spuštěný, všechny číslice se zobrazí jako Evropské číslice.  
   
- **Definování pravidla nahrazení**  
+ **Definování pravidel nahrazení**  
   
- V reálné aplikaci můžete potřebovat nastavit jazyk prostřednictvím kódu programu. Můžete třeba nastavit `xml:lang` atribut stejně jako jste použili v systému [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], nebo možná změnit jazyk v závislosti na stavu aplikace.  
+ V reálné aplikaci může být potřeba nastavit jazyk programově. Například chcete nastavit `xml:lang` atribut tak, aby byl stejný jako ten [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], který používá systém, nebo možná změnit jazyk v závislosti na stavu aplikace.  
   
- Pokud chcete provést změny podle stavu aplikace, ujistěte se, použití jiné funkce poskytované službou [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
+ Pokud chcete provádět změny v závislosti na stavu aplikace, využijte jiné funkce, které [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje.  
   
- Nejprve nastavte součást aplikace `NumberSubstitution.CultureSource="Text"`. Použití tohoto nastavení zajišťuje, že nastavení nepochází z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro textové prvky, které mají "User" jako výchozí, jako například <xref:System.Windows.Controls.TextBlock>.  
+ Nejprve nastavte komponentu `NumberSubstitution.CultureSource="Text"`aplikace. Pomocí tohoto nastavení je zajištěno, že nastavení nepochází z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků textu, které mají jako výchozí hodnotu "uživatel", <xref:System.Windows.Controls.TextBlock>například.  
   
 Příklad:  
 
@@ -217,38 +217,38 @@ Příklad:
 </TextBlock>
 ```
 
-Do odpovídajícího C# kódu, nastavte `Language` vlastnosti, například `"ar-SA"`.  
+V příslušném C# kódu nastavte `Language` vlastnost například na `"ar-SA"`.  
   
 ```csharp
 text1.Language = System.Windows.Markup.XmlLanguage.GetLanguage("ar-SA");
 ```
 
-Pokud je nutné nastavit `Language` vlastnost jazyk uživatelského prostředí aktuálního uživatele použijte následující kód.  
+Pokud potřebujete nastavit `Language` vlastnost na jazyk uživatelského rozhraní aktuálního uživatele, použijte následující kód.  
   
 ```csharp
 text1.Language = System.Windows.Markup.XmlLanguage.GetLanguage(System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag);
 ```
 
- <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> představuje aktuální jazykovou verzi používané aktuální vlákno v době běhu.  
+ <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>představuje aktuální jazykovou verzi použitou aktuálním vláknem v době běhu.  
   
- Výsledná [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] příkladu by měl vypadat přibližně jako v následujícím příkladu.  
+ Konečný [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] příklad by měl být podobný následujícímu příkladu.  
   
  [!code-xaml[Numbers2#Numbers2](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers2/CS/Window1.xaml#numbers2)]  
   
- Výsledná C# by měl být podobný následujícímu příkladu.  
+ Konečný C# příklad by měl být podobný následujícímu.  
   
  [!code-csharp[NumbersCSharp#NumbersCSharp](~/samples/snippets/csharp/VS_Snippets_Wpf/NumbersCSharp/CSharp/Window1.xaml.cs#numberscsharp)]  
   
- Následující obrázek znázorňuje vypadá okno pro buď programovací jazyk zobrazení Arabské čísel:
+ Následující obrázek ukazuje, jak okno vypadá v programovacím jazyce a zobrazuje arabské číslice:
      
- ![Obrázek zobrazující Arabské čísla.](./media/bidirectional-features-in-wpf-overview/displays-arabic-numbers.png)  
+ ![Obrázek, který zobrazuje arabské číslice.](./media/bidirectional-features-in-wpf-overview/displays-arabic-numbers.png)  
   
- **Pomocí vlastnosti nahrazení**  
+ **Použití vlastnosti Substitution**  
   
- Funguje stejně, jako číslo nahrazení [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] závisí na jazyku text prvku a jeho <xref:System.Windows.FlowDirection>. Pokud <xref:System.Windows.FlowDirection> zleva doprava, pak jsou generovány Evropské číslice. Nicméně pokud mu předchází arabštině, nebo má jazyk nastavena na "ar" a <xref:System.Windows.FlowDirection> je <xref:System.Windows.FlowDirection.RightToLeft>, arabské číslic místo vykreslení.  
+ Způsob nahrazení čísel funguje v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] závislosti na jazyku textového prvku a jeho <xref:System.Windows.FlowDirection>typu. <xref:System.Windows.FlowDirection> Pokud je zleva doprava, vykreslí se Evropské číslice. Pokud je však před ním uveden arabský text nebo má jazyk nastavený na ar <xref:System.Windows.FlowDirection> <xref:System.Windows.FlowDirection.RightToLeft>, jsou místo toho vykreslovány arabské číslice.  
   
- V některých případech však můžete chtít vytvořit jednotný aplikaci, například Evropské číslice pro všechny uživatele. Nebo arabské číslic v <xref:System.Windows.Documents.Table> buňky s konkrétním <xref:System.Windows.Style>. Jeden snadný způsob, jak provést, která používá <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> vlastnost.  
+ V některých případech ale možná budete chtít vytvořit sjednocenou aplikaci, například Evropské číslice pro všechny uživatele. Nebo arabské číslice v <xref:System.Windows.Documents.Table> buňkách s určitou <xref:System.Windows.Style>příponou. Jedním jednoduchým způsobem, jak to udělat, <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> je použití vlastnosti.  
   
- V následujícím příkladu první <xref:System.Windows.Controls.TextBlock> nemá <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> vlastnost nastavena, aby algoritmus zobrazoval Arabské číslic podle očekávání. Nicméně v druhém <xref:System.Windows.Controls.TextBlock>, nahrazení je nastavena na evropské přepisuje výchozí nahrazení Arabské čísel a Evropském číslic zobrazovaných.  
+ V následujícím příkladu nemá první <xref:System.Windows.Controls.TextBlock> <xref:System.Windows.Media.NumberSubstitution.Substitution%2A> vlastnost nastavenou, takže algoritmus zobrazuje arabské číslice podle očekávání. V druhé <xref:System.Windows.Controls.TextBlock>je ale náhrada nastavená na evropské přepsání výchozí náhrady pro arabské číslice a zobrazí se Evropské číslice.  
   
  [!code-xaml[Numbers3#Numbers3](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers3/CS/Window1.xaml#numbers3)]

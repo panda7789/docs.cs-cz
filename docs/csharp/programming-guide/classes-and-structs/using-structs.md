@@ -1,40 +1,40 @@
 ---
-title: Použití struktur - C# Průvodce programováním
+title: Používání struktur – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 4d1acc758f0121e7450351c63538fd47f28ef732
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 5577a5042ba77e133e3c6ee7760f7c3a4cce0537
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398054"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796583"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
-`struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, že rozhraní .NET Framework obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "Coords" místo.  
+Typ je vhodný pro reprezentaci lehkých objektů `Point`, jako `Rectangle`jsou, `Color`a. `struct` I když je to tak pohodlné, aby představovala bod jako [třídu](../../../csharp/language-reference/keywords/class.md) s [automaticky implementovanými vlastnostmi](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [Struktura](../../../csharp/language-reference/keywords/struct.md) může být v některých scénářích efektivnější. Například pokud deklarujete pole objektů 1000 `Point` , přidělíte další paměť pro odkazování na každý objekt; v tomto případě bude struktura levnější. Vzhledem k tomu, že .NET Framework obsahuje <xref:System.Drawing.Point>objekt s názvem, struktura v tomto příkladu má místo toho název "CoOrds".  
   
  [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
- Jedná se o chybu, chcete-li definovat výchozí (bezparametrový) konstruktor pro struktury. Je také k chybě inicializace pole instance v těle struktury. Členy struktury zvenku přístupný lze inicializovat pouze pomocí konstruktoru s parametry, implicitní konstruktor bez parametrů, [objektu inicializátoru](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md), nebo přístupem k členy jednotlivě po struktury je deklaraci. Žádné soukromé nebo jinak nedostupná členy výhradně vyžadují použití konstruktory.
+ Je-li definována výchozí konstruktor (bez parametrů) pro strukturu, jedná se o chybu. Je také chyba při inicializaci pole instance v těle struktury. Členy struktury s externě přístupnými lze inicializovat pouze pomocí parametrizovaného konstruktoru, implicitního konstruktoru bez parametrů, [inicializátoru objektu](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)nebo přístupem k členům jednotlivě po deklaraci struktury. Všichni privátní nebo jinak nepřístupní členové vyžadují použití konstruktorů výhradně.
   
- Když vytvoříte pomocí objektu struktury [nové](../../../csharp/language-reference/operators/new-operator.md) operátoru, se vytvoří a odpovídající konstruktor se nazývá podle [podpis konstruktoru](../../../csharp/programming-guide/classes-and-structs/constructors.md#constructor-syntax). Na rozdíl od tříd, struktur dá vytvořit instance bez použití `new` operátor. V takovém případě není žádná volání konstruktoru, díky přidělení efektivnější. Však zůstanou nepřiřazené pole a objektu nelze použít, dokud všechna pole jsou inicializovány. To zahrnuje neschopnost získání nebo nastavení hodnot vlastností.
+ Když vytvoříte objekt struktury pomocí operátoru [New](../../../csharp/language-reference/operators/new-operator.md) , vytvoří se a příslušný konstruktor se zavolá podle [signatury konstruktoru](../../../csharp/programming-guide/classes-and-structs/constructors.md#constructor-syntax). Na rozdíl od tříd lze vytvořit instanci struktur bez použití `new` operátoru. V takovém případě neexistuje žádné volání konstruktoru, což zajistí efektivnější přidělení. Pole však zůstanou Nepřiřazeno a objekt nelze použít, dokud nebudou všechna pole inicializována. To zahrnuje neschopnost získat nebo nastavit hodnoty prostřednictvím vlastností.
 
- Pokud vytvoříte instanci objektu struktury pomocí výchozí, konstruktor bez parametrů, všichni členové jsou přiřazeny podle jejich [výchozí hodnoty](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md).
+ Pokud vytváříte instanci objektu struct pomocí výchozího konstruktoru bez parametrů, budou všichni členové přiřazeni podle jejich [výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md).
   
- Při zápisu konstruktor s parametry pro strukturu, je nutné explicitně inicializovat všechny členy. jinak zůstanou nepřiřazené jednoho nebo více členů a struktury nelze použít, vytváření Chyba kompilátoru CS0171.  
+ Při psaní konstruktoru s parametry pro strukturu musíte explicitně inicializovat všechny členy; jinak jeden nebo více členů zůstává Nepřiřazeno a strukturu nelze použít, což vyprodukuje chybu kompilátoru CS0171.  
   
- Není žádná dědičnost struktur, protože není pro třídy. Struktura nemůže dědit z jiné třídy nebo struktury a nemůže být základní třídy. Struktury, ale dědit ze základní třídy <xref:System.Object>. Struktury můžou implementovat rozhraní, a udělá to přesně stejně jako třídy.  
+ Pro struktury neexistuje žádná dědičnost, protože pro třídy existují třídy. Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Struktury, ale dědí ze základní třídy <xref:System.Object>. Struktura může implementovat rozhraní a funguje stejně jako třídy.  
   
- Nelze deklarovat třídu pomocí klíčového slova `struct`. V jazyce C# třídy a struktury jsou sémanticky rozdílné. Struktura je typ hodnoty, zatímco třída je typem odkazu. Další informace najdete v tématu [hodnotách](../../../csharp/language-reference/keywords/value-types.md).  
+ Třídu nelze deklarovat pomocí klíčového slova `struct`. V C#, třídy a struktury jsou sémanticky odlišné. Struktura je hodnotový typ, zatímco třída je odkazový typ. Další informace naleznete v tématu [typy hodnot](../../../csharp/language-reference/keywords/value-types.md).  
   
- Pokud potřebujete sémantiky typu odkazu, malé třída může efektivněji ošetřit systému Pokud se deklaruje jako struktury místo.  
+ Pokud nepotřebujete sémantiku typu reference, malá třída může být efektivnějším způsobem zpracována systémem, pokud ji deklarujete jako strukturu.  
   
 ## <a name="example-1"></a>Příklad 1  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje `struct` inicializace pomocí výchozí a konstruktor s parametry.  
+ Tento příklad ukazuje `struct` inicializaci pomocí výchozího i parametrizovaného konstruktoru.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
@@ -44,7 +44,7 @@ ms.locfileid: "67398054"
 ## <a name="example-2"></a>Příklad 2  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje funkce, která je jedinečné pro struktury. Vytvoří objekt Coords bez použití `new` operátor. Pokud vyměňujete slovo `struct` slovo `class`, nebude kompilovat program.  
+ Tento příklad ukazuje funkci, která je jedinečná pro struktury. Vytvoří objekt CoOrds bez použití `new` operátoru. Pokud nahradíte slovo `struct` `class`slovem, program nebude zkompilován.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  

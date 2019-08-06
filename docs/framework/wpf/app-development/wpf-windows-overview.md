@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: ffb397c673333b26649a815fce7a5d4e63e5b987
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 519afa7f39f669b184ccc269546ef930c114c404
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401722"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796781"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují vlastní okna <xref:System.Windows.Window> pomocí třídy. V tomto tématu <xref:System.Windows.Window> se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
@@ -167,7 +167,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 - Minimalizujte, maximalizujete a obnovíte, aniž by to ovlivnilo druhý.  
   
- Některá okna vyžadují relaci s oknem, který je otevírá. Například [!INCLUDE[TLA#tla_ide](../../../../includes/tlasharptla-ide-md.md)] může aplikace otevřít okna vlastností a nástrojů, jejichž typické chování je pokrýt okno, které je vytvoří. Kromě toho by tato okna měla vždycky zavřít, minimalizovat, maximalizovat a obnovit ve vzájemné součinnosti s oknem, který je vytvořil. Takový vztah může být vytvořen tak, že *jedno okno naplňuje* jako jiné a je dosaženo nastavením <xref:System.Windows.Window.Owner%2A> vlastnosti vlastnictví *okna* s odkazem na *okno vlastníka*. To je ukázáno v následujícím příkladu.  
+ Některá okna vyžadují relaci s oknem, který je otevírá. Například aplikace integrovaného vývojového prostředí (IDE) může otevřít okna vlastností a nástrojů, jejichž typické chování je pokrýt okno, které je vytvoří. Kromě toho by tato okna měla vždycky zavřít, minimalizovat, maximalizovat a obnovit ve vzájemné součinnosti s oknem, který je vytvořil. Takový vztah může být vytvořen tak, že jedno okno naplňuje jako jiné a je dosaženo nastavením <xref:System.Windows.Window.Owner%2A> vlastnosti vlastnictví *okna* s odkazem na *okno vlastníka*. To je ukázáno v následujícím příkladu.  
   
  [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
  [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
@@ -370,11 +370,11 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 <a name="WindowState"></a>   
 ## <a name="window-state"></a>Stav okna  
- Během životnosti okna s možností změny velikosti může mít tři stavy: normální, minimalizované a maximalizované. Okno s normálním  stavem je výchozí stav okna. Okno s tímto stavem umožňuje uživateli, aby ho přesunul a změnil jeho velikost pomocí úchytu změny velikosti nebo ohraničení, pokud jde o změnu velikosti.  
+ Během životnosti okna s možností změny velikosti může mít tři stavy: normální, minimalizované a maximalizované. Okno s normálním stavem je výchozí stav okna. Okno s tímto stavem umožňuje uživateli, aby ho přesunul a změnil jeho velikost pomocí úchytu změny velikosti nebo ohraničení, pokud jde o změnu velikosti.  
   
- Okno s minimalizovaným  stavem se sbalí na jeho tlačítko na panelu úkolů <xref:System.Windows.Window.ShowInTaskbar%2A> , pokud je `true`nastaveno na hodnotu; v opačném případě se sbalí na nejmenší možnou velikost, která může být a přemístění do levého dolního rohu plochy. Velikost minimalizovaného okna nelze měnit pomocí ohraničení nebo změny velikosti, i když minimalizované okno, které není zobrazeno na panelu úloh, lze přetáhnout na plochu.  
+ Okno s minimalizovaným stavem se sbalí na jeho tlačítko na panelu úkolů <xref:System.Windows.Window.ShowInTaskbar%2A> , pokud je `true`nastaveno na hodnotu; v opačném případě se sbalí na nejmenší možnou velikost, která může být a přemístění do levého dolního rohu plochy. Velikost minimalizovaného okna nelze měnit pomocí ohraničení nebo změny velikosti, i když minimalizované okno, které není zobrazeno na panelu úloh, lze přetáhnout na plochu.  
   
- Okno s maximalizovaném  stavem se zvětšuje na maximální velikost, která může být, což bude mít až velkou <xref:System.Windows.FrameworkElement.MaxWidth%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A>hodnotu, a <xref:System.Windows.Window.SizeToContent%2A> vlastnosti se určí. Podobně jako minimalizované okno nelze upravit velikost maximalizovaného okna pomocí úchytu pro změnu velikosti nebo přetažením ohraničení.  
+ Okno s maximalizovaném stavem se zvětšuje na maximální velikost, která může být, což bude mít až velkou <xref:System.Windows.FrameworkElement.MaxWidth%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A>hodnotu, a <xref:System.Windows.Window.SizeToContent%2A> vlastnosti se určí. Podobně jako minimalizované okno nelze upravit velikost maximalizovaného okna pomocí úchytu pro změnu velikosti nebo přetažením ohraničení.  
   
 > [!NOTE]
 >  <xref:System.Windows.Window.Top%2A> <xref:System.Windows.Window.Left%2A>Hodnoty vlastností<xref:System.Windows.FrameworkElement.Height%2A> , ,<xref:System.Windows.FrameworkElement.Width%2A>a v okně vždy reprezentují hodnoty pro normální stav, a to i v případě, že je okno momentálně maximalizováno nebo minimalizováno.  

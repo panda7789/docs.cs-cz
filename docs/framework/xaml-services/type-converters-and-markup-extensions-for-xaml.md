@@ -8,19 +8,19 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-ms.openlocfilehash: 6d859f5f341eaf7c86573077ec56eab7b4cd7bb8
-ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
+ms.openlocfilehash: d31d970e8e95726aa789f853ac12c4830498a743
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66722559"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796826"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
-Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ XAML a XAML zapisovače používají ke generování komponenty grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentovány odlišně v datovém proudu uzlu XAML. V této dokumentaci sady, převaděče typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převaděče hodnot.  
+Převaděče typů a rozšíření značek jsou dvě metody, které používají systémy typů XAML a zapisovače XAML ke generování komponent grafu objektů. I když sdílí některé charakteristiky, převaděče typů a rozšíření značek jsou v datovém proudu uzlu XAML reprezentovány jinak. V této sadě dokumentace jsou převaděče typů, přípony značek a podobné konstrukce někdy souhrnně označovány jako převaděče hodnot.  
   
 <a name="value_converters"></a>   
-## <a name="value-converters"></a>Převodníky hodnot  
- V XAML převaděče hodnot se používají pro různé scénáře. Následující seznam uvádí různé druhy převaděče hodnot v XAML:  
+## <a name="value-converters"></a>Převaděče hodnot  
+ V jazyce XAML jsou převaděče hodnot používány pro různé scénáře. V následujícím seznamu jsou uvedeny různé typy převaděčů hodnot v jazyce XAML:  
   
 - Konvertor typu  
   
@@ -28,42 +28,42 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
 - Serializátor hodnoty  
   
-- Související třídy nebo pomocná třída, která poskytuje logiku pro textová syntaxe XAML  
+- Související třída nebo třída podpory, která poskytuje logiku pro syntaxi textu XAML  
   
 <a name="type_converters"></a>   
 ## <a name="type-converters"></a>Převaděče typů  
- V definici rozhraní .NET Framework XAML Services jsou převaděče typů tříd, které jsou odvozeny z CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v rozhraní Microsoft .NET Framework před existoval XAML. Původnímu účelu se na podporu windows vlastnost a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Úvod XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> textová syntaxe (jak se nachází v hodnotě atributu nebo uzel hodnoty XAML) převést na objekt. <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na textová syntaxe. <xref:System.ComponentModel.TypeConverter> byl použit také v předchozích implementacích specifické pro architekturu XAML Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v XAML, naleznete v tématu [XAML přehled převaděčů typů pro](type-converters-for-xaml-overview.md).  
+ V definici .NET Framework XAML Services jsou převaděče typů třídy, které jsou odvozeny od <xref:System.ComponentModel.TypeConverter> třídy CLR. <xref:System.ComponentModel.TypeConverter>je třída, která byla v Microsoft .NET Framework před tím, než XAML existovala. Jeho původní účelem bylo podporovat okna vlastností a podobné textové úpravy metaphors pro vlastnosti IDE. Zavedení XAML pro .NET Framework používá <xref:System.ComponentModel.TypeConverter> k převodu syntaxe textu (jak je uvedeno v hodnotě atributu nebo uzlu hodnoty XAML) do objektu. <xref:System.ComponentModel.TypeConverter>lze také použít k serializaci hodnoty objektu na syntaxi textu. <xref:System.ComponentModel.TypeConverter>bylo použito také v předchozích implementacích XAML specifických pro rozhraní v Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o modulu <xref:System.ComponentModel.TypeConverter> v jazyce XAML naleznete v tématu [Přehled převaděčů typů pro jazyk XAML](type-converters-for-xaml-overview.md).  
   
 <a name="markup_extensions"></a>   
 ## <a name="markup-extensions"></a>Rozšíření značek  
- V implementaci rozhraní .NET Framework XAML Services – rozšíření značek jsou třídy, které jsou odvozeny z <xref:System.Windows.Markup.MarkupExtension> třídy. Rozšíření značek jsou pojem, který v tomto formuláři je vytvořena v jazyce XAML. Rozšíření značek jako nemusí vypadat extensible řídicí sekvence, která volá služba třídě poskytnout vlastní logiku si můžete představit. Z hlediska značek procesory XAML univerzálně rozpoznat rozšíření značek podle sekvence textu, který začíná levá složená závorka ({}) v textovém řetězci.  
+ Ve .NET Framework implementaci služeb XAML jsou rozšíření značek třídy, které jsou odvozeny z <xref:System.Windows.Markup.MarkupExtension> třídy. Rozšíření značek jsou koncept, který v tomto formuláři pochází z jazyka XAML. Rozšíření značek si můžete představit jako rozšiřitelnou řídicí sekvenci, která volá do třídy služby, aby poskytovala svou logiku. V souvislosti s označením procesory XAML univerzálně rozpoznávají rozšíření značek pomocí textové sekvence, která začíná levou složenou závorkou ({) v textovém řetězci.  
   
- Rozšíření značek se liší od převaděče typů. Převaděče typů jsou obvykle spojeny s typy nebo členy. Jsou vyvolány při vytvoření grafu objektu nebo serializace, zaznamená textová syntaxe, která souvisí s těmito entitami.  
+ Rozšíření značek se od převaděčů typů liší. Převaděče typů jsou obvykle přidruženy k typům nebo členům. Jsou vyvolány, když vytvoření grafu objektu nebo serializace nalezne textovou syntaxi spojenou s těmito entitami.  
   
- Rozšíření značek jsou spojeny s třídou jeden podpůrné služby, ale můžete použít pro libovolnou hodnotu člena. (Můžete ale implementovat vaše – rozšíření značek záměrně omezit jeho použití na některé členy nebo určení typů s použitím místní služby.) Rozšíření značek můžete přepsat přidružení konvertor typu. Nebo můžete využít k určete název atributu pro členy, které by jinak podporují textová syntaxe.  
+ Rozšíření značek jsou přidružena k jedné podpůrné třídě služby, ale lze ji použít pro libovolnou hodnotu člena. (Nicméně můžete implementovat rozšíření značek k úmyslnému omezení jeho použití na určité členy nebo cílové typy pomocí kontextu služby.) Rozšíření značek mohou přepsat přidružení konvertoru typu. Nebo je můžete použít k zadání hodnoty atributu pro členy, kteří jinak nepodporují syntaxi textu.  
   
- Další informace o implementaci vzoru rozšíření značek XAML naleznete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
+ Další informace o vzoru implementace rozšíření značek pro jazyk XAML naleznete v tématu [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> typy jsou v <xref:System.Windows.Markup> obor názvů a nikoli v <xref:System.Xaml> oboru názvů. To neznamená, že tyto typy jsou specifické pro WPF nebo Windows Forms technologií, které jinak naplnit oborů názvů CLR, které obsahují řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> jsou v oboru názvů System.Xaml sestavení a nejsou závislé na konkrétní verzi rozhraní framework. Tyto typy existovala v oboru názvů CLR pro .NET Framework 3.0 a zůstanou v oboru názvů CLR v rozhraní .NET Framework 4 vyhnuli narušení funkčnosti odkazů v existující projekty WPF. Další informace najdete v tématu [typy migrované z prostředí WPF do oboru názvů System.Xaml](types-migrated-from-wpf-to-system-xaml.md).  
+>  <xref:System.Windows.Markup.MarkupExtension> <xref:System.Windows.Markup.ValueSerializer> <xref:System.Xaml> Typy a jsou v oborunázvůivoborunázvů.<xref:System.Windows.Markup> To neznamená, že tyto typy jsou specifické pro technologie WPF nebo model Windows Forms, které jinak naplňují obory názvů CLR obsahující řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension>a <xref:System.Windows.Markup.ValueSerializer> jsou v sestavení System. XAML a nemají žádnou konkrétní závislost architektury. Tyto typy existovaly v oboru názvů CLR pro .NET Framework 3,0 a zůstávají v oboru názvů CLR v .NET Framework 4, aby nedocházelo k přerušení odkazů v existujících projektech WPF. Další informace naleznete v tématu [typy migrované z WPF do System. XAML](types-migrated-from-wpf-to-system-xaml.md).  
   
 <a name="value_serializers"></a>   
-## <a name="value-serializers"></a>Hodnota Serializátorů  
- A <xref:System.Windows.Markup.ValueSerializer> je speciální typ převaděče, která je optimalizovaná pro převod objektu na řetězec. A <xref:System.Windows.Markup.ValueSerializer> pro neimplementuje XAML `ConvertFrom` metoda vůbec. A <xref:System.Windows.Markup.ValueSerializer> získá služby způsobem, který je stejná jako implementace <xref:System.ComponentModel.TypeConverter> implementace. Virtuální metody poskytují vstupní `context` parametru. `context` Je parametr typu <xref:System.Windows.Markup.IValueSerializerContext>, který dědí z <xref:System.IServiceProvider> rozhraní a má <xref:System.IServiceProvider.GetService%2A> metody.  
+## <a name="value-serializers"></a>Serializátory hodnot  
+ <xref:System.Windows.Markup.ValueSerializer> Je specializovaný konvertor typu, který je optimalizován pro převod objektu na řetězec. Pro XAML nemusí `ConvertFrom` metodu implementovat vůbec. <xref:System.Windows.Markup.ValueSerializer> Implementace získá služby způsobem, který je <xref:System.ComponentModel.TypeConverter> jako implementace. <xref:System.Windows.Markup.ValueSerializer> Virtuální metody poskytují vstupní `context` parametr. Parametr je typu <xref:System.Windows.Markup.IValueSerializerContext> ,kterýdědíz<xref:System.IServiceProvider.GetService%2A> rozhraní a má metodu. <xref:System.IServiceProvider> `context`  
   
- V typu systému XAML a pro implementace zapisovače XAML, používající zpracování smyčky uzlu XAML pro serializaci převaděč hodnoty, který je přidružen typ nebo člen je ohlášena vlastní <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> vlastnost. Význam, aby uživatelé vytvářející obsah XAML, které provádějí serializace je, že pokud <xref:System.Xaml.XamlType.TypeConverter%2A?displayProperty=nameWithType> a <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> existují, byste měli použít konvertor typu pro načíst cestu a serializátor hodnoty byste měli použít pro uložení cestu. Pokud <xref:System.Xaml.XamlType.TypeConverter%2A?displayProperty=nameWithType> existuje, ale <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> je `null`, konvertor typu se také používá pro uložení cestu.  
+ V systému typů XAML a pro implementaci zapisovače XAML, které používají zpracování smyčky uzlů XAML pro serializaci, je převaděč hodnot, který je přidružen k typu nebo členu, hlášen <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> podle vlastní vlastnosti. Význam pro zapisovače XAML, který provádí serializaci, je <xref:System.Xaml.XamlType.TypeConverter%2A?displayProperty=nameWithType> , <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> že pokud existují a, musí být použit konvertor typu pro cestu načtení a serializátor hodnoty by měl být použit pro cestu pro uložení. Pokud <xref:System.Xaml.XamlType.TypeConverter%2A?displayProperty=nameWithType> existuje, <xref:System.Xaml.XamlType.ValueSerializer%2A?displayProperty=nameWithType> ale `null`je, převaděč typu se používá také pro cestu pro uložení.  
   
 <a name="other_value_converters"></a>   
 ## <a name="other-value-converters"></a>Další převaděče hodnot  
- Převaděč hodnot je možné rozšířit nad rámec určité vzory konvertor typu nebo rozšíření značek. Toto přizpůsobení by ale také vyžadovat předefinování typu systému XAML podle rozhraní .NET Framework XAML Services. V existujícím typu systému XAML je reprezentace a vytváření sestav systémy pro převaděče typů, rozšíření značek a hodnotu serializátory, ale ne pro vlastní formuláře Převod hodnoty. Pokud chcete vytvořit vlastní převodníky hodnot, použijte <xref:System.Xaml.Schema.XamlValueConverter%601> typu.  
+ Konvertor hodnot je rozšiřitelný nad rámec specifických vzorů konvertoru typu nebo rozšíření značek. Nicméně toto přizpůsobení by vyžadovalo také předefinování systému typu XAML, jak poskytuje .NET Framework služby XAML. Existující systém typů XAML obsahuje reprezentace a systémy vytváření sestav pro převaděče typů, rozšíření značek a serializace hodnot, ale nikoli pro vlastní formy převodu hodnot. Pokud chcete vytvořit vlastní převaděče hodnot, použijte <xref:System.Xaml.Schema.XamlValueConverter%601> typ.  
   
 <a name="type_converters_and_markup_extensions_in_combination"></a>   
 ## <a name="type-converters-and-markup-extensions-in-combination"></a>Převaděče typů a rozšíření značek v kombinaci  
- Rozšíření a typ převaděče značky se používají pro různé situace v XAML. I když je k dispozici pro použití rozšíření značky kontext, není chování převodu typu vlastnosti, kde rozšíření značek zajišťuje, že hodnota je obecně změnami implementace rozšíření značek. Jinými slovy i v případě, že rozšíření značek vrací textový řetězec jako jeho `ProvideValue` výstupu, není vyvolána chování převodu typu pro tento řetězec jako použitý pro určitou vlastnost nebo typ hodnoty vlastnosti. Obecně platí je účelem rozšíření značek ke zpracování řetězce a vrátit objekt bez jakékoli konvertor typu zahrnutých.  
+ Rozšíření značek a převaděče typů se používají pro různé situace v jazyce XAML. Přestože je kontext k dispozici pro použití rozšíření značek, chování konverze typu vlastností, kde rozšíření značek poskytuje hodnotu obecně není zaškrtnuto v implementacích rozšíření značek. Jinými slovy, i když rozšíření značek vrátí textový řetězec jako svůj `ProvideValue` výstup, chování konverze typu u tohoto řetězce, jak je použito na konkrétní vlastnost nebo typ hodnoty vlastnosti není vyvoláno. Obecně platí, že účelem rozšíření označení je zpracování řetězce a vrácení objektu bez jakéhokoli konvertoru typu.  
   
 <a name="service_context_for_a_value_converter"></a>   
-## <a name="service-context-for-a-value-converter"></a>Kontext služby pro převaděč hodnoty  
- Při implementaci převaděč hodnoty často potřebují přístup ke kontextu, ve kterém se použije převaděč hodnoty. Tento kontext se označuje jako kontext služby. Kontext služby může obsahovat informace, jako je aktivní kontext schématu XAML, přístup k mapování systém typů, které poskytují kontext schématu XAML a XAML objektu zapisovače a tak dále. Další informace o kontexty služby dostupné pro převaděče hodnoty a jak získat přístup ke službám, které můžou poskytovat kontext služby najdete v tématu [služby kontexty dostupné pro převaděče typů a rozšíření značek](service-contexts-available-to-type-converters-and-markup-extensions.md).  
+## <a name="service-context-for-a-value-converter"></a>Kontext služby pro konvertor hodnot  
+ Při implementaci převaděče hodnot často potřebujete přístup k kontextu, ve kterém je použit převaděč hodnoty. Tento kontext je známý jako kontext služby. Kontext služby může zahrnovat informace, jako je například aktivní kontext schématu XAML, přístup k systému mapování typů, který kontext schématu XAML a zapisovač objektů XAML poskytují atd. Další informace o kontextech služby dostupných pro konvertor hodnot a o tom, jak získat přístup ke službám, které může poskytovat kontext služby, najdete v tématu kontexty [služby dostupné pro převaděče typů a rozšíření značek](service-contexts-available-to-type-converters-and-markup-extensions.md).  
   
 ## <a name="see-also"></a>Viz také:
 

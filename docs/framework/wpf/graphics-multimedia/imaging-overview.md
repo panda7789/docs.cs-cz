@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: b6fb530bbc4132b09cc17ad692e6e9e23cd75598
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 9adceb78f53d9c855ec05859a0b3449a1623e62b
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671842"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796844"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
@@ -165,7 +165,7 @@ Různá nastavení Stretch
 ## <a name="image-metadata"></a>Metadata image  
  Některé soubory obrázků obsahují metadata, která popisují obsah nebo vlastnosti souboru. Většina digitálních fotoaparátů například vytváří image obsahující metadata o typu a modelu kamery používané k zachycení bitové kopie. Každý formát obrázku zpracovává metadata jinak, [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] ale poskytuje jednotný způsob ukládání a načítání metadat pro každý podporovaný formát obrázku.  
   
- Přístup k metadatům se poskytuje prostřednictvím <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vlastnosti <xref:System.Windows.Media.Imaging.BitmapSource> objektu. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A><xref:System.Windows.Media.Imaging.BitmapMetadata> vrátí objekt, který obsahuje všechna metadata obsažená v obrázku. Tato data můžou být v jednom schématu metadat nebo v kombinaci různých schémat. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]podporuje následující schémata metadat obrázků: Soubor bitové kopie (EXIF), text (PNG text), [!INCLUDE[TLA#tla_ifd](../../../../includes/tlasharptla-ifd-md.md)], [!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)]a [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)].  
+ Přístup k metadatům se poskytuje prostřednictvím <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> vlastnosti <xref:System.Windows.Media.Imaging.BitmapSource> objektu. <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A><xref:System.Windows.Media.Imaging.BitmapMetadata> vrátí objekt, který obsahuje všechna metadata obsažená v obrázku. Tato data můžou být v jednom schématu metadat nebo v kombinaci různých schémat. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]podporuje následující schémata metadat obrázků: Soubor bitové kopie (EXIF), text (textová data png), adresář souboru obrázku (IFD), [!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)], a. [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)]  
   
  Aby bylo možné zjednodušit proces čtení <xref:System.Windows.Media.Imaging.BitmapMetadata> metadat, poskytuje několik pojmenovaných vlastností, které mohou být snadno dostupné, <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A> <xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>například, <xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>a. Mnohé z těchto pojmenovaných vlastností lze také použít k zápisu metadat. Další podpora pro čtení metadat je poskytována čtečkou dotazů metadat. Metoda se používá k načtení čtečky dotazů metadat zadáním řetězcového dotazu, jako je například *"/app1/EXIF/".* <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> V následujícím příkladu <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A> se používá k získání textu uloženého v umístění *"/text/Description"* .  
   

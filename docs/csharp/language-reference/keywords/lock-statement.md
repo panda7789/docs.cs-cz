@@ -1,7 +1,7 @@
 ---
-title: Lock – příkaz - C# odkaz
+title: příkaz Lock – C# odkaz
 ms.custom: seodec18
-description: Použijte příkaz lock jazyka C# k synchronizaci přístupu vláken ke sdíleným prostředkům
+description: Použití příkazu C# Lock k synchronizaci přístupu ke vláknu ke sdílenému prostředku
 ms.date: 10/01/2018
 f1_keywords:
 - lock_CSharpKeyword
@@ -9,18 +9,18 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: c7d5d4ef7d812e186813cd08f9e4e2adf2ab1a58
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 96609264044e531bcc8671cb226a02fdc1b962b8
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306658"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796451"
 ---
-# <a name="lock-statement-c-reference"></a>Lock – příkaz (referenční dokumentace jazyka C#)
+# <a name="lock-statement-c-reference"></a>Lock – příkazC# (Referenční dokumentace)
 
-`lock` Příkaz získá vyloučeného zámek pro daný objekt, provede blok příkazů a poté uvolní zámek. Dokud je držen zámek, vlákna, která je držitelem zámku znovu získat a uvolní zámek. Ostatní vlákna je blokovaný zámek získávání a čeká na zámek je uvolněn.
+`lock` Příkaz získá zámek vzájemného vyloučení pro daný objekt, spustí blok příkazu a pak uvolní zámek. I když je držen zámek, vlákno, které obsahuje zámek, může znovu načíst a uvolnit zámek. Jakékoli jiné vlákno zablokovalo získání zámku a čeká na uvolnění zámku.
 
-`lock` Příkaz má formát
+`lock` Příkaz má formu.
 
 ```csharp
 lock (x)
@@ -29,7 +29,7 @@ lock (x)
 }
 ```
 
-kde `x` je výraz [odkazovat na typ](reference-types.md). To je přesně odpovídá
+kde `x` je výraz [typu odkazu](reference-types.md). Je přesně stejný jako
 
 ```csharp
 object __lockObj = x;
@@ -45,34 +45,33 @@ finally
 }
 ```
 
-Protože kód používá [try... finally](try-finally.md) bloku, zámek je všeobecně dostupné i v případě, že dojde k výjimce v těle `lock` příkaz.
+Vzhledem k tomu, že kód používá [Try... finally](try-finally.md) Block, zámek je uvolněn i v případě, že je vyvolána výjimka v těle `lock` příkazu.
 
-Nelze použít [await](await.md) – klíčové slovo v textu `lock` příkazu.
+Klíčové slovo [await](await.md) nelze použít v těle `lock` příkazu.
 
 ## <a name="remarks"></a>Poznámky
 
-Při synchronizaci přístupu vláken ke sdíleným prostředkům uzamčení na instanci vyhrazené objektu (například `private readonly object balanceLock = new object();`) nebo do jiné instance, která pravděpodobně nebude používat jako objekt zámek nesouvisejících částí kódu. Vyhněte se použití stejné instance objektu zámku pro různé sdílené prostředky, protože může dojít k zablokování nebo lock kolize. Konkrétně se vyhněte se použití následujících jako objekty zámku:
+Když synchronizujete přístup vlákna ke sdílenému prostředku, zamkněte instanci vyhrazeného objektu (například `private readonly object balanceLock = new object();`) nebo jinou instanci, která je pravděpodobně použita jako objekt zámku nesouvisejícími částmi kódu. Vyhněte se použití stejné instance uzamknutého objektu u různých sdílených prostředků, protože by mohlo dojít k zablokování nebo zamykání. Zejména se vyhněte použití následujícího objektu jako zámku objektů:
 
-- `this`, jak ho můžou používat volající jako zámek.
-- <xref:System.Type> instance, jako ty, může získat službou [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) operátor nebo reflexe.
-- řetězec instance, včetně řetězcové literály, protože ty můžou být [internovány](/dotnet/api/system.string.intern#remarks).
+- `this`, jak je může používat volající jako zámek.
+- <xref:System.Type>instance, které mohou být získány operátorem [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) nebo reflexe.
+- instance řetězců, včetně řetězcových literálů, by mohly být [interně](/dotnet/api/system.string.intern#remarks).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad definuje `Account` třídu, která se synchronizuje přístup k jeho privátní `balance` pole, a to na vyhrazené zamykání `balanceLock` instance. Použití stejné instance pro uzamčení zajišťuje, že `balance` pole nejde aktualizovat současně dvěma vlákny pokusu o volání `Debit` nebo `Credit` metod současně.
+Následující příklad definuje `Account` třídu, která synchronizuje přístup k jejímu soukromému `balance` poli uzamčením na vyhrazené `balanceLock` instanci. Použití stejné instance pro uzamykání zajistí, že `balance` pole nelze současně aktualizovat dvěma vlákny, které se pokoušejí současně `Debit` volat metody nebo `Credit` .
 
 [!code-csharp[lock-statement-example](~/samples/snippets/csharp/keywords/LockStatementExample.cs)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace naleznete v části [příkaz Lock](~/_csharplang/spec/statements.md#the-lock-statement) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - <xref:System.Threading.SpinLock?displayProperty=nameWithType>
 - <xref:System.Threading.Interlocked?displayProperty=nameWithType>
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Klíčová slova příkazů](statement-keywords.md)
 - [Přehled primitiv synchronizace](../../../standard/threading/overview-of-synchronization-primitives.md)

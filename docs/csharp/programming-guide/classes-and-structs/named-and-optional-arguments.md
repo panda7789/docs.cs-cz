@@ -1,5 +1,5 @@
 ---
-title: Pojmenované a nepovinné argumenty - C# Průvodce programováním
+title: Pojmenované a volitelné argumenty – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -14,44 +14,44 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 16426a6149714fce4ddb188471a72d8f63f45b96
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 74cfc6a425e82014bbcf5093f52f476ff09db130
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170444"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796556"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
-C#4 zavádí pojmenované a nepovinné argumenty. *Pojmenované argumenty* vám umožní zadat argument pro parametr konkrétní tím, že přidružíte argument s názvem parametru místo parametru pozice v seznamu parametrů. *Volitelné argumenty* umožňují vynechejte argumenty pro některé parametry. Obě tyto metody lze pomocí metody, indexery, konstruktory a delegáti.  
+C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umožňují zadat argument pro konkrétní parametr přiřazením argumentu s názvem parametru, nikoli zadáním pozice parametru v seznamu parametrů. *Volitelné argumenty* umožňují vynechat argumenty pro některé parametry. Oba postupy lze použít s metodami, indexery, konstruktory a delegáty.  
   
- Při použití pojmenované a nepovinné argumenty jsou argumenty se vyhodnocují v pořadí, v jakém jsou uvedeny v seznamu argumentů, ne seznam parametrů.  
+ Při použití pojmenovaných a volitelných argumentů jsou argumenty vyhodnocovány v pořadí, v jakém jsou uvedeny v seznamu argumentů, nikoli v seznamu parametrů.  
   
- Pojmenované a nepovinné parametry, pokud se použijí společně, umožňují zadat argumenty pouze několik parametrů ze seznamu nepovinných parametrů. Tato funkce výrazně usnadňuje volání do rozhraní COM, jako je například rozhraní API automatizace Microsoft Office.  
+ Pojmenované a volitelné parametry – při použití společně vám umožní zadat argumenty jenom pro několik parametrů ze seznamu nepovinných parametrů. Tato funkce významně usnadňuje volání rozhraní COM, jako jsou systém Microsoft Office rozhraní API pro automatizaci.  
   
 ## <a name="named-arguments"></a>Pojmenované argumenty  
- Pojmenované argumenty vás zbaví nutnosti mějte na paměti, nebo k vyhledání pořadí parametrů v seznamech parametrů volané metody. Parametr pro každý argument může být určeno název parametru. Například funkce, která vytiskne OrderDetails (jako jsou například prodejce název, číslo & product název objednávky) mohou být volány v standardní způsob odesílání argumentů podle pozice v pořadí určeném parametrem funkce.
+ Pojmenované argumenty, které si zapamatujete, abyste si vyhledali pořadí parametrů v seznamech volaných metod. Parametr pro každý argument lze zadat pomocí názvu parametru. Například funkce, která tiskne podrobnosti objednávky (například, jméno prodejce, číslo objednávky & název produktu), může být volána standardním způsobem odesláním argumentů podle pozice v pořadí určeném funkcí.
   
  `PrintOrderDetails("Gift Shop", 31, "Red Mug");`
   
- Pokud nepamatujete pořadí parametrů, ale znáte jejich názvy, můžete odeslat argumenty v libovolném pořadí.  
+ Pokud si nepamatujete pořadí parametrů, ale znáte jejich názvy, můžete argumenty poslat v libovolném pořadí.  
   
  `PrintOrderDetails(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");`
   
  `PrintOrderDetails(productName: "Red Mug", sellerName: "Gift Shop", orderNum: 31);`
   
- Pojmenované argumenty také zlepšit čitelnost kódu díky identifikaci, co každý argument představuje. V následujícím příkladu metoda `sellerName` nesmí být null ani prázdné znaky. Obě `sellerName` a `productName` jsou typy řetězce, místo abyste odesílali argumentů podle pozice, je vhodné použít pojmenované argumenty k rozlišení dvou a redukovat nejasnosti pro každého, kdo čte kód.
+ Pojmenované argumenty také zlepšují čitelnost kódu tím, že identifikují, co každý argument představuje. V níže uvedeném `sellerName` příkladu nemůže být null nebo prázdné místo. `sellerName` Jak a `productName` jsou typy řetězců namísto odeslání argumentů podle pozice, má smysl použít pojmenované argumenty k jednoznačnému odstranění těchto dvou a omezení nejasností pro kohokoli, kdo čte kód.
   
- Pojmenované argumenty, při použití s poziční argumenty, jsou platné jako 
+ Pojmenované argumenty, pokud se používají s pozičními argumenty, jsou platné, dokud 
 
-- nejsou následovány poziční argumenty, nebo
+- nejsou následovány žádnými pozičními argumenty nebo
 
  `PrintOrderDetails("Gift Shop", 31, productName: "Red Mug");`
 
-- _od verze C# 7.2_, jejich použití ve správné pozici. V příkladu níže parametr `orderNum` je ve správné pozici, ale není explicitně s názvem.
+- _počínaje C# 7,2_se používají ve správné pozici. V následujícím příkladu je parametr `orderNum` ve správné pozici, ale není explicitně pojmenován.
 
  `PrintOrderDetails(sellerName: "Gift Shop", 31, productName: "Red Mug");`
   
- Mimo pořadí pojmenované argumenty jsou však neplatná, pokud jste postupovali podle poziční argumenty.
+ Pojmenované argumenty jsou však neplatné, pokud jsou následovány pozičními argumenty.
 
  ```csharp
  // This generates CS1738: Named argument specifications must appear after all fixed arguments have been specified.
@@ -59,70 +59,70 @@ C#4 zavádí pojmenované a nepovinné argumenty. *Pojmenované argumenty* vám 
  ```
   
 ## <a name="example"></a>Příklad  
- Následující kód implementuje příklady v této části spolu s některé další značky.  
+ Následující kód implementuje příklady z této části spolu s dalšími dalšími.  
   
  [!code-csharp[csProgGuideNamedAndOptional#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/program.cs#1)]  
   
-## <a name="optional-arguments"></a>Nepovinné argumenty.  
- Definice metody, konstruktoru, indexeru nebo delegáta můžete určit, že její parametry jsou povinné a že jsou volitelné. Každé volání musí zadat argumenty pro všechny požadované parametry, ale lze vynechat argumenty pro volitelné parametry.  
+## <a name="optional-arguments"></a>Nepovinné argumenty  
+ Definice metody, konstruktoru, indexeru nebo delegáta může určit, že jeho parametry jsou povinné nebo že jsou nepovinné. Jakékoli volání musí poskytnout argumenty pro všechny požadované parametry, ale může vynechat argumenty pro volitelné parametry.  
   
- Každý volitelný parametr má výchozí hodnotu jako součást jeho definici. Pokud pro tento parametr je odeslán žádný argument, je použita výchozí hodnota. Výchozí hodnota musí být jedna z následujících typů výrazů:  
+ Každý volitelný parametr má jako součást definice výchozí hodnotu. Pokud není pro tento parametr odeslán žádný argument, je použita výchozí hodnota. Výchozí hodnota musí být jeden z následujících typů výrazů:  
   
 - konstantní výraz;  
   
-- výraz ve tvaru `new ValType()`, kde `ValType` , jako je typ hodnoty, [výčtu](../../../csharp/language-reference/keywords/enum.md) nebo [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md);  
+- výraz formuláře `new ValType()`, kde `ValType` je hodnotový typ, jako je například [výčet](../../../csharp/language-reference/keywords/enum.md) nebo [Struktura](../../../csharp/programming-guide/classes-and-structs/structs.md);  
   
-- výraz ve tvaru [default(ValType)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md), kde `ValType` je typ hodnoty.  
+- výchozí výraz formuláře [(ValType)](../../../csharp/language-reference/operators/default.md), kde `ValType` je hodnotový typ.  
   
- Volitelné parametry jsou definované na konci seznamu parametrů po požadované parametry. Pokud volající zadá argument pro každý z sledu očekávání volitelné parametry, je nutné zadat argumenty pro všechny předchozí volitelné parametry. Exportovaná mezery v seznamu argumentů nejsou podporovány. Například následující kód metodu instance `ExampleMethod` je definována s vyžadovaný a dva volitelné parametry.  
+ Volitelné parametry jsou definovány na konci seznamu parametrů po všech požadovaných parametrech. Pokud volající poskytne argument pro jakékoli z úspěchu volitelných parametrů, musí zadat argumenty pro všechny předchozí volitelné parametry. Mezery oddělené čárkami v seznamu argumentů nejsou podporovány. Například v následujícím kódu je metoda `ExampleMethod` instance definována s jedním vyžadovaným a dvěma nepovinnými parametry.  
   
  [!code-csharp[csProgGuideNamedAndOptional#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/optional.cs#15)]  
   
- Následující volání `ExampleMethod` způsobí chybu kompilátoru, protože argument je k dispozici pro třetí parametr, ale ne pro druhý.  
+ Následující volání `ExampleMethod` způsobí chybu kompilátoru, protože je k dispozici argument pro třetí parametr, ale ne pro druhý.  
   
  `//anExample.ExampleMethod(3, ,4);`  
   
- Pokud znáte název třetí parametr, můžete ke splnění úkolu můžete použít pojmenovaný argument.  
+ Pokud však znáte název třetího parametru, můžete k dokončení úkolu použít pojmenovaný argument.  
   
  `anExample.ExampleMethod(3, optionalint: 4);`  
   
- Technologie IntelliSense pomocí závorek k označení volitelné parametry, jak je znázorněno na následujícím obrázku:  
+ Technologie IntelliSense používá hranaté závorky k označení volitelných parametrů, jak je znázorněno na následujícím obrázku:  
   
- ![Snímek obrazovky zobrazující rychlé informace technologie IntelliSense pro metodu ExampleMethod.](./media/named-and-optional-arguments/optional-examplemethod-parameters.png)  
+ ![Snímek obrazovky znázorňující rychlé informace technologie IntelliSense pro metodu ExampleMethod](./media/named-and-optional-arguments/optional-examplemethod-parameters.png)  
   
 > [!NOTE]
->  Volitelné parametry můžete také deklarovat s použitím .NET <xref:System.Runtime.InteropServices.OptionalAttribute> třídy. `OptionalAttribute` Parametry nevyžadují, aby výchozí hodnota.  
+>  Můžete také deklarovat volitelné parametry pomocí třídy .NET <xref:System.Runtime.InteropServices.OptionalAttribute> . `OptionalAttribute`Parametry nevyžadují výchozí hodnotu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se v konstruktoru pro `ExampleClass` má jeden parametr, který je volitelný. Metodu instance `ExampleMethod` má jeden povinný parametr, `required`a dva volitelné parametry, `optionalstr` a `optionalint`. Kód v `Main` ukazuje různé způsoby, ve kterém lze vyvolat konstruktor a metody.  
+ V následujícím příkladu má konstruktor pro `ExampleClass` jeden parametr, který je nepovinný. Metoda `ExampleMethod` instance má jeden povinný `required`parametr, `optionalstr` a dva volitelné parametry a `optionalint`. Kód v `Main` ukazuje různé způsoby, jak lze vyvolat konstruktor a metodu.  
   
  [!code-csharp[csProgGuideNamedAndOptional#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/optional.cs#2)]  
   
-## <a name="com-interfaces"></a>Com – rozhraní  
- Pojmenované a nepovinné argumenty společně s podporou dynamických objektů a dalších vylepšení, výrazně zlepšit vzájemná funkční spolupráce s rozhraními API modelu COM, jako je například rozhraní API Office automatizace.  
+## <a name="com-interfaces"></a>Rozhraní COM  
+ Pojmenované a nepovinné argumenty, společně s podporou pro dynamické objekty a další vylepšení, významně zlepšují interoperabilitu s rozhraními API modelu COM, jako jsou třeba rozhraní API pro automatizaci Office.  
   
- Například <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> metodu v aplikaci Microsoft Office Excel <xref:Microsoft.Office.Interop.Excel.Range> rozhraní obsahuje sedm parametry, z nichž všechny jsou volitelné. Tyto parametry můžete vidět na následujícím obrázku:  
+ Například <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> metoda v rozhraní systém Microsoft Office Excel <xref:Microsoft.Office.Interop.Excel.Range> má sedm parametrů, z nichž všechny jsou volitelné. Tyto parametry jsou uvedeny na následujícím obrázku:  
   
- ![Snímek obrazovky zobrazující rychlé informace technologie IntelliSense pro metodu automatické formátování.](./media/named-and-optional-arguments/autoformat-method-parameters.png)  
+ ![Snímek obrazovky s rychlými informacemi technologie IntelliSense pro metodu automatického formátování](./media/named-and-optional-arguments/autoformat-method-parameters.png)  
   
- V jazyce C# 3.0 a starší verze je argument se vyžaduje pro každý parametr, jak je znázorněno v následujícím příkladu.  
+ V C# 3,0 a starších verzích je pro každý parametr požadován argument, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideNamedAndOptional#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#3)]  
   
- Však může výrazně zjednodušit volání `AutoFormat` pomocí pojmenovaných a nepovinných argumentů zavedené v C# 4.0. Pojmenované a nepovinné argumenty umožňují argument pro nepovinný parametr vynechat, pokud nechcete změnit výchozí hodnotu parametru. V následujícím volání je zadána hodnota jenom pro jednu ze sedmi parametry.  
+ Nicméně můžete značně zjednodušit volání `AutoFormat` pomocí pojmenovaných a nepovinných argumentů představených v C# 4,0. Pojmenované a volitelné argumenty umožňují vynechat argument pro volitelný parametr, pokud nechcete změnit výchozí hodnotu parametru. V následujícím volání je hodnota zadána pouze pro jeden ze sedmi parametrů.  
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Další informace a příklady najdete v tématu [jak: Použití pojmenovaných a nepovinných argumentů v programování pro Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md) a [jak: Přístup k objektům Interop sady Office pomocí Vizuálu C# funkce](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md).  
+ Další informace a příklady naleznete v tématu [How to: Použijte pojmenované a volitelné argumenty při programování](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md) systému Office a [postup: Přístup k objektům Interop Office pomocí C# vizuálních funkcí](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
   
 ## <a name="overload-resolution"></a>Rozlišení přetěžování  
- Použití pojmenovaných a nepovinných argumentů řešení přetížení ovlivňuje následujícími způsoby:  
+ Použití pojmenovaných a nepovinných argumentů má vliv na rozlišení přetížení následujícími způsoby:  
   
-- Metoda, indexer nebo konstruktor je kandidátem pro spuštění, pokud každý ze svých parametrů je nepovinný nebo odpovídá podle názvu nebo podle pozice jediný argument ve volání příkazu, a že argument lze převést na typ parametru.  
+- Metoda, indexer nebo konstruktor je kandidátem na provedení, pokud jsou jednotlivé parametry buď volitelné, nebo odpovídají, podle názvu nebo podle pozice, k jednomu argumentu v příkazu volání a tento argument lze převést na typ parametru.  
   
-- Pokud je nalezen více než jeden Release candidate, pravidla rozlišení přetížení pro upřednostňované převody se aplikují na argumenty, které jsou explicitně zadány. Vynechaný argumenty pro volitelné parametry jsou ignorovány.  
+- Pokud je nalezen více než jeden kandidát, budou pravidla rozlišení přetížení pro preferované převody použita na argumenty, které jsou explicitně určeny. Vynechané argumenty pro volitelné parametry jsou ignorovány.  
   
-- Pokud dvě kandidáty jsou považovány za stejnou měrou bezproblémový, předvoleb přejde na Release candidate, který nemá žádné volitelné parametry, které byly vynechány argumenty ve volání. Toto je důsledkem obecné předvoleb v rozlišení přetížení pro kandidáty, které mají méně parametrů.  
+- Pokud jsou dva kandidáty odůvodněné stejně dobré, preference směřuje k kandidátovi, který nemá nepovinné parametry pro to, které argumenty byly ve volání vynechány. Jedná se o důsledek Obecné předvolby v řešení přetížení pro kandidáty, které mají méně parametrů.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

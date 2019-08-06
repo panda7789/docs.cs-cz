@@ -8,17 +8,19 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: bf194e207262ecea0511a0b67bbafeadd8d5d31d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 06ebb9edfaf4753b98c3305a90b52e93ee7b4486
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629491"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796634"
 ---
-# <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
+# <a name="using-namespaces-c-programming-guide"></a>Používání oborů názvůC# (Průvodce programováním)
+
 Obory názvů jsou v C# rámci programů silně používány dvěma způsoby. Nejprve třídy .NET Framework používají obory názvů k uspořádání svých mnoha tříd. Následně deklarace vlastních oborů názvů vám může pomáhat řídit obor názvů tříd a metod ve větších programovacích projektech.  
   
-## <a name="accessing-namespaces"></a>Přístup k oborům názvů  
+## <a name="accessing-namespaces"></a>Přístup k oborům názvů
+
  Většina C# aplikací začíná oddílem `using` direktiv. V této části jsou uvedeny obory názvů, které aplikace často používá, a uloží programátora z určení plně kvalifikovaného názvu pokaždé, když se použije metoda, která je obsažena v rámci.  
   
  Například zahrnutím řádku:  
@@ -33,17 +35,20 @@ Obory názvů jsou v C# rámci programů silně používány dvěma způsoby. Ne
   
  [!code-csharp[csProgGuide#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#30)]  
   
-## <a name="namespace-aliases"></a>Aliasy oboru názvů  
- [Direktivu using](../../../csharp/language-reference/keywords/using-directive.md) lze použít také k vytvoření aliasu pro [obor názvů](../../../csharp/language-reference/keywords/namespace.md). Například pokud používáte dříve psaný obor názvů, který obsahuje vnořené obory názvů, můžete chtít deklarovat alias pro poskytnutí zkrácený způsob odkazování na sebe, jak je uvedeno v následujícím příkladu:  
+## <a name="namespace-aliases"></a>Aliasy oboru názvů
+
+ Můžete také použít [ `using` direktivu](../../language-reference/keywords/using-directive.md) pro vytvoření aliasu pro obor názvů. Pro přístup ke členům oboru názvů s aliasy použijte [kvalifikátor `::` aliasu oboru názvů](../../language-reference/operators/namespace-alias-qualifier.md) . Následující příklad ukazuje, jak vytvořit a použít alias oboru názvů:
   
- [!code-csharp[csProgGuideNamespaces#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#7)]  
+[!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]
   
-## <a name="using-namespaces-to-control-scope"></a>Použití oborů názvů k řízení oboru  
+## <a name="using-namespaces-to-control-scope"></a>Použití oborů názvů k řízení oboru
+
  `namespace` Klíčové slovo se používá k deklarování oboru. Schopnost vytvářet obory v rámci projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečné typy. V následujícím příkladu je třída s názvem `SampleClass` definována ve dvou oborech názvů, jedna vnořená uvnitř druhé. [ `.` Operátor přístupu členů](../../language-reference/operators/member-access-operators.md#member-access-operator-) slouží k odlišení, která metoda se volá.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
-## <a name="fully-qualified-names"></a>Plně kvalifikované názvy  
+## <a name="fully-qualified-names"></a>Plně kvalifikované názvy
+
  Obory názvů a typy mají jedinečné názvy, které popisují plně kvalifikované názvy, které označují logickou hierarchii. Například příkaz `A.B` předpokládá, že `A` se jedná o název oboru názvů nebo typu a `B` je v něm vnořený.  
   
  V následujícím příkladu jsou vnořené třídy a obory názvů. Plně kvalifikovaný název je označen jako komentář za každou entitou.  
@@ -92,6 +97,6 @@ Obory názvů jsou v C# rámci programů silně používány dvěma způsoby. Ne
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
-- [. – operátor](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
+- [. podnikatel](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
 - [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
 - [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)

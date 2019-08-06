@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C#], global namespace qualifier
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
-ms.openlocfilehash: f44bb1f010f154973fc6982882c9b5a09528da76
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b163981d3cf6d56ab953757931b0b386a47263ff
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629441"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796290"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Postupy: Použití aliasu globálního oboru názvůC# (Průvodce programováním)
 Možnost přístupu ke členu v globálním [oboru názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečná v případě, že člen může být skrytý jinou entitou se stejným názvem.  
@@ -37,15 +37,6 @@ Možnost přístupu ke členu v globálním [oboru názvů](../../../csharp/lang
   
  Nedoporučujeme vytvářet vlastní obory `System` názvů nazvané a je nepravděpodobné, že narazíte na kód, ve kterém k tomu došlo. Ve větších projektech je však velmi reálnou možností, že k duplikaci oboru názvů může dojít v jednom nebo jiném formuláři. V těchto situacích je kvalifikátor globálního oboru názvů vaší zárukou, že můžete zadat kořenový obor názvů.  
   
-## <a name="example"></a>Příklad  
- V tomto příkladu je použit obor `System` názvů pro zahrnutí třídy `TestClass` , `global::System.Console` a musí být použit k odkazování `System` na `System.Console` třídu, která je skryta oborem názvů. Alias `colAlias` se také používá pro odkazování na obor názvů `System.Collections`; proto instance <xref:System.Collections.Hashtable?displayProperty=nameWithType> byla vytvořena pomocí tohoto aliasu namísto oboru názvů.  
-  
- [!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]  
-  
-**A 1**
-**B 2**
-**C 3**
-
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

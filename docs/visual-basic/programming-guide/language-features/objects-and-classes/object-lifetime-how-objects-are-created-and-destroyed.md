@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 5b092f50ddff5c432fbd6396b5fedafe7a6acba0
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 932f56a9a277360b11c551aaa1faf819f8e07fe6
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512846"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796670"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Vytváření a zničení objektů (Visual Basic)
 
@@ -41,7 +41,7 @@ Konstruktory a destruktory řídí vytváření a zničení objektů. `Class_Ini
 
 ### <a name="sub-new"></a>Sub New
 
-`Sub New` Konstruktor lze spustit pouze jednou při vytvoření třídy. Nemůže být volána explicitně jinde než v prvním řádku kódu jiného konstruktoru ze stejné třídy nebo z odvozené třídy. Kromě toho kód v `Sub New` metodě se vždy spouští před jakýmkoli jiným kódem ve třídě. Visual Basic a novější verze implicitně vytvoří `Sub New` konstruktor v době běhu, pokud explicitně `Sub New` nedefinujete proceduru pro třídu.
+`Sub New` Konstruktor lze spustit pouze jednou při vytvoření třídy. Nemůže být volána explicitně jinde než v prvním řádku kódu jiného konstruktoru ze stejné třídy nebo z odvozené třídy. Kromě toho kód v `Sub New` metodě se vždy spouští před jakýmkoli jiným kódem ve třídě. Visual Basic implicitně vytvoří `Sub New` konstruktor v době běhu, pokud explicitně `Sub New` nedefinujete proceduru pro třídu.
 
 Chcete-li vytvořit konstruktor pro třídu, vytvořte proceduru s `Sub New` názvem kdekoli v definici třídy. Chcete-li vytvořit parametrizovaný konstruktor, zadejte názvy a datové typy argumentů `Sub New` stejným způsobem, jako byste určili argumenty pro jakékoli jiné procedury, jako v následujícím kódu:
 
@@ -64,7 +64,7 @@ Před uvolněním objektů CLR automaticky volá `Finalize` metodu pro objekty, 
 
 `Finalize` Destruktor je chráněná metoda, kterou lze volat pouze z třídy, do které patří, nebo z odvozených tříd. Systém volá `Finalize` automaticky, když dojde ke zničení objektu, takže byste neměli explicitně volat `Finalize` z nezávisle na `Finalize` implementaci odvozené třídy.
 
-Na rozdíl `Class_Terminate`od, který se spustí, jakmile je objekt nastaven na hodnotu Nothing, je obvykle zpoždění mezi objektem ztratí rozsah a při Visual Basic `Finalize` volání destruktoru. Visual Basic a novější verze umožňují druhý druh destruktoru <xref:System.IDisposable.Dispose%2A>, který lze explicitně vyvolat kdykoli pro okamžité vydání prostředků.
+Na rozdíl `Class_Terminate`od, který se spustí, jakmile je objekt nastaven na hodnotu Nothing, je obvykle zpoždění mezi objektem ztratí rozsah a při Visual Basic `Finalize` volání destruktoru. Visual Basic .NET umožňuje pro druhý druh destruktoru <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, který lze explicitně vyvolat kdykoli, aby bylo možné okamžitě uvolnit prostředky.
 
 > [!NOTE]
 > `Finalize` Destruktor by neměl vyvolat výjimky, protože nemůže být zpracován aplikací a může způsobit ukončení aplikace.
