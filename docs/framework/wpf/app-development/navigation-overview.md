@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: ee2f6050eeea6eec840156ed5dce9fb9b6172149
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
-ms.translationtype: HT
+ms.openlocfilehash: 145c4e33bd601fa61750df56b949bda5d43cc372
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796867"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817998"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 
@@ -38,7 +38,7 @@ Windows Presentation Foundation (WPF) podporuje navigaci ve stylu prohlížeče,
 <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>a deníku tvoří základní podporu navigace, kterou nabízí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tento přehled podrobněji prozkoumá tyto funkce před tím, než pokrývá rozšířenou podporu navigace, která [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] zahrnuje navigaci na volné soubory, soubory HTML a objekty.
 
 > [!NOTE]
-> V tomto tématu pojem "prohlížeč" odkazuje pouze na prohlížeče, které mohou hostovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, které aktuálně obsahují [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] a Firefox. V případě [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , že konkrétní funkce jsou podporovány pouze konkrétním prohlížečem, je na verzi prohlížeče odkazováno.
+> V tomto tématu pojem "prohlížeč" odkazuje pouze na prohlížeče, které mohou hostovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, které aktuálně obsahují aplikace Microsoft Internet Explorer a Firefox. V případě [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , že konkrétní funkce jsou podporovány pouze konkrétním prohlížečem, je na verzi prohlížeče odkazováno.
 
 ## <a name="navigation-in-wpf-applications"></a>Navigace v aplikacích WPF
 
@@ -180,7 +180,7 @@ Následující obrázek ukazuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tl
 
 ![Stránka s hypertextovým odkazem](./media/navigation-overview/xbap-with-a-page-with-a-hyperlink.png "To ukazuje XBAP se stránkou s hypertextovým odkazem.")
 
-Jak byste očekávali, klikněte na <xref:System.Windows.Documents.Hyperlink> tlačítko [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] způsobí, že přejdete <xref:System.Windows.Controls.Page> na, který je identifikován `NavigateUri` atributem. Kromě toho [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] přidá položku pro předchozí <xref:System.Windows.Controls.Page> seznam posledních stránek v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]. To je znázorněno na následujícím obrázku.
+Jak byste očekávali, klikněte na <xref:System.Windows.Documents.Hyperlink> tlačítko [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] způsobí, že přejdete <xref:System.Windows.Controls.Page> na, který je identifikován `NavigateUri` atributem. Kromě toho [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] přidá položku pro předchozí <xref:System.Windows.Controls.Page> seznam poslední stránky v aplikaci Internet Explorer. To je znázorněno na následujícím obrázku.
 
 ![Tlačítka zpět a] přeposílání (./media/navigation-overview/back-and-forward-navigation.png "Přejděte pomocí tlačítek zpět a vpřed.")
 
@@ -367,16 +367,16 @@ Pokud zaregistrujete obslužnou rutinu s událostí navigace z a <xref:System.Wi
 
 #### <a name="navigating-the-journal-from-internet-explorer"></a>Navigace v deníku z aplikace Internet Explorer
 
-V koncepčních případech deník funguje stejným způsobem jako tlačítko **zpět** a předávat v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] rámci. Zobrazují se na následujícím obrázku.
+V koncepčních případech deník funguje stejným způsobem jako tlačítka **zpět** a předávat v aplikaci Internet Explorer. Zobrazují se na následujícím obrázku.
 
 ![Tlačítka zpět a] přeposílání (./media/navigation-overview/back-and-forward-navigation.png "Přejděte pomocí tlačítek zpět a vpřed.")
 
-Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] hostování, které jsou [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]hostovány nástrojem, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]integruje deník do [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] navigace. To umožňuje uživatelům navigovat stránky [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] pomocí tlačítek **zpět**, **vpřed**a **poslední stránky** v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]nástroji. Deník není integrován do [!INCLUDE[TLA2#tla_ie6](../../../../includes/tla2sharptla-ie6-md.md)] nástroje stejným způsobem [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] jako aplikace nebo Internet Explorer 8. Místo toho [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]vykreslí náhradní navigaci. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]
+Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] hostování aplikací Internet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Explorer integruje deník do navigace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aplikace Internet Explorer. To [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] umožňuje uživatelům navigovat stránky v nástroji pomocí tlačítek **zpět**, **vpřed**a **poslední stránky** v aplikaci Internet Explorer.
 
 > [!IMPORTANT]
-> V [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]případě, že když uživatel přejde pryč z a zpět [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]do, budou v deníku uchovány pouze položky deníku pro stránky, které nejsou udržované jako aktivní. Diskuzi o tom, jak udržovat stránky aktivní, najdete v části [životnost stránky a deník](#PageLifetime) dále v tomto tématu.
+> Když uživatel v aplikaci Internet Explorer přejde pryč z a zpět na [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], budou v deníku uchovány pouze položky deníku pro stránky, které nejsou ve stavu Keep Alive. Diskuzi o tom, jak udržovat stránky aktivní, najdete v části [životnost stránky a deník](#PageLifetime) dále v tomto tématu.
 
-Ve výchozím nastavení [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] je text pro každý <xref:System.Windows.Controls.Page> , který se zobrazí v [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] seznamu **poslední stránky** , v seznamu pro <xref:System.Windows.Controls.Page>. V mnoha případech to není pro uživatele obzvláště smysluplné. Naštěstí můžete změnit text pomocí jedné z následujících možností:
+Ve výchozím nastavení <xref:System.Windows.Controls.Page> jetext[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro každý, který se zobrazí v seznamu **poslední stránky** v aplikaci Internet Explorer, pro. <xref:System.Windows.Controls.Page> V mnoha případech to není pro uživatele obzvláště smysluplné. Naštěstí můžete změnit text pomocí jedné z následujících možností:
 
 1. Hodnota připojeného `JournalEntry.Name` atributu
 
@@ -400,7 +400,7 @@ Následující příklad používá `Page.Title` atribut ke změně textu, kter�
 
 #### <a name="navigating-the-journal-using-wpf"></a>Navigace v deníku pomocí WPF
 
-I když uživatel může přejít do deníku pomocí stránek **zpět**, **vpřed**a **nedávno** v aplikaci [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], můžete také procházet deník [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]pomocí deklarativních i programových mechanismů poskytovaných. Jedním z důvodů, jak to provést, je poskytnout [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] na svých stránkách vlastní navigaci.
+I když uživatel může přejít do deníku pomocí stránek **zpět**, **vpřed**a **nedávno** v aplikaci Internet Explorer, můžete také procházet deník pomocí deklarativních [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]i programových mechanismů poskytovaných. Jedním z důvodů, jak to provést, je poskytnout [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] na svých stránkách vlastní navigaci.
 
 Můžete deklarativně přidat podporu navigace v deníku pomocí navigačních příkazů, které <xref:System.Windows.Input.NavigationCommands>zveřejňuje. Následující příklad ukazuje, jak použít `BrowseBack` navigační příkaz.
 
@@ -547,7 +547,7 @@ Níže jsou uvedené některé způsoby, jak se soubory cookie podporují [!INCL
 
 - Podpora souborů cookie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] v nástroji je stejná pro všechny podporované prohlížeče.
 
-- V [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]nástroji se zásady P3P, které se týkají souborů cookie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], uplatňují, zejména v souvislosti s prvními a třetí stranou [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].
+- V Internet Exploreru se zásady P3P, které se týkají souborů cookie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], uplatňují, zejména pokud jde o první stranu a třetí stranu. [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]
 
 <a name="Structured_Navigation"></a>
 
@@ -606,7 +606,7 @@ Výsledek je znázorněn na následujícím obrázku.
 
 ![Dialogové okno](./media/navigation-overview/navigation-window-as-dialog-box.png "Navigační okno jako dialogové okno")
 
-Jak <xref:System.Windows.Navigation.NavigationWindow> vidíte, zobrazí tlačítka pro [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]zobrazení a předávání na **pozadí** , které uživatelům umožňují procházet deník. Tato tlačítka poskytují stejné uživatelské prostředí, jak je znázorněno na následujícím obrázku.
+Jak vidíte, <xref:System.Windows.Navigation.NavigationWindow> zobrazí tlačítka v aplikaci Internet Explorer **zpět** a **vpřed** , která uživatelům umožňují procházet deník. Tato tlačítka poskytují stejné uživatelské prostředí, jak je znázorněno na následujícím obrázku.
 
 ![Tlačítka zpět a přeposílání v objektu NavigationWindow](./media/navigation-overview/back-and-forward-buttons-in-navigation-window.png "Tlačítka zpět a přeposílání v navigačním okně")
 
@@ -646,7 +646,7 @@ Následující obrázek znázorňuje účinek přechodu v rámci <xref:System.Wi
 
 ![Rámec, který používá vlastní deník](./media/navigation-overview/frame-uses-its-own-journal.png "To ukazuje účinek přechodu v rámci rámce, který používá vlastní deník.")
 
-Všimněte si, že položky deníku jsou zobrazeny [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] <xref:System.Windows.Controls.Frame>v navigaci v místo pomocí [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)].
+Všimněte si, že položky deníku jsou zobrazeny [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] <xref:System.Windows.Controls.Frame>v navigaci v místo aplikace Internet Explorer.
 
 > [!NOTE]
 > Pokud je součástí obsahu, který je hostován <xref:System.Windows.Window>v, <xref:System.Windows.Controls.Frame> používá vlastní deník a v důsledku toho zobrazí svou vlastní navigaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. <xref:System.Windows.Controls.Frame>
