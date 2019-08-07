@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 4852e1166a975b1a45c5bd905123a35fc846aa28
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: c455804923f4d0e7cc8f556bb9b9df34b6332d82
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68513160"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796526"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof – operátorC# (Referenční dokumentace)
 
-`sizeof` Operátor vrátí počet bajtů obsazených proměnnou daného typu. Argumentem `sizeof` operátoru musí být název nespravovaného [typu](../builtin-types/unmanaged-types.md) nebo parametr typu, který je [omezený](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) na nespravovaný typ.
+`sizeof` Operátor vrátí počet bajtů obsazených proměnnou daného typu. Argument `sizeof` operátoru musí být název nespravovaného [typu](../builtin-types/unmanaged-types.md) nebo parametr typu, který je [omezený](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) na nespravovaný typ.
 
 Operátor vyžaduje nezabezpečený kontext. [](../keywords/unsafe.md) `sizeof` Výrazy uvedené v následující tabulce jsou však vyhodnocovány v době kompilace do odpovídajících konstantních hodnot a nevyžadují nezabezpečený kontext:
 

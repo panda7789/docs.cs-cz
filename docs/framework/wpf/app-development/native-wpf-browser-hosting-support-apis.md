@@ -7,20 +7,20 @@ helpviewer_keywords:
 - browser hosting support [WPF]
 - WPF browser hosting support APIs [WPF]
 ms.assetid: 82c133a8-d760-45fb-a2b9-3a997537f1d4
-ms.openlocfilehash: eed20417b44b9af78c92871a619f2ccf857b6bba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b52ec2b1701d03bbcc11048610034a849a315e7
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864456"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817940"
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>Nativní Prohlížeč WPF – rozhraní API pro podporu hostování
-Hostování [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikací ve webových prohlížečích, zjednodušuje tím serveru aktivní dokument (označované také jako DocObject) zaregistrovaný hostitele WPF. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] můžete přímo aktivovat a integraci s aktivním dokumentem. Pro hostování aplikace XBAP a dojde ke ztrátě dokumenty XAML v prohlížečích Mozilla [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí pro [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] server pro aktivní dokument jako [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nepodporuje. Ale nejjednodušší praktický způsob, jak hostovat aplikace XBAP a XAML dokumenty v dalších prohlížečích a samostatné aplikace probíhá přes webový prohlížeč Internet Explorer ovládací prvek. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru aktivního dokumentu, ale umožňuje vlastním hostiteli k přizpůsobení a rozšíření prostředí a komunikovat přímo s aktuálním objektem aktivní dokument.  
+[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Hostování aplikací ve webových prohlížečích usnadňuje aktivní dokumentový server (označovaný také jako DocObject) zaregistrovaný mimo hostitele WPF. Internet Explorer je možné přímo aktivovat a integrovat s aktivním dokumentem. Pro hostování aplikací XBAP a volných dokumentů XAML v prohlížečích [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikace Mozilla poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí serveru [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] pro aktivní dokument jako aplikace Internet Explorer. Nejjednodušší způsob, jak hostovat aplikace XBAP a dokumenty XAML v jiných prohlížečích a samostatných aplikacích, je však prostřednictvím ovládacího prvku webového prohlížeče Internet Explorer. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru pro aktivní dokument, ale umožňuje jeho vlastnímu hostiteli přizpůsobení a rozšiřování tohoto prostředí a přímé komunikace s aktuálním objektem aktivního dokumentu.  
   
- [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Server pro aktivní dokument implementuje několik běžných hostitelských rozhraní, včetně [IOleObject](https://go.microsoft.com/fwlink/?LinkId=162049), [IOleDocument](https://go.microsoft.com/fwlink/?LinkId=162050), [IOleInPlaceActiveObject](https://go.microsoft.com/fwlink/?LinkId=162051), [IPersistMoniker](https://go.microsoft.com/fwlink/?LinkId=162045), [iolecommandtarget –](https://go.microsoft.com/fwlink/?LinkId=162047). Když jsou hostované v ovládacím prvku webový prohlížeč, může být tato rozhraní dotazy z objekt vrácený rutinou [IWebBrowser2::Document](https://go.microsoft.com/fwlink/?LinkId=162048) vlastnost.  
+ [](https://go.microsoft.com/fwlink/?LinkId=162045) [](https://go.microsoft.com/fwlink/?LinkId=162049) [](https://go.microsoft.com/fwlink/?LinkId=162050) [](https://go.microsoft.com/fwlink/?LinkId=162047) [](https://go.microsoft.com/fwlink/?LinkId=162051)Aktivní dokumentový server implementuje několik běžných hostitelských rozhraní, včetně IOleObject, IOleDocument, IOleInPlaceActiveObject, IPersistMoniker, IOleCommandTarget –. [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] V případě hostování v ovládacím prvku webového prohlížeče mohou být tato rozhraní dotazy z objektu vráceného vlastností [IWebBrowser2::D ocument](https://go.microsoft.com/fwlink/?LinkId=162048) .  
   
-## <a name="iolecommandtarget"></a>IOleCommandTarget  
- Implementaci serveru pro aktivní dokument WPF [iolecommandtarget –](https://go.microsoft.com/fwlink/?LinkId=162047) podporuje mnoho příkazy související s navigací a specifické pro prohlížeč standardní příkaz skupiny OLE (s hodnotou null GUID skupiny příkazů). Navíc rozpozná vlastní příkaz skupinu s názvem CGID_PresentationHost. V současné době je jenom jeden příkaz definované v rámci této skupiny.  
+## <a name="iolecommandtarget"></a>IOleCommandTarget –  
+ Implementace [IOleCommandTarget –](https://go.microsoft.com/fwlink/?LinkId=162047) serveru WPF pro aktivní dokument podporuje mnoho příkazů standardní příkazy OLE souvisejících s navigací a prohlížečem (s identifikátorem GUID skupiny příkazů s hodnotou null). Kromě toho rozpoznává skupinu vlastních příkazů s názvem CGID_PresentationHost. V současné době je v rámci této skupiny definován pouze jeden příkaz.  
   
 ```  
 DEFINE_GUID(CGID_PresentationHost, 0xd0288c55, 0xd6, 0x4f5e, 0xa8, 0x51, 0x79, 0xde, 0xc5, 0x1b, 0x10, 0xec);  
@@ -29,7 +29,7 @@ enum PresentationHostCommands {
 };  
 ```  
   
- PHCMDID_TABINTO instruuje PresentationHost přepnout fokus na první nebo poslední focusable elementu v jeho obsah v závislosti na stavu klávesu Shift.  
+ PHCMDID_TABINTO instruuje PresentationHost, aby přepnuli fokus na první nebo poslední prvek s fokusem v jeho obsahu v závislosti na stavu klávesy SHIFT.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md)  

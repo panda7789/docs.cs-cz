@@ -15,15 +15,15 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: b8234dcb33e9d429329c6d68900119382ff2f1cb
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 34beee309f080c53ecb16436beb0c4c6be7733e5
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629790"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796785"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
-<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a skriptovací jazyky na straně klienta nemají přístup k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
+<a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení nemůžou skriptovací jazyky HTML a na straně klienta přistupovat k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]poskytuje širokou škálu podpory, aby bylo zajištěno, že je možné v částečném vztahu důvěryhodnosti a společně s certifikačními autoritami používat co nejvíc funkcí, a navíc poskytuje další podporu pro programování s částečným vztahem důvěryhodnosti.  
   
@@ -113,7 +113,7 @@ ms.locfileid: "68629790"
   
  V mnoha případech byste měli být schopni najít alternativu s částečným vztahem důvěryhodnosti.  
   
- V kontrolovaném prostředí, jako je intranet, mohou být vlastní spravovaná rozhraní nainstalována v rámci klientské základny do globální mezipaměti sestavení (GAC). Tyto knihovny mohou spouštět kód, který vyžaduje úplný vztah důvěryhodnosti a na základě aplikací, které jsou povoleny pouze s částečným <xref:System.Security.AllowPartiallyTrustedCallersAttribute> vztahem důvěryhodnosti (Další informace naleznete [v tématu Security](security-wpf.md) and [WPF Security strategie-Platform Security](wpf-security-strategy-platform-security.md)).  
+ V kontrolovaném prostředí, jako je intranet, mohou být vlastní spravovaná rozhraní nainstalována v rámci klientské základny do globální mezipaměti sestavení (GAC). Tyto knihovny mohou spouštět kód, který vyžaduje úplný vztah důvěryhodnosti a na základě aplikací, které jsou povoleny pouze s částečným <xref:System.Security.AllowPartiallyTrustedCallersAttribute> vztahem důvěryhodnosti (Další informace [](security-wpf.md) naleznete v tématu Security and [WPF Security strategie-Platform Security](wpf-security-strategy-platform-security.md)).  
   
 <a name="Browser_Host_Detection"></a>   
 ### <a name="browser-host-detection"></a>Detekce hostitele v prohlížeči  

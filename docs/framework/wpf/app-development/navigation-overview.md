@@ -24,18 +24,18 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 24b872fcf58db3ef0ef7d04165129804dc46d641
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
-ms.translationtype: MT
+ms.openlocfilehash: ee2f6050eeea6eec840156ed5dce9fb9b6172149
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364282"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796867"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 
 Windows Presentation Foundation (WPF) podporuje navigaci ve stylu prohlížeče, kterou lze použít ve dvou typech aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. Pro zabalení obsahu pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] <xref:System.Windows.Controls.Page> poskytuje třídu. Můžete přecházet z jednoho <xref:System.Windows.Controls.Page> na jiný deklarativní, <xref:System.Windows.Documents.Hyperlink>pomocí nebo <xref:System.Windows.Navigation.NavigationService>programově pomocí. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]pomocí deníku zapamatuje stránky, na které byly přecházet, a přejděte zpět na ně.
 
-<xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>a deníku tvoří základní podporu navigace, kterou nabízí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tento přehled podrobněji prozkoumá tyto funkce před tím, než pokrývá rozšířenou podporu navigace, která [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] zahrnuje navigaci [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] na volné soubory, soubory a objekty.
+<xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>a deníku tvoří základní podporu navigace, kterou nabízí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tento přehled podrobněji prozkoumá tyto funkce před tím, než pokrývá rozšířenou podporu navigace, která [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] zahrnuje navigaci na volné soubory, soubory HTML a objekty.
 
 > [!NOTE]
 > V tomto tématu pojem "prohlížeč" odkazuje pouze na prohlížeče, které mohou hostovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, které aktuálně obsahují [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] a Firefox. V případě [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , že konkrétní funkce jsou podporovány pouze konkrétním prohlížečem, je na verzi prohlížeče odkazováno.
@@ -79,7 +79,7 @@ Tato část vysvětluje a ukazuje následující aspekty navigace:
 
 ### <a name="implementing-a-page"></a>Implementace stránky
 
-V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]můžete přejít na několik typů obsahu, které zahrnují .NET Framework objekty, vlastní objekty, hodnoty výčtu, uživatelské ovládací prvky, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory a [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] soubory. Ale zjistíte, že nejběžnější a pohodlný způsob balení obsahu je pomocí <xref:System.Windows.Controls.Page>. Kromě toho <xref:System.Windows.Controls.Page> implementuje funkce specifické pro navigaci a zlepšuje jejich vzhled a zjednodušuje vývoj.
+V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]můžete přejít na několik typů obsahu, které zahrnují .NET Framework objekty, vlastní objekty, hodnoty výčtu, uživatelské ovládací prvky, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory a soubory HTML. Ale zjistíte, že nejběžnější a pohodlný způsob balení obsahu je pomocí <xref:System.Windows.Controls.Page>. Kromě toho <xref:System.Windows.Controls.Page> implementuje funkce specifické pro navigaci a zlepšuje jejich vzhled a zjednodušuje vývoj.
 
 Pomocí <xref:System.Windows.Controls.Page>můžete deklarativně implementovat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránku naviguje obsahu pomocí značek, jako je následující.
 
@@ -218,7 +218,7 @@ Následující příklad ukazuje příklad `Hyperlink` , který je nakonfigurov�
 > Tato část popisuje výchozí implementaci navigace v rámci fragmentů v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]také umožňuje implementovat vlastní navigační schéma fragmentů, které v rámci součásti vyžaduje zpracování <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType> události.
 
 > [!IMPORTANT]
-> Můžete přejít na fragmenty na volných [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránkách (soubory pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s `Page` označením jako kořenový element) pouze v případě, že stránky lze procházet prostřednictvím [!INCLUDE[TLA2#tla_http](../../../../includes/tla2sharptla-http-md.md)].
+> V případě, že stránky lze procházet [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pomocí protokolu HTTP, můžete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přejít na `Page` fragmenty na volných stránkách (soubory pouze s označením jako kořenový element).
 >
 > Nicméně volná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka může přejít na vlastní fragmenty.
 
@@ -367,7 +367,7 @@ Pokud zaregistrujete obslužnou rutinu s událostí navigace z a <xref:System.Wi
 
 #### <a name="navigating-the-journal-from-internet-explorer"></a>Navigace v deníku z aplikace Internet Explorer
 
-V koncepčních případech deník funguje stejným způsobem jako tlačítko **zpět** a předávat v  [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] rámci. Zobrazují se na následujícím obrázku.
+V koncepčních případech deník funguje stejným způsobem jako tlačítko **zpět** a předávat v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] rámci. Zobrazují se na následujícím obrázku.
 
 ![Tlačítka zpět a] přeposílání (./media/navigation-overview/back-and-forward-navigation.png "Přejděte pomocí tlačítek zpět a vpřed.")
 
@@ -539,7 +539,7 @@ Níže jsou uvedené některé způsoby, jak se soubory cookie podporují [!INCL
 
 - [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]ze stejné domény můžou vytvářet a sdílet soubory cookie.
 
-- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]a [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] stránky ze stejné domény můžou vytvářet a sdílet soubory cookie.
+- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]a stránky HTML ze stejné domény můžou vytvářet a sdílet soubory cookie.
 
 - Soubory cookie jsou odesílány, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] když a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] volné stránky vytvářejí webové požadavky.
 
@@ -683,7 +683,7 @@ Jak bylo zmíněno dříve, více než jeden deník může existovat v rámci ap
 
 V celém tomto tématu <xref:System.Windows.Controls.Page> a balíčku [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] byly použity k předvedení různých možností navigace pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Nicméně, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] který je zkompilován do aplikace, není jediným typem obsahu, na který lze přejít, a balíček není jediným způsobem, jak identifikovat obsah. <xref:System.Windows.Controls.Page>
 
-Jak ukazuje Tato část, můžete také přejít na volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] soubory a objekty.
+Jak ukazuje Tato část, můžete také přejít na volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, soubory HTML a objekty.
 
 <a name="Navigating_to_Loose_XAML_Files"></a>
 
@@ -724,19 +724,19 @@ Jedním z omezení s ohledem na [!INCLUDE[TLA2#tla_xaml](../../../../includes/tl
 
 ### <a name="navigating-to-html-files-by-using-frame"></a>Navigace do souborů HTML pomocí rámce
 
-Jak byste mohli očekávat, můžete také přejít na [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]. Stačí pouze zadat [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který používá schéma HTTP. Následující [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad <xref:System.Windows.Controls.Frame> ukazuje ,že[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] přejde na stránku.
+Jak byste mohli očekávat, můžete také přejít na HTML. Stačí pouze zadat [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který používá schéma HTTP. Následující [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad<xref:System.Windows.Controls.Frame> ukazuje, že přejde na stránku HTML.
 
 [!code-xaml[NavigationOverviewSnippets#FrameHtmlNavMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/FrameHTMLNavPage.xaml#framehtmlnavmarkup)]
 
-Navigace na [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] vyžaduje zvláštní oprávnění. Například nemůžete přejít z [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] na, který je spuštěný v izolovaném prostoru zabezpečení zóny Internet Zone. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](../wpf-partial-trust-security.md).
+Navigace na HTML vyžaduje zvláštní oprávnění. Například nemůžete přejít z [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] na, který je spuštěný v izolovaném prostoru zabezpečení zóny Internet Zone. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](../wpf-partial-trust-security.md).
 
 <a name="Navigating_to_HTML_Files_Using_WebBrowser"></a>
 
 ### <a name="navigating-to-html-files-by-using-the-webbrowser-control"></a>Navigace do souborů HTML pomocí ovládacího prvku WebBrowser
 
-Tento <xref:System.Windows.Controls.WebBrowser> ovládací prvek [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] podporuje hostování dokumentů, navigaci a spolupráci pomocí skriptů a spravovaného kódu. Podrobné informace <xref:System.Windows.Controls.WebBrowser> o ovládacím prvku naleznete v tématu <xref:System.Windows.Controls.WebBrowser>.
+<xref:System.Windows.Controls.WebBrowser> Ovládací prvek podporuje hostování dokumentů HTML, navigaci a spolupráci pomocí skriptu nebo spravovaného kódu. Podrobné informace <xref:System.Windows.Controls.WebBrowser> o ovládacím prvku naleznete v tématu <xref:System.Windows.Controls.WebBrowser>.
 
-Podobně <xref:System.Windows.Controls.Frame>jako přechod na [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] použití <xref:System.Windows.Controls.WebBrowser> vyžaduje zvláštní oprávnění. Například z aplikace s částečným vztahem důvěryhodnosti můžete přejít pouze k [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] umístění na webu původu. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](../wpf-partial-trust-security.md).
+Podobně <xref:System.Windows.Controls.Frame>, přechod na HTML pomocí <xref:System.Windows.Controls.WebBrowser> vyžaduje zvláštní oprávnění. Například z aplikace s částečným vztahem důvěryhodnosti můžete přejít pouze k HTML, které je umístěno na webu původu. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](../wpf-partial-trust-security.md).
 
 <a name="Navigating_to_Objects"></a>
 
@@ -778,7 +778,7 @@ Další informace o datových šablonách najdete v tématu [Přehled šablonov�
 
 ## <a name="security"></a>Zabezpečení
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]Podpora navigace umožňuje [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] přejít na celé Internetu a umožňuje aplikacím hostovat obsah třetích stran. Pokud chcete chránit aplikace i uživatele před škodlivým chováním, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje celou řadu funkcí zabezpečení, které jsou popsány v tématu zabezpečení a [částečně důvěryhodné zabezpečení WPF](../wpf-partial-trust-security.md). [](../security-wpf.md)
+[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]Podpora navigace umožňuje [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] přejít na celé Internetu a umožňuje aplikacím hostovat obsah třetích stran. Pokud chcete chránit aplikace i uživatele před škodlivým chováním, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje celou řadu funkcí zabezpečení, které jsou [](../security-wpf.md) popsány v tématu zabezpečení a [částečně důvěryhodné zabezpečení WPF](../wpf-partial-trust-security.md).
 
 ## <a name="see-also"></a>Viz také:
 

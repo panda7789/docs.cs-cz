@@ -17,15 +17,15 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 42b1596082fe3e682a6fa806412ab5837b087bf9
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 65725851cb413e28ceff0d1c9c4b62b76c4fff18
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400709"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817882"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
-I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, CLR a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se kombinují a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují silný a odolný model zabezpečení, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
+I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují silný a odolný model zabezpečení, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
   
  ![Diagram, který zobrazuje model zabezpečení WPF.](./media/wpf-security-strategy-platform-security/windows-presentation-foundation-security.png)  
   
@@ -75,15 +75,8 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
 <a name="Limited_Rights_Process_for_Browser_Hosted_Applications"></a>   
 ### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezených práv pro aplikace hostované v prohlížeči  
- Aplikace hostované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] v prohlížeči se spouštějí v karanténě zóny Internet Zone. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]integrace s [!INCLUDE[TLA#tla_ie](../../../includes/tlasharptla-ie-md.md)] nástrojem rozšiřuje tuto ochranu o další podporu.  
+ Aplikace hostované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] v prohlížeči se spouštějí v karanténě zóny Internet Zone. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]integrace s aplikací Microsoft Internet Explorer rozšiřuje tuto ochranu o další podporu.  
   
-#### <a name="internet-explorer-6-service-pack-2-and-internet-explorer-7-for-xp"></a>Internet Explorer 6 Service Pack 2 a Internet Explorer 7 pro XP  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]využije zabezpečení operačního systému tím, že omezuje oprávnění [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] procesu pro k další ochraně. Předtím, než se spustí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči, vytvoří operační systém proces hostitele, který odebere nepotřebná oprávnění z tokenu procesu. Mezi příklady odebraných oprávnění patří možnost vypnout počítač uživatele, načíst ovladače a přístup pro čtení ke všem souborům v počítači.  
-  
-#### <a name="internet-explorer-7-for-vista"></a>Internet Explorer 7 pro systém Vista  
- V aplikaci [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]běží aplikacevchráněnémrežimu.[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Konkrétně spouštějte [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] s integritou na střední úrovni.  
-  
-#### <a name="defense-in-depth-layer"></a>Obrana – hloubková vrstva  
  Vzhledem [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] k tomu, že jsou obecně izolovaným prostorem sady oprávnění zóny Internet, odebrání těchto [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] oprávnění neškodí z hlediska kompatibility. Místo toho je vytvořena další vrstva důkladné obrany; Pokud aplikace izolovaného prostoru (sandbox) může zneužít jiné vrstvy a převzít proces, bude mít stále omezená oprávnění.  
   
  Viz [použití účtu uživatele](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29)s nejnižšími oprávněními.  
@@ -168,7 +161,7 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
  **Kontrolní** výraz v podstatě zabraňuje neomezeným oprávněním [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] , která vyžaduje omezení přístupu k internetové zóně pro XBAP.  
   
- Z perspektivy [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] platformy zodpovídá za správné použití **výrazu Assert** ; nesprávné použití **výrazu** by mohlo povolit zvýšení oprávnění pomocí škodlivého kódu. V důsledku toho je důležité volat pouze **Assert** v případě potřeby a zajistit, aby omezení izolovaného prostoru zůstala nedotčená. Například kód v izolovaném prostoru (sandbox) nesmí otevírat náhodné soubory, ale může používat písma. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]umožňuje aplikacím v izolovaném prostoru (sandbox) používat funkce písma voláním [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Assert a pro čtení souborů známých jako tato písma jménem aplikace v izolovaném prostoru (sandbox).  
+ Z perspektivy [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] platformy zodpovídá za správné použití **výrazu Assert** ; nesprávné použití **výrazu** by mohlo povolit zvýšení oprávnění pomocí škodlivého kódu. V důsledku toho je důležité volat pouze **Assert** v případě potřeby a zajistit, aby omezení izolovaného prostoru zůstala nedotčená. Například kód v izolovaném prostoru (sandbox) nesmí otevírat náhodné soubory, ale může používat písma. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]umožňuje aplikacím v izolovaném prostoru (sandbox) používatfunkce písma voláním [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Assert a pro čtení souborů známých jako tato písma jménem aplikace v izolovaném prostoru (sandbox).  
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
@@ -186,9 +179,9 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
 <a name="Microsoft_Internet_Explorer_Security"></a>   
 ## <a name="microsoft-internet-explorer-security"></a>Microsoft Internet Explorer Security  
- Kromě snížení zabezpečení a zjednodušení konfigurace [!INCLUDE[TLA#tla_ie6sp2](../../../includes/tlasharptla-ie6sp2-md.md)] zabezpečení obsahuje několik funkcí, které zlepšují zabezpečení, které zvyšují zabezpečení pro [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]uživatele. Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
+ Kromě snížení zabezpečení a zjednodušení konfigurace zabezpečení Microsoft Internet Explorer 6 (SP2) obsahuje několik funkcí, které vylepšení zabezpečení zvyšují zabezpečení pro uživatele [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. Pohyb těchto funkcí se snaží uživatelům větší kontrolu nad jejich možností procházení.  
   
- [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]Před nástrojem by se uživatelům mohlo vztahovat některý z následujících kroků:  
+ Před IE6 SP2 můžou uživatelé podléhat některé z následujících možností:  
   
 - Náhodně otevíraná okna.  
   
@@ -198,13 +191,13 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
  V některých případech by nedůvěryhodné weby se pokusily uživatele přimět k falšování instalace [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] nebo opakovanému zobrazení dialogového okna pro instalaci Microsoft ActiveX, i když ho uživatel mohl zrušit. Pomocí těchto postupů je možné, že velký počet uživatelů byl napadený, což vede k nedostatečným rozhodováním, což vedlo k instalaci spywarových aplikací.  
   
- [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]obsahuje několik funkcí pro zmírnění těchto typů problémů, které se týkají konceptu spuštění uživatele. [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)]zjistí, že uživatel klikl na odkaz nebo element stránky před akcí, která se označuje jako *iniciace uživatele*, a považuje ji za odlišnou od toho, že skript na stránce vyvolal podobnou akci. Jako příklad [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zahrnuje **blokování automaticky otevíraných oken** , které detekuje, když uživatel klikne na tlačítko před stránkou, která vytváří automaticky otevírané okno. Díky [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] tomu je možné povolit většinu neškodného překryvných oken a zabránit tak automaticky otevíraná okna, která uživatelé nepožadují ani nechtějí. Blokovaná automaticky otevíraná okna jsou zachycena v novém **informačním panelu**, který uživateli umožňuje ručně přepsat blok a zobrazit automaticky otevírané okno.  
+ IE6 SP2 obsahuje několik funkcí, které pomáhají zmírnit tyto typy problémů, které se týkají konceptu zahájení spouštění uživatelů. IE6 SP2 detekuje, kdy uživatel klikl na odkaz nebo element stránky před akcí, která se označuje jako *iniciace uživatele*, a považuje ji za odlišnou od toho, že skript na stránce aktivuje podobnou akci. Příklad: IE6 SP2 zahrnuje **blokování automaticky otevíraných oken** , které detekuje, když uživatel klikne na tlačítko před stránkou, která vytváří automaticky otevírané okno. To umožňuje, aby aplikace IE6 SP2 povolovala většinu automaticky otevíraných oken neškodného a současně zabránila automaticky otevíraná okna, která se uživatelům nedotazují ani nechtějí. Blokovaná automaticky otevíraná okna jsou zachycena v novém **informačním panelu**, který uživateli umožňuje ručně přepsat blok a zobrazit automaticky otevírané okno.  
   
  Pro **otevření**/**Uložit** výzvy zabezpečení se použije také stejná logika pro zahájení uživatelem. Dialogová okna pro instalaci ActiveX jsou v informačním pruhu vždy zachycena, pokud nepředstavuje upgrade z dříve nainstalovaného ovládacího prvku. Tyto míry se kombinují, aby uživatelům poskytovaly bezpečnější a lépe řízené uživatelské prostředí, protože jsou chráněné před lokalitami, které jim umožňují nainstalovat nežádoucí nebo škodlivý software.  
   
- Tyto funkce také chrání zákazníky, kteří [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] používají k procházení webů, které jim umožňují stahovat a instalovat [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace. Konkrétně je to proto [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] , že nabízí lepší uživatelské prostředí, které uživatelům omezuje možnost instalovat škodlivé nebo Devious aplikace bez ohledu na to, jaká technologie se použila k jejich sestavování, včetně. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]Přidá se k těmto ochranám pomocí ClickOnce, aby se usnadnilo stahování svých aplikací přes Internet. Vzhledem [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] k tomu, že se spustí v izolovaném prostoru zabezpečení zóny Internetu, můžou se snadno spustit. Na druhé straně samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro tyto aplikace ClickOnce zobrazí dialogové okno zabezpečení během procesu spuštění, aby upozornilo na použití dalších požadavků na zabezpečení aplikace. To ale musí být iniciované uživatelem, bude se řídit také logikou iniciované uživatelem a můžete ho zrušit.  
+ Tyto funkce také chrání zákazníky, kteří používají aplikaci IE6 SP2 k procházení webů, které jim umožňují stahovat a instalovat [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace. To je důležité kvůli tomu, že aplikace IE6 SP2 nabízí lepší uživatelské prostředí, které uživatelům omezuje možnost instalovat škodlivé nebo Devious aplikace bez ohledu na to, jaká technologie se použila k jejich [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]sestavování, včetně. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]Přidá se k těmto ochranám pomocí ClickOnce, aby se usnadnilo stahování svých aplikací přes Internet. Vzhledem [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] k tomu, že se spustí v izolovaném prostoru zabezpečení zóny Internetu, můžou se snadno spustit. Na druhé straně samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. Pro tyto aplikace ClickOnce zobrazí dialogové okno zabezpečení během procesu spuštění, aby upozornilo na použití dalších požadavků na zabezpečení aplikace. To ale musí být iniciované uživatelem, bude se řídit také logikou iniciované uživatelem a můžete ho zrušit.  
   
- [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)]zahrnuje a rozšiřuje možnosti [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] zabezpečení v rámci trvalé snahy o zabezpečení.  
+ Internet Explorer 7 zahrnuje a rozšiřuje možnosti zabezpečení aplikace IE6 SP2 jako součást trvalého závazku na zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,38 +6,39 @@ helpviewer_keywords:
 - binding direction [WPF]
 - data binding [WPF], direction of binding
 ms.assetid: 37334478-028b-4514-86c9-1420709f4818
-ms.openlocfilehash: 164fae937fc3935c7640a898c0c1908fd0a6b6b1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 023cd42ad5fb321e7ffa65f08673cb4145f49af4
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625331"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817906"
 ---
-# <a name="how-to-specify-the-direction-of-the-binding"></a>Postupy: Určení směru vazby
-Tento příklad ukazuje, jak určit, zda vazba aktualizuje pouze vazby pro vlastnost target (cíl), vlastnost vazby source (zdroj), nebo vlastnost target i vlastnost source.  
+# <a name="how-to-specify-the-direction-of-the-binding"></a>Postupy: Zadat směr vazby
+
+Tento příklad ukazuje, jak určit, zda vazba aktualizuje pouze cílovou vlastnost (cílovou) vazby, vlastnost zdroje vazby (zdroj) nebo jak vlastnost target, tak vlastnost source.  
   
 ## <a name="example"></a>Příklad  
- Můžete použít <xref:System.Windows.Data.Binding.Mode%2A> vlastnosti k určení směru připojení. Následující seznam výčtu uvádí dostupné možnosti pro aktualizace vazeb:  
+ <xref:System.Windows.Data.Binding.Mode%2A?displayProperty=nameWithType> Vlastnost slouží k určení směru vazby. K dispozici jsou následující možnosti pro aktualizace vazeb:  
   
-- <xref:System.Windows.Data.BindingMode.TwoWay> aktualizuje cílovou vlastnost nebo vlastnost pokaždé, když se změní vlastnost target nebo vlastnost source.  
+- <xref:System.Windows.Data.BindingMode.TwoWay?displayProperty=nameWithType>aktualizuje cílovou vlastnost nebo vlastnost vždy, když se změní buď vlastnost target, nebo vlastnost source.  
   
-- <xref:System.Windows.Data.BindingMode.OneWay> Aktualizuje vlastnosti cílového pouze v případě, že se změní vlastnost source.  
+- <xref:System.Windows.Data.BindingMode.OneWay?displayProperty=nameWithType>aktualizuje cílovou vlastnost pouze v případě, že se změní vlastnost source.  
   
-- <xref:System.Windows.Data.BindingMode.OneTime> Aktualizuje vlastnosti cílového pouze při spuštění aplikace, nebo když <xref:System.Windows.FrameworkElement.DataContext%2A> při změně.  
+- <xref:System.Windows.Data.BindingMode.OneTime?displayProperty=nameWithType>aktualizuje cílovou vlastnost pouze v případě, že se aplikace spustí nebo <xref:System.Windows.FrameworkElement.DataContext%2A> dojde ke změně.  
   
-- <xref:System.Windows.Data.BindingMode.OneWayToSource> Při změně vlastnosti cílového, aktualizuje vlastnost source.  
+- <xref:System.Windows.Data.BindingMode.OneWayToSource?displayProperty=nameWithType>aktualizuje zdrojovou vlastnost, když se změní cílová vlastnost.  
   
-- <xref:System.Windows.Data.BindingMode.Default> způsobí, že výchozí <xref:System.Windows.Data.Binding.Mode%2A> hodnotu vlastnost target, který se má použít.  
+- <xref:System.Windows.Data.BindingMode.Default?displayProperty=nameWithType>způsobí použití výchozí <xref:System.Windows.Data.Binding.Mode%2A> hodnoty cílová vlastnost.  
   
- Další informace najdete v tématu <xref:System.Windows.Data.BindingMode> výčtu.  
+ Další informace najdete v tématu <xref:System.Windows.Data.BindingMode> výčet.  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Data.Binding.Mode%2A> vlastnost.  
   
  [!code-xaml[DirectionalBinding#4](~/samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#4)]  
   
- Chcete-li zjistit změny zdrojového (platí pro <xref:System.Windows.Data.BindingMode.OneWay> a <xref:System.Windows.Data.BindingMode.TwoWay> vazby), zdroj musí implementovat mechanismus oznámení změn vhodné vlastnosti, jako <xref:System.ComponentModel.INotifyPropertyChanged>. Zobrazit [implementace oznámení změn vlastností](how-to-implement-property-change-notification.md) příklad <xref:System.ComponentModel.INotifyPropertyChanged> implementace.  
+ Aby bylo možné zjistit změny ve zdroji <xref:System.Windows.Data.BindingMode.OneWay> ( <xref:System.Windows.Data.BindingMode.TwoWay> platí pro vazby a), musí zdroj implementovat vhodný mechanismus pro oznamování změn <xref:System.ComponentModel.INotifyPropertyChanged>vlastností, jako je například. Příklad<xref:System.ComponentModel.INotifyPropertyChanged> implementace naleznete v tématu [implementace oznámení o změně vlastností](how-to-implement-property-change-notification.md) .  
   
- Pro <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby, časování aktualizací zdroje můžete řídit tak, že nastavíte <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost. Další informace naleznete v tématu <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>.  
+ Pro <xref:System.Windows.Data.BindingMode.TwoWay> vazby <xref:System.Windows.Data.BindingMode.OneWayToSource> nebo můžete řídit načasování <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> zdrojových aktualizací nastavením vlastnosti. Další informace naleznete v tématu <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

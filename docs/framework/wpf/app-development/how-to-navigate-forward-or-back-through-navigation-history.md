@@ -8,36 +8,36 @@ helpviewer_keywords:
 - history [WPF], navigating forward
 - navigation [WPF], through navigation history (forward)
 ms.assetid: 5939d574-5f53-469e-85f5-1f2b13607caa
-ms.openlocfilehash: 00a41fcf85583ec0d081a2fa099f3a77cfcd2900
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85d3562246170901d83d6314caec5747d52fb9a0
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625356"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817961"
 ---
 # <a name="how-to-navigate-forward-or-back-through-navigation-history"></a>Postupy: Přecházení vpřed a zpět v historii navigace
-Tento příklad ukazuje, jak přejít na položky v historii pro navigaci vpřed nebo vzad.  
+Tento příklad ukazuje, jak přejít vpřed nebo zpět k položkám v historii navigace.  
   
 ## <a name="example"></a>Příklad  
- Kód, který se spouští z obsahu následující hostitelů můžete přejít vpřed nebo vzad historii navigace, jedna položka v čase.  
+ Kód, který se spouští z obsahu na následujících hostitelích, může přejít vpřed nebo zpět prostřednictvím historie navigace, vždy po jednotlivých položkách.  
   
-- <xref:System.Windows.Navigation.NavigationWindow> použití <xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Navigation.NavigationWindow>použití<xref:System.Windows.Navigation.NavigationService>  
   
-- <xref:System.Windows.Controls.Frame> použití <xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Controls.Frame>použití<xref:System.Windows.Navigation.NavigationService>  
   
-- [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]  
+- Internet Explorer  
   
- Předtím, než přejdete vpřed jednu položku, Nejdřív musíte zkontrolovat, zda jsou položky v historii navigace směrem vpřed zkontrolováním **CanGoForward** vlastnost. Pro navigaci vpřed jednu položku, můžete volat **GoForward** metody. To je znázorněno v následujícím příkladu:  
+ Než budete moct přejít na jednu položku vpřed, musíte nejdřív zkontrolovat, jestli jsou v historii navigace vpřed položky, a to kontrolou vlastnosti **CanGoForward** . Chcete-li přejít o jednu položku vpřed, zavolejte metodu **GoForward** . To je znázorněno v následujícím příkladu:  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateForwardCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/HomePage.xaml.cs#navigateforwardcode)]
  [!code-vb[HOWTONavigationSnippets#NavigateForwardCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/homepage.xaml.vb#navigateforwardcode)]  
   
- Předtím, než můžete přejít zpět jednu položku, musíte nejprve zkontrolujte, zda jsou položky v historii pro navigaci zpět zkontrolováním **CanGoBack** vlastnost. Přejít zpět jeden záznam, zavolejte **GoBack** metody. To je znázorněno v následujícím příkladu:  
+ Předtím, než budete moci přejít zpět na jednu položku, je třeba nejprve zkontrolovat, zda jsou položky v historii zpětné navigace zkontrolovány vlastností **CanGoBack** . Chcete-li přejít zpět o jednu položku, zavolejte metodu **GoBack** . To je znázorněno v následujícím příkladu:  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/HomePage.xaml.cs#navigatebackcode)]
  [!code-vb[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/homepage.xaml.vb#navigatebackcode)]  
   
- **CanGoForward**, **GoForward**, **CanGoBack**, a **GoBack** implementují <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Frame>, a <xref:System.Windows.Navigation.NavigationService>.  
+ **CanGoForward**, **GoForward**, **CanGoBack**a **GoBack** jsou implementovány pomocí <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Frame>a <xref:System.Windows.Navigation.NavigationService>.  
   
 > [!NOTE]
->  Při volání **GoForward**, a nejsou žádné záznamy v historii navigace směrem vpřed nebo při volání **GoBack**, a nejsou žádné záznamy v historii pro navigaci zpět <xref:System.InvalidOperationException> je vyvolána výjimka.
+>  Pokud zavoláte **GoForward**a neexistují žádné položky v historii navigace před přechodem nebo pokud volátea v <xref:System.InvalidOperationException> historii navigace neexistují žádné položky, je vyvolána výjimka.

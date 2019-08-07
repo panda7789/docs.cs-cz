@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 6bea25fbd321eead9137caaeb212b76a9d528e88
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: da9eaf127a4db02cddbb36e53a0d0ddb5b28b841
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710396"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818047"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]je navržena pro ukládání vývojářů z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojářů nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.  
@@ -143,7 +143,7 @@ ms.locfileid: "68710396"
   
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]Průzkumník funguje tímto způsobem. Každé nové okno Průzkumníka patří původnímu procesu, ale je vytvořeno pod kontrolou nezávislého vlákna.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Pomocí<xref:System.Windows.Controls.Frame> ovládacího prvku můžeme zobrazit webové stránky. Snadno se dá vytvořit jednoduchá [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] náhrada. Začneme s důležitou funkcí: možnost otevřít nové okno Průzkumníka. Když uživatel klikne na tlačítko "nové okno", spustíme kopii našeho okna v samostatném vlákně. Tímto způsobem dlouho běžící nebo blokující operace v jednom z oken nezamkne všechna ostatní okna.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Pomocí<xref:System.Windows.Controls.Frame> ovládacího prvku můžeme zobrazit webové stránky. Snadno se dá vytvořit jednoduchá náhrada z Internet Exploreru. Začneme s důležitou funkcí: možnost otevřít nové okno Průzkumníka. Když uživatel klikne na tlačítko "nové okno", spustíme kopii našeho okna v samostatném vlákně. Tímto způsobem dlouho běžící nebo blokující operace v jednom z oken nezamkne všechna ostatní okna.  
   
  Ve skutečnosti má model webového prohlížeče svůj vlastní složitý model vláken. Zvolili jsme to proto, že by měl být známý pro většinu čtenářů.  
   

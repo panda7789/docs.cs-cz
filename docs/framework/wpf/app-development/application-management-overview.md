@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: d8e26ff197e22ffa18b4acdd020b80879023c0f7
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: a5808261ec9fe957ee993177590446389f219609
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364087"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818020"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají za následek sdílení společné sady funkcí, které se vztahují k implementaci a správě aplikací. Toto téma poskytuje přehled funkcí ve <xref:System.Windows.Application> třídě pro vytváření a správu aplikací.  
@@ -293,7 +293,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
   
 - Aplikace XBAP přešla jinam.  
   
-- V [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)], pokud je zavřena karta, která je hostitelem aplikace XBAP.  
+- V aplikaci Internet Explorer, pokud je zavřena karta, která je hostitelem aplikace XBAP.  
   
 - Při zavření prohlížeče.  
   

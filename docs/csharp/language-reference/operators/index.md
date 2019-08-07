@@ -18,16 +18,16 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 13ad16ab768cdaee96cab29811e2ed058dee977a
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: bc5e2c88314c2f590aeddcfd37bd04c3a7400804
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512243"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796478"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
-C#poskytuje několik předdefinovaných operátorů podporovaných integrovanými typy. Například aritmetické [operátory](arithmetic-operators.md) provádějí aritmetické operace s operandy předdefinovaných číselných typů a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s logickými [operandy](../keywords/bool.md) .
+C#poskytuje několik předdefinovaných operátorů podporovaných integrovanými typy. Například aritmetické [operátory](arithmetic-operators.md) provádějí aritmetické operace s operandy předdefinovaných číselných typů a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s logickými [](../keywords/bool.md) operandy.
 
 Uživatelsky definovaný typ může přetížit určité operátory pro definování odpovídajícího chování pro operandy daného typu. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
 
@@ -59,7 +59,7 @@ přístup k elementu [&#91;x&#93; ](member-access-operators.md#indexer-operator-
 
 [nezaškrtnuto](../keywords/unchecked.md) – zakáže kontrolu přetečení pro celočíselné operace. Toto je výchozí chování kompilátoru.
 
-[Default (T)](../../programming-guide/statements-expressions-operators/default-value-expressions.md) – vytvoří výchozí hodnotu typu T.
+[Default (T)](default.md) – vytvoří výchozí hodnotu typu T.
 
 [nameof](nameof.md) – získá jednoduchý (nekvalifikovaný) název proměnné, typu nebo členu jako konstantní řetězec.
 

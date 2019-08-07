@@ -2,12 +2,12 @@
 title: Řízení přístupu
 description: Naučte se řídit přístup k programovacím prvkům, jako jsou typy, metody a funkce, v F# programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: ed77a09cf87aabf9a4134276e89e84aa42abd3c3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 38f8f3fd4114c0428fbe8baca71594cd07740b2c
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629970"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817857"
 ---
 # <a name="access-control"></a>Řízení přístupu
 
@@ -40,7 +40,7 @@ Signatury F# v nástroji poskytují jiný mechanismus řízení přístupu F# k 
 
 - Přístupnost pro jednotlivé případy v rozlišeném sjednocení je určena přístupným přístupu přímo k rozlišenému sjednocení. To znamená, že konkrétní případ typu Union není méně dostupný než samotný sjednocení.
 
-- Přístupnost pro jednotlivá pole typu záznamu nemůže být určena přístupností samotného záznamu. To znamená, že konkrétní popisek záznamu není méně dostupný než samotný záznam.
+- Přístupnost pro jednotlivá pole typu záznamu je určena přístupností samotného záznamu. To znamená, že konkrétní popisek záznamu není méně dostupný než samotný záznam.
 
 ## <a name="example"></a>Příklad
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 2d3a72dad6a4e139288bf3c1fa9f4cde5124586f
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 924553bf457a6668143785c78871ebac6e01efa4
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796762"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818023"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
@@ -77,11 +77,11 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Deploying_Markup_Only_XAML_Applications"></a>   
 ### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
- Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou obvykle publikovány na webových serverech, jako jsou stránky HTML, a lze [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]je zobrazit pomocí. Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou obvykle publikovány na webových serverech, jako jsou stránky HTML, a lze je zobrazit pomocí aplikace Internet Explorer. Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
   
  Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace najdete v tématu [zabezpečení](../security-wpf.md).  
   
- Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením lze nainstalovat do místního systému souborů pomocí příkazu xcopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Tyto stránky lze zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] aplikace nebo Průzkumníka Windows.  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s označením lze nainstalovat do místního systému souborů pomocí příkazu xcopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
   
  Další informace o XAML naleznete v tématu [XAML Overview (WPF)](../advanced/xaml-overview-wpf.md).  
   
@@ -98,7 +98,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
 > [!NOTE]
 >  Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
- Tyto soubory jsou vytvářeny, [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] když je sestavena. Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser. Podobně jako [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]stránky pouze s označením jsouobvyklepublikoványnawebovémserveruazobrazoványpomocí.[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]  
+ Tyto soubory jsou vytvářeny, [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] když je sestavena. Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Například[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] stránky pouze s označením jsou obvykle publikovány na webový server a zobrazovány pomocí aplikace Internet Explorer.  
   
  [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]dá se nasadit do klientů pomocí kterékoli z technik nasazení. Technologie ClickOnce se však doporučuje, protože poskytuje následující možnosti:  
   
@@ -112,13 +112,11 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
- Aby bylo možné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci spustit, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , když jsou prohlíženy aplikace hostované v prohlížeči. Pokud .NET Framework není nainstalován, vyzve uživatele [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , aby si ho nainstalovali.  
+ Aby bylo možné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci spustit, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. Internet Explorer automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] při prohlížení aplikací hostovaných v prohlížeči. Pokud .NET Framework není nainstalován, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
   
- Chcete-li zjistit, zda je .NET Framework [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nainstalován, zahrnuje aplikaci zaváděcího nástroje, která je registrována jako záložní [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] obslužná rutina pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
+ Aby bylo možné zjistit, zda je .NET Framework nainstalováno, obsahuje aplikace Internet Explorer aplikaci zaváděcího nástroje, která [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] je registrována jako záložní obslužná rutina pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
   
- Pokud je udělené oprávnění [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , stáhne a nainstaluje .NET Framework pomocí Microsoft Background Intelligent Transfer Service (BITS). Po úspěšné instalaci .NET Framework se původně požadovaný soubor otevře v novém okně prohlížeče.  
-  
- .NET Framework automatické rozpoznávání jsou k dispozici [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]v [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]systémech, [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] a klientů, [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] kteří mají nainstalovaný nebo novější.  
+ Pokud je udělené oprávnění, Internet Explorer stáhne a nainstaluje .NET Framework pomocí Microsoft Background Intelligent Transfer Service (BITS). Po úspěšné instalaci .NET Framework se původně požadovaný soubor otevře v novém okně prohlížeče.  
   
  Další informace najdete v tématu [nasazení .NET Framework a aplikací](../../deployment/index.md).  
   
