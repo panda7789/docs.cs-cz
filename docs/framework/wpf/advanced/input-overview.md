@@ -24,12 +24,12 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 8fa9f2dd668efca6a3108973ff792cc17b37b410
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 5eaf83f259abe4ee574dfd4d2269dfa1e9373c94
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68818037"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869078"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a>[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Podsystém poskytuje výkonné rozhraní API pro získání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotyku a stylusu. Toto téma popisuje služby poskytované nástrojem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětluje architekturu vstupních systémů.
@@ -115,7 +115,7 @@ ms.locfileid: "68818037"
 
  V případě vstupu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] klávesnice nejprve odešle / příslušné <xref:System.Windows.ContentElement.KeyDown> <xref:System.Windows.ContentElement.KeyUp> události. Pokud tyto události nejsou zpracovány a klíč je text (spíše než řídicí klíč, například směrovou šipku nebo funkční klávesy), <xref:System.Windows.ContentElement.TextInput> je vyvolána událost.  Mezi <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.TextInput> událostmi a není vždy jednoduché mapování 1:1, protože více klávesových úhozů může generovat jeden znak textového vstupu a jednoduché stisknutí kláves. může generovat více znaků. <xref:System.Windows.ContentElement.KeyUp> zobrazen.  To platí zejména pro jazyky, jako jsou čínština, japonština a korejština, které používají editory IME (Input Method editory) k vygenerování tisíců možných znaků v odpovídajících abecedách.
 
- Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> <xref:System.Windows.ContentElement.TextInput> odeslání události je nastavena na<xref:System.Windows.Input.KeyEventArgs.Key%2A> hodnotu, pokud se stisknutí kláves změní na část události (Pokud je stisknuto ALT + S). <xref:System.Windows.ContentElement.KeyUp> / <xref:System.Windows.ContentElement.KeyDown> To umožňuje kódu v <xref:System.Windows.ContentElement.KeyDown> obslužné rutině události <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> kontrolovat a, pokud je nalezeno, opustit zpracování obslužné rutiny následně vyvolané <xref:System.Windows.ContentElement.TextInput> události. V těchto případech lze použít různé vlastnosti <xref:System.Windows.Input.TextCompositionEventArgs> argumentu k určení původních klávesových úhozů. Podobně, pokud [!INCLUDE[TLA2#tla_ime](../../../../includes/tla2sharptla-ime-md.md)] je aktivní, <xref:System.Windows.Input.Key> má hodnotu <xref:System.Windows.Input.Key.ImeProcessed?displayProperty=nameWithType>a <xref:System.Windows.Input.KeyEventArgs.ImeProcessedKey%2A> poskytuje původní klávesovou zkratku nebo stisknutí kláves.
+ Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> <xref:System.Windows.ContentElement.TextInput> odeslání události je nastavena na<xref:System.Windows.Input.KeyEventArgs.Key%2A> hodnotu, pokud se stisknutí kláves změní na část události (Pokud je stisknuto ALT + S). <xref:System.Windows.ContentElement.KeyUp> / <xref:System.Windows.ContentElement.KeyDown> To umožňuje kódu v <xref:System.Windows.ContentElement.KeyDown> obslužné rutině události <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> kontrolovat a, pokud je nalezeno, opustit zpracování obslužné rutiny následně vyvolané <xref:System.Windows.ContentElement.TextInput> události. V těchto případech lze použít různé vlastnosti <xref:System.Windows.Input.TextCompositionEventArgs> argumentu k určení původních klávesových úhozů. Podobně, pokud je aktivní editor IME, <xref:System.Windows.Input.Key> má <xref:System.Windows.Input.Key.ImeProcessed?displayProperty=nameWithType>hodnotu a <xref:System.Windows.Input.KeyEventArgs.ImeProcessedKey%2A> poskytuje původní klávesovou zkratku nebo stisknutí kláves.
 
  Následující příklad definuje obslužnou rutinu <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události a obslužné rutiny <xref:System.Windows.UIElement.KeyDown> události.
 

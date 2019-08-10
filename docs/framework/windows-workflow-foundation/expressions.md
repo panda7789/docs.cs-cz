@@ -1,24 +1,24 @@
 ---
-title: Expressions1
+title: Výrazy – WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 047f0f5d0214926fde2fe21efd9a24c4b645ed8e
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 092272db2f7979cf12917dfe35e116295db79bf3
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380171"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868899"
 ---
 # <a name="expressions"></a>Výrazy
-Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek. Všechny aktivity výrazů jsou nepřímo odvozeny z <xref:System.Activities.Activity%601>, které se nachází <xref:System.Activities.OutArgument> vlastnost s názvem <xref:System.Activities.Activity%601.Result%2A> jako návratovou hodnotu aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)] se dodává s širokou škálu aktivity výrazů od těch, které jsou jako jednoduchý <xref:System.Activities.Expressions.VariableValue%601> a <xref:System.Activities.Expressions.VariableReference%601>, které poskytují přístup k proměnné pracovního postupu jeden prostřednictvím operátoru aktivitami, komplexní aktivity, jako <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> nabídku přístup k jeho plném rozsahu jazyka Visual Basic k vytvoření výsledku. Je možné vytvořit další výraz aktivity odvozené z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>.  
+Výraz programovací model Windows Workflow Foundation (WF) je jakákoli aktivita, která vrací výsledek. Všechny aktivity výrazů odvozují nepřímo <xref:System.Activities.Activity%601>z, který <xref:System.Activities.OutArgument> obsahuje vlastnost s <xref:System.Activities.Activity%601.Result%2A> názvem jako návratovou hodnotou aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)]dodává <xref:System.Activities.Expressions.VariableValue%601> se široké škále aktivit výrazů od jednoduchých, jako je a <xref:System.Activities.Expressions.VariableReference%601>, která poskytuje přístup k proměnné s jedním pracovním postupem prostřednictvím aktivit operátora, složitým aktivitám, jako je například <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> Tato nabídka přístup k celé šířce Visual Basic jazyka, aby vznikl výsledek. Další aktivity výrazu lze vytvořit odvozením z <xref:System.Activities.CodeActivity%601> nebo. <xref:System.Activities.NativeActivity%601>  
   
-## <a name="using-expressions"></a>Pomocí výrazů  
- Pomocí návrháře postupu provádění <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pro všechny výrazy v projektech Visual Basicu a <xref:Microsoft.CSharp.Activities.CSharpValue%601> a <xref:Microsoft.CSharp.Activities.CSharpReference%601> pro výrazy v C# projekty pracovního postupu.  
+## <a name="using-expressions"></a>Výrazy using  
+ Návrhář pracovních postupů <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> používá <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a pro všechny výrazy v <xref:Microsoft.CSharp.Activities.CSharpReference%601> Visual Basic projekty a <xref:Microsoft.CSharp.Activities.CSharpValue%601> pro výrazy v C# projektech pracovního postupu.  
   
 > [!NOTE]
->  Podpora pro C# výrazy v projekty pracovního postupu byla zavedena v rozhraní .NET Framework 4.5. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
+>  Podpora C# výrazů v projektech pracovního postupu byla představena v .NET Framework 4,5. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
   
- Vytvořený pomocí návrháře pracovních postupů jsou uloženy v XAML, kde se zobrazí výrazy uzavřený v hranatých závorkách, jako v následujícím příkladu.  
+ Pracovní postupy vytvořené návrhářem jsou uloženy v jazyce XAML, kde jsou výrazy zobrazeny v hranatých závorkách, jako v následujícím příkladu.  
   
 ```xml  
 <Sequence xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
@@ -39,7 +39,7 @@ Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek. Vš
 </Sequence>  
 ```  
   
- Při definování pracovního postupu v kódu, můžete použít všechny aktivity výrazů. Následující příklad ukazuje použití složení operátor aktivit pro přidání tří čísel.  
+ Při definování pracovního postupu v kódu lze použít jakékoli aktivity výrazu. Následující příklad ukazuje použití složení aktivit operátoru pro přidání tří čísel.  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -68,7 +68,7 @@ Sequence w = new Sequence
 };  
 ```  
   
- Stejný pracovní postup může být vyjádřena pomocí více kompaktně C# výrazů lambda, jak je znázorněno v následujícím příkladu.  
+ Stejný pracovní postup lze vyjádřit kompaktnější pomocí C# výrazů lambda, jak je znázorněno v následujícím příkladu.  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -89,7 +89,7 @@ Sequence w = new Sequence
 };  
 ```  
   
- Pracovní postup lze také vyjádřit pomocí aktivity výrazů jazyka Visual Basic, jak je znázorněno v následujícím příkladu.  
+ Pracovní postup lze také vyjádřit pomocí aktivit Visual Basic výrazů, jak je znázorněno v následujícím příkladu.  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -110,8 +110,8 @@ Sequence w = new Sequence
 };  
 ```  
   
-## <a name="extending-available-expressions-with-custom-expression-activities"></a>Rozšíření k dispozici výrazy s aktivitami vlastní výraz  
- Výrazy v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] je rozšiřitelný, umožňuje další výraz aktivity, který se má vytvořit. Následující příklad ukazuje aktivitu, která vrací součet tři celočíselné hodnoty.  
+## <a name="extending-available-expressions-with-custom-expression-activities"></a>Rozšiřování dostupných výrazů pomocí aktivit vlastních výrazů  
+ Výrazy v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] jsou rozšiřitelné, což umožňuje vytvořit další aktivity výrazů. Následující příklad ukazuje aktivitu, která vrací součet tří celočíselných hodnot.  
   
 ```  
 using System;  
@@ -138,7 +138,7 @@ namespace ExpressionsDemo
 }  
 ```  
   
- Pomocí této nové aktivity můžete přepsat předchozí pracovní postup, který přidá tří hodnot, jak je znázorněno v následujícím příkladu.  
+ Pomocí této nové aktivity můžete přepsat předchozí pracovní postup, který přidal tři hodnoty, jak je znázorněno v následujícím příkladu.  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -165,4 +165,4 @@ Sequence w = new Sequence
 };  
 ```  
   
- Další informace o použití výrazů v kódu, naleznete v tématu [vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md).
+ Další informace o použití výrazů v kódu naleznete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md).

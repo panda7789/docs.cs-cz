@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/01/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3e5b6b482dfbd1ff06347883a93a561944200a9f
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: e44ea5795beb90bafe3faf0bafb463d49ba1fc41
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733401"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868729"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: Rozpoznávání objektů pomocí ONNX v ML.NET
 
@@ -344,7 +344,6 @@ Nyní, když jsou vytvořeny třídy dimenzí a ohraničujících polí, je čas
     - `CELL_HEIGHT`je výška jedné buňky v mřížce obrázku.
     - `channelStride`je počáteční pozice aktuální buňky v mřížce.
 
-
     Když model narazí na obrázek, rozdělí `416px x 416px`vstup do mřížky buněk na `13 x 13`velikost. Každá buňka obsahuje hodnotu `32px x 32px`. V každé buňce jsou 5 ohraničujících polí, z nichž každý obsahuje 5 funkcí (x, y, Šířka, Výška, spolehlivost). Kromě toho každý ohraničovací rámeček obsahuje pravděpodobnost každé třídy, která v tomto případě je 20. Každá buňka proto obsahuje 125 informací (5 funkcí + 20 pravděpodobností třídy). 
 
 `channelStride` Pro všechna 5 ohraničovacích rámečků vytvořte seznam ukotvení:
@@ -654,7 +653,6 @@ Níže použijte `DrawBoundingBox` metodu pro vykreslení ohraničujících pol�
 Nakonec přidejte do `LogDetectedObjects` metody logiku protokolování.
 
 [!code-csharp [LogPredictionsOutput](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L54)]
-
 
 Po příkazu try-catch přidejte další logiku, která indikuje, že proces je spuštěný.
 

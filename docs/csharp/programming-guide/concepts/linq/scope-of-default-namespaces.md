@@ -1,13 +1,13 @@
 ---
-title: Rozsah výchozích oborů názvů v jazyce C# 1
+title: Obor výchozích názvových prostorů v jazyce C#
 ms.date: 07/20/2015
 ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
-ms.openlocfilehash: 29d7da9638f1c551894937a179abfa923b538252
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 0c5f5cccda6ba6a75a8631ed095921b90b02916b
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709988"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868860"
 ---
 # <a name="scope-of-default-namespaces-in-c"></a>Rozsah výchozích oborů názvů v jazyce C\#
 Výchozí obory názvů jako reprezentované ve stromu XML nejsou v oboru pro dotazy. Pokud máte XML, které je ve výchozím oboru názvů, je stále nutné deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a zkombinovat ji s místním názvem, aby bylo možné použít kvalifikovaný název v dotazu.  

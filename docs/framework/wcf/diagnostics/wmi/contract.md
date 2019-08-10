@@ -1,13 +1,13 @@
 ---
-title: Contract1
+title: Kontrakt
 ms.date: 03/30/2017
 ms.assetid: aa00f6b3-7e1f-4213-841a-206463fca20b
-ms.openlocfilehash: 10789f9a2940c239ae20c8fd1e9d48bca0e820ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4a21e95a6f1f1860ed36c968d17bb8ac8465dce
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963693"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868436"
 ---
 # <a name="contract"></a>Kontrakt
 Kontrakt  
@@ -30,79 +30,79 @@ class Contract
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída smlouvy nedefinuje žádné metody.  
+ Třída kontraktu nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída smlouvy má následující vlastnosti:  
+ Třída kontraktu má následující vlastnosti:  
   
 ### <a name="appdomainid"></a>AppDomainId  
  Datový typ: sint32  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Id domény, která hostuje kontrakt.  
+ ID domény AppDomain, která hostuje kontrakt.  
   
 ### <a name="behaviors"></a>Chování  
- Datový typ: Chování pole  
+ Datový typ: Pole chování  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Vlastnosti přičleněné k tomuto kontraktu.  
+ Chování spojené s touto smlouvou.  
   
-### <a name="name"></a>Název  
+### <a name="name"></a>Name  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Název kontraktu v jazyce WSDL.  
   
 ### <a name="namespace"></a>Obor názvů  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Obor názvů `portType` elementu v jazyce WSDL.  
+ Obor názvů `portType` prvku v jazyce WSDL.  
   
 ### <a name="operations"></a>Operace  
- Datový typ: Operace pole  
+ Datový typ: Pole operace  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Operace tohoto kontraktu.  
   
 ### <a name="processid"></a>ID procesu  
  Datový typ: sint32  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Proces Id procesu, který hostuje kontrakt.  
+ ID procesu, který hostuje kontrakt.  
   
 ### <a name="ref"></a>ref  
  Datový typ: Kontrakt  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Typ zpětného volání v případě, že kontrakt je oboustranný.  
   
 ### <a name="sessionmode"></a>SessionMode  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Určuje, zda kontrakt vyžaduje, aby připojení připojené k tomuto kontraktu použilo kanálové relace.  
+ Určuje, zda kontrakt vyžaduje, aby vazba přidružená k tomuto kontraktu použila relace kanálu.  
   
-### <a name="type"></a>Type  
+### <a name="type"></a>type  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Typ kontraktu.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
+|TVOŘÍCÍ|Deklarováno v souboru ServiceModel. mof.|  
 |---------|-----------------------------------|  
-|Obor názvů|Definované v root\ServiceModel|  
+|Obor názvů|Definováno v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
 

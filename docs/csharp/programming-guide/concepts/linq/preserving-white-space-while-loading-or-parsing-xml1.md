@@ -1,25 +1,25 @@
 ---
-title: Zachování prázdných znaků při načítání nebo analýze XML1
+title: Zachování prázdných znaků při načítání nebo analýze XML
 ms.date: 07/20/2015
 ms.assetid: f3ff58c4-55aa-4fcd-b933-e3a2ee6e706c
-ms.openlocfilehash: 802cd9089d0ab52e9c05546ddad04af8100e82a0
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 263121468b3010884c14c9e593a857d01dc253ef
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484096"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868808"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování prázdných znaků při načítání nebo analýze XML
-Toto téma popisuje, jak řídit chování prázdných [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Toto téma popisuje, jak ovládat chování prázdného místa v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
- Běžný scénář, kdy je pro čtení odsazený XML, vytvoření stromu XML v paměti bez ostatní uzly text prázdné znaky (tedy ne zachování prázdné znaky), provádění některých operací na XML a pak uložte soubor XML s odsazením. Při serializaci XML s formátováním je zachována pouze významný prázdný znak ve stromové struktuře XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+ Běžným scénářem je čtení odsazeného XML, vytvoření stromu XML v paměti bez jakýchkoli textových uzlů s prázdnými znaky (tj. bez zachovávání prázdných znaků), provedení některých operací v XML a následné uložení XML s odsazením. Při serializaci XML s formátováním je zachováno pouze významné prázdné znaky ve stromu XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
- Další z typických možností je číst a upravovat kód XML, který již byl záměrně odsazeny. Nebudete chtít změnit tento odsazení žádným způsobem. Chcete-li to provést v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], zachovat mezer při načtení nebo analyzovat kód XML a zakázat formátování při serializaci kódu XML.  
+ Dalším běžným scénářem je číst a upravovat kód XML, který již byl záměrně odsazen. Toto odsazení nebudete chtít nijak měnit. Chcete-li to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]provést v, zachováte prázdné místo při načítání nebo analýze XML a při serializaci kódu XML zakážete formátování.  
   
- Toto téma popisuje chování prázdné místo metody, která naplní stromů XML. Informace o řízení prázdných znaků při serializaci stromů XML, naleznete v tématu [zachování prázdných znaků při serializaci](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ Toto téma popisuje prázdné místo v případě metod, které naplňují stromy XML. Informace o řízení prázdných znaků při serializaci stromů XML naleznete v tématu [zachování mezer při serializaci](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
   
-## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metody, která naplní stromů XML  
- Následující metody u <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy naplnění stromu XML. Můžete naplnění stromu XML ze souboru, <xref:System.IO.TextReader>, <xref:System.Xml.XmlReader>, nebo řetězec:  
+## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metod, které naplňují stromy XML  
+ Následující metody v <xref:System.Xml.Linq.XElement> třídách a <xref:System.Xml.Linq.XDocument> naplní strom XML. Můžete naplnit strom XML ze souboru, <xref:System.IO.TextReader>a <xref:System.Xml.XmlReader>, nebo pomocí řetězce:  
   
 - <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>  
   
@@ -29,11 +29,11 @@ Toto téma popisuje, jak řídit chování prázdných [!INCLUDE[sqltecxlinq](~/
   
 - <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>  
   
- Pokud metoda nepřijímá <xref:System.Xml.Linq.LoadOptions> jako argument, metoda nezachová nevýznamné prázdné znaky.  
+ Pokud metoda nepřijímá <xref:System.Xml.Linq.LoadOptions> jako argument, nezachová metoda nevýznamné prázdné znaky.  
   
- Ve většině případů, pokud tato metoda přebírá <xref:System.Xml.Linq.LoadOptions> jako argument, můžete volitelně zachovat mezer nevýznamné jako textové uzly ve stromové struktuře XML. Nicméně pokud metoda je načtení XML ze <xref:System.Xml.XmlReader>, pak bude <xref:System.Xml.XmlReader> Určuje, zda budou zachovány prázdné znaky, nebo ne. Nastavení <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> nebude mít žádný efekt.  
+ Ve většině případů, pokud metoda přebírá <xref:System.Xml.Linq.LoadOptions> jako argument, můžete volitelně zachovat nevýznamné prázdné znaky jako textové uzly ve stromu XML. Nicméně pokud metoda načítá XML z <xref:System.Xml.XmlReader>a, <xref:System.Xml.XmlReader> pak určuje, zda bude prázdný znak zachován nebo ne. Nastavení <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> nebude mít žádný vliv.  
   
- Pomocí těchto metod, pokud prázdné místo je zachována, nevýznamné prázdné místo je vložen do stromu XML jako <xref:System.Xml.Linq.XText> uzly. Pokud nejsou uchována prázdné znaky, nejsou vložen textové uzly.  
+ S těmito metodami, pokud je zachováno prázdné místo, je do stromu XML jako <xref:System.Xml.Linq.XText> uzly vloženo nevýznamné prázdné znaky. Pokud prázdné znaky nejsou zachovány, textové uzly nejsou vloženy.  
   
- Můžete vytvořit stromu XML pomocí <xref:System.Xml.XmlWriter>. Uzly, které jsou zapsány do <xref:System.Xml.XmlWriter> zaplnění ve stromové struktuře. Při vytváření stromu XML pomocí této metody všechny uzly jsou však zachovaných, bez ohledu na to, zda uzel je prázdný znak, nebo Ne, nebo určuje, zda je prázdné místo důležité nebo ne.  
+ Strom XML lze vytvořit pomocí <xref:System.Xml.XmlWriter>. Uzly, které jsou zapsány do, <xref:System.Xml.XmlWriter> jsou vyplněny ve stromové struktuře. Při sestavování stromu XML pomocí této metody však jsou zachovány všechny uzly bez ohledu na to, zda je uzel prázdný znak nebo není nebo zda je mezera významná.  
   

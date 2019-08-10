@@ -2,12 +2,12 @@
 title: Upgradovat rozhraní API s atributy pro definování očekávání null
 description: Tento článek vysvětluje podněty a techniky pro přidání popisných atributů k popisu nulového stavu argumentů a vrácených hodnot z rozhraní API.
 ms.date: 07/31/2019
-ms.openlocfilehash: 9a5eded385d5eac7a493a36876557cadf083afad
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: eebd3d190b8c93833de6e1c1f1594c1c1f56e14e
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733436"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868887"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
@@ -67,7 +67,6 @@ Než povolíte typy odkazů s možnou hodnotou null, jsou proměnné považován
 Dalším pravděpodobným zdrojem upozornění je vrácení hodnot, pokud hodnota nebyla inicializována.
 
 Prvním krokem při adresování upozornění kompilátoru je použití `?` poznámek na parametrech a návratových typech k označení, že argumenty nebo návratové hodnoty mohou být null. Pokud referenční proměnné nesmí mít hodnotu null, je původní deklarace správná. V takovém případě váš cíl nestačí jenom opravit upozornění. Důležitější je, že kompilátor porozuměl vašemu záměru pro potenciální hodnoty null. Při kontrole upozornění se dostanete k vašemu dalšímu hlavnímu rozhodnutí o vaší knihovně. Chcete zvážit úpravu signatur rozhraní API, abyste mohli snadněji sdělit záměr návrhu? Lepší signatura rozhraní API pro `TryGetMessage` dříve zkoumané metody může být:
-
 
 ```csharp
 string? TryGetMessage(string key);
