@@ -1,6 +1,6 @@
 ---
-title: Další zdroje informací pro programátory v jazyce Visual Basic
-description: Vyhledejte prostředky na webu pro další informace, klást otázky a přečtěte si další informace o jazyce Visual Basic.
+title: Další zdroje informací pro programátory Visual Basic
+description: Projděte si materiály na webu, abyste se seznámili, položte otázky a zjistěte další informace o Visual Basic.
 ms.date: 02/21/2018
 helpviewer_keywords:
 - Visual Basic, additional resources
@@ -8,61 +8,60 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: febfe0ae0a3e478109b338b228d0bc306bf56454
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: dc7653b1d792c66b40c0ab1d55a1614c7a69b7d1
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052789"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869065"
 ---
-# <a name="additional-resources"></a><span data-ttu-id="08d72-103">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="08d72-103">Additional resources</span></span>
+# <a name="additional-resources"></a><span data-ttu-id="00259-103">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="00259-103">Additional resources</span></span>
 
-<span data-ttu-id="08d72-104">Na následujících webech pokyny a vám může pomoci najít odpovědi na běžné problémy.</span><span class="sxs-lookup"><span data-stu-id="08d72-104">The following web sites provide guidance and can help you find answers to common problems.</span></span>
+<span data-ttu-id="00259-104">Následující weby obsahují doprovodné materiály a mohou vám pomoci najít odpovědi na běžné problémy.</span><span class="sxs-lookup"><span data-stu-id="00259-104">The following web sites provide guidance and can help you find answers to common problems.</span></span>
 
-## <a name="microsoft-resources"></a><span data-ttu-id="08d72-105">Prostředky Microsoftu</span><span class="sxs-lookup"><span data-stu-id="08d72-105">Microsoft resources</span></span>
+## <a name="microsoft-resources"></a><span data-ttu-id="00259-105">Prostředky společnosti Microsoft</span><span class="sxs-lookup"><span data-stu-id="00259-105">Microsoft resources</span></span>
 
-### <a name="on-the-web"></a><span data-ttu-id="08d72-106">Na webu</span><span class="sxs-lookup"><span data-stu-id="08d72-106">On the web</span></span>
+### <a name="on-the-web"></a><span data-ttu-id="00259-106">Na webu</span><span class="sxs-lookup"><span data-stu-id="00259-106">On the web</span></span>
 
-|<span data-ttu-id="08d72-107">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-107">Term</span></span>|<span data-ttu-id="08d72-108">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-108">Definition</span></span>|
+|<span data-ttu-id="00259-107">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-107">URL</span></span>|<span data-ttu-id="00259-108">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-108">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-109">Návrh jazyka Visual Basic .NET</span><span class="sxs-lookup"><span data-stu-id="08d72-109">Visual Basic .NET Language Design</span></span>](https://github.com/dotnet/vblang)|<span data-ttu-id="08d72-110">Oficiální úložišti na Githubu pro návrh jazyka Visual Basic .NET.</span><span class="sxs-lookup"><span data-stu-id="08d72-110">Official repository on GitHub for Visual Basic .NET language design.</span></span>|
-|[<span data-ttu-id="08d72-111">Blog týmu Microsoft Visual Basic</span><span class="sxs-lookup"><span data-stu-id="08d72-111">Microsoft Visual Basic Team Blog</span></span>](https://devblogs.microsoft.com/vbteam/)|<span data-ttu-id="08d72-112">Poskytuje přístup k na blogu týmu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="08d72-112">Provides access to the Visual Basic team blog.</span></span>|
+|[<span data-ttu-id="00259-109">Visual Basic návrh jazyka .NET</span><span class="sxs-lookup"><span data-stu-id="00259-109">Visual Basic .NET Language Design</span></span>](https://github.com/dotnet/vblang)|<span data-ttu-id="00259-110">Oficiální úložiště na GitHubu pro Visual Basic návrh jazyka .NET.</span><span class="sxs-lookup"><span data-stu-id="00259-110">Official repository on GitHub for Visual Basic .NET language design.</span></span>|
+|[<span data-ttu-id="00259-111">Blog týmu Microsoft Visual Basic</span><span class="sxs-lookup"><span data-stu-id="00259-111">Microsoft Visual Basic Team Blog</span></span>](https://devblogs.microsoft.com/vbteam/)|<span data-ttu-id="00259-112">Poskytuje přístup k blogu týmu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="00259-112">Provides access to the Visual Basic team blog.</span></span>|
 
-### <a name="code-samples"></a><span data-ttu-id="08d72-113">Ukázky kódů</span><span class="sxs-lookup"><span data-stu-id="08d72-113">Code samples</span></span>
+### <a name="code-samples"></a><span data-ttu-id="00259-113">Ukázky kódů</span><span class="sxs-lookup"><span data-stu-id="00259-113">Code samples</span></span>
 
-|<span data-ttu-id="08d72-114">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-114">Term</span></span>|<span data-ttu-id="08d72-115">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-115">Definition</span></span>|
+|<span data-ttu-id="00259-114">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-114">URL</span></span>|<span data-ttu-id="00259-115">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-115">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-116">Galerie kódu</span><span class="sxs-lookup"><span data-stu-id="08d72-116">Code Gallery</span></span>](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=VB&f%5B0%5D.Text=VB.NET)|<span data-ttu-id="08d72-117">Stáhněte si a ukázkové aplikace a další prostředky nasdílet komunitě vývojářů.</span><span class="sxs-lookup"><span data-stu-id="08d72-117">Download and share sample applications and other resources with the developer community.</span></span>|
-|[<span data-ttu-id="08d72-118">Ukázky dokumentace jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="08d72-118">Visual Basic documentation samples</span></span>](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)|<span data-ttu-id="08d72-119">Obsahuje ukázky použité v rámci dokumentace jazyka Visual Basic a .NET.</span><span class="sxs-lookup"><span data-stu-id="08d72-119">Contains the samples used throughout the Visual Basic and .NET documentation.</span></span>|
+|[<span data-ttu-id="00259-116">Ukázky dokumentace Visual Basic</span><span class="sxs-lookup"><span data-stu-id="00259-116">Visual Basic documentation samples</span></span>](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)|<span data-ttu-id="00259-117">Obsahuje ukázky používané v dokumentaci k Visual Basic a .NET.</span><span class="sxs-lookup"><span data-stu-id="00259-117">Contains the samples used throughout the Visual Basic and .NET documentation.</span></span>|
 
-### <a name="forums"></a><span data-ttu-id="08d72-120">Diskuzní fóra</span><span class="sxs-lookup"><span data-stu-id="08d72-120">Forums</span></span>
+### <a name="forums"></a><span data-ttu-id="00259-118">Diskuzní fóra</span><span class="sxs-lookup"><span data-stu-id="00259-118">Forums</span></span>
 
-|<span data-ttu-id="08d72-121">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-121">Term</span></span>|<span data-ttu-id="08d72-122">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-122">Definition</span></span>|
+|<span data-ttu-id="00259-119">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-119">URL</span></span>|<span data-ttu-id="00259-120">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-120">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-123">Fóra Visual Basic</span><span class="sxs-lookup"><span data-stu-id="08d72-123">Visual Basic Forums</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)|<span data-ttu-id="08d72-124">Tento článek popisuje obecné problémy jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="08d72-124">Discusses general Visual Basic issues.</span></span>|
+|[<span data-ttu-id="00259-121">Visual Basic fóra</span><span class="sxs-lookup"><span data-stu-id="00259-121">Visual Basic Forums</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)|<span data-ttu-id="00259-122">Popisuje obecné problémy Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="00259-122">Discusses general Visual Basic issues.</span></span>|
 
-### <a name="videos-and-webcasts"></a><span data-ttu-id="08d72-125">Videa a webová vysílání</span><span class="sxs-lookup"><span data-stu-id="08d72-125">Videos and webcasts</span></span>
+### <a name="videos-and-webcasts"></a><span data-ttu-id="00259-123">Videa a webová vysílání</span><span class="sxs-lookup"><span data-stu-id="00259-123">Videos and webcasts</span></span>
 
-|<span data-ttu-id="08d72-126">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-126">Term</span></span>|<span data-ttu-id="08d72-127">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-127">Definition</span></span>|
+|<span data-ttu-id="00259-124">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-124">URL</span></span>|<span data-ttu-id="00259-125">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-125">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-128">Webu Channel 9</span><span class="sxs-lookup"><span data-stu-id="08d72-128">Channel9</span></span>](https://channel9.msdn.com/)|<span data-ttu-id="08d72-129">Poskytuje nepřetržitou komunitu prostřednictvím videí, wikiwebů a fóra.</span><span class="sxs-lookup"><span data-stu-id="08d72-129">Provides continuous community through videos, Wikis, and forums.</span></span>|
+|[<span data-ttu-id="00259-126">Channel9</span><span class="sxs-lookup"><span data-stu-id="00259-126">Channel9</span></span>](https://channel9.msdn.com/)|<span data-ttu-id="00259-127">Poskytuje nepřetržitou komunitu prostřednictvím videí, wiki a fór.</span><span class="sxs-lookup"><span data-stu-id="00259-127">Provides continuous community through videos, Wikis, and forums.</span></span>|
 
-### <a name="support"></a><span data-ttu-id="08d72-130">Podpora</span><span class="sxs-lookup"><span data-stu-id="08d72-130">Support</span></span>
+### <a name="support"></a><span data-ttu-id="00259-128">Podpora</span><span class="sxs-lookup"><span data-stu-id="00259-128">Support</span></span>
 
-|<span data-ttu-id="08d72-131">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-131">Term</span></span>|<span data-ttu-id="08d72-132">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-132">Definition</span></span>|
+|<span data-ttu-id="00259-129">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-129">URL</span></span>|<span data-ttu-id="00259-130">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-130">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-133">Podpora Microsoftu</span><span class="sxs-lookup"><span data-stu-id="08d72-133">Microsoft Support</span></span>](https://support.microsoft.com)|<span data-ttu-id="08d72-134">Poskytuje přístup k článků znalostní báze Knowledge Base (KB), soubory ke stažení a aktualizace, webová vysílání podpory a dalším službám.</span><span class="sxs-lookup"><span data-stu-id="08d72-134">Provides access to Knowledge Base (KB) articles, downloads and updates, support webcasts, and other services.</span></span>|
-|[<span data-ttu-id="08d72-135">Visual Studio dotazy</span><span class="sxs-lookup"><span data-stu-id="08d72-135">Visual Studio Questions</span></span>](https://developercommunity.visualstudio.com)|<span data-ttu-id="08d72-136">Umožňuje hlášení chyb nebo pošlete nám návrhy společnosti Microsoft o .NET a Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="08d72-136">Enables you to file bugs or provide suggestions to Microsoft about .NET and Visual Studio.</span></span> <span data-ttu-id="08d72-137">Může také nahlásit chybu tak, že vyberete **pomáhají** > **odeslat zpětnou vazbu** > **nahlásit problém** v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="08d72-137">You can also report a bug by selecting **Help** > **Send Feedback** > **Report a Problem** in Visual Studio.</span></span>|
+|[<span data-ttu-id="00259-131">podpora Microsoftu</span><span class="sxs-lookup"><span data-stu-id="00259-131">Microsoft Support</span></span>](https://support.microsoft.com)|<span data-ttu-id="00259-132">Poskytuje přístup k článkům znalostní báze (KB), ke stažení a aktualizacím, webovému vysílání podpory a dalším službám.</span><span class="sxs-lookup"><span data-stu-id="00259-132">Provides access to Knowledge Base (KB) articles, downloads and updates, support webcasts, and other services.</span></span>|
+|[<span data-ttu-id="00259-133">Dotazy k aplikaci Visual Studio</span><span class="sxs-lookup"><span data-stu-id="00259-133">Visual Studio Questions</span></span>](https://developercommunity.visualstudio.com)|<span data-ttu-id="00259-134">Umožňuje zaslat do souboru chyby nebo poskytnout návrhy Microsoftu o .NET a Visual Studiu.</span><span class="sxs-lookup"><span data-stu-id="00259-134">Enables you to file bugs or provide suggestions to Microsoft about .NET and Visual Studio.</span></span> <span data-ttu-id="00259-135">Chybu můžete také ohlásit tak, že vyberete **help** > **Odeslat zpětnou vazbu** > **ohlásit problém** v aplikaci Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="00259-135">You can also report a bug by selecting **Help** > **Send Feedback** > **Report a Problem** in Visual Studio.</span></span>|
 
-## <a name="third-party-resources"></a><span data-ttu-id="08d72-138">Materiály třetích stran</span><span class="sxs-lookup"><span data-stu-id="08d72-138">Third-party resources</span></span>
+## <a name="third-party-resources"></a><span data-ttu-id="00259-136">Prostředky třetích stran</span><span class="sxs-lookup"><span data-stu-id="00259-136">Third-party resources</span></span>
 
-|<span data-ttu-id="08d72-139">Termín</span><span class="sxs-lookup"><span data-stu-id="08d72-139">Term</span></span>|<span data-ttu-id="08d72-140">Definice</span><span class="sxs-lookup"><span data-stu-id="08d72-140">Definition</span></span>|
+|<span data-ttu-id="00259-137">Adresa URL</span><span class="sxs-lookup"><span data-stu-id="00259-137">URL</span></span>|<span data-ttu-id="00259-138">Popis</span><span class="sxs-lookup"><span data-stu-id="00259-138">Description</span></span>|
 |----------|----------------|
-|[<span data-ttu-id="08d72-141">VBForums</span><span class="sxs-lookup"><span data-stu-id="08d72-141">VBForums</span></span>](http://www.vbforums.com/)|<span data-ttu-id="08d72-142">Poskytuje diskusní fórum o jazyce Visual Basic, .NET a další.</span><span class="sxs-lookup"><span data-stu-id="08d72-142">Provides a forum to discuss Visual Basic, .NET, and more.</span></span>|
-|[<span data-ttu-id="08d72-143">vbCity</span><span class="sxs-lookup"><span data-stu-id="08d72-143">vbCity</span></span>](http://vbcity.com/)|<span data-ttu-id="08d72-144">Web komunity pro uživatele, přečtěte si a klást otázky týkající se jazyka Visual Basic a .NET.</span><span class="sxs-lookup"><span data-stu-id="08d72-144">A community site for people to learn and ask questions about Visual Basic and .NET.</span></span>|
-|[<span data-ttu-id="08d72-145">Stack Overflow</span><span class="sxs-lookup"><span data-stu-id="08d72-145">Stack Overflow</span></span>](https://stackoverflow.com/questions/tagged/vb.net)|<span data-ttu-id="08d72-146">Přetečení zásobníku je web otázek a odpovědí pro vývojáře.</span><span class="sxs-lookup"><span data-stu-id="08d72-146">Stack Overflow is a question and answer site for developers.</span></span>|
+|[<span data-ttu-id="00259-139">VBForums</span><span class="sxs-lookup"><span data-stu-id="00259-139">VBForums</span></span>](http://www.vbforums.com/)|<span data-ttu-id="00259-140">Poskytuje fórum pro diskuzi Visual Basic, .NET a dalších.</span><span class="sxs-lookup"><span data-stu-id="00259-140">Provides a forum to discuss Visual Basic, .NET, and more.</span></span>|
+|[<span data-ttu-id="00259-141">vbCity</span><span class="sxs-lookup"><span data-stu-id="00259-141">vbCity</span></span>](http://vbcity.com/)|<span data-ttu-id="00259-142">Komunitní web pro lidi, kteří se budou učit a klást dotazy týkající se Visual Basic a .NET.</span><span class="sxs-lookup"><span data-stu-id="00259-142">A community site for people to learn and ask questions about Visual Basic and .NET.</span></span>|
+|[<span data-ttu-id="00259-143">Stack Overflow</span><span class="sxs-lookup"><span data-stu-id="00259-143">Stack Overflow</span></span>](https://stackoverflow.com/questions/tagged/vb.net)|<span data-ttu-id="00259-144">Stack Overflow je web otázky a odpovědi pro vývojáře.</span><span class="sxs-lookup"><span data-stu-id="00259-144">Stack Overflow is a question and answer site for developers.</span></span>|
 
-## <a name="see-also"></a><span data-ttu-id="08d72-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08d72-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="00259-145">Viz také:</span><span class="sxs-lookup"><span data-stu-id="00259-145">See also</span></span>
 
-- [<span data-ttu-id="08d72-148">Začínáme s jazykem Visual Basic</span><span class="sxs-lookup"><span data-stu-id="08d72-148">Get started with Visual Basic</span></span>](../../visual-basic/getting-started/index.md)
-- [<span data-ttu-id="08d72-149">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="08d72-149">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
+- [<span data-ttu-id="00259-146">Začínáme s Visual Basic</span><span class="sxs-lookup"><span data-stu-id="00259-146">Get started with Visual Basic</span></span>](../../visual-basic/getting-started/index.md)
+- [<span data-ttu-id="00259-147">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="00259-147">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)

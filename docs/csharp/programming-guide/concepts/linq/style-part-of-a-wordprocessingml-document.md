@@ -1,29 +1,29 @@
 ---
-title: Část stylu Dokument1 WordprocessingML
+title: Část stylu dokumentu WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
-ms.openlocfilehash: 5f4db2834aae01bf451d7430e923729a7d7069c4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 56726a7ea7594bfd1c68e5b1f8e45f585138eac6
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483424"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868629"
 ---
-# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="babea-102">Část stylu dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="babea-102">Style Part of a WordprocessingML Document</span></span>
-<span data-ttu-id="babea-103">Toto téma ukazuje příklad část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="babea-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
+# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="c6ac3-102">Část stylu dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="c6ac3-102">Style Part of a WordprocessingML Document</span></span>
+<span data-ttu-id="c6ac3-103">Toto téma ukazuje příklad části se stylem v dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="babea-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="babea-104">Example</span></span>  
- <span data-ttu-id="babea-105">V následujícím příkladu je XML, které tvoří část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="babea-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="c6ac3-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c6ac3-104">Example</span></span>  
+ <span data-ttu-id="c6ac3-105">V následujícím příkladu je soubor XML, který tvoří součást stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
   
- <span data-ttu-id="babea-106">Výchozí styl odstavce obsahuje element se následující úvodní značku:</span><span class="sxs-lookup"><span data-stu-id="babea-106">The default paragraph style has an element with the following opening tag:</span></span>  
+ <span data-ttu-id="c6ac3-106">Výchozí styl odstavce má element s následující otevírací značkou:</span><span class="sxs-lookup"><span data-stu-id="c6ac3-106">The default paragraph style has an element with the following opening tag:</span></span>  
   
 ```xml
 <w:style w:type="paragraph" w:default="1" w:styleId="Normal">  
 ```  
   
- <span data-ttu-id="babea-107">Budete muset tyto informace znát při psaní dotazu se najít výchozí styl identifikátor, takže dotaz můžete identifikovat styl odstavce, které mají výchozí styl.</span><span class="sxs-lookup"><span data-stu-id="babea-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
+ <span data-ttu-id="c6ac3-107">Tyto informace potřebujete znát při psaní dotazu pro vyhledání výchozího identifikátoru stylu, aby dotaz mohl identifikovat styl odstavců, které mají výchozí styl.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
   
- <span data-ttu-id="babea-108">Všimněte si, že tyto dokumenty jsou velmi jednoduché ve srovnání s běžných dokumentech, které generuje aplikaci Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="babea-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="babea-109">V mnoha případech budou uloženy spoustu dalších informací, další formátování a metadata.</span><span class="sxs-lookup"><span data-stu-id="babea-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="babea-110">Kromě toho aplikace Word neformátuje řádky bude snadno čitelný jako v následujícím příkladu; Místo toho je uložen soubor XML bez odsazení.</span><span class="sxs-lookup"><span data-stu-id="babea-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="babea-111">Však všech dokumentů WordprocessingML sdílet stejnou základního tvaru XML.</span><span class="sxs-lookup"><span data-stu-id="babea-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="babea-112">Z tohoto důvodu dotazy v tomto kurzu bude pracovat složitější dokumenty.</span><span class="sxs-lookup"><span data-stu-id="babea-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
+ <span data-ttu-id="c6ac3-108">Všimněte si, že tyto dokumenty jsou velmi jednoduché v porovnání s běžnými dokumenty vygenerovanými aplikací Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="c6ac3-109">V mnoha případech Word uloží Skvělé další informace, další formátování a metadata.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="c6ac3-110">Kromě toho Word neformátuje řádky tak, aby byly snadno čitelné jako v tomto příkladu. místo toho je soubor XML uložen bez odsazení.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="c6ac3-111">Všechny dokumenty WordprocessingML však sdílejí stejný základní tvar XML.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="c6ac3-112">Z tohoto důvodu budou dotazy prezentované v tomto kurzu pracovat se složitějšími dokumenty.</span><span class="sxs-lookup"><span data-stu-id="c6ac3-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
