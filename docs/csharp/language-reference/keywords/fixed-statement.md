@@ -16,7 +16,7 @@ ms.locfileid: "68433757"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 
-`fixed` Příkaz brání systému uvolňování paměti v přemístění pohyblivé proměnné. Příkaz je povolen pouze v nezabezpečeném kontextu. [](unsafe.md) `fixed` Pomocí `fixed` klíčového slova můžete také vytvořit [vyrovnávací paměti pevné velikosti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
+`fixed` Příkaz brání systému uvolňování paměti v přemístění pohyblivé proměnné. Příkaz je povolen pouze v nezabezpečeném kontextu. [nebezpečný](unsafe.md) `fixed` Pomocí `fixed` klíčového slova můžete také vytvořit [vyrovnávací paměti pevné velikosti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
 
 `fixed` Příkaz nastaví ukazatel na spravovanou proměnnou a "PIN" tuto proměnnou během provádění příkazu. Ukazatele na pohyblivé spravované proměnné jsou užitečné pouze v `fixed` kontextu. `fixed` Bez kontextu by uvolňování paměti mohlo přemístit proměnné nepředvídatelné. C# Kompilátor umožňuje přiřadit ukazatel na spravovanou proměnnou v `fixed` příkazu.
 
