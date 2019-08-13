@@ -17,19 +17,19 @@ ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dc8395492992c22da3c635f0de010516127f9be4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "61793000"
 ---
-# <a name="specifying-fully-qualified-type-names"></a>Určení úplných názvů typů
+# <a name="specifying-fully-qualified-type-names"></a>Určení plně kvalifikovaných názvů typů
 
-Je nutné zadat názvy typů mít platné zadání do různých operací reflexe. Plně kvalifikovaného názvu typu se skládá z specifikaci název sestavení, oboru názvů a název typu. Specifikace názvu typu jsou používány metody jako například <xref:System.Type.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>, a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.
+Je nutné zadat názvy typů, aby měly platný vstup k různým operacím reflexe. Plně kvalifikovaný název typu se skládá ze specifikace názvu sestavení, specifikace oboru názvů a názvu typu. Specifikace názvu typu jsou <xref:System.Type.GetType%2A?displayProperty=nameWithType>používány metodami, jako jsou, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType> <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.
 
 ## <a name="grammar-for-type-names"></a>Gramatika pro názvy typů
 
- Gramatika definuje syntaxe formální jazyků. V následující tabulce jsou uvedeny lexikální pravidla, která popisují, jak rozpoznat platný vstup. Terminály (prvky, které nejsou další redukovatelné) jsou uvedeny v všechna velká písmena. Neterminály (prvky, které jsou dále redukovatelné) jsou uvedeny v řetězcích písmeny nebo jednotlivě v uvozovkách, ale jednoduché uvozovky (') není součástí syntaxe samotný. Znakem svislé čáry (&#124;) označuje pravidla, která mají dílčí pravidla.
+ Gramatika definuje syntaxi formálních jazyků. V následující tabulce jsou uvedeny lexikální pravidla, která popisují, jak rozpoznat platný vstup. Terminály (tyto prvky, které nejsou další redukovatelné) jsou uvedeny velkými písmeny. Neterminály (tyto prvky, které jsou dále redukovatelné) jsou zobrazeny v kombinovaných nebo jednotlivě citovaných řetězcích, ale jednoduché uvozovky (') nejsou součástí samotné syntaxe. Znak kanálu (&#124;) označuje pravidla, která mají podpravidla.
 
 <!-- markdownlint-disable MD010 -->
 ```antlr
@@ -114,57 +114,57 @@ AssemblyProperty
 ```
 <!-- markdownlint-enable MD010 -->
 
-## <a name="specifying-special-characters"></a>Zadávání speciálních znaků
+## <a name="specifying-special-characters"></a>Určení speciálních znaků
 
-V názvu typu je IDENTIFIKÁTOR libovolný platný název určuje podle pravidel objektů jazyka.
+V názvu typu je identifikátor libovolný platný název určený pravidly jazyka.
 
-Použít zpětné lomítko (\\) jako řídicí znak pro oddělení následující klíčová slova, když se použije jako součást IDENTIFIKÁTORU.
+Pomocí zpětného lomítka\\() jako řídicího znaku můžete oddělit následující tokeny při použití jako součást identifikátoru.
 
 |Podpisový|Význam|
 |-----------|-------------|
-|\\,|Oddělovač sestavení.|
-|\\+|Vnořený typ oddělovače.|
-|\\&|Typ odkazu.|
+|\\,|Oddělovač sestavení|
+|\\+|Oddělovač vloženého typu|
+|\\&|Odkazový typ|
 |\\*|Typ ukazatele.|
-|\\[|Oddělovač rozměru pole.|
-|\\]|Oddělovač rozměru pole.|
-|\\.|Použijte zpětné lomítko před tečku pouze v případě, že období se používá ve specifikaci pole. Období NamespaceSpec nepřebírají zpětné lomítko.|
-|\\\|Zpětné lomítko, v případě potřeby jako řetězcový literál.|
+|\\[|Oddělovač dimenze pole.|
+|\\]|Oddělovač dimenze pole.|
+|\\.|Použití zpětného lomítka před tečkou pouze v případě, že se období používá ve specifikaci pole. Období v NamespaceSpec neberou zpětné lomítko.|
+|\\\|Zpětné lomítko v případě potřeby jako řetězcový literál.|
 
-Všimněte si, že v všechny součásti token TypeSpec s výjimkou AssemblyNameSpec prostory relevantní. V AssemblyNameSpec souvisí mezery před oddělovačem ',', ale mezery za oddělovačem ',' jsou ignorovány.
+Všimněte si, že ve všech součástech token TypeSpec s výjimkou AssemblyNameSpec jsou mezery relevantní. V AssemblyNameSpec mezery před oddělovačem ', ' jsou relevantní, ale mezery za oddělovačem ', ' budou ignorovány.
 
-Reflexe třídy, jako například <xref:System.Type.FullName%2A?displayProperty=nameWithType>, vrátí pozměněný název tak, aby vrácený název lze použít ve volání <xref:System.Type.GetType%2A>, například `MyType.GetType(myType.FullName)`.
+Třídy reflexe, <xref:System.Type.FullName%2A?displayProperty=nameWithType>jako například, vrátí pozměněný název tak, aby se vrácený název mohl použít při <xref:System.Type.GetType%2A>volání metody, jako `MyType.GetType(myType.FullName)`v.
 
 Například plně kvalifikovaný název pro typ může být `Ozzy.OutBack.Kangaroo+Wallaby,MyAssembly`.
 
-Pokud byly oboru názvů `Ozzy.Out+Back`, klepněte na znaménko plus musí být předcházen zpětným lomítkem. V opačném případě by analyzátor toto jako oddělovač vnoření. Reflexe generuje tento řetězec jako `Ozzy.Out\+Back.Kangaroo+Wallaby,MyAssembly`.
+Pokud byl `Ozzy.Out+Back`obor názvů, pak znaménko plus musí předcházet zpětnému lomítku. V opačném případě analyzátor by ho interpretoval jako oddělovač vnořování. Reflexe vygeneruje tento `Ozzy.Out\+Back.Kangaroo+Wallaby,MyAssembly`řetězec jako.
 
-## <a name="specifying-assembly-names"></a>Zadání názvu sestavení
+## <a name="specifying-assembly-names"></a>Určení názvů sestavení
 
-Minimum informací potřebných v specifikaci název sestavení je textový název sestavení (IDENTIFIKÁTOR). Následují tento IDENTIFIKÁTOR čárkou oddělený seznam dvojic vlastnost hodnota, jak je popsáno v následující tabulce. Názvy identifikátorů by měla dodržovat pravidla pro pojmenovávání souborů. IDENTIFIKÁTOR je velká a malá písmena.
+Minimální informace požadované ve specifikaci názvu sestavení jsou textový název (identifikátor) sestavení. Identifikátor můžete sledovat pomocí čárkami oddělený seznam párů vlastnost/hodnota, jak je popsáno v následující tabulce. Názvy IDENTIFIKÁTORů by měly splňovat pravidla pro pojmenovávání souborů. V IDENTIFIKÁTORu se nerozlišují malá a velká písmena.
 
 |Název vlastnosti|Popis|Povolené hodnoty|
 |-------------------|-----------------|----------------------|
-|**Verze**|Číslo verze sestavení|*Major.Minor.Build.Revision*, kde *hlavní*, *menší*, *sestavení*, a *revize* jsou celá čísla mezi 0 a 65535 (včetně).|
-|**PublicKey**|Plně veřejný klíč|Hodnota úplného veřejný klíč v šestnáctkovém formátu řetězce. Zadejte odkaz s hodnotou null (**nic** v jazyce Visual Basic) explicitně určit soukromé sestavení.|
-|**PublicKeyToken**|Token veřejného klíče (8 bajtů hash veřejného klíče)|Hodnota tokenu veřejného klíče v šestnáctkovém formátu řetězce. Zadejte odkaz s hodnotou null (**nic** v jazyce Visual Basic) explicitně určit soukromé sestavení.|
-|**Jazyková verze**|Jazyková verze sestavení|Jazyková verze sestavení ve formátu RFC 1766, nebo "neutrální" pro sestavení nezávislým na jazyku (nonsatellite).|
-|**Vlastní**|Vlastní binární velkých objektů (BLOB). Tím se aktuálně používá pouze v sestaveních generovaných [Native Image Generator (Ngen)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|Vlastní řetězec použitý nástrojem Native Image Generator sestavení mezipaměti upozornit, že je nativní bitové kopie sestavení probíhá instalace a proto má být nainstalován v mezipaměti nativních bitových kopií. Nazývá se také řetězec zap.|
+|**Verze**|Číslo verze sestavení|*Hlavní_verze. podverze. sestavení. revize*, kde *hlavní*, *vedlejší*, *sestavení*a *Revize* jsou celá čísla mezi 0 a 65535 včetně.|
+|**PublicKey**|Úplný veřejný klíč|Řetězcová hodnota úplného veřejného klíče v šestnáctkovém formátu Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
+|**PublicKeyToken**|Token veřejného klíče (8bitové bajtové hodnoty hash úplného veřejného klíče)|Řetězcová hodnota tokenu veřejného klíče v šestnáctkovém formátu. Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
+|**Jazykových**|Jazyková verze sestavení|Jazyková verze sestavení ve formátu RFC-1766 nebo neutrální pro sestavení nezávislá na jazyce (nesatelitní).|
+|**Vlastní**|Vlastní binární rozsáhlý objekt (BLOB). Tato operace je aktuálně používána pouze v sestaveních generovaných [generátorem nativních bitových kopií (NGen)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|Vlastní řetězec používaný nástrojem generátor nativních bitových kopií pro oznamování mezipaměti sestavení, že sestavení, které se instaluje, je nativní bitová kopie, a proto je nutné ji nainstalovat do mezipaměti nativní bitové kopie. Označuje se také jako řetězec zap.|
 
-Následující příklad ukazuje **AssemblyName** pro sestavení s jednoduchým názvem s výchozí jazykovou verzi.
+Následující příklad ukazuje rozhraní **AssemblyName** pro jednoduše pojmenované sestavení s výchozí jazykovou verzí.
 
 ```csharp
 com.microsoft.crypto, Culture=""
 ```
 
-Následující příklad ukazuje plně zadaný odkaz pro sestavení se silným názvem pomocí jazykové verze "en".
+Následující příklad ukazuje plně určený odkaz pro silně pojmenované sestavení s jazykovou verzí "en".
 
 ```csharp
 com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
     Version=1.0.0.0
 ```
 
-Následující příklady ukazují, částečně určeného **AssemblyName**, které je možné splnit silné nebo sestavení s jednoduchým názvem.
+Následující příklady každý ukazují částečně určené pole **AssemblyName**, které může být splněno buď silným, nebo jednoduše pojmenovaným sestavením.
 
 ```csharp
 com.microsoft.crypto
@@ -172,14 +172,14 @@ com.microsoft.crypto, Culture=""
 com.microsoft.crypto, Culture=en
 ```
 
-Následující příklady ukazují, částečně určeného **AssemblyName**, které musí být splněno sestavení s jednoduchým názvem.
+Následující příklady každý znázorňují částečně určený **AssemblyName**, který musí být splněn jednoduše pojmenovaným sestavením.
 
 ```csharp
 com.microsoft.crypto, Culture="", PublicKeyToken=null
 com.microsoft.crypto, Culture=en, PublicKeyToken=null
 ```
 
-Následující příklady ukazují, částečně určeného **AssemblyName**, které musí být splněno sestavení se silným názvem.
+V následujících příkladech je každý z nich zobrazen částečně určený **AssemblyName**, který musí být splněn silně pojmenovaným sestavením.
 
 ```csharp
 com.microsoft.crypto, Culture="", PublicKeyToken=a5d015c7d5a0b012
@@ -187,34 +187,34 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
     Version=1.0.0.0
 ```
 
-## <a name="specifying-generic-types"></a>Zadání obecných typů
+## <a name="specifying-generic-types"></a>Určení obecných typů
 
-SimpleTypeSpec\`číslo představuje otevřený obecný typ. se od 1 do *n* parametry obecného typu. Například chcete získat odkaz na otevřený obecný typ. seznamu\<T > nebo uzavřený obecný typ seznamu\<řetězec >, použijte ``Type.GetType("System.Collections.Generic.List`1")`` získáte odkaz na obecný typ slovníku\<TKey, TValue >, použijte ``Type.GetType("System.Collections.Generic.Dictionary`2")``.
+SimpleTypeSpec\`číslo představuje otevřený obecný typ s parametry od 1 do *n* parametrů obecného typu. Například chcete-li získat odkaz na otevřený seznam\<obecných typů T > nebo uzavřený seznam\<obecných typů typu >, použijte ``Type.GetType("System.Collections.Generic.List`1")`` k získání odkazu na slovník\<obecného typu TKey, TValue >, použijte ``Type.GetType("System.Collections.Generic.Dictionary`2")``.
 
-## <a name="specifying-pointers"></a>Určení ukazatele
+## <a name="specifying-pointers"></a>Určení ukazatelů
 
-SimpleTypeSpec * představuje nespravovaný ukazatel. Například ukazatele na typ MyType získáte pomocí `Type.GetType("MyType*")`. Chcete-li získat ukazatel na ukazatel na typ MyType, použijte `Type.GetType("MyType**")`.
+SimpleTypeSpec * představuje nespravovaný ukazatel. Například chcete-li získat ukazatel na typ MyType, použijte `Type.GetType("MyType*")`. Chcete-li získat ukazatel na ukazatel na typ MyType, použijte `Type.GetType("MyType**")`.
 
-## <a name="specifying-references"></a>Určení odkazy
+## <a name="specifying-references"></a>Zadání odkazů
 
-SimpleTypeSpec & představuje spravovaného ukazatele nebo odkazu. Například pokud chcete získat odkaz na typ MyType, použít `Type.GetType("MyType &")`. Všimněte si, že na rozdíl od ukazatelů, odkazů jsou omezené na jedné úrovni.
+SimpleTypeSpec & představuje spravovaný ukazatel nebo odkaz. Například chcete-li získat odkaz na typ MyType, použijte `Type.GetType("MyType &")`. Všimněte si, že na rozdíl od ukazatelů jsou odkazy omezeny na jednu úroveň.
 
 ## <a name="specifying-arrays"></a>Určení polí
 
-V BNF – gramatika ReflectionEmitDimension platí jenom pro definice nekompletní typ načten pomocí možnosti <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>. Definice neúplného typu jsou <xref:System.Reflection.Emit.TypeBuilder> objekty, které jsou vytvářeny pomocí <xref:System.Reflection.Emit?displayProperty=nameWithType> ale na které <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType> se nevolala. ReflectionDimension slouží k načtení žádné definice typu, která byla dokončena, to znamená typ, který se načetl.
+V BNF gramatice se ReflectionEmitDimension vztahuje pouze na neúplné definice typu načtené <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>pomocí. Neúplné definice typu <xref:System.Reflection.Emit.TypeBuilder> jsou objekty vytvořené <xref:System.Reflection.Emit?displayProperty=nameWithType> pomocí, ale <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType> na které nebyly volány. ReflectionDimension lze použít k načtení jakékoli definice typu, která byla dokončena, tedy typu, který byl načten.
 
-Pole jsou přístupné v reflexi tak, že určíte počet rozměrů pole:
+Pole jsou k dispozici v reflexi zadáním pořadí pole:
 
-- `Type.GetType("MyArray[]")` Získá pole s jednou dimenzí s dolní mez 0.
+- `Type.GetType("MyArray[]")`Získá pole s jednou dimenzí, které má dolní mez 0.
 
-- `Type.GetType("MyArray[*]")` Získá pole s jednou dimenzí s neznámým rozsahem. nižší.
-- `Type.GetType("MyArray[][]")` Získá pole dvourozměrné pole.
+- `Type.GetType("MyArray[*]")`Získá pole s jednou dimenzí, které má neznámou dolní mez.
+- `Type.GetType("MyArray[][]")`Získá pole dvourozměrného pole.
 
-- `Type.GetType("MyArray[*,*]")` a `Type.GetType("MyArray[,]")` získá obdélníkové dvojrozměrné pole s Neznámý dolní meze.
+- `Type.GetType("MyArray[*,*]")`a `Type.GetType("MyArray[,]")` získá obdélníkové dvourozměrné pole s neznámými dolními mezemi.
 
-Všimněte si, že z modulu runtime pohledu `MyArray[] != MyArray[*]`, ale pro vícerozměrná pole jsou ekvivalentní zápisy dva. To znamená `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` vyhodnotí jako **true**.
+Všimněte si, že z běhového bodu zobrazení `MyArray[] != MyArray[*]`,, ale u multidimenzionálních polí jsou oba zápisy ekvivalentní. To znamená, `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` že se vyhodnotí jako **true**.
 
-Pro **ModuleBuilder.GetType**, `MyArray[0..5]` určuje pole s jednou dimenzí s velikostí 6, dolní meze 0. `MyArray[4…]` označuje jednou dimenzí pole neznámé velikosti a dolní mez 4.
+Pro **modul ModuleBuilder. GetType** `MyArray[0..5]` označuje pole s jednou dimenzí, které má velikost 6, dolní mez 0. `MyArray[4…]`označuje pole s jednou dimenzí neznámé velikosti a dolní meze 4.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Řetězce - C# Průvodce programováním
+title: Řetězce – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 06/27/2019
 helpviewer_keywords:
@@ -7,141 +7,141 @@ helpviewer_keywords:
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 ms.openlocfilehash: 21ada083f69b0acf49490b331c5a416361a2ee84
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67802306"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
-Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
+Řetězec je objekt typu <xref:System.String> , jehož hodnota je text. Interně je text uložen jako sekvenční kolekce <xref:System.Char> objektů jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost řetězce představuje `Char` počet objektů, které obsahuje, nikoli počet znaků Unicode. <xref:System.String.Length%2A> Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte <xref:System.Globalization.StringInfo> objekt.  
   
-## <a name="string-vs-systemstring"></a>Řetězec vs. System.String  
- V jazyce C# `string` – klíčové slovo je alias pro <xref:System.String>. Proto `String` a `string` jsou ekvivalentní a můžete použít podle toho, která zásady vytváření názvů dáváte přednost. `String` Třída poskytuje řadu metod pro bezpečně vytváření, manipulaci a porovnávání řetězců. Kromě toho přetížení jazyka C# některé operátory pro zjednodušení běžné operace s řetězci. Další informace o klíčovém slově, naleznete v tématu [řetězec](../../../csharp/language-reference/keywords/string.md). Další informace o typu a jeho metody, naleznete v tématu <xref:System.String>.  
+## <a name="string-vs-systemstring"></a>řetězec vs. System. String  
+ V C#je <xref:System.String>klíčové `string` slovo alias pro. `String` A`string` jsou proto ekvivalentní a můžete použít libovolné konvence pojmenování, které dáváte přednost. `String` Třída poskytuje mnoho metod pro bezpečné vytváření, manipulaci a porovnávání řetězců. Kromě toho C# jazyk přetěžuje některé operátory pro zjednodušení běžných operací s řetězci. Další informace o klíčovém slově naleznete v tématu [String](../../../csharp/language-reference/keywords/string.md). Další informace o typu a jeho metodách naleznete v tématu <xref:System.String>.  
   
 ## <a name="declaring-and-initializing-strings"></a>Deklarace a inicializace řetězců  
  Můžete deklarovat a inicializovat řetězce různými způsoby, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStrings#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#1)]  
   
- Všimněte si, že je velmi riskantní používat [nové](../../../csharp/language-reference/operators/new-operator.md) operátoru pro vytvoření objektu řetězce s výjimkou při inicializaci řetězce bez pole znaků.  
+ Všimněte si, že nepoužíváte operátor [New](../../../csharp/language-reference/operators/new-operator.md) k vytvoření objektu String s výjimkou toho, že inicializujete řetězec s polem znaků.  
   
- Inicializuje řetězec s <xref:System.String.Empty> konstantní hodnoty pro vytvoření nového <xref:System.String> objektu, jehož řetězec o nulové délce. Řetězec literálu reprezentaci řetězce s nulovou délkou je "". Pomocí inicializace řetězců s <xref:System.String.Empty> hodnotu místo [null](../../../csharp/language-reference/keywords/null.md), můžete snížit riziko <xref:System.NullReferenceException> ke kterým dochází. Použití statické <xref:System.String.IsNullOrEmpty%28System.String%29> metodu k ověření hodnotu řetězce, než se pokusíte k němu přistupovat.  
+ Inicializujte řetězec s <xref:System.String.Empty> konstantní hodnotou pro vytvoření nového <xref:System.String> objektu, jehož řetězec má nulovou délku. Řetězcové vyjádření řetězce s nulovou délkou je "". Inicializací řetězců s <xref:System.String.Empty> hodnotou namísto [hodnoty null](../../../csharp/language-reference/keywords/null.md)můžete snížit pravděpodobnost <xref:System.NullReferenceException> výskytu. Použijte statickou <xref:System.String.IsNullOrEmpty%28System.String%29> metodu k ověření hodnoty řetězce před tím, než se pokusíte o přístup k němu.  
   
-## <a name="immutability-of-string-objects"></a>Neměnnost řetězcových objektů  
- Řetězcových objektů jsou *neměnné*: nedá se změnit po vytvoření. Všechny <xref:System.String> metody a operátory jazyka C#, které patrně upravují řetězec ve skutečnosti výsledky jsou vráceny ve nový objekt řetězce. V následujícím příkladu když obsah `s1` a `s2` jsou zřetězeny a vytvoří jeden řetězec, jsou dva řetězce původní verzí bez úprav. `+=` Operátor vytvoří nový řetězec, který obsahuje kombinované obsah. Tento nový objekt je přiřazená k proměnné `s1`a původní objekt, který byl přiřazen `s1` se uvolní pro uvolnění paměti, protože žádná proměnná uchovává odkaz na to.  
+## <a name="immutability-of-string-objects"></a>Neměnnosti objektů řetězců  
+ Objekty řetězce jsou *neměnné*: po vytvoření již nelze změnit. Všechny metody a C# operátory, které se zobrazí pro úpravu řetězce, ve skutečnosti vrátí výsledek v novém objektu String. <xref:System.String> V následujícím příkladu, když je obsah `s1` a `s2` zřetězeni tak, aby tvořily jeden řetězec, jsou tyto dva původní řetězce nezměněny. `+=` Operátor vytvoří nový řetězec, který obsahuje kombinovaný obsah. Tento nový objekt je přiřazen proměnné `s1`a původní objekt, který byl `s1` přiřazen, je uvolněn pro uvolňování paměti, protože žádná jiná proměnná neuchovává odkaz na ni.  
   
  [!code-csharp[csProgGuideStrings#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#2)]  
   
- Protože je řetězec "úpravy" ve skutečnosti novou vytváření řetězců, musíte použít upozornění při vytváření odkazů na řetězce. Je-li vytvořit odkaz na řetězec a potom "upravit" původního řetězce, bude pokračovat odkaz tak, aby odkazoval na původní objekt místo nový objekt, který byl vytvořen, pokud byla změněna řetězec. Následující kód ukazuje toto chování:  
+ Vzhledem k tomu, že je řetězec "úpravy" ve skutečnosti vytvoření nového řetězce, je nutné při vytváření odkazů na řetězce použít upozornění. Vytvoříte-li odkaz na řetězec a pak "" Upravit "původní řetězec, odkaz bude nadále ukazovat na původní objekt namísto nového objektu, který byl vytvořen při úpravě řetězce. Toto chování je znázorněno v následujícím kódu:  
   
  [!code-csharp[csProgGuideStrings#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#25)]  
   
- Další informace o vytváření nových řetězců, které jsou založeny na úpravy, jako je například hledat a nahrazovat operace u původního řetězce najdete v tématu [jak: Změna obsahu řetězce](../../how-to/modify-string-contents.md).  
+ Další informace o tom, jak vytvořit nové řetězce, které jsou založeny na úpravách, jako jsou například operace hledání a nahrazení v původním [řetězci, naleznete v tématu How to: Upravit obsah](../../how-to/modify-string-contents.md)řetězce.  
   
-## <a name="regular-and-verbatim-string-literals"></a>Pravidelné a Verbatim řetězcové literály  
- Používejte regulární řetězcové literály, když je nutné vložit řídicí znaky, které jsou k dispozici v jazyce C#, jak je znázorněno v následujícím příkladu:  
+## <a name="regular-and-verbatim-string-literals"></a>Regulární a doslovné řetězcové literály  
+ Použijte regulární řetězcové literály v případě, že je nutné vložit C#řídicí znaky poskytnuté pomocí, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStrings#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#3)]  
   
- Používejte verbatim řetězce pro lepší čitelnost a pohodlí při textový řetězec obsahuje zpětné lomítko znaků, například cesty k souborům. Protože doslovném řetězci zachovat jako součást řetězce textu znaky nového řádku, můžete použít k inicializaci víceřádkových řetězců. Vkládat uvozovky uvnitř doslovný řetězec pomocí dvojitých uvozovek. Následující příklad ukazuje některé běžné použití doslovném řetězci:  
+ Používejte doslovné řetězce pro usnadnění a lepší čitelnost, pokud text řetězce obsahuje znaky zpětného lomítka, například v cestách k souboru. Vzhledem k tomu, že doslovné řetězce uchovávají znaky nového řádku jako součást textu řetězce, lze je použít k inicializaci víceřádkových řetězců. Pomocí dvojitých uvozovek vložte uvozovky do doslovného řetězce. Následující příklad ukazuje některé běžné použití pro doslovné řetězce:  
   
  [!code-csharp[csProgGuideStrings#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#4)]  
   
-## <a name="string-escape-sequences"></a>Řetězec řídicí sekvence  
+## <a name="string-escape-sequences"></a>Řetězcové řídicí sekvence  
   
 |Řídicí sekvence|Název znaku|Kódování Unicode|  
 |---------------------|--------------------|----------------------|  
-|\\'|jednoduché uvozovky|0x0027|  
-|\\"|dvojité uvozovky|0x0022|  
+|\\'|Jednoduchá uvozovka|0x0027|  
+|\\"|Dvojité uvozovky|0x0022|  
 |\\\\ |Zpětné lomítko|0x005C|  
 |\0|Null|0x0000|  
 |\a|Výstrahy|0x0007|  
 |\b|Backspace|0x0008|  
-|\f|Posun strany|0x000C|  
+|\f|Informační kanál formuláře|0x000C|  
 |\n|Nový řádek|0x000A|  
 |\r|Návrat na začátek řádku|0x000D|  
 |\t|Horizontální tabulátor|0x0009|  
 |\v|Vertikální tabulátor|0x000B|  
-|\u|Řídicí sekvence Unicode (UTF-16)|`\uHHHH` (rozsah: 0000 - FFFF; Příklad: `\u00E7` = "ç")|  
-|\U|Řídicí sekvence Unicode (UTF-32)|`\U00HHHHHH` (rozsah: 000000 - 10FFFF.; Příklad: `\U0001F47D` = "&#x1F47D;")|  
-|\x|Řídicí sekvence Unicode, podobně jako "\u" s výjimkou s proměnnou délkou|`\xH[H][H][H]` (rozsah: 0 – FFFF; Příklad: `\x00E7` nebo `\x0E7` nebo `\xE7` = "ç")|  
+|\u|Řídicí sekvence Unicode (UTF-16)|`\uHHHH`oblasti 0000 – FFFF; Příklad: `\u00E7` = "ç")|  
+|\U|Řídicí sekvence Unicode (UTF-32)|`\U00HHHHHH`oblasti 000000-10FFFF; Příklad: `\U0001F47D` = "&#x1F47D;")|  
+|\x|Řídicí sekvence Unicode podobně jako "\u" s výjimkou proměnné délky|`\xH[H][H][H]`oblasti 0 – FFFF; Příklad: `\x00E7` nebo `\x0E7` or `\xE7` = "ç")|  
   
 > [!WARNING]
->  Při použití `\x` řídicí sekvence a určení nižší než 4 číslic v šestnáctkové soustavě, pokud jsou znaky, které bezprostředně následují řídicí sekvenci platné hexadecimální číslice (například 0-9, A-F a a-f), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je bod kódu U + 00A1. Ale pokud následující znak je "A" nebo "a", pak řídicí sekvence se místo toho interpretovat jako `\xA1A` a vytvářet "&#x0A1A;", což je bod kódu U + 0A1A. V takovém případě zadáte všechny 4 číslic v šestnáctkové soustavě (třeba `\x00A1` ), nebude moct všechny možné špatného.  
+>  Při použití `\x` řídicí sekvence a zadání méně než 4 šestnáctkových číslic, pokud jsou znaky, které bezprostředně následují řídicí sekvence, platné šestnáctkové číslice (tj. 0-9, a-f a a-F), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je kódový bod U + 00A1. Pokud je však další znak "a" nebo "a", pak bude řídicí sekvence místo interpretovat jako `\xA1A` "&#x0A1A;", což je kódový bod U + 0A1A. V takových případech zadáním všech 4 hex číslic (např. `\x00A1` ) zabráníte případnému případnému mylnému výkladu.  
   
 > [!NOTE]
->  V době kompilace doslovném řetězci jsou převedeny na běžné řetězce s stejné řídicí sekvence. Proto pokud doslovný řetězec zobrazení v okně kukátko ladicího programu, zobrazí se řídicí znaky, které byly přidány pomocí kompilátoru, ne verbatim verzi ze zdrojového kódu. Například doslovném řetězci `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  
+>  V době kompilace jsou doslovné řetězce převedeny na běžné řetězce se všemi stejnými řídicími sekvencemi. Proto pokud si v okně kukátka ladicího programu zobrazíte doslovné řetězce, zobrazí se řídicí znaky, které byly přidány kompilátorem, nikoli doslovné verze ze zdrojového kódu. Například doslovné řetězec `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  
   
-## <a name="format-strings"></a>Formátovací řetězce  
- Formátovací řetězec je řetězec, jehož obsah se určují dynamicky za běhu. Formátovací řetězce jsou vytvořeny vložením *interpolovaných výrazů* nebo zástupné symboly ve složených závorkách v rámci řetězce. Vše uvnitř složených závorek (`{...}`) bude vyhodnocena na hodnotu a výstup jako formátovaný řetězec za běhu. Existují dvě metody k vytvoření řetězce formátu: řetězec interpolace a složené formátování.
+## <a name="format-strings"></a>Řetězce formátu  
+ Formátovací řetězec je řetězec, jehož obsah je za běhu určen dynamicky. Řetězce formátu jsou vytvářeny vložením *interpolované výrazy* nebo zástupných symbolů do složených závorek v rámci řetězce. Vše, co uvnitř složených závorek (`{...}`), bude za běhu přeloženo na hodnotu a výstup jako formátovaný řetězec. Existují dvě metody vytváření řetězců formátu: interpolace řetězce a složené formátování.
 
 ### <a name="string-interpolation"></a>Interpolace řetězců
-K dispozici v C# 6.0 a novějším, [ *interpolovaných řetězců* ](../../language-reference/tokens/interpolated.md) jsou určeny `$` speciálních znaků a obsahovat interpolované výrazy do složených závorek. Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace - C# interaktivního kurzu](../../tutorials/exploration/interpolated-strings.yml) a získejte rychlý přehled.
+K dispozici v C# 6,0 a novějších, [interpolované řetězce](../../language-reference/tokens/interpolated.md) jsou `$` označeny speciálním znakem a obsahují interpolované výrazy v závorkách. Pokud s interpolací řetězce začínáte, přečtěte si rychlý přehled v [kurzu C# o interpolaci řetězců – interaktivní](../../tutorials/exploration/interpolated-strings.yml) .
 
-Interpolace řetězců použijte ke zlepšení čitelnosti a udržovatelnosti kódu. Interpolace řetězců dosáhnete stejných výsledků jako `String.Format` metody, ale zvyšuje snadnost použití a vložené nejasnostem.
+Použijte interpolaci řetězců pro zlepšení čitelnosti a udržovatelnosti kódu. Interpolace řetězců dosahuje stejných výsledků jako `String.Format` metoda, ale zlepšuje snadné použití a vkládání na základě průhlednosti.
 
 [!code-csharp[csProgGuideFormatStrings](~/samples/snippets/csharp/programming-guide/strings/Strings_1.cs#StringInterpolation)]
 
 ### <a name="composite-formatting"></a>Složené formátování
-<xref:System.String.Format%2A?displayProperty=nameWithType> Využívá zástupné symboly v závorkách pro vytvoření řetězce formátu. Tento příklad vrátí podobný výstup jako na metodu interpolace řetězce využité nad.
+<xref:System.String.Format%2A?displayProperty=nameWithType> Používá zástupné symboly v závorkách k vytvoření formátovacího řetězce. Tento příklad vede k podobným výstupům výše použitým způsobem interpolace řetězce.
   
 [!code-csharp[csProgGuideFormatStrings](~/samples/snippets/csharp/programming-guide/strings/Strings_1.cs#StringFormat)]
 
-Další informace o formátování typy .NET najdete v části [formátovací typy v .NET](../../../standard/base-types/formatting-types.md).
+Další informace o formátování typů .NET naleznete [v tématu formátování typů v rozhraní .NET](../../../standard/base-types/formatting-types.md).
   
 ## <a name="substrings"></a>Podřetězců  
- Dílčí řetězec je posloupnost znaků, které jsou obsaženy v řetězci. Použití <xref:System.String.Substring%2A> metodu pro vytvoření nového řetězce z část původní řetězec. Můžete vyhledat jeden nebo více výskytů dílčí řetězec s použitím <xref:System.String.IndexOf%2A> metody. Použití <xref:System.String.Replace%2A> metoda nahraďte všechny výskyty zadaným podřetězcem nový řetězec. Podobně jako <xref:System.String.Substring%2A> metody <xref:System.String.Replace%2A> ve skutečnosti vrátí nový řetězec a nezmění původní řetězec. Další informace najdete v tématu [postupy: vyhledávání řetězců](../../how-to/search-strings.md) a [jak: Změna obsahu řetězce](../../how-to/modify-string-contents.md).  
+ Podřetězec je libovolná sekvence znaků, která je obsažena v řetězci. <xref:System.String.Substring%2A> Použijte metodu k vytvoření nového řetězce z části původního řetězce. Jeden nebo více výskytů podřetězce můžete vyhledat pomocí <xref:System.String.IndexOf%2A> metody. <xref:System.String.Replace%2A> Pomocí metody nahraďte všechny výskyty zadaného podřetězce novým řetězcem. Podobně jako <xref:System.String.Replace%2A> metoda, ve skutečnosti vrátí nový řetězec a neupravuje původní řetězec. <xref:System.String.Substring%2A> Další informace naleznete v tématu [How to: Search Strings](../../how-to/search-strings.md) and [to: Upravit obsah](../../how-to/modify-string-contents.md)řetězce.  
   
  [!code-csharp[csProgGuideStrings#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#9)]  
   
-## <a name="accessing-individual-characters"></a>Přístup ke jednotlivým znakům  
- Zápis pole s hodnotou indexu můžete získat přístup jen pro čtení na jednotlivé znaky, jako v následujícím příkladu:  
+## <a name="accessing-individual-characters"></a>Přístup k jednotlivým znakům  
+ Pomocí notace Array s hodnotou indexu můžete získat přístup k jednotlivým znakům jen pro čtení, jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStrings#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#8)]  
   
- Pokud <xref:System.String> metody se neposkytuje funkce, které potřebujete k úpravě jednotlivých znaků v řetězci, můžete použít <xref:System.Text.StringBuilder> objekt upravit jednotlivé znaky "místní" a pak vytvořte nový řetězec k uložení výsledků pomocí <xref:System.Text.StringBuilder> metody. V následujícím příkladu se předpokládá, že musí určitým způsobem upravit původní řetězec a poté uložit výsledky pro budoucí použití:  
+ Pokud metody neposkytují funkce, které je nutné pro úpravu jednotlivých znaků v řetězci, můžete <xref:System.Text.StringBuilder> použít objekt pro úpravu jednotlivých znaků "na místě" a pak vytvořit nový řetězec pro uložení výsledků pomocí <xref:System.String> <xref:System.Text.StringBuilder> metody. V následujícím příkladu Předpokládejme, že je nutné upravit původní řetězec určitým způsobem a následně uložit výsledky pro budoucí použití:  
   
  [!code-csharp[csProgGuideStrings#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#27)]  
   
-## <a name="null-strings-and-empty-strings"></a>Řetězce s hodnotou Null a prázdné řetězce  
- Prázdný řetězec je instance <xref:System.String?displayProperty=nameWithType> objekt obsahující nulové znaky. Prázdné řetězce představují prázdné textové pole se často používají v různých programovacích scénářů. Můžete volat metody na prázdné řetězce, protože jde o platný <xref:System.String?displayProperty=nameWithType> objekty. Prázdné řetězce jsou inicializovány následujícím způsobem:  
+## <a name="null-strings-and-empty-strings"></a>Řetězce s hodnotou null a prázdné řetězce  
+ Prázdný řetězec je instancí <xref:System.String?displayProperty=nameWithType> objektu, který obsahuje nula znaků. Prázdné řetězce jsou často používány v různých programovacích scénářích, které představují prázdné textové pole. Můžete volat metody v prázdných řetězcích, protože jsou <xref:System.String?displayProperty=nameWithType> platné objekty. Prázdné řetězce jsou inicializovány následujícím způsobem:  
   
 ```  
 string s = String.Empty;  
 ```  
   
- Naopak řetězec null neodkazuje na instanci <xref:System.String?displayProperty=nameWithType> objektu a jakýkoliv pokus o volání metody na řetězec s hodnotou null způsobí, že <xref:System.NullReferenceException>. Můžete však použít řetězce s hodnotou null v operace porovnání a zřetězení s dalšími řetězci. Následující příklady znázorňují někdy, v nichž odkaz na řetězec s hodnotou null nemá a nezpůsobí výjimku, která je vyvolána:  
+ Naproti tomu řetězec s hodnotou null neodkazuje na instanci <xref:System.String?displayProperty=nameWithType> objektu a žádný pokus o volání metody na řetězec s hodnotou null <xref:System.NullReferenceException>způsobí. V zřetězení a porovnávání operací s jinými řetězci však můžete použít řetězce s hodnotou null. Následující příklady ilustrují některé případy, ve kterých je odkaz na řetězec s hodnotou null, a nezpůsobí vyvolání výjimky:  
   
  [!code-csharp[csProgGuideStrings#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#20)]  
   
-## <a name="using-stringbuilder-for-fast-string-creation"></a>Pro vytváření rychlého řetězců pomocí StringBuilder  
- Operace s řetězci v .NET je vysoce optimalizovaných a ve většině případů nemají vliv výrazně výkonu. V některých případech například úzkou smyčky, které jsou spuštěny mnoha stovek nebo tisíců časy, ale operace s řetězci může ovlivnit výkon. <xref:System.Text.StringBuilder> Třída vytvoří vyrovnávací paměti pro řetězec, který nabízí lepší výkon, pokud aplikace provádí mnoho manipulace s řetězci. <xref:System.Text.StringBuilder> Řetězec umožňuje také něco změnit přiřazení jednotlivých znaků, předdefinovaných řetězec datového typu se nepodporuje. Tento kód například změní obsah řetězce bez vytvoření nového řetězce:  
+## <a name="using-stringbuilder-for-fast-string-creation"></a>Použití StringBuilder pro rychlé vytváření řetězců  
+ Operace s řetězci v rozhraní .NET jsou vysoce optimalizované a ve většině případů významně neovlivňují výkon. V některých scénářích, jako jsou například těsné smyčky, které spouštějí mnoho stovek nebo tisíců, můžou operace s řetězci ovlivnit výkon. <xref:System.Text.StringBuilder> Třída vytvoří vyrovnávací paměť řetězců, která nabízí lepší výkon, pokud program provádí mnoho manipulace s řetězci. <xref:System.Text.StringBuilder> Řetězec také umožňuje změnit přiřazení jednotlivých znaků, a to něco, co vestavěný datový typ String nepodporuje. Tento kód například změní obsah řetězce bez vytvoření nového řetězce:  
   
  [!code-csharp[csProgGuideStrings#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#15)]  
   
- V tomto příkladu <xref:System.Text.StringBuilder> objektu se používá k vytvoření řetězce z sadu číselné typy:  
+ V tomto příkladu <xref:System.Text.StringBuilder> se k vytvoření řetězce ze sady číselných typů používá objekt:  
   
  [!code-csharp[TestStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/TestStringBuilder.cs)]
   
-## <a name="strings-extension-methods-and-linq"></a>Řetězce a metod rozšíření LINQ  
- Protože <xref:System.String> typ implementuje <xref:System.Collections.Generic.IEnumerable%601>, můžete použít rozšiřující metody definované v <xref:System.Linq.Enumerable> třídy na řetězce. Aby se zabránilo nepořádku visual, tyto metody jsou vyloučené z IntelliSense pro značku <xref:System.String> typu, ale jsou nicméně k dispozici. Můžete také použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech na řetězce dotazů. Další informace najdete v tématu [LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md).  
+## <a name="strings-extension-methods-and-linq"></a>Řetězce, rozšiřující metody a LINQ  
+ Vzhledem k <xref:System.String> tomu, <xref:System.Collections.Generic.IEnumerable%601>že typ implementuje, můžete použít metody <xref:System.Linq.Enumerable> rozšíření definované ve třídě na řetězcích. Aby se zabránilo vizuálnímu zbytečným, jsou tyto metody z <xref:System.String> technologie IntelliSense pro daný typ vyloučeny, ale jsou však k dispozici. Výrazy dotazů můžete také [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] použít u řetězců. Další informace naleznete v tématu [LINQ and Strings](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md).  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Postupy: Změna obsahu řetězce](../../how-to/modify-string-contents.md)|Ukazuje techniky transformace řetězce a změnit obsah řetězce.|  
-|[Postupy: Porovnávání řetězců](../../how-to/compare-strings.md)|Ukazuje, jak k provádění pořadí a jazykové verze konkrétní porovnání řetězců.|  
-|[Postupy: Řetězení více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak spojit víc řetězce do jednoho.|
-|[Postupy: Analýza řetězců metodou String.Split](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ukazují, jak používat `String.Split` metodu pro analýzu řetězce.|  
-|[Postupy: Hledání řetězců](../../how-to/search-strings.md)|Vysvětluje způsob používání vyhledávání určitý text nebo vzory v řetězcích.|  
-|[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec zjistíte, zda má platnou číselnou hodnotu.|  
-|[Interpolace řetězců](../../language-reference/tokens/interpolated.md)|Popisuje funkci interpolace řetězce, která poskytuje pohodlné syntaxe na formát řetězce.|
-|[Základní operace s řetězci](../../../../docs/standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, které používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> provádět základní operace s řetězci.|  
-|[Analýza řetězců](../../../standard/base-types/parsing-strings.md)|Popisuje, jak převést řetězcové reprezentace základní typy .NET k instancím typu odpovídající typy.|  
-|[Analýza řetězců data a času v .NET](../../../standard/base-types/parsing-datetime.md)|Ukazuje, jak převést řetězec jako "01/24/2008" k <xref:System.DateTime?displayProperty=nameWithType> objektu.|  
-|[Porovnávání řetězců](../../../../docs/standard/base-types/comparing.md)|Obsahuje informace o tom, jak porovnat řetězce a poskytuje příklady v C# a Visual Basic.|  
-|[Používání třídy StringBuilder](../../../standard/base-types/stringbuilder.md)|Popisuje, jak vytvářet a upravovat pomocí dynamické řetězcových objektů <xref:System.Text.StringBuilder> třídy.|  
-|[LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Poskytuje informace o tom, jak provádět různé operace s řetězci pomocí dotazů LINQ.|  
-|[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na témata, která popisují konstrukce programování v jazyce C#.|  
+|[Postupy: Upravit obsah řetězce](../../how-to/modify-string-contents.md)|Ukazuje techniky pro transformaci řetězců a úpravu obsahu řetězců.|  
+|[Postupy: Porovnat řetězce](../../how-to/compare-strings.md)|Ukazuje, jak provádět porovnání s ordinálními a konkrétní jazykovou verzí řetězců.|  
+|[Postupy: Zřetězení více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak připojit více řetězců k jednomu.|
+|[Postupy: Analyzovat řetězce pomocí String. Split](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ilustrují, jak použít `String.Split` metodu k analýze řetězců.|  
+|[Postupy: Hledat řetězce](../../how-to/search-strings.md)|Vysvětluje, jak používat hledání určitého textu nebo vzorů v řetězcích.|  
+|[Postupy: Určení, zda řetězec představuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec, abyste viděli, zda má platnou číselnou hodnotu.|  
+|[Interpolace řetězců](../../language-reference/tokens/interpolated.md)|Popisuje funkci interpolace řetězce, která poskytuje pohodlný Syntax pro formátování řetězců.|
+|[Základní operace s řetězci](../../../../docs/standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, která <xref:System.String?displayProperty=nameWithType> používají <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody a k provádění základních operací s řetězci.|  
+|[Analýza řetězců](../../../standard/base-types/parsing-strings.md)|Popisuje, jak převést řetězcové reprezentace základních typů .NET na instance odpovídajících typů.|  
+|[Analýza řetězců data a času v .NET](../../../standard/base-types/parsing-datetime.md)|Ukazuje, jak převést řetězec, například "01/24/2008" na <xref:System.DateTime?displayProperty=nameWithType> objekt.|  
+|[Porovnávání řetězců](../../../../docs/standard/base-types/comparing.md)|Obsahuje informace o tom, jak porovnat řetězce a poskytuje příklady C# v a Visual Basic.|  
+|[Používání třídy StringBuilder](../../../standard/base-types/stringbuilder.md)|Popisuje, jak vytvořit a upravit dynamické objekty řetězce pomocí <xref:System.Text.StringBuilder> třídy.|  
+|[LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Poskytuje informace o tom, jak provádět různé řetězcové operace pomocí dotazů LINQ.|  
+|[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na témata, která vysvětlují programovací C#konstrukce v.|  
