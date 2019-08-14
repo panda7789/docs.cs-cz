@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 07/25/2019
-ms.openlocfilehash: 29e62f01ab6a749c252aa488dfbccd5b27cb9dba
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 477aecec4381f26e505e88f7df38f68a85e8f70d
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733379"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012842"
 ---
 # <a name="whats-new-in-net-core-30-preview-7"></a>Co je nového v .NET Core 3,0 (Preview 7)
 
@@ -159,7 +159,7 @@ Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.m
 
 [Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnuté pomocí .NET Core 3,0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.
 
-Hlavní výhodou TC je povolit (znovu) jitting metody s pomalejším, ale rychlejším vytvářením kódu nebo vyšší kvality, ale pomalejší vytváření kódu. To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu. To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.
+Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní. To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu. To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.
 
 Chcete-li povolit rychlou JIT (zpracovaných kompilátorem JIT kód vrstvy 0), použijte toto nastavení v souboru projektu:
 
@@ -305,7 +305,7 @@ Možné `highDpiMode` hodnoty, jak je vyjádřené <xref:System.Windows.Forms.Hi
 
 Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).
 
-### <a name="ranges-and-indices"></a>Rozsahy a indexy
+## <a name="ranges-and-indices"></a>Rozsahy a indexy
 
 Nový <xref:System.Index?displayProperty=nameWithType> typ lze použít k indexování. Můžete vytvořit jednu z `int` těchto počtů od začátku nebo s operátorem prefix `^` (C#), který se počítá od konce:
 
@@ -324,7 +324,7 @@ var slice = a[i1..i2]; // { 3, 4, 5 }
 
 Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/ranges-indexes.md).
 
-### <a name="async-streams"></a>Asynchronní streamy
+## <a name="async-streams"></a>Asynchronní streamy
 
 Typ je nová asynchronní <xref:System.Collections.Generic.IEnumerable%601>verze. <xref:System.Collections.Generic.IAsyncEnumerable%601> Jazyk vám umožní `await foreach` `IAsyncEnumerable<T>` využít jejich prvky a využít `yield return` je k vytváření prvků.
 
@@ -372,7 +372,7 @@ Odpovídá operaci `x * pow(2, n)`IEEE, která přebírá celočíselnou hodnotu
 Odpovídá operaci `log2` IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
 
 * <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Odpovídá operaci `fma` IEEE, provádí přidaný násobek. To znamená `(x * y) + z` , že se jedná o jednu operaci, existuje-li minimalizace chyby zaokrouhlení. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)` vrácení. `1e308` Funkce Regular `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
+Odpovídá operaci `fma` IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jedná o jedinou operaci, čímž se minimalizuje chyba zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)` vrácení. `1e308` Funkce Regular `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
 
 * <xref:System.Math.CopySign(System.Double,System.Double)>\
 Odpovídá operaci `x`IEEE, vrací hodnotu, `y`ale s znaménkem. `copySign`
@@ -403,17 +403,15 @@ Tady je příklad, jak číst pomocí souboru [**Launch. JSON**](https://github.
 
 Zde je ukázkové použití `JsonDocument` a `JsonElement` , které lze použít jako výchozí bod:
 
-Tady je příklad C# 8,0 souboru [Launch. JSON](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
-
 [!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJson)]
+
+Tady je příklad C# 8,0 souboru [Launch. JSON](https://github.com/dotnet/samples/blob/master/snippets/core/whats-new/whats-new-in-30/cs/launch.json) vytvořeného pomocí Visual Studio Code:
 
 [!CODE-csharp[JsonDocument](~/samples/snippets/core/whats-new/whats-new-in-30/cs/program.cs#ReadJsonCall)]
 
 ### <a name="jsonserializer"></a>JsonSerializer
 
-<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType>je postaven na začátku <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> k poskytnutí rychlé možnosti serializace v nízké paměti při práci s dokumenty a fragmenty JSON.
-
-Projděte https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/docs/SerializerProgrammingModel.md si příklad pro přenos do tohoto článku.
+<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType>je postaven na začátku <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> k poskytnutí rychlé možnosti serializace paměti při práci s dokumenty a fragmenty JSON.
 
 Tady je příklad serializace objektu do formátu JSON:
 

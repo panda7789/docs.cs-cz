@@ -3,12 +3,12 @@ title: Model rozšiřitelnosti .NET Core CLI
 description: Přečtěte si, jak můžete nástroje rozhraní příkazového řádku (CLI) zvětšit.
 ms.date: 04/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 784eb50dfdbc0f88050a9f727ddbf53db34d3209
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 400d47f9d5bca53a23d09eb4eb94519f9824b473
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331001"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012975"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů pro .NET Core CLI
 
@@ -44,7 +44,7 @@ Spotřeba těchto nástrojů vyžaduje, abyste přidali `<DotNetCliToolReference
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Pro nástroje, které potřebují načíst výstup sestavení projektu ke spuštění, je obvykle jiná závislost, která je uvedena v rámci normální závislosti v souboru projektu. Vzhledem k tomu, že rozhraní příkazového řádku používá jako modul sestavení MSBuild, doporučujeme, aby tyto části nástroje byly zapsány jako vlastní [cíle](/visualstudio/msbuild/msbuild-targets) a [úkoly](/visualstudio/msbuild/msbuild-tasks)MSBuild, protože mohou být součástí celého procesu sestavení. Můžou taky získat jakákoli a všechna data, která se vytvářejí prostřednictvím sestavení, jako je umístění výstupních souborů, aktuální konfigurace, která je sestavená atd. Všechny tyto informace se stávají sadou vlastností nástroje MSBuild, které lze číst z libovolného cíle. Můžete vidět, jak přidat vlastní cíl pomocí NuGetu dále v tomto dokumentu.
+Pro nástroje, které potřebují načíst výstup sestavení projektu ke spuštění, je obvykle jiná závislost, která je uvedena v rámci normální závislosti v souboru projektu. Vzhledem k tomu, že rozhraní příkazového řádku používá jako modul sestavení MSBuild, doporučujeme, aby tyto části nástroje byly zapsány jako vlastní [cíle](/visualstudio/msbuild/msbuild-targets) a [úkoly](/visualstudio/msbuild/msbuild-tasks)MSBuild, protože mohou být součástí celého procesu sestavení. Také mohou získat jakákoli a všechna data, která jsou vytvářena prostřednictvím sestavení, například umístění výstupních souborů, aktuální konfigurace, která je vytvořena a tak dále. Všechny tyto informace se stávají sadou vlastností nástroje MSBuild, které lze číst z libovolného cíle. Můžete vidět, jak přidat vlastní cíl pomocí NuGetu dále v tomto dokumentu.
 
 Pojďme se podívat na příklad přidání jednoduchého nástroje pouze pro nástroje do jednoduchého projektu. V případě příkladu s názvem `dotnet-api-search` , který umožňuje prohledat balíčky NuGet pro zadané rozhraní API, je zde soubor projektu aplikace konzoly, který používá tento nástroj:
 
@@ -79,7 +79,8 @@ V [úložišti .NET Core CLI](https://github.com/dotnet/cli/tree/release/2.1/Tes
 Můžete také zobrazit [implementaci nástrojů používaných](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestPackages) ve stejném úložišti.
 
 ## <a name="custom-targets"></a>Vlastní cíle
-Balíčky NuGet mají možnost zabalit [vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core CLI nástrojů pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. atd.
+
+Balíčky NuGet mají možnost zabalit [vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core CLI nástrojů pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. a tak dále.
 
 V následujícím příkladu můžete vidět soubor projektu cíle pomocí `csproj` syntaxe. Tento [`dotnet pack`](dotnet-pack.md) příkaz dá pokyn k tomu, co zabalit, umístění souborů cílů a sestavení do složky *sestavení* uvnitř balíčku. Všimněte si, že `Label` `dotnet pack instructions`element, který má vlastnost nastavenou na, a cíl definovaný pod ním. `<ItemGroup>`
 
