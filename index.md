@@ -6,12 +6,12 @@ title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
-ms.openlocfilehash: 7cf46b0c4d88b7657a5c82c7aa0ae30655c9d5ce
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a6f6bc91a3055ffd0efe9f6b89ba0499921ed1d4
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589985"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972390"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -309,7 +309,7 @@ ms.locfileid: "65589985"
                                 </a>
                             </li>
                             <li>
-                                <a href="/aspnet/overview">
+                                <a href="/aspnet/core/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -319,8 +319,8 @@ ms.locfileid: "65589985"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Co je ASP.NET?</h3>
-                                                    <p>Naučte se vytvářet webové aplikace ASP.NET.</p>
+                                                    <h3>Co je ASP.NET Core?</h3>
+                                                    <p>Naučte se vytvářet webové aplikace ASP.NET Core.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -453,7 +453,7 @@ ms.locfileid: "65589985"
                         </ul>
                     </li>
                     <li>
-                        <a href="#mobile">Mobilní zařízení</a>
+                        <a href="#mobile">Mobilní prostředí</a>
                         <ul id="mobile" class="cardsC">
                             <li>
                                 <a href="/xamarin/ios">
@@ -515,7 +515,7 @@ ms.locfileid: "65589985"
                         </ul>
                     </li>
                     <li>
-                        <a href="#desktop">Aplikace klasické pracovní plochy</a>
+                        <a href="#desktop">Desktop</a>
                         <ul id="desktop" class="cardsC">
                             <li>
                                 <a href="/uwp">

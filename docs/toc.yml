@@ -267,6 +267,14 @@
           href: core/docker/build-container.md
         - name: Nástroje kontejneru v sadě Visual Studio
           href: /visualstudio/containers/overview
+    - name: Diagnostické nástroje
+      items:
+        - name: Přehled
+          href: core/diagnostics/index.md
+        - name: Spravované ladicí programy
+          href: core/diagnostics/managed-debuggers.md
+        - name: Protokolování a trasování
+          href: core/diagnostics/logging-tracing.md
     - name: Testování částí
       href: core/testing/index.md
       items:
