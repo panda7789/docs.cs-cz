@@ -444,6 +444,37 @@
               href: icorprofilerinfo7-getinmemorysymbolslength-method.md
             - name: ReadInMemorySymbols
               href: icorprofilerinfo7-readinmemorysymbols.md
+        - name: ICorProfilerInfo8 – rozhraní
+          href: icorprofilerinfo8-interface.md
+          items:
+            - name: GetDynamicFunctionInfo – metoda
+              href: icorprofilerinfo8-getdynamicfunctioninfo-method.md
+            - name: GetFunctionFromIP3 – metoda
+              href: icorprofilerinfo8-getfunctionfromip3-method.md
+            - name: IsFunctionDynamic – metoda
+              href: icorprofilerinfo8-isfunctiondynamic-method.md
+        - name: ICorProfilerInfo9 – rozhraní
+          href: icorprofilerinfo9-interface.md
+          items:
+            - name: GetCodeInfo4 – metoda
+              href: icorprofilerinfo9-getcodeinfo4-method.md
+            - name: GetILToNativeMapping3 – metoda
+              href: icorprofilerinfo9-getiltonativemapping3-method.md
+            - name: GetNativeCodeStartAddresses – metoda
+              href: icorprofilerinfo9-getnativecodestartaddresses-method.md
+        - name: ICorProfilerInfo10 – rozhraní
+          href: icorprofilerinfo10-interface.md
+          items:
+            - name: EnumerateObjectReferences – metoda
+              href: icorprofilerinfo10-enumerateobjectreferences-method.md
+            - name: IsFrozenObject – metoda
+            - name: GetLOHObjectSizeThreshold – metoda
+              href: icorprofilerinfo10-isfrozenobject-method.md
+            - name: RequestReJITWithInliners – metoda
+              href: icorprofilerinfo10-suspendruntime-method.md
+            - name: ResumeRuntime – metoda
+            - name: SuspendRuntime – metoda
+              href: icorprofilerinfo10-resumeruntime-method.md
         - name: ICorProfilerModuleEnum – rozhraní
           href: icorprofilermoduleenum-interface.md
           items:
@@ -548,6 +579,8 @@
           href: cor-prf-module-flags-enumeration.md
         - name: COR_PRF_MONITOR – výčet
           href: cor-prf-monitor-enumeration.md
+        - name: COR_PRF_REJIT_FLAGS – výčet
+          href: cor-prf-rejit-flags-enumeration.md
         - name: COR_PRF_RUNTIME_TYPE – výčet
           href: cor-prf-runtime-type-enumeration.md
         - name: COR_PRF_SNAPSHOT_INFO – výčet
