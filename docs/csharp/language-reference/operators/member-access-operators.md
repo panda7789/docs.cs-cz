@@ -1,6 +1,6 @@
 ---
-title: Operátory přístupu členů - C# odkaz
-description: Další informace o C# operátory, které můžete použít pro přístup ke členům typu.
+title: Operátory přístupu členů – C# referenční informace
+description: Další informace C# o operátorech, které lze použít pro přístup ke členům typu.
 ms.date: 05/09/2019
 author: pkulikov
 f1_keywords:
@@ -25,105 +25,105 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: 4f1d79497f255f52a87dce44f1b5b8709adfada7
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: c40fab6dd480f31e53d2ce2487149c02b463bd87
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401471"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971215"
 ---
-# <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# odkaz)
+# <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# referenční)
 
-Při přístupu k člena typu můžete použít následující operátory:
+Při přístupu k členu typu můžete použít následující operátory:
 
-- [`.` (přístup ke členu) ](#member-access-operator-): přístup k oboru názvů nebo typ
-- [`[]` (element nebo indexovací člen přístup k poli) ](#indexer-operator-): přístup k elementu pole nebo typ indexeru
-- [`?.` a `?[]` (podmíněné operátory s null)](#null-conditional-operators--and-): k provedení operace přístupu člen nebo element, pouze pokud operand je jiná než null
-- [`()` (volání) ](#invocation-operator-): volání metody používaná nebo vyvolat delegáta
+- (přístup ke členu): přístup ke členu oboru názvů nebo typu [ `.` ](#member-access-operator-)
+- [(element pole nebo přístup indexeru): pro přístup k prvku pole nebo indexeru typu `[]` ](#indexer-operator-)
+- [a (podmíněnéoperátoryshodnotounull):kprovedeníoperacepřístupučlenaneboelementupouzevpřípadě,žeoperandjenenulový`?[]` `?.` ](#null-conditional-operators--and-)
+- (vyvolání): pro volání metody, která je k dispozici, nebo vyvolání delegáta [ `()` ](#invocation-operator-)
 
-## <a name="member-access-operator-"></a>Operátor přístupu členů.
+## <a name="member-access-operator-"></a>Operátor přístupu ke členu.
 
-Můžete použít `.` token pro přístup k oboru názvů nebo typ, jak ukazují následující příklady:
+`.` Token použijete pro přístup ke členu oboru názvů nebo typu, jak ukazuje následující příklad:
 
-- Použití `.` pro přístup k vnořené oboru názvů v oboru názvů, jako následující příklad [ `using` směrnice](../keywords/using-directive.md) ukazuje:
+- Použijte `.` pro přístup k vnořenému oboru názvů v rámci oboru názvů, jak ukazuje následující [ `using` ](../keywords/using-directive.md) příklad direktivy:
 
   [!code-csharp[nested namespaces](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NestedNamespace)]
 
-- Použití `.` do formuláře *kvalifikovaný název* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
+- Slouží `.` k vytvoření *kvalifikovaného názvu* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
 
   [!code-csharp[qualified name](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#QualifiedName)]
 
-  Použít [ `using` směrnice](../keywords/using-directive.md) provést volitelné použijte kvalifikované názvy.
+  Použijte směrnici pro použití kvalifikovaných názvů jako nepovinné. [ `using` ](../keywords/using-directive.md)
 
-- Použití `.` přístup [členy typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, pokud jako ukazuje následující kód:
+- Použijte `.` pro přístup ke [členům typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, jak ukazuje následující kód:
 
   [!code-csharp-interactive[type members](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#TypeMemberAccess)]
 
-Můžete také použít `.` k přístupu [– metoda rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
+Můžete také použít `.` pro přístup k [metodě rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
 
-## <a name="indexer-operator-"></a>Indexer operator [].
+## <a name="indexer-operator-"></a>Operátor indexer []
 
-Hranaté závorky, `[]`, se obvykle používají pro přístup k prvkům pole, indexovací člen nebo ukazatel.
+Hranaté závorky `[]`se obvykle používají pro přístup k objektům Array, indexer nebo Pointer.
 
 ### <a name="array-access"></a>Přístup k poli
 
-Následující příklad ukazuje, jak přistupovat k prvkům pole:
+Následující příklad ukazuje, jak získat přístup k prvkům pole:
 
 [!code-csharp-interactive[array access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Arrays)]
 
-Pokud pole indexu je mimo hranice odpovídající dimenze v poli, <xref:System.IndexOutOfRangeException> je vyvolána výjimka.
+Pokud je index pole mimo hranice odpovídající dimenze pole, <xref:System.IndexOutOfRangeException> je vyvolána výjimka.
 
-Jak ukazuje předchozí příklad, také použijete hranaté závorky při deklaraci typu pole nebo vytvoření instance pole instance.
+Jak ukazuje předchozí příklad, je také možné použít hranaté závorky, pokud deklarujete typ pole nebo instanci pole instance.
 
-Další informace o polích naleznete v tématu [pole](../../programming-guide/arrays/index.md).
+Další informace o polích naleznete v tématu [Arrays](../../programming-guide/arrays/index.md).
 
 ### <a name="indexer-access"></a>Přístup indexeru
 
-Následující příklad používá .NET <xref:System.Collections.Generic.Dictionary%602> typu k předvedení přístup indexeru:
+Následující příklad používá typ .NET <xref:System.Collections.Generic.Dictionary%602> k demonstraci přístupu indexeru:
 
 [!code-csharp-interactive[indexer access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Indexers)]
 
-Indexery umožňují index instance typu uživatelem definované v podobným způsobem jako indexování pole. Na rozdíl od indexy pole, které musí být celé číslo, mohou být deklarovány argumenty indexeru být libovolného typu.
+Indexery umožňují indexovat instance uživatelsky definovaného typu podobným způsobem jako indexování pole. Na rozdíl od indexů pole, který musí být celé číslo, argumenty indexeru lze deklarovat jako libovolný typ.
 
 Další informace o indexerech najdete v tématu [indexery](../../programming-guide/indexers/index.md).
 
-### <a name="other-usages-of-"></a>Další použití]
+### <a name="other-usages-of-"></a>Další použití []
 
-Informace o přístup k prvkům ukazatel, najdete v článku [ukazatel element přístup operator []](pointer-related-operators.md#pointer-element-access-operator-) část [ukazatel související s operátory](pointer-related-operators.md) článku.
+Informace o přístupu k prvkům ukazatele naleznete v části [operátor přístupu k prvku ukazatele []](pointer-related-operators.md#pointer-element-access-operator-) v článku o [operátorech souvisejících s ukazateli](pointer-related-operators.md) .
 
-Můžete také použít hranaté závorky k určení [atributy](../../programming-guide/concepts/attributes/index.md):
+Pomocí hranatých závorek určíte [atributy](../../programming-guide/concepts/attributes/index.md):
 
 ```csharp
 [System.Diagnostics.Conditional("DEBUG")]
 void TraceMethod() {}
 ```
 
-## <a name="null-conditional-operators--and-"></a>Podmíněné operátory s Null?. a? []
+## <a name="null-conditional-operators--and-"></a>Podmíněné operátory s hodnotou null?. ani? []
 
-K dispozici v C# 6 nebo novější, platí null podmíněného operátoru přístupu ke členu `?.`, nebo přístup k prvkům `?[]`, operace svého operandu pouze v případě, že operand vyhodnocen jako jinou hodnotu než null. Pokud je operand vyhodnocen jako `null`, je výsledek použití operátoru `null`. Operátor přístupu členů null podmíněných `?.` se také označuje jako operátor Elvis.
+K dispozici v 6 nebo novějším, operátor s hodnotou null aplikuje na `?.`operand přístup člena, `?[]`nebo element, operace na jeho operand pouze v C# případě, že se tento operand vyhodnocuje jako nenulový. Pokud je operand vyhodnocen `null`jako, výsledek použití operátoru je. `null` Operátor `?.` přístupu k podmíněnému členu s hodnotou null je také označován jako Elvis operátor.
 
-Podmíněné operátory s null jsou short-circuiting. To znamená, pokud jedna operace v řetězci Podmíněný člen nebo element přístup operace vrátí `null`, neprovede zbytek řetězce. V následujícím příkladu `B` není vyhodnocen, pokud `A` vyhodnotí jako `null` a `C` není vyhodnocen, pokud `A` nebo `B` vyhodnotí jako `null`:
+Operátory podmíněné hodnotou null jsou krátkodobé okruhy. To znamená, že pokud se vrátí `null`jedna operace v řetězci podmíněného člena nebo operace přístupu k prvkům, zbytek řetězu se nespustí. V následujícím `B` příkladu není vyhodnocena, pokud `A` `null` je vyhodnocena `C` jako a není vyhodnocena v případě `null`, že `A` nebo `B` je vyhodnocena jako:
 
 ```csharp
 A?.B?.Do(C);
 A?.B?[C];
 ```
 
-Následující příklad ukazuje použití `?.` a `?[]` operátory:
+Následující příklad ukazuje použití `?.` operátorů a: `?[]`
 
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
-Předchozí příklad také ukazuje využití [operátoru nulového sjednocení](null-coalescing-operator.md). Můžete použít poskytnout alternativní výraz k vyhodnocení v případě, že je výsledek operace null podmíněného operátoru nulového sjednocení `null`.
+Předchozí příklad také ukazuje použití operátoru nulového [slučování](null-coalescing-operator.md). Operátor pro sjednocení hodnoty null můžete použít k poskytnutí alternativního výrazu pro vyhodnocení pro případ, že je `null`výsledkem operace podmíněného zpracování hodnoty null.
 
-### <a name="thread-safe-delegate-invocation"></a>Volání delegáta bezpečným pro vlákno
+### <a name="thread-safe-delegate-invocation"></a>Volání delegáta bezpečné pro přístup z více vláken
 
-Použití `?.` operátor pro kontrolu, pokud delegát je jiná než null a vyvolání způsobem bezpečným pro vlákno (například když je [vyvolat událost](../../../standard/events/how-to-raise-and-consume-events.md)), jak ukazuje následující kód:
+Použijte operátor ke kontrole, zda delegát není null a vyvolá ho v bezpečném režimu (například při [vyvolání události](../../../standard/events/how-to-raise-and-consume-events.md)), jak ukazuje následující kód: `?.`
 
 ```csharp
 PropertyChanged?.Invoke(…)
 ```
 
-Kód následující kód, který použijete v odpovídá C# 5 nebo starším systémem:
+Tento kód je ekvivalentní následujícímu kódu, který byste použili v C# 5 nebo starších verzích:
 
 ```csharp
 var handler = this.PropertyChanged;
@@ -133,37 +133,38 @@ if (handler != null)
 }
 ```
 
-## <a name="invocation-operator-"></a>Operátor vyvolání)
+## <a name="invocation-operator-"></a>Operátor vyvolání ()
 
-Použít závorky, `()`, aby volal [metoda](../../programming-guide/classes-and-structs/methods.md) nebo vyvolat [delegovat](../../programming-guide/delegates/index.md).
+Použijte závorky, `()`, pro volání [metody](../../programming-guide/classes-and-structs/methods.md) nebo vyvolání delegáta [](../../programming-guide/delegates/index.md).
 
-Následující příklad ukazuje, jak volat metodu, s nebo bez argumentů a vyvolání delegáta:
+Následující příklad ukazuje, jak zavolat metodu s argumenty nebo bez argumentů a vyvolat delegáta:
 
 [!code-csharp-interactive[invocation with ()](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Invocation)]
 
-Můžete také použít závorky, při vyvolání [konstruktor](../../programming-guide/classes-and-structs/constructors.md) s [ `new` ](new-operator.md) operátor.
+Při vyvolání [konstruktoru](../../programming-guide/classes-and-structs/constructors.md) s [`new`](new-operator.md) operátorem můžete také použít závorky.
 
-### <a name="other-usages-of-"></a>Další využití)
+### <a name="other-usages-of-"></a>Další použití pro ()
 
-Je také použít k určení pořadí, ve kterém se má vyhodnotit operací ve výrazu závorky. Další informace najdete v tématu [závorek](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) část [operátory](../../programming-guide/statements-expressions-operators/operators.md) článku. Seznam operátorů seřazené podle úrovně priority, naleznete v tématu [ C# operátory](index.md).
+K určení pořadí, ve kterém se mají vyhodnotit operace ve výrazu, můžete také použít kulaté závorky. Další informace naleznete v části [Přidání závorek](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) v článku věnovaném [operátorům](../../programming-guide/statements-expressions-operators/operators.md) . Seznam operátorů seřazených podle priority najdete v tématu [ C# operátory](index.md).
 
-[Výrazy přetypování](type-testing-and-conversion-operators.md#cast-operator-), které provést explicitní převody typu, také pomocí závorek.
+[Výrazy přetypování](type-testing-and-conversion-operators.md#cast-operator-), které provádějí explicitní převody typů, používají také závorky.
 
-## <a name="operator-overloadability"></a>Overloadability – operátor
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-`.` a `()` nemohou být přetíženy operátory. `[]` Operátor bude také považován za bez přetěžovatelný operátor. Použití [indexery](../../programming-guide/indexers/index.md) pro podporu indexování pomocí uživatelem definovaných typů.
+Operátory `.` a`()` nemohou být přetíženy. `[]` Operátor je také považován za operátor, který není přetížen. Použijte [indexery](../../programming-guide/indexers/index.md) k podpoře indexování s uživatelsky definovanými typy.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následující částech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
 
 - [Přístup ke členu](~/_csharplang/spec/expressions.md#member-access)
 - [Přístup k prvkům](~/_csharplang/spec/expressions.md#element-access)
-- [Null – podmíněný operátor](~/_csharplang/spec/expressions.md#null-conditional-operator)
-- [Výrazy typu Invocation](~/_csharplang/spec/expressions.md#invocation-expressions)
+- [Podmíněný operátor s hodnotou null](~/_csharplang/spec/expressions.md#null-conditional-operator)
+- [Výrazy vyvolání](~/_csharplang/spec/expressions.md#invocation-expressions)
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [?? (operátoru nulového sjednocení)](null-coalescing-operator.md)
+- [?? (operátor slučování null)](null-coalescing-operator.md)
+- [:: – operátor](namespace-alias-qualifier.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Window control pattern
 - Window control pattern
 ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
-ms.openlocfilehash: 9cab4dbbcd3302a6e74783eaefdbbd8463332224
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 1d40b133beb68c14e7392139bf0753cedb67a4ef
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710244"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971820"
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "68710244"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IWindowProvider>implementaci, včetně informací <xref:System.Windows.Automation.WindowPattern> o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.WindowPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které poskytují základní funkce založené na oknech v tradičním grafickém uživatelském rozhraní (GUI). Příklady ovládacích prvků, které musí implementovat tento vzor ovládacích prvků, zahrnují okna [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] aplikace nejvyšší úrovně, podřízená okna, měnitelné ovládací prvky podokna pro změnu velikosti, modální dialogová okna a okna nápovědy k bublinám.  
+ Vzor <xref:System.Windows.Automation.WindowPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které poskytují základní funkce založené na oknech v tradičním grafickém uživatelském rozhraní (GUI). Příklady ovládacích prvků, které musí implementovat tento vzor ovládacích prvků, zahrnují okna aplikace nejvyšší úrovně, podřízená okna rozhraní MDI (Multiple Document Interface), okna, modální dialogová okna a okna nápovědy k bublinám s možností změny velikosti.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -42,14 +42,14 @@ ms.locfileid: "68710244"
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Událost|Žádné|  
 |<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Událost|Žádné|  
 |<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručeno být<xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  

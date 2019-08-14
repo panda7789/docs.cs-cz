@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 818d013356c3ca8151e9b5bb675bce4726759f6c
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 5f3560c899373b9835e2ead79590cf73777b2375
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710337"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972408"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] , podpora typografie, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
@@ -29,7 +29,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
 <a name="Rich_Typography"></a>   
 ## <a name="rich-typography"></a>Bohatá typografie  
- Formát písma je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma byl vyvinut společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Objekt zpřístupňuje mnoho pokročilých [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcí písem, jako jsou stylistické alternativy a ozdobné znaky. <xref:System.Windows.Documents.Typography> Poskytuje sadu ukázkových [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písem, která jsou navržená pomocí bohatých funkcí, jako jsou například písma Pericles a Pescadero. [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+ Formát písma je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma byl vyvinut společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Objekt zpřístupňuje mnoho pokročilých [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcí písem, jako jsou stylistické alternativy a ozdobné znaky. <xref:System.Windows.Documents.Typography> Windows SDK poskytuje sadu ukázkových [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písem, které jsou navrženy s bohatou funkcí, jako jsou například písma Pericles a Pescadero. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
  Písmo Pericles [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
   

@@ -2,97 +2,98 @@
 title: 'Postupy: Vytvoření duplexní federované vazby'
 ms.date: 03/30/2017
 ms.assetid: 4331d2bc-5455-492a-9189-634a82597726
-ms.openlocfilehash: 510faa0b1d791b1d164c55e9fa32daafa559d56c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 71c970fa45d7d4ccd55fceddb2360d0aa0a768f8
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696207"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972062"
 ---
 # <a name="how-to-create-a-duplex-federated-binding"></a>Postupy: Vytvoření duplexní federované vazby
-<xref:System.ServiceModel.WSFederationHttpBinding> podporuje pouze kontraktů výměny zpráv datagram a požadavku/odpovědi. Použití kontraktu duplexní zprávy exchange, musíte vytvořit vlastní vazby. Následující postupy ukazují, jak to udělat v konfiguraci, pomocí režimu zabezpečení zpráv pro přenosy protokolu HTTP a TCP a funkcí zabezpečení ve smíšeném režimu přenosu protokolu TCP. Vzorový kód ukazující všechny 3 vazby je na konci tohoto tématu.  
-  
- Můžete také vytvořit vazby v kódu. Popis prvky zásobníku vazba vytvořit, naleznete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
-  
-### <a name="to-create-a-duplex-federated-custom-binding-with-http"></a>K vytvoření duplexní federované vlastní vazby pomocí protokolu HTTP  
-  
-1. V [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) vytvořit uzel konfiguračního souboru [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu.  
-  
-2. Uvnitř [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu, vytvořit [ \<vazby >](../../../../docs/framework/misc/binding.md) element s `name` atribut nastaven na `FederationDuplexHttpMessageSecurityBinding`.  
-  
-3. Uvnitř [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu, vytvořit [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element s `authenticationMode` atribut nastaven na `SecureConversation`.  
-  
-4. Uvnitř [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořit [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) element s `authenticationMode` atribut nastaven na `IssuedTokenForCertificate` nebo `IssuedTokenForSslNegotiated`.  
-  
-5. Následující [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořte prázdnou [ \<compositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) elementu.  
-  
-6. Následující [ \<compositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) elementu, vytvořte prázdnou [ \<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) elementu.  
-  
-7. Následující [ \<oneWay >](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) elementu, vytvořte prázdnou [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md) elementu.  
-  
-### <a name="to-create-a-duplex-federated-custom-binding-with-tcp-message-security-mode"></a>K vytvoření duplexní federované vlastní vazby s režim zabezpečených zpráv TCP  
-  
-1. V [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) vytvořit uzel konfiguračního souboru [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu.   
-  
-2. Uvnitř [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu, vytvořit [ \<vazby >](../../../../docs/framework/misc/binding.md) element s `name` atribut nastaven na `FederationDuplexTcpMessageSecurityBinding`.  
-  
-3. Uvnitř [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu, vytvořit [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element s `authenticationMode` atribut nastaven na `SecureConversation`.  
-  
-4. Uvnitř [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořit [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) element s `authenticationMode` atribut nastaven na `IssuedTokenForCertificate` nebo `IssuedTokenForSslNegotiated`.  
-  
-5. Následující [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořte prázdnou [ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) elementu.  
-  
-### <a name="to-create-a-duplex-federated-custom-binding-with-tcp-mixed-security-mode"></a>Vytvoření duplexní federované vlastní vazby s TCP smíšeném režimu  
-  
-1. V [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) vytvořit uzel konfiguračního souboru [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu.   
-  
-2. Uvnitř [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) elementu, vytvořit [ \<vazby >](../../../../docs/framework/misc/binding.md) element s `name` atribut nastaven na `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding`.  
-  
-3. Uvnitř [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu, vytvořit [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element s `authenticationMode` atribut nastaven na `SecureConversation`.  
-  
-4. Uvnitř [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořit [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) element s `authenticationMode` atribut nastaven na `IssuedTokenForCertificate` nebo `IssuedTokenForSslNegotiated`.  
-  
-5. Následující [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu, vytvořte prázdnou [ \<sslStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) elementu.  
-  
-6. Následující [ \<sslStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) elementu, vytvořte prázdnou [ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) elementu.  
-  
-## <a name="code-sample"></a>Ukázka kódu  
-  
-#### <a name="sample-with-3-bindings"></a>Příklad s 3 vazby  
-  
-1. Vložte následující kód do konfiguračního souboru.  
-  
-## <a name="example"></a>Příklad  
-  
-```xml  
-<bindings>  
-   <customBinding>  
-      <binding name="FederationDuplexHttpMessageSecurityBinding">  
-<!-- duplex contract requires secure conversation with require cancellation = true -->  
-          <security authenticationMode="SecureConversation">  
-              <secureConversationBootstrap authenticationMode="IssuedTokenForSslNegotiated" />  
-          </security>  
-          <compositeDuplex />  
-          <oneWay />  
-          <httpTransport />  
-       </binding>  
-<!-- duplex over https is not supported -->  
-       <binding name="FederationDuplexTcpMessageSecurityBinding">  
-<!-- duplex contract requires secure conversation with require cancellation = true -->  
-          <security authenticationMode="SecureConversation">  
-              <secureConversationBootstrap authenticationMode="IssuedTokenForSslNegotiated" />  
-          </security>  
-          <tcpTransport />  
-       </binding>              
-       <binding name="FederationDuplexTcpTransportSecurityWithMessageCredentialsBinding">  
-<!-- duplex contract requires secure conversation with require cancellation = true -->  
-          <security authenticationMode="SecureConversation">  
-              <secureConversationBootstrap authenticationMode="IssuedTokenOverTransport" />  
-          </security>  
-<!-- requireClientCertificate = true or <windowsStreamSecurity /> can be used, but does not make sense for most scenarios -->  
-          <sslStreamSecurity />  
-          <tcpTransport />  
-       </binding>              
-    </customBinding>  
-</bindings>  
+
+<xref:System.ServiceModel.WSFederationHttpBinding>podporuje pouze kontrakty pro výměnu zpráv datagram a Request/Reply. Pokud chcete použít oboustrannou smlouvu výměny zpráv, musíte vytvořit vlastní vazbu. Následující postupy ukazují, jak to provést v konfiguraci, použití zabezpečení režimu zprávy pro přenosy HTTP a TCP a použití smíšeného režimu zabezpečení pro přenos TCP. Vzorový kód zobrazující všechny 3 vazby jsou na konci tohoto tématu.
+
+Vazbu můžete vytvořit také v kódu. Popis prvků vazby, které se mají vytvořit, najdete v tématu [How to: Vytvořte vlastní vazbu pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).
+
+## <a name="to-create-a-duplex-federated-custom-binding-with-http"></a>Vytvoření duplexní federované vlastní vazby pomocí protokolu HTTP
+
+1. V uzlu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) vazby > konfiguračního souboru vytvořte prvek > CustomBinding. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
+
+2. `name` `FederationDuplexHttpMessageSecurityBinding` [ Uvnitř\<prvkuCustomBinding > vytvořte vazbu >](../../../../docs/framework/misc/binding.md) elementu s atributem nastaveným na. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+
+3. Uvnitř elementu > `authenticationMode` `SecureConversation`vazbyvytvořteprvek [zabezpečení > s atributem nastaveným na. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ \<](../../../../docs/framework/misc/binding.md)
+
+4. `IssuedTokenForCertificate` `authenticationMode` `IssuedTokenForSslNegotiated` [ Uvnitř\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ elementu>zabezpečenívytvořteprvek>secureConversationBootstrapsatributem\<](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) nastaveným na nebo.
+
+5. Po elementu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) [> zabezpečenívytvořteprázdný>elementcompositeDuplex.\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)
+
+6. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) [ PocompositeDuplex>elementuvytvořteprázdný>elementoneWay.\<](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)
+
+7. Po elementu [> oneWayvytvořteprázdnýelement>HttpTransport.\<](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md)
+
+## <a name="to-create-a-duplex-federated-custom-binding-with-tcp-message-security-mode"></a>Vytvoření duplexní federované vlastní vazby pomocí režimu zabezpečení zprávy TCP
+
+1. V uzlu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) vazby > konfiguračního souboru vytvořte prvek > CustomBinding. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
+
+2. `name` `FederationDuplexTcpMessageSecurityBinding` [ Uvnitř\<prvkuCustomBinding > vytvořte vazbu >](../../../../docs/framework/misc/binding.md) elementu s atributem nastaveným na. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+
+3. Uvnitř elementu > `authenticationMode` `SecureConversation`vazbyvytvořteprvek [zabezpečení > s atributem nastaveným na. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ \<](../../../../docs/framework/misc/binding.md)
+
+4. `IssuedTokenForCertificate` `authenticationMode` `IssuedTokenForSslNegotiated` [ Uvnitř\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ elementu>zabezpečenívytvořteprvek>secureConversationBootstrapsatributem\<](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) nastaveným na nebo.
+
+5. Po elementu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) [> zabezpečenívytvořteprázdný>elementtcpTransport.\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)
+
+## <a name="to-create-a-duplex-federated-custom-binding-with-tcp-mixed-security-mode"></a>Vytvoření duplexní federované vlastní vazby se smíšeným režimem zabezpečení TCP
+
+1. V uzlu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) vazby > konfiguračního souboru vytvořte prvek > CustomBinding. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
+
+2. `name` `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding` [ Uvnitř\<prvkuCustomBinding > vytvořte vazbu >](../../../../docs/framework/misc/binding.md) elementu s atributem nastaveným na. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+
+3. Uvnitř elementu > `authenticationMode` `SecureConversation`vazbyvytvořteprvek [zabezpečení > s atributem nastaveným na. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ \<](../../../../docs/framework/misc/binding.md)
+
+4. `IssuedTokenForCertificate` `authenticationMode` `IssuedTokenForSslNegotiated` [ Uvnitř\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [ elementu>zabezpečenívytvořteprvek>secureConversationBootstrapsatributem\<](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) nastaveným na nebo.
+
+5. Po elementu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) [> zabezpečenívytvořteprázdný>elementsslStreamSecurity.\<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)
+
+6. Po elementu [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) sslStreamSecurity > Vytvořte prázdný tcpTransport prvek >. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)
+
+## <a name="code-sample"></a>Ukázka kódu
+
+### <a name="sample-with-3-bindings"></a>Ukázka se 3 vazbami
+
+1. Do konfiguračního souboru vložte následující kód.
+
+## <a name="example"></a>Příklad
+
+```xml
+<bindings>
+   <customBinding>
+      <binding name="FederationDuplexHttpMessageSecurityBinding">
+<!-- duplex contract requires secure conversation with require cancellation = true -->
+          <security authenticationMode="SecureConversation">
+              <secureConversationBootstrap authenticationMode="IssuedTokenForSslNegotiated" />
+          </security>
+          <compositeDuplex />
+          <oneWay />
+          <httpTransport />
+       </binding>
+<!-- duplex over https is not supported -->
+       <binding name="FederationDuplexTcpMessageSecurityBinding">
+<!-- duplex contract requires secure conversation with require cancellation = true -->
+          <security authenticationMode="SecureConversation">
+              <secureConversationBootstrap authenticationMode="IssuedTokenForSslNegotiated" />
+          </security>
+          <tcpTransport />
+       </binding>
+       <binding name="FederationDuplexTcpTransportSecurityWithMessageCredentialsBinding">
+<!-- duplex contract requires secure conversation with require cancellation = true -->
+          <security authenticationMode="SecureConversation">
+              <secureConversationBootstrap authenticationMode="IssuedTokenOverTransport" />
+          </security>
+<!-- requireClientCertificate = true or <windowsStreamSecurity /> can be used, but does not make sense for most scenarios -->
+          <sslStreamSecurity />
+          <tcpTransport />
+       </binding>
+    </customBinding>
+</bindings>
 ```

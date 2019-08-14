@@ -14,97 +14,100 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], communication between DHTML and client application
 - DHTML [Windows Forms], embedding in Windows Forms
 ms.assetid: 55353a32-b09e-4479-a521-ff3a5ff9a708
-ms.openlocfilehash: 47002ffaee33be66e2cc99ac1a01896d4656885c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 45df54b3a590078eff6ddc1197db5b0124663cf5
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591812"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971921"
 ---
 # <a name="how-to-implement-two-way-communication-between-dhtml-code-and-client-application-code"></a>Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace
-Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku k přidání existujícího dynamického kódu HTML (DHTML) webové aplikace do klientských aplikací Windows Forms. To je užitečné, když jste investovali významné vývoji při vytváření ovládacích prvků na základě DHTML a budete chtít využít výhod bohaté možnosti uživatelského rozhraní Windows Forms aniž byste museli přepsat existující kód.  
-  
- <xref:System.Windows.Forms.WebBrowser> Řízení umožňuje implementace obousměrné komunikace mezi kódem vaší klientské aplikace a webové stránky skriptovací kód prostřednictvím <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> a <xref:System.Windows.Forms.WebBrowser.Document%2A> vlastnosti. Kromě toho můžete nakonfigurovat <xref:System.Windows.Forms.WebBrowser> tak, aby vaše webové ovládací prvky bezproblémově prolínat s jinými ovládacími prvky na formuláři aplikace, skrytí jejich DHTML provádění. Bez problémů a přizpůsobte ovládací prvky, formátování stránky zobrazí tak, aby jeho barvu pozadí a vizuální styl odpovídají zbývající části formuláře a použít <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>, <xref:System.Windows.Forms.WebBrowser.IsWebBrowserContextMenuEnabled%2A>, a <xref:System.Windows.Forms.WebBrowser.WebBrowserShortcutsEnabled%2A> vlastnosti, které chcete zakázat funkce standardním prohlížečem.  
-  
-### <a name="to-embed-dhtml-in-your-windows-forms-application"></a>Chcete-li vložit DHTML v aplikaci Windows Forms  
-  
-1. Nastavte <xref:System.Windows.Forms.WebBrowser> ovládacího prvku <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> vlastnost `false` zabránit <xref:System.Windows.Forms.WebBrowser> ovládacího prvku z otevírání souborů vyřadit problém napravit.  
-  
+
+Pomocí <xref:System.Windows.Forms.WebBrowser> ovládacího prvku lze přidat existující kód webové aplikace DHTML (Dynamic HTML) do klientských aplikací model Windows Forms. To je užitečné, když jste investovali významnou dobu vývoje při vytváření ovládacích prvků založených na technologii DHTML a chcete využít výhod bohatých funkcí uživatelského rozhraní model Windows Forms bez nutnosti přepsat stávající kód.
+
+Ovládací prvek umožňuje implementovat obousměrnou komunikaci mezi kódem klientské aplikace a kódem skriptu webové stránky <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> prostřednictvím vlastností a <xref:System.Windows.Forms.WebBrowser.Document%2A>. <xref:System.Windows.Forms.WebBrowser> Kromě toho můžete nakonfigurovat <xref:System.Windows.Forms.WebBrowser> ovládací prvek tak, aby vaše webové ovládací prvky byly plynule s dalšími ovládacími prvky ve formuláři aplikace, a tím se skryje jejich implementace DHTML. Chcete-li plynule prolnout ovládací prvky, naformátujte stránku jako zobrazenou tak, aby barva pozadí a vizuální styl odpovídaly zbývající části <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>formuláře <xref:System.Windows.Forms.WebBrowser.IsWebBrowserContextMenuEnabled%2A>, a <xref:System.Windows.Forms.WebBrowser.WebBrowserShortcutsEnabled%2A> pomocí vlastností, a můžete zakázat standardní funkce prohlížeče.
+
+## <a name="to-embed-dhtml-in-your-windows-forms-application"></a>Vložení DHTML do aplikace model Windows Forms
+
+1. <xref:System.Windows.Forms.WebBrowser> Nastavte <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> vlastnostovládacího`false` prvku na, chcete-li zabránit ovládacímuprvkuvotevíránísouborů,kteréjsounaněj<xref:System.Windows.Forms.WebBrowser> přetaženy.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#1)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#1)]  
-  
-2. Nastavit u tohoto prvku <xref:System.Windows.Forms.WebBrowser.IsWebBrowserContextMenuEnabled%2A> vlastnost `false` zabránit <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazoval jeho místní nabídku, když uživatel klepne pravým tlačítkem ji.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#1)]
+
+2. Nastavte <xref:System.Windows.Forms.WebBrowser.IsWebBrowserContextMenuEnabled%2A> vlastnost ovládacího prvku na `false` hodnotu, chcete- <xref:System.Windows.Forms.WebBrowser> li zabránit ovládacímu prvku v zobrazení místní nabídky, když na něj uživatel klikne pravým tlačítkem myši.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#2)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#2)]  
-  
-3. Nastavit u tohoto prvku <xref:System.Windows.Forms.WebBrowser.WebBrowserShortcutsEnabled%2A> vlastnost `false` zabránit <xref:System.Windows.Forms.WebBrowser> ovládacího prvku v odpovídání na klávesových zkratek.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#2)]
+
+3. Nastavte <xref:System.Windows.Forms.WebBrowser.WebBrowserShortcutsEnabled%2A> vlastnost ovládacího prvku na `false` hodnotu, chcete- <xref:System.Windows.Forms.WebBrowser> li zabránit ovládacímu prvku v reakci na klávesové zkratky.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#3)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#3)]  
-  
-4. Nastavte <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> vlastnost v konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
-  
-     Následující kód používá vlastní třídy formuláře pro objekt skriptování.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#3)]
+
+4. Nastavte vlastnost v konstruktoru formuláře <xref:System.Windows.Forms.Form.Load> nebo obslužné rutině události. <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A>
+
+     Následující kód používá pro objekt skriptování vlastní třídu Form.
+
     > [!NOTE]
-    >  Modelu COM (Component Object) musí být schopen získat přístup k objektu skriptování. Chcete-li zviditelnit formuláře do modelu COM, přidejte <xref:System.Runtime.InteropServices.ComVisibleAttribute> atribut do vaší třídy formuláře.  
-  
+    >  Objekt modelu COM musí být schopný přistupovat ke skriptovacímu objektu. Chcete-li, aby byl <xref:System.Runtime.InteropServices.ComVisibleAttribute> formulář viditelný pro model COM, přidejte atribut do třídy Form.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#4)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#4)]  
-  
-5. Implementujte veřejné vlastnosti nebo metody v kódu aplikace, který bude používat váš kód skriptu.  
-  
-     Například pokud používáte třídu formuláře pro objekt skriptování, přidejte následující kód do třídy formuláře.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#4)]
+
+5. Implementujte veřejné vlastnosti nebo metody v kódu aplikace, který bude používat váš kód skriptu.
+
+     Například pokud použijete třídu Form objektu Script, přidejte do třídy formu následující kód.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#5)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#5)]  
-  
-6. Použití `window.external` objekt v kódu skriptu pro přístup k veřejné vlastnosti a metody zadaného objektu.  
-  
-     Následující kód HTML ukazuje, jak volat metodu na objekt skriptování od kliknutí na tlačítko. Zkopírujte tento kód do elementu těla dokumentu HTML, který načtete pomocí ovládacího prvku <xref:System.Windows.Forms.WebBrowser.Navigate%2A> metody nebo přiřadit ovládacího prvku <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnost.  
-  
-    ```  
-    <button onclick="window.external.Test('called from script code')">  
-        call client code from script code  
-    </button>  
-    ```  
-  
-7. Implementujte funkce ve vašem skriptovacím kódu, který bude používat váš kód aplikace.  
-  
-     Následující prvek HTML skript obsahuje ukázkovou funkci. Zkopírujte tento kód do elementu HEAD dokumentu HTML, který načtete pomocí ovládacího prvku <xref:System.Windows.Forms.WebBrowser.Navigate%2A> metody nebo přiřadit ovládacího prvku <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnost.  
-  
-    ```  
-    <script>  
-    function test(message) {   
-        alert(message);   
-    }  
-    </script>  
-    ```  
-  
-8. Použití <xref:System.Windows.Forms.WebBrowser.Document%2A> vlastnosti pro přístup k kód skriptu z kódu klienta aplikace.  
-  
-     Například přidejte následující kód k tlačítku <xref:System.Windows.Forms.Control.Click> obslužné rutiny události.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#5)]
+
+6. `window.external` Použijte objekt v kódu skriptu pro přístup k veřejným vlastnostem a metodám zadaného objektu.
+
+     Následující kód jazyka HTML ukazuje, jak zavolat metodu na objekt skriptování z kliknutí na tlačítko. Zkopírujte tento kód do prvku tělo dokumentu HTML, který jste načetli pomocí <xref:System.Windows.Forms.WebBrowser.Navigate%2A> metody ovládacího prvku nebo přiřadíte <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnosti ovládacího prvku.
+
+    ```html
+    <button onclick="window.external.Test('called from script code')">
+        call client code from script code
+    </button>
+    ```
+
+7. Implementujte funkce v kódu skriptu, který bude používat váš kód aplikace.
+
+     Následující prvek skriptu HTML poskytuje ukázkovou funkci. Zkopírujte tento kód do prvku head dokumentu HTML, který jste načetli pomocí <xref:System.Windows.Forms.WebBrowser.Navigate%2A> metody ovládacího prvku nebo přiřadíte <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnosti ovládacího prvku.
+
+    ```html
+    <script>
+    function test(message) {
+        alert(message);
+    }
+    </script>
+    ```
+
+8. <xref:System.Windows.Forms.WebBrowser.Document%2A> Použijte vlastnost pro přístup ke kódu skriptu z kódu klientské aplikace.
+
+     Přidejte například následující kód do obslužné rutiny události Button <xref:System.Windows.Forms.Control.Click> .
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#8)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#8)]  
-  
-9. Po dokončení ladění vašeho DHTML nastavit u tohoto prvku <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed%2A> vlastnost `true` zabránit <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazoval chybové zprávy problémů kód skriptu.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#8)]
+
+9. Po dokončení ladění rozšíření DHTML nastavte <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed%2A> vlastnost ovládacího prvku na `true` hodnotu, chcete-li zabránit <xref:System.Windows.Forms.WebBrowser> ovládacímu prvku zobrazit chybové zprávy pro problémy s kódem skriptu.
+
      [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#9)]
-     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#9)]  
-  
-## <a name="example"></a>Příklad  
- Následující příklad kompletní kód poskytuje ukázkové aplikaci, která vám pomůže pochopit tuto funkci. Kód HTML je načten do <xref:System.Windows.Forms.WebBrowser> řídit prostřednictvím <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnosti namísto načítané z jiného souboru ve formátu HTML.  
-  
- [!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#0)]
- [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#0)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento kód vyžaduje:  
-  
-- Odkazy na sestavení systému a System.Windows.Forms.  
-  
+     [!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#9)]
+
+## <a name="example"></a>Příklad
+
+Následující příklad kompletního kódu poskytuje ukázkovou aplikaci, kterou můžete použít k pochopení této funkce. Kód HTML je načten do <xref:System.Windows.Forms.WebBrowser> ovládacího prvku <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> prostřednictvím vlastnosti namísto načítání z samostatného souboru HTML.
+
+[!code-csharp[System.Windows.Forms.WebBrowser.ObjectForScripting#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/CS/form1.cs#0)]
+[!code-vb[System.Windows.Forms.WebBrowser.ObjectForScripting#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser.ObjectForScripting/vb/form1.vb#0)]
+
+## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+
+Tento kód vyžaduje:
+
+- Odkazy na sestavení System a System. Windows. Forms.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.WebBrowser>

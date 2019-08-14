@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 2bfd4d9cbac8dbc9c93ceb1c5bb61ecd03f348d7
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 076fee2fa269c97bcdf5f47d3b38dd0d69c421a1
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512361"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971298"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 
@@ -54,7 +54,7 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[add](add.md)|[zástupný](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](dynamic.md)|[equals](equals.md)|
-|[from](from-clause.md)|[get](get.md)|[global](global.md)|
+|[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
 |[skupiny](group-clause.md)|[into](into.md)|[join](join-clause.md)|
 |[aplikaci](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
 |[OrderBy](orderby-clause.md)|[částečný (typ)](partial-type.md)|[Partial (metoda)](partial-method.md)|

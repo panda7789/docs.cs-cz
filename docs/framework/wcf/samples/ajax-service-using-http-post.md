@@ -2,54 +2,55 @@
 title: Služba AJAX, která používá HTTP POST
 ms.date: 03/30/2017
 ms.assetid: 1ac80f20-ac1c-4ed1-9850-7e49569ff44e
-ms.openlocfilehash: 2fb98e38956719608517caa0e7eeaebd14df8d95
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: c5e5de34573fbfc8a5c6e9607d10881941a9bed5
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882153"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972025"
 ---
 # <a name="ajax-service-using-http-post"></a>Služba AJAX, která používá HTTP POST
-Tento příklad ukazuje, jak použít Windows Communication Foundation (WCF) k vytvoření služby ASP.NET asynchronní JavaScript a XML (AJAX), která používá HTTP POST. Služby AJAX je ten, který se dostanete pomocí základního kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka; jediným rozdílem mezi dvěma vzorky se používá HTTP POST místo HTTP GET.  
-  
- Podpora pro AJAX ve Windows Communication Foundation (WCF) je optimalizovaná pro použití s technologií ASP.NET AJAX prostřednictvím `ScriptManager` ovládacího prvku. Příklad použití WCF pomocí ASP.NET AJAX, najdete v článku [Ajax ukázky](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md).  
-  
+
+Tato ukázka předvádí, jak použít Windows Communication Foundation (WCF) k vytvoření služby ASP.NET Asynchronous JavaScript a XML (AJAX), která používá HTTP POST. Služba AJAX je ta, ke které můžete přistupovat pomocí základního kódu JavaScriptu z klienta webového prohlížeče. Tato ukázka sestaví na [základní ukázce služby AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) . Jediným rozdílem mezi těmito dvěma ukázkami je použití HTTP POST místo HTTP GET.
+
+Podpora AJAX v Windows Communication Foundation (WCF) je optimalizovaná pro použití s ASP.NET AJAX prostřednictvím `ScriptManager` ovládacího prvku. Příklad použití WCF s ASP.NET AJAX naleznete v [ukázkách AJAX](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md).
+
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
-  
- Tato služba v následujícím příkladu je služba WCF se žádný kód specifický pro AJAX.  
-  
- Pokud <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut se používá u určité operace, nebo <xref:System.ServiceModel.Web.WebGetAttribute> atribut není použit, je použit výchozí příkaz protokolu HTTP (dále jen "příspěvek"). Požadavky POST jsou obtížnější k sestavení kompletních než požadavky GET, ale neukládají do mezipaměti; Použijte požadavky POST pro všechny operace, kde není vhodné ukládání do mezipaměti.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
+
+Služba v následující ukázce je služba WCF bez kódu specifického pro AJAX.
+
+Pokud je <xref:System.ServiceModel.Web.WebGetAttribute> atribut použit pro operaci, nebo atribut není použit, je použita výchozí operace HTTP ("post"). <xref:System.ServiceModel.Web.WebInvokeAttribute> Žádosti POST jsou těžší vytvořit než požadavky GET, ale nejsou ukládány do mezipaměti. pro všechny operace, u kterých není ukládání do mezipaměti vhodné, použijte požadavky POST.
 
 ```csharp
-[ServiceContract(Namespace = "PostAjaxService")]  
-public interface ICalculator  
+[ServiceContract(Namespace = "PostAjaxService")]
+public interface ICalculator
 {
-    [WebInvoke]  
-    double Add(double n1, double n2);  
-    //Other operations omitted…  
+    [WebInvoke]
+    double Add(double n1, double n2);
+    //Other operations omitted…
 }
 ```
 
- Vytvořit koncový bod AJAX na službě s použitím <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, stejně jako v ukázce základní služba AJAX.  
-  
- Na rozdíl od požadavků GET nejde vyvolat příspěvek služby z prohlížeče. Například, že přejdete na `http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200` způsobí chybu, protože služba příspěvek očekává `n1` a `n2` parametry se mají odeslat v textu zprávy ve formátu JSON a ne v adrese URL.  
-  
- Klient PostAjaxClientPage.aspx webová stránka obsahuje kód technologie ASP.NET se vyvolat službu pokaždé, když uživatel klikne jedno z tlačítek operace na stránce. Služba odpoví stejným způsobem jako v [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázku s požadavek GET.  
-  
+Vytvořte koncový bod AJAX ve službě pomocí nástroje <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, stejně jako v ukázce základní služby AJAX.
+
+Na rozdíl od požadavků GET nelze vyvolat POST Services z prohlížeče. Například při přechodu na výsledky dojde `http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200` k chybě, protože post Service `n1` očekává odeslání parametrů a `n2` v těle zprávy ve formátu JSON, a ne v adrese URL.
+
+Klientská webová stránka PostAjaxClientPage. aspx obsahuje kód ASP.NET k vyvolání služby vždy, když uživatel klikne na stránku s jedním z těchto tlačítek operace. Služba reaguje stejným způsobem jako v ukázce [základní služby AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) s požadavkem Get.
+
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
->   
->  `<InstallDrive>:\WF_WCF_Samples`  
->   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
->   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Ajax\PostAjaxService`  
-  
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
-  
-1. Zajistěte, aby pokyny k instalaci [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
-  
-2. Sestavte řešení PostAjaxService.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
-  
-3. Přejděte na `http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx` (neotevírejte PostAjaxClientPage.aspx v prohlížeči z adresáře projektu).
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Ajax\PostAjaxService`
+
+## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
+
+1. Ujistěte se, že jste provedli postup instalace s pokyny [pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+
+2. Sestavte řešení PostAjaxService. sln, jak je popsáno v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+
+3. Přejděte na `http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx` adresu (v prohlížeči z adresáře projektu neotevírejte PostAjaxClientPage. aspx).

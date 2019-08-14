@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: b5bedae16a6c53aebf4d577b8cd812da992106f2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: fa59621aaf73922af957961af5401170c2872aa9
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629893"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972348"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zařízení, na kterém běží [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -80,7 +80,7 @@ Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zař�
 |-------------|-----------|  
 |vyhlazení 3D|vytváření koncových aliasů pro 3D se podporuje jenom v operačních systémech, které podporují WDDM (Windows Display Driver Model) [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] , [!INCLUDE[win7](../../../../includes/win7-md.md)]jako je a.|  
   
- Následující funkce a možnosti **nejsou hardwarově** urychleny:  
+ Následující funkce a možnosti nejsou hardwarově urychleny:  
   
 |Funkce|Poznámky|  
 |-------------|-----------|  
@@ -108,7 +108,7 @@ Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zař�
  K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na nastavení registru. Tato nastavení lze také vytvořit nebo upravit přístupem k hodnotám přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] editoru registru. Další informace najdete v tématu [nastavení registru pro vykreslování grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
   
 ### <a name="wpf-performance-profiling-tools"></a>Nástroje pro profilaci výkonu WPF  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu nástrojů pro profilaci výkonu, které umožňují analyzovat chování aplikace za běhu a určují typy optimalizací výkonu, které můžete použít. V následující tabulce jsou uvedeny nástroje pro profilaci výkonu, které jsou součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] nástroje, sady Performance Suite WPF:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu nástrojů pro profilaci výkonu, které umožňují analyzovat chování aplikace za běhu a určují typy optimalizací výkonu, které můžete použít. V následující tabulce jsou uvedeny nástroje pro profilaci výkonu, které jsou součástí nástroje Windows SDK, sady Performance Suite WPF:  
   
 |Nástroj|Popis|  
 |----------|-----------------|  

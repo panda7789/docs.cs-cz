@@ -3,12 +3,12 @@ title: 'Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřo
 ms.date: 03/30/2017
 ms.assetid: 98a3e029-1a9b-4e0c-b5d0-29d3f23f5b15
 author: BrucePerlerMS
-ms.openlocfilehash: ecaf1de0b806d5568d81fac2ddb2b39b697135ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75db96a621d7863ef445efb24814111b34da6960
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792741"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971839"
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-forms-based-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním pomocí formulářů
 
@@ -16,11 +16,11 @@ ms.locfileid: "61792741"
 
 - Microsoft® Windows® Identity Foundation (WIF)
 
-- ASP.NET® webových formulářů
+- Webové formuláře ASP.NET®
 
 ## <a name="summary"></a>Souhrn
 
-Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity, která používá ověřování pomocí formulářů. Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování pomocí formulářů.
+V tomto postupu najdete podrobné postupy pro vytváření jednoduchých webových formulářů ASP.NET pracujících s deklaracemi, které používají ověřování pomocí formulářů. Poskytuje také pokyny k otestování aplikace za účelem ověření, že se deklarace identity zobrazí, když se uživatel přihlásí pomocí ověřování pomocí formulářů.
 
 ## <a name="contents"></a>Obsah
 
@@ -32,27 +32,27 @@ Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché apl
 
 - Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET
 
-- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů
+- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
 - Krok 3 – Otestování řešení
 
 ## <a name="objectives"></a>Cíle
 
-- Konfigurace aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů
+- Konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
-- Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně
+- Otestujte aplikaci webových formulářů ASP.NET, abyste viděli, jestli správně funguje.
 
 ## <a name="overview"></a>Přehled
 
-V rozhraní .NET 4.5 WIF a jeho autorizace na základě rolí byly zahrnuty jako součást rozhraní Framework. Dříve, pokud byste chtěli deklarací z uživatele s ASP.NET, jste k instalaci technologie WIF, a potom přetypování rozhraní instančnímu objektu objekty, jako `Thread.CurrentPrincipal` nebo `HttpContext.Current.User`. Nyní deklarace identity jsou obsluhovány automaticky tyto hlavní objekty.
+V rozhraní .NET 4,5 se WIF a jeho autorizace na základě deklarace identity zahrnovala jako nedílnou součást rozhraní. Pokud jste dřív potřebovali deklarace identity od uživatele ASP.NET, museli jste nainstalovat WIF a pak přetypování rozhraní na hlavní objekty, jako jsou `Thread.CurrentPrincipal` nebo `HttpContext.Current.User`. Nyní jsou deklarace identity automaticky obsluhovány těmito objekty zabezpečení.
 
-Ověřování pomocí formulářů využívaly technologie WIF pro zahrnutí v rozhraní .NET 4.5, protože všichni uživatelé automaticky ověřované formuláře mají deklarace identity k nim má přiřazené. Můžete začít používat tyto deklarace okamžitě v aplikaci technologie ASP.NET, která používá ověřování pomocí formulářů, jak ukazuje tento návod.
+Ověřování pomocí formulářů vyvolalo zařazení do WIF v rozhraní .NET 4,5, protože všichni uživatelé ověření pomocí formulářů mají automaticky přidružené deklarace identity. Tyto deklarace můžete hned začít používat v aplikaci ASP.NET, která používá ověřování pomocí formulářů, jak ukazuje tento postup.
 
 ## <a name="summary-of-steps"></a>Přehled kroků
 
 - Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET
 
-- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů
+- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
 - Krok 3 – Otestování řešení
 
@@ -60,21 +60,21 @@ Ověřování pomocí formulářů využívaly technologie WIF pro zahrnutí v r
 
 V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.
 
-#### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET
+### <a name="to-create-a-simple-aspnet-application"></a>Vytvoření jednoduché aplikace ASP.NET
 
-1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.
+1. Spusťte Visual Studio a klikněte na **soubor**, **Nový**a pak na **projekt**.
 
-2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.
+2. V okně **Nový projekt** klikněte na **ASP.NET webová Formulářová aplikace**.
 
-3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.
+3. Do **název**zadejte `TestApp` a stiskněte **OK**.
 
-## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů
+## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
-V tomto kroku přidáte položku konfigurace do *Web.config* konfigurační soubor a upravit *Default.aspx* deklarací souboru chcete zobrazit informace o účtu.
+V tomto kroku přidáte položku konfigurace do konfiguračního souboru *Web. config* a upravíte soubor *Default. aspx* pro zobrazení informací o deklaracích identity pro účet.
 
-#### <a name="to-configure-aspnet-application-for-claims-using-forms-authentication"></a>Ke konfiguraci aplikace ASP.NET pro deklarace identity, ověřování pomocí formulářů
+### <a name="to-configure-aspnet-application-for-claims-using-forms-authentication"></a>Konfigurace aplikace ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
-1. V *Default.aspx* souboru, nahraďte existující kód následujícím kódem:
+1. Ve *výchozím souboru. aspx* nahraďte existující značky následujícím kódem:
 
     ```aspx
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TestApp._Default" %>
@@ -93,9 +93,9 @@ V tomto kroku přidáte položku konfigurace do *Web.config* konfigurační soub
     </asp:Content>
     ```
 
-    Tento krok přidá ovládací prvek GridView pro vaše *Default.aspx* načíst stránku, která naplní se deklarace identity z ověřování pomocí formulářů.
+    Tento krok přidá ovládací prvek GridView na stránku *Default. aspx* , která bude naplněna deklaracemi načtenými z ověřování pomocí formulářů.
 
-2. Uložit *Default.aspx* souboru a pak otevřete jeho použití modelu code-behind soubor s názvem *Default.aspx.cs*. Nahraďte stávající kód následujícím kódem:
+2. Uložte soubor *Default. aspx* a pak otevřete jeho soubor kódu na pozadí s názvem *Default.aspx.cs*. Existující kód nahraďte následujícím kódem:
 
     ```csharp
     using System;
@@ -120,16 +120,16 @@ V tomto kroku přidáte položku konfigurace do *Web.config* konfigurační soub
     }
     ```
 
-    Výše uvedený kód zobrazí deklarace pro ověřeného uživatele, včetně uživatelů určených ověřování pomocí formulářů.
+    Výše uvedený kód zobrazí deklarace identity týkající se ověřeného uživatele, včetně uživatelů identifikovaných ověřováním pomocí formulářů.
 
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení
 
-V tomto kroku otestujte aplikaci webových formulářů ASP.NET a ověřte, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování pomocí formulářů.
+V tomto kroku otestujete svou aplikaci webových formulářů v ASP.NET a ověříte, že se při přihlášení uživatele k ověřování pomocí formulářů zobrazí deklarace identity.
 
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů
+### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Testování aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů
 
-1. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. By se měla zobrazit s *Default.aspx*, který má **zaregistrovat** a **přihlášení** odkazy v horní části stránky. Klikněte na tlačítko **zaregistrovat**.
+1. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci. Měli byste se dodávat s *Default. aspx*, který má v pravém horním rohu stránky **Registry** a **přihlašovací** odkazy. Klikněte na **zaregistrovat**.
 
-2. Na **zaregistrovat** stránce, vytvořte uživatelský účet a potom klikněte na **zaregistrovat**. Váš účet se vytvoří pomocí ověřování pomocí formulářů a budete automaticky přihlášení.
+2. Na stránce **zaregistrovat** vytvořte uživatelský účet a pak klikněte na **zaregistrovat**. Váš účet se vytvoří pomocí ověřování pomocí formulářů a automaticky se přihlásíte.
 
-3. Poté, co byli jste přesměrováni na domovskou stránku, měli byste vidět tabulku pod **Your deklarací** nadpis, který obsahuje **vystavitele**, **OriginalIssuer**, **Typ**, **hodnotu**, a **ValueType** deklarací informace o vašem účtu.
+3. Po přesměrování na domovskou stránku byste měli vidět tabulku pod hlavičkou **deklarací identity** , která zahrnuje informace o vystaviteli, **OriginalIssuer**, **typu**, **hodnotě**a **ValueType** deklarací identity. zohledňují.

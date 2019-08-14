@@ -10,51 +10,51 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 286ec3c67e296eb49776e0f2882954c75c53eed8
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: ebaa5c2f3a2e1770a50a401fb6771d8c5ad3ba63
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833978"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972227"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] jsou k dispozici funkce webových aplikací a aplikací plně funkčním klientovi. Stejně jako webových aplikací je možné nasadit na webový server a spustit z aplikace Internet Explorer nebo Firefox XBAP. Jako plně funkčním klientovi aplikace XBAP můžete využít možnosti WPF. Vývoj aplikace XBAP je také podobné jako vývoj plně funkčním klientovi. Toto téma poskytuje jednoduchý, podrobný Úvod do vývoje XBAP, který a popisuje, kde vývoj XBAP, který se liší od vývoje ve standardu plně funkčním klientovi.  
+[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]kombinuje funkce webových aplikací i bohatých klientských aplikací. Podobně jako webové aplikace mohou být aplikace XBAP nasazeny na webový server a spouštěny z aplikace Internet Explorer nebo Firefox. Podobně jako aplikace s bohatou platností můžou aplikace XBAP využívat možnosti WPF. Vývoj aplikací XBAP je také podobný vývoji s bohatou podporou klientů. Toto téma poskytuje jednoduchý, vysoce základní Úvod k vývoji XBAP a popisuje, kde se vývoj v XBAP liší od standardního vysoce výkonného vývoje klienta.  
   
  Toto téma obsahuje následující oddíly:  
   
 - [Vytvoření nové aplikace prohlížeče XAML (XBAP)](#creating_a_new_xaml_browser_application_xbap)  
   
-- [Nasazení XBAP](#deploying_a_xbap)  
+- [Nasazení aplikace XBAP](#deploying_a_xbap)  
   
-- [Komunikaci s webovou stránkou hostitele](#communicating_with_the_host_web_page)  
+- [Komunikace s hostitelskou webovou stránkou](#communicating_with_the_host_web_page)  
   
-- [Aspekty zabezpečení XBAP](#xbap_security_considerations)  
+- [Problematika zabezpečení XBAP](#xbap_security_considerations)  
   
-- [Faktory ovlivňující výkon XBAP počáteční čas](#xbap_start_time_performance_considerations)  
+- [Požadavky na výkon při zahájení XBAP](#xbap_start_time_performance_considerations)  
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
- Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)).  
+ Nejjednodušší způsob, jak vytvořit nový projekt XBAP, je Microsoft Visual Studio. Při vytváření nového projektu vyberte v seznamu šablon položku **aplikace z prohlížeče WPF** . Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser.  
   
- Při spuštění projektu XBAP, který se otevře v okně prohlížeče místo samostatné okna. Když ladíte XBAP ze sady Visual Studio, aplikace se spustí s oprávněním zóny Internet a vyvolá proto bezpečnostním výjimkám překročení těchto oprávnění. Další informace najdete v tématu [zabezpečení](../security-wpf.md) a [částečné zabezpečení důvěryhodnosti WPF](../wpf-partial-trust-security.md).  
+ Když spustíte projekt XBAP, otevře se v okně prohlížeče namísto samostatného okna. Když ladíte aplikaci XBAP ze sady Visual Studio, aplikace se spustí s oprávněním pro internetovou zónu a bude proto generovat výjimky zabezpečení, pokud jsou tato oprávnění překročena. Další informace najdete v tématu zabezpečení s [částečnou důvěryhodností](../wpf-partial-trust-security.md) [zabezpečení](../security-wpf.md) a WPF.  
   
 > [!NOTE]
->  Pokud nevyvíjíte se sadou Visual Studio nebo chcete další informace o souborech projektu, přečtěte si téma [sestavení aplikace WPF](building-a-wpf-application-wpf.md).  
+>  Pokud nevyvíjíte pomocí sady Visual Studio nebo chcete získat další informace o souborech projektu, přečtěte si téma [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md).  
   
 <a name="deploying_a_xbap"></a>   
-## <a name="deploying-an-xbap"></a>Nasazení XBAP  
- Při sestavování XBAP výstup zahrnuje následující tři soubory:  
+## <a name="deploying-an-xbap"></a>Nasazení aplikace XBAP  
+ Při sestavování aplikace XBAP obsahuje výstup následující tři soubory:  
   
 |Soubor|Popis|  
 |----------|-----------------|  
-|Spustitelný soubor (.exe)|To obsahuje zkompilovaný kód a má příponu .exe.|  
-|Manifest aplikace (.manifest)|Toto obsahuje metadata spojená s aplikací a má příponu .manifest.|  
-|Manifest nasazení (.xbap)|Tento soubor obsahuje informace, že používá k nasazení aplikace ClickOnce a příponou .xbap.|  
+|Spustitelný soubor (. exe)|Obsahuje zkompilovaný kód a má příponu. exe.|  
+|Manifest aplikace (. manifest)|Obsahuje metadata přidružená k aplikaci a má příponu. manifest.|  
+|Manifest nasazení (. XBAP)|Tento soubor obsahuje informace, které ClickOnce používá k nasazení aplikace a má příponu. XBAP.|  
   
- Například nasazení aplikace XBAP na webový server, [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo novější verze. Není nutné instalovat rozhraní .NET Framework na webovém serveru, ale je nutné provést registraci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] přípon názvů typů a souborů. Další informace najdete v tématu [konfigurace služby IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
+ Nasadíte aplikace XBAP na webový server, například [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo novější verze. Nemusíte instalovat .NET Framework na webový server, ale musíte registrovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typy MIME (Multipurpose Internet Mail Extensions) a přípony názvů souborů. Další informace najdete v tématu [Konfigurace iis 5,0 a iis 6,0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
   
- Příprava nasazení vaše XBAP, zkopírujte .exe a přidružené manifestů na webový server. Vytvořte stránku HTML, který obsahuje hypertextový odkaz na otevření manifestu nasazení, což je soubor s příponou .xbap. Když uživatel klikne odkaz na soubor .xbap, ClickOnce automaticky zpracovává mechanismy stažení a spuštění aplikace. Následující příklad kódu ukazuje stránku HTML, který obsahuje hypertextový odkaz, který odkazuje na XBAP.  
+ Pro přípravu XBAP pro nasazení zkopírujte do webového serveru soubor. exe a přidružené manifesty. Vytvořte stránku HTML obsahující hypertextový odkaz pro otevření manifestu nasazení, což je soubor s příponou. XBAP. Když uživatel klikne na odkaz na soubor. XBAP, ClickOnce automaticky zpracuje mechanismus stažení a spuštění aplikace. Následující příklad kódu ukazuje stránku HTML obsahující hypertextový odkaz, který odkazuje na XBAP.  
   
 ```html
 <html>   
@@ -65,7 +65,7 @@ ms.locfileid: "66833978"
 </html>  
 ```  
   
- Může taky hostovat XBAP, který v rámci webové stránky. Vytvořte webovou stránku s jeden nebo více snímků. Nastavte vlastnost Zdroj rámce do souboru manifestu nasazení. Pokud chcete používat předdefinovaný mechanismus pro komunikaci mezi hostování webové stránky a XBAP, třeba hostování aplikace v rámci. Následující příklad kódu ukazuje stránku HTML s dvěma snímky, že zdroje pro druhý snímek je nastavena na XBAP.  
+ Můžete také hostovat XBAP v rámci webové stránky. Vytvořte webovou stránku s jedním nebo více snímky. Nastavte vlastnost source rámce na soubor manifestu nasazení. Pokud chcete použít vestavěný mechanizmus ke komunikaci mezi hostující webovou stránkou a XBAP, musíte aplikaci hostovat v rámci. Následující příklad kódu ukazuje stránku HTML se dvěma snímky, zdroj pro druhý rámec je nastaven na XBAP.  
   
 ```html
 <html>   
@@ -79,82 +79,82 @@ ms.locfileid: "66833978"
 </html>  
 ```  
   
-### <a name="clearing-cached-xbaps"></a>Vymazání mezipaměti aplikace XBAP  
- V některých situacích po znovu sestavit a spustit vaše XBAP může se stát, že starší verze XBAP, který je otevřen. Toto chování může dojít například, když vaše číslo verze sestavení XBAP, který je statická a spustit XBAP z příkazového řádku. V takovém případě protože číslo verze mezi jeho verzi v mezipaměti (verze, která byla dříve spuštěna) a nové verze se nezmění, novou verzi XBAP, který se nestáhne. Místo toho se načte verze uložené v mezipaměti.  
+### <a name="clearing-cached-xbaps"></a>Mazání v mezipaměti – XBAP  
+ V některých situacích po nové sestavování a spouštění aplikace XBAP můžete zjistit, že je otevřená starší verze aplikace XBAP. K tomuto chování může dojít například v případě, že číslo verze sestavení XBAP je statické a vy spustíte aplikaci XBAP z příkazového řádku. V takovém případě, protože číslo verze mezi verzí uloženou v mezipaměti (verze, která byla dříve spuštěna) a novou verzí zůstane stejné, není stažena nová verze aplikace XBAP. Místo toho je načtena verze uložená v mezipaměti.  
   
- V takových případech můžete odebrat pomocí verze uložené v mezipaměti **Mage** příkazu (instalovanou se Visual Studio nebo pomocí sady Windows SDK) na příkazovém řádku. Následující příkaz odstraní mezipaměti aplikace.  
+ V těchto situacích můžete odebrat verzi uloženou v mezipaměti pomocí příkazu **Mage** (nainstalovaného se sadou Visual Studio nebo Windows SDK) na příkazovém řádku. Následující příkaz vymaže mezipaměť aplikace.  
   
  ```console
  Mage.exe -cc
  ```
   
- Tento příkaz zaručuje, že je spuštěna na nejnovější verzi vaší XBAP. Při ladění aplikace v sadě Visual Studio měly být spuštěny na nejnovější verzi vaší XBAP. Obecně platí měli byste aktualizovat číslo verze vašeho nasazení s každým sestavením. Další informace o bitové kopii, naleznete v tématu [Mage.exe (Manifest Generation and Editing Tool)](../../tools/mage-exe-manifest-generation-and-editing-tool.md).  
+ Tento příkaz zajistí, že se spustí nejnovější verze aplikace XBAP. Při ladění aplikace v aplikaci Visual Studio by měla být spuštěna nejnovější verze aplikace XBAP. Obecně byste měli aktualizovat číslo verze nasazení u každého sestavení. Další informace o Mage naleznete v tématu [Mage. exe (Manifest Generation and Editing Tool)](../../tools/mage-exe-manifest-generation-and-editing-tool.md).  
   
 <a name="communicating_with_the_host_web_page"></a>   
-## <a name="communicating-with-the-host-web-page"></a>Komunikaci s webovou stránkou hostitele  
- Když je aplikace hostovaná v rámci HTML, může komunikovat s webovou stránku, která obsahuje XBAP. Můžete to provést pomocí načítání <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> vlastnost <xref:System.Windows.Interop.BrowserInteropHelper>. Tato vlastnost vrátí objekt skript, který představuje okno HTML. Můžete pak přístup k vlastnosti, metody a události v [objekt okna](https://go.microsoft.com/fwlink/?LinkId=160274) pomocí syntaxe regulárních tečkou. Můžete také přistupovat metody skriptů a globální proměnné. Následující příklad ukazuje, jak získat objekt skriptu a ukončete prohlížeč.  
+## <a name="communicating-with-the-host-web-page"></a>Komunikace s hostitelskou webovou stránkou  
+ Když je aplikace hostována v rámci bloku HTML, můžete komunikovat s webovou stránkou, která obsahuje aplikaci XBAP. To provedete načtením <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> <xref:System.Windows.Interop.BrowserInteropHelper>vlastnosti. Tato vlastnost vrátí objekt skriptu, který představuje okno HTML. Pak můžete přistupovat k vlastnostem, metodám a událostem [objektu window](https://go.microsoft.com/fwlink/?LinkId=160274) pomocí syntaxe regulárních teček. Můžete také získat přístup k metodám skriptu a globálním proměnným. Následující příklad ukazuje, jak načíst objekt skriptu a Zavřít prohlížeč.  
   
  [!code-csharp[XbapBrowserInterop#10](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
  [!code-vb[XbapBrowserInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]  
   
 ### <a name="debugging-xbaps-that-use-hostscript"></a>Ladění aplikací XBAP, které používají HostScript  
- Pokud vaše XBAP, který používá <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> objekt ke komunikaci s oknem HTML existují dvě nastavení, které je nutné zadat ke spuštění a ladění aplikace v sadě Visual Studio. Aplikace musí mít přístup ke stránce jejího původu a aplikace musí začínat stránky HTML, který obsahuje XBAP. Následující kroky popisují, jak zkontrolovat tato dvě nastavení:  
+ Pokud aplikace XBAP používá <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> objekt ke komunikaci s oknem HTML, existují dvě nastavení, která je nutné zadat pro spuštění a ladění aplikace v aplikaci Visual Studio. Aplikace musí mít přístup k jejímu umístění původu a musíte ji spustit se stránkou HTML, která obsahuje aplikaci XBAP. Následující postup popisuje, jak tato dvě nastavení kontrolovat:  
   
-1. V sadě Visual Studio otevřete vlastnosti projektu.  
+1. V aplikaci Visual Studio otevřete vlastnosti projektu.  
   
-2. Na **zabezpečení** klikněte na tlačítko **Upřesnit**.  
+2. Na kartě **zabezpečení** klikněte na **Upřesnit**.  
   
      Zobrazí se dialogové okno Upřesnit nastavení zabezpečení.  
   
-3. Ujistěte se, že **udělit aplikaci přístup ke stránce jejího původu** zaškrtněte políčko a klikněte na **OK**.  
+3. Ujistěte se, že je zaškrtnuté políčko **udělit aplikaci přístup ke svému webu** , a pak klikněte na **OK**.  
   
-4. Na **ladění** kartu, vyberte **Start prohlížeč s adresou URL** možnost a zadejte adresu URL pro stránku HTML, který obsahuje XBAP.  
+4. Na kartě **ladění** vyberte možnost **spustit prohlížeč s adresou URL** a zadejte adresu URL pro stránku HTML, která obsahuje XBAP.  
   
-5. V aplikaci Internet Explorer, klikněte na tlačítko **nástroje** tlačítko a pak vyberte **Možnosti Internetu**.  
+5. V Internet Exploreru klikněte na tlačítko **nástroje** a pak vyberte **Možnosti Internetu**.  
   
      Zobrazí se dialogové okno Možnosti Internetu.  
   
 6. Klikněte na tlačítko **Upřesnit** kartu.  
   
-7. V **nastavení** seznamu v části **zabezpečení**, zkontrolujte **aktivní obsah ke spuštění v souborech na tomto počítači povolit** zaškrtávací políčko.  
+7. V seznamu **Nastavení** v části **zabezpečení**zaškrtněte políčko **povolený aktivní obsah, který se má v souborech v mém počítači spustit** .  
   
 8. Klikněte na **OK**.  
   
      Změny se projeví po restartování aplikace Internet Explorer.  
   
 > [!CAUTION]
->  Povolení aktivní obsah v aplikaci Internet Explorer může ohrozit váš počítač. Pokud nechcete změnit nastavení zabezpečení aplikace Internet Explorer, můžete spustit na stránce HTML ze serveru a připojit k procesu ladicího programu sady Visual Studio.  
+>  Povolení aktivního obsahu v aplikaci Internet Explorer může ohrozit váš počítač. Pokud nechcete změnit nastavení zabezpečení aplikace Internet Explorer, můžete spustit stránku HTML ze serveru a připojit k procesu ladicí program sady Visual Studio.  
   
 <a name="xbap_security_considerations"></a>   
-## <a name="xbap-security-considerations"></a>Aspekty zabezpečení XBAP  
- XBAP obvykle spustit v sandboxu částečným vztahem důvěryhodnosti zabezpečení, který je omezena na sadu oprávnění zóny Internet. V důsledku toho vaši implementaci musí podporovat na podmnožinu WPF prvky, které jsou podporovány v zóně Internet nebo musí zvýšení oprávnění aplikace. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
+## <a name="xbap-security-considerations"></a>Problematika zabezpečení XBAP  
+ XBAP obvykle provádějí v izolovaném prostoru zabezpečení s částečnou důvěryhodností, který je omezen na sadu oprávnění zóny Internet. V důsledku toho vaše implementace musí podporovat podmnožinu prvků WPF, které jsou podporovány v zóně Internet, nebo musíte zvýšit oprávnění aplikace. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
   
- Při použití <xref:System.Windows.Controls.WebBrowser> ovládacího prvku v aplikaci WPF interně vytvoří instanci nativní ovládací prvek WebBrowser ActiveX. Když je vaše aplikace částečným vztahem důvěryhodnosti XBAP, který v aplikaci Internet Explorer, ovládací prvek ActiveX spouští ve vyhrazeném vlákně procesu aplikace Internet Explorer. Proto platí následující omezení:  
+ Při použití <xref:System.Windows.Controls.WebBrowser> ovládacího prvku v aplikaci WPF interně vytvoří instanci ovládacího prvku ActiveX Native WebBrowser. Pokud je vaše aplikace s aplikací s částečnou důvěryhodností spuštěnou v aplikaci Internet Explorer, ovládací prvek ActiveX se spouští ve vyhrazeném vlákně procesu aplikace Internet Explorer. Proto platí následující omezení:  
   
-- <xref:System.Windows.Controls.WebBrowser> Ovládací prvek by měl poskytovat chování podobný hostitele prohlížeče, včetně omezení zabezpečení. Některé z těchto omezení zabezpečení se dá řídit přes nastavení zabezpečení aplikace Internet Explorer. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
+- <xref:System.Windows.Controls.WebBrowser> Ovládací prvek by měl poskytovat podobné chování jako prohlížeč hostitele, včetně omezení zabezpečení. Některá z těchto omezení zabezpečení lze ovládat prostřednictvím nastavení zabezpečení aplikace Internet Explorer. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
   
-- Když XBAP, který je načten mezi doménami v stránku HTML, je vyvolána výjimka.  
+- Výjimka je vyvolána, když je aplikace XBAP načtena mezi doménami na stránce HTML.  
   
-- Vstup je na samostatném vlákně z WPF <xref:System.Windows.Controls.WebBrowser>, takže nemůže dojít k jejich zachycení vstup z klávesnice a není sdílený stav editoru IME.  
+- Vstup je na samostatném vlákně z WPF <xref:System.Windows.Controls.WebBrowser>, takže vstup z klávesnice nelze zachytit a stav IME není sdílen.  
   
-- Časování nebo pořadí navigace se může lišit kvůli ovládací prvek ActiveX, který běží na jiném vlákně. Například přejdete na stránku není vždy zrušil spuštění další požadavek pro navigaci.  
+- Časování nebo pořadí navigace může být odlišné vzhledem k ovládacímu prvku ActiveX spuštěnému v jiném vlákně. Například navigace na stránku není vždy zrušena spuštěním další žádosti o navigaci.  
   
-- Vlastní ovládací prvek ActiveX mohou mít problémy s komunikací, protože aplikace WPF běží v samostatném vlákně.  
+- Vlastní ovládací prvek ActiveX může mít problémy s komunikací, protože aplikace WPF běží v samostatném vlákně.  
   
-- <xref:System.Windows.Interop.HwndHost.MessageHook> získat zvýšit není, protože <xref:System.Windows.Interop.HwndHost> nelze vytvořit podtřídu okno systémem v jiném procesu nebo vlákna.  
+- <xref:System.Windows.Interop.HwndHost.MessageHook>není vyvolána, protože <xref:System.Windows.Interop.HwndHost> nemůže podtřídit okno spuštěné v jiném vlákně nebo procesu.  
   
-### <a name="creating-a-full-trust-xbap"></a>Vytváření XBAP plné důvěryhodnosti  
- Pokud vaše XBAP, který vyžaduje úplný vztah důvěryhodnosti, můžete změnit projekt tak, aby toto oprávnění zapnout. Následující kroky popisují, jak povolit úplný vztah důvěryhodnosti:  
+### <a name="creating-a-full-trust-xbap"></a>Vytvoření plně důvěryhodného XBAP  
+ Pokud vaše XBAP vyžaduje úplný vztah důvěryhodnosti, můžete změnit projekt a povolit toto oprávnění. Následující postup popisuje, jak povolit úplný vztah důvěryhodnosti:  
   
-1. V sadě Visual Studio otevřete vlastnosti projektu.  
+1. V aplikaci Visual Studio otevřete vlastnosti projektu.  
   
-2. Na **zabezpečení** kartu, vyberte **Toto je aplikace s úplným vztahem důvěryhodnosti** možnost.  
+2. Na kartě **zabezpečení** vyberte možnost **aplikace s úplným vztahem důvěryhodnosti** .  
   
  Toto nastavení provede následující změny:  
   
-- V souboru projektu `<TargetZone>` hodnota elementu se změní na `Custom`.  
+- V souboru `<TargetZone>` projektu je hodnota prvku změněna na `Custom`.  
   
-- V manifestu aplikace (app.manifest) `Unrestricted="true"` přidání atributu do "<xref:System.Security.PermissionSet> elementu.  
+- V manifestu aplikace (App. manifest) `Unrestricted="true"` je atribut přidán do<xref:System.Security.PermissionSet> prvku.  
   
     ```xml
     <PermissionSet class="System.Security.PermissionSet"   
@@ -164,27 +164,27 @@ ms.locfileid: "66833978"
                    Unrestricted="true" />  
     ```  
   
-### <a name="deploying-a-full-trust-xbap"></a>Nasazení XBAP plné důvěryhodnosti  
- Když nasadíte XBAP úplného vztahu důvěryhodnosti, který nedodržuje modelu důvěryhodných nasazení ClickOnce, chování, když uživatel spustí aplikaci bude záviset na zóně zabezpečení. V některých případech se uživateli zobrazí upozornění při pokusu o jeho instalaci. Uživatel můžete rozhodnout pokračovat nebo zrušit instalaci. Následující tabulka popisuje chování aplikací pro každou zónu zabezpečení a co musíte udělat pro aplikaci pro příjem úplný vztah důvěryhodnosti.  
+### <a name="deploying-a-full-trust-xbap"></a>Nasazení plně důvěryhodného XBAP  
+ Při nasazení plně důvěryhodného prostředí XBAP, které nedodržuje model důvěryhodného nasazení ClickOnce, bude chování při spuštění aplikace uživatelem záviset na zóně zabezpečení. V některých případech se uživateli při pokusu o instalaci zobrazí upozornění. Uživatel může zvolit pokračování nebo instalaci zrušit. Následující tabulka popisuje chování aplikace pro každou zónu zabezpečení a to, co je třeba udělat, aby aplikace přijímala úplný vztah důvěryhodnosti.  
   
-|Zóna zabezpečení|Chování|Získávání úplný vztah důvěryhodnosti|  
+|Zóna zabezpečení|Chování|Získání úplné důvěryhodnosti|  
 |-------------------|--------------|------------------------|  
-|Místní počítač|Automatické úplný vztah důvěryhodnosti|Není vyžadována žádná akce.|  
-|Intranet a důvěryhodných serverů|Výzva k zadání úplný vztah důvěryhodnosti|Podepište XBAP pomocí certifikátu tak, aby se uživateli zobrazí zdroj v příkazovém řádku.|  
-|Internet|Selže a zobrazí se "Důvěryhodnost nebyla udělena"|Podepište XBAP s certifikátem.|  
+|Místní počítač|Automatický úplný vztah důvěryhodnosti|Není nutné provádět žádnou akci.|  
+|Intranetové a důvěryhodné weby|Dotázat se na úplný vztah důvěryhodnosti|Přihlaste se k aplikaci XBAP pomocí certifikátu, aby se uživateli zobrazila výzva ke zdroji v příkazovém řádku.|  
+|Internet|Neúspěch s "důvěryhodným neuděleným"|Podepište aplikaci XBAP pomocí certifikátu.|  
   
 > [!NOTE]
->  Chování popsané v předchozí tabulce je pro aplikace XBAP úplného vztahu důvěryhodnosti, které nepostupujte podle modelu důvěryhodných nasazení ClickOnce.  
+>  Chování popsané v předchozí tabulce je pro plně důvěryhodná aplikace XBAP, které nedodržují model důvěryhodného nasazení ClickOnce.  
   
- Doporučujeme vám použít model nasazení důvěryhodných ClickOnce pro nasazení XBAP úplného vztahu důvěryhodnosti. Tento model umožňuje vaší XBAP, který chcete být udělena úplná důvěryhodnost automaticky, bez ohledu na zóně zabezpečení tak, aby se uživateli nezobrazí výzva. V rámci tohoto modelu musíte podepsat aplikaci pomocí certifikátu od důvěryhodného vydavatele. Další informace najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod k podepisování kódu](https://go.microsoft.com/fwlink/?LinkId=166327).  
+ Doporučuje se použít model důvěryhodného nasazení ClickOnce pro nasazení plně důvěryhodného prostředí XBAP. Tento model umožňuje, aby se XBAP automaticky udělila Plná důvěra bez ohledu na zónu zabezpečení, takže se uživateli nezobrazí výzva. V rámci tohoto modelu musíte aplikaci podepsat pomocí certifikátu od důvěryhodného vydavatele. Další informace naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod do podepisování kódu](https://go.microsoft.com/fwlink/?LinkId=166327).  
   
 <a name="xbap_start_time_performance_considerations"></a>   
-## <a name="xbap-start-time-performance-considerations"></a>Faktory ovlivňující výkon XBAP počáteční čas  
- Důležitou součástí výkonu XBAP, který je jeho spuštění. Pokud XBAP, který je první aplikaci WPF se načíst, *studený start* čas může být deset sekund nebo více. Je to proto, že na stránce Průběh vykreslením ve WPF, a CLR a WPF musí být studeného spouštěná a zobrazte aplikaci.  
+## <a name="xbap-start-time-performance-considerations"></a>Požadavky na výkon při zahájení XBAP  
+ Důležitým aspektem výkonu XBAP je čas svého spuštění. Pokud je XBAP první aplikaci WPF, která se má načíst, může *počáteční čas začít* být deset sekund nebo více. Důvodem je to, že stránka s průběhem je vykreslena pomocí WPF a modul CLR i WPF musí být pro zobrazení aplikace studeny.  
   
- Spuštění v rozhraní .NET Framework 3.5 SP1, počáteční čas XBAP, který je zmírněna tím, že zobrazuje stránku nespravované průběh v rané fázi cyklus nasazení. Na stránce Průběh téměř okamžitě se zobrazí po spuštění aplikace, protože je zobrazený nativní kód hostování a zobrazena ve formátu HTML.  
+ Od verze .NET Framework 3,5 SP1 je čas studeného startu v XBAP na začátku omezen zobrazením nespravované stránky průběh na začátku v cyklu nasazení. Stránka Průběh se zobrazí téměř ihned po spuštění aplikace, protože je zobrazena nativním hostujícím kódem a vykreslena ve formátu HTML.  
   
- Kromě toho lepší souběžnosti pořadí stahování ClickOnce zlepšuje čas zahájení až deset procent. Po ClickOnce soubory ke stažení a ověří spustí aktualizovat manifesty spustí stahování aplikací a indikátor průběhu.  
+ Vylepšená souběžnost sekvence stahování ClickOnce vylepšuje čas zahájení až o deset procent. Jakmile ClickOnce stáhne a ověří manifesty, spustí se stahování aplikace a indikátor průběhu se začne aktualizovat.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -13,57 +13,57 @@ helpviewer_keywords:
 - file extensions [WPF], registering
 - registering MIME types [WPF]
 ms.assetid: c6e8c2cb-9ba2-4e75-a0d5-180ec9639433
-ms.openlocfilehash: 6fa00c4ced8c05d056703560e5740689c6dcfe39
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1e58aef6d02b6cf05a126b6afd25ab2a6004002
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61981412"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972297"
 ---
 # <a name="how-to-configure-iis-50-and-iis-60-to-deploy-wpf-applications"></a>Postupy: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF
 
-Můžete nasadit [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace z většiny webových serverů, jako jsou nakonfigurované s příslušnou [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] typy. Ve výchozím nastavení [!INCLUDE[TLA#tla_iis70](../../../../includes/tlasharptla-iis70-md.md)] je nakonfigurovaný s těmito [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy, ale [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] a [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] nejsou.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Aplikaci můžete nasadit z většiny webových serverů, pokud jsou nakonfigurované odpovídající typy MIME (Multipurpose Internet Mail Extensions). Ve výchozím nastavení [!INCLUDE[TLA#tla_iis70](../../../../includes/tlasharptla-iis70-md.md)] je nakonfigurovaná s těmito typy MIME, [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] ale ne.
 
-Toto téma popisuje postup konfigurace [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] a [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] nasazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.
+Toto téma popisuje, jak nakonfigurovat [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] a [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] nasadit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.
 
 > [!NOTE]
-> Můžete zkontrolovat *UserAgent* řetězec v registru, který slouží k určení, zda má systém nainstalováno rozhraní .NET Framework. Podrobnosti a skript, který ověřuje, zda *UserAgent* řetězce k určení, zda je v systému nainstalované rozhraní .NET Framework naleznete v tématu [zjistit, zda rozhraní .NET Framework 3.0 je nainstalována](how-to-detect-whether-the-net-framework-3-0-is-installed.md).
+> Můžete kontrolovat řetězec *userAgent* v registru, abyste zjistili, zda je systém .NET Framework nainstalován. Podrobnosti a skript, který projde řetězec *userAgent* k určení, zda je v systému nainstalovaná .NET Framework, najdete v tématu [zjištění, zda je nainstalovaná .NET Framework 3,0](how-to-detect-whether-the-net-framework-3-0-is-installed.md).
 
 <a name="content_expiration"></a>
 
-## <a name="adjust-the-content-expiration-setting"></a>Nastavení vypršení platnosti obsahu
+## <a name="adjust-the-content-expiration-setting"></a>Úprava nastavení vypršení platnosti obsahu
 
-Je třeba upravit nastavení vypršení platnosti obsahu na 1 minutu. Následující postup ukazuje, jak to provést pomocí [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)].
+Nastavení vypršení platnosti obsahu byste měli upravit na 1 minutu. Následující postup popisuje, jak to provést s nástrojem [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)].
 
-1. Klikněte na tlačítko **Start** nabídky, přejděte k **nástroje pro správu**a klikněte na tlačítko **Správce Internetové informační služby (IIS)**. Můžete také spustit tuto aplikaci z příkazového řádku: "% SystemRoot%\system32\inetsrv\iis.msc".
+1. Klikněte na nabídku **Start** , přejděte na **Nástroje pro správu**a klikněte na **Správce služby Internetová informační služba (IIS)** . Tuto aplikaci můžete také spustit z příkazového řádku pomocí příkazu "%SystemRoot%\system32\inetsrv\iis.msc".
 
-2. Rozbalte [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)] stromové struktury, dokud nenajdete **výchozí_webový_server** uzlu.
+2. Rozbalte stromovou strukturu, dokud nenajdete výchozí uzel webu. [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)]
 
-3. Klikněte pravým tlačítkem na **výchozí webová stránka** a vyberte **vlastnosti** v místní nabídce.
+3. Klikněte pravým tlačítkem na **výchozí web** a v místní nabídce vyberte **vlastnosti** .
 
-4. Vyberte **hlavičky protokolu HTTP** kartě a klikněte na možnost "Povolit vypršení platnosti obsahu".
+4. Vyberte kartu **hlavičky protokolu HTTP** a klikněte na Povolit vypršení platnosti obsahu.
 
-5. Nastavení obsahu vyprší za 1 minutu.
+5. Nastavte, aby platnost obsahu vypršela po 1 minutách.
 
 <a name="register_mime_types"></a>
 
-## <a name="register-mime-types-and-file-extensions"></a>Registrace typů MIME a přípony souborů
+## <a name="register-mime-types-and-file-extensions"></a>Registrace typů MIME a přípon souborů
 
-Je nutné zaregistrovat několik [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy a přípony souborů, které tak, aby prohlížeč v systému klienta můžete načíst obslužnou rutinu správné. Je potřeba přidat následující typy:
+Je nutné zaregistrovat několik typů MIME a přípon souborů, aby prohlížeč v systému klienta mohl načíst správnou obslužnou rutinu. Je nutné přidat následující typy:
 
 |Linka|Typ MIME|
 |---------------|---------------|
-|.manifest|/ manifest aplikace|
-|XAML|aplikace/xaml + xml|
-|.Application|application/x-ms-application|
+|.manifest|Aplikace/manifest|
+|. XAML|Application/XAML + XML|
+|. Application|aplikace/x-MS-aplikace|
 |.xbap|application/x-ms-xbap|
-|.deploy|application/octet-stream|
-|.xps|application/vnd.ms-xpsdocument|
+|. deploy|aplikace/oktet – Stream|
+|. XPS|application/vnd.ms-xpsdocument|
 
 > [!NOTE]
-> Není potřeba registrovat [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy nebo přípony souborů na klientské systémy. Jsou registrované automaticky při instalaci rozhraní Microsoft .NET Framework.
+> V klientských systémech nemusíte registrovat typy MIME ani přípony souborů. Jsou zaregistrovány automaticky při instalaci aplikace Microsoft .NET Framework.
 
-Následující ukázka Microsoft Visual Basic Scripting Edition (VBScript) automaticky přidá nezbytná [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy mají [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)]. Použít skript, zkopírujte kód do souboru vbs na vašem serveru. Potom spusťte skript spuštěním souboru z příkazového řádku nebo poklepáním na soubor v [!INCLUDE[TLA#tla_winexpl](../../../../includes/tlasharptla-winexpl-md.md)].
+Následující ukázka jazyka VBScript (Microsoft Visual Basic Scripting Edition) automaticky přidá nezbytné typy MIME do [!INCLUDE[TLA2#tla_iis5](../../../../includes/tla2sharptla-iis5-md.md)]. Chcete-li použít skript, zkopírujte kód do souboru. vbs na vašem serveru. Potom spusťte skript spuštěním souboru z příkazového řádku nebo Poklikáním na soubor v [!INCLUDE[TLA#tla_winexpl](../../../../includes/tlasharptla-winexpl-md.md)].
 
 ```vb
 ' This script adds the necessary Windows Presentation Foundation MIME types
@@ -126,9 +126,9 @@ End Sub
 ```
 
 > [!NOTE]
-> Opakované spouštění tento skript vytvoří více [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] položky v mapování [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] metabáze.
+> Spuštění tohoto skriptu několikrát vytvoří v [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] metabázi nebo [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] několik položek mapování MIME.
 
-Po spuštění tohoto skriptu nemusí zobrazit další [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] [!INCLUDE[TLA#tla_mmc](../../../../includes/tlasharptla-mmc-md.md)]. Ale tyto [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] typy jsou přidané do [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] metabáze. Následující skript se zobrazí všechny [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] napíše [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] metabáze.
+Po spuštění tohoto skriptu nesmíte zobrazit další typy MIME z [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo. [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] [!INCLUDE[TLA#tla_mmc](../../../../includes/tlasharptla-mmc-md.md)] Tyto typy MIME se ale přidaly do [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] metabáze nebo. [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] Následující skript zobrazí všechny typy MIME v [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] metabázi nebo. [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)]
 
 ```vb
 ' This script lists the MIME types for an IIS Server.
@@ -147,7 +147,7 @@ For Each mimeMap In allMimeMaps
 Next
 ```
 
-Uložte skript pod názvem `.vbs` souboru (například `DiscoverIISMimeTypes.vbs`) a spouštět z příkazového řádku pomocí následujícího příkazu:
+Uložte skript jako `.vbs` soubor ( `DiscoverIISMimeTypes.vbs`například) a spusťte ho z příkazového řádku pomocí následujícího příkazu:
 
 ```console
 cscript DiscoverIISMimeTypes.vbs

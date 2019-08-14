@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 6e2b5eaff3ee80434d5cdf39391273685da9faf0
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 259594858e96897cb377cde4104e17b748f902c4
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68434075"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971812"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -70,7 +70,7 @@ ms.locfileid: "68434075"
 |<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.Provider.IToggleProvider>|Používá se pro ovládací prvky, kde lze stav přepínat. Například zaškrtávací políčka a položky nabídky, které se mají kontrolovat.|  
 |<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.Provider.ITransformProvider>|Používá se pro ovládací prvky, které se dají změnit na velikost, přesunout a otočit. Typická použití pro vzor ovládacích prvků transformace jsou návrháři, formuláře, grafické editory a aplikace pro kreslení.|  
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|Umožňuje klientům získat nebo nastavit hodnotu u ovládacích prvků, které nepodporují rozsah hodnot. Například výběr data a času.|  
-|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] koncept operačního systému. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikace nejvyšší úrovně[!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]( [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)], a tak dále), [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] podřízená okna a dialogová okna.|  
+|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Zpřístupňuje informace specifické pro systém Windows, což je základní [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] koncept operačního systému. Příklady ovládacích prvků, které jsou Windows, jsou okna aplikace nejvyšší úrovně[!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]( [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)], a tak dále), podřízená okna rozhraní MDI (Multiple Document Interface) a dialogová okna.|  
   
 ## <a name="see-also"></a>Viz také:
 

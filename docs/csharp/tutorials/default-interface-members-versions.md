@@ -1,92 +1,92 @@
 ---
-title: Bezpečně aktualizace pomocí výchozího členy rozhraní v rozhraníC#
-description: Tento kurz pokročilé zkoumá, jak můžete bezpečně přidávat nové funkce do existující definice rozhraní bez narušení všechny třídy a struktury, které implementují rozhraní.
+title: Bezpečně aktualizovat rozhraní pomocí výchozích členů rozhraní vC#
+description: V tomto rozšířeném kurzu se seznámíte s tím, jak můžete bezpečně přidat nové funkce do stávajících definic rozhraní bez přerušení všech tříd a struktur, které implementují toto rozhraní.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 2daa40ead5902454c6d45390233e1491fe6d369b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 2d7265b7705fc931d356a3b7fe3504ab7f21c0b3
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877908"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971441"
 ---
-# <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizovat výchozí členy rozhraní v rozhraní C# 8.0
+# <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizace rozhraní s výchozími členy rozhraní C# v 8,0
 
-Počínaje C# 8.0 na .NET Core 3.0, můžete definovat implementaci při deklaraci člena rozhraní. Nejběžnější scénář je bezpečně přidávat členy do rozhraní už vydali a používají klienti innumerable.
+Počínaje C# 8,0 na .net Core 3,0 můžete definovat implementaci při deklaraci člena rozhraní. Nejběžnějším scénářem je bezpečné přidání členů do rozhraní, které již bylo uvolněno a používáno klienty nespočet.
 
-V tomto kurzu se dozvíte jak:
+V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
-> * Bezpečně rozšiřte rozhraní přidáním metod s implementací.
-> * Vytvoření parametrizovaných implementace poskytují větší flexibilitu.
-> * Umožňují implementátorům k dispozici konkrétnější implementace v podobě přepsání.
+> * Bezpečnější rozšíření rozhraní přidáním metod s implementacemi.
+> * Vytváření parametrizovaných implementací k zajištění větší flexibility.
+> * Povolit implementátorům poskytnutí konkrétnější implementace ve formě přepsání.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač pro spuštění .NET Core, včetně C# kompilátoru 8.0 ve verzi preview. C# 8.0 kompilátoru ve verzi preview je k dispozici počínaje [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), nebo si prohlédnout nejnovější [.NET Core 3.0 ve verzi preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Výchozí členy rozhraní jsou k dispozici od verze .NET Core 3.0 ve verzi preview 4.
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru verze C# 8,0 Preview. Kompilátor C# verze Preview 8,0 je k dispozici počínaje verzí [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo nejnovější [sadou .NET Core 3,0 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Výchozí členové rozhraní jsou k dispozici od verze .NET Core 3,0 Preview 4.
 
-## <a name="scenario-overview"></a>Přehled scénářů
+## <a name="scenario-overview"></a>Přehled scénáře
 
-Tento kurz pracuje s verzí 1 knihovnu vztah zákazníků. Startovní aplikace můžete získat naše [úložišti na Githubu ukázky](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship). Společnost, která je vytvořená tuto knihovnu určené zákazníkům se stávajícími aplikacemi a přijmout jejich knihovny. Poskytnou definice minimální rozhraní pro uživatele jejich knihovny k implementaci. Tady je definice rozhraní pro zákazníka:
+Tento kurz začíná verzí 1 knihovny vztahů se zákazníky. Úvodní aplikaci můžete získat na našem [úložišti ukázek na GitHubu](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship). Společnost, která vytvořila tuto knihovnu, určila zákazníky, kteří mají existující aplikace k přijetí své knihovny. Poskytovaly minimální definice rozhraní pro uživatele své knihovny k implementaci. Tady je definice rozhraní pro zákazníka:
 
 [!code-csharp[InitialCustomerInterface](~/samples/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/ICustomer.cs?name=SnippetICustomerVersion1)]
 
-Jsou definovány druhé rozhraní, která představuje pořadí:
+Definují druhé rozhraní, které představuje objednávku:
 
 [!code-csharp[InitialOrderInterface](~/samples/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/IOrder.cs?name=SnippetIorderVersion1)]
 
-Z těchto rozhraní může tým sestavení knihovny pro jejich uživatelům vytvářet lepší prostředí pro zákazníky. Jeho cílem bylo vytvořit podrobnější relaci se stávající zákazníky a zvýšit jejich vztahy s novým zákazníkům.
+Z těchto rozhraní může tým sestavit knihovnu pro své uživatele a vytvořit tak lepší prostředí pro své zákazníky. Jejich cílem bylo vytvoření hlubšího vztahu se stávajícími zákazníky a vylepšení jejich vztahů s novými zákazníky.
 
-Nyní je doba pro upgrade knihovny pro další verzi. Mezi požadované funkce pro zákazníky, kteří mají velké množství objednávek umožňuje slevu věrnostních programů. Tento nový věrnostní získá sleva pokaždé, když zákazník zadá objednávku. Konkrétní sleva je vlastnost pro každého zákazníka. Každá implementace ICustomer můžete nastavit různá pravidla slevu věrnostních programů. 
+Teď je čas upgradovat knihovnu pro další verzi. Jedna z požadovaných funkcí umožňuje zákazníkům, kteří mají spoustu objednávek, věrnostní slevu. Tato nová věrnostní sleva se použije vždy, když zákazník provede objednávku. Konkrétní sleva je vlastnost každého jednotlivého zákazníka. Každá implementace ICustomer může u věrnostní slevy nastavit různá pravidla. 
 
-Většina přirozený způsob, jak přidat tato funkce je k vylepšení `ICustomer` rozhraní se způsob, jak použít případné slevy věrnostních programů. Tento návrh návrh způsobila problém mezi zkušené vývojáře: "Rozhraní jsou neměnné, když jsme vydali! Toto je zásadní změnu." C#Přidá 8.0 *výchozí implementace rozhraní* pro upgrade rozhraní. Autoři knihovny můžete přidat nové členy rozhraní a poskytuje výchozí implementaci pro ty členy.
+Nejpřirozenější způsob, jak tuto funkci přidat, je vylepšit `ICustomer` rozhraní s metodou pro použití věrnostní slevy. Tento návrh návrhu způsobil obavy mezi zkušenými vývojáři: "Rozhraní jsou po vydání proměnlivá. Toto je zásadní změna. " C#8,0 přidává *výchozí implementaci rozhraní* pro upgrade rozhraní. Autoři knihovny mohou přidat nové členy do rozhraní a poskytnout výchozí implementaci pro tyto členy.
 
-Výchozí implementace rozhraní umožňují vývojářům upgrade rozhraní ale žádné implementors pro tuto implementaci přepsat. Uživatelé knihovny můžete přijmout výchozí implementace jako nevýznamných změn. Pokud se liší jejich obchodních pravidel, můžete přepsat.
+Implementace výchozích rozhraní umožňují vývojářům upgradovat rozhraní a zároveň přitom povolit jakékoli implementátory k přepsání této implementace. Uživatelé knihovny mohou přijmout výchozí implementaci jako neprůlomou změnu. Pokud jsou jejich obchodní pravidla odlišná, můžou je přepsat.
 
-## <a name="upgrade-with-default-interface-members"></a>Upgrade s výchozí členy rozhraní
+## <a name="upgrade-with-default-interface-members"></a>Upgrade s výchozími členy rozhraní
 
-Tým dohodl na maximum pravděpodobně výchozí implementace: slevu loajalitu zákazníků.
+Tým se dohodl s nejpravděpodobnější výchozí implementací: věrnostní sleva pro zákazníky.
 
-Upgrade by zajišťovat funkce můžete nastavit dvě vlastnosti: počet objednávek, které jsou potřebné k dosažení nárok slevu a procento slevy. Díky tomu je ideální scénář pro členy výchozí rozhraní. Můžete přidat metodu rozhraní ICustomer a pravděpodobně implementaci. Všechny existující a všechny nové implementace můžete použít výchozí implementace nebo zadat vlastní.
+Upgrade by měl poskytovat funkce pro nastavení dvou vlastností: počet objednávek potřebných k poskytnutí slevy a procento slevy. Díky tomu je ideální scénář pro výchozí členy rozhraní. Můžete přidat metodu do rozhraní ICustomer a poskytnout nejpravděpodobnější implementaci. Všechny stávající a jakékoli nové implementace mohou použít výchozí implementaci nebo zadat vlastní.
 
-Nejprve přidejte nové metody pro implementaci:
+Nejdřív přidejte do implementace novou metodu:
 
 [!code-csharp[InitialOrderInterface](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionOne)]
 
-Autor knihovny napsal prvního testu ke kontrole implementace:
+Autor knihovny napsal první test pro kontrolu implementace:
 
 [!code-csharp[TestDefaultImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetTestDefaultImplementation)]
 
-Všimněte si následující část testu:
+Všimněte si následující části testu:
 
 [!code-csharp[TestDefaultImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetHighlightCast)]
 
-Který přetypování z `SampleCustomer` k `ICustomer` je nezbytné. `SampleCustomer` Třídy nemusí poskytovat implementaci pro `ComputeLoyaltyDiscount`; který poskytuje `ICustomer` rozhraní. Ale `SampleCustomer` Třída nedědí členy z jeho rozhraní. Toto pravidlo se nezměnil. Aby bylo možné volat jakékoli metodu deklarovat a implementovat rozhraní, musí být proměnná typu rozhraní, `ICustomer` v tomto příkladu.
+Přetypování z `SampleCustomer` na `ICustomer` je nezbytné. Třída nemusí poskytovat implementaci pro `ComputeLoyaltyDiscount`, `ICustomer` která je poskytována rozhraním. `SampleCustomer` `SampleCustomer` Třída však nedědí členy z jeho rozhraní. Toto pravidlo se nezměnilo. Aby bylo možné volat jakoukoli metodu deklarovanou a implementovanou v rozhraní, proměnná musí být typu rozhraní, `ICustomer` v tomto příkladu.
 
-## <a name="provide-parameterization"></a>Zadejte Parametrizace
+## <a name="provide-parameterization"></a>Poskytněte Parametrizace
 
-To je dobrý začátek. Ale výchozí implementace je příliš omezující. Mnoho příjemci tohoto systému rozhodnout různé prahové hodnoty pro číslo nákupy, jinou délku členství nebo jiné procento slevy. Pro větší počet zákazníků tím, že poskytuje způsob, jak nastavit tyto parametry můžete zadat lepší prostředí pro upgrade. Přidejme statická metoda, která nastaví tyto tři parametry řízení výchozí implementace:
+To je dobrý začátek. Výchozí implementace je ale příliš omezující. Mnoho uživatelů tohoto systému může zvolit různé prahové hodnoty pro počet nákupů, jinou délku členství nebo jinou procentní slevu. Můžete zajistit lepší prostředí pro upgrade pro více zákazníků tím, že poskytnete způsob, jak tyto parametry nastavit. Pojďme přidat statickou metodu, která nastaví tyto tři parametry, které řídí výchozí implementaci:
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionTwo)]
 
-Existuje mnoho nových funkcí jazyka uvedené v tomto fragmentu malý kód. Rozhraní teď může obsahovat statické členy, včetně polí a metod. Modifikátory přístupu různých jsou také povoleny. Další pole jsou privátní, nová metoda je veřejná. Pro členy rozhraní jsou povoleny žádné modifikátory.
+V této malém fragmentu kódu se zobrazuje celá řada nových možností jazyka. Rozhraní teď můžou zahrnovat statické členy, včetně polí a metod. Jsou povolené taky různé modifikátory přístupu. Další pole jsou soukromá, nová metoda je veřejná. Všechny modifikátory jsou povoleny u členů rozhraní.
 
-Aplikace, které používají obecné vzorce pro výpočet věrnostní slevy, ale jiné parametry, není potřeba zadávat vlastní implementaci; argumenty, můžete nastavit pomocí statické metody. Například následující kód nastaví "zákazník zhodnocení", který odměňuje každý zákazník s více než jeden měsíc členství:
+Aplikace, které používají obecný vzorec pro výpočet věrnostní slevy, ale jiné parametry, nepotřebují zadat vlastní implementaci; mohou nastavovat argumenty prostřednictvím statické metody. Například následující kód nastaví "zhodnocení zákazníka", které vyměňuje každého zákazníka s více než jedním měsícem členství:
 
 [!code-csharp[SetLoyaltyThresholds](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetSetLoyaltyThresholds)]
 
-## <a name="extend-the-default-implementation"></a>Rozšířit výchozí implementace
+## <a name="extend-the-default-implementation"></a>Rozšiřování výchozí implementace
 
-Kód, který jste přidali zatím poskytuje praktické implementace pro tyto scénáře, ve kterém uživatelé chtějí něco jako výchozí implementace nebo k poskytování nesouvisející sady pravidel. Poslední funkci Pojďme Refaktorovat kód o něco k povolení scénářů, kde mohou uživatelé chtějí na výchozí implementaci. 
+Kód, který jste dosud přidali, měl k dispozici pohodlnou implementaci pro tyto scénáře, kde uživatelé mají něco podobného jako výchozí implementace, nebo poskytnutí nesouvisející sady pravidel. Pro závěrečnou funkci můžeme kód trochu přefaktorovat, aby bylo možné povolit scénáře, kde mohou uživatelé chtít sestavit výchozí implementaci. 
 
-Vezměte v úvahu při spuštění, který chce, aby se umožnilo přilákat nové zákazníky. Nabízejí 50 % slevu z první pořadí nového zákazníka. V opačném případě stávající zákazníci získat standardní slevy. Autor knihovny se musí přesunout do výchozí implementace `protected static` metodu tak, že třída implementace tohoto rozhraní můžete opakovaně používat kód v jejich provádění. Výchozí implementace členů rozhraní volá tuto sdílenou metodu:
+Vezměte v úvahu spuštění, které chce přilákat nové zákazníky. Nabízí 50% slevu od prvního pořadí nového zákazníka. V opačném případě stávající zákazníci získají standardní slevu. Autor knihovny musí přesunout výchozí implementaci do `protected static` metody, aby jakákoliv třída implementující toto rozhraní mohla znovu použít kód v jejich implementaci. Výchozí implementace člena rozhraní volá i tuto sdílenou metodu:
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetFinalVersion)]
 
-V implementaci třídy, která implementuje toto rozhraní, přepsání můžete volat metodu statické pomocné rutiny a rozšířit tuto logiku pro poskytování "nového zákazníka" slevy:
+V implementaci třídy, která implementuje toto rozhraní, může přepsání zavolat statickou pomocnou metodu a tuto logiku zvětšit tak, aby poskytovala slevu "novému zákazníkovi":
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/SampleCustomer.cs?name=SnippetOverrideAndExtend)]
 
-Zobrazí celý Dokončený kód v našich [ukázky úložišti na Githubu] (Startovní aplikace můžete získat naše [úložišti na Githubu ukázky](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/finished/customer-relationship).
+Celý dokončený kód můžete zobrazit v našem [úložišti ukázek na GitHubu](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/finished/customer-relationship). Úvodní aplikaci můžete získat na našem [úložišti ukázek na GitHubu](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship).
 
-Tyto nové funkce znamená, že rozhraní můžete aktualizovat bezpečně po implementaci přiměřené výchozí hodnoty pro nové členy. Pečlivě Navrhněte rozhraní express jeden funkční nápady, které může být implementována více tříd. Který usnadňuje upgradovat tyto definice rozhraní při zjištění nových požadavků pro tento stejný funkční nápad.
+Tyto nové funkce znamenají, že rozhraní je možné bezpečně aktualizovat, pokud existuje přiměřená výchozí implementace pro tyto nové členy. Pečlivě Navrhněte rozhraní pro vyjádření jednoduchých funkčních nápadů, které mohou být implementovány více třídami. To usnadňuje upgrade těchto definic rozhraní, když jsou zjištěny nové požadavky pro stejný funkční nápad.

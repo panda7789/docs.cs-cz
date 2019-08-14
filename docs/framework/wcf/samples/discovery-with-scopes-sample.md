@@ -2,37 +2,40 @@
 title: Ukázka zjišťování pomocí oborů
 ms.date: 03/30/2017
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
-ms.openlocfilehash: 9ad20e63e00464ed615620b9d0ec83fb90d07444
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b65a348c943b07e813e3fe690f1364b77a94890
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789373"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972008"
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
-Tento příklad ukazuje, jak pomocí oborů zařadit zjistitelné koncových bodů i jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> provést asynchronní hledání pro koncové body. Ve službě Tato ukázka předvádí, jak přizpůsobit přidáním chování koncového bodu zjišťování a pomocí přidání oboru ke koncovému bodu, stejně jako řízení zjistitelnost koncového bodu zjišťování pro každý koncový bod. Na straně klienta překročí jak můžou klienti vytvořit ukázky <xref:System.ServiceModel.Discovery.DiscoveryClient> a doladit parametry patří oborů tak, že přidáte obory pro hledání <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti odpovědi omezit tak, že přidáte ukončovacího kritéria.  
-  
-## <a name="service-features"></a>Funkce služby  
- Ukazuje dva koncové body služby se přidávají do tohoto projektu <xref:System.ServiceModel.ServiceHost>. Každý koncový bod má <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> s ním spojená. Toto chování slouží k přidání identifikátoru URI oborů pro oba koncové body. Obory slouží k odlišení každý z těchto koncových bodů tak, aby klienti uživatele můžete podrobně upravit vyhledávání. Pro druhý koncový bod, zjistitelnost lze zakázat nastavením <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Enabled%2A> vlastnost `false`. Tím se zajistí, že jako součást všechny zprávy zjišťování nejsou zasílány zjišťování metadata přidružená k tomuto koncovému bodu.  
-  
-## <a name="client-features"></a>Funkce klienta  
- `FindCalculatorServiceAddress()` Metoda ukazuje způsob použití <xref:System.ServiceModel.Discovery.DiscoveryClient> a předejte mu <xref:System.ServiceModel.Discovery.FindCriteria> dvě omezení. Rozsah je přidán do kritéria a <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> je nastavena na 1. Rozsah omezuje výsledky do služeb, které publikují ve stejném rozsahu. Nastavení <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> 1 omezuje odpovědi <xref:System.ServiceModel.Discovery.DiscoveryClient> čeká na maximálně 1 koncový bod. <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> Volání je asynchronní operace, která blokuje vlákno, dokud nebude dosaženo časového limitu nebo se nachází jeden koncový bod.  
-  
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
-  
-1. Tato ukázka používá koncové body HTTP a pokud chcete tuto ukázku spustit, musíte přidat správné seznamy ACL adresy URL. Zobrazit [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) podrobnosti. Provádění se zvýšenými oprávněními následující příkaz by měl přidat příslušné seznamy ACL. Můžete nahradit doména a uživatelské jméno pro následující argumenty, pokud příkaz nefunguje, jako je: `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
-  
-2. Sestavte řešení.  
-  
-3. Spusťte spustitelný soubor služby z adresáře sestavení.  
-  
-4. Spusťte klientský spustitelný soubor. Všimněte si, že se najít službu klienta.  
-  
+
+Tento příklad ukazuje, jak použít obory k kategorizaci zjistitelných koncových bodů a také jak <xref:System.ServiceModel.Discovery.DiscoveryClient> použít k provedení asynchronního hledání koncových bodů. Tato ukázka ve službě ukazuje, jak přizpůsobit zjišťování pro každý koncový bod přidáním chování zjišťování koncových bodů a jeho použitím k přidání oboru do koncového bodu a také k řízení zjistitelnosti koncového bodu. V klientovi ukázka přechází, jak můžou klienti vytvořit <xref:System.ServiceModel.Discovery.DiscoveryClient> a doladit parametry vyhledávání, aby zahrnovaly obory přidáním oborů <xref:System.ServiceModel.Discovery.FindCriteria>do. Tato ukázka také ukazuje, jak mohou klienti omezit odpovědi přidáním kritéria ukončení.
+
+## <a name="service-features"></a>Funkce služby
+
+Tento projekt zobrazí dva koncové body služby, které jsou <xref:System.ServiceModel.ServiceHost>přidány do. <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> K němu je přidružen každý koncový bod. Toto chování se používá k přidání oborů identifikátorů URI pro oba koncové body. Obory se používají k odlišení každého z těchto koncových bodů tak, aby klienti mohli vyladit hledání. Pro druhý koncový bod lze zjistitelnost zakázat nastavením <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Enabled%2A> vlastnosti na. `false` Tím se zajistí, že se metadata zjišťování přidružená k tomuto koncovému bodu neodesílají jako součást jakýchkoli zpráv zjišťování.
+
+## <a name="client-features"></a>Klientské funkce
+
+Metoda ukazuje, jak <xref:System.ServiceModel.Discovery.DiscoveryClient> použít a předat <xref:System.ServiceModel.Discovery.FindCriteria> se dvěma omezeními. `FindCalculatorServiceAddress()` Do kritérií je přidán obor a <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vlastnost je nastavena na hodnotu 1. Rozsah omezuje výsledky jenom na služby, které publikují stejný obor. Nastavení <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> na 1 omezí odezvy, které <xref:System.ServiceModel.Discovery.DiscoveryClient> čekají na, maximálně 1 koncový bod. <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> Volání je synchronní operace, která blokuje vlákno, dokud není dosažen časový limit nebo byl nalezen jeden koncový bod.
+
+### <a name="to-use-this-sample"></a>Použití této ukázky
+
+1. Tato ukázka používá koncové body HTTP a ke spuštění této ukázky musí být přidány správné seznamy ACL adres URL. Podrobnosti najdete v tématu [Konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) . Spuštění následujícího příkazu u zvýšeného oprávnění by mělo přidat příslušné seznamy ACL. Pokud příkaz nefunguje tak, jak je, můžete chtít nahradit doménu a uživatelské jméno pro následující argumenty:`netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`
+
+2. Sestavte řešení.
+
+3. Spusťte spustitelný soubor služby z adresáře buildu.
+
+4. Spusťte klientský spustitelný soubor. Upozorňujeme, že klient může službu vyhledat.
+
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
->   
->  `<InstallDrive>:\WF_WCF_Samples`  
->   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
->   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`

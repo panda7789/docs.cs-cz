@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 924553bf457a6668143785c78871ebac6e01efa4
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 16a0436accfb031ddd0bb413e519d80e550786b4
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68818023"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972273"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
@@ -114,7 +114,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
  Aby bylo možné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci spustit, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. Internet Explorer automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] při prohlížení aplikací hostovaných v prohlížeči. Pokud .NET Framework není nainstalován, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
   
- Aby bylo možné zjistit, zda je .NET Framework nainstalováno, obsahuje aplikace Internet Explorer aplikaci zaváděcího nástroje, která [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] je registrována jako záložní obslužná rutina pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
+ Aby bylo možné zjistit, zda .NET Framework nainstalováno, obsahuje aplikace Internet Explorer aplikaci zaváděcího nástroje, která je registrována jako záložní obslužná rutina MIME (Multipurpose Multipurpose Internet Mail Extensions) pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP. a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
   
  Pokud je udělené oprávnění, Internet Explorer stáhne a nainstaluje .NET Framework pomocí Microsoft Background Intelligent Transfer Service (BITS). Po úspěšné instalaci .NET Framework se původně požadovaný soubor otevře v novém okně prohlížeče.  
   

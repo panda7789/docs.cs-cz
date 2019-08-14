@@ -15,12 +15,12 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: 34beee309f080c53ecb16436beb0c4c6be7733e5
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 683d0a28fa151cf2116b4125dfb7a604605c7c4a
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796785"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972244"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
 <a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení nemůžou skriptovací jazyky HTML a na straně klienta přistupovat k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. K vykonání těchto [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] omezení spoléhá na zabezpečení přístupu kódu (CAS) i ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
@@ -50,7 +50,7 @@ ms.locfileid: "68796785"
 |Úprava|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Podpora schránky ve formátu prostého textu a rukopisu<br /><br /> Vložení iniciované uživatelem<br /><br /> Kopírování vybraného obsahu|  
 |Ovládací prvky|Obecné ovládací prvky|  
   
- Tato tabulka obsahuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce na nejvyšší úrovni. Podrobnější informace najdete [!INCLUDE[TLA#tla_lhsdk](../../../includes/tlasharptla-lhsdk-md.md)] v dokumentu oprávnění, která jsou vyžadována každým členem v [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Kromě toho následující funkce obsahují podrobnější informace týkající se provádění částečné důvěryhodnosti, včetně zvláštních otázek.  
+ Tato tabulka obsahuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce na nejvyšší úrovni. V případě podrobnějších informací sada Windows Software Development Kit (SDK) dokumentuje oprávnění, která jsou vyžadována každým členem [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]v. Kromě toho následující funkce obsahují podrobnější informace týkající se provádění částečné důvěryhodnosti, včetně zvláštních otázek.  
   
 - [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)](viz [XAML Overview (WPF)](./advanced/xaml-overview-wpf.md)).  
   
