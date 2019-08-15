@@ -5,26 +5,29 @@ helpviewer_keywords:
 - application settings [Windows Forms], multiple sets
 - application settings [Windows Forms], C#
 ms.assetid: 45007ac6-cf07-4be7-bc38-3f0ef962faf9
-ms.openlocfilehash: 9a4913f635204aac2214d97225c7b8147c6fe9ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c6842d11c04e905d42734af939f2c3f0cfeacd47
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768547"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040129"
 ---
-# <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>Postupy: Přidání více množin nastavení do vaší aplikace v jazyce C\#
-V některých případech můžete chtít mít více množin nastavení v aplikaci. Například pokud vyvíjíte aplikaci kde se očekává často měnit konkrétní skupinu nastavení, může být vhodné oddělit vše do jediného souboru tak, aby soubor se dá nahradit velkoobchodních, ostatní nechat to neovlivní. Visual Studio umožňuje přidání více množin nastavení do projektu. Další sadu nastavení je možný prostřednictvím Properties.Settings objektu.  
-  
-### <a name="to-add-an-additional-set-of-setting-to-your-application"></a>Chcete-li přidat další sadu nastavení do vaší aplikace  
-  
-1. Z **projektu** nabídce zvolte **přidat novou položku**. **Přidat novou položku** zobrazí se dialogové okno.  
-  
-2. V **přidat novou položku** dialogu **souboru s nastavením**, zadejte název souboru a klikněte na tlačítko **přidat** přidáte nový soubor nastavení do vašeho řešení.  
-  
-3. V **Průzkumníka řešení**, přetáhněte nový soubor nastavení do **vlastnosti** složky. To umožňuje nové nastavení k dispozici v kódu.  
-  
-4. Přidat a používat nastavení v tomto souboru, stejně jako jakýkoli jiný soubor nastavení. Tato skupina nastavení prostřednictvím objektu Properties.Settings můžete přistupovat.  
-  
+# <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>Postupy: Přidání více sad nastavení do aplikace v jazyce C\#
+
+V některých případech možná budete chtít mít v aplikaci více sad nastavení. Například při vývoji aplikace, kde se očekává, že se určitá skupina nastavení často mění, může být vhodné je rozdělit do jediného souboru, aby bylo možné tento soubor nahradit, takže ostatní nastavení neovlivní. Sada Visual Studio umožňuje přidat do projektu více sad nastavení. K dalším sadám nastavení lze přistupovat prostřednictvím `Properties.Settings` objektu.
+
+## <a name="add-an-additional-set-of-settings"></a>Přidat další sadu nastavení
+
+1. V aplikaci Visual Studio v nabídce **projekt** vyberte možnost **Přidat novou položku**.
+
+   **Přidat novou položku** zobrazí se dialogové okno.
+
+2. V dialogovém okně **Přidat novou položku** vyberte možnost **soubor nastavení**, zadejte název souboru a kliknutím na tlačítko **Přidat** přidejte nový soubor nastavení do řešení.
+
+3. V **Průzkumník řešení**přetáhněte nový soubor nastavení do složky Properties ( **vlastnosti** ). To umožňuje, aby vaše nová nastavení byla k dispozici v kódu.
+
+4. V tomto souboru můžete přidat a použít nastavení stejným způsobem jako jakýkoli jiný soubor nastavení. K této skupině nastavení můžete přistupovat prostřednictvím `Properties.Settings` objektu.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Použití nastavení aplikace a uživatelských nastavení](using-application-settings-and-user-settings.md)

@@ -6,55 +6,52 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: 46825eeb2befab7f11a87451da53a773a6ce2ad2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d1e598831954f17bdf3bc03ab880c344ca36aa5a
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648228"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039949"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
 
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
-  
- Pokud vaše <xref:System.Data.DataSet> obsahuje řadu souvisejících tabulek, můžete použít dvě <xref:System.Windows.Forms.DataGrid> ovládacích prvků pro zobrazení dat ve formátu hlavní podrobnosti. Jeden <xref:System.Windows.Forms.DataGrid> je určen jako hlavní mřížky, a druhý je určený být mřížku podrobnosti. Když vyberete položku v seznamu hlavních, všechny související podřízené položky jsou uvedeny v seznamu podrobnosti. Například pokud vaše <xref:System.Data.DataSet> obsahuje tabulku zákazníků a související tabulku Orders, zadali byste na hlavní mřížka tabulky Zákazníci a být mřížku podrobnosti o objednávkách. Když je zákazník vybrán z hlavní mřížky, všech objednávek tohoto zákazníka v tabulce objednávky přidružené by zobrazí v mřížce podrobností.  
-  
- Následující postup vyžaduje, **aplikace Windows** projektu (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **Windows Forms Aplikace**).  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-create-a-master-details-list-in-the-designer"></a>Chcete-li vytvořit seznam hlavních podrobných v Návrháři  
-  
-1. Přidejte dva <xref:System.Windows.Forms.DataGrid> ovládací prvky do formuláře. Další informace najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).  
-  
+>  Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+
+ Pokud obsahuje řadu souvisejících tabulek, můžete použít dva <xref:System.Windows.Forms.DataGrid> ovládací prvky pro zobrazení dat ve formátu hlavní-podrobnosti. <xref:System.Data.DataSet> Jedna <xref:System.Windows.Forms.DataGrid> je určena jako hlavní mřížka a druhá je označena jako mřížka podrobností. Když vyberete položku v seznamu hlavní seznam, zobrazí se v seznamu podrobnosti všechny související podřízené položky. Pokud <xref:System.Data.DataSet> například obsahuje tabulku Customers (zákazníci) a související tabulky objednávek, zadali byste tabulku Customers (zákazníci), která bude hlavní mřížkou, a tabulkou Orders, která bude mřížka podrobností. Když je zákazník vybraný z hlavní mřížky, v mřížce podrobností se zobrazí všechny objednávky přidružené k tomuto zákazníkovi v tabulce Orders.
+
+ Následující postup vyžaduje projekt **aplikace systému Windows** (**soubor** > **nového** > **projektu** > nebo**Visual C#**  **Visual Basic**  >   **Klasická desktopová** > **model Windows Forms aplikace**).
+
+## <a name="to-create-a-master-details-list-in-the-designer"></a>Vytvoření seznamu hlavní-podrobnosti v Návrháři
+
+1. Do formuláře <xref:System.Windows.Forms.DataGrid> přidejte dva ovládací prvky. Další informace najdete v tématu [jak: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms. V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> není ovládací prvek ve výchozím nastavení součástí **sady nástrojů** . Další informace najdete v tématu [jak: Přidejte položky do sady nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).
+
     > [!NOTE]
-    >  Následující kroky se nevztahují na Visual Studio 2005, který používá **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v tématu [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [jak: Zobrazení souvisejících dat v Windows Forms aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120)).  
-  
-2. Přetáhněte dvě nebo více tabulek z **Průzkumníka serveru** do formuláře.  
-  
-3. Z **Data** nabídce vyberte možnost **generovat datovou sadu**.  
-  
-4. Nastavte relace mezi tabulkami pomocí návrháře XML. Podrobnosti najdete v tématu "jak: Vytvoření vztahů 1 n v datových sadách a schématech XML"na webu MSDN.  
-  
-5. Uložení relace tak, že vyberete **Uložit vše** z **souboru** nabídky.  
-  
-6. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete nastavit hlavní mřížky, následujícím způsobem:  
-  
-    1. Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
-  
-    2. Vyberte z rozevíracího seznamu v tabulce hlavní (například "zákazníci") <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost.  
-  
-7. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete určit podrobnosti mřížky, následujícím způsobem:  
-  
-    1. Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
-  
-    2. Vyberte relaci (například "Customers.CustOrd") mezi tabulkami a podrobností z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost. Chcete-li zobrazit relace, rozbalte uzel kliknutím na symbol plus (**+**) znaménko vedle hlavní tabulku v rozevíracím seznamu.  
-  
+    >  Následující kroky se nevztahují na Visual Studio 2005, který používá okno **zdroje dat** pro datovou vazbu při návrhu. Další informace naleznete v tématu [vázání ovládacích prvků k datům v aplikaci Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [postup: Zobrazení souvisejících dat v aplikaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))model Windows Forms.
+
+2. Přetáhněte dvě nebo více tabulek z **Průzkumník serveru** do formuláře.
+
+3. V nabídce **data** vyberte možnost **Generovat datovou sadu**.
+
+4. Nastavte vztahy mezi tabulkami pomocí návrháře XML. Podrobnosti najdete v části How to: Vytvoření vztahů 1:1 na webu MSDN schématu XML a datových sad
+
+5. Uložte relace výběrem možnosti **Uložit vše** v nabídce **soubor** .
+
+6. <xref:System.Windows.Forms.DataGrid> Nakonfigurujte ovládací prvek, který chcete nastavit jako hlavní mřížku, následovně:
+
+    1. Vyberte z rozevíracího seznamu <xref:System.Windows.Forms.DataGrid.DataSource%2A> ve vlastnosti. <xref:System.Data.DataSet>
+
+    2. Z rozevíracího seznamu ve <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti vyberte hlavní tabulku (například "Customers").
+
+7. <xref:System.Windows.Forms.DataGrid> Nakonfigurujte ovládací prvek, který chcete nastavit jako mřížku podrobností, následujícím způsobem:
+
+    1. Vyberte z rozevíracího seznamu <xref:System.Windows.Forms.DataGrid.DataSource%2A> ve vlastnosti. <xref:System.Data.DataSet>
+
+    2. V rozevíracím seznamu ve <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti vyberte vztah (například Customers. CustOrd) mezi hlavními a podrobnými tabulkami. Chcete-li zobrazit vztah, rozbalte uzel kliknutím na symbol plus ( **+** ) vedle položky hlavní tabulka v rozevíracím seznamu.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
-- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+- [Postupy: Navázání model Windows Forms ovládacího prvku DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
 - [Vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

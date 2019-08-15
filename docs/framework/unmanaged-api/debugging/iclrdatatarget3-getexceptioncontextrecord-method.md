@@ -14,15 +14,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b43ab8cdeff3866bb51e8634f367cf86ee483d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07065b15f449c2bcb84df7bbdcce65d61de007ee
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698015"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69038337"
 ---
 # <a name="iclrdatatarget3getexceptioncontextrecord-method"></a>ICLRDataTarget3::GetExceptionContextRecord – metoda
-Je voláno common language runtime (CLR) data access services k získání záznamu o kontextu souvisejícím s cílovým procesem. Například pro cíl s výpisem paměti, jde ekvivalentní k záznamu o kontextu předané prostřednictvím `ExceptionParam` argument [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) funkce ve Windows ladit knihovnu nápovědy (DbgHelp).  
+Volá se službami CLR (Common Language Runtime) k načtení záznamu kontextu přidruženého k cílovému procesu. Například pro cíl výpisu paměti by to byl ekvivalentem záznamu kontextu předaného přes `ExceptionParam` argument do funkce [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) v knihovně dbghelp (ladění v nápovědě systému Windows).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,36 +36,36 @@ HRESULT GetExceptionContextRecord(
   
 ## <a name="parameters"></a>Parametry  
  `bufferSize`  
- [in] Velikost vstupní vyrovnávací paměti v bajtech. Toto musí být dostatečně velký, aby kontextového záznamu.  
+ pro Velikost vstupní vyrovnávací paměti (v bajtech). Tento postup musí být dostatečně velký, aby mohl být přizpůsoben záznamu kontextu.  
   
  `bufferUsed`  
- [out] Ukazatel `ULONG32` typ, který přijímá počet bajtů ve skutečnosti zapsat do vyrovnávací paměti.  
+ mimo Ukazatel na `ULONG32` typ, který přijímá počet bajtů, které jsou ve skutečnosti zapisovány do vyrovnávací paměti.  
   
  `buffer`  
- [out] Ukazatel do vyrovnávací paměti, která obdrží kopii kontextového záznamu. Záznam o výjimce se vrátí jako [kontextu](/windows/desktop/api/winnt/ns-winnt-_arm64_nt_context) typu.  
+ mimo Ukazatel na vyrovnávací paměť, která obdrží kopii záznamu kontextu. Záznam výjimky je vrácen jako typ [kontextu](/windows/win32/api/winnt/ns-winnt-arm64_nt_context) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrácená hodnota je `S_OK` na úspěch nebo neúspěch `HRESULT` kódu při selhání. `HRESULT` Kódy mohou zahrnovat, avšak nejsou omezeny na následující:  
+ Vrácená hodnota je `S_OK` při úspěchu nebo při selhání kódu chyby `HRESULT` . `HRESULT` Kódy mohou zahrnovat, ale nejsou omezeny na následující:  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
-|`S_OK`|Metoda byla úspěšná. Kontextového záznamu byla zkopírována do výstupní vyrovnávací paměť.|  
-|`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|Žádný záznam kontextu je přidružený k cíli.|  
-|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměť není dostatečně velký, aby odpovídala kontextového záznamu.|  
+|`S_OK`|Metoda byla úspěšná. Záznam kontextu byl zkopírován do výstupní vyrovnávací paměti.|  
+|`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|K cíli není přidružen žádný záznam kontextu.|  
+|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměti není dostatečně velká pro přizpůsobení záznamu kontextu.|  
   
 ## <a name="remarks"></a>Poznámky  
- [KONTEXT](/windows/desktop/api/winnt/ns-winnt-_arm64_nt_context) je specifické pro platformu struktuře definované v hlavičkách sada Windows SDK.  
+ [Kontext](/windows/win32/api/winnt/ns-winnt-arm64_nt_context) je struktura specifická pro platformu definovaná v hlavičkách poskytnutých Windows SDK.  
   
- Tato metoda je implementováno tvůrci ladění aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlaviček** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[v451_update](../../../../includes/net-current-v451-nov-plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[v451_update](../../../../includes/net-current-v451-nov-plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

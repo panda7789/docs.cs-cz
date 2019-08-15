@@ -1,5 +1,5 @@
 ---
-title: klíčové slovo oboru názvů - C# odkaz
+title: klíčové slovo Namespace C# – referenční informace
 ms.custom: seoapril2019
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,22 +9,22 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: df921ecc670bf12411dc8b0d828d6c19bb0a1aec
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 8cc1d1461a33ab94f8ae399d6ff40f26eaf7f74a
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422743"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039454"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 
-`namespace` – Klíčové slovo se používá k deklarování oboru, který obsahuje sadu souvisejících objektů. Obor názvů slouží k uspořádání prvků kódu a vytváření globálně jedinečných typů.
+`namespace` Klíčové slovo slouží k deklaraci oboru, který obsahuje sadu souvisejících objektů. Obor názvů můžete použít k uspořádání prvků kódu a k vytvoření globálně jedinečných typů.
 
 [!code-csharp[csrefKeywordsNamespace#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#1)]
 
 ## <a name="remarks"></a>Poznámky
 
-V rámci oboru názvů můžete deklarovat nula nebo více z následujících typů:
+V rámci oboru názvů můžete deklarovat nula nebo více následujících typů:
 
 - jiný obor názvů
 
@@ -38,38 +38,29 @@ V rámci oboru názvů můžete deklarovat nula nebo více z následujících ty
 
 - [delegate](delegate.md)
 
-Zda explicitně deklarovat oboru názvů do zdrojového souboru jazyka C#, kompilátor přidá výchozí obor názvů. Tato nepojmenovaného oboru názvů, někdy označovány jako globální obor názvů, je k dispozici v každém souboru. Žádný identifikátor v globálním oboru názvů je k dispozici pro použití s názvem oboru názvů.
+Bez ohledu na to, jestli explicitně deklarujete obor C# názvů ve zdrojovém souboru, kompilátor přidá výchozí obor názvů. Tento nepojmenovaný obor názvů, který se někdy označuje jako globální obor názvů, se nachází v každém souboru. Libovolný identifikátor v globálním oboru názvů je k dispozici pro použití v pojmenovaném oboru názvů.
 
-Obory názvů mají implicitně veřejný přístup, a to není možné upravit. Informace o přístupu modifikátory přístupu můžete přiřadit na prvky v oboru názvů, naleznete v tématu [modifikátory přístupu](access-modifiers.md).
+Obory názvů mají implicitně veřejný přístup a nelze je upravovat. Diskuzi o modifikátorech přístupu, které můžete přiřadit k prvkům v oboru názvů, najdete v tématu [modifikátory přístupu](access-modifiers.md).
 
-Je možné definovat ve dvou nebo více deklarací oboru názvů. Například následující příklad definuje dvě třídy jako součást `MyCompany` obor názvů:
+Je možné definovat obor názvů ve dvou nebo více deklaracích. Například následující příklad definuje dvě třídy jako součást `MyCompany` oboru názvů:
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak zavolat statickou metodu ve vnořené oboru názvů.
+Následující příklad ukazuje, jak zavolat statickou metodu ve vnořeném oboru názvů.
 
 [!code-csharp[csrefKeywordsNamespace#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#3)]
 
-## <a name="related-resources"></a>Související prostředky
-
-Další informace o použití oboru názvů naleznete v následujících tématech:
-
-- [Obory názvů](../../programming-guide/namespaces/index.md)
-
-- [Použití oboru názvů](../../programming-guide/namespaces/using-namespaces.md)
-
-- [Postupy: Použití aliasu globálního Namespace](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
-
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v části [obory názvů](~/_csharplang/spec/namespaces.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [using](using-directive.md)
-- [Pomocí statické](using-static.md)
+- [Použití static](using-static.md)
+- [Kvalifikátor aliasu oboru názvů`::`](../operators/namespace-alias-qualifier.md)
+- [Obory názvů](../../programming-guide/namespaces/index.md)

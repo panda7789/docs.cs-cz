@@ -6,49 +6,47 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-ms.openlocfilehash: cbd0eb3dfc8f4494bf9a8e96ff7c472622f135d8
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 7566f19282ffd5a3cac86693a64899f25ce37b9f
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960337"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040280"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel
 
-Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.
+Některé aplikace vyžadují formulář s rozložením, které je uspořádáno správně, protože se změní velikost formuláře nebo se změní velikost obsahu. Pokud potřebujete dynamické rozložení a nechcete zpracovávat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.
 
-<xref:System.Windows.Forms.FlowLayoutPanel> Ovládacího prvku a <xref:System.Windows.Forms.TableLayoutPanel> řízení poskytují intuitivní způsoby, jak uspořádat ovládací prvky na formuláři. Umožňují automatické, konfigurovatelné možnosti řízení relativní pozice podřízených ovládacích prvků v nich obsažené, a obě získáte funkce dynamické rozložení v době běhu, aby jejich velikost a umístění podřízených ovládacích prvků jako dimenze nadřazený formulář Změňte. Panely rozložení může být vnořena do panely rozložení, aby realizace propracovaná uživatelská rozhraní.
+<xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> a ovládací prvek poskytují intuitivní způsoby uspořádání ovládacích prvků ve formuláři. Obě poskytují automatickou, konfigurovatelný možnost pro řízení relativních pozic podřízených ovládacích prvků, které jsou v nich obsažené, a zároveň poskytují funkce dynamického rozložení za běhu, takže mohou změnit velikost a umístění podřízených ovládacích prvků jako rozměry nadřazeného formuláře. mění. Panely rozložení lze vnořovat do panelů rozložení, aby bylo možné provádět realizace sofistikovaných uživatelských rozhraní.
 
-<xref:System.Windows.Forms.FlowLayoutPanel> Uspořádá jeho obsah v konkrétní směr: vodorovný nebo svislý. Dá zabalit obsah z jednoho řádku na další nebo z jednoho sloupce na další. Alternativně můžete místo oříznutí jeho obsah zabalena. Další informace najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).
+<xref:System.Windows.Forms.FlowLayoutPanel> Uspořádá obsah v určitém směru toku: vodorovně nebo svisle. Jeho obsah lze zabalit z jednoho řádku na další, nebo z jednoho sloupce na další. Alternativně lze jeho obsah oříznout místo zabalení. Další informace najdete v tématu [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).
 
-<xref:System.Windows.Forms.TableLayoutPanel> Uspořádá její obsah do mřížky, poskytuje funkce podobné HTML \<tabulky > element. <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje umístit ovládací prvky v případě rozložení mřížky, aniž by bylo potřeba přesně určit umístění jednotlivých ovládacích prvků. Jeho buňky jsou uspořádány do řádků a sloupců, a ty mají různé velikosti. Sloučením buněk mezi řádky a sloupce. Buňky může obsahovat cokoli, formulář může obsahovat a chovat ve většině ostatních ohledech jako kontejnery.
+Uspořádá svůj obsah do mřížky a poskytuje funkce podobné > elementu HTML \<Table. <xref:System.Windows.Forms.TableLayoutPanel> <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje umístit ovládací prvky do rozložení mřížky bez nutnosti přesně zadat polohu každého jednotlivého ovládacího prvku. Buňky se uspořádají do řádků a sloupců a můžou mít různé velikosti. Buňky lze sloučit mezi řádky a sloupci. Buňky můžou obsahovat cokoli, co formulář může obsahovat a chovat se ve většině dalších hledisek jako kontejnery.
 
-<xref:System.Windows.Forms.TableLayoutPanel> Řízení také poskytuje přímo úměrná velikosti funkce v době běhu, takže rozložení můžete plynule změnit při změně velikosti formuláře. Díky tomu <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek vhodná pro účely, jako je formulářích pro zadávání dat a lokalizovaných aplikací. Další informace najdete v tématu [názorný postup: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/991eahec(v=vs.100)) a [názorný postup: Vytvoření formuláře Windows lokalizovatelné](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100)).
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek také poskytuje funkci proporcionální změny velikosti za běhu, takže rozložení se může změnit plynule, protože se změní velikost formuláře. Díky tomu je <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek vhodný pro účely, jako jsou formuláře pro zadávání dat a lokalizované aplikace. Další informace najdete v tématu [Návod: Vytvoření formuláře Windows s možností změny velikosti pro zadávání](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/991eahec(v=vs.100)) dat [a návod: Vytváření lokalizovatelných formulářů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))Windows.
 
-Obecně platí, neměli byste používat <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek jako kontejner pro celé rozložení. Použití <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky pro poskytování přímo úměrná velikosti možností k různým částem rozložení.
+Obecně platí, že byste neměli používat <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek jako kontejner pro celé rozložení. Ovládací <xref:System.Windows.Forms.TableLayoutPanel> prvky slouží k poskytnutí proporcionálních možností změny velikosti částí rozložení.
 
-Úlohy v tomto návodu zahrnují:
+Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytvoření projektu Windows Forms
+- Vytvoření projektu model Windows Forms
 
-- Uspořádání ovládacích prvků do řádků a sloupců
+- Uspořádání ovládacích prvků v řádcích a sloupcích
 
-- Řádek nastavení a vlastnosti sloupce
+- Nastavení vlastností řádků a sloupců
 
-- Rozložení řádků a sloupců s ovládacím prvkem
+- Pokrývání řádků a sloupců ovládacím prvkem
 
 - Automatické zpracování přetečení
 
-- Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů
+- Vložení ovládacích prvků dvojitým kliknutím na ně v sadě nástrojů
 
-- Vložení ovládacího prvku kreslením obrysu
+- Vložení ovládacího prvku kreslením jeho obrysu
 
-- Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku
+- Změna přiřazení existujících ovládacích prvků jinému nadřazenému prvku
 
-Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.
+Až budete hotovi, budete obeznámeni s tím, že role hraje tyto důležité funkce rozložení.
 
-> [!NOTE]
-> Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).
 
 ## <a name="creating-the-project"></a>Vytvoření projektu
 
@@ -56,151 +54,151 @@ Prvním krokem je vytvoření projektu a nastavení formuláře.
 
 #### <a name="to-create-the-project"></a>Vytvoření projektu
 
-1. Vytvořte projekt aplikace Windows s názvem "TableLayoutPanelExample". Další informace najdete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) .
+1. Vytvořte projekt aplikace pro Windows s názvem "TableLayoutPanelExample". Další informace najdete v tématu [jak: Vytvořte projekt](/visualstudio/ide/step-1-create-a-windows-forms-application-project) aplikace model Windows Forms.
 
-2. Vyberte formulář v nástrojích pro **Windows** **Návrháře formulářů**.
+2. Vyberte formulář v **Návrháři formulářů** **Windows** .
 
-## <a name="arranging-controls-in-rows-and-columns"></a>Uspořádání ovládacích prvků do řádků a sloupců
+## <a name="arranging-controls-in-rows-and-columns"></a>Uspořádání ovládacích prvků v řádcích a sloupcích
 
-<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje snadno uspořádání ovládacích prvků do řádků a sloupců.
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje snadno uspořádat ovládací prvky do řádků a sloupců.
 
-#### <a name="to-arrange-controls-in-rows-and-columns-using-a-tablelayoutpanel"></a>Chcete-li uspořádat ovládací prvky do řádků a sloupců pomocí ovládacího prvku TableLayoutPanel
+#### <a name="to-arrange-controls-in-rows-and-columns-using-a-tablelayoutpanel"></a>Uspořádání ovládacích prvků v řádcích a sloupcích pomocí kontejneru TableLayoutPanel
 
-1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře. Všimněte si, že se ve výchozím nastavení, <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek má čtyři buňky.
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel> Všimněte si, že ve výchozím nastavení <xref:System.Windows.Forms.TableLayoutPanel> má ovládací prvek čtyři buňky.
 
-2. Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> řídit a umístěte ho do jedné buňky. Všimněte si, <xref:System.Windows.Forms.Button> ovládací prvek je vytvořen v rámci buňky, které jste vybrali.
+2. Přetáhněte ovládací prvek ze <xref:System.Windows.Forms.TableLayoutPanel> **sady nástrojů** do ovládacího prvku a umístěte jej do jedné z buněk. <xref:System.Windows.Forms.Button> Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvek je vytvořen v rámci vybrané buňky.
 
-3. Přetáhněte další tři <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> řídit tak, aby každá buňka obsahuje tlačítko.
+3. Přetáhněte tři další <xref:System.Windows.Forms.Button> ovládací prvky ze <xref:System.Windows.Forms.TableLayoutPanel> sady nástrojů do ovládacího prvku tak, aby každá buňka obsahovala tlačítko.
 
-4. Svislé úchyt mezi dvěma sloupci vzít a přesunout ho na levé straně. Všimněte si, že <xref:System.Windows.Forms.Button> ovládacích prvků v prvním sloupci se mění velikost menší šířku, při velikosti <xref:System.Windows.Forms.Button> ovládacích prvků ve druhém sloupci je beze změny.
+4. Umožňuje přesunout úchyt svislé velikosti mezi dvěma sloupci a přesunout ho doleva. Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvky v prvním sloupci jsou zmenšeny na menší šířku, zatímco velikost <xref:System.Windows.Forms.Button> ovládacích prvků ve druhém sloupci zůstane beze změny.
 
-5. Svislé úchyt mezi dvěma sloupci vzít a přesunout ho na pravé straně. Všimněte si, že <xref:System.Windows.Forms.Button> ovládacích prvků v prvním sloupci vrátit na původní velikost, zatímco <xref:System.Windows.Forms.Button> ovládacích prvků ve druhém sloupci se přesouvají na pravé straně.
+5. Umožňuje přemístit vertikální úchyt mezi dvěma sloupci a přesunout ho doprava. Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvky v prvním sloupci se vrátí do původní velikosti, <xref:System.Windows.Forms.Button> zatímco ovládací prvky ve druhém sloupci se přesunou doprava.
 
-6. Přesuňte úchyt horizontální navýšení nebo snížení kapacity a vidět její účinek na ovládací prvky v panelu.
+6. Chcete-li zobrazit efekt ovládacích prvků na panelu, přesuňte úchyt vodorovné velikosti nahoru a dolů.
 
 ## <a name="positioning-controls-within-cells-using-docking-and-anchoring"></a>Umístění ovládacích prvků v buňkách pomocí ukotvení a ukotvení
 
-Kotvícího chování podřízených ovládacích prvků <xref:System.Windows.Forms.TableLayoutPanel> se liší od chování v další ovládací prvky kontejneru. Chování ukotvení podřízených ovládacích prvků je stejný jako další ovládací prvky kontejneru.
+Chování při ukotvení podřízených ovládacích prvků v <xref:System.Windows.Forms.TableLayoutPanel> se liší od chování v jiných ovládacích prvcích kontejneru. Chování při ukotvení podřízených ovládacích prvků je stejné jako jiné ovládací prvky kontejneru.
 
 #### <a name="positioning-controls-within-cells"></a>Umístění ovládacích prvků v buňkách
 
-1. Vyberte první <xref:System.Windows.Forms.Button> ovládacího prvku. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek roztáhne a vyplní buňku.
+1. Vyberte první <xref:System.Windows.Forms.Button> ovládací prvek. Změňte hodnotu <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti na <xref:System.Windows.Forms.DockStyle.Fill>. Všimněte si, <xref:System.Windows.Forms.Button> že se ovládací prvek rozbalí a vyplní jeho buňku.
 
-2. Vyberte jednu z nich <xref:System.Windows.Forms.Button> ovládacích prvků. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost <xref:System.Windows.Forms.AnchorStyles.Right>. Všimněte si, že se přesune tak, aby jeho pravého ohraničení poblíž pravého ohraničení buňky. Vzdálenost mezi ohraničením je součet <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti a na panelu <xref:System.Windows.Forms.Control.Padding%2A> vlastnost.
+2. Vyberte jeden z dalších <xref:System.Windows.Forms.Button> ovládacích prvků. Změňte hodnotu <xref:System.Windows.Forms.Control.Anchor%2A> vlastnosti na <xref:System.Windows.Forms.AnchorStyles.Right>. Všimněte si, že je přesunutý tak, aby jeho pravé ohraničení bylo poblíž pravého ohraničení buňky. Vzdálenost mezi ohraničením je součet <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.Control.Margin%2A> <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti ovládacího prvku a vlastnosti panelu.
 
-3. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost <xref:System.Windows.Forms.AnchorStyles.Right> a <xref:System.Windows.Forms.AnchorStyles.Left>. Všimněte si, že ovládací prvek je velikost na šířku na buňku <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A> hodnoty vzít v úvahu.
+3. <xref:System.Windows.Forms.Button> Změňte hodnotu <xref:System.Windows.Forms.Control.Anchor%2A> vlastnosti ovládacího prvku na <xref:System.Windows.Forms.AnchorStyles.Right> a <xref:System.Windows.Forms.AnchorStyles.Left>. Všimněte si, že ovládací prvek má velikost na šířku buňky, přičemž hodnoty a <xref:System.Windows.Forms.Control.Margin%2A> <xref:System.Windows.Forms.Control.Padding%2A> se přijímají v úvahu.
 
-4. Opakujte kroky 2 a 3 se <xref:System.Windows.Forms.AnchorStyles.Top> a <xref:System.Windows.Forms.AnchorStyles.Bottom> styly.
+4. Opakujte kroky 2 a 3 s <xref:System.Windows.Forms.AnchorStyles.Top> styly a. <xref:System.Windows.Forms.AnchorStyles.Bottom>
 
-## <a name="setting-row-and-column-properties"></a>Řádek nastavení a vlastnosti sloupce
+## <a name="setting-row-and-column-properties"></a>Nastavení vlastností řádků a sloupců
 
-Můžete nastavit vlastnosti jednotlivých řádků a sloupců pomocí <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> a <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekce.
+Jednotlivé vlastnosti řádků a sloupců můžete nastavit pomocí <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> kolekcí a. <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>
 
-#### <a name="to-set-row-and-column-properties"></a>Chcete-li nastavit vlastnosti řádků a sloupců
+#### <a name="to-set-row-and-column-properties"></a>Nastavení vlastností řádků a sloupců
 
-1. Vyberte <xref:System.Windows.Forms.TableLayoutPanel> v ovládacím prvku **Návrháře formulářů Windows**.
+1. Vyberte ovládací prvek v **Návrhář formulářů.** <xref:System.Windows.Forms.TableLayoutPanel>
 
-2. V **vlastnosti** windows, otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci kliknutím tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle  **Sloupce** položka.
+2. V oknech **vlastnosti** otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci![kliknutím na tlačítko se třemi tečkami (tři tečky (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) vedle položky **sloupce** .
 
-3. Vyberte první sloupec a změňte hodnotu z jeho <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.SizeType.AutoSize>. Klikněte na tlačítko **OK** pro potvrzení změny. Všimněte si, že se snižuje šířku prvního sloupce podle <xref:System.Windows.Forms.Button> ovládacího prvku. Všimněte si také, že šířka sloupce není umožňující změnu velikosti.
+3. Vyberte první sloupec a změňte hodnotu <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnosti na. <xref:System.Windows.Forms.SizeType.AutoSize> Potvrďte změnu kliknutím na tlačítko **OK** . Všimněte si, že šířka prvního sloupce je zmenšena tak, aby <xref:System.Windows.Forms.Button> odpovídala ovládacímu prvku. Všimněte si také, že šířku sloupce nelze měnit.
 
-4. V **vlastnosti** otevřené okno <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci a vyberte v prvním sloupci. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.SizeType.Percent>. Klikněte na tlačítko **OK** pro potvrzení změny. Změnit velikost <xref:System.Windows.Forms.TableLayoutPanel> mít pod kontrolou větší šířku a Všimněte si, že rozšiřuje šířku prvního sloupce. Změnit velikost <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku menší šířku a Všimněte si, že je nastavena velikost tlačítka v prvním sloupci podle buňku. Všimněte si také, že je šířka sloupce umožňující změnu velikosti.
+4. V okně **vlastnosti** otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci a vyberte první sloupec. Změňte hodnotu <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnosti na <xref:System.Windows.Forms.SizeType.Percent>. Potvrďte změnu kliknutím na tlačítko **OK** . Změňte velikost <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na větší šířku a Všimněte si, že se Šířka prvního sloupce rozšíří. Změňte velikost <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na menší šířku a Všimněte si, že tlačítka v prvním sloupci mají velikost tak, aby odpovídala buňce. Všimněte si také, že šířku sloupce lze měnit.
 
-5. V **vlastnosti** otevřené okno <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci a vyberte všechny sloupců v seznamu. Nastavte hodnotu vlastnosti každé <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.SizeType.Percent>. Klikněte na tlačítko **OK** pro potvrzení změny. Opakování s <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> kolekce.
+5. V okně **vlastnosti** otevřete <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> kolekci a vyberte všechny uvedené sloupce. Nastavte hodnotu každé <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnosti na <xref:System.Windows.Forms.SizeType.Percent>. Potvrďte změnu kliknutím na tlačítko **OK** . Opakujte s <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> kolekcí.
 
-6. Stáhnout si jednu horního úchyty pro změnu velikosti a změňte jeho velikost šířku a výšku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Všimněte si, že řádky a sloupce se mění velikost jako <xref:System.Windows.Forms.TableLayoutPanel> změny velikosti ovládacího prvku. Všimněte si také, že řádky i sloupce jsou umožňující změnu velikosti s vodorovné a svislé úchyty pro změnu velikosti.
+6. Přitáhněte jeden z rohových úchytů změny velikosti a změňte šířku i výšku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Všimněte si, že při změně velikosti <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku se změní velikost řádků a sloupců. Všimněte si také, že řádky a sloupce lze měnit pomocí vodorovných a svislých úchytů pro změnu velikosti.
 
-## <a name="spanning-rows-and-columns-with-a-control"></a>Rozložení řádků a sloupců s ovládacím prvkem
+## <a name="spanning-rows-and-columns-with-a-control"></a>Pokrývání řádků a sloupců ovládacím prvkem
 
-<xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku přidá několik nových vlastností k ovládacím prvkům v době návrhu. Dva z těchto vlastností jsou `RowSpan` a `ColumnSpan`. Tyto vlastnosti můžete vytvořit ovládací prvek rozpětí více než jeden řádek nebo sloupec.
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek přidá k ovládacím prvkům v době návrhu několik nových vlastností. Dvě z těchto vlastností jsou `RowSpan` a `ColumnSpan`. Tyto vlastnosti můžete použít k vytvoření ovládacího prvku v rozpětí více než jednoho řádku nebo sloupce.
 
-#### <a name="to-span-rows-and-columns-with-a-control"></a>Chcete-li rozpětí řádků a sloupců s ovládacím prvkem
+#### <a name="to-span-rows-and-columns-with-a-control"></a>Postup pro rozsah řádků a sloupců pomocí ovládacího prvku
 
-1. Vyberte <xref:System.Windows.Forms.Button> ovládacího prvku v prvním řádku a první sloupec.
+1. <xref:System.Windows.Forms.Button> Vyberte ovládací prvek v prvním řádku a prvním sloupci.
 
-2. V **vlastnosti** windows, změňte hodnotu `ColumnSpan` vlastnost **2**. Všimněte si, <xref:System.Windows.Forms.Button> ovládací prvek vyplní druhé a první sloupec. Všimněte si také, než byla přidána na další řádek přizpůsobil této změně.
+2. V oknech **vlastnosti** změňte hodnotu `ColumnSpan` vlastnosti na **2**. Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvek vyplní první sloupec a druhý sloupec. Všimněte si také, že byl přidán další řádek, který tuto změnu přizpůsobil.
 
-3. Krok 2 opakujte pro `RowSpan` vlastnost.
+3. Opakujte krok 2 pro `RowSpan` vlastnost.
 
-## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů
+## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>Vložení ovládacích prvků dvojitým kliknutím na ně v sadě nástrojů
 
-Můžete naplnit vaše <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na něj poklikejte ovládacích prvků v **nástrojů**.
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek lze naplnit dvojitým kliknutím na ovládací prvky v **sadě nástrojů**.
 
-#### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>Chcete-li vložit ovládací prvky na něj poklikejte na panelu nástrojů
+#### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>Vložení ovládacích prvků dvojitým kliknutím na panel nástrojů
 
-1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře.
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
 
-2. Dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu ovládacího prvku v **nástrojů**. Všimněte si, že nový ovládací prvek tlačítko se zobrazí v <xref:System.Windows.Forms.TableLayoutPanel> první buňky ovládacího prvku.
+2. Dvakrát klikněte <xref:System.Windows.Forms.Button> na ikonu ovládacího prvku v **sadě nástrojů**. Všimněte si, že nový ovládací prvek tlačítko se <xref:System.Windows.Forms.TableLayoutPanel> zobrazí v první buňce ovládacího prvku.
 
-3. Klikněte dvakrát na několik dalších ovládacích prvků v **nástrojů**. Všimněte si, že nové ovládací prvky zobrazí postupně v <xref:System.Windows.Forms.TableLayoutPanel> neobsazený buňky ovládacího prvku. Všimněte si také, <xref:System.Windows.Forms.TableLayoutPanel> rozšíří ovládací prvek tak, aby vyhovovaly nové ovládací prvky, pokud nejsou k dispozici žádné otevřené buňky.
+3. Dvakrát klikněte na více ovládacích prvků v **sadě nástrojů**. Všimněte si, že nové ovládací prvky se budou postupně <xref:System.Windows.Forms.TableLayoutPanel> zobrazovat v neobsazených buňkách ovládacího prvku. Všimněte si také, <xref:System.Windows.Forms.TableLayoutPanel> že se ovládací prvek rozbalí a přizpůsobí nové ovládací prvky, pokud nejsou k dispozici žádné otevřené buňky.
 
 ## <a name="automatic-handling-of-overflows"></a>Automatické zpracování přetečení
 
-Při vkládání ovládacích prvků do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku, můžete spustit z prázdných buněk pro nové ovládací prvky. <xref:System.Windows.Forms.TableLayoutPanel> Této situaci ovládací prvek automaticky zpracovává zvýšením počtu buněk.
+Když vkládáte ovládací prvky do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku, můžete vyprázdnit prázdné buňky pro nové ovládací prvky. <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek zpracovává tuto situaci automaticky zvýšením počtu buněk.
 
-#### <a name="to-observe-automatic-handling-of-overflows"></a>Sledovat automatické zpracování přetečení
+#### <a name="to-observe-automatic-handling-of-overflows"></a>Sledování automatického zpracování přetečení
 
-1. Pokud jsou stále prázdných buněk v <xref:System.Windows.Forms.TableLayoutPanel> řídit, pokračovat vkládání nových <xref:System.Windows.Forms.Button> ovládací prvky do <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek je plný.
+1. Pokud v <xref:System.Windows.Forms.TableLayoutPanel> ovládacím prvku stále existují prázdné buňky, pokračujte v vkládání nových <xref:System.Windows.Forms.Button> ovládacích prvků, <xref:System.Windows.Forms.TableLayoutPanel> dokud není ovládací prvek plný.
 
-2. Jednou <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek je plná, dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu v **nástrojů** vložit další <xref:System.Windows.Forms.Button> ovládacího prvku. Všimněte si, že <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek vytvoří nové buňky tak, aby vyhovovaly novým ovládacím prvkem. Vložit několik dalších ovládacích prvků a sledovat chování změny velikosti.
+2. Jakmile je <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.Button> ovládací prvek plný, dvakrát klikněte na ikonu v **sadě nástrojů** a vložte další ovládací prvek. <xref:System.Windows.Forms.TableLayoutPanel> Všimněte si, <xref:System.Windows.Forms.TableLayoutPanel> že ovládací prvek vytvoří nové buňky pro přizpůsobení nového ovládacího prvku. Vložte několik dalších ovládacích prvků a sledujte chování při změně velikosti.
 
-3. Změňte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> vlastnost <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize>. Dvakrát klikněte na panel <xref:System.Windows.Forms.Button> ikonu v **nástrojů** vložit <xref:System.Windows.Forms.Button> ovládací prvky do <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek je plný. Dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu v **nástrojů** znovu. Všimněte si, že se zobrazí chybová zpráva z **Návrháře formulářů Windows** oznamující, že nelze vytvořit další řádky a sloupce.
+3. Změňte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> vlastnosti ovládacího prvku na <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize>. Dvojitým kliknutím <xref:System.Windows.Forms.Button> na ikonu v **panelu nástrojů** <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.TableLayoutPanel> vložte ovládací prvky, dokud není ovládací prvek plný. Dvakrát klikněte <xref:System.Windows.Forms.Button> na ikonu na **panelu nástrojů** . Všimněte si, že se zobrazí chybová zpráva od **Návrhář formulářů** informující o tom, že nelze vytvořit další řádky a sloupce.
 
-## <a name="inserting-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením obrysu
+## <a name="inserting-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením jeho obrysu
 
-Můžete vložit do ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> řídit a určit jeho velikost kreslením obrysu v buňce.
+Ovládací prvek můžete vložit do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku a zadat jeho velikost vykreslením jeho obrysu v buňce.
 
-#### <a name="to-insert-a-control-by-drawing-its-outline"></a>Chcete-li vložit ovládací prvek kreslením obrysu
+#### <a name="to-insert-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením jeho obrysu
 
-1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře.
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
 
-2. V **nástrojů**, klikněte na tlačítko <xref:System.Windows.Forms.Button> ikonu ovládacího prvku. Přetáhněte není ji na formuláři.
+2. Na **panelu nástrojů**klikněte <xref:System.Windows.Forms.Button> na ikonu ovládacího prvku. Nepřetáhněte ho do formuláře.
 
-3. Přesuňte ukazatel myši <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Všimněte si, že se ukazatel změní na křížek s <xref:System.Windows.Forms.Button> ikonu ovládací prvek připojen.
+3. Přesuňte ukazatel myši nad <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek. Všimněte si, že se ukazatel změní na vlasovou <xref:System.Windows.Forms.Button> čáru s připojenou ikonou ovládacího prvku.
 
-4. Klepněte a podržte tlačítko myši.
+4. Klikněte a podržte tlačítko myši.
 
-5. Přetažením ukazatele myši nakreslete obrysu <xref:System.Windows.Forms.Button> ovládacího prvku. Pokud jste spokojeni s velikostí, uvolněte tlačítko myši. Všimněte si, <xref:System.Windows.Forms.Button> ovládací prvek je vytvořen v buňce, ve kterém nakreslili osnovy ovládacího prvku.
+5. Přetažením ukazatele myši nakreslete obrys <xref:System.Windows.Forms.Button> ovládacího prvku. Až budete s velikostí spokojeni, uvolněte tlačítko myši. Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvek je vytvořen v buňce, ve které jste nakreslili osnovu ovládacího prvku.
 
-## <a name="multiple-controls-within-cells-are-not-permitted"></a>Není povoleno více ovládacích prvků v buňkách
+## <a name="multiple-controls-within-cells-are-not-permitted"></a>Více ovládacích prvků v buňkách není povoleno.
 
-<xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku může obsahovat pouze jeden podřízený ovládací prvek na buňky.
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek může obsahovat pouze jeden podřízený ovládací prvek na buňku.
 
-#### <a name="to-demonstrate-that-multiple-controls-within-cells-are-not-permitted"></a>K předvedení toho, aby více ovládacích prvků v buňkách nejsou povolené.
+#### <a name="to-demonstrate-that-multiple-controls-within-cells-are-not-permitted"></a>Předvedení nedovoleného více ovládacích prvků v buňkách
 
-- Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> řídit a umístěte ho na jednu z buněk, obsazené. Všimněte si, že <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek neumožňuje vyřadit <xref:System.Windows.Forms.Button> ovládacího prvku do buňky obsazené.
+- Přetáhněte ovládací prvek ze <xref:System.Windows.Forms.TableLayoutPanel> **sady nástrojů** do ovládacího prvku a umístěte jej do jedné z obsazených buněk. <xref:System.Windows.Forms.Button> Všimněte si, <xref:System.Windows.Forms.TableLayoutPanel> že ovládací prvek neumožňuje <xref:System.Windows.Forms.Button> odpustit ovládací prvek do obsazené buňky.
 
-## <a name="swapping-controls"></a>Vzájemná záměna ovládacích prvků
+## <a name="swapping-controls"></a>Výměna ovládacích prvků
 
-<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje vám přepínat ovládací prvky zabírá dvě různé buňky.
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje přepnout ovládací prvky, které zabírají dvě různé buňky.
 
-#### <a name="to-swap-controls"></a>Pro ovládací prvky
+#### <a name="to-swap-controls"></a>Postup při prohození ovládacích prvků
 
-- Přetáhněte jednu z <xref:System.Windows.Forms.Button> ovládací prvky ze obsazené buňky a drop do do jiné buňky obsazené. Všimněte si, že dva ovládací prvky jsou přemístěné z jedné buňky do druhé.
+- Přetáhněte jeden z <xref:System.Windows.Forms.Button> ovládacích prvků z obsazené buňky na jinou obsazenou buňku. Všimněte si, že dva ovládací prvky jsou přesunuty z jedné buňky do druhé.
 
 ## <a name="next-steps"></a>Další kroky
 
-Složitá rozložení pomocí kombinace panely rozložení a ovládacích prvků můžete dosáhnout. Návrhy pro další zkoumání patří:
+Můžete dosáhnout složitých rozložení pomocí kombinace panelů rozložení a ovládacích prvků. Mezi návrhy pro další zkoumání patří:
 
-- Zkuste jednu z změnit velikost <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.
+- Zkuste změnit velikost jednoho z <xref:System.Windows.Forms.Button> ovládacích prvků na větší velikost a poznamenejte si efekt v rozložení.
 
-- Vložit výběr více ovládacích prvků do <xref:System.Windows.Forms.TableLayoutPanel> řídit a Všimněte si, jak jsou ovládací prvky vloženy.
+- Vložte do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku Výběr více ovládacích prvků a Všimněte si, jak jsou ovládací prvky vloženy.
 
-- Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.
+- Panely rozložení mohou obsahovat další panely rozložení. Experimentujte s vyřazením <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.
 
-- Ukotvit <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.
+- <xref:System.Windows.Forms.TableLayoutPanel> Ukotvěte ovládací prvek do nadřazeného formuláře. Změňte velikost formuláře a poznamenejte si efekt v rozložení.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - <xref:System.Windows.Forms.TableLayoutPanel>
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
-- [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Microsoft Windows uživatelské prostředí, oficiální pokyny pro uživatelské rozhraní vývojářů a návrhářů. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](https://www.microsoft.com/mspress/southpacific/books/book11588.htm)
+- [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí zarovnávacím čárám](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+- [Uživatelské prostředí systému Microsoft Windows, oficiální pokyny pro vývojáře a návrháře uživatelského rozhraní. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](https://www.microsoft.com/mspress/southpacific/books/book11588.htm)
 - [Návod: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/991eahec(v=vs.100))
-- [Návod: Vytvoření formuláře Windows lokalizovatelné](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))
+- [Návod: Vytváření lokalizovatelných formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))
 - [Doporučené postupy pro ovládací prvek TableLayoutPanel](best-practices-for-the-tablelayoutpanel-control.md)
 - [Přehled vlastnosti AutoSize](autosize-property-overview.md)
-- [Postupy: Ukotvování ovládacích prvků ve Windows Forms](how-to-dock-controls-on-windows-forms.md)
-- [Postupy: Ukotvení ovládacích prvků ve Windows Forms](how-to-anchor-controls-on-windows-forms.md)
-- [Návod: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md)
+- [Postupy: Ukotvit ovládací prvky na model Windows Forms](how-to-dock-controls-on-windows-forms.md)
+- [Postupy: Ovládací prvky ukotvení na model Windows Forms](how-to-anchor-controls-on-windows-forms.md)
+- [Návod: Rozložení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností AutoSize](windows-forms-controls-padding-autosize.md)

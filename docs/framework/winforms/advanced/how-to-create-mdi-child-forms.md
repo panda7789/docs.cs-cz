@@ -2,59 +2,59 @@
 title: 'Postupy: Vytváření podřízených formulářů MDI'
 ms.date: 03/30/2017
 dev_langs:
-- csharp
-- vb
-- cpp
+- CSharp
+- CPP
+- VB
 helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: 8965231307da84fd555b181440978adbea7e7244
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: f5e8682caf658d159f044528f040b99676355448
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052835"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040116"
 ---
-# <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytvořit podřízený formulář MDI formuláře
+# <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytvořit podřízené formuláře MDI
 
-Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), jako jsou centra interakci s uživatelem.
+Podřízené formuláře MDI jsou zásadním prvkem [aplikací rozhraní MDI (Multiple Document Interface)](multiple-document-interface-mdi-applications.md), protože tyto formuláře jsou centrem interakce s uživatelem.
 
-V následujícím postupu budete používat Visual Studio k vytvoření podřízené formuláře MDI, která se zobrazí <xref:System.Windows.Forms.RichTextBox> nejvíce zpracování textu žádosti podobně jako ovládací prvek. Nahrazování <xref:System.Windows.Forms> ovládací prvek s jinými ovládacími prvky, jako <xref:System.Windows.Forms.DataGridView> ovládací prvek nebo kombinaci ovládací prvky vám umožní vytvořit podřízený formulář MDI systému windows (a při rozšíření i pro aplikace MDI) s různými možnostmi.
+V následujícím postupu použijete Visual Studio k vytvoření podřízeného formuláře MDI, který zobrazí <xref:System.Windows.Forms.RichTextBox> ovládací prvek podobný většině aplikací pro zpracování textu. Nahrazením <xref:System.Windows.Forms> ovládacího prvku dalšími ovládacími prvky, jako je <xref:System.Windows.Forms.DataGridView> například ovládací prvek nebo kombinace ovládacích prvků, můžete vytvořit podřízená okna MDI (a, pomocí rozšíření, aplikací MDI) s různými možnostmi.
 
-## <a name="create-mdi-child-forms"></a>Vytvořit podřízený formulář MDI formuláře
+## <a name="create-mdi-child-forms"></a>Vytvořit podřízené formuláře MDI
 
-1. Vytvoření nového projektu Windows Forms. V **Windows vlastnosti** formuláři, nastavit jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`a jeho `WindowsState` vlastnost `Maximized`.
+1. V aplikaci Visual Studio vytvořte nový projekt aplikace model Windows Forms. V okně **vlastnosti** formuláře nastavte jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> `WindowsState` vlastnost na `true`. `Maximized`
 
-   Ta určuje formuláře jako kontejnerem MDI pro podřízená okna.
+   Tato položka označuje formulář jako kontejner MDI pro podřízená okna.
 
-2. Z `Toolbox`, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formuláři. Nastavte jeho `Text` vlastnost **souboru**.
+2. Z rozhraní `Toolbox` <xref:System.Windows.Forms.MenuStrip> přetáhněte ovládací prvek do formuláře. Nastavte vlastnost na **soubor.** `Text`
 
-3. Klikněte na symbol tří teček (...) vedle položky **položky** vlastnost a klikněte na tlačítko **přidat** přidat dva podřízené položky nabídky pruhu pro nástroj. Nastavte `Text` vlastnost pro tyto položky **nový** a **okno**.
+3. Klikněte na tlačítko se třemi tečkami (...) vedle vlastnosti Items ( **položky** ) a kliknutím na tlačítko **Přidat** přidejte dvě podřízené položky nabídky pruhu nástrojů. Nastavte vlastnost pro tyto položky na **nové** a **okno.** `Text`
 
-4. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **přidat novou položku**.
+4. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
 
-5. V **přidat novou položku** dialogu **formuláře Windows** (v jazyce Visual Basic nebo Visual C#) nebo **Windows Forms aplikace (.NET)** (ve Vizuálu C++) z **Šablony** podokně. V **název** pole, pojmenujte formulář **Form2**. Klikněte na tlačítko **otevřít** tlačítko pro přidání formuláře do projektu.
+5. V dialogovém okně **Přidat novou položku** vyberte v podokně **šablony** možnost **formulář Windows** (v Visual Basic nebo C#v jazyce Visual) nebo v **aplikaci model Windows Forms (** v C++jazyce Visual) (ve vizuálu). Do pole **název** zadejte název formuláře **Form2**. Vyberte **otevřít** a přidejte formulář do projektu.
 
     > [!NOTE]
-    > Podřízený formulář MDI, které jste vytvořili v tomto kroku je běžného formuláře Windows. V důsledku toho je <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost, která vám umožňuje řídit průhlednost formuláře. Ale <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost je navržená pro okna nejvyšší úrovně. Nepoužívejte ho s podřízených formulářů MDI, protože může dojít k problémům Malování.
+    > Podřízený formulář MDI, který jste vytvořili v tomto kroku, je standardním formulářem Windows. V takovém případě má <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost, která umožňuje ovládat průhlednost formuláře. <xref:System.Windows.Forms.Form.Opacity%2A> Vlastnost byla však navržena pro okna nejvyšší úrovně. Nepoužívejte ji s podřízenými formuláři MDI, protože mohou nastat problémy při malování.
 
-     Šablona pro podřízené formuláře MDI bude tento formulář.
+     Tento formulář bude šablonou pro podřízené formuláře MDI.
 
-     **Návrháře formulářů Windows** otevře zobrazení **Form2**.
+     Otevře se **Návrhář formulářů** , kde se zobrazí **Form2**.
 
-6. Z **nástrojů**, přetáhněte **RichTextBox** ovládacího prvku na formuláři.
+6. Z **panelu nástrojů**přetáhněte ovládací prvek **RichTextBox** do formuláře.
 
-7. V **vlastnosti** okno, nastaveno `Anchor` vlastnost **horní, levý** a `Dock` vlastnost **vyplnit**.
+7. V okně **vlastnosti** nastavte `Anchor` vlastnost na `Dock` **horní, levou** a vlastnost na **vyplnit**.
 
-   To způsobí, že <xref:System.Windows.Forms.RichTextBox> ovládací prvek pro úplně naplnění oblasti podřízený formulář MDI, i když se změní velikost formuláře.
+   To způsobí, <xref:System.Windows.Forms.RichTextBox> že ovládací prvek zcela vyplní oblast podřízeného formuláře MDI, i když se změní velikost formuláře.
 
-8. Dvakrát klikněte **nový** vytvořit položku nabídky <xref:System.Windows.Forms.Control.Click> obslužnou rutinu události pro něj.
+8. Dvojitým kliknutím na položku **nové** nabídky vytvořte <xref:System.Windows.Forms.Control.Click> pro ni obslužnou rutinu události.
 
-9. Vložte kód podobný následujícímu vytvořit nový podřízený formulář MDI, když uživatel klikne **nový** položky nabídky.
+9. Vložte kód podobný následujícímu pro vytvoření nového podřízeného formuláře MDI, když uživatel klikne na **novou** položku nabídky.
 
    > [!NOTE]
-   > V následujícím příkladu, zpracuje obslužná rutina události <xref:System.Windows.Forms.Control.Click> událost pro `MenuItem2`. Mějte na paměti, že v závislosti na tom, jaké jsou specifikace architektury aplikace, vaše **nový** nemusí být položka nabídky `MenuItem2`.
+   > V následujícím příkladu obslužná rutina události zpracovává <xref:System.Windows.Forms.Control.Click> událost pro. `MenuItem2` Mějte na paměti, že v závislosti na konkrétní architektuře vaší aplikace nemusí být `MenuItem2`vaše **Nová** položka nabídky.
 
     ```vb
     Protected Sub MDIChildNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem2.Click
@@ -89,25 +89,25 @@ V následujícím postupu budete používat Visual Studio k vytvoření podříz
        }
     ```
 
-   V C++, přidejte následující `#include` direktiv v horní části Form1.h:
+   V C++přidejte následující `#include` direktivu v horní části Form1. h:
 
    ```cpp
    #include "Form2.h"
    ```
 
-10. V rozevíracím seznamu v horní části **vlastnosti** okna, vyberte pruh nabídky, která odpovídá **souboru** pruhu nabídky a nastavte <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastností v okně <xref:System.Windows.Forms.ToolStripMenuItem>.
+10. V rozevíracím seznamu v horní části okna **vlastnosti** vyberte pruh nabídky, který odpovídá pruhu nabídky **soubor** , <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> a nastavte vlastnost na okno <xref:System.Windows.Forms.ToolStripMenuItem>.
 
-    To vám umožní **okno** nabídky Spravovat seznam otevřít podřízených oken MDI zaškrtnutí vedle aktivní podřízené okno.
+    Tím umožníte, aby nabídka **okna** udržovala seznam otevřených podřízených oken MDI se značkou zaškrtnutí vedle aktivního podřízeného okna.
 
-11. Stisknutím klávesy **F5** ke spuštění aplikace. Výběrem **nový** z **souboru** nabídku, můžete vytvořit nové MDI podřízené formuláře, které jsou udržovat přehled o v **okno** položky nabídky.
+11. Stisknutím klávesy **F5** spusťte aplikaci. Výběrem možnosti **Nový** v nabídce **soubor** můžete vytvořit nové podřízené formuláře MDI, které se udržují v položce nabídky **okna** .
 
     > [!NOTE]
-    > Pokud má podřízený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídky) a je otevřen v rámci, který má nadřazený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídek), v nabídce položky budou automaticky sloučit Pokud jste nastavili <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnosti (a volitelně také <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost). Nastavte <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnost objektu i <xref:System.Windows.Forms.MainMenu> komponenty a všechny položky nabídky podřízené formuláře <xref:System.Windows.Forms.MenuMerge.MergeItems>. Kromě toho nastavení <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost tak, aby z obou nabídek položky nabídky zobrazí do požadovaného pořadí. Kromě toho vzít v úvahu, že při zavření nadřazený formulář MDI každý podřízený formulář MDI formuláře vyvolá <xref:System.Windows.Forms.Form.Closing> události před <xref:System.Windows.Forms.Form.Closing> se vyvolá událost pro nadřazený objekt MDI. Zrušení podřízený formulář MDI <xref:System.Windows.Forms.Form.Closing> události nezabrání nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> událost vyvolána; však <xref:System.ComponentModel.CancelEventArgs> argument pro nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> události se nastaví na `true`. Můžete vynutit nadřazený objekt MDI a všechny podřízené formuláře MDI zavřete tak, že nastavíte <xref:System.ComponentModel.CancelEventArgs> argument `false`.
+    > Pokud má <xref:System.Windows.Forms.MainMenu> podřízený formulář MDI komponentu (se obvykle strukturou nabídky položek nabídky) a je otevřena v nadřazeném formuláři MDI, který <xref:System.Windows.Forms.MainMenu> má komponentu (obvykle se jedná o strukturu nabídky položek nabídky), položky nabídky se sloučí automaticky. Pokud jste nastavili <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnost (a volitelně <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost). Nastavte vlastnost obou <xref:System.Windows.Forms.MainMenu> komponent a všechny položky nabídky podřízeného formuláře na <xref:System.Windows.Forms.MenuMerge.MergeItems>. <xref:System.Windows.Forms.MenuItem.MergeType%2A> Kromě toho nastavte <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost tak, aby se položky nabídky z obou nabídek zobrazovaly v požadovaném pořadí. Kromě toho mějte na paměti, že při zavření nadřazeného formuláře MDI vyvolá <xref:System.Windows.Forms.Form.Closing> každá z podřízených formulářů MDI událost <xref:System.Windows.Forms.Form.Closing> před vyvoláním události pro nadřazený objekt MDI. Zrušení <xref:System.Windows.Forms.Form.Closing> události podřízeného objektu MDI nebrání <xref:System.ComponentModel.CancelEventArgs> vyvolání <xref:System.Windows.Forms.Form.Closing> události nadřazeného objektu MDI. argument pro <xref:System.Windows.Forms.Form.Closing> událost nadřazené položky MDI však bude nyní nastaven na `true`hodnotu. Můžete vynutit, aby nadřazený objekt MDI a všechny podřízené formuláře MDI byly uzavřeny <xref:System.ComponentModel.CancelEventArgs> nastavením argumentu na. `false`
 
 ## <a name="see-also"></a>Viz také:
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
-- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
-- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
-- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)
+- [Postupy: Vytvoření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
+- [Postupy: Zjistit aktivní podřízenou položku MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odeslat data do aktivního podřízeného rozhraní MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Uspořádat podřízené formuláře MDI](how-to-arrange-mdi-child-forms.md)

@@ -7,242 +7,239 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: c91fecf9e786f4a8e35486e7b30e9efe36c972e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3ce6c250fadbb56b341d5e8dec3a9cb9d28940fe
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771641"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040258"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
-Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. Návrhář formulářů Windows poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout. Jednou z vašich nejdůležitějších je <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.  
-  
- Zarovnávacích čar zobrazí přesně, kde zarovnejte ovládací prvky s jinými ovládacími prvky. Také ukazují doporučená vzdálenosti pro okraje mezi ovládacími prvky, jak je uvedeno v pokynech uživatelské rozhraní Windows. Podrobnosti najdete v tématu [vývoj a návrh uživatelského rozhraní](https://go.microsoft.com/FWLink/?LinkId=83878).  
-  
- Zarovnávacích čar usnadňují zarovnat své ovládací prvky pro ostré, profesionální vzhled a chování (vzhled a chování).  
-  
- Úlohy v tomto návodu zahrnují:  
-  
-- Vytvoření projektu Windows Forms  
-  
-- Mezer a zarovnání ovládacích prvků pomocí zarovnávacích čar  
-  
-- Zarovnání do formuláře a kontejner rozpětí  
-  
-- Zarovnání seskupené ovládací prvky  
-  
-- Umístit ovládací prvek sbalením jeho velikost pomocí zarovnávacích čar  
-  
-- Při přetažení ovládacího prvku z panelu nástrojů pomocí zarovnávacích čar  
-  
-- Změna velikosti ovládacích prvků pomocí zarovnávacích čar  
-  
-- Zarovnání popisku na Text ovládacího prvku  
-  
-- Pomocí zarovnávacích čar navigaci pomocí klávesnice  
-  
-- Zarovnávacích čar a panely rozložení  
-  
-- Zakázání zarovnávacích čar  
-  
- Až budete hotovi, budete mít představu o úloze rozložení pomocí zarovnávacích čar funkce.  
-  
+Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro mnoho aplikací. Návrhář formulářů poskytuje mnoho nástrojů pro rozložení, které vám to umožní. Jednou z nejdůležitějších funkcí je tato <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.
+
+ Zarovnávacím čárám vám ukáže přesně, kde můžete zarovnat ovládací prvky s dalšími ovládacími prvky. Také ukazují doporučené vzdálenosti pro okraje mezi ovládacími prvky, jak je určeno v pokynech uživatelského rozhraní systému Windows. Podrobnosti najdete v tématu [Návrh a vývoj uživatelského rozhraní](https://go.microsoft.com/FWLink/?LinkId=83878).
+
+ Zarovnávacím čárám usnadňuje zarovnání ovládacích prvků pro zajištění ostrých a profesionálních vzhledů a chování (vzhled a chování).
+
+ Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
+
+- Vytvoření projektu model Windows Forms
+
+- Mezery a zarovnání ovládacích prvků pomocí zarovnávacím čárám
+
+- Zarovnání na okraje formuláře a kontejneru
+
+- Zarovnání na seskupené ovládací prvky
+
+- Použití zarovnávacím čárám k umístění ovládacího prvku po sbalení jeho velikosti
+
+- Použití zarovnávacím čárám při přetahování ovládacího prvku ze sady nástrojů
+
+- Změna velikosti ovládacích prvků pomocí zarovnávacím čárám
+
+- Zarovnání popisku na text ovládacího prvku
+
+- Použití zarovnávacím čárám s navigací klávesnice
+
+- Zarovnávacím čárám a panely rozložení
+
+- Zakázání zarovnávacím čárám
+
+ Až budete hotovi, budete obeznámeni s tím, jak se role rozložení hraje funkcí zarovnávacím čárám.
+
+## <a name="creating-the-project"></a>Vytvoření projektu
+ Prvním krokem je vytvoření projektu a nastavení formuláře.
+
+### <a name="to-create-the-project"></a>Vytvoření projektu
+
+1. Vytvoření projektu aplikace založeného na systému Windows s názvem "SnaplineExample" (**soubor** > **nového** > **projektu** >  **C# Visual** nebo **Visual Basic** > **Classic Desktopová** > **aplikace model Windows Forms**).
+
+2. V Návrháři formulářů vyberte formulář.
+
+## <a name="spacing-and-aligning-controls-using-snaplines"></a>Mezery a zarovnání ovládacích prvků pomocí zarovnávacím čárám
+ Zarovnávacím čárám poskytuje přesný a intuitivní způsob, jak zarovnat ovládací prvky ve formuláři. Zobrazí se, když přesouváte vybraný ovládací prvek nebo ovládací prvky poblíž pozice, která by byla zarovnána s jiným ovládacím prvkem nebo sadou ovládacích prvků. Váš výběr bude "přichycen" do navrhované pozice při přesunu za ostatní ovládací prvky.
+
+### <a name="to-arrange-controls-using-snaplines"></a>Uspořádání ovládacích prvků pomocí zarovnávacím čárám
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.Button>
+
+2. <xref:System.Windows.Forms.Button> Přesuňte ovládací prvek do pravého dolního rohu formuláře. Všimněte si, že zarovnávacím čárám, který <xref:System.Windows.Forms.Button> se zobrazí jako ovládací prvek, přistupuje k dolnímu a pravému okraji formuláře. Tyto zarovnávacím čárámy zobrazují doporučenou vzdálenost mezi ohraničením ovládacího prvku a formulářem.
+
+3. <xref:System.Windows.Forms.Button> Přesuňte ovládací prvek kolem ohraničení formuláře a Všimněte si, kde se zobrazí zarovnávacím čárám. Až budete hotovi, přesuňte <xref:System.Windows.Forms.Button> ovládací prvek poblíž středu formuláře.
+
+4. Přetáhněte jiný <xref:System.Windows.Forms.Button> ovládací prvek z **panelu nástrojů** do formuláře.
+
+5. Přesuňte druhý <xref:System.Windows.Forms.Button> ovládací prvek, dokud není téměř na první úrovni s prvním. Všimněte si snapline, který se zobrazí na účaří textu obou tlačítek, a Všimněte si, že ovládací prvek, který přesouváte, se přichytí k pozici, která je přesně na úrovni s druhým ovládacím prvkem.
+
+6. Přesuňte druhý <xref:System.Windows.Forms.Button> ovládací prvek do umístění přímo nad první. Všimněte si zarovnávacím čárám, který se zobrazí podél levého a pravého okraje obou tlačítek, a Všimněte si, že ovládací prvek, který přesouváte, se přichytí k pozici, která je přesně zarovnána s druhým ovládacím prvkem.
+
+7. Vyberte jeden z <xref:System.Windows.Forms.Button> ovládacích prvků a přesuňte ho blízko k druhému, dokud nebudou skoro dotek. Všimněte si snapline, který se mezi nimi objevuje. Tato vzdálenost je doporučená vzdálenost mezi ohraničením ovládacích prvků. Všimněte si také, že ovládací prvek, který přesouváte, se přichytí k této pozici.
+
+8. Přetáhněte dva <xref:System.Windows.Forms.Panel> ovládací prvky ze **sady nástrojů** do formuláře.
+
+9. Přesuňte jeden z <xref:System.Windows.Forms.Panel> ovládacích prvků, dokud není téměř na první úrovni s prvním. Všimněte si zarovnávacím čárám, který se zobrazí podél horního a dolního okraje obou ovládacích prvků, a Všimněte si, že ovládací prvek, který přesouváte, se přichytí k pozici, která je přesně na úrovni s druhým ovládacím prvkem.
+
+## <a name="aligning-to-form-and-container-margins"></a>Zarovnání na okraje formuláře a kontejneru
+ Zarovnávacím čárám vám umožní sjednotit ovládací prvky tak, aby byly v souladu s konzistentním způsobem.
+
+### <a name="to-align-controls-to-form-and-container-margins"></a>Zarovnání ovládacích prvků na okraje formuláře a kontejneru
+
+1. Vyberte jeden z <xref:System.Windows.Forms.Button> ovládacích prvků a přesuňte ho blízko k pravému okraji formuláře, dokud se nezobrazí snapline. Vzdálenost snapline od pravého ohraničení je součtem <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacího prvku a hodnot <xref:System.Windows.Forms.Control.Padding%2A> vlastností formuláře.
+
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-## <a name="creating-the-project"></a>Vytvoření projektu  
- Prvním krokem je vytvoření projektu a nastavení formuláře.  
-  
-### <a name="to-create-the-project"></a>Vytvoření projektu  
-  
-1. Vytvořte projekt aplikace pro systém Windows s názvem "SnaplineExample" (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
-  
-2. V Návrháři formulářů vyberte formulář.  
-  
-## <a name="spacing-and-aligning-controls-using-snaplines"></a>Mezer a zarovnání ovládacích prvků pomocí zarovnávacích čar  
- Zarovnávacích čar poskytnout přesné a intuitivní způsob zarovnání ovládacích prvků na formuláři. Zobrazí se při přesunování vybraný ovládací prvek nebo prvky v pozici, která by bylo v souladu s jiný ovládací prvek nebo sadu ovládacích prvků. Váš výběr se "přichytávat" k navrhované pozici jako přesunout za další ovládací prvky.  
-  
-### <a name="to-arrange-controls-using-snaplines"></a>K uspořádání ovládacích prvků pomocí zarovnávacích čar  
-  
-1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
-  
-2. Přesunout <xref:System.Windows.Forms.Button> ovládacího prvku do pravého dolního rohu formuláře. Poznámka: zarovnávacích čar, které se zobrazí jako <xref:System.Windows.Forms.Button> ovládací prvek blíží dolní a pravé ohraničení tvaru. Tyto zarovnávacích čar zobrazit doporučené vzdálenost mezi ohraničení ovládacího prvku a formuláře.  
-  
-3. Přesunout <xref:System.Windows.Forms.Button> řízení kolem okraje formulář opravdu zavřít a Všimněte si, kde se zobrazí zarovnávacích čar. Po dokončení přesunutí <xref:System.Windows.Forms.Button> ovládací prvek poblíž středu tvaru.  
-  
-4. Přetáhněte další <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
-  
-5. Přesunout druhý <xref:System.Windows.Forms.Button> ovládací prvek, dokud je téměř úroveň s prvním. Mějte na paměti snapline –, který se zobrazí na základní text i tlačítek a Všimněte si, že ovládací prvek, který se přesouvají přitahuje pozici, která je právě kousek jiný ovládací prvek.  
-  
-6. Přesunout druhý <xref:System.Windows.Forms.Button> ovládací prvek, dokud je umístěný přímo nad první. Všimněte si zarovnávacích čar, které se zobrazují podél levých a pravých okrajů obě tlačítka a Všimněte si, že ovládací prvek jste přesun při kolika rozehrávkách byli na pozici, která je právě v souladu s jiný ovládací prvek.  
-  
-7. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko druhé, dokud jsou téměř zásahu. Poznámka: snapline –, který se zobrazí mezi nimi. Tato vzdálenost je doporučené vzdálenost mezi ohraničení ovládacích prvků. Všimněte si také, že ovládací prvek, který se přesouvají Připnutí na tuto pozici.  
-  
-8. Přetáhněte dva <xref:System.Windows.Forms.Panel> ovládacích prvků z **nástrojů** do formuláře.  
-  
-9. Jak přesunout některou z <xref:System.Windows.Forms.Panel> dokud je téměř úroveň s prvním. Všimněte si zarovnávacích čar, které se zobrazují podél horní a dolní okraj oba ovládací prvky a Všimněte si, že ovládací prvek, který se přesouvají přitahuje pozici, která je právě kousek jiný ovládací prvek.  
-  
-## <a name="aligning-to-form-and-container-margins"></a>Zarovnání do formuláře a kontejner rozpětí  
- Zarovnávacích čar pomáhají Zarovnat ovládací prvky do formuláře a kontejner rozpětí konzistentním způsobem.  
-  
-### <a name="to-align-controls-to-form-and-container-margins"></a>Chcete-li zarovnat ovládací prvky do formuláře a kontejner rozpětí  
-  
-1. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko pravého ohraničení tvaru, dokud se nezobrazí snapline –. Vzdálenost snapline – od pravého ohraničení je součtem ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnost a formuláře <xref:System.Windows.Forms.Control.Padding%2A> hodnot vlastností.  
-  
-> [!NOTE]
->  Pokud formulář <xref:System.Windows.Forms.Control.Padding%2A> je nastavena na 0,0,0,0, Návrhář formulářů Windows poskytuje formuláře stínovaný <xref:System.Windows.Forms.Control.Padding%2A> hodnotu 9,9,9,9. Chcete-li přepsat toto chování, přiřadíte jinou hodnotu než 0,0,0,0.  
-  
-1. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> vlastnost na hodnotu 0. Podrobnosti najdete v tématu [názorný postup: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md).  
-  
-2. Přesunout <xref:System.Windows.Forms.Button> ovládací prvek blízko pravého ohraničení tvaru, dokud se nezobrazí snapline –. Tato vzdálenost je nyní dán hodnotou formuláře <xref:System.Windows.Forms.Control.Padding%2A> vlastnost.  
-  
-3. Přetáhněte <xref:System.Windows.Forms.GroupBox> ovládacího prvku **nástrojů** do formuláře.  
-  
-4. Změňte hodnotu <xref:System.Windows.Forms.GroupBox> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> vlastnost až 10.  
-  
-5. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.GroupBox> ovládacího prvku.  
-  
-6. Přesunout <xref:System.Windows.Forms.Button> ovládací prvek blízko pravého okraje <xref:System.Windows.Forms.GroupBox> ovládací prvek, dokud se nezobrazí snapline –. Přesunout <xref:System.Windows.Forms.Button> ovládacích prvků uvnitř <xref:System.Windows.Forms.GroupBox> ovládacího prvku a Všimněte si, kde se zobrazí zarovnávacích čar.  
-  
-## <a name="aligning-to-grouped-controls"></a>Zarovnání seskupené ovládací prvky  
- Vám pomůže zarovnávacích čar zarovnat seskupené ovládací prvky také jako ovládací prvky v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku.  
-  
-### <a name="to-align-to-grouped-controls"></a>Chcete-li zarovnat seskupené ovládací prvky  
-  
-1. Vyberte dva ovládací prvky na formuláři. Přesunutí výběru a poznamenejte si zarovnávacích čar, které zobrazí mezi svůj výběr a další ovládací prvky.  
-  
-2. Přetáhněte <xref:System.Windows.Forms.GroupBox> ovládacího prvku **nástrojů** do formuláře.  
-  
-3. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.GroupBox> ovládacího prvku.  
-  
-4. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ji <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Poznámka: zarovnávacích čar, které se zobrazí na okraji <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Všimněte si také zarovnávacích čar, které se zobrazí na okraji <xref:System.Windows.Forms.Button> ovládací prvek, který je obsažen <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Ovládací prvky, které jsou podřízené objekty daného ovládacího prvku kontejneru také podporují zarovnávacích čar.  
-  
-## <a name="using-snaplines-to-place-a-control-by-outlining-its-size"></a>Umístit ovládací prvek sbalením jeho velikost pomocí zarovnávacích čar  
- Pomáhají zarovnávacích čar je Zarovnat ovládací prvky při první umístění je ve formuláři.  
-  
-### <a name="to-use-snaplines-to-place-a-control-by-outlining-its-size"></a>Umístěte ovládací prvek sbalením jeho velikost pomocí zarovnávacích čar  
-  
-1. V **nástrojů**, klikněte na tlačítko <xref:System.Windows.Forms.Button> ikonu ovládacího prvku. Přetáhněte není ji na formuláři.  
-  
-2. Přesuňte ukazatel myši nad návrhovou plochu formuláře. Všimněte si, že se ukazatel změní na křížek s <xref:System.Windows.Forms.Button> ikonu ovládací prvek připojen. Všimněte si také zarovnávacích čar, které zobrazí navrhnout zarovnané umístění <xref:System.Windows.Forms.Button> ovládacího prvku.  
-  
-3. Klepněte a podržte tlačítko myši.  
-  
-4. Přetažením ukazatele myši kolem formuláře. Všimněte si, že je vykreslován osnovy, určující pozici a velikost ovládacího prvku.  
-  
-5. Přetažením ukazatele, dokud nebude zarovnán s dalším ovládacím prvkem na formuláři. Všimněte si, že se zobrazí snapline – k označení zarovnání.  
-  
-6. Uvolněte tlačítko myši. Ovládací prvek je vytvořen na umístění a velikost indikován osnovy.  
-  
-## <a name="using-snaplines-when-dragging-a-control-from-the-toolbox"></a>Při přetažení ovládacího prvku z panelu nástrojů pomocí zarovnávacích čar  
- Usnadňují zarovnávacích čar zarovnání řídí, kdy přetáhněte je z **nástrojů** do formuláře.  
-  
-### <a name="to-use-snaplines-when-dragging-a-control-from-the-toolbox"></a>Chcete-li pomocí zarovnávacích čar při přetažení ovládacího prvku z panelu nástrojů  
-  
-1. Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do formuláře, ale ne uvolněte tlačítko myši.  
-  
-2. Přesuňte ukazatel myši nad návrhovou plochu formuláře. Všimněte si, že ukazatel se změní pozici, na kterou nový <xref:System.Windows.Forms.Button> ovládací prvek bude vytvořen.  
-  
-3. Přetažením ukazatele myši kolem formuláře. Mějte na paměti zarovnávacích čar, které zobrazí navrhnout zarovnané umístění <xref:System.Windows.Forms.Button> ovládacího prvku. Umožňuje najdete pozici, která je v souladu s další ovládací prvky.  
-  
-4. Uvolněte tlačítko myši. Ovládací prvek je vytvořen na pozici zarovnávacích čar.  
-  
-## <a name="resizing-controls-using-snaplines"></a>Změna velikosti ovládacích prvků pomocí zarovnávacích čar  
- Zarovnávacích čar, které vám pomohou Zarovnat ovládací prvky, jak změnit jejich velikost.  
-  
-### <a name="to-resize-a-control-using-snaplines"></a>Pro změnu velikosti ovládacího prvku s použitím zarovnávacích čar  
-  
-1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
-  
-2. Změnit velikost <xref:System.Windows.Forms.Button> uchopíte jeho jeden úchyty pro změnu velikosti a přetažením rohu pod kontrolou. Podrobnosti najdete v tématu [jak: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md).  
-  
-3. Přetáhněte úchyt pro změnu velikosti dobu, než <xref:System.Windows.Forms.Button> ohraničení ovládacího prvku zarovnán s dalším ovládacím prvkem. Všimněte si, že se zobrazí snapline –. Všimněte si také, že přitahuje pozici snapline – úchyt pro změnu velikosti.  
-  
-4. Změnit velikost <xref:System.Windows.Forms.Button> ovládacího prvku v různých pokynů a zarovnat úchyt pro změnu velikosti na různé ovládací prvky. Všimněte si, jak zarovnávacích čar zobrazují v různých orientace k označení zarovnání.  
-  
-## <a name="aligning-a-label-to-a-controls-text"></a>Zarovnání popisku na Text ovládacího prvku  
- Některé ovládací prvky nabídky snapline – pro zarovnání jiných ovládacích prvků zobrazený text.  
-  
-### <a name="to-align-a-label-to-a-controls-text"></a>Chcete-li zarovnat popisek pro text ovládacího prvku  
-  
-1. Přetáhněte <xref:System.Windows.Forms.TextBox> ovládacího prvku **nástrojů** do formuláře. Když přetáhnete <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři klikněte smart piktogram a vyberte **nastavit text textBox1** možnost. Podrobnosti najdete v tématu [názorný postup: Provádění obecných úloh pomocí inteligentních značek v Windows Forms ovládací prvky](performing-common-tasks-using-smart-tags-on-wf-controls.md).  
-  
-2. Přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** do formuláře.  
-  
-3. Změňte hodnotu <xref:System.Windows.Forms.Label> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`. Všimněte si, že ohraničení ovládacího prvku jsou přizpůsobeny zobrazení textu.  
-  
-4. Přesunout <xref:System.Windows.Forms.Label> ovládacího prvku na levé straně <xref:System.Windows.Forms.TextBox> řídit, takže je zarovnáno s dolní hranou <xref:System.Windows.Forms.TextBox> ovládacího prvku. Všimněte si snapline –, který se zobrazí podél dolního okraje dvou ovládacích prvků.  
-  
-5. Přesunout <xref:System.Windows.Forms.Label> ovládací prvek mírně nahoru, dokud <xref:System.Windows.Forms.Label> text a <xref:System.Windows.Forms.TextBox> je text zarovnán. Všimněte si, jinak upravený snapline –, který se zobrazí, určující, kdy jsou zarovnané textová pole ovládacích prvků.  
-  
-## <a name="using-snaplines-with-keyboard-navigation"></a>Pomocí zarovnávacích čar navigaci pomocí klávesnice  
- Abyste zakázali pomáhají zarovnávacích čar řídí, kdy jsou uspořádání pomocí kláves se šipkami.  
-  
-### <a name="to-use-snaplines-with-keyboard-navigation"></a>Pomocí zarovnávacích čar navigaci pomocí klávesnice  
-  
-1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře. Umístěte ho do levého horního rohu formuláře.  
-  
-2. Stisknutím klávesy CTRL + ŠIPKA DOLŮ. Všimněte si, že ovládací prvek přesune na první místo k dispozici vodorovné zarovnání dolů formuláře.  
-  
-3. Stisknutím klávesy CTRL + ŠIPKA dolů, dokud nedosáhne ovládacího prvku dolní části formuláře. Poznamenejte si umístění, které zabírá při jejich přesunu dolů formuláře.  
-  
-4. Stisknutím klávesy CTRL + ŠIPKA vpravo. Všimněte si, že ovládací prvek přesune na první místo k dispozici svislé zarovnání přes celý formulář.  
-  
-5. Stisknutím klávesy CTRL + Šipka doprava, dokud nedosáhne stranách formuláře ovládací prvek. Poznamenejte si umístění, které zabírá při jejich přesunu přes celý formulář.  
-  
-6. Přesuňte ovládání kolem formuláři pomocí kombinace kláves se šipkami. Poznamenejte si umístění, které zabírá ovládacího prvku a zarovnávacích čar, které musí být.  
-  
-7. Stiskněte SHIFT + libovolná klávesa se šipkou pro změnu velikosti <xref:System.Windows.Forms.Button> ovládací prvek vždy o jeden pixel.  
-  
-8. Stiskněte kombinaci kláves CTRL + SHIFT + libovolná klávesa se šipkou pro změnu velikosti <xref:System.Windows.Forms.Button> ovládacího prvku v přírůstcích po snapline –.  
-  
-## <a name="snaplines-and-layout-panels"></a>Zarovnávacích čar a panely rozložení  
- V rámci panely rozložení jsou zakázány zarovnávacích čar.  
-  
-### <a name="to-selectively-disable-snaplines"></a>K selektivnímu zakázání zarovnávacích čar  
-  
-1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře.  
-  
-2. Dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu ovládacího prvku v **nástrojů**. Všimněte si, že nový ovládací prvek tlačítko se zobrazí v <xref:System.Windows.Forms.TableLayoutPanel> první buňky ovládacího prvku.  
-  
-3. Dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu ovládacího prvku v **nástrojů** dvakrát více. Kvůli tomu jednu prázdnou buňku v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
-  
-4. Přetáhněte <xref:System.Windows.Forms.Button> řízení z **nástrojů** do prázdné buňky <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Všimněte si, že žádné zarovnávacích čar zobrazí.  
-  
-5. Přetáhněte <xref:System.Windows.Forms.Button> řízení z celkového počtu <xref:System.Windows.Forms.TableLayoutPanel> řídit a přesuňte ji <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Všimněte si, že zarovnávacích čar znovu nezobrazí.  
-  
-## <a name="disabling-snaplines"></a>Zakázání zarovnávacích čar  
- Ve výchozím nastavení jsou zapnuté zarovnávacích čar. Zarovnávacích čar můžete zakázat jednotlivě, nebo je můžete zakázat v návrhovém prostředí.  
-  
-### <a name="to-selectively-disable-snaplines"></a>K selektivnímu zakázání zarovnávacích čar  
-  
-- Stiskněte klávesu ALT a při přesunutí ovládacího prvku kolem formuláře.  
-  
-     Všimněte si, že zobrazovat žádné zarovnávacích čar a ovládací prvek není Přichytit k všechny potenciální zarovnání pozic.  
-  
-### <a name="to-disable-snaplines-in-the-design-environment"></a>Chcete-li zakázat zarovnávacích čar v prostředí návrhu  
-  
-1. Z **nástroje** nabídky, otevřete **možnosti** dialogové okno. Otevřete dialogové okno návrháře formulářů Windows. Podrobnosti najdete v tématu [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100)).  
-  
-2. Vyberte **Obecné** uzlu. V **režim rozložení** oddíl, změna výběru z **zarovnávacích čar** k **SnapToGrid**.  
-  
-3. Klikněte na tlačítko OK, použijte nastavení.  
-  
-4. Vyberte ovládací prvek na formuláři a pohybujte jím další ovládací prvky. Všimněte si, že nejsou zobrazeny zarovnávacích čar.  
-  
-## <a name="next-steps"></a>Další kroky  
- Zarovnávacích čar nabízejí intuitivní dopravních zarovnání ovládacích prvků na formuláři. Návrhy pro další zkoumání patří:  
-  
-- Zkuste vnoření <xref:System.Windows.Forms.GroupBox> ovládacího prvku v jiném <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Místo <xref:System.Windows.Forms.Button> ovládací prvek v rámci podřízené <xref:System.Windows.Forms.GroupBox> ovládacího prvku a druhý v rámci nadřazené <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Přesunout <xref:System.Windows.Forms.Button> kolem ovládacích prvků a v tématu Jak zarovnávacích čar překračují hranice kontejneru.  
-  
-- Vytvořte sloupec <xref:System.Windows.Forms.TextBox> ovládací prvky a odpovídající sloupec <xref:System.Windows.Forms.Label> ovládacích prvků. Nastavte hodnotu <xref:System.Windows.Forms.Label> ovládacích prvků <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`. Pomocí zarovnávacích čar můžete přesunout <xref:System.Windows.Forms.Label> řídí tak jejich zobrazovaného textu je v souladu s textu <xref:System.Windows.Forms.TextBox> ovládacích prvků.  
-  
- Informace o návrhu uživatelských rozhraní Windows najdete v tématu knihy *činnost koncového uživatele Microsoft Windows, oficiální pokyny pro uživatelské rozhraní vývojářů a návrhářů* Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1).  
-  
+>  Pokud je <xref:System.Windows.Forms.Control.Padding%2A> vlastnost formuláře nastavená na 0, 0, 0, 0, Návrhář formulářů má formu <xref:System.Windows.Forms.Control.Padding%2A> stínovou hodnotu 9, 9, 9, 9. Chcete-li toto chování přepsat, přiřaďte hodnotu jinou než 0, 0, 0, 0.
+
+1. Změňte hodnotu <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacího prvku rozbalením <xref:System.Windows.Forms.Control.Margin%2A> <xref:System.Windows.Forms.Padding.All%2A> položky v okně **vlastnosti** a nastavením vlastnosti na hodnotu 0. Podrobnosti najdete v tématu [Návod: Rozložení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností](windows-forms-controls-padding-autosize.md)AutoSize.
+
+2. <xref:System.Windows.Forms.Button> Přesuňte ovládací prvek blízko k pravému okraji formuláře, dokud se nezobrazí snapline. Tato vzdálenost je nyní dána hodnotou <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti formuláře.
+
+3. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.GroupBox>
+
+4. Rozbalením <xref:System.Windows.Forms.GroupBox> <xref:System.Windows.Forms.Control.Padding%2A> <xref:System.Windows.Forms.Control.Padding%2A> položkyvokněVlastnostianastavenímvlastnostinahodnotu10<xref:System.Windows.Forms.Padding.All%2A> změňte hodnotu vlastnosti ovládacího prvku.
+
+5. Přetáhněte ovládací prvek ze <xref:System.Windows.Forms.GroupBox> **sady nástrojů** do ovládacího prvku. <xref:System.Windows.Forms.Button>
+
+6. Přesuňte ovládací prvek blízko k pravému okraji <xref:System.Windows.Forms.GroupBox> ovládacího prvku, dokud se nezobrazí snapline. <xref:System.Windows.Forms.Button> Přesuňte ovládací prvek <xref:System.Windows.Forms.GroupBox> v ovládacím prvku a Všimněte si, kde se zobrazí zarovnávacím čárám. <xref:System.Windows.Forms.Button>
+
+## <a name="aligning-to-grouped-controls"></a>Zarovnání na seskupené ovládací prvky
+ Pomocí zarovnávacím čárám můžete zarovnat seskupené ovládací prvky i ovládací prvky v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku.
+
+### <a name="to-align-to-grouped-controls"></a>Zarovnání na seskupené ovládací prvky
+
+1. Vyberte dva ovládací prvky ve formuláři. Posuňte výběr kolem a poznamenejte si zarovnávacím čárám, který se zobrazí mezi vaším výběrem a dalšími ovládacími prvky.
+
+2. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.GroupBox>
+
+3. Přetáhněte ovládací prvek ze <xref:System.Windows.Forms.GroupBox> **sady nástrojů** do ovládacího prvku. <xref:System.Windows.Forms.Button>
+
+4. Vyberte jeden z <xref:System.Windows.Forms.Button> ovládacích prvků a přesuňte jej <xref:System.Windows.Forms.GroupBox> kolem ovládacího prvku. Všimněte si zarovnávacím čárám, který se zobrazí na okrajích <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Všimněte si také zarovnávacím čárám, který se zobrazí na okrajích <xref:System.Windows.Forms.Button> ovládacího prvku, který je obsažen <xref:System.Windows.Forms.GroupBox> v ovládacím prvku. Ovládací prvky, které jsou podřízené ovládacímu prvku kontejneru, také podporují zarovnávacím čárám.
+
+## <a name="using-snaplines-to-place-a-control-by-outlining-its-size"></a>Použití zarovnávacím čárám k umístění ovládacího prvku po sbalení jeho velikosti
+ Zarovnávacím čárám vám pomůžou Zarovnat ovládací prvky při jejich prvním umístění na formuláři.
+
+### <a name="to-use-snaplines-to-place-a-control-by-outlining-its-size"></a>Použití zarovnávacím čárám k umístění ovládacího prvku po sbalení jeho velikosti
+
+1. Na **panelu nástrojů**klikněte <xref:System.Windows.Forms.Button> na ikonu ovládacího prvku. Nepřetáhněte ho do formuláře.
+
+2. Přesuňte ukazatel myši nad návrhovou plochu formuláře. Všimněte si, že se ukazatel změní na vlasovou <xref:System.Windows.Forms.Button> čáru s připojenou ikonou ovládacího prvku. Všimněte si také zarovnávacím čárám, který se zobrazí pro návrh zarovnané pozice <xref:System.Windows.Forms.Button> ovládacího prvku.
+
+3. Klikněte a podržte tlačítko myši.
+
+4. Přetáhněte ukazatel myši kolem formuláře. Všimněte si, že je vykreslen obrys, který označuje polohu a velikost ovládacího prvku.
+
+5. Přetáhněte ukazatel, dokud není zarovnán k jinému ovládacímu prvku ve formuláři. Všimněte si, že k označení zarovnání se zobrazí snapline.
+
+6. Uvolněte tlačítko myši. Ovládací prvek je vytvořen na pozici a velikosti vyznačené obrysem.
+
+## <a name="using-snaplines-when-dragging-a-control-from-the-toolbox"></a>Použití zarovnávacím čárám při přetahování ovládacího prvku ze sady nástrojů
+ Zarovnávacím čárám vám pomůžou Zarovnat ovládací prvky při jejich přetahování z **panelu nástrojů** do formuláře.
+
+### <a name="to-use-snaplines-when-dragging-a-control-from-the-toolbox"></a>Použití zarovnávacím čárám při přetahování ovládacího prvku ze sady nástrojů
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře, ale neuvolní tlačítko myši. <xref:System.Windows.Forms.Button>
+
+2. Přesuňte ukazatel myši nad návrhovou plochu formuláře. Všimněte si, že se ukazatel změní, aby označoval pozici, na <xref:System.Windows.Forms.Button> které bude nový ovládací prvek vytvořen.
+
+3. Přetáhněte ukazatel myši kolem formuláře. Všimněte si zarovnávacím čárám, který se zobrazí pro návrh zarovnané pozice <xref:System.Windows.Forms.Button> ovládacího prvku. Najde pozici, která je zarovnána s jinými ovládacími prvky.
+
+4. Uvolněte tlačítko myši. Ovládací prvek se vytvoří na pozici označené zarovnávacím čárámem.
+
+## <a name="resizing-controls-using-snaplines"></a>Změna velikosti ovládacích prvků pomocí zarovnávacím čárám
+ Zarovnávacím čárám vám pomůžou Zarovnat ovládací prvky podle jejich velikosti.
+
+### <a name="to-resize-a-control-using-snaplines"></a>Změna velikosti ovládacího prvku pomocí zarovnávacím čárám
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.Button>
+
+2. Změňte velikost <xref:System.Windows.Forms.Button> ovládacího prvku tak, že přetáhnete jeden z rohových úchytů pro změnu velikosti a přetažením. Podrobnosti najdete v tématu [How to: Změna velikosti ovládacích prvků](how-to-resize-controls-on-windows-forms.md)na model Windows Forms.
+
+3. Přetáhněte úchyt pro změnu velikosti, dokud jedna <xref:System.Windows.Forms.Button> z ohraničení ovládacího prvku není zarovnána k jinému ovládacímu prvku. Všimněte si, že se zobrazí snapline. Všimněte si také, že se úchyt pro změnu velikosti přitahuje na pozici určenou v snapline.
+
+4. Změňte velikost <xref:System.Windows.Forms.Button> ovládacího prvku v různých směrech a Zarovnejte úchyt pro různé ovládací prvky. Všimněte si, jak se zarovnávacím čárám zobrazuje v různých orientech k označení zarovnání.
+
+## <a name="aligning-a-label-to-a-controls-text"></a>Zarovnání popisku na text ovládacího prvku
+ Některé ovládací prvky nabízejí snapline pro zarovnání jiných ovládacích prvků na zobrazený text.
+
+### <a name="to-align-a-label-to-a-controls-text"></a>Zarovnání popisku na text ovládacího prvku
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TextBox> Když <xref:System.Windows.Forms.TextBox> ovládací prvek vyřadíte do formuláře, klikněte na glyf inteligentních značek a vyberte možnost **nastavit text na TextBox1** . Podrobnosti najdete v tématu [Návod: Provádění běžných úloh pomocí inteligentních značek v ovládacích](performing-common-tasks-using-smart-tags-on-wf-controls.md)prvcích model Windows Forms.
+
+2. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.Label>
+
+3. Změňte hodnotu <xref:System.Windows.Forms.Label> <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti ovládacího prvku na `true`. Všimněte si, že ohraničení ovládacího prvku jsou upraveny tak, aby odpovídaly zobrazovanému textu.
+
+4. Přesune ovládací prvek nalevo <xref:System.Windows.Forms.TextBox> od ovládacího prvku, takže je zarovnán s dolním okrajem <xref:System.Windows.Forms.TextBox> ovládacího prvku. <xref:System.Windows.Forms.Label> Všimněte si snapline, který se zobrazí podél dolních hran dvou ovládacích prvků.
+
+5. Posune <xref:System.Windows.Forms.Label> <xref:System.Windows.Forms.TextBox> ovládací prvek mírně nahoru, dokud text a text nebudou zarovnány. <xref:System.Windows.Forms.Label> Všimněte si, že se zobrazí různé snapline styly, které označují, kdy jsou textová pole obou ovládacích prvků zarovnána.
+
+## <a name="using-snaplines-with-keyboard-navigation"></a>Použití zarovnávacím čárám s navigací klávesnice
+ Zarovnávacím čárám vám pomůžou Zarovnat ovládací prvky při jejich uspořádání pomocí kláves se šipkami.
+
+### <a name="to-use-snaplines-with-keyboard-navigation"></a>Použití zarovnávacím čárám s navigací klávesnice
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.Button> Umístěte ho do levého horního rohu formuláře.
+
+2. Stiskněte klávesovou zkratku CTRL + šipka dolů. Všimněte si, že ovládací prvek se přesune do prvního dostupné pozice vodorovného zarovnání dolů ve formuláři.
+
+3. Stiskněte kombinaci kláves CTRL + šipka dolů, dokud ovládací prvek nedosáhne spodní části formuláře. Poznamenejte si pozice, které zabírají při přesunu formuláře.
+
+4. Stiskněte klávesovou zkratku CTRL + ŠIPKA vpravo. Všimněte si, že ovládací prvek se přesune mezi formulářem na první dostupnou pozici svislého zarovnání.
+
+5. Stiskněte kombinaci kláves CTRL + ŠIPKA vpravo, dokud ovládací prvek nedosáhne strany formuláře. Poznamenejte si pozice, které zabírají při přesunu napříč formulářem.
+
+6. Přesuňte ovládací prvek kolem formuláře s kombinací kláves se šipkami. Všimněte si pozic, které ovládací prvek zabírá, a zarovnávacím čárám, které jim doprovází.
+
+7. Stisknutím klávesy SHIFT + libovolné klávesy se šipkou <xref:System.Windows.Forms.Button> změňte velikost ovládacího prvku o krok po jednom pixelu.
+
+8. Stisknutím kombinace kláves CTRL + SHIFT + Kterákoli klávesa se <xref:System.Windows.Forms.Button> šipkou změníte velikost ovládacího prvku v snapline přírůstcích.
+
+## <a name="snaplines-and-layout-panels"></a>Zarovnávacím čárám a panely rozložení
+ Zarovnávacím čárám jsou v panelech rozložení zakázané.
+
+### <a name="to-selectively-disable-snaplines"></a>Selektivní zakázání zarovnávacím čárám
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
+
+2. Dvakrát klikněte <xref:System.Windows.Forms.Button> na ikonu ovládacího prvku v **sadě nástrojů**. Všimněte si, že nový ovládací prvek tlačítko se <xref:System.Windows.Forms.TableLayoutPanel> zobrazí v první buňce ovládacího prvku.
+
+3. Dvakrát klikněte <xref:System.Windows.Forms.Button> na ikonu ovládacího prvku na **panelu nástrojů** . Tím se <xref:System.Windows.Forms.TableLayoutPanel> v ovládacím prvku opustí jedna prázdná buňka.
+
+4. Přetáhněte ovládací prvek ze **sady nástrojů** do <xref:System.Windows.Forms.TableLayoutPanel> prázdné buňky ovládacího prvku. <xref:System.Windows.Forms.Button> Všimněte si, že se nezobrazí žádná zarovnávacím čárám.
+
+5. Přetáhněte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> z ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> a přesuňte ho kolem ovládacího prvku. <xref:System.Windows.Forms.Button> Všimněte si, že se znovu zobrazí zarovnávacím čárám.
+
+## <a name="disabling-snaplines"></a>Zakázání zarovnávacím čárám
+ Zarovnávacím čárám jsou ve výchozím nastavení zapnuté. Můžete zakázat zarovnávacím čárám selektivně nebo je můžete zakázat v prostředí pro návrh.
+
+### <a name="to-selectively-disable-snaplines"></a>Selektivní zakázání zarovnávacím čárám
+
+- Stiskněte klávesu ALT a při přesunu ovládacího prvku kolem formuláře.
+
+     Všimněte si, že se nezobrazí žádné zarovnávacím čárám a ovládací prvek se nepřichytí k žádným potenciálním polohám zarovnání.
+
+### <a name="to-disable-snaplines-in-the-design-environment"></a>Zakázání zarovnávacím čárám v prostředí pro návrh
+
+1. V nabídce **nástroje** otevřete dialogové okno **Možnosti** . Otevřete dialogové okno Návrhář formulářů. Podrobnosti najdete v tématu [Obecné, Návrhář formulářů, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100)).
+
+2. Vyberte uzel **Obecné** . V části **Režim rozložení** změňte výběr z **zarovnávacím čárám** na **SnapToGrid**.
+
+3. Kliknutím na OK nastavení použijte.
+
+4. Vyberte ovládací prvek ve formuláři a přesuňte ho kolem dalších ovládacích prvků. Všimněte si, že zarovnávacím čárám se nezobrazí.
+
+## <a name="next-steps"></a>Další kroky
+ Zarovnávacím čárám nabízí intuitivní způsob zarovnání ovládacích prvků na formuláři. Mezi návrhy pro další zkoumání patří:
+
+- Zkuste vnořit <xref:System.Windows.Forms.GroupBox> ovládací prvek do jiného <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Umístěte ovládací prvek do podřízeného <xref:System.Windows.Forms.GroupBox> ovládacího prvku a druhý v rámci nadřazeného <xref:System.Windows.Forms.GroupBox> ovládacího prvku. <xref:System.Windows.Forms.Button> Přesunutím <xref:System.Windows.Forms.Button> ovládacích prvků kolem zobrazíte, jak zarovnávacím čárám hranice mezi kontejnery.
+
+- Vytvořte sloupec <xref:System.Windows.Forms.TextBox> ovládacích prvků a odpovídající <xref:System.Windows.Forms.Label> sloupec ovládacích prvků. Nastavte hodnotu <xref:System.Windows.Forms.Label> <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti Controls na `true`. Použijte zarovnávacím čárám k přesunutí <xref:System.Windows.Forms.Label> ovládacích prvků tak, aby byl zobrazený text zarovnán s textem <xref:System.Windows.Forms.TextBox> v ovládacích prvcích.
+
+ Informace o návrhu uživatelského rozhraní systému Windows najdete v tématu Příručka *pro uživatele Microsoft Windows, oficiální pokyny pro vývojáře a návrháře uživatelského rozhraní* Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1).
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Design.Behavior.SnapLine>
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Návod: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md)
+- [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Návod: Rozložení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností AutoSize](windows-forms-controls-padding-autosize.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)

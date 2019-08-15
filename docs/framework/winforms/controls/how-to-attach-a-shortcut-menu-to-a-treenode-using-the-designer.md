@@ -5,31 +5,28 @@ helpviewer_keywords:
 - shortcut menus [Windows Forms], attaching to TreeNodes
 - TreeNode [Windows Forms], attaching a shortcut menu using Designer
 ms.assetid: 8e45e184-1313-4f8f-90ff-2cd5789b2268
-ms.openlocfilehash: 9be633d14429bc2ceda1f0db2ff09252d55d5dd5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: eb3240d35309e03aa8ce949b9c5000f8581d2c2f
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337445"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040450"
 ---
 # <a name="how-to-attach-a-shortcut-menu-to-a-treenode-using-the-designer"></a>Postupy: Připojení místní nabídky k TreeNode pomocí Návrháře
-Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek zobrazuje hierarchii uzlů, podobně jako u souborů a složek, na které se zobrazí v levém podokně funkci Windows Explorer v operačních systémech Windows. Tím, že nastavíte <xref:System.Windows.Forms.Control.ContextMenuStrip%2A> vlastností, můžete zadat kontextové operace uživateli při jejich pravým tlačítkem myši <xref:System.Windows.Forms.TreeView> ovládacího prvku. Tím, že přidružíte <xref:System.Windows.Forms.ContextMenuStrip> komponenty u jednotlivých <xref:System.Windows.Forms.TreeNode> položky, můžete přidat vlastní úroveň funkce místní nabídku pro váš <xref:System.Windows.Forms.TreeView> ovládacích prvků.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-associate-a-shortcut-menu-with-a-treenode-at-design-time"></a>Přidružení místní nabídky k TreeNode v době návrhu  
-  
-1. Přidat <xref:System.Windows.Forms.TreeView> do svého formuláře ovládací prvek a potom přidat uzly do <xref:System.Windows.Forms.TreeView> podle potřeby. Další informace najdete v tématu [jak: Přidávání a odebírání uzlů s Windows Forms TreeView – ovládací prvek](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md).  
-  
-2. Přidat <xref:System.Windows.Forms.ContextMenuStrip> komponentu do formuláře a pak přidejte položky nabídky do místní nabídky, která představují úrovni uzlu operace, které chcete zpřístupnit v době běhu. Další informace najdete v tématu [jak: Přidání položek nabídky do ContextMenuStrip](how-to-add-menu-items-to-a-contextmenustrip.md).  
-  
-3. Znovu otevřít **TreeNodeEditor** dialogové okno pro <xref:System.Windows.Forms.TreeView> ovládací prvek, vyberte uzel, který má upravit a nastavte jeho <xref:System.Windows.Forms.ContextMenuStrip> vlastnost do místní nabídky, kterou jste přidali.  
-  
-4. Pokud je tato vlastnost nastavena, zobrazí se při klepnutí pravým tlačítkem myši na uzel v místní nabídce.  
-  
-     Kromě toho můžete napsat kód pro zpracování <xref:System.Windows.Forms.ToolStripItem.Click> události pro tyto položky nabídky.  
-  
+Ovládací prvek <xref:System.Windows.Forms.TreeView> model Windows Forms zobrazí hierarchii uzlů podobný souborům a složkám zobrazeným v levém podokně funkce Průzkumník Windows v operačních systémech Windows. Nastavením <xref:System.Windows.Forms.Control.ContextMenuStrip%2A> vlastnosti můžete uživateli poskytnout operace závislé na <xref:System.Windows.Forms.TreeView> ovládacím prvku, když na něj klikne pravým tlačítkem. Tím, že přidružíte <xref:System.Windows.Forms.ContextMenuStrip> komponentu k jednotlivým <xref:System.Windows.Forms.TreeNode> položkám, můžete přidat přizpůsobenou úroveň funkcí <xref:System.Windows.Forms.TreeView> místní nabídky ovládacím prvkům.
+
+## <a name="to-associate-a-shortcut-menu-with-a-treenode-at-design-time"></a>Přidružení místní nabídky ke prvku TreeNode v době návrhu
+
+1. Přidejte do formuláře <xref:System.Windows.Forms.TreeView> ovládacíprvekapřidejte<xref:System.Windows.Forms.TreeView> uzly podle potřeby. Další informace najdete v tématu [jak: Přidávání a odebírání uzlů s ovládacím prvkem](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)model Windows Forms TreeView
+
+2. <xref:System.Windows.Forms.ContextMenuStrip> Přidejte komponentu do formuláře a pak přidejte položky nabídky do místní nabídky, která představuje operace na úrovni uzlu, které chcete zpřístupnit v době běhu. Další informace najdete v tématu [jak: Přidejte položky nabídky do ContextMenuStrip](how-to-add-menu-items-to-a-contextmenustrip.md).
+
+3. Znovu otevřete dialogové okno **TreeNodeEditor** pro <xref:System.Windows.Forms.TreeView> ovládací prvek, vyberte uzel, který chcete upravit, a nastavte jeho <xref:System.Windows.Forms.ContextMenuStrip> vlastnost na místní nabídku, kterou jste přidali.
+
+4. Při nastavení této vlastnosti se místní nabídka zobrazí po kliknutí pravým tlačítkem myši na uzel.
+
+     Navíc budete chtít napsat kód pro zpracování <xref:System.Windows.Forms.ToolStripItem.Click> událostí pro tyto položky nabídky.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)

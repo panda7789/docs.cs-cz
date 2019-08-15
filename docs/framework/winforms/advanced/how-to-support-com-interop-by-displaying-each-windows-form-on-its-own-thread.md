@@ -2,7 +2,8 @@
 title: 'Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně'
 ms.date: 03/30/2017
 dev_langs:
-- vb
+- CSharp
+- VB
 helpviewer_keywords:
 - COM interop [Windows Forms], Windows Forms
 - COM [Windows Forms]
@@ -10,41 +11,43 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], COM interop
 - Windows Forms, interop
 ms.assetid: a9e04765-d2de-4389-a494-a9a6d07aa6ee
-ms.openlocfilehash: f158cf71f69ed3221dcaf7d3abbe495cf818638b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 90bbd7df45424f8513598e9d7439d8ae6bf6f52c
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593187"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040308"
 ---
 # <a name="how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread"></a>Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně
-Vyřešíte problémy vzájemná funkční spolupráce modelu COM zobrazením formuláře na rozhraní .NET Framework smyčky zpráv, které můžete vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
-  
- Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte spustit formuláře na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
-  
-- Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [jak: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
-  
-- Každý formulář Windows pro zobrazení na samostatném vlákně.  
-  
- Není k dispozici rozsáhlou podporu pro tuto funkci v sadě Visual Studio.  
-  
- Viz také [názorný postup: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233639(v=vs.100)).  
-  
-## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak formulář pro zobrazení v samostatném vlákně a volání <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metodu spustit pumpu zpráv Windows Forms v daném vláknu. Chcete-li tuto metodu použijte, musí zařaďte všechna volání do formuláře z nespravovaných aplikací s použitím <xref:System.Windows.Forms.Control.Invoke%2A> metody.  
-  
- Tento přístup vyžaduje, že každá instance formuláře je spuštěna ve vlastním vlákně s použitím vlastní smyčky zpráv. Nemůžete mít více než jeden smyčky zpráv spuštěná na vlákno. Proto nelze změnit smyčky zpráv klientská aplikace. Však můžete upravit součásti rozhraní .NET Framework spustit nové vlákno, která používá vlastní smyčku zpráv.  
-  
- [!code-vb[System.Windows.Forms.ComInterop#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/COMForm.vb#1)]  
-  
- [!code-vb[System.Windows.Forms.ComInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/FormManager.vb#10)]  
-  
- [!code-vb[System.Windows.Forms.ComInterop#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/Form1.vb#100)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  
-- Kompilace `COMForm`, `Form1`, a `FormManager` typů do sestavení volá `COMWinform.dll`. Registrace sestavení zprostředkovatele komunikace s objekty modelu COM pomocí jedné z metod popsaných v [zabalení sestavení pro model COM](../../interop/packaging-an-assembly-for-com.md). Teď můžete použít sestavení a jeho odpovídající soubor knihovny (.tlb) typů v nespravované aplikace. Například můžete použít knihovnu typů jako odkaz v projektu jazyka Visual Basic 6.0 spustitelný soubor.  
-  
+
+Problémy s interoperabilitou modelu COM můžete vyřešit zobrazením formuláře ve smyčce zprávy .NET Framework, kterou lze vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.
+
+Chcete-li, aby formulář Windows pracoval správně z klientské aplikace modelu COM, je nutné spustit formulář ve smyčce model Windows Forms zpráv. K tomu použijte jeden z následujících přístupů:
+
+- K zobrazení formuláře Windows použijte metodu.<xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> Další informace najdete v tématu [jak: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody](com-interop-by-displaying-a-windows-form-shadow.md)ShowDialog.
+
+- Zobrazí každý formulář Windows v samostatném vlákně.
+
+Existuje Rozsáhlá podpora pro tuto funkci v aplikaci Visual Studio.
+
+Viz [také návod: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233639(v=vs.100))vlastním vlákně.
+
+## <a name="example"></a>Příklad
+
+Následující příklad kódu ukazuje, jak zobrazit formulář v samostatném vlákně a volat <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metodu pro spuštění model Windows Formsho pumpy zpráv v tomto vlákně. Chcete-li použít tento přístup, je nutné zařadit všechna volání do formuláře z nespravované aplikace pomocí <xref:System.Windows.Forms.Control.Invoke%2A> metody.
+
+Tento přístup vyžaduje, aby každá instance formuláře běžela ve vlastním vlákně pomocí vlastní smyčky zpráv. V jednom vlákně nemůžete mít spuštěnou více než jednu smyčku zpráv. Proto nemůžete změnit smyčku zpráv klientské aplikace. Můžete však upravit komponentu .NET Framework a spustit nové vlákno, které používá vlastní smyčku zpráv.
+
+[!code-vb[System.Windows.Forms.ComInterop#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/COMForm.vb#1)]
+
+[!code-vb[System.Windows.Forms.ComInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/FormManager.vb#10)]
+
+[!code-vb[System.Windows.Forms.ComInterop#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/Form1.vb#100)]
+
+## <a name="compile-the-code"></a>Kompilace kódu
+
+Zkompilujte typy `COMForm`, `Form1`a `FormManager` do sestavení s názvem `COMWinform.dll`. Zaregistrujte sestavení pro zprostředkovatele komunikace s objekty COM pomocí jedné z metod popsaných v tématu [sbalení sestavení pro model COM](../../interop/packaging-an-assembly-for-com.md). Nyní můžete použít sestavení a jeho odpovídající soubor knihovny typů (. tlb) v nespravovaných aplikacích. Například můžete použít knihovnu typů jako referenci v spustitelném projektu Visual Basic 6,0.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent architektury .NET Framework pro COM](../../interop/exposing-dotnet-components-to-com.md)

@@ -6,59 +6,56 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], binding controls
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
-ms.openlocfilehash: f8c268c816975fa9b00725d317365c147312b950
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 180fafa9ace5927fd84ec5dc0a1b2a342f771efd
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593462"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040017"
 ---
 # <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře
-Po přidání ovládacích prvků do formuláře a určit uživatelského rozhraní pro vaši aplikaci, lze svázat ovládací prvky zdroje dat, tak, aby v době běhu, uživatelé mohou změnit a uložit data související s aplikací.  
-  
- Vytvoření vazby ovládacího prvku nebo řadu ovládacích prvků ve Windows Forms nejsnadněji využívá se při něm <xref:System.Windows.Forms.BindingSource> ovládací prvek jako most mezi ovládacími prvky ve formuláři a zdroj dat.  
-  
- Jeden nebo více ovládacích prvků na formuláři mohou být vázány na data. v následujícím postupu <xref:System.Windows.Forms.TextBox> ovládací prvek vázán na zdroj dat.  
-  
- Dokončete tento postup předpokládá se, že bude vytvoření vazby ke zdroji dat, který je odvozen z databáze. Další informace o vytvoření zdroje dat z jiných úložišť dat najdete v tématu [přidat nové zdroje dat](/visualstudio/data-tools/add-new-data-sources).  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-bind-a-control-at-design-time"></a>K vytvoření vazby ovládacího prvku v době návrhu  
-  
-1. Přetáhněte <xref:System.Windows.Forms.TextBox> ovládací prvek do formuláře.  
-  
-2. V **vlastnosti** okno:  
-  
-    1. Rozbalte **(DataBindings)** uzlu.  
-  
-    2. Klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
-  
-         **DataSource** otevře editor typu uživatelského rozhraní.  
-  
-         Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, se zobrazí.  
-  
-3. Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
-  
-4. Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
-  
-5. Na **zvolte typ zdroje dat** stránce **databáze**.  
-  
-6. Na **vyberte datové připojení** vyberte datové připojení ze seznamu dostupných připojení. Pokud požadované datové připojení není k dispozici vyberte **nové připojení** k vytvoření nové datové připojení.  
-  
-7. Vyberte **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
-  
-8. Vyberte databázové objekty do vaší aplikace. V takovém případě vyberete pole v tabulce, kterou byste uvítali <xref:System.Windows.Forms.TextBox> k zobrazení.  
-  
-9. Nahraďte výchozí název datové sady, chcete-li.  
-  
-10. Klikněte na tlačítko **Dokončit**.  
-  
-11. V **vlastnosti** okna, klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost znovu. V **DataSource** editoru typů uživatelského rozhraní, vyberte název pole, které chcete vytvořit vazbu <xref:System.Windows.Forms.TextBox> k.  
-  
-     **DataSource** typ uživatelského rozhraní editoru zavře a datové sady, <xref:System.Windows.Forms.BindingSource> a specifické pro datové připojení jsou přidaná do svého formuláře tabulku adaptéru.  
-  
+Po přidání ovládacích prvků do formuláře a určení uživatelského rozhraní vaší aplikace můžete navazovat ovládací prvky na zdroj dat, takže v době běhu mohou uživatelé upravovat a ukládat data související s aplikací.
+
+ Svázání ovládacího prvku nebo řady ovládacích prvků v model Windows Forms je nejsnadnějším pomocí <xref:System.Windows.Forms.BindingSource> ovládacího prvku jako most mezi ovládacími prvky ve formuláři a zdrojem dat.
+
+ Jeden nebo více ovládacích prvků na formuláři lze svázat s daty; v následujícím postupu <xref:System.Windows.Forms.TextBox> je ovládací prvek svázán se zdrojem dat.
+
+ K dokončení postupu se předpokládá, že budete Přivážete ke zdroji dat odvozenému z databáze. Další informace o vytváření zdrojů dat z jiných úložišť dat najdete v tématu [Přidání nových zdrojů dat](/visualstudio/data-tools/add-new-data-sources).
+
+## <a name="to-bind-a-control-at-design-time"></a>Navázání ovládacího prvku v době návrhu
+
+1. <xref:System.Windows.Forms.TextBox> Přetáhněte ovládací prvek do formuláře.
+
+2. V okně **vlastnosti** :
+
+    1. Rozbalte uzel **(datové vazby)** .
+
+    2. Klikněte na šipku vedle <xref:System.Windows.Forms.TextBox.Text%2A> vlastnosti.
+
+         Otevře se Editor typu uživatelského rozhraní **DataSource** .
+
+         Pokud byl zdroj dat dříve nakonfigurován pro projekt nebo formulář, zobrazí se.
+
+3. Kliknutím na **Přidat zdroj dat projektu** se můžete připojit k datům a vytvořit zdroj dat.
+
+4. Na úvodní stránce **Průvodce konfigurací zdroje dat** klikněte na tlačítko **Další**.
+
+5. Na stránce **Vybrat typ zdroje dat** vyberte možnost **databáze**.
+
+6. Na stránce **Vyberte datové připojení** vyberte datové připojení ze seznamu dostupných připojení. Pokud vaše požadované datové připojení není k dispozici, vyberte **nové připojení** a vytvořte nové datové připojení.
+
+7. Vyberte **Ano, uložit připojení** pro uložení připojovacího řetězce do konfiguračního souboru aplikace.
+
+8. Vyberte databázové objekty, které chcete přenést do aplikace. V takovém případě vyberte pole v tabulce, které <xref:System.Windows.Forms.TextBox> chcete zobrazit.
+
+9. Pokud chcete, nahraďte výchozí název datové sady.
+
+10. Klikněte na tlačítko **Dokončit**.
+
+11. V okně **vlastnosti** klikněte znovu na šipku vedle <xref:System.Windows.Forms.TextBox.Text%2A> vlastnosti. V editoru typu uživatelského rozhraní **zdroje dat** vyberte název pole, <xref:System.Windows.Forms.TextBox> ke kterému se má vytvořit vazba.
+
+     Editor typu uživatelského rozhraní **DataSource** se zavře a datová sada a <xref:System.Windows.Forms.BindingSource> adaptér tabulky, který je specifický pro toto datové připojení, se přidá do formuláře.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.BindingSource>

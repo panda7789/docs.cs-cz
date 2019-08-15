@@ -1,38 +1,38 @@
 ---
-title: Přizpůsobení struktury zařazování – .NET
-description: Zjistěte, jak přizpůsobit, jak .NET zařazuje struktury na nativní reprezentaci.
+title: Přizpůsobení zařazování struktury – .NET
+description: Naučte se, jak přizpůsobit, jak .NET zařazování vašich struktur do nativní reprezentace.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: da36f2a703fe817c171e192b9c94e473c93447a3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 6e3dcaeb71ae32812d3b022fff2bdc4e3e0691bf
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065471"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040157"
 ---
-# <a name="customizing-structure-marshaling"></a>Přizpůsobení struktura zařazování
+# <a name="customizing-structure-marshaling"></a>Přizpůsobení zařazování struktur
 
-Někdy zařazování výchozí pravidla pro struktury nejsou přesně, co potřebujete. Moduly runtime .NET poskytují několik Rozšiřovací body můžete přizpůsobit rozvržení struktury vaší a jak zařadit pole.
+Někdy výchozí pravidla zařazování pro struktury nejsou přesně to, co potřebujete. Moduly runtime .NET poskytují několik rozšiřovacích bodů pro přizpůsobení rozložení struktury a způsobu, jakým jsou pole zařazena.
 
 ## <a name="customizing-structure-layout"></a>Přizpůsobení rozložení struktury
 
-Poskytuje rozhraní .NET <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> atribut a <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> výčet, aby bylo možné přizpůsobit, jak jsou pole umístěné v paměti. Následující pokyny se snáze vyhnete běžných problémů.
+Rozhraní .NET poskytuje <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> atribut <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> a výčet, aby bylo možné přizpůsobit, jak jsou pole umístěna v paměti. Následující pokyny vám pomůžou vyhnout se běžným problémům.
 
-**✔️ ZVAŽTE** pomocí `LayoutKind.Sequential` kdykoli je to možné.
+**✔️ zvážit** použití `LayoutKind.Sequential` , kdykoli je to možné.
 
-**PROVEĎTE ✔️** používat pouze `LayoutKind.Explicit` v zařazování při nativní struktury je také má explicitní rozložení, jako je například sjednocení.
+**✔️** použít `LayoutKind.Explicit` pouze v zařazování, pokud má nativní struktura také explicitní rozložení, jako je například sjednocení.
 
-**❌ Nepoužívejte** pomocí `LayoutKind.Explicit` při zařazování struktur na platformách než Windows. Modul runtime .NET Core nepodporuje explicitní struktury předání hodnotou na nativní funkce v systémech než Windows Intel nebo AMD 64-bit. Modul runtime však podporuje struktury, předávání explicitní odkaz na všech platformách.
+**❌ Se vyhnout** použití `LayoutKind.Explicit` při zařazování struktur na platformách jiných než Windows. Modul runtime .NET Core nepodporuje předávání explicitních struktur podle hodnot do nativních funkcí v systémech, které nejsou systémy Windows a Intel nebo AMD 64. Modul runtime však podporuje předávání explicitních struktur odkazem na všechny platformy.
 
-## <a name="customizing-boolean-field-marshaling"></a>Přizpůsobení zařazování pole boolean
+## <a name="customizing-boolean-field-marshaling"></a>Přizpůsobení zařazování logických polí
 
-Nativní kód má mnoho různých logický reprezentací. Na Windows samostatně existují tři způsoby, jak reprezentaci logické hodnoty. Modul runtime nebude vědět nativní definice struktury, proto je nejlepší, co můžete dělat hádat o tom, jak zařadit logické hodnoty. Modul .NET runtime poskytuje způsob, jak určují, jak zařadit logická pole. Následující příklady ukazují, jak zařadit .NET `bool` do různých nativních typů boolean.
+Nativní kód má mnoho různých logických reprezentace. Pouze v systému Windows existují tři způsoby reprezentace logických hodnot. Běhový modul neví nativní definici struktury, takže to nejlepší je udělat, abyste se seznámili s tím, jak vaše logické hodnoty zařadit. Modul runtime .NET poskytuje způsob, jak určit, jak zařadit vaše logické pole. Následující příklady ukazují, jak zařadit rozhraní `bool` .NET do různých nativních typů Boolean.
 
-Výchozí zařazování jako nativní 4bajtový Win32 hodnoty logická hodnota [ `BOOL` ](/windows/desktop/winprog/windows-data-types#BOOL) hodnoty, jak je znázorněno v následujícím příkladu:
+Logické hodnoty jsou ve výchozím nastavení zařazování jako nativní [`BOOL`](/windows/desktop/winprog/windows-data-types#BOOL) hodnota 4 bajtů, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public struct WinBool
@@ -48,7 +48,7 @@ struct WinBool
 };
 ```
 
-Pokud chcete explicitně, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> hodnota, která má stejné chování, jak je uvedeno výše:
+Pokud chcete být explicitní, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> hodnotu k získání stejného chování jako v předchozích krocích:
 
 ```csharp
 public struct WinBool
@@ -65,7 +65,7 @@ struct WinBool
 };
 ```
 
-Použití `UnmanagedType.U1` nebo `UnmanagedType.I1` níže uvedených hodnot, poznáte, modul runtime k zařazování `b` pole 1bajtových nativní `bool` typu.
+Pomocí níže uvedených `UnmanagedType.I1` hodnot `b` nebo můžete určit, že modul runtime bude zařazovat pole jako nativní `bool` typ 1 bajt. `UnmanagedType.U1`
 
 ```csharp
 public struct CBool
@@ -82,7 +82,7 @@ struct CBool
 };
 ```
 
-Na Windows, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> hodnotu říct runtime k zařazení vaší logickou hodnotu k 2 bajtů `VARIANT_BOOL` hodnotu:
+Ve Windows můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> hodnotu k oznámení, že modul runtime zařadí vaši logickou hodnotu do hodnoty 2 bajty: `VARIANT_BOOL`
 
 ```csharp
 public struct VariantBool
@@ -100,13 +100,13 @@ struct VariantBool
 ```
 
 > [!NOTE]
-> `VARIANT_BOOL` se liší od většinu typů bool v dané `VARIANT_TRUE = -1` a `VARIANT_FALSE = 0`. Kromě toho všechny hodnoty, které se rovná `VARIANT_TRUE` jsou považovány za hodnotu false.
+> `VARIANT_BOOL`se liší od většiny typů bool v tomto `VARIANT_TRUE = -1` a `VARIANT_FALSE = 0`. Kromě toho všechny hodnoty, které nejsou rovny `VARIANT_TRUE` , jsou považovány za NEPRAVDA.
 
-## <a name="customizing-array-field-marshaling"></a>Přizpůsobení zařazování pole pole
+## <a name="customizing-array-field-marshaling"></a>Přizpůsobení zařazování polí pole
 
-.NET zahrnuje také několik způsobů, jak přizpůsobit zařazování pole.
+Rozhraní .NET také obsahuje několik způsobů, jak přizpůsobit zařazování pole.
 
-Ve výchozím nastavení zařazuje .NET pole jako ukazatel na seznam souvislých prvků:
+Ve výchozím nastavení rozhraní .NET zařazuje pole jako ukazatel na souvislý seznam elementů:
 
 ```csharp
 public struct DefaultArray
@@ -122,7 +122,7 @@ struct DefaultArray
 };
 ```
 
-Pokud se propojení s rozhraními API modelu COM, bude pravděpodobně nutné zařazování pole jako `SAFEARRAY*` objekty. Můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> říct runtime k zařazování pole jako hodnotu `SAFEARRAY*`:
+Pokud pracujete s rozhraními API modelu COM, možná budete muset zařadit pole `SAFEARRAY*` jako objekty. Hodnotu amůžete<xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> použít k oznámení, že modul runtime zařadí pole jako `SAFEARRAY*`: <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 
 ```csharp
 public struct SafeArrayExample
@@ -139,9 +139,9 @@ struct SafeArrayExample
 };
 ```
 
-Pokud chcete přizpůsobit, jaký typ prvku je v `SAFEARRAY`, můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> polí pro přizpůsobení elementu přesný typ `SAFEARRAY`.
+Pokud potřebujete přizpůsobit `SAFEARRAY`, jaký typ prvku je v, pak můžete <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> použít pole a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> `SAFEARRAY`k přizpůsobení přesného typu prvku.
 
-Pokud potřebujete pole na místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> hodnotu říct, aby zařazování odvozovalo zařazování pole na místě. Při použití této zařazování, je také třeba zadat hodnotu, která <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole pro počet prvků v poli, aby modul runtime může správně přidělit místo pro strukturu.
+Pokud je nutné zařadit pole na místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> hodnotu k oznámení zařazovacímu modulu k zařazení pole na místě. Při použití tohoto zařazování musíte také zadat hodnotu do <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole pro počet prvků v poli, aby modul runtime mohl správně přidělit prostor pro strukturu.
 
 ```csharp
 public struct InPlaceArray
@@ -159,13 +159,13 @@ struct InPlaceArray
 ```
 
 > [!NOTE]
-> .NET nepodporuje zařazování pole proměnné délky pole jako člena flexibilního pole C99.
+> Rozhraní .NET nepodporuje zařazování pole proměnné délky jako C99 flexibilního člena pole.
 
-## <a name="customizing-string-field-marshaling"></a>Přizpůsobení zařazování pole řetězce
+## <a name="customizing-string-field-marshaling"></a>Přizpůsobení zařazování polí řetězců
 
-.NET také poskytuje širokou škálu vlastní nastavení pro zařazování polí s řetězcem.
+Rozhraní .NET také poskytuje širokou škálu přizpůsobení pro zařazování polí řetězců.
 
-Ve výchozím nastavení zařazuje .NET řetězec jako ukazatel na řetězec zakončený hodnotou null. Kódování závisí na hodnotě <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> pole <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>. Pokud není zadán žádný atribut, kódování, výchozí kódování ANSI.
+Ve výchozím nastavení .NET zařazování řetězce jako ukazatele na řetězec zakončený hodnotou null. Kódování závisí na hodnotě <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> pole <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>v. Pokud není zadán žádný atribut, kódování je standardně kódování ANSI.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -197,7 +197,7 @@ struct DefaultString
 };
 ```
 
-Pokud budete muset použít jiné kódování pro různá pole nebo jen dáváte přednost více explicitně v definici struktury, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> nebo <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> hodnoty na <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> atribut.
+Pokud potřebujete použít různá kódování pro různá pole nebo pouze preferovat explicitní použití v definici struktury, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> hodnoty nebo <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> v <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> atributu.
 
 ```csharp
 public struct AnsiString
@@ -229,7 +229,7 @@ struct UnicodeString
 };
 ```
 
-Pokud chcete k zařazení vaší řetězce s kódováním UTF-8, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> hodnota ve vaší <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
+Chcete-li zařadit řetězce pomocí kódování UTF-8, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> hodnotu <xref:System.Runtime.InteropServices.MarshalAsAttribute>v.
 
 ```csharp
 public struct UTF8String
@@ -247,9 +247,9 @@ struct UTF8String
 ```
 
 > [!NOTE]
-> Pomocí <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> vyžaduje rozhraní .NET Framework 4.7 (nebo novější verze) nebo .NET Core 1.1 (nebo novější verze). Není k dispozici v rozhraní .NET Standard 2.0.
+> Použití <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> vyžaduje buď .NET Framework 4,7 (nebo novější verze), nebo .NET Core 1,1 (nebo novější verze). Není k dispozici v .NET Standard 2,0.
 
-Pokud pracujete s rozhraními API modelu COM, budete muset řetězec jako `BSTR`. Použití <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> hodnota, které by mohl zařazovat řetězec jako `BSTR`.
+Pokud pracujete s rozhraními API modelu COM, může být nutné zařadit řetězec jako `BSTR`. Pomocí hodnoty můžete zařadit řetězec `BSTR`jako. <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType>
 
 ```csharp
 public struct BString
@@ -266,7 +266,7 @@ struct BString
 };
 ```
 
-Při použití rozhraní API založené na WinRT, budete muset řetězec jako `HSTRING`.  Použití <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> hodnota, které by mohl zařazovat řetězec jako `HSTRING`.
+Při použití rozhraní API založeného na WinRT může být nutné zařadit řetězec jako `HSTRING`.  Pomocí hodnoty můžete zařadit řetězec `HSTRING`jako. <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType>
 
 ```csharp
 public struct HString
@@ -283,7 +283,7 @@ struct BString
 };
 ```
 
-Pokud vaše rozhraní API vyžaduje, abyste ve struktuře předat řetězec v místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> hodnotu. Všimněte si, že kódování pro řetězec zařazen podle `ByValTStr` se určí na základě `CharSet` atribut. Navíc se vyžaduje, aby délka řetězce je předaný odkazem <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole.
+Pokud vaše rozhraní API vyžaduje předání řetězce na místě ve struktuře, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> hodnotu. Všimněte si, že kódování pro řetězec zařazování `ByValTStr` je určeno `CharSet` z atributu. Kromě toho vyžaduje, aby <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole předalo délku řetězce.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -317,9 +317,9 @@ struct DefaultString
 };
 ```
 
-## <a name="customizing-decimal-field-marshaling"></a>Přizpůsobení zařazování desítkové pole
+## <a name="customizing-decimal-field-marshaling"></a>Přizpůsobení zařazování desetinných polí
 
-Pokud pracujete ve Windows, může dojít některá rozhraní API, použít nativní [ `CY` nebo `CURRENCY` ](/windows/desktop/api/wtypes/ns-wtypes-tagcy) struktury. Ve výchozím nastavení, .NET `decimal` zadejte marshals na nativní [ `DECIMAL` ](/windows/desktop/api/wtypes/ns-wtypes-tagdec) struktury. Však můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> hodnotu dáte pokyn, aby zařazování pro převod `decimal` hodnotu na nativní `CY` hodnotu.
+Pokud pracujete v systému Windows, můžete se setkat s některými rozhraními API, která používají nativní [ `CY` nebo `CURRENCY` ](/windows/win32/api/wtypes/ns-wtypes-cy~r1) strukturu. Ve výchozím nastavení je typ `decimal` .NET zařazování do nativní [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal~r1) struktury. Můžete <xref:System.Runtime.InteropServices.MarshalAsAttribute> však použít <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> s hodnotou k instruování `decimal` zařazovacího modulu, aby převedl hodnotu na nativní `CY` hodnotu.
 
 ```csharp
 public struct Currency
@@ -338,12 +338,12 @@ struct Currency
 
 ## <a name="marshaling-systemobjects"></a>Zařazování `System.Object`s
 
-Na Windows, které by mohl zařazovat `object`– zadané pole do nativního kódu. By mohl zařazovat těchto polí do jednoho ze tří typů:
-- [`VARIANT`](/windows/desktop/api/oaidl/ns-oaidl-tagvariant)
+Ve Windows můžete zařadit `object`pole typu do nativního kódu. Tato pole můžete zařadit do jednoho ze tří typů:
+- [`VARIANT`](/windows/win32/api/oaidl/ns-oaidl-variant)
 - [`IUnknown*`](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 - [`IDispatch*`](/windows/desktop/api/oaidl/nn-oaidl-idispatch)
 
-Ve výchozím nastavení `object`-typovaná pole bude zařazeno do `IUnknown*` , která zabalí objekt.
+Ve výchozím nastavení `object`bude pole typového typu zařazeno `IUnknown*` do objektu, který tento objekt zabalí.
 
 ```csharp
 public struct ObjectDefault
@@ -359,7 +359,7 @@ struct ObjectDefault
 };
 ```
 
-Pokud chcete přeuspořádat polem objektu do `IDispatch*`, přidat <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> hodnotu.
+Chcete-li zařadit pole objektu do `IDispatch*`objektu, <xref:System.Runtime.InteropServices.MarshalAsAttribute> přidejte s <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> hodnotou.
 
 ```csharp
 public struct ObjectDispatch
@@ -376,7 +376,7 @@ struct ObjectDispatch
 };
 ```
 
-Pokud chcete zařadit jako `VARIANT`, přidejte <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> hodnotu.
+Pokud ho chcete zařadit jako a `VARIANT`, <xref:System.Runtime.InteropServices.MarshalAsAttribute> přidejte s <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> hodnotou.
 
 ```csharp
 public struct ObjectVariant
@@ -393,9 +393,9 @@ struct ObjectVariant
 };
 ```
 
-Následující tabulka popisuje, jak různé typy runtime `obj` mapování polí na různé typy, které jsou uložené v `VARIANT`:
+Následující tabulka popisuje, jak jsou různé typy `obj` modulu runtime mapovány na různé typy uložené `VARIANT`v poli:
 
-| Typ formátu .NET | Typ VARIANT | | Typ formátu .NET | Typ VARIANT |
+| Typ .NET | Typ VARIANT | | Typ .NET | Typ VARIANT |
 |------------|--------------|-|----------|--------------|
 |  `byte`  | `VT_UI1` |     | `System.Runtime.InteropServices.BStrWrapper` | `VT_BSTR` |
 | `sbyte`  | `VT_I1`  |     | `object`  | `VT_DISPATCH` |

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 79b7057b1f6a9cdba2215124160b28efb9a1c0be
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cf5a7f239cf7d3cd3a6e39f31d16adb830646afc
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629518"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039496"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
 
@@ -42,15 +42,14 @@ Obory názvů mají následující vlastnosti:
 - `using` Direktiva obviates požadavek na zadání názvu oboru názvů pro každou třídu.  
 - Obor názvů je "kořenový" obor názvů: `global::System` bude vždycky odkazovat na obor názvů <xref:System>.NET. `global`  
 
-## <a name="c-language-specification"></a>Specifikace jazyka C#
+## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+Další informace najdete v části [obory názvů](~/_csharplang/spec/namespaces.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Použití oboru názvů](using-namespaces.md)
-- [Postupy: Použití aliasu globálního oboru názvů](how-to-use-the-global-namespace-alias.md)
 - [Postupy: Použití oboru názvů My](how-to-use-the-my-namespace.md)
 - [Názvy identifikátorů](../inside-a-program/identifier-names.md)
 - [using – direktiva](../../language-reference/keywords/using-directive.md)

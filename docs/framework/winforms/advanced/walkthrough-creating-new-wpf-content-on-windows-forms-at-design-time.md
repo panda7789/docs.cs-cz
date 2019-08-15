@@ -8,105 +8,105 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: ed48db399ba47f0e6be96f7bca33d3892b19e433
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 889e81053d4e2264755468446a4e1681216ae22e
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747677"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040367"
 ---
-# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF v modelu Windows Forms během návrhu
+# <a name="walkthrough-create-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF v model Windows Forms v době návrhu
 
-Toto téma ukazuje, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití ve svých aplikacích pomocí formulářů Windows.
+V tomto článku se dozvíte, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití v aplikacích založených na model Windows Forms.
 
-V tomto podrobném návodu můžete provádět následující úlohy:
+V tomto návodu provedete následující úlohy:
 
-- Vytvoření projektu.
+- Vytvořte projekt.
 
-- Vytvořte nový ovládací prvek WPF.
+- Vytvořit nový ovládací prvek WPF.
 
-- Přidání nového ovládacího prvku WPF do formuláře Windows. Ovládací prvek WPF je hostován v <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku.
+- Přidejte nový ovládací prvek WPF do formuláře Windows. Ovládací prvek WPF je hostován v <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku.
 
 ## <a name="prerequisites"></a>Požadavky
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
-- Visual Studio 2017
+- Visual Studio
 
-## <a name="creating-the-project"></a>Vytvoření projektu
+## <a name="create-the-project"></a>Vytvoření projektu
 
-Prvním krokem je vytvoření projektu Windows Forms. Otevřít Visual Studio a vytvořte nový **aplikace Windows Forms (.NET Framework)** projektu v jazyce Visual Basic nebo Visual C# s názvem `HostingWpf`.
-
-> [!NOTE]
-> Při hostování obsahu WPF, jsou podporovány pouze projekty C# a Visual Basic.
-
-## <a name="creating-a-new-wpf-control"></a>Vytvoření nového ovládacího prvku WPF
-
-Vytvoření nového ovládacího prvku WPF a jeho přidání do projektu je stejně jednoduché jako přidání jakoukoli jinou položku do projektu. Návrhář formulářů Windows funguje s konkrétní druh ovládacího prvku s názvem *složeného ovládacího prvku*, nebo *uživatelský ovládací prvek*. Další informace o uživatelských ovládacích prvcích WPF naleznete v tématu <xref:System.Windows.Controls.UserControl>.
+Prvním krokem je vytvoření projektu model Windows Forms. Otevřete Visual Studio a vytvořte nový projekt **aplikace model Windows Forms (.NET Framework)** v Visual Basic nebo vizuálu C# s názvem `HostingWpf`.
 
 > [!NOTE]
-> <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType> Zadejte pro WPF se liší od typ ovládacího prvku uživatel k dispozici ve Windows Forms, který se také nazývá <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>.
+> Při hostování obsahu WPF jsou podporovány C# pouze projekty a Visual Basic.
 
-### <a name="to-create-a-new-wpf-control"></a>Chcete-li vytvořit nový ovládací prvek WPF
+## <a name="create-a-new-wpf-control"></a>Vytvořit nový ovládací prvek WPF
 
-1. V **Průzkumníka řešení**, přidejte novou **Knihovna uživatelských ovládacích prvků WPF (.NET Framework)** projektu do řešení. Použít výchozí název knihovny ovládacích prvků `WpfControlLibrary1`. Výchozí název ovládacího prvku je `UserControl1.xaml`.
+Vytvoření nového ovládacího prvku WPF a jeho přidání do projektu je stejně snadné jako přidání jakékoli jiné položky do projektu. Návrhář formulářů pracuje s konkrétním druhem ovládacího prvku s názvem *složený ovládací*prvek nebo *uživatelským ovládacím prvkem*. Další informace o uživatelských ovládacích prvcích WPF naleznete v <xref:System.Windows.Controls.UserControl>tématu.
+
+> [!NOTE]
+> Typ pro WPF je odlišný od typu uživatelského ovládacího prvku, který poskytuje model Windows Forms, který je také pojmenován <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>. <xref:System.Windows.Controls.UserControl?displayProperty=nameWithType>
+
+Vytvoření nového ovládacího prvku WPF:
+
+1. V **Průzkumník řešení**přidejte do řešení nový projekt **knihovny uživatelských ovládacích prvků WPF (.NET Framework)** . Pro knihovnu `WpfControlLibrary1`ovládacích prvků použijte výchozí název. Výchozí název ovládacího prvku je `UserControl1.xaml`.
 
      Přidání nového ovládacího prvku má následující důsledky:
 
-    - Přidání souboru UserControl1.xaml.
+    - Byl přidán soubor UserControl1. XAML.
 
-    - Přidání souboru UserControl1.xaml.cs nebo UserControl1.xaml.vb. Tento soubor obsahuje kód na pozadí pro obslužné rutiny událostí a jiné implementace.
+    - Přidal se soubor UserControl1.xaml.cs nebo UserControl1. XAML. vb. Tento soubor obsahuje kód na pozadí pro obslužné rutiny událostí a další implementace.
 
-    - Jsou přidány odkazy na sestavení WPF.
+    - Přidaly se odkazy na sestavení WPF.
 
-    - Soubor UserControl1.xaml otevře [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
+    - Soubor UserControl1. XAML se otevře v [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
 
-2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).
+2. V zobrazení Návrh se ujistěte, že `UserControl1` je vybraná možnost. Další informace najdete v tématu [jak: Vyberte a přesuňte prvky na Návrhová plocha](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).
 
-3. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností **200**.
+3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastností a <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
 
-4. Z **nástrojů**, přetáhněte <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> ovládací prvek na návrhovou plochu.
+4. Z **panelu nástrojů**přetáhněte <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> ovládací prvek na návrhovou plochu.
 
-5. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost **hostované obsahu**.
+5. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.Controls.TextBox.Text%2A> vlastnosti na **hostovaný obsah**.
 
     > [!NOTE]
-    > Obecně byste neměli hostit složitější obsahu WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> Ovládací prvek se tady používá pouze pro ilustraci.
+    > Obecně byste měli hostovat propracovanější obsah WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> Ovládací prvek slouží pouze pro ilustrativní účely.
 
 6. Sestavte projekt.
 
-## <a name="adding-a-wpf-control-to-a-windows-form"></a>Přidání ovládacího prvku WPF na formuláři Windows
+## <a name="add-a-wpf-control-to-a-windows-form"></a>Přidání ovládacího prvku WPF do formuláře Windows
 
-Nový ovládací prvek WPF je připravená k použití ve formuláři. Windows Forms používá <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku na hostování obsahu WPF.
+Nový ovládací prvek WPF je připravený k použití ve formuláři. Model Windows Forms používá <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek k hostování obsahu WPF.
 
-### <a name="to-add-a-wpf-control-to-a-windows-form"></a>Přidání ovládacího prvku WPF do formuláře Windows
+Přidání ovládacího prvku WPF do formuláře Windows:
 
-1. Otevřít `Form1` v Návrháři formulářů Windows.
+1. Otevřete `Form1` v Návrhář formulářů.
 
-2. V **nástrojů**, najít na kartě s popiskem **uživatelské ovládací prvky WPF WPFUserControlLibrary**.
+2. V **sadě nástrojů**Najděte kartu s názvem **WPFUserControlLibrary uživatelské ovládací prvky WPF**.
 
-3. Přetáhněte instance `UserControl1` do formuláře.
+3. Přetáhněte instanci `UserControl1` do formuláře.
 
-    - <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek je automaticky vytvořen ve formuláři pro hostování ovládacího prvku WPF.
+    - <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek je vytvořen automaticky na formuláři pro hostování ovládacího prvku WPF.
 
-    - <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek má název `elementHost1` a **vlastnosti** okně můžete zobrazit jeho <xref:System.Windows.Forms.Integration.ElementHost.Child%2A> je nastavena na **UserControl1**.
+    - `elementHost1` <xref:System.Windows.Forms.Integration.ElementHost.Child%2A>Ovládací prvek je pojmenován a v okně Vlastnosti lze zobrazit jeho vlastnost nastavenou na UserControl1. <xref:System.Windows.Forms.Integration.ElementHost>
 
-    - Do projektu přidají odkazy na sestavení WPF.
+    - Odkazy na sestavení WPF jsou přidány do projektu.
 
-    - `elementHost1` Má ovládací prvek panelu inteligentních značek, které jsou uvedené dostupné možnosti hostování.
+    - `elementHost1` Ovládací prvek má panel inteligentních značek, který zobrazuje dostupné možnosti hostování.
 
-4. V **ElementHost úlohy** panelu inteligentních značek, vyberte **ukotvit v nadřazeném kontejneru**.
+4. Na panelu inteligentních značek **úlohy ElementHost** vyberte **Dock v nadřazeném kontejneru**.
 
-5. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+5. Stisknutím klávesy **F5** Sestavte a spusťte aplikaci.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-Windows Forms a WPF jsou různé technologie, ale jsou určené ke úzce spolupracovat. K poskytování bohatších vzhled a chování ve svých aplikacích, zkuste následující:
+Model Windows Forms a WPF jsou různé technologie, ale jsou navržené tak, aby úzce fungovaly. Pokud chcete ve svých aplikacích zajistit rozsáhlejší vzhled a chování, vyzkoušejte následující:
 
-- Hostování ovládacího prvku Windows Forms na stránce WPF. Další informace najdete v tématu [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
+- Hostování ovládacího prvku model Windows Forms na stránce WPF. Další informace najdete v tématu [Návod: Hostování ovládacího prvku model Windows Forms v subsystému WPF](../../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
 
-- Použití vizuálních stylů Windows Forms k vašemu obsahu WPF. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](../../wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).
+- Použijte model Windows Forms vizuální styly pro obsah WPF. Další informace najdete v tématu [jak: Povolit vizuální styly v hybridní aplikaci](../../wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md)
 
-- Změna stylu obsahu WPF. Další informace najdete v tématu [názorný postup: Určení stylu obsahu WPF](walkthrough-styling-wpf-content.md).
+- Změňte styl obsahu WPF. Další informace najdete v tématu [Návod: Stylování obsahu](walkthrough-styling-wpf-content.md)WPF.
 
 ## <a name="see-also"></a>Viz také:
 

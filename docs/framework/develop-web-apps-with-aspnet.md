@@ -6,16 +6,16 @@ helpviewer_keywords:
 - .NET Framework, ASP.NET
 - dynamic Web applications [ASP.NET]
 ms.assetid: b7861df0-690a-4a58-bd12-f9d0123e40df
-ms.openlocfilehash: 0b36c25742757f2606d103d6af05eee7bc175ea0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b058e9df6b8ba5a9dd0066f9df1f4b233a00e162
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644099"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69039390"
 ---
 # <a name="developing-web-apps-with-aspnet"></a>Vývoj webových aplikací pomocí ASP.NET
 
-ASP.NET je technologie rozhraní .NET Framework pro vytváření webových aplikací. Další informace o ASP.NET najdete v tématu:
+ASP.NET je technologie rozhraní .NET Framework pro vytváření webových aplikací. Další informace o ASP.NET najdete v tématech:
 
 - [Dokumentace k ASP.NET](/aspnet/overview)
 - [ASP.NET MVC](https://go.microsoft.com/fwlink/p/?LinkID=227227)
@@ -25,19 +25,19 @@ ASP.NET je technologie rozhraní .NET Framework pro vytváření webových aplik
 
 ## <a name="developing-web-apps-with-aspnet-core"></a>Vývoj webových aplikací pomocí ASP.NET Core
 
-ASP.NET Core je verzí ASP.NET 4.x. Některé z výhod ASP.NET Core nabízí v porovnání s ASP.NET:
+ASP.NET Core je verzí ASP.NET 4.x. Některé výhody ASP.NET Core poskytují více než ASP.NET:
 
-- Různé platformy.
-- Odlehčené a modulárnější.
+- Pro různé platformy.
+- A další modulární.
 - Jednotné prostředí pro vytváření webového uživatelského rozhraní a webových rozhraní API.
 
-Zobrazit [Proč používat ASP.NET Core?](/aspnet/core#why-use-aspnet-core) pro rozšířený seznam výhody.
+Podívejte se, [Proč použít ASP.NET Core?](/aspnet/core#why-choose-aspnet-core) pro rozšířený seznam výhod.
 
-Další informace o ASP.NET Core](/aspnet/core) najdete v tématu:
+Další informace o ASP.NET Core] (/ASPNET/Core) naleznete v tématu:
 
 - [Začínáme se stránkami Razor](/aspnet/core/tutorials/razor-pages/razor-pages-start)
 - [Vytvoření webového rozhraní API](/aspnet/core/tutorials/first-web-api)
-- [Vytvoření webové aplikace ASP.NET Core v Azure](/azure/app-service/app-service-web-get-started-dotnet)
+- [Vytvoření webové aplikace v ASP.NET Core v Azure](/azure/app-service/app-service-web-get-started-dotnet)
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,31 +6,28 @@ helpviewer_keywords:
 - tab controls [Windows Forms], tab order
 - tab pages [Windows Forms], adding controls
 ms.assetid: 7ee734e1-e31e-4ed0-bbc0-a7e8a1f20fef
-ms.openlocfilehash: f30db784a51c98aebaa8b95926bc8c62003ee390
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b7ea0fc953be5360e38bef9439347529986908f
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011239"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039755"
 ---
 # <a name="how-to-add-a-control-to-a-tab-page-using-the-designer"></a>Postupy: Přidání ovládacího prvku na kartu pomocí Návrháře
-Použití prvku modelu Windows Forms <xref:System.Windows.Forms.TabControl> zobrazit další ovládací prvky uspořádané způsobem. Tyto pokyny slouží k zobrazení obrázku na hlavní část stránky karty. Informace o přidání ikony na popisek část stránky karty, najdete v části [jak: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md).  
-  
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-add-a-control-using-the-designer"></a>Přidání ovládacího prvku pomocí návrháře  
-  
-1. Klikněte na příslušnou kartu stránku tak, aby se zobrazí v horní části.  
-  
-2. Nakreslení ovládacího prvku na kartě.  
-  
+Použití model Windows Forms <xref:System.Windows.Forms.TabControl> slouží k zobrazení dalších ovládacích prvků uspořádaným způsobem. Pomocí těchto pokynů můžete zobrazit obrázek na hlavní části stránky karet. Informace o přidání ikony do části popisku stránky karty najdete v tématu [How to: Změňte vzhled model Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md).
+
+ Následující postup vyžaduje projekt **aplikace systému Windows** s formulářem, který obsahuje <xref:System.Windows.Forms.TabControl> ovládací prvek. Informace o nastavení takového projektu naleznete v tématu [How to: Vytvořte projekt](/visualstudio/ide/step-1-create-a-windows-forms-application-project) aplikace model Windows Forms a [postupujte takto: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms.
+
+## <a name="to-add-a-control-using-the-designer"></a>Přidání ovládacího prvku pomocí návrháře
+
+1. Klikněte na příslušnou stránku karty, aby se zobrazila nahoře.
+
+2. Nakreslete ovládací prvek na stránce karty.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
-- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
-- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+- [Postupy: Změna vzhledu model Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Postupy: Zakázat stránky karet](how-to-disable-tab-pages.md)
+- [Postupy: Přidání a odebrání karet pomocí model Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)

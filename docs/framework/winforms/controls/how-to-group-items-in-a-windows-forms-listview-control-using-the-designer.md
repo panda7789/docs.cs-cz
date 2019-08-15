@@ -6,45 +6,43 @@ helpviewer_keywords:
 - grouping
 - groups [Windows Forms], in Windows Forms controls
 ms.assetid: 8b615000-69d9-4c64-acaf-b54fa09b69e3
-ms.openlocfilehash: 9249eef281237f61d103a7c865042aafe537dea5
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: b63bcd9e5e357db350cc2987e09af84eb58bdcff
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960215"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039403"
 ---
 # <a name="how-to-group-items-in-a-windows-forms-listview-control-using-the-designer"></a>Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView pomocí Návrháře
 
-Funkci seskupování <xref:System.Windows.Forms.ListView> řízení umožňuje zobrazit související sady položek ve skupinách. Tyto skupiny jsou oddělené na obrazovce záhlaví vodorovné skupin, které obsahují názvů skupin. Můžete použít <xref:System.Windows.Forms.ListView> skupiny, aby měli procházení rozsáhlých seznamů jednodušší seskupováním položek podle abecedy, datum, nebo jiné logické seskupení. Následující obrázek ukazuje některé seskupených položek:
+Funkce <xref:System.Windows.Forms.ListView> seskupení ovládacího prvku umožňuje zobrazit související sady položek ve skupinách. Tyto skupiny jsou oddělené na obrazovce vodorovnými záhlavími skupin, která obsahují názvy skupin. Skupiny můžete použít <xref:System.Windows.Forms.ListView> k jednoduššímu procházení rozsáhlých seznamů tím, že položky seskupíte podle abecedy, podle data nebo do jiného logického seskupení. Následující obrázek ukazuje některé seskupené položky:
 
-![Čísla rozdělit do skupin liché a dokonce i.](./media/how-to-group-items-in-a-windows-forms-listview-control-using-the-designer/odd-even-list-view-groups.gif)
+![Čísla rozdělená na liché a sudé skupiny.](./media/how-to-group-items-in-a-windows-forms-listview-control-using-the-designer/odd-even-list-view-groups.gif)
 
-Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ListView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).
+Následující postup vyžaduje projekt **aplikace systému Windows** s formulářem, který obsahuje <xref:System.Windows.Forms.ListView> ovládací prvek. Informace o nastavení takového projektu naleznete v tématu [How to: Vytvořte projekt](/visualstudio/ide/step-1-create-a-windows-forms-application-project) aplikace model Windows Forms a [postupujte takto: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms.
 
-Pokud chcete povolit seskupování, je nutné nejprve vytvořit jeden nebo více <xref:System.Windows.Forms.ListViewGroup> objektů v Návrháři nebo prostřednictvím kódu programu. Po definování skupinu můžete přiřadit položky k němu.
+Chcete-li povolit seskupování, je nutné nejprve vytvořit jeden <xref:System.Windows.Forms.ListViewGroup> nebo více objektů buď v návrháři, nebo programově. Po definování skupiny můžete k ní přiřadit položky.
 
 > [!NOTE]
-> <xref:System.Windows.Forms.ListView> jsou k dispozici pouze na skupiny [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] když vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody. Ve starších operačních systémech jakýkoli kód týkajících se skupin nemá žádný vliv a skupin nebude zobrazovat. Další informace naleznete v tématu <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>.
->
-> Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).
+> <xref:System.Windows.Forms.ListView>skupiny jsou k dispozici [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] pouze v případě, <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> že vaše aplikace volá metodu. Ve starších operačních systémech žádný kód týkající se skupin nemá žádný vliv a skupiny se nezobrazí. Další informace naleznete v tématu <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>.
 
-### <a name="to-add-or-remove-groups-in-the-designer"></a>Chcete-li přidat nebo odebrat skupiny v Návrháři
+## <a name="to-add-or-remove-groups-in-the-designer"></a>Přidání nebo odebrání skupin v Návrháři
 
-1. V **vlastnosti** okna, klikněte na tlačítko **tlačítko se třemi tečkami** (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle <xref:System.Windows.Forms.ListView.Groups%2A> vlastnost .
+1. V okně **vlastnosti** klikněte![na tlačítko se **třemi** tečkami (tlačítko se třemi tečkami (...) v okno Vlastnosti sady](./media/visual-studio-ellipsis-button.png)Visual Studio <xref:System.Windows.Forms.ListView.Groups%2A> .) vedle vlastnosti.
 
-     **Editor kolekce ListViewGroup** se zobrazí.
+     Zobrazí se **Editor kolekce objektu ListView** .
 
-2. Chcete-li přidat skupinu, klikněte na tlačítko **přidat** tlačítko. Potom můžete nastavit vlastnosti nové skupiny, jako <xref:System.Windows.Forms.ListViewGroup.Header%2A> a <xref:System.Windows.Forms.ListViewGroup.HeaderAlignment%2A> vlastnosti. Můžete odebrat skupinu, vyberte ho a klikněte **odebrat** tlačítko.
+2. Chcete-li přidat skupinu, klikněte na tlačítko **Přidat** . Pak můžete nastavit vlastnosti nové skupiny, například <xref:System.Windows.Forms.ListViewGroup.Header%2A> vlastnosti a. <xref:System.Windows.Forms.ListViewGroup.HeaderAlignment%2A> Pokud chcete skupinu odebrat, vyberte ji a klikněte na tlačítko **Odebrat** .
 
-### <a name="to-assign-items-to-groups-in-the-designer"></a>Přiřazení položek do skupin v Návrháři
+## <a name="to-assign-items-to-groups-in-the-designer"></a>Přiřazení položek do skupin v Návrháři
 
-1. V **vlastnosti** okna, klikněte na tlačítko **tlačítko se třemi tečkami** (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle <xref:System.Windows.Forms.ListView.Items%2A> vlastnost .
+1. V okně **vlastnosti** klikněte![na tlačítko se **třemi** tečkami (tlačítko se třemi tečkami (...) v okno Vlastnosti sady](./media/visual-studio-ellipsis-button.png)Visual Studio <xref:System.Windows.Forms.ListView.Items%2A> .) vedle vlastnosti.
 
-     **Editor kolekce ListViewItem** se zobrazí.
+     Zobrazí se **Editor kolekce ListViewItems** .
 
-2. Chcete-li přidat novou položku, klikněte na tlačítko **přidat** tlačítko. Potom můžete nastavit vlastnosti nové položky, jako <xref:System.Windows.Forms.ListViewItem.Text%2A> a <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A> vlastnosti.
+2. Chcete-li přidat novou položku, klikněte na tlačítko **Přidat** . Pak můžete nastavit vlastnosti nové položky, například <xref:System.Windows.Forms.ListViewItem.Text%2A> vlastnosti a. <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>
 
-3. Vyberte <xref:System.Windows.Forms.ListViewItem.Group%2A> vlastnosti a zvolte skupinu z rozevíracího seznamu.
+3. <xref:System.Windows.Forms.ListViewItem.Group%2A> Vyberte vlastnost a v rozevíracím seznamu vyberte skupinu.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -53,4 +51,4 @@ Pokud chcete povolit seskupování, je nutné nejprve vytvořit jeden nebo více
 - <xref:System.Windows.Forms.ListViewGroup>
 - [Ovládací prvek ListView](listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
-- [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
+- [Postupy: Přidávání a odebírání položek pomocí ovládacího prvku model Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

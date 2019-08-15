@@ -10,15 +10,15 @@ api_type:
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf7e997282351cc10dd6da1fc405366ea67c7307
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8736da6c8db876b3dadb3b906a586633be176cf6
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741094"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69038328"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>Funkce CertVerifyAuthenticodeLicense
-Ověří platnost licence k Authenticode XrML.  
+Ověřuje platnost licence na technologii Authenticode pro technologii Authenticode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,12 +33,12 @@ HRESULT CertVerifyAuthenticodeLicense (
   
 ## <a name="parameters"></a>Parametry  
  `pLicenseBlob`  
- [in] Licence technologie Authenticode XrML ověření.  
+ pro Licence Authenticode pro technologii Authenticode, která se má ověřit.  
   
- Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
+ Podívejte se na strukturu [CRYPTOAPI_BLOB](/windows/win32/api/dpapi/ns-dpapi-crypt_integer_blob) .  
   
  `dwFlags`  
- [in] Volitelné. Kombinací těchto hodnot:  
+ pro Volitelné. Kombinace následujících hodnot:  
   
 - AXL_REVOCATION_NO_CHECK  
   
@@ -53,17 +53,17 @@ HRESULT CertVerifyAuthenticodeLicense (
 - AXL_TRUST_MICROSOFT_ROOT_ONLY  
   
  `pSignerInfo`  
- [out] Získat informace podepisující osoby. Pokud nebyla podepsána licence, `dwError` je nastavena na TRUST_E_NOSIGNATURE. Je odpovědností volajícího k uvolnění prostředků s použitím [CertFreeAuthenticodeSignerInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodesignerinfo-function.md) funkce po použití.  
+ mimo Pro získání informací o podepisující osobě. Pokud licence není podepsaná, `dwError` je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeSignerInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodesignerinfo-function.md) po použití.  
   
- Zobrazit [struktura AXL_AUTHENTICODE_SIGNER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-signer-info-structure.md).  
+ Viz [Struktura AXL_AUTHENTICODE_SIGNER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-signer-info-structure.md).  
   
  `pTimestamperInfo`  
- [out] Získat čas stamper informace, pokud je k dispozici. Pokud licence nebyla časovým razítkem, `dwError` je nastavena na TRUST_E_NOSIGNATURE. Je odpovědností volajícího k uvolnění prostředků s použitím [CertFreeAuthenticodeTimestamperInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodetimestamperinfo-function.md) funkce po použití.  
+ mimo Pro získání informací o časovém razítku, pokud je k dispozici. Pokud licence nebyla označena časovým razítkem `dwError` , je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeTimestamperInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodetimestamperinfo-function.md) po použití.  
   
- Zobrazit [struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-timestamper-info-structure.md).  
+ Viz [Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-timestamper-info-structure.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí `S_OK` v případě úspěšného ověření. V opačném případě vrátí kód chyby.  
+ Vrátí `S_OK` , pokud bylo úspěšné. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

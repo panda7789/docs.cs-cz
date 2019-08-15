@@ -6,53 +6,50 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], Explorer-style interface
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
-ms.openlocfilehash: 578fdf8e24803db0e0d80ff22aa5cebebbc2663e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: db2c5431dfb0156c1508a18ef13d2af80eb4981b
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615999"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039537"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms
-Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z důvodu jeho známý připravený.  
-  
- Průzkumník Windows je v podstatě <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládací prvek na samostatné panelů. Panely vyrábí celá rozdělovač umožňující změnu velikosti. Uspořádání ovládacích prvků je velice efektivní pro zobrazení informací o procházení.  
-  
- Následující kroky ukazují, jak k uspořádání ovládacích prvků ve Windows Explorer podobě. Nezobrazovat přidání funkce procházení souborů v aplikaci Windows Explorer.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-create-a-windows-explorer-style-windows-form"></a>Vytvoření formuláře Windows stylem podobným Průzkumníku Windows  
-  
-1. Vytvoření nového projektu aplikace Windows (**souboru** > **nový** > **projektu** > **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
-  
-2. Z **nástrojů**:  
-  
-    1. Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku na formulář.  
-  
-    2. Přetáhněte <xref:System.Windows.Forms.TreeView> ovládací prvek do **SplitterPanel1** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **Panel1**).  
-  
-    3. Přetáhněte <xref:System.Windows.Forms.ListView> ovládací prvek do **SplitterPanel2** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **ovládací prvek Panel2**).  
-  
-3. Vyberte klávesy CTRL a kliknutím zase na všechny tři ovládací prvky. Když vyberete <xref:System.Windows.Forms.SplitContainer> řídit, klikněte na tlačítko rozdělovač, nikoli panelů.  
-  
+Průzkumník Windows je běžná volba uživatelského rozhraní pro aplikace z důvodu své připravenosti.
+
+ Průzkumník Windows je v podstatě <xref:System.Windows.Forms.TreeView> ovládací prvek <xref:System.Windows.Forms.ListView> a ovládací prvek na samostatných panelech. Panely mají změnu velikosti příčkou. Toto uspořádání ovládacích prvků je velmi efektivní pro zobrazení a informace o procházení.
+
+ Následující kroky ukazují, jak uspořádat ovládací prvky ve formuláři podobném prohlížeči Windows Explorer. Neukazují, jak přidat funkce pro procházení souborů v aplikaci Průzkumník Windows.
+
+## <a name="to-create-a-windows-explorer-style-windows-form"></a>Vytvoření formuláře Windows ve stylu Průzkumníka Windows
+
+1. Vytvoření nového projektu aplikace pro Windows (**soubor** > **nového** > **projektu** > **Visual C#**  nebo**klasický Desktop** **Visual Basic** >  >  **Model Windows Forms aplikace**).
+
+2. Ze **sady nástrojů**:
+
+    1. <xref:System.Windows.Forms.SplitContainer> Přetáhněte ovládací prvek do formuláře.
+
+    2. Přetáhněte ovládací prvek do **SplitterPanel1** (panel <xref:System.Windows.Forms.SplitContainer> ovládacího prvku označený ovládacího Panel1 (). <xref:System.Windows.Forms.TreeView>
+
+    3. Přetáhněte ovládací prvek do **SplitterPanel2** (panel <xref:System.Windows.Forms.SplitContainer> ovládacího prvku označený Panel2). <xref:System.Windows.Forms.ListView>
+
+3. Vyberte všechny tři ovládací prvky tak, že stisknete klávesu CTRL a pak je kliknete zase. Když vyberete <xref:System.Windows.Forms.SplitContainer> ovládací prvek, klikněte na rozdělovač, nikoli na panely.
+
     > [!NOTE]
-    >  Nepoužívejte **Vybrat vše** příkaz **upravit** nabídky. Pokud tak učiníte, vlastnost, je potřeba v dalším kroku nebude zobrazovat **vlastnosti** okna.  
-  
-4. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-5. Stisknutím klávesy F5 spusťte aplikaci.  
-  
-     Formulář zobrazí dvě části uživatelského rozhraní, podobně jako u v Průzkumníku Windows.  
-  
+    >  V nabídce **Úpravy** nepoužívejte příkaz **Select All** . Pokud tak učiníte, vlastnost potřebná v dalším kroku se nezobrazí v okně **vlastnosti** .
+
+4. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost na <xref:System.Windows.Forms.DockStyle.Fill>hodnotu.
+
+5. Stisknutím klávesy F5 spusťte aplikaci.
+
+     Ve formuláři se zobrazí uživatelské rozhraní se dvěma částmi, podobně jako v Průzkumníkovi Windows.
+
     > [!NOTE]
-    >  Při přetažení příčky změnit velikost panelů sami.  
-  
+    >  Při přetahování rozdělovače se panely změní samy na sebe.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.SplitContainer>
-- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
-- [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
+- [Postupy: Vytvoření uživatelského rozhraní s více podokny pomocí model Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
+- [Postupy: Definování chování změny velikosti a umístění v rozděleném okně](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
 - [Postupy: Vodorovné rozdělení okna](how-to-split-a-window-horizontally.md)
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

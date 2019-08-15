@@ -10,31 +10,28 @@ helpviewer_keywords:
 - rows [Windows Forms], spanning
 - cells [Windows Forms], merging
 ms.assetid: a8a2fdd3-a848-48b0-a4cd-4e85ebded87e
-ms.openlocfilehash: 02db78b07930676235e55e535fb24f6ff618d823
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a215b2b4e05bab5c81d2779d4b67d5b9d57b6ba5
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012968"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039690"
 ---
 # <a name="how-to-span-rows-and-columns-in-a-tablelayoutpanel-control"></a>Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel
-Ovládací prvky v <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek může mít rozsah sousední řádků a sloupců.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-span-columns-and-rows"></a>Rozložit sloupců a řádků  
-  
-1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře.  
-  
-2. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do buňky levého horního <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
-  
-3. Nastavte <xref:System.Windows.Forms.Button> ovládacího prvku **ColumnSpan** vlastnost **2**. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek zahrnuje prvního a druhého sloupce.  
-  
-4. Nastavte <xref:System.Windows.Forms.Button> ovládacího prvku **RowSpan** vlastnost **2**. Všimněte si, <xref:System.Windows.Forms.Button> první a druhý řádek obsahuje ovládací prvek.  
-  
-5. Nastavte <xref:System.Windows.Forms.Button> ovládacího prvku **ColumnSpan** vlastnost **1**. Všimněte si, <xref:System.Windows.Forms.Button> ovládacího prvku přesune na první sloupec a zahrnuje první a druhý řádek.  
-  
+Ovládací prvky v <xref:System.Windows.Forms.TableLayoutPanel> ovládacím prvku mohou být rozloženy sousedícími řádky a sloupci.
+
+## <a name="to-span-columns-and-rows"></a>Postup při rozpětí sloupců a řádků
+
+1. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
+
+2. Přetáhněte ovládací prvek ze **sady nástrojů** na <xref:System.Windows.Forms.TableLayoutPanel> levou horní buňku ovládacího prvku. <xref:System.Windows.Forms.Button>
+
+3. Nastavte vlastnost **jeho ColumnSpan**ovládacího prvku na hodnotu 2 <xref:System.Windows.Forms.Button> . Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvek pokrývá první a druhý sloupec.
+
+4. Nastavte vlastnost **RowSpan**ovládacího prvku na hodnotu 2 <xref:System.Windows.Forms.Button> . Všimněte si, <xref:System.Windows.Forms.Button> že ovládací prvek pokrývá první a druhý řádek.
+
+5. Nastavte vlastnost **jeho ColumnSpan**ovládacího prvku na hodnotu 1 <xref:System.Windows.Forms.Button> . Všimněte si, <xref:System.Windows.Forms.Button> že se ovládací prvek přesune do prvního sloupce a zasahuje do prvního a druhého řádku.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek TableLayoutPanel](tablelayoutpanel-control-windows-forms.md)

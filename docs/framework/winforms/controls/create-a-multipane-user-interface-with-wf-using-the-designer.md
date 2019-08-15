@@ -6,46 +6,43 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], using the designer
 - multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-ms.openlocfilehash: 9f3350e32c0fbff58678052d26be954d30d512a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f96124f7d97e733b1f0e2559320ce2e09ba5ff21
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011508"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039950"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Postupy: Vytváření uživatelského rozhraní s více podokny s Windows Forms pomocí Návrháře
-V následujícím postupu vytvoříte, který je podobný tomu použitému v aplikaci Microsoft Outlook s více podokny uživatelské rozhraní **složky** seznamu, **zprávy** podokně a **veverziPreview** podokně. Toto uspořádání se dosahuje hlavně prostřednictvím Ukotvování ovládacích prvků ve formuláři.  
-  
- Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](how-to-dock-controls-on-windows-forms.md).  
-  
- Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a další ovládací prvky ve formuláři, nikoli na přidání funkce do aplikace, které napodobují aplikace Microsoft Outlook.  
-  
- K vytvoření tohoto uživatelského rozhraní, umístěte všechny ovládací prvky v rámci <xref:System.Windows.Forms.SplitContainer> ovládací prvek, který obsahuje <xref:System.Windows.Forms.TreeView> ovládacího prvku na panelu vlevo. Na pravém panelu <xref:System.Windows.Forms.SplitContainer> ovládací prvek obsahuje druhý <xref:System.Windows.Forms.SplitContainer> ovládacím prvkem <xref:System.Windows.Forms.ListView> ovládací prvek výše <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tyto <xref:System.Windows.Forms.SplitContainer> ovládací prvky umožňují nezávislé Změna velikosti jiných ovládacích prvků ve formuláři. Můžete upravit postupy v tomto postupu vytváření vlastního uživatelského rozhraní vlastní.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-create-an-outlook-style-user-interface-at-design-time"></a>Chcete-li vytvořit uživatelské rozhraní Outlooku – vizuální styl v době návrhu  
-  
-1. Vytvoření nového projektu aplikace Windows (**souboru** > **nový** > **projektu** > **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
-  
-2. Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku **nástrojů** do formuláře. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-3. Přetáhněte <xref:System.Windows.Forms.TreeView> ovládacího prvku **nástrojů** na panelu vlevo <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left> kliknutím na levém panelu v editoru hodnoty zobrazí po kliknutí na šipku dolů.  
-  
-4. Přetáhněte další <xref:System.Windows.Forms.SplitContainer> ovládacího prvku **nástrojů**; umístěte ho na pravém panelu <xref:System.Windows.Forms.SplitContainer> jste přidali do svého formuláře ovládací prvek. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill> a <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnost <xref:System.Windows.Forms.Orientation.Horizontal>.  
-  
-5. Přetáhněte <xref:System.Windows.Forms.ListView> ovládacího prvku **nástrojů** na horním panelu druhého <xref:System.Windows.Forms.SplitContainer> jste přidali do svého formuláře ovládací prvek. Nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.ListView> mít pod kontrolou <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-6. Přetáhněte <xref:System.Windows.Forms.RichTextBox> řízení z **nástrojů** dolní panel druhého <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. Nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> mít pod kontrolou <xref:System.Windows.Forms.DockStyle.Fill>.  
-  
-     V tomto okamžiku můžete stisknutím klávesy F5 spusťte aplikaci, formulář se zobrazí na třemi částmi uživatelského rozhraní, podobně jako u aplikace Microsoft Outlook.  
-  
+V následujícím postupu vytvoříte uživatelské rozhraní s více podokny, které je podobné jako v aplikaci Microsoft Outlook, seznam **složek** , podokno **zprávy** a podokno **náhledu** . Toto uspořádání se dosahuje hlavně prostřednictvím ovládacích prvků docking s formulářem.
+
+ Při ukotvení ovládacího prvku určíte, na který okraj nadřazeného kontejneru je ovládací prvek připevněný. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost na <xref:System.Windows.Forms.DockStyle.Right>, pravý okraj ovládacího prvku bude ukotven k pravému okraji svého nadřazeného ovládacího prvku. Kromě toho je ukotvená hrana ovládacího prvku změněna tak, aby odpovídala jeho ovládacímu prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, naleznete [v tématu How to: Ukotvit ovládací prvky na](how-to-dock-controls-on-windows-forms.md)model Windows Forms.
+
+ Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a dalších ovládacích prvků ve formuláři, nikoli při přidávání funkcí, které aplikaci napodobují Microsoft Outlook.
+
+ Chcete-li vytvořit toto uživatelské rozhraní, umístěte všechny ovládací prvky do <xref:System.Windows.Forms.SplitContainer> ovládacího prvku, který <xref:System.Windows.Forms.TreeView> obsahuje ovládací prvek na levém panelu. Panel <xref:System.Windows.Forms.SplitContainer> na pravé straně ovládacího prvku obsahuje druhý <xref:System.Windows.Forms.SplitContainer> ovládací prvek <xref:System.Windows.Forms.RichTextBox> s <xref:System.Windows.Forms.ListView> ovládacím prvkem nad rámec ovládacího prvku. Tyto <xref:System.Windows.Forms.SplitContainer> ovládací prvky umožňují nezávislé změny velikosti ostatních ovládacích prvků ve formuláři. Techniky v tomto postupu můžete přizpůsobit a vytvořit vlastní uživatelská rozhraní.
+
+## <a name="to-create-an-outlook-style-user-interface-at-design-time"></a>Vytvoření uživatelského rozhraní ve stylu aplikace Outlook v době návrhu
+
+1. Vytvoření nového projektu aplikace pro Windows (**soubor** > **nového** > **projektu** > **Visual C#**  nebo**klasický Desktop** **Visual Basic** >  >  **Model Windows Forms aplikace**).
+
+2. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.SplitContainer> V okně **vlastnosti** nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost na <xref:System.Windows.Forms.DockStyle.Fill>hodnotu.
+
+3. Přetáhněte ovládací prvek ze **sady nástrojů** na panel na levé <xref:System.Windows.Forms.SplitContainer> straně ovládacího prvku. <xref:System.Windows.Forms.TreeView> V okně **vlastnosti** nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost na <xref:System.Windows.Forms.DockStyle.Left> hodnotu kliknutím na levý panel v editoru hodnot, který se zobrazí po kliknutí na šipku dolů.
+
+4. Přetáhněte jiný <xref:System.Windows.Forms.SplitContainer> ovládací prvek ze **sady nástrojů**a umístěte jej do pravého panelu <xref:System.Windows.Forms.SplitContainer> ovládacího prvku, který jste přidali do formuláře. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> <xref:System.Windows.Forms.DockStyle.Fill> vlastnostna<xref:System.Windows.Forms.Orientation.Horizontal>hodnotu a vlastnostnahodnotu.<xref:System.Windows.Forms.SplitContainer.Orientation%2A>
+
+5. Přetáhněte ovládací prvek ze **sady nástrojů** na horní panel druhého <xref:System.Windows.Forms.SplitContainer> ovládacího prvku, který jste přidali do formuláře. <xref:System.Windows.Forms.ListView> <xref:System.Windows.Forms.SplitContainer.Dock%2A> Nastavte vlastnost <xref:System.Windows.Forms.ListView> ovládacího prvku na <xref:System.Windows.Forms.DockStyle.Fill>.
+
+6. Přetáhněte ovládací prvek ze **sady nástrojů** na spodní panel druhého <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. <xref:System.Windows.Forms.RichTextBox> <xref:System.Windows.Forms.SplitContainer.Dock%2A> Nastavte vlastnost <xref:System.Windows.Forms.RichTextBox> ovládacího prvku na <xref:System.Windows.Forms.DockStyle.Fill>.
+
+     Když stisknete klávesu F5 ke spuštění aplikace, formulář zobrazí uživatelské rozhraní se třemi částmi, podobně jako v aplikaci Microsoft Outlook.
+
     > [!NOTE]
-    >  Když umístíte ukazatel myši přes buď příčky v rámci <xref:System.Windows.Forms.SplitContainer> ovládací prvky, můžete změnit velikost vnitřní dimenze.  
-  
-     Při vývoji aplikace se v tuto chvíli máte vytvořený propracovaná uživatelská rozhraní. Dalším krokem je pokračováním programování aplikací, například připojením <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládacích prvků pro nějaký druh zdroje dat. Další informace o připojování ovládacích prvků k datům najdete v tématu [datové vazby a Windows Forms](../data-binding-and-windows-forms.md).  
-  
+    >  Když umístíte ukazatel myši na některé z rozdělovačů v <xref:System.Windows.Forms.SplitContainer> ovládacích prvcích, můžete změnit velikost vnitřních rozměrů.
+
+V tomto okamžiku vývoje aplikací jste si vystavili sofistikované uživatelské rozhraní. Dalším krokem je pokračování v programování samotné aplikace, třeba propojením <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládacích prvků s nějakým druhem zdroje dat. Další informace o připojení ovládacích prvků k datům naleznete v tématu [datové vazby a model Windows Forms](../data-binding-and-windows-forms.md).
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.SplitContainer>

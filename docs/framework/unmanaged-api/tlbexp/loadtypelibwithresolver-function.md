@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d2f5ad2afb2e73acead82369782f142aa10aac3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6b9bec757071a98e085ccdeee3fc66bfc07f52bc
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782714"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040168"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver – funkce
-Načte knihovnu typů a použije zadané [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) vyřešit jakékoli interně odkazované knihovny typů.  
+Načte knihovnu typů a pomocí dodaného [rozhraní ITypeLibResolver –](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) vyřeší všechny interně odkazované knihovny typů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,60 +38,60 @@ HRESULT LoadTypeLibWithResolver(
   
 ## <a name="parameters"></a>Parametry  
  `szFile`  
- [in] Cesta k souboru knihovny typů.  
+ pro Cesta k souboru knihovny typů.  
   
  `regkind`  
- [in] A [REGKIND výčet](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/ne-oleauto-tagregkind) příznak, který určuje způsob registrace knihovny typů. Jeho možné hodnoty jsou:  
+ pro Příznak [výčtu REGKIND](https://docs.microsoft.com/windows/win32/api/oleauto/ne-oleauto-regkind) , který určuje, jak je knihovna typů registrována. Možné hodnoty jsou:  
   
-- `REGKIND_DEFAULT`: Použije výchozí chování registrace.  
+- `REGKIND_DEFAULT`: Použijte výchozí chování registrace.  
   
 - `REGKIND_REGISTER`: Zaregistrujte tuto knihovnu typů.  
   
-- `REGKIND_NONE`: Neregistrujte tuto knihovnu typů.  
+- `REGKIND_NONE`: Tuto knihovnu typů neregistrujte.  
   
  `pTlbResolver`  
- [in] Ukazatel na implementaci [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md).  
+ pro Ukazatel na implementaci [rozhraní ITypeLibResolver –](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md).  
   
  `pptlib`  
- [out] Odkaz na knihovnu typů, který se načítá.  
+ mimo Odkaz na knihovnu typů, která je načítána.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Jedna z hodnot HRESULT uvedené v následující tabulce.  
+ Jedna z hodnot HRESULT, které jsou uvedeny v následující tabulce.  
   
 |Návratová hodnota|Význam|  
 |------------------|-------------|  
-|`S_OK`|Úspěch.|  
+|`S_OK`|Nástup.|  
 |`E_OUTOFMEMORY`|Nedostatek paměti|  
-|`E_POINTER`|Jeden nebo více ukazatelů jsou neplatné.|  
-|`E_INVALIDARG`|Jeden nebo více argumentů nejsou platné.|  
-|`TYPE_E_IOERROR`|Funkce nemůže zapisovat do souboru.|  
-|`TYPE_E_REGISTRYACCESS`|Nelze otevřít systémové registrační databázi.|  
+|`E_POINTER`|Jeden nebo více ukazatelů je neplatných.|  
+|`E_INVALIDARG`|Jeden nebo více argumentů je neplatných.|  
+|`TYPE_E_IOERROR`|Funkce nemohla zapisovat do souboru.|  
+|`TYPE_E_REGISTRYACCESS`|Registrační databázi systému nelze otevřít.|  
 |`TYPE_E_INVALIDSTATE`|Knihovnu typů nelze otevřít.|  
-|`TYPE_E_CANTLOADLIBRARY`|Nelze načíst knihovnu typů nebo knihovny DLL.|  
+|`TYPE_E_CANTLOADLIBRARY`|Knihovnu typů nebo knihovnu DLL nelze načíst.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Tlbexp.exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) volání `LoadTypeLibWithResolver` funkce během procesu převodu sestavení na typu knihovny.  
+ [Tlbexp. exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) volá `LoadTypeLibWithResolver` funkci během procesu převodu sestavení na typ knihovny.  
   
- Tato funkce načte zadanou knihovnu typů s minimální přístup k registru. Funkce zkontroluje knihovnu typů pro interně odkazované knihovny typů, z nichž každý musí být načten a přidány do knihovny nadřazeného typu.  
+ Tato funkce načte zadanou knihovnu typů s minimálním přístupem k registru. Funkce pak prověřuje knihovnu typů pro interně odkazované knihovny typů, z nichž každá musí být načtena a přidána do knihovny nadřazené typu.  
   
- Předtím, než je možné načíst odkazovanou knihovnu typů, cesta k souboru jeho odkazu musí přeložit na úplnou cestu. To lze provést prostřednictvím [resolvetypelib – metoda](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md) poskytnutou neregistrovaným [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md), který je předán `pTlbResolver` parametru.  
+ Předtím, než může být načtena odkazovaná knihovna typů, musí být cesta k referenčnímu souboru přeložena na úplnou cestu k souboru. To je provedeno prostřednictvím [metody ResolveTypeLib –](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md) , která je poskytována [rozhraním ITypeLibResolver –](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md), které je `pTlbResolver` předáno v parametru.  
   
- Pokud známý úplné cesty k souboru z odkazované knihovny typů `LoadTypeLibWithResolver` funkce načte a přidá do nadřazené knihovny typů, vytváření knihovny typů kombinované hlavní odkazované knihovny typů.  
+ Je-li známa úplná cesta k souboru odkazované knihovny typů, `LoadTypeLibWithResolver` funkce načte a přidá odkazovanou knihovnu typů do nadřazené knihovny typů a vytvoří kombinovanou hlavní knihovnu typů.  
   
- Poté, co funkce odstraňuje a načte všechna interně odkazované knihovny typů, vrátí odkaz na hlavní rozpoznaný typ knihovny `pptlib` parametru.  
+ Poté, co funkce vyřeší a načte všechny interně odkazované knihovny typů, vrátí odkaz na hlavní přeloženou knihovnu typů v `pptlib` parametru.  
   
- `LoadTypeLibWithResolver` Funkce je obvykle volána [Tlbexp.exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), který dodává své vlastní interní [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) implementace `pTlbResolver` parametr.  
+ Funkce je obecně volána nástrojem [Tlbexp. exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), který poskytuje svou vlastní interní implementaci `pTlbResolver` [rozhraní ITypeLibResolver –](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) v parametru. `LoadTypeLibWithResolver`  
   
- Při volání `LoadTypeLibWithResolver` přímo, je nutné zadat vlastní [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) implementace.  
+ Pokud voláte `LoadTypeLibWithResolver` přímo, musíte dodat vlastní implementaci [rozhraní ITypeLibResolver –](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** TlbRef.h  
+ **Hlaviček** TlbRef. h  
   
- **Knihovna:** TlbRef.lib  
+ **Knihovna** TlbRef.lib  
   
- **Verze rozhraní .NET framework:** 3.5, 3.0, 2.0  
+ **Verze .NET Framework:** 3,5, 3,0, 2,0  
   
 ## <a name="see-also"></a>Viz také:
 

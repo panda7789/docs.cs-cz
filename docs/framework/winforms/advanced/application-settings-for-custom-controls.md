@@ -5,46 +5,46 @@ helpviewer_keywords:
 - custom controls [Windows Forms], application settings
 - application settings [Windows Forms], custom controls
 ms.assetid: f44afb74-76cc-44f2-890a-44b7cdc211a1
-ms.openlocfilehash: 69a5caef8bab45503b9f34422de8c2ba2e7f01ff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4e477ce1c171b514482623595b2c5565564a2cb
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960898"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040462"
 ---
 # <a name="application-settings-for-custom-controls"></a>Nastavení aplikace pro vlastní ovládací prvky
-Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou ovládací prvky jsou hostované v aplikacích třetích stran.  
-  
- Většina dokumentace o nastavení aplikace funkcí se zapíše za předpokladu, že vytváříte samostatné aplikace. Ale při vytváření ovládacího prvku, který bude hostitelem jinými vývojáři ve svých aplikacích, budete muset provést několik dalších kroků pro ovládací prvek se zachovat jeho nastavení správně.  
-  
-## <a name="application-settings-and-custom-controls"></a>Nastavení aplikace a vlastních ovládacích prvků  
- Pro ovládací prvek se správně zachovat jeho nastavení, musí zapouzdřovat procesu tak, že vytvoříte svůj vlastní vyhrazený aplikace nastavení obálkovou třídu odvozenou z <xref:System.Configuration.ApplicationSettingsBase>. Kromě toho musí implementovat třídu hlavní ovládací prvek <xref:System.Configuration.IPersistComponentSettings>. Rozhraní obsahuje několik vlastností a také dvě metody, <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> a <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>. Pokud přidáte ovládací prvek do formuláře pomocí **Návrháře formulářů Windows** v sadě Visual Studio, Windows Forms zavolá <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> automaticky při inicializaci ovládacího prvku, je nutné volat <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A> vás `Dispose` Metoda ovládacího prvku.  
-  
- Kromě toho byste měli implementovat následující pořadí pro nastavení aplikace pro vlastní ovládací prvky, aby správně fungovala v době návrhu prostředí, jako je Visual Studio:  
-  
-1. Vlastní aplikace nastavení třídu s konstruktorem, který přebírá <xref:System.ComponentModel.IComponent> jako jediný parametr. Tato třída slouží k uložení a načtení všech nastavení aplikace. Když vytvoříte novou instanci této třídy, předejte vlastního ovládacího prvku pomocí konstruktoru.  
-  
-2. Po ovládací prvek byl vytvořen a umístěné do formuláře, jako například v formuláře vytvořit toto vlastní nastavení třídy <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
-  
- Pokyny týkající se vytvoření vlastního nastavení třídy naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
-  
-## <a name="settings-keys-and-shared-settings"></a>Nastavení klíče a sdíleným nastavením  
- Některé ovládací prvky lze použít více než jednou v rámci stejného formuláře. Ve většině případů, měli byste tyto ovládací prvky se zachovat jejich vlastní nastavení. S <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> vlastnost <xref:System.Configuration.IPersistComponentSettings>, můžete zadat jedinečný řetězec, který slouží k rozlišení více verzí ovládací prvek na formuláři.  
-  
- Nejjednodušší způsob, jak implementovat <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> , je použít <xref:System.Windows.Forms.Control.Name%2A> ovládacího prvku pro vlastnosti <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>. Při načtení nebo uložení nastavení ovládacího prvku, předejte hodnotu <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> k <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> vlastnost <xref:System.Configuration.ApplicationSettingsBase> třídy. Nastavení aplikace používá tento jedinečný klíč při nevyřeší nastavení uživatele do souboru XML. Následující příklad kódu ukazuje jak `<userSettings>` části může hledat instance vlastního ovládacího prvku s názvem `CustomControl1` , která ukládá nastavení pro jeho `Text` vlastnost.  
-  
-```xml  
-<userSettings>  
-    <CustomControl1>  
-        <setting name="Text" serializedAs="string">  
-            <value>Hello, World</value>  
-        </setting>  
-    </CustomControl1>  
-</userSettings>  
-```  
-  
- Všechny instance ovládacího prvku, který nelze zadat hodnotu <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> budou sdílet stejné nastavení.  
-  
+Je nutné provést určité úlohy, abyste měli vlastní ovládací prvky, aby bylo možné zachovat nastavení aplikace, když jsou ovládací prvky hostovány v aplikacích třetích stran.
+
+ Většina dokumentace k funkci nastavení aplikace se zapisuje do předpokladu, že vytváříte samostatnou aplikaci. Pokud však vytváříte ovládací prvek, který budou hostovat jiní vývojáři ve svých aplikacích, je nutné provést několik dalších kroků, aby váš ovládací prvek správně zachoval nastavení.
+
+## <a name="application-settings-and-custom-controls"></a>Nastavení aplikace a vlastní ovládací prvky
+ Aby váš ovládací prvek správně zachoval nastavení, musí zapouzdřit proces vytvořením vlastní vyhrazené třídy nastavení vyhrazené aplikace, která je odvozena z <xref:System.Configuration.ApplicationSettingsBase>. Kromě toho musí hlavní třída ovládacího prvku implementovat rozhraní <xref:System.Configuration.IPersistComponentSettings>. Rozhraní obsahuje několik vlastností <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> a také dvě metody a. <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A> Přidáte-li ovládací prvek do formuláře pomocí **Návrhář formulářů** v aplikaci Visual Studio, model Windows Forms bude volána <xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A> automaticky při inicializaci ovládacího prvku; je nutné `Dispose` volat <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A> sami v metodě ovládacího prvku.
+
+ Kromě toho byste měli implementovat následující, aby nastavení aplikace pro vlastní ovládací prvky pracovala správně v prostředích návrhu, jako je například Visual Studio:
+
+1. Vlastní třída nastavení aplikace s konstruktorem, který přijímá <xref:System.ComponentModel.IComponent> jako jeden parametr. Tuto třídu použijte k uložení a načtení všech nastavení aplikace. Při vytváření nové instance této třídy předejte vlastní ovládací prvek pomocí konstruktoru.
+
+2. Po vytvoření ovládacího prvku a jeho umístění do formuláře, jako je například obslužná rutina <xref:System.Windows.Forms.Form.Load> události formuláře, vytvořte tuto vlastní třídu nastavení.
+
+ Pokyny k vytvoření vlastní třídy nastavení naleznete v tématu [How to: Vytvořte nastavení](how-to-create-application-settings.md)aplikace.
+
+## <a name="settings-keys-and-shared-settings"></a>Nastavení klíčů a sdílených nastavení
+ Některé ovládací prvky lze použít několikrát v rámci jednoho formuláře. Ve většině případů budete chtít, aby tyto ovládací prvky zachovaly vlastní individuální nastavení. S vlastností on <xref:System.Configuration.IPersistComponentSettings>můžete zadejte jedinečný řetězec, který slouží k jednoznačnému rozlišení více verzí ovládacího prvku na formuláři. <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>
+
+ Nejjednodušší způsob, jak implementovat <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> , je <xref:System.Windows.Forms.Control.Name%2A> použít vlastnost ovládacího prvku pro <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>. Při načítání nebo ukládání nastavení ovládacího prvku předáte hodnotu <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> pro <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> do vlastnosti <xref:System.Configuration.ApplicationSettingsBase> třídy. Nastavení aplikace používá tento jedinečný klíč, když uchovává nastavení uživatele do XML. Následující příklad kódu ukazuje, jak `<userSettings>` může oddíl najít instanci vlastního ovládacího prvku s názvem `CustomControl1` , který ukládá nastavení pro jeho `Text` vlastnost.
+
+```xml
+<userSettings>
+    <CustomControl1>
+        <setting name="Text" serializedAs="string">
+            <value>Hello, World</value>
+        </setting>
+    </CustomControl1>
+</userSettings>
+```
+
+ Všechny instance ovládacího prvku, který nedodá hodnotu pro <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> , budou sdílet stejné nastavení.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Configuration.ApplicationSettingsBase>

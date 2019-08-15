@@ -12,67 +12,64 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - bound controls [Windows Forms]
 ms.assetid: 4e96e3d0-b1cc-4de1-8774-bc9970ec4554
-ms.openlocfilehash: fe54c650e1d19f36d681053c7da47e12527c5827
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de8b8d16f45221fbafe9f61ca634f144d8f6f6ae
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011749"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040003"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí Návrháře
 
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
-  
- Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek je navržená speciálně pro zobrazení informací ze zdroje dat. Vazbu ovládacího prvku v době návrhu tak, že nastavíte <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti, nebo za běhu pomocí volání <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metoda. Přestože lze zobrazit data z různých zdrojů dat, obvykle zdroje jsou datové sady a data zobrazení.  
-  
- Pokud zdroj dat je k dispozici v době návrhu – například, pokud formulář obsahuje instance datové sady nebo zobrazení dat – mřížky můžete vázat na zdroj dat v době návrhu. Pak můžete zobrazit náhled dat bude vypadat v mřížce.  
-  
- Můžete také navázat mřížky prostřednictvím kódu programu, v době běhu. To je užitečné, když chcete nastavit zdroj dat na základě informací, které získáte v době běhu. Například aplikace může uživatelům povolit, zadejte název tabulky. Chcete-li zobrazit. Je také nutné v situacích, kde se zdroji dat neexistuje v době návrhu. To zahrnuje zdroje dat, jako je například pole, kolekcí, netypové datové sady a čtečky dat.  
-  
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Informace o jeho přidání, naleznete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)). Kromě toho v sadě Visual Studio 2005, můžete použít **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v části [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-data-bind-the-datagrid-control-to-a-single-table-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid jedné tabulky v Návrháři  
-  
-1. Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
-  
-2. Pokud zdroj dat je datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název tabulky k vytvoření vazby.  
-  
-3. Pokud je zdroj dat datové sady nebo zobrazení dat na základě tabulky datovou sadu, přidejte kód pro formulář k vyplnění datové sady.  
-  
-     Přesný kód, který používáte závisí na datové sady je kde získávají data. Pokud probíhá naplňování datové sady přímo z databáze, obvykle volat `Fill` metoda adaptéru dat, stejně jako v následujícím příkladu kódu, který naplňuje datovou sadu s názvem `DsCategories1`:  
-  
-    ```vb  
-    sqlDataAdapter1.Fill(DsCategories1)  
-    ```  
-  
-    ```csharp  
-    sqlDataAdapter1.Fill(DsCategories1);  
-    ```  
-  
-    ```cpp  
-    sqlDataAdapter1->Fill(dsCategories1);  
-    ```  
-  
-4. (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky.  
-  
-     Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimální formátování a všechny viditelné sloupce.  
-  
-### <a name="to-data-bind-the-datagrid-control-to-multiple-tables-in-a-dataset-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid více tabulek v datové sadě v Návrháři  
-  
-1. Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
-  
-2. Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), můžete nastavit <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název nadřazené tabulky.  
-  
-3. Napište kód pro naplnění dataset.  
-  
+>  Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+
+ Model Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek je speciálně navržen pro zobrazení informací ze zdroje dat. Ovládací prvek navážete v době návrhu nastavením <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastností a a <xref:System.Windows.Forms.DataGrid.DataMember%2A> v době <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> spuštění voláním metody. I když můžete zobrazit data z nejrůznějších zdrojů dat, nejdůležitější zdroje jsou datové sady a zobrazení dat.
+
+ Pokud je zdroj dat k dispozici v době návrhu, například pokud formulář obsahuje instanci datové sady nebo zobrazení dat, můžete vytvořit vazby mezi mřížkou a zdrojem dat v době návrhu. Pak můžete zobrazit náhled toho, jak budou data vypadat v mřížce.
+
+ Mřížku lze také vytvořit pomocí kódu programu v době běhu. To je užitečné, pokud chcete nastavit zdroj dat na základě informací, které získáte v době běhu. Aplikace může například uživateli umožnit zadání názvu tabulky, která se má zobrazit. Je také nutné v situacích, kdy zdroj dat neexistuje v době návrhu. To zahrnuje zdroje dat, jako jsou pole, kolekce, netypové datové sady a čtečky dat.
+
+ Následující postup vyžaduje projekt **aplikace systému Windows** s formulářem, který obsahuje <xref:System.Windows.Forms.DataGrid> ovládací prvek. Informace o nastavení takového projektu naleznete v tématu [How to: Vytvořte projekt](/visualstudio/ide/step-1-create-a-windows-forms-application-project) aplikace model Windows Forms a [postupujte takto: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms. V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> není ovládací prvek ve výchozím nastavení součástí **sady nástrojů** . Informace o jeho přidání naleznete v tématu [How to: Přidejte položky do sady nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)). Kromě toho v aplikaci Visual Studio 2005 můžete použít okno **zdroje dat** pro datovou vazbu při návrhu. Další informace najdete v tématu [vázání ovládacích prvků k datům v aplikaci Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).
+
+## <a name="to-data-bind-the-datagrid-control-to-a-single-table-in-the-designer"></a>Pro datovou datovou vazby ovládacího prvku DataGrid k jedné tabulce v Návrháři
+
+1. Nastavte <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost ovládacího prvku na objekt obsahující datové položky, se kterými chcete vytvořit vazby.
+
+2. Pokud je zdrojem dat datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost na název tabulky, ke které se má vytvořit vazba.
+
+3. Pokud je zdrojem dat datová sada nebo zobrazení dat založené na tabulce DataSet, přidejte do formuláře kód, který datovou sadu vyplní.
+
+     Přesný kód, který použijete, závisí na tom, kde datová sada získává data. Pokud je datová sada naplněna přímo z databáze, obvykle zavoláte `Fill` metodu datového adaptéru, jak je uvedeno v následujícím příkladu kódu, který naplňuje datovou sadu s `DsCategories1`názvem:
+
+    ```vb
+    sqlDataAdapter1.Fill(DsCategories1)
+    ```
+
+    ```csharp
+    sqlDataAdapter1.Fill(DsCategories1);
+    ```
+
+    ```cpp
+    sqlDataAdapter1->Fill(dsCategories1);
+    ```
+
+4. Volitelné Přidejte do mřížky vhodné styly tabulek a sloupců.
+
+     Pokud neexistují žádné styly tabulek, zobrazí se tabulka, ale s minimálním formátováním a všemi zobrazenými sloupci.
+
+## <a name="to-data-bind-the-datagrid-control-to-multiple-tables-in-a-dataset-in-the-designer"></a>Vazba ovládacího prvku DataGrid na více tabulek v datové sadě v Návrháři
+
+1. Nastavte <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost ovládacího prvku na objekt obsahující datové položky, se kterými chcete vytvořit vazby.
+
+2. Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost na název nadřazené tabulky.
+
+3. Zadejte kód, který bude datovou sadu vyplnit.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
-- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Přidání tabulek a sloupců do model Windows Forms ovládacího prvku DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Windows Forms – datová vazba](../windows-forms-data-binding.md)
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

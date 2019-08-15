@@ -5,47 +5,44 @@ helpviewer_keywords:
 - Windows Forms controls, locking
 - controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-ms.openlocfilehash: ac5fbf33564ed2dd1a030132a35b36164f777519
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cbf82f1481ee9779cec5cfbf3fb057b7ea399a1c
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638564"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039907"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>Postupy: Uzamykání ovládacích prvků ve Windows Forms
-Při návrhu uživatelského rozhraní (UI) aplikace Windows můžete uzamknout ovládací prvky, jakmile náleží správně, tak, aby nikoli neúmyslně přesunout nebo změnit jejich velikost, při nastavení dalších vlastností.  
-  
- Kromě toho můžete zamknutí a odemknutí všech ovládacích prvků na formuláři najednou, který je užitečný pro formuláře s mnoho ovládacích prvků, nebo můžete odemknout jednotlivých ovládacích prvků. Jakmile všechny ovládací prvky mají umístit kamkoli chcete ve formuláři, uzamknout je vše na místo, kde můžete zabránit přesunu chybné.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-lock-a-control"></a>Uzamknout ovládací prvek  
-  
-1. V **vlastnosti** okna, klikněte na tlačítko **uzamčené** vlastnosti a vyberte `true`. (Poklepete na název přepíná nastavení vlastnosti.)  
-  
-     Alternativně klikněte pravým tlačítkem na ovládací prvek a vyberte **uzamknout ovládací prvky**.  
-  
+Při návrhu uživatelského rozhraní (UI) aplikace systému Windows můžete ovládací prvky uzamknout, jakmile jsou umístěny správně, takže při nastavování dalších vlastností je neúmyslně přesunovat ani měnit jejich velikost.
+
+ Kromě toho můžete uzamknout a odemknout všechny ovládací prvky ve formuláři najednou, což je užitečné pro formuláře s mnoha ovládacími prvky, nebo můžete odemknout jednotlivé ovládací prvky. Po umístění všech ovládacích prvků tam, kde je chcete umístit do formuláře, je všechny zablokované, aby nedocházelo k chybnému přesunu.
+
+## <a name="to-lock-a-control"></a>Uzamčení ovládacího prvku
+
+1. V okně **vlastnosti** klikněte na vlastnost **Uzamčeno** a vyberte `true`. (Dvojitým kliknutím na název přepínáte nastavení vlastnosti.)
+
+     Případně klikněte pravým tlačítkem myši na ovládací prvek a vyberte **Zamknout ovládací prvky**.
+
     > [!NOTE]
-    >  Uzamykání ovládacích prvků jim to brání přetažen novou velikost nebo umístění na návrhové ploše. Ale můžete pořád změnit velikost nebo umístění ovládacích prvků prostřednictvím **vlastnosti** okna nebo v kódu.  
-  
-### <a name="to-lock-all-the-controls-on-a-form"></a>Uzamknout ovládací prvky ve formuláři  
-  
-1. Z **formátu** nabídce zvolte **uzamknout ovládací prvky**.  
-  
+    >  Blokovací ovládací prvky zabraňují jejich přetažení na novou velikost nebo umístění na návrhové ploše. Můžete však i nadále měnit velikost nebo umístění ovládacích prvků pomocí okna **vlastnosti** nebo v kódu.
+
+## <a name="to-lock-all-the-controls-on-a-form"></a>Uzamčení všech ovládacích prvků ve formuláři
+
+1. V nabídce **Formát** vyberte možnost **Zamknout ovládací prvky**.
+
     > [!NOTE]
-    >  Tento příkaz uzamkne velikost formuláře, protože formulář je ovládací prvek.  
-  
-### <a name="to-unlock-all-locked-controls-on-a-form"></a>K odemknutí všechny uzamčené ovládací prvky ve formuláři  
-  
-1. Z **formátu** nabídce zvolte **uzamknout ovládací prvky**.  
-  
-     Všechny předtím zamčenými ovládací prvky ve formuláři jsou teď odemknout.  
-  
-### <a name="to-unlock-locked-controls-individually"></a>Odemknout uzamčení jednotlivě ovládacích prvků  
-  
-1. V **vlastnosti** okna, klikněte na tlačítko **uzamčené** vlastnosti a vyberte `false`. (Poklepete na název přepíná nastavení vlastnosti.)  
-  
+    >  Tento příkaz zamkne i velikost formuláře, protože formulář je ovládací prvek.
+
+## <a name="to-unlock-all-locked-controls-on-a-form"></a>Odemčení všech uzamčených ovládacích prvků na formuláři
+
+1. V nabídce **Formát** vyberte možnost **Zamknout ovládací prvky**.
+
+     Všechny dříve uzamčené ovládací prvky ve formuláři jsou nyní odemčeny.
+
+## <a name="to-unlock-locked-controls-individually"></a>Chcete-li odemknout uzamčené ovládací prvky individuálně
+
+1. V okně **vlastnosti** klikněte na vlastnost **Uzamčeno** a vyberte `false`. (Dvojitým kliknutím na název přepínáte nastavení vlastnosti.)
+
 ## <a name="see-also"></a>Viz také:
 
 - [Windows Forms – ovládací prvky](index.md)

@@ -2,12 +2,12 @@
 title: Články (C# průvodce)
 description: Kolekce rychlých tipů a krátkých a podrobných ukázek kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 09e39e3c9bea5d4b9240039e37d2a5998fe1ebf8
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 92f7e94d8003823c0b166cc617563e63aba78027
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400746"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69038023"
 ---
 # <a name="how-to-c"></a>Postupy (C#)
 
@@ -19,7 +19,6 @@ K dispozici jsou několik tipů a rad, C# které představují běžné postupy 
 
 - [Inicializujte objekty pomocí inicializátoru objektu](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md).
 - [Přečtěte si o rozdílech mezi předáním struktury a třídy metodě](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
-- [Vyřešte konflikty názvů typů pomocí aliasu globálního oboru názvů](../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md).
 - [Použijte přetížení operátoru](../language-reference/operators/operator-overloading.md).
 - [Implementujte a zavolejte vlastní metodu rozšíření](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
 - I C# programátoři mohou chtít [ `My` použít obor názvů z VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).

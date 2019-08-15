@@ -8,50 +8,48 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: d9ce3040-3e21-4e2d-80ae-b430982b2db8
-ms.openlocfilehash: ed479c04db094b5fc0c42bfecbfe5a7753c16358
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: e5069dd46a31a65f65a17d750b685d82762e3d11
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960180"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69038207"
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control-using-the-designer"></a>Postupy: Přidávání tlačítek do ovládacího prvku ToolBar pomocí Návrháře
 
 > [!NOTE]
-> <xref:System.Windows.Forms.ToolStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> <xref:System.Windows.Forms.ToolBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStrip>
 
-Nedílnou součástí toho, <xref:System.Windows.Forms.ToolBar> je ovládací prvek tlačítka, přidejte do ní. To slouží k poskytování snadného přístupu k příkazům nabídky nebo Alternativně můžete umístit v jiné oblasti uživatelské rozhraní vaší aplikace k vystavení příkazy pro vaše uživatele, kteří nejsou k dispozici ve struktuře nabídky.
+Nedílnou součástí <xref:System.Windows.Forms.ToolBar> ovládacího prvku jsou tlačítka, která do něj přidáte. Pomocí těchto možností lze snadno získat přístup k příkazům nabídky nebo je lze umístit do jiné oblasti uživatelského rozhraní aplikace, aby bylo možné vystavit příkazy uživatelům, kteří nejsou k dispozici ve struktuře nabídky.
 
-Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ToolBar> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).
+Následující postup vyžaduje projekt **aplikace systému Windows** s formulářem, který obsahuje <xref:System.Windows.Forms.ToolBar> ovládací prvek. Informace o nastavení takového projektu naleznete v tématu [How to: Vytvořte projekt](/visualstudio/ide/step-1-create-a-windows-forms-application-project) aplikace model Windows Forms a [postupujte takto: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms.
 
-> [!NOTE]
-> Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).
 
-### <a name="to-add-buttons-at-design-time"></a>Přidat tlačítka v době návrhu
+### <a name="to-add-buttons-at-design-time"></a>Přidání tlačítek v době návrhu
 
-1. Vyberte <xref:System.Windows.Forms.ToolBar> ovládacího prvku.
+1. <xref:System.Windows.Forms.ToolBar> Vyberte ovládací prvek.
 
-2. V **vlastnosti** okna, klikněte na tlačítko <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost vyberte ho a klikněte **tlačítko se třemi tečkami** (![The třemi tečkami (...) v okně Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) tlačítko Otevřít **Editor kolekce ToolBarButton**.
+2. V okně **vlastnosti** klikněte <xref:System.Windows.Forms.ToolBar.Buttons%2A> na vlastnost, kterou chcete vybrat, a ![kliknutím na tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) otevřete ovládací prvky **ToolBarButton Editor kolekce**.
 
-3. Použití **přidat** a **odebrat** tlačítka pro přidání a odebrání tlačítek <xref:System.Windows.Forms.ToolBar> ovládacího prvku.
+3. Pomocí tlačítek **Přidat** a **Odebrat** můžete přidat nebo odebrat <xref:System.Windows.Forms.ToolBar> tlačítka z ovládacího prvku.
 
-4. Konfigurace vlastností jednotlivá tlačítka v **vlastnosti** okno, které se zobrazí v podokně na pravé straně editoru. V následující tabulce jsou uvedeny vzít v úvahu některé důležité vlastnosti.
+4. Nakonfigurujte vlastnosti jednotlivých tlačítek v okně **vlastnosti** , které se zobrazí v podokně na pravé straně editoru. V následující tabulce jsou uvedeny některé důležité vlastnosti, které je třeba vzít v úvahu.
 
     |Vlastnost|Popis|
     |--------------|-----------------|
-    |<xref:System.Windows.Forms.ToolBarButton.DropDownMenu%2A>|Nastaví v nabídce zobrazeného na tlačítku rozevíracího seznamu nástrojů. Tlačítko panelu nástrojů <xref:System.Windows.Forms.ToolBarButton.Style%2A> musí být vlastnost nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.DropDownButton>. Tato vlastnost má instance <xref:System.Windows.Forms.ContextMenu> třídu jako odkaz.|
-    |<xref:System.Windows.Forms.ToolBarButton.PartialPush%2A>|Nastaví, zda je částečně stisknuté Přepnout styl tlačítka panelu nástrojů. Tlačítko panelu nástrojů <xref:System.Windows.Forms.ToolBarButton.Style%2A> musí být vlastnost nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.ToggleButton>.|
-    |<xref:System.Windows.Forms.ToolBarButton.Pushed%2A>|Nastaví, zda přepínač – vizuální styl tlačítka panelu nástrojů je aktuálně ve stavu vložené. Tlačítko panelu nástrojů <xref:System.Windows.Forms.ToolBarButton.Style%2A> musí být vlastnost nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.ToggleButton> nebo <xref:System.Windows.Forms.ToolBarButtonStyle.PushButton>.|
-    |<xref:System.Windows.Forms.ToolBarButton.Style%2A>|Nastaví styl tlačítka panelu nástrojů. Musí být jedna z hodnot v <xref:System.Windows.Forms.ToolBarButtonStyle> výčtu.|
-    |<xref:System.Windows.Forms.ToolBarButton.Text%2A>|Textový řetězec zobrazený tlačítkem.|
-    |<xref:System.Windows.Forms.ToolBarButton.ToolTipText%2A>|Text, který se zobrazí jako popisek tlačítka.|
+    |<xref:System.Windows.Forms.ToolBarButton.DropDownMenu%2A>|Nastaví nabídku, která se má zobrazit v rozevíracím seznamu na panelu nástrojů. <xref:System.Windows.Forms.ToolBarButton.Style%2A> Vlastnost tlačítka panelu nástrojů musí být nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.DropDownButton>hodnotu. Tato vlastnost přebírá instanci <xref:System.Windows.Forms.ContextMenu> třídy jako referenci.|
+    |<xref:System.Windows.Forms.ToolBarButton.PartialPush%2A>|Nastaví, zda je tlačítko panelu nástrojů přepínacího stylu částečně vloženo. <xref:System.Windows.Forms.ToolBarButton.Style%2A> Vlastnost tlačítka panelu nástrojů musí být nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.ToggleButton>hodnotu.|
+    |<xref:System.Windows.Forms.ToolBarButton.Pushed%2A>|Nastaví, zda je tlačítko panelu nástrojů přepínacího stylu v současné době v nabízeném stavu. <xref:System.Windows.Forms.ToolBarButton.Style%2A> Vlastnost tlačítka panelu nástrojů musí být nastavena na <xref:System.Windows.Forms.ToolBarButtonStyle.ToggleButton> nebo <xref:System.Windows.Forms.ToolBarButtonStyle.PushButton>.|
+    |<xref:System.Windows.Forms.ToolBarButton.Style%2A>|Nastaví styl tlačítka panelu nástrojů. Musí se jednat o jednu z hodnot ve <xref:System.Windows.Forms.ToolBarButtonStyle> výčtu.|
+    |<xref:System.Windows.Forms.ToolBarButton.Text%2A>|Textový řetězec zobrazený tlačítkem|
+    |<xref:System.Windows.Forms.ToolBarButton.ToolTipText%2A>|Text zobrazený jako popis tlačítka|
 
-5. Klikněte na tlačítko **OK** a zavřete dialogové okno vytvořit panely, které jste zadali.
+5. Kliknutím na tlačítko **OK** zavřete dialogové okno a vytvořte panely, které jste určili.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Postupy: Definování ikony pro tlačítko panelu nástrojů](how-to-define-an-icon-for-a-toolbar-button.md)
+- [Postupy: Aktivace událostí nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
 - [Přehled ovládacího prvku ToolBar](toolbar-control-overview-windows-forms.md)
 - [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)

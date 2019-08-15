@@ -8,25 +8,23 @@ helpviewer_keywords:
 - base forms
 - inheritance [Windows Forms], forms
 ms.assetid: 1c3f2b29-a05c-4c6f-aa1a-4e66b94f343a
-ms.openlocfilehash: 6c87b3d29a1c55b2a7517da78a1951d94676dd68
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5239017eb63ca6360ae8811a76497256fafbd1b1
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756816"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040132"
 ---
 # <a name="effects-of-modifying-a-base-forms-appearance"></a>Účinky úpravy vzhledu základního formuláře
-Během vývoje aplikace může často potřeba změnit vzhledu základního formuláře, ze kterého se dědí jiné formuláře v projektu (nebo v jiných projektech).  
-  
- V době návrhu, změny vzhledu základního formuláře (jde o nastavení vlastnosti nebo sčítání a odčítání ovládací prvky), se projeví ve zděděné formuláře při sestavení projektu, který obsahuje základní formulář. Nestačí jednoduše uložit změny do základního formuláře. Chcete-li sestavení projektu, zvolte **sestavení** z **sestavení** nabídky.  
-  
-> [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
- Změny základního formuláře v době běhu mít žádný vliv na zděděné formuláře, které jsou již vytvořeny.  
-  
+
+Během vývoje aplikace může být často nutné změnit vzhled základního formuláře, ze kterého jsou děděny jiné formuláře v projektu (nebo v jiných projektech).
+
+V době návrhu se změny ve vzhledu základního formuláře projeví ve zděděných formulářích, pokud je projekt obsahující základní formulář sestavený jako první. Nestačí, když budete změny jednoduše ukládat do základního formuláře. Chcete-li sestavit projekt, v nabídce **sestavení** klikněte na příkaz **sestavit** .
+
+Změny provedené v základním formuláři za běhu nemají vliv na zděděné formuláře, které již jsou vytvořeny instance.
+
 ## <a name="see-also"></a>Viz také:
 
 - [base](~/docs/csharp/language-reference/keywords/base.md)
-- [Postupy: Dědění formulářů Windows](how-to-inherit-windows-forms.md)
+- [Postupy: Zdědit model Windows Forms](how-to-inherit-windows-forms.md)
 - [Vizuální dědění modelu Windows Forms](windows-forms-visual-inheritance.md)
