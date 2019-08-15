@@ -15,9 +15,9 @@ ms.locfileid: "68433832"
 ---
 # <a name="stackalloc-operator-c-reference"></a>stackalloc – operátorC# (Referenční dokumentace)
 
-`stackalloc` Operátor přiděluje blok paměti v zásobníku. Blok paměti přidělený zásobníkem, který byl vytvořen během provádění metody, je automaticky zahozen při návratu této metody. Nemůžete explicitně uvolnit paměť přidělenou `stackalloc` operátorem. Blok paměti přidělený zásobníku nepodléhá uvolňování [](../../../standard/garbage-collection/index.md) paměti a nemusí být připnutý s [ `fixed` příkazem](../keywords/fixed-statement.md).
+`stackalloc` Operátor přiděluje blok paměti v zásobníku. Blok paměti přidělený zásobníkem, který byl vytvořen během provádění metody, je automaticky zahozen při návratu této metody. Nemůžete explicitně uvolnit paměť přidělenou `stackalloc` operátorem. Blok paměti přidělený zásobníku nepodléhá uvolňování [sběr odpadků](../../../standard/garbage-collection/index.md) paměti a nemusí být připnutý s [ `fixed` příkazem](../keywords/fixed-statement.md).
 
-Ve výrazu `stackalloc T[E]` `int` [](../builtin-types/unmanaged-types.md) `E` musí být nespravovaný typ a musí to být výraz typu. `T`
+Ve výrazu `stackalloc T[E]` `int`  `E` musí být [nespravovaný typ](../builtin-types/unmanaged-types.md) a musí to být výraz typu. `T`
 
 Výsledek `stackalloc` operátoru můžete přiřadit proměnné jednoho z následujících typů:
 
