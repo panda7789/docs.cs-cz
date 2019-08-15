@@ -10,145 +10,142 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-ms.openlocfilehash: bcd65f231ab0e05da0ec152b05878233558f2cd9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0891b64fdb26953ab90f3da931f04513ac9e8bcf
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772059"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040214"
 ---
-# <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a><span data-ttu-id="72793-102">Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu</span><span class="sxs-lookup"><span data-stu-id="72793-102">Walkthrough: Inheriting from a Windows Forms Control with Visual Basic</span></span>
-<span data-ttu-id="72793-103">Pomocí jazyka Visual Basic, můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*.</span><span class="sxs-lookup"><span data-stu-id="72793-103">With Visual Basic, you can create powerful custom controls through *inheritance*.</span></span> <span data-ttu-id="72793-104">Prostřednictvím dědičnosti je možné vytvořit ovládací prvky, které zachovat všechny vlastní funkce standardní ovládací prvky Windows Forms, ale také začlenit vlastní funkce.</span><span class="sxs-lookup"><span data-stu-id="72793-104">Through inheritance you are able to create controls that retain all of the inherent functionality of standard Windows Forms controls but also incorporate custom functionality.</span></span> <span data-ttu-id="72793-105">V tomto návodu vytvoříte jednoduchý volá zděděný ovládací prvek `ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="72793-105">In this walkthrough, you will create a simple inherited control called `ValueButton`.</span></span> <span data-ttu-id="72793-106">Toto tlačítko bude funkce dědit ze standardních formulářů Windows <xref:System.Windows.Forms.Button> řídit a bude vystavovat vlastní vlastnost s názvem `ButtonValue`.</span><span class="sxs-lookup"><span data-stu-id="72793-106">This button will inherit functionality from the standard Windows Forms <xref:System.Windows.Forms.Button> control, and will expose a custom property called `ButtonValue`.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="72793-107">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="72793-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="72793-108">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="72793-109">Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="72793-109">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
-  
-## <a name="creating-the-project"></a><span data-ttu-id="72793-110">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="72793-110">Creating the Project</span></span>  
- <span data-ttu-id="72793-111">Když vytvoříte nový projekt, zadejte jeho název nastavit kořenový obor názvů, název sestavení a název projektu a ujistěte se, že součást výchozí bude v správný obor názvů.</span><span class="sxs-lookup"><span data-stu-id="72793-111">When you create a new project, you specify its name in order to set the root namespace, assembly name, and project name, and to ensure that the default component will be in the correct namespace.</span></span>  
-  
-### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a><span data-ttu-id="72793-112">Chcete-li vytvořit ValueButtonLib Knihovna ovládacích prvků a ovládací prvek ValueButton</span><span class="sxs-lookup"><span data-stu-id="72793-112">To create the ValueButtonLib control library and the ValueButton control</span></span>  
-  
-1. <span data-ttu-id="72793-113">Na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu** otevřete **nový projekt** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="72793-113">On the **File** menu, point to **New** and then click **Project** to open the **New Project** dialog box.</span></span>  
-  
-2. <span data-ttu-id="72793-114">Vyberte **Knihovna ovládacích prvků Windows Forms** šablonu projektu ze seznamu projektů jazyka Visual Basic a typ `ValueButtonLib` v **název** pole.</span><span class="sxs-lookup"><span data-stu-id="72793-114">Select the **Windows Forms Control Library** project template from the list of Visual Basic projects, and type `ValueButtonLib` in the **Name** box.</span></span>  
-  
-     <span data-ttu-id="72793-115">Název projektu `ValueButtonLib`, je také přiřazený k oboru názvů root ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="72793-115">The project name, `ValueButtonLib`, is also assigned to the root namespace by default.</span></span> <span data-ttu-id="72793-116">Kořenový obor názvů se používá k určení názvů součástí sestavení.</span><span class="sxs-lookup"><span data-stu-id="72793-116">The root namespace is used to qualify the names of components in the assembly.</span></span> <span data-ttu-id="72793-117">Například, pokud se dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete zadat vaše `ValueButton` pomocí komponenty `ValueButtonLib.ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="72793-117">For example, if two assemblies provide components named `ValueButton`, you can specify your `ValueButton` component using `ValueButtonLib.ValueButton`.</span></span> <span data-ttu-id="72793-118">Další informace najdete v tématu [obory názvů v jazyce Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="72793-118">For more information, see [Namespaces in Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span></span>  
-  
-3. <span data-ttu-id="72793-119">V **Průzkumníka řešení**, klikněte pravým tlačítkem na **UserControl1.vb**, klikněte na tlačítko **přejmenovat** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-119">In **Solution Explorer**, right-click **UserControl1.vb**, then choose **Rename** from the shortcut menu.</span></span> <span data-ttu-id="72793-120">Změňte název souboru, aby `ValueButton.vb`.</span><span class="sxs-lookup"><span data-stu-id="72793-120">Change the file name to `ValueButton.vb`.</span></span> <span data-ttu-id="72793-121">Klikněte na tlačítko **Ano** tlačítko, pokud budete vyzváni, pokud chcete přejmenovat všechny odkazy na prvek kódu "UserControl1".</span><span class="sxs-lookup"><span data-stu-id="72793-121">Click the **Yes** button when you are asked if you want to rename all references to the code element 'UserControl1'.</span></span>  
-  
-4. <span data-ttu-id="72793-122">V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="72793-122">In **Solution Explorer**, click the **Show All Files** button.</span></span>  
-  
-5. <span data-ttu-id="72793-123">Otevřít **ValueButton.vb** uzel k zobrazení souboru kód generovaný návrhářem **ValueButton.Designer.vb**.</span><span class="sxs-lookup"><span data-stu-id="72793-123">Open the **ValueButton.vb** node to display the designer-generated code file, **ValueButton.Designer.vb**.</span></span> <span data-ttu-id="72793-124">Tento soubor otevřít v **Editor kódu**.</span><span class="sxs-lookup"><span data-stu-id="72793-124">Open this file in the **Code Editor**.</span></span>  
-  
-6. <span data-ttu-id="72793-125">Vyhledejte `Class` příkazu `Partial Public Class ValueButton`a změňte typ, ze kterého dědí tohoto ovládacího prvku z <xref:System.Windows.Forms.UserControl> k <xref:System.Windows.Forms.Button>.</span><span class="sxs-lookup"><span data-stu-id="72793-125">Locate the `Class` statement, `Partial Public Class ValueButton`, and change the type from which this control inherits from <xref:System.Windows.Forms.UserControl> to <xref:System.Windows.Forms.Button>.</span></span> <span data-ttu-id="72793-126">To umožňuje dědí všechny funkce, které jsou součástí zděděný ovládací prvek <xref:System.Windows.Forms.Button> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="72793-126">This allows your inherited control to inherit all the functionality of the <xref:System.Windows.Forms.Button> control.</span></span>  
-  
-7. <span data-ttu-id="72793-127">Vyhledejte `InitializeComponent` metoda a odebrat řádek, který se přiřadí <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="72793-127">Locate the `InitializeComponent` method and remove the line that assigns the <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> property.</span></span> <span data-ttu-id="72793-128">Tato vlastnost neexistuje v <xref:System.Windows.Forms.Button> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="72793-128">This property does not exist in the <xref:System.Windows.Forms.Button> control.</span></span>  
-  
-8. <span data-ttu-id="72793-129">Z **souboru** nabídce zvolte **Uložit vše** chcete projekt uložit.</span><span class="sxs-lookup"><span data-stu-id="72793-129">From the **File** menu, choose **Save All** to save the project.</span></span>  
-  
-     <span data-ttu-id="72793-130">Všimněte si, že vizuálního návrháře již není k dispozici.</span><span class="sxs-lookup"><span data-stu-id="72793-130">Note that a visual designer is no longer available.</span></span> <span data-ttu-id="72793-131">Vzhledem k tomu, <xref:System.Windows.Forms.Button> ovládací prvek provede vlastní vykreslovací, nemůžete změnit její vzhled v návrháři.</span><span class="sxs-lookup"><span data-stu-id="72793-131">Because the <xref:System.Windows.Forms.Button> control does its own painting, you are unable to modify its appearance in the designer.</span></span> <span data-ttu-id="72793-132">Jeho vizuální znázornění byla přesně stejná jako, který dědí z třídy (to znamená <xref:System.Windows.Forms.Button>) není-li upravit v kódu.</span><span class="sxs-lookup"><span data-stu-id="72793-132">Its visual representation will be exactly the same as that of the class it inherits from (that is, <xref:System.Windows.Forms.Button>) unless modified in the code.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="72793-133">Součásti, které mají bez prvků uživatelského rozhraní, stále můžete přidat na návrhovou plochu.</span><span class="sxs-lookup"><span data-stu-id="72793-133">You can still add components, which have no UI elements, to the design surface.</span></span>  
-  
-## <a name="adding-a-property-to-your-inherited-control"></a><span data-ttu-id="72793-134">Přidání vlastnosti do zděděný ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="72793-134">Adding a Property to Your Inherited Control</span></span>  
- <span data-ttu-id="72793-135">Je to možné užívání zděděný ovládací prvky Windows Forms je vytváření ovládacích prvků, které jsou stejné ve vzhledu a chování (vzhled a chování) pro standardní ovládací prvky Windows Forms, ale vystavovat vlastní vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="72793-135">One possible use of inherited Windows Forms controls is the creation of controls that are identical in appearance and behavior (look and feel) to standard Windows Forms controls, but expose custom properties.</span></span> <span data-ttu-id="72793-136">V této části přidáte vlastnost s názvem `ButtonValue` do ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="72793-136">In this section, you will add a property called `ButtonValue` to your control.</span></span>  
-  
-### <a name="to-add-the-value-property"></a><span data-ttu-id="72793-137">Chcete-li přidat vlastnost Value</span><span class="sxs-lookup"><span data-stu-id="72793-137">To add the Value property</span></span>  
-  
-1. <span data-ttu-id="72793-138">V **Průzkumníka řešení**, klikněte pravým tlačítkem na **ValueButton.vb**a potom klikněte na tlačítko **zobrazit kód** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-138">In **Solution Explorer**, right-click **ValueButton.vb**, and then click **View Code** from the shortcut menu.</span></span>  
-  
-2. <span data-ttu-id="72793-139">Vyhledejte `Public Class ValueButton` příkazu.</span><span class="sxs-lookup"><span data-stu-id="72793-139">Locate the `Public Class ValueButton` statement.</span></span> <span data-ttu-id="72793-140">Hned pod tento příkaz, zadejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="72793-140">Immediately beneath this statement, type the following code:</span></span>  
-  
-    ```vb  
-    ' Creates the private variable that will store the value of your   
-    ' property.  
-    Private varValue as integer  
-    ' Declares the property.  
-    Property ButtonValue() as Integer  
-    ' Sets the method for retrieving the value of your property.  
-       Get  
-          Return varValue  
-       End Get  
-    ' Sets the method for setting the value of your property.  
-       Set(ByVal Value as Integer)  
-          varValue = Value  
-       End Set  
-    End Property  
-    ```  
-  
-     <span data-ttu-id="72793-141">Tento kód nastaví metody, pomocí kterého `ButtonValue` vlastnost je uložená a načíst.</span><span class="sxs-lookup"><span data-stu-id="72793-141">This code sets the methods by which the `ButtonValue` property is stored and retrieved.</span></span> <span data-ttu-id="72793-142">`Get` Příkaz nastaví hodnotu vrácenou hodnotu, která je uložen v soukromé proměnné `varValue`a `Set` příkaz nastaví hodnotu vlastnosti soukromé proměnné pomocí `Value` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="72793-142">The `Get` statement sets the value returned to the value that is stored in the private variable `varValue`, and the `Set` statement sets the value of the private variable by use of the `Value` keyword.</span></span>  
-  
-3. <span data-ttu-id="72793-143">Z **souboru** nabídce zvolte **Uložit vše** chcete projekt uložit.</span><span class="sxs-lookup"><span data-stu-id="72793-143">From the **File** menu, choose **Save All** to save the project.</span></span>  
-  
-## <a name="testing-your-control"></a><span data-ttu-id="72793-144">Testování ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="72793-144">Testing Your Control</span></span>  
- <span data-ttu-id="72793-145">Ovládací prvky nejsou samostatné projekty; musí být uložen v kontejneru.</span><span class="sxs-lookup"><span data-stu-id="72793-145">Controls are not stand-alone projects; they must be hosted in a container.</span></span> <span data-ttu-id="72793-146">Pokud chcete otestovat ovládacího prvku, je nutné zadat testovací projekt, ke spuštění v.</span><span class="sxs-lookup"><span data-stu-id="72793-146">In order to test your control, you must provide a test project for it to run in.</span></span> <span data-ttu-id="72793-147">Musíte také zajistit ovládacího prvku přístupné pro testovací projekt sestavením (kompilace) ji.</span><span class="sxs-lookup"><span data-stu-id="72793-147">You must also make your control accessible to the test project by building (compiling) it.</span></span> <span data-ttu-id="72793-148">V této části bude sestavení ovládacího prvku a otestovat ho ve formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="72793-148">In this section, you will build your control and test it in a Windows Form.</span></span>  
-  
-### <a name="to-build-your-control"></a><span data-ttu-id="72793-149">K sestavení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="72793-149">To build your control</span></span>  
-  
-1. <span data-ttu-id="72793-150">Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.</span><span class="sxs-lookup"><span data-stu-id="72793-150">On the **Build** menu, click **Build Solution**.</span></span>  
-  
-     <span data-ttu-id="72793-151">Sestavení by měl být úspěšný bez chyby kompilátoru nebo upozornění.</span><span class="sxs-lookup"><span data-stu-id="72793-151">The build should be successful with no compiler errors or warnings.</span></span>  
-  
-### <a name="to-create-a-test-project"></a><span data-ttu-id="72793-152">Chcete-li vytvořit projekt testů</span><span class="sxs-lookup"><span data-stu-id="72793-152">To create a test project</span></span>  
-  
-1. <span data-ttu-id="72793-153">Na **souboru** nabídky, přejděte k **přidat** a potom klikněte na tlačítko **nový projekt** otevřít **přidat nový projekt** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="72793-153">On the **File** menu, point to **Add** and then click **New Project** to open the **Add New Project** dialog box.</span></span>  
-  
-2. <span data-ttu-id="72793-154">Vyberte uzel projekty Visual Basic a klikněte na tlačítko **formulářová aplikace Windows**.</span><span class="sxs-lookup"><span data-stu-id="72793-154">Select the Visual Basic projects node, and click **Windows Forms Application**.</span></span>  
-  
-3. <span data-ttu-id="72793-155">V **název** zadejte `Test`.</span><span class="sxs-lookup"><span data-stu-id="72793-155">In the **Name** box, type `Test`.</span></span>  
-  
-4. <span data-ttu-id="72793-156">V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="72793-156">In **Solution Explorer**, click the **Show All Files** button.</span></span>  
-  
-5. <span data-ttu-id="72793-157">V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy** vyberte uzel projektu testu **přidat odkaz** v místní nabídce zobrazíte  **Přidat odkaz na** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="72793-157">In **Solution Explorer**, right-click the **References** node for your test project, then select **Add Reference** from the shortcut menu to display the **Add Reference** dialog box.</span></span>  
-  
-6. <span data-ttu-id="72793-158">Klikněte na tlačítko **projekty** kartu.</span><span class="sxs-lookup"><span data-stu-id="72793-158">Click the **Projects** tab.</span></span>  
-  
-7. <span data-ttu-id="72793-159">Klikněte na kartu **projekty**.</span><span class="sxs-lookup"><span data-stu-id="72793-159">Click the tab labeled **Projects**.</span></span> <span data-ttu-id="72793-160">Vaše `ValueButtonLib` projektu budou uvedené v části **název projektu**.</span><span class="sxs-lookup"><span data-stu-id="72793-160">Your `ValueButtonLib` project will be listed under **Project Name**.</span></span> <span data-ttu-id="72793-161">Dvakrát klikněte na projekt tak, aby do testovacího projektu přidejte odkaz.</span><span class="sxs-lookup"><span data-stu-id="72793-161">Double-click the project to add the reference to the test project.</span></span>  
-  
-8. <span data-ttu-id="72793-162">V **Průzkumníku řešení** klikněte pravým tlačítkem na **testovací** a vyberte **sestavení**.</span><span class="sxs-lookup"><span data-stu-id="72793-162">In **Solution Explorer,** right-click **Test** and select **Build**.</span></span>  
-  
-### <a name="to-add-your-control-to-the-form"></a><span data-ttu-id="72793-163">Chcete-li přidat ovládací prvek do formuláře</span><span class="sxs-lookup"><span data-stu-id="72793-163">To add your control to the form</span></span>  
-  
-1. <span data-ttu-id="72793-164">V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.vb** a zvolte **Návrhář zobrazení** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-164">In **Solution Explorer**, right-click **Form1.vb** and choose **View Designer** from the shortcut menu.</span></span>  
-  
-2. <span data-ttu-id="72793-165">V **nástrojů**, klikněte na tlačítko **ValueButtonLib komponenty**.</span><span class="sxs-lookup"><span data-stu-id="72793-165">In the **Toolbox**, click **ValueButtonLib Components**.</span></span> <span data-ttu-id="72793-166">Dvakrát klikněte na panel **ValueButton**.</span><span class="sxs-lookup"><span data-stu-id="72793-166">Double-click **ValueButton**.</span></span>  
-  
-     <span data-ttu-id="72793-167">A **ValueButton** se zobrazí ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="72793-167">A **ValueButton** appears on the form.</span></span>  
-  
-3. <span data-ttu-id="72793-168">Klikněte pravým tlačítkem myši **ValueButton** a vyberte **vlastnosti** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-168">Right-click the **ValueButton** and select **Properties** from the shortcut menu.</span></span>  
-  
-4. <span data-ttu-id="72793-169">V **vlastnosti** okna, podívejte se na vlastnosti tohoto ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="72793-169">In the **Properties** window, examine the properties of this control.</span></span> <span data-ttu-id="72793-170">Všimněte si, že jsou shodné s vlastností vystavovaných třídami standardní tlačítko s tím rozdílem, že je další vlastnost `ButtonValue`.</span><span class="sxs-lookup"><span data-stu-id="72793-170">Note that they are identical to the properties exposed by a standard button, except that there is an additional property, `ButtonValue`.</span></span>  
-  
-5. <span data-ttu-id="72793-171">Nastavte `ButtonValue` vlastnost `5`.</span><span class="sxs-lookup"><span data-stu-id="72793-171">Set the `ButtonValue` property to `5`.</span></span>  
-  
-6. <span data-ttu-id="72793-172">Na **všechny formuláře Windows** kartě **nástrojů**, dvakrát klikněte na panel **popisek** přidáte <xref:System.Windows.Forms.Label> ovládací prvek do formuláře.</span><span class="sxs-lookup"><span data-stu-id="72793-172">On the **All Windows Forms** tab of the **Toolbox**, double-click **Label** to add a <xref:System.Windows.Forms.Label> control to your form.</span></span>  
-  
-7. <span data-ttu-id="72793-173">Přemístěte popisek středu tvaru.</span><span class="sxs-lookup"><span data-stu-id="72793-173">Relocate the label to the center of the form.</span></span>  
-  
-8. <span data-ttu-id="72793-174">Dvakrát klikněte na panel `ValueButton1`.</span><span class="sxs-lookup"><span data-stu-id="72793-174">Double-click `ValueButton1`.</span></span>  
-  
-     <span data-ttu-id="72793-175">**Editor kódu** se otevře `ValueButton1_Click` událostí.</span><span class="sxs-lookup"><span data-stu-id="72793-175">The **Code Editor** opens to the `ValueButton1_Click` event.</span></span>  
-  
-9. <span data-ttu-id="72793-176">Zadejte následující řádek kódu.</span><span class="sxs-lookup"><span data-stu-id="72793-176">Type the following line of code.</span></span>  
-  
-    ```vb  
-    Label1.Text = CStr(ValueButton1.ButtonValue)  
-    ```  
-  
-10. <span data-ttu-id="72793-177">V **Průzkumníka řešení**, klikněte pravým tlačítkem na **testovací**a zvolte **nastavit jako spouštěný projekt** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="72793-177">In **Solution Explorer**, right-click **Test**, and choose **Set as Startup Project** from the shortcut menu.</span></span>  
-  
-11. <span data-ttu-id="72793-178">Z **ladění** nabídce vyberte možnost **spustit ladění**.</span><span class="sxs-lookup"><span data-stu-id="72793-178">From the **Debug** menu, select **Start Debugging**.</span></span>  
-  
-     <span data-ttu-id="72793-179">`Form1` Zobrazí se.</span><span class="sxs-lookup"><span data-stu-id="72793-179">`Form1` appears.</span></span>  
-  
-12. <span data-ttu-id="72793-180">Klikněte na tlačítko `Valuebutton1`.</span><span class="sxs-lookup"><span data-stu-id="72793-180">Click `Valuebutton1`.</span></span>  
-  
-     <span data-ttu-id="72793-181">Číslice "5" se zobrazí v `Label1`ukázku, který `ButtonValue` byla předána vlastnost zděděný ovládací prvek `Label1` prostřednictvím `ValueButton1_Click` metoda.</span><span class="sxs-lookup"><span data-stu-id="72793-181">The numeral '5' is displayed in `Label1`, demonstrating that the `ButtonValue` property of your inherited control has been passed to `Label1` through the `ValueButton1_Click` method.</span></span> <span data-ttu-id="72793-182">Proto váš `ValueButton` dědí všechny funkce standardní tlačítko Windows Forms ovládací prvek, ale zpřístupňuje další, vlastní vlastnost.</span><span class="sxs-lookup"><span data-stu-id="72793-182">Thus your `ValueButton` control inherits all the functionality of the standard Windows Forms button, but exposes an additional, custom property.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="72793-183">Viz také:</span><span class="sxs-lookup"><span data-stu-id="72793-183">See also</span></span>
+# <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a><span data-ttu-id="7a596-102">Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu</span><span class="sxs-lookup"><span data-stu-id="7a596-102">Walkthrough: Inheriting from a Windows Forms Control with Visual Basic</span></span>
+<span data-ttu-id="7a596-103">Pomocí Visual Basic můžete pomocí dědičnosti vytvářet výkonné vlastní ovládacíprvky.</span><span class="sxs-lookup"><span data-stu-id="7a596-103">With Visual Basic, you can create powerful custom controls through *inheritance*.</span></span> <span data-ttu-id="7a596-104">Prostřednictvím dědičnosti můžete vytvářet ovládací prvky, které budou uchovávat veškerou základní funkci standardních model Windows Formsch ovládacích prvků, ale také zahrnovat vlastní funkce.</span><span class="sxs-lookup"><span data-stu-id="7a596-104">Through inheritance you are able to create controls that retain all of the inherent functionality of standard Windows Forms controls but also incorporate custom functionality.</span></span> <span data-ttu-id="7a596-105">V tomto návodu vytvoříte jednoduchý Zděděný ovládací prvek s názvem `ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="7a596-105">In this walkthrough, you will create a simple inherited control called `ValueButton`.</span></span> <span data-ttu-id="7a596-106">Toto tlačítko zdědí funkce ze standardního ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> a zpřístupní vlastní vlastnost s názvem. `ButtonValue`</span><span class="sxs-lookup"><span data-stu-id="7a596-106">This button will inherit functionality from the standard Windows Forms <xref:System.Windows.Forms.Button> control, and will expose a custom property called `ButtonValue`.</span></span>
 
-- [<span data-ttu-id="72793-184">Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic</span><span class="sxs-lookup"><span data-stu-id="72793-184">Walkthrough: Authoring a Composite Control with Visual Basic</span></span>](walkthrough-authoring-a-composite-control-with-visual-basic.md)
-- [<span data-ttu-id="72793-185">Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno</span><span class="sxs-lookup"><span data-stu-id="72793-185">How to: Display a Control in the Choose Toolbox Items Dialog Box</span></span>](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
-- [<span data-ttu-id="72793-186">Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="72793-186">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](developing-custom-windows-forms-controls.md)
-- [<span data-ttu-id="72793-187">Základní informace o dědičnosti (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="72793-187">Inheritance basics (Visual Basic)</span></span>](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+## <a name="creating-the-project"></a><span data-ttu-id="7a596-107">Vytvoření projektu</span><span class="sxs-lookup"><span data-stu-id="7a596-107">Creating the Project</span></span>
+ <span data-ttu-id="7a596-108">Při vytváření nového projektu zadáte jeho název, aby bylo možné nastavit kořenový obor názvů, název sestavení a název projektu a zajistit, že výchozí komponenta bude ve správném oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7a596-108">When you create a new project, you specify its name in order to set the root namespace, assembly name, and project name, and to ensure that the default component will be in the correct namespace.</span></span>
+
+### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a><span data-ttu-id="7a596-109">Vytvoření knihovny ovládacích prvků ValueButtonLib a ovládacího prvku ValueButton</span><span class="sxs-lookup"><span data-stu-id="7a596-109">To create the ValueButtonLib control library and the ValueButton control</span></span>
+
+1. <span data-ttu-id="7a596-110">V nabídce **soubor** přejděte na příkaz **Nový** a potom klikněte na **projekt** . otevře se dialogové okno **Nový projekt** .</span><span class="sxs-lookup"><span data-stu-id="7a596-110">On the **File** menu, point to **New** and then click **Project** to open the **New Project** dialog box.</span></span>
+
+2. <span data-ttu-id="7a596-111">V seznamu Visual Basic projektů vyberte šablonu projektu **knihovny ovládacích prvků model Windows Forms** a do pole **název** zadejte `ValueButtonLib` .</span><span class="sxs-lookup"><span data-stu-id="7a596-111">Select the **Windows Forms Control Library** project template from the list of Visual Basic projects, and type `ValueButtonLib` in the **Name** box.</span></span>
+
+     <span data-ttu-id="7a596-112">Název projektu, `ValueButtonLib`, je ve výchozím nastavení přiřazen ke kořenovému oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7a596-112">The project name, `ValueButtonLib`, is also assigned to the root namespace by default.</span></span> <span data-ttu-id="7a596-113">Kořenový obor názvů slouží k získání názvů komponent v sestavení.</span><span class="sxs-lookup"><span data-stu-id="7a596-113">The root namespace is used to qualify the names of components in the assembly.</span></span> <span data-ttu-id="7a596-114">Například pokud dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete určit svou `ValueButton` komponentu pomocí `ValueButtonLib.ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="7a596-114">For example, if two assemblies provide components named `ValueButton`, you can specify your `ValueButton` component using `ValueButtonLib.ValueButton`.</span></span> <span data-ttu-id="7a596-115">Další informace najdete v tématu [obory názvů v Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="7a596-115">For more information, see [Namespaces in Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span></span>
+
+3. <span data-ttu-id="7a596-116">V **Průzkumník řešení**klikněte pravým tlačítkem na **UserControl1. vb**a pak zvolte **Přejmenovat** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="7a596-116">In **Solution Explorer**, right-click **UserControl1.vb**, then choose **Rename** from the shortcut menu.</span></span> <span data-ttu-id="7a596-117">Změňte název souboru na `ValueButton.vb`.</span><span class="sxs-lookup"><span data-stu-id="7a596-117">Change the file name to `ValueButton.vb`.</span></span> <span data-ttu-id="7a596-118">Pokud se zobrazí dotaz, zda chcete přejmenovat všechny odkazy na prvek kódu ' UserControl1 ', klikněte na tlačítko **Ano** .</span><span class="sxs-lookup"><span data-stu-id="7a596-118">Click the **Yes** button when you are asked if you want to rename all references to the code element 'UserControl1'.</span></span>
+
+4. <span data-ttu-id="7a596-119">V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** .</span><span class="sxs-lookup"><span data-stu-id="7a596-119">In **Solution Explorer**, click the **Show All Files** button.</span></span>
+
+5. <span data-ttu-id="7a596-120">Otevřete uzel **ValueButton. vb** pro zobrazení souboru kódu generovaného návrhářem **ValueButton. Designer. vb**.</span><span class="sxs-lookup"><span data-stu-id="7a596-120">Open the **ValueButton.vb** node to display the designer-generated code file, **ValueButton.Designer.vb**.</span></span> <span data-ttu-id="7a596-121">Otevřete tento soubor v **editoru kódu**.</span><span class="sxs-lookup"><span data-stu-id="7a596-121">Open this file in the **Code Editor**.</span></span>
+
+6. <span data-ttu-id="7a596-122">Vyhledejte příkaz, a `Partial Public Class ValueButton`změňte typ, ze <xref:System.Windows.Forms.UserControl> kterého <xref:System.Windows.Forms.Button>tento ovládací prvek dědí. `Class`</span><span class="sxs-lookup"><span data-stu-id="7a596-122">Locate the `Class` statement, `Partial Public Class ValueButton`, and change the type from which this control inherits from <xref:System.Windows.Forms.UserControl> to <xref:System.Windows.Forms.Button>.</span></span> <span data-ttu-id="7a596-123">Tím umožníte zděděnému ovládacímu prvku dědění všech funkcí <xref:System.Windows.Forms.Button> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="7a596-123">This allows your inherited control to inherit all the functionality of the <xref:System.Windows.Forms.Button> control.</span></span>
+
+7. <span data-ttu-id="7a596-124">Vyhledejte metodu a odstraňte čáru, která <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> přiřadí vlastnost. `InitializeComponent`</span><span class="sxs-lookup"><span data-stu-id="7a596-124">Locate the `InitializeComponent` method and remove the line that assigns the <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> property.</span></span> <span data-ttu-id="7a596-125">Tato vlastnost v <xref:System.Windows.Forms.Button> ovládacím prvku neexistuje.</span><span class="sxs-lookup"><span data-stu-id="7a596-125">This property does not exist in the <xref:System.Windows.Forms.Button> control.</span></span>
+
+8. <span data-ttu-id="7a596-126">V nabídce **soubor** klikněte na příkaz **Uložit vše** a projekt uložte.</span><span class="sxs-lookup"><span data-stu-id="7a596-126">From the **File** menu, choose **Save All** to save the project.</span></span>
+
+     <span data-ttu-id="7a596-127">Všimněte si, že vizuální Návrhář již není k dispozici.</span><span class="sxs-lookup"><span data-stu-id="7a596-127">Note that a visual designer is no longer available.</span></span> <span data-ttu-id="7a596-128">Vzhledem k tomu, že ovládacíprvekprovedevlastnímalování,nemůžetezměnitjehovzhledvnávrháři.<xref:System.Windows.Forms.Button></span><span class="sxs-lookup"><span data-stu-id="7a596-128">Because the <xref:System.Windows.Forms.Button> control does its own painting, you are unable to modify its appearance in the designer.</span></span> <span data-ttu-id="7a596-129">Jeho vizuální reprezentace bude přesně stejná jako třída, ze které dědí ( <xref:System.Windows.Forms.Button>tj.), pokud není upravena v kódu.</span><span class="sxs-lookup"><span data-stu-id="7a596-129">Its visual representation will be exactly the same as that of the class it inherits from (that is, <xref:System.Windows.Forms.Button>) unless modified in the code.</span></span>
+
+> [!NOTE]
+>  <span data-ttu-id="7a596-130">Na návrhovou plochu stále můžete přidat komponenty, které nemají žádné prvky uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7a596-130">You can still add components, which have no UI elements, to the design surface.</span></span>
+
+## <a name="adding-a-property-to-your-inherited-control"></a><span data-ttu-id="7a596-131">Přidání vlastnosti do zděděného ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="7a596-131">Adding a Property to Your Inherited Control</span></span>
+ <span data-ttu-id="7a596-132">Jedním z možných použití děděných ovládacích prvků model Windows Forms je vytváření ovládacích prvků, které jsou identické vzhledy a chování (vzhled a chování) pro standardní model Windows Forms ovládací prvky, ale zpřístupňují vlastní vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7a596-132">One possible use of inherited Windows Forms controls is the creation of controls that are identical in appearance and behavior (look and feel) to standard Windows Forms controls, but expose custom properties.</span></span> <span data-ttu-id="7a596-133">V této části přidáte k ovládacímu prvku vlastnost s `ButtonValue` názvem.</span><span class="sxs-lookup"><span data-stu-id="7a596-133">In this section, you will add a property called `ButtonValue` to your control.</span></span>
+
+### <a name="to-add-the-value-property"></a><span data-ttu-id="7a596-134">Přidání vlastnosti Value</span><span class="sxs-lookup"><span data-stu-id="7a596-134">To add the Value property</span></span>
+
+1. <span data-ttu-id="7a596-135">V **Průzkumník řešení**klikněte pravým tlačítkem na **ValueButton. vb**a pak klikněte na **Zobrazit kód** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="7a596-135">In **Solution Explorer**, right-click **ValueButton.vb**, and then click **View Code** from the shortcut menu.</span></span>
+
+2. <span data-ttu-id="7a596-136">`Public Class ValueButton` Vyhledejte příkaz.</span><span class="sxs-lookup"><span data-stu-id="7a596-136">Locate the `Public Class ValueButton` statement.</span></span> <span data-ttu-id="7a596-137">Hned pod tímto příkazem zadejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="7a596-137">Immediately beneath this statement, type the following code:</span></span>
+
+    ```vb
+    ' Creates the private variable that will store the value of your
+    ' property.
+    Private varValue as integer
+    ' Declares the property.
+    Property ButtonValue() as Integer
+    ' Sets the method for retrieving the value of your property.
+       Get
+          Return varValue
+       End Get
+    ' Sets the method for setting the value of your property.
+       Set(ByVal Value as Integer)
+          varValue = Value
+       End Set
+    End Property
+    ```
+
+     <span data-ttu-id="7a596-138">Tento kód nastaví metody, podle kterých `ButtonValue` je vlastnost uložena a načtena.</span><span class="sxs-lookup"><span data-stu-id="7a596-138">This code sets the methods by which the `ButtonValue` property is stored and retrieved.</span></span> <span data-ttu-id="7a596-139">Příkaz nastaví hodnotu vrácenou na hodnotu, která je uložena v soukromé proměnné `varValue`, a `Set` příkaz nastaví hodnotu soukromé proměnné `Value` pomocí klíčového slova. `Get`</span><span class="sxs-lookup"><span data-stu-id="7a596-139">The `Get` statement sets the value returned to the value that is stored in the private variable `varValue`, and the `Set` statement sets the value of the private variable by use of the `Value` keyword.</span></span>
+
+3. <span data-ttu-id="7a596-140">V nabídce **soubor** klikněte na příkaz **Uložit vše** a projekt uložte.</span><span class="sxs-lookup"><span data-stu-id="7a596-140">From the **File** menu, choose **Save All** to save the project.</span></span>
+
+## <a name="testing-your-control"></a><span data-ttu-id="7a596-141">Testování ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="7a596-141">Testing Your Control</span></span>
+ <span data-ttu-id="7a596-142">Ovládací prvky nejsou samostatné projekty; musí být hostovány v kontejneru.</span><span class="sxs-lookup"><span data-stu-id="7a596-142">Controls are not stand-alone projects; they must be hosted in a container.</span></span> <span data-ttu-id="7a596-143">Chcete-li otestovat ovládací prvek, je nutné zadat projekt testů, aby jej bylo možné spustit v.</span><span class="sxs-lookup"><span data-stu-id="7a596-143">In order to test your control, you must provide a test project for it to run in.</span></span> <span data-ttu-id="7a596-144">Je také nutné mít přístup k ovládacímu prvku pro testovací projekt sestavením (kompilováním).</span><span class="sxs-lookup"><span data-stu-id="7a596-144">You must also make your control accessible to the test project by building (compiling) it.</span></span> <span data-ttu-id="7a596-145">V této části vytvoříte ovládací prvek a otestujete ho ve formuláři Windows.</span><span class="sxs-lookup"><span data-stu-id="7a596-145">In this section, you will build your control and test it in a Windows Form.</span></span>
+
+### <a name="to-build-your-control"></a><span data-ttu-id="7a596-146">Sestavení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="7a596-146">To build your control</span></span>
+
+1. <span data-ttu-id="7a596-147">Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.</span><span class="sxs-lookup"><span data-stu-id="7a596-147">On the **Build** menu, click **Build Solution**.</span></span>
+
+     <span data-ttu-id="7a596-148">Sestavení by mělo být úspěšné bez chyb nebo upozornění kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="7a596-148">The build should be successful with no compiler errors or warnings.</span></span>
+
+### <a name="to-create-a-test-project"></a><span data-ttu-id="7a596-149">Vytvoření testovacího projektu</span><span class="sxs-lookup"><span data-stu-id="7a596-149">To create a test project</span></span>
+
+1. <span data-ttu-id="7a596-150">V nabídce **soubor** přejděte na příkaz **Přidat** a potom klikněte na možnost **Nový projekt** . tím otevřete dialogové okno **Přidat nový projekt** .</span><span class="sxs-lookup"><span data-stu-id="7a596-150">On the **File** menu, point to **Add** and then click **New Project** to open the **Add New Project** dialog box.</span></span>
+
+2. <span data-ttu-id="7a596-151">Vyberte uzel Visual Basic projekty a klikněte na **model Windows Forms aplikace**.</span><span class="sxs-lookup"><span data-stu-id="7a596-151">Select the Visual Basic projects node, and click **Windows Forms Application**.</span></span>
+
+3. <span data-ttu-id="7a596-152">Do pole **název** zadejte `Test`.</span><span class="sxs-lookup"><span data-stu-id="7a596-152">In the **Name** box, type `Test`.</span></span>
+
+4. <span data-ttu-id="7a596-153">V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** .</span><span class="sxs-lookup"><span data-stu-id="7a596-153">In **Solution Explorer**, click the **Show All Files** button.</span></span>
+
+5. <span data-ttu-id="7a596-154">V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **odkazy** pro projekt testů a pak vyberte možnost **Přidat odkaz** z místní nabídky a zobrazte tak dialogové okno **Přidat odkaz** .</span><span class="sxs-lookup"><span data-stu-id="7a596-154">In **Solution Explorer**, right-click the **References** node for your test project, then select **Add Reference** from the shortcut menu to display the **Add Reference** dialog box.</span></span>
+
+6. <span data-ttu-id="7a596-155">Klikněte na kartu **projekty** .</span><span class="sxs-lookup"><span data-stu-id="7a596-155">Click the **Projects** tab.</span></span>
+
+7. <span data-ttu-id="7a596-156">Klikněte na kartu s označením **projekty**.</span><span class="sxs-lookup"><span data-stu-id="7a596-156">Click the tab labeled **Projects**.</span></span> <span data-ttu-id="7a596-157">Projekt bude uveden v části **název projektu.** `ValueButtonLib`</span><span class="sxs-lookup"><span data-stu-id="7a596-157">Your `ValueButtonLib` project will be listed under **Project Name**.</span></span> <span data-ttu-id="7a596-158">Dvojím kliknutím na projekt přidejte odkaz na testovací projekt.</span><span class="sxs-lookup"><span data-stu-id="7a596-158">Double-click the project to add the reference to the test project.</span></span>
+
+8. <span data-ttu-id="7a596-159">V **Průzkumník řešení** klikněte pravým tlačítkem na **test** a vyberte **sestavit**.</span><span class="sxs-lookup"><span data-stu-id="7a596-159">In **Solution Explorer,** right-click **Test** and select **Build**.</span></span>
+
+### <a name="to-add-your-control-to-the-form"></a><span data-ttu-id="7a596-160">Přidání ovládacího prvku do formuláře</span><span class="sxs-lookup"><span data-stu-id="7a596-160">To add your control to the form</span></span>
+
+1. <span data-ttu-id="7a596-161">V **Průzkumník řešení**klikněte pravým tlačítkem na **Form1. vb** a v místní nabídce vyberte **zobrazit Návrhář** .</span><span class="sxs-lookup"><span data-stu-id="7a596-161">In **Solution Explorer**, right-click **Form1.vb** and choose **View Designer** from the shortcut menu.</span></span>
+
+2. <span data-ttu-id="7a596-162">V sadě **nástrojů**klikněte na **součásti ValueButtonLib**.</span><span class="sxs-lookup"><span data-stu-id="7a596-162">In the **Toolbox**, click **ValueButtonLib Components**.</span></span> <span data-ttu-id="7a596-163">Dvakrát klikněte na **ValueButton**.</span><span class="sxs-lookup"><span data-stu-id="7a596-163">Double-click **ValueButton**.</span></span>
+
+     <span data-ttu-id="7a596-164">Ve formuláři se zobrazí **ValueButton** .</span><span class="sxs-lookup"><span data-stu-id="7a596-164">A **ValueButton** appears on the form.</span></span>
+
+3. <span data-ttu-id="7a596-165">Klikněte pravým tlačítkem na **ValueButton** a v místní nabídce vyberte **vlastnosti** .</span><span class="sxs-lookup"><span data-stu-id="7a596-165">Right-click the **ValueButton** and select **Properties** from the shortcut menu.</span></span>
+
+4. <span data-ttu-id="7a596-166">V okně **vlastnosti** prověřte vlastnosti tohoto ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="7a596-166">In the **Properties** window, examine the properties of this control.</span></span> <span data-ttu-id="7a596-167">Všimněte si, že jsou stejné jako vlastnosti zveřejněné standardním tlačítkem, s výjimkou toho, že existuje další vlastnost `ButtonValue`,.</span><span class="sxs-lookup"><span data-stu-id="7a596-167">Note that they are identical to the properties exposed by a standard button, except that there is an additional property, `ButtonValue`.</span></span>
+
+5. <span data-ttu-id="7a596-168">Nastavte `ButtonValue` vlastnost `5`.</span><span class="sxs-lookup"><span data-stu-id="7a596-168">Set the `ButtonValue` property to `5`.</span></span>
+
+6. <span data-ttu-id="7a596-169">Na kartě **Všechny model Windows Forms** **panelu nástrojů**přidejte <xref:System.Windows.Forms.Label> ovládací prvek do formuláře dvojitým kliknutím na položku **popisek** .</span><span class="sxs-lookup"><span data-stu-id="7a596-169">On the **All Windows Forms** tab of the **Toolbox**, double-click **Label** to add a <xref:System.Windows.Forms.Label> control to your form.</span></span>
+
+7. <span data-ttu-id="7a596-170">Přemístěte popisek na střed formuláře.</span><span class="sxs-lookup"><span data-stu-id="7a596-170">Relocate the label to the center of the form.</span></span>
+
+8. <span data-ttu-id="7a596-171">Poklikejte na `ValueButton1`.</span><span class="sxs-lookup"><span data-stu-id="7a596-171">Double-click `ValueButton1`.</span></span>
+
+     <span data-ttu-id="7a596-172">Otevře se **Editor kódu** pro `ValueButton1_Click` událost.</span><span class="sxs-lookup"><span data-stu-id="7a596-172">The **Code Editor** opens to the `ValueButton1_Click` event.</span></span>
+
+9. <span data-ttu-id="7a596-173">Zadejte následující řádek kódu.</span><span class="sxs-lookup"><span data-stu-id="7a596-173">Type the following line of code.</span></span>
+
+    ```vb
+    Label1.Text = CStr(ValueButton1.ButtonValue)
+    ```
+
+10. <span data-ttu-id="7a596-174">V **Průzkumník řešení**klikněte pravým tlačítkem na **test**a v místní nabídce vyberte **nastavit jako spouštěný projekt** .</span><span class="sxs-lookup"><span data-stu-id="7a596-174">In **Solution Explorer**, right-click **Test**, and choose **Set as Startup Project** from the shortcut menu.</span></span>
+
+11. <span data-ttu-id="7a596-175">V nabídce **ladění** vyberte **Spustit ladění**.</span><span class="sxs-lookup"><span data-stu-id="7a596-175">From the **Debug** menu, select **Start Debugging**.</span></span>
+
+     <span data-ttu-id="7a596-176">`Form1`uvedeny.</span><span class="sxs-lookup"><span data-stu-id="7a596-176">`Form1` appears.</span></span>
+
+12. <span data-ttu-id="7a596-177">Klikněte `Valuebutton1`na.</span><span class="sxs-lookup"><span data-stu-id="7a596-177">Click `Valuebutton1`.</span></span>
+
+     <span data-ttu-id="7a596-178">Číslice "5" se zobrazí `Label1`v, `ButtonValue` což demonstruje, že vlastnost zděděného `Label1` ovládacího prvku byla předána prostřednictvím `ValueButton1_Click` metody.</span><span class="sxs-lookup"><span data-stu-id="7a596-178">The numeral '5' is displayed in `Label1`, demonstrating that the `ButtonValue` property of your inherited control has been passed to `Label1` through the `ValueButton1_Click` method.</span></span> <span data-ttu-id="7a596-179">Proto váš `ValueButton` ovládací prvek zdědí všechny funkce standardního model Windows Formsho tlačítka, ale zpřístupňuje další vlastní vlastnost.</span><span class="sxs-lookup"><span data-stu-id="7a596-179">Thus your `ValueButton` control inherits all the functionality of the standard Windows Forms button, but exposes an additional, custom property.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="7a596-180">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7a596-180">See also</span></span>
+
+- [<span data-ttu-id="7a596-181">Návod: Vytváření složeného ovládacího prvku pomocí Visual Basic</span><span class="sxs-lookup"><span data-stu-id="7a596-181">Walkthrough: Authoring a Composite Control with Visual Basic</span></span>](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [<span data-ttu-id="7a596-182">Postupy: Zobrazení ovládacího prvku v dialogovém okně zvolit položky sady nástrojů</span><span class="sxs-lookup"><span data-stu-id="7a596-182">How to: Display a Control in the Choose Toolbox Items Dialog Box</span></span>](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [<span data-ttu-id="7a596-183">Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7a596-183">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](developing-custom-windows-forms-controls.md)
+- [<span data-ttu-id="7a596-184">Základy dědičnosti (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7a596-184">Inheritance basics (Visual Basic)</span></span>](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

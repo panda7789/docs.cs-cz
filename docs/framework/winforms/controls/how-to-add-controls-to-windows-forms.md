@@ -9,90 +9,87 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 04597283a8ff2e21a0f227268671d3605eac6356
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 5c57d86b2f08733dc4a729bf6091eab23c6035f2
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343581"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039711"
 ---
-# <a name="how-to-add-controls-to-windows-forms"></a><span data-ttu-id="c7582-102">Postupy: Přidávání ovládacích prvků do Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c7582-102">How to: Add Controls to Windows Forms</span></span>
-<span data-ttu-id="c7582-103">Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI).</span><span class="sxs-lookup"><span data-stu-id="c7582-103">Most forms are designed by adding controls to the surface of the form to define a user interface (UI).</span></span> <span data-ttu-id="c7582-104">A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup.</span><span class="sxs-lookup"><span data-stu-id="c7582-104">A *control* is a component on a form used to display information or accept user input.</span></span> <span data-ttu-id="c7582-105">Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](index.md).</span><span class="sxs-lookup"><span data-stu-id="c7582-105">For more information about controls, see [Windows Forms Controls](index.md).</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="c7582-106">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="c7582-106">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="c7582-107">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="c7582-107">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="c7582-108">Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="c7582-108">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
-  
-### <a name="to-draw-a-control-on-a-form"></a><span data-ttu-id="c7582-109">K nakreslení ovládacího prvku ve formuláři</span><span class="sxs-lookup"><span data-stu-id="c7582-109">To draw a control on a form</span></span>  
-  
-1. <span data-ttu-id="c7582-110">Otevřete formulář.</span><span class="sxs-lookup"><span data-stu-id="c7582-110">Open the form.</span></span> <span data-ttu-id="c7582-111">Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c7582-111">For more information, see [How to: Display Windows Forms in the Designer](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span></span>  
-  
-2. <span data-ttu-id="c7582-112">V **nástrojů**, klepněte na ovládací prvek, který chcete přidat do formuláře.</span><span class="sxs-lookup"><span data-stu-id="c7582-112">In the **Toolbox**, click the control you want to add to your form.</span></span>  
-  
-3. <span data-ttu-id="c7582-113">Ve formuláři klikněte na požadované levého horního rohu ovládacího prvku, který má být umístěná a přetáhněte ji na požadované místo pravého dolního rohu ovládacího prvku, který má být umístěná.</span><span class="sxs-lookup"><span data-stu-id="c7582-113">On the form, click where you want the upper-left corner of the control to be located, and drag to where you want the lower-right corner of the control to be located.</span></span>  
-  
-     <span data-ttu-id="c7582-114">Ovládací prvek je přidán do formuláře pomocí zadaného umístění a velikost.</span><span class="sxs-lookup"><span data-stu-id="c7582-114">The control is added to the form with the specified location and size.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c7582-115">Každý ovládací prvek má definovaný výchozí velikost.</span><span class="sxs-lookup"><span data-stu-id="c7582-115">Each control has a default size defined.</span></span> <span data-ttu-id="c7582-116">Můžete přidat ovládací prvek do formuláře ve výchozí velikost ovládacího prvku přetažením z **nástrojů** do formuláře.</span><span class="sxs-lookup"><span data-stu-id="c7582-116">You can add a control to your form in the control's default size by dragging it from the **Toolbox** to the form.</span></span>  
-  
-### <a name="to-drag-a-control-to-a-form"></a><span data-ttu-id="c7582-117">Přetáhněte ovládací prvek do formuláře</span><span class="sxs-lookup"><span data-stu-id="c7582-117">To drag a control to a form</span></span>  
-  
-1. <span data-ttu-id="c7582-118">Otevřete formulář.</span><span class="sxs-lookup"><span data-stu-id="c7582-118">Open the form.</span></span> <span data-ttu-id="c7582-119">Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="c7582-119">For more information, see [How to: Display Windows Forms in the Designer](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span></span>  
-  
-2. <span data-ttu-id="c7582-120">V **nástrojů**, klepněte na ovládací prvek a přetáhněte ji do svého formuláře.</span><span class="sxs-lookup"><span data-stu-id="c7582-120">In the **Toolbox**, click the control you want and drag it to your form.</span></span>  
-  
-     <span data-ttu-id="c7582-121">Ovládací prvek je přidán do formuláře v zadaném umístění v její výchozí velikost.</span><span class="sxs-lookup"><span data-stu-id="c7582-121">The control is added to the form at the specified location in its default size.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c7582-122">Dvakrát kliknete na ovládací prvek v **nástrojů** se přidá do levého horního rohu formuláře v její výchozí velikost.</span><span class="sxs-lookup"><span data-stu-id="c7582-122">You can double-click a control in the **Toolbox** to add it to the upper-left corner of the form in its default size.</span></span>  
-  
-     <span data-ttu-id="c7582-123">Můžete také přidat ovládací prvky dynamicky do formuláře v době běhu.</span><span class="sxs-lookup"><span data-stu-id="c7582-123">You can also add controls dynamically to a form at run time.</span></span> <span data-ttu-id="c7582-124">V následujícím příkladu kódu <xref:System.Windows.Forms.TextBox> ovládací prvek bude přidán do formuláře při <xref:System.Windows.Forms.Button> dojde ke kliknutí na ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="c7582-124">In the following code example, a <xref:System.Windows.Forms.TextBox> control will be added to the form when a <xref:System.Windows.Forms.Button> control is clicked.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c7582-125">Následující postup vyžaduje existenci formulář s **tlačítko** ovládacího prvku, `Button1`, již umístěné na něj.</span><span class="sxs-lookup"><span data-stu-id="c7582-125">The following procedure requires the existence of a form with a **Button** control, `Button1`, already placed on it.</span></span>  
-  
-### <a name="to-add-a-control-to-a-form-programmatically"></a><span data-ttu-id="c7582-126">Přidání ovládacího prvku na formulář prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="c7582-126">To add a control to a form programmatically</span></span>  
-  
-1. <span data-ttu-id="c7582-127">V metodě, která zpracovává tlačítka `Click` událostí v rámci třídy formuláře, vložit kód podobný následujícímu se přidat odkaz na řídicí proměnná nastavit u tohoto prvku `Location`a přidejte ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="c7582-127">In the method that handles the button's `Click` event within your form's class, insert code similar to the following to add a reference to your control variable, set the control's `Location`, and add the control.</span></span>  
-  
-    ```vb  
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
-       Dim MyText As New TextBox()  
-       MyText.Location = New Point(25, 25)  
-       Me.Controls.Add(MyText)  
-    End Sub  
-    ```  
-  
-    ```csharp  
-    private void button1_Click(object sender, System.EventArgs e)   
-    {  
-       TextBox myText = new TextBox();  
-       myText.Location = new Point(25,25);  
-       this.Controls.Add (myText);  
-    }  
-    ```  
-  
-    ```cpp  
-    private:  
-      System::Void button1_Click(System::Object ^  sender,  
-        System::EventArgs ^  e)  
-      {  
-        TextBox ^ myText = gcnew TextBox();  
-        myText->Location = Point(25,25);  
-        this->Controls->Add(myText);  
-      }  
-    ```  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c7582-128">Můžete také přidat kód pro inicializaci jiné vlastnosti ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c7582-128">You can also add code to initialize other properties of the control.</span></span>  
-  
-    > [!IMPORTANT]
-    >  <span data-ttu-id="c7582-129">Místního počítače k ohrožení zabezpečení prostřednictvím sítě může být odkazem škodlivý `UserControl`.</span><span class="sxs-lookup"><span data-stu-id="c7582-129">You might expose your local computer to a security risk through the network by referencing a malicious `UserControl`.</span></span> <span data-ttu-id="c7582-130">To může být pouze v případě nežádoucí osoba vytváření škodlivé vlastního ovládacího prvku, za nímž následuje omylem přidání do projektu žádný problém.</span><span class="sxs-lookup"><span data-stu-id="c7582-130">This would only be a concern in the case of a malicious person creating a damaging custom control, followed by you mistakenly adding it to your project.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="c7582-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c7582-131">See also</span></span>
+# <a name="how-to-add-controls-to-windows-forms"></a><span data-ttu-id="9d363-102">Postupy: Přidávání ovládacích prvků do Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9d363-102">How to: Add Controls to Windows Forms</span></span>
+<span data-ttu-id="9d363-103">Většina formulářů je navržena přidáním ovládacích prvků na plochu formuláře k definování uživatelského rozhraní (UI).</span><span class="sxs-lookup"><span data-stu-id="9d363-103">Most forms are designed by adding controls to the surface of the form to define a user interface (UI).</span></span> <span data-ttu-id="9d363-104">*Ovládací prvek* je komponenta na formuláři sloužící k zobrazení informací nebo přijetí vstupu uživatele.</span><span class="sxs-lookup"><span data-stu-id="9d363-104">A *control* is a component on a form used to display information or accept user input.</span></span> <span data-ttu-id="9d363-105">Další informace o ovládacích prvcích naleznete v tématu [model Windows Forms Controls](index.md).</span><span class="sxs-lookup"><span data-stu-id="9d363-105">For more information about controls, see [Windows Forms Controls](index.md).</span></span>
 
-- [<span data-ttu-id="c7582-132">Windows Forms – ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="c7582-132">Windows Forms Controls</span></span>](index.md)
-- [<span data-ttu-id="c7582-133">Uspořádávání ovládacích prvků ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c7582-133">Arranging Controls on Windows Forms</span></span>](arranging-controls-on-windows-forms.md)
-- [<span data-ttu-id="c7582-134">Postupy: Změna velikosti ovládacích prvků ve formulářích Windows</span><span class="sxs-lookup"><span data-stu-id="c7582-134">How to: Resize Controls on Windows Forms</span></span>](how-to-resize-controls-on-windows-forms.md)
-- [<span data-ttu-id="c7582-135">Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c7582-135">How to: Set the Text Displayed by a Windows Forms Control</span></span>](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
-- [<span data-ttu-id="c7582-136">Ovládací prvky používané ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c7582-136">Controls to Use on Windows Forms</span></span>](controls-to-use-on-windows-forms.md)
+## <a name="to-draw-a-control-on-a-form"></a><span data-ttu-id="9d363-106">Nakreslení ovládacího prvku na formuláři</span><span class="sxs-lookup"><span data-stu-id="9d363-106">To draw a control on a form</span></span>
+
+1. <span data-ttu-id="9d363-107">Otevřete formulář.</span><span class="sxs-lookup"><span data-stu-id="9d363-107">Open the form.</span></span> <span data-ttu-id="9d363-108">Další informace najdete v tématu [jak: Zobrazit model Windows Forms v Návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="9d363-108">For more information, see [How to: Display Windows Forms in the Designer](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span></span>
+
+2. <span data-ttu-id="9d363-109">V sadě **nástrojů**klikněte na ovládací prvek, který chcete přidat do formuláře.</span><span class="sxs-lookup"><span data-stu-id="9d363-109">In the **Toolbox**, click the control you want to add to your form.</span></span>
+
+3. <span data-ttu-id="9d363-110">Ve formuláři klikněte na místo, kde chcete umístit levý horní roh ovládacího prvku, a přetáhněte jej na místo, kde chcete umístit pravý dolní roh ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="9d363-110">On the form, click where you want the upper-left corner of the control to be located, and drag to where you want the lower-right corner of the control to be located.</span></span>
+
+     <span data-ttu-id="9d363-111">Ovládací prvek je přidán do formuláře se zadaným umístěním a velikostí.</span><span class="sxs-lookup"><span data-stu-id="9d363-111">The control is added to the form with the specified location and size.</span></span>
+
+    > [!NOTE]
+    >  <span data-ttu-id="9d363-112">U každého ovládacího prvku je definována výchozí velikost.</span><span class="sxs-lookup"><span data-stu-id="9d363-112">Each control has a default size defined.</span></span> <span data-ttu-id="9d363-113">Ovládací prvek lze přidat do formuláře ve výchozí velikosti ovládacího prvku přetažením z **panelu nástrojů** do formuláře.</span><span class="sxs-lookup"><span data-stu-id="9d363-113">You can add a control to your form in the control's default size by dragging it from the **Toolbox** to the form.</span></span>
+
+## <a name="to-drag-a-control-to-a-form"></a><span data-ttu-id="9d363-114">Přetažení ovládacího prvku do formuláře</span><span class="sxs-lookup"><span data-stu-id="9d363-114">To drag a control to a form</span></span>
+
+1. <span data-ttu-id="9d363-115">Otevřete formulář.</span><span class="sxs-lookup"><span data-stu-id="9d363-115">Open the form.</span></span> <span data-ttu-id="9d363-116">Další informace najdete v tématu [jak: Zobrazit model Windows Forms v Návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="9d363-116">For more information, see [How to: Display Windows Forms in the Designer](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).</span></span>
+
+2. <span data-ttu-id="9d363-117">V sadě **nástrojů**klikněte na požadovaný ovládací prvek a přetáhněte ho do formuláře.</span><span class="sxs-lookup"><span data-stu-id="9d363-117">In the **Toolbox**, click the control you want and drag it to your form.</span></span>
+
+     <span data-ttu-id="9d363-118">Ovládací prvek je přidán do formuláře v zadaném umístění ve výchozí velikosti.</span><span class="sxs-lookup"><span data-stu-id="9d363-118">The control is added to the form at the specified location in its default size.</span></span>
+
+    > [!NOTE]
+    >  <span data-ttu-id="9d363-119">Můžete dvakrát kliknout na ovládací prvek v **sadě nástrojů** a přidat ho do levého horního rohu formuláře ve výchozí velikosti.</span><span class="sxs-lookup"><span data-stu-id="9d363-119">You can double-click a control in the **Toolbox** to add it to the upper-left corner of the form in its default size.</span></span>
+
+     <span data-ttu-id="9d363-120">Ovládací prvky lze také dynamicky přidávat do formuláře za běhu.</span><span class="sxs-lookup"><span data-stu-id="9d363-120">You can also add controls dynamically to a form at run time.</span></span> <span data-ttu-id="9d363-121">V následujícím příkladu <xref:System.Windows.Forms.TextBox> kódu bude ovládací prvek přidán do formuláře <xref:System.Windows.Forms.Button> při kliknutí na ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="9d363-121">In the following code example, a <xref:System.Windows.Forms.TextBox> control will be added to the form when a <xref:System.Windows.Forms.Button> control is clicked.</span></span>
+
+    > [!NOTE]
+    >  <span data-ttu-id="9d363-122">Následující postup vyžaduje existenci formuláře s ovládacím prvkem `Button1` **tlačítko** , na kterém je již umístěn.</span><span class="sxs-lookup"><span data-stu-id="9d363-122">The following procedure requires the existence of a form with a **Button** control, `Button1`, already placed on it.</span></span>
+
+## <a name="to-add-a-control-to-a-form-programmatically"></a><span data-ttu-id="9d363-123">Postup pro přidání ovládacího prvku do formuláře prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="9d363-123">To add a control to a form programmatically</span></span>
+
+1. <span data-ttu-id="9d363-124">V metodě, která zpracovává `Click` událost tlačítka v rámci třídy formuláře, vložte kód podobný následujícímu pro přidání odkazu na proměnnou ovládacího prvku, nastavení `Location`ovládacího prvku a přidání ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="9d363-124">In the method that handles the button's `Click` event within your form's class, insert code similar to the following to add a reference to your control variable, set the control's `Location`, and add the control.</span></span>
+
+    ```vb
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+       Dim MyText As New TextBox()
+       MyText.Location = New Point(25, 25)
+       Me.Controls.Add(MyText)
+    End Sub
+    ```
+
+    ```csharp
+    private void button1_Click(object sender, System.EventArgs e)
+    {
+       TextBox myText = new TextBox();
+       myText.Location = new Point(25,25);
+       this.Controls.Add (myText);
+    }
+    ```
+
+    ```cpp
+    private:
+      System::Void button1_Click(System::Object ^  sender,
+        System::EventArgs ^  e)
+      {
+        TextBox ^ myText = gcnew TextBox();
+        myText->Location = Point(25,25);
+        this->Controls->Add(myText);
+      }
+    ```
+
+    > [!NOTE]
+    >  <span data-ttu-id="9d363-125">Můžete také přidat kód pro inicializaci dalších vlastností ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="9d363-125">You can also add code to initialize other properties of the control.</span></span>
+
+    > [!IMPORTANT]
+    >  <span data-ttu-id="9d363-126">Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě, a to tak, že `UserControl`se na něj odkazuje škodlivá aktivita.</span><span class="sxs-lookup"><span data-stu-id="9d363-126">You might expose your local computer to a security risk through the network by referencing a malicious `UserControl`.</span></span> <span data-ttu-id="9d363-127">To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.</span><span class="sxs-lookup"><span data-stu-id="9d363-127">This would only be a concern in the case of a malicious person creating a damaging custom control, followed by you mistakenly adding it to your project.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="9d363-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9d363-128">See also</span></span>
+
+- [<span data-ttu-id="9d363-129">Windows Forms – ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="9d363-129">Windows Forms Controls</span></span>](index.md)
+- [<span data-ttu-id="9d363-130">Uspořádávání ovládacích prvků ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9d363-130">Arranging Controls on Windows Forms</span></span>](arranging-controls-on-windows-forms.md)
+- [<span data-ttu-id="9d363-131">Postupy: Změnit velikost ovládacích prvků na model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9d363-131">How to: Resize Controls on Windows Forms</span></span>](how-to-resize-controls-on-windows-forms.md)
+- [<span data-ttu-id="9d363-132">Postupy: Nastavení textu zobrazovaného ovládacím prvkem model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9d363-132">How to: Set the Text Displayed by a Windows Forms Control</span></span>](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [<span data-ttu-id="9d363-133">Ovládací prvky používané ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9d363-133">Controls to Use on Windows Forms</span></span>](controls-to-use-on-windows-forms.md)

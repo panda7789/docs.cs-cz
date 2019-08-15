@@ -1,38 +1,38 @@
 ---
-title: Přizpůsobení struktury zařazování – .NET
-description: Zjistěte, jak přizpůsobit, jak .NET zařazuje struktury na nativní reprezentaci.
+title: Přizpůsobení zařazování struktury – .NET
+description: Naučte se, jak přizpůsobit, jak .NET zařazování vašich struktur do nativní reprezentace.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: da36f2a703fe817c171e192b9c94e473c93447a3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 6e3dcaeb71ae32812d3b022fff2bdc4e3e0691bf
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065471"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040157"
 ---
-# <a name="customizing-structure-marshaling"></a><span data-ttu-id="703ac-103">Přizpůsobení struktura zařazování</span><span class="sxs-lookup"><span data-stu-id="703ac-103">Customizing structure marshaling</span></span>
+# <a name="customizing-structure-marshaling"></a><span data-ttu-id="14be6-103">Přizpůsobení zařazování struktur</span><span class="sxs-lookup"><span data-stu-id="14be6-103">Customizing structure marshaling</span></span>
 
-<span data-ttu-id="703ac-104">Někdy zařazování výchozí pravidla pro struktury nejsou přesně, co potřebujete.</span><span class="sxs-lookup"><span data-stu-id="703ac-104">Sometimes the default marshaling rules for structures aren't exactly what you need.</span></span> <span data-ttu-id="703ac-105">Moduly runtime .NET poskytují několik Rozšiřovací body můžete přizpůsobit rozvržení struktury vaší a jak zařadit pole.</span><span class="sxs-lookup"><span data-stu-id="703ac-105">The .NET runtimes provide a few extension points for you to customize your structure's layout and how fields are marshaled.</span></span>
+<span data-ttu-id="14be6-104">Někdy výchozí pravidla zařazování pro struktury nejsou přesně to, co potřebujete.</span><span class="sxs-lookup"><span data-stu-id="14be6-104">Sometimes the default marshaling rules for structures aren't exactly what you need.</span></span> <span data-ttu-id="14be6-105">Moduly runtime .NET poskytují několik rozšiřovacích bodů pro přizpůsobení rozložení struktury a způsobu, jakým jsou pole zařazena.</span><span class="sxs-lookup"><span data-stu-id="14be6-105">The .NET runtimes provide a few extension points for you to customize your structure's layout and how fields are marshaled.</span></span>
 
-## <a name="customizing-structure-layout"></a><span data-ttu-id="703ac-106">Přizpůsobení rozložení struktury</span><span class="sxs-lookup"><span data-stu-id="703ac-106">Customizing structure layout</span></span>
+## <a name="customizing-structure-layout"></a><span data-ttu-id="14be6-106">Přizpůsobení rozložení struktury</span><span class="sxs-lookup"><span data-stu-id="14be6-106">Customizing structure layout</span></span>
 
-<span data-ttu-id="703ac-107">Poskytuje rozhraní .NET <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> atribut a <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> výčet, aby bylo možné přizpůsobit, jak jsou pole umístěné v paměti.</span><span class="sxs-lookup"><span data-stu-id="703ac-107">.NET provides the <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> attribute and the <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> enumeration to allow you to customize how fields are placed in memory.</span></span> <span data-ttu-id="703ac-108">Následující pokyny se snáze vyhnete běžných problémů.</span><span class="sxs-lookup"><span data-stu-id="703ac-108">The following guidance will help you avoid common issues.</span></span>
+<span data-ttu-id="14be6-107">Rozhraní .NET poskytuje <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> atribut <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> a výčet, aby bylo možné přizpůsobit, jak jsou pole umístěna v paměti.</span><span class="sxs-lookup"><span data-stu-id="14be6-107">.NET provides the <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> attribute and the <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> enumeration to allow you to customize how fields are placed in memory.</span></span> <span data-ttu-id="14be6-108">Následující pokyny vám pomůžou vyhnout se běžným problémům.</span><span class="sxs-lookup"><span data-stu-id="14be6-108">The following guidance will help you avoid common issues.</span></span>
 
-<span data-ttu-id="703ac-109">**✔️ ZVAŽTE** pomocí `LayoutKind.Sequential` kdykoli je to možné.</span><span class="sxs-lookup"><span data-stu-id="703ac-109">**✔️ CONSIDER** using `LayoutKind.Sequential` whenever possible.</span></span>
+<span data-ttu-id="14be6-109">**✔️ zvážit** použití `LayoutKind.Sequential` , kdykoli je to možné.</span><span class="sxs-lookup"><span data-stu-id="14be6-109">**✔️ CONSIDER** using `LayoutKind.Sequential` whenever possible.</span></span>
 
-<span data-ttu-id="703ac-110">**PROVEĎTE ✔️** používat pouze `LayoutKind.Explicit` v zařazování při nativní struktury je také má explicitní rozložení, jako je například sjednocení.</span><span class="sxs-lookup"><span data-stu-id="703ac-110">**✔️ DO** only use `LayoutKind.Explicit` in marshaling when your native struct is also has an explicit layout, such as a union.</span></span>
+<span data-ttu-id="14be6-110">**✔️** použít `LayoutKind.Explicit` pouze v zařazování, pokud má nativní struktura také explicitní rozložení, jako je například sjednocení.</span><span class="sxs-lookup"><span data-stu-id="14be6-110">**✔️ DO** only use `LayoutKind.Explicit` in marshaling when your native struct is also has an explicit layout, such as a union.</span></span>
 
-<span data-ttu-id="703ac-111">**❌ Nepoužívejte** pomocí `LayoutKind.Explicit` při zařazování struktur na platformách než Windows.</span><span class="sxs-lookup"><span data-stu-id="703ac-111">**❌ AVOID** using `LayoutKind.Explicit` when marshaling structures on non-Windows platforms.</span></span> <span data-ttu-id="703ac-112">Modul runtime .NET Core nepodporuje explicitní struktury předání hodnotou na nativní funkce v systémech než Windows Intel nebo AMD 64-bit.</span><span class="sxs-lookup"><span data-stu-id="703ac-112">The .NET Core runtime doesn't support passing explicit structures by value to native functions on Intel or AMD 64-bit non-Windows systems.</span></span> <span data-ttu-id="703ac-113">Modul runtime však podporuje struktury, předávání explicitní odkaz na všech platformách.</span><span class="sxs-lookup"><span data-stu-id="703ac-113">However, the runtime supports passing explicit structures by reference on all platforms.</span></span>
+<span data-ttu-id="14be6-111">**❌ Se vyhnout** použití `LayoutKind.Explicit` při zařazování struktur na platformách jiných než Windows.</span><span class="sxs-lookup"><span data-stu-id="14be6-111">**❌ AVOID** using `LayoutKind.Explicit` when marshaling structures on non-Windows platforms.</span></span> <span data-ttu-id="14be6-112">Modul runtime .NET Core nepodporuje předávání explicitních struktur podle hodnot do nativních funkcí v systémech, které nejsou systémy Windows a Intel nebo AMD 64.</span><span class="sxs-lookup"><span data-stu-id="14be6-112">The .NET Core runtime doesn't support passing explicit structures by value to native functions on Intel or AMD 64-bit non-Windows systems.</span></span> <span data-ttu-id="14be6-113">Modul runtime však podporuje předávání explicitních struktur odkazem na všechny platformy.</span><span class="sxs-lookup"><span data-stu-id="14be6-113">However, the runtime supports passing explicit structures by reference on all platforms.</span></span>
 
-## <a name="customizing-boolean-field-marshaling"></a><span data-ttu-id="703ac-114">Přizpůsobení zařazování pole boolean</span><span class="sxs-lookup"><span data-stu-id="703ac-114">Customizing boolean field marshaling</span></span>
+## <a name="customizing-boolean-field-marshaling"></a><span data-ttu-id="14be6-114">Přizpůsobení zařazování logických polí</span><span class="sxs-lookup"><span data-stu-id="14be6-114">Customizing boolean field marshaling</span></span>
 
-<span data-ttu-id="703ac-115">Nativní kód má mnoho různých logický reprezentací.</span><span class="sxs-lookup"><span data-stu-id="703ac-115">Native code has many different boolean representations.</span></span> <span data-ttu-id="703ac-116">Na Windows samostatně existují tři způsoby, jak reprezentaci logické hodnoty.</span><span class="sxs-lookup"><span data-stu-id="703ac-116">On Windows alone, there are three ways to represent boolean values.</span></span> <span data-ttu-id="703ac-117">Modul runtime nebude vědět nativní definice struktury, proto je nejlepší, co můžete dělat hádat o tom, jak zařadit logické hodnoty.</span><span class="sxs-lookup"><span data-stu-id="703ac-117">The runtime doesn't know the native definition of your structure, so the best it can do is make a guess on how to marshal your boolean values.</span></span> <span data-ttu-id="703ac-118">Modul .NET runtime poskytuje způsob, jak určují, jak zařadit logická pole.</span><span class="sxs-lookup"><span data-stu-id="703ac-118">The .NET runtime provides a way to indicate how to marshal your boolean field.</span></span> <span data-ttu-id="703ac-119">Následující příklady ukazují, jak zařadit .NET `bool` do různých nativních typů boolean.</span><span class="sxs-lookup"><span data-stu-id="703ac-119">The following examples show how to marshal .NET `bool` to different native boolean types.</span></span>
+<span data-ttu-id="14be6-115">Nativní kód má mnoho různých logických reprezentace.</span><span class="sxs-lookup"><span data-stu-id="14be6-115">Native code has many different boolean representations.</span></span> <span data-ttu-id="14be6-116">Pouze v systému Windows existují tři způsoby reprezentace logických hodnot.</span><span class="sxs-lookup"><span data-stu-id="14be6-116">On Windows alone, there are three ways to represent boolean values.</span></span> <span data-ttu-id="14be6-117">Běhový modul neví nativní definici struktury, takže to nejlepší je udělat, abyste se seznámili s tím, jak vaše logické hodnoty zařadit.</span><span class="sxs-lookup"><span data-stu-id="14be6-117">The runtime doesn't know the native definition of your structure, so the best it can do is make a guess on how to marshal your boolean values.</span></span> <span data-ttu-id="14be6-118">Modul runtime .NET poskytuje způsob, jak určit, jak zařadit vaše logické pole.</span><span class="sxs-lookup"><span data-stu-id="14be6-118">The .NET runtime provides a way to indicate how to marshal your boolean field.</span></span> <span data-ttu-id="14be6-119">Následující příklady ukazují, jak zařadit rozhraní `bool` .NET do různých nativních typů Boolean.</span><span class="sxs-lookup"><span data-stu-id="14be6-119">The following examples show how to marshal .NET `bool` to different native boolean types.</span></span>
 
-<span data-ttu-id="703ac-120">Výchozí zařazování jako nativní 4bajtový Win32 hodnoty logická hodnota [ `BOOL` ](/windows/desktop/winprog/windows-data-types#BOOL) hodnoty, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="703ac-120">Boolean values default to marshaling as a native 4-byte Win32 [`BOOL`](/windows/desktop/winprog/windows-data-types#BOOL) value as shown in the following example:</span></span>
+<span data-ttu-id="14be6-120">Logické hodnoty jsou ve výchozím nastavení zařazování jako nativní [`BOOL`](/windows/desktop/winprog/windows-data-types#BOOL) hodnota 4 bajtů, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="14be6-120">Boolean values default to marshaling as a native 4-byte Win32 [`BOOL`](/windows/desktop/winprog/windows-data-types#BOOL) value as shown in the following example:</span></span>
 
 ```csharp
 public struct WinBool
@@ -48,7 +48,7 @@ struct WinBool
 };
 ```
 
-<span data-ttu-id="703ac-121">Pokud chcete explicitně, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> hodnota, která má stejné chování, jak je uvedeno výše:</span><span class="sxs-lookup"><span data-stu-id="703ac-121">If you want to be explicit, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> value to get the same behavior as above:</span></span>
+<span data-ttu-id="14be6-121">Pokud chcete být explicitní, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> hodnotu k získání stejného chování jako v předchozích krocích:</span><span class="sxs-lookup"><span data-stu-id="14be6-121">If you want to be explicit, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.Bool?displayProperty=nameWithType> value to get the same behavior as above:</span></span>
 
 ```csharp
 public struct WinBool
@@ -65,7 +65,7 @@ struct WinBool
 };
 ```
 
-<span data-ttu-id="703ac-122">Použití `UnmanagedType.U1` nebo `UnmanagedType.I1` níže uvedených hodnot, poznáte, modul runtime k zařazování `b` pole 1bajtových nativní `bool` typu.</span><span class="sxs-lookup"><span data-stu-id="703ac-122">Using the `UnmanagedType.U1` or `UnmanagedType.I1` values below, you can tell the runtime to marshal the `b` field as a 1-byte native `bool` type.</span></span>
+<span data-ttu-id="14be6-122">Pomocí níže uvedených `UnmanagedType.I1` hodnot `b` nebo můžete určit, že modul runtime bude zařazovat pole jako nativní `bool` typ 1 bajt. `UnmanagedType.U1`</span><span class="sxs-lookup"><span data-stu-id="14be6-122">Using the `UnmanagedType.U1` or `UnmanagedType.I1` values below, you can tell the runtime to marshal the `b` field as a 1-byte native `bool` type.</span></span>
 
 ```csharp
 public struct CBool
@@ -82,7 +82,7 @@ struct CBool
 };
 ```
 
-<span data-ttu-id="703ac-123">Na Windows, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> hodnotu říct runtime k zařazení vaší logickou hodnotu k 2 bajtů `VARIANT_BOOL` hodnotu:</span><span class="sxs-lookup"><span data-stu-id="703ac-123">On Windows, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> value to tell the runtime to marshal your boolean value to a 2-byte `VARIANT_BOOL` value:</span></span>
+<span data-ttu-id="14be6-123">Ve Windows můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> hodnotu k oznámení, že modul runtime zařadí vaši logickou hodnotu do hodnoty 2 bajty: `VARIANT_BOOL`</span><span class="sxs-lookup"><span data-stu-id="14be6-123">On Windows, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.VariantBool?displayProperty=nameWithType> value to tell the runtime to marshal your boolean value to a 2-byte `VARIANT_BOOL` value:</span></span>
 
 ```csharp
 public struct VariantBool
@@ -100,13 +100,13 @@ struct VariantBool
 ```
 
 > [!NOTE]
-> <span data-ttu-id="703ac-124">`VARIANT_BOOL` se liší od většinu typů bool v dané `VARIANT_TRUE = -1` a `VARIANT_FALSE = 0`.</span><span class="sxs-lookup"><span data-stu-id="703ac-124">`VARIANT_BOOL` is different than most bool types in that `VARIANT_TRUE = -1` and `VARIANT_FALSE = 0`.</span></span> <span data-ttu-id="703ac-125">Kromě toho všechny hodnoty, které se rovná `VARIANT_TRUE` jsou považovány za hodnotu false.</span><span class="sxs-lookup"><span data-stu-id="703ac-125">Additionally, all values that aren't equal to `VARIANT_TRUE` are considered false.</span></span>
+> <span data-ttu-id="14be6-124">`VARIANT_BOOL`se liší od většiny typů bool v tomto `VARIANT_TRUE = -1` a `VARIANT_FALSE = 0`.</span><span class="sxs-lookup"><span data-stu-id="14be6-124">`VARIANT_BOOL` is different than most bool types in that `VARIANT_TRUE = -1` and `VARIANT_FALSE = 0`.</span></span> <span data-ttu-id="14be6-125">Kromě toho všechny hodnoty, které nejsou rovny `VARIANT_TRUE` , jsou považovány za NEPRAVDA.</span><span class="sxs-lookup"><span data-stu-id="14be6-125">Additionally, all values that aren't equal to `VARIANT_TRUE` are considered false.</span></span>
 
-## <a name="customizing-array-field-marshaling"></a><span data-ttu-id="703ac-126">Přizpůsobení zařazování pole pole</span><span class="sxs-lookup"><span data-stu-id="703ac-126">Customizing array field marshaling</span></span>
+## <a name="customizing-array-field-marshaling"></a><span data-ttu-id="14be6-126">Přizpůsobení zařazování polí pole</span><span class="sxs-lookup"><span data-stu-id="14be6-126">Customizing array field marshaling</span></span>
 
-<span data-ttu-id="703ac-127">.NET zahrnuje také několik způsobů, jak přizpůsobit zařazování pole.</span><span class="sxs-lookup"><span data-stu-id="703ac-127">.NET also includes a few ways to customize array marshaling.</span></span>
+<span data-ttu-id="14be6-127">Rozhraní .NET také obsahuje několik způsobů, jak přizpůsobit zařazování pole.</span><span class="sxs-lookup"><span data-stu-id="14be6-127">.NET also includes a few ways to customize array marshaling.</span></span>
 
-<span data-ttu-id="703ac-128">Ve výchozím nastavení zařazuje .NET pole jako ukazatel na seznam souvislých prvků:</span><span class="sxs-lookup"><span data-stu-id="703ac-128">By default, .NET marshals arrays as a pointer to a contiguous list of the elements:</span></span>
+<span data-ttu-id="14be6-128">Ve výchozím nastavení rozhraní .NET zařazuje pole jako ukazatel na souvislý seznam elementů:</span><span class="sxs-lookup"><span data-stu-id="14be6-128">By default, .NET marshals arrays as a pointer to a contiguous list of the elements:</span></span>
 
 ```csharp
 public struct DefaultArray
@@ -122,7 +122,7 @@ struct DefaultArray
 };
 ```
 
-<span data-ttu-id="703ac-129">Pokud se propojení s rozhraními API modelu COM, bude pravděpodobně nutné zařazování pole jako `SAFEARRAY*` objekty.</span><span class="sxs-lookup"><span data-stu-id="703ac-129">If you're interfacing with COM APIs, you may have to marshal arrays as `SAFEARRAY*` objects.</span></span> <span data-ttu-id="703ac-130">Můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> říct runtime k zařazování pole jako hodnotu `SAFEARRAY*`:</span><span class="sxs-lookup"><span data-stu-id="703ac-130">You can use the <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> and the <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> value to tell the runtime to marshal an array as a `SAFEARRAY*`:</span></span>
+<span data-ttu-id="14be6-129">Pokud pracujete s rozhraními API modelu COM, možná budete muset zařadit pole `SAFEARRAY*` jako objekty.</span><span class="sxs-lookup"><span data-stu-id="14be6-129">If you're interfacing with COM APIs, you may have to marshal arrays as `SAFEARRAY*` objects.</span></span> <span data-ttu-id="14be6-130">Hodnotu amůžete<xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> použít k oznámení, že modul runtime zařadí pole jako `SAFEARRAY*`: <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="14be6-130">You can use the <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> and the <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> value to tell the runtime to marshal an array as a `SAFEARRAY*`:</span></span>
 
 ```csharp
 public struct SafeArrayExample
@@ -139,9 +139,9 @@ struct SafeArrayExample
 };
 ```
 
-<span data-ttu-id="703ac-131">Pokud chcete přizpůsobit, jaký typ prvku je v `SAFEARRAY`, můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> polí pro přizpůsobení elementu přesný typ `SAFEARRAY`.</span><span class="sxs-lookup"><span data-stu-id="703ac-131">If you need to customize what type of element is in the `SAFEARRAY`, then you can use the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> and <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> fields to customize the exact element type of the `SAFEARRAY`.</span></span>
+<span data-ttu-id="14be6-131">Pokud potřebujete přizpůsobit `SAFEARRAY`, jaký typ prvku je v, pak můžete <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> použít pole a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> `SAFEARRAY`k přizpůsobení přesného typu prvku.</span><span class="sxs-lookup"><span data-stu-id="14be6-131">If you need to customize what type of element is in the `SAFEARRAY`, then you can use the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> and <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> fields to customize the exact element type of the `SAFEARRAY`.</span></span>
 
-<span data-ttu-id="703ac-132">Pokud potřebujete pole na místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> hodnotu říct, aby zařazování odvozovalo zařazování pole na místě.</span><span class="sxs-lookup"><span data-stu-id="703ac-132">If you need to marshal the array in-place, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> value to tell the marshaler to marshal the array in-place.</span></span> <span data-ttu-id="703ac-133">Při použití této zařazování, je také třeba zadat hodnotu, která <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole pro počet prvků v poli, aby modul runtime může správně přidělit místo pro strukturu.</span><span class="sxs-lookup"><span data-stu-id="703ac-133">When you're using this marshaling, you also must supply a value to the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> field  for the number of elements in the array so the runtime can correctly allocate space for the structure.</span></span>
+<span data-ttu-id="14be6-132">Pokud je nutné zařadit pole na místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> hodnotu k oznámení zařazovacímu modulu k zařazení pole na místě.</span><span class="sxs-lookup"><span data-stu-id="14be6-132">If you need to marshal the array in-place, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> value to tell the marshaler to marshal the array in-place.</span></span> <span data-ttu-id="14be6-133">Při použití tohoto zařazování musíte také zadat hodnotu do <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole pro počet prvků v poli, aby modul runtime mohl správně přidělit prostor pro strukturu.</span><span class="sxs-lookup"><span data-stu-id="14be6-133">When you're using this marshaling, you also must supply a value to the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> field  for the number of elements in the array so the runtime can correctly allocate space for the structure.</span></span>
 
 ```csharp
 public struct InPlaceArray
@@ -159,13 +159,13 @@ struct InPlaceArray
 ```
 
 > [!NOTE]
-> <span data-ttu-id="703ac-134">.NET nepodporuje zařazování pole proměnné délky pole jako člena flexibilního pole C99.</span><span class="sxs-lookup"><span data-stu-id="703ac-134">.NET doesn't support marshaling a variable length array field as a C99 Flexible Array Member.</span></span>
+> <span data-ttu-id="14be6-134">Rozhraní .NET nepodporuje zařazování pole proměnné délky jako C99 flexibilního člena pole.</span><span class="sxs-lookup"><span data-stu-id="14be6-134">.NET doesn't support marshaling a variable length array field as a C99 Flexible Array Member.</span></span>
 
-## <a name="customizing-string-field-marshaling"></a><span data-ttu-id="703ac-135">Přizpůsobení zařazování pole řetězce</span><span class="sxs-lookup"><span data-stu-id="703ac-135">Customizing string field marshaling</span></span>
+## <a name="customizing-string-field-marshaling"></a><span data-ttu-id="14be6-135">Přizpůsobení zařazování polí řetězců</span><span class="sxs-lookup"><span data-stu-id="14be6-135">Customizing string field marshaling</span></span>
 
-<span data-ttu-id="703ac-136">.NET také poskytuje širokou škálu vlastní nastavení pro zařazování polí s řetězcem.</span><span class="sxs-lookup"><span data-stu-id="703ac-136">.NET also provides a wide variety of customizations for marshaling string fields.</span></span>
+<span data-ttu-id="14be6-136">Rozhraní .NET také poskytuje širokou škálu přizpůsobení pro zařazování polí řetězců.</span><span class="sxs-lookup"><span data-stu-id="14be6-136">.NET also provides a wide variety of customizations for marshaling string fields.</span></span>
 
-<span data-ttu-id="703ac-137">Ve výchozím nastavení zařazuje .NET řetězec jako ukazatel na řetězec zakončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="703ac-137">By default, .NET marshals a string as a pointer to a null-terminated string.</span></span> <span data-ttu-id="703ac-138">Kódování závisí na hodnotě <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> pole <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="703ac-138">The encoding depends on the value of the <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> field in the <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>.</span></span> <span data-ttu-id="703ac-139">Pokud není zadán žádný atribut, kódování, výchozí kódování ANSI.</span><span class="sxs-lookup"><span data-stu-id="703ac-139">If no attribute is specified, the encoding defaults to an ANSI encoding.</span></span>
+<span data-ttu-id="14be6-137">Ve výchozím nastavení .NET zařazování řetězce jako ukazatele na řetězec zakončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="14be6-137">By default, .NET marshals a string as a pointer to a null-terminated string.</span></span> <span data-ttu-id="14be6-138">Kódování závisí na hodnotě <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> pole <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>v.</span><span class="sxs-lookup"><span data-stu-id="14be6-138">The encoding depends on the value of the <xref:System.Runtime.InteropServices.StructLayoutAttribute.CharSet?displayProperty=nameWithType> field in the <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType>.</span></span> <span data-ttu-id="14be6-139">Pokud není zadán žádný atribut, kódování je standardně kódování ANSI.</span><span class="sxs-lookup"><span data-stu-id="14be6-139">If no attribute is specified, the encoding defaults to an ANSI encoding.</span></span>
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -197,7 +197,7 @@ struct DefaultString
 };
 ```
 
-<span data-ttu-id="703ac-140">Pokud budete muset použít jiné kódování pro různá pole nebo jen dáváte přednost více explicitně v definici struktury, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> nebo <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> hodnoty na <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> atribut.</span><span class="sxs-lookup"><span data-stu-id="703ac-140">If you need to use different encodings for different fields or just prefer to be more explicit in your struct definition, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> or <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> values on a <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> attribute.</span></span>
+<span data-ttu-id="14be6-140">Pokud potřebujete použít různá kódování pro různá pole nebo pouze preferovat explicitní použití v definici struktury, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> hodnoty nebo <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> v <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> atributu.</span><span class="sxs-lookup"><span data-stu-id="14be6-140">If you need to use different encodings for different fields or just prefer to be more explicit in your struct definition, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.LPStr?displayProperty=nameWithType> or <xref:System.Runtime.InteropServices.UnmanagedType.LPWStr?displayProperty=nameWithType> values on a <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> attribute.</span></span>
 
 ```csharp
 public struct AnsiString
@@ -229,7 +229,7 @@ struct UnicodeString
 };
 ```
 
-<span data-ttu-id="703ac-141">Pokud chcete k zařazení vaší řetězce s kódováním UTF-8, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> hodnota ve vaší <xref:System.Runtime.InteropServices.MarshalAsAttribute>.</span><span class="sxs-lookup"><span data-stu-id="703ac-141">If you want to marshal your strings using the UTF-8 encoding, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> value in your <xref:System.Runtime.InteropServices.MarshalAsAttribute>.</span></span>
+<span data-ttu-id="14be6-141">Chcete-li zařadit řetězce pomocí kódování UTF-8, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> hodnotu <xref:System.Runtime.InteropServices.MarshalAsAttribute>v.</span><span class="sxs-lookup"><span data-stu-id="14be6-141">If you want to marshal your strings using the UTF-8 encoding, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> value in your <xref:System.Runtime.InteropServices.MarshalAsAttribute>.</span></span>
 
 ```csharp
 public struct UTF8String
@@ -247,9 +247,9 @@ struct UTF8String
 ```
 
 > [!NOTE]
-> <span data-ttu-id="703ac-142">Pomocí <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> vyžaduje rozhraní .NET Framework 4.7 (nebo novější verze) nebo .NET Core 1.1 (nebo novější verze).</span><span class="sxs-lookup"><span data-stu-id="703ac-142">Using <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> requires either .NET Framework 4.7 (or later versions) or .NET Core 1.1 (or later versions).</span></span> <span data-ttu-id="703ac-143">Není k dispozici v rozhraní .NET Standard 2.0.</span><span class="sxs-lookup"><span data-stu-id="703ac-143">It isn't available in .NET Standard 2.0.</span></span>
+> <span data-ttu-id="14be6-142">Použití <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> vyžaduje buď .NET Framework 4,7 (nebo novější verze), nebo .NET Core 1,1 (nebo novější verze).</span><span class="sxs-lookup"><span data-stu-id="14be6-142">Using <xref:System.Runtime.InteropServices.UnmanagedType.LPUTF8Str?displayProperty=nameWithType> requires either .NET Framework 4.7 (or later versions) or .NET Core 1.1 (or later versions).</span></span> <span data-ttu-id="14be6-143">Není k dispozici v .NET Standard 2,0.</span><span class="sxs-lookup"><span data-stu-id="14be6-143">It isn't available in .NET Standard 2.0.</span></span>
 
-<span data-ttu-id="703ac-144">Pokud pracujete s rozhraními API modelu COM, budete muset řetězec jako `BSTR`.</span><span class="sxs-lookup"><span data-stu-id="703ac-144">If you're working with COM APIs, you may need to marshal a string as a `BSTR`.</span></span> <span data-ttu-id="703ac-145">Použití <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> hodnota, které by mohl zařazovat řetězec jako `BSTR`.</span><span class="sxs-lookup"><span data-stu-id="703ac-145">Using the <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> value, you can marshal a string as a `BSTR`.</span></span>
+<span data-ttu-id="14be6-144">Pokud pracujete s rozhraními API modelu COM, může být nutné zařadit řetězec jako `BSTR`.</span><span class="sxs-lookup"><span data-stu-id="14be6-144">If you're working with COM APIs, you may need to marshal a string as a `BSTR`.</span></span> <span data-ttu-id="14be6-145">Pomocí hodnoty můžete zařadit řetězec `BSTR`jako. <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="14be6-145">Using the <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> value, you can marshal a string as a `BSTR`.</span></span>
 
 ```csharp
 public struct BString
@@ -266,7 +266,7 @@ struct BString
 };
 ```
 
-<span data-ttu-id="703ac-146">Při použití rozhraní API založené na WinRT, budete muset řetězec jako `HSTRING`.</span><span class="sxs-lookup"><span data-stu-id="703ac-146">When using a WinRT-based API, you may need to marshal a string as an `HSTRING`.</span></span>  <span data-ttu-id="703ac-147">Použití <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> hodnota, které by mohl zařazovat řetězec jako `HSTRING`.</span><span class="sxs-lookup"><span data-stu-id="703ac-147">Using the <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> value, you can marshal a string as a `HSTRING`.</span></span>
+<span data-ttu-id="14be6-146">Při použití rozhraní API založeného na WinRT může být nutné zařadit řetězec jako `HSTRING`.</span><span class="sxs-lookup"><span data-stu-id="14be6-146">When using a WinRT-based API, you may need to marshal a string as an `HSTRING`.</span></span>  <span data-ttu-id="14be6-147">Pomocí hodnoty můžete zařadit řetězec `HSTRING`jako. <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="14be6-147">Using the <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> value, you can marshal a string as a `HSTRING`.</span></span>
 
 ```csharp
 public struct HString
@@ -283,7 +283,7 @@ struct BString
 };
 ```
 
-<span data-ttu-id="703ac-148">Pokud vaše rozhraní API vyžaduje, abyste ve struktuře předat řetězec v místě, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> hodnotu.</span><span class="sxs-lookup"><span data-stu-id="703ac-148">If your API requires you to pass the string in-place in the structure, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> value.</span></span> <span data-ttu-id="703ac-149">Všimněte si, že kódování pro řetězec zařazen podle `ByValTStr` se určí na základě `CharSet` atribut.</span><span class="sxs-lookup"><span data-stu-id="703ac-149">Do note that the encoding for a string marshaled by `ByValTStr` is determined from the `CharSet` attribute.</span></span> <span data-ttu-id="703ac-150">Navíc se vyžaduje, aby délka řetězce je předaný odkazem <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole.</span><span class="sxs-lookup"><span data-stu-id="703ac-150">Additionally, it requires that a string length is passed by the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> field.</span></span>
+<span data-ttu-id="14be6-148">Pokud vaše rozhraní API vyžaduje předání řetězce na místě ve struktuře, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> hodnotu.</span><span class="sxs-lookup"><span data-stu-id="14be6-148">If your API requires you to pass the string in-place in the structure, you can use the <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType> value.</span></span> <span data-ttu-id="14be6-149">Všimněte si, že kódování pro řetězec zařazování `ByValTStr` je určeno `CharSet` z atributu.</span><span class="sxs-lookup"><span data-stu-id="14be6-149">Do note that the encoding for a string marshaled by `ByValTStr` is determined from the `CharSet` attribute.</span></span> <span data-ttu-id="14be6-150">Kromě toho vyžaduje, aby <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> pole předalo délku řetězce.</span><span class="sxs-lookup"><span data-stu-id="14be6-150">Additionally, it requires that a string length is passed by the <xref:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst?displayProperty=nameWithType> field.</span></span>
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -317,9 +317,9 @@ struct DefaultString
 };
 ```
 
-## <a name="customizing-decimal-field-marshaling"></a><span data-ttu-id="703ac-151">Přizpůsobení zařazování desítkové pole</span><span class="sxs-lookup"><span data-stu-id="703ac-151">Customizing decimal field marshaling</span></span>
+## <a name="customizing-decimal-field-marshaling"></a><span data-ttu-id="14be6-151">Přizpůsobení zařazování desetinných polí</span><span class="sxs-lookup"><span data-stu-id="14be6-151">Customizing decimal field marshaling</span></span>
 
-<span data-ttu-id="703ac-152">Pokud pracujete ve Windows, může dojít některá rozhraní API, použít nativní [ `CY` nebo `CURRENCY` ](/windows/desktop/api/wtypes/ns-wtypes-tagcy) struktury.</span><span class="sxs-lookup"><span data-stu-id="703ac-152">If you're working on Windows, you might encounter some APIs that use the native [`CY` or `CURRENCY`](/windows/desktop/api/wtypes/ns-wtypes-tagcy) structure.</span></span> <span data-ttu-id="703ac-153">Ve výchozím nastavení, .NET `decimal` zadejte marshals na nativní [ `DECIMAL` ](/windows/desktop/api/wtypes/ns-wtypes-tagdec) struktury.</span><span class="sxs-lookup"><span data-stu-id="703ac-153">By default, the .NET `decimal` type marshals to the native [`DECIMAL`](/windows/desktop/api/wtypes/ns-wtypes-tagdec) structure.</span></span> <span data-ttu-id="703ac-154">Však můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> hodnotu dáte pokyn, aby zařazování pro převod `decimal` hodnotu na nativní `CY` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="703ac-154">However, you can use a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> value to instruct the marshaler to convert a `decimal` value to a native `CY` value.</span></span>
+<span data-ttu-id="14be6-152">Pokud pracujete v systému Windows, můžete se setkat s některými rozhraními API, která používají nativní [ `CY` nebo `CURRENCY` ](/windows/win32/api/wtypes/ns-wtypes-cy~r1) strukturu.</span><span class="sxs-lookup"><span data-stu-id="14be6-152">If you're working on Windows, you might encounter some APIs that use the native [`CY` or `CURRENCY`](/windows/win32/api/wtypes/ns-wtypes-cy~r1) structure.</span></span> <span data-ttu-id="14be6-153">Ve výchozím nastavení je typ `decimal` .NET zařazování do nativní [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal~r1) struktury.</span><span class="sxs-lookup"><span data-stu-id="14be6-153">By default, the .NET `decimal` type marshals to the native [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal~r1) structure.</span></span> <span data-ttu-id="14be6-154">Můžete <xref:System.Runtime.InteropServices.MarshalAsAttribute> však použít <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> s hodnotou k instruování `decimal` zařazovacího modulu, aby převedl hodnotu na nativní `CY` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="14be6-154">However, you can use a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> value to instruct the marshaler to convert a `decimal` value to a native `CY` value.</span></span>
 
 ```csharp
 public struct Currency
@@ -336,14 +336,14 @@ struct Currency
 };
 ```
 
-## <a name="marshaling-systemobjects"></a><span data-ttu-id="703ac-155">Zařazování `System.Object`s</span><span class="sxs-lookup"><span data-stu-id="703ac-155">Marshaling `System.Object`s</span></span>
+## <a name="marshaling-systemobjects"></a><span data-ttu-id="14be6-155">Zařazování `System.Object`s</span><span class="sxs-lookup"><span data-stu-id="14be6-155">Marshaling `System.Object`s</span></span>
 
-<span data-ttu-id="703ac-156">Na Windows, které by mohl zařazovat `object`– zadané pole do nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="703ac-156">On Windows, you can marshal `object`-typed fields to native code.</span></span> <span data-ttu-id="703ac-157">By mohl zařazovat těchto polí do jednoho ze tří typů:</span><span class="sxs-lookup"><span data-stu-id="703ac-157">You can marshal these fields to one of three types:</span></span>
-- [`VARIANT`](/windows/desktop/api/oaidl/ns-oaidl-tagvariant)
+<span data-ttu-id="14be6-156">Ve Windows můžete zařadit `object`pole typu do nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="14be6-156">On Windows, you can marshal `object`-typed fields to native code.</span></span> <span data-ttu-id="14be6-157">Tato pole můžete zařadit do jednoho ze tří typů:</span><span class="sxs-lookup"><span data-stu-id="14be6-157">You can marshal these fields to one of three types:</span></span>
+- [`VARIANT`](/windows/win32/api/oaidl/ns-oaidl-variant)
 - [`IUnknown*`](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 - [`IDispatch*`](/windows/desktop/api/oaidl/nn-oaidl-idispatch)
 
-<span data-ttu-id="703ac-158">Ve výchozím nastavení `object`-typovaná pole bude zařazeno do `IUnknown*` , která zabalí objekt.</span><span class="sxs-lookup"><span data-stu-id="703ac-158">By default, an `object`-typed field will be marshaled to an `IUnknown*` that wraps the object.</span></span>
+<span data-ttu-id="14be6-158">Ve výchozím nastavení `object`bude pole typového typu zařazeno `IUnknown*` do objektu, který tento objekt zabalí.</span><span class="sxs-lookup"><span data-stu-id="14be6-158">By default, an `object`-typed field will be marshaled to an `IUnknown*` that wraps the object.</span></span>
 
 ```csharp
 public struct ObjectDefault
@@ -359,7 +359,7 @@ struct ObjectDefault
 };
 ```
 
-<span data-ttu-id="703ac-159">Pokud chcete přeuspořádat polem objektu do `IDispatch*`, přidat <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> hodnotu.</span><span class="sxs-lookup"><span data-stu-id="703ac-159">If you want to marshal an object field to an `IDispatch*`, add a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> value.</span></span>
+<span data-ttu-id="14be6-159">Chcete-li zařadit pole objektu do `IDispatch*`objektu, <xref:System.Runtime.InteropServices.MarshalAsAttribute> přidejte s <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> hodnotou.</span><span class="sxs-lookup"><span data-stu-id="14be6-159">If you want to marshal an object field to an `IDispatch*`, add a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.IDispatch?displayProperty=nameWithType> value.</span></span>
 
 ```csharp
 public struct ObjectDispatch
@@ -376,7 +376,7 @@ struct ObjectDispatch
 };
 ```
 
-<span data-ttu-id="703ac-160">Pokud chcete zařadit jako `VARIANT`, přidejte <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> hodnotu.</span><span class="sxs-lookup"><span data-stu-id="703ac-160">If you want to marshal it as a `VARIANT`, add a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> value.</span></span>
+<span data-ttu-id="14be6-160">Pokud ho chcete zařadit jako a `VARIANT`, <xref:System.Runtime.InteropServices.MarshalAsAttribute> přidejte s <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> hodnotou.</span><span class="sxs-lookup"><span data-stu-id="14be6-160">If you want to marshal it as a `VARIANT`, add a <xref:System.Runtime.InteropServices.MarshalAsAttribute> with the <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> value.</span></span>
 
 ```csharp
 public struct ObjectVariant
@@ -393,9 +393,9 @@ struct ObjectVariant
 };
 ```
 
-<span data-ttu-id="703ac-161">Následující tabulka popisuje, jak různé typy runtime `obj` mapování polí na různé typy, které jsou uložené v `VARIANT`:</span><span class="sxs-lookup"><span data-stu-id="703ac-161">The following table describes how different runtime types of the `obj` field map to the various types stored in a `VARIANT`:</span></span>
+<span data-ttu-id="14be6-161">Následující tabulka popisuje, jak jsou různé typy `obj` modulu runtime mapovány na různé typy uložené `VARIANT`v poli:</span><span class="sxs-lookup"><span data-stu-id="14be6-161">The following table describes how different runtime types of the `obj` field map to the various types stored in a `VARIANT`:</span></span>
 
-| <span data-ttu-id="703ac-162">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="703ac-162">.NET Type</span></span> | <span data-ttu-id="703ac-163">Typ VARIANT</span><span class="sxs-lookup"><span data-stu-id="703ac-163">VARIANT Type</span></span> | | <span data-ttu-id="703ac-164">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="703ac-164">.NET Type</span></span> | <span data-ttu-id="703ac-165">Typ VARIANT</span><span class="sxs-lookup"><span data-stu-id="703ac-165">VARIANT Type</span></span> |
+| <span data-ttu-id="14be6-162">Typ .NET</span><span class="sxs-lookup"><span data-stu-id="14be6-162">.NET Type</span></span> | <span data-ttu-id="14be6-163">Typ VARIANT</span><span class="sxs-lookup"><span data-stu-id="14be6-163">VARIANT Type</span></span> | | <span data-ttu-id="14be6-164">Typ .NET</span><span class="sxs-lookup"><span data-stu-id="14be6-164">.NET Type</span></span> | <span data-ttu-id="14be6-165">Typ VARIANT</span><span class="sxs-lookup"><span data-stu-id="14be6-165">VARIANT Type</span></span> |
 |------------|--------------|-|----------|--------------|
 |  `byte`  | `VT_UI1` |     | `System.Runtime.InteropServices.BStrWrapper` | `VT_BSTR` |
 | `sbyte`  | `VT_I1`  |     | `object`  | `VT_DISPATCH` |
