@@ -9,295 +9,295 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: df3cc6d054f431a9e187b21c20b7c5774d569a8e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 580f9ce81e9b3652a9defec25dfd05f47e296d7a
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611912"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545392"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
-Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] technologie písem v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
+Toto téma obsahuje přehled některých klíčových funkcí technologie písma OpenType v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 <a name="overview"></a>   
-## <a name="opentype-font-format"></a>OpenType Font Format  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formát písma, přidání podpory pro technologii PostScript data písma. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma byla vyvinuta společně za [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe Corporation. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma a operačního systému služby které podporují [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma poskytují uživatelům jednoduchý způsob instalace a používání písem, jestli obsahují písma [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] jsou podrobněji popsány dále nebo vývojového diagramu křížového procesu (PostScript) jsou podrobněji popsány dále.  
+## <a name="opentype-font-format"></a>Formát písma OpenType  
+ Formát písma OpenType je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma a přidává podporu pro PostScriptová data písma. Formát písma OpenType byl vyvinut společně od [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] společnosti and Adobe Corporation. Písma OpenType a služby operačního systému, které podporují písma OpenType, poskytují uživatelům jednoduchý způsob, jak nainstalovat a používat písma, ať už písma obsahují [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] obrysy nebo CFF (PostScript).  
   
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma řeší následující problémy pro vývojáře:  
+ Formát písma OpenType řeší následující výzvy pro vývojáře:  
   
-- Širší podporu pro víc platforem.  
+- Širší podpora více platforem.  
   
-- Lepší podpora mezinárodních znakových sad.  
+- Lepší podpora pro mezinárodní znakové sady.  
   
 - Lepší ochrana pro data písma.  
   
-- Menší velikosti souborů zefektivnit distribuci písma.  
+- Menší velikosti souborů, aby se distribuce písem zajistila efektivněji.  
   
-- Širší podporu pro pokročilé typografické kontrolu.  
+- Širší podpora pro pokročilou typografickou kontrolu.  
   
 > [!NOTE]
->  Sada Windows SDK obsahuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Těchto písmo poskytuje většinu funkcí znázorněn ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+>  Windows SDK obsahuje sadu ukázkových písem OpenType, která můžete použít s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikacemi. Tato písma poskytují většinu funkcí, které jsou znázorněné ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
- Najdete v článku [OpenType specifikace](https://go.microsoft.com/fwlink/?LinkId=96731) podrobnosti o [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] formát písma.  
+ Podrobnosti o formátu písma OpenType najdete v tématu [specifikace OpenType](https://go.microsoft.com/fwlink/?LinkId=96731) .  
   
-### <a name="advanced-typographic-extensions"></a>Pokročilé typografickém rozšíření  
- Pokročilé typografickém tabulky ([!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] rozložení tabulky) rozšiřují funkce nástroje písma s oběma [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] nebo vývojového diagramu křížového procesu jsou podrobněji popsány dále. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Rozložení písma obsahují další informace, které rozšiřuje možnosti písma pro podporu mezinárodní Typografie vysoké kvalitě. Většina [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma vystavit pouze podmnožinu celkové [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které jsou k dispozici. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma poskytují následující funkce.  
+### <a name="advanced-typographic-extensions"></a>Pokročilá typografická rozšíření  
+ Pokročilé typografické tabulky (tabulky rozložení OpenType) zvyšují funkčnost písem pomocí [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] CFF nebo osnovy. Písma rozložení OpenType obsahují další informace, které rozšiřují možnosti písem, aby podporovaly vysoce kvalitní mezinárodní typografie. Většina písem OpenType zveřejňuje pouze podmnožinu celkových dostupných funkcí OpenType. Písma OpenType poskytují následující funkce.  
   
-- Bohaté mapování mezi znaky a glyfy, které podporují ligatur, poziční formulářů, alternativní úložiště a dalších náhrady písma.  
+- Obsáhlé mapování mezi znaky a glyfy, které podporují ligatury, poziční formuláře, alternativy a další náhrady písma.  
   
-- Podpora dvojrozměrné umístění a piktogram přílohy.  
+- Podpora dvojrozměrného umístění a přílohy glyfů.  
   
-- Explicitní skriptu a jazyk informace obsažené v písma, tak text zpracování aplikace můžete upravit jeho chování odpovídajícím způsobem.  
+- Explicitní informace o skriptech a jazycích obsažené v písmu, takže aplikace pro zpracování textu může odpovídajícím způsobem upravit její chování.  
   
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Rozložení tabulky jsou popsány podrobněji ["Písmo soubor tabulky"](https://www.microsoft.com/typography/otspec/otff.htm) část [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] specifikace.  
+ Tabulky rozložení OpenType jsou podrobněji popsané v oddílu [tabulky souborů písem](https://www.microsoft.com/typography/otspec/otff.htm) specifikace OpenType.  
   
- Zbývající část tohoto přehledu představuje šířku a flexibilitu některých vizuálně vytváří [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které jsou vystavené vlastnosti <xref:System.Windows.Documents.Typography> objektu. Další informace v tomto objektu najdete v tématu [Typografie třídy](#typography_class).  
+ Zbývající část tohoto přehledu zavádí širokou škálu a flexibilitu některých vizuálně zajímavých funkcí OpenType, které jsou vystaveny vlastnostmi <xref:System.Windows.Documents.Typography> objektu. Další informace o tomto objektu naleznete v tématu [Typografie třídy](#typography_class).  
   
 <a name="variants"></a>   
 ## <a name="variants"></a>Varianty  
- Varianty slouží pro vykreslení různé styly typografickém, jako je například horní a dolní indexy.  
+ Varianty se používají k vykreslení různých typografických stylů, jako jsou například horní indexy a dolní indexy.  
   
-### <a name="superscripts-and-subscripts"></a>Horní a dolní indexy  
- <xref:System.Windows.Documents.Typography.Variants%2A> Vlastnost umožňuje nastavit hodnoty horního a dolního indexu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma.  
+### <a name="superscripts-and-subscripts"></a>Horní indexy a dolní indexy  
+ <xref:System.Windows.Documents.Typography.Variants%2A> Vlastnost umožňuje nastavit horní index a hodnoty dolního indexu pro písmo OpenType.  
   
- Následující text zobrazuje horních Palatino Linotype písma.  
+ Následující text zobrazuje horní indexy pro písmo Palatino Linotype.  
   
- ![Textu s použitím OpenType horních](./media/opentype-font-features/opentype-superscripts.gif "textu s použitím horních OpenType")  
+ ![Text používající horní indexy OpenType](./media/opentype-font-features/opentype-superscripts.gif "Text používající horní indexy OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat horních Palatino Linotype písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat horní indexy pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#12)]  
   
- Zobrazí se následující text dolních indexů pro písmo Palatino Linotype.  
+ Následující text zobrazuje dolní indexy pro písmo Palatino Linotype.  
   
- ![Textu s použitím dolní indexy OpenType](./media/opentype-font-features/opentype-subscripts.gif "textu s použitím dolní indexy OpenType")  
+ ![Text s použitím dolních indexů OpenType](./media/opentype-font-features/opentype-subscripts.gif "Text s použitím dolních indexů OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat dolních indexů pro písmo Palatino Linotype pomocí vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat dolní indexy pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#13)]  
   
-### <a name="decorative-uses-of-superscripts-and-subscripts"></a>Dekorativní použití horní a dolní indexy  
- Také vám pomůže horní a dolní indexy vytvořit dekorativní efekty smíšených textových případu. Následující text zobrazí text horního a dolního indexu Palatino Linotype písma. Všimněte si, že to nebude mít vliv velká písmena.  
+### <a name="decorative-uses-of-superscripts-and-subscripts"></a>Ozdobné použití horních a dolních indexů  
+ Pomocí horních a dolních indexů můžete také vytvořit ozdobné efekty smíšeného textu případu. Následující text zobrazuje horní a dolní indexový text pro písmo Palatino Linotype. Všimněte si, že velká písmena nejsou ovlivněna.  
   
- ![Textu s použitím OpenType horní a dolní indexy](./media/opentype-font-features/opentype-superscripts-subscripts.gif "textu s použitím OpenType horní a dolní indexy")  
+ ![Text používající horní indexy a dolní indexy písma OpenType](./media/opentype-font-features/opentype-superscripts-subscripts.gif "Text používající horní indexy a dolní indexy písma OpenType")  
 
- Následující příklad kódu ukazuje, jak definovat horní a dolní indexy pro písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat horní indexy a dolní indexy pro písmo pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#14](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#14)]  
   
 <a name="capitals"></a>   
-## <a name="capitals"></a>Velká písmena  
- Kapitálek představují sadu zkrácené typografické formuláře, které vykreslení textu ve stylu velké glyphs. Obvykle, když text je vykreslen jako všechna velká písmena, mezery mezi písmeny může objevit příliš vysoké a váhy a podíl příliš velkým písmenům. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] podporuje řadu formátů pro používání stylů pro písmeny, včetně kapitálek petitových kapitálek, titulkové a mezery. Tyto formáty stylů umožňují řídit vzhled kapitálek.  
+## <a name="capitals"></a>Kapitálek  
+ Velká písmena představují sadu typografických tvarů, které vykreslují text v glyfech ve stylu velkými písmeny. Když se text vykreslí jako velká písmena, mezery mezi písmeny se můžou zobrazovat příliš těsné a váha a podíl písmen je moc velký. OpenType podporuje mnoho formátů stylů pro velká písmena, včetně malých písmen, petitových velkých písmen, titulků a velkých mezer. Tyto formáty stylů umožňují ovládat vzhled velkých písmen.  
   
- Zobrazí se následující text standardní písmeny Pescadero písma, za nímž následuje písmena tvaru "SmallCaps" a "AllSmallCaps". V takovém případě se používá stejnou velikost písma pro všechny tři slova.  
+ Následující text zobrazuje standardní velká písmena pro písmo Pescadero a potom písmena se stylem "SmallCaps" a "AllSmallCaps". V takovém případě se pro všechna tři slova použije stejná velikost písma.  
   
- ![Textu s použitím OpenType kapitálek](./media/opentype-font-features/opentype-capitals.gif "textu s použitím kapitálek OpenType")  
+ ![Text používající velká písmena písma OpenType](./media/opentype-font-features/opentype-capitals.gif "Text používající velká písmena písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat kapitálek pro Pescadero písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu. Při použití formátu "SmallCaps" se ignoruje všechny úvodní velké písmeno.  
+ Následující příklad kódu ukazuje, jak definovat velká písmena pro písmo Pescadero pomocí vlastností <xref:System.Windows.Documents.Typography> objektu. Když se použije formát "SmallCaps", bude se ignorovat počáteční velké písmeno.  
   
  [!code-xaml[OpenTypeFontSamples#9](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
   
-### <a name="titling-capitals"></a>Titulkových kapitálek  
- Titulkové kapitálek jsou světlejší v hmotnosti a poměr a navržená tak, aby více elegantní vzhled než normálním písmem. Titulkové písmeny se obvykle používají ve větší velikosti písma jako záhlaví. Zobrazí se následující text normální a titulkové kapitálek pro písmo Pescadero. Všimněte si, že užší stem šířku textu na druhém řádku.  
+### <a name="titling-capitals"></a>Titulková velká písmena  
+ Titulková velká písmena jsou světlejší v poměru a rozsahu a jsou navržena tak, aby lépe vypadala jako běžná velká písmena. Titulková velká písmena se obvykle používají v širší velikosti písem jako záhlaví. Následující text zobrazuje normální a titulkové kapitálky pro písmo Pescadero. Všimněte si zúžené šířky textu na druhém řádku.  
   
- ![Textu s použitím OpenType titulkových kapitálek](./media/opentype-font-features/opentype-titling-capitals.gif "textu s použitím titulkových kapitálek OpenType")  
+ ![Text používající Titulková velká písmena písma OpenType](./media/opentype-font-features/opentype-titling-capitals.gif "Text používající Titulková velká písmena písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat titulkové kapitálek pro Pescadero písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat Titulková velká písmena pro písmo Pescadero pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet17](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet17)]  
   
-### <a name="capital-spacing"></a>Mezery  
- Mezery je funkce, která umožňuje poskytnout více mezer při použití všechna velká písmena v textu. Velká písmena jsou obvykle navrženy s malými písmeny a přizpůsobte. Mezery, který se zobrazí mezi atraktivní a písmeno velké a malé písmeno může vypadat moc vysoké zadáním velkými písmeny. Následující text zobrazí normální a velké mezery Pescadero písma.  
+### <a name="capital-spacing"></a>Velké mezery  
+ Základní řádkování je funkce, která umožňuje zadat další mezery při použití všech velkých písmen v textu. Velká písmena jsou obvykle navržena pro míchání s malými písmeny. Mezery, které se zdají být atraktivní a velké písmeno a malé písmeno, může při použití všech velkých písmen zobrazit příliš těsné. Následující text zobrazuje normální a velké mezery pro písmo Pescadero.  
   
- ![Textu s použitím kapitálkové mezery](./media/opentype-font-features/opentype-capital-spacing.gif "textu s použitím kapitálkové mezery ")  
+ ![Text s využitím velkých mezer písma OpenType](./media/opentype-font-features/opentype-capital-spacing.gif "Text s využitím velkých mezer písma OpenType")  
  
- Následující příklad kódu ukazuje, jak definovat mezery pro Pescadero písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat velké mezery pro písmo Pescadero pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet18](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet18)]  
   
 <a name="ligatures"></a>   
-## <a name="ligatures"></a>Ligatur  
- Ligatur jsou dvě nebo více glyfy, které jsou uspořádané do jednoho piktogram Chcete-li vytvořit z něj číst nebo atraktivní text. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] podporuje čtyři typy ligatur:  
+## <a name="ligatures"></a>Vybraný  
+ Ligatury jsou dva nebo více glyfů, které jsou tvořeny jedním glyfem, aby bylo možné vytvořit čitelnější nebo atraktivní text. Písma OpenType podporují čtyři typy ligatur:  
   
-- **Standardní ligatury**. Účelem je zlepšit čitelnost. Standardní ligatury zahrnují "fi", "USA" a "ff".  
+- **Standardní ligatury**. Navrženo pro zlepšení čitelnosti. Standardní ligatury zahrnují "Fi", "FL" a "FF".  
   
-- **Kontextové ligatur**. Účelem je zlepšit čitelnost tím, že poskytuje lepší spojování chování mezi znaky, které tvoří Zadaná vazba.  
+- **Kontextové ligatury**. Navrženo pro zlepšení čitelnosti tím, že poskytuje lepší spojení mezi znaky, které tvoří ligaturu.  
   
-- **Volitelné ligatury**. Navržena jako dekorativní a ne specificky navržených pro lepší čitelnost.  
+- **Volitelné ligatury**. Navrženo tak, aby bylo ozdobné a neurčené pro čitelnost.  
   
-- **Historických ligatur**. Navržena jako historická data a ne specificky navržených pro lepší čitelnost.  
+- **Historické ligatury**. Navrženo tak, aby bylo historické a nebylo určeno konkrétně pro čitelnost.  
   
- Následující text zobrazí standardní ligatury glyfy Pericles písma.  
+ Následující text zobrazuje standardní glyfy ligatur pro písmo Pericles.  
   
- ![Textu s použitím standardní ligatury OpenType](./media/opentype-font-features/opentype-standard-ligatures.gif "textu s použitím standardní ligatury OpenType")  
+ ![Text používající standardní ligatury OpenType](./media/opentype-font-features/opentype-standard-ligatures.gif "Text používající standardní ligatury OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat standardní ligatury glyfy Pericles písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat standardní glyfy ligatur pro písmo Pericles pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#4](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#4)]  
   
- Následující text zobrazí volitelný ligatura glyfy Pericles písma.  
+ Následující text zobrazuje volitelné glyfy ligatur pro písmo Pericles.  
   
- ![Textu s použitím volitelné ligatury OpenType](./media/opentype-font-features/opentype-discretionary-ligatures.gif "textu s použitím volitelné ligatury OpenType")  
+ ![Text používající volitelné ligatury OpenType](./media/opentype-font-features/opentype-discretionary-ligatures.gif "Text používající volitelné ligatury OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat volitelné ligatura glyfy Pericles písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat glyfy nezávazných ligatur pro písmo Pericles pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#5](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#5)]  
   
- Ve výchozím nastavení [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] povolit standardní ligatur. Například pokud používáte Palatino Linotype písma, standardní ligatury "fi", "ff" a "USA" zobrazí jako piktogram kombinovaných znaků. Všimněte si, že pár znaků pro každé standardní ligatury touch mezi sebou.  
+ Ve výchozím nastavení jsou písma OpenType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji povolit standardní ligatury. Pokud například použijete písmo Palatino Linotype, standardní ligatury "Fi", "FF" a "FL" se zobrazí jako piktogramy kombinovaného znaku. Všimněte si, že dvojice znaků pro každou standardní ligaturu je vzájemně dotykem.  
   
- ![Text pomocí standardní ligatury OpenType Palatino Linotype](./media/opentype-font-features/opentype-standard-ligatures-palatino.gif "Text pomocí Palatino Linotype standardní ligatury OpenType")    
+ ![Text používající standardní ligatury OpenType s Palatino Linotype](./media/opentype-font-features/opentype-standard-ligatures-palatino.gif "Text používající standardní ligatury OpenType s Palatino Linotype")    
    
- Standardní ligatury funkce však můžete zakázat tak, aby standardní ligatury, jako je například "ff" zobrazí jako dva samostatné glyfy, nikoli jako piktogram kombinovaných znaků.  
+ Funkce standardního odložení ale můžete zakázat, aby se standardní ligatura jako "FF" zobrazoval jako dvě samostatné glyfy, nikoli jako piktogramy kombinovaného znaku.  
   
- ![Textu s využitím zakázané OpenType standardní ligatury](./media/opentype-font-features/disabled-opentype-standard-ligatures.gif "textu s využitím zakázané standardní ligatury OpenType")  
+ ![Text používající zakázané standardní ligatury OpenType](./media/opentype-font-features/disabled-opentype-standard-ligatures.gif "Text používající zakázané standardní ligatury OpenType")  
     
- Následující příklad kódu ukazuje, jak zakázat standardní ligatury glyfy Palatino Linotype písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak zakázat standardní glyfy ligatur pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#6](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#6)]  
   
 <a name="swashes"></a>   
 ## <a name="swashes"></a>Ozdobná písmena  
- Ozdobná písmena jsou dekorativní glyfy, které používají propracované dekoru často přidružený Kaligrafie. Následující text zobrazí standardní a swash glyfy Pescadero písma.  
+ Ozdobné znaky jsou ozdobné glyfy, které používají výtvarné ozdoby, které jsou často spojeny s kaligraficky. Následující text zobrazuje standardní a ozdobné glyfy pro písmo Pescadero.  
   
- ![Textu použitím piktogramů standard a swash OpenType](./media/opentype-font-features/opentype-standard-swash-glyphs.gif "textu použitím piktogramů standard a swash OpenType")  
+ ![Text používající standardní a ozdobné glyfy OpenType](./media/opentype-font-features/opentype-standard-swash-glyphs.gif "Text používající standardní a ozdobné glyfy OpenType")  
 
- Ozdobná písmena jsou často používá jako dekorativní prvků v krátkých frází například oznámení události. Následující text používá ozdobná písmena zdůraznit písmeny názvu události.  
+ Ozdobné znaky se často používají jako ozdobné elementy v krátkých slovnících, jako je například oznamování událostí. Následující text používá ozdobná písmena k zdůraznění velkých písmen názvu události.  
   
- ![Textu s použitím ozdobná OpenType písmena](./media/opentype-font-features/opentype-swashes.gif "textu s použitím ozdobná písmena OpenType")  
+ ![Text používající ozdobné znaky písma OpenType](./media/opentype-font-features/opentype-swashes.gif "Text používající ozdobné znaky písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat ozdobná písmena pro písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat ozdobné znaky písma pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#7](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#7)]  
   
-### <a name="contextual-swashes"></a>Kontextové ozdobné znaky  
- Zkuste vzhled, jako je například překrývající se dolní dotahy na sousední písmena může způsobit určité kombinace protažených glyfů. Použití kontextových swash umožňuje použít náhradní swash glyf, který vytváří lepší vzhled. Následující text zobrazuje téhož slova před a po použití kontextových swash.  
+### <a name="contextual-swashes"></a>Kontextová ozdobná písmena  
+ Některé kombinace ozdobných glyfů mohou způsobit neatraktivní vzhled, například překrývající se dotahy na sousedících písmenech. Použití kontextového ozdobu v kontextu umožňuje použít náhradní ozdobný glyf, který vytváří lepší vzhled. Následující text zobrazuje stejné slovo před a po použití kontextového ozdobu.  
   
- ![Textu s použitím kontextové ozdobné znaky OpenType](./media/opentype-font-features/opentype-contextual-swashes.gif "textu s použitím kontextové ozdobné znaky OpenType")  
+ ![Text používající kontextová ozdobná písma OpenType](./media/opentype-font-features/opentype-contextual-swashes.gif "Text používající kontextová ozdobná písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat kontextové swash Pescadero písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat kontextové ozdobné znaky pro písmo Pescadero pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet16](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet16)]  
   
 <a name="alternates"></a>   
-## <a name="alternates"></a>Alternativní úložiště  
- Alternativy jsou glyfy, které mohou být nahrazeny pro standardní glyf. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, jako je například Pericles písmo použité v následujících příkladech, může obsahovat alternativních glyfů, které můžete použít k vytvoření rozdílný vzhled dosažený textu. Následující text zobrazí standardní glyfy Pericles písma.  
+## <a name="alternates"></a>Alternativy  
+ Alternativy jsou glyfy, které je možné nahradit standardním glyfem. Písma OpenType, jako je písmo Pericles použité v následujících příkladech, mohou obsahovat alternativní glyfy, které můžete použít k vytvoření různých vzhledů pro text. Následující text zobrazuje standardní glyfy pro písmo Pericles.  
   
- ![Textu použitím piktogramů standardní OpenType](./media/opentype-font-features/opentype-standard-glyphs.gif "textu použitím piktogramů standardní OpenType")  
+ ![Text používající glyfy standardu OpenType](./media/opentype-font-features/opentype-standard-glyphs.gif "Text používající glyfy standardu OpenType")  
 
- Pericles [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písmo obsahuje další glyfy, které poskytují stylových alternativ na standardní sadu glyphs. Zobrazí se následující text stylistické alternativních glyfů.  
+ Písmo OpenType Pericles obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
   
- ![Textu s použitím stylových alternativních glyfů OpenType](./media/opentype-font-features/opentype-stylistic-alternate-glyphs.gif "textu s použitím stylových alternativních glyfů OpenType")  
+ ![Text používající stylistické alternativní glyfy písma OpenType](./media/opentype-font-features/opentype-stylistic-alternate-glyphs.gif "Text používající stylistické alternativní glyfy písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat stylistické alternativních glyfů v písmu Pericles pomocí vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat stylistické alternativní glyfy pro písmo Pericles pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#2](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#2)]  
   
- Následující text zobrazí několik dalších stylistické alternativních glyfů pro Pericles písma.  
+ Následující text zobrazuje několik dalších stylistických alternativních glyfů pro písmo Pericles.  
   
- ![Textu s použitím OpenType stylistické alternativních glyfů v písmu Pericles](./media/opentype-font-features/opentype-stylistic-alternate-glyphs-pericles.gif "textu s použitím stylových alternativních glyfů OpenType Pericles písma")
+ ![Text používající stylistické alternativní glyfy písma OpenType pro písmo Pericles](./media/opentype-font-features/opentype-stylistic-alternate-glyphs-pericles.gif "Text používající stylistické alternativní glyfy písma OpenType pro písmo Pericles")
 
- Následující příklad kódu ukazuje, jak definovat tyto další stylistické alternativních glyfů.  
+ Následující příklad kódu ukazuje, jak definovat tyto další stylistické alternativní glyfy.  
   
  [!code-xaml[OpenTypeFontSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#3)]  
   
-### <a name="random-contextual-alternates"></a>Náhodné kontextových alternativ.  
- Náhodné kontextových alternativ obsahují více náhradní glyfů pro jeden znak. Při implementaci s písmy typ skriptu, tuto funkci můžete simulovat rukopisu pomocí sady náhodně vybrané glyfů s mírné rozdíly v vzhled. Následující text pro písmo Lindsey používá náhodný kontextových alternativ. Všimněte si, že písmeno "a" se mírně liší v vzhled  
+### <a name="random-contextual-alternates"></a>Náhodné kontextové alternativy  
+ Náhodné kontextové alternativy poskytují více náhradních glyfů pro jeden znak. Při implementaci pomocí písma typu skriptu může tato funkce simulovat rukopis pomocí sady náhodně vybraných glyfů s drobnými rozdíly v zobrazení. Následující text používá náhodná kontextová alternativa pro písmo Lindsey. Všimněte si, že se písmeno "a" mírně liší vzhledem  
   
- ![Textu s použitím náhodného kontextových alternativ OpenType](./media/opentype-font-features/opentype-random-contextual-alternates.gif "textu s použitím náhodného kontextových alternativ OpenType")  
+ ![Text s použitím náhodných kontextových alternativ písma OpenType](./media/opentype-font-features/opentype-random-contextual-alternates.gif "Text s použitím náhodných kontextových alternativ písma OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat náhodné kontextových alternativ Lindsey písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat náhodné kontextové alternativy pro písmo Lindsey pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet20](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet20)]  
   
-### <a name="historical-forms"></a>Historických tvarů  
- Typografické konvence, které byly v minulosti běžné jsou historických formuláře. Frázi "Boston, Massachusetts", zobrazí se následující text pomocí historických formuláře glyfů pro Palatino Linotype písma.  
+### <a name="historical-forms"></a>Historické formuláře  
+ Historické formuláře jsou typografické konvence, které byly v minulosti běžné. Následující text zobrazí frázi "Boston, Massachusetts" s použitím historické formy glyfů pro písmo Palatino Linotype.  
   
- ![Textu s použitím historických tvarů OpenType](./media/opentype-font-features/opentype-historical-forms.gif "textu s použitím historických tvarů OpenType")  
+ ![Text pomocí historických formulářů OpenType](./media/opentype-font-features/opentype-historical-forms.gif "Text pomocí historických formulářů OpenType")  
    
- Následující příklad kódu ukazuje, jak definovat historických tvarů Palatino Linotype písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat historické formuláře pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#8](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#8)]  
   
 <a name="numerical_styles"></a>   
 ## <a name="numerical-styles"></a>Číselné styly  
- Písem OpenType podporovat velký počet funkcí, které lze použít s číselných hodnot v textu.  
+ Písma OpenType podporují velký počet funkcí, které lze použít s numerickými hodnotami v textu.  
   
-### <a name="fractions"></a>Podíly  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma podporu zlomky, včetně proškrtnutých a skládaný styly.  
+### <a name="fractions"></a>Zlomky  
+ Písma OpenType podporují styly pro zlomky, včetně lomítka a skládaného.  
   
- Následující text zobrazí styly zlomek Palatino Linotype písma.  
+ Následující text zobrazuje styly zlomku pro písmo Palatino Linotype.  
   
- ![Textu s použitím OpenType zkosené a standardní zlomky](./media/opentype-font-features/opentype-slashed-stacked-fractions.gif "textu s použitím OpenType zkosené a standardní podíly")  
+ ![Text používající lomítka a skládané zlomky písma OpenType](./media/opentype-font-features/opentype-slashed-stacked-fractions.gif "Text používající lomítka a skládané zlomky písma OpenType")  
    
- Následující příklad kódu ukazuje, jak definovat zlomek styly písma Palatino Linotype, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat styly zlomků pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#10](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#10)]  
   
-### <a name="old-style-numerals"></a>Starý styl číslice  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma podporují starý formát číslic style. Tento formát je užitečný při zobrazování číslice v stylů, které už nejsou standard. Číselné formáty standardní i starém stylu písma Palatino Linotype zobrazí datem 18 století následující text.  
+### <a name="old-style-numerals"></a>Stará čísla stylu  
+ Písma OpenType podporují starý formát čísla stylu. Tento formát je vhodný pro zobrazení číslic v stylech, které už nejsou standardně standardní. Následující text zobrazuje datum 18 století ve formátech Standard a Star Style pro písmo Linotype Palatino.  
   
- ![Textu s použitím OpenType zasahují](./media/opentype-font-features/opentype-old-style-numerals.gif "textu s použitím OpenType zasahují")  
+ ![Text používající čísla stylu písma OpenType stará](./media/opentype-font-features/opentype-old-style-numerals.gif "Text používající čísla stylu písma OpenType stará")  
     
- Zobrazí se následující text standardní číslice Palatino Linotype písmo, za nímž následuje zasahují.  
+ Následující text zobrazuje standardní číslice pro písmo Palatino Linotype, za kterými následuje původní číslice stylu.  
   
- ![Textu s použitím OpenType starý styl sady číslic](./media/opentype-font-features/opentype-old-style-numeral-sets.gif "textu s použitím OpenType starý styl sady číslic")  
+ ![Text s použitím sad číslic ve starém stylu OpenType](./media/opentype-font-features/opentype-old-style-numeral-sets.gif "Text s použitím sad číslic ve starém stylu OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat zasahují Palatino Linotype písma, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat stará čísla stylu pro písmo Palatino Linotype s použitím vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#11](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#11)]  
   
-### <a name="proportional-and-tabular-figures"></a>Proporcionální a tabulkové obrázků  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma podporují obrázek proporcionální a tabulkové funkce řízení zarovnání šířky při použití číslic. Proporcionální obrázky považovat s jinou šířku každé číslo: "1" je menší než "5". Tabulkové obrázky jsou považovány za rovná width číslice tak, aby jejich zarovnání bylo svisle, které zvyšují čitelnost informace o finanční typu.  
+### <a name="proportional-and-tabular-figures"></a>Proporcionální a tabulkové hodnoty  
+ Písma OpenType podporují proporcionální a tabelární obrázek pro řízení zarovnání šířky při použití číslic. Proporcionální hodnoty považují každé číslo za jinou šířku – "1" je užší než "5". Tabulkové hodnoty jsou považovány za číslice se stejnou šířkou, aby byly zarovnány svisle, což zvyšuje čitelnost informací o finančních typech.  
   
- Následující text zobrazí dva proporcionální obrázky v prvním sloupci pomocí Miramonte písma. Všimněte si rozdílu číslice "5" a "1" na šířku. Druhý sloupec zobrazuje stejné dvou číselných hodnot pomocí šířky upravit tak, že použití funkce tabulkových obrázek.  
+ Následující text zobrazí dvě proporcionální hodnoty v prvním sloupci pomocí písma Miramonte. Všimněte si rozdílové šířky mezi číslicemi "5" a "1". Druhý sloupec zobrazuje stejné dvě číselné hodnoty se šířkou, které jsou upraveny pomocí funkce tabulkového obrázku.  
   
- ![Textu s použitím OpenType proporcionální & tabulkové obrázky](./media/opentype-font-features/opentype-proportional-tabular-figures.gif "textu s použitím OpenType proporcionální a tabulkové obrázky")  
+ ![Text používající proporcionální & tabulkových obrázků písma OpenType](./media/opentype-font-features/opentype-proportional-tabular-figures.gif "Text s použitím proporcionálních a tabelárních číslic písma OpenType")  
     
- Následující příklad kódu ukazuje, jak definovat proporcionální a tabulkové údaje o Miramonte písma, pomocí vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat proporcionální a tabulkové hodnoty pro písmo Miramonte pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet19](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]  
   
 ### <a name="slashed-zero"></a>Nula s lomítkem  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma podporují s lomítkem nula číslice formátu zdůraznit rozdíl mezi "O" písmena a číslice "0". Přeškrtnutý žádnou odečtete se často používá pro identifikátory v finančních a obchodních informací.  
+ Písma OpenType podporují lomítko s nulou pro zdůraznění rozdílu mezi písmenem "O" a číslicí "0". Číslice nula se často používá pro identifikátory ve finančních a podnikových informacích.  
   
- Následující text zobrazí identifikátor objednávky vzorku pomocí Miramonte písma. První řádek používá standardní číslice. Druhý řádek používá zkosené nula číslice zajistit lepší kontrastu s velkým písmenem "O".  
+ Následující text zobrazuje identifikátor pořadí vzorku pomocí písma Miramonte. První řádek používá standardní číslice. Druhý řádek použil lomítka nula, aby poskytoval větší kontrast s velkým písmenem "O".  
   
- ![Textu s použitím OpenType zkosené nula číslice](./media/opentype-font-features/opentype-slashed-zero-numerals.gif "textu s použitím OpenType zkosené nula číslice")  
+ ![Text používající číslice písma OpenType s lomítkem (0] ) (./media/opentype-font-features/opentype-slashed-zero-numerals.gif "Text používající číslice písma OpenType s lomítkem (0") )  
     
- Následující příklad kódu ukazuje, jak definovat zkosené nula číslice Miramonte písma, pomocí vlastnosti <xref:System.Windows.Documents.Typography> objektu.  
+ Následující příklad kódu ukazuje, jak definovat čísla s lomítkem (0) pro písmo Miramonte pomocí vlastností <xref:System.Windows.Documents.Typography> objektu.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet15](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet15)]  
   
 <a name="typography_class"></a>   
-## <a name="typography-class"></a>Typografie třídy  
- <xref:System.Windows.Documents.Typography> Objekt poskytuje sadu funkcí, které [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písmo podporuje. Nastavením vlastnosti <xref:System.Windows.Documents.Typography> v kódu, můžete snadno vytvářet dokumenty, které budou využívat [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce.  
+## <a name="typography-class"></a>Typografie – třída  
+ <xref:System.Windows.Documents.Typography> Objekt zpřístupňuje sadu funkcí, které písmo OpenType podporuje. Nastavením vlastností <xref:System.Windows.Documents.Typography> v kódu můžete snadno vytvářet dokumenty, které využívají funkce OpenType.  
   
- Zobrazí se následující text standardní písmeny Pescadero písma, za nímž následuje písmena tvaru "SmallCaps" a "AllSmallCaps". V takovém případě se používá stejnou velikost písma pro všechny tři slova.  
+ Následující text zobrazuje standardní velká písmena pro písmo Pescadero a potom písmena se stylem "SmallCaps" a "AllSmallCaps". V takovém případě se pro všechna tři slova použije stejná velikost písma.  
   
- ![Textu s použitím OpenType kapitálek](./media/opentype-font-features/opentype-capitals.gif "textu s použitím kapitálek OpenType")  
+ ![Text používající velká písmena písma OpenType](./media/opentype-font-features/opentype-capitals.gif "Text používající velká písmena písma OpenType")  
     
- Následující příklad kódu ukazuje, jak definovat kapitálek pro Pescadero písmo, použití vlastnosti <xref:System.Windows.Documents.Typography> objektu. Při použití formátu "SmallCaps" se ignoruje všechny úvodní velké písmeno.  
+ Následující příklad kódu ukazuje, jak definovat velká písmena pro písmo Pescadero pomocí vlastností <xref:System.Windows.Documents.Typography> objektu. Když se použije formát "SmallCaps", bude se ignorovat počáteční velké písmeno.  
   
  [!code-xaml[OpenTypeFontSamples#9](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
   
- Následující příklad kódu provede stejné úkoly, jako předchozí příklad kódu.  
+ Následující příklad kódu provede stejnou úlohu jako předchozí příklad označení.  
   
  [!code-csharp[TypographyCodeSnippets#TypographyCodeSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/TypographyCodeSnippets/CSharp/Page1.xaml.cs#typographycodesnippet1)]
  [!code-vb[TypographyCodeSnippets#TypographyCodeSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TypographyCodeSnippets/visualbasic/page1.xaml.vb#typographycodesnippet1)]  
   
 ### <a name="typography-class-properties"></a>Typografické vlastnosti třídy  
- V následující tabulce jsou uvedeny vlastnosti, hodnoty a výchozí nastavení pro položky <xref:System.Windows.Documents.Typography> objektu.  
+ V následující tabulce jsou uvedeny vlastnosti, hodnoty a výchozí nastavení <xref:System.Windows.Documents.Typography> objektu.  
   
-|Vlastnost|Hodnoty|Výchozí hodnota|  
+|Vlastnost|Hodnota (y)|Výchozí hodnota|  
 |--------------|----------------|-------------------|  
-|<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Číselná hodnota - bajtů|0|  
+|<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Číselná hodnota – Byte|0|  
 |<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals.AllPetiteCaps> &#124; <xref:System.Windows.FontCapitals.AllSmallCaps> &#124; <xref:System.Windows.FontCapitals.Normal> &#124; <xref:System.Windows.FontCapitals.PetiteCaps> &#124; <xref:System.Windows.FontCapitals.SmallCaps> &#124; <xref:System.Windows.FontCapitals.Titling> &#124; <xref:System.Windows.FontCapitals.Unicase>|<xref:System.Windows.FontCapitals.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.CapitalSpacing%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.CaseSensitiveForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.ContextualAlternates%2A>|<xref:System.Boolean>|`true`|  
 |<xref:System.Windows.Documents.Typography.ContextualLigatures%2A>|<xref:System.Boolean>|`true`|  
-|<xref:System.Windows.Documents.Typography.ContextualSwashes%2A>|Číselná hodnota - bajtů|0|  
+|<xref:System.Windows.Documents.Typography.ContextualSwashes%2A>|Číselná hodnota – Byte|0|  
 |<xref:System.Windows.Documents.Typography.DiscretionaryLigatures%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.EastAsianExpertForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.EastAsianLanguage%2A>|<xref:System.Windows.FontEastAsianLanguage.HojoKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis04> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis78> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis83> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis90> &#124; <xref:System.Windows.FontEastAsianLanguage.NlcKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Normal> &#124; <xref:System.Windows.FontEastAsianLanguage.Simplified> &#124; <xref:System.Windows.FontEastAsianLanguage.Traditional> &#124; <xref:System.Windows.FontEastAsianLanguage.TraditionalNames>|<xref:System.Windows.FontEastAsianLanguage.Normal?displayProperty=nameWithType>|  
@@ -311,8 +311,8 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
 |<xref:System.Windows.Documents.Typography.NumeralStyle%2A>|<xref:System.Boolean>|<xref:System.Windows.FontNumeralStyle.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.SlashedZero%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StandardLigatures%2A>|<xref:System.Boolean>|`true`|  
-|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|Číselná hodnota – bajty|0|  
-|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|Číselná hodnota – bajty|0|  
+|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|Číselná hodnota – Byte|0|  
+|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|Číselná hodnota – Byte|0|  
 |<xref:System.Windows.Documents.Typography.StylisticSet1%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet2%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet3%2A>|<xref:System.Boolean>|`false`|  

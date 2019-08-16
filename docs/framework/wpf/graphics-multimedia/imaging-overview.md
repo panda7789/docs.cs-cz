@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: fcf5e8e68492f4d1ff75221384b08ffad2b939f3
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 6d3dce5c8a34257f8509f239ece4bae3efa02b84
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971950"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545376"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
@@ -38,7 +38,7 @@ Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasha
   
 - Model rozšiřitelnosti pro nové nebo speciální formáty obrázků.  
   
-- Vylepšený výkon a zabezpečení v nativních formátech obrázků, včetně rastrového obrázku (BMP), společného fotografického [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)]poradce [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)]pro [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)]obrázky (JPEG),,,, GIF (Graphics Interchange Format) a ikony (. ico).  
+- Vylepšený výkon a zabezpečení v nativních formátech obrázků, včetně rastrového obrázku (BMP), společného fotografického skupiny (JPEG), přenosného [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)]síťového [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)]grafického objektu (PNG), formátu GIF (Graphics Interchange Format) a ikony (. ico).  
   
 - Uchovávání dat bitové kopie s vysokou bitovou hloubkou až na 8 bitů na kanál (32 bitů na pixel).  
   
@@ -56,7 +56,7 @@ Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasha
   
 <a name="_imageformats"></a>   
 ## <a name="wpf-image-formats"></a>Formáty obrázků WPF  
- Kodek slouží k dekódování nebo kódování konkrétního formátu média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]obsahuje kodek pro formáty obrázků BMP, JPEG [!INCLUDE[TLA2#tla_png](../../../../includes/tla2sharptla-png-md.md)], [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)],, GIF a Icon. Každý z těchto kodeků umožňuje aplikacím dekódovat a s výjimkou ikony zakódovat příslušné formáty obrázků.  
+ Kodek slouží k dekódování nebo kódování konkrétního formátu média. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]obsahuje kodek pro formáty obrázků BMP, JPEG, PNG [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)], [!INCLUDE[TLA2#tla_wdp](../../../../includes/tla2sharptla-wdp-md.md)], GIF a Icon. Každý z těchto kodeků umožňuje aplikacím dekódovat a s výjimkou ikony zakódovat příslušné formáty obrázků.  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>je důležitou třídou použitou při dekódování a kódování imagí. Je to základní stavební blok [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] kanálu a představuje jednu konstantní sadu pixelů v určité velikosti a rozlišení. Může to být individuální rámec obrázku s více snímky, nebo může být výsledkem transformace provedené <xref:System.Windows.Media.Imaging.BitmapSource>na. <xref:System.Windows.Media.Imaging.BitmapSource> Je nadřazeným prvkem mnoha primárních tříd používaných v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rámci imagí, jako je například. <xref:System.Windows.Media.Imaging.BitmapFrame>  
   

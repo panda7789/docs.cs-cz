@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: 4f8fd92105bd5ae09e0c1daa2e0db48b74cde77c
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: be82b64581ee178b463950d4b8cdae1f98949161
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672046"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545300"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]nástroje jsou některé z těchto vylepšení systému pro tisk k dispozici také [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vývojářům, kteří vytvářejí aplikace a vývojáře pomocí nespravovaného kódu. Základem této nové funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a cesta pro [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tisk.  
@@ -29,7 +29,7 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
   
 <a name="introduction_to_XPS"></a>   
 ## <a name="about-xps"></a>O formátu XPS  
- XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Jedná se o otevřený formát dokumentu, který [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]používá [!INCLUDE[TLA#tla_opc](../../../../includes/tlasharptla-opc-md.md)], a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
+ XPS je elektronický formát dokumentu, formát souboru zařazování a jazyk popisu stránky. Jedná se o otevřený formát dokumentu, který [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]používá konvence Open balení (OPC) a další oborové standardy k vytváření dokumentů pro různé platformy. XPS zjednodušuje proces, při kterém se vytvářejí, sdílí, tisknou, zobrazují a archivují digitální dokumenty. Další informace o XPS najdete v [dokumentu XPS](/windows/desktop/printdocs/documents).  
   
  Několik technik tisku obsahu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] založeného na XPS je znázorněné v [programovém tisku souborů XPS](how-to-programmatically-print-xps-files.md). Může být užitečné, aby na tyto ukázky odkazovala během revize obsahu obsaženého v tomto tématu. (Vývojáři nespravovaného kódu by si měli prohlédnout dokumentaci k [funkci MXDC_ESCAPE](/windows/desktop/printdocs/mxdc-escape). Model Windows Forms vývojáři musí používat rozhraní API v <xref:System.Drawing.Printing> oboru názvů, který nepodporuje úplnou [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cestu tisku, ale podporuje hybridní cestu k tisku pomocí formátu GDI. Viz **Architektura tisk cesty** níže.)  
   

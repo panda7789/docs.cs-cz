@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 5f3560c899373b9835e2ead79590cf73777b2375
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 7c83cfa22770695861b07e3bff29a38fcd125dd2
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972408"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545247"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
-V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] , podpora typografie, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
+V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu, podpora typografie OpenType, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Vylepšená kvalita a výkon textu  
@@ -29,9 +29,9 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
 <a name="Rich_Typography"></a>   
 ## <a name="rich-typography"></a>Bohatá typografie  
- Formát písma je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Formát písma byl vyvinut společně pomocí [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Objekt zpřístupňuje mnoho pokročilých [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcí písem, jako jsou stylistické alternativy a ozdobné znaky. <xref:System.Windows.Documents.Typography> Windows SDK poskytuje sadu ukázkových [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] písem, které jsou navrženy s bohatou funkcí, jako jsou například písma Pericles a Pescadero. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+ Formát písma OpenType je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. Formát písma OpenType byl vyvinut společně nástrojem [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. <xref:System.Windows.Documents.Typography> Objekt zpřístupňuje mnoho pokročilých funkcí písem OpenType, jako jsou stylistické alternativy a ozdobné znaky. Windows SDK poskytuje sadu ukázkových písem OpenType, která jsou navržená pomocí bohatých funkcí, jako jsou například písma Pericles a Pescadero. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
- Písmo Pericles [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
+ Písmo OpenType Pericles obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
   
  ![Text používající stylistické alternativní glyfy písma OpenType](./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "Text používající stylistické alternativní glyfy písma OpenType")  
   
@@ -39,7 +39,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
  ![Text používající standardní a ozdobné glyfy OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "Text používající standardní a ozdobné glyfy OpenType")  
   
- Další informace o [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] funkcích najdete v tématu [funkce písem OpenType](opentype-font-features.md).  
+ Další informace o funkcích OpenType naleznete v tématu [funkce písem OpenType](opentype-font-features.md).  
   
 <a name="Enhanced_International_Text_Support"></a>   
 ## <a name="enhanced-international-text-support"></a>Vylepšená podpora pro mezinárodní text  

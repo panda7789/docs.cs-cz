@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: fda64cd15e15fb437db415b8a8083829c2d773cb
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: df2a99b6fe288cfa8b8a5d60bb127849323ed3a9
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039868"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545318"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Kurz: Vytvoření aplikace služby systému Windows
 
@@ -534,11 +534,11 @@ Pokud už aplikaci služby systému Windows nepotřebujete, můžete ji odebrat.
 
    Pokud se služba úspěšně odinstaluje, příkaz oznámí, že vaše služba byla úspěšně odebrána. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-install-and-uninstall-services.md)služby.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Teď, když jste vytvořili službu, můžete:
 
-- Vytvoření samostatného instalačního programu, který bude používat k instalaci služby systému Windows. Pomocí sady [nástrojů WIX](http://wixtoolset.org/) můžete vytvořit instalační program pro službu systému Windows. Další nápady najdete v tématu [Vytvoření balíčku instalačního programu](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+- Vytvoření samostatného instalačního programu, který bude používat k instalaci služby systému Windows. Pomocí sady [nástrojů WIX](https://wixtoolset.org/) můžete vytvořit instalační program pro službu systému Windows. Další nápady najdete v tématu [Vytvoření balíčku instalačního programu](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
 
 - Prozkoumejte <xref:System.ServiceProcess.ServiceController> komponentu, která vám umožní odesílat příkazy do služby, kterou jste nainstalovali.
 

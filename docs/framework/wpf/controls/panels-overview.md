@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: 58dc070e1642773f39f9ab2a9037ca60175b27cf
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 4f54596e1ce3ed40f3a029ea6703147a97be992f
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401277"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545266"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel>prvky jsou komponenty, které řídí vykreslování prvků – jejich velikost a rozměry, jejich umístění a uspořádání jejich podřízeného obsahu. Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> prvků, jakož i možnost vytvářet vlastní <xref:System.Windows.Controls.Panel> prvky. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]  
@@ -118,7 +118,7 @@ ms.locfileid: "68401277"
 ### <a name="dockpanel"></a>DockPanel  
  <xref:System.Windows.Controls.DockPanel> Element<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> používá připojenou vlastnost jako nastavenou v podřízených prvcích obsahu k umístění obsahu podél okrajů kontejneru. Když <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> je nastaveno na <xref:System.Windows.Controls.Dock.Top> nebo <xref:System.Windows.Controls.Dock.Bottom>, umístí podřízené prvky nad nebo pod sebou. Když <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> je nastavené <xref:System.Windows.Controls.Dock.Left> na <xref:System.Windows.Controls.Dock.Right>nebo, umístí podřízené prvky vlevo nebo napravo od sebe. Vlastnost určuje pozici posledního elementu, který byl přidán jako podřízený <xref:System.Windows.Controls.DockPanel>objekt. <xref:System.Windows.Controls.DockPanel.LastChildFill%2A>  
   
- Můžete použít <xref:System.Windows.Controls.DockPanel> k umístění skupiny souvisejících ovládacích prvků, například sady tlačítek. Alternativně můžete pomocí něj vytvořit "podokna" [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], podobně jako v [!INCLUDE[TLA#tla_outlook](../../../../includes/tlasharptla-outlook-md.md)]části.  
+ Můžete použít <xref:System.Windows.Controls.DockPanel> k umístění skupiny souvisejících ovládacích prvků, například sady tlačítek. Alternativně můžete pomocí něj vytvořit "podokna" [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], podobně jako v aplikaci Microsoft Outlook.  
   
 #### <a name="sizing-to-content"></a>Změna velikosti obsahu  
  Pokud nejsou zadány vlastnosti <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.Controls.DockPanel>aa jejich obsah, budou velikosti. <xref:System.Windows.FrameworkElement.Height%2A> Velikost se může zvětšit nebo zmenšit, aby se vešla velikost jejích podřízených prvků. Nicméně pokud jsou tyto vlastnosti zadány a již není místo pro další zadaný podřízený element, <xref:System.Windows.Controls.DockPanel> nezobrazuje tento podřízený element ani následné podřízené prvky a neměří následné podřízené prvky.  

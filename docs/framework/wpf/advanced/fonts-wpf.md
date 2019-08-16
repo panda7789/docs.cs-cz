@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - fonts [WPF]
 ms.assetid: 6c766a95-ad03-475e-a36f-2243e9495941
-ms.openlocfilehash: cab39cdb13b92c0bfcb697de4bb8c05feae4c146
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 5bcd2ccd99940a3ce22f0894a1706eccf8627158
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972397"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545221"
 ---
 # <a name="fonts-wpf"></a>Písma (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje podporu pro bohatou prezentaci textu pomocí [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem. K dispozici je [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] ukázkový balíček písem s Windows SDK.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje podporu pro bohatou prezentaci textu pomocí písem OpenType. K dispozici je ukázkový balíček písem typu OpenType s Windows SDK.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Funkce písma OpenType](opentype-font-features.md)  
