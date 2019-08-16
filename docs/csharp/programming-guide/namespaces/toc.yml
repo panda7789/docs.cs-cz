@@ -1,9 +1,7 @@
-- name: Jmenné prostory
+- name: Obory názvů
   href: index.md
   items:
-    - name: Použití oboru názvů
+    - name: Používání oboru názvů
       href: using-namespaces.md
-    - name: 'Postupy: Použití aliasu globálního oboru názvů'
-      href: how-to-use-the-global-namespace-alias.md
     - name: 'Postupy: Použití oboru názvů My'
       href: how-to-use-the-my-namespace.md
