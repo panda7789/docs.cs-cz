@@ -7,55 +7,55 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 36993a13ed085f59fd6002f33e7884bdb1b5db8d
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 499a64362f7a23f0c4c595469fceaa1612bf44dd
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832894"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567343"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
-Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat aplikace. Sestavení se silným názvem je plně kvalifikovaný název, který obsahuje název sestavení, jazykové verze, veřejného klíče a číslo verze. To se často označuje jako zobrazovaný název a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  
+Název sestavení je uložen v metadatech a má významný dopad na rozsah sestavení a použití aplikací. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název, jazykovou verzi, veřejný klíč a číslo verze sestavení. Tato možnost je často označována jako zobrazované jméno a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnosti.  
   
- Modul runtime používá tyto informace k nalezení sestavení a odlišují ji od ostatních sestavení se stejným názvem. Například sestavení se silným názvem názvem `myTypes` může mít tento plně kvalifikovaný název:  
+ Modul runtime používá tyto informace k vyhledání sestavení a jeho odlišení od ostatních sestavení se stejným názvem. Například volané `myTypes` sestavení se silným názvem může mít následující plně kvalifikovaný název:  
   
 ```  
 myTypes, Version=1.0.1234.0, Culture=en-US, PublicKeyToken=b77a5c561934e089c, ProcessorArchitecture=msil  
 ```  
   
 > [!NOTE]
->  Architektura procesoru je přidána do identity sestavení v rozhraní .NET Framework verze 2.0, aby specifické pro procesor verze sestavení. Můžete vytvořit sestavení, jehož identita se liší pouze ve architekturu procesoru, například verze specifické pro procesor 32bitové a 64bitové verze. Architektura procesoru není vyžadována pro silné názvy. Další informace naleznete v tématu <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>.  
+>  Do identity sestavení v .NET Framework verze 2,0 se přidá architektura procesoru, aby se povolily verze sestavení specifické pro procesor. Můžete vytvořit verze sestavení, jehož identita se liší pouze architekturou procesoru, například 32-bit a 64-bit specifických verzí procesoru. Architektura procesoru není pro silné názvy nutná. Další informace naleznete v tématu <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>.  
   
- V tomto příkladu je plně kvalifikovaný název označuje, že `myTypes` sestavení se silným názvem pomocí tokenu veřejného klíče, má hodnota jazykové verze pro angličtinu a má číslo verze 1.0.1234.0. Jeho architektuře procesoru je "msil", což znamená, že bude just-in-time (JIT)-zkompilováno do 32bitového kódu nebo 64bitového kódu v závislosti na operačním systému a procesoru.  
+ V tomto příkladu plně kvalifikovaný název označuje, že `myTypes` sestavení má silný název s tokenem veřejného klíče, má hodnotu jazykové verze pro americkou angličtinu a má číslo verze 1.0.1234.0. Jeho architektura procesoru je "MSIL", což znamená, že bude za běhu (JIT) zkompilován do 32 bitového kódu nebo 64 kódu v závislosti na operačním systému a procesoru.  
   
- Kód, který požaduje typy v sestavení, musíte použít plně kvalifikovaný název. Tomu se říká plně kvalifikovaný vazby. Částečné vazby, který určuje pouze název sestavení, není povoleno při odkazování na sestavení v rozhraní .NET Framework.  
+ Kód, který požaduje typy v sestavení, musí používat plně kvalifikovaný název sestavení. Tato metoda se nazývá plně kvalifikovaná vazba. Částečná vazba, která určuje pouze název sestavení, není povolena při odkazování na sestavení v .NET Framework.  
   
- Všechny odkazy na sestavení pro sestavení, která tvoří rozhraní .NET Framework také musí obsahovat plně kvalifikovaný název sestavení. Například odkazovat na sestavení System.Data rozhraní .NET Framework verze 1.0 zahrnuje:  
+ Všechny odkazy na sestavení, které tvoří .NET Framework, musí obsahovat také plně kvalifikovaný název sestavení. Například pro odkazování na System. data .NET Framework sestavení pro verzi 1,0 by zahrnovalo:  
   
 ```  
 System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089  
 ```  
   
- Všimněte si, že verze odpovídá verzi počet všechna sestavení rozhraní .NET Framework, která jsou součástí rozhraní .NET Framework verze 1.0. Pro sestavení rozhraní .NET Framework je vždy neutrální jazykovou verzi hodnota a veřejný klíč je stejný, jak je znázorněno v příkladu výše.  
+ Všimněte si, že verze odpovídá číslu verze všech .NET Framework sestavení, která byla dodávána s .NET Framework verze 1,0. Pro .NET Framework sestavení je hodnota jazykové verze vždycky neutrální a veřejný klíč je stejný, jak je uvedeno v předchozím příkladu.  
   
- Chcete-li přidat odkaz na sestavení v konfiguračním souboru nastavit naslouchací proces trasování, například bude zahrnovat plně kvalifikovaný název systému sestavení rozhraní .NET Framework:  
+ Chcete-li například přidat odkaz na sestavení do konfiguračního souboru pro nastavení naslouchacího procesu trasování, zahrnete plně kvalifikovaný název systémového .NET Framework sestavení:  
   
 ```xml  
 <add name="myListener" type="System.Diagnostics.TextWriterTraceListener, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" initializeData="c:\myListener.log" />  
 ```  
   
 > [!NOTE]
->  Modul runtime považuje za názvy sestavení velkých a malých písmen při vytváření vazby na sestavení, ale zachová v názvu sestavení se používá jakoukoli velikost písmen. Několik nástrojů ve Windows Software Development Kit (SDK) zpracování názvy sestavení jako malá a velká písmena. Nejlepších výsledků dosáhnete spravujte názvy sestavení, jako by byly malá a velká písmena.  
+>  Modul runtime považuje názvy sestavení za nerozlišování velkých a malých písmen při vytváření vazby na sestavení, ale zachová bez ohledu na případ použití v názvu sestavení. Několik nástrojů v Windows SDK zpracovává názvy sestavení při rozlišování velkých a malých písmen. Pro dosažení nejlepších výsledků spravujte názvy sestavení, jako by se jednalo o velká a malá písmena.  
   
-## <a name="naming-application-components"></a>Pojmenování součásti aplikace  
- Modul runtime nebere v úvahu názvu souboru při určování identity sestavení. Identitu sestavení, který se skládá z názvu sestavení, verzi, jazykovou verzi a silným názvem, musí být jasný modulu runtime.  
+## <a name="naming-application-components"></a>Pojmenovávání součástí aplikace  
+ Modul runtime při určování identity sestavení nebere v úvahu název souboru. Identita sestavení, která se skládá z názvu sestavení, verze, jazykové verze a silného názvu, musí být pro modul runtime nejasná.  
   
- Například pokud máte sestavení nazvané myAssembly.exe, který odkazuje na sestavení nazvané myAssembly.dll, vazba v případě správně spustit myAssembly.exe. Nicméně pokud jiná aplikace provádí pomocí metody myAssembly.exe <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, modul runtime určuje, že "myAssembly" je již načtena, když myAssembly.exe požádá o vazbu k "myAssembly." V takovém případě myAssembly.dll vůbec nenačetl. Protože myAssembly.exe neobsahuje požadovaný typ <xref:System.TypeLoadException> vyvolá.  
+ Například pokud máte sestavení s názvem myAssembly. exe, které odkazuje na sestavení s názvem myAssembly. dll, vazba proběhne správně, pokud spustíte myAssembly. exe. Pokud však jiná aplikace provádí MyAssembly. exe pomocí metody <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, modul runtime určí, že "MyAssembly" je již načteno, když MyAssembly. exe požaduje vazbu na MyAssembly. V tomto případě není myAssembly. dll nikdy načtena. Protože myAssembly. exe neobsahuje požadovaný typ, <xref:System.TypeLoadException> dojde k chybě.  
   
- K tomuto problému vyhnout, ujistěte se, že sestavení, které tvoří vaši aplikaci se stejným názvem sestavení nebo sestavení se stejným názvem umístit do různých adresářích.  
+ Chcete-li se tomuto problému vyhnout, ujistěte se, že sestavení, která tvoří vaši aplikaci, nemají stejný název sestavení nebo umísťují sestavení se stejným názvem do různých adresářů.  
   
 > [!NOTE]
->  Když vložíte sestavení se silným názvem do globální mezipaměti sestavení, název souboru sestavení musí odpovídat názvu sestavení (nezahrnuje příponu názvu souboru, jako je například .exe nebo .dll). Například pokud je název souboru sestavení myAssembly.dll, musí být název sestavení myAssembly. Soukromá sestavení, které jsou nasazeny pouze v kořenovém adresáři aplikace může mít název sestavení, které se liší od názvu souboru.  
+>  Pokud zadáte sestavení se silným názvem do globální mezipaměti sestavení (GAC), název souboru sestavení musí odpovídat názvu sestavení (bez přípony názvu souboru, například. exe nebo. dll). Například pokud název souboru sestavení je myAssembly. dll, název sestavení musí být myAssembly. Soukromá sestavení nasazená pouze v kořenovém adresáři aplikace mohou mít název sestavení, který se liší od názvu souboru.  
   
 ## <a name="see-also"></a>Viz také:
 

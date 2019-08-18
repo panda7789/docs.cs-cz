@@ -4,12 +4,12 @@ description: Přečtěte si o funkcích telemetrie ML.NET CLI, které shromažď
 ms.topic: conceptual
 ms.date: 05/05/2019
 ms.custom: ''
-ms.openlocfilehash: eab1e37d7d0d47251c4f92422730b105cf2db265
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: b9f6ccf7ff76f0cf4ce806f39909b7607a20b9f6
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433797"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567488"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Kolekce telemetrie pomocí rozhraní příkazového řádku ML.NET
 
@@ -36,7 +36,7 @@ Telemetrii *je povolena* při spuštění [příkazu CLI ml.NET](../reference/ml
 
 Funkce telemetrie ML.NET CLI je ve výchozím nastavení povolená.
 
-Odsouhlasit funkci `DOTNET_CLI_TELEMETRY_OPTOUT` telemetrie nastavením proměnné prostředí na `1` nebo `true`. Tato proměnná prostředí se globálně vztahuje k nástroji rozhraní .NET CLI.
+Odsouhlasit funkci `MLDOTNET_CLI_TELEMETRY_OPTOUT` telemetrie nastavením proměnné prostředí na `1` nebo `true`. Tato proměnná prostředí se globálně vztahuje k nástroji rozhraní .NET CLI.
 
 ## <a name="data-points-collected"></a>Shromážděné datové body
 
@@ -57,7 +57,7 @@ Tato funkce shromažďuje následující data:
 Data se na servery Microsoftu odesílají zabezpečeně pomocí technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) , která se drží pod omezeným přístupem, a používají se v rámci přísných bezpečnostních mechanismů pro systémy zabezpečení [Azure Storage](https://azure.microsoft.com/services/storage/) .
 
 ### <a name="data-points-not-collected"></a>Datové body nejsou shromažďovány.
-*Funkce telemetrie* neshromažďuje:
+Funkce telemetrie neshromažďuje:
 - osobní údaje, jako jsou uživatelská jména
 - názvy souborů DataSet
 - data ze souborů datové sady

@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2239b73eb8418d469085ad72b8a28093146a1f6b
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: e476e92ba4a9366a8a380c53d7dcd0d4dddb16e4
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025966"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567304"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
-IL Disassembler je doprovodný nástroj k nástroji IL Assembler (*Ilasm.exe*). *Ildasm.exe* přebírá soubor (PE portable executable) obsahující kód (IL intermediate language) a vytváří textový soubor vhodný jako vstup do *Ilasm.exe*.
+IL Disassembler je doprovodný nástroj k assembleru IL (*Ilasm. exe*). *Ildasm. exe* přebírá přenosný spustitelný soubor (PE), který obsahuje kód mezilehlého jazyka (IL) a vytváří textový soubor vhodný jako vstup do *Ilasm. exe*.
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -34,17 +34,17 @@ ildasm [options] [PEfilename] [options]
 
 ## <a name="parameters"></a>Parametry
 
-Tyto možnosti jsou k dispozici pro *.exe*, *.dll*, *.obj*, *lib*, a *.winmd* soubory.
+Pro soubory *. exe*, *. dll*, *. obj*, *. lib*a *. winmd* jsou k dispozici následující možnosti.
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/ out =** `filename`|Vytvoří výstupní soubor se zadaným `filename`, namísto zobrazení výsledků v grafickém uživatelském rozhraní.|
-|**/rtf**|Vytvoří výstup ve formátu RTF (Rich Text Format). Neplatná s **/text** možnost.|
+|**/out =** `filename`|Vytvoří výstupní soubor se zadaným parametrem `filename`namísto zobrazení výsledků v grafickém uživatelském rozhraní.|
+|**/rtf**|Vytvoří výstup ve formátu RTF (Rich Text Format). Neplatné s možností **/text**|
 |**/text**|Zobrazí výsledky v okně konzoly namísto grafického uživatelského rozhraní nebo výstupního souboru.|
-|**/html**|Vytvoří výstup ve formátu HTML. Platný s **/output** jen možnost.|
+|**/html**|Vytvoří výstup ve formátu HTML. Platí pouze s možností **/Output** .|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
 
-K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soubory.
+Pro soubory *. exe*, *. dll*a *. winmd* jsou k dispozici následující další možnosti.
 
 | Možnost | Popis |
 | ------ | ----------- |
@@ -53,65 +53,65 @@ K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soub
 |**/linenum**|Zahrne odkazy do původních zdrojových řádků.|
 |**/nobar**|Potlačí místní okno indikátoru průběhu zpětného překladu.|
 |**/noca**|Potlačí výstup vlastních atributů.|
-|**/project**|Zobrazí metadata, která se zobrazí tak, jak se spravovaným kódem, místo tak, jak ho v nativním modulu Windows Runtime. Pokud `PEfilename` není metadat Windows ( *.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
-|**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalentní **/visibility:PUB**.|
+|**/project**|Zobrazuje metadata tak, jak se zobrazí spravovanému kódu, namísto způsobu zobrazení v nativním prostředí Windows Runtime. Pokud `PEfilename` není soubor metadat Windows ( *. winmd*), tato možnost nemá žádný vliv. Viz [.NET Framework Podpora aplikací pro Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalent **/visibility: Pub**.|
 |**/quoteallnames**|Vloží všechny názvy do jednoduchých uvozovek.|
 |**/raweh**|Zobrazí klauzule zpracování výjimek v nezpracovaném tvaru.|
-|**/ Source**|Zobrazí původní zdrojové řádky jako komentáře.|
-|**/ tokens**|Zobrazí tokeny metadat pro třídy a členy.|
-|**/Visibility:** `vis`[+`vis`...]|Zpětně přeloží pouze typy nebo členy se zadanou viditelností. Platné hodnoty jsou následující `vis`:<br /><br /> **Publikování a odběru** – veřejné<br /><br /> **PRI** – privátní<br /><br /> **Služba FAM** – řada<br /><br /> **ASM** – sestavení<br /><br /> **Zákon FAA** – Family a Assembly<br /><br /> **FOA** – Family nebo Assembly<br /><br /> **PSC** – soukromý obor<br /><br /> Definice těchto modifikátorů viditelnosti naleznete v tématu <xref:System.Reflection.MethodAttributes> a <xref:System.Reflection.TypeAttributes>.|
+|**/Source**|Zobrazí původní zdrojové řádky jako komentáře.|
+|**/Tokens**|Zobrazí tokeny metadat pro třídy a členy.|
+|**/visibility:** `vis`[+`vis`...]|Zpětně přeloží pouze typy nebo členy se zadanou viditelností. Platné jsou následující hodnoty `vis`:<br /><br /> **Pub** – veřejné<br /><br /> **Pri** – privátní<br /><br /> **FAM** – rodina<br /><br /> **ASM** – sestavení<br /><br /> **FAA** – řada a sestavení<br /><br /> **FOA** – řada nebo sestavení<br /><br /> **PSC** – privátní obor<br /><br /> Definice těchto modifikátorů viditelnosti naleznete v tématech <xref:System.Reflection.MethodAttributes> a <xref:System.Reflection.TypeAttributes>.|
 
-Následující možnosti jsou platné pro *.exe*, *.dll*, a *.winmd* soubory pro soubor nebo pouze výstup konzoly.
+Následující možnosti jsou platné pro soubory *. exe*, *. dll*a *. winmd* pouze pro výstup do souboru nebo konzoly.
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/ all**|Určí kombinaci možností **/header**, **/bytes**, **toto**, **/classlist**, a **/tokens** Možnosti.|
+|**/All**|Určuje kombinaci možností **/header**, **/bytes**, **/stats**, **/classlist**a **/tokens** .|
 |**/classlist**|Zahrne seznam tříd definovaných v modulu.|
-|**/ vpřed**|Použije dopřednou deklaraci tříd.|
-|**/headers**|Zahrne do výstupu informace z hlavičky souboru.|
-|**/item:** `class`[ **::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: `(sig`.|
+|**/forward**|Použije dopřednou deklaraci tříd.|
+|**/Headers**|Zahrne do výstupu informace z hlavičky souboru.|
+|**/Item:** `class`[ **::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Rozloží zadanou `class`.<br />-Rozloží zadanou `member` `class`z.<br />-Rozloží `member` `class` sadu se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** V .NET Framework verzích 1,0 a 1,1 `sig` musí následovat pravá závorka:. `(sig)` Počínaje rozhraním .NET Framework 2,0 musí být uzavírací závorka vynechána: `(sig`.|
 |**/noil**|Potlačí výstup kódu sestavení jazyka IL.|
-|**Toto**|Vloží statistiky o bitové kopii.|
+|**/stats**|Vloží statistiky o bitové kopii.|
 |**/typelist**|Vytvoří úplný seznam typů pro zachování řazení typů při přenosu.|
-|**Unicode**|Použije pro výstup kódování Unicode.|
+|**/unicode**|Použije pro výstup kódování Unicode.|
 |**/utf8**|Použije pro výstup kódování UTF-8. Výchozím je ANSI.|
 
-Následující možnosti jsou platné pro *.exe*, *.dll*, *.obj*, *lib*, a *.winmd* soubory pro soubor nebo pouze výstup konzoly.
+Následující možnosti jsou platné pro soubory *. exe*, *. dll*, *. obj*, *. lib*a *. winmd* pouze pro výstup do souboru nebo konzoly.
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/metadata**[=`specifier`]|Zobrazí metadata, kde `specifier` je:<br /><br /> **MDHEADER** – zobrazí informace hlavičky metadat a velikosti.<br /><br /> **HEXADECIMÁLNÍ** – zobrazí informace v šestnáctkové soustavě stejně jako v slova.<br /><br /> **Sdílený svazek clusteru** – zobrazí počty záznamů a velikosti hald.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **SCHÉMA** – zobrazí informace hlavičky a schéma metadat.<br /><br /> **NEZPRACOVANÁ** – zobrazí tabulky nezpracovaných metadat.<br /><br /> **HALDY** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistentnost metadat.<br /><br /> Můžete zadat **/metadata** několikrát s různými hodnotami parametru `specifier`.|
+|**/metadata**[=`specifier`]|Zobrazuje metadata, kde `specifier` je:<br /><br /> **MDHEADER** – zobrazí informace a velikosti záhlaví metadat.<br /><br /> **Hex** – zobrazí informace v šestnáctkové soustavě i v slovech.<br /><br /> **CSV** – zobrazit počty záznamů a velikosti haldy.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **Schéma** – zobrazí hlavičku metadat a informace o schématu.<br /><br /> **Raw** – zobrazí nezpracované tabulky metadat.<br /><br /> **Haldy** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistenci metadat.<br /><br /> **/Metadata** můžete zadat vícekrát s různými hodnotami pro `specifier`.|
 
-Následující možnosti jsou platné pro *lib* soubory pro soubor nebo pouze výstup konzoly.
+Následující možnosti jsou platné pro soubory *. lib* pouze pro výstup do souboru nebo konzoly.
 
 | Možnost | Popis |
 | ------ | ----------- |
 |**/objectfile**=`filename`|Zobrazí metadata souboru jednoho objektu v zadané knihovně.|
 
 > [!NOTE]
-> Všechny možnosti pro *Ildasm.exe* jsou malá a velká písmena rozpoznávány dle prvních tří písmen. Například **/quo** je ekvivalentní **/quoteallnames**. Možnosti s argumenty přijímají jako oddělovač mezi možností a argumentem dvojtečku (:) nebo symbol rovná se (=). Například **/output:** *filename* je ekvivalentní **/output =** *filename*.
+> Všechny možnosti nástroje *Ildasm. exe* nerozlišují velká a malá písmena, která jsou rozpoznána prvními třemi písmeny. Například **/quo** je ekvivalentem **/quoteallnames**. Možnosti s argumenty přijímají jako oddělovač mezi možností a argumentem dvojtečku (:) nebo symbol rovná se (=). Například **/output:** *filename* je ekvivalentem **/Output =** *filename*.
 
 ## <a name="remarks"></a>Poznámky
 
-*Ildasm.exe* pracuje pouze se soubory PE na disku. Nepracuje se soubory nainstalovanými do globální mezipaměti sestavení.
+Nástroj *Ildasm. exe* pracuje pouze na souborech PE na disku. Nepracuje se soubory nainstalovanými do globální mezipaměti sestavení.
 
-Textový soubor vytvářených *Ildasm.exe* lze použít jako vstup pro nástroj IL Assembler (*Ilasm.exe*). Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a zpracování výstupu nástrojem *Ildasm.exe*, lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Poté lze tento textový soubor zpracovat nástrojem IL Assembler a vytvořit konečný spustitelný soubor.
+Textový soubor vytvořený pomocí programu *Ildasm. exe* lze použít jako vstup pro rozhraní IL Assembler (*Ilasm. exe*). Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a spuštění jeho výstupu prostřednictvím programu *Ildasm. exe*lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Poté lze tento textový soubor zpracovat nástrojem IL Assembler a vytvořit konečný spustitelný soubor.
 
 > [!NOTE]
 > Momentálně nelze tuto techniku použít se soubory PE obsahujícími vložený nativní kód (například PE soubory vytvořené jazykem Visual C++).  
 
-Chcete-li zobrazit metadata a zpětně přeložený kód libovolného existujícího souboru PE v hierarchickém stromovém zobrazení, lze použít výchozí grafické uživatelské rozhraní nástroje IL Disassembler. Chcete-li použít grafické uživatelské rozhraní, zadejte **ildasm** příkazového řádku bez zadání *PEfilename* argument nebo jakýchkoli možností. Z **souboru** nabídky, se můžete dostat přenositelného Spustitelného souboru, který chcete načíst do *Ildasm.exe*. Chcete-li uložit metadata a zpětně přeložený kód pro vybrané PE, vyberte **výpisu paměti** příkaz **souboru** nabídky. Uložte hierarchické stromové zobrazení pouze, vyberte **vypsat stromové zobrazení** příkaz **souboru** nabídky. Podrobné pokyny k načítání souboru do *Ildasm.exe* a interpretaci výstupu, podívejte se *Ildasm.exe* kurz, umístěný ve složce Samples, která se dodává s Windows Software Development Kit (SDK ).
+Chcete-li zobrazit metadata a zpětně přeložený kód libovolného existujícího souboru PE v hierarchickém stromovém zobrazení, lze použít výchozí grafické uživatelské rozhraní nástroje IL Disassembler. Chcete-li použít grafické uživatelské rozhraní, zadejte text **Ildasm** na příkazovém řádku bez zadání argumentu *PEfilename* nebo jakékoli možnosti. V nabídce **soubor** můžete přejít na soubor PE, který chcete načíst do programu *Ildasm. exe*. Chcete-li uložit metadata a zpětně přeložený kód pro vybrané prostředí PE, vyberte příkaz pro **Výpis paměti** v nabídce **soubor** . Chcete-li uložit pouze hierarchické zobrazení stromové struktury, vyberte příkaz **dump TreeView** v nabídce **soubor** . Podrobný průvodce načítání souboru do programu *Ildasm. exe* a interpretace výstupu naleznete v kurzu *Ildasm. exe* , který je umístěn ve složce Samples, která je dodávána s Windows SDK.
 
-Pokud zadáte *Ildasm.exe* s *PEfilename* argument, který obsahuje vložené prostředky, nástroj vytvoří několik výstupních souborů: textový soubor obsahující kód IL a pro každý vložený spravovaný prostředek, soubor .resources vytvořený za použití názvu prostředku z metadat. Pokud je součástí nespravovaný prostředek *PEfilename*, soubor .res je vytvořen pomocí názvu souboru určeného pro výstup IL **/output** možnost.
+Pokud zadáte *Ildasm. exe* s argumentem *PEfilename* , který obsahuje vložené prostředky, nástroj vytvoří více výstupních souborů: textový soubor, který obsahuje kód Il a pro každý vložený spravovaný prostředek, soubor. Resources vytvořený pomocí název prostředku z metadat Pokud je nespravovaný prostředek vložený do *PEfilename*, vytvoří se soubor. res pomocí parametru **/Output** zadaného pro výstup Il.
 
 > [!NOTE]
-> *Ildasm.exe* zobrazuje pouze popisů metadat pro *.obj* a *lib* vstupních souborů. Kód IL není pro tyto typy souborů zpětně překládán.
+> Nástroj *Ildasm. exe* zobrazuje pouze popisy metadat pro vstupní soubory *. obj* a *. lib* . Kód IL není pro tyto typy souborů zpětně překládán.
 
-Můžete spustit *Ildasm.exe* přes an.exe nebo *.dll* soubor k určení, zda je soubor spravovaný. Není-li soubor spravovaný, nástroj zobrazí zprávu oznamující, že soubor neobsahuje žádnou platnou hlavičku modulu CLR a nelze jej zpětně přeložit. Pokud soubor spravovaný je, nástroj se úspěšně spustí.
+*Ildasm. exe* můžete spustit přes soubor. exe nebo *. dll* , abyste zjistili, jestli je soubor spravovaný. Není-li soubor spravovaný, nástroj zobrazí zprávu oznamující, že soubor neobsahuje žádnou platnou hlavičku modulu CLR a nelze jej zpětně přeložit. Pokud soubor spravovaný je, nástroj se úspěšně spustí.
 
 ## <a name="version-information"></a>Informace o verzi
 
-Od verze rozhraní .NET Framework 4.5, *Ildasm.exe* zpracovává nerozpoznané zařazovací objekty BLOB (binární rozsáhlý objekt) zobrazením nezpracovaného binárního obsahu. Následující kód například ukazuje, jak je zobrazen zařazovací objekt BLOB vygenerovaný programem jazyka C#:
+Od .NET Framework 4,5 nástroj *Ildasm. exe* zpracovává NEROZPOZNANÝ objekt BLOB pro zařazování (binární rozsáhlý objekt) zobrazením nezpracovaného binárního obsahu. Následující kód například ukazuje, jak je zobrazen zařazovací objekt BLOB vygenerovaný programem jazyka C#:
 
 ```csharp
 public void Test([MarshalAs((short)70)] int test) { }
@@ -122,7 +122,7 @@ public void Test([MarshalAs((short)70)] int test) { }
 .method public hidebysig instance void Test(int32  marshal({ 46 }) test) cil managed
 ```
 
-Od verze rozhraní .NET Framework 4.5, *Ildasm.exe* zobrazuje atributy, které se použijí pro implementaci rozhraní tak, jak je znázorněno v následujícím výtažku z *Ildasm.exe* výstup:
+Od .NET Framework 4,5 nástroj *Ildasm. exe* zobrazí atributy, které jsou aplikovány na implementace rozhraní, jak je znázorněno v následujícím výňatku z výstupu *Ildasm. exe* :
 
 ```
 .class public auto ansi beforefieldinit MyClass
@@ -137,25 +137,25 @@ Od verze rozhraní .NET Framework 4.5, *Ildasm.exe* zobrazuje atributy, které s
 
 ## <a name="examples"></a>Příklady
 
-Pomocí následujícího příkazu způsobí, že metadata a zpětně přeloženého kódu pro soubor PE `MyHello.exe` zobrazíte v *Ildasm.exe* výchozí grafické uživatelské rozhraní.
+Následující příkaz způsobí, že metadata a zpětně přeložený kód pro soubor `MyHello.exe` PE se zobrazí ve výchozím grafickém uživatelském rozhraní *Ildasm. exe* .
 
 ```console
 ildasm myHello.exe
 ```
 
-Následující příkaz zpětně přeloží soubor `MyFile.exe` a uloží výsledný text nástroje IL Assembler do souboru *MyFile.il*.
+Následující příkaz zpětně přeloží soubor `MyFile.exe` a uloží výsledný text IL Assembler do souboru *MyFile.Il*.
 
 ```console
 ildasm MyFile.exe /output:MyFile.il
 ```
 
-Následující příkaz zpětně přeloží soubor `MyFile.exe` a zobrazí výsledný text nástroje IL Assembler v okně konzoly.
+Následující příkaz zpětně přeloží soubor `MyFile.exe` a zobrazí výsledný text IL Assembler v okně konzoly.
 
 ```console
 ildasm MyFile.exe /text
 ```
 
-Pokud soubor `MyApp.exe` obsahuje vložené spravované nebo nespravované prostředky, vytvoří následující příkaz čtyři soubory: *MyApp.il*, *MyApp.res*, *Icons.resources*, a *Message.resources*:
+Pokud soubor `MyApp.exe` obsahuje vložené spravované a nespravované prostředky, vytvoří následující příkaz čtyři soubory: *MyApp.Il*, *MyApp. res*, *ikony.* Resources a *Message.* Resources:
 
 ```console
 ildasm MyApp.exe /output:MyApp.il
@@ -167,22 +167,22 @@ Následující příkaz zpětně přeloží metodu `MyMethod` v rámci třídy `
 ildasm /item:MyClass::MyMethod MyFile.exe /text
 ```
 
-V předchozím příkladu, může být několik metod pojmenovaných `MyMethod` s různými signaturami. Následující příkaz zpětně přeloží metodu instance `MyMethod` s návratovým typem **void** a typy parametrů **int32** a **řetězec**.
+V předchozím příkladu může existovat několik metod s názvem `MyMethod` s různými podpisy. Následující příkaz zpětně přeloží `MyMethod` metodu instance s návratovým typem **void** a typy parametrů **Int32** a **String**.
 
 ```console
 ildasm /item:"MyClass::MyMethod(instance void(int32,string)" MyFile.exe /text
 ```
 
 > [!NOTE]
-> V rozhraní .NET Framework verze 1.0 a 1.1, levá závorka metody název musí být s vyrovnáváním pravou závorkou za signaturou: `MyMethod(instance void(int32))`. Od verze rozhraní .NET Framework 2.0 pravou závorkou musí být vynechána: `MyMethod(instance void(int32)`.
+> V .NET Framework verzích 1,0 a 1,1 musí být levá závorka, která následuje za názvem metody, vyrovnávána pravou závorkou za signaturou: `MyMethod(instance void(int32))`. Počínaje .NET Framework 2,0 musí být uzavírací závorka vynechána: `MyMethod(instance void(int32)`.
 
-K načtení `static` – metoda (`Shared` metody v jazyce Visual Basic), vynechejte klíčové slovo `instance`. Typy, které nejsou primitivními typy jako třídy `int32` a `string` musí obsahovat obor názvů a musí být předcházen klíčového slova `class`. Před externími typy musí být uveden název knihovny v hranatých závorkách. Následující příkaz zpětně přeloží statickou metodu pojmenovanou `MyMethod` , který má jeden parametr typu <xref:System.AppDomain> a má typ vrácené hodnoty <xref:System.AppDomain>.
+Chcete-li `static` načíst metodu`Shared` (metodu v Visual Basic), vynechejte `instance`klíčové slovo. Typy tříd, které nejsou primitivní typy jako `int32` a `string` musí obsahovat obor názvů a musí předcházet klíčové slovo `class`. Před externími typy musí být uveden název knihovny v hranatých závorkách. Následující příkaz zpětně přeloží statickou metodu s názvem `MyMethod` , která má jeden parametr typu <xref:System.AppDomain> a <xref:System.AppDomain>má návratový typ.
 
 ```console
 ildasm /item:"MyClass::MyMethod(class [mscorlib]System.AppDomain(class [mscorlib]System.AppDomain)" MyFile.exe /text
 ```
 
-Před vnořeným typem musí být uvedena třída, která jej obsahuje, oddělená lomítkem. Například pokud `MyNamespace.MyClass` třída obsahuje vnořenou třídu pojmenovanou `NestedClass`, vnořená třída identifikována takto: `class MyNamespace.MyClass/NestedClass`.
+Před vnořeným typem musí být uvedena třída, která jej obsahuje, oddělená lomítkem. Například pokud `MyNamespace.MyClass` třída obsahuje vnořenou třídu s názvem `NestedClass`, vnořená třída je identifikována takto: `class MyNamespace.MyClass/NestedClass`.
 
 ## <a name="see-also"></a>Viz také:
 

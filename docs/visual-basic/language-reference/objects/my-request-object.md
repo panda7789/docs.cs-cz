@@ -1,5 +1,5 @@
 ---
-title: My.Request – objekt (Visual Basic)
+title: My. Request – objekt (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - My.MyWebExtension.Request
@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - My.Request object
 ms.assetid: 93d5f0e2-6b60-4a2c-8652-d90216f6ad10
-ms.openlocfilehash: 08212dc5fe563ce84be02ab706b56195a0636894
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: da17872acb839cdcdfa7f80c3f58f26dc25d0ab5
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788632"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567472"
 ---
 # <a name="myrequest-object"></a>My.Request – objekt
-Získá <xref:System.Web.HttpRequest> objekt pro požadovanou stránku.  
+<xref:System.Web.HttpRequest> Získá objekt pro požadovanou stránku.  
   
 ## <a name="remarks"></a>Poznámky  
- `My.Request` Objekt obsahuje informace o aktuální žádosti HTTP.  
+ `My.Request` Objekt obsahuje informace o aktuálním požadavku HTTP.  
   
  `My.Request` Objekt je k dispozici pouze pro aplikace ASP.NET.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad získá kolekci hlaviček z `My.Request` a použije `My.Response` objekt k zápisu na stránku ASP.NET.  
+ Následující příklad získá kolekci hlaviček z `My.Request` objektu a `My.Response` použije objekt k jeho zápisu na stránku ASP.NET.  
   
- [!code-vb[VbVbalrMyWeb#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWeb/VB/Default.aspx#1)]  
+ [!code-aspx-vb[VbVbalrMyWeb#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWeb/VB/Default.aspx#1)]  
   
 ## <a name="see-also"></a>Viz také:
 

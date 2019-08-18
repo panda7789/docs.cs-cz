@@ -8,62 +8,62 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b093f9bb633578cc0051cfca7b1362f8bf097d7
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 67b9b48587802b43e90a7f35ab8cbb3b2ee025b0
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662450"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567262"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe
 
-Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:
+Existují dva způsoby, jak vytvořit primární definiční sestavení:
 
-- Použití [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) poskytované Windows Software Development Kit (SDK).
+- Použití nástroje pro [Import knihovny typů (Tlbimp. exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) , který poskytuje Windows SDK.
 
-  Nejjednodušší způsob, jak vytvořit primárních sestavení vzájemné spolupráce je použít [Tlbimp.exe (Importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Tlbimp.exe obsahuje následující bezpečnostní opatření:
+  Nejjednodušším způsobem, jak vydávat primární spolupracující sestavení, je použití nástroje [Tlbimp. exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Nástroj Tlbimp. exe poskytuje následující záruky:
 
-  - Vyhledá další registrovaných primárních spolupracujících sestavení před vytvořením nového sestavení vzájemné spolupráce pro všechny odkazy na knihovnu vnořeného typu.
+  - Kontroluje další registrovaná sestavení primární spolupráce před vytvořením nových definičních sestavení pro všechny vnořené odkazy knihovny typů.
 
-  - Pokud nezadáte, kontejneru nebo souboru název primárního spolupracujícího sestavení silným názvem generování primárních sestavení vzájemné spolupráce se nezdaří.
+  - Nepovedlo se vygenerovat primární definiční sestavení, pokud nezadáte buď kontejner, nebo název souboru, aby bylo primární sestavení vzájemné spolupráce silného názvu.
 
-  - Generování primárních sestavení vzájemné spolupráce vynecháte odkazy na závislé sestavení se nezdaří.
+  - Při vynechání odkazů na závislá sestavení se nepovedlo vygenerovat primární definiční sestavení.
 
-  - Generování primárního spolupracujícího sestavení, pokud přidáte odkazy na závislé sestavení, které nejsou primární spolupracující sestavení se nezdaří.
+  - Pokud přidáte odkazy na závislá sestavení, která nejsou sestaveními primární spolupráce, nemusíte vygenerovat primární definiční sestavení.
 
-- Ruční vytváření primárních sestavení vzájemné spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní s specifikace CLS (Common Language), jako například C#. Tento přístup je užitečný, pokud knihovna typů není k dispozici.
+- Ruční vytváření sestavení primární spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní se specifikací CLS (Common Language Specification), jako je C#například. Tento přístup je užitečný v případě, že knihovna typů není k dispozici.
 
-Musíte mít pár kryptografických klíčů k podepsání sestavení silným názvem. Podrobnosti najdete v tématu [vytváření dvojice klíč A](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md).
+Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Podrobnosti najdete v tématu [Vytvoření páru klíčů](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md).
 
-### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Chcete-li vygenerovat primární sestavení vzájemné spolupráce pomocí Tlbimp.exe
+### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Generování primárního definičního sestavení pomocí nástroje Tlbimp. exe
 
 1. V příkazovém řádku zadejte příkaz:
 
-    **Tlbimp** *tlbfile* **/primary/keyfile:** *filename* **/out:** *assemblyname*
+    **Tlbimp** *tlbfile* **/Primary/keyfile:** *název souboru* **/out:** *AssemblyName*
 
-    V tomto příkazu *tlbfile* je soubor, který obsahuje knihovnu typů modelu COM *filename* je název kontejneru nebo souboru, který obsahuje pár klíčů a *assemblyname* je název sestavení podepsáno pomocí silného názvu.
+    V tomto příkazu je *tlbfile* soubor obsahující knihovnu typů modelu COM, název *souboru* je název kontejneru nebo souboru, který obsahuje dvojici klíčů, a *AssemblyName* je název sestavení pro podepsání silným názvem.
 
-Primární spolupracující sestavení může odkazovat jenom jiných primárních sestavení vzájemné spolupráce. Pokud vaše sestavení používá odkazy na typy v knihovně typů modelu COM třetích stran, musíte získat primární spolupracující sestavení od vydavatele předtím, než můžete vygenerovat primární definiční sestavení. Pokud jste vydavatel, budete muset vygenerovat primární spolupracující sestavení pro závislou typovou knihovnu před generováním odkazující sestavení primární spolupráce.
+Primární spolupracující sestavení můžou odkazovat jenom na jiná primární spolupracující sestavení. Pokud vaše sestavení odkazuje na typy z knihovny typů modelu COM třetí strany, je nutné získat primární definiční sestavení od vydavatele před tím, než bude možné vygenerovat vaše primární definiční sestavení. Pokud jste Vydavatel, je nutné před generováním odkazujícího primárního sestavení vzájemné spolupráce vygenerovat primární definiční sestavení pro závislou knihovnu typů.
 
-Závislé primárního spolupracujícího sestavení s číslem verze, která se liší od původní knihovna typů není zjistitelné při instalaci v aktuálním adresáři. Musíte zaregistrovat závislé sestavení primární spolupráce v registru Windows nebo použít **/reference** možnost, abyste měli jistotu, že Tlbimp.exe najde závislá knihovna DLL.
+Závislé primární sestavení vzájemné spolupráce s číslem verze, které se liší od původní knihovny typů, není zjistitelné, když je nainstalován v aktuálním adresáři. Je nutné buď zaregistrovat závislé primární definiční sestavení v registru systému Windows, nebo použít možnost **/reference** a ověřit, zda nástroj Tlbimp. exe najde závislou knihovnu DLL.
 
-Můžete také zabalit několik verzí knihovny typů. Pokyny najdete v tématu [jak: Sbalení více verzí knihoven typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
+Můžete také zabalit více verzí knihovny typů. Pokyny najdete v tématu [postup: Zabalte více verzí knihoven](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100))typů.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad importuje knihovna typů COM `LibUtil.tlb` a podepíše sestavení `LibUtil.dll` se silným názvem pomocí souboru s klíči `CompanyA.snk`. Vynecháním názvu konkrétní obor názvů, tento příklad vytvoří výchozí obor názvů `LibUtil`.
+Následující příklad importuje knihovnu `LibUtil.tlb` typů modelu COM a podepíše sestavení `LibUtil.dll` se silným názvem pomocí souboru `CompanyA.snk`klíče. Vynecháte-li konkrétní název oboru názvů, tento příklad vytvoří výchozí obor `LibUtil`názvů.
 
 ```
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /out:LibUtil.dll
 ```
 
-Pro více popisný název (pomocí *podporovány*. *NázevKnihovny* pojmenování obecných zásad), tento příklad přepíše výchozí název souboru sestavení a název oboru názvů.
+Pro výstižnější název (pomocí *dodavatele*. *Název knihovny* – zásady pojmenování: v následujícím příkladu je popsán výchozí název souboru sestavení a název oboru názvů.
 
 ```
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /namespace:CompanyA.LibUtil /out:CompanyA.LibUtil.dll
 ```
 
-Následující příklad importuje `MyLib.tlb`, který se odkazuje na `CompanyA.LibUtil.dll`, a podepíše sestavení `CompanyB.MyLib.dll` se silným názvem pomocí souboru s klíči `CompanyB.snk`. Obor názvů, `CompanyB.MyLib`, přepíše výchozí název oboru názvů.
+Následující příklad importuje `MyLib.tlb`, který odkazuje `CompanyA.LibUtil.dll`a podepíše sestavení `CompanyB.MyLib.dll` silným názvem pomocí souboru `CompanyB.snk`klíče. Obor názvů `CompanyB.MyLib`přepíše výchozí název oboru názvů.
 
 ```
 tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /reference:CompanyA.LibUtil.dll /out:CompanyB.MyLib.dll
@@ -71,4 +71,4 @@ tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /refer
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Registrace primárních sestavení spolupráce](../../../docs/framework/interop/how-to-register-primary-interop-assemblies.md)
+- [Postupy: Registrovat primární spolupracující sestavení](../../../docs/framework/interop/how-to-register-primary-interop-assemblies.md)

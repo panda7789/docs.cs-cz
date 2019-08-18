@@ -2,18 +2,18 @@
 title: <add> z <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: cf7b5b75-63bd-49a6-abac-4bfdab377e36
-ms.openlocfilehash: 7e65b66170465a8b3bb60754feebb7730b959d9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32eff2e7bfdf1aee4c7d37a0e06166afba3cb398
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673664"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566745"
 ---
-# <a name="add-of-namespacetable"></a>\<Přidat > z \<namespaceTable >
-Představuje prvek konfigurace, který obsahuje obor názvů k mapování předpon, které lze použít ve filtrech XPath pro směrování.  
+# <a name="add-of-namespacetable"></a>\<Přidání > \<> oboru názvů
+Představuje prvek konfigurace, který obsahuje obor názvů pro mapování předpon, které lze následně použít ve filtrech XPath pro směrování.  
   
  \<system.serviceModel>  
-\<směrování >  
+\<> směrování  
 \<namespaceTable>  
 \<add>  
   
@@ -28,9 +28,6 @@ Představuje prvek konfigurace, který obsahuje obor názvů k mapování předp
 </routing>
 ```  
   
-```csharp  
-```  
-  
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
@@ -39,7 +36,7 @@ Představuje prvek konfigurace, který obsahuje obor názvů k mapování předp
 |Atribut|Popis|  
 |---------------|-----------------|  
 |– obor názvů|Řetězec obsahující obor názvů.|  
-|Předpona|Řetězec obsahující předponu pro tento obor názvů.|  
+|prefix|Řetězec obsahující předponu pro tento obor názvů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,7 +45,7 @@ Představuje prvek konfigurace, který obsahuje obor názvů k mapování předp
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namespaceTable>](../../../../../docs/framework/configure-apps/file-schema/wcf/namespacetable.md)|Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze použít ve filtrech XPath pro směrování.|  
+|[\<namespaceTable>](../../../../../docs/framework/configure-apps/file-schema/wcf/namespacetable.md)|Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze následně použít ve filtrech XPath pro směrování.|  
   
 ## <a name="see-also"></a>Viz také:
 

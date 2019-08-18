@@ -12,35 +12,35 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 858d651523ac6196aa2dcad008ea53674eb01b04
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 37c6e87ea50f3978bb896c7896a41b2faa9798bc
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832844"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566978"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
-Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje mezipaměť kódu celého stroje názvem do globální mezipaměti sestavení. Global Assembly Cache ukládá sestavení speciálně určené ke sdílení více aplikacemi v počítači.  
+Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runtime), má mezipaměť kódu v celém počítači nazývanou globální mezipaměť sestavení (GAC). Globální mezipaměť sestavení ukládá sestavení speciálně určená pro sdílení několika aplikacemi v počítači.  
   
- Sestavení by měly sdílet prostřednictvím instalace pouze v případě, že budete muset do globální mezipaměti sestavení. V rámci obecných pokynů udržujte soukromé závislosti sestavení a vyhledání sestavení v adresáři aplikace, pokud sdílení sestavení není explicitně vyžadováno. Kromě toho není nutné pro instalaci sestavení do globální mezipaměti sestavení zajistíte jejich přístupnost COM interop nebo nespravovaného kódu.  
+ Sestavení byste měli sdílet tak, že je nainstalujete do globální mezipaměti sestavení (GAC) pouze v případě, že potřebujete. V rámci obecných pokynů, udržujte závislosti sestavení soukromě a vyhledejte sestavení v adresáři aplikace, pokud není explicitně požadováno sdílení sestavení. Kromě toho není nutné instalovat sestavení do globální mezipaměti sestavení (GAC), aby je bylo možné zpřístupnit pro zprostředkovatele komunikace s objekty COM nebo nespravovaný kód.  
   
 > [!NOTE]
->  Existují scénáře, ve kterém můžete explicitně nechcete, aby instalace sestavení do globální mezipaměti sestavení. Pokud umístíte jednoho sestavení, které tvoří aplikaci v globální mezipaměti sestavení, můžete už replikovat nebo instalaci aplikace s použitím **xcopy** příkazu kopírování adresáře aplikace. Sestavení je nutné přesunout i globální mezipaměti sestavení.  
+>  Existují situace, kdy explicitně nechcete instalovat sestavení do globální mezipaměti sestavení (GAC). Pokud umístíte jedno ze sestavení, které tvoří aplikaci v globální mezipaměti sestavení (GAC), již nelze replikovat nebo nainstalovat aplikaci pomocí příkazu **xcopy** pro zkopírování adresáře aplikace. Je nutné přesunout sestavení také v globální mezipaměti sestavení (GAC).  
   
- Existují dva způsoby, jak nasadit sestavení do globální mezipaměti sestavení:  
+ Existují dva způsoby, jak nasadit sestavení do globální mezipaměti sestavení (GAC):  
   
-- Pomocí instalačního programu navržené pro práci s globální pamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení.  
+- Použijte instalační program navržený pro práci s globální mezipamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení (GAC).  
   
-- Použijte nástroj pro vývojáře, volá se, [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), k dispozici ve Windows Software Development Kit (SDK).  
+- Použijte vývojářský nástroj nazvaný [Global Assembly Cache (Gacutil. exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), který poskytuje Windows SDK.  
   
     > [!NOTE]
-    >  Ve scénářích nasazení použijte instalační služby systému Windows pro instalaci sestavení do globální mezipaměti sestavení. Použijte nástroj Global Assembly Cache pouze ve vývojové scénáře, protože neposkytuje počítání odkazů sestavení a další funkce, které poskytuje při použití Instalační služby systému Windows.  
+    >  V rámci scénářů nasazení použijte Instalační služba systému Windows k instalaci sestavení do globální mezipaměti sestavení (GAC). Použijte nástroj globální mezipaměť sestavení (GAC) pouze ve scénářích vývoje, protože neposkytuje počítání odkazů na sestavení a další funkce, které jsou k dispozici při použití Instalační služba systému Windows.  
   
- Od verze rozhraní .NET Framework 4, výchozím umístěním pro globální mezipaměť sestavení je **%windir%\Microsoft.NET\assembly**. V dřívějších verzích rozhraní .NET Framework, výchozí umístění je **%windir%\assembly**.  
+ Počínaje .NET Framework 4 je výchozí umístění pro globální mezipaměť sestavení **%windir%\Microsoft.NET\assembly**. V dřívějších verzích .NET Framework je výchozí umístění **%windir%\assembly**.  
   
- Správci často chrání pomocí seznam řízení přístupu (ACL) pro řízení zápisu a přístup pro spouštění kořenovou složku. Protože je nainstalována do globální mezipaměti sestavení v podadresáři kořenového adresáře dědí seznamu ACL tohoto adresáře. Doporučuje se, že pouze uživatelé s oprávněními správce bude moct odstranit soubory z globální mezipaměti sestavení.  
+ Správci často chrání adresář kořenová_složka_systému pomocí seznamu řízení přístupu (ACL) k řízení přístupu pro zápis a spouštění. Vzhledem k tomu, že je globální mezipaměť sestavení (GAC) nainstalovaná v podadresáři kořenové složky adresáře, zdědí seznam ACL tohoto adresáře. Doporučujeme, aby odstraňování souborů z globální mezipaměti sestavení bylo povoleno pouze uživatelům s oprávněními správce.  
   
- Sestavení, které jsou nasazené v globální mezipaměti sestavení musí mít silný název. Pokud je sestavení přidáno do globální mezipaměti sestavení, kontroly integrity probíhají na všechny soubory, které tvoří sestavení. Mezipaměť provádí tyto kontroly integrity zajistit, že sestavení nebylo manipulováno, například když došlo ke změně souboru, ale manifest neodráží změny.  
+ Sestavení nasazená v globální mezipaměti sestavení (GAC) musí mít silný název. Když je sestavení přidáno do globální mezipaměti sestavení (GAC), kontroly integrity se provádí na všech souborech, které tvoří sestavení. Mezipaměť provádí tyto kontroly integrity, aby bylo zajištěno, že sestavení nebylo manipulováno, například když došlo ke změně souboru, ale manifest neodráží změnu.  
   
 ## <a name="see-also"></a>Viz také:
 

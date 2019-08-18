@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: f1f37e61917e8331b06d91e6abebfe4ce3288e7c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: HT
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "67803493"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69564348"
 ---
 ### <a name="managed-cryptography-classes-do-not-throw-a-cryptographyexception-in-fips-mode"></a>Spravované kryptografické třídy nevyvolávají výjimku CryptographyException v režimu FIPS.
 

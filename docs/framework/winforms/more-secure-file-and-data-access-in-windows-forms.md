@@ -13,46 +13,46 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 8ad64ddcb25aa7037e30ad0618d16d654d9855d6
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 3389261fe9ed3d1653b92c90419033380a403387
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487253"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567410"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
-Rozhraní .NET Framework používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
+.NET Framework používá oprávnění, která vám pomůžou chránit prostředky a data. Kde vaše aplikace může číst nebo zapisovat data, závisí na oprávněních udělených aplikaci. Pokud vaše aplikace běží v prostředí s částečným vztahem důvěryhodnosti, možná nemáte přístup k vašim datům nebo možná budete muset změnit způsob, jakým přistupujete k datům.  
   
- Pokud narazíte na omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že bylo uděleno pro vaši aplikaci) nebo verze operačního systému funkce napsané pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s souboru, database a přístup k registru z aplikací, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
+ Pokud narazíte na omezení zabezpečení, máte dvě možnosti: vyhodnotit oprávnění (za předpokladu, že byla aplikace udělena), nebo použít verzi funkce zapsanou pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s přístupem k souborům, databázím a registrům z aplikací, které běží v prostředí s částečným vztahem důvěryhodnosti.  
   
 > [!NOTE]
->  Ve výchozím nastavení nástroje, které generují nasazení ClickOnce ve výchozím nastavení tato nasazení s vyžádáním plné důvěryhodnosti z počítače, na kterých se používají. Pokud se rozhodnete, že chcete výhody vyššího zabezpečení provozu v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jedním z nástrojů Windows Software Development Kit (SDK) (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md).  
+>  Ve výchozím nastavení nástroje, které generují nasazení ClickOnce, jsou ve výchozím nastavení tato nasazení, aby požadovaly úplný vztah důvěryhodnosti z počítačů, ve kterých jsou spuštěny. Pokud se rozhodnete, že chcete přidané výhody zabezpečení spouštět v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení buď v aplikaci Visual Studio, nebo v některém z Windows SDKch nástrojů (Mage. exe nebo MageUI. exe). Další informace o zabezpečení model Windows Forms a o tom, jak určit odpovídající úroveň důvěryhodnosti pro vaši aplikaci, najdete v tématu [zabezpečení v model Windows Forms přehledu](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
- <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v rozhraní .NET Framework. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečným vztahem důvěryhodnosti, jako je místní intranet a Internet zóny. Aplikace, která vyžaduje přístup k souborům lze však i nadále fungovat v těchto prostředích je-li upravit návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení zóny místního intranetu je uděleno právo mít stejný přístup k serveru a stejný přístup adresáře pro připojení zpět k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení zóně Internet, je pouze uděleno právo na zpětné připojení k původnímu serveru.  
+ <xref:System.Security.Permissions.FileIOPermission> Třída řídí přístup k souborům a složkám v .NET Framework. Ve výchozím nastavení systém zabezpečení neuděluje <xref:System.Security.Permissions.FileIOPermission> do prostředí s částečnou důvěryhodností, jako jsou místní intranet a zóny Internet. Aplikace, která vyžaduje přístup k souborům, ale v těchto prostředích můžou pořád fungovat, pokud upravíte návrh aplikace nebo pro přístup k souborům použijete jiné metody. Ve výchozím nastavení má zóna Místní intranet právo mít stejný přístup k webu a stejný přístup k adresáři, aby se mohl připojit zpátky k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení je v zóně Internet uděleno právo na zpětné připojení k původnímu serveru.  
   
 ### <a name="user-specified-files"></a>Soubory zadané uživatelem  
- Jeden ze způsobů, jak zacházet s nemají přístup k souborům oprávnění je vyzvat uživatele k zadání určitých informací o souboru s použitím <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog> třídy. Tato interakce uživatele pomáhá poskytovat některé záruku, že aplikace nelze speciálně načíst soukromé soubory nebo přepsat důležitých souborů. <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> a <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> metody poskytují přístup čtení a zápis souboru otevřením souboru datového proudu souboru, který uživatel zadal. Metody také pomáhají chránit uživatele souboru zakódováním cestě k souboru.  
+ Jedním ze způsobů, jak se zabývat neoprávněným oprávněním k přístupu k souborům, je vyzvat uživatele k <xref:System.Windows.Forms.OpenFileDialog> zadání <xref:System.Windows.Forms.SaveFileDialog> konkrétních informací o souboru pomocí třídy nebo. Tato interakce uživatele pomáhá zajistit určitou jistotu, že aplikace nemůže škodlivým způsobem načíst soukromé soubory nebo přepsat důležité soubory. Metody <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> a<xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> poskytují přístup pro čtení a zápis souborů otevřením datového proudu souboru pro soubor, který zadal uživatel. Metody také pomůžou chránit soubor uživatele tím, že zakrývá cestu k souboru.  
   
 > [!NOTE]
->  Tato oprávnění se liší v závislosti na tom, zda je vaše aplikace v zóně Internet nebo intranet. Internetové zóně aplikace lze použít pouze <xref:System.Windows.Forms.OpenFileDialog>, že intranetové aplikace mít stejně neomezený souboru dialogové okno oprávnění.  
+>  Tato oprávnění se liší v závislosti na tom, jestli je vaše aplikace v zóně Internet nebo intranetu. Aplikace internetové zóny můžou používat <xref:System.Windows.Forms.OpenFileDialog>jenom, zatímco intranetové aplikace mají oprávnění dialogové okno neomezený soubor.  
   
- <xref:System.Security.Permissions.FileDialogPermission> Třída určuje, jaký typ dialogového okna souboru může vaše aplikace použít. Následující tabulka uvádí hodnota musí mít použití každé <xref:System.Windows.Forms.FileDialog> třídy.  
+ <xref:System.Security.Permissions.FileDialogPermission> Třída určuje, jaký typ dialogového okna soubor může vaše aplikace používat. V následující tabulce je uvedena hodnota, kterou je nutné použít pro <xref:System.Windows.Forms.FileDialog> použití jednotlivých tříd.  
   
-|Třída|Hodnota požadovaný přístup|  
+|Třída|Požadovaná přístupová hodnota|  
 |-----------|---------------------------|  
 |<xref:System.Windows.Forms.OpenFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Open>|  
 |<xref:System.Windows.Forms.SaveFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Save>|  
   
 > [!NOTE]
->  Konkrétní oprávnění není požadována až <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> skutečně volání metody.  
+>  Konkrétní oprávnění není vyžadováno, dokud <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> není metoda skutečně volána.  
   
- Oprávnění k zobrazení dialogového okna souboru neuděluje vaše aplikace úplné přístup do všech členů <xref:System.Windows.Forms.FileDialog>, <xref:System.Windows.Forms.OpenFileDialog>, a <xref:System.Windows.Forms.SaveFileDialog> třídy. Konkrétní oprávnění, které jsou nutné pro volání jednotlivých metod naleznete v tématu odkaz pro danou metodu v dokumentaci knihovny tříd rozhraní .NET Framework.  
+ Oprávnění k zobrazení dialogového okna soubor neuděluje vaší aplikaci úplný přístup ke všem členům <xref:System.Windows.Forms.FileDialog>tříd, <xref:System.Windows.Forms.OpenFileDialog>a <xref:System.Windows.Forms.SaveFileDialog> . Přesné oprávnění, která jsou vyžadována pro volání jednotlivých metod, naleznete v referenčním tématu pro danou metodu v dokumentaci knihovny tříd .NET Framework.  
   
- Následující příklad kódu používá <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metody k otevření souboru zadaného uživatelem do <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. V příkladu vyžaduje <xref:System.Security.Permissions.FileDialogPermission> a přidružené <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> hodnota výčtu. Tento příklad ukazuje, jak zpracovat <xref:System.Security.SecurityException> k určení, zda uložit funkce by mělo být zakázáno. Tento příklad vyžaduje, aby vaše <xref:System.Windows.Forms.Form> má <xref:System.Windows.Forms.Button> ovládací prvek s názvem `ButtonOpen`a <xref:System.Windows.Forms.RichTextBox> ovládací prvek s názvem `RtfBoxMain`.  
+ Následující příklad kódu používá <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metodu k otevření souboru zadaného uživatelem <xref:System.Windows.Forms.RichTextBox> do ovládacího prvku. Příklad vyžaduje <xref:System.Security.Permissions.FileDialogPermission> a přidruženou <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> hodnotu výčtu. Příklad ukazuje, jak zpracovat, <xref:System.Security.SecurityException> aby bylo možné zjistit, zda by měla být funkce Uložit zakázána. Tento příklad vyžaduje, aby <xref:System.Windows.Forms.Form> <xref:System.Windows.Forms.Button> měl `ButtonOpen` `RtfBoxMain`ovládací prvek s názvem a ovládacíprveksnázvem.<xref:System.Windows.Forms.RichTextBox>  
   
 > [!NOTE]
->  Programovou logiku pro uložení není funkce ukazuje příklad.  
+>  V tomto příkladu není zobrazená logika programování pro funkci uložit.  
   
 ```vb  
 Private Sub ButtonOpen_Click(ByVal sender As System.Object, _  
@@ -133,12 +133,12 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ```  
   
 > [!NOTE]
->  V jazyce Visual C#, ujistěte se, že přidáte kód pro povolení obslužné rutiny události. S použitím kódu z předchozího příkladu, následující kód ukazuje, jak povolit obslužné rutiny události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
+>  V vizuálu C#se ujistěte, že přidáte kód pro povolení obslužné rutiny události. Pomocí kódu z předchozího příkladu následující kód ukazuje, jak povolit obslužnou rutinu události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
   
-### <a name="other-files"></a>Další soubory  
- Někdy můžete potřebovat pro čtení nebo zápis do souborů, že uživatel není zadán, například když musíte zachovat nastavení aplikace. V místní intranet a Internet zóny vaše aplikace nebude mít oprávnění k ukládání dat do místního souboru. Ale aplikace bude moct ukládání dat v izolovaném úložišti. Izolované úložiště je abstraktní datové přihrádky (nikoli specifickým umístěním úložiště), který obsahuje jeden nebo více souborů izolovaného úložiště nazývají "úložiště", které obsahují umístění skutečného adresáře, kde jsou uložená data. Soubor přístupová oprávnění jako <xref:System.Security.Permissions.FileIOPermission> nejsou povinné; místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> třídy řídí oprávnění pro izolované úložiště. Ve výchozím nastavení aplikace, které jsou spuštěny v místním intranetu a Internetu zóny může ukládat data pomocí izolované úložiště. nastavení, jako je disková kvóta se však může lišit. Další informace o izolovaného úložiště naleznete v tématu [izolovaného úložiště](../../standard/io/isolated-storage.md).  
+### <a name="other-files"></a>Jiné soubory  
+ Někdy budete muset číst soubory nebo zapisovat do souborů, které uživatel nezadá, například když musíte zachovat nastavení aplikace. V zóně Místní intranet a Internet nebude vaše aplikace mít oprávnění ukládat data do místního souboru. Vaše aplikace však bude moci ukládat data v izolovaném úložišti. Izolované úložiště je abstraktní datové pole (nejedná se o konkrétní umístění úložiště), které obsahuje jeden nebo víc souborů izolovaného úložiště nazývaných obchody, které obsahují skutečná umístění adresářů, kde jsou data uložená. Nevyžadují <xref:System.Security.Permissions.FileIOPermission> se oprávnění k přístupu k souboru. místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> určuje třída oprávnění pro izolované úložiště. Ve výchozím nastavení můžou aplikace, které běží v místních intranetech a zónách Internetu, ukládat data pomocí izolovaného úložiště; nastavení, jako je disková kvóta, se ale může lišit. Další informace o izolovaném úložišti najdete v tématu [izolované úložiště](../../standard/io/isolated-storage.md).  
   
- Následující příklad používá k zápisu dat do souboru, který je umístěn v úložišti izolovaného úložiště. V příkladu vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> a <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> hodnota výčtu. Příklad ukazuje, čtení a zápis do určité hodnoty vlastností <xref:System.Windows.Forms.Button> ovládacího prvku do souboru v izolovaném úložišti. `Read` Funkce by byla volána po spuštění aplikace a `Write` funkce by byla volána před ukončením aplikace. V příkladu vyžaduje, aby `Read` a `Write` funkce existovat jako členy <xref:System.Windows.Forms.Form> , která obsahuje <xref:System.Windows.Forms.Button> ovládací prvek s názvem `MainButton`.  
+ Následující příklad používá izolované úložiště k zápisu dat do souboru umístěného v úložišti. Příklad vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> a hodnotu výčtu. Příklad ukazuje čtení a zápis určitých hodnot <xref:System.Windows.Forms.Button> vlastností ovládacího prvku do souboru v izolovaném úložišti. Funkce by byla volána po spuštění aplikace `Write` a funkce by byla volána před ukončením aplikace. `Read` `Read` Příklad vyžaduje, aby funkce a `Write` existovaly jako členové typu <xref:System.Windows.Forms.Form> , který obsahuje <xref:System.Windows.Forms.Button> ovládací prvek s `MainButton`názvem.  
   
 ```vb  
 ' Reads the button options from the isolated storage. Uses Default values   
@@ -349,14 +349,14 @@ public void Write()
 ```  
   
 ## <a name="database-access"></a>Přístup k databázi  
- Oprávnění potřebná pro přístup k databázi se liší v závislosti na poskytovateli databáze; jenom aplikace, které jsou spuštěny s příslušnými oprávněními ale může přístup k databázi prostřednictvím datového připojení. Další informace o oprávněních, které jsou nutné pro přístup k databázi, naleznete v tématu [zabezpečení přístupu kódu a ADO.NET](../data/adonet/code-access-security.md).  
+ Oprávnění požadovaná pro přístup k databázi se liší v závislosti na poskytovateli databáze. přístup k databázi prostřednictvím datového připojení však mají pouze aplikace, které jsou spuštěny s příslušnými oprávněními. Další informace o oprávněních, která jsou nutná pro přístup k databázi, najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../data/adonet/code-access-security.md).  
   
- Pokud databáze nemůžete použít přímo, protože chcete, aby aplikace na spouštění v částečném vztahu důvěryhodnosti, můžete použít webovou službu, jako alternativu znamená, že přístup k datům. Webové služby je software, který můžete programově přistupovat přes síť. U webových služeb mohou aplikace sdílet data napříč zónami skupiny kódu. Ve výchozím nastavení aplikace v místním intranetu a Internetu zóny jsou udělena oprávnění k přístupu k jejich lokality původ, odkud můžou k volání webové služby hostované na stejném serveru. Další informace najdete v části [webové služby v technologii ASP.NET AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100)) nebo [Windows Communication Foundation](../wcf/index.md).  
+ Pokud nemůžete získat přímý přístup k databázi, protože chcete, aby se vaše aplikace spouštěla v částečném vztahu důvěryhodnosti, můžete pro přístup k datům použít webovou službu jako alternativní způsob. Webová služba je softwarový software, ke kterému se dá programově přistupovat přes síť. U webových služeb můžou aplikace sdílet data mezi zónami skupin kódu. Ve výchozím nastavení jsou aplikacím v místních intranetech a zónách Internetu udělen právo na přístup k jejich webům původu, což jim umožňuje volat webovou službu hostovanou na stejném serveru. Další informace najdete v tématu [webové služby v ASP.NET AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100)) nebo [Windows Communication Foundation](../wcf/index.md).  
   
 ## <a name="registry-access"></a>Přístup k registru  
- <xref:System.Security.Permissions.RegistryPermission> Třídy řídí přístup k registru operačního systému. Ve výchozím nastavení můžete pouze aplikace, které jsou spuštěné místně přístup k registru.  <xref:System.Security.Permissions.RegistryPermission> uděluje jenom aplikace právo zkuste přístup k registru; to nezaručuje, že přístup bude úspěšné, protože operační systém stále vynucuje zabezpečení v registru.  
+ <xref:System.Security.Permissions.RegistryPermission> Třída řídí přístup k registru operačního systému. Ve výchozím nastavení mají přístup k registru jenom aplikace, které jsou spuštěné místně.  <xref:System.Security.Permissions.RegistryPermission>udělí aplikaci oprávnění pouze k pokusu o přístup k registru. Nezaručujeme přístup úspěšně, protože operační systém stále vynutil zabezpečení registru.  
   
- Protože nelze získat přístup k registru v částečném vztahu důvěryhodnosti, budete muset najít jiné metody ukládání dat. Při ukládání nastavení aplikace používání izolovaného úložiště namísto registru. Izolované úložiště lze také ukládat další soubory specifické pro aplikaci. Můžete také ukládat informace o globální aplikace o server nebo server původu, protože ve výchozím nastavení aplikace jsou udělena oprávnění k přístupu k původnímu serveru.  
+ Vzhledem k tomu, že nemůžete získat přístup k registru s částečnou důvěryhodností, možná budete muset najít další metody ukládání dat. Při ukládání nastavení aplikace použijte místo registru izolované úložiště. Izolované úložiště lze také použít k ukládání jiných souborů specifických pro aplikaci. Můžete také uložit globální informace o aplikaci o serveru nebo webu původu, protože ve výchozím nastavení je aplikaci uděleno právo na přístup k webu svého původu.  
   
 ## <a name="see-also"></a>Viz také:
 

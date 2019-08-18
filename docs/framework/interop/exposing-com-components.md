@@ -8,40 +8,40 @@ helpviewer_keywords:
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4472adf2c309803d4d5ac57f3522cc260782d85
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 230853abf73a368bfcd8b88375c216fdadfc7d46
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833676"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567271"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework
-Tento oddíl shrnuje procesu nutné vystavit existující komponenty modelu COM pro spravovaný kód. Podrobnosti o vytváření serverů modelu COM, který úzce integrace s rozhraním .NET Framework, naleznete v tématu [aspekty návrhu pro spolupráci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100)).
+Tato část shrnuje proces potřebný k vystavení existující součásti modelu COM pro spravovaný kód. Podrobnosti o vytváření serverů COM, které úzce integrují s .NET Framework, najdete v tématu věnovaném [hlediskům návrhu pro](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))spoluprovozování.
   
- Střední vrstvy obchodní aplikace nebo jako izolované funkce stávající komponentami modelu COM jsou cenné prostředky ve spravovaném kódu. Ideální komponenta má primární sestavení zprostředkovatele komunikace a úzce odpovídá programovacím standardy stanovené modelu COM.  
+ Existující komponenty modelu COM jsou cenné prostředky ve spravovaném kódu jako obchodní aplikace střední vrstvy nebo jako izolované funkce. Ideální komponenta má primární spolupracující sestavení a je v souladu s požadavky na programování, které jsou uloženy v modelu COM.  
   
-#### <a name="to-expose-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework  
+#### <a name="to-expose-com-components-to-the-net-framework"></a>Vystavení komponent modelu COM pro .NET Framework  
   
-1. [Import knihovny typů jako sestavení,](importing-a-type-library-as-an-assembly.md).  
+1. [Importujte knihovnu typů jako sestavení](importing-a-type-library-as-an-assembly.md).  
   
-     Modul common language runtime požaduje metadata pro všechny typy, včetně typů modelu COM. Existuje několik způsobů, jak získat sestavení obsahující typy modelu COM importovat jako metadata.  
+     Modul CLR (Common Language Runtime) vyžaduje metadata pro všechny typy, včetně typů COM. Existuje několik způsobů, jak získat sestavení obsahující typy COM importované jako metadata.  
   
-2. [Použijte typy modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).  
+2. [Použijte typy com ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).  
   
-     Můžete kontrolovat typy modelu COM, aktivovat instance a volat metody u objektu COM stejným způsobem jako u jakékoli spravovaného typu.  
+     Můžete zkontrolovat typy modelu COM, aktivovat instance a vyvolat metody objektu COM stejným způsobem jako u libovolného spravovaného typu.  
   
-3. [Kompilace projektu interoperability](compiling-an-interop-project.md).  
+3. [Zkompilujte projekt interoperability](compiling-an-interop-project.md).  
   
-     Windows Software Development Kit (SDK) poskytuje pro několik jazyků kompatibilních s specifikace CLS (Common Language), včetně jazyka Visual Basic, kompilátory C#, a C++.  
+     Windows SDK poskytuje kompilátory pro několik jazyků kompatibilních se specifikací CLS (Common Language Specification), včetně Visual Basic, C#a C++.  
   
-4. [Nasazení aplikace spolupráce](deploying-an-interop-application.md).  
+4. [Nasazení aplikace spolupráce](deploying-an-interop-application.md)  
   
-     Spolupráce – aplikace se nejlépe nasadit jako [silným názvem](../app-domains/strong-named-assemblies.md), podepsaná sestavení v globální mezipaměti sestavení.  
+     Aplikace Interop jsou nejlépe nasazeny jako podepsaná sestavení v globální mezipaměti sestavení ( [silně](../app-domains/strong-named-assemblies.md)pojmenovaná).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Spolupráce s nespravovaným kódem](index.md)
-- [Aspekty návrhu pro spolupráci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
+- [Faktory návrhu pro spoluprovozování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
 - [Ukázka zprostředkovatele s objekty COM: klient .NET a server COM](com-interop-sample-net-client-and-com-server.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)
 - [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)

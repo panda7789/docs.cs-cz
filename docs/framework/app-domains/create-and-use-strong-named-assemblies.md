@@ -14,67 +14,67 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a3ba9b86a1611408f510098726ac49f543f8451
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 5dcdf6a88b12d12e67056657fd532dfa28c40299
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832872"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566813"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 
-Silný název se skládá z identity sestavení – jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je poskytnuta) – plus veřejného klíče a digitální podpis. Je vygenerován ze souboru sestavení pomocí odpovídajícího soukromého klíče. (Tento soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hash hodnoty všech souborů, které tvoří sestavení).
+Silný název se skládá z identity sestavení – jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je k dispozici) – plus veřejný klíč a digitální podpis. Je vygenerován ze souboru sestavení pomocí odpovídajícího privátního klíče. (Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, které tvoří sestavení.)
 
 > [!WARNING]
-> Nespoléhejte na silných názvů pro zabezpečení. Poskytují jedinečné identity.
+> Nespoléhá se na silné názvy zabezpečení. Poskytují pouze jedinečnou identitu.
 
-Sestavení se silným názvem lze použít pouze typy z jiných sestavení se silným názvem. V opačném případě by dojít k ohrožení integrity sestavení se silným názvem.
+Sestavení se silným názvem může používat pouze typy z jiných sestavení se silným názvem. V opačném případě by došlo k ohrožení integrity sestavení se silným názvem.
 
-## <a name="strong-name-scenario"></a>Scénář silným názvem
+## <a name="strong-name-scenario"></a>Scénář se silným názvem
 
-Následující scénář popisuje proces podepisování sestavení silným názvem a pozdější odkazování s tímto názvem.
+Následující scénář popisuje proces podepisování sestavení silným názvem a pozdějšího odkazování na něj tímto názvem.
 
-1. Sestavení A vytvoření se silným názvem pomocí jedné z následujících metod:
+1. Sestavení A je vytvořeno se silným názvem pomocí jedné z následujících metod:
 
-    - Použití vývojového prostředí, které podporuje vytváření silných názvů, jako je Visual Studio.
+    - Použití vývojového prostředí, které podporuje vytváření silných názvů, jako je například Visual Studio.
 
-    - Vytvoření páru kryptografických klíčů pomocí [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) a přiřazení páru klíčů pro sestavení pomocí kompilátoru příkazového řádku nebo [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Windows Software Development Kit (SDK) poskytuje Sn.exe a Al.exe.
+    - Vytvoření páru kryptografických klíčů pomocí [nástroje Strong Name (Sn. exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) a přiřazení páru klíčů k sestavení pomocí kompilátoru příkazového řádku nebo [linkeru sestavení (Al. exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Windows SDK poskytuje sn. exe i Al. exe.
 
-2. Vývojové prostředí nebo nástroj podepíše hodnota hash souboru, který obsahuje manifest sestavení s privátním klíčem pro vývojáře. Tento digitální podpis je uložen v přenosné spustitelné (PE) souboru, který obsahuje manifest sestavení A.
+2. Vývojové prostředí nebo nástroj podepíše hodnotu hash souboru obsahujícího manifest sestavení pomocí privátního klíče vývojáře. Tento digitální podpis je uložen v přenositelném spustitelném souboru (PE), který obsahuje manifest sestavení A.
 
-3. Sestavení B je příjemce sestavení A. Referenční části manifestu sestavení Assembly B obsahuje token, který představuje sestavení A veřejný klíč. Token je část veřejného klíče a používá místo vlastního klíče pro úsporu místa.
+3. Sestavení B je příjemcem sestavení A. Referenční oddíl manifestu sestavení B obsahuje token, který představuje veřejný klíč sestavení A. Token je část úplného veřejného klíče a používá se místo toho, aby ušetřil místo samotný klíč.
 
-4. Modul common language runtime ověří podpis silného názvu, když sestavení je umístěn v globální mezipaměti sestavení. Při vytváření vazby pomocí silného názvu v době běhu, modul common language runtime porovná s klíčem uloženým v manifestu sestavení B s klíč používaný ke generování silného názvu pro sestavení A. Pokud jsou splněné zabezpečení rozhraní .NET Framework a vazba úspěšná, sestavení Assembly B obsahuje záruku, že bylo neoprávněně manipulováno s bity sestavení a, že tyto bity skutečně pocházejí od vývojářů jazyka sestavení A.
+4. Modul CLR ověří podpis silného názvu, pokud je sestavení umístěno v globální mezipaměti sestavení (GAC). Při vytváření vazby pomocí silného názvu za běhu porovná modul common language runtime klíč uložený v manifestu sestavení B s klíčem použitým k vygenerování silného názvu pro sestavení A. Pokud jsou kontroly zabezpečení .NET Framework úspěšné a vazba je úspěšná, sestavení B zaručí, že bity sestavení A nebyly úmyslně manipulovány a že tyto bity skutečně pochází od vývojářů sestavení A.
 
 > [!NOTE]
-> Tento scénář nezabývá problémy s důvěryhodností. Sestavení mohou obsahovat úplnou signatur Microsoft Authenticode kromě silným názvem. Podpisů Authenticode selhalo zahrnout certifikát, který vytváří vztah důvěryhodnosti. Je důležité si uvědomit, že silné názvy nevyžadují kód tímto způsobem podepsat. Silné názvy poskytují jenom jedinečné identity.
+> Tento scénář neřeší problémy důvěryhodnosti. Sestavení mohou mít kromě silného názvu také úplné signatury technologie Microsoft Authenticode. Podpisy Authenticode obsahují certifikát, který vytváří vztah důvěryhodnosti. Je důležité si uvědomit, že silné názvy nevyžadují, aby byl kód podepsán tímto způsobem. Silné názvy poskytují pouze jedinečnou identitu.
 
-## <a name="bypass-signature-verification-of-trusted-assemblies"></a>Obejít ověřování podpisů důvěryhodných sestavení
+## <a name="bypass-signature-verification-of-trusted-assemblies"></a>Obejít ověření podpisu důvěryhodných sestavení
 
-Od verze rozhraní .NET Framework 3.5 Service Pack 1, podpisy se silným názvem nejsou ověřovány, pokud je sestavení načteno do domény úplného vztahu důvěryhodnosti aplikace, jako je například výchozí domény aplikace pro `MyComputer` zóny. To se označuje jako silného názvu obejít funkce. V prostředí úplného vztahu důvěryhodnosti vyžaduje pro <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsané sestavení úplného vztahu důvěryhodnosti, bez ohledu na jejich podpisu. Funkce obejití silného názvu se vyhnete zbytečnou režii ověření podpisu se silným názvem sestavení úplného vztahu důvěryhodnosti v takovém případě umožňuje sestavení, které chcete načíst rychleji.
+Počínaje verzí .NET Framework 3,5 Service Pack 1 nejsou signatury se silným názvem ověřovány, když je sestavení načteno do domény aplikace s plnou důvěryhodností, jako je například výchozí aplikační doména pro `MyComputer` zónu. To se označuje jako funkce obcházení silného názvu. V prostředí s úplným vztahem důvěryhodnosti požadavky <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsaná, plně důvěryhodná sestavení, bez ohledu na jejich podpis. Funkce obcházení silného názvu brání zbytečné režii při ověřování signatury silného názvu v plně důvěryhodném sestavení v této situaci, což umožňuje rychlejší načítání sestavení.
 
-Funkce obejití vztahuje na všechny sestavení je podepsáno silným názvem a, který má následující vlastnosti:
+Funkce obcházení se vztahuje na jakékoli sestavení, které je podepsáno silným názvem a které má následující vlastnosti:
 
-- Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> důkazy (třeba `MyComputer` legitimace zóny).
+- Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> legitimace (například má `MyComputer` legitimaci zóny).
 
-- Načíst do plně důvěryhodné <xref:System.AppDomain>.
+- Načteno do plně důvěryhodného <xref:System.AppDomain>.
 
-- Načtené z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost, která <xref:System.AppDomain>.
+- Načteno z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastností. <xref:System.AppDomain>
 
-- Není zpožděním.
+- Nepodepsaná se zpožděním.
 
-Tuto funkci můžete zakázat pro jednotlivé aplikace nebo pro počítač. Zobrazit [jak: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).
+Tato funkce se dá zakázat pro jednotlivé aplikace nebo pro počítač. Viz [jak: Zakažte funkci](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)obcházení silného názvu.
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Popisuje postup vytvoření páru kryptografických klíčů pro podepsání sestavení.|
-|[Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Popisuje, jak vytvořit sestavení se silným názvem.|
-|[Vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Popisuje vylepšení silné názvy rozhraní .NET Framework 4.5.|
-|[Postupy: Odkazování na sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Popisuje, jak odkazovat na typy a prostředky v sestavení se silným názvem v době kompilace nebo běhu.|
-|[Postupy: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|Popisuje, jak zakázat funkci obchází ověření podpisy se silným názvem. Tuto funkci můžete zakázat pro všechny nebo pro určité aplikace.|
-|[Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)|Poskytuje přehled o jeden soubor a vícesouborové sestavení.|
-|[Jak zpoždění podepsání sestavení v sadě Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Vysvětluje, jak podepsat sestavení silným názvem po sestavení.|
-|[Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)|Popisuje nástroje, které jsou zahrnuty v rozhraní .NET Framework, která vám pomůže vytvořit sestavení se silnými názvy. Tento nástroj poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.|
-|[Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)|Popisuje nástroj zahrnuty v rozhraní .NET Framework, která se vytvoří soubor obsahující manifest sestavení z modulů nebo zdrojových souborů.|
+|[Postupy: Vytvoření páru klíčů veřejného a soukromého](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Popisuje, jak vytvořit pár kryptografických klíčů pro podepsání sestavení.|
+|[Postupy: Podepsat sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Popisuje, jak vytvořit sestavení se silným názvem.|
+|[Vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Popisuje vylepšení pro silné názvy v .NET Framework 4,5.|
+|[Postupy: Odkazování na sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Popisuje, jak odkazovat na typy nebo prostředky v sestavení se silným názvem v době kompilace nebo v době běhu.|
+|[Postupy: Zakázat funkci obcházení silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|Popisuje, jak zakázat funkci, která obchází ověřování podpisů se silným názvem. Tuto funkci je možné zakázat pro všechny nebo pro konkrétní aplikace.|
+|[Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)|Poskytuje přehled o jednom souboru a vícesouborové sestavení.|
+|[Jak zpozdit podepsání sestavení v aplikaci Visual Studio](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|Vysvětluje, jak podepsat sestavení se silným názvem poté, co bylo sestavení vytvořeno.|
+|[Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)|Popisuje nástroj, který je součástí .NET Framework, který pomáhá vytvářet sestavení se silnými názvy. Tento nástroj poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.|
+|[Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)|Popisuje nástroj, který je součástí .NET Framework, který generuje soubor s manifestem sestavení z modulů nebo souborů prostředků.|

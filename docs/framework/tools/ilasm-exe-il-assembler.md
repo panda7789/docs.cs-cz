@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 78a601e8b2da4fda0951c1d4f7b565753f0ca03a
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 36de7dd2d97eb532717d52bd3903d3e5acd19d2d
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833892"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567062"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
-Nástroj IL Assembler generuje přenositelný spustitelný (PE) soubor z převodního jazyka (IL; Intermediate Language). (Další informace o jazyku IL naleznete v tématu [Managed Execution Process](../../../docs/standard/managed-execution-process.md).) Výsledný spustitelný soubor obsahující jazyk IL a potřebná metadata lze spustit, a určit tak, zda IL funguje dle očekávání.
+Nástroj IL Assembler generuje přenositelný spustitelný (PE) soubor z převodního jazyka (IL; Intermediate Language). (Další informace o IL najdete v tématu [spravovaný proces spuštění](../../../docs/standard/managed-execution-process.md).) Výsledný spustitelný soubor obsahující jazyk IL a potřebná metadata lze spustit, a určit tak, zda IL funguje dle očekávání.
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -38,77 +38,77 @@ ilasm [options] filename [[options]filename...]
 
 | Argument | Popis |
 | -------- | ----------- |
-|`filename`|Název zdrojového souboru .il. Soubor sestává z deklaračních direktiv metadat a symbolických instrukcí IL. Lze je zadat několik argumentů zdrojového souboru, k vytvoření jediného souboru PE pomocí *Ilasm.exe*. **Poznámka:** Ujistěte se, že poslední řádek kódu ve zdrojovém souboru .il neobsahuje prázdný znak ani znak ukončení řádku.|
+|`filename`|Název zdrojového souboru .il. Soubor sestává z deklaračních direktiv metadat a symbolických instrukcí IL. K vytvoření jednoho souboru PE pomocí *Ilasm. exe*lze zadat více argumentů zdrojového souboru. **Poznámka:** Ujistěte se, že poslední řádek kódu ve zdrojovém souboru .il neobsahuje prázdný znak ani znak ukončení řádku.|
 
 | Možnost | Popis |
 | ------ | ----------- |
 |**/32bitpreferred**|Vytvoří bitovou kopii s upřednostněním 32bitového kódu (PE32).|
-|**/ Alignment:** `integer`|Nastaví hodnotu FileAlignment na hodnotu zadanou pomocí `integer` ve volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .alignment, tato možnost ji přepisuje.|
-|**/appcontainer**|Vytvoří *.dll* nebo *.exe* soubor, který běží v kontejneru pro aplikace Windows, jako výstup.|
-|**/arm**|Určí jako cílový procesor architekturu Advanced RISC Machine (ARM).<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/32bitpreferred**.|
-|**propojovacího:** `integer`|Nastaví hodnotu ImageBase na hodnotu zadanou pomocí `integer` ve volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .imagebase, tato možnost ji přepisuje.|
-|**/Clock**|Měří a oznamuje následující časy kompilace v milisekundách pro zadaný zdrojový soubor .il:<br /><br /> **Total Run**: Celkový čas strávený provádění určitých operací, které následují.<br /><br /> **Startup**: Načtení a otevírání souboru.<br /><br /> **Emitting MD**: Generování metadat.<br /><br /> **REF to Def Resolution**: Vyhodnocování odkazů na definice v souboru.<br /><br /> **CEE File Generation**: Generuje se bitová kopie souboru v paměti.<br /><br /> **PE File Writing**: Zápis bitové kopie do souboru PE.|
-|**/debug**[:**IMPL**&#124;**OPT**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/ debug** bez dalších hodnot zakáže optimalizaci JIT a použije body posloupnosti ze souboru PDB.<br /><br /> **IMPL** zakáže optimalizaci JIT a použije implicitní body posloupnosti.<br /><br /> **OPT** povolí optimalizaci JIT a použije implicitní body posloupnosti.|
-|**/dll**|Vytvoří *.dll* soubor jako výstup.|
+|**/alignment:** `integer`|Nastaví zarovnání souborů na hodnotu zadanou `integer` v volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .alignment, tato možnost ji přepisuje.|
+|**/appcontainer**|Vytvoří soubor *. dll* nebo *. exe* , který je spuštěn v kontejneru aplikace systému Windows, jako výstup.|
+|**/arm**|Určí jako cílový procesor architekturu Advanced RISC Machine (ARM).<br /><br /> Pokud není zadán žádný obrázek bitová verze, výchozí hodnota je **/32bitpreferred**.|
+|**/Base:** `integer`|Nastaví ImageBase na hodnotu zadanou `integer` v volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .imagebase, tato možnost ji přepisuje.|
+|**/clock**|Měří a oznamuje následující časy kompilace v milisekundách pro zadaný zdrojový soubor .il:<br /><br /> **Celková doba spuštění**: Celkový čas strávený prováděním všech konkrétních operací, které následují.<br /><br /> **Spuštění**: Načítání a otevírání souboru.<br /><br /> **Emituje se MD**: Generování metadat.<br /><br /> **Odkaz na def rozlišení**: Překládání odkazů na definice v souboru.<br /><br /> **Generace souborů CEE**: Generování image souboru v paměti.<br /><br /> **Zápis souborů PE**: Zápis obrázku do souboru PE.|
+|**/debug**[:**IMPL**&#124;**OPT**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/Debug** bez další hodnoty ZAKÁŽE optimalizaci JIT a použije body sekvence ze souboru PDB.<br /><br /> **Impl** ZAKÁŽE optimalizaci JIT a použije implicitní body sekvence.<br /><br /> Možnost **opt** POVOLÍ optimalizaci JIT a použije implicitní body sekvence.|
+|**/DLL**|Vytvoří jako výstup soubor *. dll* .|
 |**/ENC:** `file`|Vytvoří ze zadaného zdrojového souboru rozdíly pro funkci Upravit a pokračovat.<br /><br /> Tento argument slouží pouze k akademickému použití a při komerčním použití není podporován.|
 |**/exe**|Vytvoří jako výstup spustitelný soubor. Toto nastavení je výchozí.|
-|**Flags:** `integer`|Nastaví hodnotu ImageFlags na hodnotu zadanou pomocí `integer` v hlavičce modulu CLR. Je-li v souboru zadána direktiva IL .corflags, tato možnost ji přepisuje. Zobrazit Comimage_flags corhdr.h seznam platných hodnot pro *celé číslo*.|
+|**/Flags:** `integer`|Nastaví ImageFlags na hodnotu zadanou `integer` v hlavičce společného jazykového modulu runtime. Je-li v souboru zadána direktiva IL .corflags, tato možnost ji přepisuje. Seznam platných hodnot pro *celé číslo*získáte v tématu corhdr. h, COMIMAGE_FLAGS.|
 |**/fold**|Sloučí identická těla metod do jednoho.|
-|/**highentropyva**|Vytvoří výstupní spustitelný soubor podporující funkci ASLR s vysokou entropií. (Výchozí pro **/appcontainer**.)|
-|**/ include:** `includePath`|Nastavuje cestu pro vyhledávání souborů zahrnutých v `#include`.|
-|**/itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/pe64**.|
-|**uveden:** `keyFile`|Zkompiluje `filename` se silným podpisem za použití soukromého klíče obsaženého v `keyFile`.|
-|**uveden:**  @`keySource`|Zkompiluje `filename` se silným podpisem pomocí soukromého klíče vytvořeného ve `keySource`.|
-|**/ výpis**|Vytvoří na standardním výstupu soubor výpisu. Vynecháte-li tuto možnost, není vytvořen žádný soubor výpisu.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework 2.0 a vyšším.|
+|/**highentropyva**|Vytvoří výstupní spustitelný soubor podporující funkci ASLR s vysokou entropií. (Výchozí pro **/AppContainer**.)|
+|**/include:** `includePath`|Nastaví cestu pro vyhledávání souborů `#include`, které jsou součástí.|
+|**/itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadán žádný obrázek bitová verze, výchozí hodnota je **/pe64**.|
+|**/Key:** `keyFile`|Zkompiluje se silným podpisem pomocí privátního klíče obsaženého `keyFile`v. `filename`|
+|**zkrat** @`keySource`|Zkompiluje se silným podpisem pomocí privátního klíče vytvořeného `keySource`v. `filename`|
+|**/listing**|Vytvoří na standardním výstupu soubor výpisu. Vynecháte-li tuto možnost, není vytvořen žádný soubor výpisu.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework 2.0 a vyšším.|
 |**/mdv:** `versionString`|Nastaví řetězec verze metadat.|
-|**/msv:** `major`.`minor`|Nastaví verzi datového proudu metadat, kam `major` a `minor` jsou celá čísla.|
-|**/noautoinherit**|Zakáže výchozí dědění ze <xref:System.Object> Pokud je zadaný žádnou základní třídu.|
+|**/MSV:** `major`.`minor`|Nastaví verzi streamu metadat, kde `major` a `minor` jsou celá čísla.|
+|**/noautoinherit**|Zakáže výchozí dědění <xref:System.Object> z, pokud není zadána žádná základní třída.|
 |**/nocorstub**|Potlačí generování zástupné procedury CORExeMain.|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
-|**/ output:** `file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí příponou je *.exe*. Pokud zadáte **/dll** možnost, je výchozí příponou *.dll*. **Poznámka:** Určení **/output**: myfile.dll není nastavený **/dll** možnost. Pokud nezadáte **/dll**, výsledkem bude spustitelný soubor s názvem *soubor.dll*.|
-|**/optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` k `br.s`.|
-|**/pe64**|Vytvoří 64bitovou kopii (PE32+).<br /><br /> Pokud není zadán žádný cílový procesor, výchozí hodnota je `/itanium`.|
+|**/output:** `file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí přípona je *. exe*. Pokud zadáte možnost **/DLL** , je výchozí příponou *. dll*. **Poznámka:** Zadání **/Output**: MyFile. dll nenastavuje možnost **/DLL** . Pokud nezadáte **/DLL**, bude výsledkem spustitelný soubor s názvem *MyFile. dll*.|
+|**/optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` na `br.s`.|
+|**/pe64**|Vytvoří 64bitovou kopii (PE32+).<br /><br /> Pokud není zadaný žádný cílový procesor, výchozí hodnota je `/itanium`.|
 |**/pdb**|Vytvoří soubor PDB bez povolení sledování informací o ladění.|
 |**/quiet**|Určuje tichý režim, který neoznamuje průběh sestavení.|
-|**/ Resource:** `file.res`|Zahrnuje soubor zadaný prostředek v \*res formátu ve výsledné *.exe* nebo *.dll* souboru. Je možné zadat jenom jeden soubor. res při **/Resource** možnost.|
-|**/ssver:** `int`.`int`|Nastaví číslo verze podsystému ve volitelné hlavičce NT. Pro **/appcontainer** a **/arm** je minimálním číslem verze 6.02.|
-|**/ Stack:** `stackSize`|Nastaví hodnotu SizeOfStackReserve ve volitelné hlavičce NT na `stackSize`.|
+|**/Resource:** `file.res`|Obsahuje zadaný soubor prostředků ve \*formátu. res ve výsledném souboru *. exe* nebo *. dll* . Pomocí možnosti **/Resource** lze zadat pouze jeden soubor. res.|
+|**/ssver:** `int`.`int`|Nastaví číslo verze podsystému ve volitelné hlavičce NT. Pro **/AppContainer** a **/ARM** minimální číslo verze je 6,02.|
+|**/stack:** `stackSize`|Nastaví hodnotu SizeOfStackReserve v volitelné hlavičce NT na `stackSize`.|
 |**/stripreloc**|Určuje, že není zapotřebí žádné přemisťování základu.|
-|**/ Subsystem:** `integer`|Nastaví hodnotu subsystem na hodnotu zadanou pomocí `integer` ve volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .subsystem, tento příkaz ji přepíše. Viz soubor winnt.h, IMAGE_SUBSYSTEM seznam platných hodnot pro `integer`.|
-|**/x64**|Určí jako cílový procesor 64bitový procesor společnosti AMD.<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/pe64**.|
+|**/SUBSYSTEM:** `integer`|Nastaví podsystém na hodnotu zadanou `integer` v volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .subsystem, tento příkaz ji přepíše. Seznam platných hodnot pro `integer`najdete v souboru Winnt. h pro IMAGE_SUBSYSTEM.|
+|**/x64**|Určí jako cílový procesor 64bitový procesor společnosti AMD.<br /><br /> Pokud není zadán žádný obrázek bitová verze, výchozí hodnota je **/pe64**.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
 
 > [!NOTE]
-> Všechny možnosti pro *Ilasm.exe* jsou malá a velká písmena rozpoznávány dle prvních tří písmen. Například **/lis** je ekvivalentní **/listing** a **/res**: myresfile.res je ekvivalentní možnosti **/Resource**: myresfile.res. Možnosti s argumenty přijímají jako oddělovač mezi možností a argumentem dvojtečku (:) nebo symbol rovná se (=). Například **/output**:*file.ext* je ekvivalentní **/output**=*file.ext*.
+> Všechny možnosti pro *Ilasm. exe* rozlišují velká a malá písmena, která jsou rozpoznána prvními třemi písmeny. Například **/lis** je ekvivalentem **/listing** a **/res**: myresfile. res je ekvivalentem **/Resource**: myresfile. res. Možnosti s argumenty přijímají jako oddělovač mezi možností a argumentem dvojtečku (:) nebo symbol rovná se (=). Například **/Output**:*File. ext* je ekvivalentní souboru **/Output**= *. ext*.
 
 ## <a name="remarks"></a>Poznámky
 
-Nástroj IL Assembler pomáhá dodavatelům nástrojů navrhovat a implementovat generátory IL. Pomocí *Ilasm.exe*, vývojáři nástrojů a kompilátorů umožňuje soustředit se na IL a generování metadat bez nutnosti zabývat se generováním kódu IL v souborovém formátu PE.
+Nástroj IL Assembler pomáhá dodavatelům nástrojů navrhovat a implementovat generátory IL. Pomocí *Ilasm. exe*můžou vývojáři nástrojů a kompilátoru soustředit na generování Il a metadat, aniž by se museli zabývat tím, že vydávají Il ve formátu souboru PE.
 
-Podobně jako jiné kompilátory cílené na modul runtime, jako například C# a Visual Basic, *Ilasm.exe* nevytváří soubory objektů a nevyžaduje souboru PE propojovací fázi.
+Podobně jako jiné kompilátory, které cílí na modul runtime, C# například a Visual Basic, *Ilasm. exe* nevytváří zprostředkující soubory objektů a nevyžaduje fázi propojování pro vytvoření souboru PE.
 
-Nástroj IL Assembler dokáže vyjádřit všechna existující metadata a funkce IL programovacích jazyků zaměřených na modul runtime. To umožňuje spravovaného kódu napsaného v libovolném z těchto programovacích jazyků v nástroji IL Assembler adekvátní vyjádření a zkompilovaná *Ilasm.exe*.
+Nástroj IL Assembler dokáže vyjádřit všechna existující metadata a funkce IL programovacích jazyků zaměřených na modul runtime. To umožňuje spravovanému kódu napsanému v některém z těchto programovacích jazyků odpovídajícím způsobem vyjádřit v IL Assembler a zkompilován pomocí *Ilasm. exe*.
 
 > [!NOTE]
 > Kompilace může skončit neúspěchem, neobsahuje-li poslední řádek kódu ve zdrojovém souboru .il prázdný znak nebo znak ukončení řádku.
 
-Můžete použít *Ilasm.exe* ve spojení s jeho doprovodným nástrojem [ *Ildasm.exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). *Ildasm.exe* přijímá soubory PE obsahující kód IL a vytváří textový soubor vhodný jako vstup do *Ilasm.exe*. Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a zpracování výstupu nástrojem *Ildasm.exe*, lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Poté lze tento textový soubor *Ilasm.exe* a vytvořit konečný spustitelný soubor.
+*Ilasm. exe* lze použít ve spojení s jeho doprovodným nástrojem [*Ildasm. exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). *Ildasm. exe* používá soubor PE, který obsahuje kód Il a vytvoří textový soubor vhodný jako vstup do *Ilasm. exe*. Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a spuštění výstupu prostřednictvím programu *Ildasm. exe*lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Pak můžete tento textový soubor spustit pomocí nástroje *Ilasm. exe* a vytvořit konečný spustitelný soubor.
 
 Tuto techniku lze také použít pro sloučení několika souborů PE původně vygenerovaných různými kompilátory do jediného souboru PE.
 
 > [!NOTE]
 > Momentálně nelze tuto techniku použít se soubory PE obsahujícími vložený nativní kód (například PE soubory vytvořené jazykem Visual C++).
 
-Chcete-li toto kombinované použití *Ildasm.exe* a *Ilasm.exe* co nejpřesnější, ve výchozím nastavení assembler nenahrazuje krátká kódování pro dlouhé ty kódování napsaná ve zdrojích IL (nebo který může být vygenerována jiným kompilátorem). Použití **/ optimize** možnost nahradit krátká kódování, kdykoli je to možné.
+Aby bylo toto kombinované použití programů *Ildasm. exe* a *Ilasm. exe* co nejpřesnější, ve výchozím nastavení nástroj Assembler nenahradí krátká kódování pro dlouhé hodnoty, které jste nastavili ve vašich zdrojích Il (nebo které mohou být vygenerovány jiným kompilátorem). Pokud je to možné, použijte možnost **/optimize** k nahrazení krátkých kódování.
 
 > [!NOTE]
-> *Ildasm.exe* pracuje pouze se soubory na disku. Nepracuje se soubory nainstalovanými do globální mezipaměti sestavení.
+> Nástroj *Ildasm. exe* pracuje pouze se soubory na disku. Nepracuje se soubory nainstalovanými do globální mezipaměti sestavení.
 
-Další informace o gramatice jazyka IL naleznete v souboru asmparse.Grammar sady ve Windows Software Development Kit (SDK).
+Další informace o gramatice IL najdete v souboru asmparse. gramatiky v Windows SDK.
 
 ## <a name="version-information"></a>Informace o verzi
 
-Od verze rozhraní .NET Framework 4.5, můžete přidat vlastní atribut na implementaci rozhraní pomocí kódu podobného následujícímu:
+Počínaje .NET Framework 4,5 můžete k implementaci rozhraní připojit vlastní atribut pomocí kódu podobného následujícímu:
 
 ```
 .class interface public abstract auto ansi IMyInterface
@@ -128,7 +128,7 @@ Od verze rozhraní .NET Framework 4.5, můžete přidat vlastní atribut na impl
       …
 ```
 
-Od verze rozhraní .NET Framework 4.5, můžete zadat libovolný zařazovací objekt BLOB (binární rozsáhlý objekt) s použitím jeho nezpracované binární reprezentace, jak je znázorněno v následujícím kódu:
+Počínaje .NET Framework 4,5 můžete určit libovolný objekt BLOB pro zařazování (binární rozsáhlý objekt) pomocí jeho nezpracované binární reprezentace, jak je znázorněno v následujícím kódu:
 
 ```
 .method public hidebysig abstract virtual
@@ -137,29 +137,29 @@ Od verze rozhraní .NET Framework 4.5, můžete zadat libovolný zařazovací ob
         Test(object A_1) cil managed
 ```
 
-Další informace o gramatice jazyka IL naleznete v souboru asmparse.Grammar sady ve Windows Software Development Kit (SDK).
+Další informace o gramatice IL najdete v souboru asmparse. gramatiky v Windows SDK.
 
 ## <a name="examples"></a>Příklady
 
-Následující příkaz sestaví soubor IL *myTestFile.il* a vytvoří spustitelný soubor *myTestFile.exe*.
+Následující příkaz sestaví soubor IL *myTestFile.Il* a vytvoří spustitelný *myTestFile. exe*.
 
 ```console
 ilasm myTestFile
 ```
 
-Následující příkaz sestaví soubor IL *myTestFile.il* a vytvoří *.dll* souboru *myTestFile.dll*.
+Následující příkaz sestaví soubor IL *myTestFile.Il* a vytvoří soubor *DLL* *myTestFile. dll*.
 
 ```console
 ilasm myTestFile /dll
 ```
 
-Následující příkaz sestaví soubor IL *myTestFile.il* a vytvoří *.dll* souboru *myNewTestFile.dll*.
+Následující příkaz sestaví soubor IL *myTestFile.Il* a vytvoří soubor *DLL* *myNewTestFile. dll*.
 
 ```console
 ilasm myTestFile /dll /output:myNewTestFile.dll
 ```
 
-Následující příklad kódu ukazuje velice jednoduchou aplikaci, která se zobrazí "Hello World!" do konzoly. Můžete tento kód zkompilovat a pak použít [ *Ildasm.exe* ](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj pro vygenerování souboru IL.
+Následující příklad kódu ukazuje extrémně jednoduchou aplikaci, která zobrazuje "Hello World!" do konzoly. Tento kód můžete zkompilovat a pak pomocí nástroje [*Ildasm. exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) vygenerovat soubor Il.
 
 ```csharp
 using System;
@@ -173,7 +173,7 @@ public class Hello
 }
 ```
 
-Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento kód lze zkompilovat do sestavení pomocí nástroje IL Assembler. Obě IL a C# příklady kódu zobrazí "Hello World!" do konzoly.
+Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento kód můžete zkompilovat do sestavení pomocí nástroje IL Assembler. V obou příkladech IL i kód se C# zobrazuje "Hello World!" do konzoly.
 
 ```
 // Metadata version: v2.0.50215
@@ -230,6 +230,6 @@ Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento
 ## <a name="see-also"></a>Viz také:
 
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [*Ildasm.exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
+- [*Ildasm. exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
 - [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: e1fbb46c76fbc729818b6ff24b55c0d18f6b05df
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 44a35131273c6f191ab5da5bc1639d97bd961ff1
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400695"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567515"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty. Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů modulu CLR (Common Language Runtime) a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>mají integrovanoufunkcionalitu,kteráumožňujeflexibilnístyljednotlivýchdatovýchpoložeknebokolekcídatovýchpoložek.<xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.ListView> Zobrazení řazení, filtrování a seskupování lze vytvořit nad daty.  
@@ -70,7 +70,7 @@ ms.locfileid: "68400695"
   
 - Přestože není zadáno na obrázku, je třeba poznamenat, že zdrojový objekt vazby není omezen na vlastní objekt CLR. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]datová vazba podporuje data ve formě objektů CLR a [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Chcete-li poskytnout několik příkladů, váš zdroj vazby může <xref:System.Windows.UIElement>být objektem typu list, objektem CLR, který je spojen s ADO.NET daty nebo webovými službami nebo XmlNode obsahující vaše [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Další informace najdete v tématu [Přehled zdrojů vazby](binding-sources-overview.md).  
   
- Při čtení jiných [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] témat je důležité si uvědomit, že při vytváření vazby vytváříte vazbu cíle vazby *na* zdroj vazby. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] Například pokud zobrazujete některá podkladová data <xref:System.Windows.Controls.ListBox> v datové vazbě, budete mít <xref:System.Windows.Controls.ListBox> k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] datům vazbu.  
+ Při čtení pomocí jiných témat sady SDK je důležité si uvědomit, že při vytváření vazby je nutné svázat cíl vazby *se* zdrojem vazby. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] Například pokud zobrazujete některá podkladová data <xref:System.Windows.Controls.ListBox> v datové vazbě, budete mít <xref:System.Windows.Controls.ListBox> k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] datům vazbu.  
   
  Chcete-li vytvořit vazbu, použijte <xref:System.Windows.Data.Binding> objekt. Zbývající část tohoto tématu popisuje mnoho konceptů přidružených k a některé z vlastností a použití <xref:System.Windows.Data.Binding> objektu.  
   
@@ -133,7 +133,7 @@ ms.locfileid: "68400695"
   
  ![Diagram, který zobrazuje vlastnost pozadí datové vazby.](./media/data-binding-overview/data-binding-button-background-example.png)  
   
- <xref:System.Windows.Media.Brush>  Pokud<xref:System.Windows.Controls.Control.Background%2A> je vlastnost Color typu String, je možné, že budete chtít, aby to fungovalo i v případě, že je vlastnost typu řetězec. Toto je výchozí převod typu v práci a je popsán v části [Převod dat](#data_conversion) .  
+ <xref:System.Windows.Media.Brush> Pokud<xref:System.Windows.Controls.Control.Background%2A> je vlastnost Color typu String, je možné, že budete chtít, aby to fungovalo i v případě, že je vlastnost typu řetězec. Toto je výchozí převod typu v práci a je popsán v části [Převod dat](#data_conversion) .  
   
 <a name="specifying_the_binding_source"></a>   
 ### <a name="specifying-the-binding-source"></a>Určení zdroje vazby  
@@ -342,7 +342,7 @@ ms.locfileid: "68400695"
   
  Jak je znázorněno v příkladu v předchozí části, <xref:System.Windows.Controls.ListBox> ovládací prvek <xref:System.Windows.Controls.ContentControl> i je svázán s celým objektem kolekce (nebo se konkrétně jedná o zobrazení nad objektem kolekce) pro *AuctionItem*s. Bez konkrétních pokynů k zobrazení shromažďování <xref:System.Windows.Controls.ListBox> dat se zobrazuje řetězcová reprezentace každého objektu v podkladové kolekci <xref:System.Windows.Controls.ContentControl> a zobrazuje řetězcovou reprezentaci objektu, ke kterému je vázáno.  
   
- Chcete-li tento problém vyřešit, aplikace <xref:System.Windows.DataTemplate>definuje s. Jak je znázorněno v příkladu v předchozí části, <xref:System.Windows.Controls.ContentControl> explicitně používá *detailsProductListingTemplate*<xref:System.Windows.DataTemplate>. Ovládací prvek implicitně používá následující <xref:System.Windows.DataTemplate> při zobrazení objektů AuctionItem v kolekci:  <xref:System.Windows.Controls.ListBox>  
+ Chcete-li tento problém vyřešit, aplikace <xref:System.Windows.DataTemplate>definuje s. Jak je znázorněno v příkladu v předchozí části, <xref:System.Windows.Controls.ContentControl> explicitně používá *detailsProductListingTemplate*<xref:System.Windows.DataTemplate>. Ovládací prvek implicitně používá následující <xref:System.Windows.DataTemplate> při zobrazení objektů AuctionItem v kolekci: <xref:System.Windows.Controls.ListBox>  
   
  [!code-xaml[DataBindingLab#AuctionItemDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemdatatemplate)]  
   
@@ -371,7 +371,7 @@ ms.locfileid: "68400695"
  [!code-csharp[DataBindingLab#2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/FutureDateRule.cs#2)]
  [!code-vb[DataBindingLab#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/FutureDateRule.vb#2)]  
   
- *StartDateEntryForm* <xref:System.Windows.Controls.TextBox> používá tento *FutureDateRule*, jak je znázorněno v následujícím příkladu:  
+ StartDateEntryForm<xref:System.Windows.Controls.TextBox> používá tento *FutureDateRule*, jak je znázorněno v následujícím příkladu:  
   
  [!code-xaml[DataBindingLab#CustomValidation](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#customvalidation)]  
   
@@ -389,11 +389,11 @@ ms.locfileid: "68400695"
   
  [!code-xaml[DataBindingLab#14](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#14)]  
   
- Pokud dojde <xref:System.Windows.Controls.TextBox> k chybě ověřování  ,budemítStartDateEntryFormvpřípadě,žesezobrazí<xref:System.Windows.Controls.ToolTip>Chyba: <xref:System.Windows.Controls.Validation.ErrorTemplate%2A>  
+ Pokud dojde <xref:System.Windows.Controls.TextBox> k chybě ověřování ,budemítStartDateEntryFormvpřípadě,žesezobrazí<xref:System.Windows.Controls.ToolTip>Chyba: <xref:System.Windows.Controls.Validation.ErrorTemplate%2A>  
   
  ![Chyba ověření datové vazby](./media/databindingdemo-validation.PNG "DataBindingDemo_Validation")  
   
- Pokud máte přidružená ověřovací pravidla, ale <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> u vázaného ovládacího prvku neurčíte, použije se výchozí <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> nastavení pro upozorňování uživatelů, když dojde k chybě ověření. <xref:System.Windows.Data.Binding> Výchozí <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> je šablona ovládacího prvku, která definuje červené ohraničení ve vrstvě doplňků. Ve výchozím nastavení <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> <xref:System.Windows.Controls.ToolTip>a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] má  StartPriceEntryForm přiověřovánívypadattakto<xref:System.Windows.Controls.TextBox> :  
+ Pokud máte přidružená ověřovací pravidla, ale <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> u vázaného ovládacího prvku neurčíte, použije se výchozí <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> nastavení pro upozorňování uživatelů, když dojde k chybě ověření. <xref:System.Windows.Data.Binding> Výchozí <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> je šablona ovládacího prvku, která definuje červené ohraničení ve vrstvě doplňků. Ve výchozím nastavení <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> <xref:System.Windows.Controls.ToolTip>a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] má StartPriceEntryForm přiověřovánívypadattakto<xref:System.Windows.Controls.TextBox> :  
   
  ![Chyba ověření datové vazby](./media/databindingdemo-validationdefault.PNG "DataBindingDemo_ValidationDefault")  
   

@@ -13,58 +13,58 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7214fa0342d0946044861c4e375c7797ad6a06b1
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: a31a42362e934d14b9cb66724618814e2b232c06
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833764"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567281"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
-Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj nebo nasazení. Tato část se týká vývojáři a správci systému, kteří chtějí získat informace o výkonu aplikace.  
+Profilace je metoda shromažďování údajů o výkonu ve scénáři vývoje nebo nasazení. Tato část je určená pro vývojáře a správce systému, kteří chtějí shromažďovat informace o výkonu aplikace.  
   
-## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Sledování výkonu pomocí sledování výkonu (Perfmon.exe)  
- Sledování výkonu je nejjednodušší nástroje pro použití Chcete-li Profilovat aplikaci rozhraní .NET Framework. Sledování výkonu graficky představuje data v rozhraní .NET Framework čítačů výkonu, které jsou součástí common language runtime a Windows Software Development Kit (SDK). Tyto čítače umožňuje monitorovat vše od správy paměti na výkon kompilátor just-in-time (JIT). Upozorní vás, o prostředcích vaše aplikace využívá, což je nepřímé zlomek výkonu vaší aplikace. Tyto čítače slouží k pochopení, jak vaše aplikace funguje interně.  
+## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Sledování výkonu pomocí nástroje sledování výkonu (Perfmon. exe)  
+ Nástroj Sledování výkonu je nejjednodušším nástrojem, který slouží k profilování aplikace .NET Framework. Monitor výkonu graficky reprezentuje data zjištěná v .NET Frameworkch čítačích výkonu, které jsou nainstalovány s modulem CLR (Common Language Runtime) a Windows SDK. Tyto čítače lze použít k monitorování všeho od správy paměti až po výkon kompilátoru JIT (just-in-time). Poskytují informace o prostředcích, které vaše aplikace používá, což je nepřímá míra výkonu vaší aplikace. Pomocí těchto čítačů můžete pochopit, jak vaše aplikace funguje interně.  
   
-#### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Ke spuštění Perfmon.exe ve Windows Vista a novějších verzích  
+#### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Spuštění programu Perfmon. exe v systému Windows Vista a novějších verzích  
   
-1. Na příkazovém řádku zadejte **perfmon**. **Sledování výkonu** konzoly se zobrazí.  
+1. Do příkazového řádku zadejte **perfmon**. Zobrazí se konzola **nástroje sledování výkonu** .  
   
-2. V **nástroje pro sledování** složky, klikněte na tlačítko **sledování výkonu**.  
+2. Ve složce **Nástroje pro sledování** klikněte na **sledování výkonu**.  
   
-3. Na panelu nástrojů nástroje Sledování výkonu, klepněte **přidat** ikonu (znaménko plus), pokud je k dispozici. Pokud tam není, klikněte pravým tlačítkem v okně Sledování a vyberte **přidat čítače** možnost.  
+3. Na panelu nástrojů sledování výkonu klikněte na ikonu **Přidat** (znaménko plus), pokud je k dispozici. Pokud není k dispozici, klikněte pravým tlačítkem myši v okně monitorování a vyberte možnost **Přidat čítače** .  
   
-     Tím se otevře **přidat čítače** dialogové okno. **Dostupné čítače** seznamu se zobrazí objekty výkonu k dispozici. Existuje mnoho předdefinovaných objektů pro aplikace .NET Framework, včetně těch, které pro správu paměti (**paměť .NET CLR**), vzájemná funkční spolupráce (**spolupráce .NET CLR**), zpracování výjimek (**Výjimky .NET CLR**) a multithreading (**uzamčení a vlákna .NET CLR**). Každý objekt sledování výkonu zahrnuje celou řadou jednotlivé čítače. Seznam dostupných v nástroji Sledování výkonu čítačů výkonu najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
+     Tím se otevře dialogové okno **Přidat čítače** . Seznam **Dostupné čítače** zobrazuje dostupné objekty výkonu. K dispozici je řada předdefinovaných objektů pro .NET Framework aplikace, včetně funkcí pro správu paměti (**paměť .NET CLR**), interoperability (**zprostředkovatel komunikace .NET CLR**), zpracování výjimek (**výjimky .NET CLR**) a Multithreading ( **.NET CLR LocksAndThreads**). Každý objekt výkonu obsahuje počet jednotlivých čítačů výkonu. Seznam čítačů výkonu dostupných v nástroji Sledování výkonu najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   
-4. Zaškrtněte políčko vedle názvu objekt sledování výkonu a zobrazit seznam jednotlivé čítače, které podporuje.  
+4. Zaškrtněte políčko vedle názvu objektu výkonu, chcete-li zobrazit seznam jednotlivých čítačů výkonu, které podporuje.  
   
-5. Klikněte na čítač výkonu, které chcete zobrazit.  
+5. Klikněte na čítač výkonu, který chcete zobrazit.  
   
-6. V **výskyty vybraný objekt** seznamu, klikněte na tlačítko  **\<všechny instance >** k určení, že chcete globálně monitorování čítače výkonu pro modul common language runtime (to znamená na celého systému).  
+6. V seznamu **instance vybraného objektu** klikněte na možnost  **\<všechny instance >** a určete tak, že chcete monitorovat čítač výkonu pro modul CLR (Common Language Runtime) globálně (tj. v celém systému).  
   
      -nebo-  
   
-     V **výskyty vybraný objekt** seznamu, klikněte na název aplikace pro monitorování čítače výkonu pro tuto aplikaci.  
+     V poli se seznamem **instancí vybraného objektu** klikněte na název aplikace a sledujte čítač výkonu této aplikace.  
   
-     K rozlišení více verzí modulu runtime, nebo k rozlišení více aplikací se stejným názvem, je třeba také upravit klíč registru. Další informace najdete v tématu [čítače výkonu a Vnitroprocesorové aplikace vedle sebe](../../../docs/framework/debug-trace-profile/performance-counters-and-in-process-side-by-side-applications.md).  
-  
-> [!NOTE]
->  Při instalaci nové čítače výkonu je spuštěna konzola výkonu, zastavit a restartovat konzolu výkonu chcete zviditelnit nové čítače.  
-  
- Pokud chcete Profilovat sestavení, která existuje v zóně nebo ve vzdálené sdílené složce, ujistěte se, že vzdálené sestavení má úplný vztah důvěryhodnosti na počítač, na kterém běží čítače výkonu. Pokud sestavení nemá dostatek vztah důvěryhodnosti, nebude fungovat čítače výkonu. Informace o udělení důvěry různým zónám najdete v tématu [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
+     Chcete-li odlišit více verzí modulu runtime nebo rozlišit více aplikací se stejným názvem, je nutné také upravit klíč registru. Další informace najdete v tématu [čítače výkonu a vnitroprocesové souběžné aplikace](../../../docs/framework/debug-trace-profile/performance-counters-and-in-process-side-by-side-applications.md).  
   
 > [!NOTE]
->  V systémech, na kterých je nainstalované rozhraní .NET Framework 4, sledování výkonu nemusí zobrazit data pro čítače výkonu v některé kategorie, jako **.NET CLR Data** a **.NET CLR sítě**, pro aplikace, které byly vytvořeny pomocí rozhraní .NET Framework 1.1. Pokud je to tento případ, můžete nakonfigurovat monitorování výkonu pro zobrazení těchto dat tak, že přidáte [ \<forceperformancecounteruniquesharedmemoryreads – >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) prvku do konfiguračního souboru aplikace.  
+>  Když se při spuštění konzoly výkonu nainstalují nové čítače výkonu, zastavte a restartujte konzolu výkonu, aby se nové čítače zobrazily.  
   
-## <a name="reading-and-creating-performance-counters-programmatically"></a>Čtení a vytvoření čítače výkonu prostřednictvím kódu programu  
- Rozhraní .NET Framework poskytuje třídy, které můžete použít k programovému přístupu ke stejné informace výkonu, která je dostupná v konzole výkonu. Tyto třídy můžete také vytvořit vlastní čítače výkonu. Následující tabulka popisuje některé třídy, které jsou k dispozici v rozhraní .NET Framework pro sledování výkonu.  
+ Chcete-li profilovat sestavení, které existuje v zóně nebo na vzdálené sdílené složce, ujistěte se, že má vzdálené sestavení v počítači, který spouští čítače výkonu, úplný vztah důvěryhodnosti. Pokud sestavení nemá dostatečný vztah důvěryhodnosti, čítače výkonu nebudou fungovat. Informace o udělení důvěryhodnosti do různých zón naleznete v tématu [Caspol. exe (Nástroj pro zásady zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
+  
+> [!NOTE]
+>  V systémech, na kterých je nainstalován .NET Framework 4, nemusí monitor výkonu zobrazovat data pro čítače výkonu v některých kategoriích, jako jsou **data .NET CLR** a **sítě .NET CLR**, pro aplikace, které byly vyvinuty pomocí rozhraní .NET. Rozhraní 1,1. Pokud se jedná o tento případ, můžete nakonfigurovat nástroj sledování výkonu pro zobrazení těchto dat přidáním [ \<prvku forcePerformanceCounterUniqueSharedMemoryReads >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) do konfiguračního souboru aplikace.  
+  
+## <a name="reading-and-creating-performance-counters-programmatically"></a>Načítání a vytváření čítačů výkonu prostřednictvím kódu programu  
+ .NET Framework poskytuje třídy, které lze použít k programovému přístupu ke stejným informacím o výkonu, které jsou k dispozici v konzole výkon. Tyto třídy můžete použít také k vytvoření vlastních čítačů výkonu. Následující tabulka popisuje některé třídy monitorování výkonu, které jsou k dispozici v .NET Framework.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|Představuje součást čítače výkonu systému Windows NT. Tato třída slouží ke čtení existující předdefinovaných nebo vlastních čítačů a vydávání dat výkonu (zápis) do vlastních čítačů.|  
-|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|Nabízí několik metod pro interakci s čítače a kategorie čítačů v počítači.|  
-|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|Určuje instalační program pro `PerformanceCounter` komponenty.|  
-|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|Určuje vzorce pro výpočet `NextValue` metodu `PerformanceCounter`.|  
+|<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|Představuje součást čítače výkonu systému Windows NT. Tato třída se používá ke čtení existujících předdefinovaných nebo vlastních čítačů a k publikování (zápisu) údajů o výkonu do vlastních čítačů.|  
+|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|Poskytuje několik metod pro interakci s čítači a kategoriemi čítačů v počítači.|  
+|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|Určuje instalační program pro `PerformanceCounter` komponentu.|  
+|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|Určuje vzorec pro výpočet `NextValue` metody `PerformanceCounter`pro.|  
   
 ## <a name="see-also"></a>Viz také:
 

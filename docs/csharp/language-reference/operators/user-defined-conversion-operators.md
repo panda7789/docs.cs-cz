@@ -1,6 +1,6 @@
 ---
-title: Uživatelem definovaný převod operators – C# odkaz
-description: Další informace o definování vlastního typu implicitní a explicitní převody v C#.
+title: Uživatelsky definované operátory převodu – C# referenční informace
+description: Naučte se definovat vlastní implicitní a explicitní převody typu v C#.
 ms.date: 07/09/2019
 f1_keywords:
 - explicit_CSharpKeyword
@@ -10,43 +10,43 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 5d1882048b2af12c29a3771055cbeba9565b7dab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8788883a6c60032de2ffab658fcf2721654fc6f7
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788498"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566674"
 ---
-# <a name="user-defined-conversion-operators-c-reference"></a>Uživatelem definovaný převod operátorů (C# odkaz)
+# <a name="user-defined-conversion-operators-c-reference"></a>Uživatelsky definované operátory převodu (C# referenční)
 
-Uživatelem definovaný typ, můžete definovat vlastní explicitní nebo implicitní převod z nebo do jiného typu.
+Uživatelsky definovaný typ může definovat vlastní implicitní nebo explicitní převod z nebo na jiný typ.
 
-Implicitní převody nevyžadují speciální syntaxe má být vyvolána a může dojít v různých situacích, například v přiřazení a metody volání. Předdefinované C# implicitních převodů vždy úspěšné a nikdy vyvolat výjimku nebo dojít ke ztrátě informací. Uživatelem definované implicitní převody by měla chovat i tímto způsobem. Pokud vlastní převod může vyvolat výjimku nebo dojít ke ztrátě informací, můžete jej definují jako explicitní převod.
+Implicitní převody nevyžadují, aby se vyvolala speciální syntaxe, která může nastat v různých situacích, například v přiřazení a volání metod. Předdefinované C# implicitní převody jsou vždy úspěšné a nikdy nevyvolávají výjimku nebo ztratí informace. Uživatelem definované implicitní převody by se měly chovat i tímto způsobem. Pokud vlastní převod může vyvolat výjimku nebo ztratit informace, definujte ji jako explicitní převod.
 
-Uživatelem definované převody nejsou považovány za podle [je](type-testing-and-conversion-operators.md#is-operator) a [jako](type-testing-and-conversion-operators.md#as-operator) operátory. Použití [přetypování () operátor](type-testing-and-conversion-operators.md#cast-operator-) vyvolat explicitní převod definovaný uživatelem.
+Uživatelem definované převody nejsou považovány za operátory [is](type-testing-and-cast.md#is-operator) a [as](type-testing-and-cast.md#as-operator) . Použijte [operátor přetypování ()](type-testing-and-cast.md#cast-operator-) pro vyvolání uživatelem definovaného explicitního převodu.
 
-Použití `operator` a `implicit` nebo `explicit` klíčová slova k definování implicitní nebo explicitní převod, v uvedeném pořadí. Typ, který definuje převod musí být typu zdrojový nebo cílový typ převodu. Převod mezi dvěma uživatelem definované typy lze definovat v některém ze dvou typů.
+Použijte klíčová `implicit` slova `explicit` a nebo pro definování implicitního nebo explicitního převodu v uvedeném pořadí. `operator` Typ, který definuje převod, musí být buď zdrojový typ, nebo cílový typ převodu. Převod mezi dvěma uživatelsky definovanými typy lze definovat v jednom ze dvou typů.
 
 Následující příklad ukazuje, jak definovat implicitní a explicitní převod:
 
 [!code-csharp[implicit an explicit conversions](~/samples/csharp/language-reference/operators/UserDefinedConversions.cs)]
 
-Můžete také použít `operator` – klíčové slovo přetížení i předdefinovanou C# operátor. Další informace najdete v tématu [přetížení operátoru](operator-overloading.md).
+`operator` Klíčové slovo lze použít také k přetížení předdefinovaného C# operátoru. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následující částech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
 
-- [operátory převodu](~/_csharplang/spec/classes.md#conversion-operators)
+- [Operátory převodu](~/_csharplang/spec/classes.md#conversion-operators)
 - [Uživatelem definované převody](~/_csharplang/spec/conversions.md#user-defined-conversions)
 - [Implicitní převody](~/_csharplang/spec/conversions.md#implicit-conversions)
 - [Explicitní převody](~/_csharplang/spec/conversions.md#explicit-conversions)
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#referenční dokumentace](../index.md)
+- [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Přetížení operátoru](operator-overloading.md)
-- [Typové zkoušky a převod operátorů](type-testing-and-conversion-operators.md)
-- [Přetypování a typ převodu](../../programming-guide/types/casting-and-type-conversions.md)
-- [Zřetězit uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)
+- [Operátory testování typů a přetypování](type-testing-and-cast.md)
+- [Přetypování a převod typu](../../programming-guide/types/casting-and-type-conversions.md)
+- [Zřetězené uživatelem definované explicitní převody vC#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)

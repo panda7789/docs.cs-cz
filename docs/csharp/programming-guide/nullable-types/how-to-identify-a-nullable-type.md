@@ -1,40 +1,40 @@
 ---
-title: 'Postupy: Identifikace typu s možnou hodnotou Null – C# Průvodce programováním pro službu'
+title: 'Postupy: Identifikace typu s možnou C# hodnotou null – Průvodce programováním'
 ms.custom: seodec18
-description: Zjistěte, jak určit, zda typ je typ připouštějící hodnotu null nebo je instance typu s možnou hodnotou Null
+description: Naučte se určit, jestli typ je typ s možnou hodnotou null nebo instance je typu s možnou hodnotou null.
 ms.date: 09/24/2018
 helpviewer_keywords:
 - nullable types [C#], identifying
 ms.assetid: d4b67ee2-66e8-40c1-ae9d-545d32c71387
-ms.openlocfilehash: 73017b8f4c4c046b428d5270a2ef0241c565b07d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 43a35874b8c9f52c4b98a93e1217994980e1b223
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307036"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567376"
 ---
-# <a name="how-to-identify-a-nullable-type-c-programming-guide"></a>Postupy: Identifikace typu s možnou hodnotou Null (C# Programming Guide)
+# <a name="how-to-identify-a-nullable-type-c-programming-guide"></a>Postupy: Identifikace typu s možnouC# hodnotou null (Průvodce programováním)
 
-Následující příklad ukazuje, jak určit, jestli <xref:System.Type?displayProperty=nameWithType> instance představuje uzavřený obecný typ s možnou hodnotou Null, to znamená, <xref:System.Nullable%601?displayProperty=nameWithType> typ pomocí zadaného typu parametru `T`:
+Následující příklad ukazuje, jak určit, zda <xref:System.Type?displayProperty=nameWithType> instance představuje uzavřený obecný typ s možnou hodnotou null, to znamená <xref:System.Nullable%601?displayProperty=nameWithType> typ s parametrem `T`zadaného typu:
 
 [!code-csharp-interactive[whether Type is nullable](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#1)]
 
-Jak ukazuje příklad, je použít [typeof](../../language-reference/operators/type-testing-and-conversion-operators.md#typeof-operator) operátoru pro vytvoření <xref:System.Type?displayProperty=nameWithType> objektu.  
+Jak ukazuje příklad, použijte operátor [typeof](../../language-reference/operators/type-testing-and-cast.md#typeof-operator) k vytvoření <xref:System.Type?displayProperty=nameWithType> objektu.  
   
-Pokud chcete zjistit, jestli je instance typu s možnou hodnotou Null, nepoužívejte <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu k získání <xref:System.Type> instance má být testována s předchozím kódu. Při volání <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu na instanci typu s možnou hodnotou Null, je instance [boxed](using-nullable-types.md#boxing-and-unboxing) k <xref:System.Object>. Je ekvivalentní k zabalení hodnota základního typu boxing nenulovou instanci typu s možnou hodnotou Null <xref:System.Object.GetType%2A> vrátí <xref:System.Type> objekt, který představuje základní typ typu s možnou hodnotou NULL:
+Pokud chcete zjistit, zda je instance typu s možnou hodnotou null, nepoužívejte <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu k <xref:System.Type> získání instance, která má být testována pomocí předchozího kódu. Při volání <xref:System.Object.GetType%2A?displayProperty=nameWithType> metody na instanci typu s možnou hodnotou null je instance zabalena do [](using-nullable-types.md#boxing-and-unboxing) <xref:System.Object>. Jako zabalení instance typu s možnou hodnotou null, která není null, je ekvivalentem zabalení hodnoty nadřazeného typu, <xref:System.Object.GetType%2A> <xref:System.Type> vrátí objekt, který představuje nadřízený typ typu s možnou hodnotou null:
 
 [!code-csharp-interactive[GetType example](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#2)]
 
-Nepoužívejte [je](../../language-reference/keywords/is.md) operátor zjistit, zda instanci typu s možnou hodnotou Null. Jak ukazuje následující příklad, nelze rozlišit typy instancí typu s možnou hodnotou Null a jeho nadřízeného typu s použitím `is` operátor:
+Nepoužívejte operátor [is](../../language-reference/keywords/is.md) k určení, zda je instance typu s možnou hodnotou null. Jak ukazuje následující příklad, nelze odlišit typy instancí typu s možnou hodnotou null a jeho nadřízený typ pomocí `is` operátoru:
 
 [!code-csharp-interactive[is operator example](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#3)]
 
-Kód uvedený v následujícím příkladu můžete použít k určení, zda je instance typu s možnou hodnotou NULL:
+K určení, jestli je instance typu s možnou hodnotou null, můžete použít kód prezentovaný v následujícím příkladu:
 
 [!code-csharp-interactive[whether an instance is of a nullable type](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#4)]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Typy s možnou hodnotou Null](index.md)
-- [Použití typů s povolenou hodnotou Null](using-nullable-types.md)
+- [Typy s možnou hodnotou null](index.md)
+- [Použití typů s možnou hodnotou null](using-nullable-types.md)
 - <xref:System.Nullable.GetUnderlyingType%2A>

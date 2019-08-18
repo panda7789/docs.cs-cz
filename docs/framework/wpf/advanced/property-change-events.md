@@ -13,18 +13,18 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-ms.openlocfilehash: f8d0d5e65101ffda0edaaeabdea2870287ba0f1f
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 06056b492439531aa60becbb7bca250a439bfb68
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400850"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567425"
 ---
 # <a name="property-change-events"></a>Události změny vlastnosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]definuje několik událostí, které jsou vyvolány v reakci na změnu hodnoty vlastnosti. Vlastnost je často vlastnost závislosti. Samotná událost je někdy směrována jako událost, která je někdy standardní událostí modulu CLR (Common Language Runtime). Definice události se liší v závislosti na scénáři, protože některé změny vlastností jsou vhodně směrovány prostřednictvím stromu elementu, zatímco jiné změny vlastností jsou obecně pouze obavy o objekt, u kterého byla vlastnost změněna.  
   
 ## <a name="identifying-a-property-change-event"></a>Identifikace události změny vlastnosti  
- Ne všechny události, které nastavují změnu vlastnosti, se explicitně identifikují jako událost změněné vlastností, a to buď na základě vzoru podpisu, nebo podle vzoru pojmenování. Obecně popis události v [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] dokumentaci označuje, zda je událost přímo vázaná na změnu hodnoty vlastnosti a poskytuje křížové odkazy mezi vlastností a událostí.  
+ Ne všechny události, které nastavují změnu vlastnosti, se explicitně identifikují jako událost změněné vlastností, a to buď na základě vzoru podpisu, nebo podle vzoru pojmenování. Obecně popis události v dokumentaci k sadě SDK označuje, zda je událost přímo vázaná na změnu hodnoty vlastnosti a poskytuje křížové odkazy mezi vlastností a událostí.  
   
 ### <a name="routedpropertychanged-events"></a>Události RoutedPropertyChanged  
  Určité události používají datový typ události a delegáty, které jsou explicitně používány pro události změny vlastností. Datový typ události je <xref:System.Windows.RoutedPropertyChangedEventArgs%601>a delegát je. <xref:System.Windows.RoutedPropertyChangedEventHandler%601> Data události a Delegáti mají parametr obecného typu, který se používá k určení skutečného typu vlastnosti změny při definování obslužné rutiny. Data události obsahují dvě vlastnosti, <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A> <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A>které jsou následně předány jako argument typu v datech události.  

@@ -16,38 +16,38 @@ helpviewer_keywords:
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: acb4d3820d06845834b127d8f03763e7dd346f53
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 080ef48ade496a55f414b64158a40fe0e551c2aa
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833698"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567296"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
-Spolupráce aplikace obvykle obsahují sestavení klienta .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihoven typů a jedna nebo více komponent COM registrovány. Visual Studio a Windows Software Development Kit (SDK) poskytují nástroje pro import a převod knihovny typů do sestavení vzájemné spolupráce, jak je popsáno v [importování knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Nasazení aplikace spolupráce dvěma způsoby:  
+Aplikace spolupráce obvykle obsahuje klientské sestavení .NET, jedno nebo více sestavení Interop představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM. Visual Studio a Windows SDK poskytují nástroje pro import a převod knihovny typů do definičního sestavení, jak je popsáno v tématu [Import knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Existují dva způsoby, jak nasadit aplikaci spolupráce:  
   
-- Pomocí vestavěné typy spolupráce: Od verze rozhraní .NET Framework 4, můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
+- Pomocí vložených typů spolupráce: Počínaje .NET Framework 4 můžete instruovat kompilátor pro vložení informací o typu ze sestavení pro spolupráci do spustitelného souboru. Kompilátor vloží pouze informace o typu, které vaše aplikace používá. Sestavení vzájemné spolupráce není nutné nasazovat do aplikace. Toto je doporučený postup.  
   
-- Nasazením sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
+- Nasazením definičních sestavení: Můžete vytvořit standardní odkaz na definiční sestavení. V takovém případě musí být definiční sestavení nasazeno s vaší aplikací. Pokud použijete tento postup a nepoužíváte privátní komponentu modelu COM, vždy se na primární definiční sestavení (PIA) publikované autorem komponenty modelu COM, kterou máte v úmyslu začlenit do spravovaného kódu, vždy odkázat. Další informace o vytváření a používání primárních sestavení vzájemné spolupráce naleznete v tématu [primární spolupracující sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
- Pokud používáte vestavěné typy spolupráce, nasazení je jednoduché a nekomplikované. Není nic zvláštního, že je třeba provést. Zbývající část tohoto článku popisuje scénáře pro nasazení sestavení vzájemné spolupráce s vaší aplikací.  
+ Pokud používáte vložené typy spolupráce, nasazení je jednoduché a jednoduché. Nemusíte nic dělat zvlášť. Zbývající část tohoto článku popisuje scénáře nasazení spolupracujících sestavení s vaší aplikací.  
   
-## <a name="deploying-interop-assemblies"></a>Nasazení sestavení vzájemné spolupráce  
- Sestavení může mít silné názvy. Sestavení se silným názvem obsahuje veřejný klíč vydavatele, který poskytuje jedinečnou identitu. Sestavení, které jsou vytvářeny [Importér knihovny typů (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) můžete pomocí podepsané vydavatelem **/keyfile** možnost. Podepsaná sestavení můžete nainstalovat do globální mezipaměti sestavení. Nepodepsaná sestavení musí být nainstalována na počítač uživatele jako soukromá sestavení.  
+## <a name="deploying-interop-assemblies"></a>Nasazení definičních sestavení  
+ Sestavení mohou mít silné názvy. Sestavení se silným názvem obsahuje veřejný klíč vydavatele, který poskytuje jedinečnou identitu. Sestavení vytvořená modulem pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md) může podepsat Vydavatel pomocí možnosti **/keyfile** . Podepsaná sestavení lze instalovat do globální mezipaměti sestavení (GAC). Nepodepsaná sestavení musí být nainstalována v počítači uživatele jako soukromá sestavení.  
   
 ### <a name="private-assemblies"></a>Soukromá sestavení  
- Chcete-li nainstalovat sestavení, které chcete použít soukromě, musí být nainstalovaná spustitelný soubor aplikace a sestavení vzájemné spolupráce, který obsahuje importované typy modelu COM ve stejné struktuře adresářů. Následující obrázek znázorňuje bez znaménka definiční sestavení použije soukromě Client1.exe a Client2.exe, které jsou umístěny v adresářích samostatné aplikace. Definiční sestavení, která se nazývá LOANLib.dll v tomto příkladu, je nainstalována dvakrát.  
+ Chcete-li nainstalovat sestavení, které má být použito soukromě, spustitelný soubor aplikace i sestavení spolupráce, které obsahují importované typy modelu COM, musí být nainstalovány ve stejné adresářové struktuře. Následující ilustrace znázorňuje nepodepsané sestavení vzájemné spolupráce, které se soukromě používá v KLIENT1. exe a KLIENT2. exe, který se nachází v samostatných aplikačních adresářích. Definiční sestavení, které se nazývá LOANLib. dll v tomto příkladu, je nainstalováno dvakrát.  
   
- ![Adresářovou strukturu a registru Windows](./media/deploying-an-interop-application/com-private-deployment.gif "adresář položky struktury a registru pro privátní nasazení")  
+ ![Adresářová struktura a registr systému Windows](./media/deploying-an-interop-application/com-private-deployment.gif "Adresářová struktura a položky registru pro privátní nasazení")  
   
- Všechny komponenty modelu COM, které jsou přidružené k aplikaci musí být nainstalován v registru Windows. Pokud Client1.exe a Client2.exe na obrázku jsou nainstalované na různých počítačích, budete muset zaregistrovat komponenty modelu COM na obou počítačích.  
+ Všechny součásti modelu COM přidružené k aplikaci musí být nainstalovány v registru systému Windows. Pokud jsou KLIENT1. exe a KLIENT2. exe na ilustraci nainstalované v různých počítačích, musíte komponenty COM zaregistrovat na obou počítačích.  
   
 ### <a name="shared-assemblies"></a>Sdílená sestavení  
- Sestavení, které jsou sdíleny více aplikací musí být nainstalován v centrálním úložišti názvem do globální mezipaměti sestavení. .NET klienti mají přístup k stejnou kopii definiční sestavení, která je podepsaná a nainstalované v globální mezipaměti sestavení. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
+ Sestavení, která jsou sdílená více aplikacemi, by měla být nainstalována do centralizovaného úložiště nazývaného globální mezipaměť sestavení (GAC). Klienti rozhraní .NET mají přístup ke stejné kopii definičního sestavení, které je podepsáno a nainstalováno v globální mezipaměti sestavení (GAC). Další informace o vytváření a používání primárních sestavení vzájemné spolupráce naleznete v tématu [primární spolupracující sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
-- [Používání typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [Použití typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilace projektu interoperability](compiling-an-interop-project.md)

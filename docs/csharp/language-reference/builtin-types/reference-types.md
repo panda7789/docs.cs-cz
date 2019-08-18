@@ -1,6 +1,6 @@
 ---
-title: Vestavěné typy odkazu - C# odkaz
-description: Seznamte se s typy odkazů, které mají C# klíčových slov můžete použít k deklaraci.
+title: Předdefinované typy odkazů – C# referenční informace
+description: Přečtěte si informace o typech C# odkazů, které mají klíčová slova, která můžete použít k jejich deklaraci.
 ms.date: 06/25/2019
 f1_keywords:
 - object_CSharpKeyword
@@ -20,26 +20,26 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: 4bc93216d74e2732870e08edd4bdb9570391cf5f
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
+ms.openlocfilehash: fcfe2dafe588dce57628bff63e3519f70d7a7725
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67877195"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566252"
 ---
-# <a name="built-in-reference-types-c-reference"></a>Vestavěné typy odkazu (C# odkaz)
+# <a name="built-in-reference-types-c-reference"></a>Předdefinované typy odkazů (C# referenční)
 
-C#má řadu vestavěné typy odkazu. Mají klíčových slov nebo operátorů, které jsou synonyma pro typy v knihovně .NET. 
+C#má několik předdefinovaných typů odkazů. Mají klíčová slova nebo operátory, které jsou synonyma pro typ v knihovně .NET. 
 
 ## <a name="the-object-type"></a>Typ objektu
 
-`object` Typ je alias pro <xref:System.Object?displayProperty=nameWithType> v rozhraní .NET. V systému unified typů jazyka C#, všechny typy, typy odkazů předdefinovaných a definovaný uživatelem, a typů hodnot, dědí přímo nebo nepřímo <xref:System.Object?displayProperty=nameWithType>. Můžete přiřadit proměnné typu hodnoty libovolného typu `object`. Žádné `object` proměnné je možné přiřadit k jeho výchozí hodnotu literálu `null`. Když je proměnné typu hodnoty převeden na objekt, je označen jako *boxed*. Pokud proměnnou typu objektu je převeden na typ hodnoty, je označen jako *nezabalené*. Další informace najdete v tématu [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md). 
+`object` Typ je<xref:System.Object?displayProperty=nameWithType> alias v rozhraní .NET. V sjednoceném typu systému C#jsou všechny typy, předdefinované a uživatelsky definované typy odkazů a typy hodnot děděny přímo nebo nepřímo z. <xref:System.Object?displayProperty=nameWithType> K proměnným typu `object`můžete přiřadit hodnoty libovolného typu. Jakoukoli `object` proměnnou lze přiřadit její výchozí hodnotě pomocí literálu `null`. Když je proměnná typu hodnoty převedena na typ Object, je označována jako zabalená. Je-li proměnná typu Object převedena na typ hodnoty, je označována jako nezabaleno. Další informace naleznete v tématu [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md). 
 
-## <a name="the-string-type"></a>Typ string
+## <a name="the-string-type"></a>Typ řetězce
 
-`string` Typ představuje posloupnost nula nebo více znaků Unicode. `string` je alias pro <xref:System.String?displayProperty=nameWithType> v rozhraní .NET.
+`string` Typ představuje sekvenci nula nebo více znaků Unicode. `string`je alias pro <xref:System.String?displayProperty=nameWithType> v rozhraní .NET.
 
-I když `string` je typem odkazu [operátory rovnosti `==` a `!=` ](../operators/equality-operators.md#string-equality) jsou definovány pro porovnání hodnoty `string` objekty, ne odkazuje. Tím je testování rovnosti řetězců intuitivnější. Příklad:
+I `string` když je odkazový typ, [ `==` operátory rovnosti `!=` a](../operators/equality-operators.md#string-equality) jsou definovány pro porovnání hodnot `string` objektů, nikoli odkazů. Díky tomu je testování rovnosti řetězců intuitivnější. Příklad:
 
 ```csharp-interactive
 string a = "hello";
@@ -50,31 +50,31 @@ Console.WriteLine(a == b);
 Console.WriteLine(object.ReferenceEquals(a, b));
 ```
 
-Zobrazí "hodnotu True" a potom "False" protože obsah řetězce jsou ekvivalentní, ale `a` a `b` neodkazují na stejné instanci řetězce.
+Zobrazí se hodnota "true" a potom "false", protože obsah řetězců je ekvivalentní, ale `a` `b` neodkazuje na stejnou instanci řetězce.
 
-[+ – Operátor](../operators/addition-operator.md#string-concatenation) zřetězí řetězce:
+[Operátor +](../operators/addition-operator.md#string-concatenation) zřetězí řetězce:
 
 ```csharp
 string a = "good " + "morning";
 ```
 
-Tím se vytvoří objekt string obsahující "good morning".
+Tím se vytvoří objekt String, který obsahuje "Dobré ráno".
 
-Řetězce jsou *neměnné*– obsah řetězce objektu nelze změnit po vytvoření objektu, přestože je syntaxe zobrazí jako by tomu. Například při psaní tohoto kódu kompilátor ve skutečnosti vytváří nový objekt řetězce pro uchování nového posloupnost znaků, a tento nový objekt je přiřazen k `b`. Paměť, která kdyby byly přiděleny pro `b` (Pokud obsahovala řetězec "h") je pak nárok uvolňování paměti.
+Řetězce jsou *neměnné*– obsah objektu String nelze po vytvoření objektu změnit, i když se syntaxe zobrazí jako v případě, že to můžete provést. Například při psaní tohoto kódu kompilátor ve skutečnosti vytvoří nový objekt řetězce, který bude obsahovat novou posloupnost znaků a který je přiřazen k `b`novému objektu. Paměť, která byla přidělena pro `b` (pokud obsahuje řetězec "h"), je pak vhodná pro uvolňování paměti.
 
 ```csharp
 string b = "h";
 b += "ello";
 ```
 
-`[]` [Operátor](../operators/member-access-operators.md#indexer-operator-) lze použít pro přístup jen pro čtení k jednotlivé znaky `string`. Platné hodnoty začínají `0` a musí být menší než délka `string`:
+Operátor lze použít pro přístup jen pro čtení k jednotlivým znakům typu `string`. [](../operators/member-access-operators.md#indexer-operator-) `[]` Platné hodnoty začínají na `0` a musí být menší než délka: `string`
 
 ```csharp
 string str = "test";
 char x = str[2];  // x = 's';
 ```
 
-Podobně `[]` také lze použít operátor pro iterace přes každý znak v `string`:
+Podobným způsobem `[]` lze operátor také použít pro iteraci každého znaku `string`v:
 
 ```csharp-interactive
 string str = "test";
@@ -86,13 +86,13 @@ for (int i = 0; i < str.Length; i++)
 // Output: t e s t
 ``` 
 
-Řetězcové literály jsou typu `string` a může být zapsaný ve dvou formách, v uvozovkách a `@`– v uvozovkách. Citovaný řetězec, který literály jsou uzavřeny v dvojitých uvozovkách ("):
+Řetězcové literály jsou typu `string` a mohou být zapsány ve dvou formulářích, `@`v uvozovkách a v uvozovkách. Řetězcové literály v uvozovkách jsou uzavřeny v uvozovkách ("):
 
 ```csharp
 "good morning"  // a string literal
 ```
 
-Řetězcové literály může obsahovat libovolný znak literálu. Řídicí sekvence jsou zahrnuty. Následující příklad používá řídicí sekvence `\\` pro zpětné lomítko, `\u0066` písmenem f, a `\n` pro nový řádek.
+Řetězcové literály můžou obsahovat libovolný znakový literál. K dispozici jsou řídicí sekvence. Následující příklad používá řídicí sekvenci `\\` zpětného lomítka `\u0066` , pro písmeno f a `\n` pro nový řádek.
 
 ```csharp-interactive
 string a = "\\\u0066\n F";
@@ -103,21 +103,21 @@ Console.WriteLine(a);
 ```
 
 > [!NOTE]
-> Řídicí kód `\udddd` (kde `dddd` je čtyřmístné číslo) představuje znak Unicode U +`dddd`. Osm číslice sady Unicode řídícími kódy jsou také rozpoznána: `\Udddddddd`.
+> Řídicí kód `\udddd` (kde `dddd` je číslo se čtyřmi číslicemi) představuje znak Unicode U +`dddd`. Rozpoznávají se také osmimístného kódů Escape Unicode: `\Udddddddd`.
 
-[Literály doslovném řetězci](../tokens/verbatim.md) začínat `@` a jsou také uzavřen do dvojitých uvozovek. Příklad:
+[Doslovné řetězce literálů](../tokens/verbatim.md) začínají `@` na a jsou také uzavřeny v uvozovkách. Příklad:
 
 ```csharp
 @"good morning"  // a string literal
 ```
 
-Výhodou doslovném řetězci je, že řídicí sekvence jsou *není* zpracování, což usnadňuje zapsat, například plně kvalifikovaný název souboru Windows:
+Výhodou doslovného řetězce je, že řídicí sekvence nejsou zpracovávány, což usnadňuje psaní, například plně kvalifikovaného názvu souboru systému Windows:
 
 ```csharp
 @"c:\Docs\Source\a.txt"  // rather than "c:\\Docs\\Source\\a.txt"
 ```
 
-Zahrnout dvojitých uvozovek na @-quoted řetězec, uveďte ji dvakrát:
+Chcete-li do @-quoted řetězce zahrnout dvojitou uvozovku, Zdvojnásobte si ho:
 
 ```csharp
 @"""Ahoy!"" cried the captain." // "Ahoy!" cried the captain.
@@ -125,60 +125,60 @@ Zahrnout dvojitých uvozovek na @-quoted řetězec, uveďte ji dvakrát:
 
 ## <a name="the-delegate-type"></a>Typ delegáta
 
-Deklarace typu delegáta je podobná signatuře metody. Nemá návratovou hodnotu a libovolný počet parametrů typu:
+Deklarace typu delegáta je podobná podpisu metody. Má návratovou hodnotu a libovolný počet parametrů libovolného typu:
 
 ```csharp
 public delegate void MessageDelegate(string message);
 public delegate int AnotherDelegate(MyType m, long num);
 ```
 
-V rozhraní .NET `System.Action` a `System.Func` typy poskytují obecné definice pro mnoho běžných delegátů. Pravděpodobně není nutné definovat nové typy vlastního delegáta. Místo toho můžete vytvořit konkretizací poskytnutých obecných typů.
+V rozhraní .NET `System.Action` a `System.Func` typy poskytují obecné definice pro mnoho běžných delegátů. Pravděpodobně nebudete muset definovat nové vlastní typy delegátů. Místo toho můžete vytvořit instance poskytnutých obecných typů.
 
-A `delegate` je typem odkazu, který můžete použít k zapouzdření pojmenovaná nebo anonymní metodu. Delegáti jsou podobní ukazatelům na funkci v jazyce C++; Delegáti jsou však typově bezpečné a zabezpečené. Aplikace delegátů viz [delegáti](../../programming-guide/delegates/index.md) a [obecných delegátů](../../programming-guide/generics/generic-delegates.md). Delegáti jsou základem [události](../../programming-guide/events/index.md). Delegát může být vytvořena tím, že přidružíte buď pomocí pojmenovaných nebo anonymní metodu.
+`delegate` Je odkazový typ, který lze použít k zapouzdření pojmenované nebo anonymní metody. Delegáti jsou podobní ukazatelům funkcí C++v nástroji; Delegáti jsou však typově bezpečné a zabezpečené. Pro aplikace delegátů, přečtěte si téma [Delegáti](../../programming-guide/delegates/index.md) a [Obecné delegáty](../../programming-guide/generics/generic-delegates.md). Delegáti jsou základem pro [události](../../programming-guide/events/index.md). Pro delegáta se dá vytvořit instance, a to tak, že ho přidružíte k pojmenované nebo anonymní metodě.
 
-Delegát musí být vytvořena pomocí metody nebo lambda výraz, který je kompatibilní návratový typ a vstupní parametry. Další informace o stupeň odchylky, který je povolen v podpisu metody, naleznete v tématu [odchylky v delegátech](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pro použití s anonymní metody delegáta a kód k ní být přidruženo jsou deklarovány společně. 
+Pro delegáta musí být vytvořená metoda nebo lambda výraz, který má kompatibilní návratový typ a vstupní parametry. Další informace o stupni odchylky, která je povolena v signatuře metody, naleznete v tématu [Variance in Delegates](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pro použití s anonymními metodami, delegát a kód, který je k němu přidružen, jsou deklarovány společně. 
 
-## <a name="the-dynamic-type"></a>Dynamický typ.
+## <a name="the-dynamic-type"></a>Dynamický typ
 
-`dynamic` Typ Určuje, které používají proměnné a odkazy na jeho kontrola typu v době kompilace členy jednorázové přihlášení. Tyto operace jsou místo toho přeložit v době běhu. `dynamic` Typ zjednodušuje přístup k rozhraní API modelu COM, jako je například rozhraní API Office automatizace, dynamické rozhraní API, například knihovny IronPython a do HTML Document Object Model (DOM).
+`dynamic` Typ označuje, že použití proměnné a odkazů na její členy vynechává kontrolu typu při kompilaci. Místo toho se tyto operace vyřeší za běhu. `dynamic` Typ zjednodušuje přístup k rozhraním API modelu COM, jako jsou například rozhraní API pro automatizaci systému Office, dynamická rozhraní API, jako jsou ironpythonu knihovny a HTML model DOM (Document Object Model) (DOM).
 
-Typ `dynamic` se chová jako typ `object` ve většině případů. Konkrétně lze převést libovolný výraz jinou hodnotu než null na `dynamic` typu. `dynamic` Typ se liší od `object` v této operace, které obsahují výrazy typu `dynamic` se nevyřeší nebo typ zaškrtnutí kompilátorem. Čas spuštění kompilátoru balíčky, které společně informace o operaci a tyto informace se později používá k vyhodnocení operaci. Jako součást procesu proměnné typu `dynamic` jsou kompilovány do proměnné typu `object`. Proto zadejte `dynamic` existuje pouze v době kompilace, ne za běhu.
+Typ `dynamic` se ve většině případů `object` chová jako typ. Konkrétně libovolný výraz, který není null, lze převést na `dynamic` typ. Typ se liší od `object` v tom, že operace obsahující výrazy typu `dynamic` nejsou vyřešeny nebo typ zkontrolovaný kompilátorem. `dynamic` Kompilátor balí informace o operaci a tyto informace jsou později použity k vyhodnocení operace v době běhu. V rámci procesu jsou proměnné typu `dynamic` kompilovány do proměnných typu. `object` Proto typ `dynamic` existuje pouze v době kompilace, nikoli v době běhu.
 
-V následujícím příkladu se liší od proměnné typu `dynamic` na proměnnou typu `object`. Ověření typu každou proměnnou v době kompilace, umístěte ukazatel myši nad `dyn` nebo `obj` v `WriteLine` příkazy. Zkopírujte následující kód do editoru, kde je k dispozici technologie IntelliSense. Technologie IntelliSense zobrazuje **dynamické** pro `dyn` a **objekt** pro `obj`.
+Následující příklad kontrastuje proměnnou typu `dynamic` na proměnnou typu. `object` Chcete-li ověřit typ každé proměnné v době kompilace, umístěte ukazatel myši nad `dyn` nebo `obj` v `WriteLine` příkazech. Zkopírujte následující kód do editoru, kde je k dispozici technologie IntelliSense. IntelliSense zobrazuje **dynamický** pro `dyn` **objekt** a pro `obj`.
 
 [!code-csharp[csrefKeywordsTypes#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/dynamic1.cs#21)]
 
-<xref:System.Console.WriteLine%2A> Příkazy zobrazuje typy za běhu `dyn` a `obj`. V tomto okamžiku mají stejný typ celé číslo. Následující výstup je vytvořen:
+Příkazy zobrazují běhové `dyn` typy a `obj`. <xref:System.Console.WriteLine%2A> V tomto okamžiku oba mají stejný typ Integer. Vytvoří se následující výstup:
 
 ```console
 System.Int32
 System.Int32
 ```
 
-Pokud chcete zobrazit rozdíl mezi `dyn` a `obj` v době kompilace, přidejte následující dva řádky mezi prohlášení a `WriteLine` příkazů v předchozím příkladu.
+Chcete-li zobrazit rozdíl `dyn` mezi `obj` a v době kompilace, přidejte následující dva řádky `WriteLine` mezi deklaracemi a příkazy v předchozím příkladu.
 
 ```csharp
 dyn = dyn + 3;
 obj = obj + 3;
 ```
 
- Chyba kompilátoru hlášené pro pokus o přidání celého čísla a objekt ve výrazu `obj + 3`. Však žádná chybová zpráva pro `dyn + 3`. Výraz, který obsahuje `dyn` nepovolenou v době kompilace, protože typ `dyn` je `dynamic`.
+ Chyba kompilátoru je hlášena při pokusu o přidání celého čísla a objektu ve výrazu `obj + 3`. Není však hlášena žádná chyba pro `dyn + 3`. Výraz, který obsahuje `dyn` , není kontrolován v době kompilace, protože `dyn` typ je `dynamic`.
 
-Následující příklad používá `dynamic` v několika deklarace. `Main` Metoda se také liší od typu v době kompilace kontroly s kontrolu typu za běhu.
+Následující příklad používá `dynamic` v několika deklaracích. `Main` Metoda také kontrastuje při kontrole typu za běhu při kontrole typu za běhu.
 
 [!code-csharp[csrefKeywordsTypes#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/dynamic2.cs#25)]
 
 ### <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Klíčová slova jazyka C#](../keywords/index.md)
 - [Události](../../../csharp/programming-guide/events/index.md)
 - [Použití typu dynamic](../../programming-guide/types/using-type-dynamic.md)
 - [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)
 - [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)
 - [Vytváření nových řetězců](../../../standard/base-types/creating-new.md)
-- [Typové zkoušky a převod operátorů](../operators/type-testing-and-conversion-operators.md)
-- [Postupy: bezpečné přetypování pomocí porovnávání vzorů a jako operátorů a is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Operátory testování typů a přetypování](../operators/type-testing-and-cast.md)
+- [Postupy: Bezpečné přetypování pomocí porovnávání vzorů a operátorů as a is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Návod: vytváření a používání dynamických objektů](../../programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
 - <xref:System.Object?displayProperty=nameWithType>
 - <xref:System.String?displayProperty=nameWithType>
