@@ -1,0 +1,33 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Dokumentace k rozhraní .NET pro Apache Spark
+metadata:
+  document_id: na
+  title: 'Dokumentace k rozhraní .NET pro Apache Spark – kurzy, Reference k rozhraní API'
+  meta.description: 'Learn how to use .NET for Apache Spark, the .NET bindings for Spark written on the Spark interop layer. You can process batches of data, real-time streams, machine learning, and ad-hoc query with Apache Spark anywhere you write .NET code.'
+  ms.prod: dotnet-spark
+  ms.topic: landing-page
+  ms.date: 05/17/2019
+  ms.author: mamccrea
+  author: mamccrea
+abstract:
+  description: 'Naučte se používat .NET pro Apache Spark, vazby rozhraní .NET pro Spark vytvořené na úrovni spolupráce Spark. Můžete zpracovávat dávky dat, streamování v reálném čase, strojové učení a dotaz ad-hoc s Apache Spark kdekoli píšete kód .NET. Návody, příklady kódu, Reference k rozhraní API a další dokumentace ukazují, jak.'
+sections:
+  - title: Podrobné kurzy
+    items:
+      - type: paragraph
+        text: 'Využijte sílu Apache Spark v aplikacích .NET:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/spark/tutorials/get-started">Začínáme s .NET pro Apache Spark</a>
+          - html: <a href="/dotnet/spark/tutorials/hdinsight-deployment">Nasazení aplikace .NET pro Apache Spark do Azure HDInsight</a>
+          - html: <a href="/dotnet/spark/tutorials/amazon-emr-spark-deployment">Nasazení .NET pro Apache Spark aplikaci do Amazon EMR Spark</a>
+          - html: <a href="/dotnet/spark/tutorials/databricks-deployment">Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů</a>
+  - title: Referenční materiály a zdroje informací
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/api/?view=spark-dotnet">Rozhraní .NET pro Apache Spark API</a>
+          - html: '<a href="https://github.com/dotnet/spark">.NET pro Apache Spark v centru Git</a>'
