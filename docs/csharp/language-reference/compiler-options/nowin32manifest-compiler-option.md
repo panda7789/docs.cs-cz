@@ -1,5 +1,5 @@
 ---
-title: -nowin32manifest (možnosti kompilátoru C#)
+title: -nowin32manifest (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /nowin32manifest
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -nowin32manifest compiler option [C#]
 - /nowin32manifest compiler option [C#]
 ms.assetid: 6f06365b-b87b-46a2-b187-b3bfeaf4862d
-ms.openlocfilehash: 357bc0dbe261a5d55b958fa0e8256920f050356d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8820410bfdbce2f9986605f37af4d14957471126
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662607"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602711"
 ---
-# <a name="-nowin32manifest-c-compiler-options"></a>-nowin32manifest (možnosti kompilátoru C#)
-Použití **-nowin32manifest** možnost dát pokyn kompilátoru, aby jakýkoli manifest aplikace pro vložení do spustitelného souboru.  
+# <a name="-nowin32manifest-c-compiler-options"></a>-nowin32manifest (C# možnosti kompilátoru)
+Pomocí možnosti **-nowin32manifest** dejte kompilátoru pokyn, aby nevložil žádný manifest aplikace do spustitelného souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,13 +25,13 @@ Použití **-nowin32manifest** možnost dát pokyn kompilátoru, aby jakýkoli m
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Při použití této možnosti aplikace se budou řídit virtualizace v systému Windows Vista, pokud nezadáte manifest aplikace do souboru prostředků Win32 nebo v pozdějším kroku sestavení.  
+ Pokud použijete tuto možnost, bude se aplikace vztahovat k virtualizaci v systému Windows Vista, pokud neposkytnete manifest aplikace v souboru prostředků Win32 nebo během pozdějšího kroku sestavení.  
   
- V sadě Visual Studio, nastavte tuto možnost **vlastnost aplikace** stránky tak, že vyberete **vytvořit aplikaci bez manifestu** možnost **Manifest** rozevírací seznam. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
+ V sadě Visual Studio nastavte tuto možnost na stránce **vlastností aplikace** výběrem možnosti **vytvořit aplikaci bez manifestu** v rozevíracím seznamu **manifest** . Další informace naleznete na [stránce aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
   
- Další informace o vytváření manifestu naleznete v tématu [-win32manifest (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).  
+ Další informace o vytváření manifestu naleznete v tématu [-win32manifest (C# možnosti kompilátoru)](./win32manifest-compiler-option.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,5 +1,5 @@
 ---
-title: Main() a argumenty příkazového řádku - C# Průvodce programováním pro službu
+title: Main () a argumenty příkazového řádku – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 08/02/2017
 f1_keywords:
@@ -13,30 +13,30 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: f1cbbc6081c0e2f3e29d49f413e00c7346ea7e60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db4464cdd3d98103bbc61b824081b59cb1e01cb9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678827"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588914"
 ---
-# <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() a argumenty příkazového řádku (C# Programming Guide)
+# <a name="main-and-command-line-arguments-c-programming-guide"></a>Argumenty Main () a příkazového řádku (C# Průvodce programováním)
 
-`Main` Metoda je vstupní bod aplikace v jazyce C#. (Knihoven a služeb nevyžadují `Main` metoda jako vstupní bod.) Při spuštění aplikace `Main` metody je první metoda, která je vyvolána.
+Metoda je vstupním bodem C# aplikace. `Main` (Knihovny a služby nevyžadují `Main` metodu jako vstupní bod.) Po spuštění `Main` aplikace je metoda první vyvolanou metodou.
 
- Může existovat pouze jeden vstupní bod v programu v jazyce C#. Pokud máte více než jednu třídu, která má `Main` metodu, musí zkompilujete program se **/main** – možnost kompilátoru k určení `Main` metody pro použití jako vstupní bod. Další informace najdete v tématu [/Main (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/main-compiler-option.md).
+ V C# programu může být pouze jeden vstupní bod. Pokud máte více než jednu třídu, která má `Main` metodu, je nutné zkompilovat program pomocí možnosti kompilátoru **/Main** a určit, kterou `Main` metodu použít jako vstupní bod. Další informace naleznete v tématu [/Main (C# možnosti kompilátoru)](../../language-reference/compiler-options/main-compiler-option.md).
 
  [!code-csharp[csProgGuideMain#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#17)]
 
 ## <a name="overview"></a>Přehled
 
-- `Main` Metoda je vstupním bodem spustitelný program; je ve kterém ovládací prvek programu začíná a končí.
-- `Main` je deklarované uvnitř třídy nebo struktury. `Main` musí být [statické](../../../csharp/language-reference/keywords/static.md) a nemusí být [veřejné](../../../csharp/language-reference/keywords/public.md). (V předchozím příkladu přijme výchozí přístup [privátní](../../../csharp/language-reference/keywords/private.md).) Nadřazené třídy nebo struktury se musí být statické.
-- `Main` mohou mít buď `void`, `int`, nebo od verze C# 7.1, `Task`, nebo `Task<int>` návratového typu.
-- Pouze v případě `Main` vrátí `Task` nebo `Task<int>`, deklarace `Main` mohou zahrnovat [ `async` ](../../language-reference/keywords/async.md) modifikátor. Všimněte si, že to vylučuje `async void Main` metody.
-- `Main` Metody mohou být deklarovány s nebo bez něj `string[]` parametr, který obsahuje argumenty příkazového řádku. Při používání sady Visual Studio k vytváření aplikací pro Windows, které můžete ručně přidejte parametr jinak použít <xref:System.Environment> třídy získat argumenty příkazového řádku. Parametry se načtou jako argumenty příkazového řádku nulový index. Na rozdíl od jazyka C a C++ název aplikace není považován za první argument příkazového řádku.
+- `Main` Metoda je vstupním bodem spustitelného programu; je místo, kde se ovládací prvek program spouští a končí.
+- `Main`je deklarován uvnitř třídy nebo struktury. `Main`musí být [statický](../../language-reference/keywords/static.md) a nemusí být [veřejný](../../language-reference/keywords/public.md). (V předchozím příkladu obdrží výchozí přístup [Private](../../language-reference/keywords/private.md).) Nadřazené třídy nebo struktury není nutné provádět staticky.
+- `Main``void`může mít C# `Task` `Task<int>` buď,, nebo, počínaje 7,1, nebo návratovým typem. `int`
+- Pokud a pouze pokud `Main` `Task` vrátí `Task<int>` [nebo,`async`](../../language-reference/keywords/async.md) deklaraci můžeobsahovatmodifikátor.`Main` Všimněte si, že to konkrétně vylučuje `async void Main` metodu.
+- Metoda může být deklarována s `string[]` parametrem, který obsahuje argumenty příkazového řádku nebo bez něj. `Main` Při použití sady <xref:System.Environment> Visual Studio k vytváření aplikací pro Windows můžete zadat parametr ručně nebo jinak použít třídu k získání argumentů příkazového řádku. Parametry jsou čteny jako argumenty příkazového řádku s nulovým indexem. Na rozdíl od jazyka C++C a se název programu nepovažuje za první argument příkazového řádku.
 
-Přidání `async` a `Task`, `Task<int>` vrátí typy zjednodušuje kód programu při konzolové aplikace, musí spustit a `await` asynchronních operací v `Main`.
+`async` Sčítání `Task` `Main` `await` a návratové typy zjednodušují kód programu, když aplikace konzoly potřebují spustit a asynchronní operace v. `Task<int>`
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -44,7 +44,7 @@ Přidání `async` a `Task`, `Task<int>` vrátí typy zjednodušuje kód program
 
 ## <a name="see-also"></a>Viz také:
 
-- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
-- [V programu v jazyce C#](../../../csharp/programming-guide/inside-a-program/index.md)
+- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../language-reference/compiler-options/command-line-building-with-csc-exe.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Metody](../classes-and-structs/methods.md)
+- [V programu v jazyce C#](../inside-a-program/index.md)

@@ -5,25 +5,25 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: 1e77c994062c7ac9ee009bc0e12d39e530e8af80
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 6f4044591c2cd8d59970d8d2f6e65c51ce7498ff
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868839"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590555"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Použití delegátů (Průvodce programováním v C#)
-[Delegát](../../../csharp/language-reference/keywords/delegate.md) je typ, který bezpečně zapouzdřuje metodu, podobně jako ukazatel na funkci v jazyce C a C++. Na rozdíl od ukazatelů funkcí jazyka C jsou delegáti objektově orientovaný, typově bezpečný a zabezpečený. Typ delegáta je definován názvem delegáta. Následující příklad deklaruje delegáta s názvem `Del` , který může zapouzdřit metodu, která přijímá [řetězec](../../../csharp/language-reference/keywords/string.md) jako argument a vrací [typ void](../../../csharp/language-reference/keywords/void.md):  
+[Delegát](../../language-reference/keywords/delegate.md) je typ, který bezpečně zapouzdřuje metodu, podobně jako ukazatel na funkci v jazyce C a C++. Na rozdíl od ukazatelů funkcí jazyka C jsou delegáti objektově orientovaný, typově bezpečný a zabezpečený. Typ delegáta je definován názvem delegáta. Následující příklad deklaruje delegáta s názvem `Del` , který může zapouzdřit metodu, která přijímá [řetězec](../../language-reference/keywords/string.md) jako argument a vrací [typ void](../../language-reference/keywords/void.md):  
   
  [!code-csharp[csProgGuideDelegates#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#21)]  
   
- Objekt delegáta je obvykle vytvořen tak, že poskytuje název metody, které bude delegát zalamovat, nebo s [anonymní funkcí](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md). Po vytvoření instance delegáta bude do této metody předána volání metody provedené delegátem. Parametry předané delegátovi jsou předány metodě a návratová hodnota, pokud existuje, z metody se vrátí volajícímu delegátovi. Označuje se jako volání delegáta. Instanci delegáta lze vyvolat, jako by se jednalo o zabalenou metodu. Příklad:  
+ Objekt delegáta je obvykle vytvořen tak, že poskytuje název metody, které bude delegát zalamovat, nebo s [anonymní funkcí](../statements-expressions-operators/anonymous-functions.md). Po vytvoření instance delegáta bude do této metody předána volání metody provedené delegátem. Parametry předané delegátovi jsou předány metodě a návratová hodnota, pokud existuje, z metody se vrátí volajícímu delegátovi. Označuje se jako volání delegáta. Instanci delegáta lze vyvolat, jako by se jednalo o zabalenou metodu. Příklad:  
   
  [!code-csharp[csProgGuideDelegates#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#22)]  
   
  [!code-csharp[csProgGuideDelegates#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#23)]  
   
- Typy delegátů jsou odvozeny <xref:System.Delegate> od třídy v .NET Framework. Typy delegátů [](../../../csharp/language-reference/keywords/sealed.md)jsou zapečetěné – nemůžou být odvozené od – a není možné odvodit vlastní třídy z <xref:System.Delegate>. Vzhledem k tomu, že konstruktor s vytvořeným instancemi je objekt, může být předán jako parametr nebo přiřazen vlastnosti. To umožňuje, aby metoda přijímala delegáta jako parametr a později volala delegáta. Tento postup se označuje jako asynchronní zpětné volání a je běžnou metodou upozorňování volajícího na dokončení dlouhého procesu. V případě použití delegáta tímto způsobem kód používající delegáta nepotřebuje žádné znalosti implementace používané metody. Funkčnost je podobná rozhraním zapouzdření.  
+ Typy delegátů jsou odvozeny <xref:System.Delegate> od třídy v .NET Framework. Typy delegátů [](../../language-reference/keywords/sealed.md)jsou zapečetěné – nemůžou být odvozené od – a není možné odvodit vlastní třídy z <xref:System.Delegate>. Vzhledem k tomu, že konstruktor s vytvořeným instancemi je objekt, může být předán jako parametr nebo přiřazen vlastnosti. To umožňuje, aby metoda přijímala delegáta jako parametr a později volala delegáta. Tento postup se označuje jako asynchronní zpětné volání a je běžnou metodou upozorňování volajícího na dokončení dlouhého procesu. V případě použití delegáta tímto způsobem kód používající delegáta nepotřebuje žádné znalosti implementace používané metody. Funkčnost je podobná rozhraním zapouzdření.  
   
  Dalším běžným použitím zpětných volání je definování vlastní metody porovnání a předání tohoto delegáta metodě řazení. Umožňuje, aby se kód volajícího stal součástí algoritmu řazení. Následující příklad metody používá `Del` typ jako parametr:  
   
@@ -59,7 +59,7 @@ ms.locfileid: "68868839"
   
  Delegáti s více než jednou metodou v seznamu volání jsou odvozeni <xref:System.MulticastDelegate>z, což je `System.Delegate`podtřídou třídy. Výše uvedený kód funguje v obou případech, protože obě třídy `GetInvocationList`podporují.  
   
- Delegáti vícesměrového vysílání se často používají při zpracování událostí. Zdrojové objekty událostí odesílají oznámení o událostech do objektů příjemců, které jsou zaregistrované pro příjem této události. K registraci pro událost příjemce vytvoří metodu, která je navržena pro zpracování události, a pak vytvoří delegáta pro tuto metodu a předá delegáta zdroji události. Zdroj volá delegáta, když dojde k události. Delegát pak zavolá metodu zpracování události na příjemce a doručí data události. Typ delegáta pro danou událost je definován zdrojem události. Další informace najdete v tématu [události](../../../csharp/programming-guide/events/index.md).  
+ Delegáti vícesměrového vysílání se často používají při zpracování událostí. Zdrojové objekty událostí odesílají oznámení o událostech do objektů příjemců, které jsou zaregistrované pro příjem této události. K registraci pro událost příjemce vytvoří metodu, která je navržena pro zpracování události, a pak vytvoří delegáta pro tuto metodu a předá delegáta zdroji události. Zdroj volá delegáta, když dojde k události. Delegát pak zavolá metodu zpracování události na příjemce a doručí data události. Typ delegáta pro danou událost je definován zdrojem události. Další informace najdete v tématu [události](../events/index.md).  
   
  Porovnání delegátů dvou různých typů přiřazených v době kompilace způsobí chybu kompilace. Pokud jsou instance delegátů staticky typu `System.Delegate`, je porovnávání povoleno, ale v době běhu vrátí hodnotu false. Příklad:  
   
@@ -67,9 +67,9 @@ ms.locfileid: "68868839"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
-- [Použití odchylek v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)
-- [Odchylky v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
-- [Použití odchylek pro obecné delegáty Func a Action](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
-- [Události](../../../csharp/programming-guide/events/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Delegáti](./index.md)
+- [Použití odchylek v delegátech](../concepts/covariance-contravariance/using-variance-in-delegates.md)
+- [Odchylky v delegátech](../concepts/covariance-contravariance/variance-in-delegates.md)
+- [Použití odchylek pro obecné delegáty Func a Action](../concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Události](../events/index.md)

@@ -1,18 +1,18 @@
 ---
-title: Odchylky v delegátech (C#)
+title: Variance v delegátechC#()
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 835b19b191bd3cb193bf4ba12d689b962c8603ec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 80062f755a6159c48ff595556db99b0ac067533a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598063"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595172"
 ---
-# <a name="variance-in-delegates-c"></a>Odchylky v delegátech (C#)
-Rozhraní .NET framework 3.5 představil podporu odchylku pro spárování metod podpisů s typy delegáta v Všichni delegáti v jazyce C#. To znamená, že můžete přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo, která přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta . To zahrnuje obecných a neobecných delegátů.  
+# <a name="variance-in-delegates-c"></a>Variance v delegátechC#()
+.NET Framework 3,5 zavedl podporu variance pro párové signatury metod s typy delegátů ve C#všech delegátech v. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než které jsou určeny typem delegáta. . To zahrnuje obecné i neobecné delegáty.  
   
- Zvažte například následující kód, který má dvě třídy a dvou delegátů: obecných a neobecných.  
+ Zvažte například následující kód, který má dvě třídy a dva delegáty: Obecné a neobecné.  
   
 ```csharp  
 public class First { }  
@@ -21,7 +21,7 @@ public delegate First SampleDelegate(Second a);
 public delegate R SampleGenericDelegate<A, R>(A a);  
 ```  
   
- Při vytváření delegátů `SampleDelegate` nebo `SampleGenericDelegate<A, R>` typy, můžete přiřadit jednu z následujících metod na tyto delegáty.  
+ Při vytváření delegátů `SampleDelegate` typu nebo `SampleGenericDelegate<A, R>` můžete těmto delegátům přiřadit jednu z následujících metod.  
   
 ```csharp  
 // Matching signature.  
@@ -42,7 +42,7 @@ public static Second AFirstRSecond(First first)
 { return new Second(); }  
 ```  
   
- Následující příklad kódu ukazuje implicitní převod mezi podpisu metody a typ delegáta.  
+ Následující příklad kódu ukazuje implicitní převod mezi signaturou metody a typem delegáta.  
   
 ```csharp  
 // Assigning a method with a matching signature   
@@ -62,14 +62,14 @@ SampleGenericDelegate<Second, First> dGeneric = ASecondRFirst;
 SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;  
 ```  
   
- Další příklady najdete v tématu [použití odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) a [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+ Další příklady naleznete v tématu [použití variance v delegátechC#()](./using-variance-in-delegates.md) a [použití odchylky pro obecné delegáty Func aC#Action ()](./using-variance-for-func-and-action-generic-delegates.md).  
   
-## <a name="variance-in-generic-type-parameters"></a>Variance u parametrů obecného typu  
- V rozhraní .NET Framework 4 nebo novější můžete povolit implicitní převod mezi delegáty, tak, aby obecné delegáty, které mají různé typy určené parametry obecného typu lze přiřadit k sobě navzájem, pokud typ dědí od sebe navzájem podle požadavků Variance.  
+## <a name="variance-in-generic-type-parameters"></a>Variance v parametrech obecného typu  
+ V .NET Framework 4 nebo novější lze povolit implicitní převod mezi delegáty, aby byly Obecné delegáti, kteří mají různé typy určené parametry obecného typu, vzájemně přiřazeny, pokud jsou typy děděny od sebe navzájem vyžadované odchylk.  
   
- Pokud chcete povolit implicitní převod, musíte explicitně deklarovat obecných parametrů v delegátů jako kovariantní nebo kontravariantní pomocí `in` nebo `out` – klíčové slovo.  
+ Chcete-li povolit implicitní převod, je nutné explicitně deklarovat Obecné parametry delegáta jako kovariantu nebo kontravariantní `in` pomocí klíčového slova or. `out`  
   
- Následující příklad kódu ukazuje, jak můžete vytvořit delegáta, který má parametr kovariantního obecného typu.  
+ Následující příklad kódu ukazuje, jak lze vytvořit delegáta s parametrem kovariantního obecného typu.  
   
 ```csharp  
 // Type T is declared covariant by using the out keyword.  
@@ -85,9 +85,9 @@ public static void Test()
 }  
 ```  
   
- Pokud používáte podporují jenom variance tak, aby odpovídaly metod podpisů s typy delegátů a nepoužívají `in` a `out` klíčová slova, možná zjistíte, že v některých případech můžete vytvořit instanci delegáty s identické lambda výrazy nebo metody, ale nemůžete přiřaďte jeden delegáta do jiného.  
+ Použijete-li pouze podporu variance pouze pro spárování signatur metod s typy delegátů a `in` nepoužívejte klíčová slova a `out` , můžete zjistit, že někdy lze vytvořit instanci delegátů se stejnými výrazy lambda nebo metodami, ale nelze Přiřaďte jednoho delegáta k druhému.  
   
- V následujícím příkladu kódu `SampleGenericDelegate<String>` nelze explicitně převést na `SampleGenericDelegate<Object>`, i když `String` dědí `Object`. Tento problém můžete vyřešit označením obecných parametrů `T` s `out` – klíčové slovo.  
+ V následujícím příkladu `SampleGenericDelegate<String>` kódu nemůže být explicitně převeden na `SampleGenericDelegate<Object>`, i když `String` dědí `Object`. Tento problém můžete vyřešit tak, že označíte obecný parametr `T` `out` pomocí klíčového slova.  
   
 ```csharp  
 public delegate T SampleGenericDelegate<T>();  
@@ -109,55 +109,55 @@ public static void Test()
 }  
 ```  
   
-### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Parametry typu obecné delegáty, které mají typ Variant v rozhraní .NET Framework  
- Rozhraní .NET framework 4 zavedena podpora odchylku pro parametry obecného typu v několika existující obecné delegáty:  
+### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Obecní delegáti, kteří mají parametry typu variant v .NET Framework  
+ .NET Framework 4 představil podporu variance pro parametry obecného typu v několika stávajících obecných delegátech:  
   
-- `Action` Deleguje z <xref:System> obor názvů, třeba <xref:System.Action%601> a <xref:System.Action%602>  
+- `Action`Delegáti z <xref:System> oboru názvů, <xref:System.Action%601> například a<xref:System.Action%602>  
   
-- `Func` Deleguje z <xref:System> obor názvů, třeba <xref:System.Func%601> a <xref:System.Func%602>  
+- `Func`Delegáti z <xref:System> oboru názvů, <xref:System.Func%601> například a<xref:System.Func%602>  
   
-- <xref:System.Predicate%601> Delegovat  
+- <xref:System.Predicate%601> Delegát  
   
-- <xref:System.Comparison%601> Delegovat  
+- <xref:System.Comparison%601> Delegát  
   
-- <xref:System.Converter%602> Delegovat  
+- <xref:System.Converter%602> Delegát  
   
- Další informace a příklady najdete v tématu [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+ Další informace a příklady naleznete v tématu [using variance for Func and Action Generic DelegatesC#()](./using-variance-for-func-and-action-generic-delegates.md).  
   
-### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>Deklarování parametry variantního typu v obecné delegáty  
- Pokud obecného delegátu má kovariantní nebo kontravariantní parametry obecného typu, jej lze odkazovat jako *variant obecného delegátu*.  
+### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>Deklarace parametrů typu variant v obecných delegátech  
+ Pokud má obecný delegát kovariantní nebo kontravariantní parametry obecného typu, může být odkazováno jako *obecný delegát typu variant*.  
   
- Je možné deklarovat parametr obecného typu Kovariance v obecných delegátů pomocí `out` – klíčové slovo. Kovariantního typu lze použít pouze jako návratový typ metody a ne jako typ argumentů metody. Následující příklad kódu ukazuje, jak deklarovat kovariantního obecného delegáta.  
+ Pomocí `out` klíčového slova můžete deklarovat parametr kovariantního typu v obecném delegátu. Typ kovariantního typu se dá použít jenom jako návratový typ metody, a ne jako typ argumentů metody. Následující příklad kódu ukazuje, jak deklarovat kovariantní obecný delegát.  
   
 ```csharp  
 public delegate R DCovariant<out R>();  
 ```  
   
- Kontravariantního parametru obecného typu v obecného delegátu lze deklarovat s použitím `in` – klíčové slovo. Kontravariantního typu lze použít pouze jako argumenty metody typu, nikoli jako návratový typ metody. Následující příklad kódu ukazuje, jak deklarovat delegáta obecného kontravariantního.  
+ Pomocí `in` klíčového slova můžete deklarovat obecný typ parametru kontravariantní v obecném delegátu. Kontravariantní typ lze použít pouze jako typ argumentů metody a nikoli jako návratový typ metody. Následující příklad kódu ukazuje, jak deklarovat kontravariantního obecného delegáta.  
   
 ```csharp  
 public delegate void DContravariant<in A>(A a);  
 ```  
   
 > [!IMPORTANT]
->  `ref`, `in`, a `out` parametry v jazyce C# nelze označit jako typ variant.  
+>  `ref`parametry `in`, a `out` C# nelze označit jako typ variant.  
   
- Je také možné podporovat odchylky a Kovariance v stejného delegáta, ale pro jiný typ parametrů. To je ukázáno v následujícím příkladu.  
+ Je také možné podporovat odchylku i kovarianci v rámci stejného delegáta, ale pro různé parametry typu. To je ukázáno v následujícím příkladu.  
   
 ```csharp  
 public delegate R DVariant<in A, out R>(A a);  
 ```  
   
-### <a name="instantiating-and-invoking-variant-generic-delegates"></a>Vytváření instancí a volání Variant obecných delegátů  
- Můžete konkretizovat a vyvoláte variant stejně jako můžete vytvořit instanci nebo vyvoláte invariantní. V následujícím příkladu je vytvořena instance delegáta ve výrazu lambda.  
+### <a name="instantiating-and-invoking-variant-generic-delegates"></a>Vytváření instancí a volání variantních generických delegátů  
+ Můžete vytvořit instanci a vyvolat delegáty variant stejně jako při vytváření instance a vyvolat invariantní delegáty. V následujícím příkladu je vytvořena instance delegáta ve výrazu lambda.  
   
 ```csharp  
 DVariant<String, String> dvariant = (String str) => str + " ";  
 dvariant("test");  
 ```  
   
-### <a name="combining-variant-generic-delegates"></a>Kombinování variantních obecných delegátů  
- Neměli kombinovat variant delegátů. <xref:System.Delegate.Combine%2A> Metoda nepodporuje převod variant delegáta a očekává, že delegáty být stejného typu. To může vést k výjimce za běhu při kombinování delegátů pomocí <xref:System.Delegate.Combine%2A> metody nebo pomocí `+` operátoru, jak je znázorněno v následujícím příkladu kódu.  
+### <a name="combining-variant-generic-delegates"></a>Kombinovaná obecná Delegáti variant  
+ Neměli byste kombinovat delegáty variant. <xref:System.Delegate.Combine%2A> Metoda nepodporuje převod delegáta variant a očekává, že Delegáti budou mít naprosto stejný typ. To může vést k výjimce za běhu, Pokud kombinujete delegáty buď pomocí <xref:System.Delegate.Combine%2A> metody, nebo `+` pomocí operátoru, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  
@@ -168,10 +168,10 @@ Action<string> actStr = x => Console.WriteLine("string: {0}", x);
 // Delegate.Combine(actStr, actObj);  
 ```  
   
-## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>Variance u parametrů obecného typu pro hodnotových a odkazových typech  
- Variance u parametrů obecného typu je podporována pouze pro typy odkazů. Například `DVariant<int>` nejde implicitně převést na `DVariant<Object>` nebo `DVariant<long>`, protože se hodnota typu celé číslo.  
+## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>Variance v parametrech obecného typu pro typy hodnot a odkazů  
+ Variance pro parametry obecného typu je podporována pouze pro typy odkazů. Například `DVariant<int>` nelze implicitně převést na `DVariant<Object>` nebo `DVariant<long>`, protože celé číslo je typ hodnoty.  
   
- Následující příklad ukazuje, že variance v obecném typu se nepodporuje parametry pro typy hodnot.  
+ Následující příklad ukazuje, že variance v parametrech obecného typu není pro typy hodnot podporována.  
   
 ```csharp  
 // The type T is covariant.  
@@ -199,5 +199,5 @@ public static void Test()
 ## <a name="see-also"></a>Viz také:
 
 - [Obecné typy](~/docs/standard/generics/index.md)
-- [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
-- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+- [Použití odchylky pro obecné delegáty Func a ActionC#()](./using-variance-for-func-and-action-generic-delegates.md)
+- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../delegates/how-to-combine-delegates-multicast-delegates.md)

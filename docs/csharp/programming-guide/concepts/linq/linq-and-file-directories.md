@@ -2,44 +2,44 @@
 title: LINQ a souborové adresáře (C#)
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: b2153d755b63e1ec14c11b5e94116f7d6b9490f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d2109fe7f4f907317275188057fa6e5e71b2679
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701772"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591974"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ a souborové adresáře (C#)
-Mnoho operací systému souborů jsou v podstatě dotazy a jsou proto vhodné k přístupu LINQ.  
+Mnohé operace se systémem souborů jsou v podstatě dotazy a jsou proto vhodné pro přístup LINQ.  
   
- Všimněte si, že jsou nedestruktivního dotazy v této části. Používají se ke změně obsahu původní soubory nebo složky. To se řídí pravidlo, že dotazů by neměly způsobit žádné vedlejší účinky. Obecně platí jakýkoli kód (včetně dotazů, které provádějí vytvořit / aktualizovat / odstranit operátory), který upravuje zdrojová data by měla být udržovány odděleně od kódu, který se právě dotazuje data.  
+ Všimněte si, že dotazy v této části nejsou destruktivní. Nepoužívají se ke změně obsahu původních souborů nebo složek. Následuje pravidlo, že dotazy by neměly způsobovat žádné vedlejší účinky. Obecně platí, že jakýkoli kód (včetně dotazů, které provádějí operátory vytvořit/aktualizovat/odstranit), který upravuje zdrojová data, by měl být oddělen od kódu, který data pouze dotazuje.  
   
  Tato část obsahuje následující témata:  
   
- [Postupy: Dotaz pro soubory s konkrétním atributem či názvem (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
- Ukazuje, jak budou hledány soubory porovnáním jednoho nebo více vlastností jeho <xref:System.IO.FileInfo> objektu.  
+ [Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ Ukazuje, jak hledat soubory prozkoumáním jedné nebo více vlastností jejího <xref:System.IO.FileInfo> objektu.  
   
- [Postupy: Seskupování souborů podle přípony (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
- Ukazuje, jak vrátit skupiny <xref:System.IO.FileInfo> objektu podle přípony názvu souboru.  
+ [Postupy: Seskupit soubory podle přípony (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)  
+ Ukazuje, jak vrátit skupiny <xref:System.IO.FileInfo> objektů na základě přípony názvu souboru.  
   
- [Postupy: Dotaz pro celkový počet bajtů v sadě složek (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)  
- Ukazuje, jak vrátit celkový počet bajtů ve všech souborech v zadaném adresáři stromu.  
+ [Postupy: Dotaz na celkový počet bajtů v sadě složek (LINQ) (C#)](./how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)  
+ Ukazuje, jak vrátit celkový počet bajtů ve všech souborech v zadaném stromu adresářů.  
   
- [Postupy: Porovnání obsahu dvou složek (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s  
- Ukazuje, jak vrátit všechny soubory, které jsou k dispozici ve dvou zadaných složek a také všechny soubory, které se nacházejí v jedné složce, ale nikoli u druhého.  
+ [Postupy: Porovnat obsah dvou složek (LINQ) (C#) s](./how-to-compare-the-contents-of-two-folders-linq.md)  
+ Ukazuje, jak vrátit všechny soubory, které jsou přítomny ve dvou zadaných složkách, a také všechny soubory, které jsou k dispozici v jedné složce, ale ne jiné.  
   
- [Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)  
- Ukazuje, jak vrátit soubor největší nebo nejmenší nebo zadaný počet souborů v adresářovém stromu.  
+ [Postupy: Dotaz na největší soubor nebo soubory v adresářovém stromu (LINQ) (C#)](./how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)  
+ Ukazuje, jak v adresářovém stromu vracet největší nebo nejmenší soubor nebo určený počet souborů.  
   
- [Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
- Ukazuje, jak do skupiny pro všechny názvy souborů, které se vyskytují ve více než jedné oblasti ve stromové struktuře zadaný adresář. Také ukazuje, jak k provádění složitějších porovnání založené na vlastní porovnávací metody.  
+ [Postupy: Dotaz na duplicitní soubory v adresářovém stromu (LINQ) (C#)](./how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
+ Ukazuje, jak seskupit všechny názvy souborů, které se vyskytují ve více než jednom umístění v zadaném stromu adresářů. Také ukazuje, jak provádět složitější porovnání na základě vlastní porovnávací metody.  
   
- [Postupy: Dotaz na obsah souborů ve složce (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-lin.md)  
- Ukazuje, jak k iteraci v rámci složky ve stromové struktuře, otevřete každý soubor a dotazování obsah souboru.  
+ [Postupy: Dotazování na obsah souborů ve složce (LINQ) (C#)](./how-to-query-the-contents-of-files-in-a-folder-lin.md)  
+ Ukazuje, jak iterovat složky ve stromu, otevřít jednotlivé soubory a zadat dotaz na obsah souboru.  
   
 ## <a name="comments"></a>Komentáře  
- Při vytváření zdroje dat se přesně reprezentuje obsah systému souborů a zpracovává výjimky, bez výpadku je složitost. Příklady v této části vytvořit snímek kolekce <xref:System.IO.FileInfo> objekty, které představují všechny soubory v zadané kořenové složce a jejích podsložkách. Skutečný stav každého <xref:System.IO.FileInfo> v době mezi kdy začínají i končí provádění dotazu se může změnit. Například můžete vytvořit seznam <xref:System.IO.FileInfo> objektů, který se použije jako zdroj dat. Pokud se pokusíte o přístup k `Length` vlastnost v dotazu <xref:System.IO.FileInfo> objekt se pokusí získat přístup a aktualizujte hodnotu v systému souborů `Length`. Pokud soubor už existuje, zobrazí se <xref:System.IO.FileNotFoundException> v dotazu, i když jste nejsou dotazování systému souborů přímo. Některé dotazy v této části použijte samostatné metodě, která využívá tyto konkrétní výjimky v některých případech. Další možností je udržovat zdroje dat pomocí dynamické aktualizace <xref:System.IO.FileSystemWatcher>.  
+ Při vytváření zdroje dat, který přesně představuje obsah systému souborů, je potřeba složitá složitost a dochází k bezproblémovému zpracování výjimek. Příklady v této části vytvoří snímek kolekce <xref:System.IO.FileInfo> objektů, které představují všechny soubory v zadané kořenové složce a všech jejích podsložkách. Skutečný stav každé z nich <xref:System.IO.FileInfo> se může v době mezi začátkem a ukončením dotazu změnit. Můžete například vytvořit seznam <xref:System.IO.FileInfo> objektů, které chcete použít jako zdroj dat. Pokud se pokusíte o přístup `Length` k vlastnosti v dotazu <xref:System.IO.FileInfo> , objekt se pokusí o přístup k systému souborů `Length`za účelem aktualizace hodnoty. Pokud soubor už neexistuje, <xref:System.IO.FileNotFoundException> zobrazí se v dotazu, i když neprovádíte dotazování systému souborů přímo. Některé dotazy v této části používají samostatnou metodu, která v určitých případech spotřebovává tyto konkrétní výjimky. Další možností je udržovat dynamicky aktualizovaný zdroj dat pomocí <xref:System.IO.FileSystemWatcher>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

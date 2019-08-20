@@ -1,5 +1,5 @@
 ---
-title: <summary> - C# Průvodce programováním
+title: <summary> – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <summary> C# XML tag
 - summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
-ms.openlocfilehash: 0e6408f1f45bb5f1406b4b1a7f6fe2cf543109e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a509c002bb6a55b4751712925ae7cc613911af2
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675972"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587616"
 ---
-# <a name="summary-c-programming-guide"></a>\<Souhrn > (C# Programming Guide)
+# <a name="summary-c-programming-guide"></a>\<souhrnný > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -25,19 +25,19 @@ ms.locfileid: "61675972"
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- Přehled objektu.  
+ Souhrn objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- \<Summary > Značka by měla sloužit k popisu typu nebo člena typu. Použití [ \<remarks >](../../../csharp/programming-guide/xmldoc/remarks.md) přidat doplňující informace pro popis typu. Použití [cref – atribut](../../../csharp/programming-guide/xmldoc/cref-attribute.md) umožňující dokumentace nástroje [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) k vytvoření interních hypertextových odkazů na stránky dokumentace prvků kódu.  
+ Značka \<> souhrnu by měla být použita k popisu typu nebo člena typu. K přidání doplňujících informací do popisu typu použijte [ \<poznámky >](./remarks.md) . Pomocí [atributu cref](./cref-attribute.md) můžete povolit nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , a vytvářet interní hypertextové odkazy na stránky dokumentace pro prvky kódu.  
   
- Text \<summary > značky je jediný zdroj informací o typu v IntelliSense a také se zobrazí v okně prohlížeče objektů.  
+ Text pro \<značku Summary > je jediným zdrojem informací o typu v technologii IntelliSense a je také zobrazen v okně Prohlížeč objektů.  
   
- Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru. Chcete-li vytvořit finální dokumentaci na základě souboru generovaného kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).  
+ Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru. Chcete-li vytvořit konečnou dokumentaci založenou na souboru generovaném kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#12)]  
   
- Předchozí příklad vytváří následující soubor XML.  
+ Předchozí příklad vytvoří následující soubor XML.  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -63,11 +63,11 @@ ms.locfileid: "61675972"
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit `cref` odkaz na obecném typu.  
+ Následující příklad ukazuje, jak vytvořit `cref` odkaz na obecný typ.  
   
  [!code-csharp[csProgGuideDocComments#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#11)]  
   
- Předchozí příklad vytváří následující soubor XML.  
+ Předchozí příklad vytvoří následující soubor XML.  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -95,5 +95,5 @@ ms.locfileid: "61675972"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

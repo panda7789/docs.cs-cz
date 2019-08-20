@@ -1,5 +1,5 @@
 ---
-title: Vzájemná funkční spolupráce – C# Průvodce programováním
+title: Interoperabilita C# – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,44 +8,44 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: b568bdc149123b490f3b058afc668aabcf558d55
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 896f89304289fd90c10da9aaa7ea15ada35ef8f7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585461"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589091"
 ---
 # <a name="interoperability-c-programming-guide"></a>Interoperabilita (Průvodce programováním v C#)
-Interoperabilita umožňuje zachovat a využít stávající investice do nespravovaného kódu. Je volána kód, který běží v rámci ovládacího prvku modulu common language runtime (CLR) *spravovaného kódu*, a je volána kód, který běží mimo rámec platformy CLR *nespravovaný kód*. COM, modelu COM +, komponenty C++, součásti ActiveX a rozhraní API Microsoft Windows jsou příkladem nespravovaného kódu.  
+Interoperabilita umožňuje zachovat a využít stávající investice do nespravovaného kódu. Kód, který se spouští pod kontrolou modulu CLR (Common Language Runtime), se nazývá *spravovaný kód*a kód, který se spouští mimo modul CLR, se nazývá nespravovaný *kód*. Příklady nespravovaného C++ kódu jsou com, com+, komponenty, komponenty ActiveX a rozhraní Microsoft Windows API.  
   
- Rozhraní .NET Framework umožňuje vzájemná funkční spolupráce s nespravovaným kódem prostřednictvím platformy vyvolat služby, <xref:System.Runtime.InteropServices> obor názvů, C++ vzájemná funkční spolupráce a vzájemná funkční spolupráce modelu COM (komunikace s objekty COM).  
+ .NET Framework umožňuje vzájemnou funkční spolupráci s nespravovaným kódem prostřednictvím služeb <xref:System.Runtime.InteropServices> vyvolání platformy C++ , oboru názvů, interoperability a interoperability modelu COM (komunikace s objekty com).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)  
- Popisuje metody pro spolupráci mezi kód jazyka C# spravovaného a nespravovaného kódu.  
+ [Přehled interoperability](./interoperability-overview.md)  
+ Popisuje metody vzájemné spolupráce mezi C# spravovaným kódem a nespravovaným kódem.  
   
- [Postupy: Přístup k objektům Interop sady Office pomocí Vizuálu C# funkce](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
- Popisuje funkce, které se zavedly v jazyce Visual C# k usnadnění programování pro Office.  
+ [Postupy: Přístup k objektům Interop Office pomocí C# vizuálních funkcí](./how-to-access-office-onterop-objects.md)  
+ Popisuje funkce, které jsou představené C# ve vizuálu pro usnadnění programování pro Office.  
   
- [Postupy: Použití indexovaných vlastností při programování vzájemné spolupráce COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
- Popisuje, jak používat indexované vlastnosti pro přístup k vlastnostem modelu COM, které mají parametry.  
+ [Postupy: Použití indexovaných vlastností v programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)  
+ Popisuje způsob použití indexovaných vlastností pro přístup k vlastnostem modelu COM, které mají parametry.  
   
- [Postupy: Použití vyvolání platformy pro přehrání souboru Wave](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md)  
- Popisuje, jak používat platformu vyvolání služby k přehrání zvukového souboru WAV v operačním systému Windows.  
+ [Postupy: Použít vyvolání platformy k přehrání souboru Wave](./how-to-use-platform-invoke-to-play-a-wave-file.md)  
+ Popisuje způsob použití služeb vyvolání platformy k přehrání zvukového souboru. wav v operačním systému Windows.  
   
- [Návod: Programování pro systém Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)  
- Ukazuje, jak vytvořit Excelový sešit a dokument aplikace Word, který obsahuje odkaz na sešit.  
+ [Návod: Programování pro Office](./walkthrough-office-programming.md)  
+ Ukazuje, jak vytvořit excelový sešit a wordový dokument, který obsahuje odkaz na sešit.  
   
- [Ukázka třídy COM](../../../csharp/programming-guide/interop/example-com-class.md)  
- Ukazuje, jak vystavit třída jazyka C# jako objekt modelu COM.  
+ [Ukázka třídy COM](./example-com-class.md)  
+ Ukazuje, jak vystavit C# třídu jako objekt modelu COM.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [základní koncepty](~/_csharplang/spec/unsafe-code.md) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [základní koncepty](~/_csharplang/spec/unsafe-code.md) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)
-- [Návod: Programování pro systém Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)
+- [Návod: Programování pro Office](./walkthrough-office-programming.md)

@@ -1,5 +1,5 @@
 ---
-title: -reference (možnosti kompilátoru C#)
+title: -Reference (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /reference
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: fbf93a87cede753ebd41c148f4fb4bb761846954
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 247fb222eaacdb5ee60df2dded3a857f0395eb34
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593087"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606572"
 ---
-# <a name="-reference-c-compiler-options"></a>-reference (možnosti kompilátoru C#)
-**– Referenční dokumentace** možnost způsobí, že kompilátor importovat [veřejné](../../../csharp/language-reference/keywords/public.md) zadávat informace do zadaného souboru do aktuálního projektu, což umožní k odkazování na metadata ze zadaných souborů sestavení.  
+# <a name="-reference-c-compiler-options"></a>-Reference (C# možnosti kompilátoru)
+Možnost **-reference** způsobí, že kompilátor importuje informace [](../keywords/public.md) o veřejném typu do zadaného souboru do aktuálního projektu, takže umožňuje odkazovat na metadata ze zadaných souborů sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,47 +32,47 @@ ms.locfileid: "64593087"
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Název souboru obsahujícího manifest sestavení. Pokud chcete importovat více než jeden soubor, zahrnují samostatný **-odkaz** možnost pro každý soubor.  
+ Název souboru obsahujícího manifest sestavení. Chcete-li importovat více než jeden soubor, zahrňte možnost samostatného **odkazu** pro každý soubor.  
   
  `alias`  
- Platným identifikátorem C#, která bude představovat kořenový obor názvů, který bude obsahovat všechny obory názvů v sestavení.  
+ Platný C# identifikátor, který bude představovat kořenový obor názvů, který bude obsahovat všechny obory názvů v sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud chcete importovat z více než jeden soubor, zahrňte **– referenční dokumentace** možnost pro každý soubor.  
+ Chcete-li importovat z více než jednoho souboru, zahrňte možnost **-reference** pro každý soubor.  
   
- Soubory, které importujete, musí obsahovat manifest; výstupní soubor musí být zkompilovány s jedním z [-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) možností jiných než [-target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md).  
+ Soubory, které importujete, musí obsahovat manifest; výstupní soubor musí být zkompilován s jednou z možností TARGETu [](./target-compiler-option.md) s výjimkou [target: Module](./target-module-compiler-option.md).  
   
- **-r** je zkratka pro **– referenční dokumentace**.  
+ **-r** je krátká forma **reference**.  
   
- Použití [- addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md) importovat metadata z výstupního souboru, který nebude obsahovat manifest sestavení.  
+ Pomocí [-addmodule –](./addmodule-compiler-option.md) importujte metadata z výstupního souboru, který neobsahuje manifest sestavení.  
   
- Pokud odkazujete na sestavení (sestavení A), který odkazuje na jiné sestavení (sestavení B), budete muset odkaz na sestavení B pokud:  
+ Pokud odkazujete na sestavení (sestavení A), které odkazuje na jiné sestavení (sestavení B), budete muset odkazovat na sestavení B, pokud:  
   
-- Typ, který používáte v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
+- Typ, který použijete ze sestavení A dědí z typu nebo implementuje rozhraní ze sestavení B.  
   
-- Vyvolání pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B.  
+- Vyvoláte pole, vlastnost, událost nebo metodu, které mají návratový typ nebo typ parametru ze sestavení B.  
   
- Použití [-lib](../../../csharp/language-reference/compiler-options/lib-compiler-option.md) určit adresář, ve kterém se nachází jeden nebo více odkazů na sestavení. **-Lib** téma také popisuje adresáře, ve kterých kompilátor hledá sestavení.  
+ Pomocí [-lib](./lib-compiler-option.md) Určete adresář, ve kterém se nachází jeden nebo více odkazů na sestavení. Téma **-lib** také popisuje adresáře, ve kterých kompilátor vyhledává sestavení.  
   
- Aby kompilátor rozpoznával typ v sestavení a ne v modulu je potřeba jej donutit k přeložení typu, což lze provést definováním instance typu. Existují jiné způsoby přeložení názvů typů v sestavení pro kompilátor: například, pokud je zděděn z typu v sestavení, název typu se pak být rozpoznatelným kompilátorem.  
+ Aby mohl kompilátor rozpoznat typ v sestavení a ne v modulu, musí být vynucen přeložit typ, který lze provést definováním instance typu. Existují i jiné způsoby, jak přeložit názvy typů v sestavení pro kompilátor: například Pokud převezmete z typu v sestavení, název typu bude rozpoznán kompilátorem.  
   
- Někdy je potřeba odkazují na dvě různé verze stejné součásti v rámci jednoho sestavení. K tomuto účelu použít na přepínači alias **– referenční dokumentace** pro každý soubor k rozlišení mezi dvěma soubory. Tento alias se použije jako kvalifikátor pro název komponenty a vyřeší do komponenty v jednom souboru.  
+ V některých případech je nutné odkazovat na dvě různé verze stejné komponenty z jednoho sestavení. Uděláte to tak, že pro každý soubor použijete dílčí možnost alias na přepínač **-reference** pro jednotlivé soubory, abyste je rozlišili mezi těmito dvěma soubory. Tento alias bude použit jako kvalifikátor pro název součásti a bude přeložen na součást v jednom ze souborů.  
   
- Csc soubor odpovědí (.rsp), který se odkazuje na běžně používá sestavení rozhraní .NET Framework, se používá ve výchozím nastavení. Použít [- noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) Pokud nechcete, aby kompilátor používal csc.rsp.  
+ Ve výchozím nastavení se používá soubor odpovědí csc (. rsp), který odkazuje na běžně používaná .NET Framework sestavení. Pokud nechcete, aby kompilátor používal CSc. rsp, použijte [-li konfiguraci](./noconfig-compiler-option.md) .  
   
 > [!NOTE]
-> V sadě Visual Studio, použijte **přidat odkaz** dialogové okno. Další informace najdete v tématu [jak: Přidání nebo odebrání odkazů pomocí Správce odkazů](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager). K zajištění ekvivalentní chování mezi přidání odkazů pomocí `-reference` a přidání odkazů pomocí **přidat odkaz** dialogové okno, nastavte **Embed Interop Types** vlastnost **False** pro sestavení, které přidáte. **Hodnota TRUE** je výchozí hodnota pro vlastnost.  
+> V aplikaci Visual Studio, použijte dialogové okno **Přidat odkaz** . Další informace najdete v tématu [jak: Přidejte nebo odeberte odkazy pomocí správce](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager)odkazů. Chcete-li zajistit ekvivalentní chování mezi přidáním odkazů `-reference` pomocí a přidáním odkazů pomocí dialogového okna **Přidat odkaz** , nastavte vlastnost **Embed Interop Types** na **hodnotu false** pro sestavení, které přidáváte. **True** je výchozí hodnota pro vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje způsob použití [externí alias](../../../csharp/language-reference/keywords/extern-alias.md) funkce.  
+ Tento příklad ukazuje, jak použít funkci [extern alias](../keywords/extern-alias.md) .  
   
- Kompilaci zdrojového souboru a import metadat od `grid.dll` a `grid20.dll`, které již byly zkompilovány dříve. Dvě knihovny DLL obsahovat samostatné verze stejné součásti a použijete dvě **– referenční dokumentace** s možnostmi alias pro kompilaci zdrojového souboru. Možnosti vypadat nějak takto:  
+ Zdrojový soubor zkompilujete a naimportujete metadata `grid.dll` z `grid20.dll`a, které byly zkompilovány dříve. Tyto dvě knihovny DLL obsahují samostatné verze stejné komponenty a k zkompilování zdrojového souboru použijete dva **odkazy** s možnostmi aliasu. Možnosti vypadají takto:  
 
 ```console
 -reference:GridV1=grid.dll -reference:GridV2=grid20.dll  
 ```
   
- Tím se nastaví externích aliasů `GridV1` a `GridV2`, který používáte ve svém programu prostřednictvím `extern` – příkaz:  
+ Tím se nastaví externí aliasy `GridV1` a `GridV2`, které v `extern` programu použijete, prostřednictvím příkazu:  
   
 ```csharp  
 extern alias GridV1;  
@@ -80,13 +80,13 @@ extern alias GridV2;
 // Using statements go here.  
 ```  
   
- Až to uděláte, můžete odkazovat na ovládací prvek mřížky z `grid.dll` vložením prefixu název ovládacího prvku s `GridV1`, tímto způsobem:  
+ Až to uděláte, můžete odkazovat na ovládací prvek mřížky z `grid.dll` pomocí předpony `GridV1`názvu ovládacího prvku, například takto:  
   
 ```csharp  
 GridV1::Grid  
 ```  
   
- Kromě toho můžete odkazovat na ovládací prvek mřížky z `grid20.dll` vložením prefixu název ovládacího prvku s `GridV2` tímto způsobem:  
+ Kromě toho můžete odkazovat na ovládací prvek mřížky z `grid20.dll` pomocí předpony `GridV2` názvu ovládacího prvku následujícím způsobem:  
   
 ```csharp  
 GridV2::Grid   
@@ -94,5 +94,5 @@ GridV2::Grid
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

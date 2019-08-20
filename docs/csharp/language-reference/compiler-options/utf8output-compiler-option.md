@@ -1,5 +1,5 @@
 ---
-title: -utf8output (možnosti kompilátoru C#)
+title: -Utf8Output – (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /utf8output
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - /utf8output compiler option [C#]
 - -utf8output compiler option [C#]
 ms.assetid: 27ff7381-c281-45d7-b2eb-1ad644b1354e
-ms.openlocfilehash: 9dd67d3ea14b02ae9638f3b13d6bca0a84e4b71b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: abed8247569cd5885e6241be141271bf75bfa2be
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662293"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606297"
 ---
-# <a name="-utf8output-c-compiler-options"></a>-utf8output (možnosti kompilátoru C#)
-**-Utf8output** možnost zobrazí výstup kompilátoru pomocí kódování UTF-8.  
+# <a name="-utf8output-c-compiler-options"></a>-Utf8Output – (C# možnosti kompilátoru)
+Možnost **-utf8output –** zobrazí výstup kompilátoru pomocí kódování UTF-8.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,10 +25,10 @@ ms.locfileid: "61662293"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- V některých konfiguracích mezinárodní nelze výstup kompilátoru správně zobrazen v konzole. V těchto konfiguracích použít **-utf8output** a přesměrovat výstup kompilátoru do souboru.  
+ V některých mezinárodních konfiguracích nelze výstup kompilátoru v konzole správně zobrazit. V těchto konfiguracích použijte **-utf8output –** a přesměrujte výstup kompilátoru do souboru.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

@@ -2,35 +2,35 @@
 title: Koncepty programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: bfe4046d6d54693867ebe5d8529a4744b9e69c3b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7668ca6bba0b938e569886cfa9f1985eaa48c5d0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702461"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594992"
 ---
 # <a name="programming-concepts-c"></a>Koncepty programování (C#)
-Tato část popisuje koncepty programování v jazyce C#.  
+Tato část vysvětluje koncepty programování v C# jazyce.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Název|Popis|  
 |-----------|-----------------|  
 |[Sestavení v .NET](../../../standard/assembly/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
-|[Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../csharp/programming-guide/concepts/async/index.md)|Popisuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) a [await](../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C#. Obsahuje návod.|  
-|[Atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
-|[Informace o volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace patří cesta k souboru a číslo řádku zdrojového kódu a členské jméno volajícího.|  
-|[Kolekce (C#)](../../../csharp/programming-guide/concepts/collections.md)|Popisuje typy kolekcí, které poskytuje rozhraní .NET Framework. Ukazuje, jak použít jednoduché kolekce a kolekce párů klíč/hodnota.|  
-|[Kovariance a kontravariance (C#)](../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametrů obecného typu v rozhraních a delegátech.|  
-|[Stromy výrazů (C#)](../../../csharp/programming-guide/concepts/expression-trees/index.md)|Vysvětluje, jak lze pomocí stromů výrazů povolit dynamickou změnu spustitelného kódu.|  
-|[Iterátory (C#)](../../../csharp/programming-guide/concepts/iterators.md)|Popisuje iterátory, které se používají ke krokování kolekcemi a při návratu elementů.|  
-|[Language-Integrated Query (LINQ) (C#)](../../../csharp/programming-guide/concepts/linq/index.md)|Tento článek popisuje výkonné funkce dotazů v syntaxi jazyka C# a model pro dotazování na relačních databází, dokumenty XML, datové sady a kolekce v paměti.|  
-|[Objektově orientované programování (C#)](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné objektově orientovaný jazyk, včetně zapouzdření, dědičnosti a polymorfismu.|  
-|[Reflexe (C#)](../../../csharp/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím.|  
-|[Serializace (C#)](../../../csharp/programming-guide/concepts/serialization/index.md)|Popisuje klíčové pojmy v binárním formátu XML a serializaci SOAP.|  
+|[Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./async/index.md)|Popisuje, jak zapisovat asynchronní řešení pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/keywords/await.md) v C#. Obsahuje návod.|  
+|[Atributy (C#)](./attributes/index.md)|Popisuje, jak poskytnout další informace o programovacích prvcích, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
+|[Informace o volajícím (C#)](./caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace zahrnují cestu k souboru a číslo řádku zdrojového kódu a název člena volajícího.|  
+|[Kolekce (C#)](./collections.md)|Popisuje některé z typů kolekcí poskytovaných .NET Framework. Ukazuje, jak používat jednoduché kolekce a kolekce párů klíč/hodnota.|  
+|[Kovariance a kontravariance (C#)](./covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametrů obecného typu v rozhraních a delegátech.|  
+|[Stromy výrazů (C#)](./expression-trees/index.md)|Vysvětluje, jak lze pomocí stromů výrazů povolit dynamickou úpravu spustitelného kódu.|  
+|[Iterátory (C#)](./iterators.md)|Popisuje iterátory, které se používají ke krokování kolekcí a vracení prvků po jednom.|  
+|[Dotaz integrovaný na jazyku (LINQ)C#()](./linq/index.md)|Popisuje výkonné funkce dotazů v syntaxi C#jazyka a model pro dotazování na relačních databázích, dokumentech XML, datových sadách a kolekcích v paměti.|  
+|[Objektově orientované programování (C#)](./object-oriented-programming.md)|Popisuje běžné koncepty orientované na objekty, včetně zapouzdření, dědičnosti a polymorfismu.|  
+|[Reflexe (C#)](./reflection.md)|Vysvětluje způsob použití reflexe k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získání typu z existujícího objektu a vyvolání metod nebo přístup k jeho polím a vlastnostem.|  
+|[SerializaceC#()](./serialization/index.md)|Popisuje klíčové koncepty v binárních, XML a serializaci SOAP.|  
   
 ## <a name="related-sections"></a>Související oddíly  
   
 |||  
 |---|---|  
-|[Tipy pro zvýšení výkonu](../../../../docs/framework/performance/performance-tips.md) | Tento článek popisuje několik základních pravidel, které vám mohou pomoci zvýšit výkon vaší aplikace.|
+|[Tipy pro zvýšení výkonu](../../../framework/performance/performance-tips.md) | Tento článek popisuje několik základních pravidel, která vám pomohou zvýšit výkon aplikace.|

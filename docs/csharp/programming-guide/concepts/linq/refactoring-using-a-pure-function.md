@@ -1,23 +1,23 @@
 ---
-title: Refaktoring pomocí čisté funkce (C#)
+title: Refaktoring pomocí funkce Pure (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
-ms.openlocfilehash: 093374c848a9792d8c184ddc210bbcc8171d3374
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: d1c4b1fc59e52fbd72dec1ee0e73e7198a083868
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483995"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591319"
 ---
-# <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí čisté funkce (C#)
-Následující příklad refactors v předchozím příkladu [refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.  
+# <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí funkce Pure (C#)
+Následující příklad refaktoruje předchozí příklad refaktoringu [pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)pro použití funkce Pure v tomto příkladu, kód pro vyhledání textu odstavce je přesunut na čistě statickou metodu. `ParagraphText`  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu zpracovává dokumentu WordprocessingML načítání uzly odstavců z dokumentu WordprocessingML. Styl k jednotlivým odstavcům také identifikuje. Tento příklad je založen na předchozí příklady v tomto kurzu. Refaktorovaný kódu je uvedeny v komentářích v následujícím kódu.  
+ Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Refaktoring Code se volá v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML (C#) pro zdrojový Office](./creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -154,7 +154,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří stejný výstup jako před operací refaktoringu:  
+ Tento příklad vytvoří stejný výstup jako před refaktoringem:  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -175,12 +175,12 @@ StyleName:Code >Hello World<
 ```  
   
 ### <a name="next-steps"></a>Další kroky  
- Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:  
+ Následující příklad ukazuje, jak projekt XML do jiného tvaru:  
   
-- [Projektování XML v odlišném tvaru (C#)](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+- [Projektování XML v jiném obrazci (C#)](./projecting-xml-in-a-different-shape.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)
-- [Refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)
-- [Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Refaktoring pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)
+- [Refaktoring do čistě funkcí (C#)](./refactoring-into-pure-functions.md)

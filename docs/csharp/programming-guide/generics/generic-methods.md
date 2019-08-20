@@ -1,45 +1,45 @@
 ---
-title: Obecné metody - C# Průvodce programováním
+title: Obecné metody – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], methods
 ms.assetid: 673eeea2-4b48-4faa-9c4e-2e89449221b9
-ms.openlocfilehash: 443d4367cc64eb7f9054b2cd52bef59e589f55b3
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 600bb249d1bc1e9f68026caf6596e0a35bb97c43
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170258"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589707"
 ---
 # <a name="generic-methods-c-programming-guide"></a>Obecné metody (Průvodce programováním v C#)
-Obecná metoda je metoda, která je deklarována s parametry typu, následujícím způsobem:  
+Obecná metoda je metoda, která je deklarována s parametry typu, následovně:  
   
  [!code-csharp[csProgGuideGenerics#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#22)]  
   
- Následující příklad kódu ukazuje jeden způsob, jak volat metodu pomocí `int` pro argument typu:  
+ Následující příklad kódu ukazuje jeden ze způsobů, jak volat metodu pomocí `int` argumentu typu:  
   
  [!code-csharp[csProgGuideGenerics#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#23)]  
   
- Také můžete vynechat argument typu a kompilátor odvodí. Následující volání `Swap` je ekvivalentem předchozího volání:  
+ Můžete také vynechat argument typu a kompilátor ho odvodí. Následující volání `Swap` je ekvivalentní předchozímu volání:  
   
  [!code-csharp[csProgGuideGenerics#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#24)]  
   
- Stejná pravidla pro odvození typu platí pro statické metody a metody instance. Kompilátor může odvodit typ parametrů na základě argumentů metody, které můžete předat nelze jej odvodit jenom z omezení parametry typu nebo návratovou hodnotu. Odvození typu proměnné proto nefunguje s metodami, které mají žádné parametry. Odvození typu vyvolá v době kompilace předtím, než kompilátor pokusí přeložit podpisy přetížené metody. Kompilátor použije logiku odvození typu na všechny obecné metody, které mají stejný název. V kroku rozlišení přetížení kompilátor obsahuje pouze tyto obecné metody, na které bylo úspěšné odvození typu proměnné.  
+ Stejná pravidla pro odvození typu se vztahují na statické metody a metody instance. Kompilátor může odvodit parametry typu na základě argumentů metody, které předáte; nemůže odvodit parametry typu jenom z omezení nebo návratové hodnoty. Proto odvození typu nefunguje s metodami, které nemají žádné parametry. K odvození typu dojde v době kompilace předtím, než se kompilátor pokusí přeložit signatury přetížené metody. Kompilátor aplikuje logiku odvození typu na všechny obecné metody, které mají stejný název. V kroku řešení přetížení obsahuje kompilátor pouze ty obecné metody, na které bylo odvození typu úspěšné.  
   
- V rámci obecné třídy neobecné metody mají přístup k úrovni třídy typové parametry, následujícím způsobem:  
+ V rámci obecné třídy mohou neobecné metody získat přístup k parametrům typu na úrovni třídy, a to následujícím způsobem:  
   
  [!code-csharp[csProgGuideGenerics#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#25)]  
   
- Při definování obecné metody, která má stejné parametry typu jako obsahující třídu, kompilátor vygeneruje upozornění [CS0693](../../misc/cs0693.md) protože v rámci oboru metody argument zadaný pro vnitřní `T` skryje argumentu zadaný pro vnější `T`. Pokud požadujete flexibilitu volání metody obecnou třídu s argumenty typů než ty, pokud byla vytvořena instance třídy, zvažte poskytnutí jiný identifikátor pro typ parametru metody, jak je znázorněno v `GenericList2<T>` následující Příklad.  
+ Definujete-li obecnou metodu, která přebírá stejné parametry typu jako obsahující třídu, kompilátor vygeneruje upozornění [CS0693](../../misc/cs0693.md) , protože v rámci oboru metody vygeneruje argument pro vnitřní `T` hodnotu argumentu, který je zadán pro vnější `T`. Pokud požadujete flexibilitu při volání obecné metody třídy s argumenty typu jiné než ty, které jsou zadány při vytváření instance třídy, zvažte zadání jiného identifikátoru pro parametr typu metody, jak je znázorněno `GenericList2<T>` v následujícím příkladu. případě.  
   
  [!code-csharp[csProgGuideGenerics#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#26)]  
   
- Umožňuje povolit více specializované operace u parametrů typu v metodách omezení. Tato verze `Swap<T>`teď s názvem `SwapIfGreater<T>`, lze použít pouze s argumenty typů, které implementují <xref:System.IComparable%601>.  
+ Použijte omezení pro povolení více specializovaných operací u parametrů typu v metodách. Tato verze `Swap<T>`, která je nyní `SwapIfGreater<T>`pojmenována, může být použita pouze s argumenty <xref:System.IComparable%601>typu, které implementují.  
   
  [!code-csharp[csProgGuideGenerics#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#27)]  
   
- Obecné metody lze přetížit na několik parametrů typu. Například následující metody můžete všechny nacházet ve stejné třídě:  
+ Obecné metody mohou být přetíženy u několika parametrů typu. Například následující metody mohou být umístěny ve stejné třídě:  
   
  [!code-csharp[csProgGuideGenerics#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#28)]  
   
@@ -49,6 +49,6 @@ Obecná metoda je metoda, která je deklarována s parametry typu, následujíc�
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Úvod do obecných typů](./index.md)
+- [Metody](../classes-and-structs/methods.md)

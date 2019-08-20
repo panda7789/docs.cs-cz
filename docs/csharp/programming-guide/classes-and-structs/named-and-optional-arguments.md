@@ -14,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 74cfc6a425e82014bbcf5093f52f476ff09db130
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: b43c692c8fd54ef1cbfac334b4986d8332462848
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796556"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596487"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umožňují zadat argument pro konkrétní parametr přiřazením argumentu s názvem parametru, nikoli zadáním pozice parametru v seznamu parametrů. *Volitelné argumenty* umožňují vynechat argumenty pro některé parametry. Oba postupy lze použít s metodami, indexery, konstruktory a delegáty.  
@@ -70,9 +70,9 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
 - konstantní výraz;  
   
-- výraz formuláře `new ValType()`, kde `ValType` je hodnotový typ, jako je například [výčet](../../../csharp/language-reference/keywords/enum.md) nebo [Struktura](../../../csharp/programming-guide/classes-and-structs/structs.md);  
+- výraz formuláře `new ValType()`, kde `ValType` je hodnotový typ, jako je například [výčet](../../language-reference/keywords/enum.md) nebo [Struktura](./structs.md);  
   
-- výchozí výraz formuláře [(ValType)](../../../csharp/language-reference/operators/default.md), kde `ValType` je hodnotový typ.  
+- výchozí výraz formuláře [(ValType)](../../language-reference/operators/default.md), kde `ValType` je hodnotový typ.  
   
  Volitelné parametry jsou definovány na konci seznamu parametrů po všech požadovaných parametrech. Pokud volající poskytne argument pro jakékoli z úspěchu volitelných parametrů, musí zadat argumenty pro všechny předchozí volitelné parametry. Mezery oddělené čárkami v seznamu argumentů nejsou podporovány. Například v následujícím kódu je metoda `ExampleMethod` instance definována s jedním vyžadovaným a dvěma nepovinnými parametry.  
   
@@ -113,7 +113,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Další informace a příklady naleznete v tématu [How to: Použijte pojmenované a volitelné argumenty při programování](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md) systému Office a [postup: Přístup k objektům Interop Office pomocí C# vizuálních funkcí](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)  
+ Další informace a příklady naleznete v tématu [How to: Použijte pojmenované a volitelné argumenty při programování](./how-to-use-named-and-optional-arguments-in-office-programming.md) systému Office a [postup: Přístup k objektům Interop Office pomocí C# vizuálních funkcí](../interop/how-to-access-office-onterop-objects.md)  
   
 ## <a name="overload-resolution"></a>Rozlišení přetěžování  
  Použití pojmenovaných a nepovinných argumentů má vliv na rozlišení přetížení následujícími způsoby:  
@@ -129,7 +129,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
-- [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)
-- [Použití konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)
-- [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)
+- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Použití typu dynamic](../types/using-type-dynamic.md)
+- [Použití konstruktorů](./using-constructors.md)
+- [Použití indexerů](../indexers/using-indexers.md)

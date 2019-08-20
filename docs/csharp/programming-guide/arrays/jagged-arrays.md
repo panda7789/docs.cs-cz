@@ -1,59 +1,59 @@
 ---
-title: Vícenásobná pole - C# Průvodce programováním
+title: Vícenásobná pole – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 9fc05c8bdebf9c1c6b613db0b6a121e06765ac00
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d1be351e3aabea44138323d04c922dd1cccb78a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651997"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597338"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Vícenásobná pole (Průvodce programováním v C#)
 
-Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole mohou být různé dimenze a velikostí. Vícenásobné pole se někdy označuje jako "pole polí." Následující příklady ukazují, jak deklarovat, inicializovat a přístup Vícenásobná pole.  
+Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole mohou mít různé rozměry a velikosti. Vícenásobné pole se někdy označuje jako "pole polí". Následující příklady ukazují, jak deklarovat, inicializovat a přistupovat k vícenásobným polím.  
   
- Následuje deklaraci jednorozměrné pole s, která má tři prvky, z nichž každý je jednorozměrné pole celých čísel:  
+ Níže je deklarace jednorozměrného pole, které má tři prvky, z nichž každý je jednorozměrné pole celých čísel:  
   
  [!code-csharp[csProgGuideArrays#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#19)]  
   
- Než budete moct použít `jaggedArray`, jeho prvky musí být inicializován. Můžete inicializovat prvky takto:  
+ Než budete moci použít `jaggedArray`, musí být inicializovány jeho prvky. Prvky můžete inicializovat takto:  
   
  [!code-csharp[csProgGuideArrays#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#20)]  
   
- Každý prvek je jednorozměrné pole celých čísel. Prvním prvkem je pole 5 celých čísel, druhá je pole 4 celých čísel a třetí je pole 2 celých čísel.  
+ Každý prvek je jednorozměrné pole celých čísel. První prvek je pole o 5 celých čísel, druhým je pole o 4 celých číslech a třetí je pole o 2 celých číslech.  
   
- Je také možné použít inicializátory k vyplnění hodnot prvků pole, v takovém případě nepotřebujete velikost pole. Příklad:  
+ Je také možné použít inicializátory k vyplnění prvků pole hodnotami, v takovém případě nepotřebujete velikost pole. Příklad:  
   
  [!code-csharp[csProgGuideArrays#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#21)]  
   
- Můžete také inicializovat pole při deklaraci takto:  
+ Pole můžete také inicializovat při deklaraci takto:  
   
  [!code-csharp[csProgGuideArrays#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#22)]  
   
- Můžete použít následující Zkrácený tvar. Všimněte si, že nemůžete vynechat `new` operátor od inicializace prvků vzhledem k tomu, že neexistuje žádná výchozí inicializace pro prvky:  
+ Můžete použít následující zkrácený tvar. Všimněte si, že nelze vynechat `new` operátor z inicializace prvků, protože neexistuje žádná výchozí inicializace pro prvky:  
   
  [!code-csharp[csProgGuideArrays#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#23)]  
   
- Vícenásobné pole je pole polí, a proto jeho prvky jsou odkazové typy a jsou inicializovány na hodnotu `null`.  
+ Vícenásobné pole je pole pole, a proto jeho prvky jsou odkazové typy a jsou inicializovány na `null`.  
   
- Můžete přistupovat k prvkům jednotlivá pole jako v těchto příkladech:  
+ Můžete přistupovat k jednotlivým prvkům pole, jako jsou tyto příklady:  
   
  [!code-csharp[csProgGuideArrays#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#24)]  
   
- Je možné kombinovat vícenásobného a vícedimenzionální pole. Následuje deklaraci a inicializaci jednorozměrné vícenásobného pole, která obsahuje tři prvky dvourozměrné pole různých velikostí. Další informace o dvojrozměrné pole najdete v tématu [vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md).  
+ Je možné kombinovat zubatá a multidimenzionální pole. Následuje deklarace a inicializace jednorozměrného vícenásobného pole, které obsahuje 3 2 prvky pole s různou velikostí. Další informace o dvojrozměrnéch polích naleznete v tématu [multidimenzionální pole](./multidimensional-arrays.md).  
   
  [!code-csharp[csProgGuideArrays#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#25)]  
   
- Jak je znázorněno v tomto příkladu, který se zobrazí hodnota elementu, který můžete přístup ke jednotlivým prvkům `[1,0]` první pole (hodnotu `5`):  
+ Můžete přistupovat k jednotlivým prvkům, jak je znázorněno v tomto příkladu, který zobrazuje hodnotu `[1,0]` prvku prvního pole (hodnota `5`):  
   
  [!code-csharp[csProgGuideArrays#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#26)]  
   
- Metoda `Length` vrátí počet polí obsažených v vícenásobného pole. Například za předpokladu, že je deklarován předchozí pole, tento řádek:  
+ Metoda `Length` vrátí počet polí obsažených ve vícenásobném poli. Předpokládejme například, že jste deklarovali předchozí pole, tento řádek:  
   
  [!code-csharp[csProgGuideArrays#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#27)]  
   
@@ -61,14 +61,14 @@ Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole
   
 ## <a name="example"></a>Příklad
 
- Tento příklad vytvoří pole, jehož prvky jsou samotné pole. Prvky pole každé z nich má jinou velikost.  
+ Tento příklad vytvoří pole, jehož prvky jsou sami. Každé z prvků pole má jinou velikost.  
   
  [!code-csharp[csProgGuideArrays#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#18)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Array>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Pole](../../../csharp/programming-guide/arrays/index.md)
-- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
-- [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Pole](./index.md)
+- [Jednorozměrná pole](./single-dimensional-arrays.md)
+- [Vícerozměrná pole](./multidimensional-arrays.md)

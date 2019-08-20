@@ -1,5 +1,5 @@
 ---
-title: Implicitně typované pole - C# Průvodce programováním
+title: Implicitně typované pole – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,37 +7,37 @@ helpviewer_keywords:
 - implicitly-typed arrays [C#]
 - C# language, implicitly typed arrays
 ms.assetid: e05be95c-6732-403d-ae42-b35f057cbbea
-ms.openlocfilehash: 7aa820d87ec36f1963183b7e4e2e46de998a08c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36ca18adc392643107b43a947656846f3b94a2eb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61652010"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597340"
 ---
 # <a name="implicitly-typed-arrays-c-programming-guide"></a>Implicitně typovaná pole (Průvodce programováním v C#)
 
-Implicitně typovaná pole ve kterém je odvozený typ pole instance můžete vytvořit z elementů zadaný v inicializátoru pole. Pravidla pro všechny implicitně typované proměnné platí také pro implicitně typovaná pole. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).
+Můžete vytvořit implicitně typované pole, ve kterém je typ instance pole odvozen z prvků zadaných v inicializátoru pole. Pravidla pro všechny implicitně typované proměnné platí také pro implicitně typované pole. Další informace naleznete v tématu [implicitně typované lokální proměnné](../classes-and-structs/implicitly-typed-local-variables.md).
 
-Implicitně typovaná pole se obvykle používají ve výrazech dotazů spolu s inicializátory objektu a kolekce a anonymní typy.
+Implicitně typované pole se obvykle používají ve výrazech dotazů společně s anonymními typy a Inicializátory objektů a kolekcí.
 
 Následující příklady ukazují, jak vytvořit implicitně typované pole:
 
 [!code-csharp[csProgGuideLINQ#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#37)]
 
-V předchozím příkladu Všimněte si, že se implicitně typovaná pole se žádné hranaté závorky používají na levé straně výrazu inicializace. Všimněte si také, že Vícenásobná pole jsou inicializovány pomocí `new []` stejně jako pole jednou dimenzí.
+V předchozím příkladu si všimněte, že s implicitně typovými poli nejsou na levé straně příkazu Initialization použity žádné hranaté závorky. Všimněte si také, že vícenásobná pole jsou inicializována pomocí `new []` stejně jako pole s jednou dimenzí.
 
-## <a name="implicitly-typed-arrays-in-object-initializers"></a>Implicitně typovaná pole v inicializátorech objektů
+## <a name="implicitly-typed-arrays-in-object-initializers"></a>Implicitně typované pole v inicializátorech objektů
 
-Při vytváření anonymního typu, který obsahuje pole, musí být pole implicitně typované v inicializátoru objektu tohoto typu. V následujícím příkladu `contacts` je implicitně typované pole anonymních typů, z nichž každý obsahuje pole s názvem `PhoneNumbers`. Všimněte si, `var` – klíčové slovo se nepoužívá v inicializátorech objektů.
+Při vytváření anonymního typu, který obsahuje pole, musí být pole implicitně zadáno v inicializátoru objektu typu. V následujícím příkladu `contacts` je implicitně typované pole anonymních typů, z nichž každý obsahuje pole s názvem `PhoneNumbers`. Všimněte si, `var` že klíčové slovo se v inicializátorech objektů nepoužívá.
 
 [!code-csharp[csProgGuideLINQ#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#38)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md)
-- [Pole](../../../csharp/programming-guide/arrays/index.md)
-- [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
-- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
-- [var](../../../csharp/language-reference/keywords/var.md)
-- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Implicitně typované lokální proměnné](../classes-and-structs/implicitly-typed-local-variables.md)
+- [Pole](./index.md)
+- [Anonymní typy](../classes-and-structs/anonymous-types.md)
+- [Inicializátory objektu a kolekce](../classes-and-structs/object-and-collection-initializers.md)
+- [var](../../language-reference/keywords/var.md)
+- [Výrazy dotazů LINQ](../linq-query-expressions/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Příkazy, výrazy a operátory - C# Průvodce programováním
+title: Příkazy, výrazy a operátory – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 7073ddc50b47ff239e8b310c0a5a1fbd84504133
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 29d8b11cb82fe795c332afadeda8215cc660abd5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743877"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588670"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 
-Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se tyto základní prvky programu v jazyce C#.
+C# Kód, který se skládá z aplikace, se skládá z příkazů tvořících klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se těchto základních prvků C# programu.
 
  Další informace naleznete v tématu:
 
@@ -41,5 +41,5 @@ Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Přetypování a převody typů](../types/casting-and-type-conversions.md)

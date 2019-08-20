@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 07/25/2019
-ms.openlocfilehash: f1fce2899e9e11b1007d6c270180b27a29eaa167
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 10e5dfdc873f8dcf9fec0da5f7f3561337033f40
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039439"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69604244"
 ---
 # <a name="whats-new-in-net-core-30-preview-7"></a>Co je nového v .NET Core 3,0 (Preview 7)
 
@@ -502,9 +502,11 @@ Soubory **PKCS # 8** lze kontrolovat pomocí <xref:System.Security.Cryptography.
 
 ## <a name="serialport-for-linux"></a>Portu SerialPort pro Linux
 
-.NET Core 3,0 podporuje <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> v systému Linux.
+.NET Core 3,0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> systém Linux.
 
 Dřív se .NET Core podporuje jenom pomocí `SerialPort` systému Windows.
+
+Další informace o omezené podpoře sériového portu v systému Linux najdete v tématu [#33146 problému GitHubu](https://github.com/dotnet/corefx/issues/33146).
 
 ## <a name="docker-and-cgroup-memory-limits"></a>Omezení paměti Docker a CGROUP
 

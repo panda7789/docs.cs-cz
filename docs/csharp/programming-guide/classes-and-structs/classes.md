@@ -1,23 +1,23 @@
 ---
 title: Třídy – C# Průvodce programováním
 ms.custom: seodec18
-description: Seznamte se s typy třídy a jak je vytvořit
+description: Přečtěte si o typech tříd a o tom, jak je vytvořit
 ms.date: 08/21/2018
 helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: ad19099242a3bedbb7283219dfd7733db13231ec
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 193446ff98edce3b7c078c6eeba07cf9acdadaf0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398594"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597171"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 
-## <a name="reference-types"></a>Odkazové typy  
-Typ, který je definován jako [třídy](../../../csharp/language-reference/keywords/class.md) je *odkazovat na typ*. V době běhu při deklarování proměnné typu odkazu proměnná obsahuje hodnotu [null](../../../csharp/language-reference/keywords/null.md) dokud explicitně nevytvoříte instanci třídy pomocí [nové](../../../csharp/language-reference/operators/new-operator.md) operátor nebo jí nepřiřadíte objekt kompatibilní typ, který byl možná vytvořen jinde, jak je znázorněno v následujícím příkladu:
+## <a name="reference-types"></a>Typy odkazů  
+Typ, který je definován jako [Třída](../../language-reference/keywords/class.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte instanci třídy pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřadíte objekt kompatibilního typu, který mohl být vytvořen. jinde, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 //Declaring an object of type MyClass.
@@ -27,11 +27,11 @@ MyClass mc = new MyClass();
 MyClass mc2 = mc;
 ```
 
-Při vytvoření objektu je dostatečná paměť je přidělena na spravované haldě pro tento konkrétní objekt a proměnná obsahuje pouze odkaz na umístění uvedené objektu. Typy na spravované haldě zdržovat při přidělování i při jejich převzetí pomocí funkce správy automatické paměti modulu CLR, která se nazývá *uvolňování*. Nicméně uvolňování paměti je také vysoce optimalizováno a ve většině případů nedojde k vytvoření problému s výkonem. Další informace o uvolňování paměti naleznete v tématu [paměti automatické správy a uvolňování paměti kolekce](../../../standard/garbage-collection/gc.md).  
+Když je objekt vytvořen, je k dispozici dostatek paměti na spravované haldě pro daný objekt a proměnná obsahuje pouze odkaz na umístění daného objektu. Typy na spravované haldě vyžadují režii při jejich přidělování a v případě, že jsou uvolněny automatickou funkcí správy paměti modulu CLR, která se označuje jako uvolňování paměti. Uvolňování paměti je ale také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti najdete v tématu [Automatická správa paměti a uvolňování](../../../standard/garbage-collection/gc.md)paměti.  
   
 ## <a name="declaring-classes"></a>Deklarace tříd
 
- Třídy jsou deklarované pomocí [třídy](../../../csharp/language-reference/keywords/class.md) – klíčové slovo, za nímž následuje jedinečný identifikátor, jak je znázorněno v následujícím příkladu:
+ Třídy jsou deklarovány pomocí klíčového slova [Class](../../language-reference/keywords/class.md) následovaný jedinečným identifikátorem, jak je znázorněno v následujícím příkladu:
 
  ```csharp
 //[access modifier] - [class] - [identifier]
@@ -41,38 +41,38 @@ Při vytvoření objektu je dostatečná paměť je přidělena na spravované h
  }
 ```
 
- `class` – Klíčové slovo předchází úroveň přístupu. Protože [veřejné](../../language-reference/keywords/public.md) se používá v tomto případě Kdokoliv může vytvořit instance této třídy. Následuje název třídy `class` – klíčové slovo. Název třídy musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Zbývající část definice je tělo třídy, kde jsou definovány chování a data. Pole, vlastnosti, metody a události na třídu se souhrnně označují jako *členy třídy*.  
+ `class` Klíčovému slovu předchází úroveň přístupu. Vzhledem k tomu, že v tomto případě je použita možnost [Public](../../language-reference/keywords/public.md) , může kdokoli vytvořit instance této třídy. Název třídy následuje za `class` klíčovým slovem. Název třídy musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Zbytek definice je tělo třídy, kde jsou definovány chování a data. Pole, vlastnosti, metody a události třídy jsou souhrnně označovány jako *členy třídy*.  
   
 ## <a name="creating-objects"></a>Vytváření objektů
 
-Přestože se někdy používají Zaměnitelně, třídy a objekt jsou různé věci. Třída definuje typ objektu, ale není samotného objektu. Objekt je konkrétní entity podle třídy a jsou někdy označovány jako instance třídy.  
+I když se někdy používají jako zaměnitelné, třída a objekt jsou různé věci. Třída definuje typ objektu, ale není to samotný objekt. Objekt je konkrétní entita založená na třídě a je někdy označována jako instance třídy.  
   
- Objekty mohou být vytvořeny pomocí [nové](../../language-reference/operators/new-operator.md) – klíčové slovo, za nímž následuje název třídy, která objekt bude založen na, tímto způsobem:  
+ Objekty lze vytvořit pomocí klíčového slova [New](../../language-reference/operators/new-operator.md) následovaného názvem třídy, na které bude objekt založen, podobně jako toto:  
 
  ```csharp
  Customer object1 = new Customer();
  ```
 
- Když je vytvořena instance třídy, odkaz na objekt je předán zpět na programátorovi. V předchozím příkladu `object1` je odkaz na objekt, který je založen na `Customer`. Tento odkaz odkazuje na nový objekt, ale neobsahuje vlastní data objektu. Ve skutečnosti můžete vytvořit odkaz na objekt bez vytvoření všech objektů:  
+ Když je vytvořena instance třídy, odkaz na objekt je předán zpět do programátora. V předchozím příkladu `object1` je odkaz na objekt, který je založen na `Customer`. Tento odkaz odkazuje na nový objekt, ale neobsahuje data objektu samotné. Ve skutečnosti můžete vytvořit odkaz na objekt, aniž byste vůbec vytvořili objekt:  
  
 ```csharp
  Customer object2;
 ```
  
- Nedoporučujeme ale, vytváření odkazů na objekty, jako je například tento, které není odkaz na objekt, protože se pokouší získat přístup k objektu prostřednictvím odkazu selže v době běhu. Však můžete provést odkazu k odkazování na objekt, buď tak, že vytvoříte nový objekt, nebo jejím přiřazením k existující objekt, jako je například tento:  
+ Nedoporučujeme vytvářet odkazy na objekty, jako je takový, který neodkazuje na objekt, protože při pokusu o přístup k objektu prostřednictvím takového odkazu se v době běhu nezdaří. Takový odkaz však lze použít pro odkazování na objekt, buď vytvořením nového objektu, nebo přiřazením k existujícímu objektu, například:  
 
  ```csharp
  Customer object3 = new Customer();
  Customer object4 = object3;
 ```
   
- Tento kód vytvoří dva odkazy na objekty, které odkazují na stejný objekt. Proto všechny změny provedené prostřednictvím objektu `object3` se projeví v následné použití `object4`. Protože objekty, které jsou založeny na třídách jsou uvedené odkazem, třídy jsou označovány jako referenční typy.  
+ Tento kód vytvoří dva odkazy na objekty, které odkazují na stejný objekt. Proto se všechny změny objektu provedené prostřednictvím `object3` projeví v následných `object4`použitích. Vzhledem k tomu, že objekty, které jsou založeny na třídách, jsou odkazovány odkazem, třídy jsou označovány jako typy odkazů.  
   
 ## <a name="class-inheritance"></a>Dědičnost tříd  
 
-Třídy plně podporují *dědičnosti*, základní charakteristiku objektově orientované programování. Při vytváření třídy můžete dědit ze kteréhokoli rozhraní nebo třídu, která není definován jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), a jiné třídy mohou dědit z vaší třídy a přepsat třídy virtuální metody.
+Třídy plně podporují *Dědičnost*, základní charakteristiky objektově orientovaného programování. Při vytváření třídy můžete dědit z jakéhokoli jiného rozhraní nebo třídy, která není definována jako [sealed](../../language-reference/keywords/sealed.md), a jiné třídy mohou dědit z vaší třídy a přepsat virtuální metody třídy.
 
-Dědičnost se dá udělat pomocí *odvození*, což znamená, že třída je deklarována pomocí *základní třída* ze které dědí data a chování. Základní třída zadaná přidáním dvojtečku a název základní třídy za název odvozené třídy takto:  
+Dědičnost je provedeno pomocí odvození, což znamená, že třída je deklarována pomocí *základní třídy* , ze které dědí data a chování. Základní třída je určena připojením dvojtečky a názvem základní třídy za názvem odvozené třídy, například takto:  
 
  ```csharp
  public class Manager : Employee
@@ -82,17 +82,17 @@ Dědičnost se dá udělat pomocí *odvození*, což znamená, že třída je de
  }
  ```
 
-Třída deklaruje základní třídu, zdědí všechny členy základní třídy s výjimkou konstruktorů. Další informace najdete v tématu [dědičnosti](inheritance.md).
+Když třída deklaruje základní třídu, dědí všechny členy základní třídy s výjimkou konstruktorů. Další informace najdete v tématu [Dědičnost](inheritance.md).
   
-Na rozdíl od C++ třídy v jazyce C# může dědit pouze přímo z jedné základní třídy. Ale protože samotný základní třída může dědit z jiné třídy, třída může nepřímo dědit více základních tříd. Třída navíc můžete přímo implementovat více než jedno rozhraní. Další informace najdete v tématu [rozhraní](../interfaces/index.md).  
+Na rozdíl C++od, třída v C# může přímo dědit pouze z jedné základní třídy. Protože však základní třída může dědit z jiné třídy, třída může nepřímo zdědit více základních tříd. Kromě toho třída může přímo implementovat více než jedno rozhraní. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
   
-Třídy lze deklarovat [abstraktní](../../language-reference/keywords/abstract.md). Abstraktní třída obsahuje abstraktní metody, které mají definici podpis ale nemá žádnou implementaci. Nelze vytvořit instanci abstraktní třídy. Je možné použít pouze prostřednictvím odvozené třídy, které implementují abstraktní metody. Naopak [zapečetěné](../../language-reference/keywords/sealed.md) třídy nepovoluje ostatní třídy odvozovat z něj. Další informace najdete v tématu [abstraktní a zapečetěné třídy a členové](abstract-and-sealed-classes-and-class-members.md).  
+Třída může být deklarována jako [abstraktní](../../language-reference/keywords/abstract.md). Abstraktní třída obsahuje abstraktní metody, které mají definici signatury, ale žádnou implementaci. Nelze vytvořit instanci abstraktních tříd. Lze je použít pouze prostřednictvím odvozených tříd, které implementují abstraktní metody. Naproti tomu [zapečetěná](../../language-reference/keywords/sealed.md) třída nepovoluje odvození jiných tříd. Další informace naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](abstract-and-sealed-classes-and-class-members.md).  
   
-Definice tříd lze rozdělit do jiných zdrojových souborů. Další informace najdete v tématu [částečné třídy a metody](partial-classes-and-methods.md).  
+Definice tříd mohou být rozděleny mezi různé zdrojové soubory. Další informace naleznete v tématu [částečné třídy a metody](partial-classes-and-methods.md).  
   
 ## <a name="example"></a>Příklad
 
-Následující příklad definuje veřejnou třídu, která obsahuje [automaticky implementované vlastnosti](auto-implemented-properties.md), metoda a speciální metoda volá konstruktor. Další informace najdete v tématu [vlastnosti](properties.md), [metody](methods.md), a [konstruktory](constructors.md) témata. Instance třídy jsou pak vytvořeny s `new` – klíčové slovo.  
+Následující příklad definuje veřejnou třídu, která obsahuje [automaticky implementovanou vlastnost](auto-implemented-properties.md), metodu a speciální metodu, která se nazývá konstruktor. Další informace naleznete v tématech [vlastnosti](properties.md), [metody](methods.md)a [konstruktory](constructors.md) . Instance třídy se pak vytvoří s `new` klíčovým slovem.  
   
 [!code-csharp[Class Example](~/samples/snippets/csharp/programming-guide/classes-and-structs/class-example.cs)] 
   

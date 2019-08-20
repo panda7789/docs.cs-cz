@@ -1,23 +1,23 @@
 ---
-title: Hledání textu v dokumentech aplikace Word (C#)
+title: Hledání textu v dokumentech aplikace WordC#()
 ms.date: 07/20/2015
 ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
-ms.openlocfilehash: 9f81795c00c29da34bb5f229afb557eb89af6509
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 99a6bc2bb08af47ab725ef94ae8cd77d54cbad0a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487492"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594337"
 ---
-# <a name="finding-text-in-word-documents-c"></a>Hledání textu v dokumentech aplikace Word (C#)
-Toto téma je rozšířením předchozího dotazy něco užitečné: vyhledání všech výskytů řetězce v dokumentu.  
+# <a name="finding-text-in-word-documents-c"></a>Hledání textu v dokumentech aplikace WordC#()
+Toto téma rozšiřuje předchozí dotazy, aby bylo možné něco využít: vyhledá všechny výskyty řetězce v dokumentu.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu zpracovává dokumentu WordprocessingML, chcete-li vyhledat všechny výskyty určitou část textu v dokumentu. K tomuto účelu použijeme dotaz, který najde řetězec "Hello". Tento příklad je založen na předchozí příklady v tomto kurzu. Nový dotaz je uvedeny v komentářích v následujícím kódu.  
+ Tento příklad zpracovává dokument WordprocessingML, aby bylo možné najít všechny výskyty určitého textu v dokumentu. K tomu použijeme dotaz, který najde řetězec "Hello". Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML (C#) pro zdrojový Office](./creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -172,7 +172,7 @@ StyleName:Code >        Console.WriteLine("Hello World");<
 StyleName:Code >Hello World<  
 ```  
   
- Hledání můžete, samozřejmě, upravte, aby prohledá řádky s konkrétním stylu. Následující dotaz hledá všechny prázdné řádky, které mají styl kódu:  
+ Můžete samozřejmě upravit hledání tak, aby vyhledalo řádky s konkrétním stylem. Následující dotaz vyhledá všechny prázdné řádky, které mají styl kódu:  
   
 ```csharp  
 public static class LocalExtensions  
@@ -318,17 +318,17 @@ class Program
 StyleName:Code ><  
 ```  
   
- V tomto příkladu samozřejmě tarifech lze vylepšit různými způsoby. Například může používáme regulárních výrazů pro hledání textu, jsme může iterovat přes všechny soubory aplikace Word v určitém adresáři a tak dále.  
+ Tento příklad je samozřejmě možné rozšířit různými způsoby. Například můžeme použít regulární výrazy pro hledání textu, můžeme iterovat všemi soubory aplikace Word v konkrétním adresáři a tak dále.  
   
- Všimněte si, že v tomto příkladu provede přibližně stejně jako by byl zapsán jako jeden dotaz. Protože každý dotaz je implementovat opožděné odložené způsobem, každý dotaz nevydává jeho výsledky až do dotazu je provést iteraci. Další informace o provedení a opožděné vyhodnocení najdete v tématu [odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
+ Všimněte si, že v tomto příkladu se provádí přibližně i když byl zapsaný jako jeden dotaz. Vzhledem k tomu, že každý dotaz je implementován v opožděném, odvoditelné podobě, každý dotaz nepřinese výsledky, dokud se dotaz neopakuje. Další informace o provádění a opožděném vyhodnocení naleznete [v tématu Odložené provádění a opožděné hodnocení v LINQ to XMLC#()](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
 ## <a name="next-steps"></a>Další kroky  
- Další část obsahuje další informace o dokumentů WordprocessingML:  
+ V další části najdete další informace o WordprocessingML dokumentech:  
   
-- [Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/wordprocessingml-document-with-styles.md)  
+- [Podrobnosti Office Open XML WordprocessingML Documents (C#)](./wordprocessingml-document-with-styles.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)
-- [Refaktoring pomocí čisté funkce (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Refaktoring pomocí funkce Pure (C#)](./refactoring-using-a-pure-function.md)
+- [Odložené provádění a opožděné vyhodnocení v LINQ to XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

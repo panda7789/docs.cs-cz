@@ -14,103 +14,103 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-ms.openlocfilehash: 95505fd593881ff27418c69550952d072b4e3949
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c420a34a18f9e8fb55411a062e6a47ab38e98978
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628857"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611489"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorita operátorů v jazyce Visual Basic
-Pokud dojde k několika operací ve výrazu, každá část je vyhodnocen a vyřešené v předurčeném pořadí volá *priorita operátorů*.  
-  
-## <a name="precedence-rules"></a>Priorita pravidla  
- Výrazy obsahovat operátory z více než jednu kategorii, jsou vyhodnocovány podle následujících pravidel:  
-  
-- Zřetězení a aritmetické operátory mají pořadí podle priority je popsáno v následující části, a všechny mají vyšší prioritu než relační, logické a bitové operátory.  
-  
-- Všechny operátory porovnání mají stejnou prioritu a všechny mají vyšší prioritu než logické a bitové operátory, ale nižší prioritu než operátory aritmetické operace a zřetězení.  
-  
-- Logické a bitové operátory mají pořadí podle priority je popsáno v následující části, a všechny mají nižší prioritu než aritmetické, zřetězení a operátory porovnání.  
-  
-- Operátorů shodné priority jsou vyhodnoceny zleva doprava v pořadí, v jakém jsou uvedeny ve výrazu.  
-  
-## <a name="precedence-order"></a>Pořadí priority  
- Operátory jsou vyhodnocovány v následujícím pořadí podle priority:  
-  
-### <a name="await-operator"></a>Await – operátor  
- operátor await  
-  
-### <a name="arithmetic-and-concatenation-operators"></a>Aritmetické operátory a operátory zřetězení  
- Umocnění (`^`)  
-  
- Unární identity a negace (`+`, `–`)  
-  
- Násobení a dělení s pohyblivou čárkou (`*`, `/`)  
-  
- Dělení celého čísla (`\`)  
-  
- Aritmetické numerického zbytku (`Mod`)  
-  
- Sčítání a odčítání (`+`, `–`)  
-  
- Zřetězení řetězců (`&`)  
-  
- Aritmetický bitový posun (`<<`, `>>`)  
-  
-### <a name="comparison-operators"></a>Operátory porovnání  
- Všechny operátory porovnání (`=`, `<>`, `<`, `<=`, `>`, `>=`, `Is`, `IsNot`, `Like`, `TypeOf`... `Is`)  
-  
-### <a name="logical-and-bitwise-operators"></a>Logické a bitové operátory  
- Negace (`Not`)  
-  
- Spojení (`And`, `AndAlso`)  
-  
- Inkluzivní disjunkce (`Or`, `OrElse`)  
-  
- Exkluzivní disjunkce (`Xor`)  
-  
-### <a name="comments"></a>Komentáře  
- `=` Operátor je pouze rovnosti relační operátor, operátor přiřazení.  
-  
- Operátoru pro zřetězení řetězců (`&`) není aritmetickém operátoru, ale v prioritu seskupen s aritmetické operátory.  
-  
- `Is` a `IsNot` operátory jsou operátory porovnání odkaz na objekt. Neporovnávejte hodnoty dvou objektů přihlášením ke jenom k určení, zda dva objektových proměnných odkazují na stejnou instanci objektu.  
-  
-## <a name="associativity"></a>Asociativita  
- Když pohromadě operátory stejnou prioritu ve výrazu, například úlohy násobení a dělení, kompilátor vyhodnocuje každou operaci jako nalezne zleva doprava. Toto dokládá následující příklad.  
-  
-```  
-Dim n1 As Integer = 96 / 8 / 4  
-Dim n2 As Integer = (96 / 8) / 4  
-Dim n3 As Integer = 96 / (8 / 4)  
-```  
-  
- První výraz je vyhodnocen jako dělení 96 / 8 (což vede k 12) a potom dělení 12 / 4, což vede k tři. Protože kompilátor vyhodnocuje operace pro `n1` zleva doprava, hodnocení je stejný při tomto pořadí explicitně označena pro `n2`. Obě `n1` a `n2` mají tři příčiny. Naopak `n3` má výsledek 48, protože závorky vynutí vyhodnocení 8 kompilátor / 4 první.  
-  
- Kvůli tomuto chování se označují jako operátory *asociativní zleva* v jazyce Visual Basic.  
-  
-## <a name="overriding-precedence-and-associativity"></a>Přepsání Priorita a asociativita  
- Můžete použít závorky k vynucení některé části výrazu, který se má vyhodnotit před ostatními. To můžete přepsat v pořadí podle priority a levém asociativity. Visual Basic vždy provádí operace, které jsou uzavřeny v závorkách před uživateli mimo. Ale v závorkách udržuje běžné přednost a asociativita operátorů, pokud nechcete použít závorky v závorkách. Toto dokládá následující příklad.  
-  
-```  
-Dim a, b, c, d, e, f, g As Double  
-a = 8.0  
-b = 3.0  
-c = 4.0  
-d = 2.0  
-e = 1.0  
-f = a - b + c / d * e  
-' The preceding line sets f to 7.0. Because of natural operator   
-' precedence and associativity, it is exactly equivalent to the   
-' following line.  
-f = (a - b) + ((c / d) * e)  
-' The following line overrides the natural operator precedence   
-' and left associativity.  
-g = (a - (b + c)) / (d * e)  
-' The preceding line sets g to 0.5.  
-```  
-  
+Když ve výrazu dojde k několika operacím, každá část je vyhodnocena a vyřešena v předem určeném pořadí s názvem *Priorita operátora*.
+
+## <a name="precedence-rules"></a>Pravidla priorit
+ Když výrazy obsahují operátory z více než jedné kategorie, vyhodnotí se podle následujících pravidel:
+
+- Operátory aritmetické a zřetězení mají pořadí priority popsané v následující části a všechny mají větší prioritu než porovnání, logické a bitové operátory.
+
+- Všechny operátory porovnání mají stejnou přednost a všechny mají větší prioritu než logické a bitové operátory, ale nižší prioritu než operátory aritmetické a zřetězení.
+
+- Logické a bitové operátory mají pořadí priority popsané v následující části a všechny mají nižší prioritu než aritmetické operátory, zřetězení a porovnání.
+
+- Operátory s stejnou prioritou jsou vyhodnocovány zleva doprava v pořadí, ve kterém jsou uvedeny ve výrazu.
+
+## <a name="precedence-order"></a>Pořadí priority
+ Operátory jsou vyhodnocovány v následujícím pořadí podle priority:
+
+### <a name="await-operator"></a>Await – operátor
+ Await
+
+### <a name="arithmetic-and-concatenation-operators"></a>Operátory aritmetického operátoru and zřetězení
+ Umocnění`^`()
+
+ Unární identita a negace (`+`, `–`)
+
+ Násobení a dělení plovoucí desetinné čárky`*`( `/`,)
+
+ Celočíselné dělení`\`()
+
+ Modulo – aritmetické`Mod`operace ()
+
+ Sčítání a odčítání (`+`, `–`)
+
+ Zřetězení řetězců (`&`)
+
+ Aritmetický přenosový`<<`posun `>>`(,)
+
+### <a name="comparison-operators"></a>Operátory porovnání
+ Všechny operátory porovnání (`=`, `<>`, `<` `<=`,, `>`, ,,`Is`,, .`TypeOf`.. `IsNot` `>=` `Like` `Is`)
+
+### <a name="logical-and-bitwise-operators"></a>Logické a bitové operátory
+ Negace (`Not`)
+
+ Spojení (`And`, `AndAlso`)
+
+ Celková odvýšení`Or`( `OrElse`,)
+
+ Exkluzivní disjunkení`Xor`()
+
+### <a name="comments"></a>Komentáře
+ `=` Operátor je pouze operátor porovnání rovnosti, nikoli operátor přiřazení.
+
+ Operátor zřetězení řetězce (`&`) není aritmetickým operátorem, ale v prioritě je seskupen s aritmetickými operátory.
+
+ Operátory `Is` a`IsNot` jsou operátory porovnání odkazů na objekty. Nerovnávají hodnoty dvou objektů; kontrolují pouze k určení, zda dvě proměnné objektu odkazují na stejnou instanci objektu.
+
+## <a name="associativity"></a>Asociativita
+ Pokud se operátory stejné priority zobrazí společně ve výrazu, například násobení a dělení, kompilátor vyhodnotí každou operaci jako v případě, že ji narazí zleva doprava. Toto dokládá následující příklad.
+
+```vb
+Dim n1 As Integer = 96 / 8 / 4
+Dim n2 As Integer = (96 / 8) / 4
+Dim n3 As Integer = 96 / (8 / 4)
+```
+
+ První výraz vyhodnotí divizi 96/8 (což má za následek 12) a potom rozdělením 12/4, které má za následek tři. Vzhledem k tomu, že kompilátor vyhodnocuje `n1` operace od zleva doprava, je vyhodnocení stejné, pokud je pořadí explicitně určeno pro. `n2` `n1` A`n2` mají výsledek tři. Naproti tomu `n3` má výsledek 48, protože kulaté závorky vynutí, aby kompilátor vyhodnotil 8/4 jako první.
+
+ Z důvodu tohoto chování jsou operátory označeny jako *asociativní* v Visual Basic.
+
+## <a name="overriding-precedence-and-associativity"></a>Přepsání priority a asociativita
+ Pomocí závorek můžete vynutit, aby některé části výrazu byly vyhodnoceny před jinými. To může přepsat pořadí priorit i levou asociativita. Visual Basic vždy provádí operace, které jsou uzavřeny v závorkách před těmito objekty mimo. V závorkách však udržuje běžnou prioritu a asociativita, pokud v závorkách nepoužíváte závorky. Toto dokládá následující příklad.
+
+```vb
+Dim a, b, c, d, e, f, g As Double
+a = 8.0
+b = 3.0
+c = 4.0
+d = 2.0
+e = 1.0
+f = a - b + c / d * e
+' The preceding line sets f to 7.0. Because of natural operator
+' precedence and associativity, it is exactly equivalent to the
+' following line.
+f = (a - b) + ((c / d) * e)
+' The following line overrides the natural operator precedence
+' and left associativity.
+g = (a - (b + c)) / (d * e)
+' The preceding line sets g to 0.5.
+```
+
 ## <a name="see-also"></a>Viz také:
 
 - [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)

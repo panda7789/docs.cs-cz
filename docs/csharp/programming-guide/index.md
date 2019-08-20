@@ -9,83 +9,83 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: a31b1dc01fe1f9d9dd97775ae3c65f762b167079
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f41129b33b717efad5f1b1f59e40f95169e31bf8
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635268"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589477"
 ---
-# <a name="c-programming-guide"></a>Průvodce programovacího jazyka C#
-Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funkce přístupné pro C# pomocí rozhraní .NET Framework.  
+# <a name="c-programming-guide"></a>C#Průvodce programováním
+V této části najdete podrobné informace o C# funkcích a funkcích jazyka Key, C# které jsou přístupné prostřednictvím .NET Framework.  
   
- Většinu této části se předpokládá něco už víte o jazyce C# a obecné koncepty programování. Pokud jste úplný Začátečník s programováním nebo C#, může být potřeba navštívit [Úvod do C# kurzy](../tutorials/intro-to-csharp/index.md) nebo [Začínáme se službou C# ](https://www.microsoft.com/net/tutorials/csharp/getting-started) Interaktivní kurz, pokud ne vyžaduje se předchozí znalosti programování.  
+ Většina této části předpokládá, že už znáte informace o C# a obecných konceptech programování. Pokud jste zcela začátečník s programováním nebo s C#, můžete chtít navštívit [Úvod do C# kurzů](../tutorials/intro-to-csharp/index.md) nebo [Začínáme s C# ](https://www.microsoft.com/net/tutorials/csharp/getting-started) interaktivním kurzem, kdy není nutné žádné předchozí znalosti programování.  
   
- Informace o konkrétní klíčová slova, operátory a direktivy preprocesoru naleznete v tématu [referenční dokumentace jazyka C#](../../csharp/language-reference/index.md). Informace o specifikaci jazyka C# najdete v tématu [specifikace jazyka C#](../../csharp/language-reference/language-specification/index.md).  
+ Informace o konkrétních klíčových slovech, operátorech a direktivách preprocesoru naleznete v tématu [ C# reference](../language-reference/index.md). Informace o specifikaci C# jazyka najdete v tématu [ C# specifikace jazyka](../language-reference/language-specification/index.md).  
   
-## <a name="program-sections"></a>Části programu
+## <a name="program-sections"></a>Oddíly programu
 
-[V programu v jazyce C#](../../csharp/programming-guide/inside-a-program/index.md)  
+[V programu v jazyce C#](./inside-a-program/index.md)  
   
-[Argumenty Main() a příkazového řádku](../../csharp/programming-guide/main-and-command-args/index.md)  
+[Argumenty Main() a příkazového řádku](./main-and-command-args/index.md)  
  
-## <a name="language-sections"></a>Jazyk oddíly  
-[Příkazy, výrazy a operátory](../../csharp/programming-guide/statements-expressions-operators/index.md)  
+## <a name="language-sections"></a>Jazykové části  
+[Příkazy, výrazy a operátory](./statements-expressions-operators/index.md)  
 
- [Typy](../../csharp/programming-guide/types/index.md)  
+ [Typy](./types/index.md)  
 
- [Třídy a struktury](../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Třídy a struktury](./classes-and-structs/index.md)  
   
- [Rozhraní](../../csharp/programming-guide/interfaces/index.md)  
+ [Rozhraní](./interfaces/index.md)  
 
- [Výčtové typy](../../csharp/programming-guide/enumeration-types.md)  
+ [Výčtové typy](./enumeration-types.md)  
   
- [Delegáti](../../csharp/programming-guide/delegates/index.md)  
+ [Delegáti](./delegates/index.md)  
  
- [Pole](../../csharp/programming-guide/arrays/index.md)  
+ [Pole](./arrays/index.md)  
   
- [Řetězce](../../csharp/programming-guide/strings/index.md)  
+ [Řetězce](./strings/index.md)  
   
- [Vlastnosti](../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [Vlastnosti](./classes-and-structs/properties.md)  
   
- [Indexery](../../csharp/programming-guide/indexers/index.md)  
+ [Indexery](./indexers/index.md)  
   
- [Události](../../csharp/programming-guide/events/index.md)  
+ [Události](./events/index.md)  
   
- [Obecné typy](../../csharp/programming-guide/generics/index.md)  
+ [Obecné typy](./generics/index.md)  
   
- [Iterátory](../../csharp/programming-guide/concepts/iterators.md)
+ [Iterátory](./concepts/iterators.md)
   
- [LINQ – výrazy dotazů](../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [Výrazy dotazů LINQ](./linq-query-expressions/index.md)  
   
- [Výrazy lambda](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Výrazy lambda](./statements-expressions-operators/lambda-expressions.md)  
   
- [Obory názvů](../../csharp/programming-guide/namespaces/index.md)  
+ [Obory názvů](./namespaces/index.md)  
   
- [Typy s povolenou hodnotou Null](../../csharp/programming-guide/nullable-types/index.md)  
+ [Typy s povolenou hodnotou Null](./nullable-types/index.md)  
   
- [Nebezpečný kód a ukazatele](../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [Nebezpečný kód a ukazatele](./unsafe-code-pointers/index.md)  
   
- [Dokumentační komentáře XML](../../csharp/programming-guide/xmldoc/index.md)  
+ [Dokumentační komentáře XML](./xmldoc/index.md)  
   
 ## <a name="platform-sections"></a>Oddíly platformy  
  [Aplikační domény](../../framework/app-domains/application-domains.md)  
   
  [Sestavení v .NET](../../standard/assembly/index.md)  
   
- [Atributy](../../csharp/programming-guide/concepts/attributes/index.md)  
+ [Atributy](./concepts/attributes/index.md)  
   
- [Kolekce](../../csharp/programming-guide/concepts/collections.md)  
+ [Kolekce](./concepts/collections.md)  
   
- [Výjimky a jejich zpracování](../../csharp/programming-guide/exceptions/index.md)  
+ [Výjimky a jejich zpracování](./exceptions/index.md)  
   
- [Systém souborů a registr (C# Programming Guide)](../../csharp/programming-guide/file-system/index.md)  
+ [Systém souborů a registr (C# Průvodce programováním)](./file-system/index.md)  
   
- [Interoperabilita](../../csharp/programming-guide/interop/index.md)  
+ [Interoperabilita](./interop/index.md)  
   
- [Reflexe](../../csharp/programming-guide/concepts/reflection.md)  
+ [Reflexe](./concepts/reflection.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)
-- [C#](../../csharp/index.md)
+- [C#Odkaz](../language-reference/index.md)
+- [C#](../index.md)

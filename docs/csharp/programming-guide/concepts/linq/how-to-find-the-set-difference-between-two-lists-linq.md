@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (C#)'
+title: 'Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().'
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: c8f01cb53665d01d4c7861bab758ecc9e0dcc3c8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: decdbe45afd12581a53ed70ec843ee72f54f0409
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585718"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593336"
 ---
-# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (C#)
-Tento příklad ukazuje způsob použití LINQ k porovnání dvou seznamů řetězců a výstup těchto řádků, které jsou v names1.txt, ale ne v names2.txt.  
+# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().
+Tento příklad ukazuje, jak použít LINQ k porovnání dvou seznamů řetězců a výstupu těchto řádků, které jsou v names1. txt, ale ne v names2. txt.  
   
-### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
+### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
   
-1. Zkopírujte names1.txt a names2.txt na složku řešení, jak je znázorněno v [jak: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md).  
+1. Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v [tématu How to: Kombinování a porovnávání kolekcí řetězců (LINQ)C#(](./how-to-combine-and-compare-string-collections-linq.md)).  
   
 ## <a name="example"></a>Příklad  
   
@@ -52,11 +52,11 @@ class CompareLists
      */  
 ```  
   
- Některé typy dotazování operací v jazyce C#, jako například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>, a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založených na volání metody.  
+ Některé typy C#operací dotazů v, například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A> <xref:System.Linq.Enumerable.Union%2A>, a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založené na metodě.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)

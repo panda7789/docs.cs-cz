@@ -1,20 +1,20 @@
 ---
-title: Předběžná atomizace objektů XName (LINQ to XML) (C#)
+title: Předběžná Atomace objektů XName (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
-ms.openlocfilehash: f67a4da56a2bbcde538f0559ec6ee70a0037de2f
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 2fd754a352bd2988e52ec9c67a9915a8e587b107
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484061"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591492"
 ---
-# <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Předběžná atomizace objektů XName (LINQ to XML) (C#)
-Jedním ze způsobů ke zlepšení výkonu v technologii LINQ to XML je předem atomizovat <xref:System.Xml.Linq.XName> objekty. Předběžná atomizace znamená, že přiřadíte řetězec na <xref:System.Xml.Linq.XName> objektu před vytvořením stromu XML pomocí konstruktory <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> třídy. Pak namísto předáním řetězce do konstruktoru, který byste použili implicitní převod z řetězce na <xref:System.Xml.Linq.XName>, předáte inicializovaná zpráva <xref:System.Xml.Linq.XName> objektu.  
+# <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Předběžná Atomace objektů XName (LINQ to XML) (C#)
+Jedním ze způsobů, jak zlepšit výkon v LINQ to XML, je atomizovat <xref:System.Xml.Linq.XName> objekty. Před vytvořením stromu XML pomocí konstruktorů <xref:System.Xml.Linq.XName> <xref:System.Xml.Linq.XElement> tříd a <xref:System.Xml.Linq.XAttribute> se před vytvořením stromu XML přiřadí řetězec k objektu. Místo předání řetězce konstruktoru, který by použil implicitní převod z řetězce na <xref:System.Xml.Linq.XName>, předáte inicializovaný <xref:System.Xml.Linq.XName> objekt.  
   
- To zlepšuje výkon při vytváření velké stromu XML, ve které se opakují konkrétní názvy. K tomuto účelu deklarujete a inicializujete <xref:System.Xml.Linq.XName> objekty před vytvoření stromu XML a pak použít <xref:System.Xml.Linq.XName> objekty místo zadávání řetězců pro názvy prvků a atributů. Tato technika může přinést výrazné zvýšení výkonu při vytváření velký počet elementů (nebo atributy) se stejným názvem.  
+ To zlepšuje výkon při vytváření velkého stromu XML, ve kterém se konkrétní názvy opakují. Chcete-li to provést, deklarujete <xref:System.Xml.Linq.XName> a inicializujete objekty před vytvořením stromu XML a pak <xref:System.Xml.Linq.XName> použijte objekty namísto zadávání řetězců pro element a názvy atributů. Tato technika může přinést výrazné zvýšení výkonu, pokud vytváříte velký počet prvků (nebo atributů) se stejným názvem.  
   
- Předběžná atomizace byste měli testovat s váš scénář se rozhodnout, pokud byste ji měli používat.  
+ Před tím, než se rozhodnete, jestli ho chcete použít, byste měli testovat předběžnou atomaci ve svém scénáři.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje to.  
@@ -49,7 +49,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
- Následující příklad ukazuje stejný postup, pokud dokument XML je v oboru názvů:  
+ Následující příklad ukazuje stejnou techniku, kde je dokument XML v oboru názvů:  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -83,7 +83,7 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
- Následující příklad je podobné co se pravděpodobně setkáte v reálném světě. V tomto příkladu obsah elementu, který je poskytnut pomocí dotazu:  
+ Následující příklad se podobá tomu, co se vám pravděpodobně setkáte v reálném světě. V tomto příkladu je obsah elementu dodán dotazem:  
   
 ```csharp  
 XName Root = "Root";  
@@ -102,7 +102,7 @@ DateTime t2 = DateTime.Now;
 Console.WriteLine("Time to construct:{0}", t2 - t1);  
 ```  
   
- V předchozím příkladu vrací lepší výsledky než následující příklad, ve kterém názvy nejsou předem atomizované objekty:  
+ Předchozí příklad provede lepší, než následující příklad, ve kterém názvy nejsou předběžně atomované:  
   
 ```csharp  
 DateTime t1 = DateTime.Now;  
@@ -119,4 +119,4 @@ Console.WriteLine("Time to construct:{0}", t2 - t1);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Atomizované objekty XName a Xnamespace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md)
+- [Atomované XName a objekty XNamespace (LINQ to XML) (C#)](./atomized-xname-and-xnamespace-objects-linq-to-xml.md)

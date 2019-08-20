@@ -1,44 +1,44 @@
 ---
-title: Argumenty příkazového řádku - C# Průvodce programováním
+title: Argumenty příkazového řádku – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 8216e144dfcaeaf9b480d681ae91ce59832ae9e3
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3264be0ae6159563ae19ac8aeb1bf3dc90ac68df
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877541"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588934"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
-Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  
+Argumenty `Main` metody lze odeslat definováním metody v jednom z následujících způsobů:  
   
  [!code-csharp[csProgGuideMain#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#2)]  
   
  [!code-csharp[csProgGuideMain#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#3)]  
   
 > [!NOTE]
->  Chcete-li povolit argumenty příkazového řádku `Main` metodu v aplikaci Windows Forms, je nutné ručně upravit podpis `Main` v souboru program.cs. Vytvoří kód generovaný návrhářem formulářů Windows `Main` bez vstupního parametru. Můžete také použít <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> nebo <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pro přístup k argumenty příkazového řádku z libovolného bodu v konzole nebo v aplikaci Windows.  
+>  Chcete-li povolit argumenty příkazového řádku `Main` v metodě model Windows Forms aplikace, je nutné ručně upravit `Main` signaturu v program.cs. Kód generovaný návrhářem model Windows Forms vytvoří `Main` bez vstupního parametru. Můžete také použít <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> nebo <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pro přístup k argumentům příkazového řádku z libovolného bodu v konzole nebo v aplikaci systému Windows.  
   
- Parametr `Main` je metoda <xref:System.String> pole, které představuje argumenty příkazového řádku. Obvykle zjistíte, zda existují argumenty testováním `Length` vlastnosti, například:  
+ Parametr `Main` metody<xref:System.String> je pole, které představuje argumenty příkazového řádku. Obvykle určíte, zda argumenty existují, otestováním `Length` vlastnosti, například:  
   
  [!code-csharp[csProgGuideMain#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#4)]  
   
- Můžete také převést řetězcové argumenty pro číselné typy s použitím <xref:System.Convert> třídy nebo `Parse` metody. Například následující výraz převede `string` k `long` čísla pomocí <xref:System.Int64.Parse%2A> metody:  
+ Můžete také převést řetězcové argumenty na číselné typy pomocí <xref:System.Convert> třídy `Parse` nebo metody. Například následující příkaz převede `string` `long` na číslo pomocí <xref:System.Int64.Parse%2A> metody:  
   
 ```  
 long num = Int64.Parse(args[0]);  
 ```  
   
- Je také možné použít typ jazyka C# `long`, které aliasy `Int64`:  
+ Je také možné použít C# typ `long`, který aliasy: `Int64`  
   
 ```  
 long num = long.Parse(args[0]);  
 ```  
   
- Můžete také použít `Convert` metoda třídy `ToInt64` na stejnou věc udělat:  
+ Ke stejnému účelu můžete `Convert` použít také `ToInt64` metodu třídy:  
   
 ```  
 long num = Convert.ToInt64(s);  
@@ -47,38 +47,38 @@ long num = Convert.ToInt64(s);
  Další informace naleznete v tématu <xref:System.Int64.Parse%2A> a <xref:System.Convert>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat argumenty příkazového řádku v konzolové aplikaci. Aplikace přijímá jeden argument za běhu, převede argument na celé číslo a vypočítá faktoriál čísla. Pokud nejsou dodány žádné argumenty, aplikace vydá zprávu, která vysvětluje správné použití programu.  
+ Následující příklad ukazuje, jak používat argumenty příkazového řádku v konzolové aplikaci. Aplikace přijímá jeden argument za běhu, převede argument na celé číslo a vypočítá faktoriál čísla. Pokud nejsou zadány žádné argumenty, aplikace vydá zprávu, která vysvětluje správné využití programu.  
   
- Kompilace a spuštění aplikace z příkazového řádku, postupujte podle těchto kroků:  
+ Chcete-li zkompilovat a spustit aplikaci z příkazového řádku, postupujte podle následujících kroků:  
   
-1. Vložte následující kód do libovolného textového editoru a uložte soubor jako textový soubor s názvem `Factorial.cs`.  
+1. Vložte následující kód do libovolného textového editoru a pak soubor uložte jako textový soubor s názvem `Factorial.cs`.  
   
      [!code-csharp[csProgGuideMain#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#16)]  
   
-2. Z **Start** obrazovky nebo **Start** nabídky, otevřete sadu Visual Studio **Developer Command Prompt** okna a pak přejděte do složky, která obsahuje soubor, který jste právě vytvořit.  
+2. Z obrazovky **Start** nebo nabídky **Start** otevřete okno aplikace Visual Studio **Developer Command Prompt** a potom přejděte do složky, která obsahuje soubor, který jste právě vytvořili.  
   
-3. Zadejte následující příkaz pro kompilaci aplikace.  
+3. Zadejte následující příkaz pro zkompilování aplikace.  
   
      `csc Factorial.cs`  
   
-     Pokud vaše aplikace neobsahuje žádné chyby během kompilace, spustitelný soubor, který je pojmenován `Factorial.exe` se vytvoří.  
+     Pokud vaše aplikace neobsahuje žádné chyby kompilace, je vytvořen spustitelný soubor s názvem `Factorial.exe` .  
   
-4. Zadejte následující příkaz pro výpočet faktoriálu 3:  
+4. Zadáním následujícího příkazu vypočítáte faktoriál čísla 3:  
   
      `Factorial 3`  
   
-5. Tento příkaz vytvoří tento výstup: `The factorial of 3 is 6.`  
+5. Příkaz vytvoří tento výstup:`The factorial of 3 is 6.`  
   
 > [!NOTE]
->  Při spuštění aplikace v sadě Visual Studio, můžete zadat argumenty příkazového řádku [stránka ladění, Návrhář projektu](/visualstudio/ide/reference/debug-page-project-designer).  
+>  Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).  
   
- Další příklady o tom, jak používat argumenty příkazového řádku najdete v tématu [jak: Vytvoření a použití sestavení s pomocí příkazového řádku](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
+ Další příklady použití argumentů příkazového řádku naleznete v tématu [How to: Vytvořte a použijte sestavení pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Environment?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)
-- [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
-- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Argumenty Main() a příkazového řádku](./index.md)
+- [Postupy: Zobrazit argumenty příkazového řádku](./how-to-display-command-line-arguments.md)
+- [Návratové hodnoty Main()](./main-return-values.md)
+- [Třídy](../classes-and-structs/classes.md)

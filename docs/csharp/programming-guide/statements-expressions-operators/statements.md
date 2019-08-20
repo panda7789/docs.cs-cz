@@ -1,97 +1,97 @@
 ---
-title: Příkazy - C# Průvodce programováním
+title: Příkazy – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 78d40aa2069e56357f55f39c3b7479ee46d0342c
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 4c3421f7165a0b1a3d1c3678fe28334fd8632472
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422826"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588622"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
-Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
+Akce, které program přijímá, jsou vyjádřeny v příkazech. Mezi běžné akce patří deklarace proměnných, přiřazování hodnot, volání metod, smyčky přes kolekce a větvení do jednoho nebo jiného bloku kódu v závislosti na dané podmínce. Pořadí, ve kterém se příkazy spouštějí v programu, se nazývá tok řízení nebo tok provádění. Tok řízení se může při každém spuštění programu lišit v závislosti na tom, jak program reaguje na vstup, který obdrží v době běhu.  
   
- Příkaz se může skládat z jediný řádek kódu, který končí středníkem nebo řady jedním řádkem příkazy v bloku. Blok příkazů, který je uzavřen v {} složené závorky a může obsahovat vnořené bloky. Následující kód ukazuje dva příklady příkazů jedním řádkem a blok příkazů více řádky:  
+ Příkaz se může skládat z jediného řádku kódu, který končí středníkem, nebo řadou jednoduchých příkazů v bloku. Blok příkazu je uzavřený v {} závorkách a může obsahovat vnořené bloky. Následující kód ukazuje dva příklady jednoduchých řádků a blok víceřádkových příkazů:  
   
  [!code-csharp[csProgGuideStatements#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#1)]  
   
 ## <a name="types-of-statements"></a>Typy příkazů  
- V následující tabulce jsou uvedeny různé typy příkazů v C# a jejich související klíčová slova, s odkazy na témata, které obsahují další informace:  
+ V následující tabulce jsou uvedeny různé typy příkazů v C# a jejich přidružená klíčová slova s odkazy na témata, která obsahují další informace:  
   
-|Kategorie|Klíčová slova jazyka C# / poznámky|  
+|Kategorie|C#Klíčová slova a poznámky|  
 |--------------|---------------------------|  
-|[Příkazy deklarace](#declaration-statements)|Příkazu deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné volitelně přiřadit hodnotu k proměnné. V deklaraci konstanty se vyžaduje přiřazení.|  
-|[Příkazy výrazů](expressions.md)|Příkazy výrazů, které vypočítá hodnotu uložit hodnotu do proměnné. Další informace najdete v tématu [příkazy výrazů](#expression-statements).|  
-|Příkazy výběru|Příkazy výběru umožňují větve na různé části kódu, v závislosti na jeden nebo více zadaných podmínek. Další informace naleznete v následujících tématech:<br /><br /> [if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)|  
-|Příkazy iterace|Příkazy iterace vám umožní projít kolekce například pole nebo opakovaně provádět stejnou sadu příkazů, dokud je zadaná podmínka splněna. Další informace naleznete v následujících tématech:<br /><br /> [proveďte](../../../csharp/language-reference/keywords/do.md), [pro](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [v](../../../csharp/language-reference/keywords/foreach-in.md), [při](../../../csharp/language-reference/keywords/while.md)|  
-|Jump – příkazy|Přenos řízení příkazy přejděte na jinou část kódu. Další informace naleznete v následujících tématech:<br /><br /> [Konec](../../../csharp/language-reference/keywords/break.md), [pokračovat](../../../csharp/language-reference/keywords/continue.md), [výchozí](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [vrátit](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)|  
-|Příkazy zpracování výjimek|Příkazy zpracování výjimek umožňují elegantně zotavit z výjimečných podmínek, ke kterým dochází za běhu. Další informace naleznete v následujících tématech:<br /><br /> [vyvolat](../../../csharp/language-reference/keywords/throw.md), [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [konstrukce try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
-|[Zaškrtnuto a nezaškrtnuto](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|Zaškrtnuto a nezaškrtnuto příkazy umožňují určete, jestli jsou číselné operace může způsobit přetečení, pokud výsledek je uložen v proměnné, která je příliš nízká k uložení výslednou hodnotu. Další informace najdete v tématu [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) a [Nekontrolovaná](../../../csharp/language-reference/keywords/unchecked.md).|  
-|`await` – Příkaz|Pokud určíte metodu s [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor, můžete použít [await](../../../csharp/language-reference/keywords/await.md) operátor v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek vrátí volajícímu a průběh v metodě je pozastavený, až do dokončení očekávané úlohy. Po dokončení úlohy se provádění může pokračovat v metodě.<br /><br /> Jednoduchý příklad, najdete v části "Asynchronní metody" [metody](../../../csharp/programming-guide/classes-and-structs/methods.md). Další informace najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).|  
-|`yield return` – Příkaz|Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](../../../csharp/language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když `yield return` je dosažen příkaz, se uloží aktuální umístění v kódu. Provádění je restartováno z tohoto umístění, při příštím volání iterátoru.<br /><br /> Další informace najdete v tématu [iterátory](../../../csharp/programming-guide/concepts/iterators.md).|  
-|`fixed` – Příkaz|Fixed – příkaz zabraňuje přemístění proměnné přesouvatelný systému uvolňování paměti. Další informace najdete v tématu [oprava](../../../csharp/language-reference/keywords/fixed-statement.md).|  
-|`lock` – Příkaz|Příkaz lock umožňuje omezit přístup k bloky kódu, který pouze jedno vlákno v čase. Další informace najdete v tématu [Zámek](../../../csharp/language-reference/keywords/lock-statement.md).|  
-|Příkaz s popiskem|Můžete poskytnout příkaz popisek a potom použít [goto](../../../csharp/language-reference/keywords/goto.md) – klíčové slovo pro přechod na příkaz s popiskem. (Viz příklad na následujícím řádku.)|  
-|[Prázdný příkaz](#the-empty-statement)|Prázdný příkaz se skládá z jedné středník. Nemá žádný účinek a je možné na místech, kde příkaz je povinný, ale potřeba provádět žádnou akci.|  
+|[Příkazy deklarace](#declaration-statements)|Příkaz deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné může volitelně přiřadit hodnotu proměnné. V deklaraci konstanty je vyžadováno přiřazení.|  
+|[Příkazy výrazu](expressions.md)|Příkazy výrazů, které počítají hodnotu, musí ukládat hodnotu v proměnné. Další informace naleznete v tématu [Expression Statements](#expression-statements).|  
+|Příkazy výběru|Příkazy výběru umožňují vytvořit větev do různých oddílů kódu v závislosti na jedné nebo více zadaných podmínkách. Další informace naleznete v následujících tématech:<br /><br /> [if](../../language-reference/keywords/if-else.md), [Else](../../language-reference/keywords/if-else.md), [přepínač](../../language-reference/keywords/switch.md), [case](../../language-reference/keywords/switch.md)|  
+|Příkazy iterace|Příkazy iterace umožňují cyklicky procházet kolekcemi, jako jsou pole, nebo provádět stejnou sadu příkazů opakovaně, dokud není splněna zadaná podmínka. Další informace naleznete v následujících tématech:<br /><br /> [](../../language-reference/keywords/do.md)do, [pro](../../language-reference/keywords/for.md), [foreach](../../language-reference/keywords/foreach-in.md), [v](../../language-reference/keywords/foreach-in.md), [while](../../language-reference/keywords/while.md)|  
+|Jump – příkazy|Příkazy skoku přenášejí řízení na jiný oddíl kódu. Další informace naleznete v následujících tématech:<br /><br /> [přerušení](../../language-reference/keywords/break.md), [pokračovat](../../language-reference/keywords/continue.md), [výchozí](../../language-reference/keywords/switch.md), [Přejít](../../language-reference/keywords/goto.md), [vrátit](../../language-reference/keywords/return.md), [Dej](../../language-reference/keywords/yield.md)|  
+|Příkazy zpracování výjimek|Příkazy zpracování výjimek umožňují bezproblémové obnovení z mimořádných podmínek, ke kterým dojde v době běhu. Další informace naleznete v následujících tématech:<br /><br /> [throw](../../language-reference/keywords/throw.md), [try-catch](../../language-reference/keywords/try-catch.md), [try-finally](../../language-reference/keywords/try-finally.md), [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)|  
+|[Zaškrtnuto a nezaškrtnuto](../../language-reference/keywords/checked-and-unchecked.md)|Zaškrtnuté a nezaškrtnuté příkazy umožňují určit, jestli numerické operace můžou způsobit přetečení, pokud je výsledek uložený v proměnné, která je moc malá pro uložení výsledné hodnoty. Další informace naleznete v tématu [checked](../../language-reference/keywords/checked.md) a [](../../language-reference/keywords/unchecked.md)Unchecked.|  
+|`await` Příkaz|Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/keywords/await.md) v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.<br /><br /> Jednoduchý příklad naleznete v části [metody](../classes-and-structs/methods.md)"asynchronní metody". Další informace naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md).|  
+|`yield return` Příkaz|Iterátor provádí vlastní iteraci v kolekci, jako je například seznam nebo pole. Iterátor používá příkaz [yield return](../../language-reference/keywords/yield.md) k vrácení každého elementu v jednom okamžiku. Při dosažení `yield return` příkazu je aktuální umístění v kódu zapamatovatelné. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.<br /><br /> Další informace najdete v tématu [iterátory](../concepts/iterators.md).|  
+|`fixed` Příkaz|Příkaz fixed brání systému uvolňování paměti v přemístění pohyblivé proměnné. Další informace naleznete v tématu [fixed](../../language-reference/keywords/fixed-statement.md).|  
+|`lock` Příkaz|Příkaz lock umožňuje omezit přístup k blokům kódu pouze na jedno vlákno v jednom okamžiku. Další informace najdete v tématu [Lock](../../language-reference/keywords/lock-statement.md).|  
+|Příkazy s popiskem|Příkazu můžete předat popisek a potom pomocí klíčového slova [goto](../../language-reference/keywords/goto.md) přejít na příkaz s popiskem. (Podívejte se na příklad v následujícím řádku.)|  
+|[Prázdný příkaz](#the-empty-statement)|Prázdný příkaz se skládá z jednoho středníku. Nedělá nic a lze ho použít na místech, kde je vyžadován příkaz, ale není nutné provádět žádnou akci.|  
   
 ## <a name="declaration-statements"></a>Příkazy deklarace
 
-Následující kód ukazuje příklady deklarace proměnných a nemusíte počátečního přiřazení a deklarace konstanty s inicializací nezbytné.
+Následující kód ukazuje příklady deklarací proměnných s a bez počátečního přiřazení a konstantní deklarace s nezbytnou inicializací.
 
  [!code-csharp[csProgGuideStatements#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#23)]
 
-## <a name="expression-statements"></a>Příkazy výrazů
+## <a name="expression-statements"></a>Příkazy výrazu
 
-Následující kód ukazuje příklady příkazy výrazů, včetně přiřazení, vytváření objektů přiřazení a volání metody.
+Následující kód ukazuje příklady příkazů výrazu, včetně přiřazení, vytvoření objektu s přiřazením a volání metody.
 
  [!code-csharp[csProgGuideStatements#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#24)]
 
 ## <a name="the-empty-statement"></a>Prázdný příkaz
 
-Následující příklady ukazují dvě použití pro prázdný příkaz:
+Následující příklady znázorňují dva způsoby použití prázdného příkazu:
 
  [!code-csharp[csProgGuideStatements#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#25)]
 
 ## <a name="embedded-statements"></a>Vložené příkazy
 
- Některé příkazy, včetně [proveďte](../../../csharp/language-reference/keywords/do.md), [při](../../../csharp/language-reference/keywords/while.md), [pro](../../../csharp/language-reference/keywords/for.md), a [foreach](../../../csharp/language-reference/keywords/foreach-in.md), mají vloženým příkazem, který následuje, je vždy. Tento příkaz vložený může být jeden příkaz nebo více příkazů uzavřených podle {} hranaté závorce v bloku příkazu. Ještě jeden řádek integrovaných prohlášení, můžou být uzavřená v {} hranaté závorky, jak je znázorněno v následujícím příkladu:  
+ Některé příkazy, včetně [do](../../language-reference/keywords/do.md), [while](../../language-reference/keywords/while.md), [for](../../language-reference/keywords/for.md)a [foreach](../../language-reference/keywords/foreach-in.md), vždy mají vložený příkaz, který je následován. Tento vložený příkaz může být buď jeden příkaz, nebo více příkazů uzavřených {} závorkami v bloku příkazu. I samostatné vložené příkazy mohou být uzavřeny v {} závorkách, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#26)]  
   
- Vloženým příkazem, který není uzavřen v {} hranaté závorky nemůže být v příkazu deklarace ani příkaz s popiskem. To je ukázáno v následujícím příkladu:  
+ Vložený příkaz, který není uzavřen v {} závorkách, nemůže být příkaz deklarace ani příkaz s popiskem. To je ukázáno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#27)]  
   
- Vloženým příkazem umístěte do bloku, chcete-li vyřešit chybu:  
+ Chcete-li opravit chybu, vložte vložený příkaz do bloku.  
   
  [!code-csharp[csProgGuideStatements#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#28)]  
   
-## <a name="nested-statement-blocks"></a>Vnořené příkazy bloky  
- Blok příkazu mohou být vnořené, jak je znázorněno v následujícím kódu:  
+## <a name="nested-statement-blocks"></a>Vnořené bloky příkazů  
+ Bloky příkazu mohou být vnořené, jak je znázorněno v následujícím kódu:  
   
  [!code-csharp[csProgGuideStatements#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#29)]  
   
-## <a name="unreachable-statements"></a>Nedosažitelný příkazy  
- Pokud kompilátor zjistí, že tok řízení můžete nikdy nedorazí konkrétní příkaz za žádných okolností, vygeneruje upozornění CS0162, jak je znázorněno v následujícím příkladu:  
+## <a name="unreachable-statements"></a>Nedosažitelné příkazy  
+ Pokud kompilátor určí, že tok řízení nemůže nikdy dosáhnout konkrétního příkazu za žádných okolností, vytvoří upozornění CS0162, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#22)]  
   
 ## <a name="related-sections"></a>Související oddíly  
   
-- [Klíčová slova příkazů](../../../csharp/language-reference/keywords/statement-keywords.md)  
+- [Klíčová slova příkazů](../../language-reference/keywords/statement-keywords.md)  
   
-- [Výrazy](../../../csharp/programming-guide/statements-expressions-operators/expressions.md)  
+- [Výrazy](./expressions.md)  
   
-- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+- [Operátory](./operators.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)

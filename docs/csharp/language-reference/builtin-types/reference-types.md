@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: fcfe2dafe588dce57628bff63e3519f70d7a7725
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: a5a32fa0a98cda37d7f599b20ef2b507cadd730c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566252"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69604210"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Předdefinované typy odkazů (C# referenční)
 
@@ -172,7 +172,7 @@ Následující příklad používá `dynamic` v několika deklaracích. `Main` M
 
 - [C#Odkaz](../index.md)
 - [Klíčová slova jazyka C#](../keywords/index.md)
-- [Události](../../../csharp/programming-guide/events/index.md)
+- [Události](../../programming-guide/events/index.md)
 - [Použití typu dynamic](../../programming-guide/types/using-type-dynamic.md)
 - [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)
 - [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)

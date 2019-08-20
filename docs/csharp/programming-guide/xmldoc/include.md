@@ -1,5 +1,5 @@
 ---
-title: <include> - C# Průvodce programováním
+title: <include> – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: e77db451103919df5809b2558fcb53a3d7fba71c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26241dab70a3b6a0cf80b374868fa759647cd8d9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708181"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587997"
 ---
-# <a name="include-c-programming-guide"></a>\<Zahrnout > (C# Programming Guide)
+# <a name="include-c-programming-guide"></a>\<zahrnout > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -25,28 +25,28 @@ ms.locfileid: "61708181"
   
 ## <a name="parameters"></a>Parametry  
  `filename`  
- Název souboru XML, který obsahuje dokumentaci. Název souboru může být kvalifikovány s cestou relativní k souboru se zdrojovým kódem. Uzavřete `filename` v jednoduchých uvozovkách ("").  
+ Název souboru XML, který obsahuje dokumentaci. Název souboru může být kvalifikován cestou relativní k souboru zdrojového kódu. `filename` Uzavřete do jednoduchých uvozovek (' ').  
   
  `tagpath`  
- Cesta klíčových slov do `filename` , který vede ke značce `name`. Vložte cestu do jednoduchých uvozovek ("").  
+ Cesta značek v `filename` , která vede k označení `name`. Uzavřete cestu do jednoduchých uvozovek (' ').  
   
  `name`  
- Specifikátor názvem ve značce, který předchází komentáře; `name` bude mít `id`.  
+ Specifikátor názvu ve značce, který předchází komentářům; `name` bude`id`mít.  
   
  `id`  
- ID značky, které předchází komentáře. ID uzavřete do dvojitých uvozovek ("").  
+ ID značky, která předchází komentář. ID uzavřete do dvojitých uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- \<Zahrnout > značky umožňuje odkazovat na komentáře do jiného souboru, které popisují typy a členy ve zdrojovém kódu. Jedná se o alternativu k uvedení dokumentační komentáře přímo v souboru zdrojového kódu. Vložením dokumentaci v samostatném souboru můžete použít správy zdrojového kódu v dokumentaci samostatně ze zdrojového kódu. Jedna osoba může mít souboru se zdrojovým kódem rezervovat a někdo jiný může mít soubor dokumentace rezervován.  
+ Tag \<include > umožňuje odkazování na komentáře v jiném souboru, které popisují typy a členy ve zdrojovém kódu. Toto je alternativa k umístění dokumentačních komentářů přímo do souboru zdrojového kódu. Vložením dokumentace do samostatného souboru můžete použít správu zdrojového kódu v dokumentaci samostatně ze zdrojového kódu. Je možné, že soubor zdrojového kódu je zarezervován a někdo jiný může mít zarezervován soubor dokumentace.  
   
- \<Zahrnout > značky používá syntaxe jazyka XML. XPath dokumentaci pro přizpůsobení vaší \<zahrnout > použít.  
+ Tag \<include > používá syntaxi XPath XML. V dokumentaci XPath najdete způsoby přizpůsobení \<použití > zahrnutí.  
   
 ## <a name="example"></a>Příklad  
- Toto je vícesouborové příklad. První soubor, který používá \<zahrnout >, která jsou uvedená níže:  
+ Toto je příklad vícesouborového typu. První soubor, který používá \<> include, je uveden níže:  
   
  [!code-csharp[csProgGuideDocComments#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#5)]  
   
- Druhý soubor, xml_include_tag.doc, obsahuje následující komentáře k dokumentaci:  
+ Druhý soubor xml_include_tag. doc obsahuje následující dokumentační dokumentaci:  
   
 ```xml  
 <MyDocs>  
@@ -67,7 +67,7 @@ The summary for this other type.
 ```  
   
 ## <a name="program-output"></a>Výstup programu  
- Následující výstup je generována, když kompilujete třídy testu a Test2 s následujícím příkazovým řádkem: `/doc:DocFileName.xml.` V sadě Visual Studio zadejte možnost komentáře XML doc v podokně sestavení Návrháře projektu. Když C# kompilátor narazí \<zahrnout > značky, budou vyhledány dokumentační komentáře ve xml_include_tag.doc namísto aktuálního zdrojového souboru. Kompilátor poté vygeneruje DocFileName.xml a jedná se o soubor, který je využívána dokumentace nástroje, jako například [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) vytvořit finální dokumentaci.  
+ Následující výstup je generován při kompilaci třídy test a Test2 pomocí následujícího příkazového řádku: `/doc:DocFileName.xml.`V aplikaci Visual Studio zadáte možnost komentáře k dokumentu XML v podokně sestavení v Návrháři projektu. Když C# kompilátor uvidí \<značku include >, vyhledá komentáře k dokumentaci v souboru xml_include_tag. doc namísto aktuálního zdrojového souboru. Kompilátor pak vygeneruje DocFileName. XML a jedná se o soubor, který je využíván nástroji dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , k vytvoření konečné dokumentace.  
   
 ```xml  
 <?xml version="1.0"?>   
@@ -92,5 +92,5 @@ The summary for this other type.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

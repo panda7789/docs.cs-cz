@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (C#)'
+title: 'Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: 260f3dff25eb1e9c47a8102822da709bdede9b72
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1507d0f743070f15b8e64d5dcfb1b9499470b123
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584437"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592698"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (C#)
-Soubor hodnot oddělených čárkami (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiné tabulková data, která je reprezentována řádků a sloupců. S použitím <xref:System.String.Split%2A> metoda oddělují pole, je velmi snadné dotazování a zpracování souborů CSV pomocí jazyka LINQ. Ve skutečnosti stejným způsobem umožňuje změnit uspořádání částí jakéhokoli strukturovaných řádku textu. není omezený na souborů CSV.  
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (C#)
+Textový soubor s oddělovači (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiných tabulkových dat, která jsou reprezentovaná řádky a sloupci. Pomocí <xref:System.String.Split%2A> metody oddělení polí je velmi snadné dotazování a manipulace se soubory CSV pomocí LINQ. Ve skutečnosti lze stejnou techniku použít k přeřazení částí libovolného strukturovaného řádku textu; Nejedná se pouze o soubory CSV.  
   
- V následujícím příkladu se předpokládá, že tři sloupce představují studentů "příjmení," "jméno" a "ID". Pole jsou v abecedním pořadí podle příjmení na studentů. Dotaz vyprodukuje nové pořadí, ve kterém sloupci ID se zobrazí první, za nímž následuje druhý sloupec, který kombinuje student získal křestní jméno a příjmení. Řádky přeuspořádají podle pole ID. Výsledky jsou uloženy do nového souboru a se nezmění původní data.  
+ V následujícím příkladu Předpokládejme, že tři sloupce zastupují studenty "" příjmení "," křestní jméno "a" ID ". Pole jsou v abecedním pořadí podle příjmení studentů. Dotaz vytvoří nové pořadí, ve kterém se nejprve zobrazí sloupec ID následovaný druhým sloupcem, který kombinuje křestní jméno a příjmení studenta. Řádky se přesměrují podle pole ID. Výsledky se uloží do nového souboru a původní data se nezmění.  
   
 ### <a name="to-create-the-data-file"></a>Vytvoření datového souboru  
   
-1. Zkopírujte následující řádky do souboru ve formátu prostého textu, který je pojmenován spreadsheet1.csv. Uložte soubor do složky projektu.  
+1. Zkopírujte následující řádky do souboru prostého textu s názvem Spreadsheet1. csv. Uložte soubor do složky projektu.  
   
     ```  
     Adams,Terry,120  
@@ -76,10 +76,10 @@ class CSVFiles
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
-- [Postupy: Generování XML ze souborů CSV (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [Postupy: Generovat XML ze souborů CSV (C#)](./how-to-generate-xml-from-csv-files.md)

@@ -1,5 +1,5 @@
 ---
-title: -win32manifest (možnosti kompilátoru C#)
+title: -win32manifest (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /win32manifest
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - win32manifest compiler option [C#]
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
-ms.openlocfilehash: 4cdab8c818cf3278c829e2486e89be32bb4ba277
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5fc8a89faaa7fac3413000afdf94b6a96b23ab6d
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593045"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606256"
 ---
-# <a name="-win32manifest-c-compiler-options"></a>-win32manifest (možnosti kompilátoru C#)
-Použití **-win32manifest** možnost určit uživatelský soubor manifestu aplikace Win32, který má být vložen do projektu soubor (PE portable executable).  
+# <a name="-win32manifest-c-compiler-options"></a>-win32manifest (C# možnosti kompilátoru)
+Pomocí možnosti **-win32manifest** určete uživatelsky definovaný soubor manifestu aplikace Win32, který bude vložen do přenositelného spustitelného souboru (PE) projektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,28 +29,28 @@ Použití **-win32manifest** možnost určit uživatelský soubor manifestu apli
  Název a umístění vlastního souboru manifestu.  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení kompilátor Visual C# vloží manifest aplikace, který určuje požadovanou úroveň spuštění "asInvoker". Manifest vytvoří ve stejné složce, ve kterém spustitelný soubor vytvořen, obvykle bin\Debug nebo bin\Release složky, pokud používáte sadu Visual Studio. Pokud chcete zadat vlastní manifest, třeba když chcete požadovanou úroveň spuštění "highestAvailable" nebo "requireAdministrator", zadejte tuto možnost použijte k zadání názvu souboru.  
+ Ve výchozím nastavení vkládá vizuální C# kompilátor manifest aplikace, který určuje požadovanou úroveň spuštění "podle volajícího". Vytvoří manifest ve stejné složce, ve které je sestaven spustitelný soubor, obvykle složka bin\Debug nebo bin\Release při použití sady Visual Studio. Pokud chcete zadat vlastní manifest, například pro určení požadované úrovně spuštění "nejvyšší dostupná" nebo "vyžadovat správce", použijte tuto možnost k zadání názvu souboru.  
   
 > [!NOTE]
->  Tuto možnost a [-win32res (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) možnost se vzájemně vylučují. Pokud se pokusíte použít obě možnosti jsou ve stejném příkazovém řádku se zobrazí chybu sestavení.  
+>  Tato možnost a možnost [-win32res (C# možnosti kompilátoru)](./win32res-compiler-option.md) se vzájemně vylučují. Pokud se pokusíte použít obě možnosti na stejném příkazovém řádku, zobrazí se chyba buildu.  
   
- Aplikace nemá žádné aplikace, manifest, který určuje, že že požadovanou úroveň spuštění bude v souladu s virtualizací souborů nebo registru pod funkci Řízení uživatelských účtů ve Windows. Další informace najdete v tématu [řízení uživatelských účtů](/windows/access-protection/user-account-control/user-account-control-overview).  
+ Aplikace, která nemá žádný manifest aplikace, který určuje požadovanou úroveň spuštění, bude v rámci funkce řízení uživatelských účtů ve Windows podléhat virtualizaci File/Registry. Další informace najdete v tématu [řízení uživatelských účtů](/windows/access-protection/user-account-control/user-account-control-overview).  
   
- Vaše aplikace bude v souladu s virtualizace, pokud platí některá z těchto podmínek:  
+ Vaše aplikace bude platit z virtualizace, pokud je splněna jedna z těchto podmínek:  
   
-- Použijete **-nowin32manifest** a neposkytuje manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků (.res) Windows s použitím **-win32res** možnost.  
+- Použijete možnost **-nowin32manifest** a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků Windows (. res) pomocí možnosti **-win32res** .  
   
-- Poskytnete vlastního manifestu, která neurčuje požadovanou úroveň spuštění.  
+- Poskytnete vlastní manifest, který neurčuje požadovanou úroveň spuštění.  
   
- Visual Studio vytvoří výchozí soubor .manifest a ukládá ho do adresáře debug a release spustitelný soubor. Vytvoření nového v libovolném textovém editoru a následným přidáním souboru do projektu můžete přidat vlastní manifest. Alternativně je můžete kliknout pravým tlačítkem **projektu** ikonu **Průzkumníku řešení**, klikněte na tlačítko **přidat novou položku**a potom klikněte na tlačítko **soubor manifestu aplikace**. Po přidání nového nebo existujícího souboru manifestu, se zobrazí v **Manifest** rozevírací seznam. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
+ Visual Studio vytvoří soubor default. manifest a uloží ho do adresářů pro ladění a vydání spolu se spustitelným souborem. Vlastní manifest můžete přidat tak, že ho vytvoříte v libovolném textovém editoru a pak ho přidáte do projektu. Případně můžete kliknout pravým tlačítkem myši na ikonu **projektu** v **Průzkumník řešení**, kliknout na **Přidat novou položku**a pak kliknout na **soubor manifestu aplikace**. Po přidání nového nebo existujícího souboru manifestu se zobrazí v rozevíracím seznamu **manifest** . Další informace naleznete na [stránce aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
   
- Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást soubor prostředků Win32 pomocí [-nowin32manifest (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md) možnost. Stejnou možnost použijte, pokud chcete, aby byla v souladu s virtualizací souborů nebo registru v systému Windows Vista aplikace. To zabrání kompilátoru od vytvoření a vkládání výchozí manifest do přenosného spustitelného souboru (PE).  
+ Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí možnosti [-nowin32manifest (C# možnosti kompilátoru)](./nowin32manifest-compiler-option.md) . Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytváření a vkládání výchozího manifestu do přenositelného spustitelného souboru (PE).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje výchozí manifest, že kompilátor Visual C# vloží do PE.  
+ Následující příklad ukazuje výchozí manifest, který Visual C# Compiler vloží do PE.  
   
 > [!NOTE]
->  Kompilátor vloží název standardní aplikace "MyApplication.app" do souboru xml. Toto je alternativní řešení Chcete-li povolit aplikace, které poběží na Windows Server 2003 Service Pack 3.  
+>  Kompilátor vloží do XML standardní název aplikace "MyApplication. app". Toto je alternativní řešení pro povolení spouštění aplikací v systému Windows Server 2003 s aktualizací Service Pack 3.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -68,6 +68,6 @@ Použití **-win32manifest** možnost určit uživatelský soubor manifestu apli
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
-- [-nowin32manifest (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/nowin32manifest-compiler-option.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
+- [-nowin32manifest (C# možnosti kompilátoru)](./nowin32manifest-compiler-option.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

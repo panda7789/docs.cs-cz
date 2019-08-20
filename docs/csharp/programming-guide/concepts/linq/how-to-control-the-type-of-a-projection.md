@@ -2,20 +2,20 @@
 title: 'Postupy: Řízení typu projekce (C#)'
 ms.date: 07/20/2015
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-ms.openlocfilehash: 45f60934d6dcac5d2c0fa46409a773d8cdc8b6a2
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 559cfb2a38ba76fb37a17100f0441498223852d7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487450"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594017"
 ---
 # <a name="how-to-control-the-type-of-a-projection-c"></a>Postupy: Řízení typu projekce (C#)
-Projekce je proces trvá jednu sadu dat, filtrovat, změně jeho tvar a změnu i jejího typu. Většina výrazy dotazu provést sami. Většina výrazy dotazu uvedené v této části vyhodnotit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to provést.  
+Projekcí je proces pořízení jedné sady dat, její filtrování, změna jejího tvaru a dokonce i změna jejího typu. Většina výrazů dotazů provádí projekce. Většina výrazů dotazu zobrazených v této části je <xref:System.Collections.Generic.IEnumerable%601> vyhodnocena <xref:System.Xml.Linq.XElement>jako z, ale můžete řídit typ projekce pro vytváření kolekcí jiných typů. V tomto tématu se dozvíte, jak to provést.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje nový typ `Customer`. Výraz dotazu poté vytvoří nový `Customer` objekty v `Select` klauzuli. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> z `Customer`.  
+ Následující příklad definuje nový typ, `Customer`. Výraz dotazu pak vytvoří instanci nových `Customer` objektů `Select` v klauzuli. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601>. `Customer`  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 public class Customer  
@@ -60,7 +60,7 @@ class Program
 }  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 GREAL:Great Lakes Food Market:Howard Snyder  

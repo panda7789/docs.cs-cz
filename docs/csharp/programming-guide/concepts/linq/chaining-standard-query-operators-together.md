@@ -1,29 +1,29 @@
 ---
-title: Zřetězení standardních dotazovacích operátorů pohromadě (C#)
+title: Zřetězení standardních operátorů dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
-ms.openlocfilehash: e09b918ab6c33c8e3ccae6f99826dd86f4a2d1e6
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 89cf7f526bdc60881e901d7ca8f556e97488b220
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487613"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594837"
 ---
-# <a name="chaining-standard-query-operators-together-c"></a>Zřetězení standardních dotazovacích operátorů pohromadě (C#)
-Toto je poslední téma v [kurzu: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md) kurzu.  
+# <a name="chaining-standard-query-operators-together-c"></a>Zřetězení standardních operátorů dotazů (C#)
+Toto je poslední téma v [tomto kurzu: Zřetězení dotazů spolu (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md) kurz.  
   
- Také je možné zřetězit standardních operátorů pro dotazování. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a také funguje opožděné způsobem. Žádné mezilehlých výsledků jsou materializovaného tímto plánem.  
+ Standardní operátory dotazu je také možné zřetězit dohromady. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a funguje také opožděným způsobem. Žádné mezilehlé výsledky nejsou materializované.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> metoda je volána před voláním `ConvertCollectionToUpperCase`. <xref:System.Linq.Enumerable.Where%2A> Metoda funguje v téměř stejným způsobem jako opožděné metod používaných v předchozích příkladech v tomto kurzu `ConvertCollectionToUpperCase` a `AppendString`.  
+ V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> je metoda volána před voláním `ConvertCollectionToUpperCase`. Metoda pracuje téměř přesně stejným způsobem jako opožděné metody používané v předchozích příkladech v tomto `ConvertCollectionToUpperCase` kurzu a `AppendString`. <xref:System.Linq.Enumerable.Where%2A>  
   
- Jedním rozdílem je, že v tomto případě <xref:System.Linq.Enumerable.Where%2A> metoda prochází dochází k rozdělení kolekce, zjistí, že první položka nepředává predikátu a potom získá další položky, které předávají. Pak bude vrácen druhé položky.  
+ Jedním rozdílem je, že v tomto případě <xref:System.Linq.Enumerable.Where%2A> Metoda prochází ze své zdrojové kolekce, určuje, že první položka neprojde predikátem, a poté získá další položku, která je předána. Následně výsledkem bude druhá položka.  
   
- Základní myšlenka je však stejný: Pokud mají být nejsou vyhodnocena zprostředkující kolekce.  
+ Základní nápad je však stejný: Mezilehlé kolekce nejsou materializované, pokud je nepotřebujete.  
   
- V případě – výrazy dotazů používají, jsou převedeny na volání do standardních operátorů pro dotazování a stejné zásady platí.  
+ Pokud jsou výrazy dotazu použity, jsou převedeny na volání standardních operátorů dotazu a platí stejné zásady.  
   
- Všechny příklady v této části, které jsou dotazování na dokumenty Office Open XML používat stejný princip. Odložené provedení a opožděné vyhodnocení jsou některé základní koncepty, musíte porozumět efektivně používat LINQ (a LINQ to XML).  
+ Všechny příklady v této části, které se dotazují na dokumenty Office Open XML, používají stejný princip. Odložené provádění a opožděné hodnocení jsou některé ze základních konceptů, které je potřeba pochopit, abyste mohli efektivně používat LINQ (a LINQ to XML).  
   
 ```csharp  
 public static class LocalExtensions  

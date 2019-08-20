@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Dotaz pro soubory s konkrétním atributem či názvem (C#)'
+title: 'Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)'
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 94642ff500cb065ffcb28d6099c3f9f50d43d124
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c1ecaad7e4fb4538331ba8f8076c9795acc52877
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584325"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592896"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: Dotaz pro soubory s konkrétním atributem či názvem (C#)
-Tento příklad ukazuje, jak vyhledat všechny soubory, které mají příponu názvu souboru (například ".txt") v zadaném adresáři stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)
+Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ". txt") v zadaném stromu adresářů. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
   
 ## <a name="example"></a>Příklad  
   
@@ -64,9 +64,9 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
+  Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

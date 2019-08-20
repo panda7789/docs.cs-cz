@@ -1,5 +1,5 @@
 ---
-title: -resource (možnosti kompilátoru C#)
+title: -Resource (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /resource
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: ed9f4648ae632786ce860ce2c02637977f709c55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e14bf59f5922a918b627af22c052c8efd9081e84
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662436"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602522"
 ---
-# <a name="-resource-c-compiler-options"></a>-resource (možnosti kompilátoru C#)
+# <a name="-resource-c-compiler-options"></a>-Resource (C# možnosti kompilátoru)
 Vloží zadaný prostředek do výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,39 +29,39 @@ Vloží zadaný prostředek do výstupního souboru.
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Soubor prostředků rozhraní .NET Framework, který chcete vložit do výstupního souboru.  
+ .NET Framework soubor prostředků, který chcete vložit do výstupního souboru.  
   
- `identifier` (volitelné)  
- Logický název prostředku. název, který se používá k načtení prostředku. Výchozí hodnota je název názvu souboru.  
+ `identifier`volitelné  
+ Logický název prostředku; název, který se použije k načtení prostředku. Výchozí hodnota je název souboru.  
   
- `accessibility-modifier` (volitelné)  
- Dostupnost prostředku: veřejné nebo soukromé. Výchozí hodnota je veřejná.  
+ `accessibility-modifier`volitelné  
+ Přístupnost prostředku: Public nebo Private. Výchozí hodnota je Public.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [- linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) propojení prostředku sestavení a nelze přidat soubor prostředků do výstupního souboru.  
+ Použijte [-linkresource –](./linkresource-compiler-option.md) k propojení prostředku se sestavením a nepřidejte soubor prostředků do výstupního souboru.  
   
- Ve výchozím nastavení jsou prostředky v sestavení veřejné při jejich vytváření pomocí kompilátoru jazyka C#. Aby se mohly prostředky privátní, zadejte `private` jako modifikátor přístupnosti. Žádné další usnadnění jiných než `public` nebo `private` je povolen.  
+ Ve výchozím nastavení jsou prostředky v sestavení veřejné, když jsou vytvořeny pomocí C# kompilátoru. Chcete-li zajistit soukromí prostředků, `private` zadejte jako modifikátor přístupnosti. Žádná jiná přístupnost `public` `private` není povolena.  
   
- Pokud `filename` je soubor prostředků rozhraní .NET Framework vytvořený, například podle [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí, můžete přistupovat pomocí členů z <xref:System.Resources> oboru názvů. Další informace naleznete v tématu <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. U všech ostatních prostředků, použijte `GetManifestResource` metody v <xref:System.Reflection.Assembly> pro přístup k prostředku v době běhu.  
+ Pokud `filename` je vytvořen soubor prostředků .NET Framework, například pomocí nástroje [Resgen. exe](../../../framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí, lze k němu přistupovat <xref:System.Resources> pomocí členů v oboru názvů. Další informace naleznete v tématu <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pro všechny ostatní prostředky použijte `GetManifestResource` metody <xref:System.Reflection.Assembly> ve třídě pro přístup k prostředku v době běhu.  
   
- **-res** je zkratka pro **-prostředků**.  
+ **-res** je krátká forma **prostředku**.  
   
- Pořadí zdrojů do výstupního souboru je určen podle pořadí zadaném v příkazovém řádku.  
+ Pořadí prostředků ve výstupním souboru je určeno z pořadí zadaného na příkazovém řádku.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Přidejte soubor prostředků do vašeho projektu.  
+1. Přidejte soubor prostředků do projektu.  
   
-2. Vyberte soubor, který chcete vložit **Průzkumníka řešení**.  
+2. Vyberte soubor, který chcete vložit do **Průzkumník řešení**.  
   
-3. Vyberte **akce sestavení** souborem v **vlastnosti** okna.  
+3. Vyberte **akci sestavení** pro soubor v okně **vlastnosti** .  
   
-4. Nastavte **akce sestavení** k **vloženého prostředku**.  
+4. Nastavte **akci sestavení** na **Integrovaný prostředek**.  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.FileProperties2.BuildAction%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.FileProperties2.BuildAction%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `in.cs` a připojte soubor prostředků `rf.resource`:  
+ Zkompilovat `in.cs` a připojit soubor `rf.resource`prostředků:  
   
 ```console  
 csc -resource:rf.resource in.cs  
@@ -69,5 +69,5 @@ csc -resource:rf.resource in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

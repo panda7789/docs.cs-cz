@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vyhledání všech uzlů v Namespace (C#)'
+title: 'Postupy: Najde všechny uzly v oboru názvů (C#).'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: d94a6c517a76e8ed91f20a17e798ad3806a34a70
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 512ca398831541c30a6c0c1e305c5c6269c13ddb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486817"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593637"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: Vyhledání všech uzlů v Namespace (C#)
-Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: Najde všechny uzly v oboru názvů (C#).
+Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří stromu XML pomocí dva obory názvů. Pak Iteruje přes stromu a Vypíše názvy všech elementů a atributů v jednom z těchto oborů názvů.  
+ Následující příklad vytvoří strom XML se dvěma obory názvů. Pak projde stromovou strukturou a vytiskne názvy všech prvků a atributů v jednom z těchto oborů názvů.  
   
 ```csharp  
 string markup = @"<aw:Root xmlns:aw='http://www.adventure-works.com' xmlns:fc='www.fourthcoffee.com'>  
@@ -35,7 +35,7 @@ foreach (XElement el in awElements)
     Console.WriteLine(el.Name.ToString());  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 Nodes in the http://www.adventure-works.com namespace  
@@ -44,9 +44,9 @@ Nodes in the http://www.adventure-works.com namespace
 ```  
   
 ## <a name="example"></a>Příklad  
- Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů. Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.  
+ Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](./sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -59,7 +59,7 @@ XElement newTree = new XElement("Root",
 Console.WriteLine(newTree);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Root>  

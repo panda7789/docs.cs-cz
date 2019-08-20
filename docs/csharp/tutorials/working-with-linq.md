@@ -1,46 +1,46 @@
 ---
 title: Práce s jazykem LINQ
-description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, Zapsat metody pro použití v dotazech LINQ a rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
+description: V tomto kurzu se naučíte generovat sekvence pomocí LINQ, metody zápisu pro použití v dotazech LINQ a rozlišovat mezi Eager a opožděným hodnocením.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: e37c013add02f651875db7b908ae2b49711d996d
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 3cbafbb6aeed3abdd6d83ead613b29de738d5604
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609311"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587175"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
 ## <a name="introduction"></a>Úvod
 
-V tomto kurzu se naučíte, funkce v .NET Core a C# jazyka. Získáte informace:
+V tomto kurzu se naučíte funkcemi v .NET Core a C# v jazyce. Naučíte se:
 
-- Jak vygenerovat pořadí pomocí jazyka LINQ.
-- Jak napsat metody, které můžete snadno použít v dotazech LINQ.
-- Jak rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
+- Jak generovat sekvence pomocí LINQ.
+- Jak zapisovat metody, které lze snadno použít v dotazech LINQ.
+- Jak rozlišovat mezi Eager a opožděným hodnocením.
 
-Vytvořením aplikace, která ukazuje jednu základní dovednosti jakékoli magician dozvíte těchto technik: [faro shuffle](https://en.wikipedia.org/wiki/Faro_shuffle). Stručně řečeno náhodně faro je technika, kde rozdělit karet přesně na polovinu a pak shuffle předřadí jednotlivých karet z každého půl k opětovnému sestavení z původního balíčku.
+Tyto techniky se naučíte vytvořením aplikace, která předvádí jednu ze základních dovedností libovolného Magician: Faro se [náhodně](https://en.wikipedia.org/wiki/Faro_shuffle)rozhodnou. Stručně je Faro náhodné, když rozdělíte balíček karet přesně na polovinu, pak se náhodně ponechá každou jednu kartu od poloviny a znovu sestaví původní balíček.
 
-Magicians tento postup použít, protože všechny karty je v zadaném umístění po jednotlivých shuffle a pořadí je s opakováním vzoru.
+Magicians tento postup použijte, protože každá karta je ve známém umístění po každém náhodném umístění a pořadí je opakující se vzor.
 
-Pro účely je slabá hearted podívejte se na zpracování data sekvencí. Aplikace, kterou vytvoříte bude sestavení karet a pak proveďte posloupnost podle okolí posouvá, zápis si pokaždé, když je pořadí. Budete také porovnat aktualizované aby původní pořadí.
+Pro vaše účely je to světle srdce, které se používá při manipulaci s sekvencemi dat. Aplikace, kterou sestavíte, vytvoří balíček karet a pak provede sekvenci přepisování a pokaždé zapíše sekvenci. Také porovnáte aktualizované pořadí s původní objednávkou.
 
-V tomto kurzu má několik kroků. Po provedení každého kroku můžete spustit aplikaci a sledovat průběh. Můžete zobrazit také [úplnou vzorovou](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) v úložišti dotnet/samples GitHub. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. V úložišti GitHub/Samples můžete také zobrazit [ukázku dokončeno](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) . Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete potřebovat k nastavení vašeho počítače ke spuštění .NET core. Můžete najít pokyny k instalaci na [.NET Core](https://www.microsoft.com/net/core) stránky. Tuto aplikaci můžete spustit v systému Windows, Ubuntu Linux, OS X nebo v kontejneru Dockeru. Bude potřeba nainstalovat váš oblíbený editor kódu. Popisy níže použití [Visual Studio Code](https://code.visualstudio.com/) což je open source pro různé platformy editoru. Ale můžete použít jakýkoli nástroje jste obeznámeni.
+Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [.NET Core](https://www.microsoft.com/net/core) . Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ujistěte se, že do aktuálního adresáře. Zadejte příkaz `dotnet new console` příkazového řádku. Tím se vytvoří počáteční soubory pro základní aplikace "Hello World".
+Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Zajistěte, aby byl aktuální adresář. Zadejte příkaz `dotnet new console` na příkazovém řádku. Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World".
 
-Pokud jste nikdy C#, [v tomto kurzu](console-teleprompter.md) vysvětluje struktura programu v jazyce C#. Může číst a pak se sem vraťte pro další informace o jazyku LINQ.
+Pokud jste to ještě nikdy C# nepoužili, [Tento kurz](console-teleprompter.md) vysvětluje strukturu C# programu. Můžete si ho přečíst a pak se sem vrátit a získat další informace o LINQ.
 
 ## <a name="creating-the-data-set"></a>Vytvoření datové sady
 
-Než začnete, ujistěte se, že v horní části jsou následující řádky `Program.cs` soubor generovaný nástrojem `dotnet new console`:
+Než začnete, ujistěte se, že jsou na začátku `Program.cs` souboru `dotnet new console`vygenerovaného na začátku následující řádky:
 
 ```csharp
 // Program.cs
@@ -49,9 +49,9 @@ using System.Collections.Generic;
 using System.Linq;
 ```
 
-Pokud tyto tři řádky (`using` příkazy) nejsou v horní části souboru, nebude kompilovat náš program.
+Pokud tyto tři řádky (`using` příkazy) nejsou v horní části souboru, náš program nebude zkompilován.
 
-Teď, když máte všechny odkazy, které budete potřebovat, vezměte v úvahu informace o tom, co balíčku karet. Běžně balíčku hracích kartách obsahuje čtyři barvy a každou barvu má třináct hodnoty. Za normálních okolností zvažte vytvoření `Card` třídy přímo vypnuto bat a naplnění kolekce `Card` objekty ručně. S dotazy LINQ může být stručnější než obvyklým způsobem řešení problémů s vytvořením balíčku karet. Místo vytváření `Card` třídy, můžete vytvořit dvěma sekvencemi k reprezentaci barvy a pořadí, v uvedeném pořadí. Vytvoříte opravdu jednoduchý dvojici [ *iterátory* ](../iterators.md#enumeration-sources-with-iterator-methods) , který bude generovat pořadí a barvy jako <xref:System.Collections.Generic.IEnumerable%601>s řetězců:
+Teď, když máte všechny odkazy, které budete potřebovat, zvažte, co představuje balíček karet. Balíčky hracích karet běžně obsahují čtyři barvy a každá z nich má třináct hodnot. Za normálních okolností můžete zvážit vytvoření `Card` třídy přímo z bat a naplnění `Card` kolekce objektů ručně. Pomocí LINQ můžete být výstižnější, než obvyklý způsob, jak řešit vytváření balíčku karet. Namísto vytváření `Card` třídy můžete vytvořit dvě sekvence, které reprezentují barvy a pořadí. Vytvoříte skutečně jednoduchou dvojici [*metod iterátoru*](../iterators.md#enumeration-sources-with-iterator-methods) , které budou generovat pořadí a obleky jako <xref:System.Collections.Generic.IEnumerable%601>s řetězci:
 
 ```csharp
 // Program.cs
@@ -83,9 +83,9 @@ static IEnumerable<string> Ranks()
 }
 ```
 
-Tyto pod umístit `Main` metoda ve vaší `Program.cs` souboru. Tyto dvě metody jak využívat `yield return` syntaxi pro vytvoření sekvence za běhu. Kompilátor vytvoří objekt, který implementuje <xref:System.Collections.Generic.IEnumerable%601> a generuje posloupnost řetězců, jako jsou požadovány.
+Umístěte je `Main` pod metodu `Program.cs` do souboru. Tyto dvě metody používají `yield return` syntaxi k vytvoření sekvence při jejich spuštění. Kompilátor vytvoří objekt, který implementuje <xref:System.Collections.Generic.IEnumerable%601> a vygeneruje posloupnost řetězců podle požadavků.
 
-Tyto metody iterátoru teď použijte k vytvoření balíčku karet. Umístíte dotazu LINQ v našich `Main` metody. Tady se můžete podívat na to:
+Nyní tyto metody iterátoru použijte k vytvoření balíčku karet. Dotaz LINQ umístíte do naší `Main` metody. Tady se můžete podívat na:
 
 ```csharp
 // Program.cs
@@ -103,23 +103,23 @@ static void Main(string[] args)
 }
 ```
 
-Násobek `from` klauzule vytvářejí <xref:System.Linq.Enumerable.SelectMany%2A>, vytváří jeden pořadí z kombinace každý prvek v první řadě se každý prvek v druhé pořadí. Pořadí je důležité pro naše účely. První prvek v první zdrojové sekvence (barvy) číslo zkombinuje s každý prvek v druhé pořadí (pořadí). Tímto se vytvoří všechny karty třináct první barvy. Tento proces se opakuje ke každému elementu v první řadě (barvy). Konečný výsledek je balíčku karet seřazené podle barvy, za nímž následuje hodnoty.
+Vícenásobné `from` klauzule <xref:System.Linq.Enumerable.SelectMany%2A>vytvoří, což vytvoří jednu sekvenci z kombinace každého elementu v první sekvenci s každým prvkem v druhé sekvenci. Pořadí je důležité pro naše účely. První prvek v první zdrojové sekvenci (barev) je kombinován s každým prvkem v druhé sekvenci (pořadí). Tím se vytvoří všechny třinácté karty první barvy. Tento proces se opakuje s každým prvkem v prvním pořadí (obleky). Konečný výsledek je balíček karet seřazený podle obleku a za ním hodnoty.
 
-Je důležité mít na paměti, že ať rozhodnout pro zápis LINQ v syntaxi dotazů využité nad nebo použití syntaxe využívající metody místo toho, je vždy možné přejít z jednu formu syntaxe na druhý. Výše uvedené dotazy napsané v syntaxi dotazů je možné psát v syntaxe využívající metody jako:
+Je důležité mít na paměti, že pokud se rozhodnete napsat svůj LINQ v syntaxi dotazu použitou výše, nebo místo toho použít syntaxi metody, je vždy možné přejít z jedné formy syntaxe do druhé. Výše uvedený dotaz napsaný v syntaxi dotazu může být zapsaný v syntaxi metody jako:
 
 ```csharp
 var startingDeck = Suits().SelectMany(suit => Ranks().Select(rank => new { Suit = suit, Rank = rank }));
 ```
 
-Kompilátor překládá příkazy LINQ, které jsou napsané v syntaxi dotazů v syntaxi volání ekvivalentní metody. Bez ohledu na vaši volbu syntaxe proto dvě verze dotaz přinesou stejný výsledek. Zvolte, které syntaxe je nejvhodnější pro vaši situaci: pro instanci, pokud pracujete v týmu, kde některé členy mají potíže s syntaxe využívající metody, zkuste raději pomocí syntaxe dotazu.
+Kompilátor překládá příkazy LINQ napsané pomocí syntaxe dotazu do ekvivalentní syntaxe volání metody. Bez ohledu na zvolenou syntaxi si proto dvě verze dotazu vytvoří stejný výsledek. Vyberte, která syntaxe je nejvhodnější pro vaši situaci: například pokud pracujete v týmu, kde někteří členové mají potíže se syntaxí metody, zkuste preferovat použití syntaxe dotazu.
 
-Pokračujte a spusťte ukázku, kterou jste vytvořili v tomto okamžiku. Zobrazí se všechny 52 karty z balíčku. Může být pro vás velmi užitečné v ladicím programu sledovat tuto ukázku spustit jak `Suits()` a `Ranks()` provedení metody. Je jasně vidět, že každého řetězce v každé pořadí se vygeneruje pouze dle potřeby.
+Pokračujte a spusťte ukázku, kterou jste v tomto okamžiku vytvořili. V balíčku se zobrazí všechny karty 52. Může být užitečné spustit tuto ukázku v rámci ladicího programu, aby bylo možné sledovat, `Suits()` jak `Ranks()` metody a jsou spouštěny. Můžete jasně vidět, že každý řetězec v každé sekvenci je vygenerovaný pouze v případě potřeby.
 
-![Okna konzoly zobrazuje aplikaci výpisu 52 karet.](./media/working-with-linq/console-52-card-application.png)
+![Okno konzoly zobrazující, že aplikace vypisuje 52 karet.](./media/working-with-linq/console-52-card-application.png)
 
-## <a name="manipulating-the-order"></a>Manipulace s pořadí
+## <a name="manipulating-the-order"></a>Manipulace s objednávkou
 
-V dalším kroku se zaměřují na způsob se chystáte shuffle karty z balíčku. Prvním krokem při libovolné vhodné shuffle je rozdělit z balíčku ve dvou. <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> metody, které jsou součástí rozhraní API LINQ poskytují tuto funkci za vás. Je pod umístit `foreach` smyčka:
+V dalším kroku se zaměřte na to, jak se budou karty v balíčku přemíchat. Prvním krokem v jakémkoli dobrým náhodném případě je rozdělení balíčku na dvě. Metody <xref:System.Linq.Enumerable.Take%2A> a<xref:System.Linq.Enumerable.Skip%2A> , které jsou součástí rozhraní API LINQ, poskytují tuto funkci za vás. Umístěte je pod `foreach` smyčku:
 
 ```csharp
 // Program.cs
@@ -140,11 +140,11 @@ public static void Main(string[] args)
 }
 ```
 
-Neexistuje však žádná metoda shuffle výhod ve standardní knihovně, proto budete muset napsat vlastní. Shuffle metodu, kterou vytvoříte ukazuje několik technik, které budete používat s aplikací založených na LINQ, každá součást tohoto procesu bude popsanou v krocích.
+Neexistuje však žádná nepřesná metoda, která by se mohla využít ve standardní knihovně, takže budete muset napsat vlastní. Metoda náhodně, kterou budete vytvářet, znázorňuje několik postupů, které budete používat s aplikacemi založenými na technologii LINQ, takže všechny části tohoto procesu budou vysvětleny v krocích.
 
-Chcete-li přidat některé funkce, jak pracovat <xref:System.Collections.Generic.IEnumerable%601> získáte zpět z dotazů LINQ, budete muset napsat nějakou zvláštní druhy metod volá [rozšiřující metody](../../csharp/programming-guide/classes-and-structs/extension-methods.md). Stručně řečeno, rozšiřující metoda je zvláštní účely *statickou metodu* , který přidává nové funkce na typ, který již existuje bez nutnosti upravovat původní typ, který chcete přidat funkce.
+Aby bylo možné přidat některé funkce k interakci s tím <xref:System.Collections.Generic.IEnumerable%601> , že se vrátíte z dotazů LINQ, budete muset napsat některé speciální druhy metod označované jako [metody rozšíření](../programming-guide/classes-and-structs/extension-methods.md). Krátké metody rozšíření je *statická metoda* pro zvláštní účely, která přidává novou funkci do již existujícího typu bez nutnosti upravovat původní typ, do kterého chcete přidat funkci.
 
-Rozšiřující metody poskytují nový domov tak, že přidáte nový *statické* soubor třídy do vaší aplikace s názvem `Extensions.cs`a pak začít vytvářet out první – metoda rozšíření:
+Poskytněte rozšiřující metody novému domu přidáním nového souboru *statické* třídy do programu s názvem `Extensions.cs`a pak začněte sestavovat první metodu rozšíření:
 
 ```csharp
 // Extensions.cs
@@ -164,23 +164,23 @@ namespace LinqFaroShuffle
 }
 ```
 
-Podívejte se na podpis metody na chvíli zastavíme, konkrétně parametry:
+Podívejte se na signaturu metody za chvilku, konkrétně parametry:
 
 ```csharp
 public static IEnumerable<T> InterleaveSequenceWith<T> (this IEnumerable<T> first, IEnumerable<T> second)
 ```
 
-Zobrazí se přidání `this` modifikátor v prvním argumentu k metodě. To znamená, že volání metody, jako by šlo o metodu člen typu prvního argumentu. Tato metoda také následuje po deklaraci standardní idiom kde vstupní a výstupní typy jsou `IEnumerable<T>`. Že postup umožňuje metody LINQ na možné zřetězit dohromady a provádět složitější dotazy.
+Můžete zobrazit přidání `this` modifikátoru u prvního argumentu do metody. To znamená, že zavoláte metodu, jako by šlo o členskou metodu typu prvního argumentu. Tato deklarace metody také následuje po standardním idiom, kde jsou `IEnumerable<T>`vstupní a výstupní typy. Tento postup umožňuje zřetězení metod LINQ společně provádět složitější dotazy.
 
-Přirozeně protože rozdělení z balíčku na polovina se uloží, bude potřeba připojit k těmto polovina se uloží společně. V kódu, to znamená, že je budete výčet, obě sekvencí, které jste získali prostřednictvím <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> najednou, *`interleaving`* elementy a vytvoření jednoho pořadí: vaše nyní – které se náhodně pomíchají balíčku karet. Zápis LINQ metodu, která funguje s dvěma sekvencemi vyžaduje pochopit, jak <xref:System.Collections.Generic.IEnumerable%601> funguje.
+Přirozeně, vzhledem k tomu, že balíček rozdělíte na poloviny, budete muset spojit tyto poloviny dohromady. V kódu to znamená, že budete vytvářet výčet obou sekvencí, které jste získali prostřednictvím <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> najednou, *`interleaving`* prvky a vytvořit jednu sekvenci: právě náhodně vytvořenou sadu karet. Zápis metody LINQ, která funguje se dvěma sekvencemi, vyžaduje, abyste <xref:System.Collections.Generic.IEnumerable%601> pochopili, jak funguje.
 
-<xref:System.Collections.Generic.IEnumerable%601> Rozhraní má jednu metodu: <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>. Objekt vrácený rutinou <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> má metodu pro přesun na další prvek a vlastnost, která načte aktuální prvek v sekvenci. Tyto dva členy použije k vytvoření výčtu kolekce a vrátí prvky. Tato metoda prokládání bude metodu iterátoru, místo vytváření kolekce a vrátí kolekci, které použijete `yield return` syntaxe uvedené výše.
+Rozhraní má jednu metodu: <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>. <xref:System.Collections.Generic.IEnumerable%601> Objekt vrácený funkcí <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> má metodu pro přesun na další prvek a vlastnost, která načte aktuální prvek v sekvenci. Tyto dva členy použijete k vytvoření výčtu kolekce a vrácení prvků. Tato metoda prokládání bude metodou iterátoru, takže namísto sestavování kolekce a vrácení kolekce se použije `yield return` syntaxe uvedená výše.
 
-Tady je implementace této metody:
+Toto je implementace této metody:
 
 [!CODE-csharp[InterleaveSequenceWith](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet1)]
 
-Teď, když jste napsali tuto metodu, vraťte se `Main` metoda a shuffle jednou z balíčku:
+Teď, když jste tuto metodu napsali, se vraťte do `Main` metody a náhodně ji zapněte:
 
 ```csharp
 // Program.cs
@@ -208,15 +208,15 @@ public static void Main(string[] args)
 
 ## <a name="comparisons"></a>Porovnání
 
-Kolik podle okolí posouvá trvá, než k nastavení z balíčku zpět na jeho původní pořadí? Chcete-li zjistit, budete potřebovat napíše metoda, která určuje, jestli dvě sekvence jsou stejné. Jakmile budete mít tuto metodu, budete muset umístěte kód, který posouvá z balíčku ve smyčce a zkontrolujte, pokud je balíček zpět v pořadí.
+Kolik přeřazení trvá pro nastavení balíčku zpátky na původní objednávku? Chcete-li zjistit, je nutné napsat metodu, která určuje, zda jsou dvě sekvence stejné. Až tuto metodu použijete, budete muset umístit kód, který přeskočí balíček ve smyčce, a zkontrolujte, jestli je balíček zase v pořádku.
 
-Zápis metodou ke zjištění, jestli dané dvě sekvence jsou stejné by měl být jednoduché. Je podobné struktury metody, který jste napsali přesouvat z balíčku. Pouze to čas, namísto `yield return`ing každý prvek budete porovnávat odpovídajících prvků každé posloupnosti. Když celé sekvenci vytvoření výčtu, pokud každý prvek odpovídá, sekvencí jsou stejné:
+Zápis metody pro určení, zda jsou dvě sekvence stejné, by měly být jednoduché. Je to podobná struktura jako metoda, kterou jste napsali pro přemístění balíčku. Pouze tento čas, místo navýšení `yield return`každého prvku, porovnáte vyhovující prvky každé sekvence. Po vytvoření výčtu celé sekvence, pokud každý prvek odpovídá, jsou sekvence stejné:
 
 [!CODE-csharp[SequenceEquals](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet2)]
 
-Zobrazí se druhé idiom LINQ: terminálu metody. Přijmout sekvenci jako vstup (nebo v tomto případě dvou sekvencí) a vrátí jednu skalární hodnotu. Při použití terminálu metody, jsou vždy finální metoda v řetězci metody pro LINQ dotaz, tedy název "terminálu".
+To ukazuje druhou metodu LINQ idiom: Terminal. Přebírají sekvenci jako vstup (nebo v tomto případě dvě sekvence) a vrátí jednu skalární hodnotu. Při použití metod terminálu jsou vždy poslední metodou v řetězci metod pro dotaz LINQ, tedy název "Terminal".
 
-Vidíte to v akci při použití pro určení, kdy z balíčku je zpět do její původní pořadí. Shuffle kód uvnitř smyčky a zastavit, když sekvence je zpět do její původní pořadí s použitím `SequenceEquals()` metody. Vidíte, že by měl být vždy finální metoda každého dotazu, protože se vrací jedinou hodnotu místo sekvenci:
+Tuto akci můžete zobrazit v akci, když ji použijete k určení, kdy se balíček vrátí v původním pořadí. Vložte náhodně kód do smyčky a zastavte, když je sekvence zpět v původním pořadí `SequenceEquals()` , použitím metody. Můžete vidět, že by to byla vždy konečná metoda v jakémkoli dotazu, protože vrací jednu hodnotu namísto sekvence:
 
 ```csharp
 // Program.cs
@@ -246,37 +246,37 @@ static void Main(string[] args)
 }
 ```
 
-Spusťte kód nechte zatím a poznamenejte si hodnotu jak z balíčku uspořádá na každý náhodně. Po 8 podle okolí posouvá (iterací provést-smyčku while), balíček vrátí původní konfiguraci, v jaké byl při jeho prvním vytvoření počátečního dotazu LINQ.
+Spusťte kód, který zatím máte, a poznamenejte si, jak se v každé náhodném uspořádání balíčku mění. Po osmi přesunech (iterace smyčky do-while) se balíček vrátí do původní konfigurace, ve které byl při prvním vytvoření dotazu LINQ.
 
 ## <a name="optimizations"></a>Optimalizace
 
-Ukázka, začlenění zatím provede *si shuffle*, kde horní a dolní části karty zůstat stejná při každém běhu. Vytvoříme jednu změnu: použijeme *v shuffle* místo, kde všechny 52 karty změní pozici. Pro v náhodně, můžete prokládání z balíčku tak, aby první karta v dolní polovině stane první karta balíčku. To znamená, že poslední karty v horní polovině stane dolní části karty. Jedná se o jednoduchou změnu singulární řádek kódu. Aktualizovat aktuální dotaz shuffle díky přepínání podle polohy <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A>. Tím se změní pořadí horní a dolní polovinami z balíčku:
+Ukázka, kterou jste sestavili tak daleko, se vykoná *náhodně*, kde karty Top a Bottom zůstanou stejné při každém spuštění. Pojďme udělat jednu změnu: místo toho budeme používat *náhodně* , kde se na všech kartách 52 mění pozice. V případě náhodného seřadíte balíček tak, že první karta v dolní polovině se bude první kartou v balíčku. To znamená, že poslední karta v horní polovině se stala spodní kartou. Toto je jednoduchá změna v jednotném řádku kódu. Aktualizuje aktuální náhodný dotaz tak, že přepnete pozice <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A>. Tím se změní pořadí horních a dolních polovin balíčku:
 
 ```csharp
 shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 ```
 
-Spusťte program znovu, a uvidíte, že trvá 52 iterací z balíčku můžete změnit pořadí samotný. Budete také začít Všimněte si, že některé jak výkon jako program nadále běží.
+Spusťte program znovu a uvidíte, že pro balíček bude trvat 52 iterací, aby se mohla změnit jejich uspořádání. Začnete také všimnout některých vážných snížení výkonu, protože program pokračuje v běhu.
 
-Existuje několik důvodů. Můžete řešit jeden z hlavních příčin toto snížení výkonu: neefektivní používání šablon [ *opožděné vyhodnocení*](../programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+To je několik důvodů. Jedním z hlavních příčin tohoto poklesu výkonu můžete řešit: neefektivní použití [*opožděného vyhodnocení*](../programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
 
-Stručně řečeno opožděné vyhodnocení uvádí, že se neprovádí vyhodnocení výrazu, dokud jeho hodnota je potřeba. Dotazy LINQ jsou příkazy, které jsou vyhodnocovány laxně. Sekvence jsou generovány pouze v případě, že prvky jsou požadovány. Který je obvykle hlavní výhodou LINQ. Ale používá jako je například tento program, to způsobí, že exponenciální růst v čase spuštění.
+Stručné a opožděné vyhodnocení uvádí, že vyhodnocení příkazu není provedeno, dokud není nutné zadat jeho hodnotu. Dotazy LINQ jsou příkazy, které jsou vyhodnocovány laxně vytvářená. Sekvence se generují pouze v případě, že jsou požadovány elementy. Obvykle je to hlavní výhodou LINQ. V takovém případě, jako je například tento program, způsobuje exponenciální nárůst v době spuštění.
 
-Mějte na paměti, že jsme generována z původního balíčku pomocí dotazu LINQ. Každý shuffle je generována pomocí provádí tři LINQ dotazy na předchozí balíčku. Všechny tyto laxně probíhají. To také znamená, že se že provádějí se znovu pokaždé, když je požadováno sekvence. Podle času, který jste získali 52nd iteraci můžete se znova se generuje z původního balíčku mnoho, v mnoha případech. Napíšeme protokolu demonstrují toto chování. Nakonec vám to vyřešíme.
+Pamatujte na to, že jsme původní balíček vygenerovali pomocí dotazu LINQ. Každé náhodné volání je vygenerováno pomocí tří dotazů LINQ na předchozí palubě. Všechny tyto kroky jsou prováděny laxně vytvářená. To také znamená, že budou provedeny znovu při každém vyžádání sekvence. V době, kdy se dostanete k iteraci 52nd, znovu vygenerujete původní balíček spoustou mnohokrát. Pojďme napsat protokol, který demonstruje toto chování. Pak ho opravíte.
 
-Ve vaší `Extensions.cs` soubor, zadejte nebo zkopírujte následující metody. Tato metoda rozšíření vytvoří nový soubor s názvem `debug.log` v adresáři projektu a záznamů je právě prováděna jaký dotaz do souboru protokolu. Tato metoda rozšíření může být přidán k jakýkoli dotaz k označení, že dotaz proveden.
+`Extensions.cs` Do souboru zadejte nebo zkopírujte níže uvedenou metodu. Tato metoda rozšíření vytvoří nový soubor nazvaný `debug.log` v adresáři projektu a zaznamená, který dotaz je aktuálně prováděn do souboru protokolu. Tato metoda rozšíření se dá připojit k libovolnému dotazu a označit tak, že se dotaz spustil.
 
 [!CODE-csharp[LogQuery](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
 
-Zobrazí se červená vlnovka pod `File`, což znamená, ho neexistuje. To nebude kompilovat, protože kompilátor nebude vědět, co `File` je. Chcete-li tento problém vyřešit, ujistěte se, že přidáte následující řádek kódu v rámci na prvním řádku v `Extensions.cs`:
+V části `File`se zobrazí červená vlnovka, což znamená, že neexistuje. Nebude zkompilován, protože kompilátor neví, co `File` je. Chcete-li tento problém vyřešit, nezapomeňte přidat následující řádek kódu do prvního řádku v `Extensions.cs`:
 
 ```csharp
 using System.IO;
 ```
 
-To by mělo vyřešit problém, a červenou chybovou zmizí.
+To by mělo vyřešit problém a červená chyba zmizí.
 
-V dalším kroku instrumentace definici každého dotazu s zprávu protokolu:
+V dalším kroku Instrumentujte definici každého dotazu pomocí zprávy protokolu:
 
 ```csharp
 // Program.cs
@@ -324,32 +324,32 @@ public static void Main(string[] args)
 }
 ```
 
-Všimněte si, že není přihlásíte pokaždé, když se přístup k dotazu. Přihlášení jenom při vytváření původního dotazu. Program stále trvá dlouhou dobu pro spuštění, ale teď se zobrazí důvod, proč. Pokud vyčerpáte trpělivost s protokolování zapnuté, přepínač mimo shuffle v náhodně. Dál uvidíte účinky opožděné vyhodnocení. Během jednoho spuštění se provede 2592 dotazů, včetně všech generování hodnoty a barvy.
+Všimněte si, že při každém přístupu k dotazu nechcete protokolovat. Protokolujte pouze v případě, že vytvoříte původní dotaz. Spuštění programu trvá delší dobu, ale nyní můžete zjistit, proč. Pokud vyčerpáte z služby trpělivost s zapnutým protokolováním, přepněte zpět na náhodné. Pořád se zobrazí efekty opožděného vyhodnocení. V jednom spuštění se spustí 2592 dotazů, včetně veškeré generace hodnot a barev.
 
-Můžete zvýšit výkon kódu tady ke snížení počtu spuštění, které provedete. Můžete provést jednoduché opravy je *mezipaměti* výsledky původního dotazu LINQ, který Konstruuje balíčku karet. V současné době provedete dotazy znovu a znovu pokaždé, když – smyčky prochází iterace, opětovné vytváření balíčku karet a promísení ho pokaždé, když. Pro ukládání do mezipaměti balíčku karet, můžete využít metody LINQ <xref:System.Linq.Enumerable.ToArray%2A> a <xref:System.Linq.Enumerable.ToList%2A>; Pokud připojit dotazů, že budete provádět stejné akce, které jim má, ale teď budete ukládají výsledky v poli, nebo seznam, v závislosti na tom, jakou metodu můžete volat. Append – metoda LINQ <xref:System.Linq.Enumerable.ToArray%2A> na dotazy a znovu spustit program:
+Můžete zvýšit výkon kódu zde, abyste snížili počet provedených provedení. Jednoduchá oprava, kterou můžete udělat, je *Uložit do mezipaměti* výsledky původního dotazu LINQ, který sestaví balíček karet. V současné době spouštíte dotazy znovu a znovu pokaždé, když smyčka do-while projde iterací, znovu se vytvoří balíček karet a znovu se přeskočí. Chcete-li uložit balíčky karet do mezipaměti, můžete využít metody <xref:System.Linq.Enumerable.ToArray%2A> LINQ a <xref:System.Linq.Enumerable.ToList%2A>; když je připojíte k dotazům, provedou stejné akce, které jste jim přihlásili, ale nyní uloží výsledky do pole nebo seznamu, podle toho, jakou metodu zvolíte volání. Přidejte metodu <xref:System.Linq.Enumerable.ToArray%2A> LINQ do obou dotazů a spusťte program znovu:
 
 [!CODE-csharp[Main](../../../samples/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
 
-Nyní je mimo shuffle až 30 dotazy. Spusťte znovu s v shuffle a zobrazí se vám podobná vylepšení: teď provede 162 dotazy.
+Teď je vypínání na více než 30 dotazů. Spusťte znovu s náhodným a uvidíte podobná vylepšení: teď spustí 162 dotazů.
 
-Upozorňujeme, že v tomto příkladu je **navržené** zvýrazněte případy použití, pokud opožděné vyhodnocení může způsobit potíže s výkonem. I když je důležité, pokud chcete zobrazit, pokud opožděné vyhodnocení může mít vliv na výkon kódu, je stejně důležité, abyste pochopili, že ne všechny dotazy vykonat například. Výkon přístupů, které se vám účtovat bez použití <xref:System.Linq.Enumerable.ToArray%2A> je vzhledem k tomu, že každý nový uspořádání balíčku karet je sestaven z předchozí uspořádání. Použití opožděné vyhodnocení znamená každou novou konfiguraci balíčku je sestaven z původního balíčku, i spouští kód, který založená `startingDeck`. Který způsobí, že velké množství práce navíc.
+Upozorňujeme, že tento příklad je **navržený** tak, aby zvýraznili případy použití, kdy může opožděné vyhodnocení způsobit problémy s výkonem. I když je důležité zjistit, kde opožděné hodnocení může ovlivnit výkon kódu, je stejně důležité pochopit, že ne všechny dotazy by měly běžet eagerly. Dosažení výkonu, které jste provedete, nemusíte použít <xref:System.Linq.Enumerable.ToArray%2A> , protože každé nové uspořádání balíčku karet je sestavené z předchozího uspořádání. Pomocí opožděného vyhodnocení znamená, že každá nová konfigurace balíčku je sestavena z původní balíčky, dokonce i v případě `startingDeck`, že je spuštěn kód, který vytvořil. To způsobuje velké množství dodatečné práce.
 
-V praxi některé algoritmy spustit také pomocí nemůžou dočkat, až hodnocení a jiné systém dobře při používání opožděné vyhodnocení. Za denní využití opožděné vyhodnocení je obvykle lepší volbou, pokud je zdroj dat jako samostatný proces, jako je databázový stroj. Pro databáze opožděné vyhodnocení umožňuje vytvářet složitější dotazy spuštění pouze jedné odezvy k procesu databáze a zpět do zbytku kódu. LINQ je flexibilní, jestli rozhodnete využívat opožděné nebo nemůžou dočkat, až hodnocení, tak měření vašich procesů a vyberte si libovolný typ vyhodnocení poskytuje nejlepší výkon.
+V praxi některé algoritmy dobře fungují s využitím vyhodnocení Eager a jiné fungují i s opožděným hodnocením. Pro každodenní použití je opožděné vyhodnocování obvykle lepší volbou, pokud je zdroj dat samostatným procesem, jako je databázový stroj. Pro databáze, opožděné vyhodnocení umožňuje složitějším dotazům spustit pouze jednu zpáteční cestu k procesu databáze a vrátit se do zbytku kódu. LINQ je flexibilní bez ohledu na to, jestli se rozhodnete používat opožděné nebo Eager vyhodnocení, takže Změřte své procesy a vyberte si, který typ hodnocení vám dává nejlepší výkon.
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto projektu pro vás řešení:
-- pomocí dotazů LINQ pro agregovaná data na smysluplné sekvenci
-- zápis rozšiřující metody pro přidání našich vlastních funkcí do dotazů LINQ
-- Vyhledání oblastí v našem kódu, kde náš dotazů LINQ narazit na problémy s výkonem, jako je snížení rychlosti
-- opožděné a nemůžou dočkat, až hodnocení související s dotazy LINQ a důsledky mohou mít na výkon dotazů
+V tomto projektu jste pokryli:
+- použití dotazů LINQ k agregaci dat do smysluplné sekvence
+- zápis metod rozšíření pro přidání naší vlastní funkcionality do dotazů LINQ
+- Vyhledání oblastí v našem kódu, kde se můžou dotazy LINQ povést k problémům s výkonem, jako je snížená rychlost
+- opožděné a Eager vyhodnocení v souvislosti s dotazy LINQ a důsledky, které mohou mít při výkonu dotazů
 
-Kromě LINQ jste se dozvěděli něco o použití magicians techniku pro triky karty. Magicians Faro shuffle použít, protože můžete určit, kde prochází všechny karty z balíčku. Když teď víte, nemusíte ho znehodnotit pro všechny ostatní!
+Kromě technologie LINQ jste se dozvěděli o magicians techniky použití pro štychy karet. Magicians použít Faro náhodně, protože může určovat, kde se každá karta v balíčku pohybuje. Teď už víte, že si ho nevyřadíte pro všechny ostatní.
 
-Další informace o LINQ naleznete v tématu:
+Další informace o LINQ najdete v těchto tématech:
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
   - [Úvod do jazyka LINQ](../programming-guide/concepts/linq/index.md)
   - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
   - [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
-  - [Syntaxe využívající dotazy a syntaxe využívající metody v technologii LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
+  - [Syntaxe dotazu a syntaxe metody v LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
   - [Funkce C# podporující LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)

@@ -1,5 +1,5 @@
 ---
-title: '-target: winexe (možnosti kompilátoru C#)'
+title: '-target: winexe (C# možnosti kompilátoru)'
 ms.date: 07/20/2015
 f1_keywords:
 - /target:winexe
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-ms.openlocfilehash: 3c16bf8aed0d281b2b5a3f9c6ae06f343b1eff7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 981f1b0b6ca9f708bb022a3662ab181a4f472040
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662345"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606379"
 ---
-# <a name="-targetwinexe-c-compiler-options"></a>-target: winexe (možnosti kompilátoru C#)
-**-Target: winexe** možnost způsobí, že kompilátor vytvoří spustitelný soubor (EXE), Windows program.  
+# <a name="-targetwinexe-c-compiler-options"></a>-target: winexe (C# možnosti kompilátoru)
+Možnost **-target: winexe** způsobí, že kompilátor vytvoří spustitelný soubor (exe), program systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,28 +25,28 @@ ms.locfileid: "61662345"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Vytvoří se spustitelný soubor s příponou .exe. Windows program je ten, který poskytuje uživatelské rozhraní z knihovny rozhraní .NET Framework nebo s rozhraními API pro Windows.  
+ Spustitelný soubor se vytvoří s příponou. exe. Program systému Windows je jeden, který poskytuje uživatelské rozhraní z knihovny .NET Framework nebo pomocí rozhraní API systému Windows.  
   
- Použití [-target: exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md) k vytvoření konzolové aplikace.  
+ Pro vytvoření konzolové aplikace použijte [příkaz-target: exe](./target-exe-compiler-option.md) .  
   
- Pokud není uvedeno jinak s [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) možnost, název výstupního souboru přebírá název vstupního souboru, který obsahuje [hlavní](../../../csharp/programming-guide/main-and-command-args/index.md) – metoda.  
+ Pokud není uvedeno jinak s možností [-out](./out-compiler-option.md) , název výstupního souboru převezme název vstupního souboru, který obsahuje metodu [Main](../../programming-guide/main-and-command-args/index.md) .  
   
- Pokud je zadán v příkazovém řádku, všechny soubory až do další **-out** nebo [– cíl](../../../csharp/language-reference/compiler-options/target-compiler-option.md) slouží k vytvoření programu Windows.  
+ Je-li parametr zadán na příkazovém řádku, všechny soubory, dokud není použita možnost Next **-out** nebo [-target](./target-compiler-option.md) pro vytvoření programu systému Windows.  
   
- Pouze jeden **hlavní** metoda je vyžadována v souborech zdrojového kódu, které jsou kompilovány do souboru s příponou .exe. [– Hlavní](../../../csharp/language-reference/compiler-options/main-compiler-option.md) možnost umožňuje zadat, která třída obsahuje **hlavní** metoda v případech, kdy váš kód obsahuje víc než jedna třída s **hlavní** – metoda.  
+ V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována jedna a pouze jedna metoda **Main** . Možnost [-Main](./main-compiler-option.md) umožňuje určit, která třída obsahuje metodu **Main** , v případech, kdy váš kód má více než jednu třídu s metodou **Main** .  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránku **vlastností** projektu.  
   
-2. Klikněte na tlačítko **aplikace** stránku vlastností.  
+2. Klikněte na stránku vlastností **aplikace** .  
   
-3. Upravit **typ výstupu** vlastnost.  
+3. Upravte vlastnost **Typ výstupu** .  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.ProjectProperties3.OutputType%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `in.cs` do aplikace Windows:  
+ Kompilovat `in.cs` do programu systému Windows:  
   
 ```console  
 csc -target:winexe in.cs  
@@ -54,5 +54,5 @@ csc -target:winexe in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [-Target (C# možnosti kompilátoru)](./target-compiler-option.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

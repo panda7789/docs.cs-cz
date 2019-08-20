@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: e33877d2a5e79866bbef12cd9fec5cb11b044240
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: fb11fb1a81b8407e2585e32d4217e08a75ea19b0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433873"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605816"
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 
@@ -99,7 +99,7 @@ Pokud odeberete `Flags`, v příkladu se zobrazí následující hodnoty:
 - [C#Odkaz](../index.md)
 - [Výčtové typy](../../programming-guide/enumeration-types.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Celočíselné typy](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
+- [Celočíselné typy](../builtin-types/integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)
 - [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)

@@ -1,16 +1,16 @@
 ---
-title: Asynchronní návratové typy (C#)
+title: Asynchronní návratové typyC#()
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: ca429db9b3ad81555df3c7e02d8827136734e26c
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: f9ec8c9dc9e51fa3256f8bbd523c7945efe866e0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347744"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595766"
 ---
-# <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
-Asynchronní metody může mít tyto návratové typy:
+# <a name="async-return-types-c"></a>Asynchronní návratové typyC#()
+Asynchronní metody mohou mít následující návratové typy:
 
 - <xref:System.Threading.Tasks.Task%601>, pro asynchronní metodu, která vrací hodnotu. 
  
@@ -18,69 +18,69 @@ Asynchronní metody může mít tyto návratové typy:
 
 - `void`, pro obslužnou rutinu události. 
 
-- Od verze C# 7.0, libovolný typ, který má k dispozici přístup `GetAwaiter` metody. Objekt vrácený rutinou `GetAwaiter` musí implementovat metodu <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> rozhraní.
+- Počínaje C# 7,0, jakýkoli typ, který má přístupnou `GetAwaiter` metodu. Objekt vrácený `GetAwaiter` metodou musí <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> implementovat rozhraní.
   
-Další informace o metodách async naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md).  
+Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s modifikátoremC#Async a await ()](./index.md).  
   
-Každý návratový typ je zkontrolován v jedné z následujících částí a najdete úplný příklad, který používá všechny tři typy na konci tohoto tématu.  
+Každý návratový typ je zkontrolován v jednom z následujících sekcí a můžete najít úplný příklad, který používá všechny tři typy na konci tématu.  
   
-## <a name="BKMK_TaskTReturnType"></a> Úloha\<TResult\> návratový typ  
-<xref:System.Threading.Tasks.Task%601> Typ vrácení se používá pro asynchronní metodu, která obsahuje [vrátit](../../../../csharp/language-reference/keywords/return.md) – příkaz (C#), ve kterém je operand má typ `TResult`.  
+## <a name="BKMK_TaskTReturnType"></a>Návratový\<typ\> Task TResult  
+Návratový typ se používá pro asynchronní metodu, která obsahuje příkaz [return](../../../language-reference/keywords/return.md) C#(), ve kterém je operand typu `TResult`. <xref:System.Threading.Tasks.Task%601>  
   
-V následujícím příkladu `GetLeisureHours` asynchronní metoda obsahuje `return` příkaz, který vrátí celé číslo. Proto deklarace metody musíte zadat návratový typ `Task<int>`.  <xref:System.Threading.Tasks.Task.FromResult%2A> Asynchronní metody je zástupný symbol pro operace, která vrátí hodnotu typu string.
+V následujícím příkladu `GetLeisureHours` asynchronní metoda `return` obsahuje příkaz, který vrací celé číslo. Proto deklarace metody musí specifikovat návratový typ `Task<int>`.  <xref:System.Threading.Tasks.Task.FromResult%2A> Asynchronní metoda je zástupný symbol pro operaci, která vrací řetězec.
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
 
-Při `GetLeisureHours` je volat z výrazu await v `ShowTodaysInfo` metodu, výraz await získá celočíselnou hodnota (hodnotu `leisureHours`), který je uložen v úloze vrácené `GetLeisureHours` metoda. Další informace o výrazech await naleznete [await](../../../../csharp/language-reference/keywords/await.md).  
+Když `GetLeisureHours` je volána z výrazu await `ShowTodaysInfo` v metodě, výraz await načte celočíselnou `leisureHours`hodnotu (hodnotu), která `GetLeisureHours` je uložena v úkolu vráceném metodou. Další informace o výrazech await naleznete v tématu [await](../../../language-reference/keywords/await.md).  
   
-Můžete lépe pochopit, jak to probíhá oddělením volání `GetLeisureHours` od aplikace `await`, jak ukazuje následující kód. Volání metody `GetLeisureHours` , které není okamžitě očekáváno, vrátí `Task<int>`, dle očekávání od deklarace metody. Úkol je přidělen `integerTask` proměnné v příkladu. Protože `integerTask` je <xref:System.Threading.Tasks.Task%601>, obsahuje <xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. V takovém případě `TResult` představuje typ integer. Když `await` platí pro `integerTask`, výraz await se vyhodnocuje na obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost `integerTask`. Je hodnota přiřazená `ret` proměnné.  
+Můžete lépe porozumět tomu `GetLeisureHours` `await`, jak se to stane, oddělením volání z aplikace, jak ukazuje následující kód. Volání metody `GetLeisureHours` , která není okamžitě očekávána `Task<int>`, vrátí, jak byste očekávali od deklarace metody. Úkol je přiřazen k `integerTask` proměnné v příkladu. Protože `integerTask` je,obsahuje<xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. <xref:System.Threading.Tasks.Task%601> V tomto případě `TResult` představuje typ Integer. Při `await` použití na `integerTask`je výraz await vyhodnocen jako `integerTask`obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti. Hodnota je přiřazena `ret` proměnné.  
   
 > [!IMPORTANT]
->  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastností je vlastnost blokování. Pokud se pokusíte o přístup k ní před dokončením její úlohy, blokovaný vláknem, které je právě aktivní až do dokončení úlohy a hodnota je k dispozici. Ve většině případů byste měli přistupovat k hodnotě pomocí `await` namísto přímého přístupu. <br/> Načíst hodnotu z předchozího příkladu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost blokování hlavního vlákna tak, aby `ShowTodaysInfo` metoda může předtím, než skončila aplikace dokončí provádění.  
+>  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnost je vlastnost blokování. Pokud se pokusíte o přístup k tomuto úkolu před jeho dokončením, bude vlákno, které je aktuálně aktivní, blokováno, dokud se úloha nedokončí a hodnota nebude k dispozici. Ve většině případů byste měli k hodnotě přistupovat pomocí `await` místo přímého přístupu k vlastnosti. <br/> Předchozí příklad získal hodnotu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti pro blokování hlavního vlákna `ShowTodaysInfo` , aby metoda mohla dokončit provádění před ukončením aplikace.  
 
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
   
-## <a name="BKMK_TaskReturnType"></a> Návratový typ úlohy  
-Asynchronní metody, které neobsahují slovo `return` obsahovat prohlášení nebo které `return` příkaz, který nevrací operand obvykle mají návratový typ <xref:System.Threading.Tasks.Task>. Tyto metody vrací `void` Pokud spusťte synchronně. Pokud používáte <xref:System.Threading.Tasks.Task> návratový typ pro asynchronní metodu, volající metoda můžete použít `await` operátor k pozastavení dokončení volajícího až do dokončení volané asynchronní metody.  
+## <a name="BKMK_TaskReturnType"></a>Návratový typ úlohy  
+Asynchronní metody, které neobsahují `return` příkaz nebo `return` obsahují příkaz, který nevrací operand, obvykle <xref:System.Threading.Tasks.Task>mají návratový typ. Tyto metody vrátí `void` , pokud jsou spouštěny synchronně. Použijete- <xref:System.Threading.Tasks.Task> li návratový typ pro asynchronní metodu, volající metoda může `await` použít operátor pro pozastavení dokončování volajícího až do dokončení volané asynchronní metody.  
   
-V následujícím příkladu `WaitAndApologize` neobsahuje asynchronní metody `return` příkaz, metoda vrátí <xref:System.Threading.Tasks.Task> objektu. Díky tomu `WaitAndApologize` do ní použít operátor await. Všimněte si, že <xref:System.Threading.Tasks.Task> neobsahuje `Result` vlastnost protože nemá žádnou návratovou hodnotu.  
+V následujícím příkladu `WaitAndApologize` asynchronní metoda `return` neobsahuje příkaz, <xref:System.Threading.Tasks.Task> takže metoda vrátí objekt. To umožňuje `WaitAndApologize` očekávat. Všimněte si, <xref:System.Threading.Tasks.Task> že typ neobsahuje `Result` vlastnost, protože nemá žádnou návratovou hodnotu.  
 
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2.cs)]  
   
-`WaitAndApologize` je očekáván pomocí příkazu await namísto výrazu await, podobného volání příkazu pro synchronní metody vracející hodnotu void. Použití operátoru await v tomto případě nevytvoří hodnotu.  
+`WaitAndApologize`je očekáván pomocí příkazu await namísto výrazu await, podobně jako volání příkazu pro synchronní metodu vracející typ void. Použití operátoru await v tomto případě nevytvoří hodnotu.  
   
-Stejně jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit volání `WaitAndApologize` od použití operátoru await, jako je následující kód ukazuje. Nezapomeňte však, že `Task` nemá `Result` vlastnost a že se při použití operátoru await nevytvoří žádná hodnota `Task`.  
+Stejně jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit `WaitAndApologize` volání z aplikace operátoru await, jak ukazuje následující kód. Mějte ale na paměti, `Task` že `Result` vlastnost neobsahuje vlastnost a že při použití operátoru await na objekt `Task`není vyprodukována žádná hodnota.  
   
-Následující kód oddělí volání `WaitAndApologize` metoda z čekajícího na úkol, který metoda vrátí.  
+Následující kód odděluje volání `WaitAndApologize` metody z čekání na úlohu, kterou metoda vrátí.  
  
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
  
-## <a name="BKMK_VoidReturnType"></a> Návratový typ void
+## <a name="BKMK_VoidReturnType"></a>Návratový typ void
 
-Můžete použít `void` návratový typ v asynchronní obslužné rutiny, které vyžadují `void` návratového typu. U jiných metod než obslužné rutiny událostí, které nevracejí hodnotu, měli byste vrátit <xref:System.Threading.Tasks.Task> místo, protože asynchronní metoda, která vrací `void` nemůže být očekávána. Jakýkoli volající této metody musí být schopen pokračovat v dokončení bez čekání na dokončení volané asynchronní metody a volající musí být nezávislé na všech hodnotách nebo výjimkách, které generuje asynchronní metoda.  
+Použijete `void` návratový typ v obslužných rutinách asynchronní události, které `void` vyžadují návratový typ. Pro jiné metody než obslužné rutiny událostí, které nevracejí hodnotu, byste měli <xref:System.Threading.Tasks.Task> místo toho vracet výjimku, protože asynchronní metoda `void` , která vrací, nemůže být očekávána. Každý volající takové metody musí být schopný pokračovat v dokončování bez čekání na dokončení volané asynchronní metody a volající musí být nezávislý na všech hodnotách nebo výjimkách, které asynchronní metoda generuje.  
   
-Volající asynchronní metody vracející typ void nemůže zachytit výjimky, které jsou vyvolány z metody a takové neošetřené výjimky mohou způsobit selhání aplikace. Pokud dojde k výjimce v asynchronní metodě, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimky jsou uložena v rámci vrácené úlohy a je znovu vyvolána při očekávání úkolu. Proto se ujistěte, že asynchronní metody, které mohou způsobit výjimku má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že volání metody jsou očekávaná.  
+Volající asynchronní metody vracející hodnotu void nemůže zachytit výjimky, které jsou vyvolány z metody, a tyto neošetřené výjimky pravděpodobně způsobí selhání aplikace. Pokud dojde k výjimce v asynchronní metodě, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimka je uložena v vrácené úloze a znovu vyvolána, když je úloha očekávána. Proto se ujistěte, že jakákoliv asynchronní metoda, která může vyvolat výjimku, má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že volání metody jsou očekávána.  
   
-Další informace o tom, jak zachytávat výjimky v asynchronních metodách, naleznete v tématu [výjimky v asynchronních metodách](../../../language-reference/keywords/try-catch.md#exceptions-in-async-methods) část [bloku try-catch](../../../language-reference/keywords/try-catch.md) tématu.  
+Další informace o tom, jak zachytit výjimky v asynchronních metodách, naleznete v části [výjimky v asynchronních metodách](../../../language-reference/keywords/try-catch.md#exceptions-in-async-methods) v tématu [try-catch](../../../language-reference/keywords/try-catch.md) .  
   
-Následující příklad ukazuje chování asynchronní obslužnou rutinu události. Všimněte si, že v příkladu kódu nutné nechat asynchronní obslužnou rutinu události vědět po dokončení hlavního vlákna. Hlavní vlákno může pak čekat asynchronní obslužnou rutinu události pro dokončení před ukončením programu.
+Následující příklad ukazuje chování obslužné rutiny asynchronní události. Všimněte si, že v příkladu kódu musí obslužná rutina asynchronní události při dokončení dát hlavní vlákno vědět. Pak hlavní vlákno může počkat na dokončení asynchronní obslužné rutiny události před ukončením programu.
  
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
  
-## <a name="generalized-async-return-types-and-valuetasktresult"></a>Zobecněný asynchronní návratové typy a ValueTask\<TResult\>
+## <a name="generalized-async-return-types-and-valuetasktresult"></a>Generalizované asynchronní návratové typy a\<ValueTask TResult\>
 
-Od verze C# 7.0, asynchronní metoda může vrátit libovolný typ, který má k dispozici přístup `GetAwaiter` metody.
+Počínaje C# 7,0 může asynchronní metoda vracet libovolný typ, který má přístupnou `GetAwaiter` metodu.
  
-Protože <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> jsou typy odkazů, přidělení paměti v kritickém pro výkon cesty, zejména pokud dojde k přidělení v těsné smyčky může nepříznivě ovlivnit výkon. Podpora zobecněný návratové typy znamená, že se můžete vrátit zjednodušené hodnotový typ místo typu odkazu, aby se zabránilo další paměť přidělení. 
+Vzhledem <xref:System.Threading.Tasks.Task> k <xref:System.Threading.Tasks.Task%601> tomu, že a jsou typy odkazů, přidělování paměti v cestách kritických pro výkon, zejména v případě, že přidělení dochází v těsných smyčkách, může negativně ovlivnit výkon. Podpora zobecněných návratových typů znamená, že můžete místo typu odkazu vrátit typ s odlehčenou hodnotou, abyste zabránili dalšímu přidělení paměti. 
 
-Poskytuje rozhraní .NET <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> strukturu jako nenáročné implementace hodnotu zobecněný vracející úlohy. Použít <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> typu, je nutné přidat `System.Threading.Tasks.Extensions` do svého projektu balíček NuGet. V následujícím příkladu <xref:System.Threading.Tasks.ValueTask%601> struktury k načtení hodnoty dvou dice postupně. 
+Rozhraní .NET poskytuje <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> strukturu jako zjednodušenou implementaci generalizované hodnoty vracející úlohy. Chcete-li <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> použít typ, je nutné `System.Threading.Tasks.Extensions` přidat balíček NuGet do projektu. V následujícím příkladu se pomocí <xref:System.Threading.Tasks.ValueTask%601> struktury načte hodnota dvou indexů. 
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.Tasks.Task.FromResult%2A>
-- [Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)
-- [async](../../../../csharp/language-reference/keywords/async.md)
-- [await](../../../../csharp/language-reference/keywords/await.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Řízení toku v asynchronních programechC#()](./control-flow-in-async-programs.md)
+- [async](../../../language-reference/keywords/async.md)
+- [await](../../../language-reference/keywords/await.md)

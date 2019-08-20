@@ -8,15 +8,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 89139867cb0a207dbe82168015629fcb9e2fa6eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25421df2e9306071ce3506aaf7affd1b259d1c32
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662358"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602438"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module (C# Compiler Options)
-Tato možnost způsobí, že kompilátor nevygeneruje manifest sestavení.  
+Tato možnost způsobí, že kompilátor negeneruje manifest sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,18 +25,18 @@ Tato možnost způsobí, že kompilátor nevygeneruje manifest sestavení.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení bude mít výstupní soubor vytvořil kompilaci s touto možností rozšíření .netmodule.  
+ Ve výchozím nastavení bude mít výstupní soubor vytvořený kompilací s touto možností rozšíření. netmodule.  
   
- Soubor, který nemá manifest sestavení nelze načíst pomocí rozhraní .NET Framework common language runtime. Však takový soubor může být součástí sestavení manifestu sestavení prostřednictvím [- addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md).  
+ Soubor, který nemá manifest sestavení, nelze načíst pomocí .NET Framework modulu CLR (Common Language Runtime). Takový soubor však lze začlenit do manifestu sestavení sestavení pomocí [addmodule –](./addmodule-compiler-option.md).  
   
- Pokud se v jedné kompilace vytvoří více než jeden modul [interní](../../../csharp/language-reference/keywords/internal.md) typy v jeden modul bude k dispozici pro ostatní moduly v sestavení. Pokud kód v odkazech na jeden modul `internal` typy v jiném modulu, pak oba moduly musí být začleněny do manifestu sestavení pomocí **- addmodule**.  
+ Je-li v jedné kompilaci vytvořen více než jeden modul, [interní](../keywords/internal.md) typy v jednom modulu budou k dispozici pro ostatní moduly v kompilaci. V případě, že kód v `internal` jednom modulu odkazuje na typy v jiném modulu, musí být oba moduly začleněny do manifestu sestavení, a to pomocí **-addmodule –** .  
   
  Vytvoření modulu není podporováno ve vývojovém prostředí sady Visual Studio.  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.ProjectProperties3.OutputType%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `in.cs`, vytváření `in.netmodule`:  
+ Kompilovat `in.cs`, vytvořit `in.netmodule`:  
   
 ```console  
 csc -target:module in.cs  
@@ -44,5 +44,5 @@ csc -target:module in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [-Target (C# možnosti kompilátoru)](./target-compiler-option.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

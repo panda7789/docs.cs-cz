@@ -1,65 +1,65 @@
 ---
-title: Metody - C# Průvodce programováním
+title: Metody – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: b97ce10cfb2e35beecf2c96acbac9c4ac8462c1d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7255d4a2c57ea9e0469174cfe139a4ab54d62372
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646187"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596393"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
-Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. Metoda Main je vstupním bodem pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.  
+Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že budou příkazy provedeny voláním metody a zadáním požadovaných argumentů metody. V C#je každá spuštěná instrukce provedena v kontextu metody. Metoda Main je vstupním bodem pro každou C# aplikaci a je volána modulem CLR (Common Language Runtime) při spuštění programu.  
   
 > [!NOTE]
->  Toto téma popisuje pojmenované metody. Informace o anonymní funkce, najdete v části [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
+>  Toto téma popisuje pojmenované metody. Informace o anonymních funkcích naleznete v tématu [Anonymous Functions](../statements-expressions-operators/anonymous-functions.md).  
   
-## <a name="method-signatures"></a>Podpisy metod  
- Metody jsou deklarovány v [třídy](../../../csharp/language-reference/keywords/class.md) nebo [– struktura](../../../csharp/language-reference/keywords/struct.md) zadáním úroveň přístupu `public` nebo `private`, volitelné modifikátory jako `abstract` nebo `sealed`, vrácení hodnota, názvu metody a parametry metody. Tyto části jsou společně podpis metody.  
+## <a name="method-signatures"></a>Signatury metod  
+ Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md) zadáním `public` úrovně přístupu, jako jsou nebo `private`, volitelné modifikátory `abstract` , jako je `sealed`například nebo, návratová hodnota, název metody a všechny parametry metody. . Tyto části jsou společně signaturou metody.  
   
 > [!NOTE]
->  Návratový typ metody není součástí podpis metody pro účely přetížení metody. Je však součást podpisu metody při určování kompatibility mezi delegáta a, který odkazuje na metodu.  
+>  Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.  
   
- Parametry metody jsou uzavřeny v závorkách a odděleny čárkami. Prázdných kulatých závorek znamenat, že metoda nevyžaduje žádné parametry. Tato třída obsahuje čtyři metody:  
+ Parametry metody jsou uzavřeny v závorkách a jsou odděleny čárkami. Prázdné kulaté závorky označují, že metoda nepožaduje žádné parametry. Tato třída obsahuje čtyři metody:  
   
  [!code-csharp[csProgGuideObjects#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#40)]  
   
 ## <a name="method-access"></a>Přístup k metodě  
- Volání metody na objektu je například přístup k poli. Za název objektu přidejte tečku, názvu metody a závorky. Argumenty jsou uvedeny v závorkách a odděleny čárkami. Metody `Motorcycle` třídy proto lze volat jako v následujícím příkladu:  
+ Volání metody v objektu se podobá přístupu k poli. Za název objektu přidejte tečku, název metody a závorky. Argumenty jsou uvedeny v závorkách a jsou odděleny čárkami. Metody `Motorcycle` třídy lze proto volat jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuideObjects#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#41)]  
   
 ## <a name="method-parameters-vs-arguments"></a>Parametry metody vs. Arguments  
- Definice metody určuje názvy a typy všech parametrů, které jsou požadovány. Při volání kód volá metody, poskytuje konkrétní hodnoty nazývaných argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale nebude muset být stejný jako parametr s názvem definovaný v metodě název argumentu (pokud existuje), použít ve volajícím kódu. Příklad:  
+ Definice metody určuje názvy a typy parametrů, které jsou požadovány. Když volání kódu volá metodu, poskytuje konkrétní hodnoty nazvané argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale název argumentu (pokud existuje) použitý v volajícím kódu nemusí být stejný jako parametr s názvem definovaným v metodě. Příklad:  
   
  [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]  
   
-## <a name="passing-by-reference-vs-passing-by-value"></a>Předávání odkaz na vs. Předání hodnotou  
- Ve výchozím nastavení když typ hodnoty se předá metodě, je kopie předán místo samotného objektu. Proto se změny na argument nemají žádný vliv na původní kopii ve volání metody. Můžete předat typ hodnoty podle odkazu s použitím ref – klíčové slovo. Další informace najdete v tématu [předávání parametrů typu hodnoty](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md). Seznam typů předdefinovaných hodnot najdete v tématu [Tabulka typů hodnot](../../../csharp/language-reference/keywords/value-types-table.md).  
+## <a name="passing-by-reference-vs-passing-by-value"></a>Předání odkazem vs. Předávání hodnotou  
+ Ve výchozím nastavení, když je typ hodnoty předán metodě, je předána kopie namísto samotného objektu. Proto změny argumentu nemají žádný vliv na původní kopii v volání metody. Pomocí klíčového slova ref můžete předat typ hodnoty odkazem. Další informace naleznete v tématu [předávání parametrů typu hodnoty](./passing-value-type-parameters.md). Seznam předdefinovaných typů hodnot naleznete v tématu [Tabulka typů hodnot](../../language-reference/keywords/value-types-table.md).  
   
- Pokud objekt typu odkazu je předán do metody, je předán odkaz na objekt. To znamená metoda přijímá argument, který označuje umístění objektu, ale nikoli samotného objektu. Pokud změníte členem objektu pomocí této reference, změny se projeví v argumentu ve volání metody i v případě, že můžete předat hodnotu v objektu.  
+ Je-li objekt typu odkazu předán metodě, odkaz na objekt je předán. To znamená, že metoda nepřijímá samotný objekt, ale argument, který označuje umístění objektu. Pokud změníte člena objektu pomocí tohoto odkazu, změna se projeví v argumentu volající metody, a to i v případě, že předáte objekt podle hodnoty.  
   
- Vytvoříte pomocí typu odkazu `class` – klíčové slovo, jak ukazuje následující příklad.  
+ Můžete vytvořit odkazový typ pomocí `class` klíčového slova, jak ukazuje následující příklad.  
   
  [!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]  
   
- Nyní pokud je objekt, který je založen na tomto typu metody, je předán odkaz na objekt. Následující příklad předá objekt typu `SampleRefType` metodě `ModifyObject`.  
+ Nyní Pokud předáte objekt, který je založen na tomto typu pro metodu, odkaz na objekt je předán. Následující příklad předává objekt typu `SampleRefType` metodě. `ModifyObject`  
   
  [!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]  
   
- V příkladu se v podstatě totéž jako předchozí příklad, předá argumentu podle hodnoty metody. Ale protože odkazový typ se používá, výsledek se liší. Úpravy, které se provádí v `ModifyObject` k `value` pole parametru, `obj`, také změní `value` pole argumentu, `rt`v `TestRefType` metoda. `TestRefType` Metoda zobrazí 33 jako výstup.  
+ Příklad v podstatě totéž jako předchozí příklad v tom, že předává argument podle hodnoty metodě. Ale vzhledem k tomu, že se používá typ odkazu, je výsledek jiný. Úpravy, které jsou provedeny v `ModifyObject` `value` poli parametru `value` , `obj`, `rt`také změní pole argumentu v `TestRefType` metodě. `TestRefType` Metoda zobrazí 33 jako výstup.  
   
- Další informace o tom, jak předat typy odkazů podle odkazu a podle hodnoty, najdete v části [předávání parametrů typu odkazu](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md) a [odkazové typy](../../../csharp/language-reference/keywords/reference-types.md).  
+ Další informace o tom, jak předat typy odkazu odkazem a podle hodnoty, naleznete v tématu [předávání parametrů typu odkazu](./passing-reference-type-parameters.md) a [odkazových typů](../../language-reference/keywords/reference-types.md).  
   
 ## <a name="return-values"></a>Návratové hodnoty  
-Metody může vrátit hodnotu volajícímu. Pokud návratový typ, typ uveden před název metody není `void`, metoda může vrátit hodnotu pomocí `return` – klíčové slovo. Příkaz s `return` – klíčové slovo následované hodnotu, která odpovídá návratový typ, vrátí tuto hodnotu volajícímu metody. 
+Metody mohou vracet hodnotu volajícímu. Pokud návratový typ, typ uvedený před názvem metody, není `void`, metoda může vracet hodnotu `return` pomocí klíčového slova. Příkaz s `return` klíčovým slovem následovaným hodnotou, která odpovídá typu vrácené hodnoty, vrátí tuto hodnotu volajícímu metody. 
 
-Hodnota může být vrácen volajícímu hodnota nebo, počínaje C# 7.0, [odkazem](ref-returns.md). Hodnoty jsou vráceny volajícímu podle odkazu, pokud `ref` – klíčové slovo se používá v podpisu metody a postupuje každý `return` – klíčové slovo. Například následující příkaz podpis a vrátí metodu signalizovat, že metoda vrací názvy proměnných `estDistance` s odkazem na volajícího.
+Hodnota může být vrácena volajícímu podle hodnoty nebo, počínaje C# 7,0, [odkazem](ref-returns.md). Hodnoty se vrátí volajícímu pomocí odkazu, pokud `ref` se klíčové slovo používá v signatuře metody a následuje za každým `return` klíčovým slovem. Například následující signatura metody a příkaz return označují, že metoda vrací názvy `estDistance` proměnných odkazem na volajícího.
 
 ```csharp
 public ref double GetEstimatedDistance()
@@ -68,25 +68,25 @@ public ref double GetEstimatedDistance()
 }
 ```
 
-`return` – Klíčové slovo také zastaví provádění metody. Pokud je návratový typ `void`, `return` příkaz bez hodnoty je stále užitečná pro zastavení provádění metody. Bez `return` – klíčové slovo, metoda se zastaví provádění dosáhne konce bloku kódu. Metody s jiný než void vrací typ jsou nutné k použití `return` – klíčové slovo vrátit hodnotu. Například tyto dvě metody použít `return` – klíčové slovo do vrací celá čísla:  
+`return` Klíčové slovo také zastaví provádění metody. Pokud je `void`návratový typ `return` , příkaz bez hodnoty je stále užitečný k zastavení provádění metody. `return` Bez klíčového slova, Metoda zastaví provádění, když dosáhne konce bloku kódu. Metody s návratovým typem, který není typu void, jsou vyžadovány k použití `return` klíčového slova k vrácení hodnoty. Například tyto dvě metody používají `return` klíčové slovo k vrácení celých čísel:  
   
  [!code-csharp[csProgGuideObjects#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#44)]  
   
- Na používání hodnoty vrátil z metody, můžete použít volání metody volání metody samotný kdekoli, že by stačit hodnotu stejného typu. Můžete také přiřadit návratovou hodnotu proměnné. Například následující dva příklady provedení stejného cíle:  
+ Chcete-li použít hodnotu vrácenou metodou, volající metoda může použít samotné volání metody kdekoli kdekoliv, kde bude stačit hodnota stejného typu. Vrácenou hodnotu můžete také přiřadit proměnné. Například následující dva příklady kódu mají stejný cíl:  
   
  [!code-csharp[csProgGuideObjects#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#45)]  
   
  [!code-csharp[csProgGuideObjects#46](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#46)]  
   
- Použití místní proměnné, v tomto případě `result`pro ukládání hodnota je volitelná. To může pomoci čitelnost kódu nebo může být nezbytné, pokud je potřeba uložit původní hodnoty argumentu pro celý rozsah metody.  
+ Použití místní proměnné v tomto případě `result`pro uložení hodnoty je volitelné. Může to usnadnit čitelnost kódu nebo může být nutné, pokud potřebujete uložit původní hodnotu argumentu pro celý rozsah metody.  
 
-Pokud chcete použít hodnotu vrácený odkazem z metody, je třeba deklarovat [lokální proměnná podle odkazu](ref-returns.md#ref-locals) proměnnou, pokud máte v úmyslu změnit jeho hodnotu. Například pokud `Planet.GetEstimatedDistance` metoda vrátí hodnotu <xref:System.Double> hodnota podle odkazu, můžete ji definovat jako místní proměnná ref s kódem, jako je následující:
+Chcete-li použít hodnotu vrácenou odkazem z metody, je nutné deklarovat [místní proměnnou ref](ref-returns.md#ref-locals) , pokud máte v úmyslu změnit její hodnotu. Například pokud `Planet.GetEstimatedDistance` metoda <xref:System.Double> vrátí hodnotu odkazem, můžete ji definovat jako místní proměnnou ref s kódem podobným následujícímu:
 
 ```csharp
 ref int distance = plant 
 ```
 
-Vícerozměrné pole vrácení z metody, `M`, aplikací, které mění pole obsahu není nutné v případě volání funkce předány do pole `M`.  Může vrátit výsledné pole z `M` pro dobré styl nebo funkční tok hodnoty, ale není nezbytné, protože C# projde všechny typy odkazů podle hodnoty a odkazu na pole má hodnotu ukazatele na pole. V metodě `M`, všechny změny obsahu pole se pozorovat podle veškerý kód, který obsahuje odkaz na pole, jak je znázorněno v následujícím příkladu.  
+Vrácení multidimenzionálního pole z metody `M`, které upraví obsah pole, není nutné, pokud volající funkce předala pole do. `M`  Výsledné pole můžete vracet z `M` pro dobrý styl nebo funkční tok hodnot, ale není nutné, protože C# předává všechny odkazové typy podle hodnoty a hodnota odkazu na pole je ukazatel na pole. V metodě `M`jsou jakékoli změny v obsahu pole pozorovatelované jakýmkoli kódem, který má odkaz na pole, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 static void Main(string[] args)
@@ -108,30 +108,30 @@ public static void FillMatrix(int[,] matrix)
 }
 ```  
   
- Další informace najdete v tématu [vrátit](../../../csharp/language-reference/keywords/return.md).  
+ Další informace naleznete v tématu [return](../../language-reference/keywords/return.md).  
   
 ## <a name="async-methods"></a>Asynchronní metody  
- Při použití asynchronní funkce, se dají vyvolat asynchronní metody bez použití explicitní zpětná volání nebo Ruční rozdělení kódu mezi více metodách a výrazech lambda. 
+ Pomocí asynchronní funkce můžete vyvolat asynchronní metody bez použití explicitních zpětných volání nebo ruční rozdělení kódu napříč více metodami nebo lambda výrazy. 
   
- Pokud určíte metodu s [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor, můžete použít [await](../../../csharp/language-reference/keywords/await.md) operátor v metodě. Když ovládací prvek dosáhne výrazu await v asynchronní metodě, ovládací prvek vrátí volajícímu a průběh v metodě je pozastavený, až do dokončení očekávané úlohy. Po dokončení úlohy se provádění může pokračovat v metodě.  
+ Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/keywords/await.md) v metodě. Když ovládací prvek dosáhne výrazu await v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.  
   
 > [!NOTE]
->  Asynchronní metoda vrátí řízení volajícímu, když nalezne první očekávaný objekt, který ještě není dokončeno nebo získá konec asynchronní metody podle toho, co nastane dříve.  
+>  Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.  
   
- Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo void. Typ vrácené hodnoty void se používá především k definování obslužných rutin událostí, kde se vyžaduje typ vrácené hodnoty void. Asynchronní metody vracející typ void nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.  
+ Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>nebo void. Typ vrácené hodnoty void slouží hlavně k definování obslužných rutin událostí, kde je požadován návratový typ void. Asynchronní metoda, která vrací typ void, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.  
   
- V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `return` příkaz, který vrátí celé číslo. Proto deklarace metody z `DelayAsync` musí mít typ vrácené hodnoty `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask`.  
+ V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový <xref:System.Threading.Tasks.Task%601>typ. `DelayAsync``return` obsahuje příkaz, který vrací celé číslo. Proto deklarace `DelayAsync` metody musí mít návratový `Task<int>`typ. Vzhledem k tomu, že `Task<int>`návratový typ je, vyhodnocení `await` výrazu v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask`.  
   
- `startButton_Click` Metoda je příklad asynchronní metody, která má typ vrácené hodnoty void. Protože `DoSomethingAsync` je metodou asynchronní úloha pro volání `DoSomethingAsync` musí ní použít operátor await, jak ukazuje následující příkaz: `await DoSomethingAsync();`. `startButton_Click` Metoda musí být definované s `async` modifikátor vzhledem k tomu, že tato metoda má `await` výrazu.  
+ `startButton_Click` Metoda je příkladem asynchronní metody, která má návratový typ void. Vzhledem `DoSomethingAsync` k tomu, že se jedná o asynchronní metodu, `DoSomethingAsync` musí být úloha volání metody očekávána, jak ukazuje následující příkaz `await DoSomethingAsync();`:. Metoda musí být definována `async` s modifikátorem, `await` protože metoda má výraz. `startButton_Click`  
   
  [!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]  
   
- Asynchronní metoda nemůže deklarovat všechny [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ale může volat metody, které mají tyto parametry.  
+ Asynchronní metoda nemůže deklarovat všechny parametry [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) , ale může volat metody, které mají tyto parametry.  
   
- Další informace o metodách async naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md), [tok řízení v asynchronních programech](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md), a [Async Return Types](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md), [řízení toku v asynchronních programech](../concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](../concepts/async/async-return-types.md).  
   
 ## <a name="expression-body-definitions"></a>Definice textu výrazu  
- Je běžné mít definice metod, které jednoduše okamžitě vrátí výsledek výrazu nebo, které mají jeden příkaz jako tělo metody.  Existuje místní syntaxe pro definování těchto metod pomocí `=>`:  
+ Je běžné mít definice metod, které se jednoduše vrátí s výsledkem výrazu nebo které mají jediný příkaz jako tělo metody.  Pro definování takových metod je k dispozici zástupce syntaxe `=>`pomocí příkazu:  
   
 ```csharp  
 public Point Move(int dx, int dy) => new Point(x + dx, y + dy);   
@@ -142,30 +142,30 @@ public string Name => First + " " + Last;
 public Customer this[long id] => store.LookupCustomer(id);  
 ```  
   
- Pokud metoda vrátí `void` nebo je asynchronní metody, výrazu příkazu (stejně jako výrazy lambda) musí být tělo metody.  Pro vlastnostmi a indexery, musí být jen pro čtení a nepoužíváte `get` – klíčové slovo přistupujícího objektu.  
+ Pokud metoda vrátí `void` nebo je asynchronní metoda, pak tělo metody musí být výraz příkazu (totéž jako u výrazů lambda).  U vlastností a indexerů musí být jen pro čtení a nepoužívejte klíčové slovo přistupující k `get` objektu.  
   
 ## <a name="iterators"></a>Iterátory  
- Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](../../../csharp/language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když [yield return](../../../csharp/language-reference/keywords/yield.md) je dosažen příkaz, se uloží aktuální umístění v kódu. Provádění je restartováno z tohoto umístění, při příštím volání iterátoru.  
+ Iterátor provádí vlastní iteraci v kolekci, jako je například seznam nebo pole. Iterátor používá příkaz [yield return](../../language-reference/keywords/yield.md) k vrácení každého elementu v jednom okamžiku. Při dosažení příkazu [yield return](../../language-reference/keywords/yield.md) se aktuální umístění v kódu pamatuje. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.  
   
- Můžete volat iterátor z klientského kódu s použitím [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkazu.  
+ Můžete zavolat iterátor z klientského kódu pomocí příkazu [foreach](../../language-reference/keywords/foreach-in.md) .  
   
- Návratový typ iterátor může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.  
+ Návratový typ <xref:System.Collections.IEnumerable>iterátoru může být, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.  
   
- Další informace najdete v tématu [iterátory](../../../csharp/programming-guide/concepts/iterators.md).  
+ Další informace najdete v tématu [iterátory](../concepts/iterators.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
 - [Třídy a struktury](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Statické třídy a jejich členové](static-classes-and-static-class-members.md)
 - [Dědičnost](inheritance.md)
 - [Abstraktní a uzavřené třídy a jejich členové](abstract-and-sealed-classes-and-class-members.md)
-- [params](../../../csharp/language-reference/keywords/params.md)
-- [return](../../../csharp/language-reference/keywords/return.md)
-- [out](../../../csharp/language-reference/keywords/out.md)
-- [ref](../../../csharp/language-reference/keywords/ref.md)
+- [params](../../language-reference/keywords/params.md)
+- [return](../../language-reference/keywords/return.md)
+- [out](../../language-reference/keywords/out.md)
+- [ref](../../language-reference/keywords/ref.md)
 - [Předávání parametrů](passing-parameters.md)

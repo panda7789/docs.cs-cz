@@ -12,40 +12,40 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], Mod
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
-ms.openlocfilehash: f1334ff7aa07f49139bfe684746ae9cc3cf8087c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c801facd95d93652414409549bb5ff2fa633748b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663174"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611521"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod – operátor (Visual Basic)
-Provede podíl dvou čísel a vrátí pouze zbytek.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-number1 Mod number2  
-```  
+Vydělí dvě čísla a vrátí pouze zbytek.
+
+## <a name="syntax"></a>Syntaxe
+
+```vb
+result = number1 Mod number2
+```
   
 ## <a name="parts"></a>Součásti  
- `number1`  
- Povinný parametr. Jakýkoli číselný výraz.  
-  
- `number2`  
- Povinný parametr. Jakýkoli číselný výraz.  
-  
-## <a name="supported-types"></a>Podporované typy  
- Všechny číselné typy. Jedná se o typy bez znaménka a s plovoucí desetinnou čárkou a `Decimal`.  
-  
+ `result`Požadovanou. Jakákoli číselná proměnná nebo vlastnost.
+
+ `number1`Požadovanou. Libovolný číselný výraz.
+
+ `number2`Požadovanou. Libovolný číselný výraz.
+
+## <a name="supported-types"></a>Podporované typy
+ Všechny číselné typy. To zahrnuje typy unsigned a float-Point a `Decimal`.
+
 ## <a name="result"></a>Výsledek
 
-Výsledkem je zbytek po `number1` , je vyděleno hodnotou `number2`. Například výraz `14 Mod 4` vyhodnotí na 2.  
+Výsledek je zbytek po `number1` `number2`dělení. Například výraz `14 Mod 4` se vyhodnotí jako 2.
 
 > [!NOTE]
-> Existuje rozdíl mezi *zbývající* a *numerického zbytku* v matematice se různé výsledky pro záporná čísla. `Mod` Operátor v jazyce Visual Basic, rozhraní .NET Framework `op_Modulus` operátor a základní [rem](<xref:System.Reflection.Emit.OpCodes.Rem>) provádět všechny operace remainder instrukce IL.
+> Existuje rozdíl mezi zbytkem a *modulem* v matematice s různými výsledky pro záporná čísla. Operátor v Visual Basic, operátor .NET Framework `op_Modulus` a podkladová instrukce [rem](<xref:System.Reflection.Emit.OpCodes.Rem>) Il provádí zbývající operaci. `Mod`
 
-Výsledek `Mod` operace uchovává znaménko podíl, `number1`, a proto může být pozitivní nebo negativní. Výsledek je vždycky v rozsahu (-`number2`, `number2`) exkluzivní. Příklad:
+Výsledkem `Mod` operace zůstane znaménko dividendy, `number1`, a tak může být kladné nebo záporné. Výsledek je vždy v rozsahu (-`number2`, `number2`), exkluzivní. Příklad:
 
 ```vb
 Public Module Example
@@ -63,50 +63,52 @@ End Module
 '      -8 Mod -3 = -2
 ```
 
-## <a name="remarks"></a>Poznámky  
- Pokud `number1` nebo `number2` je hodnotu s plovoucí desetinnou čárkou se vrátí zbytek s plovoucí desetinnou čárkou dělení. Datový typ výsledku je nejmenší datový typ, který může uchovat všechny možné hodnoty, které jsou výsledkem dělení s datové typy `number1` a `number2`.  
-  
- Pokud `number1` nebo `number2` vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), je považován za nulu.  
-  
- Související operátory patří:  
-  
-- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí podíl dělení celého čísla. Například výraz `14 \ 4` vyhodnocen jako 3.  
-  
-- [/ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) vrátí úplné podíl, včetně zbývající jako číslo s plovoucí desetinnou čárkou. Například výraz `14 / 4` vyhodnocen jako 3.5.  
-  
-## <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
- Pokud `number2` vyhodnocen jako nula, chování `Mod` operátor závisí na datový typ operandu. Vyvolá celočíselného dělení <xref:System.DivideByZeroException> výjimky. Vrátí hodnotu s plovoucí desetinnou čárkou dělení <xref:System.Double.NaN>.  
-  
-## <a name="equivalent-formula"></a>Ekvivalentní vzorce  
- Výraz `a Mod b` odpovídá některé z těchto vzorců:  
-  
- `a - (b * (a \ b))`  
-  
- `a - (b * Fix(a / b))`  
-  
-## <a name="floating-point-imprecision"></a>S plovoucí desetinnou čárkou nepřesnost  
- Při práci s čísly s plovoucí desetinnou čárkou, mějte na paměti, že vždy nemají reprezentaci přesné desítkové v paměti. To může vést k neočekávaným výsledkům z určité operace, jako je například porovnání hodnoty a `Mod` operátor. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
-  
-## <a name="overloading"></a>Přetížení  
- `Mod` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování. Pokud se váš kód vztahuje `Mod` být do instance třídy nebo struktury, která obsahuje tato přetížení, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
-  
-## <a name="example"></a>Příklad  
- V následujícím příkladu `Mod` operátor dělení dvou čísel a vrátí pouze zbytek. Pokud je buď číslo s plovoucí desetinnou čárkou číslo, výsledkem je číslo s plovoucí desetinnou čárkou, které představuje zbytek.  
-  
- [!code-vb[VbVbalrOperators#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#31)]  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje potenciál nepřesnost operandů s plovoucí desetinnou čárkou. V prvním příkazu, jsou jako operandy `Double`, a 0.2 je neomezeně opakovaný binární zlomek s hodnotou uloženou v 0.20000000000000001. V druhém příkazu znak typu literálu `D` vynutí oba operandy `Decimal`, a 0.2 má přesné reprezentaci.  
-  
- [!code-vb[VbVbalrOperators#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#32)]  
-  
+## <a name="remarks"></a>Poznámky
+ Pokud buď `number1` nebo `number2` je hodnota s plovoucí desetinnou čárkou, vrátí zbytek dělení plovoucí desetinné čárky. Datový typ výsledku je nejmenší datový typ, který může uchovávat všechny možné hodnoty, které jsou výsledkem dělení s datovými typy `number1` a. `number2`
+
+ Pokud `number1` je `number2` nebo se vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), bude se zacházet jako nula.
+
+ Mezi související operátory patří následující:
+
+- [Operátor \ (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí celočíselnou podíl dělení. Například výraz `14 \ 4` se vyhodnotí jako 3.
+
+- [Operátor/(Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) vrátí úplný podíl včetně zbytku jako čísla s plovoucí desetinnou čárkou. Například výraz `14 / 4` se vyhodnotí jako 3,5.
+
+## <a name="attempted-division-by-zero"></a>Došlo k pokusu o dělení nulou.
+ Pokud `number2` je hodnota vyhodnocena jako nula, chování `Mod` operátoru závisí na datovém typu operandů:
+ - Celočíselné dělení vyvolá <xref:System.DivideByZeroException> výjimku, pokud `number2` nelze určit v době kompilace a generuje chybu `BC30542    Division by zero occurred while evaluating this expression` při kompilaci, pokud `number2` je v době kompilace vyhodnocena jako nula.
+ - Dělení s plovoucí desetinnou čárkou se vrátí <xref:System.Double.NaN?displayProperty=nameWithType>.
+
+## <a name="equivalent-formula"></a>Ekvivalentní vzorec
+ Výraz `a Mod b` je ekvivalentem některého z následujících vzorců:
+
+ `a - (b * (a \ b))`
+
+ `a - (b * Fix(a / b))`
+
+## <a name="floating-point-imprecision"></a>Nepřesnost plovoucí desetinné čárky
+ Když pracujete s čísly s plovoucí desetinnou čárkou, mějte na paměti, že v paměti nemají vždy přesné desetinné vyjádření. To může vést k neočekávaným výsledkům z určitých operací, jako je například `Mod` porovnání hodnot a operátor. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
+
+## <a name="overloading"></a>Přetížení
+ Operátor může být přetížen, což znamená, že třída nebo struktura může změnit své chování. `Mod` Pokud se váš kód `Mod` vztahuje na instanci třídy nebo struktury, která obsahuje takové přetížení, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
+
+## <a name="example"></a>Příklad
+ Následující příklad používá `Mod` operátor k rozdělení dvou čísel a vrácení pouze zbytku. Pokud je jedno číslo číslo s plovoucí desetinnou čárkou, výsledkem je číslo s plovoucí desetinnou čárkou, které představuje zbytek.
+
+ [!code-vb[VbVbalrOperators#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#31)]
+
+## <a name="example"></a>Příklad
+ Následující příklad ukazuje potenciální nepřesnost operandů s plovoucí desetinnou čárkou. V prvním příkazu jsou `Double`operandy a 0,2 nekonečně opakující se binární zlomek s uloženou hodnotou 0.20000000000000001. Ve druhém příkazu vynucuje znak `D` typu literálu oba operandy `Decimal`a 0,2 má přesnou reprezentaci.
+
+ [!code-vb[VbVbalrOperators#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#32)]
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Conversion.Int%2A>
 - <xref:Microsoft.VisualBasic.Conversion.Fix%2A>
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
 - [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)

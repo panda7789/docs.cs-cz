@@ -1,5 +1,5 @@
 ---
-title: Abstraktní a uzavřené třídy a členové - C# Průvodce programováním
+title: Abstraktní a zapečetěné třídy a členy třídy C# – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,51 +8,51 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: fc3e29ad606cf8a60318a320e8ebc65b0d7f6e48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c98e2979ee96d4bcc885b8cc797eaac28c8d2ed
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651854"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597291"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
-[Abstraktní](../../../csharp/language-reference/keywords/abstract.md) – klíčové slovo umožňuje vytvářet třídy a [třídy](../../../csharp/language-reference/keywords/class.md) členy, kteří jsou nekompletní a které musí být implementované v odvozené třídě.  
+Klíčové slovo [abstract](../../language-reference/keywords/abstract.md) umožňuje vytvářet třídy a členy [třídy](../../language-reference/keywords/class.md) , které jsou neúplné a které musí být implementovány v odvozené třídě.  
   
- [Zapečetěné](../../../csharp/language-reference/keywords/sealed.md) – klíčové slovo umožňuje zabránit dědění třídy nebo členů určité třídy, které byly dříve označeny [virtuální](../../../csharp/language-reference/keywords/virtual.md).  
+ Klíčové slovo [sealed](../../language-reference/keywords/sealed.md) umožňuje zabránit dědění třídy nebo určitých členů třídy, které byly dříve označeny jako [virtuální](../../language-reference/keywords/virtual.md).  
   
-## <a name="abstract-classes-and-class-members"></a>Abstraktní třídy a jejich členové  
+## <a name="abstract-classes-and-class-members"></a>Abstraktní třídy a členy třídy  
  Třídy lze deklarovat jako abstraktní vložením klíčového slova `abstract` před definici třídy. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#13)]  
   
- Nelze vytvořit instanci abstraktní třídy. Účelem abstraktní třídy je stanovit společnou definici základní třídy, která může sdílet více odvozených tříd. Knihovna tříd může například definovat abstraktní třídu, která se používá jako parametr pro většinu jeho funkcí a vyžaduje, aby programátoři využívající tuto knihovnu poskytli vlastní implementaci třídy vytvořením odvozené třídy.  
+ Nelze vytvořit instanci abstraktní třídy. Účelem abstraktní třídy je poskytnutí společné definice základní třídy, kterou může sdílet více odvozených tříd. Knihovna tříd může například definovat abstraktní třídu, která se používá jako parametr pro mnoho jeho funkcí, a vyžadovat programátory, kteří používají tuto knihovnu k poskytnutí vlastní implementace třídy vytvořením odvozené třídy.  
   
- Abstraktní třídy mohou také definovat abstraktní metody. To lze provést přidáním klíčového slova `abstract` před návratovým typem metody. Příklad:  
+ Abstraktní třídy mohou také definovat abstraktní metody. To je dosaženo přidáním klíčového slova `abstract` před návratový typ metody. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#14)]  
   
- Abstraktní metody nemají implementaci, takže definice metody následuje středníkem místo bloku normální metody. Odvozené třídy abstraktní třídy musí implementovat všechny abstraktní metody. Když abstraktní třída dědí ze základní třídy virtuální metody, abstraktní třída může přepsat virtuální metodu pomocí abstraktní metody. Příklad:  
+ Abstraktní metody nemají žádnou implementaci, proto je jako definice metody následován středníkem namísto bloku normální metody. Odvozené třídy abstraktní třídy musí implementovat všechny abstraktní metody. Pokud abstraktní třída dědí virtuální metodu ze základní třídy, abstraktní třída může přepsat virtuální metodu abstraktní metodou. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#15)]  
   
- Pokud `virtual` metoda deklarována `abstract`, je stále virtuální pro jakoukoli třídu, která dědí z abstraktní třídy. Třída dědící abstraktní metodu nemůže získat přístup k původní implementaci metody – v předchozím příkladu `DoWork` u třídy F nemůže volat `DoWork` u třídy D. Tímto způsobem abstraktní třída může vynutit odvozené třídy pro poskytování implementací nových metod pro virtuální metody.  
+ Je- `virtual` li metoda deklarována `abstract`, je stále virtuální pro jakoukoliv třídu, která dědí z abstraktní třídy. Třída, která dědí abstraktní metodu, `DoWork` nemůže získat přístup k původní implementaci metody – v předchozím příkladu u třídy F nemůže volat `DoWork` na třídu D. Tímto způsobem abstraktní třída může vynutit odvozené třídy, aby poskytovala nové implementace metod pro virtuální metody.  
   
 ## <a name="sealed-classes-and-class-members"></a>Zapečetěné třídy a členy třídy  
- Třídy lze deklarovat jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md) vložením klíčového slova `sealed` před definici třídy. Příklad:  
+ Třídy lze deklarovat jako [zapečetěné](../../language-reference/keywords/sealed.md) vložením klíčového `sealed` slova před definici třídy. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#16)]  
   
- Zapečetěnou třídu nelze použít jako základní třídu. Z tohoto důvodu to nemůže být také abstraktní třídu. Zapečetěné třídy zabraňují odvození. Protože nemohou být nikdy použity jako základní třída, některé optimalizace za běhu můžete provést volání zapouzdřených členů mírně rychleji.  
+ Zapečetěná třída se nedá použít jako základní třída. Z tohoto důvodu nemůže být zároveň abstraktní třídou. Zapečetěné třídy brání odvození. Vzhledem k tomu, že je nelze nikdy použít jako základní třídu, mohou některé optimalizace za běhu volat členy zapečetěné třídy trochu rychleji.  
   
- Metoda, indexer, vlastnost nebo událost odvozené třídy, které přepisují virtuálního člena základní třídy lze deklarovat tento člen je zapečetěn. To Neguje virtuální aspekt člena pro jakékoli další odvozené třídy. To lze provést vložením `sealed` – klíčové slovo před [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo v deklaraci třídy člena. Příklad:  
+ Metoda, indexer, vlastnost nebo událost v odvozené třídě, která přepisuje virtuální člen základní třídy, může deklarovat tento člen jako zapečetěný. Tato negace je virtuální aspekt člena pro jakoukoliv další odvozenou třídu. To je dosaženo vložením `sealed` klíčového slova před klíčové slovo [override](../../language-reference/keywords/override.md) v deklaraci člena třídy. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#17)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
-- [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)
-- [Postupy: Definování abstraktních a vlastností](../../../csharp/programming-guide/classes-and-structs/how-to-define-abstract-properties.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy a struktury](./index.md)
+- [Dědičnost](./inheritance.md)
+- [Metody](./methods.md)
+- [Pole](./fields.md)
+- [Postupy: Definovat abstraktní vlastnosti](./how-to-define-abstract-properties.md)

@@ -1,7 +1,7 @@
 ---
-title: Toto klíčové slovo - C# odkaz
+title: Toto klíčové slovo C# – referenční informace
 ms.custom: seodec18
-description: Toto klíčové slovo (referenční dokumentace jazyka C#)
+description: Toto klíčové slovoC# (referenční)
 ms.date: 07/20/2015
 f1_keywords:
 - this
@@ -9,27 +9,27 @@ f1_keywords:
 helpviewer_keywords:
 - this keyword [C#]
 ms.assetid: d4f827fe-4710-410b-89b8-867dad44b8a3
-ms.openlocfilehash: af39ba6e20fb1a7c9e1a356ef5015afd885dbbca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a3342e73fef3effd54f72e68283eb6085eef5b5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660577"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608446"
 ---
 # <a name="this-c-reference"></a>this (Referenční dokumentace jazyka C#)
 
-`this` – Klíčové slovo odkazuje na aktuální instanci třídy a slouží také jako modifikátor první parametr metody rozšíření.
+`this` Klíčové slovo odkazuje na aktuální instanci třídy a používá se také jako modifikátor prvního parametru metody rozšíření.
 
 > [!NOTE]
-> Tento článek popisuje způsob používání `this` instancemi třídy. Další informace o jeho použití v metodách rozšíření naleznete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).
+> Tento článek popisuje použití `this` s instancemi třídy. Další informace o jeho použití v rozšiřujících metodách naleznete v tématu [metody rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
 
-Tady jsou běžné způsoby použití `this`:
+Zde jsou běžně používané `this`nástroje:
 
-- K získání způsobilosti členy skryta podobnými názvy, například:
+- Chcete-li kvalifikovat členy skryté podobným názvem, například:
 
   [!code-csharp[csrefKeywordsAccess#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#4)]  
 
-- K předání objektu jako parametr do jiné metody, například:
+- Pro předání objektu jako parametru jiným metodám, například:
 
   ```csharp
   CalcTax(this);
@@ -39,11 +39,11 @@ Tady jsou běžné způsoby použití `this`:
 
   [!code-csharp[csrefKeywordsAccess#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#5)]
 
-Statické členské funkce, protože existují na úrovni třídy, nikoli jako součást objektu, není nutné `this` ukazatele. Jedná se o chybu k odkazování na `this` uvnitř statické metody.
+Statické členské funkce, protože existují na úrovni třídy a ne jako součást objektu, `this` nemají ukazatel. V případě, že se odkazuje na `this` statickou metodu, se jedná o chybu.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu `this` se použijí pro kvalifikaci `Employee` členy, třídy `name` a `alias`, které jsou skryté, podobně jako názvy. Používá se také k objektu předat metodě `CalcTax`, který patří do jiné třídy.
+V tomto příkladu `this` se používá k `Employee` kvalifikování členů třídy, `name` a `alias`, které jsou skryté podobnými názvy. Slouží také k předání objektu do metody `CalcTax`, která patří do jiné třídy.
 
 [!code-csharp[csrefKeywordsAccess#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#3)]
 
@@ -53,7 +53,7 @@ V tomto příkladu `this` se použijí pro kvalifikaci `Employee` členy, tříd
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [base](base.md)
