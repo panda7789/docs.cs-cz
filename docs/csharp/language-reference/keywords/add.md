@@ -1,5 +1,5 @@
 ---
-title: Add - C# odkaz
+title: Přidat C# odkaz
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - add event accessor [C#]
 ms.assetid: faf30b99-10e8-45cd-ab9a-57585d4d1d8d
-ms.openlocfilehash: 1f699e5729354d13bfbe29810bf2c4baf91d2382
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1cf82e3d048e465d533e87dc639a13071b41544a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662124"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606039"
 ---
-# <a name="add-c-reference"></a><span data-ttu-id="cb6d6-102">add (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="cb6d6-102">add (C# Reference)</span></span>
-<span data-ttu-id="cb6d6-103">`add` Kontextové klíčové slovo se používá k definování přístupový objekt vlastní událost, která je volána, když se přihlásí k odběru kód klienta vašeho [události](../../../csharp/language-reference/keywords/event.md).</span><span class="sxs-lookup"><span data-stu-id="cb6d6-103">The `add` contextual keyword is used to define a custom event accessor that is invoked when client code subscribes to your [event](../../../csharp/language-reference/keywords/event.md).</span></span> <span data-ttu-id="cb6d6-104">Pokud zadáte vlastní `add` přístupový objekt, je třeba zadat také [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="cb6d6-104">If you supply a custom `add` accessor, you must also supply a [remove](../../../csharp/language-reference/keywords/remove.md) accessor.</span></span>  
+# <a name="add-c-reference"></a><span data-ttu-id="38122-102">add (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="38122-102">add (C# Reference)</span></span>
+<span data-ttu-id="38122-103">Kontextové klíčové slovo slouží k definování vlastního přístupového objektu události, který je vyvolán, když se kód klienta přihlašuje k odběru [události.](./event.md) `add`</span><span class="sxs-lookup"><span data-stu-id="38122-103">The `add` contextual keyword is used to define a custom event accessor that is invoked when client code subscribes to your [event](./event.md).</span></span> <span data-ttu-id="38122-104">Pokud zadáte vlastní `add` přistupující objekt, je nutné také předat přístup pro [Odebrání](./remove.md) .</span><span class="sxs-lookup"><span data-stu-id="38122-104">If you supply a custom `add` accessor, you must also supply a [remove](./remove.md) accessor.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cb6d6-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="cb6d6-105">Example</span></span>  
- <span data-ttu-id="cb6d6-106">Následující příklad ukazuje událost, která má vlastní `add` a [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="cb6d6-106">The following example shows an event that has custom `add` and [remove](../../../csharp/language-reference/keywords/remove.md) accessors.</span></span> <span data-ttu-id="cb6d6-107">Úplný příklad naleznete v tématu [jak:  Implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span><span class="sxs-lookup"><span data-stu-id="cb6d6-107">For the full example, see [How to:  Implement Interface Events](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="38122-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="38122-105">Example</span></span>  
+ <span data-ttu-id="38122-106">Následující příklad ukazuje událost, která má vlastní `add` a [Odebrat](./remove.md) přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="38122-106">The following example shows an event that has custom `add` and [remove](./remove.md) accessors.</span></span> <span data-ttu-id="38122-107">Úplný příklad naleznete v tématu [How to:  Implementujte události](../../programming-guide/events/how-to-implement-interface-events.md)rozhraní.</span><span class="sxs-lookup"><span data-stu-id="38122-107">For the full example, see [How to:  Implement Interface Events](../../programming-guide/events/how-to-implement-interface-events.md).</span></span>  
   
 [!code-csharp[csrefKeywordsContextual#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#15)]
   
- <span data-ttu-id="cb6d6-108">Obvykle není potřeba poskytovat vlastní vlastních přístupových objektů událostí.</span><span class="sxs-lookup"><span data-stu-id="cb6d6-108">You do not typically need to provide your own custom event accessors.</span></span> <span data-ttu-id="cb6d6-109">Přístupové objekty, které jsou automaticky generovány v kompilátoru při deklaraci události postačí pro většinu scénářů.</span><span class="sxs-lookup"><span data-stu-id="cb6d6-109">The accessors that are automatically generated by the compiler when you declare an event are sufficient for most scenarios.</span></span>  
+ <span data-ttu-id="38122-108">Většinou nemusíte poskytovat vlastní přístupové objekty vlastních událostí.</span><span class="sxs-lookup"><span data-stu-id="38122-108">You do not typically need to provide your own custom event accessors.</span></span> <span data-ttu-id="38122-109">Přistupující objekty, které kompilátor generuje automaticky při deklaraci události, jsou pro většinu scénářů dostačující.</span><span class="sxs-lookup"><span data-stu-id="38122-109">The accessors that are automatically generated by the compiler when you declare an event are sufficient for most scenarios.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cb6d6-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb6d6-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="38122-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="38122-110">See also</span></span>
 
-- [<span data-ttu-id="cb6d6-111">Události</span><span class="sxs-lookup"><span data-stu-id="cb6d6-111">Events</span></span>](../../../csharp/programming-guide/events/index.md)
+- [<span data-ttu-id="38122-111">Události</span><span class="sxs-lookup"><span data-stu-id="38122-111">Events</span></span>](../../programming-guide/events/index.md)

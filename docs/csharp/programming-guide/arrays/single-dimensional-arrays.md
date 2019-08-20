@@ -1,66 +1,66 @@
 ---
-title: Jednorozměrná pole - C# Průvodce programováním
+title: Jednorozměrná pole – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: d221cb9071a2c58f9d7068d5a43dd3a750ba716b
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 17c384ec327d4a80ed614dce6254baa5bfb2e960
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398563"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597308"
 ---
-# <a name="single-dimensional-arrays-c-programming-guide"></a><span data-ttu-id="4d35e-102">Jednorozměrná pole (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="4d35e-102">Single-Dimensional Arrays (C# Programming Guide)</span></span>
+# <a name="single-dimensional-arrays-c-programming-guide"></a><span data-ttu-id="19fa8-102">Jednorozměrná pole (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="19fa8-102">Single-Dimensional Arrays (C# Programming Guide)</span></span>
 
-<span data-ttu-id="4d35e-103">Je možné deklarovat jednorozměrné pole pět celých čísel, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="4d35e-103">You can declare a single-dimensional array of five integers as shown in the following example:</span></span>  
+<span data-ttu-id="19fa8-103">Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="19fa8-103">You can declare a single-dimensional array of five integers as shown in the following example:</span></span>  
   
  [!code-csharp[csProgGuideArrays#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#4)]  
   
- <span data-ttu-id="4d35e-104">Toto pole obsahuje prvky z `array[0]` k `array[4]`.</span><span class="sxs-lookup"><span data-stu-id="4d35e-104">This array contains the elements from `array[0]` to `array[4]`.</span></span> <span data-ttu-id="4d35e-105">[Nové](../../../csharp/language-reference/operators/new-operator.md) operátor se používá k vytvoření pole a inicializaci prvků pole na výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="4d35e-105">The [new](../../../csharp/language-reference/operators/new-operator.md) operator is used to create the array and initialize the array elements to their default values.</span></span> <span data-ttu-id="4d35e-106">V tomto příkladu jsou všechny prvky pole inicializovány na nulu.</span><span class="sxs-lookup"><span data-stu-id="4d35e-106">In this example, all the array elements are initialized to zero.</span></span>  
+ <span data-ttu-id="19fa8-104">Toto pole obsahuje prvky z `array[0]` do. `array[4]`</span><span class="sxs-lookup"><span data-stu-id="19fa8-104">This array contains the elements from `array[0]` to `array[4]`.</span></span> <span data-ttu-id="19fa8-105">Operátor [New](../../language-reference/operators/new-operator.md) slouží k vytvoření pole a inicializaci prvků pole na jejich výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="19fa8-105">The [new](../../language-reference/operators/new-operator.md) operator is used to create the array and initialize the array elements to their default values.</span></span> <span data-ttu-id="19fa8-106">V tomto příkladu jsou všechny prvky pole inicializovány na nulu.</span><span class="sxs-lookup"><span data-stu-id="19fa8-106">In this example, all the array elements are initialized to zero.</span></span>  
   
- <span data-ttu-id="4d35e-107">Pole, která ukládá prvků řetězce mohou být deklarovány stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="4d35e-107">An array that stores string elements can be declared in the same way.</span></span> <span data-ttu-id="4d35e-108">Příklad:</span><span class="sxs-lookup"><span data-stu-id="4d35e-108">For example:</span></span>  
+ <span data-ttu-id="19fa8-107">Pole, které ukládá prvky řetězce, lze deklarovat stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="19fa8-107">An array that stores string elements can be declared in the same way.</span></span> <span data-ttu-id="19fa8-108">Příklad:</span><span class="sxs-lookup"><span data-stu-id="19fa8-108">For example:</span></span>  
   
  [!code-csharp[csProgGuideArrays#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#5)]  
   
-## <a name="array-initialization"></a><span data-ttu-id="4d35e-109">Inicializace pole</span><span class="sxs-lookup"><span data-stu-id="4d35e-109">Array Initialization</span></span>
+## <a name="array-initialization"></a><span data-ttu-id="19fa8-109">Inicializace pole</span><span class="sxs-lookup"><span data-stu-id="19fa8-109">Array Initialization</span></span>
 
- <span data-ttu-id="4d35e-110">Je možné k inicializaci pole při deklaraci, v takovém případě není potřeba specifikátor délku, protože je už zadaný počet prvků v seznamu inicializace.</span><span class="sxs-lookup"><span data-stu-id="4d35e-110">It is possible to initialize an array upon declaration, in which case, the length specifier is not needed because it is already supplied by the number of elements in the initialization list.</span></span> <span data-ttu-id="4d35e-111">Příklad:</span><span class="sxs-lookup"><span data-stu-id="4d35e-111">For example:</span></span>  
+ <span data-ttu-id="19fa8-110">Je možné inicializovat pole po deklaraci, v takovém případě není specifikátor délky nutný, protože je již poskytnutý počtem prvků v seznamu inicializace.</span><span class="sxs-lookup"><span data-stu-id="19fa8-110">It is possible to initialize an array upon declaration, in which case, the length specifier is not needed because it is already supplied by the number of elements in the initialization list.</span></span> <span data-ttu-id="19fa8-111">Příklad:</span><span class="sxs-lookup"><span data-stu-id="19fa8-111">For example:</span></span>  
   
  [!code-csharp[csProgGuideArrays#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#6)]  
   
- <span data-ttu-id="4d35e-112">Pole řetězců mohou být inicializovány stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="4d35e-112">A string array can be initialized in the same way.</span></span> <span data-ttu-id="4d35e-113">Následuje deklaraci pole řetězců kde každý prvek pole je inicializována pomocí názvu dne:</span><span class="sxs-lookup"><span data-stu-id="4d35e-113">The following is a declaration of a string array where each array element is initialized by a name of a day:</span></span>  
+ <span data-ttu-id="19fa8-112">Pole řetězců lze inicializovat stejným způsobem.</span><span class="sxs-lookup"><span data-stu-id="19fa8-112">A string array can be initialized in the same way.</span></span> <span data-ttu-id="19fa8-113">Následuje deklarace pole řetězců, kde je každý element pole inicializován pomocí názvu dne:</span><span class="sxs-lookup"><span data-stu-id="19fa8-113">The following is a declaration of a string array where each array element is initialized by a name of a day:</span></span>  
  
  ```csharp
  string[] weekDays = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
  ```
   
- <span data-ttu-id="4d35e-114">Když inicializujete pole při deklaraci, můžete použít následující klávesové zkratky:</span><span class="sxs-lookup"><span data-stu-id="4d35e-114">When you initialize an array upon declaration, you can use the following shortcuts:</span></span>  
+ <span data-ttu-id="19fa8-114">Když inicializujete pole při deklaraci, můžete použít následující klávesové zkratky:</span><span class="sxs-lookup"><span data-stu-id="19fa8-114">When you initialize an array upon declaration, you can use the following shortcuts:</span></span>  
   
  [!code-csharp[csProgGuideArrays#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#8)]  
   
- <span data-ttu-id="4d35e-115">Je možné deklarovat proměnné pole bez inicializace, ale je nutné použít `new` operátor při přiřazení k této proměnné pole.</span><span class="sxs-lookup"><span data-stu-id="4d35e-115">It is possible to declare an array variable without initialization, but you must use the `new` operator when you assign an array to this variable.</span></span> <span data-ttu-id="4d35e-116">Příklad:</span><span class="sxs-lookup"><span data-stu-id="4d35e-116">For example:</span></span>  
+ <span data-ttu-id="19fa8-115">Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít `new` operátor při přiřazení pole k této proměnné.</span><span class="sxs-lookup"><span data-stu-id="19fa8-115">It is possible to declare an array variable without initialization, but you must use the `new` operator when you assign an array to this variable.</span></span> <span data-ttu-id="19fa8-116">Příklad:</span><span class="sxs-lookup"><span data-stu-id="19fa8-116">For example:</span></span>  
   
  [!code-csharp[csProgGuideArrays#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#9)]  
   
- <span data-ttu-id="4d35e-117">C# 3.0 zavádí implicitně typovaná pole.</span><span class="sxs-lookup"><span data-stu-id="4d35e-117">C# 3.0 introduces implicitly typed arrays.</span></span> <span data-ttu-id="4d35e-118">Další informace najdete v tématu [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).</span><span class="sxs-lookup"><span data-stu-id="4d35e-118">For more information, see [Implicitly Typed Arrays](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).</span></span>  
+ <span data-ttu-id="19fa8-117">C#3,0 zavádí implicitně typované pole.</span><span class="sxs-lookup"><span data-stu-id="19fa8-117">C# 3.0 introduces implicitly typed arrays.</span></span> <span data-ttu-id="19fa8-118">Další informace naleznete v tématu [implicitně typované pole](./implicitly-typed-arrays.md).</span><span class="sxs-lookup"><span data-stu-id="19fa8-118">For more information, see [Implicitly Typed Arrays](./implicitly-typed-arrays.md).</span></span>  
   
-## <a name="value-type-and-reference-type-arrays"></a><span data-ttu-id="4d35e-119">Typ hodnoty a odkaz na typ pole</span><span class="sxs-lookup"><span data-stu-id="4d35e-119">Value Type and Reference Type Arrays</span></span>
+## <a name="value-type-and-reference-type-arrays"></a><span data-ttu-id="19fa8-119">Pole Typ hodnoty a odkazové typy</span><span class="sxs-lookup"><span data-stu-id="19fa8-119">Value Type and Reference Type Arrays</span></span>
 
- <span data-ttu-id="4d35e-120">Vezměte v úvahu následující deklarace pole:</span><span class="sxs-lookup"><span data-stu-id="4d35e-120">Consider the following array declaration:</span></span>  
+ <span data-ttu-id="19fa8-120">Zvažte následující deklaraci pole:</span><span class="sxs-lookup"><span data-stu-id="19fa8-120">Consider the following array declaration:</span></span>  
   
  [!code-csharp[csProgGuideArrays#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#10)]  
   
- <span data-ttu-id="4d35e-121">Výsledkem tohoto příkazu závisí na tom, zda `SomeType` je hodnotový typ nebo typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="4d35e-121">The result of this statement depends on whether `SomeType` is a value type or a reference type.</span></span> <span data-ttu-id="4d35e-122">Pokud je typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každá má typ `SomeType`.</span><span class="sxs-lookup"><span data-stu-id="4d35e-122">If it is a value type, the statement creates an array of 10 elements, each of which has the type `SomeType`.</span></span> <span data-ttu-id="4d35e-123">Pokud `SomeType` je typem odkazu, příkaz vytvoří pole 10 prvků, z nichž každý je inicializován na hodnotu Null.</span><span class="sxs-lookup"><span data-stu-id="4d35e-123">If `SomeType` is a reference type, the statement creates an array of 10 elements, each of which is initialized to a null reference.</span></span>  
+ <span data-ttu-id="19fa8-121">Výsledek tohoto příkazu závisí na tom, zda `SomeType` je typ hodnoty nebo typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="19fa8-121">The result of this statement depends on whether `SomeType` is a value type or a reference type.</span></span> <span data-ttu-id="19fa8-122">Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType`.</span><span class="sxs-lookup"><span data-stu-id="19fa8-122">If it is a value type, the statement creates an array of 10 elements, each of which has the type `SomeType`.</span></span> <span data-ttu-id="19fa8-123">Pokud `SomeType` je odkazový typ, příkaz vytvoří pole 10 prvků, z nichž každá je inicializována na odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="19fa8-123">If `SomeType` is a reference type, the statement creates an array of 10 elements, each of which is initialized to a null reference.</span></span>  
   
- <span data-ttu-id="4d35e-124">Další informace o typy hodnot a typy odkazů, najdete v části [typy](../../../csharp/language-reference/keywords/types.md).</span><span class="sxs-lookup"><span data-stu-id="4d35e-124">For more information about value types and reference types, see [Types](../../../csharp/language-reference/keywords/types.md).</span></span>  
+ <span data-ttu-id="19fa8-124">Další informace o typech hodnot a odkazových typech naleznete v tématu [typy](../../language-reference/keywords/types.md).</span><span class="sxs-lookup"><span data-stu-id="19fa8-124">For more information about value types and reference types, see [Types](../../language-reference/keywords/types.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4d35e-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d35e-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19fa8-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="19fa8-125">See also</span></span>
 
 - <xref:System.Array>
-- [<span data-ttu-id="4d35e-126">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="4d35e-126">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="4d35e-127">Pole</span><span class="sxs-lookup"><span data-stu-id="4d35e-127">Arrays</span></span>](../../../csharp/programming-guide/arrays/index.md)
-- [<span data-ttu-id="4d35e-128">Vícerozměrná pole</span><span class="sxs-lookup"><span data-stu-id="4d35e-128">Multidimensional Arrays</span></span>](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)
-- [<span data-ttu-id="4d35e-129">Vícenásobná pole</span><span class="sxs-lookup"><span data-stu-id="4d35e-129">Jagged Arrays</span></span>](../../../csharp/programming-guide/arrays/jagged-arrays.md)
+- [<span data-ttu-id="19fa8-126">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="19fa8-126">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="19fa8-127">Pole</span><span class="sxs-lookup"><span data-stu-id="19fa8-127">Arrays</span></span>](./index.md)
+- [<span data-ttu-id="19fa8-128">Vícerozměrná pole</span><span class="sxs-lookup"><span data-stu-id="19fa8-128">Multidimensional Arrays</span></span>](./multidimensional-arrays.md)
+- [<span data-ttu-id="19fa8-129">Vícenásobná pole</span><span class="sxs-lookup"><span data-stu-id="19fa8-129">Jagged Arrays</span></span>](./jagged-arrays.md)

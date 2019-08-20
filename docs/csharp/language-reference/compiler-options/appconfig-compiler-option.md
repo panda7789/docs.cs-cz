@@ -1,5 +1,5 @@
 ---
-title: -appconfig (možnosti kompilátoru C#)
+title: -appconfig (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /appconfig
@@ -8,40 +8,40 @@ helpviewer_keywords:
 - -appconfig compiler option [C#]
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
-ms.openlocfilehash: 102ed3977d56ace0dab63b1f066cc10a6fc5dfbf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd21231ea244de51612e62febd80af74c6adc87e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663060"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69603098"
 ---
-# <a name="-appconfig-c-compiler-options"></a><span data-ttu-id="bfbc4-102">-appconfig (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="bfbc4-102">-appconfig (C# Compiler Options)</span></span>
-<span data-ttu-id="bfbc4-103">**- Appconfig** – možnost kompilátoru umožňuje aplikaci v C# k určení umístění sestavení aplikace konfiguračního souboru (app.config) do common language runtime (CLR) v době vazby sestavení.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-103">The **-appconfig** compiler option enables a C# application to specify the location of an assembly's application configuration (app.config) file to the common language runtime (CLR) at assembly binding time.</span></span>  
+# <a name="-appconfig-c-compiler-options"></a><span data-ttu-id="9bdd5-102">-appconfig (C# možnosti kompilátoru)</span><span class="sxs-lookup"><span data-stu-id="9bdd5-102">-appconfig (C# Compiler Options)</span></span>
+<span data-ttu-id="9bdd5-103">Možnost kompilátoru **-appconfig** umožňuje C# aplikaci určit umístění souboru konfigurace aplikace (App. config) sestavení pro modul CLR (Common Language Runtime) v době vytváření vazby sestavení.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-103">The **-appconfig** compiler option enables a C# application to specify the location of an assembly's application configuration (app.config) file to the common language runtime (CLR) at assembly binding time.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bfbc4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bfbc4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9bdd5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9bdd5-104">Syntax</span></span>  
   
 ```console  
 -appconfig:file  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="bfbc4-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="bfbc4-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="9bdd5-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="9bdd5-105">Arguments</span></span>  
  `file`  
- <span data-ttu-id="bfbc4-106">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-106">Required.</span></span> <span data-ttu-id="bfbc4-107">Konfigurační soubor aplikace obsahující nastavení vazeb sestavení.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-107">The application configuration file that contains assembly binding settings.</span></span>  
+ <span data-ttu-id="9bdd5-106">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-106">Required.</span></span> <span data-ttu-id="9bdd5-107">Konfigurační soubor aplikace, který obsahuje nastavení vazby sestavení.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-107">The application configuration file that contains assembly binding settings.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="bfbc4-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bfbc4-108">Remarks</span></span>  
- <span data-ttu-id="bfbc4-109">Jedno použití **- appconfig** je pokročilé scénáře, ve kterých má sestavení tak, aby odkazovaly na verzi rozhraní .NET Framework a .NET Framework programu Silverlight daného sestavení ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-109">One use of **-appconfig** is advanced scenarios in which an assembly has to reference both the .NET Framework version and the .NET Framework for Silverlight version of a particular reference assembly at the same time.</span></span> <span data-ttu-id="bfbc4-110">Například Návrhář XAML, zapsán ve Windows Presentation Foundation (WPF) pravděpodobně tak, aby odkazovaly na WPF plochu, pro návrháře uživatelské rozhraní a na podmnožinu WPF, která je součástí Silverlightu.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-110">For example, a XAML designer written in Windows Presentation Foundation (WPF) might have to reference both the WPF Desktop, for the designer's user interface, and the subset of WPF that is included with Silverlight.</span></span> <span data-ttu-id="bfbc4-111">Stejného návrháře sestavení má přístup k obě sestavení.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-111">The same designer assembly has to access both assemblies.</span></span> <span data-ttu-id="bfbc4-112">Ve výchozím nastavení samostatné odkazy zapříčiní chybu kompilátoru, protože vazba sestavení chápe daná dvě sestavení jako ekvivalentní.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-112">By default, the separate references cause a compiler error, because assembly binding sees the two assemblies as equivalent.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9bdd5-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9bdd5-108">Remarks</span></span>  
+ <span data-ttu-id="9bdd5-109">Jedno použití **-appconfig** je pokročilé scénáře, ve kterých sestavení musí odkazovat jak na verzi .NET Framework, tak na .NET Framework pro verzi Silverlight konkrétního referenčního sestavení ve stejnou dobu.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-109">One use of **-appconfig** is advanced scenarios in which an assembly has to reference both the .NET Framework version and the .NET Framework for Silverlight version of a particular reference assembly at the same time.</span></span> <span data-ttu-id="9bdd5-110">Například Návrhář XAML napsaný v Windows Presentation Foundation (WPF) může být nutné odkazovat jak na Desktop WPF, tak na uživatelském rozhraní návrháře a na podmnožinu WPF, která je součástí programu Silverlight.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-110">For example, a XAML designer written in Windows Presentation Foundation (WPF) might have to reference both the WPF Desktop, for the designer's user interface, and the subset of WPF that is included with Silverlight.</span></span> <span data-ttu-id="9bdd5-111">Stejné sestavení návrháře má přístup k oběma sestavením.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-111">The same designer assembly has to access both assemblies.</span></span> <span data-ttu-id="9bdd5-112">Ve výchozím nastavení samostatné odkazy způsobí chybu kompilátoru, protože vazba sestavení uvidí dvě sestavení jako ekvivalentní.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-112">By default, the separate references cause a compiler error, because assembly binding sees the two assemblies as equivalent.</span></span>  
   
- <span data-ttu-id="bfbc4-113">**- Appconfig** – možnost kompilátoru umožňuje určit umístění souboru app.config, který zakazuje výchozí chování pomocí `<supportPortability>` označit, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-113">The **-appconfig** compiler option enables you to specify the location of an app.config file that disables the default behavior by using a `<supportPortability>` tag, as shown in the following example.</span></span>  
+ <span data-ttu-id="9bdd5-113">Možnost kompilátoru **-appconfig** umožňuje určit umístění souboru App. config, který zakáže výchozí chování pomocí `<supportPortability>` značky, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-113">The **-appconfig** compiler option enables you to specify the location of an app.config file that disables the default behavior by using a `<supportPortability>` tag, as shown in the following example.</span></span>  
   
  `<supportPortability PKT="7cec85d7bea7798e" enable="false"/>`  
   
- <span data-ttu-id="bfbc4-114">Kompilátor předá umístění souboru modulu CLR vytváření vazeb sestavení logiky.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-114">The compiler passes the location of the file to the CLR's assembly-binding logic.</span></span>  
+ <span data-ttu-id="9bdd5-114">Kompilátor předá umístění souboru do logiky vytváření vazeb sestavení CLR.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-114">The compiler passes the location of the file to the CLR's assembly-binding logic.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="bfbc4-115">Pokud používáte Microsoft Build Engine (MSBuild) k sestavení aplikace, můžete nastavit **- appconfig** – možnost kompilátoru přidáním tag vlastnosti do souboru csproj.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-115">If you are using the Microsoft Build Engine (MSBuild) to build your application, you can set the **-appconfig** compiler option by adding a property tag to the .csproj file.</span></span> <span data-ttu-id="bfbc4-116">Použití souboru app.config, který je již nastaven v projektu, přidejte vlastnost značku `<UseAppConfigForCompiler>` do souboru .csproj souboru a nastavte jej na hodnotu `true`.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-116">To use the app.config file that is already set in the project, add property tag `<UseAppConfigForCompiler>` to the .csproj file and set its value to `true`.</span></span> <span data-ttu-id="bfbc4-117">K určení různých app.config soubor, přidejte vlastnost značku `<AppConfigForCompiler>` a nastavení jeho hodnoty k umístění souboru.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-117">To specify a different app.config file, add property tag `<AppConfigForCompiler>` and set its value to the location of the file.</span></span>  
+>  <span data-ttu-id="9bdd5-115">Pokud k sestavení aplikace používáte Microsoft Build Engine (MSBuild), můžete nastavit možnost kompilátoru **-appconfig** přidáním značky vlastnosti do souboru. csproj.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-115">If you are using the Microsoft Build Engine (MSBuild) to build your application, you can set the **-appconfig** compiler option by adding a property tag to the .csproj file.</span></span> <span data-ttu-id="9bdd5-116">Chcete-li použít soubor App. config, který je již nastaven v projektu, přidejte do `<UseAppConfigForCompiler>` souboru. csproj značku vlastnosti a nastavte jeho hodnotu na `true`.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-116">To use the app.config file that is already set in the project, add property tag `<UseAppConfigForCompiler>` to the .csproj file and set its value to `true`.</span></span> <span data-ttu-id="9bdd5-117">Chcete-li zadat jiný soubor App. config, přidejte značku `<AppConfigForCompiler>` vlastnosti a nastavte její hodnotu na umístění souboru.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-117">To specify a different app.config file, add property tag `<AppConfigForCompiler>` and set its value to the location of the file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="bfbc4-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="bfbc4-118">Example</span></span>  
- <span data-ttu-id="bfbc4-119">Následující příklad ukazuje soubor app.config, který umožňuje aplikaci mít odkazy na implementaci rozhraní .NET Framework a .NET Framework pro implementaci Silverlight žádné sestavení rozhraní .NET Framework, která existuje v obou implementacích.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-119">The following example shows an app.config file that enables an application to have references to both the .NET Framework implementation and the .NET Framework for Silverlight implementation of any .NET Framework assembly that exists in both implementations.</span></span> <span data-ttu-id="bfbc4-120">**- Appconfig** – možnost kompilátoru Určuje umístění tohoto app.config souboru.</span><span class="sxs-lookup"><span data-stu-id="bfbc4-120">The **-appconfig** compiler option specifies the location of this app.config file.</span></span>  
+## <a name="example"></a><span data-ttu-id="9bdd5-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="9bdd5-118">Example</span></span>  
+ <span data-ttu-id="9bdd5-119">Následující příklad ukazuje soubor App. config, který umožňuje, aby aplikace měla odkazy na implementaci .NET Framework a .NET Framework pro implementaci technologie Silverlight pro jakékoli .NET Framework sestavení, které existuje v obou implementacích.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-119">The following example shows an app.config file that enables an application to have references to both the .NET Framework implementation and the .NET Framework for Silverlight implementation of any .NET Framework assembly that exists in both implementations.</span></span> <span data-ttu-id="9bdd5-120">Možnost kompilátoru **-appconfig** určuje umístění tohoto souboru App. config.</span><span class="sxs-lookup"><span data-stu-id="9bdd5-120">The **-appconfig** compiler option specifies the location of this app.config file.</span></span>  
   
 ```xml  
 <configuration>  
@@ -54,7 +54,7 @@ ms.locfileid: "61663060"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="bfbc4-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bfbc4-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9bdd5-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9bdd5-121">See also</span></span>
 
-- [<span data-ttu-id="bfbc4-122">\<supportPortability > – Element</span><span class="sxs-lookup"><span data-stu-id="bfbc4-122">\<supportPortability> Element</span></span>](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)
-- [<span data-ttu-id="bfbc4-123">Možnosti kompilátoru jazyka C# (abecední pořadí)</span><span class="sxs-lookup"><span data-stu-id="bfbc4-123">C# Compiler Options Listed Alphabetically</span></span>](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
+- [<span data-ttu-id="9bdd5-122">\<Značka supportPortability – element ></span><span class="sxs-lookup"><span data-stu-id="9bdd5-122">\<supportPortability> Element</span></span>](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)
+- [<span data-ttu-id="9bdd5-123">Možnosti kompilátoru jazyka C# (abecední pořadí)</span><span class="sxs-lookup"><span data-stu-id="9bdd5-123">C# Compiler Options Listed Alphabetically</span></span>](./listed-alphabetically.md)
