@@ -1,52 +1,52 @@
 ---
-title: Zrušení asynchronní úlohy nebo seznamu úloh (C#)
+title: Zrušení asynchronní úlohy nebo seznamu úkolů (C#)
 ms.date: 07/20/2015
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 05ddb2c76a16ed4f79d795510434aa3abb5615d7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 93526f772f79e993767fd8f29087b6caf4e29468
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583374"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595718"
 ---
-# <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a><span data-ttu-id="ad877-102">Zrušení asynchronní úlohy nebo seznamu úloh (C#)</span><span class="sxs-lookup"><span data-stu-id="ad877-102">Cancel an async task or a list of tasks (C#)</span></span>
+# <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a><span data-ttu-id="453a6-102">Zrušení asynchronní úlohy nebo seznamu úkolů (C#)</span><span class="sxs-lookup"><span data-stu-id="453a6-102">Cancel an async task or a list of tasks (C#)</span></span>
 
-<span data-ttu-id="ad877-103">Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronní aplikace, pokud nechcete čekat na dokončení.</span><span class="sxs-lookup"><span data-stu-id="ad877-103">You can set up a button that you can use to cancel an async application if you don't want to wait for it to finish.</span></span> <span data-ttu-id="ad877-104">Podle příkladů v tomto tématu můžete přidat tlačítko pro zrušení do aplikace, která stahuje obsah z jednoho webu nebo seznamu webů.</span><span class="sxs-lookup"><span data-stu-id="ad877-104">By following the examples in this topic, you can add a cancellation button to an application that downloads the contents of one website or a list of websites.</span></span>
+<span data-ttu-id="453a6-103">Můžete nastavit tlačítko, které můžete použít k zrušení asynchronní aplikace, pokud nechcete čekat na jeho dokončení.</span><span class="sxs-lookup"><span data-stu-id="453a6-103">You can set up a button that you can use to cancel an async application if you don't want to wait for it to finish.</span></span> <span data-ttu-id="453a6-104">Podle příkladů v tomto tématu můžete přidat tlačítko zrušení do aplikace, která stáhne obsah jednoho webu nebo seznamu webů.</span><span class="sxs-lookup"><span data-stu-id="453a6-104">By following the examples in this topic, you can add a cancellation button to an application that downloads the contents of one website or a list of websites.</span></span>
 
-<span data-ttu-id="ad877-105">V příkladech se používá uživatelské rozhraní, která [Fine-Tuning asynchronní aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) popisuje.</span><span class="sxs-lookup"><span data-stu-id="ad877-105">The examples use the UI that [Fine-Tuning Your Async Application (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) describes.</span></span>
+<span data-ttu-id="453a6-105">V příkladech se používá uživatelské rozhraní, které popisuje [vyladění asynchronníC#aplikace ()](./fine-tuning-your-async-application.md) .</span><span class="sxs-lookup"><span data-stu-id="453a6-105">The examples use the UI that [Fine-Tuning Your Async Application (C#)](./fine-tuning-your-async-application.md) describes.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ad877-106">Chcete-li spustit příklady, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.</span><span class="sxs-lookup"><span data-stu-id="ad877-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>
+> <span data-ttu-id="453a6-106">Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="453a6-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>
 
-## <a name="cancel-a-task"></a><span data-ttu-id="ad877-107">Zrušení úlohy</span><span class="sxs-lookup"><span data-stu-id="ad877-107">Cancel a task</span></span>
+## <a name="cancel-a-task"></a><span data-ttu-id="453a6-107">Zrušení úlohy</span><span class="sxs-lookup"><span data-stu-id="453a6-107">Cancel a task</span></span>
 
-<span data-ttu-id="ad877-108">V prvním příkladu **zrušit** tlačítko s jeden úkol stahování.</span><span class="sxs-lookup"><span data-stu-id="ad877-108">The first example associates the **Cancel** button with a single download task.</span></span> <span data-ttu-id="ad877-109">Pokud tlačítko použijete, když aplikace stahuje obsah, stahování bude zrušeno.</span><span class="sxs-lookup"><span data-stu-id="ad877-109">If you choose the button while the application is downloading content, the download is canceled.</span></span>
+<span data-ttu-id="453a6-108">První příklad přidruží tlačítko **Zrušit** k jedné úloze stažení.</span><span class="sxs-lookup"><span data-stu-id="453a6-108">The first example associates the **Cancel** button with a single download task.</span></span> <span data-ttu-id="453a6-109">Pokud zvolíte tlačítko, zatímco aplikace stahuje obsah, stahování se zruší.</span><span class="sxs-lookup"><span data-stu-id="453a6-109">If you choose the button while the application is downloading content, the download is canceled.</span></span>
 
-### <a name="download-the-example"></a><span data-ttu-id="ad877-110">Stáhnout příklad</span><span class="sxs-lookup"><span data-stu-id="ad877-110">Download the example</span></span>
+### <a name="download-the-example"></a><span data-ttu-id="453a6-110">Stažení příkladu</span><span class="sxs-lookup"><span data-stu-id="453a6-110">Download the example</span></span>
 
-<span data-ttu-id="ad877-111">Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="ad877-111">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
+<span data-ttu-id="453a6-111">Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="453a6-111">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
 
-1. <span data-ttu-id="ad877-112">Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ad877-112">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
+1. <span data-ttu-id="453a6-112">Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="453a6-112">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
 
-2. <span data-ttu-id="ad877-113">V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.</span><span class="sxs-lookup"><span data-stu-id="ad877-113">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
+2. <span data-ttu-id="453a6-113">Na panelu nabídek vyberte **soubor** > **otevřít** > **projekt/řešení**.</span><span class="sxs-lookup"><span data-stu-id="453a6-113">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
 
-3. <span data-ttu-id="ad877-114">V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="ad877-114">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
+3. <span data-ttu-id="453a6-114">V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="453a6-114">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
 
-4. <span data-ttu-id="ad877-115">V **Průzkumníka řešení**, otevřete místní nabídku **CancelATask** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="ad877-115">In **Solution Explorer**, open the shortcut menu for the **CancelATask** project, and then choose **Set as StartUp Project**.</span></span>
+4. <span data-ttu-id="453a6-115">V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelATask** a pak zvolte **nastavit jako projekt po spuštění**.</span><span class="sxs-lookup"><span data-stu-id="453a6-115">In **Solution Explorer**, open the shortcut menu for the **CancelATask** project, and then choose **Set as StartUp Project**.</span></span>
 
-5. <span data-ttu-id="ad877-116">Zvolte **F5** spusťte projekt (nebo stiskněte klávesu **Ctrl**+**F5** ke spuštění projektu bez ladění).</span><span class="sxs-lookup"><span data-stu-id="ad877-116">Choose the **F5** key to run the project (or, press **Ctrl**+**F5** to run the project without debugging it).</span></span>
+5. <span data-ttu-id="453a6-116">Zvolte klávesu **F5** ke spuštění projektu (nebo stiskněte klávesovou **zkratku**+**F5** pro spuštění projektu bez ladění).</span><span class="sxs-lookup"><span data-stu-id="453a6-116">Choose the **F5** key to run the project (or, press **Ctrl**+**F5** to run the project without debugging it).</span></span>
 
 > [!TIP]
-> <span data-ttu-id="ad877-117">Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="ad877-117">If you don't want to download the project, you can review the MainWindow.xaml.cs files at the end of this topic.</span></span>
+> <span data-ttu-id="453a6-117">Pokud nechcete stáhnout projekt, můžete si prohlédnout soubory MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="453a6-117">If you don't want to download the project, you can review the MainWindow.xaml.cs files at the end of this topic.</span></span>
 
-### <a name="build-the-example"></a><span data-ttu-id="ad877-118">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="ad877-118">Build the example</span></span>
- <span data-ttu-id="ad877-119">Následující změny přidají **zrušit** tlačítko aplikace, která stahuje Web.</span><span class="sxs-lookup"><span data-stu-id="ad877-119">The following changes add a **Cancel** button to an application that downloads a website.</span></span> <span data-ttu-id="ad877-120">Pokud nechcete stahovat či sestavovat příklad, můžete zkontrolovat konečný produkt v části "Kompletní příklady" na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="ad877-120">If you don't want to download or build the example, you can review the final product in the "Complete Examples" section at the end of this topic.</span></span> <span data-ttu-id="ad877-121">Hvězdičky označují změny v kódu.</span><span class="sxs-lookup"><span data-stu-id="ad877-121">Asterisks mark the changes in the code.</span></span>
+### <a name="build-the-example"></a><span data-ttu-id="453a6-118">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="453a6-118">Build the example</span></span>
+ <span data-ttu-id="453a6-119">Následující změny přidají tlačítko **Storno** do aplikace, která stáhne Web.</span><span class="sxs-lookup"><span data-stu-id="453a6-119">The following changes add a **Cancel** button to an application that downloads a website.</span></span> <span data-ttu-id="453a6-120">Pokud nechcete stáhnout nebo sestavit příklad, můžete si prohlédnout konečný produkt v části "kompletní příklady" na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="453a6-120">If you don't want to download or build the example, you can review the final product in the "Complete Examples" section at the end of this topic.</span></span> <span data-ttu-id="453a6-121">Hvězdičky označují změny v kódu.</span><span class="sxs-lookup"><span data-stu-id="453a6-121">Asterisks mark the changes in the code.</span></span>
 
- <span data-ttu-id="ad877-122">Chcete-li vytvořit příklad sami krok za krokem, postupujte podle pokynů v oddíle "Stahování příkladu", ale zvolte **StarterCode** jako **spouštěný projekt** místo **CancelATask** .</span><span class="sxs-lookup"><span data-stu-id="ad877-122">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **StarterCode** as the **StartUp Project** instead of **CancelATask**.</span></span>
+ <span data-ttu-id="453a6-122">Pokud chcete sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt** vyberte **StarterCode** namísto **CancelATask**.</span><span class="sxs-lookup"><span data-stu-id="453a6-122">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **StarterCode** as the **StartUp Project** instead of **CancelATask**.</span></span>
 
- <span data-ttu-id="ad877-123">Pak přidejte následující změny do souboru MainWindow.xaml.cs tohoto projektu.</span><span class="sxs-lookup"><span data-stu-id="ad877-123">Then add the following changes to the MainWindow.xaml.cs file of that project.</span></span>
+ <span data-ttu-id="453a6-123">Pak přidejte následující změny do souboru MainWindow.xaml.cs tohoto projektu.</span><span class="sxs-lookup"><span data-stu-id="453a6-123">Then add the following changes to the MainWindow.xaml.cs file of that project.</span></span>
 
-1. <span data-ttu-id="ad877-124">Deklarovat `CancellationTokenSource` proměnnou, `cts`, která je v oboru pro všechny metody, které k němu přístup.</span><span class="sxs-lookup"><span data-stu-id="ad877-124">Declare a `CancellationTokenSource` variable, `cts`, that’s in scope for all methods that access it.</span></span>
+1. <span data-ttu-id="453a6-124">Deklarujte `CancellationTokenSource` `cts`proměnnou,, která je v oboru pro všechny metody, které k ní přistupují.</span><span class="sxs-lookup"><span data-stu-id="453a6-124">Declare a `CancellationTokenSource` variable, `cts`, that’s in scope for all methods that access it.</span></span>
 
     ```csharp
     public partial class MainWindow : Window
@@ -55,7 +55,7 @@ ms.locfileid: "64583374"
         CancellationTokenSource cts;
     ```
 
-2. <span data-ttu-id="ad877-125">Přidejte následující obslužnou rutinu události pro **zrušit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="ad877-125">Add the following event handler for the **Cancel** button.</span></span> <span data-ttu-id="ad877-126">Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda oznámit `cts` Pokud uživatel požaduje zrušení.</span><span class="sxs-lookup"><span data-stu-id="ad877-126">The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.</span></span>
+2. <span data-ttu-id="453a6-125">Přidejte následující obslužnou rutinu události pro tlačítko **Storno** .</span><span class="sxs-lookup"><span data-stu-id="453a6-125">Add the following event handler for the **Cancel** button.</span></span> <span data-ttu-id="453a6-126">Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k oznamování `cts` , když uživatel požaduje zrušení.</span><span class="sxs-lookup"><span data-stu-id="453a6-126">The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.</span></span>
 
     ```csharp
     // ***Add an event handler for the Cancel button.
@@ -68,16 +68,16 @@ ms.locfileid: "64583374"
     }
     ```
 
-3. <span data-ttu-id="ad877-127">Proveďte následující změny v obslužné rutiny **Start** tlačítko `startButton_Click`.</span><span class="sxs-lookup"><span data-stu-id="ad877-127">Make the following changes in the event handler for the **Start** button, `startButton_Click`.</span></span>
+3. <span data-ttu-id="453a6-127">Proveďte následující změny v obslužné rutině události pro `startButton_Click`tlačítko **Start** .</span><span class="sxs-lookup"><span data-stu-id="453a6-127">Make the following changes in the event handler for the **Start** button, `startButton_Click`.</span></span>
 
-    - <span data-ttu-id="ad877-128">Vytvoření instance `CancellationTokenSource`, `cts`.</span><span class="sxs-lookup"><span data-stu-id="ad877-128">Instantiate the `CancellationTokenSource`, `cts`.</span></span>
+    - <span data-ttu-id="453a6-128">Vytvořte instanci `cts`,. `CancellationTokenSource`</span><span class="sxs-lookup"><span data-stu-id="453a6-128">Instantiate the `CancellationTokenSource`, `cts`.</span></span>
 
         ```csharp
         // ***Instantiate the CancellationTokenSource.
         cts = new CancellationTokenSource();
         ```
 
-    - <span data-ttu-id="ad877-129">Při volání funkce `AccessTheWebAsync`, která stahuje obsah zadaného webu, odešlete <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost `cts` jako argument.</span><span class="sxs-lookup"><span data-stu-id="ad877-129">In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument.</span></span> <span data-ttu-id="ad877-130">`Token` Vlastnost šíří zprávy, pokud je požadováno zrušení.</span><span class="sxs-lookup"><span data-stu-id="ad877-130">The `Token` property propagates the message if cancellation is requested.</span></span> <span data-ttu-id="ad877-131">Přidáte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit stahování.</span><span class="sxs-lookup"><span data-stu-id="ad877-131">Add a catch block that displays a message if the user chooses to cancel the download operation.</span></span> <span data-ttu-id="ad877-132">Následující kód ukazuje změny.</span><span class="sxs-lookup"><span data-stu-id="ad877-132">The following code shows the changes.</span></span>
+    - <span data-ttu-id="453a6-129">V volání metody `AccessTheWebAsync`, která stahuje obsah zadaného webu, <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> odešlete vlastnost `cts` jako argument.</span><span class="sxs-lookup"><span data-stu-id="453a6-129">In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument.</span></span> <span data-ttu-id="453a6-130">Tato `Token` vlastnost šíří zprávu, pokud je požadováno zrušení.</span><span class="sxs-lookup"><span data-stu-id="453a6-130">The `Token` property propagates the message if cancellation is requested.</span></span> <span data-ttu-id="453a6-131">Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování.</span><span class="sxs-lookup"><span data-stu-id="453a6-131">Add a catch block that displays a message if the user chooses to cancel the download operation.</span></span> <span data-ttu-id="453a6-132">Následující kód ukazuje změny.</span><span class="sxs-lookup"><span data-stu-id="453a6-132">The following code shows the changes.</span></span>
 
         ```csharp
         try
@@ -97,9 +97,9 @@ ms.locfileid: "64583374"
         }
         ```
 
-4. <span data-ttu-id="ad877-133">V `AccessTheWebAsync`, použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení `GetAsync` metoda ve <xref:System.Net.Http.HttpClient> typ pro stažení obsahu webu.</span><span class="sxs-lookup"><span data-stu-id="ad877-133">In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website.</span></span> <span data-ttu-id="ad877-134">Předejte `ct`, <xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync`, jako druhý argument.</span><span class="sxs-lookup"><span data-stu-id="ad877-134">Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument.</span></span> <span data-ttu-id="ad877-135">Token přenáší zprávy, pokud uživatel klikne **zrušit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="ad877-135">The token carries the message if the user chooses the **Cancel** button.</span></span>
+4. <span data-ttu-id="453a6-133">V `AccessTheWebAsync` použijte`GetAsync` přetížení metody v<xref:System.Net.Http.HttpClient> typu ke stažení obsahu webu. <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="453a6-133">In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website.</span></span> <span data-ttu-id="453a6-134">Pass `ct`– parametr`AccessTheWebAsync`jakodruhýargument. <xref:System.Threading.CancellationToken></span><span class="sxs-lookup"><span data-stu-id="453a6-134">Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument.</span></span> <span data-ttu-id="453a6-135">Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.</span><span class="sxs-lookup"><span data-stu-id="453a6-135">The token carries the message if the user chooses the **Cancel** button.</span></span>
 
-     <span data-ttu-id="ad877-136">Následující kód ukazuje změny v `AccessTheWebAsync`.</span><span class="sxs-lookup"><span data-stu-id="ad877-136">The following code shows the changes in `AccessTheWebAsync`.</span></span>
+     <span data-ttu-id="453a6-136">Následující kód ukazuje změny v `AccessTheWebAsync`.</span><span class="sxs-lookup"><span data-stu-id="453a6-136">The following code shows the changes in `AccessTheWebAsync`.</span></span>
 
     ```csharp
     // ***Provide a parameter for the CancellationToken.
@@ -124,47 +124,47 @@ ms.locfileid: "64583374"
     }
     ```
 
-5. <span data-ttu-id="ad877-137">Pokud nezrušíte program, vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="ad877-137">If you don’t cancel the program, it produces the following output.</span></span>
+5. <span data-ttu-id="453a6-137">Pokud program nerušíte, vytvoří se následující výstup.</span><span class="sxs-lookup"><span data-stu-id="453a6-137">If you don’t cancel the program, it produces the following output.</span></span>
 
     ```text
     Ready to download.
     Length of the downloaded string: 158125.
     ```
 
-     <span data-ttu-id="ad877-138">Pokud se rozhodnete **zrušit** dříve, než program dokončí stahování obsahu, program vygeneruje následující výstup.</span><span class="sxs-lookup"><span data-stu-id="ad877-138">If you choose the **Cancel** button before the program finishes downloading the content, the program produces the following output.</span></span>
+     <span data-ttu-id="453a6-138">Pokud zvolíte tlačítko **Storno** před tím, než program dokončí stahování obsahu, program vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="453a6-138">If you choose the **Cancel** button before the program finishes downloading the content, the program produces the following output.</span></span>
 
     ```text
     Ready to download.
     Download canceled.
     ```
 
-## <a name="cancel-a-list-of-tasks"></a><span data-ttu-id="ad877-139">Zrušení seznamu úloh</span><span class="sxs-lookup"><span data-stu-id="ad877-139">Cancel a list of tasks</span></span>
+## <a name="cancel-a-list-of-tasks"></a><span data-ttu-id="453a6-139">Zrušení seznamu úloh</span><span class="sxs-lookup"><span data-stu-id="453a6-139">Cancel a list of tasks</span></span>
 
-<span data-ttu-id="ad877-140">Můžete rozšířit předchozí příklad zrušit tak řadu úkolů propojením stejné `CancellationTokenSource` instance s jednotlivými úkoly.</span><span class="sxs-lookup"><span data-stu-id="ad877-140">You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task.</span></span> <span data-ttu-id="ad877-141">Pokud se rozhodnete **zrušit** , zrušíte všechny úlohy, které ještě nebyly dokončeny.</span><span class="sxs-lookup"><span data-stu-id="ad877-141">If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.</span></span>
+<span data-ttu-id="453a6-140">Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho úloh přiřazením `CancellationTokenSource` stejné instance ke každému úkolu.</span><span class="sxs-lookup"><span data-stu-id="453a6-140">You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task.</span></span> <span data-ttu-id="453a6-141">Pokud zvolíte tlačítko **Zrušit** , zrušíte tím všechny úlohy, které ještě nebyly dokončeny.</span><span class="sxs-lookup"><span data-stu-id="453a6-141">If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.</span></span>
 
-### <a name="download-the-example"></a><span data-ttu-id="ad877-142">Stáhnout příklad</span><span class="sxs-lookup"><span data-stu-id="ad877-142">Download the example</span></span>
+### <a name="download-the-example"></a><span data-ttu-id="453a6-142">Stažení příkladu</span><span class="sxs-lookup"><span data-stu-id="453a6-142">Download the example</span></span>
 
-<span data-ttu-id="ad877-143">Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="ad877-143">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
+<span data-ttu-id="453a6-143">Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="453a6-143">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
 
-1. <span data-ttu-id="ad877-144">Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ad877-144">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
+1. <span data-ttu-id="453a6-144">Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="453a6-144">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
 
-2. <span data-ttu-id="ad877-145">V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.</span><span class="sxs-lookup"><span data-stu-id="ad877-145">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
+2. <span data-ttu-id="453a6-145">Na panelu nabídek vyberte **soubor** > **otevřít** > **projekt/řešení**.</span><span class="sxs-lookup"><span data-stu-id="453a6-145">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
 
-3. <span data-ttu-id="ad877-146">V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="ad877-146">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
+3. <span data-ttu-id="453a6-146">V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="453a6-146">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
 
-4. <span data-ttu-id="ad877-147">V **Průzkumníka řešení**, otevřete místní nabídku **CancelAListOfTasks** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="ad877-147">In **Solution Explorer**, open the shortcut menu for the **CancelAListOfTasks** project, and then choose **Set as StartUp Project**.</span></span>
+4. <span data-ttu-id="453a6-147">V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAListOfTasks** a pak zvolte **nastavit jako projekt po spuštění**.</span><span class="sxs-lookup"><span data-stu-id="453a6-147">In **Solution Explorer**, open the shortcut menu for the **CancelAListOfTasks** project, and then choose **Set as StartUp Project**.</span></span>
 
-5. <span data-ttu-id="ad877-148">Zvolte **F5** spusťte projekt.</span><span class="sxs-lookup"><span data-stu-id="ad877-148">Choose the **F5** key to run the project.</span></span>
+5. <span data-ttu-id="453a6-148">Kliknutím na klávesu **F5** spusťte projekt.</span><span class="sxs-lookup"><span data-stu-id="453a6-148">Choose the **F5** key to run the project.</span></span>
 
-     <span data-ttu-id="ad877-149">Zvolte **Ctrl**+**F5** klíče ke spuštění projektu bez ladění.</span><span class="sxs-lookup"><span data-stu-id="ad877-149">Choose the **Ctrl**+**F5** keys to run the project without debugging it.</span></span>
+     <span data-ttu-id="453a6-149">Vyberte klávesy **CTRL**+**F5** pro spuštění projektu bez ladění.</span><span class="sxs-lookup"><span data-stu-id="453a6-149">Choose the **Ctrl**+**F5** keys to run the project without debugging it.</span></span>
 
-<span data-ttu-id="ad877-150">Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="ad877-150">If you don't want to download the project, you can review the MainWindow.xaml.cs files at the end of this topic.</span></span>
+<span data-ttu-id="453a6-150">Pokud nechcete stáhnout projekt, můžete si prohlédnout soubory MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="453a6-150">If you don't want to download the project, you can review the MainWindow.xaml.cs files at the end of this topic.</span></span>
 
-### <a name="build-the-example"></a><span data-ttu-id="ad877-151">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="ad877-151">Build the example</span></span>
+### <a name="build-the-example"></a><span data-ttu-id="453a6-151">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="453a6-151">Build the example</span></span>
 
-<span data-ttu-id="ad877-152">Pokud chcete rozšířit příklad sami krok za krokem, postupujte podle pokynů v oddíle "Stahování příkladu", ale zvolte **CancelATask** jako **spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="ad877-152">To extend the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelATask** as the **StartUp Project**.</span></span> <span data-ttu-id="ad877-153">Přidejte následující změny do tohoto projektu.</span><span class="sxs-lookup"><span data-stu-id="ad877-153">Add the following changes to that project.</span></span> <span data-ttu-id="ad877-154">Hvězdičky označují změny v programu.</span><span class="sxs-lookup"><span data-stu-id="ad877-154">Asterisks mark the changes in the program.</span></span>
+<span data-ttu-id="453a6-152">Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelATask** .</span><span class="sxs-lookup"><span data-stu-id="453a6-152">To extend the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelATask** as the **StartUp Project**.</span></span> <span data-ttu-id="453a6-153">Do tohoto projektu přidejte následující změny.</span><span class="sxs-lookup"><span data-stu-id="453a6-153">Add the following changes to that project.</span></span> <span data-ttu-id="453a6-154">Hvězdičky označují změny v programu.</span><span class="sxs-lookup"><span data-stu-id="453a6-154">Asterisks mark the changes in the program.</span></span>
 
-1. <span data-ttu-id="ad877-155">Přidejte metodu pro vytvoření seznamu webových adres.</span><span class="sxs-lookup"><span data-stu-id="ad877-155">Add a method to create a list of web addresses.</span></span>
+1. <span data-ttu-id="453a6-155">Přidejte metodu pro vytvoření seznamu webových adres.</span><span class="sxs-lookup"><span data-stu-id="453a6-155">Add a method to create a list of web addresses.</span></span>
 
     ```csharp
     // ***Add a method that creates a list of web addresses.
@@ -184,14 +184,14 @@ ms.locfileid: "64583374"
     }
     ```
 
-2. <span data-ttu-id="ad877-156">Volání metody `AccessTheWebAsync`.</span><span class="sxs-lookup"><span data-stu-id="ad877-156">Call the method in `AccessTheWebAsync`.</span></span>
+2. <span data-ttu-id="453a6-156">Zavolejte metodu v `AccessTheWebAsync`.</span><span class="sxs-lookup"><span data-stu-id="453a6-156">Call the method in `AccessTheWebAsync`.</span></span>
 
     ```csharp
     // ***Call SetUpURLList to make a list of web addresses.
     List<string> urlList = SetUpURLList();
     ```
 
-3. <span data-ttu-id="ad877-157">Přidejte následující smyčku v `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.</span><span class="sxs-lookup"><span data-stu-id="ad877-157">Add the following loop in `AccessTheWebAsync` to process each web address in the list.</span></span>
+3. <span data-ttu-id="453a6-157">Přidejte následující smyčku `AccessTheWebAsync` do pro zpracování každé webové adresy v seznamu.</span><span class="sxs-lookup"><span data-stu-id="453a6-157">Add the following loop in `AccessTheWebAsync` to process each web address in the list.</span></span>
 
     ```csharp
     // ***Add a loop to process the list of web addresses.
@@ -210,19 +210,19 @@ ms.locfileid: "64583374"
     }
     ```
 
-4. <span data-ttu-id="ad877-158">Protože `AccessTheWebAsync` zobrazí délky, metoda nemusí nic vrátit.</span><span class="sxs-lookup"><span data-stu-id="ad877-158">Because `AccessTheWebAsync` displays the lengths, the method doesn't need to return anything.</span></span> <span data-ttu-id="ad877-159">Odeberte příkaz return a změňte návratový typ metody, která <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.</span><span class="sxs-lookup"><span data-stu-id="ad877-159">Remove the return statement, and change the return type of the method to <xref:System.Threading.Tasks.Task> instead of <xref:System.Threading.Tasks.Task%601>.</span></span>
+4. <span data-ttu-id="453a6-158">Vzhledem `AccessTheWebAsync` k tomu, že se zobrazí délka, metoda nemusí vracet cokoli.</span><span class="sxs-lookup"><span data-stu-id="453a6-158">Because `AccessTheWebAsync` displays the lengths, the method doesn't need to return anything.</span></span> <span data-ttu-id="453a6-159">Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>místo.</span><span class="sxs-lookup"><span data-stu-id="453a6-159">Remove the return statement, and change the return type of the method to <xref:System.Threading.Tasks.Task> instead of <xref:System.Threading.Tasks.Task%601>.</span></span>
 
     ```csharp
     async Task AccessTheWebAsync(CancellationToken ct)
     ```
 
-     <span data-ttu-id="ad877-160">Volejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.</span><span class="sxs-lookup"><span data-stu-id="ad877-160">Call the method from `startButton_Click` by using a statement instead of an expression.</span></span>
+     <span data-ttu-id="453a6-160">Volejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.</span><span class="sxs-lookup"><span data-stu-id="453a6-160">Call the method from `startButton_Click` by using a statement instead of an expression.</span></span>
 
     ```csharp
     await AccessTheWebAsync(cts.Token);
     ```
 
-5. <span data-ttu-id="ad877-161">Pokud nezrušíte program, vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="ad877-161">If you don’t cancel the program, it produces the following output.</span></span>
+5. <span data-ttu-id="453a6-161">Pokud program nerušíte, vytvoří se následující výstup.</span><span class="sxs-lookup"><span data-stu-id="453a6-161">If you don’t cancel the program, it produces the following output.</span></span>
 
     ```text
     Length of the downloaded string: 35939.
@@ -242,7 +242,7 @@ ms.locfileid: "64583374"
     Downloads complete.
     ```
 
-     <span data-ttu-id="ad877-162">Pokud se rozhodnete **zrušit** tlačítko předtím, než se stahování dokončí, obsahuje výstup rozsah stahování, které dokončen před zrušením.</span><span class="sxs-lookup"><span data-stu-id="ad877-162">If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.</span></span>
+     <span data-ttu-id="453a6-162">Pokud zvolíte tlačítko **Zrušit** před dokončením stahování, bude výstup obsahovat délky stahování, která byla dokončena před zrušením.</span><span class="sxs-lookup"><span data-stu-id="453a6-162">If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.</span></span>
 
     ```text
     Length of the downloaded string: 35939.
@@ -254,15 +254,15 @@ ms.locfileid: "64583374"
     Downloads canceled.
     ```
 
-## <a name="complete-examples"></a><span data-ttu-id="ad877-163">Kompletní příklady</span><span class="sxs-lookup"><span data-stu-id="ad877-163">Complete examples</span></span>
+## <a name="complete-examples"></a><span data-ttu-id="453a6-163">Kompletní příklady</span><span class="sxs-lookup"><span data-stu-id="453a6-163">Complete examples</span></span>
 
-<span data-ttu-id="ad877-164">Následující části obsahují kód pro každý z předchozích příkladů.</span><span class="sxs-lookup"><span data-stu-id="ad877-164">The following sections contain the code for each of the previous examples.</span></span> <span data-ttu-id="ad877-165">Všimněte si, že musíte přidat odkaz pro <xref:System.Net.Http>.</span><span class="sxs-lookup"><span data-stu-id="ad877-165">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>
+<span data-ttu-id="453a6-164">Následující části obsahují kód pro každý z předchozích příkladů.</span><span class="sxs-lookup"><span data-stu-id="453a6-164">The following sections contain the code for each of the previous examples.</span></span> <span data-ttu-id="453a6-165">Všimněte si, že je nutné přidat odkaz <xref:System.Net.Http>pro.</span><span class="sxs-lookup"><span data-stu-id="453a6-165">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>
 
-<span data-ttu-id="ad877-166">Můžete si stáhnout projektů z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span><span class="sxs-lookup"><span data-stu-id="ad877-166">You can download the projects from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span></span>
+<span data-ttu-id="453a6-166">Projekty si můžete stáhnout z [Async Sample: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)</span><span class="sxs-lookup"><span data-stu-id="453a6-166">You can download the projects from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span></span>
 
-### <a name="example---cancel-a-task"></a><span data-ttu-id="ad877-167">Příklad: zrušení úlohy</span><span class="sxs-lookup"><span data-stu-id="ad877-167">Example - Cancel a task</span></span>
+### <a name="example---cancel-a-task"></a><span data-ttu-id="453a6-167">Příklad – zrušení úlohy</span><span class="sxs-lookup"><span data-stu-id="453a6-167">Example - Cancel a task</span></span>
 
-<span data-ttu-id="ad877-168">Následující kód je celý soubor MainWindow.xaml.cs pro příklad, který zruší jednu úlohu.</span><span class="sxs-lookup"><span data-stu-id="ad877-168">The following code is the complete MainWindow.xaml.cs file for the example that cancels a single task.</span></span>
+<span data-ttu-id="453a6-168">Následující kód je úplný soubor MainWindow.xaml.cs pro příklad, který zruší jeden úkol.</span><span class="sxs-lookup"><span data-stu-id="453a6-168">The following code is the complete MainWindow.xaml.cs file for the example that cancels a single task.</span></span>
 
 ```csharp
 using System;
@@ -371,9 +371,9 @@ namespace CancelATask
 }
 ```
 
-### <a name="example---cancel-a-list-of-tasks"></a><span data-ttu-id="ad877-169">Příklad – zrušení seznamu úloh</span><span class="sxs-lookup"><span data-stu-id="ad877-169">Example - Cancel a list of tasks</span></span>
+### <a name="example---cancel-a-list-of-tasks"></a><span data-ttu-id="453a6-169">Příklad – zrušení seznamu úloh</span><span class="sxs-lookup"><span data-stu-id="453a6-169">Example - Cancel a list of tasks</span></span>
 
-<span data-ttu-id="ad877-170">Následující kód je celý soubor MainWindow.xaml.cs pro příklad, který zruší seznam úkolů.</span><span class="sxs-lookup"><span data-stu-id="ad877-170">The following code is the complete MainWindow.xaml.cs file for the example that cancels a list of tasks.</span></span>
+<span data-ttu-id="453a6-170">Následující kód je úplný soubor MainWindow.xaml.cs pro příklad, který zruší seznam úkolů.</span><span class="sxs-lookup"><span data-stu-id="453a6-170">The following code is the complete MainWindow.xaml.cs file for the example that cancels a list of tasks.</span></span>
 
 ```csharp
 using System;
@@ -517,10 +517,10 @@ namespace CancelAListOfTasks
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ad877-171">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ad877-171">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="453a6-171">Viz také:</span><span class="sxs-lookup"><span data-stu-id="453a6-171">See also</span></span>
 
 - <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
-- [<span data-ttu-id="ad877-172">Asynchronní programování pomocí modifikátoru async a operátoru await (C#)</span><span class="sxs-lookup"><span data-stu-id="ad877-172">Asynchronous Programming with async and await (C#)</span></span>](../../../../csharp/programming-guide/concepts/async/index.md)
-- [<span data-ttu-id="ad877-173">Doladění aplikace s modifikátorem Async (C#)</span><span class="sxs-lookup"><span data-stu-id="ad877-173">Fine-Tuning Your Async Application (C#)</span></span>](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [<span data-ttu-id="ad877-174">Ukázka asynchronní metody: Vyladění aplikace</span><span class="sxs-lookup"><span data-stu-id="ad877-174">Async Sample: Fine Tuning Your Application</span></span>](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [<span data-ttu-id="453a6-172">Asynchronní programování s modifikátorem Async aC#operátoru Await ()</span><span class="sxs-lookup"><span data-stu-id="453a6-172">Asynchronous Programming with async and await (C#)</span></span>](./index.md)
+- [<span data-ttu-id="453a6-173">Vyladění asynchronní aplikace (C#)</span><span class="sxs-lookup"><span data-stu-id="453a6-173">Fine-Tuning Your Async Application (C#)</span></span>](./fine-tuning-your-async-application.md)
+- [<span data-ttu-id="453a6-174">Asynchronní Ukázka: Jemné ladění aplikace</span><span class="sxs-lookup"><span data-stu-id="453a6-174">Async Sample: Fine Tuning Your Application</span></span>](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (C#)'
+title: 'Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().'
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: c8f01cb53665d01d4c7861bab758ecc9e0dcc3c8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: decdbe45afd12581a53ed70ec843ee72f54f0409
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585718"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593336"
 ---
-# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a><span data-ttu-id="629b7-102">Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="629b7-102">How to: Find the Set Difference Between Two Lists (LINQ) (C#)</span></span>
-<span data-ttu-id="629b7-103">Tento příklad ukazuje způsob použití LINQ k porovnání dvou seznamů řetězců a výstup těchto řádků, které jsou v names1.txt, ale ne v names2.txt.</span><span class="sxs-lookup"><span data-stu-id="629b7-103">This example shows how to use LINQ to compare two lists of strings and output those lines that are in names1.txt but not in names2.txt.</span></span>  
+# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a><span data-ttu-id="1133c-102">Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().</span><span class="sxs-lookup"><span data-stu-id="1133c-102">How to: Find the Set Difference Between Two Lists (LINQ) (C#)</span></span>
+<span data-ttu-id="1133c-103">Tento příklad ukazuje, jak použít LINQ k porovnání dvou seznamů řetězců a výstupu těchto řádků, které jsou v names1. txt, ale ne v names2. txt.</span><span class="sxs-lookup"><span data-stu-id="1133c-103">This example shows how to use LINQ to compare two lists of strings and output those lines that are in names1.txt but not in names2.txt.</span></span>  
   
-### <a name="to-create-the-data-files"></a><span data-ttu-id="629b7-104">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="629b7-104">To create the data files</span></span>  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="1133c-104">Vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="1133c-104">To create the data files</span></span>  
   
-1. <span data-ttu-id="629b7-105">Zkopírujte names1.txt a names2.txt na složku řešení, jak je znázorněno v [jak: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md).</span><span class="sxs-lookup"><span data-stu-id="629b7-105">Copy names1.txt and names2.txt to your solution folder as shown in [How to: Combine and Compare String Collections (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md).</span></span>  
+1. <span data-ttu-id="1133c-105">Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v [tématu How to: Kombinování a porovnávání kolekcí řetězců (LINQ)C#(](./how-to-combine-and-compare-string-collections-linq.md)).</span><span class="sxs-lookup"><span data-stu-id="1133c-105">Copy names1.txt and names2.txt to your solution folder as shown in [How to: Combine and Compare String Collections (LINQ) (C#)](./how-to-combine-and-compare-string-collections-linq.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="629b7-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="629b7-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="1133c-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="1133c-106">Example</span></span>  
   
 ```csharp  
 class CompareLists  
@@ -52,11 +52,11 @@ class CompareLists
      */  
 ```  
   
- <span data-ttu-id="629b7-107">Některé typy dotazování operací v jazyce C#, jako například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>, a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založených na volání metody.</span><span class="sxs-lookup"><span data-stu-id="629b7-107">Some types of query operations in C#, such as <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>, and <xref:System.Linq.Enumerable.Concat%2A>, can only be expressed in method-based syntax.</span></span>  
+ <span data-ttu-id="1133c-107">Některé typy C#operací dotazů v, například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A> <xref:System.Linq.Enumerable.Union%2A>, a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založené na metodě.</span><span class="sxs-lookup"><span data-stu-id="1133c-107">Some types of query operations in C#, such as <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>, and <xref:System.Linq.Enumerable.Concat%2A>, can only be expressed in method-based syntax.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="629b7-108">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="629b7-108">Compiling the Code</span></span>  
- <span data-ttu-id="629b7-109">Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="629b7-109">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="1133c-108">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="1133c-108">Compiling the Code</span></span>  
+ <span data-ttu-id="1133c-109">Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="1133c-109">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="629b7-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="629b7-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1133c-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1133c-110">See also</span></span>
 
-- [<span data-ttu-id="629b7-111">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="629b7-111">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="1133c-111">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="1133c-111">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Projektování grafu objektu (C#)'
+title: 'Postupy: Projekt grafu objektů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: 759db3800b02ee3f6e263b4d43374a9160703b2f
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: dcfdd8cba95d729a1f9bda3adb4b5fd8690b724a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486573"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592987"
 ---
-# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="332fb-102">Postupy: Projektování grafu objektu (C#)</span><span class="sxs-lookup"><span data-stu-id="332fb-102">How to: Project an Object Graph (C#)</span></span>
-<span data-ttu-id="332fb-103">Toto téma ukazuje, jak do projektu, nebo vyplnit, grafu objektů ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="332fb-103">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
+# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="b3f05-102">Postupy: Projekt grafu objektů (C#)</span><span class="sxs-lookup"><span data-stu-id="b3f05-102">How to: Project an Object Graph (C#)</span></span>
+<span data-ttu-id="b3f05-103">Toto téma ukazuje, jak projektovat nebo naplnit objekt grafu z XML.</span><span class="sxs-lookup"><span data-stu-id="b3f05-103">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="332fb-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="332fb-104">Example</span></span>  
- <span data-ttu-id="332fb-105">Následující kód naplní grafu objektu s `Address`, `PurchaseOrder`, a `PurchaseOrderItem` třídy z [ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md) dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="332fb-105">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="b3f05-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b3f05-104">Example</span></span>  
+ <span data-ttu-id="b3f05-105">`Address`Následující kód naplní graf objektů pomocí `PurchaseOrderItem` tříd, `PurchaseOrder`a z [ukázkového souboru XML: Typický dokument XML nákupní objednávky (](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b3f05-105">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
   
 ```csharp  
 class Address  
@@ -214,9 +214,9 @@ class Program {
 }  
 ```  
   
- <span data-ttu-id="332fb-106">V tomto příkladu, výsledek [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz se vrátí jako <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`.</span><span class="sxs-lookup"><span data-stu-id="332fb-106">In this example, the result of the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="332fb-107">Položky v `PurchaseOrder` třídy jsou typu <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`.</span><span class="sxs-lookup"><span data-stu-id="332fb-107">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="332fb-108">Tento kód použije <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření k vytvoření <xref:System.Collections.Generic.List%601> kolekce z výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="332fb-108">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
+ <span data-ttu-id="b3f05-106">V tomto příkladu je výsledek [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu vrácen <xref:System.Collections.Generic.IEnumerable%601> jako `PurchaseOrderItem`.</span><span class="sxs-lookup"><span data-stu-id="b3f05-106">In this example, the result of the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="b3f05-107">Položky ve `PurchaseOrder` třídě jsou <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`typu.</span><span class="sxs-lookup"><span data-stu-id="b3f05-107">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="b3f05-108">Kód používá <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření k <xref:System.Collections.Generic.List%601> vytvoření kolekce z výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="b3f05-108">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
   
- <span data-ttu-id="332fb-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="332fb-109">The example produces the following output:</span></span>  
+ <span data-ttu-id="b3f05-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b3f05-109">The example produces the following output:</span></span>  
   
 ```  
 PurchaseOrderNumber: 99503  
@@ -255,7 +255,7 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="332fb-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="332fb-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b3f05-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b3f05-110">See also</span></span>
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>

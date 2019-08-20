@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Zápis do XML metody osy LINQ (C#)'
+title: 'Postupy: Zápis metody osy LINQ to XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 6e777e615d21dd43317f0813461a3f1d8a506c90
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 71d9d0e9ba1f63d8badb1f10ab7ede1dbb30a19f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484658"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592179"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a><span data-ttu-id="79568-102">Postupy: Zápis do XML metody osy LINQ (C#)</span><span class="sxs-lookup"><span data-stu-id="79568-102">How to: Write a LINQ to XML Axis Method (C#)</span></span>
-<span data-ttu-id="79568-103">Můžete napsat vlastní metody osy pro načtení kolekce ze stromu XML.</span><span class="sxs-lookup"><span data-stu-id="79568-103">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="79568-104">Jedním z nejlepších způsobů je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy.</span><span class="sxs-lookup"><span data-stu-id="79568-104">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="79568-105">Můžete napsat metodu rozšíření k vrácení konkrétním podmnožinám elementy nebo atributy, na základě požadavků vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="79568-105">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a><span data-ttu-id="c5954-102">Postupy: Zápis metody osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="c5954-102">How to: Write a LINQ to XML Axis Method (C#)</span></span>
+<span data-ttu-id="c5954-103">Můžete napsat vlastní metody osy pro načtení kolekcí ze stromu XML.</span><span class="sxs-lookup"><span data-stu-id="c5954-103">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="c5954-104">Jedním z nejlepších způsobů, jak to provést, je napsat metodu rozšíření, která vrátí kolekci prvků nebo atributů.</span><span class="sxs-lookup"><span data-stu-id="c5954-104">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="c5954-105">Můžete napsat metodu rozšíření, která vrátí konkrétní podmnožinu prvků nebo atributů na základě požadavků vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="c5954-105">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="79568-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="79568-106">Example</span></span>  
- <span data-ttu-id="79568-107">Následující příklad používá dvě metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="79568-107">The following example uses two extension methods.</span></span> <span data-ttu-id="79568-108">První metoda rozšíření `GetXPath`, pracuje <xref:System.Xml.Linq.XObject>a vrátí výraz XPath, který při vyhodnocování vrátí uzlu nebo atributu.</span><span class="sxs-lookup"><span data-stu-id="79568-108">The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute.</span></span> <span data-ttu-id="79568-109">Druhá metoda rozšíření `Find`, pracuje <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="79568-109">The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="79568-110">Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objekty a <xref:System.Xml.Linq.XElement> objektů, které obsahují některé zadaný text.</span><span class="sxs-lookup"><span data-stu-id="79568-110">It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.</span></span>  
+## <a name="example"></a><span data-ttu-id="c5954-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="c5954-106">Example</span></span>  
+ <span data-ttu-id="c5954-107">Následující příklad používá dvě metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="c5954-107">The following example uses two extension methods.</span></span> <span data-ttu-id="c5954-108">První rozšiřující metoda, `GetXPath`, pracuje na <xref:System.Xml.Linq.XObject>a vrací výraz XPath, který při vyhodnocování vrátí uzel nebo atribut.</span><span class="sxs-lookup"><span data-stu-id="c5954-108">The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute.</span></span> <span data-ttu-id="c5954-109">Druhá rozšiřující metoda, `Find`, pracuje na. <xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="c5954-109">The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="c5954-110">Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objektů a <xref:System.Xml.Linq.XElement> objektů, které obsahují nějaký zadaný text.</span><span class="sxs-lookup"><span data-stu-id="c5954-110">It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.</span></span>  
   
- <span data-ttu-id="79568-111">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="79568-111">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="c5954-111">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c5954-111">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 public static class MyExtensions  
@@ -278,7 +278,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="79568-112">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="79568-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="c5954-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="c5954-112">This code produces the following output:</span></span>  
   
 ```  
 /PurchaseOrders/PurchaseOrder[1]/@OrderDate  

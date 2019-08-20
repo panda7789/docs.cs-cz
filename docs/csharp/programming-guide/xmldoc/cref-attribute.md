@@ -1,26 +1,26 @@
 ---
-title: cref – atribut – C# Průvodce programováním pro službu
+title: Atribut cref – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: 332fd7499a9948bb9ab418a3ab8b6c40ad0bcb85
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d088e1fcd0a1d1910b1284909dccf7b7d7b1d479
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634818"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588163"
 ---
-# <a name="cref-attribute-c-programming-guide"></a><span data-ttu-id="d0cf0-102">cref – atribut (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="d0cf0-102">cref Attribute (C# Programming Guide)</span></span>
-<span data-ttu-id="d0cf0-103">`cref` Atribut ve značce dokumentaci XML znamená "odkaz na kód."</span><span class="sxs-lookup"><span data-stu-id="d0cf0-103">The `cref` attribute in an XML documentation tag means "code reference."</span></span> <span data-ttu-id="d0cf0-104">Určuje, že vnitřní text značky je prvek kódu, jako je typ, metodu nebo vlastnost.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-104">It specifies that the inner text of the tag is a code element, such as a type, method, or property.</span></span> <span data-ttu-id="d0cf0-105">Dokumentace ke službě nástroje, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) použít `cref` atributů, které mají automaticky generovat hypertextové odkazy na stránky, kde je zdokumentován tento typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-105">Documentation tools like [DocFX](https://dotnet.github.io/docfx/) and [Sandcastle](https://github.com/EWSoftware/SHFB) use the `cref` attributes to automatically generate hyperlinks to the page where the type or member is documented.</span></span>  
+# <a name="cref-attribute-c-programming-guide"></a><span data-ttu-id="686f6-102">cref – atribut (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="686f6-102">cref Attribute (C# Programming Guide)</span></span>
+<span data-ttu-id="686f6-103">`cref` Atribut v dokumentaci XML označuje označení "odkaz na kód".</span><span class="sxs-lookup"><span data-stu-id="686f6-103">The `cref` attribute in an XML documentation tag means "code reference."</span></span> <span data-ttu-id="686f6-104">Určuje, zda je vnitřní text značky prvkem kódu, jako je například typ, metoda nebo vlastnost.</span><span class="sxs-lookup"><span data-stu-id="686f6-104">It specifies that the inner text of the tag is a code element, such as a type, method, or property.</span></span> <span data-ttu-id="686f6-105">Nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , používají `cref` atributy k automatickému vygenerování hypertextových odkazů na stránku, kde je daný typ nebo člen dokumentován.</span><span class="sxs-lookup"><span data-stu-id="686f6-105">Documentation tools like [DocFX](https://dotnet.github.io/docfx/) and [Sandcastle](https://github.com/EWSoftware/SHFB) use the `cref` attributes to automatically generate hyperlinks to the page where the type or member is documented.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d0cf0-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="d0cf0-106">Example</span></span>  
- <span data-ttu-id="d0cf0-107">Následující příklad ukazuje `cref` atributy použité v [ \<naleznete v tématu >](../../../csharp/programming-guide/xmldoc/see.md) značky.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-107">The following example shows `cref` attributes used in [\<see>](../../../csharp/programming-guide/xmldoc/see.md) tags.</span></span>  
+## <a name="example"></a><span data-ttu-id="686f6-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="686f6-106">Example</span></span>  
+ <span data-ttu-id="686f6-107">Následující příklad ukazuje `cref` atributy používané v [ \<tématu >](./see.md) značek.</span><span class="sxs-lookup"><span data-stu-id="686f6-107">The following example shows `cref` attributes used in [\<see>](./see.md) tags.</span></span>  
   
  [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  
   
- <span data-ttu-id="d0cf0-108">Při kompilaci, program vygeneruje následující soubor XML.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-108">When compiled, the program produces the following XML file.</span></span> <span data-ttu-id="d0cf0-109">Všimněte si, že `cref` atribut pro `GetZero` metody, například transformaci pomocí kompilátoru, aby `"M:TestNamespace.TestClass.GetZero"`.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-109">Notice that the `cref` attribute for the `GetZero` method, for example, has been transformed by the compiler to `"M:TestNamespace.TestClass.GetZero"`.</span></span> <span data-ttu-id="d0cf0-110">Předpona "M" znamená "method" a je konvence, který je rozpoznán dokumentace nástrojů, jako je DocFX a Sandcastle.</span><span class="sxs-lookup"><span data-stu-id="d0cf0-110">The "M:" prefix means "method" and is a convention that is recognized by documentation tools such as DocFX and Sandcastle.</span></span> <span data-ttu-id="d0cf0-111">Úplný seznam předpon, naleznete v tématu [zpracování souboru XML](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md).</span><span class="sxs-lookup"><span data-stu-id="d0cf0-111">For a complete list of prefixes, see [Processing the XML File](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md).</span></span>  
+ <span data-ttu-id="686f6-108">Při kompilaci program vytvoří následující soubor XML.</span><span class="sxs-lookup"><span data-stu-id="686f6-108">When compiled, the program produces the following XML file.</span></span> <span data-ttu-id="686f6-109">Všimněte si, `cref` že atribut `GetZero` metody, například, byl transformován kompilátorem na `"M:TestNamespace.TestClass.GetZero"`.</span><span class="sxs-lookup"><span data-stu-id="686f6-109">Notice that the `cref` attribute for the `GetZero` method, for example, has been transformed by the compiler to `"M:TestNamespace.TestClass.GetZero"`.</span></span> <span data-ttu-id="686f6-110">Předpona "M:" znamená "metoda" a je konvence, kterou rozpoznávají nástroje dokumentace, jako jsou DocFX a Sandcastle.</span><span class="sxs-lookup"><span data-stu-id="686f6-110">The "M:" prefix means "method" and is a convention that is recognized by documentation tools such as DocFX and Sandcastle.</span></span> <span data-ttu-id="686f6-111">Úplný seznam předpon najdete v tématu [zpracování souboru XML](./processing-the-xml-file.md).</span><span class="sxs-lookup"><span data-stu-id="686f6-111">For a complete list of prefixes, see [Processing the XML File](./processing-the-xml-file.md).</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -119,7 +119,7 @@ ms.locfileid: "65634818"
 </doc>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d0cf0-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0cf0-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="686f6-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="686f6-112">See also</span></span>
 
-- [<span data-ttu-id="d0cf0-113">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="d0cf0-113">XML Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/index.md)
-- [<span data-ttu-id="d0cf0-114">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="d0cf0-114">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [<span data-ttu-id="686f6-113">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="686f6-113">XML Documentation Comments</span></span>](./index.md)
+- [<span data-ttu-id="686f6-114">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="686f6-114">Recommended Tags for Documentation Comments</span></span>](./recommended-tags-for-documentation-comments.md)
