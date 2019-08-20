@@ -177,7 +177,7 @@
           href: keywords/out-parameter-modifier.md
     - name: Klíčová slova oboru názvů
       items:
-        - name: – obor názvů
+        - name: Obor názvů
           href: keywords/namespace.md
         - name: používání
           items:
@@ -209,15 +209,15 @@
       items:
         - name: base
           href: keywords/base.md
-        - name: this
+        - name: tohoto provozu
           href: keywords/this.md
     - name: Literálová klíčová slova
       items:
         - name: 'null'
           href: keywords/null.md
-        - name: 'true'
+        - name: true (pravda)
           href: keywords/true-literal.md
-        - name: 'false'
+        - name: false (nepravda)
           href: keywords/false-literal.md
         - name: default
           href: keywords/default.md
@@ -239,7 +239,7 @@
           href: keywords/set.md
         - name: when (podmínka filtru)
           href: keywords/when.md
-        - name: value
+        - name: hodnota
           href: keywords/value.md
         - name: yield
           href: keywords/yield.md
@@ -297,9 +297,9 @@
     - name: Operátory pro přístup k členům
       href: operators/member-access-operators.md
       displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
-    - name: Operátory pro testování typů a operátory převodu
-      href: operators/type-testing-and-conversion-operators.md
-      displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), cast'
+    - name: Operátory pro testování typů a přetypování
+      href: operators/type-testing-and-cast.md
+      displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
     - name: Operátory převodu definované uživatelem
       href: operators/user-defined-conversion-operators.md
       displayName: 'implicit, explicit'
@@ -375,7 +375,7 @@
       href: preprocessor-directives/preprocessor-error.md
     - name: '#line'
       href: preprocessor-directives/preprocessor-line.md
-    - name: '#oblast'
+    - name: '#.'
       href: preprocessor-directives/preprocessor-region.md
     - name: '#endregion'
       href: preprocessor-directives/preprocessor-endregion.md
@@ -533,7 +533,7 @@
       href: ../../../_csharplang/spec/expressions.md
     - name: Příkazy
       href: ../../../_csharplang/spec/statements.md
-    - name: Jmenné prostory
+    - name: Obory názvů
       href: ../../../_csharplang/spec/namespaces.md
     - name: Třídy
       href: ../../../_csharplang/spec/classes.md
