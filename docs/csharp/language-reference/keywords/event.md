@@ -1,5 +1,5 @@
 ---
-title: události – C# odkaz
+title: odkaz na C# událost
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,48 +10,48 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 9575d6e998ff709b06f1da21abd17a3629c17029
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 4149663422908069b5b65ed3c32ccc6dbdfd7729
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251044"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605811"
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
-`event` – Klíčové slovo se používá pro deklaraci události ve třídě vydavatele.  
+`event` Klíčové slovo slouží k deklaraci události ve třídě vydavatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřazený typ delegáta. Pro příklad úplného kódu, který ukazuje způsob použití obecného <xref:System.EventHandler%601> delegáta typu a jak přihlásit odběr události a vytvořit metodu obslužné rutiny události, najdete v článku [jak: Publikování událostí odpovídajících směrnicím rozhraní .NET](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
+ Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřízený typ delegátu. Pro kompletní příklad kódu, který také ukazuje, jak použít typ obecného <xref:System.EventHandler%601> delegáta a jak se přihlásit k odběru události a vytvořit metodu obslužné rutiny události, [naleznete v tématu How to: Publikujte události, které jsou v](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)souladu s pokyny pro .NET Framework.  
   
  [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
   
- Události jsou zvláštním druhem vícesměrového vysílání delegát, který lze vyvolat pouze z v rámci třídy nebo struktury, ve kterém jsou deklarovány (třída, vydavatel). Pokud k události registrovat jiné třídy nebo struktury, jejich obslužné rutiny události bude volána po vydavatele třída vyvolá událost. Další informace a příklady kódu naleznete v tématu [události](../../../csharp/programming-guide/events/index.md) a [delegáti](../../../csharp/programming-guide/delegates/index.md).  
+ Události jsou speciálním druhem delegáta vícesměrového vysílání, který lze volat pouze z třídy nebo struktury, kde jsou deklarovány (třída vydavatele). Pokud se jiné třídy nebo struktury přihlásí k odběru události, jejich metody obslužné rutiny události budou volány, když třída vydavatele vyvolá událost. Další informace a příklady kódu naleznete v tématu [události](../../programming-guide/events/index.md) a [Delegáti](../../programming-guide/delegates/index.md).  
   
- Události může být označený jako [veřejné](../../../csharp/language-reference/keywords/public.md), [privátní](../../../csharp/language-reference/keywords/private.md), [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), [interní chráněné](../../../csharp/language-reference/keywords/protected-internal.md) nebo [private, protected](../../../csharp/language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují, jak se uživatelé třídy mají přístup k události. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Události se dají označit jako [veřejné](./public.md), [privátní](./private.md), [chráněné](./protected.md), [interní](./internal.md), [chráněné interní](./protected-internal.md) nebo [soukromé](./private-protected.md). Tyto modifikátory přístupu definují, jak mohou uživatelé třídy přistupovat k události. Další informace najdete v tématu [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md).  
   
 ## <a name="keywords-and-events"></a>Klíčová slova a události  
- Následující klíčová slova se vztahují na události.  
+ Následující klíčová slova platí pro události.  
   
 |Klíčové slovo|Popis|Další informace|  
 |-------------|-----------------|--------------------------|  
-|[static](../../../csharp/language-reference/keywords/static.md)|Zpřístupní události volajících v okamžiku, i v případě, že neexistuje žádná instance třídy.|[Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|  
-|[virtual](../../../csharp/language-reference/keywords/virtual.md)|Umožňuje odvozeným třídám přepsat chování události pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo.|[Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)|  
-|[sealed](../../../csharp/language-reference/keywords/sealed.md)|Určuje, že odvozené třídy, už nejsou virtuální.||  
-|[abstract](../../../csharp/language-reference/keywords/abstract.md)|Kompilátor nevygeneruje `add` a `remove` bloky přístupového objektu události a proto odvozené třídy musí poskytovat vlastní implementaci.||  
+|[static](./static.md)|Zpřístupňuje událost volajícím kdykoli, i když žádná instance třídy neexistuje.|[Statické třídy a jejich členové](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|  
+|[virtual](./virtual.md)|Umožňuje odvozeným třídám přepsat chování události pomocí klíčového slova [override](./override.md) .|[Dědičnost](../../programming-guide/classes-and-structs/inheritance.md)|  
+|[sealed](./sealed.md)|Určuje, že pro odvozené třídy už není virtuální.||  
+|[abstract](./abstract.md)|Kompilátor negeneruje bloky pro přístup `add` k `remove` událostem a proto odvozené třídy musí poskytovat svou vlastní implementaci.||  
   
- Události mohou být deklarovány jako statické události pomocí [statické](../../../csharp/language-reference/keywords/static.md) – klíčové slovo. To zpřístupňuje události volajícím v okamžiku, i v případě, že neexistuje žádná instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Událost může být deklarována jako statická událost pomocí klíčového slova [static](./static.md) . Tím se událost zpřístupní volajícím kdykoli, i když žádná instance třídy neexistuje. Další informace naleznete v tématu [statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
- Událost může být označený jako virtuální událost pomocí [virtuální](../../../csharp/language-reference/keywords/virtual.md) – klíčové slovo. To umožňuje odvozeným třídám přepsat chování události pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo. Další informace najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md). Přepisování virtuální událost události může být také [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), která určuje, že odvozené třídy jej již není virtuální. A konečně, lze deklarovat událost [abstraktní](../../../csharp/language-reference/keywords/abstract.md), což znamená, že kompilátor nevygeneruje `add` a `remove` bloky přístupového objektu události. Proto musí zajišťovat odvozené třídy vlastní implementaci.  
+ Událost může být označena jako virtuální událost pomocí klíčového slova [Virtual](./virtual.md) . To umožňuje odvozeným třídám přepsat chování události pomocí klíčového slova [override](./override.md) . Další informace najdete v tématu [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md). Událost přepsání virtuální události může být také zapečetěna [](./sealed.md), což určuje, že pro odvozené třídy již není virtuální. Nakonec může být událost deklarovaná jako [abstraktní](./abstract.md), což znamená, že kompilátor negeneruje `add` bloky přistupujícího objektu a `remove` události. Proto odvozené třídy musí poskytovat svou vlastní implementaci.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [add](../../../csharp/language-reference/keywords/add.md)
-- [remove](../../../csharp/language-reference/keywords/remove.md)
-- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)
-- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [add](./add.md)
+- [remove](./remove.md)
+- [Modifikátory](./modifiers.md)
+- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

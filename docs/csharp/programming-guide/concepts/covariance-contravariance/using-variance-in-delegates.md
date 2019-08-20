@@ -1,21 +1,21 @@
 ---
-title: Použití odchylek v delegátech (C#)
+title: Použití variance v delegátechC#()
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
-ms.openlocfilehash: 44a6153a9a1c0aa0aebb18710ea9e770fd4e57fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00e11d4ce755c8c75b73023fec14d95ebc96b4fe
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668962"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595260"
 ---
-# <a name="using-variance-in-delegates-c"></a>Použití odchylek v delegátech (C#)
-Když přiřadíte metody delegáta *kovariance* a *kontravariance* poskytují flexibilitu pro odpovídající typ delegáta se podpis metody. Kovariance povoluje metoda může mít návratový typ, který je odvozený víc než který definované v delegátu. Kontravariance umožní metodu, která má typy parametrů, které jsou méně odvozený než ty, které v typu delegáta.  
+# <a name="using-variance-in-delegates-c"></a>Použití variance v delegátechC#()
+Když přiřadíte metodu delegátovi, *kovariance* a *kontravariance* poskytují flexibilitu pro porovnání typu delegáta s podpisem metody. Kovariance povoluje, aby metoda měla návratový typ, který je více odvozen od definice v delegátu. Kontravariance povoluje metodu, která má typy parametrů, které jsou méně odvozené než hodnoty v typu delegáta.  
   
 ## <a name="example-1-covariance"></a>Příklad 1: Kovariance  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje, jak delegáty lze provádět pomocí metod, které mají návratové typy, které jsou odvozeny z návratového typu v signatuře delegátu. Datový typ vracený `DogsHandler` je typu `Dogs`, která je odvozena z `Mammals` typ, který je definován v delegátu.  
+ Tento příklad ukazuje, jak lze delegáty použít s metodami, které mají návratové typy odvozené od návratového typu v signatuře delegáta. Datový typ vrácený funkcí `DogsHandler` je typu `Dogs`, `Mammals` který je odvozen z typu, který je definován v delegátu.  
   
 ### <a name="code"></a>Kód  
   
@@ -51,7 +51,7 @@ class Program
 ## <a name="example-2-contravariance"></a>Příklad 2: Kontravariance  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje, jak lze pomocí metody, které mají parametry typu, které jsou uvedeny základní typy typ parametru signatury delegáta delegátů. S kontravariance místo samostatných obslužné rutiny můžete použít jednu obslužnou rutinu události. Můžete například vytvořit obslužnou rutinu události, která přijímá `EventArgs` vstupní parametr a použít je s `Button.MouseClick` událost, která odesílá `MouseEventArgs` typ jako parametr a také s `TextBox.KeyDown` událost, která odesílá `KeyEventArgs` parametr.  
+ Tento příklad ukazuje, jak lze delegáty použít s metodami, které mají parametry typu, které jsou základními typy typu parametru signatury delegáta. S kontravariance můžete použít jednu obslužnou rutinu události místo samostatných obslužných rutin. Můžete například vytvořit `EventArgs` obslužnou rutinu události, která přijímá vstupní parametr a použije ji `Button.MouseClick` s událostí, která odešle `MouseEventArgs` typ `TextBox.KeyDown` jako parametr, `KeyEventArgs` a také událost, která odešle parametr.  
   
 ### <a name="code"></a>Kód  
   
@@ -79,5 +79,5 @@ public Form1()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
-- [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Variance v delegátechC#()](./variance-in-delegates.md)
+- [Použití odchylky pro obecné delegáty Func a ActionC#()](./using-variance-for-func-and-action-generic-delegates.md)

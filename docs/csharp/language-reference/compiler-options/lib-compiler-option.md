@@ -1,5 +1,5 @@
 ---
-title: -lib (možnosti kompilátoru C#)
+title: -lib (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /lib
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: 49920a46f1d970c3f00025c3dc3eb384c937aa99
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c230147be055170ca015f27bd42bb096399405d
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662748"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606822"
 ---
-# <a name="-lib-c-compiler-options"></a>-lib (možnosti kompilátoru C#)
-**-Lib** Určuje umístění sestavení odkazováno prostřednictvím [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
+# <a name="-lib-c-compiler-options"></a>-lib (C# možnosti kompilátoru)
+Možnost **-lib** určuje umístění sestavení, na která odkazuje, prostřednictvím možnosti [-Reference (C# možnosti kompilátoru)](./reference-compiler-option.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,42 +26,42 @@ ms.locfileid: "61662748"
   
 ## <a name="arguments"></a>Arguments  
  `dir1`  
- Adresář pro kompilátor hledat v případě odkazovaných sestavení nebyl nalezen v aktuálním pracovním adresáři (adresář, ze kterého je vyvolán kompilátor) nebo v adresáři systému common language runtime.  
+ Adresář, ve kterém se má kompilátor hledat, pokud odkazované sestavení není nalezeno v aktuálním pracovním adresáři (adresář, ze kterého vyvoláváte kompilátor), nebo v adresáři systému společného jazykového modulu runtime.  
   
  `dir2`  
- Nejmíň jeden další adresáře pro v vyhledat odkazy na sestavení. Další názvy adresářů oddělte čárkou a bez mezer mezi nimi.  
+ Jeden nebo více dalších adresářů, ve kterých se má hledat odkazy na sestavení. Další názvy adresářů oddělujte čárkami a bez mezer mezi nimi.  
   
 ## <a name="remarks"></a>Poznámky  
- Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikovaný v následujícím pořadí:  
+ Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikované v následujícím pořadí:  
   
-1. Aktuální pracovní adresář. Toto je adresář, ze kterého je vyvolán kompilátor.  
+1. Aktuální pracovní adresář. Toto je adresář, ze kterého je kompilátor vyvolán.  
   
-2. Common language runtime systémový adresář.  
+2. Systémový adresář společného jazykového modulu runtime.  
   
-3. Adresáře určeného **-lib**.  
+3. Adresáře určené parametrem **-lib**.  
   
 4. Adresáře určené proměnnou prostředí LIB.  
   
- Použití **– referenční dokumentace** zadat odkaz na sestavení.  
+ Použijte **– odkaz** k určení odkazu na sestavení.  
   
- **-lib** je sčítání; zadání více než jednou připojí k jakékoli předchozí hodnoty ho.  
+ **-lib** je doplňková; zadáním více než jednou se připojí k jakýmkoli předchozím hodnotám.  
   
- O alternativu k použití **-lib** je zkopírovat do pracovního adresáře veškeré požadované sestavení; to vám umožní jednoduše předat název sestavení k **– referenční dokumentace**. Pak můžete odstranit sestavení z pracovního adresáře. Protože není zadána cesta k závislého sestavení v manifestu sestavení, aplikaci lze spustit na cílovém počítači a vyhledá a použití sestavení v globální mezipaměti sestavení.  
+ Alternativou k použití **-lib** je zkopírovat do pracovního adresáře všechna požadovaná sestavení; To vám umožní jednoduše předat název sestavení **odkazem**. Pak můžete sestavení odstranit z pracovního adresáře. Vzhledem k tomu, že cesta k závislému sestavení není zadána v manifestu sestavení, lze aplikaci spustit v cílovém počítači a vyhledat a použít sestavení v globální mezipaměti sestavení (GAC).  
   
- Protože kompilátor může odkazovat sestavení, neznamená, že modul common language runtime bude moci najít a načíst sestavení za běhu. Zobrazit [jak modul Runtime vyhledává sestavení](../../../framework/deployment/how-the-runtime-locates-assemblies.md) podrobnosti o tom, jak modul runtime vyhledá odkazovaná sestavení.  
+ Vzhledem k tomu, že kompilátor může odkazovat na sestavení, neznamená, že modul CLR (Common Language Runtime) bude moci najít a načíst sestavení za běhu. Podívejte [se, jak modul runtime vyhledává sestavení](../../../framework/deployment/how-the-runtime-locates-assemblies.md) pro podrobnosti o tom, jak modul runtime vyhledává odkazovaná sestavení.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **stránky vlastností** dialogové okno.  
+1. Otevřete dialogové okno **stránky vlastností** projektu.  
   
-2. Klikněte na tlačítko **cesta k odkazům** stránku vlastností.  
+2. Klikněte na stránku vlastností **cesta** k odkazům.  
   
-3. Upravte obsah pole se seznamem.  
+3. Úprava obsahu pole se seznamem.  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
- Zkompilujte t2.cs vytvořte soubor s příponou .exe. Kompilátor bude hledat v pracovním adresáři a v kořenovém adresáři jednotce C odkazy na sestavení.  
+ Zkompilujte t2.cs a vytvořte soubor. exe. Kompilátor bude hledat odkazy na sestavení v pracovním adresáři a v kořenovém adresáři jednotky C.  
   
 ```console  
 csc -lib:c:\ -reference:t2.dll t2.cs  
@@ -69,5 +69,5 @@ csc -lib:c:\ -reference:t2.dll t2.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

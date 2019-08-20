@@ -1,6 +1,6 @@
 ---
 title: Průvodce jazykem C#
-description: Zjistěte, jak průvodce jazyka C# vám může pomoct získat rozsáhlé znalosti jazyka C#, ať už jste nový vývojář nebo zkušený odborník.
+description: Přečtěte si C# C#, jak vám průvodce pomůže získat rozsáhlé znalosti, ať už jste novým vývojářem nebo zkušeným odborníkem.
 ms.date: 01/30/2018
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
 helpviewer_keywords:
@@ -8,61 +8,61 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 0bf9fe8124578ba9bd192e10d517e3b0df7e5982
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2e820a4d08e938aaf21e4f57db63e6b4f1b5225a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744262"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608290"
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
-Příručka jazyka C# obsahuje mnoho prostředků o jazyce C#. Tento web má mnoho různé skupiny uživatelů. V závislosti na vaše zkušenosti s programováním nebo pomocí jazyka C# a .NET můžete chtít prozkoumat různé oddíly této příručky.
+C# Průvodce poskytuje mnoho zdrojů informací o daném C# jazyce. Tato lokalita má mnoho různých cílových skupin. V závislosti na vašich zkušenostech s programováním nebo s C# jazykem a .NET můžete chtít prozkoumat různé části tohoto průvodce.
 
-* Pro vývojáře v úplně:
-  * Začněte [Úvod do C# kurzy](tutorials/intro-to-csharp/index.md). Tyto kurzy vám umožňují prozkoumat C# jazyk interaktivně v prohlížeči. Odtud můžete přesunout jiné [kurzy](tutorials/index.md). Tyto kurzy vám ukážou, jak vytvořit aplikace C# od začátku. V kurzech najdete podrobný postup vytváření programů. Zobrazí jazykové koncepty a jak vytvářet C# programy sami. Pokud dáváte přednost, nejprve čtení souhrnné informace, zkuste [prohlídka jazyka C#](tour-of-csharp/index.md). Vysvětluje koncepty jazyka C#. Po přečtení to, budete mít základní znalost jazyka a budete moct službu v kurzech nebo něco vytvořit sami.
+* Pro branding – nové vývojáře:
+  * Začněte s [úvodními C# kurzy](tutorials/intro-to-csharp/index.md). Tyto kurzy vám umožní interaktivně prozkoumat C# jazyk v prohlížeči. Odtud můžete přejít k dalším [kurzům](tutorials/index.md). V těchto kurzech se dozvíte C# , jak vytvořit programy od začátku. Kurzy poskytují podrobný proces vytváření programů. Zobrazují jazykové koncepty a sestavování C# programů sami. Pokud raději přečtete informace o přehledu, zkuste [prohlídku C# jazyka](tour-of-csharp/index.md). Vysvětluje princip C# jazyka. Po přečtení budete mít základní porozumění jazyku a budete připraveni vyzkoušet si kurzy, nebo něco sami vytvořit.
 
-* Pro vývojáře nového jazyka C#:
-  * Pokud jste provedli před vývoje, ale teprve začínáte C#, přečtěte si [prohlídka jazyka C#](tour-of-csharp/index.md). Zahrnuje základní syntaxe a struktura jazyka a jazyk ji k kontrast C# můžete použít s jinými jazyky, které jste použili. Můžete také přejít [kurzy](tutorials/index.md) vyzkoušet základních programů jazyka C#.
+* Pro vývojáře, C#kteří jsou noví:
+  * Pokud jste vývoj dokončili ještě dřív, ale teprve začínáte C#, přečtěte si prohlídku tohoto [ C# jazyka](tour-of-csharp/index.md). Zabývá se základní syntaxí a strukturou pro jazyk a můžete použít prohlídku jazyka pro C# použití jiných jazyků, které jste použili. Můžete také procházet [kurzy](tutorials/index.md) a vyzkoušet základní C# programy.
 
-* Zkušení C# vývojáře:
-  * Pokud jste použili C# před, začněte tím, co je v nejnovější verzi jazyka pro čtení. Podívejte se na [co je nového v jazyce C#](whats-new/index.md) nových funkcí v aktuální verzi.
+* Zkušení C# vývojáři:
+  * Pokud jste se předtím C# používali, měli byste začít čtením toho, co je v nejnovější verzi jazyka. Nové funkce v aktuální verzi najdete [v C# části Co je nového](whats-new/index.md) .
 
-## <a name="how-the-c-guide-is-organized"></a>Jakým způsobem je organizována Průvodce jazyka C#
+## <a name="how-the-c-guide-is-organized"></a>Jak je C# příručka uspořádána
 
-Existuje několik oddílů v příručce jazyka C#. Můžete číst je popořadě, nebo přejít přímo na co vás zajímá nejvíce. Oddíly jsou výrazně zaměřené na jazyk. Ostatní poskytují začátku do konce scénáře, které ukazují několik typů programů, které můžete vytvořit pomocí jazyka C# a rozhraní .NET Framework.
+C# Příručka obsahuje několik oddílů. Můžete si je přečíst v daném pořadí nebo přímo přejít na to, co nejvíc zajímáte. Některé oddíly jsou velmi zaměřené na jazyk. Jiné poskytují ucelené scénáře, které předvádějí několik typů programů, které můžete vytvořit pomocí C# a .NET Framework.
 
 * [Začínáme](getting-started/index.md)
-  * Tato část popisuje, co potřebujete k instalaci pro C# prostředí pro vývoj na preferované platformě. Dalších tématech v této části popisují, jak vytvořit svůj první program C# v různých prostředích podporované.
+  * V této části se dozvíte, co je potřeba C# nainstalovat pro vývojové prostředí na upřednostňované platformě. Různá témata v této části vysvětlují, jak vytvořit první C# program v různých podporovaných prostředích.
 
-* [Úvod do C# kurzy](tutorials/intro-to-csharp/index.md)
-  * Úvod do C# představuje interaktivní kurzy pro úplně vývojáře a prozkoumat další kurzy C# jazyka v prohlížeči pomocí rozhraní pro čtení-Eval-Print smyčky (REPL). Po dokončení interaktivní lekcí, můžete zlepšit své znalosti kódování ocení stejné lekce na svém počítači.
+* [Úvod do C# kurzů](tutorials/intro-to-csharp/index.md)
+  * Úvod do C# kurzů představují interaktivní kurzy pro vytváření nových vývojářů, kteří se seznámili C# s jazykem v prohlížeči a využívají rozhraní REPL (Read-Eval-tisk Loop). Po dokončení interaktivních lekcí můžete zlepšit své dovednosti v kódování, a to tak, že na svém počítači provedete stejné lekce.
 
 * [Kurzy](tutorials/index.md)
-  * Tato část obsahuje širokou škálu scénářů začátku do konce, včetně popisů a kódu. Ukazuje, proč určité idiomy jsou upřednostňované, co C# funkce fungují lépe, v různých situacích a referenční implementace pro běžné úlohy. Pokud zjistíte, nejlepší tím, že zobrazíte kód, spusťte v této části. Můžete také stáhnout celý kód a Experimentujte ve vašem prostředí.
+  * Tato část obsahuje celou řadu ucelených scénářů, včetně popisů a kódu. Ukazuje, proč jsou některé idiomy preferované, jaké C# funkce fungují nejlépe v různých situacích a odkazují na implementace běžných úloh. Pokud se vám seznam nejlépe seznámí, začněte v této části. Můžete si také stáhnout veškerý kód a experimentovat ve svém vlastním prostředí.
 
 * [Prohlídka jazyka C#](tour-of-csharp/index.md)
-  * Tato část obsahuje základní informace o jazyce. Popisuje prvky, které tvoří programy jazyka C# a možnosti jazyka. Zobrazuje malé ukázky všechny prvky syntaxe jazyka C# a diskuse o hlavní témata jazyka C#.
+  * V této části najdete přehled jazyka. Zahrnuje prvky, které tvoří C# programy a možnosti jazyka. Zobrazuje malé vzorky všech syntaktických prvků C# a diskuzí o hlavních C# tématech jazyka.
 
 * [Co je nového v jazyce C#](whats-new/index.md)
-  * Poskytuje přehled o nových funkcích v nejnovější vydané verzi jazyka a historie jazyka C#.
+  * Poskytuje přehled o nových funkcích přidaných v nejnovějších jazykových verzích a historii tohoto C# jazyka.
 
 <!--
 * [.NET Compiler Platform SDK](roslyn-sdk/index.md)
   * The .NET Compiler Platform SDK enables you to write components that analyze code, and suggest or make improvements to that code. In this section, you'll learn how the APIs are organized, and how you can create code that enables rules and practices for your team. You'll also see samples, end-to-end scenarios, and links to other libraries with more examples using these APIs.
 -->
 
-* [Průvodce programováním v jazyce C#](../csharp/programming-guide/index.md)
+* [Průvodce programováním v jazyce C#](./programming-guide/index.md)
   * Poskytuje informace a praktické příklady způsobů používání konstrukcí jazyka C#.
 
-* [Návody](../csharp/walkthroughs.md)
+* [Návody](./walkthroughs.md)
   * Poskytuje odkazy na programovací návody, které používají jazyk C#, a stručný popis každého návodu.
 
 * [Referenční dokumentace jazyka](language-reference/index.md)
-  * Tato část obsahuje referenční materiál o jazyce C#. Tyto materiály vám pomůže pochopit syntaxi a sémantiku jazyka C#. Zahrnuje také referenční materiál pro typy, operátory, atributy, direktivy preprocesoru, přepínačích kompilátoru, chyby kompilátoru a upozornění kompilátoru.
+  * Tato část obsahuje referenční materiál v C# jazyce. Tento materiál vám pomůže pochopit syntaxi a sémantiku C#. Obsahuje také referenční materiál pro typy, operátory, atributy, direktivy preprocesoru, přepínače kompilátoru, chyby kompilátoru a upozornění kompilátoru.
 
-* [Specifikace jazyka C#](../csharp/language-reference/language-specification/index.md)
-  * Obsahuje odkazy na nejnovější verzí specifikace jazyka C#.
+* [C#Specifikace jazyka](./language-reference/language-specification/index.md)
+  * Odkazuje na nejnovější verze specifikace C# jazyka.
 
 ## <a name="see-also"></a>Viz také:
 

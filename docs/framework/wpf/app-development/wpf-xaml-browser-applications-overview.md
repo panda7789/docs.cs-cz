@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: ebaa5c2f3a2e1770a50a401fb6771d8c5ad3ba63
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 8017895450c989683b7fb246c9c1fb7c23fa9e5e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972227"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611469"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -52,7 +52,7 @@ ms.locfileid: "68972227"
 |Manifest aplikace (. manifest)|Obsahuje metadata přidružená k aplikaci a má příponu. manifest.|  
 |Manifest nasazení (. XBAP)|Tento soubor obsahuje informace, které ClickOnce používá k nasazení aplikace a má příponu. XBAP.|  
   
- Nasadíte aplikace XBAP na webový server, například [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] nebo novější verze. Nemusíte instalovat .NET Framework na webový server, ale musíte registrovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typy MIME (Multipurpose Internet Mail Extensions) a přípony názvů souborů. Další informace najdete v tématu [Konfigurace iis 5,0 a iis 6,0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
+ Nasadíte aplikace XBAP na webový server, například Microsoft Internetová informační služba (IIS) 5,0 nebo novější verze. Nemusíte instalovat .NET Framework na webový server, ale musíte registrovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typy MIME (Multipurpose Internet Mail Extensions) a přípony názvů souborů. Další informace najdete v tématu [Konfigurace iis 5,0 a iis 6,0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
   
  Pro přípravu XBAP pro nasazení zkopírujte do webového serveru soubor. exe a přidružené manifesty. Vytvořte stránku HTML obsahující hypertextový odkaz pro otevření manifestu nasazení, což je soubor s příponou. XBAP. Když uživatel klikne na odkaz na soubor. XBAP, ClickOnce automaticky zpracuje mechanismus stažení a spuštění aplikace. Následující příklad kódu ukazuje stránku HTML obsahující hypertextový odkaz, který odkazuje na XBAP.  
   

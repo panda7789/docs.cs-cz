@@ -1,37 +1,37 @@
 ---
-title: 'Postupy: Spojení dvou kolekcí (LINQ to XML) (C#)'
+title: 'Postupy: Spojit dvě kolekce (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
-ms.openlocfilehash: 893966f3b803b92efbc89a65870623f10195c85f
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: aa774e23cfd232709f9824826f5084fe6049ef37
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485377"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593195"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: Spojení dvou kolekcí (LINQ to XML) (C#)
-Prvek nebo atribut v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element z každé objednávky odkazuje `CustomerID` atribut v zákazníka.  
+# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: Spojit dvě kolekce (LINQ to XML) (C#)
+Element nebo atribut v dokumentu XML může někdy odkazovat na jiný element nebo atribut. Například [ukázkový soubor XML: Dokument XML Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` prvek`CustomerID` obsahuje atribut. Každý `Order` prvek`CustomerID` obsahuje element. Element v každé objednávce odkazuje `CustomerID` na atribut v zákazníkovi. `CustomerID`  
   
- Téma [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md) obsahuje XSD, který slouží k ověření tohoto dokumentu. Používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atributy v každém `Customer` elementu.  
+ Ukázkový soubor [XSD v tématu: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md) obsahují XSD, které lze použít k ověření tohoto dokumentu. Používá `xs:key` funkce `CustomerID` a `xs:keyref` `Order` XSD k určení`Customer` toho, že atribut prvku je klíč, a k navázání vztahu mezi prvkem v jednotlivých prvcích a `CustomerID` atribut v každém `Customer`elementu. `CustomerID`  
   
- S [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], pomocí můžete využít tuto relaci `join` klauzuli.  
+ Pomocí můžete tuto relaci využít `join` pomocí klauzule. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]  
   
- Mějte na paměti, protože není k dispozici žádný index, tato připojení budou mít runtime nízký výkon.  
+ Všimněte si, že protože není k dispozici žádný index, takové spojení bude mít špatný běhový výkon.  
   
- Podrobné informace o `join`, naleznete v tématu [operace Join (C#)](../../../../csharp/programming-guide/concepts/linq/join-operations.md).  
+ Podrobnější informace o `join`najdete v tématu [operace join (C#)](./join-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad připojí `Customer` prvků, které mají `Order` prvky a vytvoří nový dokument XML, který zahrnuje `CompanyName` prvek objednávky.  
+ Následující příklad spojuje `Customer` prvky `Order` s prvky a generuje nový dokument `CompanyName` XML, který obsahuje prvek v objednávkách.  
   
- Před provedením dotazu, v příkladu ověřuje, že dokument vyhovuje schématu v [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md). Tím se zajistí, že budou vždy fungovat klauzule join.  
+ Před provedením dotazu v příkladu se ověří, že dokument vyhovuje schématu v [ukázkovém souboru XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md). Tím se zajistí, že klauzule JOIN bude vždycky fungovat.  
   
- Tento dotaz načte prvních všechny `Customer` prvky a poté je připojen `Order` prvky. Vybere pouze příkazy pro zákazníky s `CustomerID` větší než "K". To potom projekty nový `Order` element, který obsahuje informace o zákaznících v rámci každé objednávky.  
+ Tento dotaz nejprve načte všechny `Customer` prvky a pak je spojí `Order` s prvky. Vybere pouze objednávky pro zákazníky s `CustomerID` větší než "K". Potom projekty vytvoří nový `Order` prvek, který obsahuje informace o zákaznících v rámci jednotlivých objednávek.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
- Tento příklad používá následující schéma XSD: [Ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md).  
+ V tomto příkladu se používá následující schéma XSD: [Ukázkový soubor XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md).  
   
- Všimněte si, že připojení tímto způsobem nebude fungují velmi dobře. Spojení se provádí prostřednictvím lineárního hledání. Neexistují žádné zatřiďovacích tabulek nebo indexy, které vám pomůžou s výkonem.  
+ Všimněte si, že připojení tímto způsobem nebude fungovat velmi dobře. Spojení se provádí pomocí lineárního hledání. Neexistují žádné zatřiďovací tabulky ani indexy, které by měly pomáhat s výkonem.  
   
 ```csharp  
 XmlSchemaSet schemas = new XmlSchemaSet();  
@@ -74,7 +74,7 @@ if (!errors)
 }  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 Attempting to validate, custOrdDoc validated  

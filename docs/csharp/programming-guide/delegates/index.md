@@ -6,15 +6,15 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 62785753cf0eb11965f93e517d6a784081b41a13
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: dfb957247a50d16d2aa4c3c4be147e6badf0703a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363808"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590611"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegáti (Průvodce programováním v C#)
-[Delegát](../../../csharp/language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
+[Delegát](../../language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
   
  Delegáty se používají pro předávání metod jako argumentů jiným metodám. Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Můžete vytvořit vlastní metodu a konkrétní třída, jako je ovládací prvek Windows, může volat vaši metodu, pokud dojde k určité události. Následující příklad znázorňuje deklaraci delegátu.  
   
@@ -38,23 +38,23 @@ ms.locfileid: "68363808"
   
 - Delegáty lze zřetězit; například je možné volat větší počet metod v rámci jediné události.  
   
-- Metody nemusí přesně odpovídat typu delegátu. Další informace naleznete v tématu [použití variance v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).  
+- Metody nemusí přesně odpovídat typu delegátu. Další informace naleznete v tématu [použití variance v delegátech](../concepts/covariance-contravariance/using-variance-in-delegates.md).  
   
-- C#verze 2,0 představila koncept [anonymních metod](../../../csharp/language-reference/operators/delegate-operator.md), které umožňují, aby byly bloky kódu předány jako parametry namísto samostatně definované metody. Verze 3.0 jazyka C# představila výrazy lambda jako přesnější způsob psaní bloků vloženého kódu. Anonymní metody i výrazy lambda (v určitých kontextech) se kompilují na typy delegátů. Tyto funkce se souhrnně označují jako anonymní funkce. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).
+- C#verze 2,0 představila koncept [anonymních metod](../../language-reference/operators/delegate-operator.md), které umožňují, aby byly bloky kódu předány jako parametry namísto samostatně definované metody. Verze 3.0 jazyka C# představila výrazy lambda jako přesnější způsob psaní bloků vloženého kódu. Anonymní metody i výrazy lambda (v určitých kontextech) se kompilují na typy delegátů. Tyto funkce se souhrnně označují jako anonymní funkce. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../statements-expressions-operators/lambda-expressions.md).
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-- [Použití delegátů](../../../csharp/programming-guide/delegates/using-delegates.md)  
+- [Použití delegátů](./using-delegates.md)  
   
 - [Kdy použít delegáty namísto rozhraní (C# Průvodce programováním)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
-- [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
+- [Delegáti s pojmenovanými vs. anonymními metodami](./delegates-with-named-vs-anonymous-methods.md)  
   
-- [Použití odchylek v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)  
+- [Použití odchylek v delegátech](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
+- [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](./how-to-combine-delegates-multicast-delegates.md)  
   
-- [Postupy: Deklarace, vytvoření instance a použití delegáta](../../../csharp/programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md)  
+- [Postupy: Deklarace, vytvoření instance a použití delegáta](./how-to-declare-instantiate-and-use-a-delegate.md)  
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
@@ -68,5 +68,5 @@ Další informace naleznete v tématu [Delegáti](~/_csharplang/spec/delegates.m
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Delegate>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Události](../../../csharp/programming-guide/events/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Události](../events/index.md)

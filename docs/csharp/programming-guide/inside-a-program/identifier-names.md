@@ -1,32 +1,32 @@
 ---
 title: Názvy identifikátorů
-description: Další pravidla pro názvy platný identifikátor v programovacím jazyce C#.
+description: Přečtěte si pravidla platných názvů identifikátorů v C# programovacím jazyce.
 ms.date: 08/21/2018
-ms.openlocfilehash: 2147b3846d4ba6d5471b81448489c6d716e3cd61
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8a27ddae0437ed037b59f76d60dc7e420ddc2eb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680490"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589351"
 ---
 # <a name="identifier-names"></a>Názvy identifikátorů
 
-**Identifikátor** je název přiřadit k typu (třída, rozhraní, struktury, delegáta nebo výčtu), člen, proměnná nebo oboru názvů. Platné identifikátory musí dodržovat tato pravidla:
+**Identifikátor** je název, který přiřadíte typu (třída, rozhraní, struktura, delegát nebo výčet), člen, proměnná nebo obor názvů. Platné identifikátory musí dodržovat tato pravidla:
 
-- Identifikátory musí začínat písmenem, nebo `_`.
-- Identifikátory mohou obsahovat písmena, znaky desítkových číslic, připojení znaků Unicode, kombinace znaků Unicode nebo formátování znaků Unicode kódování Unicode. Další informace o kódování Unicode kategorií, najdete v článku [databáze kategorie sady Unicode](https://www.unicode.org/reports/tr44/).
-Je možné deklarovat identifikátory, které odpovídají klíčová slova jazyka C# s použitím `@` předpony u identifikátoru. `@` Není součástí název identifikátoru. Například `@if` deklaruje identifikátor s názvem `if`. Tyto [verbatim identifikátory](../../language-reference/tokens/verbatim.md) jsou primárně určeny pro interoperabilitu s identifikátory deklarované v jiných jazycích.
+- Identifikátory musí začínat písmenem nebo `_`.
+- Identifikátory můžou obsahovat znaky písmen Unicode, desítkové číslice, připojovací znaky Unicode, kombinaci znaků Unicode nebo formátovacích znaků Unicode. Další informace o kategoriích sady Unicode najdete v tématu [databáze kategorií Unicode](https://www.unicode.org/reports/tr44/).
+Můžete deklarovat identifikátory, které odpovídají C# klíčovým slovům `@` pomocí předpony na identifikátoru. `@` Není součástí názvu identifikátoru. Například `@if` deklaruje identifikátor s názvem `if`. Tyto [doslovné identifikátory](../../language-reference/tokens/verbatim.md) jsou primárně určeny pro interoperabilitu s identifikátory deklarovanými v jiných jazycích.
 
-Kompletní definici platné identifikátory, najdete v článku [identifikátory tématu ve specifikaci jazyka C#](../../../../_csharplang/spec/lexical-structure.md#identifiers).
+Úplnou definici platných identifikátorů najdete v [tématu identifikátory v tématu C# specifikace jazyka](../../../../_csharplang/spec/lexical-structure.md#identifiers).
 
 ## <a name="naming-conventions"></a>Zásady vytváření názvů
 
-Kromě pravidel, existuje mnoho identifikátoru [zásady vytváření názvů](../../../standard/design-guidelines/naming-guidelines.md) používaný v celém rozhraní .NET API. Podle konvence, C# programy používají `PascalCase` pro názvy typů, obory názvů a všechny veřejné členy. Kromě toho jsou společné následující konvence:
+Kromě pravidel existuje několik konvencí pojmenování identifikátorů používaných [](../../../standard/design-guidelines/naming-guidelines.md) v rámci rozhraní API .NET. Podle konvence C# používají `PascalCase` programy pro názvy typů, obory názvů a všechny veřejné členy. Kromě toho jsou běžné následující konvence:
 
-- Rozhraní názvy začíná na velké `I`.
-- Atribut typy končí slovem `Attribute`.
-- Typy výčtu pomocí příznaků singulární podstatné jméno pro jiné příznaky a množném čísle podstatné jméno.
-- Identifikátory by neměly obsahovat dva po sobě jdoucích `_` znaků. Tyto názvy jsou vyhrazené pro identifikátory generovaný kompilátorem.
+- Názvy rozhraní začínají velkým písmenem `I`.
+- Typy atributů končí slovem `Attribute`.
+- Výčtové typy používají podstatná jména pro nepříznaky a v množném čísle pro příznaky.
+- Identifikátory by neměly obsahovat dva po `_` sobě jdoucí znaky. Tyto názvy jsou vyhrazeny pro identifikátory generované kompilátorem.
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
@@ -35,8 +35,8 @@ Kromě pravidel, existuje mnoho identifikátoru [zásady vytváření názvů](.
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [V programu v jazyce C#](../inside-a-program/index.md)
-- [Referenční dokumentace jazyka C#](../../language-reference/index.md)
+- [V programu v jazyce C#](./index.md)
+- [C#Odkaz](../../language-reference/index.md)
 - [Třídy](../classes-and-structs/classes.md)
 - [Struktury](../classes-and-structs/structs.md)
 - [Obory názvů](../namespaces/index.md)

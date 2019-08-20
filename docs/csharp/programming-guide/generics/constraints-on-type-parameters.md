@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: f09f93f27aa4f50cfb7e09b9d6d4f98f22e1ac9a
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 4f0277ef5883a238cf2579d2d9ea956bc06061e2
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433558"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589873"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (C# Průvodce programováním)
 
@@ -113,7 +113,7 @@ Můžete ji použít, jak je znázorněno v následujícím příkladu, pro vytv
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
-- [Obecné třídy](../../../csharp/programming-guide/generics/generic-classes.md)
-- [new – omezení](../../../csharp/language-reference/keywords/new-constraint.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Úvod do obecných typů](./index.md)
+- [Obecné třídy](./generic-classes.md)
+- [new – omezení](../../language-reference/keywords/new-constraint.md)

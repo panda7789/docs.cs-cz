@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření nové metody pro výčet - C# Průvodce programováním'
+title: 'Postupy: Vytvoření nové metody pro průvodce C# programováním výčtu'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - extension methods [C#], for enums
 - enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-ms.openlocfilehash: 2ca388d19c0e4e1b098076caa5baa0a83cc0dd4c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 99a2005e1a64fa214776145a903341fb162f0633
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585875"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597044"
 ---
-# <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>Postupy: Vytvoření nové metody pro výčet (C# Průvodce programováním v)
-Rozšiřující metody slouží k přidání funkce specifické pro typ konkrétní výčtu.  
+# <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>Postupy: Vytvoření nové metody pro výčet (C# Průvodce programováním)
+Metody rozšíření lze použít k přidání funkcí specifických pro konkrétní typ výčtu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Grades` výčet představuje možné písmeno tříd, které student může zobrazit ve třídě. Rozšiřující metody s názvem `Passing` se přidá do `Grades` tak, aby každá instance daného typu nyní "ví", zda představuje na podnikové úrovni předávání nebo ne.  
+ V následujícím příkladu `Grades` výčet představuje možné známky, které může student získat ve třídě. Rozšiřující metoda s názvem `Passing` je přidána `Grades` do typu tak, že každá instance daného typu teď "ví", zda představuje třídu předání nebo ne.  
   
  [!code-csharp[csProgGuideExtensionMethods#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#2)]  
   
- Všimněte si, `Extensions` třída také obsahuje statickou proměnnou, která se dynamicky aktualizuje a že návratová hodnota metody rozšíření odpovídá aktuální hodnotě proměnné. Tento příklad ukazuje, že na pozadí jsou rozšiřující metody vyvolány přímo u statické třídy, ve kterém jsou definovány.  
+ Všimněte si, `Extensions` že třída také obsahuje statickou proměnnou, která je dynamicky aktualizována a že návratová hodnota metody rozšíření odráží aktuální hodnotu této proměnné. To ukazuje, že na pozadí jsou metody rozšíření vyvolány přímo na statickou třídu, ve které jsou definovány.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Rozšiřující metody](./extension-methods.md)

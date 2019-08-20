@@ -1,5 +1,5 @@
 ---
-title: Statické třídy a jejich členové - C# Průvodce programováním
+title: Statické třídy a členy statické třídy – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -9,22 +9,22 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 11cbe6600a75b2db6174841790aa69efdf5da035
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 841965becd6c4998692b83d5c64521f7c3e1b227
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398284"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596143"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 
-A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/operators/new-operator.md) operátoru pro vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou statickou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
+[Statická](../../language-reference/keywords/static.md) třída je v podstatě stejná jako nestatická třída, ale existuje jeden rozdíl: statickou třídu nelze vytvořit. Jinými slovy, operátor [New](../../language-reference/operators/new-operator.md) nelze použít k vytvoření proměnné typu třídy. Vzhledem k tomu, že není k dispozici žádná proměnná instance, získáte přístup ke členům statické třídy pomocí samotného názvu třídy. Například pokud máte statickou třídu s názvem `UtilityClass` , která má veřejnou statickou metodu s názvem `MethodA`, zavoláte metodu, jak je znázorněno v následujícím příkladu:  
   
 ```csharp  
 UtilityClass.MethodA();  
 ```  
   
- Statická třída může sloužit jako praktický kontejner pro sadu metod, které právě zpracovat vstupní parametry a nemají k získání nebo nastavení jakékoli instanci interní pole. Například v knihovně tříd rozhraní .NET Framework, statické <xref:System.Math?displayProperty=nameWithType> třída obsahuje metody, které provádějí matematické operace, aniž by byl ukládat nebo načítat data, která jsou jedinečné pro konkrétní instanci <xref:System.Math> třídy. To znamená, že použijete členy třídy tak, že zadáte název třídy a název metody, jak je znázorněno v následujícím příkladu.  
+ Statickou třídu lze použít jako pohodlný kontejner pro sady metod, které fungují pouze na vstupních parametrech a nemusejí získávat ani nastavovat žádná interní pole instance. Například v knihovně tříd .NET Framework statická <xref:System.Math?displayProperty=nameWithType> třída obsahuje metody, které provádějí matematické operace bez nutnosti ukládat nebo načítat data, která jsou jedinečná pro konkrétní instanci <xref:System.Math> třídy. To znamená, že použijete členy třídy zadáním názvu třídy a názvu metody, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 double dub = -3.14;  
@@ -38,62 +38,62 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 // 3  
 ```  
   
- Jak je tomu u všech typů tříd, informace o typu pro statické třídy při načtení programu, který odkazuje na třídu načítá rozhraní .NET Framework common language runtime (CLR). Program nelze zadat přesně při načtení třídy. Ale je zaručeno, že má být načten a inicializován polí a jeho statický konstruktor voláno před provedením třídy odkazuje ve svém programu poprvé. Statický konstruktor je volat pouze jednou a statická třída zůstanou v paměti dobu životnosti domény aplikace, ve kterém se nachází váš program.  
+ Stejně jako u všech typů tříd jsou informace o typu statické třídy načteny modulem .NET Framework Common Language Runtime (CLR) při načtení programu, který odkazuje na třídu. Program nemůže přesně určovat, kdy je třída načtena. Je však zaručeno, že bude načteno a že jeho pole jsou inicializována a jeho statický konstruktor byl volán před tím, než je třída poprvé odkazována v programu. Statický konstruktor se volá jenom jednou a statická třída zůstane v paměti po dobu života domény aplikace, ve které se váš program nachází.  
   
 > [!NOTE]
->  Chcete-li vytvořit nestatické třídy, která umožňuje pouze jednu instanci sebe sama, který se má vytvořit, naleznete v tématu [implementace jednotlivý prvek v jazyce C#](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
+>  Chcete-li vytvořit nestatickou třídu, která umožňuje vytvořit pouze jednu instanci sebe sama, viz téma [implementace typu Singleton C#v ](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
   
- Následující seznam obsahuje hlavní funkce statické třídy:  
+ Následující seznam poskytuje hlavní funkce statické třídy:  
   
 - Obsahuje pouze statické členy.  
   
 - Nelze vytvořit instanci.  
   
-- Je zapečetěná.  
+- Je zapečetěný.  
   
-- Nesmí obsahovat [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+- Nemůže obsahovat [konstruktory instancí](./instance-constructors.md).  
   
- Vytvoření statické třídy je tedy v podstatě stejné jako vytvoření třídy, která obsahuje pouze statické členy a soukromý konstruktor. Soukromý konstruktor zabraňuje instance třídy. Výhodou použití statické třídy je, že kompilátor můžete zkontrolovat, nezapomeňte omylem přidat žádné členy instance. Kompilátor zaručí, že nelze vytvořit instance této třídy.  
+ Vytvoření statické třídy je proto v podstatě stejné jako vytvoření třídy, která obsahuje pouze statické členy a soukromý konstruktor. Privátní konstruktor zabraňuje vytvoření instance třídy. Výhodou použití statické třídy je, že kompilátor může zkontrolovat, zda nejsou omylem přidány žádné členy instance. Kompilátor zajistí, že instance této třídy nelze vytvořit.  
   
- Statické třídy jsou zapečetěné a proto nemůže být zděděna. Nemůže dědit z jiné třídy, s výjimkou <xref:System.Object>. Statické třídy nemůžou obsahovat konstruktor instance; však mohou obsahovat statický konstruktor. Třídy nestatických by mělo definovat i statického konstruktoru, pokud třída obsahuje statické členy, které vyžadují netriviální inicializace. Další informace najdete v tématu [statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
+ Statické třídy jsou zapečetěné, a proto je nelze zdědit. Nemůžou dědit z žádné třídy s <xref:System.Object>výjimkou. Statické třídy nemůžou obsahovat konstruktor instance; mohou však obsahovat statický konstruktor. Nestatické třídy by měly také definovat statický konstruktor, pokud třída obsahuje statické členy, které vyžadují netriviální inicializaci. Další informace naleznete v tématu [statické konstruktory](./static-constructors.md).  
   
 ## <a name="example"></a>Příklad  
- Tady je příklad, který obsahuje dvě metody, které převést teplotu ve stupních Celsia na stupně Fahrenheita a Fahrenheita na stupně Celsia statické třídy:  
+ Tady je příklad statické třídy, která obsahuje dvě metody, které převádějí teplotu z Celsia na Fahrenheita a z Fahrenheita na Celsia:  
   
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
   
 ## <a name="static-members"></a>Statické členy  
- Nestatické třídy mohou obsahovat statické metody, pole, vlastnosti nebo události. Statický člen je volatelná třídy i v případě, že byla vytvořena žádná instance třídy. Statický člen se vždy přistupuje pomocí názvu třídy, nikoli název instance. Jenom jednu kopii statického člena, který existuje, bez ohledu na to, kolik instancí třídy jsou vytvořeny. Statické metody a vlastnosti nemůže přistupovat k nestatickému pole a události v jejich nadřazeným typem a nemají přístup k proměnné instance objektu, pokud je explicitně předán v parametru metody.  
+ Nestatická třída může obsahovat statické metody, pole, vlastnosti nebo události. Statický člen je volat na třídu, i když nebyla vytvořena žádná instance třídy. K statickému členu se vždy používá název třídy, nikoli název instance. Existuje pouze jedna kopie statického člena bez ohledu na to, kolik instancí třídy je vytvořeno. Statické metody a vlastnosti nemohou přistupovat k nestatickým polím a událostem v jejich nadřazeném typu a nemohou přistupovat k proměnné instance libovolného objektu, pokud není explicitně předána parametrem metody.  
   
- Je obvyklejší deklarujte nestatické třídy se některé statické členy, než Chcete-li deklarovat celou třídu jako statické. Dvě běžné použití statických polí jsou udržovat přehled o počtu počet objektů, které byly vytvořeny nebo uložit hodnotu, která musí být sdílená mezi všemi instancemi.  
+ Je obvyklejší deklarovat nestatickou třídu s některými statickými členy, než deklarovat celou třídu jako statickou. Dvě společná použití statických polí jsou uchovávají počet objektů, které byly vytvořeny instance, nebo ukládají hodnotu, která musí být sdílena mezi všemi instancemi.  
   
- Statické metody může být přetížena ale nebyly přepsány, protože náleží do třídy a ne na jakoukoli instanci třídy.  
+ Statické metody mohou být přetíženy, ale nejsou přepsány, protože patří do třídy, a nikoli do žádné instance třídy.  
   
- I když pole nemůže být deklarována jako `static const`, [const](../../../csharp/language-reference/keywords/const.md) pole je v podstatě statické, jeho chování. Patří k typu, nikoli do instance daného typu. Proto argument pole je přístupná pomocí stejného `ClassName.MemberName` zápis, který se používá pro statické pole. Žádná instance objektu je povinný.  
+ I když pole nemůže být deklarováno `static const`jako, [](../../language-reference/keywords/const.md) pole const je v podstatě statické v jeho chování. Patří do typu, nikoli do instancí typu. Proto lze k polím const přistup pomocí stejného `ClassName.MemberName` zápisu, který se používá pro statická pole. Není požadována žádná instance objektu.  
   
- C# nepodporuje statické lokální proměnné (proměnné, které jsou deklarovány v oboru metody).  
+ C#nepodporuje statické lokální proměnné (proměnné, které jsou deklarovány v oboru metody).  
   
- Deklarace statické členy třídy pomocí `static` – klíčové slovo před návratovým typem člena, jak je znázorněno v následujícím příkladu:  
+ Statické členy třídy deklarujete pomocí `static` klíčového slova před návratovým typem členu, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideObjects#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#29)]  
   
- Statické členy jsou inicializovány statické členské se před přístupem k prvním a před statický konstruktor, pokud existuje, je volána. Pro přístup ke členu statické třídy, použijte název třídy místo názvu proměnné a určí tak umístění člena, jak je znázorněno v následujícím příkladu:  
+ Statické členy jsou inicializovány před prvním otevřením statického člena a před statickým konstruktorem, pokud je volána. Chcete-li získat přístup ke členu statické třídy, použijte název třídy namísto názvu proměnné pro určení umístění člena, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideObjects#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#30)]  
   
- Pokud vaše třída obsahuje statická pole, zadejte statický konstruktor, který inicializuje je při načtení třídy.  
+ Pokud vaše třída obsahuje statická pole, poskytněte statický konstruktor, který je inicializuje při načtení třídy.  
   
- Volání statické metody generuje instrukcí volání v jazyce Microsoft intermediate language (MSIL), že volání metody instance generuje `callvirt` instrukce, což také kontroluje odkazuje na objekt s hodnotou null. Ale ve většině případů rozdíly ve výkonnosti mezi těmito dvěma není důležité.  
+ Volání statické metody generuje instrukci volání v jazyce MSIL (Microsoft Intermediate Language), zatímco volání metody instance vygeneruje `callvirt` instrukci, která také kontroluje odkazy na objekty s hodnotou null. Ale ve většině případů není rozdíl mezi výkonem mezi těmito dvěma důležitý.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [statické třídy](~/_csharplang/spec/classes.md#static-classes) a [statické a instance členy](~/_csharplang/spec/classes.md#static-and-instance-members) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [statické třídy](~/_csharplang/spec/classes.md#static-classes) a [statické a členy instance](~/_csharplang/spec/classes.md#static-and-instance-members) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [static](../../../csharp/language-reference/keywords/static.md)
-- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
-- [class](../../../csharp/language-reference/keywords/class.md)
-- [Statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)
-- [Konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [static](../../language-reference/keywords/static.md)
+- [Třídy](./classes.md)
+- [class](../../language-reference/keywords/class.md)
+- [Statické konstruktory](./static-constructors.md)
+- [Konstruktory instancí](./instance-constructors.md)

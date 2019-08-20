@@ -1,5 +1,5 @@
 ---
-title: -win32icon (možnosti kompilátoru C#)
+title: -win32icon (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /win32icon
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-ms.openlocfilehash: 7bc7da8121ec1190908d9b94fc7c987f9888c020
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3df92d8d0b0135eac1a055afafffa0015fecc2b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662241"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606277"
 ---
-# <a name="-win32icon-c-compiler-options"></a>-win32icon (možnosti kompilátoru C#)
-**-Win32icon** možnost vloží soubor .ico do výstupního souboru, který dává výstupnímu souboru požadovaný vzhled v Průzkumníku souborů.  
+# <a name="-win32icon-c-compiler-options"></a>-win32icon (C# možnosti kompilátoru)
+Možnost **-win32icon** vloží soubor. ico do výstupního souboru, který poskytne výstupnímu souboru požadovaný vzhled v Průzkumníkovi souborů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,25 +26,25 @@ ms.locfileid: "61662241"
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Soubor .ico, který chcete přidat do výstupního souboru.  
+ Soubor. ico, který chcete přidat do výstupního souboru.  
   
 ## <a name="remarks"></a>Poznámky  
- Soubor .ico, který lze vytvořit pomocí [Resource Compiler](/windows/desktop/menurc/resource-compiler). Nástroj Resource Compiler je vyvolán při kompilaci programu v jazyce Visual C++; soubor .ico je vytvořen ze souboru .rc.  
+ Soubor. ico se dá vytvořit s kompilátorem [prostředků](/windows/desktop/menurc/resource-compiler). Kompilátor prostředků je vyvolán při kompilování vizuálního C++ programu; soubor. ico je vytvořen ze souboru. rc.  
   
- Zobrazit [- linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) (na odkaz) nebo [– prostředků](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) (pro připojení) soubor prostředků rozhraní .NET Framework. Zobrazit [-win32res](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md) importovat soubor .res.  
+ Viz [– linkresource –](./linkresource-compiler-option.md) (odkazování) nebo [-Resource](./resource-compiler-option.md) (pro připojení) .NET Frameworkho souboru prostředků. Viz [-win32res](./win32res-compiler-option.md) pro import souboru. res.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránky **vlastností** projektu.  
   
-2. Klikněte na tlačítko **aplikace** stránku vlastností.  
+2. Klikněte na stránku vlastností **aplikace** .  
   
-3. Upravit **ikona aplikace** vlastnost.  
+3. Upravte vlastnost **ikona aplikace** .  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.ApplicationIcon%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.ProjectProperties3.ApplicationIcon%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `in.cs` a připojte soubor .ico `rf.ico` k vytvoření `in.exe`:  
+ Zkompilujte `in.cs` a připojte soubor `rf.ico` . ico k výrobě `in.exe`:  
   
 ```console  
 csc -win32icon:rf.ico in.cs  
@@ -52,5 +52,5 @@ csc -win32icon:rf.ico in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

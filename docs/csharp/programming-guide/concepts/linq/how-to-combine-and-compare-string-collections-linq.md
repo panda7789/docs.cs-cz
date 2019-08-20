@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
+title: 'Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ)C#()'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: cdddf0aaac4264ae70c89590ef61e7b1bbf4cb9b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 3fe1f9dbac864f4eca8ea92f84c35d290ab14642
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585969"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594099"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)
-Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ)C#()
+Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textové soubory  
+### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textových souborů  
   
-1. Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
+1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a
     Garcia, Debra  
     ```  
   
-2. Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu. Mějte na paměti, že dva soubory mají společnou některé názvy.  
+2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé běžné názvy.  
   
     ```  
     Liu, Jinghao  
@@ -169,9 +169,9 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

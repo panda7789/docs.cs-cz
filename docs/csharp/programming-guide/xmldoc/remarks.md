@@ -1,5 +1,5 @@
 ---
-title: <remarks> - C# Průvodce programováním
+title: <remarks> – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - remarks C# XML tag
 - <remarks> C# XML tag
 ms.assetid: f8641391-31f3-4735-af7a-c502a5b6a251
-ms.openlocfilehash: b2e91b868c35773033418c796b7c43b08e87a28b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 822ca8feafe48402f8217c10ef37fcdb1576c27a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675855"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587746"
 ---
-# <a name="remarks-c-programming-guide"></a>\<REMARKS > (C# Programming Guide)
+# <a name="remarks-c-programming-guide"></a>\<Poznámky > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -25,17 +25,17 @@ ms.locfileid: "61675855"
   
 ## <a name="parameters"></a>Parametry  
  `Description`  
- Popis člena.  
+ Popis člena  
   
 ## <a name="remarks"></a>Poznámky  
- \<Remarks > Značka se používá k přidání informací o typu, doplňující informace zadaným [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md). Tyto informace se zobrazí v okně prohlížeče objektů.  
+ Značka poznámky > slouží k přidání informací o typu a doplňování informací zadaných se [ \<souhrnem >.](./summary.md) \< Tyto informace se zobrazí v okně Prohlížeč objektů.  
   
- Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#9)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

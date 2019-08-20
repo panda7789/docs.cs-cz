@@ -9,18 +9,18 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: cfb662203216aa6ca208ceec20d55164c65163dc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 749386f08cb6ab6ab79896aca3c1eb1e98ca5472
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626648"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602176"
 ---
 # <a name="extern-alias-c-reference"></a>externí alias (Referenční dokumentace jazyka C#)
 Možná budete muset odkazovat na dvě verze sestavení, které mají stejné názvy plně kvalifikovaného typu. Například může být nutné použít dvě nebo více verzí sestavení ve stejné aplikaci. Pomocí externího aliasu sestavení lze obory názvů z každého sestavení zabalit do oborů názvů kořenové úrovně s názvem alias, což umožňuje jejich použití ve stejném souboru.  
   
 > [!NOTE]
->  Klíčové slovo [extern](../../../csharp/language-reference/keywords/extern.md) se používá také jako modifikátor metody a deklaruje metodu napsanou v nespravovaném kódu.  
+>  Klíčové slovo [extern](./extern.md) se používá také jako modifikátor metody a deklaruje metodu napsanou v nespravovaném kódu.  
   
  Chcete-li odkazovat na dvě sestavení se stejnými názvy plně kvalifikovaného typu, je nutné zadat alias na příkazovém řádku následujícím způsobem:  
   
@@ -43,8 +43,8 @@ Možná budete muset odkazovat na dvě verze sestavení, které mají stejné n�
   
 ## <a name="see-also"></a>Viz také:
 
-- [C#Odkaz](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
-- [/Reference (C# možnosti kompilátoru)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [:: – operátor](../operators/namespace-alias-qualifier.md)
+- [/Reference (C# možnosti kompilátoru)](../compiler-options/reference-compiler-option.md)

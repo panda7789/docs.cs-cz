@@ -1,7 +1,7 @@
 ---
-title: Base – klíčové slovo - C# odkaz
+title: základní klíčové slovo C# – referenční informace
 ms.custom: seodec18
-description: Další informace o základní klíčové slovo, které se používá pro přístup ke členům základní třídy z odvozené třídy v jazyce C#.
+description: Přečtěte si základní klíčové slovo, které se používá pro přístup ke členům základní třídy v rámci odvozené třídy v C#.
 ms.date: 07/20/2015
 f1_keywords:
 - base
@@ -10,38 +10,38 @@ f1_keywords:
 helpviewer_keywords:
 - base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
-ms.openlocfilehash: 2ef0d07aed595fa630459171482e0b0849aed877
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: b882a8d1e5979ac184d184be379dd76f7bf3600f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401599"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602255"
 ---
 # <a name="base-c-reference"></a>base (Referenční dokumentace jazyka C#)
 
-`base` – Klíčové slovo se používá pro přístup ke členům základní třídy z odvozené třídy:
+`base` Klíčové slovo se používá pro přístup ke členům základní třídy v rámci odvozené třídy:
 
-- Volejte metodu v základní třídě, který se přepsal jinou metodu.
+- Volejte metodu pro základní třídu, která byla přepsána jinou metodou.
 
-- Zadejte konstruktoru základní třídy, který by měla být volána při vytváření instance odvozené třídy.
+- Určuje, který konstruktor základní třídy by měl být volán při vytváření instancí odvozené třídy.
 
-Přístup základní třídy je povolený jenom v konstruktoru, metodu instance nebo přistupující objekt vlastnosti instance.
+Přístup ke základní třídě je povolený jenom v konstruktoru, metodě instance nebo přistupujícím objektu vlastnosti instance.
 
-Jedná se o chybu používat `base` – klíčové slovo z v rámci statické metody.
+Použití `base` klíčového slova v rámci statické metody je chybné.
 
-Základní třída, která se využívají je základní třída zadaná v deklaraci třídy. Pokud zadáte například `class ClassB : ClassA`, jsou přístupné členy ClassA od ClassB, bez ohledu na základní třídu ClassA.
+Základní třída, která je k dispozici, je základní třída zadaná v deklaraci třídy. Například pokud zadáte `class ClassB : ClassA`, budou k členům třídy Class přicházet z ClassB bez ohledu na základní třídu třídy.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu i základní třídy, `Person`a odvozená třída `Employee`, měl odpovídající metodu s názvem `Getinfo`. S použitím `base` – klíčové slovo, je možné volat `Getinfo` metodu v základní třídě, v rámci odvozené třídy.
+V tomto příkladu mají základní třídu, `Person`i odvozenou `Employee`třídu metodu s názvem `Getinfo`. Pomocí `base` klíčového slova je možné `Getinfo` volat metodu pro základní třídu z odvozené třídy.
 
 [!code-csharp[csrefKeywordsAccess#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#1)]
 
-Další příklady najdete v tématu [nové](new-modifier.md), [virtuální](virtual.md), a [přepsat](override.md).
+Další příklady naleznete v tématu [New](new-modifier.md), [Virtual](virtual.md)a [override](override.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje, jak určit konstruktor základní třídy, volá se při vytváření instance odvozené třídy.
+Tento příklad ukazuje, jak určit konstruktor základní třídy nazvaný při vytváření instancí odvozené třídy.
 
 [!code-csharp[csrefKeywordsAccess#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#2)]
 
@@ -51,7 +51,7 @@ Tento příklad ukazuje, jak určit konstruktor základní třídy, volá se př
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [this](../../../csharp/language-reference/keywords/this.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [this](./this.md)

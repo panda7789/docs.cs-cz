@@ -12,55 +12,55 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-ms.openlocfilehash: b58219a8a4d45ce01f80fd367ed56b13a773e4bc
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 42519a74be1bd6934bc7a3304d154321697d128c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483395"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591017"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Vztahy typů v operacích dotazu LINQ (C#)
-Chcete-li psát dotazy efektivně, je třeba porozumět, jak typy proměnných v dokončeném dotazu operace všechny vzájemně souvisí. Když pochopíte tyto vztahy se snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho budete rozumět co děje na pozadí, když jsou proměnné implicitně typované pomocí `var`.  
+Chcete-li efektivně zapisovat dotazy, měli byste pochopit, jak typy proměnných v úplné operaci dotazu vzájemně souvisí. Pokud rozumíte těmto vztahům, budete snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho můžete pochopit, co se stane na pozadí, pokud jsou proměnné implicitně typované pomocí `var`.  
   
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operace dotazu jsou silně typované ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Typ proměnné dotazů musí být kompatibilní s typem prvků ve zdroji dat a typem iterační proměnné v `foreach` příkazu. Tvorba silných typů zaručuje, že jsou zachyceny chyby typu v době kompilace, kdy je lze opravit dříve, než se dotknou uživatelů.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]operace dotazů jsou silně typované ve zdroji dat, v samotném dotazu a v provádění dotazu. Typ proměnných v dotazu musí být kompatibilní s typem prvků ve zdroji dat a typem proměnné iterace v `foreach` příkazu. Toto silné zadání zaručuje, že při kompilaci jsou zachyceny chyby typu, pokud je lze opravit předtím, než se uživatelé dostanou.  
   
- Pro ukázání těchto vztahů typů většina příkladů, které následují, používá explicitní zadání pro všechny proměnné. Poslední příklad ukazuje, jak stejné zásady platí i při použití implicitního zápisu pomocí [var](../../../../csharp/language-reference/keywords/var.md).  
+ Aby bylo možné předvést tyto vztahy typů, většina příkladů, které následují, používá explicitní psaní pro všechny proměnné. Poslední příklad ukazuje, jak se stejné zásady použijí, i když použijete implicitní zadání pomocí [var](../../../language-reference/keywords/var.md).  
   
-## <a name="queries-that-do-not-transform-the-source-data"></a>Dotazy, které Netransformují zdrojová Data  
- Následující ilustrace ukazuje [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] na objekty dotazování operace, která neslouží k transformaci na data. Zdroj obsahuje posloupnosti řetězců a výstup dotazu je také posloupnost řetězců.  
+## <a name="queries-that-do-not-transform-the-source-data"></a>Dotazy, které netransformují zdrojová data  
+ Následující ilustrace znázorňuje [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operaci dotazování na objekty, která neprovede žádné transformace dat. Zdroj obsahuje posloupnost řetězců a výstup dotazu je také posloupnost řetězců.  
   
- ![Diagram znázorňující vztah datových typů v dotazu LINQ.](./media/type-relationships-in-linq-query-operations/linq-query-data-type-relation.png)  
+ ![Diagram, který zobrazuje vztah datových typů v dotazu LINQ.](./media/type-relationships-in-linq-query-operations/linq-query-data-type-relation.png)  
   
-1. Argument typu zdroje dat určuje typ rozsahu proměnných.  
+1. Argument typu zdroje dat určuje typ proměnné rozsahu.  
   
-2. Určuje typ objektu, který je vybraný typ proměnné dotazu. Tady `name` je řetězec. Proto, že je proměnná dotazu `IEnumerable<string>`.  
+2. Typ objektu, který je vybrán, určuje typ proměnné dotazu. Zde `name` je řetězec. Proto proměnná dotazu je `IEnumerable<string>`.  
   
-3. Proměnná dotazu je procházena `foreach` příkazu. Vzhledem k tomu, že je proměnná dotazu sekvencí řetězců, iterační proměnná je také řetězec.  
+3. Proměnná dotazu se opakuje v `foreach` příkazu. Vzhledem k tomu, že je proměnná dotazu posloupností řetězců, je proměnná iterace také řetězcem.  
   
-## <a name="queries-that-transform-the-source-data"></a>Dotazy, které transformují zdrojová Data  
- Následující ilustrace ukazuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] dotazové operace, který provádí jednoduché transformaci na data. Dotaz přebírá řadu `Customer` objektů jako vstup a vybere pouze `Name` vlastnosti ve výsledku. Protože `Name` je řetězec, dotaz vyprodukuje sekvenci řetězců jako výstup.  
+## <a name="queries-that-transform-the-source-data"></a>Dotazy, které transformují zdrojová data  
+ Následující ilustrace znázorňuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] operaci dotazu, která provádí jednoduchou transformaci dat. Dotaz provede jako vstup sekvenci `Customer` objektů a ve výsledku vybere `Name` pouze vlastnost. Vzhledem `Name` k tomu, že je řetězec, dotaz vytváří sekvenci řetězců jako výstup.  
   
- ![Diagram znázorňující, který transformuje datový typ dotazu.](./media/type-relationships-in-linq-query-operations/linq-query-transform-data-type.png)  
+ ![Diagram znázorňující dotaz, který transformuje datový typ.](./media/type-relationships-in-linq-query-operations/linq-query-transform-data-type.png)  
   
-1. Argument typu zdroje dat určuje typ rozsahu proměnných.  
+1. Argument typu zdroje dat určuje typ proměnné rozsahu.  
   
-2. `select` Příkaz vrátí `Name` vlastnosti namísto kompletního `Customer` objektu. Protože `Name` je řetězec argument typu `custNameQuery` je `string`, nikoli `Customer`.  
+2. Příkaz vrátí vlastnost namísto celého `Customer`objektu. `Name` `select` Protože `Name` je řetězec, `custNameQuery` argument typu je `string`, not `Customer`.  
   
-3. Protože `custNameQuery` je posloupnost řetězců `foreach` iterační proměnná smyčky musí být také `string`.  
+3. Vzhledem `custNameQuery` k tomu `foreach` , že je sekvence řetězců, iterační `string`proměnná smyčky musí být také.  
   
- Následující obrázek znázorňuje poněkud složitější transformaci. `select` Příkaz vrátí anonymní typ, který zachycuje pouze dva členy původního `Customer` objektu.  
+ Následující ilustrace znázorňuje mírně složitější transformaci. Příkaz vrátí anonymní typ, který zachycuje pouze dva členy původního `Customer` objektu. `select`  
   
- ![Diagram znázorňující komplexnější dotaz, který transformuje datový typ.](./media/type-relationships-in-linq-query-operations/linq-complex-query-transform-data-type.png)  
+ ![Diagram znázorňující složitější dotaz, který transformuje datový typ.](./media/type-relationships-in-linq-query-operations/linq-complex-query-transform-data-type.png)  
   
-1. Argument typu zdroje dat je vždy typ rozsahu proměnných v dotazu.  
+1. Argument typu zdroje dat je vždy typ proměnné rozsahu v dotazu.  
   
-2. Vzhledem k tomu, `select` příkaz produkuje anonymní typ, proměnná dotazu musí být implicitně typována pomocí `var`.  
+2. Vzhledem k tomu, že `var` příkazvytvoříanonymnítyp,proměnnádotazumusíbýtimplicitnězadánapomocí.`select`  
   
-3. Protože je typ proměnné dotazu implicitní, iterační proměnná ve `foreach` smyčky musí být také implicitní.  
+3. Vzhledem k tomu, že typ proměnné dotazu je implicitní, musí být proměnná iterace ve `foreach` smyčce také implicitní.  
   
-## <a name="letting-the-compiler-infer-type-information"></a>Umožnit kompilátoru odvodit informace o typu  
- Přestože byste měli rozumět vztahům typů v operaci dotazu, máte možnost nechat kompilátor, aby udělal všechnu práci za vás. Klíčové slovo [var](../../../../csharp/language-reference/keywords/var.md) lze použít pro všechny místní proměnné v rámci operace dotazu. Na následujícím obrázku je podobně jako u příkladu 2, který byl popsán výše. Kompilátor však dodává silný typ pro každou proměnnou v operaci dotazu.  
+## <a name="letting-the-compiler-infer-type-information"></a>Umožnění odvození informací o typu kompilátoru  
+ I když byste měli pochopit vztahy typů v operaci dotazu, máte možnost nechat kompilátor provádět veškerou práci za vás. Klíčové slovo [var](../../../language-reference/keywords/var.md) lze použít pro libovolnou místní proměnnou v operaci dotazu. Následující obrázek je podobný ukázkovému číslu 2, které bylo popsáno dříve. Nicméně kompilátor poskytuje silný typ pro každou proměnnou v operaci dotazu.  
   
- ![Diagram znázorňující tok typ s implicitního zápisu.](./media/type-relationships-in-linq-query-operations/linq-type-flow-implicit-typing.png)  
+ ![Diagram, který zobrazuje tok typu s implicitním zadáním.](./media/type-relationships-in-linq-query-operations/linq-type-flow-implicit-typing.png)  
   
- Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+ Další informace o `var`naleznete v tématu [implicitně typované lokální proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).  

@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)'
+title: 'Postupy: Dotaz na největší soubor nebo soubory v adresářovém stromu (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: 0ff1b5cb4e9563e64b95b9cbcc338f15771cbcab
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 966138795dca53db99a0752b9bb7b85cc4601ee3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585868"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592752"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)
-Tento příklad ukazuje pět dotazů souvisejících s velikostí souboru v bajtech:  
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Postupy: Dotaz na největší soubor nebo soubory v adresářovém stromu (LINQ) (C#)
+Tento příklad ukazuje pět dotazů týkajících se velikosti souboru v bajtech:  
   
-- Jak načíst velikost v bajtech největší soubor.  
+- Jak načíst velikost v bajtech pro největší soubor  
   
-- Jak načíst velikost v bajtech nejmenší souboru.  
+- Jak načíst velikost nejmenšího souboru v bajtech.  
   
-- Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v rámci zadané kořenové složky.  
+- Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor z jedné nebo více složek v zadané kořenové složce.  
   
-- Jak získávají pořadí, jako je například 10 největších souborů.  
+- Jak načíst sekvenci, jako je 10 největších souborů.  
   
-- Způsob řazení souborů do skupiny založené na jejich velikost souboru v bajtech, soubory, které jsou menší než zadaná velikost se ignoruje.  
+- Postup při řazení souborů do skupin na základě velikosti jejich souboru v bajtech. soubory, které jsou menší než zadaná velikost, se ignorují.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje pět samostatné dotazy, které ukazují, jak zadávat dotazy na soubory a skupin, v závislosti na jejich velikost souboru v bajtech. Můžete snadno upravit tyto příklady na základní dotaz na některé jiné vlastnosti <xref:System.IO.FileInfo> objektu.  
+ Následující příklad obsahuje pět samostatných dotazů, které ukazují, jak zadávat dotazy a seskupovat soubory v závislosti na velikosti souboru v bajtech. Tyto příklady lze snadno upravit tak, aby dotaz byly základem pro některé další vlastnosti <xref:System.IO.FileInfo> objektu.  
   
 ```csharp  
 class QueryBySize  
@@ -138,14 +138,14 @@ class QueryBySize
 }  
 ```  
   
- K vrácení jednoho nebo více dokončení <xref:System.IO.FileInfo> objekty, dotaz musí nejprve zkontrolujte každé z nich data zdroje a pak je můžete seřadit podle hodnoty jejich vlastnost Length. Potom může vrátit jeden nebo pořadí s největší délky. Použití <xref:System.Linq.Enumerable.First%2A> se vraťte první prvek v seznamu. Použití <xref:System.Linq.Enumerable.Take%2A> vrátit prvních n počet prvků. Zadejte sestupně umístit nejmenší prvky na začátek seznamu.  
+ Chcete-li vrátit jeden nebo <xref:System.IO.FileInfo> více úplných objektů, dotaz nejprve musí projít každou z nich ve zdroji dat a pak je seřadit podle hodnoty vlastnosti length. Pak může vrátit jednu z nich nebo sekvenci s největší délkou. Slouží <xref:System.Linq.Enumerable.First%2A> k vrácení prvního prvku v seznamu. Slouží <xref:System.Linq.Enumerable.Take%2A> k vrácení prvního n počtu prvků. Určete sestupné řazení, aby bylo možné umístit nejmenší prvky na začátek seznamu.  
   
- Dotaz, volá do samostatné metodě získat velikost souboru v bajtech, aby bylo možné využívat možné výjimku, která bude vyvolána v případě, kdy byl odstraněn soubor v jiném vlákně v období od <xref:System.IO.FileInfo> objekt byl vytvořen při volání funkce `GetFiles`. I přes <xref:System.IO.FileInfo> objekt již byl vytvořen, výjimce může dojít, protože <xref:System.IO.FileInfo> objekt se pokusí obnovit jeho <xref:System.IO.FileInfo.Length%2A> vlastnost pomocí aktuální velikost v bajtech při prvním přístupu k vlastnosti. Vložením této operace v bloku try-catch mimo dotazu, budeme postupovat podle pravidla vyloučení operací v dotazech, které může způsobit vedlejší účinky. Obecně platí musí být věnovat pozornost při využívání výjimky, abyste měli jistotu, že aplikace není ponechán v neznámém stavu.  
+ Dotaz, volá do samostatné metodě získat velikost souboru v bajtech, aby bylo možné využívat možné výjimku, která bude vyvolána v případě, kdy byl odstraněn soubor v jiném vlákně v období od <xref:System.IO.FileInfo> objekt byl vytvořen při volání funkce `GetFiles`. I přes <xref:System.IO.FileInfo> objekt již byl vytvořen, výjimka může být <xref:System.IO.FileInfo> způsobena tím, že se objekt pokusí aktualizovat svou <xref:System.IO.FileInfo.Length%2A> vlastnost pomocí nejaktuálnější velikosti v bajtech při prvním otevření vlastnosti. Vložením této operace do bloku try-catch mimo dotaz se řídí pravidlo vyloučení operací v dotazech, které můžou způsobit vedlejší účinky. Obecně je potřeba věnovat velkou péči při využívání výjimek, aby se zajistilo, že aplikace zůstane v neznámém stavu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
  
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

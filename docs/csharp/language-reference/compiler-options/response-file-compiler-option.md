@@ -7,15 +7,15 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: 32a06c596c44cdf28e5c1bb3422b9cf8262f2c08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1884230f1779f9d425ef6e54cda6967c8e51d985
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662410"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602480"
 ---
 # <a name="-c-compiler-options"></a>@ (Možnosti kompilátoru C#)
-@ – Možnost umožňují určit soubor obsahující možnosti kompilátoru a soubory zdrojového kódu pro kompilaci.  
+Možnost @ umožňuje zadat soubor, který obsahuje možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,29 +25,29 @@ ms.locfileid: "61662410"
   
 ## <a name="arguments"></a>Arguments  
  `response_file`  
- Soubor se seznamem – možnosti kompilátoru nebo souborů se zdrojovým kódem, chcete-li zkompilovat.  
+ Soubor se seznamem možností kompilátoru nebo souborů zdrojového kódu, které mají být zkompilovány.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnosti kompilátoru a soubory zdrojového kódu budou zpracovány kompilátorem tak, jako kdyby kdyby byly zadány v příkazovém řádku.  
+ Možnosti kompilátoru a soubory zdrojového kódu budou zpracovány kompilátorem stejně, jako kdyby byly zadány v příkazovém řádku.  
   
- Pokud chcete zadat více než jeden soubor odpovědí do kompilace, zadejte více možnosti soubor odpovědi. Příklad:  
+ Chcete-li v kompilaci zadat více než jeden soubor odpovědí, zadejte více možností souboru odezvy. Příklad:  
   
 ```  
 @file1.rsp @file2.rsp  
 ```  
   
- V odpovědi na soubor, více možností kompilátoru a soubory zdrojového kódu může zobrazit na jednom řádku. Specifikace jediné kompilátoru možnost se musí nacházet na jednom řádku (nemůžou zahrnovat více řádků). Soubory odpovědí může mít komentáře, které začínají symbolem #.  
+ V souboru odpovědí se může na jednom řádku objevit více možností kompilátoru a souborů zdrojového kódu. Jedna specifikace možnosti kompilátoru se musí vyskytovat na jednom řádku (nemůže zasahovat do více řádků). Soubory odpovědí můžou obsahovat komentáře, které začínají symbolem #.  
   
- Určení možností kompilátoru ze souboru odpovědí je stejně jako vydávání těchto příkazů na příkazovém řádku. Zobrazit [sestavení z příkazového řádku](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) Další informace.  
+ Zadání možností kompilátoru ze souboru odpovědí je stejně jako vydávání těchto příkazů na příkazovém řádku. Další informace naleznete v tématu sestavování [z příkazového řádku](./how-to-set-environment-variables-for-the-visual-studio-command-line.md) .  
   
- Kompilátor zpracovává možnosti příkazu v průběhu jejich výskytu. Argumenty příkazového řádku můžete přepsat, proto výše uvedených možností v souborech odpovědí. Možnosti v souboru odpovědí a naopak, přepíše možnosti uvedené dříve v příkazovém řádku nebo v jiné soubory odpovědí.  
+ Kompilátor zpracuje možnosti příkazu, jak jsou zjištěny. Proto argumenty příkazového řádku mohou přepsat dříve uvedené možnosti v souborech odpovědí. Naopak možnosti v souboru odpovědí budou přepisovat možnosti uvedené dříve na příkazovém řádku nebo v jiných souborech odpovědí.  
   
- C# obsahuje soubor csc.rsp, který je umístěn ve stejném adresáři jako soubor csc.exe. Zobrazit [- noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) Další informace o souboru csc.rsp.  
+ C#poskytuje soubor csc. rsp, který je umístěn ve stejném adresáři jako soubor csc. exe. Další informace o souboru CSc. rsp najdete v článku o [konfiguraci](./noconfig-compiler-option.md) .  
   
- Tato možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio ani ji není možné změnit prostřednictvím kódu programu.  
+ Tuto možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani jej nelze změnit programově.  
   
 ## <a name="example"></a>Příklad  
- Následují po zadání několika řádků z ukázkového souboru odpovědí:  
+ Následuje několik řádků z ukázkového souboru odezvy:  
   
 ```console  
 # build the first output file  
@@ -56,4 +56,4 @@ ms.locfileid: "61662410"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

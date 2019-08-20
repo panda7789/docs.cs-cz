@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zpracování výjimky pomocí bloku try-catch - C# Průvodce programováním pro službu'
+title: 'Postupy: Zpracování výjimky pomocí Průvodce Try-Catch- C# Programming'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,26 +7,26 @@ helpviewer_keywords:
 - exceptions [C#], try/catch blocks
 - try/catch blocks [C#]
 ms.assetid: ca8e3773-980e-4767-8633-7408540e9818
-ms.openlocfilehash: 0524248a0b82ddc115e82108f774e894f1dc2f26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5378de09962055fe7d2e100484ad69662c803e0f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61710833"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590232"
 ---
-# <a name="how-to-handle-an-exception-using-trycatch-c-programming-guide"></a>Postupy: Zpracování výjimky pomocí bloku try/catch (C# Programming Guide)
-Účel [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md) blok je k zachycení a zpracování výjimky generované funkční kód. Některé výjimky mohou být zpracovány v `catch` bloku a tento problém vyřešit bez výjimky je znovu vyvolána; však častěji pouze jednu, která vám pomůžou se ujistěte, že je vyvolána vhodná výjimka.  
+# <a name="how-to-handle-an-exception-using-trycatch-c-programming-guide"></a>Postupy: Zpracování výjimky pomocí try/catch (C# Průvodce programováním)
+Účelem bloku [try-catch](../../language-reference/keywords/try-catch.md) je zachycení a zpracování výjimky generované pracovním kódem. Některé výjimky lze zpracovat v `catch` bloku a problém je vyřešen, aniž by došlo k opakovanému vyvolání výjimky, ale častěji stačí pouze to, abyste se ujistili, že je vyvolána příslušná výjimka.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu <xref:System.IndexOutOfRangeException> není nejvhodnější výjimka: <xref:System.ArgumentOutOfRangeException> větší smysl metoda vzhledem k tomu, chyba je způsobená `index` argument předaná volající funkcí.  
+ V tomto příkladu <xref:System.IndexOutOfRangeException> není nejvhodnější výjimka: <xref:System.ArgumentOutOfRangeException> dává pro metodu větší smysl, protože `index` chyba je způsobena argumentem předaným volajícím.  
   
  [!code-csharp[csProgGuideExceptions#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#5)]  
   
 ## <a name="comments"></a>Komentáře  
- Kód, který způsobí, že výjimka je ohraničen `try` bloku. A `catch` přidán příkaz ihned po zpracování `IndexOutOfRangeException`, pokud k němu dojde. `catch` Blokovat obslužné rutiny `IndexOutOfRangeException` a vyvolá více odpovídající `ArgumentOutOfRangeException` výjimka místo. Aby bylo možné poskytnout co nejvíce informací volajícího, zvažte zadání původní výjimku jako <xref:System.Exception.InnerException%2A> nové výjimky. Vzhledem k tomu, <xref:System.Exception.InnerException%2A> vlastnost je [jen pro čtení](../../../csharp/language-reference/keywords/readonly.md), je nutné přiřadit v konstruktoru novou výjimku.  
+ Kód, který způsobuje výjimku, je uzavřen v `try` bloku. Příkaz se přidá hned po zpracování `IndexOutOfRangeException`, pokud k němu dojde. `catch` `catch` Blok zpracovává`IndexOutOfRangeException` a namísto toho vyvolává vhodnější výjimku.`ArgumentOutOfRangeException` Aby bylo možné poskytnout volající co nejvíc informací, zvažte zadání původní výjimky jako <xref:System.Exception.InnerException%2A> nové výjimky. Vzhledem k <xref:System.Exception.InnerException%2A> tomu, že vlastnost je [jen pro čtení](../../language-reference/keywords/readonly.md), je nutné ji přiřadit v konstruktoru nové výjimky.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)
-- [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Výjimky a jejich zpracování](./index.md)
+- [Zpracování výjimek](./exception-handling.md)

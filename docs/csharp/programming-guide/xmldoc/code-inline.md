@@ -1,5 +1,5 @@
 ---
-title: <c> - C# Průvodce programováním
+title: <c>– C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - c C# XML tag
 - <c> C# XML tag
 ms.assetid: aad5b16e-a29e-445e-bd0d-eea0b138d7b2
-ms.openlocfilehash: f97e8a8f07b13e509516d13cb5181109f2340e0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c881b9ec577fb04381f9e10c7df8f9d0da44cd66
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708142"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588181"
 ---
-# <a name="c-c-programming-guide"></a>\<c > (C# Průvodce programováním v)
+# <a name="c-c-programming-guide"></a>\<c > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -30,14 +30,14 @@ ms.locfileid: "61708142"
  Text, který chcete označit jako kód.  
   
 ## <a name="remarks"></a>Poznámky  
- \<c > značky poskytuje způsob, jak určit, že text v popisu musí být označené jako kód. Použití [ \<kód >](../../../csharp/programming-guide/xmldoc/code.md) k označení jako kódu více řádků.  
+ Značka \<c > poskytuje způsob, jak označit, že text v rámci popisu by měl být označen jako kód. [ Použijte\<kód >](./code.md) k označení více řádků jako kódu.  
   
- Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

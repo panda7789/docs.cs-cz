@@ -1,55 +1,55 @@
 ---
-title: Obecné typy v běhovém - C# Průvodce programováním
+title: Obecné typy v C# programovacím průvodci pro dobu běhu
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-ms.openlocfilehash: c739ae9b9804ffcb27d6bdc969bf7b5c0fe90512
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: e011375ed069a48f80364e529e80397f5f0495a3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423337"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589607"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Obecné typy v běhovém prostředí (Průvodce programováním v C#)
-Při obecném typu nebo metodě je zkompilován jazyk Microsoft intermediate language (MSIL), obsahuje metadata, která identifikuje tak, že má parametry typu. Jak jazyk MSIL pro obecný typ se používá se liší podle toho, jestli zadaný typ parametru hodnota typu nebo typu odkazu.  
+Při kompilaci obecného typu nebo metody do jazyka MSIL (Microsoft Intermediate Language) obsahuje metadata, která ji identifikují jako parametry typu. Způsob, jakým se používá jazyk MSIL pro obecný typ, se liší v závislosti na tom, zda je zadaný parametr typu hodnotový nebo odkazový typ.  
   
- Když obecný typ nejprve zkonstruován s typem hodnoty jako parametr, modul runtime vytvoří specializované obecného typu pomocí zadaného parametrem nebo parametry nahrazeny na příslušných místech v jazyk MSIL. Specializované obecné typy jsou vytvořeny vždy jednou pro každou jedinečnou hodnotu typu, který se používá jako parametr.  
+ Je-li obecný typ nejprve vytvořen s typem hodnoty jako parametr, modul runtime vytvoří specializovaný obecný typ se zadaným parametrem nebo parametry nahrazeny v příslušných umístěních v jazyce MSIL. Specializované obecné typy jsou vytvořeny jednou pro každý typ jedinečné hodnoty, který se používá jako parametr.  
   
- Předpokládejme například, váš kód programu deklarované zásobníku, který je vytvořen celých čísel:  
+ Předpokládejme například, že váš programový kód deklaruje zásobník, který je tvořen celými čísly:  
   
  [!code-csharp[csProgGuideGenerics#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#42)]  
   
- V tomto okamžiku modul runtime generuje specializované verze <xref:System.Collections.Generic.Stack%601> třídu, která má nahrazeny odpovídajícím způsobem pro její parametr celé číslo. Teď se pokaždé, když váš program kód používá zásobník celých čísel, generované runtime opětné specializované <xref:System.Collections.Generic.Stack%601> třídy. V následujícím příkladu se vytvoří dvě instance zásobníku celých čísel a sdílejí jednu instanci `Stack<int>` kódu:  
+ V tomto okamžiku modul runtime vygeneruje specializovanou verzi <xref:System.Collections.Generic.Stack%601> třídy, která má pro svůj parametr odpovídajícím způsobem celé číslo. Když nyní kód programu používá zásobník celých čísel, modul runtime znovu použije generovanou specializovanou <xref:System.Collections.Generic.Stack%601> třídu. V následujícím příkladu se vytvoří dvě instance celého čísla zásobníku a sdílejí jednu instanci `Stack<int>` kódu:  
   
  [!code-csharp[csProgGuideGenerics#43](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#43)]  
   
- Však Předpokládejme, že to jiné <xref:System.Collections.Generic.Stack%601> třídy pomocí jiného typu hodnoty jako `long` nebo strukturu uživatelem definované jako svůj parametr je vytvořen na jiném místě v kódu. V důsledku toho modul runtime generuje jinou verzi obecného typu a nahradí `long` na příslušných místech v jazyce MSIL. Převody nějaké už nejsou potřebné, protože každý specializované obecnou třídu nativně obsahuje typ hodnoty.  
+ Předpokládejme však, že další <xref:System.Collections.Generic.Stack%601> třída s jiným typem hodnoty, `long` jako je například nebo uživatelsky definovaná struktura, jako svůj parametr je vytvořena v jiném bodě kódu. V důsledku toho modul runtime vygeneruje jinou verzi obecného typu a nahradí ho `long` v příslušných umístěních v jazyce MSIL. Převody již nejsou nezbytné, protože každá specializovaná obecná třída nativně obsahuje typ hodnoty.  
   
- Obecné typy fungují trochu jinak pro typy odkazů. Při prvním obecného typu je vytvořený pomocí jakéhokoliv odkazového typu, modul runtime vytvoří specializované obecného typu s odkazy na objekty, které jsou nahrazeny pro parametry v jazyk MSIL. Potom pokaždé, když dojde k vytvoření konstruovaný typ s typem odkazu jako svůj parametr, bez ohledu na to, jaký typ je, modul runtime znovu použije dříve vytvořeného specializované verze obecného typu. To je možné, protože jsou všechny odkazy stejnou velikost.  
+ Obecné typy fungují trochu jinak pro typy odkazů. Při prvním sestavení obecného typu s jakýmkoli odkazovým typem vytvoří modul runtime specializovaný obecný typ s odkazy na objekty, které jsou nahrazeny pro parametry v jazyce MSIL. Pak při každém vytvoření instance konstruovaného typu s odkazovým typem jako jeho parametr bez ohledu na to, jaký typ je, modul runtime znovu použije dříve vytvořenou specializovanou verzi obecného typu. To je možné, protože všechny odkazy mají stejnou velikost.  
   
- Předpokládejme například, že jste měli dva typy odkazů `Customer` třídy a `Order` třídy a také Předpokládejme, že jste vytvořili zásobníku `Customer` typy:  
+ Předpokládejme například, že máte dva typy odkazů, `Customer` třídu `Order` a třídu a také Předpokládejme, že `Customer` jste vytvořili zásobník typů:  
   
  [!code-csharp[csProgGuideGenerics#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#47)]  
   
  [!code-csharp[csProgGuideGenerics#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#44)]  
   
- V tomto okamžiku modul runtime generuje specializované verze <xref:System.Collections.Generic.Stack%601> třída, která obsahuje odkazy na objekty, které se vyplní později místo ukládání dat. Předpokládejme, že další řádek kódu vytvoří zásobníku jiného typu odkaz, který se nazývá `Order`:  
+ V tomto okamžiku modul runtime vygeneruje specializovanou verzi <xref:System.Collections.Generic.Stack%601> třídy, která ukládá odkazy na objekty, které budou vyplněny později namísto ukládání dat. Předpokládejme, že další řádek kódu vytvoří zásobník jiného typu odkazu, který má název `Order`:  
   
  [!code-csharp[csProgGuideGenerics#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#45)]  
   
- Na rozdíl od s typy hodnot, jiné specializované verze <xref:System.Collections.Generic.Stack%601> třída není vytvořena pro `Order` typu. Místo toho instance specializované verze <xref:System.Collections.Generic.Stack%601> je vytvořená třída a `orders` proměnná je nastavená na něj odkazovat. Předpokládejme, že pak zjistil psát kód k vytvoření zásobníku `Customer` typu:  
+ Na rozdíl od typů hodnot není pro daný <xref:System.Collections.Generic.Stack%601> `Order` typ vytvořena jiná specializovaná verze třídy. Místo toho je vytvořena instance specializované verze <xref:System.Collections.Generic.Stack%601> třídy `orders` a proměnná je nastavena na odkaz na ni. Předpokládejme, že jste pak narazili na řádek kódu pro vytvoření zásobníku `Customer` typu:  
   
  [!code-csharp[csProgGuideGenerics#46](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#46)]  
   
- Stejně jako u předchozí použití <xref:System.Collections.Generic.Stack%601> třídy vytvořené pomocí `Order` zadejte jinou instancí specializované <xref:System.Collections.Generic.Stack%601> je vytvořená třída. Ukazatele, které jsou obsaženy v něm jsou nastavené tak, aby odkazovaly velikost oblasti paměti `Customer` typu. Vzhledem k tomu, že počet typů odkazu se může lišit programu nečekaně implementace jazyka C# obecných typů výrazně snižuje množství kódu do jednoho snížením počtu specializované třídy vytvořený kompilátorem pro obecné třídy odkazových typů.  
+ Stejně jako u předchozího použití <xref:System.Collections.Generic.Stack%601> třídy vytvořeného `Order` pomocí typu je vytvořena jiná instance specializované <xref:System.Collections.Generic.Stack%601> třídy. Ukazatele, které jsou obsaženy v, jsou nastaveny tak, aby odkazovaly na oblast paměti velikosti `Customer` typu. Vzhledem k tomu, že se počet typů odkazů může volně odlišovat od programu k programu C# , implementace obecných typů významně snižuje množství kódu snížením počtu specializovaných tříd vytvořených kompilátorem pro obecné třídy odkazu. druhy.  
   
- Kromě toho při vytvoření instance generické třídy jazyka C# s použitím parametru hodnoty typu nebo odkaz na typ, odraz můžete dotazovat v době běhu a lze zjistit její skutečné typ i jeho typu parametru.  
+ Kromě toho, pokud je C# vytvořena instance obecné třídy pomocí typu hodnoty nebo parametru referenčního typu, reflexe se může dotazovat za běhu a jejich skutečný typ a parametr typu se dají zjistit.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Úvod do obecných typů](./index.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

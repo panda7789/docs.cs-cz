@@ -7,12 +7,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: bccc22f5362b22540dadf08e6b21a07cbc578327
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 1608cd7b888a67af3ccb98b16323e74a9c5ad4a9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433848"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608409"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 
@@ -55,9 +55,9 @@ Všimněte si, že syntaxe pro popis omezení parametrů typu na delegátech je 
 
 [!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#8)]
 
-Informace o obecných delegátech najdete v tématu [Obecné delegáty](../../../csharp/programming-guide/generics/generic-delegates.md).
+Informace o obecných delegátech najdete v tématu [Obecné delegáty](../../programming-guide/generics/generic-delegates.md).
 
-Podrobnosti o syntaxi a použití omezení naleznete v tématu [omezení u parametrů typu](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).
+Podrobnosti o syntaxi a použití omezení naleznete v tématu [omezení u parametrů typu](../../programming-guide/generics/constraints-on-type-parameters.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -65,8 +65,8 @@ Podrobnosti o syntaxi a použití omezení naleznete v tématu [omezení u param
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#Odkaz](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
-- [new – omezení](../../../csharp/language-reference/keywords/new-constraint.md)
-- [Omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Úvod do obecných typů](../../programming-guide/generics/index.md)
+- [new – omezení](./new-constraint.md)
+- [Omezení parametrů typů](../../programming-guide/generics/constraints-on-type-parameters.md)

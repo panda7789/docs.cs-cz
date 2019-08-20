@@ -1,52 +1,52 @@
 ---
-title: Obecná rozhraní - C# Průvodce programováním
+title: Obecná rozhraní – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: 7fc79874c8e1ff24c38d288d3f6708e2851419e3
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: fb2c570b251979adb76ad2af1a3b6f54b75a15ff
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423470"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589710"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Obecná rozhraní (Průvodce programováním v C#)
-Často je užitečné k definování rozhraní pro obecné kolekce tříd nebo pro obecné třídy, které představují položek v kolekci. Předvolby pro obecné třídy, je pomocí obecných rozhraní, jako <xref:System.IComparable%601> spíše než <xref:System.IComparable>, aby se zabránilo operace zabalení a rozbalení u typů hodnot. Definuje několik obecných rozhraní pro použití s kolekcí tříd v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> oboru názvů.  
+Často je užitečné definovat rozhraní buď pro obecné třídy kolekce, nebo pro obecné třídy, které reprezentují položky v kolekci. Preference pro obecné třídy je použití obecných rozhraní, například <xref:System.IComparable%601> spíše než <xref:System.IComparable>, aby se zabránilo zabalení a rozbalení operací na typech hodnot. Knihovna tříd .NET Framework definuje několik obecných rozhraní pro použití s třídami kolekce v <xref:System.Collections.Generic> oboru názvů.  
   
- Pokud je zadána jako omezení pro parametr typu, je možné pouze typy, které implementují rozhraní. Následující příklad kódu ukazuje `SortedList<T>` třídu odvozenou od `GenericList<T>` třídy. Další informace najdete v tématu [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md). `SortedList<T>` Přidá omezení `where T : IComparable<T>`. Díky tomu `BubbleSort` metoda `SortedList<T>` museli používat obecná <xref:System.IComparable%601.CompareTo%2A> metodu na seznamu elementů. V tomto příkladu, prvky seznamu jsou jednoduchá třída `Person`, který implementuje `IComparable<Person>`.  
+ Když je rozhraní zadáno jako omezení parametru typu, lze použít pouze typy, které implementují rozhraní. Následující příklad kódu ukazuje `SortedList<T>` třídu, která je odvozena `GenericList<T>` od třídy. Další informace najdete v tématu [Úvod do obecných typů](./index.md). `SortedList<T>`Přidá omezení `where T : IComparable<T>`. To umožňuje, `BubbleSort` aby metoda `SortedList<T>` v nástroji používala <xref:System.IComparable%601.CompareTo%2A> obecnou metodu pro prvky seznamu. V tomto příkladu jsou prvky seznamu jednoduchou třídou `Person`,, která implementuje. `IComparable<Person>`  
   
  [!code-csharp[csProgGuideGenerics#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics2.cs#29)]  
   
- Několik rozhraní se dá nastavit jako omezení u jednoho typu, následujícím způsobem:  
+ Více rozhraní lze zadat jako omezení pro jeden typ následujícím způsobem:  
   
  [!code-csharp[csProgGuideGenerics#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#30)]  
   
- Rozhraní může definovat více než jeden parametr typu, následujícím způsobem:  
+ Rozhraní může definovat více než jeden parametr typu, a to následujícím způsobem:  
   
  [!code-csharp[csProgGuideGenerics#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#31)]  
   
- Pravidla dědičnosti, které se vztahují na třídy platí také pro rozhraní:  
+ Pravidla dědičnosti, která se vztahují na třídy, se vztahují také na rozhraní:  
   
  [!code-csharp[csProgGuideGenerics#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#32)]  
   
- Obecná rozhraní může dědit z rozhraní Obecné, pokud obecného rozhraní je kontravariantní, což znamená, že pouze jako návratová hodnota používá jeho typu parametru. V knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic.IEnumerable%601> dědí z <xref:System.Collections.IEnumerable> protože <xref:System.Collections.Generic.IEnumerable%601> využívat jenom takové `T` v návratové hodnotě <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a <xref:System.Collections.Generic.IEnumerator%601.Current%2A> metoda getter vlastnosti.  
+ Obecná rozhraní mohou dědit z neobecných rozhraní, pokud je obecné rozhraní kontravariantní, což znamená, že používá pouze parametr typu jako návratovou hodnotu. V knihovně tříd .NET Framework dědí z <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.IEnumerable> , protože <xref:System.Collections.Generic.IEnumerable%601> používá `T` pouze v návratové hodnotě <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a v <xref:System.Collections.Generic.IEnumerator%601.Current%2A> getter vlastnosti.  
   
- Konkrétní třídy mohou implementovat rozhraní uzavřený konstruovaný, následujícím způsobem:  
+ Konkrétní třídy mohou implementovat uzavřená vytvořená rozhraní, a to následujícím způsobem:  
   
  [!code-csharp[csProgGuideGenerics#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#33)]  
   
- Obecné třídy můžete implementovat obecné rozhraní nebo uzavřený konstruovaný rozhraní za předpokladu, seznam parametrů třídy poskytuje všechny argumenty, které vyžadují rozhraní, následujícím způsobem:  
+ Obecné třídy mohou implementovat Obecná rozhraní nebo uzavřená vytvořená rozhraní, pokud seznam parametrů třídy poskytuje všechny argumenty vyžadované rozhraním, a to takto:  
   
  [!code-csharp[csProgGuideGenerics#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#34)]  
   
- Pravidla, která řídí přetížení metody jsou stejné pro metody v rámci obecných tříd, obecné struktury nebo obecná rozhraní. Další informace najdete v tématu [obecné metody](../../../csharp/programming-guide/generics/generic-methods.md).  
+ Pravidla, která řídí přetížení metody, jsou stejná pro metody v obecných třídách, obecných strukturách nebo obecných rozhraních. Další informace najdete v tématu [Obecné metody](./generic-methods.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/index.md)
-- [interface](../../../csharp/language-reference/keywords/interface.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Úvod do obecných typů](./index.md)
+- [interface](../../language-reference/keywords/interface.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

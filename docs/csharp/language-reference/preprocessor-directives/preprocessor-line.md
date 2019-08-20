@@ -1,5 +1,5 @@
 ---
-title: '#řádek – C# odkaz'
+title: '#odkaz na C# řádek'
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
-ms.openlocfilehash: f4e3c3edbe1d542f9bf5c984c403e0486a9da61b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4ac4fd3277fb53251e87321500d1b8007458037
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61660044"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608535"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
 
-`#line` Umožňuje upravit kompilátoru číslování řádků a (volitelně) název výstupního souboru pro chyby a upozornění.
+`#line`umožňuje upravit číslování řádků kompilátoru a (volitelně) výstup názvu souboru pro chyby a upozornění.
 
-Následující příklad ukazuje, jak ohlásit dvě upozornění související s čísly řádků. `#line 200` Směrnice vynutí na další řádek číslo, které má být 200 (i když výchozí hodnota je #6) a až do další `#line` direktiv, název souboru se ohlásí jako "Speciální". `#line default` – Direktiva vrátí řádku číslování na jeho výchozí čísla, která vrátí počet řádků, které se označuje jako předchozí direktivou.
+Následující příklad ukazuje, jak ohlásit dvě upozornění spojená s čísly řádků. Direktiva vynutí, aby číslo dalšího řádku bylo 200 (výchozí hodnota je #6), a až do další `#line` direktivy bude název souboru uveden jako "Special". `#line 200` `#line default` Direktiva vrátí číslování řádků do výchozího číslování, což spočítá řádky, které byly přečíslovány předchozí direktivou.
 
 ```csharp
 class MainClass
@@ -38,7 +38,7 @@ class MainClass
 }
 ```
 
-Kompilace vytvoří následující výstup:
+Kompilace generuje následující výstup:
 
 ```console
 Special(200,13): warning CS0168: The variable 'i' is declared but never used
@@ -51,19 +51,19 @@ MainClass.cs(13,16): warning CS0168: The variable 'd' is declared but never used
 
 ## <a name="remarks"></a>Poznámky
 
-`#line` v jednom z automatizované, zprostředkující kroků v procesu sestavení, může se použít direktiva. Například pokud řádky byly odebrány z původního souboru se zdrojovým kódem, ale stále chtěla kompilátor, aby generoval výstupní založené na původní řádek číslování v souboru, můžete odebrat řádky a potom simulovat původní řádek číslování s `#line`.
+`#line` Direktiva může být použita v automatizovaném mezilehlém kroku procesu sestavení. Například pokud byly řádky odebrány z původního souboru zdrojového kódu, ale přesto jste chtěli, aby kompilátor vygeneroval výstup na základě původního číslování řádků v souboru, mohli byste odebrat řádky a potom simulovat původní číslování `#line`řádků.
 
-`#line hidden` – Direktiva skrývá po sobě jdoucích řádků z ladicího programu, takže když vývojář provede kód, některé řádky mezi `#line hidden` a dalších `#line` – direktiva (za předpokladu, že není jiné `#line hidden` – direktiva) bude se stupňovitým přes. Tuto možnost lze také povolit ASP.NET k rozlišení mezi uživatelem a počítačem generovaný kód. I když je primární příjemce této funkce technologie ASP.NET, je pravděpodobnost, že další zdroje, které způsobí, že generátorů využije ho.
+Direktiva skryje po sobě následující řádky z ladicího programu, což znamená, že když postupuje vývojář pomocí kódu, všechny řádky `#line hidden` mezi a a `#line` další direktivou (za předpokladu, `#line hidden` že se nejedná o jinou direktivu). `#line hidden` zvýší se. Tato možnost slouží také k tomu, aby ASP.NET bylo možné odlišit od uživatelsky definovaného a strojově generovaného kódu. I když je ASP.NET primárním spotřebitelem této funkce, je pravděpodobnější, že ji budou využívat více generátorů zdrojů.
 
-A `#line hidden` direktiva ovlivnit názvy souborů nebo čísla řádků v hlášení chyb. To znamená pokud dojde k chybě v bloku skryté, že kompilátor nahlásí aktuální soubor název a číslo řádku chyby.
+`#line hidden` Direktiva nemá vliv na názvy souborů nebo čísla řádků při zasílání zpráv o chybách. To znamená, že pokud ve skrytém bloku dojde k chybě, kompilátor oznámí aktuální název souboru a číslo řádku chyby.
 
-`#line filename` Direktiva Určuje název souboru, které se mají zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v dvojitých uvozovkách ("") a musí být předcházen číslo řádku.
+`#line filename` Direktiva Určuje název souboru, který se má zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v uvozovkách ("") a musí předcházet číslo řádku.
 
-Soubor zdrojového kódu může mít libovolný počet `#line` direktivy.
+Soubor zdrojového kódu může mít libovolný počet `#line` direktiv.
 
 ## <a name="example-1"></a>Příklad 1
 
-Následující příklad ukazuje, jak ladicí program ignoruje skryté řádky v kódu. Při spuštění v příkladu se zobrazí tři řádky textu. Ale při nastavení přerušení, jak je znázorněno v příkladu a stiskněte F10 a krokovat kód, si všimnete, že ladicí program ignoruje řádku skryté. Všimněte si také, že i v případě, že jste nastavili přerušení na řádku skryté, ladicí program bude stále ho ignorovat.
+Následující příklad ukazuje, jak ladicí program ignoruje skryté řádky v kódu. Když spustíte příklad, zobrazí se tři řádky textu. Nicméně pokud nastavíte bod přerušení, jak je znázorněno v příkladu, a stisknutím klávesy F10 projdete kód, zjistíte, že ladicí program ignoruje skrytý řádek. Všimněte si také, že i když nastavíte bod přerušení na skrytém řádku, ladicí program ho bude stále ignorovat.
 
 ```csharp
 // preprocessor_linehidden.cs
@@ -83,6 +83,6 @@ class MainClass
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C# Direktivy preprocesoru](./index.md)

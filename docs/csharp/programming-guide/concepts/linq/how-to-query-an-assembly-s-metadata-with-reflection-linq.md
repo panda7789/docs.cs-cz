@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (C#)'
+title: 'Postupy: Dotazování na metadata sestavení s reflexí (LINQC#) ()'
 ms.date: 07/20/2015
 ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
-ms.openlocfilehash: 7c209e2524ea6931e0d8f0084a32ea6921adc26e
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: fb0fb118eaabbd9d66c5c4a445b0393a69dd2355
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025358"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592909"
 ---
-# <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a>Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (C#)
+# <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a>Postupy: Dotazování na metadata sestavení s reflexí (LINQC#) ()
 
-Rozhraní .NET Framework třída knihovnu reflexe rozhraní API slouží k přezkoumání metadat v sestavení rozhraní .NET a vytváření kolekcí typy, členy typu, parametry a tak dále, které jsou v tomto sestavení. Protože tato kolekce podporuje Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, může být dotázán pomocí jazyka LINQ.  
+Rozhraní API pro reflexi knihovny tříd .NET Framework lze použít k prozkoumávání metadat v sestavení .NET a vytvoření kolekcí typů, členů typu, parametrů a tak dále, které jsou v tomto sestavení. Vzhledem k tomu, že tyto <xref:System.Collections.Generic.IEnumerable%601> kolekce podporují obecné rozhraní, mohou být dotazovány pomocí LINQ.  
   
-Následující příklad ukazuje, jak LINQ lze pomocí reflexe k načtení metadat konkrétní metody, které odpovídají zadanému vyhledávacímu kritériu. Dotaz v tomto případě se vyhledat názvy všechny metody v sestavení, které vrací vyčíslitelné typy například pole.  
+Následující příklad ukazuje, jak lze pomocí technologie LINQ použít s reflexí k načtení konkrétních metadat pro metody, které odpovídají zadanému vyhledávacímu kritériu. V tomto případě dotaz vyhledá názvy všech metod v sestavení, které vracejí výčtové typy jako pole.  
   
 ## <a name="example"></a>Příklad  
   
@@ -51,8 +51,8 @@ class ReflectionHowTO
 }
 ```  
 
-V příkladu se používá <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> metoda vrátí pole typů v zadaném sestavení. [Kde](../../../../csharp/language-reference/keywords/where-clause.md) filtr tak, aby se vrátí pouze veřejné typy. Pro každý veřejný typ poddotaz je generována pomocí <xref:System.Reflection.MethodInfo> pole, která je vrácena z <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> volání. Tyto výsledky se filtrují pro vrácení pouze těch metod, jehož návratový typ je pole, jinak se typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. A konečně jsou tyto výsledky seskupené podle pomocí názvu typu jako klíč.  
+V příkladu se používá <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> metoda k vrácení pole typů v zadaném sestavení. Filtr [WHERE](../../../language-reference/keywords/where-clause.md) je použit, aby byly vráceny pouze veřejné typy. Pro každý veřejný typ je poddotaz generován pomocí <xref:System.Reflection.MethodInfo> pole, které je vráceno <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> voláním. Tyto výsledky jsou filtrovány tak, aby vracely pouze metody, jejichž návratový typ je pole nebo jiný typ <xref:System.Collections.Generic.IEnumerable%601>, který implementuje. Nakonec jsou tyto výsledky seskupeny pomocí názvu typu jako klíč.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

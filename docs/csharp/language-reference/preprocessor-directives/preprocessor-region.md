@@ -1,5 +1,5 @@
 ---
-title: '#oblast – C# odkaz'
+title: '#odkaz na C# oblast'
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#region directive [C#]'
 ms.assetid: 672c87d1-9771-4f64-ab3f-0ad3d4ffb2b4
-ms.openlocfilehash: adaa58fc47da557a31270e99ff8a1dae3d0731bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba5b47d77c69761a77b05ac6079e1b003af336b3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61659979"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608753"
 ---
 # <a name="region-c-reference"></a>#region (referenční dokumentace jazyka C#)
-`#region` Umožňuje určit blok kódu, které můžete rozbalit nebo sbalit při použití [sbalování](/visualstudio/ide/outlining) funkce z editoru kódu sady Visual Studio. V souborech kódu delší dobu je vhodné sbalit nebo skrýt jedné nebo více oblastí, aby vám umožní soustředit se u souboru, který jste právě pracujete. Následující příklad ukazuje, jak definovat oblasti:  
+`#region`umožňuje zadat blok kódu, který lze rozbalit nebo sbalit při použití funkce [sbalení](/visualstudio/ide/outlining) editoru Visual Studio Code. V případě delších souborů kódu je možné sbalit nebo skrýt jednu nebo více oblastí, abyste se mohli soustředit na část souboru, na kterém právě pracujete. Následující příklad ukazuje, jak definovat oblast:  
   
 ```csharp
 #region MyClass definition  
@@ -29,12 +29,12 @@ public class MyClass
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- A `#region` bloku musí být ukončen direktivou [#endregion](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md) směrnice.  
+ Blok musí být ukončen direktivou [#endregion.](./preprocessor-endregion.md) `#region`  
   
- A `#region` bloku se nesmí překrývat s [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) bloku. Ale `#region` bloku může být vnořena v `#if` bloku a `#if` bloku může být vnořena v `#region` bloku.  
+ Blok se nemůže překrývat s #ifm blokem. [](./preprocessor-if.md) `#region` Blok však může být vnořen `#if` v bloku a `#if` blok může být vnořen do `#region` bloku. `#region`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C# Direktivy preprocesoru](./index.md)

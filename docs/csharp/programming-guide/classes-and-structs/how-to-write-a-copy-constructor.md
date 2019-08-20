@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: Zápis kopírovacího konstruktoru - C# Průvodce programováním'
+title: 'Postupy: Zápis kopírovacího konstruktoru – C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: 169bdfc53d0c30ffc14e5a9525920679a94fbf23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bdc352566052f4cec1686176131e9b1e1b768794
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651776"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596603"
 ---
-# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Postupy: Zápis kopírovacího konstruktoru (C# Průvodce programováním v)
-C# neposkytuje konstruktor kopírování pro objekty, ale můžete jej napsat sami.  
+# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Postupy: Zápis kopírovacího konstruktoru (C# Průvodce programováním)
+C#neposkytuje kopírovací konstruktor pro objekty, ale můžete si ho napsat sami.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Person` [třídy](../../../csharp/language-reference/keywords/class.md) definuje kopírovacího konstruktora představujícího společně s argumentem instanci `Person`. Hodnoty vlastností argumentu jsou přiřazeny novým vlastnostem nové instance `Person`. Kód obsahuje alternativní kopírovací konstruktor, který odešle `Name` a `Age` vlastnosti instance, kterou chcete zkopírovat do konstruktoru instance třídy.  
+ V následujícím příkladu `Person` [Třída](../../language-reference/keywords/class.md) definuje kopírovací konstruktor, který přebírá jako svůj argument instanci `Person`. Hodnoty vlastností argumentu jsou přiřazeny vlastnostem nové instance `Person`. Kód obsahuje alternativní kopírovací konstruktor, který odesílá `Name` vlastnosti a `Age` instance, kterou chcete zkopírovat do konstruktoru instance třídy.  
   
  [!code-csharp[csProgGuideObjects#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#16)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ICloneable>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
-- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy a struktury](./index.md)
+- [Konstruktory](./constructors.md)
+- [Finalizační metody](./destructors.md)

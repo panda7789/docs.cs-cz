@@ -1,46 +1,46 @@
 ---
-title: Klasifikace standardních operátorů dotazu podle metody provedení (C#)
+title: Klasifikace standardních operátorů dotazu podle způsobu provedení (C#)
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
-ms.openlocfilehash: eaf0be4faee01e94b508b31bf878a537471750a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82058e0baf2a253f8594b1af27c99eb6909bae96
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702370"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594758"
 ---
-# <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Klasifikace standardních operátorů dotazu podle metody provedení (C#)
-LINQ na objekty implementace metody standardních dotazovacích operátorů provést dva hlavní způsoby: okamžité nebo odložené. Operátory dotazů, které používají odložené provedení lze dále rozdělit do dvou kategorií: vysílání datových proudů a jiných datových proudů. Pokud víte, jak provést operátory jiný dotaz, se vám můžou pomoct porozumět výsledky, které jste získali z daný dotaz. To je obzvláště hodnotu true, pokud zdroj dat se mění nebo vytváření dotazu na jiný dotaz. Toto téma klasifikuje podle jejich metody provedení standardních dotazovacích operátorů.  
+# <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Klasifikace standardních operátorů dotazu podle způsobu provedení (C#)
+LINQ to Objects implementace standardních metod operátoru dotazu se spouštějí jedním ze dvou hlavních způsobů: Immediate nebo odloženo. Operátory dotazů, které používají odložené provádění, lze dále rozdělit do dvou kategorií: streaming a non-stream. Pokud víte, jak se spouštějí různé operátory dotazu, může vám porozumět výsledkům, které získáte z daného dotazu. To platí zejména v případě, že se změnil zdroj dat nebo pokud vytváříte dotaz nad jiným dotazem. Toto téma klasifikuje standardní operátory dotazu podle jejich způsobu provádění.  
   
-## <a name="manners-of-execution"></a>Způsoby spouštění  
+## <a name="manners-of-execution"></a>Způsoby spuštění  
   
 ### <a name="immediate"></a>Okamžité  
- Okamžité spuštění znamená, že je zdroj dat pro čtení a se operace provádí v místě v kódu, ve kterém je deklarována dotazu. Všechny operátory standardního dotazu, které vracejí výsledek jeden, vyčíslitelné spustit okamžitě.  
+ Okamžité provedení znamená, že zdroj dat je čten a operace je provedena v místě v kódu, kde je dotaz deklarován. Všechny standardní operátory dotazu, které vracejí jeden nevyčíslitelné výsledek, se spustí okamžitě.  
   
 ### <a name="deferred"></a>Odložené  
- Odložené provedení znamená, že operace se neprovádí v místě v kódu, ve kterém je deklarována dotazu. Operace se provádí jenom v případě, že proměnná dotazu je vypočten, například pomocí `foreach` příkazu. To znamená, že výsledky provádění dotazu závisí na obsahu zdroje dat při spuštění dotazu místo Pokud je dotaz definován. Pokud proměnná dotazu je vypočten víckrát, výsledky mohou lišit pokaždé, když. Téměř všechny operátory standardního dotazu, jehož návratový typ je <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IOrderedEnumerable%601> spustit odložené způsobem.  
+ Odložené spuštění znamená, že operace není provedena v místě v kódu, kde je dotaz deklarován. Operace se provádí pouze v případě, že je proměnná dotazu vyhodnocena, například pomocí `foreach` příkazu. To znamená, že výsledky spuštění dotazu závisí na obsahu zdroje dat při spuštění dotazu, nikoli při definování dotazu. Pokud je proměnná dotazu vyčíslovaná víckrát, výsledky se můžou pokaždé lišit. Skoro všechny standardní operátory dotazu, jejichž návratový typ je <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IOrderedEnumerable%601> se má provést odvoditelné způsobem.  
   
- Operátory dotazů, které pomocí odloženého provedení můžete kromě jsou klasifikovány jako streamování nebo jiných datových proudů.  
+ Operátory dotazů, které používají odložené provádění, se dají klasifikovat taky jako streamování nebo nestreamování.  
   
 #### <a name="streaming"></a>Streamování  
- Streamování operátory nemusíte číst všechna zdrojová data před dávají elementy. V době spuštění streamování operátor provádí její činnosti na každý prvek zdroje, jako je čtení a vrací prvku v případě potřeby. Operátor streamování pokračovat ve čtení zdrojové elementy, dokud elementu výsledku je možné vytvořit. To znamená, že může být více než jeden element source číst k vytvoření jednoho elementu výsledku.  
+ Operátoři streamování nemusí číst všechna zdrojová data před tím, než budou vracet prvky. V době spuštění operátor streamování provede svoji operaci na každém zdrojovém prvku, protože je čten a v případě potřeby vytvoří prvek. Operátor streamování bude nadále číst zdrojové prvky, dokud nebude možné vytvořit element výsledku. To znamená, že je možné načíst více než jeden zdrojový prvek pro získání jednoho prvku výsledku.  
   
-#### <a name="non-streaming"></a>Streamování  
- Non-operátory pro datový proud musí číst všechna zdrojová data, před vedou k elementu výsledku. Do této kategorie patří operace, jako je řazení nebo seskupení. V době spuštění operátory dotazu bez datový proud čtení všechna zdrojová data, vložit ho do datové struktury, provést operaci a výsledný elementů yield.  
+#### <a name="non-streaming"></a>Bez streamování  
+ Nestreamované operátory musí číst všechna zdrojová data předtím, než mohou získat výsledný element. Do této kategorie patří operace, jako je řazení nebo seskupování. V době spuštění nestreamující operátory dotazů čtou všechna zdrojová data, umístí je do struktury dat, provede operaci a vrátí výsledné prvky.  
   
-## <a name="classification-table"></a>Klasifikace tabulky  
- V následující tabulce klasifikuje každou metodu operátoru standardního dotazu podle její metoda spuštění.  
+## <a name="classification-table"></a>Klasifikační tabulka  
+ Následující tabulka klasifikuje jednotlivé standardní metody operátoru dotazu podle jeho metody provádění.  
   
 > [!NOTE]
->  Pokud operátor označení ve dvou sloupcích, operace se týká dvou vstupních sekvencí a každé posloupnosti je vyhodnocovány jinak. V těchto případech je vždy první pořadí v seznamu parametrů, který je vyhodnocen v odložené, streamování způsobem.  
+>  Pokud je operátor označený ve dvou sloupcích, jsou v operaci zapojeny dvě vstupní sekvence a každá sekvence je vyhodnocena jinak. V těchto případech je vždy první posloupnost v seznamu parametrů, která je vyhodnocena způsobem, který je vyhodnocen jako odvoditelné streamování.  
   
-|Standardní operátor dotazu|Návratový typ|Okamžité provedení|Odložené provedení datových proudů|Odložené bez streamování spuštění|  
+|Standardní operátor dotazu|Návratový typ|Okamžité provedení|Provádění odloženého streamování|Odložené provádění bez streamování|  
 |-----------------------------|-----------------|-------------------------|----------------------------------|---------------------------------------|  
 |<xref:System.Linq.Enumerable.Aggregate%2A>|TSource|X|||  
 |<xref:System.Linq.Enumerable.All%2A>|<xref:System.Boolean>|X|||  
 |<xref:System.Linq.Enumerable.Any%2A>|<xref:System.Boolean>|X|||  
 |<xref:System.Linq.Enumerable.AsEnumerable%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
-|<xref:System.Linq.Enumerable.Average%2A>|Jednu číselnou hodnotu|X|||  
+|<xref:System.Linq.Enumerable.Average%2A>|Jedna číselná hodnota|X|||  
 |<xref:System.Linq.Enumerable.Cast%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.Concat%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.Contains%2A>|<xref:System.Boolean>|X|||  
@@ -60,8 +60,8 @@ LINQ na objekty implementace metody standardních dotazovacích operátorů prov
 |<xref:System.Linq.Enumerable.Last%2A>|TSource|X|||  
 |<xref:System.Linq.Enumerable.LastOrDefault%2A>|TSource|X|||  
 |<xref:System.Linq.Enumerable.LongCount%2A>|<xref:System.Int64>|X|||  
-|<xref:System.Linq.Enumerable.Max%2A>|Jednu numerickou hodnotu, TSource nebo TResult|X|||  
-|<xref:System.Linq.Enumerable.Min%2A>|Jednu numerickou hodnotu, TSource nebo TResult|X|||  
+|<xref:System.Linq.Enumerable.Max%2A>|Jedna číselná hodnota, TSource nebo TResult|X|||  
+|<xref:System.Linq.Enumerable.Min%2A>|Jedna číselná hodnota, TSource nebo TResult|X|||  
 |<xref:System.Linq.Enumerable.OfType%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.OrderBy%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||X|  
 |<xref:System.Linq.Enumerable.OrderByDescending%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||X|  
@@ -75,7 +75,7 @@ LINQ na objekty implementace metody standardních dotazovacích operátorů prov
 |<xref:System.Linq.Enumerable.SingleOrDefault%2A>|TSource|X|||  
 |<xref:System.Linq.Enumerable.Skip%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.SkipWhile%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
-|<xref:System.Linq.Enumerable.Sum%2A>|Jednu číselnou hodnotu|X|||  
+|<xref:System.Linq.Enumerable.Sum%2A>|Jedna číselná hodnota|X|||  
 |<xref:System.Linq.Enumerable.Take%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 <xref:System.Linq.Enumerable.TakeWhile%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.ThenBy%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||X|  
@@ -90,6 +90,6 @@ LINQ na objekty implementace metody standardních dotazovacích operátorů prov
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq.Enumerable>
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
+- [Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)](./query-expression-syntax-for-standard-query-operators.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

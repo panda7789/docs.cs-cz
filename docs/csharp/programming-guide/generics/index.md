@@ -1,75 +1,75 @@
 ---
-title: Obecné typy - C# Průvodce programováním
+title: Obecné typy – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-ms.openlocfilehash: e32eb7c60e01ca72824ffb3a1e1269cf34650f5a
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 7d212aeaa7d7a8c3f152f8610a7ef3fe5de0fe23
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423400"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589604"
 ---
 # <a name="generics-c-programming-guide"></a>Obecné typy (Průvodce programováním v C#)
-Obecné typy byly přidány do verze 2.0 jazyka C# a common language runtime (CLR). Obecné typy rozhraní .NET Framework přinášejí koncept parametry typu, které umožňují návrh tříd a metod, které specifikace jeden nebo více typů odložit, dokud třídy nebo metody je deklarována a vytvořena kódem na straně klienta. Například můžete pomocí parametru obecného typu T napsat jednu třídu, jiný kód klienta můžete použít bez dalších nákladů na náklady nebo rizikem přetypování modulu runtime nebo operace zabalení, jak je znázorněno zde:  
+Obecné typy byly přidány do verze 2,0 C# jazyka a modulu CLR (Common Language Runtime). Obecné typy představují .NET Framework konceptu parametrů typu, který umožňuje navrhovat třídy a metody, které odloží specifikaci jednoho nebo více typů, dokud není deklarována třída nebo metoda a vytvořena instance klientského kódu. Například pomocí obecného typu parametru T můžete napsat jednu třídu, kterou může jiný klientský kód použít, aniž by vznikly náklady nebo riziko přetypování za běhu nebo zabalení, jak je znázorněno zde:  
   
  [!code-csharp[csProgGuideGenerics#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#1)]  
 
-Obecné třídy a metody opětovné použití, bezpečnost typů a efektivitu tak, aby jejich obecné protějšky nelze kombinovat. Obecné typy se nejčastěji používají s kolekcí a metody, které pracují s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 obsahuje nový obor názvů <xref:System.Collections.Generic>, která obsahuje několik nových obecné kolekce tříd. Doporučuje se, že všechny aplikace, jejichž cílem rozhraní .NET Framework 2.0 a pozdější použití nové obecné kolekce tříd, namísto starší jejich obecné protějšky například <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v .NET](../../../standard/generics/index.md).  
+Obecné třídy a metody kombinují opětovné použitelnost, bezpečnost typů a efektivitu způsobem, že jejich neobecné protějšky nemůžou. Obecné typy se nejčastěji používají s kolekcemi a metodami, které na nich pracují. Verze 2,0 knihovny tříd .NET Framework poskytuje nový obor názvů <xref:System.Collections.Generic>, který obsahuje několik nových obecných tříd kolekcí. Doporučuje se, aby všechny aplikace, které cílí na .NET Framework 2,0 a později používaly nové obecné třídy kolekce namísto starších neobecných protějšků, jako je <xref:System.Collections.ArrayList>. Další informace naleznete v tématu [Obecné typy v rozhraní .NET](../../../standard/generics/index.md).  
   
- Samozřejmě můžete také vytvořit vlastní obecné typy a metody, které poskytují vlastní generalizované řešení a vzorů návrhu, které jsou typově bezpečné a efektivní. Následující příklad kódu ukazuje jednoduchý obecné třídy propojené seznamy pro demonstrační účely. (Ve většině případů byste měli použít <xref:System.Collections.Generic.List%601> poskytovaných knihovnou tříd rozhraní .NET Framework místo vytvoření vlastní třídy.) Parametr typu `T` se používá v několika umístěních, kde konkrétního typu implementujícího typ by obvykle použít k označení typu položky uložené v seznamu. Používá se následujícími způsoby:  
+ Samozřejmě můžete také vytvořit vlastní obecné typy a metody, které poskytují vlastní generalizovaná řešení a vzory návrhu, které jsou typově bezpečné a efektivní. Následující příklad kódu ukazuje jednoduchou obecnou třídu propojených seznamů pro demonstrační účely. (Ve většině případů byste měli použít <xref:System.Collections.Generic.List%601> třídu poskytnutou .NET Framework knihovny tříd namísto vytvoření vlastní.) Parametr `T` typu se používá v několika umístěních, kde konkrétní typ by byl obvykle použit k označení typu položky uložené v seznamu. Používá se následujícími způsoby:  
   
-- Jako typ parametru metody `AddHead` metody.  
+- Jako typ parametru metody v `AddHead` metodě.  
   
-- Jako návratový typ `Data` vlastnost ve vnořeném `Node` třídy.  
+- Jako návratový typ `Data` vlastnosti ve vnořené `Node` třídě.  
   
-- Jako typ soukromému členu `data` ve vnořené třídě.  
+- Jako typ privátního člena `data` ve vnořené třídě.  
   
- Všimněte si, že je k dispozici ve vnořeném T `Node` třídy. Když `GenericList<T>` je vytvořena instance s konkrétního typu implementujícího typ, třeba jako `GenericList<int>`, každý výskyt `T` bude nahrazena adresou `int`.  
+ Všimněte si, že T je k dispozici pro vnořenou `Node` třídu. Při `GenericList<T>` vytvoření instance se konkrétním typem, například `GenericList<int>`jako, každý výskyt `T` bude nahrazen `int`.  
   
  [!code-csharp[csProgGuideGenerics#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#2)]  
   
- Následující příklad kódu ukazuje, jak kód klienta používá Obecné `GenericList<T>` třídy za účelem vytvoření seznamu celých čísel. Jednoduše tak, že změníte typ argumentu, následující kód by mohl snadno upravit tak, aby vytvořit seznam řetězců nebo jiný vlastní typ:  
+ Následující příklad kódu ukazuje, jak klientský kód používá obecnou `GenericList<T>` třídu k vytvoření seznamu celých čísel. Jednoduše změnou argumentu typu lze následující kód snadno upravit, aby bylo možné vytvořit seznam řetězců nebo jakýkoli jiný vlastní typ:  
   
  [!code-csharp[csProgGuideGenerics#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#3)]  
   
-## <a name="generics-overview"></a>Přehled obecných typů  
+## <a name="generics-overview"></a>Obecné typy – přehled  
   
-- Maximalizujte opakované využívání kódu, bezpečnost typů a výkonu pomocí obecných typů.  
+- Pomocí obecných typů maximalizujete opětovné použití kódu, bezpečnost typů a výkon.  
   
-- Nejběžnější použití obecných typů je pro vytvoření kolekce tříd.  
+- Nejběžnějším použitím obecných typů je vytvoření tříd kolekcí.  
   
-- Obsahuje několik nových obecné kolekce tříd v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> oboru názvů. Ty se používají vždy, když je možné namísto třídy, jako <xref:System.Collections.ArrayList> v <xref:System.Collections> oboru názvů.  
+- Knihovna tříd .NET Framework obsahuje několik nových obecných tříd kolekcí v <xref:System.Collections.Generic> oboru názvů. Ty by měly být použity, kdykoli je to možné, <xref:System.Collections.ArrayList> nikoli třídy <xref:System.Collections> , jako je například v oboru názvů.  
   
-- Můžete vytvořit vlastní obecných rozhraní, třídy, metody, události a delegáti.  
+- Můžete vytvořit vlastní Obecná rozhraní, třídy, metody, události a delegáty.  
   
-- Obecné třídy může být omezený na povolení přístupu k metodám pro konkrétní datové typy.  
+- Obecné třídy mohou být omezeny, aby bylo možné povolit přístup k metodám pro konkrétní datové typy.  
   
-- Informace o typech, které se používají v obecného datového typu mohou být získány při spuštění pomocí reflexe.  
+- Informace o typech, které jsou použity v obecném datovém typu, lze získat za běhu pomocí reflexe.  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
   
-- [Parametry obecného typu](../../../csharp/programming-guide/generics/generic-type-parameters.md)  
+- [Parametry obecného typu](./generic-type-parameters.md)  
   
-- [Omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)  
+- [Omezení parametrů typů](./constraints-on-type-parameters.md)  
   
-- [Obecné třídy](../../../csharp/programming-guide/generics/generic-classes.md)  
+- [Obecné třídy](./generic-classes.md)  
   
-- [Obecná rozhraní](../../../csharp/programming-guide/generics/generic-interfaces.md)  
+- [Obecná rozhraní](./generic-interfaces.md)  
   
-- [Obecné metody](../../../csharp/programming-guide/generics/generic-methods.md)  
+- [Obecné metody](./generic-methods.md)  
   
-- [Obecní delegáti](../../../csharp/programming-guide/generics/generic-delegates.md)  
+- [Obecní delegáti](./generic-delegates.md)  
   
-- [Rozdíly mezi šablonami C++ a obecnými typy C#](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)  
+- [Rozdíly mezi šablonami C++ a obecnými typy C#](./differences-between-cpp-templates-and-csharp-generics.md)  
   
-- [Obecné typy a reflexe](../../../csharp/programming-guide/generics/generics-and-reflection.md)  
+- [Obecné typy a reflexe](./generics-and-reflection.md)  
   
-- [Obecné typy v běhovém prostředí](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)  
+- [Obecné typy v běhovém prostředí](./generics-in-the-run-time.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  Další informace najdete v tématu [Specifikace jazyka C#](~/_csharplang/spec/types.md#constructed-types).  
@@ -77,8 +77,8 @@ Obecné třídy a metody opětovné použití, bezpečnost typů a efektivitu ta
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Typy](../../../csharp/programming-guide/types/index.md)
-- [\<typeparam >](../../../csharp/programming-guide/xmldoc/typeparam.md)
-- [\<typeparamref>](../../../csharp/programming-guide/xmldoc/typeparamref.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Typy](../types/index.md)
+- [\<typeparam >](../xmldoc/typeparam.md)
+- [\<typeparamref >](../xmldoc/typeparamref.md)
 - [Obecné typy v .NET](../../../standard/generics/index.md)

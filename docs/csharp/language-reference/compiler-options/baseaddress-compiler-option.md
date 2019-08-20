@@ -1,5 +1,5 @@
 ---
-title: -baseaddress (možnosti kompilátoru C#)
+title: -BaseAddress (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /dllbase
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-ms.openlocfilehash: aa76e3d1d30e394f28b5112e45fc72229e9a78fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e96ab3ece6edc36c913a8efc0097ff9c4a1e3c22
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663021"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69607028"
 ---
-# <a name="-baseaddress-c-compiler-options"></a>-baseaddress (možnosti kompilátoru C#)
-**- Baseaddress** umožní zadat upřednostňované základní adrese, ve kterém se má načíst knihovnu DLL. Další informace o kdy a proč chcete použít tuto možnost najdete v tématu [Larry Osterman Weblogu](https://blogs.msdn.microsoft.com/larryosterman/2004/07/06/why-should-i-even-bother-to-use-dlls-in-my-system/).  
+# <a name="-baseaddress-c-compiler-options"></a>-BaseAddress (C# možnosti kompilátoru)
+Možnost **-BaseAddress** umožňuje zadat upřednostňovanou základní adresu, na které se má načíst knihovna DLL. Další informace o tom, kdy a proč použít tuto možnost, najdete v tématu [blog Larry Osterman](https://blogs.msdn.microsoft.com/larryosterman/2004/07/06/why-should-i-even-bother-to-use-dlls-in-my-system/).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,29 +26,29 @@ ms.locfileid: "61663021"
   
 ## <a name="arguments"></a>Arguments  
  `address`  
- Základní adresa pro knihovnu DLL. Tato adresa je zadat jako desítkové, hexadecimální nebo osmičkové číslo.  
+ Základní adresa knihovny DLL. Tuto adresu lze zadat jako desítkové, šestnáctkové nebo osmičkové číslo.  
   
 ## <a name="remarks"></a>Poznámky  
- Výchozí základní adresa knihovny DLL je nastavit modul common language runtime rozhraní .NET Framework.  
+ Výchozí základní adresa pro knihovnu DLL je nastavena .NET Framework modul CLR (Common Language Runtime).  
   
- Mějte na paměti, že se zaokrouhlí nižší řád slova v této adrese. Například pokud chcete zadat 0x11110001, to se zaokrouhlí na 0x11110000.  
+ Uvědomte si, že slovo v této adrese bude zaokrouhleno. Pokud například zadáte 0x11110001, bude se zaokrouhlit na 0x11110000.  
   
- Dokončete proces podepisování pro knihovnu DLL pomocí sériové číslo. Soubor EXE s parametrem -R.  
+ Chcete-li dokončit proces podepisování pro knihovnu DLL, použijte SN. EXE s parametrem-R.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránku **vlastností** projektu.  
   
-2. Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na stránku vlastností **Build (sestavit** ).  
   
-3. Klikněte na tlačítko **Upřesnit** tlačítko.  
+3. Klikněte na tlačítko **Upřesnit** .  
   
-4. Upravit **základní adresa knihovny DLL** vlastnost.  
+4. Upravte vlastnost **základní adresy knihovny DLL** .  
   
-     Programové nastavení tohoto parametru kompilátoru, naleznete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>.  
+     Chcete-li nastavit tuto možnost kompilátoru programově <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>, přečtěte si téma.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Diagnostics.ProcessModule.BaseAddress%2A?displayProperty=nameWithType>
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

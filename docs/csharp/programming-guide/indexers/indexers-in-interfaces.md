@@ -1,39 +1,39 @@
 ---
-title: Indexery v rozhraní - C# Průvodce programováním
+title: Indexery v rozhraních C# – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: f277758a10b045a6365adfe931ce95d64eb8e445
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cea8d157e89597ddf4633cf7f7d3df7044db9ec7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608577"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589438"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexery v rozhraní (Průvodce programováním v C#)
-Indexery mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Přistupující objekty rozhraní indexery se liší od přístupových objektů [třídy](../../../csharp/language-reference/keywords/class.md) indexery následujícími způsoby:  
+Indexery lze deklarovat na [rozhraní](../../language-reference/keywords/interface.md). Přistupující objekty indexerů rozhraní se liší od přístupových objektů indexerů [tříd](../../language-reference/keywords/class.md) následujícími způsoby:  
   
-- Přístupové objekty rozhraní nepoužívejte modifikátory.  
+- Přistupující objekty rozhraní nepoužívají modifikátory.  
   
-- Přístupový objekt rozhraní nemá tělo.  
+- Přistupující objekt rozhraní nemá tělo.  
   
- Účelem přístupového objektu je proto udává, jestli je indexeru pro čtení i zápis, jen pro čtení nebo jen pro zápis.  
+ Proto je účel přístupového objektu označovat, zda je indexer pro čtení i zápis, jen pro čtení nebo jen pro zápis.  
   
- Následuje příklad rozhraní indexeru přístupového objektu:  
+ Následuje příklad přístupového objektu indexeru rozhraní:  
   
  [!code-csharp[csProgGuideIndexers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#3)]  
   
- Podpis indexeru se musí lišit od podpisů ze všech indexerů je deklarována v stejné rozhraní.  
+ Signatura indexeru se musí lišit od signatur všech ostatních indexerů deklarovaných ve stejném rozhraní.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak implementovat rozhraní indexery.  
+ Následující příklad ukazuje, jak implementovat indexery rozhraní.  
   
  [!code-csharp[csProgGuideIndexers#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#4)]  
   
- V předchozím příkladu můžete použít explicitní implementace členu rozhraní s použitím plně kvalifikovaný název tohoto člena rozhraní. Příklad:  
+ V předchozím příkladu můžete použít explicitní implementaci člena rozhraní pomocí plně kvalifikovaného názvu člena rozhraní. Příklad:  
   
 ```  
 string ISomeInterface.this[int index]   
@@ -41,7 +41,7 @@ string ISomeInterface.this[int index]
 }   
 ```  
   
- Plně kvalifikovaný název je však potřeba jenom k třída implementuje víc než jedno rozhraní se stejným podpisem indexer-li předejít nejednoznačnosti. Například pokud `Employee` třída implementuje dvě rozhraní, `ICitizen` a `IEmployee`, a obě rozhraní mají stejnou signaturu indexer, je nutné explicitní implementace členu rozhraní. To znamená, následující deklarace indexer:  
+ Plně kvalifikovaný název je však potřeba pouze k zamezení nejednoznačnosti, je-li třída implementovaná více než jedno rozhraní se stejným podpisem indexeru. Například pokud `Employee` třída implementuje dvě `ICitizen` rozhraní a `IEmployee`a obě rozhraní mají stejný podpis indexeru, je nutné implementovat explicitní implementaci člena rozhraní. To znamená následující deklaraci indexeru:  
   
 ```  
 string IEmployee.this[int index]   
@@ -49,7 +49,7 @@ string IEmployee.this[int index]
 }   
 ```  
   
- implementuje indexer na `IEmployee` rozhraní při následující deklarace:  
+ implementuje indexer na `IEmployee` rozhraní a následující deklaraci:  
   
 ```  
 string ICitizen.this[int index]
@@ -61,7 +61,7 @@ string ICitizen.this[int index]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
-- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Indexery](./index.md)
+- [Vlastnosti](../classes-and-structs/properties.md)
+- [Rozhraní](../interfaces/index.md)

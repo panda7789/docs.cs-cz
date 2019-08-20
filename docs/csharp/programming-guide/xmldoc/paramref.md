@@ -1,5 +1,5 @@
 ---
-title: <paramref> - C# Průvodce programováním
+title: <paramref>– C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <paramref> C# XML tag
 - paramref C# XML tag
 ms.assetid: 756c24c1-f591-40e8-a838-559761539b0b
-ms.openlocfilehash: 9612fb61151953e0d3b70a4803aafeb571aec7dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e442b6829859ebc4dce6a0f5b6cd6cb777ab1400
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708259"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587904"
 ---
-# <a name="paramref-c-programming-guide"></a>\<paramref > (C# Programming Guide)
+# <a name="paramref-c-programming-guide"></a>\<paramref > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -25,17 +25,17 @@ ms.locfileid: "61708259"
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- Název parametru jako reference. Název uzavřete do dvojitých uvozovek ("").  
+ Název parametru, na který se má odkazovat Název uzavřete do uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- \<Paramref > značky poskytuje způsob, jak určit, že slovo v kódu komentáře, například v \<summary > nebo \<Poznámky > bloku odkazuje na parametr. Soubor XML mohou být zpracovány do naformátuje toto slovo distinct způsobem, jako tučný nebo kurzívu písma.  
+ Značka > \< \<paramref poskytuje způsob, jak označit, že slovo v komentářích kódu, například v souhrnném > nebo v > bloku, odkazuje na parametr. \< Soubor XML lze zpracovat pro formátování tohoto slova nějakým způsobem, například tučným písmem nebo kurzívou.  
   
- Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
+ Zkompilujte pomocí [/doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte dokumentační komentáře do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#7)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

@@ -1,5 +1,5 @@
 ---
-title: Vytváření a vyvolávání výjimek - C# Průvodce programováním
+title: Vytváření a vyvolávání výjimek C# – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,67 +8,67 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: e569742943e121faeae340512544956b674da083
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 605a28f8f804c11a9a6636c7a17ec5782cc5a429
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595358"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590313"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
-Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  
+Výjimky se používají k označení toho, že při spuštění programu došlo k chybě. Objekty výjimek, které popisují chybu, jsou vytvořeny a následně vyvolány pomocí klíčového slova [throw](../../language-reference/keywords/throw.md) . Modul runtime pak vyhledá nejvíce kompatibilní obslužnou rutinu výjimky.  
   
- Programátoři vyvoláním výjimky, pokud jeden nebo více z následujících podmínek jsou splněny:  
+ Programátoři by měli vyvolat výjimky, pokud jsou splněné některé z následujících podmínek:  
   
-- Metoda nemůže dokončit jeho definované funkce.  
+- Metoda nemůže dokončit své definované funkce.  
   
-     Například, pokud má neplatnou hodnotu parametru do metody:  
+     Například pokud má parametr pro metodu neplatnou hodnotu:  
   
      [!code-csharp[csProgGuideExceptions#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#12)]  
   
-- Je provedeno nevhodný volání na objekt, na základě stavu objektu.  
+- Na základě stavu objektu je provedeno nevhodné volání objektu.  
   
-     Jedním z příkladů může být pokusu o zápis do souboru jen pro čtení. V případech, kdy stav objektu neumožňuje operaci throw instance <xref:System.InvalidOperationException> nebo objekt podle odvození z této třídy. Toto je příklad, který vyvolá metodu <xref:System.InvalidOperationException> objektu:  
+     Jedním příkladem může být pokus o zápis do souboru určeného jen pro čtení. V případech, kdy stav objektu neumožňuje operaci, vyvolat instanci <xref:System.InvalidOperationException> nebo objekt na základě odvození této třídy. Toto je příklad metody, která vyvolá <xref:System.InvalidOperationException> objekt:  
   
      [!code-csharp[csProgGuideExceptions#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#13)]  
   
-- Pokud argument metody způsobí výjimku.  
+- Když argument metody způsobí výjimku.  
   
-     V takovém případě by měl být původní výjimka zachycena a <xref:System.ArgumentException> by měla být vytvořena instance. Původní výjimky by měly být předány konstruktoru <xref:System.ArgumentException> jako <xref:System.Exception.InnerException%2A> parametr:  
+     V takovém případě by měla být zachytila původní výjimka <xref:System.ArgumentException> a měla by být vytvořena instance. Původní výjimka by měla být předána konstruktoru <xref:System.ArgumentException> <xref:System.Exception.InnerException%2A> jako parametr:  
   
      [!code-csharp[csProgGuideExceptions#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#14)]  
   
- Výjimky obsahovat vlastnost s názvem <xref:System.Exception.StackTrace%2A>. Tento řetězec obsahuje název metody na aktuální zásobník volání, společně s souboru název a číslo řádku kde byla výjimka vydána pro jednotlivé metody. A <xref:System.Exception.StackTrace%2A> modulem common language runtime (CLR) od bodu je automaticky vytvořen objekt `throw` příkaz, aby výjimky musí být vyvolány z bodu, ve kterém chcete spustit trasování zásobníku.  
+ Výjimky obsahují vlastnost s názvem <xref:System.Exception.StackTrace%2A>. Tento řetězec obsahuje název metod v aktuálním zásobníku volání spolu s názvem souboru a číslem řádku, kde byla výjimka vyvolána pro každou metodu. Objekt je vytvořen automaticky modulem CLR (Common Language Runtime) z místa `throw` příkazu, takže výjimky musí být vyvolány z místa, kde by mělo být trasování zásobníku zahájeno. <xref:System.Exception.StackTrace%2A>  
   
- Všechny výjimky obsahovat vlastnost s názvem <xref:System.Exception.Message%2A>. Řetězec by měl být nastaven na vysvětluje důvod výjimky. Všimněte si, že informace, které jsou citlivé na zabezpečení by neměl umístěny v textu zprávy. Kromě <xref:System.Exception.Message%2A>, <xref:System.ArgumentException> obsahuje vlastnost s názvem <xref:System.ArgumentException.ParamName%2A> , který musí být nastavená na název argumentu, která způsobila vyvolání výjimky. V případě vlastnost setter <xref:System.ArgumentException.ParamName%2A> by mělo být nastavené `value`.  
+ Všechny výjimky obsahují vlastnost s názvem <xref:System.Exception.Message%2A>. Tento řetězec by měl být nastaven na vysvětlení důvodu výjimky. Všimněte si, že informace, které jsou citlivé na zabezpečení, by neměly být vloženy do textu zprávy. Kromě <xref:System.Exception.Message%2A> <xref:System.ArgumentException.ParamName%2A> obsahuje vlastnost s názvem, která by měla být nastavena na název argumentu, který způsobil výjimku vyvolání. <xref:System.ArgumentException> V případě vlastnosti setter <xref:System.ArgumentException.ParamName%2A> by měla být nastavena na. `value`  
   
- Veřejné a chráněné metody by měla vyvolat výjimky pokaždé, když se jejich odpovídající funkce, nelze provést. Třída výjimky, která je vyvolána by měla být k dispozici, který vyhovuje chybové stavy nejvíce specifické výjimky. Tyto výjimky musí být zdokumentována jako součást funkce třídy a odvozené třídy nebo aktualizace původní třídy musí zachovat stejné chování z důvodu zpětné kompatibility.  
+ Veřejné a chráněné metody by měly vyvolat výjimky pokaždé, když nemohou dokončit své zamýšlené funkce. Vyvolaná Třída výjimky by měla být nejvíce specifická výjimka, která je dostupná pro chybové podmínky. Tyto výjimky by měly být zdokumentovány jako součást funkce třídy a odvozené třídy nebo aktualizace původní třídy by měly zachovávat stejné chování pro zpětnou kompatibilitu.  
   
-## <a name="things-to-avoid-when-throwing-exceptions"></a>Se vyvarovat při vyvolávání výjimek  
- Následující seznam uvádí nedoporučované postupy při vyvolání výjimky:  
+## <a name="things-to-avoid-when-throwing-exceptions"></a>Věci, které je potřeba zabránit při vyvolávání výjimek  
+ Následující seznam uvádí postupy, které se vyhne při vyvolávání výjimek:  
   
-- Výjimky by neměly použít ke změně tok programu jako součást běžné provedení. Výjimky by měla sloužit pouze k hlášení a zpracování podmínek chyby.  
+- Výjimky by neměly být použity ke změně toku programu v rámci běžného provádění. Výjimky by měly být použity pouze k hlášení a zpracování chybových podmínek.  
   
-- Výjimky by neměl vrátit jako návratová hodnota nebo parametr namísto vyvolání.  
+- Výjimky by neměly být vráceny jako návratová hodnota nebo parametr namísto vyvolání.  
   
-- Nevyvolávat <xref:System.Exception?displayProperty=nameWithType>, <xref:System.SystemException?displayProperty=nameWithType>, <xref:System.NullReferenceException?displayProperty=nameWithType>, nebo <xref:System.IndexOutOfRangeException?displayProperty=nameWithType> záměrně ze zdrojového kódu.  
+- Nevolejte <xref:System.Exception?displayProperty=nameWithType> <xref:System.SystemException?displayProperty=nameWithType>, nebo<xref:System.IndexOutOfRangeException?displayProperty=nameWithType>úmyslně z vlastního zdrojového kódu. <xref:System.NullReferenceException?displayProperty=nameWithType>  
   
-- Nevytvářejte výjimky, které mohou být vyvolány v režimu ladění, ale ne ve verzi. K identifikaci chyby za běhu ve vývojové fázi, použijte kontrolní výraz ladění.  
+- Nevytvářejte výjimky, které mohou být vyvolány v režimu ladění, ale ne v režimu vydání. Chcete-li identifikovat běhové chyby během fáze vývoje, použijte místo toho příkaz Debug Assert.  
   
-## <a name="defining-exception-classes"></a>Definování třídy výjimek  
- Programy může vrátit třídu předdefinovaná výjimka <xref:System> oboru názvů (s výjimkou tam, kde si předtím poznamenali), nebo vytvořit vlastní výjimky třídy odvozené z <xref:System.Exception>. Odvozené třídy by měl definovat alespoň čtyři konstruktory: jeden konstruktor bez parametrů, ten, který nastaví vlastnost zprávy a ten, který nastaví i <xref:System.Exception.Message%2A> a <xref:System.Exception.InnerException%2A> vlastnosti. Čtvrtý konstruktor se používá k serializaci výjimku. Nové třídy výjimky by měly být serializovatelný. Příklad:  
+## <a name="defining-exception-classes"></a>Definování tříd výjimek  
+ Programy mohou vyvolat předdefinované třídy výjimek v <xref:System> oboru názvů (s výjimkou výše uvedeného) nebo vytvořit vlastní třídy výjimek odvozené z. <xref:System.Exception> Odvozené třídy by měly definovat alespoň čtyři konstruktory: jeden konstruktor bez parametrů, jeden, který nastaví vlastnost Message a jeden, který nastaví <xref:System.Exception.Message%2A> vlastnosti a. <xref:System.Exception.InnerException%2A> Čtvrtý konstruktor slouží k serializaci výjimky. Nové třídy výjimek by měly být serializovatelné. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#15)]  
   
- Data, která poskytují slouží k vytvoření řešení výjimky by měly nové vlastnosti pouze přidat třídu výjimky. Pokud jsou přidány nové vlastnosti do třídy odvozená výjimka `ToString()` by měla být potlačena za účelem vrácení byly přidané informace.  
+ Nové vlastnosti by měly být přidány do třídy výjimek pouze v případě, že data, která poskytují, jsou užitečná pro vyřešení výjimky. Pokud jsou do odvozené třídy Exception přidány nové vlastnosti, měly `ToString()` by být přepsány, aby vracely přidané informace.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkazu throw](~/_csharplang/spec/statements.md#the-throw-statement) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkaz throw](~/_csharplang/spec/statements.md#the-throw-statement) ve [ C# specifikaci jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Výjimky a jejich zpracování](./index.md)
 - [Hierarchie výjimek](../../../standard/exceptions/index.md)
-- [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)
+- [Zpracování výjimek](./exception-handling.md)

@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: Načtení XML ze souboru (C#)'
+title: 'Postupy: Načíst XML ze souboru (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3ed38487-8028-4209-9872-c8dce0ed4dfe
-ms.openlocfilehash: cd4e45767b2f72de8d9a3de9814da6260d2413fe
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: d3e7cdbb0691fafcfcfc684f4495f4785b4ea3e7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485308"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593172"
 ---
-# <a name="how-to-load-xml-from-a-file-c"></a>Postupy: Načtení XML ze souboru (C#)
+# <a name="how-to-load-xml-from-a-file-c"></a>Postupy: Načíst XML ze souboru (C#)
 Toto téma ukazuje, jak načíst XML z identifikátoru URI pomocí <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> metody.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak načíst dokument XML ze souboru. Následující příklad načte books.xml a výstupem stromu XML do konzoly.  
+ Následující příklad ukazuje, jak načíst dokument XML ze souboru. Následující příklad načte soubor Books. XML a vytvoří výstup stromu XML do konzoly.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML](./sample-xml-file-books-linq-to-xml.md)).  
   
 ```csharp  
 XElement booksFromFile = XElement.Load(@"books.xml");  
 Console.WriteLine(booksFromFile);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Catalog>  

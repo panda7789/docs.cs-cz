@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: bf9af90c9695ad9428a887a901a95282672a4f75
-ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
+ms.openlocfilehash: 1029d34ae8823fe91c7e4bc92e168fcc1061c707
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66722539"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594412"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 
-Následující část představuje nové jazykové konstrukce zavedené v jazyce C# 3.0. I když tyto nové funkce se používají v míře s [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, nejsou omezena na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a můžete použít v libovolném kontextu, kde můžete najít je užitečné.
+V následující části jsou představeny nové jazykové konstrukce představené v C# 3,0. I když jsou tyto nové funkce využité pro určitý stupeň [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] s dotazy, nejsou omezené na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a je možné je používat v jakémkoli kontextu, kde je najdete, které jsou užitečné.
 
 ## <a name="query-expressions"></a>Výrazy dotazu
 
-Výrazy dotazů pomocí deklarativní syntaxe SQL nebo výraz XQuery podobný dotaz nad kolekcí IEnumerable. Při kompilaci syntaxe dotazu čas převést na volání metody [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] implementace poskytovatele rozšíření metody standardních dotazovacích operátorů. Operátory standardního dotazu, které jsou v oboru tak, že zadáte odpovídající obor názvů s řízení aplikací `using` směrnice. Následující výraz dotazu přijímá pole řetězců, skupin podle prvního znaku v řetězci a řadí skupiny.
+Výrazy dotazů používají deklarativní syntaxi podobnou syntaxi SQL nebo XQuery pro dotazování přes kolekce IEnumerable. Syntaxe dotazu v době kompilace je převedena na volání metody do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] implementace standardních metod rozšíření operátoru dotazu. Aplikace řídí standardní operátory dotazů, které jsou v oboru, zadáním příslušného oboru názvů s `using` direktivou. Následující výraz dotazu přebírá pole řetězců, seskupuje je podle prvního znaku v řetězci a řadí skupiny.
 
 ```csharp
 var query = from str in stringArray
@@ -26,11 +26,11 @@ var query = from str in stringArray
             select stringGroup;
 ```
 
-Další informace najdete v tématu [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md).
+Další informace najdete v tématu [výrazy dotazů LINQ](../../linq-query-expressions/index.md).
 
 ## <a name="implicitly-typed-variables-var"></a>Implicitně typované proměnné (var)
 
-Namísto explicitního určení typu, když deklarujete a inicializujete proměnnou, můžete použít [var](../../../../csharp/language-reference/keywords/var.md) modifikátor, abyste instruovali kompilátor k odvození a přiřadit typ, jak je znázorněno zde:
+Namísto explicitního určení typu při deklaraci a inicializaci proměnné lze použít modifikátor [var](../../../language-reference/keywords/var.md) k tomu, aby kompilátor mohl odvodit a přiřadit typ, jak je znázorněno zde:
 
 ```csharp
 var number = 5;
@@ -40,19 +40,19 @@ var query = from str in stringArray
             select str;
 ```
 
-Proměnné deklarované jako `var` jsou stejně jako silného typu jako proměnné, jejíž typ zadat explicitně. Použití `var` je možné vytvořit anonymní typy, ale lze použít pouze pro místní proměnné. Pole lze také deklarovat pomocí implicitního zápisu.
+Proměnné deklarované jako `var` jsou pouze silně typované jako proměnné, jejichž typ zadáte explicitně. Použití `var` je možné vytvořit anonymní typy, ale lze je použít pouze pro místní proměnné. Pole lze také deklarovat pomocí implicitního zadání.
 
-Další informace najdete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).
+Další informace naleznete v tématu [implicitně typované lokální proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).
 
 ## <a name="object-and-collection-initializers"></a>Inicializátory objektu a kolekce
 
-Inicializátory objektu a kolekce umožňují inicializace objektů bez explicitního volání konstruktoru objektu. Inicializátory jsou obvykle používány ve výrazech dotazů, když jsou zdroje dat projektu do nového datového typu. Za předpokladu, že třídu s názvem `Customer` pomocí veřejného `Name` a `Phone` vlastnosti, inicializátor objektu můžete použít stejně jako v následujícím kódu:
+Inicializátory objektů a kolekcí umožňují inicializovat objekty bez explicitního volání konstruktoru objektu. Inicializátory se obvykle používají ve výrazech dotazů při projektování zdrojových dat do nového datového typu. Za předpokladu, `Customer` že třída `Name` s `Phone` názvem Public a Properties, může být inicializátor objektu použit jako v následujícím kódu:
 
 ```csharp
 var cust = new Customer { Name = "Mike", Phone = "555-1212" };
 ```
 
-Pokračujte v našich `Customer` třídy, se předpokládá, že je zdroj dat s názvem `IncomingOrders`a že pro jednotlivé objednávky s velkým `OrderSize`, jsme chtěli vytvořit nový `Customer` podle pořadí. Dotaz LINQ mohou být provedeny na tento zdroj dat a použití inicializace objektu tak, aby vyplnil kolekce:
+V případě pokračování `Customer` v naší třídě se předpokládá, že je k dispozici zdroj dat s názvem `IncomingOrders`a že pro každou `OrderSize`objednávku má velký, chtěli bychom vytvořit nové `Customer` založené na tomto pořadí. V tomto zdroji dat lze spustit dotaz LINQ a k vyplnění kolekce použít inicializaci objektu:
 
 ```csharp
 var newLargeOrderCustomers = from o in IncomingOrders
@@ -60,7 +60,7 @@ var newLargeOrderCustomers = from o in IncomingOrders
                             select new Customer { Name = o.Name, Phone = o.Phone };
 ```
 
-Zdroj dat může mít více vlastností ležící pod pokličkou než `Customer` třídy jako `OrderSize`, ale s inicializace objektu se lisovaný data vrácená z dotazu na požadovaný datový typ, jsme zvolte data, která je relevantní pro naše třída. V důsledku toho jsme teď mají `IEnumerable` vyplněný novými `Customer`s jsme chtěli. Výše uvedené je také možné psát v syntaxe využívající metody LINQ na:
+Zdroj dat může mít více vlastností ležící pod digestoří `Customer` `OrderSize`, než je třída, jako je například, ale s inicializací objektu, data vrácená z dotazu jsou molded na požadovaný datový typ. vybíráme data, která jsou relevantní pro naši třídu. V důsledku toho jsme teď `IEnumerable` naplnili nové `Customer`s, které jsme chtěli. Výše uvedený postup lze také zapsat v syntaxi metody LINQ:
 
 ```csharp
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
@@ -68,38 +68,38 @@ var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y
 
 Další informace naleznete v tématu:
 
-- [Inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Inicializátory objektu a kolekce](../../classes-and-structs/object-and-collection-initializers.md)
 
-- [Syntaxe výrazu dotazu pro standardní operátory dotazu](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
+- [Syntaxe výrazu dotazu pro standardní operátory dotazu](./query-expression-syntax-for-standard-query-operators.md)
 
 ## <a name="anonymous-types"></a>Anonymní typy
 
-Anonymní typ, který je vytvořen kompilátorem a název typu je dostupná jenom pro kompilátor. Anonymní typy poskytují pohodlný způsob, jak seskupit sadu vlastností dočasně ve výsledku dotazu bez nutnosti definovat samostatně pojmenovaných typů. Anonymní typy jsou inicializovány s výraz new a inicializátoru objektu, jak je znázorněno zde:
+Anonymní typ je vytvořen kompilátorem a název typu je k dispozici pouze pro kompilátor. Anonymní typy poskytují pohodlný způsob, jak dočasně seskupit sadu vlastností do výsledku dotazu bez nutnosti definovat samostatný pojmenovaný typ. Anonymní typy jsou inicializovány s novým výrazem a inicializátorem objektu, jak je znázorněno zde:
 
 ```csharp
 select new {name = cust.Name, phone = cust.Phone};
 ```
 
-Další informace najdete v tématu [anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).
+Další informace najdete v tématu [anonymní typy](../../classes-and-structs/anonymous-types.md).
 
 ## <a name="extension-methods"></a>Metody rozšíření
 
-Rozšiřující metoda je statická metoda, která může být přidružený k typu, aby může být volán, jako by šlo o metodu instance na typu. Tato funkce umožňuje, v důsledku toho "Přidání" nové metody ke stávajícím typům bez skutečně jejich úpravou. Operátory standardního dotazu představují sadu rozšiřujících metod, které poskytují [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování funkce pro libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.
+Rozšiřující metoda je statická metoda, která může být přidružena k typu, aby mohla být volána jako metoda instance typu. Tato funkce umožňuje přidat nové metody do stávajících typů, aniž by bylo nutné je skutečně upravovat. Standardní operátory dotazu jsou sada rozšiřujících metod, které poskytují [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] funkce dotazů pro jakýkoli typ, který implementuje. <xref:System.Collections.Generic.IEnumerable%601>
 
-Další informace najdete v tématu [rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).
+Další informace naleznete v tématu [metody rozšíření](../../classes-and-structs/extension-methods.md).
 
 ## <a name="lambda-expressions"></a>Lambda – výrazy
 
-Výraz lambda je vložená funkce, která používá = > – operátor k oddělení vstupní parametry z těla funkce a je možné převést v době kompilace, delegáta nebo strom výrazů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] programování, můžete narazit výrazy lambda při provedení volání přímé metody standardních dotazovacích operátorů.
+Výraz lambda je vložená funkce, která používá operátor = > pro oddělení vstupních parametrů z těla funkce a může být převedena v době kompilace na delegáta nebo strom výrazu. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] programování dojde k vyvolání výrazů lambda při přímém volání metody do standardních operátorů dotazu.
 
 Další informace naleznete v tématu:
 
-- [Anonymní funkce](../../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+- [Anonymní funkce](../../statements-expressions-operators/anonymous-functions.md)
 
-- [Výrazy lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Výrazy lambda](../../statements-expressions-operators/lambda-expressions.md)
 
-- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Stromy výrazů (C#)](../expression-trees/index.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+- [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)

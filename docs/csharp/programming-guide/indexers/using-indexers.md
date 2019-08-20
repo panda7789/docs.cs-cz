@@ -1,22 +1,22 @@
 ---
-title: Použití indexerů - C# Průvodce programováním
+title: Použití indexerů – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 10/03/2018
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: 6b129177e6eb916982a27ba76aca517b0642344c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4411fe0ffe7dc136b4e74adeba3e5596af3aa1db
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61679801"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589424"
 ---
-# <a name="using-indexers-c-programming-guide"></a>Použití indexerů (C# Programming Guide)
+# <a name="using-indexers-c-programming-guide"></a>Použití indexerů (C# Průvodce programováním)
 
-Indexery jsou syntaktické pohodlí, které vám umožní vytvořit [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) , klientské aplikace můžou k stejně jako pole. Indexery jsou nejčastěji implementovány v typech, jejichž primárním účelem je k zapouzdření vnitřní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord` , která představuje teplotu ve stupních Fahrenheita zjištěná v různých časech 10 během období 24 hodin. Třída obsahuje pole `temps` typu `float[]` k uložení teplotní hodnoty. Implementací indexer v této třídě klienti mají přístup k teploty v `TempRecord` instance jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Notace indexeru nejen zjednodušuje syntaxi pro klientské aplikace; také udržuje třídy a jejím účelem intuitivnější pro ostatní vývojáři mohli pochopit.  
+Indexery jsou syntaktické pohodlí, které umožňují vytvořit [třídu](../../language-reference/keywords/class.md), [strukturu](../../language-reference/keywords/struct.md)nebo [rozhraní](../../language-reference/keywords/interface.md) , které mohou klientské aplikace přistupovat pouze jako pole. Indexery se nejčastěji implementují v typech, jejichž primární účel je zapouzdření interní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord` , která představuje teplotu ve stupních Fahrenheita zaznamenanou v 10 různých časech během 24 hodin. Třída obsahuje pole `temps` typu `float[]` pro uložení hodnot teploty. Implementací indexeru v této třídě mají klienti přístup k teplotám v `TempRecord` instanci, jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Zápis indexeru zjednodušuje syntaxi pro klientské aplikace. také umožňuje, aby byla třída a její účel intuitivnějšíější, aby bylo možné porozumět ostatním vývojářům.  
   
-Chcete-li deklarovat indexer na třídě nebo struktuře, použijte [to](../../../csharp/language-reference/keywords/this.md) – klíčové slovo, jako v následujícím příkladu:
+Chcete-li deklarovat indexer pro třídu nebo strukturu, použijte klíčové slovo [This](../../language-reference/keywords/this.md) , jak ukazuje následující příklad:
 
 ```csharp
 public int this[int index]    // Indexer declaration  
@@ -27,15 +27,15 @@ public int this[int index]    // Indexer declaration
 
 ## <a name="remarks"></a>Poznámky
 
-Typ indexeru a jeho parametry musí být přinejmenším stejně dostupná jako samotný indexeru. Další informace o úrovní přístupu najdete v tématu [modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md).  
+Typ indexeru a typ jeho parametrů musí být alespoň tak přístupný jako indexovací člen. Další informace o úrovních dostupnosti najdete v tématu [modifikátory přístupu](../../language-reference/keywords/access-modifiers.md).  
   
- Další informace o tom, jak používat indexery s rozhraním najdete v tématu [rozhraní indexery](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md).  
+ Další informace o použití indexerů s rozhraním naleznete v tématu indexery [rozhraní](./indexers-in-interfaces.md).  
   
- Podpis indexeru se skládá z počet a typy formálních parametrů. Neobsahuje typ indexeru nebo názvy formálních parametrů. Je-li deklarována více než jeden indexeru ve stejné třídě, musí mít různé podpisy.  
+ Signatura indexeru se skládá z počtu a typů jeho formálních parametrů. Nezahrnuje typ indexeru ani názvy formálních parametrů. Pokud deklarujete více než jednoho indexeru ve stejné třídě, musí mít jiné signatury.  
   
- Není to indexerem hodnota klasifikováno jako proměnné. Proto nemůžete předat hodnotu indexer jako [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametru.  
+ Hodnota indexeru není klasifikována jako proměnná; Proto nemůžete předat hodnotu indexeru jako parametr [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) .  
   
- Chcete-li poskytnout indexer s názvem, který můžete použít jiné jazyky, použijte <xref:System.Runtime.CompilerServices.IndexerNameAttribute?displayProperty=nameWithType>, jak je vidět v následujícím příkladu:  
+ Chcete-li poskytnout indexer s názvem, který mohou použít jiné jazyky, použijte <xref:System.Runtime.CompilerServices.IndexerNameAttribute?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu:  
 
 ```csharp
 [System.Runtime.CompilerServices.IndexerName("TheItem")]  
@@ -45,36 +45,36 @@ public int this[int index]   // Indexer declaration
 }  
 ```
 
-Indexer bude mít název `TheItem`. Neposkytují atribut name s žádným `Item` výchozí název.  
+Tento indexer bude mít název `TheItem`. Pokud nezadáte atribut `Item` Name, nastaví se výchozí název.  
   
 ## <a name="example-1"></a>Příklad 1  
   
-Následující příklad ukazuje, jak deklarovat soukromé pole `temps`a indexer. Indexer umožňuje přímý přístup k instanci `tempRecord[i]`. Je deklarovat pole jako alternativu k použití indexeru [veřejné](../../../csharp/language-reference/keywords/public.md) člena a přistupovat k jejím členům `tempRecord.temps[i]`, přímo.  
+Následující příklad ukazuje, jak deklarovat pole soukromého pole, `temps`a indexer. Indexer umožňuje přímý přístup k instanci `tempRecord[i]`. Alternativou k použití indexeru je deklarovat pole jako [veřejný](../../language-reference/keywords/public.md) člen a přistupovat ke svým členům, `tempRecord.temps[i]`přímo.  
   
- Všimněte si, že při přístupu indexer vyhodnocování, například v `Console.Write` příkazu [získat](../../../csharp/language-reference/keywords/get.md) přístupového objektu je vyvolán. Proto pokud žádná `get` přistupující objekt existuje, dojde k chybě kompilace.  
+ Všimněte si, že když je vyhodnocen přístup indexeru, například v `Console.Write` příkazu, je vyvolán přistupující objekt [Get](../../language-reference/keywords/get.md) . Proto pokud neexistuje žádný `get` přistupující objekt, dojde k chybě při kompilaci.  
   
  [!code-csharp[csProgGuideIndexers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#1)]  
   
-## <a name="indexing-using-other-values"></a>Indexování s využitím jiné hodnoty
+## <a name="indexing-using-other-values"></a>Indexování pomocí jiných hodnot
 
-C#neomezuje typ parametru indexer na celé číslo. Například může být vhodné použít řetězec s indexeru. Pomocí hledání řetězce v kolekci a vrátí odpovídající hodnotu, může implementovat takové indexer. Jako přístupové objekty mohou být přetíženy, řetězce a celá čísla verzí můžou existovat vedle sebe.  
+C#neomezuje typ parametru indexeru na celé číslo. Může být například užitečné použít řetězec s indexerem. Takový indexer může být implementován vyhledáním řetězce v kolekci a vrácením příslušné hodnoty. Protože přistupující objekty mohou být přetíženy, může řetězec a celočíselná verze existovat souběžně.  
   
 ## <a name="example-2"></a>Příklad 2  
   
-Následující příklad deklaruje třídu, která ukládá dny v týdnu. A `get` přistupující objekt přebírá řetězec názvu dne a vrátí odpovídající celé číslo. Například vrátí hodnotu 0, "Neděle", "Pondělí" vrátí hodnotu 1 a tak dále.  
+Následující příklad deklaruje třídu, která ukládá dny v týdnu. `get` Přistupující objekt přebírá řetězec, název dne a vrátí odpovídající celé číslo. Například "neděle" vrátí 0, "pondělí" vrátí 1 a tak dále.  
   
  [!code-csharp[csProgGuideIndexers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#2)]  
   
 ## <a name="robust-programming"></a>Robustní programování
 
- Existují dva hlavní způsoby, ve kterých se může zlepšit zabezpečení a spolehlivost indexery:  
+ Existují dva hlavní způsoby, jak lze zlepšit zabezpečení a spolehlivost indexerů:  
   
-- Nezapomeňte zahrnout nějaký typ strategie zpracování chyb pro zpracování riziko klientský kód předá hodnotu neplatný index. V prvním příkladu výše v tomto tématu poskytuje třídu TempRecord vlastnost Length, která umožňuje klientské kód pro ověření vstupu před předáním to indexerem. Můžete také vložit kód uvnitř samotného indexeru pro zpracování chyb. Ujistěte se, k dokumentaci pro uživatele žádné výjimky, které můžete vyvolat uvnitř indexer přistupující objekt.  
+- Nezapomeňte začlenit nějaký typ strategie zpracování chyb pro zpracování pravděpodobnosti, že klientský kód projde neplatnou hodnotou indexu. V prvním příkladu výše v tomto tématu Třída TempRecord poskytuje vlastnost length, která umožňuje kódu klienta ověřit vstup před jeho předáním indexeru. Kód pro zpracování chyb můžete také vložit do samotného indexeru. Nezapomeňte uživatelům zdokumentovat všechny výjimky, které jste vyvolali uvnitř přístupového objektu indexeru.  
   
-- Nastavte přístupnost [získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) přistupující objekty být omezení je přijatelné. To je důležité pro `set` přístupového objektu v konkrétní. Další informace najdete v tématu [omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
+- Nastavte přístupnost přístupových objektů [Get](../../language-reference/keywords/get.md) a [set](../../language-reference/keywords/set.md) jako omezujících oprávnění, která jsou přiměřená. To je důležité pro `set` přistupující objekt, zejména. Další informace najdete v tématu [Omezení přístupnosti přístupového objektu](../classes-and-structs/restricting-accessor-accessibility.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Indexery](./index.md)
+- [Vlastnosti](../classes-and-structs/properties.md)

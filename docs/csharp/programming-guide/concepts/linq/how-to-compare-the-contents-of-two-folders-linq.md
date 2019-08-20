@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Porovnání obsahu dvou složek (LINQ) (C#)'
+title: 'Postupy: Porovnat obsah dvou složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 5d944025d8d442bb80c492d1898487dff88c5bc1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f9f592eebb94ea783cff3ae3bc76125a9df72dd7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585901"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594076"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnání obsahu dvou složek (LINQ) (C#)
-Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnat obsah dvou složek (LINQ) (C#)
+Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:  
   
-- Pomocí dotazu na logickou hodnotu, která určuje, zda dva seznamy souborů jsou identické.  
+- Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.  
   
-- Pomocí dotazu pro je určena průsečíkem načíst soubory, které jsou v obě složky.  
+- Dotazem pro průnik pro načtení souborů, které jsou v obou složkách.  
   
-- Pomocí dotazu pro množinových rozdílů načíst soubory, které jsou v jedné složce, ale nikoli u druhého.  
+- Pomocí dotazu na nastavený rozdíl, který načte soubory, které jsou v jedné složce, ale ne na druhé.  
   
     > [!NOTE]
-    >  Techniky je znázorněno zde mohou být přizpůsobeny pro porovnání sekvence objektů libovolného typu.  
+    >  Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.  
   
- `FileComparer` Třídy je vidět tady ukazuje, jak použít vlastní porovnávací metody třídy společně s standardní operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Právě používá název a délku v bajtech každého souboru k určení, zda jsou identické obsahu jednotlivých složek, nebo ne. Ve skutečném scénáři byste měli upravit toto porovnávání provádění přísnější kontroly rovnosti.  
+ Zde `FileComparer` uvedená třída ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.  
   
 ## <a name="example"></a>Příklad  
   
@@ -126,9 +126,9 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

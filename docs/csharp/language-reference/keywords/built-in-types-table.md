@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 61701cc38c38b5e7235fbadb6d2a86e0e66b09ac
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 1f7248a23d53fb90202595defbf70e231bd1d5d3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566357"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605984"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (C# Referenční dokumentace)
 
@@ -63,8 +63,8 @@ Console.WriteLine(doubleType.FullName);
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#Odkaz](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Typy hodnot](value-types.md)
 - [Typy odkazů](reference-types.md)

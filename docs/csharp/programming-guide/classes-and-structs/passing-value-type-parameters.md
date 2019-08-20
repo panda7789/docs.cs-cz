@@ -1,46 +1,46 @@
 ---
-title: Předávání parametrů typu hodnoty - C# Průvodce programováním
+title: Předání parametrů typu hodnoty – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-ms.openlocfilehash: ba693948bce91fa80f0c6cd73f2d5fc537e5f900
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: dfd2c39eff44b431ec10d85f855fb015a2391f29
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423739"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596236"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
-A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) proměnná obsahuje jeho data přímo jako nikoli [typu odkazu](../../../csharp/language-reference/keywords/reference-types.md) proměnnou, která obsahuje odkaz na svoje data. Předání hodnotou proměnné typu hodnoty metodě znamená předání kopii proměnné metodě. Žádné změny k parametru, které se provedou uvnitř metody nemají žádný vliv na původní data uložená v proměnné argumentu. Pokud chcete volané metody, chcete-li změnit hodnotu argumentu, musíte jí předat odkazem, pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také použít [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) – klíčové slovo předávání pomocí odkazu, aby kopie při zajištění, že se nezmění hodnotu parametru hodnoty. Pro zjednodušení následující příklady používají `ref`.  
+Proměnná [typu hodnoty](../../language-reference/keywords/value-types.md) obsahuje svá data přímo na rozdíl od proměnné [typu odkazu](../../language-reference/keywords/reference-types.md) , která obsahuje odkaz na její data. Předání proměnné typu hodnoty metodě podle hodnoty znamená předání kopie proměnné metodě. Jakékoli změny parametru, které probíhají v metodě, nemají žádný vliv na původní data uložená v proměnné argumentu. Chcete-li, aby volaná metoda změnila hodnotu argumentu, je nutné ji předat odkazem pomocí klíčového slova [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) . Můžete také použít klíčové slovo [in](../../language-reference/keywords/in-parameter-modifier.md) k předání parametru hodnoty odkazem k tomu, aby se zabránilo kopírování a zároveň zaručeno, že hodnota nebude změněna. Pro zjednodušení používá `ref`následující příklady.  
   
 ## <a name="passing-value-types-by-value"></a>Předávání typů hodnot podle hodnoty  
- Následující příklad ukazuje předání typu hodnoty parametrů podle hodnoty. Proměnná `n` je předán podle hodnoty do metody `SquareIt`. Všechny změny, které se provedou uvnitř metody mít žádný vliv na původní hodnotu proměnné.  
+ Následující příklad ukazuje předání parametrů typu hodnoty podle hodnoty. Proměnná `n` je předána hodnotou do metody `SquareIt`. Všechny změny, které probíhají v metodě, nemají žádný vliv na původní hodnotu proměnné.  
   
  [!code-csharp[csProgGuideParameters#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#3)]  
   
- Proměnná `n` je typ hodnoty. Obsahuje data, hodnota `5`. Když `SquareIt` je vyvolána, obsah `n` se zkopírují do parametru `x`, který je druhou uvnitř metody. V `Main`, ale hodnota `n` je stejný po volání `SquareIt` metody, jak byl před. Změny, které u něho uvnitř metody, kterou ovlivňuje pouze místní proměnná `x`.  
+ Proměnná `n` je typ hodnoty. Obsahuje data a hodnotu `5`. Při `SquareIt` vyvolání je `n` obsah zkopírován do parametru `x`, který je v rámci metody čtvercový. V `Main`, ale `n` hodnota je stejná po volání `SquareIt` metody jako předtím. Změny, které probíhají v rámci metody, ovlivňují pouze místní proměnnou `x`.  
   
-## <a name="passing-value-types-by-reference"></a>Typy hodnot předávání odkazem.  
- Následující příklad je stejný jako předchozí příklad, s tím rozdílem, argument je předán jako `ref` parametru. Hodnota argumentu základní `n`, když se změní `x` se změnilo v metodě.  
+## <a name="passing-value-types-by-reference"></a>Předávání typů hodnot odkazem  
+ Následující příklad je stejný jako předchozí příklad s tím rozdílem, že argument je předán jako `ref` parametr. Hodnota podkladového argumentu, `n`, je při `x` změně v metodě změněna.  
   
  [!code-csharp[csProgGuideParameters#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#4)]  
   
- V tomto příkladu není hodnota `n` , který je předán; místo toho odkaz na `n` je předán. Parametr `x` není [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md); je odkaz na `int`, v tomto případě odkaz na `n`. Proto když `x` je spolehlivosti uvnitř metody, co skutečně je druhou je co `x` odkazuje, `n`.  
+ V tomto příkladu není hodnota `n` předána, ale odkaz na `n` je předán. Parametr `x` není [int](../../language-reference/builtin-types/integral-numeric-types.md); jedná se o odkaz na výjimku `int`, v tomto případě odkaz na. `n` Proto, pokud `x` je uvnitř metody, co je ve skutečnosti na čtverci, je to `x` , co se `n`týká,.  
   
-## <a name="swapping-value-types"></a>Vzájemná záměna typy hodnot  
- Běžným příkladem změny hodnot argumentů je metoda odkládacího souboru, můžete předat metodě k dispozici dvě proměnné, kde Metoda Zamění jejich obsah. Argumenty musí předat metodě prohození podle odkazu. V opačném případě prohození místních kopií parametry uvnitř metody a nedošlo k žádné změně ve volání metody. Následující příklad zaměňuje celočíselné hodnoty.  
+## <a name="swapping-value-types"></a>Výměna hodnotových typů  
+ Běžným příkladem změny hodnot argumentů je metoda swap, kde předáváte do metody dvě proměnné a metoda zahodí jejich obsah. Argumenty metody swap je nutné předat odkazem. V opačném případě provedete prohození místních kopií parametrů uvnitř metody a v metodě volání nedojde k žádným změnám. Následující příklad odměňuje celočíselné hodnoty.  
   
  [!code-csharp[csProgGuideParameters#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#5)]  
   
- Při volání `SwapByRef` metody, použijte `ref` – klíčové slovo ve volání, jak je znázorněno v následujícím příkladu.  
+ Při volání `SwapByRef` metody `ref` použijte klíčové slovo v volání, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideParameters#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#6)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
-- [Předávání parametrů typu odkazu](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Předávání parametrů](./passing-parameters.md)
+- [Předávání parametrů typu odkazu](./passing-reference-type-parameters.md)

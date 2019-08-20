@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zjištění rozdílu mezi předáním struktury a předáním třídu odkaz na metodu - C# Průvodce programováním'
+title: 'Postupy: Znát rozdíl mezi předáním struktury a předáním odkazu na třídu do průvodce C# programováním metod'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,28 +7,28 @@ helpviewer_keywords:
 - passing parameters [C#], structs vs. classes
 - methods [C#], passing classes vs. structs
 ms.assetid: 9c1313a6-32a8-4ea7-a59f-450f66af628b
-ms.openlocfilehash: 9664a3e5b5a68ae44bb129c9c550011683c81f16
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 889e1f5719e094d02f0cc27256e1c430ffce0b8e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646355"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596781"
 ---
-# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na metodu třídu (C# Průvodce programováním v)
-Následující příklad ukazuje, jak předávání [struktura](../../../csharp/language-reference/keywords/struct.md) metody se liší od předávání [třídy](../../../csharp/language-reference/keywords/class.md) instanci metody. V tomto příkladu obou argumentů (instance struktury a třídy) jsou předávány hodnotou a obě metody změňte hodnotu argumentu jedno pole. Ale výsledky ze dvou způsobů nejsou stejné vzhledem k tomu, co je předána, když je předat strukturu se liší od, co je předané při předání instance třídy.  
+# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Postupy: Znát rozdíl mezi předáním struktury a předáním odkazu na třídu metodě (C# Průvodce programováním)
+Následující příklad ukazuje, jak se předávání [struktury](../../language-reference/keywords/struct.md) do metody liší od předání instance [třídy](../../language-reference/keywords/class.md) metodě. V příkladu jsou oba argumenty (struktura a instance třídy) předány hodnotou a obě metody mění hodnotu jednoho pole argumentu. Nicméně výsledky těchto dvou metod nejsou stejné, protože to, co je předáno při předávání struktury, se liší od toho, co je předáno při předání instance třídy.  
   
- Protože je struktura [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md), když jste [předat strukturu hodnotu](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md) metody, metoda přijímá a funguje na kopii struktury argument. Metoda nemá přístup k původní struktury ve volání metody a proto ho nemůže změnit žádným způsobem. Metoda může změnit pouze kopie.  
+ Vzhledem k tomu, že struktura je [typ hodnoty](../../language-reference/keywords/value-types.md), při [předání struktury hodnotou](./passing-value-type-parameters.md) metody, metoda přijímá a pracuje na kopii argumentu struktury. Metoda nemá přístup k původní struktuře v volající metodě, takže ji nemůže nijak změnit. Metoda může změnit pouze kopii.  
   
- Instance třídy [odkazovat na typ](../../../csharp/language-reference/keywords/reference-types.md), typ hodnoty. Když [typem odkazu je předán podle hodnoty](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md) metody, metoda obdrží kopii odkaz na instanci třídy. To znamená, že metoda obdrží kopii adresa instance, není kopie samotné instanci. Instance třídy ve volání metody s adresou, parametr v metodě volané má kopii adresu a obě adresy odkazují na stejný objekt. Vzhledem k tomu, že parametr obsahuje pouze kopie adresu, volané metody nelze změnit adresu instance třídy ve volání metody. Volané metody však můžete použít adresu přístup ke členům třídy, které odkazují na původní adrese a o kopírování. Pokud se volané metody změní člena třídy, změní se také původní instance třídy ve volání metody.  
+ Instance třídy je odkazový [typ](../../language-reference/keywords/reference-types.md), nikoli hodnotový typ. Pokud [je odkazový typ předán pomocí hodnoty](./passing-reference-type-parameters.md) metodě, metoda obdrží kopii odkazu na instanci třídy. To znamená, že metoda obdrží kopii adresy instance, nikoli kopii samotné instance. Instance třídy v metodě volání má adresu, parametr v volané metodě má kopii adresy a obě adresy odkazují na stejný objekt. Protože parametr obsahuje pouze kopii adresy, volaná metoda nemůže změnit adresu instance třídy v volání metody. Volaná metoda však může adresu použít pro přístup ke členům třídy, které mají původní adresu i odkaz na kopii. Pokud volaná metoda změní člen třídy, změní se také instance původní třídy v volající metodě.  
   
- Následující příklad výstupu ukazuje rozdíl. Hodnota `willIChange` pole instance třídy, je změnit pomocí volání metody `ClassTaker` vzhledem k tomu metoda používá adresu v parametru najít zadané pole instance třídy. `willIChange` Pole struktury ve volání metody není změněno pomocí volání metody `StructTaker` vzhledem k tomu, že hodnota argumentu je kopii struktury samotné, ne kopie adresy. `StructTaker` změny kopie a o kopírování je ztracena při volání `StructTaker` je dokončena.  
+ Výstup následujícího příkladu ukazuje rozdíl. Hodnota `willIChange` pole instance třídy je změněna voláním metody `ClassTaker` , protože metoda používá adresu v parametru k nalezení zadaného pole instance třídy. Pole struktury v volající metodě není změněno voláním metody `StructTaker` , protože hodnota argumentu je kopie samotné struktury, nikoli kopie její adresy. `willIChange` `StructTaker`změní kopii a kopie je ztracena po dokončení volání `StructTaker` .  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideObjects#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#32)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
-- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)
-- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy](./classes.md)
+- [Struktury](./structs.md)
+- [Předávání parametrů](./passing-parameters.md)

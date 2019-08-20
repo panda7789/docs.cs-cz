@@ -6,20 +6,20 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 7d8bdc5ceef5d82e4bc7e13ee932985cae6c2c10
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 93f02b8a0f828be89c6a1b7bfcdc6ba2a2a93e81
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398546"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597189"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 
-Anonymní typy poskytují pohodlný způsob, jak zapouzdřit sadu vlastnosti jen pro čtení bez nutnosti explicitně definovat typ nejprve do jediného objektu. Název typu je generovaný kompilátorem a není k dispozici na úrovni zdrojového kódu. Typ každé vlastnosti je odvozen kompilátorem.  
+Anonymní typy poskytují pohodlný způsob, jak zapouzdřit sadu vlastností jen pro čtení do jednoho objektu bez nutnosti explicitně definovat typ jako první. Název typu je generován kompilátorem a není k dispozici na úrovni zdrojového kódu. Typ každé vlastnosti je odvozen kompilátorem.  
   
- Vytvoříte pomocí anonymních typů [nové](../../../csharp/language-reference/operators/new-operator.md) operátor společně s inicializátorem objektu. Další informace o inicializátory objektů najdete v tématu [inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
+ Anonymní typy lze vytvořit pomocí operátoru [New](../../language-reference/operators/new-operator.md) spolu s inicializátorem objektu. Další informace o inicializátorech objektů naleznete v tématu [Inicializátory objektů a kolekcí](./object-and-collection-initializers.md).  
   
- Následující příklad ukazuje anonymního typu, který je inicializován s dvě vlastnosti s názvem `Amount` a `Message`.  
+ Následující příklad ukazuje anonymní typ, který je inicializován pomocí dvou vlastností s názvem `Amount` a `Message`.  
   
 ```csharp  
 var v = new { Amount = 108, Message = "Hello" };  
@@ -29,36 +29,36 @@ var v = new { Amount = 108, Message = "Hello" };
 Console.WriteLine(v.Amount + v.Message);  
 ```  
   
- Anonymní typy se obvykle používají v [vyberte](../../../csharp/language-reference/keywords/select-clause.md) klauzule výrazu dotazu pro vrácení podmnožiny vlastností z jednotlivých objektů ze zdrojové sekvence. Další informace o dotazech najdete v tématu [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md).  
+ Anonymní typy obvykle jsou používány v klauzuli [Select](../../language-reference/keywords/select-clause.md) výrazu dotazu pro vrácení podmnožiny vlastností z každého objektu ve zdrojové sekvenci. Další informace o dotazech naleznete v tématu [LINQ Query Expressions](../linq-query-expressions/index.md).  
   
- Anonymní typy obsahovat jeden nebo více veřejné vlastnosti jen pro čtení. Žádné jiné druhy členů třídy, jako je například metody nebo události, nejsou platné. Nemůže být výraz, který slouží k inicializaci vlastnosti `null`, anonymní funkci nebo typ ukazatele.  
+ Anonymní typy obsahují jednu nebo více veřejných vlastností jen pro čtení. Žádné jiné druhy členů třídy, jako jsou metody nebo události, jsou platné. Výraz použitý k inicializaci vlastnosti nemůže být `null`, anonymní funkce nebo typu ukazatele.  
   
- Nejběžnější scénář je inicializovat anonymní typ s vlastnostmi z jiného typu. V následujícím příkladu se předpokládá, že existuje třída s názvem `Product`. Třída `Product` zahrnuje `Color` a `Price` vlastnosti, společně s další vlastnosti, které vás nezajímají. Proměnné `products` je kolekce `Product` objekty. Anonymní typ deklarace začíná `new` – klíčové slovo. Deklarace inicializuje nový typ, který se používá pouze dvě vlastnosti z `Product`. To způsobí, že menší množství dat, který se má vrátit v dotazu.  
+ Nejběžnějším scénářem je inicializace anonymního typu s vlastnostmi z jiného typu. V následujícím příkladu Předpokládejme, že existuje třída s názvem `Product`. Třída `Product` zahrnuje `Color` a`Price` vlastnosti spolu s dalšími vlastnostmi, které vás zajímají. Proměnná `products` je`Product` kolekcí objektů. Deklarace anonymního typu začíná `new` klíčovým slovem. Deklarace inicializuje nový typ, který používá pouze dvě vlastnosti `Product`. To způsobí, že se v dotazu vrátí menší množství dat.  
   
- Pokud nezadáte názvy členů v anonymním typu, kompilátor poskytuje členům anonymní typ stejný název jako vlastnost se používá k jejich inicializaci. Název vlastnosti, která je inicializována s výrazem, musíte zadat, jak je znázorněno v předchozím příkladu. V následujícím příkladu jsou názvy vlastností anonymních typů `Color` a `Price`.  
+ Pokud v anonymním typu nezadáte názvy členů, kompilátor poskytne členům anonymního typu stejný název jako vlastnost, která je použita k jejich inicializaci. Je nutné zadat název vlastnosti, která je inicializována výrazem, jak je znázorněno v předchozím příkladu. V následujícím příkladu jsou `Color` názvy vlastností anonymního typu a. `Price`  
   
  [!code-csharp[csRef30Features#81](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csRef30Features/CS/csref30.cs#81)]  
   
- Obvykle, když pomocí anonymního typu inicializovat proměnnou, deklarujete proměnnou jako implicitně typovaná lokální proměnná s použitím [var](../../../csharp/language-reference/keywords/var.md). V deklaraci proměnné nelze zadat název typu, protože pouze kompilátor má přístup k základní název anonymního typu. Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+ Obvykle při použití anonymního typu k inicializaci proměnné, deklarujete proměnnou jako implicitně typovou místní proměnnou pomocí [var](../../language-reference/keywords/var.md). V deklaraci proměnné nelze zadat název typu, protože k podkladovému názvu anonymního typu má přístup pouze kompilátor. Další informace o `var`naleznete v tématu [implicitně typované lokální proměnné](./implicitly-typed-local-variables.md).  
   
- Kombinací implicitně typované lokální proměnnou a implicitně typovaná pole, můžete vytvořit pole anonymně typem prvků, jak je znázorněno v následujícím příkladu.  
+ Pole anonymně typovaného prvku lze vytvořit kombinací implicitní typové místní proměnné a implicitně typovaného pole, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", diam = 1 }};  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Anonymní typy jsou [třídy](../../../csharp/language-reference/keywords/class.md) typy, které jsou odvozeny přímo z [objekt](../../../csharp/language-reference/keywords/object.md), a která nelze přetypovat na libovolný typ s výjimkou [objekt](../../../csharp/language-reference/keywords/object.md). Kompilátor poskytuje název pro každý anonymní typ, i když vaše aplikace nejde získat přístup. Z pohledu modul common language runtime se nijak neliší od jakéhokoliv odkazového typu anonymního typu.  
+ Anonymní typy jsou typy [třídy](../../language-reference/keywords/class.md) , které jsou odvozeny přímo z [objektu](../../language-reference/keywords/object.md)a které nelze přetypovat na libovolný typ s výjimkou [Object](../../language-reference/keywords/object.md). Kompilátor poskytuje název pro každý anonymní typ, přestože aplikace k němu nemá přístup. Z perspektivy modulu CLR (Common Language Runtime) se anonymní typ neliší od žádného jiného typu odkazu.  
   
- Pokud dva nebo více inicializátory anonymních objektů v sestavení určete pořadí vlastností, které jsou ve stejném pořadí a které mají stejné názvy a typy, kompilátor zpracovává objekty jako instance stejného typu. Sdílejí stejné informace o typu generované kompilátorem.  
+ Pokud dva nebo více inicializátorů anonymních objektů v sestavení určují sekvenci vlastností, které jsou ve stejném pořadí a mají stejné názvy a typy, kompilátor považuje objekty za instance stejného typu. Sdílejí stejné informace typu vygenerované kompilátorem.  
   
- Nelze deklarovat pole, vlastnosti, události nebo návratového typu metody tak, že má anonymního typu. Podobně nelze deklarovat formální parametr metody, vlastnosti, konstruktor nebo indexeru tak, že má anonymního typu. K předání anonymního typu nebo kolekci, která obsahuje anonymní typy jako argument pro metodu, je možné deklarovat jako objekt typu parametru. To však poráží účel silných typů. Pokud musíte uložit výsledky dotazu nebo přenášet mimo hranice metody, zvažte použití běžné pojmenované struktury nebo třídy místo anonymního typu.  
+ Nemůžete deklarovat pole, vlastnost, událost ani návratový typ metody jako anonymní typ. Podobně nelze deklarovat formální parametr metody, vlastnosti, konstruktoru nebo indexeru jako typ, který je typu anonymní. Pro předání anonymního typu nebo kolekce, která obsahuje anonymní typy jako argument metody, lze parametr deklarovat jako objekt typu. To však vede k přepsání účelu silného typování. Pokud je nutné uložit výsledky dotazu nebo je předat mimo hranice metody, zvažte použití obyčejné pojmenované struktury nebo třídy namísto anonymního typu.  
   
- Protože <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> z hlediska jsou definovány metody anonymních typů `Equals` a `GetHashCode` metody vlastností dva výskyty stejného anonymního typu jsou rovny, pouze pokud jejich vlastnosti jsou stejné.  
+ Vzhledem k tomu <xref:System.Object.GetHashCode%2A> , že metody `Equals` `GetHashCode`ana anonymních typech jsou definovány s ohledem na metody a vlastností, jsou dvě instance stejného anonymního typu stejné pouze v případě, že jsou všechny jejich vlastnosti stejné. <xref:System.Object.Equals%2A>  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
-- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Inicializátory objektu a kolekce](./object-and-collection-initializers.md)
+- [Začínáme s dotazy LINQ v jazyce C#](../concepts/linq/getting-started-with-linq.md)
+- [Výrazy dotazů LINQ](../linq-query-expressions/index.md)

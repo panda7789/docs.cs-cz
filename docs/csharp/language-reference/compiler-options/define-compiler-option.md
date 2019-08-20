@@ -1,5 +1,5 @@
 ---
-title: -definovat (možnosti kompilátoru C#)
+title: -defineC# (možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /define
@@ -11,15 +11,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 46ceca3a84e8ffbe6d07886c1b93d062f3ccd2d1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d56907493ed24e2ea9fa6568af7441fc81ba1a78
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662956"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606959"
 ---
-# <a name="-define-c-compiler-options"></a>-definovat (možnosti kompilátoru C#)
-**-Definovat** možnost definuje `name` jako symbol ve zdrojovém kódu všechny soubory programu.  
+# <a name="-define-c-compiler-options"></a>-defineC# (možnosti kompilátoru)
+Možnost **-define** definuje `name` jako symbol ve všech souborech zdrojového kódu váš program.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,33 +29,33 @@ ms.locfileid: "61662956"
   
 ## <a name="arguments"></a>Arguments  
  `name`, `name2`  
- Název jedné nebo víc symbolů, které chcete definovat.  
+ Název jednoho nebo více symbolů, které chcete definovat.  
   
 ## <a name="remarks"></a>Poznámky  
- **-Definovat** možnost má stejný účinek jako použití [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) direktivy preprocesoru s tím rozdílem, – možnost kompilátoru platí pro všechny soubory v projektu. Ve zdrojovém souboru, dokud zůstává definovaný symbol [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md) směrnice ve zdrojovém souboru odstraní definici. Při použití / define – možnost, `#undef` – direktiva v jednom souboru nemá žádný vliv na jiné soubory zdrojového kódu v projektu.  
+ Možnost **-define** má stejný účinek jako použití direktivy preprocesoru [#define](../preprocessor-directives/preprocessor-define.md) s tím rozdílem, že možnost kompilátoru je platná pro všechny soubory v projektu. Symbol zůstane definován ve zdrojovém souboru, dokud direktiva [#undef](../preprocessor-directives/preprocessor-undef.md) ve zdrojovém souboru definici odstraní. Použijete-li možnost-define, `#undef` direktiva v jednom souboru nemá žádný vliv na jiné soubory zdrojového kódu v projektu.  
   
- Můžete použít symboly vytvořené tímto parametrem [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md), [#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md), [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md), a [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) Podmíněná kompilace zdrojové soubory.  
+ Můžete použít symboly vytvořené pomocí této možnosti s [#if](../preprocessor-directives/preprocessor-if.md), [#else](../preprocessor-directives/preprocessor-else.md), [#elif](../preprocessor-directives/preprocessor-elif.md)a [#endif](../preprocessor-directives/preprocessor-endif.md) ke podmíněnému kompilování zdrojových souborů.  
   
- **-d** je zkratka pro **-definovat**.  
+ **-d** je krátká forma **definice**.  
   
- Můžete definovat více symbolů se **-definovat** pomocí středníkem nebo čárkou, oddělte názvy symbolů. Příklad:  
+ Můžete definovat více symbolů pomocí operátoru **-define** pomocí středníku nebo čárky pro oddělení názvů symbolů. Příklad:  
   
 ```console  
 -define:DEBUG;TUESDAY  
 ```  
   
- Samotný kompilátor jazyka C# definuje žádné symboly nebo makra, které můžete použít ve zdrojovém kódu; všechny definice symbolů musí být definovaný uživatelem.  
+ Samotný C# kompilátor nedefinuje žádné symboly nebo makra, které lze použít ve zdrojovém kódu; všechny definice symbolů musí být definované uživatelem.  
   
 > [!NOTE]
->  C# `#define` neumožňuje symbol, který má být zadána hodnota, stejně jako v jazycích, jako je C++. Například `#define` nelze použít k vytvoření makra nebo chcete-li definovat konstantu. Pokud je potřeba definovat konstantu, použijte `enum` proměnné. Pokud chcete vytvořit makro ve stylu C++, zvažte alternativy, třeba obecných typů. Protože makra jsou náchylné, C# nepovoluje jejich používání, ale poskytuje bezpečnějších alternativ.  
+>  Nepovoluje, aby se k symbolu dostala hodnota, jako v jazycích, jako je C++například. C# `#define` Například `#define` nelze použít k vytvoření makra nebo k definování konstanty. Pokud potřebujete definovat konstantu, použijte `enum` proměnnou. Chcete-li vytvořit makro C++ stylu, zvažte alternativy jako obecné. Vzhledem k tomu, že makra jsou obvykle odlaďuje náchylná k chybám, neumožňuje jejich použití, C# ale poskytuje bezpečnější alternativy.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránku **vlastností** projektu.  
   
-2. Na **sestavení** kartu, zadejte symbol, který má být definován v **symboly podmíněné kompilace** pole. Například pokud používáte příklad kódu, který následuje, napsat `xx` do textového pole.  
+2. Na kartě **sestavení** zadejte symbol, který má být definován v poli **symboly podmíněné kompilace** . Například pokud používáte následující příklad kódu, stačí zadat `xx` do textového pole.  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -80,5 +80,5 @@ public class Test
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

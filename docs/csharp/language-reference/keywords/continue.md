@@ -1,5 +1,5 @@
 ---
-title: Continue – příkaz - C# odkaz
+title: Continue – příkaz C# – reference
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-ms.openlocfilehash: d5fd2f5edf85c3ac2c8f0367b85b37e76e2e856e
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 74d166dbcf03b868baf464864e4c246f789df9cc
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422106"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605868"
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 
-`continue` Příkaz předá řízení následující iteraci nadřazený [při](../../../csharp/language-reference/keywords/while.md), [proveďte](../../../csharp/language-reference/keywords/do.md), [pro](../../../csharp/language-reference/keywords/for.md), nebo [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkaz, ve kterém se zobrazí.
+[](./while.md) [](./do.md) [](./foreach-in.md) [](./for.md)Příkaz předá řízení následující iteraci ohraničujícího příkazu while, do, pro nebo foreach, ve kterém se zobrazí. `continue`
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu je inicializovat čítač počítané od 1 do 10. S použitím `continue` příkaz ve spojení s výrazem `(i < 9)`, příkazy mezi `continue` a na konci `for` textu se přeskočí.
+V tomto příkladu je čítač inicializován pro počítání od 1 do 10. Pomocí `continue` příkazu v kombinaci s výrazem `(i < 9)`se přeskočí příkazy mezi `continue` a koncem `for` těla.
 
 [!code-csharp[csrefKeywordsJump#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#3)]
 
@@ -31,7 +31,7 @@ V tomto příkladu je inicializovat čítač počítané od 1 do 10. S použití
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
 - [break – příkaz](/cpp/cpp/break-statement-cpp)

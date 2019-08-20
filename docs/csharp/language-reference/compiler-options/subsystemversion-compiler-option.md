@@ -1,20 +1,20 @@
 ---
-title: -subsystemversion (možnosti kompilátoru C#)
+title: -subsystemversion (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
-ms.openlocfilehash: cf1fb74f5d13817448bec2bcdc37510ff82f024d
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c3d056458e1b98e6111216e20620117a9882ad4e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377909"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602533"
 ---
-# <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (možnosti kompilátoru C#)
+# <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (C# možnosti kompilátoru)
 
-Určuje minimální verzi subsystému, na kterém poběží vygenerovaný spustitelný soubor, a tím určení verze Windows, na kterém můžete spustit spustitelný soubor. Nejčastěji tato možnost zajišťuje, že spustitelného souboru, který můžete využít konkrétní bezpečnostní funkce, které nejsou k dispozici ve starších verzích Windows.
+Určuje minimální verzi subsystému, na kterém může být vygenerovaný spustitelný soubor spuštěn. tím se určí verze Windows, na kterých lze spustitelný soubor spustit. Nejčastěji tato možnost zajistí, že spustitelný soubor může využívat konkrétní funkce zabezpečení, které nejsou dostupné ve starších verzích Windows.
 
 > [!NOTE]
->  K určení subsystému, sama, použijte [-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) – možnost kompilátoru.
+>  Chcete-li určit samotný podsystém, použijte možnost kompilátoru [-target](./target-compiler-option.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,13 +26,13 @@ Určuje minimální verzi subsystému, na kterém poběží vygenerovaný spusti
 
 `major.minor`
 
-Minimální požadovaná verze subsystému, jak je vyjádřen v zápisu s tečkou pro hlavní verze a podverze. Například můžete určit, že aplikaci nelze spustit v operačním systému, který je starší než Windows 7. Pokud nastavíte na hodnotu této možnosti 6.01, podle popisu v tabulce dále v tomto tématu. Je nutné zadat hodnoty pro `major` a `minor` jako celá čísla.
+Minimální požadovaná verze subsystému, jak je vyjádřena v zápisu tečky pro hlavní a dílčí verze. Například můžete určit, že aplikace nemůže běžet v operačním systému, který je starší než Windows 7, pokud nastavíte hodnotu této možnosti na 6,01, jak je popsáno v tabulce dále v tomto tématu. Je nutné zadat hodnoty pro `major` a `minor` jako celé číslo.
 
-Program je zaměřen nejlepší `minor` verze se nezmění na verzi, ale proveďte koncové nuly. Například 6.1 a 6.01 odkazovat na stejnou verzi, ale 6.10 odkazuje na jinou verzi. Doporučujeme, abyste jako dvě číslice, aby nedocházelo k záměně vyjádření podverze.
+Počáteční nuly ve `minor` verzi nemění verzi, ale mají na konci nula. Například 6,1 a 6,01 odkazují na stejnou verzi, ale 6,10 odkazuje na jinou verzi. Pokud chcete zabránit nejasnostem, doporučujeme, abyste podverze vyjádřili jako dvě číslice.
 
 ## <a name="remarks"></a>Poznámky
 
-Následující tabulka uvádí nejběžnější verze subsystému Windows.
+V následující tabulce jsou uvedeny běžné verze subsystému Windows.
 
 |Verze Windows|Verze subsystému|
 |---------------------|-----------------------|
@@ -46,24 +46,24 @@ Následující tabulka uvádí nejběžnější verze subsystému Windows.
 
 ## <a name="default-values"></a>Výchozí hodnoty
 
-Výchozí hodnota **- subsystemversion** – možnost kompilátoru závisí na podmínkách v následujícím seznamu:
+Výchozí hodnota možnosti kompilátoru **-subsystemversion** závisí na podmínkách v následujícím seznamu:
 
-- Výchozí hodnota je 6.02, je-li nastavit všechny možnosti kompilátoru v následujícím seznamu:
+- Výchozí hodnota je 6,02, pokud je nastavena možnost kompilátoru v následujícím seznamu:
 
-  - [-target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)
+  - [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)
 
-  - [-target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)
+  - [-target:winmdobj](./target-winmdobj-compiler-option.md)
 
-  - [-platform:arm](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)
+  - [-Platforma: ARM](./platform-compiler-option.md)
 
-- Výchozí hodnota je 6.00, pokud používáte MSBuild, že cílí na rozhraní .NET Framework 4.5 a jste nenastavili žádné možnosti kompilátoru, která jste zadali dříve v tomto seznamu.
+- Výchozí hodnota je 6,00, pokud používáte MSBuild, cílíte .NET Framework 4,5 a nejste nastavili žádnou z možností kompilátoru, které byly zadány dříve v tomto seznamu.
 
-- Výchozí hodnota je 4.00, pokud žádná z předchozích podmínek není splněna.
+- Výchozí hodnota je 4,00, pokud žádná z předchozích podmínek není pravdivá.
 
 ## <a name="setting-this-option"></a>Nastavení této možnosti
 
-Chcete-li nastavit **- subsystemversion** – možnost kompilátoru v sadě Visual Studio, otevřete soubor .csproj a zadejte hodnotu pro `SubsystemVersion` vlastnost v XML nástroje MSBuild. Tuto možnost nelze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu "Výchozí hodnoty" výše v tomto tématu nebo [obecné vlastnosti projektu nástroje MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
+Chcete-li nastavit možnost kompilátoru **-subsystemversion** v sadě Visual Studio, je nutné otevřít soubor. csproj a zadat hodnotu `SubsystemVersion` vlastnosti v souboru XML nástroje MSBuild. Tuto možnost nejde nastavit v integrovaném vývojovém prostředí (IDE) sady Visual Studio. Další informace naleznete v části "výchozí hodnoty" výše v tomto tématu nebo v tématu [běžné vlastnosti projektu MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

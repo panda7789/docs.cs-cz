@@ -1,31 +1,31 @@
 ---
-title: 'Postupy: Zavedení a uvolnění sestavení (C#)'
+title: 'Postupy: Načíst a uvolnit sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6a4f490f-3576-471f-9533-003737cad4a3
-ms.openlocfilehash: 52f7173efe497ab286c607db681f256983adc077
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3f3c244a74e029eeaead77f561cd4c1adfca519a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703176"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595835"
 ---
-# <a name="how-to-load-and-unload-assemblies-c"></a>Postupy: Zavedení a uvolnění sestavení (C#)
-Sestavení odkazuje váš program bude automaticky načtených v okamžiku sestavení, ale je také možné načíst konkrétní sestavení do aktuální domény aplikace za běhu. Další informace najdete v tématu [jak: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).  
+# <a name="how-to-load-and-unload-assemblies-c"></a>Postupy: Načíst a uvolnit sestavení (C#)
+Sestavení, na která je odkazováno pomocí programu, budou automaticky načtena v čase sestavení, ale je také možné načíst konkrétní sestavení do aktuální domény aplikace za běhu. Další informace najdete v tématu [jak: Načtení sestavení do domény](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)aplikace.  
   
- Neexistuje žádný způsob, jak uvolnit jednotlivá sestavení bez uvolnění všech aplikačních domén, které je obsahují. I v případě, sestavení dostane mimo rozsah, zůstane soubor skutečné sestavení načteno, dokud jsou uvolněna, všechny aplikační domény, které obsahují.  
+ Neexistuje žádný způsob, jak uvolnit jednotlivá sestavení bez uvolnění všech domén aplikace, které ji obsahují. I v případě, že se sestavení dostane mimo rozsah, zůstane soubor vlastního sestavení načten, dokud nebudou všechny domény aplikace, které jej obsahují, uvolněny.  
   
- Pokud chcete uvolnit, některá sestavení, ale ne pro jiné, zvažte vytvoření nové aplikační doméně, spouštění kódu v této doméně a pak uvolnění této domény aplikace. Další informace najdete v tématu [jak: Uvolnění domény aplikace](../../../../framework/app-domains/how-to-unload-an-application-domain.md).  
+ Pokud chcete uvolnit některá sestavení, ale ne jiné, zvažte vytvoření nové domény aplikace, spuštění kódu v této doméně a následnému uvolnění této domény aplikace. Další informace najdete v tématu [jak: Uvolněte doménu](../../../../framework/app-domains/how-to-unload-an-application-domain.md)aplikace.  
   
 ### <a name="to-load-an-assembly-into-an-application-domain"></a>Načtení sestavení do domény aplikace  
   
-1. Použijte jednu z několik načíst metody obsažené v třídách <xref:System.AppDomain> a <xref:System.Reflection>. Další informace najdete v tématu [jak: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).  
+1. Použijte jednu z několika metod zatížení obsažených v třídách <xref:System.AppDomain> a. <xref:System.Reflection> Další informace najdete v tématu [jak: Načtení sestavení do domény](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)aplikace.  
   
-### <a name="to-unload-an-application-domain"></a>K uvolnění domény aplikace  
+### <a name="to-unload-an-application-domain"></a>Uvolnění domény aplikace  
   
-1. Neexistuje žádný způsob, jak uvolnit jednotlivá sestavení bez uvolnění všech aplikačních domén, které je obsahují. Použití `Unload` metodu z <xref:System.AppDomain> uvolnění domény aplikace. Další informace najdete v tématu [jak: Uvolnění domény aplikace](../../../../framework/app-domains/how-to-unload-an-application-domain.md).  
+1. Neexistuje žádný způsob, jak uvolnit jednotlivá sestavení bez uvolnění všech domén aplikace, které ji obsahují. Použijte metodu z <xref:System.AppDomain> k uvolnění aplikačních domén. `Unload` Další informace najdete v tématu [jak: Uvolněte doménu](../../../../framework/app-domains/how-to-unload-an-application-domain.md)aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../index.md)
 - [Sestavení v .NET](../../../../standard/assembly/index.md)
 - [Postupy: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)

@@ -2,20 +2,20 @@
 title: 'Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
-ms.openlocfilehash: 52eb246f5f95354f470aadf0cfe7f93f4b6e27ea
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 821c387bf1e3a2d58686465e5562fde9457127bf
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485010"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592488"
 ---
 # <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)
-Toto téma ukazuje, jak má být získána hodnota prvků. Chcete-li to provést dvěma způsoby. Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu. Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.  
+Toto téma ukazuje, jak získat hodnotu prvků. Existují dva hlavní způsoby. Jedním ze <xref:System.Xml.Linq.XElement> způsobů je přetypování <xref:System.Xml.Linq.XAttribute> nebo na požadovaný typ. Operátor explicitního převodu pak převede obsah elementu nebo atributu na zadaný typ a přiřadí ho k proměnné. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> nebo vlastnost.  
   
- Pomocí jazyka C# ale přetypování je obecně bude vhodnější. Pokud přetypovat element nebo atribut na typ připouštějící hodnotu Null, kód je jednodušší zápis při načtení hodnoty elementu (nebo atributu), který může nebo nemusí existovat. V poslední příkladu v tomto tématu ukazuje to. Však nelze nastavit obsah elementu přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.  
+ C#Nicméně přetypování je všeobecně lepším přístupem. Pokud přetypování elementu nebo atributu na typ s možnou hodnotou null, kód je jednodušší zapsat při načítání hodnoty prvku (nebo atributu), který může nebo nemusí existovat. Příklad ukazuje poslední příklad v tomto tématu. Nemůžete však nastavit obsah elementu prostřednictvím přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnosti.  
   
 ## <a name="example"></a>Příklad  
- K načtení hodnoty prvku, jenom udělíte <xref:System.Xml.Linq.XElement> objekt požadovaného typu. Element na řetězec, můžete přetypovat vždy následujícím způsobem:  
+ Chcete-li načíst hodnotu prvku, stačí přetypování <xref:System.Xml.Linq.XElement> objektu na požadovaný typ. Můžete vždy přetypování elementu na řetězec, a to následujícím způsobem:  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");  
@@ -31,7 +31,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Příklad  
- Také můžete přetypovat prvky na typy jiné než řetězec. Například pokud máte element, který obsahuje celé číslo, lze jej přetypovat na `int`, jak je znázorněno v následujícím kódu:  
+ Prvky lze také přetypovat na jiné typy než řetězec. Například pokud máte prvek, který obsahuje celé číslo, můžete jej přetypovat na `int`, jak je znázorněno v následujícím kódu:  
   
 ```csharp  
 XElement e = new XElement("Age", "44");  
@@ -46,12 +46,12 @@ Console.WriteLine("Value of e:" + (int)e);
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní přetypování operátory pro následující typy dat: `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?` , `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, a `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje operátory explicitního přetypování pro následující datové typy `string`: `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`,, `ulong?`, ,`float` ,,`double?`, ,`decimal?`,,,, ,`TimeSpan?`a `decimal` `DateTime` `DateTime?` `TimeSpan` `double` `float?` `GUID` `GUID?`.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje stejné operátory přetypování pro <xref:System.Xml.Linq.XAttribute> objekty.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje stejné operátory přetypování pro <xref:System.Xml.Linq.XAttribute> objekty.  
   
 ## <a name="example"></a>Příklad  
- Můžete použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost načíst obsah elementu:  
+ <xref:System.Xml.Linq.XElement.Value%2A> Vlastnost můžete použít k načtení obsahu prvku:  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");   
@@ -67,7 +67,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Příklad  
- Někdy pokusu o načtení hodnoty elementu, i když si nejste jisti, že objekt že existuje. V takovém případě když přiřadíte elementu převedena na typ s možnou hodnotou Null (buď `string` nebo jeden z typů s povolenou hodnotou Null v rozhraní .NET Framework), pokud element neexistuje přiřazená proměnná je nastavená pouze na `null`. Následující kód ukazuje, že když element může nebo nemusí existovat, je jednodušší použít přetypování než <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.  
+ Někdy se pokusíte načíst hodnotu prvku, i když si nejste jistí, že existuje. V tomto případě, když přiřadíte přetypováníný element na typ s možnou `string` hodnotou null (nebo jeden z typů s možnou hodnotou null v .NET Framework), pokud element neexistuje, přiřazená proměnná je `null`pouze nastavena na. Následující kód ukazuje, že pokud element může nebo nemusí existovat, je snazší použít přetypování, než aby bylo možné použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -129,7 +129,7 @@ else
 Console.WriteLine("v4:{0}", v4 == null ? "element does not exist" : v4.ToString());  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```  
 c1:child 1 content  
@@ -143,8 +143,8 @@ v3:element does not exist
 v4:element does not exist  
 ```  
   
- Obecně platí můžete napsat kód jednodušší při použití přetypování načíst obsah elementů a atributů.  
+ Obecně lze psát jednodušší kód při použití přetypování k načtení obsahu prvků a atributů.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md)
+- [LINQ to XML osy (C#)](./linq-to-xml-axes-overview.md)

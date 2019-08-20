@@ -10,39 +10,39 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 236e730eaae0bc73c715e9b1c2c71d6c870d78e3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c424f7884dd7242152bda1b16943f6489194299f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608537"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589982"
 ---
-# <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Postupy: Čtení z textového souboru (C# Průvodce programováním v)
-Tento příklad přečte obsah textového souboru s použitím statické metody <xref:System.IO.File.ReadAllText%2A> a <xref:System.IO.File.ReadAllLines%2A> z <xref:System.IO.File?displayProperty=nameWithType> třídy.  
+# <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Postupy: Čtení z textového souboru (C# Průvodce programováním)
+Tento příklad přečte obsah textového souboru pomocí statických metod <xref:System.IO.File.ReadAllText%2A> a <xref:System.IO.File.ReadAllLines%2A> od <xref:System.IO.File?displayProperty=nameWithType> třídy.  
   
- Příklad, který používá <xref:System.IO.StreamReader>, naleznete v tématu [jak: Přečíst textový soubor jeden řádek v čase](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).  
+ Příklad použití <xref:System.IO.StreamReader>naleznete v tématu [How to: Přečtěte si textový soubor po](./how-to-read-a-text-file-one-line-at-a-time.md)jednom řádku.  
   
 > [!NOTE]
->  Soubory, které se používají v tomto příkladu se vytvoří v tématu [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).  
+>  Soubory, které jsou použity v tomto příkladu, jsou vytvořeny v tématu [How to: Zápis do textového souboru](./how-to-write-to-a-text-file.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csFilesandFolders#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#4)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte kód a vložte ho do konzolové aplikace jazyka C#.  
+ Zkopírujte kód a vložte ho do C# konzolové aplikace.  
   
- Pokud nepoužíváte textových souborů z [jak: Zápis do textového souboru](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), nahraďte argument `ReadAllText` a `ReadAllLines` s odpovídající název a cesta k souboru ve vašem počítači.  
+ Pokud nepoužíváte textové soubory z [tématu Postupy: Zapište do textového souboru](./how-to-write-to-a-text-file.md), nahraďte `ReadAllText` argument a `ReadAllLines` odpovídající cestou a názvem souboru v počítači.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- Soubor neexistuje, nebo neexistuje v zadaném umístění. Zkontrolujte cestu a zadání názvu souboru.  
+- Soubor neexistuje nebo neexistuje v zadaném umístění. Zkontrolujte cestu a pravopis názvu souboru.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nespoléhejte na název souboru můžete zjistit obsah souboru. Například soubor `myFile.cs` nemusí být zdrojový soubor jazyka C#.  
+ Nespoléhá na název souboru k určení obsahu souboru. Soubor `myFile.cs` může být například C# zdrojový soubor.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Systém souborů a registr (C# Programming Guide)](../../../csharp/programming-guide/file-system/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Systém souborů a registr (C# Průvodce programováním)](./index.md)

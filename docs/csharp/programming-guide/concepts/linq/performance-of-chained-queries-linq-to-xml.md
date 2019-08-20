@@ -2,18 +2,18 @@
 title: Výkon zřetězených dotazů (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
-ms.openlocfilehash: 1ccb7dfec57a4aeea8329456084ca99f5ca3124d
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: dfd7698d0bdd24a75458a581dfd42c3d21325e6f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689994"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591579"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>Výkon zřetězených dotazů (LINQ to XML) (C#)
 
-Jednou z vašich nejdůležitějších výhod LINQ (a LINQ to XML) je, že zřetězených dotazů můžete provádět i pomocí jediného dotazu větší a složitější.
+Jednou z nejdůležitějších výhod LINQ (a LINQ to XML) je to, že zřetězené dotazy můžou provádět i jeden větší a složitější dotaz.
 
-Zřetězené dotaz je dotaz, který používá jiný dotaz jako zdroj. Například v následujícím jednoduchého kódu `query2` má `query1` jako svůj zdroj:
+Zřetězený dotaz je dotaz, který jako svůj zdroj používá jiný dotaz. Například v následujícím jednoduchém kódu `query2` má `query1` jako svůj zdroj:
 
 ```csharp
 XElement root = new XElement("Root",
@@ -41,18 +41,18 @@ Tento příklad vytvoří následující výstup:
 4
 ```
 
-Tento dotaz zřetězené poskytuje stejný profil výkonu jako iterace propojeného seznamu.
+Tento řetězový dotaz poskytuje stejný profil výkonu jako iterace prostřednictvím propojeného seznamu.
 
-- <xref:System.Xml.Linq.XContainer.Elements%2A> Osy je v podstatě stejný výkon jako iterace propojeného seznamu. <xref:System.Xml.Linq.XContainer.Elements%2A> je implementován jako iterátor s odloženého provedení. To znamená, že nemusí nějakou práci navíc iterace propojeného seznamu, například přidělování objekt iterátoru a sledování stavu spuštění. Tuto práci je možné rozdělit do dvou kategorií: práce, která se provádí v době iterátor nastaven a práce, která se provádí při každé iteraci. Nastavení je malý, pevné množství práce a práci při každé iteraci je přímo úměrný počtu položek v kolekci zdroje.
+- <xref:System.Xml.Linq.XContainer.Elements%2A> Osa má v podstatě stejný výkon jako iterace prostřednictvím propojeného seznamu. <xref:System.Xml.Linq.XContainer.Elements%2A>je implementován jako iterátor s odloženým vykonání. To znamená, že kromě iterace v propojeném seznamu funguje i několik práce, jako je například přidělení objektu iterátoru a udržování přehledu o stavu provádění. Tato práce může být rozdělena do dvou kategorií: práce, která se provádí v okamžiku nastavení iterátoru, a práce, která se provádí během každé iterace. Nastavení práce je malé, pevné množství práce a práce prováděná během každé iterace je úměrná počtu položek ve zdrojové kolekci.
 
-- V `query1`, `where` klauzule dotazu pro volání způsobí, že <xref:System.Linq.Enumerable.Where%2A> metody. Tato metoda je také implementováno jako iterátor. Nastavení se skládá z vytvoření instance delegáta, který bude odkazovat na výraz lambda, a navíc normální instalace iterátor. S každou iterací delegáta je volána k provedení predikát. Instalační program práce a práce při každé iteraci je podobný práci během iterace na ose.
+- V `query1` `where` klauzuli klauzule způsobí, <xref:System.Linq.Enumerable.Where%2A> že dotaz volá metodu. Tato metoda je také implementována jako iterátor. Nastavení práce se skládá z vytváření instancí delegáta, který bude odkazovat na výraz lambda, a také na normální nastavení iterátoru. Při každé iteraci se volá delegát, který spustí predikát. Nastavení práce a práce provedené během každé iterace jsou podobné práci, kterou jste provedli při iteraci přes osu.
 
-- V `query1`, klauzule select způsobí, že dotaz tak, aby volání <xref:System.Linq.Enumerable.Select%2A> metody. Tato metoda má stejný profil výkonu, jako <xref:System.Linq.Enumerable.Where%2A> metody.
+- V `query1`klauzuli select způsobí, že dotaz <xref:System.Linq.Enumerable.Select%2A> vyvolá metodu. Tato metoda má stejný profil výkonu jako <xref:System.Linq.Enumerable.Where%2A> metoda.
 
-- V `query2`, obojí `where` klauzule a `select` klauzule mají stejný profil výkonu jako v `query1`.
+- V `query2`systémumá `query1`klauzule i klauzule stejný profil výkonu jako v. `select` `where`
 
-Iterace přes `query2` tedy přímo úměrné k počet položek ve zdroji prvního dotazu jinými slovy, lineárním čase. Odpovídající příklad jazyka Visual Basic by měla mít stejný profil výkonu.
+Iterace prostřednictvím `query2` je proto přímo úměrná počtu položek ve zdroji prvního dotazu, jinými slovy, lineárním časem. Odpovídající příklad Visual Basic by měl stejný profil výkonu.
 
-Další informace o iterátorech naleznete v tématu [yield](../../../../csharp/language-reference/keywords/yield.md).
+Další informace o iterátorech najdete v tématu [yield](../../../language-reference/keywords/yield.md).
 
-Podrobnější kurz na zřetězení dotazů, najdete v tématu [kurzu: Zřetězení dotazů](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Podrobnější kurz o zřetězení dotazů společně najdete v [kurzu: Zřetězení dotazů dohromady](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).

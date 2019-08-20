@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Filtrovat podle atributu (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: 927dd781a16aa745b88de3c446682590bd601597
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 96c6d26c035d70fb50e0b5dc022bd28fd0242edd
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485750"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593824"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (C#)
-Toto téma ukazuje, jak získat Následnické prvky se zadaným názvem a atribut se zadanou hodnotou.  
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: Filtrovat podle atributu (XPath-LINQ to XML) (C#)
+Toto téma ukazuje, jak získat odvozené prvky se zadaným názvem a s atributem se zadanou hodnotou.  
   
  Výraz XPath je:  
   
  `.//Address[@Type='Shipping']`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá všechny následníky elementů s názvem `Address`a `Type` atributu s hodnotou "Dodací".  
+ Tento příklad vyhledá všechny prvky následníků s názvem `Address`a `Type` s atributem s hodnotou "expedice".  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  

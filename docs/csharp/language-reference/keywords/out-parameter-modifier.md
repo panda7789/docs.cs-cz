@@ -1,28 +1,28 @@
 ---
-title: out – modifikátor parametrů - C# odkaz
+title: modifikátor parametru out – C# referenční informace
 ms.custom: seodec18
 ms.date: 03/26/2019
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: 704b66e6cdec5caa47f85ed8e3acbd2a6a73b730
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 81d60782cf8e16d55889fb3c7c05858070a97741
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598244"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602071"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
-`out` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Formální parametr je alias pro argument, který musí být proměnná. Jinými slovy všechny operace na parametr se provádí na argumentu. Je třeba [ref](ref.md) – klíčové slovo, s výjimkou, že `ref` vyžaduje, aby před jeho předáním inicializovat proměnnou. Je také třeba [v](in-parameter-modifier.md) – klíčové slovo, s výjimkou, že `in` neumožňuje volané metody, chcete-li změnit hodnotu argumentu. Použití `out` parametr definici metody a volající metody musíte explicitně použít `out` – klíčové slovo. Příklad:  
+`out` Klíčové slovo způsobuje argumenty předávané odkazem. Nastaví formální parametr jako alias pro argument, který musí být proměnná. Jinými slovy, každá operace s parametrem je provedena na argumentu. Je podobně jako klíčové slovo [ref](ref.md) , s výjimkou, že `ref` vyžaduje, aby byla proměnná inicializována předtím, než je předána. Je také podobně jako klíčové slovo [in](in-parameter-modifier.md) , s výjimkou, která `in` neumožňuje volané metodě upravovat hodnotu argumentu. Chcete-li `out` použít parametr, definice metody a volající metoda musí explicitně `out` použít klíčové slovo. Příklad:  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
 > [!NOTE] 
-> `out` – Klíčové slovo je také možné pomocí parametru obecného typu k určení, že parametr typu je kovariant. Další informace týkající se použití `out` – klíčové slovo v tomto kontextu, najdete v článku [out (generický modifikátor)](out-generic-modifier.md).
+> `out` Klíčové slovo lze také použít s parametrem obecného typu k určení toho, že parametr typu je kovariantní. Další informace o použití `out` klíčového slova v tomto kontextu naleznete v tématu [out (Generic modifikátor)](out-generic-modifier.md).
   
-Proměnné se předaly jako `out` argumenty nemusí být inicializován před předáním ve volání metody. Volané metody je však potřeba přiřadit hodnotu dříve, než metoda vrátí.  
+Proměnné předané `out` jako argumenty není nutné inicializovat před předáním volání metody. Nicméně volaná metoda je vyžadována pro přiřazení hodnoty před vrácením metody.  
   
-`in`, `ref`, A `out` klíčová slova nejsou považované za součást podpisu metody za účelem řešení přetížení. Proto metody nemohou být přetíženy, pokud je jediným rozdílem je, že jedna metoda má `ref` nebo `in` argument a druhý bere `out` argument. Například následující kód, nebude kompilovat:  
+Klíčová `ref`slova `out` , a nejsou považována za součást signatury metody pro účely řešení přetížení. `in` Proto metody nemohou být přetíženy, pokud jediným rozdílem je, že jedna metoda přebírá `ref` argument `in` or `out` a druhý přebírá argument. Následující kód například nebude zkompilován:  
   
 ```csharp
 class CS0663_Example
@@ -34,37 +34,37 @@ class CS0663_Example
 }
 ```
   
-Přetěžování je právní, ale pokud jedna metoda má `ref`, `in`, nebo `out` argument a druhý nemá žádná z těchto parametrů, následujícím způsobem:  
+Přetížení je právní, ale pokud jedna metoda přebírá `ref`argument, `in`nebo `out` a druhý nemá žádný z těchto modifikátorů, jako je:  
   
 [!code-csharp[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#2)]  
 
-Kompilátor volí přetížení optimální to provede spárováním odpovídajících modifikátorech parametrů v lokalitě volání do modifikátorech parametrů používaných pro volání metody.
+Kompilátor zvolí nejlepší přetížení porovnáním modifikátorů parametrů na webu volání s modifikátory parametru použitými ve volání metody.
  
-Vlastnosti nejsou proměnné a proto ji nelze předat jako `out` parametry.
+Vlastnosti nejsou proměnné a proto je nelze předat jako `out` parametry.
   
-Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy metod:  
+Klíčová slova `in`, `ref`a `out` nelze použít pro následující typy metod:  
   
-- Asynchronní metody, které definujete pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor.  
+- Asynchronní metody, které definujete pomocí modifikátoru [Async](./async.md) .  
   
-- Metody iterátorů, mezi které patří [yield return](../../../csharp/language-reference/keywords/yield.md) nebo `yield break` příkazu.  
+- Metody iterátoru, které zahrnují [návratový návrat](./yield.md) nebo `yield break` příkaz yield.  
 
-## <a name="declaring-out-parameters"></a>Deklarování `out` parametry   
+## <a name="declaring-out-parameters"></a>Deklarace `out` parametrů   
 
-Deklarace metody s `out` argumenty se klasické alternativní řešení Chcete-li vrátit více hodnot. Počínaje C# 7.0, vezměte v úvahu [řazených kolekcí členů](../../tuples.md) pro podobné scénáře. Následující příklad používá `out` vrátit tří proměnných s stačí jediná metoda volání. Všimněte si, že třetí argument je přiřazená na hodnotu null. To umožňuje volitelně návratové hodnoty metod.  
+Deklarace metody s `out` argumenty je klasické alternativní řešení, které vrací více hodnot. Počínaje C# 7,0 zvažte řazené [kolekce členů](../../tuples.md) pro podobné scénáře. Následující příklad používá `out` k vrácení tří proměnných s jedním voláním metody. Všimněte si, že třetí argument je přiřazen null. To umožňuje metodám vracet hodnoty volitelně.  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#3)]  
 
-## <a name="calling-a-method-with-an-out-argument"></a>Volání metody s `out` argument
+## <a name="calling-a-method-with-an-out-argument"></a>Volání metody s `out` argumentem
 
-V jazyce C# 6 a starší, před jeho předáním jako musíte deklarovat proměnnou v samostatné prohlášení `out` argument. Následující příklad deklaruje proměnnou s názvem `number` předtím, než je předána [Int32.TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) metodu, která se pokusí převést řetězec na číslo.
+V C# 6 a starších verzích musíte deklarovat proměnnou v samostatném příkazu předtím, než je předáte jako `out` argument. Následující příklad deklaruje proměnnou s názvem `number` předtím, než je předána metodě [Int32. TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) , která se pokusí převést řetězec na číslo.
 
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#4)]  
 
-Od verze C# 7.0, lze deklarovat `out` proměnné v seznamu argumentů volání metody, nikoli v samostatné deklarace proměnné. Vytvoří kód kompaktnějším a srozumitelné a také vám zabrání od nedopatřením přiřazení hodnoty proměnné před voláním metody. V následujícím příkladu je podobně jako v předchozím příkladu, s tím rozdílem, že definuje `number` proměnné ve volání [Int32.TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) metody.
+Počínaje C# 7,0 můžete deklarovat `out` proměnnou v seznamu argumentů volání metody, nikoli v deklaraci samostatné proměnné. Tím se vytvoří více kompaktní, čitelný kód a také neúmyslně přiřadíte hodnotu proměnné před voláním metody. Následující příklad je podobný předchozímu příkladu s tím rozdílem, že definuje `number` proměnnou ve volání metody [Int32. TryParse](xref:System.Int32.TryParse(System.String,System.Int32@)) .
 
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#5)]  
    
-V předchozím příkladu `number` proměnná je silně typováno jako `int`. Implicitně typovaná lokální proměnná, můžete také deklarovat jako v následujícím příkladu.
+V předchozím příkladu `number` je proměnná silně typu `int`jako. Můžete také deklarovat implicitní typovou místní proměnnou, jak je uvedeno v následujícím příkladu.
 
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#6)]  
    
@@ -73,7 +73,7 @@ V předchozím příkladu `number` proměnná je silně typováno jako `int`. Im
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [Parametry metody](./method-parameters.md)

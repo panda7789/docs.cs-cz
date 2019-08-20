@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 777eb3be5cbefe0a136bf49f826ad67685a8456d
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 523045e990532f1475e1c4816c98d1af76daa92b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401075"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590408"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlášení a odhlášení odběru událostí (C# Průvodce programováním)
 Přihlásíte se k odběru události, která je publikována jinou třídou, pokud chcete napsat vlastní kód, který je volán při vyvolání události. Například se můžete přihlásit k odběru `click` události tlačítka, aby se vaše aplikace vytvářely co nejužitečnější, když uživatel klikne na tlačítko.  
@@ -83,7 +83,7 @@ Přihlásíte se k odběru události, která je publikována jinou třídou, pok
     };  
     ```  
   
-     Je důležité si všimnout, že pokud jste k přihlášení k odběru použili anonymní funkci, nemůžete se k odběru události snadno odhlásit. Chcete-li zrušit odběr v tomto scénáři, je nutné přejít zpět na kód, kde jste přihlášeni k odběru události, uložit anonymní metodu do proměnné delegáta a poté přidat delegáta události. Obecně doporučujeme, abyste nepoužívali anonymní funkce pro přihlášení k odběru událostí, pokud budete muset zrušit odběr události v pozdější fázi kódu. Další informace o anonymních funkcích naleznete v tématu [Anonymous Functions](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
+     Je důležité si všimnout, že pokud jste k přihlášení k odběru použili anonymní funkci, nemůžete se k odběru události snadno odhlásit. Chcete-li zrušit odběr v tomto scénáři, je nutné přejít zpět na kód, kde jste přihlášeni k odběru události, uložit anonymní metodu do proměnné delegáta a poté přidat delegáta události. Obecně doporučujeme, abyste nepoužívali anonymní funkce pro přihlášení k odběru událostí, pokud budete muset zrušit odběr události v pozdější fázi kódu. Další informace o anonymních funkcích naleznete v tématu [Anonymous Functions](../statements-expressions-operators/anonymous-functions.md).  
   
 ## <a name="unsubscribing"></a>Probíhá rušení odběru  
  Chcete-li zabránit vyvolání obslužné rutiny události při vyvolání události, odhlaste se od události. Aby nedošlo k nevracení prostředků, měli byste zrušit odběr událostí předtím, než vyřadíte objekt předplatitele. Dokud neprovedete zrušení odběru události, delegát vícesměrového vysílání, který je na události v objektu publikování, odkazuje na delegáta, který zapouzdřuje obslužnou rutinu události odběratele. Pokud objekt publikování obsahuje tento odkaz, uvolňování paměti neodstraní váš objekt předplatitele.  
@@ -100,8 +100,8 @@ Přihlásíte se k odběru události, která je publikována jinou třídou, pok
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události](../../../csharp/programming-guide/events/index.md)
-- [event](../../../csharp/language-reference/keywords/event.md)
-- [Postupy: Publikovat události, které jsou v souladu s pokyny pro .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [Události](./index.md)
+- [event](../../language-reference/keywords/event.md)
+- [Postupy: Publikovat události, které jsou v souladu s pokyny pro .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [-a-= – operátory](../../language-reference/operators/subtraction-operator.md)
 - [+ a + = – operátory](../../language-reference/operators/addition-operator.md)

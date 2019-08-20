@@ -1,5 +1,5 @@
 ---
-title: -help, -? (Možnosti kompilátoru C#)
+title: -help, -? (C# Možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /?
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - /help compiler option [C#]
 - -? compiler option [C#]
 ms.assetid: 8d53f6ba-5c3b-4183-976e-9c0f26fd3680
-ms.openlocfilehash: d6759ec878f34ebd5031fb3465901412f8cbda05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbf4fd6fd13ee267dcbc80568577d5f8aa7d625e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662865"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602907"
 ---
-# <a name="-help---c-compiler-options"></a>-help, -? (Možnosti kompilátoru C#)
-Tuto možnost odešle stdout seznam možností kompilátoru a stručný popis jednotlivých možností.  
+# <a name="-help---c-compiler-options"></a>-help, -? (C# Možnosti kompilátoru)
+Tato možnost pošle seznam možností kompilátoru a stručný popis každé z možností na stdout.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,11 +30,11 @@ Tuto možnost odešle stdout seznam možností kompilátoru a stručný popis je
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud tato možnost je součástí kompilace, se nevytvoří žádný výstupní soubor a bez kompilace neproběhne.  
+ Pokud je tato možnost obsažena v kompilaci, nebude vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,5 +1,5 @@
 ---
-title: Znalost, kdy použít nová klíčová slova – a přepsání C# Průvodce programováním
+title: Znalost, kdy použít klíčová slova override a C# New – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,18 +7,18 @@ helpviewer_keywords:
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-ms.openlocfilehash: eae57ae1f285e7f0e44c49e3d54fbd81bb4be591
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 00751cd8eac7979fe94d890ddeb7d13edb233f9e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398432"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596469"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 
-V jazyce C# metoda v odvozené třídě, může mít stejný název jako metodu v základní třídě. Můžete určit, jak interagovat pomocí metody [nové](../../../csharp/language-reference/keywords/new-modifier.md) a [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova. `override` Modifikátor *rozšiřuje* základní třídy `virtual` metody a `new` modifikátor *skryje* metodu přístupné základní třídy. Rozdíl je znázorněn v příkladech v tomto tématu.  
+V C#rozhraní může mít metoda v odvozené třídě stejný název jako metoda v základní třídě. Můžete určit způsob interakce metod pomocí klíčových slov [New](../../language-reference/keywords/new-modifier.md) a [override](../../language-reference/keywords/override.md) . `new` `virtual` Modifikátor rozšiřuje metodu základní třídy a modifikátor skrývá přístupnou metodu základní třídy. `override` Rozdíl je znázorněn v příkladech v tomto tématu.  
   
- V konzolové aplikaci, deklarujte následující dvě třídy `BaseClass` a `DerivedClass`. `DerivedClass` dědí z `BaseClass`.  
+ V konzolové aplikaci deklarujte následující dvě třídy `BaseClass` a. `DerivedClass` `DerivedClass`dědí z `BaseClass`.  
   
 ```csharp  
 class BaseClass  
@@ -38,15 +38,15 @@ class DerivedClass : BaseClass
 }  
 ```  
   
- V `Main` metody deklarovat proměnné `bc`, `dc`, a `bcdc`.  
+ V metodě deklarujte proměnné `bc`, `dc`a `bcdc`. `Main`  
   
-- `bc` je typu `BaseClass`, a její hodnota je typu `BaseClass`.  
+- `bc`je typu `BaseClass`a jeho hodnota je typu `BaseClass`.  
   
-- `dc` je typu `DerivedClass`, a její hodnota je typu `DerivedClass`.  
+- `dc`je typu `DerivedClass`a jeho hodnota je typu `DerivedClass`.  
   
-- `bcdc` je typu `BaseClass`, a její hodnota je typu `DerivedClass`. Jedná se o proměnnou je potřeba věnovat pozornost.  
+- `bcdc`je typu `BaseClass`a jeho hodnota je typu `DerivedClass`. Toto je proměnná, na kterou se má věnovat pozornost.  
   
- Protože `bc` a `bcdc` mít typ `BaseClass`, bude moct pouze přímo `Method1`, pokud nechcete použít přetypování. Proměnné `dc` přístup i k `Method1` a `Method2`. Tyto vztahy jsou uvedeny v následujícím kódu.  
+ Vzhledem `bc` k `bcdc` tomu, `BaseClass`že a mají typ, mohou `Method1`přistupovat pouze k, pokud nepoužíváte přetypování. Proměnná `dc` má přístup k `Method1` oběma `Method2`i. Tyto vztahy jsou uvedeny v následujícím kódu.  
   
 ```csharp  
 class Program  
@@ -70,7 +70,7 @@ class Program
 }  
 ```  
   
- V dalším kroku přidejte následující `Method2` metodu `BaseClass`. Signatura této metody shoduje se signaturou `Method2` metoda ve `DerivedClass`.  
+ Dále přidejte následující `Method2` metodu do `BaseClass`. Signatura této metody odpovídá signatuře `Method2` metody v. `DerivedClass`  
   
 ```csharp  
 public void Method2()  
@@ -79,7 +79,7 @@ public void Method2()
 }  
 ```  
   
- Protože `BaseClass` má teď `Method2` metoda, je možné přidat druhý volání příkazu pro `BaseClass` proměnné `bc` a `bcdc`, jak je znázorněno v následujícím kódu.  
+ Vzhledem `BaseClass` k tomu, `Method2` že nyní má metodu, lze přidat druhý volající příkaz `BaseClass` pro `bc` proměnné `bcdc`a, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 bc.Method1();  
@@ -90,9 +90,9 @@ bcdc.Method1();
 bcdc.Method2();  
 ```  
   
- Když vytvoříte projekt, uvidíte, že přidání `Method2` metoda ve `BaseClass` způsobí, že upozornění. Upozornění, která `Method2` metoda ve `DerivedClass` skryje `Method2` metoda ve `BaseClass`. Doporučujeme použít `new` – klíčové slovo v `Method2` definice, pokud máte v úmyslu způsobovat výsledek. Můžete také přejmenovat některou `Method2` metody k vyřešení upozornění, ale to není vždy reálné.  
+ Při sestavování projektu vidíte, že přidání `Method2` metody v `BaseClass` způsobuje upozornění. Upozornění `Method2` říká, že metoda v `DerivedClass` nástroji skrývá `Method2` metodu v `BaseClass`. Pokud máte `new` `Method2` v úmyslu tento výsledek způsobit, doporučujeme použít klíčové slovo v definici. Alternativně můžete přejmenovat jednu z `Method2` metod a vyřešit tak upozornění, ale to není vždy praktické.  
   
- Před přidáním `new`, spusťte program, který se zobrazí výstup vytvářených další volání příkazů. Zobrazí se následující výsledky.  
+ Před přidáním `new`spusťte program, aby se zobrazil výstup vyprodukovaný dalšími příkazy volání. Zobrazí se následující výsledky.  
   
 ```csharp  
 // Output:  
@@ -104,9 +104,9 @@ bcdc.Method2();
 // Base - Method2  
 ```  
   
- `new` – Klíčové slovo uchovává vztahy, které tento výstup, ale potlačí upozornění. Proměnné, které mají typ `BaseClass` i nadále přístup ke členům `BaseClass`a proměnné, která má typ `DerivedClass` i nadále přístup ke členům v `DerivedClass` první a potom zvážit členy zděděné z `BaseClass`.  
+ `new` Klíčové slovo zachovává vztahy, které tvoří tento výstup, ale potlačí upozornění. Proměnné, které mají typ `BaseClass` `BaseClass`, budou mít i nadále přístup ke členům a proměnná, která má `DerivedClass` typ, nadále přistupuje k `DerivedClass` členům v prvním a pak pro účely zvážení `BaseClass`členů zděděných z.  
   
- Chcete-li potlačit upozornění, přidejte `new` modifikátor definici typu `Method2` v `DerivedClass`, jak je znázorněno v následujícím kódu. Modifikátor se dají přidat před nebo po `public`.  
+ Chcete-li potlačit upozornění, `new` přidejte modifikátor do `Method2` definice v `DerivedClass`, jak je znázorněno v následujícím kódu. Modifikátor lze přidat před nebo po `public`.  
   
 ```csharp  
 public new void Method2()  
@@ -115,9 +115,9 @@ public new void Method2()
 }  
 ```  
   
- Spusťte program znovu k ověření, že nedošlo ke změně ve výstupu. Dál ověřte, že už se zobrazí upozornění. S použitím `new`, jsou potvrzující, že jste si vědomi, že člen, který upravuje skryje člena, který je zděděn ze základní třídy. Další informace o skrytí názvu prostřednictvím dědičnosti, naleznete v tématu [new – modifikátor](../../../csharp/language-reference/keywords/new-modifier.md).  
+ Spusťte program znovu a ověřte, zda se výstup nezměnil. Ověřte také, že se upozornění již nezobrazuje. Pomocí `new`můžete vyhodnotit, že jste si vědomi, že člen, který upravuje, skrývá člena, který je zděděn ze základní třídy. Další informace o skrývání názvů prostřednictvím dědičnosti naleznete v tématu [new modifikátor](../../language-reference/keywords/new-modifier.md).  
   
- Porovnání toto chování účinky použití `override`, přidejte následující metodu do `DerivedClass`. `override` Modifikátor se dají přidat před nebo po `public`.  
+ Chcete-li toto chování kontrastit na efekty `override`použití, přidejte následující metodu do `DerivedClass`. Modifikátor lze přidat před nebo po `public`. `override`  
   
 ```csharp  
 public override void Method1()  
@@ -126,7 +126,7 @@ public override void Method1()
 }  
 ```  
   
- Přidat `virtual` modifikátor definici typu `Method1` v `BaseClass`. `virtual` Modifikátor se dají přidat před nebo po `public`.  
+ Přidejte modifikátor do `Method1` definice v `BaseClass`. `virtual` Modifikátor lze přidat před nebo po `public`. `virtual`  
   
 ```csharp  
 public virtual void Method1()  
@@ -135,7 +135,7 @@ public virtual void Method1()
 }  
 ```  
   
- Spusťte projekt znovu. Všimněte si zejména poslední dva řádky následující výstup.  
+ Spusťte projekt znovu. Všimněte si zejména posledních dvou řádků následujícího výstupu.  
   
 ```csharp  
 // Output:  
@@ -147,7 +147,7 @@ public virtual void Method1()
 // Base - Method2  
 ```  
   
- Použití `override` modifikátor umožňuje `bcdc` přístup `Method1` metodu, která je definována v `DerivedClass`. Obvykle se jedná o požadované chování v hierarchie dědičnosti. Chcete, aby objekty, které obsahují hodnoty, které jsou vytvořeny z odvozené třídy použít metody, které jsou definovány v odvozené třídě. Dosažení tohoto chování pomocí `override` rozšířit metodu základní třídy.  
+ Použití `override` modifikátoru umožňuje `bcdc` přístup `Method1` k metodě, která je definována v `DerivedClass`. Obvykle to je požadované chování v hierarchiích dědičnosti. Chcete, aby objekty, které mají hodnoty vytvořené z odvozené třídy, používaly metody, které jsou definovány v odvozené třídě. Toto chování dosáhnete použitím `override` k rozšiřování metody základní třídy.  
   
  Následující kód obsahuje úplný příklad.  
   
@@ -219,7 +219,7 @@ namespace OverrideAndNew
 }  
 ```  
   
- Následující příklad ukazuje podobné chování v jiném kontextu. Příklad definuje tři třídy: základní třídu s názvem `Car` a dvě třídy, které jsou odvozeny z něj, `ConvertibleCar` a `Minivan`. Obsahuje základní třídy `DescribeCar` metoda. Metoda zobrazuje základní popis automobilu a pak zavolá `ShowDetails` k poskytnutí dalších informací. Všechny tři třídy definuje `ShowDetails` metoda. `new` Modifikátor se používá k definování `ShowDetails` v `ConvertibleCar` třídy. `override` Modifikátor se používá k definování `ShowDetails` v `Minivan` třídy.  
+ Následující příklad ilustruje podobné chování v jiném kontextu. Příklad definuje tři třídy: základní třídu s názvem `Car` a dvě třídy, které jsou odvozeny z `ConvertibleCar` ní a `Minivan`. Základní třída obsahuje `DescribeCar` metodu. Metoda zobrazí základní popis auta a potom zavolá `ShowDetails` k poskytnutí dalších informací. Každá ze tří tříd definuje `ShowDetails` metodu. Modifikátor slouží k definování `ShowDetails` ve `ConvertibleCar` třídě. `new` Modifikátor slouží k definování `ShowDetails` ve `Minivan` třídě. `override`  
   
 ```csharp  
 // Define the base class, Car. The class defines two methods,  
@@ -263,7 +263,7 @@ class Minivan : Car
 }  
 ```  
   
- Příklad testuje, kterou verzi `ShowDetails` je volána. Následující metoda `TestCars1`deklaruje instancí každé třídy a pak zavolá `DescribeCar` pro každou instanci.  
+ Příklad testuje, která verze `ShowDetails` je volána. Následující metoda `TestCars1`deklaruje instanci každé třídy a poté volá `DescribeCar` každou instanci.  
   
 ```csharp  
 public static void TestCars1()  
@@ -289,7 +289,7 @@ public static void TestCars1()
 }  
 ```  
   
- `TestCars1` vytvoří následující výstup. Všimněte si zejména výsledky `car2`, které jsou pravděpodobně není co jste očekávali. Typ objektu je `ConvertibleCar`, ale `DescribeCar` není přístup k verzi `ShowDetails` , která je definována v `ConvertibleCar` třídy, protože tato metoda je deklarován s `new` modifikátor, ne `override` modifikátor. V důsledku toho `ConvertibleCar` objekt zobrazí popis stejné jako `Car` objektu. Porovnejte výsledky `car3`, což je `Minivan` objektu. V takovém případě `ShowDetails` metodu, která je deklarována v `Minivan` třídy přepsání `ShowDetails` metodu, která je deklarována v `Car` minivan popisuje třídy a popis, který se zobrazí.  
+ `TestCars1`Vytvoří následující výstup. Všimněte si zejména výsledků pro `car2`, což pravděpodobně není to, co jste očekávali. Typ `ConvertibleCar`objektu je, ale `DescribeCar` nemá přístup k verzi `ShowDetails` , která je definována ve `ConvertibleCar` třídě, `override` protože tato metoda je deklarována s `new` modifikátorem, nikoli modifikátorem. V důsledku toho `ConvertibleCar` objekt zobrazí stejný popis `Car` jako objekt. Kontrastování výsledků pro `car3`, což `Minivan` je objekt. V tomto případě `ShowDetails` metoda, která je deklarována `Minivan` v třídě, Přepisuje `ShowDetails` metodu, která je deklarována ve `Car` třídě, a popis, který je zobrazen, popisuje minivan.  
   
 ```csharp  
 // TestCars1  
@@ -305,7 +305,7 @@ public static void TestCars1()
 // ----------  
 ```  
   
- `TestCars2` Vytvoří seznam objektů, které mají typ `Car`. Hodnoty objekty jsou instancemi `Car`, `ConvertibleCar`, a `Minivan` třídy. `DescribeCar` je volána na každý prvek seznamu. Následující kód ukazuje definici `TestCars2`.  
+ `TestCars2`Vytvoří seznam objektů, které mají typ `Car`. Hodnoty objektů jsou vytvořeny z `Car`tříd, `ConvertibleCar`a `Minivan` . `DescribeCar`je volána u každého prvku seznamu. Následující kód ukazuje definici `TestCars2`.  
   
 ```csharp  
 public static void TestCars2()  
@@ -324,7 +324,7 @@ public static void TestCars2()
 }  
 ```  
   
- Zobrazí se následující výstup. Všimněte si, že je stejný jako výstup, který se zobrazí při `TestCars1`. `ShowDetails` Metodu `ConvertibleCar` třídy není volána, bez ohledu na to, zda je typ objektu `ConvertibleCar`, například `TestCars1`, nebo `Car`, například `TestCars2`. Naopak `car3` volání `ShowDetails` metodu z `Minivan` třídy v obou případech se, zda má typ `Minivan` nebo typ `Car`.  
+ Zobrazí se následující výstup. Všimněte si, že je stejný jako výstup, který je zobrazen pomocí `TestCars1`. `TestCars1` `ConvertibleCar` `Car` `TestCars2`Metoda třídy není volána, bez ohledu na to, zda je typ objektu, jako v nebo, jako v. `ConvertibleCar` `ShowDetails` `car3` Naopak `Minivan` volá metodu z `Minivan` třídy v obou případech bez ohledu na to, zda obsahuje typ nebo typ `Car`. `ShowDetails`  
   
 ```csharp  
 // TestCars2  
@@ -340,7 +340,7 @@ public static void TestCars2()
 // ----------  
 ```  
   
- Metody `TestCars3` a `TestCars4` dokončení příkladu. Tyto metody volat `ShowDetails` přímo, nejprve z objektů deklarován mít typ `ConvertibleCar` a `Minivan` (`TestCars3`), pak z objekty deklarované typu `Car` (`TestCars4`). Následující kód definuje tyto dvě metody.  
+ Metody `TestCars3` a`TestCars4` dokončete příklad. Tyto metody volají `ShowDetails` přímo, nejprve z objektů deklarovaných jako typ `ConvertibleCar` a `Minivan` (`TestCars3`), poté z objektů deklarovaných jako typ `Car` (`TestCars4`). Následující kód definuje tyto dvě metody.  
   
 ```csharp  
 public static void TestCars3()  
@@ -364,7 +364,7 @@ public static void TestCars4()
 }  
 ```  
   
- Metody vytvoří následující výstup, který odpovídá výsledky z prvního příkladu v tomto tématu.  
+ Metody vyvolávají následující výstup, který odpovídá výsledkům z prvního příkladu v tomto tématu.  
   
 ```csharp  
 // TestCars3  
@@ -378,7 +378,7 @@ public static void TestCars4()
 // Carries seven people.  
 ```  
   
- Následující kód ukazuje celý projekt a její výstup.  
+ Následující kód ukazuje kompletní projekt a jeho výstup.  
   
 ```csharp  
 using System;  
@@ -545,8 +545,8 @@ namespace OverrideAndNew2
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
-- [base](../../../csharp/language-reference/keywords/base.md)
-- [abstract](../../../csharp/language-reference/keywords/abstract.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy a struktury](./index.md)
+- [Správa verzí pomocí klíčových slov override a new](./versioning-with-the-override-and-new-keywords.md)
+- [base](../../language-reference/keywords/base.md)
+- [abstract](../../language-reference/keywords/abstract.md)

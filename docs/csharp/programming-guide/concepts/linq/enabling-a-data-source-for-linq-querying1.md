@@ -2,12 +2,12 @@
 title: Povolení zdroje dat pro dotazy LINQ
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-ms.openlocfilehash: 54175195be69f743e57967338b252025f9f1f4ff
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: f7511b051577d94bb3d422e87699efdcff4058e1
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868883"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594603"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Povolení zdroje dat pro dotazy LINQ
 Existují různé způsoby, jak se [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dá zvětšit, aby bylo možné do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] vzoru zadat dotaz na libovolný zdroj dat. Zdrojem dat může být kromě jiného například datová struktura, webová služba, systém souborů nebo databáze. Vzor usnadňuje klientům dotazování na zdroj dat, pro který [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] je povoleno dotazování, protože syntaxe a vzor dotazu se nezmění. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Způsob, jakým [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] lze rozšířit na tyto zdroje dat, jsou následující:  
@@ -44,5 +44,5 @@ Existují různé způsoby, jak se [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.
 - <xref:System.Linq.IQueryable%601>
 - <xref:System.Collections.Generic.IEnumerable%601>
 - <xref:System.Linq.Enumerable>
-- [Přehled standardních operátorů dotazůC#()](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

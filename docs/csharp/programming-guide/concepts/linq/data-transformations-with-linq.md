@@ -10,28 +10,28 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: d7073fe35d58c9c538afa52911a5555b0002bfcf
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 5ed45580819ff037a3258eada767dd400b9d9e51
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486269"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594726"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
-[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načítání dat Je také výkonné nástroje pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence, stejně jako vstup a upravit v mnoha způsoby, jak vytvořit nové pořadí výstupu. Můžete změnit pořadí samotné beze změny samotné prvky řazení a seskupení. Ale možná procesorově nejvýkonnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzuli. Například můžete provádět následující úlohy:  
+[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]není pouze informace o načítání dat. Je to také výkonný nástroj pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu můžete jako vstup použít zdrojovou sekvenci a upravit ji mnoha způsoby, abyste mohli vytvořit novou výstupní sekvenci. Samotnou sekvenci můžete změnit, aniž byste museli měnit prvky řazením a seskupením. Ale pravděpodobně nejúčinnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je možnost vytvářet nové typy. To je dosaženo v klauzuli [Select](../../../language-reference/keywords/select-clause.md) . Například můžete provádět následující úlohy:  
   
-- Na jednu výstupní sekvenci, která má nový typ sloučení více vstupních sekvencí.  
+- Sloučí více vstupních sekvencí do jedné výstupní sekvence, která má nový typ.  
   
-- Vytvoření výstupní sekvence, jehož prvky jsou tvořeny pouze jednu nebo několik vlastností jednotlivých prvků ve zdrojové sekvenci.  
+- Vytvořte výstupní sekvence, jejichž prvky se skládají pouze z jedné nebo několika vlastností každého prvku ve zdrojové sekvenci.  
   
-- Výstup pořadí, jehož prvky jsou tvořeny výsledky operace provedené na zdroj dat vytvořte.  
+- Vytvořte výstupní sekvence, jejichž prvky se skládají z výsledků operací provedených ve zdrojových datech.  
   
-- Vytváření pořadí výstup do jiného formátu. Například můžete transformovat data z SQL řádků nebo textové soubory do souboru XML.  
+- Vytvořte výstupní sekvence v jiném formátu. Můžete například transformovat data z řádků nebo textových souborů SQL do XML.  
   
- Toto jsou jen několik příkladů. Samozřejmě tyto transformace zkombinovat ve stejném dotazu různými způsoby. Kromě toho výstup posloupnost jeden dotaz slouží jako vstupní sekvence pro nový dotaz.  
+ Jsou to jenom několik příkladů. Tyto transformace je samozřejmě možné v jednom dotazu zkombinovat různými způsoby. Kromě toho se výstupní sekvence jednoho dotazu dá použít jako vstupní sekvence nového dotazu.  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>Spojování více vstupů do jedné výstupní sekvence  
- Můžete použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, který vytvořit výstupní sekvenci, která obsahuje elementy z více než jeden vstupní sekvence. Následující příklad ukazuje, jak kombinovat dvě struktury dat v paměti, ale stejné zásady můžete použít u kombinovat data ze zdroje XML nebo SQL nebo datové sady. Předpokládejme následující typy dvou tříd:  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Dotaz můžete použít k vytvoření výstupní sekvence, která obsahuje prvky z více než jedné vstupní sekvence. Následující příklad ukazuje, jak kombinovat dvě datové struktury v paměti, ale stejné zásady lze použít pro kombinování dat z XML nebo SQL nebo datových zdrojů. Předpokládejme následující dva typy tříd:  
   
  [!code-csharp[CsLINQGettingStarted#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#7)]  
   
@@ -39,33 +39,33 @@ ms.locfileid: "66486269"
   
  [!code-csharp[CSLinqGettingStarted#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#8)]  
   
- Další informace najdete v tématu [klauzule join](../../../../csharp/language-reference/keywords/join-clause.md) a [klauzule select](../../../../csharp/language-reference/keywords/select-clause.md).  
+ Další informace najdete v tématu [klauzule JOIN](../../../language-reference/keywords/join-clause.md) a [klauzule SELECT](../../../language-reference/keywords/select-clause.md).  
   
 ## <a name="selecting-a-subset-of-each-source-element"></a>Výběr podmnožiny jednotlivých zdrojových elementů  
- Existují dva základní způsoby, které vyberou podmnožinu každý prvek ve zdrojové sekvenci:  
+ Existují dva hlavní způsoby, jak vybrat podmnožinu každého prvku ve zdrojové sekvenci:  
   
-1. Vybrat jen jeden člen zdrojového prvku, pomocí operace tečkou. V následujícím příkladu se předpokládá, že `Customer` objekt obsahuje několik veřejných vlastností, včetně řetězec s názvem `City`. Při spuštění, tento dotaz vytvoří výstup posloupnost řetězců.  
+1. Chcete-li vybrat pouze jednoho člena zdrojového prvku, použijte operaci tečka. V následujícím příkladu Předpokládejme, že `Customer` objekt obsahuje několik veřejných vlastností včetně řetězce s názvem. `City` Při spuštění tento dotaz vytvoří výstupní sekvenci řetězců.  
   
     ```csharp
     var query = from cust in Customers  
                 select cust.City;  
     ```  
   
-2. Pokud chcete vytvořit prvky, které obsahují více než jednu vlastnost ze zdrojového elementu, můžete inicializátoru objektu pojmenovaný objekt nebo anonymního typu. Následující příklad ukazuje použití anonymní typ k zapouzdření dvě vlastnosti z každého `Customer` element:  
+2. Chcete-li vytvořit prvky, které obsahují více než jednu vlastnost ze zdrojového elementu, můžete použít inicializátor objektu s pojmenovaným objektem nebo anonymním typem. Následující příklad ukazuje použití anonymního typu k zapouzdření dvou vlastností z každého `Customer` prvku:  
   
     ```csharp
     var query = from cust in Customer  
                 select new {Name = cust.Name, City = cust.City};  
     ```  
   
- Další informace najdete v tématu [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md) a [anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+ Další informace naleznete v tématu [Inicializátory objektů a kolekcí](../../classes-and-structs/object-and-collection-initializers.md) a [anonymní typy](../../classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformace objektů v paměti do jazyka XML  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy umožňují snadno transformovat data mezi datové struktury v paměti, databází SQL, datovými sadami ADO.NET a XML datových proudů nebo dokumenty. V následujícím příkladu transformace objektů v struktury dat v paměti do elementů XML.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]dotazy usnadňují transformaci dat mezi datovými strukturami v paměti, databázemi SQL, ADO.NET datasadami a datovými proudy XML nebo dokumenty. Následující příklad transformuje objekty v datové struktuře v paměti do elementů XML.  
   
  [!code-csharp[CsLINQGettingStarted#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#9)]  
   
- Kód vytvoří následující výstup XML:  
+ Kód generuje následující výstup XML:  
   
 ```xml  
 <Root>  
@@ -87,21 +87,21 @@ ms.locfileid: "66486269"
 </Root>  
 ```  
   
- Další informace najdete v tématu [vytváření stromů XML v jazyce C# (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md).  
+ Další informace naleznete v tématu [vytváření stromů XML v C# (LINQ to XML)](./creating-xml-trees-linq-to-xml-2.md).  
   
 ## <a name="performing-operations-on-source-elements"></a>Provádění operací se zdrojovými elementy  
- Výstupní sekvenci nemusí obsahovat všechny prvky nebo element vlastnosti ze zdrojové sekvence. Výstup může být místo toho sekvenci hodnot, které je vypočítán s použitím zdrojové prvky jako vstupní argumenty. Následující jednoduchý dotaz, pokud je spuštěn, výstupy sekvencí řetězců, jehož hodnoty představují podle zdrojové sekvence prvků typu výpočtu `double`.  
+ Výstupní sekvence nemusí obsahovat žádné elementy nebo vlastnosti elementu ze zdrojové sekvence. Výstupem může být například sekvence hodnot, které jsou vypočítány pomocí zdrojového prvku jako vstupní argumenty. Následující jednoduchý dotaz, když je spuštěn, výstupuje sekvenci řetězců, jejichž hodnoty reprezentují výpočet na základě zdrojové sekvence prvků typu `double`.  
   
 > [!NOTE]
->  Volání metody ve výrazech dotazů není podporováno, pokud dotaz bude fungovat některé jiné domény. Například nelze volat běžné metody jazyka C# [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] vzhledem k tomu, že systém SQL Server nemá žádný kontext pro něj. Můžete ale mapování uložené procedury k metodám a volat. Další informace najdete v tématu [uložené procedury](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
+>  Volání metod ve výrazech dotazů není podporováno, pokud bude dotaz přeložen do jiné domény. Například nemůžete volat běžnou C# metodu v, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] protože pro ni SQL Server nemá žádný kontext. Uložené procedury však lze namapovat na metody a volat je. Další informace najdete v tématu [uložené procedury](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
   
  [!code-csharp[CsLINQGettingStarted#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#10)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
-- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
+- [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)
+- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
-- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)
-- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)
-- [select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)
+- [LINQ to XML (C#)](./linq-to-xml-overview.md)
+- [Výrazy dotazů LINQ](../../linq-query-expressions/index.md)
+- [select – klauzule](../../../language-reference/keywords/select-clause.md)

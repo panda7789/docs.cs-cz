@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Načtení mělké hodnoty elementu (C#)'
+title: 'Postupy: Načtení omezené hodnoty elementu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: 570f9837d04352fb291f0b79f85fb9d7f68ff09d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 2b37cc19e2ec5149589131497b36ad381900336b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485033"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592509"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: Načtení mělké hodnoty elementu (C#)
-Toto téma ukazuje, jak získat mělké hodnoty elementu. Mělké hodnoty je hodnota konkrétní elementu, na rozdíl od hloubkové hodnotu, která obsahuje hodnoty všechny podřízené prvky, které jsou spojeny do jednoho řetězce.  
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: Načtení omezené hodnoty elementu (C#)
+Toto téma ukazuje, jak získat omezené hodnoty elementu. Nedávná hodnota je hodnota pouze konkrétního prvku, na rozdíl od hloubkové hodnoty, která zahrnuje hodnoty všech podřízených prvků zřetězených do jednoho řetězce.  
   
- Při načítání hodnotu prvku pomocí obou přetypování nebo <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost, získáte podrobné hodnotu. K načtení mělké hodnoty, můžete použít `ShallowValue` rozšiřující metoda, jak je znázorněno v následujícím příkladu. Načtení mělké hodnoty je užitečné, pokud chcete vybrat elementy na základě jejich obsahu.  
+ Při načítání hodnoty prvku pomocí přetypování nebo <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnosti načtete hloubkovou hodnotu. Pro načtení omezené hodnoty můžete použít `ShallowValue` metodu rozšíření, jak je znázorněno v následujícím příkladu. Načtení omezené hodnoty je užitečné, pokud chcete vybrat prvky na základě jejich obsahu.  
   
- Následující příklad deklaruje metodu rozšíření, která načte mělké hodnoty elementu. Pak používá metody rozšíření v dotazu k výpisu všech prvků, které obsahují počítané hodnoty.  
+ V následujícím příkladu je deklarována metoda rozšíření, která načte s nejomezeným hodnotou elementu. Potom používá metodu rozšíření v dotazu k vypsání všech prvků, které obsahují počítanou hodnotu.  
   
 ## <a name="example"></a>Příklad  
- Následující textový soubor, Report.xml, je zdrojem pro účely tohoto příkladu.  
+ Následující textový soubor, Report. XML, je zdrojem tohoto příkladu.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -81,4 +81,4 @@ Column  Name="Name"         =Customer.Name
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md)
+- [LINQ to XML osy (C#)](./linq-to-xml-axes-overview.md)

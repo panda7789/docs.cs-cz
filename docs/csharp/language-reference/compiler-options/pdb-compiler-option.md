@@ -1,5 +1,5 @@
 ---
-title: -pdb (C# Compiler Options)
+title: -PDB (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /pdb
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-ms.openlocfilehash: b0a566931ac76a3adb191f423a497bc446e280c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3081f4716e8cd858d789db6050e635af941aa05c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662566"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602574"
 ---
-# <a name="-pdb-c-compiler-options"></a>-pdb (C# Compiler Options)
-**- Pdb** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  
+# <a name="-pdb-c-compiler-options"></a>-PDB (C# možnosti kompilátoru)
+Možnost kompilátoru **-PDB** Určuje název a umístění souboru se symboly ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,17 +26,17 @@ ms.locfileid: "61662566"
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Název a umístění souboru pro symboly ladění.  
+ Název a umístění souboru se symboly ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zadáte [-debug (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/debug-compiler-option.md), kompilátor vytvoří soubor .pdb ve stejném adresáři, ve kterém kompilátor vytvoří výstupní soubor (.exe nebo .dll) s názvem souboru, který je stejný jako název výstupního souboru.  
+ Zadáte-li parametr [-C# Debug (možnosti kompilátoru)](./debug-compiler-option.md), kompilátor vytvoří soubor. pdb ve stejném adresáři, ve kterém kompilátor vytvoří výstupní soubor (. exe nebo. dll) s názvem souboru, který je stejný jako název výstupního souboru.  
   
- **-pdb** vám umožní určit jiné než výchozí název a umístění souboru pdb.  
+ **-PDB** umožňuje zadat jiný než výchozí název souboru a umístění pro soubor. pdb.  
   
- Tato možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio ani ji není možné změnit prostřednictvím kódu programu.  
+ Tuto možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani jej nelze změnit programově.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `t.cs` a vytvoření souboru .pdb s názvem tt.pdb:  
+ Zkompilujte `t.cs` a vytvořte soubor. pdb s názvem TT. pdb:  
   
 ```console  
 csc -debug -pdb:tt t.cs  
@@ -44,5 +44,5 @@ csc -debug -pdb:tt t.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,5 +1,5 @@
 ---
-title: Dědičnost - C# Průvodce programováním
+title: Dědičnost – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -10,52 +10,52 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: 8f49118ebff8dcdfee45ce30de9b35437141e2bb
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 1fc8303ad4d54bfd3255d725de486281cd09439e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398475"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596549"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
-Dědičnost, společně s zapouzdření a polymorfismu, je jednou tři primární charakteristiky objektově orientované programování. Dědičnost umožňuje vytvořit nové třídy, které opakovaně používat, rozšířit a upravovat chování, které je definováno v jiné třídy. Třídy, jejíž členové jsou zdědění, se nazývá *základní třída*, a názvem třídy, která dědí tyto členy *odvozené třídy*. Odvozená třída může mít pouze jednu přímou základní třídu. Dědičnost je však tranzitivní. Pokud ClassC je odvozeno od ClassB a ClassB je odvozen z ClassA, ClassC dědí členy deklarované v ClassB a nakonec.  
+Dědičnost, spolu s zapouzdřením a polymorfismus, je jednou ze tří základních vlastností objektově orientovaného programování. Dědičnost umožňuje vytvořit nové třídy, které znovu použije, rozšíří a mění chování, které je definováno v jiných třídách. Třída, jejíž členové jsou zděděni, se nazývají *základní třídu*a třída, která dědí tyto členy, se nazývá *odvozená třída*. Odvozená třída může mít pouze jednu přímou základní třídu. Dědičnost je však tranzitivní. Pokud je ClassC odvozen z ClassB a ClassB je odvozen z třídy Class, ClassC dědí členy deklarované v ClassB a Class.  
   
 > [!NOTE]
->  Struktury nepodporují dědičnosti, ale mohou implementovat rozhraní. Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
+>  Struktury nepodporují dědění, ale mohou implementovat rozhraní. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
   
- Koncepčně odvozené třídy je specializací třídy base. Například, pokud máte základní třídu `Animal`, bude pravděpodobně jedné odvozené třídy, který je pojmenován `Mammal` a jiné odvozené třídy, který je pojmenován `Reptile`. A `Mammal` je `Animal`a `Reptile` je `Animal`, ale každá odvozená třída představuje různé specializace základní třídy.  
+ V koncepčním případě je odvozená třída specializací základní třídy. Například pokud máte základní třídu `Animal`, může mít jednu odvozenou třídu s názvem `Mammal` a jinou odvozenou třídu s názvem `Reptile`. A je ,a`Reptile` je ,alekaždáodvozenátřídapředstavujerůznéspecializacezákladnítřídy.`Animal` `Mammal` `Animal`  
   
- Při definování třídy odvozovat z jiné třídy odvozené třídy implicitně získá všechny členy základní třídy, s výjimkou jejích konstruktorů a finalizační metody. Odvozená třída tak můžete znovu použít kód v základní třídě bez nutnosti znovu implementovat. V odvozené třídě můžete přidat více členů. Tímto způsobem rozšiřuje odvozené třídy funkce základní třídy.  
+ Při definování třídy pro odvození z jiné třídy odvozená třída implicitně získá všechny členy základní třídy, s výjimkou jejích konstruktorů a finalizační metody. Odvozená třída může následně znovu použít kód v základní třídě, aniž by bylo nutné ho znovu implementovat. V odvozené třídě můžete přidat další členy. Tímto způsobem odvozená třída rozšiřuje funkčnost základní třídy.  
   
- Následující obrázek ukazuje třídu `WorkItem` , která představuje položky práce v některých obchodních procesů. Stejně jako všechny třídy je odvozen z <xref:System.Object?displayProperty=nameWithType> a dědí její metody. `WorkItem` Přidá pět členů své vlastní. Patří mezi ně konstruktor, protože nejsou zděděných konstruktorů. Třída `ChangeRequest` dědí z `WorkItem` a představuje konkrétní typ pracovní položky. `ChangeRequest` Přidá dva další členy, které dědí z členů `WorkItem` a z <xref:System.Object>. Je nutné přidat vlastní konstruktor a také přidá `originalItemID`. Vlastnost `originalItemID` umožňuje `ChangeRequest` instance má být přidružena k původní `WorkItem` pro kterou platí žádost o změnu.  
+ Následující ilustrace znázorňuje třídu `WorkItem` , která představuje položku práce v některém obchodním procesu. Podobně jako všechny třídy je odvozen z <xref:System.Object?displayProperty=nameWithType> a dědí všechny metody. `WorkItem`Přidá pět členů vlastního typu. Mezi ně patří konstruktor, protože konstruktory nejsou děděny. Třída `ChangeRequest` dědí z `WorkItem` a představuje konkrétní typ pracovní položky. `ChangeRequest`přidá dva členy do členů, které dědí z `WorkItem` a z. <xref:System.Object> Je nutné přidat svůj vlastní konstruktor a přidá `originalItemID`také. Vlastnost `originalItemID` `WorkItem` umožňuje instanci přidružit k původnímu, na kterou se vztahuje žádost o změnu. `ChangeRequest`  
   
- ![Diagram zobrazující průběh dědičnost tříd](./media/inheritance/class-inheritance-diagram.png)  
+ ![Diagram, který znázorňuje dědičnost tříd](./media/inheritance/class-inheritance-diagram.png)  
   
- Následující příklad ukazuje, jak relace tříd jsme vám ukázali v předchozí ilustraci jsou vyjádřeny v jazyce C#. Příklad také ukazuje, jak `WorkItem` přepisuje metodu virtuální <xref:System.Object.ToString%2A?displayProperty=nameWithType>a jak `ChangeRequest` třída dědí `WorkItem` implementace metody.  
+ Následující příklad ukazuje, jak jsou znázorněny vztahy třídy na předchozím obrázku, v C#. Příklad také ukazuje, jak `WorkItem` Přepisuje virtuální metodu <xref:System.Object.ToString%2A?displayProperty=nameWithType>a `WorkItem` jak `ChangeRequest` třída dědí implementaci metody.  
   
  [!code-csharp[csProgGuideInheritance#49](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#49)]  
   
 ## <a name="abstract-and-virtual-methods"></a>Abstraktní a virtuální metody  
- Pokud základní třída deklaruje metodu jako [virtuální](../../../csharp/language-reference/keywords/virtual.md), mohou odvozené třídy [přepsat](../../../csharp/language-reference/keywords/override.md) metoda vlastní implementací. Pokud základní třída deklaruje člen jako [abstraktní](../../../csharp/language-reference/keywords/abstract.md), že metoda musí přepsat v neabstraktní třídě, který dědí přímo z této třídy. Pokud odvozené třídy je sama o sobě abstraktní, dědí abstraktní členové bez jejich implementaci. Abstraktní a virtuální členy jsou základem pro polymorfismus, což je druhým charakteristickým znakem primární objektově orientované programování. Další informace najdete v tématu [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
+ Když základní třída deklaruje metodu jako [virtuální](../../language-reference/keywords/virtual.md), odvozená třída může [přepsat](../../language-reference/keywords/override.md) metodu pomocí vlastní implementace. Pokud základní třída deklaruje člena jako [abstraktní](../../language-reference/keywords/abstract.md), tato metoda musí být přepsána v jakékoli neabstraktní třídě, která přímo dědí z této třídy. Pokud je odvozená třída sama o sobě abstraktní, dědí abstraktní členy bez jejich implementace. Abstraktní a virtuální členové jsou základem pro polymorfismus, což je druhá primární charakteristika objektově orientovaného programování. Další informace najdete v tématu [polymorfismus](./polymorphism.md).  
   
 ## <a name="abstract-base-classes"></a>Abstraktní základní třídy  
- Je možné deklarovat třídu jako [abstraktní](../../../csharp/language-reference/keywords/abstract.md) Pokud chcete, aby se zabránilo přímé vytváření instancí pomocí [nové](../../../csharp/language-reference/operators/new-operator.md) operátor. Pokud to uděláte, třídu lze použít pouze v případě, že nové třídy je odvozen z něj. Abstraktní třída může obsahovat jednu nebo více podpisy metod, že samotné jsou deklarovány jako abstraktní. Tyto podpisy zadejte parametry a vrátí hodnotu, ale nemají implementaci (tělo metody). Abstraktní třída nemá obsahovat abstraktní členy. Pokud třída obsahuje abstraktní člen, vlastní třídy musí deklarovat jako abstraktní. Odvozené třídy, které nejsou abstraktní sami musí poskytnout implementaci pro všechny abstraktní metody z abstraktní základní třídu. Další informace najdete v tématu [abstraktní a zapečetěné třídy a členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Třídu můžete deklarovat jako [abstraktní](../../language-reference/keywords/abstract.md) , pokud chcete zabránit přímému vytváření instancí pomocí operátoru [New](../../language-reference/operators/new-operator.md) . V takovém případě lze třídu použít pouze v případě, že je z ní odvozena nová třída. Abstraktní třída může obsahovat jeden nebo více signatur metod, které jsou deklarovány jako abstraktní. Tyto signatury určují parametry a návratovou hodnotu, ale nemají žádnou implementaci (tělo metody). Abstraktní třída nemusí obsahovat abstraktní členy; Pokud však třída obsahuje abstraktní člen, musí být samotná třída deklarována jako abstraktní. Odvozené třídy, které nejsou abstraktní, musí poskytovat implementaci pro všechny abstraktní metody z abstraktní základní třídy. Další informace naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](./abstract-and-sealed-classes-and-class-members.md).  
   
 ## <a name="interfaces"></a>Rozhraní  
- *Rozhraní* je typem odkazu, který je poněkud podobně jako abstraktní základní třídu, která se skládá pouze abstraktní členy. Pokud třída implementuje rozhraní, se musí poskytnout implementaci pro všechny členy rozhraní. Třída může implementovat více rozhraní, i když lze odvodit z pouze jednu přímou základní třídu.  
+ *Rozhraní* je odkazový typ, který je trochu podobný abstraktní základní třídě, která se skládá pouze z abstraktních členů. Pokud třída implementuje rozhraní, musí poskytnout implementaci pro všechny členy rozhraní. Třída může implementovat více rozhraní, i když může odvozovat pouze z jediné přímé základní třídy.  
   
- Rozhraní se používají k definování specifické možnosti pro třídy, které nutně nemusí "je" vztah. Například <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní může být implementována každá třída nebo struktura, která se má povolit klientský kód k určení, zda dva objekty typu jsou ekvivalentní (ale typ definuje ekvivalence). <xref:System.IEquatable%601> neznamená stejný druh "je" vztah, který existuje mezi základní a odvozenou třídu (například `Mammal` je `Animal`). Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
+ Rozhraní slouží k definování specifických možností pro třídy, které nemusí nutně mít relaci "je". <xref:System.IEquatable%601?displayProperty=nameWithType> Rozhraní lze například implementovat jakoukoliv třídou nebo strukturou, která má povolit klientský kód pro určení, zda jsou dva objekty typu ekvivalent (ale typ definuje ekvivalenci). <xref:System.IEquatable%601>neznamená, že stejný druh vztahu "je", který existuje mezi základní třídou a odvozenou třídou (například `Mammal` `Animal`je a). Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
   
-## <a name="preventing-further-derivation"></a>Brání odvození další  
- Třída může zabránit dalším třídám dědění z něj nebo z některé z jejích členů deklarováním samotné nebo člena jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md). Další informace najdete v tématu [abstraktní a zapečetěné třídy a členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+## <a name="preventing-further-derivation"></a>Zabránit dalšímu odvození  
+ Třída může zabránit jiným třídám dědit z ní nebo z některého z jejích členů deklarováním samotného nebo členu jako zapečetěného. [](../../language-reference/keywords/sealed.md) Další informace naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](./abstract-and-sealed-classes-and-class-members.md).  
   
-## <a name="derived-class-hiding-of-base-class-members"></a>Skrývání odvozená třída členy základní třídy  
- Odvozené třídy lze skrýt členy základní třídy deklarací členů s týmž názvem a podpisem. [Nové](../../../csharp/language-reference/keywords/new-modifier.md) modifikátor lze explicitně určit, že člen není určena pro se přepíše základního člena. Použití [nové](../../../csharp/language-reference/keywords/new-modifier.md) není vyžadováno, ale upozornění kompilátoru se vygeneruje, pokud [nové](../../../csharp/language-reference/keywords/new-modifier.md) se nepoužívá. Další informace najdete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [vědět, když pro použití přepsání a nových klíčových slov](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
+## <a name="derived-class-hiding-of-base-class-members"></a>Odvozená třída skrývání členů základní třídy  
+ Odvozená třída může skrýt členy základní třídy deklarováním členů se stejným názvem a signaturou. [Nový](../../language-reference/keywords/new-modifier.md) Modifikátor lze použít k explicitnímu označení, že člen není určen jako přepsání základního člena. Použití [New](../../language-reference/keywords/new-modifier.md) není vyžadováno, ale pokud není použita [Nová](../../language-reference/keywords/new-modifier.md) , bude vygenerováno upozornění kompilátoru. Další informace naleznete v tématu [Správa verzí pomocí klíčových slov override a New](./versioning-with-the-override-and-new-keywords.md) a [znalost, kdy použít klíčová slova override a New](./knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [class](../../../csharp/language-reference/keywords/class.md)
-- [struct](../../../csharp/language-reference/keywords/struct.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy a struktury](./index.md)
+- [class](../../language-reference/keywords/class.md)
+- [struct](../../language-reference/keywords/struct.md)

@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)'
+title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: 305733ccf249f1a2c2608a5bd01d74ba2b1e1b86
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e6c0cbf523095122be4227bebee8d7a234eba2d0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585784"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592391"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)
-Následující příklad ukazuje způsob řazení řádků strukturovaných textu, jako je například textový soubor s oddělovači, podle libovolného pole v řádku. Pole může být určen dynamicky za běhu. Předpokládejme, že pole v scores.csv představují student získal identifikační číslo, za nímž následuje řadu čtyři skóre v testech.  
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
+Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, podle libovolného pole na řádku. Pole lze dynamicky určit za běhu. Předpokládat, že pole v souboru skóre. csv reprezentují číslo ID studenta, po kterém následuje řada čtyř výsledků testu.  
   
-### <a name="to-create-a-file-that-contains-data"></a>Chcete-li vytvořit soubor, který obsahuje data  
+### <a name="to-create-a-file-that-contains-data"></a>Vytvoření souboru, který obsahuje data  
   
-1. Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
+1. Zkopírujte data skóre. CSV z tématu [postupy: Připojte obsah z nepodobných souborů (LINQ)C#(](./how-to-join-content-from-dissimilar-files-linq.md) ) a uložte ho do složky řešení.  
   
 ## <a name="example"></a>Příklad  
   
@@ -72,12 +72,12 @@ public class SortLines
  */  
 ```  
   
- Tento příklad také ukazuje, jak vrátit proměnné dotazu z metody.  
+ Tento příklad také ukazuje, jak vrátit proměnnou dotazu z metody.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
-Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)

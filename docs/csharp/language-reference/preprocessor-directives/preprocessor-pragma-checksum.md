@@ -1,5 +1,5 @@
 ---
-title: '#kontrolního součtu direktivy pragma - C# odkaz'
+title: '#pragma Checksum – C# reference'
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 36e5602f0a0b872a4aa6cdac64b49b1d1c708795
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 4103b6262fc5085c1204f423a36c9c5c2053b497
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877525"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605649"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma – kontrolní součet (Referenční dokumentace jazyka C#)
-Generuje kontrolní součty zdrojových souborů pro usnadnění ladění stránek ASP.NET.  
+Vygeneruje kontrolní součty pro zdrojové soubory, které pomáhají s laděním ASP.NET stránek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,16 +31,16 @@ Generuje kontrolní součty zdrojových souborů pro usnadnění ladění strán
  Globálně jedinečný identifikátor (GUID) pro algoritmus hash.  
   
  `"checksum_bytes"`  
- Řetězec šestnáctkových číslic představující počet bajtů kontrolního součtu. Musí být sudý počet šestnáctkových číslic. Lichý počet číslic za následek upozornění kompilace a direktiva se ignoruje.  
+ Řetězec hexadecimálních číslic reprezentujících bajty kontrolního součtu. Musí se jednat o sudý počet šestnáctkových číslic. Lichý počet číslic má za následek upozornění v době kompilace a direktiva se ignoruje.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program sady Visual Studio používá kontrolní součet abyste měli jistotu, že vždy najde správný zdroj. Kompilátor vypočítá kontrolního součtu pro zdrojový soubor a potom generuje výstup do souboru databáze (PDB) programu. Ladicí program použije soubor PDB pro porovnání, která vypočítá pro zdrojový soubor kontrolního součtu.  
+ Ladicí program sady Visual Studio používá kontrolní součet k tomu, aby se ujistil, že vždy najde správný zdroj. Kompilátor vypočítá kontrolní součet pro zdrojový soubor a poté vygeneruje výstup do souboru programu databáze (PDB). Ladicí program pak pomocí PDB porovná s kontrolním součtem, který počítá pro zdrojový soubor.  
   
- Toto řešení pro projekty ASP.NET, nefunguje, protože počítaný kontrolního součtu je vytvořeném zdrojovém souboru, nikoli soubor .aspx. Chcete-li vyřešit tento problém `#pragma checksum` poskytuje podporu kontrolního součtu pro stránky ASP.NET.  
+ Toto řešení nefunguje pro projekty ASP.NET, protože vypočtený kontrolní součet je pro generovaný zdrojový soubor, nikoli soubor. aspx. Pro vyřešení tohoto problému `#pragma checksum` poskytuje podporu kontrolního součtu pro stránky ASP.NET.  
   
- Při vytváření projektu aplikace ASP.NET ve Vizuálu C#, obsahuje kontrolní součet souboru .aspx, ze kterého se vygeneruje zdroj vytvořeném zdrojovém souboru. Kompilátor pak tyto informace zapisuje do souboru PDB.  
+ Při vytváření projektu ASP.NET ve vizuálu C#obsahuje generovaný zdrojový soubor kontrolní součet pro soubor. aspx, ze kterého se zdroj vygeneroval. Kompilátor potom tyto informace zapíše do souboru PDB.  
   
- Pokud kompilátor narazí ne `#pragma checksum` direktivy v souboru, se vypočítá kontrolního součtu a zapíše hodnoty do souboru PDB.  
+ Pokud kompilátor v souboru nenalezne žádnou `#pragma checksum` direktivu, vypočítá kontrolní součet a zapíše hodnotu do souboru PDB.  
   
 ## <a name="example"></a>Příklad  
   
@@ -56,6 +56,6 @@ class TestClass
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C# Direktivy preprocesoru](./index.md)

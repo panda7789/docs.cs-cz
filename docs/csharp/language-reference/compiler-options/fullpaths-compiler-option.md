@@ -1,5 +1,5 @@
 ---
-title: -fullpaths (možnosti kompilátoru C#)
+title: -fullpaths – (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /fullpaths
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - full paths [C#]
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
-ms.openlocfilehash: 160938e631d9f9e49d53bbec8806c7a134864701
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bb4027f1c479bbaedda889d72712acb587b5713
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662878"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606864"
 ---
-# <a name="-fullpaths-c-compiler-options"></a>-fullpaths (možnosti kompilátoru C#)
-**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru při výpisu chyb a upozornění kompilace.  
+# <a name="-fullpaths-c-compiler-options"></a>-fullpaths – (C# možnosti kompilátoru)
+Možnost **-fullpaths –** způsobí, že kompilátor při výpisu chyb a upozornění kompilace určí úplnou cestu k souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,10 +27,10 @@ ms.locfileid: "61662878"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení zadejte název souboru, ve kterém byla nalezena chyba chyby a upozornění, které jsou výsledkem kompilace. **- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru.  
+ Ve výchozím nastavení chyby a varování vyplývající z kompilace určují název souboru, ve kterém byla nalezena chyba. Možnost **-fullpaths –** způsobí, že kompilátor určí úplnou cestu k souboru.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)

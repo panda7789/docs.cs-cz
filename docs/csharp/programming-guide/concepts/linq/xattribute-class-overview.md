@@ -1,31 +1,31 @@
 ---
-title: Přehled třídy XAttribute (C#)
+title: XAttribute – Přehled třídyC#()
 ms.date: 07/20/2015
 ms.assetid: 5a630f24-f9ad-400e-831e-c14ebfc9e142
-ms.openlocfilehash: 0440e8271edcf54d00a56e2987235afd260f9156
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 79ef00aa79be0c743423cfba1a911b238ff9a7ca
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483192"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590924"
 ---
-# <a name="xattribute-class-overview-c"></a>Přehled třídy XAttribute (C#)
-Atributy jsou páry název/hodnota, které jsou spojeny s elementem. <xref:System.Xml.Linq.XAttribute> Třída reprezentuje atributy ve formátu XML.  
+# <a name="xattribute-class-overview-c"></a>XAttribute – Přehled třídyC#()
+Atributy jsou páry název-hodnota, které jsou přidruženy k elementu. <xref:System.Xml.Linq.XAttribute> Třída představuje atributy XML.  
   
 ## <a name="overview"></a>Přehled  
- Práce s atributy v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je podobně jako při práci s prvky. Jejich konstruktory jsou podobné. Metody, které můžete použít k načtení kolekce z nich jsou podobné. A [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazu dotazu pro kolekci atributů vypadá podobně jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazu pro kolekci elementů dotazu.  
+ Práce s atributy v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je podobná práci s prvky. Jejich konstruktory jsou podobné. Metody, které použijete k načtení kolekcí, jsou podobné. Výraz dotazu pro kolekci atributů vypadá velmi podobně jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výraz dotazu pro kolekci prvků. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]  
   
- Zachování pořadí, ve kterém byly přidány atributy pro element. To znamená když iteraci atributy, uvidíte je ve stejném pořadí, v jakém byly přidány.  
+ Pořadí, ve kterém byly přidány atributy do prvku, je zachováno. To znamená, že při iteraci pomocí atributů se zobrazí ve stejném pořadí, v jakém byly přidány.  
   
 ## <a name="the-xattribute-constructor"></a>Konstruktor XAttribute  
- Následující konstruktor třídy <xref:System.Xml.Linq.XAttribute> třída je ten, který budete používat nejčastěji:  
+ Následující konstruktor <xref:System.Xml.Linq.XAttribute> třídy je ten, který se nejčastěji používá:  
   
 |Konstruktor|Popis|  
 |-----------------|-----------------|  
-|`XAttribute(XName name, object content)`|Vytvoří <xref:System.Xml.Linq.XAttribute> objektu. `name` Argument určuje název atributu. `content` určuje obsah atributu.|  
+|`XAttribute(XName name, object content)`|Vytvoří <xref:System.Xml.Linq.XAttribute> objektu. `name` Argument určuje název atributu; `content` určuje obsah atributu.|  
   
 ### <a name="creating-an-element-with-an-attribute"></a>Vytvoření elementu s atributem  
- Následující kód ukazuje běžné úlohy vytváření element, který obsahuje atribut:  
+ Následující kód ukazuje běžný úkol při vytváření prvku, který obsahuje atribut:  
   
 ```csharp  
 XElement phone = new XElement("Phone",  
@@ -41,7 +41,7 @@ Console.WriteLine(phone);
 ```  
   
 ### <a name="functional-construction-of-attributes"></a>Funkční konstrukce atributů  
- Můžete vytvořit <xref:System.Xml.Linq.XAttribute> objekty v řádku s konstrukci <xref:System.Xml.Linq.XElement> objekty, následujícím způsobem:  
+ Objekty lze vytvořit <xref:System.Xml.Linq.XAttribute> v řádku pomocí <xref:System.Xml.Linq.XElement> konstrukce objektů, a to následujícím způsobem:  
   
 ```csharp  
 XElement c = new XElement("Customers",  
@@ -74,11 +74,11 @@ Console.WriteLine(c);
 </Customers>  
 ```  
   
-### <a name="attributes-are-not-nodes"></a>Atributy nejsou uzly  
- Existuje několik rozdílů mezi elementy a atributy. <xref:System.Xml.Linq.XAttribute> objekty nejsou uzlů ve stromové struktuře XML. Jsou páry název/hodnota přidružený platný element XML. Na rozdíl od Document Object Model (DOM), to lépe odpovídá struktuře XML. I když <xref:System.Xml.Linq.XAttribute> objekty nejsou ve skutečnosti uzlů ve stromu XML, práce s <xref:System.Xml.Linq.XAttribute> je velmi podobně jako při práci s objekty <xref:System.Xml.Linq.XElement> objekty.  
+### <a name="attributes-are-not-nodes"></a>Atributy nejsou uzly.  
+ Mezi atributy a elementy existují rozdíly. <xref:System.Xml.Linq.XAttribute>objekty nejsou uzly ve stromu XML. Jsou to páry název-hodnota přidružené k elementu XML. Na rozdíl od model DOM (Document Object Model) (DOM) to přesněji odráží strukturu XML. Přestože <xref:System.Xml.Linq.XAttribute> objekty nejsou ve skutečnosti uzly ve stromu XML, práce s <xref:System.Xml.Linq.XAttribute> objekty je velmi podobná práci s <xref:System.Xml.Linq.XElement> objekty.  
   
- Tento rozdíl je důležité především pouze pro vývojáře, kteří jsou psaní kódu, který funguje s stromů XML na úrovni uzlu. Mnoho vývojářů nesmí být obeznámeni s toto rozlišení.  
+ Toto rozlišení je primárně důležité pouze pro vývojáře, kteří píší kód, který pracuje s stromy XML na úrovni uzlu. Toto rozlišení se netýká mnoha vývojářů.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)
+- [Přehled programování LINQ to XML (C#)](./linq-to-xml-overview.md)

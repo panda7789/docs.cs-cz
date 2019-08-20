@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: e00c606460159d05f1d3fcaddb1ac5f7b2ec86fa
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 9fc88a8784958294ba6077893a5d54110de335a0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485616"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593739"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)
-Výraz XPath umožňuje najít sjednocení výsledky ze dvou možných cest umístění XPath.  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)
+XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.  
   
  Výraz XPath je:  
   
  `//Category|//Price`  
   
- Můžete dosáhnout stejných výsledků pomocí <xref:System.Linq.Enumerable.Concat%2A> standardní operátor dotazu.  
+ Stejné výsledky můžete dosáhnout pomocí <xref:System.Linq.Enumerable.Concat%2A> standardního operátoru dotazu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá všechny `Category` elementy a všechny `Price` elementy a zřetězí do jedné kolekce. Všimněte si, že [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazování volání <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> řazení výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
+ V tomto příkladu jsou vyhledány všechny `Category` prvky a všechny `Price` prvky a zřetězeny do jedné kolekce. Všimněte si, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] že dotaz <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> volá k řazení výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Číselná data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XDocument data = XDocument.Load("Data.xml");  

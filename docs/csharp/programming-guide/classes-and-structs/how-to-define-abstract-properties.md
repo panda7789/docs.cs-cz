@@ -1,62 +1,62 @@
 ---
-title: 'Postupy: Definování abstraktních a vlastností - C# Průvodce programováním'
+title: 'Postupy: Definovat abstraktní vlastnosti – C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: ef19b80e7f4c32830aabfcf1ad595348c2107228
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fae526f5dcd452fbc381ee86c892b72e61956f0b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599993"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596865"
 ---
-# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních a vlastností (C# Průvodce programováním v)
-Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnost neposkytuje implementaci pro přistupující objekty vlastnosti – deklaruje, že podporuje vlastnosti třídy, ale ponechá implementace přistupujícího objektu odvozené třídy. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
+# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastnostíC# (Průvodce programováním)
+Následující příklad ukazuje, jak definovat [abstraktní](../../language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnosti neposkytuje implementaci přistupujících objektů vlastnosti – deklaruje, že třída podporuje vlastnosti, ale ponechá implementaci přistupující objekty odvozeným třídám. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
   
- Tento příklad se skládá ze tří souborů, z nichž každý je kompilován samostatně a jeho výsledné sestavení se odkazuje na další kompilace:  
+ Tato ukázka se skládá ze tří souborů, z nichž každá je zkompilována individuálně a na výsledné sestavení je odkazováno pomocí další kompilace:  
   
-- abstractshape.cs: `Shape` třídy obsahující abstraktní `Area` vlastnost.  
+- abstractshape.cs: `Shape` třída, která obsahuje abstraktní `Area` vlastnost.  
   
-- Shapes.cs: Podtřídy třídy `Shape` třídy.  
+- shapes.cs: Podtřídy `Shape` třídy.  
   
-- shapetest.cs: Testovací program do zobrazované oblasti některých `Shape`-odvozené objekty.  
+- shapetest.cs: Testovací program pro zobrazení oblastí objektů odvozených od `Shape`sebe.  
   
- Chcete-li příklad zkompilovat, použijte následující příkaz:  
+ Chcete-li zkompilovat příklad, použijte následující příkaz:  
   
  `csc abstractshape.cs shapes.cs shapetest.cs`  
   
- Tím se vytvoří shapetest.exe spustitelný soubor.  
+ Tím se vytvoří spustitelný soubor shapetest. exe.  
   
 ## <a name="example"></a>Příklad  
- Deklaruje tento soubor `Shape` třídu, která obsahuje `Area` vlastnost typu `double`.  
+ Tento soubor deklaruje `Shape` třídu, která `Area` obsahuje vlastnost typu `double`.  
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
   
-- Modifikátory pro vlastnost jsou umístěny v deklaraci vlastnosti. Příklad:  
+- Modifikátory vlastnosti jsou umístěny v samotné deklaraci vlastnosti. Příklad:  
   
     ```csharp  
     public abstract double Area  
     ```  
   
-- Při deklarování abstraktní vlastnosti (například `Area` v tomto příkladu), můžete jednoduše označit, jaký přistupující objekty vlastnosti jsou k dispozici, ale neimplementují je. V tomto příkladu, pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt není k dispozici, tak vlastnost je jen pro čtení.  
+- Při deklaraci abstraktní vlastnosti ( `Area` jako v tomto příkladu) jednoduše označíte, jaké přístupové objekty vlastnosti jsou k dispozici, ale neimplementují. V tomto příkladu je k dispozici pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , takže vlastnost je určena jen pro čtení.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje tři podtřídy třídy `Shape` a jak mohou přepsat `Area` vlastnost poskytli vlastní implementaci.  
+ Následující kód ukazuje tři podtřídy `Shape` a způsob, jak `Area` přepisují vlastnost k poskytnutí vlastní implementace.  
   
  [!code-csharp[csProgGuideInheritance#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#2)]  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje testovací program, který vytváří celou řadou `Shape`-odvozené objekty a vytiskne jejich oblasti.  
+ Následující kód ukazuje testovací program, který vytváří mnoho `Shape`objektů odvozených a tiskne jejich oblasti.  
   
  [!code-csharp[csProgGuideInheritance#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#3)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
-- [Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Třídy a struktury](./index.md)
+- [Abstraktní a uzavřené třídy a jejich členové](./abstract-and-sealed-classes-and-class-members.md)
+- [Vlastnosti](./properties.md)
+- [Postupy: Vytváření a používání sestavení pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)

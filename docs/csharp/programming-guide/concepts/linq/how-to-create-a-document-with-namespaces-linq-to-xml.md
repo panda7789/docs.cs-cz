@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření dokumentu s obory názvůC#() (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-ms.openlocfilehash: 9b9e81a131d4e17ce2d87dd3f511ed66e370d884
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 180dc5138f8f21b3e52e4a8b3cee4748cafdd0f5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709997"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593893"
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Postupy: Vytvoření dokumentu s obory názvůC#() (LINQ to XML)
 V tomto tématu se dozvíte, jak vytvářet dokumenty s obory názvů.  
@@ -123,7 +123,7 @@ Console.WriteLine(root);
   
  Tento přístup má vliv na výkon. Pokaždé, když předáte řetězec, který obsahuje rozbalený [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]název [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] , musí analyzovat název, najít atomické obor názvů a najít název Atom. Tento proces trvá čas procesoru. Pokud je důležitý výkon, možná budete chtít explicitně deklarovat a použít <xref:System.Xml.Linq.XNamespace> objekt.  
   
- Pokud je výkon důležitým problémem, přečtěte si téma předběžného vystavování [objektů XNameC#(LINQ to XML) ()](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md) , kde najdete další informace.  
+ Pokud je výkon důležitým problémem, přečtěte si téma předběžného vystavování [objektů XNameC#(LINQ to XML) ()](./pre-atomization-of-xname-objects-linq-to-xml.md) , kde najdete další informace.  
   
 ```csharp  
 // Create an XML tree in a namespace, with a specified prefix  

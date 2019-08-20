@@ -2,12 +2,12 @@
 title: Zachování prázdných znaků při načítání nebo analýze XML
 ms.date: 07/20/2015
 ms.assetid: f3ff58c4-55aa-4fcd-b933-e3a2ee6e706c
-ms.openlocfilehash: 263121468b3010884c14c9e593a857d01dc253ef
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: d015c21813df2224356bb49212fe282fa5372d03
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868808"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591551"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování prázdných znaků při načítání nebo analýze XML
 Toto téma popisuje, jak ovládat chování prázdného místa v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -16,7 +16,7 @@ Toto téma popisuje, jak ovládat chování prázdného místa v [!INCLUDE[sqlte
   
  Dalším běžným scénářem je číst a upravovat kód XML, který již byl záměrně odsazen. Toto odsazení nebudete chtít nijak měnit. Chcete-li to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]provést v, zachováte prázdné místo při načítání nebo analýze XML a při serializaci kódu XML zakážete formátování.  
   
- Toto téma popisuje prázdné místo v případě metod, které naplňují stromy XML. Informace o řízení prázdných znaků při serializaci stromů XML naleznete v tématu [zachování mezer při serializaci](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ Toto téma popisuje prázdné místo v případě metod, které naplňují stromy XML. Informace o řízení prázdných znaků při serializaci stromů XML naleznete v tématu [zachování mezer při serializaci](./preserving-white-space-while-serializing.md).  
   
 ## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metod, které naplňují stromy XML  
  Následující metody v <xref:System.Xml.Linq.XElement> třídách a <xref:System.Xml.Linq.XDocument> naplní strom XML. Můžete naplnit strom XML ze souboru, <xref:System.IO.TextReader>a <xref:System.Xml.XmlReader>, nebo pomocí řetězce:  

@@ -1,32 +1,32 @@
 ---
-title: Sestavení z příkazového řádku s csc.exe
+title: Sestavení příkazového řádku pomocí CSc. exe
 ms.date: 04/19/2017
 helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 0ebc4fa3029e16c5ee89da7d9af8b89924b2c4dc
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 54306c79bc2856996925756ee4261fbe67692aea
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833363"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606974"
 ---
-# <a name="command-line-build-with-cscexe"></a>Sestavení z příkazového řádku s csc.exe
-Kompilátor jazyka C# můžete vyvolat zadáním názvu její spustitelný soubor (*csc.exe*) z příkazového řádku.
+# <a name="command-line-build-with-cscexe"></a>Sestavení příkazového řádku pomocí CSc. exe
+C# Kompilátor můžete vyvolat zadáním názvu spustitelného souboru (*CSc. exe*) na příkazovém řádku.
 
-Pokud používáte **Developer Command Prompt pro sadu Visual Studio** okna, všechny nezbytné proměnné prostředí jsou nastaveny za vás. Informace o tom, jak tento nástroj používat, najdete v článku [Developer Command Prompt pro sadu Visual Studio](../../../framework/tools/developer-command-prompt-for-vs.md) tématu. 
+Použijete-li okno **Developer Command Prompt pro sadu Visual Studio** , jsou pro vás nastaveny všechny potřebné proměnné prostředí. Informace o tom, jak získat přístup k tomuto nástroji, naleznete v tématu [Developer Command Prompt pro Visual Studio](../../../framework/tools/developer-command-prompt-for-vs.md) . 
 
-Pokud používáte standardního okna příkazového řádku, je nutné upravit cestu k, abyste mohli vyvolat *csc.exe* z libovolného adresáře v počítači. Je také nutné spustit *vsvars32.bat* nastavit příslušné proměnné prostředí pro podporu sestavení příkazového řádku. Další informace o *vsvars32.bat*, včetně pokynů pro vyhledání a spusťte ho, naleznete v tématu [jak: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
+Používáte-li standardní okno příkazového řádku, je nutné před spuštěním souboru *CSc. exe* z libovolného podadresáře v počítači upravit cestu. Také je nutné spustit *vsvars32. bat* pro nastavení příslušných proměnných prostředí pro podporu sestavení příkazového řádku. Další informace o *vsvars32. bat*, včetně pokynů pro jeho vyhledání a spuštění, najdete v tématu [How to: Nastavení proměnných prostředí pro příkazový řádek](./how-to-set-environment-variables-for-the-visual-studio-command-line.md)sady Visual Studio.
 
-Pokud pracujete na počítači, který má jenom Windows Software Development Kit (SDK), můžete použít C# kompilátoru na **příkazový řádek sady SDK**, které můžete otevřít z **Microsoft .NET Framework SDK**nabídky.
+Pokud pracujete na počítači, který má pouze sadu Windows Software Development Kit (SDK), můžete použít C# kompilátor na **příkazovém řádku sady SDK**, který otevřete z možnosti nabídky **Microsoft .NET Framework SDK** .
 
-Pomocí nástroje MSBuild můžete také programově vytvářet programy jazyka C#. Další informace najdete v tématu [MSBuild](/visualstudio/msbuild/msbuild).
+Nástroj MSBuild můžete také použít k programovému sestavování C# programů. Další informace najdete v tématu [MSBuild](/visualstudio/msbuild/msbuild).
 
-*Csc.exe* spustitelný soubor je obvykle umístěn ve Microsoft.NET\Framework\\ *\<verze >* ve složce *Windows* adresář. Umístění, kde se může lišit v závislosti na přesnou konfiguraci určitého počítače. Pokud více než jednu verzi rozhraní .NET Framework je nainstalována v počítači, zjistíte více verzí tohoto souboru. Další informace o těchto zařízení najdete v tématu [postupy: zjištění nainstalovaných verzí rozhraní .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
+Spustitelný soubor *CSc. exe* je obvykle umístěný ve složce Microsoft. NET\Framework\\ *\<verze >* v adresáři *Windows* . Jeho umístění se může lišit v závislosti na přesné konfiguraci konkrétního počítače. Pokud je v počítači nainstalována více než jedna verze .NET Framework, najdete více verzí tohoto souboru. Další informace o těchto instalacích naleznete v tématu [How to: Určete, které verze .NET Framework jsou nainstalovány](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
 
 > [!TIP]
->  Při vytváření projektu pomocí rozhraní IDE sady Visual Studio můžete zobrazit **csc** příkazu a jeho kompilátoru přidružené možností v **výstup** okna. Chcete-li zobrazit tyto informace, postupujte podle pokynů v [jak: Zobrazení, ukládání a konfigurace souborů protokolu sestavení](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) změnit úroveň podrobností dat protokolu do **normální** nebo **podrobné**. Po opětovném sestavení projektu, hledání **výstup** okně **csc** najít vyvolání kompilátor jazyka C#.
+>  Při sestavování projektu pomocí integrovaného vývojového prostředí (IDE) sady Visual Studio můžete zobrazit příkaz **CSC** a jeho přidružené možnosti kompilátoru v okně **výstup** . Chcete-li zobrazit tyto informace, postupujte podle [pokynů v tématu Postupy: Umožňuje zobrazit, Uložit a nakonfigurovat soubory](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) protokolu sestavení pro změnu úrovně podrobností dat protokolu na **normální** nebo **podrobné**. Po opětovném sestavení projektu vyhledejte v okně **výstup** pro **CSC** , abyste našli vyvolání C# kompilátoru.
 
  **V tomto tématu**
 
@@ -34,73 +34,73 @@ Pomocí nástroje MSBuild můžete také programově vytvářet programy jazyka 
 
 - [Ukázkové příkazové řádky](#sample-command-lines-for-the-c-compiler)
 
-- [Rozdíly mezi kompilátor jazyka C# a výstup kompilátoru C++](#differences-between-c-compiler-and-c-compiler-output)
+- [Rozdíly mezi C# kompilátorem C++ a výstupem kompilátoru](#differences-between-c-compiler-and-c-compiler-output)
 
-## <a name="rules-for-command-line-syntax-for-the-c-compiler"></a>Pravidla pro syntaxi příkazového řádku pro kompilátor jazyka C#
+## <a name="rules-for-command-line-syntax-for-the-c-compiler"></a>Pravidla pro syntaxi příkazového řádku pro C# kompilátor
 
-Kompilátor jazyka C# používá při interpretaci argumentů příkazového řádku operačního systému následující pravidla:
+C# Kompilátor při interpretaci argumentů uvedených na příkazovém řádku operačního systému používá následující pravidla:
 
-- Argumenty jsou odděleny prázdným znakem, který je mezera nebo tabulátor.
+- Argumenty jsou odděleny prázdným znakem, což je mezera nebo karta.
 
-- Znak stříšky (^) nebyl rozpoznán jako řídicí znak ani oddělovač. Znak, který zařizuje služba analyzátor příkazového řádku v operačním systému předtím, než je předána `argv` pole v programu.
+- Znak stříšky (^) není rozpoznán jako řídicí znak nebo oddělovač. Znak je zpracován analyzátorem příkazového řádku v operačním systému předtím, než se předává do `argv` pole v programu.
 
-- Řetězec uzavřen do dvojitých uvozovek ("string") je interpretován jako jeden argument, bez ohledu na prázdný znak, který je součástí. Řetězec v uvozovkách, může být vložen do argumentu.
+- Řetězec uzavřený v dvojitých uvozovkách ("String") je interpretován jako jeden argument bez ohledu na prázdné znaky, které jsou obsaženy v. V argumentu může být vložen řetězec v uvozovkách.
 
-- Znak dvojitých uvozovek předcházený zpětným lomítkem (\\") je interpretován jako znak dvojitých uvozovek (").
+- Dvojitá uvozovka začínající zpětným lomítkem (\\") je interpretována jako literální znak dvojité uvozovky (").
 
-- Zpětná lomítka jsou interpretovány literálně, pokud jsou bezprostředně předcházet dvojité uvozovky.
+- Zpětná lomítka jsou interpretována doslova, pokud bezprostředně nepředchází uvozovky.
 
-- Pokud sudý počet zpětných lomítek následován znakem dvojitých uvozovek, je jedno zpětné lomítko ukládat `argv` pole pro každý pár zpětných lomítek a dvojitých uvozovek, je interpretován jako oddělovač řetězců.
+- Je-li sudý počet zpětných lomítek následován znakem dvojitých uvozovek, jedno zpětné lomítko je vloženo do `argv` pole pro každý pár zpětných lomítek a Dvojitá uvozovka je interpretována jako oddělovač řetězců.
 
-- Pokud lichý počet zpětných lomítek následován znakem dvojitých uvozovek, je jedno zpětné lomítko ukládat `argv` pole pro každý pár zpětných lomítek a dvojitá uvozovka není "uvozeno uvozovacím znakem" ve zbývajících zpětné lomítko. To způsobí, že literálu uvozovky (") mají být přidány v `argv`.
+- Je-li lichý počet zpětných lomítek následován znakem dvojitých uvozovek, jedno zpětné lomítko je umístěno v `argv` poli pro každý pár zpětných lomítek a dvojité uvozovky je "Escape" pomocí zbývajícího zpětného lomítka. To způsobí, že se literální dvojité uvozovky (") přidají do `argv`.
 
-## <a name="sample-command-lines-for-the-c-compiler"></a>Příkazové řádky ukázkové pro kompilátor jazyka C#
+## <a name="sample-command-lines-for-the-c-compiler"></a>Ukázkové příkazové řádky pro C# kompilátor
 
-- Zkompiluje *File.cs* vytváření *File.exe*:
+- Zkompiluje *File.cs* vytvářející *soubor. exe*:
 
 ```console
 csc File.cs 
 ```
 
-- Zkompiluje *File.cs* vytváření *soubor.dll*:
+- Zkompiluje *File.cs* produkující *soubor. dll*:
 
 ```console
 csc -target:library File.cs
 ```
 
-- Zkompiluje *File.cs* a vytvoří *My.exe*:
+- Zkompiluje *File.cs* a vytvoří *My. exe*:
 
 ```console
 csc -out:My.exe File.cs
 ```
 
-- Kompiluje všechny jazyka C# soubory v aktuálním adresáři s povolenou optimalizací a definuje DEBUG symbol. Výstup je *File2.exe*:
+- Zkompiluje všechny C# soubory v aktuálním adresáři s povolenými optimalizacemi a definuje symbol ladění. Výstup je *Soubor2. exe*:
 
 ```console
 csc -define:DEBUG -optimize -out:File2.exe *.cs
 ```
 
-- Kompiluje všechny jazyka C# soubory v aktuálním adresáři ladicí verzi *File2.dll pro ladění*. Žádná upozornění ani logo se zobrazí:
+- Zkompiluje všechny C# soubory v aktuálním adresáři, ve kterém je vyprodukována ladicí verze souboru *Soubor2. dll*. Nezobrazují se žádné logo a žádná upozornění:
 
 ```console
 csc -target:library -out:File2.dll -warn:0 -nologo -debug *.cs
 ```
 
-- Kompiluje všechny jazyka C# soubory v aktuálním adresáři *Something.xyz* (DLL):
+- Zkompiluje všechny C# soubory v aktuálním adresáři na *něco. xyz* (knihovna DLL):
 
 ```console
 csc -target:library -out:Something.xyz *.cs
 ```
 
-## <a name="differences-between-c-compiler-and-c-compiler-output"></a>Rozdíly mezi kompilátor jazyka C# a výstup kompilátoru C++
-Neexistují žádné objektu ( *.obj*) soubory vytvořené v důsledku volání kompilátor jazyka C#; výstupní soubory jsou vytvořeny přímo. V důsledku toho nemusí kompilátor jazyka C# propojovacího programu.
+## <a name="differences-between-c-compiler-and-c-compiler-output"></a>Rozdíly mezi C# kompilátorem C++ a výstupem kompilátoru
+V důsledku vyvolání C# kompilátoru nejsou vytvořeny žádné soubory objektů ( *. obj*). výstupní soubory jsou vytvářeny přímo. V důsledku toho C# kompilátor nepotřebuje linker.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
-- [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
-- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)
-- [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)
-- [Argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)
-- [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru jazyka C# (abecední pořadí)](./listed-alphabetically.md)
+- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](./listed-by-category.md)
+- [Argumenty Main() a příkazového řádku](../../programming-guide/main-and-command-args/index.md)
+- [Argumenty příkazového řádku](../../programming-guide/main-and-command-args/command-line-arguments.md)
+- [Postupy: Zobrazit argumenty příkazového řádku](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
+- [Návratové hodnoty Main()](../../programming-guide/main-and-command-args/main-return-values.md)

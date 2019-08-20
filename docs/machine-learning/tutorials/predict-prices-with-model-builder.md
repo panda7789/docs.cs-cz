@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b4a08a9866bbc8816b57c95bdb22766bd1b07fdc
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 4471e4feffb23b7f256ada2116444aaa7899e209
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331688"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611453"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -202,7 +202,6 @@ V tomto kurzu jste se naučili:
 Další informace o tématech uvedených v tomto kurzu najdete v následujících zdrojích informací:
 
 - [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
-- [Formáty dat tvůrce modelů](../automate-training-with-model-builder.md#data-formats)
 - [Nevýhody](../resources/glossary.md#regression)
 - [Metriky regresního modelu](../resources/metrics.md#metrics-for-regression)
 - [Sada dat pro cestu NYC TLC taxislužby](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)

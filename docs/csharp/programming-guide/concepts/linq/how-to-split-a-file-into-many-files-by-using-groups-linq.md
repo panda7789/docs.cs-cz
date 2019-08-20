@@ -2,19 +2,19 @@
 title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: f38cfebae17ea6db9df2445f71852f7f4e6f201f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 171d0aababfe4ff4ba5be4c8d307c917474671fc
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584364"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592379"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
-Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.  
+Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.  
   
-### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
+### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
   
-1. Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
+1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů 
     Garcia, Debra  
     ```  
   
-2. Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.  
+2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu: Všimněte si, že dva soubory mají některé běžné názvy.  
   
     ```  
     Liu, Jinghao  
@@ -122,13 +122,13 @@ class SplitWithGroups
  */  
 ```  
   
- Program zapíše do samostatného souboru pro každou skupinu ve stejné složce jako datové soubory.  
+ Program zapisuje samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

@@ -1,43 +1,43 @@
 ---
-title: Převádění datových typů (C#)
+title: Převádění datových typůC#()
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 918a9fbfc523e62c7b4a5d915c28c00ea781d3e4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9e8b7726b94871a17a4be50a9b24d8b73abcf79c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597714"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594612"
 ---
-# <a name="converting-data-types-c"></a>Převádění datových typů (C#)
-Převod metody změnit typ objektu, vstupu.  
+# <a name="converting-data-types-c"></a>Převádění datových typůC#()
+Metody převodu mění typ vstupních objektů.  
   
- Převod operace v dotazech LINQ jsou užitečné pro různé aplikace. Toto jsou některé příklady:  
+ Operace převodu v dotazech LINQ jsou užitečné v nejrůznějších aplikacích. Následuje několik příkladů:  
   
-- <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType> Metodu je možné skrýt vlastní implementaci typu operátoru standardního dotazu.  
+- <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType> Metoda může být použita ke skrytí vlastní implementace typu standardního operátoru dotazu.  
   
-- <xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType> Metody slouží k povolení neparametrizované kolekce pro dotazování na LINQ.  
+- <xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType> Metodu lze použít k povolení neparametrizovaných kolekcí pro dotazování LINQ.  
   
-- <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>, A <xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType> metody je možné vynutit spuštění dotazu okamžité místo jeho odložit, dokud je vypočten dotaz.  
+- Metody <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>, <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>a lzepoužítkvynuceníokamžitéhoprovedenídotazunamístojehoodloženíaždovypsánídotazu.<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>  
   
 ## <a name="methods"></a>Metody  
  V následující tabulce jsou uvedeny standardní metody operátoru dotazu, které provádějí převody datových typů.  
   
- Převod metody v této tabulce, jejichž názvy začínají písmenem "Jako" Změna statického typu zdrojové kolekce, ale není výčet. Metody, jejichž názvy začínají písmenem "Do výčet zdrojové kolekce a položky do příslušné kolekce" typu.  
+ Metody převodu v této tabulce, jejichž názvy začínají znakem "as", mění statický typ zdrojové kolekce, ale nevyžadují jejich výčet. Metody, jejichž názvy začínají řetězcem "do", mají vytvořit výčet zdrojové kolekce a vkládat položky do odpovídajícího typu kolekce.  
   
-|Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
+|Název metody|Popis|C#Syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Jako výčet|Vrátí zadaný jako vstup <xref:System.Collections.Generic.IEnumerable%601>.|Není k dispozici.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|  
-|AsQueryable|Převede (Obecné) <xref:System.Collections.IEnumerable> pro (obecný) <xref:System.Linq.IQueryable>.|Není k dispozici.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|  
-|Změna typu|Elementy kolekce do zadaného typu přetypování.|Pomocí proměnné explicitně rozsahu. Příklad:<br /><br /> `from string str in words`|<xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Cast%2A?displayProperty=nameWithType>|  
-|OfType|Hodnoty v závislosti na jejich schopnost převést na zadaný typ filtrů.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
-|ToArray –|Převede kolekci na pole. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>|  
-|Metody ToDictionary|Vloží prvky do <xref:System.Collections.Generic.Dictionary%602> podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>|  
-|ToList –|Převede kolekci <xref:System.Collections.Generic.List%601>. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>|  
-|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
+|AsEnumerable|Vrátí vstup zadaný jako <xref:System.Collections.Generic.IEnumerable%601>.|Není k dispozici.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|  
+|AsQueryable|Převede (Obecné) <xref:System.Collections.IEnumerable> na ( <xref:System.Linq.IQueryable>obecný).|Není k dispozici.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|  
+|Změna typu|Přetypování prvky kolekce na zadaný typ.|Použijte explicitně typovou proměnnou rozsahu. Příklad:<br /><br /> `from string str in words`|<xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Cast%2A?displayProperty=nameWithType>|  
+|Only|Filtruje hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|ToArray –|Převede kolekci na pole. Tato metoda vynutí provedení dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>|  
+|ToDictionary|Vloží prvky do prvku <xref:System.Collections.Generic.Dictionary%602> na základě funkce selektoru klíče. Tato metoda vynutí provedení dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>|  
+|ToList –|Převede kolekci na <xref:System.Collections.Generic.List%601>. Tato metoda vynutí provedení dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>|  
+|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> slovníku (do slovníku 1: n) na základě funkce selektoru klíče. Tato metoda vynutí provedení dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
- Následující příklad kódu používá proměnnou rozsahu explicitně zadali přetypovat na typ podtyp před přístupem k členu, který je k dispozici pouze na podtyp.  
+ Následující příklad kódu používá explicitně typovou proměnnou rozsahu pro přetypování typu na podtyp před přístupem ke členu, který je k dispozici pouze pro podtyp.  
   
 ```csharp  
 class Plant  
@@ -77,7 +77,7 @@ static void Cast()
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [from – klauzule](../../../../csharp/language-reference/keywords/from-clause.md)
-- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)
-- [Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
+- [from – klauzule](../../../language-reference/keywords/from-clause.md)
+- [Výrazy dotazů LINQ](../../linq-query-expressions/index.md)
+- [Postupy: Dotazování objektu ArrayList pomocí LINQC#()](./how-to-query-an-arraylist-with-linq.md)

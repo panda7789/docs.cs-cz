@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)'
+title: 'Postupy: Kombinování dotazů LINQ s regulárnímiC#výrazy ()'
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: 21c05b0134fda5011ecaf14f296e5a5172cf3bf5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 7e3540dfe6d93f5262790bce615cc7fe3f1fbb93
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585921"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594041"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)
-Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulárního výrazu pro složitější porovnávání v textových řetězců. Dotaz LINQ umožňuje snadno můžete filtrovat podle přesně soubory, které chcete hledat s regulárním výrazem a obrazce výsledky.  
+# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Postupy: Kombinování dotazů LINQ s regulárnímiC#výrazy ()
+Tento příklad ukazuje, jak použít <xref:System.Text.RegularExpressions.Regex> třídu k vytvoření regulárního výrazu pro komplexnější porovnání v textových řetězcích. Dotaz LINQ usnadňuje filtrování přesně těch souborů, které chcete prohledávat pomocí regulárního výrazu, a k tvarování výsledků.  
   
 ## <a name="example"></a>Příklad  
   
@@ -93,12 +93,12 @@ class QueryWithRegEx
 }  
 ```  
   
- Všimněte si, že můžete také zadávat dotazy <xref:System.Text.RegularExpressions.MatchCollection> objekt, který je vrácen `RegEx` vyhledávání. V tomto příkladu je vytvořen pouze hodnotu jednotlivé shody ve výsledcích. Je však také možné použít k provádění nejrůznějších filtrování, řazení a seskupování v dané kolekci LINQ. Protože <xref:System.Text.RegularExpressions.MatchCollection> není obecná <xref:System.Collections.IEnumerable> kolekce, je nutné explicitně uvést typ rozsahu proměnných v dotazu.  
+ Všimněte si, že můžete také zadat <xref:System.Text.RegularExpressions.MatchCollection> dotaz na objekt, který je `RegEx` vrácený hledáním. V tomto příkladu se ve výsledcích vytvoří pouze hodnota každé shody. Je ale také možné použít LINQ k provádění všech druhů filtrování, řazení a seskupování v této kolekci. Vzhledem <xref:System.Text.RegularExpressions.MatchCollection> k tomu, že je <xref:System.Collections.IEnumerable> neobecná kolekce, je nutné explicitně uvést typ proměnné rozsahu v dotazu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření C# projekt konzolové aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace se `using` směrnicemi pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

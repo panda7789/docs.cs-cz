@@ -1,5 +1,5 @@
 ---
-title: Add - C# odkaz
+title: Přidat C# odkaz
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - add event accessor [C#]
 ms.assetid: faf30b99-10e8-45cd-ab9a-57585d4d1d8d
-ms.openlocfilehash: 1f699e5729354d13bfbe29810bf2c4baf91d2382
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1cf82e3d048e465d533e87dc639a13071b41544a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662124"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606039"
 ---
 # <a name="add-c-reference"></a>add (Referenční dokumentace jazyka C#)
-`add` Kontextové klíčové slovo se používá k definování přístupový objekt vlastní událost, která je volána, když se přihlásí k odběru kód klienta vašeho [události](../../../csharp/language-reference/keywords/event.md). Pokud zadáte vlastní `add` přístupový objekt, je třeba zadat také [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupujícího objektu.  
+Kontextové klíčové slovo slouží k definování vlastního přístupového objektu události, který je vyvolán, když se kód klienta přihlašuje k odběru [události.](./event.md) `add` Pokud zadáte vlastní `add` přistupující objekt, je nutné také předat přístup pro [Odebrání](./remove.md) .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje událost, která má vlastní `add` a [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupující objekty. Úplný příklad naleznete v tématu [jak:  Implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).  
+ Následující příklad ukazuje událost, která má vlastní `add` a [Odebrat](./remove.md) přistupující objekty. Úplný příklad naleznete v tématu [How to:  Implementujte události](../../programming-guide/events/how-to-implement-interface-events.md)rozhraní.  
   
 [!code-csharp[csrefKeywordsContextual#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#15)]
   
- Obvykle není potřeba poskytovat vlastní vlastních přístupových objektů událostí. Přístupové objekty, které jsou automaticky generovány v kompilátoru při deklaraci události postačí pro většinu scénářů.  
+ Většinou nemusíte poskytovat vlastní přístupové objekty vlastních událostí. Přistupující objekty, které kompilátor generuje automaticky při deklaraci události, jsou pro většinu scénářů dostačující.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události](../../../csharp/programming-guide/events/index.md)
+- [Události](../../programming-guide/events/index.md)

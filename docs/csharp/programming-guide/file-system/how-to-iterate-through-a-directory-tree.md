@@ -1,64 +1,64 @@
 ---
-title: 'Postupy: Iterace v adresářovém stromě - C# Průvodce programováním'
+title: 'Postupy: Iterace v adresářovém stromu C# – Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 070b409a7d1cc755451414d24ca2fa6002638dc0
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 86ac3f7d8f49f4817f725aa9a9aa68045285e826
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585761"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590003"
 ---
-# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace v adresářovém stromu (C# Průvodce programováním v)
-Fráze "iterace v adresářovém stromu" znamená, že pro přístup k každý soubor v každé vnořené podadresáři uvedený kořenový adresář na libovolnou hloubku. Nemáte nutně otevřete každý soubor. Můžete načíst jenom název souboru nebo podadresáře jako `string`, nebo můžete získat další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu.  
+# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace prostřednictvím adresářového stromuC# (Průvodce programováním)
+Fráze "iterace stromu adresářů" znamená přístup ke každému souboru v každém vnořeném podadresáři v zadané kořenové složce, a to v jakékoli hloubce. Nemusíte nutně otevírat jednotlivé soubory. Můžete jednoduše načíst název souboru nebo podadresáře jako `string`, nebo můžete načíst další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> objektu nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> .  
   
 > [!NOTE]
->  Ve Windows jsou podmínky "directory" a "složku" používat Zaměnitelně. Většina dokumentace a uživatelské rozhraní text používá termín "složku", ale v knihovně tříd rozhraní .NET Framework používá termín "adresáře."  
+>  V systému Windows se výrazy "adresář" a "složka" používají zaměnitelné. Většina dokumentace a text uživatelského rozhraní používá termín "složka", ale knihovna tříd .NET Framework používá termín "adresář".  
   
- V nejjednodušší případ, ve které nejste jisti, že máte oprávnění k přístupu pro všechny adresáře zadaného kořenu, můžete použít `System.IO.SearchOption.AllDirectories` příznak. Tento příznak vrátí vnořené podadresářů, které odpovídají zadanému vzoru. Následující příklad ukazuje, jak pomocí tohoto příznaku.  
+ V nejjednodušším případě, ve kterém víte, že máte přístupová oprávnění ke všem adresářům v zadaném kořenu, můžete použít `System.IO.SearchOption.AllDirectories` příznak. Tento příznak vrátí všechny vnořené podadresáře, které odpovídají zadanému vzoru. Následující příklad ukazuje, jak použít tento příznak.  
   
 ```csharp  
 root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);  
 ```  
   
- Slabé stránky v rámci tohoto přístupu je, že pokud některý z podadresáře v zadaném kořeni způsobí, že <xref:System.IO.DirectoryNotFoundException> nebo <xref:System.UnauthorizedAccessException>, celou metodu selže a vrátí žádné adresáře. Totéž platí při použití <xref:System.IO.DirectoryInfo.GetFiles%2A> metody. Pokud je potřeba zpracovat tyto výjimky konkrétní podsložek, musí ručně projít strom adresářové struktury, jak je znázorněno v následujícím příkladu.  
+ Slabé stránky v tomto přístupu je to, že pokud některý z podadresářů v rámci zadaného kořenu <xref:System.UnauthorizedAccessException>způsobí <xref:System.IO.DirectoryNotFoundException> nebo, pak celá metoda neproběhne a nevrátí žádné adresáře. Totéž platí, pokud použijete <xref:System.IO.DirectoryInfo.GetFiles%2A> metodu. Pokud je nutné tyto výjimky zpracovat u konkrétních podsložek, je nutné ručně projít adresářový strom, jak je znázorněno v následujících příkladech.  
   
- Pokud ručně projít adresářovém stromu, můžete zpracovávat podadresáře nejprve (*předběžná objednávka procházení*), nebo soubory první (*pořadí po přechod zálohovaných*). Pokud provádíte procházení předběžná objednávka, provedou celý strom v aktuální složce před iterace soubory, které jsou přímo v samotné složce. Příklady dále v tomto dokumentu provést pořadí po přechod zálohovaných, ale můžete snadno upravit tak, aby provádět předběžná objednávka procházení.  
+ Když ručně provedete strom adresářů, můžete nejprve zpracovat podadresáře (*před procházením*) nebo nejprve soubory (*Procházet po objednání*). Pokud provedete předběžné pořadí procházení, provedete celý strom v rámci aktuální složky před iterací souborů, které jsou přímo v této složce. Příklady dále v tomto dokumentu provádějí procházení po jednotlivých objednávkách, ale můžete je snadno upravit, aby se prováděly předběžné pořadí procházení.  
   
- Další možností je, zda se má použít rekurze nebo procházení založené na zásobníku. Příklady dále v tomto dokumentu se zobrazí oba přístupy.  
+ Další možností je, zda použít rekurzi nebo procházení založené na zásobníku. Příklady níže v tomto dokumentu ukazují oba přístupy.  
   
- Pokud máte k provádění různých operací se soubory a složky, můžete tyto příklady modularizaci refaktoringem operace do samostatné funkce, které lze vyvolat pomocí jediného delegáta.  
+ Pokud potřebujete provést různé operace se soubory a složkami, můžete naplánovat modularizaci tyto příklady refaktoringem operace do samostatných funkcí, které můžete vyvolat pomocí jednoho delegáta.  
   
 > [!NOTE]
->  Systémy souborů NTFS může obsahovat *body rozboru* ve formě *spojovacích bodů*, *symbolické odkazy*, a *pevné odkazy*. Metody rozhraní .NET Framework jako <xref:System.IO.DirectoryInfo.GetFiles%2A> a <xref:System.IO.DirectoryInfo.GetDirectories%2A> nevrátí všech podadresářích pod bodem rozboru. Toto chování se chrání před rizikem zadávání do nekonečné smyčky, pokud dva body rozboru používané k sobě navzájem. By měla obecně platí, buďte extrémně opatrní při řešil spojovacích bodů k zajištění, že nejsou neúmyslně upravíte nebo odstraníte soubory. Pokud potřebujete mít naprostou kontrolu nad body rozboru, použití vyvolání platformy i nativní kód do metody systému přímo volat odpovídající souboru Win32.  
+>  Systémy souborů NTFS můžou obsahovat *body rozboru* ve formě spojovacích *bodů*, *symbolických odkazů*a *pevných odkazů*. Metody .NET Framework, jako například <xref:System.IO.DirectoryInfo.GetFiles%2A> a <xref:System.IO.DirectoryInfo.GetDirectories%2A> , nebudou vracet žádné podadresáře pod bodem rozboru. Toto chování chrání před rizikem vstupu do nekonečné smyčky, když dva body rozboru odkazují na sebe navzájem. Obecně platí, že byste měli při práci s body rozboru použít extrémní opatrnost, abyste se ujistili, že neúmyslně neupravují ani neodstraňují soubory. Pokud potřebujete přesnou kontrolu nad body rozboru, použijte vyvolání nebo nativní kód platformy k přímému volání odpovídajících metod systému souborů Win32.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak procházet stromu adresáře pomocí rekurze. Rekurzivní přístup je elegantní, ale má potenciál způsobit výjimku přetečení zásobníku, pokud je adresářový strom velké a hluboce vnořený.  
+ Následující příklad ukazuje, jak projít adresářový strom pomocí rekurze. Rekurzivní přístup je elegantní, ale má potenciál způsobit výjimku přetečení zásobníku, pokud je strom adresáře velký a hluboko vnořený.  
   
- Konkrétní výjimky, které jsou zpracovány a konkrétní akce, které se provádí pro každý soubor nebo složku, jsou k dispozici pouze jako příklady. Upravte tento kód podle svých specifických požadavků. Komentáře v kódu pro další informace.  
+ Konkrétní výjimky, které jsou zpracovávány, a konkrétní akce, které jsou provedeny u jednotlivých souborů nebo složek, jsou uvedeny pouze jako příklady. Tento kód byste měli upravit tak, aby splňoval vaše konkrétní požadavky. Další informace najdete v komentářích v kódu.  
   
  [!code-csharp[csFilesandFolders#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#1)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak k iteraci v rámci souborů a složek v adresářovém stromu bez použití rekurze. Tuto techniku používá Obecné <xref:System.Collections.Generic.Stack%601> typ kolekce, který se nachází poslední v zásobníku-first-out (LIFO).  
+ Následující příklad ukazuje, jak iterovat soubory a složky ve stromu adresářů bez použití rekurze. Tato technika používá typ obecné <xref:System.Collections.Generic.Stack%601> kolekce, což je poslední v zásobníku LIFO.  
   
- Konkrétní výjimky, které jsou zpracovány a konkrétní akce, které se provádí pro každý soubor nebo složku, jsou k dispozici pouze jako příklady. Upravte tento kód podle svých specifických požadavků. Komentáře v kódu pro další informace.  
+ Konkrétní výjimky, které jsou zpracovávány, a konkrétní akce, které jsou provedeny u jednotlivých souborů nebo složek, jsou uvedeny pouze jako příklady. Tento kód byste měli upravit tak, aby splňoval vaše konkrétní požadavky. Další informace najdete v komentářích v kódu.  
   
  [!code-csharp[csFilesandFolders#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#2)]  
   
- Obecně je příliš časově náročné otestovat všechny složky, které slouží k určení, jestli vaše aplikace má oprávnění k jeho otevření. Proto v příkladu kódu právě obklopuje operace v této části `try/catch` bloku. Můžete upravit `catch` blokovat tak, že když je odepřen přístup do složky, pokusíte zvýšení úrovně oprávnění a pak ho znovu přístup. Zpravidla zachycujte pouze takové výjimky, které dokáže zpracovat bez opuštění vaší aplikace v neznámém stavu.  
+ Je obvykle příliš časově náročná na testování každé složky, aby bylo možné určit, zda má vaše aplikace oprávnění k jejímu otevření. Proto příklad kódu pouze obklopuje část operace v `try/catch` bloku. `catch` Blok můžete změnit tak, aby při odepření přístupu ke složce se pokusili zvýšit oprávnění a pak k nim znovu získat přístup. Jako pravidlo Zachyťte pouze ty výjimky, které lze zpracovat bez ukončení aplikace v neznámém stavu.  
   
- Pokud musíte uložit obsah strom adresářové struktury v paměti nebo na disku, nejlepší možností je uložit pouze <xref:System.IO.FileSystemInfo.FullName%2A> vlastnosti (typu `string`) pro každý soubor. Potom můžete tento řetězec použít k vytvoření nového <xref:System.IO.FileInfo> nebo <xref:System.IO.DirectoryInfo> objektu podle potřeby, nebo otevřete každý soubor, který vyžaduje další zpracování.  
+ Pokud je nutné uložit obsah stromu adresáře, buď v paměti nebo na disku, je nejlepší možností uložit pouze <xref:System.IO.FileSystemInfo.FullName%2A> vlastnost (typu `string`) pro každý soubor. Pak můžete použít tento řetězec k vytvoření nového <xref:System.IO.FileInfo> objektu nebo <xref:System.IO.DirectoryInfo> v případě potřeby, nebo otevřít libovolný soubor, který vyžaduje další zpracování.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Kód iterace robustní souboru musí vzít v úvahu mnoho složitostí systému souborů. Další informace o systému souborů Windows, naleznete v tématu [přehled systému souborů NTFS](/windows-server/storage/file-server/ntfs-overview).  
+ Robustní kód pro iteraci souborů musí brát v úvahu mnoho složitých operací systému souborů. Další informace o systému souborů systému Windows najdete v tématu [Přehled systému souborů NTFS](/windows-server/storage/file-server/ntfs-overview).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO>
-- [LINQ a souborové adresáře](../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
-- [Systém souborů a registr (C# Programming Guide)](../../../csharp/programming-guide/file-system/index.md)
+- [LINQ a souborové adresáře](../concepts/linq/linq-and-file-directories.md)
+- [Systém souborů a registr (C# Průvodce programováním)](./index.md)

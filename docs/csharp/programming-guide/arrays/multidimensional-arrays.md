@@ -1,57 +1,57 @@
 ---
-title: Vícerozměrná pole - C# Průvodce programováním
+title: Multidimenzionální pole – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: df9063d0616b72ad15c9c48fa4459a6dc98b77c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63b8729a14e4c309e85a588c5cddc692fb6a6fad
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683922"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597405"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Vícerozměrná pole (Průvodce programováním v C#)
 
-Pole může mít více než jeden rozměr. Například následující deklaraci vytvoří dvourozměrné pole čtyři řádky a dva sloupce.  
+Pole mohou mít více než jednu dimenzi. Například následující deklarace vytvoří dvojrozměrné pole se čtyřmi řádky a dva sloupce.  
   
  [!code-csharp[csProgGuideArrays#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#11)]  
   
- Následující deklarace je vytvořeno pole tří dimenze, 4, 2 a 3.  
+ Následující deklarace vytvoří pole tří dimenzí, 4, 2 a 3.  
   
  [!code-csharp[csProgGuideArrays#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#12)]  
   
 ## <a name="array-initialization"></a>Inicializace pole
 
- Inicializovat pole při deklaraci, jak je znázorněno v následujícím příkladu.  
+ Můžete inicializovat pole na základě deklarace, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideArrays#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#13)]  
   
- Také můžete inicializovat pole bez určení pořadí.  
+ Můžete také inicializovat pole bez zadání pořadí.  
   
  [!code-csharp[csProgGuideArrays#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#14)]  
   
- Pokud se rozhodnete pro deklaraci proměnné pole bez inicializace, je nutné použít `new` operátor přiřazení pole do proměnné. Použití `new` je znázorněno v následujícím příkladu.  
+ Pokud se rozhodnete deklarovat proměnnou pole bez inicializace, je nutné použít `new` operátor k přiřazení pole k proměnné. Použití `new` je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideArrays#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#15)]  
   
- Následující příklad přiřadí hodnotu konkrétního pole elementu.  
+ Následující příklad přiřadí hodnotu k určitému prvku pole.  
   
  [!code-csharp[csProgGuideArrays#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#16)]  
   
- Obdobně následující příklad získá hodnotu prvku konkrétní pole a přiřadí ji k proměnné `elementValue`.  
+ Podobně následující příklad získá hodnotu konkrétního prvku pole a přiřadí ho k proměnné `elementValue`.  
   
  [!code-csharp[csProgGuideArrays#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#42)]  
   
- Následující příklad kódu inicializuje prvky pole, které mají výchozí hodnoty (s výjimkou vícenásobných polí).  
+ Následující příklad kódu inicializuje prvky pole na výchozí hodnoty (s výjimkou vícenásobných polí).  
   
  [!code-csharp[csProgGuideArrays#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#17)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Pole](../../../csharp/programming-guide/arrays/index.md)
-- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
-- [Vícenásobná pole](../../../csharp/programming-guide/arrays/jagged-arrays.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Pole](./index.md)
+- [Jednorozměrná pole](./single-dimensional-arrays.md)
+- [Vícenásobná pole](./jagged-arrays.md)

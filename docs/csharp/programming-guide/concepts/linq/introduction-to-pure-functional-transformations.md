@@ -1,28 +1,28 @@
 ---
-title: Úvod k čistě funkčním transformacím (C#)
+title: Úvod do čistě funkční transformace (C#)
 ms.date: 07/20/2015
 ms.assetid: 8495c9d9-2d02-4aa0-8a10-9e8794b985fe
-ms.openlocfilehash: c9d187e9ee6750d8ad09e197839d107c3c79e4ed
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 34e2fdfae7c0243ca6f59354c453396648c3fa85
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484491"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592113"
 ---
-# <a name="introduction-to-pure-functional-transformations-c"></a>Úvod k čistě funkčním transformacím (C#)
-Tato část představuje funkčním transformacím, včetně základní koncepty a podpůrné jazykové konstrukce. To se liší od objektově orientované a funkční transformace přístupy k programování, včetně Rady o tom, jak přechod na ten. Přestože funkční transformace lze použít v mnoha programovacích scénářů, je použita transformace XML jako konkrétní příklad zde.  
+# <a name="introduction-to-pure-functional-transformations-c"></a>Úvod do čistě funkční transformace (C#)
+V této části se seznámíte s funkcemi, včetně základních konceptů a podpůrných jazykových konstrukcí. Má vliv na objekty orientované a funkční transformace na programování, včetně rad, jak přejít k druhému. I když lze v mnoha programovacích scénářích použít funkční transformace, jako konkrétní příklad se zde používá transformace XML.  
   
- [Kurzu: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) kurz obsahuje řadu příkladů, každý stavíme na předchozí. Tyto příklady ukazují čistě funkční transformace, jehož přístup k manipulaci s XML. Tento kurz předpokládá praktické znalosti jazyka C#. V tomto kurzu se neposkytují podrobné sémantiku jazykovým konstrukcím, ale jsou uvedeny odkazy na dokumentaci jazyka podle potřeby.  
+ Tento [kurz: Postup manipulace s obsahem v kurzu WordprocessingML dokumentuC#(](./shape-of-wordprocessingml-documents.md) ) poskytuje řadu příkladů, které každá sestaví na předchozí straně. Tyto příklady ukazují čistě funkční transformační přístup k manipulaci s XML. V tomto kurzu se předpokládá, že C#se jedná o praktické znalosti. Podrobné sémantiky jazykových konstrukcí nejsou v tomto kurzu k dispozici, ale odkazy jsou k dispozici v příslušné jazykové dokumentaci.  
   
- Taky se předpokládá praktické znalosti základní počítač vědy koncepty a XML, včetně obory názvů XML.  
+ Předpokládá se i praktické znalosti základních konceptů počítačové vědy a XML, včetně oborů názvů XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Koncepty a terminologie (funkční transformace) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)|Představuje koncepty a terminologie čistě funkční transformace.|  
-|[Funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)|Porovná a výrazně liší od tradičnější imperativního (procesního) programování funkční programování.|  
-|[Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)|Představuje čistě funkce a jsou uvedeny příklady a čistě a znečištěná funkce.|  
-|[Použitelnost funkční transformace (C#)](../../../../csharp/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Popisuje některé typické scénáře pro funkční transformace.|  
-|[Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Popisuje funkční transformace v rámci transformace stromů XML.|  
+|[Koncepty a terminologie (funkce Transformation)C#()](./concepts-and-terminology-functional-transformation.md)|Zavádí koncepty a terminologie čistě funkčních transformací.|  
+|[Funkční programování vs. Imperativní programování (C#)](./functional-programming-vs-imperative-programming.md)|Porovná a porovnává funkční programování s více tradičními imperativními (procedurální) programování.|  
+|[Refaktoring do čistě funkcí (C#)](./refactoring-into-pure-functions.md)|Zavádí čisté funkce a ukazuje příklady a čistě a nečisté funkce.|  
+|[Použitelnost funkční transformace (C#)](./applicability-of-functional-transformation.md)|Popisuje typické scénáře pro funkce transformace.|  
+|[Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Popisuje funkční transformace v kontextu transformace stromů XML.|  
   

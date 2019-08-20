@@ -4,30 +4,30 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-ms.openlocfilehash: 27b36d85b2ece957c8ef3fce70a6fd794bb3d4e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d0ba212610372a89c2a3b4c6a249c6d8a02fa507
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595669"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590281"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>Postupy: Zachycení výjimky nekompatibilní se specifikací CLS
-Některé jazyky .NET, včetně C++vyhodnocovací, povolit objekty k vyvolání výjimky, které nejsou odvozeny od <xref:System.Exception>. Takové výjimky jsou volány *-kompatibilní se Specifikací výjimky* nebo *nejsou výjimkami*. V jazyce C# nelze vyvolat výjimky neodpovídající specifikaci CLS, ale je možné zachytit dvěma způsoby:  
+Některé jazyky .NET, včetně C++/CLI, umožňují, aby objekty vyvolaly výjimky, které <xref:System.Exception>nejsou odvozeny od. Takové výjimky se nazývají *výjimky, které nejsou kompatibilní se specifikací CLS* , nebo nevýjimkou. V C# nemůžete vyvolat výjimky, které nejsou kompatibilní se specifikací CLS, ale můžete je zachytit dvěma způsoby:  
   
 - V rámci `catch (RuntimeWrappedException e)` bloku.
   
-     Ve výchozím nastavení nastavení sestavení Visual C# zachytává výjimky neodpovídající specifikaci CLS jako zabalené výjimky. Tuto metodu použijte, pokud potřebujete přístup k původní výjimku, která je přístupná prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost. Postup dále v tomto tématu vysvětluje, jak zachytávat výjimky tímto způsobem.  
+     Ve výchozím nastavení je sestavení C# sady Visual zachytí výjimky NEODPOVÍDAJÍCÍ specifikaci CLS jako zabalené výjimky. Tuto metodu použijte, pokud potřebujete přístup k původní výjimce, ke které lze přistupovat prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnosti. Postup dále v tomto tématu vysvětluje, jak zachytit výjimky tímto způsobem.  
   
-- V rámci obecný zachytávací blok (blok catch bez zadaný typ výjimky), který je umístit za všechny ostatní `catch` bloky.
+- V rámci obecného bloku catch (je určen blok catch bez typu výjimky), který je umístěn po všech ostatních `catch` blocích.
   
-     Tuto metodu použijte, pokud chcete provést určitou akci (jako je například zápis do souboru protokolu) v reakci na výjimky neodpovídající specifikaci CLS a nepotřebujete přístup k informacím o výjimce. Ve výchozím nastavení modul common language runtime zabalí všechny výjimky. Chcete-li toto chování zakázat, přidejte tento atribut úrovně sestavení kódu, obvykle v souboru AssemblyInfo.cs: `[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]`.  
+     Tuto metodu použijte, pokud chcete provést určitou akci (například zápis do souboru protokolu) v reakci na výjimky jiné než CLS a nepotřebujete přístup k informacím o výjimkách. Ve výchozím nastavení jsou všechny výjimky zabaleny modulem CLR (Common Language Runtime). Chcete-li toto chování zakázat, přidejte do kódu tento atribut na úrovni sestavení, obvykle v souboru AssemblyInfo.cs: `[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]`.  
   
-### <a name="to-catch-a-non-cls-exception"></a>K zachycení výjimky neodpovídající specifikaci CLS  
+### <a name="to-catch-a-non-cls-exception"></a>Zachycení výjimky nesouvisející se specifikací CLS  
   
-V rámci `catch(RuntimeWrappedException e)` blokovat, přístup k původní výjimky prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost.  
+V rámci <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> bloku přístup k původní výjimce prostřednictvím vlastnosti. `catch(RuntimeWrappedException e)`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zachytit výjimku kompilace neodpovídající specifikaci CLS, která byla vyvolána z knihovny tříd napsané v C++vyhodnocovací. Všimněte si, že v tomto příkladu kódu klienta jazyka C# pozná, předem, jestli je typ výjimky vyvolané <xref:System.String?displayProperty=nameWithType>. Můžete přetypovat <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost zpátky původního stavu, dokud tento typ je přístupný z vašeho kódu.  
+ Následující příklad ukazuje, jak zachytit výjimku, která není CLS, která byla vyvolána z knihovny tříd napsané v C++/CLI. Všimněte si, že v tomto příkladu C# kód klienta ví, že typ výjimky, který je vyvolána, je <xref:System.String?displayProperty=nameWithType>. Vlastnost můžete přetypovat zpět <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> na původní typ, pokud je tento typ přístupný z vašeho kódu.  
   
 ```csharp
 // Class library written in C++/CLI.
@@ -52,4 +52,4 @@ catch (RuntimeWrappedException e)
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.RuntimeWrappedException>
-- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)
+- [Výjimky a jejich zpracování](./index.md)

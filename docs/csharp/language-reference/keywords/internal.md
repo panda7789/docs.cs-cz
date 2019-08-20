@@ -1,5 +1,5 @@
 ---
-title: interní - C# odkaz
+title: interní C# odkaz
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,19 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: 9cfbea03a305dd17c07f549901bc91be0e05b792
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 7d97b7b05645b02a31af848c97758c7a1f6423b9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661172"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602084"
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
-`internal` – Klíčové slovo je [modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md) pro typy a členy typu. 
+Klíčové slovo je [modifikátor přístupu](./access-modifiers.md) pro typy a členy typů. `internal` 
   
- > Tato stránka popisuje `internal` přístup. `internal` – Klíčové slovo je také součástí [ `protected internal` ](./protected-internal.md) modifikátor přístupu.
+ > Tato stránka se `internal` zabývá přístupem. Klíčové slovo je také součástí [`protected internal`](./protected-internal.md) modifikátoru přístupu. `internal`
   
-Vnitřní typy nebo členy jsou přístupné jenom v souborech ve stejném sestavení, jako v následujícím příkladu:  
+Interní typy nebo členy jsou přístupné pouze v rámci souborů ve stejném sestavení, jako v tomto příkladu:  
   
 ```csharp  
 public class BaseClass   
@@ -30,16 +30,16 @@ public class BaseClass
 }  
 ```  
 
- Porovnání `internal` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) a [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Porovnání `internal` s dalšími modifikátory přístupu najdete v tématu [úrovně](./accessibility-levels.md) přístupnosti a [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md).  
   
- Další informace o sestavení, naleznete v tématu [sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
+ Další informace o sestaveních naleznete [v tématu sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
- Běžné použití interního přístupu je ve vývoji založených na komponentách, protože umožňuje skupina součástí privátní způsobem spolupracovat bez zasahování přímo do zbytku kódu aplikace. Například může poskytovat architekturu pro tvorbu grafické uživatelské rozhraní `Control` a `Form` třídy, které spolupracují s použitím členy mají interní přístup. Vzhledem k tomu, že tyto členy jsou interní, že nejsou zveřejněné kód, který používá rozhraní.  
+ Běžné použití interního přístupu je v rámci vývoje založeného na komponentách, protože umožňuje skupině komponent, aby spolupracovaly soukromě, aniž by bylo zveřejněno pro zbytek kódu aplikace. Například architektura pro sestavování grafického uživatelského rozhraní může poskytovat `Control` a `Form` třídy, které spolupracují pomocí členů s interním přístupem. Vzhledem k tomu, že jsou tyto členy interní, nejsou vystaveny kódu, který používá rozhraní.  
   
- Jedná se o chybu, chcete-li odkazovat typ nebo člen interní přístup mimo sestavení, ve kterém byl definován.  
+ Jedná se o chybu, která odkazuje na typ nebo člen s vnitřním přístupem mimo sestavení, ve kterém byla definována.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly1_a.cs`. První soubor obsahuje interní základní třída, `BaseClass`. V souboru druhý pokus o vytvoření instance `BaseClass` dojde k chybě.  
+ Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly1_a.cs`. První soubor obsahuje interní základní třídu `BaseClass`. Při pokusu o vytvoření instance `BaseClass` v druhém souboru dojde k chybě.  
   
 ```csharp  
 // Assembly1.cs  
@@ -63,7 +63,7 @@ class TestAccess
 ```  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1 a změňte úroveň usnadnění `BaseClass` k `public`. Také změnit úroveň přístupnost člena `intM` k `internal`. V takovém případě můžete vytvořit instanci třídy, ale k interní členu nelze přistupovat.  
+ V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1, a změňte úroveň `BaseClass` přístupnosti na. `public` Změňte také úroveň přístupnosti člena `intM` na. `internal` V takovém případě můžete vytvořit instanci třídy, ale nemůžete získat přístup k internímu členu.  
   
 ```csharp  
 // Assembly2.cs  
@@ -89,16 +89,16 @@ public class TestAccess
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [deklarované](~/_csharplang/spec/basic-concepts.md#declared-accessibility) přístupnosti ve [ C# specifikaci jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)
-- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)
-- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)
-- [public](../../../csharp/language-reference/keywords/public.md)
-- [private](../../../csharp/language-reference/keywords/private.md)
-- [protected](../../../csharp/language-reference/keywords/protected.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [Modifikátory přístupu](./access-modifiers.md)
+- [Úrovně přístupnosti](./accessibility-levels.md)
+- [Modifikátory](./modifiers.md)
+- [public](./public.md)
+- [private](./private.md)
+- [protected](./protected.md)

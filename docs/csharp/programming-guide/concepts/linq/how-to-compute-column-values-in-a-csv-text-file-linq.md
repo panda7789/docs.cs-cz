@@ -2,12 +2,12 @@
 title: 'Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 0bc212ab40bccf5612ef6dea85608c439d2105f4
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+ms.openlocfilehash: 08b4f936532b3ba3744ec31dc691b166e7ba7109
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012945"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594023"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (C#)
 Tento příklad ukazuje, jak provádět agregované výpočty, jako je součet, průměr, minimum a maximum ve sloupcích souboru. csv. Příklady zásad, které jsou zde uvedeny, lze použít na jiné typy strukturovaného textu.  
@@ -163,5 +163,5 @@ class SumColumns
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

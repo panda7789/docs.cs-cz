@@ -1,5 +1,5 @@
 ---
-title: -out (možnosti kompilátoru C#)
+title: -out (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /out
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 0cb0b78396731a9b8e127430cd06a9e71812d4fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 51c66d6bc2064d8051415de2ac083da478355a99
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593038"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602592"
 ---
-# <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
-**-Out** parametr určuje název výstupního souboru.  
+# <a name="-out-c-compiler-options"></a>-out (C# možnosti kompilátoru)
+Možnost **-out** Určuje název výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,39 +26,39 @@ ms.locfileid: "64593038"
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Název výstupní soubor vytvořený kompilátorem.  
+ Název výstupního souboru vytvořeného kompilátorem.  
   
 ## <a name="remarks"></a>Poznámky  
- Na příkazovém řádku je možné zadat víc výstupních souborů pro kompilaci. Kompilátor očekává, že jeden nebo více zdrojových souborů po **-out** možnost. Potom všechny soubory zdrojového kódu se zkompiluje do výstupní soubor určený parametrem, který **-out** možnost.  
+ Na příkazovém řádku je možné zadat více výstupních souborů pro kompilaci. Kompilátor očekává najít jeden nebo více souborů zdrojového kódu za možností **-out** . Pak všechny soubory se zdrojovým kódem budou zkompilovány do výstupního souboru určeného parametrem.  
   
  Zadejte úplný název a příponu souboru, který chcete vytvořit.  
   
  Pokud nezadáte název výstupního souboru:  
   
-- .Exe bude trvat, než jeho název souboru se zdrojovým kódem, který obsahuje **hlavní** metody.  
+- Soubor. exe převezme svůj název ze souboru zdrojového kódu, který obsahuje metodu **Main** .  
   
-- .Dll nebo .netmodule bude trvat, než jeho název prvního souboru se zdrojovým kódem.  
+- Soubor. dll nebo. netmodule převezme svůj název z prvního souboru zdrojového kódu.  
   
- Soubor zdrojového kódu používá ke kompilaci jeden výstupní soubor nelze použít ve stejné kompilaci pro kompilaci jiné výstupní soubor.  
+ Soubor zdrojového kódu, který se používá k kompilování jednoho výstupního souboru, nelze použít ve stejné kompilaci pro kompilaci jiného výstupního souboru.  
   
- Při vytváření několika výstupních souborů do příkazového řádku kompilace, mějte na paměti, kterou lze pouze jednu z výstupních souborů sestavení a pouze první výstupní soubor zadaný (implicitně nebo explicitně s **-out**) může být sestavení .  
+ Při vytváření více výstupních souborů v kompilaci příkazového řádku mějte na paměti, že pouze jeden z výstupních souborů může být sestavení a že pouze první výstupní soubor (implicitně nebo explicitně s parametrem **-out**) může být sestavení.  
   
- Všechny moduly, které vytváří jako část kompilace stát soubory přidružené k žádné sestavení také vytvořit za kompilace. Použití [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazíte zobrazit přidružené soubory v manifestu sestavení.  
+ Všechny moduly, které jsou vytvořeny jako součást kompilace, se stanou soubory přidruženými k libovolnému sestavení, které je také vytvořeno v kompilaci. K zobrazení přidružených souborů použijte [Ildasm. exe](../../../framework/tools/ildasm-exe-il-disassembler.md) k zobrazení manifestu sestavení.  
   
- -Out – možnost kompilátoru je nutná pro exe cíl sestavení typu friend. Další informace najdete v části [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
+ Možnost kompilátoru-out je povinná, aby byl spustitelný soubor cílem sestavení typu Friend. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránku **vlastností** projektu.  
   
-2. Klikněte na tlačítko **aplikace** stránku vlastností.  
+2. Klikněte na stránku vlastností **aplikace** .  
   
-3. Upravit **název sestavení** vlastnost.  
+3. Upravte vlastnost **název sestavení** .  
   
-     Programové nastavení tohoto parametru kompilátoru: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> je vlastnost jen pro čtení, což je určeno ke kombinaci komponent typu projektu (exe, knihovny a tak dále) a název sestavení. Úprava jeden nebo oba z těchto vlastností bude nutné nastavit název výstupního souboru.  
+     Chcete-li nastavit tuto možnost kompilátoru programově <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> : je vlastnost jen pro čtení, která je určena kombinací typu projektu (exe, knihovna a tak dále) a názvu sestavení. Úpravou jedné nebo obou těchto vlastností bude nutné nastavit název výstupního souboru.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `t.cs` a vytvořit výstupní soubor `t.exe`, a také sestavení `t2.cs` a vytvoří výstupní soubor modulu `mymodule.netmodule`:  
+ Zkompilujte `t.cs` a vytvořte výstupní soubor `t.exe`a také `t2.cs` vytvořte a vytvořte výstupní soubor `mymodule.netmodule`modulu:  
   
 ```console  
 csc t.cs -out:mymodule.netmodule -target:module t2.cs  
@@ -66,6 +66,6 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

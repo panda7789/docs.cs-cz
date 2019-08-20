@@ -1,5 +1,5 @@
 ---
-title: -appconfig (možnosti kompilátoru C#)
+title: -appconfig (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /appconfig
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -appconfig compiler option [C#]
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
-ms.openlocfilehash: 102ed3977d56ace0dab63b1f066cc10a6fc5dfbf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd21231ea244de51612e62febd80af74c6adc87e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663060"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69603098"
 ---
-# <a name="-appconfig-c-compiler-options"></a>-appconfig (možnosti kompilátoru C#)
-**- Appconfig** – možnost kompilátoru umožňuje aplikaci v C# k určení umístění sestavení aplikace konfiguračního souboru (app.config) do common language runtime (CLR) v době vazby sestavení.  
+# <a name="-appconfig-c-compiler-options"></a>-appconfig (C# možnosti kompilátoru)
+Možnost kompilátoru **-appconfig** umožňuje C# aplikaci určit umístění souboru konfigurace aplikace (App. config) sestavení pro modul CLR (Common Language Runtime) v době vytváření vazby sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,22 +26,22 @@ ms.locfileid: "61663060"
   
 ## <a name="arguments"></a>Arguments  
  `file`  
- Povinný parametr. Konfigurační soubor aplikace obsahující nastavení vazeb sestavení.  
+ Povinný parametr. Konfigurační soubor aplikace, který obsahuje nastavení vazby sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Jedno použití **- appconfig** je pokročilé scénáře, ve kterých má sestavení tak, aby odkazovaly na verzi rozhraní .NET Framework a .NET Framework programu Silverlight daného sestavení ve stejnou dobu. Například Návrhář XAML, zapsán ve Windows Presentation Foundation (WPF) pravděpodobně tak, aby odkazovaly na WPF plochu, pro návrháře uživatelské rozhraní a na podmnožinu WPF, která je součástí Silverlightu. Stejného návrháře sestavení má přístup k obě sestavení. Ve výchozím nastavení samostatné odkazy zapříčiní chybu kompilátoru, protože vazba sestavení chápe daná dvě sestavení jako ekvivalentní.  
+ Jedno použití **-appconfig** je pokročilé scénáře, ve kterých sestavení musí odkazovat jak na verzi .NET Framework, tak na .NET Framework pro verzi Silverlight konkrétního referenčního sestavení ve stejnou dobu. Například Návrhář XAML napsaný v Windows Presentation Foundation (WPF) může být nutné odkazovat jak na Desktop WPF, tak na uživatelském rozhraní návrháře a na podmnožinu WPF, která je součástí programu Silverlight. Stejné sestavení návrháře má přístup k oběma sestavením. Ve výchozím nastavení samostatné odkazy způsobí chybu kompilátoru, protože vazba sestavení uvidí dvě sestavení jako ekvivalentní.  
   
- **- Appconfig** – možnost kompilátoru umožňuje určit umístění souboru app.config, který zakazuje výchozí chování pomocí `<supportPortability>` označit, jak je znázorněno v následujícím příkladu.  
+ Možnost kompilátoru **-appconfig** umožňuje určit umístění souboru App. config, který zakáže výchozí chování pomocí `<supportPortability>` značky, jak je znázorněno v následujícím příkladu.  
   
  `<supportPortability PKT="7cec85d7bea7798e" enable="false"/>`  
   
- Kompilátor předá umístění souboru modulu CLR vytváření vazeb sestavení logiky.  
+ Kompilátor předá umístění souboru do logiky vytváření vazeb sestavení CLR.  
   
 > [!NOTE]
->  Pokud používáte Microsoft Build Engine (MSBuild) k sestavení aplikace, můžete nastavit **- appconfig** – možnost kompilátoru přidáním tag vlastnosti do souboru csproj. Použití souboru app.config, který je již nastaven v projektu, přidejte vlastnost značku `<UseAppConfigForCompiler>` do souboru .csproj souboru a nastavte jej na hodnotu `true`. K určení různých app.config soubor, přidejte vlastnost značku `<AppConfigForCompiler>` a nastavení jeho hodnoty k umístění souboru.  
+>  Pokud k sestavení aplikace používáte Microsoft Build Engine (MSBuild), můžete nastavit možnost kompilátoru **-appconfig** přidáním značky vlastnosti do souboru. csproj. Chcete-li použít soubor App. config, který je již nastaven v projektu, přidejte do `<UseAppConfigForCompiler>` souboru. csproj značku vlastnosti a nastavte jeho hodnotu na `true`. Chcete-li zadat jiný soubor App. config, přidejte značku `<AppConfigForCompiler>` vlastnosti a nastavte její hodnotu na umístění souboru.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje soubor app.config, který umožňuje aplikaci mít odkazy na implementaci rozhraní .NET Framework a .NET Framework pro implementaci Silverlight žádné sestavení rozhraní .NET Framework, která existuje v obou implementacích. **- Appconfig** – možnost kompilátoru Určuje umístění tohoto app.config souboru.  
+ Následující příklad ukazuje soubor App. config, který umožňuje, aby aplikace měla odkazy na implementaci .NET Framework a .NET Framework pro implementaci technologie Silverlight pro jakékoli .NET Framework sestavení, které existuje v obou implementacích. Možnost kompilátoru **-appconfig** určuje umístění tohoto souboru App. config.  
   
 ```xml  
 <configuration>  
@@ -56,5 +56,5 @@ ms.locfileid: "61663060"
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<supportPortability > – Element](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)
-- [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
+- [\<Značka supportPortability – element >](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)
+- [Možnosti kompilátoru jazyka C# (abecední pořadí)](./listed-alphabetically.md)

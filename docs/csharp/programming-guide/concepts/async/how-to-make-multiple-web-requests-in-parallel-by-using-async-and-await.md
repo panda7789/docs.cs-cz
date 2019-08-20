@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)'
+title: 'Postupy: Paralelní provádění více webových požadavků s použitím modifikátoru Async a operátoru Await (C#)'
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 57c40626fcaf0c52d09fa3a2c8b74ba8b7816677
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 75425764ff9ce4f97aac147ced4c57bf1a10714b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600235"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595562"
 ---
-# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)
-V asynchronní metodě jsou úlohy spuštěny při jejich vytvoření. [Await](../../../../csharp/language-reference/keywords/await.md) operátor je použít pro úlohu v okamžiku v metodě, kdy zpracování nemůže pokračovat, dokud neskončí úloha. Úloha je často očekávaná ihned, jakmile se vytvoří, jak ukazuje následující příklad.  
+# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: Paralelní provádění více webových požadavků s použitím modifikátoru Async a operátoru Await (C#)
+V asynchronní metodě jsou úlohy spouštěny při jejich vytvoření. Operátor [await](../../../language-reference/keywords/await.md) se aplikuje na úkol v místě v metodě, kde zpracování nemůže pokračovat, dokud se úloha nedokončí. Úkol se často očekává ihned po vytvoření, jak ukazuje následující příklad.  
   
 ```csharp  
 var result = await someWebAccessMethodAsync(url);  
 ```  
   
- Však můžete oddělit vytvoření úkolu od čekání na úkol, pokud má váš program provádět jinou práci, která nezávisí na dokončení úkolu.  
+ Můžete ale oddělit vytvoření úlohy z čekání na úkol, pokud má program další práci, která nezávisí na dokončení úkolu.  
   
 ```csharp  
 // The following line creates and starts the task.  
@@ -30,32 +30,32 @@ var myTask = someWebAccessMethodAsync(url);
 var result = await myTask;  
 ```  
   
- Mezi spuštěním úlohy a čekáním na ni, můžete spustit další úkoly. Další úkoly jsou implicitně spuštěny paralelně, ale žádná další vlákna nejsou vytvořena.  
+ Mezi zahájením úlohy a čekáním na ni můžete spustit další úlohy. Další úkoly jsou implicitně spouštěny paralelně, ale nejsou vytvořeny žádné další podprocesy.  
   
- Následující program spustí tři asynchronní webové soubory ke stažení a pak je čeká v pořadí, ve kterém jsou volány. Všimněte si, když spustíte program, která nejsou úlohy vždy dokončeny v pořadí, ve kterém byly vytvořeny a očekávány. Spuštění spustit, když jste vytvořili, a jeden nebo více úkolů může skončit dříve, než metoda dosáhne výrazů await.  
+ Následující program spustí tři asynchronní webové stahování a pak je očekává v pořadí, ve kterém jsou volány. Všimněte si, že při spuštění programu nejsou úlohy vždy dokončeny v pořadí, ve kterém byly vytvořeny a očekávány. Spouštějí se při jejich vytvoření a jedna nebo více úkolů může skončit předtím, než metoda dosáhne výrazů await.  
   
 > [!NOTE]
->  Abyste mohli absolvovat tento projekt, musíte mít Visual Studio 2012 nebo novějším a rozhraní .NET Framework 4.5 nebo vyšší v počítači nainstalována.  
+>  Chcete-li dokončit tento projekt, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo vyšší a .NET Framework 4,5 nebo novější.  
   
- Další příklad spuštění více úloh současně, najdete v části [jak: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
+ Další příklad, který spouští více úloh současně, naleznete v tématu [How to: Pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)rozšíříte asynchronní návod.  
   
- Můžete stáhnout kód pro tento příklad z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).  
+ Kód pro tento příklad si můžete stáhnout z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).  
   
 ### <a name="to-set-up-the-project"></a>Vytvoření projektu  
   
-1. Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Můžete najít podrobné pokyny k těmto krokům uvádí [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Podrobné pokyny k těmto krokům najdete v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#).  
   
-    - Vytvoření aplikace WPF, která obsahuje textové pole a tlačítko. Pojmenujte tlačítko `startButton`a pojmenujte textového pole `resultsTextBox`.  
+    - Vytvořte aplikaci WPF, která obsahuje textové pole a tlačítko. Pojmenujte `startButton`tlačítko a pojmenujte textové `resultsTextBox`pole.  
   
-    - Přidat odkaz pro <xref:System.Net.Http>.  
+    - Přidejte odkaz pro <xref:System.Net.Http>.  
   
-    - V souboru MainWindow.xaml.cs přidejte `using` směrnice pro `System.Net.Http`.  
+    - Do souboru MainWindow.XAML.cs přidejte `using` direktivu pro. `System.Net.Http`  
   
 ### <a name="to-add-the-code"></a>Přidání kódu  
   
-1. V okně návrhu, MainWindow.xaml, dvakrát klikněte na tlačítko vytvořit `startButton_Click` obslužné rutině událostí ve MainWindow.xaml.cs.  
+1. V okně návrh MainWindow. XAML dvakrát klikněte na tlačítko a vytvořte `startButton_Click` obslužnou rutinu události v MainWindow.XAML.cs.  
   
-2. Zkopírujte následující kód a vložte ho do těla `startButton_Click` v MainWindow.xaml.cs.  
+2. Zkopírujte následující kód a vložte ho do textu `startButton_Click` v MainWindow.XAML.cs.  
   
     ```csharp  
     resultsTextBox.Clear();  
@@ -63,15 +63,15 @@ var result = await myTask;
     resultsTextBox.Text += "\r\n\r\nControl returned to startButton_Click.\r\n";  
     ```  
   
-     Kód volá asynchronní metodu, `CreateMultipleTasksAsync`, která řídí aplikaci.  
+     Kód volá asynchronní metodu `CreateMultipleTasksAsync`, která aplikaci zařídí.  
   
 3. Do projektu přidejte následující metody podpory:  
   
-    - `ProcessURLAsync` používá <xref:System.Net.Http.HttpClient> metodu pro stažení obsahu webu jako bajtové pole. Podpůrná metoda `ProcessURLAsync` potom zobrazí a vrátí délku pole.  
+    - `ProcessURLAsync`<xref:System.Net.Http.HttpClient> používá metodu ke stažení obsahu webu jako bajtového pole. Metoda `ProcessURLAsync` podpory pak zobrazí a vrátí délku pole.  
   
-    - `DisplayResults` Zobrazí počet bajtů pro každou adresu URL v bajtovém poli. Toto zobrazení se ukazuje po dokončení stahování jednotlivých úkolů.  
+    - `DisplayResults`zobrazí počet bajtů v bajtovém poli pro každou adresu URL. Toto zobrazení ukazuje, kdy se každý úkol dokončí stahováním.  
   
-     Následující metody zkopírujte a vložte je za `startButton_Click` obslužné rutině událostí ve MainWindow.xaml.cs.  
+     Zkopírujte následující metody a vložte je po `startButton_Click` obslužné rutině události v MainWindow.XAML.cs.  
   
     ```csharp  
     async Task<int> ProcessURLAsync(string url, HttpClient client)  
@@ -93,17 +93,17 @@ var result = await myTask;
     }  
     ```  
   
-4. Nakonec definujte metodu `CreateMultipleTasksAsync`, který provede následující kroky.  
+4. Nakonec definujte metodu `CreateMultipleTasksAsync`, která provede následující kroky.  
   
-    - Deklaruje metodu `HttpClient` objekt, který potřebuje získat přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.  
+    - Metoda deklaruje `HttpClient` objekt, který je zapotřebí pro přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.  
   
-    - Metoda vytvoří a spustí tři úkoly typu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo. Když každý úkol dokončí, `DisplayResults` zobrazí adresu URL úkolu a délku staženého obsahu. Vzhledem k tomu, že úkoly jsou spouštěny asynchronně, pořadí, ve kterém se zobrazí výsledky mohou lišit od pořadí, ve kterém byly deklarovány.  
+    - Metoda vytvoří a spustí tři úkoly typu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo. Po dokončení každé úlohy se `DisplayResults` zobrazí adresa URL úlohy a délka staženého obsahu. Vzhledem k tomu, že úlohy jsou spuštěny asynchronně, pořadí, ve kterém se výsledky zobrazují, se může lišit od pořadí, ve kterém byly deklarovány.  
   
-    - Metoda čeká na ukončení každého úkolu. Každý `await` operátor pozastaví provádění `CreateMultipleTasksAsync` dokud nebude dokončena očekávaná úloha. Operátor také použije vrácenou hodnotu z volání `ProcessURLAsync` z každého dokončeného úkolu.  
+    - Metoda čeká na dokončení každého úkolu. Každý `await` operátor pozastaví provádění, `CreateMultipleTasksAsync` dokud není dokončen očekávaný úkol. Operátor také Načte návratovou hodnotu z volání `ProcessURLAsync` z každé dokončené úlohy.  
   
-    - Když byly úlohy dokončeny a celočíselné hodnoty byly načteny, metoda sečte délky webových stránek a zobrazí výsledek.  
+    - Po dokončení úloh a načtení celočíselných hodnot metoda sečte délky webů a zobrazí výsledek.  
   
-     Následující metodu zkopírujte a vložte ho do vašeho řešení.  
+     Zkopírujte následující metodu a vložte ji do svého řešení.  
   
     ```csharp  
     private async Task CreateMultipleTasksAsync()  
@@ -134,9 +134,9 @@ var result = await myTask;
     }  
     ```  
   
-5. Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
+5. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .  
   
-     Spusťte program několikrát a ověřte, že ve stejném pořadí nejsou vždy dokončeny tři úkoly a pořadí, ve kterém jsou dokončeny není nutně pořadí, ve kterém byly vytvořeny a očekávány.  
+     Spusťte program několikrát, abyste ověřili, že tři úkoly nejsou vždy dokončeny ve stejném pořadí a že pořadí, ve kterém jsou dokončeny, nemusí být nutně pořadí, ve kterém byly vytvořeny a očekávány.  
   
 ## <a name="example"></a>Příklad  
  Následující kód obsahuje úplný příklad.  
@@ -226,6 +226,6 @@ namespace AsyncExample_MultipleTasks
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Postupy: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)
+- [Postupy: Rozšíříte asynchronní návod pomocí Task. WhenAll (C#).](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)

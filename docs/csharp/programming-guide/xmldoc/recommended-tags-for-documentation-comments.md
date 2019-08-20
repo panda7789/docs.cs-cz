@@ -1,42 +1,42 @@
 ---
-title: Doporučené značky pro dokumentační komentáře - C# Průvodce programováním
+title: Doporučené značky pro dokumentační komentáře – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML [C#], tags
 - XML documentation [C#], tags
 ms.assetid: 6e98f7a9-38f4-4d74-b644-1ff1b23320fd
-ms.openlocfilehash: 07594d70b92e2075c3d5aba605eab23d766faed6
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 4506402c85096ae0ae11b28ad03646c7fa215e5a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052752"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587813"
 ---
 # <a name="recommended-tags-for-documentation-comments-c-programming-guide"></a>Doporučené značky pro dokumentační komentáře (Průvodce programováním v C#)
-Kompilátor jazyka C# zpracuje komentáře dokumentace ve vašem kódu a je ve formátu XML do souboru, jehož název zadáte **/doc** možnost příkazového řádku. Chcete-li vytvořit finální dokumentaci na základě souboru generovaného kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).  
+C# Kompilátor zpracovává dokumentační komentáře ve vašem kódu a formátuje je jako XML v souboru, jehož název zadáte v parametru příkazového řádku **/doc** . Chcete-li vytvořit konečnou dokumentaci založenou na souboru generovaném kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).  
   
- Značky jsou zpracovány konstrukcí jako jsou typy a členy typu.  
+ Značky jsou zpracovávány na konstrukcích kódu, jako jsou typy a členy typu.  
   
 > [!NOTE]
->  Dokumentační komentáře nelze použít pro obor názvů.  
+>  Komentáře k dokumentaci nelze použít pro obor názvů.  
   
- Kompilátor bude zpracovávat všechny značky, který je platný kód XML. Následující značky poskytují funkce obecně používaných v dokumentaci pro uživatele.  
+ Kompilátor zpracuje všechny značky, které jsou platné XML. Následující značky poskytují všeobecně používané funkce v dokumentaci uživatele.  
   
 ## <a name="tags"></a>Značky  
   
 ||||  
 |---|---|---|  
-|[\<c>](../../../csharp/programming-guide/xmldoc/code-inline.md)|[\<para>](../../../csharp/programming-guide/xmldoc/para.md)|[\<see>](../../../csharp/programming-guide/xmldoc/see.md)*|  
-|[\<code>](../../../csharp/programming-guide/xmldoc/code.md)|[\<Param >](../../../csharp/programming-guide/xmldoc/param.md)*|[\<seealso>](../../../csharp/programming-guide/xmldoc/seealso.md)*|  
-|[\<example>](../../../csharp/programming-guide/xmldoc/example.md)|[\<paramref>](../../../csharp/programming-guide/xmldoc/paramref.md)|[\<summary>](../../../csharp/programming-guide/xmldoc/summary.md)|  
-|[\<exception>](../../../csharp/programming-guide/xmldoc/exception.md)*|[\<permission>](../../../csharp/programming-guide/xmldoc/permission.md)*|[\<typeparam >](../../../csharp/programming-guide/xmldoc/typeparam.md)*|  
-|[\<include>](../../../csharp/programming-guide/xmldoc/include.md)*|[\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md)|[\<typeparamref>](../../../csharp/programming-guide/xmldoc/typeparamref.md)|  
-|[\<list>](../../../csharp/programming-guide/xmldoc/list.md)|[\<returns>](../../../csharp/programming-guide/xmldoc/returns.md)|[\<value>](../../../csharp/programming-guide/xmldoc/value.md)|  
+|[\<c>](./code-inline.md)|[\<para>](./para.md)|[\<see>](./see.md)*|  
+|[\<> kódu](./code.md)|[\<> param](./param.md)*|[\<SeeAlso >](./seealso.md)*|  
+|[\<Příklad >](./example.md)|[\<paramref >](./paramref.md)|[\<summary>](./summary.md)|  
+|[\<exception>](./exception.md)*|[\<> oprávnění](./permission.md)*|[\<typeparam >](./typeparam.md)*|  
+|[\<include>](./include.md)*|[\<remarks>](./remarks.md)|[\<typeparamref >](./typeparamref.md)|  
+|[\<list>](./list.md)|[\<returns>](./returns.md)|[\<value>](./value.md)|  
   
- (* označuje, že kompilátor ověří syntaxi.)  
+ (* označuje, že kompilátor ověřuje syntaxi.)  
   
- Pokud chcete, aby ostré závorky se zobrazí v textu Dokumentační komentář, použijte kódování HTML `<` a `>` tedy `&lt;` a `&gt;` v uvedeném pořadí. Toto kódování můžete vidět v následujícím příkladu:
+ Pokud chcete, aby se v textu komentáře k dokumentaci zobrazovaly lomené závorky, `<` použijte kódování `>` HTML, které je `&lt;` a `&gt;` v uvedeném pořadí. Toto kódování je znázorněno v následujícím příkladu:
   
 ```csharp  
 /// <summary>
@@ -46,6 +46,6 @@ Kompilátor jazyka C# zpracuje komentáře dokumentace ve vašem kódu a je ve f
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [/ DOC (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)
-- [Dokumentační komentáře XML](../../../csharp/programming-guide/xmldoc/index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [/doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Dokumentační komentáře XML](./index.md)

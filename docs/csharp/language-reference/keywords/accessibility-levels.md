@@ -1,63 +1,63 @@
 ---
-title: Úrovně přístupnosti - C# odkaz
+title: Úrovně dostupnosti – C# referenční informace
 ms.custom: seodec18
 ms.date: 12/06/2017
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: da49c6f0b44ab0eefbd338963a744a11502f75da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d6605a305e5003e19f4fe1dd260746302691215
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662137"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602384"
 ---
 # <a name="accessibility-levels-c-reference"></a>Úrovně přístupnosti (Referenční dokumentace jazyka C#)
 
-Používat modifikátory přístupu `public`, `protected`, `internal`, nebo `private`, chcete-li určit jednu z následujících úrovní deklarovaná přístupnost členů.  
+K určení jedné z následujících deklarovaných `protected`úrovní dostupnosti pro `private`členy použijte modifikátory `public` `internal`přístupu,,, nebo.  
   
 |Deklarovaná přístupnost|Význam|  
 |----------------------------|-------------|  
-|[`public`](public.md)|Přístup není omezený.|  
-|[`protected`](protected.md)|Přístup je omezený na obsahující třídu nebo typy odvozené od třídy obsahující.|  
-|[`internal`](internal.md)|Přístup je omezený na aktuální sestavení.|  
-|[`protected internal`](protected-internal.md)|Přístup je omezený na aktuální sestavení nebo typy odvozené od třídy obsahující.|  
-|[`private`](private.md)|Přístup je omezený na nadřazeného typu.|  
-|[`private protected`](private-protected.md)|Přístup je omezený na obsahující třídu nebo typy odvozené od třídy obsahující v rámci aktuálního sestavení. Dostupné od verze C# 7.2. |  
+|[`public`](public.md)|Přístup není omezen.|  
+|[`protected`](protected.md)|Přístup je omezen na obsahující třídu nebo typy odvozené z obsažené třídy.|  
+|[`internal`](internal.md)|Přístup je omezen na aktuální sestavení.|  
+|[`protected internal`](protected-internal.md)|Přístup je omezen na aktuální sestavení nebo typy odvozené z nadřazené třídy.|  
+|[`private`](private.md)|Přístup je omezen na nadřazený typ.|  
+|[`private protected`](private-protected.md)|Přístup je omezen na obsahující třídu nebo typy odvozené z obsažené třídy v rámci aktuálního sestavení. K dispozici od C# verze 7,2. |  
   
- Modifikátor přístupu pouze jeden je povolený pro člen nebo typ, s výjimkou při použití `protected internal` nebo `private protected` kombinace.  
+ Pro člena nebo typ je povolen pouze jeden modifikátor přístupu, s výjimkou použití `protected internal` kombinací nebo. `private protected`  
   
- Modifikátory přístupu nejsou povoleny u oborů názvů. Obory názvů nemá žádné omezení přístupu.  
+ Modifikátory přístupu nejsou povolené pro obory názvů. Obory názvů nemají žádná omezení přístupu.  
   
- V závislosti na kontextu, ve kterém dochází k deklaraci člena jsou povoleny pouze určité deklarované přístupnosti. Pokud v deklaraci člena není zadán žádný modifikátor přístupu, použije se výchozí dostupnost.  
+ V závislosti na kontextu, ve kterém je vyvolána deklarace členů, jsou povoleny pouze určité deklarované přístupnosti. Pokud v deklaraci členu není zadaný žádný modifikátor přístupu, použije se výchozí přístupnost.  
   
- Nejvyšší úrovně typy, které nejsou vnořené v jiných typech, může mít pouze `internal` nebo `public` usnadnění přístupu. Výchozí dostupnost pro tyto typy je `internal`.  
+ Typy nejvyšší úrovně, které nejsou vnořené v jiných typech, mohou mít `internal` pouze nebo `public` přístupnost. Výchozí přístupnost pro tyto typy je `internal`.  
   
- Vnořené typy, které jsou členy ostatních typů, mohou být deklarovány přístupnosti jak je uvedeno v následující tabulce.  
+ Vnořené typy, které jsou členy jiných typů, mohou mít deklarované přístupnosti, jak je uvedeno v následující tabulce.  
   
-|Členové|Výchozí člen dostupnost|Povolené deklarovaná přístupnost člena|  
+|Členové|Přístupnost výchozího člena|Povolená deklarovaná přístupnost člena|  
 |----------------|----------------------------------|--------------------------------------------------|  
 |`enum`|`public`|Žádné|  
 |`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal` <br /><br />`private protected`|  
-|`interface`|`public`|Žádný|  
+|`interface`|`public`|Žádné|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
- Přístupnost vnořeného typu závisí na jeho [doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md), které je určeno deklarovanou přístupností člena a doménou přístupnosti bezprostředně nadřazeného typu. Doména přístupnosti vnořeného typu však nesmí přesáhnout přístupnost nadřazeného typu.  
+ Přístupnost vnořeného typu závisí na své [doméně](./accessibility-domain.md)přístupnosti, která je určena deklarovanou přístupností člena a doménou přístupnosti bezprostředně obsahujícího typu. Nicméně doména přístupnosti vnořeného typu nemůže přesáhnout typ nadřazeného typu.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
-- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)
-- [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md)
-- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)
-- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
-- [public](../../../csharp/language-reference/keywords/public.md)
-- [private](../../../csharp/language-reference/keywords/private.md)
-- [protected](../../../csharp/language-reference/keywords/protected.md)
-- [internal](../../../csharp/language-reference/keywords/internal.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [Modifikátory přístupu](./access-modifiers.md)
+- [Doména přístupnosti](./accessibility-domain.md)
+- [Omezení používání úrovní přístupu](./restrictions-on-using-accessibility-levels.md)
+- [Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md)
+- [public](./public.md)
+- [private](./private.md)
+- [protected](./protected.md)
+- [internal](./internal.md)

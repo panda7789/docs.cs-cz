@@ -1,25 +1,25 @@
 ---
-title: Projektování XML v odlišném tvaru (C#)
+title: Projektování XML v jiném obrazci (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
-ms.openlocfilehash: 3b992b9eb56f978ce92f3b0210223da978f44e2b
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 1377df1ce7f54bc9a0f58836d7df5e5b7b54a69a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484043"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591533"
 ---
-# <a name="projecting-xml-in-a-different-shape-c"></a>Projektování XML v odlišném tvaru (C#)
-Toto téma ukazuje příklad projekci XML, který je v odlišném tvaru než zdrojového kódu XML.  
+# <a name="projecting-xml-in-a-different-shape-c"></a>Projektování XML v jiném obrazci (C#)
+Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojový kód XML.  
   
- Mnoho typických transformace XML se skládají ze zřetězených dotazů, jako v následujícím příkladu. Je běžné začít s určitou formu XML, projektu mezilehlých výsledků jako kolekce anonymních typů nebo typů s názvem, a potom nakonec projektu výsledky zpět do souboru XML, který je v úplně jiném stavu než zdrojového kódu XML.  
+ Mnoho typických transformací XML sestává z zřetězených dotazů, jako v tomto příkladu. Je běžné začít s určitou formou jazyka XML, mezilehlé výsledky projektu jako kolekce anonymních typů nebo pojmenovaných typů a pak nakonec k prohlédnutí výsledků zpět do XML, které jsou v zcela jiném tvaru než zdrojový kód XML.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu zpracovává dokumentu WordprocessingML načítání uzly odstavců z dokumentu WordprocessingML. Také identifikuje style a text každého odstavce. Nakonec příklad projekty XML s odlišném tvaru. Tento příklad je založen na předchozí příklady v tomto kurzu. Nový příkaz, který provede projekci je uvedeny v komentářích v následujícím kódu.  
+ Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Také identifikuje styl a text každého odstavce. Nakonec ukázkový projekt XML s jiným tvarem. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový příkaz, který je projekcí vyvolán v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML (C#) pro zdrojový Office](./creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -231,7 +231,7 @@ class Program
 ```  
   
 ## <a name="next-steps"></a>Další kroky  
- V následujícím příkladu budete dotazovat najít veškerý text ve Wordovém dokumentu:  
+ V dalším příkladu se dotazuje na vyhledání veškerého textu v dokumentu aplikace Word:  
   
-- [Hledání textu v dokumentech aplikace Word (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+- [Hledání textu v dokumentech aplikace WordC#()](./finding-text-in-word-documents.md)  
   

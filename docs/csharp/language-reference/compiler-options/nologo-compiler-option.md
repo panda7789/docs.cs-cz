@@ -1,5 +1,5 @@
 ---
-title: -nologo (možnosti kompilátoru C#)
+title: -unlogo (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /nologo
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-ms.openlocfilehash: 537091bc3865183d193e3728d8d07649e33c6ada
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84fc7f7448309a0800ea05f03f0c5039a6b4f807
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662657"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606654"
 ---
-# <a name="-nologo-c-compiler-options"></a>-nologo (možnosti kompilátoru C#)
-**- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.  
+# <a name="-nologo-c-compiler-options"></a>-unlogo (C# možnosti kompilátoru)
+Možnost **-unlogo** potlačí zobrazení nápisu přihlášení při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,11 +26,11 @@ ms.locfileid: "61662657"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tato možnost není k dispozici v rámci vývojového prostředí; je dostupná jenom při kompilaci z příkazového řádku.  
+ Tato možnost není k dispozici v rámci vývojového prostředí; je k dispozici pouze při kompilaci z příkazového řádku.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML) (C#)'
+title: 'Postupy: Naplnění stromu XML pomocí funkce XmlWriter (LINQ to XML)C#()'
 ms.date: 07/20/2015
 ms.assetid: cd5674d1-5c54-4efc-ba68-e23b2875295f
-ms.openlocfilehash: 6e121b246729b2b671d0d07dfed6a31602bfe565
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 88b088ddad54d1fef67cb4c86f8df4eee7bf3662
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485219"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593102"
 ---
-# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-c"></a>Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML) (C#)
-Jedním ze způsobů k naplnění stromu XML je použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> k vytvoření <xref:System.Xml.XmlWriter>a pak zápis do <xref:System.Xml.XmlWriter>. Stromu XML se vyplní všechny uzly, které jsou zapsány do <xref:System.Xml.XmlWriter>.  
+# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-c"></a>Postupy: Naplnění stromu XML pomocí funkce XmlWriter (LINQ to XML)C#()
+Jedním ze způsobů <xref:System.Xml.XmlWriter>, jak naplnit strom XML, <xref:System.Xml.Linq.XContainer.CreateWriter%2A> je použít k vytvoření <xref:System.Xml.XmlWriter>a zápis do. Do stromu XML se naplní všechny uzly, které jsou zapsány do <xref:System.Xml.XmlWriter>.  
   
- Obvykle použijete tuto metodu při použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s jinou třídou, která očekává, že k zápisu do <xref:System.Xml.XmlWriter>, jako například <xref:System.Xml.Xsl.XslCompiledTransform>.  
+ Tuto metodu byste obvykle použili při použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s jinou třídou, která očekává zápis <xref:System.Xml.XmlWriter>do, například <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
 ## <a name="example"></a>Příklad  
- Možné použití <xref:System.Xml.Linq.XContainer.CreateWriter%2A> je při vyvolání transformace XSLT. Tento příklad vytvoří stromu XML, vytvoří <xref:System.Xml.XmlReader> ze stromu XML vytvoří nový dokument a pak vytvoří <xref:System.Xml.XmlWriter> k zápisu do nového dokumentu. Potom se vyvolá transformace XSLT, při předávání v <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>. Po úspěšném dokončení transformace stromu XML nové naplněný výsledky transformace.  
+ Jedním z možných použití <xref:System.Xml.Linq.XContainer.CreateWriter%2A> je při vyvolání transformace XSLT. Tento příklad vytvoří strom XML, vytvoří <xref:System.Xml.XmlReader> ze stromu XML, vytvoří nový dokument a pak <xref:System.Xml.XmlWriter> vytvoří pro zápis do nového dokumentu. Poté vyvolá transformaci XSLT, do <xref:System.Xml.XmlReader> které se přecházejí a. <xref:System.Xml.XmlWriter> Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.  
   
 ```csharp  
 string xslMarkup = @"<?xml version='1.0'?>  
@@ -67,4 +67,4 @@ Console.WriteLine(newTree);
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A>
 - <xref:System.Xml.XmlWriter>
 - <xref:System.Xml.Xsl.XslCompiledTransform>
-- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)
+- [Vytváření stromů XML (C#)](./linq-to-xml-overview.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytváření sjednocení C / C++ pomocí atributů (C#)'
+title: 'Postupy: VytvořeníC++ sjednocení jazyka C pomocí atributů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
-ms.openlocfilehash: a8b902536cd09ac732bf2144536605a66b5bbc56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fdadc9505b93f40c66001ac36345efada2edd270
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703059"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595369"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postupy: Vytváření sjednocení C/C++ pomocí atributů (C#)
-Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  
+# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postupy: Vytvoření C/C++ sjednocení pomocí atributů (C#)
+Pomocí atributů můžete přizpůsobit způsob, jakým jsou struktury rozloženy v paměti. Můžete například vytvořit, co se říká sjednocení v C/C++ `StructLayout(LayoutKind.Explicit)` pomocí atributů a. `FieldOffset`  
   
 ## <a name="example"></a>Příklad  
- V tomto segmentu kódu, všechna pole z `TestUnion` začínají na stejné místo v paměti.  
+ V tomto segmentu kódu všechna pole `TestUnion` začínají ve stejném umístění v paměti.  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -36,7 +36,7 @@ Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v pamět
 ```  
   
 ## <a name="example"></a>Příklad  
- Tady je další příklad – kde pole začínají na různých explicitně nastavit umístění.  
+ Následuje další příklad, kdy se pole spouštějí v různých explicitních nastaveních umístění.  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -64,15 +64,15 @@ Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v pamět
        }  
 ```  
   
- Dvě celočíselné pole, `i1` a `i2`, sdílet stejné umístění paměti jako `lg`. Tento typ kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.  
+ Dvě celočíselná pole `i1` a `i2`sdílejí stejná umístění v paměti jako `lg`. Tento druh řízení nad rozložením struktury je užitečný při volání platformy.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
-- [Atributy](../../../../../docs/standard/attributes/index.md)
-- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)
-- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)
-- [Vytváření vlastních atributů (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Průvodce programováním v jazyce C#](../../index.md)
+- [Atributy](../../../../standard/attributes/index.md)
+- [Reflexe (C#)](../reflection.md)
+- [Atributy (C#)](./index.md)
+- [Vytváření vlastních atributů (C#)](./creating-custom-attributes.md)
+- [Přístup k atributům pomocí reflexe (C#)](./accessing-attributes-by-using-reflection.md)

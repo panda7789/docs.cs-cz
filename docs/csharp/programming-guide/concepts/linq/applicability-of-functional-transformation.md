@@ -2,38 +2,38 @@
 title: Použitelnost funkční transformace (C#)
 ms.date: 07/20/2015
 ms.assetid: c78107bd-b006-4574-a3d4-bbf808388ff3
-ms.openlocfilehash: 2c9fc4a2e98a86d5b69ba98336659ac6d2433d12
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bc2678354bb45f1ed0a4076f278f52d0ee7d350e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598098"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594882"
 ---
 # <a name="applicability-of-functional-transformation-c"></a>Použitelnost funkční transformace (C#)
-Čistě funkční transformace se dají použít v nejrůznějších situacích.  
+Čistě funkční transformace jsou použitelné v nejrůznějších situacích.  
   
- Funkční transformace přístup je ideální pro dotazování a zpracování strukturovaných dat; proto souladu s technologií LINQ. Funkční transformace však má mnohem širší použitelnost než LINQ. Jakýkoli proces, kde je hlavní fokus na transformaci dat z jednoho formuláře do jiného pravděpodobně být zařazena mezi kandidáty pro funkční transformace.  
+ Přístup k funkční transformaci je ideální pro dotazování a manipulaci se strukturovanými daty; Proto je vhodný pro technologie LINQ. Nicméně transformace funkcí má mnohem širší použitelnost než použití s LINQ. Každý proces, ve kterém se hlavní fokus provádí transformaci dat z jednoho formuláře na jiný, by měl být považován za kandidáta na funkční transformaci.  
   
- Tento přístup se vztahuje na mnoho problémů, které nemusí být kandidát na první pohled zobrazit. Používá ve spojení s nebo samostatně z technologie LINQ, funkční transformace by měl být v následujících oblastech:  
+ Tento přístup se vztahuje na mnoho problémů, které se nemusí zobrazit na první pohled na kandidáta. Při použití ve spojení se službou LINQ nebo nezávisle na nich by se měla funkční transformace považovat za následující oblasti:  
   
-- Dokumenty XML. Ve správném formátu data z libovolné dialekt XML lze snadno ovládat pomocí funkční transformace. Další informace najdete v tématu [funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).  
+- Dokumenty založené na jazyce XML. Dobře vytvořená data jakéhokoli dialektu XML lze snadno manipulovat prostřednictvím funkční transformace. Další informace naleznete v tématu [funkční transformace jazyka XML (C#)](./functional-transformation-of-xml.md).  
   
-- Ostatní formáty souborů structured. Většina souborů ze souborů Windows.ini do prostého textu, dokumentů, mají některé struktura, která slouží k analýze a transformace.  
+- Jiné strukturované formáty souborů. Ze souborů Windows. ini do dokumentů prostého textu má většina souborů určitou strukturu, která se sama zapůjčuje k analýze a transformaci.  
   
-- Protokoly streamování dat. Data kódování a dekódování dat z komunikační protokoly můžete často reprezentované pomocí jednoduchého funkční transformace.  
+- Protokoly streamování dat. Data kódování a dekódování dat z komunikačních protokolů je často možné znázornit pomocí jednoduché transformace funkcí.  
   
-- Relační databázový systém a OODBMS data. Relační a objektově orientované databáze, stejně jako XML, jsou široce používaný strukturovaných datových zdrojů.  
+- Data RDBMS a OODBMS. Relační a objektově orientované databáze, stejně jako XML, jsou široce používané strukturované zdroje dat.  
   
-- Řešení matematických, statistiky a vědy. Tato pole mají tendenci k práci s velkými datovými sadami, aby pomáhaly při vizualizaci, odhad, nebo ve skutečnosti řešení potíží, které nejsou v netriviálních uživatele.  
+- Matematickýchá, statistická a vědecká řešení. Tato pole mají za následek zpracování rozsáhlých datových sad a pomáhají tak uživatelům v vizualizacích, odhadech nebo ve skutečnosti řešit netriviální problémy.  
   
- Jak je popsáno v [refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), pomocí čisté funkce je příkladem funkčního programování. V další okamžitě přináší výhody použití čistě funkce poskytuje cenné zkušenosti zamyslíme nad problémy z hlediska funkční transformace. Tento přístup také může mít významný vliv na návrh aplikace a třídy. To platí zejména při problém slouží k transformaci řešení data, jak je popsáno výše.  
+ Jak je popsáno v tématu Refaktoring [do PureC#Functions ()](./refactoring-into-pure-functions.md), je použití čistě funkcí příkladem funkčního programování. Kromě okamžitých výhod díky čistě funkcím nabízí funkce čistého prostředí v úvahách o problémech z hlediska funkční transformace. Tento přístup může mít také významný dopad na návrh aplikace a třídy. To platí hlavně v případě, že se problém týká řešení transformace dat, jak je popsáno výše.  
   
- I když jsou nad rámec tohoto kurzu, návrhů, které jsou ovlivněny funkční transformace perspektivy mají tendenci center procesů více než u objektů jako objekty actor a výsledné řešení obvykle možné implementovat jako řadu ve velkém měřítku transformace, spíše než změní stav jednotlivých objektů.  
+ I když jsou nad rámec tohoto kurzu, návrhy, které jsou ovlivněné perspektivou pro transformaci, se obvykle centrují na procesy více než u objektů jako Actors a výsledné řešení je implementováno jako řada rozsáhlých transformace, nikoli jednotlivé změny stavu objektu.  
   
- Znovu nezapomeňte, že podporuje jazyk C# imperativní a funkční přístupy, takže nejvhodnější návrh pro vaši aplikaci může obsahovat prvky obou.  
+ Znovu si zapamatujte C# , že podporuje jak imperativní, tak i funkční přístupy, takže nejlepší návrh vaší aplikace může zahrnovat prvky obou.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md)
-- [Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Úvod do čistě funkční transformace (C#)](./introduction-to-pure-functional-transformations.md)
+- [Funkční transformace jazyka XML (C#)](./functional-transformation-of-xml.md)
+- [Refaktoring do čistě funkcí (C#)](./refactoring-into-pure-functions.md)

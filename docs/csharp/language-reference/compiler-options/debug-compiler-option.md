@@ -1,5 +1,5 @@
 ---
-title: -debug (možnosti kompilátoru C#)
+title: -Debug (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /debug
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-ms.openlocfilehash: 4828e1cdd8b830f10b134b613bc96e69490091fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ffa939d94d0e7aabe07ee85422c4b9b740d7cdc
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662969"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69603065"
 ---
-# <a name="-debug-c-compiler-options"></a>-debug (možnosti kompilátoru C#)
-**– Ladění** možnost způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupního souboru nebo souborů.  
+# <a name="-debug-c-compiler-options"></a>-Debug (C# možnosti kompilátoru)
+Možnost **-Debug** způsobí, že kompilátor vygeneruje ladicí informace a umístí je do výstupního souboru nebo souborů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,34 +27,34 @@ ms.locfileid: "61662969"
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Určení `+`, nebo jen **– ladění**, způsobí, že kompilátor generovat ladicí informace a umístěte ho do databáze programu (soubor typu .pdb). Určení `-`, který je v platnosti, pokud nezadáte **– ladění**, způsobí, že žádné informace o ladění, který se má vytvořit.  
+ Zadání `+`nebo pouhého **ladění**způsobí, že kompilátor vygeneruje ladicí informace a umístí je do databáze programu (soubor. pdb). Určení `-`, které platí, pokud nezadáte **-ladit**, nezpůsobí vytvoření žádné ladicí informace.  
   
  `full` &#124; `pdbonly`  
- Určuje typ ladicích informací generovaných kompilátorem. Úplné argument, který je v platnosti, pokud nezadáte **-debug: pdbonly**, umožňuje připojení ladicího programu ke spuštěnému programu. Zadání pdbonly umožňuje zdrojového kódu, ladění, když program se spustí v ladicím programu, ale zobrazí jenom assembler když spuštěný program je připojen k ladicímu programu.  
+ Určuje typ ladicích informací generovaných kompilátorem. Úplný argument, který je platný, pokud nezadáte **-debug: pdbonly**, umožňuje připojit k běžícímu programu ladicí program. Zadání pdbonly umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazí pouze Assembler, pokud je spuštěný program připojen k ladicímu programu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tuto možnost použijte, chcete-li vytvořit sestavení pro ladění. Pokud **– ladění**, **– ladění +**, nebo **-debug: full** není zadán, nebudete moci ladit výstupní soubor programu.  
+ Tuto možnost použijte k vytvoření sestavení ladění. IF **-Debug**, **-Debug +** nebo **-debug: Full** není zadán, nebudete moci ladit výstupní soubor programu.  
   
- Pokud používáte **-debug: full**, mějte na paměti, že se některé vliv na rychlost a velikost optimalizovaný kód JIT a malý vliv na kvalitu kódu s **-debug: full**. Doporučujeme **-debug: pdbonly** nebo žádný soubor PDB pro generování verze kódu.  
+ Použijete **-li příkaz-Debug: Full**, pamatujte na to, že došlo k nějakému dopadu na rychlost a velikost optimalizovaného kódu JIT a malý dopad na kvalitu kódu pomocí **ladění: Full**. Pro generování kódu vydání doporučujeme **ladit: pdbonly** nebo No PDB.  
   
 > [!NOTE]
->  Jedním z rozdílů mezi **-debug: pdbonly** a **-debug: full** je, že u **-debug: full** kompilátor vydá <xref:System.Diagnostics.DebuggableAttribute>, sloužící k kompilátoru JIT že je k dispozici informace o ladění. Proto se zobrazí chyba, pokud váš kód obsahuje <xref:System.Diagnostics.DebuggableAttribute> nastavena na hodnotu false, pokud používáte **-debug: full**.  
+>  Jeden rozdíl mezi **laděním: pdbonly** a **-debug: Full** je to, že with **-debug: Full** vygeneruje <xref:System.Diagnostics.DebuggableAttribute>kompilátor, který slouží k oznámení kompilátoru JIT, že jsou k dispozici informace o ladění. Proto se zobrazí chyba, pokud kód obsahuje hodnotu false, <xref:System.Diagnostics.DebuggableAttribute> Pokud použijete **příkaz-Debug: Full**.  
   
- Další informace o tom, jak konfigurovat výkon ladění aplikace najdete v tématu [usnadnění bitové kopie k ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
+ Další informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu [Vytvoření obrázku pro snadnější ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   
- Chcete-li změnit umístění souboru .pdb, [- pdb (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md).  
+ Chcete-li změnit umístění souboru PDB, viz [-PDB (C# možnosti kompilátoru)](./pdb-compiler-option.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1. Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete stránku **vlastností** projektu.  
   
-2. Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na stránku vlastností **Build (sestavit** ).  
   
-3. Klikněte na tlačítko **Upřesnit** tlačítko.  
+3. Klikněte na tlačítko **Upřesnit** .  
   
-4. Upravit **ladicí informace** vlastnost.  
+4. Upravte vlastnost **ladicí informace** .  
   
- Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DebugSymbols%2A>.  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DebugSymbols%2A>v tématu.  
   
 ## <a name="example"></a>Příklad  
  Umístit informace o ladění do výstupního souboru `app.pdb`:  
@@ -65,5 +65,5 @@ csc -debug -pdb:app.pdb test.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

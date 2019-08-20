@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Najde předchozí položky na stejné úrovni (XPath-LINQ to XMLC#) ().'
 ms.date: 07/20/2015
 ms.assetid: b281ff99-d08a-43d0-bea1-eff831b2f8ae
-ms.openlocfilehash: 42663e1c90f7a7a829e858cfc8e20cdcb2ad2d36
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: d47a2d72efd8891108999d5576da52eb2b6285b1
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485454"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593432"
 ---
-# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (C#)
-Toto téma srovnává jazyka XPath `preceding-sibling` osy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízené <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osy.  
+# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Postupy: Najde předchozí položky na stejné úrovni (XPath-LINQ to XMLC#) ().
+Toto téma porovnává osu `preceding-sibling` XPath [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s podřízenou <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osou.  
   
  Výraz XPath je:  
   
  `preceding-sibling::*`  
   
- Všimněte si, že výsledky z obou <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> a <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> jsou v pořadí dokumentů.  
+ Všimněte si, že výsledky obou <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> a <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> jsou v pořadí dokumentů.  
   
 ## <a name="example"></a>Příklad  
- Vyhledá v následujícím příkladu `FullAddress` prvek a poté obnoví předchozí prvky pomocí `preceding-sibling` osy.  
+ Následující příklad vyhledá `FullAddress` prvek a potom načte předchozí prvky `preceding-sibling` pomocí osy.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Dotazu na znaky v řetězci (LINQ) (C#)'
+title: 'Postupy: Dotaz na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: b31dfb4c9fb7f7efc439a1703f13aafca3053e6a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1212ebcf264aab756eca1acb81ae617c2218a065
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584450"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592889"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: Dotazu na znaky v řetězci (LINQ) (C#)
-Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: Dotaz na znaky v řetězci (LINQ) (C#)
+Vzhledem k tomu, že <xref:System.Collections.Generic.IEnumerable%601> Třídaimplementujeobecnérozhraní,můžebýtlibovolnýřetězecdotazovánjakoposloupnostznaků.<xref:System.String> Nejedná se však o běžné použití LINQ. Pro komplexní operace porovnávání vzorů použijte <xref:System.Text.RegularExpressions.Regex> třídu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se dotazuje řetězec a chce určit počet číslic, které obsahuje. Všimněte si, že dotaz je "znovu" po provedení první. To je možné, protože samotný dotaz nejsou uložené žádné skutečné výsledky.  
+ Následující příklad vyhledá řetězec, který určí počet číslic, které obsahuje. Všimněte si, že po prvním spuštění dotazu je dotaz znovu použit. To je možné, protože samotný dotaz neukládá žádné skutečné výsledky.  
   
 ```csharp  
 class QueryAString  
@@ -55,9 +55,9 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření C# konzole projekt aplikace s `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+- [LINQ a řetězce (C#)](./linq-and-strings.md)
+- [Postupy: Kombinování dotazů LINQ s regulárnímiC#výrazy ()](./how-to-combine-linq-queries-with-regular-expressions.md)

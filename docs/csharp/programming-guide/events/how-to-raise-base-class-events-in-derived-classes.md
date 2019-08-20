@@ -1,32 +1,32 @@
 ---
-title: 'Postupy: Vyvolávání událostí třídy Base v odvozených třídách - C# Průvodce programováním'
+title: 'Postupy: Vyvolat události třídy Base v odvozených třídách – C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
-ms.openlocfilehash: 2f200ff00534bde1fa0d016d64099e3ca28535a8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: dd44460f04d628ea382a5bd95960c97ebd9c3ee5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585835"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590414"
 ---
-# <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>Postupy: Vyvolávání událostí třídy Base v odvozených třídách (C# Průvodce programováním v)
-Následující jednoduchý příklad ukazuje standardní způsob pro deklaraci události v základní třídě tak, aby se také mohou být vyvolány z odvozených tříd. Tento model se často používá v třídy modelu Windows Forms v knihovně tříd rozhraní .NET Framework.  
+# <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>Postupy: Vyvolat události třídy Base v odvozených třídách (C# Průvodce programováním)
+Následující jednoduchý příklad ukazuje standardní způsob, jak deklarovat události v základní třídě tak, aby mohly být také vyvolány z odvozených tříd. Tento model se používá rozsáhle v model Windows Forms třídy v knihovně tříd .NET Framework.  
   
- Když vytváříte třídu, která slouží jako základní třída pro jiné třídy, měli byste zvážit vzhledem k tomu, že události mají speciální typ delegáta, který lze vyvolat pouze z v rámci třídy, která je deklarována. Odvozené třídy nelze přímo vyvolat události, které jsou deklarovány v základní třídě. I když v některých případech může být vhodné událost, která může být vyvolána pouze základní třídy, ve většině případů, měli byste povolit odvozené třídy, která se má vyvolat události základní třídy. K tomuto účelu můžete vytvořit chráněné vyvolání metody základní třídy, která obaluje události. Při volání nebo potlačení této vyvolání metody, mohou odvozené třídy vyvolat událost nepřímo.  
+ Když vytvoříte třídu, která může být použita jako základní třída pro jiné třídy, měli byste zvážit skutečnost, že události jsou speciálním typem delegáta, který lze volat pouze z třídy, která je deklarována. Odvozené třídy nemohou přímo vyvolat události, které jsou deklarovány v rámci základní třídy. I když v některých případech můžete chtít událost, která může být vyvolána pouze základní třídou, měla by tato odvozená třída umožňovat vyvolání událostí základní třídy. K tomu můžete vytvořit chráněnou metodu vyvolání v základní třídě, která zabalí událost. Voláním nebo přepsáním této metody vyvolání mohou odvozené třídy událost vyvolat nepřímo.  
   
 > [!NOTE]
->  Nezadávejte deklarování virtuálních událostí v základní třídě a přepsat v odvozené třídě. Kompilátor jazyka C# nezpracovává tyto správně a zda předplatiteli odvozené událostí bude ve skutečnosti se přihlášení k odběru události základní třídy nepředvídatelné.  
+>  Nedeklarujte virtuální události v základní třídě a přepište je v odvozené třídě. C# Kompilátor tyto správně nezpracovává a je nepředvídatelné, zda bude předplatitelem odvozené události ve skutečnosti přihlášena k odběru události základní třídy.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideEvents#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Události](../../../csharp/programming-guide/events/index.md)
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
-- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
-- [Vytváření obslužných rutin událostí ve Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Události](./index.md)
+- [Delegáti](../delegates/index.md)
+- [Modifikátory přístupu](../classes-and-structs/access-modifiers.md)
+- [Vytváření obslužných rutin událostí ve Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)

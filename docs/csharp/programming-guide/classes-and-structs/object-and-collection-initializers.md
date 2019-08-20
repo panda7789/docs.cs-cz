@@ -1,40 +1,40 @@
 ---
-title: Inicializátory objektu a kolekce - C# Průvodce programováním
+title: Inicializátory objektů a kolekcí – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 12/19/2018
 helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: bd49834c45f6e07a99be5a1f4293e938eed2cc77
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: f6977fa6c5a8909d6108a5ccfc140b89a4fdd5a4
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267719"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596560"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Inicializátory objektu a kolekce (Průvodce programováním v C#)
 
-C#Umožňuje vytvořit instanci objektu nebo kolekci a provést přiřazení členů v jediném příkazu.
+C#umožňuje vytvořit instanci objektu nebo kolekce a provést přiřazení členů v rámci jednoho příkazu.
 
 ## <a name="object-initializers"></a>Inicializátory objektů
 
-Inicializátory objektů umožňují přiřadit hodnoty k jakýmkoli přístupným polím nebo vlastnostem objektu při vytváření, bez nutnosti vyvolání konstruktoru následovaného řádky příkazů přiřazení. Syntaxe inicializátoru objektu umožňuje zadat argumenty pro konstruktor, nebo tyto argumenty (a syntaxi se závorkami) vynechat.  Následující příklad ukazuje, jak použít inicializátor objektu s pojmenovaným typem `Cat` a o tom, která se má vyvolat konstruktor bez parametrů. Všimněte si použití automaticky implementované vlastnosti v `Cat` třídy. Další informace najdete v tématu [implemented Properties](auto-implemented-properties.md).  
+Inicializátory objektů umožňují přiřadit hodnoty k jakýmkoli přístupným polím nebo vlastnostem objektu při vytváření, bez nutnosti vyvolání konstruktoru následovaného řádky příkazů přiřazení. Syntaxe inicializátoru objektu umožňuje zadat argumenty pro konstruktor, nebo tyto argumenty (a syntaxi se závorkami) vynechat.  Následující příklad ukazuje, `Cat` jak použít inicializátor objektu s pojmenovaným typem a jak vyvolat konstruktor bez parametrů. Všimněte si použití automaticky implementovaných vlastností ve `Cat` třídě. Další informace najdete v tématu věnovaném [automaticky implementovaným vlastnostem](auto-implemented-properties.md).  
   
 [!code-csharp[ObjectInitializer1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#CatDeclaration)]  
 [!code-csharp[ObjectInitializer1a](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#ObjectPropertyInitialization)]  
  
-Syntaxi inicializátory objektů lze vytvářet instance, a poté přiřadí nově vytvořený objekt s vlastností přiřazené k proměnné v přiřazení.
+Syntaxe inicializátorů objektů umožňuje vytvořit instanci a poté, co přiřadí nově vytvořený objekt s přiřazenými vlastnostmi k proměnné v přiřazení.
 
-Počínaje C# 6, objekt inicializátory můžete nastavit indexery, kromě přiřazení polí a vlastností. Zvažte proto základní `Matrix` třídy:
+Počínaje C# 6, Inicializátory objektů mohou nastavovat indexery kromě přiřazování polí a vlastností. Zvažte tuto základní `Matrix` třídu:
 
 [!code-csharp[ObjectInitializer2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#MatrixDeclaration)]  
 
-Může inicializovat jednotkovou matici s následujícím kódem:
+Můžete inicializovat matici identity pomocí následujícího kódu:
 
 [!code-csharp[ObjectInitializer2a](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#MatrixInitialization)]  
 
-Žádné přístupné indexer, který obsahuje přístupnou metodu setter může sloužit jako jeden z výrazů v inicializátoru objektu bez ohledu na čísla nebo typy argumentů. Argumenty index formu levé části přiřazení a hodnota představuje pravou stranu výrazu.  Například toto jsou všechny platné if `IndexersExample` má odpovídající indexování:
+Jakýkoli přístupný indexer, který obsahuje přístupný Setter, lze použít jako jeden z výrazů v inicializátoru objektu, bez ohledu na počet nebo typy argumentů. Argumenty indexu tvoří levou stranu přiřazení a hodnota je pravá strana výrazu.  Jsou to například všechny platné, pokud `IndexersExample` mají příslušné indexery:
 
 ```csharp
 var thing = new IndexersExample {
@@ -47,7 +47,7 @@ var thing = new IndexersExample {
 }
 ```
 
-Pro předchozí kód mohl zkompilovat `IndexersExample` typ musí mít následující členy:
+Aby byl předchozí kód zkompilován, `IndexersExample` musí mít tento typ následující členy:
 
 ```csharp
 public string name;
@@ -58,23 +58,23 @@ public string this[char c, int i] {  set { ... }; }
 
 ## <a name="object-initializers-with-anonymous-types"></a>Inicializátory objektů s anonymními typy
 
-Přestože inicializátory objektů lze použít v libovolném kontextu, jsou zvláště užitečná v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů. Výrazy dotazů používají často [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md), které lze inicializovat pouze pomocí inicializátoru objektu, jak je znázorněno v následující deklaraci.  
+I když Inicializátory objektů lze použít v jakémkoli kontextu, jsou zvláště užitečné ve [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů. Výrazy dotazů často využívají [anonymní typy](./anonymous-types.md), které lze inicializovat pouze pomocí inicializátoru objektu, jak je znázorněno v následující deklaraci.  
 
 ```csharp
 var pet = new { Age = 10, Name = "Fluffy" };  
 ```
 
-Anonymní typy umožňují `select` klauzule [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazu transformovat objekty původní sekvence na objekty, jejichž hodnota a tvar se může lišit od původního dotazu. Tato možnost je užitečná, pokud chcete uložit pouze část informace z jednotlivých objektů v sekvenci. V následujícím příkladu se předpokládá, že objekt produktu (`p`) obsahuje mnoho polí a metod, a že si jenom chcete vytvořit pouze sekvenci objektů, které obsahují název produktu a jednotkovou cenu.  
+Anonymní typy umožňují `select` klauzuli [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ve výrazu dotazu pro transformaci objektů původní sekvence na objekty, jejichž hodnota a tvar se mohou lišit od původní. Tato možnost je užitečná, pokud chcete uložit pouze část informace z jednotlivých objektů v sekvenci. V následujícím příkladu Předpokládejme, že objekt produktu (`p`) obsahuje mnoho polí a metod a že máte zájem pouze vytvořit sekvenci objektů, které obsahují název produktu a jednotkovou cenu.  
   
 [!code-csharp[ObjectInitializer3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#AnonymousUse)]  
 
-Při spuštění tohoto dotazu `productInfos` proměnná bude obsahovat sekvenci objektů, které mohou být přístupné v `foreach` jak je uvedeno v tomto příkladu:  
+Při spuštění `productInfos` tohoto dotazu proměnná bude obsahovat sekvenci objektů, které jsou k dispozici `foreach` v příkazu, jak je znázorněno v následujícím příkladu:  
 
 ```csharp
 foreach(var p in productInfos){...}  
 ```
 
-Každý objekt v novém anonymním typu mají dvě veřejné vlastnosti, které budou přiděleny stejné názvy jako vlastnosti nebo pole v původním objektu. Můžete také přejmenovat pole při vytváření anonymního typu; Následující příklad přejmenuje `UnitPrice` pole `Price`.  
+Každý objekt v novém anonymním typu má dvě veřejné vlastnosti, které obdrží stejné názvy jako vlastnosti nebo pole v původním objektu. Pole můžete také přejmenovat při vytváření anonymního typu. Následující příklad přejmenuje `UnitPrice` pole na `Price`.  
 
 ```csharp
 select new {p.ProductName, Price = p.UnitPrice};  
@@ -82,7 +82,7 @@ select new {p.ProductName, Price = p.UnitPrice};
 
 ## <a name="collection-initializers"></a>Inicializátory kolekce
 
-Inicializátory kolekce umožňují určit jeden nebo více inicializátorů prvku při inicializaci kolekce typu tohoto implementuje <xref:System.Collections.IEnumerable> a má `Add` s odpovídajícím podpisem jako metodu instance nebo metody rozšíření. Inicializátory elementů polí může být jednoduchých hodnot, výrazem nebo inicializátorem objektu. Pomocí inicializátoru kolekce, není nutné zadávat větší počet volání; volání přidá kompilátor automaticky.  
+Inicializátory kolekce umožňují určit jeden nebo více inicializátorů elementů při inicializaci typu kolekce, který implementuje <xref:System.Collections.IEnumerable> a má `Add` odpovídající signaturu jako metodu instance nebo metodu rozšíření. Inicializátory elementu můžou být jednoduchou hodnotou, výrazem nebo inicializátorem objektu. Pomocí inicializátoru kolekce není nutné zadávat více volání; kompilátor automaticky přidá volání.  
   
 Následující příklad ukazuje dva jednoduché inicializátory kolekce:  
 
@@ -91,40 +91,40 @@ List<int> digits = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };  
 ```
 
-Následující inicializátor kolekce používá inicializátory objektů k inicializaci objektů třídy `Cat` třídy definované v předchozím příkladu. Pamatujte, že jednotlivé incializátory objektů jsou uzavřeny ve složených závorkách a odděleny čárkami.  
+Následující inicializátor kolekce používá Inicializátory objektů k inicializaci objektů `Cat` třídy definované v předchozím příkladu. Pamatujte, že jednotlivé incializátory objektů jsou uzavřeny ve složených závorkách a odděleny čárkami.  
   
 [!code-csharp[ListInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#ListInitializer)]  
   
-Můžete zadat [null](../../language-reference/keywords/null.md) jako prvek v incializátoru kolekce Pokud kolekce `Add` metoda umožňuje.  
+[Hodnotu null](../../language-reference/keywords/null.md) můžete zadat jako prvek v inicializátoru kolekce, pokud to `Add` metoda kolekce povoluje.  
   
 [!code-csharp[ListInitializerNull](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#ListInitialerWithNull)]  
   
- Indexované prvky můžete zadat, pokud kolekce podporuje čtení / zápis indexování.
+ Můžete zadat indexované prvky, pokud kolekce podporuje indexování pro čtení a zápis.
   
 [!code-csharp[DictionaryInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryIndexerInitializer)]  
 
-V předchozím příkladu generuje kód, který volá <xref:System.Collections.Generic.Dictionary%602.Item(%600)> nastavit hodnoty. Počínaje C# 6, můžete inicializovat slovníky a dalších asociativní kontejnery pomocí následující syntaxe. Všimněte si, že místo indexer syntaxe se závorkami a přiřazení, používá objekt s více hodnotami:
+Předchozí ukázka vygeneruje kód, který volá <xref:System.Collections.Generic.Dictionary%602.Item(%600)> , aby se nastavily hodnoty. Počínaje C# 6 můžete inicializovat slovníky a další asociativní kontejnery pomocí následující syntaxe. Všimněte si, že místo syntaxe indexeru, pomocí závorek a přiřazení, používá objekt s více hodnotami:
 
 [!code-csharp[DictionaryAddInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryAddInitializer)]  
 
-V tomto příkladu inicializátor volá <xref:System.Collections.Generic.Dictionary%602.Add(%600,%601)> přidáte tři položky do slovníku. Tyto dva různé způsoby inicializovat asociativní kolekcí mají mírně odlišné chování kvůli volání metody, které generuje kompilátor. Obě varianty pracovat `Dictionary` třídy. Jiné typy může podporovat pouze jednu nebo další závislosti na jejich veřejné rozhraní API.
+Tento příklad inicializátoru <xref:System.Collections.Generic.Dictionary%602.Add(%600,%601)> volá, aby se přidaly tři položky do slovníku. Tyto dva různé způsoby inicializace asociativních kolekcí mají mírně odlišné chování, protože metoda volá kompilátor generuje. Obě varianty pracují s `Dictionary` třídou. Jiné typy mohou podporovat pouze jeden nebo druhý na základě jejich veřejného rozhraní API.
 
 ## <a name="examples"></a>Příklady
 
-Následující příklad kombinuje koncepty inicializátory objektu a kolekce.
+Následující příklad kombinuje koncepty objektů a inicializátorů kolekcí.
 
 [!code-csharp[InitializerExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#FullExample)]  
 
-Následující příklad ukazuje, objekt, který implementuje <xref:System.Collections.IEnumerable> a obsahuje `Add` metodu s více parametry používá inicializátor kolekce s více prvky každou položku v seznamu, které odpovídají podpis `Add`metody.
+Následující příklad ukazuje objekt, který implementuje <xref:System.Collections.IEnumerable> a `Add` obsahuje metodu s více parametry, používá inicializátor kolekce s více prvky na položku v seznamu, který odpovídá podpisu `Add`metoda.
 
 [!code-csharp[InitializerListExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#FullListExample)]  
 
-`Add` můžete použít metody `params` – klíčové slovo se proměnný počet argumentů, jak je znázorněno v následujícím příkladu. Tento příklad také ukazuje vlastní implementaci indexeru k inicializaci kolekce pomocí indexů.
+`Add`metody mohou použít `params` klíčové slovo k převzetí variabilního počtu argumentů, jak je znázorněno v následujícím příkladu. Tento příklad také ukazuje vlastní implementaci indexeru pro inicializaci kolekce pomocí indexů.
 
 [!code-csharp[InitializerListExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#FullDictionaryInitializer)]  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [LINQ – výrazy dotazů](../linq-query-expressions/index.md)
+- [Výrazy dotazů LINQ](../linq-query-expressions/index.md)
 - [Anonymní typy](anonymous-types.md)

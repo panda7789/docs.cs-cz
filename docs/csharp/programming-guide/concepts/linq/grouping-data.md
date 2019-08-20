@@ -2,31 +2,31 @@
 title: Seskupování dat (C#)
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-ms.openlocfilehash: a85babc43f673711fe1bdfa5cec1836a5073c785
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 15dafdb144ee9fd4184d4c8281d041e03161a16b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753915"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594202"
 ---
 # <a name="grouping-data-c"></a>Seskupování dat (C#)
-Seskupení odkazuje na operace ukládání dat do skupin, aby elementy v každé skupině sdílet společný atribut.  
+Seskupení odkazuje na operaci vložení dat do skupin, aby elementy v každé skupině sdílely společný atribut.  
   
- Následující obrázek ukazuje výsledky seskupení posloupnost znaků. Klíč pro každou skupinu je znak.  
+ Následující ilustrace znázorňuje výsledky seskupení sekvencí znaků. Klíč pro každou skupinu je znak.  
   
- ![Diagram, který ukazuje operaci LINQ seskupení.](./media/grouping-data/linq-group-operation.png)  
+ ![Diagram, který znázorňuje operaci seskupení LINQ.](./media/grouping-data/linq-group-operation.png)  
   
- Standardní metody operátoru dotazu, které seskupují datové prvky jsou uvedeny v následující části.  
+ Standardní metody operátoru dotazu, které seskupují datové prvky, jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
+|Název metody|Popis|C#Syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|GroupBy|Seskupí elementy, které sdílejí společný atribut. Každá skupina představuje <xref:System.Linq.IGrouping%602> objektu.|`group … by`<br /><br /> -nebo-<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
-|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
+|GroupBy|Seskupí prvky, které sdílejí společný atribut. Jednotlivé skupiny jsou reprezentovány <xref:System.Linq.IGrouping%602> objektem.|`group … by`<br /><br /> -nebo-<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
+|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> slovníku (do slovníku 1: n) na základě funkce selektoru klíče.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
- Následující příklad kódu používá `group by` klauzule, která skupina celých čísel v seznamu podle toho, zda jsou sudý, nebo lichý.  
+ Následující příklad kódu používá `group by` klauzuli pro seskupení celých čísel v seznamu podle toho, zda jsou sudé nebo liché.  
   
 ```csharp  
 List<int> numbers = new List<int>() { 35, 44, 200, 84, 3987, 4, 199, 329, 446, 208 };  
@@ -62,10 +62,10 @@ foreach (var group in query)
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [group – klauzule](../../../../csharp/language-reference/keywords/group-clause.md)
-- [Postupy: Vytvoření vnořené skupiny](../../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)
-- [Postupy: Seskupování souborů podle přípony (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)
-- [Postupy: Seskupení výsledků dotazu](../../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)
-- [Postupy: Provádění poddotazů na operace seskupení](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
-- [Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
+- [group – klauzule](../../../language-reference/keywords/group-clause.md)
+- [Postupy: Vytvoření vnořené skupiny](../../linq-query-expressions/how-to-create-a-nested-group.md)
+- [Postupy: Seskupit soubory podle přípony (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)
+- [Postupy: Seskupit výsledky dotazu](../../linq-query-expressions/how-to-group-query-results.md)
+- [Postupy: Provedení poddotazu na operaci seskupení](../../linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
+- [Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

@@ -1,5 +1,5 @@
 ---
-title: -recurse (možnosti kompilátoru C#)
+title: -rekurzeC# (možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /recurse
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - recurse compiler option [C#]
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
-ms.openlocfilehash: a4a55090cf465d0eac05303392ba7500dd96ee90
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c82e3019e1a1e3ba45a7000312b54b9d7f64a2db
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662514"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606751"
 ---
-# <a name="-recurse-c-compiler-options"></a>-recurse (možnosti kompilátoru C#)
--Recurse – možnost umožňuje kompilaci souborů zdrojového kódu ve všech adresářích podřízené zadaný adresář (adresář) nebo adresáře projektu.  
+# <a name="-recurse-c-compiler-options"></a>-rekurzeC# (možnosti kompilátoru)
+Možnost-rekurze umožňuje kompilovat soubory zdrojového kódu ve všech podřízených adresářích buď určeného adresáře (dir), nebo adresáře projektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,27 +25,27 @@ ms.locfileid: "61662514"
 ```  
   
 ## <a name="arguments"></a>Arguments  
- `dir` (volitelné)  
- Adresář, ve kterém chcete, aby hledání začalo. Pokud není zadaný, hledání začne v adresáři projektu.  
+ `dir`volitelné  
+ Adresář, ve kterém chcete zahájit hledání. Pokud tento parametr nezadáte, hledání začne v adresáři projektu.  
   
  `file`  
  Soubory, které chcete vyhledat. Zástupné znaky jsou povoleny.  
   
 ## <a name="remarks"></a>Poznámky  
- **-Recurse** možnost umožňuje kompilaci souborů zdrojového kódu ve všech adresářích podřízené zadaného adresáře (`dir`) nebo adresáře projektu.  
+ Možnost **-** rekurze umožňuje kompilovat soubory zdrojového kódu ve všech podřízených adresářích buď určeného adresáře (`dir`), nebo adresáře projektu.  
   
- Zástupné znaky v názvu souboru můžete použít ke kompilaci všech odpovídajících souborů v adresáři projektu bez použití **-recurse**.  
+ Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bezpoužití rekurze.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="example"></a>Příklad  
- Kompiluje všechny soubory jazyka C# v aktuálním adresáři:  
+ Zkompiluje všechny C# soubory v aktuálním adresáři:  
   
 ```console  
 csc *.cs  
 ```  
   
- Kompiluje se všechny soubory jazyka C# v adresáři dir1\dir2 a všechny adresáře pod ní a generuje dir2.dll:  
+ Zkompiluje všechny C# soubory v adresáři dir1\dir2 a všech adresářích pod ním a vygeneruje dir2. dll:  
   
 ```console  
 csc -target:library -out:dir2.dll -recurse:dir1\dir2\*.cs  
@@ -53,5 +53,5 @@ csc -target:library -out:dir2.dll -recurse:dir1\dir2\*.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

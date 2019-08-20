@@ -2,12 +2,12 @@
 title: 'Postupy: Seřadit elementy ve více klíčíchC#()'
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: 2325417fa2ed8a6c3ca13504cada4d4e1a49be42
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 4029e88ced11cdc2e95fdfd212fecb3e3b194436
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709914"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592445"
 ---
 # <a name="how-to-sort-elements-on-multiple-keys-c"></a>Postupy: Seřadit elementy ve více klíčíchC#()
 
@@ -17,7 +17,7 @@ V tomto tématu se dozvíte, jak řadit podle více klíčů.
 
 V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.
 
-V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).
+V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -67,7 +67,7 @@ CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 
 Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).
 
-V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).
+V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](./sample-xml-file-customers-and-orders-in-a-namespace.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");

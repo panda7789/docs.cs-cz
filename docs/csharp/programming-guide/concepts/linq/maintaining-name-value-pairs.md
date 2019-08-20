@@ -1,40 +1,40 @@
 ---
-title: Zachování dvojic název hodnota (C#)
+title: Udržování párů název-hodnota (C#)
 ms.date: 07/20/2015
 ms.assetid: 7b04b0f1-af64-42eb-8737-83f8861b5915
-ms.openlocfilehash: 06fe6932b6eb0ff470367ccf6471da6937ec7746
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 9c42a154a4c3ed1463e428faab4c7d33197ef4a5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484266"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591703"
 ---
-# <a name="maintaining-namevalue-pairs-c"></a>Zachování dvojic název/hodnota (C#)
-Mnoho aplikací nutné udržovat informace, které nejlépe se ukládají jako dvojice název/hodnota. Tyto informace mohou být informace o konfiguraci nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje některé metody, které usnadňují zachovat sadu párů název/hodnota. Buď můžete zachovat informace jako atributy nebo sadu podřízených elementů.  
+# <a name="maintaining-namevalue-pairs-c"></a>Udržování párů název/hodnota (C#)
+Mnoho aplikací musí uchovávat informace, které jsou nejvhodnější pro páry název/hodnota. Tyto informace můžou být konfigurační informace nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]obsahuje některé metody, které usnadňují zachování sady párů název/hodnota. Tyto informace můžete zachovat jako atributy nebo jako sadu podřízených prvků.  
   
- Jedním z rozdílů mezi chrání informace jako atributy nebo podřízené prvky je, že atributy obsahují omezení, že může existovat pouze jeden atribut s konkrétním názvem pro daný element. Toto omezení se nevztahuje na podřízené prvky.  
+ Jeden rozdíl mezi uchováváním informací jako atributů nebo jako podřízených elementů je, že atributy mají omezení, že může existovat pouze jeden atribut s určitým názvem pro element. Toto omezení se nevztahuje na podřízené prvky.  
   
 ## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue a SetElementValue  
- Dvě metody, které usnadňují uchování páry název/hodnota jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Tyto dvě metody mají podobnou sémantikou.  
+ Existují dvě metody, které pomáhají zachovat páry název/hodnota <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> jsou <xref:System.Xml.Linq.XElement.SetElementValue%2A>a. Tyto dvě metody mají podobnou sémantiku.  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> můžete přidat, upravit nebo odebrat atributy elementu.  
+ <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>může přidat, upravit nebo odebrat atributy prvku.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného prvku.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného elementu.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s některými zadaný obsahu, obsah atributu nahrazují se zadaným obsahem.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s určitým zadaným obsahem, obsah atributu se nahradí zadaným obsahem.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut se odebere ze svého nadřazeného objektu.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a pro obsah zadáte null, atribut se odebere z nadřazeného objektu.  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A> můžete přidat, upravit nebo odebrat podřízené prvky prvku.  
+ <xref:System.Xml.Linq.XElement.SetElementValue%2A>může přidat, upravit nebo odebrat podřízené prvky elementu.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného prvku.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízeného prvku, který neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného elementu.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s některými zadaný obsahu, obsah elementu se nahradí se zadaným obsahem.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s určitým zadaným obsahem, obsah elementu se nahradí zadaným obsahem.  
   
-- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a zadejte hodnotu null pro obsah, elementu se odebere ze svého nadřazeného objektu.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a pro obsah zadáte null, element je odebrán z nadřazeného prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří element se žádné atributy. Poté použije <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.  
+ Následující příklad vytvoří prvek bez atributů. Pak pomocí <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> metody vytvoří a udržuje seznam párů název/hodnota.  
   
 ```csharp  
 // Create an element with no content.  
@@ -66,7 +66,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří element se žádné podřízené prvky. Poté použije <xref:System.Xml.Linq.XElement.SetElementValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.  
+ Následující příklad vytvoří prvek bez podřízených elementů. Pak pomocí <xref:System.Xml.Linq.XElement.SetElementValue%2A> metody vytvoří a udržuje seznam párů název/hodnota.  
   
 ```csharp  
 // Create an element with no content.  
@@ -122,4 +122,4 @@ Console.WriteLine(root);
 
 - <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>
 - <xref:System.Xml.Linq.XElement.SetElementValue%2A>
-- [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md)
