@@ -1,31 +1,31 @@
 ---
-title: Přehled třídy XElement (C#)
+title: XElement – Přehled třídyC#()
 ms.date: 07/20/2015
 ms.assetid: 2b9f0cd8-a1d1-4037-accf-0f38a410fa11
-ms.openlocfilehash: 815b7b6523afe7106fcdcbe242d667c5ad6aa56e
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: e742741f56f3e39f93b9f1d6be30a54a4ede67f3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487016"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590891"
 ---
-# <a name="xelement-class-overview-c"></a>Přehled třídy XElement (C#)
-<xref:System.Xml.Linq.XElement> Třídy je jedním ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Reprezentuje XML element. Tato třída slouží k vytváření prvků; Změňte obsah elementu; Přidání, změna nebo odstranění podřízené elementy; přidat atributy pro element. nebo serializace obsah prvek v textové podobě. Můžete také spolupracovat s jinými třídami v <xref:System.Xml?displayProperty=nameWithType>, jako například <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, a <xref:System.Xml.Xsl.XslCompiledTransform>.  
+# <a name="xelement-class-overview-c"></a>XElement – Přehled třídyC#()
+Třída je jednou ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. <xref:System.Xml.Linq.XElement> Představuje XML element. Tuto třídu můžete použít k vytváření elementů. změnit obsah elementu; Přidání, změna nebo odstranění podřízených elementů; přidejte atributy k elementu; nebo serializovat obsah elementu v textovém formuláři. Můžete také vzájemně spolupracovat s jinými třídami <xref:System.Xml?displayProperty=nameWithType>v, <xref:System.Xml.XmlReader>jako například <xref:System.Xml.XmlWriter>, a <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
-Toto téma popisuje funkce poskytované službou <xref:System.Xml.Linq.XElement> třídy.  
+Toto téma popisuje funkce poskytované <xref:System.Xml.Linq.XElement> třídou.  
   
-## <a name="constructing-xml-trees"></a>Vytváření stromů XML  
- Můžete sestavit stromů XML v celou řadu způsobů, včetně následujících:  
+## <a name="constructing-xml-trees"></a>Sestavování stromů XML  
+ Stromy XML můžete vytvářet různými způsoby, včetně následujících:  
   
-- Můžete vytvořit stromu XML v kódu. Další informace najdete v tématu [vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md).  
+- V kódu můžete vytvořit strom XML. Další informace naleznete v tématu [CREATING XML TreesC#()](./linq-to-xml-overview.md).  
   
-- Můžete analyzovat soubor XML z různých zdrojů, včetně <xref:System.IO.TextReader>, textové soubory nebo webovou adresu (URL). Další informace najdete v tématu [analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-parse-a-string.md).  
+- Můžete analyzovat XML z různých zdrojů, včetně <xref:System.IO.TextReader>textových souborů nebo webové adresy (URL). Další informace najdete v tématu [Analýza XML (C#)](./how-to-parse-a-string.md).  
   
-- Můžete použít <xref:System.Xml.XmlReader> k naplnění stromu. Další informace naleznete v tématu <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
+- <xref:System.Xml.XmlReader> K naplnění stromu můžete použít. Další informace naleznete v tématu <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
   
-- Pokud máte modul, který může zapisovat obsah tak, aby <xref:System.Xml.XmlWriter>, můžete použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> metodu pro vytvoření zapisovač, předat modul pro zápis do modulu a pak použít obsah, který je zapsán do <xref:System.Xml.XmlWriter> k naplnění stromu XML.  
+- Máte-li modul, který může zapisovat obsah do, <xref:System.Xml.XmlWriter>můžete <xref:System.Xml.Linq.XContainer.CreateWriter%2A> použít metodu k vytvoření zapisovače, předat zapisovači modulu a potom použít obsah <xref:System.Xml.XmlWriter> , který je zapsán do objektu k naplnění stromu XML.  
   
- Nejběžnější způsob, jak vytvořit stromu XML je však následujícím způsobem:  
+ Nejběžnější způsob vytvoření stromu XML je však následující:  
   
 ```csharp  
 XElement contacts =  
@@ -43,7 +43,7 @@ XElement contacts =
     );  
 ```  
   
- Zahrnuje jiného velmi běžná technika pro vytvoření stromu XML pomocí výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu k naplnění stromu XML, jak je znázorněno v následujícím příkladu:  
+ Další velmi běžné postupy pro vytváření stromu XML zahrnuje použití výsledků [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu k naplnění stromu XML, jak je znázorněno v následujícím příkladu:  
   
 ```csharp  
 XElement srcTree = new XElement("Root",  
@@ -76,25 +76,25 @@ Console.WriteLine(xmlTree);
 ```  
   
 ## <a name="serializing-xml-trees"></a>Serializace stromů XML  
- Může serializovat stromu XML <xref:System.IO.File>, <xref:System.IO.TextWriter>, nebo <xref:System.Xml.XmlWriter>.  
+ Strom XML lze serializovat do <xref:System.IO.File> <xref:System.IO.TextWriter>, nebo <xref:System.Xml.XmlWriter>.  
   
- Další informace najdete v tématu [serializace stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ Další informace naleznete v tématu [serializace stromů XML (C#)](./preserving-white-space-while-serializing.md).  
   
-## <a name="retrieving-xml-data-via-axis-methods"></a>Načítání dat XML pomocí metody osy  
- Načíst atributy, podřízené prvky, následnickým elementům a nadřazených elementů můžete použít metody osy. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy pracovat na metody osy a poskytují několik pružnější a výkonnější způsobů, jak procházet a zpracování stromu XML.  
+## <a name="retrieving-xml-data-via-axis-methods"></a>Načítání dat XML přes metody osy  
+ Můžete použít metody osy k načtení atributů, podřízených prvků, následníků a nadřazených prvků. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]dotazy fungují na metodách osy a poskytují několik flexibilních a výkonných způsobů navigace ve stromu XML a zpracování.  
   
- Další informace najdete v tématu [osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md).  
+ Další informace najdete v tématu [LINQ to XML osy (C#)](./linq-to-xml-axes-overview.md).  
   
 ## <a name="querying-xml-trees"></a>Dotazování na stromy XML  
- Můžete napsat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, které extrahují data z stromu XML.  
+ Můžete zapisovat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, které extrahují data ze stromu XML.  
   
- Další informace najdete v tématu [dotazování na stromy XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-an-element-with-a-specific-attribute.md).  
+ Další informace najdete v tématu [dotazování na stromy XMLC#()](./how-to-find-an-element-with-a-specific-attribute.md).  
   
-## <a name="modifying-xml-trees"></a>Změna stromů XML  
- Můžete upravovat prvek v celou řadu způsobů, včetně změny jeho obsahu nebo atributů. Můžete také odebrat element ze svého nadřazeného objektu.  
+## <a name="modifying-xml-trees"></a>Úprava stromů XML  
+ Prvek můžete upravit různými způsoby, včetně změny jeho obsahu nebo atributů. Můžete také odebrat prvek z jeho nadřazeného prvku.  
   
- Další informace najdete v tématu [změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md).  
+ Další informace najdete v tématu [Úprava stromů XML (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled LINQ to XML programování (C#)](serializing-to-files-textwriters-and-xmlwriters.md)
+- [Přehled programování LINQ to XML (C#)](serializing-to-files-textwriters-and-xmlwriters.md)
