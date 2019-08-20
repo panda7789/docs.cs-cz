@@ -2,12 +2,12 @@
 title: Použití Async pro přístup k souborůmC#()
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: 6ca47157575ef4569a43f334dae4f99a1986a7ce
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: e6b0370049d9b9315de6a72d0e84c080aac12481
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68330947"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595544"
 ---
 # <a name="using-async-for-file-access-c"></a>Použití Async pro přístup k souborůmC#()
 K přístupu k souborům můžete použít funkci Async. Pomocí asynchronní funkce můžete zavolat do asynchronních metod bez použití zpětných volání nebo rozdělení kódu napříč více metodami nebo lambda výrazy. Chcete-li synchronní asynchronní kód, stačí zavolat asynchronní metodu namísto synchronní metody a přidat k kódu několik klíčových slov.  
@@ -75,10 +75,10 @@ Task theTask = sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
 await theTask;  
 ```  
   
- První příkaz vrátí úlohu a způsobí, že se zpracování souboru spustí. Druhý příkaz s operátorem await způsobí, že metoda okamžitě ukončí a vrátí jiný úkol. Po dokončení zpracování souboru se spuštění vrátí do příkazu, který následuje za operátorem await. Další informace najdete v tématu [tok řízení v části Async Programs (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
+ První příkaz vrátí úlohu a způsobí, že se zpracování souboru spustí. Druhý příkaz s operátorem await způsobí, že metoda okamžitě ukončí a vrátí jiný úkol. Po dokončení zpracování souboru se spuštění vrátí do příkazu, který následuje za operátorem await. Další informace najdete v tématu [tok řízení v části Async Programs (C#)](./control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Čtení textu  
- Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder>. Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. `Int32` `numRead`Metoda <xref:System.IO.Stream.ReadAsync%2A> vrací>,takže<xref:System.Threading.Tasks.Task>vyhodnocení metody await vytvoří hodnotu () po dokončení operace. \< <xref:System.Int32> Další informace naleznete v tématu [Async Return TypesC#()](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder>. Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. `Int32` `numRead`Metoda <xref:System.IO.Stream.ReadAsync%2A> vrací>,takže<xref:System.Threading.Tasks.Task>vyhodnocení metody await vytvoří hodnotu () po dokončení operace. \< <xref:System.Int32> Další informace naleznete v tématu [Async Return TypesC#()](./async-return-types.md).  
   
 ```csharp  
 public async Task ProcessReadAsync()  
@@ -172,10 +172,10 @@ public async Task ProcessWriteMultAsync()
 }  
 ```  
   
- Při použití <xref:System.IO.Stream.WriteAsync%2A> metod a <xref:System.IO.Stream.ReadAsync%2A> můžete zadat <xref:System.Threading.CancellationToken>, které můžete použít k zrušení operace střední-Stream. Další informace najdete v tématu [jemné vyladění asynchronní aplikace (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
+ Při použití <xref:System.IO.Stream.WriteAsync%2A> metod a <xref:System.IO.Stream.ReadAsync%2A> můžete zadat <xref:System.Threading.CancellationToken>, které můžete použít k zrušení operace střední-Stream. Další informace najdete v tématu [jemné vyladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Asynchronní návratové typyC#()](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
-- [Řízení toku v asynchronních programechC#()](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)
+- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)
+- [Asynchronní návratové typyC#()](./async-return-types.md)
+- [Řízení toku v asynchronních programechC#()](./control-flow-in-async-programs.md)

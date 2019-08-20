@@ -1,5 +1,5 @@
 ---
-title: -refout (možnosti kompilátoru C#)
+title: -refout (C# možnosti kompilátoru)
 ms.date: 08/08/2017
 f1_keywords:
 - /refout
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - refout compiler option [C#]
 - /refout compiler option [C#]
 - -refout compiler option [C#]
-ms.openlocfilehash: 34f7b62c0d9a14c52dde0ddd4ac0d5c29a3b5b75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97cbf540527d0449387b71bb1d97df95b6a4aba4
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61662462"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602513"
 ---
-# <a name="-refout-c-compiler-options"></a>-refout (možnosti kompilátoru C#)
+# <a name="-refout-c-compiler-options"></a>-refout (C# možnosti kompilátoru)
 
-**- Refout** možnost určuje, kde referenční sestavení by mělo být výstupní cestu k souboru. To se přeloží na `metadataPeStream` v rozhraní API pro generování. Tato možnost odpovídá nabídce [ProduceReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) vlastnosti nástroje MSBuild projektu.
+Možnost **-refout** Určuje cestu k souboru, kde by měl být výstup referenčního sestavení. To se týká `metadataPeStream` v rozhraní API Emit. Tato možnost odpovídá vlastnosti projektu [ProduceReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) nástroje MSBuild.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,25 +26,25 @@ ms.locfileid: "61662462"
 
 ## <a name="arguments"></a>Arguments
 
- `filepath` Cesta k souboru pro referenční sestavení. Obecně to by měla odpovídat hodnotě primární sestavení. Doporučené konvence (používány nástrojem MSBuild), je umístit odkaz na sestavení v "ref /" podsložku vzhledem k primární sestavení.
+ `filepath`FilePath pro referenční sestavení. Obecně se musí shodovat s primárním sestavením. Doporučená konvence (používaná nástrojem MSBuild) slouží k umístění referenčního sestavení do podsložky ref/v relativní vzhledem k primárnímu sestavení.
 
 ## <a name="remarks"></a>Poznámky
 
-Obsahující jenom metadata sestavení mají jejich těl metod nahradit pomocí jediného `throw null` textu, ale zahrnout všichni členové s výjimkou anonymních typů. Důvod pro použití `throw null` subjektů (na rozdíl od bez těla) je tak, aby PEVerify může spuštění a předání (tedy ověřování úplnost metadata).
+Sestavení pouze s metadaty mají své tělo metody nahrazené jediným `throw null` tělem, ale obsahují všechny členy kromě anonymních typů. Důvodem použití `throw null` těl (na rozdíl od žádného těla) je, že nástroj PEverify může běžet a předávat (čímž ověřuje úplnost metadat).
 
-Zahrnout odkaz na sestavení úrovni sestavení `ReferenceAssembly` atribut. Tento atribut může být zadaný ve zdroji (a kompilátor nebude nutné tak, aby odpovídaly ho). Z důvodu tohoto atributu moduly runtime odmítne načíst referenční sestavení pro spuštění (ale stále může být načten v režimu pouze pro reflexi). Nástroje, které odpovídají na sestavení je potřeba zajistit, že se načítají referenční sestavení jako pouze pro reflexi, jinak se mu nepřidají chyby z modulu runtime.
+Referenční sestavení obsahují atribut na úrovni `ReferenceAssembly` sestavení. Tento atribut může být zadán ve zdroji (pak ho kompilátor nebude muset syntetizovat). Z důvodu tohoto atributu modul runtime odmítne načíst referenční sestavení ke spuštění (ale mohou být nadále načtena v režimu pouze pro reflexi). Nástroje, které reflektují sestavení, musí zajistit, aby načetly referenční sestavení pouze v případě reflexe, jinak obdrží chybu výjimek z modulu runtime.
 
-Další referenční sestavení odebrání metadat (soukromé členy) obsahující jenom metadata sestavení:
+Referenční sestavení dále odstraňují metadata (soukromá členové) od sestavení, která jsou pouze metadata:
 
-- Referenční sestavení má jenom odkazy na to, co potřebuje na povrchu API. Skutečné sestavení může mít další odkazy týkající se konkrétní implementace. Například referenční sestavení pro `class C { private void M() { dynamic d = 1; ... } }` neodkazuje na všechny typy vyžadované pro `dynamic`.
-- V případech, kdy jejich odebrání nebude mít vliv na viditelně kompilace se odeberou soukromé funkce členy (metody, vlastnosti a události). Pokud neexistují žádné <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributy, provést totéž pro interní členy funkce.
-- Ale všechny typy (včetně privátního nebo vnořené typy) jsou uloženy v referenčních sestavení. Všechny atributy jsou udržovány (pravidla i interní).
-- Všechny virtuální metody jsou zachovány. Explicitní implementace rozhraní zůstanou. Explicitně implementovaný vlastnosti a události se neodstraní jejich přístupových objektů jsou virtuální (a tedy uchovávají).
-- Všechna pole struktury jsou zachovány. (Toto je Release candidate pro metodu post-C# – vylepšení 7.1)
+- Referenční sestavení obsahuje pouze odkazy na to, co potřebuje na povrchu rozhraní API. Reálné sestavení může mít další odkazy týkající se konkrétních implementací. Například referenční sestavení pro `class C { private void M() { dynamic d = 1; ... } }` neodkazuje na žádné typy, které jsou požadovány pro. `dynamic`
+- Soukromá funkce – členové (metody, vlastnosti a události) jsou odebrány v případech, kdy jejich odebrání nepozorovatelně ovlivní kompilaci. Pokud neexistují žádné <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributy, udělejte totéž pro členy vnitřní funkce.
+- Všechny typy (včetně privátních nebo vnořených typů) jsou však uloženy v referenčních sestaveních. Všechny atributy jsou zachovány (i interní).
+- Všechny virtuální metody jsou zachovány. Explicitní implementace rozhraní jsou zachovány. Explicitně implementované vlastnosti a události jsou zachované, protože jejich přistupující objekty jsou virtuální (a jsou proto zachované).
+- Všechna pole struktury jsou zachována. (Toto je kandidát pro upřesnění poC#7,1)
 
-`-refout` a [ `-refonly` ](refonly-compiler-option.md) možnosti se vzájemně vylučují.
+Možnosti `-refout` [a`-refonly`](refonly-compiler-option.md) se vzájemně vylučují.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
