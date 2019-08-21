@@ -35,11 +35,9 @@
           items:
             - name: 'Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms'
               href: how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md
-            - name: Zakázání sledování DPI v sadě Visual Studio
-              href: disable-dpi-awareness-visual-studio.md
         - name: Podpora vysokého nastavení DPI ve Windows Forms
           href: high-dpi-support-in-windows-forms.md
-    - name: 'Změna vzhledu Windows Forms '
+    - name: Změna vzhledu Windows Forms
       href: changing-the-appearance-of-windows-forms.md
       items:
         - name: 'Postupy: Změna ohraničení Windows Forms'
@@ -77,7 +75,7 @@
               href: mouse-pointers-in-windows-forms.md
             - name: Zachycení myši ve Windows Forms
               href: mouse-capture-in-windows-forms.md
-            - name: 'Přetažení funkce ve Windows Forms '
+            - name: Přetažení funkce ve Windows Forms
               href: drag-and-drop-functionality-in-windows-forms.md
         - name: 'Postupy: Simulace událostí myši a klávesnice v kódu'
           href: how-to-simulate-mouse-and-keyboard-events-in-code.md

@@ -15,6 +15,10 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Nasazení do Databricks
       href: tutorials/databricks-deployment.md
+- name: Návody
+  items:
+    - name: Ladění aplikace
+      href: how-to-guides/debug.md
 - name: Odkaz
   items:
     - name: Referenční dokumentace ke knihovně API
