@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-ms.openlocfilehash: e011375ed069a48f80364e529e80397f5f0495a3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a627ac51399b67aeb7da8c3d98a4530248a84703
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589607"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659738"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Obecné typy v běhovém prostředí (Průvodce programováním v C#)
 Při kompilaci obecného typu nebo metody do jazyka MSIL (Microsoft Intermediate Language) obsahuje metadata, která ji identifikují jako parametry typu. Způsob, jakým se používá jazyk MSIL pro obecný typ, se liší v závislosti na tom, zda je zadaný parametr typu hodnotový nebo odkazový typ.  
@@ -52,4 +52,4 @@ Při kompilaci obecného typu nebo metody do jazyka MSIL (Microsoft Intermediate
 - <xref:System.Collections.Generic>
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Úvod do obecných typů](./index.md)
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)

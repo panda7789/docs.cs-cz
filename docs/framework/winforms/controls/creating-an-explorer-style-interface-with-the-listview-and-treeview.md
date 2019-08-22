@@ -13,17 +13,16 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-ms.openlocfilehash: 540226dbbada0373854144ac874d2164208ad943
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: d80f8e3bc729689b274af520bc37fda8417b0407
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039915"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658571"
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře
 
 Jednou z výhod sady Visual Studio je možnost vytvářet profesionálně vypadající model Windows Forms aplikace v krátké době. Běžným scénářem je vytvoření uživatelského rozhraní s <xref:System.Windows.Forms.ListView> ovládacími prvky a <xref:System.Windows.Forms.TreeView> , které se podobá funkci Průzkumníka Windows v operačních systémech Windows. Průzkumník Windows zobrazuje hierarchickou strukturu souborů a složek v počítači uživatele.
-
 
 ### <a name="to-create-the-form-containing-a-listview-and-treeview-control"></a>Vytvoření formuláře obsahujícího ovládací prvek ListView a TreeView
 

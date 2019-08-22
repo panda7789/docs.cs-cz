@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ad0ae023215eeb1f42f9351369ee77d41d537b88
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: b82be30c18cde361aa412ee1b631c8368c8de1b3
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487725"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663932"
 ---
 # <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring> Element
-Dá pokyn modulu runtime ke shromažďování statistik na všech doménách aplikace v procesu po dobu trvání procesu.  
+Instruuje modul runtime za účelem shromažďování statistik o všech doménách aplikace v procesu po dobu životního cyklu procesu.  
   
- \<Konfigurace >  
-\<modul runtime >  
+ \<> Konfigurace  
+\<> modulu runtime  
 \<appDomainResourceMonitoring>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,14 +35,14 @@ Dá pokyn modulu runtime ke shromažďování statistik na všech doménách apl
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime shromažďuje statistiky pro sledování prostředků domény aplikace.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime shromažďuje statistiku pro monitorování prostředků domény aplikace.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`true`|Statistika Sledování prostředků domény aplikace se shromažďují.|  
-|`false`|Statistika Sledování prostředků domény aplikace se neshromažďují.|  
+|`true`|Shromažďují se statistiky pro monitorování prostředků domény aplikace.|  
+|`false`|Statistika pro monitorování prostředků domény aplikace se neshromažďují.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -55,14 +55,14 @@ Dá pokyn modulu runtime ke shromažďování statistik na všech doménách apl
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Sledování prostředků aplikační domény nabízíme v rámci doménové třídy spravované aplikace, který je hostitelem [iclrappdomainresourcemonitor –](../../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) rozhraní a trasování událostí pro Windows (ETW). Pokud je zapnuto monitorování, statistiky se shromažďují pro všechny domény aplikace v procesu po dobu trvání procesu.  
+ Monitorování prostředků domény aplikace je dostupné prostřednictvím třídy domény spravované aplikace, hostitelského rozhraní [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) a trasování událostí pro Windows (ETW). Pokud je monitorování povoleno, Statistika se shromáždí pro všechny domény aplikace v procesu po dobu životního cyklu procesu.  
   
- Chcete-li povolit monitorování ze spravovaného kódu, použijte <xref:System.AppDomain.MonitoringIsEnabled%2A> vlastnost.  
+ Chcete-li povolit monitorování ze spravovaného kódu <xref:System.AppDomain.MonitoringIsEnabled%2A> , použijte vlastnost.  
   
- Tento prvek konfigurace je k dispozici pouze v rozhraní .NET Framework 4 a novější.  
+ Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit sledování prostředků domény aplikace.  
+ Následující příklad ukazuje, jak povolit monitorování prostředků domény aplikace.  
   
 ```xml  
 <configuration>  
@@ -75,5 +75,5 @@ Dá pokyn modulu runtime ke shromažďování statistik na všech doménách apl
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

@@ -10,17 +10,17 @@ helpviewer_keywords:
 - add element, webRequestModules
 - <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-ms.openlocfilehash: 4c1116c088c12ad3859714c8d75704d0156c12f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f99c5b0dc7eab57d4e3e86f49dbbb3228c7b7d8b
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705139"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664209"
 ---
-# <a name="add-element-for-webrequestmodules-network-settings"></a>\<Přidat > – Element pro webRequestModules (nastavení sítě)
-Přidá vlastní modul webové žádosti do aplikace.  
+# <a name="add-element-for-webrequestmodules-network-settings"></a>\<Přidat > element pro webRequestModules (nastavení sítě)
+Přidá do aplikace vlastní modul webové žádosti.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<webRequestModules>  
 \<add>  
@@ -41,8 +41,8 @@ Přidá vlastní modul webové žádosti do aplikace.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`prefix`|Předponu identifikátoru URI pro žádosti zpracovat tento modul webové žádosti.|  
-|`type`|Plně kvalifikovaného názvu (indikován <xref:System.Type.FullName%2A> vlastnost) a název sestavení (indikován <xref:System.Reflection.Assembly.FullName%2A> vlastnost), oddělená čárkou, která implementuje tento modul webové žádosti.|  
+|`prefix`|Předpona identifikátoru URI pro požadavky zpracovávané tímto modulem webového požadavku.|  
+|`type`|Plně kvalifikovaný název typu (uvedený <xref:System.Type.FullName%2A> vlastností) a název sestavení (označeno <xref:System.Reflection.Assembly.FullName%2A> vlastností), které jsou odděleny čárkou, která implementuje tento modul webové žádosti.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,22 +51,22 @@ Přidá vlastní modul webové žádosti do aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které se použijí k vyžádání informací od hostitelů v síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `prefix` Atribut definuje předponu identifikátoru URI, který používá zadaný modul webové žádosti. Webové žádosti moduly jsou běžně registrovány pro zpracování konkrétní protokolu, jako je například HTTP nebo FTP, ale může být registrován pro obsluhu žádost pro konkrétní server nebo cesta na serveru.  
+ `prefix` Atribut definuje předponu identifikátoru URI, která používá zadaný modul webové žádosti. Moduly webových požadavků jsou obvykle registrovány pro zpracování konkrétního protokolu, například HTTP nebo FTP, ale mohou být registrovány pro zpracování požadavku na konkrétní server nebo cestu na serveru.  
   
- Webový požadavek modul se vytvoří při odpovídající předpony identifikátoru URI je předán <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody.  
+ Modul webové žádosti je vytvořen při předání <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> předpony odpovídajícího identifikátoru URI metodě.  
   
- Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI. Například `http` nebo `http://www.contoso.com`.
+ Hodnota `prefix` atributu by měla být předními znaky platného identifikátoru URI. Například `http` nebo `http://www.contoso.com`.
   
- Hodnota `type` atribut by měl být platný název typu a odpovídající název sestavení, oddělených čárkami.
+ Hodnota `type` atributu by měla být platný název typu a odpovídající název sestavení oddělený čárkou.
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad registruje vlastní modul webového požadavku pro protokol HTTP. Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.  
+ Následující příklad registruje vlastní modul webové žádosti pro protokol HTTP. Hodnoty pro Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
   
 ```xml  
 <configuration>  
@@ -84,4 +84,4 @@ Přidá vlastní modul webové žádosti do aplikace.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebRequest>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

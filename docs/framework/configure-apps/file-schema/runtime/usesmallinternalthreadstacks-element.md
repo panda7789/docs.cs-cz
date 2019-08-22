@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 70113d98c5a4ab41700f6c9842dba89e2b49c297
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 74678089bb1b19295983064eb7ad54fbf0a1e361
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489325"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663377"
 ---
-# <a name="usesmallinternalthreadstacks-element"></a>\<Usesmallinternalthreadstacks – > – Element
-Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že zadáte zásobníku explicitní velikost při vytváření příslušná vlákna, které se používá interně, místo použití výchozí velikost zásobníku pro tato vlákna.  
+# <a name="usesmallinternalthreadstacks-element"></a>\<UseSmallInternalThreadStacks – element >
+Požadavky, které modul CLR (Common Language Runtime) omezuje využití paměti tím, že při vytváření určitých vláken, která používá interně, nepoužijí výchozí velikost zásobníku pro tato vlákna, a to zadáním explicitní velikosti zásobníku.  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
-\<Usesmallinternalthreadstacks – > – Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
+\<UseSmallInternalThreadStacks – element >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda požadavek, aby velikosti zásobníku explicitní použití CLR místo výchozí velikost zásobníku při vytváření příslušná vlákna, které se používá interně. Explicitní zásobníku velikosti jsou menší než výchozí velikost zásobníku 1 MB.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda má být vyžádat, aby CLR používal explicitní velikosti zásobníku namísto výchozí velikosti zásobníku, když vytvoří určitá vlákna, která používá interně. Explicitní velikosti zásobníku jsou menší než výchozí velikost zásobníku 1 MB.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|true|Žádost o velikosti explicitní zásobníku.|  
-|false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro rozhraní .NET Framework 4.|  
+|true|Požádejte o explicitní velikosti zásobníku.|  
+|false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro .NET Framework 4.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,15 +54,15 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek konfigurace slouží k vyžádání použití nižší virtuální paměti v procesu, protože velikosti explicitní vlákno, které používá modul CLR pro interní podprocesů, pokud požadavek zachovaný, jsou menší než výchozí velikost.  
+ Tento prvek konfigurace se používá k vyžádání omezeného využití virtuální paměti v procesu, protože explicitní velikosti vláken, které modul CLR používá pro vnitřní vlákna, je-li požadavek splněn, je menší než výchozí velikost.  
   
 > [!IMPORTANT]
->  Tento prvek konfigurace je požadavek na modul CLR, nikoli nezbytný požadavek. V rozhraní .NET Framework 4, požadavek zachovaný pouze pro x86 architektury. Tento element může být ignorovány zcela v budoucích verzích CLR nebo nahrazuje velikosti explicitní zásobníku, které se vždycky použijí pro interní vybraná vlákna.  
+>  Tento prvek konfigurace je požadavek na CLR místo absolutního požadavku. V .NET Framework 4 se požadavek splní jenom v architektuře x86. Tento element může být zcela ignorován v budoucích verzích CLR nebo nahrazen explicitními velikostmi zásobníků, které jsou vždy použity pro vybraná interní vlákna.  
   
- Určení, že tento prvek konfigurace obchoduje spolehlivost pro menší využití virtuální paměti Pokud CLR respektuje požadavek, protože menší velikosti zásobníku může potenciálně zásobníku pravděpodobně přetečení.  
+ Zadáním tohoto elementu konfigurace zajistíte spolehlivost pro menší využití virtuální paměti, pokud CLR požadavek splní, protože menší velikosti zásobníků by mohly způsobit vyšší natečení zásobníku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak požádat o zásobníku explicitní použití CLR velikosti pro určité vlákna, která se používá interně.  
+ Následující příklad ukazuje, jak požadovat, aby CLR používal explicitní velikosti zásobníku pro určitá vlákna, která používá interně.  
   
 ```xml  
 <configuration>  
@@ -74,5 +74,5 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

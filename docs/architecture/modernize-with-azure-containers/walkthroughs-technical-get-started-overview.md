@@ -2,12 +2,12 @@
 title: Návody a přehled technických začátků
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Návody a přehled technických informací Začínáme
 ms.date: 04/28/2018
-ms.openlocfilehash: 81f7d9fbf596a23b83e2dc9251788b33a8817e16
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 190b33c4307b09bab0543d481e66ac9328074a0d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676883"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660888"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a přehled technických začátků
 
@@ -121,7 +121,7 @@ Kontejnerové aplikace mají také plošší křivku škálování na více inst
 
 V ideálních situacích není nutné dělat žádné změny kódu aplikace (C\#). Ve většině scénářů potřebujete jenom soubory metadat nasazení Docker (fázemi a soubory Docker Compose).
 
-### <a name="next-steps"></a>Další postup
+### <a name="next-steps"></a>Další kroky
 
 Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
@@ -174,7 +174,7 @@ Azure v současné době poskytuje virtuálnímu počítači s názvem **Windows
 
 I když se kontejnery Windows dají nasadit na místní virtuální počítače s Windows serverem 2016 při nasazení do Azure, získáte snadnější způsob, jak začít s připravenými virtuálními počítači kontejnerů Windows serveru. Získáte také běžné online umístění, které je dostupné pro testery a automatickou škálovatelnost prostřednictvím Azure Virtual Machine Scale Sets.
 
-### <a name="next-steps"></a>Další kroky
+### <a name="next-steps"></a>Další postup
 
 Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:
 
@@ -274,7 +274,7 @@ Díky Kubernetes můžou vývojáři sledovat fyzické a virtuální počítače
 
 - Kontroly stavu aplikace
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:<https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
@@ -302,10 +302,10 @@ Cílem tohoto návodu je zjistit, jak nasadit aplikaci založenou na kontejnerec
 
 Nasazení do Azure App Service for Containers nabízí výhody kontejnerů spárovaných s výhodami PaaS Azure App Service. Službu App Service je možné snadno škálovat vertikálně i vodorovně a je možné ji nakonfigurovat na automatické škálování tak, aby splňovala měnící se požadavky. Aktualizace se dají provádět s nulovými výpadky a konfigurace průběžného nasazování z registru se dá snadno nakonfigurovat taky.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 Podrobnější zkoumání tohoto obsahu najdete na wikiwebu GitHub:<https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 
 > [!div class="step-by-step"]
 > [Předchozí](modernize-existing-apps-to-cloud-optimized/migrate-to-hybrid-cloud-scenarios.md)Další
-> [](conclusions.md)
+> [](conclusions.md) <!-- Next Chapter -->

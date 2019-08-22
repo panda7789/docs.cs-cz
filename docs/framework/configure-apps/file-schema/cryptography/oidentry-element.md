@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: c686d2b99ad66aec753a356b09fa3c7151193808
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 013994e36c4c63410a753967cbac92c38783ae62
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674743"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659591"
 ---
-# <a name="oidentry-element"></a>\<oidentry – > – Element
-Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.  
+# <a name="oidentry-element"></a>\<oidEntry – element >
+Mapuje identifikátor objektu ASN. 1 (OID) na popisný název.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<mscorlib>  
-\<cryptographySettings>  
+\<cryptographySettings >  
 \<oidMap>  
 \<oidEntry>  
   
@@ -37,8 +37,8 @@ Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**OID**|Požadovaný atribut.<br /><br /> Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný pomocí vaší třídy.|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.|  
+|**IDENTIFIKÁTOR**|Požadovaný atribut.<br /><br /> Určuje ID ASN. 1, které odpovídá algoritmu implementovanému vaší třídou.|  
+|**name**|Požadovaný atribut.<br /><br /> Určuje hodnotu atributu **Name** ve [ \<značce nameEntry >](nameentry-element.md) .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,15 +48,15 @@ Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`cryptographySettings`|Obsahuje nastavení šifrování.|  
-|`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
-|`oidMap`|Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.|  
+|`cryptographySettings`|Obsahuje nastavení kryptografie.|  
+|`mscorlib`|`cryptographySettings` Obsahuje element.|  
+|`oidMap`|Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Identifikátory objektů ASN.1 identifikovat v některé formáty kryptografické algoritmy. Mapování identifikátorů objektů na popisné názvy algoritmů, které chcete identifikovat.  
+ Identifikátory objektů ASN. 1 identifikují algoritmy v některých kryptografických formátech. Namapujte identifikátory objektů na popisné názvy algoritmů, které chcete identifikovat.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<oidentry – >** element namapovat identifikátor objektu pro algoritmus hash RIPEMD 160 implementace algoritmu hash.  
+ Následující příklad ukazuje způsob použití  **\<prvku oidEntry >** k mapování identifikátoru objektu pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
   
 ```xml  
 <configuration>  
@@ -80,8 +80,8 @@ Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
-- [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
-- [Mapování identifikátorů objektů na algoritmy šifrování](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)
+- [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)
+- [Mapování identifikátorů objektů na algoritmy šifrování](../../map-object-identifiers-to-cryptography-algorithms.md)

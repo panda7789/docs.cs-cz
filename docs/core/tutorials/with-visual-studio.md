@@ -1,88 +1,88 @@
 ---
-title: Vytvořte si aplikaci C# Hello World pomocí .NET Core v sadě Visual Studio 2017
-description: Zjistěte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí jazyka C# pomocí sady Visual Studio 2017.
+title: Sestavení aplikace C# Hello World pomocí .NET Core v aplikaci Visual Studio 2017
+description: Naučte se vytvářet jednoduché konzolové aplikace .NET Core pomocí C# sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: b92c3b293b37921e1a8b557a7842027ecce8851c
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: b85f878d8a391581fcc7419b3ca4d656eb5595af
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959261"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660447"
 ---
-# <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení C# aplikace Hello World pomocí sady .NET Core SDK v sadě Visual Studio 2017
+# <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení aplikace C# Hello World pomocí .NET Core SDK v aplikaci Visual Studio 2017
 
-Toto téma obsahuje podrobný Úvod k vytváření, ladění a publikování jednoduchou konzolovou aplikaci .NET Core pomocí jazyka C# v sadě Visual Studio 2017. Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro sestavování aplikací .NET Core. Za předpokladu, aplikace nemá závislosti pro konkrétní platformu, aplikaci můžete spustit na libovolné platformě, který cílí na .NET Core a na jakémkoli počítači, který má nainstalovaný .NET Core.
+Toto téma poskytuje podrobný Úvod k sestavování, ladění a publikování jednoduché konzolové aplikace .NET Core pomocí C# sady Visual Studio 2017. Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro vytváření aplikací .NET Core. Pokud aplikace nemá závislosti specifické pro platformu, aplikace může běžet na libovolné platformě, kterou .NET Core cílí a na jakémkoli systému, ve kterém je nainstalováno rozhraní .NET Core.
 
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované. Můžete vyvíjet aplikace s využitím .NET Core 1.1 nebo .NET Core 2.0.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s nainstalovanou úlohou vývoj ".NET Core pro různé platformy". Svou aplikaci můžete vyvíjet buď pomocí .NET Core 1,1 nebo .NET Core 2,0.
 
-Další informace najdete v tématu [předpoklady pro .NET Core ve Windows](../../core/windows-prerequisites.md) tématu.
+Další informace najdete v tématu [požadavky pro .NET Core v systému Windows](../windows-prerequisites.md) .
 
-## <a name="a-simple-hello-world-application"></a>Jednoduchou aplikaci Hello World
+## <a name="a-simple-hello-world-application"></a>Jednoduchá aplikace Hello World
 
 Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte podle těchto kroků:
 
-1. Spusťte Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textové pole, zadejte "Hello World". Vyberte tlačítko **OK**.
+1. Spusťte Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně *Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "HelloWorld". Vyberte tlačítko **OK**.
 
-   ![Dialogové okno nového projektu s vybraná aplikace konzoly](./media/with-visual-studio/visual-studio-new-project.png)
+   ![Dialog Nový projekt s vybranou konzolovou aplikací](./media/with-visual-studio/visual-studio-new-project.png)
 
-1. Visual Studio používá šablony k vytvoření projektu. Šablona konzolové aplikace jazyka C# pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu, `Main`, která přijímá <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace metodu, která je automaticky volána modulem runtime při spuštění aplikace. Jsou k dispozici v jakékoli argumenty příkazového řádku při spuštění aplikace *args* pole.
+1. Visual Studio používá šablonu k vytvoření projektu. Šablona C# konzolové aplikace pro .NET Core automaticky definuje třídu `Program`s jedinou metodou `Main`, která přijímá <xref:System.String> pole jako argument. `Main`je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v poli *args* .
 
-   ![Visual Studio a nový projekt Hello World](./media/with-visual-studio/visual-studio-main-window.png)
+   ![Visual Studio a nový HelloWorld projekt](./media/with-visual-studio/visual-studio-main-window.png)
 
-   Šablona vytvoří jednoduchou aplikaci "Hello World". Volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení řetězcový literál "Hello World!" v okně konzoly. Výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů můžete spustit program v režimu ladění. Pokud tak učiníte, v okně konzoly je viditelná pro jenom stručný časový interval předtím, než se toto okno zavře. K tomu dochází, `Main` metoda se ukončí a ukončení aplikace co nejdříve jeden příkaz v `Main` metody.
+   Šablona vytvoří jednoduchou aplikaci "Hello World". Volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení řetězcového literálu "Hello World!" v okně konzoly. Výběrem tlačítka **HelloWorld** se zelenou šipkou na panelu nástrojů můžete spustit program v režimu ladění. V takovém případě je okno konzoly viditelné pouze v krátkém časovém intervalu před jeho zavřením. K tomu dochází, `Main` protože metoda končí a aplikace končí, jakmile se `Main` v metodě spustí jediný příkaz.
 
-1. Aby v aplikaci k pozastavení před zavřením okna konzoly, přidejte následující kód bezprostředně po volání <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metody:
+1. Chcete-li způsobit pozastavení aplikace před zavřením okna konzoly, přidejte následující kód hned za volání <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metody:
 
    ```csharp
    Console.Write("Press any key to continue...");
    Console.ReadKey(true);
    ```
 
-   Tento kód zobrazí výzvu k stisknutím libovolné klávesy a potom program pozastaví, dokud se stiskne klávesa.
+   Tento kód vyzve uživatele, aby stiskne libovolný klíč, a pak program pozastaví, dokud nestiskne klávesu.
 
-1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Tento program zkompiluje do intermediate language (IL), která se převádí do binárního kódu, kompilátor just-in-time (JIT).
+1. Na řádku nabídek vyberte **sestavení** > **sestavení**. Tím se program zkompiluje do mezilehlého jazyka (IL), který je převeden do binárního kódu pomocí kompilátoru JIT (just-in-time).
 
-1. Spusťte program tak, že vyberete **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů.
+1. Spusťte program tak, že vyberete tlačítko **HelloWorld** se zelenou šipkou na panelu nástrojů.
 
-   ![Okna konzoly zobrazuje Hello World stisknutím libovolné klávesy pokračovat](./media/with-visual-studio/hello-world-console.png)
+   ![Okno konzoly zobrazující Hello World pro pokračování stiskněte libovolnou klávesu](./media/with-visual-studio/hello-world-console.png)
 
-1. Stisknutím jakékoli klávesy zavřete okno konzoly.
+1. Stisknutím libovolné klávesy zavřete okno konzoly.
 
 ## <a name="enhancing-the-hello-world-application"></a>Vylepšení aplikace Hello World
 
-Vylepšete vaše aplikace výzva k zadání názvu a zobrazit je spolu se datum a čas. Upravit a otestujte aplikaci, postupujte takto:
+Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobrazila se spolu s datem a časem. Chcete-li program upravit a otestovat, postupujte následovně:
 
-1. Zadejte následující kód jazyka C# v okně kódu ihned po levá hranatá závorka, která následuje `static void Main(string[] args)` řádku a před první uzavírací závorku:
+1. V okně kódu C# zadejte následující kód hned za levou závorku, která následuje `static void Main(string[] args)` po řádku a před první pravou závorkou:
 
    [!code-csharp[GettingStarted#1](../../../samples/snippets/csharp/getting_started/with_visual_studio/helloworld.cs#1)]
 
-   Tento kód nahradí obsah `Main` metody.
+   Tento kód nahrazuje obsah `Main` metody.
 
-   ![Visual Studio programu jazyka c sharp soubor s aktualizovanou metodu Main](./media/with-visual-studio/visual-csharp-code-window.png)
+   ![Visual Studio program c-ostrý soubor s aktualizovanou hlavní metodou](./media/with-visual-studio/visual-csharp-code-window.png)
 
-   Tento kód zobrazí "Jaký je název vašeho?" v okně konzoly a počká, dokud uživatel zadá řetězec, za nímž následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnota <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `date`. Nakonec se používá [interpolovaný řetězec](../../csharp/language-reference/tokens/interpolated.md) k zobrazení tyto hodnoty v okně konzoly.
+   Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou ENTER. Tento řetězec je uložen do proměnné s názvem `name`. Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date`. Nakonec používá [interpolované řetězce](../../csharp/language-reference/tokens/interpolated.md) k zobrazení těchto hodnot v okně konzoly.
 
-1. Kompilovat program výběrem **sestavení** > **sestavit řešení**.
+1. Zkompilujte program tím, že kliknete na **sestavit** > sestavení**řešení**.
 
-1. Spusťte program v režimu ladění v sadě Visual Studio vyberte zelenou šipku na panelu nástrojů, stisknutím klávesy F5 nebo výběrem položky **ladění** > **spustit ladění** položky nabídky. Na výzvy odpovíte zadáním názvu a stisknutím klávesy Enter.
+1. Spusťte program v režimu ladění v sadě Visual Studio tak, že vyberete zelenou šipku na panelu nástrojů, stisknete klávesu F5 > nebo kliknete na položku nabídky**Spustit ladění** ladění. Zadáním názvu a stisknutím klávesy ENTER odpovězte na výzvu.
 
-   ![Okno konzoly s výstupem upravené programu](./media/with-visual-studio/hello-world-update.png)
+   ![Okno konzoly s upraveným výstupem programu](./media/with-visual-studio/hello-world-update.png)
 
-1. Stisknutím jakékoli klávesy zavřete okno konzoly.
+1. Stisknutím libovolné klávesy zavřete okno konzoly.
 
-Jste vytvořili a spustili aplikaci. K vývoji profesionální aplikace, proveďte některé další kroky pro zajištění připraven k vydání aplikace:
+Aplikaci jste vytvořili a spustili. Pro vývoj profesionální aplikace proveďte několik dalších kroků, aby vaše aplikace byla připravena k vydání:
 
-- Informace o ladění vaší aplikace najdete v tématu [ladit aplikaci .NET Core Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md).
+- Informace o ladění aplikace naleznete v tématu [ladění aplikace Hello World .NET Core pomocí sady Visual Studio 2017](debugging-with-visual-studio.md).
 
-- Informace o vývoji a publikování distribuovatelná verze vaší aplikace najdete v tématu [publikování aplikace .NET Core Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).
+- Informace o vývoji a publikování Distribuovatelný verze aplikace naleznete v tématu [publikování aplikace Hello World .NET Core pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).
 
 ## <a name="related-topics"></a>Související témata
 
-Místo konzolovou aplikaci můžete také vytvořit knihovnu tříd s .NET Core a Visual Studio 2017. Podrobný úvod naleznete zde [vytvoření knihovny tříd pomocí jazyka C# a .NET Core v sadě Visual Studio 2017](library-with-visual-studio.md).
+Namísto konzolové aplikace můžete také vytvořit knihovnu tříd pomocí .NET Core a sady Visual Studio 2017. Podrobný Úvod naleznete v tématu sestavování [knihovny tříd pomocí C# a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md).
 
-Můžete také vyvíjet konzolovou aplikaci .NET Core na Mac, Linux a Windows s použitím [Visual Studio Code](https://code.visualstudio.com/), editor kódu ke stažení. Podrobný návod najdete v části [Začínáme se službou Visual Studio Code](with-visual-studio-code.md).
+Konzolovou aplikaci .NET Core můžete také vyvíjet v systému Mac, Linux a Windows pomocí [Visual Studio Code](https://code.visualstudio.com/), editoru kódu ke stažení. Podrobný kurz najdete v tématu [Začínáme s Visual Studio Code](with-visual-studio-code.md).

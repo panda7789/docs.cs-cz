@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 3a5f38d1-ebc8-44de-aaeb-2929f6e6b48f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23917977add2343732957eaa8dad5d2176315acf
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: bd59d1bcc489f248cbeb397afffb638071df17b6
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689872"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663588"
 ---
-# <a name="netfx45cultureawarecomparergethashcodelongstrings-element"></a>\<NetFx45_CultureAwareComparerGetHashCode_LongStrings> Element
+# <a name="netfx45_cultureawarecomparergethashcode_longstrings-element"></a>\<NetFx45_CultureAwareComparerGetHashCode_LongStrings> Element
 
-Určuje, zda modul runtime používá pro výpočet kódů hash pro pevnou velikost paměti <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metody.
+Určuje, zda modul runtime používá k výpočtu kódů hash pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu pevnou velikost paměti.
 
-\<Konfigurace > \
-\<modul runtime > \
+\<> Konfigurace \
+\<běhové > \
 \<NetFx45_CultureAwareComparerGetHashCode_LongStrings>
 
 ## <a name="syntax"></a>Syntaxe
@@ -44,8 +44,8 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Value|Popis|
 |-----------|-----------------|
-|0|Modul common language runtime přiděluje variabilní velikost paměti pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu pro výpočet kódů hash. Toto nastavení je výchozí.|
-|1|Modul CLR přidělí pevnou velikost paměti <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu pro výpočet kódů hash.|
+|0|Modul CLR (Common Language Runtime) přiděluje proměnnou velikost paměti pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu výpočtu kódů hash. Toto nastavení je výchozí.|
+|1|Modul CLR (Common Language Runtime) přiděluje pevnou velikost paměti pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu výpočtu kódů hash.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -60,13 +60,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení, modul common language runtime přiděluje variabilní velikost paměti pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metody a <xref:System.ArgumentException> může být vyvolána, když se metoda se pokusí výpočtu kódů hash velmi dlouhých řetězců (přes několik milion znaků). Přidáním tohoto prvku do konfiguračního souboru aplikace a nastavení jeho `enabled` atribut na hodnotu "1", můžete určit, že <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metoda použila alternativní algoritmus, který pro výpočet kódů hash přidělí pevnou velikost paměti.
+Ve výchozím nastavení modul CLR (Common Language Runtime) přiděluje proměnlivé množství paměti <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> pro metodu <xref:System.ArgumentException> a může být vyvolána, když se metoda pokusí vypočítat hash kód velmi velkých řetězců (více než 1 milion znaků). Přidáním tohoto elementu do konfiguračního souboru aplikace a nastavením jeho `enabled` atributu na hodnotu "1" můžete určit <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> , že metoda používá alternativní algoritmus, který přiděluje pevnou velikost paměti pro výpočet kódů hash.
 
 > [!IMPORTANT]
-> `<NetFx45_CultureAwareComparerGetHashCode_LongStrings>` Není použit element v [!INCLUDE[win8](../../../../../includes/win8-md.md)] a novějších verzích.
+> Element se nepoužívá v [!INCLUDE[win8](../../../../../includes/win8-md.md)] a novějších verzích. `<NetFx45_CultureAwareComparerGetHashCode_LongStrings>`
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType>
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

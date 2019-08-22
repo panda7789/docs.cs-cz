@@ -2,12 +2,12 @@
 title: Variance v delegátechC#()
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 80062f755a6159c48ff595556db99b0ac067533a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0a77c4abe8f2540e4b3b33d2cf99a20c3c2fa942
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595172"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659941"
 ---
 # <a name="variance-in-delegates-c"></a>Variance v delegátechC#()
 .NET Framework 3,5 zavedl podporu variance pro párové signatury metod s typy delegátů ve C#všech delegátech v. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než které jsou určeny typem delegáta. . To zahrnuje obecné i neobecné delegáty.  
@@ -198,6 +198,6 @@ public static void Test()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../../standard/generics/index.md)
 - [Použití odchylky pro obecné delegáty Func a ActionC#()](./using-variance-for-func-and-action-generic-delegates.md)
 - [Postupy: Kombinovat delegáty (Delegáti vícesměrového vysílání)](../../delegates/how-to-combine-delegates-multicast-delegates.md)

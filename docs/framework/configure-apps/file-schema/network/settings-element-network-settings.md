@@ -8,19 +8,19 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: a1733803d1f5a5bf64aeb69d0360cef3de3b3a69
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12797e2f06d03aacd81700eae57d5776c1a6f354
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674412"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663998"
 ---
-# <a name="settings-element-network-settings"></a>\<Nastavení > – Element (nastavení sítě)
-Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=nameWithType> oboru názvů.  
+# <a name="settings-element-network-settings"></a>\<Nastavení > element (nastavení sítě)
+Nakonfiguruje základní možnosti sítě pro <xref:System.Net?displayProperty=nameWithType> obor názvů.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<settings>  
+\<Nastavení >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,26 +46,26 @@ Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[httpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.|  
-|[httpWebRequest](../../../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md)|Přizpůsobí parametrů webové žádosti.|  
-|[ipv6](../../../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)|Umožňuje Internet Protocol verze 6 (IPv6) podporují.|  
-|[\<performanceCounter > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/performancecounter-element-network-settings.md)|Umožňuje síťovým čítače výkonu.|  
-|[servicePointManager](../../../../../docs/framework/configure-apps/file-schema/network/servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
-|[Soketu](../../../../../docs/framework/configure-apps/file-schema/network/socket-element-network-settings.md)|Určuje, zda operace soketu používat porty dokončení.|  
-|[\<webproxyscript – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/webproxyscript-element-network-settings.md)|Konfiguruje vlastnosti souboru, který používá ke zjišťování webové proxy servery.|  
+|[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané <xref:System.Net.HttpListener> třídou.|  
+|[httpWebRequest](httpwebrequest-element-network-settings.md)|Přizpůsobuje parametry webového požadavku.|  
+|[ipv6](ipv6-element-network-settings.md)|Povolí podporu Internet Protocol verze 6 (IPv6).|  
+|[\<performanceCounter – element > (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
+|[servicePointManager](servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
+|[zásuvky](socket-element-network-settings.md)|Určuje, jestli operace soketu používají porty dokončení.|  
+|[\<webProxyScript – element > (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

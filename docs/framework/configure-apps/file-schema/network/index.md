@@ -12,34 +12,34 @@ helpviewer_keywords:
 - connections [.NET Framework], network configuration elements
 - network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
-ms.openlocfilehash: 71d945e6046a8648a812de939f197429bc695808
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f5d762a2b688bebcb7c027be6c639b6d64c069d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674529"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664108"
 ---
 # <a name="network-settings-schema"></a>Schéma nastavení sítě
-Nastavení sítě určete, jak rozhraní .NET Framework připojí k Internetu. Následující tabulka popisuje funkce každý podřízený element konfigurace v rámci [ \<system.Net > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md).  
+Nastavení sítě určují, jak se .NET Framework připojí k Internetu. Následující tabulka popisuje funkci každého podřízeného prvku konfigurace pod [ \<prvkem System .NET > (nastavení sítě)](system-net-element-network-settings.md).  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<authenticationModules – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření požadavků na Internetu.|  
-|[\<connectionManagement – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k hostiteli v síti Internet.|  
-|[\<defaultProxy > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Určuje proxy server používá pro požadavky HTTP na Internetu.|  
-|[\<mailSettings – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Obsahuje nastavení pro možnosti pro odesílání pošty.|  
-|[\<requestCaching – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
-|[\<webRequestModules – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly používaná pro požádání o informace z hostitelů v Internetu.|  
+|[\<authenticationModules – element > (nastavení sítě)](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování internetových požadavků.|  
+|[\<connectionManagement – element > (nastavení sítě)](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k hostitelům v Internetu.|  
+|[\<defaultProxy – element > (nastavení sítě)](defaultproxy-element-network-settings.md)|Určuje proxy server, který se používá pro požadavky HTTP na Internet.|  
+|[\<mailSettings – element > (nastavení sítě)](mailsettings-element-network-settings.md)|Obsahuje nastavení pro možnosti odesílání pošty.|  
+|[\<requestCaching – element > (nastavení sítě)](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
+|[\<webRequestModules – element > (nastavení sítě)](webrequestmodules-element-network-settings.md)|Určuje moduly, které se používají k vyžádání informací od hostitelů v Internetu.|  
   
- Nastavení URI zadejte způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI). Následující tabulka popisuje funkce každý podřízený element konfigurace v rámci [ \<Uri > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md).  
+ Nastavení identifikátoru URI určuje způsob, jakým .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier). Následující tabulka popisuje funkci každého podřízeného prvku konfigurace pod [ \<identifikátorem URI > element (nastavení URI)](uri-element-uri-settings.md).  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<IDN > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Určuje, pokud analýza mezinárodních názvů domén (IDN) platí pro názvy domén.|  
-|[\<iriParsing > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.|  
-|[\<schemeSettings > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.|  
+|[\<Element > IDN (nastavení URI)](idn-element-uri-settings.md)|Určuje, jestli se pro názvy domén použije analýza v mezinárodním názvu domény (IDN).|  
+|[\<iriParsing – element > (nastavení URI)](iriparsing-element-uri-settings.md)|Určuje, jestli se <xref:System.Uri> má použít analýza mezinárodní identifikátoru prostředků (IRI) a jestli se mají použít pravidla analýzy IRI.|  
+|[\<schemeSettings – element > (nastavení URI)](schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace internetových aplikací](../../../../../docs/framework/network-programming/configuring-internet-applications.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Konfigurace internetových aplikací](../../../network-programming/configuring-internet-applications.md)
+- [Schéma konfiguračního souboru](../index.md)

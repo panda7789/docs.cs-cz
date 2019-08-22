@@ -8,19 +8,19 @@ helpviewer_keywords:
 - specifiedPickupDirectory element
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
-ms.openlocfilehash: a459fee557285935c383dcfaf512c8a8a9aea570
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b2e31dee4f5aff2bf6cedf5c4e9ca235695b0a53
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674364"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659095"
 ---
-# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedpickupdirectory – > – Element (nastavení sítě)
-Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).  
+# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory – element > (nastavení sítě)
+Nakonfiguruje místní adresář pro server SMTP (Simple Mail Transport Protocol).  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<mailSettings>  
+\<mailSettings >  
 \<smtp>  
 \<specifiedPickupDirectory>  
   
@@ -39,7 +39,7 @@ Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`pickupDirectoryLocation`|Adresář, kde aplikace ukládat e-mailu pro pozdější zpracování serverem SMTP.|  
+|`pickupDirectoryLocation`|Adresář, ve kterém aplikace ukládají e-mail pro pozdější zpracování serverem SMTP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,10 +48,10 @@ Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<SMTP > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Konfiguruje možnosti pro odesílání pošty Simple Mail Transport Protocol (SMTP).|  
+|[\<> elementu SMTP (nastavení sítě)](smtp-element-network-settings.md)|Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).|  
   
 ## <a name="remarks"></a>Poznámky  
- `specifiedPickupDirectory` Atribut nastaví adresář, kde aplikace ukládat e-mailové zprávy na zpracování serverem SMTP.  
+ `specifiedPickupDirectory` Atribut nastavuje adresář, ve kterém aplikace ukládají e-mailové zprávy, které server SMTP zpracuje.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad určuje c:\maildrop jako předávací adresář pošty.  
@@ -75,4 +75,4 @@ Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

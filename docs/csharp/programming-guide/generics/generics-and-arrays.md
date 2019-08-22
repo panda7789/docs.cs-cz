@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], arrays
 - arrays [C#], generics
 ms.assetid: 7d956536-3851-41b5-94ad-3e7c0a5fe485
-ms.openlocfilehash: f5b82d470f728129fc76851bc2708e20085d5326
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: fee66cf7bd0ab3c051ea67acc323efa02a21a017
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589673"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659795"
 ---
 # <a name="generics-and-arrays-c-programming-guide"></a>Obecné typy a pole (Průvodce programováním v C#)
 V C# 2,0 a novějších, jednorozměrná pole, která mají dolní mez s hodnotou nula automaticky implementována <xref:System.Collections.Generic.IList%601>. To umožňuje vytvořit obecné metody, které mohou použít stejný kód k iterování prostřednictvím polí a dalších typů kolekcí. Tato technika je primárně užitečná pro čtení dat v kolekcích. <xref:System.Collections.Generic.IList%601> Rozhraní nelze použít k přidání nebo odebrání prvků z pole. Pokud se pokusíte zavolat <xref:System.Collections.Generic.IList%601> metodu, jako <xref:System.Collections.Generic.IList%601.RemoveAt%2A> je například na pole v tomto kontextu, bude vyvolána výjimka.  
@@ -26,4 +26,4 @@ V C# 2,0 a novějších, jednorozměrná pole, která mají dolní mez s hodnoto
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Obecné typy](./index.md)
 - [Pole](../arrays/index.md)
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)

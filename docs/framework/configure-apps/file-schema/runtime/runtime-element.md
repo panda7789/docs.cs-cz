@@ -9,19 +9,19 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-ms.openlocfilehash: ea9dfd00590aff9c1a882480c76ef5c9f6afc6ec
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 3cf99a4dcf64b82846729d8663e398385b7a1086
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689748"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663456"
 ---
-# <a name="runtime-element"></a>\<modul runtime > – Element
+# <a name="runtime-element"></a>\<Běhový > element
 
-Poskytuje informace, které slouží ke konfiguraci aplikací modulem common language runtime.
+Poskytuje informace používané modulem CLR (Common Language Runtime) ke konfiguraci aplikací.
 
-\<Konfigurace > \
-\<modul runtime >
+\<> Konfigurace \
+\<> modulu runtime
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,7 +32,7 @@ Poskytuje informace, které slouží ke konfiguraci aplikací modulem common lan
 
 ## <a name="attributes-and-elements"></a>Atributy a elementy
 
-Následující části popisují podřízené prvky a nadřazené elementy.
+V následujících částech jsou popsány podřízené prvky a nadřazené prvky.
 
 ### <a name="attributes"></a>Atributy
 
@@ -42,44 +42,44 @@ Následující části popisují podřízené prvky a nadřazené elementy.
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<alwaysFlowImpersonationPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)|Určuje, že identita Windows vždy toky přes asynchronní body, bez ohledu na to, jak se provádí zosobnění.|
-|[\<AppContextSwitchOverrides>](../../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)|Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.|
-|[\<appDomainManagerAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagerassembly-element.md)|Určuje sestavení, které poskytuje správce domény aplikace ve výchozí doméně aplikace v procesu.|
-|[\<appDomainManagerType>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md)|Určuje typ, který slouží jako správce domény aplikace pro výchozí domény aplikace.|
-|[\<appDomainResourceMonitoring>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)|Dá pokyn modulu runtime ke shromažďování statistik na všech doménách aplikace v procesu po dobu trvání procesu.|
-|[\<assemblyBinding>](../../../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|
-|[\<bypassTrustedAppStrongNames>](../../../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)|Určuje, zda by měl obejít ověřování silných názvů pro důvěryhodného sestavení.|
-|[\<CompatSortNLSVersion>](../../../../../docs/framework/configure-apps/file-schema/runtime/compatsortnlsversion-element.md)|Určuje, že má modul runtime při porovnávání řetězců použít starší verzi chování řazení.|
-|[\<developmentMode>](../../../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md)|Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí DEVPATH.|
-|[\<disableCachingBindingFailures>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)|Určuje, zda je zakázáno ukládání do mezipaměti selhání vazby, což je výchozí chování v rozhraní .NET Framework verze 2.0.|
-|[\<disableCommitThreadStack>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablecommitthreadstack-element.md)|Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.|
-|[\<disableFusionUpdatesFromADManager>](../../../../../docs/framework/configure-apps/file-schema/runtime/disablefusionupdatesfromadmanager-element.md)|Určuje, zda je výchozí chování, které je umožnit hostitelský modul runtime pro přepsání nastavení konfigurace pro doménu aplikace, zakázáno.|
-|[\<EnableAmPmParseAdjustment>](../../../../../docs/framework/configure-apps/file-schema/runtime/enableampmparseadjustment-element.md)|Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|
-|[\<enforceFIPSPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/enforcefipspolicy-element.md)|Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu se informace o zpracování normy FIPS (Federal).|
-|[\<etwEnable>](../../../../../docs/framework/configure-apps/file-schema/runtime/etwenable-element.md)|Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro common language runtime události.|
-|[\<forcePerformanceCounterUniqueSharedMemoryReads>](../../../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md)|Určuje, jestli má PerfCounter.dll CategoryOptions nastavení registru v rozhraní .NET Framework verze 1.1 aplikace k určení, jestli se má načíst data čítače výkonu ze sdílené paměti podle kategorií nebo globální paměti.|
-|[\<gcAllowVeryLargeObjects>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md)|Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).|
-|[\<gcConcurrent>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)|Určuje, zda modul common language runtime běží souběžně uvolňování paměti.|
-|[\<GCCpuGroup>](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)|Určuje, zda uvolňování podporuje více skupin procesorů.|
-|[\<gcServer>](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)|Určuje, zda modul common language runtime spustí uvolnění paměti serveru.|
-|[\<generatePublisherEvidence>](../../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)|Určuje, zda modul runtime používá zásady aplikace publisher security (CAS) přístupu kódu.|
-|[\<legacyCorruptedStateExceptionsPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacycorruptedstateexceptionspolicy-element.md)|Určuje, zda modul runtime umožňuje spravovanému kódu zachytit narušení přístupu a ostatní výjimky v poškozeném stavu.|
-|[\<legacyImpersonationPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)|Určuje, že identita Windows není téct přes asynchronní body, bez ohledu na nastavení toku pro kontext spuštění pro aktuální vlákno.|
-|[\<loadfromRemoteSources>](../../../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md)|Určuje, zda jsou načteny při úplném vztahu důvěryhodnosti sestavení ze vzdáleného zdroje.|
-|[\<NetFx40_LegacySecurityPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)|Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).|
-|[\<NetFx40_PInvokeStackResilience>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx40-pinvokestackresilience-element.md)|Určuje, zda modul runtime automaticky opravy nesprávné volání nespravovaného kódu deklarace v době běhu, za cenu pomalejší přechody mezi spravováno a nespravovaný kód.|
-|[\<NetFx45_CultureAwareComparerGetHashCode_LongStrings>](../../../../../docs/framework/configure-apps/file-schema/runtime/netfx45-cultureawarecomparergethashcode-longstrings-element.md)|Určuje, zda modul runtime používá pro výpočet kódů hash pro pevnou velikost paměti <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metody.|
-|[\<PreferComInsteadOfRemoting>](../../../../../docs/framework/configure-apps/file-schema/runtime/prefercominsteadofmanagedremoting-element.md)|Určuje, že modul runtime použije komunikace s objekty COM místo vzdálené komunikace přes hranice aplikačních domén.|
-|[\<relativeBindForResources>](../../../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md)|Optimalizuje sondy pro satelitní sestavení.|
-|[\<shadowCopyVerifyByTimeStamp>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|Určuje, zda stínové kopírování sestavení použije výchozí chování při spuštění zavedené v rozhraní .NET Framework 4 nebo se vrátí do chování při spuštění z dřívějších verzích rozhraní .NET Framework.|
-|[\<supportPortability>](../../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md)|Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích rozhraní .NET Framework zakázáním výchozího chování, které považuje za ekvivalent pro účely přenositelnosti aplikace sestavení.|
-|[\<system.runtime.caching>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|Poskytuje informace o konfiguraci pro výchozí mezipaměti objektů v paměti do mezipaměti.|
-|[\<Thread_UseAllCpuGroups>](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md)|Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.|
-|[\<ThrowUnobservedTaskExceptions>](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md)|Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.|
-|[\<TimeSpan_LegacyFormatMode>](../../../../../docs/framework/configure-apps/file-schema/runtime/timespan-legacyformatmode-element.md)|Určuje, zda modul runtime používá starší verzi formátování <xref:System.TimeSpan> hodnoty.|
-|[\<useLegacyJit>](../../../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)|Určuje, zda modul common language runtime používá starší verzi 64bitového kompilátoru JIT kompilace just-in-time.|
-|[\<UseRandomizedStringHashAlgorithm>](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)|Určuje, zda modul runtime vypočítá hash kódy pro řetězce na základě domény aplikace.|
-|[\<UseSmallInternalThreadStacks>](../../../../../docs/framework/configure-apps/file-schema/runtime/usesmallinternalthreadstacks-element.md)|Vyžaduje, aby modul runtime použil zásobníku explicitní velikost při vytváření příslušná vlákna, která používá interně, namísto výchozí velikost zásobníku.|
+|[\<alwaysFlowImpersonationPolicy>](alwaysflowimpersonationpolicy-element.md)|Určuje, že identita Windows má vždycky tok napříč asynchronními body bez ohledu na to, jak byla provedena zosobnění.|
+|[\<AppContextSwitchOverrides>](appcontextswitchoverrides-element.md)|Definuje jeden nebo více přepínačů používaných <xref:System.AppContext> třídou k poskytnutí mechanismu odhlášení pro nové funkce.|
+|[\<appDomainManagerAssembly>](appdomainmanagerassembly-element.md)|Určuje sestavení, které poskytuje správce aplikační domény pro výchozí doménu aplikace v procesu.|
+|[\<appDomainManagerType>](appdomainmanagertype-element.md)|Určuje typ, který slouží jako správce aplikační domény pro výchozí doménu aplikace.|
+|[\<appDomainResourceMonitoring>](appdomainresourcemonitoring-element.md)|Instruuje modul runtime za účelem shromažďování statistik o všech doménách aplikace v procesu po dobu životního cyklu procesu.|
+|[\<assemblyBinding >](assemblybinding-element-for-runtime.md)|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|
+|[\<bypassTrustedAppStrongNames>](bypasstrustedappstrongnames-element.md)|Určuje, zda má být vynecháno ověřování silných názvů pro důvěryhodná sestavení.|
+|[\<CompatSortNLSVersion>](compatsortnlsversion-element.md)|Určuje, že modul runtime má při provádění porovnávání řetězců používat starší chování řazení.|
+|[\<developmentMode>](developmentmode-element.md)|Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.|
+|[\<disableCachingBindingFailures>](disablecachingbindingfailures-element.md)|Určuje, jestli je zakázané ukládání neúspěšných vazeb do mezipaměti, což je výchozí chování ve .NET Framework verze 2,0.|
+|[\<disableCommitThreadStack>](disablecommitthreadstack-element.md)|Určuje, zda je plný zásobník vláken potvrzen při spuštění vlákna.|
+|[\<disableFusionUpdatesFromADManager>](disablefusionupdatesfromadmanager-element.md)|Určuje, zda výchozí chování, které umožňuje hostiteli modulu runtime přepsat nastavení konfigurace pro doménu aplikace, je zakázáno.|
+|[\<EnableAmPmParseAdjustment>](enableampmparseadjustment-element.md)|Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k analýze řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|
+|[\<enforceFIPSPolicy>](enforcefipspolicy-element.md)|Určuje, jestli se má vymáhat požadavek na konfiguraci počítače, který kryptografické algoritmy musí dodržovat Standard FIPS (Federal Information Processing Standards).|
+|[\<etwEnable>](etwenable-element.md)|Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro události modulu CLR (Common Language Runtime).|
+|[\<forcePerformanceCounterUniqueSharedMemoryReads>](forceperformancecounteruniquesharedmemoryreads-element.md)|Určuje, jestli dokončení PerfCounter. dll používá nastavení registru CategoryOptions v aplikaci .NET Framework verze 1,1 k určení toho, jestli se mají načíst data čítače výkonu z sdílené paměti nebo globální paměti specifické pro danou kategorii.|
+|[\<gcAllowVeryLargeObjects>](gcallowverylargeobjects-element.md)|Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).|
+|[\<gcConcurrent>](gcconcurrent-element.md)|Určuje, zda modul CLR (Common Language Runtime) současně spustí uvolňování paměti.|
+|[\<GCCpuGroup>](gccpugroup-element.md)|Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.|
+|[\<gcServer>](gcserver-element.md)|Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti serveru.|
+|[\<generatePublisherEvidence>](generatepublisherevidence-element.md)|Určuje, zda modul runtime používá zásady vydavatele CAS (Code Access Security).|
+|[\<legacyCorruptedStateExceptionsPolicy>](legacycorruptedstateexceptionspolicy-element.md)|Určuje, zda modul runtime umožňuje spravovanému kódu zachytit porušení přístupu a jiné poškozené výjimky stavu.|
+|[\<legacyImpersonationPolicy>](legacyimpersonationpolicy-element.md)|Určuje, že identita systému Windows není v rámci asynchronních bodů předávána bez ohledu na nastavení toku pro kontext spuštění v aktuálním vlákně.|
+|[\<loadfromRemoteSources>](loadfromremotesources-element.md)|Určuje, zda jsou sestavení ze vzdálených zdrojů načítána jako plná důvěryhodnost.|
+|[\<NetFx40_LegacySecurityPolicy>](netfx40-legacysecuritypolicy-element.md)|Určuje, zda modul runtime používá starší zásady zabezpečení přístupu kódu (CAS).|
+|[\<NetFx40_PInvokeStackResilience >](netfx40-pinvokestackresilience-element.md)|Určuje, zda modul runtime automaticky opravuje nesprávné deklarace volání platformy za běhu, a to za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.|
+|[\<NetFx45_CultureAwareComparerGetHashCode_LongStrings>](netfx45-cultureawarecomparergethashcode-longstrings-element.md)|Určuje, zda modul runtime používá k výpočtu kódů hash pro <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metodu pevnou velikost paměti.|
+|[\<PreferComInsteadOfRemoting>](prefercominsteadofmanagedremoting-element.md)|Určuje, že modul runtime bude používat zprostředkovatele komunikace s objekty COM namísto vzdálené komunikace napříč hranicemi aplikační domény.|
+|[\<relativeBindForResources>](relativebindforresources-element.md)|Optimalizuje sondu pro satelitní sestavení.|
+|[\<shadowCopyVerifyByTimeStamp>](shadowcopyverifybytimestamp-element.md)|Určuje, zda stínové kopírování používá výchozí chování při spuštění, které bylo zavedeno ve .NET Framework 4, nebo se vrátí k chování při spuštění starších verzí .NET Framework.|
+|[\<supportPortability>](supportportability-element.md)|Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích .NET Framework tím, že zakáže výchozí chování, které zpracovává sestavení jako ekvivalent pro účely přenositelnosti aplikace.|
+|[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Poskytuje informace o konfiguraci výchozí mezipaměti objektů v paměti.|
+|[\<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md)|Určuje, zda modul runtime distribuuje spravovaná vlákna napříč všemi skupinami PROCESORů.|
+|[\<ThrowUnobservedTaskExceptions>](throwunobservedtaskexceptions-element.md)|Určuje, zda výjimky neošetřených úloh mají ukončit běžící proces.|
+|[\<TimeSpan_LegacyFormatMode>](timespan-legacyformatmode-element.md)|Určuje, zda modul runtime používá pro <xref:System.TimeSpan> hodnoty formátování starší verze.|
+|[\<useLegacyJit>](uselegacyjit-element.md)|Určuje, zda modul CLR (Common Language Runtime) používá starší 64 kompilátor JIT pro kompilaci za běhu.|
+|[\<UseRandomizedStringHashAlgorithm>](userandomizedstringhashalgorithm-element.md)|Určuje, zda modul runtime počítá kódy hash pro řetězce v jednotlivých doménách aplikace.|
+|[\<UseSmallInternalThreadStacks>](usesmallinternalthreadstacks-element.md)|Požaduje, aby modul runtime při vytváření určitých vláken, která používá interně, místo výchozí velikosti zásobníku používal explicitní velikosti zásobníku.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
@@ -89,11 +89,11 @@ Následující části popisují podřízené prvky a nadřazené elementy.
 
 ## <a name="remarks"></a>Poznámky
 
-Podřízené elementy v [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru se používají modulem common language runtime ke konfiguraci, jak aplikaci spustí. Například [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) element určuje, zda systému uvolňování paměti používá uvolnění paměti pracovní stanice nebo uvolnění paměti serveru, [ \< UseRandomizedStringHashAlgorithm >](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md) element určuje, zda modul common language runtime vypočítá hash kódy pro řetězce na každou aplikaci, nebo na základě domény na aplikaci a `AppContextSwitchOverrides` element umožňuje uživatelům knihovny vyjádřit výslovný souhlas nebo vyjádřit výslovný nesouhlas změněné funkce poskytované službou knihovny.
+Podřízené prvky v [ \<oddílu > modulu runtime](runtime-element.md) konfiguračního souboru jsou používány modulem CLR (Common Language Runtime) ke konfiguraci způsobu, jakým se aplikace spouští. [ Například\<prvek gcServer >](gcserver-element.md) určuje, zda systém uvolňování paměti používá uvolňování paměti pracovní stanice nebo [ \<](userandomizedstringhashalgorithm-element.md) uvolňování paměti serveru, UseRandomizedStringHashAlgorithm element > Určuje, zda modul CLR (Common Language Runtime) vypočítá kódy hash pro řetězec v každé aplikaci nebo doméně pro každou aplikaci a `AppContextSwitchOverrides` prvek umožňuje uživatelům knihovny odsouhlasit nebo odsouhlasit změněné funkce poskytované knihovnou.
 
-Prvky v [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části jsou automaticky číst modul common language runtime při spuštění aplikace. Konfigurační soubor pro jiné než výchozí aplikační doménu můžete také definovat zadáním jeho název <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> vlastnost; jeho nastavení jsou přečtena automaticky při načtení domény aplikace. Jen zřídka, pokud někdy, měli byste třeba přímému čtení nastavení v [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu v konfiguračním souboru aplikace.
+Prvky v [ \<oddílu runtime >](runtime-element.md) jsou automaticky čteny modulem CLR (Common Language Runtime) při spuštění aplikace. Můžete také definovat konfigurační soubor pro doménu aplikace, která není výchozí, zadáním jeho názvu <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> vlastnosti. jeho nastavení je automaticky přečteno při načtení domény aplikace. V případě potřeby byste měli v případě nutnosti přímo číst nastavení v [ \<části > modulu runtime](runtime-element.md) v konfiguračním souboru aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: 36d174beea58ff96674bd873bfbcb8be89591669
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ff44f0251936d51b4e396c37c53322efa110227
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674555"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659412"
 ---
-# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultftpcachepolicy – > – Element (nastavení sítě)
-Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
+# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy – element > (nastavení sítě)
+Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<requestCaching>  
 \<defaultFtpCachePolicy>  
@@ -38,20 +38,20 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`policyLevel`|Určuje FTP zásady ukládání do mezipaměti. Výchozí hodnota je `Default`.|  
+|`policyLevel`|Určuje zásady ukládání do mezipaměti FTP. Výchozí hodnota je `Default`.|  
   
-## <a name="policylevel-attribute"></a>PolicyLevel, který atribut  
+## <a name="policylevel-attribute"></a>policyLevel – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|`Default`|Vrátí uložený v mezipaměti prostředků, pokud je prostředek čerstvé, délka obsahu je správná, a vypršení platnosti, úpravu a délka obsahu atributy jsou k dispozici.|  
+|`Default`|Vrátí prostředek uložený v mezipaměti, pokud je prostředek v čerstvém stavu, že velikost obsahu je přesná a že jsou k dispozici atributy vypršení platnosti, změna a délka obsahu.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
-|`CacheOnly`|Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikosti položky.|  
-|`CacheIfAvailable`|Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikost položky; v opačném případě zdroj se stáhne ze serveru a je vrátit zpět volajícímu.|  
-|`Revalidate`|Vrátí uložený v mezipaměti prostředků, pokud časové razítko v mezipaměti prostředku je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj staženy ze serveru, uložená v mezipaměti a vrátit zpět volajícímu.|  
-|`Reload`|Soubory ke stažení prostředku ze serveru, ukládá do mezipaměti a vrátí řízení volajícímu prostředku.|  
-|`NoCacheNoStore`|Pokud existuje prostředek v mezipaměti, je odstranit. Zdroj se stáhne ze serveru a je vrátit zpět volajícímu.|  
-|`Revalidate`|Splňuje požadavek s použitím uložené v mezipaměti kopie prostředku časové razítko je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj staženy ze serveru, zobrazí volajícímu a uložená v mezipaměti.|  
+|`CacheOnly`|Vrátí prostředek uložený v mezipaměti, pokud je k dispozici délka obsahu a odpovídá velikosti položky.|  
+|`CacheIfAvailable`|Vrátí prostředek uložený v mezipaměti, pokud je zadaná délka obsahu a odpovídá velikosti položky. v opačném případě se prostředek stáhne ze serveru a vrátí se volajícímu.|  
+|`Revalidate`|Vrátí prostředek uložený v mezipaměti, pokud je časové razítko prostředku v mezipaměti stejné jako časové razítko prostředku na serveru. v opačném případě se prostředek stáhne ze serveru, uloží se do mezipaměti a vrátí volajícímu.|  
+|`Reload`|Stáhne prostředek ze serveru, uloží ho do mezipaměti a vrátí prostředek volajícímu.|  
+|`NoCacheNoStore`|Pokud prostředek uložený v mezipaměti existuje, odstraní se. Prostředek se stáhne ze serveru a vrátí se volajícímu.|  
+|`Revalidate`|Splňuje požadavky pomocí kopie prostředku uložené v mezipaměti, pokud je časové razítko stejné jako časové razítko prostředku na serveru. v opačném případě se prostředek stáhne ze serveru, zobrazí se volajícímu a uloží se do mezipaměti.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -60,12 +60,12 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
+|[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP `NoCacheNoStore`.  
+ Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP pro `NoCacheNoStore`.  
   
 ```xml  
 <configuration>  
@@ -84,4 +84,4 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

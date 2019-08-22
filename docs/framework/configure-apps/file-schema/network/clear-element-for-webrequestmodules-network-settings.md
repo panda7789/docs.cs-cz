@@ -10,20 +10,20 @@ helpviewer_keywords:
 - webRequestModules, clear element
 - clear element, webRequestModules
 ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
-ms.openlocfilehash: 5dea238629b282776cb45f7b388e655fa557d084
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e175c70bd4932d6a8f9428e8cd9159a47df52558
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674594"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659428"
 ---
-# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<Vymazat > – Element pro webRequestModules (nastavení sítě)
-Odebere všechny registrované moduly webové žádosti z aplikace.  
+# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<Clear – element > pro webRequestModules (nastavení sítě)
+Odebere z aplikace všechny registrované moduly webových požadavků.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<webRequestModules>  
-\<clear>  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,16 +44,16 @@ Odebere všechny registrované moduly webové žádosti z aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které se použijí k vyžádání informací od hostitelů v síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element odebere všechny registrované webových požadavek modulů, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.  
+ `clear` Element odebere všechny registrované moduly webových požadavků, které byly definovány dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu vymaže všechny moduly webové žádosti a pak zaregistruje webový modul požadavku pro protokol HTTP.  
+ Následující příklad zruší všechny moduly webových požadavků a pak zaregistruje modul webové žádosti pro protokol HTTP.  
   
 ```xml  
 <configuration>  
@@ -72,4 +72,4 @@ Odebere všechny registrované moduly webové žádosti z aplikace.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebRequest>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

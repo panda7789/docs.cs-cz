@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 41948b7db7c816fd06efb35d156398527fbf72ae
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: be4b72414af8e5a18145330f5c44ae9a79a567cb
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589624"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659887"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Vzhledem k tomu, že modul CLR (Common Language Runtime) má přístup k informacím o obecném typu za běhu, můžete pomocí reflexe získat informace o obecných typech stejným způsobem jako u neobecných typů. Další informace naleznete v tématu [Obecné typy v době běhu](./generics-in-the-run-time.md).  
@@ -50,4 +50,4 @@ Vzhledem k tomu, že modul CLR (Common Language Runtime) má přístup k informa
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Obecné typy](./index.md)
 - [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)

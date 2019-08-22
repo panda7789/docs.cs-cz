@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b426eaaa2dab4d54ea4c82483c079428f3bfac57
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 0ebc4bf703bc22b642b0950fd60471342a615a5c
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689919"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663850"
 ---
-# <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion > – Element
+# <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion – element >
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<CompatSortNLSVersion > – Element  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<CompatSortNLSVersion – element >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
   
 |Value|Popis|  
 |-----------|-----------------|  
-|4096|ID národního prostředí, které představuje alternativní pořadí řazení. V tomto případě hodnota 4096 představuje pořadí řazení rozhraní .NET Framework 3.5 a starší verze.|  
+|4096|ID národního prostředí, které představuje alternativní pořadí řazení. V tomto případě 4096 představuje pořadí řazení .NET Framework 3,5 a starších verzí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,32 +57,32 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Protože porovnání řetězců, řazení a operace velikosti písmen provádět <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> třídu v rozhraní .NET Framework 4 v souladu s standardem Unicode 5.1, výsledky metod porovnání řetězců, jako <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> může lišit od předchozí verze rozhraní .NET Framework. Pokud vaše aplikace závisí na chování starších verzí, můžete obnovit porovnání řetězců a řazení pravidel používaných v rozhraní .NET Framework 3.5 a starších verzí včetně `<CompatSortNLSVersion>` prvku v konfiguračním souboru vaší aplikace.  
+ Vzhledem k tomu, že porovnání řetězců, řazení a operace s <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> velkými a malými písmeny prováděné třídou v .NET Framework 4 odpovídají standardu Unicode 5,1, výsledky <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> metod <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> porovnání řetězců, jako jsou a se mohou lišit od předchozí verze .NET Framework. Pokud vaše aplikace závisí na starším chování, můžete obnovit pravidla porovnání a řazení řetězců používané v .NET Framework 3,5 a starších verzích zahrnutím `<CompatSortNLSVersion>` elementu do konfiguračního souboru aplikace.  
   
 > [!IMPORTANT]
 >  Obnovení starších pravidel porovnání a řazení řetězců vyžaduje, aby v místním systému byla k dispozici dynamická knihovna sort00001000.dll.  
   
- Také vám pomůže starší pravidla řazení a porovnání ve specifické aplikační doméně předáním řetězce "NetFx40_Legacy20SortingBehavior" <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> metoda při vytváření domény aplikace.  
+ Můžete také použít starší řazení řetězců a pravidla porovnávání v konkrétní aplikační doméně předáním řetězce "NetFx40_Legacy20SortingBehavior" do <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> metody při vytváření domény aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dvě <xref:System.String> a volá <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metodu pro jejich porovnání pomocí konvencí aktuální jazykové verze.  
+ Následující příklad vytvoří instanci dvou <xref:System.String> objektů a <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> zavolá metodu pro jejich porovnání pomocí konvencí aktuální jazykové verze.  
   
  [!code-csharp[String.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/string.breakingchanges/cs/example1.cs#1)]
  [!code-vb[String.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/string.breakingchanges/vb/example1.vb#1)]  
   
- Při spuštění v příkladu v rozhraní .NET Framework 4, zobrazí následující výstup.  
+ Když spustíte příklad na .NET Framework 4, zobrazí se následující výstup.  
   
 ```  
 sta follows a in the sort order.  
 ```  
   
- Toto je zcela liší od výstupu, který se zobrazí při spuštění v příkladu v rozhraní .NET Framework 3.5.  
+ To se zcela liší od výstupu, který se zobrazí při spuštění příkladu na .NET Framework 3,5.  
   
 ```  
 sta equals a in the sort order.  
 ```  
   
- Ale pokud přidáte následující konfigurační soubor do vzorového adresáře a spusťte příklad v rozhraní .NET Framework 4, výstup je stejná jako v příkladu vytvořen při spuštění v rozhraní .NET Framework 3.5.  
+ Pokud však do adresáře s příkladem přidáte následující konfigurační soubor a poté spustíte příklad na .NET Framework 4, výstup je stejný jako v příkladu, který byl vytvořen v příkladu při spuštění v .NET Framework 3,5.  
   
 ```xml  
 <?xml version ="1.0"?>  
@@ -95,5 +95,5 @@ sta equals a in the sort order.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

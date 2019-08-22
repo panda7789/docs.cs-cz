@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fdf840035150f08c894c984213af9a0abe6e95af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d7c7f866cdbcd39194d61a3db821bf973b4e057e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704762"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663808"
 ---
-# <a name="developmentmode-element"></a>\<developmentmode – > – Element
-Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí DEVPATH.  
+# <a name="developmentmode-element"></a>\<developmentMode – element >
+Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<developmentMode>  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<developmentMode >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,14 +38,14 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**developerInstallation**|Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí DEVPATH.|  
+|**developerInstallation**|Určuje, zda modul runtime vyhledává sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.|  
   
-## <a name="developerinstallation-attribute"></a>developerInstallation atribut  
+## <a name="developerinstallation-attribute"></a>developerInstallation – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|**true**|Vyhledá sestavení v adresářích určených proměnnou prostředí DEVPATH.|  
-|**false**|Není hledat sestavení v adresářích určených proměnnou prostředí DEVPATH. Toto je výchozí|  
+|**true**|Vyhledá sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.|  
+|**false**|Nehledá sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH. Toto je výchozí nastavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -58,10 +58,10 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto nastavení použijte jenom v době vývoje. Modul runtime verze sestavení se silným názvem součástí mechanismu DEVPATH nekontroluje. Jednoduše použije první sestavení, které nalezne.  
+ Toto nastavení použijte pouze v době vývoje. Modul runtime nekontroluje verze v sestaveních se silným názvem nalezenými v mechanismu DEVPATH. Jednoduše používá první nalezené sestavení.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak mají hledat sestavení v adresářích určených proměnnou prostředí DEVPATH pomocí běhového modulu.  
+ Následující příklad ukazuje, jak způsobit, aby modul runtime vyhledal sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.  
   
 ```xml  
 <configuration>  
@@ -73,6 +73,6 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Postupy: Hledání sestavení pomocí mechanismu DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)

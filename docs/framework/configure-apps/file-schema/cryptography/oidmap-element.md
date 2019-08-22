@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-ms.openlocfilehash: 80564c5895e08884f78a4ec7c955ecdb11126e35
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e01cdd942237141b8ef35495d3b74d6b2282a865
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705165"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664260"
 ---
-# <a name="oidmap-element"></a>\<oidmap – > – Element
-Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.  
+# <a name="oidmap-element"></a>\<oidMap – element >
+Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<mscorlib>  
-\<cryptographySettings>  
+\<cryptographySettings >  
 \<oidMap>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,18 +40,18 @@ Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<oidEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Identifikátor OID ASN.1 se mapuje na popisný název.|  
+|[\<oidEntry>](oidentry-element.md)|Mapuje identifikátor ID ASN. 1 na popisný název.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`cryptographySettings`|Obsahuje nastavení šifrování.|  
-|`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
+|`cryptographySettings`|Obsahuje nastavení kryptografie.|  
+|`mscorlib`|`cryptographySettings` Obsahuje element.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<oidmap – >** element tak, aby obsahovala mapování identifikátor OID pro algoritmus hash RIPEMD 160 k implementaci tohoto algoritmu hash.  
+ Následující příklad ukazuje způsob použití  **\<prvku oidMap >** k zahrnutí mapování OID pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
   
 ```xml  
 <configuration>  
@@ -75,8 +75,8 @@ Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
-- [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
-- [Mapování identifikátorů objektů na algoritmy šifrování](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)
+- [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)
+- [Mapování identifikátorů objektů na algoritmy šifrování](../../map-object-identifiers-to-cryptography-algorithms.md)

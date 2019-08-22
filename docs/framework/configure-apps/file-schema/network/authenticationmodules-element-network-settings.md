@@ -8,17 +8,17 @@ helpviewer_keywords:
 - authenticationModules element
 - <authenticationModules> element
 ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
-ms.openlocfilehash: 8878bcbdf8b3613677231db3e91a6d71dfa10bae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6488bfcd97e27a184b4a8cd1498d1c60f32babda
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674711"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659489"
 ---
-# <a name="authenticationmodules-element-network-settings"></a>\<authenticationModules – > – Element (nastavení sítě)
-Určuje moduly používané k ověření síťové požadavky.  
+# <a name="authenticationmodules-element-network-settings"></a>\<authenticationModules – element > (nastavení sítě)
+Určuje moduly používané pro ověřování síťových požadavků.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<authenticationModules>  
   
@@ -39,24 +39,24 @@ Určuje moduly používané k ověření síťové požadavky.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-authenticationmodules-network-settings.md)|Přidá modul ověřování do aplikace.|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-authenticationmodules-network-settings.md)|Vymaže všechny moduly ověřování z aplikace.|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-authenticationmodules-network-settings.md)|Odebere ověřovací modul z aplikace.|  
+|[add](add-element-for-authenticationmodules-network-settings.md)|Přidá do aplikace modul ověřování.|  
+|[jejich](clear-element-for-authenticationmodules-network-settings.md)|Vymaže všechny moduly ověřování z aplikace.|  
+|[remove](remove-element-for-authenticationmodules-network-settings.md)|Odebere ověřovací modul z aplikace.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `authenticationModule` Prvek určuje moduly ověřování, které provádí proces ověřování se serverem. Ověřovací modul musí implementovat <xref:System.Net.IAuthenticationModule> rozhraní.  
+ `authenticationModule` Element určuje moduly ověřování, které provádí proces ověřování se serverem. Modul ověřování musí implementovat <xref:System.Net.IAuthenticationModule> rozhraní.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad povolí ověřovací modul. Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.  
+ Následující příklad povoluje ověřovací modul. Hodnoty pro Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
   
 ```xml  
 <configuration>  
@@ -73,4 +73,4 @@ Určuje moduly používané k ověření síťové požadavky.
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

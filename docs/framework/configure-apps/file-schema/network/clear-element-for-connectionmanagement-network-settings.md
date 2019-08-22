@@ -10,20 +10,20 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: 733c70b0575de7e2635afaab58ad48591f035fc0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86a7a0ab402c8c40ec3b824402a1dba984412b68
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705236"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659450"
 ---
-# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Vymazat > – Element pro connectionManagement (nastavení sítě)
-Zruší připojení seznamu pro správu.  
+# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Clear – element > pro connectionManagement (nastavení sítě)
+Vymaže seznam správy připojení.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<connectionManagement>  
-\<clear>  
+\<connectionManagement >  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,16 +44,16 @@ Zruší připojení seznamu pro správu.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element vymaže všechny položky v seznamu připojení správy.  
+ `clear` Element vymaže všechny položky ze seznamu správy připojení.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu vymaže seznamu pro správu připojení a pak přidá nové položky správy připojení pro server `www.contoso.com` a všechny ostatní sítě hostitele.  
+ Následující příklad vymaže seznam správy připojení a pak přidá nové položky správy připojení pro server `www.contoso.com` a všechny další síťové hostitele.  
   
 ```xml  
 <configuration>  
@@ -71,4 +71,4 @@ Zruší připojení seznamu pro správu.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e265fd1de6047cd53b0f8d1c20c8a9e87b3e813
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 2bd74460c7d5d077686c723936d140b07ac21dd0
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689667"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663397"
 ---
-# <a name="timespanlegacyformatmode-element"></a>\<Timespan_legacyformatmode – > – Element
+# <a name="timespan_legacyformatmode-element"></a>\<TimeSpan_LegacyFormatMode – element >
 
-Určuje, zda modul runtime zachová starší chování při formátování operací s <xref:System.TimeSpan?displayProperty=nameWithType> hodnoty.
+Určuje, zda modul runtime zachovává starší chování při formátování operací <xref:System.TimeSpan?displayProperty=nameWithType> s hodnotami.
 
-\<Konfigurace > \
-\<modul runtime > \
-\<TimeSpan_LegacyFormatMode>
+\<> Konfigurace \
+\<běhové > \
+\<TimeSpan_LegacyFormatMode >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,14 +40,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá starší verzi chování při formátování s <xref:System.TimeSpan?displayProperty=nameWithType> hodnoty.|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá chování formátování starší <xref:System.TimeSpan?displayProperty=nameWithType> verze s hodnotami.|
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
-|`false`|Modul runtime neobnoví starší chování při formátování.|
-|`true`|Modul runtime obnoví starší chování při formátování.|
+|`false`|Modul runtime neobnovuje chování při formátování starší verze.|
+|`true`|Modul runtime obnoví chování formátování starší verze.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -62,32 +62,32 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-Od verze rozhraní .NET Framework 4 <xref:System.TimeSpan?displayProperty=nameWithType> struktury implementuje <xref:System.IFormattable> rozhraní a podporuje formátování operací pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy se zaznamená řetězce formátu nebo nepodporovaný formát specifikátoru, vyvolá výjimku <xref:System.FormatException>.
+Počínaje .NET Framework 4 <xref:System.TimeSpan?displayProperty=nameWithType> struktura <xref:System.IFormattable> implementuje rozhraní a podporuje operace formátování pomocí standardních a vlastních formátovacích řetězců. Pokud metoda analýzy narazí na nepodporovaný specifikátor formátu nebo formátovací řetězec, vyvolá <xref:System.FormatException>.
 
-V předchozích verzích rozhraní .NET Framework <xref:System.TimeSpan> struktura neimplementovala <xref:System.IFormattable> a nepodporovalo formátovací řetězce. Nicméně mnoho vývojářů omylem předpokládá se, že <xref:System.TimeSpan> podporoval množinu řetězců formátu a používat je v [složeného formátování operace](../../../../../docs/standard/base-types/composite-formatting.md) s metodami, jako <xref:System.String.Format%2A?displayProperty=nameWithType>. Obvykle Pokud typ implementuje <xref:System.IFormattable> a podporuje formátovací řetězce, volání metody se nepodporovaný formát pro formátování řetězce obvykle vyvolat <xref:System.FormatException>. Ale protože <xref:System.TimeSpan> neimplementovala <xref:System.IFormattable>, modul runtime ignorovat formátovací řetězec a místo toho volat <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metody. To znamená, že i když formátovací řetězce nemělo žádný vliv na operace formátování, jejich přítomnost nezpůsobil ztrátu v <xref:System.FormatException>.
+V předchozích verzích .NET Framework <xref:System.TimeSpan> struktura neimplementovala <xref:System.IFormattable> a nepodporovala řetězce formátu. Mnoho vývojářů však omylem nepředpokládalo <xref:System.TimeSpan> , že podporovaly sadu formátovacích řetězců a používají je ve [složených formátovacích operacích](../../../../../docs/standard/base-types/composite-formatting.md) s <xref:System.String.Format%2A?displayProperty=nameWithType>metodami, jako je například. V případě, že typ implementuje <xref:System.IFormattable> a podporuje řetězce formátu, volání metod formátování s nepodporovanými řetězci formátu obvykle <xref:System.FormatException>vyvolají. Protože <xref:System.TimeSpan> však neimplementoval <xref:System.IFormattable>, modul runtime ignoruje <xref:System.TimeSpan.ToString?displayProperty=nameWithType> řetězec formátu a místo toho se nazývá metoda. To znamená, že přestože formátovací řetězce neobsahovaly žádný vliv na operaci formátování, jejich přítomnost nezpůsobila <xref:System.FormatException>.
 
-Pro případy, ve kterých starší kód předá složeného formátování metoda a neplatný řetězec formátu a nemůže být překompilovány tento kód, můžete použít `<TimeSpan_LegacyFormatMode>` prvek, který chcete obnovit starší <xref:System.TimeSpan> chování. Při nastavení `enabled` atribut tohoto elementu `true`, složeného formátování výsledky metody při volání k <xref:System.TimeSpan.ToString?displayProperty=nameWithType> spíše než <xref:System.TimeSpan.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>a <xref:System.FormatException> není vyvolána.
+V případech, kdy starší verze kódu projde metodou složeného formátování a neplatným formátovacím řetězcem a tento kód nelze znovu zkompilovat, lze pomocí `<TimeSpan_LegacyFormatMode>` elementu obnovit starší verze <xref:System.TimeSpan> chování. Když `enabled` nastavíte atribut tohoto elementu na `true`, metoda složeného formátování <xref:System.TimeSpan.ToString?displayProperty=nameWithType> způsobí volání namísto <xref:System.TimeSpan.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>a <xref:System.FormatException> není vyvolána.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad vytvoří <xref:System.TimeSpan> objektu a pokusí se ho naformátovat <xref:System.String.Format%28System.String%2CSystem.Object%29?displayProperty=nameWithType> metoda pomocí nepodporované standardní formátovací řetězec.
+Následující příklad vytvoří instanci <xref:System.TimeSpan> objektu a pokusí se ho naformátovat <xref:System.String.Format%28System.String%2CSystem.Object%29?displayProperty=nameWithType> pomocí metody pomocí nepodporovaného standardního formátovacího řetězce.
 
 [!code-csharp[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/timespan.breakingchanges/cs/legacyformatmode1.cs#1)]
 [!code-vb[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/timespan.breakingchanges/vb/legacyformatmode1.vb#1)]
 
-Při spuštění v příkladu v rozhraní .NET Framework 3.5 nebo starší verzi, zobrazí se následující výstup:
+Když spustíte příklad na .NET Framework 3,5 nebo v dřívější verzi, zobrazí se následující výstup:
 
 ```
 12:30:45
 ```
 
-Tím se liší je výrazně z výstupu při spuštění v příkladu v rozhraní .NET Framework 4 nebo novější verzi:
+To se liší od výstupu, pokud spustíte příklad na .NET Framework 4 nebo novější verzi:
 
 ```
 Invalid Format
 ```
 
-Ale pokud přidáte následující konfigurační soubor do vzorového adresáře a spusťte příklad v .NET Framework 4 nebo novější verze, výstup je stejná jako v příkladu vytvořen při spuštění v rozhraní .NET Framework 3.5.
+Pokud však do adresáře s příkladem přidáte následující konfigurační soubor a potom spustíte příklad na .NET Framework 4 nebo novější verzi, výstup je stejný jako v příkladu, který je vytvořen v příkladu při spuštění v .NET Framework 3,5.
 
 ```xml
 <?xml version ="1.0"?>
@@ -100,5 +100,5 @@ Ale pokud přidáte následující konfigurační soubor do vzorového adresář
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

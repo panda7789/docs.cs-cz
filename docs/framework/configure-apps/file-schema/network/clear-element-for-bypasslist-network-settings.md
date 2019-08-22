@@ -10,21 +10,21 @@ helpviewer_keywords:
 - <bypasslist>, clear element
 - bypasslist, clear element
 ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
-ms.openlocfilehash: 7499d15f1d57887ffc3e78b83ed686c0c0f46cf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5305d9aed09b6c4d1ad4201e5e08e007a14c7c0
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674633"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664189"
 ---
-# <a name="clear-element-for-bypasslist-network-settings"></a>\<Vymazat > – Element pro bypasslist (nastavení sítě)
-Vymaže seznam obcházení proxy serveru.  
+# <a name="clear-element-for-bypasslist-network-settings"></a>\<Clear – element > pro BypassList (nastavení sítě)
+Vymaže seznam obcházení proxy serverů.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<defaultProxy>  
-\<bypasslist – >  
-\<clear>  
+\<BypassList >  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,16 +45,16 @@ Vymaže seznam obcházení proxy serveru.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element vymaže všechny položky ze seznamu jednorázové přihlášení.  
+ `clear` Prvek vymaže všechny položky ze seznamu pro obejití.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vymaže seznamu obcházení a přidá do seznamu obcházení dvě adresy. První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery, IP adresa začíná s 192.168.  
+ Následující příklad vymaže seznam obcházení a potom přidá dvě adresy do seznamu pro obejití. První obchází proxy server pro všechny servery v doméně contoso.com; Druhá obchází proxy server pro všechny servery, jejichž IP adresa začíná 192,168.  
   
 ```xml  
 <configuration>  
@@ -73,4 +73,4 @@ Vymaže seznam obcházení proxy serveru.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

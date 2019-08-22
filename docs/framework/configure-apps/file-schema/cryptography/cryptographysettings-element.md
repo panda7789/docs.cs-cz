@@ -8,19 +8,19 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: ec3a5a73caa901a21e22dbec7500af9153e01ef4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 572a5856c9f92f105e727df1ecd8eb2e0a92fc09
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705217"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664284"
 ---
-# <a name="cryptographysettings-element"></a>\<cryptographySettings – > – Element
-Obsahuje nastavení šifrování.  
+# <a name="cryptographysettings-element"></a>\<cryptographySettings – element >
+Obsahuje nastavení kryptografie.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<mscorlib>  
-\<cryptographySettings>  
+\<cryptographySettings >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +39,18 @@ Obsahuje nastavení šifrování.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cryptoNameMapping>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Obsahuje mapování tříd pro popisné názvy.|  
-|[\<oidMap>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.|  
+|[\<cryptoNameMapping>](cryptonamemapping-element.md)|Obsahuje mapování tříd na popisné názvy.|  
+|[\<oidMap>](oidmap-element.md)|Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
+|`mscorlib`|`cryptographySettings` Obsahuje element.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<cryptographySettings – >** element tak, aby obsahovala OID mapování a mapování názvů kryptografie. Tento příklad konfiguruje modul runtime tak, aby <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> vrátí `MyHashClass` objektu a `MyCryptoClass` třídy mapuje 1.3.36.2.1 identifikátor objektu.  
+ Následující příklad ukazuje, jak použít  **\<element cryptographySettings >** k zahrnutí mapování názvů kryptografie a mapování OID. Tento příklad nakonfiguruje modul runtime tak <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> , že `MyHashClass` vrátí objekt a `MyCryptoClass` třída se mapuje na identifikátor objektu 1.3.36.2.1.  
   
 ```xml  
 <configuration>  
@@ -78,6 +78,6 @@ Obsahuje nastavení šifrování.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)

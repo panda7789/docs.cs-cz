@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <clear> element, authenticationModules
 - authenticationModules, clear element
 ms.assetid: dc522c45-4a80-4831-8955-f7b68a47edfd
-ms.openlocfilehash: 3c018c7d474286f7a9cde2d070e4b54d164b5b40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12ac146926103b40073d34f48895b0645c8a8ed2
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674607"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659466"
 ---
-# <a name="clear-element-for-authenticationmodules-network-settings"></a>\<Vymazat > – Element pro authenticationModules (nastavení sítě)
+# <a name="clear-element-for-authenticationmodules-network-settings"></a>\<Clear – element > pro authenticationModules (nastavení sítě)
 Vymaže všechny moduly ověřování z aplikace.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<authenticationModules>  
-\<clear>  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,16 +44,16 @@ Vymaže všechny moduly ověřování z aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování síťových požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element odebere všechny moduly ověřování, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
+ `clear` Element odebere všechny moduly ověřování definované dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny moduly nakonfigurované ověřování.  
+ Následující příklad odebere všechny nakonfigurované ověřovací moduly.  
   
 ```xml  
 <configuration>  
@@ -69,4 +69,4 @@ Vymaže všechny moduly ověřování z aplikace.
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

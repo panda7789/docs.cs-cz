@@ -2,20 +2,20 @@
 title: <add> z <backupList>
 ms.date: 03/30/2017
 ms.assetid: bc5939fc-314a-4ea4-a533-c96958da7173
-ms.openlocfilehash: 03bf1bbb8156e4722d987e171d9034747ac6bb61
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 53af01a519c244376b262db1f6515a438dcc554f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701200"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663374"
 ---
-# <a name="add-of-backuplist"></a>\<Přidat > z \<backupList >
+# <a name="add-of-backuplist"></a>\<Přidat > \<> backupList
 Představuje prvek konfigurace, který definuje element záložního koncového bodu.  
   
  \<system.serviceModel>  
-\<směrování >  
-\<backupLists>  
-\<backupList>  
+\<> směrování  
+\<backupLists >  
+\<backupList >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,9 +30,6 @@ Představuje prvek konfigurace, který definuje element záložního koncového 
 </routing>
 ```  
   
-```csharp  
-```  
-  
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
@@ -40,7 +37,7 @@ Představuje prvek konfigurace, který definuje element záložního koncového 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec určující název záložního koncového bodu.|  
+|name|Řetězec, který určuje název koncového bodu zálohy.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -49,7 +46,7 @@ Představuje prvek konfigurace, který definuje element záložního koncového 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Obsahuje seznam koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.|  
+|[\<> směrování](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Obsahuje seznam koncových bodů, které by služba Směrování měla použít pro případ, že primární koncový bod není dostupný.|  
   
 ## <a name="see-also"></a>Viz také:
 

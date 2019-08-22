@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac83a0b27a965721dabe1bdf2e05afbdc9b9c961
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4bf1a15ff27f4390f1985a2d2730b1acfcaab2c1
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704775"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663825"
 ---
-# <a name="dependentassembly-element"></a>\<dependentAssembly > – Element
-Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Použijte jednu `dependentAssembly` – element pro každé sestavení.  
+# <a name="dependentassembly-element"></a>\<dependentAssembly – > element
+Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé `dependentAssembly` sestavení použijte jeden prvek.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<assemblybinding – >  
-\<dependentAssembly >  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<assemblyBinding >  
+\<> dependentAssembly  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,10 +43,10 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento element musí být součástí každého `dependentAssembly` elementu.|  
-|`codeBase`|Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalovaná na počítači.|  
+|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento prvek musí být zahrnut v každém `dependentAssembly` elementu.|  
+|`codeBase`|Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalován v počítači.|  
 |`bindingRedirect`|Přesměruje jednu verzi sestavení k jiné.|  
-|`publisherPolicy`|Určuje, zda modul runtime použije zásady vydavatele pro toto sestavení.|  
+|`publisherPolicy`|Určuje, zda modul runtime používá zásady vydavatele pro toto sestavení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -82,6 +82,6 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Přesměrování verzí sestavení](../../redirect-assembly-versions.md)

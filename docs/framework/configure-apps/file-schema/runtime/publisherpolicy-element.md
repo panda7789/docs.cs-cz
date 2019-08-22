@@ -12,20 +12,20 @@ helpviewer_keywords:
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29932eb27bcd13876ea6982982e67341edb8e0de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c8f8744d3ef1ca30eb05a4c8c3290d8a514714b
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674074"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663515"
 ---
-# <a name="publisherpolicy-element"></a>\<publisherPolicy > – Element
-Určuje, zda modul runtime použije zásady vydavatele.  
+# <a name="publisherpolicy-element"></a>\<publisherPolicy – element >
+Určuje, zda modul runtime používá zásady vydavatele.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<assemblybinding – >  
-\<dependentAssembly >  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<assemblyBinding >  
+\<> dependentAssembly  
 \<publisherPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,14 +41,14 @@ Určuje, zda modul runtime použije zásady vydavatele.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`apply`|Určuje, jestli se má použít zásady vydavatele.|  
+|`apply`|Určuje, jestli se mají použít zásady vydavatele.|  
   
 ## <a name="apply-attribute"></a>použít atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
 |`yes`|Použije zásady vydavatele. Toto je výchozí nastavení.|  
-|`no`|Doporučení se netýká zásad vydavatele.|  
+|`no`|Nepoužívá zásadu vydavatele.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -61,14 +61,14 @@ Určuje, zda modul runtime použije zásady vydavatele.
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při vydání nové verze sestavení dodavatele součástí můžete dodavatele obsahují zásad vydavatele, takže aplikace, které používají starší verzi nyní používat novou verzi. Chcete-li určit, jestli se má použít pro konkrétní sestavení zásad vydavatele, umístěte  **\<publisherPolicy >** prvek  **\<dependentAssembly >** element.  
+ Když dodavatel komponenty uvolní novou verzi sestavení, dodavatel může zahrnout zásadu vydavatele, aby aplikace, které používají starou verzi, teď používaly novou verzi. Chcete-li určit, zda má být pro konkrétní sestavení použita zásada vydavatele, vložte  **\<prvek publisherPolicy >** do  **\<prvku dependentAssembly >** .  
   
- Ve výchozím nastavení **použít** atribut je **Ano**. Nastavení **použít** atribut **žádné** přepíše jakékoli předchozí **Ano** nastavení sestavení.  
+ Výchozí nastavení atributu Apply je **Ano**. Nastavení atributu **Apply** na hodnotu **ne** přepíše všechna předchozí nastavení **Ano** pro sestavení.  
   
- Oprávnění je požadováno pro aplikace explicitně ignorovat pomocí zásady vydavatele [ \<publisherPolicy použít = "žádný" / >](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) prvku v konfiguračním souboru aplikace. Oprávnění je udělován nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku <xref:System.Security.Permissions.SecurityPermission>. Další informace najdete v tématu [sestavení oprávnění zabezpečení přesměrování vazby](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
+ Aby aplikace explicitně ignorovala zásady vydavatele pomocí [ \<elementu publisherPolicy Apply = "No"/>](publisherpolicy-element.md) v konfiguračním souboru aplikace, vyžaduje oprávnění. Oprávnění je uděleno nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku <xref:System.Security.Permissions.SecurityPermission>na. Další informace naleznete v tématu [oprávnění zabezpečení přesměrování vazby sestavení](../../assembly-binding-redirection-security-permission.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vypne zásady vydavatele pro sestavení, `myAssembly`.  
+ Následující příklad vypne zásady vydavatele pro sestavení `myAssembly`.  
   
 ```xml  
 <configuration>  
@@ -87,7 +87,7 @@ Určuje, zda modul runtime použije zásady vydavatele.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)
+- [Přesměrování verzí sestavení](../../redirect-assembly-versions.md)

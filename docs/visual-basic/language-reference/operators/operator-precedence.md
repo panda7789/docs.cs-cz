@@ -14,12 +14,12 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-ms.openlocfilehash: c420a34a18f9e8fb55411a062e6a47ab38e98978
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: df40aced45442c9c7895c8d10ece64b21e292508
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611489"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659927"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorita operátorů v jazyce Visual Basic
 Když ve výrazu dojde k několika operacím, každá část je vyhodnocena a vyřešena v předem určeném pořadí s názvem *Priorita operátora*.
@@ -50,7 +50,7 @@ Když ve výrazu dojde k několika operacím, každá část je vyhodnocena a vy
 
  Celočíselné dělení`\`()
 
- Modulo – aritmetické`Mod`operace ()
+ Modulární aritmetická`Mod`operace ()
 
  Sčítání a odčítání (`+`, `–`)
 

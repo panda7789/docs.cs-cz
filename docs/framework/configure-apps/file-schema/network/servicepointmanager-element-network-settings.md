@@ -8,19 +8,19 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: 407ed85de109a671030eccff8ddd92af91628014
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6a40d97bf16a3125452311e7762617e657ca384
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704983"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659143"
 ---
-# <a name="servicepointmanager-element-network-settings"></a>\<Třída servicePointManager > – Element (nastavení sítě)
+# <a name="servicepointmanager-element-network-settings"></a>\<Třída ServicePointManager – element > (nastavení sítě)
 Nakonfiguruje připojení k síťovým prostředkům.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<settings>  
+\<Nastavení >  
 \<servicePointManager>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,13 +44,13 @@ Nakonfiguruje připojení k síťovým prostředkům.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`checkCertificateName`|Určuje, zda systém měli ověřit, název certifikátu odpovídá názvu hostitele serveru před použitím certifikátu. Výchozí hodnota je `true`.|  
-|`checkCertificateRevocationList`|Určuje, zda systém by měl kontrolovat, jestli certifikát byl odvolán. před použitím certifikátu. Výchozí hodnota je `false`.|  
-|`dnsRefreshTimeout`|Určuje, jak dlouho služby DNS (Domain Name) jsou uložené v mezipaměti řešení ve spojení s parametrem kruhové dotazování DNS v milisekundách. Výchozí hodnota je 120 000 milisekund (dvě minuty).|  
-|`enableDnsRoundRobin`|Určuje, zda rozlišení DNS hostitele názvy s více adres Internet Protocol (IP) vrácená všechny adresy, nebo jenom první shoda. Výchozí hodnota je `false`.|  
-|`encryptionPolicy`|Určuje zásady šifrování použít relaci protokolu SSL/TLS na <xref:System.Net.ServicePointManager> instance. Možné hodnoty jsou ekvivalentem hodnoty <xref:System.Net.Security.EncryptionPolicy> výčtu. Použití <xref:System.Security.Authentication.CipherAlgorithmType.Null> se vyžaduje při šifrování zásady nastavíte `NoEncryption`. Výchozí hodnota je `RequireEncryption`.|  
-|`expect100Continue`|Určuje, zda metody POST by měla by se měl zobrazit `100-continue` odpověď ze serveru. Výchozí hodnota je `true`.|  
-|`useNagleAlgorithm`|Určuje, zda připojení řídí správce bodu služby používat Nagle algoritmus. Výchozí hodnota je `true`.|  
+|`checkCertificateName`|Určuje, zda má systém před použitím certifikátu ověřit, zda název certifikátu odpovídá názvu hostitele serveru. Výchozí hodnota je `true`.|  
+|`checkCertificateRevocationList`|Určuje, zda má systém před použitím certifikátu ověřit, zda byl certifikát odvolán. Výchozí hodnota je `false`.|  
+|`dnsRefreshTimeout`|Určuje, jak dlouho se překlad služby DNS (Domain Name Service) ukládá do mezipaměti v kombinaci s možností kruhové dotazování DNS (v milisekundách). Výchozí hodnota je 120 000 milisekund (dvě minuty).|  
+|`enableDnsRoundRobin`|Určuje, jestli překlad DNS názvů hostitelů s více adresami Internet Protocol (IP) vrací všechny adresy, nebo jenom první z nich. Výchozí hodnota je `false`.|  
+|`encryptionPolicy`|Určuje zásady šifrování použité pro relaci SSL/TLS na <xref:System.Net.ServicePointManager> instanci. Možné hodnoty jsou ekvivalentní hodnotám pro <xref:System.Net.Security.EncryptionPolicy> výčet. Pokud je zásada <xref:System.Security.Authentication.CipherAlgorithmType.Null> šifrování nastavena na `NoEncryption`hodnotu, použití je povinné. Výchozí hodnota je `RequireEncryption`.|  
+|`expect100Continue`|Určuje, zda by metody post měly očekávat `100-continue` odpověď ze serveru. Výchozí hodnota je `true`.|  
+|`useNagleAlgorithm`|Určuje, jestli připojení řízená správcem servisního bodu používají algoritmus Nagle. Výchozí hodnota je `true`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -59,15 +59,15 @@ Nakonfiguruje připojení k síťovým prostředkům.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[Nastavení](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

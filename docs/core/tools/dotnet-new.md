@@ -1,13 +1,13 @@
 ---
-title: nový příkaz DotNet
-description: Vytvoří nový příkaz dotnet nových projektů .NET Core založených na zadané šabloně.
+title: dotnet – nový příkaz
+description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 05/06/2019
-ms.openlocfilehash: f8bc8cb59ae6e421f4e9bd05925376399939056d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: c9e960bab0e28e88b0cc8d431dad3b9f3f00c9c0
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878318"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660544"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -15,9 +15,9 @@ ms.locfileid: "65878318"
 
 ## <a name="name"></a>Name
 
-`dotnet new` -Vytvoří nový projekt, konfigurační soubor nebo řešení založené na zadané šabloně.
+`dotnet new`– Vytvoří nový projekt, konfigurační soubor nebo řešení na základě zadané šablony.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
 # <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
 
@@ -27,7 +27,7 @@ dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
 ```
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```console
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [--nuget-source] [-o|--output] [-u|--uninstall] [Template options]
@@ -35,7 +35,7 @@ dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```console
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
@@ -56,112 +56,112 @@ dotnet new [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet new` Příkaz poskytuje pohodlný způsob, jak inicializovat platný projekt .NET Core.
+`dotnet new` Příkaz nabízí pohodlný způsob, jak inicializovat platný projekt .NET Core.
 
-Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvořit artefakty na disku na základě určené šablony a možnosti.
+Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoří artefakty na disku na základě zadané šablony a možností.
 
 ## <a name="arguments"></a>Arguments
 
 `TEMPLATE`
 
-Šablona pro vytvoření instance při vyvolání příkazu. Každá šablona může mít specifické možnosti, které lze předat. Další informace najdete v tématu [možnosti šablony](#template-options).
+Šablona, která se má vytvořit při vyvolání příkazu Každá šablona může mít konkrétní možnosti, které můžete předat. Další informace najdete v tématu [Možnosti šablony](#template-options).
 
-Pokud `TEMPLATE` hodnota není přesná shoda s textem v **šablony** nebo **krátký název** sloupce odpovídají podřetězci se provádí v těchto dvou sloupců.
+Pokud hodnota není přesná shoda na textu v šablonách nebo ve sloupci **short name** , je v těchto dvou sloupcích provedena shoda podřetězce. `TEMPLATE`
 
 # <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
 
-Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalovány se sadou .NET Core SDK 2.2.100. Výchozí jazyk šablony se zobrazí v závorkách.
+Příkaz obsahuje výchozí seznam šablon. Použijte `dotnet new -l` k získání seznamu dostupných šablon. Následující tabulka obsahuje šablony, které jsou předinstalované s .NET Core SDK 2.2.100. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
 | Šablony                                    | Krátký název        | Jazyk     | Značky                                  |
 |----------------------------------------------|-------------------|--------------|---------------------------------------|
-| Konzolová aplikace                          | `console`         | [C#], F#, VB | Běžné/konzoly                        |
-| Knihovna tříd                                | `classlib`        | [C#], F#, VB | Běžné/knihovny                        |
-| Projekt testu jednotek                            | `mstest`          | [C#], F#, VB | Test a MSTest                           |
-| NUnit 3 Test projektu                         | `nunit`           | [C#], F#, VB | Test/NUnit                            |
-| NUnit 3 Test položky                            | `nunit-test`      | [C#], F#, VB | Test/NUnit                            |
+| Konzolová aplikace                          | `console`         | [C#], F#, VB | Společná/konzola                        |
+| Knihovna tříd                                | `classlib`        | [C#], F#, VB | Společné/knihovny                        |
+| Projekt testu jednotek                            | `mstest`          | [C#], F#, VB | Test/MSTest                           |
+| Projekt testů NUnit 3                         | `nunit`           | [C#], F#, VB | Test/NUnit                            |
+| NUnit 3 položka testu                            | `nunit-test`      | [C#], F#, VB | Test/NUnit                            |
 | Projekt testů xUnit                           | `xunit`           | [C#], F#, VB | Test/xUnit                            |
 | Stránka Razor                                   | `page`            | [C#]         | Web/ASP.NET                           |
-| MVC ViewImports                              | `viewimports`     | [C#]         | Web/ASP.NET                           |
-| MVC ViewStart                                | `viewstart`       | [C#]         | Web/ASP.NET                           |
-| ASP.NET Core (prázdné)                           | `web`             | [C#], F#     | Web nebo je prázdný                             |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`             | [C#], F#     | Web/MVC                               |
-| Webové aplikace ASP.NET Core                         | `webapp`, `razor` | [C#]         | Stránky MVC/web/Razor                   |
-| ASP.NET Core with Angular                    | `angular`         | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core pomocí React.js                   | `react`           | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core pomocí React.js a Redux         | `reactredux`      | [C#]         | Web/MVC/SPA                           |
-| Knihovny tříd Razor                          | `razorclasslib`   | [C#]         | Knihovna tříd web/Razor/Library/Razor |
-| ASP.NET Core Web API                         | `webapi`          | [C#], F#     | Web/WebAPI                            |
+| ViewImports MVC                              | `viewimports`     | [C#]         | Web/ASP.NET                           |
+| ViewStart MVC                                | `viewstart`       | [C#]         | Web/ASP.NET                           |
+| ASP.NET Core prázdné                           | `web`             | [C#], F#     | Web/prázdné                             |
+| ASP.NET Core webová aplikace (model-zobrazení-kontroler) | `mvc`             | [C#], F#     | Web/MVC                               |
+| ASP.NET Core webové aplikace                         | `webapp`, `razor` | [C#]         | Web/MVC/Razor Pages                   |
+| ASP.NET Core s úhlovým                    | `angular`         | [C#]         | Web/MVC/SPA                           |
+| ASP.NET Core s reagují. js                   | `react`           | [C#]         | Web/MVC/SPA                           |
+| ASP.NET Core s využitím reagují. js a Redux         | `reactredux`      | [C#]         | Web/MVC/SPA                           |
+| Knihovna tříd Razor                          | `razorclasslib`   | [C#]         | Knihovna tříd web/Razor/Library/Razor |
+| ASP.NET Core webového rozhraní API                         | `webapi`          | [C#], F#     | Web/WebAPI                            |
 | global.json file                             | `globaljson`      |              | Konfigurace                                |
-| NuGet Config                                 | `nugetconfig`     |              | Konfigurace                                |
-| Webové konfigurace                                   | `webconfig`       |              | Konfigurace                                |
+| Konfigurace NuGet                                 | `nugetconfig`     |              | Konfigurace                                |
+| Webová konfigurace                                   | `webconfig`       |              | Konfigurace                                |
 | Soubor řešení                                | `sln`             |              | Řešení                              |
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
-Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalovány se sadou .NET Core SDK 2.1.300. Výchozí jazyk šablony se zobrazí v závorkách.
+Příkaz obsahuje výchozí seznam šablon. Použijte `dotnet new -l` k získání seznamu dostupných šablon. Následující tabulka obsahuje šablony, které jsou předinstalované s .NET Core SDK 2.1.300. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
 | Šablony                                    | Krátký název      | Jazyk     | Značky                                  |
 |----------------------------------------------|-----------------|--------------|---------------------------------------|
-| Konzolová aplikace                          | `console`       | [C#], F#, VB | Běžné/konzoly                        |
-| Knihovna tříd                                | `classlib`      | [C#], F#, VB | Běžné/knihovny                        |
-| Projekt testu jednotek                            | `mstest`        | [C#], F#, VB | Test a MSTest                           |
+| Konzolová aplikace                          | `console`       | [C#], F#, VB | Společná/konzola                        |
+| Knihovna tříd                                | `classlib`      | [C#], F#, VB | Společné/knihovny                        |
+| Projekt testu jednotek                            | `mstest`        | [C#], F#, VB | Test/MSTest                           |
 | Projekt testů xUnit                           | `xunit`         | [C#], F#, VB | Test/xUnit                            |
 | Stránka Razor                                   | `page`          | [C#]         | Web/ASP.NET                           |
-| MVC ViewImports                              | `viewimports`   | [C#]         | Web/ASP.NET                           |
-| MVC ViewStart                                | `viewstart`     | [C#]         | Web/ASP.NET                           |
-| ASP.NET Core (prázdné)                           | `web`           | [C#], F#     | Web nebo je prázdný                             |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`           | [C#], F#     | Web/MVC                               |
-| Webové aplikace ASP.NET Core                         | `razor`         | [C#]         | Stránky MVC/web/Razor                   |
-| ASP.NET Core with Angular                    | `angular`       | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core pomocí React.js                   | `react`         | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core pomocí React.js a Redux         | `reactredux`    | [C#]         | Web/MVC/SPA                           | 
-| Knihovny tříd Razor                          | `razorclasslib` | [C#]         | Knihovna tříd web/Razor/Library/Razor |
-| ASP.NET Core Web API                         | `webapi`        | [C#], F#     | Web/WebAPI                            |
+| ViewImports MVC                              | `viewimports`   | [C#]         | Web/ASP.NET                           |
+| ViewStart MVC                                | `viewstart`     | [C#]         | Web/ASP.NET                           |
+| ASP.NET Core prázdné                           | `web`           | [C#], F#     | Web/prázdné                             |
+| ASP.NET Core webová aplikace (model-zobrazení-kontroler) | `mvc`           | [C#], F#     | Web/MVC                               |
+| ASP.NET Core webové aplikace                         | `razor`         | [C#]         | Web/MVC/Razor Pages                   |
+| ASP.NET Core s úhlovým                    | `angular`       | [C#]         | Web/MVC/SPA                           |
+| ASP.NET Core s reagují. js                   | `react`         | [C#]         | Web/MVC/SPA                           |
+| ASP.NET Core s využitím reagují. js a Redux         | `reactredux`    | [C#]         | Web/MVC/SPA                           | 
+| Knihovna tříd Razor                          | `razorclasslib` | [C#]         | Knihovna tříd web/Razor/Library/Razor |
+| ASP.NET Core webového rozhraní API                         | `webapi`        | [C#], F#     | Web/WebAPI                            |
 | global.json file                             | `globaljson`    |              | Konfigurace                                |
-| NuGet Config                                 | `nugetconfig`   |              | Konfigurace                                |
-| Webové konfigurace                                   | `webconfig`     |              | Konfigurace                                |
+| Konfigurace NuGet                                 | `nugetconfig`   |              | Konfigurace                                |
+| Webová konfigurace                                   | `webconfig`     |              | Konfigurace                                |
 | Soubor řešení                                | `sln`           |              | Řešení                              |
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
-Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předem nainstalované s .NET Core SDK 2.0.0. Výchozí jazyk šablony se zobrazí v závorkách.
+Příkaz obsahuje výchozí seznam šablon. Použijte `dotnet new -l` k získání seznamu dostupných šablon. Následující tabulka obsahuje šablony, které jsou předinstalované s .NET Core SDK 2.0.0. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
 | Šablony                                    | Krátký název    | Jazyk     | Značky                |
 |----------------------------------------------|---------------|--------------|---------------------|
-| Konzolová aplikace                          | `console`     | [C#], F#, VB | Běžné/konzoly      |
-| Knihovna tříd                                | `classlib`    | [C#], F#, VB | Běžné/knihovny      |
-| Projekt testu jednotek                            | `mstest`      | [C#], F#, VB | Test a MSTest         |
+| Konzolová aplikace                          | `console`     | [C#], F#, VB | Společná/konzola      |
+| Knihovna tříd                                | `classlib`    | [C#], F#, VB | Společné/knihovny      |
+| Projekt testu jednotek                            | `mstest`      | [C#], F#, VB | Test/MSTest         |
 | Projekt testů xUnit                           | `xunit`       | [C#], F#, VB | Test/xUnit          |
-| ASP.NET Core (prázdné)                           | `web`         | [C#], F#     | Web nebo je prázdný           |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`         | [C#], F#     | Web/MVC             |
-| Webové aplikace ASP.NET Core                         | `razor`       | [C#]         | Stránky MVC/web/Razor |
-| ASP.NET Core with Angular                    | `angular`     | [C#]         | Web/MVC/SPA         |
-| ASP.NET Core pomocí React.js                   | `react`       | [C#]         | Web/MVC/SPA         |
-| ASP.NET Core pomocí React.js a Redux         | `reactredux`  | [C#]         | Web/MVC/SPA         |
-| ASP.NET Core Web API                         | `webapi`      | [C#], F#     | Web/WebAPI          |
+| ASP.NET Core prázdné                           | `web`         | [C#], F#     | Web/prázdné           |
+| ASP.NET Core webová aplikace (model-zobrazení-kontroler) | `mvc`         | [C#], F#     | Web/MVC             |
+| ASP.NET Core webové aplikace                         | `razor`       | [C#]         | Web/MVC/Razor Pages |
+| ASP.NET Core s úhlovým                    | `angular`     | [C#]         | Web/MVC/SPA         |
+| ASP.NET Core s reagují. js                   | `react`       | [C#]         | Web/MVC/SPA         |
+| ASP.NET Core s využitím reagují. js a Redux         | `reactredux`  | [C#]         | Web/MVC/SPA         |
+| ASP.NET Core webového rozhraní API                         | `webapi`      | [C#], F#     | Web/WebAPI          |
 | global.json file                             | `globaljson`  |              | Konfigurace              |
-| Nuget Config                                 | `nugetconfig` |              | Konfigurace              |
-| Webové konfigurace                                   | `webconfig`   |              | Konfigurace              |
+| Konfigurace NuGet                                 | `nugetconfig` |              | Konfigurace              |
+| Webová konfigurace                                   | `webconfig`   |              | Konfigurace              |
 | Soubor řešení                                | `sln`         |              | Řešení            |
 | Stránka Razor                                   | `page`        |              | Web/ASP.NET         |
-| MVC ViewImports                              | `viewimports` |              | Web/ASP.NET         |
-| MVC ViewStart                                | `viewstart`   |              | Web/ASP.NET         |
+| ViewImports MVC                              | `viewimports` |              | Web/ASP.NET         |
+| ViewStart MVC                                | `viewstart`   |              | Web/ASP.NET         |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -all` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalovány se sadou SDK .NET Core 1.0.1. Výchozí jazyk šablony se zobrazí v závorkách.
+Příkaz obsahuje výchozí seznam šablon. Použijte `dotnet new -all` k získání seznamu dostupných šablon. Následující tabulka obsahuje šablony, které jsou předinstalované s .NET Core SDK 1.0.1. Výchozí jazyk pro šablonu se zobrazí v závorkách.
 
 | Šablony            | Krátký název    | Jazyk | Značky           |
 |----------------------|---------------|----------|----------------|
-| Konzolová aplikace  | `console`     | [C#], F# | Běžné/konzoly |
-| Knihovna tříd        | `classlib`    | [C#], F# | Běžné/knihovny |
-| Projekt testu jednotek    | `mstest`      | [C#], F# | Test a MSTest    |
+| Konzolová aplikace  | `console`     | [C#], F# | Společná/konzola |
+| Knihovna tříd        | `classlib`    | [C#], F# | Společné/knihovny |
+| Projekt testu jednotek    | `mstest`      | [C#], F# | Test/MSTest    |
 | Projekt testů xUnit   | `xunit`       | [C#], F# | Test/xUnit     |
-| ASP.NET Core (prázdné)   | `web`         | [C#]     | Web nebo je prázdný      |
-| Webové aplikace ASP.NET Core | `mvc`         | [C#], F# | Web/MVC        |
-| ASP.NET Core Web API | `webapi`      | [C#]     | Web/WebAPI     |
-| Nuget Config         | `nugetconfig` |          | Konfigurace         |
-| Webové konfigurace           | `webconfig`   |          | Konfigurace         |
+| ASP.NET Core prázdné   | `web`         | [C#]     | Web/prázdné      |
+| ASP.NET Core webové aplikace | `mvc`         | [C#], F# | Web/MVC        |
+| ASP.NET Core webového rozhraní API | `webapi`      | [C#]     | Web/WebAPI     |
+| Konfigurace NuGet         | `nugetconfig` |          | Konfigurace         |
+| Webová konfigurace           | `webconfig`   |          | Konfigurace         |
 | Soubor řešení        | `sln`         |          | Řešení       |
 
 ---
@@ -172,608 +172,608 @@ Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -all` získat 
 
 `--dry-run`
 
-Zobrazí souhrn co by mohlo dojít, pokud daný příkaz byly spuštěny, pokud by výsledkem vytváření šablon.
+Zobrazí souhrnné informace o tom, co se stane, pokud by došlo ke spuštění daného příkazu, pokud by to vedlo k vytvoření šablony.
 
 `--force`
 
-Vynutí obsahu chcete vygenerovat i v případě, že by došlo ke změně existujících souborů. To je potřeba při výstupní adresář již obsahuje projekt.
+Vynutí vygenerování obsahu i v případě, že změní existující soubory. To je nutné v případě, že výstupní adresář již obsahuje projekt.
 
 `-h|--help`
 
-Vytiskne nápovědy pro příkaz. Může být vyvolána pro `dotnet new` samotný příkaz nebo pro všechny šablony, jako například `dotnet new mvc --help`.
+Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu, `dotnet new mvc --help`jako je například.
 
 `-i|--install <PATH|NUGET_ID>`
 
-Nainstaluje zdroj nebo šablony pack z `PATH` nebo `NUGET_ID` k dispozici. Pokud chcete nainstalovat zkušební verzi balíčku šablony, je třeba zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` předá \* pro verzi, která představuje poslední stabilní balíček verze. Podívejte se příklad na [příklady](#examples) oddílu.
+Nainstaluje zdroj nebo balíček šablony z `PATH` nebo `NUGET_ID` poskytnutého. Pokud chcete nainstalovat předprodejní verzi balíčku šablony, je nutné zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` se \* předá verze, která představuje poslední stabilní verzi balíčku. Podívejte se na příklad v části [Příklady](#examples) .
 
-Informace o vytváření vlastních šablon najdete v tématu [vlastních šablon pro dotnet nové](custom-templates.md).
+Informace o vytváření vlastních šablon najdete v tématu [vlastní šablony pro dotnet New](custom-templates.md).
 
 `-l|--list`
 
-Zobrazí seznam šablon, které obsahují zadaný název. Pokud je vyvolána `dotnet new` příkazu, uvádí možné šablony, které jsou k dispozici pro daný adresář. Například pokud adresář, projekt již obsahuje, neobsahuje všechny šablony projektů.
+Vypíše seznam šablon, které obsahují zadaný název. Pokud je vyvoláno pro `dotnet new` příkaz, zobrazí seznam možných šablon dostupných pro daný adresář. Například Pokud adresář již obsahuje projekt, nezobrazuje seznam všech šablon projektu.
 
 `-lang|--language {C#|F#|VB}`
 
-Jazyk šablony k vytvoření. Jazyk přijato, se liší podle šablony (Zobrazit výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
+Jazyk šablony, která se má vytvořit Přijatý jazyk se liší podle šablony (viz výchozí hodnoty v oddílu [argumenty](#arguments) ). Pro některé šablony není platná.
 
 > [!NOTE]
-> Některé součásti pro interpretaci `#` jako speciální znak. V takových případech bude nutné uvést hodnotu parametru jazyka, jako `dotnet new console -lang "F#"`.
+> Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech je nutné uvést hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
-Název pro výstup vytvořený. Pokud není zadán žádný název, použije se název aktuálního adresáře.
+Název vytvořeného výstupu. Pokud název nezadáte, použije se název aktuálního adresáře.
 
 `--nuget-source`
 
-Určuje zdroj NuGet, který chcete použít během instalace.
+Určuje zdroj NuGet, který se použije při instalaci.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Umístění pro vygenerovaný výstup. Výchozí je aktuální adresář.
+Umístění, do kterého se má vygenerovaný výstup umístit. Výchozí je aktuální adresář.
 
 `--type`
 
-Vyfiltruje šablony podle dostupných typů. Předdefinované hodnoty jsou "projekt", "item" nebo "jiné".
+Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou "projekt", "položka" nebo "jiné".
 
 `-u|--uninstall <PATH|NUGET_ID>`
 
-Odinstaluje zdroj nebo šablony pack na `PATH` nebo `NUGET_ID` k dispozici. Při vylučování `<PATH|NUGET_ID>` zobrazené hodnoty, všechny aktuálně nainstalované šablonované balíčky a jejich přidružené šablony.
+Odinstaluje zdrojový nebo Template Pack na `PATH` nebo `NUGET_ID` poskytnutý. Při vyloučení `<PATH|NUGET_ID>` hodnoty se zobrazí všechny aktuálně nainstalované sady šablon a jejich přidružené šablony.
 
 > [!NOTE]
-> Chcete-li odinstalovat sadu pomocí šablony `PATH`, budete potřebovat plně kvalifikovanou cestu. Například *C:/uživatele/\<uživatele > /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z obsahuje složky nebudou.
-> Kromě toho nesmí být znak konečné ukončující znak lomítka adresáře na cestu k šabloně.
+> Chcete-li odinstalovat šablonu pomocí `PATH`nástroje, je nutné plně kvalifikovat cestu. Například *C:/Users/\<User >/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
+> Kromě toho Nezahrnovat koncové koncové lomítko adresáře na cestu k šabloně.
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `--force`
 
-Vynutí obsahu chcete vygenerovat i v případě, že by došlo ke změně existujících souborů. To je potřeba při výstupní adresář již obsahuje projekt.
+Vynutí vygenerování obsahu i v případě, že změní existující soubory. To je nutné v případě, že výstupní adresář již obsahuje projekt.
 
 `-h|--help`
 
-Vytiskne nápovědy pro příkaz. Může být vyvolána pro `dotnet new` samotný příkaz nebo pro všechny šablony, jako například `dotnet new mvc --help`.
+Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu, `dotnet new mvc --help`jako je například.
 
 `-i|--install <PATH|NUGET_ID>`
 
-Nainstaluje zdroj nebo šablony pack z `PATH` nebo `NUGET_ID` k dispozici. Pokud chcete nainstalovat zkušební verzi balíčku šablony, je třeba zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` předá \* pro verzi, která představuje poslední stabilní balíček verze. Podívejte se příklad na [příklady](#examples) oddílu.
+Nainstaluje zdroj nebo balíček šablony z `PATH` nebo `NUGET_ID` poskytnutého. Pokud chcete nainstalovat předprodejní verzi balíčku šablony, je nutné zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` se \* předá verze, která představuje poslední stabilní verzi balíčku. Podívejte se na příklad v části [Příklady](#examples) .
 
-Informace o vytváření vlastních šablon najdete v tématu [vlastních šablon pro dotnet nové](custom-templates.md).
+Informace o vytváření vlastních šablon najdete v tématu [vlastní šablony pro dotnet New](custom-templates.md).
 
 `-l|--list`
 
-Zobrazí seznam šablon, které obsahují zadaný název. Pokud je vyvolána `dotnet new` příkazu, uvádí možné šablony, které jsou k dispozici pro daný adresář. Například pokud adresář, projekt již obsahuje, neobsahuje všechny šablony projektů.
+Vypíše seznam šablon, které obsahují zadaný název. Pokud je vyvoláno pro `dotnet new` příkaz, zobrazí seznam možných šablon dostupných pro daný adresář. Například Pokud adresář již obsahuje projekt, nezobrazuje seznam všech šablon projektu.
 
 `-lang|--language {C#|F#|VB}`
 
-Jazyk šablony k vytvoření. Jazyk přijato, se liší podle šablony (Zobrazit výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
+Jazyk šablony, která se má vytvořit Přijatý jazyk se liší podle šablony (viz výchozí hodnoty v oddílu [argumenty](#arguments) ). Pro některé šablony není platná.
 
 > [!NOTE]
-> Některé součásti pro interpretaci `#` jako speciální znak. V takových případech bude nutné uvést hodnotu parametru jazyka, jako `dotnet new console -lang "F#"`.
+> Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech je nutné uvést hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
-Název pro výstup vytvořený. Pokud není zadán žádný název, použije se název aktuálního adresáře.
+Název vytvořeného výstupu. Pokud název nezadáte, použije se název aktuálního adresáře.
 
 `--nuget-source`
 
-Určuje zdroj NuGet, který chcete použít během instalace.
+Určuje zdroj NuGet, který se použije při instalaci.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Umístění pro vygenerovaný výstup. Výchozí je aktuální adresář.
+Umístění, do kterého se má vygenerovaný výstup umístit. Výchozí je aktuální adresář.
 
 `--type`
 
-Vyfiltruje šablony podle dostupných typů. Předdefinované hodnoty jsou "projekt", "item" nebo "jiné".
+Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou "projekt", "položka" nebo "jiné".
 
 `-u|--uninstall <PATH|NUGET_ID>`
 
-Odinstaluje zdroj nebo šablony pack na `PATH` nebo `NUGET_ID` k dispozici.
+Odinstaluje zdrojový nebo Template Pack na `PATH` nebo `NUGET_ID` poskytnutý.
 
 > [!NOTE]
-> Chcete-li odinstalovat sadu pomocí šablony `PATH`, budete potřebovat plně kvalifikovanou cestu. Například *C:/uživatele/\<uživatele > /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z obsahuje složky nebudou.
-> Kromě toho nesmí být znak konečné ukončující znak lomítka adresáře na cestu k šabloně.
+> Chcete-li odinstalovat šablonu pomocí `PATH`nástroje, je nutné plně kvalifikovat cestu. Například *C:/Users/\<User >/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
+> Kromě toho Nezahrnovat koncové koncové lomítko adresáře na cestu k šabloně.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `--force`
 
-Vynutí obsahu chcete vygenerovat i v případě, že by došlo ke změně existujících souborů. To je potřeba při výstupní adresář již obsahuje projekt.
+Vynutí vygenerování obsahu i v případě, že změní existující soubory. To je nutné v případě, že výstupní adresář již obsahuje projekt.
 
 `-h|--help`
 
-Vytiskne nápovědy pro příkaz. Může být vyvolána pro `dotnet new` samotný příkaz nebo pro všechny šablony, jako například `dotnet new mvc --help`.
+Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu, `dotnet new mvc --help`jako je například.
 
 `-i|--install <PATH|NUGET_ID>`
 
-Nainstaluje zdroj nebo šablony pack z `PATH` nebo `NUGET_ID` k dispozici. Pokud chcete nainstalovat zkušební verzi balíčku šablony, je třeba zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` předá \* pro verzi, která představuje poslední stabilní balíček verze. Podívejte se příklad na [příklady](#examples) oddílu.
+Nainstaluje zdroj nebo balíček šablony z `PATH` nebo `NUGET_ID` poskytnutého. Pokud chcete nainstalovat předprodejní verzi balíčku šablony, je nutné zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` se \* předá verze, která představuje poslední stabilní verzi balíčku. Podívejte se na příklad v části [Příklady](#examples) .
 
-Informace o vytváření vlastních šablon najdete v tématu [vlastních šablon pro dotnet nové](custom-templates.md).
+Informace o vytváření vlastních šablon najdete v tématu [vlastní šablony pro dotnet New](custom-templates.md).
 
 `-l|--list`
 
-Zobrazí seznam šablon, které obsahují zadaný název. Pokud je vyvolána `dotnet new` příkazu, uvádí možné šablony, které jsou k dispozici pro daný adresář. Například pokud adresář, projekt již obsahuje, neobsahuje všechny šablony projektů.
+Vypíše seznam šablon, které obsahují zadaný název. Pokud je vyvoláno pro `dotnet new` příkaz, zobrazí seznam možných šablon dostupných pro daný adresář. Například Pokud adresář již obsahuje projekt, nezobrazuje seznam všech šablon projektu.
 
 `-lang|--language {C#|F#|VB}`
 
-Jazyk šablony k vytvoření. Jazyk přijato, se liší podle šablony (Zobrazit výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
+Jazyk šablony, která se má vytvořit Přijatý jazyk se liší podle šablony (viz výchozí hodnoty v oddílu [argumenty](#arguments) ). Pro některé šablony není platná.
 
 > [!NOTE]
-> Některé součásti pro interpretaci `#` jako speciální znak. V takových případech bude nutné uvést hodnotu parametru jazyka, jako `dotnet new console -lang "F#"`.
+> Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech je nutné uvést hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
-Název pro výstup vytvořený. Pokud není zadán žádný název, použije se název aktuálního adresáře.
+Název vytvořeného výstupu. Pokud název nezadáte, použije se název aktuálního adresáře.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Umístění pro vygenerovaný výstup. Výchozí je aktuální adresář.
+Umístění, do kterého se má vygenerovaný výstup umístit. Výchozí je aktuální adresář.
 
 `--type`
 
-Vyfiltruje šablony podle dostupných typů. Předdefinované hodnoty jsou "projekt", "item" nebo "jiné".
+Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou "projekt", "položka" nebo "jiné".
 
 `-u|--uninstall <PATH|NUGET_ID>`
 
-Odinstaluje zdroj nebo šablony pack na `PATH` nebo `NUGET_ID` k dispozici.
+Odinstaluje zdrojový nebo Template Pack na `PATH` nebo `NUGET_ID` poskytnutý.
 
 > [!NOTE]
-> Odinstalace pomocí zdroj `PATH`, budete potřebovat plně kvalifikovanou cestu. Například *C:/uživatele/\<uživatele > /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z obsahuje složky nebudou. Kromě toho nesmí být znak konečné ukončující znak lomítka adresáře na cestu k šabloně.
+> Chcete-li odinstalovat šablonu pomocí zdroje `PATH`, je nutné cestu plně kvalifikovat. Například *C:/Users/\<User >/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude. Kromě toho Nezahrnovat koncové koncové lomítko adresáře na cestu k šabloně.
 > 
-> Pokud se nemůžete určit `PATH` nebo `NUGET_ID` argumentů potřebných k odinstalaci šablonu s `dotnet new --uninstall` bez argumentu zobrazí seznam všech nainstalovaných šablon a argument nutné je odinstalovat.
+> Pokud nemůžete určit `PATH` argument nebo `NUGET_ID` , který je potřeba k odinstalaci šablony, `dotnet new --uninstall` při spuštění bez argumentu se zobrazí seznam všech nainstalovaných šablon a argument, který je potřeba k jejich odinstalování.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `-all|--show-all`
 
-Zobrazí všechny šablony pro konkrétní typ projektu při spuštění v kontextu `dotnet new` samotný příkaz. Při spuštění v kontextu konkrétní šablony, jako například `dotnet new web -all`, `-all` je interpretován jako vytvoření příznak force. To je potřeba při výstupní adresář již obsahuje projekt.
+Zobrazí všechny šablony pro konkrétní typ projektu při spuštění v kontextu `dotnet new` samotného příkazu. Při spuštění v souvislosti s konkrétní šablonou, `dotnet new web -all`jako je například, `-all` je interpretován jako příznak vytvoření vynucení. To je nutné v případě, že výstupní adresář již obsahuje projekt.
 
 `-h|--help`
 
-Vytiskne nápovědy pro příkaz. Může být vyvolána pro `dotnet new` samotný příkaz nebo pro všechny šablony, jako například `dotnet new mvc --help`.
+Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu, `dotnet new mvc --help`jako je například.
 
 `-l|--list`
 
-Zobrazí seznam šablon, které obsahují zadaný název. Pokud je vyvolána `dotnet new` příkazu, uvádí možné šablony, které jsou k dispozici pro daný adresář. Například pokud adresář, projekt již obsahuje, neobsahuje všechny šablony projektů.
+Vypíše seznam šablon, které obsahují zadaný název. Pokud je vyvoláno pro `dotnet new` příkaz, zobrazí seznam možných šablon dostupných pro daný adresář. Například Pokud adresář již obsahuje projekt, nezobrazuje seznam všech šablon projektu.
 
 `-lang|--language {C#|F#}`
 
-Jazyk šablony k vytvoření. Jazyk přijato, se liší podle šablony (Zobrazit výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
+Jazyk šablony, která se má vytvořit Přijatý jazyk se liší podle šablony (viz výchozí hodnoty v oddílu [argumenty](#arguments) ). Pro některé šablony není platná.
 
 > [!NOTE]
-> Některé součásti pro interpretaci `#` jako speciální znak. V takových případech bude nutné uvést hodnotu parametru jazyka, jako `dotnet new console -lang "F#"`.
+> Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech je nutné uvést hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
-Název pro výstup vytvořený. Pokud není zadán žádný název, použije se název aktuálního adresáře.
+Název vytvořeného výstupu. Pokud název nezadáte, použije se název aktuálního adresáře.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Umístění pro vygenerovaný výstup. Výchozí je aktuální adresář.
+Umístění, do kterého se má vygenerovaný výstup umístit. Výchozí je aktuální adresář.
 
 ---
 
-## <a name="template-options"></a>Nastavení šablony
+## <a name="template-options"></a>Možnosti šablony
 
 Každá šablona projektu může mít k dispozici další možnosti. Základní šablony mají následující další možnosti:
 
 # <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
 
-**Konzoly**
+**stromu**
 
-`--langVersion <VERSION_NUMBER>` -Nastaví `LangVersion` vlastností souboru vytvořeného projektu. Například použít `--langVersion 7.3` používat C# 7.3. Není podporováno pro F#.
+`--langVersion <VERSION_NUMBER>`-Nastaví `LangVersion` vlastnost v souboru vytvořeného projektu. Použijte `--langVersion 7.3` například k použití C# 7,3. Nepodporuje se pro F#.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**angular, react, reactredux**
+**Úhlová, reakce, reactredux**
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. Tato možnost platí, pouze pokud `IndividualAuth` nebo `OrganizationalAuth` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. Tato možnost se vztahuje jenom `IndividualAuth` na `OrganizationalAuth` to, jestli se nepoužívají.
 
 **razorclasslib**
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **classlib**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp2.2` k vytvoření knihovny tříd .NET Core nebo `netstandard2.0` k vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp2.2` pro vytvoření knihovny tříd .NET Core nebo `netstandard2.0` pro vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
 
-`--langVersion <VERSION_NUMBER>` -Nastaví `LangVersion` vlastností souboru vytvořeného projektu. Například použít `--langVersion 7.3` používat C# 7.3. Není podporováno pro F#.
+`--langVersion <VERSION_NUMBER>`-Nastaví `LangVersion` vlastnost v souboru vytvořeného projektu. Použijte `--langVersion 7.3` například k použití C# 7,3. Nepodporuje se pro F#.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**mstest, xunit**
+**MSTest, xUnit**
 
-`-p|--enable-pack` – Povolí balení pro projekt pomocí [balíčku dotnet](dotnet-pack.md).
+`-p|--enable-pack`– Povolí balení pro projekt pomocí [sady dotnet Pack](dotnet-pack.md).
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **nunit**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Výchozí hodnota je `netcoreapp2.1`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Výchozí hodnota je `netcoreapp2.1`.
 
-`-p|--enable-pack` – Povolí balení pro projekt pomocí [balíčku dotnet](dotnet-pack.md).
+`-p|--enable-pack`– Povolí balení pro projekt pomocí [sady dotnet Pack](dotnet-pack.md).
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**Stránka**
+**Page**
 
-`-na|--namespace <NAMESPACE_NAME>` -Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
-`-np|--no-pagemodel` -Vytvoří danou stránku bez PageModel.
+`-np|--no-pagemodel`-Vytvoří stránku bez PageModel.
 
 **viewimports**
 
-`-na|--namespace <NAMESPACE_NAME>` -Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
 **web**
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. Tato možnost platí, pouze pokud `IndividualAuth` nebo `OrganizationalAuth` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. Tato možnost se vztahuje jenom `IndividualAuth` na `OrganizationalAuth` to, jestli se nepoužívají.
 
 **mvc, webapp**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `Individual` -Jednotlivé ověřování.
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `MultiOrg` – Ověřování organizace pro více tenantů.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `Individual`-Individuální ověřování.
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `MultiOrg`– Ověřování organizace pro více tenantů.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-rp|--reset-password-policy-id <ID>` -Resetování hesla ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-rp|--reset-password-policy-id <ID>`– Resetování ID zásad hesla pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-ep|--edit-profile-policy-id <ID>` – Upravit profil zásady ID pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ep|--edit-profile-policy-id <ID>`– Upravte ID zásad profilu pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` nebo `MultiOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním nebo `MultiOrg` . Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C`ověřováním, `MultiOrg` `SingleOrg`nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`--callback-path <PATH>` -Cestu požadavku v rámci základní cesty aplikace identifikátoru URI přesměrování. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `/signin-oidc`.
+`--callback-path <PATH>`– Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `/signin-oidc`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. `app.UseHsts` a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. Tato možnost platí, pouze pokud `Individual`, `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. `Individual`Tato možnost platí pouze `IndividualB2C` `MultiOrg` v případě, že se nepoužívají, nebo.`SingleOrg`
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **webapi**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C` nebo `SingleOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C` ověřováním nebo `SingleOrg` . Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. `app.UseHsts` a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. Tato možnost platí, pouze pokud `Individual`, `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. `Individual`Tato možnost platí pouze `IndividualB2C` `MultiOrg` v případě, že se nepoužívají, nebo.`SingleOrg`
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **globaljson**
 
-`--sdk-version <VERSION_NUMBER>` : Určuje verzi .NET Core SDK pro použití v *global.json* souboru.
+`--sdk-version <VERSION_NUMBER>`-Určuje verzi .NET Core SDK, která se má použít v souboru *Global. JSON* .
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
-**console, angular, react, reactredux, razorclasslib**
+**Konzola, úhlová, reakce, reactredux, razorclasslib**
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **classlib**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp2.1` k vytvoření knihovny tříd .NET Core nebo `netstandard2.0` k vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp2.1` pro vytvoření knihovny tříd .NET Core nebo `netstandard2.0` pro vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**mstest, xunit**
+**MSTest, xUnit**
 
-`-p|--enable-pack` – Povolí balení pro projekt pomocí [balíčku dotnet](dotnet-pack.md).
+`-p|--enable-pack`– Povolí balení pro projekt pomocí [sady dotnet Pack](dotnet-pack.md).
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **globaljson**
 
-`--sdk-version <VERSION_NUMBER>` : Určuje verzi .NET Core SDK pro použití v *global.json* souboru.
+`--sdk-version <VERSION_NUMBER>`-Určuje verzi .NET Core SDK, která se má použít v souboru *Global. JSON* .
 
 **web**
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. Tato možnost platí, pouze pokud `IndividualAuth` nebo `OrganizationalAuth` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. Tato možnost se vztahuje jenom `IndividualAuth` na `OrganizationalAuth` to, jestli se nepoužívají.
 
 **webapi**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C` nebo `SingleOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C` ověřováním nebo `SingleOrg` . Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. `app.UseHsts` a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. Tato možnost platí, pouze pokud `Individual`, `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. `Individual`Tato možnost platí pouze `IndividualB2C` `MultiOrg` v případě, že se nepoužívají, nebo.`SingleOrg`
 
-**MVC, razor**
+**MVC, Razor**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `Individual` -Jednotlivé ověřování.
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `MultiOrg` – Ověřování organizace pro více tenantů.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `Individual`-Individuální ověřování.
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `MultiOrg`– Ověřování organizace pro více tenantů.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-rp|--reset-password-policy-id <ID>` -Resetování hesla ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-rp|--reset-password-policy-id <ID>`– Resetování ID zásad hesla pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-ep|--edit-profile-policy-id <ID>` – Upravit profil zásady ID pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ep|--edit-profile-policy-id <ID>`– Upravte ID zásad profilu pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` nebo `MultiOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním nebo `MultiOrg` . Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C`ověřováním, `MultiOrg` `SingleOrg`nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`--callback-path <PATH>` -Cestu požadavku v rámci základní cesty aplikace identifikátoru URI přesměrování. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `/signin-oidc`.
+`--callback-path <PATH>`– Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `/signin-oidc`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--exclude-launch-settings` -Vyloučení *launchSettings.json* z vygenerované šablony.
+`--exclude-launch-settings`– Vylučte z vygenerované šablony *launchSettings. JSON* .
 
-`--use-browserlink` -Obsahuje BrowserLink v projektu.
+`--use-browserlink`-Zahrnuje BrowserLink do projektu.
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-`--no-https` -Projektu nebude vyžadovat protokol HTTPS. `app.UseHsts` a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. Tato možnost platí, pouze pokud `Individual`, `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` nejsou používány.
+`--no-https`-Projekt nevyžaduje protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. `Individual`Tato možnost platí pouze `IndividualB2C` `MultiOrg` v případě, že se nepoužívají, nebo.`SingleOrg`
 
-**Stránka**
+**Page**
 
-`-na|--namespace <NAMESPACE_NAME>` -Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
-`-np|--no-pagemodel` -Vytvoří danou stránku bez PageModel.
+`-np|--no-pagemodel`-Vytvoří stránku bez PageModel.
 
 **viewimports**
 
-`-na|--namespace <NAMESPACE_NAME>` -Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
-**konzola, angular, react, reactredux**
+**Konzola, úhlová, reakce, reactredux**
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **classlib**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp2.0` k vytvoření knihovny tříd .NET Core nebo `netstandard2.0` k vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp2.0` pro vytvoření knihovny tříd .NET Core nebo `netstandard2.0` pro vytvoření knihovny tříd .NET Standard. Výchozí hodnota je `netstandard2.0`.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**mstest, xunit**
+**MSTest, xUnit**
 
-`-p|--enable-pack` – Povolí balení pro projekt pomocí [balíčku dotnet](dotnet-pack.md).
+`-p|--enable-pack`– Povolí balení pro projekt pomocí [sady dotnet Pack](dotnet-pack.md).
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **globaljson**
 
-`--sdk-version <VERSION_NUMBER>` : Určuje verzi .NET Core SDK pro použití v *global.json* souboru.
+`--sdk-version <VERSION_NUMBER>`-Určuje verzi .NET Core SDK, která se má použít v souboru *Global. JSON* .
 
 **web**
 
-`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerovanou šablonu.
+`--use-launch-settings`-Zahrnuje *launchSettings. JSON* ve výstupu vygenerované šablony.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
 **webapi**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C` nebo `SingleOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C` ověřováním nebo `SingleOrg` . Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerovanou šablonu.
+`--use-launch-settings`-Zahrnuje *launchSettings. JSON* ve výstupu vygenerované šablony.
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**MVC, razor**
+**MVC, Razor**
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Možné hodnoty jsou:
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Možné hodnoty jsou:
 
-- `None` -Bez ověřování (výchozí).
-- `Individual` -Jednotlivé ověřování.
-- `IndividualB2C` -Jednotlivé ověřování pomocí Azure AD B2C.
-- `SingleOrg` – Ověřování organizace pro jednoho tenanta.
-- `MultiOrg` – Ověřování organizace pro více tenantů.
-- `Windows` -Ověřování Windows.
+- `None`-Bez ověřování (výchozí).
+- `Individual`-Individuální ověřování.
+- `IndividualB2C`-Jednotlivá ověřování pomocí Azure AD B2C.
+- `SingleOrg`– Ověřování organizace pro jednoho tenanta.
+- `MultiOrg`– Ověřování organizace pro více tenantů.
+- `Windows`– Ověřování systému Windows.
 
-`--aad-b2c-instance <INSTANCE>` -Instanci Azure Active Directory B2C pro připojení k. Použití s `IndividualB2C` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
+`--aad-b2c-instance <INSTANCE>`– Instance Azure Active Directory B2C pro připojení. Použijte s `IndividualB2C` ověřováním. Výchozí hodnota je `https://login.microsoftonline.com/tfp/`.
 
-`-ssp|--susi-policy-id <ID>` – ID přihlášení a registraci zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ssp|--susi-policy-id <ID>`– ID zásad přihlášení a registrace pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-rp|--reset-password-policy-id <ID>` -Resetování hesla ID zásady pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-rp|--reset-password-policy-id <ID>`– Resetování ID zásad hesla pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`-ep|--edit-profile-policy-id <ID>` – Upravit profil zásady ID pro tento projekt. Použití s `IndividualB2C` ověřování.
+`-ep|--edit-profile-policy-id <ID>`– Upravte ID zásad profilu pro tento projekt. Použijte s `IndividualB2C` ověřováním.
 
-`--aad-instance <INSTANCE>` – Instance služby Azure Active Directory pro připojení k. Použití s `SingleOrg` nebo `MultiOrg` ověřování. Výchozí hodnota je `https://login.microsoftonline.com/`.
+`--aad-instance <INSTANCE>`– Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním nebo `MultiOrg` . Výchozí hodnota je `https://login.microsoftonline.com/`.
 
-`--client-id <ID>` – ID klienta pro tento projekt. Použití s `IndividualB2C`, `SingleOrg`, nebo `MultiOrg` ověřování. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+`--client-id <ID>`– ID klienta pro tento projekt. Použijte s `IndividualB2C`ověřováním, `MultiOrg` `SingleOrg`nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
-`--domain <DOMAIN>` -Domény tenantu Active directory. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `qualified.domain.name`.
+`--domain <DOMAIN>`– Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
 
-`--tenant-id <ID>` – ID Tenanta ID adresáře pro připojení k. Použití s `SingleOrg` ověřování. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
+`--tenant-id <ID>`– ID TenantId adresáře, ke kterému se má připojit. Použijte s `SingleOrg` ověřováním. Výchozí hodnota je `22222222-2222-2222-2222-222222222222`.
 
-`--callback-path <PATH>` -Cestu požadavku v rámci základní cesty aplikace identifikátoru URI přesměrování. Použití s `SingleOrg` nebo `IndividualB2C` ověřování. Výchozí hodnota je `/signin-oidc`.
+`--callback-path <PATH>`– Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `/signin-oidc`.
 
-`-r|--org-read-access` – Povolí této aplikaci přístup pro čtení do adresáře. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
+`-r|--org-read-access`– Povolí této aplikaci přístup pro čtení k adresáři. Platí jenom pro `SingleOrg` nebo `MultiOrg` ověřování.
 
-`--use-launch-settings` -Zahrnuje *launchSettings.json* ve výstupu vygenerovanou šablonu.
+`--use-launch-settings`-Zahrnuje *launchSettings. JSON* ve výstupu vygenerované šablony.
 
-`--use-browserlink` -Obsahuje BrowserLink v projektu.
+`--use-browserlink`-Zahrnuje BrowserLink do projektu.
 
-`-uld|--use-local-db` : Určuje, že by měl být LocalDB použít místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
+`-uld|--use-local-db`-Určuje LocalDB by měl být použit místo SQLite. Platí jenom pro `Individual` nebo `IndividualB2C` ověřování.
 
-`--no-restore` -Neprovede implicitní obnovení při vytváření projektu.
+`--no-restore`– Během vytváření projektu neprovede implicitní obnovení.
 
-**Stránka**
+**Page**
 
-`-na|--namespace <NAMESPACE_NAME>`-Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
-`-np|--no-pagemodel` -Vytvoří danou stránku bez PageModel.
+`-np|--no-pagemodel`-Vytvoří stránku bez PageModel.
 
 **viewimports**
 
-`-na|--namespace <NAMESPACE_NAME>`-Namespace pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
+`-na|--namespace <NAMESPACE_NAME>`– Obor názvů pro vygenerovaný kód. Výchozí hodnota je `MyApp.Namespace`.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-**konzola, xunit, mstest, web, webapi**
+**Konzola, xUnit, MSTest, web, WebApi**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
 **classlib**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp1.0`, `netcoreapp1.1`, nebo `netstandard1.0` k `netstandard1.6`. Výchozí hodnota je `netstandard1.4`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp1.0`, `netcoreapp1.1`, nebo `netstandard1.0` na `netstandard1.6`. Výchozí hodnota je `netstandard1.4`.
 
 **mvc**
 
-`-f|--framework <FRAMEWORK>` : Určuje, že [framework](../../standard/frameworks.md) do cíle. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
+`-f|--framework <FRAMEWORK>`-Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Hodnoty: `netcoreapp1.0` nebo `netcoreapp1.1`. Výchozí hodnota je `netcoreapp1.0`.
 
-`-au|--auth <AUTHENTICATION_TYPE>` -Typ ověřování, který má použít. Hodnoty: `None` nebo `Individual`. Výchozí hodnota je `None`.
+`-au|--auth <AUTHENTICATION_TYPE>`– Typ ověřování, které se má použít. Hodnoty: `None` nebo `Individual`. Výchozí hodnota je `None`.
 
-`-uld|--use-local-db` : Určuje, jestli se mají použít databázi LocalDB místo SQLite. Hodnoty: `true` nebo `false`. Výchozí hodnota je `false`.
+`-uld|--use-local-db`– Určuje, jestli se místo SQLite použije LocalDB. Hodnoty: `true` nebo `false`. Výchozí hodnota je `false`.
 
 ---
 
 ## <a name="examples"></a>Příklady
 
-Vytvoření C# projekt konzolové aplikace tak, že zadáte název šablony:
+Vytvořte projekt C# konzolové aplikace zadáním názvu šablony:
 
 `dotnet new "Console Application"`
 
-Vytvoření F# projekt konzolové aplikace v aktuálním adresáři:
+Vytvořte projekt F# konzolové aplikace v aktuálním adresáři:
 
 `dotnet new console -lang F#`
 
-Vytvořte projekt knihovny tříd .NET Standard v zadaném adresáři (k dispozici pouze s .NET Core SDK 2.0 a novějšími verzemi):
+Vytvořit projekt knihovny tříd .NET Standard v zadaném adresáři (k dispozici pouze s .NET Core SDK 2,0 nebo novějšími verzemi):
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
-Vytvořit nový ASP.NET Core C# projektů MVC v aktuálním adresáři bez ověřování:
+Vytvoří nový projekt ASP.NET Core C# MVC v aktuálním adresáři bez ověřování:
 
 `dotnet new mvc -au None`
 
-Vytvoření nového projektu s použitím xUnit:
+Vytvořit nový projekt xUnit:
 
 `dotnet new xunit`
 
-Seznam všech šablon, které jsou k dispozici pro rozhraní MVC:
+Vypíše všechny šablony, které jsou k dispozici pro MVC:
 
 `dotnet new mvc -l`
 
-Seznam všech šablon odpovídající *jsme* dílčí řetězec. Žádná shoda nenajde, takže odpovídající podřetězec bude možné spustit proti krátký název i název sloupce.
+Vypíše všechny šablony, které odpovídají podřetězci *My* . Nebyla nalezena žádná přesná shoda, takže porovnávání dílčích řetězců se shoduje se sloupci krátkého názvu a názvu.
 
 `dotnet new we -l`
 
-Pokus o vyvolání šablony odpovídající *ng*. Pokud nelze určit jediný výskyt shody, seznam šablon, které jsou částečné shody.
+Došlo k pokusu o vyvolání šablony, která odpovídá *NG*. Pokud nelze určit jednu shodu, Seznamte se se šablonami, které jsou částečné shody.
 
 `dotnet new ng`
 
-Instalace verze 2.0 šablon jednostránkové aplikace ASP.NET Core (příkaz Možnosti dostupné pro .NET Core SDK 1.1 a novějších verzích pouze):
+2,0 nainstalujte šablony aplikace s jednou stránkou pro ASP.NET Core (možnost příkazového řádku, která je dostupná jenom pro .NET Core SDK 1,1 a novější verze):
 
 `dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0`
 
-Vytvoření *global.json* v aktuálním adresáři nastavení sady SDK verze 2.0.0 (k dispozici pouze s .NET Core SDK 2.0 a novějšími verzemi):
+Vytvoří *Global. JSON* v aktuálním adresáři nastavení verze sady SDK na 2.0.0 (k dispozici pouze s .NET Core SDK 2,0 nebo novějšími verzemi):
 
 `dotnet new globaljson --sdk-version 2.0.0`
 
 ## <a name="see-also"></a>Viz také:
 
-- [Vlastních šablon pro dotnet nové](custom-templates.md)
-- [Vytvoření vlastní šablony pro dotnet new](~/docs/core/tutorials/create-custom-template.md)
-- [úložiště GitHub DotNet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)
-- [Dostupné šablony pro dotnet nové](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)
+- [Vlastní šablony pro dotnet New](custom-templates.md)
+- [Vytvoření vlastní šablony pro dotnet new](../tutorials/create-custom-template.md)
+- [dotnet/dotnet-Template-Samples – úložiště GitHub](https://github.com/dotnet/dotnet-template-samples)
+- [Dostupné šablony pro dotnet New](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new)

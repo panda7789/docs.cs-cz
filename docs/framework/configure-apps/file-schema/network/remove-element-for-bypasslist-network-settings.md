@@ -10,22 +10,22 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-ms.openlocfilehash: a04cca3e57af5cc422776c5b2444a140e86f98b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0fd8de9af00aa861d92c8c201ef89545e108c790
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674464"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659241"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<Odebrat > – Element pro bypasslist (nastavení sítě)
+# <a name="remove-element-for-bypasslist-network-settings"></a>\<Remove – element > pro BypassList (nastavení sítě)
 
-Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.
+Odebere IP adresu nebo název DNS ze seznamu obcházení proxy serveru.
 
-\<Konfigurace > \
+\<> Konfigurace \
 \<system.net>\
-\<defaultProxy>\
-\<bypasslist – > \
-\<remove>
+\<defaultProxy > \
+\<BypassList > \
+\<odebrat >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -53,23 +53,23 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |**Element**|**Popis**|
 |-----------------|---------------------|
-|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|
+|[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|
 
 ## <a name="remarks"></a>Poznámky
 
-`remove` Element odebere regulární výrazy popisující IP adres nebo názvů DNS serverů v seznamu adres, které obcházejí proxy server. Adresy byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.
+`remove` Element odstraní regulární výrazy popisující IP adresy nebo názvy serverů DNS ze seznamu adres, které obcházejí proxy server. Adresy byly definovány dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.
 
-Hodnota `address` atribut musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitele.
+Hodnota `address` atributu by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.
 
-Další informace o formátování regulárních výrazů naleznete v tématu. [Regulárních výrazech .NET Frameworku](../../../../../docs/standard/base-types/regular-expressions.md).
+Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../../docs/standard/base-types/regular-expressions.md).
 
 ## <a name="configuration-files"></a>Konfigurační soubory
 
-Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).
+Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad odebere všechny předchozí definice pro doménu společnosti adventure works.com a pak přidá do seznamu obcházení doménu contoso.com.
+Následující příklad odebere předchozí definici pro doménu adventure-works.com a pak do seznamu pro obejití přidá doménu contoso.com.
 
 ```xml
 <configuration>
@@ -87,4 +87,4 @@ Následující příklad odebere všechny předchozí definice pro doménu spole
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

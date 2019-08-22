@@ -2,40 +2,40 @@
 title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: fbc70669b9c03b59468f4f6a67c1f73432883193
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63ac0f50b34a5e5d8739adbeb70f2412960227c3
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743610"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666132"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
-Můžete generovat kód pro reprezentaci databáze pomocí Návrháře relací objektů nebo nástroj příkazového řádku SQLMetal. V obou případech se generování kódu začátku do konce dochází ve třech fázích:  
+Můžete vygenerovat kód reprezentující databázi pomocí Návrhář relací objektů nebo nástroje příkazového řádku SQLMetal. V obou případech dochází ke generování kompletního kódu ve třech fázích:  
   
-1. *Extraktor* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
+1. *Extraktor dbml* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
   
-2. Je skenovalo souboru DBML *program pro ověření DBML* chyby.  
+2. Soubor DBML je prohledáván *validátorem dbml* pro chyby.  
   
-3. Pokud se zdá, že žádné chyby ověření, je soubor předaná generátoru kódu.  
+3. Pokud se nezobrazí žádné chyby ověření, soubor se předává generátoru kódu.  
   
- Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojářům používajícím Visual Studio můžete také použít Návrhář relací objektů pro generování kódu. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojáři, kteří používají Visual Studio, mohou také použít Návrhář relací objektů k vygenerování kódu. Viz [nástroje LINQ to SQL v aplikaci Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
-## <a name="dbml-extractor"></a>Extraktor  
- Je Extraktor [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, která přijímá metadata databáze jako vstup a vytvoří jako výstup souboru DBML.  
+## <a name="dbml-extractor"></a>Extraktor DBML  
+ Extraktor dbml je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenta, která přebírá metadata databáze jako vstup a vytváří jako výstup soubor DBML.  
   
 ## <a name="code-generator"></a>Generátor kódu  
- Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenty, který převádí soubory DBML do jazyka Visual Basic C#, nebo mapování souborů XML.  
+ Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenta, která překládá soubory dbml na Visual Basic, C#nebo soubory mapování XML.  
   
 ## <a name="xml-schema-definition-file"></a>Soubor definice schématu XML  
- Souboru DBML musí být platná pro následující definice schématu jako souboru XSD.  
+ Soubor DBML musí být platný pro následující definici schématu jako soubor XSD.  
   
- Tento soubor definice schématu ze souboru definice schématu, který se používá k ověření soubor externí mapování rozlišení. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).  
+ Rozliší tento soubor definice schématu ze souboru definice schématu, který se používá k ověření externího souboru mapování. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).  
   
 > [!NOTE]
->  Uživatelé sady Visual Studio také najít tento soubor XSD v dialogovém okně schémat XML jako "DbmlSchema.xsd". Chcete-li použít soubor XSD správně pro ověření souboru DBML, naleznete v tématu [jak: Ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+>  Uživatelé sady Visual Studio budou také tento soubor XSD v dialogovém okně schémat XML vyhledat jako "DbmlSchema. xsd". Chcete-li použít soubor XSD správně k ověření souboru DBML, přečtěte si téma [How to: Ověřte soubory DBML a externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)souborů.  
   
-```  
-?<?xml version="1.0" encoding="utf-16"?>  
+```xml  
+<?xml version="1.0" encoding="utf-16"?>  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/linqtosql/dbml/2007" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007"  
 elementFormDefault="qualified" >  
   <xs:element name="Database" type="Database" />  
@@ -242,8 +242,8 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="sample-dbml-file"></a>Ukázkového souboru DBML  
- Následující kód je výňatkem ze souboru DBML vytvořené z ukázkové databáze Northwind. Můžete generovat celý soubor pomocí SQLMetal se **/XML** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+## <a name="sample-dbml-file"></a>Ukázkový soubor DBML  
+ Následující kód je výňatek ze souboru DBML vytvořeného z ukázkové databáze Northwind. Celý soubor můžete vygenerovat pomocí SQLMetal s možností **/XML** . Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  

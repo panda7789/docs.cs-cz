@@ -8,17 +8,17 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: 20d9b92ca2bbffd6b98b8641e5cef5e567cb84cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1dd31884a072d16ed004c0b49be61e8cee399787
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705126"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664155"
 ---
-# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaulthttpcachepolicy – > – Element (nastavení sítě)
-Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
+# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy – element > (nastavení sítě)
+Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<requestCaching>  
 \<defaultHttpCachePolicy>  
@@ -41,30 +41,30 @@ Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`maximumAge`|Určuje maximální dobu, než objekt uložený v mezipaměti je označena jako neplatná.|  
-|`maximumStale`|Určuje maximální dobu, po čase vypočítané aktuálnosti před objekt uložený v mezipaměti je označena jako neplatná.|  
-|`minimumFresh`|Určuje minimální dobu pro objekt uložený v mezipaměti k považovat za čerstvý.|  
-|`policyLevel`|Určuje, zda je automatické zásady ukládání do mezipaměti, nebo zda obejít mezipaměť. Výchozí hodnota je `BypassCache`.|  
+|`maximumAge`|Určuje maximální časový interval, po jehož uplynutí je objekt uložený v mezipaměti označený jako neplatný.|  
+|`maximumStale`|Určuje maximální dobu, po jejímž uplynutí je vypočítaná doba aktuálnosti, než je objekt uložený v mezipaměti označený jako neplatný.|  
+|`minimumFresh`|Určuje minimální dobu, po kterou bude objekt v mezipaměti považován za čerstvý.|  
+|`policyLevel`|Určuje, jestli jsou zásady ukládání do mezipaměti automatické, nebo jestli se mezipaměť nepoužívá. Výchozí hodnota je `BypassCache`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
+|[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `policyLevel` atribut je buď `BypassCache` nebo `Default`.  
+ Hodnota `policyLevel` atributu je buď `BypassCache` nebo `Default`.  
   
- Hodnoty `maximumAge`, `maximumStale`, a `minimumFresh` prvky jsou buď explicitní čas intervalu ve formátu *d*. *hh*:*mm*:*ss* (dny, hodiny, minuty a sekundy), nebo konstanty `minValue` nebo `maxValue`podle potřeby.  
+ Hodnoty pro `maximumAge`prvky, `maximumStale`a `minimumFresh` jsou buď explicitním časovým intervalem formátu *d*. *HH*:*mm*:*SS* (dny, hodiny, minuty a sekundy) nebo konstanty `minValue` nebo `maxValue`, podle potřeby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zadat minimální aktuální čas šest hodin, maximální stáří času o dva dny a maximální zastaralé dobu čtyř hodin.  
+ Následující příklad ukazuje, jak zadat minimální dobu v čase 6 hodin, maximální dobu stáří dvou dnů a maximální zastaralou dobu čtyř hodin.  
   
 ```xml  
 <configuration>  
@@ -85,4 +85,4 @@ Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

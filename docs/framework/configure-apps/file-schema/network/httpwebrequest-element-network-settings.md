@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: 722b2f726c9085f6dee6bad82044da3011b98702
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de5672e5c6762b1e0742e717a3d499a4f93ee8ec
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674542"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659345"
 ---
-# <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest > – Element (nastavení sítě)
-Přizpůsobí parametrů webové žádosti.  
+# <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest – element > (nastavení sítě)
+Přizpůsobuje parametry webového požadavku.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<settings>  
+\<Nastavení >  
 \<httpWebRequest>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,10 +41,10 @@ Přizpůsobí parametrů webové žádosti.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`maximumResponseHeadersLength`|Určuje v kilobajtech maximální délka hlavičky odpovědi. Výchozí hodnota je 64. Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v hlavičkách odpovědi.|  
-|`maximumErrorResponseLength`|Určuje maximální délku reakce na chybu, v kilobajtech. Výchozí hodnota je 64. Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v odpovědi na chybu.|  
-|`maximumUnauthorizedUploadLength`|Určuje maximální délku nahrání v reakci na neautorizovaný chybový kód, v bajtech. Výchozí hodnota je -1. Hodnota -1 znamená, že žádné omezení velikosti bude vynucená pro nahrávání.|  
-|`useUnsafeHeaderParsing`|Určuje, zda je povolena analýza nebezpečné záhlaví. Výchozí hodnota je `false`.|  
+|`maximumResponseHeadersLength`|Určuje maximální délku hlavičky odpovědi v kilobajtech. Výchozí hodnota je 64. Hodnota-1 označuje, že do hlaviček odpovědi nebude uloženo žádné omezení velikosti.|  
+|`maximumErrorResponseLength`|Určuje maximální délku chybové odpovědi v kilobajtech. Výchozí hodnota je 64. Hodnota-1 označuje, že při chybové odpovědi nebude uloženo žádné omezení velikosti.|  
+|`maximumUnauthorizedUploadLength`|Určuje maximální délku nahrávání jako odpověď na neautorizovaný kód chyby (v bajtech). Výchozí hodnota je-1. Hodnota-1 označuje, že při nahrávání nebude uloženo žádné omezení velikosti.|  
+|`useUnsafeHeaderParsing`|Určuje, zda je povoleno nebezpečná analýza hlaviček. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,16 +53,16 @@ Přizpůsobí parametrů webové žádosti.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[možnost](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení rozhraní .NET Framework přísně dokumentu RFC 2616 k analýze identifikátoru URI. Některé odpovědi serveru může obsahovat řídicí znaky zakázaných polí, které způsobí, že <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> metoda k vyvolání <xref:System.Net.WebException>. Pokud **useUnsafeHeaderParsing** je nastavena na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> nezpůsobí výjimku v tomto případě; nicméně, vaše aplikace bude zranitelný vůči několik tvarů útoky parsování identifikátorů URI. Nejlepším řešením je změnit server tak, aby odpovědi neobsahuje řídicí znaky.  
+ Ve výchozím nastavení .NET Framework striktně vynutila specifikaci RFC 2616 pro analýzu identifikátorů URI. Některé odpovědi serveru mohou obsahovat řídicí znaky v zakázaných polích, což způsobí, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> že metoda <xref:System.Net.WebException>vyvolá výjimku. Pokud je **useUnsafeHeaderParsing** nastavené na **hodnotu true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> v tomto případě se v tomto případě nevyvolává. vaše aplikace ale bude zranitelná vůči několika formám útoků s analýzou identifikátoru URI. Nejlepším řešením je změnit server tak, aby odpověď neobsahovala řídicí znaky.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit větší než normální záhlaví maximální délku.  
+ Následující příklad ukazuje, jak zadat větší než normální maximální délka hlavičky.  
   
 ```xml  
 <configuration>  
@@ -79,4 +79,4 @@ Přizpůsobí parametrů webové žádosti.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5852579758e85bb033af9b6d036fe76444bb8e4
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4b1f55f056ef1aed4a5eff655650cefe778c97ae
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583853"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663786"
 ---
-# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> Element
-Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.  
+# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack – element >
+Určuje, zda je plný zásobník vláken potvrzen při spuštění vlákna.  
   
- \<Konfigurace >  
-\<modul runtime >  
+ \<> Konfigurace  
+\<> modulu runtime  
 \<disableCommitThreadStack>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,14 +37,14 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda je zakázaný potvrzení zásobníku úplného vlákna při spuštění vlákna (výchozí chování).|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda je potvrzování zásobníku úplného vlákna při spuštění vlákna (výchozí chování) zakázáno.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|0|Nezakazujte výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
-|1|Zakážete výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
+|0|Nepovolujte výchozí chování modulu CLR (Common Language Runtime), který je při spuštění vlákna potvrzování celého zásobníku vláken.|  
+|1|Zakáže výchozí chování modulu CLR (Common Language Runtime), který je při spuštění vlákna potvrzování celého zásobníku vláken.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,13 +57,13 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Výchozí chování modulu common language runtime je potvrzení změn zásobníku úplného vlákna při spuštění vlákna. Pokud velký počet vláken musí být vytvořen na serveru, který má omezené paměti a většina tato vlákna budou používat velmi málo místa zásobníku, server může být lepší provedeno, zda modul common language runtime nesměrují zásobníku úplného vlákna ihned po vlákno st uštění.  
+ Výchozím chováním modulu CLR (Common Language Runtime) je zápis úplného zásobníku vlákna při spuštění vlákna. Pokud je třeba vytvořit velký počet vláken na serveru, který má omezené množství paměti, a většina těchto vláken bude používat velmi málo prostoru zásobníku, server může být lepší, pokud modul CLR (Common Language Runtime) nepotvrdí plný zásobník vláken okamžitě, když je vlákno St. arted.  
   
 > [!NOTE]
->  Můžete použít nespravovaným hostitelům `STARTUP_DISABLE_COMMITTHREADSTACK` příznak spuštění v [startup_flags –](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčet k dosažení stejného výsledku.  
+>  Nespravované hostitele můžou použít `STARTUP_DISABLE_COMMITTHREADSTACK` příznak spuštění ve výčtu [STARTUP_FLAGS](../../../unmanaged-api/hosting/startup-flags-enumeration.md) k dosažení stejného výsledku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat výchozí chování modulu common language runtime, což je potvrzení změn zásobníku úplného vlákna při spuštění vlákna.  
+ Následující příklad ukazuje, jak zakázat výchozí chování modulu CLR (Common Language Runtime), který slouží k potvrzení zásobníku úplného vlákna při spuštění vlákna.  
   
 ```xml  
 <configuration>  
@@ -75,5 +75,5 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

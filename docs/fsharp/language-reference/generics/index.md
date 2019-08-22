@@ -2,12 +2,12 @@
 title: Obecné typy
 description: Naučte se používat F# obecné funkce a typy, které umožňují psát kód, který pracuje s různými typy bez opakujícího se kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 47eed0b8e074cfb591e6d8e2c382b9ea6a6e97f0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5d6e57762095e44836425f90d21a6c1dc71edaaa
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630614"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666696"
 ---
 # <a name="generics"></a>Obecné typy
 
@@ -97,6 +97,6 @@ Existují dva druhy parametrů typu, které lze použít v F# programech. První
 - [Referenční dokumentace jazyka](../index.md)
 - [Typy](../fsharp-types.md)
 - [Statisticky vyřešené parametry typu](statically-resolved-type-parameters.md)
-- [Obecné typy v .NET Framework](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)
 - [Automatická generalizace](automatic-generalization.md)
 - [Omezení](constraints.md)

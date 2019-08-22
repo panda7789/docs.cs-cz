@@ -2,12 +2,12 @@
 title: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 description: Naučte se přezvednout a přemodernizovat stávající aplikace do cloudu Azure a kontejnerů pomocí této elektronické knihy.
 ms.date: 04/28/2018
-ms.openlocfilehash: 4e632fcfbb8904a9def3fdad992286055c5df4f0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: ab2b58441af7aed6a8cd868751339b555a345565
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68677075"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660854"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 
@@ -201,4 +201,4 @@ Tyto ukázkové aplikace mají druhou verzi s moderním kódem, které jsou pom�
 Tato příručka byla popsána, která vám pomůže pochopit vaše možnosti pro vylepšení a modernizacií stávajících webových aplikací .NET. Vyvíjejí se příručka a související ukázkové aplikace. Vítáme vaše připomínky a názory. Pokud máte komentáře o tom, jak může být tato příručka užitečnější, pošlete ji prosím na [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 >[!div class="step-by-step"]
->[Next](lift-and-shift-existing-apps-azure-iaas.md)
+>[Next](lift-and-shift-existing-apps-azure-iaas.md) <!-- Next Chapter -->

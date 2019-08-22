@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bcde1bbb5419de2c363b422c327d55c2ce9eea1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4a62bd3507c14e42798c903ae51edb0187e666c8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607307"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663768"
 ---
-# <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment > – Element
-Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k parsování řetězců kalendářních dat, které obsahují den, měsíc, hodinu a označení dopoledne/odpoledne.  
+# <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment – element >
+Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k analýze datových řetězců obsahujících den, měsíc, hodinu a označení dopoledne/odpoledne.  
   
- \<Konfigurace >  
- \<modul runtime >  
+ \<> Konfigurace  
+ \<> modulu runtime  
 \<EnableAmPmParseAdjustment >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,14 +31,14 @@ Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k par
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, jestli analýzy metody data a času použít upravenou sadu pravidel k parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda metody analýzy data a času používají upravenou sadu pravidel k analýze řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
   
 ### <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|0|Datum a čas analýze metody nepoužívejte upravené pravidla pro parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
-|1|Analýzy metody data a času pomocí upravené pravidel pro parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
+|0|Metody analýzy data a času nepoužívají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
+|1|Metody analýzy data a času používají upravená pravidla pro analýzu řetězců data, které obsahují pouze označení den, měsíc, hodina a AM/PM.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,7 +51,7 @@ Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k par
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<EnableAmPmParseAdjustment>` Prvek určuje, jak analyzovat řetězec data, který obsahuje číselné vyjádření dne a měsíce, za nímž následuje za hodinu a dopoledne/odpoledne (například "4/10 6 AM") v následujících metod:  
+ `<EnableAmPmParseAdjustment>` Prvek řídí způsob, jakým následující metody analyzují řetězec data obsahující číselný den a měsíc následovaný hodinu a označení dopoledne/odpoledne (například "4/10 6 dop."):  
   
 - <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
   
@@ -63,25 +63,25 @@ Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k par
   
 - <xref:System.Convert.ToDateTime%2A?displayProperty=nameWithType>  
   
- Žádné jiné vzory jsou ovlivněny.  
+ Žádné další vzory nejsou ovlivněny.  
   
- `<EnableAmPmParseAdjustment>` Element nemá žádný vliv <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>, a <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> metody.  
+ <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType> <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> Element nemá žádný vliv <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>na metody,, a. `<EnableAmPmParseAdjustment>`  
   
 > [!IMPORTANT]
->  V .NET Core a .NET Native jsou ve výchozím nastavení povolené upravené pravidla analýzy dop. / odp.  
+>  V rozhraní .NET Core a .NET Native jsou ve výchozím nastavení povolená upravená pravidla analýzy dopoledne/odpoledne.  
   
- Pokud není povolené analýzy pravidlo úpravy, první číslice řetězec je interpretován jako hodinu 12hodinový formát a zbytek řetězci s výjimkou dopoledne/odpoledne ignorováno. Datum a čas, vrátí metoda analýzy se skládá z aktuálního data a hodina dne z řetězce data extrahovat.  
+ Pokud není pravidlo úpravy analýzy povoleno, první číslice řetězce je interpretována jako hodina 12 hodinového času a zbytek řetězce s výjimkou označení dopoledne/odpoledne je ignorován. Datum a čas vracené metodou analýzy se skládají z aktuálního data a hodiny dne extrahované z řetězce data.  
   
- Pokud je povolené analýzy pravidlo úpravy, při analýze metody interpretovat den a měsíc jako patřící do aktuálního roku a interpretovat jako hodina 12hodinový formát času.  
+ Pokud je pravidlo úpravy analýzy povoleno, metoda analýzy interpretuje den a měsíc jako patřící do aktuálního roku a interpretuje čas jako hodinu z 12 hodin.  
   
- Následující tabulka ukazuje rozdíly <xref:System.DateTime> hodnotu v případě <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> metoda se používá pro analýzu řetězce "" 4/10 6 AM"s `<EnableAmPmParseAdjustment>` elementu `enabled` vlastnost nastavena na"0"nebo"1". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazí datum, jako kdyby je naformátována pomocí řetězec formátu "G" zadanou jazykovou verzi.  
+ Následující tabulka ukazuje rozdíl <xref:System.DateTime> v hodnotě <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> při použití metody k analýze řetězce "" `<EnableAmPmParseAdjustment>` 4/10 6 am `enabled` "s vlastností elementu nastavenou na hodnotu" 0 "nebo" 1 ". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazuje datum, jako by bylo formátováno pomocí formátovacího řetězce "G" zadané jazykové verze.  
   
 |Název jazykové verze|enabled="0"|enabled="1"|  
 |------------------|------------------|------------------|  
-|en-US|1. 5. 2017 4:00:00: 00|4/10/2017 6:00:00: 00|  
+|en-US|1/5/2017 4:00:00 DOP.|4/10/2017 6:00:00 DOP.|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<modul runtime > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
-- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
+- [\<Běhový > element](runtime-element.md)
+- [\<Element > Konfigurace](../configuration-element.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 46ceca257777455824b6900f3e49999536d6bcad
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 31ab511bf88bfbc2134029564ecbf70aa75119d7
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589737"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659852"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>Obecní delegáti (Průvodce programováním v C#)
 [Delegát](../../language-reference/keywords/delegate.md) může definovat své vlastní parametry typu. Kód, který odkazuje na obecného delegáta, může zadat argument typu pro vytvoření uzavřeného konstruovaného typu, stejně jako při vytváření instancí obecné třídy nebo volání obecné metody, jak je znázorněno v následujícím příkladu:  
@@ -43,4 +43,4 @@ ms.locfileid: "69589737"
 - [Obecné třídy](./generic-classes.md)
 - [Obecná rozhraní](./generic-interfaces.md)
 - [Delegáti](../delegates/index.md)
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)

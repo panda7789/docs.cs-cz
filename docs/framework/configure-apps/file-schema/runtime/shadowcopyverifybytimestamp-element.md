@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4187d266d82783ebb72073c1da92faff95352884
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 6f3ea57364832553d16c7e34fc887b1c9f821602
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489378"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663454"
 ---
-# <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp> Element
-Určuje, zda stínové kopírování sestavení použije výchozí chování při spuštění zavedené v rozhraní .NET Framework 4 nebo se vrátí do chování při spuštění z dřívějších verzích rozhraní .NET Framework.  
+# <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp – element >
+Určuje, zda stínové kopírování používá výchozí chování při spuštění, které bylo zavedeno ve .NET Framework 4, nebo se vrátí k chování při spuštění starších verzí .NET Framework.  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
-\<shadowCopyVerifyByTimestamp> Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
+\<shadowCopyVerifyByTimestamp – element >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ Určuje, zda stínové kopírování sestavení použije výchozí chování př
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda porovnání aplikační domény, které používají stínové kopírování sestavení časová razítka při spuštění, chcete-li zjistit, zda sestavení byl aktualizován před stínové kopírování sestavení.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda aplikační domény, které používají stínové kopírování, porovnávají časová razítka sestavení při spuštění, aby bylo možné určit, zda bylo sestavení Aktualizováno před stínovým kopírováním sestavení.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|true|Při spuštění zkopíruje pouze sestavení, které byly aktualizovány od posledního byly zkopírovány do adresáře stínové kopie. Toto je výchozí nastavení pro rozhraní .NET Framework 4.|  
-|false|Vrátí chování při spuštění z předchozích verzí rozhraní .NET Framework, která byla zkopírujte všechny soubory při spuštění.|  
+|true|Při spuštění nástroje kopíruje pouze sestavení, která byla aktualizována od posledního zkopírování do adresáře stínové kopie. Toto je výchozí nastavení pro .NET Framework 4.|  
+|false|Vrátí se k chování při spuštění předchozích verzí .NET Framework, což bylo při spuštění zkopírovat všechny soubory.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,10 +54,10 @@ Určuje, zda stínové kopírování sestavení použije výchozí chování př
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze rozhraní .NET Framework 4, sestavení jsou stínové kopie pouze v případě, že jejich časová razítka znamenat, že se změnily od posledního byly zkopírovány do adresáře stínové kopie. Tím se zlepšuje dobu spuštění pro mnoho aplikací, které používají stínové kopírování sestavení, jak je popsáno v [stínové kopírování sestavení](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md). Aplikace, které mají vysoké procento a četnosti aktualizací sestavení nemusí využívat tuto změnu v chování. V takovém případě můžete tento element obnovit chování z předchozích verzí rozhraní .NET Framework.  
+ Počínaje .NET Framework 4 jsou sestavení Stínová zkopírována pouze v případě, že jejich časová razítka signalizují, že se od posledního zkopírování do adresáře stínové kopie změnily. To zlepšuje dobu spouštění pro mnoho aplikací, které používají stínové kopírování, jak je popsáno v tématu [stínové kopírování sestavení](../../../app-domains/shadow-copy-assemblies.md). Aplikace, které mají vysoké procento a četnost aktualizací sestavení, nemusí mít tuto změnu v chování. V takovém případě můžete použít tento prvek k obnovení chování předchozích verzí .NET Framework.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat výchozí chování při spouštění stínové kopírování v rozhraní .NET Framework 4 a vrátit se na chování při spuštění z předchozích verzí rozhraní .NET Framework.  
+ Následující příklad ukazuje, jak zakázat výchozí chování při spouštění stínového kopírování v .NET Framework 4 a vrátit se k chování při spuštění předchozích verzí .NET Framework.  
   
 ```xml  
 <configuration>  
@@ -69,6 +69,6 @@ Určuje, zda stínové kopírování sestavení použije výchozí chování př
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Stínové kopírování sestavení](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Stínové kopírování sestavení](../../../app-domains/shadow-copy-assemblies.md)

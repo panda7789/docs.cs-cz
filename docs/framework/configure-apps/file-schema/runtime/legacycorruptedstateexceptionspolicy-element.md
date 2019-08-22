@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6191ee2169a85725f0367763874e60c0ceb1d7a4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 2715548a40579375cebbdd5fb9003738a42ff714
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489430"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663654"
 ---
 # <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> Element
-Určuje, zda modul common language runtime umožňuje spravovanému kódu zachytit narušení přístupu a ostatní výjimky v poškozeném stavu.  
+Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu zachytit porušení přístupu a jiné poškozené výjimky stavu.  
   
- \<Konfigurace >  
-\<modul runtime >  
+ \<> Konfigurace  
+\<> modulu runtime  
 \<legacyCorruptedStateExceptionsPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, že aplikace zachytí poškozující stav výjimky selhání, jako je například porušení přístupu.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, že aplikace bude zachytávat chyby při výjimkách poškozených stavů, jako je například porušení přístupu.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`false`|Aplikace nezachytí poškozující stav výjimky selhání, jako je například porušení přístupu. Toto nastavení je výchozí.|  
-|`true`|Aplikace zachytí poškozující stav výjimky selhání, jako je například porušení přístupu.|  
+|`false`|Aplikace nebude zachytit nepoškozená selhání výjimek stavu, jako je například porušení přístupu. Toto nastavení je výchozí.|  
+|`true`|Aplikace zachytí chyby výjimek nepoškozených stavů, jako je například porušení přístupu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,20 +54,20 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 3.5 a starších povolený modul common language runtime spravovanému kódu zachytit výjimky, které byly vyvolány poškozená procesu státy. Narušení přístupu je příkladem tohoto typu výjimky.  
+ V .NET Framework verze 3,5 a starší používá modul common language runtime povolený spravovaný kód pro zachycení výjimek, které byly vyvolány poškozenými stavy procesu. Příkladem tohoto typu výjimky je porušení přístupu.  
   
- Od verze rozhraní .NET Framework 4, spravovaný kód už zachycuje tyto typy výjimek v `catch` bloky. Můžete však přepsat tuto změnu a Udržovat zpracování výjimek v poškozeném stavu dvěma způsoby:  
+ Počínaje .NET Framework 4 spravovaný kód již nezachycuje tyto typy výjimek v `catch` blocích. Tuto změnu však můžete přepsat a spravovat zpracování poškozených výjimek stavu dvěma způsoby:  
   
-- Nastavte `<legacyCorruptedStateExceptionsPolicy>` elementu `enabled` atribut `true`. Toto nastavení je použité processwide a ovlivňuje všechny metody.  
+- `<legacyCorruptedStateExceptionsPolicy>` Nastavte atribut`enabled` elementu na `true`. Toto nastavení konfigurace se používá processwide a má vliv na všechny metody.  
   
  -nebo-  
   
-- Použít <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> atributu v metodě, která obsahuje výjimky `catch` bloku.  
+- Použijte atribut na metodu, která obsahuje blok výjimek `catch`. <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType>  
   
- Tento prvek konfigurace je k dispozici pouze v rozhraní .NET Framework 4 a novější.  
+ Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit, že aplikace by měla vrátit k chování před rozhraní .NET Framework 4 a zachytit všechny poskozeny stav výjimky selhání.  
+ Následující příklad ukazuje, jak určit, že by se aplikace měla vrátit k chování před .NET Framework 4 a zachytit chyby výjimek všech poškozených stavů.  
   
 ```xml  
 <configuration>  
@@ -80,5 +80,5 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

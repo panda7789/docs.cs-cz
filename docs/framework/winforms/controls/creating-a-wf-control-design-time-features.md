@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: 733f22c122dd6acdad41371419375e55e977c016
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c8d04725a576c9e24a4b7d4aec1251516a8c544c
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039934"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666232"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu
 
@@ -62,7 +62,6 @@ Až budete hotovi, váš vlastní ovládací prvek bude vypadat přibližně tak
 ![Aplikace, která zobrazuje text a tlačítka Spustit a zastavit](./media/creating-a-wf-control-design-time-features/demo-marquee-control.gif)
 
 Úplný výpis kódu naleznete v tématu [How to: Vytvořte model Windows Forms ovládací prvek, který bude využívat funkce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))pro dobu návrhu.
-
 
 ## <a name="prerequisites"></a>Požadavky
 

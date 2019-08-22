@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c96d5aea150c0dbb55889e9fc26417e7803a155
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a1923e70143ea2a158447eccdb35d347fe4f51ea
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487660"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663774"
 ---
 # <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
-Určuje, zda je výchozí chování, které je umožnit hostitelský modul runtime pro přepsání nastavení konfigurace pro doménu aplikace, zakázáno.  
+Určuje, zda výchozí chování, které umožňuje hostiteli modulu runtime přepsat nastavení konfigurace pro doménu aplikace, je zakázáno.  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
 \<disableFusionUpdatesFromADManager>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, zda je výchozí možnost přepsat nastavení Fusion zakázaný.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, jestli je zakázaná výchozí možnost přepsat nastavení fúze.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|0|Nezakazujte přepsat nastavení Fusion. Toto je výchozí chování, od verze rozhraní .NET Framework 4.|  
-|1|Zakážete možnost přepsat nastavení Fusion. To obnoví na chování starších verzích rozhraní .NET Framework.|  
+|0|Nepovolujte možnost přepsat nastavení fúze. Toto je výchozí chování, počínaje .NET Framework 4.|  
+|1|Zakáže možnost přepsat nastavení fúze. Tím se vrátí chování dřívějších verzí .NET Framework.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,18 +54,18 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze rozhraní .NET Framework 4, výchozí chování je umožnit <xref:System.AppDomainManager> určeného k přepsání nastavení konfigurace s použitím <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodu <xref:System.AppDomainSetup> objekt, který je předán vaší implementace nástroje <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metodu do vaší podtřídy aplikace <xref:System.AppDomainManager>. Pro výchozí domény aplikace přepíší nastavení, které můžete změnit nastavení zadané v konfiguračním souboru aplikace. Pro další aplikační domény, mohou přepsat nastavení konfigurace, které bylo předáno <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metody.  
+ Počínaje .NET Framework 4 je <xref:System.AppDomainManager> výchozím chováním umožnit objektu přepsat konfigurační nastavení <xref:System.AppDomainSetup.ConfigurationFile%2A> pomocí vlastnosti <xref:System.AppDomainSetup> nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metody objektu, který je předán vaší implementaci. metody v podtřídu třídy <xref:System.AppDomainManager>. <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> U výchozí domény aplikace nastavení, které změníte, přepíše nastavení, která byla určena konfiguračním souborem aplikace. Pro jiné aplikační domény přepíše nastavení konfigurace, která byla předána <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> metodě nebo. <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>  
   
- Můžete předat nové informace o konfiguraci, nebo předat hodnotu null (`Nothing` v jazyce Visual Basic) Chcete-li odstranit informace o konfiguraci, která byla předána.  
+ Můžete buď předat nové konfigurační informace, nebo předat hodnotu null (`Nothing` v Visual Basic), aby se vyloučily informace o konfiguraci, které byly předány.  
   
- Nepředávejte informace o konfiguraci pro obě <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost a <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda. Pokud předáte informace o konfiguraci na obě, informace můžete předat <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost se ignoruje, protože <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda přepíše informace o konfiguraci z konfiguračního souboru aplikace. Pokud používáte <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastností, můžete předat hodnotu null (`Nothing` v jazyce Visual Basic) na <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metody, chcete-li odstranit všechny konfigurace bajtů, které byly zadány při volání <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> – metoda.  
+ Nedávejte informace o konfiguraci do <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnosti i do <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metody. Pokud předáte informace o konfiguraci do obou, informace, které předáte <xref:System.AppDomainSetup.ConfigurationFile%2A> do vlastnosti, budou ignorovány <xref:System.AppDomainSetup.SetConfigurationBytes%2A> , protože metoda přepisuje informace o konfiguraci z konfiguračního souboru aplikace. Použijete <xref:System.AppDomainSetup.ConfigurationFile%2A> -li vlastnost, můžete <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodě předat hodnotu null`Nothing` (v Visual Basic), aby se vyloučily všechny konfigurační bajty <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> , které byly zadány ve volání metody <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> nebo.  
   
- Kromě informací o konfiguraci, můžete změnit následující nastavení na <xref:System.AppDomainSetup> objekt, který je předán implementaci <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metoda: <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>, <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A>, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, <xref:System.AppDomainSetup.DynamicBase%2A>, <xref:System.AppDomainSetup.LoaderOptimization%2A>, <xref:System.AppDomainSetup.PrivateBinPath%2A>, <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>, <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, a <xref:System.AppDomainSetup.ShadowCopyFiles%2A>.  
+ Kromě informací o konfiguraci můžete změnit <xref:System.AppDomainSetup> následující nastavení objektu, který je předán vaší implementaci <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metody: <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>,, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A> ,<xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, ,<xref:System.AppDomainSetup.LoaderOptimization%2A>, ,<xref:System.AppDomainSetup.PrivateBinPathProbe%2A>,a. <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> <xref:System.AppDomainSetup.PrivateBinPath%2A> <xref:System.AppDomainSetup.DynamicBase%2A> <xref:System.AppDomainSetup.ShadowCopyFiles%2A>  
   
- Jako alternativu k použití `<disableFusionUpdatesFromADManager>` element, můžete zakázat výchozí chování vytvořením nastavení registru nebo nastavením proměnné prostředí. V registru, vytvořte hodnotu DWORD s názvem `COMPLUS_disableFusionUpdatesFromADManager` pod `HKCU\Software\Microsoft\.NETFramework` nebo `HKLM\Software\Microsoft\.NETFramework`a nastavte hodnotu na 1. Na příkazovém řádku, nastavte proměnnou prostředí `COMPLUS_disableFusionUpdatesFromADManager` na hodnotu 1.  
+ Jako alternativu k použití `<disableFusionUpdatesFromADManager>` elementu můžete zakázat výchozí chování vytvořením nastavení registru nebo nastavením proměnné prostředí. V registru vytvořte hodnotu DWORD s názvem `COMPLUS_disableFusionUpdatesFromADManager` `HKCU\Software\Microsoft\.NETFramework` nebo `HKLM\Software\Microsoft\.NETFramework`a nastavte hodnotu na 1. Na příkazovém řádku nastavte proměnnou `COMPLUS_disableFusionUpdatesFromADManager` prostředí na 1.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat pomocí přepsání nastavení Fusion `<disableFusionUpdatesFromADManager>` elementu.  
+ Následující příklad ukazuje, jak zakázat možnost přepsat nastavení fúze pomocí `<disableFusionUpdatesFromADManager>` elementu.  
   
 ```xml  
 <configuration>  
@@ -77,6 +77,6 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)

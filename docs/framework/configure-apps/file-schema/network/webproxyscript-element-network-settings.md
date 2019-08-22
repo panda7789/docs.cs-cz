@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <webProxyScript> element
 - webProxyScript element
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
-ms.openlocfilehash: e73ba86cc17fa51cbf4030f2304ab9141fcc0f26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a77c2567401fd80e355bb7fcee17b6684653ebe
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674363"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659036"
 ---
-# <a name="webproxyscript-element-network-settings"></a>\<webproxyscript – > – Element (nastavení sítě)
-Konfiguruje vlastnosti souboru, který používá ke zjišťování webové proxy servery.  
+# <a name="webproxyscript-element-network-settings"></a>\<webProxyScript – element > (nastavení sítě)
+Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<settings>  
+\<Nastavení >  
 \<webProxyScript>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,7 +38,7 @@ Konfiguruje vlastnosti souboru, který používá ke zjišťování webové prox
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`downloadTimeout`|Určuje maximální dobu se stáhnout skript do hodiny, minuty a sekundy. Výchozí hodnota je jedna minuta.|  
+|`downloadTimeout`|Určuje maximální dobu, po kterou se má skript stáhnout v hodinách, minutách a sekundách. Výchozí hodnota je jedna minuta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -47,13 +47,13 @@ Konfiguruje vlastnosti souboru, který používá ke zjišťování webové prox
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[možnost](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

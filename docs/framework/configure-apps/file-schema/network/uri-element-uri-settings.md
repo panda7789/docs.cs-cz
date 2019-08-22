@@ -2,20 +2,20 @@
 title: <Uri> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: c22bab8b-477c-4ae4-8498-65ad409e0847
-ms.openlocfilehash: 1f3573babd2e363a78f0ad454f0ba36c87ba6390
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80d71da5ca680872e4948fa8ff135fbbdf08cffe
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705093"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663968"
 ---
-# <a name="uri-element-uri-settings"></a>\<Identifikátor URI > – Element (nastavení Uri)
-Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).  
+# <a name="uri-element-uri-settings"></a>\<Identifikátor URI > – element (nastavení URI)
+Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).  
   
-## <a name="schema-hierarchy"></a>Schema Hierarchy  
- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+## <a name="schema-hierarchy"></a>Hierarchie schématu  
+ [\<Element > Konfigurace](../configuration-element.md)  
   
- [\<uri>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [\<uri>](uri-element-uri-settings.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,23 +34,23 @@ Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zp
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[idn](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Určuje, pokud analýza mezinárodních názvů domén (IDN) platí pro názvy domén.|  
-|[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.|  
-|[schemeSettings](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.|  
+|[IDN](idn-element-uri-settings.md)|Určuje, jestli se pro názvy domén použije analýza v mezinárodním názvu domény (IDN).|  
+|[iriParsing](iriparsing-element-uri-settings.md)|Určuje, jestli se má použít <xref:System.Uri> analýza mezinárodní identifikátoru prostředků (IRI) a jestli se mají použít pravidla analýzy IRI.|  
+|[schemeSettings](schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Konfigurace](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
+|[rozšířeného](../configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- `uri` Element obsahuje nastavení pro členy programu <xref:System.Uri> třídy používané třídami oboru <xref:System.Net> oboru názvů. Nastavení konfigurace podpory pro IRI a IDN.  
+ Element obsahuje nastavení pro členy <xref:System.Uri> třídy <xref:System.Net> používané třídami v oboru názvů. `uri` Nastavení konfigurují podporu pro IRI a IDN.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu analýza IRI a názvy IDN. V příkladu rovněž vymaže všechna nastavení schéma a pak přidává podporu pro není uvozovací znaky oddělovače procentuálně zakódovaný cestu pro schéma protokolu http.  
+ Následující příklad ukazuje konfiguraci, kterou <xref:System.Uri> třída používá pro podporu IRIch analýz a názvů IDN. Tento příklad také vymaže všechna nastavení schématu a pak přidá podporu pro nekódované oddělovače cest v procentech pro schéma HTTP.  
   
 ### <a name="code"></a>Kód  
   
@@ -69,4 +69,4 @@ Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zp
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

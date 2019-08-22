@@ -9,15 +9,15 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 1aa182ced462e5fc90b22019aaf424d400bb4fd5
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 648adb34664ccb2a475e32aba4d0d76d99cf49d8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629660"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666766"
 ---
 # <a name="layout"></a>Rozložení
-Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Porozumění tomu, jak a kdy dojde k výpočtům rozložení, je zásadní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pro vytváření uživatelských rozhraní v nástroji.  
+Toto téma popisuje systém rozložení Windows Presentation Foundation (WPF). Porozumění tomu, jak a kdy dochází k výpočtům rozložení, je zásadní pro vytváření uživatelských rozhraní v WPF.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -37,7 +37,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_BoundingBox"></a>   
 ## <a name="element-bounding-boxes"></a>Prvky ohraničující pole  
- Při zamyšlení na rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]v nástroji je důležité pochopit ohraničující rámeček, který obklopuje všechny prvky. Z <xref:System.Windows.FrameworkElement> každého spotřebovaného systémem pro rozložení si můžete představit jako obdélník, který je v rozložení drážký. <xref:System.Windows.Controls.Primitives.LayoutInformation> Třída vrací hranice rozvržení rozložení prvku nebo slot. Velikost obdélníku je určena výpočtem dostupného místa na obrazovce, velikosti všech omezení, vlastností specifických pro rozložení (například okraje a odsazení) a jednotlivého chování nadřazeného <xref:System.Windows.Controls.Panel> prvku. Zpracování těchto dat, systém rozložení dokáže vypočítat pozici všech podřízených objektů konkrétního <xref:System.Windows.Controls.Panel>. Je důležité si uvědomit, že charakteristiky změny velikosti definované v nadřazeném elementu, například a <xref:System.Windows.Controls.Border>, ovlivňují jeho podřízené objekty.  
+ Při seznámení s rozložením v WPF je důležité pochopit ohraničující rámeček, který obklopuje všechny prvky. Z <xref:System.Windows.FrameworkElement> každého spotřebovaného systémem pro rozložení si můžete představit jako obdélník, který je v rozložení drážký. <xref:System.Windows.Controls.Primitives.LayoutInformation> Třída vrací hranice rozvržení rozložení prvku nebo slot. Velikost obdélníku je určena výpočtem dostupného místa na obrazovce, velikosti všech omezení, vlastností specifických pro rozložení (například okraje a odsazení) a jednotlivého chování nadřazeného <xref:System.Windows.Controls.Panel> prvku. Zpracování těchto dat, systém rozložení dokáže vypočítat pozici všech podřízených objektů konkrétního <xref:System.Windows.Controls.Panel>. Je důležité si uvědomit, že charakteristiky změny velikosti definované v nadřazeném elementu, například a <xref:System.Windows.Controls.Border>, ovlivňují jeho podřízené objekty.  
   
  Na následujícím obrázku je znázorněno jednoduché rozložení.  
   
@@ -101,7 +101,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_PanelsCustom"></a>   
 ## <a name="panel-elements-and-custom-layout-behaviors"></a>Prvky panelu a chování vlastního rozložení  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zahrnuje skupinu prvků, které jsou odvozeny <xref:System.Windows.Controls.Panel>z. Tyto <xref:System.Windows.Controls.Panel> prvky umožňují mnoho složitých rozložení. Například prvky Stack lze snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco složitější a bezplatná rozložení toků jsou možné <xref:System.Windows.Controls.Canvas>pomocí.  
+WPF obsahuje skupinu prvků, které jsou odvozeny <xref:System.Windows.Controls.Panel>z. Tyto <xref:System.Windows.Controls.Panel> prvky umožňují mnoho složitých rozložení. Například prvky Stack lze snadno dosáhnout pomocí <xref:System.Windows.Controls.StackPanel> elementu, zatímco složitější a bezplatná rozložení toků jsou možné <xref:System.Windows.Controls.Canvas>pomocí.  
   
  Následující tabulka shrnuje dostupné prvky rozložení <xref:System.Windows.Controls.Panel> .  
   
@@ -114,7 +114,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 |<xref:System.Windows.Controls.VirtualizingPanel>|Poskytuje rozhraní pro <xref:System.Windows.Controls.Panel> prvky, které virtualizují jejich podřízenou kolekci dat. Toto je abstraktní třída.|  
 |<xref:System.Windows.Controls.WrapPanel>|Umístí podřízené prvky v sekvenčním umístění zleva doprava a oddělí obsah na další řádek na okraji obsahujícího pole. Následné řazení probíhá postupně shora dolů nebo zprava doleva v závislosti na hodnotě <xref:System.Windows.Controls.WrapPanel.Orientation%2A> vlastnosti.|  
   
- Pro aplikace, které vyžadují rozložení, které není možné pomocí některého z předdefinovaných <xref:System.Windows.Controls.Panel> prvků, lze chování vlastního rozložení dosáhnout děděním z <xref:System.Windows.Controls.Panel> a přepsáním <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metod a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> . Příklad najdete v tématu [Ukázka vlastního paprskového panelu](https://go.microsoft.com/fwlink/?LinkID=159982).  
+ Pro aplikace, které vyžadují rozložení, které není možné pomocí některého z předdefinovaných <xref:System.Windows.Controls.Panel> prvků, lze chování vlastního rozložení dosáhnout děděním z <xref:System.Windows.Controls.Panel> a přepsáním <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metod a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> .  
   
 <a name="LayoutSystem_Performance"></a>   
 ## <a name="layout-performance-considerations"></a>Požadavky na výkon rozložení  
@@ -138,7 +138,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_LayoutRounding"></a>   
 ## <a name="sub-pixel-rendering-and-layout-rounding"></a>Vykreslování dílčích pixelů a zaoblení rozložení  
- Systém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky používá jednotky nezávislé na zařízení k umožnění rozlišení a nezávislosti zařízení. Každé zařízení nezávislé na pixelech se automaticky škáluje s nastavením počet bodů na palec (dpi) v systému. To poskytuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacím správné škálování pro různá nastavení dpi a umožňuje aplikaci automaticky rozpoznat dpi.  
+ Grafický systém WPF používá jednotky nezávislé na zařízení k umožnění rozlišení a nezávislosti zařízení. Každé zařízení nezávislé na pixelech se automaticky škáluje s nastavením počet bodů na palec (dpi) v systému. To umožňuje aplikacím WPF správné škálování pro různá nastavení dpi a aplikace automaticky zohledňuje rozlišení DPI.  
   
  Tato nezávislost v DPI však může vytvořit nepravidelné vykreslování z důvodu vyhlazení. Tyto artefakty, které se obvykle zobrazují jako rozostřené nebo částečně transparentní okraje, mohou nastat, pokud umístění okraje spadá do středu zařízení v pixelu místo mezi pixely zařízení. Systém rozložení poskytuje způsob, jak ho upravit pomocí zaokrouhlování rozložení. Zaoblení rozložení je místo, kde systém rozložení zaokrouhlí jakékoli Neceločíselné hodnoty pixelů během průchodu rozložení.  
   
@@ -146,7 +146,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_whatsnext"></a>   
 ## <a name="whats-next"></a>Co dál  
- Porozumění způsobu měření a uspořádání prvků je prvním krokem při porozumění rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvcích najdete v tématu [Přehled panelů](../controls/panels-overview.md). Chcete-li lépe porozumět různým vlastnostem umístění, které mohou ovlivnit rozložení, přečtěte si téma [zarovnání, okraje a přehled odsazení](alignment-margins-and-padding-overview.md). Příklad vlastního <xref:System.Windows.Controls.Panel> prvku naleznete v tématu [Ukázka vlastního paprskového panelu](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připraveni ho umístit dohromady do zjednodušené aplikace, přečtěte si [Návod: Moje první desktopová aplikace](../getting-started/walkthrough-my-first-wpf-desktop-application.md)WPF.  
+ Porozumění způsobu měření a uspořádání prvků je prvním krokem při porozumění rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvcích najdete v tématu [Přehled panelů](../controls/panels-overview.md). Chcete-li lépe porozumět různým vlastnostem umístění, které mohou ovlivnit rozložení, přečtěte si téma [zarovnání, okraje a přehled odsazení](alignment-margins-and-padding-overview.md). Až budete připraveni ho umístit dohromady do zjednodušené aplikace, přečtěte si [Návod: Moje první desktopová aplikace](../getting-started/walkthrough-my-first-wpf-desktop-application.md)WPF.  
   
 ## <a name="see-also"></a>Viz také:
 

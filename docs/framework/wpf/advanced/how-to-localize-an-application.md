@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 749ba2dd9318976289d9d4140cfadd711e0548d4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4d7271e792c96dd896d73a52a31ad136acc19e26
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629875"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666790"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroje LocBaml.  
@@ -36,7 +36,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
   
 <a name="create_sample_app"></a>   
 ## <a name="create-a-sample-application"></a>Vytvoření ukázkové aplikace  
- V tomto kroku připravíte aplikaci k lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] V ukázkách je dodána ukázka HelloApp, která bude použita pro příklady kódu v této diskuzi. Chcete-li použít tuto ukázku, stáhněte [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory z [ukázky nástroje LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016).  
+ V tomto kroku připravíte aplikaci k lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] V ukázkách je dodána ukázka HelloApp, která bude použita pro příklady kódu v této diskuzi. Chcete-li použít tuto ukázku, stáhněte [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory z [ukázky nástroje LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
   
 1. Vyvine aplikaci do bodu, kde chcete spustit lokalizaci.  
   
@@ -153,11 +153,11 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|CHYBNÉ|CHYBNÉ||#Text1;#Text2|
    |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|PODMÍNKA|PODMÍNKA||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádný|PODMÍNKA|PODMÍNKA||Vylučte ze světa|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádné|PODMÍNKA|PODMÍNKA||Vylučte ze světa|
   
    Všimněte si, že všechny hodnoty pole **Komentáře** neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdné. Všimněte si také, že položka v prvním řádku není čitelná ani upravitelná a má "Ignore" jako hodnotu **kategorie** , všechny, které označují, že hodnotu nelze lokalizovat.  
   
-4. Chcete-li usnadnit zjišťování lokalizovatelných položek v analyzovaných souborech, zejména ve velkých souborech, můžete položky řadit nebo filtrovat podle **kategorie**, čitelnosti a **volby.** Můžete například vyfiltrovat nečitelný a neupravitelné hodnoty.  
+4. Chcete-li usnadnit zjišťování lokalizovatelných položek v analyzovaných souborech, zejména ve velkých souborech, můžete položky řadit nebo filtrovat podle **kategorie**, **čitelnosti**a volby. Můžete například vyfiltrovat nečitelný a neupravitelné hodnoty.  
   
 <a name="translate_loc_content"></a>   
 ## <a name="translate-the-localizable-content"></a>Přeložit Lokalizovatelný obsah  

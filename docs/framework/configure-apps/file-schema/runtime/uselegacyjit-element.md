@@ -4,19 +4,19 @@ ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a467599084f01b1a48c95c5e25fb1f869156dffa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d79479d1836963fcbdaaf8d40bfc3648b88c4a3
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673885"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663414"
 ---
-# <a name="uselegacyjit-element"></a>\<useLegacyJit> Element
+# <a name="uselegacyjit-element"></a>\<useLegacyJit – element >
 
-Určuje, zda modul common language runtime používá starší verzi 64bitového kompilátoru JIT kompilace just-in-time.  
+Určuje, zda modul CLR (Common Language Runtime) používá starší 64 kompilátor JIT pro kompilaci za běhu.  
   
-\<Konfigurace >  
-\<modul runtime >  
+\<> Konfigurace  
+\<> modulu runtime  
 \<useLegacyJit>
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,7 +25,7 @@ Určuje, zda modul common language runtime používá starší verzi 64bitového
 <useLegacyJit enabled=0|1 />
 ```
 
-Název elementu `useLegacyJit` velká a malá písmena.
+V názvu `useLegacyJit` elementu se rozlišují velká a malá písmena.
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy
 
@@ -35,14 +35,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 | Atribut | Popis                                                                                   |  
 | --------- | --------------------------------------------------------------------------------------------- |  
-| `enabled` | Požadovaný atribut.<br><br>Určuje, zda modul runtime používá starší verzi 64bitového kompilátoru JIT. |  
+| `enabled` | Požadovaný atribut.<br><br>Určuje, zda modul runtime používá starší 64 kompilátor JIT. |  
   
-### <a name="enabled-attribute"></a>Atribut enabled  
+### <a name="enabled-attribute"></a>povolený atribut  
   
 | Value | Popis                                                                                                         |  
 | ----- | ------------------------------------------------------------------------------------------------------------------- |  
-| 0     | Modul common language runtime používá nový kompilátor JIT 64-bit zahrnuty v rozhraní .NET Framework 4.6 a novějších verzích. |  
-| 1     | Modul common language runtime používá starší 64bitovým kompilátorem JIT.                                                     |  
+| 0     | Modul CLR (Common Language Runtime) používá nový 64 kompilátor JIT zahrnutý v .NET Framework 4,6 a novějších verzích. |  
+| 1     | Modul common language runtime používá starší 64 kompilátor JIT.                                                     |  
   
 ### <a name="child-elements"></a>Podřízené prvky
 
@@ -57,32 +57,32 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ## <a name="remarks"></a>Poznámky  
 
-Od verze rozhraní .NET Framework 4.6, modul common language runtime používá nový 64bitový kompilátor pro kompilaci za běhu (JIT) ve výchozím nastavení. V některých případech to může vést rozdíl v chování od kódu aplikace, který byl zkompilován JIT Kompilátorem v předchozí verzi 64bitového kompilátoru JIT. Tím, že nastavíte `enabled` atribut `<useLegacyJit>` element `1`, můžete zakázat nového 64bitového kompilátoru JIT a místo toho zkompilujte aplikaci pomocí starší verze 64bitovým kompilátorem JIT.  
+Počínaje .NET Framework 4,6 používá modul CLR (Common Language Runtime) nový 64 kompilátor pro kompilaci JIT (just-in-time) ve výchozím nastavení. V některých případech to může vést k rozdílu v chování z kódu aplikace, který byl zkompilován JIT pomocí předchozí verze 64 kompilátoru JIT. `enabled` Nastavením atributu `<useLegacyJit>` elementu na`1`můžete zakázat nový 64 kompilátor JIT a místo toho zkompilovat aplikaci pomocí starší verze 64 kompilátoru JIT.  
   
 > [!NOTE]
-> `<useLegacyJit>` Element ovlivňuje pouze kompilaci JIT 64-bit. Kompilace s kompilátorem JIT 32 bitů je poškozena.  
+> `<useLegacyJit>` Element ovlivňuje pouze 64 kompilaci JIT. Kompilace s 32 kompilátorem JIT není nijak ovlivněna.  
   
-Namísto použití souboru nastavení konfigurace, můžete povolit starší verzi 64bitového kompilátoru JIT dvěma dalšími způsoby:  
+Namísto použití nastavení konfiguračního souboru můžete povolit starší 64 kompilátor JIT dvěma způsoby:  
   
 - Nastavení proměnné prostředí
 
-  Nastavte `COMPLUS_useLegacyJit` proměnnou prostředí, aby buď `0` (použití nového 64bitového kompilátoru JIT) nebo `1` (použijte starší 64bitového kompilátoru JIT):
+  Nastavte proměnnou `0` prostředí na buď (použijte nový 64 kompilátor JIT), nebo `1` (použijte starší 64 kompilátor JIT): `COMPLUS_useLegacyJit`
   
   ```  
   COMPLUS_useLegacyJit=0|1  
   ```  
   
-  Proměnná prostředí má *globálním rozsahem*, což znamená, že to má vliv na všechny aplikace, spusťte na počítači. Pokud nastavit, je možné přepsat nastavení konfiguračního souboru aplikace. Název proměnné prostředí není malá a velká písmena.
+  Proměnná prostředí má *globální rozsah*, což znamená, že má vliv na všechny aplikace spuštěné v počítači. Pokud je tato hodnota nastavena, může být přepsána nastavením konfiguračního souboru aplikace. V názvu proměnné prostředí se nerozlišují velká a malá písmena.
   
 - Přidání klíče registru
 
-  Můžete povolit starší verzi 64bitového kompilátoru JIT tak, že přidáte `REG_DWORD` hodnota, která má buď `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` nebo `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče v registru. Hodnota jmenuje `useLegacyJit`. Pokud je hodnota 0, použije se nový kompilátor. Pokud je hodnota 1, starší verzi 64bitového kompilátoru JIT je povolená. Název hodnoty registru není malá a velká písmena.
+  Můžete povolit starší 64 kompilátor JIT přidáním `REG_DWORD` hodnoty do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíče nebo `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` v registru. Hodnota je pojmenována `useLegacyJit`. Je-li hodnota 0, je použit nový kompilátor. Pokud je hodnota 1, je povolen starší 64 kompilátor JIT. V názvu hodnoty registru se nerozlišují malá a velká písmena.
   
-  Přidání hodnoty `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíč má vliv na všechny aplikace spuštěné na počítači. Přidání hodnoty `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíč má vliv na všechny aplikace, které se spustí aktuální uživatel. Pokud počítač je nakonfigurovaný s několika uživatelskými účty, ovlivníte jenom aplikace, které aktuální uživatel spouštět, pokud hodnota je přidána do klíče registru pro ostatní uživatele také. Přidávání `<useLegacyJit>` prvku do konfiguračního souboru přepíše nastavení registru v případě, že jsou k dispozici.  
+  Přidání hodnoty do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíče má vliv na všechny aplikace spuštěné v počítači. Přidání hodnoty do `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče má vliv na všechny aplikace spuštěné aktuálním uživatelem. Pokud je počítač nakonfigurovaný s několika uživatelskými účty, ovlivní se jenom aplikace spuštěné aktuálním uživatelem, pokud se hodnota nepřidá do klíčů registru pro ostatní uživatele. `<useLegacyJit>` Přidání elementu do konfiguračního souboru přepíše nastavení registru, pokud jsou k dispozici.  
   
 ## <a name="example"></a>Příklad  
 
-Následující konfigurační soubor zakazuje kompilaci pomocí nového 64bitového kompilátoru JIT a místo toho používá starší verzi 64bitového kompilátoru JIT.  
+Následující konfigurační soubor zakáže kompilaci s novým 64 kompilátorem JIT a místo toho používá starší 64 kompilátor JIT.  
   
 ```xml  
 <?xml version ="1.0"?>  
@@ -95,6 +95,6 @@ Následující konfigurační soubor zakazuje kompilaci pomocí nového 64bitov�
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<modul runtime > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
-- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
-- [Omezení rizik: Nový kompilátor JIT 64-bit](../../../../../docs/framework/migration-guide/mitigation-new-64-bit-jit-compiler.md)
+- [\<Běhový > element](runtime-element.md)
+- [\<Element > Konfigurace](../configuration-element.md)
+- [Zmírnění Nový 64 kompilátor JIT](../../../migration-guide/mitigation-new-64-bit-jit-compiler.md)

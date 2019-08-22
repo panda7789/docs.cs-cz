@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-ms.openlocfilehash: d9c584fb2faa971e7ce1ca287a94c8c6129820fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ab7a43fbb3e8df5bb0c99b5947f2fafb362399a
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705191"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664031"
 ---
-# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<Odebrat > – Element pro connectionManagement (nastavení sítě)
-Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.  
+# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<Remove – element > pro connectionManagement (nastavení sítě)
+Odebere IP adresu nebo název DNS ze seznamu správy připojení.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
-\<connectionManagement>  
-\<remove>  
+\<connectionManagement >  
+\<odebrat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,18 +49,18 @@ Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- `remove` Element odstraní položku seznamu správy připojení na určeném serveru.  
+ `remove` Element odebere položku seznamu správy připojení pro zadaný server.  
   
- Hodnota `address` atribut by měl mít platnou IP adresu nebo název hostitele.  
+ Hodnota `address` atributu musí být platná IP adresa nebo název hostitele.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny položky seznamu správu připojení pro server `www.adventure-works.com` a pak nakonfiguruje aplikaci pro použití čtyř připojení k serveru `www.contoso.com` a dvě spojení na všechny ostatní servery.  
+ Následující příklad odebere všechny položky seznamu správy připojení pro server `www.adventure-works.com` a pak nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  
@@ -78,4 +78,4 @@ Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

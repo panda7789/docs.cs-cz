@@ -1,69 +1,69 @@
 ---
-title: Nasazení modelu v ASP.NET Core Web API
-description: Poskytování modelu strojového učení ML.NET mínění analýzy prostřednictvím Internetu pomocí webového rozhraní API ASP.NET Core
-ms.date: 05/03/2019
+title: Nasazení modelu do ASP.NET Core webového rozhraní API
+description: Obsluha modelu strojového učení ML.NET mínění přes Internet pomocí ASP.NET Core webového rozhraní API
+ms.date: 08/20/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: f8b8f74f752aeb243d4a2987929bd28ddc5f7d5a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e1dcc719738a2beb3e63463245d4721c5298cf85
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641086"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666664"
 ---
-# <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu v ASP.NET Core Web API
+# <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu do ASP.NET Core webového rozhraní API
 
-Zjistěte, jak poskytovat předem vytrénovaných ML.NET model strojového učení na web pomocí ASP.NET Core Web API. Obsluhuje modelu přes webové rozhraní API umožňuje predikcí přes standardní HTTP metody.
+Naučte se, jak na webu sloužit předem trained ML.NET model strojového učení, pomocí ASP.NET Core webového rozhraní API. Obsluha modelu přes webové rozhraní API umožňuje předpovědi prostřednictvím standardních metod HTTP.
 
 > [!NOTE]
-> `PredictionEnginePool` rozšíření služby je aktuálně ve verzi preview.
+> `PredictionEnginePool`rozšíření služby je momentálně ve verzi Preview.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
-- Prostředí PowerShell.
-- Předem natrénovaných modelů. Použití [kurz analýza mínění ML.NET](../tutorials/sentiment-analysis.md) sestavovat vlastní model nebo stáhněte si tuto aplikaci [model machine learning analýzy předem vytrénovaných mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)
+- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- Prostředí.
+- Předem vyškolený model. Pomocí [kurzu ML.NET analýza mínění](../tutorials/sentiment-analysis.md) sestavte svůj vlastní model nebo si stáhněte tento [model služby Machine Learning s](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip) představitelnou mínění analýzou.
 
-## <a name="create-aspnet-core-web-api-project"></a>Vytvořte projekt webového rozhraní API ASP.NET Core
+## <a name="create-aspnet-core-web-api-project"></a>Vytvoření projektu webového rozhraní API ASP.NET Core
 
-1. Otevřete Visual Studio 2017. Vyberte **soubor > Nový > projekt** z řádku nabídek. V dialogovém okně Nový projekt, vyberte **Visual C#**  uzel, za nímž následuje **webové** uzlu. Vyberte **webové aplikace ASP.NET Core** šablony projektu. V **název** textového pole zadejte "SentimentAnalysisWebAPI" a pak vyberte **OK** tlačítko.
+1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor > nový > projekt** . V dialogovém okně Nový projekt vyberte uzel **vizuálu C#**  následovaný webovým uzlem . Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** . Do textového pole **název** zadejte "SentimentAnalysisWebAPI" a pak vyberte tlačítko **OK** .
 
-1. V okně, které zobrazuje různé typy projektů ASP.NET Core, vyberte **API** a vyberte položku **OK** tlačítko.
+1. V okně, které zobrazuje různé typy ASP.NET Core projektů, vyberte **rozhraní API** a klikněte na tlačítko **OK** .
 
-1. Vytvořte adresář *MLModels* ve vašem projektu a uložit předem sestavených strojového učení soubory modelu:
+1. Vytvořte ve svém projektu adresář s názvem *MLModels* a uložte předem sestavené soubory modelu Machine Learning:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte Přidat > Nová složka. Zadejte "MLModels" a stiskněte Enter.
+    V Průzkumník řešení klikněte pravým tlačítkem myši na projekt a vyberte Přidat > Nová složka. Zadejte "MLModels" a stiskněte klávesu ENTER.
 
-1. Nainstalujte **balíček NuGet Microsoft.ML**:
+1. Nainstalujte **balíček NuGet Microsoft.ml**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.ML**, vyberte tento balíček v seznamu a klikněte na tlačítko nainstalovat. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko v dialogovém okně přijetí licence, pokud souhlasíte s licenčními podmínkami pro balíčky uvedené.
+    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft.ml**, vyberte tento balíček v seznamu a klikněte na tlačítko nainstalovat. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro přijetí licence vyberte tlačítko **přijmout** .
 
-1. Nainstalujte **balíček Nuget Microsoft.Extensions.ML**:
+1. Nainstalujte **balíček Nuget Microsoft.Extensions.ml**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte kartu Procházet, Hledat **Microsoft.Extensions.ML**, vyberte tento balíček v seznamu a klikněte na tlačítko nainstalovat. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko v dialogovém okně přijetí licence, pokud souhlasíte s licenčními podmínkami pro balíčky uvedené.
+    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft.Extensions.ml**, vyberte tento balíček v seznamu a klikněte na tlačítko nainstalovat. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro přijetí licence vyberte tlačítko **přijmout** .
 
-### <a name="add-model-to-aspnet-core-web-api-project"></a>Přidání modelu do projektu webového rozhraní API ASP.NET Core
+### <a name="add-model-to-aspnet-core-web-api-project"></a>Přidání modelu do ASP.NET Core projektu webového rozhraní API
 
-1. Zkopírujte předem sestavených model *MLModels* adresáře
-1. V Průzkumníku řešení klikněte pravým tlačítkem myši na soubor zip modelu a vyberte vlastnosti. V části Upřesnit změňte hodnotu kopírovat do výstupního adresáře ke zkopírování, pokud je novější.
+1. Zkopírování předem připraveného modelu do adresáře *MLModels*
+1. V Průzkumník řešení klikněte pravým tlačítkem na soubor zip modelu a vyberte vlastnosti. V části Upřesnit změňte hodnotu kopírovat do výstupního adresáře na kopírovat, pokud je novější.
 
-## <a name="create-data-models"></a>Vytvoření datových modelů
+## <a name="create-data-models"></a>Vytváření datových modelů
 
-Je potřeba vytvořit některé třídy pro vstupní data a předpovědi. Přidejte novou třídu do projektu:
+Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
-1. Vytvořte adresář *DataModels* ve vašem projektu a uložit datových modelů:
+1. Vytvořte v projektu adresář s názvem datamodels pro uložení datových modelů:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte Přidat > Nová složka. Zadejte "DataModels" a stiskněte **Enter**.
+    V Průzkumník řešení klikněte pravým tlačítkem myši na projekt a vyberte Přidat > Nová složka. Zadejte "datamodels" a stiskněte **ENTER**.
 
-2. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost Přidat > Nová položka.
-3. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*. Vyberte **přidat** tlačítko. *SentimentData.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentData.cs*:
+2. V Průzkumník řešení klikněte pravým tlačítkem na adresář datamodels a pak vyberte Přidat > nová položka.
+3. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** . V editoru kódu se otevře soubor *SentimentData.cs* . Do horní části *SentimentData.cs*přidejte následující příkaz using:
 
     ```csharp
     using Microsoft.ML.Data;
     ```
     
-    Odeberte stávající definice třídy a přidejte následující kód, který **SentimentData.cs** souboru:
+    Odeberte existující definici třídy a přidejte následující kód do souboru **SentimentData.cs** :
     
     ```csharp
     public class SentimentData
@@ -77,14 +77,14 @@ Je potřeba vytvořit některé třídy pro vstupní data a předpovědi. Přide
     }
     ```
 
-4. V Průzkumníku řešení klikněte pravým tlačítkem myši *DataModels* adresář a potom vyberte možnost **Přidat > Nová položka**.
-5. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentPrediction.cs*. Vyberte tlačítko Přidat. *SentimentPrediction.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *SentimentPrediction.cs*:
+4. V Průzkumník řešení klikněte pravým tlačítkem na adresář datamodels a pak vyberte **Přidat > Nová položka**.
+5. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentPrediction.cs*. Pak vyberte tlačítko Přidat. V editoru kódu se otevře soubor *SentimentPrediction.cs* . Do horní části *SentimentPrediction.cs*přidejte následující příkaz using:
 
     ```csharp
     using Microsoft.ML.Data;
     ```
     
-    Odeberte stávající definice třídy a přidejte následující kód, který *SentimentPrediction.cs* souboru:
+    Odeberte existující definici třídy a přidejte následující kód do souboru *SentimentPrediction.cs* :
     
     ```csharp
     public class SentimentPrediction : SentimentData
@@ -99,15 +99,15 @@ Je potřeba vytvořit některé třídy pro vstupní data a předpovědi. Přide
     }
     ```
 
-    `SentimentPrediction` dědí z `SentimentData`. To usnadňuje v původní data `SentimentText` vlastnost společně s výstupem generovaných modelu. 
+    `SentimentPrediction`dědí z `SentimentData`. To usnadňuje zobrazení původních dat ve `SentimentText` vlastnosti spolu s výstupem generovaným modelem. 
 
-## <a name="register-predictionenginepool-for-use-in-the-application"></a>Zaregistrujte PredictionEnginePool pro použití v aplikaci
+## <a name="register-predictionenginepool-for-use-in-the-application"></a>Registrovat PredictionEnginePool pro použití v aplikaci
 
-Chcete-li jeden predikcí, použijte [ `PredictionEngine` ](xref:Microsoft.ML.PredictionEngine%602). Chcete-li použít [ `PredictionEngine` ](xref:Microsoft.ML.PredictionEngine%602) ve vaší aplikaci je třeba jej vytvořit když ho nepotřebují. V takovém případě je vhodné zvážit je vkládání závislostí.
+K provedení jedné předpovědi použijte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Aby bylo možné v [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) aplikaci používat, musíte ji vytvořit, až bude potřeba. V takovém případě je osvědčeným postupem použití injektáže závislostí.
 
-Pod následujícím odkazem najdete další informace, pokud chcete další informace o [injektáž závislostí v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
+Následující odkaz poskytuje další informace, pokud se chcete dozvědět o [vkládání závislostí v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
 
-1. Otevřít *Startup.cs* třídu a přidejte následující příkaz do horní části souboru:
+1. Otevřete třídu *Startup.cs* a na začátek souboru přidejte následující příkaz using:
 
     ```csharp
     using Microsoft.AspNetCore.Builder;
@@ -119,7 +119,7 @@ Pod následujícím odkazem najdete další informace, pokud chcete další info
     using SentimentAnalysisWebAPI.DataModels;
     ```
 
-2. Přidejte následující kód, který *ConfigureServices* metody:
+2. Do metody *ConfigureServices* přidejte následující kód:
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -130,18 +130,18 @@ Pod následujícím odkazem najdete další informace, pokud chcete další info
     }
     ```
 
-Na vysoké úrovni tento kód inicializuje objekty a služby automaticky, pokud je požadovaná aplikací místo nutnosti ručně provést.
+Na vysoké úrovni tento kód automaticky inicializuje objekty a služby, pokud je aplikace požaduje, místo toho, aby ji ručně provedete.
 
 > [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečné pro vlákna. Pro lepší výkon a bezpečný přístup z více vláken, použijte `PredictionEnginePool` službu, která vytvoří [ `ObjectPool` ](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) z `PredictionEngine` objekty při použití aplikace. Přečtěte si další informace o následujícím příspěvku blogu [vytváření a používání `PredictionEngine` objektu fondů v ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/).  
+> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Pro zlepšení výkonu a bezpečnosti vláken použijte `PredictionEnginePool` službu, která [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) vytvoří `PredictionEngine` objekty pro použití aplikací. Další informace o [vytváření a používání `PredictionEngine` fondů objektů v ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)najdete v tomto blogovém příspěvku.  
 
-## <a name="create-predict-controller"></a>Vytvoření kontroleru Predict
+## <a name="create-predict-controller"></a>Vytvořit kontroler předpovědi
 
-Ke zpracování příchozích žádostí HTTP, vytvořte kontroleru.
+Pokud chcete zpracovat příchozí požadavky HTTP, vytvořte kontroler.
 
-1. V Průzkumníku řešení klikněte pravým tlačítkem myši *řadiče* adresář a potom vyberte možnost **Přidat > kontroler**.
-1. V **přidat novou položku** dialogu **prázdný kontroler API** a vyberte **přidat**.
-1. Příkazový řádek změnu **názvu Kontroleru** pole *PredictController.cs*. Vyberte tlačítko Přidat. *PredictController.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *PredictController.cs*:
+1. V Průzkumník řešení klikněte pravým tlačítkem na adresář *řadiče* a pak vyberte **Přidat > kontroler**.
+1. V dialogovém okně **Přidat novou položku** vyberte možnost **kontroler rozhraní API prázdné** a vyberte **Přidat**.
+1. V příkazovém řádku změňte pole **název kontroleru** na *PredictController.cs*. Pak vyberte tlačítko Přidat. V editoru kódu se otevře soubor *PredictController.cs* . Do horní části *PredictController.cs*přidejte následující příkaz using:
 
     ```csharp
     using System;
@@ -150,7 +150,7 @@ Ke zpracování příchozích žádostí HTTP, vytvořte kontroleru.
     using SentimentAnalysisWebAPI.DataModels;
     ```
 
-    Odeberte stávající definice třídy a přidejte následující kód, který *PredictController.cs* souboru:
+    Odeberte existující definici třídy a přidejte následující kód do souboru *PredictController.cs* :
     
     ```csharp
     public class PredictController : ControllerBase
@@ -179,26 +179,26 @@ Ke zpracování příchozích žádostí HTTP, vytvořte kontroleru.
     }
     ```
 
-Tento kód přiřadí `PredictionEnginePool` předáním konstruktoru kontroleru, který můžete získat pomocí vkládání závislostí. Pak, bude `Predict` kontroleru `Post` metoda používá `PredictionEnginePool` k predikci a výsledek se vrátí zpět na uživatele v případě úspěšného ověření.
+Tento kód přiřadí `PredictionEnginePool` rozhraní předáním do konstruktoru kontroleru, který získáte prostřednictvím vkládání závislostí. `Predict` Pak Metoda`Post` řadiče používá `PredictionEnginePool` k vytvoření předpovědi a vrátí výsledky zpátky uživateli, pokud je to úspěšné.
 
-## <a name="test-web-api-locally"></a>Místní test webové rozhraní API
+## <a name="test-web-api-locally"></a>Místní testování webového rozhraní API
 
-Jakmile je všechno nastavené, je čas k otestování aplikace.
+Jakmile je všechno nastavené, je čas otestovat aplikaci.
 
 1. Spusťte aplikaci.
-1. Otevřete Powershell a zadejte následující kód, kde je port naslouchá vaše aplikace.
+1. Otevřete PowerShell a zadejte následující kód, kde PORT je port, na kterém naslouchá vaše aplikace.
 
     ```powershell
-    Invoke-RestMethod "https://localhost:<PORT>/api/predict" -Method Post -Body (@{Text="This was a very bad steak"} | ConvertTo-Json) -ContentType "application/json"
+    Invoke-RestMethod "https://localhost:<PORT>/api/predict" -Method Post -Body (@{SentimentText="This was a very bad steak"} | ConvertTo-Json) -ContentType "application/json"
     ```
 
-    V případě úspěchu se výstup by měl vypadat podobně jako na následujícím textem:
+    V případě úspěchu by měl výstup vypadat podobně jako v následujícím textu:
     
     ```powershell
     Negative
     ```
 
-Blahopřejeme! Jste úspěšně obsluhovat model k predikci přes internet pomocí rozhraní API pro ASP.NET Core Web.
+Blahopřejeme! Úspěšně jste zasloužili vašemu modelu, aby se předpovědi přes Internet pomocí webového rozhraní API ASP.NET Core.
 
 ## <a name="next-steps"></a>Další kroky
 

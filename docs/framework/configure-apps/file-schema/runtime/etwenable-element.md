@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ba411114bfb853e06c83adb42713d43f1452d9c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f24e9a06137744dbc97d5f34cda7ad6eab873700
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704801"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663729"
 ---
-# <a name="etwenable-element"></a>\<etwenable – > – Element
-Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro common language runtime události.  
+# <a name="etwenable-element"></a>\<etwEnable – element >
+Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro události modulu CLR (Common Language Runtime).  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
 \<etwEnabled>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro comm
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda by měly být povolené trasování událostí pro Windows.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, zda má být povoleno trasování událostí pro Windows.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|true|Povolte trasování událostí pro Windows. Toto je výchozí verze Windows od verze operačních systémů Windows Vista a Windows Server 2008.|  
-|false|Zakážete trasování událostí pro Windows. Toto je výchozí hodnota u starších verzí systému Windows.|  
+|true|Povolte trasování událostí pro Windows. Toto je výchozí nastavení pro verze Windows počínaje operačními systémy Windows Vista a Windows Server 2008.|  
+|false|Zakažte trasování událostí pro Windows. Toto je výchozí nastavení pro dřívější verze systému Windows.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,13 +54,13 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro comm
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze Windows Vista, je ve výchozím nastavení povolené trasování událostí pro Windows. Tento element slouží k zakázání trasování událostí pro Windows pro aplikaci. V dřívějších verzích Windows použijte tento prvek povolit trasování událostí pro Windows pro aplikaci.  
+ Počínaje systémem Windows Vista je ETW ve výchozím nastavení povolená. Tento prvek použijte k zakázání ETW pro aplikaci. V dřívějších verzích Windows použijte tento prvek k povolení ETW pro aplikaci.  
   
 > [!NOTE]
->  Trasování událostí pro Windows můžete povolit nebo zakázat globálně na serveru s použitím nastavení registru. Zobrazit [řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md).  
+>  ETW lze povolit nebo zakázat globálně na serveru pomocí nastavení registru. Viz [řízení protokolování .NET Framework](../../../performance/controlling-logging.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit trasování událostí pro Windows pro aplikaci.  
+ Následující příklad ukazuje, jak povolit trasování ETW pro aplikaci.  
   
 ```xml  
 <configuration>  
@@ -72,6 +72,6 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro comm
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Řízení přihlašování rozhraní .NET Framework](../../../performance/controlling-logging.md)

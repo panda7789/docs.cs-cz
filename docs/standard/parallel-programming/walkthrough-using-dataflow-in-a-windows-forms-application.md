@@ -9,127 +9,127 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4f8e25edb7d61e21406a5f7719f6dc98f686a9e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4dc433b83fd086a1e3e165a85b6bfe64b781f45b
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755048"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666340"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
-Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
+Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování imagí v aplikaci model Windows Forms.  
   
- Tento příklad načte soubory obrázků ve složce zadané, vytvoří bitovou kopii složené a zobrazí výsledek. V příkladu používá model toku dat pro trasu Image přes síť. V toku dat modelu nezávislé komponenty aplikace mezi sebou komunikovat odesíláním zpráv. Když komponenta obdrží zprávu, provede určitou akci a jinou součást pak předá výsledek. Porovnejte s model řízení toku, ve které aplikace používá řídicí struktury, například, podmíněné příkazy, smyčky a tak dále, k řízení pořadí operací v programu.  
+ Tento příklad načte soubory obrázků ze zadané složky, vytvoří složený obrázek a zobrazí výsledek. V příkladu se používá model toku dat ke směrování imagí přes síť. V modelu toku dat vzájemně komunikují nezávislé součásti programu a odesílají zprávy. Když komponenta obdrží zprávu, provede nějakou akci a pak výsledek předá do jiné komponenty. Porovnejte je s modelem toku řízení, ve kterém aplikace používá řídicí struktury, například podmíněné příkazy, smyčky a tak dále, k řízení pořadí operací v programu.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Čtení [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) před zahájením tohoto návodu.  
+ Před zahájením tohoto návodu Přečtěte [tok](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) dat.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="sections"></a>Oddíly  
- Tento návod obsahuje následující části:  
+ Tento návod obsahuje následující oddíly:  
   
-- [Vytvoření aplikace Windows Forms](#winforms)  
+- [Vytvoření aplikace model Windows Forms](#winforms)  
   
-- [Vytvoření sítě toku dat](#network)  
+- [Vytváření sítě toku dat](#network)  
   
-- [Připojení sítě toku dat v uživatelském rozhraní](#ui)  
+- [Propojení sítě toku dat s uživatelským rozhraním](#ui)  
   
-- [Kompletní příklad](#complete)  
+- [Úplný příklad](#complete)  
   
 <a name="winforms"></a>   
-## <a name="creating-the-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
- Tato část popisuje, jak vytvořit základní aplikaci Windows Forms a přidání ovládacích prvků do hlavního formuláře.  
+## <a name="creating-the-windows-forms-application"></a>Vytvoření aplikace model Windows Forms  
+ Tato část popisuje, jak vytvořit základní aplikaci model Windows Forms a jak přidat ovládací prvky do hlavního formuláře.  
   
-### <a name="to-create-the-windows-forms-application"></a>Chcete-li vytvořit Windows Forms aplikace  
+### <a name="to-create-the-windows-forms-application"></a>Vytvoření aplikace model Windows Forms  
   
-1. V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **formulářová aplikace Windows** projektu. V tomto dokumentu má projekt název `CompositeImages`.  
+1. V aplikaci Visual Studio vytvořte projekt aplikace C# visual nebo Visual Basic **model Windows Forms** . V tomto dokumentu se projekt jmenuje `CompositeImages`.  
   
-2. V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb pro jazyk Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
+2. V návrháři formuláře pro hlavní formulář Form1.cs (Form1. vb pro Visual Basic) přidejte <xref:System.Windows.Forms.ToolStrip> ovládací prvek.  
   
-3. Přidat <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **vybrat složku**.  
+3. Přidejte ovládací prvek <xref:System.Windows.Forms.ToolStrip> do ovládacího prvku. <xref:System.Windows.Forms.ToolStripButton> Nastavte vlastnost na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a<xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost na **Zvolit složku.** <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>  
   
-4. Přidejte druhý <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>, <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **zrušit**a <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> vlastnost `False`.  
+4. <xref:System.Windows.Forms.ToolStripButton> Přidejte<xref:System.Windows.Forms.ToolStrip> k ovládacímu prvku druhý ovládací prvek. `False` <xref:System.Windows.Forms.ToolStripItem.Enabled%2A>Nastavte vlastnost na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>vlastnost, <xref:System.Windows.Forms.ToolStripItem.Text%2A> kterou chcete zrušit, a vlastnost na hodnotu. <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A>  
   
-5. Přidat <xref:System.Windows.Forms.PictureBox> objektu do hlavního formuláře. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
+5. <xref:System.Windows.Forms.PictureBox> Přidejte objekt do hlavního formuláře. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
 <a name="network"></a>   
-## <a name="creating-the-dataflow-network"></a>Vytvoření sítě toku dat  
- Tato část popisuje postup vytvoření sítě toku dat, který provádí zpracování obrázků.  
+## <a name="creating-the-dataflow-network"></a>Vytváření sítě toku dat  
+ Tato část popisuje, jak vytvořit síť toku dat, která provádí zpracování bitové kopie.  
   
-### <a name="to-create-the-dataflow-network"></a>Pokud chcete vytvořit síť toku dat  
+### <a name="to-create-the-dataflow-network"></a>Vytvoření sítě toku dat  
   
-1. Do projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
+1. Do projektu přidejte odkaz na System. Threading. Tasks. Dataflow. dll.  
   
-2. Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` (`Using` v jazyce Visual Basic) příkazy:  
+2. Ujistěte se, že Form1.cs (Form1. vb pro Visual Basic) obsahuje `using` následující`Using` příkazy (v Visual Basic):  
   
      [!code-csharp[TPLDataflow_CompositeImages#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#1)]  
   
-3. Přidejte následující datové členy do `Form1` třídy:  
+3. Do `Form1` třídy přidejte následující datové členy:  
   
      [!code-csharp[TPLDataflow_CompositeImages#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#2)]  
   
-4. Přidejte následující metodu `CreateImageProcessingNetwork`, možnosti `Form1` třídy. Tato metoda vytvoří sítě pro zpracování obrazu.  
+4. Přidejte následující metodu `CreateImageProcessingNetwork` `Form1` do třídy. Tato metoda vytvoří síť pro zpracování imagí.  
   
      [!code-csharp[TPLDataflow_CompositeImages#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#3)]  
   
-5. Implementace `LoadBitmaps` metody.  
+5. Implementujte `LoadBitmaps` metodu.  
   
      [!code-csharp[TPLDataflow_CompositeImages#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#4)]  
   
-6. Implementace `CreateCompositeBitmap` metody.  
+6. Implementujte `CreateCompositeBitmap` metodu.  
   
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  C# verze `CreateCompositeBitmap` metoda využívá k zajištění efektivní zpracování ukazatele <xref:System.Drawing.Bitmap?displayProperty=nameWithType> objekty. Proto je nutné povolit **povolit nezabezpečený kód** možnost ve vašem projektu, aby bylo možné používat [nebezpečné](~/docs/csharp/language-reference/keywords/unsafe.md) – klíčové slovo. Další informace o tom, jak povolit nezabezpečený kód v projektu jazyka Visual C# najdete v tématu [stránku sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+    >  C# Verze`CreateCompositeBitmap` metody používá ukazatele k umožnění <xref:System.Drawing.Bitmap?displayProperty=nameWithType> efektivního zpracování objektů. Proto je nutné povolit možnost **Povolit nezabezpečený kód** v projektu, aby bylo možné použít klíčové [](../../csharp/language-reference/keywords/unsafe.md) slovo unsafe. Další informace o tom, jak povolit nezabezpečený kód ve C# vizuálním projektu, naleznete na [stránce sestavení,C#Návrhář projektu ()](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
- Následující tabulka popisuje členy v síti.  
+ V následující tabulce jsou popsány členové sítě.  
   
 |Člen|type|Popis|  
 |------------|----------|-----------------|  
-|`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Přijímá jako vstup cestu ke složce a vytvoří kolekci <xref:System.Drawing.Bitmap> objekty jako výstup.|  
-|`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Vezme kolekci <xref:System.Drawing.Bitmap> objekty jako vstup a vytvoří složené rastrového obrázku jako výstup.|  
-|`displayCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Složený rastrový obrázek se zobrazí ve formuláři.|  
-|`operationCancelled`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Zobrazí obrázek k označení, že operace je zrušena a umožňuje uživateli vybrat jinou složku.|  
+|`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Převezme cestu ke složce jako vstup a vytvoří kolekci <xref:System.Drawing.Bitmap> objektů jako výstup.|  
+|`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Převezme kolekci <xref:System.Drawing.Bitmap> objektů jako vstup a vytvoří složený rastrový obrázek jako výstup.|  
+|`displayCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Zobrazí složený rastrový obrázek ve formuláři.|  
+|`operationCancelled`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|Zobrazí obrázek, který indikuje, že operace je zrušená a umožňuje uživateli vybrat jinou složku.|  
   
- Pro připojení bloků toku dat pro formulář k síti, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> metody. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Metoda obsahuje přetížené verze, která přijímá <xref:System.Predicate%601> objekt, který určuje, zda cílový blok přijme nebo odmítne zprávy. Tento mechanismus filtrování umožňuje blokům zpráv přijímat jenom konkrétní hodnoty. V tomto příkladu můžete větvit sítě v jednom ze dvou způsobů. Hlavní větev načte obrázky z disku, vytvoří složené bitovou kopii a této bitové kopie se zobrazí ve formuláři. Alternativní větev zruší aktuální operaci. <xref:System.Predicate%601> Objekty povolit bloků toku dat podél hlavní větve, přepnout na větev alternativní odmítnutím některé zprávy. Například, pokud uživatel zruší operaci bloku toku dat `createCompositeBitmap` vytváří `null` (`Nothing` v jazyce Visual Basic) jako výstup. Blok toku dat `displayCompositeBitmap` odmítne `null` vstupní hodnoty a proto zprávy se nabízí na `operationCancelled`. Blok toku dat `operationCancelled` přijímá všechny zprávy a proto se zobrazí obrázek k označení, že operace je zrušená.  
+ Chcete-li připojit bloky toku dat pro vytvoření sítě, v tomto příkladu je <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> použita metoda. Metoda obsahuje přetíženou verzi, která <xref:System.Predicate%601> přebírá objekt, který určuje, zda cílový blok přijímá nebo odmítá zprávu. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Tento mechanismus filtrování umožňuje blokům zpráv přijímat pouze určité hodnoty. V tomto příkladu může síť větvit jedním ze dvou způsobů. Hlavní větev načte obrázky z disku, vytvoří složený obrázek a zobrazí tento obrázek ve formuláři. Alternativní větev zruší aktuální operaci. <xref:System.Predicate%601> Objekty umožňují, aby tok dat v rámci hlavní větve přepnul na alternativní větev tím, že odmítne určité zprávy. Například pokud uživatel operaci zruší, vytvoří `createCompositeBitmap` `null` blok toku dat (`Nothing` v Visual Basic) jako svůj výstup. Blok `displayCompositeBitmap` toku dat `null` odmítne vstupní hodnoty `operationCancelled`. proto je zpráva nabízena. Blok `operationCancelled` toku dat akceptuje všechny zprávy, a proto zobrazí obrázek, který označuje, že operace byla zrušena.  
   
- Následující ilustrace znázorňuje sítě pro zpracování obrazu:  
+ Následující ilustrace znázorňuje síť pro zpracování imagí:  
   
- ![Ilustrace znázorňující sítě pro zpracování obrazu.](./media/walkthrough-using-dataflow-in-a-windows-forms-application/dataflow-winforms-image-processing.png)  
+ ![Obrázek znázorňující síť pro zpracování obrázků.](./media/walkthrough-using-dataflow-in-a-windows-forms-application/dataflow-winforms-image-processing.png)  
   
- Vzhledem k tomu, `displayCompositeBitmap` a `operationCancelled` toku dat bloky fungovat na uživatelské rozhraní, je důležité, že provedou tyto akce ve vlákně uživatelského rozhraní. Provedete to, že během konstrukce tyto objekty každý poskytují <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> vlastnost nastavena na <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Metoda vytvoří <xref:System.Threading.Tasks.TaskScheduler> objekt, který provede práci na aktuálním kontextu synchronizace. Protože `CreateImageProcessingNetwork` metoda je volána z obslužné rutiny **vybrat složku** tlačítko, které běží v uživatelském rozhraní vlákna, akce `displayCompositeBitmap` a `operationCancelled` bloků toku dat spustit také na vlákna uživatelského rozhraní.  
+ Vzhledem k `displayCompositeBitmap` tomu `operationCancelled` , že bloky a tok dat fungují na uživatelském rozhraní, je důležité, aby tyto akce probíhaly ve vlákně uživatelského rozhraní. Aby to <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>bylo možné provést během konstrukce, poskytují tyto objekty objekt, který má vlastnostnastavenouna.<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Metoda<xref:System.Threading.Tasks.TaskScheduler> vytvoří objekt, který provádí práci na aktuálním kontextu synchronizace. Vzhledem k tomu, že `displayCompositeBitmap` `operationCancelled` Metodajevolánazobslužnérutinytlačítkazvolitsložku,kterájespuštěnavvlákněuživatelskéhorozhraní,jsouakceproblokyablokytokudattakéspouštěny`CreateImageProcessingNetwork` ve vlákně uživatelského rozhraní.  
   
- Tento příklad používá token zrušení sdílené místo nastavení <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost protože <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost trvale zruší tok dat zablokovat spuštění. Token zrušení umožňuje znovu použít stejné síti toku dat více než jednou, i když uživatel zruší jednu nebo více operací v tomto příkladu. Příklad, který používá <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> trvale zrušit provádění bloku toku dat, naleznete v tématu [jak: Zrušení bloku toku dat](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
+ Tento příklad používá sdílený token zrušení namísto nastavení <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnosti, <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> protože vlastnost trvale zruší provádění bloku toku dat. Token zrušení umožňuje v tomto příkladu znovu použít stejnou síť toku dat, a to i v případě, že uživatel zruší jednu nebo více operací. Příklad, který používá <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> k trvalému zrušení provádění bloku toku dat, naleznete v tématu [How to: Zruší blok](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md)toku dat.  
   
 <a name="ui"></a>   
-## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Připojení sítě toku dat v uživatelském rozhraní  
- Tato část popisuje, jak připojit síť toku dat v uživatelském rozhraní. Vytvoření složeného image a zrušení operace inicializována z **vybrat složku** a **zrušit** tlačítka. Když uživatel zvolí jednu z těchto tlačítek, vyvolání příslušné akce v asynchronním režimu.  
+## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Propojení sítě toku dat s uživatelským rozhraním  
+ Tato část popisuje, jak propojit síť toku dat s uživatelským rozhraním. Vytváření složené image a zrušení operace se spouští z tlačítek **Zvolit složku** a **Zrušit** . Když uživatel zvolí některé z těchto tlačítek, je vhodná akce iniciována asynchronním způsobem.  
   
-### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>K připojení sítě toku dat v uživatelském rozhraní  
+### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>Připojení sítě toku dat k uživatelskému rozhraní  
   
-1. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **vybrat složku** tlačítko.  
+1. V návrháři formuláře pro hlavní formulář vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> událost pro tlačítko **Vybrat složku** .  
   
-2. Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **vybrat složku** tlačítko.  
+2. Implementujte událost pro tlačítko **Vybrat složku.** <xref:System.Windows.Forms.ToolStripItem.Click>  
   
      [!code-csharp[TPLDataflow_CompositeImages#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#6)]  
   
-3. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **zrušit** tlačítko.  
+3. V návrháři formuláře pro hlavní formulář vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> událost tlačítka **Storno** .  
   
-4. Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **zrušit** tlačítko.  
+4. Implementujte událost pro tlačítko **Storno.** <xref:System.Windows.Forms.ToolStripItem.Click>  
   
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
 <a name="complete"></a>   
 ## <a name="the-complete-example"></a>Kompletní příklad  
- Následující příklad ukazuje kompletní kód v tomto návodu.  
+ Následující příklad ukazuje kompletní kód pro tento návod.  
   
  [!code-csharp[TPLDataflow_CompositeImages#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#100)]  
   
- Následující obrázek znázorňuje příklad typického výstupu pro běžné \Sample Pictures\ složku.  
+ Následující ilustrace znázorňuje typický výstup pro běžné složky \Samples \ obrázky \.  
   
- ![Aplikaci Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
+ ![Aplikace model Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
 
 ## <a name="see-also"></a>Viz také:
 

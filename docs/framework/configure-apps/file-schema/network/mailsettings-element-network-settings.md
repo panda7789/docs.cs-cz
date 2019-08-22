@@ -8,19 +8,19 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 54fb68ab0bf8aa2665d70391350c626131ccb4bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b8ea08cbd76e60a3665703bc50924dd94500cd87
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674492"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659321"
 ---
-# <a name="mailsettings-element-network-settings"></a>\<mailSettings – > – Element (nastavení sítě)
-Konfiguruje možnosti pro odesílání pošty.  
+# <a name="mailsettings-element-network-settings"></a>\<mailSettings – element > (nastavení sítě)
+Nakonfiguruje možnosti odesílání pošty.  
 
-\<Konfigurace >  
+\<> Konfigurace  
 \<system.net>  
-\<mailSettings>  
+\<mailSettings >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ Konfiguruje možnosti pro odesílání pošty.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|[\<SMTP > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Nakonfiguruje možnosti Simple Mail Transfer Protocol.|  
+|[\<> elementu SMTP (nastavení sítě)](smtp-element-network-settings.md)|Nakonfiguruje možnosti jednoduchého poštovního transportního protokolu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[\<system.Net > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[\<System .NET > – element (nastavení sítě)](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje příslušné parametry protokolu SMTP k odesílání e-mailů pomocí výchozích síťových přihlašovacích údajů.  
+ Následující příklad určuje vhodné parametry protokolu SMTP pro odesílání e-mailů s použitím výchozích síťových přihlašovacích údajů.  
   
 ```xml  
 <configuration>  
@@ -70,4 +70,4 @@ Konfiguruje možnosti pro odesílání pošty.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.Mail.SmtpClient>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

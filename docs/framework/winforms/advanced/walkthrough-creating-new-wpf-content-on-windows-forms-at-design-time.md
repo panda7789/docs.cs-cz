@@ -8,30 +8,23 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: 889e81053d4e2264755468446a4e1681216ae22e
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: e3fb6e42270cc0a530646b656470ec99fcfc7f1f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040367"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666237"
 ---
 # <a name="walkthrough-create-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF v model Windows Forms v době návrhu
 
 V tomto článku se dozvíte, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití v aplikacích založených na model Windows Forms.
 
-V tomto návodu provedete následující úlohy:
-
-- Vytvořte projekt.
-
-- Vytvořit nový ovládací prvek WPF.
-
-- Přidejte nový ovládací prvek WPF do formuláře Windows. Ovládací prvek WPF je hostován v <xref:System.Windows.Forms.Integration.ElementHost> ovládacím prvku.
-
 ## <a name="prerequisites"></a>Požadavky
 
-K dokončení tohoto návodu budete potřebovat následující komponenty:
-
-- Visual Studio
+K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
@@ -51,17 +44,17 @@ Vytvoření nového ovládacího prvku WPF:
 
 1. V **Průzkumník řešení**přidejte do řešení nový projekt **knihovny uživatelských ovládacích prvků WPF (.NET Framework)** . Pro knihovnu `WpfControlLibrary1`ovládacích prvků použijte výchozí název. Výchozí název ovládacího prvku je `UserControl1.xaml`.
 
-     Přidání nového ovládacího prvku má následující důsledky:
+   Přidání nového ovládacího prvku má následující důsledky:
 
-    - Byl přidán soubor UserControl1. XAML.
+   - Byl přidán soubor UserControl1. XAML.
 
-    - Přidal se soubor UserControl1.xaml.cs nebo UserControl1. XAML. vb. Tento soubor obsahuje kód na pozadí pro obslužné rutiny událostí a další implementace.
+   - Přidal se soubor UserControl1.xaml.cs (nebo UserControl1. XAML. vb). Tento soubor obsahuje kód na pozadí pro obslužné rutiny událostí a další implementace.
 
-    - Přidaly se odkazy na sestavení WPF.
+   - Přidaly se odkazy na sestavení WPF.
 
-    - Soubor UserControl1. XAML se otevře v [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
+   - Soubor UserControl1. XAML se otevře v Návrháři WPF pro Visual Studio.
 
-2. V zobrazení Návrh se ujistěte, že `UserControl1` je vybraná možnost. Další informace najdete v tématu [jak: Vyberte a přesuňte prvky na Návrhová plocha](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).
+2. V zobrazení Návrh se ujistěte, že `UserControl1` je vybraná možnost.
 
 3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastností a <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
 
@@ -69,8 +62,8 @@ Vytvoření nového ovládacího prvku WPF:
 
 5. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.Controls.TextBox.Text%2A> vlastnosti na **hostovaný obsah**.
 
-    > [!NOTE]
-    > Obecně byste měli hostovat propracovanější obsah WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> Ovládací prvek slouží pouze pro ilustrativní účely.
+   > [!NOTE]
+   > Obecně byste měli hostovat propracovanější obsah WPF. <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> Ovládací prvek slouží pouze pro ilustrativní účely.
 
 6. Sestavte projekt.
 

@@ -2,21 +2,21 @@
 title: <add> z <entries>
 ms.date: 03/30/2017
 ms.assetid: 3af4805b-dc72-4f68-b168-da4fba8c6170
-ms.openlocfilehash: 1324803d7c0f127cfee9eadebff2672955780eda
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3052a7570d1d93836603454817be921b37d26060
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673638"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658827"
 ---
-# <a name="add-of-entries"></a>\<Přidat > z \<položky >
-Představuje položku směrování, která se mapuje na koncový bod klienta, který byl předtím definovaný filtr. Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.  
+# <a name="add-of-entries"></a>\<Přidat > \<položek >
+Představuje položku směrování, která mapuje filtr na koncový bod klienta, který byl dříve definován. Zprávy, které odpovídají tomuto filtru, budou odeslány do tohoto cíle.  
   
  \<system.serviceModel>  
-\<směrování >  
+\<> směrování  
 \<filterTables >  
-\<filterTable >  
-\<položky >  
+\<> filtru  
+\<> položky  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,9 +36,6 @@ Představuje položku směrování, která se mapuje na koncový bod klienta, kt
 </routing>
 ```  
   
-```csharp  
-```  
-  
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
@@ -46,10 +43,10 @@ Představuje položku směrování, která se mapuje na koncový bod klienta, kt
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|backupList|Řetězec, který určuje referenci na záložní seznam koncových bodů.|  
-|endpoint|Řetězec, který určuje referenci na koncový bod klienta, který bude přijímat zprávy, které odpovídají filtru určeném `filterName` atribut.|  
-|filterName|Řetězec, který určuje odkaz na prvek filtru.|  
-|priorita|Celé číslo, které určuje priorita této položky.<br /><br /> Položky v tabulce směrování se vyhodnotí na základě priority, 0 je nejnižší priorita. Všechny položky s konkrétní prioritou jsou vyhodnocovány současně, pokud neexistuje odpovídající položka nebyl nalezen aktuální priorita, se vyhodnotí na další úroveň priority.<br /><br /> Tato hodnota je volitelná.|  
+|backupList|Řetězec, který určuje odkaz na záložní seznam koncových bodů.|  
+|endpoint|Řetězec, který určuje odkaz na koncový bod klienta, který obdrží zprávy, které odpovídají filtru zadanému `filterName` atributem.|  
+|filterName|Řetězec, který určuje odkaz na element filtru.|  
+|priority|Celé číslo, které určuje prioritu této položky.<br /><br /> Položky v tabulce směrování budou vyhodnocovány na základě priority, přičemž 0 je nejnižší priorita. Všechny položky pro konkrétní prioritu jsou vyhodnocovány současně, pokud se pro aktuální prioritu nenajde žádná vyhovující položka, bude vyhodnocena další úroveň priority.<br /><br /> Tato hodnota je volitelná.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -58,7 +55,7 @@ Představuje položku směrování, která se mapuje na koncový bod klienta, kt
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje položky směrování mapování.|  
+|[\<> směrování](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje položky mapování směrování.|  
   
 ## <a name="see-also"></a>Viz také:
 

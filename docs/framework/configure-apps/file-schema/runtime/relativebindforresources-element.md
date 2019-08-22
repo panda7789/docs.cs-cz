@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15156eaf883fc9ec162e0a85525564d49522b01d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 859e8a12421ea92aa48c54317e052683eb8e83f8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592660"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663488"
 ---
-# <a name="relativebindforresources-element"></a>\<relativeBindForResources> Element
-Optimalizuje sondy pro satelitní sestavení.  
+# <a name="relativebindforresources-element"></a>\<relativeBindForResources – element >
+Optimalizuje sondu pro satelitní sestavení.  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
-\<relativeBindForResources> Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
+\<relativeBindForResources – element >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,14 +35,14 @@ Optimalizuje sondy pro satelitní sestavení.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul common language runtime optimalizuje sondy pro satelitní sestavení.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul CLR (Common Language Runtime) optimalizuje test pro satelitní sestavení.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|`false`|Modul runtime neoptimalizuje sondy pro satelitní sestavení. Jedná se o výchozí hodnotu.|  
-|`true`|Modul runtime optimalizuje sondy pro satelitní sestavení.|  
+|`false`|Modul runtime neoptimalizuje sondu pro satelitní sestavení. Jedná se o výchozí hodnotu.|  
+|`true`|Modul runtime optimalizuje sondu pro satelitní sestavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -55,24 +55,24 @@ Optimalizuje sondy pro satelitní sestavení.
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- Obecně platí, sondy Resource Manageru pro prostředky, jak je uvedeno v [Packaging and Deploying Resources](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) tématu. To znamená, že pokud pro konkrétní lokalizovanou verzi prostředkem sondy Resource Manageru, může hledat v globální mezipaměti sestavení, podívejte se do složky specifické pro jazykovou verzi na základní, dotaz kód aplikace Instalační služby systému Windows pro satelitní sestavení a zvýšit <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> události. `<relativeBindForResources>` Element optimalizuje způsob, ve kterém testy Resource Manageru pro satelitní sestavení. To může zlepšit výkon při zjišťování prostředků za následujících podmínek:  
+ Obecně Správce prostředků sondy pro prostředky, jak je popsáno v tématu [balení a nasazení prostředků](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md) . To znamená, že když Správce prostředků sondy pro určitou lokalizovanou verzi prostředku, může to vypadat v globální mezipaměti sestavení (GAC), vyhledat složku specifickou pro jazykovou verzi v základu kódu aplikace, dotazovat Instalační služba systému Windows pro satelitní sestavení a vyvolat <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost. `<relativeBindForResources>` Prvek optimalizuje způsob, jakým Správce prostředků sondy pro satelitní sestavení. Může zvýšit výkon při zjišťování prostředků za následujících podmínek:  
   
-- Satelitní sestavení je při nasazení ve stejném umístění jako sestavení kódu. Jinými slovy Pokud sestavení kódu je nainstalováno v globální mezipaměti sestavení, satelitní sestavení musí být nainstalována také existuje. Pokud je kód sestavení nainstalovaná v základu kódu vaší aplikace, musí satelitní sestavení nainstalována také do složky specifické pro jazykovou verzi v základu kódu.  
+- Když satelitní sestavení je nasazeno ve stejném umístění jako sestavení kódu. Jinými slovy, pokud je sestavení kódu nainstalováno v globální mezipaměti sestavení (GAC), musí být také nainstalovaná satelitní sestavení. Pokud je sestavení kódu nainstalováno v základu kódu aplikace, musí být satelitní sestavení také nainstalována do složky specifické pro jazykovou verzi v základu kódu.  
   
-- Když instalační služby systému Windows se nepoužívá nebo jen zřídka se používá pro instalaci na vyžádání satelitních sestavení.  
+- Pokud se Instalační služba systému Windows nepoužívá nebo se používá jenom zřídka pro instalaci satelitních sestavení na vyžádání.  
   
-- Pokud kód aplikace nezpracovává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+- Když kód aplikace <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost nezpracovává.  
   
- Nastavení `enabled` atribut `<relativeBindForResources>` elementu `true` optimalizuje test Resource Manageru pro satelitní sestavení následujícím způsobem:  
+ `enabled` Nastavení atributu `<relativeBindForResources>` elementu pro`true` optimalizaci správce prostředků sondy pro satelitní sestavení následujícím způsobem:  
   
-- Umístění sestavení kódu nadřazené používá pro sběr dat pro satelitní sestavení.  
+- Používá umístění sestavení nadřazeného kódu pro testování satelitního sestavení.  
   
-- Neprohledává Instalační služby systému Windows pro satelitní sestavení.  
+- Nedotazuje se Instalační služba systému Windows pro satelitní sestavení.  
   
-- Nevyvolával <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+- <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> Událost nevyvolává.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabalení a nasazení prostředků](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Zabalení a nasazení prostředků](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

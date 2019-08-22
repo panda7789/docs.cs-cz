@@ -10,48 +10,48 @@ helpviewer_keywords:
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3450908cadff453df79ab8fcf10285c25dfa50a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1cece075bc16a175265377b9714598f19452886c
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973404"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666392"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
-*Datový paralelismus* odkazuje na scénáře, ve kterých se současně provádí stejnou operaci (paralelně) na prvky ve zdrojové kolekci nebo pole. V paralelní operace s daty zdrojové kolekce rozdělena tak, aby více vláken může souběžně pracovat na různých segmentů.  
+*Datový paralelismus* odkazuje na scénáře, ve kterých je stejná operace provedena souběžně (paralelně) na prvcích ve zdrojové kolekci nebo poli. V datech paralelních operacích je zdrojová kolekce rozdělená tak, aby více vláken mohlo současně pracovat s různými segmenty.  
   
- Task Parallel Library (TPL) podporuje datový paralelismus prostřednictvím <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> třídy. Tato třída poskytuje založených na volání metody paralelní implementace [pro](~/docs/csharp/language-reference/keywords/for.md) a [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) smyčky (`For` a `For Each` v jazyce Visual Basic). Zápis logiky smyčky pro <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> smyčky podobně jako sekvenční smyčka. Není nutné k vytvoření vlákna nebo fronty pracovních položek. V základní smyčky není třeba provádět zámky. Knihovna TPL zpracovává nízké úrovně práci za vás. Podrobné informace o použití <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>, stáhněte si dokument [vzory paralelního programování: Principy a použití paralelních vzorů s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222). Následující příklad kódu ukazuje jednoduchý `foreach` smyčky a paralelní ekvivalentní.  
+ Task Parallel Library (TPL) podporuje datový paralelismuing prostřednictvím <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> třídy. Tato třída poskytuje paralelní implementace smyček [pro](../../csharp/language-reference/keywords/for.md) a [foreach](../../csharp/language-reference/keywords/foreach-in.md) (`For` a `For Each` v Visual Basic) založené na metodách. Logiku smyčky můžete napsat pro <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> smyčku nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> , která je velká, protože byste napsali sekvenční smyčku. Nemusíte vytvářet vlákna nebo pracovní položky zařazené do fronty. V základních smyčkách nemusíte přijímat zámky. TPL zpracovává veškerou práci na nízké úrovni za vás. Chcete-li získat podrobné informace o použití <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>, Stáhněte si vzory dokumentů [pro paralelní programování: Porozumění a použití paralelních vzorů s .NET Framework](https://www.microsoft.com/download/details.aspx?id=19222)4. Následující příklad kódu ukazuje jednoduchou `foreach` smyčku a její paralelní ekvivalent.  
   
 > [!NOTE]
->  Tato dokumentace používá k definování delegátů v TPL lambda výrazy. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, přečtěte si téma [výrazy Lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
+>  Tato dokumentace používá k definování delegátů v TPL lambda výrazy. Pokud nejste obeznámeni s lambda výrazy v C# nebo Visual Basic, přečtěte si téma [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
   
  [!code-csharp[TPL#20](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#20)]
  [!code-vb[TPL#20](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/tpl_vb.vb#20)]  
   
- Když je paralelní smyčka spuštěna, oddíly TPL zdroj dat tak, aby smyčky může pracovat souběžně na více částí. Plánovač úloh na pozadí oddíly úkolů na základě systémových prostředků a úloh. Pokud je to možné, Plánovač přerozděluje práci mezi více vláken a procesory, pokud nevyvážené zatížení.  
+ Při spuštění paralelní smyčky aplikace TPL rozdělí zdroj dat tak, aby smyčka mohla pracovat na více částech současně. Na pozadí Plánovač úloh rozdělí úkol na základě systémových prostředků a zatížení. Pokud je to možné, Scheduler rozšíří práci mezi několika vlákny a procesory, pokud dojde k nevyrovnanému zatížení.  
   
 > [!NOTE]
->  Můžete také zadat vlastní vlastního rozdělovače nebo plánovač. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) a [Plánovačích úkolů](xref:System.Threading.Tasks.TaskScheduler).  
+>  Můžete také dodat vlastní rozdělovač nebo Plánovač. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) a [plánovače úloh](xref:System.Threading.Tasks.TaskScheduler).  
   
- Jak <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> metody mají několik přetížení, které umožňují můžete zastavit nebo přerušit provádění smyčky, sledovat stav smyčky v jiných vláknech, zachovat stav místního vlákna, dokončení místních objektů, řídit stupeň souběžnosti, a tak dále. Typy pomocné rutiny, které tuto funkci povolit, zahrnují <xref:System.Threading.Tasks.ParallelLoopState>, <xref:System.Threading.Tasks.ParallelOptions>, <xref:System.Threading.Tasks.ParallelLoopResult>, <xref:System.Threading.CancellationToken>, a <xref:System.Threading.CancellationTokenSource>.  
+ Obě metody <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> a mají několik přetížení, která umožňují zastavit nebo přerušit provádění smyčky, monitorovat stav smyčky v jiných vláknech, udržovat místní stav vlákna, finalizaci místních objektů vlákna, řídit stupeň souběžnosti, <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a tak dále. Pomocné typy, které umožňují tuto funkci, <xref:System.Threading.Tasks.ParallelLoopState>zahrnují <xref:System.Threading.Tasks.ParallelOptions>, <xref:System.Threading.Tasks.ParallelLoopResult>, <xref:System.Threading.CancellationToken>, a <xref:System.Threading.CancellationTokenSource>.  
   
- Další informace najdete v tématu [vzory paralelního programování: Principy a použití paralelních vzorů s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222).  
+ Další informace najdete v tématu [vzory pro paralelní programování: Porozumění a použití paralelních vzorů s .NET Framework](https://www.microsoft.com/download/details.aspx?id=19222)4.  
   
- Datový paralelismus syntaxí deklarativní, nebo jako dotaz, PLINQ podporuje. Další informace najdete v tématu [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ PLINQ podporuje datový paralelismus s deklarativní syntaxí nebo dotazem, jako je syntaxe. Další informace naleznete v tématu [PARALLEL LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: Zápis jednoduché smyčky Parallel.for](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md)|Popisuje, jak psát <xref:System.Threading.Tasks.Parallel.For%2A> smyčky přes jakékoli pole nebo indexovanou <xref:System.Collections.Generic.IEnumerable%601> zdrojové kolekce.|  
-|[Postupy: Zápis jednoduché smyčky Parallel.ForEach](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md)|Popisuje, jak psát <xref:System.Threading.Tasks.Parallel.ForEach%2A> žádné ve smyčce <xref:System.Collections.Generic.IEnumerable%601> zdrojové kolekce.|  
-|[Postupy: Zastavení nebo přerušení smyčky Parallel.For](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))|Popisuje způsob zastavení nebo přerušení paralelní smyčky tak, aby všechna vlákna budou informováni akce.|  
-|[Postupy: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|Popisuje, jak psát <xref:System.Threading.Tasks.Parallel.For%2A> smyčku, ve kterém každý podproces udržuje privátní proměnnou, která není viditelné pro ostatní vlákna a synchronizace výsledků ze všech vláken, po dokončení smyčky.|  
-|[Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)|Popisuje, jak psát <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčku, ve kterém každý podproces udržuje privátní proměnnou, která není viditelné pro ostatní vlákna a synchronizace výsledků ze všech vláken, po dokončení smyčky.|  
-|[Postupy: Zrušení smyček Parallel.For nebo foreach](../../../docs/standard/parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md)|Popisuje, jak zrušit paralelní smyčky pomocí <xref:System.Threading.CancellationToken?displayProperty=nameWithType>|  
-|[Postupy: Zrychlení malých smyček](../../../docs/standard/parallel-programming/how-to-speed-up-small-loop-bodies.md)|Popisuje jeden ze způsobů pro urychlení spuštění, pokud tělo smyčky je velmi malý.|  
-|[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Poskytuje přehled o Task Parallel Library.|  
-|[Paralelní programování](../../../docs/standard/parallel-programming/index.md)|Zavádí paralelní programování v rozhraní .NET Framework.|  
+|[Postupy: Napište jednoduchou paralelní smyčku. for](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.For%2A> smyčku přes jakékoli pole nebo <xref:System.Collections.Generic.IEnumerable%601> indexovanou zdrojovou kolekci.|  
+|[Postupy: Zápis jednoduché smyčky Parallel. ForEach](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčku přes jakoukoli <xref:System.Collections.Generic.IEnumerable%601> zdrojovou kolekci.|  
+|[Postupy: Zastavení nebo přerušení z paralelní smyčky for](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))|Popisuje, jak zastavit nebo přerušit paralelní smyčka, aby všechna vlákna byla informována o akci.|  
+|[Postupy: Zápis Parallel. for Loop s proměnnými místními vlákny](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.For%2A> smyčku, ve které každé vlákno udržuje soukromou proměnnou, která není viditelná pro žádné další podprocesy, a jak synchronizovat výsledky ze všech vláken po dokončení smyčky.|  
+|[Postupy: Zápis paralelní smyčky. ForEach s proměnnými místními oddíly](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)|Popisuje, jak napsat <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčku, ve které každé vlákno udržuje soukromou proměnnou, která není viditelná pro žádné další podprocesy, a jak synchronizovat výsledky ze všech vláken po dokončení smyčky.|  
+|[Postupy: Zrušení smyčky Parallel. for nebo ForEach](../../../docs/standard/parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md)|Popisuje, jak zrušit paralelní smyčku pomocí<xref:System.Threading.CancellationToken?displayProperty=nameWithType>|  
+|[Postupy: Urychlení malých smyček](../../../docs/standard/parallel-programming/how-to-speed-up-small-loop-bodies.md)|Popisuje jeden způsob, jak zrychlit provádění, když je tělo smyčky velmi malé.|  
+|[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Poskytuje přehled úlohy paralelní knihovny.|  
+|[Paralelní programování](../../../docs/standard/parallel-programming/index.md)|Zavádí paralelní programování v .NET Framework.|  
   
 ## <a name="see-also"></a>Viz také:
 

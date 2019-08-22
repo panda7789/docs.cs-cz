@@ -2,12 +2,12 @@
 title: Migrace relačních databází do Azure
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | migrace relačních databází do Azure
 ms.date: 04/28/2018
-ms.openlocfilehash: 3d4f03e61144bb6a442a50916d7fd024d38ec611
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 982050d99aaa66cde1168a2f2fa64ed5f3e9163b
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68677045"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660733"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do Azure
 
@@ -126,4 +126,4 @@ Informace o tom, jak migrovat databáze pomocí Azure Database Migration Service
 
 > [!div class="step-by-step"]
 > [Předchozí](lift-and-shift-existing-apps-azure-iaas.md)Další
-> [](modernize-existing-apps-to-cloud-optimized/index.md)
+> [](modernize-existing-apps-to-cloud-optimized/index.md) <!-- Next Chapter -->

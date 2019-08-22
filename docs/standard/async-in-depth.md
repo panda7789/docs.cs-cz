@@ -1,42 +1,42 @@
 ---
-title: Asynchronní do hloubky
-description: Zjistěte, jak psát kód asynchronní vstupně-výstupní a vázané na procesor je jednoduché pomocí modelu .NET úkolově orientovanou asynchronní.
+title: Asynchronní v hloubkě
+description: Přečtěte si, jak je možné zapisovat do vstupně-výstupních operací a asynchronního kódu vázaného na procesor, pomocí asynchronního modelu založeného na úlohách .NET.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 79154713e370029ff31591523525fb05422571d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f1900eaabafe2931d88959bf79bf4ca1f5bc98b
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61627876"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666583"
 ---
-# <a name="async-in-depth"></a>Asynchronní do hloubky
+# <a name="async-in-depth"></a>Asynchronní v hloubkě
 
-Zápis vázané na vstupně-výstupní operace a procesor asynchronní kód je jednoduchý pomocí modelu .NET úkolově orientovanou asynchronní. Model je zveřejněný prostřednictvím `Task` a `Task<T>` typy a `async` a `await` klíčová slova v jazyce C# a Visual Basic. (Specifické pro jazyk prostředky se nacházejí v [viz také](#see-also) části.) Tento článek vysvětluje, jak použít operátory async .NET a poskytuje podrobné informace o asynchronní framework použitá na pozadí.
+Zápisy do vstupně-výstupních operací a asynchronního kódu vázaného na procesor jsou jednoduché pomocí asynchronního modelu založeného na úlohách .NET. Model je `Task` zveřejněn typy a `async` `Task<T>` a klíčovými slovy `await` C# a a Visual Basic. (Prostředky specifické pro jazyk najdete v části [Viz také](#see-also) .) Tento článek vysvětluje, jak použít .NET Async a poskytuje přehled o asynchronním rozhraní, které se používá v rámci pokrývání.
 
-## <a name="task-and-taskt"></a>Úlohy a úkolů\<T >
+## <a name="task-and-taskt"></a>Úloha a úloha\<T >
 
-Úkoly jsou konstrukce používaný k implementaci, která se označuje jako [Promise modelu Concurrency](https://en.wikipedia.org/wiki/Futures_and_promises).  Stručně řečeno nabízejí, že jste "příslib", které pracují se dokončit později, umožňuje zajistěte ve spolupráci se příslib pomocí rozhraní API pro vyčištění.
+Úkoly jsou konstrukce používané k implementaci toho, co je známo jako [model příslib souběžnosti](https://en.wikipedia.org/wiki/Futures_and_promises).  V krátkém případě vám nabídne "příslib", který se v pozdější fázi dokončí, takže budete mít k dispozici příslib s čistým rozhraním API.
 
-* `Task` představuje jednu operaci, která nevrací hodnotu.
-* `Task<T>` představuje jednu operaci, která vrátí hodnotu typu `T`.
+* `Task`představuje jednu operaci, která nevrací hodnotu.
+* `Task<T>`představuje jednu operaci, která vrací hodnotu typu `T`.
 
-Je důležité o úlohy jako abstrakce práce děje asynchronně, a *není* abstrakci přes dělení na vlákna. Ve výchozím nastavení se úkoly spustí v aktuální vlákno a delegátem práci do operačního systému, podle potřeby. Volitelně můžete úlohy můžete výslovně požadovány ke spuštění v samostatném vlákně prostřednictvím `Task.Run` rozhraní API.
+Je důležité mít důvod na úlohy, jako abstrakce práce, které provádí asynchronně, a *ne* abstrakce nad vlákny. Ve výchozím nastavení se úlohy spouštějí v aktuálním vlákně a podle potřeby deleguje práci s operačním systémem. Volitelně je možné úlohy explicitně požadovat, aby se spouštěly na samostatném vlákně přes `Task.Run` rozhraní API.
 
-Úlohy vystavit protokol rozhraní API pro monitorování, čeká na a přístup k výsledku hodnotu (v případě třídy `Task<T>`) úlohy. Integrace jazyka s `await` – klíčové slovo, poskytuje vyšší úroveň abstrakce pro používání úloh.
+Úlohy zpřístupňují protokol rozhraní API pro monitorování, čeká na něj a přistupuje k výsledné hodnotě (v případě `Task<T>`) úkolu. Jazyková integrace s `await` klíčovým slovem poskytuje abstrakci vyšší úrovně pro používání úkolů.
 
-Pomocí `await` umožňuje vaše aplikace nebo služba provádět užitečnou práci, zatímco úloha běží získávání řízení volajícímu, až po dokončení úkolu. Váš kód nemusí spoléhat na zpětná volání nebo událostí, které pokračovat v provádění po dokončení úlohy. Jazyk a úlohy integrace rozhraní API, které udělá za vás. Pokud používáte `Task<T>`, `await` – klíčové slovo bude kromě "rozbalení" hodnota vrácená po dokončení úkolu.  Podrobnosti o tom, jak to funguje jsou vysvětleny níže.
+Pomocí `await` nástroje umožňuje vaše aplikace nebo služba provádět užitečnou práci, zatímco je úloha spuštěná, a to tak, že je řízení volajícího, dokud se úkol nedokončí. Váš kód nemusí spoléhat na zpětná volání nebo události, aby bylo možné pokračovat v provádění po dokončení úkolu. Integrace rozhraní API jazyka a úloh to dělá za vás. Pokud používáte `Task<T>` `await` , klíčové slovo dále "rozbalení" vrátí hodnotu vrácenou po dokončení úkolu.  Podrobnosti o tom, jak tyto funkce jsou vysvětleny níže.
 
-Další informace o úlohách a různé způsoby, jak pracovat s nimi v [úkolově orientovanou asynchronní vzor (TAP)](~/docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) tématu.
+Další informace o úlohách a různých způsobech, jak s nimi pracovat, najdete v tématu [asynchronního vzoru založeného na úlohách (klepnutím)](./asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) .
 
-## <a name="deeper-dive-into-tasks-for-an-io-bound-operation"></a>Prozkoumejte podrobněji úkoly pro vstupně-výstupní operace
+## <a name="deeper-dive-into-tasks-for-an-io-bound-operation"></a>Hlubší podrobně v úlohách operace vázané na vstup a výstup
 
-Následující část popisuje, co se stane s volání typické asynchronní vstupně-výstupních operací 10 000 stopy zobrazení. Začněme několik příkladů.
+Následující část popisuje pohled 10 000 na to, co se stane s typickým asynchronním vstupně-výstupním voláním. Pojďme začít několika příklady.
 
-První příklad volá asynchronní metodu a vrátí aktivní úkol, pravděpodobně zatím k dokončení.
+První příklad volá asynchronní metodu a vrátí aktivní úlohu, která se nejspíš ještě dokončila.
 
 ```csharp
 public Task<string> GetHtmlAsync()
@@ -48,7 +48,7 @@ public Task<string> GetHtmlAsync()
 }
 ```
 
-Druhý příklad přidá použití `async` a `await` klíčová slova se má operace provést úlohu.
+Druhý příklad přidá použití `async` klíčového slova a `await` pro práci na úkolu.
 
 ```csharp
 public async Task<string> GetFirstCharactersCountAsync(string url, int count)
@@ -74,51 +74,51 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 }
 ```
 
-Volání `GetStringAsync()` volání prostřednictvím nižší úrovně knihovny .NET (například voláním ostatních metod asynchronní) dokud nedosáhne P/Invoke spolupráce volání do nativního síťové knihovny. Nativní knihovna může následně volání do volání rozhraní API systému (například `write()` na soket v Linuxu). Objekt úlohy se vytvoří spravované/nativní hranice, případně pomocí [TaskCompletionSource](xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult(%600)). Objekt úlohy se předává vrstvy, pravděpodobně provozovaná nebo přímo vrácená, nakonec se vrátí volajícímu počáteční.
+Volání `GetStringAsync()` volání prostřednictvím knihoven rozhraní .NET nižší úrovně (případně volání jiných asynchronních metod), dokud nedosáhne volání Interop volání nespravovaného kódu do nativní síťové knihovny. Nativní knihovna může následně volat volání rozhraní API systému (například `write()` k soketu na platformě Linux). Objekt úlohy bude vytvořen v nativní/spravované hranici, případně pomocí [TaskCompletionSource](xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult(%600)). Objekt Task se předává přes vrstvy, případně spuštěný nebo přímo vracený, nakonec vráceného počátečnímu volajícímu.
 
-V druhém příkladu výše `Task<T>` objektu bude vrácen z `GetStringAsync`. Použití `await` – klíčové slovo způsobí, že metoda vrátí objekt nově vytvořené úlohy. Ovládací prvek vrátí volajícímu z tohoto umístění v `GetFirstCharactersCountAsync` metody. Metody a vlastnosti [úloh&lt;T&gt; ](xref:System.Threading.Tasks.Task%601) objektu povolení volajícím můžete sledovat průběh úlohy, která bude dokončena, pokud byl proveden v GetFirstCharactersCountAsync zbývající kód.
+V druhém příkladu výše `Task<T>` se vrátí objekt z. `GetStringAsync` Použití `await` klíčového slova způsobí, že metoda vrátí nově vytvořený objekt Task. Řízení se vrátí volajícímu z tohoto umístění v `GetFirstCharactersCountAsync` metodě. Metody a vlastnosti objektu [Task&lt;T&gt; ](xref:System.Threading.Tasks.Task%601) umožňují volajícím monitorovat průběh úkolu, který bude dokončen, když zbývající kód v GetFirstCharactersCountAsync proveden.
 
-Po volání rozhraní API systému žádost je nyní v prostoru jádra zajistit jeho způsob, jak síťový subsystém operačního systému (například `/net` v jádro Linuxu).  Tady operačního systému bude zpracovávat síťové žádosti *asynchronně*.  Podrobnosti se může lišit v závislosti na operační systém používá (volání ovladače zařízení může být naplánovaná jako signál odesílaných zpět do modulu runtime nebo volání ovladače zařízení se dají vytvořit a *pak* signál zaslal zpět), ale nakonec bude informován modulu runtime síťové žádosti se v průběhu.  V současné době práce pro ovladače zařízení budou být buď plánované, probíhá nebo už skončila (žádost je už si "při přenosu") – ale vzhledem k tomu, že to vše proběhne asynchronně, ovladače zařízení je schopná zpracovat okamžitě něco jiného!
+Po volání rozhraní API systému je požadavek teď v prostoru jádra a díky němu se bude jednat o Síťový subsystém operačního systému (například `/net` v jádru Linux).  V tomto případě bude operační systém zpracovávat požadavky sítě *asynchronně*.  Podrobnosti se můžou lišit v závislosti na použitém operačním systému (může být volání ovladače zařízení naplánované jako signál, který se zpátky do modulu runtime), nebo může být provedeno volání ovladače zařízení, které se *pak* pošle zpátky. za běhu se ale bude informovat, že se jedná o síť. žádost probíhá.  V tuto chvíli bude práce pro ovladač zařízení buď naplánována, probíhá, nebo již dokončena (žádost již je přenášena po síti "), ale vzhledem k tomu, že k této situaci dojde asynchronně, ovladač zařízení bude moci okamžitě zvládnout něco jiného.
 
-V operační systém Windows například vlákno provede volání k ovladači zařízení sítě a vyzve ho k provedení této operace sítě prostřednictvím přerušení žádosti paketů (IRP), která představuje operaci.  Ovladače zařízení obdrží kontrolní, provede volání do sítě, označí IRP jako "čekající na vyřízení" a vrátí zpět do operačního systému.  Protože vlákna operačního systému nyní ví, že je kontrolní "čekající na vyřízení", nemá žádné další práci pro tuto úlohu a "vrátí" tak, aby je možné provádět jinou práci.
+Například ve Windows vlákno operačního systému zavolá ovladač síťového zařízení a požádá ho, aby provedl síťové operace prostřednictvím paketu požadavku přerušení (IRP), který představuje operaci.  Ovladač zařízení přijme požadavek IRP, provede volání do sítě, označí požadavek IRP jako "pending" a vrátí se zpět do operačního systému.  Vzhledem k tomu, že vlákno operačního systému nyní ví, že je IRP "čeká", nemá další práci pro tuto úlohu a "vrátí" zpět, aby je bylo možné použít k provedení jiné práce.
 
-Pokud je požadavek splněn a data se vrátí zpět prostřednictvím ovladače zařízení, upozorní procesoru nová data přijatá přes přerušení.  Získá zpracování této přerušení se budou lišit v závislosti na operační systém, ale nakonec data se předají pomocí operačního systému dokud nedosáhne volání interop systému (třeba v systému Linux obslužné rutiny přerušení se naplánuje dolní polovinu IRQ předávání dat operačního systému  asynchronně).  Všimněte si, že tento *také* probíhá asynchronně!  Výsledek je zařadí do fronty, dokud další dostupné vlákno je možné ke spouštění asynchronní metody "rozbalení" výsledek dokončené úlohy.
+Když je žádost splněná a data se vrátí přes ovladač zařízení, upozorní procesor nových dat přijatých prostřednictvím přerušení.  Způsob zpracování tohoto přerušení se bude lišit v závislosti na operačním systému, ale data budou předána operačním systémem, dokud nedosáhne volání interoperability systému (například v systému Linux obslužná rutina přerušení naplánuje poslední polovinu IRQ, aby předávala data v operačním systému.  asynchronně).  Všimněte si, že se k tomu *taky* dochází asynchronně.  Výsledek je zařazen do fronty, dokud další dostupné vlákno nebude moci spustit asynchronní metodu a "rozbalení" výsledku dokončeného úkolu.
 
-V průběhu celý tento proces hlavní, co vyplývá je, že **žádné vlákno je vyhrazen pro spuštění úlohy**.  I když práce provádí v kontextu (to znamená, že operační systém nemá předat data do ovladače zařízení a reagovat na přerušení), je vyhrazený pro žádné vlákno *čekání* pro data z požadavku k téhle akci vrátit.  To umožňuje zpracovat mnohem větší objem práce spíše než čekání na některé volání vstupně-výstupních operací na dokončení systému.
+V celém rámci celého procesu Key poznatkem je, že **pro spuštění úlohy není žádné vlákno vyhrazené**.  I když se práce provádí v nějakém kontextu (to znamená, že operační systém musí předávat data do ovladače zařízení a reagovat na přerušení), neexistuje žádné vlákno vyhrazené k *čekání* na to, aby se data od žádosti vrátila zpět.  Díky tomu může systém zpracovávat mnohem větší objem práce, a ne čekat na dokončení některých vstupně-výstupních volání.
 
-I když výše může jevit jako toho ještě hodně udělat, když se měří se počtem skutečný čas, miniscule k je čas potřebný k vykonávají samotnou práci vstupně-výstupních operací. I když vůbec ne přesné potenciální časovou osu pro takové volání bude vypadat takto:
+I když výše se může zdát, že je třeba udělat spoustu práce, která se měří z pohledu na hodinový čas, je miniscule v porovnání s časem potřebným ke skutečnému vstupně-výstupní práci. I když to není zcela přesné, potenciální časová osa pro takové volání by vypadala takto:
 
 0-1————————————————————————————————————————————————–2-3
 
-* Doba trvání z bodů `0` k `1` všechno, co je až do asynchronní metody vrací řízení volajícímu.
-* Doba trvání z bodů `1` k `2` čas strávený vstupně-výstupní operace se žádné náklady.
-* A konečně, doba trvání z bodů `2` k `3` předává řízení zpět (a potenciálně hodnotu) do asynchronní metody, v tomto okamžiku je znovu prováděna.
+* Čas strávený z `0` bodů `1` na je vše až do chvíle, kdy asynchronní metoda neposkytne řízení volajícímu.
+* Čas strávený z `1` bodů `2` na je čas strávený na vstupu a výstupu bez nákladů na procesor.
+* Nakonec čas strávený z bodů `2` na `3` je předání řízení zpět (a potenciálně hodnoty) asynchronní metodě, při které je prováděna znovu.
 
-### <a name="what-does-this-mean-for-a-server-scenario"></a>Co to znamená pro scénář serveru?
+### <a name="what-does-this-mean-for-a-server-scenario"></a>Co to znamená pro serverový scénář?
 
-Tento model funguje dobře s úlohou scénář typický server.  Vzhledem k tomu, že neexistují žádná vlákna vyhrazený pro blokování nedokončené úkoly, fondu vláken server služby mnohem větší objem webových požadavků.
+Tento model funguje dobře s typickou úlohou serverového scénáře.  Vzhledem k tomu, že nejsou k dispozici žádná vlákna vyhrazená pro blokování nedokončených úloh, může služba nečinnosti serveru dosloužit mnohem větší objem webových požadavků.
 
-Vezměte v úvahu dva servery: ten, který spouští asynchronní kód a ten, který se nepodporuje.  Pro účely tohoto příkladu má každý server jenom 5 vlákna, které jsou k dispozici pro žádosti o služby.  Všimněte si, že tato čísla jsou imaginarily malé a slouží pouze v rámci Demonstrativní.
+Vezměte v úvahu dva servery: jeden, který spouští asynchronní kód, a druhý, který ne.  Pro účely tohoto příkladu má každý server pouze 5 vláken dostupných pro žádosti o služby.  Všimněte si, že tato čísla jsou imaginarily malá a slouží pouze jako provedený kontext.
 
-Předpokládejme, že oba servery přijímat 6 souběžných požadavků. Každý požadavek provádí vstupně-výstupní operace.  Server *bez* asynchronní kód má zařadit do fronty požadavek 6 až jedno z 5 vláken mít dokončené práce vstupně-výstupní zapsán odpovědi. V okamžiku, 20. prosincem požadavek odeslaný v, může server spustit zpomalit, protože fronta je stále příliš dlouhý.
+Předpokládat, že oba servery obdrží 6 souběžných požadavků. Každý požadavek provede vstupně-výstupní operaci.  Server *bez* asynchronního kódu musí zařadit šest požadavků do fronty, dokud jedna z 5 vláken nedokončí práci v/v vázané na vstup/výstup a napsala odpověď. V okamžiku, kdy dojde k dvacáté žádosti, může server začít zpomalovat, protože fronta je příliš dlouhá.
 
-Server *s* asynchronní kód spuštěný na ní stále fronty 6 požadavek, ale protože používá `async` a `await`, každý z jeho vlákna jsou uvolněna při spuštění vstupně-výstupní pracovní místo po dokončení.  Ve čas 20. prosincem žádost obsahuje ve frontě příchozích požadavků bude mnohem menší (pokud ho neobsahuje nic vůbec), a nebude server zpomalovat.
+Server *s* asynchronním kódem, který je v něm spuštěný, stále zařadí do fronty šestý `await`požadavek, ale protože používá `async` a, každé z jeho vláken se uvolní při zahájení práce na vstupu/výstupu, a ne po jeho dokončení.  V době, kdy se 20 žádostí dostanou, bude fronta pro příchozí požadavky mnohem menší (Pokud má vůbec vše) a server nebude pomalý.
 
-Přestože je toto contrived příklad, funguje ve velmi podobně jako ochrana čipem v reálném světě.  Ve skutečnosti můžete očekávat, že server moct zpracovávat další požadavky na použití jednotkách o řád `async` a `await` než pokud to bylo vyhradíte vlákno pro každý požadavek přijme.
+I když se jedná o contrived příklad, funguje v reálném světě velmi podobným způsobem.  Ve skutečnosti můžete očekávat, že server bude schopen zpracovat pořadí většího počtu požadavků pomocí `async` a, `await` než kdyby vyhradí vlákno pro každý požadavek, který obdrží.
 
-### <a name="what-does-this-mean-for-client-scenario"></a>Co to znamená pro scénář klienta?
+### <a name="what-does-this-mean-for-client-scenario"></a>Co to znamená pro klientský scénář?
 
-Největší zisk pro používání `async` a `await` pro klienta je zvýšení rychlosti odezvy aplikace.  I když responzivní aplikace můžete vytvořit pomocí ruční vytváření podřízeného procesu vlákna, v rámci vytváření podřízeného procesu vlákna je náročná operace vzhledem k použití pouze `async` a `await`.  Zejména u něco jako mobilní hru vliv na vlákně UI při co kde jde o vstupně-výstupních operací je velmi důležité.
+Největším ziskem při `async` používání `await` a pro klientské aplikace je zvýšení rychlosti odezvy.  I když lze aplikaci nastavit jako odezvu ručním vytvářením vláken, je operace vytvoření vlákna náročná na to, že právě používá `async` a. `await`  Zvláště pro něco podobného mobilní hře, což ovlivňuje co nejmenší stav vlákna uživatelského rozhraní, kde je důležité vstup/výstup.
 
-Důležitější je protože pracovní vstupně-výstupní stráví prakticky žádný čas na CPU, vyhradíte celé vlákno procesor k provádění i neziskovky jakékoli užitečné práce by špatné využití prostředků.
+Důležitější je, vzhledem k tomu, že práce vázané na vstupně-výstupní operace tráví prakticky bez času na procesoru, což vyhradí celé PROCESORové vlákno, aby fungovalo zlomek, by mohlo být špatné využití prostředků.
 
-Kromě toho, kterému dodává práci na vlákno uživatelského rozhraní (např. aktualizace uživatelského rozhraní) je velmi jednoduchý s `async` metody a nevyžaduje další práce (jako je například volání delegáta bezpečným pro vlákno).
+Kromě toho odesílání práce do vlákna uživatelského rozhraní (například aktualizace uživatelského rozhraní) je velmi jednoduché s `async` metodami a nevyžaduje další práci (například volání delegáta bezpečného pro přístup z více vláken).
 
-## <a name="deeper-dive-into-task-and-taskt-for-a-cpu-bound-operation"></a>Dozvědět více o úkolu a úkolu\<T > pro operace vázané na procesor
+## <a name="deeper-dive-into-task-and-taskt-for-a-cpu-bound-operation"></a>Hlubší podrobně do úlohy a úlohy\<T > pro operace vázané na procesor
 
-Vázané na procesor `async` kód je trochu jiná než vstupně-výstupní `async` kódu.  Protože práce se provádí na CPU, neexistuje žádný způsob, jak překonat vyhradíte vlákno k výpočtu.  Použití `async` a `await` poskytuje čistý způsob, jak pracovat s pozadí vlákna a zachovat responzivní volajícímu asynchronní metody.  Všimněte si, že to neposkytuje ochranu pro sdílená data.  Pokud používáte sdílených dat, je stále potřeba použití strategie příslušné synchronizace.
+Kód vázaný `async` na procesor je trochu jiný než kód vázaný `async` na vstupně-výstupní operace.  Vzhledem k tomu, že práce se provádí na procesoru, neexistuje žádný způsob, jak se vyhnout vyhradit vlákno pro výpočet.  Použití `async` a`await` poskytuje čistě způsob, jak pracovat s vláknem na pozadí a udržet volající asynchronní metody reagovat.  Všimněte si, že to neposkytuje žádnou ochranu pro sdílená data.  Pokud používáte sdílená data, budete stále muset použít vhodnou strategii synchronizace.
 
-Tady je přehled 10 000 stopy asynchronního volání vázané na procesor:
+Zde je zobrazení asynchronního volání vázané na procesor 10 000:
 
 ```csharp
 public async Task<int> CalculateResult(InputData data)
@@ -136,17 +136,17 @@ public async Task<int> CalculateResult(InputData data)
 }
 ```
 
-`CalculateResult()` provede na vlákno, byla volána pro.  Když volá `Task.Run`, se zařadí do fronty náročná operace vázané na procesor `DoExpensiveCalculation()`, ve fondu vláken a přijímá `Task<int>` zpracovat.  `DoExpensiveCalculation()` Nakonec běží souběžně na další dostupný vlákně, pravděpodobně na další Procesorové jádro.  Je možné provádět souběžné práce při `DoExpensiveCalculation()` je zaneprázdněný v jiném vlákně, protože vlákno, které volá `CalculateResult()` stále probíhá.
+`CalculateResult()`provede se ve vlákně, ve kterém byla volána.  Při volání `Task.Run`do fronty zařadí nákladné operace vázané na procesor, `DoExpensiveCalculation()`ve fondu `Task<int>` vláken a získá popisovač.  `DoExpensiveCalculation()`je nakonec spouštěn souběžně v dalším dostupném vlákně, což je pravděpodobný jiný procesor.  Je možné provést souběžnou práci, zatímco `DoExpensiveCalculation()` je zaneprázdněna jiným vláknem, protože vlákno, které `CalculateResult()` se volá, je stále spuštěno.
 
-Jednou `await` nalezen, provádění `CalculateResult()` se vrátil volajícímu, což jiné práce s aktuálním vláknem při `DoExpensiveCalculation()` odchází si výsledek.  Po dokončení, výsledek je ve frontě ke spuštění v hlavním vlákně.  Nakonec vrátí hlavního vlákna pro provádění `CalculateResult()`, kdy bude mít výsledek `DoExpensiveCalculation()`.
+Po `await` zjištění, že `CalculateResult()` spuštění je vráceno volajícímu, což umožňuje, aby se v průběhu `DoExpensiveCalculation()` provádění jiné práce s aktuálním vláknem prováděla výsledek.  Po dokončení je výsledek zařazen do fronty pro spuštění v hlavním vlákně.  Nakonec se hlavní vlákno vrátí ke spuštění `CalculateResult()`a v tomto okamžiku bude mít `DoExpensiveCalculation()`výsledek.
 
-### <a name="why-does-async-help-here"></a>Proč asynchronní pomůže tady?
+### <a name="why-does-async-help-here"></a>Proč tady funguje asynchronní pomoc?
 
-`async` a `await` jsou osvědčené postupy pro správu práce vázané na procesor, když potřebujete rychlost odezvy. Existuje více vzory pro použití modifikátoru async pomocí práce vázané na procesor. Je důležité si uvědomit, že je s malými náklady na použití modifikátoru async a se nedoporučuje úzkou smyčky for.  To je na vás k určení, jak při psaní kódu kolem této nové funkci.
+`async`a `await` jsou osvědčenými postupy pro správu práce vázané na procesor, když potřebujete reagovat. Je k dispozici několik vzorů pro použití asynchronních v práci vázané na procesor. Je důležité si uvědomit, že pro použití asynchronního přenosu a pro těsné smyčky se nedoporučuje používat asynchronní operace.  Je to až na to, abyste zjistili, jak píšete kód kolem této nové funkce.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní programování v jazyce C#](~/docs/csharp/async.md)
-- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)
-- [Asynchronní programování vF#](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
-- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)
+- [Asynchronní programování vC#](../csharp/async.md)
+- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](../csharp/programming-guide/concepts/async/index.md)
+- [Asynchronní programování vF#](../fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
+- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../visual-basic/programming-guide/concepts/async/index.md)

@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, authenticationModules
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
-ms.openlocfilehash: 0eb3ef7db422d5cbbe70bd5633798b8d3787452d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f923ce73760fa42a2c435d346f9d1097a5ed82f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705035"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664040"
 ---
-# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<Odebrat > – Element pro authenticationModules (nastavení sítě)
+# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<Remove – element > pro authenticationModules (nastavení sítě)
 Odebere ověřovací modul z aplikace.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<authenticationModules>  
-\<remove>  
+\<odebrat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Odebere ověřovací modul z aplikace.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**type**|Název modulu ověřování k odebrání.|  
+|**type**|Název modulu ověřování, který se má odebrat|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -49,15 +49,15 @@ Odebere ověřovací modul z aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování síťových požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
- `remove` Element odebere ověřovací moduly, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
+ `remove` Element odebere moduly ověřování definované dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
   
- Hodnota `type` atribut by měl být platný název třídy.  
+ Hodnota `type` atributu by měla být platný název třídy.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad odebere ověřovací modul.  
@@ -76,4 +76,4 @@ Odebere ověřovací modul z aplikace.
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-ms.openlocfilehash: b5825efcc613689e73fb56b6695fe7c75ff09136
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a06daa0b2aa5374c9959cbbe778d62856819a40e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674191"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663870"
 ---
-# <a name="codebase-element"></a>\<codeBase > – Element
+# <a name="codebase-element"></a>\<> – element codeBase
 
-Určuje, kde najít sestavení modulu common language runtime.
+Určuje, kde modul CLR (Common Language Runtime) může najít sestavení.
 
-\<configuration> \<runtime> \<assemblyBinding> \<dependentAssembly> \<codeBase>
+\<Configuration > \<runtime > \<assemblyBinding > \<dependentAssembly – \<> kódu >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,12 +38,12 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`href`|Požadovaný atribut.<br /><br /> Určuje adresu URL, kde modul runtime může najít zadanou verzi sestavení.|
-|`version`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, ve kterém základu kódu se vztahuje na. Číslo verze sestavení má *major.minor.build.revision*.|
+|`href`|Požadovaný atribut.<br /><br /> Určuje adresu URL, kde může modul runtime najít určenou verzi sestavení.|
+|`version`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, na kterou se základ kódu vztahuje. Formát čísla verze sestavení je *hlavní_verze. podverze. sestavení. revize*.|
 
-## <a name="version-attribute"></a>verze atribut
+## <a name="version-attribute"></a>Atribut Version
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
 |Platné hodnoty pro každou část čísla verze jsou 0 až 65535.|Není k dispozici.|
 
@@ -55,22 +55,22 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|`buildproviders`|Definuje kolekci zprostředkovatelů sestavení používá ke kompilaci soubory vlastních prostředků. Můžete mít libovolný počet poskytovatelé sestavení.|
-|`compilation`|Nakonfiguruje všechna nastavení kompilace, která používá ASP.NET.|
+|`buildproviders`|Definuje kolekci poskytovatelů sestavení použitých ke kompilaci vlastních souborů prostředků. Můžete mít libovolný počet poskytovatelů sestavení.|
+|`compilation`|Konfiguruje všechna nastavení kompilace, která ASP.NET používá.|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
-|`System.web`|Určuje kořenový element části o konfiguraci technologie ASP.NET.|
+|`System.web`|Určuje kořenový element konfiguračního oddílu ASP.NET.|
 
 ## <a name="remarks"></a>Poznámky
 
-Pro modul runtime pro použití  **\<codeBase >** nastavení v konfiguračním souboru počítače nebo soubor zásad vydavatele, soubor musíte také vytvořit přesměrování verze sestavení. Konfigurační soubory aplikace mohou mít nastavení základu kódu bez přesměrování verze sestavení. Po určení verze sestavení, které chcete použít, se vztahuje nastavení základu kódu ze souboru, který určuje verzi modulu runtime. Pokud je uveden žádný základ kódu, modul runtime sondy pro sestavení obvyklým způsobem.
+Aby modul runtime používal  **\<>** nastavení v konfiguračním souboru počítače nebo souboru zásad vydavatele, soubor musí také přesměrovat verzi sestavení. Konfigurační soubory aplikace mohou mít nastavení základu kódu bez přesměrování verze sestavení. Po určení používané verze sestavení používá modul runtime nastavení základu kódu ze souboru, který určuje verzi. Pokud není uveden žádný základ kódu, běhové testy pro sestavení obvyklým způsobem.
 
-Pokud sestavení se silným názvem, nastavení základu kódu může být kdekoli na místním intranetu nebo Internetu. Je-li soukromé sestavení je sestavení, nastavení základu kódu musí být cesta relativní k adresáři vaší aplikace.
+Pokud má sestavení silný název, může být nastavení základu kdekoli na místním intranetu nebo Internetu. Pokud je sestavení privátní sestavení, musí být nastavení základu cesty relativní vzhledem k adresáři aplikace.
 
-Pro sestavení bez silného názvu, verze ignorovány a používá zavaděč první výskyt \<codebase > uvnitř \<dependentAssembly >. Pokud existuje položka v konfiguračním souboru aplikace, který přesměrovává vazby na jiné sestavení, přesměrování bude mít přednost i v případě, že verze sestavení neshoduje požadavek na vytvoření vazby.
+U sestavení bez silného názvu je verze ignorována a zavaděč používá první vzhled \<základu kódu > uvnitř \<dependentAssembly >. Pokud existuje položka v konfiguračním souboru aplikace, která přesměrovává vazby na jiné sestavení, přesměrování bude mít přednost i v případě, že verze sestavení neodpovídá požadavku vazby.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak určit, kde najít sestavení modulu runtime.
+Následující příklad ukazuje, jak určit, kde modul runtime může najít sestavení.
 
 ```xml
 <configuration>
@@ -90,7 +90,7 @@ Následující příklad ukazuje, jak určit, kde najít sestavení modulu runti
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Určení umístění sestavení](../../specify-assembly-location.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)

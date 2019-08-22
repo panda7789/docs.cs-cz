@@ -28,70 +28,70 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4f59bdb0537ab6ce404ed0623c40f9f3b31598d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 32a4f4f3735c8952cf1458c63655eb56a82fd18f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766821"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666437"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
-<a name="top"></a> Obecné typy umožňují přizpůsobit metodu, třídy, struktury nebo rozhraní pro přesný datový typ, který je pracováno. Například místo použití <xref:System.Collections.Hashtable> třídy, která umožňuje klíče a hodnoty být libovolného typu, můžete použít <xref:System.Collections.Generic.Dictionary%602> obecné třídy a určit typ povolené pro klíč a typ povolené hodnoty. Mezi výhody obecných typů se zvýšenou kód a typová bezpečnost.  
+<a name="top"></a>Obecné typy umožňují přizpůsobit metodu, třídu, strukturu nebo rozhraní na přesný datový typ, na kterém funguje. Například namísto použití <xref:System.Collections.Hashtable> třídy, která umožňuje klíčům a hodnotám být libovolného typu, můžete <xref:System.Collections.Generic.Dictionary%602> použít obecnou třídu a zadat typ povolený pro klíč a typ povolený pro hodnotu. Z výhod obecných typů se zvyšuje použitelnost kódu a bezpečnost typů.  
   
- Toto téma obsahuje přehled obecných typů v rozhraní .NET a souhrn obecné typy a metody. Obsahuje následující oddíly:  
+ Toto téma poskytuje přehled obecných typů v rozhraní .NET a souhrn obecných typů a metod. Obsahuje následující oddíly:  
   
-- [Definování a použití obecných typů](#defining_and_using_generics)  
+- [Definování a použití generických typů](#defining_and_using_generics)  
   
-- [Terminologie obecných typů](#generics_terminology)  
+- [Terminologie generických typů](#generics_terminology)  
   
 - [Knihovna tříd a podpora jazyků](#class_library_and_language_support)  
   
 - [Vnořené typy a obecné typy](#nested_types_and_generics)  
   
-- [Související témata](#related_topics)  
+- [Příbuzná témata](#related_topics)  
   
 - [Referenční informace](#reference)  
   
 <a name="defining_and_using_generics"></a>   
-## <a name="defining-and-using-generics"></a>Definování a použití obecných typů  
- Obecné typy jsou třídy, struktury, rozhraní a metody, které obsahovaly zástupné symboly (parametry typu) pro jeden nebo více typů, které uložit nebo použít. Obecné kolekce tříd může být parametr typu použít jako zástupný symbol pro typ objektů, které uchovává; parametry typu se zobrazí jako typy polí a typů parametrů metody. Jako typ hodnoty nebo typ jednoho z jejích formálních parametrů Obecné metody použít jeho typu parametru. Následující kód znázorňuje definici jednoduchou obecnou třídu.  
+## <a name="defining-and-using-generics"></a>Definování a použití generických typů  
+ Obecné typy jsou třídy, struktury, rozhraní a metody, které mají zástupné symboly (parametry typu) pro jeden nebo více typů, které jsou uloženy nebo použity. Třída obecné kolekce může používat parametr typu jako zástupný symbol pro typ objektů, které úložiště ukládá; parametry typu se zobrazí jako typy polí a typy parametrů jejich metod. Obecná metoda může použít svůj parametr typu jako typ své návratové hodnoty nebo jako typ jednoho z jeho formálních parametrů. Následující kód ilustruje jednoduchou definici obecné třídy.  
   
  [!code-cpp[Conceptual.Generics.Overview#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#2)]
  [!code-csharp[Conceptual.Generics.Overview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source.cs#2)]
  [!code-vb[Conceptual.Generics.Overview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#2)]  
   
- Při vytváření instance generické třídy zadejte skutečné typy nelze nahradit pro parametry typu. Tím se vytvoří nová obecná třída, nazývá konstruované obecné třídy, se vaše vybrané typy všude, kde se zobrazí parametry typu nahrazeny. Výsledkem je typově bezpečný třídu, která je vytvořený na míru zadaným hodnotám typů, jak ukazuje následující kód.  
+ Při vytváření instance obecné třídy zadáte skutečné typy, které mají být nahrazeny parametry typu. Tím se vytvoří nová Obecná třída označovaná jako konstruovaná obecná třída s vybranými typy, které jsou nahrazeny všude, kde se objeví parametry typu. Výsledkem je typově bezpečná třída, která je upravena podle vašeho výběru typů, jak ukazuje následující kód.  
   
  [!code-cpp[Conceptual.Generics.Overview#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#3)]
  [!code-csharp[Conceptual.Generics.Overview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source.cs#3)]
  [!code-vb[Conceptual.Generics.Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#3)]  
   
 <a name="generics_terminology"></a>   
-### <a name="generics-terminology"></a>Terminologie obecných typů  
- O obecných typů v .NET se používají následující termíny:  
+### <a name="generics-terminology"></a>Terminologie generických typů  
+ Pro diskuzi o obecných typech v rozhraní .NET se používají následující výrazy:  
   
-- A *definice obecného typu* je třída, struktura nebo deklaraci rozhraní, která funguje jako šablona, se zástupnými symboly pro typy, které může obsahovat nebo použít. Například <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> třídy mohou obsahovat dva typy: klíče a hodnoty. Definice obecného typu je pouze šablony, nelze vytvořit instance třídy, struktury nebo rozhraní, které je definice obecného typu.  
+- *Definice obecného typu* je deklarace třídy, struktury nebo rozhraní, která funguje jako šablona, se zástupnými symboly pro typy, které může obsahovat nebo použít. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Třída může například obsahovat dva typy: klíče a hodnoty. Vzhledem k tomu, že definice obecného typu je pouze šablona, nelze vytvořit instance třídy, struktury nebo rozhraní, které je definicí obecného typu.  
   
-- *Parametry obecného typu*, nebo *parametry typu*, jsou zástupné symboly v definici obecného typu nebo metody. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Obecného typu má dva parametry typu `TKey` a `TValue`, které představují typy klíčů a hodnot.  
+- *Parametry obecného typu*nebo *parametry typu*jsou zástupné symboly v definici obecného typu nebo metody. Obecný typ má dva `TKey` parametry typu a `TValue`, které reprezentují typy jeho klíčů a hodnot. <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>  
   
-- A *Konstruovaný obecný typ*, nebo *konstruovaný typ.* , je výsledkem určení typů pro parametry obecného typu v definici obecného typu.  
+- *Konstruovaný obecný typ*, neboli *konstruovaný typ*, je výsledkem určení typů pro parametry obecného typu definice obecného typu.  
   
-- A *argument obecného typu* libovolný typ, který nahrazuje parametr obecného typu.  
+- *Argument obecného typu* je libovolný typ, který je nahrazen parametrem obecného typu.  
   
-- Obecný termín *obecného typu* zahrnuje sestavené typy a definice obecného typu.  
+- *Obecný typ* běžné podmínky zahrnuje konstruované typy i definice obecného typu.  
   
-- *Kovariance* a *kontravariance* obecného typu parametry umožňují používat konstruované obecné typy, jejichž typ argumenty jsou více odvozeného (kovariance) nebo méně odvozené (kontravariance) než cílový vytvořen Zadejte. Kovariance a kontravariance se souhrnně označují jako *variance*. Další informace najdete v tématu [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+- *Kovariance* a *kontravariance* parametrů obecného typu umožňuje použít konstruované obecné typy, jejichž argumenty typu jsou více odvozené (kovariance) nebo méně odvozené (kontravariance) než cílový konstruovaný typ. Kovariance a kontravariance jsou souhrnně označovány jako *Variance*. Další informace najdete v tématu [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
-- *Omezení* omezení jsou umístěny v parametrech obecného typu. Například může být omezen na typy, které implementují parametr typu <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> obecná rozhraní, ujistěte se, že lze provést řazení instance daného typu. Lze také omezit parametry typu pro typy, které mají určité základní třídy, které mají konstruktor bez parametrů nebo které jsou odkazové typy nebo typy hodnot. Uživatelé obecný typ nelze nahradit argumenty typu, které nesplňují omezení.  
+- *Omezení* jsou omezení pro parametry obecného typu. Například můžete omezit parametr typu na typy, které implementují <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> obecné rozhraní, aby bylo zajištěno, že lze seřadit instance daného typu. Můžete také omezit parametry typu na typy, které mají konkrétní základní třídu, která má konstruktor bez parametrů, nebo, které jsou odkazové typy nebo hodnoty. Uživatelé obecného typu nemohou dosadit argumenty typu, které nesplňují omezení.  
   
-- A *definice obecné metody* představuje metodu se dvěma seznamy parametrů: seznam parametrů obecného typu a seznam formálních parametrů. Parametry typu se může zobrazit jako návratový typ nebo typy formálních parametrů, jak ukazuje následující kód.  
+- *Obecná definice metody* je metoda se dvěma seznamy parametrů: seznam parametrů obecného typu a seznam formálních parametrů. Parametry typu se mohou zobrazit jako návratový typ nebo jako typy formálních parametrů, jak ukazuje následující kód.  
   
  [!code-cpp[Conceptual.Generics.Overview#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#4)]
  [!code-csharp[Conceptual.Generics.Overview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source.cs#4)]
  [!code-vb[Conceptual.Generics.Overview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#4)]  
   
- Obecné metody se může objevit v obecnému nebo neobecnému typy. Je důležité si uvědomit, že metoda není obecná, to, že patří obecnému typu nebo dokonce, protože má formální parametry, jejichž typy jsou obecným parametrům nadřazeného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. V následujícím kódu metoda pouze `G` je obecný.  
+ Obecné metody se můžou vyskytovat na obecných nebo neobecných typech. Je důležité si uvědomit, že metoda není obecná, protože patří do obecného typu, nebo i když má formální parametry, jejichž typy jsou obecné parametry nadřazeného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. V následujícím kódu je pouze metoda `G` obecná.  
   
  [!code-cpp[Conceptual.Generics.Overview#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#5)]
  [!code-csharp[Conceptual.Generics.Overview#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source.cs#5)]
@@ -101,60 +101,60 @@ ms.locfileid: "67766821"
   
 <a name="advantages_limitations"></a>   
 ## <a name="advantages-and-disadvantages-of-generics"></a>Výhody a nevýhody obecných typů  
- Existuje mnoho výhody použití obecných kolekcí a delegáti:  
+ Použití obecných kolekcí a delegátů má mnoho výhod:  
   
-- Bezpečnost typů. Obecné typy shift si museli dělat starosti bezpečnost typů od vás kompilátoru. Není nutné napsat kód pro testování správného datového typu, protože ho zajišťují v době kompilace. Jsou snižuje potřebu přetypování typu a možnost chyby za běhu.  
+- Bezpečnost typů. Obecné typy posunou zatížení typu zabezpečení od vás do kompilátoru. Není nutné psát kód pro testování správného datového typu, protože je vynutila v době kompilace. Je potřeba snížit typ přetypování a možnost chyb za běhu.  
   
-- Mnohem snazší znovu použít méně kódu a kódu. Není nutné přepsat členy a dědit ze základního typu. Například <xref:System.Collections.Generic.LinkedList%601> je připravená k okamžitému použití. Například můžete vytvořit propojený seznam řetězců s následující deklaraci proměnné:  
+- Méně kód a kód je snazší znovu použít. Není nutné dědit ze základního typu a přepsat členy. Například <xref:System.Collections.Generic.LinkedList%601> je připraven k okamžitému použití. Můžete například vytvořit propojený seznam řetězců s následující deklarací proměnné:  
   
      [!code-cpp[HowToGeneric#24](../../../samples/snippets/cpp/VS_Snippets_CLR/HowToGeneric/cpp/source2.cpp#24)]
      [!code-csharp[HowToGeneric#24](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/source2.cs#24)]
      [!code-vb[HowToGeneric#24](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/source2.vb#24)]  
   
-- Lepší výkon. Obecné typy kolekcí obecně poskytují lepší výkon pro ukládání a manipulaci s typy hodnot, protože není nutné pro typy hodnot pole.  
+- Lepší výkon. Obecné typy kolekcí obecně poskytují lepší pro ukládání a manipulaci s typy hodnot, protože není nutné pole hodnot.  
   
-- Obecní delegáti povolit zajišťující bezpečnost typů zpětná volání, aniž by bylo nutné vytvořit delegáta více tříd. Například <xref:System.Predicate%601> obecného delegátu umožňuje vytvořit metodu, která implementuje vlastní kritérií vyhledávání pro konkrétní typ a použít metodu s metodami <xref:System.Array> jako <xref:System.Array.Find%2A>, <xref:System.Array.FindLast%2A>, a <xref:System.Array.FindAll%2A> .  
+- Obecné Delegáti umožňují typově bezpečná zpětná volání bez nutnosti vytvářet více tříd delegátů. Například <xref:System.Predicate%601> obecný delegát umožňuje vytvořit metodu, která implementuje vlastní kritéria hledání pro konkrétní typ a použít metodu s <xref:System.Array> metodami typu <xref:System.Array.Find%2A>, jako jsou, <xref:System.Array.FindLast%2A>a <xref:System.Array.FindAll%2A> . .  
   
-- Obecné typy Zjednodušte dynamicky generovaném kódu. Při použití obecných typů pomocí není potřeba generovat typ dynamicky generovaném kódu. Tím se zvyšuje počet scénáře, ve které můžete použít jednoduchý dynamických metod místo aby generovala celé sestavení. Další informace najdete v tématu [jak: Definování a provádění dynamických metod](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md) a <xref:System.Reflection.Emit.DynamicMethod>.  
+- Obecné zjednodušují dynamicky generovaný kód. Použijete-li obecné typy s dynamicky generovaným kódem, nemusíte generovat typ. Tím se zvyšuje počet scénářů, ve kterých lze použít zjednodušené dynamické metody namísto generování celých sestavení. Další informace najdete v tématu [jak: Definujte a spusťte dynamické metody](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md) a <xref:System.Reflection.Emit.DynamicMethod>.  
   
- Toto jsou některá omezení obecných typů:  
+ Níže jsou uvedena některá omezení obecných typů:  
   
-- Obecné typy mohou být odvozeny z Většina základních tříd, například <xref:System.MarshalByRefObject> (a omezení je možné, že parametry obecného typu jsou odvozeny od základní třídy jako vyžadování <xref:System.MarshalByRefObject>). Rozhraní .NET Framework nepodporuje obecné typy vázané na kontext. Obecný typ může být odvozena z <xref:System.ContextBoundObject>, ale při pokusu o vytvoření instance, která způsobí typ <xref:System.TypeLoadException>.  
+- Obecné typy lze odvodit z většiny základních tříd, například <xref:System.MarshalByRefObject> (a omezení lze použít pro vyžadování, aby parametry obecného typu byly odvozeny ze základních tříd, jako <xref:System.MarshalByRefObject>). .NET Framework však nepodporuje obecné typy vázané na kontext. Obecný typ lze odvodit z <xref:System.ContextBoundObject>, ale při pokusu o vytvoření instance tohoto typu <xref:System.TypeLoadException>dojde k.  
   
-- Výčty nemůžou mít parametry obecného typu. Výčet může být obecný pouze mimochodem (například, protože je vnořená v obecném typu, který je definován pomocí jazyka Visual Basic, C# nebo C++). Další informace najdete v tématu "Výčty" [obecný systém typů](../../../docs/standard/base-types/common-type-system.md).  
+- Výčty nemůžou mít parametry obecného typu. Výčet může být obecný pouze incident (například proto, že je vnořen do obecného typu, který je definován pomocí Visual Basic, C#nebo C++). Další informace naleznete v části "výčty" v [běžném typu systému](../../../docs/standard/base-types/common-type-system.md).  
   
-- Zjednodušené dynamické metody nemohou být obecné.  
+- Jednoduché dynamické metody nemůžou být obecné.  
   
-- V jazyce Visual Basic, C# a C++ vnořený typ, který je uzavřen v obecném typu nelze vytvořit instanci Pokud typy byly přiřazeny parametry typu všech ohraničujících typů. Jinými slovy to je, že v reflexi, vnořený typ, který je definován pomocí těchto jazyků obsahuje parametry typu všech ohraničujících typů. To umožňuje parametry typu nadřazené typy pro použití v definicích členů vnořeného typu. Další informace najdete v tématu "Vnořené typy" <xref:System.Type.MakeGenericType%2A>.  
+- V Visual Basic, C#a C++, nelze vytvořit instanci vnořeného typu, který je uzavřen v obecném typu, pokud typy nejsou přiřazeny k parametrům typu všech nadřazených typů. Dalším způsobem, jak to vyjádřit, je vnořený typ, který je definován pomocí těchto jazyků, obsahuje parametry typu všech nadřazených typů. To umožňuje, aby parametry typu nadřazených typů byly použity v definicích členů vnořeného typu. Další informace naleznete v části "vnořené typy" v <xref:System.Type.MakeGenericType%2A>tématu.  
   
     > [!NOTE]
-    >  Vnořený typ, který je definován pomocí generování kódu v dynamickém sestavení nebo [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) nemusí obsahovat parametry typu jeho nadřazené typy; ale pokud ho neobsahuje, parametry typu nejsou v oboru vnořené třídy.  
+    >  Vnořený typ, který je definován vygenerováním kódu v dynamickém sestavení nebo pomocí nástroje [Ilasm. exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) , není vyžadován pro zahrnutí parametrů typu svých nadřazených typů. Pokud je však neobsahuje, parametry typu nejsou v oboru vnořené třídy.  
   
-     Další informace najdete v tématu "Vnořené typy" <xref:System.Type.MakeGenericType%2A>.  
+     Další informace naleznete v části "vnořené typy" v <xref:System.Type.MakeGenericType%2A>tématu.  
   
  [Zpět na začátek](#top)  
   
 <a name="class_library_and_language_support"></a>   
 ## <a name="class-library-and-language-support"></a>Knihovna tříd a podpora jazyků  
- .NET nabízí celou řadu obecné kolekce tříd v následující obory názvů:  
+ Rozhraní .NET poskytuje řadu obecných tříd kolekcí v následujících oborech názvů:  
   
-- <xref:System.Collections.Generic> Obor názvů obsahuje typy obecné kolekce poskytované rozhraní .NET, například <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602> obecné třídy.  
+- Obor názvů obsahuje většinu obecných typů kolekcí poskytovaných rozhraním .NET, <xref:System.Collections.Generic.List%601> jako jsou obecné třídy <xref:System.Collections.Generic.Dictionary%602>a. <xref:System.Collections.Generic>  
   
-- <xref:System.Collections.ObjectModel> Obor názvů obsahuje další obecné typy kolekcí, jako <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obecná třída, která se hodí pro zpřístupnění objektové modely uživatelům vaší třídy.  
+- Obor názvů obsahuje další typy obecných kolekcí, jako je <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obecná třída, která je užitečná pro vystavení objektových modelů uživatelům vaší třídy. <xref:System.Collections.ObjectModel>  
   
- Jsou k dispozici v obecné rozhraní pro provádění porovnání rovnosti a řazení <xref:System> obor názvů, spolu s obecnými typy delegátu obslužné rutiny událostí, převodů a predikáty vyhledávání.  
+ Obecná rozhraní pro implementaci porovnání řazení a rovnosti jsou k dispozici v <xref:System> oboru názvů společně s obecnými typy delegátů pro obslužné rutiny událostí, převody a predikáty vyhledávání.  
   
- Byla přidaná podpora pro obecné typy <xref:System.Reflection> obor názvů pro zkoumání obecných typů a obecných metod na <xref:System.Reflection.Emit> Emitování dynamických sestavení, které obsahují obecné typy a metody a do <xref:System.CodeDom> pro generování grafů zdroje které zahrnují obecné typy.  
+ Do <xref:System.Reflection> oboru názvů se přidala podpora pro obecné typy pro zkoumání obecných typů a obecných metod <xref:System.Reflection.Emit> , pro generování dynamických sestavení, která obsahují obecné typy <xref:System.CodeDom> a metody, a pro generování zdrojových grafů. které obsahují obecné typy.  
   
- Modul common language runtime poskytuje nové operačních kódů a předpony pro podporu obecných typů v jazyce Microsoft intermediate language (MSIL), včetně <xref:System.Reflection.Emit.OpCodes.Stelem>, <xref:System.Reflection.Emit.OpCodes.Ldelem>, <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>, a <xref:System.Reflection.Emit.OpCodes.Readonly>.  
+ Modul CLR (Common Language Runtime) poskytuje nové operační kódy a předpony pro podporu obecných typů v jazyce MSIL (Microsoft Intermediate <xref:System.Reflection.Emit.OpCodes.Stelem>Language <xref:System.Reflection.Emit.OpCodes.Ldelem>) <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>včetně, <xref:System.Reflection.Emit.OpCodes.Readonly>,, a.  
   
- Visual C++, C# a Visual Basic všechny poskytují plnou podporu pro definování a použití obecných typů. Další informace o podpoře jazyků naleznete v tématu [obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných typů](~/docs/csharp/programming-guide/generics/index.md), a [přehled obecných typů v jazyce Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).  
+ Visual C++, C#a Visual Basic vše poskytují plnou podporu pro definování a používání generických typů. Další informace o podpoře jazyků naleznete v tématu [Obecné typy v Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných](../../csharp/programming-guide/generics/index.md)hodnot a [Přehled obecných typů ve vizuálu C++ ](/cpp/windows/overview-of-generics-in-visual-cpp).  
   
  [Zpět na začátek](#top)  
   
 <a name="nested_types_and_generics"></a>   
 ## <a name="nested-types-and-generics"></a>Vnořené typy a obecné typy  
- Typ, který je vnořená v obecném typu může záviset na parametry typu nadřazeným obecným typem. Modul common language runtime bere v úvahu vnořených typů je obecný, i v případě, že nemají vlastní parametry obecného typu. Při vytváření instance vnořeného typu, musíte zadat argumenty typu všech ohraničujících obecných typů.  
+ Typ, který je vnořen v obecném typu, může záviset na parametrech typu nadřazeného obecného typu. Modul CLR (Common Language Runtime) považuje vnořené typy za obecné, a to i v případě, že nemají vlastní parametry obecného typu. Při vytváření instance vnořeného typu je nutné zadat argumenty typu pro všechny nadřazené obecné typy.  
   
  [Zpět na začátek](#top)  
   
@@ -163,16 +163,16 @@ ms.locfileid: "67766821"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Obecné kolekce na platformě .NET](../../../docs/standard/generics/collections.md)|Popisuje obecné třídy kolekcí a jiné obecné typy v rozhraní .NET.|  
-|[Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Popisuje obecné delegáty pro převody, predikáty vyhledávání a akce mají být provedeny na elementy pole nebo kolekce.|  
-|[Obecná rozhraní](../../../docs/standard/generics/interfaces.md)|Popisuje obecná rozhraní, které poskytují společné funkce napříč řady obecných typů.|  
+|[Obecné kolekce na platformě .NET](../../../docs/standard/generics/collections.md)|Popisuje třídy obecných kolekcí a jiné obecné typy v rozhraní .NET.|  
+|[Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Popisuje Obecné delegáty pro převody, predikáty hledání a akce, které mají být provedeny na prvcích pole nebo kolekce.|  
+|[Obecná rozhraní](../../../docs/standard/generics/interfaces.md)|Popisuje Obecná rozhraní, která poskytují společné funkce napříč rodinami obecných typů.|  
 |[Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)|Popisuje kovariance a kontravariance v parametrech obecného typu.|  
-|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Poskytuje souhrnné informace o vlastnostech a scénáře použití kolekci typů v .NET, včetně obecných typů.|  
-|[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje obecná pravidla pro určení, kdy použití obecných typů kolekce.|  
-|[Postupy: Definování obecného typu pomocí reflexe generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak ke generování dynamických sestavení, které zahrnují obecné typy a metody.|  
-|[Obecné typy v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|Popisuje funkci obecných typů pro uživatele jazyka Visual Basic, včetně témat s návody pro použití a definice obecných typů.|  
-|[Úvod do obecných typů](~/docs/csharp/programming-guide/generics/index.md)|Poskytuje přehled o definice a používání obecných typů pro uživatele jazyka C#.|  
-|[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkci obecných typů pro uživatele jazyka C++, jaký je rozdíl mezi obecnými typy a šablony.|  
+|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Obsahuje souhrnné informace o vlastnostech a scénářích použití typů kolekcí v rozhraní .NET, včetně obecných typů.|  
+|[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje obecná pravidla pro určení, kdy použít typy obecných kolekcí.|  
+|[Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Vysvětluje, jak generovat dynamická sestavení, která zahrnují obecné typy a metody.|  
+|[Obecné typy v Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md)|Popisuje funkci Generics pro Visual Basic uživatele, včetně témat s postupy pro použití a definování obecných typů.|  
+|[Úvod do obecných typů](../../csharp/programming-guide/generics/index.md)|Poskytuje přehled o definování a použití obecných typů pro C# uživatele.|  
+|[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkci obecných typů pro C++ uživatele, včetně rozdílů mezi obecnými typy a šablonami.|  
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Reference  

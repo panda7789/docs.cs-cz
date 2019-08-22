@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a4741c6a4745bdba00fdb525b39b70d0b15e005
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4aa90a378630c9aff74923d8e8600aed15a77a5e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704853"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663506"
 ---
-# <a name="qualifyassembly-element"></a>\<qualifyassembly – > – Element
-Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.  
+# <a name="qualifyassembly-element"></a>\<qualifyAssembly – element >
+Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<assemblybinding – >  
-\<qualifyAssembly>  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<assemblyBinding >  
+\<qualifyAssembly >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,8 +41,8 @@ Určuje úplný název sestavení, které se mají dynamicky načíst při použ
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`partialName`|Požadovaný atribut.<br /><br /> Částečný název sestavení, určuje, jak se zobrazí v kódu.|  
-|`fullName`|Požadovaný atribut.<br /><br /> Určuje úplný název sestavení, jak se zobrazí v globální mezipaměti sestavení.|  
+|`partialName`|Požadovaný atribut.<br /><br /> Určuje částečný název sestavení, jak se zobrazí v kódu.|  
+|`fullName`|Požadovaný atribut.<br /><br /> Určuje úplný název sestavení, který se zobrazí v globální mezipaměti sestavení (GAC).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -56,12 +56,12 @@ Určuje úplný název sestavení, které se mají dynamicky načíst při použ
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volání <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda názvů částečného sestavení způsobí, že modul common language runtime vyhledat sestavení pouze v základní adresář aplikace. Použití  **\<qualifyassembly – >** prvku v konfiguračním souboru aplikace zadejte informace o úplné sestavení (název, verzi, token veřejného klíče a jazykovou verzi) a způsobit, že modul common language runtime pro hledání pro sestavení v globální mezipaměti sestavení.  
+ <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> Volání metody pomocí částečných názvů sestavení způsobí, že modul CLR (Common Language Runtime) hledá sestavení pouze v základním adresáři aplikace. Použijte **qualifyAssembly > element v konfiguračním souboru aplikace k poskytnutí úplných informací o sestavení (název, verze, token veřejného klíče a jazyková verze) a způsobí, že modul CLR (Common Language Runtime) vyhledá sestavení v \<** globální mezipaměť sestavení (GAC).  
   
- **FullName** atribut musí obsahovat čtyři pole Identita sestavení: název, verzi, token veřejného klíče a jazykovou verzi. **PartialName** atribut částečně musí odkazovat na sestavení. Je potřeba určit nejmíň textový název sestavení (nejběžnější případy), ale může také obsahovat verzi, token veřejného klíče, nebo jazykové verze (nebo libovolnou kombinaci čtyři, ale ne všechny čtyři). **PartialName** musí odpovídat názvu zadané ve volání. Například nelze zadat `"math"` jako **partialName** atribut v konfiguračním souboru a volání `Assembly.Load("math, Version=3.3.3.3")` ve vašem kódu.  
+ Atribut **FullName** musí zahrnovat čtyři pole identity sestavení: název, verze, token veřejného klíče a jazykovou verzi. Atribut **Partial** musí odkazovat na sestavení částečně. Je nutné zadat alespoň textový název sestavení (Nejběžnější případ), ale můžete také zahrnout verze, token veřejného klíče nebo jazykovou verzi (nebo libovolnou kombinaci čtyř, ale ne všech čtyř). Parametr **Partial** se musí shodovat s názvem zadaným ve vašem volání. Například nemůžete zadat `"math"` jako atribut **Partial** do konfiguračního souboru a volat `Assembly.Load("math, Version=3.3.3.3")` do kódu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad změní logicky volání `Assembly.Load("math")` do `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`.  
+ Následující příklad logicky přepíná volání `Assembly.Load("math")` do. `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`  
   
 ```xml  
 <configuration>  
@@ -77,6 +77,6 @@ Určuje úplný název sestavení, které se mají dynamicky načíst při použ
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Částečné odkazy na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0a7zy9z5(v=vs.100))
+- [Schéma nastavení běhového prostředí](index.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)
+- [Odkazy na částečné sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0a7zy9z5(v=vs.100))

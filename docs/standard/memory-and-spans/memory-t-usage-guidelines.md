@@ -6,12 +6,12 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5aa778477abf3b91e32d9cb8ffdf50baaca5f001
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 171f6fd5a8b55d2e96a90a90d011a8166be6759d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68362903"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666416"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>\<>\<Paměti t > pokyny k použití
 
@@ -78,7 +78,7 @@ Jako poznámky k oddílům [pro vlastníky, uživatele a správu životního cyk
 
 [!code-csharp[ownership](~/samples/snippets/standard/buffers/memory-t/owner/owner.cs)]
 
-Tento příklad můžeme také zapsat pomocí [`using`](~/docs/csharp/language-reference/keywords/using-statement.md):
+Tento příklad můžeme také zapsat pomocí [`using`](../../csharp/language-reference/keywords/using-statement.md):
 
 [!code-csharp[ownership-using](~/samples/snippets/standard/buffers/memory-t/owner-using/owner-using.cs)]
 
@@ -138,7 +138,7 @@ V případě, že toto pravidlo a pravidlo kombinujeme #1, můžeme ještě lep�
 void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 ```
 
-Metoda `DisplayBufferToConsole` teď funguje s prakticky všemi typy vyrovnávací paměti, které lze `T[]`předcházet:, úložiště přidělené [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md)a tak dále. Můžete dokonce předat <xref:System.String> přímo na!
+Metoda `DisplayBufferToConsole` teď funguje s prakticky všemi typy vyrovnávací paměti, které lze `T[]`předcházet:, úložiště přidělené [stackalloc](../../csharp/language-reference/operators/stackalloc.md)a tak dále. Můžete dokonce předat <xref:System.String> přímo na!
 
 **#3 pravidla: Pokud vaše metoda přijímá paměť\<t > a vrátí `void`, nemusíte po návratu metody\<použít instanci > paměti t.**
 
@@ -246,7 +246,7 @@ Jakákoli komponenta, která přenáší vlastnictví <xref:System.Buffers.IMemo
 
 **#9 pravidla: Pokud zabalíte synchronní metodu volání nespravovaného volání, rozhraní API by mělo\<jako parametr přijmout > s rozsahem T.**
 
-V souladu s pravidly #1 <xref:System.Span%601> je všeobecně správný typ, který se má použít pro synchronní rozhraní API. Instance můžete připnout <xref:System.Span%601> [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) prostřednictvím klíčového slova, jak je uvedeno v následujícím příkladu.
+V souladu s pravidly #1 <xref:System.Span%601> je všeobecně správný typ, který se má použít pro synchronní rozhraní API. Instance můžete připnout <xref:System.Span%601> [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) prostřednictvím klíčového slova, jak je uvedeno v následujícím příkladu.
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -286,7 +286,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 
 **#10 pravidla: Pokud zabalíte asynchronní metodu volání metody p/Invoke, rozhraní API by mělo\<jako parametr přijímat > paměti.**
 
-Vzhledem k tomu, že [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) nelze použít klíčové slovo v rámci asynchronních <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> operací, použijte <xref:System.Memory%601> metodu pro připnutí instancí bez ohledu na druh souvislé paměti, kterou instance představuje. Následující příklad ukazuje, jak použít toto rozhraní API k provedení asynchronního volání volání nespravovaného volání.
+Vzhledem k tomu, že [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) nelze použít klíčové slovo v rámci asynchronních <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> operací, použijte <xref:System.Memory%601> metodu pro připnutí instancí bez ohledu na druh souvislé paměti, kterou instance představuje. Následující příklad ukazuje, jak použít toto rozhraní API k provedení asynchronního volání volání nespravovaného volání.
 
 ```csharp
 using System.Runtime.InteropServices;

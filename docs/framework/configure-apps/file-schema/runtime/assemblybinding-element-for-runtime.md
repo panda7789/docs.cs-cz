@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eec77d4dd42a7b95d1e2cd0e353e2e54746676b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84ec54eeb8adee90031057dadc4549cb73527be1
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704879"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663904"
 ---
-# <a name="assemblybinding-element-for-runtime"></a>\<assemblybinding – > – Element pro \<runtime >
+# <a name="assemblybinding-element-for-runtime"></a>\<assemblyBinding element > pro \<modul runtime >
 Obsahuje informace o přesměrování verze sestavení a umístění sestavení.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<assemblybinding – >  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<assemblyBinding >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,17 +39,17 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**xmlns**|Požadovaný atribut.<br /><br /> Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu.|  
-|**appliesTo**|Určuje verzi modulu runtime, přesměrování sestavení rozhraní .NET Framework se týká. Tento volitelný atribut používá pro určení verze, se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán,  **\<assemblyBinding >** element platí pro všechny verze rozhraní .NET Framework. **AppliesTo** atribut byla zavedena v rozhraní .NET Framework verze 1.1; je ignorován v rozhraní .NET Framework verze 1.0. To znamená, že všechny  **\<assemblyBinding >** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.|  
+|**xmlns**|Požadovaný atribut.<br /><br /> Určuje obor názvů XML vyžadovaný pro vazbu sestavení. Jako hodnotu použijte řetězec "urn: schemas-microsoft-com: asm. v1".|  
+|**appliesTo**|Určuje verzi modulu runtime, pro kterou je přesměrování sestavení .NET Framework použito. Tento nepovinný atribut používá .NET Framework číslo verze k určení verze, na kterou se vztahuje. Pokud ne **appliesTo** atribut zadán, **\<assemblyBinding>** element platí pro všechny verze rozhraní .NET Framework. Atribut **AppliesTo** byl představen v .NET Framework verze 1,1; ignoruje se .NET Framework verze 1,0. To znamená, že všechny **\<assemblyBinding>** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dependentAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|Zapouzdřuje umístění zásad a sestavení vazby pro sestavení. Použijte jednu  **\<dependentAssembly >** značky pro každé sestavení.|  
-|[\<zjišťování >](../../../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)|Určuje modul common language runtime prohledá při načítání sestavení podadresářů.|  
-|[\<publisherPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)|Určuje, zda modul runtime použije zásady vydavatele.|  
-|[\<qualifyAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.|  
+|[\<> dependentAssembly](dependentassembly-element.md)|Zapouzdřuje zásady vazeb a umístění sestavení pro sestavení. Pro každé sestavení použijte jednu  **\<značku > dependentAssembly** .|  
+|[\<> zjišťování](probing-element.md)|Určuje podadresáře, které modul CLR (Common Language Runtime) hledá při načítání sestavení.|  
+|[\<publisherPolicy>](publisherpolicy-element.md)|Určuje, zda modul runtime používá zásady vydavatele.|  
+|[\<qualifyAssembly>](qualifyassembly-element.md)|Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -59,7 +59,7 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob přesměrování jedné verze sestavení do druhého a poskytují základ kódu.  
+ Následující příklad ukazuje, jak přesměrovat jednu verzi sestavení na jiný a poskytnout základ kódu.  
   
 ```xml  
 <configuration>  
@@ -79,7 +79,7 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
 </configuration>  
 ```  
   
- Následující příklad ukazuje způsob použití **appliesTo** atribut pro přesměrování vazby sestavení rozhraní .NET Framework.  
+ Následující příklad ukazuje, jak použít atribut **AppliesTo** pro přesměrování vazby .NET Framework sestavení.  
   
 ```xml  
 <runtime>  
@@ -94,6 +94,6 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Přesměrování verzí sestavení](../../redirect-assembly-versions.md)

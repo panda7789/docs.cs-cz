@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: fb2c570b251979adb76ad2af1a3b6f54b75a15ff
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 47eba90eba670d2f735c2f5ca24053e23d34e871
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589710"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659806"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Obecná rozhraní (Průvodce programováním v C#)
 Často je užitečné definovat rozhraní buď pro obecné třídy kolekce, nebo pro obecné třídy, které reprezentují položky v kolekci. Preference pro obecné třídy je použití obecných rozhraní, například <xref:System.IComparable%601> spíše než <xref:System.IComparable>, aby se zabránilo zabalení a rozbalení operací na typech hodnot. Knihovna tříd .NET Framework definuje několik obecných rozhraní pro použití s třídami kolekce v <xref:System.Collections.Generic> oboru názvů.  
@@ -49,4 +49,4 @@ ms.locfileid: "69589710"
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Úvod do obecných typů](./index.md)
 - [interface](../../language-reference/keywords/interface.md)
-- [Obecné typy](~/docs/standard/generics/index.md)
+- [Obecné typy](../../../standard/generics/index.md)

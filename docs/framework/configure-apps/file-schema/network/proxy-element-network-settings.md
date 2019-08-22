@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 8df9bbf2615776c2e023f03401785da95b2226eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a183c4160c4cd55b05c5c23f7a10e3a1d1c74ea4
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674484"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659292"
 ---
-# <a name="proxy-element-network-settings"></a>\<proxy server > – Element (nastavení sítě)
+# <a name="proxy-element-network-settings"></a>\<> – element proxy (nastavení sítě)
 Definuje proxy server.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<defaultProxy>  
 \<proxy>  
@@ -42,11 +42,11 @@ Definuje proxy server.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`autoDetect`|Určuje, zda je automaticky zjišťován proxy serveru. Výchozí hodnota je `unspecified`.|  
-|`bypassonlocal`|Určuje, zda je pro místní prostředky obejít proxy server. Místní prostředky zahrnují místní server (`http://localhost`, `http://loopback`, nebo `http://127.0.0.1`) a identifikátor URI bez období (`http://webserver`). Výchozí hodnota je `unspecified`.|  
-|`proxyaddress`|Určuje identifikátor URI pro použití proxy serveru.|  
-|`scriptLocation`|Určuje umístění skriptu konfigurace. Nepoužívejte `bypassonlocal` atribut k tomuto atributu. |  
-|`usesystemdefault`|Určuje, jestli se má používat nastavení proxy aplikace Internet Explorer. Pokud nastavit `true`, následující atributy se přepíše nastavení proxy aplikace Internet Explorer. Výchozí hodnota je `unspecified`.|  
+|`autoDetect`|Určuje, jestli se proxy server automaticky detekuje. Výchozí hodnota je `unspecified`.|  
+|`bypassonlocal`|Určuje, jestli se proxy server pro místní prostředky obejít. Místní prostředky zahrnují místní server`http://localhost`(, `http://loopback`, nebo `http://127.0.0.1`) a identifikátor URI bez tečky (`http://webserver`). Výchozí hodnota je `unspecified`.|  
+|`proxyaddress`|Určuje identifikátor URI proxy serveru, který se má použít.|  
+|`scriptLocation`|Určuje umístění konfiguračního skriptu. Nepoužívejte `bypassonlocal` atribut s tímto atributem. |  
+|`usesystemdefault`|Určuje, jestli se má používat nastavení proxy serveru aplikace Internet Explorer. Pokud je nastaveno `true`na, budou následující atributy přepsat nastavení proxy serveru aplikace Internet Explorer. Výchozí hodnota je `unspecified`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -55,26 +55,26 @@ Definuje proxy server.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).|  
+|[defaultProxy](defaultproxy-element-network-settings.md)|Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="text-value"></a>Textová hodnota  
   
 ## <a name="remarks"></a>Poznámky  
- `proxy` Element definuje proxy server pro aplikaci. Pokud tento prvek v konfiguračním souboru chybí, použije rozhraní .NET Framework v aplikaci Internet Explorer nastavení proxy serveru.  
+ `proxy` Prvek definuje proxy server pro aplikaci. Pokud tento prvek v konfiguračním souboru chybí, .NET Framework použije nastavení proxy serveru v Internet Exploreru.  
   
- Hodnota `proxyaddress` atribut by měl mít ve správném formátu indikátor URI (Uniform Resource).  
+ Hodnota `proxyaddress` atributu musí být ve správném formátu (Uniform Resource).  
   
- `scriptLocation` Atribut odkazuje na automatické zjišťování proxy konfigurační skripty. <xref:System.Net.WebProxy> Třídy se pokusí najít konfigurační skript (obvykle s názvem Wpad.dat) Pokud **použít automatický konfigurační skript** je vybraná možnost v aplikaci Internet Explorer. Pokud `bypassonlocal` je nastavena na libovolnou hodnotu `scriptLocation` se ignoruje.
+ `scriptLocation` Atribut odkazuje na automatické zjišťování skriptů konfigurace proxy serveru. Třída se pokusí najít konfigurační skript (obvykle nazvaný WPAD. dat), pokud je v aplikaci Internet Explorer vybraná možnost **použít skript automatické konfigurace.** <xref:System.Net.WebProxy> Pokud `bypassonlocal` je nastavená na libovolnou hodnotu `scriptLocation` , ignoruje se.
   
- Použití `usesystemdefault` atribut pro aplikace .NET Framework verze 1.1, které migrují na verzi 2.0.  
+ `usesystemdefault` Použijte atribut pro aplikace .NET Framework verze 1,1, které migrují na verzi 2,0.  
   
- Pokud je vyvolána výjimka `proxyaddress` atribut specifikuje neplatný výchozí proxy. <xref:System.Exception.InnerException%2A> Vlastnosti výjimky by měl mít další informace o hlavní příčinu chyby.  
+ Pokud `proxyaddress` atribut specifikuje neplatný výchozí proxy server, je vyvolána výjimka. <xref:System.Exception.InnerException%2A> Vlastnost výjimky by měla obsahovat další informace o hlavní příčině chyby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá výchozí hodnoty z proxy serveru aplikace Internet Explorer, určuje adresu proxy serveru a obchází proxy pro místní přístup.  
+ Následující příklad používá výchozí hodnoty z proxy serveru aplikace Internet Explorer, určuje adresu proxy serveru a obchází proxy server pro místní přístup.  
   
 ```xml  
 <configuration>  
@@ -93,4 +93,4 @@ Definuje proxy server.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

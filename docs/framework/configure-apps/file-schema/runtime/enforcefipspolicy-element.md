@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c13dd2f00e08539d2ba502058c74aa4a1525e3ff
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: eb28eddf7e9f13bceaf47de28633073f59f3920d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816120"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663743"
 ---
-# <a name="enforcefipspolicy-element"></a>\<enforcefipspolicy – > – Element
-Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu se informace o zpracování normy FIPS (Federal).  
+# <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy – element >
+Určuje, jestli se má vymáhat požadavek na konfiguraci počítače, který kryptografické algoritmy musí dodržovat Standard FIPS (Federal Information Processing Standards).  
   
- \<Konfigurace > – Element  
-\<modul runtime > – Element  
-\<enforcefipspolicy – > – Element  
+ \<Element > Konfigurace  
+\<Běhový > element  
+\<enforceFIPSPolicy – element >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,14 +36,14 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Požadovaný atribut.<br /><br /> Určuje, jestli se má povolit vynucení požadavek konfigurace počítače, musí být kryptografické algoritmy kompatibilní se standardem FIPS.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, jestli se má povolit vynucení požadavku na konfiguraci počítače, že kryptografické algoritmy musí být kompatibilní se standardem FIPS.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`true`|V případě, že váš počítač je nakonfigurován tak, aby vyžadovala kryptografické algoritmy pro rozpoznávání kompatibilní se standardem FIPS, tento požadavek se nevynutí. Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo `Create` metody pro danou třídu vyvolat výjimky při jejich spuštění na tomto počítači. Toto nastavení je výchozí.|  
-|`false`|Kryptografické algoritmy, které používají aplikace nejsou musí být v souladu se standardem FIPS, bez ohledu na konfigurace počítače.|  
+|`true`|Pokud je počítač nakonfigurován tak, aby vyžadoval kryptografické algoritmy kompatibilní se standardem FIPS, bude tento požadavek vynucen. Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo `Create` metody této třídy vyvolávají výjimky při jejich spuštění na daném počítači. Toto nastavení je výchozí.|  
+|`false`|Kryptografické algoritmy, které aplikace používá, nemusí být kompatibilní se standardem FIPS bez ohledu na konfiguraci počítače.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -56,12 +56,12 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze rozhraní .NET Framework 2.0, vytváření třídy, které implementují kryptografické algoritmy řídí konfiguraci počítače. Pokud je počítač nakonfigurovaný tak, aby vyžadovala algoritmy být v souladu se standardem FIPS, a třída implementuje algoritmus, který není kompatibilní se standardem FIPS, jakýkoliv pokus o vytvoření instance této třídy vyvolá výjimku. Vyvolat konstruktory <xref:System.InvalidOperationException> výjimky, a `Create` vyvolání metody <xref:System.Reflection.TargetInvocationException> výjimka s vnitřní <xref:System.InvalidOperationException> výjimky.  
+ Počínaje .NET Framework 2,0 se vytváření tříd, které implementují kryptografické algoritmy, řídí konfigurací počítače. Pokud je počítač nakonfigurován tak, aby vyžadoval, aby algoritmy byly kompatibilní se standardem FIPS, a třída implementuje algoritmus, který není kompatibilní se standardem FIPS, jakýkoli pokus o vytvoření instance této třídy vyvolá výjimku. Konstruktory vyvolávají <xref:System.InvalidOperationException> výjimku a `Create` metody vyvolávají <xref:System.Reflection.TargetInvocationException> výjimku s vnitřní <xref:System.InvalidOperationException> výjimkou.  
   
- Pokud vaše aplikace funguje na počítačích, jejichž konfigurací vyžadovat dodržování standardu FIPS a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, aby se zabránilo common language runtime (CLR) z můžete tento prvek v konfiguračním souboru vynucování kompatibilita se standardem FIPS. Tento prvek byla zavedena v rozhraní .NET Framework 2.0 Service Pack 1.  
+ Pokud vaše aplikace běží na počítačích, jejichž konfigurace vyžaduje kompatibilitu se standardem FIPS, a vaše aplikace používá algoritmus, který není kompatibilní se standardem FIPS, můžete použít tento prvek v konfiguračním souboru, aby nedocházelo k tomu, že modul CLR (Common Language Runtime) z vynucování dodržování standardů FIPS. Tento prvek byl představen v aktualizaci Service Pack 1 pro .NET Framework 2,0.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zabránit CLR vynucování kompatibilita se standardem FIPS.  
+ Následující příklad ukazuje, jak zabránit CLR v vynucování dodržování standardů FIPS.  
   
 ```xml  
 <configuration>  
@@ -73,6 +73,6 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
 - [Kryptografický model](../../../../../docs/standard/security/cryptography-model.md)

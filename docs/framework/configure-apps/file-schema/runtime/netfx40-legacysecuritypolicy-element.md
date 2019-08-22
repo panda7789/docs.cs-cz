@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5bfa5449ece1b24d4f47fe3e77e36b26bbe430c
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 881862b6b81ace1c1923b2a22d2fbe54d939d84e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689845"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663559"
 ---
-# <a name="netfx40legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
+# <a name="netfx40_legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
 
-Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).
+Určuje, zda modul runtime používá starší zásady zabezpečení přístupu kódu (CAS).
 
-\<Konfigurace > \
-\<modul runtime > \
+\<> Konfigurace \
+\<běhové > \
 \<NetFx40_LegacySecurityPolicy>
 
 ## <a name="syntax"></a>Syntaxe
@@ -37,14 +37,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá starší zásadu CAS.|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime používá starší zásady CAS.|
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
-|`false`|Modul runtime nepoužívá starší zásadu CAS. Toto nastavení je výchozí.|
-|`true`|Modul runtime používá starší zásadu CAS.|
+|`false`|Modul runtime nepoužívá starší zásady CAS. Toto nastavení je výchozí.|
+|`true`|Modul runtime používá starší zásady CAS.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -59,20 +59,20 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-V rozhraní .NET Framework verze 3.5 a starší verze zásad CAS je vždy v vliv. V rozhraní .NET Framework 4 musí být povolené zásady CAS.
+V .NET Framework verze 3,5 a starších verzích je zásada CAS vždy platná. V .NET Framework 4 musí být povolená zásada CAS.
 
-Zásady CAS je specifické pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v rozhraní .NET Framework 4.
+Zásada CAS je specifická pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích .NET Framework, je nutné přezadat v .NET Framework 4.
 
-Použití `<NetFx40_LegacySecurityPolicy>` nemá vliv na element na sestavení rozhraní .NET Framework 4 [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); stále platí pravidla transparentnosti.
+Použití elementu na sestavení .NET Framework 4 nemá vliv na [Kód transparentní z zabezpečení](../../../misc/security-transparent-code.md); pravidla transparentnosti jsou stále používána. `<NetFx40_LegacySecurityPolicy>`
 
 > [!IMPORTANT]
-> Použití `<NetFx40_LegacySecurityPolicy>` element může způsobit snížení výkonu pro sestavení nativních bitových kopií, které jsou vytvořené [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) , která nejsou v nainstalovaná [globální mezipaměti sestavení ](../../../../../docs/framework/app-domains/gac.md). Snížení výkonu způsobuje nemožnost modul runtime k načtení sestavení jako nativní bitové kopie, když se atribut používá, což vede k jejich načtených sestavení jako just-in-time.
+> Použití prvku může mít za následek výrazné snížení výkonu pro sestavení nativních imagí vytvořená [generátorem nativních bitových kopií (Ngen. exe)](../../../tools/ngen-exe-native-image-generator.md) , které nejsou nainstalované v [globální mezipaměti sestavení (GAC](../../../app-domains/gac.md)). `<NetFx40_LegacySecurityPolicy>` Snížení výkonu je způsobeno neschopností modulu runtime načíst sestavení jako nativní bitové kopie, pokud je atribut použit, což vede k tomu, že jsou načítána jako sestavení za běhu.
 
 > [!NOTE]
-> Pokud chcete zadat cílovou verzi rozhraní .NET Framework, která je starší než rozhraní .NET Framework 4 v nastavení projektu pro projekt sady Visual Studio, zásady CAS se povolí, včetně všechny vlastní zásady CAS, které jste zadali pro tuto verzi. Ale nebudete moct používat nové rozhraní .NET Framework 4 typy a členy. Starší verzi rozhraní .NET Framework můžete také zadat pomocí [ \<supportedRuntime > element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) v schéma nastavení spouštění ve vaší [konfiguračního souboru aplikace](../../../../../docs/framework/configure-apps/index.md).
+> Zadáte-li cílovou verzi .NET Framework, která je starší než .NET Framework 4 v nastavení projektu pro projekt aplikace Visual Studio, bude zásada CAS povolena, včetně všech vlastních zásad CAS, které jste zadali pro danou verzi. Nebudete však moci použít nové typy a členy .NET Framework 4. Můžete také zadat dřívější verzi .NET Framework pomocí [ \<prvku > supportedRuntime](../startup/supportedruntime-element.md) ve schématu nastavení spouštění v [konfiguračním souboru aplikace](../../index.md).
 
 > [!NOTE]
-> Syntaxe konfigurační soubor je velká a malá písmena. Jak je uvedeno v části Syntaxe a příkladu, měli byste použít syntaxi.
+> Syntaxe konfiguračního souboru rozlišuje velká a malá písmena. Měli byste použít syntaxi, jak je uvedeno v části syntaxe a příklady.
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
@@ -80,7 +80,7 @@ Tento element lze použít pouze v konfiguračním souboru aplikace.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak povolte starší zásadu CAS pro aplikaci.
+Následující příklad ukazuje, jak u aplikace povolit starší zásady CAS.
 
 ```xml
 <configuration>
@@ -92,5 +92,5 @@ Následující příklad ukazuje, jak povolte starší zásadu CAS pro aplikaci.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)

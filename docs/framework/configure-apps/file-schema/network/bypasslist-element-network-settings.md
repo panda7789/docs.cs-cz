@@ -8,20 +8,20 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: d3d986dae478f49504dae21b9f39574b7887b4d2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10d2a025096579c6bed64f82cc955deb0542717c
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674620"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664207"
 ---
-# <a name="bypasslist-element-network-settings"></a>\<bypasslist – > – Element (nastavení sítě)
-Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.  
+# <a name="bypasslist-element-network-settings"></a>\<BypassList – element > (nastavení sítě)
+Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.net>  
 \<defaultProxy>  
-\<bypasslist – >  
+\<BypassList >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívaj
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|Přidá do seznamu obcházení proxy IP adresu nebo název DNS.|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|Seznam obcházení vymaže.|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.|  
+|[add](add-element-for-bypasslist-network-settings.md)|Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.|  
+|[jejich](clear-element-for-bypasslist-network-settings.md)|Vymaže seznam obcházení.|  
+|[remove](remove-element-for-bypasslist-network-settings.md)|Odebere IP adresu nebo název DNS ze seznamu obcházení proxy serveru.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).|  
+|[defaultProxy](defaultproxy-element-network-settings.md)|Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="remarks"></a>Poznámky  
- Seznam obcházení obsahuje regulárních výrazů, které popisují identifikátory URI, který <xref:System.Net.WebRequest> instancí k datům přímo namísto prostřednictvím proxy serveru.  
+ Seznam pro obejití obsahuje regulární výrazy, které popisují identifikátory <xref:System.Net.WebRequest> URI, které instance přistupuje přímo místo přes proxy server.  
   
- Buďte opatrní při zadávání regulární výraz pro tento element. Regulární výraz "[-z] +\\.contoso\\.com" odpovídá některé hostovat v doméně contoso.com, ale také odpovídající libovolného hostitele v doméně contoso.com.cpandl.com. Tak, aby odpovídaly pouze na hostiteli v doméně contoso.com, použijte ukotvení ("$"): "[-z] +\\.contoso\\.com$".  
+ Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] +\\. contoso\\. com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] +\\. contoso\\. com $".  
   
- Další informace o formátování regulárních výrazů naleznete v tématu. [Regulárních výrazech .NET Frameworku](../../../../../docs/standard/base-types/regular-expressions.md).  
+ Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../../docs/standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá do seznamu obcházení dvě adresy. První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery jehož IP adres začít s 192.168.  
+ Následující příklad přidá dvě adresy do seznamu pro obejití. První obchází proxy server pro všechny servery v doméně contoso.com; Druhá obchází proxy server pro všechny servery, jejichž IP adresy začínají na 192,168.  
   
 ```xml  
 <configuration>  
@@ -79,4 +79,4 @@ Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívaj
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](index.md)

@@ -14,18 +14,18 @@ helpviewer_keywords:
 - OnRender method [WPF], overriding
 - Panel control [WPF], overriding OnRender method
 ms.assetid: 57397834-a085-4e36-90ab-416fad98f341
-ms.openlocfilehash: c4539847368c1a5789e99ec92106d17077ed5943
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 23c3353e130585ed83726816a467ca73f6aa9152
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770835"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666706"
 ---
 # <a name="how-to-override-the-panel-onrender-method"></a>Postupy: Přepsání metody panelu OnRender
-Tento příklad ukazuje, jak přepsat <xref:System.Windows.Controls.Panel.OnRender%2A> metoda <xref:System.Windows.Controls.Panel> Chcete-li přidat vlastní grafické efekty na prvek rozložení.  
+Tento příklad ukazuje, jak přepsat <xref:System.Windows.Controls.Panel.OnRender%2A> <xref:System.Windows.Controls.Panel> metodu pro přidání vlastních grafických efektů do prvku rozložení.  
   
 ## <a name="example"></a>Příklad  
- Použití <xref:System.Windows.Controls.Panel.OnRender%2A> metody, chcete-li přidat grafické efekty na prvek vykreslené panelu. Například můžete použít tuto metodu Chcete-li přidat vlastní ohraničení nebo účinky na pozadí. A <xref:System.Windows.Media.DrawingContext> objekt je předán jako argument, který poskytuje metody pro kreslení tvarů, textu, obrázků nebo videa. V důsledku toho tato metoda je užitečná pro přizpůsobení panelu.  
+ <xref:System.Windows.Controls.Panel.OnRender%2A> Použijte metodu pro přidání grafických efektů do vykresleného panelu elementu. Můžete například použít tuto metodu k přidání vlastních efektů ohraničení nebo pozadí. <xref:System.Windows.Media.DrawingContext> Objekt je předán jako argument, který poskytuje metody pro kreslení tvarů, textu, obrázků a videí. V důsledku toho je tato metoda užitečná pro přizpůsobení objektu panelu.  
   
  [!code-csharp[LightWeightCustomPanel#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LightWeightCustomPanel/CSharp/OffsetPanel.cs#1)]
  [!code-vb[LightWeightCustomPanel#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/LightWeightCustomPanel/visualbasic/offsetpanel.vb#1)]  
@@ -34,5 +34,4 @@ Tento příklad ukazuje, jak přepsat <xref:System.Windows.Controls.Panel.OnRend
 
 - <xref:System.Windows.Controls.Panel>
 - [Přehled panelu](panels-overview.md)
-- [Ukázka vlastních kruhové panelu](https://go.microsoft.com/fwlink/?LinkID=159982)
 - [Témata s postupy](panel-how-to-topics.md)

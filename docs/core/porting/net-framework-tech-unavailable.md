@@ -1,51 +1,51 @@
 ---
-title: Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
-description: Seznamte se s technologií rozhraní .NET Framework, které jsou k dispozici v rozhraní .NET Core
+title: Technologie .NET Framework nedostupné v .NET Core
+description: Přečtěte si o .NET Framework technologiích, které nejsou k dispozici v .NET Core
 author: cartermp
 ms.author: mairaw
 ms.date: 04/30/2019
-ms.openlocfilehash: bfeea58f4d80b789a7174a77e0784f2326906416
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87c3dd337ad44fd21b255afa7c03b528cd8a42ad
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737100"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660599"
 ---
-# <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
+# <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie .NET Framework nedostupné v .NET Core
 
-Několik technologií, které jsou k dispozici pro knihovny rozhraní .NET Framework nejsou k dispozici pro použití s .NET Core, jako je například objektů třídy AppDomains, vzdálené komunikace, zabezpečení přístupu kódu (CAS) a transparentnost zabezpečení. Pokud vaše knihovny spoléhat na jeden nebo více z těchto technologií, vezměte v úvahu alternativních přístupů popsaných níže. Další informace o kompatibilitě rozhraní API CoreFX tým udržuje [seznam konce změny/compat chování a zastaralé nebo starší verze rozhraní API](https://github.com/dotnet/corefx/wiki/ApiCompat) v Githubu.
+K dispozici je několik technologií pro .NET Framework knihovny, které se nedají používat s .NET Core, jako jsou AppDomains, Vzdálená komunikace, zabezpečení přístupu kódu (CAS) a transparentnost zabezpečení. Pokud se vaše knihovny spoléhají na jednu nebo více těchto technologií, vezměte v úvahu alternativní přístupy uvedené níže. Pokud chcete získat další informace o kompatibilitě rozhraní API, tým CoreFX udržuje [seznam behaviorálních změn/popisovačů kompatibility a zastaralých/zastaralých rozhraní API](https://github.com/dotnet/corefx/wiki/ApiCompat) na GitHubu.
 
-To, že rozhraní API nebo technologie v současnosti není implementovaná nebude neznamená, že má nepodporovanou záměrně. By měli nejdřív vyhledat úložiště GitHub pro .NET Core, pokud chcete zobrazit, pokud konkrétní problém narazíte je záměrné, ale pokud nemůžete najít takový ukazatel, požádejte prosím problém ve službě [úložišti dotnet/corefx problémy](https://github.com/dotnet/corefx/issues) v Githubu požádat pro konkrétní rozhraní API a technologií. [Portování požadavky otázky](https://github.com/dotnet/corefx/labels/port-to-core) jsou označené `port-to-core` popisek.
+Vzhledem k tomu, že rozhraní API nebo technologie není aktuálně implementováno, neznamená, že je záměrně Nepodporovaná. Nejdřív byste měli hledat v úložištích GitHub pro .NET Core, aby bylo možné zjistit, jestli se k určitému problému setkáte podle návrhu, ale pokud tento indikátor nemůžete najít, dejte prosím problém v [úložišti dotnet/corefx](https://github.com/dotnet/corefx/issues) na GitHubu a požádejte ho o konkrétní rozhraní API a technik. [Požadavky na port](https://github.com/dotnet/corefx/labels/port-to-core) jsou označeny `port-to-core` jmenovkou.
 
 ## <a name="appdomains"></a>AppDomains
 
-Domény aplikace (AppDomains) izolace aplikace od sebe. Objektů třídy AppDomains vyžadují podpora modulu CLR a obvykle jsou dost drahé. Vytváření domén další aplikace se nepodporuje. Plánujeme není na přidání této funkce v budoucnu. Izolace kódu, doporučujeme samostatné procesy nebo pomocí kontejnerů jako alternativu. Pro dynamické načítání sestavení, doporučujeme vám nový <xref:System.Runtime.Loader.AssemblyLoadContext> třídy.
+Aplikační domény (AppDomains) izolují aplikace od sebe navzájem. Třídy AppDomains vyžadují podporu modulu runtime a jsou všeobecně poměrně nákladné. Vytváření dalších aplikačních domén se nepodporuje. Tuto možnost neplánujeme v budoucnu přidat. Pro izolaci kódu doporučujeme samostatné procesy nebo jako alternativu použít kontejnery. Pro dynamické načítání sestavení doporučujeme novou <xref:System.Runtime.Loader.AssemblyLoadContext> třídu.
 
-Pro usnadnění migrace kódu z rozhraní .NET Framework, .NET Core uvádí některé <xref:System.AppDomain> rovinu rozhraní API. Některá rozhraní API normálně fungovat (například <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), některé členy Neprovádět žádnou akci (třeba <xref:System.AppDomain.SetCachePath%2A>), a některé z nich výjimku <xref:System.PlatformNotSupportedException> (například <xref:System.AppDomain.CreateDomain%2A>). Zkontrolujte typy použít proti [ `System.AppDomain` zdroj odkazu](https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/AppDomain.cs) v [úložiště GitHub dotnet/corefx](https://github.com/dotnet/corefx)a vyberte větev, která odpovídá verzi implementovaná.
+Aby mohla migrace kódu z .NET Framework snazší, rozhraní .NET Core zpřístupňuje některé <xref:System.AppDomain> z ploch rozhraní API. Některá z funkcí rozhraní <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>API obvykle (například), některé členy nedělají nic ( <xref:System.AppDomain.SetCachePath%2A>například) a některé z nich <xref:System.AppDomain.CreateDomain%2A>vyvolají <xref:System.PlatformNotSupportedException> (například). Zkontrolujte typy, které používáte proti [ `System.AppDomain` zdroji odkazů](https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/AppDomain.cs) v [úložišti dotnet/corefx GitHub](https://github.com/dotnet/corefx), a ujistěte se, že jste vybrali větev, která odpovídá implementované verzi.
 
-## <a name="remoting"></a>Vzdálená komunikace
+## <a name="remoting"></a>Vzdálenou
 
-Vzdálené komunikace .NET byla identifikována jako problematické architektury. Používá se pro komunikaci mezi domény aplikace, které se už nepodporuje. Vzdálená komunikace také vyžaduje podpora modulu CLR, které je náročné na údržbu. Z těchto důvodů se nepodporuje vzdálené komunikace .NET na .NET Core a není plánujeme v budoucnu doplnění podpory pro něj.
+Vzdálená komunikace .NET byla označena jako problematická architektura. Používá se pro komunikaci mezi doménami, která už není podporovaná. Vzdálená komunikace také vyžaduje běhovou podporu, která je náročná na údržbu. Z těchto důvodů není vzdálená komunikace v .NET podporovaná pro .NET Core a v budoucnu neplánujeme přidat podporu pro IT.
 
-Komunikace mezi procesy, vezměte v úvahu mechanismus meziprocesové komunikace (IPC) jako alternativu k vzdálené komunikace, jako <xref:System.IO.Pipes> nebo <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> třídy.
+Pro komunikaci mezi procesy zvažte jako alternativu ke vzdálené komunikaci mechanismy mezi procesy (IPC), jako je <xref:System.IO.Pipes> například <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> třída nebo.
 
-V počítačích použijte jako alternativu řešení založené na síti. Pokud možno použijte protokol s nízkou režií prostého textu, jako je například HTTP. [Kestrel webový server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), webový server používá ASP.NET Core, je možnost tady. Také zvážit použití <xref:System.Net.Sockets> pro scénáře založené na síti, mezi počítači. Další možnosti najdete v tématu [.NET Open Source projektů pro vývojáře: Zasílání zpráv](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
+V různých počítačích použijte jako alternativu řešení založené na síti. Nejlépe použijte protokol s malým režijním textem, jako je například HTTP. [Webový server Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který používá ASP.NET Core, je zde možnost. Zvažte také použití <xref:System.Net.Sockets> ve scénářích pro více počítačů, které jsou založené na síti. Další možnosti naleznete v tématu [vývojářské projekty Open Source aplikace .NET: Zasílání zpráv](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
 
 ## <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)
 
-Izolace (sandbox), které spoléhá na modul runtime nebo rozhraní, chcete-li omezit které prostředky spravované aplikace nebo knihovna používá nebo běží, [není podporován v rozhraní .NET Framework](~/docs/framework/misc/code-access-security.md) a proto se taky nepodporuje v rozhraní .NET Core. Nejsou moc velký počet případů v rozhraní .NET Framework a modulu runtime kde dojde k zvýšení oprávnění pokračovat zpracování certifikační Autority jako hranice zabezpečení. Certifikační Autority navíc díky implementaci složitější a často má vliv na správnost výkon pro aplikace, které nechcete použít.
+Sandboxing, která spoléhá na modul runtime nebo na rozhraní k omezení prostředků, které spravovaná aplikace nebo knihovna používá nebo běží, se [na .NET Framework nepodporuje](../../framework/misc/code-access-security.md) , a proto se v .NET Core nepodporuje. V .NET Framework je příliš mnoho případů a modul runtime, kde se zvýšení oprávnění projeví i v případě, že se CAS považují za hranice zabezpečení. Kromě toho je implementace složitější a často má dopad na výkon aplikací, které ho nemají v úmyslu používat.
 
-Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s minimální sadu oprávnění.
+Používejte hranice zabezpečení poskytované operačním systémem, jako je virtualizace, kontejnery nebo uživatelské účty pro spouštění procesů s minimální sadou oprávnění.
 
 ## <a name="security-transparency"></a>Transparentnost zabezpečení
 
-Podobně jako u certifikační Autority, transparentnost zabezpečení ze zabezpečení kritického kódu deklarativní způsobem odděluje kódu v izolovaném prostoru, ale je [již nejsou podporovány jako hranice zabezpečení](~/docs/framework/misc/security-transparent-code.md). Tato funkce je nejčastěji používá program Silverlight. 
+Podobně jako certifikační autorita, transparentnost zabezpečení odděluje kód v izolovaném prostoru z kódu kritického zabezpečení deklarativním způsobem, ale [již není podporována jako hranice zabezpečení](../../framework/misc/security-transparent-code.md). Tato funkce je silně využívána v Silverlightu. 
 
-Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s nejmenší sadu oprávnění.
+Používejte hranice zabezpečení poskytované operačním systémem, jako je virtualizace, kontejnery nebo uživatelské účty pro spouštění procesů s minimální sadou oprávnění.
 
 ## <a name="systementerpriseservices"></a>System.EnterpriseServices
 
-.NET Core nepodporuje System.EnterpriseServices (COM +).
+Rozhraní .NET Core nepodporuje System. EnterpriseServices (COM+).
 
 >[!div class="step-by-step"]
 >[Next](third-party-deps.md)

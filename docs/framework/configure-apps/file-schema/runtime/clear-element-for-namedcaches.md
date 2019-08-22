@@ -5,15 +5,15 @@ helpviewer_keywords:
 - <clear> element for <namedCaches>
 - clear element for <namedCaches>
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
-ms.openlocfilehash: e563f8f27538e70ba90465fc28d300754509f7a4
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: a90970e468359714bbbb858f3f300c26b5757a4d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423311"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658864"
 ---
-# <a name="clear-element-for-namedcaches"></a>\<Vymazat > – Element pro \<namedcaches – >
-Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.  
+# <a name="clear-element-for-namedcaches"></a>\<Clear > element pro \<> namedCaches
+Vymaže všechny `namedCache` položky `namedCaches` v kolekci mezipaměti paměti.  
   
  \<system.runtime.caching>  
 \<memoryCache>  
@@ -45,11 +45,11 @@ Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci prvků konfigurace nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instancí.|  
+|[\<namedCaches>](namedcaches-element-cache-settings.md)|Obsahuje kolekci konfiguračních nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element vymaže všechny `namedCache` položky v kolekci s názvem mezipaměti pro mezipaměť. Můžete použít `clear` prvek před použitím `add` prvek, který chcete přidat novou položku pojmenovanou mezipaměť, aby bylo možné je potřeba mít jistotu, neexistují žádné jiné s názvem mezipaměti v kolekci.  
+ Element vymaže všechny `namedCache` položky v pojmenované kolekci mezipaměti pro paměťovou mezipaměť. `clear` `clear` Element lze použít před `add` použitím elementu k přidání nové pojmenované položky mezipaměti, aby bylo jisté, že v kolekci nejsou žádné další pojmenované mezipaměti.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+- [\<namedCaches – element > (nastavení mezipaměti)](namedcaches-element-cache-settings.md)

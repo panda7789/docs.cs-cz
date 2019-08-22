@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9402c9f28c123affb7b90fc189484bb1fd43db46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b00a5349e22feb3cce404ff504edd798ff9e304
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704606"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663527"
 ---
-# <a name="probing-element"></a>\<zjišťování > – Element
-Určuje základní podadresářích aplikace pro modul common language runtime pro hledání při načítání sestavení.  
+# <a name="probing-element"></a>\<> element zjišťování
+Určuje základní podadresáře aplikace pro modul CLR (Common Language Runtime), který se má při načítání sestavení vyhledat.  
   
- \<Konfigurace >  
-\<modul runtime >  
-\<assemblybinding – >  
-\<zjišťování >  
+ \<> Konfigurace  
+\<> modulu runtime  
+\<assemblyBinding >  
+\<> zjišťování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Určuje základní podadresářích aplikace pro modul common language runtime p
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`privatePath`|Požadovaný atribut.<br /><br /> Určuje podadresáře základního adresáře aplikace, které mohou obsahovat sestavení. Vymezení každý podadresář oddělte středníkem.|  
+|`privatePath`|Požadovaný atribut.<br /><br /> Určuje podadresáře základního adresáře aplikace, který může obsahovat sestavení. Jednotlivé podadresáře vydělte středníkem.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,7 +53,7 @@ Určuje základní podadresářích aplikace pro modul common language runtime p
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit základní podadresářích aplikace, které by měl modul runtime vyhledat sestavení.  
+ Následující příklad ukazuje, jak zadat základní podadresáře aplikace, ve které by měl modul runtime Hledat sestavení.  
   
 ```xml  
 <configuration>  
@@ -67,7 +67,7 @@ Určuje základní podadresářích aplikace pro modul common language runtime p
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Určení umístění sestavení](../../specify-assembly-location.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)

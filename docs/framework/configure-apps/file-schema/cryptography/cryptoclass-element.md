@@ -8,19 +8,19 @@ helpviewer_keywords:
 - cryptoClass element
 - <cryptoClass> element
 ms.assetid: 03db52ef-010e-44ea-b6fd-b9c900ecad50
-ms.openlocfilehash: da78140806ab8dbe7b7cb5e321e82755774ff25d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8076fba1ebae693aa5e4c80e822b9ae840ff1c5
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705256"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664326"
 ---
-# <a name="cryptoclass-element"></a>\<cryptoclass – > – Element
-Obsahuje kryptografickou třídu, která nemá mapování na popisný název v [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.  
+# <a name="cryptoclass-element"></a>\<cryptoClass – element >
+Obsahuje třídu kryptografie, která má mapování na popisný název v [ \<elementu nameEntry >](nameentry-element.md) .  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<mscorlib>  
-\<cryptographySettings>  
+\<cryptographySettings >  
 \<cryptoNameMapping>  
 \<cryptoClasses>  
 \<cryptoClass>  
@@ -38,7 +38,7 @@ Obsahuje kryptografickou třídu, která nemá mapování na popisný název v [
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`customClassName`|Požadovaný atribut.<br /><br /> Obsahuje informace o třídě kryptografie. Pomocí tohoto atributu zadejte krátký název pro vaši třídu. Je nutné zadat řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`customClassName`|Požadovaný atribut.<br /><br /> Obsahuje informace pro třídu kryptografie. Tento atribut slouží k zadání krátkého názvu vaší třídy. Je nutné zadat řetězec, který splňuje požadavky zadané v části [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,13 +48,13 @@ Obsahuje kryptografickou třídu, která nemá mapování na popisný název v [
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`cryptoClasses`|Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.|  
-|`cryptographySettings`|Obsahuje nastavení šifrování.|  
-|`cryptoNameMapping`|Obsahuje mapování tříd pro popisné názvy.|  
-|`mscorlib`|Obsahuje [ \<cryptographySettings – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md) elementu.|  
+|`cryptoClasses`|Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v [ \<elementu nameEntry >](nameentry-element.md) .|  
+|`cryptographySettings`|Obsahuje nastavení kryptografie.|  
+|`cryptoNameMapping`|Obsahuje mapování tříd na popisné názvy.|  
+|`mscorlib`|Obsahuje element cryptographySettings >. [ \<](cryptographysettings-element.md)|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<cryptoclass – >** element tak, aby odkazovaly kryptografickou třídu a konfigurace modulu runtime. Můžete poté předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použití <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu pro návrat `MyCryptoRSAClass` objektu.  
+ Následující příklad ukazuje použití  **\<prvku cryptoClass >** pro odkazování na třídu kryptografie a konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metodě a <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> použít metodu k vrácení `MyCryptoRSAClass` objektu.  
   
 ```xml  
 <configuration>  
@@ -77,7 +77,7 @@ Obsahuje kryptografickou třídu, která nemá mapování na popisný název v [
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma konfiguračního souboru](../index.md)
+- [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
-- [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)
