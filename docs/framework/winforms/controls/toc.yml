@@ -47,22 +47,17 @@
           href: how-to-add-activex-controls-to-windows-forms.md
         - name: Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
           href: considerations-when-hosting-an-activex-control-on-a-windows-form.md
-    - name: Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky
-      href: labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md
+    - name: Ovládací prvky popisků a zadání klávesových zkratek
       items:
-        - name: 'Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms'
+        - name: Přehled
+          href: labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md
+        - name: Vytvoření přístupových kláves pro ovládací prvky
           href: how-to-create-access-keys-for-windows-forms-controls.md
-        - name: 'Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms pomocí Návrháře'
-          href: how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md
-        - name: 'Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms'
+        - name: Nastavení textu zobrazovaného ovládacím prvkem
           href: how-to-set-the-text-displayed-by-a-windows-forms-control.md
-        - name: 'Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře'
-          href: how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md
-        - name: 'Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms'
+        - name: Nastavení obrázku zobrazovaného ovládacím prvkem
           href: how-to-set-the-image-displayed-by-a-windows-forms-control.md
-        - name: 'Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře'
-          href: how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md
-        - name: Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows
+        - name: Poskytování informací o usnadnění pro ovládací prvky
           href: providing-accessibility-information-for-controls-on-a-windows-form.md
     - name: Ovládací prvky používané ve Windows Forms
       href: controls-to-use-on-windows-forms.md
