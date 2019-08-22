@@ -10,46 +10,46 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - configuration settings [.NET Framework], cryptography
 ms.assetid: 1f55050a-b2a3-4868-a3c0-da20826150f3
-ms.openlocfilehash: 00b04cc2175f4bb4cc0b74602cd3c26f4a4e342f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2aa56f8b2a92f906293adfae9d23ed8959336fb
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705204"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664299"
 ---
-# <a name="cryptography-settings-schema"></a><span data-ttu-id="53a80-102">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="53a80-102">Cryptography Settings Schema</span></span>
-<span data-ttu-id="53a80-103">Schéma nastavení šifrování obsahuje elementy, které určují způsob mapování popisné názvy algoritmů tříd, které implementují algoritmy šifrování.</span><span class="sxs-lookup"><span data-stu-id="53a80-103">The cryptography settings schema contains elements that specify how to map friendly algorithm names to classes that implement cryptography algorithms.</span></span>  
+# <a name="cryptography-settings-schema"></a><span data-ttu-id="dfa1d-102">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="dfa1d-102">Cryptography Settings Schema</span></span>
+<span data-ttu-id="dfa1d-103">Schéma nastavení kryptografie obsahuje prvky, které určují způsob mapování popisných názvů algoritmů na třídy, které implementují algoritmy kryptografie.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-103">The cryptography settings schema contains elements that specify how to map friendly algorithm names to classes that implement cryptography algorithms.</span></span>  
   
- [<span data-ttu-id="53a80-104">**\<Konfigurace >**</span><span class="sxs-lookup"><span data-stu-id="53a80-104">**\<configuration>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [<span data-ttu-id="dfa1d-104"> **\<> Konfigurace**</span><span class="sxs-lookup"><span data-stu-id="dfa1d-104">**\<configuration>**</span></span>](../configuration-element.md)  
   
- [<span data-ttu-id="53a80-105">**\<mscorlib>**</span><span class="sxs-lookup"><span data-stu-id="53a80-105">**\<mscorlib>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/mscorlib-element-for-cryptography-settings.md)  
+ [<span data-ttu-id="dfa1d-105"> **\<mscorlib>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-105">**\<mscorlib>**</span></span>](mscorlib-element-for-cryptography-settings.md)  
   
- [<span data-ttu-id="53a80-106">**\<cryptographySettings>**</span><span class="sxs-lookup"><span data-stu-id="53a80-106">**\<cryptographySettings>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md)  
+ [<span data-ttu-id="dfa1d-106"> **\<cryptographySettings >** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-106">**\<cryptographySettings>**</span></span>](cryptographysettings-element.md)  
   
- [<span data-ttu-id="53a80-107">**\<cryptoNameMapping>**</span><span class="sxs-lookup"><span data-stu-id="53a80-107">**\<cryptoNameMapping>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)  
+ [<span data-ttu-id="dfa1d-107"> **\<cryptoNameMapping>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-107">**\<cryptoNameMapping>**</span></span>](cryptonamemapping-element.md)  
   
- [<span data-ttu-id="53a80-108">**\<cryptoClasses>**</span><span class="sxs-lookup"><span data-stu-id="53a80-108">**\<cryptoClasses>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)  
+ [<span data-ttu-id="dfa1d-108"> **\<cryptoClasses>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-108">**\<cryptoClasses>**</span></span>](cryptoclasses-element.md)  
   
- [<span data-ttu-id="53a80-109">**\<cryptoClass>**</span><span class="sxs-lookup"><span data-stu-id="53a80-109">**\<cryptoClass>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)  
+ [<span data-ttu-id="dfa1d-109"> **\<cryptoClass>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-109">**\<cryptoClass>**</span></span>](cryptoclass-element.md)  
   
- [<span data-ttu-id="53a80-110">**\<nameEntry>**</span><span class="sxs-lookup"><span data-stu-id="53a80-110">**\<nameEntry>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)  
+ [<span data-ttu-id="dfa1d-110"> **\<nameEntry >** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-110">**\<nameEntry>**</span></span>](nameentry-element.md)  
   
- [<span data-ttu-id="53a80-111">**\<oidMap>**</span><span class="sxs-lookup"><span data-stu-id="53a80-111">**\<oidMap>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)  
+ [<span data-ttu-id="dfa1d-111"> **\<oidMap>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-111">**\<oidMap>**</span></span>](oidmap-element.md)  
   
- [<span data-ttu-id="53a80-112">**\<oidEntry>**</span><span class="sxs-lookup"><span data-stu-id="53a80-112">**\<oidEntry>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)  
+ [<span data-ttu-id="dfa1d-112"> **\<oidEntry>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-112">**\<oidEntry>**</span></span>](oidentry-element.md)  
   
-|<span data-ttu-id="53a80-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="53a80-113">Element</span></span>|<span data-ttu-id="53a80-114">Popis</span><span class="sxs-lookup"><span data-stu-id="53a80-114">Description</span></span>|  
+|<span data-ttu-id="dfa1d-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="dfa1d-113">Element</span></span>|<span data-ttu-id="dfa1d-114">Popis</span><span class="sxs-lookup"><span data-stu-id="dfa1d-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="53a80-115">**\<cryptoClasses**></span><span class="sxs-lookup"><span data-stu-id="53a80-115">**\<cryptoClasses**></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)|<span data-ttu-id="53a80-116">Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování  **\<nameEntry >** elementu.</span><span class="sxs-lookup"><span data-stu-id="53a80-116">Contains a list of cryptography classes that have a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
-|[<span data-ttu-id="53a80-117">**\<cryptoClass**></span><span class="sxs-lookup"><span data-stu-id="53a80-117">**\<cryptoClass**></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|<span data-ttu-id="53a80-118">Obsahuje kryptografickou třídu, která nemá mapování na popisný název v  **\<nameEntry >** elementu.</span><span class="sxs-lookup"><span data-stu-id="53a80-118">Contains a cryptography class that has a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
-|[<span data-ttu-id="53a80-119">**\<cryptographySettings**></span><span class="sxs-lookup"><span data-stu-id="53a80-119">**\<cryptographySettings**></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md)|<span data-ttu-id="53a80-120">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="53a80-120">Contains cryptography settings.</span></span>|  
-|[<span data-ttu-id="53a80-121">**\<cryptoNameMapping**></span><span class="sxs-lookup"><span data-stu-id="53a80-121">**\<cryptoNameMapping**></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|<span data-ttu-id="53a80-122">Obsahuje mapování tříd pro popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="53a80-122">Contains mappings of classes to friendly names.</span></span>|  
-|[<span data-ttu-id="53a80-123">**\<mscorlib >** – element pro nastavení kryptografie</span><span class="sxs-lookup"><span data-stu-id="53a80-123">**\<mscorlib>** element for cryptography settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/mscorlib-element-for-cryptography-settings.md)|<span data-ttu-id="53a80-124">Obsahuje  **\<cryptographySettings – >** elementu.</span><span class="sxs-lookup"><span data-stu-id="53a80-124">Contains the **\<cryptographySettings>** element.</span></span>|  
-|[<span data-ttu-id="53a80-125">**\<nameEntry>**</span><span class="sxs-lookup"><span data-stu-id="53a80-125">**\<nameEntry>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)|<span data-ttu-id="53a80-126">Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="53a80-126">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>|  
-|[<span data-ttu-id="53a80-127">**\<oidEntry>**</span><span class="sxs-lookup"><span data-stu-id="53a80-127">**\<oidEntry>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|<span data-ttu-id="53a80-128">Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.</span><span class="sxs-lookup"><span data-stu-id="53a80-128">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>|  
-|[<span data-ttu-id="53a80-129">**\<oidMap>**</span><span class="sxs-lookup"><span data-stu-id="53a80-129">**\<oidMap>**</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|<span data-ttu-id="53a80-130">Obsahuje mapování ASN.1 OID pro třídy.</span><span class="sxs-lookup"><span data-stu-id="53a80-130">Contains ASN.1 OID mappings to classes.</span></span>|  
+|[<span data-ttu-id="dfa1d-115"> **\<cryptoClasses**></span><span class="sxs-lookup"><span data-stu-id="dfa1d-115">**\<cryptoClasses**></span></span>](cryptoclasses-element.md)|<span data-ttu-id="dfa1d-116">Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v  **\<elementu nameEntry >** .</span><span class="sxs-lookup"><span data-stu-id="dfa1d-116">Contains a list of cryptography classes that have a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
+|[<span data-ttu-id="dfa1d-117"> **\<cryptoClass**></span><span class="sxs-lookup"><span data-stu-id="dfa1d-117">**\<cryptoClass**></span></span>](cryptoclass-element.md)|<span data-ttu-id="dfa1d-118">Obsahuje třídu kryptografie, která má mapování na popisný název v  **\<elementu nameEntry >** .</span><span class="sxs-lookup"><span data-stu-id="dfa1d-118">Contains a cryptography class that has a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
+|[<span data-ttu-id="dfa1d-119"> **\<cryptographySettings**></span><span class="sxs-lookup"><span data-stu-id="dfa1d-119">**\<cryptographySettings**></span></span>](cryptographysettings-element.md)|<span data-ttu-id="dfa1d-120">Obsahuje nastavení kryptografie.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-120">Contains cryptography settings.</span></span>|  
+|[<span data-ttu-id="dfa1d-121"> **\<cryptoNameMapping**></span><span class="sxs-lookup"><span data-stu-id="dfa1d-121">**\<cryptoNameMapping**></span></span>](cryptonamemapping-element.md)|<span data-ttu-id="dfa1d-122">Obsahuje mapování tříd na popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-122">Contains mappings of classes to friendly names.</span></span>|  
+|[<span data-ttu-id="dfa1d-123">element > mscorlib pro nastavení kryptografie  **\<** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-123">**\<mscorlib>** element for cryptography settings</span></span>](mscorlib-element-for-cryptography-settings.md)|<span data-ttu-id="dfa1d-124">Obsahuje element cryptographySettings >.  **\<**</span><span class="sxs-lookup"><span data-stu-id="dfa1d-124">Contains the **\<cryptographySettings>** element.</span></span>|  
+|[<span data-ttu-id="dfa1d-125"> **\<nameEntry >** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-125">**\<nameEntry>**</span></span>](nameentry-element.md)|<span data-ttu-id="dfa1d-126">Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna třída měla mnoho popisných názvů.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-126">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>|  
+|[<span data-ttu-id="dfa1d-127"> **\<oidEntry>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-127">**\<oidEntry>**</span></span>](oidentry-element.md)|<span data-ttu-id="dfa1d-128">Mapuje identifikátor objektu ASN. 1 (OID) na popisný název.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-128">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>|  
+|[<span data-ttu-id="dfa1d-129"> **\<oidMap>** </span><span class="sxs-lookup"><span data-stu-id="dfa1d-129">**\<oidMap>**</span></span>](oidmap-element.md)|<span data-ttu-id="dfa1d-130">Obsahuje mapování ID ASN. 1 na třídy.</span><span class="sxs-lookup"><span data-stu-id="dfa1d-130">Contains ASN.1 OID mappings to classes.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="53a80-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="53a80-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dfa1d-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dfa1d-131">See also</span></span>
 
-- [<span data-ttu-id="53a80-132">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="53a80-132">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [<span data-ttu-id="53a80-133">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="53a80-133">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)
+- [<span data-ttu-id="dfa1d-132">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="dfa1d-132">Configuration File Schema</span></span>](../index.md)
+- [<span data-ttu-id="dfa1d-133">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="dfa1d-133">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)
