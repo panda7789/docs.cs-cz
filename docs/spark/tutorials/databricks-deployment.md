@@ -168,7 +168,7 @@ Příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applicat
 
 3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste nasadili rozhraní .NET pro Apache Spark aplikaci na datacihly. Pokud se chcete dozvědět víc o datacihlách, přejděte k dokumentaci Azure Databricks.
 
