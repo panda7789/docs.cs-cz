@@ -7,33 +7,33 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], about ProgressBar control
 - progress controls [Windows Forms], about progress controls
 ms.assetid: a05d9cba-3a6a-4f8f-94b8-8ec12799fb80
-ms.openlocfilehash: 24b47669cdf8ed0a8f0f936b0b3b9c354e62445f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7dd434492cd688527ddbce5aaffa442a0b40a9e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968309"
 ---
 # <a name="progressbar-control-overview-windows-forms"></a>ProgressBar – přehled ovládacího prvku (Windows Forms)
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.ToolStripProgressBar> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ProgressBar> řízení; však <xref:System.Windows.Forms.ProgressBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ProgressBar> <xref:System.Windows.Forms.ProgressBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStripProgressBar>  
   
- Windows Forms <xref:System.Windows.Forms.ProgressBar> ovládací prvek označuje průběh procesu zobrazením odpovídající počet obdélníků uspořádány ve vodorovném panelu. Po dokončení procesu se vyplní panelu. Indikátory průběhu se běžně používají k uživateli přidělit představu, jak jsme si počkat dokončení procesu. například při velkých souborů je načítání.  
+ Model Windows Forms <xref:System.Windows.Forms.ProgressBar> ovládací prvek indikuje průběh procesu zobrazením vhodného počtu obdélníků uspořádaných do vodorovného pruhu. Po dokončení procesu je pruh vyplněn. Indikátory průběhu se běžně používají k poskytnutí toho, jak dlouho chcete počkat na dokončení procesu. např. při načítání velkého souboru.  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ProgressBar> Ovládací prvek může být pouze vodorovně orientovaný na formuláři.  
+> <xref:System.Windows.Forms.ProgressBar> Ovládací prvek může být orientovaný na formuláři pouze vodorovně.  
   
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody  
- Klíčové vlastnosti <xref:System.Windows.Forms.ProgressBar> řízení, představují <xref:System.Windows.Forms.ProgressBar.Value%2A>, <xref:System.Windows.Forms.ProgressBar.Minimum%2A>, a <xref:System.Windows.Forms.ProgressBar.Maximum%2A>. <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> vlastnosti nastavte maximální a minimální hodnoty můžete zobrazit indikátor průběhu. <xref:System.Windows.Forms.ProgressBar.Value%2A> Vlastnost představuje pokroku, který provedl směrem k dokončení operace. Vzhledem k tomu, že na panelu se zobrazí v ovládacím prvku se skládá z bloků, zobrazí se hodnota ve <xref:System.Windows.Forms.ProgressBar> pouze blíží ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Value%2A> aktuální hodnoty vlastnosti. Podle velikosti <xref:System.Windows.Forms.ProgressBar> ovládací prvek, <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost určuje, kdy se má zobrazit další blok.  
+ Klíčové vlastnosti <xref:System.Windows.Forms.ProgressBar> ovládacího prvku jsou <xref:System.Windows.Forms.ProgressBar.Value%2A>, <xref:System.Windows.Forms.ProgressBar.Minimum%2A>a <xref:System.Windows.Forms.ProgressBar.Maximum%2A>. Vlastnosti <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a<xref:System.Windows.Forms.ProgressBar.Maximum%2A> nastaví maximální a minimální hodnoty, které může indikátor průběhu zobrazit. <xref:System.Windows.Forms.ProgressBar.Value%2A> Vlastnost představuje průběh, který byl proveden směrem k dokončení operace. Vzhledem k tomu, že pruh zobrazený v ovládacím prvku se skládá z bloků, hodnota <xref:System.Windows.Forms.ProgressBar> zobrazená ovládacím prvkem bude <xref:System.Windows.Forms.ProgressBar.Value%2A> odpovídat pouze aktuální hodnotě vlastnosti. Na základě velikosti <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost určuje, kdy se má zobrazit další blok.  
   
- Nejběžnější způsob, jak aktualizovat hodnotu aktuální průběh je napsat kód pro nastavení <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost. V příkladu načítání velkých souborů může být nastavena maximální velikost souboru v kilobajtech. Například pokud <xref:System.Windows.Forms.ProgressBar.Maximum%2A> vlastnost nastavena na hodnotu 100, <xref:System.Windows.Forms.ProgressBar.Minimum%2A> je nastavena na 10 a <xref:System.Windows.Forms.ProgressBar.Value%2A> je nastavena na 50, se zobrazí 5 obdélníků. Toto je první číslo, které je možné zobrazit.  
+ Nejběžnější způsob, jak aktualizovat aktuální hodnotu průběhu, je napsat kód pro nastavení <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnosti. V příkladu načtení velkého souboru můžete nastavit maximální velikost souboru v kilobajtech. Například pokud <xref:System.Windows.Forms.ProgressBar.Maximum%2A> je vlastnost nastavena na hodnotu 100 <xref:System.Windows.Forms.ProgressBar.Minimum%2A> , vlastnost je nastavena <xref:System.Windows.Forms.ProgressBar.Value%2A> na hodnotu 10 a vlastnost je nastavena na 50, zobrazí se 5 obdélníků. Toto je polovina čísla, které lze zobrazit.  
   
- Nicméně existují jiné způsoby ke změně hodnoty zobrazí <xref:System.Windows.Forms.ProgressBar> ovládacího prvku, kromě nastavení <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost přímo. <xref:System.Windows.Forms.ProgressBar.Step%2A> Vlastnosti lze zadat hodnotu zvýšit <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost. Potom volání <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> metoda zvýší hodnotu. Přírůstková hodnota se liší, můžete <xref:System.Windows.Forms.ProgressBar.Increment%2A> metoda a zadejte hodnotu, pomocí kterého se má zvýšit <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost.  
+ Existují však i <xref:System.Windows.Forms.ProgressBar> další způsoby, jak upravit hodnotu zobrazenou ovládacím prvkem, kromě <xref:System.Windows.Forms.ProgressBar.Value%2A> nastavení vlastnosti přímo. Vlastnost může být použita k zadání hodnoty, o kterou se má <xref:System.Windows.Forms.ProgressBar.Value%2A> zvýšit hodnota vlastnosti. <xref:System.Windows.Forms.ProgressBar.Step%2A> Potom volání <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> metody zvýší hodnotu. Chcete-li změnit přírůstek hodnoty, můžete použít <xref:System.Windows.Forms.ProgressBar.Increment%2A> metodu a zadat hodnotu, se kterou chcete <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost zvýšit.  
   
- Je jiný ovládací prvek, který graficky informuje uživatele o aktuální akci <xref:System.Windows.Forms.StatusBar> ovládacího prvku.  
+ Jiný ovládací prvek, který graficky informuje uživatele o aktuální akci, <xref:System.Windows.Forms.StatusBar> je ovládací prvek.  
   
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
+> <xref:System.Windows.Forms.ToolStripStatusLabel> <xref:System.Windows.Forms.StatusBar> <xref:System.Windows.Forms.StatusBarPanel> <xref:System.Windows.Forms.StatusBarPanel> Ovládací prvky <xref:System.Windows.Forms.StatusStrip> a nahrazují<xref:System.Windows.Forms.StatusBar> a přidávají funkce ovládacím prvkům a; ovládací prvky a jsou však uchovávány pro zpětnou kompatibilitu i pro budoucí použití, pokud výběrem.  
   
 ## <a name="see-also"></a>Viz také:
 

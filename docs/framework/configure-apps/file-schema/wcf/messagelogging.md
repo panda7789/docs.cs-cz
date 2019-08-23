@@ -2,19 +2,19 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: 70fb2df1d37af23d9ec19932806989ce3329bf3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f54028489ec5aa34ae38115d7a582b01b9da92f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768911"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931415"
 ---
-# <a name="messagelogging"></a>\<messageLogging>
+# <a name="messagelogging"></a>\<messageLogging >
 Tento prvek definuje nastavení možností protokolování zpráv Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<diagnostic>  
-\<messageLogging>  
+\<> diagnostiky  
+\<messageLogging >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ Tento prvek definuje nastavení možností protokolování zpráv Windows Commun
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`logEntireMessage`|Logická hodnota určující, zda je zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že pouze záhlaví zprávy je zaznamenána. Toto nastavení ovlivňuje všechny úrovně protokolování zpráv (služba, přenos a chybně formátovaný).|  
-|`logMalformedMessages`|Logická hodnota určující, zda jsou špatně vytvořené zprávy zaznamenány. Špatně vytvořené zprávy se nepočítají do `maxMessagesToLog`. Výchozí hodnota je `false`.|  
-|`logMessagesAtServiceLevel`|Logická hodnota určující, zda jsou zprávy trasovány na úrovni služby (před transformací související šifrování a transport). Výchozí hodnota je `false`.|  
-|`logMessagesAtTransportLevel`|Logická hodnota určující, zda jsou zprávy trasovány na úrovni přenosu. Jsou použity nějaké filtry zadané v konfiguračním souboru, a jsou trasovány pouze zprávy, které odpovídají filtrům. Výchozí hodnota je `false`.|  
-|`maxMessagesToLog`|Kladné celé číslo, které určuje maximální počet zaznamenavaných zpráv. Výchozí hodnota je 1000.|  
-|`maxSizeOfMessageToLog`|Kladné celé číslo, které určuje maximální velikost v bajtech zaznamenávané zprávy. Zprávy větší než limit se nebudou protokolovat. Toto nastavení ovlivňuje všechny úrovně trasování. Výchozí hodnota je 262144(0x4000).|  
+|`logEntireMessage`|Logická hodnota, která určuje, zda má být zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je protokolována pouze Hlavička zprávy. Toto nastavení má vliv na všechny úrovně protokolování zpráv (služba, přenos a nesprávně vytvořená).|  
+|`logMalformedMessages`|Logická hodnota, která určuje, zda jsou špatně vytvořené zprávy zaznamenány. Poškozené zprávy se nepočítají směrem k `maxMessagesToLog`. Výchozí hodnota je `false`.|  
+|`logMessagesAtServiceLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni služby (před transformací související s šifrováním a přenosem). Výchozí hodnota je `false`.|  
+|`logMessagesAtTransportLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni přenosu. Všechny filtry zadané v konfiguračním souboru jsou aplikovány a budou trasovány pouze zprávy, které odpovídají filtrům. Výchozí hodnota je `false`.|  
+|`maxMessagesToLog`|Celé kladné číslo určující maximální počet zpráv, které mají být protokolovány. Výchozí hodnota je 1000.|  
+|`maxSizeOfMessageToLog`|Celé kladné číslo určující maximální velikost zprávy, která se má protokolovat (v bajtech). Zprávy větší, než je limit, nebudou protokolovány. Toto nastavení má vliv na všechny úrovně trasování. Výchozí hodnota je 262144 (0x4000).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|filtry|`filters` Element obsahuje kolekci filtrů XPath. Pokud je povoleno protokolování zpráv přenosu (`logMessagesAtTransportLevel` je `true`), budou zaznamenány pouze zprávy odpovídající filtry.<br /><br /> Filtry se použijí pouze na transportní vrstvě. Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.<br /><br /> Atribut pouze pro tento element `filter`, je třída XpathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
+|filtry|`filters` Element obsahuje kolekci filtrů XPath. Pokud je povoleno protokolování přenosové zprávy`logMessagesAtTransportLevel` ( `true`je), budou protokolovány pouze zprávy, které odpovídají filtrům.<br /><br /> Filtry se aplikují jenom na transportní vrstvě. Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.<br /><br /> Jediný atribut pro tento prvek `filter`, je Třída XPathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|diagnostika|Definuje nastavení kontroly runtime WCF a ovládací prvek pro správce.|  
+|diagnostika|Definuje nastavení WCF pro kontrolu a kontrolu za běhu pro správce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zprávy jsou zaznamenány na třech různých úrovních v zásobníku: služba, přenos a je poškozený. Každá úroveň lze aktivovat samostatně.  
+ Zprávy jsou protokolovány na třech různých úrovních zásobníku: služba, Transport a poškozená. Jednotlivé úrovně lze aktivovat samostatně.  
   
- Filtry jazyka XPath lze přidat můžete protokolovat konkrétní zprávy na úrovni přenosu a služby. Pokud jsou definovány žádné filtry, protokolují se všechny zprávy. Filtry se použijí jenom u záhlaví zprávy. Text se ignoruje. WCF ignoruje text zprávy pro zvýšení výkonu. Pokud chcete filtrovat na základě obsahu těla, můžete vytvořit vlastní naslouchací proces s filtrem, která tak učiní.  
+ Filtry XPath lze přidat do protokolu pro zprávy specifické pro přenos a úrovně služeb. Pokud nejsou definovány žádné filtry, budou protokolovány všechny zprávy. Filtry se aplikují pouze na záhlaví zprávy. Tělo je ignorováno. WCF ignoruje tělo zprávy za účelem zvýšení výkonu. Pokud chcete filtrovat podle obsahu těla, můžete vytvořit vlastní naslouchací proces s filtrem, který to dělá.  
   
- Je potřeba vytvořit naslouchací proces trasování aktivujte trasování zprávy. Naslouchací proces sám může být jakékoli naslouchací proces, který funguje s <xref:System.Diagnostics> architektura trasování. Následující příklad ukazuje, jak vytvořit takový naslouchací proces.  
+ Chcete-li aktivovat trasování zpráv, je nutné vytvořit naslouchací proces trasování. Naslouchací proces může být libovolný naslouchací proces, který pracuje s <xref:System.Diagnostics> architekturou trasování. Následující příklad ukazuje, jak vytvořit takový naslouchací proces.  
   
 ```xml  
 <system.diagnostics>
@@ -127,4 +127,4 @@ Tento prvek definuje nastavení možností protokolování zpráv Windows Commun
 - <xref:System.ServiceModel.Diagnostics>
 - <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>
 - <xref:System.ServiceModel.Configuration.MessageLoggingElement>
-- [Konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
+- [Konfigurace protokolování zpráv](../../../wcf/diagnostics/configuring-message-logging.md)

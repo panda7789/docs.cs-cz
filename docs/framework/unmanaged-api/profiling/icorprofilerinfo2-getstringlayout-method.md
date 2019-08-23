@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4d4efa7cb3bc98c54be2889855c3b756fdbf2847
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63ad2532240c9f18a00421281fae0d111dbfaec5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782248"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963795"
 ---
 # <a name="icorprofilerinfo2getstringlayout-method"></a>ICorProfilerInfo2::GetStringLayout – metoda
-Získá informace o rozložení objektu string. Tato metoda je zastaralé v rozhraní .NET Framework 4 a je nahrazen technologií [icorprofilerinfo3::getstringlayout2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) metody.  
+Získá informace o rozložení objektu řetězce. Tato metoda je zastaralá v .NET Framework 4 a nahrazuje se metodou [ICorProfilerInfo3:: getstringlayout2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,36 +38,36 @@ HRESULT GetStringLayout(
   
 ## <a name="parameters"></a>Parametry  
  `pBufferLengthOffset`  
- [out] Ukazatel na posun umístění vzhledem ke `ObjectID` ukazatel, který ukládá délku řetězce. Délka se ukládá jako `DWORD`.  
+ mimo Ukazatel na posun umístění relativní vzhledem k `ObjectID` ukazateli, který ukládá délku řetězce. Délka je uložena jako `DWORD`.  
   
 > [!NOTE]
->  Tento parametr vrátí délku řetězce, nikoli délka vyrovnávací paměti. Délka vyrovnávací paměti je už k dispozici.  
+> Tento parametr vrátí délku samotného řetězce, nikoli délku vyrovnávací paměti. Délka vyrovnávací paměti již není k dispozici.  
   
  `PStringLengthOffset`  
- [out] Ukazatel na posun umístění vzhledem ke `ObjectID` ukazatel, který ukládá délku samotný řetězec. Délka se ukládá jako `DWORD`.  
+ mimo Ukazatel na posun umístění relativní vzhledem k `ObjectID` ukazateli, který ukládá délku samotného řetězce. Délka je uložena jako `DWORD`.  
   
  `pBufferOffset`  
- [out] Ukazatel na posun vyrovnávací paměti, relativní k `ObjectID` ukazatel, který ukládá řetězec širokých znaků.  
+ mimo Ukazatel na posun vyrovnávací paměti vzhledem k `ObjectID` ukazateli, který ukládá řetězec znaků v šířce.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetStringLayout` Metoda získá posuny, vzhledem k `ObjectID` ukazatele z umístění, ve kterých se ukládají následující:  
+ Metoda získá posuny relativní vzhledem `ObjectID` k ukazateli umístění, ve kterých jsou uloženy následující: `GetStringLayout`  
   
 - Délka vyrovnávací paměti řetězce.  
   
-- Délka samotný řetězec.  
+- Délka samotného řetězce.  
   
-- Vyrovnávací paměť, která obsahuje skutečné řetězec širokých znaků.  
+- Vyrovnávací paměť, která obsahuje skutečný řetězec velkých znaků.  
   
- Řetězce můžou být zakončený hodnotou null.  
+ Řetězce můžou být zakončené znakem null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

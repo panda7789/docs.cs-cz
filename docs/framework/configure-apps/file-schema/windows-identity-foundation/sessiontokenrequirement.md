@@ -3,15 +3,15 @@ title: <sessionTokenRequirement>
 ms.date: 03/30/2017
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
 author: BrucePerlerMS
-ms.openlocfilehash: 0c575e02862884e8f7ecf062138c36fe731f8e19
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 254d34149892abeaf31b9227f7567eb0a66ec0b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793767"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943667"
 ---
 # <a name="sessiontokenrequirement"></a>\<sessionTokenRequirement >
-Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídy nebo odvozené třídy.  
+Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídu nebo odvozené třídy.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -41,7 +41,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityToken
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|doba platnosti|Určuje životnost relace tokenů.|  
+|doba platnosti|Určuje dobu života tokenů relací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,7 +50,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityToken
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Přidá obslužnou rutinu tokenu zabezpečení do kolekce obslužné rutiny tokenů.|  
+|[\<add>](add.md)|Přidá do kolekce obslužných rutin tokenu zadanou obslužnou rutinu tokenu zabezpečení.|  
   
 ## <a name="example"></a>Příklad  
   

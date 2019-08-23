@@ -12,105 +12,105 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 26a581cc17859f7f4e0215017bfc405eae3cc15e
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 791c6c8b0396ec958ff0c8378038051b23d486d1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660887"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956700"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 
-Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:
+Reflexe poskytuje možnost získat informace o typech a členech a získat přístup ke členům (to znamená volat metody a konstruktory, získat a nastavit hodnoty vlastností, přidat a odebrat obslužné rutiny události atd.). Použití reflexe k získání informací o typech a členech není omezeno. Veškerý kód může pomocí reflexe provádět následující úlohy:
 
-- Zobrazení výčtu typů a členů a zkontrolovat jejich metadat.
+- Zobrazení výčtu typů a členů a kontrola jejich metadat.
 
-- Zobrazení výčtu a prozkoumejte sestavení a modulů.
+- Zobrazení výčtu a kontrola sestavení a modulů.
 
-Pomocí operace reflection přístupu k členům, naopak podléhá omezením. Od verze rozhraní .NET Framework 4, slouží pouze pro důvěryhodného kódu reflexe pro přístup ke členům kritické pro zabezpečení. Kromě toho můžete použít pouze pro důvěryhodného kódu reflexe pro přístup k neveřejné členy, které by byly přímo přístupné pro zkompilovaný kód. Kód, který se používá pro přístup ke členu bezpečný a kritický reflexi a konečně, musí mít oprávnění bezpečný a kritický člen požadavky, stejně jako u zkompilovaný kód.
+Použití reflexe pro přístup ke členům naproti tomu závisí na omezeních. Počínaje .NET Framework 4 může k přístupu ke členům kritickým pro zabezpečení použít reflexi jenom důvěryhodný kód. Kromě toho může použití reflexe k přístupu k NonPublic členům, kteří by nemuseli být přímým přístupem k kompilovanému kódu, použít pouze důvěryhodný kód. Nakonec kód, který používá reflexi pro přístup k bezpečnému členu kritického typu, musí mít libovolné oprávnění, aby Nepostradatelně kritické členské požadavky, stejně jako u zkompilovaného kódu.
 
-V souladu s potřebnými oprávněními můžete kód pomocí reflexe provádět následující typy přístupu:
+V souladu s potřebnými oprávněními může kód pomocí reflexe provádět následující typy přístupu:
 
-- Přístup k veřejné členy, které nejsou kritické pro zabezpečení.
+- Přístup k veřejným členům, kteří nejsou kritické pro zabezpečení
 
-- Přístup k neveřejné členy, které by byly přístupné pro zkompilovaný kód, pokud nejsou členy kritické z hlediska zabezpečení. Příklady takových neveřejní členové:
+- Přístup ke členům NonPublic, které by byly přístupné zkompilovanému kódu, pokud tyto členy nejsou kritické pro zabezpečení. Příklady takových členů NonPublic zahrnují:
 
-  - Chráněné členy základní třídy volající kód. (V reflexi, označuje se jako řady úrovně přístupu.)
+  - Chránění členové základních tříd kódu volání. (V reflexi se označuje jako přístup na úrovni rodiny.)
 
-  - `internal` Členové (`Friend` v jazyce Visual Basic) v sestavení volajícího kódu. (V reflexi, to se označuje jako přístup na úrovni sestavení.)
+  - `internal`Členové (`Friend` členové v Visual Basic) v sestavení volajícího kódu. (V reflexi se označuje jako přístup na úrovni sestavení.)
 
-  - Soukromé členy instancí jiné třídy, která obsahuje volající kód.
+  - Soukromé členy třídy, která obsahuje volající kód.
 
-Například kód, který běží v doméně aplikace v izolovaném prostoru je omezený přístup k popsané v tomto seznamu, pokud doména aplikace zaručuje další oprávnění.
+Například kód, který je spuštěn v doméně aplikace v izolovaném prostoru, je omezený na přístup popsaný v tomto seznamu, pokud aplikační doména neuděluje další oprávnění.
 
-Od verze rozhraní .NET Framework 2.0 Service Pack 1, došlo k pokusu o přístup ke členům, které jsou obvykle nedostupná generuje poptávka sady udělení plus cílového objektu <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak. Kód, který je spuštěn s úplným vztahem důvěryhodnosti (například kód v aplikaci, která se spustí z příkazového řádku) můžete vždy splňovat tato oprávnění. (To je v souladu s omezeními v přístupu k členům kritické pro zabezpečení, jak je popsáno dále v tomto článku.)
+Od .NET Framework 2,0 s aktualizací Service Pack 1 se snaží získat přístup ke členům, které jsou normálně nepřístupné, vygeneruje poptávku pro sadu udělení cílového objektu <xref:System.Security.Permissions.ReflectionPermission> a <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> s příznakem. Kód, který je spuštěn s úplným vztahem důvěryhodnosti (například kód v aplikaci spouštěný z příkazového řádku), může vždy splňovat tato oprávnění. (Toto je v souladu s omezeními při přístupu ke členům kritickým pro zabezpečení, jak je popsáno dále v tomto článku.)
 
-Volitelně můžete udělit doméně aplikace v izolovaném prostoru <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak, jak je popsáno v části [přístup k členům, že jsou obvykle nedostupná](#accessingNormallyInaccessible)dále v tomto článku.
+Volitelně může aplikační doména <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> s izolovaným prostorem (sandbox) přidělit s příznakem, jak je popsáno v části [přístup ke členům, kteří jsou normálně nepřístupní](#accessingNormallyInaccessible), dále v tomto článku.
 
 <a name="accessingSecurityCritical"></a>
 
-## <a name="accessing-security-critical-members"></a>Přístup k členům kritické pro zabezpečení
+## <a name="accessing-security-critical-members"></a>Přístup ke členům kritickým pro zabezpečení
 
-Člen je kritický pro zabezpečení má-li <xref:System.Security.SecurityCriticalAttribute>, pokud patří do typem, který má <xref:System.Security.SecurityCriticalAttribute>, nebo pokud je v kritické pro zabezpečení sestavení. Od verze rozhraní .NET Framework 4, pravidla pro přistupující členy kritické pro zabezpečení jsou následující:
+Člen je kritický pro zabezpečení <xref:System.Security.SecurityCriticalAttribute>, pokud má, pokud má, pokud patří do typu, který <xref:System.Security.SecurityCriticalAttribute>má, nebo pokud je v sestavení kritickém pro zabezpečení. Počínaje .NET Framework 4 jsou pravidla pro přístup ke členům kritickým pro zabezpečení následující:
 
-- Transparentní kód nemůže použít reflexe pro přístup ke členům kritické pro zabezpečení, i v případě, že je plně důvěryhodný kód. A <xref:System.MethodAccessException>, <xref:System.FieldAccessException>, nebo <xref:System.TypeAccessException> je vyvolána výjimka.
+- Transparentní kód nemůže použít reflexi pro přístup ke členům kritickým pro zabezpečení i v případě, že kód je plně důvěryhodný. Je vyvolána <xref:System.FieldAccessException>výjimka <xref:System.TypeAccessException> , nebo <xref:System.MethodAccessException>.
 
-- Kód, který běží s částečnou důvěryhodností je považována za průhlednou.
+- Kód, který je spuštěn s částečnou důvěryhodností, je považován za transparentní.
 
-Tato pravidla jsou stejné, ať už členem kritické pro zabezpečení k němu přistupuje přímo zkompilovaný kód, nebo přistupovat pomocí reflexe.
+Tato pravidla jsou stejná, bez ohledu na to, zda je ke kritickému členovi zabezpečení přistupuje přímo kompilovaným kódem, nebo k němu lze použít reflex
 
-Spustí kód aplikace, která se spouští z příkazového řádku s úplným vztahem důvěryhodnosti. Tak dlouho, dokud není označena jako transparentní, může použít reflexe pro přístup ke členům kritické pro zabezpečení. Při spuštění stejný kód s částečnou důvěryhodností (například v doméně aplikace v izolovaném prostoru) úroveň důvěryhodnosti sestavení určuje, jestli můžete přistupovat k kritické pro zabezpečení kódu: Pokud sestavení se silným názvem a je nainstalováno v globální mezipaměti sestavení, je důvěryhodná sestavení a může volat členy kritické z hlediska zabezpečení. Pokud není důvěryhodný, bude transparentní, i když nebyl označen jako transparentní, a nebude moct přistupovat k členy kritické z hlediska zabezpečení.
+Kód aplikace spouštěný z příkazového řádku se spouští s úplným vztahem důvěryhodnosti. Pokud není označený jako transparentní, může k přístupu ke členům kritickým pro zabezpečení použít reflexi. Při spuštění stejného kódu s částečným vztahem důvěryhodnosti (například v doméně aplikace v izolovaném prostoru) určuje úroveň vztahu důvěryhodnosti sestavení, zda může přistupovat ke kódu kritickému pro zabezpečení: Pokud sestavení má silný název a je nainstalováno v globální mezipaměti sestavení (GAC), jedná se o důvěryhodné sestavení a může volat členy kritické pro zabezpečení. Pokud není důvěryhodná, je tato volba transparentní, i když nebyla označena jako průhledná a nemůže přistupovat ke členům kritickým pro zabezpečení.
 
-Další informace o modelu zabezpečení v rozhraní .NET Framework 4 najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
+Další informace o modelu zabezpečení v .NET Framework 4 najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
 
-## <a name="reflection-and-transparency"></a>Reflexi a průhlednosti
+## <a name="reflection-and-transparency"></a>Odraz a průhlednost
 
-Od verze rozhraní .NET Framework 4, modul common language runtime určuje úroveň průhlednosti typu nebo člena z několika různými faktory, včetně úroveň důvěryhodnosti sestavení a úroveň důvěryhodnosti domény aplikace. Poskytuje reflexe <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Type.IsSecuritySafeCritical%2A>, a <xref:System.Type.IsSecurityTransparent%2A> vlastnosti vám umožní zjistit úroveň průhlednosti typu. V následující tabulce jsou uvedeny platné kombinace těchto vlastností.
+Počínaje .NET Framework 4 určuje modul CLR (Common Language Runtime) úroveň transparentnosti typu nebo člena z několika faktorů, včetně úrovně důvěryhodnosti sestavení a úrovně důvěryhodnosti domény aplikace. Reflexe <xref:System.Type.IsSecurityCritical%2A>poskytuje <xref:System.Type.IsSecuritySafeCritical%2A>vlastnosti, <xref:System.Type.IsSecurityTransparent%2A> a, které umožňují zjistit úroveň transparentnosti daného typu. V následující tabulce jsou uvedeny platné kombinace těchto vlastností.
 
 |Úroveň zabezpečení|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|
 |--------------------|------------------------|----------------------------|---------------------------|
 |Kritická|`true`|`false`|`false`|
-|Bezpečný a kritický|`true`|`true`|`false`|
+|Bezpečné – kritické|`true`|`true`|`false`|
 |Transparentní|`false`|`false`|`true`|
 
-Pomocí těchto vlastností je mnohem jednodušší než zkoumání poznámky k zabezpečení sestavení a jeho typy, kontrola aktuální úroveň důvěryhodnosti a pokusu duplikovat pravidla modul runtime. Pro stejný typ může být například kritické pro zabezpečení při spuštění z příkazového řádku, nebo transparentní pro zabezpečení při spuštění v doméně aplikace v izolovaném prostoru.
+Použití těchto vlastností je mnohem jednodušší než zkoumání poznámek zabezpečení sestavení a jeho typů, kontroly aktuální úrovně vztahu důvěryhodnosti a pokusu o duplikaci pravidel modulu runtime. Například stejný typ může být kritický pro zabezpečení při spuštění z příkazového řádku nebo transparentní z hlediska zabezpečení při spuštění v doméně aplikace v izolovaném prostoru.
 
-Na jsou podobné vlastnosti <xref:System.Reflection.MethodBase>, <xref:System.Reflection.FieldInfo>, <xref:System.Reflection.Emit.TypeBuilder>, <xref:System.Reflection.Emit.MethodBuilder>, a <xref:System.Reflection.Emit.DynamicMethod> třídy. (Pro další reflexe a reflexe abstrakce generování, atributy zabezpečení jsou použity na související metody, například v případě vlastnosti, které se použijí pro přistupující objekty vlastnosti.)
+Existují <xref:System.Reflection.MethodBase>podobné vlastnosti tříd<xref:System.Reflection.Emit.DynamicMethod> , <xref:System.Reflection.FieldInfo>, <xref:System.Reflection.Emit.TypeBuilder>, <xref:System.Reflection.Emit.MethodBuilder>a. (Pro další abstrakce vysílané abstrakce a atributy zabezpečení jsou aplikovány na přidružené metody, například v případě vlastností, které jsou aplikovány na přistupující objekty vlastnosti.)
 
 <a name="accessingNormallyInaccessible"></a>
 
-## <a name="accessing-members-that-are-normally-inaccessible"></a>Přístup k členům, které jsou obvykle nedostupná
+## <a name="accessing-members-that-are-normally-inaccessible"></a>Přístup ke členům, kteří jsou obvykle nepřístupné
 
-Používat reflexi k vyvolání členy, které budou pro podle pravidel usnadnění modulu common language runtime, váš kód musí být uděleno jednu z dvou oprávnění:
+Chcete-li použít reflexi k vyvolání členů, kteří nejsou k dispozici v souladu s pravidly přístupnosti společného jazykového modulu runtime, musí být vašemu kódu udělena jedna ze dvou oprávnění:
 
-- Chcete-li povolit kód, který má být vyvolán libovolný neveřejný člen: váš kód musí být uděleno <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak.
+- Chcete-li kódu dovolit vyvolat libovolný NonPublic člen: váš kód musí být <xref:System.Security.Permissions.ReflectionPermission> udělen <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pomocí příznaku.
 
   > [!NOTE]
-  > Ve výchozím nastavení zásady zabezpečení zakazuje toto oprávnění pro kód, který pochází z Internetu. Toto oprávnění musí udělit nikdy kód, který pochází z Internetu.
+  > Ve výchozím nastavení zásady zabezpečení zamítne toto oprávnění ke kódu, který pochází z Internetu. Toto oprávnění by nikdy nemělo být uděleno kódu, který pochází z Internetu.
 
-- Povolit kódu k vyvolání neveřejný člen, za předpokladu, sady udělení sestavení, které obsahuje Vyvolaný člen je stejná jako nebo podmnožinu, že sada oprávnění udělená sestavení, která obsahuje kód vyvolání: Váš kód musí být uděleno <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak.
+- Chcete-li povolit, aby kód vyvolal libovolný NonPublic člen, dokud sada udělení sestavení, které obsahuje vyvolaný člen, je stejná jako nebo podmnožina sady, sada udělení sestavení, která obsahuje kód vyvolání: Váš kód musí být udělen <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> s příznakem.
 
-Předpokládejme například, že udělíte doménu aplikace Internetová oprávnění plus <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak a pak spusťte aplikaci Internet se dvě sestavení, A a B.
+Předpokládejme například, že udělíte přístupová oprávnění <xref:System.Security.Permissions.ReflectionPermission> k doméně aplikace a <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> k příznaku a potom spustíte internetovou aplikaci se dvěma sestaveními, a a B.
 
-- Sestavení A můžete použít reflexe pro přístup ke členům soukromé sestavení B, protože sada udělení sestavení B nezahrnuje všechna oprávnění, která A nebylo uděleno.
+- Sestavení A může použít reflexi pro přístup k soukromým členům sestavení B, protože udělení sady sestavení B nezahrnuje žádná oprávnění, která nebyla udělena.
 
-- Sestavení A nelze pomocí reflexe pro přístup k soukromým členům sestavení rozhraní .NET Framework, jako například mscorlib.dll, protože soubor mscorlib.dll je plně důvěryhodný a proto má oprávnění, která nebyla udělena sestavení A. A <xref:System.MemberAccessException> je vyvolána při zabezpečení přístupu kódu vás zásobníku za běhu.
+- Sestavení A nemůže použít reflexi pro přístup k soukromým členům .NET Framework sestavení, jako je například mscorlib. dll, protože mscorlib. dll je plně důvěryhodný, a proto má oprávnění, která nebyla udělena sestavení A. Výjimka <xref:System.MemberAccessException> je vyvolána, když zabezpečení přístupu kódu projde zásobník v době běhu.
 
 ## <a name="serialization"></a>Serializace
 
-Pro serializaci <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> příznak umožňuje získávat a nastavovat členy Serializovatelné typy, bez ohledu na přístupnost. Toto oprávnění umožňuje kódu ke zjištění a privátní stav instance změnit. (Kromě udělením příslušná oprávnění, musí být typu [označené](../../../docs/standard/attributes/applying-attributes.md) v metadatech jako serializovatelný.)
+Pro serializaci <xref:System.Security.Permissions.SecurityPermission> <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> s příznakem poskytuje možnost získat a nastavit členy serializovatelných typů bez ohledu na přístupnost. Toto oprávnění umožňuje kódu zjistit a změnit soukromý stav instance. (Kromě udělení příslušných oprávnění musí být typ [označen](../../standard/attributes/applying-attributes.md) jako serializovatelný v metadatech.)
 
 ## <a name="parameters-of-type-methodinfo"></a>Parametry typu MethodInfo
 
-Vyhněte se vytváření veřejné členy trvají <xref:System.Reflection.MethodInfo> parametry, zejména pro důvěryhodného kódu. Tito členové můžou být zranitelnější vůči škodlivý kód. Představte si třeba veřejného člena v vysoce důvěryhodným kódem, který přijímá <xref:System.Reflection.MethodInfo> parametru. Předpokládejme, že veřejný člen nepřímo volá <xref:System.Reflection.MethodBase.Invoke%2A> metodu na zadaný parametr. Pokud veřejný člen neprovádí kontroly nezbytná oprávnění, volání <xref:System.Reflection.MethodBase.Invoke%2A> – metoda bude vždy úspěšné, protože systém zabezpečení určuje, že je vysoce důvěryhodné volající. I v případě, že škodlivý kód nemá oprávnění k přímo vyvolat metodu, můžete stále provádět tak nepřímo voláním veřejný člen.
+Vyhněte se psaní veřejných členů <xref:System.Reflection.MethodInfo> , kteří přijímají parametry, zejména pro důvěryhodný kód. Tito členové můžou být zranitelní proti škodlivému kódu. Představte si třeba veřejný člen ve vysoce důvěryhodném kódu, který <xref:System.Reflection.MethodInfo> přijímá parametr. Předpokládat, že veřejný člen nepřímo volá <xref:System.Reflection.MethodBase.Invoke%2A> metodu pro zadaný parametr. Pokud veřejný člen neprovede potřebné kontroly oprávnění, volání <xref:System.Reflection.MethodBase.Invoke%2A> metody bude vždy úspěšné, protože systém zabezpečení určí, že volající je vysoce důvěryhodný. I v případě, že škodlivý kód nemá oprávnění k přímému vyvolání metody, může i nadále provádět nepřímo voláním veřejného člena.
 
 ## <a name="version-information"></a>Informace o verzi
 
-- Od verze rozhraní .NET Framework 4, nelze transparentní kód pro přístup ke členům kritické pro zabezpečení pomocí reflexe.
+- Počínaje .NET Framework 4, transparentní kód nemůže použít reflexi pro přístup ke členům kritickým pro zabezpečení.
 
-- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak se používá v rozhraní .NET Framework 2.0 Service Pack 1. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro kód, který se používá pro přístup k neveřejné členy reflexe. Toto je oprávnění, které nikdy udělení částečně důvěryhodným kódem.
+- <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> Příznak je představený v sadě .NET Framework 2,0 Service Pack 1. Starší verze .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak kódu, který používá reflexi pro přístup ke členům NonPublic. Toto je oprávnění, které by nikdy nemělo být uděleno částečně důvěryhodnému kódu.
 
-- Od verze rozhraní .NET Framework 2.0, pomocí operace reflection k získání informací o neveřejným typům a členům nevyžaduje žádná oprávnění. V dřívějších verzích <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak je povinný.
+- Počínaje .NET Framework 2,0, použití reflexe k získání informací o typech a členech NonPublic nevyžaduje žádná oprávnění. V dřívějších verzích <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> se příznak vyžaduje.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -121,5 +121,5 @@ Vyhněte se vytváření veřejné členy trvají <xref:System.Reflection.Method
 - [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
 - [Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
 - [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
-- [Použití atributů](../../../docs/standard/attributes/applying-attributes.md)
+- [Použití atributů](../../standard/attributes/applying-attributes.md)
 - [Přístup k vlastním atributům](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)

@@ -1,17 +1,17 @@
 ---
-title: ICorDebugVariableSymbol::GetSize – metoda
+title: 'ICorDebugVariableSymbol:: GetSize – metoda'
 ms.date: 03/30/2017
 ms.assetid: add0cd9d-9a29-49b1-ae07-d9d3786b4ccd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e963e655c933c9191953bb32ba0b73adf0ae86d7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 782073968030d3dcdbbe49e0ed7732fe15c4a3bb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774865"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968164"
 ---
-# <a name="icordebugvariablesymbolgetsize-method"></a>ICorDebugVariableSymbol::GetSize – metoda
+# <a name="icordebugvariablesymbolgetsize-method"></a>ICorDebugVariableSymbol:: GetSize – metoda
 Získá velikost proměnné v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,21 +24,21 @@ HRESULT GetSize(
   
 ## <a name="parameters"></a>Parametry  
  `pcbValue`  
- Ukazatel 32bitové celé číslo bez znaménka obsahující velikost proměnné.  
+ Ukazatel na 32 unsigned integer, který obsahuje velikost proměnné.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

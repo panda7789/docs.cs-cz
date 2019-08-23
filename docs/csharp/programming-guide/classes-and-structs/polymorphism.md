@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: e71894e3674ed39dee129085d7ea7fb23a192f2b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e98399ac49e70f9139281ab75947c4acaf2dee7c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596233"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922072"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí pilíř objektově orientovaného programování, a to po zapouzdření a dědičnosti. Polymorfismus je řecký Word, který znamená "velký tvar" a má dva odlišné aspekty:  
@@ -85,7 +85,7 @@ Polymorfismus se často označuje jako třetí pilíř objektově orientovaného
  Další informace naleznete v tématu [Base](../../language-reference/keywords/base.md).  
   
 > [!NOTE]
->  Doporučuje se, aby virtuální členové použili `base` k volání implementace základní třídy tohoto člena ve své vlastní implementaci. V případě, že dojde k chování základní třídy, umožňuje odvozeným třídám soustředit se na implementaci konkrétního chování, které je specifické pro odvozenou třídu. Pokud není volána implementace základní třídy, je až do odvozené třídy, aby jejich chování bylo kompatibilní s chováním základní třídy.  
+> Doporučuje se, aby virtuální členové použili `base` k volání implementace základní třídy tohoto člena ve své vlastní implementaci. V případě, že dojde k chování základní třídy, umožňuje odvozeným třídám soustředit se na implementaci konkrétního chování, které je specifické pro odvozenou třídu. Pokud není volána implementace základní třídy, je až do odvozené třídy, aby jejich chování bylo kompatibilní s chováním základní třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   

@@ -10,72 +10,72 @@ helpviewer_keywords:
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6cf6120af21c6b8fcaf09203fcb3b77e4dcdfac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ee939096ef4e24397d03aa8a64405d66c740580
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621001"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946333"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Potenciální nástrahy datového a funkčního paralelismu
-V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> výrazné zlepšení výkonu může poskytovat prostřednictvím běžných sekvenčních smyčkách. Paralelní provádění smyčky však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní paralelní smyčky.  
+V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> může poskytovat významná vylepšení výkonu v rámci běžných sekvenčních smyček. Nicméně práce virtuálního smyčka zavádí složitost, která může vést k problémům, které se v sekvenčním kódu nevyskytují jako běžné nebo nejsou vůbec k dispozici. V tomto tématu jsou uvedeny některé postupy, které se vyhnete při psaní paralelních smyček.  
   
-## <a name="do-not-assume-that-parallel-is-always-faster"></a>Nepředpokládejte, že paralelní je vždy rychlejší  
- V některých případech může být pomalejší než sekvenční ekvivalent spuštění paralelní smyčky. Základním pravidlem je, že jsou paralelních smyček, které mají několik iterací a rychlé uživatelské delegáty velmi nepravděpodobné, že by zrychlení. Ale vzhledem k tomu výkon ovlivňuje mnoho faktorů, doporučujeme vždy měření skutečné výsledky.  
+## <a name="do-not-assume-that-parallel-is-always-faster"></a>Nepředpokládat, že paralelní je vždycky rychlejší  
+ V některých případech může paralelní smyčka běžet pomalejší než jeho sekvenční ekvivalent. Základní pravidlo pro palec je, že paralelní smyčky, které mají několik iterací a rychlé delegáty uživatele, nejsou pravděpodobně zrychlení mnohem. Vzhledem k tomu, že je v výkonu mnoho faktorů, doporučujeme, abyste vždycky měřili skutečné výsledky.  
   
-## <a name="avoid-writing-to-shared-memory-locations"></a>Vyhněte se zápis do umístění sdílené paměti  
- V sekvenčním kódu není nic neobvyklého, čtení nebo zápis do statické proměnné nebo pole třídy. Pokaždé, když přistupuje více podprocesů tyto proměnné souběžně, existuje však velké objemy potenciální konflikty časování. I když zámky můžete použít k synchronizaci přístupu k proměnné, náklady na synchronizaci může snížit výkon. Proto doporučujeme vám vyhnout, nebo aspoň omezit přístup ke sdílenému stavu v paralelních smyčkách co největší míře. Nejlepší způsob, jak to provést, je použít přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> , které používají <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> proměnnou pro uložení místního vlákna stav během provádění smyčky. Další informace najdete v tématu [jak: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) a [jak: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md).  
+## <a name="avoid-writing-to-shared-memory-locations"></a>Vyhněte se zápisu do sdílených umístění paměti  
+ V sekvenčním kódu není běžné číst z nebo zapisovat do statických proměnných nebo polí třídy. Kdykoli však více vláken přistupuje k těmto proměnným současně, existuje velký potenciál pro konflikty časování. I když můžete použít zámky k synchronizaci přístupu k proměnné, náklady na synchronizaci můžou snížit výkon. Proto doporučujeme, abyste se vyhnuli nebo přinejmenším omezili přístup ke sdílenému stavu v paralelní smyčce, a to co nejvíc. Nejlepším způsobem, jak to provést, je použít přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> , která používají <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> proměnnou k uložení místního stavu vlákna během provádění smyčky. Další informace najdete v tématu [jak: Napište Parallel. for Loop s proměnnými](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) místně vlákna a [postupy: Zapište smyčku Parallel. ForEach pomocí proměnných](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)lokálních na oddíl.  
   
-## <a name="avoid-over-parallelization"></a>Vyhněte se nadbytečnému  
- Při použití paralelních smyček, se vám účtovat režijní náklady na vytváření oddílů zdrojové kolekce a synchronizace pracovních vláken. Výhody paralelizace jsou dále omezeny počtem procesorů v počítači. Neexistuje žádné zrychlení k získané spuštěním více vláken výpočetní na právě jeden procesor. Proto musí být pozor, abyste nadbytečně smyčku.  
+## <a name="avoid-over-parallelization"></a>Vyhnout se paralelnímu využití  
+ Pomocí paralelních smyček se účtují režijní náklady na rozdělení zdrojové kolekce a synchronizaci pracovních vláken. Výhody paralelismu jsou dále omezeny počtem procesorů v počítači. Neexistují žádné zrychlení, které by bylo možné vymezit spuštěním více výpočetních vláken vázaných na pouze jeden procesor. Proto musíte mít pozor, abyste paralelizovat smyčku.  
   
- Nejběžnější scénář, ve které nadbytečnému může dojít, je ve vnořených smyčky. Ve většině případů je nejvhodnější paralelizovat jenom vnější smyčky, pokud jedna nebo více z následujících podmínek:  
+ Nejběžnější scénář, ve kterém může dojít k paralelnímu navýšení, je ve vnořených smyčkách. Ve většině případů je nejlepší paralelizovat jenom vnější smyčka, pokud se nepoužijí některé z následujících podmínek:  
   
-- Vnitřní smyčky je známo, že trvat velmi dlouho.  
+- Je známo, že vnitřní smyčka bude velmi dlouhá.  
   
-- Provádíte náročné výpočty na jednotlivé objednávky. (Operace je znázorněno v příkladu není nákladné.)  
+- V každé objednávce provádíte nákladný výpočet. (Operace uvedená v příkladu není nákladná.)  
   
-- Cílový systém jsou známy dostatek procesorů pro zpracování počet vláken, které budou vytvořeny paralelní provádění dotazu na `cust.Orders`.  
+- Pro cílový systém je známo, že má dostatek procesorů pro zpracování počtu vláken, která budou vytvořena virtuálního dotazem `cust.Orders`.  
   
- Ve všech případech je nejlepší způsob, jak určit optimální tvar dotazu pro testování a měření.  
+ Ve všech případech je nejlepším způsobem, jak určit optimální obrazec dotazu, testování a měření.  
   
-## <a name="avoid-calls-to-non-thread-safe-methods"></a>Vyhněte se volání metody není bezpečné pro vlákna  
- Zápis do metody instance vláknově bezpečné paralelní smyčky může vést k poškození dat, který může nebo nemusí pokračovat nezjištěné po ve svém programu. Může také vést k výjimkám. V následujícím příkladu by se pokoušet více vláken k volání <xref:System.IO.FileStream.WriteByte%2A?displayProperty=nameWithType> metoda současně, což není podporována třídou.  
+## <a name="avoid-calls-to-non-thread-safe-methods"></a>Nepoužívejte volání metod, které nejsou bezpečné pro přístup z více vláken  
+ Zápis na metody instance bez vlákna z paralelní smyčky může vést k poškození dat, které může nebo nemusí být v programu nedetekováno. Může také vést k výjimkám. V následujícím příkladu by se více vláken pokoušelo zavolat <xref:System.IO.FileStream.WriteByte%2A?displayProperty=nameWithType> metodu současně, což není podporováno třídou.  
   
  [!code-csharp[TPL_Pitfalls#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_pitfalls/cs/pitfalls.cs#04)]
  [!code-vb[TPL_Pitfalls#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#04)]  
   
-## <a name="limit-calls-to-thread-safe-methods"></a>Omezení volání metod bezpečným pro vlákno  
- Většina statických metod v rozhraní .NET Framework jsou bezpečné pro vlákna a může být volána z více vláken současně. I v těchto případech se však zapojení synchronizace může vést k výrazné mohou zpomalit zpracování dotazu.  
+## <a name="limit-calls-to-thread-safe-methods"></a>Omezení volání metod bezpečných pro přístup z více vláken  
+ Většina statických metod v .NET Framework je bezpečná pro přístup z více vláken a je možné ji volat z více vláken současně. Nicméně i v těchto případech může synchronizace vést k významnému zpomalení dotazu.  
   
 > [!NOTE]
->  Můžete vyzkoušet to sami vložením volání některých <xref:System.Console.WriteLine%2A> v dotazech. I když tato metoda se používá v příkladech dokumentaci pro demonstrační účely, nepoužívejte ji v paralelních smyčkách není-li nezbytné.  
+> Můžete to otestovat sami vložením některých volání do <xref:System.Console.WriteLine%2A> v dotazech. I když se tato metoda používá v příkladech dokumentace pro demonstrační účely, nepoužívejte ji v paralelních smyčkách, pokud není potřeba.  
   
-## <a name="be-aware-of-thread-affinity-issues"></a>Mějte na paměti problémů, spřažení vláken  
- Některé technologie, například interoperabilita modelů COM pro jedno vláknové objekty Apartment (STA) součásti Windows Forms a Windows Presentation Foundation (WPF), omezení vlákno vztahů, které vyžadují spuštění kódu na konkrétním vlákně. Například ve Windows Forms a WPF, ovládací prvek je přístupný pouze na vlákně, na kterém byla vytvořena. To znamená například, že ovládací prvek seznamu paralelní smyčky nelze aktualizovat, pokud nenakonfigurujete vlákno scheduler k plánování práce pouze na vlákně UI při. Další informace najdete v tématu [zadání kontext synchronizace](xref:System.Threading.Tasks.TaskScheduler#specifying-a-synchronization-context).  
+## <a name="be-aware-of-thread-affinity-issues"></a>Informace o problémech spřažení vláken  
+ Některé technologie, například interoperabilita modelu COM pro součásti s jedním vláknem (STA), model Windows Forms a Windows Presentation Foundation (WPF), ukládají omezení spřažení vláken, která vyžadují spouštění kódu v konkrétním vlákně. Například v model Windows Forms i WPF může být ovládací prvek k dispozici pouze ve vlákně, ve kterém byl vytvořen. To znamená, že například nelze aktualizovat ovládací prvek seznamu z paralelní smyčky, pokud nenastavíte Plánovač vlákna tak, aby naplánoval práci pouze ve vlákně uživatelského rozhraní. Další informace naleznete v tématu [určení kontextu synchronizace](xref:System.Threading.Tasks.TaskScheduler#specifying-a-synchronization-context).  
   
-## <a name="use-caution-when-waiting-in-delegates-that-are-called-by-parallelinvoke"></a>Buďte opatrní při čekání na v delegáty, kteří jsou volány Parallel.Invoke  
- V některých případech bude Task Parallel Library vložené úlohy, což znamená, že běží na úlohu s aktuálně spuštěné vlákno. (Další informace najdete v tématu [Plánovačích úkolů](xref:System.Threading.Tasks.TaskScheduler).) Optimalizace výkonu může vést k zablokování v některých případech. Například dvě úlohy mohly stejného delegáta kód, který signalizuje, že dojde k události, a potom čeká na signál jiných úloh. Pokud druhá úloha je vložená ve stejném vlákně jako první a první přejde do stavu čekání, druhá úloha již nikdy nebude moct signalizuje, že jeho událost. Aby se zabránilo taková situace, můžete zadat časový limit na operace čekání nebo použijte explicitní konstruktory vlákna zajistit, že některá úloha nelze blokovat druhé.  
+## <a name="use-caution-when-waiting-in-delegates-that-are-called-by-parallelinvoke"></a>Při čekání v delegátech volaných voláním Parallel. Invoke buďte opatrní.  
+ V některých případech bude úloha paralelní knihovny vložen úkol, což znamená, že se spustí na úkolu v aktuálně zpracovávaném vlákně. (Další informace najdete v tématu [plánovače úloh](xref:System.Threading.Tasks.TaskScheduler).) Tato optimalizace výkonu může vést k zablokování v určitých případech. Například dvě úlohy mohou spustit stejný kód delegáta, který signalizuje, když dojde k události, a poté čeká, až se druhý úkol dorazí na signál. Pokud je druhá úloha vložena ve stejném vlákně jako první a první přejde do stavu čekání, druhá úloha nebude nikdy moci signalizovat událost. Chcete-li se tomuto výskytu vyhnout, můžete zadat časový limit pro operaci čekání nebo použít explicitní konstruktory vlákna, které vám pomohou zajistit, že jeden úkol nemůže blokovat druhý.  
   
-## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nepředpokládejte, že iterace ForEach, pro a ForAll vždy spustit paralelně  
- Je důležité mít na paměti, že jednotlivé iterace v <xref:System.Threading.Tasks.Parallel.For%2A>, <xref:System.Threading.Tasks.Parallel.ForEach%2A> nebo <xref:System.Linq.ParallelEnumerable.ForAll%2A> smyčky může, ale není nutné spustit paralelně. Proto byste se měli vyhnout psaní kódu, který správnost závisí na paralelní zpracování iterace nebo spuštění iterace v libovolném pořadí. Například tento kód je pravděpodobně dojde k zablokování:  
+## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nepředpokládáme, že iterace ForEach, for a ForAll vždy provádějí paralelně  
+ Je důležité mít na paměti, že jednotlivé iterace v <xref:System.Threading.Tasks.Parallel.For%2A>, <xref:System.Threading.Tasks.Parallel.ForEach%2A> nebo <xref:System.Linq.ParallelEnumerable.ForAll%2A> smyčka nemusí být spouštěny paralelně. Proto byste se měli vyhnout psaní kódu, který závisí na správnosti paralelního provádění iterací nebo při provádění iterací v jakémkoli konkrétním pořadí. Například tento kód může zablokovat:  
   
  [!code-csharp[TPL_Pitfalls#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_pitfalls/cs/pitfalls.cs#01)]
  [!code-vb[TPL_Pitfalls#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#01)]  
   
- V tomto příkladu jednu iteraci nastaví událost a všech dalších iterací čekání na událost. Žádné čekající iterace můžete dokončit až do dokončení iterace nastavení události. Je však možné, že čekajících iterací blokovat všechna vlákna, které se používají ke spouštění paralelní smyčky před událostí iterace dostala příležitost k provedení. Výsledkem zablokování – událost iterace se nikdy neprovede a iterace čekání se nikdy probuzení.  
+ V tomto příkladu jedna iterace nastaví událost a všechny ostatní iterace na událost čekají. Žádná z čekacích iterací nemůže být dokončena, dokud se nedokončí iterace nastavení události. Je však možné, že čekající iterace zablokují všechna vlákna, která se používají ke spuštění paralelní smyčky, před tím, než bude iterace nastavení událostí vykonána. Výsledkem je zablokování – iterace nastavení události se nikdy nespustí a čekací iterace se nikdy neprobudí.  
   
- Zejména jedné iterace paralelní smyčky by nikdy čekat na další iteraci smyčky pokroku. Pokud se rozhodne paralelní smyčky naplánování iterace sekvenčně, ale v opačném pořadí, dojde k zablokování.  
+ Konkrétně jedna iterace paralelní smyčky by nikdy neměla čekat na další iteraci smyčky, aby bylo možné postupovat. Pokud se paralelní smyčka rozhodne naplánovat iterace sekvenčně, ale v opačném pořadí, dojde k zablokování.  
   
-## <a name="avoid-executing-parallel-loops-on-the-ui-thread"></a>Vyhněte se na vlákně UI při spouštění paralelní smyčky  
- Je důležité udržovat responzivní uživatelské rozhraní (UI). Pokud operace obsahuje dostatek práce, aby vláknem, ho pravděpodobně by neměla být spusťte tuto operaci na vlákně UI.  Místo toho by měl snižování zátěže tuto operaci k použití na vlákně na pozadí. Například pokud chcete použít paralelní smyčky pro výpočet nějaká data, která má být vykreslen pak do ovládacího prvku uživatelského rozhraní, měli byste zvážit spuštění smyčky v rámci instance úlohy, nikoli přímo v obslužné rutině události uživatelského rozhraní.  Pouze po dokončení základní výpočetní by vám pak zařazování aktualizace uživatelského rozhraní zpět do vlákna uživatelského rozhraní.  
+## <a name="avoid-executing-parallel-loops-on-the-ui-thread"></a>Nespouštět paralelní smyčky ve vlákně UI  
+ Je důležité zachovat reakce uživatelského rozhraní (UI) vaší aplikace. Pokud operace obsahuje dostatek práce pro zajištění paralelismu, pak pravděpodobně není nutné tuto operaci spustit ve vlákně uživatelského rozhraní.  Místo toho by měla přesměrovat tuto operaci na vlákno na pozadí. Například pokud chcete použít paralelní smyčku k výpočtu dat, která by měla být vykreslena do ovládacího prvku uživatelského rozhraní, měli byste zvážit spuštění smyčky v instanci úlohy, nikoli přímo v obslužné rutině události uživatelského rozhraní.  Pouze v případě, že je dokončeno základní výpočet, je třeba zařadit aktualizaci uživatelského rozhraní zpět do vlákna uživatelského rozhraní.  
   
- Pokud na vlákně UI při spouštění paralelní smyčky, pečlivě vyhnout aktualizace ovládacích prvků uživatelského rozhraní z v rámci smyčky. Pokus o aktualizaci uživatelského rozhraní ovládacích prvků z v rámci paralelní smyčky, který spouští ve vlákně uživatelského rozhraní může vést k poškození stavu, výjimky, opožděné aktualizace a dokonce zablokování, v závislosti na tom, jak vyvolat aktualizaci uživatelského rozhraní. Paralelní smyčka v následujícím příkladu blokuje vlákno uživatelského rozhraní, na kterém je spuštěn, dokud nejsou dokončeny všechny iterace. Ale pokud iteraci smyčky běží na vlákně na pozadí (jako <xref:System.Threading.Tasks.Parallel.For%2A> může provádět), volání Invoke způsobí, že zprávy k odeslání do vlákna uživatelského rozhraní a čeká na zpracování této zprávy. Protože blokovaný vlákně UI při spuštění <xref:System.Threading.Tasks.Parallel.For%2A>, může nikdy být zpráva zpracována a zablokování vlákna uživatelského rozhraní.  
+ Pokud spouštíte paralelní smyčky ve vlákně uživatelského rozhraní, buďte opatrní, abyste se vyhnuli aktualizaci ovládacích prvků uživatelského rozhraní v rámci smyčky. Při pokusu o aktualizaci ovládacích prvků uživatelského rozhraní z paralelní smyčky, která je spuštěna na vlákně UI, může dojít k poškození stavu, výjimkám, zpožděným aktualizacím a dokonce zablokování v závislosti na tom, jak je vyvolána aktualizace uživatelského rozhraní. V následujícím příkladu paralelní smyčka zablokuje vlákno uživatelského rozhraní, na kterém je spuštěno, až do dokončení všech iterací. Pokud je však iterace smyčky spuštěna ve vlákně na pozadí (jako <xref:System.Threading.Tasks.Parallel.For%2A> by mohla), volání metody Invoke způsobí odeslání zprávy do vlákna uživatelského rozhraní a blokuje čekání na zpracování této zprávy. Vzhledem k tomu <xref:System.Threading.Tasks.Parallel.For%2A>, že vlákno uživatelského rozhraní je blokováno spuštěním, zpráva nemůže být nikdy zpracována a dojde k zablokování vlákna uživatelského rozhraní.  
   
  [!code-csharp[TPL_Pitfalls#02](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_pitfalls/cs/pitfalls.cs#02)]
  [!code-vb[TPL_Pitfalls#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#02)]  
   
- Následující příklad ukazuje, jak nedošlo k zablokování spuštěním smyčky do instance úlohy. Smyčky neblokuje vlákno uživatelského rozhraní a může být zpráva zpracována.  
+ Následující příklad ukazuje, jak se vyhnout zablokování spuštěním smyčky uvnitř instance úlohy. Vlákno uživatelského rozhraní není blokováno smyčkou a zprávu lze zpracovat.  
   
  [!code-csharp[TPL_Pitfalls#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_pitfalls/cs/pitfalls.cs#03)]
  [!code-vb[TPL_Pitfalls#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#03)]  
@@ -84,4 +84,4 @@ V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty
 
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
 - [Potenciální nástrahy PLINQ](../../../docs/standard/parallel-programming/potential-pitfalls-with-plinq.md)
-- [Vzory paralelního programování: Principy a použití paralelních vzorů s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222)
+- [Vzory pro paralelní programování: Porozumění a použití paralelních vzorů s .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222)

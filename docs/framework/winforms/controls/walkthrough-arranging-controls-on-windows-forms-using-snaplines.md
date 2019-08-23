@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: 3ce6c250fadbb56b341d5e8dec3a9cb9d28940fe
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 8ac1ba6b8121aabea3c992ca5b943f231fc19ce2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040258"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950062"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
 Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro mnoho aplikací. Návrhář formulářů poskytuje mnoho nástrojů pro rozložení, které vám to umožní. Jednou z nejdůležitějších funkcí je tato <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.
@@ -87,7 +87,7 @@ Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro 
 1. Vyberte jeden z <xref:System.Windows.Forms.Button> ovládacích prvků a přesuňte ho blízko k pravému okraji formuláře, dokud se nezobrazí snapline. Vzdálenost snapline od pravého ohraničení je součtem <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacího prvku a hodnot <xref:System.Windows.Forms.Control.Padding%2A> vlastností formuláře.
 
 > [!NOTE]
->  Pokud je <xref:System.Windows.Forms.Control.Padding%2A> vlastnost formuláře nastavená na 0, 0, 0, 0, Návrhář formulářů má formu <xref:System.Windows.Forms.Control.Padding%2A> stínovou hodnotu 9, 9, 9, 9. Chcete-li toto chování přepsat, přiřaďte hodnotu jinou než 0, 0, 0, 0.
+> Pokud je <xref:System.Windows.Forms.Control.Padding%2A> vlastnost formuláře nastavená na 0, 0, 0, 0, Návrhář formulářů má formu <xref:System.Windows.Forms.Control.Padding%2A> stínovou hodnotu 9, 9, 9, 9. Chcete-li toto chování přepsat, přiřaďte hodnotu jinou než 0, 0, 0, 0.
 
 1. Změňte hodnotu <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacího prvku rozbalením <xref:System.Windows.Forms.Control.Margin%2A> <xref:System.Windows.Forms.Padding.All%2A> položky v okně **vlastnosti** a nastavením vlastnosti na hodnotu 0. Podrobnosti najdete v tématu [Návod: Rozložení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností](windows-forms-controls-padding-autosize.md)AutoSize.
 

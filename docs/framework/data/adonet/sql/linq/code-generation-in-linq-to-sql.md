@@ -2,12 +2,12 @@
 title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 63ac0f50b34a5e5d8739adbeb70f2412960227c3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 12470a8c14e0a41eb6e06fc5d4ba63c12924330b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666132"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939175"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
 Můžete vygenerovat kód reprezentující databázi pomocí Návrhář relací objektů nebo nástroje příkazového řádku SQLMetal. V obou případech dochází ke generování kompletního kódu ve třech fázích:  
@@ -32,7 +32,7 @@ Můžete vygenerovat kód reprezentující databázi pomocí Návrhář relací 
  Rozliší tento soubor definice schématu ze souboru definice schématu, který se používá k ověření externího souboru mapování. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).  
   
 > [!NOTE]
->  Uživatelé sady Visual Studio budou také tento soubor XSD v dialogovém okně schémat XML vyhledat jako "DbmlSchema. xsd". Chcete-li použít soubor XSD správně k ověření souboru DBML, přečtěte si téma [How to: Ověřte soubory DBML a externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)souborů.  
+> Uživatelé sady Visual Studio budou také tento soubor XSD v dialogovém okně schémat XML vyhledat jako "DbmlSchema. xsd". Chcete-li použít soubor XSD správně k ověření souboru DBML, přečtěte si téma [How to: Ověřte soubory DBML a externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)souborů.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  

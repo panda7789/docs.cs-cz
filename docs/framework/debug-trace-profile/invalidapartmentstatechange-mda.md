@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6a7be97ef3184c6836cd67e47b4e9383214f1b5f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7ff68ce5f612255f41ce3a7c6f2526c3a340cfcd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967317"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange – pomocník spravovaného ladění (MDA)
 Pomocník `invalidApartmentStateChange` spravovaného ladění (MDS) se aktivuje jedním z těchto dvou problémů:  
@@ -31,7 +31,7 @@ Pomocník `invalidApartmentStateChange` spravovaného ladění (MDS) se aktivuje
   
 - Stav objektu COM v vlákně vlákna není to, co bylo vyžádáno. To může způsobit, že se proxy budou používat pro komponenty modelu COM, které mají model podprocesů odlišný od aktuálního typu. To může způsobit <xref:System.InvalidCastException> , že bude vyvolána výjimka při volání objektu COM prostřednictvím rozhraní, která nejsou nastavena pro zařazování mezi platformami.  
   
-- Stav objektu COM apartment vlákna je jiný, než se očekávalo. To může způsobit neočekávanou hodnotu <xref:System.Runtime.InteropServices.COMException> RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při volání na obálku, která je volána za [běhu](../../../docs/standard/native-interop/runtime-callable-wrapper.md) (RCW). To může také způsobit, že některé komponenty modelu COM s jedním vláknem mají přístup více vlákny ve stejnou dobu, což může vést k poškození nebo ztrátě dat.  
+- Stav objektu COM apartment vlákna je jiný, než se očekávalo. To může způsobit neočekávanou hodnotu <xref:System.Runtime.InteropServices.COMException> RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při volání na obálku, která je volána za [běhu](../../standard/native-interop/runtime-callable-wrapper.md) (RCW). To může také způsobit, že některé komponenty modelu COM s jedním vláknem mají přístup více vlákny ve stejnou dobu, což může vést k poškození nebo ztrátě dat.  
   
 ## <a name="cause"></a>příčina  
   

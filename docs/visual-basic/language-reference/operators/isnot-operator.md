@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-ms.openlocfilehash: e07a775eec003a3e488f6909181aed3f742b4b91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a83b48e5e415bd6ca0c777cef6d34f7127691b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966925"
 ---
 # <a name="isnot-operator-visual-basic"></a>IsNot – operátor (Visual Basic)
-Porovná dvě proměnné objektových referencí.  
+Porovná dvě proměnné odkazu na objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,26 +24,26 @@ result = object1 IsNot object2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Povinný parametr. A `Boolean` hodnotu.  
+ Povinný parametr. `Boolean` Hodnota.  
   
  `object1`  
- Povinný parametr. Žádné `Object` proměnné nebo výrazu.  
+ Povinný parametr. Jakákoli `Object` proměnná nebo výraz.  
   
  `object2`  
- Povinný parametr. Žádné `Object` proměnné nebo výrazu.  
+ Povinný parametr. Jakákoli `Object` proměnná nebo výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- `IsNot` Určuje operátor, pokud reference na dva objekty odkazují na různé objekty. Neprovádí však porovnání hodnot. Pokud `object1` a `object2` odkazují na přesně stejnou instanci objektu, `result` je `False`; Pokud ne, `result` je `True`.  
+ `IsNot` Operátor určuje, zda dva odkazy na objekt odkazují na různé objekty. Ale neprovádí porovnávání hodnot. Pokud `object1` a `False` `result` `result` `True`oba odkazují na přesnou stejnou instanci objektu, je; Pokud ne, je. `object2`  
   
- `IsNot` je opakem `Is` operátor. Výhodou `IsNot` je, že se můžete vyhnout nevhodnou syntaxe `Not` a `Is`, což může být obtížně čitelné.  
+ `IsNot`je opakem `Is` operátoru. Výhodou `IsNot` je, že se můžete vyhnout nevhodným `Not` syntaxem s a `Is`, což může být obtížné ho přečíst.  
   
- Můžete použít `Is` a `IsNot` operátory k otestování objekty časné vazby a s pozdní vazbou.  
+ Operátory `Is` a`IsNot` můžete použít k otestování objektů s časnou vazbou i s pozdní vazbou.  
   
 > [!NOTE]
->  `IsNot` Operátor nelze použít k porovnání výrazy vrácených `TypeOf` operátor. Místo toho je nutné použít `Not` a `Is` operátory.  
+> Operátor nelze použít pro porovnání výrazů vrácených `TypeOf` z operátoru. `IsNot` Místo toho je nutné použít `Not` operátory a. `Is`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá obě `Is` operátor a `IsNot` operátor k dosažení stejného porovnání.  
+ Následující příklad kódu používá `Is` operátor `IsNot` i operátor k provedení stejného porovnání.  
   
  [!code-vb[VbVbalrOperators#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#29)]  
   
@@ -51,5 +51,5 @@ result = object1 IsNot object2
 
 - [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
 - [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Postupy: Otestujte, zda jsou dva objekty stejné](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-test-whether-two-objects-are-the-same.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Postupy: Testovat, zda jsou dva objekty stejné](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-test-whether-two-objects-are-the-same.md)

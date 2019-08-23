@@ -2,20 +2,20 @@
 title: <serviceThrottling>
 ms.date: 03/30/2017
 ms.assetid: a337d064-1e64-4209-b4a9-db7fdb7e3eaf
-ms.openlocfilehash: 995ff9979096757225c9241e977f86f755955945
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 77ed5e91f09d9e658deeb7996baaca445b4e0c90
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758103"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937112"
 ---
 # <a name="servicethrottling"></a>\<serviceThrottling>
-Určuje mechanismus omezení služby Windows Communication Foundation (WCF).  
+Určuje mechanismus omezování služby Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceThrottling>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,9 +33,9 @@ Určuje mechanismus omezení služby Windows Communication Foundation (WCF).
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|maxConcurrentCalls|Kladné celé číslo omezující počet zpráv, které právě zpracovat přes <xref:System.ServiceModel.ServiceHost>. Volání nad tento limit se zařadí do fronty. Tuto hodnotu nastavíte na 0 je rovnocenná ji nastavíte na hodnotu Int32.MaxValue. Výchozí hodnota je 16 * počet procesorů.|  
-|maxConcurrentInstances|Kladné celé číslo omezující počet <xref:System.ServiceModel.InstanceContext> objekty, které jsou spuštěny v jednu chvíli napříč <xref:System.ServiceModel.ServiceHost>. Požadavky na vytvoření další instance se zařadí do fronty a dokončit, jakmile je k dispozici slot pod limit. Výchozí hodnota je součtem maxConcurrentSessions a MaxConcurrentCalls|  
-|maxConcurrentSessions|Kladné celé číslo omezující počet relací <xref:System.ServiceModel.ServiceHost> může přijmout objekt.<br /><br /> Služba bude akceptovat připojení nad tento limit, ale pouze kanály pod limit jsou aktivní (zprávy načtené z kanálu). Tuto hodnotu nastavíte na 0 je rovnocenná ji nastavíte na hodnotu Int32.MaxValue. Výchozí hodnota je 100 * počet procesorů.|  
+|maxConcurrentCalls|Kladné celé číslo omezující počet zpráv, které jsou aktuálně zpracovány v rámci <xref:System.ServiceModel.ServiceHost>. Volání přesahující limit jsou zařazená do fronty. Nastavení této hodnoty na 0 je ekvivalentem nastavení Int32. MaxValue. Výchozí hodnota je 16 × počet procesorů.|  
+|maxConcurrentInstances|Kladné celé číslo, které omezuje počet <xref:System.ServiceModel.InstanceContext> objektů, které jsou spouštěny v jednom okamžiku <xref:System.ServiceModel.ServiceHost>napříč. Žádosti o vytvoření dalších instancí se zařadí do fronty a dokončí, když se uvolní slot pod limitem. Výchozí hodnota je součet hodnot maxConcurrentSessions a MaxConcurrentCalls.|  
+|maxConcurrentSessions|Kladné celé číslo omezující počet relací <xref:System.ServiceModel.ServiceHost> , které může objekt přijmout.<br /><br /> Služba bude přijímat připojení přesahující limit, ale budou aktivní jenom kanály pod limitem (zprávy se čtou z kanálu). Nastavení této hodnoty na 0 je ekvivalentem nastavení Int32. MaxValue. Výchozí hodnota je 100 × počet procesorů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -44,15 +44,15 @@ Určuje mechanismus omezení služby Windows Communication Foundation (WCF).
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Omezení ovládacích prvků umístit omezení na počtu souběžných volání, instance nebo relace, aby se zabránilo typu over-pass-the spotřebu prostředků.  
+ Omezení ovládacích prvků omezuje počet souběžných volání, instancí nebo relací, které zabrání přečerpání prostředků.  
   
- Trasování bude zapsáno pokaždé, když je dosaženo hodnoty atributů. První trasování bude zapsáno jako upozornění.  
+ Trasování je zapsáno pokaždé, když je dosaženo hodnoty atributů. První trasování je zapsáno jako varování.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfigurace určuje, že služba omezuje maximální souběžných volání 2 a maximální počet souběžných instancí do 10. Podrobný příklad spuštěním tohoto příkladu, naleznete v tématu [omezování](../../../../../docs/framework/wcf/samples/throttling.md).  
+ Následující příklad konfigurace určuje, že služba omezuje maximální počet souběžných volání na 2 a maximální počet souběžných instancí na 10. Podrobný příklad spuštění tohoto příkladu naleznete v tématu [omezování](../../../wcf/samples/throttling.md).  
   
 ```xml  
 <behaviors>
@@ -72,4 +72,4 @@ Určuje mechanismus omezení služby Windows Communication Foundation (WCF).
 
 - <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>
 - <xref:System.ServiceModel.Configuration.ServiceThrottlingElement>
-- [Řízení výkonu služby WCF pomocí ServiceThrottlingBehavior](../../../../../docs/framework/wcf/feature-details/using-servicethrottlingbehavior-to-control-wcf-service-performance.md)
+- [Řízení výkonu služby WCF pomocí ServiceThrottlingBehavior](../../../wcf/feature-details/using-servicethrottlingbehavior-to-control-wcf-service-performance.md)

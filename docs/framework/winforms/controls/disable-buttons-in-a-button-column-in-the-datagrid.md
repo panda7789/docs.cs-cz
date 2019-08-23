@@ -9,20 +9,20 @@ helpviewer_keywords:
 - buttons [Windows Forms], disabling in button columns
 - DataGridView control [Windows Forms], disabling button cells
 ms.assetid: 5c344d01-013a-4a6b-8f8d-62ec9321d81e
-ms.openlocfilehash: 7d6223e4d75524044e701ea4cf34dcc7487ccd25
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: b8bb503186e41c682b0685e4c9c4bf0bb3adcbe8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591782"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967387"
 ---
 # <a name="how-to-disable-buttons-in-a-button-column-in-the-windows-forms-datagridview-control"></a>Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Obsahuje ovládací prvek <xref:System.Windows.Forms.DataGridViewButtonCell> třída pro zobrazování buňky pomocí uživatelského rozhraní (UI) jako tlačítko. Ale <xref:System.Windows.Forms.DataGridViewButtonCell> neposkytuje způsob, jak zakázat vzhled tlačítka zobrazený buňku.  
+<xref:System.Windows.Forms.DataGridView> Ovládací prvek <xref:System.Windows.Forms.DataGridViewButtonCell> obsahuje třídu pro zobrazení buněk s uživatelským rozhraním (UI) jako tlačítko. <xref:System.Windows.Forms.DataGridViewButtonCell> Ale neposkytuje způsob, jak zakázat vzhled tlačítka zobrazovaného buňkou.  
   
- Následující příklad kódu ukazuje, jak přizpůsobit <xref:System.Windows.Forms.DataGridViewButtonCell> třídy k zobrazení tlačítka, která se může objevit zakázán. Příklad definuje nový typ buňky `DataGridViewDisableButtonCell`, která je odvozena od <xref:System.Windows.Forms.DataGridViewButtonCell>. Tento typ buňky poskytuje novou `Enabled` vlastnost, která může být nastaven na `false` nakreslete zakázané tlačítko v buňce. Příklad také definuje nový typ sloupce, `DataGridViewDisableButtonColumn`, který zobrazí `DataGridViewDisableButtonCell` objekty. Abychom tuto novou buňku ve sloupci Typ, aktuální hodnota pro každou z <xref:System.Windows.Forms.DataGridViewCheckBoxCell> v nadřazeném prvku. <xref:System.Windows.Forms.DataGridView> Určuje, zda `Enabled` vlastnost `DataGridViewDisableButtonCell` na stejném řádku je `true` nebo `false`.  
+ Následující příklad kódu ukazuje, jak přizpůsobit <xref:System.Windows.Forms.DataGridViewButtonCell> třídu pro zobrazení tlačítek, která se mohou zobrazit zakázané. Příklad definuje nový typ `DataGridViewDisableButtonCell`buňky,, který je odvozen z. <xref:System.Windows.Forms.DataGridViewButtonCell> Tento typ buňky poskytuje novou `Enabled` vlastnost, kterou lze `false` nastavit na vykreslení zakázaného tlačítka v buňce. V příkladu je také definován nový typ `DataGridViewDisableButtonColumn`sloupce, který zobrazuje `DataGridViewDisableButtonCell` objekty. Pro ukázku tohoto nového typu buňky a sloupce určuje aktuální <xref:System.Windows.Forms.DataGridViewCheckBoxCell> hodnota každého v nadřazeném objektu <xref:System.Windows.Forms.DataGridView> , `DataGridViewDisableButtonCell` zda `Enabled` je `true` vlastnost ve stejném řádku nebo `false`.  
   
 > [!NOTE]
->  Pokud odvozujete od <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností do odvozené třídy, je nutné přepsat `Clone` metoda kopírování nové vlastnosti během operace klonování. Měli byste také zavolat základní třídu `Clone` metodu tak, aby vlastností základní třídy jsou zkopírovány do nové buňky nebo sloupec.  
+> Při odvozování z <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností na odvozenou třídu nezapomeňte přepsat `Clone` metodu pro kopírování nových vlastností během operací klonování. Měli byste také zavolat `Clone` metodu základní třídy tak, aby byly vlastnosti základní třídy zkopírovány do nové buňky nebo sloupce.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridView.DisabledButtons#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.DisabledButtons/CS/form1.cs#0)]
@@ -31,7 +31,7 @@ ms.locfileid: "65591782"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Drawing, System.Windows.Forms a System.Windows.Forms.VisualStyles.  
+- Odkazy na sestavení System, System. Drawing, System. Windows. Forms a System. Windows. Forms. VisualStyles.  
   
 ## <a name="see-also"></a>Viz také:
 

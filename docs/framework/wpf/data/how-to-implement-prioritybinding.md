@@ -7,42 +7,42 @@ dev_langs:
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-ms.openlocfilehash: aaf2caff1e2684e08c7eb65125536f1070203d70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad19db9d686469e3ade1ff188553fceb8d525674
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020852"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937446"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
-<xref:System.Windows.Data.PriorityBinding> v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazby. Seznam vazby je nejnižší priorita seřazené od nejvyšší prioritou. Vrátí-li nejvyšší prioritou vazby hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat v seznamu vazeb. Může to být případ, který nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritu, která vrací hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  
+<xref:System.Windows.Data.PriorityBinding>v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sadě Works zadáním seznamu vazeb. Seznam vazeb je seřazen od nejvyšší priority až po nejnižší prioritu. Pokud vazba s nejvyšší prioritou vrátí hodnotu úspěšně při zpracování, pak není nikdy nutné zpracovat ostatní vazby v seznamu. Může se jednat o případ, že je vyhodnocování vazby s nejvyšší prioritou trvat dlouhou dobu, bude použita další nejvyšší priorita, která vrátí hodnotu, dokud vazba s vyšší prioritou nevrátí hodnotu úspěšně.  
   
 ## <a name="example"></a>Příklad  
- K předvedení jak <xref:System.Windows.Data.PriorityBinding> funguje, `AsyncDataSource` objekt byl vytvořen s následujícími třemi vlastnostmi: `FastDP`, `SlowerDP`, a `SlowestDP`.  
+ Chcete-li <xref:System.Windows.Data.PriorityBinding> předvést `AsyncDataSource` , jak funguje, objekt byl vytvořen pomocí následujících tří vlastností `FastDP`: `SlowerDP`, a `SlowestDP`.  
   
- Přístupová metoda get `FastDP` vrací hodnotu `_fastDP` datový člen.  
+ Přístupový objekt get objektu `FastDP` vrací hodnotu `_fastDP` datového členu.  
   
- Přístupová metoda get `SlowerDP` čeká 3 sekund před vrácením hodnoty `_slowerDP` datový člen.  
+ Přístupový objekt `SlowerDP` get pro čeká 3 sekundy před vrácením hodnoty `_slowerDP` datového členu.  
   
- Přístupová metoda get `SlowestDP` čeká na 5 sekund před vrácením hodnoty `_slowestDP` datový člen.  
+ Přístupový objekt `SlowestDP` Get čeká po dobu 5 sekund, než vrátí hodnotu `_slowestDP` datového členu.  
   
 > [!NOTE]
->  V tomto příkladu je pouze pro demonstrační účely. [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] Nedoporučujeme pokyny k definování vlastností, které jsou řádů pomalejší, než bude sada polí. Další informace najdete v tématu [výběr mezi vlastností a metod](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
+> Tento příklad je určen pouze pro demonstrační účely. [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] Pokyny pro definování vlastností, jejichž pořadí je pomalejší než sada polí, jsou doporučeny. Další informace naleznete v tématu [Výběr mezi vlastnostmi a metodami](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
   
  [!code-csharp[PriorityBinding#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
  [!code-vb[PriorityBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  
   
- <xref:System.Windows.Controls.TextBlock.Text%2A> Vlastnost vytvoří vazbu na výše uvedené `AsyncDS` pomocí <xref:System.Windows.Data.PriorityBinding>:  
+ Vlastnost se váže k výše uvedenému `AsyncDS` pomocí <xref:System.Windows.Data.PriorityBinding>: <xref:System.Windows.Controls.TextBlock.Text%2A>  
   
  [!code-xaml[PriorityBinding#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
   
- Když zpracovává modul vazby <xref:System.Windows.Data.Binding> objekty, začíná prvním <xref:System.Windows.Data.Binding>, který je vázán na `SlowestDP` vlastnost. Když to <xref:System.Windows.Data.Binding> je zpracování nevrací hodnotu úspěšně vzhledem k tomu, že se je v režimu spánku po dobu 5 sekund, takže další <xref:System.Windows.Data.Binding> zpracování elementu. Další <xref:System.Windows.Data.Binding> nevrací hodnotu úspěšně protože uspává se na 3 sekundy. Vazby pak přesune do další <xref:System.Windows.Data.Binding> element, který je vázán na `FastDP` vlastnost. To <xref:System.Windows.Data.Binding> vrací hodnotu "Rychlého Value". <xref:System.Windows.Controls.TextBlock> Nyní zobrazuje hodnotu "Rychlého Value".  
+ Když modul vazby zpracovává <xref:System.Windows.Data.Binding> objekty, začíná prvním <xref:System.Windows.Data.Binding>, `SlowestDP` který je vázán na vlastnost. Když je <xref:System.Windows.Data.Binding> tato hodnota zpracována, nevrátí hodnotu úspěšně, protože je pozastavena po dobu 5 sekund, takže <xref:System.Windows.Data.Binding> je zpracován další prvek. Další <xref:System.Windows.Data.Binding> nevrátí hodnotu úspěšně, protože je v režimu spánku po dobu 3 sekund. Modul vazby se pak přesune na další <xref:System.Windows.Data.Binding> prvek, který je svázán `FastDP` s vlastností. <xref:System.Windows.Data.Binding> Vrátí hodnotu "Rychlá hodnota". <xref:System.Windows.Controls.TextBlock> Nyní zobrazí hodnotu "Rychlá hodnota".  
   
- Po uplynutí 3 sekundy `SlowerDP` vlastnost vrací hodnotu "Pomalejší hodnotu". <xref:System.Windows.Controls.TextBlock> Zobrazí hodnotu "Pomalejší hodnotu".  
+ Po 3 sekundách uběhlá `SlowerDP` vlastnost vrátí hodnotu "pomalejší hodnota". <xref:System.Windows.Controls.TextBlock> Pak zobrazí hodnotu "pomalejší hodnota".  
   
- Po uplynutí 5 sekund `SlowestDP` vlastnost vrací hodnotu "Nejpomalejší hodnota". Že vazba má nejvyšší prioritu, protože je uvedená jako první. <xref:System.Windows.Controls.TextBlock> Nyní zobrazuje hodnotu "Nejpomalejší hodnota".  
+ Po uplynutí `SlowestDP` 5 sekund vrátí vlastnost hodnotu nejnižší hodnota. Tato vazba má nejvyšší prioritu, protože je uvedena jako první. <xref:System.Windows.Controls.TextBlock> Nyní zobrazí hodnotu nejnižší hodnota.  
   
- Zobrazit <xref:System.Windows.Data.PriorityBinding> informace o tom, co se považuje za úspěšná návratová hodnota z vazby.  
+ Informace <xref:System.Windows.Data.PriorityBinding> o tom, co se považuje za úspěšnou návratovou hodnotu z vazby, najdete v tématu.  
   
 ## <a name="see-also"></a>Viz také:
 

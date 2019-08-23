@@ -2,52 +2,52 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: bb60330aeedfe4b16a2a53d644e79a4a16636afa
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: e09a42f0f4a98728e588961425d8b6f5b50e6ccb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402439"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957218"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
   
-## <a name="implementing-wcf-services-as-dlls"></a>Implementace služby WCF jako knihovny DLL  
- Implementace WCF umožňuje služby jako knihovnu DLL, která je nasazena k adresáři \bin sady webovou aplikaci že můžete znovu použít službu mimo model webové aplikace, například v testovacím prostředí, která nemusí mít nasazený Internetové informační služby (IIS).  
+## <a name="implementing-wcf-services-as-dlls"></a>Implementace služeb WCF jako knihoven DLL  
+ Implementace služby WCF jako knihovny DLL, která je nasazena v adresáři \Bin webové aplikace, umožňuje znovu použít službu mimo model webové aplikace, například v testovacím prostředí, které nemusí mít nasazenou službu Internetová informační služba (IIS).  
   
-## <a name="service-hosts-in-iis-hosted-applications"></a>Obsluha hostitelů v aplikace hostované v IIS  
- K vytvoření nové služby hostitele tohoto naslouchání na síťové přenosy nativně nepodporuje hostitelské prostředí IIS nepoužívejte imperativní rozhraní API hostování na vlastním serveru (například služby IIS 6.0 do hostitele TCP služeb, protože komunikaci TCP nepodporuje nativně ve službě IIS 6.0). Tento přístup nedoporučuje. Obsluha hostitelů vytvořené imperativně nejsou známy v rámci služby IIS hostitelského prostředí. Kritický bod je, že zpracování provádí imperativně vytvořené služby nepočítá službou IIS při určování, zda je hostování fondu aplikací nečinný. Výsledkem je, že aplikace, které mají tyto hostitele imperativně vytvořené služby IIS hostitelské prostředí, které normálně agresivně uvolní hostitelské procesy služby IIS.  
+## <a name="service-hosts-in-iis-hosted-applications"></a>Hostitelé služeb v aplikacích hostovaných službou IIS  
+ Nepoužívejte imperativní rozhraní API pro samoobslužné hostování k vytváření nových hostitelů služby, které naslouchají síťovým přenosům, které nejsou nativně podporované hostitelským prostředím služby IIS (například IIS 6,0 pro hostování služeb TCP, protože komunikace TCP není nativně podporovaná ve službě IIS 6,0). Tento přístup se nedoporučuje. Hostitelé služeb, které jsou vytvořeny imperativně, nejsou v hostitelském prostředí služby IIS známy. Kritickým bodem je, že zpracování prováděné imperativně vytvořenými službami není pro službu IIS účtováno, když určuje, zda je fond hostitelských aplikací nečinný. Výsledkem je, že aplikace, které mají tyto imperativně vytvořené hostitele služeb, mají hostitelské prostředí služby IIS, které neagresivním způsobem uvolňuje hostitelské procesy služby IIS.  
   
-## <a name="uris-and-iis-hosted-endpoints"></a>Identifikátory URI a hostované v IIS koncových bodů  
- Koncové body služby hostované v IIS musí být nakonfigurovaný pomocí relativní Uniform Resource Identifier (identifikátory URI), není absolutní adresy. Zaručí se tak, že adresa koncového bodu spadá do sady adresy URI, které patří do hostitelské aplikace a zajišťuje, že se aktivace založená na zprávách stane dle očekávání.  
+## <a name="uris-and-iis-hosted-endpoints"></a>Identifikátory URI a koncové body hostované službou IIS  
+ Koncové body služby hostované službou IIS by měly být nakonfigurované pomocí relativních identifikátorů URI (Uniform Resource Identifier), nikoli absolutních adres. To zaručuje, že adresa koncového bodu spadá do sady adres URI, které patří do hostující aplikace, a zajišťuje tak, že aktivace na základě zpráv proběhne podle očekávání.  
   
-## <a name="state-management-and-process-recycling"></a>Správa stavu a recyklace procesů  
- Hostitelské prostředí služby IIS je optimalizovaná pro služby, které nemají místní stavu v paměti. Služba IIS recykluje hostitelský proces v reakci na různé události externí a interní způsobující žádné nestálá stav uloženy výhradně ve paměti ke ztrátě. Služby hostované ve službě IIS byste uložit jejich stav externího procesu (například v databázi) nebo do mezipaměti v paměti, které mohou být snadno znovu vytvořit Pokud události recyklace aplikace dojde k.  
+## <a name="state-management-and-process-recycling"></a>Recyklace správy stavů a procesů  
+ Prostředí hostování služby IIS je optimalizované pro služby, které neudržují místní stav v paměti. Služba IIS recykluje hostitelský proces v reakci na celou řadu externích a interních událostí, což způsobí ztrátu jakéhokoli nestálého stavu uloženého exkluzivně v paměti. Služby hostované ve službě IIS by měly ukládat svůj stav externě do procesu (například v databázi) nebo v mezipaměti v paměti, kterou lze snadno znovu vytvořit, pokud dojde k události recyklace aplikace.  
   
 > [!NOTE]
->  Protokoly používají WCF pro zprávu vrstvy spolehlivost a zabezpečení provedete používají nestálá stavu v paměti. WCF spolehlivé relace a relace zabezpečení pravděpodobně dojde k neočekávanému ukončení z důvodu aplikace recykluje. Aplikace hostované službou IIS, kterým je použití těchto protokolů by neměly být buď závislé na něco jiného než klíč relace poskytované WCF ke korelaci stavu aplikační vrstvu (například aplikační vrstvu konstrukce nebo vlastní korelace záhlaví) nebo zakázat Proces služby IIS recykluje hostované aplikace.  
+> Protokoly WCF používají pro spolehlivost a zabezpečení vrstvy zpráv a využívají stálý stav v paměti. Spolehlivé relace WCF a relace zabezpečení můžou neočekávaně skončit kvůli recyklaci aplikací. Aplikace hostované ve službě IIS, které využívají tyto protokoly, by měly buď záviset na něčem, než je klíč relace poskytnutý službou WCF pro korelaci stavu aplikační vrstvy (například konstrukce aplikační vrstvy nebo vlastní hlavičky korelace), nebo zakázat. Recyklace procesu služby IIS pro hostovanou aplikaci.  
   
 ## <a name="optimizing-performance-in-middle-tier-scenarios"></a>Optimalizace výkonu ve scénářích střední vrstvy  
- Pro optimální výkon *scénář střední vrstvy*– služba, která vám sdělí, k dalším službám v reakci na příchozí zprávy – po vytvoření instance klienta služby WCF ve vzdálené službě a opakovaně ji používat napříč více příchozí požadavky. Vytvoření instance klienty služby WCF je náročná operace vzhledem k provádění volání na existující instanci klienta služby a střední vrstvy scénáře vytváření zvýšení výkonu různých ukládáním vzdálených klientů napříč požadavky. Klienty služby WCF jsou bezpečná pro vlákno, takže není nutné k synchronizaci přístupu k klienta napříč více vlákny.  
+ Pro zajištění optimálního výkonu ve *scénáři střední vrstvy*– služba, která volá jiné služby v reakci na příchozí zprávy – vytvoří instanci klienta služby WCF pro vzdálenou službu jednou a znovu ji použije v rámci několika příchozích požadavků. Instance klientů služby WCF je náročná operace, která souvisí s tím, že se bude volat služba na stávající instanci klienta, a scénáře střední vrstvy vytvářejí jedinečné nárůsty výkonu ukládáním vzdálených klientů do mezipaměti mezi požadavky. Klienti služby WCF jsou bezpečné pro přístup z více vláken, takže není nutné synchronizovat přístup k klientovi napříč více vlákny.  
   
- Zvýšení výkonu střední vrstvy scénáře také vytvořit pomocí asynchronního rozhraní API generovaný `svcutil /a` možnost. `/a` Možnost způsobí, že [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování `BeginXXX/EndXXX` metod pro každou operaci služby, které umožňuje vzdálené volání potenciálně dlouhotrvající na vlákna na pozadí.  
+ Scénáře střední vrstvy také poskytují nárůst výkonu pomocí asynchronních rozhraní API generovaných `svcutil /a` možností. Možnost způsobí, že nástroj pro dodávání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje `BeginXXX/EndXXX` metody pro každou operaci služby, což umožňuje spouštět potenciálně dlouhodobá volání vzdálených služeb na vláknech na pozadí. `/a`  
   
-## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>U scénářů s více adresami nebo více pojmenované WCF  
- Nasadíte služby WCF v IIS webové farmy služby, kde sadu počítačů sdílet společný externí název (například `http://www.contoso.com`) jsou jednotlivě řešený různé názvy hostitelů, ale (například `http://www.contoso.com` může směrovat provoz do dvou různých počítačích s názvem `http://machine1.internal.contoso.com` a `http://machine2.internal.contoso.com`). Tento scénář nasazení plně podporuje WCF, ale vyžaduje speciální konfigurace web služby IIS, který hostuje služby WCF k zobrazení správné (externí) název hostitele v metadatech služby (Web Services Description Language).  
+## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>WCF ve scénářích s více adresami nebo s více názvy  
+ Služby WCF můžete nasadit v rámci webové farmy služby IIS, kde sada počítačů sdílí společný externí název (například `http://www.contoso.com`), ale jsou jednotlivě adresovány různými názvy hostitelů ( `http://www.contoso.com` například může směrovat provoz do dvou různých počítačů). pojmenované `http://machine1.internal.contoso.com` a`http://machine2.internal.contoso.com`). V tomto scénáři nasazení je služba WCF plně podporovaná, ale vyžaduje speciální konfiguraci webu služby IIS hostující služby WCF, aby se zobrazil správný (externí) název hostitele v metadatech služby (Web Services Description Language).  
   
- Ujistěte se, že se zobrazí správný název hostitele v metadatech služby WCF generuje, nakonfigurujte výchozí identitu pro web služby IIS, který je hostitelem služeb WCF pro použití explicitní název hostitele. Třeba počítače, které se nacházejí uvnitř `www.contoso.com` farmy byste použít vazbu webu služby IIS z *:80:www.contoso.com pro protokol HTTP a \*: 443:www.contoso.com pro protokol HTTPS.  
+ Aby se zajistilo, že se v metadatech služby vygeneruje správný název hostitele, nakonfigurujte výchozí identitu pro web IIS, který je hostitelem služeb WCF, aby používal explicitní název hostitele. Například počítače, které se nacházejí v rámci `www.contoso.com` farmy, by měly používat vazbu webu IIS *: 80: www. contoso. com pro http a \*: 443: www. contoso. com pro protokol HTTPS.  
   
- Vazby webu služby IIS můžete nakonfigurovat pomocí modulu snap-in Microsoft Management Console (MMC) služby IIS.  
+ Vazby webu služby IIS můžete konfigurovat pomocí modulu snap-in konzoly Microsoft Management Console (MMC) služby IIS.  
   
-## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Fondy aplikací, které jsou spuštěné v kontextech jiný uživatel přepsat sestavení z ostatních účtů v dočasné složce  
- Aby bylo zajištěno, že fondy aplikací, které jsou spuštěné v kontextu jiného uživatele nelze přepsat sestavení z ostatních účtů v dočasné složce souborů ASP.NET, pomocí jiné identity a dočasné složky pro různé aplikace. Například, pokud máte dva/Application1 virtuální aplikace a / Application2, můžete vytvořit dvěma fondy aplikací A a B, s dvě různé identity. Fond aplikací A můžete spustit identitu v rámci jednoho uživatele (user1) zatímco můžete spustit fond aplikací B pod jinou identitou uživatele (uživatel2) a konfigurace/Application1 nepoužije a /Application2 používat služby serveru B.  
+## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Fondy aplikací běžící v různých kontextech uživatele přepíší sestavení z jiných účtů v dočasné složce.  
+ Chcete-li zajistit, aby fondy aplikací běžící v různých kontextech uživatelů nemohly přepsat sestavení z jiných účtů ve složce dočasných souborů ASP.NET, použijte pro různé aplikace různé identity a dočasné složky. Například pokud máte dvě virtuální aplikace/Application1 nebo Application2, můžete vytvořit dva fondy aplikací, a a B, se dvěma různými identitami. Fond aplikací A může běžet pod identitou jednoho uživatele (uživatel1), zatímco fond aplikací B může běžet pod identitou jiné uživatele (uživatel2), a nakonfigurovat/Application1 na použití a/Application2 pro použití B.  
   
- V souboru Web.config, můžete nakonfigurovat dočasnou složku použitím \< system.web/compilation/@tempFolder>. Pro/Application1 může být "c:\tempForUser1" a pro application2 může být "c:\tempForUser2". Udělte odpovídající oprávnění k zápisu do těchto složek pro dvě identity.  
+ V souboru Web. config můžete dočasnou složku nakonfigurovat pomocí \< system.web/compilation/@tempFolder>. Pro/Application1 může být "c:\tempForUser1" a pro application2 může to být "c:\tempForUser2". Pro tyto dvě identity udělte odpovídající oprávnění k zápisu do těchto složek.  
   
- Potom uživatel2 nelze změnit složku generování kódu pro /application2 (v rámci c:\tempForUser1).  
+ Uživatel2 nemůže měnit složku pro generování kódu pro/application2 (v c:\tempForUser1).  
   
-## <a name="enabling-asynchronous-processing"></a>Povolení asynchronní zpracování  
- Ve výchozím nastavení jsou zpracována zprávy odeslané do služby WCF hostované v rámci služby IIS 6.0 a starší synchronním způsobem. ASP.NET zavolá WCF ve vlastním vlákně (pracovní vlákno technologie ASP.NET) a WCF používá jiné vlákno zpracovat požadavek. WCF obsahuje do vlákna pracovního procesu ASP.NET, dokud se nedokončí její zpracování. To vede k synchronní zpracování požadavků. Asynchronní zpracování požadavků umožňuje větší škálovatelnost, protože snižuje počet vláken potřebný ke zpracování žádosti – WCF neobsahuje vlákno ASP.NET během zpracování požadavku. Pro počítače, které běží služby IIS 6.0, protože neexistuje žádný způsob, jak omezit příchozí žádosti, které otevřete serveru se nedoporučuje použití asynchronní chování *DOS* útoky (DOS). Od verze služby IIS 7.0, bylo zavedeno omezení souběžný požadavek: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`. Pomocí této nové omezení je bezpečné používat asynchronní zpracování.  Ve výchozím nastavení ve službě IIS 7.0 jsou registrované asynchronní obslužné rutiny a modul. Pokud to bylo vypnuto, můžete ručně povolit asynchronní zpracování požadavků v souboru Web.config vaší aplikace. Nastavení použijete, závisí na vaší `aspNetCompatibilityEnabled` nastavení. Pokud máte `aspNetCompatibilityEnabled` nastavena na `false`, nakonfigurujte `System.ServiceModel.Activation.ServiceHttpModule` jak je znázorněno v následujícím fragmentu kódu konfigurace.  
+## <a name="enabling-asynchronous-processing"></a>Povolení asynchronního zpracování  
+ Ve výchozím nastavení jsou zprávy odesílané službě WCF hostované v rámci služby IIS 6,0 a starší zpracovávány synchronním způsobem. ASP.NET volá do WCF ve vlastním vlákně (pracovní vlákno ASP.NET) a WCF používá jiné vlákno ke zpracování žádosti. WCF drží do pracovního vlákna ASP.NET, dokud nedokončí jeho zpracování. To vede k synchronnímu zpracování požadavků. Asynchronní zpracování požadavků umožňuje větší škálovatelnost, protože snižuje počet vláken potřebných ke zpracování požadavku – technologie WCF není při zpracování žádosti ve vlákně ASP.NET. Pro počítače, na kterých běží služba IIS 6,0, se nedoporučuje používat asynchronní chování, protože neexistuje žádný způsob, jak omezit příchozí požadavky, které otevřou Server na útoky DoS ( *Denial of Service* ). Počínaje službou IIS 7,0 byla zavedena souběžná omezení požadavků: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`. Díky tomuto novému omezení je bezpečné použít asynchronní zpracování.  Ve výchozím nastavení je ve službě IIS 7,0 registrována asynchronní obslužná rutina a modul. Pokud je tato možnost vypnuta, můžete ručně povolit asynchronní zpracování požadavků v souboru Web. config vaší aplikace. Nastavení, která použijete, závisí `aspNetCompatibilityEnabled` na nastavení. Pokud jste `false` `System.ServiceModel.Activation.ServiceHttpModule` nastavili na, nakonfigurujte, jak je znázorněno v následujícím fragmentu konfigurace. `aspNetCompatibilityEnabled`  
   
 ```xml  
 <system.serviceModel>  
@@ -63,7 +63,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
     </system.webServer>  
 ```  
   
- Pokud máte `aspNetCompatibilityEnabled` nastavena na `true`, nakonfigurujte `System.ServiceModel.Activation.ServiceHttpHandlerFactory` jak je znázorněno v následujícím fragmentu kódu config.  
+ Pokud jste `true` `System.ServiceModel.Activation.ServiceHttpHandlerFactory` nastavili na, nakonfigurujte, jak je znázorněno v následujícím fragmentu konfigurace. `aspNetCompatibilityEnabled`  
   
 ```xml  
 <system.serviceModel>  
@@ -83,5 +83,5 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
   
 ## <a name="see-also"></a>Viz také:
 
-- [Služba, která hostuje ukázky](../samples/hosting.md)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Ukázky hostování služeb](../samples/hosting.md)
+- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

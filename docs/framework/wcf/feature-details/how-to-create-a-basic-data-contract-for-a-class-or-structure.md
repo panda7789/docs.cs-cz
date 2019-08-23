@@ -9,29 +9,29 @@ helpviewer_keywords:
 - DataContractAttribute class
 - data contracts [WCF], creating for a class or structure
 ms.assetid: bc464889-3070-4a2f-91d2-e788a0f686a7
-ms.openlocfilehash: 4e5e6b77cdb13c17557f176a37fbb9e7d42ab667
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15c59f3ee7cbefafef7a304cfd1477685fff68f2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047786"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968452"
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu
-Toto téma popisuje základní kroky k vytvoření kontraktu dat pomocí třídy nebo struktury. Další informace o kontraktech dat a způsob jejich použití naleznete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+V tomto tématu se dozvíte o základních krocích k vytvoření kontraktu dat pomocí třídy nebo struktury. Další informace o kontraktech dat a způsobu jejich použití najdete v tématu [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
- Kurz vás provede kroky k vytvoření základní služby Windows Communication Foundation (WCF) a klienta, najdete v tématu [kurz Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Ukázkové aplikace práci, která se skládá klienta a služby na úrovni basic, naleznete v tématu [základní kontrakt dat](../../../../docs/framework/wcf/samples/basic-data-contract.md).  
+ Kurz, který vás provede kroky pro vytvoření služby a klienta základní Windows Communication Foundation (WCF), najdete v [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Pracovní ukázkovou aplikaci, která se skládá ze základní služby a klienta, najdete v tématu [Základní kontrakt dat](../../../../docs/framework/wcf/samples/basic-data-contract.md).  
   
 ### <a name="to-create-a-basic-data-contract-for-a-class-or-structure"></a>Vytvoření základního kontraktu dat pro třídu nebo strukturu  
   
-1. Deklarujte, že má typ kontraktu dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut třídy. Všimněte si, že všechny veřejné typy, včetně těch bez atributy, jsou serializovatelné. <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat, pokud <xref:System.Runtime.Serialization.DataContractAttribute> atribut chybí. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+1. Deklaruje, že typ obsahuje kontrakt dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atributu na třídu. Všimněte si, že všechny veřejné typy, včetně těch, které jsou bez atributů, jsou serializovatelný. Odvodí kontrakt dat, <xref:System.Runtime.Serialization.DataContractAttribute> Pokud chybí atribut. <xref:System.Runtime.Serialization.DataContractSerializer> Další informace naleznete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
-2. Definování členů (vlastnosti, pole nebo události), které jsou serializovány použitím <xref:System.Runtime.Serialization.DataMemberAttribute> atribut pro každého člena. Tyto členy, se nazývají datové členy. Standardně jsou všechny veřejné typy serializovatelné. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+2. Definujte členy (vlastnosti, pole nebo události), které jsou serializovány <xref:System.Runtime.Serialization.DataMemberAttribute> použitím atributu pro každý člen. Tito členové se nazývají datové členy. Ve výchozím nastavení jsou všechny veřejné typy serializovatelný. Další informace naleznete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
     > [!NOTE]
-    >  Můžete použít <xref:System.Runtime.Serialization.DataMemberAttribute> atribut k privátním položkám, způsobí data, která mají být vystaveny ostatním uživatelům. Ujistěte se, že člen neobsahuje citlivá data.  
+    > Můžete použít <xref:System.Runtime.Serialization.DataMemberAttribute> atribut na soukromá pole, což způsobí, že budou data zveřejněna ostatním. Ujistěte se, že člen neobsahuje citlivá data.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob vytvoření kontraktu dat pro `Person` typ použitím <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy třídy a jejích členů.  
+ Následující příklad ukazuje, jak vytvořit kontrakt dat pro `Person` typ <xref:System.Runtime.Serialization.DataContractAttribute> použitím atributů a <xref:System.Runtime.Serialization.DataMemberAttribute> pro třídu a její členy.  
   
  [!code-csharp[DataContractAttribute#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/datacontractattribute/cs/overview.cs#2)]
  [!code-vb[DataContractAttribute#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/datacontractattribute/vb/overview.vb#2)]  

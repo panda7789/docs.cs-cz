@@ -13,23 +13,23 @@ helpviewer_keywords:
 - INotifyPropertyChanged interface [Windows Forms], using with BindingSource
 - BindingSource component [Windows Forms], examples
 ms.assetid: 7fa2cf51-c09f-4375-adf0-e36c5617f099
-ms.openlocfilehash: 6a622e64076d2ed2a073dc0f0e55204d1767cfd7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 7dc640f272226da650a63b1a3434822d21053b48
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591833"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968281"
 ---
 # <a name="how-to-raise-change-notifications-using-a-bindingsource-and-the-inotifypropertychanged-interface"></a>Postupy: Vytváření oznámení o změnách pomocí rozhraní BindingSource a INotifyPropertyChanged
-<xref:System.Windows.Forms.BindingSource> Komponenty automaticky zjistí změny ve zdroji dat. Pokud je typ obsažený v implementuje zdroj dat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vyvolá <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události při změně hodnoty vlastnosti. To je užitečné, protože ovládací prvky vázané <xref:System.Windows.Forms.BindingSource> pak automaticky aktualizuje jako změn dat zdrojové hodnoty.  
+Komponenta automaticky detekuje změny ve zdroji dat, když typ obsažený ve zdroji dat <xref:System.ComponentModel.INotifyPropertyChanged> implementuje rozhraní a vyvolá <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události při změně hodnoty vlastnosti. <xref:System.Windows.Forms.BindingSource> To je užitečné, protože ovládací prvky vázané <xref:System.Windows.Forms.BindingSource> na se budou automaticky aktualizovat podle změny hodnot zdrojů dat.  
   
 > [!NOTE]
->  Pokud zdroj dat implementuje <xref:System.ComponentModel.INotifyPropertyChanged> a provádění asynchronní operace, by neměla provést změny pro zdroj dat na vlákně na pozadí. By měl místo toho načtěte data ve vlákně na pozadí a slučování dat do seznamu na vlákně UI.  
+> Pokud váš zdroj dat implementuje <xref:System.ComponentModel.INotifyPropertyChanged> a provádíte asynchronní operace, neměli byste provádět změny zdroje dat ve vlákně na pozadí. Místo toho byste měli číst data ve vlákně na pozadí a slučovat data do seznamu ve vlákně uživatelského rozhraní.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje jednoduchý provádění <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Také ukazuje, jak <xref:System.Windows.Forms.BindingSource> automaticky předá Změna zdroje dat pro vazbu ovládacího prvku, když <xref:System.Windows.Forms.BindingSource> je vázán na seznam <xref:System.ComponentModel.INotifyPropertyChanged> typu.  
+ Následující příklad kódu ukazuje jednoduchou implementaci <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Také ukazuje, jak <xref:System.Windows.Forms.BindingSource> automaticky předává zdroj dat do vázaného ovládacího prvku, <xref:System.Windows.Forms.BindingSource> když je svázán se seznamem <xref:System.ComponentModel.INotifyPropertyChanged> typu.  
   
- Pokud používáte `CallerMemberName` atribut, volání `NotifyPropertyChanged` metoda není nutné zadat název vlastnosti jako argument řetězec. Další informace najdete v tématu [informace o volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md) nebo [informace o volajícím (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md).  
+ Použijete `CallerMemberName` -li atribut, volání `NotifyPropertyChanged` metody nemusejí zadávat název vlastnosti jako argument řetězce. Další informace naleznete v tématu [informace o volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md) nebo [informace o volajícím (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md).  
   
  [!code-csharp[System.ComponentModel.IPropertyChangeExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IPropertyChangeExample/CS/Form1.cs#1)]
  [!code-vb[System.ComponentModel.IPropertyChangeExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IPropertyChangeExample/VB/Form1.vb#1)]  
@@ -37,10 +37,10 @@ ms.locfileid: "65591833"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. data, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ComponentModel.INotifyPropertyChanged>
 - [Komponenta BindingSource](bindingsource-component.md)
-- [Postupy: Vytváření oznámení o změnách pomocí metody BindingSource Resetitem](how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)
+- [Postupy: Vyvolat oznámení o změnách pomocí metody BindingSource ResetItem](how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)

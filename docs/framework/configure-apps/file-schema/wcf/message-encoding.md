@@ -2,28 +2,28 @@
 title: Kódování zpráv
 ms.date: 03/30/2017
 ms.assetid: f30ee941-aca9-4c67-82a5-421568496f07
-ms.openlocfilehash: 7fb0d4a994eaf1497841691eb76261329a48599d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e5a71095ba62e0e2e6592c8b7b83b67602ef7e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768989"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931596"
 ---
 # <a name="message-encoding"></a>Kódování zpráv
-Kódování je proces transformace sady znaků Unicode na sekvenci bajtů. Dekódování je opačný proces. Windows Communication Foundation (WCF) zahrnuje tři typy kódování zprávy protokolu SOAP: Text, binární soubor a mechanismus optimalizaci přenosu zprávu (MTOM).  
+Kódování je proces transformace sady znaků Unicode na sekvenci bajtů. Dekódování je zpětný proces. Windows Communication Foundation (WCF) obsahuje tři typy kódování pro zprávy SOAP: Text, binární a mechanismus optimalizace přenosu zpráv (MTOM).  
   
- `binaryMessageEncoding` Konfigurační oddíl určuje na znak kódování a správu verzí zpráv použít pro binární soubor založené zprávy XML. Kodér binárních zpráv kóduje zprávy služby Windows Communication Foundation (WCF) v binárním souboru na lince. Když toto kódování má za následek velmi rychlé zpracování přenos zpráv, vzájemná funkční spolupráce podle WS-* standardů se ztratí.  
+ `binaryMessageEncoding` Konfigurační oddíl určuje kódování znaků a verze zprávy používané pro binární zprávy XML. Kodér binární zprávy kóduje Windows Communication Foundation (WCF) v binárním souboru na lince. I když toto kódování vede k velmi rychlému přenosu zpráv, vzájemná funkční spolupráce založená na standardech WS-* bude ztracena.  
   
- `mtomMessageEncoding` Konfigurační oddíl určuje na znak kódování a správu verzí zpráv používá zprávy pomocí kódování zpráv přenosu optimalizace mechanismus (MTOM). (MTOM) je efektivní technologie pro přenos binární data v zpráv Windows Communication Foundation (WCF). Kodér MTOM se pokusí hledají rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové formě, ale optimalizuje velkých bloků binárních dat jako ušetřený přenosem-je, bez převodu na text.  
+ `mtomMessageEncoding` Konfigurační oddíl určuje kódování znaků a správu verzí zpráv, které se používají pro zprávu pomocí kódování MTOM (Message reoptimization mechanism). (MTOM) je efektivní technologie pro přenos binárních dat ve zprávách Windows Communication Foundation (WCF). Kodér MTOM se pokusí přeškrtnout rovnováhu mezi efektivitou a interoperabilitou. Kódování MTOM přenáší většinu XML v textové podobě, ale optimalizuje velké bloky binárních dat jejich přenosem tak, jak jsou, bez konverze na text.  
   
- `textMessageEncoding` Kodér textu použitý k vytvoření textových zpráv na lince Určuje konfigurační oddíl. Zprávy vytvořené v tomto kodéru jsou vhodné pro WS-* na základě spolupráce. Webová služba nebo klient webové služby obecně by rozuměla textové XML. Přenášení velkých bloků binárních dat jako text je však nejméně efektivní způsob pro kódování zpráv XML  
+ `textMessageEncoding` Konfigurační oddíl určuje textový kodér, který slouží k vytváření textových zpráv na lince. Zprávy vytvářené v tomto kodéru jsou vhodné pro interoperabilitu WS-*. Webové služby nebo klient webové služby můžou obecně pochopit text XML. Nicméně přenos velkých bloků binárních dat jako textu je nejefektivnější metodou pro kódování zpráv XML.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Výběr kodéru zprávy](../../../wcf/feature-details/choosing-a-message-encoder.md)

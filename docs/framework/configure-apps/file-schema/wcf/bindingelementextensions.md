@@ -2,19 +2,19 @@
 title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-ms.openlocfilehash: 775f93f319c136a29a32ffaa1dfabc12ee081b29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c323a65ace332d2ecd1e03330dddbe7ca17ff5bd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700992"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926372"
 ---
 # <a name="bindingelementextensions"></a>\<bindingElementExtensions >
-Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfiguračního souboru aplikace. Vlastní prvek vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu, který chcete rozšíření elementu vazby, stejně jako `name` atribut na prvek vlastní vazby.  
+Tato část umožňuje použití vlastního prvku vazby z počítače nebo konfiguračního souboru aplikace. Do této kolekce můžete přidat vlastní prvek vazby pomocí `add` klíčového slova a `type` nastavením atributu elementu na rozšíření elementu vazby `name` , jakož i atribut pro vlastní element vazby.  
   
- Rozšíření vazby umožňují uživateli vytvořit uživatelem definované vazby prvky pro použití jako součást vlastní vazby. Prostřednictvím kódu programu, rozšíření vazby je typ, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.BindingElement>. V konfiguračním souboru `bindingElementExtensions` oddíl se používá k definování element rozšíření.  
+ Rozšíření vazby umožňují uživateli vytvořit uživatelsky definované prvky vazby pro použití jako součást vlastních vazeb. Programově je rozšíření vazby typu, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.BindingElement>. V konfiguračním souboru `bindingElementExtensions` je oddíl použit k definování elementu rozšíření.  
   
- V následujícím příkladu `add` element, stejně jako `name` atribut můžete přidat příponu vazby na `bindingElementExtensions` oddílu konfiguračního souboru.  
+ V následujícím příkladu se používá `add` element a také `name` atribut pro přidání rozšíření vazby do `bindingElementExtensions` oddílu konfiguračního souboru.  
   
 ```xml  
 <system.serviceModel>
@@ -28,9 +28,9 @@ Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfig
 </system.serviceModel>
 ```  
   
- Chcete-li přidat možnosti konfigurace na prvek, uživatel musí k zápisu a registrace `bindingElementExtensionSection` elementu. Další informace najdete v článku <xref:System.Configuration> dokumentaci.  
+ Chcete-li do prvku přidat možnosti konfigurace, musí uživatel zapsat a zaregistrovat `bindingElementExtensionSection` element. Další informace najdete <xref:System.Configuration> v dokumentaci.  
   
- Po definování elementu a jeho typ konfigurace rozšíření, je možné jako součást vlastní vazby, jak je znázorněno v následujícím příkladu.  
+ Po definování prvku a jeho typu konfigurace lze rozšíření použít jako součást vlastní vazby, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <customBinding>
@@ -46,4 +46,4 @@ Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfig
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)

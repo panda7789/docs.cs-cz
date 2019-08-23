@@ -5,63 +5,63 @@ helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-ms.openlocfilehash: 9ebd1489c35bb3b023ed73cd86fac1b6a352012b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 14f348300d8ab9276a86b4cf8d91823d39b9aba3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882175"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964988"
 ---
 # <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu
-Můžete řídit přístup k několika způsobem Windows Communication Foundation (WCF). Toto téma stručně popisuje různé mechanismy a nabízí návrhy k tomu, kdy se má použít. jeho účelem je pomoct vybrat správný mechanismus. Technologie pro přístup k jsou uvedeny v pořadí podle složitosti. Nejjednodušší je <xref:System.Security.Permissions.PrincipalPermissionAttribute>; nejvíce komplex nachází modelem Identity.  
+Pomocí Windows Communication Foundation (WCF) můžete řídit přístup několika způsoby. Toto téma stručně popisuje různé mechanismy a poskytuje návrhy na jejich použití. je určena k tomu, aby vám pomohla vybrat správný mechanismus, který chcete použít. Technologie přístupu jsou uvedené v pořadí podle složitosti. Nejjednodušším je <xref:System.Security.Permissions.PrincipalPermissionAttribute>to, že nejsložitější je model identity.  
   
- Kromě těchto mechanismů zosobnění a delegování s použitím technologie WCF je podrobně [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Kromě těchto mechanismů je popsána zosobnění a delegování pomocí WCF v tématu [delegování a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="principalpermissionattribute"></a>PrincipalPermissionAttribute  
- <xref:System.Security.Permissions.PrincipalPermissionAttribute> Slouží k omezení přístupu k metodě služby. Když je atribut použit na metodu, můžete použít požadovat konkrétní volající identity nebo členství ve skupině Windows nebo rolí technologie ASP.NET. Pokud klient je ověřený pomocí certifikátu X.509, dostane primární identitu, která se skládá z názvu předmětu a kryptografický otisk certifikátu.  
+ <xref:System.Security.Permissions.PrincipalPermissionAttribute> Slouží k omezení přístupu k metodě služby. Pokud se atribut použije na metodu, dá se použít k vyžádání identity konkrétního volajícího nebo členství v roli skupiny systému Windows nebo role ASP.NET. Pokud je klient ověřený pomocí certifikátu X. 509, je mu přiřazena primární identita, která se skládá z názvu subjektu a kryptografického otisku certifikátu.  
   
- Použití <xref:System.Security.Permissions.PrincipalPermissionAttribute> pro řízení přístupu k prostředkům v počítači, který je služba spuštěna, a pokud uživatelé služby bude vždy součástí stejné domény Windows, na kterém služba běží na. Můžete snadno vytvořit skupin Windows, které jste zadali úrovně přístupu (jako jsou none, jen pro čtení, nebo čtení a zápis).  
+ Pomocí nástroje <xref:System.Security.Permissions.PrincipalPermissionAttribute> můžete řídit přístup k prostředkům v počítači, na kterém je služba spuštěná, a pokud budou uživatelé služby vždycky součástí stejné domény Windows, na které je služba spuštěná. Můžete snadno vytvořit skupiny systému Windows, které mají specifikované úrovně přístupu (například None, jen pro čtení nebo číst a zapisovat).  
   
- Další informace o použití atributu najdete v tématu [jak: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md). Další informace o identitě najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Další informace o použití atributu naleznete v tématu [How to: Omezte přístup pomocí třídy](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)PrincipalPermissionAttribute. Další informace o identitě najdete v tématu [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
-## <a name="aspnet-membership-provider"></a>Zprostředkovatel členství technologie ASP.NET  
- Funkce technologie ASP.NET je zprostředkovatel členství. I když zprostředkovatel členství není technicky mechanismus řízení přístupu, umožňuje řízení přístupu ke službě tím, že omezíte sadu možných identity, které můžete přístup ke koncovému bodu služby. Funkce členství zahrnuje databáze, která je možné naplnit kombinace uživatelské jméno/heslo, které umožňují uživatelům webu vytvářet účty s lokalitou. Přístup ke službě, která používá zprostředkovatele členství, uživatel musí přihlásit pomocí své uživatelské jméno a heslo.  
+## <a name="aspnet-membership-provider"></a>Poskytovatel členství ASP.NET  
+ ASP.NET je funkce poskytovatele členství. I když zprostředkovatel členství není technicky mechanismem řízení přístupu, umožňuje řídit přístup ke službě tím, že omezuje sadu možných identit, které mají přístup ke koncovému bodu služby. Funkce členství zahrnuje databázi, kterou lze naplnit kombinacemi uživatelského jména a hesla, které umožňují uživatelům webu vytvářet účty s lokalitou. Pro přístup ke službě, která používá poskytovatele členství, se uživatel musí přihlásit pomocí svého uživatelského jména a hesla.  
   
 > [!NOTE]
->  Musíte nejprve naplnit databázi pomocí funkce technologie ASP.NET ve službě WCF mohli používat pro účely ověření.  
+> Nejprve musíte vyplnit databázi pomocí funkce ASP.NET, aby ji služba WCF mohla použít pro účely autorizace.  
   
- Pokud už máte databázi členství z existujícího webu technologie ASP.NET a chcete povolit stejným uživatelům pomocí služby, oprávnění pomocí stejného uživatelského jména a hesla, můžete použít také funkci členství.  
+ Funkci členství můžete použít také v případě, že již máte databázi členství z existujícího webu ASP.NET a chcete povolit stejným uživatelům, aby používali vaši službu, a to s oprávněním stejné uživatelské jméno a heslo.  
   
- Další informace o použití funkce členství ve službě WCF najdete v tématu [jak: Používání poskytovatele členství ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md).  
+ Další informace o použití funkce členství ve službě WCF najdete v tématu [How to: Použijte poskytovatele](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)členství ASP.NET.  
   
-## <a name="aspnet-role-provider"></a>Zprostředkovatele rolí ASP.NET  
- Další funkcí technologie ASP.NET je schopnost spravovat autorizaci s použitím rolí. Poskytovatele rolí prostředí ASP.NET umožňuje vývojáři k vytvoření role pro uživatele a přiřadit každého uživatele k roli nebo role. Stejně jako u zprostředkovatele členství, role a přiřazení jsou uloženy v databázi a je možné naplnit s použitím nástroje poskytované systémem konkrétní implementaci poskytovatele rolí prostředí ASP.NET. Stejně jako u funkce členství vývojáře technologie WCF. můžete použít informace v databázi k autorizaci uživatelů služby role. Zprostředkovatel rolí můžou, například použít v kombinaci s `PrincipalPermissionAttribute` výše popsané mechanismu řízení přístupu.  
+## <a name="aspnet-role-provider"></a>Poskytovatel rolí ASP.NET  
+ Další funkcí ASP.NET je schopnost spravovat autorizaci pomocí rolí. Zprostředkovatel rolí ASP.NET umožňuje vývojářům vytvářet role pro uživatele a přiřazovat jednotlivé uživatele k rolím nebo rolím. Stejně jako u poskytovatele členství jsou role a přiřazení uloženy v databázi a lze je naplnit pomocí nástrojů poskytovaných konkrétní implementací zprostředkovatele rolí ASP.NET. Stejně jako u funkce členství mohou vývojáři WCF použít informace v databázi k autorizaci uživatelů služby podle rolí. Můžou například použít poskytovatele rolí v kombinaci s `PrincipalPermissionAttribute` mechanismem řízení přístupu popsaným výše.  
   
- Můžete také použít poskytovatele rolí prostředí ASP.NET, pokud máte existující databázi zprostředkovatele rolí ASP.NET a chcete použít stejnou sadu pravidel a přiřazení uživatele ve službě WCF.  
+ Zprostředkovatele rolí ASP.NET můžete použít také v případě, že máte existující databázi zprostředkovatele role ASP.NET a chcete ve službě WCF použít stejnou sadu pravidel a přiřazení uživatelů.  
   
- Další informace o používání funkcí zprostředkovatele rolí, najdete v části [jak: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
+ Další informace o použití funkce poskytovatele rolí najdete v tématu [How to: Použijte poskytovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
   
 ## <a name="authorization-manager"></a>Správce autorizací  
- Další funkcí kombinuje Správce autorizací (AzMan) s poskytovatele rolí prostředí ASP.NET, které zajistí autorizaci klientů. Když technologie ASP.NET je hostitelem webové služby, je možné integrovat AzMan do aplikace tak, aby autorizace ve službě se provádí prostřednictvím AzMan. Správce rolí technologie ASP.NET poskytuje rozhraní API, které vám umožní spravovat aplikačních rolí, přidávat a odebírat uživatele z role a zkontrolujte členství v roli, ale neumožňuje zadat dotaz, zda je uživatel oprávnění k provedení s názvem úkolu nebo operace. AzMan umožňuje definovat jednotlivé operace a je zkombinovat do úlohy. S AZMan kromě kontroly role můžete také zkontrolovat, jestli může uživatel provést úlohu. Přiřazení a úkol autorizaci rolí můžete nakonfigurovat mimo aplikaci nebo programově provádět v rámci aplikace. Správa AzMan modul snap-in konzoly Microsoft Management Console (MMC) umožňuje správcům ke změně úlohy, které může role provádět v době běhu a spravovat každý uživatel členství rolí.  
+ Další funkcí kombinuje Správce autorizací (AzMan) se zprostředkovatelem rolí ASP.NET pro autorizaci klientů. Když ASP.NET hostuje webovou službu, AzMan může být integrovaná do aplikace, aby bylo možné provést autorizaci služby prostřednictvím AzMan. Správce rolí ASP.NET poskytuje rozhraní API, které umožňuje spravovat aplikační role, přidávat a odebírat uživatele z rolí a kontrolovat členství v rolích, ale neumožňuje dotazovat se na to, jestli je uživatel autorizovaný k provedení pojmenované úlohy nebo operace. AzMan umožňuje definovat jednotlivé operace a kombinovat je do úloh. S AZMan můžete kromě kontrol rolí také zkontrolovat, jestli uživatel může provádět úlohu. Přiřazení rolí a autorizaci úloh lze nakonfigurovat mimo aplikaci nebo programově provést v rámci aplikace. Modul snap-in Správa AzMan konzoly Microsoft Management Console (MMC) umožňuje správcům měnit úkoly, které role může provádět za běhu, a spravovat členství rolí jednotlivých uživatelů.  
   
- Pokud již máte přístup do existující instalace AzMan a autorizovat uživatele služby pomocí funkce kombinace poskytovatele AzMan/role, můžete použít také AzMan a poskytovatele rolí prostředí ASP.NET.  
+ AzMan a poskytovatele role ASP.NET můžete použít také v případě, že už máte přístup k existující instalaci AzMan a chcete autorizovat uživatele služby pomocí funkcí kombinace AzMan/role Provider.  
   
- Další informace o AzMan a poskytovatele rolí prostředí ASP.NET, naleznete v tématu [How To: Použití Správce autorizací (AzMan) s technologií ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=88951). Další informace o používání AzMan a zprostředkovatel rolí pro služby WCF najdete v tématu [jak: Použití zprostředkovatele Role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
+ Další informace o AzMan a zprostředkovateli rolí ASP.NET najdete v tématu [How to: Použijte Správce autorizací (AzMan) s ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88951)2,0. Další informace o používání AzMan a poskytovatele rolí pro služby WCF najdete v tématu [How to: Použijte zprostředkovatele rolí ASP.NET Authorization Manager se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md).  
   
-## <a name="identity-model"></a>Modelem identity  
- Identity Model je sada rozhraní API, která vám umožní spravovat deklarací identity a zásady k autorizaci klientů. S modelem Identity můžete prozkoumat každou deklarací identity obsažených v přihlašovacích údajích, založené na porovnání volající použít k svému ověření ke službě, porovnávání deklarací identity do sady zásad pro službu a udělit nebo odepřít přístup.  
+## <a name="identity-model"></a>Model identity  
+ Model identity je sada rozhraní API, která umožňují spravovat deklarace identity a zásady pro autorizaci klientů. Pomocí modelu identity můžete kontrolovat každou deklaraci identity obsaženou v přihlašovacích údajích, které volající použil k ověření ve službě, porovnávat deklarace identity se sadou zásad pro službu a udělovat nebo zamítnout přístup na základě porovnání.  
   
- Model identit použijte, pokud potřebujete jemné ovládacího prvku a možnost nastavit konkrétní kritéria před udělením přístupu. Například při použití <xref:System.Security.Permissions.PrincipalPermissionAttribute>, že kritérium představuje jednoduše, že identita uživatele je ověřený a patří do určité role. Naproti tomu pomocí modelu identit, můžete vytvořit zásadu, která uvádí, uživatel musí být starší 18 let a má platný ovladač licence povolení k zobrazení dokumentu.  
+ Použijte model identity, pokud potřebujete přesné řízení a možnost nastavit konkrétní kritéria před udělením přístupu. Například při použití rozhraní <xref:System.Security.Permissions.PrincipalPermissionAttribute>je kritérium pouhým ověřením identity uživatele a patří do konkrétní role. Na rozdíl od modelu identity můžete vytvořit zásadu, která uvádí, že uživatel musí mít více než 18 let věku a musí mít platnou licenci na ovladač, aby bylo možné dokument zobrazit.  
   
- Jeden příklad, ve kterém můžete využívat výhod řízení přístupu podle deklarací Identity modelu je při použití přihlašovacích údajů federace ve scénáři vydaných tokenů. Další informace o federace a vystavené tokeny, naleznete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+ Jedním z příkladů, kde můžete využít řízení přístupu na základě deklarace identity modelu identity, je použití federačních přihlašovacích údajů ve scénáři vydaného tokenu. Další informace o federačních a vydaných tokenech najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
- Další informace o modelem Identity najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
+ Další informace o modelu identity najdete v tématu [Správa deklarací identity a autorizace pomocí modelu identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
-- [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
-- [Postupy: Použití zprostředkovatele Role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
+- [Postupy: Použití poskytovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Postupy: Použití zprostředkovatele rolí ASP.NET Authorization Manager se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
 - [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
 - [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

@@ -2,21 +2,21 @@
 title: <security> z <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: acb4d04663d841a9b494153caa180855959c145e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1bbc3a460ce707e71b72a469af2e03acd8dc79e5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670505"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936688"
 ---
-# <a name="security-of-netmsmqbinding"></a>\<zabezpečení > z \<netMsmqBinding >
-Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povolen přenos nebo SOAP zabezpečení, a pokud ano, jaké úrovně režimu a ochranu ověřování se používají.  
+# <a name="security-of-netmsmqbinding"></a>\<> zabezpečení > \<NetMsmqBinding
+Definuje nastavení zabezpečení pro vazbu služby MSMQ. Určuje, zda je povoleno přenosu nebo zabezpečení SOAP, a pokud ano, jaký režim ověřování a úrovně ochrany se používají.  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<netMsmqBinding>  
-\<Vytvoření vazby >  
-\<security>  
+\<> vazby  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povole
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje typ zabezpečení, které řídí integrity, šifrování a ověřování. Platné hodnoty patří:<br /><br /> -Žádný: Zakáže zabezpečení.<br />-Přenos: Ochrana a ověřování se nabízejí Transport. To platí pro zabezpečení zpráv mezi správci fronty dvě. Neexistuje žádné zabezpečení nabízené mezi aplikací a správce fronty. Existující aplikacím služby Msmq jsou funkčně ekvivalentní s tímto typem režim zabezpečení.<br />– Zprávy: Určuje koncové zabezpečení aplikace. Neexistuje žádné zabezpečení k dispozici v přenosové vrstvě. To se podobá zabezpečení nabízené ostatní standardní vazby.<br />-Obojí: Nabízí zabezpečení přenosu a vrstvě zasílání zpráv SOAP. Na obou úrovních se vyžadují stejné přihlašovací údaje.<br /><br /> Výchozí hodnota je přenos. Tento atribut je typu <xref:System.ServiceModel.NetMsmqSecurityMode>.|  
+|režim|Určuje typ zabezpečení, který řídí integritu, důvěrnost a ověřování. Platné hodnoty jsou následující:<br /><br /> NTato Tím se zakáže zabezpečení.<br />Přepravu Přenos nabízí ochranu a ověřování. To platí pro zabezpečení zpráv mezi dvěma správci fronty. Mezi aplikací a správcem front se nenabízí žádné zabezpečení. Stávající aplikace služby MSMQ jsou funkčně ekvivalentní s tímto typem režimu zabezpečení.<br />Zpráva Určuje zabezpečení aplikací koncového konce. V transportní vrstvě není nabízené žádné zabezpečení. To se podobá zabezpečení nabízené jinými standardními vazbami.<br />Protokoly Nabízí zabezpečení jak na úrovni přenosu, tak i ve vrstvě zpráv SOAP. Stejné přihlašovací údaje se vyžadují na obou úrovních.<br /><br /> Výchozí hodnota je Transport. Tento atribut je typu <xref:System.ServiceModel.NetMsmqSecurityMode>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-netmsmqbinding.md)|Definuje nastavení zabezpečení zpráv SOAP. Tento prvek je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netmsmqbinding.md)|Definuje nastavení zabezpečení přenosu služby MSMQ. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[\<> zprávy](message-of-netmsmqbinding.md)|Definuje nastavení zabezpečení zprávy protokolu SOAP. Tento prvek je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
+|[\<> přenosu](transport-of-netmsmqbinding.md)|Definuje nastavení zabezpečení pro přenos služby MSMQ. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|vazba|Prvek vazby [ \<netMsmqBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|  
+|vazba|Prvek vazby [> \<NetMsmqBinding](netmsmqbinding.md)|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -59,9 +59,9 @@ Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povole
 - <xref:System.ServiceModel.NetMsmqBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetMsmqBindingElement.Security%2A>
 - <xref:System.ServiceModel.NetMsmqSecurity>
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)
+- [Fronty ve WCF](../../../wcf/feature-details/queues-in-wcf.md)

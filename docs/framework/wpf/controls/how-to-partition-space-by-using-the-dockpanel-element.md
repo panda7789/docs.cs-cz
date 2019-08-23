@@ -10,18 +10,18 @@ helpviewer_keywords:
 - DockPanel control [WPF], partitioning space
 - partitioning space [WPF]
 ms.assetid: a219b9e5-b205-4438-89b5-0a137ac463ab
-ms.openlocfilehash: ab51270644bf370944ebc933c765b40c528681c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d22a808ce3ab95e3b351408bf4cc372a335da553
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052180"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960189"
 ---
 # <a name="how-to-partition-space-by-using-the-dockpanel-element"></a>Postupy: Rozdělení prostoru pomocí elementu DockPanel
-Následující příklad vytvoří jednoduchý [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pomocí rozhraní framework <xref:System.Windows.Controls.DockPanel> elementu. <xref:System.Windows.Controls.DockPanel> Oddíly dostupné místo na jeho podřízené prvky.  
+Následující příklad vytvoří jednoduché [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] rozhraní <xref:System.Windows.Controls.DockPanel> pomocí elementu. <xref:System.Windows.Controls.DockPanel> Oddíly dostupné místo pro jeho podřízené prvky.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu <xref:System.Windows.Controls.DockPanel.Dock%2A> vlastnost, která je připojená vlastnost, dva identické ukotvení <xref:System.Windows.Controls.Border> prvky v <xref:System.Windows.Controls.Dock.Top> dělené místa. Třetí <xref:System.Windows.Controls.Border> prvek ukotven <xref:System.Windows.Controls.Dock.Left>, s jeho šířku nastaveno na 200 pixelů. Čtvrtý <xref:System.Windows.Controls.Border> ukotven <xref:System.Windows.Controls.Dock.Bottom> obrazovky. Poslední <xref:System.Windows.Controls.Border> element automaticky vyplní zbývající místo.  
+ V tomto příkladu se <xref:System.Windows.Controls.DockPanel.Dock%2A> používá vlastnost, která je připojená vlastnost, k ukotvení <xref:System.Windows.Controls.Border> dvou identických <xref:System.Windows.Controls.Dock.Top> prvků v prostoru děleného v oddílu. Třetí <xref:System.Windows.Controls.Border> prvek je ukotven <xref:System.Windows.Controls.Dock.Left>na, s jeho šířkou nastavenou na 200 pixelů. Čtvrtá <xref:System.Windows.Controls.Border> je ukotvená <xref:System.Windows.Controls.Dock.Bottom> na obrazovce. Poslední <xref:System.Windows.Controls.Border> prvek automaticky vyplní zbývající prostor.  
   
  [!code-cpp[DockPanelOvwSample#1](~/samples/snippets/cpp/VS_Snippets_Wpf/DockPanelOvwSample/CPP/DockPanel_Ovw_Sample.cpp#1)]
  [!code-csharp[DockPanelOvwSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DockPanelOvwSample/CSharp/DockPanel_Ovw_Sample.cs#1)]
@@ -29,11 +29,11 @@ Následující příklad vytvoří jednoduchý [!INCLUDE[TLA#tla_ui](../../../..
  [!code-xaml[DockPanelOvwSample#1](~/samples/snippets/xaml/VS_Snippets_Wpf/DockPanelOvwSample/XAML/default.xaml#1)]  
   
 > [!NOTE]
->  Ve výchozím nastavení posledního podřízeného člena <xref:System.Windows.Controls.DockPanel> prvek vyplní zbývající volné místo. Pokud nechcete, aby toto chování, nastavte `LastChildFill="False"`.  
+> Ve výchozím nastavení poslední podřízená položka <xref:System.Windows.Controls.DockPanel> elementu vyplní zbývající nepřidělené místo. Pokud toto chování nechcete, nastavte `LastChildFill="False"`.  
   
- Kompilované aplikace poskytuje nové uživatelské rozhraní, který vypadá takto.  
+ Kompilovaná aplikace poskytuje nové uživatelské rozhraní, které vypadá takto.  
   
- ![Typický scénář DockPanel. ](./media/panel-intro-dockpanel.PNG "panel_intro_dockpanel")  
+ ![Typický scénář DockPanel.](./media/panel-intro-dockpanel.PNG "panel_intro_dockpanel")  
   
 ## <a name="see-also"></a>Viz také:
 

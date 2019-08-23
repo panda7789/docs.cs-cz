@@ -2,41 +2,41 @@
 title: SQL Server a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: f30d9d715a2d94deee788f92cfc8eed0cba706de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c58c6da7a6028c9167c73af820e922f59b528f15
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033888"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938085"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server a ADO.NET
-Tato část popisuje funkce a chování, které jsou specifické pro zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>).  
+Tato část popisuje funkce a chování, které jsou specifické pro .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>).  
   
- <xref:System.Data.SqlClient> poskytuje přístup k verzím systému SQL Server, který zapouzdřuje protokoly specifické pro databázi. Funkce zprostředkovatel dat slouží k podobný zprostředkovatele dat .NET Framework pro OLE DB, ODBC a Oracle. <xref:System.Data.SqlClient> zahrnuje analyzátor tabulková data služby stream (TDS) pro přímou komunikaci s SQL serverem.  
+ <xref:System.Data.SqlClient>poskytuje přístup k verzím SQL Server, které zapouzdřují protokoly pro konkrétní databáze. Funkce poskytovatele dat je navržena tak, aby byla podobná poskytovateli .NET Framework dat pro OLE DB, ODBC a Oracle. <xref:System.Data.SqlClient>zahrnuje analyzátor TDS (Tabular data Stream), který komunikuje přímo s SQL Server.  
   
 > [!NOTE]
->  Použití zprostředkovatele dat .NET Framework pro SQL Server, aplikace musí odkazovat <xref:System.Data.SqlClient> oboru názvů.  
+> Chcete-li použít Zprostředkovatel dat .NET Framework pro SQL Server, aplikace musí odkazovat na <xref:System.Data.SqlClient> obor názvů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- Poskytuje přehled funkcí zabezpečení systému SQL Server a scénáře aplikací pro vytváření zabezpečených aplikací ADO.NET, které cílí na systém SQL Server.  
+ Poskytuje přehled SQL Serverch funkcí zabezpečení a scénářů aplikací pro vytváření zabezpečených aplikací ADO.NET, které cílí na SQL Server.  
   
  [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- Popisuje, jak pracovat s datovými typy SQL serveru a jejich vzájemné interakce s datovými typy rozhraní .NET Framework.  
+ Popisuje, jak pracovat s datovými typy SQL Server a jak komunikují s datovými typy .NET Framework.  
   
  [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- Popisuje, jak pracovat s daty velké hodnoty v systému SQL Server.  
+ Popisuje, jak pracovat s velkým množstvím dat v SQL Server.  
   
  [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
- Popisuje, jak pracovat s daty v systému SQL Server. Obsahuje oddíly o operace hromadného kopírování, MARS, asynchronní operace a parametry s hodnotou tabulky.  
+ Popisuje, jak pracovat s daty v SQL Server. Obsahuje oddíly o operacích hromadného kopírování, MARS, asynchronních operací a parametrech s hodnotou tabulky.  
   
  [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
- Popisuje funkce serveru SQL Server, které jsou užitečné pro vývojáře aplikací ADO.NET.  
+ Popisuje SQL Server funkce, které jsou užitečné pro vývojáře aplikací ADO.NET.  
   
  [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- Popisuje základní stavební bloky, procesy a postupy určené pro vytvoření LINQ na SQL aplikace.  
+ V této části najdete popis základních stavebních bloků, procesů a technik potřebných pro vytváření aplikací LINQ to SQL.  
   
- Kompletní dokumentaci databázového stroje SQL serveru najdete v tématu knihy Online SQL Server pro verzi SQL serveru, který používáte.  
+ Úplnou dokumentaci k databázovému stroji SQL Server najdete v tématu SQL Server Knihy online pro verzi SQL Server, kterou používáte.  
   
  [SQL Server Books Online](/sql/sql-server/sql-server-technical-documentation)  
   
@@ -46,4 +46,4 @@ Tato část popisuje funkce a chování, které jsou specifické pro zprostředk
 - [Mapování datového typu v ADO.NET](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

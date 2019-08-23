@@ -2,22 +2,22 @@
 title: <add> z <defaultPorts>
 ms.date: 03/30/2017
 ms.assetid: f162ce42-963b-4779-96a7-d6d8b4ea0d2f
-ms.openlocfilehash: 5200c8893a89488b72c2c71d1a3703bf2aad1235
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d2723dad14a63c4b05fdb70157f7eb21d193d3ab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704554"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926710"
 ---
-# <a name="add-of-defaultports"></a>\<Přidat > z \<defaultPorts >
+# <a name="add-of-defaultports"></a>\<Přidat > \<> defaultPorts
 Výchozí koncový bod komunikace, na kterém naslouchá klientská aplikace.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<useRequestHeadersForMetadataAddress>  
-\<defaultPorts>  
+\<defaultPorts >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,7 +39,7 @@ Výchozí koncový bod komunikace, na kterém naslouchá klientská aplikace.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |port|Celé číslo, které určuje výchozí číslo komunikačního portu|  
-|scheme|Řetězec, který určuje skupinu nastavení protokolu přidružené komunikaci portu.|  
+|scheme|Řetězec, který určuje skupinu nastavení protokolu, která je přidružena k komunikačnímu portu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,7 +48,7 @@ Výchozí koncový bod komunikace, na kterém naslouchá klientská aplikace.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<defaultPorts>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultports.md)|Kolekce výchozích portů obsahující seznam výchozích komunikačních koncových bodů, které naslouchá klientská aplikace.|  
+|[\<defaultPorts>](defaultports.md)|Kolekce výchozích portů, které jsou uvedeny v seznamu výchozích koncových bodů komunikace, na které klientská aplikace naslouchá.|  
   
 ## <a name="see-also"></a>Viz také:
 

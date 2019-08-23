@@ -2,24 +2,24 @@
 title: Metody System.TimeSpan
 ms.date: 03/30/2017
 ms.assetid: 9333fee8-1454-4374-855b-8c14c002f48f
-ms.openlocfilehash: dd693a64550293d6894e1d2abc3f651a53fc17fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec27f8f17a6709efef1a8230b521778095ae1257
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917433"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947094"
 ---
 # <a name="systemtimespan-methods"></a>Metody System.TimeSpan
-Podpora člen <xref:System.TimeSpan?displayProperty=nameWithType> značně závisí na verzích rozhraní .NET Framework a Microsoft SQL Server, kterou používáte.  
+Podpora <xref:System.TimeSpan?displayProperty=nameWithType> členů značně závisí na verzích .NET Framework a Microsoft SQL Server, které používáte.  
   
- Pokud metoda, operátor nebo vlastnost není podporována; To znamená, že technologie LINQ to SQL: nelze převést člena pro spuštění systému SQL Server. Může být stále moct používat tyto členy ve vašem kódu. Však musí být vyhodnocují před dotazu je přeložen příkazů jazyka Transact-SQL nebo po výsledky byly načteny z databáze.  
+ Pokud metoda, operátor nebo vlastnost není podporována; To znamená, že LINQ to SQL nemůže přeložit člena ke spuštění na SQL Server. Je možné, že bude možné tyto členy stále používat ve svém kódu. Nicméně musí být vyhodnoceny dříve, než je dotaz přeložen do jazyka Transact-SQL nebo po načtení výsledků z databáze.  
   
-## <a name="previous-limitations"></a>Z předchozích omezení  
- Při použití technologie LINQ to SQL s verzemi rozhraní .NET Framework před rozhraní .NET Framework 3.5 SP1, nelze mapovat pole databáze systému SQL Server na <xref:System.TimeSpan?displayProperty=nameWithType>. Však operace <xref:System.TimeSpan> jsou podporované, protože <xref:System.TimeSpan> hodnoty mohou být vráceny od <xref:System.DateTime> odčítání nebo zařadit do výrazu jako literál nebo vazby proměnné.  
+## <a name="previous-limitations"></a>Předchozí omezení  
+ Pokud používáte LINQ to SQL s verzemi .NET Framework před .NET Framework 3,5 SP1, nelze mapovat pole SQL Server databáze na <xref:System.TimeSpan?displayProperty=nameWithType>. Operace na <xref:System.TimeSpan> jsou však podporovány, protože <xref:System.TimeSpan> hodnoty mohou být vráceny z <xref:System.DateTime> odčítání nebo zavedeny do výrazu jako literál nebo vázaná proměnná.  
   
-## <a name="supported-systemtimespan-member-support"></a>Podporované System.TimeSpan člen podpory
+## <a name="supported-systemtimespan-member-support"></a>Podporovaná podpora členů System. TimeSpan
 
- Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití ve vašich dotazech LINQ to SQL. Jakmile mapován v objektovém modelu nebo externí mapování souboru LINQ to SQL umožňuje volat řadu <xref:System.TimeSpan?displayProperty=nameWithType> členy ve vašich dotazech LINQ to SQL.  
+ Následující LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v dotazech LINQ to SQL. Po namapování v objektovém modelu nebo v souboru externího mapování vám LINQ to SQL umožňuje volat mnoho <xref:System.TimeSpan?displayProperty=nameWithType> členů v rámci vašich LINQ to SQL dotazů.  
   
 |Podporované <xref:System.TimeSpan> metody|Podporované <xref:System.TimeSpan> operátory|Podporované <xref:System.TimeSpan> vlastnosti|  
 |------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|  
@@ -31,10 +31,10 @@ Podpora člen <xref:System.TimeSpan?displayProperty=nameWithType> značně závi
 ||<xref:System.TimeSpan.op_LessThanOrEqual%2A>|<xref:System.TimeSpan.MinValue>|  
   
 > [!NOTE]
->  Umožňuje mapovat <xref:System.TimeSpan?displayProperty=nameWithType> SQL `TIME` sloupec s LINQ to SQL se vyžaduje rozhraní .NET Framework 3.5 SP1 a novější. SQL `TIME` datový typ je k dispozici v systému Microsoft SQL Server 2008 a nad rámec.  
+> Možnost mapování <xref:System.TimeSpan?displayProperty=nameWithType> na sloupec SQL `TIME` s LINQ to SQL vyžaduje .NET Framework 3,5 SP1 a novější. Datový typ `TIME` SQL je k dispozici pouze v Microsoft SQL Server 2008 a novějších.  
   
 ### <a name="addition-and-subtraction"></a>Sčítání a odčítání  
- I když CLR <xref:System.TimeSpan?displayProperty=nameWithType> typů podporuje sčítání a odčítání, SQL `TIME` typ nepodporuje. Z tohoto důvodu vašich dotazech LINQ to SQL se generují chyby se pokoušejí sčítání a odčítání, když jsou mapovány na SQL `TIME` typu. Můžete najít další důležité informace pro práci s typy data a času SQL v [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
+ I když typ <xref:System.TimeSpan?displayProperty=nameWithType> CLR podporuje sčítání a odčítání, typ SQL `TIME` není. Z tohoto důvodu budou dotazy LINQ to SQL generovat chyby, pokud se pokusí přidat a odčítání, pokud jsou namapovány na typ `TIME` SQL. Další informace o tom, jak pracovat s typy data a času SQL v [mapování typu SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md), najdete v dalších ohledech.  
   
 ## <a name="see-also"></a>Viz také:
 

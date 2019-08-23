@@ -2,20 +2,20 @@
 title: <endpointDiscovery>
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
-ms.openlocfilehash: 125baba917a49135aaa426df2cfa1a4dbe8ac1e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5cb64c54067ba695f67d86c0026db77ebbe7d5ee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700907"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919052"
 ---
 # <a name="endpointdiscovery"></a>\<endpointDiscovery>
-Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.  
+Určuje různá nastavení zjišťování pro koncový bod, například jeho zjistitelnost, obory a jakákoli vlastní rozšíření pro jeho metadata.  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<endpointDiscovery>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,30 +42,30 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho roz
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Povoleno|Logická hodnota určující, zda je na tomto koncovém bodu povolena rozpoznatelnost. Výchozí hodnota je `false`.|  
+|enabled|Logická hodnota, která určuje, zda je na tomto koncovém bodu povolena zjistitelnost. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce oboru identifikátory URI pro koncový bod. Více než jednoho oboru identifikátory URI lze přidružit jeden koncový bod.|  
-|[\<Rozšíření >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions.md) [z \<endpointDiscovery >]|Kolekce elementů XML, který vám umožní určit vlastních metadat pro publikování pro koncový bod.|  
-|\<typy >|Kolekce rozhraní pro hledání.|  
+|[\<> oborů](scopes.md)|Kolekce identifikátorů URI oboru pro koncový bod. K jednomu koncovému bodu lze přidružit více než jeden identifikátor URI oboru.|  
+|rozšíření > [z \<> endpointDiscovery] [ \<](extensions.md)|Kolekce elementů XML, které umožňují zadat vlastní metadata, která budou publikována pro koncový bod.|  
+|\<> typů|Kolekce rozhraní, která se mají vyhledat|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
 |||  
   
 ## <a name="remarks"></a>Poznámky  
- Když se přidá do konfigurace chování koncového bodu a s `enabled` atribut nastaven na `true`, tento prvek konfigurace umožňuje jeho rozpoznatelnost. Kromě toho můžete použít [ \<obory >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)podřízený prvek pro zadání vlastní rozsahy identifikátoru URI, který lze použít k fitrování koncových bodů služby během dotazu, stejně jako [ \<rozšíření >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions.md) podřízený prvek k určení vlastní metadata, která by se měly zveřejňovat spolu s standardní zjistitelné metadata (EPR, ContractTypeName, BindingName, oboru a ListenURI).  
+ Po přidání do konfigurace chování koncového bodu a s `enabled` atributem nastaveným na `true`může tento prvek konfigurace povolit svou zjistitelnost. Kromě toho můžete použít [ \<rozsahy >](scopes.md)podřízených element k určení identifikátorů URI vlastního rozsahu, které lze použít k filtrování koncových bodů služby během dotazu a také [ \<rozšíření >](extensions.md) podřízený element k určení vlastního metadata, která se mají publikovat společně se standardními zjistitelnými metadaty (EPR, ContractTypeName, Binding, Scope a ListenURI).  
   
- Tento prvek konfigurace je závislá na [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) element, který poskytuje řízení úrovně služeb z možnosti rozpoznání. To znamená, že tento element nastavení jsou ignorovány, pokud [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) není k dispozici v konfiguraci.  
+ Tento prvek konfigurace je závislý na [ \<prvku serviceDiscovery >](servicediscovery.md) , který poskytuje kontrolu úrovně služeb pro zjistitelnost. To znamená, že nastavení tohoto prvku budou ignorována, pokud [ \<serviceDiscovery >](servicediscovery.md) není v konfiguraci k dispozici.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfigurace určuje filtrování obory a metadata rozšíření pro publikování pro koncový bod.  
+ Následující příklad konfigurace určuje rozsahy filtrování a metadata rozšíření, která se mají publikovat pro koncový bod.  
   
 ```xml  
 <services>

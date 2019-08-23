@@ -2,20 +2,20 @@
 title: <serviceSecurityAudit>
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: 384a1cdb6d39f4d6ecd2353a15c0da7c6d2e82bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1fcc59550904a34eced8e87fa9bc54a334acd03
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758116"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937173"
 ---
 # <a name="servicesecurityaudit"></a>\<serviceSecurityAudit>
 Určuje nastavení, které povoluje auditování událostí zabezpečení během operací služby.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceSecurityAudit>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +34,10 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|auditLogLocation|Určuje umístění protokolu auditu. Platné hodnoty patří:<br /><br /> – Výchozí hodnota: Zabezpečení události se zapisují do protokolu aplikací na Windows XP a do protokolu událostí na Windows Server 2003 a Windows Vista.<br />-Aplikace: Události auditu se zapisují do protokolu událostí aplikace.<br />-Zabezpečení: Události auditu se zapisují do protokolu událostí zabezpečení.<br /><br /> Výchozí hodnota je výchozí nastavení. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLogLocation>.|  
-|suppressAuditFailure|Logická hodnota, která určuje vlastnosti pro zamlčené chyby psaní do auditovacího protokolu.<br /><br /> Aplikace měli obdržet upozornění pro chyby psaní do auditovacího protokolu. Pokud vaše aplikace nebyla navržena pro zpracování chyb auditu, používejte tento atribut má potlačit chyby při psaní do auditovacího protokolu.<br /><br /> Pokud tento atribut je `true`, výjimky kromě OutOfMemoryException, StackOverflowException –, výjimka ThreadAbortException a ArgumentException, které jsou výsledkem pokusy o zápis událostí auditu, které jsou zpracovány systémem a nejsou šířeny do aplikace. Pokud tento atribut je `false`, všechny výjimky, které jsou výsledkem pokusy o zápis událostí auditu, které jsou předány do aplikace.<br /><br /> Výchozí hodnota je `true`.|  
-|serviceAuthorizationAuditLevel|Určuje typy událostí autorizace, které jsou zaznamenány v protokolu auditu. Platné hodnoty patří:<br /><br /> -Žádný: Auditování událostí autorizace služby není provedeno.<br />– Úspěch: Pouze služba úspěšné autorizaci události se auditují.<br />– Selhání: Pouze chyby událostí autorizace služby budou auditovány.<br />-SuccessOrFailure: Úspěchy a chyby služby autorizace události se auditují.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
-|messageAuthenticationAuditLevel|Určuje typ zprávy ověřovacích událostí auditu přihlášení. Platné hodnoty patří:<br /><br /> -Žádný: Žádné události auditu jsou generovány.<br />– Úspěch: Pouze události (včetně ověřit podpis zprávy, šifrování a ověřování tokenů úplného ověření) úspěšná zabezpečení jsou protokolovány.<br />– Selhání: Pouze události chyby jsou protokolovány.<br />-SuccessOrFailure: Auditování úspěšných a neúspěšných události jsou protokolovány.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|auditLogLocation|Určuje umístění protokolu auditu. Platné hodnoty jsou následující:<br /><br /> Výchozí Události zabezpečení se zapisují do aplikačního protokolu v systému Windows XP a do protokolu událostí v systému Windows Server 2003 a Windows Vista.<br />Použití Události auditu se zapisují do protokolu událostí aplikace.<br />Bezpečnost Události auditu se zapisují do protokolu událostí zabezpečení.<br /><br /> Výchozí hodnota je výchozí hodnota. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLogLocation>.|  
+|suppressAuditFailure|Logická hodnota, která určuje chování pro potlačení selhání zápisu do protokolu auditu.<br /><br /> Aplikace by se měly informovat o selhání zápisu do protokolu auditu. Pokud vaše aplikace není navržena pro zpracování selhání auditu, měli byste použít tento atribut k potlačení selhání při zápisu do protokolu auditu.<br /><br /> Pokud tento atribut je `true`, jsou výjimky jiné než OutOfMemoryException, StackOverflowException, ThreadAbortException a ArgumentException v důsledku pokusů o zápis událostí auditu zpracovávány systémem a nejsou šířeny do použití. Pokud je `false`tento atribut, všechny výjimky, které jsou výsledkem pokusů o zápis událostí auditu, jsou předány do aplikace.<br /><br /> Výchozí hodnota je `true`.|  
+|serviceAuthorizationAuditLevel|Určuje typy událostí autorizace, které jsou zaznamenány v protokolu auditu. Platné hodnoty jsou následující:<br /><br /> NTato Neprovádí se žádné auditování událostí autorizace služby.<br />Nástup Auditovány se jenom úspěšné události autorizace služby.<br />Poruše Auditovány se pouze události autorizace neúspěšné služby.<br />- SuccessOrFailure: Auditované události úspěšné i neúspěšné autorizace služby jsou auditovány.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|messageAuthenticationAuditLevel|Určuje typ protokolovaných událostí auditu ověřování zpráv. Platné hodnoty jsou následující:<br /><br /> NTato Negenerují se žádné události auditu.<br />Nástup Protokolovat se budou jenom úspěšná zabezpečení (úplné ověření včetně ověření podpisu zprávy, šifry a ověření tokenu).<br />Poruše Protokolují se pouze události selhání.<br />- SuccessOrFailure: Události úspěšného i neúspěchu jsou protokolovány.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,20 +46,20 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek konfigurace umožňuje auditovat události ověřování Windows Communication Foundation (WCF). Když je povolené auditování, dají auditovat úspěšné nebo neúspěšné ověřování pokusů o zadání (nebo obojí). Události se zapisují do jedné ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verze operačního systému. Protokoly událostí může vše zobrazit pomocí prohlížeče událostí Windows.  
+ Tento prvek konfigurace slouží k auditování událostí ověřování Windows Communication Foundation (WCF). Je-li povoleno auditování, lze auditovat buď úspěšné nebo neúspěšné pokusy o ověření (nebo obojí). Události se zapisují do jednoho ze tří protokolů událostí: aplikace, zabezpečení nebo výchozí protokol pro verzi operačního systému. Protokoly událostí je možné zobrazit v prohlížeči událostí systému Windows.  
   
- Podrobný příklad použití tento prvek konfigurace, najdete v části [chování auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).  
+ Podrobný příklad použití tohoto prvku konfigurace najdete v tématu [chování auditování služby](../../../wcf/samples/service-auditing-behavior.md).  
   
- Ve výchozím nastavení Windows XP událostí auditu, které můžete zobrazit v protokolu aplikace; Když jste na Windows Server 2003 a Windows Vista, událostí auditu, které vidíte v protokolu zabezpečení. Umístění události auditu se dá nastavit tak, že nastavíte `auditLogLocation` atribut "Aplikace" nebo "Zabezpečení". Další informace najdete v tématu [jak: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md). Pokud události se zapisují do protokolu zabezpečení, LocalSecurityPolicy -> Povolit přístup k objektu je potřeba nastavit u "Success" a "Selhání".  
+ Ve výchozím nastavení v systému Windows XP lze události auditu zobrazit v protokolu aplikace. v systémech Windows Server 2003 a Windows Vista lze události auditu zobrazit v protokolu zabezpečení. Umístění událostí auditu lze zadat nastavením `auditLogLocation` atributu na možnost aplikace nebo zabezpečení. Další informace najdete v tématu [jak: Auditovat události](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)zabezpečení. Pokud jsou události napsány v protokolu zabezpečení, LocalSecurityPolicy-> Povolit přístup k objektům by měl být nastaven na hodnotu "úspěch" a "selhání".  
   
- Při hledání v protokolu událostí, je zdrojem událostí auditu "ServiceModel auditu 3.0.0.0". Záznamy auditu ověřování zprávy mají kategorii "MessageAuthentication" záznamy auditu autorizace služby mají kategorii "ServiceAuthorization".  
+ Při prohlížení protokolu událostí je zdrojem událostí auditu "ServiceModel audit 3.0.0.0". Záznamy auditu ověřování zprávy mají kategorii "MessageAuthentication", zatímco záznamy auditu autorizací služeb mají kategorii "ServiceAuthorization".  
   
- Zprávy ověřovacích událostí auditu pokrytí, zda zpráva je porušené, určuje, zda vypršela platnost zprávy a jestli se klient může ověřit ve službě. Poskytují informace o tom, jestli ověření úspěšné nebo neúspěšné spolu s identitou klienta a koncového bodu zpráva byla odeslána spolu s akce spojený se zprávou.  
+ Události auditu ověřování zpráv se týkají ohledu na to, zda byla zpráva zfalšována, zda vypršela platnost zprávy a zda se může klient ověřit ve službě. Poskytují informace o tom, zda bylo ověření úspěšné nebo neúspěšné, spolu s identitou klienta a koncovým bodem, na který byla zpráva odeslána, spolu s akcí přidruženou ke zprávě.  
   
- Události auditu autorizace služby zahrnují rozhodnutí o autorizaci, které správce autorizace služby. Poskytují informace o tom, jestli byla úspěšná autorizace nebo se nepodařilo spolu s identitou klienta, koncový bod zprávy odeslané do akce spojený se zprávou, identifikátor autorizační kontext, který byl vytvořen příchozí zpráva a typ správce autorizace, který vytvořil rozhodnutí přístupu.  
+ Události auditu autorizace služby se týkají autorizačního rozhodnutí, které udělal Správce autorizací služby. Poskytují informace o tom, zda autorizace byla úspěšná nebo neúspěšná spolu s identitou klienta, koncového bodu, na který byla zpráva odeslána, k akci přidružené ke zprávě, identifikátoru autorizačního kontextu, který byl vygenerován z příchozí zpráva a typ Správce autorizací, který učinil rozhodnutí o přístupu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -82,7 +82,7 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
 
 - <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Auditování](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
-- [Postupy: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
-- [Chování při auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Auditování](../../../wcf/feature-details/auditing-security-events.md)
+- [Postupy: Auditovat události zabezpečení](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)
+- [Chování při auditování služby](../../../wcf/samples/service-auditing-behavior.md)

@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 80d82e26fe54c5422d1140bba84830879f0b5c2d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 238a5f19bd8cbd89a5537b2b9297bfa9e1f54613
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781276"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952872"
 ---
 # <a name="functionleave-function"></a>FunctionLeave – funkce
-Oznámí profileru, že funkce se chystá vrácení volajícímu.  
+Upozorní profileru, že se chystá návrat funkce k volajícímu.  
   
 > [!NOTE]
->  `FunctionLeave` Funkce je zastaralé v rozhraní .NET Framework 2.0. Bude nadále fungovat, ale bude mít za následek snížení výkonu. Použití [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) namísto toho funkci.  
+> `FunctionLeave` Funkce je zastaralá v .NET Framework 2,0. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +39,29 @@ void __stdcall FunctionLeave (
   
 ## <a name="parameters"></a>Parametry  
  `funcID`  
- [in] Identifikátor funkce, která vrací.  
+ pro Identifikátor funkce, která vrací.  
   
 ## <a name="remarks"></a>Poznámky  
- `FunctionLeave` Funkce je zpětné volání, je nutné implementovat. Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.  
+ `FunctionLeave` Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec`atribut třídy úložiště`naked`().  
   
- Prováděcí modul nelze uložit žádné registry před voláním této funkce.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Provádění `FunctionLeave` by neměla blokovat, protože způsobí zpoždění uvolnění paměti. Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti. Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionLeave` vrátí.  
+ Implementace `FunctionLeave` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud `FunctionLeave` se nevrátí.  
   
- Také `FunctionLeave` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.  
+ `FunctionLeave` Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Hlaviček** CorProf.idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

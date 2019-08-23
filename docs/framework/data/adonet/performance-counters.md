@@ -5,42 +5,42 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: e7e7ba379f6f92f3ba8fba55f22c8eaec81ab1cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 360e4a956aec74b6b71185d6acf2f4071d22e2ae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951210"
 ---
 # <a name="performance-counters-in-adonet"></a>Čítače výkonu v ADO.NET
-ADO.NET 2.0 zavedené rozšířenou podporu pro čítače výkonu, která zahrnuje podporu pro obě <xref:System.Data.SqlClient> a <xref:System.Data.OracleClient>. <xref:System.Data.SqlClient> Čítačů výkonu k dispozici v předchozích verzích technologie ADO.NET byly zastaralé a nahradí nové čítače výkonu, které jsou popsané v tomto tématu. Čítače výkonu technologie ADO.NET můžete použít k monitorování stavu vaší aplikace a prostředky připojení, které používá. Čítače výkonu můžete monitorovat pomocí nástroje Sledování výkonu Windows nebo lze přistupovat programově pomocí <xref:System.Diagnostics.PerformanceCounter> třídy v <xref:System.Diagnostics> oboru názvů.  
+ADO.NET 2,0 představil rozšířenou podporu pro čítače výkonu, které zahrnují podporu <xref:System.Data.SqlClient> pro <xref:System.Data.OracleClient>i. Čítače <xref:System.Data.SqlClient> výkonu dostupné v předchozích verzích ADO.NET byly zastaralé a nahrazeny novými čítači výkonu popsanými v tomto tématu. Pomocí čítačů výkonu ADO.NET můžete monitorovat stav aplikace a prostředky připojení, které používá. Čítače výkonu lze monitorovat pomocí nástroje sledování výkonu systému Windows nebo lze programově přistupovat pomocí <xref:System.Diagnostics.PerformanceCounter> třídy <xref:System.Diagnostics> v oboru názvů.  
   
 ## <a name="available-performance-counters"></a>Dostupné čítače výkonu  
- Aktuálně k dispozici 14 různých čítačů výkonu pro <xref:System.Data.SqlClient> a <xref:System.Data.OracleClient> jak je popsáno v následující tabulce. Všimněte si, že názvy pro jednotlivé čítače nejsou lokalizovány do místní verze rozhraní Microsoft .NET Framework.  
+ V současné době jsou k dispozici 14 různých <xref:System.Data.SqlClient> čítačů <xref:System.Data.OracleClient> výkonu pro a jak je popsáno v následující tabulce. Všimněte si, že názvy jednotlivých čítačů nejsou lokalizovány mezi regionální verze .NET Framework Microsoft.  
   
 |Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
-|`HardConnectsPerSecond`|Počet připojení za sekundu provedených na databázový server.|  
-|`HardDisconnectsPerSecond`|Počet odpojí za sekundu, které se provádějí databázový server.|  
-|`NumberOfActiveConnectionPoolGroups`|Počet jedinečných připojení fondu skupiny, které jsou aktivní. Tento čítač se řídí počet jedinečných řetězců připojení, které se nacházejí v doméně aplikace.|  
-|`NumberOfActiveConnectionPools`|Celkový počet sdružení připojení.|  
-|`NumberOfActiveConnections`|Počet aktivních připojení, které se právě používají. **Poznámka:**  Tento čítač výkonu není standardně povolená. Pokud chcete povolit tento čítač výkonu, naleznete v tématu [aktivace vypnout výchozí čítače](#ActivatingOffByDefault).|  
-|`NumberOfFreeConnections`|Počet připojení, které jsou k dispozici pro použití ve fondech připojení. **Poznámka:**  Tento čítač výkonu není standardně povolená. Pokud chcete povolit tento čítač výkonu, naleznete v tématu [aktivace vypnout výchozí čítače](#ActivatingOffByDefault).|  
-|`NumberOfInactiveConnectionPoolGroups`|Počet skupin fondu jedinečné připojení, které označí se k vyřazení. Tento čítač se řídí počet jedinečných řetězců připojení, které se nacházejí v doméně aplikace.|  
-|`NumberOfInactiveConnectionPools`|Počet neaktivních sdružení připojení, které nedošlo k žádné poslední aktivitu a čekají na odstraněn.|  
-|`NumberOfNonPooledConnections`|Počet aktivních připojení, které nejsou ve fondu.|  
-|`NumberOfPooledConnections`|Počet aktivních připojení, které se spravují infrastrukturu sdružování připojení.|  
-|`NumberOfReclaimedConnections`|Počet připojení, které byly získány zpět prostřednictvím uvolňování kde `Close` nebo `Dispose` nebyla volána aplikací. Nejsou explicitně zavření nebo rušení připojení neuškodí jednu možnost výkonu.|  
-|`NumberOfStasisConnections`|Počet připojení, které aktuálně čekají na dokončení akce a které jsou proto není k dispozici pro použití v aplikaci.|  
-|`SoftConnectsPerSecond`|Počet aktivních připojení se načítají z fondu připojení. **Poznámka:**  Tento čítač výkonu není standardně povolená. Pokud chcete povolit tento čítač výkonu, naleznete v tématu [aktivace vypnout výchozí čítače](#ActivatingOffByDefault).|  
-|`SoftDisconnectsPerSecond`|Počet aktivních připojení vrácených do fondu připojení. **Poznámka:**  Tento čítač výkonu není standardně povolená. Pokud chcete povolit tento čítač výkonu, naleznete v tématu [aktivace vypnout výchozí čítače](#ActivatingOffByDefault).|  
+|`HardConnectsPerSecond`|Počet připojení za sekundu, které se provádí na databázovém serveru.|  
+|`HardDisconnectsPerSecond`|Počet odpojení za sekundu, které se provádí na databázovém serveru.|  
+|`NumberOfActiveConnectionPoolGroups`|Počet jedinečných skupin fondu připojení, které jsou aktivní. Tento čítač je řízen počtem jedinečných připojovacích řetězců, které jsou nalezeny v doméně aplikace.|  
+|`NumberOfActiveConnectionPools`|Celkový počet fondů připojení.|  
+|`NumberOfActiveConnections`|Počet aktivních připojení, která jsou aktuálně používána. **Poznámka:**  Tento čítač výkonu není ve výchozím nastavení povolen. Pokud chcete tento čítač výkonu povolit, přečtěte si téma [Aktivace čítačů mimo výchozí](#ActivatingOffByDefault).|  
+|`NumberOfFreeConnections`|Počet připojení, která jsou k dispozici pro použití ve fondech připojení. **Poznámka:**  Tento čítač výkonu není ve výchozím nastavení povolen. Pokud chcete tento čítač výkonu povolit, přečtěte si téma [Aktivace čítačů mimo výchozí](#ActivatingOffByDefault).|  
+|`NumberOfInactiveConnectionPoolGroups`|Počet jedinečných skupin fondů připojení, které jsou označeny pro vyřazení. Tento čítač je řízen počtem jedinečných připojovacích řetězců, které jsou nalezeny v doméně aplikace.|  
+|`NumberOfInactiveConnectionPools`|Počet neaktivních fondů připojení, které nemají žádnou poslední aktivitu a čekají na jejich vyřazení.|  
+|`NumberOfNonPooledConnections`|Počet aktivních připojení, která nejsou ve fondu.|  
+|`NumberOfPooledConnections`|Počet aktivních připojení, která jsou spravována infrastrukturou sdružování připojení.|  
+|`NumberOfReclaimedConnections`|Počet připojení, která byla uvolněna prostřednictvím uvolňování paměti, kdy `Close` `Dispose` aplikace nevolala. Nepovedlo se explicitně uzavřít ani vyřadit připojení neuškodí výkon.|  
+|`NumberOfStasisConnections`|Počet připojení, které aktuálně čekají na dokončení akce a které jsou proto nedostupné pro použití vaší aplikací.|  
+|`SoftConnectsPerSecond`|Počet aktivních připojení, která jsou načítána z fondu připojení. **Poznámka:**  Tento čítač výkonu není ve výchozím nastavení povolen. Pokud chcete tento čítač výkonu povolit, přečtěte si téma [Aktivace čítačů mimo výchozí](#ActivatingOffByDefault).|  
+|`SoftDisconnectsPerSecond`|Počet aktivních připojení, které jsou vraceny do fondu připojení. **Poznámka:**  Tento čítač výkonu není ve výchozím nastavení povolen. Pokud chcete tento čítač výkonu povolit, přečtěte si téma [Aktivace čítačů mimo výchozí](#ActivatingOffByDefault).|  
   
-### <a name="connection-pool-groups-and-connection-pools"></a>Skupiny fondu připojení a sdružení připojení  
- Pokud používáte ověřování Windows (integrované zabezpečení), je třeba sledovat i `NumberOfActiveConnectionPoolGroups` a `NumberOfActiveConnectionPools` čítače výkonu. Důvodem je, která je namapována fondu skupin připojení na jedinečných řetězců připojení. Při použití integrovaného zabezpečení, sdružení připojení mapovat připojovací řetězce a také vytvořit samostatné fondy pro jednotlivé identity Windows. Například, pokud Fred a Julie, každou v rámci téže třídy AppDomain, jak použít připojovací řetězec `"Data Source=MySqlServer;Integrated Security=true"`skupiny fondu připojení je vytvořené pro připojovací řetězec a jsou vytvořeny dva další fondy, jeden pro Fred a jeden pro Julie. Pokud Jan a Marta pomocí připojovacího řetězce identické přihlášení serveru SQL Server, `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`, pak pouze jeden fond se vytvoří pro **lowPrivUser** identity.  
+### <a name="connection-pool-groups-and-connection-pools"></a>Skupiny fondu připojení a fondy připojení  
+ Při použití ověřování systému Windows (integrované zabezpečení) je nutné monitorovat `NumberOfActiveConnectionPoolGroups` čítače výkonu a. `NumberOfActiveConnectionPools` Důvodem je, že se skupiny fondu připojení mapují na jedinečné připojovací řetězce. Při použití integrovaného zabezpečení se fondy připojení mapují na připojovací řetězce a navíc vytvoří samostatné fondy pro jednotlivé identity Windows. Například pokud Fred a Julie každý v rámci stejné domény AppDomain, oba používají připojovací řetězec `"Data Source=MySqlServer;Integrated Security=true"`, vytvoří se skupina fondu připojení pro připojovací řetězec a vytvoří se dva další fondy, jeden pro Fred a druhý pro Julie. Pokud Jan a Martha používají připojovací řetězec se stejným SQL Server přihlášením `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`, vytvoří se pro identitu **lowPrivUser** jenom jeden fond.  
   
 <a name="ActivatingOffByDefault"></a>   
-### <a name="activating-off-by-default-counters"></a>Aktivace mimo výchozí čítače  
- Čítače výkonu `NumberOfFreeConnections`, `NumberOfActiveConnections`, `SoftDisconnectsPerSecond`, a `SoftConnectsPerSecond` jsou standardně vypnuté. Do konfiguračního souboru aplikace je chcete povolit, přidejte následující informace:  
+### <a name="activating-off-by-default-counters"></a>Aktivace čítačů mimo výchozí  
+ Čítače `NumberOfFreeConnections` `NumberOfActiveConnections`výkonu ,,a`SoftConnectsPerSecond` jsou ve výchozím nastavení vypnuté. `SoftDisconnectsPerSecond` Do konfiguračního souboru aplikace přidejte následující informace, abyste je povolili:  
   
 ```xml  
 <system.diagnostics>  
@@ -51,11 +51,11 @@ ADO.NET 2.0 zavedené rozšířenou podporu pro čítače výkonu, která zahrnu
 </system.diagnostics>  
 ```  
   
-## <a name="retrieving-performance-counter-values"></a>Načítání hodnoty čítače výkonu  
- Následující konzolové aplikace ukazuje, jak načíst hodnoty čítače výkonu ve vaší aplikaci. Připojení musí být otevřený a aktivní informace, které má být vrácen pro všechny čítače výkonu technologie ADO.NET.  
+## <a name="retrieving-performance-counter-values"></a>Načítání hodnot čítače výkonu  
+ Následující aplikace konzoly ukazuje, jak načíst hodnoty čítače výkonu ve vaší aplikaci. Aby bylo možné vracet informace pro všechny čítače výkonu ADO.NET, musí být připojení otevřená a aktivní.  
   
 > [!NOTE]
->  Tento příklad používá ukázku **AdventureWorks** databáze je součástí systému SQL Server. Připojovací řetězce k dispozici ve vzorovém kódu předpokládá, že databáze je nainstalováný a dostupný na místním počítači s názvem instance SqlExpress a vytvoření přihlášení serveru SQL, které odpovídají zadané v připojovacích řetězcích. Budete muset povolit přihlášení serveru SQL Server, pokud je server nakonfigurovaný pomocí výchozích nastavení zabezpečení, které umožňují jenom ověřování Windows. Upravte připojovací řetězce tak, aby odpovídal vašemu prostředí.  
+> V tomto příkladu se používá ukázková databáze **AdventureWorks** obsažená v SQL Server. Připojovací řetězce, které jsou uvedeny v ukázkovém kódu, předpokládají, že je databáze nainstalována a dostupná v místním počítači s názvem instance SqlExpress a že jste vytvořili SQL Server přihlašovacích údajů, které odpovídají zadaným řetězcům v připojovacích řetězcích. Pokud je server nakonfigurovaný pomocí výchozího nastavení zabezpečení, které povoluje jenom ověřování systému Windows, může být nutné povolit SQL Server přihlašovacích údajů. Upravte připojovací řetězce podle potřeby tak, aby vyhovovaly vašemu prostředí.  
   
 ### <a name="example"></a>Příklad  
   
@@ -398,7 +398,7 @@ class Program
 
 - [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
 - [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)
-- [Čítače výkonu pro technologii ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
+- [Čítače výkonu pro ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
 - [Běhová profilace](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)
-- [Úvod do monitorování prahových hodnot výkonu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
+- [Úvod do monitorování mezních hodnot výkonu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
 - [Přehled ADO.NET](ado-net-overview.md)

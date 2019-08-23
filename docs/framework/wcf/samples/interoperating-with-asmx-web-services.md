@@ -2,22 +2,22 @@
 title: Spolupráce s webovými službami ASMX
 ms.date: 03/30/2017
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-ms.openlocfilehash: 327cb3f376ef37278d8ea58f32fdb8eeb7b67c51
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9689210a0e5d0e355ad384f66c6f19637a77a072
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989869"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929098"
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Spolupráce s webovými službami ASMX
-Tento příklad ukazuje, jak integrovat existující ASMX webové služby Windows Communication Foundation (WCF) klientské aplikace.  
+Tato ukázka předvádí, jak integrovat klientskou aplikaci Windows Communication Foundation (WCF) s existující webovou službou ASMX.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba je k webové službě ASMX, který implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Služba zpřístupňuje matematických operací (`Add`, `Subtract`, `Multiply`, a `Divide`). Klient podá synchronní žádosti a odpovědi služby s výsledkem matematické operace. Činnost klienta je vidět v okně konzoly.  
+ Tato ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba je webová služba ASMX, která implementuje kontrakt definující způsob komunikace požadavek-odpověď. Služba zpřístupňuje matematické operace (`Add`, `Subtract`, `Multiply` `Divide`a). Klient provádí synchronní požadavky na matematickou operaci a ve výsledku odpovídá službě. Aktivita klienta se zobrazí v okně konzoly.  
   
- Implementace ASMX webové služby, které jsou uvedené v následující vzorový kód vypočítá a vrátí odpovídající výsledek.  
+ Implementace webové služby ASMX zobrazená v následujícím ukázkovém kódu vypočítá a vrátí příslušný výsledek.  
   
 ```csharp  
 [WebService(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -46,15 +46,15 @@ public class CalculatorService : System.Web.Services.WebService
     }  
 ```  
   
- Podle konfigurace, služba může získat přístup na adrese `http://localhost/servicemodelsamples/service.asmx` klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě je nutné zadat použitím kvalifikovaného názvu domény místo localhost.  
+ Jak je nakonfigurováno, může být služba k `http://localhost/servicemodelsamples/service.asmx` dispozici klientovi ve stejném počítači. Aby mohli klienti na vzdálených počítačích přistupovat ke službě, je třeba zadat kvalifikovaný název domény namísto názvu localhost.  
   
- Komunikace se provádí prostřednictvím klienta vygenerovaný [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Klient je součástí generatedClient.cs souboru. ASMX služby musí být k dispozici pro generování kódu proxy, protože se používá k načtení aktualizovanými metadaty. Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typové proxy.  
+ Komunikace se provádí prostřednictvím klienta generovaného nástrojem pro dodávání [metadat ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Klient nástroje je obsažen v souboru generatedClient.cs. Služba ASMX musí být k dispozici, aby vygenerovala kód proxy, protože se používá k načtení aktualizovaných metadat. Spusťte následující příkaz z příkazového řádku v adresáři klienta pro vygenerování typovaného proxy serveru.  
   
 ```  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedClient.cs  
 ```  
   
- Pomocí generovaného klienta přístupná konfigurací uvedenou příslušnou adresu a vazbu koncového bodu služby. Jako službu Klient použije k určení koncový bod pro komunikaci s konfigurační soubor (App.config). Konfigurace koncového bodu klienta se skládá z absolutní adresu pro koncový bod služby, vazba a kontrakt, jak je znázorněno v následující ukázková konfigurace.  
+ Pomocí vygenerovaného klienta můžete získat přístup ke koncovému bodu služby nakonfigurováním příslušné adresy a vazby. Podobně jako služba Klient používá konfigurační soubor (App. config) k určení koncového bodu ke komunikaci. Konfigurace koncového bodu klienta se skládá z absolutní adresy koncového bodu služby, vazby a kontraktu, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <client>  
@@ -65,7 +65,7 @@ svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samp
 </client>  
 ```  
   
- Implementace klienta vytvoří instanci objektu generovaného klienta. Generovaného klienta můžete potom použít ke komunikaci se službou.  
+ Implementace klienta vytvoří instanci vygenerovaného klienta. Vygenerovaný klient se pak může použít ke komunikaci se službou.  
   
 ```csharp  
 // Create a client.  
@@ -103,7 +103,7 @@ Console.WriteLine("Press <ENTER> to terminate client.");
 Console.ReadLine();  
 ```  
   
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -114,19 +114,19 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\ASMX`  

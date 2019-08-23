@@ -9,49 +9,49 @@ helpviewer_keywords:
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: cd836f9ebd4d22ad6542c1fadc204b1ea67d1c26
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: d02f9f952c0ca7651d27571111a2d29f3d1130fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300772"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921292"
 ---
 # <a name="app-settings-schema"></a>Schéma nastavení aplikace
 
-Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikaci.
+Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md)
+[ **\<> Konfigurace**](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<add>** ](add-element-for-appsettings.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Vymazat >** ](clear-element-for-appsettings.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<odebrat >** ](remove-element-for-appsettings.md)
 
 | Prvek | Popis |
 | ------- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje  **\<Přidat >** ,  **\<vymazat >** , a  **\<odebrat >** značek k nastavení aplikace. Má volitelnou **souboru** atribut. |
-| [ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) | Definuje nastavení. Podřízený  **\<appSettings >** . Vyžaduje **klíč** a **hodnotu** atributy. |
-| [ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízený  **\<appSettings >** . nemá žádné atributy. |
-| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md) | Odebere nastavení. Podřízený  **\<appSettings >** . Vyžaduje **klíč** atribut. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | **Obsahuje\<> Přidat**,  **\<vymazat >** a  **\<odebrat značky >** pro řízení nastavení aplikace. Má volitelný atribut **souboru** . |
+| [ **\<add>** ](add-element-for-appsettings.md) | Definuje nastavení. Podřízený objekt appSettings >.  **\<** Vyžaduje atributy **klíče** a **hodnoty** . |
+| [ **\<Vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízený objekt appSettings >.  **\<** Nemá žádné atributy. |
+| [ **\<remove>** ](remove-element-for-appsettings.md) | Odebere nastavení. Podřízený objekt appSettings >.  **\<** Vyžaduje atribut **Key** . |
 
-## <a name="appsettings-element"></a>\<appSettings > – element
+## <a name="appsettings-element"></a>\<appSettings – element > element
 
-Tento prvek obsahuje  **\<Přidat >** ,  **\<vymazat >** , a  **\<odebrat >** značek k nastavení aplikace. Definuje volitelný atribut pro **souboru**.
+Tento prvek obsahuje  **\<přidání >** ,  **\<vymazání >** a  **\<odebrání značek >** pro řízení nastavení aplikace. Definuje volitelný atribut pro **soubor**.
 
-## <a name="add-element"></a>\<Přidat > – element
+## <a name="add-element"></a>\<Přidat > element
 
-Přidá vlastní nastavení aplikace jako dvojice název/hodnota do kolekce nastavení aplikace. Definuje atributy pro **klíč** a **hodnota**.
+Přidá vlastní nastavení aplikace jako dvojici název-hodnota do kolekce nastavení aplikace. Definuje atributy pro **klíč** a **hodnotu**.
 
-## <a name="clear-element"></a>\<Vymazat > – element
+## <a name="clear-element"></a>\<Vymazat > element
 
-Odebere všechny odkazy na zděděná nastavení vlastní aplikace a povoluje pouze odkazy, které jsou přidány pomocí  **\<Přidat >** prvky, které následují  **\<vymazat >** element. Definuje žádné atributy.
+Odebere všechny odkazy na zděděná nastavení vlastní aplikace a povoluje pouze odkazy, které jsou přidány  **\<přidáním >** prvků po  **\<elementu Clear >** . Nedefinuje žádné atributy.
 
-## <a name="remove-element"></a>\<Odebrat > – element
+## <a name="remove-element"></a>\<Odebrat element >
 
-Odebere odkaz na nastavení zděděné vlastní aplikace z aplikace nastavení kolekce. Definuje atribut pro **klíč**.
+Odebere odkaz na zděděné nastavení vlastní aplikace z kolekce nastavení aplikace. Definuje atribut pro **klíč**.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje soubor nastavení externí aplikace (*custom.config*), který definuje vlastní nastavení aplikace:
+Následující příklad ukazuje soubor nastavení externí aplikace (*Custom. config*), který definuje vlastní nastavení aplikace:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -60,7 +60,7 @@ Následující příklad ukazuje soubor nastavení externí aplikace (*custom.co
 </appSettings>
 ```
 
-Následující příklad ukazuje konfigurační soubor aplikace, která načítá nastavení v souboru externích nastavení a nastaví vlastní nastavení aplikace:
+Následující příklad ukazuje konfigurační soubor aplikace, který využívá nastavení v souboru externího nastavení a nastavuje vlastní nastavení aplikace:
 
 ```xml
 <configuration>
@@ -72,5 +72,5 @@ Následující příklad ukazuje konfigurační soubor aplikace, která načít�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-overview.md)
-- [Architektura nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Přehled nastavení aplikace](../../../winforms/advanced/application-settings-overview.md)
+- [Architektura nastavení aplikace](../../../winforms/advanced/application-settings-architecture.md)

@@ -8,100 +8,100 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
-ms.openlocfilehash: 3a6564683a856c8d1eb47b1569f156e0b6d5cc67
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9728c908331d5eabcff04d094e7fcbe42f636963
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911210"
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>Postupy: Vytvoření instance WSFederationHttpBinding
 
-Ve Windows Communication Foundation (WCF), <xref:System.ServiceModel.WSFederationHttpBinding> třídy ([\<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, že služba, která vyžaduje, aby klienti k ověření pomocí tokenu zabezpečení vydané službou tokenu zabezpečení. Toto téma ukazuje, jak nastavit <xref:System.ServiceModel.WSFederationHttpBinding> v kódu a konfigurace. Jakmile se vytvoří vazba, můžete nastavit koncový bod pro tuto vazbu používají.
+V Windows Communication Foundation (WCF) <xref:System.ServiceModel.WSFederationHttpBinding> třída ([\<WSFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) v konfiguraci) poskytuje mechanismus pro vystavení federované služby. To znamená, že služba, která vyžaduje, aby se klienti ověřovali pomocí tokenu zabezpečení vydaného službou tokenů zabezpečení. <xref:System.ServiceModel.WSFederationHttpBinding> V tomto tématu se dozvíte, jak nastavit jak v kódu, tak v konfiguraci. Po vytvoření vazby můžete nastavit koncový bod pro použití této vazby.
 
- Základní kroky, které jsou uvedeny následovně:
+ Základní postup je popsaný níže:
 
-1. Vyberte režim zabezpečení. <xref:System.ServiceModel.WSFederationHttpBinding> Podporuje `Message`, i přes více segmentů směrování, poskytující-koncové zabezpečení na úrovni zpráv a `TransportWithMessageCredential`, která poskytuje lepší výkon v případech, kde klient a služba můžete navázat přímé spojení přes PROTOKOL HTTPS.
+1. Vyberte režim zabezpečení. Podporuje službu, která poskytuje komplexní zabezpečení na úrovni zpráv, a `TransportWithMessageCredential`to i přes několik segmentů směrování, což zajišťuje vyšší výkon v případech, kdy klient a služba mohou vytvořit přímé připojení. `Message` <xref:System.ServiceModel.WSFederationHttpBinding> HTTPS.
 
     > [!NOTE]
-    > <xref:System.ServiceModel.WSFederationHttpBinding> Také podporuje `None` jako režim zabezpečení. Tento režim není zabezpečený a je k dispozici pouze pro účely ladění. Pokud koncový bod služby se nasazuje s <xref:System.ServiceModel.WSFederationHttpBinding> s jeho režim zabezpečení nastavený na `None`, výsledný klienta vazby (generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)) je <xref:System.ServiceModel.WSHttpBinding> s režim zabezpečení `None`.
+    > <xref:System.ServiceModel.WSFederationHttpBinding> Také podporuje`None` jako režim zabezpečení. Tento režim není zabezpečen a je poskytován pouze pro účely ladění. Je-li koncový bod služby nasazen s <xref:System.ServiceModel.WSFederationHttpBinding> režimem zabezpečení nastaveným na `None`hodnotu, výsledná vazba klienta (generovaná <xref:System.ServiceModel.WSHttpBinding> [nástrojem Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)) je v režimu zabezpečení `None`.
 
-     Na rozdíl od jiných vazeb poskytovaných systémem není nutné vybrat typ přihlašovacích údajů klienta při použití `WSFederationHttpBinding`. Je to proto, že typ pověření klienta je vždy vydaný token. WCF získá token ze zadaného vystavitele a představuje tento token ve službě k ověřování klienta.
+     Na rozdíl od jiných vazeb poskytovaných systémem není nutné při použití nástroje `WSFederationHttpBinding`vybrat typ přihlašovacích údajů klienta. Je to proto, že typ přihlašovacích údajů klienta je vždy vystavený token. Služba WCF získá token od zadaného vystavitele a prezentuje tento token službě k ověřování klienta.
 
-2. Na federované klientech, nastavena <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> vlastnost na adresu URL služby tokenů zabezpečení. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> vazby používat ke komunikaci se službou tokenu zabezpečení.
+2. U federovaných klientů nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> vlastnost na adresu URL služby tokenu zabezpečení. <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> Nastavte na vazbu, která se má použít ke komunikaci se službou tokenu zabezpečení.
 
-3. Volitelné. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> vlastnost k identifikátor URI (Uniform Resource) token typu. Na federovaným službám zadejte typ tokenu, který očekává, že služba. U federovaných klientů určete typ tokenu požadavky klientů od služby tokenů zabezpečení.
+3. Volitelný parametr. <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> Nastavte vlastnost na identifikátor URI (Uniform Resource Identifier) typu tokenu. V části federované služby zadejte typ tokenu, který služba očekává. U federovaných klientů zadejte typ tokenu, který klient požaduje od služby tokenu zabezpečení.
 
-     Pokud není zadán žádný typ tokenu, klienti generovat WS-Trust požádat o tokeny zabezpečení (RSTs) bez token typu identifikátoru URI a služby očekávat klienta ověřování pomocí tokenu zabezpečení kontrolní výrazy SAML (Markup Language) 1.1 ve výchozím nastavení.
+     Pokud není zadaný žádný typ tokenu, klienti vygenerují tokeny zabezpečení žádosti WS-Trust (RSTs) bez identifikátoru URI typu tokenu a služby ve výchozím nastavení očekávají pomocí tokenu SAML (Security Assert Markup Language) 1,1.
 
-     Identifikátor URI pro token SAML 1.1 `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.
+     Identifikátor URI pro token SAML 1,1 je `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.
 
-4. Volitelné. Na federovaným službám, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost odeslané na adresu metadat služby tokenů zabezpečení. Koncový bod metadat umožňuje klientům služby vyberte dvojici odpovídající vazby nebo koncového bodu, pokud služba je nakonfigurovaná pro publikování metadat. Další informace o publikování metadat naleznete v tématu [publikování metadat](publishing-metadata.md).
+4. Volitelný parametr. U federovaných služeb nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> vlastnost na adresu URL metadat služby tokenu zabezpečení. Koncový bod metadat umožňuje klientům služby vybrat příslušnou dvojici a koncový bod, pokud je služba nakonfigurovaná k publikování metadat. Další informace o publikování metadat naleznete v tématu [publikování metadat](publishing-metadata.md).
 
- Můžete také nastavit další vlastnosti, včetně typu klíč použít jako klíč důkazu v vydaný token sadu algoritmů mezi klientem a služby, zda Pokud chcete negotiate, nebo explicitně zadat přihlašovací údaje služby, jakékoliv specifické deklarací služby Očekává se, že vydaný token obsahoval a další elementy XML, které musí být přidáno k žádosti, které klient odešle do služby tokenů zabezpečení.
+ Můžete také nastavit další vlastnosti, včetně typu klíče používaného jako ověřovací klíč v vystaveném tokenu, Sada algoritmů, která se má použít mezi klientem a službou, ať už vyjednávat nebo explicitně zadat pověření služby, všechny konkrétní deklarace identity služby. očekává, že vydaný token bude obsahovat, a všechny další prvky XML, které musí být přidány do žádosti, kterou klient odesílá do služby tokenu zabezpečení.
 
 > [!NOTE]
->  `NegotiateServiceCredential` Vlastnost platí jen při `SecurityMode` je nastavena na `Message`. Pokud `SecurityMode` je nastavena na `TransportWithMessageCredential`, pak bude `NegotiateServiceCredential` vlastnost se ignoruje.
+> Vlastnost je relevantní pouze v případě, `SecurityMode` že je nastavena `Message`na. `NegotiateServiceCredential` Pokud `SecurityMode` je `NegotiateServiceCredential` parametr nastaven `TransportWithMessageCredential`na hodnotu, bude vlastnost ignorována.
 
-## <a name="to-configure-a-wsfederationhttpbinding-in-code"></a>Ke konfiguraci WSFederationHttpBinding v kódu
+## <a name="to-configure-a-wsfederationhttpbinding-in-code"></a>Konfigurace WSFederationHttpBinding v kódu
 
-1. Vytvoření instance <xref:System.ServiceModel.WSFederationHttpBinding>.
+1. Vytvořte instanci <xref:System.ServiceModel.WSFederationHttpBinding>.
 
-2. Nastavte <xref:System.ServiceModel.WSFederationHttpSecurity.Mode%2A> vlastnost <xref:System.ServiceModel.WSFederationHttpSecurityMode> nebo <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> podle potřeby. Pokud sady algoritmus jiných než <xref:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256%2A> je nutné použít, nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.AlgorithmSuite%2A> vlastnost na hodnotu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.
+2. Nastavte vlastnost na <xref:System.ServiceModel.WSFederationHttpSecurityMode> nebo<xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> podle potřeby. <xref:System.ServiceModel.WSFederationHttpSecurity.Mode%2A> Pokud je vyžadována jiná sada algoritmů než <xref:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256%2A> , <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.AlgorithmSuite%2A> nastavte vlastnost na hodnotu pořízenou z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.
 
-3. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> vlastnosti podle potřeby.
+3. <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> Nastavte vlastnost podle potřeby.
 
-4. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> vlastnost <xref:System.IdentityModel.Tokens.SecurityKeyType> `SymmetricKey` nebo.`AsymmetricKey` podle potřeby.
+4. <xref:System.IdentityModel.Tokens.SecurityKeyType> Nastavte vlastnost na`SymmetricKey` nebo. <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A>`AsymmetricKey` podle potřeby.
 
-5. Nastavte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> k odpovídající hodnotě. Pokud není nastavena žádná hodnota, WCF výchozí `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`, což znamená tokeny SAML 1.1.
+5. <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> Nastavte vlastnost na odpovídající hodnotu. Pokud není nastavená žádná hodnota, WCF se `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`nastaví jako výchozí, což indikuje tokeny SAML 1,1.
 
-6. V klientovi požadováno, pokud není zadána žádná lokálního vystavitele; volitelné na službu. Vytvoření <xref:System.ServiceModel.EndpointAddress> , který obsahuje informace o adrese a identitě služby tokenů zabezpečení a přiřadit <xref:System.ServiceModel.EndpointAddress> instance na <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> vlastnost.
+6. Vyžaduje se na klientovi, pokud není zadaný žádný místní Vystavitel. volitelné ve službě. Vytvořte objekt <xref:System.ServiceModel.EndpointAddress> , který obsahuje informace o adrese a identitě služby tokenu zabezpečení, a <xref:System.ServiceModel.EndpointAddress> přiřaďte instanci <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> k této vlastnosti.
 
-7. V klientovi požadováno, pokud není zadána žádná lokálního vystavitele; nepoužívá se ve službě. Vytvořit <xref:System.ServiceModel.Channels.Binding> pro `SecurityTokenService` a přiřaďte <xref:System.ServiceModel.Channels.Binding> instance na <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> vlastnost.
+7. Vyžaduje se na klientovi, pokud není zadaný žádný místní Vystavitel. nepoužívá se ve službě. Vytvořte <xref:System.ServiceModel.Channels.Binding> <xref:System.ServiceModel.Channels.Binding> pro a přiřaďte instanci k Vlastnosti.<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> `SecurityTokenService`
 
-8. Nelze použít na straně klienta; volitelné na službu. Vytvoření <xref:System.ServiceModel.EndpointAddress> instanci metadat služby tokenů zabezpečení a přiřaďte ho `IssuerMetadataAddress` vlastnost.
+8. Nepoužívá se na klientovi. volitelné ve službě. Vytvořte instanci pro metadata služby tokenu zabezpečení a přiřaďte ji `IssuerMetadataAddress` k vlastnosti. <xref:System.ServiceModel.EndpointAddress>
 
-9. Volitelné na klienta a služby. Vytvořit a přidat jeden nebo více <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement> instancí na kolekci vrácené poskytovatelem <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A> vlastnost.
+9. Volitelné na straně klienta i služby. Vytvořte a přidejte jednu nebo více <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement> instancí do kolekce vrácené <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A> vlastností.
 
-10. Volitelné na klienta a služby. Vytvořit a přidat jeden nebo více <xref:System.Xml.XmlElement> instancí na kolekci vrácené poskytovatelem <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A> vlastnost.
+10. Volitelné na straně klienta i služby. Vytvořte a přidejte jednu nebo více <xref:System.Xml.XmlElement> instancí do kolekce vrácené <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A> vlastností.
 
-## <a name="to-create-a-federated-endpoint-in-configuration"></a>Chcete-li vytvořit federovaný koncový bod v konfiguraci
+## <a name="to-create-a-federated-endpoint-in-configuration"></a>Vytvoření federovaného koncového bodu v konfiguraci
 
-1. Vytvoření [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) jako podřízený objekt [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) prvku v konfiguračním souboru aplikace.
+1. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) Vytvořte WSFederationHttpBinding > jako podřízený prvek > elementu v konfiguračním souboru aplikace. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)
 
-2. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) jako podřízený element [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a nastavit `name` atribut na odpovídající hodnotu.
+2. Vytvořte vazbu > elementu jako podřízenou položku pro [ \<> WSFederationHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a nastavte `name` atribut na odpovídající hodnotu. [ \<](../../../../docs/framework/misc/binding.md)
 
-3. Vytvoření `<security>` element jako podřízený objekt [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu.
+3. Vytvořte prvek jako podřízený [ \<prvek > vazby.](../../../../docs/framework/misc/binding.md) `<security>`
 
-4. Nastavte `mode` atribut na `<security>` prvku na hodnotu `Message` nebo `TransportWithMessageCredential`, podle potřeby.
+4. `mode` Nastavte atribut `<security>` prvkuna`TransportWithMessageCredential`hodnotu nebo, podle potřeby. `Message`
 
-5. Vytvoření `<message>` element jako podřízený objekt `<security>` elementu.
+5. Vytvořte prvek jako podřízený `<security>` prvek elementu. `<message>`
 
-6. Volitelné. Nastavte `algorithmSuite` atribut na `<message>` element s odpovídající hodnotou. Výchozí hodnota je `Basic256`.
+6. Volitelný parametr. `algorithmSuite` Nastavte atribut `<message>` prvku s odpovídající hodnotou. Výchozí hodnota je `Basic256`.
 
-7. Volitelné. Pokud asymetrický klíč důkazu je potřeba nastavit `issuedKeyType` atribut `<message>` elementu `AsymmetricKey`. Výchozí hodnota je `SymmetricKey`.
+7. Volitelný parametr. Pokud je požadován asymetrický klíč ověření, nastavte `issuedKeyType` atribut `<message>` elementu na `AsymmetricKey`. Výchozí hodnota je `SymmetricKey`.
 
-8. Volitelné. Nastavte `issuedTokenType` atribut na `<message>` elementu.
+8. Volitelný parametr. `issuedTokenType` Nastavte atribut`<message>` prvku.
 
-9. V klientovi požadováno, pokud není zadána žádná lokálního vystavitele; volitelné na službu. Vytvoření `<issuer>` element jako podřízený objekt `<message>` elementu.
+9. Vyžaduje se na klientovi, pokud není zadaný žádný místní Vystavitel. volitelné ve službě. Vytvořte prvek jako podřízený `<message>` prvek elementu. `<issuer>`
 
-10. Nastavte `address` atribut `<issuer>` elementu a zadejte adresu, na kterém služba tokenů zabezpečení přijímá žádosti o tokeny.
+10. `address` Nastavte atribut`<issuer>` na element a určete adresu, na které služba tokenů zabezpečení přijímá žádosti o tokeny.
 
-11. Volitelné. Přidat `<identity>` podřízený element a zadejte identitu služby tokenů zabezpečení
+11. Volitelný parametr. `<identity>` Přidejte podřízený element a určete identitu služby tokenu zabezpečení.
 
-12. Další informace najdete v tématu [identita a ověřování služby](service-identity-and-authentication.md).
+12. Další informace najdete v tématu [Identita a ověřování služby](service-identity-and-authentication.md).
 
-13. V klientovi požadováno, pokud není zadána žádná lokálního vystavitele; nepoužívá se ve službě. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) element v oddílu vazby, který slouží ke komunikaci se službou tokenu zabezpečení. Další informace o vytváření vazby najdete v tématu [jak: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).
+13. Vyžaduje se na klientovi, pokud není zadaný žádný místní Vystavitel. nepoužívá se ve službě. Vytvořte [vazbu > elementu v části Bindings, kterou lze použít ke komunikaci se službou tokenu zabezpečení. \<](../../../../docs/framework/misc/binding.md) Další informace o vytváření vazby naleznete v tématu [How to: Zadejte vazbu služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).
 
-14. Zadání vazby vytvořili v předchozím kroku tím, že nastavíte `binding` a `bindingConfiguration` atributy `<issuer>` elementu.
+14. Zadejte vazbu vytvořenou v předchozím kroku nastavením `binding` atributů `<issuer>` a `bindingConfiguration` elementu.
 
-15. Nelze použít na straně klienta; volitelné na službu. Vytvoření `<issuerMetadata>` element jako podřízený objekt <`message`> element. Potom v `address` atribut na `<issuerMetadata>` elementu, zadejte adresu, na které má publikování metadat služby tokenů zabezpečení. Volitelně můžete přidat `<identity>` podřízený element a zadejte identitu služby tokenů zabezpečení.
+15. Nepoužívá se na klientovi. volitelné ve službě. Vytvořte prvek jako podřízený prvek <`message`>. `<issuerMetadata>` Poté v `address` atributu `<issuerMetadata>` elementu zadejte adresu, na které má služba tokenů zabezpečení publikovat svá metadata. Volitelně můžete přidat `<identity>` podřízený element a zadat identitu služby tokenu zabezpečení.
 
-16. Volitelné na klienta a služby. Přidat `<claimTypeRequirements>` element jako podřízený objekt `<message>` elementu. Zadejte povinné a nepovinné deklarace identity, která služba závisí na přidáním [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-claimtyperequirements.md) prvků, které se `<claimTypeRequirements>` elementu a určení deklarace identity typu s `claimType` atribut. Určete, jestli má danou deklaraci požadované nebo volitelné tak, že nastavíte `isOptional` atribut.
+16. Volitelné na straně klienta i služby. Přidejte prvek jako podřízený `<message>` prvek elementu. `<claimTypeRequirements>` Určete povinné a volitelné deklarace identity, na které služba spoléhá, přidáním [ \<> prvků přidat](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-claimtyperequirements.md) do `<claimTypeRequirements>` prvku `claimType` a zadáním typu deklarace identity s atributem. Určete, jestli je daná deklarace identity požadovaná, nebo volitelná `isOptional` nastavením atributu.
 
 ## <a name="example"></a>Příklad
 
-Následující vzorový kód ukazuje kód pro nastavení `WSFederationHttpBinding` imperativně.
+Následující ukázka kódu ukazuje kód pro `WSFederationHttpBinding` imperativní nastavení.
 
 [!code-csharp[c_FederationBinding#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_federationbinding/cs/source.cs#2)]
 [!code-vb[c_FederationBinding#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]
@@ -110,4 +110,4 @@ Následující vzorový kód ukazuje kód pro nastavení `WSFederationHttpBindin
 
 - [Federace](federation.md)
 - [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)
-- [Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
+- [Postupy: Vypnutí zabezpečených relací na WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
