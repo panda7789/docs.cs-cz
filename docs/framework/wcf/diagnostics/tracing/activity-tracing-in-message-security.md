@@ -2,55 +2,55 @@
 title: Trasování aktivit v zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: 68862534-3b2e-4270-b097-8121b12a2c97
-ms.openlocfilehash: 65b2842c57da8e17c7280a2becd755ba2aae8364
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb8a4c6782cc52de393eacc2458e216d0f069866
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64656443"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933518"
 ---
 # <a name="activity-tracing-in-message-security"></a>Trasování aktivit v zabezpečení zpráv
-Toto téma popisuje trasování aktivity pro zpracování zabezpečení, který se tyto tři fáze.  
+Toto téma popisuje trasování aktivit pro zpracování zabezpečení, ke kterému dochází v následujících třech fázích.  
   
-- Vyjednávání/SCT exchange. To může nastat při přenosu později (prostřednictvím výměny binární data) nebo zpráva vrstvy (prostřednictvím výměny zpráv SOAP).  
+- Vyjednávání/SCT Exchange. K tomu může dojít později při přenosu (prostřednictvím výměny binárních dat) nebo vrstvy zpráv (prostřednictvím výměn zpráv SOAP).  
   
-- Zpráva šifrování a dešifrování, ověřování podpisů a ověřování. Trasování se zobrazí v okolí aktivity, obvykle "procesu akce."  
+- Šifrování a dešifrování zpráv pomocí ověřování podpisů a ověřování. Trasování se zobrazí v okolí aktivity, obvykle "akce zpracování".  
   
-- Autorizace a ověření. To může nastat, místně nebo při komunikaci mezi koncovými body.  
+- Autorizaci a ověření. K tomu může dojít místně nebo při komunikaci mezi koncovými body.  
   
-## <a name="negotiationsct-exchange"></a>Vyjednávání/SCT exchange  
- Ve fázi vyjednávání/SCT exchange na straně klienta vytvoří dva typy aktivit: "Nastavte zabezpečenou relaci" a "Zavřít zabezpečenou relaci." "Nastavte zabezpečenou relaci" zahrnuje trasování pro výměny zpráv RVNÍ/RSTR/SCT, sice "Ukončení relace Secure" zahrnuje trasování pro zprávu zrušit.  
+## <a name="negotiationsct-exchange"></a>Vyjednávání/SCT Exchange  
+ Ve fázi vyjednávání/SCT Exchange se na klientovi vytvoří dva typy aktivit: "Nastavte zabezpečenou relaci" a "Zavřít zabezpečenou relaci". Možnost nastavit zabezpečenou relaci zahrnuje trasování pro výměny zpráv RST/RSTR/SCT, zatímco možnost "uzavřít zabezpečenou relaci" zahrnuje trasování pro zprávu zrušení.  
   
- Na serveru se zobrazí každý požadavek/odpověď pro RVNÍ/RSTR/SCT ve svých vlastních aktivit. Pokud `propagateActivity` = `true` na serveru a klienta, se stejným ID aktivity na serveru a společně se zobrazí v "Nastavení zabezpečené relaci" při zobrazit pomocí prohlížeče trasování služeb.  
+ Na serveru se každý požadavek nebo odpověď pro RST/RSTR/SCT zobrazí ve své vlastní aktivitě. Pokud `propagateActivity` naserverui`true` v klientovi, aktivity na serveru mají stejné ID a společně se zobrazí v části "zabezpečená relace" při zobrazení prostřednictvím prohlížeče trasování služby. =  
   
- Tento model trasování aktivity je platné uživatelské jméno/heslo ověřování, ověřování certifikátů a ověřování protokolem NTLM.  
+ Tento model trasování aktivit je platný pro ověřování uživatelského jména a hesla, ověřování certifikátů a ověřování NTLM.  
   
- V následující tabulce jsou uvedeny aktivity a trasování pro vyjednávání a SCT exchange.  
+ V následující tabulce jsou uvedeny aktivity a trasování pro vyjednávání a SCT Exchange.  
   
-||Čas, když se stane vyjednávání/SCT exchange|Aktivity|trasování|  
+||Čas, kdy dojde k vyjednání/SCT výměně|Aktivity|Trasování|  
 |-|-------------------------------------------------|----------------|------------|  
-|Zabezpečení přenosu<br /><br /> (HTTPS, SSL)|Na první byla přijata zpráva.|Trasování jsou emitovány v okolí aktivity.|– Trasování Exchange<br />-Zabezpečený kanál vytvořeno<br />-Sdílení získali tajných kódů.|  
-|Vrstva zabezpečenou zprávu<br /><br /> (WSHTTP)|Na první byla přijata zpráva.|Na straně klienta:<br /><br /> -"Nastavení zabezpečenou relaci" z "Proces Action" první zprávy, pro každý požadavek nebo odpověď pro RVNÍ/RSTR/SCT.<br />-"Zavřít zabezpečenou relaci" Storno výměny "Zavřít Proxy aktivita." Tato aktivita se může stát některé další okolí aktivita, v závislosti na tom, kdy je uzavřena zabezpečenou relaci.<br /><br /> Na serveru:<br /><br /> -"Procesu" aktivit akcí pro každý požadavek/odpověď pro RVNÍ/SCT/zrušit na serveru. Pokud `propagateActivity` = `true`RVNÍ/RSTR/SCT aktivity jsou sloučeny s "Nastavit až relace zabezpečení" a zrušit je sloučen s "Zavřít" aktivitu z klienta.<br /><br /> Existují dvě fáze pro "Nastavit až zabezpečenou relaci":<br /><br /> 1.  Ověřování vyjednávání. Tato položka je nepovinná, pokud klient již má správné přihlašovací údaje. Tato fáze lze provést prostřednictvím zabezpečeného přenosu, nebo výměny zpráv. V takovém případě může dojít, 1 nebo 2 RVNÍ/RSTR výměny. Pro tyto výměny zpracovávají jsou emitovány trasování v nové aktivity požadavek/odpověď navržena jako dříve.<br />2.  Zabezpečte vytvoření relace (SCT), ve kterém jeden RVNÍ/RSTR exchange se tady děje. To má stejné okolí aktivity, jak je popsáno výše.|– Trasování Exchange<br />-Zabezpečený kanál vytvořeno<br />-Sdílení získali tajných kódů.|  
+|Zabezpečený přenos<br /><br /> (HTTPS, SSL)|První přijatá zpráva|Trasování jsou vygenerována v okolí aktivity.|– Trasování systému Exchange<br />– Zavedený zabezpečený kanál<br />-Bylo získáno sdílení tajných kódů.|  
+|Zabezpečená vrstva zprávy<br /><br /> (WSHTTP)|První přijatá zpráva|Na klientovi:<br /><br /> – "Nastavit zabezpečenou relaci" z "akce procesu" této první zprávy pro každý požadavek/odpověď pro RST/RSTR/SCT.<br />-"Uzavřít zabezpečenou relaci" pro zrušení výměny z "aktivity zavřít proxy". Tato aktivita se může vyskytnout z nějaké jiné aktivity okolí v závislosti na tom, kdy je zabezpečená relace uzavřená.<br /><br /> Na serveru:<br /><br /> -Jedna aktivita zpracovat akci pro každý požadavek nebo odpověď pro RST/SCT/Cancel na serveru. Pokud `propagateActivity` jsouaktivityRST`true`/RSTR/SCT sloučeny s nastavením relace zabezpečení a zrušení je sloučeno s aktivitou "Zavřít" z klienta. =<br /><br /> Pro nastavení zabezpečené relace jsou k dispozici dvě fáze:<br /><br /> 1.  Vyjednávání ověřování. To je volitelné, pokud již klient obsahuje správné přihlašovací údaje. Tuto fázi je možné provést prostřednictvím zabezpečeného přenosu nebo prostřednictvím výměny zpráv. V druhém případě může probíhat výměna 1 nebo 2 RSTR. Pro tyto výměny se trasování generují v nových aktivitách žádostí a odpovědí, jak už bylo navrženo dříve.<br />2.  Vytvoření zabezpečené relace (SCT), ve kterém se tady stane jedna RST/RSTR výměna. To má stejné okolní aktivity, jak je popsáno výše.|– Trasování systému Exchange<br />– Zavedený zabezpečený kanál<br />-Bylo získáno sdílení tajných kódů.|  
   
 > [!NOTE]
->  V režimu smíšených zabezpečení vyjednávání ověřování probíhá výměna binární, ale SCT probíhá výměna zpráv. V režimu čistě přenosu vyjednávání dochází pouze v přenosu se žádné další aktivity.  
+> V režimu smíšeného zabezpečení se ověřování vyjednávání provádí v binárních výměnách, ale SCT se děje ve výměně zpráv. V režimu čistého přenosu probíhá vyjednávání pouze v přenosu bez dalších aktivit.  
   
-## <a name="message-encryption-and-decryption"></a>Šifrování a dešifrování  
- V následující tabulce jsou uvedeny aktivity a trasování pro šifrování a dešifrování zprávy, jakož i ověřování podpisu.  
+## <a name="message-encryption-and-decryption"></a>Šifrování a dešifrování zpráv  
+ V následující tabulce jsou uvedeny aktivity a trasování pro šifrování a dešifrování zpráv a také ověřování podpisů.  
   
-||Zabezpečení přenosu<br /><br /> (Protokol HTTPS, SSL) a zabezpečení vrstvy zprávy<br /><br /> (WSHTTP)|  
+||Zabezpečený přenos<br /><br /> (HTTPS, SSL) a vrstva zabezpečené zprávy<br /><br /> (WSHTTP)|  
 |-|---------------------------------------------------------------------------------|  
-|Čas, kdy zprávy šifrování a dešifrování, stejně jako využíváno ověření podpisu|Na byla přijata zpráva|  
-|Aktivity|Trasování jsou zaznamenávány do ProcessAction aktivitu na klienta a serveru.|  
-|trasování|-sendSecurityHeader (odesílatel):<br />– Sign zpráva<br />-Šifrování dat požadavku<br />-receiveSecurityHeader (příjemce):<br />– Ověření podpisu<br />-Dešifrovat data odpovědi<br />-Ověřování|  
+|Čas, kdy dojde k šifrování a dešifrování zprávy, i k ověřování podpisů|Při přijetí zprávy|  
+|Aktivity|Trasování jsou vydávána v aktivitě ProcessAction na klientovi a serveru.|  
+|Trasování|-sendSecurityHeader (odesilatel):<br />– Podepsat zprávu<br />-Šifrovat data požadavku<br />-receiveSecurityHeader (přijímač):<br />-Ověřit podpis<br />-Dešifrovat data odpovědi<br />– Ověřování|  
   
 > [!NOTE]
->  V režimu čistě přenosu zprávy šifrování a dešifrování dochází pouze v přenosu se žádné další aktivity.  
+> V režimu čistého přenosu probíhá šifrování a dešifrování zpráv pouze v přenosu bez dalších aktivit.  
   
-## <a name="authorization-and-verification"></a>Autorizace a ověření  
+## <a name="authorization-and-verification"></a>Autorizace a ověřování  
  V následující tabulce jsou uvedeny aktivity a trasování pro autorizaci.  
   
-||Čas, když se stane autorizace|Aktivity|trasování|  
+||Čas, kdy dojde k autorizaci|Aktivity|Trasování|  
 |-|-------------------------------------|----------------|------------|  
-|Místní (výchozí)|Po zprávy se dešifrují na serveru|Trasování jsou zaznamenávány do ProcessAction aktivity na serveru.|Uživatel autorizován.|  
-|Vzdálený|Po zprávy se dešifrují na serveru|Trasování jsou zaznamenávány do vyvolané aktivitou ProcessAction novou aktivitu.|Uživatel autorizován.|
+|Místní (výchozí)|Po dešifrování zprávy na serveru|Trasování jsou vydávána v aktivitě ProcessAction na serveru.|Autorizován uživatelem.|  
+|Vzdálený|Po dešifrování zprávy na serveru|Trasování jsou generována v nové aktivitě vyvolané aktivitou ProcessAction.|Autorizován uživatelem.|

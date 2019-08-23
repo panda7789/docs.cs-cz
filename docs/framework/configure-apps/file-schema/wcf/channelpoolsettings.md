@@ -2,21 +2,21 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: 70f7452a22ae08d6eccd7d3644bdc8df45087ae0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: dd81821c74678cae8602458fe796a72bf5d379e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423190"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919561"
 ---
 # <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
-\<oneWay>  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
+\<> oneWay  
 \<channelPoolSettings>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,9 +34,9 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`idleTimeout`|Pozitivní <xref:System.TimeSpan> , která určuje maximální dobu kanály ve fondu může být neaktivní, než je odpojeno. Výchozí hodnota je 00:02:00.|  
-|`leaseTimeout`|A <xref:System.TimeSpan> , který určuje dobu, po jejímž uplynutí je kanál, když je vrácen do fondu, uzavřen. Výchozí hodnota je 00:10:00.|  
-|`maxOutboundChannelsPerEndpoint`|Kladné celé číslo, určující maximální počet kanálů, které mohou být uloženy ve fondu pro každý vzdálený koncový bod. Výchozí hodnota je 10.|  
+|`idleTimeout`|Kladná <xref:System.TimeSpan> hodnota, která určuje maximální dobu, po kterou můžou být kanály ve fondu nečinné, než se odpojí. Výchozí hodnota je 00:02:00.|  
+|`leaseTimeout`|A <xref:System.TimeSpan> určuje časový interval, po jehož uplynutí je kanál, který byl vrácen do fondu, uzavřen. Výchozí hodnota je 00:10:00.|  
+|`maxOutboundChannelsPerEndpoint`|Celé kladné číslo určující maximální počet kanálů, které mohou být uloženy ve fondu pro každý vzdálený koncový bod. Výchozí hodnota je 10.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,18 +45,18 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<oneWay>](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)|Umožňuje směrování paketů pro vlastní vazbu.|  
+|[\<oneWay>](oneway.md)|Povolí směrování paketů pro vlastní vazbu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Kvóty slouží jako vhodný mechanismus zásady zabránit spotřebu nadměrné prostředků. Brání tomu, aby útoků s cílem odepření služby (DOS), které jsou škodlivých aktivit nebo neúmyslným. Při nastavování kvóty kanál ve vlastním kanálu pomocí tohoto prvku.  
+ Kvóty se používají jako mechanismus zásad, aby se zabránilo vyčerpání nadměrných prostředků. Zabraňují útokům DOS (Denial of Service), které jsou buď škodlivé, nebo neúmyslné. Tento prvek použijte při nastavování kvót kanálů na vlastním kanálu.  
   
- `ChannelPoolSettings` Určuje tři kvót:  
+ `ChannelPoolSettings`Určuje tři kvóty:  
   
-- `idleTimeout` Kvóty slouží ke zmírnění útoků s cílem odepření služby (DOS) na serveru, které využívají obsadit prostředků delší dobu. Na straně klienta můžete nastavení správnou hodnotu zvýšit spolehlivost připojení ke službě. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- `idleTimeout` Kvóta se používá ke zmírnění útoků DOS (Denial of Service) na serveru, které se spoléhají na provázání prostředků po delší dobu. Nastavení správné hodnoty na klientovi může zvýšit spolehlivost připojení ke službě. Výchozí hodnota vychází z konzervativního mírného přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
-- `leaseTimeout` Kvóty slouží k integraci s nástroji pro vyrovnávání zatížení a zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- `leaseTimeout` Kvóta se používá pro integraci s nástroji pro vyrovnávání zatížení a za účelem zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativním přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
-- `maxOutboundChannelsPerEndpoint` Kvóta nastavuje omezení mezipaměti na serveru a klienta a slouží ke zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků, která je vhodná pro malé instalace scénáře a vývojové prostředí. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- Omezení mezipaměti sad kvót nastavuje na serveru i v klientovi a slouží ke zvýšení spolehlivosti. `maxOutboundChannelsPerEndpoint` Výchozí hodnota vychází z konzervativního mírného přidělení prostředků, které jsou vhodné pro vývojové prostředí a malé instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -65,8 +65,8 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
 - <xref:System.ServiceModel.Configuration.OneWayElement.ChannelPoolSettings%2A>
 - <xref:System.ServiceModel.Configuration.ChannelPoolSettingsElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [\<oneWay>](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [\<oneWay>](oneway.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

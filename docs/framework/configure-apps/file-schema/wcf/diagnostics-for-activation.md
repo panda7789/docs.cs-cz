@@ -1,19 +1,19 @@
 ---
-title: <diagnostics> pro aktivaci
+title: <diagnostics>pro aktivaci
 ms.date: 03/30/2017
 ms.assetid: 1486e0eb-fe2a-46c3-b584-c924889477dd
-ms.openlocfilehash: 30456963a7d74a93e39bb1fddc0910daae97f039
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 543c41936921eda39017e07f1c97294b268a9141
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704255"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919223"
 ---
 # <a name="diagnostics-for-activation"></a>\<Diagnostika > pro aktivaci
-Nakonfiguruje funkce diagnostiky Windows Communication Foundation (WCF) naslouchacího procesu.  
+Konfiguruje funkce diagnostiky naslouchacího procesu Windows Communication Foundation (WCF).  
   
  \<system.serviceModel.activation>  
-\<Diagnostika >  
+\<> diagnostiky  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,7 +25,7 @@ Nakonfiguruje funkce diagnostiky Windows Communication Foundation (WCF) naslouch
 </configuration>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -44,7 +44,7 @@ Nakonfiguruje funkce diagnostiky Windows Communication Foundation (WCF) naslouch
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Obsahuje nastavení konfigurace pro naslouchací proces SMSvcHost.exe.|  
+|[\<system.serviceModel.activation>](system-servicemodel-activation.md)|Obsahuje nastavení konfigurace procesu naslouchacího procesu SMSvcHost. exe.|  
   
 ## <a name="see-also"></a>Viz také:
 

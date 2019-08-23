@@ -16,72 +16,72 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b979b5f4ee849b96cd29b6c8e2e6a8932e88c182
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b82d9ac610cb393696ef94fb797a48b737b0231
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049554"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965750"
 ---
 # <a name="icorprofilerinfo-interface"></a>ICorProfilerInfo – rozhraní
-Poskytuje metody pro použití u profilery kódu ke komunikaci s common language runtime (CLR) k řízení sledování událostí a žádost o informace.  
+Poskytuje metody pro použití v profilech kódu ke komunikaci s modulem CLR (Common Language Runtime) pro řízení sledování událostí a informace o požadavcích.  
   
 > [!NOTE]
->  Každé metodě v `ICorProfilerInfo` rozhraní vrátí HRESULT indikuje úspěch nebo selhání. Seznam možných návratové kódy naleznete v tématu CorError.h.  
+> Každá metoda v `ICorProfilerInfo` rozhraní vrací hodnotu HRESULT, aby označovala úspěch nebo neúspěch. Seznam možných návratových kódů naleznete v tématu CorError. h.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[BeginInprocDebugging – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-begininprocdebugging-method.md)|Inicializuje podporu ladění v procesu. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.|  
-|[EndInprocDebugging – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-endinprocdebugging-method.md)|Ukončí relaci ladění v procesu. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.|  
-|[ForceGC – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-forcegc-method.md)|Vynutí uvolňování paměti ke kterým došlo v modulu runtime.|  
-|[GetAppDomainInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getappdomaininfo-method.md)|Získá informace o zadanou doménu aplikace.|  
-|[GetAssemblyInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getassemblyinfo-method.md)|Získá informace o zadané sestavení.|  
-|[GetClassFromObject – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromobject-method.md)|Získá `ClassID` z<br /><br /> objekt dle jeho `ObjectID`.|  
-|[GetClassFromToken – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromtoken-method.md)|Získá ID třídy, zadaný token metadat. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [ICorProfilerInfo2::GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) metoda místo.|  
-|[GetClassIDInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md)|Získá nadřazený modulu a tokenem metadat pro zadanou třídu.|  
-|[GetCodeInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcodeinfo-method.md)|Vrátí rozsah nativního kódu přidružené k ID zadanou funkci. Tato metoda je zastaralá. Použití [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) metoda místo.|  
-|[GetCurrentThreadID – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcurrentthreadid-method.md)|Získá ID aktuálního vlákna, pokud je spravovaným vláknem.|  
-|[GetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)|Získá aktuální kategorie událostí, pro které profileru chce obdržet oznámení událostí z modulu CLR.|  
-|[GetFunctionFromIP – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md)|Mapuje ukazatel instrukce spravovaného kódu `FunctionID`.|  
-|[GetFunctionFromToken – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromtoken-method.md)|Získá ID funkce. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) metoda místo.|  
-|[GetFunctionInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctioninfo-method.md)|Získá nadřazené třídu a metadata token pro zadanou funkci.|  
-|[GetHandleFromThread – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-gethandlefromthread-method.md)|Mapuje ID vlákna na popisovač podprocesu Win32.|  
-|[GetILFunctionBody – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md)|Získá ukazatel do těla metody v kódu Microsoft intermediate language (MSIL) začínající na jeho záhlaví.|  
-|[GetILFunctionBodyAllocator – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md)|Získá rozhraní, které představuje způsob, jak přidělit paměť pro záměnu těla metody v kódu MSIL.|  
-|[GetILToNativeMapping – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)|Získá mapování z posunů MSIL do nativních posunů pro kód obsažený v zadané funkce.|  
-|[GetInprocInspectionInterface – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getinprocinspectioninterface-method.md)|Získá objekt, který je možné zadávat dotazy pro icordebugprocess – rozhraní. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.|  
-|[GetInprocInspectionIThisThread – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getinprocinspectionithisthread-method.md)|Získá objekt, který je možné zadávat dotazy pro icordebugthread – rozhraní. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.|  
-|[GetModuleInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md)|Dané ID modulu vrátí název souboru modulu a ID modulu nadřazené sestavení.|  
-|[GetModuleMetaData – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md)|Získá instanci rozhraní metadat, který se mapuje na zadaný modul.|  
+|[BeginInprocDebugging – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-begininprocdebugging-method.md)|Inicializuje podporu ladění v procesu. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
+|[EndInprocDebugging – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-endinprocdebugging-method.md)|Ukončí relaci ladění v procesu. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
+|[ForceGC – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-forcegc-method.md)|Vynutí uvolňování paměti v modulu runtime.|  
+|[GetAppDomainInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getappdomaininfo-method.md)|Načte informace o zadané doméně aplikace.|  
+|[GetAssemblyInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getassemblyinfo-method.md)|Načte informace o zadaném sestavení.|  
+|[GetClassFromObject – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromobject-method.md)|`ClassID` Získá<br /><br /> objektu, který je `ObjectID`dán jeho.|  
+|[GetClassFromToken – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromtoken-method.md)|Získá ID třídy s ohledem na token metadat. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte metodu [ICorProfilerInfo2:: GetClassFromTokenAndTypeArgs –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) .|  
+|[GetClassIDInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md)|Získá nadřazený modul a token metadat pro určenou třídu.|  
+|[GetCodeInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcodeinfo-method.md)|Získá rozsah nativního kódu přidruženého k zadanému ID funkce. Tato metoda je zastaralá. Místo toho použijte metodu [ICorProfilerInfo2:: GetCodeInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) .|  
+|[GetCurrentThreadID – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcurrentthreadid-method.md)|Získá ID aktuálního vlákna, pokud se jedná o spravované vlákno.|  
+|[GetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)|Získá aktuální kategorie událostí, pro které profiler chce dostávat oznámení události z CLR.|  
+|[GetFunctionFromIP – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md)|Mapuje ukazatel na instrukci spravovaného kódu `FunctionID`na.|  
+|[GetFunctionFromToken – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromtoken-method.md)|Získá ID funkce. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte metodu [ICorProfilerInfo2:: GetFunctionFromTokenAndTypeArgs –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) .|  
+|[GetFunctionInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctioninfo-method.md)|Získá nadřazenou třídu a token metadat pro určenou funkci.|  
+|[GetHandleFromThread – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-gethandlefromthread-method.md)|Mapuje ID vlákna na popisovač vlákna Win32.|  
+|[GetILFunctionBody – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md)|Získá ukazatel na tělo metody v kódu jazyka MSIL (Microsoft Intermediate Language) od jejího záhlaví.|  
+|[GetILFunctionBodyAllocator – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md)|Získá rozhraní, které poskytuje metodu pro přidělení paměti, která se má použít pro odměnu těla metody v kódu jazyka MSIL.|  
+|[GetILToNativeMapping – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)|Získá mapu z posunu MSIL k nativním posunům pro kód obsažený v zadané funkci.|  
+|[GetInprocInspectionInterface – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getinprocinspectioninterface-method.md)|Získá objekt, na který lze zadat dotaz na rozhraní ICorDebugProcess. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
+|[GetInprocInspectionIThisThread – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getinprocinspectionithisthread-method.md)|Získá objekt, který lze dotazovat pro rozhraní ICorDebugThread. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
+|[GetModuleInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md)|Po předaném ID modulu vrátí název souboru modulu a ID nadřazeného sestavení modulu.|  
+|[GetModuleMetaData – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md)|Získá instanci rozhraní metadat, která se mapuje na určený modul.|  
 |[GetObjectSize – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md)|Získá velikost zadaného objektu.|  
-|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getthreadcontext-method.md)|Získá kontext identity aktuálně přiřazen k zadané vlákno.|  
-|[GetThreadInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getthreadinfo-method.md)|Získá aktuální identitu vlákna Win32 pro zadaný podproces.|  
-|[GetTokenAndMetadataFromFunction – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-gettokenandmetadatafromfunction-method.md)|Získá token metadat a instance objektu metadat rozhraní, které můžete použít pro token pro zadanou funkci.|  
-|[IsArrayClass – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-isarrayclass-method.md)|Určuje, zda dané třídy je třída pole.|  
-|[SetEnterLeaveFunctionHooks – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setenterleavefunctionhooks-method.md)|Určuje profiler implementovat funkce dřív říkalo "zadejte", "ponechte" a "tailcall" háky spravované funkce.|  
-|[SetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)|Nastaví hodnotu, která určuje typy událostí, pro které profileru chce obdržet oznámení z modulu CLR.|  
-|[SetFunctionIDMapper – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)|Určuje funkci, která bude volána k mapování profiler implementovat `FunctionID` hodnoty pro alternativní hodnoty, které jsou předány do profileru funkce zachytávání vstupu/výstupu.|  
+|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getthreadcontext-method.md)|Získá identitu kontextu aktuálně přidruženou k zadanému vláknu.|  
+|[GetThreadInfo – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getthreadinfo-method.md)|Získá aktuální identitu vlákna Win32 pro zadané vlákno.|  
+|[GetTokenAndMetadataFromFunction – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-gettokenandmetadatafromfunction-method.md)|Získá token metadat a instanci rozhraní metadat, které lze použít proti tokenu pro zadanou funkci.|  
+|[IsArrayClass – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-isarrayclass-method.md)|Určuje, zda je zadaná třída třídou Array.|  
+|[SetEnterLeaveFunctionHooks – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setenterleavefunctionhooks-method.md)|Určuje funkce implementované profilerem, které mají být volány u funkcí "Enter", "opustit" a "Tailcall" u spravovaných funkcí.|  
+|[SetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)|Nastaví hodnotu, která určuje typy událostí, pro které profiler chce dostávat oznámení od CLR.|  
+|[SetFunctionIDMapper – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)|Určuje funkci implementovanou v profileru, která bude volána k mapování `FunctionID` hodnot na alternativní hodnoty, které jsou předány do vstupních a ukončovacích funkcí profileru.|  
 |[SetFunctionReJIT – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionrejit-method.md)|Není implementováno. Nepoužívejte.|  
-|[SetILFunctionBody – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md)|Nahrazuje tělo zadanou funkci v zadaném modulu.|  
-|[SetILInstrumentedCodeMap – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)|Určuje, jak posunů MSIL původní zadaná funkce mapují na nové posunů MSIL profileru změnit funkce.|  
+|[SetILFunctionBody – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md)|Nahradí tělo zadané funkce v zadaném modulu.|  
+|[SetILInstrumentedCodeMap – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)|Určuje, jakým způsobem posune původní jazyk MSIL zadané funkce na nové posuny rozhraní MSIL upraveného profilerem funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Profiler volá metodu v `ICorProfilerInfo` rozhraní ke komunikaci s modulem CLR řídit sledování událostí a žádost o informace.  
+ Profiler volá metodu v `ICorProfilerInfo` rozhraní ke komunikaci s modulem CLR pro řízení událostí a informace o požadavcích.  
   
- Metody `ICorProfilerInfo` rozhraní jsou implementovány modulem CLR pomocí modelu volných vláken. Každá metoda vrátí HRESULT indikuje úspěch nebo selhání. Seznam možných návratové kódy naleznete v tématu CorError.h.  
+ Metody `ICorProfilerInfo` rozhraní jsou implementovány modulem CLR pomocí modelu s volnými vlákny. Každá metoda vrátí hodnotu HRESULT, aby označovala úspěch nebo neúspěch. Seznam možných návratových kódů naleznete v tématu CorError. h.  
   
- Prostřednictvím implementace okna profilování předá CLR [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md), `ICorProfilerInfo` rozhraní pro každou profileru kód během inicializace. Profiler kódu provést zavoláním metody `ICorProfilerInfo` rozhraní pro získání informací o spravovaném kódu se spouští v ovládacím prvku modulu CLR.  
+ CLR projde pomocí implementace [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) `ICorProfilerInfo` v profileru rozhraní do každého profileru kódu během inicializace. Profiler kódu pak může volat metody `ICorProfilerInfo` rozhraní, aby bylo možné získat informace o spravovaném kódu spuštěném pod kontrolou CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

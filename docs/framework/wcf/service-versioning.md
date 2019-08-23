@@ -2,135 +2,135 @@
 title: Verze služby
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-ms.openlocfilehash: 6b72558be4a367505ff18f10406785bc21fddd2c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3cb01531c594df5262963567438b47cbbed58a2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606006"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923020"
 ---
 # <a name="service-versioning"></a>Verze služby
-Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu služeb (a koncové body, které, která zpřístupňují) potřebovat změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiné řešení problémy. Každá změna zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu správy verzí Windows Communication Foundation (WCF).  
+Po počátečním nasazení a potenciálně delší dobu během své životnosti, služeb (a koncových bodů, které zveřejňuje) může být potřeba změnit z nejrůznějších důvodů, jako jsou třeba změny obchodních potřeb, požadavky na informační technologie nebo jiné adresy Chyba. Každá změna zavádí novou verzi služby. Toto téma vysvětluje, jak zvážit správu verzí v Windows Communication Foundation (WCF).  
   
-## <a name="four-categories-of-service-changes"></a>Čtyři kategorie změny služby  
- Změny služeb, které může být vyžadováno, je možné rozdělit do čtyř kategorií:  
+## <a name="four-categories-of-service-changes"></a>Čtyři kategorie změn služby  
+ Změny služeb, které mohou být požadovány, lze klasifikovat do čtyř kategorií:  
   
-- Změny smlouvy: Například operace, které mohou být přidány nebo datový prvek ve zprávě mohou přidat nebo změnit.  
+- Změny kontraktu: Například může být přidána operace, nebo je možné přidat nebo změnit datový prvek ve zprávě.  
   
-- Vyřešení změn: Například služba přesune do jiného umístění, kde mají nové adresy koncových bodů.  
+- Změny adresy: Například služba se přesune na jiné místo, kde koncové body mají nové adresy.  
   
-- Vazba změny: Třeba změny zabezpečení mechanismus nebo změnit její nastavení.  
+- Změny vazeb: Například změna mechanismu zabezpečení nebo změny nastavení.  
   
-- Provádění změn: Například interní metoda implementaci změny.  
+- Změny implementace: Například při změně implementace interní metody.  
   
- Některé z těchto změn se používá označení "slov" a jiné jsou "Pevná". Změna je *pevná* Pokud jsou v nové verzi úspěšně zpracovala všechny zprávy, které by byly zpracovány úspěšně v předchozí verzi. Je každá změna, která splňuje toto kritérium *zásadní* změnit.  
+ Některé z těchto změn se nazývají "přerušení" a jiné jsou "nerozdělitelné". Změna je nepřerušená, pokud se všechny zprávy, které by byly úspěšně zpracovány v předchozí verzi, úspěšně zpracovaly v nové verzi. Jakékoli změny, které nesplňují toto kritérium, jsou zásadní změnou.  
   
-## <a name="service-orientation-and-versioning"></a>Orientaci na služby a správy verzí  
- Jedním z principů orientaci na služby je, že jsou služby a klienti autonomní (nebo nezávislé). Mimo jiné to znamená, že vývojáři služeb nelze předpokládat, že ovládací prvek nebo dokonce vědět o všech klientech služby. Tím se eliminuje možnost znovu sestavovat a nasazovat všichni klienti, když service změny verze. Toto téma předpokládá služba používá tato zásada a proto musí být změněné nebo "verze" bez ohledu na jeho klienty.  
+## <a name="service-orientation-and-versioning"></a>Orientace služby a správa verzí  
+ Jednou z principyí služby je, že služby a klienti jsou autonomní (nebo nezávislé). Mimo jiné to znamená, že vývojáři služeb nemůžou předpokládat, že ovládají nebo dokonce znají informace o všech klientech služeb. Tím se eliminuje možnost opětovného sestavení a opětovného nasazení všech klientů, když služba změní verze. Toto téma předpokládá, že služba dodržuje tyto principem, a proto musí být změněna nebo "se správou" verzí nezávisle na svých klientech.  
   
- V případech, kdy k zásadní změně neočekávaný a nejde se vyhnout může aplikace rozhodnout Ignorovat tento princip a vyžaduje, aby se klienti znovu sestavit a znovu nasadit novou verzi služby.  
+ V případech, kdy je zásadní změna neočekávaná a nelze se jí vyhnout, může aplikace zvolit ignorování tohoto principem a vyžadovat, aby klienti znovu vytvořili a nasadili novou verzi služby.  
   
 ## <a name="contract-versioning"></a>Správa verzí kontraktů  
- Kontrakty používaný klientem nemusí být stejný jako kontrakt používá služba; potřebují pouze aby byly kompatibilní.  
+ Smlouvy používané klientem nemusí být stejné jako kontrakt používaný službou. potřebují být jenom kompatibilní.  
   
- Pro servisní smlouvy kompatibilita znamená, že nové operace vystavené služby je možné přidat, ale stávající operace nelze odebrat nebo změnit sémanticky.  
+ Pro kontrakty služeb se dá přidat nové operace vystavené službou, ale existující operace se nedají odebrat ani změnit sémanticky.  
   
- Pro datové kontrakty kompatibilita znamená, že nový typ schématu, které je možné přidat definice, ale existující definice typů schématu nelze změnit selhání způsoby. Rozbíjející změny mohou zahrnovat datové členy odstranění nebo změna datového typu konstrukce. Tato funkce umožňuje službě některé šířky při změně verze smlouvy bez narušení klientů. Pevná a blokuje změny, které lze provést k WCF data a služby v následujících dvou částech.  
+ U kontraktů dat se dají přidat nové definice typu schématu, ale existující definice typu schématu se nedají změnit rozlomeným způsobem. Průlomové změny můžou zahrnovat odebrání datových členů nebo změnu jejich datového typu konstrukce. Tato funkce umožňuje službě určitou zeměpisnou šířku při změně verze svých smluv bez přerušujících klientů. Následující dvě části vysvětlují nepřerušené a zásadní změny, které je možné provést na data WCF a kontrakty služby.  
   
 ## <a name="data-contract-versioning"></a>Správa verzí kontraktů dat  
- Tato část se zabývá Správa verzí dat při použití <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.DataContractAttribute> třídy.  
+ Tato část se zabývá používáním správy verzí dat při <xref:System.Runtime.Serialization.DataContractSerializer> použití <xref:System.Runtime.Serialization.DataContractAttribute> tříd a.  
   
-### <a name="strict-versioning"></a>Striktní správy verzí  
- V mnoha situacích při změně verze představuje problém, vývojářské služby nemá kontrolu nad klienty a proto nelze vytvářet předpoklady o tom, jak bude reagovat na změny ve zprávě, XML nebo schéma. V těchto případech je nutné zaručit, že nové zprávy budou ověřovat proti staré schématu dvou důvodů:  
+### <a name="strict-versioning"></a>Striktní verze  
+ V mnoha scénářích, kdy dochází k potížím s změnou verzí, vývojář služby nemá kontrolu nad klienty, a proto nemůže vytvořit předpoklady, jak by mohly reagovat na změny ve zprávě XML nebo schématu. V těchto případech je potřeba zaručit, že se nové zprávy ověřují oproti starému schématu, a to z těchto důvodů:  
   
-- Staré klienty byly vyvinuty s předpokladem, že nedojde ke změně schématu. Nemusí se jim podařit zpracovávat zprávy, které nikdy byly navrženy pro.  
+- Původní klienti byli vyvinuti s předpokladem, že se schéma nezmění. Nemusí podařit zpracovat zprávy, pro které nebyly nikdy navrženy.  
   
-- Staré klienti mohou provádět ověřování skutečné schématu pro staré schématu před i pokusem o zpracování zpráv.  
+- Starší klienti mohou provádět skutečné ověření schématu proti původnímu schématu před tím, než se bude pokoušet o zpracování zpráv.  
   
- V takových scénářích doporučuje považovat za stávající smlouvy dat neměnné a vytvořit nové jedinečné XML kvalifikované názvy. Vývojářem služeb by pak přidejte nové metody do existující kontrakt služby nebo vytvořit nové kontrakt služby s metodami, které používají nové smlouvy data.  
+ Doporučený postup v takových scénářích je považovat stávající kontrakty dat za neměnné a vytvořit nové s jedinečnými názvy XML kvalifikovaných názvů. Vývojář služby by pak buď přidal nové metody do existující smlouvy o službě, nebo vytvořil novou kontrakt služby s metodami, které používají novou kontrakt dat.  
   
- Často se bude v případě, kterou je potřeba napsat spustí nějakou obchodní logiku, která se má spustit ve všech verzích kontraktu dat a business specifické pro verzi kódu pro jednotlivé verze kontraktu dat pro vývojáře služby. Dodatku na konci tohoto tématu vysvětluje, jak lze pomocí rozhraní splnění tohoto požadavku.  
+ Často se jedná o případ, kdy vývojář služby potřebuje napsat nějakou obchodní logiku, která by se měla spustit ve všech verzích kontraktu dat a obchodním kódem specifickém pro každou verzi kontraktu dat. Příloha na konci tohoto tématu vysvětluje, jak lze použít rozhraní pro splnění této potřeby.  
   
-### <a name="lax-versioning"></a>Lax správy verzí  
- V mnoha jiných scénářích může být vývojářem služeb za předpokladu, že přidání nového člena volitelné kontraktu dat nebudou porušovat existující klienty. To vyžaduje, aby služba pro vývojáře prozkoumat, jestli nejsou existující klienti provádí ověřování schématu a ignorují Neznámý datové členy. V těchto scénářích je možné využít výhod funkcí kontraktu dat pro přidání nové členy pevné způsobem. Vývojářské služby můžete provést tento předpoklad bez obav, pokud funkce kontraktu dat pro správu verzí, již byly použity pro první verzi této služby.  
+### <a name="lax-versioning"></a>Správa verzí LAX  
+ V mnoha dalších scénářích může vývojář služby provést předpoklad, že přidání nového volitelného člena do kontraktu dat nebude rušit stávající klienty. To vyžaduje, aby vývojář služby zkontroloval, jestli stávající klienti neprováděli ověřování schématu a jestli ignorují neznámé datové členy. V těchto scénářích je možné využít výhod funkcí kontraktu dat pro přidání nových členů do nepřerušeného způsobu. Vývojář služby může tento předpoklad s jistotou provést, pokud byly funkce kontraktů dat pro správu verzí pro první verzi služby již použity.  
   
- WCF, webových služeb ASP.NET a mnoho dalších webových služeb podpory zásobníky *lax správy verzí*: to znamená, že nevyvolají výjimky pro nové členy Neznámý datový v přijatá data.  
+ WCF, webové služby ASP.NET a mnoho dalších zásobníků webových služeb podporují *správu verzí LAX*: to znamená, že nevyvolávají výjimky pro nové neznámé datové členy v přijatých datech.  
   
- Je snadné se omylem domnívat, že přidáte nového člena nebudou porušovat existující klienty. Pokud si nejste jistí, že všichni klienti zvládne lax správy verzí, doporučuje se postupujte podle pokynů striktní správy verzí a zpracovávat data smlouvy jako neměnné.  
+ Nemusíte se snadno domnívat, že přidáním nového člena nedojde k přerušení stávajících klientů. Pokud si nejste jistí, že všichni klienti můžou zpracovávat správu verzí Lax, doporučuje se používat přísné pokyny pro správu verzí a považovat kontrakty dat za neměnné.  
   
- Podrobné pokyny pro lax a striktní Správa verzí kontraktů dat, naleznete v tématu [osvědčených postupů: Správa verzí kontraktů dat](../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+ Podrobné pokyny pro LAX i striktní správu kontraktů dat najdete v tématu [osvědčené postupy: Správa verzí](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)kontraktů dat  
   
-### <a name="distinguishing-between-data-contract-and-net-types"></a>Rozlišování mezi typy rozhraní .NET a kontrakt dat  
- .NET třídy nebo struktury je možné promítnout jako smlouvy dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut třídy. Typ formátu .NET a jeho projekce kontraktu dat jsou dvě různé důležité. Je možné mít více typů .NET s stejný kontrakt projekce data. Tento rozdíl je zvláště užitečná v umožňuje změnit typ formátu .NET při zachování kontraktu předpokládané dat, a tím zachování kompatibility se stávající klienty i v tom smyslu striktní slova. Existují dvě věci, které byste měli dělat vždy zachovat tento rozdíl mezi .NET typu a data smlouvy:  
+### <a name="distinguishing-between-data-contract-and-net-types"></a>Odlišení mezi kontraktem dat a typy .NET  
+ Třídu nebo strukturu .NET lze projektovat jako kontrakt <xref:System.Runtime.Serialization.DataContractAttribute> dat použitím atributu na třídu. Typ .NET a jeho výčnělky mají dva různé věci. Je možné mít více typů .NET se stejnou projekcí kontraktu dat. Toto rozlišení je zvlášť užitečné v případě, že vám umožní změnit typ .NET při zachování kontraktu s plánovanými daty, což zachovává kompatibilitu se stávajícími klienty i v přísném smyslu slova. Existují dvě věci, které byste měli vždycky udělat, abyste zachovali toto rozlišení mezi typem .NET a kontraktem dat:  
   
-- Zadejte <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> a <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>. By měl vždycky zadat název a obor názvů váš kontraktu dat. aby typ formátu .NET název a obor názvů z vystaven kontrakt. Tímto způsobem, pokud se později rozhodnete změnit obor názvů .NET nebo zadejte název, kontrakt dat zůstává stejná.  
+- <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> Zadejte a .<xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> Vždy byste měli zadat název a obor názvů kontraktu dat, abyste zabránili zveřejnění názvu a oboru názvů .NET typu v kontraktu. Tímto způsobem se rozhodnete, že pokud později změníte obor názvů nebo název typu .NET, váš kontrakt dat zůstane stejný.  
   
-- Zadejte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>. By měl vždy zadejte název vaší datové členy zabránit vystaven kontrakt jména člena rozhraní .NET. Tímto způsobem, pokud se později rozhodnete, chcete-li změnit .NET název členu, váš kontraktu dat zůstává stejná.  
+- Zadejte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>. Vždy byste měli zadat název svých datových členů, abyste zabránili zveřejnění názvu člena .NET v kontraktu. Tímto způsobem se rozhodnete, že pokud se později rozhodnete změnit název .NET člena, váš kontrakt dat zůstane stejný.  
   
 ### <a name="changing-or-removing-members"></a>Změna nebo odebrání členů  
- Změna názvu nebo data typu člena nebo odebrání datových členů je k zásadní změně i v případě, že lax správy verzí je povolen. Pokud je to nutné, vytvořte nové smlouvy data.  
+ Změna názvu nebo datového typu člena nebo odebrání datových členů je zásadní změnou, i když je povolená Správa verzí Lax. Pokud je to nezbytné, vytvořte novou kontrakt dat.  
   
- Pokud kompatibility služby je důležitý, může být vezměte v úvahu ignoruje nepoužívaná data členů ve vašem kódu a nechat na místě. Pokud jsou rozdělení datový člen do více členů, můžete zvážit, že byste museli opustit existujícího člena v místě jako vlastnost, která můžete provést požadované rozdělení a opakované agregace pro klienty nižší úrovně (klientů, které nejsou upgradováni na nejnovější verzi).  
+ Pokud je Kompatibilita služby Vysoká důležitost, může být vhodné ignorovat nepoužívané datové členy ve vašem kódu a nechat je na místě. Pokud rozdělíte datový člen na více členů, můžete zvážit, že stávající člen je v místě jako vlastnost, která může provádět požadované rozdělení a opětovné agregace pro klienty nižší úrovně (klienti, kteří nejsou upgradováni na nejnovější verzi).  
   
- Podobně změny název nebo obor názvů kontraktu dat jsou rozbíjející změny.  
+ Podobně se změny v názvu nebo oboru názvů kontraktu dat mění.  
   
-### <a name="round-trips-of-unknown-data"></a>Opakované Neznámá Data  
- V některých případech je třeba "round-trip" Neznámý dat, který přichází od členů přidá nová verze. Například "versionNew" služba odesílá data s některými nově přidané členy klientovi "versionOld". Klient ignoruje nově přidaní členové při zpracování zprávy, ale opětovně odešle ke stejným datům, včetně nově přidaných členů zpět ke službě versionNew. Typický scénář pro toto je aktualizace dat, ve kterém se data načte ze služby, změnit a vrátí.  
+### <a name="round-trips-of-unknown-data"></a>Zpáteční cesty neznámých dat  
+ V některých scénářích je potřeba "zpáteční trip" neznámá data, která pocházejí od členů přidaných v nové verzi. Například služba "versionNew" odesílá data s některými nově přidanými členy do klienta "versionOld". Klient při zpracování zprávy ignoruje nově přidané členy, ale znovu odešle stejná data, včetně nově přidaných členů, zpátky do služby versionNew. Typický scénář pro toto je aktualizace dat, kde se data načítají ze služby, která se změnila a vrátí.  
   
- Pokud chcete povolit verzemi pro určitý typ, musí implementovat typ <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní. Rozhraní obsahuje jednu vlastnost <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> , která vrací <xref:System.Runtime.Serialization.ExtensionDataObject> typu. Vlastnost se používá k ukládání dat v budoucích verzích kontraktu dat, který neznámý pro aktuální verzi. Tato data jsou neprůhledné klientovi, ale pokud je serializována instance, obsah <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnost byl napsán s zbývající členů kontraktu dat data.  
+ Chcete-li povolit příkaz round-trip pro konkrétní typ, musí tento typ <xref:System.Runtime.Serialization.IExtensibleDataObject> implementovat rozhraní. Rozhraní obsahuje jednu vlastnost, <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> která <xref:System.Runtime.Serialization.ExtensionDataObject> vrací typ. Vlastnost se používá k uložení jakýchkoli dat z budoucích verzí kontraktu dat, který není aktuální verzí znám. Tato data jsou neprůhledná pro klienta, ale při serializaci instance se obsah <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnosti zapisuje se zbytkem dat členů kontraktu dat.  
   
- Doporučuje se, že všechny typy implementovat toto rozhraní tak, aby vyhovovaly nové a neznámé budoucích členů.  
+ Doporučuje se, aby všechny typy implementovaly toto rozhraní tak, aby vyhovovalo novým a neznámým budoucím členům.  
   
-### <a name="data-contract-libraries"></a>Knihovny kontraktu dat  
- Můžou existovat knihovny kontraktů dat kontrakt publikovaná v centrálním úložišti, kde služby a typ implementátory implementovat a vystavit kontraktů dat z tohoto úložiště. Když publikujete kontraktu dat do úložiště, v takovém případě máte žádnou kontrolu nad tím, kdo vytváří typy, které je implementují. Proto nemůžete upravovat kontrakt publikovaný produkt, vykreslování efektivně neměnné.  
+### <a name="data-contract-libraries"></a>Knihovny datových kontraktů  
+ Mohou existovat knihovny kontraktů dat, ve kterých je smlouva publikována v centrálním úložišti, a implementace služeb a typů implementuje a zveřejňuje kontrakty dat z daného úložiště. V takovém případě, když publikujete kontrakt dat do úložiště, nemáte žádnou kontrolu nad tím, kdo vytvoří typy, které ji implementují. Proto nemůžete smlouvu po publikování změnit, takže její vynechání je efektivně neměnné.  
   
-### <a name="when-using-the-xmlserializer"></a>Při používání třídy XmlSerializer  
- Správa verzí stejné zásady platí i při použití <xref:System.Xml.Serialization.XmlSerializer> třídy. Když se vyžaduje striktní správy verzí, považovat za kontraktů dat neměnné a vytvořit nové kontrakty dat s jedinečný a kvalifikované názvy pro nové verze. Když jste si jisti, že lax správy verzí je možné, nejde přidat nové serializovatelné členy v nových verzích ale změnit nebo odebrat existující členy.  
+### <a name="when-using-the-xmlserializer"></a>Při použití objektu XmlSerializer  
+ Stejné zásady správy verzí platí při použití <xref:System.Xml.Serialization.XmlSerializer> třídy. Když je potřeba striktní Správa verzí, považovat kontrakty dat za neměnné a vytvoří nové kontrakty dat s jedinečnými a kvalifikovanými názvy pro nové verze. Pokud jste si jisti, že je možné použít správu verzí Lax, můžete přidat nové serializovatelné členy v nových verzích, ale ne měnit nebo odebírat stávající členy.  
   
 > [!NOTE]
->  <xref:System.Xml.Serialization.XmlSerializer> Používá <xref:System.Xml.Serialization.XmlAnyElementAttribute> a <xref:System.Xml.Serialization.XmlAnyAttributeAttribute> atributy pro podporu dopad na dobu odezvy neznámá data.  
+> Používá atributy a<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>pro podporu kulatých Trip neznámých dat. <xref:System.Xml.Serialization.XmlAnyElementAttribute> <xref:System.Xml.Serialization.XmlSerializer>  
   
 ## <a name="message-contract-versioning"></a>Správa verzí kontraktů zpráv  
- Pokyny pro Správa verzí kontraktů zpráv jsou velmi podobné kontraktů dat správy verzí. Pokud se vyžaduje striktní správy verzí, by měl nezměníte vaše zprávy, ale místo vytvoření nové zprávy kontraktu s jedinečný kvalifikovaný název. Pokud víte, které můžete použít lax správy verzí, nejde přidat nové části textu zprávy, ale změnit nebo odebrat existující aplikace. Tento návod se vztahuje i na úplné a zabalené kontraktů zpráv.  
+ Pokyny pro správu verzí kontraktů zpráv jsou velmi podobné kontraktům s daty správy verzí. Pokud je potřeba striktní Správa verzí, neměli byste měnit text zprávy, ale místo toho můžete vytvořit nový kontrakt zprávy s jedinečným kvalifikovaným názvem. Pokud víte, že můžete použít správu verzí Lax, můžete přidat nové části těla zprávy, ale nemůžete je změnit nebo odebrat. Tento návod platí pro smlouvy se zabalením a zabaleného hlášení.  
   
- Záhlaví zprávy mohou být přidány vždy, i v případě, že striktní správy verzí je používána. Příznak MustUnderstand může mít vliv na správu verzí. Model správy verzí pro záhlaví ve službě WCF je obecně platí, jak je popsáno ve specifikaci protokolu SOAP.  
+ Záhlaví zpráv může být vždy přidáno i v případě, že se používá striktní Správa verzí. Příznak MustUnderstand může mít vliv na správu verzí. Obecně platí, že model správy verzí pro hlavičky v rámci WCF je jak je popsáno ve specifikaci SOAP.  
   
-## <a name="service-contract-versioning"></a>Správa verzí kontraktů služby  
- Podobně jako správa verzí kontraktů dat, Správa verzí kontraktů služby také zahrnuje přidání, změně a odebrání operace.  
+## <a name="service-contract-versioning"></a>Správa verzí kontraktů služeb  
+ Podobně jako správa verzí kontraktů dat zahrnuje také operace přidávání, změny a odebírání operací služby.  
   
-### <a name="specifying-name-namespace-and-action"></a>Zadáním názvu, Namespace a akce  
- Název kontraktu služby ve výchozím nastavení, je název rozhraní. Výchozí obor názvů je "http://tempuri.org", a akce pro každou operaci "http://tempuri.org/contractname/methodname". Doporučuje se explicitně zadat název a obor názvů kontraktu služby a akce pro každou operaci, abyste se vyhnuli použití "http://tempuri.org" a zabránit názvy rozhraní a metoda vystaven v kontraktu služby.  
+### <a name="specifying-name-namespace-and-action"></a>Zadání názvu, oboru názvů a akce  
+ Ve výchozím nastavení je název kontraktu služby název rozhraní. Jeho výchozí obor názvů je http://tempuri.org "" a akce každé operace http://tempuri.org/contractname/methodname je "". Doporučuje se explicitně zadat název a obor názvů pro kontrakt služby a akci pro každou operaci vyhnout používání http://tempuri.org příkazu "" a zabránit zveřejnění názvů rozhraní a metod v kontraktu služby.  
   
-### <a name="adding-parameters-and-operations"></a>Přidání operace a parametry  
- Přidání operace služby, vystavený službou je méně zásadních změn, protože existující klienti nemusí mít obavy o těchto nových operací.  
+### <a name="adding-parameters-and-operations"></a>Přidání parametrů a operací  
+ Přidání operací služby vystavených službou je nepřerušená změna, protože stávající klienti nemusí být o těchto nových operacích zajisti.  
   
 > [!NOTE]
->  Přidání operací do duplexního zpětného volání kontraktu je zásadní změnu.  
+> Přidávání operací do duplexního kontraktu zpětného volání je zásadní změna.  
   
-### <a name="changing-operation-parameter-or-return-types"></a>Změna parametrů operace nebo návratové typy  
- Změna parametrů nebo návratových typů obecně je rozbíjející změny, pokud nový typ implementuje stejné kontraktu dat pomocí starého typu implementovat. Chcete-li tuto změnu, přidat nové operace pro kontrakt služby nebo definujte nové kontrakt služby.  
+### <a name="changing-operation-parameter-or-return-types"></a>Mění se parametry operace nebo návratové typy.  
+ Změna parametrů nebo návratových typů obecně představuje zásadní změnu, pokud nový typ neimplementuje stejný kontrakt dat implementovaný starým typem. Chcete-li takovou změnu provést, přidejte novou operaci do kontraktu služby nebo Definujte novou kontrakt služby.  
   
-### <a name="removing-operations"></a>Odebírá se operace  
- Odebrání operace je také k narušující změně. Chcete-li tuto změnu, definujte nové kontrakt služby a zveřejníte ho na nový koncový bod.  
+### <a name="removing-operations"></a>Odebírání operací  
+ Odebírání operací je také zásadní změna. Pokud chcete takovou změnu udělat, definujte novou kontrakt služby a zpřístupněte ji na novém koncovém bodu.  
   
-### <a name="fault-contracts"></a>Kontrakty selhání  
- <xref:System.ServiceModel.FaultContractAttribute> Atribut umožňuje vývojář smlouvy k zadání informací o chybách, které mohou být vráceny z operace kontraktu.  
+### <a name="fault-contracts"></a>Smlouvy o selhání  
+ <xref:System.ServiceModel.FaultContractAttribute> Atribut umožňuje vývojářům kontraktu služby zadat informace o chybách, které mohou být vráceny z operací smlouvy.  
   
- Seznam chyb je popsáno v kontraktu služby se nepovažuje za vyčerpávající. V každém okamžiku může vrátit operace chyb, které nebyly popsány v její smlouvy. Proto změna sady chyb je popsáno v kontraktu není považováno za rozbíjející. Například přidáním nové chyby pomocí kontraktu <xref:System.ServiceModel.FaultContractAttribute> nebo odebrání existující chybu ze smlouvy.  
+ Seznam chyb popsaných v kontraktu služby není považován za vyčerpávající. Operace může kdykoli vracet chyby, které nejsou popsány ve smlouvě. Proto se změna množiny chyb popsaných ve smlouvě nepovažuje za přerušení. Přidejte například novou chybu ke smlouvě pomocí <xref:System.ServiceModel.FaultContractAttribute> nebo odeberte existující chybu ze smlouvy.  
   
-### <a name="service-contract-libraries"></a>Knihovny kontrakt služby  
- Organizace mohou mít knihovny kontraktů kde kontrakt publikovaná v centrálním úložišti a implementátoři služby implementace kontraktů z tohoto úložiště. Když publikujete kontraktu služby do úložiště v tomto případě máte žádnou kontrolu nad tím, kdo vytváří služby, které je implementují. Proto nelze upravit smlouvu, jakmile ji publikujete, vykreslování efektivně neměnné. WCF podporuje Dědičnost kontraktů, který slouží k vytvoření nové smlouvy, která rozšiřuje stávající smlouvy. Pokud chcete používat tuto funkci, definujte nové rozhraní kontraktu služby, která dědí ze staré rozhraní kontraktu služby a pak přidejte metody na nové rozhraní. Potom změňte službu, která implementuje starého kontraktu implementovat nové smlouvy a změnit definice koncového bodu "versionOld" používat nové smlouvy. Klientům "versionOld" budou se nadále zobrazovat jako zpřístupňuje "versionOld" smlouvy; koncový bod klientům "versionNew" zobrazí se na koncový bod ke zveřejnění kontraktu "versionNew".  
+### <a name="service-contract-libraries"></a>Knihovny kontraktů služeb  
+ Organizace mohou mít knihovny smluv, kde je smlouva publikována v centrálním úložišti, a implementátori služeb implementují smlouvy z tohoto úložiště. Pokud v takovém případě publikujete kontrakt služby do úložiště, nebudete mít kontrolu nad tím, kdo vytvoří služby, které ji implementují. Proto nemůžete po publikování změnit kontrakt služby, protože ho bude efektivně neproměnlivý. WCF podporuje dědičnost kontraktu, která se dá použít k vytvoření nové smlouvy, která rozšiřuje stávající smlouvy. Chcete-li použít tuto funkci, definujte nové rozhraní kontraktu služby, které dědí z původního rozhraní kontraktu služby, a poté přidejte do nového rozhraní metody. Pak změníte službu, která implementuje starou smlouvu pro implementaci nové smlouvy, a změňte definici koncového bodu "versionOld" tak, aby používala nový kontrakt. U klientů "versionOld" se koncový bod bude i nadále zobrazovat jako vystavení kontraktu "versionOld"; pro klienty "versionNew" se zobrazí koncový bod pro vystavení kontraktu "versionNew".  
   
-## <a name="address-and-binding-versioning"></a>Adresy a vazby správy verzí  
- Změny adresa koncového bodu a vazby jsou rozbíjející změny, pokud klienti nejsou schopné dynamicky zjišťování na novou adresu koncového bodu nebo vazby. Jeden mechanismus pro implementaci této funkce je pomocí registru univerzální popis zjišťování a integrace (UDDI) a vzor vyvolání UDDI, kde klient se pokouší navázat komunikaci s koncovým bodem a, nebude úspěšná, dotazuje dobře známé UDDI registr pro aktuální koncový bod metadat. Klient potom použije adresu a vazbu z těchto metadat ke komunikaci s koncovým bodem. Pokud je tato komunikace úspěšná, klient ukládá do mezipaměti informace o adrese a vazbu pro budoucí použití.  
+## <a name="address-and-binding-versioning"></a>Správa verzí adres a vazeb  
+ Změny adresy a vazby koncového bodu jsou zásadní, pokud klienti nemůžou dynamicky zjišťovat novou adresu nebo vazbu nového koncového bodu. Jedním z mechanismů pro implementaci této funkce je použití registru popisu a integrace univerzálního zjišťování a způsobu vyvolání služby UDDI, když se klient pokusí komunikovat s koncovým bodem a při selhání se dotazuje na dobře známou službu UDDI. registr pro aktuální metadata koncového bodu Klient pak použije adresu a vazbu z těchto metadat ke komunikaci s koncovým bodem. Pokud je tato komunikace úspěšná, klient uloží adresu a informace o vazbě pro budoucí použití.  
   
-## <a name="routing-service-and-versioning"></a>Služba Směrování a správa verzí  
- Pokud změny do služby jsou zásadní změny a musí mít minimálně dva různé verze služby spuštěné současně můžete směrovací služba WCF pro směrování zpráv do instance příslušnou službu. Směrovací služba WCF používá směrování na základě obsahu, jinými slovy, používá informace v něm k určení, kam chcete směrovat zprávy. Další informace o směrování služby WCF najdete v tématu [směrovací služba](../../../docs/framework/wcf/feature-details/routing-service.md). Příklad použití směrovací služba WCF pro správu verzí služby najdete v části [How To: Správa verzí služby](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  
+## <a name="routing-service-and-versioning"></a>Směrovací služba a správa verzí  
+ Pokud změny provedené ve službě přerušují změny a potřebujete mít dvě nebo víc různých verzí služby spuštěných současně, můžete použít směrovací službu WCF ke směrování zpráv do příslušné instance služby. Směrovací služba WCF používá směrování na základě obsahu, jinak řečeno, používá informace v rámci zprávy k určení, kam zprávu směrovat. Další informace o směrovací službě WCF najdete v tématu [Služba směrování](../../../docs/framework/wcf/feature-details/routing-service.md). Příklad toho, jak používat směrovací službu WCF pro správu verzí služby, najdete v tématu [How to: Verze](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)služby.  
   
 ## <a name="appendix"></a>Příloha  
- Pokyny správy verzí kontraktu obecná data v případě potřeby striktní správy verzí je považovat za neměnné kontraktech dat a vytvářet nové, když nejsou nutné nějaké změny. Nová třída je potřeba vytvořit pro každou novou kontraktu dat, takže mechanismus je potřeba, abyste nemuseli vzít existující kód, který byl napsán z hlediska stará data smlouvy třídy a přepsat jde o novou třídu kontraktu dat.  
+ Obecné pokyny k vytváření verzí kontraktů dat v případě, že je potřeba striktní Správa verzí, je zacházet s tím, že se kontrakty dat při nutnosti změny nemění a vytvářejí nové. Pro každou novou kontrakt dat je třeba vytvořit novou třídu, proto je třeba zajistit, aby se zabránilo nutnosti přecházet existující kód, který byl napsán z hlediska staré třídy kontraktu dat, a přepsat jej z hlediska nové třídy kontraktu dat.  
   
- Jedním z takových mechanismů je pomocí rozhraní definují členy jednotlivých kontraktu dat a okamžitý zápis vnitřní implementace kódu z hlediska rozhraní spíše než třídy kontraktu dat, které implementují rozhraní. Následující kód pro verzi 1 služby ukazuje `IPurchaseOrderV1` rozhraní a `PurchaseOrderV1`:  
+ Jedním z těchto mechanismů je použití rozhraní k definování členů jednotlivých kontraktů dat a zápis interního implementačního kódu z podmínek rozhraní, nikoli tříd kontraktů dat, které implementují rozhraní. Následující kód pro verzi 1 služby zobrazuje `IPurchaseOrderV1` rozhraní `PurchaseOrderV1`a:  
   
 ```  
 public interface IPurchaseOrderV1  
@@ -151,7 +151,7 @@ public class PurchaseOrderV1 : IPurchaseOrderV1
 }  
 ```  
   
- Během operace kontraktu služby by byla zapsána z hlediska `PurchaseOrderV1`, skutečné obchodní logika by být z hlediska `IPurchaseOrderV1`. Potom ve verzi 2, bude nový `IPurchaseOrderV2` rozhraní a nový `PurchaseOrderV2` třídy, jak je znázorněno v následujícím kódu:  
+ I když by se operace kontraktu služby napsaly na `PurchaseOrderV1`základě, je skutečná obchodní logika z `IPurchaseOrderV1`pohledu. Pak, ve verzi 2, by bylo nové `IPurchaseOrderV2` rozhraní a nová `PurchaseOrderV2` třída, jak je znázorněno v následujícím kódu:  
   
 ```  
 public interface IPurchaseOrderV2  
@@ -173,7 +173,7 @@ public class PurchaseOrderV2 : IPurchaseOrderV1, IPurchaseOrderV2
 }  
 ```  
   
- Kontrakt služby bude aktualizováno, aby zahrnovalo nové operace, které jsou napsány z hlediska `PurchaseOrderV2`. Stávající obchodní logiky zapisovat z hlediska `IPurchaseOrderV1` by pokračovat v práci pro `PurchaseOrderV2` a nové obchodní logiky, které potřebuje `OrderDate` vlastnost by byla zapsána z hlediska `IPurchaseOrderV2`.  
+ Servisní smlouva by se aktualizovala tak, aby zahrnovala nové operace, které jsou `PurchaseOrderV2`zapsané ve smyslu. Existující obchodní logika vytvořená v souvislosti `IPurchaseOrderV1` s tím `OrderDate` bude i nadále `PurchaseOrderV2` fungovat pro a nová obchodní logika, která potřebuje vlastnost, bude zapsána v souvislosti s `IPurchaseOrderV2`.  
   
 ## <a name="see-also"></a>Viz také:
 

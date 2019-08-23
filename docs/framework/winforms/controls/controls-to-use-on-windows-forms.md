@@ -5,18 +5,18 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 114b9a6db7b41c5aac24bcd1badcf5f5b4b2fb08
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: bedfaef9a3d0cc81641006d254926f7bf9861c10
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796279"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930209"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje Abecední seznam ovládacích prvků a komponent, které lze použít na model Windows Forms. Kromě model Windows Formsch ovládacích prvků popsaných v této části můžete přidat ovládací prvky ActiveX a vlastní ovládací prvky do model Windows Forms. Pokud zde požadovaný ovládací prvek nenajdete, můžete si také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj model Windows Formsch ovládacích prvků v době návrhu](developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku, který potřebujete, najdete v tématu [model Windows Forms Controls by Function](windows-forms-controls-by-function.md).  
   
 > [!NOTE]
->  Ovládací prvky Visual Basic jsou založené na třídách poskytovaných .NET Framework.  
+> Ovládací prvky Visual Basic jsou založené na třídách poskytovaných .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)  

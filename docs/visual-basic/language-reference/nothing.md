@@ -8,53 +8,53 @@ helpviewer_keywords:
 - Nothing keyword [Visual Basic]
 - Nothing keyword [Visual Basic], syntax
 ms.assetid: 06176e2d-bbf7-4a37-afaa-a86ad21ee99f
-ms.openlocfilehash: 97c651dbcc657fbab0706c9a959bd0031c0fe343
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12c88db49dc7723fc269195e7d174bfa822c64d3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778622"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963750"
 ---
 # <a name="nothing-visual-basic"></a>Nothing (Visual Basic)
-Představuje výchozí hodnotu libovolného datového typu. U referenčních typů je výchozí hodnota `null` odkaz. U typů hodnot výchozí hodnota závisí na tom, jestli je typ hodnoty s možnou hodnotou Null.  
+Představuje výchozí hodnotu libovolného datového typu. Pro typy odkazů je `null` výchozí hodnotou odkaz. U hodnotových typů závisí výchozí hodnota na tom, zda je typ hodnoty null.  
   
 > [!NOTE]
->  Pro typy hodnot neumožňující hodnotu `Nothing` v jazyce Visual Basic se liší od `null` v C#. V jazyce Visual Basic, pokud jste nastavili proměnné typu hodnotu Null pro `Nothing`, proměnná je nastavena na výchozí hodnotu pro jeho deklarovaného typu. V C#, je-li přiřadit proměnné typu hodnotu Null pro `null`, dojde k chybě kompilace.  
+> U typů hodnot bez hodnoty null se `Nothing` v Visual Basic liší od `null` v C#. Pokud jste v Visual Basic nastavili proměnnou typu hodnoty, na `Nothing`který nepovoluje hodnotu null, je proměnná nastavena na výchozí hodnotu pro deklarovaný typ. Pokud C#v nástroji přiřadíte proměnnou typu hodnoty, která není null, dojde `null`k chybě při kompilaci.  
   
 ## <a name="remarks"></a>Poznámky  
- `Nothing` představuje výchozí hodnotu datového typu. Výchozí hodnota závisí na tom, jestli je proměnná hodnotového typu nebo typu odkazu.  
+ `Nothing`představuje výchozí hodnotu datového typu. Výchozí hodnota závisí na tom, zda je proměnná typ hodnoty nebo typ odkazu.  
   
- Proměnné *typ hodnoty* přímo obsahuje jeho hodnotu. Zahrnout všechny číselné datové typy, typy hodnot `Boolean`, `Char`, `Date`, všechny struktury a všechny výčty. Proměnné *odkazovat na typ* uchovává odkaz na instanci objektu v paměti. Odkazové typy zahrnují třídy, pole, delegáty a řetězce. Další informace najdete v tématu [typy hodnot a odkazové typy](../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+ Proměnná *typu hodnoty* přímo obsahuje její hodnotu. Typy hodnot zahrnují všechny číselné datové typy, `Boolean`, `Char`, `Date`, všechny struktury a všechny výčty. Proměnná *typu odkazu* ukládá odkaz na instanci objektu v paměti. Typy odkazů zahrnují třídy, pole, delegáty a řetězce. Další informace naleznete v tématu [typy hodnot a typy odkazů](../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
- Pokud je proměnná hodnotu zadejte, chování `Nothing` závisí na tom, zda je proměnná typu s možnou hodnotou Null data. Pro reprezentaci typu s možnou hodnotou Null, přidejte `?` modifikátor názvu typu. Přiřazení `Nothing` s možnou hodnotou Null proměnné nastaví hodnotu `null`. Další informace a příklady najdete v tématu [hodnotové typy s možnou hodnotou Null](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md).  
+ Pokud je proměnná typu hodnoty, chování `Nothing` závisí na tom, zda je proměnná datového typu s možnou hodnotou null. Pro reprezentaci typu hodnoty s možnou hodnotou `?` null přidejte modifikátor na název typu. Přiřazení `Nothing` proměnné s možnou hodnotou null nastaví hodnotu `null`na. Další informace a příklady naleznete v tématu [typy hodnot](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)s možnou hodnotou null.  
   
- Pokud je proměnná typu hodnoty, který není s možnou hodnotou Null, přiřazení `Nothing` do je nastaví ji na výchozí hodnotu pro příslušným deklarovaným typem. Pokud daný typ obsahuje proměnné členů, jsou nastavené na výchozí hodnoty. Následující příklad ukazuje to pro skalární typy.  
+ Pokud je proměnná typu hodnoty, která není null, přiřadí `Nothing` se k ní nastavená výchozí hodnota pro deklarovaný typ. Pokud tento typ obsahuje členy proměnné, všechny jsou nastaveny na výchozí hodnoty. Následující příklad ukazuje tento pro skalární typy.  
   
  [!code-vb[VbVbalrKeywords#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class2.vb#7)]  
   
- Pokud je proměnná typu odkazu, přiřazení `Nothing` proměnné se nastaví na `null` odkaz proměnnou typu. Proměnné, který je nastaven `null` odkaz není spojen s libovolný objekt. Následující příklad ukazuje to.  
+ Pokud je proměnná typu odkazu, přiřazení `Nothing` k proměnné ji nastaví `null` na odkaz typu proměnné. Proměnná, která je nastavena na `null` odkaz, není přidružena k žádnému objektu. Následující příklad ukazuje to.  
   
  [!code-vb[VbVbalrKeywords#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class3.vb#8)]  
   
- Při kontrole, zda odkaz (nebo typ s možnou hodnotou Null) proměnné je `null`, nepoužívejte `= Nothing` nebo `<> Nothing`. Vždy používejte `Is Nothing` nebo `IsNot Nothing`.  
+ Při kontrole, zda odkaz (nebo typ hodnoty s možnou hodnotou `null`null) je proměnná `= Nothing` , `<> Nothing`nepoužívejte nebo. Vždy použijte `Is Nothing` nebo `IsNot Nothing`.  
   
- Pro řetězce v jazyce Visual Basic, prázdný řetězec rovná `Nothing`. Proto `"" = Nothing` má hodnotu true.  
+ Pro řetězce v Visual Basic se prázdný řetězec rovná `Nothing`. `"" = Nothing` Proto má hodnotu true.  
   
- Následující příklad ukazuje porovnání, která používají `Is` a `IsNot` operátory.  
+ Následující příklad ukazuje porovnání, které používají `Is` operátory a. `IsNot`  
   
  [!code-vb[VbVbalrKeywords#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class4.vb#9)]  
   
- Pokud deklarujete proměnnou bez použití `As` klauzule a nastavte ho na `Nothing`, je proměnná typu `Object`. Příkladem je `Dim something = Nothing`. V tomto případě dojde k chybě v době kompilace při `Option Strict` zapnutý a `Option Infer` je vypnuté.  
+ Pokud deklarujete proměnnou bez použití `As` klauzule a nastavíte ji na `Nothing`, `Object`proměnná má typ. Příkladem je `Dim something = Nothing`. V tomto případě dojde k chybě při kompilaci, pokud `Option Strict` je zapnutý `Option Infer` a je vypnutý.  
   
- Když přiřadíte `Nothing` do proměnné objektu, už odkazuje na jakoukoli instanci objektu. Pokud proměnná měla dříve uvedené instance, jeho nastavení na hodnotu `Nothing` neukončí samotné instanci. Instance se ukončí a uvolnění paměti a systém prostředků s ním spojená, až poté, co systému uvolňování paměti (GC) zjistí, že neexistují žádné aktivní odkazy zbývající.  
+ Když přiřadíte `Nothing` proměnné objektu, již neodkazuje na žádnou instanci objektu. Pokud proměnná dříve odkazovala na instanci, její nastavení na `Nothing` neukončí samotnou instanci. Instance se ukončí a uvolní se paměťové a systémové prostředky, které jsou k ní přidružené, a to až po zjištění uvolňování paměti (GC), že nezbývá žádný aktivní odkaz.  
   
- `Nothing` se liší od <xref:System.DBNull> objektu, který představuje Neinicializovaný typ variant nebo neexistující databázový sloupec.  
+ `Nothing`se liší od <xref:System.DBNull> objektu, který představuje Neinicializovaný typ variant nebo neexistující sloupec databáze.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Dim](../../visual-basic/language-reference/statements/dim-statement.md)
-- [Doba života objektu: Způsob vytváření a zničení objektů](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
-- [Doba platnosti v jazyce Visual Basic](../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Doba života objektu: Vytváření a zničení objektů](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Doba života v Visual Basic](../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Operátor Is](../../visual-basic/language-reference/operators/is-operator.md)
 - [Operátor IsNot](../../visual-basic/language-reference/operators/isnot-operator.md)
 - [Typy hodnot s povolenou hodnotou Null](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

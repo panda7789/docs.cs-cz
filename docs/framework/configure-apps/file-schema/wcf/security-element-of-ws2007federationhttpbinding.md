@@ -1,22 +1,22 @@
 ---
-title: <security> Element <ws2007FederationHttpBinding>
+title: <security>prvek elementu<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-ms.openlocfilehash: 15740144b0aad7eb2798db4712e4769d08d893a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61b56ca1fae5c328cda0bbebef4026f0784095a3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670544"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936822"
 ---
-# <a name="security-element-of-ws2007federationhttpbinding"></a>\<zabezpečení > prvek \<ws2007FederationHttpBinding >
-Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementu.  
+# <a name="security-element-of-ws2007federationhttpbinding"></a>\<prvek zabezpečení > > \<WS2007FederationHttpBinding
+Definuje nastavení [ \<zabezpečení elementu WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<ws2007FederationHttpBinding>  
-\<Vytvoření vazby >  
-\<security>  
+\<> vazby  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,27 +42,27 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`mode`|Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
+|`mode`|Volitelný parametr. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
   
-## <a name="mode-attribute"></a>režim atribut  
+## <a name="mode-attribute"></a>mode – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Žádné|Zprávu protokolu SOAP není zabezpečená při přenosu.|  
-|Zpráva|Integrity, šifrování, ověřování serveru a klienta ověřování zajišťuje zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je tělo zašifrovaný a podepsaný. Služba musí být nakonfigurován s certifikátem. Ověření klienta je založen na token vydaný pro klienta služby tokenů zabezpečení.|  
-|TransportWithMessageCredential|Jsou k dispozici integritu a důvěrnost serveru ověřování pomocí protokolu HTTPS. Služba musí být nakonfigurován s certifikátem. Ověření klienta se poskytuje prostřednictvím zabezpečení zprávy protokolu SOAP a je založena na token vydaný pro klienta služby tokenů zabezpečení.|  
+|Žádné|Zpráva SOAP není během přenosu zabezpečená.|  
+|Message|Integrita, důvěrnost, ověřování serveru a ověřování klientů jsou k dispozici pomocí protokolu SOAP Message Security. Ve výchozím nastavení je text zašifrovaný a podepsaný. Služba musí být nakonfigurovaná s certifikátem. Ověřování klientů vychází z tokenu vystaveného klientovi tokenem zabezpečení.|  
+|TransportWithMessageCredential|Integrita, důvěrnost a ověřování serveru poskytuje protokol HTTPS. Služba musí být nakonfigurovaná s certifikátem. Ověřování klientů je zajištěno prostřednictvím zabezpečení zpráv SOAP a je založeno na tokenu vydanému klientovi pomocí služby tokenů zabezpečení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
+|[\<> zprávy](message-of-ws2007httpbinding.md)|Definuje nastavení pro zabezpečení na úrovni zprávy. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny vazby funkce [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby wsDualHttpBinding >](wsdualhttpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -70,10 +70,10 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Postupy: Vytvoření WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Výběr typu přihlašovacích údajů](../../../wcf/feature-details/selecting-a-credential-type.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

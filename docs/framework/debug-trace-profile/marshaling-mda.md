@@ -9,29 +9,29 @@ helpviewer_keywords:
 ms.assetid: 5433b1f8-b0e5-40c9-a49a-0e5bd213363d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 463c8e42e76a61eb0820c1af72c20d004161ad25
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e1583ba8ecfa461958f96bea6cb2b9d3313349b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753969"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967286"
 ---
 # <a name="marshaling-mda"></a>zařazování MDA
-`marshaling` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR nastaví zařazovací informace pro parametr metody nebo pole struktury. Toto MDA nefunguje pro sestavení s kompilací JIT.  
+Pokud CLR nastaví zařazovací informace pro parametr metody nebo pole struktury, je aktivován pomocník spravovanéholadění(MDA).`marshaling` Tento MDA nefunguje pro sestavení kompilovaná JIT.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- MDA zobrazí typ parametru nebo pole v kontextech spravované a nespravované a struktury nebo metody obsahující typ.  Následuje příklad výstupu pro pole:  
+ MDA zobrazuje typ parametru nebo pole ve spravovaných a nespravovaných kontextech a strukturu nebo metodu obsahující typ.  Následuje příklad výstupu pole:  
   
 ```  
 Marshaling from 'Char' to 'ANSI char'  
 name="assembly!Namespace.Class::myChar  
 ```  
   
-## <a name="configuration"></a>Konfigurace  
- Konfigurace MDA vám umožní filtrovat ohlášené zařazovací informace na základě zahrnutých pole nebo metoda názvů.  Následující příklad ukazuje použití `methodFilter`, `fieldFilter`, a `match` prvky zadat filtry.  Nastavení `name` atribut na hvězdičku (*) budou odpovídat všechno.  
+## <a name="configuration"></a>Konfiguraci  
+ Konfigurace MDA umožňuje filtrovat hlášené informace o zařazování na základě názvu pole nebo metody.  Následující příklad ukazuje použití `methodFilter`prvků, `fieldFilter`a `match` k určení filtrů.  Nastavení atributu na hvězdičku (\*) bude odpovídat všem. `name`  
   
 ```xml  
 <mdaConfig>  

@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Porovnání obsahu dvou složek (LINQ) (Visual Basic)'
+title: 'Postupy: Porovnat obsah dvou složek (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 903c7e9a-f48d-4a07-a8a8-5450d2646efa
-ms.openlocfilehash: 75283faf25e7a26055b1122eb45e23c510fc6b39
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5db73b57cfa21de4f1d14299ed7956a322876898
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593005"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940687"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>Postupy: Porovnání obsahu dvou složek (LINQ) (Visual Basic)
-Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>Postupy: Porovnat obsah dvou složek (LINQ) (Visual Basic)
+Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:  
   
-- Pomocí dotazu na logickou hodnotu, která určuje, zda dva seznamy souborů jsou identické.  
+- Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.  
   
-- Pomocí dotazu pro je určena průsečíkem načíst soubory, které jsou v obě složky.  
+- Dotazem pro průnik pro načtení souborů, které jsou v obou složkách.  
   
-- Pomocí dotazu pro množinových rozdílů načíst soubory, které jsou v jedné složce, ale nikoli u druhého.  
+- Pomocí dotazu na nastavený rozdíl, který načte soubory, které jsou v jedné složce, ale ne na druhé.  
   
     > [!NOTE]
-    >  Techniky je znázorněno zde mohou být přizpůsobeny pro porovnání sekvence objektů libovolného typu.  
+    > Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.  
   
- `FileComparer` Třídy je vidět tady ukazuje, jak použít vlastní porovnávací metody třídy společně s standardní operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Právě používá název a délku v bajtech každého souboru k určení, zda jsou identické obsahu jednotlivých složek, nebo ne. Ve skutečném scénáři byste měli upravit toto porovnávání provádění přísnější kontroly rovnosti.  
+ Zde `FileComparer` uvedená třída ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.  
   
 ## <a name="example"></a>Příklad  
   
@@ -114,7 +114,7 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.
+ Vytvořte projekt konzolové aplikace VB.NET s `Imports` příkazem pro obor názvů System. Linq.
  
 ## <a name="see-also"></a>Viz také:
 

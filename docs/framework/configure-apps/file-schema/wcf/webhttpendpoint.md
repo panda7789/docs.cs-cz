@@ -2,18 +2,18 @@
 title: <webHttpEndpoint>
 ms.date: 03/30/2017
 ms.assetid: ecaaeb6f-ebd0-411d-8b53-92477cd45347
-ms.openlocfilehash: 6fb31fca6ac38f6cb92ef087cc277a4d5066521c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 866be522cb1c64142227a8d6a1a8f88551ca9105
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769769"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940474"
 ---
 # <a name="webhttpendpoint"></a>\<webHttpEndpoint>
-Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) vazby, která automaticky přidá [ \<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) chování. Při zápisu služby REST, používejte tento koncový bod.  
+Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<vazbou WebHttpBinding >](webhttpbinding.md) [ \<](webhttp.md) , která automaticky přidá chování > protokolu WebHttp. Tento koncový bod použijte při psaní služby REST.  
   
 \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,9 +37,9 @@ Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBi
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|automaticFormatSelectionEnabled|Logická hodnota, která určuje, zda je povolen automatický výběr formátu.<br /><br /> Pokud je povolen automatický výběr formátu, infrastruktura analyzuje `Accept` záhlaví zprávy s požadavkem a určí nejvhodnější formát odpovědi. Pokud `Accept` záhlaví neurčuje formát vhodný odpovědi, využívá infrastrukturu `Content-Type` zprávy s požadavkem nebo výchozí formát odpovědi z operace.|  
-|defaultOutgoingResponseFormat|Atribut, který určuje výchozí formát pro odchozí odpovědi. Tento atribut je <xref:System.ServiceModel.Web.WebMessageFormat> typu|  
-|helpEnabled|Logická hodnota určující, zda je povoleno na stránce nápovědy HTTP pro koncový bod.|  
+|automaticFormatSelectionEnabled|Logická hodnota, která určuje, zda je povolen automatický výběr formátu.<br /><br /> Pokud je povolen automatický formát výběru, infrastruktura analyzuje `Accept` hlavičku zprávy požadavku a určí nejvhodnější formát odpovědi. Pokud hlavička neurčuje vhodný formát odpovědi, `Content-Type` používá infrastruktura zprávu požadavku nebo výchozí formát odpovědi této operace. `Accept`|  
+|defaultOutgoingResponseFormat|Atribut, který určuje výchozí formát odchozí odpovědi. Tento atribut je <xref:System.ServiceModel.Web.WebMessageFormat> typu|  
+|helpEnabled|Logická hodnota, která označuje, zda je pro koncový bod povolena stránka Help HTTP.|  
 |webEndpointType|Řetězec, který určuje typ koncového bodu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -49,7 +49,7 @@ Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBi
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
+|[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
 ## <a name="see-also"></a>Viz také:
 

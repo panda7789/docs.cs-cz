@@ -9,52 +9,52 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: 543717873f3ef6d0d44c5bcbbef013817c06357c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 13ad6c85bbde57cd6ad19848de71dabc23ed8f49
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583583"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953909"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma obsahuje scénáře a ukázky kódu, které ukazují, jak a kdy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> je možné najít element v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
+ Toto téma obsahuje scénáře a vzorový kód, který ukazuje, jak a <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> kdy lze použít k vyhledání elementu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v rámci stromu.  
   
- <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> jednoznačně identifikuje prvku automatizace uživatelského rozhraní z na stejné úrovni. Další informace o identifikátory vlastnosti související s řídit identifikace, naleznete v tématu [přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>jednoznačně identifikuje prvek automatizace uživatelského rozhraní z jeho položek na stejné úrovni. Další informace o identifikátorech vlastností souvisejících s identifikací ovládacích prvků najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> nezaručuje jedinečnou identitu v rámci stromu; obvykle potřebuje informace o oboru užitečnost a kontejner. Aplikace může například obsahovat ovládací prvek nabídky s více položek nabídek nejvyšší úrovně, které pak obsahovat více podřízených položek nabídky. Tyto položky nabídky sekundární může identifikovat obecný schématu, jako je například "Item1", "Položka 2" a tak dále, povolení duplicitní identifikátory pro děti napříč položky nabídek nejvyšší úrovně.  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nezaručuje jedinečnou identitu v celém stromu. obvykle potřebují informace o kontejneru a oboru, aby byly užitečné. Například aplikace může obsahovat ovládací prvek nabídky s více položkami nabídky nejvyšší úrovně, které zase mají více podřízených položek nabídky. Tyto sekundární položky nabídky mohou být identifikovány pomocí obecného schématu, jako je "Item1 –", "položka 2" atd., což povoluje duplicitní identifikátory pro podřízené položky v rámci položek nabídky nejvyšší úrovně.  
   
 ## <a name="scenarios"></a>Scénáře  
- Byly zjištěny tři základní scénáře aplikace klienta automatizace uživatelského rozhraní, které vyžadují použití <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> získat přesné a konzistentní výsledky při hledání elementů.  
+ Zjistili jsme tři primární scénáře klientské aplikace automatizace uživatelského rozhraní, které vyžadují použití <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> k dosažení přesného a konzistentního výsledku při hledání prvků.  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> podporuje všechny elementy automatizace uživatelského rozhraní v zobrazení ovládacího prvku s výjimkou nejvyšší úrovně aplikace pro windows, odvozený z pohyb mezi elementy automatizace uživatelského rozhraní [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládací prvky, které nemají ID nebo x: Uid a pohyb mezi elementy automatizace uživatelského rozhraní odvozené od [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] ovládací prvky, které není nutné ID ovládacího prvku.  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>je podporováno všemi prvky automatizace uživatelského rozhraní v zobrazení ovládacích prvků kromě oken aplikace nejvyšší úrovně, prvky automatizace uživatelského rozhraní odvozené z [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, které nemají identifikátor nebo x:UID –, a prvky automatizace uživatelského rozhraní odvozené z [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] ovládacích prvků, které nemáte ID ovládacího prvku.  
   
-#### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Použijte jedinečný a dostupnější AutomationID a vyhledejte konkrétní elementu ve stromu automatizace uživatelského rozhraní  
+#### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Použití jedinečného a zjistitelného AutomationID k vyhledání konkrétního prvku ve stromu automatizace uživatelského rozhraní  
   
-- Použijte nástroj, jako [!INCLUDE[TLA#tla_uispy](../../../includes/tlasharptla-uispy-md.md)] do sestavy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> z [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementu, které vás zajímají. Tuto hodnotu lze pak kopírovat a vložit do klientské aplikace, jako je například testovací skript pro další automatizované testování. Tento přístup snižuje a zjednodušuje kód, který k identifikaci a vyhledání prvek v době běhu.  
+- Použijte nástroj [!INCLUDE[TLA#tla_uispy](../../../includes/tlasharptla-uispy-md.md)] , jako je například, k <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> hlášení [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvku zájmu. Tuto hodnotu lze následně zkopírovat a vložit do klientské aplikace, jako je například testovací skript pro následné automatizované testování. Tento přístup snižuje a zjednodušuje kód nezbytný k identifikaci a vyhledání prvku za běhu.  
   
 > [!CAUTION]
->  Obecně platí, pokuste se získat jen přímé podřízené objekty daného <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Vyhledání potomků může iterovat stovky nebo i tisíce elementů, což může vést k přetečení zásobníku. Pokud se pokoušíte získat konkrétní elementu na nižší úrovni, měli byste začít hledání v okně aplikace nebo z kontejneru na nižší úrovni.  
+>  Obecně byste se měli pokusit získat pouze přímé podřízené objekty <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Hledání potomků může iterovat stovky nebo dokonce tisíce prvků, což může způsobit přetečení zásobníku. Pokud se pokoušíte získat konkrétní prvek na nižší úrovni, měli byste zahájit hledání z okna aplikace nebo z kontejneru na nižší úrovni.  
   
  [!code-csharp[UIAAutomationID_snip#100](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#100)]
  [!code-vb[UIAAutomationID_snip#100](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#100)]  
   
-#### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>Vraťte se do dříve zjištěné třída AutomationElement pomocí trvalé cesty  
+#### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>Pro návrat k dříve identifikovanému třída AutomationElement neobsahuje použijte trvalou cestu.  
   
-- Klientské aplikace, z skriptů jednoduchý test a robustní záznam a přehrávání nástroje může vyžadovat přístup k prvkům, které nejsou vytvořeny aktuálně, například soubor otevřete dialogové okno nebo položku nabídky a proto neexistuje ve stromu automatizace uživatelského rozhraní. Tyto prvky můžete vytvořit instanci pouze reprodukce, nebo "přehrávání", konkrétní posloupnost akcí uživatelského rozhraní pomocí vlastnosti automatizace uživatelského rozhraní, jako je AutomationID vzorů ovládacích prvků a naslouchacích procesů událostí.
+- Klientské aplikace, od jednoduchých testovacích skriptů až po robustní nástroje pro nahrávání a přehrávání, můžou vyžadovat přístup k elementům, které nejsou aktuálně vytvořeny instance, jako je otevření dialogového okna nebo položka nabídky, a proto neexistují ve stromu automatizace uživatelského rozhraní. Na tyto prvky lze vytvořit instanci pouze pomocí reprodukce nebo přehrání, konkrétní sekvence akcí uživatelského rozhraní prostřednictvím použití vlastností automatizace uživatelského rozhraní, jako jsou AutomationID, vzory ovládacích prvků a naslouchací procesy událostí.
   
  [!code-csharp[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#uiaworkerthread)]
  [!code-vb[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#uiaworkerthread)]  
 [!code-csharp[UIAAutomationID_snip#Playback](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#playback)]
 [!code-vb[UIAAutomationID_snip#Playback](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#playback)]  
   
-#### <a name="use-a-relative-path-to-return-to-a-previously-identified-automationelement"></a>Použít relativní cestu k vrácení dříve zjištěné třída AutomationElement  
+#### <a name="use-a-relative-path-to-return-to-a-previously-identified-automationelement"></a>Pro návrat k dříve identifikovanému třída AutomationElement neobsahuje použijte relativní cestu  
   
-- V některých případech se vzhledem AutomationID je pouze musí být jedinečný mezi na stejné úrovni, může více prvků ve stromu automatizace uživatelského rozhraní mají stejné hodnoty vlastnosti AutomationID. V těchto situacích prvky lze jedinečně identifikovat podle nadřazenou položku a v případě potřeby, výše nadřazených. Například vývojář může poskytnout panel nabídek několik položek nabídky každý s více podřízených položek nabídky, ve kterém jsou podřízené objekty označeny sekvenční AutomationID například "Item1", "Item2 –" a tak dále. Každá položka nabídky může pak být jednoznačně identifikují pomocí jeho AutomationID spolu s AutomationID svého nadřazeného objektu a v případě potřeby jeho výše nadřazených.  
+- V některých případech, protože AutomationID je zaručená jenom jedinečnost mezi členy na stejné úrovni, může mít více elementů ve stromu automatizace uživatelského rozhraní stejné hodnoty vlastností AutomationID. V těchto situacích mohou být prvky jednoznačně identifikovány na základě nadřazené položky a v případě potřeby i prarodič. Například vývojář může poskytnout řádek nabídek s více položkami nabídky každý s více položkami nabídky, kde jsou identifikovány pomocí sekvenčního AutomationID, jako je například "Item1 –", "Item2" atd. Jednotlivé položky nabídky by pak mohly být jedinečně identifikovány svými AutomationIDy spolu s AutomationID svého nadřazeného prvku a v případě potřeby jeho prarodičem.  
   
 ## <a name="see-also"></a>Viz také:
 

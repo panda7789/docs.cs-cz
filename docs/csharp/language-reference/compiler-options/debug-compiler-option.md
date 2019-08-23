@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-ms.openlocfilehash: 7ffa939d94d0e7aabe07ee85422c4b9b740d7cdc
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 8bb2b411dc867b6a43e52058dccf2ac980cf0b1e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69603065"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922501"
 ---
 # <a name="-debug-c-compiler-options"></a>-Debug (C# možnosti kompilátoru)
 Možnost **-Debug** způsobí, že kompilátor vygeneruje ladicí informace a umístí je do výstupního souboru nebo souborů.  
@@ -38,7 +38,7 @@ Možnost **-Debug** způsobí, že kompilátor vygeneruje ladicí informace a um
  Použijete **-li příkaz-Debug: Full**, pamatujte na to, že došlo k nějakému dopadu na rychlost a velikost optimalizovaného kódu JIT a malý dopad na kvalitu kódu pomocí **ladění: Full**. Pro generování kódu vydání doporučujeme **ladit: pdbonly** nebo No PDB.  
   
 > [!NOTE]
->  Jeden rozdíl mezi **laděním: pdbonly** a **-debug: Full** je to, že with **-debug: Full** vygeneruje <xref:System.Diagnostics.DebuggableAttribute>kompilátor, který slouží k oznámení kompilátoru JIT, že jsou k dispozici informace o ladění. Proto se zobrazí chyba, pokud kód obsahuje hodnotu false, <xref:System.Diagnostics.DebuggableAttribute> Pokud použijete **příkaz-Debug: Full**.  
+> Jeden rozdíl mezi **laděním: pdbonly** a **-debug: Full** je to, že with **-debug: Full** vygeneruje <xref:System.Diagnostics.DebuggableAttribute>kompilátor, který slouží k oznámení kompilátoru JIT, že jsou k dispozici informace o ladění. Proto se zobrazí chyba, pokud kód obsahuje hodnotu false, <xref:System.Diagnostics.DebuggableAttribute> Pokud použijete **příkaz-Debug: Full**.  
   
  Další informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu [Vytvoření obrázku pro snadnější ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   

@@ -6,17 +6,17 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: d1e598831954f17bdf3bc03ab880c344ca36aa5a
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 3962b671176ad158b338889140181834e05bbeee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039949"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929728"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
 
 > [!NOTE]
->  Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
 
  Pokud obsahuje řadu souvisejících tabulek, můžete použít dva <xref:System.Windows.Forms.DataGrid> ovládací prvky pro zobrazení dat ve formátu hlavní-podrobnosti. <xref:System.Data.DataSet> Jedna <xref:System.Windows.Forms.DataGrid> je určena jako hlavní mřížka a druhá je označena jako mřížka podrobností. Když vyberete položku v seznamu hlavní seznam, zobrazí se v seznamu podrobnosti všechny související podřízené položky. Pokud <xref:System.Data.DataSet> například obsahuje tabulku Customers (zákazníci) a související tabulky objednávek, zadali byste tabulku Customers (zákazníci), která bude hlavní mřížkou, a tabulkou Orders, která bude mřížka podrobností. Když je zákazník vybraný z hlavní mřížky, v mřížce podrobností se zobrazí všechny objednávky přidružené k tomuto zákazníkovi v tabulce Orders.
 
@@ -27,7 +27,7 @@ ms.locfileid: "69039949"
 1. Do formuláře <xref:System.Windows.Forms.DataGrid> přidejte dva ovládací prvky. Další informace najdete v tématu [jak: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms. V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> není ovládací prvek ve výchozím nastavení součástí **sady nástrojů** . Další informace najdete v tématu [jak: Přidejte položky do sady nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).
 
     > [!NOTE]
-    >  Následující kroky se nevztahují na Visual Studio 2005, který používá okno **zdroje dat** pro datovou vazbu při návrhu. Další informace naleznete v tématu [vázání ovládacích prvků k datům v aplikaci Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [postup: Zobrazení souvisejících dat v aplikaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))model Windows Forms.
+    > Následující kroky se nevztahují na Visual Studio 2005, který používá okno **zdroje dat** pro datovou vazbu při návrhu. Další informace naleznete v tématu [vázání ovládacích prvků k datům v aplikaci Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [postup: Zobrazení souvisejících dat v aplikaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))model Windows Forms.
 
 2. Přetáhněte dvě nebo více tabulek z **Průzkumník serveru** do formuláře.
 

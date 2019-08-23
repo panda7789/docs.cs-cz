@@ -2,19 +2,19 @@
 title: <bindingExtensions>
 ms.date: 03/30/2017
 ms.assetid: 8373f94d-d095-486f-8f1e-4ac2f72b58c7
-ms.openlocfilehash: ed55701e45d8580e37cf4776de6b9c5241e0548c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34ba198de33ae4aa1882d13f74bd2d538999a0c9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673469"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919780"
 ---
 # <a name="bindingextensions"></a>\<bindingExtensions >
-Tato část umožňuje použití uživatelem definované vazby z počítače nebo konfiguračního souboru aplikace. Můžete přidat uživatelem definovaného prvku vazby k této kolekci pomocí `add` – klíčové slovo a nastavení `type` atribut elementu do uživatelem definované vazby, stejně jako `name` definované vazby atributu na jméno uživatele.  
+Tato část umožňuje použití uživatelsky definované vazby z počítače nebo konfiguračního souboru aplikace. Uživatelem definovanou vazbu k této kolekci můžete přidat pomocí `add` klíčového slova a `type` nastavením atributu elementu na uživatelem definovanou vazbu a také `name` atributem na název uživatelsky definované vazby.  
   
- Rozšíření vazby umožňují uživateli vytvořit uživatelem definované vazby pro použití v rámci konfigurace koncového bodu. Prostřednictvím kódu programu, rozšíření vazby je typ, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.Binding>.  
+ Rozšíření vazby umožňují uživateli vytvořit uživatelsky definované vazby, které se použijí jako součást konfigurace koncového bodu. Programově je rozšíření vazby typu, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.Binding>.  
   
- V následujícím příkladu `add` element, stejně jako `name` atribut můžete přidat příponu vazby na `bindingElementExtensions` oddílu konfiguračního souboru.  
+ V následujícím příkladu se používá `add` element a také `name` atribut pro přidání rozšíření vazby do `bindingElementExtensions` oddílu konfiguračního souboru.  
   
 ```xml  
 <system.serviceModel>
@@ -28,9 +28,9 @@ Tato část umožňuje použití uživatelem definované vazby z počítače neb
 </system.serviceModel>
 ```  
   
- Chcete-li přidat možnosti konfigurace na prvek, uživatel musí k zápisu a registrace `bindingSection` elementu. Další informace najdete v článku <xref:System.Configuration> dokumentaci.  
+ Chcete-li do prvku přidat možnosti konfigurace, musí uživatel zapsat a zaregistrovat `bindingSection` element. Další informace najdete <xref:System.Configuration> v dokumentaci.  
   
- Po definování elementu a jeho typ konfigurace rozšíření, je možné jako součást koncového bodu, jak je znázorněno v následujícím příkladu.  
+ Po definování prvku a jeho typu konfigurace lze rozšíření použít jako součást koncového bodu, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <services>
@@ -43,4 +43,4 @@ Tato část umožňuje použití uživatelem definované vazby z počítače neb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)

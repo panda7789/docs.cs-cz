@@ -2,20 +2,20 @@
 title: <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 96db336c-4f7a-4193-81a5-910b8ffd804f
-ms.openlocfilehash: d9f8fdf272962916cd08aede484e9bbde55b96a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5d257b3082717ba94b9a4517ed5ccd4bd325c06
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670284"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936301"
 ---
 # <a name="servicecredentials"></a>\<serviceCredentials>
-Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.  
+Určuje přihlašovací údaje, které se mají použít při ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,22 +52,22 @@ Určuje přihlašovací údaje pro ověřování služby a nastavení vztahujíc
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)|Určuje certifikát, který chcete použít, pokud je k dispozici out-of-band klientský certifikát. Tento prvek určuje také nastavení ověřování certifikátu klienta. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>.|  
-|[\<issuedTokenAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)|Určuje aktuální vydaný token pro tuto službu. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenServiceElement>.|  
-|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-servicecredentials.md)|Určuje aktuální pověření pro partnerský uzel. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
-|[\<secureConversationAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationauthentication-of-servicecredential.md)|Určuje aktuální pověření pro zabezpečené konverzace. Tento prvek je typu <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>.|  
-|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)|Určuje certifikát používaný službou identifikovat. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateServiceElement>.|  
-|[\<userNameAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)|Určuje nastavení pro ověření uživatelského jména hesla. Tento prvek je typu <xref:System.ServiceModel.Configuration.UserNameServiceElement>.|  
-|[\<windowsAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsauthentication-of-servicecredentials.md)|Určuje nastavení pro ověřování přihlašovacích údajů Windows. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsServiceElement>.|  
+|[\<clientCertificate>](clientcertificate-of-servicecredentials.md)|Určuje certifikát, který má být použit v případě, že je klientský certifikát k dispozici mimo IP síť. Tento prvek také určuje nastavení ověřování klientského certifikátu. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>.|  
+|[\<issuedTokenAuthentication>](issuedtokenauthentication-of-servicecredentials.md)|Určuje aktuální vydaný token pro tuto službu. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenServiceElement>.|  
+|[\<peer>](peer-of-servicecredentials.md)|Určuje aktuální pověření pro partnerský uzel. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
+|[\<secureConversationAuthentication>](secureconversationauthentication-of-servicecredential.md)|Určuje aktuální pověření pro zabezpečenou konverzaci. Tento prvek je typu <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>.|  
+|[\<serviceCertificate>](servicecertificate-of-servicecredentials.md)|Určuje certifikát používaný službou k identifikaci sebe sama. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateServiceElement>.|  
+|[\<userNameAuthentication>](usernameauthentication.md)|Určuje nastavení pro ověřování hesla uživatelského jména. Tento prvek je typu <xref:System.ServiceModel.Configuration.UserNameServiceElement>.|  
+|[\<windowsAuthentication>](windowsauthentication-of-servicecredentials.md)|Určuje nastavení pro ověření přihlašovacích údajů systému Windows. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsServiceElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement>
 - <xref:System.ServiceModel.Description.ServiceCredentials>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)

@@ -4,38 +4,38 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
-ms.openlocfilehash: a4a2e857e90dda640588cd05396922f55d0bd573
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: bf0d6ae329c5a09986a4a7bf641fe6820387ff22
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589354"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916559"
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32 (Visual Basic)
-I když `My.Computer.Registry` by měl zahrnovat základní potřeb při programování proti registru, můžete použít také <xref:Microsoft.Win32.Registry> a <xref:Microsoft.Win32.RegistryKey> tříd v <xref:Microsoft.Win32> obor názvů rozhraní .NET Framework.  
+I `My.Computer.Registry` když by měl pokrývat vaše základní potřeby při programování v registru, můžete také <xref:Microsoft.Win32.Registry> použít třídy <xref:Microsoft.Win32.RegistryKey> a v <xref:Microsoft.Win32> oboru názvů .NET Framework.  
   
-## <a name="keys-in-the-registry-class"></a>Klíče registru třídy  
- <xref:Microsoft.Win32.Registry> Třída poskytuje základní klíče registrů, které můžete použít pro přístup k podklíče a jejich hodnoty. Základní klíče jsou jen pro čtení. Následující tabulka uvádí a popisuje sedm klíčů vystavené <xref:Microsoft.Win32.Registry> třídy.  
+## <a name="keys-in-the-registry-class"></a>Klíče v třídě registru  
+ <xref:Microsoft.Win32.Registry> Třída poskytuje základní klíče registru, které lze použít pro přístup k podklíčům a jejich hodnotám. Základní klíče jsou jen pro čtení. Následující tabulka uvádí a popisuje sedm klíčů vystavených <xref:Microsoft.Win32.Registry> třídou.  
   
 |**Key**|**Popis**|  
 |-------------|---------------------|  
-|<xref:Microsoft.Win32.Registry.ClassesRoot>|Definuje typy dokumentů a vlastnosti související s těmito typy.|  
+|<xref:Microsoft.Win32.Registry.ClassesRoot>|Definuje typy dokumentů a vlastnosti, které jsou k těmto typům přidruženy.|  
 |<xref:Microsoft.Win32.Registry.CurrentConfig>|Obsahuje informace o konfiguraci hardwaru, které nejsou specifické pro uživatele.|  
-|<xref:Microsoft.Win32.Registry.CurrentUser>|Obsahuje informace o aktuální uživatelské předvolby, jako jsou proměnné prostředí.|  
-|<xref:Microsoft.Win32.Registry.DynData>|Obsahuje data dynamické registru, jako je například použít virtuální ovladače zařízení.|  
-|<xref:Microsoft.Win32.Registry.LocalMachine>|Obsahuje pět podklíče (Hardware, SAM, zabezpečení, softwaru a systém), které obsahují konfigurační data v místním počítači.|  
+|<xref:Microsoft.Win32.Registry.CurrentUser>|Obsahuje informace o uživatelských preferencích, jako jsou proměnné prostředí.|  
+|<xref:Microsoft.Win32.Registry.DynData>|Obsahuje dynamická data registru, například ta, která používají ovladače virtuálních zařízení.|  
+|<xref:Microsoft.Win32.Registry.LocalMachine>|Obsahuje pět podklíčů (hardware, SAM, zabezpečení, software a systém), které obsahují konfigurační data pro místní počítač.|  
 |<xref:Microsoft.Win32.Registry.PerformanceData>|Obsahuje informace o výkonu pro softwarové součásti.|  
-|<xref:Microsoft.Win32.Registry.Users>|Obsahuje informace o uživatelských předvolbách výchozí.|  
+|<xref:Microsoft.Win32.Registry.Users>|Obsahuje informace o výchozích uživatelských preferencích.|  
   
 > [!IMPORTANT]
->  Je bezpečnější zapsat data do aktuálního uživatele (<xref:Microsoft.Win32.Registry.CurrentUser>) než do místního počítače (<xref:Microsoft.Win32.Registry.LocalMachine>). Podmínku, která se obvykle označuje jako "obsazení" vyvolá se při vytváření klíče dříve vytvořil jiný, potenciálně škodlivý, proces. Chcete-li tomu zabránit, použijte metodu, <xref:Microsoft.Win32.RegistryKey.GetValue%2A>, který vrací `Nothing` Pokud klíč ještě neexistuje.  
+> Je bezpečnější zapsat data do aktuálního uživatele (<xref:Microsoft.Win32.Registry.CurrentUser>) než do místního počítače (<xref:Microsoft.Win32.Registry.LocalMachine>). Podmínka, která se obvykle označuje jako "squatting", nastane, když se vytvářený klíč dřív vytvořil jiným, možná škodlivým procesem. Aby k tomu nedošlo, použijte metodu, například <xref:Microsoft.Win32.RegistryKey.GetValue%2A>, která vrátí `Nothing` , pokud klíč ještě neexistuje.  
   
 ## <a name="reading-a-value-from-the-registry"></a>Čtení hodnoty z registru  
- Následující kód znázorňuje způsob čtení řetězce z HKEY_CURRENT_USER.  
+ Následující kód ukazuje, jak číst řetězec z HKEY_CURRENT_USER.  
   
  [!code-vb[VbResourceTasks#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#20)]  
   
- Následující kód načte, krocích a pak zapíše řetězec do klíče HKEY_CURRENT_USER.  
+ Následující kód přečte, zvýší a pak zapíše řetězec do HKEY_CURRENT_USER.  
   
  [!code-vb[VbResourceTasks#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#21)]  
   

@@ -9,33 +9,33 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Geometry objects [WPF], hit tests on visual objects [WPF]
 ms.assetid: 6c8bdbf2-19e0-4fbb-bf89-c1252b2ebc61
-ms.openlocfilehash: 73420d6ae1386676ed900e91b3951df9e0934db8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8bed7784b00f49178c9a87def74b62f7ce620ec7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947356"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923409"
 ---
 # <a name="how-to-hit-test-using-geometry-as-a-parameter"></a>Postupy: Ověřování pozice pomocí objektu Geometry jako parametru
-Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekty pomocí <xref:System.Windows.Media.Geometry> jako nalezený testování parametru.  
+Tento příklad ukazuje, jak provést test přístupů na vizuální objekt pomocí <xref:System.Windows.Media.Geometry> parametru jako parametr testu volání.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak nastavit ověření pozice pomocí <xref:System.Windows.Media.GeometryHitTestParameters> pro <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> metody. <xref:System.Windows.Point> Hodnotu, která je předána `OnMouseDown` metoda se používá k vytvoření <xref:System.Windows.Media.Geometry> objektu, aby bylo možné rozšířit rozsah průchodů testů.  
+ Následující příklad ukazuje, jak nastavit test přístupů pomocí <xref:System.Windows.Media.GeometryHitTestParameters> <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> metody. Hodnota, která je předána `OnMouseDown` metodě, slouží k vytvoření <xref:System.Windows.Media.Geometry> objektu, aby bylo možné rozšířit rozsah testu přístupů. <xref:System.Windows.Point>  
   
  [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet10)]
  [!code-vb[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet10)]  
   
- <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> Vlastnost <xref:System.Windows.Media.GeometryHitTestResult> poskytuje informace o výsledcích přístupů test, který se používá <xref:System.Windows.Media.Geometry> jako nalezený testování parametru. Následující ilustrace znázorňuje vztah mezi geometrie ověření pozice (modré circle) a vykreslený obsah visual cílový objekt (červený čtvereček).  
+ Vlastnost poskytuje informace o výsledcích testu <xref:System.Windows.Media.Geometry> volání, který používá jako parametr testu volání. <xref:System.Windows.Media.GeometryHitTestResult> <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> Následující ilustrace znázorňuje vztah mezi geometrií testu přístupů (modrý kroužek) a vykresleným obsahem cílového vizuálního objektu (červené čtverce).  
   
- ![Diagram zobrazující průběh IntersectionDetail použitou v testování průchodu.](./media/how-to-hit-test-using-geometry-as-a-parameter/intersectiondetail-hit-test.png)  
+ ![Diagram, který zobrazuje IntersectionDetail používaný při testování přístupů.](./media/how-to-hit-test-using-geometry-as-a-parameter/intersectiondetail-hit-test.png)  
   
- Následující příklad ukazuje, jak provádět ověření pozice zpětné volání při <xref:System.Windows.Media.Geometry> slouží jako parametr ověření pozice. `result` Parametr přetypováno na <xref:System.Windows.Media.GeometryHitTestResult> k načtení hodnoty <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> vlastnost. Hodnota vlastnosti umožňuje určit, jestli <xref:System.Windows.Media.Geometry> ověření pozice parametru je částečně nebo zcela obsažena v vykreslený obsah cíl ověření pozice. V takovém případě ukázkový kód je pouze přidáním výsledky ověření pozice do seznamu pro vizuály, které jsou plně obsaženy v rámci hranic cíl.  
+ Následující příklad ukazuje, jak implementovat volání testu volání, když <xref:System.Windows.Media.Geometry> se používá jako parametr testu volání. Parametr je přetypování <xref:System.Windows.Media.GeometryHitTestResult> na hodnotu, aby se <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> načetla hodnota vlastnosti. `result` Hodnota vlastnosti umožňuje určit, zda <xref:System.Windows.Media.Geometry> je parametr testu volání plně nebo částečně obsažen v rámci vykresleného obsahu cíle testu volání. V tomto případě vzorový kód přidává pouze výsledky testů přístupů do seznamu pro vizuály, které jsou plně obsaženy v cílové hranici.  
   
  [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet11)]
  [!code-vb[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet11)]  
   
 > [!NOTE]
->  <xref:System.Windows.Media.HitTestResult> Zpětného volání by neměla být volána po průniku podrobností <xref:System.Windows.Media.IntersectionDetail.Empty>.  
+> Zpětné volání by nemělo být voláno, když je <xref:System.Windows.Media.IntersectionDetail.Empty>detail průniku. <xref:System.Windows.Media.HitTestResult>  
   
 ## <a name="see-also"></a>Viz také:
 

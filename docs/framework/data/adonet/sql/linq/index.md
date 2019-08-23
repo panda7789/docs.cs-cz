@@ -2,56 +2,56 @@
 title: Technologie LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: dce706a9c09558bfb39f0d65bd56b57787488d06
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86c7e9fae270e75d1ba7e9725ded22ea1961311a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743271"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911990"
 ---
 # <a name="linq-to-sql"></a>Technologie LINQ to SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí rozhraní .NET Framework verze 3.5, která poskytuje infrastrukturu prostředí run-time pro správu relačních dat jako objektů.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je součástí .NET Framework verze 3,5, která poskytuje infrastrukturu run-time pro správu relačních dat jako objektů.  
   
 > [!NOTE]
->  Relační data se zobrazí jako kolekce dvourozměrných tabulek (*vztahy* nebo *plochých souborů*), kde společné sloupce tabulky vzájemně souvisí. Chcete-li použít [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] efektivně, musí mít některé znalost základním principům relačních databází.  
+> Relační data se zobrazí jako kolekce dvourozměrných tabulek (*vztahů* nebo plochých *souborů*), kde společné sloupce vzájemně souvisejí s tabulkami. Aby bylo [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možné efektivně používat, musíte mít známé základní principy relačních databází.  
   
- V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], datový model relační databáze je namapován na objektový model vyjádřený v programovacím jazyce vývojáře. Při spuštění aplikace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překládá do SQL integrovaný jazyk dotazů v objektovém modelu a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] převede zpět na objekty, které můžete pracovat v programovacím jazyce.  
+ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]systému je datový model relační databáze mapován na objektový model vyjádřený v programovacím jazyce vývojáře. Po spuštění aplikace se [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přeloží na SQL dotazy integrované do jazyka v objektovém modelu a pošle je do databáze za účelem provedení. Když databáze vrátí výsledky, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] převede je zpět na objekty, se kterými můžete pracovat ve vlastním programovacím jazyce.  
   
- Vývojáři obvykle pomocí sady Visual Studio pomocí Návrháře relací objektů, které poskytuje uživatelské rozhraní pro řadu funkcí, o implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Vývojáři, kteří používají Visual Studio, obvykle používají Návrhář relací objektů, který poskytuje uživatelské rozhraní pro implementaci mnoha funkcí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástroje.  
   
- Dokumentace, která je součástí této verze [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] popisuje základní stavební bloky, procesy a postupy, které potřebujete pro vytváření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace. Můžete také prohledat Microsoft Docs pro specifické problémy a se můžete zapojit [LINQ fórum](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitějších tématech podrobně s odborníky. Nakonec [technologie LINQ to SQL: .NET Language-Integrated dotazu pro relační Data](https://go.microsoft.com/fwlink/?LinkId=93205) dokument white paper o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, s příklady kódu jazyka Visual Basic a C#.  
+ Dokumentace, která je součástí této verze [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , popisuje základní stavební kameny, procesy a techniky, které potřebujete pro sestavování [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací. Můžete také vyhledat konkrétní problémy v Microsoft Docs a můžete se zúčastnit [fóra LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitější témata podrobněji s odborníky. Nakonec [LINQ to SQL: dotaz integrovaný na jazyku .NET pro](https://go.microsoft.com/fwlink/?LinkId=93205) technologii podrobného dokumentu s podrobnostmi o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] relačních datech, který se dokončí s příklady Visual Basic a C# kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)  
- Poskytuje přehled zhuštěnému [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] společně s informacemi o tom, jak začít používat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Poskytuje zúžený přehled [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spolu s informacemi o tom, jak začít používat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
- Popisuje kroky pro mapování, vyhledávání, aktualizace, ladění a podobné úlohy.  
+ Poskytuje kroky pro mapování, dotazování, aktualizaci, ladění a podobné úkoly.  
   
  [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- Poskytuje referenční informace o několik aspektů [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Mezi témata patří mapování typů SQL a CLR, standardní překladu – operátor dotazu a další.  
+ Poskytuje referenční informace o několika aspektech [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Témata zahrnují mapování typů SQL-CLR, standardní převod operátoru dotazu a další.  
   
  [Ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md)  
- Obsahuje odkazy na ukázky jazyka Visual Basic a C#.  
+ Obsahuje odkazy na Visual Basic a C# ukázky.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Language-Integrated Query (LINQ) –C#](../../../../../csharp/programming-guide/concepts/linq/index.md)\
+ [LINQ (Language-Integrated Query) –C#](../../../../../csharp/programming-guide/concepts/linq/index.md)\
  Poskytuje přehled technologie LINQ v C#.
  
- [Language-Integrated Query (LINQ) – Visual Basic](../../../../../visual-basic/programming-guide/concepts/linq/index.md)  
- Poskytuje přehled technologie LINQ v jazyce Visual Basic.
+ [LINQ (Language-Integrated Query) – Visual Basic](../../../../../visual-basic/programming-guide/concepts/linq/index.md)  
+ Poskytuje přehled technologie LINQ v Visual Basic.
   
  [LINQ](../../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- Popisuje [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] technologií pro uživatele jazyka Visual Basic.  
+ Popisuje [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] technologie pro uživatele Visual Basic.  
   
  [LINQ a ADO.NET](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
- Obsahuje odkazy na portálu pro ADO.NET.  
+ Odkazuje na portál ADO.NET.  
   
- [Technologie LINQ to SQL návody](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
- Uvádí postupy, které jsou k dispozici pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ [LINQ to SQL návody](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
+ Uvádí seznam návodů, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]které jsou k dispozici pro.  
   
  [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
  Popisuje, jak stáhnout ukázkové databáze používané v dokumentaci.  
   
- [Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
- Popisuje, jak <xref:System.Web.UI.WebControls.LinqDataSource> řídit zpřístupňuje [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] pro vývojáře webů prostřednictvím architektury ovládací prvek zdroje dat ASP.NET.
+ [Přehled ovládacího prvku webového serveru LinqDataSource](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
+ Popisuje, <xref:System.Web.UI.WebControls.LinqDataSource> jak ovládací prvek [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] zpřístupňuje webovým vývojářům prostřednictvím architektury ovládacího prvku zdroje dat ASP.NET.

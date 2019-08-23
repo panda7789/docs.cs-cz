@@ -6,34 +6,34 @@ helpviewer_keywords:
 - toolbars [Windows Forms], adding tooltips
 - tooltips [Windows Forms], adding
 ms.assetid: c5d86024-a7c5-44ee-8b3f-2daf53d80d3e
-ms.openlocfilehash: b009d19ed949edbd52ec02252ba1e2271e4cb738
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3f383b6cccba7825637ea65a0e13280b91b406c9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750555"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939735"
 ---
 # <a name="how-to-use-tooltips-in-toolstrip-controls"></a>Postupy: Použití prvku ToolTips v ovládacích prvcích ToolStrip
-Můžete zobrazit <xref:System.Windows.Forms.ToolTip> pro <xref:System.Windows.Forms.ToolStrip> ovládacího prvku chcete nastavením ovládacího prvku <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> vlastnost `true`.  
+Můžete zobrazit <xref:System.Windows.Forms.ToolTip> <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> požadovaný ovládací prvek nastavením vlastnosti ovládacího prvku na `true`. <xref:System.Windows.Forms.ToolStrip>  
   
-### <a name="to-display-a-tooltip"></a>Chcete-li zobrazit popis  
+### <a name="to-display-a-tooltip"></a>Zobrazení popisu tlačítka  
   
-- Nastavte <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> vlastnost ovládacího prvku na `true`.  
+- Nastavte vlastnost ovládacího prvku na `true`. <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A>  
   
-     Výchozí hodnota <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A?displayProperty=nameWithType> je `true`a výchozí hodnota <xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.StatusStrip.ShowItemToolTips%2A?displayProperty=nameWithType> je `false`.  
+     Výchozí hodnota <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A?displayProperty=nameWithType> je a `true` <xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A?displayProperty=nameWithType> Výchozíhodnota<xref:System.Windows.Forms.StatusStrip.ShowItemToolTips%2A?displayProperty=nameWithType> je .`false`  
   
-### <a name="to-use-the-tooltiptext-property-for-the-tooltip-text-of-a-toolstripbutton"></a>Pro účely text popisku ovládací prvek ToolStripButton ToolTipText – vlastnost  
+### <a name="to-use-the-tooltiptext-property-for-the-tooltip-text-of-a-toolstripbutton"></a>Použití vlastnosti ToolTipText pro text popisku prvek ToolStripButton  
   
-1. Nastavte <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> vlastnosti tlačítka `true`.  
+1. Nastavte vlastnost tlačítka na `true`. <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A>  
   
-2. Nastavte <xref:System.Windows.Forms.ToolStripButton.AutoToolTip%2A?displayProperty=nameWithType> vlastnosti tlačítka `false`.  
+2. Nastavte vlastnost tlačítka na `false`. <xref:System.Windows.Forms.ToolStripButton.AutoToolTip%2A?displayProperty=nameWithType>  
   
-     `AutoToolTip` Vlastnost `true` ve výchozím nastavení pro <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripDropDownButton>, a <xref:System.Windows.Forms.ToolStripSplitButton>.  
+     `AutoToolTip` Vlastnost je `true` ve výchozím nastavení pro <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripDropDownButton>a .<xref:System.Windows.Forms.ToolStripSplitButton>  
   
-     A <xref:System.Windows.Forms.ToolStripButton> používá jeho `Text` vlastnost <xref:System.Windows.Forms.ToolTip> text ve výchozím nastavení. Tento postup slouží k zobrazení vlastního textu v <xref:System.Windows.Forms.ToolStripButton> <xref:System.Windows.Forms.ToolTip>.  
+     Ve výchozím <xref:System.Windows.Forms.ToolTip> nastavení `Text` <xref:System.Windows.Forms.ToolStripButton> používá vlastnost pro text. Pomocí tohoto postupu můžete zobrazit vlastní text v <xref:System.Windows.Forms.ToolStripButton>. <xref:System.Windows.Forms.ToolTip>  
   
 > [!NOTE]
->  Pokud nastavíte <xref:System.Windows.Forms.ToolStripItemDisplayStyle> k <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None> nebo <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Image>, se nezobrazí žádný text na tlačítku, ale stále se zobrazí popis tlačítka.  
+> Pokud nastavíte <xref:System.Windows.Forms.ToolStripItemDisplayStyle> na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None> nebo <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Image>, na tlačítku se nezobrazí žádný text, ale Tip nástroje se stále zobrazuje.  
   
 ## <a name="see-also"></a>Viz také:
 

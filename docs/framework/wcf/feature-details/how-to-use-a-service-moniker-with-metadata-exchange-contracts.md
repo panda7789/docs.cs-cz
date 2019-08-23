@@ -2,24 +2,24 @@
 title: 'Postupy: Použití monikeru služby u kontraktů Metadata Exchange'
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: 367cbd4a2bfbde3d4ab0a74eeeaf5d5f5662ec27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00aa1bbde95c0636391f213f830fc67b2dedf459
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972897"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968795"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: Použití monikeru služby u kontraktů Metadata Exchange
-Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možnost volat tyto služby ze skriptu nebo aplikace v jazyce Visual Basic 6.0. Jednu metodu bude generovat sestavení klienta WCF, zaregistrovat sestavení s modelem COM, instalaci sestavení v GAC a pak odkazování na typy modelu COM z kódu jazyka Visual Basic. Pokud distribuujete aplikaci, budete muset distribuovat na klienta WCF sestavení. Uživatel pak muset zaregistrovat sestavení klienta WCF s modelem COM a jeho následné uložení do mezipaměti GAC. Komunikace s objekty COM WCF také umožňuje provádět stejné volání služby bez nutnosti spoléhat se na sestavení klienta WCF. Monikeru služby WCF umožňuje volat libovolnou službu WCF z jakéhokoli jazyka kompatibilního s modelu COM (Visual Basic, VBScript, Visual Basic for Applications (VBA) a tak dále) tak, že zadáte identifikátor URI, který používá monikeru služby k extrakci typů exchange (Mex) koncových bodů metadat informace o službě. Toto téma popisuje, jak volat získávání WCF spuštění ukázky použití monikeru služby WCF, který určuje koncový bod Mex.  
+Po vývoji některých nových služeb WCF se můžete rozhodnout, že chcete být schopni tyto služby volat ze skriptu nebo aplikace Visual Basic 6,0. Jednou z metod by bylo generovat sestavení klienta WCF, zaregistrovat sestavení v modelu COM, nainstalovat sestavení v globální mezipaměti sestavení (GAC) a pak odkazovat na typy modelu COM z kódu Visual Basic. Při distribuci aplikace budete muset distribuovat i sestavení klienta WCF. Uživatel pak bude muset zaregistrovat sestavení klienta WCF pomocí modelu COM a umístit ho do mezipaměti GAC. Zprostředkovatel komunikace s objekty WCF COM také umožňuje provádět stejná volání služby, aniž by se museli spoléhat na sestavení klienta WCF. Moniker WCF umožňuje volat libovolnou službu WCF z jakéhokoli jazyka kompatibilního s COM (Visual Basic, VBScript, jazyk Visual Basic for Application (VBA) atd.) zadáním identifikátoru URI koncového bodu (MEX) metadat, který používá moniker služby k extrakci typu. informace o službě. Toto téma popisuje, jak volat ukázku Začínáme WCF pomocí monikeru WCF, který určuje koncový bod mex.  
   
 > [!NOTE]
->  Typy definované v sestavení klienta WCF se nikdy skutečně vytvořena instance. Sestavení se používá jenom pro metadata.  
+> Typy definované sestavením klienta WCF nejsou ve skutečnosti vytvořeny. Sestavení se používá pouze pro metadata.  
   
-### <a name="using-the-service-moniker-with-a-mex-address"></a>Použití monikeru služby u adresa MEX.  
+### <a name="using-the-service-moniker-with-a-mex-address"></a>Použití monikeru služby s adresou MEX  
   
-1. Ukázka Začínáme vytvářet a používat prohlížeč Internet Explorer a přejděte na její adresu URL (http://localhost/ServiceModelSamples/Service.svc) zajistit, služba funguje.  
+1. Sestavte Začínáme Sample a pomocí Internet Exploreru přejděte na jeho adresu URL http://localhost/ServiceModelSamples/Service.svc) (abyste zajistili, že služba funguje.  
   
-2. Vytvořte skript jazyka Visual Basic nebo Visual Basic aplikací, který obsahuje následující kód:  
+2. Vytvořte skript Visual Basic nebo Visual Basic aplikaci, která obsahuje následující kód:  
   
     ```  
     monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
@@ -31,15 +31,15 @@ Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možno
     MsgBox calc.Add(3, 4)  
     ```  
   
-3. Spuštění aplikace Visual Basic nebo skriptu.  
+3. Spusťte Visual Basic aplikaci nebo skript.  
   
     > [!NOTE]
-    >  Na službu, kterou voláte musí vystavit koncový bod Mex pro moniker bude moct číst metadata ze služby. Další informace najdete v tématu [jak: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
+    > Služba, kterou voláte, musí vystavit koncový bod mex pro moniker, aby bylo možné číst metadata ze služby. Další informace najdete v tématu [jak: Publikování metadat pro službu pomocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
     > [!NOTE]
-    >  Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatnou syntaxi."  Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
+    > Pokud je moniker poškozený nebo pokud není služba k dispozici, volání vrátí chybu `GetObject` s názvem neplatná syntaxe.  Pokud se zobrazí tato chyba, ujistěte se, že moniker, který používáte, je správný a služba je k dispozici.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Použití Monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)
-- [Postupy: Použití Monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
+- [Postupy: Použít moniker služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)
+- [Postupy: Použití monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)

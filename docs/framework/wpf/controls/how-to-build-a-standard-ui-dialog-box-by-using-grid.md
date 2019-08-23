@@ -8,26 +8,26 @@ helpviewer_keywords:
 - dialog boxes [WPF], creating
 - Grid control [WPF], creating [WPF], dialog box
 ms.assetid: d6ac3d51-844b-4d29-96d8-81a696a7b960
-ms.openlocfilehash: 0ade908e92e552017acb9ba242ccba2c28c3c995
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 68c9653e616388374aad2ad33ac7dab68446241d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051049"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923418"
 ---
 # <a name="how-to-build-a-standard-ui-dialog-box-by-using-grid"></a>Postupy: Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky
-Tento příklad ukazuje, jak vytvořit standardní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] dialogové okno s použitím <xref:System.Windows.Controls.Grid> elementu.  
+Tento příklad ukazuje, jak vytvořit standardní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] dialogové okno <xref:System.Windows.Controls.Grid> pomocí elementu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dialogové okno podobné **spustit** dialogovém [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] operačního systému.  
+ Následující příklad vytvoří dialogové okno, jako je dialogové okno **Spustit** v operačním systému Windows.  
   
- V příkladu se vytvoří <xref:System.Windows.Controls.Grid> a používá <xref:System.Windows.Controls.ColumnDefinition> a <xref:System.Windows.Controls.RowDefinition> tříd k definování pět sloupců a čtyři řádky.  
+ V příkladu se vytvoří <xref:System.Windows.Controls.Grid> a <xref:System.Windows.Controls.ColumnDefinition> pomocí tříd a <xref:System.Windows.Controls.RowDefinition> definuje pět sloupců a čtyři řádky.  
   
- V příkladu se pak přidá a umístí <xref:System.Windows.Controls.Image>, `RunIcon.png`, představující obrázek, který se nachází v dialogovém okně. Na obrázku je umístěn v prvním sloupci a řádku <xref:System.Windows.Controls.Grid> (levý horní roh).  
+ Příklad následně přidá a umístí <xref:System.Windows.Controls.Image>do, `RunIcon.png`, aby představoval obrázek, který se nachází v dialogovém okně. Obrázek se umístí do prvního sloupce a řádku <xref:System.Windows.Controls.Grid> (v levém horním rohu).  
   
- V dalším kroku příklad přidá <xref:System.Windows.Controls.TextBlock> element na první sloupec, který zahrnuje zbývající sloupce na prvním řádku. Přidá další <xref:System.Windows.Controls.TextBlock> element na druhém řádku v prvním sloupci znázornit **otevřít** textového pole. A <xref:System.Windows.Controls.TextBlock> způsobem, která představuje vstupní datové oblasti.  
+ Dále tento příklad přidá <xref:System.Windows.Controls.TextBlock> prvek do prvního sloupce, který zahrnuje zbývající sloupce prvního řádku. Přidá další <xref:System.Windows.Controls.TextBlock> prvek do druhého řádku v prvním sloupci, který představuje **otevřené** textové pole. <xref:System.Windows.Controls.TextBlock> Následuje, který představuje oblast pro zadávání dat.  
   
- Nakonec příklad přidá tři <xref:System.Windows.Controls.Button> elementy na posledním řádku, které představují **OK**, **zrušit**, a **Procházet** události.  
+ Nakonec <xref:System.Windows.Controls.Button> příklad přidá tři prvky do finálního řádku, které reprezentují události **OK**, **Zrušit**a **Procházet** .  
   
  [!code-csharp[GridRunDialog#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GridRunDialog/CSharp/window1.xaml.cs#1)]
  [!code-vb[GridRunDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridRunDialog/VisualBasic/grid_vb.vb#1)]  

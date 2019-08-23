@@ -12,15 +12,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: adb13688791cd7d8f467780da1895d4f9fe6e990
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e6ed7d25593f9dd5d5d01f8c06024dcf8acfcfea
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739641"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916475"
 ---
 # <a name="cordebugrecordformat-enumeration"></a>Výčet CorDebugRecordFormat
-Popisuje formát dat v bajtové pole, která obsahuje informace o události ladění nativní výjimka.  
+Popisuje formát dat v bajtovém poli, které obsahuje informace o nativní události ladění výjimky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,23 +35,23 @@ typedef enum CorDebugRecordFormat {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`FORMAT_WINDOWS_EXCEPTIONRECORD32`|Data jsou výjimky záznam 32bitová verze Windows.|  
-|`FORMAT_WINDOWS_EXCEPTIONRECORD64`|Data jsou záznam výjimky Windows 64-bit.|  
+|`FORMAT_WINDOWS_EXCEPTIONRECORD32`|Data jsou 32 záznam výjimky systému Windows.|  
+|`FORMAT_WINDOWS_EXCEPTIONRECORD64`|Data jsou 64 záznam výjimky systému Windows.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen `CorDebugRecordFormat` výčtu je předána [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) indikace formátu bajtového pole v jeho `pRecord` argument.  
+ Člen `CorDebugRecordFormat` výčtu je předán metodě [DecodeEvent –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) k určení formátu `pRecord` bajtového pole v argumentu.  
   
 > [!NOTE]
->  Tento výčet je určena pro použití v .NET Native ladění pouze scénáře.  
+> Tento výčet je určený pro použití pouze v .NET Nativech scénářích ladění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

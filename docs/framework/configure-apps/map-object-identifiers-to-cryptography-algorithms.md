@@ -8,15 +8,15 @@ helpviewer_keywords:
 - mapping object identifiers
 - cryptography, mapping object identifiers
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
-ms.openlocfilehash: e035ff04a70a441f7f64bbc230ba6d8036fb2ace
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a5aebac2d392d4540581dfe7c7afff0819968ac0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775775"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912545"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>Mapování identifikátorů objektů na algoritmy šifrování
-Digitální podpisy Ujistěte se, že data bez dozoru při odeslání z jedné aplikace do jiného. Obvykle digitální podpis je vypočítán s použitím matematické funkce hash data, která mají být podepsán. Při formátování hodnoty hash podepsat, některé algoritmy digitálního podpisu připojí ASN.1 identifikátor objektu (OID) v rámci operace formátování. Identifikátor OID Určuje algoritmus, který byl použit pro výpočet hodnoty hash. Algoritmy můžete namapovat na identifikátory objektů rozšířit mechanismus kryptografie na vlastní algoritmy. Následující příklad ukazuje, jak namapovat identifikátor objektu na nový algoritmus hash.  
+Digitální podpisy zajišťují, že při posílání z jednoho programu do druhého se data neúmyslně nezměnila. Digitální podpis se obvykle počítá použitím matematické funkce na hodnotu hash dat, která mají být podepsána. Při formátování hodnoty hash, která má být podepsána, některé algoritmy digitálního podpisu připojí jako součást operace formátování identifikátor objektu ASN. 1 (OID). Identifikátor OID identifikuje algoritmus, který se použil k výpočtu hodnoty hash. Můžete mapovat algoritmy na identifikátory objektů a roztáhnout mechanismus kryptografie na použití vlastních algoritmů. Následující příklad ukazuje, jak namapovat identifikátor objektu na nový algoritmus hash.  
   
 ```xml  
 <configuration>  
@@ -38,9 +38,9 @@ Digitální podpisy Ujistěte se, že data bez dozoru při odeslání z jedné a
 </configuration>  
 ```  
   
- [ \<Oidentry – > element](../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md) obsahuje dva atributy. **OID** atribut je identifikátor objektu. **Název** atribut je hodnota **název** atribut z [ \<nameEntry > element](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md). Musí existovat mapování z název algoritmu na třídu před identifikátor objektu lze mapovat na jednoduchý název.  
+ Element oidEntry > obsahuje dva atributy. [ \<](./file-schema/cryptography/oidentry-element.md) Atribut **OID** je číslo identifikátoru objektu. Atribut **Name** je hodnota [ \<](./file-schema/cryptography/nameentry-element.md)atributu **Name** z > elementu nameEntry. Aby bylo možné mapovat identifikátor objektu na jednoduchý název, musí být mapování z názvu algoritmu na třídu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Konfigurace šifrovacích tříd](configure-cryptography-classes.md)
+- [Kryptografické služby](../../standard/security/cryptographic-services.md)

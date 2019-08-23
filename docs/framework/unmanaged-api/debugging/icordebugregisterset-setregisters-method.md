@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 472e92e4e7a69c437c66cc9f221ab357292c345e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 200ea1b9c046b8743699a549c07c0baaf285be39
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769589"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965024"
 ---
 # <a name="icordebugregistersetsetregisters-method"></a>ICorDebugRegisterSet::SetRegisters – metoda
-`SetRegisters` není implementováno v rozhraní .NET Framework verze 2.0. Nevolejte tuto metodu.  
+`SetRegisters`není implementována v .NET Framework verze 2,0. Nevolejte tuto metodu.  
   
 > [!NOTE]
->  Pomocí operace vyšší úrovně, jako [icordebugilframe::setip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo [icordebugnativeframe::setip –](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
+> Použijte operace vyšší úrovně, například [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo [ICorDebugNativeFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ HRESULT SetRegisters (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

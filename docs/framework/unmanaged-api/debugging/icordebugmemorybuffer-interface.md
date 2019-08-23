@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 85dc2d65-3657-4b93-9f23-9feaa95d37ff
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e12b50e964ec470b843ae35c960f20c5675fd572
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 77fa6b1a8c7a559b9d88c0173e389ec11a75ec8b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61955464"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914791"
 ---
 # <a name="icordebugmemorybuffer-interface"></a>ICorDebugMemoryBuffer Interface
 Představuje vyrovnávací paměť v paměti.  
@@ -19,21 +19,21 @@ Představuje vyrovnávací paměť v paměti.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-getsize-method.md)|Získá velikost vyrovnávací paměti v bajtech.|  
-|[GetStartAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-getstartaddress-method.md)|Získá počáteční adresa vyrovnávací paměti.|  
+|[GetStartAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-getstartaddress-method.md)|Získá počáteční adresu vyrovnávací paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní je pouze k dispozici s .NET Native. Pokud se rozhodnete implementovat toto rozhraní ICorDebug scénářích mimo .NET Native, modul common language runtime bude ignorovat toto rozhraní.  
+> Toto rozhraní je dostupné jenom pro .NET Native. Pokud implementujete Toto rozhraní pro ICorDebug scénáře mimo .NET Native, modul CLR (Common Language Runtime) bude toto rozhraní ignorovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - -verbose compiler option [Visual Basic]
 - /verbose compiler option [Visual Basic]
 ms.assetid: d1aec0c1-0261-421d-9adc-5b13756100be
-ms.openlocfilehash: f6d896fb0d41a8fa3ed613d29bc3fca2bd14cc5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b3899462af7c4aa8e0f77377a8d7485975f9867
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796088"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937262"
 ---
 # <a name="-verbose"></a>-verbose
-Způsobí, že kompilátor vytvoří podrobné zprávy o stavu a chyba.  
+Způsobí, že kompilátor vyprodukuje Podrobné stavové a chybové zprávy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,16 +24,16 @@ Způsobí, že kompilátor vytvoří podrobné zprávy o stavu a chyba.
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Volitelné. Určení `-verbose` je stejné jako zadání `-verbose+`, což způsobí, že kompilátor generuje podrobné zprávy. Výchozí hodnota pro tuto možnost je `-verbose-`.  
+ Volitelný parametr. Určení `-verbose` je stejné jako při zadání `-verbose+`, což způsobí, že kompilátor vygeneruje podrobné zprávy. Výchozí hodnota pro tuto možnost je `-verbose-`.  
   
 ## <a name="remarks"></a>Poznámky  
- `-verbose` Možnost zobrazí informace o celkový počet chyb, které jsou vydány kompilátorem, sestavy, která sestavení jsou načítány modulem a zobrazí soubory, které jsou aktuálně kompilován.  
+ `-verbose` Možnost zobrazí informace o celkovém počtu chyb vydaných kompilátorem, sestav, které sestavení načítá modul, a zobrazuje, které soubory jsou aktuálně kompilovány.  
   
 > [!NOTE]
->  `-verbose` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
+> Tato `-verbose` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a instruuje kompilátor, aby zobrazení podrobné stavové informace.  
+ Následující kód zkompiluje `In.vb` a nasměruje kompilátor pro zobrazení podrobných informací o stavu.  
   
 ```console  
 vbc -verbose in.vb  
@@ -41,5 +41,5 @@ vbc -verbose in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ebc4bf703bc22b642b0950fd60471342a615a5c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e3a348ac8da855e458b6208c51f9c51b48da3134
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663850"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927449"
 ---
 # <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion – element >
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
@@ -60,7 +60,7 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
  Vzhledem k tomu, že porovnání řetězců, řazení a operace s <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> velkými a malými písmeny prováděné třídou v .NET Framework 4 odpovídají standardu Unicode 5,1, výsledky <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> metod <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> porovnání řetězců, jako jsou a se mohou lišit od předchozí verze .NET Framework. Pokud vaše aplikace závisí na starším chování, můžete obnovit pravidla porovnání a řazení řetězců používané v .NET Framework 3,5 a starších verzích zahrnutím `<CompatSortNLSVersion>` elementu do konfiguračního souboru aplikace.  
   
 > [!IMPORTANT]
->  Obnovení starších pravidel porovnání a řazení řetězců vyžaduje, aby v místním systému byla k dispozici dynamická knihovna sort00001000.dll.  
+> Obnovení starších pravidel porovnání a řazení řetězců vyžaduje, aby v místním systému byla k dispozici dynamická knihovna sort00001000.dll.  
   
  Můžete také použít starší řazení řetězců a pravidla porovnávání v konkrétní aplikační doméně předáním řetězce "NetFx40_Legacy20SortingBehavior" do <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> metody při vytváření domény aplikace.  
   

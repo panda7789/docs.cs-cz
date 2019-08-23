@@ -2,12 +2,12 @@
 title: Asynchronní návratové typyC#()
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: f9ec8c9dc9e51fa3256f8bbd523c7945efe866e0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f40592038ce16173e6dced5e8bcb914cfeb1b1f5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595766"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922042"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typyC#()
 Asynchronní metody mohou mít následující návratové typy:
@@ -36,7 +36,7 @@ Když `GetLeisureHours` je volána z výrazu await `ShowTodaysInfo` v metodě, v
 Můžete lépe porozumět tomu `GetLeisureHours` `await`, jak se to stane, oddělením volání z aplikace, jak ukazuje následující kód. Volání metody `GetLeisureHours` , která není okamžitě očekávána `Task<int>`, vrátí, jak byste očekávali od deklarace metody. Úkol je přiřazen k `integerTask` proměnné v příkladu. Protože `integerTask` je,obsahuje<xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. <xref:System.Threading.Tasks.Task%601> V tomto případě `TResult` představuje typ Integer. Při `await` použití na `integerTask`je výraz await vyhodnocen jako `integerTask`obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti. Hodnota je přiřazena `ret` proměnné.  
   
 > [!IMPORTANT]
->  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnost je vlastnost blokování. Pokud se pokusíte o přístup k tomuto úkolu před jeho dokončením, bude vlákno, které je aktuálně aktivní, blokováno, dokud se úloha nedokončí a hodnota nebude k dispozici. Ve většině případů byste měli k hodnotě přistupovat pomocí `await` místo přímého přístupu k vlastnosti. <br/> Předchozí příklad získal hodnotu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti pro blokování hlavního vlákna `ShowTodaysInfo` , aby metoda mohla dokončit provádění před ukončením aplikace.  
+> <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnost je vlastnost blokování. Pokud se pokusíte o přístup k tomuto úkolu před jeho dokončením, bude vlákno, které je aktuálně aktivní, blokováno, dokud se úloha nedokončí a hodnota nebude k dispozici. Ve většině případů byste měli k hodnotě přistupovat pomocí `await` místo přímého přístupu k vlastnosti. <br/> Předchozí příklad získal hodnotu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti pro blokování hlavního vlákna `ShowTodaysInfo` , aby metoda mohla dokončit provádění před ukončením aplikace.  
 
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1a.cs#1)]
   

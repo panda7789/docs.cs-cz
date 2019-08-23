@@ -5,38 +5,38 @@ ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 979975e993a84dfe5c5527291f8cfe650be80ee6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 954ff12ae1ac8b4d601c35fcd76ea35b2bb3acbf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647838"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939441"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Podpora typu v třídách System.Xml
-V rozhraní .NET Framework verze 2.0 mají základní třídy XML vylepšené a zahrnují typ funkce podpory. <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, A <xref:System.Xml.XPath.XPathNavigator> třídy zahrnují funkce podpory typu, včetně možnosti pro převod mezi typy schémat XML a běžné language runtime (CLR) typy.  
+V .NET Framework verze 2,0 byly základní třídy XML vylepšeny, aby zahrnovaly funkce podpory typů. Třídy <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter> a<xref:System.Xml.XPath.XPathNavigator> zahrnují funkce podpory typů včetně možnosti konverze mezi typy schémat XML a typy modulu CLR (Common Language Runtime).  
   
- V rozhraní .NET Framework verze 2.0 <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, a <xref:System.Xml.XPath.XPathNavigator> třídy vylepšené a zahrnují typ funkce podpory.  
+ V .NET Framework verze 2,0 <xref:System.Xml.XmlReader>byly vylepšeny <xref:System.Xml.XPath.XPathNavigator> třídy <xref:System.Xml.XmlWriter>, a, aby zahrnovaly funkce podpory typů.  
   
-- <xref:System.Xml.XmlReader> a <xref:System.Xml.XPath.XPathNavigator> třídy každý zahrnují **položka SchemaInfo** vlastnost, která vrátí informace o schématu na uzlu.  
+- Třídy <xref:System.Xml.XmlReader> a <xref:System.Xml.XPath.XPathNavigator> zahrnují vlastnost **SchemaInfo** , která vrací informace o schématu v uzlu.  
   
-- **ReadContentAs** a **ReadElementContentAs** a metody <xref:System.Xml.XmlReader> třídy číst textové hodnoty a převeďte jej na hodnotu CLR v rámci jednoho volání metody.  
+- **ReadContentAs** a **metody ReadElementContentAs** a <xref:System.Xml.XmlReader> metody třídy čtou textovou hodnotu a převedou je na hodnotu CLR v jediném volání metody.  
   
-- <xref:System.Xml.XmlWriter.WriteValue%2A> Metodu <xref:System.Xml.XmlWriter> třídy při výpisu XML převádí typ CLR na typ schématu XML.  
+- <xref:System.Xml.XmlWriter.WriteValue%2A> Metoda<xref:System.Xml.XmlWriter> na třídě převede typ CLR na typ schématu XML při zapisování XML.  
   
-- **ValueAs** a <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnosti <xref:System.Xml.XPath.XPathNavigator> třídy vrátit hodnotu uzlu a převeďte jej na hodnotu CLR v rámci jednoho volání metody.  
+- **ValueAs** a <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnosti <xref:System.Xml.XPath.XPathNavigator> třídy vracejí hodnotu uzlu a převedou je na hodnotu CLR v rámci jediného volání metody.  
   
 > [!NOTE]
->  V rozhraní .NET Framework verze 1.0 <xref:System.Xml.XmlConvert> třídy byly potřebné pro převod mezi typy schématu XML a CLR.  
+> V .NET Framework verze 1,0 <xref:System.Xml.XmlConvert> byla třída nutná k převedení mezi schématy XML a typy CLR.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Mapování datových typů XML na typy CLR](../../../../docs/standard/data/xml/mapping-xml-data-types-to-clr-types.md)  
  Popisuje výchozí mapování datových typů XML na typy CLR.  
   
  [Poznámky k implementaci podpory typů XML](../../../../docs/standard/data/xml/xml-type-support-implementation-notes.md)  
- Tento článek popisuje některé podrobnosti o podpoře implementace typu.  
+ Popisuje některé podrobnosti implementace podpory typu.  
   
  [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
- Popisuje způsob použití <xref:System.Xml.XmlConvert> pro převod mezi typy schématu XML a CLR.  
+ Popisuje, jak použít <xref:System.Xml.XmlConvert> třídu pro převod mezi typy schématu XML a CLR.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přístup k datům XML silného typu pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)

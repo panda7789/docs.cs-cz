@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f24e9a06137744dbc97d5f34cda7ad6eab873700
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3510cbf0a63a8031669bb7a819a8b3c7321aaea4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663729"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920765"
 ---
 # <a name="etwenable-element"></a>\<etwEnable – element >
 Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro události modulu CLR (Common Language Runtime).  
@@ -57,7 +57,7 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro udá
  Počínaje systémem Windows Vista je ETW ve výchozím nastavení povolená. Tento prvek použijte k zakázání ETW pro aplikaci. V dřívějších verzích Windows použijte tento prvek k povolení ETW pro aplikaci.  
   
 > [!NOTE]
->  ETW lze povolit nebo zakázat globálně na serveru pomocí nastavení registru. Viz [řízení protokolování .NET Framework](../../../performance/controlling-logging.md).  
+> ETW lze povolit nebo zakázat globálně na serveru pomocí nastavení registru. Viz [řízení protokolování .NET Framework](../../../performance/controlling-logging.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit trasování ETW pro aplikaci.  

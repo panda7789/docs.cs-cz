@@ -9,46 +9,46 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: d803c9bec180f45c80e362af49c8eaa12bb9d985
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 07137d03dd9a20d8eab564757618e48e25b45353
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592954"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931757"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>Postupy: Tisk v modelu Windows Forms pomocí náhledu tisku
-Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě tiskové služby. Snadný způsob, jak přidat do svojí aplikace náhledu služby, je použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku v kombinaci s <xref:System.Drawing.Printing.PrintDocument.PrintPage> logiku zpracování událostí pro tisk souboru.  
+Kromě tiskových služeb je velmi běžné, že model Windows Forms programování nabízí náhled tisku. Snadný způsob, jak do vaší aplikace přidat služby pro tisk ve verzi Preview, <xref:System.Windows.Forms.PrintPreviewDialog> je použít ovládací prvek v <xref:System.Drawing.Printing.PrintDocument.PrintPage> kombinaci s logikou zpracování událostí pro tisk souboru.  
   
-### <a name="to-preview-a-text-document-with-a-printpreviewdialog-control"></a>Náhled textový dokument s printpreviewdialog – ovládací prvek  
+### <a name="to-preview-a-text-document-with-a-printpreviewdialog-control"></a>Náhled textového dokumentu pomocí ovládacího prvku PrintPreviewDialog –  
   
-1. Přidat <xref:System.Windows.Forms.PrintPreviewDialog>, <xref:System.Drawing.Printing.PrintDocument>a dva řetězce do formuláře.  
+1. Do formuláře přidejte <xref:System.Drawing.Printing.PrintDocument>dva řetězce ,a.<xref:System.Windows.Forms.PrintPreviewDialog>  
   
      [!code-csharp[System.Drawing.Printing.PrintPreviewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/CS/Form1.cs#1)]
      [!code-vb[System.Drawing.Printing.PrintPreviewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/VB/Form1.vb#1)]  
   
-2. Nastavte <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> vlastnost v dokumentu, který chcete vytisknout a otevřít a číst obsah dokumentu na řetězec, který jste přidali dříve.  
+2. <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> Nastavte vlastnost na dokument, který chcete vytisknout, a otevřete a přečtěte si obsah dokumentu do řetězce, který jste přidali dříve.  
   
      [!code-csharp[System.Drawing.Printing.PrintPreviewExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/CS/Form1.cs#2)]
      [!code-vb[System.Drawing.Printing.PrintPreviewExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/VB/Form1.vb#2)]  
   
-3. Stejně jako pro tisk dokumentu v <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužná rutina události, použijte <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy a obsah souboru k výpočtu řádků na stránce a vykresluje obsah dokumentu. Po jednotlivých stránkách vykreslením, zkontrolujte, zda se jedná o poslední stránku a nastavit <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> odpovídajícím způsobem. <xref:System.Drawing.Printing.PrintDocument.PrintPage> Událost se vyvolá, dokud <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> je `false`. Po dokončení vykreslení dokumentu resetování řetězec, který má být vykreslen. Také se ujistěte, že <xref:System.Drawing.Printing.PrintDocument.PrintPage> událost je přidružena jeho metody zpracování událostí.  
+3. Stejně jako při tisku dokumentu <xref:System.Drawing.Printing.PrintDocument.PrintPage> <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> použijte v obslužné rutině události vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy a obsah souboru k výpočtu řádků na stránku a vykreslení obsahu dokumentu. Po vykreslení každé stránky zkontrolujte, zda se jedná o poslední stránku, a nastavte <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> odpovídajícím způsobem. Událost <xref:System.Drawing.Printing.PrintDocument.PrintPage> je vyvolána, dokud <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> není `false`. Po dokončení vykreslování dokumentu resetujte řetězec, který se má vykreslit. Také se ujistěte, že <xref:System.Drawing.Printing.PrintDocument.PrintPage> je událost přidružená ke své metodě zpracování událostí.  
   
     > [!NOTE]
-    >  Možná jste už dokončili kroky 2 a 3 Pokud implementujete tisk ve vaší aplikaci.  
+    > Pokud jste v aplikaci nasadili tisk, možná jste už dokončili kroky 2 a 3.  
   
-     V následujícím příkladu kódu se obslužná rutina události používá k vytištění souboru "testPage.txt" ve stejném písmo použité ve formuláři.  
+     V následujícím příkladu kódu slouží obslužná rutina události k vytištění souboru "testPage. txt" ve stejném písmu použitém ve formuláři.  
   
      [!code-csharp[System.Drawing.Printing.PrintPreviewExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/CS/Form1.cs#3)]
      [!code-vb[System.Drawing.Printing.PrintPreviewExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/VB/Form1.vb#3)]  
   
-4. Nastavte <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek <xref:System.Drawing.Printing.PrintDocument> komponenty ve formuláři.  
+4. <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A> Nastavte vlastnost <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku<xref:System.Drawing.Printing.PrintDocument> na součást ve formuláři.  
   
      [!code-csharp[System.Drawing.Printing.PrintPreviewExample#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/CS/Form1.cs#5)]
      [!code-vb[System.Drawing.Printing.PrintPreviewExample#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/VB/Form1.vb#5)]  
   
-5. Volání <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku. Obvykle by volat <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> z <xref:System.Windows.Forms.Control.Click> metody zpracování událostí tlačítka. Volání <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> vyvolá <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí a vykreslí výstup <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku. Když uživatel klikne na ikonu tisku v dialogovém okně <xref:System.Drawing.Printing.PrintDocument.PrintPage> událost se vyvolá, odesílá výstup na tiskárnu místo dialogové okno náhledu. Z tohoto důvodu řetězec se resetuje na konci samotný proces vykreslování v kroku 3.  
+5. <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> Zavolejte metodu<xref:System.Windows.Forms.PrintPreviewDialog> na ovládacím prvku. Obvykle byste volali <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> <xref:System.Windows.Forms.Control.Click> metodu pro zpracování událostí tlačítka. Volání <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> vyvolává<xref:System.Drawing.Printing.PrintDocument.PrintPage> událost a<xref:System.Windows.Forms.PrintPreviewDialog> vykresluje výstup do ovládacího prvku. Když uživatel klikne na ikonu tisku v dialogovém okně, <xref:System.Drawing.Printing.PrintDocument.PrintPage> událost se znovu vyvolá a pošle se výstup do tiskárny místo dialogového okna Preview. To je důvod, proč se řetězec resetuje na konci procesu vykreslování v kroku 3.  
   
-     Následující příklad kódu ukazuje <xref:System.Windows.Forms.Control.Click> metody zpracování událostí pro tlačítko na formuláři. Tato metoda zpracování událostí volá metody pro čtení dokumentu a zobrazit okno náhledu.  
+     Následující příklad kódu ukazuje <xref:System.Windows.Forms.Control.Click> metodu zpracování událostí pro tlačítko ve formuláři. Tato metoda zpracování události volá metody pro čtení dokumentu a zobrazení dialogového okna Náhled tisku.  
   
      [!code-csharp[System.Drawing.Printing.PrintPreviewExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/CS/Form1.cs#4)]
      [!code-vb[System.Drawing.Printing.PrintPreviewExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintPreviewExample/VB/Form1.vb#4)]  
@@ -60,10 +60,10 @@ Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na systém, System.Windows.Forms, System.Drawing sestavení.  
+- Odkazy na sestavení System, System. Windows. Forms, System. Drawing.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [Postupy: Vytiskněte textový soubor s více stránkami v model Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
 - [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
 - [Zabezpečenější tisk ve Windows Forms](../more-secure-printing-in-windows-forms.md)

@@ -8,28 +8,28 @@ helpviewer_keywords:
 - pages [WPF], navigating to
 - navigation [WPF], to page
 ms.assetid: 2a556fc0-748b-417f-a58a-0d05a7afb66f
-ms.openlocfilehash: 458769355521c8a3653e3bc80a6ab8a0d0f7c6dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 38814268c9bb271ad3d88d549fb6ec4c6cbfed40
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622826"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966032"
 ---
 # <a name="how-to-navigate-to-a-page"></a>Postupy: Přechod na stránku
-Tento příklad ukazuje několik způsobů, jimiž stránku se dá Navigovat z <xref:System.Windows.Navigation.NavigationWindow>.  
+Tento příklad znázorňuje několik způsobů, jak lze na stránku přejít z <xref:System.Windows.Navigation.NavigationWindow>.  
   
 ## <a name="example"></a>Příklad  
- Je možné, <xref:System.Windows.Navigation.NavigationWindow> přejít na stránku pomocí jedné z následujících akcí:  
+ Může <xref:System.Windows.Navigation.NavigationWindow> přejít na stránku pomocí jedné z následujících možností:  
   
 - <xref:System.Windows.Navigation.NavigationWindow.Source%2A> Vlastnost.  
   
-- <xref:System.Windows.Navigation.NavigationWindow.Navigate%2A> Metody.  
+- <xref:System.Windows.Navigation.NavigationWindow.Navigate%2A> Metoda.  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateToPageCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigatetopagecode)]
  [!code-vb[HOWTONavigationSnippets#NavigateToPageCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatetopagecode)]  
   
 > [!NOTE]
->  [!INCLUDE[TLA#tla_uri#initcap#plural](../../../../includes/tlasharptla-urisharpinitcapsharpplural-md.md)] může být relativní nebo absolutní. Další informace najdete v tématu [identifikátory Pack URI v subsystému WPF](pack-uris-in-wpf.md).  
+> [!INCLUDE[TLA#tla_uri#initcap#plural](../../../../includes/tlasharptla-urisharpinitcapsharpplural-md.md)]může být buď relativní, nebo absolutní. Další informace najdete v tématu [identifikátory URI Pack v](pack-uris-in-wpf.md)subsystému WPF.  
   
 ## <a name="see-also"></a>Viz také:
 

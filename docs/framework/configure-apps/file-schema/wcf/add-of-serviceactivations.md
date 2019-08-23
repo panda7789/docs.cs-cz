@@ -2,16 +2,16 @@
 title: <add> z <serviceActivations>
 ms.date: 03/30/2017
 ms.assetid: e5b01fc8-ee84-48b7-95fd-95ab54fa871f
-ms.openlocfilehash: 2a3ba6d41059a480fe610254c0407df16d149e3b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 929773fcb6b6a3ee5c75aa970147277d9dbe7b45
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701460"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920027"
 ---
-# <a name="add-of-serviceactivations"></a>\<add> of \<serviceActivations>
+# <a name="add-of-serviceactivations"></a>\<Přidat > \<> serviceActivations
 
-Konfigurace element, který umožňuje definování nastavení aktivace virtuální služby, která je namapována na daný typ služby Windows Communication Foundation (WCF). To umožňuje aktivovat službám hostovaným ve WAS / IIS bez souboru .svc.
+Prvek konfigurace, který umožňuje definovat nastavení aktivace virtuální služby, která se mapují na typy služeb Windows Communication Foundation (WCF). Díky tomu je možné aktivovat služby hostované v rámci služby/IIS bez souboru. svc.
 
 \<system.ServiceModel>\
 \<serviceHostingEnvironment>
@@ -35,9 +35,9 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|objekt pro vytváření|Řetězec určující název typu CLR továrny, která generuje prvek aktivace služby.|
-|service|ServiceType, který implementuje služby (úplný kvalifikovaný název typu nebo krátké Typename (Pokud je umístěn ve složce App_Code).|
-|relativeAddress|Relativní adresu v rámci aktuální aplikace služby IIS – například "Service.svc". V WCF 4.0 tato relativní adresa musí obsahovat jeden přípon souborů známých (.svc .xamlx,...). Žádný fyzický soubor musí být pro relativeUrl|
+|instalací|Řetězec, který určuje název typu CLR továrny, která generuje prvek aktivace služby.|
+|service|ServiceType, který implementuje službu (buď plně kvalifikovaný typeName, nebo krátký TypeName (při umístění do složky App_Code).|
+|Adresa relativeAddress|Relativní adresa v rámci aktuální aplikace služby IIS – například "Service. svc". V WCF 4,0 tato relativní adresa musí obsahovat jednu ze známých přípon souborů (. svc,. xamlx,...). Neexistuje žádný fyzický soubor pro relativeUrl.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -47,11 +47,11 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<serviceHostingEnvironment>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|Konfigurační oddíl, který popisuje nastavení aktivace.|
+|[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Konfigurační oddíl, který popisuje nastavení aktivace.|
 
 ## <a name="remarks"></a>Poznámky
 
-Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v souboru web.config.
+Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v souboru Web. config.
 
 ```xml
 <configuration>
@@ -65,11 +65,11 @@ Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v soubo
 </configuration>
 ```
 
-Pomocí této konfigurace, můžete aktivovat GreetingService bez použití souboru .svc.
+Pomocí této konfigurace můžete aktivovat GreetingService bez použití souboru. svc.
 
-Všimněte si, že `<serviceHostingEnvironment>` je konfigurace na úrovni aplikace. Je nutné umístit `web.config` obsahující konfiguraci v kořenu virtuální aplikace. Kromě toho `serviceHostingEnvironment` machineToApplication odvoditelný oddíl. Když si zaregistrujete jedinou službou v kořenové složce na počítači, každá služba aplikace zdědí tuto službu.
+Všimněte si `<serviceHostingEnvironment>` , že je konfigurace na úrovni aplikace. Je nutné umístit `web.config` konfiguraci obsahující konfiguraci do kořenového adresáře virtuální aplikace. Kromě toho `serviceHostingEnvironment` je machineToApplication dědičná část. Pokud v kořenovém adresáři počítače zaregistrujete jednu službu, bude tato služba dědit všechny služby v aplikaci.
 
-Aktivace podle konfigurace podporuje aktivaci přes protokol http a jiným protokolem než http. Vyžaduje adresu relativeAddress, tj. .svc, XOML nebo .xamlx s rozšířeními. Vlastní rozšíření můžete namapovat buildProviders ví, která vám pak umožní k aktivaci služby přes jakékoli rozšíření. Při konfliktu `<serviceActivations>` části přepíše .svc registrace.
+Aktivace založená na konfiguraci podporuje aktivaci prostřednictvím protokolu HTTP i jiného typu než HTTP. Vyžaduje rozšíření v adresa relativeAddress, tj. svc,. XOML nebo. xamlx. Můžete namapovat vlastní rozšíření na know buildProviders, které vám pak umožní aktivovat službu přes jakékoli rozšíření. Po konfliktu `<serviceActivations>` oddíl přepíše registraci. svc.
 
 ## <a name="see-also"></a>Viz také:
 

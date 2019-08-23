@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 0414166cb4d101b9f2654824b3c5ce4b9689deff
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 1342711ca17b0d2bf5122f4c749514e3b96c9ad7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588955"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921816"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem a nespravovaným kódem.  
@@ -25,7 +25,7 @@ Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem
  Další informace naleznete v tématu spotřebovávání nespravovaných [ [funkcí knihovny DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a postup: K přehrání souboru](./how-to-use-platform-invoke-to-play-a-wave-file.md)Wave použijte vyvolání platformy.  
   
 > [!NOTE]
->  Modul CLR ( [Common Language Runtime](../../../standard/clr.md) ) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo CLR, obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, obejít mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v .NET](../../../standard/security/index.md).  
+> Modul CLR ( [Common Language Runtime](../../../standard/clr.md) ) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo CLR, obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, obejít mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v .NET](../../../standard/security/index.md).  
   
 ## <a name="c-interop"></a>interoperabilita C++  
  Můžete použít C++ spolupráci, označovanou také jako pouze funguje (IJW), k zabalení nativní C++ třídy, aby ji bylo možné spotřebovat kódem, který je vytvořen v C# jiném .NET Frameworkovém jazyce. Chcete-li to provést, C++ napíšete kód pro zabalení NATIVNÍ knihovny DLL nebo komponenty modelu COM. Na rozdíl od jiných .NET Framework jazyků má C++ vizuál podporu interoperability, která umožňuje umístění spravovaného a nespravovaného kódu ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte C++ kód pomocí přepínače **/CLR** pro vytvoření spravovaného sestavení. Nakonec přidáte odkaz na sestavení v C# projektu a použijete zabalené objekty stejně, jako byste používali jiné spravované třídy.  

@@ -2,12 +2,12 @@
 title: 'Postupy: Rozšíříte asynchronní návod pomocí Task. WhenAll (C#).'
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
-ms.openlocfilehash: a2cbff81c07a2be0f66e4d310dd300d646d3256c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 5915a09123e6abb1bfb846c200a500a51302a104
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595582"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924420"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postupy: Rozšíříte asynchronní návod pomocí Task. WhenAll (C#).
 Můžete zvýšit výkon asynchronního řešení v [tomto návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md) await (C#) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> pomocí metody. Tato metoda asynchronně očekává více asynchronních operací, které jsou reprezentovány jako kolekce úkolů.  
@@ -17,7 +17,7 @@ Můžete zvýšit výkon asynchronního řešení v [tomto návodu: Přístup k 
  `Task.WhenAll` Metodu použijete pro kolekci úkolů. Aplikace `WhenAll` vrátí jednu úlohu, která není dokončena, dokud není dokončen každý úkol v kolekci. Úkoly se zdají běžet paralelně, ale nevytvoří se žádné další podprocesy. Úkoly mohou být dokončeny v libovolném pořadí.  
   
 > [!IMPORTANT]
->  Následující postupy popisují rozšíření pro asynchronní aplikace, které jsou vyvíjeny v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#). Můžete vyvíjet aplikace buď dokončením návodu, nebo stažením kódu z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).  
+> Následující postupy popisují rozšíření pro asynchronní aplikace, které jsou vyvíjeny v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#). Můžete vyvíjet aplikace buď dokončením návodu, nebo stažením kódu z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).  
 >   
 >  Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější.  
   

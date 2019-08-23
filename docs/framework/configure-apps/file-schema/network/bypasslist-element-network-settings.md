@@ -8,12 +8,12 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 10d2a025096579c6bed64f82cc955deb0542717c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: bd746f07b4c4eb08bf34b01d555b5799d9af0cf3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664207"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927467"
 ---
 # <a name="bypasslist-element-network-settings"></a>\<BypassList – element > (nastavení sítě)
 Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.  
@@ -55,7 +55,7 @@ Poskytuje sadu regulárních výrazů, které popisují adresy, které nepouží
   
  Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] +\\. contoso\\. com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] +\\. contoso\\. com $".  
   
- Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../../docs/standard/base-types/regular-expressions.md).  
+ Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

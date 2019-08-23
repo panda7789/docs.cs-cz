@@ -7,18 +7,18 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: 39e6f2db7abaae63715c5ef9febcef357054d2bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b8df3d07a18efcfbb6c30b46668ab8fec8736af5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982719"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953196"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Tato část obsahuje přehledy a postupy: témata, která vám pomůžou vyvinout klientů automatizace uživatelského rozhraní.  
+ Tato část obsahuje přehledy a postupy, které vám pomohou při vývoji klientů automatizace uživatelského rozhraní.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Automatizace uživatelského rozhraní a změna velikosti obrazovky](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
@@ -32,5 +32,5 @@ ms.locfileid: "61982719"
  [Potíže s vlákny při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
  [Témata s postupy](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Automation>

@@ -1,25 +1,25 @@
 ---
-title: <workflowInstanceQueries> služby WCF
+title: <workflowInstanceQueries>služby WCF
 ms.date: 03/30/2017
 ms.assetid: b0852f77-16e4-4d55-8eb7-a19feb0e8fc4
-ms.openlocfilehash: 89e122b87743a81a80ce63b382ae235c1c4863bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: feae65a75f9f0b2b1b398f3f9e80ac4c8d971dcc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790517"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915306"
 ---
-# <a name="workflowinstancequeries-of-wcf"></a>\<workflowInstanceQueries > služby WCF
+# <a name="workflowinstancequeries-of-wcf"></a>\<workflowInstanceQueries > WCF
 
 Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.  
   
-Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
 \<system.serviceModel>  
 \<sledování >  
 \<profiles>  
-\<trackingProfile>  
-\<pracovní postup >  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
 \<workflowInstanceQueries>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -60,7 +60,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný [ID definice aktivity](xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId) vlastnost.|  
+|[\<workflow>](../windows-workflow-foundation/workflow.md)|Prvek konfigurace, který obsahuje všechny dotazy pro konkrétní pracovní postup identifikovaný vlastností [ID definice aktivity](xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId)|  
   
 ## <a name="remarks"></a>Poznámky
 
@@ -94,5 +94,5 @@ Následující konfigurace přihlásí na úrovni instance sledování záznamů
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

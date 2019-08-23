@@ -16,46 +16,46 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: dfc8e1cfa6050a6e45373ad023ee8f358e388735
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 7dba7afe9ab0348082ec9538b268a387b64ad050
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423864"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950685"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
-Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat na interakci uživatele, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje potřebné k vytvoření vysoce výkonné aplikace s více vlákny, ale efektivně pomocí těchto nástrojů vyžaduje významné prostředí s více vlákny softwarového inženýrství. Pro vícevláknové aplikace s poměrně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje jednoduché řešení. Pro složitější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronního vzoru založeného na událostech.  
+Aplikace, které provádějí mnoho úloh současně, stále reagují na interakci s uživatelem, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje, které jsou nezbytné pro vytváření vysoce výkonných aplikací s více vlákny, ale používání těchto nástrojů efektivně vyžaduje významné prostředí pro vícevláknové softwarové inženýry. Pro relativně jednoduché vícevláknové aplikace <xref:System.ComponentModel.BackgroundWorker> poskytuje komponenta jasné řešení. Pro propracovanější asynchronní aplikace zvažte implementaci třídy, která odpovídá asynchronnímu vzoru založenému na událostech.  
   
- Asynchronní vzor založený na událostech zpřístupňuje výhody vícevláknové aplikace při skrytí mnoho složitých problémů vyplývající vícevláknový návrhu. Použití třídy, která podporuje tento vzor vám umožní:  
+ Asynchronní vzor založený na událostech zpřístupňuje výhody vícevláknových aplikací a zároveň skrývá mnoho složitých problémů, které jsou v podstatě vícevláknové konstrukce. Použití třídy, která podporuje tento model, vám umožní:  
   
-- Proveďte časově náročné úkoly, jako jsou soubory ke stažení a databázových operací, "v pozadí," bez přerušení vaší aplikace.  
+- Provádějte časově náročné úkoly, například soubory ke stažení a databázové operace, na pozadí, aniž by došlo k přerušení aplikace.  
   
-- Současně spusťte více operací příjem oznámení po dokončení každého.  
+- Spouštějte více operací současně a při každém dokončení přijímají oznámení.  
   
-- Čekání na prostředky k dispozici bez zastavení ("blokování") vaší aplikace.  
+- Počkejte, než budou prostředky k dispozici bez zastavení ("blokování") vaší aplikace.  
   
-- Komunikovat s čekajících asynchronních operací s použitím známým modelem Delegáti a události. Další informace o použití delegátů a obslužné rutiny událostí, naleznete v tématu [události](../../../docs/standard/events/index.md).  
+- Komunikujte s nedokončenými asynchronními operacemi pomocí známého modelu událostí a delegátů. Další informace o používání obslužných rutin událostí a delegátů naleznete v tématu [events](../../../docs/standard/events/index.md).  
   
- Třída, která podporuje asynchronní vzor založený na událostech bude mít jednu nebo více metod s názvem _MethodName_**asynchronní**. Tyto metody mohou zrcadlí synchronní verze, které provádět stejnou operaci i u aktuálního vlákna. Třídy mohou mít i _MethodName_**dokončeno** událostí a může obsahovat _MethodName_**AsyncCancel** (nebo jednoduše  **CancelAsync**) metody.  
+ Třída, která podporuje asynchronní vzor založený na událostech, bude mít jednu nebo více metod s názvem _methodName_**Async**. Tyto metody mohou zrcadlit synchronní verze, které provádějí stejnou operaci v aktuálním vlákně. Třída může mít také událost _methodName_**Completed** a může mít metodu _methodName_**AsyncCancel** (nebo jednoduše **CancelAsync**).  
   
- <xref:System.Windows.Forms.PictureBox> je typické komponenty, která podporuje asynchronní vzor založený na událostech. Si můžete stáhnout bitovou kopii synchronně voláním jeho <xref:System.Windows.Forms.PictureBox.Load%2A> metody, ale pokud je velký obrázek, nebo pokud je pomalé síťové připojení, vaše aplikace přestane reagovat, dokud se nedokončí operaci stahování a volání <xref:System.Windows.Forms.PictureBox.Load%2A> vrátí.  
+ <xref:System.Windows.Forms.PictureBox>je typickou komponentou, která podporuje asynchronní vzor založený na událostech. Bitovou kopii lze synchronně stáhnout voláním její <xref:System.Windows.Forms.PictureBox.Load%2A> metody, ale pokud je bitová kopie velká, nebo pokud je síťové připojení pomalé, přestane vaše aplikace reagovat, dokud není dokončena operace stahování a <xref:System.Windows.Forms.PictureBox.Load%2A> volání funkce vrátí.  
   
- Pokud chcete, aby vaše aplikace běžela při image se načítá, můžete volat <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metoda a popisovač <xref:System.Windows.Forms.PictureBox.LoadCompleted> události, stejně jako by zpracovat všechny události. Při volání <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metodu, aplikace bude nadále spuštěna při stahování pokračuje na samostatném vlákně ("v pozadí"). Vaše obslužná rutina události zavolá se po dokončení operace načítání obrázku a vaší obslužné rutiny události můžete prozkoumat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr k určení, pokud se stahování byla úspěšně dokončena.  
+ Pokud chcete, aby vaše aplikace zůstala v průběhu načítání obrázku, můžete zavolat <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metodu a <xref:System.Windows.Forms.PictureBox.LoadCompleted> zpracovat událost stejně, jako byste poznamenali jakoukoli jinou událost. Při volání <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metody bude vaše aplikace nadále běžet, zatímco stahování pokračuje v samostatném vlákně ("na pozadí"). Vaše obslužná rutina události bude volána, když je dokončena operace načítání obrázku, a vaše obslužná rutina události může <xref:System.ComponentModel.AsyncCompletedEventArgs> ověřit parametr, aby bylo možné zjistit, zda bylo stahování úspěšně dokončeno.  
   
- Asynchronní vzor založený na událostech vyžaduje, aby se dají zrušit asynchronní operaci a <xref:System.Windows.Forms.PictureBox> ovládací prvek podporuje tento požadavek s jeho <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> metoda. Volání <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> odešle požadavek na zastavení čeká na stažení a při zrušení úkolu <xref:System.Windows.Forms.PictureBox.LoadCompleted> událost se vyvolá.  
+ Asynchronní vzor založený na událostech vyžaduje zrušení asynchronní operace a <xref:System.Windows.Forms.PictureBox> ovládací prvek tento požadavek podporuje s jeho <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> metodou. Volání <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> odesílá požadavek na zastavení čeká na stažení a při zrušení <xref:System.Windows.Forms.PictureBox.LoadCompleted> úlohy dojde k vyvolání události.  
   
 > [!CAUTION]
->  Je možné, že se stahování dokončí stejně jako <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> žádosti se tak <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> nemusí odrážet žádost o zrušení. Jedná se *časování* a je běžný problém při programování s více vlákny. Další informace o problémech v programování s více vlákny, naleznete v tématu [spravovaných vláken osvědčené postupy](../../../docs/standard/threading/managed-threading-best-practices.md).  
+>  Je možné, že stahování bude dokončeno pouze <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> v případě, že je žádost provedena, takže <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> nemusí odrážet požadavek na zrušení. Označuje se jako *konflikt časování* a jedná se o běžný problém v programování s více vlákny. Další informace o problémech v programování s více vlákny najdete v tématu [osvědčené postupy spravovaného vlákna](../../../docs/standard/threading/managed-threading-best-practices.md).  
   
-## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Vlastnosti asynchronního vzoru založeného na událostech  
- Asynchronní vzor založený na událostech může mít různé podoby záleží na složitosti operace podporuje určité třídy. Nejjednodušší třídy může mít jeden _MethodName_**asynchronní** metoda a odpovídající _MethodName_**dokončeno** událostí. Složitější třídy mohou mít několik _MethodName_**asynchronní** metody, každý s odpovídající _MethodName_**dokončeno** události, jako také jako synchronní verze z těchto metod. Třídy může volitelně podporovat zrušení, generování sestav o průběhu a přírůstkové výsledky pro každou asynchronní metodu.  
+## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Charakteristiky asynchronního vzoru založeného na událostech  
+ Asynchronní vzor založený na událostech může v závislosti na složitosti operací podporovaných určitou třídou trvat několik forem. Nejjednodušší třídy mohou mít jednu**asynchronní** metodu _methodName_a odpovídající událost _methodName_**Completed** . Složitější třídy mohou mít několik asynchronních metod _methodName_ , z nichž každá má odpovídající událost _methodName_**Completed** , a také synchronní verze těchto metod. Třídy mohou volitelně podporovat zrušení, vytváření sestav o průběhu a přírůstkové výsledky pro každou asynchronní metodu.  
   
- Asynchronní metoda může podporovat více čekající volání (více souběžných volání), váš kód volat libovolný počet pokusů před dokončením jiné probíhající operace. Správné zpracování této situaci může vyžadovat aplikace ke sledování dokončení každé operace.  
+ Asynchronní metoda může také podporovat více nevyřízených volání (více souběžných vyvolání), což umožňuje vašemu kódu volat je libovolným počtem výskytů, než dokončí jiné operace, které čekají na vyřízení. Správné zpracování této situace může vyžadovat, aby vaše aplikace mohla sledovat dokončení jednotlivých operací.  
   
 ### <a name="examples-of-the-event-based-asynchronous-pattern"></a>Příklady asynchronního vzoru založeného na událostech  
- <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> součásti představují jednoduché implementace asynchronního vzoru založeného na událostech. <xref:System.Net.WebClient> a <xref:System.ComponentModel.BackgroundWorker> součásti představují složitější implementace asynchronního vzoru založeného na událostech.  
+ Komponenty <xref:System.Media.SoundPlayer> a<xref:System.Windows.Forms.PictureBox> reprezentují jednoduché implementace asynchronního vzoru založeného na událostech. Komponenty <xref:System.Net.WebClient> a<xref:System.ComponentModel.BackgroundWorker> reprezentují složitější implementace asynchronního vzoru založeného na událostech.  
   
- Níže je příklad deklarace třídy, který odpovídá vzoru:  
+ Níže je příklad deklarace třídy, která odpovídá vzoru:  
   
 ```vb  
 Public Class AsyncExample  
@@ -104,39 +104,39 @@ public class AsyncExample
 }  
 ```  
   
- Fiktivní `AsyncExample` třída má dvě metody, které podporují synchronní a asynchronní vyvolání. Synchronní přetížení se chovají stejně jako jakékoli volání metody a provedení operace na volajícím vlákně; Pokud je časově náročná operace, může docházet k významnému zpoždění volání se vrátí. Asynchronní přetížení se spustit operaci v jiném vlákně a pak se vraťte okamžitě, což volající vlákno, chcete-li pokračovat, když se provede operace "v pozadí."  
+ Fiktivní `AsyncExample` třída má dvě metody, které podporují synchronní i asynchronní vyvolání. Synchronní přetížení se chová stejně jako jakékoli volání metody a spustí operaci na volajícím vlákně. Pokud je operace časově náročná, může před vrácením volání dojít k znatelnému zpoždění. Asynchronní přetížení spustí operaci v jiném vlákně a pak okamžitě vrátí, což umožní volajícímu vláknu pokračovat, zatímco operace se spustí na pozadí.  
   
-### <a name="asynchronous-method-overloads"></a>Asynchronní metody přetížení  
- Existují potenciálně dvě přetížení pro asynchronní operace: volání jedné a více volání. Tyto dvě formy možné rozlišit podle jejich podpisy metod: více volání formulář obsahuje doplňující parametr s názvem `userState`. Tento formulář umožňuje kódu pro volání `Method1Async(string param, object userState)` vícekrát bez čekání na všechny čekající na dokončení asynchronní operace. Pokud je na druhé straně pokusu o volání `Method1Async(string param)` před dokončením předchozí volání, vyvolá metodu <xref:System.InvalidOperationException>.  
+### <a name="asynchronous-method-overloads"></a>Přetížení asynchronní metody  
+ Existují potenciálně dvě přetížení pro asynchronní operace: jedno vyvolání a vícenásobné volání. Tyto dva formuláře lze odlišit svými signaturami metod: formulář s vícenásobným voláním má další parametr s názvem `userState`. Tento formulář umožňuje vašemu kódu volat `Method1Async(string param, object userState)` několikrát, aniž by bylo nutné čekat na dokončení všech čekajících asynchronních operací. Pokud je na druhé straně pokus o volání `Method1Async(string param)` před dokončením předchozího vyvolání, metoda <xref:System.InvalidOperationException>vyvolá.  
   
- `userState` Parametr pro více volání přetížení umožňuje rozlišit mezi asynchronní operace. Zadejte jedinečnou hodnotu (například identifikátor GUID nebo hodnota hash kódu) pro každé volání `Method1Async(string param, object userState)`, a při dokončení každé operace obslužnou rutinu události můžete určit, která instance operaci vyvolala událost dokončení.  
+ `userState` Parametr pro přetížení s vícenásobným voláním umožňuje rozlišovat mezi asynchronními operacemi. Poskytnete jedinečnou hodnotu (například identifikátor GUID nebo kód hash) pro každé volání `Method1Async(string param, object userState)`a po dokončení každé operace může vaše obslužná rutina události určit, která instance operace vyvolala událost dokončení.  
   
-### <a name="tracking-pending-operations"></a>Sledování čekajících operací  
- Pokud používáte více volání přetížení, váš kód bude nutné sledovat `userState` objekty (ID úlohy) pro čekající úlohy. Pro každé volání `Method1Async(string param, object userState)`, obvykle bude generovat nové, jedinečné `userState` objektu a přidat do kolekce. Pokud úlohu, která odpovídá tomuto `userState` objekt vyvolává událost dokončení, bude vaše implementace metody dokončení zkontrolujte <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A?displayProperty=nameWithType> a odebrat z kolekce. Použito tímto způsobem, `userState` parametr přebírá roli ID úkolu.  
+### <a name="tracking-pending-operations"></a>Sledování nevyřízených operací  
+ Pokud používáte přetížení s vícenásobným vyvoláním, váš kód bude potřebovat sledovat `userState` objekty (ID úloh) pro probíhající úkoly. Pro každé volání metody `Method1Async(string param, object userState)`obvykle vygenerujete nový jedinečný `userState` objekt a přidáte ho do kolekce. Když úloha odpovídající tomuto `userState` objektu vyvolá událost dokončení, vaše implementace metody dokončení ji ověří <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A?displayProperty=nameWithType> a odebere z kolekce. Tímto způsobem `userState` parametr převezme roli ID úlohy.  
   
 > [!NOTE]
->  Musíte být opatrní a zadejte jedinečnou hodnotu pro `userState` ve volání do více volání přetížení. Způsobí, že není nejedinečný ID úlohy asynchronního třídy throw <xref:System.ArgumentException>.  
+> Musíte být opatrní, abyste zadali jedinečnou hodnotu `userState` v voláních přetížení vícenásobného volání. Nejedinečná ID úlohy způsobí, že asynchronní třída vyvolá <xref:System.ArgumentException>výjimku.  
   
-### <a name="canceling-pending-operations"></a>Rušení čekajících operací  
- Je důležité, aby bylo možné zrušit asynchronní operace kdykoli před jejich dokončení. Bude mít třídy, které implementovat asynchronní vzor založený na událostech `CancelAsync` – metoda (pokud existuje pouze jedna asynchronní metoda) nebo _MethodName_**AsyncCancel** – metoda (pokud existuje více asynchronní metody).  
+### <a name="canceling-pending-operations"></a>Rušení probíhajících operací  
+ Je důležité mít schopnost zrušit asynchronní operace kdykoli před jejich dokončením. Třídy, které implementují asynchronní vzor založený na událostech, `CancelAsync` budou mít metodu (pokud existuje pouze jedna asynchronní metoda) nebo metoda _methodName_**AsyncCancel** (pokud existuje více asynchronních metod).  
   
- Metody, které umožňují více volání trvat `userState` parametr, který slouží ke sledování doby života každého úkolu. `CancelAsync` přijímá `userState` parametr, který umožňuje zrušit konkrétní čekající úlohy.  
+ Metody umožňující vícenásobné vyvolání přebírají `userState` parametr, který lze použít ke sledování životnosti každého úkolu. `CancelAsync`převezme `userState` parametr, který vám umožní zrušit konkrétní nedokončené úlohy.  
   
- Metody, které podporují pouze jeden nevyřízenou operaci najednou, jako je třeba `Method1Async(string param)`, nejsou zrušitelné.  
+ Metody, které podporují pouze jednu nevyřízenou operaci v čase, `Method1Async(string param)`například, nelze zrušit.  
   
-### <a name="receiving-progress-updates-and-incremental-results"></a>Příjem průběh aktualizací a výsledků přírůstkové  
- Třída, která dodržuje asynchronního vzoru založeného na událostech může volitelně zadat události pro sledování průběhu a přírůstkové výsledků. To se obvykle nazývá `ProgressChanged` nebo _MethodName_**ProgressChanged**, a podnikne odpovídající obslužná rutina události <xref:System.ComponentModel.ProgressChangedEventArgs> parametru.  
+### <a name="receiving-progress-updates-and-incremental-results"></a>Přijímání aktualizací průběhu a přírůstkových výsledků  
+ Třída, která odpovídá asynchronnímu vzoru založenému na událostech, může volitelně poskytnout událost pro sledování průběhu a přírůstkových výsledků. Tato akce bude `ProgressChanged` obvykle pojmenována nebo _methodName_**ProgressChanged**a <xref:System.ComponentModel.ProgressChangedEventArgs> odpovídající obslužná rutina události bude mít parametr.  
   
- Obslužnou rutinu události pro `ProgressChanged` můžete zkoumat události <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A?displayProperty=nameWithType> a určí, jaké je procento asynchronní úloha se dokončila. Tato vlastnost se v rozsahu od 0 do 100 a je možné použít k aktualizaci <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost <xref:System.Windows.Forms.ProgressBar>. Pokud více asynchronních operací čekají na vyřízení, můžete použít <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A?displayProperty=nameWithType> vlastnost k rozlišení operace, která hlásí průběh.  
+ Obslužná rutina události pro `ProgressChanged` událost může <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A?displayProperty=nameWithType> prošetřit vlastnost a určit, jaké procento asynchronního úkolu bylo dokončeno. Tato vlastnost bude v rozsahu od 0 do 100 a lze ji použít k aktualizaci <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnosti. <xref:System.Windows.Forms.ProgressBar> Pokud čekají více asynchronních operací, můžete pomocí <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A?displayProperty=nameWithType> vlastnosti odlišit, kterou operaci oznamuje průběh.  
   
- Některé třídy může hlásit přírůstkové výsledky, protože asynchronní operace pokračovat. Tyto výsledky se uloží do třídy, která je odvozena z <xref:System.ComponentModel.ProgressChangedEventArgs> a zobrazí se jako vlastnosti v odvozené třídě. Se zobrazí tyto výsledky v obslužné rutině události pro `ProgressChanged` události, stejně jako by přístup <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> vlastnost. Pokud více asynchronních operací čekají na vyřízení, můžete použít <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A> vlastnost k rozlišení, které operace hlásí přírůstkové výsledky.  
+ Některé třídy mohou nahlásit přírůstkové výsledky, jakmile budou asynchronní operace pokračovat. Tyto výsledky budou uloženy ve třídě, která je odvozena z <xref:System.ComponentModel.ProgressChangedEventArgs> a zobrazí se jako vlastnosti v odvozené třídě. K těmto výsledkům můžete přistupovat v obslužné rutině události `ProgressChanged` pro událost stejným způsobem jako při <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> přístupu k vlastnosti. Pokud čekají na více asynchronních operací, můžete pomocí <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A> vlastnosti odlišit, kterou operaci oznamuje přírůstkové výsledky.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
-- [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [Postupy: Použít komponenty, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
 - [Postupy: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

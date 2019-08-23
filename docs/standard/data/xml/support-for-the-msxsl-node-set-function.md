@@ -5,25 +5,25 @@ ms.technology: dotnet-standard
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7310d70aa695043a935f9bd74af8e8475eda73d4
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 3670803ff20351fd9ff6892a0cef48b9caa70199
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170883"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939522"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Podpora pro funkci msxsl:node-set()
-`msxsl:node-set` Funkce lze převést na sadu uzlu fragment stromu výsledek. Výsledný uzel vždy nastavit obsahuje jeden uzel a je kořenový uzel stromu.  
+`msxsl:node-set` Funkce umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
   
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- `msxsl:node-set` Funkce lze převést na sadu uzlu fragment stromu výsledek. Výsledný uzel vždy nastavit obsahuje jeden uzel a je kořenový uzel stromu.  
+ `msxsl:node-set` Funkce umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `$var` je proměnná, která je uzel stromu v šabloně stylů. Pro každý příkaz v kombinaci s `node-set` funkce umožňuje uživateli k iteraci přes tento uzel stromu jako sada uzlů.  
+ V následujícím příkladu `$var` je proměnná, která je stromem uzlu v šabloně stylů. Příkaz for-each v kombinaci s `node-set` funkcí umožňuje uživateli iterovat v rámci tohoto stromu uzlů jako sadu uzlů.  
   
-## <a name="nodesetxsl"></a>nodeset.xsl  
+## <a name="nodesetxsl"></a>uzlů. xsl  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -46,7 +46,7 @@ ms.locfileid: "67170883"
 ```  
   
 ## <a name="output"></a>Výstup  
- Výstup této transformace je  
+ Výstup transformace je  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

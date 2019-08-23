@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 7c0173879c692588cc2e15f0b14a5687bb0404fb
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 4ff9bb537a31e28dbd4b878c1bc04c96262f85ac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300678"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927461"
 ---
-# <a name="remove-element-for-configsections"></a>\<Odebrat > – element pro \<configSections >
+# <a name="remove-element-for-configsections"></a>\<Odebrat element > pro \<configSections >
 
-Odstraní předdefinované oddílu nebo skupiny oddílů.
+Odebere předdefinovanou sekci nebo skupinu oddílů.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,13 +34,13 @@ Odstraní předdefinované oddílu nebo skupiny oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **name**  | Požadovaný atribut.<br><br>Určuje název sekce nebo skupiny části odebrat. |
+| **name**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -48,13 +48,13 @@ Odstraní předdefinované oddílu nebo skupiny oddílů.
 
 ## <a name="remarks"></a>Poznámky
 
-Můžete použít  **\<odebrat >** prvek, který chcete odstranit oddíly a skupin oddílů z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfigurační soubor.
+Pomocí elementu Remove > můžete odebrat oddíly a skupiny oddílů z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfiguračního souboru.  **\<**
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití  **\<odebrat >** prvku v konfiguračním souboru aplikace odebrat oddíl dříve definována v konfiguračním souboru počítače.
+Následující příklad ukazuje, jak použít  **\<element Remove >** v konfiguračním souboru aplikace k odebrání oddílu dříve definovaného v konfiguračním souboru počítače.
 
-Následující počítače konfigurační soubor kód deklaruje části  **\<sampleSection >** :
+Následující kód konfiguračního souboru počítače deklaruje oddíl  **\<sampleSection >** :
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Následující počítače konfigurační soubor kód deklaruje části  **\<sam
 </configuration>
 ```
 
-Následující kód souboru konfigurace aplikace odebere  **\<sampleSection >** oddílu. Po odebrání aplikace nelze načíst nastavení v  **\<sampleSection >** .
+Následující kód konfiguračního souboru aplikace odebere  **\<oddíl sampleSection >** . Po odebrání nemůže aplikace načíst nastavení v  **\<sampleSection >** .
 
 ```xml
 <!-- Application configuration file -->
@@ -82,8 +82,8 @@ Následující kód souboru konfigurace aplikace odebere  **\<sampleSection >** 
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

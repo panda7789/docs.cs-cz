@@ -2,22 +2,22 @@
 title: <transport> z <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-ms.openlocfilehash: 8dcd51cd248dbba3ccf60295cb1712167684328e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f78add5397644dc40bfd22f10bd84aa5c5eb29e6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788268"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923213"
 ---
-# <a name="transport-of-webhttpbinding"></a>\<přenos > z \<webHttpBinding >
-Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby nakonfigurovaný tak, aby přijímal požadavky HTTP.  
+# <a name="transport-of-webhttpbinding"></a>\<> přenosu > \<WebHttpBinding
+Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby nakonfigurovanou pro příjem požadavků HTTP.  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<webHttpBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<přenos >  
+\<> vazby  
+\<> zabezpečení  
+\<> přenosu  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 </webHttpBinding>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -49,31 +49,31 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`clientCredentialType`|Určuje přihlašovací údaje pro ověření klienta ke službě. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
-|`proxyCredentialType`|Určuje přihlašovací údaje pro ověření klienta pro proxy server domény. Tento atribut je typu <xref:System.ServiceModel.HttpProxyCredentialType>.|  
-|`realm`|Řetězec určující sféru ověřování hodnotou hash nebo základní ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověření určuje nejméně název hostitele, který provádí ověřování. Můžete také určit kolekci uživatelů, který má přístup. Sféra ověření pro ověření, který z nich několik možných uživatelská jména a hesla je možné dotazovat uživatele.|  
-|`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
+|`clientCredentialType`|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
+|`proxyCredentialType`|Určuje přihlašovací údaje, které se používají k ověření klienta na proxy doméně. Tento atribut je typu <xref:System.ServiceModel.HttpProxyCredentialType>.|  
+|`realm`|Řetězec, který určuje sféru ověřování pro ověřování algoritmem Digest nebo základního ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověřování určuje alespoň název hostitele, který provádí ověřování. Může také určit kolekci uživatelů, kteří mají přístup. Uživatel může zadat dotaz na sféru ověření, aby bylo možné zjistit, který z několika možných uživatelských jmen a hesel lze použít.|  
+|`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> se má vyhovět.<br /><br /> 1.  Nikdy – zásada se nikdy vynutila (Rozšířená ochrana je zakázaná).<br />2.  WhenSupported – zásada se vynutila jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Always – zásada se vždycky vynutila. Nepůjde ověřit klienty, kteří nepodporují rozšířenou ochranu.|  
   
-## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
-  
-|Hodnota|Popis|  
-|-----------|-----------------|  
-|`None`|Zabezpečení je zakázaná.|  
-|`Basic`|Používá základní ověřování.|  
-|`Certificate`|Certifikáty X.509 používá k ověření klienta.|  
-|`Digest`|Použití ověřování algoritmem digest.|  
-|`Ntlm`|Ověřování protokolem NTLM se používá jako nouzové řešení pomocí domény Windows.|  
-|`Windows`|Používá integrované ověřování Windows.|  
-  
-## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`None`|Zabezpečení je zakázaná.|  
+|`None`|Zabezpečení je zakázané.|  
 |`Basic`|Používá základní ověřování.|  
-|`Digest`|Použití ověřování algoritmem digest.|  
-|`Ntlm`|Používá NTLM jako nouzové řešení pomocí domény Windows.|  
-|`Windows`|Používá integrované ověřování Windows.|  
+|`Certificate`|Pomocí certifikátů X. 509 ověří klienta.|  
+|`Digest`|Používá ověřování hodnotou hash.|  
+|`Ntlm`|Používá ověřování NTLM jako zálohu v doméně systému Windows.|  
+|`Windows`|Používá integrované ověřování systému Windows.|  
+  
+## <a name="proxycredentialtype-attribute"></a>proxyCredentialType – atribut  
+  
+|Value|Popis|  
+|-----------|-----------------|  
+|`None`|Zabezpečení je zakázané.|  
+|`Basic`|Používá základní ověřování.|  
+|`Digest`|Používá ověřování hodnotou hash.|  
+|`Ntlm`|Používá protokol NTLM jako zálohu s doménou systému Windows.|  
+|`Windows`|Používá integrované ověřování systému Windows.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -82,7 +82,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu.|  
+|[\<> zabezpečení](security-of-webhttpbinding.md)|Představuje možnosti [ \<zabezpečení elementu WSHttpBinding >](wshttpbinding.md) .|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -90,9 +90,9 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 - <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)
+- [Programovací model webových služeb HTTP WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md)

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 506cc3b86961ca22361d37d372bcac9632528cae
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0c4fc9645e43f23e340804b46bbe8a5faa19525d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602229"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922391"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -62,7 +62,7 @@ Třída může obsahovat deklarace následujících členů:
 
 - [Indexery](../../programming-guide/indexers/index.md)
 
-- [Operátory](../../programming-guide/statements-expressions-operators/operators.md)
+- [Operátory](../operators/index.md)
 
 - [Události](../../programming-guide/events/index.md)
 

@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e599696b75ed1a0186276dfa47baef2cdf9d7097
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e61ae55673cbf745ea4c637c5206efe41d8ab276
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629391"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946679"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 
-Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařazeny jako rozhraní. V některých případech je rozhraní použité k zařazení třídy známé jako rozhraní třídy. Informace o přepsání rozhraní třídy s rozhraním dle vašeho výběru naleznete v tématu Obálka s možností připojení [modelu COM](../../../docs/standard/native-interop/com-callable-wrapper.md).
+Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařazeny jako rozhraní. V některých případech je rozhraní použité k zařazení třídy známé jako rozhraní třídy. Informace o přepsání rozhraní třídy s rozhraním dle vašeho výběru naleznete v tématu Obálka s možností připojení [modelu COM](../../standard/native-interop/com-callable-wrapper.md).
 
  I když jakýkoli vývojář, který chce použít typy COM z .NET Framework aplikace, může vygenerovat definiční sestavení. tím dojde k vytvoření problému. Pokaždé, když vývojář importuje a podepíše knihovnu typů modelu COM, tento Vývojář vytvoří sadu jedinečných typů, které jsou nekompatibilní s importovanými a podepsanými jiným vývojářem. Řešení tohoto problému s nekompatibilitou typů je pro každého vývojáře, aby získalo primární spolupracující sestavení pro dodavatele a podepsané.
 

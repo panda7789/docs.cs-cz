@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1e558d86fd4e012a6b88e0bcd05d58ecddc6cc20
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: dc8381f8059e37c6c520c2402289124a506188e8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666272"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968416"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro Multithreading
 
@@ -51,14 +51,14 @@ Pokud více vláken může volat vlastnosti a metody jednoho objektu, je důlež
  Visual Basic a C# podporují označení bloků kódu pomocí konkrétního klíčového slova jazyka, `lock` C# `SyncLock` příkazu v nebo příkazu v Visual Basic. Když je kód spuštěn vláknem, je proveden pokus o získání zámku. Pokud zámek již byl získán jiným vláknem, vlákno zablokuje, dokud zámek nebude k dispozici. Když vlákno ukončí synchronizovaný blok kódu, je zámek uvolněn bez ohledu na to, jak vlákno ukončí blok.  
   
 > [!NOTE]
->  <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> <xref:System.Threading.Monitor> Příkazy a jsou`SyncLock` implementovány pomocí a, takže lze použít jiné metody v kombinaci s nimi v rámci synchronizované oblasti. `lock`  
+> <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> <xref:System.Threading.Monitor> Příkazy a jsou`SyncLock` implementovány pomocí a, takže lze použít jiné metody v kombinaci s nimi v rámci synchronizované oblasti. `lock`  
   
  Můžete také vyřadit metodu <xref:System.Runtime.CompilerServices.MethodImplAttribute> s <xref:System.Runtime.CompilerServices.MethodImplOptions.Synchronized?displayProperty=nameWithType>hodnotou, která má stejný účinek jako použití <xref:System.Threading.Monitor> nebo jedno z klíčových slov kompilátoru pro uzamknutí celého těla metody.  
   
  <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>dá se použít k přerušení vlákna z blokujících operací, jako je například čekání na přístup k synchronizované oblasti kódu. **Vlákno. Interrupt** slouží také k přerušení podprocesů mimo operace, <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>jako je.  
   
 > [!IMPORTANT]
->  Nezamkněte `typeof(MyType)` typ – to znamená v C#, `GetType(MyType)` v Visual Basic nebo `MyType::typeid` v C++ , aby se chránily `static` metody (`Shared` metody v Visual Basic). Místo toho použijte privátní statický objekt. Podobně nepoužívejte `this` v C# (`Me` v Visual Basic) k uzamknutí metod instancí. Místo toho použijte privátní objekt. Třída nebo instance může být uzamčena jiným kódem než vaší vlastní, což může způsobit zablokování nebo problémy s výkonem.  
+> Nezamkněte `typeof(MyType)` typ – to znamená v C#, `GetType(MyType)` v Visual Basic nebo `MyType::typeid` v C++ , aby se chránily `static` metody (`Shared` metody v Visual Basic). Místo toho použijte privátní statický objekt. Podobně nepoužívejte `this` v C# (`Me` v Visual Basic) k uzamknutí metod instancí. Místo toho použijte privátní objekt. Třída nebo instance může být uzamčena jiným kódem než vaší vlastní, což může způsobit zablokování nebo problémy s výkonem.  
   
 ### <a name="compiler-support"></a>Podpora kompilátoru  
  Visual Basic a C# podporují klíčové slovo jazyka, které používá <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> a <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> k uzamknutí objektu. Visual Basic podporuje příkaz [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) ; C# podporuje příkaz [Lock](../../csharp/language-reference/keywords/lock-statement.md) .  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -appconfig compiler option [C#]
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
-ms.openlocfilehash: bd21231ea244de51612e62febd80af74c6adc87e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7a7e8e61f65704a2e99385a1be320048d950324c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69603098"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922524"
 ---
 # <a name="-appconfig-c-compiler-options"></a>-appconfig (C# možnosti kompilátoru)
 Možnost kompilátoru **-appconfig** umožňuje C# aplikaci určit umístění souboru konfigurace aplikace (App. config) sestavení pro modul CLR (Common Language Runtime) v době vytváření vazby sestavení.  
@@ -38,7 +38,7 @@ Možnost kompilátoru **-appconfig** umožňuje C# aplikaci určit umístění s
  Kompilátor předá umístění souboru do logiky vytváření vazeb sestavení CLR.  
   
 > [!NOTE]
->  Pokud k sestavení aplikace používáte Microsoft Build Engine (MSBuild), můžete nastavit možnost kompilátoru **-appconfig** přidáním značky vlastnosti do souboru. csproj. Chcete-li použít soubor App. config, který je již nastaven v projektu, přidejte do `<UseAppConfigForCompiler>` souboru. csproj značku vlastnosti a nastavte jeho hodnotu na `true`. Chcete-li zadat jiný soubor App. config, přidejte značku `<AppConfigForCompiler>` vlastnosti a nastavte její hodnotu na umístění souboru.  
+> Pokud k sestavení aplikace používáte Microsoft Build Engine (MSBuild), můžete nastavit možnost kompilátoru **-appconfig** přidáním značky vlastnosti do souboru. csproj. Chcete-li použít soubor App. config, který je již nastaven v projektu, přidejte do `<UseAppConfigForCompiler>` souboru. csproj značku vlastnosti a nastavte jeho hodnotu na `true`. Chcete-li zadat jiný soubor App. config, přidejte značku `<AppConfigForCompiler>` vlastnosti a nastavte její hodnotu na umístění souboru.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje soubor App. config, který umožňuje, aby aplikace měla odkazy na implementaci .NET Framework a .NET Framework pro implementaci technologie Silverlight pro jakékoli .NET Framework sestavení, které existuje v obou implementacích. Možnost kompilátoru **-appconfig** určuje umístění tohoto souboru App. config.  

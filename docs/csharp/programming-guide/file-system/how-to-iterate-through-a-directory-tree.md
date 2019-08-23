@@ -6,18 +6,18 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 86ac3f7d8f49f4817f725aa9a9aa68045285e826
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ec48b9ff5a9ebe352bf0361b9e52ee0fb48576a8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590003"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923971"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace prostřednictvím adresářového stromuC# (Průvodce programováním)
 Fráze "iterace stromu adresářů" znamená přístup ke každému souboru v každém vnořeném podadresáři v zadané kořenové složce, a to v jakékoli hloubce. Nemusíte nutně otevírat jednotlivé soubory. Můžete jednoduše načíst název souboru nebo podadresáře jako `string`, nebo můžete načíst další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> objektu nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> .  
   
 > [!NOTE]
->  V systému Windows se výrazy "adresář" a "složka" používají zaměnitelné. Většina dokumentace a text uživatelského rozhraní používá termín "složka", ale knihovna tříd .NET Framework používá termín "adresář".  
+> V systému Windows se výrazy "adresář" a "složka" používají zaměnitelné. Většina dokumentace a text uživatelského rozhraní používá termín "složka", ale knihovna tříd .NET Framework používá termín "adresář".  
   
  V nejjednodušším případě, ve kterém víte, že máte přístupová oprávnění ke všem adresářům v zadaném kořenu, můžete použít `System.IO.SearchOption.AllDirectories` příznak. Tento příznak vrátí všechny vnořené podadresáře, které odpovídají zadanému vzoru. Následující příklad ukazuje, jak použít tento příznak.  
   
@@ -34,7 +34,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Pokud potřebujete provést různé operace se soubory a složkami, můžete naplánovat modularizaci tyto příklady refaktoringem operace do samostatných funkcí, které můžete vyvolat pomocí jednoho delegáta.  
   
 > [!NOTE]
->  Systémy souborů NTFS můžou obsahovat *body rozboru* ve formě spojovacích *bodů*, *symbolických odkazů*a *pevných odkazů*. Metody .NET Framework, jako například <xref:System.IO.DirectoryInfo.GetFiles%2A> a <xref:System.IO.DirectoryInfo.GetDirectories%2A> , nebudou vracet žádné podadresáře pod bodem rozboru. Toto chování chrání před rizikem vstupu do nekonečné smyčky, když dva body rozboru odkazují na sebe navzájem. Obecně platí, že byste měli při práci s body rozboru použít extrémní opatrnost, abyste se ujistili, že neúmyslně neupravují ani neodstraňují soubory. Pokud potřebujete přesnou kontrolu nad body rozboru, použijte vyvolání nebo nativní kód platformy k přímému volání odpovídajících metod systému souborů Win32.  
+> Systémy souborů NTFS můžou obsahovat *body rozboru* ve formě spojovacích *bodů*, *symbolických odkazů*a *pevných odkazů*. Metody .NET Framework, jako například <xref:System.IO.DirectoryInfo.GetFiles%2A> a <xref:System.IO.DirectoryInfo.GetDirectories%2A> , nebudou vracet žádné podadresáře pod bodem rozboru. Toto chování chrání před rizikem vstupu do nekonečné smyčky, když dva body rozboru odkazují na sebe navzájem. Obecně platí, že byste měli při práci s body rozboru použít extrémní opatrnost, abyste se ujistili, že neúmyslně neupravují ani neodstraňují soubory. Pokud potřebujete přesnou kontrolu nad body rozboru, použijte vyvolání nebo nativní kód platformy k přímému volání odpovídajících metod systému souborů Win32.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak projít adresářový strom pomocí rekurze. Rekurzivní přístup je elegantní, ale má potenciál způsobit výjimku přetečení zásobníku, pokud je strom adresáře velký a hluboko vnořený.  

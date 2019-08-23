@@ -8,25 +8,25 @@ dev_langs:
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 335e6578767c130760f322aa2b015ea7b0f317f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0199efb172466305af22c4ade7c47115a5cefd8f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026988"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939610"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Ověření schématu pomocí XPathNavigator
-Pomocí <xref:System.Xml.XmlDocument> třídy, můžete ověřit obsah XML, který je součástí <xref:System.Xml.XmlDocument> objektu dvěma způsoby. První způsob je na ověřování obsahu XML pomocí ověřování <xref:System.Xml.XmlReader> objekt a druhý způsob je použít <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. Můžete také provést jen pro čtení ověření obsahu pomocí XML <xref:System.Xml.XPath.XPathDocument> třídy.  
+Pomocí třídy můžete ověřit obsah XML obsažený <xref:System.Xml.XmlDocument> v objektu dvěma způsoby. <xref:System.Xml.XmlDocument> Prvním způsobem je ověřit obsah XML pomocí ověřování <xref:System.Xml.XmlReader> objektu a druhým způsobem je <xref:System.Xml.XmlDocument.Validate%2A> použít metodu <xref:System.Xml.XmlDocument> třídy. Můžete také provést ověřování obsahu XML jen pro čtení pomocí <xref:System.Xml.XPath.XPathDocument> třídy.  
   
 ## <a name="validating-xml-data"></a>Ověřování dat XML  
- <xref:System.Xml.XmlDocument> Třídy nelze ověřit dokument XML pomocí DTD nebo XML definice jazyk (XSD) schématu schémat ve výchozím nastavení. Pouze ověří, že dokument XML má správný formát.  
+ <xref:System.Xml.XmlDocument> Třída neověřuje dokument XML buď pomocí ověřování schématu DTD, nebo XML schématu Definition Language (XSD) ve výchozím nastavení. Ověřuje pouze to, zda je dokument XML ve správném formátu.  
   
- První způsob ověření dokumentu XML je k ověření dokumentu, jako je načten do <xref:System.Xml.XmlDocument> ověřování pomocí <xref:System.Xml.XmlReader> objektu. Druhý způsob je ověřit dříve netypové pomocí dokumentu XML <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. V obou případech se změny ověřené dokumentu XML můžete ověřit pomocí <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy.  
+ Prvním způsobem, jak ověřit dokument XML, je ověřit dokument tak, jak je načten do <xref:System.Xml.XmlDocument> objektu pomocí ověřování <xref:System.Xml.XmlReader> objektu. Druhým způsobem je ověřit dříve Netypový dokument XML pomocí <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> třídy. V obou případech lze změny ověřeného dokumentu XML znovu ověřit pomocí <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> třídy.  
   
-### <a name="validating-a-document-as-it-is-loaded"></a>Ověřování dokumentu po načtení  
- Ověřování <xref:System.Xml.XmlReader> předáním je vytvořen objekt <xref:System.Xml.XmlReaderSettings> objektu <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídu, která přebírá <xref:System.Xml.XmlReaderSettings> objektu jako parametr. <xref:System.Xml.XmlReaderSettings> Objekt předán jako parametr <xref:System.Xml.XmlReaderSettings.ValidationType%2A> vlastnost nastavena na hodnotu `Schema` a schéma XML pro dokument XML, který je součástí <xref:System.Xml.XmlDocument> objekt přidaný do jeho <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost. Ověřování <xref:System.Xml.XmlReader> objekt se pak použije k vytvoření <xref:System.Xml.XmlDocument> objektu.  
+### <a name="validating-a-document-as-it-is-loaded"></a>Ověřování dokumentu při jeho načtení  
+ Ověřování <xref:System.Xml.XmlReader> objektu je vytvořeno <xref:System.Xml.XmlReaderSettings> předáním objektu <xref:System.Xml.XmlReader.Create%2A> metodě <xref:System.Xml.XmlReader> třídy, která přebírá <xref:System.Xml.XmlReaderSettings> objekt jako parametr. `Schema` <xref:System.Xml.XmlDocument> <xref:System.Xml.XmlReaderSettings.Schemas%2A> Objekt předaný jako parametr <xref:System.Xml.XmlReaderSettings.ValidationType%2A> má vlastnost nastavenou na a schéma XML pro dokument XML obsažený v objektu přidaném do vlastnosti. <xref:System.Xml.XmlReaderSettings> Objekt ověřování <xref:System.Xml.XmlReader> se pak použije k <xref:System.Xml.XmlDocument> vytvoření objektu.  
   
- Následující příklad ověří `contosoBooks.xml` sdílené, jak je načten do <xref:System.Xml.XmlDocument> objektu tak, že vytvoříte <xref:System.Xml.XmlDocument> ověřování pomocí <xref:System.Xml.XmlReader> objektu. Vzhledem k tomu, že je platný podle jeho schématu dokumentu XML, vygenerují se upozornění ani chyby ověřování schématu.  
+ Následující příklad ověřuje `contosoBooks.xml` soubor tak, jak je načten <xref:System.Xml.XmlDocument> do objektu vytvořením <xref:System.Xml.XmlDocument> objektu pomocí ověřování <xref:System.Xml.XmlReader> objektu. Vzhledem k tomu, že dokument XML je podle jeho schématu platný, nejsou generovány žádné chyby ověřování schématu ani upozornění.  
   
 ```vb  
 Imports System  
@@ -114,29 +114,29 @@ class ValidatingReaderExample
 }  
 ```  
   
- V příkladu přebírá `contosoBooks.xml` soubor jako vstup.  
+ Tento příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
- Tento příklad využívá taky `contosoBooks.xsd` jako vstup.  
+ Příklad také přebírá `contosoBooks.xsd` jako vstup.  
   
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
- V předchozím příkladu <xref:System.Xml.Schema.XmlSchemaValidationException> bude vyvolána při <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud libovolný typ atributu nebo elementu se neshoduje s odpovídající typ zadaný v ověřování schématu. Pokud <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> je nastaven ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> bude volána pokaždé, když se zjistil se neplatný typ.  
+ V předchozím příkladu <xref:System.Xml.Schema.XmlSchemaValidationException> bude vyvolána výjimka, když <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud jakýkoli typ atributu nebo elementu neodpovídá odpovídajícímu typu zadanému v rámci ověřování schématu. Pokud je nastavena při ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> bude vyvolána při každém zjištění neplatného typu. <xref:System.Xml.XmlReaderSettings.ValidationEventHandler>  
   
- <xref:System.Xml.Schema.XmlSchemaException> Bude vyvolána, pokud atribut nebo element s <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> nastavena na `invalid` přistupuje <xref:System.Xml.XPath.XPathNavigator>.  
+ Bude vyvolána, `invalid` Pokud je k atributu nebo elementu s <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> nastavenou vlastností přistupovaná <xref:System.Xml.XPath.XPathNavigator>pomocí. <xref:System.Xml.Schema.XmlSchemaException>  
   
- <xref:System.Xml.Schema.XmlSchemaInfo.Validity%2A> Vlastnost lze použít k určení, zda jednotlivé atribut nebo element je platné při přístupu k atributů nebo elementů s <xref:System.Xml.XPath.XPathNavigator>.  
+ Vlastnost lze použít k určení, zda je jednotlivý atribut nebo element platný při přístupu k atributům nebo prvkům <xref:System.Xml.XPath.XPathNavigator>s. <xref:System.Xml.Schema.XmlSchemaInfo.Validity%2A>  
   
 > [!NOTE]
->  Po načtení dokumentu XML do <xref:System.Xml.XmlDocument> objekt s přidružené schéma, který definuje výchozí hodnoty <xref:System.Xml.XmlDocument> objekt zpracuje, tyto výchozí hodnoty jako jsou uvedeny v dokumentu XML. To znamená, že <xref:System.Xml.XPath.XPathNavigator.IsEmptyElement%2A> vždy vrátí vlastnost `false` pro element, který byl i v případě, že v dokumentu XML byla zapsána jako prázdný element převezme ve schématu.  
+> Při načtení dokumentu XML do <xref:System.Xml.XmlDocument> objektu s přidruženým schématem, které definuje výchozí hodnoty <xref:System.Xml.XmlDocument> , objekt zpracovává tyto výchozí hodnoty, jako by se zobrazily v dokumentu XML. To znamená, že <xref:System.Xml.XPath.XPathNavigator.IsEmptyElement%2A> vlastnost vždy vrátí `false` pro prvek, který byl nastaven jako výchozí ve schématu, i v případě, že v dokumentu XML byl zapsán jako prázdný prvek.  
   
-### <a name="validating-a-document-using-the-validate-method"></a>Ověřování dokumentu pomocí metody ověřování  
- <xref:System.Xml.XmlDocument.Validate%2A> Metodu <xref:System.Xml.XmlDocument> třídy ověří dokumentu XML, který je součástí <xref:System.Xml.XmlDocument> objektu pomocí schémat zadané v <xref:System.Xml.XmlDocument> objektu <xref:System.Xml.XmlDocument.Schemas%2A> vlastnost a provádí informační sadu rozšíření. Výsledkem je dříve netypový kód XML dokumentu v <xref:System.Xml.XmlDocument> objektu nahradí zadaný dokument.  
+### <a name="validating-a-document-using-the-validate-method"></a>Ověření dokumentu pomocí metody Validate  
+ <xref:System.Xml.XmlDocument.Validate%2A> Metoda <xref:System.Xml.XmlDocument> <xref:System.Xml.XmlDocument.Schemas%2A> třídy ověří dokument<xref:System.Xml.XmlDocument> XML obsažený v objektu proti schématům zadaným ve vlastnosti objektu a provede rozšíření informačního souboru. <xref:System.Xml.XmlDocument> Výsledkem je dříve Netypový dokument XML v <xref:System.Xml.XmlDocument> objektu nahrazený typovým dokumentem.  
   
- <xref:System.Xml.XmlDocument> Objekt hlásí chyby ověřování schématu a upozornění pomocí <xref:System.Xml.Schema.ValidationEventHandler> delegát předaný jako parametr <xref:System.Xml.XmlDocument.Validate%2A> metoda.  
+ Objekt hlásí chyby ověřování schématu a upozornění <xref:System.Xml.Schema.ValidationEventHandler> pomocí delegáta předaného <xref:System.Xml.XmlDocument.Validate%2A> jako parametru metodě. <xref:System.Xml.XmlDocument>  
   
- Následující příklad ověří `contosoBooks.xml` obsažené v souboru <xref:System.Xml.XmlDocument> objektu proti `contosoBooks.xsd` obsažené ve schématu <xref:System.Xml.XmlDocument> objektu <xref:System.Xml.XmlDocument.Schemas%2A> vlastnost.  
+ Následující příklad `contosoBooks.xml` ověří soubor obsažený `contosoBooks.xsd` <xref:System.Xml.XmlDocument> v objektu proti schématu obsaženému ve <xref:System.Xml.XmlDocument> <xref:System.Xml.XmlDocument.Schemas%2A> vlastnosti objektu.  
   
 ```vb  
 Imports System  
@@ -210,18 +210,18 @@ class ValidateExample
 }  
 ```  
   
- V příkladu přebírá `contosoBooks.xml` soubor jako vstup.  
+ Tento příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
- Tento příklad využívá taky `contosoBooks.xsd` jako vstup.  
+ Příklad také přebírá `contosoBooks.xsd` jako vstup.  
   
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
-### <a name="validating-modifications"></a>Ověření úprav  
- Po provedení změny do dokumentu XML, můžete ověřit změny schématu pro používání dokumentu XML <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy.  
+### <a name="validating-modifications"></a>Ověřování změn  
+ Po provedení úprav dokumentu XML můžete ověřit změny schématu pro dokument XML pomocí <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> třídy.  
   
- Následující příklad ověří `contosoBooks.xml` sdílené, jak je načten do <xref:System.Xml.XmlDocument> objektu tak, že vytvoříte <xref:System.Xml.XmlDocument> ověřování pomocí <xref:System.Xml.XmlReader> objektu. Dokument XML proběhne úspěšně, protože je načtena bez generování upozornění ani chyby ověřování schématu. Příklad poté vytvoří dvě změny v dokumentu XML, které jsou neplatné podle `contosoBooks.xsd` schématu. První úpravy vloží neplatný podřízený element výsledkem je chyba ověření schématu a druhý změnu nastaví hodnotu typu uzlu na hodnotu, která je neplatná podle typu uzlu, což vede k výjimce.  
+ Následující příklad ověřuje `contosoBooks.xml` soubor tak, jak je načten <xref:System.Xml.XmlDocument> do objektu vytvořením <xref:System.Xml.XmlDocument> objektu pomocí ověřování <xref:System.Xml.XmlReader> objektu. Dokument XML se úspěšně ověřuje, protože je načtený bez generování chyb nebo upozornění ověřování schématu. Příklad následně provede dvě úpravy dokumentu XML, které jsou podle `contosoBooks.xsd` schématu neplatné. První změna vloží neplatný podřízený element, který má za následek chybu ověřování schématu a druhá změna nastaví hodnotu typovaného uzlu na hodnotu, která je neplatná podle typu uzlu, který je výsledkem výjimky.  
   
 ```vb  
 Imports System  
@@ -336,28 +336,28 @@ class ValidatingReaderExample
 }  
 ```  
   
- V příkladu přebírá `contosoBooks.xml` soubor jako vstup.  
+ Tento příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
- Tento příklad využívá taky `contosoBooks.xsd` jako vstup.  
+ Příklad také přebírá `contosoBooks.xsd` jako vstup.  
   
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
- V předchozím příkladu se provádí dva úpravy dokumentu XML, který je součástí <xref:System.Xml.XmlDocument> objektu. Jako dokument XML byl načten, žádné chyby ověřování schématu došlo k by byly zpracovány metodu obslužné rutiny události ověření a zapsána do konzoly.  
+ V předchozím příkladu jsou provedeny dvě úpravy dokumentu XML obsaženého v <xref:System.Xml.XmlDocument> objektu. Jak byl načten dokument XML, jakékoli zjištěné chyby ověřování schématu by byly zpracovány metodou obslužné rutiny události ověřování a zapsány do konzoly.  
   
- V tomto příkladu byly zavedeny chyby ověření po dokumentu XML byl načten a našly se pomocí <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy.  
+ V tomto příkladu byly chyby ověřování představeny po načtení dokumentu XML a byly nalezeny pomocí <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> třídy.  
   
- Změny provedené pomocí <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy vedlo <xref:System.InvalidCastException> protože nová hodnota nebyl platný podle schématu typu uzlu.  
+ Změny provedené pomocí <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metody <xref:System.Xml.XPath.XPathNavigator> třídy způsobily výjimku <xref:System.InvalidCastException> , protože nová hodnota byla podle typu schématu uzlu neplatná.  
   
- Další informace o změně hodnot pomocí <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metodu, najdete v článku [upravit dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md) tématu.  
+ Další informace o úpravách hodnot pomocí <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metody naleznete v tématu [Úprava dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md) .  
   
 ### <a name="read-only-validation"></a>Ověřování jen pro čtení  
- <xref:System.Xml.XPath.XPathDocument> Třídy je jen pro čtení, v paměti reprezentace dokumentu XML. Oba <xref:System.Xml.XPath.XPathDocument> třídy a <xref:System.Xml.XmlDocument> vytvoření třídy <xref:System.Xml.XPath.XPathNavigator> objekty k procházení a úpravy dokumentů XML. Protože <xref:System.Xml.XPath.XPathDocument> třídy je třída jen pro čtení, <xref:System.Xml.XPath.XPathNavigator> objekt uživatele vrácený <xref:System.Xml.XPath.XPathDocument> objekty nelze upravit obsažené v dokumentu XML <xref:System.Xml.XPath.XPathDocument> objektu.  
+ <xref:System.Xml.XPath.XPathDocument> Třída je reprezentace dokumentu XML, která je určena jen pro čtení, v paměti. Třída i třída vytváří<xref:System.Xml.XPath.XPathNavigator> objekty pro navigaci a úpravy dokumentů XML. <xref:System.Xml.XmlDocument> <xref:System.Xml.XPath.XPathDocument> Vzhledem k tomu, že <xref:System.Xml.XPath.XPathNavigator> <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XPath.XPathDocument> třída je třída, která je jen pro čtení, objekt vrácený z objektů nemůže upravovat dokument XML obsažený v objektu. <xref:System.Xml.XPath.XPathDocument>  
   
- V případě ověřování, můžete vytvořit <xref:System.Xml.XPath.XPathDocument> stejně jako můžete vytvořit objekt <xref:System.Xml.XmlDocument> ověřování pomocí <xref:System.Xml.XmlReader> objektu, jak je popsáno výše v tomto tématu. <xref:System.Xml.XPath.XPathDocument> Objekt ověří dokumentu XML, jako je načtena, ale protože nelze upravit XML data <xref:System.Xml.XPath.XPathDocument> objektu nelze znovu ověřit dokument XML.  
+ V případě ověřování můžete vytvořit <xref:System.Xml.XPath.XPathDocument> objekt stejně jako <xref:System.Xml.XmlDocument> objekt pomocí ověřování <xref:System.Xml.XmlReader> objektu, jak je popsáno výše v tomto tématu. Objekt ověří dokument XML, jak je načten, ale vzhledem k tomu, že nelze upravovat data XML <xref:System.Xml.XPath.XPathDocument> v objektu, nelze znovu ověřit dokument XML. <xref:System.Xml.XPath.XPathDocument>  
   
- Další informace o jen pro čtení a upravovat <xref:System.Xml.XPath.XPathNavigator> objekty, najdete [čtení dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md) tématu.  
+ Další informace o objektech jen pro čtení a <xref:System.Xml.XPath.XPathNavigator> upravitelných objektech naleznete v tématu věnovaném [čtení dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md) .  
   
 ## <a name="see-also"></a>Viz také:
 

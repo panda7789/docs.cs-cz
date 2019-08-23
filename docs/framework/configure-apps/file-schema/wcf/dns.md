@@ -2,19 +2,19 @@
 title: <dns>
 ms.date: 03/30/2017
 ms.assetid: 81819dae-4825-43b7-bccd-f16d2d3d2f06
-ms.openlocfilehash: 26b45b17ecd7bbd3fffb5d03553834ec22eedc62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 35d33fd4d174c8e4ccdaaf1ac33884663340e16a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700927"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919127"
 ---
 # <a name="dns"></a>\<dns>
-Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim ověřování certifikátu, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Platí také pro režim ověřování systému Windows Pokud hlavní název služby má stejnou hodnotu.  
+Určuje očekávanou identitu serveru. Tato identita je platná pro režim ověřování certifikátu x509, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Je také platný pro režim ověřování systému Windows, pokud má hlavní název služby stejnou hodnotu.  
   
- Další informace o nastavení hodnoty prvku naleznete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Další informace o nastavení hodnoty prvku naleznete v tématu [identity a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
- \<identity>  
+ \<> identity  
 \<dns>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,7 +30,7 @@ Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|DNS certifikátu. DNS je standardní protokol slouží k vyhledání počítačů v síti na základě IP adresy. Uživatelé zapamatujete zobrazované názvy, například <https://go.microsoft.com/fwlink/?prd=10929> nebo [ https://go.microsoft.com/fwlink/?LinkID=96165 ](https://go.microsoft.com/fwlink/?LinkID=96165), jednodušší než adres na základě čísla, jako je například 207.46.131.137.|  
+|value|DNS certifikátu. DNS je standardní protokol, který se používá k nalezení počítačů v síti založené na protokolu IP. Uživatelé si můžou pamatovat zobrazované názvy, <https://go.microsoft.com/fwlink/?prd=10929> například [https://go.microsoft.com/fwlink/?LinkID=96165](https://go.microsoft.com/fwlink/?LinkID=96165)nebo, jednodušší než adresy založené na číslech, jako je například 207.46.131.137.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -39,10 +39,10 @@ Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
+|[\<identity>](identity.md)|Určuje identitu služby, kterou má klient ověřit.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód konfigurace určuje DNS certifikát X.509, který se používá k ověření serveru.  
+ Následující konfigurační kód určuje DNS certifikátu X. 509, který se používá k ověření serveru.  
   
 ```xml  
 <identity>
@@ -56,5 +56,5 @@ Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim 
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - <xref:System.ServiceModel.DnsEndpointIdentity>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [\<identity>](identity.md)

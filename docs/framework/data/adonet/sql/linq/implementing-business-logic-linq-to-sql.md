@@ -1,31 +1,31 @@
 ---
-title: Provádění obchodní logiky (LINQ to SQL)
+title: Implementace obchodní logiky (LINQ to SQL)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: 9456340834c06e87f977cd784a37f7436523d29e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 31a5aa0f147d43e94ce885c541f11b9aec4ae6d2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743122"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938656"
 ---
-# <a name="implementing-business-logic-linq-to-sql"></a>Provádění obchodní logiky (LINQ to SQL)
-Termín "obchodní logiky" v tomto tématu se odkazuje na všechny vlastní pravidla nebo ověřovací testy, které můžete použít pro data předtím, než je vložena, aktualizována nebo odstraněna z databáze. Obchodní logiky se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." V n vrstvá aplikace obvykle slouží jako logické vrstvy tak, aby jej můžete upravit nezávisle na prezentační vrstva a vrstva přístupu k datům. Obchodní logika může vyvolávat vrstvy přístupu k datům před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  
+# <a name="implementing-business-logic-linq-to-sql"></a>Implementace obchodní logiky (LINQ to SQL)
+Termín "obchodní logika" v tomto tématu se týká libovolných vlastních pravidel nebo ověřovacích testů, které se použijí na data před jejich vložením, aktualizací a odstraněním z databáze. Obchodní logika se také někdy označuje jako "obchodní pravidla" nebo "logika domény". V n-vrstvých aplikacích je obvykle navržen jako logická vrstva, aby ji bylo možné upravovat nezávisle na prezentační vrstvě nebo vrstvě přístupu k datům. Obchodní logiku může vyvolávat vrstva přístupu k datům před nebo po jakékoli aktualizaci, vložení nebo odstranění dat v databázi.  
   
- Obchodní logika může být stejně snadné jako ověřování schématu, abyste měli jistotu, že typ pole je kompatibilní s typem sloupce tabulky. Nebo může sestávat z několika objektů, které libovolně složité interagovali. Pravidla mohou být implementovány jako uložené procedury v databázi nebo objektů v paměti. Nicméně se implementuje obchodní logiku, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umožňuje použít částečné třídy a částečné metody k oddělení obchodní logiku z kód přístupu k datům.  
+ Obchodní logika může být jednoduché jako ověřování schématu, aby bylo zajištěno, že typ pole je kompatibilní s typem sloupce tabulky. Nebo se může skládat ze sady objektů, které pracují v libovolně složitých způsobech. Pravidla mohou být implementována jako uložené procedury v databázi nebo jako objekty v paměti. Obchodní logika je však implementována, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umožňuje používat částečné třídy a částečné metody k oddělení obchodní logiky z kódu přístupu k datům.  
   
-## <a name="how-linq-to-sql-invokes-your-business-logic"></a>Jak vyvolá obchodní logiku v LINQ to SQL  
- Při generování třídu entity v době návrhu ručně nebo pomocí Návrháře relací objektů nebo SQLMetal je definován jako částečné třídy. To znamená, že v samostatném souboru kódu, můžete definovat jiné části třídy entity, která obsahuje vaše vlastní obchodní logiky. V době kompilace jsou dvě části sloučeny do jediné třídy. Ale pokud máte k opětovnému vytvoření tříd entit pomocí Návrháře relací objektů nebo SQLMetal, můžete tak učinit a vaše část třídy se nezmění.  
+## <a name="how-linq-to-sql-invokes-your-business-logic"></a>Jak LINQ to SQL vyvolá vaši obchodní logiku  
+ Při generování třídy entity v době návrhu, buď ručně nebo pomocí Návrhář relací objektů nebo SQLMetal, je definována jako částečná třída. To znamená, že v samostatném souboru kódu můžete definovat další část třídy entity, která obsahuje vlastní obchodní logiku. V době kompilace jsou dvě části sloučeny do jedné třídy. Pokud ale potřebujete třídy entit znovu vygenerovat pomocí Návrhář relací objektů nebo SQLMetal, můžete tak učinit a vaše část třídy se neupraví.  
   
- Částečné třídy, které definují entity a <xref:System.Data.Linq.DataContext> obsahovat částečné metody. Toto jsou body rozšiřitelnosti, které vám umožní použít obchodní logiku, před a za jakékoli update, insert nebo delete pro entity nebo vlastnosti entity. Částečné metody můžete představit jako události za kompilace. Generátor kódu definuje podpis metody a volání metody get a nastavte přistupující objekty vlastnosti `DataContext` konstruktoru a v některých případech na pozadí při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. Ale pokud nejsou implementovat konkrétní částečnou metodu, pak všechny odkazy a definice se odeberou v době kompilace.  
+ Částečné třídy, které definují entity a <xref:System.Data.Linq.DataContext> obsahují částečné metody. Jedná se o body rozšiřitelnosti, které můžete použít k aplikování obchodní logiky před a po jakékoli aktualizaci, vložení nebo odstranění vlastnosti entity nebo entity. Částečné metody lze představit jako události při kompilaci. Generátor kódu definuje signaturu metody a volá metody v přístupových objektech vlastnosti get a set, `DataContext` konstruktor a v některých případech na pozadí při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volání. Pokud však neimplementujete určitou částečnou metodu, jsou všechny odkazy na ni a definice odebrány v době kompilace.  
   
- V implementaci definici, který píšete v souboru samostatného kódu můžete provést vyžádáním libovolnou vlastní logiku. Samotný dílčí třídu můžete použít jako vrstva vaší domény, nebo můžete volat z implementující definice částečné metody do samostatného objekt nebo objekty. V obou případech obchodní logiky je čistě oddělená od data přístupový kód a kód prezentační vrstvy.  
+ V implementaci definice, kterou zapisujete do samostatného souboru kódu, můžete provádět libovolné vlastní logiky. Můžete použít svou částečnou třídu jako vrstvu vaší domény nebo můžete volat z implementace částečné metody do samostatného objektu nebo objektů. V obou případech je vaše obchodní logika čistě oddělená od kódu pro přístup k datům a kódu prezentační vrstvy.  
   
 ## <a name="a-closer-look-at-the-extensibility-points"></a>Bližší pohled na body rozšiřitelnosti  
- Následující příklad ukazuje část kód vygenerovaný Návrhář relací objektů pro `DataContext` třídu, která má dvě tabulky: `Customers` a `Orders`. Všimněte si, že Insert, Update a Delete metody jsou definovány pro každou tabulku ve třídě.  
+ Následující příklad ukazuje část kódu vygenerovaného Návrhář relací objektů pro `DataContext` třídu, která má dvě tabulky: `Customers` a `Orders`. Všimněte si, že metody Insert, Update a DELETE jsou definovány pro každou tabulku ve třídě.  
   
 ```vb  
 Partial Public Class Northwnd  
@@ -69,7 +69,7 @@ public partial class MyNorthWindDataContext : System.Data.Linq.DataContext
         #endregion  
 ```  
   
- Pokud se rozhodnete implementovat vložit, aktualizovat a odstraňovat metody v dílčí třídě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul runtime bude volat bez vlastní výchozí metody při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. To umožňuje potlačit výchozí chování pro vytvoření / číst / aktualizovat / odstranit operace. Další informace najdete v tématu [názorný postup: Přizpůsobení vložit, aktualizovat a odstraňovat chování tříd entit](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes).  
+ Pokud implementujete metody Insert, Update a DELETE v dílčí třídě, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul runtime je zavolá namísto vlastních výchozích metod, pokud <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána metoda. To vám umožní přepsat výchozí chování pro operace vytvoření, čtení, aktualizace a odstranění. Další informace najdete v tématu [Návod: Přizpůsobení chování funkce INSERT, Update a DELETE u tříd](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)entit.  
   
  `OnCreated` Metoda je volána v konstruktoru třídy.  
   
@@ -88,7 +88,7 @@ public MyNorthWindDataContext(string connection) :
         }  
 ```  
   
- Entity třídy mají tři metody, které jsou volány [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modulu runtime, když je entita vytvoří, načten a ověřen (při `SubmitChanges` nazývá). Entity třídy také mají dvě částečné metody pro každou vlastnost, jednu, která je volána před je vlastnost nastavena a jednu, která je volána pro provedení. Následující příklad kódu ukazuje některé metody pro vygenerovat `Customer` třídy:  
+ Třídy entit mají tři metody, které jsou volány [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modulem runtime při vytvoření, načtení a ověření entity (když `SubmitChanges` je volána). Třídy entit mají také dvě částečné metody pro každou vlastnost, jednu, která je volána před nastavením vlastnosti, a jednu, která je volána po. Následující příklad kódu ukazuje některé z metod vygenerovaných pro `Customer` třídu:  
   
 ```vb  
 #Region "Extensibility Method Definitions"  
@@ -122,7 +122,7 @@ public MyNorthWindDataContext(string connection) :
 // ...additional Changing/Changed methods for each property  
 ```  
   
- Metody jsou volány v přistupující objekt množiny vlastností, jak je znázorněno v následujícím příkladu `CustomerID` vlastnost:  
+ Metody jsou volány v přístupovém objektu sady vlastností, jak je znázorněno v následujícím `CustomerID` příkladu pro vlastnost:  
   
 ```vb  
 Public Property CustomerID() As String  
@@ -155,7 +155,7 @@ public string CustomerID
 }  
 ```  
   
- Ve vaší části třídy napíšete implementující definice metody. V sadě Visual Studio, po zadání `partial` uvidíte technologie IntelliSense pro definice metod v další části třídy.  
+ V rámci třídy napíšete implementující definici metody. V aplikaci Visual Studio se po zadání `partial` zobrazí technologie IntelliSense pro definice metod v jiné části třídy.  
   
 ```vb  
 Partial Public Class Customer  
@@ -175,7 +175,7 @@ partial class Customer
     }  
 ```  
   
- Další informace o tom, jak přidat obchodní logiky pomocí částečných metod do vaší aplikace naleznete v následujících tématech:  
+ Další informace o tom, jak přidat obchodní logiku do aplikace pomocí částečných metod, naleznete v následujících tématech:  
   
  [Postupy: Přidání ověřování do tříd entit](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
   
@@ -186,6 +186,6 @@ partial class Customer
 ## <a name="see-also"></a>Viz také:
 
 - [Částečné třídy a metody](../../../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
-- [Částečné metody](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)
+- [Částečné metody](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)
 - [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
 - [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)

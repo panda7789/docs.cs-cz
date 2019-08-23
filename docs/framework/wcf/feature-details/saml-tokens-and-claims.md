@@ -10,37 +10,37 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-ms.openlocfilehash: 04517e5089f55c2d2b08a492439026d33ed9069d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7037daf299d7c750ab398c21c1d7ccb541620701
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991055"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943078"
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
-Kontrolní výrazy jazyka SAML (Security Markup) *tokeny* jsou XML reprezentací deklarace identity. Ve výchozím nastavení, tokeny SAML Windows Communication Foundation (WCF) používá ve scénářích zabezpečení jsou *tokeny vydané*.  
+Tokeny SAML (Security Assert Markup Language ) představují reprezentace deklarací XML. Ve výchozím nastavení používají tokeny SAML Windows Communication Foundation (WCF) ve federovaném scénářizabezpečení tokeny.  
   
- Tokeny SAML provádět příkazy, které jsou sady deklarací identity od jedné entitě o jiné entity. Například ve scénářích zabezpečení příkazy jsou prováděny služby tokenů zabezpečení o uživateli v systému. Služba tokenů zabezpečení přihlásí token SAML k označení pravdivosti příkazy obsažených v tokenu. Kromě toho SAML token je přidružen kryptografický materiál klíče, který uživatel tokenu SAML prokáže znalosti. Toto ověření splňuje předávající strany, který byl SAML token, ve skutečnosti vydán pro tohoto uživatele. Například v rámci typického scénáře:  
+ Tokeny SAML přenášejí příkazy, které jsou sady deklarací, které provedla jedna entita o jiné entitě. Například ve scénářích federovaného zabezpečení jsou příkazy provedeny službou tokenu zabezpečení o uživateli v systému. Služba tokenů zabezpečení podepíše token SAML, aby označovala pravdivost příkazů obsažených v tokenu. Token SAML je navíc spojen s materiálem kryptografického klíče, který uživatel tokenu SAML prokáže jako znalosti. Tento důkaz splňuje předávající stranu, kterou token SAML ve skutečnosti vystavil tomuto uživateli. Například v typickém scénáři:  
   
-1. Klient požádá o SAML token od služby tokenů zabezpečení, ověřování pomocí přihlašovacích údajů Windows na tuto službu tokenů zabezpečení.  
+1. Klient požádá o token SAML ze služby tokenu zabezpečení a ověří tuto službu tokenu zabezpečení pomocí pověření systému Windows.  
   
-2. Služba tokenů zabezpečení vydá SAML token do klienta. SAML token je podepsaný certifikátem související se službou tokenu zabezpečení a obsahuje klíč důkazu šifrována pro cílovou službu.  
+2. Služba tokenů zabezpečení vydá klientovi token SAML. Token SAML je podepsaný certifikátem přidruženým ke službě tokenu zabezpečení a obsahuje ověřovací klíč zašifrovaný pro cílovou službu.  
   
-3. Klient také obdrží kopii *klíč důkazu*. Klient pak poskytne tokenu SAML pro aplikační služby ( *předávající straně*) a podepíše zprávy pomocí tohoto klíče důkazu.  
+3. Klient také obdrží kopii *ověřovacího klíče*. Klient pak předloží token SAML Aplikační službě ( *předávající straně*) a podepíše zprávu pomocí tohoto klíčového kontrolního klíče.  
   
-4. Podpis v tokenu SAML říká předávající strany, služba tokenů zabezpečení token vydala. Podpis zprávy, vytvoří se klíč důkazu říká předávající strany, že byl vydán token do klienta.  
+4. Podpis přes token SAML informuje předávající stranu, že se token vystavil službou tokenu zabezpečení. Podpis zprávy vytvořený pomocí klíče důkazu oznamuje předávající straně, že byl token vydán klientovi.  
   
-## <a name="from-claims-to-samlattributes"></a>Z deklarací identity k SamlAttributes  
- Ve službě WCF, jsou příkazy v tokenech SAML nemodelují jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které je možné importovat přímo z <xref:System.IdentityModel.Claims.Claim> objekty, které jsou k dispozici <xref:System.IdentityModel.Claims.Claim> má objekt <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost je typ <xref:System.String>. Příklad:  
+## <a name="from-claims-to-samlattributes"></a>Z deklarací identity na SamlAttributes  
+ V rámci WCF jsou příkazy v tokenech SAML modelované <xref:System.IdentityModel.Tokens.SamlAttribute> jako objekty, které se dají naplnit <xref:System.IdentityModel.Claims.Claim> přímo z objektů. <xref:System.IdentityModel.Claims.Claim> <xref:System.IdentityModel.Claims.Claim.Right%2A> za předpokladu, že <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> objekt má <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost a vlastnost je Zadejte <xref:System.String>. Příklad:  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  
   
 > [!NOTE]
->  Při tokeny SAML serializují ve zprávách, když jsou vydané služby tokenů zabezpečení nebo když jsou prezentované podle klientům služby ověřování v rámci, kvóta maximální velikosti musí být dostatečně velký pro přizpůsobení tokenu SAML a ostatní části zprávy. V případech, normální postačí výchozí kvóty velikosti zprávy. Ale v případech, kdy je SAML token velké vzhledem k tomu, že obsahuje stovky deklarace identity, budete muset zvýšit kvóty tak, aby vyhovovaly serializovaný token. Další informace najdete v tématu [aspekty zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+> Pokud jsou ve zprávách serializovány tokeny SAML, buď když jsou vydávány pomocí služby tokenu zabezpečení, nebo pokud je prezentují klienti ke službám v rámci ověřování, maximální kvóta velikosti zprávy musí být dostatečně velká, aby se mohla pojmout token SAML. ostatní části zprávy V normálních případech jsou dostatečné výchozí kvóty velikosti zprávy. V případech, kdy je token SAML velký, protože obsahuje stovky deklarací identity, možná budete muset zvýšit kvótu tak, aby vyhovovala serializovanému tokenu. Další informace najdete v tématu věnovaném [bezpečnostním hlediskům pro data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
-## <a name="from-samlattributes-to-claims"></a>Z SamlAttributes pro deklarace identity  
- Když tokeny SAML přijme ve zprávách, různé příkazy v tokenu SAML jsou převedena na <xref:System.IdentityModel.Policy.IAuthorizationPolicy> objekty, které se umístí do <xref:System.IdentityModel.Policy.AuthorizationContext>. Deklarace identity z každého příkazu SAML jsou vráceny pomocí <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> a můžete prověřit, abyste zjistili, jestli se má ověřovat a autorizovat uživatele.  
+## <a name="from-samlattributes-to-claims"></a>Z SamlAttributes na deklarace identity  
+ Pokud jsou ve zprávách obdrženy tokeny SAML, jednotlivé příkazy v tokenu SAML jsou přeměněny <xref:System.IdentityModel.Policy.IAuthorizationPolicy> na objekty, které jsou umístěny <xref:System.IdentityModel.Policy.AuthorizationContext>do objektu. Deklarace z každého příkazu SAML jsou vráceny <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> vlastností <xref:System.IdentityModel.Policy.AuthorizationContext> třídy a lze je prozkoumat, chcete-li určit, zda ověřit a autorizovat uživatele.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -49,8 +49,8 @@ Kontrolní výrazy jazyka SAML (Security Markup) *tokeny* jsou XML reprezentací
 - <xref:System.IdentityModel.Claims.ClaimSet>
 - [Federace](../../../../docs/framework/wcf/feature-details/federation.md)
 - [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Postupy: Konfigurace přihlašovacích údajů na služba FS (Federation Service)](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
 - [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
 - [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
 - [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
-- [Postupy: Vytvoření vlastní deklarace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+- [Postupy: Vytvoření vlastní deklarace identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)

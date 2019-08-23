@@ -2,32 +2,32 @@
 title: <bindings>
 ms.date: 01/22/2018
 ms.assetid: b62cd369-5409-4030-8490-9759a462dd3a
-ms.openlocfilehash: 479941593b1abefe637525703140b02917c6692b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1292bc38ce1e542086edac5539c1b29e619e2a32
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704437"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926383"
 ---
-# <a name="bindings"></a>\<vazby >
+# <a name="bindings"></a>\<> vazeb
 
-Můžete použít `bindings` prvek, který chcete nakonfigurovat zobrazení kolekce standardních a vlastních vazeb pro služby Windows Communication Foundation (WCF). Každá položka je `binding` element, který lze identifikovat podle jeho jedinečného `name`. Služby používají vazby jejich propojením pomocí `name`. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+`bindings` Element lze použít ke konfiguraci kolekce standardních a vlastní vazby pro Windows Communication Foundation (WCF). Každá položka je prvek `binding` , který lze identifikovat podle jeho jedinečného `name`typu. Služby používají vazby propojením s použitím `name`. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="system-provided-bindings"></a>vazby poskytované systémem
+## <a name="system-provided-bindings"></a>Vazby poskytované systémem
  
- Vazby poskytované systémem překonávají složitost systému zásobníkem zpráv WCF. Aplikace používající vazeb poskytovaných systémem nevyžadují, aby plnou kontrolu nad zásobníku. Atributy, které jsou zveřejněné na každý vazeb poskytovaných systémem jsou ty, které nejvhodnější pro scénáře použití adresy vazby.  
+ Vazby poskytované systémem skrývají složitost zasílání zpráv WCF. Aplikace využívající vazby poskytované systémem nevyžadují plnou kontrolu nad zásobníkem. Atributy vystavené pro každou vazbu poskytovanou systémem jsou ty, které jsou nejvhodnější pro scénář použití jako adresy vazby.  
   
- Oddíl konfigurace pro každý vazeb poskytovaných systémem můžete definovat několik konfigurací použít ke konfiguraci vazby. Každá konfigurace je identifikován jedinečný název.  
+ Konfigurační oddíl pro každou vazbu poskytovanou systémem může definovat několik konfigurací používaných ke konfiguraci vazby. Každá konfigurace je identifikována jedinečným názvem.  
   
- Není možné přidat do vazeb poskytovaných systémem elementy nebo atributy. Uděláte to tak, by měla implementovat vlastní vazby, jak je popsáno v [vlastní vazby](#custom-bindings) oddílu. Je možné definovat vlastní vazby, která napodobuje poskytované systémem vazba dokonale a přidá několik nastavení aplikace uživatele chce mít kontrolu nad.  
+ Nelze přidat prvky nebo atributy do vazby poskytnuté systémem. K tomu byste měli implementovat vlastní vazbu, jak je popsáno v části [vlastní vazby](#custom-bindings) . Je možné definovat vlastní vazbu, která napodobuje uživatelsky definované vazby, a přidá několik nastavení, která má uživatelská aplikace mít kontrolu nad.  
   
- Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../../docs/framework/wcf/system-provided-bindings.md).  
+ Seznam vazeb poskytovaných systémem naleznete v tématu [systémové vazby](../../../wcf/system-provided-bindings.md).  
   
 ## <a name="custom-bindings"></a>Vlastní vazby
 
- Vlastní vazby poskytují plnou kontrolu nad zásobníkem zpráv WCF. Jednotlivé vazby definuje zásobníku zprávu zadáním elementů konfigurace pro zásobník prvky v pořadí, ve kterém se zobrazují v zásobníku. Každý prvek definuje a konfiguruje jeden prvek zásobníku. Musí existovat pouze jeden `transport` element v každé vlastní vazby. Bez tohoto elementu je neúplný zásobníkem zpráv.  
+ Vlastní vazby poskytují plnou kontrolu nad zásobníkem zpráv WCF. Jednotlivá vazba definuje zásobník zpráv zadáním elementů konfigurace pro prvky zásobníku v pořadí, v jakém se zobrazují v zásobníku. Každý prvek definuje a nakonfiguruje jeden prvek zásobníku. V každé vlastní vazbě musí být `transport` pouze jeden element. Bez tohoto elementu je zásobník pro zasílání zpráv neúplný.  
   
- Je důležité pořadí, v jakém jsou prvky uvedeny v zásobníku, protože je pořadí použití operace u zprávy. Požadované pořadí prvků zásobníku je následující:  
+ Pořadí, ve kterém se prvky zobrazí v zásobníku, protože se jedná o pořadí, ve kterém jsou operace pro zprávu aplikovány. Požadované pořadí prvků zásobníku je následující:  
   
 1. Transakce (volitelné)  
   
@@ -37,16 +37,16 @@ Můžete použít `bindings` prvek, který chcete nakonfigurovat zobrazení kole
   
 4. Kodér  
   
-5. Přenos  
+5. Přepravu  
   
- Vlastní vazby jsou označeny jejich `name` atribut. Další informace o vlastních vazeb, naleznete v tématu [vlastních vazeb](../../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Vlastní vazby jsou označeny jejich `name` atributem. Další informace o vlastních vazbách naleznete v tématu [Custom Bindings](../../../wcf/extending/custom-bindings.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.BindingsSection?displayProperty=nameWithType>  
 - <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>  
 - <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>  
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Vazby](../../../wcf/bindings.md)  
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)  
+- [\<customBinding>](custombinding.md)  
+- [\<> vazby](../../../misc/binding.md)

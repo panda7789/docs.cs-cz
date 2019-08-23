@@ -2,22 +2,22 @@
 title: <soapProcessing>
 ms.date: 03/30/2017
 ms.assetid: e8707027-e6b8-4539-893d-3cd7c13fbc18
-ms.openlocfilehash: 0bedcec1a87f8384a89f5e5931c18ccebe87f07e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 678b1f71ac15d3ad30df28cec5abbe403fb08c95
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758006"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937049"
 ---
 # <a name="soapprocessing"></a>\<soapProcessing >
 
-Definuje chování koncového bodu klient použitý k zařazování zpráv mezi jinou vazbou typy a verze zpráv.
+Definuje chování koncového bodu klienta používaného k zařazování zpráv mezi různými typy vazeb a verzemi zpráv.
 
-**\<system.ServiceModel>**   
-&nbsp;&nbsp;**\<chování >**   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<endpointBehaviors>**   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<chování >**   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<soapProcessing >**
+**\<system.ServiceModel>**    
+&nbsp;&nbsp; **\<> chování**   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<endpointBehaviors>**    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> chování**   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<soapProcessing >**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,24 +33,24 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |                   | Popis |
 | ----------------- | ----------- |
-| `processMessages` | Logická hodnota určující, zda by měly být zařazeny zpráv mezi verzemi zprávy protokolu SOAP. |
+| `processMessages` | Logická hodnota určující, zda mají být zprávy zařazeny mezi verze zprávy protokolu SOAP. |
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádný
+Žádné
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**\<chování >**](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) | Určuje chování koncového bodu. |
+| [ **\<> chování**](behavior-of-endpointbehaviors.md) | Určuje chování koncového bodu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Zpracování SOAP je proces, ve kterém jsou zprávy převádět verze zpráv.
+Zpracování SOAP je proces, ve kterém se zprávy převádějí mezi verze zprávy.
 
-Směrovací služba Windows Communication Foundation (WCF) můžete převést zprávy z jednoho protokolu do jiného. Pokud verze příchozí a odchozí zprávy se liší, bude vytvořena nová zpráva správné verze. Zpracování zpráv z jednoho <xref:System.ServiceModel.Channels.MessageVersion> do druhého se provádí tak, že vytváří nové zprávy WCF, který obsahuje část textu a odpovídající záhlaví z příchozí zprávy WCF. Hlavičky, které jsou specifické pro adresování nebo, která vyplývají z úrovni směrovače nejsou použít během procesu vytváření nových zpráv WCF, protože tyto hlavičky jsou buď s jinou verzí (v případě adresování záhlaví) nebo byly zpracovány jako součást komunikace mezi klientem a směrovače.
+Směrovací služba Windows Communication Foundation (WCF) může převést zprávy z jednoho protokolu na jiný. Pokud se verze příchozích a odchozích zpráv liší, vytvoří se nová zpráva se správnou verzí. Zpracování zpráv z jedné <xref:System.ServiceModel.Channels.MessageVersion> do druhé je provedeno vytvořením nové zprávy WCF, která obsahuje část těla a příslušné hlavičky z příchozí zprávy WCF. Hlavičky, které jsou specifické pro adresování, nebo které se rozumí na úrovni směrovače, se při konstrukci nové zprávy WCF nepoužívají, protože tato záhlaví jsou buď jiné verze (v případě hlaviček adresování), nebo se zpracovala jako součást komunikace mezi klientem a směrovačem.
 
-Určuje, zda záhlaví je umístěn v odchozí zprávě se určuje podle Určuje, jestli byla označena jako chápat, jak předat prostřednictvím příchozí vrstvě kanálu. Hlavičky, které nejsou rozpoznána. (například vlastní záhlaví) se neodeberou a proto předat prostřednictvím směrovací služby byly zkopírovány na odchozí zprávu. Text zprávy je zkopírován do výstupní zprávy. Zpráva bude potom odeslaná odchozí kanál, na které všechny hlavičky a dalšími daty obálky konkrétní přejděte na tuto komunikaci protokolu/transport bude vytvořena a přidá.
+Určuje, zda byla hlavička umístěna v odchozí zprávě podle toho, zda byla označena jako srozumitelná, jak byla předána prostřednictvím vrstvy příchozího kanálu. Hlavičky, které nerozumí (například vlastní hlavičky), se neodstraňují, takže je služba Směrování po zkopírování do odchozí zprávy předána. Text zprávy se zkopíruje do odchozí zprávy. Zpráva se pak pošle odchozí kanál, ve kterém se budou vytvářet a přidávat všechna záhlaví a další data obálky specifická pro daný komunikační protokol nebo přenos.
 
-Tyto kroky zpracování se použijí při zpracování SOAP chování. To [ \<soapProcessingExtension >](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md) chování je chování koncového bodu, který se použije pro všechny koncové body klienta (odchozí) při spuštění služby směrování. výchozím [ \<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md) chování vytvoří a připojí nový [ \<soapProcessingExtension >](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md) chování s `processMessages` nastavena na `true` pro každý koncový bod klienta. Pokud máte protokol, který služba Směrování neobsahuje pochopit, nebo chcete přepsat výchozí zpracování chování, můžete zakázat zpracování pro celé směrovací služba nebo pouze pro konkrétní koncové body SOAP.  Chcete-li zakázat zpracování celé směrovací služby pro všechny koncové body SOAP, nastavte `soapProcessing` atribut [ \<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md) chování `false`. Chcete-li vypnout zpracování pro určitý koncový bod SOAP, použijte toto chování a nastavte jeho `processMessages` atribut `false`, připojte toto chování koncového bodu nechcete, aby výchozí zpracování kódu, aby se spouštěla v.  Když [ \<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md) chování nastaví směrovací službou, budou přeskočeny chování koncového bodu obnovení, protože už existuje.
+Tyto kroky zpracování se provádějí při určení chování zpracování protokolu SOAP. Toto chování soapProcessingExtension > je chování koncového bodu, které se při spuštění směrovací služby použije u všech koncových bodů klienta (odchozích). [ \<](soapprocessing.md) `true` ve `processMessages` [ \<](routing-of-servicebehavior.md) výchozím nastavení se chování > směrování vytváří a připojuje nové [ \<chování > soapProcessingExtension](soapprocessing.md) s nastavením na pro každý koncový bod klienta. Pokud máte protokol, který směrovací služba nerozumí, nebo chcete přepsat výchozí chování zpracování, můžete zakázat zpracování protokolu SOAP buď pro celou směrovací službu, nebo jenom pro konkrétní koncové body.  Chcete-li zakázat zpracování protokolu SOAP pro celou směrovací službu u všech koncových `soapProcessing` bodů, nastavte atribut [ \<chování směrování >](routing-of-servicebehavior.md) na. `false` Chcete-li vypnout zpracování SOAP pro konkrétní koncový bod, použijte toto chování a nastavte `processMessages` jeho atribut `false`na a pak připojte toto chování ke koncovému bodu, na kterém nechcete spustit výchozí kód pro zpracování.  Když chování [> Směrovánínastavísměrovacíslužbu,přeskočíopakovanéuplatněníchováníkoncovéhobodu,protožeužexistuje.\<](routing-of-servicebehavior.md)

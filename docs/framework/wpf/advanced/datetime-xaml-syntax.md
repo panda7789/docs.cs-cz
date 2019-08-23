@@ -9,69 +9,69 @@ helpviewer_keywords:
 - DateTime XAML text [WPF]
 - DateTime XAML syntax [WPF], format strings for
 ms.assetid: 5901710a-609b-40c8-9d65-f0016cd9090b
-ms.openlocfilehash: d7fe5f15f79ab068e88c3fb6f7b7cac0986aa636
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36066d6b2405051a3d35befffe53af8895e26220
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052921"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964836"
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime – syntaxe v jazyce XAML
-Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, mají vlastnosti, které používají <xref:System.DateTime> typu. I když obvykle zadat počáteční datum a čas pro tyto ovládací prvky v kódu v době běhu je zadat v XAML počáteční datum nebo čas. Analyzátor WPF XAML zpracovává analýzu <xref:System.DateTime> hodnoty pomocí předdefinovaných textová syntaxe XAML. Toto téma popisuje, jaké jsou specifikace <xref:System.DateTime> textová syntaxe XAML.  
+Některé ovládací prvky, například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, <xref:System.DateTime> mají vlastnosti, které používají typ. I když obvykle zadáte počáteční datum nebo čas pro tyto ovládací prvky v kódu za běhu, můžete zadat počáteční datum nebo čas v jazyce XAML. Analyzátor XAML pro WPF zpracovává analýzu <xref:System.DateTime> hodnot pomocí předdefinované syntaxe textu v jazyce XAML. Toto téma popisuje konkrétní syntaxi textu v <xref:System.DateTime> jazyce XAML.  
 
 <a name="where_datetime_xaml_syntax_is_used"></a>   
-## <a name="when-to-use-datetime-xaml-syntax"></a>Kdy použít syntaxe XAML data a času  
- Nastavení dat v XAML není vždy nutné a dokonce nemusí být žádoucí. Například můžete použít <xref:System.DateTime.Now%2A?displayProperty=nameWithType> vlastnost inicializovat data v době běhu, nebo můžete udělat všechny úpravy dat pro kalendáře v kódu na základě uživatelského zadání. Ale existují scénáře, kde můžete data pevně zakódovat do <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker> v šabloně ovládacího prvku. <xref:System.DateTime> Syntaxe XAML musí být použita pro tyto scénáře.  
+## <a name="when-to-use-datetime-xaml-syntax"></a>Kdy použít syntaxi jazyka XAML jazyka DateTime  
+ Nastavení dat v jazyce XAML není vždy nutné a nemusí být ani žádoucí. Můžete například použít <xref:System.DateTime.Now%2A?displayProperty=nameWithType> vlastnost k inicializaci data v době běhu, nebo můžete provést všechny úpravy kalendářních dat kalendáře v kódu na základě vstupu uživatele. Existují však situace, kdy můžete chtít data pevně code do <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker> v šabloně ovládacího prvku. Pro tyto scénáře se musí použít syntaxe jazykaXAML.<xref:System.DateTime>  
   
-### <a name="datetime-xaml-syntax-is-a-native-behavior"></a>Syntaxe XAML data a času je nativní chování  
- <xref:System.DateTime> je třída, která je definována v knihovně základních tříd modulu CLR. Z důvodu knihovny základních tříd vztah k rest modulu CLR, není možné použít <xref:System.ComponentModel.TypeConverterAttribute> třídy a použitím konvertor typu pro zpracování řetězců z XAML a převést tak, aby <xref:System.DateTime> v době běhu objektový model. Neexistuje žádná `DateTimeConverter` třída, která poskytuje chování převodu; převod chování popsané v tomto tématu je nativní pro analyzátor WPF XAML.  
+### <a name="datetime-xaml-syntax-is-a-native-behavior"></a>Syntaxe jazyka XAML v jazyce DateTime je nativní chování  
+ <xref:System.DateTime>je třída, která je definována v knihovně základních tříd modulu CLR. Vzhledem k tomu, jak základní knihovny tříd souvisejí se zbytkem modulu CLR, není možné použít <xref:System.ComponentModel.TypeConverterAttribute> pro třídu a použít konvertor typu pro zpracování řetězců z jazyka XAML a jejich převod na <xref:System.DateTime> v objektovém modelu modulu runtime. Neexistuje žádná `DateTimeConverter` třída, která by poskytovala chování převodu; chování převodu popsané v tomto tématu je nativní pro analyzátor XAML WPF.  
   
 <a name="format_strings_for_datetime_xaml_syntax"></a>   
-## <a name="format-strings-for-datetime-xaml-syntax"></a>Formátovací řetězce pro syntaxe XAML data a času  
- Můžete zadat formát <xref:System.DateTime> pomocí formátovacího řetězce. Řetězce formátu formalizujte syntaxe textu, který slouží k vytvoření hodnoty. <xref:System.DateTime> hodnoty pro WPF existující ovládací prvky používejte obecně pouze datum součástí <xref:System.DateTime> a nikoli komponenty času.  
+## <a name="format-strings-for-datetime-xaml-syntax"></a>Řetězce formátu pro syntaxi jazyka XAML typu DateTime  
+ Můžete zadat formát <xref:System.DateTime> s formátovacím řetězcem. Řetězce formátu formalizovat textovou syntaxí, která se dá použít k vytvoření hodnoty. <xref:System.DateTime>hodnoty pro existující ovládací prvky WPF obvykle používají pouze součásti <xref:System.DateTime> data a nikoli časové komponenty.  
   
- Při zadávání <xref:System.DateTime> v XAML, můžete použít některý z formátovací řetězce Zaměnitelně.  
+ Při zadávání <xref:System.DateTime> v jazyce XAML můžete použít kterýkoli z formátovacích řetězců, které jsou zaměnitelné.  
   
- Můžete také použít formáty a formát řetězce, které nejsou konkrétně uvedené v tomto tématu. Technicky vzato XAML pro všechny <xref:System.DateTime> hodnotu, která je zadána a pak analyzovat analyzátorem WPF XAML používá interní volání <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>, proto můžete použít libovolný řetězec, který přijal <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> vaší XAML vstup. Další informace naleznete v tématu <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>.  
+ Můžete také použít formáty a formátovací řetězce, které nejsou výslovně uvedeny v tomto tématu. Technicky, XAML pro libovolnou <xref:System.DateTime> hodnotu, která je zadána a následně analyzována analyzátorem XAML WPF <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>, používá interní volání metody, proto můžete <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> použít libovolný řetězec přijatý pro vstup XAML. Další informace naleznete v tématu <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>.  
   
 > [!IMPORTANT]
->  Syntaxe XAML data a času vždy používá `en-us` jako <xref:System.Globalization.CultureInfo> jeho nativní převodu. To není ovlivněn <xref:System.Windows.FrameworkElement.Language%2A> hodnotu nebo `xml:lang` hodnota v XAML, protože převod typu úroveň atributu XAML funguje bez daného kontextu. Nepokoušejte se interpolovat formátovací řetězce je znázorněno zde kvůli kulturní variace, jako například pořadí, ve kterém se zobrazí datum a měsíce. Formát řetězce je vidět tady jsou řetězce přesném formátu, který použije při analýze XAML bez ohledu na jiné nastavení jazykové verze.  
+> Syntaxe jazyka XAML typu DateTime vždy `en-us` používá <xref:System.Globalization.CultureInfo> jako nativní převod. To není ovlivněno <xref:System.Windows.FrameworkElement.Language%2A> hodnotou nebo `xml:lang` hodnotou v jazyce XAML, protože převod typu na úrovni atributu XAML funguje bez tohoto kontextu. Nepokoušejte se interpolovat formátovací řetězce, které jsou zde uvedeny, z důvodu kulturní variace, jako je například pořadí, ve kterém se zobrazuje den a měsíc. Formátovací řetězce, které jsou zde uvedeny, jsou přesné formátovací řetězce používané při analýze XAML bez ohledu na jiné nastavení jazykové verze.  
   
- Následující části popisují některé nejběžnější <xref:System.DateTime> řetězce formátu.  
+ V následujících částech jsou popsány některé <xref:System.DateTime> z běžných řetězců formátu.  
   
 ### <a name="short-date-pattern-d"></a>Vzor krátkého formátu data ("d")  
- Následující příklad zobrazuje formát krátkého formátu data <xref:System.DateTime> v XAML:  
+ Následující příklad ukazuje formát krátkého formátu <xref:System.DateTime> data v jazyce XAML:  
   
  `M/d/YYYY`  
   
- Toto je nejjednodušší podobě, který určuje všechny potřebné informace pro typické použití ovládacích prvků WPF a nemůže být ovlivněny náhodného časových pásmech a složku času a doporučuje se přes jiné formáty.  
+ Toto je nejjednodušší forma, která určuje všechny potřebné informace pro typické použití pomocí ovládacích prvků WPF a nemůže být ovlivněna neúmyslnými posuny časového pásma oproti časové komponentě a je proto doporučena v jiných formátech.  
   
- Například zadejte datum 1. června 2010, použijte následující řetězec:  
+ Chcete-li například zadat datum od 1. června 2010, použijte následující řetězec:  
   
  `3/1/2010`  
   
  Další informace naleznete v tématu <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A?displayProperty=nameWithType>.  
   
-### <a name="sortable-datetime-pattern-s"></a>Vzor seřaditelného data a času ("s")  
- Následující příklad zobrazuje Univerzální seřaditelný <xref:System.DateTime> vzoru v XAML:  
+### <a name="sortable-datetime-pattern-s"></a>Seřadit vzorek DateTime ("s")  
+ Následující příklad znázorňuje <xref:System.DateTime> vzor řazení v jazyce XAML:  
   
  `yyyy'-'MM'-'dd'T'HH':'mm':'ss`  
   
- Například zadejte datum 1. června 2010, použijte následující řetězce (čas, které součásti jsou zadány jako 0):  
+ Chcete-li například zadat datum od 1. června 2010, použijte následující řetězec (čas, kdy jsou komponenty zadány jako 0):  
   
  `2010-06-01T000:00:00`  
   
-### <a name="rfc1123-pattern-r"></a>Vzor RFC1123 ("r")  
- Vzor RFC1123 je užitečné, protože by mohlo být vstupní řetězec z jiné datum generátorů, které také používají vzor RFC1123 důvodů invariantní jazykovou verzi. Následující příklad zobrazuje RFC1123 <xref:System.DateTime> vzoru v XAML:  
+### <a name="rfc1123-pattern-r"></a>RFC1123 vzor ("r")  
+ Vzor RFC1123 je užitečný, protože by se mohlo jednat o vstup řetězce z jiného generátoru dat, který také používá vzor RFC1123 pro invariantní jazykové důvody. Následující příklad ukazuje vzor RFC1123 <xref:System.DateTime> v jazyce XAML:  
   
  `ddd, dd MMM yyyy HH':'mm':'ss 'UTC'`  
   
- Například zadejte datum 1. června 2010, použijte následující řetězce (čas, které součásti jsou zadány jako 0):  
+ Chcete-li například zadat datum od 1. června 2010, použijte následující řetězec (čas, kdy jsou komponenty zadány jako 0):  
   
  `Mon, 01 Jun 2010 00:00:00 UTC`  
   
-### <a name="other-formats-and-patterns"></a>Další formáty a vzory  
- Jak bylo uvedeno dříve, <xref:System.DateTime> v XAML lze zadat jako libovolný řetězec, který je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Jedná se o další oficiální formáty (třeba <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>) a formátů, které nejsou stanovení jako konkrétní <xref:System.Globalization.DateTimeFormatInfo> formuláře. Například formulář `YYYY/mm/dd` je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Toto téma se nebude pokoušet popisují všechny možné formáty, které pracují a místo toho doporučuje vzor krátkého formátu data jako standardním postupem.  
+### <a name="other-formats-and-patterns"></a>Jiné formáty a vzory  
+ Jak bylo uvedeno dříve, <xref:System.DateTime> v jazyce XAML lze zadat libovolný řetězec, který je přijatelný jako vstup pro <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. To zahrnuje další formální formáty (například <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>) a formáty, které nejsou formální jako konkrétní <xref:System.Globalization.DateTimeFormatInfo> formulář. Například formulář `YYYY/mm/dd` je přijatelný jako vstup pro <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Toto téma se nepokouší popsat všechny možné formáty, které fungují, a místo toho doporučuje vzor krátkého data jako standardní postup.  
   
 ## <a name="see-also"></a>Viz také:
 

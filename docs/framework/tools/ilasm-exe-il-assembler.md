@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 36de7dd2d97eb532717d52bd3903d3e5acd19d2d
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 13b0ab04eba75a322d584bcc20cc6e90a54fb6fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567062"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933657"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
-Nástroj IL Assembler generuje přenositelný spustitelný (PE) soubor z převodního jazyka (IL; Intermediate Language). (Další informace o IL najdete v tématu [spravovaný proces spuštění](../../../docs/standard/managed-execution-process.md).) Výsledný spustitelný soubor obsahující jazyk IL a potřebná metadata lze spustit, a určit tak, zda IL funguje dle očekávání.
+Nástroj IL Assembler generuje přenositelný spustitelný (PE) soubor z převodního jazyka (IL; Intermediate Language). (Další informace o IL najdete v tématu [spravovaný proces spuštění](../../standard/managed-execution-process.md).) Výsledný spustitelný soubor obsahující jazyk IL a potřebná metadata lze spustit, a určit tak, zda IL funguje dle očekávání.
 
 Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
@@ -231,5 +231,5 @@ Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento
 
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [*Ildasm. exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
-- [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
+- [Proces spravovaného spuštění](../../standard/managed-execution-process.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

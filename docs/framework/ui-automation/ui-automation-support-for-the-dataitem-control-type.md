@@ -6,105 +6,99 @@ helpviewer_keywords:
 - Data Item control type
 - control types, Data Item
 ms.assetid: 181708fd-2595-4c43-9abd-75811627d64c
-ms.openlocfilehash: 6263d7777becc1042cf477503c7f68af29fa7f4c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 7ba338a2eeb222dc8c807bc3a2bb4d1baf7de39d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125208"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912013"
 ---
 # <a name="ui-automation-support-for-the-dataitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataItem
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma obsahuje informace o [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] podporu pro typ ovládacího prvku DataItem. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] typ ovládacího prvku je představují sadu podmínek, které ovládací prvek musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny ke [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzorů ovládacích prvků.  
+ Toto téma poskytuje informace o [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] podpoře pro typ ovládacího prvku DataItem. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] typu ovládacího prvku je sada podmínek, které musí ovládací prvek splňovat, aby bylo možné <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost použít. Podmínky zahrnují konkrétní pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzory ovládacích prvků.  
   
- Položky v seznamu kontaktů je příkladem ovládacího prvku položek. Ovládací prvek položky dat obsahuje informace, které jsou zajímavé pro koncového uživatele. To je složitější než jednoduchý seznam položek, protože obsahuje podrobnější informace.  
+ Položka v seznamu kontaktů je příkladem ovládacího prvku datová položka. Ovládací prvek datová položka obsahuje informace, které mají zájem o koncového uživatele. Je složitější než jednoduchá položka seznamu, protože obsahuje bohatší informace.  
   
- Následující části definují požadovaný [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, vlastnosti, vzorů ovládacích prvků a události pro typ ovládacího prvku DataItem. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Požadavky platí pro všechna data ovládací prvky položek, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku DataItem. Požadavky platí pro všechny ovládací prvky datových položek, ať [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]už [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]  
   
-<a name="Required_UI_Automation_Tree_Structure"></a>   
-## <a name="required-ui-automation-tree-structure"></a>Požadované uživatelské rozhraní automatizace stromová struktura  
- Následující tabulka popisuje ovládací prvek zobrazení a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom, který se týká datovou položku Ovládací prvky a popisuje, co mohou být obsaženy v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, přečtěte si téma [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
+ Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahu stromové struktury, které se vztahují k ovládacím prvkům datových položek, a popisuje, co může být obsaženo v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktuře najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – ovládací prvek zobrazení|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení obsahu|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Zobrazení stromového řízení|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení obsahu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
-|Datové položky<br /><br /> -Se liší (0 nebo více; může být strukturovaná v hierarchii)|Datové položky<br /><br /> -Se liší (0 nebo více; může být strukturovaná v hierarchii)|  
+|DataItem<br /><br /> – Liší se (0 nebo více; může být strukturované v hierarchii).|DataItem<br /><br /> – Liší se (0 nebo více; může být strukturované v hierarchii).|  
   
- Datový prvek položky v datové mřížce můžete hostovat různé objekty, včetně další vrstvu datové položky, nebo konkrétní mřížky prvky, jako jsou text, obrázky, nebo ovládacích prvcích pro úpravy. Pokud má element dat položky roli konkrétního objektu, element by měly být vystaveny jako určitý ovládací prvek typu; například ListItem typu ovládacího prvku pro volitelné datové položky v mřížce.  
+ Prvek datové položky v datové mřížce může hostovat různé objekty, včetně jiné vrstvy datových položek nebo určitých prvků mřížky, jako jsou text, obrázky nebo textové ovládací prvky. Pokud prvek datové položky má konkrétní roli objektu, měl by být element vystaven jako konkrétní typ ovládacího prvku; například typ ovládacího prvku ListItem pro selektivní datovou položku v mřížce.  
   
-<a name="Required_UI_Automation_Properties"></a>   
-## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  
- V následující tabulce jsou uvedeny vlastnosti, jejichž hodnota nebo definice je obzvláště důležité pro ovládací prvky dat položky. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, viz [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+## <a name="required-ui-automation-properties"></a>Požadované vlastnosti automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny vlastnosti, jejichž hodnota nebo definice jsou obzvláště důležité pro ovládací prvky datových položek. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnostech najdete v tématu [Vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
 |Vlastnost|Value|Poznámky|  
 |--------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|V části poznámky.|Hodnota této vlastnosti musí být jedinečný v rámci všech ovládacích prvků v aplikaci.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélník, který obsahuje celý ovládací prvek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Nepodporuje. Pokud ohraničující obdélník. Pokud ne každý bod v rámci ohraničující obdélník je po kliknutí a provést specializované přístupů testování přepsat a zadat bod umožňující kliknutí.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Datové položky|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvek položky dat musí být vždy obsahu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek položky dat musí být vždy ovládacího prvku.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|V části poznámky.|Pokud ovládací prvek může získat fokus klávesnice, musí podporovat tuto vlastnost.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|V části poznámky.|Pokud ovládací prvek obsahuje stav, který je aktualizován dynamicky musí tato vlastnost podporována, tak, aby technologie pro usnadnění můžete dostávat aktualizace, když se změní stav elementu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemTypeProperty>|V části poznámky.|To je řetězcovou hodnotu, která přenáší koncovému uživateli základní objekt, který představuje položku. Příklady jsou "Mediálního souboru" nebo "Obraťte se na".|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Ovládací prvky položek dat nemají popisek statický text.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"datová položka"|Lokalizovaný řetězec odpovídající typ ovládacího prvku DataItem.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Ovládací prvek položky dat vždy obsahuje element primární text, který má vztah k co uživatel přidružit jako největší sémantické identifikátor pro položku.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Viz poznámky.|Hodnota této vlastnosti musí být jedinečná napříč všemi ovládacími prvky v aplikaci.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Viz poznámky.|Vnější obdélník, který obsahuje celý ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Viz poznámky.|Podporováno, pokud je ohraničen obdélník. Pokud není k dispozici žádný bod v ohraničujícím obdélníku a provádíte specializované testování přístupů, přepíšete a získáte bod, který je k dispozici.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|DataItem|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvek datové položky musí být vždy obsah.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek datové položky musí být vždy ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Viz poznámky.|Pokud ovládací prvek může obdržet fokus klávesnice, musí podporovat tuto vlastnost.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|Viz poznámky.|Pokud ovládací prvek obsahuje stav, který se dynamicky aktualizuje, musí být tato vlastnost podporovaná, aby technologie pro usnadnění mohli dostávat aktualizace, když se změní stav prvku.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemTypeProperty>|Viz poznámky.|Toto je řetězcová hodnota, která odpovídá koncovému uživateli základnímu objektu, který položka představuje. Příklady jsou "mediální soubor" nebo "kontakt".|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Ovládací prvky datové položky neobsahují statický textový popisek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"datová položka"|Lokalizovaný řetězec odpovídající typu ovládacího prvku DataItem.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Ovládací prvek datová položka obsahuje vždy primární textový prvek, který souvisí s tím, co by uživatel přidružil jako nejvíc sémantický identifikátor položky.|  
   
-<a name="_Required_UI_Automation_Control_Patterns"></a>   
-## <a name="required-ui-automation-control-patterns"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní vyžaduje  
- Následující tabulce jsou uvedeny [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] řídit vzory vyžaduje to, že všechny ovládací prvky dat položky. Další informace o vzorů ovládacích prvků naleznete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+## <a name="required-ui-automation-control-patterns"></a>Požadované vzory ovládacího prvku automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vzory ovládacích prvků, které musí být podporovány všemi ovládacími prvky datových položek. Další informace o vzorech ovládacích prvků naleznete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
-|– Vzor ovládacích prvků|Podpora|Poznámky|  
+|Vzor ovládacího prvku|Podpora|Poznámky|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závisí|Pokud datová položka můžete rozbalit nebo sbalit zobrazení a skrytí informace, musí se podporovat vzor Rozbalit sbalit.|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Závisí|Datové položky bude podporovat vzor položky mřížky, pokud je kolekce položek dat k dispozici v rámci kontejneru, který může být prostorově přejde položku k položce.|  
-|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|Závisí|Všechny datové položky podporují možnost být přesunut do oblasti zobrazení se vzorem posouvání položek při jejich datový kontejner obsahuje více položek, než se vejde na obrazovce.|  
-|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Ano|Všechny datové položky musí podporovat vzor výběru položky k označení při výběru položky.|  
-|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Závisí|Pokud datová položka je obsažena v datové mřížce typ ovládacího prvku se bude podporovat tento model.|  
-|<xref:System.Windows.Automation.Provider.IToggleProvider>|Závisí|Pokud datová položka obsahuje stavu, ve kterém můžete cyklicky.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Závisí|Pokud primární text položky dat je možné upravovat, musí se podporovat vzor hodnota.|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závislosti|Pokud lze datovou položku Rozbalit nebo sbalit pro zobrazení a skrytí informací, je nutné použít vzor rozbalit sbalení.|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Závislosti|Datové položky budou podporovat model položky mřížky, je-li kolekce datových položek k dispozici v rámci kontejneru, který může být prostorově převedený na položku.|  
+|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|Závislosti|Všechny položky dat podporují možnost posouvání v zobrazení pomocí vzoru posouvaných položek, když jejich kontejner dat obsahuje více položek, než lze na obrazovku vejít.|  
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Ano|Všechny položky dat musí podporovat vzor výběrové položky, který určuje, kdy je položka vybrána.|  
+|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Závislosti|Je-li datová položka obsažena v rámci typu ovládacího prvku datové mřížky, bude tento model podporovat.|  
+|<xref:System.Windows.Automation.Provider.IToggleProvider>|Závislosti|Pokud datová položka obsahuje stav, který může být cyklicky vytvořen.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|Závislosti|Pokud je primární text položky dat upravitelný, musí být podporován vzorec hodnoty.|  
   
-<a name="Working_with_Data_Items_in_Large_Lists"></a>   
-## <a name="working-with-data-items-in-large-lists"></a>Práce s datovými položkami v rozsáhlých seznamů  
- Dlouhé seznamy jsou často virtualizované v rámci dat [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] platformy, které pomáhají při výkonu. Z toho důvodu nelze použít klientů automatizace uživatelského rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] funkce dotazu k scrape obsah stromu úplné stejným způsobem, který lze uložit do jiných kontejnerů prvku. Klient by měl přejděte na položku do zobrazení (nebo rozbalit ovládací prvek zobrazíte všechny možnosti cenné) před přístupem kompletní informace z datové položky.  
+## <a name="working-with-data-items-in-large-lists"></a>Práce s datovými položkami ve velkých seznamech  
+ Rozsáhlé seznamy jsou často virtualizované data v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] rámci platforem, což pomáhá při výkonu. Z tohoto důvodu nemůže klient automatizace uživatelského rozhraní použít [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] funkci dotazu k vyřazení obsahu úplného stromu stejným způsobem jako v kontejnerech dalších položek. Klient by měl položku posunout na zobrazení (nebo rozšířit ovládací prvek tak, aby zobrazoval všechny důležité možnosti) před přístupem k plné sadě informací z datové položky.  
   
- Při volání metody `SetFocus` na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – element pro položky dat [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)] vrátí úspěšně a způsobit, že se na nastavení pro úpravy v rámci podstrom položky dat případ.  
+ Při volání `SetFocus` [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] u prvku pro datovou položku [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)] bude případ úspěšně vrácen a způsobí, že se fokus nastaví na Upravit v rámci podstromu datové položky.  
   
-<a name="Required_UI_Automation_Events"></a>   
-## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  
- Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vyžaduje to, že všechny položky ovládacích prvcích dat události. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+## <a name="required-ui-automation-events"></a>Požadované události automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které musí být podporovány všemi ovládacími prvky datových položek. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Událostí|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> události změny vlastnosti.|Požadováno|Žádný|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádný|  
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Závisí|Žádné|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> události změny vlastnosti.|Závisí|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>událost změny vlastnosti.|Závislosti|Žádné|  
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Požadováno|Žádný|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> události změny vlastnosti.|Závisí|Žádný|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> události změny vlastnosti.|Závisí|Žádný|  
+|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>událost změny vlastnosti.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>událost změny vlastnosti.|Závislosti|Žádné|  
   
-<a name="Data_Item_Control_Type_Example"></a>   
 ## <a name="dataitem-control-type-example"></a>Příklad typu ovládacího prvku DataItem  
- Následující obrázek ukazuje typ ovládacího prvku DataItem v ovládacím prvku zobrazení seznamu s podporou pro široké škály informací pro sloupce.  
+ Následující obrázek znázorňuje typ ovládacího prvku DataItem v ovládacím prvku zobrazení seznamu s podporou pro rozšířené informace pro sloupce.  
   
- ![Grafického ovládacího prvku zobrazení seznamu s dvěma datovými položkami](../../../docs/framework/ui-automation/media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
+ ![Obrázek ovládacího prvku zobrazení seznamu se dvěma datovými položkami](../../../docs/framework/ui-automation/media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
   
- Ovládací prvek zobrazení a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, které se vztahují na ovládací prvek položky dat se zobrazí níže. Vzory ovládacích prvků pro každý prvek automation jsou uvedeny v závorkách. Skupina "Contoso" je také součástí gridu hostitelský ovládací prvek mřížky dat.  
+ Zobrazení ovládacího prvku a zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahu stromové struktury, které se vztahují k ovládacímu prvku datová položka, se zobrazuje níže. Vzory ovládacích prvků pro každý element automatizace jsou uvedeny v závorkách. Skupina "contoso" je také součástí mřížky ovládacího prvku hostitele datové mřížky.  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – ovládací prvek zobrazení|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Strom – zobrazení obsahu|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Zobrazení stromového řízení|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Strom – zobrazení obsahu|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
-|-Skupiny "Contoso" (tabulky, mřížky)<br />-DataItem Receivable.doc "účty" (TableItem, Položka GridItem, prvků SelectionItem, vyvolat)<br />-Image "Účty Receivable.doc"<br />-Upravte "Name" (TableItem prvků GridItem, hodnota "Receivable.doc účtů")<br />-Upravit "Datum změny" (TableItem prvků GridItem, hodnota "8/25/2006 3:29 PM")<br />-Upravte "Velikost" (Položka GridItem TableItem, hodnota "11.0 KB)<br />-DataItem Payable.doc "účty" (TableItem, Položka GridItem, prvků SelectionItem, vyvolat)<br />-   ...|-Skupiny "Contoso" (tabulky, mřížky)<br />-DataItem Receivable.doc "účty" (TableItem, Položka GridItem, prvků SelectionItem, vyvolat)<br />-Image "Účty Receivable.doc"<br />-Upravte "Name" (TableItem prvků GridItem, hodnota "Receivable.doc účtů")<br />-Upravit "Datum změny" (TableItem prvků GridItem, hodnota "8/25/2006 3:29 PM")<br />-Upravte "Velikost" (Položka GridItem TableItem, hodnota "11.0 KB)<br />-DataItem Payable.doc "účty" (TableItem, Položka GridItem, prvků SelectionItem, vyvolat)<br />-   …|  
+|-Group "contoso" (tabulka, mřížka)<br />-DataItem "accounts. doc" (TableItem, GridItem, ovládacích SelectionItem, Invoke)<br />-Image "pohledávky. doc"<br />-Edit "Name" (TableItem; GridItem; value "Accounts pohledávky. doc")<br />-Edit "Date Modified" (TableItem; GridItem; value "8/25/2006 3:29 PM")<br />-Editing "size" (GridItem; TableItem; value "11,0 KB)<br />-DataItem "accounts. doc" (TableItem, GridItem, ovládacích SelectionItem, Invoke)<br />-   ...|-Group "contoso" (tabulka, mřížka)<br />-DataItem "accounts. doc" (TableItem, GridItem, ovládacích SelectionItem, Invoke)<br />-Image "pohledávky. doc"<br />-Edit "Name" (TableItem; GridItem; value "Accounts pohledávky. doc")<br />-Edit "Date Modified" (TableItem; GridItem; value "8/25/2006 3:29 PM")<br />-Editing "size" (GridItem; TableItem; value "11,0 KB)<br />-DataItem "accounts. doc" (TableItem, GridItem, ovládacích SelectionItem, Invoke)<br />-   …|  
   
- Pokud mřížky představuje seznam volitelných položek, může být typem ovládacího prvku ListItem místo typu ovládacího prvku DataItem vystavena odpovídající prvky uživatelského rozhraní. V předchozím příkladu prvky datové položky ("Účty Receivable.doc" a "Payable.doc účtů") ve skupině ("Contoso") lze vylepšit vystavení jako typy ovládacích prvků ListItem, protože tento typ už podporuje vzoru ovládacích prvků SelectionItem.  
+ Pokud Mřížka představuje seznam volitelných položek, mohou být příslušné prvky uživatelského rozhraní zpřístupněny pomocí typu ovládacího prvku ListItem místo typu ovládacího prvku DataItem. V předchozím příkladu je možné zlepšit prvky DataItem ("pohledávky. doc" a "accounts. doc") pod Group ("contoso") jejich vystavení jako typ ovládacího prvku ListItem, protože tento typ již podporuje vzor ovládacích prvků ovládacích SelectionItem.  
   
 ## <a name="see-also"></a>Viz také:
 

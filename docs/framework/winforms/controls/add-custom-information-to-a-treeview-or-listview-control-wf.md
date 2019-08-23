@@ -13,19 +13,19 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding custom information
 - TreeView control [Windows Forms], adding custom information
 ms.assetid: 68be11de-1d5b-430e-901f-cfbe48d14b19
-ms.openlocfilehash: 5f51744878da526147dd742e98117e8e87c94e20
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: f588a00c430eb1ae1f0cdcde6b7dd22f0c8671c5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052243"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956990"
 ---
 # <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a>Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)
-Můžete vytvořit odvozené uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládacího prvku nebo odvozené položky v <xref:System.Windows.Forms.ListView> ovládacího prvku. Odvození umožňuje přidejte všechna pole, které potřebujete, a také vlastní metody a konstruktory pro jejich zpracování. Jedno použití této funkce je připojit objekt zákazníků na jednotlivé položky seznamu nebo uzlu stromu. Příklady v tomto článku jsou určené pro <xref:System.Windows.Forms.TreeView> ovládacího prvku, ale stejný postup lze použít pro <xref:System.Windows.Forms.ListView> ovládacího prvku.  
+Můžete vytvořit odvozený uzel v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.TreeView> nebo <xref:System.Windows.Forms.ListView> v odvozené položce v ovládacím prvku. Odvození umožňuje přidat libovolná pole, která požadujete, a také vlastní metody a konstruktory pro jejich zpracování. Jedním z použití této funkce je připojení objektu zákazníka ke každému uzlu stromu nebo položce seznamu. Příklady jsou určeny pro <xref:System.Windows.Forms.TreeView> ovládací prvek, ale stejný přístup lze použít <xref:System.Windows.Forms.ListView> pro ovládací prvek.  
   
-### <a name="to-derive-a-tree-node"></a>K odvození uzlu stromu  
+### <a name="to-derive-a-tree-node"></a>Odvození uzlu stromu  
   
-- Vytvořte novou třídu uzlu, odvozený z <xref:System.Windows.Forms.TreeNode> třídu, která má vlastní pole do záznamu cesty souboru.  
+- Vytvořte novou třídu uzlu odvozenou ze <xref:System.Windows.Forms.TreeNode> třídy, která má vlastní pole pro záznam cesty k souboru.  
   
     ```vb  
     Class myTreeNode  
@@ -68,11 +68,11 @@ Můžete vytvořit odvozené uzel ve Windows Forms <xref:System.Windows.Forms.Tr
     };  
     ```  
   
-### <a name="to-use-a-derived-tree-node"></a>Určený uzel odvozené stromu  
+### <a name="to-use-a-derived-tree-node"></a>Použití odvozeného uzlu stromu  
   
-1. Nový uzel stromu odvozené můžete použít jako parametr pro volání funkce.  
+1. Nový odvozený stromový uzel můžete použít jako parametr pro volání funkce.  
   
-     V následujícím příkladu je cesta k umístění textového souboru nastavení složky Dokumenty. Důvodem je, že budete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace.  
+     V následujícím příkladu je cesta nastavená pro umístění textového souboru složkou Dokumenty. To proto, že můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci.  
   
     ```vb  
     ' You should replace the bold text file   
@@ -100,7 +100,7 @@ Můžete vytvořit odvozené uzel ve Windows Forms <xref:System.Windows.Forms.Tr
        "\\TextFile.txt")));  
     ```  
   
-2. Pokud jsou předány uzlu stromu a je typovaný jako <xref:System.Windows.Forms.TreeNode> třídy, je třeba přetypovat na odvozenou třídu. Přetypování je explicitní převod z jednoho typu objektu na jiný. Další informace o přetypování, naleznete v tématu [implicitní a explicitní převody](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), [přetypování a převody typu](~/docs/csharp/programming-guide/types/casting-and-type-conversions.md) (Visual C#), nebo [operátor přetypování: ()](/cpp/cpp/cast-operator-parens) () Vizuální C++).  
+2. Pokud jste předali uzel stromu a zadáte ho jako <xref:System.Windows.Forms.TreeNode> třídu, budete muset přetypovat na odvozenou třídu. Přetypování je explicitní převod z jednoho typu objektu na jiný. Další informace o přetypování naleznete v tématu [implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), přetypování [a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md) (Visual C#) nebo operátor přetypování [: ()](/cpp/cpp/cast-operator-parens) (vizuál C++).  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  

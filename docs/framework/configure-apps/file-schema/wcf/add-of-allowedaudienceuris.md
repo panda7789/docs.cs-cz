@@ -2,24 +2,24 @@
 title: <add> z <allowedAudienceUris>
 ms.date: 03/30/2017
 ms.assetid: 4e7b7637-e0ea-4a91-988f-6b6ef28d9fc3
-ms.openlocfilehash: a18305d2981b1a1c8cf56a9dfcbb14ab3ce1ff92
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 64f0dd5c97ddfcd2fffd8ff4820d02af8c1ced54
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607225"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926882"
 ---
 # <a name="add-of-allowedaudienceuris"></a>\<add> of \<allowedAudienceUris>
-Přidá cílový identifikátor Uri pro kterou <xref:System.IdentityModel.Tokens.SamlSecurityToken> token zabezpečení může služba je určená pro aby mohl být uznán platnou podle <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.  
+Přidá cílový identifikátor URI, pro který <xref:System.IdentityModel.Tokens.SamlSecurityToken> se pro token zabezpečení dá cílit, aby se dalo považovat za platný <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> v instanci.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<issuedTokenAuthentication>  
 \<allowedAudienceUris>  
-\<Přidat > – element pro \<allowedAudienceUris >  
+\<Přidat > element pro \<> AllowedAudienceUris  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Přidá cílový identifikátor Uri pro kterou <xref:System.IdentityModel.Tokens
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|allowedAudienceUri|Řetězec, který obsahuje cílový identifikátor Uri pro kterou <xref:System.IdentityModel.Tokens.SamlSecurityToken> token zabezpečení může služba je určená pro aby mohl být uznán platnou podle <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.|  
+|allowedAudienceUri|Řetězec, který obsahuje cílový identifikátor URI, pro který <xref:System.IdentityModel.Tokens.SamlSecurityToken> je možné cílit na token zabezpečení, aby mohl být považován za platný <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> v instanci.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,18 +45,18 @@ Přidá cílový identifikátor Uri pro kterou <xref:System.IdentityModel.Tokens
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowedAudienceUris>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowedaudienceuris.md)|Představuje sadu cílových identifikátorů URI, pro kterou <xref:System.IdentityModel.Tokens.SamlSecurityToken> token zabezpečení může služba je určená pro aby mohl být uznán platnou podle <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.|  
+|[\<allowedAudienceUris>](allowedaudienceuris.md)|Představuje kolekci cílových identifikátorů URI, pro které <xref:System.IdentityModel.Tokens.SamlSecurityToken> může být token zabezpečení zaměřen na to, aby mohl být považován za platný <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> v instanci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato kolekce měli použít ve federované aplikaci, která využívá služby tokenů zabezpečení (STS), která vydává <xref:System.IdentityModel.Tokens.SamlSecurityToken> tokeny zabezpečení. Když služba tokenů zabezpečení vydá token zabezpečení, můžete určit identifikátor URI webové služby, pro které je určen token zabezpečení tak, že přidáte <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> do tokenu zabezpečení. Umožňuje <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> pro příjemce webovou službu, chcete-li ověřit, že token vydaný zabezpečení je určený pro tuto webovou službu tak, že určíte, že tato kontrola se stane při následujícím způsobem:  
+ Tuto kolekci byste měli použít ve federované aplikaci, která využívá službu tokenů zabezpečení (STS), která vydává <xref:System.IdentityModel.Tokens.SamlSecurityToken> tokeny zabezpečení. Pokud služba STS vydá token zabezpečení, může zadat identifikátor URI webových služeb, pro které je token zabezpečení určen přidáním <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> do tokenu zabezpečení. To umožňuje <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> , aby webová služba příjemce ověřila, že vydaný token zabezpečení je určený pro tuto webovou službu, a to tak, že určí, že tato kontrola proběhne takto:  
   
-- Nastavte `audienceUriMode` atribut `<issuedTokenAuthentication>` k <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> nebo <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly>.  
+- `audienceUriMode` Nastavte atribut<xref:System.IdentityModel.Selectors.AudienceUriMode.Always> na nebo .<xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> `<issuedTokenAuthentication>`  
   
-- Zadejte sadu platné identifikátory URI, tak, že přidáte identifikátory URI do této kolekce.  
+- Zadejte sadu platných identifikátorů URI přidáním identifikátorů URI do této kolekce.  
   
  Další informace naleznete v tématu <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
   
- Další informace o použití tento prvek konfigurace, najdete v části [jak: Konfigurace pověření ve službě Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+ Další informace o použití tohoto konfiguračního prvku naleznete v tématu [How to: Konfigurace přihlašovacích údajů na](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)služba FS (Federation Service).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -67,8 +67,8 @@ Přidá cílový identifikátor Uri pro kterou <xref:System.IdentityModel.Tokens
 - <xref:System.ServiceModel.Configuration.AllowedAudienceUriElementCollection>
 - <xref:System.ServiceModel.Configuration.AllowedAudienceUriElement>
 - <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowedAudienceUris%2A>
-- [\<allowedAudienceUris>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowedaudienceuris.md)
-- [\<issuedTokenAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Postupy: Konfigurace pověření ve službě Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [\<allowedAudienceUris>](allowedaudienceuris.md)
+- [\<issuedTokenAuthentication>](issuedtokenauthentication-of-servicecredentials.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Postupy: Konfigurace přihlašovacích údajů na služba FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

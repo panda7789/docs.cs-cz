@@ -7,22 +7,22 @@ dev_langs:
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 803709c97309f9766b6a441f5521cdcd7504862f
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 3b8d84f8ea9cf8f94cb7a2b155c5d40c6de2979a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052505"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941701"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>Třída MissingInteropDataException (.NET Native)
-**.NET pro aplikace pro Windows pro Windows 10, jenom .NET Native**  
+**.NET pro aplikace pro Windows pro Windows 10, .NET Native jenom**  
   
- Výjimka, která je vyvolána při zařazování metoda ruční nazývá, ale metadata pro typ nebyl nalezen ve statické analýzy nebo do souboru direktiv modulu runtime.  
+ Výjimka, která je vyvolána při volání metody ručního zařazování, ale metadata pro typ nejsou nalezena statickou analýzou nebo v souboru direktiv modulu runtime.  
   
- **Namespace:** System.Runtime.CompilerServices  
+ **Hosting** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
->  `MissingInteropDataException` Třídy je určen pouze pro interní použití .NET Native řetězec nástroje. Není určena pro použití v kódu třetí strany ani by měl zpracování výjimek v kódu aplikace. Místo toho odstranit výjimky tak, že přidáte položky do vašich [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
+> `MissingInteropDataException` Třída je určena výhradně pro vnitřní použití řetězcem nástroje .NET Native. Není určena pro použití v kódu třetí strany, ani byste neměli zpracovávat výjimku v kódu aplikace. Místo toho výjimku Eliminujte přidáním položek do [souboru direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
@@ -34,50 +34,50 @@ ms.locfileid: "66052505"
   
 |Konstruktor|Popis|  
 |-----------------|-----------------|  
-|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Inicializuje novou instanci třídy `MissingInteropDataException` pomocí ID zprávy poskytnuté systémem, která popisuje chybu a typ, jejichž data se nenašel. Tento konstruktor je pro interní použití rozhraním pouze .NET Native řetězec nástroje.|  
+|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Inicializuje novou instanci `MissingInteropDataException` třídy pomocí ID zprávy zadané systémem, která popisuje chybu a typ, jehož data chybí. Tento konstruktor je určen pouze pro interní použití řetězcem nástroje .NET Native.|  
   
 ## <a name="properties"></a>Vlastnosti  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|`public IDictionary Data { get; }`|Získá kolekci dvojic klíč/hodnota, která poskytují další uživatelem definované informace o výjimce. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public string HelpLink { get; set; }`|Získá nebo nastaví odkaz na soubor nápovědy spojený s touto výjimkou. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public int HResult { get; protected set; }`|Získá nebo nastaví `HRESULT`, což je programový číselnou hodnotu, která je přiřazena určité výjimky. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public Exception InnerException { get; }`|Získá výjimku, která způsobila aktuální výjimku. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public string Message { get; }`|Získá zprávu s popisem aktuální výjimky. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public Type MissingType { get; private set; }`|Získá nebo nastaví typ, jejichž data se nenašel.|  
-|`public string Source { get; set; }`|Získá nebo nastaví název aplikace nebo objekt, který způsobil chybu. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public string StackTrace { get; }`|Získá řetězcovou reprezentaci okamžité rámce v zásobníku volání. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public MethodBase TargetSite { get; }`|Získá metody, která vyvolala aktuální výjimku. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public IDictionary Data { get; }`|Získá kolekci párů klíč/hodnota, které poskytují další uživatelsky definované informace o výjimce. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public string HelpLink { get; set; }`|Získá nebo nastaví odkaz na soubor s nápovědě spojený s touto výjimkou. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public int HResult { get; protected set; }`|Získá nebo nastaví `HRESULT`, což je kódovaná číselná hodnota, která je přiřazena k určité výjimce. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public Exception InnerException { get; }`|Získá výjimku, která způsobila aktuální výjimku. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public string Message { get; }`|Získá zprávu s popisem aktuální výjimky. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public Type MissingType { get; private set; }`|Získá nebo nastaví typ, jehož data chybí.|  
+|`public string Source { get; set; }`|Získá nebo nastaví název aplikace nebo objektu, který způsobil chybu. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public string StackTrace { get; }`|Načte řetězcovou reprezentaci okamžitých snímků v zásobníku volání. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public MethodBase TargetSite { get; }`|Získá metodu, která vyvolala aktuální výjimku. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`public bool Equals(Object obj)`|Určuje, zda se zadaný objekt rovná aktuálnímu objektu.  (Zděděno z <xref:System.Object>.)|  
-|`protected void Finalize()`|Umožňuje objektu pro pokus o uvolnění prostředků a provádět jiné operace čištění před je uvolněn systémem uvolňování paměti. (Zděděno z <xref:System.Object>.)|  
-|`public Exception GetBaseException()`|Vrací výjimku, která je hlavní příčinou jednu nebo více následujících výjimek. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public int GetHashCode()`|Vrátí hodnotu hash pro `MissingInteropDataException` instance.   (Zděděno z <xref:System.Object>.)|  
-|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|Nastaví <xref:System.Runtime.Serialization.SerializationInfo> objekt s informacemi o výjimce.  (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`public Type GetType()`|Získá typ runtime aktuální instance. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
-|`protected Object MemberwiseClone()`|Vytvoří Mělkou kopii aktuálního objektu. (Zděděno z <xref:System.Object>.)|  
-|`public string ToString()`|Vrátí řetězcovou reprezentaci aktuální výjimky. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public bool Equals(Object obj)`|Určuje, zda se zadaný objekt rovná aktuálnímu objektu.  (Zděděno <xref:System.Object>od.)|  
+|`protected void Finalize()`|Umožňuje objektu uvolnit prostředky a provést jiné operace čištění před tím, než se uvolní uvolňováním paměti. (Zděděno <xref:System.Object>od.)|  
+|`public Exception GetBaseException()`|Vrátí výjimku, která je hlavní příčinou jedné nebo více následných výjimek. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public int GetHashCode()`|Vrátí kód `MissingInteropDataException` hodnoty hash instance.   (Zděděno <xref:System.Object>od.)|  
+|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|<xref:System.Runtime.Serialization.SerializationInfo> Nastaví objekt s informacemi o výjimce.  (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`public Type GetType()`|Získá typ modulu runtime aktuální instance. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
+|`protected Object MemberwiseClone()`|Vytvoří kopii aktuálního objektu bez podstruktury. (Zděděno <xref:System.Object>od.)|  
+|`public string ToString()`|Vrátí řetězcovou reprezentaci aktuální výjimky. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
   
 ## <a name="events"></a>Události  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Nastane, pokud je serializována výjimku pro vytvoření objektu výjimky stavu, který obsahuje serializovaná data o výjimce. (Zděděno z <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Nastane, pokud je serializovaná výjimka pro vytvoření objektu stavu výjimky, který obsahuje Serializovaná data o výjimce. (Zděděno <xref:System.Exception?displayProperty=nameWithType>od.)|  
   
-## <a name="usage-details"></a>Podrobnosti o použití  
- `MissingInteropDataException` Je vyvolána výjimka při volání metody na komponentu COM nebo prostředí Windows Runtime není úspěšně provést, protože není k dispozici informace o typu.  
+## <a name="usage-details"></a>Podrobnosti o využití  
+ Výjimka `MissingInteropDataException` je vyvolána, pokud volání metody modelu COM nebo prostředí Windows Runtime nelze úspěšně provést, protože informace o typu nejsou k dispozici.  
   
- Metadata, která je k dispozici pro aplikace v době běhu je definován pomocí souboru modulu runtime direktivy (konfiguraci XML), *. rd.xml. Aby vaše aplikace na vyvolání této výjimky, je třeba upravit tento soubor k definování metadata, která musí být k dispozici v době běhu. Nejčastěji, tuto chybu vyřešíte tak, že přidáte `MarshalObject`, `MarshalDelegate`, nebo `MarshalStructure` atribut pro příslušnou aplikaci prvku v souboru direktivy modulu runtime. Informace o formátu tohoto souboru najdete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Metadata, která jsou k dispozici pro aplikaci za běhu, jsou definována v souboru direktiv modulu runtime (konfigurace XML) \*,. Rd. XML. Chcete-li zabránit vaší aplikaci v vyvolání této výjimky, je nutné upravit tento soubor, aby definoval metadata, která musí být přítomna v době běhu. Nejčastěji tuto chybu řešíte tak, že přidáte `MarshalObject`atribut, `MarshalDelegate`nebo `MarshalStructure` do vhodného prvku programu v souboru direktiv modulu runtime. Informace o formátu tohoto souboru naleznete v tématu reference ke [konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
->  Vzhledem k tomu, že tato výjimka označuje, že metadata aplikace není k dispozici v době běhu, by nemělo vyřizovat této výjimky v `try` / `catch` bloku. Místo toho by měl diagnostikovat příčinu chyby a eliminovat tak, že přidáte na příslušnou položku do souboru direktiv modulu runtime.  
+> Vzhledem k tomu, že tato výjimka označuje, že metadata potřebná vaší aplikací nejsou v době běhu k dispozici, neměli `try` byste tuto výjimku zpracovat v / `catch` bloku. Místo toho byste měli diagnostikovat příčinu výjimky a odstranit ji přidáním příslušné položky do souboru direktiv modulu runtime.  
   
- `MissingInteropDataException` Třída obsahuje jeden člen jedinečné, `MissingType` vlastnost, která určuje typ, jehož metadat je potřebná pro volání metody úspěšné. Všechny zbývající členy se dědí ze základní třídy <xref:System.Exception?displayProperty=nameWithType>.  
+ Třída obsahuje jediného jedinečného člena `MissingType` , vlastnost, která označuje typ, jehož metadata jsou zapotřebí pro úspěšné volání metody. `MissingInteropDataException` Všichni zbývající členové jsou děděni ze základní třídy <xref:System.Exception?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

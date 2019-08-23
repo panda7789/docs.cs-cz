@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bc8cd20a4183ffd002f1399b6b50c8956208a21b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 95dbaddc59a80b4f499a629dd00a52be678b4665
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868796"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910878"
 ---
 # <a name="securing-exception-handling"></a>Zabezpečení zpracování výjimek
-V jazyce Visual C++ a Visual Basic, výraz filtru zásobníkem dále spouští před jakoukoli **nakonec** příkazu. **Catch** bloku přidružené k tento filtr se spouští **nakonec** příkazu. Další informace najdete v tématu [Using User-Filtered výjimky](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md). Tento oddíl se zabývá bezpečnostních důsledcích tohoto pořadí. Vezměte v úvahu následující pseudokódu příklad, který znázorňuje pořadí, ve které příkazů filtru a **nakonec** příkazy.  
+V vizuálů C++ a Visual Basic výraz filtru podrobněji sestaví běh před jakýmkoli příkazem **finally** . Blok **catch** přidružený k tomuto filtru se spustí po příkazu **finally** . Další informace najdete v tématu [použití uživatelem filtrovaných výjimek](../../standard/exceptions/using-user-filtered-exception-handlers.md). V této části se prohlíží vlivem na zabezpečení tohoto pořadí. Vezměte v úvahu následující příklad pseudokódu, který znázorňuje pořadí, ve kterém se spouštějí příkazy filtru a příkazy **finally** .  
   
 ```cpp  
 void Main()   
@@ -51,7 +51,7 @@ void Sub()
 }                        
 ```  
   
- Tento kód zobrazí následující.  
+ Tento kód vytiskne následující.  
   
 ```  
 Throw  
@@ -60,7 +60,7 @@ Finally
 Catch  
 ```  
   
- Filtr spuštěn dříve, než **nakonec** příkazu, takže problémy se zabezpečením může být zavedené prostřednictvím cokoli, z čeho změnu, ve kterém by mohla využívat spuštění jiného kódu stavu. Příklad:  
+ Filtr se spustí před příkazem **finally** , takže problémy se zabezpečením mohou být provedeny cokoli, co provede změnu stavu, kde může využít jiný kód. Příklad:  
   
 ```cpp  
 try   
@@ -79,7 +79,7 @@ finally
 }  
 ```  
   
- Tato pseudokódu umožňuje vyšší zásobníkem spustit libovolný kód filtru. Další příklady operace, které by obsahovat podobný vliv jsou dočasné zosobnění jiného identitu, nastavení interní příznak, který obchází některé kontroly zabezpečení nebo změna jazykové verze přidružené vlákno. Doporučené řešení je zavést obslužná rutina výjimky k izolaci změn kódu stavu vlákna od bloky filtru volajícího. Ale je důležité, aby obslužná rutina výjimky správně zavést nebo tento problém nebude vyřešen. V následujícím příkladu se přepne jazykové verze uživatelského rozhraní, ale libovolnému druhu změny stavu vlákno může být vystavena podobně.  
+ Tento pseudokódu umožňuje filtru zvýšit množství zásobníku tak, aby běžel libovolný kód. Další příklady operací, které by měly podobný účinek, jsou dočasné zosobnění jiné identity, nastavení interního příznaku, který obchází určitou kontrolu zabezpečení nebo změnu jazykové verze přidružené k vláknu. Doporučené řešení je zavedení obslužné rutiny výjimky pro izolaci změn kódu do stavu vlákna z bloků filtru volajících. Je však důležité, aby obslužná rutina výjimky byla správně zavedena, nebo tento problém nebude vyřešen. Následující příklad přepne jazykovou verzi uživatelského rozhraní, ale jakýkoli druh změny stavu vlákna může být podobně vystavený.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -116,7 +116,7 @@ Thread.CurrentThread.CurrentUICulture)
 End Class  
 ```  
   
- Správné opravy v tomto případě je zabalit existující **zkuste**/**nakonec** blokovat **zkuste**/**catch** blok. Jednoduše Představujeme **catch throw** klauzuli do existujících **zkuste**/**nakonec** bloku problém neodstraní, jak je znázorněno v následujícím příkladu.  
+ Správná oprava v tomto případě je zabalit existující blok **Try**/**finally** do bloku **Try**/**catch** . Pouhým představením klauzule **catch-throw** do stávajícího bloku **Try**/**finally** nedojde k vyřešení problému, jak je znázorněno v následujícím příkladu.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -136,9 +136,9 @@ YourObject.YourMethod()
 }  
 ```  
   
- Tato akce neodstraní problém vzhledem k tomu **nakonec** ještě nebyl spuštěn příkaz `FilterFunc` získáním ovládacího prvku.  
+ Tím se problém nevyřeší, protože příkaz **finally** nebyl spuštěn před `FilterFunc` ovládacím prvkem Get.  
   
- V následujícím příkladu řeší problém tím, že zajišťuje, že **nakonec** klauzule byl proveden před nabízející bloky filtru výjimky volajícím.  
+ Následující příklad opravuje problém tím, že zajišťuje, že klauzule **finally** byla provedena před tím, než nabídka vyvolá výjimky v blocích filtru výjimky volajících.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -162,4 +162,4 @@ YourObject.YourMethod()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Pokyny pro zabezpečené kódování](../../standard/security/secure-coding-guidelines.md)

@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 750708483f9680745eef4531d86fa7ecaa329f51
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 4e28e8ccea1090e6a5704b541e09dc11681278ed
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301198"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920642"
 ---
-# <a name="sectiongroup-element-for-configsections"></a>\<sectionGroup > – element pro \<configSections >
+# <a name="sectiongroup-element-for-configsections"></a>\<sectionGroup – element > elementu \<pro configSections >
 
-Definuje obor názvů pro oddíly konfigurace.
+Definuje obor názvů pro konfigurační oddíly.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<sectionGroup>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -36,27 +36,27 @@ Definuje obor názvů pro oddíly konfigurace.
 
 |           | Popis |
 | --------- | ----------- |
-| **name**  | Požadovaný atribut.<br><br>Určuje název skupiny oddílů, které definujete. |
+| **name**  | Požadovaný atribut.<br><br>Určuje název skupiny oddílů, kterou definujete. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<část >** ](~/docs/framework/configure-apps/file-schema/section-element.md) | Obsahuje deklarace oddíl konfigurace. |
+| [ **\<> oddílu**](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Deklarace skupiny oddílů vytvoří značku kontejneru pro konfigurační oddíly a zajistí, že neexistují žádné zásady je v konfliktu s konfigurační oddíly funkce definované někým jiným. Je možné vnořovat  **\<sectionGroup >** elementů v rámci sebe navzájem.
+Deklarace skupiny oddílů vytvoří značku kontejneru pro konfigurační oddíly a zajistí, že nedojde ke konfliktu názvů s konfiguračními oddíly definovanými někým jiným. Můžete vnořit  **\<oddíly >** prvky mezi sebou.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak deklarovat skupiny oddílů a deklarovat oddíly v rámci skupiny oddílů:
+Následující příklad ukazuje, jak deklarovat skupinu oddílů a deklarovat oddíly v rámci skupiny oddílů:
 
 ```xml
 <configuration>
@@ -76,8 +76,8 @@ Následující příklad ukazuje, jak deklarovat skupiny oddílů a deklarovat o
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

@@ -10,30 +10,30 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46865e398c3868e21b743cf45f42e8b9063a0cbe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b5cf6f0ae66141957d545134a2f8ff8eb799097
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666622"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946455"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
-Tato ukázka obsahuje ukázková data ve formátu .csv, společně s metodami, které transformují do kolekce v paměti zákazníky, produkty, objednávek a podrobnostmi o objednávce. Pro další pokusy pomocí jazyka PLINQ můžete vložit příklady kódů z některých dalších témat, která do kódu v tomto tématu a vyvolat z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
+Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které ji transformují na kolekce v paměti pro zákazníky, produkty, objednávky a podrobnosti objednávky. Pro další experiment s PLINQ můžete vložit příklady kódu z některých dalších témat do kódu v tomto tématu a vyvolat ho z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
   
- Data představují podmnožinu databázi Northwind. Záznamy o zákaznících padesát (50) jsou zahrnuty, ale ne všechna pole. Součástí je podmnožinou řádků z objednávky a odpovídající data z Order_Detail pro každý zákazník. Všechny produkty jsou zahrnuty.  
+ Data představují podmnožinu databáze Northwind. 50 (50) záznamy o zákaznících, ale ne všechna pole. Zahrnuje se podmnožina řádků z objednávek a odpovídajících Order_Detail dat pro každého zákazníka. Jsou zahrnuty všechny produkty.  
   
 > [!NOTE]
->  Datové sady není dostatečně velký, aby prokázat, že PLINQ je rychlejší než LINQ to Objects dotazů, které obsahují pouze základní `where` a `select` klauzule. Sledovat, zvyšuje rychlost pro malé datové sady takovou situaci, pomocí dotazů, které obsahují výpočetně náročné operace na každý prvek v datové sadě.  
+> Sada dat není dostatečně velká, aby ukázala, že PLINQ je rychlejší než LINQ to Objects pro dotazy, které obsahují `where` pouze `select` základní a klauzule. Chcete-li sledovat rychlost růstu malých datových sad, jako je například, použijte dotazy, které obsahují výpočetně náročné operace u každého prvku v sadě dat.  
   
-### <a name="to-set-up-this-sample"></a>Nastavit tuto ukázku  
+### <a name="to-set-up-this-sample"></a>Nastavení této ukázky  
   
-1. Vytvoření projektu konzolové aplikace jazyka Visual Basic nebo Visual C#.  
+1. Vytvořte projekt aplikace Visual Basic nebo C# Visual Console.  
   
-2. Nahraďte obsah Module1.vb nebo souboru Program.cs kódem, který zahrnuje následující kroky.  
+2. Nahraďte obsah Module1. vb nebo Program.cs pomocí kódu, který následuje po tomto postupu.  
   
-3. Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **textový soubor** a potom klikněte na tlačítko **OK**. Zkopírujte data v tomto tématu a následně jej vložte do nového textového souboru. Na **souboru** nabídky, klikněte na tlačítko **Uložit**, pojmenujte soubor Plinqdata.csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
+3. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**. Vyberte **textový soubor** a pak klikněte na **OK**. Zkopírujte data v tomto tématu a vložte je do nového textového souboru. V nabídce **soubor** klikněte na **Uložit**, pojmenujte soubor Plinqdata. csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
   
-4. Stiskněte klávesu F5, chcete-li ověřit, že projekt vytvoří a spustí správně. V okně konzoly byste zobrazí následující výstup.  
+4. Stisknutím klávesy F5 ověřte, zda je projekt správně sestaven a spuštěn. Následující výstup by měl být zobrazen v okně konzoly.  
   
     ```  
     Customer count: 50  

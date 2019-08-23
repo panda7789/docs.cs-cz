@@ -2,15 +2,15 @@
 title: <net.tcp>
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: 589bae5d1f91e0424eb19cee62fe758aa7846191
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63cef2b85aa57b5c1c0e0add1794ebedc73d96c1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772330"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933053"
 ---
 # <a name="nettcp"></a>\<net.tcp>
-Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umožňuje sdílet stejný port TCP mezi více procesy.  
+Určuje nastavení konfigurace pro NET. Služba sdílení portů TCP, která umožňuje více procesů sdílet stejný port TCP.  
   
  \<system.serviceModel.activation>  
 \<net.tcp>  
@@ -42,7 +42,7 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
 </configuration>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -52,29 +52,29 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`listenBacklog`|Celé číslo určující maximální počet nevyřízených připojení, které jsou přijaty od sdíleného připojení, ale ještě nebyly odeslány do služby Windows Communication Foundation (WCF). Výchozí hodnota je 10.|  
-|`maxPendingAccepts`|Celé číslo, které určuje maximální počet souběžně otevřených přijímacích vláken na koncový bod naslouchací služby pro sdílení. Výchozí hodnota je 2.|  
-|`MaxPendingConnections`|Maximální počet připojení, která mohou v naslouchacím čekat na přijetí aplikací. Při překročení této kvóty hodnoty nové příchozí připojení jsou vynechány místo čekat na přijetí. Připojení funkce, jako je zabezpečení zpráv můžete donutit klienta k otevření více než jedno připojení. Správci služeb by měl účet pro tyto další připojení při nastavování této hodnoty kvóty. Výchozí hodnota je 10.|  
-|`receiveTimeout`|A <xref:System.TimeSpan> , který určuje časový limit pro vytváření datových rámců a jejich odesílání z přidružených připojení. Výchozí hodnota je "00: 00:10".|  
-|`teredoEnabled`|Logická hodnota, která označuje, zda služba Sdílení portů používá službu Microsoft Teredo pro naslouchání na portech TCP, jménem služby WCF. Výchozí hodnota je `false`.|  
+|`listenBacklog`|Celé číslo určující maximální počet nevyřízených připojení, které jsou přijímány ze sdíleného připojení, ale ještě nebyly odeslány do služeb Windows Communication Foundation (WCF). Výchozí hodnota je 10.|  
+|`maxPendingAccepts`|Celé číslo, které určuje maximální počet nedokončených souběžných přijímajících vláken na koncovém bodu naslouchání pro službu sdílení. Výchozí hodnota je 2.|  
+|`MaxPendingConnections`|Maximální počet připojení, která naslouchací proces mohl čekat na přijetí aplikací. Pokud je tato hodnota kvóty překročena, jsou nová příchozí připojení vynechána, ale čekají na přijetí. Funkce připojení, jako je například zabezpečení zprávy, mohou způsobit, že klient může otevřít více než jedno připojení. Správci služeb by měli při nastavení této kvóty brát v úvahu tato další připojení. Výchozí hodnota je 10.|  
+|`receiveTimeout`|A <xref:System.TimeSpan> určuje časový limit pro čtení dat rámců a provádění odesílání připojení z připojení s podtržením. Výchozí hodnota je "00:00:10".|  
+|`teredoEnabled`|Logická hodnota, která označuje, zda služba sdílení portů používá službu Microsoft Teredo pro naslouchání na portech TCP jménem služeb WCF. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atributy uživatelské účty pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.|  
+|[\<allowAccounts>](allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atribut pro určení uživatelských účtů pro procesy, které hostují služby WCF, a kterým je udělen přístup k připojení ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Obsahuje nastavení konfigurace pro naslouchací proces SMSvcHost.exe.|  
+|[\<system.serviceModel.activation>](system-servicemodel-activation.md)|Obsahuje nastavení konfigurace procesu naslouchacího procesu SMSvcHost. exe.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o sdílení portů najdete v tématu [sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md). Postup konfigurace služby Sdílení portů najdete v tématu [konfigurace služby Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).  
+ Další informace o sdílení portů najdete v tématu [Sdílení portů Net. TCP](../../../wcf/feature-details/net-tcp-port-sharing.md). Informace o tom, jak nakonfigurovat službu sdílení portů, najdete v tématu [Konfigurace služby sdílení portů Net. TCP](../../../wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activation.Configuration.NetTcpSection>
-- [Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
-- [Konfigurace služby sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
+- [Sdílení portů Net.TCP](../../../wcf/feature-details/net-tcp-port-sharing.md)
+- [Konfigurace služby sdílení portů Net.TCP](../../../wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)

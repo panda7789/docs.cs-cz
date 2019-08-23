@@ -11,45 +11,45 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - elements [.NET Framework], trace and debug settings
 ms.assetid: 277ca5f6-e1c4-41b6-a47f-3a67ce5b94ac
-ms.openlocfilehash: 79054ba450dcab1a18562aaadd71b9171896c1e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 037d08b33e9aa6a64d236b36ebcf821b604b03df
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701395"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927123"
 ---
 # <a name="trace-and-debug-settings-schema"></a>Trasování a ladění schématu nastavení
-Nastavení trasování a ladění zadejte naslouchací procesy trasování, které shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.  
+Nastavení trasování a ladění určují naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.  
   
- Následující tabulka popisuje funkce každého prvku nastavení ladění a trasování.  
+ Následující tabulka popisuje funkci každého prvku nastavení trasování a ladění.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-source.md)|Přidá naslouchací proces pro `Listeners` kolekci pro zdroj trasování.|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|Přidá naslouchací proces pro `Listeners` kolekce.|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-sharedlisteners.md)|Přidá naslouchací proces pro `sharedListeners` kolekce.|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-switches.md)|Určuje úroveň, kde je nastaven přepínač trasování.|  
-|[\<assert>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.|  
-|[\<clear>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-source.md)|Vymaže `Listeners` kolekci pro zdroj trasování.|  
-|[\<clear>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)|Vymaže `Listeners` kolekce pro trasování.|  
-|[\<Filtr >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-source.md)|Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasování.|  
-|[\<Filtr >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-trace.md)|Přidá filtr do naslouchacího procesu v `Listeners` kolekce pro trasování.|  
-|[\<Filtr >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-sharedlisteners.md)|Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Určuje naslouchací procesy pro `Listeners` kolekci pro zdroj trasování.|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací procesy pro `Listeners` kolekce pro trasování.|  
-|[\<performanceCounters>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)|Určuje velikost globální paměť sdílenou čítače výkonu.|  
-|[\<remove>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)|Odebere z naslouchacího procesu `Listeners` kolekce pro trasování.|  
-|[\<remove>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-source.md)|Odebere z naslouchacího procesu `Listeners` kolekci pro zdroj trasování.|  
-|[\<sharedListeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)|Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – element může odkazovat.|  
-|[\<sources>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|Obsahuje zdrojů trasování, které se zahájí trasovací zprávy.|  
-|[\<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|Určuje zdroj trasování, který iniciuje trasovací zprávy.|  
-|[\<switches>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|Obsahuje přepínače trasování a úrovně, ve kterém jsou nastavené přepínačů trasování.|  
-|[\<system.diagnostics>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|[\<trace>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.|  
+|[\<add>](add-element-for-listeners-for-source.md)|Přidá naslouchací proces do `Listeners` kolekce pro zdroj trasování.|  
+|[\<add>](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do `Listeners` kolekce.|  
+|[\<add>](add-element-for-sharedlisteners.md)|Přidá naslouchací proces do `sharedListeners` kolekce.|  
+|[\<add>](add-element-for-switches.md)|Určuje úroveň, kde je nastaven přepínač trasování.|  
+|[\<assert>](assert-element.md)|Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metody zobrazit okno se zprávou. určuje také název souboru, do kterého budou zapsány zprávy.|  
+|[\<clear>](clear-element-for-listeners-for-source.md)|`Listeners` Vymaže kolekci zdroje trasování.|  
+|[\<clear>](clear-element-for-listeners-for-trace.md)|`Listeners` Vymaže kolekci pro Trace.|  
+|[\<Filtrovat >](filter-element-for-add-for-listeners-for-source.md)|Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasování.|  
+|[\<Filtrovat >](filter-element-for-add-for-listeners-for-trace.md)|Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro trasování.|  
+|[\<Filtrovat >](filter-element-for-add-for-sharedlisteners.md)|Přidá filtr do naslouchacího procesu v `sharedListeners` kolekci.|  
+|[\<> naslouchací proces](listeners-element-for-source.md)|Určuje naslouchací procesy pro `Listeners` kolekci pro zdroj trasování.|  
+|[\<> naslouchací proces](listeners-element-for-trace.md)|Určuje naslouchací procesy pro `Listeners` kolekci pro trasování.|  
+|[\<performanceCounters>](performancecounters-element.md)|Určuje velikost globální paměti sdílené čítači výkonu.|  
+|[\<remove>](remove-element-for-listeners-for-trace.md)|Odebere naslouchací proces z `Listeners` kolekce pro trasování.|  
+|[\<remove>](remove-element-for-listeners-for-source.md)|Odebere naslouchací proces z `Listeners` kolekce pro zdroj trasování.|  
+|[\<> sharedListeners](sharedlisteners-element.md)|Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace.|  
+|[\<> zdrojů](sources-element.md)|Obsahuje zdroje trasování, které spouštějí trasovací zprávy.|  
+|[\<> zdroje](source-element.md)|Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
+|[\<switches>](switches-element.md)|Obsahuje přepínače trasování a úroveň, kde jsou nastaveny přepínače trasování.|  
+|[\<system.diagnostics>](system-diagnostics-element.md)|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|[\<trace>](trace-element.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.Debug>
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru](../index.md)

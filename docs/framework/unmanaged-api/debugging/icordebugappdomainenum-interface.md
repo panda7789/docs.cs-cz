@@ -16,36 +16,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da1fc949109455cf50767191a99a8a727116f77c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c48c222a34e2e78f29c33e49da331d97d409bae1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989505"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949749"
 ---
 # <a name="icordebugappdomainenum-interface"></a>ICorDebugAppDomainEnum – rozhraní
 
-Poskytuje `Next` metodu, která vrací zadaný počet `ICorDebugAppDomainEnum` hodnot počínaje na dalším místě ve výčtu. Toto rozhraní je podtřídou třídy "ICorDebugEnum".  
+Poskytuje metodu, která vrací zadaný `ICorDebugAppDomainEnum` počet hodnot od dalšího umístění ve výčtu. `Next` Toto rozhraní je podtřídou třídy "ICorDebugEnum".  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-next-method.md)|Zadaný počet domén aplikace získá z kolekce, spouští se na aktuální pozici kurzoru.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-next-method.md)|Načte zadaný počet aplikačních domén z kolekce počínaje aktuální pozicí kurzoru.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

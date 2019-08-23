@@ -3,27 +3,27 @@ title: <variable>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 46cc8cbc-10ec-4625-8813-3f5cd6c6afde
-ms.openlocfilehash: c85f3c57739c48566c97c8b1debfb7f2c3912bdf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8f66f950db1edf8cd6ec21400785fb7e01b878e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613518"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947266"
 ---
-# <a name="variable"></a>\<Proměnná >
+# <a name="variable"></a>\<> proměnných
 Představuje kolekci proměnných spojených s Tento dotaz aktivity.  
   
- Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
+ Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md).  
   
 \<system.serviceModel>  
 \<sledování >  
 \<profiles>  
-\<trackingProfile>  
-\<pracovní postup >  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
 \<activityStateQueries>  
 \<activityStateQuery>  
-\<proměnné >  
-\<Proměnná >  
+\<> proměnných  
+\<> proměnných  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,10 +58,10 @@ Představuje kolekci proměnných spojených s Tento dotaz aktivity.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Proměnná >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/variable.md)|Proměnná přidruženého k dotazu stavu aktivity.|  
+|[\<> proměnných](variable.md)|Proměnná přidruženého k dotazu stavu aktivity.|  
   
 ## <a name="remarks"></a>Poznámky  
- Jeden jedinečné funkce ActivityStateQuery je schopnost extrahování dat při sledování provádění pracovního postupu. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. Můžete použít [ \<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) a [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) prvků, které mají extrahovat všechny proměnné nebo argumentu v jakékoli aktivitě v pracovním postupu. Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován. Proměnné a argumenty může být extrahována pouze pomocí ActivityStateRecord a tedy přihlášení k odběru v rámci sledovacích profilu pomocí [ \<activityStateQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).  
+ Jeden jedinečné funkce ActivityStateQuery je schopnost extrahování dat při sledování provádění pracovního postupu. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. Můžete použít [ \<argumenty >](arguments.md), [ \<stavy >](states.md) a [ \<>](states.md) prvky pro extrakci jakékoli proměnné nebo argumentu z jakékoli aktivity v pracovním postupu. Následující příklad ukazuje dotaz na stav aktivity, který extrahuje proměnné a argumenty při vygenerování `Closed` záznamu sledování aktivity. Proměnné a argumenty lze extrahovat pouze pomocí ActivityStateRecord, a proto jsou přihlášeni v rámci sledovacího profilu pomocí [ \<> ActivityStateQuery](activitystatequery.md).  
   
 ```xml  
 <activityStateQuery activityName="SendEmailActivity">  
@@ -81,5 +81,5 @@ Představuje kolekci proměnných spojených s Tento dotaz aktivity.
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.VariableElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

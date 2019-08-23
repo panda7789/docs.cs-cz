@@ -2,20 +2,20 @@
 title: <add> z <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 399fc4e22a9253469a5494af61dac862e33814a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7975bea1435abdb77528628e7b96c65a72cbbc2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704541"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926688"
 ---
-# <a name="add-of-filters"></a>\<Přidat > z \<filtry >
-Filtr XPath určující druh zaznamenávané zprávy.  
+# <a name="add-of-filters"></a>\<Přidat > \<filtrů >
+Filtr XPath určující druh zprávy, která má být zaznamenána.  
   
  \<system.ServiceModel>  
-\<diagnostic>  
-\<messageLogging>  
-\<Filtry >  
+\<> diagnostiky  
+\<messageLogging >  
+\<> filtrů  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,7 +33,7 @@ Filtr XPath určující druh zaznamenávané zprávy.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|filtrování|Řetězec určující dotaz na dokument jazyka XML, definován výrazem jazyka XPath 1.0. Další informace naleznete v tématu <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
+|filtrování|Řetězec, který určuje dotaz na dokumentu XML, který je definován výrazem XPath 1,0. Další informace naleznete v tématu <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,19 +42,19 @@ Filtr XPath určující druh zaznamenávané zprávy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters.md)|Obsahuje kolekci filtrů XPath umožňují určit, jaký druh zprávy se protokoluje.|  
+|[\<Filtry>](filters.md)|Obsahuje kolekci filtrů XPath používaných k řízení toho, jaký druh zprávy je protokolován.|  
   
 ## <a name="remarks"></a>Poznámky  
- Filtry se použijí pouze na transportní vrstvě, určené `logMessagesAtTransportLevel` je `true`. Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.  
+ Filtry se aplikují jenom na transportní vrstvě, kterou `logMessagesAtTransportLevel` `true`určuje. Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.  
   
- Chcete-li přidat filtr do kolekce, použijte `add` – klíčové slovo. Když jsou definovány jeden nebo více filtrů, jsou protokolovány jen zprávy, které odpovídají alespoň jeden z filtrů. Pokud není definován žádný filtr, všechny zprávy předávání.  
+ Chcete-li přidat filtr do kolekce, použijte `add` klíčové slovo. Při definování jednoho nebo více filtrů jsou protokolovány pouze zprávy, které odpovídají alespoň jednomu z filtrů. Pokud není definován žádný filtr, všechny zprávy procházejí.  
   
- Filtry podporuje úplnou syntaxi XPath a nastavení se použijí v pořadí, ve kterém se zobrazují v konfiguračním souboru. Filtr syntakticky nesprávný výsledkem výjimka v konfiguraci.  
+ Filtry podporují úplnou syntaxi XPath a jsou aplikovány v pořadí, v jakém jsou uvedeny v konfiguračním souboru. Syntakticky nesprávný filtr má za následek výjimku konfigurace.  
   
- Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají oddíl hlavičky SOAP.  
+ Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají hlavičku SOAP.  
   
 ## <a name="example"></a>Příklad  
- Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají oddíl hlavičky SOAP.  
+ Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají hlavičku SOAP.  
   
 ```xml  
 <messageLogging logEntireMessage="true"
@@ -79,5 +79,5 @@ Filtr XPath určující druh zaznamenávané zprávy.
 - <xref:System.ServiceModel.Configuration.MessageLoggingElement.Filters%2A>
 - <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>
 - <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>
-- [Konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
-- [\<messageLogging>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
+- [Konfigurace protokolování zpráv](../../../wcf/diagnostics/configuring-message-logging.md)
+- [\<messageLogging >](messagelogging.md)

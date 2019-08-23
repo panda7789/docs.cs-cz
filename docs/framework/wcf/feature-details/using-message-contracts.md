@@ -7,37 +7,37 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-ms.openlocfilehash: 829bdda3f3302d8d3c41e704dc8caf88720d1ebc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 18d0ea97f1de40044d40fa85c9792c809fb73346
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637598"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959885"
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
-Obvykle při vytváření aplikací Windows Communication Foundation (WCF), vývojáři pozornosti datových struktur a problémům se serializací a není nutné starat struktura zpráv, ve kterých se provádí s data. V případě těchto aplikací je jednoduché vytváření kontraktů dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
+Obvykle při sestavování aplikací Windows Communication Foundation (WCF), vývojáři účtují téměř pozor na datové struktury a problémy serializace a nepotřebují se k tomu zabývat strukturou zpráv, ve kterých jsou data přenášena. Pro tyto aplikace je vytvoření kontraktů dat pro parametry nebo návratové hodnoty jednoduché. (Další informace najdete v tématu [určení přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
   
- Ale někdy úplnou kontrolu nad strukturou zprávu protokolu SOAP je stejně důležité jako kontrolu nad jeho obsah. To platí zejména při zajištění lepší interoperability je důležité nebo konkrétně řízení zabezpečení problémy na úrovni zprávy nebo část zprávy. V těchto případech můžete vytvořit *kontraktu zprávy* , který umožňuje určit strukturu přesné zprávu protokolu SOAP vyžaduje.  
+ Někdy však kompletní řízení nad strukturou zprávy SOAP je stejně důležité jako řízení obsahu. To platí hlavně v případě, že je vzájemná funkční spolupráce, nebo pro konkrétní řízení problémů zabezpečení na úrovni zprávy nebo části zprávy. V těchto případech můžete vytvořit *kontrakt zprávy* , který vám umožní určit strukturu přesné požadované zprávy SOAP.  
   
- Toto téma popisuje, jak použít různé atributy kontraktu zprávy k vytvoření kontraktu zprávy specifické pro vaši operaci.  
+ Toto téma popisuje, jak používat různé atributy kontraktů zpráv k vytvoření konkrétního kontraktu zprávy pro vaši operaci.  
   
 ## <a name="using-message-contracts-in-operations"></a>Použití kontraktů zpráv v operacích  
- WCF podporuje operace vymodelován buď *vzdálené volání (procedur RPC) styl* nebo *zasílání zpráv styl*. V operaci stylu RPC, můžete použít libovolný serializovatelný typ., a budete mít přístup k funkcím, které jsou k dispozici pro místní volání, jako je například více parametrů a `ref` a `out` parametry. V tomto stylu forma serializace zvolit řídí strukturu dat v podkladové zprávy a zprávy, které mají podporovat operaci, vytvoří modul runtime WCF. To umožňuje vývojářům, kteří nejsou obeznámeni s SOAP a zpráv SOAP rychle a snadno vytvářet a používat služby aplikace.  
+ Služba WCF podporuje operace modelované buď ve *stylu vzdáleného volání procedur (RPC)* , nebo ve *stylu zasílání zpráv*. Ve stylu operace RPC můžete použít libovolný serializovatelný typ a máte přístup k funkcím, které jsou k dispozici pro místní volání, jako je například více parametrů a `ref` `out` parametrů. V tomto stylu je zvolena forma serializace ovládací prvky struktury dat v podkladových zprávách a modul runtime WCF vytvoří zprávy pro podporu operace. To umožňuje vývojářům, kteří nejsou obeznámeni se zprávami SOAP a SOAP, rychle a snadno vytvářet a používat aplikace služby.  
   
- Následující příklad kódu ukazuje operaci služby modelována ve stylu RPC.  
+ Následující příklad kódu ukazuje operaci služby modelované ve stylu RPC.  
   
 ```csharp  
 [OperationContract]  
 public BankingTransactionResponse PostBankingTransaction(BankingTransaction bt);  
 ```  
   
- Za normálních okolností kontraktu dat. stačí definovat schéma pro zprávy. Například v předchozím příkladu je dostatečné pro většinu aplikací Pokud `BankingTransaction` a `BankingTransactionResponse` mít kontraktů dat zadat obsah základní zprávy protokolu SOAP. Další informace o kontraktech dat najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Obvykle je kontrakt dat dostačující k definování schématu pro zprávy. Například v předchozím příkladu je dostačující pro většinu aplikací, pokud `BankingTransaction` a `BankingTransactionResponse` mají kontrakty dat k definování obsahu podkladových zpráv SOAP. Další informace o kontraktech dat najdete v tématu [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
- Ale čas od času je potřeba přesně řídit, jak přenést struktura zprávu protokolu SOAP přenosu. Nejběžnější scénář je vložení vlastní hlavičky SOAP. Další z typických možností je, který je definování zabezpečení vlastností záhlaví a text zprávy, se rozhodnout, jestli tyto prvky jsou digitálně podepsané a šifrovaná. A konečně některé balíčky třetích stran SOAP vyžadují zpráv v určitém formátu. Operace zasílání zpráv ve stylu poskytují tohoto ovládacího prvku.  
+ Občas ale je nutné přesně určit, jak se struktura zprávy protokolu SOAP přenáší přes síťový kabel. Nejběžnější scénář pro toto je vložení vlastních hlaviček SOAP. Dalším běžným scénářem je definování vlastností zabezpečení pro záhlaví a text zprávy, to znamená, abyste se rozhodli, jestli jsou tyto prvky digitálně podepsané a šifrované. Nakonec některé zásobníky SOAP jiných výrobců vyžadují, aby zprávy byly v konkrétním formátu. Tento ovládací prvek poskytuje operace stylu zasílání zpráv.  
   
- Operace zasílání zpráv ve stylu má maximálně jeden parametr a návratové hodnoty jednoho kde oba typy jsou typy zpráv; To znamená že serializovat přímo do struktury zadané zprávy protokolu SOAP. To může být libovolný typ označené <xref:System.ServiceModel.MessageContractAttribute> nebo <xref:System.ServiceModel.Channels.Message> typu. Následující příklad kódu ukazuje operaci podobně jako v předchozím stylu RCP, ale zasílání zpráv styl, který používá.  
+ Operace ve stylu zasílání zpráv má maximálně jeden parametr a jednu návratovou hodnotu, kde jsou oba typy zprávy. To znamená, že jsou serializovány přímo do zadané struktury zpráv SOAP. Může to být libovolný typ označený <xref:System.ServiceModel.MessageContractAttribute> jako <xref:System.ServiceModel.Channels.Message> typ nebo. Následující příklad kódu ukazuje operaci podobnou předchozímu stylu RCP, ale používá styl zasílání zpráv.  
   
- Například pokud `BankingTransaction` a `BankingTransactionResponse` se oba typy kontraktů zpráv, pak kód v následující operace je platná.  
+ Například pokud `BankingTransaction` a `BankingTransactionResponse` jsou oba typy, které jsou kontrakty zpráv, je kód v následujících operacích platný.  
   
 ```csharp  
 [OperationContract]  
@@ -48,7 +48,7 @@ void Store(BankingTransaction bt);
 BankingTransactionResponse GetResponse();  
 ```  
   
- Následující kód je však neplatný.  
+ Následující kód však není platný.  
   
 ```csharp  
 [OperationContract]  
@@ -59,14 +59,14 @@ void Reconcile(BankingTransaction bt1, BankingTransaction bt2);
 // Invalid, there is more than one parameter.  
 ```  
   
- Pro jakoukoli operaci, která zahrnuje typ kontraktu zprávy a není, proveďte jeden z platných vzorů je vyvolána výjimka. Samozřejmě operace, které nezahrnují typy kontraktů zpráv se nevztahují tato omezení.  
+ Výjimka je vyvolána pro všechny operace, které zahrnují typ kontraktu zprávy a které nenásledují po jednom z platných vzorů. Samozřejmě operací, které nezahrnují typy kontraktů zpráv, se tyto omezení nevztahují.  
   
- Pokud je typ kontraktu zprávy a kontraktem dat, pouze jeho kontraktu zprávy se považuje za při použití typu v rámci operace.  
+ Pokud typ obsahuje kontrakt zprávy i kontrakt dat, je při použití daného typu v rámci operace zvážen pouze jeho kontrakt zprávy.  
   
 ## <a name="defining-message-contracts"></a>Definování kontraktů zpráv  
- K definování kontraktu zprávy pro typ (to znamená, chcete-li definovat mapování mezi typem a obálku protokolu SOAP), použít <xref:System.ServiceModel.MessageContractAttribute> typu. Následně použít <xref:System.ServiceModel.MessageHeaderAttribute> na tyto členy typu, které chcete vytvořit jako záhlaví SOAP a použít <xref:System.ServiceModel.MessageBodyMemberAttribute> těmto členům chcete přejít do části těla protokolu SOAP zprávy.  
+ Chcete-li definovat kontrakt zprávy pro typ (tj. pro definování mapování mezi typem a obálkou protokolu SOAP), použijte <xref:System.ServiceModel.MessageContractAttribute> pro typ. Pak použijte <xref:System.ServiceModel.MessageHeaderAttribute> u těch členů typu, který chcete vytvořit v hlavičkách SOAP, a <xref:System.ServiceModel.MessageBodyMemberAttribute> použijte u těch členů, které chcete vytvořit do částí těla protokolu SOAP zprávy.  
   
- Následující kód obsahuje příklad pomocí kontraktu zprávy.  
+ Následující kód poskytuje příklad použití kontraktu zprávy.  
   
 ```csharp  
 [MessageContract]  
@@ -80,7 +80,7 @@ public class BankingTransaction
 }  
 ```  
   
- Při použití tohoto typu jako parametr operace, je vygenerována následující obálky protokolu SOAP:  
+ Při použití tohoto typu jako parametru operace je vygenerována následující obálka protokolu SOAP:  
   
 ```xml  
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">  
@@ -98,23 +98,23 @@ public class BankingTransaction
 </s:Envelope>  
 ```  
   
- Všimněte si, že `operation` a `transactionDate` zobrazují jako záhlaví SOAP a SOAP body se skládá z prvku obálky `BankingTransaction` obsahující `sourceAccount`,`targetAccount`, a `amount`.  
+ Všimněte si `operation` , `transactionDate` že a jak se zobrazí jako hlavičky SOAP a tělo SOAP se skládá `BankingTransaction` z `sourceAccount`prvku`targetAccount`obálky obsahujícího, a `amount`.  
   
- Můžete použít <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute> pro všechna pole, vlastnosti a události, bez ohledu na to, zda jsou veřejné, privátní, chráněné nebo interní.  
+ Můžete použít <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute> pro všechna pole, vlastnosti a události bez ohledu na to, zda jsou veřejné, privátní, chráněné nebo interní.  
   
- <xref:System.ServiceModel.MessageContractAttribute> Vám umožní určit WrapperName a WrapperNamespace atributy, které řídí název prvku obálky v těle zprávy protokolu SOAP. Ve výchozím nastavení název kontraktu zprávy typ se používá pro obálku a obor názvů, ve kterém je definována kontraktu zprávy `http://tempuri.org/` slouží jako výchozí obor názvů.  
+ <xref:System.ServiceModel.MessageContractAttribute> Umožňuje určit atributy wrapper a WrapperNamespace, které řídí název prvku obálky v těle zprávy protokolu SOAP. Ve výchozím nastavení se pro obálku používá název typu kontraktu zprávy a obor názvů, ve kterém je kontrakt zprávy definovaný `http://tempuri.org/` , se používá jako výchozí obor názvů.  
   
 > [!NOTE]
->  <xref:System.Runtime.Serialization.KnownTypeAttribute> atributy se ignorují v kontraktů zpráv. Pokud <xref:System.Runtime.Serialization.KnownTypeAttribute> je potřeba, umístěte ho na operaci, která používá kontrakt zprávy dotyčný.  
+> <xref:System.Runtime.Serialization.KnownTypeAttribute>atributy se v kontraktech zpráv ignorují. <xref:System.Runtime.Serialization.KnownTypeAttribute> Pokud se vyžaduje, umístěte ho na operaci, která používá daný kontrakt zprávy.  
   
-## <a name="controlling-header-and-body-part-names-and-namespaces"></a>Řízení hlavička a tělo část názvy a obory názvů  
- V reprezentaci kontraktu zprávy protokolu SOAP každá část hlavička a tělo zprávy mapuje na element XML, který má název a obor názvů.  
+## <a name="controlling-header-and-body-part-names-and-namespaces"></a>Řízení záhlaví a názvů částí těla a oborů názvů  
+ V prohlášení protokolu SOAP u kontraktu zprávy se každé záhlaví a část těla mapuje na element XML, který má název a obor názvů.  
   
- Ve výchozím nastavení, stejně jako obor názvů kontraktu služby, který je součástí zprávy a název je určen název členu, ke které je obor názvů <xref:System.ServiceModel.MessageHeaderAttribute> nebo <xref:System.ServiceModel.MessageBodyMemberAttribute> atributy jsou použity.  
+ Ve výchozím nastavení je obor názvů stejný jako obor názvů kontraktu služby, ve kterém se zpráva účastní, a název je určen názvem člena, na který <xref:System.ServiceModel.MessageHeaderAttribute> <xref:System.ServiceModel.MessageBodyMemberAttribute> jsou atributy aplikovány.  
   
- Tato výchozí nastavení můžete změnit pomocí manipulace s <xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A?displayProperty=nameWithType> (na nadřazené třídu <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute> atributy).  
+ Tato výchozí nastavení můžete <xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A?displayProperty=nameWithType> změnit pomocí manipulace s a <xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A?displayProperty=nameWithType> (v nadřazené třídě <xref:System.ServiceModel.MessageHeaderAttribute> atributů a <xref:System.ServiceModel.MessageBodyMemberAttribute> ).  
   
- Vezměte v úvahu třídu v následujícím příkladu kódu.  
+ Zvažte třídu v následujícím příkladu kódu.  
   
 ```csharp  
 [MessageContract]  
@@ -126,7 +126,7 @@ public class BankingTransaction
 }  
 ```  
   
- V tomto příkladu `IsAudited` záhlaví je v oboru názvů určenému v kódu a část textu, který představuje `theData` člen je reprezentována element XML s názvem `transactionData`. Následuje ukázka kódem XML vygenerovaným pro tento kontrakt zprávy.  
+ V tomto příkladu `IsAudited` je hlavička v oboru názvů zadaném v kódu a část těla, která `theData` představuje člen, je reprezentována elementem XML s názvem `transactionData`. Následující příklad ukazuje generovaný kód XML pro tento kontrakt zprávy.  
   
 ```xml  
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">  
@@ -142,28 +142,28 @@ public class BankingTransaction
 </s:Envelope>  
 ```  
   
-## <a name="controlling-whether-the-soap-body-parts-are-wrapped"></a>Řízení, zda jsou zabaleny částí textu protokolu SOAP  
- Ve výchozím nastavení částí textu SOAP serializují uvnitř zabalené elementu. Například následující kód ukazuje `HelloGreetingMessage` element obálky, které jsou generovány z názvu <xref:System.ServiceModel.MessageContractAttribute> typ v kontraktu zprávy pro `HelloGreetingMessage` zprávy.  
+## <a name="controlling-whether-the-soap-body-parts-are-wrapped"></a>Řízení, zda jsou části těla protokolu SOAP zabaleny  
+ Ve výchozím nastavení jsou části těla protokolu SOAP serializovány uvnitř zabaleného prvku. Například následující kód ukazuje `HelloGreetingMessage` Obálkový prvek vygenerovaný z názvu <xref:System.ServiceModel.MessageContractAttribute> typu v kontraktu zprávy pro `HelloGreetingMessage` zprávu.  
   
 [!code-csharp[MessageHeaderAttribute#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#3)]
 [!code-vb[MessageHeaderAttribute#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#3)]  
   
- Chcete-li potlačit element obálky, nastavte <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> vlastnost `false`. Pokud chcete nastavit název a obor názvů element obálky, použijte <xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A> a <xref:System.ServiceModel.MessageContractAttribute.WrapperNamespace%2A> vlastnosti.  
+ Chcete-li potlačit prvek obálky, <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> nastavte vlastnost `false`na hodnotu. Chcete-li řídit název a obor názvů prvku obálky, použijte <xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A> vlastnosti a. <xref:System.ServiceModel.MessageContractAttribute.WrapperNamespace%2A>  
   
 > [!NOTE]
->  S více než jednu část textu zprávy ve zprávách, které nejsou zabaleny není kompatibilní s WS-I Basic Profile 1.1 a nedoporučuje se při navrhování nových kontraktů zpráv. Však může být potřeba mít více než jednu část textu nerozbalené zprávy v některých scénářích konkrétní vzájemná funkční spolupráce. Pokud budete přenášet víc než jednu část dat v textu zprávy, se doporučuje použít režim výchozí (zabalená). Nerozbalené zprávy s více než jedno záhlaví zprávy je zcela přijatelné.  
+> Pokud máte více než jednu část těla zprávy ve zprávách, které nejsou zabaleny, není kompatibilní s profilem WS-I Basic Profile 1,1 a při navrhování nových kontraktů zpráv se nedoporučuje. Může být ale nutné mít více než jeden nezabalený tělo zprávy v některých specifických scénářích interoperability. Pokud budete přenášet více než jednu část dat v těle zprávy, doporučuje se použít výchozí (zabalený) režim. Používání více než jednoho záhlaví zprávy v nezabalených zprávách je zcela přijatelné.  
   
 ## <a name="using-custom-types-inside-message-contracts"></a>Použití vlastních typů uvnitř kontraktů zpráv  
- Každá hlavička jednotlivých zpráv a část textu zprávy serializován (převedena na XML) pomocí zvolené Serializační stroj pro servisní smlouvy použití zprávy. Modul výchozí serializace `XmlFormatter`, zvládne libovolný typ, který má kontraktu dat, buď explicitně (tím, že <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>) nebo implicitně (tím je primitivního typu, které mají <xref:System.SerializableAttribute?displayProperty=nameWithType>, a tak dále). Další informace najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Každá jednotlivá Hlavička zprávy a část těla zprávy je serializovaná (převedená do XML) s použitím vybraného serializačního modulu pro kontrakt služby, kde se zpráva používá. Výchozí Serializační modul, `XmlFormatter`, může zpracovat jakýkoli typ, který má kontrakt dat, buď explicitně (pomocí <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>), nebo implicitně (pomocí <xref:System.SerializableAttribute?displayProperty=nameWithType>primitivního typu, který má a tak dále). Další informace najdete v tématu [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
- V předchozím příkladu `Operation` a `BankingTransactionData` typy musí mít kontraktu dat, a `transactionDate` serializovat protože <xref:System.DateTime> je jednoduchého typu (a tedy má implicitní data).  
+ V předchozím příkladu `Operation` musí mít typy a `BankingTransactionData` typ kontraktu dat, který `transactionDate` je serializovatelný, protože <xref:System.DateTime> je primitivní (a má tedy implicitní kontrakt dat).  
   
- Je však možné přepnout na jinou Serializační stroj, `XmlSerializer`. Pokud provedete tyto přepínače, měli byste zajistit, že všechny typy použité pro záhlaví zpráv a částí textu jsou serializovatelné pomocí `XmlSerializer`.  
+ Je však možné přepnout na jiný Serializační modul, `XmlSerializer`. Pokud tento přepínač provedete, měli byste zajistit, aby všechny typy používané pro záhlaví zpráv a části těla textu byly serializovatelný pomocí `XmlSerializer`.  
   
 ## <a name="using-arrays-inside-message-contracts"></a>Použití polí uvnitř kontraktů zpráv  
- Můžete použít pole opakující se elementy v kontraktů zpráv dvěma způsoby.  
+ Pole opakujících se prvků v kontraktech zpráv můžete použít dvěma způsoby.  
   
- První je použití <xref:System.ServiceModel.MessageHeaderAttribute> nebo <xref:System.ServiceModel.MessageBodyMemberAttribute> přímo na pole. V takovém případě celého pole je serializován jako jeden prvek (to znamená, že jedno záhlaví nebo jednu část textu) s více podřízenými prvky. Vezměte v úvahu třídu v následujícím příkladu.  
+ První je použití <xref:System.ServiceModel.MessageHeaderAttribute> <xref:System.ServiceModel.MessageBodyMemberAttribute> nebo přímo v poli. V tomto případě je celé pole serializováno jako jeden prvek (tj. jedna hlavička nebo jedna část těla) s více podřízenými prvky. V následujícím příkladu zvažte třídu.  
   
 ```csharp  
 [MessageContract]  
@@ -175,7 +175,7 @@ public class BankingDepositLog
 }  
 ```  
   
- Výsledkem hlavičky SOAP je podobný následujícímu.  
+ Výsledkem je, že hlavičky SOAP jsou podobné následujícímu.  
   
 ```xml  
 <BankingDepositLog>  
@@ -189,7 +189,7 @@ public class BankingDepositLog
 </BankingDepositLog>  
 ```  
   
- Alternativa k tomuto je použít <xref:System.ServiceModel.MessageHeaderArrayAttribute>. V tomto případě nezávisle na sobě serializován každý prvek pole a tak pole, které každý prvek má jedno záhlaví, podobný následujícímu.  
+ Alternativou k tomu je použití <xref:System.ServiceModel.MessageHeaderArrayAttribute>. V tomto případě jsou jednotlivé prvky pole serializovány nezávisle, takže každý prvek pole má jednu hlavičku, podobně jako následující.  
   
 ```xml  
 <numRecords>3</numRecords>  
@@ -199,29 +199,29 @@ public class BankingDepositLog
 <branchID>20643</branchID>  
 ```  
   
- Název členu, ke kterému je výchozí název položky pole <xref:System.ServiceModel.MessageHeaderArrayAttribute> použít atributy.  
+ Výchozí název pro položky pole je název člena, na který <xref:System.ServiceModel.MessageHeaderArrayAttribute> jsou atributy aplikovány.  
   
- <xref:System.ServiceModel.MessageHeaderArrayAttribute> Atributu inherits z <xref:System.ServiceModel.MessageHeaderAttribute>. Má stejnou sadu funkcí jako atributy mimo pole, například je možné nastavit pořadí, název a obor názvů pro pole hlavičky stejným způsobem, který jste nastavili pro jednu hlavičku. Při použití `Order` vlastnost na pole, která se vztahuje na celý pole.  
+ <xref:System.ServiceModel.MessageHeaderArrayAttribute> Atribut dědí <xref:System.ServiceModel.MessageHeaderAttribute>z. Má stejnou sadu funkcí jako atributy mimo pole, například je možné nastavit pořadí, název a obor názvů pro pole hlaviček stejným způsobem jako pro jednu hlavičku. Použijete-li vlastnost v poli, platí pro celé pole. `Order`  
   
- Můžete použít <xref:System.ServiceModel.MessageHeaderArrayAttribute> pouze na pole, nikoli kolekce.  
+ Můžete použít <xref:System.ServiceModel.MessageHeaderArrayAttribute> jenom pro pole, ne pro kolekce.  
   
-## <a name="using-byte-arrays-in-message-contracts"></a>Pomocí polí bajtů v kontraktů zpráv  
- Bajtová pole, při použití s atributy mimo pole (<xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute>), nemají být považována jako pole, ale jako speciální primitivní typ reprezentovaný jako data v výsledného kódu XML s kódováním Base64.  
+## <a name="using-byte-arrays-in-message-contracts"></a>Použití polí bajtů v kontraktech zpráv  
+ Pole bajtů, pokud se používají s atributy mimo pole (<xref:System.ServiceModel.MessageBodyMemberAttribute> a <xref:System.ServiceModel.MessageHeaderAttribute>), nejsou považována za pole, ale jako speciální primitivní typ reprezentovaný ve výsledném souboru XML jako data zakódovaná ve formátu base64.  
   
- Při použití pole bajtů s atributem pole <xref:System.ServiceModel.MessageHeaderArrayAttribute>, výsledek závisí na serializátoru, který je používán. S výchozí serializátor pole je vyjádřena jako jednotlivé položky pro každý bajt. Ale, když `XmlSerializer` je vybrána, (pomocí <xref:System.ServiceModel.XmlSerializerFormatAttribute> u kontraktu služby), bajtová pole jsou považovány za data ve formátu Base64, bez ohledu na to, zda pole nebo mimo pole atributy se používají.  
+ Použijete-li pole bajtů s atributem <xref:System.ServiceModel.MessageHeaderArrayAttribute>Array, výsledky budou záviset na použitém serializátoru. U výchozího serializátoru je pole vyjádřeno jako jednotlivé položky pro každý bajt. Pokud `XmlSerializer` je však vybrána možnost ( <xref:System.ServiceModel.XmlSerializerFormatAttribute> pomocí kontraktu služby), pole bajtů jsou považována za data typu Base64 bez ohledu na to, zda jsou použity atributy Array a Array.  
   
 ## <a name="signing-and-encrypting-parts-of-the-message"></a>Podepisování a šifrování částí zprávy  
- Kontrakt zprávy můžete určit, zda záhlaví a text zprávy by měl být digitálně podepsat a zašifrovat.  
+ Kontrakt zprávy může označovat, zda mají být záhlaví a/nebo text zprávy digitálně podepsány a zašifrovány.  
   
- To se provádí tak, že nastavíte <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute> atributy. Vlastnost je výčet <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> zadejte a může být nastaven na <xref:System.Net.Security.ProtectionLevel.None> (žádné šifrování nebo podpis), <xref:System.Net.Security.ProtectionLevel.Sign> (digitální podpis pouze), nebo <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> (šifrování a digitálním podpisem). Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
+ To se provádí nastavením <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> vlastnosti <xref:System.ServiceModel.MessageHeaderAttribute> v atributech a <xref:System.ServiceModel.MessageBodyMemberAttribute> . Vlastnost je výčet <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> typu a může být nastaven na <xref:System.Net.Security.ProtectionLevel.None> (bez šifrování, podpis), <xref:System.Net.Security.ProtectionLevel.Sign> (pouze digitální podpis), nebo <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> (šifrování i digitální podpis). Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
   
- Pro fungování těchto funkcí zabezpečení musíte správně nakonfigurovat vazby a chování. Pokud používáte tyto funkce zabezpečení bez správnou konfiguraci (například pokus o přihlášení zprávu bez nutnosti zadávat svoje přihlašovací údaje), je vyvolána výjimka během ověřování.  
+ Aby tyto funkce zabezpečení fungovaly, musíte správně nakonfigurovat vazbu a chování. Použijete-li tyto funkce zabezpečení bez správné konfigurace (například při pokusu o podepsání zprávy bez zadání přihlašovacích údajů), je vyvolána výjimka v době ověřování.  
   
- Záhlaví zpráv úroveň ochrany je určeno jednotlivě pro každého záhlaví.  
+ Pro záhlaví zpráv je úroveň ochrany určena individuálně pro každé záhlaví.  
   
- Pro zprávu částí textu aby úroveň ochrany můžete představit jako "minimální úroveň ochrany." Text má pouze jeden ochranu úroveň, bez ohledu na počet částí textu. Úroveň ochrany obsahu je určeno nejvyšší <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A> nastavení vlastnosti všechny části textu. Nicméně byste měli nastavit úroveň ochrany každá část textu skutečné ochrany minimální úroveň požadovaných.  
+ V části těla zprávy se úroveň ochrany dá představit jako minimální úroveň ochrany. Tělo má pouze jednu úroveň ochrany bez ohledu na počet částí těla. Úroveň ochrany těla je určena nastavením nejvyšší <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A> vlastnosti všech částí těla. Měli byste ale nastavit úroveň ochrany každé části těla na skutečnou minimální požadovanou úroveň ochrany.  
   
- Vezměte v úvahu třídu v následujícím příkladu kódu.  
+ Zvažte třídu v následujícím příkladu kódu.  
   
 ```csharp  
 [MessageContract]  
@@ -236,23 +236,23 @@ public class PatientRecord
 }  
 ```  
   
- V tomto příkladu `recordID` záhlaví není chráněný, `patientName` je `signed`, a `SSN` je šifrovaný a podepsaný. Část alespoň jeden textu `medicalHistory`, má <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> použít, a proto je obsah celé zprávy zašifrovaná a podepsaná, i když komentáře a částí textu diagnostiku zadejte nižší úrovně ochrany.  
+ V tomto příkladu `recordID` není hlavička chráněná, `patientName` je `signed`a `SSN` je šifrovaná a podepsaná. Alespoň jedna část těla, `medicalHistory`, která <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> se používá, a proto je celý text zprávy zašifrovaný a podepsaný, i když části těla komentářů a diagnostiky určují nižší úrovně ochrany.  
   
 ## <a name="soap-action"></a>Akce SOAP  
- SOAP a související standardy webových služeb definovat vlastnost s názvem `Action` , může být k dispozici pro všechny zprávy protokolu SOAP. Operace <xref:System.ServiceModel.OperationContractAttribute.Action%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A?displayProperty=nameWithType> vlastnosti řídí hodnota této vlastnosti.  
+ Standardy SOAP a související webové služby definují vlastnost s názvem `Action` , která může být k dispozici pro každou odeslanou zprávu SOAP. <xref:System.ServiceModel.OperationContractAttribute.Action%2A?displayProperty=nameWithType> Vlastnost a <xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A?displayProperty=nameWithType> vlastnosti určují hodnotu této vlastnosti.  
   
 ## <a name="soap-header-attributes"></a>Atributy záhlaví SOAP  
- SOAP standard definuje následující atributy, které mohou existovat v hlavičce:  
+ Standard SOAP definuje následující atributy, které mohou existovat v záhlaví:  
   
-- `Actor/Role` (`Actor` v protokolu SOAP 1.1, `Role` v protokolu SOAP 1.2)  
+- `Actor/Role`(`Actor` v SOAP 1,1, `Role` v SOAP 1,2)  
   
 - `MustUnderstand`  
   
 - `Relay`  
   
- `Actor` Nebo `Role` Určuje atribut identifikátor URI (Uniform Resource) z uzlu, pro který je určený danou hlavičku. `MustUnderstand` Atribut určuje, zda uzel zpracování záhlaví musí pochopit. `Relay` Atribut určuje, zda záhlaví je možné předat do podřízené uzly. WCF neprovádí zpracování těchto atributů na příchozí zprávy, s výjimkou `MustUnderstand` atributu, jak je uvedeno v části "Správa verzí kontraktů zpráv" dále v tomto tématu. Však umožňuje číst a zapisovat podle potřeby, stejně jako v následujícím popis těchto atributů.  
+ Atribut `Actor` OR`Role` Určuje identifikátor URI (Uniform Resource Identifier) uzlu, pro který je daná hlavička určena. `MustUnderstand` Atribut určuje, zda musí uzel zpracovat hlavičku. `Relay` Atribut určuje, zda má být záhlaví přeneseno do podřízených uzlů. Technologie WCF neprovádí žádné zpracování těchto atributů u příchozích zpráv s výjimkou atributu, `MustUnderstand` jak je uvedeno v části Správa verzí kontraktu zpráv dále v tomto tématu. To však umožňuje číst a zapisovat tyto atributy podle potřeby, jako v následujícím popisu.  
   
- Při odesílání zprávy, nejsou ve výchozím nastavení zaznamenávány těchto atributů. Toto můžete změnit dvěma způsoby. Nejdřív, může staticky nastavíte atributy na všechny požadované hodnoty tak, že změníte <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A?displayProperty=nameWithType>, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A?displayProperty=nameWithType>, a <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A?displayProperty=nameWithType> vlastnosti, jak je znázorněno v následujícím příkladu kódu. (Všimněte si, že neexistuje žádné `Role` vlastnost; nastavení <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> vysílá vlastnost `Role` atribut, pokud používáte protokol SOAP 1.2).  
+ Při odesílání zprávy nejsou ve výchozím nastavení vygenerovány tyto atributy. Můžete to změnit dvěma způsoby. Nejprve můžete staticky nastavit atributy na požadované hodnoty změnou <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A?displayProperty=nameWithType>vlastností, <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A?displayProperty=nameWithType>a <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A?displayProperty=nameWithType> , jak je znázorněno v následujícím příkladu kódu. (Všimněte si, že vlastnost `Role` není k dispozici <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> ; nastavení vlastnosti emituje `Role` atribut, pokud používáte SOAP 1,2).  
   
 ```csharp  
 [MessageContract]  
@@ -264,7 +264,7 @@ public class BankingTransaction
 }  
 ```  
   
- Druhý způsob, jak řídit tyto atributy se dynamicky prostřednictvím kódu. Lze toho dosáhnout obalením typ požadovaného záhlaví v <xref:System.ServiceModel.MessageHeader%601> typ (ujistěte se, abyste nezaměnili tohoto typu v obecné verzi) a s použitím typu spolu s <xref:System.ServiceModel.MessageHeaderAttribute>. Potom můžete použít vlastnosti na <xref:System.ServiceModel.MessageHeader%601> nastavení atributů protokolu SOAP, jak je znázorněno v následujícím příkladu kódu.  
+ Druhý způsob, jak tyto atributy řídit, je prostřednictvím kódu dynamicky. Toho lze dosáhnout zabalením požadovaného typu hlavičky v <xref:System.ServiceModel.MessageHeader%601> typu (Nezapomeňte, že nepleťete tento typ s neobecnou verzí) a pomocí typu společně <xref:System.ServiceModel.MessageHeaderAttribute>s. Pak můžete použít vlastnosti v <xref:System.ServiceModel.MessageHeader%601> pro nastavení atributů SOAP, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 [MessageContract]  
@@ -282,7 +282,7 @@ bt.IsAudited.Actor="http://auditingservice.contoso.com";
 bt.IsAudited.MustUnderstand=true;  
 ```  
   
- Pokud používáte dynamické i statické kontrolní mechanismy, statické nastavení jsou použita jako výchozí, ale později se dá přepsat pomocí dynamické mechanismus, jak je znázorněno v následujícím kódu.  
+ Použijete-li jak dynamický, tak i statický mechanismus řízení, bude statické nastavení použito jako výchozí, ale lze jej později přepsat pomocí dynamického mechanismu, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 [MessageHeader(MustUnderstand=true)] public MessageHeader<Person> documentApprover;  
@@ -292,20 +292,20 @@ bt.documentApprover = new MessageHeader<Person>();
 bt.documentApprover.MustUnderstand = false; // override the static default of 'true'  
 ```  
   
- Vytvoření opakovaně záhlaví s ovládacím prvkem dynamického atributu je povoleno, jak je znázorněno v následujícím kódu.  
+ Vytváření opakujících se hlaviček s dynamickým ovládacím prvkem atributu je povoleno, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 [MessageHeaderArray] public MessageHeader<Person> documentApprovers[];  
 ```  
   
- Na straně příjmu čtení těchto atributů protokolu SOAP lze pouze v případě, <xref:System.ServiceModel.MessageHeader%601> třída se používá pro záhlaví v typu. Zkontrolujte `Actor`, `Relay`, nebo `MustUnderstand` vlastnosti s hlavičkou <xref:System.ServiceModel.MessageHeader%601> typu ke zjištění nastavení atributů na přijatou zprávu.  
+ Na straně příjmu lze číst tyto atributy SOAP pouze v případě, že <xref:System.ServiceModel.MessageHeader%601> je třída použita pro hlavičku v typu. Prohlédněte si `Relay`vlastnosti `MustUnderstand` , nebo záhlaví <xref:System.ServiceModel.MessageHeader%601> typu, abyste zjistili nastavení atributu v přijaté zprávě. `Actor`  
   
- Pokud zprávu přijme a potom odeslány zpět, nastavení atributů protokolu SOAP, jdou pouze operace round-trip pro záhlaví <xref:System.ServiceModel.MessageHeader%601> typu.  
+ Když se přijme zpráva a pak se pošle zpátky, nastavení atributu SOAP se v hlavičce tohoto <xref:System.ServiceModel.MessageHeader%601> typu dostanou jenom na zpáteční cestu.  
   
-## <a name="order-of-soap-body-parts"></a>Pořadí částí textu zprávy protokolu SOAP  
- V některých případech budete muset určit pořadí částí textu. Pořadí prvků textu je abecední ve výchozím nastavení, ale mohou být řízena <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnost. Tato vlastnost má stejnou sémantiku jako <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnost, s výjimkou chování ve scénářích dědičnosti (v kontraktů zpráv, základní typ těla členy nejsou seřazené před tělo členy odvozeného typu). Další informace najdete v tématu [pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md).  
+## <a name="order-of-soap-body-parts"></a>Pořadí částí těla protokolu SOAP  
+ V některých případech může být nutné řídit pořadí částí těla. Pořadí prvků textu je ve výchozím nastavení abecední, ale lze je ovládat pomocí <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnosti. Tato vlastnost má stejnou sémantiku jako <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnost, s výjimkou chování ve scénářích dědičnosti (v kontraktech zprávy, členy základního typu základního typu nejsou řazeny před členy těla odvozeného typu). Další informace najdete v tématu [pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md).  
   
- V následujícím příkladu `amount` by obvykle pocházejí nejprve vzhledem k tomu, že je první podle abecedy. Ale <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> vlastnost vloží je do třetí pozici.  
+ V následujícím příkladu by se `amount` normálně nacházela jako první, protože je první abecedně. <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> Vlastnost však vloží do třetí pozice.  
   
 ```csharp  
 [MessageContract]  
@@ -319,24 +319,24 @@ public class BankingTransaction
 ```  
   
 ## <a name="message-contract-versioning"></a>Správa verzí kontraktů zpráv  
- V některých případech budete muset změnit kontraktů zpráv. Novou verzi vaší aplikace může například přidat další záhlaví zprávy. Pak při odesílání z nové verze původní, systém musí zabývat dodatečné hlavičky, jakož i chybí hlavička při přechodu v opačném směru.  
+ V některých případech může být nutné změnit kontrakty zpráv. Například nová verze vaší aplikace může do zprávy přidat další záhlaví. Když pak při posílání z nové verze do starého, systém musí při přechodu na druhý směr zabývat se další hlavičkou a chybějící hlavičkou.  
   
- Pro správu verzí hlavičky platí následující pravidla:  
+ Pro hlavičky verzí platí následující pravidla:  
   
-- WCF není objekt pro chybějící záhlaví – odpovídající členů jsou ponechány na výchozích hodnotách.  
+- WCF neobjektí do chybějících hlaviček – odpovídající členové jsou ponecháni na jejich výchozích hodnotách.  
   
-- WCF rovněž ignoruje neočekávané dodatečné hlavičky. Jedinou výjimkou tohoto pravidla je, pokud má navíc záhlaví `MustUnderstand` atribut nastaven na `true` v příchozí zprávě SOAP – v takovém případě je vyvolána výjimka, protože nelze zpracovat hlavičku, která musí být srozumitelný.  
+- WCF také ignoruje neočekávané nadbytečné hlavičky. Jedinou výjimkou z tohoto pravidla je, že pokud má `MustUnderstand` navíc záhlaví vlastnost nastavenou na `true` příchozí zprávu SOAP – v tomto případě je vyvolána výjimka, protože záhlaví, které je nutné chápat, nelze zpracovat.  
   
- Zpráva úřadů, které mají podobné pravidla správy verzí – chybí a dalších částí textu zprávy jsou ignorovány.  
+ Tělo zprávy mají podobná pravidla správy verzí – chybějící a další části těla zprávy jsou ignorovány.  
   
-## <a name="inheritance-considerations"></a>Důležité informace o dědičnosti  
- Typ kontraktu zprávy může dědit z jiného typu, jako základní typ také obsahuje kontrakt zprávy.  
+## <a name="inheritance-considerations"></a>Otázky dědičnosti  
+ Typ kontraktu zprávy může dědit z jiného typu, pokud základní typ má také kontrakt zprávy.  
   
- Při vytváření nebo přístup k zprávu pomocí typ kontraktu zprávy, která dědí z jiných typů kontraktu zprávy, platí následující pravidla:  
+ Při vytváření nebo přístupu ke zprávě pomocí typu kontraktu zprávy, který dědí z jiných typů kontraktů zpráv, platí následující pravidla:  
   
-- Všechny hlavičky zprávy v hierarchii dědičnosti shromažďují společně tvoří úplnou sadu záhlaví zprávy.  
+- Všechna záhlaví zpráv v hierarchii dědičnosti jsou shromažďována dohromady, aby bylo možné vytvořit úplnou sadu hlaviček pro zprávu.  
   
-- Všechny části textu zprávy v hierarchii dědičnosti shromažďují společně tvoří obsah celé zprávy. Částí textu jsou řazeny podle obvyklých pravidel řazení (podle <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnost a potom abecedy), s žádný vztah k jejich místo v hierarchii dědičnosti. Pomocí dědičnosti kontraktu zprávy, pokud dojde k částí textu zprávy na více úrovních strom dědičnosti se důrazně nedoporučuje. Pokud základní třída a odvozené třídy definují záhlaví nebo část textu se stejným názvem, člen ze třídy base většinu se používá pro ukládání hodnoty horní části Hlavička nebo text.  
+- Všechny části těla zprávy v hierarchii dědičnosti jsou shromažďovány dohromady, aby bylo možné vytvořit úplný text zprávy. Části těla jsou seřazené podle obvyklých pravidel řazení (podle <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> vlastnosti a pak podle abecedy), a to bez relevance na jejich místě v hierarchii dědičnosti. Použití dědičnosti kontraktu zprávy, kde se části těla zprávy vyskytují na více úrovních stromu dědičnosti, se důrazně nedoporučuje. Pokud základní třída a odvozená třída definuje záhlaví nebo část těla se stejným názvem, člen z třídy Base-nejvíc se použije k uložení hodnoty této hlavičky nebo části těla.  
   
  Vezměte v úvahu třídy v následujícím příkladu kódu.  
   
@@ -356,31 +356,31 @@ public class PatientRecord : PersonRecord
 }  
 ```  
   
- `PatientRecord` Třída popisuje zprávy jednu hlavičku s názvem `ID`. Odpovídá záhlaví `personID` a ne `patientID` člena, protože většina základní člen je vybrán. To znamená `patientID` pole v tomto případě je zbytečné. Tělo zprávy obsahuje `diagnosis` element, za nímž následuje `patientName` element, protože, který je v abecedním pořadí. Všimněte si, že v příkladu ukazuje vzor, který se důrazně nedoporučuje: základních a odvozených zpráv kontrakty mají částí textu zprávy.  
+ Třída popisuje zprávu s názvem `ID`s jednou hlavičkou. `PatientRecord` Hlavička odpovídá `personID` `patientID` členu a nikoli členovi, protože je vybrán člen nejvíce Base. Proto je pole v tomto případě nepoužitelné. `patientID` Tělo zprávy obsahuje `diagnosis` element následovaný `patientName` elementem, protože to je abecední pořadí. Všimněte si, že příklad ukazuje vzor, který se důrazně nedoporučuje: základem i odvozených kontraktů zpráv jsou části těla zprávy.  
   
-## <a name="wsdl-considerations"></a>Důležité informace o WSDL  
- Při generování kontraktu webové služby WSDL (Description Language) ze služby, která používá zprávy smlouvy, je dobré si uvědomit, že ne všechny funkce kontraktu zprávy, se projeví v výsledný WSDL. Vezměte v úvahu následující body:  
+## <a name="wsdl-considerations"></a>WSDL – požadavky  
+ Při generování kontraktu jazyka WSDL (Web Services Description Language) ze služby, která používá kontrakty zpráv, je důležité si uvědomit, že ne všechny funkce kontraktu zprávy se odrazí ve výsledném WSDL. Vezměte v úvahu následující body:  
   
-- WSDL nelze vyjádřit pojem pole záhlaví. Při vytváření zprávy s pole záhlaví pomocí <xref:System.ServiceModel.MessageHeaderArrayAttribute>, pouze jedno záhlaví místo pole odráží výsledný WSDL.  
+- WSDL nemůže vyjádřit koncept pole hlaviček. Při vytváření zpráv s polem hlaviček pomocí <xref:System.ServiceModel.MessageHeaderArrayAttribute>, výsledné WSDL odráží pouze jedno záhlaví místo pole.  
   
-- Výsledné dokument WSDL nemusí odrážet některé informace úroveň ochrany.  
+- Výsledný dokument WSDL nemusí odrážet některé informace na úrovni ochrany.  
   
-- Typ zprávy generované ve schématu WSDL má stejný název jako název třídy typu kontraktu zprávy.  
+- Typ zprávy generovaný v jazyce WSDL má stejný název jako název třídy typu kontraktu zprávy.  
   
-- Při použití stejné zprávy smlouvy ve více operací, více typy zpráv jsou generovány v dokumentu WSDL. Přidáním čísel "2", "3" a tak dále, pro následující účely, jsou provedeny jedinečné názvy. Když importujete zpět WSDL, více typy kontraktů zpráv jsou vytvořeny a jsou stejné s výjimkou jejich názvy.  
+- Při použití stejné kontraktu zprávy ve více operacích se v dokumentu WSDL generuje více typů zpráv. Názvy jsou jedinečné přidáním čísel "2", "3" atd. "pro následné použití. Při importu zpět WSDL se vytvoří více typů kontraktů zpráv a jsou identické, s výjimkou jejich názvů.  
   
-## <a name="soap-encoding-considerations"></a>Důležité informace o kódování SOAP  
- WCF umožňuje použít starší verzi protokolu SOAP kódování styl XML, ale jeho použití nedoporučuje. Při použití tohoto stylu (nastavením `Use` vlastnost `Encoded` na <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> u kontraktu služby), platí následující další aspekty:  
+## <a name="soap-encoding-considerations"></a>Požadavky na kódování SOAP  
+ WCF vám umožňuje používat starší styly kódování protokolu SOAP XML, ale jeho použití se nedoporučuje. Při použití tohoto stylu ( `Use` nastavením vlastnosti na `Encoded` hodnotu v případě <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> použití pro kontrakt služby) platí následující další požadavky:  
   
-- Záhlaví zpráv nejsou podporovány. To znamená, že atribut <xref:System.ServiceModel.MessageHeaderAttribute> a atribut pole <xref:System.ServiceModel.MessageHeaderArrayAttribute> nejsou kompatibilní s kódováním SOAP.  
+- Hlavičky zpráv nejsou podporovány. To znamená, že atribut <xref:System.ServiceModel.MessageHeaderAttribute> a atribut <xref:System.ServiceModel.MessageHeaderArrayAttribute> Array jsou nekompatibilní s kódováním SOAP.  
   
-- Pokud kontrakt zprávy není zabalena, to znamená, pokud vlastnost <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> je nastavena na `false`, kontrakt zprávy může mít část textu pouze jeden.  
+- Pokud není kontrakt zprávy zabalený, to znamená, že pokud je vlastnost <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> nastavená na `false`hodnotu, kontrakt zprávy může mít jenom jednu část těla.  
   
-- Název prvku obálky pro kontrakt zprávy požadavku musí odpovídat názvu operace. Použití `WrapperName` kontraktu zprávy pro tuto vlastnost.  
+- Název prvku obálky pro kontrakt zprávy požadavku musí odpovídat názvu operace. Pro tuto zprávu použijte vlastnostkontraktuzprávy.`WrapperName`  
   
-- Název prvku obálky pro kontrakt zprávy odpovědi musí být stejný jako název operace příponou podle "Odpověď". Použití <xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A> kontraktu zprávy pro tuto vlastnost.  
+- Název prvku obálky pro kontrakt zprávy odpovědi musí být stejný jako název operace s příponou Response. Pro tuto zprávu použijte vlastnostkontraktuzprávy.<xref:System.ServiceModel.MessageContractAttribute.WrapperName%2A>  
   
-- Kódování SOAP zachová odkazy na objekty. Zvažte například následující kód.  
+- Kódování SOAP zachovává odkazy na objekty. Zvažte například následující kód.  
   
     ```csharp  
     [MessageContract(WrapperName="updateChangeRecord")]  
@@ -407,10 +407,10 @@ public class PatientRecord : PersonRecord
     cr.changedTo=p;  
     ```  
   
- Po serializaci zprávy s kódováním SOAP `changedFrom` a `changedTo` neobsahují své vlastní kopie `p`, ale místo toho přejděte na kopírování uvnitř `changedBy` elementu.  
+ Po `changedFrom` serializaci zprávy pomocí kódování SOAP a `changedTo` `p`neobsahují své vlastní kopie, `changedBy` ale místo toho, aby odkazovala na kopii uvnitř elementu.  
   
 ## <a name="performance-considerations"></a>Faktory ovlivňující výkon  
- Každý záhlaví zprávy a část textu zprávy serializován nezávisle na ostatních. Proto stejné obory názvů mohou být deklarovány opakujte pro každou část textu a záhlaví. Kvůli zvýšení výkonu, zejména z hlediska velikosti zpráv na lince, konsolidovat více záhlaví a částí textu do jedné části Hlavička nebo text. Například místo následující kód:  
+ Každé záhlaví zprávy a část těla zprávy jsou serializovány nezávisle na ostatních. Proto je možné stejné obory názvů deklarovat znovu pro každou hlavičku a část těla. Chcete-li zvýšit výkon, zejména v souvislosti s velikostí zprávy na lince, konsolidovat více částí záhlaví a částí těla do jedné hlavičky nebo části těla. Například namísto následujícího kódu:  
   
 ```csharp  
 [MessageContract]  
@@ -423,7 +423,7 @@ public class BankingTransaction
 }  
 ```  
   
- Pomocí tohoto kódu.  
+ Použijte tento kód.  
   
 ```csharp  
 [MessageContract]  
@@ -442,10 +442,10 @@ public class OperationDetails
 }  
 ```  
   
-### <a name="event-based-asynchronous-and-message-contracts"></a>Založený na událostech asynchronní a kontrakty zprávy  
- Pokyny návrhu pro asynchronní model založený na událostech stát, že pokud se vrátí více než jednu hodnotu, se vrátí jednu hodnotu jako `Result` vlastnosti a ostatní jsou vrácena jako vlastnosti na <xref:System.EventArgs> objektu. Jeden výsledek tohoto je, že pokud klient naimportuje metadata pomocí možnosti založené na událostech asynchronního příkazu a operace vrátí více než jednu hodnotu, výchozí <xref:System.EventArgs> objekt vrátí jednu hodnotu jako `Result` vlastnost a zbývající jsou vlastnosti <xref:System.EventArgs> objektu.  
+### <a name="event-based-asynchronous-and-message-contracts"></a>Asynchronní události a kontrakty zpráv založené na událostech  
+ Pokyny pro návrh pro stav asynchronního modelu založeného na událostech, pokud je vrácena více než jedna hodnota, jako `Result` vlastnost se vrátí jedna hodnota a ostatní jsou vráceny jako vlastnosti <xref:System.EventArgs> objektu. Jedním z těchto výsledků je, že pokud klient Importuje metadata pomocí parametrů asynchronního příkazu založeného na událostech a operace vrátí více než jednu hodnotu, výchozí <xref:System.EventArgs> objekt vrátí jednu hodnotu `Result` jako vlastnost a zbytek je <xref:System.EventArgs> vlastnosti objektu  
   
- Pokud chcete přijímat zprávy objektu jako `Result` vlastnost a vrácené hodnoty jako vlastnosti objektu, použijte `/messageContract` možnost příkazu. Tím se vygeneruje podpis, který vrací zprávy s odpovědí jako `Result` vlastnost <xref:System.EventArgs> objektu. Všechny interní vrácené hodnoty jsou pak vlastnosti objektu zprávu odpovědi.  
+ Pokud chcete jako `Result` vlastnost přijmout objekt zprávy a vracet hodnoty jako vlastnosti tohoto objektu, `/messageContract` použijte možnost Command. Tím se vygeneruje podpis, který vrátí zprávu odpovědi jako `Result` vlastnost <xref:System.EventArgs> objektu. Všechny interní návratové hodnoty jsou potom vlastnostmi objektu zprávy odpovědi.  
   
 ## <a name="see-also"></a>Viz také:
 

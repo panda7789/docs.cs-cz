@@ -6,15 +6,15 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: 15fe62457ed11ffcd08a1db3aa8be57080f22869
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6eb9d50a3ecd80acb0349f1ba315d9cf8ccc6dc2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937240"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
-Určuje uživatelský soubor manifestu aplikace Win32, který má být vložen do projektu soubor (PE portable executable).  
+Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bude vložen do přenositelného spustitelného souboru (PE) projektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,31 +26,31 @@ Určuje uživatelský soubor manifestu aplikace Win32, který má být vložen d
   
 |Termín|Definice|  
 |---|---|  
-|`fileName`|Cesta vlastního souboru manifestu.|  
+|`fileName`|Cesta k souboru vlastního manifestu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení vloží kompilátor jazyka Visual Basic, která určuje požadovanou úroveň spuštění asInvoker manifestu aplikace. Manifest vytvoří ve stejné složce, ve kterém spustitelného souboru, který je sestaven, obvykle bin\Debug nebo bin\Release složky, pokud používáte sadu Visual Studio. Pokud chcete zadat vlastní manifest, třeba když chcete požadovanou úroveň spuštění highestAvailable nebo requireAdministrator, zadejte tuto možnost použijte k zadání názvu souboru.  
+ Ve výchozím nastavení vloží kompilátor Visual Basic manifest aplikace, který určuje požadovanou úroveň spuštění podle volajícího. Vytvoří manifest ve stejné složce, ve které je sestaven spustitelný soubor, obvykle složka bin\Debug nebo bin\Release při použití sady Visual Studio. Pokud chcete zadat vlastní manifest, například pro určení požadované úrovně spuštění nejvyšší dostupná nebo vyžadovat správce, použijte tuto možnost k zadání názvu souboru.  
   
 > [!NOTE]
->  Tuto možnost a [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) možnost se vzájemně vylučují. Pokud se pokusíte použít obě možnosti jsou ve stejném příkazovém řádku, zobrazí se chyba buildu.  
+> Tato možnost a možnost [-Win32Resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) se vzájemně vylučují. Pokud se pokusíte použít obě možnosti na stejném příkazovém řádku, zobrazí se chyba buildu.  
   
- Aplikace nemá žádné aplikace, manifest, který určuje, že že požadovanou úroveň spuštění bude v souladu s virtualizací souborů nebo registru pod funkci Řízení uživatelských účtů ve Windows Vista. Další informace o virtualizaci, naleznete v tématu [nasazení ClickOnce v systému Windows Vista](/visualstudio/deployment/clickonce-deployment-on-windows-vista).  
+ Aplikace, která nemá žádný manifest aplikace, který určuje požadovanou úroveň spuštění, bude podléhat virtualizaci souborů nebo registru v rámci funkce řízení uživatelských účtů v systému Windows Vista. Další informace o virtualizaci najdete v tématu [nasazení ClickOnce v systému Windows Vista](/visualstudio/deployment/clickonce-deployment-on-windows-vista).  
   
- Vaše aplikace bude v souladu s virtualizace, pokud je splněna jedna z následujících podmínek:  
+ Pokud je splněna některá z následujících podmínek, bude se aplikace vztahovat k virtualizaci:  
   
-1. Můžete použít `-nowin32manifest` a neposkytuje manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků (.res) Windows s použitím `-win32resource` možnost.  
+1. Použijete `-nowin32manifest` možnost a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků systému Windows (. res) `-win32resource` pomocí možnosti.  
   
-2. Poskytnete vlastního manifestu, která neurčuje požadovanou úroveň spuštění.  
+2. Poskytnete vlastní manifest, který neurčuje požadovanou úroveň spuštění.  
   
- Visual Studio vytvoří výchozí soubor .manifest a ukládá ho do adresáře debug a release spustitelný soubor. Můžete zobrazit nebo upravit výchozí soubor app.manifest kliknutím **nastavení nástroje Řízení uživatelských účtů zobrazení** na **aplikace** kartě v Návrháři projektu. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ Visual Studio vytvoří soubor default. manifest a uloží ho do adresářů pro ladění a vydání spolu se spustitelným souborem. Výchozí soubor App. manifest můžete zobrazit nebo upravit kliknutím na **Zobrazit nastavení nástroje řízení uživatelských účtů** na kartě **aplikace** v Návrháři projektu. Další informace naleznete na [stránce aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
- Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást soubor prostředků Win32 pomocí `-nowin32manifest` možnost. Stejnou možnost použijte, pokud chcete, aby byla v souladu s virtualizací souborů nebo registru v systému Windows Vista aplikace. To zabrání kompilátoru od vytvoření a vložení výchozí manifest do souboru PE.  
+ Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí `-nowin32manifest` možnosti. Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytvoření a vložení výchozího manifestu do souboru PE.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje výchozí manifest, že kompilátor jazyka Visual Basic vloží do PE.  
+ Následující příklad ukazuje výchozí manifest, který Visual Basic Kompilátor vloží do PE.  
   
 > [!NOTE]
->  Kompilátor vloží název standardní aplikace MyApplication.app do manifestu XML. Toto je alternativní řešení Chcete-li povolit aplikace, které poběží na Windows Server 2003 Service Pack 3.  
+> Kompilátor vloží do souboru XML manifestu standardní název aplikace MyApplication. app. Toto je alternativní řešení pro povolení spouštění aplikací v systému Windows Server 2003 s aktualizací Service Pack 3.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -68,5 +68,5 @@ Určuje uživatelský soubor manifestu aplikace Win32, který má být vložen d
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)

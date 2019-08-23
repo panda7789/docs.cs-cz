@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: 54af7c2f449f8eb289841fb3eca357c6916404aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb6841dd24c4c7587cc2424cc1e606194da34585
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032692"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944065"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mapování adaptéru dat, datové tabulky a datového sloupce
-A **DataAdapter** obsahuje kolekci nula nebo více <xref:System.Data.Common.DataTableMapping> objekty v jeho **TableMappings** vlastnost. A **DataTableMapping** poskytuje hlavní mapování mezi data vrácená z dotazu na zdroji dat a <xref:System.Data.DataTable>. **DataTableMapping** název mohou být předány místo **DataTable** název k **vyplnit** metodu **DataAdapter**. Následující příklad vytvoří **DataTableMapping** s názvem **AuthorsMapping** pro **autoři** tabulky.  
+Objekt **DataAdapter** obsahuje kolekci nula nebo více <xref:System.Data.Common.DataTableMapping> objektů ve vlastnosti **vlastnosti TableMappings** . **DataTableMapping** poskytuje mapování mezi daty vrácenými z dotazu na zdroj dat a <xref:System.Data.DataTable>. Název **DataTableMapping** může být předán namísto názvu **DataTable** do metody **Fill** objektu **DataAdapter**. Následující příklad vytvoří **DataTableMapping** s názvem **AuthorsMapping** pro tabulku **autoři** .  
   
 ```vb  
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors")  
@@ -23,11 +23,11 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors")
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors");  
 ```  
   
- A **DataTableMapping** vám umožní použít názvy sloupců **DataTable** , která se liší od těch, které v databázi. **DataAdapter** používá mapování tak, aby odpovídaly sloupce, když dojde k aktualizaci tabulky.  
+ **DataTableMapping** umožňuje používat názvy sloupců v **objektu DataTable** , které se liší od těch v databázi. Objekt **DataAdapter** používá mapování, aby odpovídal sloupcům, když je tabulka aktualizována.  
   
- Pokud nezadáte **TableName** nebo **DataTableMapping** pojmenujte při volání **vyplnit** nebo **aktualizace** metodu  **Vlastnost DataAdapter**, **DataAdapter** vyhledá **DataTableMapping** s názvem "Table". Pokud to **DataTableMapping** buď neexistuje, **TableName** z **DataTable** je "Table". Můžete určit výchozí **DataTableMapping** tak, že vytvoříte **DataTableMapping** s názvem "Table".  
+ Pokud nezadáte **TableName** nebo **DataTableMapping** název při volání metody **Fill** nebo **Update** pro **Vlastnost DataAdapter**, modul **DataAdapter** vyhledá **DataTableMapping** s názvem "Table". Pokud tento **DataTableMapping** neexistuje, **TableName** **objektu DataTable** je "Table". Výchozí **DataTableMapping** můžete zadat tak, že vytvoříte **DataTableMapping** s názvem "Table".  
   
- Následující příklad kódu vytvoří **DataTableMapping** (z <xref:System.Data.Common> oboru názvů) a zpřístupňuje je výchozí mapování pro zadaný rozbočovač **DataAdapter** zadáním názvu "Table". V příkladu pak namapuje sloupce z první tabulky ve výsledku dotazu ( **zákazníkům** tabulku **Northwind** databáze) na sadu přívětivější názvy v **zákazníků Northwind**  v tabulku <xref:System.Data.DataSet>. Název sloupce ze zdroje dat se používá u sloupců, které nejsou namapované.  
+ Následující příklad kódu vytvoří **DataTableMapping** (z <xref:System.Data.Common> oboru názvů) a nastaví ho jako výchozí mapování pro zadaný objekt **DataAdapter** pojmenováním "Table". Příklad pak mapuje sloupce z první tabulky ve výsledku dotazu (tabulka **zákazníci** databáze **Northwind** ) na sadu více uživatelsky přívětivých názvů v tabulce **Northwind** <xref:System.Data.DataSet>Customers v. Pro sloupce, které nejsou namapované, se použije název sloupce ze zdroje dat.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -49,11 +49,11 @@ mapping.ColumnMappings.Add("PostalCode", "ZIPCode");
 adapter.Fill(custDS);  
 ```  
   
- V rozšířené situacích může rozhodnout, který má stejný **DataAdapter** nepodporuje načtení různých tabulek s jinou mapování. K tomu jednoduše přidejte další **DataTableMapping** objekty.  
+ V pokročilejších situacích se můžete rozhodnout, že chcete, aby stejný objekt **DataAdapter** podporoval načítání různých tabulek s různými mapováními. Uděláte to tak, že jednoduše přidáte další objekty **DataTableMapping** .  
   
- Při **vyplnit** metodě je předána instance **datovou sadu** a **DataTableMapping** název, pokud se mapování s tímto názvem existuje, je použít jinak  **Objekt DataTable** s, který se používá název.  
+ Když je metoda **Fill** předána instanci **datové sady** a názvu **DataTableMapping** , pokud se používá mapování s tímto názvem, je použito. v opačném případě se použije **DataTable** s tímto názvem.  
   
- Následující příklady vytváří **DataTableMapping** s názvem **zákazníkům** a **DataTable** název **BizTalkSchema**. V příkladu pak namapuje řádky vrácené příkazu SELECT **BizTalkSchema** **DataTable**.  
+ V následujících příkladech je vytvořen **DataTableMapping** s názvem **Customers** a názvem **DataTable** **BizTalkSchema**. Příklad pak mapuje řádky vrácené příkazem SELECT do **objektu DataTable** **BizTalkSchema** .  
   
 ```vb  
 Dim mapping As ITableMapping = _  
@@ -78,19 +78,19 @@ adapter.Fill(custDS, "Customers");
 ```  
   
 > [!NOTE]
->  Pokud není zadán název zdrojového sloupce pro mapování sloupců nebo není zadán název tabulky zdrojového mapování tabulky, budou automaticky generovány výchozími názvy. Pokud žádný zdrojový sloupec je zadán pro mapování sloupců, mapování sloupců je předána přírůstkové výchozí název **SourceColumn** *N,* počínaje **SourceColumn1**. Pokud název tabulky žádný zdroj není zadána pro mapování tabulky, mapování tabulek je předána přírůstkové výchozí název **SourceTable** *N*počínaje **SourceTable1**.  
+> Pokud není zadán název zdrojového sloupce pro mapování sloupce nebo není zadán název zdrojové tabulky pro mapování tabulky, budou automaticky generovány výchozí názvy. Pokud není zadán zdrojový sloupec pro mapování sloupce, mapování sloupce má přiřazený výchozí název **SourceColumn** *N,* počínaje **SourceColumn1**. Pokud se pro mapování tabulky nezadá žádný název zdrojové tabulky, mapování tabulky má podobu přírůstkového výchozího názvu **zdroje** *N*, počínaje **SourceTable1**.  
   
 > [!NOTE]
->  Doporučujeme vám, že byste se vyhnout zásadu vytváření názvů **SourceColumn** *N* pro mapování sloupců, nebo **SourceTable** *N* pro tabulku vzhledem k tomu, že zadáte název dojít ke konfliktu s existujícím názvem mapování výchozí sloupce v mapování **ColumnMappingCollection** nebo název mapování tabulky v **DataTableMappingCollection** . Pokud zadaný název již existuje, bude vyvolána výjimka.  
+> Doporučujeme vyhnout se konvenci pojmenování hodnoty **SourceColumn** *N* pro mapování sloupce nebo zdrojovou *N* pro mapování tabulky, protože název, který zadáte, může být v konfliktu s existujícím výchozím názvem mapování sloupce v  **Název parametru ColumnMappingcollection** nebo mapování tabulky v **DataTableMappingCollection**. Pokud zadaný název již existuje, bude vyvolána výjimka.  
   
-## <a name="handling-multiple-result-sets"></a>Zpracování více sad výsledků dotazu  
- Pokud vaše **SelectCommand** vrátí více tabulek, **vyplnit** automaticky vygeneruje názvy tabulek s přírůstkové hodnoty pro tabulky v **datovou sadu**počínaje Zadaný název tabulky a pokračuje na ve formě **TableName** *N*počínaje **TableName1**. Mapování tabulek můžete použít k mapování názvu automaticky vytvářené tabulky na název, který má zadané pro tabulku v **datovou sadu**. Třeba **SelectCommand** dvou tabulek, který vrací **zákazníkům** a **objednávky**, vydat následující volání do **vyplnit**.  
+## <a name="handling-multiple-result-sets"></a>Zpracování více sad výsledků  
+ Pokud **vlastnost SelectCommand** vrátí více tabulek, **vyplní** automaticky názvy tabulek s přírůstkovým hodnotami pro tabulky v **datové sadě**počínaje zadaným názvem tabulky a pokračuje ve formuláři **TableName** . *N*, počínaje **TableName1**. Mapování tabulek můžete použít k mapování automaticky generovaného názvu tabulky na název, který chcete zadat pro tabulku v **datové sadě**. Například pro **vlastnost SelectCommand** , která vrací dvě tabulky, **zákazníky** a **objednávky**, vydejte následující volání k **vyplnění**.  
   
 ```  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
- Dvě tabulky vytvářejí **datovou sadu**: **Zákazníci** a **Customers1**. Mapování tabulek můžete použít k zajištění, že je v druhé tabulce s názvem **objednávky** místo **Customers1**. K tomuto účelu mapování zdrojové tabulky **Customers1** k **datovou sadu** tabulky **objednávky**, jak je znázorněno v následujícím příkladu.  
+ V **datové sadě**se vytvoří dvě tabulky: **Zákazníci** a **Customers1**. Mapování tabulek můžete použít k zajištění toho, aby se druhá tabulka jmenovala **Orders** místo **Customers1**. Chcete-li to provést, namapujte zdrojovou tabulku **Customers1** na **objednávky**tabulky **DataSet** , jak je znázorněno v následujícím příkladu.  
   
 ```  
 adapter.TableMappings.Add("Customers1", "Orders")  
@@ -101,4 +101,4 @@ adapter.Fill(customersDataSet, "Customers")
 
 - [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

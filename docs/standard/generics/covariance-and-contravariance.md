@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 26a1df8829a9b6398876658bdb5697ab3e6f87c8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 08e6458f0a14b78c6d05f706afa710931d60094a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666455"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948788"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a>Kovariance a kontravariance jsou výrazy, které odkazují na schopnost použít více odvozeného typu (konkrétnější) nebo méně odvozený typ (méně specifické), než bylo původně určeno. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: Příklady předpokládají základní třídu s názvem `Base` a odvozenou třídu s názvem. `Derived`  
@@ -110,7 +110,7 @@ ms.locfileid: "69666455"
  V .NET Framework 4 `Func` mají Obecné delegáty, <xref:System.Func%602>jako například, obsahovat kovariantní návratové typy a kontravariantní typy parametrů. Obecní delegáti, například, mají kontravariantní typy parametrů. <xref:System.Action%602> `Action` To znamená, že delegáty lze přiřadit proměnným, které mají více odvozené typy parametrů a (v případě `Func` generických delegátů) méně odvozené návratové typy.  
   
 > [!NOTE]
->  Poslední parametr `Func` obecného typu generických delegátů určuje typ návratové hodnoty v signatuře delegáta. Je kovariantní (`out` klíčové slovo), zatímco ostatní parametry obecného typu jsou kontravariantní (`in` klíčové slovo).  
+> Poslední parametr `Func` obecného typu generických delegátů určuje typ návratové hodnoty v signatuře delegáta. Je kovariantní (`out` klíčové slovo), zatímco ostatní parametry obecného typu jsou kontravariantní (`in` klíčové slovo).  
   
  Následující kód to znázorňuje. První část `Base`kódu definuje třídu s názvem, třídu s názvem `Derived` , která dědí `Base`, a jinou třídu s `static` metodou (`Shared` v Visual Basic) s názvem `MyMethod`. Metoda převezme instanci `Base` a vrátí `Derived`instanci. `Derived`(Pokud je argumentem instance, `MyMethod` vrátí jej. Pokud je `Base`argumentem instance, `MyMethod` vrátí novou instanci `Derived`.) V `Main()`je v příkladu vytvořena `Func<Base, Derived>` instance (`Func(Of Base, Derived)` v Visual Basic), která představuje `MyMethod`a ukládá ji do proměnné `f1`.  
   
@@ -149,12 +149,12 @@ ms.locfileid: "69666455"
  Počínaje .NET Framework 4 Visual Basic a C# mít klíčová slova, která umožňují označit parametry obecného typu rozhraní a delegátů jako kovariantní nebo kontravariantní.  
   
 > [!NOTE]
->  Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před .NET Framework 4 je jediným způsobem, jak definovat obecnou třídu, která má tyto poznámky, použít jazyk MSIL (Microsoft Intermediate Language), buď zkompilováním třídy pomocí nástroje [Ilasm. exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) , nebo vygenerováním v dynamickém sestavení.  
+> Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před .NET Framework 4 je jediným způsobem, jak definovat obecnou třídu, která má tyto poznámky, použít jazyk MSIL (Microsoft Intermediate Language), buď zkompilováním třídy pomocí nástroje [Ilasm. exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) , nebo vygenerováním v dynamickém sestavení.  
   
  Parametr `out` kovariantního typu je označený klíčovým slovem (`Out` klíčové slovo v `+` Visual Basic pro [Assembler MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Parametr kovariantního typu můžete použít jako návratovou hodnotu metody, která patří do rozhraní, nebo jako návratový typ delegátu. Typ kovariantního parametru nelze použít jako omezení obecného typu pro metody rozhraní.  
   
 > [!NOTE]
->  Pokud má metoda rozhraní parametr, který je typem obecného delegátu, může parametr kovariantního typu pro typ rozhraní být použit pro zadání parametru kontravariantního typu pro typ delegátu.  
+> Pokud má metoda rozhraní parametr, který je typem obecného delegátu, může parametr kovariantního typu pro typ rozhraní být použit pro zadání parametru kontravariantního typu pro typ delegátu.  
   
  Parametr kontravariantního typu `in` je označen klíčovým slovem (`In` klíčové slovo v `-` Visual Basic pro [Assembler MSIL](../../../docs/framework/tools/ilasm-exe-il-assembler.md)). Parametr kontravariantního typu můžete použít jako typ parametru metody, která patří do rozhraní, nebo jako typ parametru delegátu. Parametr kontravariantního typu lze použít jako omezení obecného typu pro metodu rozhraní.  
   

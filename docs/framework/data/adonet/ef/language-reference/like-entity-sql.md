@@ -1,16 +1,16 @@
 ---
-title: Stejně jako (Entity SQL)
+title: LIKE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 98940c075a01de2ebe061b6dff53917247fc5193
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 58828b812ce374a664e4d232b707f22d5ca438c1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489909"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912288"
 ---
-# <a name="like-entity-sql"></a>Stejně jako (Entity SQL)
-Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.  
+# <a name="like-entity-sql"></a>LIKE (Entity SQL)
+Určuje, zda určitý znak `String` odpovídá zadanému vzoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,57 +20,57 @@ match [NOT] LIKE pattern [ESCAPE escape]
   
 ## <a name="arguments"></a>Arguments  
  `match`  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz, který se vyhodnotí `String`.  
+ Výraz, který je vyhodnocen jako `String`. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]  
   
  `pattern`  
- Vzor odpovídá zadanému `String`.  
+ Vzor, který se má shodovat se `String`zadaným.  
   
  `escape`  
  Řídicí znak.  
   
  NOT  
- Určuje, že bude výsledek jako negovat.  
+ Určuje, že výsledek LIKE by měl být negace.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Pokud `string` shoduje se vzorem; v opačném případě `false`.  
+ `true`Pokud odpovídá vzoru, v opačném případě `false`. `string`  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazy, které používají operátor LIKE se vyhodnocují prakticky stejně jako výrazy, které používají rovnosti jako kritéria filtru. Ale [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazů, které používají operátor LIKE může zahrnovat literály a zástupné znaky.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]výrazy, které používají operátor LIKE jsou vyhodnocovány podobným způsobem jako výrazy, které jako kritéria filtru používají rovnost. Výrazy, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] které používají operátor LIKE, však mohou zahrnovat literály i zástupné znaky.  
   
- Následující tabulka popisuje syntaxi vzor `string`.  
+ Následující tabulka popisuje syntaxi vzoru `string`.  
   
 |Zástupný znak|Popis|Příklad|  
 |------------------------|-----------------|-------------|  
-|%|Žádné `string` nula nebo více znaků.|`title like '%computer%'` Vyhledá všechny Tituly s slovo `"computer"` kdekoliv v názvu.|  
-|_ (podtržítko)|Libovolný znak.|`firstname like '_ean'` Vyhledá všechny čtyřpísmenný křestní jména, které končí `"ean`, "například Dean nebo pracovníka.|  
-|[ ]|Kterýkoli jednotlivý znak v zadaném rozsahu ([-f]), nebo nastavte ([abcdef]).|`lastname like '[C-P]arsen'` Najde poslední názvy končící na "arsen" a počínaje mezi jazyky C a P, jako je například Carsen nebo Larsen jednoho libovolného znaku.|  
-|[^]|Jeden libovolný znak není v zadaném rozsahu ([^-f]), nebo nastavte ([^ abcdef]).|`lastname like 'de[^l]%'` Vyhledá všechny poslední názvy, které začínají řetězcem "de" a nemusí obsahovat písmeno "l".|  
+|%|Jakékoli `string` nula nebo více znaků.|`title like '%computer%'`Vyhledá všechny nadpisy, `"computer"` které mají slovo kdekoli v názvu.|  
+|_ (podtržítko)|Libovolný jeden znak.|`firstname like '_ean'`Vyhledá všechny čtyři písmena příjmení, které končí `"ean`na, například Dean nebo Novák.|  
+|[ ]|Libovolný jeden znak v zadaném rozsahu ([a-f]) nebo set ([abcdef]).|`lastname like '[C-P]arsen'`vyhledá poslední názvy končící řetězcem "arsen" a počínaje libovolným znakem mezi C a P, jako je například Carsen nebo Larsen.|  
+|[^]|Libovolný jeden znak, který není v zadaném rozsahu ([^ a-f]) nebo set ([^ abcdef]).|`lastname like 'de[^l]%'`Vyhledá všechny poslední názvy začínající písmenem "de" a neobsahují "l" jako následující písmeno.|  
   
 > [!NOTE]
->  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Jako operátor a ODCHODOVOU klauzuli nelze použít pro `System.DateTime` nebo `System.Guid` hodnoty.  
+> Operátor LIKE a řídicí klauzuli nelze použít na `System.DateTime` hodnoty nebo `System.Guid`. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]  
   
- NAPŘÍKLAD porovnávání aplikace podporuje ASCII a Unicode porovnávání vzorů. Všechny parametry jsou znaky ASCII, provádí ASCII porovnávání vzorů. Pokud jeden nebo více argumentů Unicode, jsou všechny argumenty převést do kódování Unicode a porovnávání vzorů Unicode se provádí. Při použití kódování Unicode s podobné koncové mezery jsou významné. ale pro kódování Unicode, koncové mezery nejsou důležité. Syntaxe řetězce vzor [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je stejné jako u příkazů jazyka Transact-SQL.  
+ Podobně jako podporuje porovnávání vzorů ASCII a porovnávání vzorů znakové sady Unicode. Pokud jsou všechny parametry znaky ASCII, je proveden porovnávání vzorů ASCII. Pokud je jedním nebo více argumenty kódování Unicode, jsou všechny argumenty převedeny na porovnávání vzorů Unicode a Unicode. Pokud používáte kódování Unicode s PODOBNÝm znakem, jsou koncové mezery významné. Avšak pro jiné než Unicode není koncová mezera významná. Syntaxe řetězcového vzoru [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je stejná jako v jazyce Transact-SQL.  
   
- Vzorek může obsahovat regulární znaky a zástupné znaky. Při porovnávání vzorů, pravidelné znaky se musí přesně shodovat znaků určených v znak `string`. Zástupné znaky, ale mohou odpovídat fragmenty libovolného řetězce znaků. Při použití se zástupnými znaky, je flexibilnější, než = operátor LIKE a! = operátory porovnání řetězců.  
+ Vzor může obsahovat běžné znaky a zástupné znaky. Během porovnávání vzorů musí regulární znaky přesně odpovídat znakům zadaným ve znaku `string`. Zástupné znaky však mohou být porovnány s libovolnými fragmenty řetězce znaků. Pokud se používá se zástupnými znaky, operátor LIKE je flexibilnější než operátory porovnání řetězců = a! =.  
   
 > [!NOTE]
->  Pokud je cílem konkrétního zprostředkovatele můžete použít rozšíření specifické pro zprostředkovatele. Ale tyto konstrukce může považovat za odlišně podle jiných poskytovatelů, třeba. Systému SQL Server podporuje [první poslední] a [^ první poslední] vzory, kde dřívější odpovídá přesně jeden znak mezi první a poslední a druhá možnost odpovídá přesně jeden znak, který není mezi první a poslední.  
+> Pokud cílíte na konkrétního poskytovatele, můžete použít rozšíření specifická pro daného poskytovatele. Nicméně takové konstrukce mohou být zpracovány odlišně jinými poskytovateli, například. SqlServer podporuje vzory [First-Last] a [^ First-Last], kde předchozí odpovídá přesně jednomu znaku mezi první a poslední a druhá odpovídá přesně jednomu znaku, který není mezi první a poslední.  
   
 ### <a name="escape"></a>Escape  
- Pomocí řídicí klauzule můžete hledat řetězce znaků, které zahrnují jeden nebo více speciální zástupné znaky jsou popsané v tabulce v předchozí části. Předpokládejme například, několik dokumentů obsahují literál "100 %" v názvu a chcete hledat ve všech těchto dokumentů. Protože procent (%) zástupný znak je znak, musíte před něj pomocí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ODCHODOVOU klauzuli úspěšně provést hledání. Následuje příklad tohoto filtru.  
+ Pomocí klauzule ESCAPE můžete hledat řetězce znaků, které zahrnují jeden nebo více speciálních zástupných znaků popsaných v tabulce v předchozí části. Předpokládejme například, že několik dokumentů obsahuje v názvu literál "100%" a chcete vyhledat všechny tyto dokumenty. Vzhledem k tomu, že procento (%) znak je zástupným znakem, je nutné jej pomocí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] řídicí klauzule pro úspěšné spuštění hledání provést. Následuje příklad tohoto filtru.  
   
 ```  
 "title like '%100!%%' escape '!'"  
 ```  
   
- V tomto výrazu vyhledávání, procenta zástupného znaku (%) okamžitě následující znak vykřičník (!) je považován za literál, nikoli jako zástupný znak. Můžete použít libovolný znak jako řídicí znak s výjimkou [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zástupné znaky a druhou mocninu závorka (`[ ]`) znaků. V předchozím příkladu znak vykřičník (!) je řídicí znak.  
+ V tomto hledaném výrazu je procentuální hodnota zástupného znaku (%) ihned po znaku vykřičníku (!) je považován za literál, nikoli jako zástupný znak. Můžete použít libovolný znak jako řídicí znak s výjimkou [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zástupných znaků a čtvercových závorek (`[ ]`) znaků. V předchozím příkladu znak vykřičník (!) je řídicí znak.  
   
 ## <a name="example"></a>Příklad  
- Následující dva [!INCLUDE[esql](../../../../../../includes/esql-md.md)] použít podobné dotazy a řídicí operátory k určení, zda řetězec konkrétní znak odpovídá zadanému vzoru. Vyhledá první dotaz `Name` , které začíná znaky `Down_`. Tento dotaz používá možnost řídicí, protože podtržítko (`_`) je zástupný znak. Bez zadání možnosti řídicí, dotaz bude vyhledávat libovolné `Name` hodnoty, které začínají slovem `Down` za nímž následuje jakémukoli jednomu znaku jiného než podtržítko. Dotazy jsou založeny na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující dva [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy používají operátory LIKE a Escape k určení, zda konkrétní řetězec znaků odpovídá zadanému vzoru. První dotaz vyhledá `Name` znak, který začíná znaky `Down_`. Tento dotaz používá možnost Escape, protože podtržítko (`_`) je zástupným znakem. Bez určení možnosti Escape dotaz vyhledá všechny `Name` hodnoty, které začínají slovem `Down` následovaným libovolným jedním znakem, který je jiný než znak podtržítka. Dotazy jsou založené na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
-2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#LIKE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#like)]  
   

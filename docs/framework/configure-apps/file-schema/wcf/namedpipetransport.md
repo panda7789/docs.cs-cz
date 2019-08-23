@@ -2,20 +2,20 @@
 title: <namedPipeTransport>
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-ms.openlocfilehash: 819639eabf0332a34d6a7250159d24e42552f874
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 473d0fbd543a056ec2b152f43a76a0417a18016f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423093"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933209"
 ---
-# <a name="namedpipetransport"></a>\<namedPipeTransport>
-Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů, pokud je součástí vlastní vazby.  
+# <a name="namedpipetransport"></a>\<namedPipeTransport >
+Definuje přenos, který způsobuje, že kanál přenáší zprávy pomocí pojmenovaných kanálů, pokud je součástí vlastní vazby.  
   
 \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<namePipeTransport >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -48,29 +48,29 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|třídě channelInitializationTimeout|Získá nebo nastaví <xref:System.TimeSpan> , která určuje maximální dobu kanálu může být ve stavu inicializace před jeho odpojením.|  
-|connectionBufferSize|Získá nebo nastaví velikost vyrovnávací paměti použité k přenosu bloku serializovaných zpráv od klienta nebo služby.|  
-|hostNameComparisonMode|Získá nebo nastaví hodnotu určující, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.|  
-|Vlastnost manualAddressing|Získá nebo nastaví hodnotu určující, jestli je potřeba ruční adresování zprávy.|  
-|maxBufferPoolSize|Získá nebo nastaví maximální velikost v bajtech, všechny fondy vyrovnávací paměti používané přenos.|  
-|maxBufferSize|Získá nebo nastaví maximální velikost vyrovnávací paměti pro použití. Pro proudu zpráv tato hodnota by měla být aspoň maximální možná velikost záhlaví zpráv, které jsou v režimu vyrovnávací paměti pro čtení.|  
-|maxOutputDelay|Získá nebo nastaví maximální interval času, který blok zprávy, nebo celá zpráva může zůstat ve vyrovnávací paměti v paměti před odesláním navýšení kapacity.|  
-|maxPendingAccepts|Získá nebo nastaví maximální počet kanálů služby může mít čekání na naslouchací proces pro zpracování příchozích připojení ke službě.|  
-|maxPendingConnections|Získá nebo nastaví maximální počet připojení čeká na odeslání ve službě.|  
-|maxReceivedMessageSize|Získá nebo nastaví maximální povolenou velikost zprávy, v bajtech, které může být přijata.|  
-|transferMode|Získá nebo nastaví hodnotu určující, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.|  
-|[\<connectionPoolSettings > z \<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/connectionpoolsettings.md)|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
+|ChannelInitializationTimeout|Získá nebo nastaví <xref:System.TimeSpan> , který určuje maximální dobu, po kterou může kanál ve stavu inicializace, než bude odpojen.|  
+|ConnectionBufferSize|Získá nebo nastaví velikost vyrovnávací paměti, která se používá k přenosu bloku serializované zprávy na lince z klienta nebo služby.|  
+|hostNameComparisonMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se k dosažení služby při shodě s identifikátorem URI používá název hostitele.|  
+|Jeho|Získává nebo nastavuje hodnotu, která indikuje, jestli se vyžaduje ruční adresování zprávy.|  
+|maxBufferPoolSize|Získá nebo nastaví maximální velikost všech fondů vyrovnávací paměti používaných při přenosu (v bajtech).|  
+|Třída|Získá nebo nastaví maximální velikost vyrovnávací paměti, která se má použít. U zpráv v datových proudech by tato hodnota měla být alespoň maximální možná velikost záhlaví zprávy, která je čtena v režimu vyrovnávací paměti.|  
+|maxOutputDelay|Získá nebo nastaví maximální časový interval, po který může blok zprávy nebo úplná zpráva zůstat v paměti před odesláním do vyrovnávací paměti.|  
+|maxPendingAccepts|Získá nebo nastaví maximální počet kanálů, které může služba čekat na naslouchací proces pro zpracování příchozích připojení ke službě.|  
+|maxPendingConnections|Získá nebo nastaví maximální počet připojení čekajících na odeslání ve službě.|  
+|maxReceivedMessageSize|Získá a nastaví maximální povolenou velikost zprávy (v bajtech), kterou lze přijmout.|  
+|transferMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se zprávy ukládají do vyrovnávací paměti nebo streamují s přenosem orientovaným na připojení.|  
+|[\<connectionPoolSettings > \<namedPipeTransport >](connectionpoolsettings.md)|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
-Tento přenos používá identifikátory URI ve tvaru "net.pipe://hostname/path". Ostatní součásti URI jsou volitelné.  
+Tento přenos používá identifikátory URI ve formátu "NET. pipe://hostname/Path". Jiné součásti identifikátoru URI jsou volitelné.  
   
-`namedPipeTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol pojmenovaných kanálů. Tento přenos se používá pro na počítači Windows Communication Foundation (WCF) - na - WCF komunikace.  
+`namedPipeTransport` Element je výchozím bodem pro vytvoření vlastní vazby, která implementuje transportní protokol pojmenovaných kanálů. Tento přenos se používá pro komunikaci mezi počítači Windows Communication Foundation (WCF) a WCF.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -78,9 +78,9 @@ Tento přenos používá identifikátory URI ve tvaru "net.pipe://hostname/path"
 - <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Přenosy](../../../wcf/feature-details/transports.md)
+- [Volba přenosu](../../../wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

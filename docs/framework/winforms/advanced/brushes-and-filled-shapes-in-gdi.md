@@ -13,68 +13,68 @@ helpviewer_keywords:
 - gradient brushes
 - brushes [Windows Forms], gradient
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
-ms.openlocfilehash: ad3a4af2474ace61bbf35ea1357a2a6037af039a
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 45ef0b5920e43300e047d363149ea10a7833477b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67506235"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912233"
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>Štětce a vyplněné obrazce v GDI+
-Zavřeného tvaru, jako je například obdélník nebo elipsy, se skládá z přehledu a vnitřním. Přehled je vykreslen pomocí pera a vnitřní je vyplněna štětce. Rozhraní GDI + poskytuje několik tříd štětce k vyplnění vnitřek uzavřené obrazce: <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, a <xref:System.Drawing.Drawing2D.PathGradientBrush>. Všechny tyto třídy dědí <xref:System.Drawing.Brush> třídy. Následující obrázek znázorňuje obdélník vyplněny plného štětce a elipsa se štětce šrafování.  
+Uzavřený tvar, jako je obdélník nebo elipsa, se skládá z obrysu a vnitřku. Obrys se vykreslí perem a vnitřek se vyplní štětcem. GDI+ poskytuje několik tříd štětců pro vyplňování vnitřních tvarů uzavřených obrazců: <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>a <xref:System.Drawing.Drawing2D.PathGradientBrush>. Všechny tyto třídy dědí z <xref:System.Drawing.Brush> třídy. Následující obrázek znázorňuje obdélník vyplněný plným štětcem a elipsu vyplněnou tahem šrafování.  
   
- ![Vyplněné tvary](./media/aboutgdip02-art17.gif "Aboutgdip02_art17")  
+ ![Vyplněné obrazce](./media/aboutgdip02-art17.gif "Aboutgdip02_art17")  
   
-## <a name="solid-brushes"></a>Plné štětců  
- K vyplnění zavřeného tvaru, je třeba instance <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Brush>. Instance <xref:System.Drawing.Graphics> třída poskytuje metody, jako například <xref:System.Drawing.Graphics.FillRectangle%2A> a <xref:System.Drawing.Graphics.FillEllipse%2A>a <xref:System.Drawing.Brush> uloží atributy výplň, jako je barva a vzor. <xref:System.Drawing.Brush> Je předán jako jeden z argumentů metody fill. Následující příklad kódu ukazuje, jak vyplnit elipsu s plnou červenou barvu.  
+## <a name="solid-brushes"></a>Plné štětce  
+ Chcete-li vyplnit uzavřený tvar, potřebujete instanci <xref:System.Drawing.Graphics> třídy <xref:System.Drawing.Brush>a. Instance <xref:System.Drawing.Graphics> třídy poskytuje metody, <xref:System.Drawing.Graphics.FillRectangle%2A> jako jsou a <xref:System.Drawing.Graphics.FillEllipse%2A>, a také <xref:System.Drawing.Brush> atributy obchodů výplně, jako je barva a vzor. <xref:System.Drawing.Brush> Je předán jako jeden z argumentů metody Fill. Následující příklad kódu ukazuje, jak vyplnit elipsu plnou červenou barvou.  
   
  [!code-csharp[LinesCurvesAndShapes#121](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#121)]
  [!code-vb[LinesCurvesAndShapes#121](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#121)]  
   
 > [!NOTE]
->  V předchozím příkladu je štětec typu <xref:System.Drawing.SolidBrush>, který dědí z <xref:System.Drawing.Brush>.  
+> V předchozím příkladu je štětec typu <xref:System.Drawing.SolidBrush>, který dědí z. <xref:System.Drawing.Brush>  
   
-## <a name="hatch-brushes"></a>Nesouvislých štětců  
- Po vyplnění obrazce pomocí nesouvislého štětce, určíte barvu popředí, pozadí barvu a styl šrafování. Barva popředí je barva šrafování.  
+## <a name="hatch-brushes"></a>Šrafované štětce  
+ Při naplňování tvaru pomocí šrafování štětce určíte barvu popředí, barvu pozadí a styl šrafování. Barva popředí je barva šrafování.  
   
  [!code-csharp[LinesCurvesAndShapes#122](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#122)]
  [!code-vb[LinesCurvesAndShapes#122](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#122)]  
   
- Rozhraní GDI + obsahuje více než 50 šrafování styly; tři styly je znázorněno na následujícím obrázku jsou <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, a <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.  
+ GDI+ poskytuje více než 50 stylů šrafování; tři styly zobrazené na následujícím obrázku jsou <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>a <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.  
   
- ![Vyplněné tvary](./media/aboutgdip02-art18.gif "Aboutgdip02_art18")  
+ ![Vyplněné obrazce](./media/aboutgdip02-art18.gif "Aboutgdip02_art18")  
   
-## <a name="texture-brushes"></a>Texturované štětce  
- Štětcem textury můžete vyplnění obrazce pomocí vzoru uložené v rastrový obrázek. Předpokládejme například, že na následujícím obrázku je uložen v souboru na disku s názvem `MyTexture.bmp`.  
+## <a name="texture-brushes"></a>Štětce textury  
+ Pomocí štětce textury můžete vyplnit tvar pomocí vzoru uloženého v bitmapě. Předpokládejme například, že následující obrázek je uložený v souboru na disku s `MyTexture.bmp`názvem.  
   
- ![Vyplněné obrazce](./media/aboutgdip02-art19.gif "Aboutgdip02_Art19")  
+ ![Vyplněný tvar](./media/aboutgdip02-art19.gif "Aboutgdip02_Art19")  
   
- Následující příklad kódu ukazuje, jak vyplnit elipsu opakováním obrázek uložený v `MyTexture.bmp`.  
+ Následující příklad kódu ukazuje, jak vyplnit elipsu opakováním obrázku uloženého v `MyTexture.bmp`.  
   
  [!code-csharp[LinesCurvesAndShapes#123](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#123)]
  [!code-vb[LinesCurvesAndShapes#123](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#123)]  
   
- Následující obrázek znázorňuje vyplněnou elipsu.  
+ Následující ilustrace znázorňuje Vyplněnou elipsu.  
   
- ![Vyplněné obrazce](./media/aboutgdip02-art20.gif "AboutGdip02_Art20")  
+ ![Vyplněný tvar](./media/aboutgdip02-art20.gif "AboutGdip02_Art20")  
   
 ## <a name="gradient-brushes"></a>Štětce přechodu  
- Rozhraní GDI + poskytuje dva druhy štětce přechodu: lineární a cestu. Štětec lineárního přechodu můžete použít k vyplnění obrazce pomocí barev, která se mění postupně při přesunu napříč tvar vodorovně, svisle, nebo šikmo. Následující příklad kódu ukazuje, jak vyplnit elipsu vodorovné štětce přechodu, který změní z blue green při přesunu z levého okraje na tři tečky na pravý okraj.  
+ GDI+ nabízí dva druhy štětců přechodů: lineární a cesta. Můžete použít štětec lineárního přechodu k vyplnění obrazce barvou, která se postupně mění při pohybu mezi tvary vodorovně, svisle nebo úhlopříčně. Následující příklad kódu ukazuje, jak vyplnit elipsu vodorovným barevným štětcem, který se při přesunu od levého okraje elipsy do pravého okraje mění z modré na zelenou.  
   
  [!code-csharp[LinesCurvesAndShapes#124](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#124)]
  [!code-vb[LinesCurvesAndShapes#124](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#124)]  
   
- Následující obrázek znázorňuje vyplněnou elipsu.  
+ Následující ilustrace znázorňuje Vyplněnou elipsu.  
   
- ![Vyplněné obrazce](./media/aboutgdip02-art21.gif "AboutGdip02_Art21")  
+ ![Vyplněný tvar](./media/aboutgdip02-art21.gif "AboutGdip02_Art21")  
   
- Chcete-li změnit barvu při přesunu z centra obrazec na hraničních zařízeních je možné nakonfigurovat štětce přechodu cesty.  
+ Štětec pro barevný přechod může být nakonfigurovaný tak, aby se změnila barva při přechodu od středu tvaru k okraji.  
   
- ![Vyplněné obrazce](./media/aboutgdip02-art22.gif "AboutGdip02_Art22")  
+ ![Vyplněný tvar](./media/aboutgdip02-art22.gif "AboutGdip02_Art22")  
   
- Štětce přechodu cesty jsou velmi flexibilní. Štětec přechodu použitou k vyplnění trojúhelník následující změny obrázek postupně od červené uprostřed každé tři různé barvy u vrcholů.  
+ Štětce přechodu cest jsou poměrně flexibilní. Štětec přechodu použitý k vyplnění trojúhelníku v následujícím obrázku se postupně mění od červeného na všech třech různých barvách na vrcholech.  
   
- ![Vyplněné obrazce](./media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
+ ![Vyplněný tvar](./media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -83,5 +83,5 @@ Zavřeného tvaru, jako je například obdélník nebo elipsy, se skládá z př
 - <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>
 - <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
-- [Postupy: Kreslení plného obdélníku ve formuláři Windows](how-to-draw-a-filled-rectangle-on-a-windows-form.md)
-- [Postupy: Kreslení plné elipsy ve formuláři Windows](how-to-draw-a-filled-ellipse-on-a-windows-form.md)
+- [Postupy: Nakreslit vyplněný obdélník na formuláři Windows](how-to-draw-a-filled-rectangle-on-a-windows-form.md)
+- [Postupy: Nakreslit Vyplněnou elipsu na formuláři Windows](how-to-draw-a-filled-ellipse-on-a-windows-form.md)

@@ -2,24 +2,24 @@
 title: Element <scopedCertificates>
 ms.date: 03/30/2017
 ms.assetid: c7b6fc35-d4b2-4c18-98bd-83e09591f1d3
-ms.openlocfilehash: 73e78a6ca27ed45e1eadc7121987b75f79bc6aa5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed53a42575a8d57c365f7a329a1a9c1df075d6d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670635"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935223"
 ---
-# <a name="scopedcertificates-element"></a>\<scopedCertificates > – Element
-Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování. Tato kolekce se obvykle používá k určení certifikáty služeb pro služby tokenu zabezpečení v případě federovaných.  
+# <a name="scopedcertificates-element"></a>\<scopedCertificates – element >
+Představuje kolekci certifikátů X. 509 poskytovaných konkrétními službami (vymezenými) pro ověřování. Tato kolekce se obvykle používá k určení certifikátů služby pro služby tokenů zabezpečení ve federovaném scénáři.  
   
  \<system.ServiceModel>  
-\<chování >  
-část endpointBehaviors  
-\<chování >  
+\<> chování  
+oddíl endpointBehaviors  
+\<> chování  
 \<clientCredentials>  
 \<serviceCertificate>  
-\<scopedCertificates > – Element  
-\<Přidat > – element pro \<scopedCertificates >  
+\<scopedCertificates – element >  
+\<Přidat > element pro \<> scopedCertificates  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,23 +43,23 @@ Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ov�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopedcertificates-element.md)|Přidá certifikát X.509 do kolekce vymezených certifikátů.|  
+|[\<add>](add-of-scopedcertificates-element.md)|Přidá certifikát X. 509 do kolekce certifikátů s vymezeným oborem.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)|Určuje certifikát používaný při ověřování služby ke klientovi.|  
+|[\<serviceCertificate>](servicecertificate-of-servicecredentials.md)|Určuje certifikát, který se má použít při ověřování služby pro klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato kolekce umožňuje klientovi nakonfigurovat certifikáty služby, které budou používat na základě adresy URL služby, se kterým komunikuje. To je zvláště užitečná v vydaný token situacích, kdy může klient komunikovat k více službám (ukončení služby také služby tokenu zabezpečení zprostředkující). U vazeb, které používají zabezpečení na základě certifikátů zpráv tento certifikát se používá k šifrování zpráv ve službě a očekává se využívat službu k podepisování odpovědi klientovi.  
+ Tato kolekce umožňuje klientovi nakonfigurovat certifikáty služby tak, aby se používaly na základě adresy URL služby, se kterou komunikuje. To je užitečné hlavně ve scénářích vydaných tokenů, kde klient může komunikovat s více službami (koncová služba i zprostředkující služba tokenů zabezpečení). U vazeb, které používají zabezpečení zpráv založených na certifikátech, se tento certifikát používá k šifrování zpráv do služby a očekává se, že služba bude službu používat k podepisování odpovědí klientovi.  
   
- Pokud vazba vyžaduje certifikát pro službu a žádné konkrétní certifikát pro službu, kterou adresy URL se nachází v ScopedCertificates, použije se výchozí certifikát.  
+ Pokud vazba vyžaduje certifikát pro službu a v ScopedCertificates se nenajde žádný konkrétní certifikát pro adresu URL služby, použije se výchozí certifikát.  
   
- Další informace najdete v části "Obor certifikáty" v [jak: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md).  
+ Další informace najdete v části ["vymezené certifikáty" v tématu Postupy: Vytvoření federovaného klienta](../../../wcf/feature-details/how-to-create-a-federated-client.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje certifikátu služby pro klienta pro použití při komunikaci s koncovými body, jejichž název domény je `http://www.contoso.com` přes protokol HTTP.  
+ Následující příklad určuje certifikát služby, který má klient použít při komunikaci s koncovými body, jejichž název domény `http://www.contoso.com` je přes protokol HTTP.  
   
 ```xml  
 <serviceCertificate>
@@ -80,8 +80,8 @@ Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ov�
 - <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopedcertificates-element.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
+- [Postupy: Vytvoření federovaného klienta](../../../wcf/feature-details/how-to-create-a-federated-client.md)
+- [\<add>](add-of-scopedcertificates-element.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

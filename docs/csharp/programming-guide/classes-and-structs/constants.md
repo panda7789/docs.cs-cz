@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: d179c1b8717f4247ce745104db2d0bb4faefb8ab
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7da86a8999f6cc36a7b71f70fd92a363673824b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597107"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924534"
 ---
 # <a name="constants-c-programming-guide"></a>Konstanty (Průvodce programováním v C#)
 Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a nemění se po dobu života programu. Konstanty jsou deklarovány [](../../language-reference/keywords/const.md) s modifikátorem const. Pouze C# předdefinované typy (s výjimkou <xref:System.Object?displayProperty=nameWithType>) mohou být deklarovány jako. `const` Seznam předdefinovaných typů najdete v tématu [tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md). Uživatelsky definované typy, včetně tříd, struktur a polí, nemůžou být `const`. Použijte modifikátor [jen pro čtení](../../language-reference/keywords/readonly.md) k vytvoření třídy, struktury nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a poté nelze změnit.  
@@ -27,7 +27,7 @@ Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a neměn�
  V tomto příkladu je konstanta `months` vždy 12 a nemůže být změněna ani samotnou třídou. Ve skutečnosti, když kompilátor narazí na konstantní identifikátor ve C# zdrojovém kódu (například `months`), nahradí hodnotu literálu přímo do kódu přestupného jazyka (IL), který vytvoří. Vzhledem k tomu, že v době běhu není přiřazena žádná proměnná adresa, `const` nelze pole předat odkazem a nelze ji ve výrazu použít jako l-value.  
   
 > [!NOTE]
->  Buďte opatrní při odkazování na konstantní hodnoty definované v jiném kódu, jako jsou knihovny DLL. Pokud nová verze knihovny DLL definuje novou hodnotu pro konstantu, program bude stále obsahovat starou hodnotu literálu, dokud nebude znovu zkompilována s novou verzí.  
+> Buďte opatrní při odkazování na konstantní hodnoty definované v jiném kódu, jako jsou knihovny DLL. Pokud nová verze knihovny DLL definuje novou hodnotu pro konstantu, program bude stále obsahovat starou hodnotu literálu, dokud nebude znovu zkompilována s novou verzí.  
   
  Současně lze deklarovat více konstant stejného typu, například:  
   

@@ -2,44 +2,44 @@
 title: Protokol kontextové výměny
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-ms.openlocfilehash: cb6e52b5622316cfaa9c56b26c3aac6764c71cca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19780cccc74f8c3615dc844e47be7613ca5f8bc1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651116"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911207"
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
-Tato část popisuje protokol kontextové výměny zavedená ve Windows Communication Foundation (WCF) verzi rozhraní .NET Framework verze 3.5. Tento protokol umožňuje kanálu klienta přijímat kontext získáte ho od služby a použít ji k této službě odesílá přes stejnou instanci kanálu klienta také všechny následné požadavky. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: Soubory cookie protokolu HTTP nebo záhlaví SOAP.  
+Tato část popisuje protokol výměny kontextu, představený ve službě Windows Communication Foundation (WCF) verze .NET Framework verze 3,5. Tento protokol umožňuje klientovi klientským kanálem přijmout kontext dodaný službou a použít ho u všech dalších požadavků této služby odesílaných přes stejnou instanci kanálu klienta. Implementace kontextu protokolu Exchange může použít jeden z následujících dvou mechanismů k rozšíření kontextu mezi serverem a klientem: Soubory cookie protokolu HTTP nebo hlavička protokolu SOAP.  
   
- Protokol kontextové výměny je implementována ve vlastním kanálu vrstvě. Kanál komunikuje kontextu do a z aplikace pomocí vrstvy <xref:System.ServiceModel.Channels.ContextMessageProperty> vlastnost. Hodnota kontextu pro přenos mezi koncovými body, je buď serializován jako záhlaví SOAP ve vrstvě kanálu nebo převést na nebo z vlastnosti zprávy, které představují požadavků HTTP a odpovědí. V takovém případě se očekává, že jeden z kanálu vrstvách převede vlastnosti zprávy požadavku a odpovědi HTTP do a z soubory cookie protokolu HTTP, v uvedeném pořadí. Volba mechanismus, který se používá k výměně kontextu se provádí pomocí <xref:System.ServiceModel.Channels.ContextExchangeMechanism> vlastnost <xref:System.ServiceModel.Channels.ContextBindingElement>. Platné hodnoty jsou `HttpCookie` nebo `SoapHeader`.  
+ Protokol výměny kontextu je implementován ve vrstvě vlastního kanálu. Kanál komunikuje kontext do a z aplikační vrstvy pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty> vlastnosti. Pro přenos mezi koncovými body je hodnota kontextu buď serializována jako hlavička protokolu SOAP na vrstvě kanálu, nebo převedena do nebo z vlastností zprávy, které reprezentují požadavek HTTP a odpověď. V druhém případě je očekáváno, že jedna z podkladových vrstev kanálu převádí vlastnosti zprávy žádosti HTTP a odpovědi na soubory cookie protokolu HTTP v uvedeném pořadí. Volba mechanismu používaného k výměně kontextu se provádí pomocí <xref:System.ServiceModel.Channels.ContextExchangeMechanism> vlastnosti <xref:System.ServiceModel.Channels.ContextBindingElement>v. Platné hodnoty jsou `HttpCookie` nebo `SoapHeader`.  
   
- Na straně klienta, můžete instanci kanálu pracovat ve dvou režimech na základě nastavení na vlastnosti kanálu <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A>.  
+ Na straně klienta může instance kanálu fungovat ve dvou režimech na základě nastavení vlastnosti <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A>kanálu.  
   
-## <a name="mode-1-channel-context-management"></a>Režim 1: Správu kontextu kanálu  
- Toto je výchozí režim kde <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> je nastavena na `true`. V tomto režimu kanálu kontextu spravuje kontextu a ukládá do mezipaměti kontextu během celé jeho životnosti. Kontext můžete získat z kanálu prostřednictvím vlastnosti kanálu `IContextManager` voláním `GetContext` metody. Kanál může být také předem inicializovaných s konkrétní kontext před voláním otevření `SetContext` metodu na vlastnosti kanálu. Jakmile kanál je inicializován s kontextem nelze obnovit.  
+## <a name="mode-1-channel-context-management"></a>Režim 1: Správa kontextu kanálu  
+ Toto je výchozí režim, ve <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> kterém je nastaveno `true`na. V tomto režimu kontextový kanál spravuje kontext a ukládá kontext do mezipaměti během své životnosti. Kontext lze načíst z vlastnosti `IContextManager` kanálu prostřednictvím kanálu `GetContext` voláním metody. Kanál je také možné před otevřením předem inicializovat pomocí konkrétního kontextu voláním `SetContext` metody na vlastnost kanálu. Po inicializaci kanálu s jeho kontextem nelze resetovat.  
   
- Následuje seznam výstupních podmínek v tomto režimu:  
+ Následuje seznam invariant v tomto režimu:  
   
-- Žádný pokus o resetování kontextu pomocí `SetContext` po otevřené vyvolá kanál <xref:System.InvalidOperationException>.  
+- Jakýkoli pokus o resetování kontextu pomocí `SetContext` po otevření kanálu <xref:System.InvalidOperationException>vyvolá výjimku.  
   
-- Žádný pokus o odeslání kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty> v odchozí zprávě vyvolá <xref:System.InvalidOperationException>.  
+- Jakýkoli pokus o odeslání kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty> odchozí zprávy <xref:System.InvalidOperationException>vyvolá výjimku.  
   
-- Pokud je přijata zpráva ze serveru s konkrétní kontext, když kanál již byl inicializován s konkrétní kontext, výsledkem je <xref:System.ServiceModel.ProtocolException>.  
+- Pokud je přijata zpráva ze serveru s určitým kontextem, pokud již byl kanál inicializován pomocí konkrétního kontextu, výsledkem <xref:System.ServiceModel.ProtocolException>je.  
   
     > [!NOTE]
-    >  Je vhodné počáteční kontextu přijetí ze serveru, pouze v případě, že otevření kanálu bez kontextu explicitně nastaven.  
+    > Je vhodné přijmout počáteční kontext ze serveru jenom v případě, že je kanál otevřený bez explicitního nastavení kontextu.  
   
-- <xref:System.ServiceModel.Channels.ContextMessageProperty> Na příchozí zpráva má vždy hodnotu null.  
+- <xref:System.ServiceModel.Channels.ContextMessageProperty> Příchozí zpráva je vždycky null.  
   
-## <a name="mode-2-application-context-management"></a>Režim 2: Správa kontextu aplikací  
- Jedná se o režim při <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> je nastavena na `false`. V tomto režimu nespravuje kanálu kontextu kontextu. Je zodpovědností aplikace načíst, spravovat a zavedení kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty>. Žádný pokus o volání `GetContext` nebo `SetContext` vede <xref:System.InvalidOperationException>.  
+## <a name="mode-2-application-context-management"></a>Režim 2: Správa kontextu aplikace  
+ Toto je režim, pokud <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> je nastaven na `false`. V tomto režimu kontextový kanál nespravuje kontext. Je zodpovědností aplikace za účelem získání, správy a použití kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty>. Jakýkoli pokus o volání `GetContext` nebo `SetContext` výsledky v <xref:System.InvalidOperationException>.  
   
- Bez ohledu na to režimu, který je vybrán objekt pro vytváření kanálů klienta podporuje <xref:System.ServiceModel.Channels.IRequestChannel>, <xref:System.ServiceModel.Channels.IRequestSessionChannel>, a <xref:System.ServiceModel.Channels.IDuplexSessionChannel> zpráv exchange vzory.  
+ Bez ohledu na to, v jakém režimu je zvolený objekt pro <xref:System.ServiceModel.Channels.IDuplexSessionChannel> vytváření kanálů klienta, podporuje <xref:System.ServiceModel.Channels.IRequestChannel>vzorce pro výměnu zpráv, <xref:System.ServiceModel.Channels.IRequestSessionChannel>a.  
   
- Ve službě, je zodpovědný za převod kontextu dodaný klientem na příchozích zprávách na instanci kanálu <xref:System.ServiceModel.Channels.ContextMessageProperty>. Vlastnost zprávy lze přistupovat pomocí aplikačního nebo jiných kanálů další nahoru v zásobníku volání. Kanály služby umožňují aplikační vrstvu můžete zadat novou hodnotu kontextu mohly rozšířit zpět do klienta připojením <xref:System.ServiceModel.Channels.ContextMessageProperty> zprávu s odpovědí. Tato vlastnost je převedena na záhlaví SOAP nebo souboru cookie HTTP, který obsahuje kontext, který závisí na konfiguraci vazby. Tato služba podporuje naslouchacího procesu kanálu <xref:System.ServiceModel.Channels.IReplyChannel>, <xref:System.ServiceModel.Channels.IReplySessionChannel>, a <xref:System.ServiceModel.Channels.IReplySessionChannel> zpráv exchange vzory.  
+ Ve službě je instance kanálu zodpovědná za převod kontextu dodaného klientem na příchozí zprávy do <xref:System.ServiceModel.Channels.ContextMessageProperty>. K vlastnosti zprávy pak může mít aplikační vrstva nebo jiné kanály dál v zásobníku volání. Kanály služby také umožňují, aby vrstva aplikace určovala novou hodnotu kontextu, která se má rozšířit zpátky do klienta, a to připojením <xref:System.ServiceModel.Channels.ContextMessageProperty> ke zprávě odpovědi. Tato vlastnost je převedena na hlavičku protokolu SOAP nebo soubor cookie protokolu HTTP obsahující kontext, který závisí na konfiguraci vazby. Naslouchací proces kanálu služby podporuje <xref:System.ServiceModel.Channels.IReplyChannel>, <xref:System.ServiceModel.Channels.IReplySessionChannel>a <xref:System.ServiceModel.Channels.IReplySessionChannel> vzory výměny zpráv.  
   
- Protokol kontextové výměny zavádí nový `wsc:Context` záhlaví SOAP k reprezentaci informace o kontextu při šíření kontextu nejsou používány soubory cookie protokolu HTTP. Schéma hlavičky kontextu umožňuje pro libovolný počet podřízených prvků, každý s klíčem řetězce a obsah řetězce. Následuje příklad hlavičku kontextu.  
+ Protokol výměny kontextu zavádí novou `wsc:Context` hlavičku SOAP, která představuje kontextové informace, když se soubory cookie protokolu HTTP nepoužívají k šíření kontextu. Schéma záhlaví kontextu umožňuje pro libovolný počet podřízených elementů, z nichž každý má řetězcový klíč a obsah řetězce. Následuje příklad záhlaví kontextu.  
   
  `<Context xmlns="http://schemas.microsoft.com/ws/2006/05/context">`  
   
@@ -47,13 +47,13 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
   
  `</Context>`  
   
- Když v `HttpCookie` režimu, soubory cookie jsou nastaveny pomocí `SetCookie` záhlaví. Název souboru cookie je `WscContext`. Hodnota souboru cookie, který je Base64 kódování `wsc:Context` záhlaví. Tato hodnota je uzavřena v uvozovkách.  
+ V `HttpCookie` režimu jsou soubory cookie nastaveny `SetCookie` pomocí hlavičky. Název souboru cookie je `WscContext`. Hodnota souboru cookie je kódování `wsc:Context` Base64 hlavičky. Tato hodnota je uzavřená v uvozovkách.  
   
- Hodnota kontextu musí být chráněné před změnami při přenosu ze stejného důvodu jsou chráněny záhlaví WS-Addressing – záhlaví se používá k určení, kam chcete odeslat žádost o služby. `wsc:Context` Záhlaví je proto potřeba digitálně podepsaný nebo podepsat a zašifrovat na úrovni protokolu SOAP nebo přenos při vazbě nabízí možnosti ochrany zprávy. V případě šíření kontextu používají soubory cookie protokolu HTTP, by měl být chráněn pomocí zabezpečení přenosu.  
+ Hodnota kontextu musí být během přenosu chráněna před změnou, a to z důvodu ochrany hlaviček protokolu WS-Addressing – záhlaví slouží k určení místa odeslání žádosti do služby. `wsc:Context` Záhlaví je proto nutné digitálně podepsat nebo podepsat a zašifrovat na úrovni protokolu SOAP nebo přenosu, pokud vazba nabízí možnost ochrany zpráv. Pokud jsou soubory cookie protokolu HTTP použity ke rozšiřování kontextu, měly by být chráněny pomocí zabezpečení přenosu.  
   
- Koncové body služby, které vyžadují podporu pro protokol kontextové výměny může být definován v publikované zásady. Dvě nové kontrolní výrazy zásad byly zavedeny představující požadavku pro klienta podporovat protokol kontextové výměny na úrovni protokolu SOAP nebo povolit podporu souborů cookie protokolu HTTP. Generování těchto kontrolních výrazů do zásad služby se řídí hodnotou <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> vlastnost následujícím způsobem:  
+ Koncové body služby, které vyžadují podporu pro protokol Exchange kontextu, můžou být v publikovaných zásadách explicitní. Byly zavedeny dvě nové kontrolní výrazy zásad, které reprezentují požadavek, aby klient podporoval protokol Exchange kontextu na úrovni protokolu SOAP nebo povolil podporu souborů cookie protokolu HTTP. Generování těchto kontrolních výrazů do zásad služby je řízeno hodnotou <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> vlastnosti následujícím způsobem:  
   
-- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>, je vygenerována následující výraz:  
+- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>se vygeneruje následující kontrolní výraz:  
   
     ```xml  
     <IncludeContext   
@@ -61,7 +61,7 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
     protectionLevel="Sign" />  
     ```  
   
-- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie>, je vygenerována následující výraz:  
+- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie>se vygeneruje následující kontrolní výraz:  
   
     ```xml  
     <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  

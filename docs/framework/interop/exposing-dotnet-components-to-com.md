@@ -8,22 +8,22 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1879f5b5aa2fbe6b0e51f9b38fca3af1f4c0cedf
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 48d550a526336cf3e9de9cb53a16ddcf86f3af5d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971761"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946519"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
 
 Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře. Tato část popisuje několik tipů pro psaní spravovaného kódu, který spolupracuje s klienty modelu COM:
 
-- [Kvalifikování typů .NET pro](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)spoluprovozování.
+- [Kvalifikování typů .NET pro](../../standard/native-interop/qualify-net-types-for-interoperation.md)spoluprovozování.
 
      Všechny spravované typy, metody, vlastnosti, pole a události, které chcete zveřejnit pro model COM, musí být veřejné. Typy musí mít veřejný konstruktor bez parametrů, který je jediným konstruktorem, který lze vyvolat pomocí modelu COM.
 
-- [Použití atributů spolupráce](../../../docs/standard/native-interop/apply-interop-attributes.md)
+- [Použití atributů spolupráce](../../standard/native-interop/apply-interop-attributes.md)
 
      Vlastní atributy v rámci spravovaného kódu mohou zlepšit interoperabilitu komponenty.
 

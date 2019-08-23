@@ -2,15 +2,15 @@
 title: <wsdlImporters>
 ms.date: 03/30/2017
 ms.assetid: 270c7f93-eab7-47b6-8b94-ac3f5b7f17e4
-ms.openlocfilehash: 75f88219ab73d321b3e04c140bbfe964aed0b83a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: da9ab00c86e7f2657bfc28724d328ccbbc6957b1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785473"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915156"
 ---
 # <a name="wsdlimporters"></a>\<wsdlImporters>
-Tento prvek konfigurace určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy. Každý podřízený prvek je <`wsdlImporter`>, která určuje způsob, jak importovat metadata a také převést tyto informace do různých tříd, které představují informace o smlouvě a koncový bod. Selektivně mohl importovat informace o smlouvě a koncový bod a vlastnosti, které zveřejnit jakékoli chyby importu a přijímat informace o typu relevantní pro import a převod balíčků. Podporuje také importovat informace o vazbě a vlastnosti, které poskytují přístup k dokumentům zásad, dokumenty WSDL, rozšíření WSDL a dokumentů schématu XML.  
+Tento prvek konfigurace určuje všechny nástroje pro Import WSDL, které importují metadata jazyka WSDL (Web Services Description Language) 1,1 s přílohami WS-Policy. Každý podřízený prvek je <`wsdlImporter`>, který určuje způsob importu metadat a převádění těchto informací do různých tříd, které reprezentují informace o kontraktech a koncových bodech. Může selektivně importovat informace o kontraktech a koncových bodech a vlastnosti, které zveřejňují chyby importu a přijímají informace o typu relevantní pro proces importu a převodu. Podporuje také import informací o vazbách a vlastností, které poskytují přístup k jakýmkoli dokumentům zásad, dokumentům WSDL, rozšířením WSDL a dokumentům XML schématu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -18,5 +18,5 @@ Tento prvek konfigurace určuje všechny importers WSDL, které Importuje metada
 - <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>
 - <xref:System.ServiceModel.Description.MetadataImporter>
 - <xref:System.ServiceModel.Description.WsdlImporter>
-- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Konfigurace klienta WCF](../../../wcf/feature-details/client-configuration.md)
+- [Klienti](../../../wcf/feature-details/clients.md)

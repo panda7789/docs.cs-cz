@@ -2,21 +2,21 @@
 title: <dispatcherSynchronization>
 ms.date: 03/30/2017
 ms.assetid: cc030f9c-4e38-4b14-94dc-9a0e41ec8e2d
-ms.openlocfilehash: 6be9752e8102a5d4db4fed31aae8ff6d56fdd24e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7336c9f7d8a117f9a9bfd338e47941eeb648fa51
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673404"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925847"
 ---
-# <a name="dispatchersynchronization"></a>\<dispatcherSynchronization>
+# <a name="dispatchersynchronization"></a>\<dispatcherSynchronization >
   
-Určuje chování koncového bodu umožňující službě odeslání asynchronních odpovědí.  
+Určuje chování koncového bodu, které umožňuje službě odesílat odpovědi asynchronně.  
   
 \<system.serviceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,7 +25,7 @@ Určuje chování koncového bodu umožňující službě odeslání asynchronn�
                                    maxPendingReceives="Integer" />
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
   
 `Type`  
   
@@ -38,7 +38,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 | Atribut               | Popis       |
 | ----------------------- | ----------------- |
 | asynchronousSendEnabled | Logická hodnota, která určuje, zda je povoleno chování asynchronního odeslání. |
-| `maxPendingReceives`    | Celé číslo, které určuje, že počet souběžných přijímání, která může na kanálu uskutečněna.<br /><br /> Tato hodnota musí být nakonfigurovaný jenom po jste správně nakonfigurovali chování při omezování služby. |
+| `maxPendingReceives`    | Celé číslo, které určuje počet souběžných přijímání, které mohou být na kanálu vydány.<br /><br /> Tato hodnota by se měla konfigurovat až po správném nakonfigurování chování omezení služby. |
 
 ### <a name="child-elements"></a>Podřízené prvky
 
@@ -48,7 +48,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | Prvek | Popis |  
 | ------- | ----------- |  
-| [\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu. |
+| [\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu. |
 
 ## <a name="see-also"></a>Viz také:
 

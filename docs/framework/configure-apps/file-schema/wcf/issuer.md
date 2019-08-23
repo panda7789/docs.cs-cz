@@ -2,22 +2,22 @@
 title: <issuer>
 ms.date: 03/30/2017
 ms.assetid: 8c49c6ae-fa1a-4179-a84b-613c3216dcde
-ms.openlocfilehash: 37d935287fa7dfba640c39071295fd660f4db7c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08fda249b526961ff711f439cf729a18e15b412b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756257"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929365"
 ---
 # <a name="issuer"></a>\<issuer>
-Určuje Token služba zabezpečení (STS), která vydává tokeny zabezpečení.  
+Určuje službu tokenů zabezpečení (STS), která vydává tokeny zabezpečení.  
   
  \<system.serviceModel>  
-\<vazby >  
+\<> vazeb  
 \<wsFederationHttpBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<Zpráva >  
+\<> vazby  
+\<> zabezpečení  
+\<> zprávy  
 \<issuer>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,35 +44,35 @@ Určuje Token služba zabezpečení (STS), která vydává tokeny zabezpečení.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|adresa|Povinný řetězec. Adresa URL služby STS.|  
+|adresa|Povinný řetězec. Adresa URL služby STS|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres pro koncové body, které můžete vytvořit tvůrce.|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Při použití vydaný token, určuje nastavení, které povoluje klient k ověření tohoto serveru.|  
+|[\<headers>](headers-element.md)|Kolekce záhlaví adres pro koncové body, které může tvůrce vytvořit.|  
+|[\<identity>](identity.md)|Při použití vydaného tokenu aplikace určuje nastavení, které klientovi umožní Server ověřit.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení pro [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) elementu.|  
+|[\<> zprávy](message-element-of-wsfederationhttpbinding.md)|Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element wsFederationHttpBinding >](wsfederationhttpbinding.md) .|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.Issuer%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Možnosti zabezpečení u vlastních vazeb](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)

@@ -2,20 +2,20 @@
 title: <filterTable>
 ms.date: 03/30/2017
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
-ms.openlocfilehash: 4e5c7d56e35afe3001f4c70064adbfef7702c720
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9e64e667befb70d617574b2a03c3e6bebb2a143
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673209"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925607"
 ---
-# <a name="filtertable"></a>\<filterTable >
-Představuje směrovací tabulku, která obsahuje seznam filtrů určených k vyhodnocení zpráv a koncový bod klienta pro směrování zpráv v případě ohodnocení filtru hodnotou true.  
+# <a name="filtertable"></a>\<> filtru
+Představuje směrovací tabulku, která obsahuje seznam filtrů pro vyhodnocení zpráv a koncový bod klienta pro směrování zpráv, pokud se filtr vyhodnotí jako true.  
   
  \<system.serviceModel>  
-\<směrování >  
-\<routingTables>  
-\<Tabulka >  
+\<> směrování  
+\<routingTables >  
+\<> tabulky  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +41,19 @@ Představuje směrovací tabulku, která obsahuje seznam filtrů určených k vy
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|name|Řetězec obsahující jedinečný název tohoto konfiguračního prvku.|  
+|name|Řetězec, který obsahuje jedinečný název tohoto konfiguračního prvku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.|  
+|[\<Filtry>](filters-of-routing.md)|Mapování mezi směrovacími filtry a cílovými koncovými body, které odesílají zprávy, když filtr odpovídá.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje směrovací tabulky.|  
+|[\<> směrování](routing.md)|Konfigurační oddíl, který obsahuje směrovací tabulky.|  
   
 ## <a name="see-also"></a>Viz také:
 

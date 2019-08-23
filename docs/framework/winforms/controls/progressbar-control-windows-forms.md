@@ -5,30 +5,30 @@ helpviewer_keywords:
 - progress controls
 - ProgressBar control [Windows Forms]
 ms.assetid: 5be6b642-e8a6-4565-8ebd-ae73c7b10dc9
-ms.openlocfilehash: 2ad6450e26777a4642f0b9c685c9f5e552b5fdc7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a941189eb8ca00de6fb2ef75cada5762c0bcc973
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012508"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968302"
 ---
 # <a name="progressbar-control-windows-forms"></a>ProgressBar – ovládací prvek (Windows Forms)
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.ToolStripProgressBar> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ProgressBar> řízení; však <xref:System.Windows.Forms.ProgressBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ProgressBar> <xref:System.Windows.Forms.ProgressBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStripProgressBar>  
   
- Windows Forms <xref:System.Windows.Forms.ProgressBar> ovládací prvek označuje průběh akci zobrazením odpovídající počet obdélníků uspořádány ve vodorovném panelu. Po dokončení akce panelu zaplněný. Indikátory průběhu se běžně používají k uživateli přidělit údaj o tom dlouhé čekání na dokončení zdlouhavého akce – například když velkých souborů se načítá.  
+ Model Windows Forms <xref:System.Windows.Forms.ProgressBar> ovládací prvek indikuje průběh akce zobrazením vhodného počtu obdélníků uspořádaných do vodorovného pruhu. Po dokončení akce je pruh vyplněn. Indikátory průběhu se běžně používají k poskytnutí informací o tom, jak dlouho se má čekat na dokončení probíhající akce – například při načítání velkého souboru.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku ProgressBar](progressbar-control-overview-windows-forms.md)  
- Představuje obecné koncepty <xref:System.Windows.Forms.ProgressBar> ovládací prvek, který umožňuje zobrazit graficky průběhu operace.  
+ Zavádí obecné koncepce <xref:System.Windows.Forms.ProgressBar> ovládacího prvku, které umožňují graficky zobrazit průběh operace.  
   
- [Postupy: Nastavení hodnoty zobrazované v ovládacím prvku Windows Forms ProgressBar](how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control.md)  
- Popisuje několik různých způsobů, jak zvýšení hodnoty, zobrazí <xref:System.Windows.Forms.ProgressBar> ovládacího prvku.  
+ [Postupy: Nastavení hodnoty zobrazované ovládacím prvkem model Windows Forms ProgressBar](how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control.md)  
+ Popisuje několik různých způsobů, jak zvýšit hodnotu zobrazenou <xref:System.Windows.Forms.ProgressBar> ovládacím prvkem.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.ProgressBar>  
- Poskytuje referenční informace o třídě a její členy.  
+ Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

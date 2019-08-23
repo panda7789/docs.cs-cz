@@ -2,30 +2,30 @@
 title: Přehled atributů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
-ms.openlocfilehash: 2ecc3fb0a3bf7365b6eec39e1c5086d99f2c5a19
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c799b9be9b936beadde28374bd9882ebc6e2d9a2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642458"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966322"
 ---
 # <a name="attributes-overview-visual-basic"></a>Přehled atributů (Visual Basic)
-Atributy poskytují výkonný metoda spojování metadata nebo deklarativní informace s kódem (sestavení, typy, metody, vlastnosti a tak dále). Po atributu je spojen s entitou program, atribut může být dotázán za běhu pomocí techniky označované jako *reflexe*. Další informace najdete v tématu [reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).  
+Atributy poskytují výkonnou metodu přidružování metadat nebo deklarativní informace, s kódem (sestavení, typy, metodami, vlastnostmi a tak dále). Po přiřazení atributu k entitě programu lze pomocí metody s názvem reflexe zadat dotaz na atribut v době běhu. Další informace naleznete v tématu [reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).  
   
  Atributy mají následující vlastnosti:  
   
-- Atributy přidat metadata do programu. *Metadata* obsahuje informace o typy definované v programu. Všechna sestavení rozhraní .NET obsahují zadanou množinu metadata popisující typy a členy typu definované v sestavení. Můžete přidat vlastní atributy k jakékoli další informace, které je nutné zadat. Další informace najdete v tématu, [vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md).  
+- Atributy přidávají do programu metadata. *Metadata* jsou informace o typech definovaných v programu. Všechna sestavení .NET obsahují zadanou sadu metadat, které popisují typy a členy typu definované v sestavení. Můžete přidat vlastní atributy a zadat případné další požadované informace. Další informace najdete v tématu [Vytvoření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md).  
   
-- Můžete použít jeden nebo více atributů na celé sestavení, moduly nebo menší prvky programu, jako například třídy a vlastnosti.  
+- Jeden nebo více atributů lze použít pro celá sestavení, moduly nebo menší prvky programu, jako jsou třídy a vlastnosti.  
   
 - Atributy mohou přijímat argumenty stejným způsobem jako metody a vlastnosti.  
   
-- Aplikace můžete zkontrolovat svou vlastní metadaty nebo metadaty v jiných aplikacích pomocí reflexe. Další informace najdete v tématu [přístup k atributy podle použití reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).  
+- Váš program může prošetřit vlastní metadata nebo metadata v jiných programech pomocí reflexe. Další informace naleznete v tématu [přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).  
   
-## <a name="using-attributes"></a>Pomocí atributů  
- Atributy je možné použít u libovolného deklarace, když konkrétního atributu můžete narazit na omezení typů deklarace, na kterých je platný. V jazyce Visual Basic je atribut uzavřen do lomených závorek (\< >). Musí být bezprostředně před elementem, ke které se použije, na stejném řádku.  
+## <a name="using-attributes"></a>Používání atributů  
+ Atributy lze umístit na většinu jakékoli deklarace, i když konkrétní atribut může omezit typy deklarací, na kterých je platný. V Visual Basic je atribut uzavřený v lomených závorkách\< (>). Musí se objevit bezprostředně před prvkem, na který je použit, na stejném řádku.  
   
- V tomto příkladu <xref:System.SerializableAttribute> atribut se používá k aplikování konkrétní charakteristiku pro třídu:  
+ V tomto příkladu <xref:System.SerializableAttribute> je atribut použit k použití konkrétní charakteristiky pro třídu:  
   
 ```vb  
 <System.Serializable()> Public Class SampleClass  
@@ -33,7 +33,7 @@ Atributy poskytují výkonný metoda spojování metadata nebo deklarativní inf
 End Class  
 ```  
   
- Metodu s atributem <xref:System.Runtime.InteropServices.DllImportAttribute> je deklarován následujícím způsobem:  
+ Metoda s atributem <xref:System.Runtime.InteropServices.DllImportAttribute> je deklarována takto:  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -45,7 +45,7 @@ Sub SampleMethod()
 End Sub  
 ```  
   
- Více než jeden atribut je možné použít v deklaraci:  
+ V deklaraci lze umístit více než jeden atribut:  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -58,7 +58,7 @@ Sub MethodB(<Out(), [In]()> ByVal x As Double)
 End Sub  
 ```  
   
- Některé atributy můžete zadat více než jednou pro danou entitu. Je například multiuse atribut <xref:System.Diagnostics.ConditionalAttribute>:  
+ Některé atributy lze pro danou entitu zadat více než jednou. Příklad takového atributu Multiuse je <xref:System.Diagnostics.ConditionalAttribute>:  
   
 ```vb  
 <Conditional("DEBUG"), Conditional("TEST1")>   
@@ -67,10 +67,10 @@ End Sub
 ```  
   
 > [!NOTE]
->  Podle konvence končí všechny názvy atributů slovem "Atribut", abychom je odlišili od ostatních položek v rozhraní .NET Framework. Ale není potřeba zadat atribut přípon při použití atributů v kódu. Například `[DllImport]` je ekvivalentní `[DllImportAttribute]`, ale `DllImportAttribute` je skutečný název atributu v rozhraní .NET Framework.  
+> Podle konvence názvy všech atributů končí slovem "Attribute", aby je bylo možné odlišit od ostatních položek v .NET Framework. Při použití atributů v kódu však není nutné zadávat příponu atributu. Například `[DllImport]` je ekvivalentní k `[DllImportAttribute]`, ale `DllImportAttribute` je skutečným názvem atributu v .NET Framework.  
   
-### <a name="attribute-parameters"></a>Atribut parametrů  
- Mnoho atributů mít parametry, které mohou být poziční, nepojmenovaný nebo s názvem. Žádné poziční parametry musí být zadán v určitém pořadí a nelze jej vynechat; pojmenované parametry jsou volitelné a dá se zadat v libovolném pořadí. Poziční parametry jsou zadán jako první. Například tyto tři atributy jsou ekvivalentní:  
+### <a name="attribute-parameters"></a>Parametry atributu  
+ Mnoho atributů má parametry, které mohou být pozice, nepojmenované nebo pojmenované. V určitém pořadí musí být zadány všechny poziční parametry a nelze je vynechat; pojmenované parametry jsou volitelné a lze je zadat v libovolném pořadí. Poziční parametry jsou uvedeny jako první. Například tyto tři atributy jsou ekvivalentní:  
   
 ```vb  
 <DllImport("user32.dll")>  
@@ -78,12 +78,12 @@ End Sub
 <DllImport("user32.dll", ExactSpelling:=False, SetLastError:=False)>  
 ```  
   
- První parametr, název knihovny DLL je poziční a dodává se vždycky první; ostatní jsou pojmenovány. V takovém případě pojmenované výchozí parametry na hodnotu false, takže lze vynechat. V dokumentaci jednotlivých atributů informace o výchozí hodnoty parametrů.  
+ První parametr, název knihovny DLL, je pozice a vždy se nachází jako první; ostatní mají název. V takovém případě mají obě pojmenované parametry výchozí hodnotu false, takže je lze vynechat. Informace o výchozích hodnotách parametrů naleznete v dokumentaci k jednotlivým atributům.  
   
 ### <a name="attribute-targets"></a>Cíle atributů  
- *Cílové* atributu je entita, ke kterému se vztahuje atribut. Atribut může například použít pro třídu, konkrétní metody nebo celé sestavení. Ve výchozím nastavení atribut se vztahuje k elementu, který předchází. Ale můžete také explicitně identifikovat, například zda atributu se použije k metodě, její parametr nebo na jeho návratovou hodnotu.  
+ *Cíl* atributu je entita, na kterou se atribut vztahuje. Atribut může například platit pro třídu, konkrétní metodu nebo celé sestavení. Ve výchozím nastavení se atribut vztahuje na element, který předchází. Můžete ale také explicitně určit, zda je atribut použit na metodu, nebo na jeho parametr nebo na jeho návratovou hodnotu.  
   
- Cíl atributu explicitně identifikovat, použijte následující syntaxi:  
+ K explicitní identifikaci cíle atributu použijte následující syntaxi:  
   
 ```vb  
 <target : attribute-list>  
@@ -94,9 +94,9 @@ End Sub
 |Cílová hodnota|Platí pro|  
 |------------------|----------------|  
 |`assembly`|Celé sestavení|  
-|`module`|Aktuální modul sestavení (která se liší od modulu jazyka Visual Basic)|  
+|`module`|Aktuální modul sestavení (který se liší od modulu Visual Basic)|  
   
- Následující příklad ukazuje způsob použití atributů pro sestavení a modulů. Další informace najdete v tématu [běžné atributy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md).  
+ Následující příklad ukazuje, jak použít atributy na sestavení a moduly. Další informace najdete v tématu [běžné atributy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md).  
   
 ```vb  
 Imports System.Reflection  
@@ -107,25 +107,25 @@ Module: CLSCompliant(True)>
 ## <a name="common-uses-for-attributes"></a>Běžné použití atributů  
  Následující seznam obsahuje několik běžných použití atributů v kódu:  
   
-- Označení metody pomocí `WebMethod` atribut ve webové služby k označení, že metoda mělo by být umožněno prostřednictvím protokolu SOAP. Další informace naleznete v tématu <xref:System.Web.Services.WebMethodAttribute>.  
+- Označení metod pomocí `WebMethod` atributu ve webových službách k označení toho, že by měla být metoda volat přes protokol SOAP. Další informace naleznete v tématu <xref:System.Web.Services.WebMethodAttribute>.  
   
-- Popis způsobu zařazení parametrů metody při vzájemné spolupráci s nativním kódem. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.MarshalAsAttribute>.  
+- Popisuje způsob zařazení parametrů metody při spolupráci s nativním kódem. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.MarshalAsAttribute>.  
   
-- Popis vlastnosti modelu COM pro třídy, metody a rozhraní.  
+- Popisuje vlastnosti modelu COM pro třídy, metody a rozhraní.  
   
-- Volání nespravovaného kódu pomocí <xref:System.Runtime.InteropServices.DllImportAttribute> třídy.  
+- Volání nespravovaného kódu <xref:System.Runtime.InteropServices.DllImportAttribute> pomocí třídy.  
   
-- Popisující vaše sestavení z hlediska název, verze, popis nebo ochranná známka.  
+- Popisuje vaše sestavení s ohledem na název, verzi, popis nebo ochrannou známku.  
   
-- Popisující, které členy třídy k serializaci trvalosti.  
+- Popisuje, kteří členové třídy mají být serializováni k trvalému serializaci.  
   
-- Popisující způsob, jakým mapování mezi členy třídy a z uzlů XML pro serializaci kódu XML.  
+- Popisuje, jak mapovat mezi členy třídy a uzly XML pro serializaci kódu XML.  
   
-- Popisuje požadavky zabezpečení pro metody.  
+- Popisuje požadavky na zabezpečení pro metody.  
   
-- Zadání vlastnosti používá k vynucení zabezpečení.  
+- Určení vlastností používaných k vymáhání zabezpečení.  
   
-- Řízení optimalizace kompilátoru just-in-time (JIT), tak zůstane usnadňuje ladění kódu.  
+- Řízení optimalizace pomocí kompilátoru JIT (just-in-time), takže kód zůstane snadno laděn.  
   
 - Získání informací o volajícím metody.  
   
@@ -136,14 +136,14 @@ Module: CLSCompliant(True)>
   
 - [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)  
   
-- [Postupy: Vytváření sjednocení C/C++ pomocí atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Postupy: Vytvoření C/C++ sjednocení pomocí atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes.md)  
   
-- [Běžné atributy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)  
+- [Společné atributy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)  
   
 - [Informace o volajícím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
 - [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
 - [Atributy](../../../../standard/attributes/index.md)

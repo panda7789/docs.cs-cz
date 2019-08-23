@@ -6,246 +6,246 @@ helpviewer_keywords:
 - converting [WPF], shape to button
 - Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
-ms.openlocfilehash: 9a0b3e5cf64e7977ba68f5bb2a3b110d9615cfa8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1b4c775ea0680dcd8252a98c722dfe8f7e62548f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665224"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942495"
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>Návod: Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend
-Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] přizpůsobené tlačítka pomocí Microsoft Expression Blend.  
+Tento názorný postup vás provede procesem vytvoření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] přizpůsobeného tlačítka pomocí nástroje Microsoft Expression Blend.  
   
 > [!IMPORTANT]
->  Microsoft Expression Blend funguje tak, že generování [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] , který se potom zkompiluje aby spustitelný program. Pokud byste raději pracovat s [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] přímo, je další návod, který vytvoří stejnou aplikaci jako jeden pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pomocí sady Visual Studio místo Blend. Zobrazit [vytvoření tlačítka pomocí XAML pomocí](walkthrough-create-a-button-by-using-xaml.md) Další informace.  
+> Microsoft Expression Blend funguje tak, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] že generuje, který je poté zkompilován, aby byl spustitelný program. Pokud místo toho chcete pracovat [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] přímo, je k dispozici jiný návod, který vytvoří stejnou aplikaci jako tuto pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] sady Visual Studio, nikoli Blend. Další informace najdete v tématu [Vytvoření tlačítka pomocí XAML](walkthrough-create-a-button-by-using-xaml.md) .  
   
- Následující obrázek znázorňuje vlastní tlačítko, které vytvoří.  
+ Následující ilustrace znázorňuje přizpůsobené tlačítko, které vytvoříte.  
   
- ![Vlastní tlačítka, které vytvoříte](./media/custom-button-blend-intro.jpg "custom_button_blend_Intro")  
+ ![Přizpůsobené tlačítko, které vytvoříte](./media/custom-button-blend-intro.jpg "custom_button_blend_Intro")  
   
-## <a name="convert-a-shape-to-a-button"></a>Převod tvaru na tlačítka  
- V první části tohoto průvodce můžete vytvořit vlastní vzhled na tlačítko Vlastní. Provedete to tak, je nejprve převést obdélníku tlačítka. Potom přidáte další tvary do šablony tlačítka, vytvoření složitější vzhledu tlačítka. Případně proč bezpečná není začínat běžné tlačítko a ho přizpůsobovat? Vzhledem k tomu, že tlačítko má integrované funkce, která není nutné; u vlastních tlačítek je jednodušší začínat obdélníku.  
+## <a name="convert-a-shape-to-a-button"></a>Převedení tvaru na tlačítko  
+ V první části tohoto návodu vytvoříte vlastní pohled na vlastní tlačítko. Chcete-li to provést, nejprve převeďte obdélník na tlačítko. Pak přidáte další tvary do šablony tlačítka a vytvoříte složitější tlačítko pro vyhledávání. Proč nezačít s běžným tlačítkem a přizpůsobit ho? Vzhledem k tomu, že tlačítko má vestavěnou funkci, kterou nepotřebujete; pro vlastní tlačítka je snazší začít s obdélníkem.  
   
-#### <a name="to-create-a-new-project-in-expression-blend"></a>Chcete-li vytvořit nový projekt v aplikaci Expression Blend  
+#### <a name="to-create-a-new-project-in-expression-blend"></a>Vytvoření nového projektu v Blendu výrazu  
   
-1. Začněte Expression Blend. (Klikněte na tlačítko **Start**, přejděte na **všechny programy**, přejděte na **Microsoft Expression**a potom klikněte na tlačítko **Microsoft Expression Blend**.)  
+1. Spusťte Blend výrazu. (Klikněte na tlačítko **Start**, přejděte na položku **všechny programy**, na položku **Microsoft Expression**a potom klikněte na položku **Microsoft Expression Blend**.)  
   
-2. Maximalizujte aplikace v případě potřeby.  
+2. V případě potřeby Maximalizujte aplikaci.  
   
-3. Na **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
+3. V nabídce **soubor** klikněte na příkaz **Nový projekt**.  
   
-4. Vyberte **standardní aplikace (.exe)**.  
+4. Vyberte **standardní aplikaci (. exe)** .  
   
-5. Pojmenujte projekt `CustomButton` a stiskněte klávesu **OK**.  
+5. Pojmenujte `CustomButton` projekt a stiskněte **OK**.  
   
- V tomto okamžiku můžete mít prázdnou hodnotu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projektu. Stisknutím klávesy F5 spusťte aplikaci. Jak byste asi očekávali, aplikace se skládá pouze prázdné okno. V dalším kroku vytvoříte zakulacený obdélník a převést na tlačítku.  
+ V tomto okamžiku máte prázdný [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projekt. Aplikaci můžete spustit stisknutím klávesy F5. Jak budete chtít očekávat, aplikace se skládá pouze z prázdného okna. V dalším kroku vytvoříte zaoblený obdélník a převedete ho na tlačítko.  
   
-#### <a name="to-convert-a-rectangle-to-a-button"></a>Převést obdélník na tlačítka  
+#### <a name="to-convert-a-rectangle-to-a-button"></a>Převod obdélníku na tlačítko  
   
-1. **Nastavte vlastnost okno pozadí na černou:** Vyberte okno, klikněte na tlačítko **karta Vlastnosti**a nastavte <xref:System.Windows.Controls.Control.Background%2A> vlastnost `Black`.  
+1. **Nastavte vlastnost pozadí okna na černou:** Vyberte okno, klikněte na **kartu vlastnosti**a nastavte <xref:System.Windows.Controls.Control.Background%2A> vlastnost na `Black`hodnotu.  
   
-     ![Nastavení pozadí tlačítku černá](./media/custom-button-blend-changebackground.png "custom_button_blend_ChangeBackground")  
+     ![Nastavení pozadí tlačítka na černou](./media/custom-button-blend-changebackground.png "custom_button_blend_ChangeBackground")  
   
-2. **V okně nakreslete obdélník přibližně na velikost tlačítka:** Nástroj obdélník na panelu vlevo nástroj vyberte a přetáhněte obdélníku do okna.  
+2. **Nakreslete obdélník přibližně na velikost tlačítka v okně:** Na panelu nástrojů na levé straně vyberte nástroj obdélník a přetáhněte ho do okna.  
   
-     ![Jak nakreslit obdélník](./media/custom-button-blend-drawrect.png "custom_button_blend_DrawRect")  
+     ![Vykreslení obdélníku](./media/custom-button-blend-drawrect.png "custom_button_blend_DrawRect")  
   
-3. **Zaokrouhlete na rohů obdélníku:** Přetáhněte ovládací prvek body obdélníku nebo nastavena přímo <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> vlastnosti. Nastavte hodnoty <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> až 20.  
+3. **Vyzaoblení rohů obdélníku:** Buď přetáhněte ovládací body obdélníku, nebo přímo nastavte <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> vlastnosti a. <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> Nastavte hodnoty <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> na 20.  
   
-     ![Jak se zaokrouhlí rohů obdélníku](./media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")  
+     ![Postup vytvoření rohů obdélníkového zaoblení](./media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")  
   
-4. **Změna obdélníku tlačítka:** Vyberte pravoúhelník. Na **nástroje** nabídky, klikněte na tlačítko **vytvořit tlačítko**.  
+4. **Změňte obdélník na tlačítko:** Vyberte obdélník. V nabídce **nástroje** klikněte na tlačítko **vytvořit**.  
   
-     ![Jak je nechat obrazce na tlačítko](./media/custom-button-blend-makebutton.png "custom_button_blend_MakeButton")  
+     ![Jak vytvořit tvar] v tlačítku (./media/custom-button-blend-makebutton.png "custom_button_blend_MakeButton")  
   
-5. **Zadejte rozsah stylu nebo šablony:** Zobrazí se dialogové okno vypadat asi takto.  
+5. **Zadejte rozsah stylu nebo šablony:** Zobrazí se dialogové okno podobné následujícímu.  
   
-     ![Dialogové okno "Vytvořit prostředek stylu"](./media/custom-button-blend-makebutton2.gif "custom_button_blend_MakeButton2")  
+     ![Dialogové okno vytvořit prostředek stylu](./media/custom-button-blend-makebutton2.gif "custom_button_blend_MakeButton2")  
   
-     Pro **název prostředku (klíč)** vyberte **použít u všech**.  To způsobí, že šablona tlačítka, které platí pro všechny objekty, které jsou tlačítka a výsledný styl. Pro **definovat v**vyberte **aplikace**. To způsobí, že výsledný styl a tlačítko šablony mají rozsah přes celou aplikaci. Při nastavení hodnoty v těchto dvou polích styl tlačítka a šablona platí pro všechna tlačítka v rámci celé aplikace a každé tlačítko, které vytvoříte v aplikaci použije ve výchozím nastavení, tato šablona.  
+     Jako **název prostředku (klíč)** vyberte **použít u všech**.  Tím se výsledná šablona stylu a tlačítka použije na všechny objekty, které jsou tlačítky. **V nástroji definovat v**vyberte **aplikace**. Výsledkem bude, že výsledná šablona stylu a tlačítka bude mít rozsah pro celou aplikaci. Když nastavíte hodnoty v těchto dvou polích, styl tlačítka a šablona platí pro všechna tlačítka v celé aplikaci a jakékoli tlačítko, které vytvoříte v aplikaci, ve výchozím nastavení použije tuto šablonu.  
   
 ## <a name="edit-the-button-template"></a>Úprava šablony tlačítka  
- Teď máte obdélníku, který byl změněn na tlačítku. V této části budete upravovat šablony tlačítka a dále přizpůsobit, jak vypadá.  
+ Nyní máte obdélník, který byl změněn na tlačítko. V této části upravíte šablonu tlačítka a dále upravíte, jak vypadá.  
   
-#### <a name="to-edit-the-button-template-to-change-the-button-appearance"></a>K úpravě šablony tlačítka, chcete-li změnit vzhled tlačítka  
+#### <a name="to-edit-the-button-template-to-change-the-button-appearance"></a>Úprava šablony tlačítka pro změnu vzhledu tlačítka  
   
-1. **Přejděte do zobrazení pro úpravy šablony:** Dále přizpůsobit vzhled našeho tlačítka, potřebujeme k úpravě šablony tlačítka. Tato šablona byla vytvořena, když jsme převést obdélník na tlačítku. Chcete-li upravit šablony tlačítka, klikněte pravým tlačítkem myši na tlačítko a vyberte **upravit části ovládacího prvku (šablona)** a potom **upravit šablonu**.  
+1. **Přejít do zobrazení upravit šablonu:** Abychom mohli dál přizpůsobit vzhled našeho tlačítka, musíme upravit šablonu tlačítka. Tato šablona byla vytvořena při převedení obdélníku na tlačítko. Chcete-li upravit šablonu tlačítka, klikněte pravým tlačítkem myši na tlačítko a vyberte možnost **Upravit části ovládacího prvku (šablona)** a pak **upravte šablonu**.  
   
      ![Úprava šablony](./media/custom-button-blend-edittemplate.jpg "custom_button_blend_EditTemplate")  
   
-     V editoru šablon, Všimněte si, že je teď rozdělený na tlačítko <xref:System.Windows.Shapes.Rectangle> a <xref:System.Windows.Controls.ContentPresenter>. <xref:System.Windows.Controls.ContentPresenter> Slouží k předkládání obsahu v rámci tlačítka (například řetězec "Button"). Obě obdélníku a <xref:System.Windows.Controls.ContentPresenter> jsou rozloženy uvnitř <xref:System.Windows.Controls.Grid>.  
+     V editoru šablon si všimněte, že tlačítko je nyní rozděleno do <xref:System.Windows.Shapes.Rectangle> <xref:System.Windows.Controls.ContentPresenter>a. <xref:System.Windows.Controls.ContentPresenter> Slouží k prezentaci obsahu v rámci tlačítka (například řetězec "tlačítko"). Obdélník i <xref:System.Windows.Controls.ContentPresenter> je rozložen v <xref:System.Windows.Controls.Grid>rámci.  
   
-     ![Součásti v prezentaci obdélník](./media/custom-button-blend-templatepanel.png "custom_button_blend_TemplatePanel")  
+     ![Komponenty v prezentaci obdélníku](./media/custom-button-blend-templatepanel.png "custom_button_blend_TemplatePanel")  
   
-2. **Změna názvů součásti šablony:** Klikněte pravým tlačítkem na obdélníku v šablony inventář, změna <xref:System.Windows.Shapes.Rectangle> název z "[obdélník]" na "outerRectangle" a změňte "[ContentPresenter]" na "myContentPresenter".  
+2. **Změňte názvy součástí šablony:** Pravým tlačítkem myši klikněte na obdélník v inventáři šablon, <xref:System.Windows.Shapes.Rectangle> změňte název z "[Rectangle]" na "outerRectangle" a změňte "[ContentPresenter]" na "myContentPresenter".  
   
-     ![Přejmenování součást šablony](./media/custom-button-blend-renamecomponents.png "custom_button_blend_RenameComponents")  
+     ![Postup přejmenování součásti šablony](./media/custom-button-blend-renamecomponents.png "custom_button_blend_RenameComponents")  
   
-3. **Příkaz ALTER obdélníku, tak, aby se prázdný uvnitř (např. prstencový):** Vyberte **outerRectangle** a nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> na hodnotu "Transparent" a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> na 5.  
+3. **Změňte obdélník tak, aby byl prázdný uvnitř (jako prstenec):** Vyberte **outerRectangle** a nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> na "transparentní" a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> na 5.  
   
-     ![Jak je nechat prázdné obdélník](./media/custom-button-blend-changerectproperties.png "custom_button_blend_ChangeRectProperties")  
+     ![Jak nastavit obdélník jako prázdný](./media/custom-button-blend-changerectproperties.png "custom_button_blend_ChangeRectProperties")  
   
-     Nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> barvu cokoli, co šablona bude. Chcete-li to provést, klikněte na bílý čtvereček vedle **Stroke**vyberte **CustomExpression**a v dialogovém okně zadejte "{TemplateBinding pozadí}".  
+     Pak nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> na barvu bez ohledu na to, která šablona bude. Provedete to tak, že kliknete na malé bílé pole vedle možnosti **vytáhnout**, vyberete **CustomExpression**a v dialogovém okně zadáte "{TemplateBinding Background}".  
   
-     ![Jak nastavit použití barev šablony](./media/custom-button-blend-templatestroke.png "custom_button_blend_TemplateStroke")  
+     ![Nastavení použití barvy šablony](./media/custom-button-blend-templatestroke.png "custom_button_blend_TemplateStroke")  
   
-4. **Vytvoření vnitřní obdélník:** Teď vytvořte jiný obdélník (vzpomenete "innerRectangle") a umístěte ho symetricky uvnitř **outerRectangle** . Pro tento druh pracovní bude pravděpodobně chtít zvětšit zvětšit tlačítko v oblasti úprav.  
-  
-    > [!NOTE]
-    >  Obdélník může vypadat jinak, než je na obrázku (například ji může mají zaoblené rohy).  
-  
-     ![Jak vytvořit obdélníku v jiném obdélníku](./media/custom-button-blend-innerrectangleproperties.png "custom_button_blend_innerRectangleProperties")  
-  
-5. **Přesunete ContentPresenter do horní části:** V tomto okamžiku je možné, že text "Button" nebudou viditelné déle. Pokud je to tak, důvodem je, že **innerRectangle** je nahoře **myContentPresenter**. Chcete-li opravit, přetáhněte **myContentPresenter** níže **innerRectangle**. Změna umístění obdélníky a **myContentPresenter** k vypadat podobně jako následující.  
+4. **Vytvořit vnitřní obdélník:** Nyní vytvořte další obdélník (pojmenujte ho "innerRectangle") a umístěte ho symetricky na uvnitř **outerRectangle** . Pro tento druh práce budete pravděpodobně chtít zvětšit tlačítko, aby bylo tlačítko větší v oblasti úprav.  
   
     > [!NOTE]
-    >  Alternativně lze také umístit **myContentPresenter** v horní části tak, že pravým tlačítkem myši a stisknutí **odeslat vpřed**.  
+    > Váš obdélník může vypadat jinak než na obrázku (například může mít zaoblené rohy).  
   
-     ![Postup přesunutí jedno tlačítko na jiné tlačítko](./media/custom-button-blend-innerrectangle2.png "custom_button_blend_innerRectangle2")  
+     ![Postup vytvoření obdélníku uvnitř jiného obdélníku](./media/custom-button-blend-innerrectangleproperties.png "custom_button_blend_innerRectangleProperties")  
   
-6. **Změna vzhledu innerRectangle:** Nastavte <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>, <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>, a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> hodnoty 20. In addition, nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> na pozadí šablon pomocí vlastního výrazu "{TemplateBinding pozadí}") a nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> na "transparentní". Všimněte si, že nastavení <xref:System.Windows.Shapes.Shape.Fill%2A> a <xref:System.Windows.Shapes.Shape.Stroke%2A> z **innerRectangle** je opakem pro **outerRectangle**.  
+5. **Přesunout ContentPresenter nahoru:** V tomto okamžiku je možné, že text "tlačítko" nebude vidět déle. Pokud je to tak, je to proto, že **innerRectangle** je nad **myContentPresenter**. Pokud to chcete opravit, přetáhněte **myContentPresenter** pod **innerRectangle**. Přesuňte obdélníky a **myContentPresenter** tak, aby vypadaly podobně jako v následujícím příkladu.  
   
-     ![Jak změnit vzhled obdélník](./media/custom-button-blend-glassrectangleproperties1.png "custom_button_blend_glassRectangleProperties1")  
+    > [!NOTE]
+    > Alternativně můžete také umístit **myContentPresenter** nahoru tak, že na něj kliknete pravým tlačítkem myši a stisknete **Odeslat dál**.  
   
-7. **Přidáte vrstvu lupy v horní části:** Přizpůsobení vzhledu tlačítka poslední část je přidání vrstvy lupy v horní části. Tato vrstva lupy se skládá z třetí obdélník. Protože skla pokryje celou tlačítko, je podobné jako u dimenze skleněného rámečku **outerRectangle**. Proto vytvořit obdélníku tím, že jednoduše zkopírovat **outerRectangle**. Zvýrazněte **outerRectangle** a vytvořit kopii pomocí kombinace kláves CTRL + C a CTRL + V. Zadejte název této nové obdélník "glassCube".  
+     ![Přesunutí jednoho tlačítka nad jiným tlačítkem](./media/custom-button-blend-innerrectangle2.png "custom_button_blend_innerRectangle2")  
   
-8. **V případě potřeby změnit umístění glassCube:** Pokud **glassCube** je ještě není umístěný tak, aby pokrýval celou tlačítko, přetáhněte ho na místo.  
+6. **Změňte vzhled innerRectangle:** Nastavte hodnoty <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>, <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> a<xref:System.Windows.Shapes.Shape.StrokeThickness%2A> na 20. Kromě toho nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> na pozadí šablony pomocí vlastního výrazu "{TemplateBinding Background}") a nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> na "Transparent". Všimněte si, že nastavení pro <xref:System.Windows.Shapes.Shape.Fill%2A> a <xref:System.Windows.Shapes.Shape.Stroke%2A> z **innerRectangle** jsou opakem těch pro **outerRectangle**.  
   
-9. **Poskytněte glassCube obrazec trochu jinak než outerRectangle:** Změna vlastností **glassCube**. Začít tak, že změna <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> vlastnosti na 10 a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> na 2.  
+     ![Změna vzhledu obdélníku](./media/custom-button-blend-glassrectangleproperties1.png "custom_button_blend_glassRectangleProperties1")  
   
-     ![Nastavení vzhledu glassCube](./media/custom-button-blend-glasscubeappearance.gif "custom_button_blend_GlassCubeAppearance")  
+7. **Přidat skleněnou vrstvu nahoru:** Poslední část přizpůsobení vzhledu tlačítka je přidat skleněnou vrstvu nahoru. Tato skleněná vrstva se skládá z třetího obdélníku. Vzhledem k tomu, že se skleněný rámeček bude pokrývat celé tlačítko, je skleněný obdélník podobný jako v rozměrech **outerRectangle**. Proto vytvořte obdélník pouhým vytvořením kopie **outerRectangle**. Zvýrazněte **outerRectangle** a vytvořte kopii pomocí kombinace kláves CTRL + C a CTRL + V. Pojmenujte tento nový obdélník "glassCube".  
   
-10. **Ujistěte se, glassCube vypadat lupy:** Nastavte <xref:System.Windows.Shapes.Shape.Fill%2A> sklovitě vzhledu pomocí lineárního přechodu, který je 75 % neprůhledných a střídá bílou barvu a Transparent více než 6 přibližně rovnoměrně rozmístěné intervalech. Toto je co mají nastavit ukončení přechodu:  
+8. **V případě potřeby změňte umístění glassCube:** Pokud **glassCube** ještě není umístěné, takže pokrývá celé tlačítko, přetáhněte ho na pozici.  
   
-    - Přechodové 1: Prázdné hodnoty alfa 75 %  
+9. **Poskytněte glassCube trochu odlišný tvar než outerRectangle:** Změňte vlastnosti **glassCube**. Začněte tím, že změníte <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> vlastnosti <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> a vlastností na 10 a na 2.  
   
-    - Přechodové 2: Transparentní  
+     ![Nastavení vzhledu pro glassCube](./media/custom-button-blend-glasscubeappearance.gif "custom_button_blend_GlassCubeAppearance")  
   
-    - Přechodové 3: Prázdné hodnoty alfa 75 %  
+10. **Nastavit glassCube jako skleněný vzhled:** <xref:System.Windows.Shapes.Shape.Fill%2A> Nastavte na skleněnou prohledáním pomocí lineárního přechodu, který je 75% neprůhledný a střídavě mezi barvou bílé a transparentní v 6 přibližně rovnoměrně rozmístěné intervaly. Toto je postup nastavení zastavení přechodu na:  
   
-    - Přechodové 4: Transparentní  
+    - Zastavení přechodu 1: Bílá s hodnotou Alpha 75%  
   
-    - Přechodové 5: Prázdné hodnoty alfa 75 %  
+    - Zastavení přechodu 2: Transparentní  
   
-    - Přechodové 6: Transparentní  
+    - Přechodová zastávka 3: Bílá s hodnotou Alpha 75%  
   
-     Tím se vytvoří "vlnovkou" skla vzhled.  
+    - Zastavení přechodu 4: Transparentní  
   
-     ![Obdélník, který vypadá jako skla](./media/custom-button-blend-glassrectangleproperties2.png "custom_button_blend_glassRectangleProperties2")  
+    - Zastavení přechodu 5: Bílá s hodnotou Alpha 75%  
   
-11. **Skryjete vrstvu lupy:** Teď, když se zobrazí, jak vypadá sklovitě vrstvy, přejděte do **vzhled podokně** z **panel vlastnosti** a nastavit neprůhlednost na 0 %, abyste ji skryli. V části dopředu použijeme aktivační procedury vlastností a událostí k zobrazení a manipulaci s vrstvou lupy.  
+    - Zastavení přechodu 6: Transparentní  
   
-     ![Tom, jak skrýt obdélník skla](./media/custom-button-glassrectangleproperties3.gif "custom_button_glassRectangleProperties3")  
+     Tím se vytvoří skleněný vzhled "vlnité".  
+  
+     ![Obdélník, který vypadá jako skleněný](./media/custom-button-blend-glassrectangleproperties2.png "custom_button_blend_glassRectangleProperties2")  
+  
+11. **Skrýt skleněnou vrstvu:** Teď, když vidíte, jak vypadá skleněná vrstva, přejděte do **podokna vzhled** na **panelu Vlastnosti** a nastavte neprůhlednost na 0%, aby ji bylo možné skrýt. V částech dopředu použijeme triggery vlastností a události k zobrazení a manipulaci se skleněnou vrstvou.  
+  
+     ![Jak skrýt skleněný obdélník](./media/custom-button-glassrectangleproperties3.gif "custom_button_glassRectangleProperties3")  
   
 ## <a name="customize-the-button-behavior"></a>Přizpůsobení chování tlačítka  
- V tomto okamžiku jste upravili prezentace na tlačítko úpravou šablony, ale tlačítko nereaguje na akce uživatele jako typický tlačítka (například změna vzhledu po myší nad, aktivace a kliknutí.) Následující dva postupy ukazují, jak vytvářet chování obdobné do vlastní tlačítka. Vytvoříme začínat aktivační procedury vlastností pro jednoduchý a potom přidáme aktivační události a animace.  
+ V tuto chvíli jste přizpůsobili prezentaci tlačítka úpravou šablony, ale toto tlačítko nereaguje na akce uživatele jako na typických tlačítkách (například změna vzhledu při přetažení myší, přijímání fokusu a kliknutí). Následující dva postupy ukazují, jak tyto chování sestavovat jako vlastní tlačítko. Začneme s jednoduchými triggery vlastností a potom přidáte triggery událostí a animace.  
   
-#### <a name="to-set-property-triggers"></a>Chcete-li nastavit aktivační procedury vlastností  
+#### <a name="to-set-property-triggers"></a>Nastavení triggerů vlastností  
   
-1. **Vytvořte novou aktivační proceduru vlastností:** S **glassCube** vybraný, klikněte na tlačítko **+ vlastnost** v **triggery** panelu (viz obrázek, který následuje další krok). Tím se vytvoří s výchozí vlastností aktivační událost aktivační procedura vlastností.  
+1. **Vytvořit novou aktivační událost vlastnosti:** Když vyberete **glassCube** , klikněte na **+ vlastnost** na panelu **aktivační události** (podívejte se na obrázek, který následuje po dalším kroku). Tím se vytvoří aktivační událost vlastnosti s výchozí triggerovou vlastností.  
   
-2. **Ujistěte se, IsMouseOver vlastnost používá aktivační události:** Změnit vlastnosti, která má <xref:System.Windows.UIElement.IsMouseOver%2A>. Díky tomu aktivační procedura vlastností aktivován, když <xref:System.Windows.UIElement.IsMouseOver%2A> vlastnost `true` (když uživatel odkazuje na tlačítka myši).  
+2. **IsMouseOver vlastnost, kterou používá aktivační událost:** Změňte vlastnost na <xref:System.Windows.UIElement.IsMouseOver%2A>. Tím se aktivuje aktivační událost vlastnosti, <xref:System.Windows.UIElement.IsMouseOver%2A> když je `true` vlastnost (když uživatel odkazuje na tlačítko pomocí myši).  
   
-     ![Jak nastavit aktivační událost u vlastnosti](./media/custom-button-blend-ismousedoverpropertytrigger.png "custom_button_blend_IsMousedOverPropertyTrigger")  
+     ![Nastavení triggeru u vlastnosti](./media/custom-button-blend-ismousedoverpropertytrigger.png "custom_button_blend_IsMousedOverPropertyTrigger")  
   
-3. **Aktivační události krytí IsMouseOver 100 % glassCube:** Všimněte si, **aktivační události – nahrávání je zapnuté** (viz předchozí obrázek). To znamená, že všechny změny hodnot vlastností **glassCube** při nahrávání je zapnuté se stane, že probíhá při akci <xref:System.Windows.UIElement.IsMouseOver%2A> je `true`. Při nahrávání změnit <xref:System.Windows.UIElement.Opacity%2A> z **glassCube** na 100 %.  
+3. **IsMouseOver aktivuje neprůhlednost 100% pro glassCube:** Všimněte si, že **je zapnutý záznam triggeru** (viz předchozí obrázek). To znamená, že všechny změny, které provedete v hodnotách vlastností **glassCube** při nahrávání, se změní na akci, ke <xref:System.Windows.UIElement.IsMouseOver%2A> které `true`dojde, když je. Při nahrávání změňte <xref:System.Windows.UIElement.Opacity%2A> **glassCube** na 100%.  
   
-     ![Jak nastavit neprůhlednost tlačítko](./media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom_button_blend_IsMousedOverPropertyTrigger2")  
+     ![Nastavení neprůhlednosti tlačítka](./media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom_button_blend_IsMousedOverPropertyTrigger2")  
   
-     Nyní jste vytvořili první aktivační procedura vlastností. Všimněte si, že **triggery panel** editoru je zaznamenána <xref:System.Windows.UIElement.Opacity%2A> mění na 100 %.  
+     Nyní jste vytvořili svou první aktivační událost vlastnosti. Všimněte si, že **panel aktivačních událostí** editoru zaznamenal <xref:System.Windows.UIElement.Opacity%2A> změny, které se změnily na 100%.  
   
-     ![Na panelu "Triggery"](./media/custom-button-blend-propertytriggerinfo.png "custom_button_blend_PropertyTriggerInfo")  
+     ![Panel triggery](./media/custom-button-blend-propertytriggerinfo.png "custom_button_blend_PropertyTriggerInfo")  
   
-     Stisknutím klávesy F5 spusťte aplikaci a přesuňte ukazatel myši nad a mimo tlačítko. Měli byste vidět vrstvě lupy se zobrazí, když jste myší nad tlačítko a zmizet, když ukazatel opustí.  
+     Stiskněte klávesu F5 ke spuštění aplikace a přesunutí ukazatele myši nad a za tlačítko. Měla by se zobrazit skleněná vrstva při přesunutí ukazatele myši na tlačítko a zmizí, když ukazatel opustí.  
   
-4. **Triggery IsMouseOver obtažení změna hodnoty:** Umožňuje přidružit jiné akce s <xref:System.Windows.UIElement.IsMouseOver%2A> aktivační události. Při nahrávání bude pokračovat, přepněte podle výběru v **glassCube** k **outerRectangle**. Nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> z **outerRectangle** vlastní výraz "{DynamicResource {x: Static SystemColors.HighlightBrushKey}}". Tím se nastaví <xref:System.Windows.Shapes.Shape.Stroke%2A> na typické zvýraznit barvy tlačítka. Stiskněte klávesu F5 a vidět její účinek, když myší na tlačítko.  
+4. **IsMouseOver aktivuje změnu hodnoty tahu:** Pojďme k <xref:System.Windows.UIElement.IsMouseOver%2A> triggeru přidružit nějaké další akce. I když pokračujete v nahrávání, přepněte svůj výběr z **glassCube** na **outerRectangle**. Pak nastavte <xref:System.Windows.Shapes.Shape.Stroke%2A> **outerRectangle** na vlastní výraz "{DynamicResource {x:static SystemColors. HighlightBrushKey}}". To nastaví <xref:System.Windows.Shapes.Shape.Stroke%2A> na typickou barvu zvýraznění používanou tlačítky. Stisknutím klávesy F5 zobrazíte efekt při pohybu myši nad tlačítkem.  
   
-     ![Jak nastavit barvu zvýraznění tahu](./media/custom-button-blend-ismousedoverpropertytrigger3.png "custom_button_blend_IsMousedOverPropertyTrigger3")  
+     ![Nastavení tahu na barvu zvýraznění](./media/custom-button-blend-ismousedoverpropertytrigger3.png "custom_button_blend_IsMousedOverPropertyTrigger3")  
   
-5. **IsMouseOver aktivuje fuzzy text:** Umožňuje přidružit jednu další akce, aby <xref:System.Windows.UIElement.IsMouseOver%2A> aktivační procedura vlastností. Zajistit pro obsah na tlačítko Zobrazit něco fuzzy při skla se zobrazí nad ním. K tomuto účelu můžete použít rozostření <xref:System.Windows.Media.Effects.BitmapEffect> k <xref:System.Windows.Controls.ContentPresenter> (**myContentPresenter**).  
+5. **IsMouseOver aktivuje rozmazaný text:** Pojďme k <xref:System.Windows.UIElement.IsMouseOver%2A> triggeru vlastnosti přidružit ještě jednu akci. Nastavit obsah tlačítka jako rozmazaný, pokud se na něm zobrazuje sklo. K tomu můžete použít rozostření <xref:System.Windows.Media.Effects.BitmapEffect> <xref:System.Windows.Controls.ContentPresenter> na (**myContentPresenter**).  
   
-     ![Rozostření obsah tlačítko](./media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom_button_blend_PropertyTriggerWithBitMapEffect")  
-  
-    > [!NOTE]
-    >  Se vraťte **panel vlastnosti** zpět na co správce it se předtím, než jste to udělali hledání <xref:System.Windows.Media.Effects.BitmapEffect>, vymažte text z **vyhledávacího pole**.  
-  
-     V tuto chvíli jsme použili aktivační procedura vlastností s několika přidružené akce vytvoření zvýraznění chování při umístění ukazatele myši přejde do a z oblasti tlačítko. Jiné chování typické pro tlačítko je zvýraznit, když má fokus (stejně jako po kliknutí). Přidáme takové chování tak, že přidáte další aktivační procedura vlastností pro <xref:System.Windows.UIElement.IsFocused%2A> vlastnost.  
-  
-6. **Vytvořte aktivační proceduru vlastností pro IsFocused:** Stejným postupem jako u <xref:System.Windows.UIElement.IsMouseOver%2A> (viz prvním krokem v této části), vytvořte jinou aktivační procedura vlastností pro <xref:System.Windows.UIElement.IsFocused%2A> vlastnost. Zatímco **aktivační události – nahrávání je zapnuté**, přidejte následující akce aktivační události:  
-  
-    - **glassCube** získá <xref:System.Windows.UIElement.Opacity%2A> 100 %.  
-  
-    - **outerRectangle** získá <xref:System.Windows.Shapes.Shape.Stroke%2A> hodnota vlastní vlastnosti "{DynamicResource {x: Static SystemColors.HighlightBrushKey}}".  
-  
- Jako poslední krok v tomto podrobném návodu přidáme animace k tlačítku. Tyto animace budete se aktivuje událostmi – konkrétně <xref:System.Windows.UIElement.MouseEnter> a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události.  
-  
-#### <a name="to-use-event-triggers-and-animations-to-add-interactivity"></a>Chcete-li použít k přidání interaktivity aktivačních procedur událostí a animace  
-  
-1. **Vytvoření aktivační události MouseEnter – událost:** Přidat novou aktivační událost a vyberte <xref:System.Windows.UIElement.MouseEnter> jako událost v triggeru.  
-  
-     ![Vytvoření aktivační události MouseEnter](./media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")  
-  
-2. **Vytvořte časové osy animace:** V dalším kroku přidružte časovou osu animace k <xref:System.Windows.UIElement.MouseEnter> událostí.  
-  
-     ![Postup přidání časovou osu animace události](./media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")  
-  
-     Po stisknutí klávesy **OK** vytvořte nové časové osy **Panel časové osy** se zobrazí a je viditelný v panelu návrhu "Časové osy – nahrávání je zapnuté". To znamená, že můžeme začít záznam změn vlastnosti v časové ose (Animovat vlastnost změny).  
+     ![Postup rozostření obsahu tlačítka](./media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom_button_blend_PropertyTriggerWithBitMapEffect")  
   
     > [!NOTE]
-    >  Budete muset změnit velikost okna nebo panelů najdete v zobrazení.  
+    > Chcete-li vrátit **panel vlastnosti** zpět na to <xref:System.Windows.Media.Effects.BitmapEffect>, co bylo dříve předtím hledání, vymažte text z vyhledávacího **pole**.  
   
-     ![Časová osa panel](./media/custom-button-blend-mouseovereventtrigger3.png "custom_button_blend_MouseOverEventTrigger3")  
+     V tuto chvíli jsme použili aktivační událost vlastnosti s několika přidruženými akcemi k vytvoření zvýraznění chování, když ukazatel myši přejde do oblasti tlačítka a opustí ho. Dalším typickým chováním tlačítka je zvýraznit, když má fokus (jako po kliknutí). Takové chování můžeme přidat přidáním další triggeru vlastnosti pro <xref:System.Windows.UIElement.IsFocused%2A> vlastnost.  
   
-3. **Vytvoření klíčového snímku:** Pokud chcete vytvořit animaci, vyberte objekt, který chcete animovat, vytvořte dva nebo více klíčové snímky na časové ose a pro tyto klíčové snímky, nastavit hodnoty vlastností chcete animaci lze interpolovat mezi. Na následujícím obrázku provede vás procesem vytvoření klíčového snímku.  
+6. **Aktivační událost vytvoření vlastnosti pro:** Použijte stejný postup jako u pro <xref:System.Windows.UIElement.IsMouseOver%2A> (viz první krok v této části), vytvořte další aktivační proceduru vlastnosti <xref:System.Windows.UIElement.IsFocused%2A> pro vlastnost. I když **je nahrávání aktivační události zapnuté**, přidejte k triggeru následující akce:  
   
-     ![Vytvoření klíčového snímku](./media/custom-button-blend-mouseovereventtrigger4.png "custom_button_blend_MouseOverEventTrigger4")  
+    - **glassCube** získá <xref:System.Windows.UIElement.Opacity%2A> 100%.  
   
-4. **Zmenšit glassCube na tomto klíčového snímku:** Pomocí druhého klíčový snímek vybraný zmenšení velikosti **glassCube** 90 % pomocí jeho plnou velikost **velikost transformace**.  
+    - **outerRectangle** získá <xref:System.Windows.Shapes.Shape.Stroke%2A> vlastní hodnotu výrazu {DynamicResource {x:static SystemColors. HighlightBrushKey}}.  
   
-     ![Tom, jak zmenšit velikost tlačítka](./media/custom-button-blend-sizetransform.png "custom_button_blend_SizeTransform")  
+ V posledním kroku tohoto návodu přidáme k tlačítku animace. Tyto animace budou aktivovány událostmi, konkrétně <xref:System.Windows.UIElement.MouseEnter> události a. <xref:System.Windows.Controls.Primitives.ButtonBase.Click>  
   
-     Stisknutím klávesy F5 spusťte aplikaci. Přesuňte ukazatel myši nad tlačítkem. Všimněte si, že zmenšuje skla vrstvu nad tlačítko.  
+#### <a name="to-use-event-triggers-and-animations-to-add-interactivity"></a>Přidání interaktivity pomocí aktivačních událostí a animací  
   
-5. **Vytvořte další aktivační události a přidružit různé animace:** Přidejme jeden další kroky animace. Použijte podobným způsobem můžete použít k vytvoření předchozí animace aktivační události:  
+1. **Vytvoření triggeru události MouseEnter:** Přidejte novou aktivační proceduru události a <xref:System.Windows.UIElement.MouseEnter> vyberte jako událost, která má být použita v aktivační události.  
   
-    1. Vytvořit novou pomocí aktivační události <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+     ![Postup vytvoření triggeru události MouseEnter](./media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")  
   
-    2. Přidružit nové časové osy s <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+2. **Vytvořit časovou osu animace:** Pak přidružte časovou osu animace k <xref:System.Windows.UIElement.MouseEnter> události.  
   
-     ![Jak vytvořit nové časové osy](./media/custom-button-blend-clickeventtrigger1.png "custom_button_blend_ClickEventTrigger1")  
+     ![Postup přidání časové osy animace k události](./media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")  
   
-    1. Pro tato časová osa vytvořte dva klíčové snímky, zrovna 0.0 sekund a druhý na 0,3 sekund.  
+     Po stisknutí tlačítka **OK** k vytvoření nové časové osy se zobrazí **panel Časová** osa a na panelu návrh se zobrazí "nahrávání na časovou osu". To znamená, že můžeme začít nahrávat změny vlastností na časové ose (změny vlastností animovat).  
   
-    2. Klíčový snímek na zvýrazněnou 0,3 sekund, nastavte **úhel otočení transformace** do 360 stupňů.  
+    > [!NOTE]
+    > Možná budete muset změnit velikost okna nebo panelů, aby se zobrazila obrazovka.  
   
-     ![Postup vytvoření transformace rotace](./media/custom-button-blend-rotatetransform.gif "custom_button_blend_RotateTransform")  
+     ![Panel Časová osa](./media/custom-button-blend-mouseovereventtrigger3.png "custom_button_blend_MouseOverEventTrigger3")  
   
-    1. Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítko. Všimněte si, že vrstvy skla přede kolem.  
+3. **Vytvoření klíčového snímku:** Chcete-li vytvořit animaci, vyberte objekt, který chcete animovat, vytvořte dva nebo více klíčových snímků na časové ose a pro tyto klíčové snímky nastavte hodnoty vlastností, které má animace interpolovat. Následující obrázek vás provede vytvořením klíčového snímku.  
+  
+     ![Postup vytvoření klíčového snímku](./media/custom-button-blend-mouseovereventtrigger4.png "custom_button_blend_MouseOverEventTrigger4")  
+  
+4. **Zmenšit glassCube v tomto klíčovém snímku:** Když vyberete druhý klíčový snímek, zmenšete velikost **glassCube** na 90% jeho plné velikosti s použitím **transformace Size**.  
+  
+     ![Zmenšení velikosti tlačítka](./media/custom-button-blend-sizetransform.png "custom_button_blend_SizeTransform")  
+  
+     Stisknutím klávesy F5 spusťte aplikaci. Přesuňte ukazatel myši nad tlačítko. Všimněte si, že se skleněná vrstva zmenší nad tlačítko.  
+  
+5. **Vytvořte další aktivační proceduru události a přidružte k ní jinou animaci:** Pojďme přidat ještě jednu animaci. Použijte podobný postup k tomu, co jste použili k vytvoření předchozí animace triggeru událostí:  
+  
+    1. Pomocí <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události vytvořte novou aktivační proceduru události.  
+  
+    2. Přidružit k <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události novou časovou osu  
+  
+     ![Jak vytvořit novou časovou osu](./media/custom-button-blend-clickeventtrigger1.png "custom_button_blend_ClickEventTrigger1")  
+  
+    1. Pro tuto časovou osu vytvořte dva klíčové snímky, jeden v 0,0 sekund a druhý v 0,3 sekund.  
+  
+    2. S vybraným klíčovým snímkem v 0,3 sekundách nastavte **úhel otočení transformace** na 360 stupňů.  
+  
+     ![Postup vytvoření rotace transformace](./media/custom-button-blend-rotatetransform.gif "custom_button_blend_RotateTransform")  
+  
+    1. Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítko. Všimněte si, že se skleněná vrstva otáčí.  
   
 ## <a name="conclusion"></a>Závěr  
- Dokončili jste vlastní tlačítka. Provedli jste pomocí šablony tlačítka, které byly použity na všechny tlačítka v aplikaci. Pokud necháte režimu úprav šablony (viz následující obrázek) a vytvořit další tlačítka, zobrazí se, že jejich vzhled a chování jako vlastní tlačítko, nikoli jako výchozího tlačítka.  
+ Dokončili jste přizpůsobené tlačítko. Použili jste šablonu tlačítek, která byla použita na všechna tlačítka v aplikaci. Pokud necháte režim úprav šablony (viz následující obrázek) a vytvoříte více tlačítek, uvidíte, že vypadají a chovají se jako vlastní tlačítko, a ne jako výchozí tlačítko.  
   
  ![Šablona vlastního tlačítka](./media/custom-button-blend-scopeup.gif "custom_button_blend_ScopeUp")  
   
- ![Více tlačítek, které používají stejnou šablonu](./media/custom-button-blend-createmultiplebuttons.png "custom_button_blend_CreateMultipleButtons")  
+ ![Několik tlačítek, která používají stejnou šablonu](./media/custom-button-blend-createmultiplebuttons.png "custom_button_blend_CreateMultipleButtons")  
   
- Stisknutím klávesy F5 spusťte aplikaci. Pomocí tlačítek a Všimněte si, jak všechny se chová stejně.  
+ Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítka a Všimněte si, jak se všechny chovají.  
   
- Mějte na paměti, že když se přizpůsobuje šablony, je nastavit <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost **innerRectangle** a <xref:System.Windows.Shapes.Shape.Stroke%2A> vlastnost **outerRectangle** na pozadí šablony ({ TemplateBinding pozadí}). Kvůli tomu když nastavíte barvu pozadí jednotlivá tlačítka na pozadí, které nastavíte, se použije pro tyto příslušné vlastnosti. Zkuste nyní změnit pozadí. Na následujícím obrázku se používají různé přechody. Proto i když šablona je užitečná pro celkové přizpůsobení ovládacích prvků jako tlačítko, ovládacích prvků pomocí šablon lze stále upravit a lišit od sebe navzájem.  
+ Mějte na paměti, že při přizpůsobování šablony jste nastavili <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost <xref:System.Windows.Shapes.Shape.Stroke%2A> innerRectangle a vlastnost **outerRectangle** na pozadí šablony ({TemplateBinding Background}). Z tohoto důvodu se při nastavení barvy pozadí jednotlivých tlačítek použije pozadí, které nastavíte pro příslušné vlastnosti. Zkuste změnit pozadí hned teď. Na následujícím obrázku jsou použity různé přechody. Proto i když je šablona užitečná pro celkové přizpůsobení ovládacích prvků jako tlačítko, ovládací prvky s šablonami lze stále upravovat, aby se vzájemně lišily.  
   
- ![Tlačítka s stejnou šablonu, která vypadají diferent](./media/custom-button-blend-blendconclusion.jpg "custom_button_blend_BlendConclusion")  
+ ![Tlačítka se stejnou šablonou, která vypadá diferent](./media/custom-button-blend-blendconclusion.jpg "custom_button_blend_BlendConclusion")  
   
- Na závěr právě přizpůsobení šablony tlačítka jste se naučili, jak proveďte postup v aplikaci Microsoft Expression Blend:  
+ V závěru v rámci přizpůsobení šablony tlačítka, kterou jste zjistili, jak v nástroji Microsoft Expression Blend provést následující akce:  
   
 - Přizpůsobení vzhledu ovládacího prvku.  
   
-- Nastavit aktivační procedury vlastností. Aktivační procedury vlastností jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
+- Nastavte triggery vlastností. Triggery vlastností jsou velmi užitečné, protože je lze použít pro většinu objektů, nikoli pouze pro ovládací prvky.  
   
-- Nastavení aktivační události. Aktivační události jsou velmi užitečné, protože je možné u většiny objektů, ne jen ovládací prvky.  
+- Nastavte triggery událostí. Triggery událostí jsou velmi užitečné, protože je lze použít pro většinu objektů, nikoli pouze pro ovládací prvky.  
   
 - Vytváření animací.  
   
-- Různé: vytvoření přechody, přidejte BitmapEffects, použití transformací a nastavte základní vlastnosti objektů.  
+- Různé: vytváření přechodů, přidávání BitmapEffects, použití transformací a nastavení základních vlastností objektů.  
   
 ## <a name="see-also"></a>Viz také:
 

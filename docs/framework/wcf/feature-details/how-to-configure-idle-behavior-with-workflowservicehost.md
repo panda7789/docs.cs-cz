@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1bb93652-d687-46ff-bff6-69ecdcf97437
-ms.openlocfilehash: 5b2ebf6ddc5f275bd499a8abf7e68e019a1e0cef
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 57a9e0487ff605e99adc22471b02f5a288fc4a2b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586670"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912158"
 ---
 # <a name="how-to-configure-idle-behavior-with-workflowservicehost"></a>Postupy: Konfigurace chování při nečinnosti pomocí WorkflowServiceHost
-Když narazí záložku, která se musí obnovit některé externí podnětů, například při instance pracovního postupu čeká na zprávu, která se dodávají pomocí funkce Přejít nečinných pracovních postupů <xref:System.ServiceModel.Activities.Receive> aktivity. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> je chování, které vám umožní určit čas mezi při přechodu nečinné instance služby, a když instance je zachována nebo byla uvolněna. Obsahuje dvě vlastnosti, které umožňují nastavit tyto časové úseky. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> Určuje časový interval mezi při přechodu nečinné instance pracovního postupu služby a když instance služby pracovního postupu je trvalá. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> Určuje časový interval mezi když pracovní postup služby instance přejde nečinnosti a instance služby pracovního postupu je uvolněn, kde uvolnění znamená to, že zachování instanci v úložišti instancí a odebere ji z paměti. Toto téma vysvětluje, jak nakonfigurovat <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> v konfiguračním souboru.  
+Pracovní postupy se přestanou nečinné, pokud se objeví záložka, která musí být obnovena některým externím podnětem, například když instance pracovního postupu čeká na doručení <xref:System.ServiceModel.Activities.Receive> zprávy pomocí aktivity. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>je chování, které umožňuje zadat čas mezi tím, kdy instance služby přestane být v nečinnosti a kdy je instance trvalá nebo odpojená. Obsahuje dvě vlastnosti, které vám umožní nastavit tyto časové rozsahy. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A>Určuje časové období mezi tím, kdy instance služby pracovního postupu přestane být aktivní a když je instance služby pracovního postupu trvalá. <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A>Určuje časový rozsah mezi tím, kdy se instance služby pracovního postupu nečinný a když se instance služby pracovního postupu uvolní, kde uvolnění znamená trvalé uložení instance do úložiště instancí a jeho odebrání z paměti. Toto téma vysvětluje, jak nakonfigurovat <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> v konfiguračním souboru.  
   
-### <a name="to-configure-workflowidlebehavior"></a>Ke konfiguraci WorkflowIdleBehavior  
+### <a name="to-configure-workflowidlebehavior"></a>Konfigurace WorkflowIdleBehavior  
   
-1. Přidat <`workflowIdle`> element <`behavior`> element v rámci <`serviceBehaviors`> element, jak je znázorněno v následujícím příkladu.  
+1. Do prvku <`workflowIdle``behavior`> prvku <`serviceBehaviors`> přidejte prvek < >, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <behaviors>  
@@ -29,14 +29,14 @@ Když narazí záložku, která se musí obnovit některé externí podnětů, n
     </behaviors>  
     ```  
   
-     `timeToUnload` Atribut určuje časové období mezi při přechodu nečinné instance pracovního postupu služby a služby pracovního postupu je uvolněn. `timeToPersist` Atribut určuje časové období mezi při přechodu nečinné instance pracovního postupu služby a když instance služby pracovního postupu je trvalá. Výchozí hodnota pro `timeToUnload` je 1 minuta. Výchozí hodnota pro `timeToPersist` je <xref:System.TimeSpan.MaxValue>. Pokud chcete zachovat nečinné instance v paměti, ale zachovat pro odolnost, nastavte hodnoty tak, aby `timeToPersist`  <  `timeToUnload`. Pokud chcete zabránit uvolňován nečinné instance, nastavte `timeToUnload` k <xref:System.TimeSpan.MaxValue>. Další informace o <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>, naleznete v tématu [rozšíření hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)  
+     `timeToUnload` Atribut určuje časové období mezi tím, kdy instance služby pracovního postupu přestane být v nečinnosti, a když je služba pracovního postupu uvolněna. `timeToPersist` Atribut určuje časové období mezi tím, kdy instance služby pracovního postupu přestane být aktivní a když je instance služby pracovního postupu trvalá. Výchozí hodnota pro `timeToUnload` je 1 minuta. Výchozí hodnota pro `timeToPersist` je <xref:System.TimeSpan.MaxValue>. Pokud chcete zachovat nečinné instance v paměti, ale zachovat je odolnosti, nastavte hodnoty tak, `timeToPersist`  <  `timeToUnload`aby. Chcete-li zabránit nečinným instancím v uvolnění, nastavte `timeToUnload` na. <xref:System.TimeSpan.MaxValue> Další informace o <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>najdete v tématu [rozšiřitelnost hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md) .  
   
     > [!NOTE]
-    >  Zjednodušená konfigurace používá předchozí ukázka konfigurace. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
+    > Předchozí konfigurační ukázka používá zjednodušenou konfiguraci. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
   
-### <a name="to-change-idle-behavior-in-code"></a>Chcete-li změnit chování při nečinnosti v kódu  
+### <a name="to-change-idle-behavior-in-code"></a>Změna chování při nečinnosti v kódu  
   
-- Následující příklad změní dobu čekání před uložením a uvolnění prostřednictvím kódu programu.  
+- Následující příklad mění čas, který se má počkat, než se programově zachovají a uvolňuje.  
   
      [!code-csharp[Wf_SvcHost_Idle_persist#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/wf_svchost_idle_persist/cs/source.cs#1)]
      [!code-vb[Wf_SvcHost_Idle_persist#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/wf_svchost_idle_persist/vb/source.vb#1)]  

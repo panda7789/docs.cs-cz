@@ -2,30 +2,30 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 0d3e9b3aa8d94136fae2d26b2b297776d5b7ea9e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 10087c4c18a4bc24dd36d814619fc265f9987c8c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650071"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961430"
 ---
 # <a name="federation-sample"></a>Ukázka federace
-V této ukázce federovaného zabezpečení.  
+Tato ukázka demonstruje federované zabezpečení.  
   
-## <a name="sample-details"></a>Ukázka podrobnosti  
- Windows Communication Foundation (WCF) poskytuje podporu pro nasazení architektury zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` Poskytuje zabezpečené, spolehlivé a interoperabilní vazbu, která zahrnuje použití protokolu HTTP jako podkladový přenosový mechanismus pro komunikaci požadavek/odpověď a Text/XML jako přenosový formát pro kódování. Další informace o federace ve službě WCF najdete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
+## <a name="sample-details"></a>Podrobnosti ukázky  
+ Windows Communication Foundation (WCF) poskytuje podporu pro nasazení federovaných architektur zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` Poskytuje zabezpečenou, spolehlivou a interoperabilní vazbu, která zahrnuje použití http jako základního přenosového mechanismu pro komunikaci typu požadavek/odpověď a text/XML jako formát přenosu pro kódování. Další informace o federaci v WCF najdete v článku [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
   
- Tento scénář se skládá ze 4 částí:  
+ Scénář se skládá ze 4 kusů:  
   
-- Služba knihkupectví  
+- Služba BookStore  
   
-- Knihkupectví služby tokenů zabezpečení  
+- BookStore STS  
   
-- HomeRealm služby tokenů zabezpečení  
+- HomeRealm STS  
   
-- Knihkupectví klienta  
+- Klient BookStore  
   
- Služba knihkupectví podporuje dvě operace `BrowseBooks` a `BuyBook`. To umožňuje anonymní přístup k `BrowseBooks` operace, ale vyžaduje ověřený přístup k přístupu `BuyBooks` operace. Ověřování má formu tokenem vydaným službou tokenů zabezpečení knihkupectví. Konfigurační soubor služby knihkupectví body klientů pomocí služby tokenů zabezpečení knihkupectví `wsFederationHttpBinding`.  
+ Služba Bookstore podporuje dvě operace, `BrowseBooks` a. `BuyBook` Umožňuje anonymní přístup k `BrowseBooks` operaci, ale vyžaduje ověřený přístup pro přístup k této `BuyBooks` operaci. Ověřování má formu tokenu vydaného službou BookStore STS. Konfigurační soubor pro službu BookStore odkazuje na klienty služby BookStore STS pomocí `wsFederationHttpBinding`.  
   
 ```xml  
 <wsFederationHttpBinding>  
@@ -45,7 +45,7 @@ V této ukázce federovaného zabezpečení.
 </wsFederationHttpBinding>  
 ```  
   
- Služba tokenů zabezpečení knihkupectví pak vyžaduje, že klienti ověřování pomocí tokenu vydaného službou HomeRealm STS. Znovu, konfigurační soubor služby STS knihkupectví odkazuje klientů pomocí služby tokenů zabezpečení HomeRealm `wsFederationHttpBinding`.  
+ BookStore STS pak vyžaduje, aby se klienti ověřovali pomocí tokenu vydaného službou HomeRealm STS. Konfigurační soubor pro službu BookStore STS se znovu odkazuje na klienty služby HomeRealm STS pomocí `wsFederationHttpBinding`.  
   
 ```xml  
 <wsFederationHttpBinding>  
@@ -65,54 +65,54 @@ V této ukázce federovaného zabezpečení.
 </wsFederationHttpBinding>  
 ```  
   
- Posloupnost událostí, když přistupoval k `BuyBook` operace vypadá takto:  
+ Sekvence událostí při přístupu k `BuyBook` operaci je následující:  
   
-1. Klient se ověří na službu STS HomeRealm pomocí přihlašovacích údajů Windows.  
+1. Klient se ověřuje pomocí pověření služby HomeRealm STS prostřednictvím přihlašovacích údajů systému Windows.  
   
-2. Služba tokenů zabezpečení HomeRealm vystaví token, který slouží k ověření na službu STS knihkupectví.  
+2. Služba HomeRealm STS vydá token, který se dá použít k ověření v knihkupectví STS.  
   
-3. Klient se ověří pomocí tokenu vystaví služba HomeRealm STS Služba tokenů zabezpečení knihkupectví.  
+3. Klient se ověřuje pro službu BookStore STS pomocí tokenu vydaného službou HomeRealm STS.  
   
-4. Služba tokenů zabezpečení knihkupectví vystaví token, který slouží k ověření služby knihkupectví.  
+4. Služba BookStore STS vydá token, který lze použít k ověření ve službě BookStore.  
   
-5. Klient se ověří ve službě knihkupectví pomocí tokenu vystaví služba STS knihkupectví.  
+5. Klient se ověřuje pro službu BookStore pomocí tokenu vydaného službou BookStore STS.  
   
-6. Klient přistupuje k `BuyBook` operace.  
+6. Klient přistupuje `BuyBook` k operaci.  
   
- Přečtěte si následující pokyny o tom, jak nastavit a spustit tento příklad.  
+ V následujících pokynech se dozvíte, jak nastavit a spustit tuto ukázku.  
   
 > [!NOTE]
->  Musíte mít oprávnění k zápisu **wwwroot** adresář pro tuto ukázku spustit.  
+> Pro spuštění této ukázky musíte mít oprávnění k zápisu do adresáře **wwwroot** .  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Otevřete příkazové okno sady SDK. V cestě ukázkové spuštění Setup.bat. To vytvoří virtuální adresáře, vyžaduje se pro ukázku a nainstaluje požadované certifikáty s příslušnými oprávněními.  
-  
-    > [!NOTE]
-    >  Dávkový soubor Setup.bat je navržena pro spouštění na příkazovém řádku sady SDK Windows. To vyžaduje, aby proměnné prostředí MSSDK bodu do adresáře, ve kterém je nainstalována sada SDK. Tato proměnná prostředí je nastavena automaticky v příkazovém řádku Windows SDK. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], ujistěte se, že Kompatibilita správy služby IIS 6.0 je nainstalovat, protože nastavení používá skripty Správce služby IIS. Spouštění skriptu nastavení na [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
-  
-2. Otevřete FederationSample.sln v sadě Visual Studio a vyberte **sestavit řešení** z **sestavení** nabídky. To vytvoří běžné soubory projektu, knihkupectví služby, knihkupectví STS, HomeRealm STS a nasadí ve službě IIS. To také vytvoří knihkupectví klientská aplikace a umístí BookStoreClient.exe spustitelný soubor ve složce FederationSample\BookStoreClient\bin\Debug.  
-  
-3. Double-click BookStoreClient.exe. Zobrazí se okno BookStoreClient.  
-  
-4. K dispozici v knihkupectví knih můžete procházet kliknutím **procházet knihy**.  
-  
-5. Pokud chcete zakoupit konkrétní adresáře, v seznamu vyberte knihy a klikněte na **zakoupení knihy**. Aplikace spuštění a ověřuje pomocí služby tokenů zabezpečení HomeRealm ověřování Windows.  
-  
-     Ukázka je nakonfigurovaná tak, aby uživatelům nákup knih, které nákladů 15 USD nebo nižší. Došlo k pokusu o zakoupení knihy, které víc než 15 USD za následek klienta získávání zpráva Přístup byl odepřen z službu Store knihy nákladů.  
+1. Otevřete okno příkazového řádku sady SDK. V ukázkové cestě spusťte Setup. bat. Tím se vytvoří virtuální adresáře vyžadované pro ukázku a nainstalují se požadované certifikáty s příslušnými oprávněními.  
   
     > [!NOTE]
-    >  Ukázka neaktualizuje uživatele kreditního limitu po nákupu. Můžete opakovaně nákup knih v rámci daného uživatele (pevné) kreditního limitu.  
+    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení v systému [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
   
-#### <a name="to-clean-up"></a>Vyčistit  
+2. Otevřete FederationSample. sln v aplikaci Visual Studio a v nabídce **sestavení** vyberte **Sestavit řešení** . Tím se vytvoří společné soubory projektu, služba Bookstore, Bookstore STS, HomeRealm STS a nasadí je ve službě IIS. Tím se také vytvoří klientská aplikace pro Bookstore a ve složce FederationSample\BookStoreClient\bin\Debug se umístí spustitelný soubor BookStoreClient. exe.  
   
-1. Spusťte Cleanup.bat. To odstraní virtuální adresáře, které byly vytvořené během nastavení a také odebere během instalace nainstalovat certifikáty.  
+3. Dvakrát klikněte na BookStoreClient. exe. Zobrazí se okno BookStoreClient.  
+  
+4. Knihy, které jsou k dispozici v knihkupectví, můžete procházet kliknutím na **Procházet knihy**.  
+  
+5. Pokud si chcete koupit určitou knihu, vyberte v seznamu knihu a klikněte na **koupit knihu**. Aplikace se spustí a ověří pomocí ověřování systému Windows pomocí služby tokenu zabezpečení HomeRealm.  
+  
+     Tato ukázka je nakonfigurovaná tak, aby umožňovala uživatelům koupit knihy, které $15 nebo méně. Při pokusu o zakoupení knih s vyššími náklady, než $15, dojde v klientovi k získání zprávy o odepření přístupu ze služby Book Store.  
+  
+    > [!NOTE]
+    >  Ukázka neaktualizuje limit úvěru uživatele po nákupu. V rámci limitu úvěru uživatele můžete opakovaně nakupovat knihy.  
+  
+#### <a name="to-clean-up"></a>Vyčištění  
+  
+1. Spusťte nástroj CleanUp. bat. Tím odstraníte virtuální adresáře, které byly vytvořeny během instalace, a zároveň dojde k odebrání certifikátů nainstalovaných během instalace.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  

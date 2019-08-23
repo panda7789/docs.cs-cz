@@ -2,25 +2,25 @@
 title: Příklad nastavení hromadného kopírování
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
-ms.openlocfilehash: 6244afff348edbde46fdfda7481910aca2b25939
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a7c0ddef42ff56306a42288c6960987ce7f714a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878654"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918082"
 ---
 # <a name="bulk-copy-example-setup"></a>Příklad nastavení hromadného kopírování
-<xref:System.Data.SqlClient.SqlBulkCopy> Třídy lze použít k zápisu dat jenom do tabulek systému SQL Server. Ukázky kódu v tomto tématu použijte ukázkovou databázi systému SQL Server, **AdventureWorks**. Ukázky kódu pro neupravujte existující tabulky zapisovat data do tabulek, které je nutné nejprve vytvořit.  
+<xref:System.Data.SqlClient.SqlBulkCopy> Třídu lze použít k zápisu dat pouze do SQL Server tabulek. Ukázky kódu uvedené v tomto tématu používají ukázkovou databázi SQL Server **AdventureWorks**. Aby nedošlo ke změně kódů stávajících tabulek, zapište data do tabulek, které je třeba vytvořit jako první.  
   
- **BulkCopyDemoMatchingColumns** a **BulkCopyDemoDifferentColumns** tabulkách jsou založené na **AdventureWorks** **Production.Products**  tabulky. Ukázky kódu, které používají tyto tabulky, data je přidána z **Production.Products** tabulku k jedné z těchto ukázkových tabulek. **BulkCopyDemoDifferentColumns** tabulky se používá při vzorek ukazuje, jak namapovat sloupce ze zdroje dat do cílové tabulky; **BulkCopyDemoMatchingColumns** se používá pro většinu ostatních vzorků.  
+ Tabulky **BulkCopyDemoMatchingColumns** a **BulkCopyDemoDifferentColumns** jsou založené na tabulce **AdventureWorks** **produkce. Products** . V ukázkách kódu, které používají tyto tabulky, jsou data přidána z tabulky **produkčních produktů** do jedné z těchto ukázkových tabulek. Tabulka **BulkCopyDemoDifferentColumns** se používá, když Ukázka ukazuje, jak namapovat sloupce ze zdrojových dat do cílové tabulky. **BulkCopyDemoMatchingColumns** se používá pro většinu ostatních vzorků.  
   
- Některé ukázky kódu demonstrují, jakým způsobem chcete použít jeden <xref:System.Data.SqlClient.SqlBulkCopy> třídu pro zápis k několika tabulkám. Pro tyto ukázky **BulkCopyDemoOrderHeader** a **BulkCopyDemoOrderDetail** tabulky se používají jako cílových tabulek. Tyto tabulky jsou založeny na **Sales.SalesOrderHeader** a **Sales.SalesOrderDetail** tabulky v **AdventureWorks**.  
+ Několik ukázek kódu ukazuje, jak použít jednu <xref:System.Data.SqlClient.SqlBulkCopy> třídu k zápisu do více tabulek. Pro tyto ukázky se jako cílové tabulky používají tabulky **BulkCopyDemoOrderHeader** a **BulkCopyDemoOrderDetail** . Tyto tabulky jsou založené na tabulkách **Sales. SalesOrderHeader** a **Sales. SalesOrderDetail** v **AdventureWorks**.  
   
 > [!NOTE]
->  **SqlBulkCopy** jsou k dispozici ukázky kódu ukazují syntaxi pomocí **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je jednodušší a rychlejší použití příkazů jazyka Transact-SQL `INSERT … SELECT` příkaz Kopírovat data.  
+> Ukázky kódu **SqlBulkCopy** jsou k dispozici k předvedení syntaxe pouze použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL `INSERT … SELECT` ke zkopírování dat.  
   
 ## <a name="table-setup"></a>Nastavení tabulky  
- Aby se vytvořily tabulky nezbytné pro ukázky kódu správně spustit, musíte spustit následující příkazy jazyka Transact-SQL v databázi serveru SQL Server.  
+ Chcete-li vytvořit tabulky potřebné pro správné spuštění ukázek kódu, je nutné spustit následující příkazy jazyka Transact-SQL v databázi SQL Server.  
   
 ```  
 USE AdventureWorks  
@@ -84,4 +84,4 @@ CREATE TABLE [dbo].[BulkCopyDemoOrderDetail]([SalesOrderID] [int] NOT NULL,
 ## <a name="see-also"></a>Viz také:
 
 - [Operace hromadného kopírování na SQL Serveru](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

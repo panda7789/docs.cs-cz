@@ -8,37 +8,37 @@ helpviewer_keywords:
 - CompositionTarget objects [WPF], rendering per frame
 - rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
-ms.openlocfilehash: 00b416d423a4bdc8bab576add2d77fd305ea6e0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8864204ccdd1e860cc910dfe8baa2f25edfb2fcc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008925"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956986"
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Animace modul obsahuje řadu funkcí pro vytváření založených na snímcích animace. Existují však aplikačních scénářů, ve kterých je nutné citlivější kontrolu nad vykreslování na základě na rámce. <xref:System.Windows.Media.CompositionTarget> Objekt poskytuje možnost vytvářet vlastní animace založené na zpětné volání na rámce.  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Animační modul poskytuje mnoho funkcí pro vytváření animací založených na snímcích. Existují však scénáře aplikace, ve kterých potřebujete přesnější kontrolu nad vykreslováním jednotlivých snímků. <xref:System.Windows.Media.CompositionTarget> Objekt poskytuje možnost vytvářet vlastní animace na základě zpětného volání pro jednotlivé snímky.  
   
- <xref:System.Windows.Media.CompositionTarget> je statická třída, která představuje zobrazovacím povrchu, na kterém je vykreslen vaší aplikace. <xref:System.Windows.Media.CompositionTarget.Rendering> Událost je vyvolána pokaždé, když je vykreslení scény vaší aplikace. Snímková frekvence vykreslování je počet průchodů za sekundu je vykreslení scény.  
+ <xref:System.Windows.Media.CompositionTarget>je statická třída, která představuje zobrazovací plochu, na které se vykreslí vaše aplikace. <xref:System.Windows.Media.CompositionTarget.Rendering> Událost je vyvolána pokaždé, když je vykreslena scéna aplikace. Frekvence snímků vykreslování je počet vykreslící scény za sekundu.  
   
 > [!NOTE]
->  Pro kompletní kód ukázkový používání <xref:System.Windows.Media.CompositionTarget>, naleznete v tématu [ukázka CompositionTarget](https://go.microsoft.com/fwlink/?LinkID=160045).  
+> Kompletní ukázku kódu použití <xref:System.Windows.Media.CompositionTarget>naleznete v tématu Using the [CompositionTarget Sample](https://go.microsoft.com/fwlink/?LinkID=160045).  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Media.CompositionTarget.Rendering> Událost aktivuje při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] proces vykreslování. Následující příklad ukazuje, jak zaregistrovat <xref:System.EventHandler> delegovat na statické <xref:System.Windows.Media.CompositionTarget.Rendering> metodu na <xref:System.Windows.Media.CompositionTarget>.  
+ Událost je aktivována [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] během procesu vykreslování. <xref:System.Windows.Media.CompositionTarget.Rendering> Následující příklad ukazuje, jak registrovat <xref:System.EventHandler> delegáta pro statickou <xref:System.Windows.Media.CompositionTarget.Rendering> metodu na <xref:System.Windows.Media.CompositionTarget>.  
   
  [!code-csharp[CompositionTargetSample#CompositionTarget1](~/samples/snippets/csharp/VS_Snippets_Wpf/CompositionTargetSample/CSharp/Window1.xaml.cs#compositiontarget1)]
  [!code-vb[CompositionTargetSample#CompositionTarget1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CompositionTargetSample/visualbasic/window1.xaml.vb#compositiontarget1)]  
   
- Vaše metoda obslužné rutiny události vykreslování můžete použít k vytvoření vlastního vykreslování obsahu. Tato metoda obslužné rutiny události volána jednou pro každý snímek. Pokaždé, když, který [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] marshals se nazývá trvalý vykreslování data ve vizuálním stromu napříč složení graf scén, vaše metoda obslužné rutiny události. Kromě toho pokud se změny vizuálního stromu vynutí aktualizace graf scén složení, vaše metoda obslužné rutiny události se také nazývá. Všimněte si, že vaše metoda obslužné rutiny události se volá, když byl vypočítán rozložení. Však můžete změnit rozložení ve své metodě obslužné rutiny událostí, což znamená, že toto rozložení se vypočítá jednou před vykreslením.  
+ Můžete použít metodu obslužné rutiny události vykreslování k vytvoření vlastního obsahu výkresu. Tato metoda obslužné rutiny události se volá jednou pro každý snímek. Pokaždé, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] když se zachová trvalá data vykreslování ve vizuálním stromu napříč do grafu scény kompozice, je volána metoda obslužné rutiny události. Kromě toho, pokud změny ve vizuálním stromu vynutí aktualizace grafu scény, je volána také metoda obslužné rutiny události. Všimněte si, že vaše metoda obslužné rutiny události je volána po vypočítání rozložení. Můžete však upravit rozložení v metodě obslužné rutiny události, což znamená, že rozložení bude vypočítáno ještě více před vykreslením.  
   
- Následující příklad ukazuje, jak můžete zadat vlastní kreslení v <xref:System.Windows.Media.CompositionTarget> metoda obslužné rutiny události. V takovém případě barvu pozadí <xref:System.Windows.Controls.Canvas> je vykreslen s hodnotu barvy na základě souřadnici pozice myši. Pokud posunete myší uvnitř <xref:System.Windows.Controls.Canvas>, jeho změny barev na pozadí. Kromě toho se vypočítá průměrná Snímková frekvence, na základě aktuální uplynulý čas a celkový počet vykreslené snímky.  
+ Následující příklad ukazuje, jak lze poskytnout vlastní vykreslování v <xref:System.Windows.Media.CompositionTarget> metodě obslužné rutiny události. V tomto případě <xref:System.Windows.Controls.Canvas> je barva pozadí vykreslena s hodnotou barvy v závislosti na poloze souřadnic myši. Pokud přesunete myš dovnitř <xref:System.Windows.Controls.Canvas>, změní se barva pozadí. Kromě toho se počítá průměrná frekvence snímků na základě aktuálního uplynulého času a celkového počtu vykreslených snímků.  
   
  [!code-csharp[CompositionTargetSample#CompositionTarget2](~/samples/snippets/csharp/VS_Snippets_Wpf/CompositionTargetSample/CSharp/Window1.xaml.cs#compositiontarget2)]
  [!code-vb[CompositionTargetSample#CompositionTarget2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CompositionTargetSample/visualbasic/window1.xaml.vb#compositiontarget2)]  
   
- Zjistíte, že běží při různých rychlostech vlastního vykreslení na různých počítačích. Důvodem je, že vaše vlastní kreslení není Snímková frekvence nezávislé. V závislosti na systému spustíte a daného zatížení systému <xref:System.Windows.Media.CompositionTarget.Rendering> události může být volána jiný počet za sekundu. Informace o určení grafické hardwaru možnosti a výkon pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, najdete v článku [vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md).  
+ Můžete zjistit, že se vlastní výkres spouští na různých rychlostech v různých počítačích. Důvodem je to, že váš vlastní výkres není nezávisle na snímkovém poměru. V závislosti na systému, který používáte, a zatížení tohoto systému <xref:System.Windows.Media.CompositionTarget.Rendering> může být událost volána různě kolikrát za sekundu. Informace o určení schopnosti a výkonu hardwaru grafiky pro zařízení, na kterém běží [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, najdete v tématu [vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md).  
   
- Přidání nebo odebrání vykreslení <xref:System.EventHandler> delegáta, když událost je vyvolávána, bude odložena až do po dokončení události ohlásí. To je konzistentní s jak <xref:System.MulticastDelegate>– na základě události jsou zpracovávány v Common Language Runtime (CLR). Všimněte si také, že události vykreslování nemusí být volána v libovolném pořadí. Pokud máte více <xref:System.EventHandler> delegáty, které jsou závislé na určitém pořadí, byste měli zaregistrovat jediné <xref:System.Windows.Media.CompositionTarget.Rendering> událostí a multiplexovaný do delegátů ve správné pořadí sami.  
+ Přidání nebo odebrání delegáta <xref:System.EventHandler> vykreslování v době, kdy se událost vypíná, bude až do doby, kdy se událost dokončí, bude odložena. To je konzistentní s tím <xref:System.MulticastDelegate>, jak jsou zpracovávány události v modulu CLR (Common Language Runtime). Všimněte si také, že není zaručeno volání událostí vykreslování v žádném konkrétním pořadí. Pokud máte více <xref:System.EventHandler> delegátů, kteří spoléhají na konkrétní pořadí, měli byste zaregistrovat jednu <xref:System.Windows.Media.CompositionTarget.Rendering> událost a multiplexní delegáty ve správném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
 

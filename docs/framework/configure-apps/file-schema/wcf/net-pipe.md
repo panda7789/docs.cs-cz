@@ -2,18 +2,18 @@
 title: <net.pipe>
 ms.date: 03/30/2017
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
-ms.openlocfilehash: 885cfad7be42f7c48b4c061f3293d667eb5d4ad8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d868d84318db8c9fe188293154dc275060a3952
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933186"
 ---
-# <a name="netpipe"></a>\<NET.pipe >
-Určuje nastavení konfigurace služby Aktivace pojmenovaných kanálů, která spravuje životnost připojení pojmenovaného kanálu a zpracovává požadavky na aktivaci přicházející přes pojmenované kanály.  
+# <a name="netpipe"></a>\<> NET. pipe
+Určuje nastavení konfigurace pro aktivační službu pojmenovaného kanálu, která spravuje životnost připojení pojmenovaného kanálu a zpracovává požadavky na aktivaci přicházející přes pojmenované kanály.  
   
  \<system.serviceModel.activation>  
-\<NET.pipe >  
+\<> NET. pipe  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Určuje nastavení konfigurace služby Aktivace pojmenovaných kanálů, která 
 </configuration>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -50,21 +50,21 @@ Určuje nastavení konfigurace služby Aktivace pojmenovaných kanálů, která 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`maxPendingAccepts`|Celé číslo, které určuje maximální počet souběžně otevřených přijímacích vláken na koncový bod naslouchací služby pro sdílení. Výchozí hodnota je 2.|  
-|`maxPendingConnections`|Celé číslo určující maximální počet připojení, které mohou čekat na odeslání. Výchozí hodnota je 100.|  
-|`receiveTimeout`|A <xref:System.TimeSpan> , který určuje časový limit pro vytváření datových rámců a jejich odesílání z přidružených připojení. Výchozí hodnota je "00: 00:10"|  
+|`maxPendingAccepts`|Celé číslo, které určuje maximální počet nedokončených souběžných přijímajících vláken na koncovém bodu naslouchání pro službu sdílení. Výchozí hodnota je 2.|  
+|`maxPendingConnections`|Celé číslo, které určuje maximální počet připojení, které mohou čekat na odeslání. Výchozí hodnota je 100.|  
+|`receiveTimeout`|A <xref:System.TimeSpan> určuje časový limit pro čtení dat rámců a provádění odesílání připojení z připojení s podtržením. Výchozí hodnota je "00:00:10".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atributy uživatelské účty pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.|  
+|[\<allowAccounts>](allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atribut pro určení uživatelských účtů pro procesy, které hostují služby WCF, a kterým je udělen přístup k připojení ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Obsahuje nastavení konfigurace pro naslouchací proces SMSvcHost.exe.|  
+|[\<system.serviceModel.activation>](system-servicemodel-activation.md)|Obsahuje nastavení konfigurace procesu naslouchacího procesu SMSvcHost. exe.|  
   
 ## <a name="see-also"></a>Viz také:
 

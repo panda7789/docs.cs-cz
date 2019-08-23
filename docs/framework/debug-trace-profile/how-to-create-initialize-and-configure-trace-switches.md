@@ -13,25 +13,25 @@ helpviewer_keywords:
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c947dcd3fa3a71d5bbfdf742b106bf56d8444fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b1575d484c58afa3558d9f5b446473b4c89bc51
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596750"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948001"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Postupy: Vytváření, inicializace a konfigurace přepínačů trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování.  
   
 <a name="create"></a>   
-## <a name="creating-and-initializing-a-trace-switch"></a>Vytváření a inicializace přepínačů trasování  
- Chcete-li použít přepínačů trasování, musíte je vytvořit a umístit je do vašeho kódu. Existují dvě předdefinované třídy, ze kterých můžete vytvořit objekty přepínač: <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> třídy a <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> třídy. Můžete využít <xref:System.Diagnostics.BooleanSwitch> Pokud vám záleží pouze určuje, jestli se zobrazí zpráva trasování, použijete <xref:System.Diagnostics.TraceSwitch> Pokud chcete rozlišit úrovní trasování. Pokud používáte <xref:System.Diagnostics.TraceSwitch>, můžete definovat vlastní zprávy ladění a spojit je s různými úrovněmi trasování. Můžete použít oba typy přepínače trasování nebo ladění. Ve výchozím nastavení <xref:System.Diagnostics.BooleanSwitch> zakázána a <xref:System.Diagnostics.TraceSwitch> je nastavená na úroveň <xref:System.Diagnostics.TraceLevel.Off?displayProperty=nameWithType>. Přepínače trasování může být vytvořeno a umístí do libovolné části kódu, která může používat.  
+## <a name="creating-and-initializing-a-trace-switch"></a>Vytvoření a inicializace přepínače trasování  
+ Aby bylo možné použít přepínače trasování, je nutné je nejprve vytvořit a umístit do kódu. Existují dvě předdefinované třídy, ze kterých lze vytvořit objekty Switch: <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> třídu <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> a třídu. Použili <xref:System.Diagnostics.BooleanSwitch> byste jenom v případě, že se zajímá jenom to, jestli se zobrazuje zpráva o trasování <xref:System.Diagnostics.TraceSwitch> . použijete, pokud chcete odlišit úroveň trasování. Pokud používáte <xref:System.Diagnostics.TraceSwitch>, můžete definovat vlastní zprávy pro ladění a přidružit je k různým úrovním trasování. Oba typy přepínačů lze použít buď pomocí trasování, nebo ladění. Ve výchozím nastavení <xref:System.Diagnostics.BooleanSwitch> je zakázána <xref:System.Diagnostics.TraceSwitch> a je nastavena na úroveň <xref:System.Diagnostics.TraceLevel.Off?displayProperty=nameWithType>. Přepínače trasování lze vytvořit a umístit do jakékoli části kódu, který je může používat.  
   
- I když úrovní trasování a další možnosti konfigurace můžete nastavit v kódu, doporučujeme použít konfigurační soubor pro správu stavu vašich přepínače. Důvodem je, že správu konfigurace vašeho přepínače v konfigurační systém poskytuje větší flexibilitu, můžete zapnout nebo vypnout různé přepínače a měnit úrovně bez opětovné kompilace aplikace.  
+ I když můžete nastavit úrovně trasování a další možnosti konfigurace v kódu, doporučujeme, abyste ke správě stavu přepínačů použili konfigurační soubor. Důvodem je to, že Správa konfigurace přepínačů v konfiguračním systému poskytuje větší flexibilitu – můžete zapnout a vypnout různé přepínače a změnit úrovně bez nutnosti opětovné kompilace aplikace.  
   
-#### <a name="to-create-and-initialize-a-trace-switch"></a>Vytvoření a inicializace přepínačů trasování  
+#### <a name="to-create-and-initialize-a-trace-switch"></a>Chcete-li vytvořit a inicializovat přepínač trasování  
   
-1. Definování přepínač jako buď typ <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> nebo typ <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> a nastavte název a popis přepínače.  
+1. Definujte přepínač buď Type <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> , nebo type <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> a nastavte název a popis přepínače.  
   
 2. Nakonfigurujte přepínač trasování. Další informace najdete v tématu [konfigurace přepínačů trasování](#configure).  
   
@@ -52,43 +52,43 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 <a name="configure"></a>   
 ## <a name="configuring-trace-switches"></a>Konfigurace přepínačů trasování  
- Poté, co vaše aplikace byla distribuována, můžete stále povolit nebo zakázat výstup trasování pomocí konfigurace přepínačů trasování ve vaší aplikaci. Konfigurace přepínače znamená, že změníte jeho hodnotu z externího zdroje, jakmile byla inicializována. Můžete změnit hodnoty přepínače objektů pomocí konfiguračního souboru. Při konfiguraci přepínače trasování můžete zapnout nebo vypnout, nebo k nastavení jeho úroveň určující velikost a typ zprávy ji předá do naslouchacích procesů.  
+ Po distribuci aplikace můžete povolit nebo zakázat výstup trasování konfigurací přepínačů trasování v aplikaci. Konfigurace přepínače znamená změnu hodnoty z externího zdroje poté, co byla inicializována. Hodnoty objektů Switch můžete změnit pomocí konfiguračního souboru. Můžete nakonfigurovat přepínač trasování pro jeho zapnutí a vypnutí nebo pro nastavení jeho úrovně a určení množství a typu zpráv, které předává do posluchačů.  
   
- Vaše přepínače jsou nakonfigurováni pomocí souboru .config. Pro webovou aplikaci Toto je soubor Web.config, který je přidružený k projektu. V aplikaci Windows, je tento soubor s názvem (název aplikace). exe.config. V nasazené aplikaci musí být tento soubor umístěn ve stejné složce jako spustitelný soubor.  
+ Vaše přepínače jsou nakonfigurovány pomocí souboru. config. Pro webovou aplikaci je to soubor Web. config přidružený k projektu. V aplikaci pro Windows se tento soubor nazývá (název aplikace). exe. config. V nasazené aplikaci musí být tento soubor umístěn ve stejné složce jako spustitelný soubor.  
   
- Když vaše aplikace spustí kód, který vytvoří instanci přepínače poprvé, ověří konfigurační soubor pro úroveň trasování informace o pojmenovaných přepínači. Systém sledování zkontroluje konfigurační soubor jen jednou pro jakékoli konkrétní přepínač – poprvé aplikace vytváří přepínač.  
+ Když vaše aplikace spustí kód, který vytvoří instanci přepínače poprvé, zkontroluje konfigurační soubor o informace na úrovni trasování s pojmenovaným přepínačem. Systém trasování prověřuje konfigurační soubor pouze jednou pro konkrétní přepínač – při prvním vytvoření přepínače aplikace.  
   
- V nasazení aplikace povolíte trasování kódu opětovná konfigurace přepínače objektů, pokud aplikace neběží. Obvykle to zahrnuje zapnutí přepínače objektů a vypnout nebo změnou úrovně trasování a následného restartování aplikace.  
+ V nasazené aplikaci povolíte trasovací kód tím, že překonfigurujete objekty přepínače, když vaše aplikace neběží. To obvykle zahrnuje zapnutí a vypnutí objektů přepínače nebo změnu úrovní trasování a následné restartování aplikace.  
   
- Při vytváření instance přepínače taky ji inicializovat zadáním dva argumenty: *displayName* argument a *popis* argument. *DisplayName* argument konstruktoru sady <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=nameWithType> vlastnost <xref:System.Diagnostics.Switch> instance třídy. *DisplayName* je název, který se používá ke konfiguraci přepínače v souboru .config a *popis* argument by měl vrátit stručný popis přepínač a co ho zprávy ovládací prvky.  
+ Když vytvoříte instanci přepínače, inicializujete ji také zadáním dvou argumentů: argumentu *DisplayName* a argumentem *Description* . Argument *DisplayName* konstruktoru nastavuje <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=nameWithType> vlastnost <xref:System.Diagnostics.Switch> instance třídy. *DisplayName* je název, který se používá ke konfiguraci přepínače v souboru. config a argument *Description* by měl vracet stručný popis přepínače a o tom, které zprávy ovládací prvky IT.  
   
- Kromě zadání názvu přepínače ke konfiguraci, musíte zadat také hodnotu pro přepínač. Tato hodnota je celé číslo. Pro <xref:System.Diagnostics.BooleanSwitch>, hodnota 0 odpovídá **vypnout**, a odpovídá jakékoli nenulovou hodnotu **na**. Pro <xref:System.Diagnostics.TraceSwitch>0,1,2,3 a 4 odpovídají **vypnout**, **chyba**, **upozornění**, **informace**, a **Verbose**v uvedeném pořadí. Libovolné číslo větší než 4 je považován za **Verbose**a jakékoli číslo menší než nula je považován za **vypnout**.  
+ Kromě určení názvu přepínače, který se má nakonfigurovat, musíte zadat také hodnotu pro přepínač. Tato hodnota je celé číslo. V případě hodnota 0 odpovídá **off**a jakákoli nenulová hodnota odpovídá **na.** <xref:System.Diagnostics.BooleanSwitch> U <xref:System.Diagnostics.TraceSwitch>, 0, 1, 2, 3 a 4 se shodují, **Chyba**, **Upozornění**, **informace**a **podrobné**, v uvedeném pořadí. Jakékoli číslo, které je větší než 4, je považováno za **podrobné**a jakékoli číslo menší než nula je považováno za **vypnuto**.  
   
 > [!NOTE]
->  V rozhraní .NET Framework verze 2.0 můžete zadat hodnotu pro přepínač text. Například `true` pro <xref:System.Diagnostics.BooleanSwitch> nebo představující hodnotu výčtu, jako text `Error` pro <xref:System.Diagnostics.TraceSwitch>. Na řádku `<add name="myTraceSwitch" value="Error" />` je ekvivalentní `<add name="myTraceSwitch" value="1" />`.  
+> V .NET Framework verze 2,0 můžete použít text a zadat hodnotu pro přepínač. Například `true` `Error` pro nebo text představující<xref:System.Diagnostics.TraceSwitch>hodnotu výčtu, například pro. <xref:System.Diagnostics.BooleanSwitch> Čára `<add name="myTraceSwitch" value="Error" />` je`<add name="myTraceSwitch" value="1" />`ekvivalentem.  
   
- Aby koncoví uživatelé moct konfigurace přepínačů trasování aplikace je nutné zadat podrobnou dokumentaci na přepínače ve vaší aplikaci. By měla podrobně popisují, které přepínače řídit, co a jak vypnout nebo zapnout. Koncový uživatel by měly také poskytnout soubor .config, který má odpovídající nápovědu v komentářích.  
+ Aby koncoví uživatelé mohli konfigurovat přepínače trasování aplikace, musíte poskytnout podrobnou dokumentaci k přepínačům ve vaší aplikaci. Měli byste si podrobně udělat, které přepínače řídí, co a jak je zapnout nebo vypnout. Měli byste také poskytnout koncovému uživateli soubor. config, který má v komentářích odpovídající nápovědě.  
   
 #### <a name="to-configure-trace-switches"></a>Konfigurace přepínačů trasování  
   
-1. Chcete-li použít přepínačů trasování, musíte je vytvořit a umístit je do kódu, jak je popsáno v části [vytváření a inicializace přepínačů trasování](#create).  
+1. Aby bylo možné použít přepínače trasování, je nutné je nejprve vytvořit a umístit do kódu, jak je popsáno v části [Vytvoření a inicializace přepínače trasování](#create).  
   
-2. Pokud váš projekt neobsahuje soubor konfigurace (app.config nebo Web.config), pak z **projektu** nabídce vyberte možnost **přidat novou položku**.  
+2. Pokud projekt neobsahuje konfigurační soubor (App. config nebo Web. config), pak v nabídce **projekt** vyberte možnost **Přidat novou položku**.  
   
-    - **Visual Basic:** V **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
+    - **Visual Basic:** V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.  
   
-         Konfigurační soubor aplikace je vytvořen a otevřít. Toto je dokument XML, jejichž kořenový element `<configuration>.`  
+         Konfigurační soubor aplikace je vytvořen a otevřen. Toto je dokument XML, jehož kořenový element je`<configuration>.`  
   
-    - **Visual C#:** V **přidat novou položku** dialogového okna zvolte **soubor XML**. Název tohoto souboru **app.config**. Po deklaraci XML v editoru XML, přidejte následující kód XML:  
+    - **Vizuál C#:** V dialogovém okně **Přidat novou položku** vyberte **soubor XML**. Pojmenujte tento soubor **App. config**. V editoru XML po deklaraci XML přidejte následující kód XML:  
   
         ```xml  
         <configuration>  
         </configuration>  
         ```  
   
-         Při kompilaci projektu souboru app.config je zkopírován do výstupní složky projektu a přejmenování *applicationname*. exe.config.  
+         Při kompilaci projektu se soubor App. config zkopíruje do výstupní složky projektu a přejmenuje se na soubor *ApplicationName*. exe. config.  
   
-3. Po `<configuration>` označit ale předtím, než `</configuration>` značky, přidejte odpovídající kód XML konfigurace vašeho přepínače. Následující příklady ukazují **BooleanSwitch** s **DisplayName** vlastnost `DataMessageSwitch` a **TraceSwitch** s **DisplayName**  vlastnost `TraceLevelSwitch`.  
+3. Po značce, ale před značku, přidejte odpovídající XML pro konfiguraci přepínačů. `</configuration>` `<configuration>` Následující příklady znázorňují **BooleanSwitch** s `DataMessageSwitch` vlastností **DisplayName** a **TraceSwitch** s vlastností `TraceLevelSwitch` **DisplayName** .  
   
     ```xml  
     <system.diagnostics>  
@@ -99,15 +99,15 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
     </system.diagnostics>  
     ```  
   
-     V této konfiguraci jak přepínače jsou vypnuté.  
+     V této konfiguraci jsou oba přepínače vypnuté.  
   
-4. Pokud je potřeba zapnout **BooleanSwitch**, jako `DataMessagesSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** libovolné celé číslo než 0.  
+4. Pokud potřebujete zapnout **BooleanSwitch**, například `DataMessagesSwitch` znázorněné v předchozím příkladu, změňte **hodnotu** na celé číslo jiné než 0.  
   
-5. Pokud je potřeba zapnout **TraceSwitch**, jako `TraceLevelSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** úrovně (1 až 4) nastavení.  
+5. Pokud potřebujete zapnout **TraceSwitch**, například `TraceLevelSwitch` v předchozím příkladu, změňte **hodnotu** na nastavení odpovídající úrovně (1 až 4).  
   
-6. Přidání komentářů do souboru .config, aby koncový uživatel má pochopili, jaké hodnoty chcete-li změnit konfiguraci přepínače odpovídajícím způsobem.  
+6. Přidejte komentáře do souboru. config tak, aby měl koncový uživatel jasné porozumění hodnotám, které se mají změnit, a odpovídajícím způsobem nakonfigurovat přepínače.  
   
-     Následující příklad ukazuje, jak může vypadat konečný kód, komentáře, včetně:  
+     Následující příklad ukazuje, jak může vypadat konečný kód včetně komentářů.  
   
     ```xml  
     <system.diagnostics>  

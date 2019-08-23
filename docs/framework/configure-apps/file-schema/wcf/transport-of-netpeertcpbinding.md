@@ -2,22 +2,22 @@
 title: <transport> z <netPeerTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: c44d86d2-1160-44d7-9c7a-297b12eccc7f
-ms.openlocfilehash: 157637615abafbd5913e4d90b702bb0224d5f121
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 837d01540fa63579877ab4085bd8034c78f2fbe0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788320"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915563"
 ---
-# <a name="transport-of-netpeertcpbinding"></a>\<přenos > z \<netPeerTcpBinding >
-Určuje nastavení zabezpečení na úrovni přenosu při použití [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).  
+# <a name="transport-of-netpeertcpbinding"></a>\<> přenosu > \<NetPeerTcpBinding
+Určuje nastavení zabezpečení na úrovni přenosu při použití [ \<> NetPeerTcpBinding](netpeertcpbinding.md).  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<netPeerTcpBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<přenos >  
+\<> vazby  
+\<> zabezpečení  
+\<> přenosu  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,29 +32,29 @@ Určuje nastavení zabezpečení na úrovni přenosu při použití [ \<netPeerT
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|credentialType|Volitelné. Určuje typ pověření použitá k ověření zprávy odeslané s rovnocenný přenos. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.|  
+|credentialType|Volitelný parametr. Určuje typ přihlašovacích údajů, které se používají k ověření zpráv odesílaných pomocí partnerského přenosu. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.|  
   
-## <a name="credentialtype-attribute"></a>credentialType atribut  
+## <a name="credentialtype-attribute"></a>credentialType – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Certifikát|Ověřování rovnocenný kanál přenos vyžaduje x X509 certifikátu.|  
-|Heslo|Ověřování rovnocenný kanál přenos vyžaduje správné heslo.|  
+|Certifikát|Ověřování přenosu rovnocenného kanálu vyžaduje certifikát x509.|  
+|Heslo|Ověření přenosu rovnocenného kanálu vyžaduje správné heslo.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netpeerbinding.md)|Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).|  
+|[\<> zabezpečení](security-of-netpeerbinding.md)|Definuje nastavení zabezpečení pro [ \<NetPeerTcpBinding >](netpeertcpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -62,8 +62,8 @@ Určuje nastavení zabezpečení na úrovni přenosu při použití [ \<netPeerT
 - <xref:System.ServiceModel.PeerSecuritySettings.Transport%2A>
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.PeerTransportSecuritySettings>
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

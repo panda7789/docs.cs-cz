@@ -10,29 +10,29 @@ helpviewer_keywords:
 ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e378eb36e633575d5afa886e886aed302cbdab9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1b05a5548beb7e7c1f0ec8e96b6e02350318ef9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674883"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921421"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Předávání typů v modulu Common Language Runtime
-Předávání typů vám umožní přesunout typu na jiné sestavení bez nutnosti znovu kompilovat aplikace, které používají původní sestavení.  
+Přesměrování typu umožňuje přesunout typ do jiného sestavení bez nutnosti opětovné kompilace aplikací, které používají původní sestavení.  
   
- Předpokládejme například, že aplikace používá `Example` třídy v sestavení s názvem `Utility.dll`. Vývojáři `Utility.dll` rozhodnout Refaktorovat sestavení a v procesu může být přesunout `Example` třídy na jiné sestavení. Pokud je starší verze této `Utility.dll` je nahrazena novou verzi `Utility.dll` a jeho sestavení doprovodné aplikace, která používá `Example` třídy se nezdaří, protože nelze nalézt `Example` třídy v nové verzi sady `Utility.dll`.  
+ Předpokládejme například, že aplikace používá `Example` třídu v sestavení s názvem. `Utility.dll` Vývojáři `Utility.dll` se mohou rozhodnout Refaktorovat sestavení a v procesu, který by mohl `Example` přesunout třídu do jiného sestavení. Je-li starší verze `Utility.dll` systému nahrazena novou `Utility.dll` verzí a jeho doprovodnou sestavou, aplikace, která `Example` třídu používá, se nezdařila, `Example` protože nemůže `Utility.dll`najít třídu v nové verzi.  
   
- Vývojáři `Utility.dll` lze zabránit předá požadavky `Example` třídy pomocí <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> atribut. Pokud byl použit atribut na novou verzi `Utility.dll`, žádosti o `Example` třídy jsou předaný do sestavení, která nyní obsahuje třídu. Existující aplikaci i nadále fungovat normálně, bez opětovnou kompilaci.  
+ Vývojáři `Utility.dll` se mohou vyhnout předávání požadavků `Example` pro třídu pomocí <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> atributu. Pokud byl atribut použit pro novou verzi `Utility.dll`nástroje, požadavky `Example` na třídu jsou předány sestavení, které nyní obsahuje třídu. Stávající aplikace bude nadále fungovat normálně bez nutnosti rekompilace.  
   
 > [!NOTE]
->  V rozhraní .NET Framework verze 2.0 nemohou předat dál typy ze sestavení, které jsou napsané v jazyce Visual Basic. Aplikace napsané v jazyce Visual Basic však může spotřebovat předané typy. To znamená pokud aplikace používá sestavení nakódovat v jazyce C# nebo C++ a typ v tomto sestavení je přemístěn na jiné sestavení, můžete použít aplikaci Visual Basic předaný typ.  
+> V .NET Framework verze 2,0 nemůžete předávané typy ze sestavení napsaných v Visual Basic. Aplikace napsaná v Visual Basic však může využívat předané typy. To znamená, že pokud aplikace používá sestavení kódované v C# nebo C++a typ z tohoto sestavení je předáván do jiného sestavení, Visual Basic aplikace může použít předaný typ.  
   
-## <a name="forwarding-types"></a>Předávání typů  
- Předávání typu čtyři kroky:  
+## <a name="forwarding-types"></a>Typy předávání  
+ Existují čtyři kroky pro předání typu:  
   
-1. Zdrojový kód pro typ přesuňte z původní sestavení do cílového sestavení.  
+1. Přesune zdrojový kód pro typ z původního sestavení do cílového sestavení.  
   
-2. V sestavení, kde lze najít typ, přidejte <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> pro typ, který byl přesunut. Následující kód ukazuje atributu pro typ s názvem `Example` , který byl přesunut.  
+2. V sestavení, kde se používá typ, přidejte <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> pro typ, který byl přesunut. Následující kód ukazuje atribut pro typ s názvem `Example` , který byl přesunut.  
   
     ```csharp  
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
@@ -42,12 +42,12 @@ Předávání typů vám umožní přesunout typu na jiné sestavení bez nutnos
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
     ```  
   
-3. Kompilace, která nyní obsahuje typ sestavení.  
+3. Zkompilujte sestavení, které nyní obsahuje typ.  
   
-4. Znovu zkompilujte použití typu budou umístěné, s odkazem na sestavení, která nyní obsahuje typ sestavení. Například pokud kompilujete soubor jazyka C# z příkazového řádku, použijte [/Reference (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) možnost určit, který obsahuje typ sestavení. V jazyce C++, použijte [#using](/cpp/preprocessor/hash-using-directive-cpp) směrnice ve zdrojovém souboru k určení, která obsahuje typ sestavení.  
+4. Znovu zkompilujte sestavení, kde se nachází typ, s odkazem na sestavení, které nyní obsahuje typ. Například pokud kompilujete C# soubor z příkazového řádku, použijte možnost [/Reference (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/reference-compiler-option.md) a určete sestavení, které obsahuje daný typ. V C++Použijte direktivu [#using](/cpp/preprocessor/hash-using-directive-cpp) ve zdrojovém souboru k určení sestavení, které obsahuje daný typ.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>
 - [Předávání typů (C++/CLI)](/cpp/windows/type-forwarding-cpp-cli)
-- [#using – direktiva](/cpp/preprocessor/hash-using-directive-cpp)
+- [#using direktiva](/cpp/preprocessor/hash-using-directive-cpp)

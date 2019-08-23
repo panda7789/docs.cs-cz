@@ -1,23 +1,23 @@
 ---
-title: <message> Element <ws2007FederationHttpBinding>
+title: <message>prvek elementu<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: f05bd90bd2e4c7e1fd606518d9e5cb8d4e5ad974
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4340727026cb151f2efe813dfa005c1c5a1908be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767569"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931627"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<Zpráva > prvek \<ws2007FederationHttpBinding >
-Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementu.  
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<> prvku \<zprávy > WS2007FederationHttpBinding
+Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<ws2007FederationHttpBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<Zpráva >  
+\<> vazby  
+\<> zabezpečení  
+\<> zprávy  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -86,46 +86,46 @@ Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationH
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`algorithmSuite`|Volitelné. Nastaví šifrování zpráv, podpisu a key-wrap algoritmy. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy namapovat na uvedené ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Najdete v následující tabulce možných hodnot. Výchozí hodnota je Basic256.|  
-|`issuedKeyType`|Určuje typ klíče vystavování. Platné hodnoty patří:<br /><br /> -SymmetricKey<br />-PublicKey<br />-BearerKey<br /><br /> Výchozí hodnota je SymmetricKey. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
-|`issuedTokenType`|Identifikátor URI, který určuje typ tokenu je nutno spustit. Výchozí hodnota je `null`.|  
-|`negotiateServiceCredential`|Hodnota, která určuje, zda by měl být vyměňují v rámci vyjednávání přihlašovacích údajů služby, nebo je k dispozici mimo pásmo. Výchozí hodnota je `true`, což znamená, že se vyjedná přihlašovacích údajů pro služby.|  
+|`algorithmSuite`|Volitelný parametr. Nastaví algoritmy šifrování, podpisu a zabalení klíčů. Algoritmy a velikosti klíčů jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídou. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty jsou uvedené v následující tabulce. Výchozí hodnota je Basic256.|  
+|`issuedKeyType`|Určuje typ klíče, který se má vystavit. Platné hodnoty jsou následující:<br /><br /> - SymmetricKey<br />– PublicKey<br />- BearerKey<br /><br /> Výchozí hodnota je SymmetricKey. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
+|`issuedTokenType`|Identifikátor URI, který určuje typ tokenu, který se má vystavit. Výchozí hodnota je `null`.|  
+|`negotiateServiceCredential`|Hodnota, která určuje, zda má být pověření služby vyměněno jako součást vyjednávání nebo je k dispozici mimo IP síť. Výchozí hodnota je `true`, což znamená, že se pověření služby vyjednávat.|  
   
-## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
+## <a name="algorithmsuite-attribute"></a>algorithmSuite – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Basic128|Zabalení klíče použijte Aes128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
-|Basic192|Použijte šifrování Aes192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic256|Použijte šifrování pomocí Aes256, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic256Rsa15|Pomocí Aes256 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
-|Basic192Rsa15|Použití Aes192 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
-|TripleDes|Použití šifrování TripleDes, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic128Rsa15|Použití Aes128 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
-|TripleDesRsa15|Použití šifrování TripleDes, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
-|Basic128Sha256|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic192Sha256|Použití Aes192 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic256Sha256|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|TripleDesSha256|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic128Sha256Rsa15|Použití Aes128 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
-|Basic192Sha256Rsa15|Použití Aes192 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
-|Basic256Sha256Rsa15|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
-|TripleDesSha256Rsa15|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
+|Basic128|Pro zabalení klíče použijte šifrování Aes128, SHA1 pro Digest zpráv a RSA-výplně OAEP-mgf1p.|  
+|Basic192|Pro zabalení klíče použijte šifrování Aes192, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
+|Basic256|Pro zabalení klíče použijte šifrování AES256, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
+|Basic256Rsa15|Použijte AES256 pro šifrování zpráv, SHA1 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|Basic192Rsa15|Použijte Aes192 pro šifrování zpráv, SHA1 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|TripleDes|Pro zabalení klíče použijte šifrování TripleDes, SHA1 pro Digest zprávy, RSA-výplně OAEP-mgf1p.|  
+|Basic128Rsa15|Použijte Aes128 pro šifrování zpráv, SHA1 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|TripleDesRsa15|Pro zabalení klíče použijte šifrování TripleDes, SHA1 pro Message Digest a Rsa15.|  
+|Basic128Sha256|Pro zabalení klíče použijte AES256 pro šifrování zpráv, SHA256 pro Message Digest a RSA-výplně OAEP-mgf1p.|  
+|Basic192Sha256|Pro zabalení klíče použijte Aes192 pro šifrování zpráv, SHA256 pro Message Digest a RSA-výplně OAEP-mgf1p.|  
+|Basic256Sha256|Pro zabalení klíče použijte AES256 pro šifrování zpráv, SHA256 pro Message Digest a RSA-výplně OAEP-mgf1p.|  
+|TripleDesSha256|Pro zabalení klíče použijte TripleDes pro šifrování zpráv, SHA256 pro Message Digest a RSA-výplně OAEP-mgf1p.|  
+|Basic128Sha256Rsa15|Použijte Aes128 pro šifrování zpráv, SHA256 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|Basic192Sha256Rsa15|Použijte Aes192 pro šifrování zpráv, SHA256 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|Basic256Sha256Rsa15|Použijte AES256 pro šifrování zpráv, SHA256 pro Message Digest a Rsa15 pro zabalení klíče.|  
+|TripleDesSha256Rsa15|Pro zabalení zprávy použijte TripleDes pro šifrování zpráv, SHA256 pro Message Digest a Rsa15.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci typů deklarací identity pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
-|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
-|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
-|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je platný element XML.|  
+|[\<claimTypeRequirements>](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
+|[\<issuer>](issuer.md)|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
+|[\<issuerMetadata>](issuermetadata.md)|Určuje adresu koncového bodu vystavitele.|  
+|[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[\<> zabezpečení](security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -133,8 +133,8 @@ Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationH
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

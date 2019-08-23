@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: f8b426dc0e1e180afbfccce50d3b45774991a572
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 594ba4f289012e775e93acba98056b60bdd94cbd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301353"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927751"
 ---
-# <a name="add-element-for-appsettings"></a>\<Přidat > – element pro \<appSettings >
+# <a name="add-element-for-appsettings"></a>\<Přidat > element pro \<appSettings >
 
-Přidá nastavení vlastní aplikace.
+Přidá vlastní nastavení aplikace.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<add>**
+[ **\<> Konfigurace**](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,14 +36,14 @@ Přidá nastavení vlastní aplikace.
 
 |           | Popis |
 | --------- | ----------- |
-| **key**   | Požadovaný atribut.<br><br>Určuje název klíče pro přidání. |
-| **value** | Požadovaný atribut.<br><br>Určuje hodnotu klíče pro přidání. |
+| **key**   | Požadovaný atribut.<br><br>Určuje název klíče, který chcete přidat. |
+| **value** | Požadovaný atribut.<br><br>Určuje hodnotu klíče, který se má přidat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikaci. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -51,7 +51,7 @@ Přidá nastavení vlastní aplikace.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak přidat vlastní nastavení pro název aplikace:
+Následující příklad ukazuje, jak přidat vlastní nastavení konfigurace pro název aplikace:
 
 ```xml
 <appSettings>
@@ -59,7 +59,7 @@ Následující příklad ukazuje, jak přidat vlastní nastavení pro název apl
 </appSettings>
 ```
 
-V následujícím příkladu `<add>` element definovat dvě nastavení kompatibility v aplikaci technologie ASP.NET:
+Následující příklad používá `<add>` element k definování dvou nastavení kompatibility v aplikaci ASP.NET:
 
 ```xml
 <appSettings>
@@ -70,4 +70,4 @@ V následujícím příkladu `<add>` element definovat dvě nastavení kompatibi
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](../index.md)

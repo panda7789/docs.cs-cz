@@ -1,5 +1,5 @@
 ---
-title: Element < system.diagnostics >
+title: < element System. Diagnostics >
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.diagnostics
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <system.diagnostics> element
 - system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-ms.openlocfilehash: 026805ffb9b89aa55e84cf9a5c4afb8ed63cec09
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3b4238a8d7028d47122a420526b38ee4f327332
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673690"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926935"
 ---
-# <a name="systemdiagnostics-element"></a>\<System.Diagnostics > – Element
-Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.  
+# <a name="systemdiagnostics-element"></a>\<System. Diagnostics > – element
+Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,12 +38,12 @@ Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<assert>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.|  
-|[\<performanceCounters>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)|Určuje velikost globální paměť sdílenou čítače výkonu.|  
-|[\<sharedListeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)|Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – element může odkazovat. Naslouchací procesy, které jsou identifikovány jako sdílené moduly pro naslouchání lze přidat do zdroje nebo trasování podle názvu.|  
-|[\<sources>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|Určuje zdrojů trasování, které se zahájí trasovací zprávy.|  
-|[\<switches>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|Obsahuje přepínače trasování a úrovně, ve kterém jsou nastavené přepínačů trasování.|  
-|[\<trace>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.|  
+|[\<assert>](assert-element.md)|Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metody zobrazit okno se zprávou. určuje také název souboru, do kterého budou zapsány zprávy.|  
+|[\<performanceCounters>](performancecounters-element.md)|Určuje velikost globální paměti sdílené čítači výkonu.|  
+|[\<> sharedListeners](sharedlisteners-element.md)|Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.|  
+|[\<> zdrojů](sources-element.md)|Určuje zdroje trasování, které spouštějí trasovací zprávy.|  
+|[\<switches>](switches-element.md)|Obsahuje přepínače trasování a úrovně, kde jsou nastaveny přepínače trasování.|  
+|[\<trace>](trace-element.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -52,10 +52,10 @@ Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, 
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje postup vložení přepínače trasování a posluchače trasování uvnitř  **\<system.diagnostics >** elementu. `General` Trasování přepínač nastavený na <xref:System.Diagnostics.TraceLevel> úroveň. Naslouchací proces trasování `myListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.  
+ Následující příklad ukazuje, jak vložit přepínač trasování a naslouchací proces trasování v rámci  **\<prvku System. Diagnostic >** . Přepínač trasování je nastaven <xref:System.Diagnostics.TraceLevel> na úroveň. `General` Naslouchací proces `myListener` trasování vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.  
   
 > [!NOTE]
->  V rozhraní .NET Framework verze 2.0 můžete zadat hodnotu pro přepínač text. Například můžete zadat `true` pro <xref:System.Diagnostics.BooleanSwitch> nebo textů představující hodnotu výčtu, jako `Error` pro <xref:System.Diagnostics.TraceSwitch>. Na řádku `<add name="myTraceSwitch" value="Error" />` je ekvivalentní `<add name="myTraceSwitch" value="1" />`.  
+> V .NET Framework verze 2,0 můžete použít text a zadat hodnotu pro přepínač. Například `true` můžete zadat <xref:System.Diagnostics.BooleanSwitch> pro nebo použít text představující <xref:System.Diagnostics.TraceSwitch>hodnotu výčtu, například `Error` pro. Čára `<add name="myTraceSwitch" value="Error" />` je`<add name="myTraceSwitch" value="1" />`ekvivalentem.  
   
 ```xml  
 <configuration>  
@@ -76,4 +76,4 @@ Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, 
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

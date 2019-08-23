@@ -16,16 +16,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7628aa0ad10398f92d475c4c776810e13fac22b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e2a083f46f24d6f3f24c63dd2415b85f975cfa29
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749498"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912853"
 ---
 # <a name="icordebugcontroller-interface"></a>ICorDebugController – rozhraní
 
-Představuje rozsah buď <xref:System.Diagnostics.Process> nebo <xref:System.AppDomain>, ve které provádění kódu lze ovládat kontext.  
+Představuje obor, buď <xref:System.Diagnostics.Process> <xref:System.AppDomain>nebo, ve kterém lze ovládat kontext provádění kódu.  
   
 ## <a name="methods"></a>Metody  
   
@@ -33,29 +33,29 @@ Představuje rozsah buď <xref:System.Diagnostics.Process> nebo <xref:System.App
 |------------|-----------------|  
 |`ICorDebugController::CanCommitChanges`|Tato metoda je zastaralá.|  
 |`ICorDebugController::CommitChanges`|Tato metoda je zastaralá.|  
-|[Continue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md)|Pokračuje v provádění spravovaná vlákna po volání [icordebugcontroller::stop –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).|  
-|[Detach – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-detach-method.md)|Odpojí ladicí program z domény, procesu nebo aplikace.|  
+|[Continue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md)|Obnoví provádění spravovaných vláken po volání metody [ICorDebugController:: stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).|  
+|[Detach – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-detach-method.md)|Odpojí ladicí program od domény procesu nebo aplikace.|  
 |[EnumerateThreads – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-enumeratethreads-method.md)|Získá enumerátor pro aktivní spravovaná vlákna v procesu.|  
-|[HasQueuedCallbacks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)|Získá hodnotu určující, zda všechny spravované zpětná volání jsou právě ve frontě pro zadaný podproces.|  
-|[IsRunning – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-isrunning-method.md)|Získá hodnotu, která označuje, zda vlákna v procesu jsou aktuálně spuštěna bez omezení.|  
-|[SetAllThreadsDebugState – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md)|Nastaví stav ladění všechna spravovaná vlákna v procesu.|  
-|[Stop – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)|Provádí kooperativní stop na všech vláknech, na kterých běží spravovaný kód v procesu.|  
-|[Terminate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-terminate-method.md)|Ukončí proces s uvedený ukončovací kód.|  
+|[HasQueuedCallbacks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)|Získá hodnotu, která označuje, zda jsou pro zadané vlákno aktuálně zařazena všechna spravovaná zpětná volání.|  
+|[IsRunning – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-isrunning-method.md)|Získá hodnotu, která označuje, zda jsou vlákna v procesu aktuálně spuštěna volně.|  
+|[SetAllThreadsDebugState – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md)|Nastaví stav ladění pro všechna spravovaná vlákna v procesu.|  
+|[Stop – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)|Provede kooperativní zastavení na všech vláknech, na kterých běží spravovaný kód v procesu.|  
+|[Terminate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-terminate-method.md)|Ukončí proces se zadaným ukončovacím kódem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `ICorDebugController` je proces řízení, oborem, který zahrnuje všechna vlákna procesu. Pokud `ICorDebugController` je řízení doménu aplikace, oborem, který zahrnuje pouze vlákna této konkrétní aplikační domény.  
+ Pokud `ICorDebugController` řízení procesu řídí, obor zahrnuje všechna vlákna procesu. Pokud `ICorDebugController` aplikace řídí doménu aplikace, zahrnuje obor pouze vlákna této konkrétní aplikační domény.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

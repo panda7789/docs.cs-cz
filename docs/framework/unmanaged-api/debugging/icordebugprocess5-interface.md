@@ -16,47 +16,47 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5904083be66d4bd6dc69729bebc28db8a800e77
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31ecea4857dabc55e8acd3c22a025895a686efcd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948678"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931093"
 ---
 # <a name="icordebugprocess5-interface"></a>ICorDebugProcess5 – rozhraní
-Rozšiřuje icordebugprocess – rozhraní pro podporu přístupu ke spravované haldě, k poskytování informací o uvolnění paměti spravovaných objektů, a k určení, zda ladicí program načítá obrázky z mezipaměti nativní bitové kopie místní aplikace.  
+Rozšiřuje rozhraní ICorDebugProcess pro podporu přístupu ke spravované haldě, k poskytnutí informací o uvolnění paměti spravovaných objektů a určení, zda ladicí program načítá obrázky z místní mezipaměti nativní bitové kopie aplikace.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnableNGenPolicy – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md)|Nastaví hodnotu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.|  
-|[EnumerateGCReferences – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md)|Získá enumerátor pro všechny objekty, které mají být prováděno uvolnění paměti v procesu.|  
-|[EnumerateHandles – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md)|Získá enumerátor pro objekt popisovače procesu.|  
+|[EnableNGenPolicy – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md)|Nastaví hodnotu, která určuje, jak aplikace načítá nativní bitové kopie při spuštění pod spravovaným ladicím programem.|  
+|[EnumerateGCReferences – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md)|Získá enumerátor pro všechny objekty, které mají být v procesu shromažďovány jako uvolňování paměti.|  
+|[EnumerateHandles – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md)|Získá enumerátor pro popisovače objektů v procesu.|  
 |[EnumerateHeap – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheap-method.md)|Získá enumerátor pro objekty na spravované haldě.|  
 |[EnumerateHeapRegions – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md)|Získá enumerátor pro oblasti spravované haldy.|  
 |[GetArrayLayout – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getarraylayout-method.md)|Získá informace o rozložení pole v paměti.|  
-|[GetGCHeapInformation – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md)|Získá ukazatel [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) strukturu, která obsahuje informace o objektech, které mají být prováděno uvolnění paměti na spravované haldě.|  
+|[GetGCHeapInformation – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md)|Získá ukazatel na strukturu [COR_HEAPINFO](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) , která obsahuje informace o objektech, které mají být ve spravované haldě shromážděny paměti.|  
 |[GetObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getobject-method.md)|Získá ukazatel na objekt na spravované haldě.|  
-|[GetTypeFields – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md)|Získá ukazatel na pole, která obsahuje informace o typu založeného na jeho identifikátor typu.|  
-|[GetTypeForTypeID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md)|Získá typ objektu, který poskytuje informace o objektu na základě jeho typu identifikátory.|  
-|[GetTypeID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypeid-method.md)|Získá identifikátor typu pro objekt na zadané adrese.|  
-|[GetTypeLayout – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypelayout-method.md)|Získá informace o rozložení objektu v paměti podle jeho identifikátor typu.|  
+|[GetTypeFields – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md)|Získá ukazatel na pole, které obsahuje informace o poli pro typ založený na jeho identifikátoru typu.|  
+|[GetTypeForTypeID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md)|Získá objekt typu, který poskytuje informace o objektu na základě jeho identifikátorů typu.|  
+|[GetTypeID – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypeid-method.md)|Získá identifikátor typu objektu na zadané adrese.|  
+|[GetTypeLayout – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypelayout-method.md)|Načte informace o rozložení objektu v paměti na základě jeho identifikátoru typu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozhraní rozšiřuje logicky ICorDebugProcess icordebugprocess2 –, a [icordebugprocess3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md) rozhraní.  
+ Toto rozhraní logicky rozšiřuje rozhraní ICorDebugProcess, ICorDebugProcess2 a [ICorDebugProcess3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md) .  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, z jiného počítače nebo z jiného procesu.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď z jiného počítače, nebo z jiného procesu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

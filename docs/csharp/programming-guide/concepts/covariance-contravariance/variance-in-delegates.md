@@ -2,12 +2,12 @@
 title: Variance v delegátechC#()
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 0a77c4abe8f2540e4b3b33d2cf99a20c3c2fa942
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 213c295782c10d15f0515eeb653322eafdb390d9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659941"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924382"
 ---
 # <a name="variance-in-delegates-c"></a>Variance v delegátechC#()
 .NET Framework 3,5 zavedl podporu variance pro párové signatury metod s typy delegátů ve C#všech delegátech v. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než které jsou určeny typem delegáta. . To zahrnuje obecné i neobecné delegáty.  
@@ -140,7 +140,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
->  `ref`parametry `in`, a `out` C# nelze označit jako typ variant.  
+> `ref`parametry `in`, a `out` C# nelze označit jako typ variant.  
   
  Je také možné podporovat odchylku i kovarianci v rámci stejného delegáta, ale pro různé parametry typu. To je ukázáno v následujícím příkladu.  
   

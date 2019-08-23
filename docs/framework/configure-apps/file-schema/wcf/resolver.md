@@ -2,21 +2,21 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: 39dcb868bd3ff25451509616e1dac7d41f94cfa1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3a9ee00aab6ab48a1ba891565b63824e62b20fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783120"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934214"
 ---
-# <a name="resolver"></a>\<resolver>
-Určuje mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.  
+# <a name="resolver"></a>\<> překladače
+Určuje rovnocenný překladač, který se používá k překladu ID partnerské sítě na sadu adres partnerských uzlů, které představují několik uzlů, které se účastní sítě.  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<netPeerBinding>  
-\<Vytvoření vazby >  
-\<resolver>  
+\<> vazby  
+\<> překladače  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,23 +33,23 @@ Určuje mechanismus rozpoznávání partnera, který se používá pro partnersk
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`mode`|Řetězec, který určuje, jestli instance služby mechanismu rozpoznávání partnera přidružený k této službě je buď PNRP specifická, vlastní mechanismus rozpoznávání nebo je automaticky zjišťovaná. Tento atribut je typu <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.|  
-|`referralPolicy`|Řetězec určující způsob odkazů jsou sdíleny mezi partnery. Tento atribut je typu <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.|  
+|`mode`|Řetězec určující, zda je instance překladače partnerského vztahu přidružená k této službě buď specifická pro protokol PNRP, vlastního Překladači nebo automaticky určena. Tento atribut je typu <xref:System.ServiceModel.PeerResolvers.PeerResolverMode>.|  
+|`referralPolicy`|Řetězec, který určuje způsob, jakým jsou odkazy sdíleny mezi partnery. Tento atribut je typu <xref:System.ServiceModel.PeerResolvers.PeerReferralPolicy>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Určuje nastavení pro službu překladače vlastní sdílené.|  
+|[\<headers>](headers.md)|Určuje nastavení pro službu Custom peer resolver Service.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny vazby funkce [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby NetPeerTcpBinding >](netpeertcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Mechanismus rozpoznávání partnera název je služba zjišťování používají kanály peer najít partnerské uzly, které jsou součástí sdílené sítě. Používá se také "zaregistrovat" uzlu sítě peer, mechanismus, pomocí kterého bude rovnocenný uzel stane známé a dostupné ze sítě peer. Další informace o překladače partnerských uzlů najdete v tématu [překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md).  
+ Překladač názvů partnerů je služba zjišťování, kterou používají rovnocenné kanály k nalezení partnerských uzlů, které se účastní sdílené sítě. Používá se také k registraci uzlu se sdílenou sítí, mechanizmus, který je partnerský uzel známý a dostupný z partnerské sítě. Další informace o překladačích peer-to najdete [](../../../wcf/feature-details/peer-resolvers.md)v tématu věnovaném překladačům peer.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -58,5 +58,5 @@ Určuje mechanismus rozpoznávání partnera, který se používá pro partnersk
 - <xref:System.ServiceModel.NetPeerTcpBinding.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement>
-- [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
-- [Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Překladače partnerských uzlů](../../../wcf/feature-details/peer-resolvers.md)
+- [Přidání vlastního překladače do aplikace PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))

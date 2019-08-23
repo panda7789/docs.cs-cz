@@ -2,43 +2,43 @@
 title: 'Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby'
 ms.date: 03/30/2017
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-ms.openlocfilehash: 40c684cbc1b14bf14d3ca23cbc044020e36b85f1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b8ddbaf896ee4c6ea8b6f8e8ce7d0ecef28140ea
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650232"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932573"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby
-Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, můžete exportovat svcutil.exe následujícím způsobem:  
+Svcutil. exe může exportovat metadata pro služby, kontrakty a datové typy v kompilovaných sestaveních následujícím způsobem:  
   
-- Pro export metadat pro všechny zkompilován kontraktů služby pro sadu sestavení pomocí Svcutil.exe, zadejte sestavení jako vstupní parametry. Toto je výchozí chování.  
+- Chcete-li exportovat metadata pro všechny smlouvy zkompilované služby pro sadu sestavení pomocí Svcutil. exe, zadejte sestavení jako vstupní parametry. Toto je výchozí chování.  
   
-- Pro export metadat pro kompilované služby pomocí Svcutil.exe, zadejte jako vstupní parametry služby sestavení nebo sestavení. Je nutné použít `/serviceName` možnost určíte název konfigurace služby, kterou chcete exportovat. Svcutil.exe automaticky načte konfigurační soubor pro zadaného spustitelného sestavení.  
+- Chcete-li exportovat metadata pro kompilovaná službu pomocí Svcutil. exe, zadejte jako vstupní parametry sestavení služby nebo sestavení. K určení názvu konfigurace `/serviceName` služby, kterou chcete exportovat, je nutné použít možnost. Svcutil. exe automaticky načte konfigurační soubor pro zadané spustitelné sestavení.  
   
-- Chcete-li exportovat všechny typy kontraktu dat v rámci sestavení, použijte `/dataContractOnly` možnost.  
+- Chcete-li exportovat všechny typy kontraktů dat v rámci sady sestavení, `/dataContractOnly` použijte možnost.  
   
 > [!NOTE]
->  Použití `/reference` možnost určení cesty k souborům pro všechna závislá sestavení.  
+> `/reference` Použijte možnost k zadání cest k souborům pro všechna závislá sestavení.  
   
-### <a name="to-export-metadata-for-compiled-service-contracts"></a>Pro export metadat pro kompilaci kontrakty služeb  
+### <a name="to-export-metadata-for-compiled-service-contracts"></a>Export metadat pro zkompilované kontrakty služby  
   
-1. Kompilace vaší implementace kontraktu služby do jednoho nebo více tříd libraries.1  
+1. Zkompilujte implementace kontraktu služby do jedné nebo více knihoven tříd. 1  
   
-2. Spusťte Svcutil.exe v kompilovaných sestavení.  
+2. Spusťte Svcutil. exe na kompilovaných sestaveních.  
   
     > [!NOTE]
-    >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  
+    > Možná budete muset použít `/reference` přepínač a zadat cestu k souboru pro všechna závislá sestavení.  
   
     ```  
     svcutil.exe Contracts.dll  
     ```  
   
-### <a name="to-export-metadata-for-a-compiled-service"></a>Pro export metadat pro kompilované služby  
+### <a name="to-export-metadata-for-a-compiled-service"></a>Export metadat pro zkompilované služby  
   
-1. Zkompilujte vaše implementace služby do spustitelného sestavení.  
+1. Zkompilujte implementaci služby do spustitelného sestavení.  
   
-2. Vytvoření konfiguračního souboru pro spustitelný soubor vaší služby a přidejte konfigurace služby.  
+2. Vytvořte konfigurační soubor pro spustitelný soubor služby a přidejte konfiguraci služby.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -53,30 +53,30 @@ Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, mů�
     </configuration>  
     ```  
   
-3. Spustili spustitelný soubor zkompilovaný služby pomocí Svcutil.exe `/serviceName` přepínač k určení názvu konfigurace služby.  
+3. Spusťte Svcutil. exe ve spustitelném souboru zkompilované služby pomocí `/serviceName` přepínače, který určuje název konfigurace služby.  
   
     > [!NOTE]
-    >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  
+    > Možná budete muset použít `/reference` přepínač a zadat cestu k souboru pro všechna závislá sestavení.  
   
     ```  
     svcutil.exe /serviceName:MyService Service.exe /reference:path/Contracts.dll  
     ```  
   
-### <a name="to-export-metadata-for-compiled-data-contracts"></a>Pro export metadat pro kompilaci kontraktů dat  
+### <a name="to-export-metadata-for-compiled-data-contracts"></a>Export metadat pro kontrakty kompilovaných dat  
   
-1. Zkompilujte vaší implementace kontraktu dat do jednoho nebo více knihoven tříd.  
+1. Zkompilujte implementace kontraktů dat do jedné nebo více knihoven tříd.  
   
-2. Spustit v kompilovaných sestavení pomocí Svcutil.exe `/dataContract` přepínač pro určení této pouze metadata kontraktů dat by měl být vygenerován.  
+2. Spusťte Svcutil. exe na kompilovaných sestaveních pomocí `/dataContract` přepínače a určete tak, že se mají vygenerovat jenom metadata pro kontrakty dat.  
   
     > [!NOTE]
-    >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  
+    > Možná budete muset použít `/reference` přepínač a zadat cestu k souboru pro všechna závislá sestavení.  
   
     ```  
     svcutil.exe /dataContractOnly Contracts.dll  
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak generovat metadata pro implementaci jednoduchého služby a konfiguraci.  
+ Následující příklad ukazuje, jak generovat metadata pro jednoduchou implementaci a konfiguraci služby.  
   
  Pro export metadat pro kontrakt služby.  
   
@@ -96,7 +96,7 @@ svcutil.exe /dataContractOnly Contracts.dll
 svcutil.exe /serviceName:MyService Service.exe /reference:<path>/Contracts.dll  
 ```  
   
- `<path>` Je cesta k Contracts.dll.  
+ `<path>` Je cesta ke smlouvám. dll.  
   
 ```  
 // The following service contract and data contracts are compiled into   

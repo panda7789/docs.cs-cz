@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b1af01559e65bd80fc62cb2eba44bf21d4fa3113
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ca51b87e7afc8e9e48d541a32b3bd60a19a5ff70
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770906"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965970"
 ---
 # <a name="icorruntimehoststop-method"></a>ICorRuntimeHost::Stop – metoda
 Zastaví provádění kódu v modulu runtime pro aktuální proces.  
@@ -39,23 +39,23 @@ HRESULT Stop ();
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
 |S_FALSE|Operaci se nepodařilo dokončit.|  
-|E_FAIL|Došlo k neznámé, katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR (CLR) už nejsou použitelné v procesu. Následující volání jakékoli hostitelské rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrátí HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="remarks"></a>Poznámky  
- Je obvykle zbytečné volání `Stop` metody, protože kód se zastaví provádění při ukončení procesu.  
+ Obvykle není nutné volat `Stop` metodu, protože kód se zastaví, když se proces ukončí.  
   
 > [!NOTE]
->  Po volání `Stop`, modul CLR nelze ho inicializovat znovu ve stejném procesu.  
+> Po volání do `Stop`nástroje nelze modul CLR znovu inicializovat do stejného procesu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** 1.0, 1.1  
+ **Verze .NET Framework:** 1.0, 1.1  
   
 ## <a name="see-also"></a>Viz také:
 

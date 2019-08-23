@@ -2,115 +2,115 @@
 title: Mapování na základě atributů
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-ms.openlocfilehash: a524e37640959c20c9883aa68e978a89428e43a4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 41152aa81ab84a2ab77e9a4ebf16e102ee5c0e3f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743617"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964096"
 ---
 # <a name="attribute-based-mapping"></a>Mapování na základě atributů
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] databáze SQL serveru se mapuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použití atributů nebo pomocí externího mapování souboru. Toto téma popisuje, jak přístup založený na atributu.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje databázi SQL Server na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použitím atributů, nebo pomocí externího mapovacího souboru. Toto téma popisuje přístup založený na atributech.  
   
- Většina základních formou [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databáze do <xref:System.Data.Linq.DataContext>, tabulka, která má třídu a sloupce a relace na vlastnosti na tyto třídy. Můžete také použít atributy k mapování hierarchie dědičnosti v objektovém modelu. Další informace najdete v tématu [jak: Generování objektového modelu v jazyce Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Ve své nejvíc základní formě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databázi <xref:System.Data.Linq.DataContext>na, tabulku na třídu a sloupce a relace na vlastnosti těchto tříd. Můžete také použít atributy k mapování hierarchie dědičnosti v objektovém modelu. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
- Vývojáři obvykle pomocí sady Visual Studio provádět pomocí Návrháře relací objektů založených na atributech mapování. Můžete také použít nástroj příkazového řádku SQLMetal, nebo můžete ručně kód atributy sami. Další informace najdete v tématu [jak: Generování objektového modelu v jazyce Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Vývojáři, kteří používají Visual Studio, obvykle provádějí mapování na základě atributů pomocí Návrhář relací objektů. Můžete také použít nástroj příkazového řádku SQLMetal, nebo můžete atributy ručně zakódovat. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
 > [!NOTE]
->  Můžete také namapovat pomocí externího souboru XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+> Můžete také mapovat pomocí externího souboru XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
- Následující části popisují založených na atributech mapování podrobněji. Další informace najdete v tématu <xref:System.Data.Linq.Mapping> oboru názvů.  
+ Následující části popisují mapování na základě atributů podrobněji. Další informace najdete v <xref:System.Data.Linq.Mapping> tématu obor názvů.  
   
-## <a name="databaseattribute-attribute"></a>Atribut DatabaseAttribute  
- Tento atribut lze použijte k určení výchozí název databáze, pokud není zadán název připojení. Tento atribut je volitelný, ale když ho používáte, musíte použít <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost, jak je popsáno v následující tabulce.  
+## <a name="databaseattribute-attribute"></a>DatabaseAttribute – atribut  
+ Tento atribut slouží k určení výchozího názvu databáze, pokud není název dodán připojením. Tento atribut je nepovinný, ale pokud ho použijete, musíte použít <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost, jak je popsáno v následující tabulce.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|V tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Použít s jeho <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost určuje název databáze.|  
+|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|Si<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Používá se s <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastností, určuje název databáze.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute>.  
   
-## <a name="tableattribute-attribute"></a>Atribut TableAttribute  
- Tento atribut lze použijte k určení třídy jako třídu entity, která souvisí s databázové tabulky nebo zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zpracovává tříd, které mají tento atribut jako trvalé třídy. V následující tabulce jsou popsány <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> vlastnost.  
+## <a name="tableattribute-attribute"></a>TableAttribute – atribut  
+ Tento atribut použijte k označení třídy jako třídy entity, která je přidružena k databázové tabulce nebo zobrazení. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zpracovává třídy, které mají tento atribut jako trvalé třídy. V následující tabulce je <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> popsána vlastnost.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>|String|Stejný řetězec jako název třídy|Určuje třídu jako třídu entity přidružené k databázové tabulky.|  
+|<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>|String|Stejný řetězec jako název třídy|Určí třídu jako třídu entity přidruženou k databázové tabulce.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.TableAttribute>.  
   
-## <a name="columnattribute-attribute"></a>Atribut ColumnAttribute  
- Tento atribut slouží k určení členem třídu entity k reprezentaci sloupce v databázové tabulce. Tento atribut lze použít k žádnému poli nebo vlastnosti.  
+## <a name="columnattribute-attribute"></a>ColumnAttribute – atribut  
+ Tento atribut slouží k určení člena třídy entity představující sloupec v databázové tabulce. Tento atribut lze použít pro jakékoli pole nebo vlastnost.  
   
- Pouze ty členy identifikovat podle sloupce se načte a zachovat při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] uloží změny do databáze. Členové bez tohoto atributu jsou považovány za dočasné a nejsou odeslané k vložení nebo aktualizace.  
+ Při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ukládání změn do databáze jsou načteny a uchovány pouze členové, které jste identifikovali jako sloupce. U členů bez tohoto atributu se předpokládá, že nejsou trvalé a nejsou odeslány pro příkazy INSERT a Update.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|Nikdy|Dává pokyn common language runtime (CLR) k načtení hodnoty po operaci insert nebo update.<br /><br /> Možnosti: Vždy nikdy OnUpdate, OnInsert.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>|AutoSync|Nikdy|Instruuje modul CLR (Common Language Runtime), aby načetl hodnotu po operaci INSERT nebo Update.<br /><br /> Nastavení Always, nikdy, Update, INSERT.|  
 |<xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>|Boolean|`true`|Označuje, že sloupec může obsahovat hodnoty null.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|String|Typ sloupce odvozené databáze|Pomocí databáze typů a modifikátory Určuje typ sloupce databáze.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|String|prázdný|Definuje počítaný sloupec v databázi.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>|Boolean|`false`|Označuje, že sloupec obsahuje hodnoty, které automaticky generuje databáze.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A>|Boolean|`false`|Označuje, že sloupec obsahuje hodnotu diskriminátoru [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] hierarchii dědičnosti.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>|Boolean|`false`|Určuje, že tento člen třídy představuje sloupci, který je nebo je součástí primárního klíče tabulky.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>|Boolean|`false`|Určuje typ sloupce člena jako číslo časového razítka nebo verze databáze.|  
-|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|UpdateCheck|`Always`, pokud <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> je `true` pro člena|Určuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] blíží zjišťování konfliktů optimistického řízení souběžnosti.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>|String|Odvozený typ databázového sloupce|Používá typy a modifikátory databáze k určení typu sloupce databáze.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>|String|Obsahovat|Definuje vypočítaný sloupec v databázi.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>|Boolean|`false`|Indikuje, že sloupec obsahuje hodnoty, které databáze automaticky generuje.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A>|Boolean|`false`|Označuje, že sloupec obsahuje hodnotu diskriminátoru pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] hierarchii dědičnosti.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>|Boolean|`false`|Určuje, že tento člen třídy představuje sloupec, který je nebo je součástí primárních klíčů tabulky.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>|Boolean|`false`|Identifikuje typ sloupce člena jako časové razítko nebo číslo verze databáze.|  
+|<xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>|UpdateCheck|`Always`, pokud <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> není `true` pro člena|Určuje, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jak přístupy k detekci optimistických konfliktů při souběžnosti.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
 > [!NOTE]
->  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště jsou malá a velká písmena. Například Ujistěte se, že hodnoty atributu pro vlastnost AssociationAttribute.Storage rozlišovat velikost písmen pro odpovídající názvy vlastností používá jinde v kódu. To platí pro všechny programovací jazyky .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně jazyka Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
+> Hodnoty vlastností úložiště AssociationAttribute a ColumnAttribute rozlišují velká a malá písmena. Například zajistěte, aby hodnoty použité v atributu vlastnosti AssociationAttribute. Storage odpovídaly velikosti písmen pro odpovídající názvy vlastností používané jinde v kódu. To platí pro všechny programovací jazyky rozhraní .NET, i ty, které se obvykle nerozlišují bez rozlišení velkých a malých písmen, včetně Visual Basic. Další informace o vlastnosti úložiště naleznete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
-## <a name="associationattribute-attribute"></a>Atribut AssociationAttribute  
- Tento atribut slouží k určení vlastností k vyjádření přidružení v databázi, jako jsou cizí klíč pro vztah primární klíče. Další informace o relacích najdete v tématu [jak: Mapování databázových relace](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
+## <a name="associationattribute-attribute"></a>AssociationAttribute – atribut  
+ Pomocí tohoto atributu určíte vlastnost, která představuje přidružení v databázi, jako je cizí klíč vztahu k primárnímu klíči. Další informace o relacích najdete v [tématu How to: Mapování databázových](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)vztahů.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull%2A>|Boolean|`false`|Při umístění na přidružení obsahující cizí klíče jsou všechny Null, odstraní objekt při přidružení je nastavena na hodnotu null.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|String|Žádné|Přidá chování při odstraňování přidružení.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey%2A>|Boolean|`false`|Při hodnotě true se označí jako cizí klíč v přidružení reprezentující relaci databáze člena.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsUnique%2A>|Boolean|`false`|Při hodnotě true označuje omezení jedinečnosti pro cizí klíč.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A>|String|ID související třídy|Jednoho nebo více členů třídy cílové entity označí jako klíčové hodnoty na druhé straně asociace.|  
-|<xref:System.Data.Linq.Mapping.AssociationAttribute.ThisKey%2A>|String|ID obsažené třídy|Určuje členy této třídy entity k reprezentaci hodnoty klíče na této straně asociace.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull%2A>|Boolean|`false`|Při umístění na přidružení, jehož členové cizího klíče jsou neumožňující hodnotu null, odstraní objekt, když je přidružení nastaveno na hodnotu null.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule%2A>|String|Žádné|Přidá chování při odstraňování do přidružení.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey%2A>|Boolean|`false`|Pokud má hodnotu true, určí člena jako cizí klíč v přidružení představující relaci databáze.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.IsUnique%2A>|Boolean|`false`|Pokud má hodnotu true, označuje pro cizí klíč omezení jedinečnosti.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A>|String|ID související třídy|Určuje jednoho nebo více členů třídy cílové entity jako klíčové hodnoty na druhé straně přidružení.|  
+|<xref:System.Data.Linq.Mapping.AssociationAttribute.ThisKey%2A>|String|ID obsahující třídy|Určuje členy této třídy entity, které reprezentují klíčové hodnoty na této straně přidružení.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.AssociationAttribute>.  
   
 > [!NOTE]
->  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště jsou malá a velká písmena. Například Ujistěte se, že hodnoty atributu pro vlastnost AssociationAttribute.Storage rozlišovat velikost písmen pro odpovídající názvy vlastností používá jinde v kódu. To platí pro všechny programovací jazyky .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně jazyka Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
+> Hodnoty vlastností úložiště AssociationAttribute a ColumnAttribute rozlišují velká a malá písmena. Například zajistěte, aby hodnoty použité v atributu vlastnosti AssociationAttribute. Storage odpovídaly velikosti písmen pro odpovídající názvy vlastností používané jinde v kódu. To platí pro všechny programovací jazyky rozhraní .NET, i ty, které se obvykle nerozlišují bez rozlišení velkých a malých písmen, včetně Visual Basic. Další informace o vlastnosti úložiště naleznete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
-## <a name="inheritancemappingattribute-attribute"></a>Atribut InheritanceMappingAttribute  
- Tento atribut slouží k mapování hierarchie dědičnosti.  
+## <a name="inheritancemappingattribute-attribute"></a>InheritanceMappingAttribute – atribut  
+ Tento atribut použijte k mapování hierarchie dědičnosti.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A>|String|Žádné Musí být zadána hodnota.|Určuje kód hodnotu diskriminátoru.|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A>|Boolean|`false`|Při hodnotě true se vytvoří instanci objektu tohoto typu, pokud žádná hodnota diskriminátoru v úložišti shoduje s některou ze zadaných hodnot.|  
-|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A>|type|Žádné Musí být zadána hodnota.|Určuje typ třídy v hierarchii.|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A>|String|Žádné Hodnota musí být dodána.|Určuje hodnotu kódu diskriminátoru.|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A>|Boolean|`false`|Pokud má hodnotu true, vytvoří instance objektu tohoto typu, pokud žádná hodnota diskriminátoru v úložišti neodpovídá žádné z zadaných hodnot.|  
+|<xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A>|type|Žádné Hodnota musí být dodána.|Určuje typ třídy v hierarchii.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute>.  
   
-## <a name="functionattribute-attribute"></a>Atribut FunctionAttribute  
- Tento atribut lze použijte k označení metody jako uloženou proceduru nebo uživatelem definovanou funkci v databázi.  
+## <a name="functionattribute-attribute"></a>FunctionAttribute – atribut  
+ Pomocí tohoto atributu lze určit metodu, která představuje uloženou proceduru nebo uživatelsky definovanou funkci v databázi.  
   
  Následující tabulka popisuje vlastnosti tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A>|Boolean|`false`|Pokud má hodnotu false, označuje mapování uložené proceduře. Při hodnotě true označuje mapování pro uživatelem definované funkce.|  
-|<xref:System.Data.Linq.Mapping.FunctionAttribute.Name%2A>|String|Stejný řetězec jako název databáze|Určuje název uložená procedura nebo uživatelem definované funkce.|  
+|<xref:System.Data.Linq.Mapping.FunctionAttribute.IsComposable%2A>|Boolean|`false`|Pokud má hodnotu false, označuje mapování na uloženou proceduru. Pokud má hodnotu true, označuje mapování na uživatelsky definovanou funkci.|  
+|<xref:System.Data.Linq.Mapping.FunctionAttribute.Name%2A>|String|Stejný řetězec jako název v databázi|Určuje název uložené procedury nebo uživatelsky definované funkce.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.FunctionAttribute>.  
   
-## <a name="parameterattribute-attribute"></a>Atribut ParameterAttribute  
- Tento atribut slouží k mapování vstupní parametry pro uložené procedury metody.  
+## <a name="parameterattribute-attribute"></a>ParameterAttribute – atribut  
+ Tento atribut použijte k mapování vstupních parametrů na metodách uložených procedur.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
@@ -119,26 +119,26 @@ ms.locfileid: "67743617"
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.ParameterAttribute>.  
   
-## <a name="resulttypeattribute-attribute"></a>Atribut ResultTypeAttribute  
- Pomocí tohoto atributu zadejte typ výsledku.  
+## <a name="resulttypeattribute-attribute"></a>ResultTypeAttribute – atribut  
+ Tento atribut slouží k určení typu výsledku.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|type|(Žádné)|Použít pro metody namapovaných na uložené procedury, které vracejí <xref:System.Data.Linq.IMultipleResults>. Deklaruje platné nebo očekávaný typ mapování pro uloženou proceduru.|  
+|<xref:System.Data.Linq.Mapping.ResultTypeAttribute.Type%2A>|type|NTato|Používá se na metodách mapovaných na uložené <xref:System.Data.Linq.IMultipleResults>procedury, které vrací. Deklaruje platná nebo očekávaná mapování typů pro uloženou proceduru.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.ResultTypeAttribute>.  
   
-## <a name="dataattribute-attribute"></a>Atribut DataAttribute  
- Pomocí tohoto atributu zadejte názvy a polí privátního úložiště.  
+## <a name="dataattribute-attribute"></a>Atribut dataatributu  
+ Tento atribut slouží k určení názvů a privátních polí úložiště.  
   
- Následující tabulka popisuje vlastnosti tohoto atributu.  
+ Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
 |Vlastnost|type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.DataAttribute.Name%2A>|String|Stejný jako název databáze|Určuje název tabulky, sloupce a tak dále.|  
-|<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>|String|Veřejnou přistupující objekty|Určuje název podkladové pole úložiště.|  
+|<xref:System.Data.Linq.Mapping.DataAttribute.Name%2A>|String|Stejné jako název v databázi|Určuje název tabulky, sloupce a tak dále.|  
+|<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>|String|Veřejné přístupové objekty|Určuje název podkladového pole úložiště.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.DataAttribute>.  
   

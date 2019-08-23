@@ -2,23 +2,23 @@
 title: Aktivace založená na konfiguraci v IIS a WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-ms.openlocfilehash: 99f6c7d41620a7bafea0981cbeaa5cdcbad5ef12
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f4de4aff2fbe6b8e82dc3d6523f492d06494c79e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636130"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69909773"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
 
-Obvykle při hostování služby Windows Communication Foundation (WCF) v rámci Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS), je nutné zadat soubor SVC. Souboru SVC obsahuje název služby a objektu pro vytváření hostitele volitelné vlastní služby. Tento přidaný soubor přidává režijní náklady na správu. Funkce aktivace podle konfigurace eliminuje nutnost mít souboru .svc a proto přidružené režie.
+Normálně při hostování služby Windows Communication Foundation (WCF) v rámci služby Internetová informační služba (IIS) nebo aktivační služby procesů systému Windows (WAS) je nutné zadat soubor. svc. Soubor. svc obsahuje název služby a volitelný vlastní objekt pro hostování služby. Tento další soubor přináší režii spravovatelnosti. Funkce aktivace na základě konfigurace odebere požadavek na soubor. svc, a proto na přidruženou režii.
 
 ## <a name="configuration-based-activation"></a>Aktivace podle konfigurace
 
-Aktivace podle konfigurace používá metadata, která používá budou umístěny v souboru svc a umístí jej do souboru Web.config. V rámci <`serviceHostingEnvironment`> element neexistuje <`serviceActivations`> element. V rámci <`serviceActivations`> element jsou jeden nebo více <`add`> elementy, jeden pro každý hostovanou službu. <`add`> Element obsahuje atributy, které umožňují nastavit relativní adresu pro službu a typ služby nebo objekt pro vytváření hostitele služby. Následující příklad kódu konfigurace ukazuje, jak se používá v této části.
+Aktivace na základě konfigurace přebírá metadata, která se používají k umístění do souboru. svc, a umístí je do souboru Web. config. V rámci prvku`serviceHostingEnvironment`< > je <`serviceActivations`> element. V rámci prvku`serviceActivations`< > je jeden nebo více <ch`add`> prvků, jeden pro každou hostovanou službu. Prvek <`add`> obsahuje atributy, které umožňují nastavit relativní adresu pro službu a typ služby nebo objekt pro vytváření hostitele služby. Následující příklad kódu konfigurace ukazuje, jak se tento oddíl používá.
 
 > [!NOTE]
->  Každý <`add`> element musí určovat atribut factory nebo služby. Zadání služba a výrobce atributy je povoleno.
+> Každý <`add`> elementu musí určovat atribut Service nebo Factory. Zadání atributů Service a Factory je povoleno.
 
 ```xml
 <serviceHostingEnvironment>
@@ -28,16 +28,16 @@ Aktivace podle konfigurace používá metadata, která používá budou umístě
 </serviceHostingEnvironment>
 ```
 
- S tímto v souboru Web.config můžete umístit služby zdrojový kód v adresáři App_Code splněny sestavení v adresáři Bin aplikace nebo aplikace.
+ S tímto souborem v souboru Web. config můžete umístit zdrojový kód služby do adresáře App_Code aplikace nebo sestavení se stavem v adresáři bin aplikace.
 
 > [!NOTE]
-> - Při použití aktivace prostřednictvím konfigurace, vložení kódu za hledání souborů .svc se nepodporuje.
-> - `relativeAddress` Atribut musí být nastaven na relativní adresu, jako například "\<podadresář > / service.svc" nebo "~ /\<directory dílčí, service.svc".
-> - Když si zaregistrujete relativní adresa, na kterém není známá přípona přidružená k WCF, je vyvolána výjimka v konfiguraci.
-> - Zadaná relativní adresa je relativní vzhledem k kořen virtuální aplikace.
-> - Z důvodu hierarchický model konfigurace registrované relativní adresy na úrovni počítače a serveru jsou děděné virtuální aplikace.
-> - Registrace v konfiguračním souboru mají přednost před nastavením v .svc, .xamlx, XOML nebo jiný soubor.
-> - Žádné ' \' (zpětná lomítka) v identifikátoru URI odeslané do služby IIS / WAS se automaticky převedou na "/" (lomítko). Pokud je relativní adresa se přidá, který obsahuje "\" a odeslat služby IIS, který používá relativní adresu URI, zpětné lomítko je převedeno na dopředné lomítko a služby IIS nesmí odpovídat na relativní adresu. Služba IIS odesílá informace o trasování, která označuje, že nejsou nalezeny žádné odpovídající položky.
+> - Při použití aktivace na základě konfigurace není podporován vložený kód v souborech. svc.
+> - Atribut musí být nastaven na relativní adresu, například "\<podadresář >/Service.svc" nebo "~/\<sub-Directory/Service. svc". `relativeAddress`
+> - Výjimka konfigurace je vyvolána, pokud zaregistrujete relativní adresu, která nemá známou příponu přidruženou ke službě WCF.
+> - Zadaná relativní adresa je relativní vzhledem k kořenu virtuální aplikace.
+> - Z důvodu hierarchického modelu konfigurace jsou zaregistrované relativní adresy na úrovni počítače a webu děděny virtuálními aplikacemi.
+> - Registrace v konfiguračním souboru mají přednost před nastaveními v souboru. svc,. xamlx,. XOML nebo jiném souboru.
+> - Všechna lomítka (zpětná lomítka) v identifikátoru URI odeslanému službě IIS/WAS se automaticky převádějí na lomítko (lomítko). Pokud přidáte relativní adresu obsahující "\" a odešlete identifikátor URI služby IIS, který používá relativní adresu, zpětné lomítko se převede na lomítko a služba IIS ji nemůže spárovat s relativní adresou. Služba IIS odesílá informace o trasování, které označují, že se nenašly žádné shody.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -45,4 +45,4 @@ Aktivace podle konfigurace používá metadata, která používá budou umístě
 - [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
 - [Přehled hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)
 - [\<serviceHostingEnvironment>](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

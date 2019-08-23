@@ -2,15 +2,15 @@
 title: <exposedMethod>
 ms.date: 03/30/2017
 ms.assetid: 61c938cd-4ee9-4b06-ab28-922ef491ab11
-ms.openlocfilehash: 91eafa46aa73b5e6d359fcbe48f098f9f8a4d0f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 032139b714aa11079c7ee8610c332e404b3981ac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644296"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918997"
 ---
-# <a name="exposedmethod"></a>\<exposedMethod >
-Představuje metodu COM +, která je vystavena při vystavení rozhraní komponenty COM + jako webovou službu.  
+# <a name="exposedmethod"></a>\<Prvků exposedMethod >
+Představuje metodu COM+, která je vystavena v případě, že je rozhraní součásti modelu COM vystaveno jako webová služba.  
   
  \<system.ServiceModel>  
 \<comContracts>  
@@ -36,7 +36,7 @@ Představuje metodu COM +, která je vystavena při vystavení rozhraní kompone
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec, který obsahuje metodu COM +, která je vystavena při vystavení rozhraní komponenty COM + jako webovou službu.|  
+|name|Řetězec obsahující metodu modelu COM+, která je vystavena v případě, že je rozhraní součásti modelu COM vystaveno jako webová služba.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,16 +45,16 @@ Představuje metodu COM +, která je vystavena při vystavení rozhraní kompone
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<exposedMethods >](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethods.md)|Kolekce [ \<exposedMethod >](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elementy.|  
+|[\<exposedMethods >](exposedmethods.md)|Kolekce prvků exposedMethod prvků >. [ \<](exposedmethod.md)|  
   
 ## <a name="remarks"></a>Poznámky  
- COM + integration nástroj pro konfiguraci (ComSvcConfig.exe) slouží k přidání specifických metod z rozhraní modelu COM, který se zobrazí na kontrakt generovaný služby.  
+ Nástroj pro konfiguraci integrace COM+ (ComSvcConfig. exe) se dá použít k přidání specifických metod z rozhraní modelu COM, které se zobrazí na vygenerované kontraktu služby.  
   
- Například slouží následující příkaz k přidání tří pojmenované metody ze `IFinances` rozhraní modelu COM na `ItemOrders`. Finanční součásti pro kontrakt generovaný služby.  
+ Například můžete použít následující příkaz a přidat tři pojmenované metody z `IFinances` rozhraní COM `ItemOrders`na. Finanční komponenta k vygenerované smlouvě služby.  
   
  `ComSvcConfig.exe /i /application:OnlineStore /contract:ItemOrders.Financial,IFinances.{TransferFunds,AddFunds,RemoveFunds} /hosting:complus`  
   
- Při spuštění také ComSvcConfig.exe, poté vygeneruje následující kontrakt služby výpis výše uvedených metod jako [ \<exposedMethod >](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elementy.  
+ Když spustíte také ComSvcConfig. exe, vygeneruje následující kontrakt služby, který uvádí dřív uvedené metody jako [ \<prvky prvků exposedMethod >](exposedmethod.md) .  
   
 ```xml  
 <comContract contractType="{C551FBA9-E3AA-4272-8C2A-84BD8D290AC7}"
@@ -66,12 +66,12 @@ Představuje metodu COM +, která je vystavena při vystavení rozhraní kompone
 </comContract>
 ```  
   
- Během inicializace služby, modul runtime pokusí vygenerovat kontraktu služby znázorňující v a přidáním pouze metody uvedené v seznamu [ \<exposedMethod >](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elementy. Trasování je vytvořen pro každou metodu rozhraní, který není součástí kontraktu služby.  
+ V okamžiku inicializace služby se modul runtime pokusí vygenerovat kontrakt služby tím, že se odrážejí a přidá jenom metody, které jsou uvedené v [ \<](exposedmethod.md) seznamu prvků exposedmethodch prvků >. Trasování se vytvoří pro každou metodu rozhraní, která není zahrnutá v kontraktu služby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ComMethodElementCollection>
 - <xref:System.ServiceModel.Configuration.ComMethodElement>
-- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
-- [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<comContracts>](comcontracts.md)
+- [Integrace s aplikacemi modelu COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Postupy: Konfigurace nastavení služby modelu COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

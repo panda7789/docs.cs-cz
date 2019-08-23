@@ -2,12 +2,12 @@
 title: Koncepty a terminologie (funkce Transformation)C#()
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: bf340b960a6770f972f545b23bd857afd4cb9ede
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: df8abe5b6815e2b9f1a9a1693944ddaa1c7c84cb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594595"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921950"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Koncepty a terminologie (funkce Transformation)C#()
 V tomto tématu se seznámíte s koncepty a terminologií čistě funkčních transformací. Přístup k funkcím transformace pro transformaci dat poskytuje kód, který je často rychlejší pro program, větší vyjádření a jednodušší ladění a udržování než tradiční, imperativní programování.  
@@ -22,7 +22,7 @@ V tomto tématu se seznámíte s koncepty a terminologií čistě funkčních tr
 - *Bez stavu*, takže spuštění stejné funkce nebo konkrétní sady funkcí na stejném vstupu bude mít vždycky stejný výstup. Čisté transformace nemají žádnou paměť jejich předchozího použití.  
   
 > [!IMPORTANT]
->  Ve zbývající části tohoto kurzu se výraz "čistá funkce" používá v obecném smyslu k označení přístup k programování a nikoli konkrétní funkce jazyka.  
+> Ve zbývající části tohoto kurzu se výraz "čistá funkce" používá v obecném smyslu k označení přístup k programování a nikoli konkrétní funkce jazyka.  
 >   
 >  Všimněte si, že čisté funkce musí být implementovány C#jako metody v.  
 >   

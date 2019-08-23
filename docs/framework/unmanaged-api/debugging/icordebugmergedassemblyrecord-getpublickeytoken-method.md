@@ -1,17 +1,17 @@
 ---
-title: ICorDebugMergedAssemblyRecord::GetPublicKeyToken – metoda
+title: 'ICorDebugMergedAssemblyRecord:: GetPublicKeyToken – metoda'
 ms.date: 03/30/2017
 ms.assetid: 72020b72-9611-4bc3-b1e7-5a16b023bfa3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1cc02c1f69235403e2f5df28168e17a70f183682
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 626aa53740839df0b47a876b3e82814a63ffd82d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67762410"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936856"
 ---
-# <a name="icordebugmergedassemblyrecordgetpublickeytoken-method"></a>ICorDebugMergedAssemblyRecord::GetPublicKeyToken – metoda
+# <a name="icordebugmergedassemblyrecordgetpublickeytoken-method"></a>ICorDebugMergedAssemblyRecord:: GetPublicKeyToken – metoda
 Získá token veřejného klíče sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,28 +26,28 @@ HRESULT GetPublicKeyToken(
   
 ## <a name="parameters"></a>Parametry  
  `cbPublicKeyToken`  
- [in] Maximální počet bajtů `pbPublicKeyToken` pole.  
+ pro Maximální počet bajtů v `pbPublicKeyToken` poli.  
   
  `pcbPublicKeyToken`  
- [out] Ukazatel na skutečný počet bajtů zapsaný na `pbPublicKeyToken` pole.  
+ mimo Ukazatel na skutečný počet bajtů zapsaných do `pbPublicKeyToken` pole.  
   
  `pbPublicKeyToken`  
- [out] Ukazatel na bajtové pole, který obsahuje token veřejného klíče sestavení.  
+ mimo Ukazatel na pole bajtů, které obsahuje token veřejného klíče sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Token veřejného klíče sestavení je posledních osm bajtů hash SHA1 svůj veřejný klíč.  
+ Token veřejného klíče sestavení je posledních osm bajtů hodnoty hash SHA1 svého veřejného klíče.  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

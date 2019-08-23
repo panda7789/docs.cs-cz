@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-ms.openlocfilehash: e34df66add032ad6324ac59a34f93b213d39ab48
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: dc221235e78a187f921815ed6e6c7750778014d8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608544"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922279"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma – upozornění (Referenční dokumentace jazyka C#)
 `#pragma warning`může povolit nebo zakázat určitá upozornění.  
@@ -31,7 +31,7 @@ ms.locfileid: "69608544"
  Pokud nejsou zadaná žádná čísla upozornění, `disable` zakáže všechna upozornění a `restore` povolí všechna upozornění.  
   
 > [!NOTE]
->  Chcete-li najít čísla upozornění v aplikaci Visual Studio, sestavte projekt a vyhledejte čísla upozornění v okně **výstup** .  
+> Chcete-li najít čísla upozornění v aplikaci Visual Studio, sestavte projekt a vyhledejte čísla upozornění v okně **výstup** .  
   
 ## <a name="example"></a>Příklad  
   

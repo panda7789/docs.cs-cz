@@ -7,12 +7,12 @@ helpviewer_keywords:
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-ms.openlocfilehash: 800bf80e5ba3e697c122bcf4b1bc0f302357d087
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 154a2543c62de545e8b2df711d6ad51989d0689d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401624"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964852"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 Systém [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastností zahrnuje systém vytváření sestav metadat, který překračuje, co může být oznámeno o vlastnosti prostřednictvím reflexe nebo obecných vlastností modulu CLR (Common Language Runtime). Metadata pro vlastnost závislosti lze také jednoznačně přiřadit třídou, která definuje vlastnost závislosti, lze změnit při přidání vlastnosti závislosti do jiné třídy a lze ji konkrétně přepsat všemi odvozenými třídami, které dědí vlastnost závislosti z definující základní třídy.  
@@ -38,7 +38,7 @@ Systém [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-
  <xref:System.Windows.PropertyMetadata> Třída je pak odvozena z, aby poskytovala konkrétnější metadata pro divize architektury, jako jsou třídy na úrovni architektury WPF. <xref:System.Windows.UIPropertyMetadata>Přidá vytváření sestav animace a <xref:System.Windows.FrameworkPropertyMetadata> poskytuje vlastnosti úrovně rozhraní WPF, které jsou uvedené v předchozí části. Pokud jsou vlastnosti závislosti registrovány, mohou být registrovány s <xref:System.Windows.PropertyMetadata> těmito odvozenými třídami. Při zkoumání metadat může být základní <xref:System.Windows.PropertyMetadata> typ potenciálně převeden na odvozené třídy, takže můžete prozkoumat konkrétnější vlastnosti.  
   
 > [!NOTE]
->  Charakteristiky vlastností, které lze zadat v <xref:System.Windows.FrameworkPropertyMetadata> , jsou v této dokumentaci někdy označovány jako "Příznaky". Když vytváříte nové instance metadat pro použití v registrech vlastností závislosti nebo přepsání metadat, určíte tyto hodnoty pomocí výčtu <xref:System.Windows.FrameworkPropertyMetadataOptions> flagwise a potom zadáte pravděpodobně zřetězené hodnoty výčtu do <xref:System.Windows.FrameworkPropertyMetadata> konstruktor. Po sestavení jsou však tyto charakteristiky možností zveřejněny v rámci <xref:System.Windows.FrameworkPropertyMetadata> jako série logických vlastností namísto konstrukce hodnoty výčtu. Logické vlastnosti umožňují kontrolu všech podmíněných hodnot a nevyžadují, abyste použili masku na hodnotu výčtu flagwise, abyste získali informace, které vás zajímají. Konstruktor používá zřetězení <xref:System.Windows.FrameworkPropertyMetadataOptions> , aby zachovala délku signatury konstruktoru, zatímco skutečná vytvořená metadata zpřístupňují diskrétní vlastnosti, aby bylo možné dotazování metadat intuitivnější.  
+> Charakteristiky vlastností, které lze zadat v <xref:System.Windows.FrameworkPropertyMetadata> , jsou v této dokumentaci někdy označovány jako "Příznaky". Když vytváříte nové instance metadat pro použití v registrech vlastností závislosti nebo přepsání metadat, určíte tyto hodnoty pomocí výčtu <xref:System.Windows.FrameworkPropertyMetadataOptions> flagwise a potom zadáte pravděpodobně zřetězené hodnoty výčtu do <xref:System.Windows.FrameworkPropertyMetadata> konstruktor. Po sestavení jsou však tyto charakteristiky možností zveřejněny v rámci <xref:System.Windows.FrameworkPropertyMetadata> jako série logických vlastností namísto konstrukce hodnoty výčtu. Logické vlastnosti umožňují kontrolu všech podmíněných hodnot a nevyžadují, abyste použili masku na hodnotu výčtu flagwise, abyste získali informace, které vás zajímají. Konstruktor používá zřetězení <xref:System.Windows.FrameworkPropertyMetadataOptions> , aby zachovala délku signatury konstruktoru, zatímco skutečná vytvořená metadata zpřístupňují diskrétní vlastnosti, aby bylo možné dotazování metadat intuitivnější.  
   
 <a name="override_or_subclass"></a>   
 ## <a name="when-to-override-metadata-when-to-derive-a-class"></a>Kdy přepsat metadata, kdy se má odvodit třída  
@@ -78,7 +78,7 @@ Systém [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]se jako vlastnosti závislosti implementují připojené vlastnosti. To znamená, že mají také metadata vlastností, které mohou jednotlivé třídy přepsat. Omezení rozsahu pro připojenou vlastnost v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou obecně taková, že pro každý <xref:System.Windows.DependencyObject> může být nastavená připojená vlastnost. Proto jakákoli <xref:System.Windows.DependencyObject> odvozená třída může přepsat metadata pro jakoukoli připojenou vlastnost, jak je možné ji nastavit na instanci třídy. Můžete přepsat výchozí hodnoty, zpětná volání nebo vlastnosti pro vytváření sestav na úrovni architektury WPF. Pokud je připojená vlastnost nastavená na instanci vaší třídy, použijí se tyto charakteristiky přepsání metadat vlastností. Můžete například přepsat výchozí hodnotu, což znamená, že hodnota přepsání je hlášena jako hodnota připojené vlastnosti v instancích třídy, pokaždé, když vlastnost není jinak nastavena.  
   
 > [!NOTE]
->  <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> Vlastnost není relevantní pro připojené vlastnosti.  
+> <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> Vlastnost není relevantní pro připojené vlastnosti.  
   
 <a name="dp_add_owner"></a>   
 ### <a name="adding-a-class-as-an-owner-of-an-existing-dependency-property"></a>Přidání třídy jako vlastníka existující vlastnosti závislosti  

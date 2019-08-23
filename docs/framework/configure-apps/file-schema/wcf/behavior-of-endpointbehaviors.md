@@ -2,20 +2,20 @@
 title: <behavior> z <endpointBehaviors>
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: 34306f99f2343c987700e964aaa9800aa3f488fa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f14e80798a9b088508f23d718c8b386286ad65a3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673547"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919846"
 ---
-# <a name="behavior-of-endpointbehaviors"></a>\<chování > z \<endpointBehaviors >
-`behavior` Prvek obsahuje soubor nastavení chování koncového bodu. Každý chování je indexované podle jeho `name`. Koncové body můžete propojit s každou chování prostřednictvím tento název. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+# <a name="behavior-of-endpointbehaviors"></a>\<chování > \<endpointBehaviors >
+`behavior` Element obsahuje kolekci nastavení chování koncového bodu. Každý chování je indexované podle jeho `name`. Koncové body se můžou propojit s každým chováním prostřednictvím tohoto názvu. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ ms.locfileid: "61673547"
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Jedinečný řetězec, který obsahuje název konfigurace chování. Tato hodnota je uživatelem definovaný řetězec, který musí být jedinečný, protože funguje jako identifikační řetězec pro element. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|name|Jedinečný řetězec, který obsahuje název konfigurace chování. Tato hodnota je uživatelem definovaný řetězec, který musí být jedinečný, protože funguje jako identifikační řetězec pro element. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
-|[\<callbackDebug >](../../../../../docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)|Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).|  
-|[\<callbackTimeouts>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbacktimeouts.md)|Určuje časový limit pro zpětné volání klienta.|  
-|[\<clientVia>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientvia.md)|Určuje, že by neměl zabrat trasy zprávu.|  
-|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)|Obsahuje konfigurační data pro objektu DataContractSerializer.|  
-|[\<dispatcherSynchronization>](../../../../../docs/framework/configure-apps/file-schema/wcf/dispatchersynchronization.md)|Určuje chování koncového bodu umožňující službě odeslání asynchronních odpovědí.|  
-|[\<enableWebScript>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)|Umožňuje chování koncového bodu, který umožňuje využívat služby z webových stránek ASP.NET AJAX. Chování byste měli použít pouze ve spojení s buď \<webHttpBinding > standardní vazbu, nebo \<webMessageEncoding > element vazby.|  
-|[\<endpointDiscovery>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
-|[\<soapProcessing>](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|Definuje chování koncového bodu klient použitý k zařazování zpráv mezi jinou vazbou typy a verze zpráv.|  
-|[\<synchronousReceive >](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|Určuje chování za běhu pro příjem zpráv v aplikaci klienta nebo službě. Nemá žádné atributy nebo podřízené prvky.|  
-|[\<transactedBatching>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|Určuje, zda jsou podporovány dávkové transakce pro operace příjmu.|  
-|[\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Určuje, WebHttpBehavior koncového bodu prostřednictvím konfigurace. Toto chování při použití ve spojení s \<webHttpBinding > standardní vazbu, umožňuje programovacího modelu webové služby WCF.|  
+|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
+|[\<callbackDebug >](callbackdebug.md)|Určuje ladění služby pro objekt zpětného volání služby Windows Communication Foundation (WCF).|  
+|[\<callbackTimeouts>](callbacktimeouts.md)|Určuje časový limit zpětného volání klienta.|  
+|[\<clientVia>](clientvia.md)|Určuje trasu, kterou by měla zpráva trvat.|  
+|[\<dataContractSerializer>](datacontractserializer.md)|Obsahuje konfigurační data pro DataContractSerializer.|  
+|[\<dispatcherSynchronization>](dispatchersynchronization.md)|Určuje chování koncového bodu, které umožňuje službě odesílat odpovědi asynchronně.|  
+|[\<enableWebScript>](enablewebscript.md)|Umožňuje chování koncového bodu, které umožňuje využívat službu z webových stránek ASP.NET AJAX. Chování by mělo být použito pouze ve spojení s \<WebHttpBinding > standardní vazbou, \<nebo prvkem vazby webMessageEncoding >.|  
+|[\<endpointDiscovery>](endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho zjistitelnost, obory a jakákoli vlastní rozšíření pro jeho metadata.|  
+|[\<soapProcessing >](soapprocessing.md)|Definuje chování koncového bodu klienta používaného k zařazování zpráv mezi různými typy vazeb a verzemi zpráv.|  
+|[\<synchronousReceive >](synchronousreceive-element.md)|Určuje chování za běhu pro příjem zpráv v klientské aplikaci nebo službě. Neobsahuje žádné atributy ani podřízené elementy.|  
+|[\<transactedBatching >](transactedbatching.md)|Určuje, zda je pro operace Receive podporována dávkování transakcí.|  
+|[\<webHttp>](webhttp.md)|Určuje WebHttpBehavior na koncovém bodu prostřednictvím konfigurace. Toto chování, při použití ve spojení s \<WebHttpBinding > standardní vazbou, umožňuje model webového programování pro službu WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endpointBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|Kolekce elementů chování koncového bodu.|
+|[\<endpointBehaviors>](endpointbehaviors.md)|Kolekce elementů chování koncového bodu.|

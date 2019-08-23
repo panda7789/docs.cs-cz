@@ -2,19 +2,19 @@
 title: <discoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: fae2f48b-a635-4e4b-859d-a1432ac37e1c
-ms.openlocfilehash: d1a3371872f5587a682b8242c29b71808508ca3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6bb5be09ea598296f01e186280c45757dee9405d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704050"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919135"
 ---
 # <a name="discoveryendpoint"></a>\<discoveryEndpoint>
 
-Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem zjišťování. Po přidání do konfigurace služby, se určuje, kde naslouchat zprávám zjišťování. Po přidání do konfigurace klienta Určuje, kam má odesílat dotazy zjišťování.  
+Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem zjišťování. Po přidání do konfigurace služby určuje, kde naslouchat pro zprávy zjišťování. Po přidání do konfigurace klienta Určuje, kam se mají odesílat dotazy zjišťování.  
   
 \<system.serviceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | Atribut        | Popis |  
 | ---------------- | ----------- |  
-| discoveryMode    | Řetězec, který určuje režim protokolu zjišťování. Platné hodnoty jsou "Ad hoc" a "Spravovaný". Ve spravovaném režimu protokol spoléhá na Proxy zjišťování, která slouží jako úložiště zjistitelné služby. Režimu ad hoc vyžaduje protokol UDP použití vícesměrového vysílání mechanismus pro vyhledání dostupných služeb. Další informace o vlastnosti, naleznete v tématu <xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A>. |  
-| discoveryVersion | Řetězec, který určuje jeden ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.DiscoveryVersion>. |  
-| maxResponseDelay | Časový interval hodnotu, která určuje maximální hodnotu zpoždění protokolu zjišťování bude čekat před odesláním některé zprávy, jako je například sběru dat nebo vyřešit shoda.<br /><br /> Pokud se všechny ProbeMatches odesílají ve stejnou dobu, může docházet k síti storm. Chcete-li tomu zabránit, ProbeMatches odesílají pomocí náhodného zpoždění mezi každou ProbeMatch. Náhodné zpoždění je v rozsahu od 0 do hodnoty nastavené v tomto atributu. Pokud tento atribut je nastaven na hodnotu 0, jsou odesílány zprávy ProbeMatches v těsné smyčce bez jakéhokoli zpoždění. V opačném případě případě odesílají zprávy ProbeMatches s některé náhodné zpoždění nepřekročí celkový čas potřebný k odeslání všech zpráv ProbeMatches maxResponseDelay. Tato hodnota platí pouze pro služby, se používají klienti. |  
-| `name`           | Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atribut koncového bodu služby propojit s jeho konfigurace je standardní koncový bod. |  
+| discoveryMode    | Řetězec, který určuje režim protokolu zjišťování. Platné hodnoty jsou "ad hoc" a "spravovaná". V spravovaném režimu protokol spoléhá na proxy zjišťování, které funguje jako úložiště zjistitelných služeb. Režim ad hoc vyžaduje, aby protokol používal k vyhledání dostupných služeb mechanismus vícesměrového vysílání UDP. Další informace o této vlastnosti naleznete v tématu <xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A>. |  
+| discoveryVersion | Řetězec, který určuje jednu ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.DiscoveryVersion>. |  
+| maxResponseDelay | Hodnota TimeSpan, která určuje maximální hodnotu pro prodlevu, po kterou bude protokol zjišťování čekat před odesláním určitých zpráv, jako je například shoda sondy nebo vyřešení shody.<br /><br /> Pokud jsou všechny ProbeMatches odesílány ve stejnou dobu, může dojít k zaplavení sítě. Aby k tomu nedošlo, ProbeMatches se odesílají s náhodným zpožděním mezi jednotlivými ProbeMatch. Náhodné zpoždění je v rozsahu 0 až k hodnotě nastavené tímto atributem. Pokud je tento atribut nastaven na hodnotu 0, zprávy ProbeMatches se odesílají v těsné smyčce bez jakéhokoli zpoždění. V opačném případě se zprávy ProbeMatches odesílají s náhodným zpožděním tak, aby celková doba potřebná k odeslání všech ProbeMatches zpráv nepřekročila maxResponseDelay. Tato hodnota je relevantní jenom pro služby, které nepoužívají klienti. |  
+| `name`           | Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atributu koncového bodu služby k propojení standardního koncového bodu s jeho konfigurací. |  
   
 ### <a name="child-elements"></a>Podřízené prvky
 
@@ -52,13 +52,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | Prvek | Popis |  
 | ------- | ----------- |  
-| [\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md) | Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné. |  
+| [\<standardEndpoints>](standardendpoints.md) | Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny. |  
   
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje služba naslouchá na zprávy zjišťování přes rovnocenný přenos net vícesměrového vysílání. Příklad explicitně určuje WS-Discovery verze 2005. dubna.  
+Následující příklad demonstruje službu, která naslouchá na zprávách zjišťování přes přenos přes síť s vícesměrovým vysíláním. Příklad explicitně určuje verzi WS-Discovery z dubna 2005.  
   
-Standardní koncový bod konfigurace je definována na službu a se nedají sdílet mezi službu. Pokud jiná služba by měl mít stejný koncový bod zjišťování, stejnou konfiguraci musí být přidán do části této služby.  
+Standardní konfigurace koncového bodu je definována pro každou službu a nelze ji sdílet přes službu. Pokud by měla mít stejný koncový bod zjišťování jiná služba, je nutné do oddílu této služby přidat stejnou konfiguraci.  
   
 ```xml  
 <services>

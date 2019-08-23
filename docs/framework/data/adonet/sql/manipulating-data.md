@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-ms.openlocfilehash: f964d85656c5336de189433e74aaacaaea2b094b
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: a620b7b15bb876d255fe787dc5d48aef14fb73e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422653"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946614"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
-Před zavedením z více aktivních sad výsledků (MARS) museli vývojáři použít více připojení nebo ukazatele na straně serveru k vyřešení některých scénářích. Kromě toho při více připojení byly použity v transakční situaci, vázaná připojení (s **proceduru sp_getbindtoken** a **sp_bindsession**) byly zapotřebí. Následující scénáře ukazují, jak používat pro připojení MARS místo více připojení.  
+Před zavedením několika aktivních sad výsledků (MARS) museli vývojáři použít k řešení určitých scénářů buď několik připojení, nebo ukazatele na straně serveru. Pokud se navíc v transakční situaci použilo víc připojení, vyžadují se vázaná připojení (s **sp_getbindtoken** a **sp_bindsession**). Následující scénáře ukazují, jak použít připojení s povoleným MARSm místo několika připojení.  
   
-## <a name="using-multiple-commands-with-mars"></a>Více příkazů pomocí MARS  
- Následující konzolové aplikace ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty se dvěma <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena.  
+## <a name="using-multiple-commands-with-mars"></a>Použití více příkazů s MARS  
+ Následující aplikace konzoly ukazuje, jak použít dva <xref:System.Data.SqlClient.SqlDataReader> objekty se dvěma <xref:System.Data.SqlClient.SqlCommand> objekty a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s povoleným Mars.  
   
 ### <a name="example"></a>Příklad  
- V příkladu otevírá jediné připojení k **AdventureWorks** databáze. Použití <xref:System.Data.SqlClient.SqlCommand> objektu, <xref:System.Data.SqlClient.SqlDataReader> se vytvoří. Čtecí modul se používá, a druhý <xref:System.Data.SqlClient.SqlDataReader> je otevřen pomocí dat z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtecí zařízení.  
+ V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . <xref:System.Data.SqlClient.SqlCommand> Objekt <xref:System.Data.SqlClient.SqlDataReader> je vytvořen pomocí objektu. Při použití čtecího modulu je otevřen druhý <xref:System.Data.SqlClient.SqlDataReader> objekt, který používá data z prvního <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtenář.  
   
 > [!NOTE]
->  Následující příklad používá ukázku **AdventureWorks** databáze je součástí systému SQL Server. Ve vzorovém kódu v zadaném připojovacím řetězci se předpokládá, že databáze je nainstalováný a dostupný na místním počítači. Úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -164,13 +164,13 @@ static void Main()
 ```  
   
 ## <a name="reading-and-updating-data-with-mars"></a>Čtení a aktualizace dat pomocí MARS  
- MARS umožňuje připojení, který se má použít pro obě manipulaci s operací a data jazyka (DML) operace čtení s více než jedna čekající operace. Tato funkce eliminuje potřebu aplikace vypořádat s chybami připojení zaneprázdněný. Kromě toho můžete MARS nahradit uživatele kurzory na straně serveru, které obecně spotřebovávat více prostředků. A konečně, protože jedno připojení můžete provádět více operací, můžou sdílet stejný kontext transakce, tím eliminuje nutnost používat **proceduru sp_getbindtoken** a **sp_bindsession** systémové uložené postupy.  
+ MARS umožňuje, aby se připojení používalo pro operace čtení i operace jazyka DML (data remanipulace Language) s více než jednou probíhající operací. Tato funkce eliminuje nutnost zabývat se chybami zaneprázdněnými připojením aplikace. MARS navíc může nahradit uživatele koncových ukazatelů na straně serveru, což obecně spotřebovává víc prostředků. Proto vzhledem k tomu, že více operací může pracovat s jedním připojením, může sdílet stejný kontext transakce, což eliminuje nutnost používat systémové uložené procedury **sp_getbindtoken** a **sp_bindsession** .  
   
 ### <a name="example"></a>Příklad  
- Následující konzolové aplikace ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty s třemi <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena. Objekt první příkaz načte seznam dodavatelů, jehož kredit je 5. Druhý objekt, který příkaz používá zadané ID od dodavatele <xref:System.Data.SqlClient.SqlDataReader> načíst druhý <xref:System.Data.SqlClient.SqlDataReader> spolu s ostatními produkty pro konkrétní dodavatele. Každý záznam produktu je zobrazeny po sekundách <xref:System.Data.SqlClient.SqlDataReader>. Výpočet se provádí za účelem určení, jaké nové **OnOrderQty** by měl být. Třetí objekt příkazu se pak použije k aktualizaci **ProductVendor** tabulku s novou hodnotu. Celý tento proces probíhá v rámci jedné transakce, která se vrátí zpět na konci.  
+ Následující aplikace konzoly ukazuje, jak použít dva <xref:System.Data.SqlClient.SqlDataReader> objekty se třemi <xref:System.Data.SqlClient.SqlCommand> objekty a jediným <xref:System.Data.SqlClient.SqlConnection> objektem s povolenou službou Mars. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytované od a <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Každý záznam produktu se navštíví druhým <xref:System.Data.SqlClient.SqlDataReader>. Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
   
 > [!NOTE]
->  Následující příklad používá ukázku **AdventureWorks** databáze je součástí systému SQL Server. Ve vzorovém kódu v zadaném připojovacím řetězci se předpokládá, že databáze je nainstalováný a dostupný na místním počítači. Úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -405,4 +405,4 @@ private static string GetConnectionString()
 ## <a name="see-also"></a>Viz také:
 
 - [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

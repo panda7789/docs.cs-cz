@@ -8,18 +8,18 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: b9a43c5f5141e364ab9aac1cfdff577a8fb8a161
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 41a638afa93e605221d5ef8172e243b1c61676bf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486681"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941387"
 ---
-# <a name="systemweb-element-web-settings"></a>\<System.Web > – Element (nastavení webu)
-Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování technologie ASP.NET.  
+# <a name="systemweb-element-web-settings"></a>\<System. Web > – element (nastavení webu)
+Obsahuje informace o tom, jak vrstva hostování ASP.NET spravuje chování v rámci procesu.  
   
- \<Konfigurace >  
-\<System.Web > – Element (nastavení webu)  
+ \<> Konfigurace  
+\<System. Web > – element (nastavení webu)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<applicationPool>](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací IIS v soubor aspnet.config.|  
+|[\<applicationPool>](applicationpool-element-web-settings.md)|Určuje nastavení konfigurace pro fondy aplikací služby IIS v souboru ASPNET. config.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikace rozhraní .NET Framework.|  
+|[\<> Konfigurace](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
   
 ## <a name="remarks"></a>Poznámky  
- `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do rozhraní .NET Framework od verze rozhraní .NET Framework 3.5 SP1. Když spustíte v integrovaném režimu služby IIS 7.0 nebo novější verze, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte v režimu Classic nebo ISAPI služby IIS 7.0 nebo novější verze, tato nastavení budou ignorovány.  
+ Prvek a jeho podřízený `applicationPool` prvek byly přidány do .NET Framework v .NET Framework 3,5 SP1. `system.web` Když spustíte službu IIS 7,0 nebo novější verze v integrovaném režimu, tato kombinace prvků vám umožní nakonfigurovat, jak ASP.NET spravuje vlákna a jak se budou požadavky do fronty ASP.NET hostovat v fondu aplikací služby IIS. Pokud v klasickém režimu nebo v režimu rozhraní ISAPI spustíte službu IIS 7,0 nebo novější, budou tato nastavení ignorována.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak konfigurovat chování v celém procesu ASP.NET v souboru aspnet.config technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Příklad předpokládá, že služba IIS pracuje v integrovaného režimu a že aplikace používá rozhraní .NET Framework 3.5 SP1 nebo novější. K tomuto chování nedojde ve verzích rozhraní .NET Framework starší než .NET Framework 3.5 SP1. Hodnoty v tomto příkladu jsou výchozí hodnoty.  
+ Následující příklad ukazuje, jak nakonfigurovat ASP.NET chování v rámci procesu v souboru ASPNET. config při hostování ASP.NET ve fondu aplikací služby IIS. V příkladu se předpokládá, že služba IIS běží v integrovaném režimu a že aplikace používá .NET Framework 3,5 SP1 nebo novější verzi. K tomuto chování nedochází ve verzích .NET Framework starších než .NET Framework 3,5 SP1. Hodnoty v příkladu jsou výchozími hodnotami.  
   
 ```xml  
 <configuration>  
@@ -70,8 +70,8 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
 |Obor názvů||  
 |Název schématu||  
 |Soubor ověření||  
-|Může být prázdné.||  
+|Může být prázdné||  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<applicationPool > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)
+- [\<applicationPool – element > (nastavení webu)](applicationpool-element-web-settings.md)

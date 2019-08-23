@@ -13,32 +13,32 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - late binding [Visual Basic], Visual Basic compiler
 ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
-ms.openlocfilehash: 20eb96d0d9f81ec9dfa359edf63a60f72a45aa01
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d05322ba831aac6173ac9d7fa7f369a208b676d0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973222"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965380"
 ---
 # <a name="early-and-late-binding-visual-basic"></a>Statické a pozdní vazby (Visual Basic)
-Kompilátor jazyka Visual Basic provádí proces s názvem `binding` když objekt přiřazen do proměnné objektu. Objekt je *časné* při je přiřazena k proměnné deklarované jako konkrétní typy objektů. Časná vázaným objektům povolení kompilátoru přidělení paměti a provádět další optimalizace před spuštěním aplikace. Například následující fragment kódu deklaruje proměnnou typu <xref:System.IO.FileStream>:  
+Kompilátor Visual Basic provádí proces, který se `binding` volá, když se objekt přiřadí proměnné objektu. Objekt je *časné vazby* , je-li přiřazen k proměnné deklarované jako pro určitý typ objektu. Předčasný vázané objekty umožňují kompilátoru přidělit paměť a provádět další optimalizace před spuštěním aplikace. Například následující fragment kódu deklaruje proměnnou, která bude typu <xref:System.IO.FileStream>:  
   
  [!code-vb[VbVbalrOOP#90](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#90)]  
   
- Protože <xref:System.IO.FileStream> je konkrétní typy objektů, přiřazenou instanci `FS` časná vazba.  
+ Vzhledem <xref:System.IO.FileStream> k tomu, že se jedná o konkrétní typ objektu `FS` , je instance přiřazená k předčasnému vázání.  
   
- Naopak je objekt *pozdní vazby* při je přiřazena k proměnné deklarované jako typ `Object`. Objekty tohoto typu můžou obsahovat odkazy na libovolný objekt, ale nemají mnohé z výhod časnou vazbou. Například následující fragment kódu deklaruje proměnnou objektu pro objekt vrácený `CreateObject` funkce:  
+ Naopak objekt je *pozdní vazba* , pokud je přiřazena proměnné deklarované jako typ `Object`. Objekty tohoto typu můžou uchovávat odkazy na libovolný objekt, ale nemají spoustu výhod objektů s časnou vazbou. Například následující fragment kódu deklaruje proměnnou objektu pro uchování objektu vráceného `CreateObject` funkcí:  
   
  [!code-vb[VbVbalrOOP#91](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/LateBinding.vb#91)]  
   
-## <a name="advantages-of-early-binding"></a>Výhody časná vazba  
- Časné vazby objektů pokaždé, když je to možné, byste měli použít, protože umožňují kompilátor, aby byl důležité optimalizace, které vrací efektivnější aplikace. Časné vazby objektů jsou výrazně rychlejší než objekty s pozdní vazbou a byl kód čitelnější a udržovat tím, že s informacemi o tom právě jaký druh objekty používají. Časná vazba Další výhodou je, že umožňuje užitečných funkcí, jako je doplňování kódu pro automatickou a dynamická Nápověda, protože integrovaného vývojového prostředí (IDE) sady Visual Studio můžete určit přesně jaký typ objektu pracujete s při úpravě kód. Časné vazby snižuje množství a závažnosti chyby za běhu, protože umožňuje kompilátoru zprávy o chybách při kompilaci programu.  
+## <a name="advantages-of-early-binding"></a>Výhody prvotní vazby  
+ Pokud je to možné, měli byste použít objekty s časnou vazbou, protože umožňují kompilátoru provádět důležité optimalizace, které přinesou efektivnější aplikace. Objekty s časnou vazbou jsou výrazně rychlejší než objekty s pozdní vazbou a usnadňují čtení a údržbu kódu tím, že přesně udávají, jaký typ objektů se používá. Další výhodou pro předčasné vázání je to, že umožňuje použití užitečných funkcí, jako je automatické dokončování kódu a dynamické pomoci, protože integrované vývojové prostředí (IDE) sady Visual Studio dokáže přesně určit, se kterým typem objektu pracujete při úpravách znakovou. Počáteční vazba snižuje počet a závažnost chyb za běhu, protože umožňuje kompilátoru hlásit chyby při kompilaci programu.  
   
 > [!NOTE]
->  Pozdní vazby jde použít jenom pro přístup ke členům typu, které jsou deklarovány jako `Public`. Přístup k členům deklarován jako `Friend` nebo `Protected Friend` vede k chybě za běhu.  
+> Pozdní vazbu lze použít pouze pro přístup ke členům typu, které jsou deklarovány jako `Public`. Přístup ke členům deklarovaným `Protected Friend` jako `Friend` nebo má za následek chybu v době běhu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>
-- [Doba života objektu: Způsob vytváření a zničení objektů](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Doba života objektu: Vytváření a zničení objektů](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
 - [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

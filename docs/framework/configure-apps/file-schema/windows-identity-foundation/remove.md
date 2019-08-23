@@ -3,20 +3,20 @@ title: <remove>
 ms.date: 03/30/2017
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
 author: BrucePerlerMS
-ms.openlocfilehash: 17c4d4289cf90b66d52986c054d4807ecff2b3d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11aeed0277fc13cbd9a65232311bd575a4a81ff7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793884"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942574"
 ---
-# <a name="remove"></a>\<remove>
-Odebere obslužnou rutinu tokenu se zadaným zabezpečením z kolekce obslužné rutiny tokenů.  
+# <a name="remove"></a>\<odebrat >
+Odebere zadanou obslužnou rutinu tokenu zabezpečení z kolekce obslužných rutin tokenu.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
 \<securityTokenHandlers>  
-\<remove>  
+\<odebrat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ Odebere obslužnou rutinu tokenu se zadaným zabezpečením z kolekce obslužné
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-| – typ|Název typu CLR obslužnou rutinu tokenu, která se má odebrat. Další informace o tom, jak zadat `type` atributu naleznete v tématu [odkazů na vlastní typy](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references). Povinný parametr.|  
+|– typ|Název typu CLR obslužné rutiny tokenu, která má být odebrána. Další informace o tom, jak zadat `type` atribut, naleznete v tématu odkazy na [vlastní typ](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references). Povinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.|  
+|[\<securityTokenHandlers>](securitytokenhandlers.md)|Určuje kolekci obslužných rutin tokenů zabezpečení, které jsou registrovány u koncového bodu.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje použití `<add>` a `<remove>` prvků, které mají výchozí obslužnou rutinu tokenu relace nahraďte obslužnou rutinu tokenu relace. XML je převzata z `ClaimsAwareWebFarm` vzorku.  
+ Následující kód XML ukazuje použití `<add>` elementů a `<remove>` k nahrazení výchozí obslužné rutiny tokenu relace vlastní obslužnou rutinou tokenu relace. Kód XML je získán z `ClaimsAwareWebFarm` ukázky.  
   
 ```xml  
 <securityTokenHandlers>  

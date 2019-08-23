@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: 5ed45580819ff037a3258eada767dd400b9d9e51
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f042042f36e373ec05e8f0f15c14027463653578
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594726"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924320"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]není pouze informace o načítání dat. Je to také výkonný nástroj pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu můžete jako vstup použít zdrojovou sekvenci a upravit ji mnoha způsoby, abyste mohli vytvořit novou výstupní sekvenci. Samotnou sekvenci můžete změnit, aniž byste museli měnit prvky řazením a seskupením. Ale pravděpodobně nejúčinnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je možnost vytvářet nové typy. To je dosaženo v klauzuli [Select](../../../language-reference/keywords/select-clause.md) . Například můžete provádět následující úlohy:  
@@ -93,7 +93,7 @@ ms.locfileid: "69594726"
  Výstupní sekvence nemusí obsahovat žádné elementy nebo vlastnosti elementu ze zdrojové sekvence. Výstupem může být například sekvence hodnot, které jsou vypočítány pomocí zdrojového prvku jako vstupní argumenty. Následující jednoduchý dotaz, když je spuštěn, výstupuje sekvenci řetězců, jejichž hodnoty reprezentují výpočet na základě zdrojové sekvence prvků typu `double`.  
   
 > [!NOTE]
->  Volání metod ve výrazech dotazů není podporováno, pokud bude dotaz přeložen do jiné domény. Například nemůžete volat běžnou C# metodu v, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] protože pro ni SQL Server nemá žádný kontext. Uložené procedury však lze namapovat na metody a volat je. Další informace najdete v tématu [uložené procedury](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
+> Volání metod ve výrazech dotazů není podporováno, pokud bude dotaz přeložen do jiné domény. Například nemůžete volat běžnou C# metodu v, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] protože pro ni SQL Server nemá žádný kontext. Uložené procedury však lze namapovat na metody a volat je. Další informace najdete v tématu [uložené procedury](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
   
  [!code-csharp[CsLINQGettingStarted#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#10)]  
   

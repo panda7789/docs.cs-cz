@@ -6,47 +6,47 @@ helpviewer_keywords:
 - UI Automation, Selection Item control pattern
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-ms.openlocfilehash: b1d5a0b11510a123d5fbebd656c1fdcd338870e7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aef1d31499f65834fa1268147e45f82294fe560a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649479"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935691"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.ISelectionItemProvider>, včetně informací o vlastnosti, metody a události. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
+ Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.ISelectionItemProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- <xref:System.Windows.Automation.SelectionItemPattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které fungují jako jednotlivé, vybrat podřízené položky kontejneru ovládacích prvků, které implementují <xref:System.Windows.Automation.Provider.ISelectionProvider>. Příklady ovládacích prvků, které implementace vzoru ovládacích prvků SelectionItem najdete v tématu [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
+ Vzor ovládacího prvku se používá pro podporu ovládacích prvků, které fungují jako jednotliví, volitelných podřízených položek kontejnerových ovládacích prvků, které implementují <xref:System.Windows.Automation.Provider.ISelectionProvider>. <xref:System.Windows.Automation.SelectionItemPattern> Příklady ovládacích prvků, které implementují vzor ovládacího prvku ovládacích SelectionItem, najdete v tématu [mapování vzoru řízení pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md) .  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
- Pokud implementace vzoru ovládacích prvků výběru položek, mějte na paměti následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzoru ovládacího prvku Výběr položky si všimněte následujících pokynů a konvencí:  
   
-- Jeden výběr ovládacích prvků, které spravují podřízených ovládacích prvků, které implementují <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>, například **rozlišení obrazovky** posuvník v **vlastnosti zobrazení** dialogové okno, by měly implementovat <xref:System.Windows.Automation.Provider.ISelectionProvider>a jejich podřízené položky by měly implementovat obě <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> a <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.  
+- Ovládací prvky pro jedno výběr, které spravují podřízené ovládací <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>prvky, které implementují, jako je posuvník **rozlišení obrazovky** v dialogovém okně **zobrazení vlastností** , by měly implementovat <xref:System.Windows.Automation.Provider.ISelectionProvider> a jejich podřízené objekty by měly implementovat obojí <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> a .<xref:System.Windows.Automation.Provider.ISelectionItemProvider>  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
-## <a name="required-members-for-iselectionitemprovider"></a>Požadované členy pro ISelectionItemProvider  
- Následující vlastnosti, metody a události, které jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.  
+## <a name="required-members-for-iselectionitemprovider"></a>Vyžadovaná členové pro ISelectionItemProvider  
+ Pro implementaci <xref:System.Windows.Automation.Provider.ISelectionItemProvider>jsou vyžadovány následující vlastnosti, metody a události.  
   
-|Požadované členy|Typ člena|Poznámky|  
+|Vyžadovaná členové|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Událost|Vyvoláno při výběru v kontejneru významně změnil a vyžaduje odeslání více <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> a <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> událostí, než <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> povoluje – konstanta.|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Událost|Vyvolá se v případě, že se výběr v kontejneru významně změnil a vyžaduje <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> odeslání <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> více událostí a <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> , než povoluje konstanta.|  
   
-- Pokud výsledek <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>, <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>, nebo <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> je vybrané položce <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> by měla být zvýšena; jinak odešlete <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent> /  <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> podle potřeby.  
+- <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>Pokud je výsledkem <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>, nebo a <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> jedinou vybranou položkou, <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> měla by být vyvolána. jinak odešlete <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent> /  <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> podle potřeby.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Poskytovatelé musí vyvolání následující výjimky.  
+ Zprostředkovatelé musí vyvolat následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|Když některý z následujících nedochází k pokusům o:<br /><br /> -   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> je volána v kontejneru jedním výběrem kde <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` a prvek je už vybraná.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> je volána v kontejneru více výběrů kde <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` a vybrali pouze jeden element.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A> je volána v kontejneru jedním výběrem kde <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>  =  `false` a jiný element je už vybraná.|  
+|<xref:System.InvalidOperationException>|Při pokusu o provedení některé z následujících akcí:<br /><br /> -   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>se volá v kontejneru s jedním výběrem, kde <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` a je už vybraný element.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>je volána v kontejneru vícenásobného výběru, kde <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` je vybrán pouze jeden prvek.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A>se volá v kontejneru s jedním výběrem, kde <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>  =  `false` a je už vybraný jiný element.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,4 +56,4 @@ ms.locfileid: "64649479"
 - [Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)
 - [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
 - [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
-- [Ukázka fragmentu poskytovatele](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))
+- [Ukázka zprostředkovatele fragmentů](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))

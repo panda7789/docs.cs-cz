@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1951efecca6c81322c3a0753eaaf06e9651e3d39
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 64179e132cfaffbb1fcdc2cd0a47bbcc11be2ff0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759148"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943263"
 ---
 # <a name="iclrsyncmanagercreaterwlockowneriterator-method"></a>ICLRSyncManager::CreateRWLockOwnerIterator – metoda
-Požadavky, které modul CLR (CLR) vytvořit iterátor pro hostitele použít k určení sady úloh čeká na zámek čtení a zápis.  
+Požadavky, které modul CLR (Common Language Runtime) vytvoří iterátor, který může hostitel použít k určení sady úloh čekajících na zámek pro zápis čtenářů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,41 +38,41 @@ HRESULT CreateRWLockOwnerIterator (
   
 ## <a name="parameters"></a>Parametry  
  `cookie`  
- [in] Soubor cookie, přidružené k požadované čtení a zápis zámku.  
+ pro Soubor cookie přidružený k požadovanému zámku zapisovače čtenářů  
   
  `pIterator`  
- [out] Ukazatel na iterátor, který lze předat [getrwlockownernext –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getrwlockownernext-method.md) a [deleterwlockowneriterator –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-deleterwlockowneriterator-method.md) metody.  
+ mimo Ukazatel na iterátor, který může být předán metodám [GetRWLockOwnerNext –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getrwlockownernext-method.md) a [DeleteRWLockOwnerIterator –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-deleterwlockowneriterator-method.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateRWLockOwnerIterator` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`CreateRWLockOwnerIterator`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_INVALIDOPERATION|`CreateRWLockOwnerIterator` byla volána pro vlákno, které aktuálně běží spravovaný kód.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_INVALIDOPERATION|`CreateRWLockOwnerIterator`bylo voláno ve vlákně, které aktuálně používá spravovaný kód.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitelé obvykle volání `CreateRWLockOwnerIterator`, `DeleteRWLockOwnerIterator`, a `GetRWLockOwnerNext` metod rozpoznávání zablokování. Hostitel zodpovídá za to, že zámek pro čtení a zápis je stále platný, protože modul CLR nesnaží se zachování zámku pro čtení a zápis. Jsou dostupné pro hostitele, aby platnost zámku několik strategií:  
+ Hostitelé obvykle volají `CreateRWLockOwnerIterator`metody `DeleteRWLockOwnerIterator`, a `GetRWLockOwnerNext` během zjišťování vzájemného zablokování. Hostitel zodpovídá za to, že zámek zapisovače proti čtečce je stále platný, protože CLR nepokusí zachovat zámek čtečky zapisovače čtenářů. K dispozici je několik strategií pro hostitele, aby se zajistila platnost zámku:  
   
-- Hostitel zablokovat volání uvolnění zámku pro čtení a zápis (například [ihostsemaphore::releasesemaphore –](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)) při zajištění, že tento blok způsobit zablokování.  
+- Hostitel může blokovat volání vydaných verzí na zámek zapisovače pro čtení (například [IHostSemaphore:: ReleaseSemaphore –](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)) a přitom zajistit, že tento blok nezpůsobí zablokování.  
   
-- Hostitel může blokovat výstupu z čekání na událost objekt přidružený k zámku pro čtení a zápis, znovu zajistit, že tento blok způsobit zablokování.  
+- Hostitel může zablokovat ukončení čekání na objekt události přidružený k zámku zapisovače pro čtení a znovu zajistit, aby tento blok nezpůsoboval zablokování.  
   
 > [!NOTE]
->  `CreateRWLockOwnerIterator` musí být volána pouze na vlákna, která jsou aktuálně spuštěny nespravovaného kódu.  
+> `CreateRWLockOwnerIterator`musí být volána pouze v vláknech, které aktuálně spouštějí nespravovaný kód.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,23 +9,23 @@ helpviewer_keywords:
 - elements, finding for list items
 - UI Automation, finding elements for List items
 ms.assetid: c326ad2b-2144-4f64-ae4c-d850c74f95c5
-ms.openlocfilehash: 7fe1f564e8c9fb967c0b7b4e8b12712962bdedc7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ca4fdfabc4202ae9c9a36d4c511ebefc3ddd058d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609878"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969018"
 ---
 # <a name="find-a-ui-automation-element-for-a-list-item"></a>Hledání prvku automatizace uživatelského rozhraní pro položku seznamu
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma ukazuje, jak načíst <xref:System.Windows.Automation.AutomationElement> pro některou položku v seznamu, pokud je známý index položky.  
+ Toto téma ukazuje, jak načíst <xref:System.Windows.Automation.AutomationElement> položku pro položku v rámci seznamu, pokud je index položky znám.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dva způsoby načítání zadané položky seznamu, pomocí <xref:System.Windows.Automation.TreeWalker> a dalších použití <xref:System.Windows.Automation.AutomationElement.FindAll%2A>.  
+ Následující příklad ukazuje dva způsoby, jak načíst zadanou položku ze seznamu, jeden pomocí <xref:System.Windows.Automation.TreeWalker> a druhý pomocí. <xref:System.Windows.Automation.AutomationElement.FindAll%2A>  
   
- První způsob je spíše pro rychlejší [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládacích prvků, ale druhá je rychlejší ovládacích prvků Windows Presentation Foundation (WPF).  
+ První technika je pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvky rychlejší, ale druhá je rychlejší pro ovládací prvky Windows Presentation Foundation (WPF).  
   
  [!code-csharp[UIAClient_snip#184](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#184)]
  [!code-vb[UIAClient_snip#184](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#184)]  

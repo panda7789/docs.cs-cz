@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 8f1c4415a834f7eb7c3048a89ab81de6921b7bf6
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f4b5a0c3764c173afe03adb67fd3df9d17d9fdcb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629937"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964885"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
 Toto téma poskytuje přehled nastavení registru Microsoft ClearType používaných aplikacemi WPF.  
@@ -36,12 +36,12 @@ Toto téma poskytuje přehled nastavení registru Microsoft ClearType používan
 |Pixel – struktura|Popisuje uspořádání pixelů pro zobrazovací zařízení.|  
 |Úroveň kontrastu textu|Popisuje úroveň kontrastu zobrazeného textu.|  
   
- K těmto nastavením může mít přístup externí konfigurační nástroj, který ví, jak odkazovat na identifikované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nastavení registru ClearType. Tato nastavení lze také vytvořit nebo upravit přístupem k hodnotám přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] editoru registru.  
+ K těmto nastavením může mít přístup externí konfigurační nástroj, který ví, jak odkazovat na identifikované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nastavení registru ClearType. Tato nastavení se dají vytvářet nebo upravovat taky tak, že se přistupují k hodnotám přímo pomocí Editoru registru Windows.  
   
- Pokud nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] ClearType nejsou nastavená (což je výchozí stav), aplikace se dotazuje na informace o parametrech systému pro nastavení vyhlazení písma. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
+ Pokud nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ClearTypenejsounastavená(cožjevýchozístav),aplikacesedotazujenainformaceoparametrechsystémuWindowspronastavení[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vyhlazení písma.  
   
 > [!NOTE]
->  Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
+> Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
   
 <a name="ClearType_level"></a>   
 ## <a name="cleartype-level"></a>Úroveň ClearType  
@@ -59,7 +59,7 @@ Toto téma poskytuje přehled nastavení registru Microsoft ClearType používan
  ![Nastavení technologie ClearType v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace vykreslí text v jednom z obou režimů s technologií ClearType a bez něj. Když se text vykresluje bez technologie ClearType, označuje se jako vykreslování v šedé škále.  
+> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace vykreslí text v jednom z obou režimů s technologií ClearType a bez něj. Když se text vykresluje bez technologie ClearType, označuje se jako vykreslování v šedé škále.  
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>Úroveň gamma  
@@ -89,7 +89,7 @@ Toto téma poskytuje přehled nastavení registru Microsoft ClearType používan
  Struktura pixelů odpovídá celočíselné hodnotě, která je v rozsahu od 0 do 2. Výchozí úroveň je 0, což představuje strukturu plochých pixelů.  
   
 > [!NOTE]
->  Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
+> Informace o vytváření výčtu zobrazovaných názvů zařízení najdete ve `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkci.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
  Umístění nastavení registru pro strukturu pixelů je nastavení místního počítače, které odpovídá určitému názvu zobrazovacího zařízení:  

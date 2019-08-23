@@ -1,26 +1,26 @@
 ---
-title: 'Postupy: Provádění stromů výrazů (Visual Basic)'
+title: 'Postupy: Spuštění stromů výrazů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 62d3febf7090c6662e5593bbaf94c04236a162e9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 135c295070ea591f3b494734f9d236e36b9c3c5d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592138"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916505"
 ---
-# <a name="how-to-execute-expression-trees-visual-basic"></a>Postupy: Provádění stromů výrazů (Visual Basic)
-Toto téma ukazuje, jak spustit strom výrazu. Provádění strom výrazu může vracet hodnotu, nebo ji může provádět jenom akce, jako je volání metody.  
+# <a name="how-to-execute-expression-trees-visual-basic"></a>Postupy: Spuštění stromů výrazů (Visual Basic)
+V tomto tématu se dozvíte, jak spustit strom výrazu. Provádění stromu výrazů může vracet hodnotu nebo může provést pouze akci, jako je například volání metody.  
   
- Je možné provést pouze stromů výrazů, které představují výrazů lambda. Stromy výrazů, které představují lambda výrazy jsou typu <xref:System.Linq.Expressions.LambdaExpression> nebo <xref:System.Linq.Expressions.Expression%601>. K provádění těchto stromů výrazů, zavolejte <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> metody k vytvoření delegáta spustitelný soubor a pak vyvolejte delegáta.  
+ Spustit lze pouze stromy výrazů, které reprezentují výrazy lambda. Stromy výrazů, které představují výrazy lambda, jsou <xref:System.Linq.Expressions.LambdaExpression> typu <xref:System.Linq.Expressions.Expression%601>nebo. Chcete-li spustit tyto stromy výrazů, <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> zavolejte metodu pro vytvoření spustitelného delegáta a poté vyvolejte delegáta.  
   
 > [!NOTE]
->  Pokud je typ delegáta není znám, to znamená, výraz lambda je typu <xref:System.Linq.Expressions.LambdaExpression> a ne <xref:System.Linq.Expressions.Expression%601>, je třeba zavolat <xref:System.Delegate.DynamicInvoke%2A> metoda delegátu namísto vyvolání přímo.  
+> Pokud typ delegáta není znám, to znamená, že výraz lambda je typu <xref:System.Linq.Expressions.LambdaExpression> a nikoli <xref:System.Linq.Expressions.Expression%601> <xref:System.Delegate.DynamicInvoke%2A> , je nutné zavolat metodu na delegáta místo přímého vyvolání.  
   
- Pokud strom výrazu lambda výraz nepředstavuje, můžete vytvořit nový výraz lambda, který má původní stromu výrazů jako jeho textu pomocí volání <xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29> metody. Pak můžete spustit výraz lambda, jak bylo popsáno dříve v této části.  
+ Pokud strom výrazu lambda výraz nepředstavuje, můžete vytvořit nový výraz lambda, který má jako tělo původní strom výrazu, voláním <xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29> metody. Potom můžete spustit výraz lambda, jak je popsáno výše v této části.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak provést strom výrazů, který představuje číslo mocninu vyvolání pomocí vytvoření výrazu lambda a spustíte ji. Výsledek, který představuje číslo vyvolána k elektrické energie, se zobrazí.  
+ Následující příklad kódu ukazuje, jak spustit strom výrazu, který představuje zvýšení čísla na výkon vytvořením lambda výrazu a jeho provedením. Zobrazí se výsledek, který představuje číslo umocněné na výkon.  
   
 ```vb  
 ' The expression tree to execute.  
@@ -44,9 +44,9 @@ MsgBox(result)
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Zahrnout System.Linq.Expressions oboru názvů.  
+- Zahrňte obor názvů System. Linq. Expressions.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Postupy: Úpravy stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [Postupy: Úprava stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)

@@ -11,36 +11,36 @@ helpviewer_keywords:
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 145e6b8891735c904aa98a36ccfd27958bdf788d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2697950a371d66f2e57731e0ff01ed531a07955e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648609"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946402"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
-Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní ukazatele na funkci zajišťující bezpečnost typů nebo zpětného volání funkce.
+Tato ukázka předvádí, jak předat delegáty nespravované funkci očekávající ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní k ukazateli funkce bezpečnému pro typ nebo funkci zpětného volání.
 
 > [!NOTE]
->  Při použití delegáta uvnitř volání, modul common language runtime chrání delegáta je uvolněna z paměti po dobu trvání tohoto volání. Nicméně pokud nespravovaná funkce ukládá delegáta pro použití po dokončení volání, je nutné ručně zabránit uvolňování paměti až do dokončení nespravovanou funkci s delegátem. Další informace najdete v tématu [handleref – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) a [GCHandle – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).
+> Použijete-li delegáta uvnitř volání, modul CLR (Common Language Runtime) chrání delegáta před uvolněním paměti po dobu trvání tohoto volání. Nicméně pokud nespravované funkce uloží delegáta pro použití po dokončení volání, je nutné ručně zabránit uvolňování paměti, dokud neskončí nespravovanou funkci s delegátem. Další informace najdete v ukázce [HandleRef – Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) a [GCHandle](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).
 
-Ukázka zpětného volání používá následující nespravované funkce zobrazené s původní deklarací funkce:
+Ukázka zpětného volání používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:
 
-- `TestCallBack` exportovaná z knihovny PinvokeLib.dll.
+- `TestCallBack`exportováno z knihovny pinvokelib. dll.
 
     ```cpp
     void TestCallBack(FPTR pf, int value);
     ```
 
-- `TestCallBack2` exportovaná z knihovny PinvokeLib.dll.
+- `TestCallBack2`exportováno z knihovny pinvokelib. dll.
 
     ```cpp
     void TestCallBack2(FPTR2 pf2, char* value);
     ```
 
-[Knihovny PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí.
+[Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci pro dříve uvedené funkce.
 
-V této ukázce `LibWrap` třída obsahuje spravované prototypy pro `TestCallBack` a `TestCallBack2` metody. Obě metody předat jako parametr delegáta funkce zpětného volání. Signatura delegáta musí odpovídat signatuře metody, na které odkazuje. Například `FPtr` a `FPtr2` delegáty mají podpisy, které jsou stejné jako `DoSomething` a `DoSomething2` metody.
+V této ukázce `LibWrap` třída obsahuje spravované prototypy `TestCallBack` pro metody a `TestCallBack2` . Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například `FPtr` Delegáti a `FPtr2` mají signatury `DoSomething` , které jsou stejné jako metody a `DoSomething2` .
 
 ## <a name="declaring-prototypes"></a>Deklarace prototypů
 [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
@@ -54,6 +54,6 @@ V této ukázce `LibWrap` třída obsahuje spravované prototypy pro `TestCallBa
 
 ## <a name="see-also"></a>Viz také:
 
-- [Různé ukázky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
+- [Různé vzorky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
 - [Datové typy vyvolání platformy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
 - [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)

@@ -12,21 +12,21 @@ helpviewer_keywords:
 - UI automation, finding text
 - highlighting text
 ms.assetid: b77693f5-87bb-4b29-a297-05ff882e2044
-ms.openlocfilehash: fafd3fc7345f94d3907163ff9dcf0ab293f85f3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e8b69167f470afd5e3049a717978a41078db575
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609956"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968996"
 ---
 # <a name="find-and-highlight-text-using-ui-automation"></a>Hledání a zvýrazňování textu s použitím automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma ukazuje, jak se postupně vyhledat a zvýraznit všechny výskyty řetězce v rámci obsahu textu ovládacího prvku pomocí [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
+ Toto téma ukazuje, jak postupně vyhledat a zvýraznit všechny výskyty řetězce v rámci obsahu ovládacího prvku text pomocí [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="example"></a>Příklad  
- Následující příklad získá <xref:System.Windows.Automation.TextPattern> objekt z textového ovládacího prvku. A <xref:System.Windows.Automation.Text.TextPatternRange> objekt představující textový obsah celý dokument se pak vytvoří pomocí <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> vlastnosti tohoto <xref:System.Windows.Automation.TextPattern>. Další dva <xref:System.Windows.Automation.Text.TextPatternRange> objekty jsou pak vytvořeny pro sekvenčního vyhledávání a zvýraznit funkce.  
+ Následující příklad získá <xref:System.Windows.Automation.TextPattern> objekt z textového ovládacího prvku. Objekt, který představuje textový obsah celého dokumentu, se pak vytvoří <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> pomocí vlastnosti this <xref:System.Windows.Automation.TextPattern>. <xref:System.Windows.Automation.Text.TextPatternRange> Pak se <xref:System.Windows.Automation.Text.TextPatternRange> vytvoří dva další objekty pro funkce sekvenčního vyhledávání a zvýrazňování.  
   
 [!code-csharp[FindText#StartApp](../../../samples/snippets/csharp/VS_Snippets_Wpf/FindText/CSharp/SearchWindow.cs#startapp)]
 [!code-vb[FindText#StartApp](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#startapp)]  

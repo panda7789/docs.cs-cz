@@ -2,26 +2,26 @@
 title: Logické datové typy
 ms.date: 03/30/2017
 ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
-ms.openlocfilehash: 2535d72a89691466b977e1d4c460ff73e3b93dc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f200445d2ba7846f9dc467c7f06bce4225c88865
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877393"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964083"
 ---
 # <a name="boolean-data-types"></a>Logické datové typy
-Logické operátory fungovat podle očekávání v modulu common language runtime (CLR), s tím rozdílem, že zkrácenou chování není přeložen. Například Visual Basic `AndAlso` operátor se chová stejně jako `And` operátor. C# `&&` Operátor se chová stejně jako `&` operátor.  
+Logické operátory pracují podle očekávání v modulu CLR (Common Language Runtime), s tím rozdílem, že chování při krátkém okruhu není přeloženo. Například operátor Visual Basic `AndAlso` se chová `And` jako operátor. Operátor C# `&&` se chovájakooperátor.`&`  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje následující operátory.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje následující operátory.  
   
 |Visual Basic|C#|  
 |------------------|---------|  
-|[Operátor And](~/docs/visual-basic/language-reference/operators/and-operator.md)|[& – operátor](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#logical-and-operator-)|  
-|[Operátor AndAlso](~/docs/visual-basic/language-reference/operators/andalso-operator.md)|[&& – operátor](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-)|  
-|[Operátor Or](~/docs/visual-basic/language-reference/operators/or-operator.md)|[&#124; Operator](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#logical-or-operator-)|  
-|[Operátor OrElse](~/docs/visual-basic/language-reference/operators/orelse-operator.md)|[&#124;&#124; Operator](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-)|  
-|[Operátor Xor](~/docs/visual-basic/language-reference/operators/xor-operator.md)|[^ – operátor](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#logical-exclusive-or-operator-)|  
-|[Operátor Not](~/docs/visual-basic/language-reference/operators/not-operator.md)|[Operátor \!](~/docs/csharp/language-reference/operators/boolean-logical-operators.md#logical-negation-operator-)|  
+|[Operátor And](../../../../../visual-basic/language-reference/operators/and-operator.md)|[& – operátor](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-and-operator-)|  
+|[Operátor AndAlso](../../../../../visual-basic/language-reference/operators/andalso-operator.md)|[&& – operátor](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-)|  
+|[Operátor Or](../../../../../visual-basic/language-reference/operators/or-operator.md)|[&#124; Operator](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-or-operator-)|  
+|[Operátor OrElse](../../../../../visual-basic/language-reference/operators/orelse-operator.md)|[&#124;&#124;Podnikatel](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-)|  
+|[Operátor Xor](../../../../../visual-basic/language-reference/operators/xor-operator.md)|[^ – operátor](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-exclusive-or-operator-)|  
+|[Operátor Not](../../../../../visual-basic/language-reference/operators/not-operator.md)|[Operátor \!](../../../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-negation-operator-)|  
   
 ## <a name="see-also"></a>Viz také:
 

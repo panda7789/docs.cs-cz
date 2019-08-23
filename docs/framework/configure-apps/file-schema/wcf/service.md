@@ -2,19 +2,19 @@
 title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: 68bddc01b02d9885b3f0fc4c2cbc5c3249de03f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69f3c70514fc2bcab1b4ef6a45036de98d1af7b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670392"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936515"
 ---
-# <a name="service"></a>\<služby >
-`service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují služby.  
+# <a name="service"></a>\<> služby
+`service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují službu.  
   
  \<system.ServiceModel>  
-\<services>  
-\<služby >  
+\<> služeb  
+\<> služby  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,28 +31,28 @@ ms.locfileid: "61670392"
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|behaviorConfiguration|Řetězec obsahující název chování, jenž bude použit k vytvoření instance služby. Název musí být v rozsahu od bodu služby je definována. Výchozí hodnota je prázdný řetězec.|  
-|name|Požadovaný atribut typu řetězec, který určuje typ služby, který má být vytvořena. Toto nastavení musí odpovídá platného typu. By měl být ve formátu `Namespace.Class.`|  
+|behaviorConfiguration|Řetězec obsahující název chování, který se má použít k vytvoření instance služby. Název chování musí být v oboru v místě, kde je služba definovaná. Výchozí hodnota je prázdný řetězec.|  
+|name|Požadovaný atribut typu řetězec určující typ služby, pro kterou má být vytvořena instance. Toto nastavení musí být rovno platnému typu. Formát by měl být`Namespace.Class.`|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Kolekce `endpoint` prvky, které zpřístupňují této služby.|  
-|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Určuje řadu tato instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
+|[\<endpoint>](endpoint-element.md)|Kolekce `endpoint` prvků, které zpřístupňují tuto službu.|  
+|[\<host>](host.md)|Určuje hostitele této instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Kořenový element všechny elementy konfigurace WCF.|  
+|[\<services>](services.md)|Kořenový element všech elementů konfigurace služby WCF.|  
   
 ## <a name="remarks"></a>Poznámky  
- Služby jsou definovány v `services` oddílu konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má svůj vlastní `service` konfigurační oddíl. V této části a její obsah definování kontraktu služby, chování a koncové body konkrétní služby.  
+ Služby jsou definovány v `services` části konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má vlastní `service` konfigurační oddíl. Tato část a její obsah definují kontrakt služby, chování a koncové body konkrétní služby.  
   
- `behaviorConfiguration` Element je volitelné. Určuje chování služba používá. Chování určené v tomto atributu propojit chování v oboru ve stejném souboru konfigurace.  
+ `behaviorConfiguration` Prvek je také volitelný. Určuje chování, které služba používá. Chování zadané v tomto atributu musí být propojeno s chováním v oboru ve stejném konfiguračním souboru.  
   
- Každá služba zpřístupňuje jeden nebo více koncových bodů, který má svou vlastní adresu a vazbu. Všechny vazby používá v konfiguračním souboru musí být definován v rozsahu souboru. Vazby jsou propojeny do koncových bodů prostřednictvím kombinace atributů `name` a `bindingConfiguration`. `name` Atribut popisuje část vazby je definováno v. `bindingConfiguration` Atribut definuje, která konfigurace bude v rámci oddílu vazby se používá. Část vazby můžete definovat několik konfigurací.  
+ Každá služba zveřejňuje jeden nebo více koncových bodů, které mají svou vlastní adresu a vazbu. Všechny vazby používané v konfiguračním souboru musí být definovány v rozsahu souboru. Vazba je propojena s koncovými body prostřednictvím kombinace atributů `name` a `bindingConfiguration`. `name` Atribut popisuje oddíl, ve kterém je vazba definována. `bindingConfiguration` Atribut určuje, která konfigurace v rámci vazby je použita. Oddíl Binding může definovat několik konfigurací.  
   
 ## <a name="example"></a>Příklad  
  Toto je příklad konfigurace služby.  
@@ -71,4 +71,4 @@ ms.locfileid: "61670392"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ServiceElement>
-- [Konfigurace služeb](../../../../../docs/framework/wcf/configuring-services.md)
+- [Konfigurace služeb](../../../wcf/configuring-services.md)

@@ -10,64 +10,64 @@ helpviewer_keywords:
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 920787c00a12a56de2766ec9ea104241a5722852
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1d295f394a9ce7f038e2c64d42193e2d18040a98
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593653"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921668"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
-Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verzi sestavení a verze závislých sestavení jsou zaznamenány v manifestu sestavení. Výchozí zásada verze modulu runtime je, že aplikace spuštěny pouze verze by byly vytvořené a testovány, pokud není přepsán explicitní verze zásad v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurační soubor počítače).  
+Všechna verze sestavení, která používají modul CLR (Common Language Runtime), je provedena na úrovni sestavení. Konkrétní verze sestavení a verze závislých sestavení jsou zaznamenány v manifestu sestavení. Výchozí zásady verze modulu runtime jsou aplikace spouštěny pouze s verzemi, které byly vytvořeny a testovány pomocí nástroje, pokud nejsou přepsány explicitními zásadami verze v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a konfigurační soubor správce počítače).  
   
 > [!NOTE]
->  Správa verzí se provádí pouze na sestavení se silnými názvy.  
+> Správa verzí se provádí pouze v sestaveních se silnými názvy.  
   
- Modul runtime provádí několik kroků pro řešení požadavků sestavení na vazby:  
+ Modul runtime provede několik kroků pro vyřešení požadavku vazby sestavení:  
   
-1. Ověří původní odkaz na sestavení pro určení verze sestavení, které má být vázána.  
+1. Zkontroluje původní odkaz na sestavení a určí verzi sestavení, která se má svázat.  
   
-2. Kontroly všech příslušných konfiguračních souborů pro použití zásad správy verzí.  
+2. Kontroluje všechny použitelné konfigurační soubory pro použití zásad verze.  
   
-3. Určuje správné sestavení z původní odkaz na sestavení a všechny přesměrování zadaný v konfiguračních souborech a určuje verze, která by měla být vázána na volajícího sestavení.  
+3. Určuje správné sestavení z původního odkazu na sestavení a veškeré přesměrování zadané v konfiguračních souborech a určuje verzi, která má být svázána s volajícím sestavením.  
   
-4. Zkontroluje globální mezipaměti sestavení, základů kódu v konfiguračních souborech a pak kontroluje aplikace adresáře a podadresáře pomocí pravidel zjišťování je vysvětleno v [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+4. Kontroluje globální mezipaměť sestavení (GAC), základy kódu zadané v konfiguračních souborech a pak kontroluje adresář a podadresáře aplikace pomocí pravidel pro zjišťování, která jsou vysvětlena v tématu [jak modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
- Následující obrázek znázorňuje tyto kroky:  
+ Následující ilustrace znázorňuje tyto kroky:  
   
- ![Diagram znázorňující kroky v sestavení řešení žádostí vazby.](./media/assembly-versioning/resolve-assembly-binding-request.gif)
+ ![Diagram, který ukazuje kroky v řešení požadavků vazby sestavení](./media/assembly-versioning/resolve-assembly-binding-request.gif)
   
- Další informace o konfiguraci aplikací najdete v tématu [konfigurace aplikace](../../../docs/framework/configure-apps/index.md). Další informace o vazbě zásady, najdete v části [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Další informace o konfiguraci aplikací najdete v tématu [Konfigurace](../../../docs/framework/configure-apps/index.md)aplikací. Další informace o zásadách vázání najdete v tématu [jak modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 ## <a name="version-information"></a>Informace o verzi  
- Každé sestavení má dva různé způsoby vyjádření informace o verzi:  
+ Každé sestavení má dva různé způsoby, jak vyjádřit informace o verzi:  
   
-- Číslo verze sestavení, které spolu s informace o sestavení název a jazykové verze je součástí identity sestavení. Toto číslo modul runtime používá k vynucení zásad správy verzí a hrají klíčovou součástí v procesu překladu, který typ v době běhu.  
+- Číslo verze sestavení, které spolu s názvem sestavení a informacemi o jazykové verzi, je součástí identity sestavení. Toto číslo používá modul runtime k vyhodnocování zásad verze a hraje v procesu rozlišení typu za běhu klíčovou část.  
   
-- Informační verze, což je řetězec, který představuje další informace o verzi zahrnuty pouze k informačním účelům.  
+- Informační verze, což je řetězec, který představuje další informace o verzi obsažené pouze pro informativní účely.  
   
 ### <a name="assembly-version-number"></a>Číslo verze sestavení  
- Každé sestavení má číslo verze jako součást jeho identitu. V důsledku toho dvě sestavení, které se liší podle čísla verze jsou považovány za tímto modulem úplně odlišnému sestavení. Toto číslo verze je fyzicky reprezentována jako řetězec sestávající ze čtyř částí v následujícím formátu:  
+ Každé sestavení má v rámci své identity číslo verze. V takovém případě se dvě sestavení, která se liší číslem verze, považují za modul runtime za zcela odlišná sestavení. Toto číslo verze je fyzicky reprezentované jako řetězec o čtyřech částech v následujícím formátu:  
   
- \<*hlavní verze*>.\< *podverze*>.\< *číslo sestavení*>.\< *revize*>  
+ \<> *hlavní verze*. *vedlejší verze >.* \< číslo buildu >. \< \< *Revize*>  
   
- Verze 1.5.1254.0 například označuje jako hlavní verze 5 jako vedlejší verze 1, 1254 jako číslo sestavení a 0 jako číslo revize.  
+ Například verze 1.5.1254.0 označuje 1 jako hlavní verzi, 5 jako dílčí verzi, 1254 jako číslo sestavení a 0 jako číslo revize.  
   
- Číslo verze je uloženo v manifestu sestavení spolu s dalšími informacemi o identitě, včetně názvu sestavení a veřejný klíč, stejně jako informace o relacích a identit jiných sestavení spojených s aplikací.  
+ Číslo verze je uloženo v manifestu sestavení spolu s dalšími informacemi o identitě, včetně názvu sestavení a veřejného klíče, a také informace o relacích a identitách jiných sestavení připojených k aplikaci.  
   
- Pokud sestavení vytvořené, vývojové nástroje záznamy informace o závislostech pro každé sestavení, která je popsána v manifestu sestavení. Modul runtime používá tato čísla verze ve spojení s informace o konfiguraci nastavení správce nebo aplikace, vydavatel, načtení správná verze odkazovaného sestavení.  
+ Při sestavování sestavení Nástroj pro vývoj zaznamenává informace o závislostech pro každé sestavení, na které je odkazováno v manifestu sestavení. Modul runtime používá tato čísla verzí ve spojení s konfiguračními informacemi nastavenými správcem, aplikací nebo vydavatelem k načtení správné verze odkazovaného sestavení.  
   
- Modul runtime rozlišuje mezi pravidelné a silným názvem sestavení pro účely správy verzí. Kontrola verze dochází jenom u sestavení se silným názvem.  
+ Modul runtime rozlišuje běžné a silně pojmenované sestavení pro účely správy verzí. Kontrola verze se vyskytuje pouze u sestavení se silným názvem.  
   
- Informace o určení verze vazby zásad najdete v tématu [konfigurace aplikace](../../../docs/framework/configure-apps/index.md). Informace o tom, jak modul runtime používá k vyhledání konkrétního sestavení informace o verzi najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Informace o zadávání zásad vázání verzí najdete v tématu [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md). Informace o tom, jak modul runtime používá informace o verzi k nalezení konkrétního sestavení, naleznete v tématu [jak modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 ### <a name="assembly-informational-version"></a>Informační verze sestavení  
- Informační verze je řetězec, který připojí další informace o verzi sestavení; pouze k informačním účelům Tyto informace se používají v době běhu. Informační verze založený na textu odpovídá produktu marketingu dokumentace, balení nebo název produktu a nepoužívá modulem runtime. Informační verze může být například "Common Language Runtime verze 1.0" nebo "NET řízení SP 2". Na kartě verze dialogové okno Vlastnosti souboru v Microsoft Windows tyto informace se zobrazí v položce "Verze produktu".  
+ Informační verze je řetězec, který připojuje informace o dalších verzích k sestavení pouze pro informativní účely. Tyto informace se nepoužívají v době běhu. Textová informační verze odpovídá marketingové dokumentaci produktu, balení nebo názvu produktu a není používána modulem runtime. Informační verze může být například "modul common language runtime verze 1,0" nebo "NET Control SP 2". Na kartě verze v dialogovém okně Vlastnosti souboru v systému Microsoft Windows se tyto informace zobrazí v položce "verze produktu".  
   
 > [!NOTE]
->  I když můžete zadat libovolný text, upozornění se zobrazí při kompilaci, pokud řetězec není ve formátu používá číslo verze sestavení, nebo pokud je v tomto formátu, ale obsahuje zástupné znaky. Toto upozornění je neškodný.  
+> I když můžete zadat libovolný text, zobrazí se při kompilaci zpráva upozornění, pokud řetězec není ve formátu používaném číslem verze sestavení, nebo pokud je v tomto formátu, ale obsahuje zástupné znaky. Toto upozornění je neškodné.  
   
- Informační verze je reprezentována pomocí vlastního atributu <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Další informace o atributu informační verze najdete v tématu [nastavení atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md).  
+ Informační verze je reprezentovaná pomocí vlastního atributu <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Další informace o atributu informační verze naleznete v tématu [nastavení atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   
 ## <a name="see-also"></a>Viz také:
 

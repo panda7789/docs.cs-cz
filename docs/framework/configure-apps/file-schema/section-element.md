@@ -1,5 +1,5 @@
 ---
-title: <section>  – element
+title: <section> – element
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
@@ -10,25 +10,25 @@ helpviewer_keywords:
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 64556054df2689ff758f52c7e98556997a3e9d3d
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 94f7709f4bd273515d9fcdd727354ec579c46207
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301176"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927230"
 ---
-# <a name="section-element"></a>\<část > – element
+# <a name="section-element"></a>\<oddíl > element
 
-Obsahuje deklarace oddíl konfigurace.
+Obsahuje deklaraci konfiguračního oddílu.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<část >**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> oddílu**
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sectionGroup>** ](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<část >**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> oddílu**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,45 +39,45 @@ Obsahuje deklarace oddíl konfigurace.
          allowLocation="true|false" />
 ```
 
-## <a name="required-attributes"></a>Vyžadované atributy
+## <a name="required-attributes"></a>Požadované atributy
 
 |           | Popis |
 | --------- | ----------- |
 | **name**  | Určuje název konfiguračního oddílu. |
-| **type**  | Určuje název třídy konfigurace části obslužná rutina, která čte části z konfiguračního souboru. Hodnota typu má syntaxi "fully-qualified-section-handler-class-name jednoduchý název sestavení". Název sestavení jednoduché je kořenový název souboru bez *.dll* příponu souboru. |
+| **type**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
 
 ## <a name="optional-attributes"></a>Volitelné atributy
 
-Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systém ignoruje tyto atributy pro ostatní typy aplikací.
+Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systém ignoruje tyto atributy pro jiné typy aplikací.
 
 |                     | Popis |
 | ------------------- | ----------- |
-| **allowDefinition** | Určuje, které konfigurační soubor může být používáno v části. Použijte jednu z následujících hodnot:<br><br>**Všude**<br>Umožňuje oddílu, který má použít v jakékoli konfigurační soubor. Toto nastavení je výchozí.<br>**MachineOnly**<br>Umožňuje oddílu, který má použít pouze v konfiguračním souboru počítače (*Machine.config*).<br>**MachineToApplication**<br>Umožňuje oddílu, který má být použit v konfiguračním souboru počítače nebo konfiguračního souboru aplikace. |
-| **allowLocation**   | Určuje, jestli v části lze použít v rámci  **\<umístění >** elementu. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje použít v rámci sekce  **\<umístění >** elementu. Toto nastavení je výchozí.<br>**false**<br>Neumožňuje oddílu, který má použít v rámci  **\<umístění >** elementu. |
+| **allowDefinition** | Určuje, v jakém konfiguračním souboru se dá oddíl použít. Použijte jednu z následujících hodnot:<br><br>**Všude**<br>Umožňuje použití oddílu v libovolném konfiguračním souboru. Toto nastavení je výchozí.<br>**MachineOnly**<br>Umožňuje použít oddíl pouze v konfiguračním souboru počítače (*Machine. config*).<br>**MachineToApplication**<br>Umožňuje použít oddíl v konfiguračním souboru počítače nebo v konfiguračním souboru aplikace. |
+| **allowLocation**   | Určuje, zda lze oddíl použít v rámci  **\<umístění >** elementu. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje použití oddílu v rámci  **\<umístění >** elementu. Toto nastavení je výchozí.<br>**false**<br>Nepovoluje použití oddílu v  **\<umístění >** elementu. |
 
 ## <a name="parent-elements"></a>Nadřazené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
-| [ **\<sectionGroup>** Element](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
+| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [sectionGroup – element > element  **\<** ](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
 
 > [!NOTE]
-> A  **\<části >** element je podřízeným prvkem buď  **\<configSections >** nebo  **\<sectionGroup >** , ale ne obojí.
+> **\<**  **\<**  **Oddíl>elementjepodřízeným\<** prvkem objektu configSections > nebo sectionGroup >, ale ne obojího.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádný
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 
-Deklarování konfiguračního oddílu v podstatě definuje nový prvek pro konfigurační soubor. Nový element obsahuje nastavení, konfigurace části obslužné rutiny (tedy třídy, která implementuje <xref:System.Configuration.IConfigurationSectionHandler> rozhraní) čte. Atributy a podřízené prvky, které definujete oddílu závisí na obslužné rutiny oddílu, který použijete ke čtení nastavení.
+Deklarace konfiguračního oddílu v podstatě definuje nový prvek konfiguračního souboru. Nový prvek obsahuje nastavení, která obslužná rutina konfiguračního oddílu (to znamená třída, která implementuje <xref:System.Configuration.IConfigurationSectionHandler> rozhraní) čte. Atributy a podřízené prvky oddílu, který definujete, závisí na obslužné rutině oddílu, kterou použijete ke čtení nastavení.
 
-Deklarace obslužné rutiny konfiguračního oddílu v *Machine.config* soubor umožňuje používat konfiguračního oddílu v konfiguračním souboru libovolné aplikace na tomto počítači, není-li **allowDefinition**atribut neurčí jinak.
+Deklarace obslužné rutiny konfiguračního oddílu v souboru *Machine. config* umožňuje použít konfigurační oddíl v libovolném konfiguračním souboru aplikace v tomto počítači, pokud atribut **AllowDefinition** neurčuje jinak.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak definovat konfiguračního oddílu a určit nastavení pro daný oddíl:
+Následující příklad ukazuje, jak definovat konfigurační oddíl a definovat nastavení pro tuto část:
 
 ```xml
 <configuration>
@@ -94,8 +94,8 @@ Následující příklad ukazuje, jak definovat konfiguračního oddílu a urči
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

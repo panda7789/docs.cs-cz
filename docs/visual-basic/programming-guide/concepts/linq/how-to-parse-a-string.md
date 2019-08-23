@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: Analýze řetězce (Visual Basic)'
+title: 'Postupy: Analyzovat řetězec (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: 815e94b3b41c2c0cc1d18d598307ab292919bea4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b97ce93c1018ec48649ab8b259d5f1a07109b9fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942594"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956367"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýze řetězce (Visual Basic)
-Toto téma ukazuje, jak vytvořit stromu XML v C#.  
+# <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analyzovat řetězec (Visual Basic)
+Toto téma ukazuje, jak vytvořit strom XML v C#.  
   
 ## <a name="example"></a>Příklad  
- Řetězec v jazyce Visual Basic můžete analyzovat pomocí `XElement.Parse` metody. Je však efektivnější použijte literály XML, jak je znázorněno v následujícím kódu, protože není literály XML mají stejný snížení výkonu jako analýza kódu XML z řetězce.  
+ Můžete analyzovat řetězec v Visual Basic pomocí `XElement.Parse` metody. Je však efektivnější používat literály XML, jak je znázorněno v následujícím kódu, protože literály XML netrpí stejnými pokutami výkonu při analýze XML z řetězce.  
   
- Pomocí literálů XML můžete stačí zkopírovat a vložit soubor XML do programu Visual Basic.  
+ Pomocí literálů XML můžete zkopírovat a vložit XML do programu Visual Basic.  
   
 > [!NOTE]
->  Analýza textu nebo načítání dokumentu XML z textového souboru je méně efektivní než funkční konstrukce. Pokud se inicializace stromu XML z kódu, trvá méně času procesoru použít funkční konstrukce, než se analyzovat text.  
+> Analýza textu nebo načítání dokumentu XML z textového souboru je méně efektivní než konstrukce funkčnosti. Pokud inicializujete strom XML z kódu, zabere méně času procesoru na použití funkční konstrukce než k analýze textu.  
   
 ```vb  
 Dim contacts as XElement = _  

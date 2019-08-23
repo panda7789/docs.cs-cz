@@ -2,21 +2,21 @@
 title: <custom>
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
-ms.openlocfilehash: 18359e871feed17a11006d0b2998907faf25c158
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5cc522604fa7aca8ca6eae787520265b36fef6f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704190"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925954"
 ---
 # <a name="custom"></a>\<vlastní >
-Určuje nastavení pro službu překladače vlastní sdílené.  
+Určuje nastavení pro službu Custom peer resolver Service.  
   
 \<system.serviceModel>  
-\<vazby >  
+\<> vazeb  
 \<netPeerBinding>  
-\<Vytvoření vazby >  
-\<resolver>  
+\<> vazby  
+\<> překladače  
 \<vlastní >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,24 +36,24 @@ Určuje nastavení pro službu překladače vlastní sdílené.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`address`|Identifikátor URI, který určuje adresu partnerského uzlu, který je hostitelem služby překladače vlastní sdílené.|  
-|`resolverType`|Řetězec, který určuje typ překladače vlastní sdílené služby.|  
+|`address`|Identifikátor URI, který určuje adresu koncového bodu partnerského uzlu, který hostuje službu Custom peer resolver Service.|  
+|`resolverType`|Řetězec, který určuje typ služby Custom peer resolver Service.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu pro nakonfigurovaný s tímto elementem překladače vlastní partnerských uzlů. Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres, který slouží pro zprávy protokolu SOAP zpracovat rozpoznávání vlastní druhé strany.|  
+|[\<identity>](identity.md)|Určuje identitu pro vlastní překladače rovnocenných uzlů nakonfigurované s tímto elementem. Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.|  
+|[\<headers>](headers-element.md)|Kolekce záhlaví adresy používané pro zprávy SOAP, které jsou zpracovávány vlastním překladačem peer.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.|  
+|[\<resolver>](resolver.md)|Peer resolver, který se používá k překladu ID partnerské sítě na sadu adres rovnocenných uzlů, které představují několik uzlů, které se účastní sítě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek definuje základního nastavení pro vlastní sdílené překladač služby, včetně koncového bodu adresy partnerského uzlu hostování služby a nastavení konkrétní vazby. Další informace o vytvoření vlastní mechanismus rozpoznávání najdete v tématu [přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90)).  
+ Tento prvek definuje základní nastavení pro službu Custom peer resolver Service, včetně adresy koncového bodu partnerského zařízení, který hostuje službu, a všech specifických nastavení vazby. Další informace o vytvoření vlastního překladače najdete v tématu [Přidání vlastního překladače do aplikace PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90)).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -61,5 +61,5 @@ Určuje nastavení pro službu překladače vlastní sdílené.
 - <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>
 - <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>
-- [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
-- [Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Překladače partnerských uzlů](../../../wcf/feature-details/peer-resolvers.md)
+- [Přidání vlastního překladače do aplikace PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))

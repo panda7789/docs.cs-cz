@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <cryptoClasses> element
 - cryptoClasses element
 ms.assetid: 290d5f96-946d-4f02-babb-1d31ec0b8295
-ms.openlocfilehash: dbe46e0b36d247005f933c82ee83687886b283d1
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 87e64ecd79ebc54a669d33550790781c87b5917c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659656"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921135"
 ---
 # <a name="cryptoclasses-element"></a>\<cryptoClasses – element >
 Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v [ \<elementu nameEntry >](nameentry-element.md) .  
@@ -81,6 +81,6 @@ Obsahuje seznam kryptografických tříd, které mají mapování na popisný n�
 - <xref:System.Security.Cryptography>
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
 - [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)

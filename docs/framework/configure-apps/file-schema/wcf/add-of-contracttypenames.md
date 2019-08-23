@@ -2,18 +2,18 @@
 title: <add> z <contractTypeNames>
 ms.date: 03/30/2017
 ms.assetid: 03aff6be-5dfb-4a64-ada3-e36227cd43c7
-ms.openlocfilehash: 856298cb0639cf19b941f326b5b9a25aa6663088
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24f1478b99aef909ae93f87a70be257e9ba10d7a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701187"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926740"
 ---
 # <a name="add-of-contracttypenames"></a>\<add> of \<contractTypeNames>
-Konfigurace element, který určuje název kontraktu služby vyhledaly a kritéria obvykle používá při vyhledávání pro službu. Pokud je zadán více než jeden název smlouvy, jenom koncové body služby odpovídající všechny kontrakty odpovíte. Všimněte si, že ve Windows Communication Foundation (WCF), koncový bod podporuje pouze jeden kontrakt.  
+Prvek konfigurace, který určuje název kontraktu prohledávaných služeb a kritéria, která se obvykle používají při hledání služby. Pokud je zadán více než jeden název kontraktu, odpoví pouze koncové body služby, které odpovídají všem smlouvám. Všimněte si, že v Windows Communication Foundation (WCF) může koncový bod podporovat jenom jednu kontrakt.  
   
  \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +48,7 @@ Konfigurace element, který určuje název kontraktu služby vyhledaly a kritér
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec určující název typu kontraktu.|  
+|name|Řetězec, který určuje název typu kontraktu.|  
 |– obor názvů|Řetězec, který určuje obor názvů typu kontraktu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -58,7 +58,7 @@ Konfigurace element, který určuje název kontraktu služby vyhledaly a kritér
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<contractTypeNames>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Kolekce názvů typů kontraktu.|  
+|[\<contractTypeNames>](contracttypenames.md)|Kolekce názvů typů kontraktů.|  
   
 ## <a name="see-also"></a>Viz také:
 

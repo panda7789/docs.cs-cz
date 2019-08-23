@@ -9,22 +9,22 @@ helpviewer_keywords:
 - adding Custom Place to dialog box
 - CustomPlaces collection
 ms.assetid: 63f6469b-59cd-40f6-9e61-8b5831856780
-ms.openlocfilehash: 129ebed6d0a2b075020e635c8463536f97629d2f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 824c948fafd0a0995ad261389414d2d79918c8a1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624110"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916340"
 ---
 # <a name="how-to-add-a-custom-place-to-a-file-dialog-box"></a>Postupy: Přidání vlastního místa do dialogového okna souboru
-Výchozí hodnota otevřít a uložit dialogových oknech na [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] mají oblast na levé straně dialogového okna s názvem **Oblíbené odkazy**. Tato oblast se nazývá vlastní místa. <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> třídy umožňují přidat složky, které mají <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce.  
+Výchozí dialogová okna otevřít a uložit v [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] oblasti mají oblast na levé straně dialogového okna s názvem **Oblíbené odkazy**. Tato oblast se nazývá vlastní místa. Třídy <xref:System.Windows.Forms.OpenFileDialog> <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> a <xref:System.Windows.Forms.SaveFileDialog> umožňují přidat složky do kolekce.  
   
 > [!NOTE]
->  Aby se vlastní místo, kde se zobrazí v <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog>, <xref:System.Windows.Forms.FileDialog.AutoUpgradeEnabled%2A> musí být vlastnost nastavena na `true` (výchozí).  
+> Aby se vlastní <xref:System.Windows.Forms.OpenFileDialog> místo zobrazovalo v nebo <xref:System.Windows.Forms.SaveFileDialog>, <xref:System.Windows.Forms.FileDialog.AutoUpgradeEnabled%2A> musí být vlastnost nastavena na `true` (výchozí).  
   
-### <a name="to-add-a-custom-place-to-a-file-dialog-box"></a>K přidání vlastního prostoru do dialogového okna souboru  
+### <a name="to-add-a-custom-place-to-a-file-dialog-box"></a>Přidání vlastního místa do dialogového okna souboru  
   
-- Přidejte cestu známé složky identifikátor GUID, nebo <xref:System.Windows.Forms.FileDialogCustomPlace> objektu <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce dialogového okna.  
+- Přidejte cestu, identifikátor GUID známé složky nebo <xref:System.Windows.Forms.FileDialogCustomPlace> objekt <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> do kolekce dialogového okna.  
   
      Následující příklad kódu ukazuje, jak přidat cestu:  
   

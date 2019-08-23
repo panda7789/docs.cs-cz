@@ -1,25 +1,25 @@
 ---
-title: <customTrackingQuery> služby WCF
+title: <customTrackingQuery>služby WCF
 ms.date: 03/30/2017
 ms.assetid: 164446ae-8440-4b67-b217-6786cfae1e01
-ms.openlocfilehash: 0a5e7c034ce1ef12a8d7d5b1753e2e441e48e293
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b034727dc89b58794ec2834cb0ff39cd7e5f1dca
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673170"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919364"
 ---
-# <a name="customtrackingquery-of-wcf"></a>\<customTrackingQuery > služby WCF
+# <a name="customtrackingquery-of-wcf"></a>\<customTrackingQuery > WCF
 
-Představuje dotaz, který se používá ke sledování událostí, které definujete své kód aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru vlastní sledování záznamů.
+Představuje dotaz, který se používá ke sledování událostí, které definujete v aktivitách kódu. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru vlastní sledování záznamů.
 
-Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
 \<system.serviceModel>  
 \<sledování >  
 \<profiles>  
-\<trackingProfile>  
-\<pracovní postup >  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
 \<customTrackingQueries>  
 \<customTrackingQuery>  
   
@@ -65,5 +65,5 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

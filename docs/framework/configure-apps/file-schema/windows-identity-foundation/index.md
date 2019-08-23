@@ -3,15 +3,15 @@ title: Konfigurační schéma pro Windows Identity Foundation
 ms.date: 03/30/2017
 ms.assetid: 4d4f6d76-49a5-4bad-b345-097b2e2844e9
 author: BrucePerlerMS
-ms.openlocfilehash: 9c8009b4d95e5aa2c3d9bb8a8958040127a9e628
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fddff8428da7efad2823f068e89c6f621283183f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791666"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942687"
 ---
 # <a name="windows-identity-foundation-configuration-schema"></a>Konfigurační schéma pro Windows Identity Foundation
-Témata v této části poskytují informace o schématu konfigurace technologie Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci pro používání technologie WIF prostřednictvím vystavit rozhraní tříd. Tyto třídy jsou uvedené v následujících částech zpracovat odpovídající elementy ve schématu. Zobrazí se následující základní XML označit struktura vystavené schématu konfigurace WIF. Atributy jsou vynechány. Zvýrazněný komentáře označují hlavní komponenty schématu.  
+Témata v této části poskytují informace o schématu konfigurace Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci tak, aby používala WIF prostřednictvím tříd zveřejněných v rámci rozhraní. Tyto třídy jsou popsány v oddílech, které jsou považovány za relevantní prvky ve schématu. Následuje příklad základní struktury značek XML zveřejněné schématem konfigurace WIF. Atributy jsou vynechány. Zvýrazněné komentáře označují hlavní součásti schématu.  
   
 ```xml  
 <system.identityModel>  
@@ -107,6 +107,6 @@ Témata v této části poskytují informace o schématu konfigurace technologie
 ```  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [\<system.identityModel >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) poskytuje konfigurace pro povolení technologie WIF možnosti v aplikacích.  
+ System. IdentityModel > poskytuje konfiguraci pro povolení možností WIF v aplikacích. [ \<](system-identitymodel.md)  
   
- [\<system.identityModel.services >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) konfigurace poskytuje pro pasivní federaci pomocí technologie WIF. Konfiguruje modul federovaného ověřování (WSFAM) a ověřovací modul relace (SAM).
+ [System. IdentityModel. Services > poskytuje konfiguraci pro pasivní federaci pomocí WIF. \<](system-identitymodel-services.md) Konfiguruje modul SAM (Session Authentication Module) a modul federovaného ověřování (WSFAM).

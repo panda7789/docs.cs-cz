@@ -2,34 +2,34 @@
 title: 'Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#'
 ms.date: 03/30/2017
 ms.assetid: a0c73b33-5650-420c-b9dc-f49310c201ee
-ms.openlocfilehash: 24b48b4962ac207f0c6a50456797ff588a97082d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5f2c2f99a5efeb3463ecf5bf401a6cf654845bb2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743309"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911971"
 ---
-# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: Generování objektového modelu v jazyce Visual Basic nebo C\#
-V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model v programovacím jazyce se mapuje na relační databáze. Dva nástroje jsou k dispozici pro automatické generování jazyka Visual Basic nebo C# modelů z metadat existující databázi.  
+# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: Generování objektového modelu v Visual Basic nebo C\#
+V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástroji je objektový model ve vašem vlastním programovacím jazyce mapován na relační databázi. K dispozici jsou dva nástroje pro automatické generování Visual Basic C# nebo modelu z metadat existující databáze.  
   
-- Pokud používáte Visual Studio, můžete použít Návrháře relací objektů ke generování objektového modelu. O/R Designer poskytuje bohaté možnosti uživatelského rozhraní můžete generovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model. Další informace najdete v tématu [Linq to SQL nástroje v sadě Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).
+- Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů k vygenerování objektového modelu. Návrhář o/R poskytuje bohatě uživatelské rozhraní, které vám může pomáhat při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generování objektového modelu. Další informace najdete v tématu [technologie LINQ to SQL Tools v aplikaci Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).
   
-- Nástroj příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+- Nástroj příkazového řádku SQLMetal. Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
     > [!NOTE]
-    >  Pokud nemáte stávající databáze a vytvořit jeden z objektového modelu, můžete vytvořit objektový model s použitím kódu editor a <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Další informace najdete v tématu [jak: Dynamické vytvoření databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
+    > Pokud nemáte existující databázi a chcete ji vytvořit z objektového modelu, můžete vytvořit objektový model pomocí editoru kódu a <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Další informace najdete v tématu [jak: Dynamicky vytvořit databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
   
- Dokumentace pro Návrháře relací objektů poskytuje příklady toho, jak generovat jazyka Visual Basic nebo C# objektový model s použitím Návrháře relací objektů. Následující informace jsou uvedeny příklady toho, jak pomocí nástroje příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+ Dokumentace k Návrháři O/R poskytuje příklady generování Visual Basic nebo C# objektového modelu pomocí návrháře o/r. Následující informace obsahují příklady použití nástroje příkazového řádku SQLMetal. Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="example"></a>Příklad  
- Příkazového řádku SQLMetal je znázorněno v následujícím příkladu kódu jazyka Visual Basic vytvoří jako model založený na atributu objektu z ukázkové databáze Northwind. Uložené procedury a funkce jsou také generovány.  
+ Příkazový řádek SQLMetal, který je znázorněn v následujícím příkladu, vytvoří kód Visual Basic jako objektový model založený na atributech ukázkové databáze Northwind. Jsou vykresleny také uložené procedury a funkce.  
   
 ```  
 sqlmetal /code:northwind.vb /language:vb "c:\northwnd.mdf" /sprocs /functions  
 ```  
   
 ## <a name="example"></a>Příklad  
- Je znázorněno v následujícím příkladu příkazového řádku SQLMetal vytváří C# kód jako model založený na atributu objektu z ukázkové databáze Northwind. Uložené procedury a funkce jsou také generovány a názvy tabulek jsou automaticky pluralized.  
+ Příkazový řádek SQLMetal, který je znázorněn v následujícím příkladu C# , vytvoří kód jako objektový model založený na atributech ukázkové databáze Northwind. Jsou vykresleny také uložené procedury a funkce a názvy tabulek jsou automaticky v množném čísle.  
   
 ```  
 sqlmetal /code:northwind.cs /language:csharp "c:\northwnd.mdf" /sprocs /functions /pluralize  

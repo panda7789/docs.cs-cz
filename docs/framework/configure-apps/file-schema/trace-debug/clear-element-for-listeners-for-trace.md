@@ -1,5 +1,5 @@
 ---
-title: <clear> – Element pro <listeners> pro <trace>
+title: <clear>Element pro <listeners> pro<trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/clear
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - clear element for <listeners> for <trace>
 - <clear> element for <listeners> for <trace>
 ms.assetid: b44732a8-271f-4a06-ba9e-fe3298d6f192
-ms.openlocfilehash: 97b18f9d6baa618b0f535955b232e2119c758b11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9816ba0f8e4ddd4c38537eb4e014a4240ff20407
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701317"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927174"
 ---
-# <a name="clear-element-for-listeners-for-trace"></a>\<Vymazat > – Element pro \<naslouchacích procesů > pro \<trasování >
-Vymaže `Listeners` kolekce pro trasování.  
+# <a name="clear-element-for-listeners-for-trace"></a>\<Clear > element pro \<naslouchací procesy > \<pro > trasování
+`Listeners` Vymaže kolekci pro Trace.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<trasování >  
-\<naslouchací procesy >  
-\<clear>  
+\<> trasování  
+\<> naslouchací proces  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,22 +43,22 @@ Vymaže `Listeners` kolekce pro trasování.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`trace`|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.|  
-|`listeners`|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy. Posluchači přímý výstup trasování příslušný cíli.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`trace`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
+|`listeners`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<clear>` Element odebere všechny moduly pro naslouchání z `Listeners` kolekce pro trasování. Můžete použít `<clear>` prvek před použitím `<add>` element je potřeba mít jistotu, nejsou žádné aktivní naslouchací procesy v kolekci.  
+ Element odebere všechny naslouchací procesy `Listeners` z kolekce pro trasování. `<clear>` `<clear>` Element lze použít před `<add>` použitím prvku, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
   
- Můžete vymazat `Listeners` kolekce programově zavoláním <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> metodu <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> vlastnosti (`System.Diagnostics.Trace.Listeners.Clear()`).  
+ `Listeners` Kolekci můžete vymazat programově <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> voláním metody pro <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> vlastnost (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
- Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 > [!NOTE]
->  `<clear>` Odebere element <xref:System.Diagnostics.DefaultTraceListener> z `Listeners` kolekce, změna chování <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>, a <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> metody. Volání `Assert` nebo `Fail` metoda je normálně ve výsledku zobrazení okna se zprávou. Však se nezobrazí okno se zprávou, pokud <xref:System.Diagnostics.DefaultTraceListener> se nepoužívá `Listeners` kolekce.  
+> `<clear>` Prvek odebere<xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> z kolekce`Listeners`a <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>změní chování metod<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>,,a. <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> <xref:System.Diagnostics.DefaultTraceListener> Volání metody `Fail` nebo obvykle vede k zobrazení okna se zprávou. `Assert` Okno se zprávou se ale nezobrazí, pokud <xref:System.Diagnostics.DefaultTraceListener> není `Listeners` v kolekci.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<clear>` prvek před použitím `<add>` prvek a přidat naslouchací proces `console` k `Listeners` kolekce pro trasovacího.  
+ Následující příklad ukazuje `<clear>` , jak použít element před `<add>` použitím elementu pro `Listeners` přidání naslouchacího procesu `console` do kolekce pro trasování.  
   
 ```xml  
 <configuration>  
@@ -83,6 +83,6 @@ Vymaže `Listeners` kolekce pro trasování.
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>
 - <xref:System.Diagnostics.TraceSource>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [\<remove>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)
-- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Trasování a ladění schématu nastavení](index.md)
+- [\<remove>](remove-element-for-listeners-for-trace.md)
+- [Moduly naslouchání trasování](../../../debug-trace-profile/trace-listeners.md)

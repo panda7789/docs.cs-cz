@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 8636050b2618d1b2c2da0c08c756b0ed221c7f6f
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 890269857aaa00ce62195ccb2f4cb184b363b61e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300758"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921020"
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Vlastní element pro NameValueSectionHandler a DictionarySectionHandler
 
-Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy.
+Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> třídy <xref:System.Configuration.DictionarySectionHandler> a.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)\
+[ **\<> Konfigurace**](configuration-element.md)\
 &nbsp;&nbsp; **\<sectionName>**
 
 ## <a name="attributes"></a>Atributy
@@ -30,32 +30,32 @@ Definuje nastavení pro vlastní konfigurační oddíly funkce, které používa
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [ **\<> Konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<Přidat >** ](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>  | Přidá nastavení vlastní aplikace. |
-| [ **\<Odebrat >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> | Odstraní dříve definované nastavení. |
-| [ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> | Vymaže všechny dříve definované nastavení v oddílu. |
+| Přidání > pro a [ **\<** ](add-element-for-custom-2.md) <xref:System.Configuration.NameValueSectionHandler><xref:System.Configuration.DictionarySectionHandler>  | Přidá vlastní nastavení aplikace. |
+| odebrat > pro a [ **\<** ](remove-element-for-custom-2.md) <xref:System.Configuration.NameValueSectionHandler><xref:System.Configuration.DictionarySectionHandler> | Odebere dříve definované nastavení. |
+| Vymazat > pro a [ **\<** ](clear-element-for-custom-2.md) <xref:System.Configuration.NameValueSectionHandler><xref:System.Configuration.DictionarySectionHandler> | Vymaže všechna dříve definovaná nastavení v oddílu. |
 
 ## <a name="remarks"></a>Poznámky
 
 **\<SectionName>** prvek je prvek vlastní, určené **\<části>** značku **\<configSections>** elementu.
 
-V následující tabulce jsou uvedeny typ objektu ConfigurationSettings.GetConfig metoda vrátí pro každou obslužné rutiny konfiguračního oddílu:
+V následující tabulce je uveden typ objektu, který metoda ConfigurationSettings. GetConfig vrátí pro každou obslužnou rutinu konfiguračního oddílu:
 
-| Obslužné rutiny konfiguračního oddílu                        | Návratový typ                                                |
+| Obslužná rutina konfiguračního oddílu                        | Návratový typ                                                |
 | ---------------------------------------------------- | ---------------------------------------------------------- |
 | <xref:System.Configuration.NameValueSectionHandler>  | <xref:System.Collections.Specialized.NameValueCollection>  |
 | <xref:System.Configuration.DictionarySectionHandler> | <xref:System.Collections.IDictionary>                      |
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> a <xref:System.Configuration.NameValueSectionHandler> třídy.
+Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> třídy a. <xref:System.Configuration.NameValueSectionHandler>
 
-První vlastní prvek je  **\<dictionarySample >** , který obsahuje nastavení číst <xref:System.Configuration.DictionarySectionHandler> třídy v `System.dll` sestavení. Vlastní druhý prvek je  **\<mySection >** , který obsahuje nastavení číst <xref:System.Configuration.NameValueSectionHandler> třídy v `System.dll` sestavení.
+Prvním vlastním prvkem je  **\<dictionarySample >** , který obsahuje <xref:System.Configuration.DictionarySectionHandler> nastavení čtená třídou v `System.dll` sestavení. Druhý vlastní prvek je  **\<mySection >** , který obsahuje <xref:System.Configuration.NameValueSectionHandler> nastavení čtená třídou v `System.dll` sestavení.
 
 ```xml
 <configuration>
@@ -78,8 +78,8 @@ První vlastní prvek je  **\<dictionarySample >** , který obsahuje nastavení 
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

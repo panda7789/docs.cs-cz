@@ -1,5 +1,5 @@
 ---
-title: <clear> – Element pro <listeners> pro <source>
+title: <clear>Element pro <listeners> pro<source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 63d3bb272fcdbee2c59b0569c85f8183cdac8666
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 768d51a74b4c31d1250d2f5d6517f760f886e0a0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673782"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920560"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<Vymazat > – Element pro \<naslouchacích procesů > pro \<zdroje >
-Vymaže `Listeners` kolekci pro zdroj trasování.  
+# <a name="clear-element-for-listeners-for-source"></a>\<Clear > element pro \<naslouchací procesy > \<pro zdroj >
+`Listeners` Vymaže kolekci zdroje trasování.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<zdroje >  
-\<zdroj >  
-\<naslouchací procesy >  
-\<clear>  
+\<> zdrojů  
+\<> zdroje  
+\<> naslouchací proces  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,19 +44,19 @@ Vymaže `Listeners` kolekci pro zdroj trasování.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`sources`|Obsahuje zdrojů trasování, které se zahájí trasovací zprávy.|  
-|`source`|Určuje zdroj trasování, který iniciuje trasovací zprávy.|  
-|`listeners`|Určuje naslouchací procesy, které shromažďování, ukládání a směrovat zprávy.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`sources`|Obsahuje zdroje trasování, které spouštějí trasovací zprávy.|  
+|`source`|Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
+|`listeners`|Určuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<clear>` Element odebere všechny moduly pro naslouchání z `Listeners` kolekce pro zdroj trasování, včetně <xref:System.Diagnostics.DefaultTraceListener>. Můžete použít `<clear>` prvek před použitím `<add>` element je potřeba mít jistotu, nejsou žádné aktivní naslouchací procesy v kolekci.  
+ Prvek odebere všechny naslouchací procesy `Listeners` z kolekce pro zdroj <xref:System.Diagnostics.DefaultTraceListener>trasování, včetně. `<clear>` `<clear>` Element lze použít před `<add>` použitím prvku, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<clear>` prvek před použitím `<add>` prvky pro přidání posluchače `console` a `textListener` k `Listeners` kolekce pro zdroj trasování `TraceSourceApp`.  
+ Následující příklad `<clear>` ukazuje, jak použít element před `<add>` použitím prvků pro přidání posluchačů `console` a `textListener` do `Listeners` kolekce pro zdroj `TraceSourceApp`trasování.  
   
 ```xml  
 <configuration>  
@@ -88,5 +88,5 @@ Vymaže `Listeners` kolekci pro zdroj trasování.
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Trasování a ladění schématu nastavení](index.md)
+- [Moduly naslouchání trasování](../../../debug-trace-profile/trace-listeners.md)

@@ -5,63 +5,63 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: d343f7be3e26575ee9a1e9ccae9f17314db10ac5
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: fc338b176ee0b20800b83febe05ed2fe695cecb0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882103"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949818"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET Framework
-Zprostředkovatel dat .NET Framework se používá pro připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. Zprostředkovatelé dat .NET framework jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
+Zprostředkovatel dat .NET Framework slouží k připojení k databázi, provádění příkazů a načítání výsledků. Tyto výsledky jsou buď zpracovávány přímo, umístěny v <xref:System.Data.DataSet> a, aby je bylo možné zpřístupnit uživateli podle potřeby, v kombinaci s daty z více zdrojů nebo vzdáleně vydanými mezi vrstvami. Poskytovatelé dat .NET Framework jsou odlehčení a vytvářejí minimální vrstvu mezi zdrojem dat a kódem a zvyšují výkon, aniž by došlo ke ztrátě funkčnosti.  
   
- V následující tabulce jsou uvedeny zprostředkovatele dat, které jsou zahrnuty v rozhraní .NET Framework.  
+ V následující tabulce jsou uvedeni poskytovatelé dat, kteří jsou součástí .NET Framework.  
   
-|Zprostředkovatel dat .NET framework|Popis|  
+|Poskytovatel dat .NET Framework|Popis|  
 |-------------------------------------------------------------------------------|-----------------|  
-|Zprostředkovatel dat .NET framework pro SQL Server|Poskytuje přístup k datům pro Microsoft SQL Server. Používá <xref:System.Data.SqlClient> oboru názvů.|  
-|Zprostředkovatel dat .NET framework pro OLE DB|Pro zdroje dat vystavena s použitím technologie OLE DB. Používá <xref:System.Data.OleDb> oboru názvů.|  
-|Zprostředkovatel dat .NET framework pro ODBC|Pro zdroje dat vystavena s použitím ODBC. Používá <xref:System.Data.Odbc> oboru názvů.|  
-|Zprostředkovatel dat .NET framework pro Oracle|Pro Oracle datového zdroje. Zprostředkovatel dat .NET Framework pro Oracle podporuje software klienta Oracle version 8.1.7 a novější a používá <xref:System.Data.OracleClient> oboru názvů.|  
-|Zprostředkovatel EntityClient|Poskytuje přístup k datům pro Entity Data Model (EDM) aplikace. Používá <xref:System.Data.EntityClient> oboru názvů.|  
-|Zprostředkovatel dat .NET framework pro SQL Server Compact 4.0.|Poskytuje přístup k datům pro Microsoft SQL Server Compact 4.0. Používá [System.Data.SqlServerCe](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) oboru názvů.|  
+|.NET Framework Zprostředkovatel dat SQL Server|Poskytuje přístup k datům pro Microsoft SQL Server. <xref:System.Data.SqlClient> Používá obor názvů.|  
+|.NET Framework Zprostředkovatel dat OLE DB|Pro zdroje dat, které jsou vystaveny pomocí OLE DB. <xref:System.Data.OleDb> Používá obor názvů.|  
+|.NET Framework Zprostředkovatel dat pro rozhraní ODBC|Pro zdroje dat, které jsou vystaveny pomocí rozhraní ODBC. <xref:System.Data.Odbc> Používá obor názvů.|  
+|Zprostředkovatel dat .NET Framework pro Oracle|Pro zdroje dat Oracle. Zprostředkovatel dat .NET Framework pro Oracle podporuje klientský software Oracle verze 8.1.7 a novější a používá <xref:System.Data.OracleClient> obor názvů.|  
+|Zprostředkovatel EntityClient|Poskytuje přístup k datům pro aplikace model EDM (Entity Data Model) (EDM). <xref:System.Data.EntityClient> Používá obor názvů.|  
+|.NET Framework Zprostředkovatel dat pro SQL Server Compact 4,0.|Poskytuje přístup k datům pro Microsoft SQL Server Compact 4,0. Používá obor názvů [System. data. SqlServerCe](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) .|  
   
-## <a name="core-objects-of-net-framework-data-providers"></a>Základní objekty zprostředkovatele dat .NET Framework  
- Následující tabulka uvádí čtyři základní objekty, které společně tvoří zprostředkovatele dat .NET Framework.  
-  
-|Objekt|Popis|  
-|------------|-----------------|  
-|`Connection`|Naváže připojení ke konkrétnímu zdroji dat. Základní třída pro všechny `Connection` objekty je <xref:System.Data.Common.DbConnection> třídy.|  
-|`Command`|Provede příkaz proti datovému zdroji. Zpřístupňuje `Parameters` a můžete spustit v oboru `Transaction` z `Connection`. Základní třída pro všechny `Command` objekty je <xref:System.Data.Common.DbCommand> třídy.|  
-|`DataReader`|Ze zdroje dat čte pouze vpřed, jen pro čtení datový proud s daty. Základní třída pro všechny `DataReader` objekty je <xref:System.Data.Common.DbDataReader> třídy.|  
-|`DataAdapter`|Naplní `DataSet` a překládá se aktualizace se zdrojem dat. Základní třída pro všechny `DataAdapter` objekty je <xref:System.Data.Common.DbDataAdapter> třídy.|  
-  
- Kromě základních tříd uvedených v tabulce výše v tomto dokumentu zprostředkovatele dat .NET Framework obsahuje také tříd uvedených v následující tabulce.  
+## <a name="core-objects-of-net-framework-data-providers"></a>Základní objekty zprostředkovatelů dat .NET Framework  
+ Následující tabulka popisuje čtyři základní objekty, které tvoří poskytovatele dat .NET Framework.  
   
 |Objekt|Popis|  
 |------------|-----------------|  
-|`Transaction`|Příkazy v transakcích ve zdroji dat využívá. Základní třída pro všechny `Transaction` objekty je <xref:System.Data.Common.DbTransaction> třídy. ADO.NET také poskytuje podporu pro transakce pomocí třídy v <xref:System.Transactions> oboru názvů.|  
-|`CommandBuilder`|Pomocný objekt, který automaticky generuje příkaz Vlastnosti `DataAdapter` nebo informace o parametrech z uložené procedury je odvozen a naplní `Parameters` kolekce `Command` objektu. Základní třída pro všechny `CommandBuilder` objekty je <xref:System.Data.Common.DbCommandBuilder> třídy.|  
-|`ConnectionStringBuilder`|Pomocný objekt, který poskytuje jednoduchý způsob, jak vytvářet a spravovat obsah připojovací řetězec používaný `Connection` objekty. Základní třída pro všechny `ConnectionStringBuilder` objekty je <xref:System.Data.Common.DbConnectionStringBuilder> třídy.|  
-|`Parameter`|Definuje vstupní, výstupní a návratovou hodnotu parametrů pro příkazy a uložené procedury. Základní třída pro všechny `Parameter` objekty je <xref:System.Data.Common.DbParameter> třídy.|  
-|`Exception`|Vrátí, když dojde k chybě ve zdroji dat. Zprostředkovatelé dat .NET Framework pro klienta došlo k chybě, vyvolat výjimky na rozhraní .NET Framework. Základní třída pro všechny `Exception` objekty je <xref:System.Data.Common.DbException> třídy.|  
-|`Error`|Poskytuje informace z upozornění a chyby vrácené zdroje dat.|  
-|`ClientPermission`|K dispozici pro rozhraní .NET Framework data provider atributy zabezpečení přístupu kódu. Základní třída pro všechny `ClientPermission` objekty je <xref:System.Data.Common.DBDataPermission> třídy.|  
+|`Connection`|Naváže připojení ke konkrétnímu zdroji dat. Základní třída pro všechny `Connection` objekty <xref:System.Data.Common.DbConnection> je třída.|  
+|`Command`|Spustí příkaz proti zdroji dat. Zpřístupňuje `Parameters` a může provést v oboru `Transaction` `Connection`a. Základní třída pro všechny `Command` objekty <xref:System.Data.Common.DbCommand> je třída.|  
+|`DataReader`|Přečte datový proud dat jen pro čtení z datového zdroje, který je jen pro čtení. Základní třída pro všechny `DataReader` objekty <xref:System.Data.Common.DbDataReader> je třída.|  
+|`DataAdapter`|Naplní `DataSet` a vyřeší aktualizace se zdrojem dat. Základní třída pro všechny `DataAdapter` objekty <xref:System.Data.Common.DbDataAdapter> je třída.|  
   
-## <a name="net-framework-data-provider-for-sql-server-sqlclient"></a>Zprostředkovatel dat .NET framework pro SQL Server (SqlClient)  
- Zprostředkovatele dat .NET Framework pro SQL Server (SqlClient) používá vlastní protokol pro komunikaci se serverem SQL. Je nenáročná a provádí dobrých výsledků, protože je optimalizována pro přístup k systému SQL Server přímo bez přidání vrstvu pro OLE DB nebo připojení ODBC (Open Database). Na následujícím obrázku se liší od zprostředkovatele dat .NET Framework pro SQL Server pomocí zprostředkovatele dat .NET Framework pro OLE DB. Komunikuje se ke zdroji dat OLE DB pomocí součásti služby technologie OLE DB, která poskytuje sdružování připojení a transakce služby a zprostředkovatele OLE DB pro zdroj dat zprostředkovatele dat .NET Framework pro OLE DB.  
+ Kromě základních tříd uvedených v tabulce výše v tomto dokumentu obsahuje poskytovatel .NET Framework dat také třídy uvedené v následující tabulce.  
+  
+|Objekt|Popis|  
+|------------|-----------------|  
+|`Transaction`|Zařadí příkazy v transakcích ve zdroji dat. Základní třída pro všechny `Transaction` objekty <xref:System.Data.Common.DbTransaction> je třída. ADO.NET také poskytuje podporu pro transakce pomocí tříd v <xref:System.Transactions> oboru názvů.|  
+|`CommandBuilder`|Pomocný objekt, který automaticky generuje vlastnosti `DataAdapter` příkazu nebo odvozuje informace o parametrech z uložené procedury a naplní `Parameters` kolekci `Command` objektu. Základní třída pro všechny `CommandBuilder` objekty <xref:System.Data.Common.DbCommandBuilder> je třída.|  
+|`ConnectionStringBuilder`|Pomocný objekt, který poskytuje jednoduchý způsob, jak vytvořit a spravovat obsah připojovacích řetězců používaných `Connection` objekty. Základní třída pro všechny `ConnectionStringBuilder` objekty <xref:System.Data.Common.DbConnectionStringBuilder> je třída.|  
+|`Parameter`|Definuje vstupní, výstupní a návratové parametry hodnot pro příkazy a uložené procedury. Základní třída pro všechny `Parameter` objekty <xref:System.Data.Common.DbParameter> je třída.|  
+|`Exception`|Vrátí se, když dojde k chybě ve zdroji dat. Aby došlo k chybě v klientovi, .NET Framework Zprostředkovatelé dat vyvolají výjimku .NET Framework. Základní třída pro všechny `Exception` objekty <xref:System.Data.Common.DbException> je třída.|  
+|`Error`|Zpřístupňuje informace z upozornění nebo chyby vrácené zdrojem dat.|  
+|`ClientPermission`|Zadáno pro .NET Framework atributů zabezpečení přístupu kódu poskytovatele dat. Základní třída pro všechny `ClientPermission` objekty <xref:System.Data.Common.DBDataPermission> je třída.|  
+  
+## <a name="net-framework-data-provider-for-sql-server-sqlclient"></a>.NET Framework Zprostředkovatel dat pro SQL Server (SqlClient)  
+ .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient) používá vlastní protokol ke komunikaci s SQL Server. Je odlehčená a funguje dobře, protože je optimalizovaná pro přístup k SQL Server přímo bez přidání vrstvy OLE DB nebo rozhraní ODBC (Open Database Connectivity). Následující obrázek kontrastuje .NET Framework Zprostředkovatel dat SQL Server s .NET Framework Zprostředkovatel dat pro OLE DB. Zprostředkovatel dat .NET Framework pro OLE DB komunikuje s OLE DB zdrojem dat prostřednictvím součásti OLE DB služby, která poskytuje sdružování připojení a transakční služby a poskytovatele OLE DB pro zdroj dat.  
   
 > [!NOTE]
->  Zprostředkovatel dat .NET Framework pro ODBC má podobnou architekturu pro zprostředkovatele dat .NET Framework pro OLE DB; například volání do jako součást služby ODBC.  
+> .NET Framework Zprostředkovatel dat pro rozhraní ODBC má podobnou architekturu .NET Framework Zprostředkovatel dat pro OLE DB. například volá součást služby ODBC.  
   
- ![Zprostředkovatelé dat](../../../../docs/framework/data/adonet/media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
-Porovnání zprostředkovatele dat .NET Framework pro SQL Server a zprostředkovatele dat .NET Framework pro OLE DB  
+ ![Poskytovatelé dat](../../../../docs/framework/data/adonet/media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
+Porovnání Zprostředkovatel dat .NET Framework pro SQL Server a .NET Framework Zprostředkovatel dat pro OLE DB  
   
- .NET Framework Data Provider pro SQL Server třídy se nacházejí v <xref:System.Data.SqlClient> oboru názvů.  
+ Zprostředkovatel dat .NET Framework pro třídy SQL Server jsou umístěny v <xref:System.Data.SqlClient> oboru názvů.  
   
- Zprostředkovatel dat .NET Framework pro SQL Server podporuje místní a distribuované transakce. Pro distribuované transakce, zprostředkovatele dat .NET Framework pro SQL Server, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti o transakci ze Windows součásti služby nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ Zprostředkovatel dat .NET Framework pro SQL Server podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro SQL Server ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- Následující příklad kódu ukazuje, jak zahrnout `System.Data.SqlClient` oboru názvů ve svých aplikacích.  
+ Následující příklad kódu ukazuje, jak zahrnout `System.Data.SqlClient` obor názvů do vašich aplikací.  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -71,25 +71,25 @@ Imports System.Data.SqlClient
 using System.Data.SqlClient;  
 ```  
   
-## <a name="net-framework-data-provider-for-ole-db"></a>Zprostředkovatel dat .NET framework pro OLE DB  
- Zprostředkovatele dat .NET Framework pro OLE DB (OleDb) využívá nativní OLE DB pomocí zprostředkovatele komunikace s objekty COM k zajištění přístupu k datům. Zprostředkovatel dat .NET Framework pro OLE DB podporuje místní a distribuované transakce. Pro distribuované transakce zprostředkovatele dat .NET Framework pro OLE DB, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti o transakci ze Windows součásti služby. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+## <a name="net-framework-data-provider-for-ole-db"></a>.NET Framework Zprostředkovatel dat OLE DB  
+ .NET Framework Zprostředkovatel dat pro OLE DB (OleDb) používá nativní OLE DB prostřednictvím zprostředkovatele komunikace s objekty COM k povolení přístupu k datům. Zprostředkovatel dat .NET Framework pro OLE DB podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro OLE DB ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows Component Services. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- V následující tabulce jsou uvedeny zprostředkovatelů, které byly testovány pomocí ADO.NET.  
+ Následující tabulka uvádí poskytovatele, kteří byli otestováni pomocí ADO.NET.  
   
-|Ovladač|Poskytovatel|  
+|Faktorů|Poskytovatel|  
 |------------|--------------|  
-|SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro SQL Server|  
-|MSDAORA|Zprostředkovatel Microsoft OLE DB pro Oracle|  
-|Microsoft.Jet.OLEDB.4.0|Zprostředkovatel OLE DB pro Microsoft Jet|  
+|ZPROSTŘEDKOVATEL|Zprostředkovatel Microsoft OLE DB pro SQL Server|  
+|MADAORA|Microsoft OLE DB Provider pro Oracle|  
+|Microsoft.Jet.OLEDB.4.0|Poskytovatel OLE DB pro Microsoft Jet|  
   
 > [!NOTE]
->  Nedoporučujeme používat databázi aplikace Access (Jet) jako zdroj dat pro vícevláknové aplikace, jako jsou třeba aplikace ASP.NET. Pokud Jet je nutné použít jako zdroj dat pro aplikaci ASP.NET, uvědomte si, že aplikace ASP.NET připojení k databázi aplikace Access můžou mít problémy s připojením.  
+> Použití databáze Accessu jako zdroje dat pro vícevláknové aplikace, jako jsou například aplikace ASP.NET, se nedoporučuje. Pokud je nutné jako zdroj dat pro aplikaci ASP.NET použít jet, je třeba si uvědomit, že aplikace ASP.NET, které se připojují k databázi Access, můžou narazit na problémy s připojením.  
   
- Zprostředkovatel dat .NET Framework pro OLE DB nepodporuje rozhraní OLE DB verze 2.5. Zprostředkovatelé technologie OLE DB, která vyžadují podporu pro rozhraní OLE DB 2.5 nebude fungovat správně s zprostředkovatele dat .NET Framework pro OLE DB. To zahrnuje zprostředkovatel Microsoft OLE DB pro Exchange a zprostředkovatele Microsoft OLE DB pro publikování na Internetu.  
+ Zprostředkovatel dat .NET Framework pro OLE DB nepodporuje rozhraní OLE DB verze 2,5. Poskytovatelé OLE DB, kteří vyžadují podporu rozhraní OLE DB 2,5, nebudou správně fungovat s .NET Framework Zprostředkovatel dat pro OLE DB. To zahrnuje poskytovatele Microsoft OLE DB pro Exchange a poskytovatele Microsoft OLE DB pro publikování na internetu.  
   
- Zprostředkovatel dat .NET Framework pro OLE DB nefunguje s zprostředkovatele OLE DB pro rozhraní ODBC (MSDASQL). Chcete-li přístup ke zdroji dat rozhraní ODBC použitím technologie ADO.NET, použijte zprostředkovatele dat .NET Framework pro ODBC.  
+ .NET Framework Zprostředkovatel dat pro OLE DB nepracuje s poskytovatelem OLE DB pro rozhraní ODBC (MSDASQL). Pro přístup ke zdroji dat ODBC pomocí ADO.NET použijte Zprostředkovatel dat .NET Framework pro ODBC.  
   
- Zprostředkovatel dat .NET framework pro OLE DB třídy se nacházejí v <xref:System.Data.OleDb> oboru názvů. Následující příklad kódu ukazuje, jak zahrnout `System.Data.OleDb` oboru názvů ve svých aplikacích.  
+ Zprostředkovatel dat .NET Framework pro třídy OLE DB jsou umístěny v <xref:System.Data.OleDb> oboru názvů. Následující příklad kódu ukazuje, jak zahrnout `System.Data.OleDb` obor názvů do vašich aplikací.  
   
 ```vb  
 Imports System.Data.OleDb  
@@ -99,20 +99,20 @@ Imports System.Data.OleDb
 using System.Data.OleDb;  
 ```  
   
-## <a name="net-framework-data-provider-for-odbc"></a>Zprostředkovatel dat .NET framework pro ODBC  
- Zprostředkovatele dat .NET Framework pro ODBC (Odbc) využívá nativní správce ovladačů ODBC (DM) k zajištění přístupu k datům. Zprostředkovatel dat rozhraní ODBC podporuje místní a distribuované transakce. Pro distribuované transakce poskytovatel dat rozhraní ODBC, ve výchozím nastavení, automaticky využívá v transakci a získá podrobnosti o transakci ze Windows součásti služby. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+## <a name="net-framework-data-provider-for-odbc"></a>.NET Framework Zprostředkovatel dat pro rozhraní ODBC  
+ .NET Framework Zprostředkovatel dat pro rozhraní ODBC (ODBC) používá nativního správce ovladačů ODBC (DM) k povolení přístupu k datům. Zprostředkovatel dat ODBC podporuje místní i distribuované transakce. U distribuovaných transakcí poskytovatel dat ODBC ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- V následující tabulce jsou uvedeny ovladače rozhraní ODBC testováním s využitím ADO.NET.  
+ V následující tabulce jsou uvedeny ovladače rozhraní ODBC testované pomocí ADO.NET.  
   
-|Ovladač|  
+|Faktorů|  
 |------------|  
 |SQL Server|  
-|Ovladač Microsoft ODBC pro Oracle|  
-|Ovladače Microsoft Access (*.mdb)|  
+|Microsoft ODBC pro Oracle|  
+|Ovladač Microsoft Access (*. mdb)|  
   
- Zprostředkovatel dat .NET framework pro ODBC – třídy se nacházejí v <xref:System.Data.Odbc> oboru názvů.  
+ .NET Framework Zprostředkovatel dat pro třídy rozhraní ODBC jsou umístěny v <xref:System.Data.Odbc> oboru názvů.  
   
- Následující příklad kódu ukazuje, jak zahrnout `System.Data.Odbc` oboru názvů ve svých aplikacích.  
+ Následující příklad kódu ukazuje, jak zahrnout `System.Data.Odbc` obor názvů do vašich aplikací.  
   
 ```vb  
 Imports System.Data.Odbc  
@@ -123,16 +123,16 @@ using System.Data.Odbc;
 ```  
   
 > [!NOTE]
->  Zprostředkovatel dat .NET Framework pro ODBC vyžaduje součásti MDAC 2.6 nebo novější, a je doporučena MDAC 2.8 SP1. MDAC 2.8 SP1 si můžete stáhnout [středisko pro vývojáře úložiště a přístup k datům](https://go.microsoft.com/fwlink/?linkid=4173).  
+> Zprostředkovatel dat .NET Framework pro ODBC vyžaduje MDAC 2,6 nebo novější verzi a doporučuje se MDAC 2,8 SP1. MDAC 2,8 SP1 si můžete stáhnout z [centra pro vývojáře pro přístup k datům a úložiště](https://go.microsoft.com/fwlink/?linkid=4173).  
   
-## <a name="net-framework-data-provider-for-oracle"></a>Zprostředkovatel dat .NET framework pro Oracle  
- Zprostředkovatel dat .NET Framework pro Oracle (OracleClient) umožňuje přístup k datům pro Oracle zdrojům dat prostřednictvím připojení klientský software Oracle. Zprostředkovatel dat podporuje verzi klientského softwaru Oracle 8.1.7 nebo vyšší verze. Zprostředkovatel dat podporuje místní a distribuované transakce. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+## <a name="net-framework-data-provider-for-oracle"></a>Zprostředkovatel dat .NET Framework pro Oracle  
+ Zprostředkovatel dat .NET Framework pro Oracle (OracleClient) umožňuje přístup k datům do zdrojů dat Oracle prostřednictvím softwaru pro připojení klienta Oracle. Zprostředkovatel dat podporuje verzi klientského softwaru Oracle 8.1.7 nebo novější. Zprostředkovatel dat podporuje místní i distribuované transakce. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
   
- Zprostředkovatel dat .NET Framework pro Oracle vyžaduje klientský software Oracle (verze 8.1.7 nebo vyšší verze) v systému, před připojením ke zdroji dat Oracle.  
+ .NET Framework Zprostředkovatel dat pro Oracle vyžaduje před připojením ke zdroji dat Oracle klientský software Oracle (verze 8.1.7 nebo novější) v systému.  
   
- Zprostředkovatel dat .NET framework pro Oracle třídy se nacházejí v <xref:System.Data.OracleClient> obor názvů a jsou obsaženy v `System.Data.OracleClient.dll` sestavení. Je třeba odkazovat i `System.Data.dll` a `System.Data.OracleClient.dll` Pokud kompilujete aplikace, která používá poskytovatele dat.  
+ .NET Framework Zprostředkovatel dat pro třídy Oracle jsou umístěny v <xref:System.Data.OracleClient> oboru názvů a jsou obsaženy `System.Data.OracleClient.dll` v sestavení. Při kompilaci aplikace, která `System.Data.dll` používá poskytovatele dat, je nutné, aby odkazovaly na a. `System.Data.OracleClient.dll`  
   
- Následující příklad kódu ukazuje, jak zahrnout `System.Data.OracleClient` oboru názvů ve svých aplikacích.  
+ Následující příklad kódu ukazuje, jak zahrnout `System.Data.OracleClient` obor názvů do vašich aplikací.  
   
 ```vb  
 Imports System.Data  
@@ -144,21 +144,21 @@ using System.Data;
 using System.Data.OracleClient;  
 ```  
   
-## <a name="choosing-a-net-framework-data-provider"></a>Výběr zprostředkovatele dat .NET Framework  
- V závislosti na návrhu a datového zdroje pro vaši aplikaci podle vašeho výběru zprostředkovatele dat .NET Framework může zlepšit výkon, možnosti a integrita vaší aplikace. Následující tabulka popisuje výhody a omezení pro každého poskytovatele dat .NET Framework.  
+## <a name="choosing-a-net-framework-data-provider"></a>Volba .NET Framework Zprostředkovatel dat  
+ V závislosti na návrhu a zdroji dat vaší aplikace může váš výběr .NET Frameworkho poskytovatele dat zlepšit výkon, schopnost a integritu vaší aplikace. Následující tabulka popisuje výhody a omezení pro každého poskytovatele .NET Framework dat.  
   
 |Poskytovatel|Poznámky|  
 |--------------|-----------|  
-|Zprostředkovatel dat .NET framework pro SQL Server|Doporučuje se pro aplikace střední vrstvy, které používají Microsoft SQL Server.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají Microsoft Database Engine (MSDE) nebo SQL Server.<br /><br /> Doporučuje namísto použití zprostředkovatele OLE DB pro SQL Server (SQLOLEDB) pomocí zprostředkovatele dat .NET Framework pro OLE DB používat.|  
-|Zprostředkovatel dat .NET framework pro OLE DB|Pro SQL Server zprostředkovatele dat .NET Framework pro SQL Server doporučuje namísto tohoto zprostředkovatele.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají databáze aplikace Microsoft Access. Použití databáze aplikace Access pro aplikace střední vrstvy se nedoporučuje.|  
-|Zprostředkovatel dat .NET framework pro ODBC|Doporučuje se pro střední a jedné vrstvy aplikace, které používají zdroje dat ODBC.|  
-|Zprostředkovatel dat .NET framework pro Oracle|Doporučuje se pro střední a jedné vrstvy aplikace, které používají Oracle datového zdroje.|  
+|.NET Framework Zprostředkovatel dat SQL Server|Doporučuje se pro aplikace střední vrstvy, které používají Microsoft SQL Server.<br /><br /> Doporučuje se pro vícevrstvé aplikace, které používají Microsoft Database Engine (MSDE) nebo SQL Server.<br /><br /> Doporučuje se použít poskytovatele OLE DB pro SQL Server (SQLOLEDB) s .NET Framework Zprostředkovatel dat pro OLE DB.|  
+|.NET Framework Zprostředkovatel dat OLE DB|Pro SQL Server se místo tohoto poskytovatele doporučuje .NET Framework Zprostředkovatel dat pro SQL Server.<br /><br /> Doporučuje se pro vícevrstvé aplikace, které používají databáze Microsoft Access. Použití databáze Access pro aplikaci střední vrstvy se nedoporučuje.|  
+|.NET Framework Zprostředkovatel dat pro rozhraní ODBC|Doporučuje se pro střední a vícevrstvé aplikace, které používají zdroje dat ODBC.|  
+|Zprostředkovatel dat .NET Framework pro Oracle|Doporučuje se pro střední a vícevrstvé aplikace, které používají zdroje dat Oracle.|  
   
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
- Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework data zprostředkovatele nelze pracovat přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci se příslušný prostředkovatel data. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
+ Zprostředkovatel EntityClient se používá pro přístup k datům na základě model EDM (Entity Data Model) (EDM). Na rozdíl od jiných zprostředkovatelů dat .NET Framework nekomunikuje přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci s podkladovým poskytovatelem dat. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

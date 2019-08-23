@@ -5,18 +5,18 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 2e0352efdd5b709984338fe4484b120bddb7d545
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7dce5984882e48c3e62efc44ef00b6256d9eb64e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704294"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919529"
 ---
-# <a name="client"></a>\<client>
-`client` Element definuje seznam koncových bodů, které se klient může připojit k.  
+# <a name="client"></a>\<> klienta
+`client` Prvek definuje seznam koncových bodů, ke kterým se klient může připojit.  
   
  \<system.ServiceModel>  
-\<client>  
+\<> klienta  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,17 +41,17 @@ ms.locfileid: "61704294"
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)|Obsahuje kolekci prvků koncového bodu, které určovat koncové body, které tento klient může připojit k.|  
-|[\<metadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
+|[\<endpoint>](endpoint-of-client.md)|Obsahuje kolekci elementů koncového bodu, které určují koncové body, ke kterým se může tento klient připojit.|  
+|[\<metadata>](metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|Kořenový element všechny elementy konfigurace Windows Communication Foundation (WCF).|  
+|[\<system.serviceModel>](system-servicemodel.md)|Kořenový element všech prvků konfigurace Windows Communication Foundation (WCF).|  
   
 ## <a name="remarks"></a>Poznámky  
- `client` Oddíl definuje seznam koncových bodů, které se klient může připojit k. Každý koncový bod uvedený v oddílu klienta definuje vlastní vazby, chování a kontrakt. Je jedinečně identifikovaný kombinací `name` a `contract` atributy. Určuje kód klienta `name` pro připojení na koncový bod služby, který implementuje klienta. Pokud `name` atribut je vynechán, koncový bod chová jako výchozího koncového bodu pro kontrakt jej implementuje.  
+ `client` Oddíl definuje seznam koncových bodů, ke kterým se klient může připojit. Každý koncový bod uvedený v části klienta definuje vlastní vazbu, chování a kontrakt. Je jednoznačně identifikován kombinací `name` atributů a. `contract` Kód klienta Určuje, že `name` se má připojit ke koncovému bodu pro službu, kterou klient implementuje. Pokud je `name` atribut vynechán, koncový bod funguje jako výchozí koncový bod pro kontrakt, který implementuje.  
   
  Kromě toho tato část také určuje nastavení pro zpracování metadat.  
   
@@ -76,5 +76,5 @@ ms.locfileid: "61704294"
 
 - <xref:System.ServiceModel.Configuration.ClientSection>
 - <xref:System.ServiceModel.Configuration.MetadataElement>
-- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Konfigurace klienta WCF](../../../wcf/feature-details/client-configuration.md)
+- [Klienti](../../../wcf/feature-details/clients.md)

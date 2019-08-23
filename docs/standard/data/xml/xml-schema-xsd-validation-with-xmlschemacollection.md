@@ -8,20 +8,20 @@ dev_langs:
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4a7e381a90d56ca220e275d9179a50502b4969ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0fb14f919d0737b9d9c25bcd62a3cfb7228ff432
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61958883"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916079"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu XML (XSD) s třídou XmlSchemaCollection
-Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML pomocí schématu XML definice jazyk (XSD) schémat. <xref:System.Xml.Schema.XmlSchemaCollection> Ukládání schémata v kolekci, takže už nejsou načtena do paměti dojde k ověření při každé zvyšuje výkon. Pokud schéma existuje v kolekci schémat `schemaLocation` atribut se používá k vyhledání schématu v kolekci.  
+Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection> Zlepšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, `schemaLocation` je použit atribut k vyhledání schématu v kolekci.  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaCollection> Třída je zastaralá a bylo nahrazeno tématem <xref:System.Xml.Schema.XmlSchemaSet> třídy. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídy viz [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. <xref:System.Xml.Schema.XmlSchemaCollection> Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
- Následující příklad ukazuje kořenový element datového souboru.  
+ Následující příklad ukazuje kořenový prvek datového souboru.  
   
 ```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
@@ -30,9 +30,9 @@ Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření doku
     targetNamespace="urn:bookstore-schema">  
 ```  
   
- V tomto příkladu hodnoty `targetNamespace` atribut je `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schématu <xref:System.Xml.Schema.XmlSchemaCollection>.  
+ V tomto příkladu je hodnota `targetNamespace` `urn:bookstore-schema`atributu, což je stejný obor názvů, který se používá při <xref:System.Xml.Schema.XmlSchemaCollection>přidávání schématu do.  
   
- Následující příklad kódu přidá schéma XML <xref:System.Xml.Schema.XmlSchemaCollection>.  
+ Následující příklad kódu přidá schéma XML do <xref:System.Xml.Schema.XmlSchemaCollection>.  
   
 ```vb  
 Dim xsc As New XmlSchemaCollection()  
@@ -52,9 +52,9 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- `targetNamespace` Atribut se obvykle používá při přidání `namespaceURI` vlastnost <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection>. Před přidáním se schéma můžete zadat odkaz s hodnotou null <xref:System.Xml.Schema.XmlSchemaCollection>. Prázdný řetězec ("") byste měli použít pro schémata bez oboru názvů. <xref:System.Xml.Schema.XmlSchemaCollection> Může mít jenom jedno schéma bez oboru názvů.  
+ Atribut je obecně používán při `namespaceURI` přidání vlastnosti <xref:System.Xml.Schema.XmlSchemaCollection>do <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metody pro. `targetNamespace` Před přidáním schématu do <xref:System.Xml.Schema.XmlSchemaCollection>nástroje lze zadat odkaz s hodnotou null. Pro schémata bez oboru názvů by měl být použit prázdný řetězec (""). <xref:System.Xml.Schema.XmlSchemaCollection> Může obsahovat pouze jedno schéma bez oboru názvů.  
   
- Následující příklad kódu přidá do schématu XML, HeadCount.xsd, <xref:System.Xml.Schema.XmlSchemaCollection> a ověří HeadCount.xml.  
+ Následující příklad kódu přidá schéma XML, #. xsd, do <xref:System.Xml.Schema.XmlSchemaCollection> a ověří soubor. XML.  
   
 ```vb  
 Imports System  
@@ -125,7 +125,7 @@ namespace ValidationSample
 }  
 ```  
   
- Následující části je popsán obsah vstupního souboru HeadCount.xml, který má být ověřen.  
+ Následující text objednává obsah vstupního souboru... XML, který se má ověřit.  
   
 ```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
@@ -135,7 +135,7 @@ namespace ValidationSample
 </hc:HeadCount>  
 ```  
   
- Následující části je popsán obsah souboru schématu XML, HeadCount.xsd, chcete-li být ověřena.  
+ Následující text popisuje obsah souboru schématu XML, soubor. xsd, který má být ověřen proti.  
   
 ```xml  
 <xs:schema xmlns="xsdHeadCount" targetNamespace="xsdHeadCount" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
@@ -149,7 +149,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- Následující příklad kódu vytvoří <xref:System.Xml.XmlValidatingReader> , která má <xref:System.Xml.XmlTextReader>. Vstupní soubor, sample4.xml, ověřit proti schématu XML sample4.xsd.  
+ Následující příklad kódu vytvoří objekt <xref:System.Xml.XmlValidatingReader> , který <xref:System.Xml.XmlTextReader>převezme. Vstupní soubor sample4. XML je ověřen proti schématu XML sample4. xsd.  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -173,7 +173,7 @@ while(vr.Read()) {
     }  
 ```  
   
- Následující části je popsán obsah vstupního souboru sample4.xml, který má být ověřen.  
+ Následující text objednává obsah vstupního souboru sample4. XML, který má být ověřen.  
   
 ```xml  
 <datatypes xmlns="datatypesTest">  
@@ -183,7 +183,7 @@ while(vr.Read()) {
 </datatypes>  
 ```  
   
- Následující části je popsán obsah souboru schématu XML, sample4.xsd, chcete-li být ověřena.  
+ Následující text popisuje obsah souboru schématu XML sample4. xsd, který má být ověřen proti.  
   
 ```xml  
 <xs:schema   

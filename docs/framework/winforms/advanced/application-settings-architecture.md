@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: b5d5a4456bef925cd8093fe9c696145aff83660e
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c3858cfab59b63761f43f6b3eaad9bf8ca4c1dbc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039421"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916697"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje architektura nastavení aplikace, a prozkoumá pokročilé funkce architektury, jako jsou například seskupená nastavení a klíče nastavení.
@@ -142,7 +142,7 @@ Toto téma popisuje, jak funguje architektura nastavení aplikace, a prozkoumá 
  Zprostředkovatele lze volat z více vláken současně, ale bude vždy zapisovat do stejného umístění úložiště; Proto architektura nastavení aplikace vždy vytvoří instanci jedné instance třídy poskytovatele.
 
 > [!IMPORTANT]
->  Měli byste zajistit, aby byl váš poskytovatel bezpečný pro přístup z více vláken, a v jednom okamžiku umožňuje zapisovat do konfiguračních souborů.
+> Měli byste zajistit, aby byl váš poskytovatel bezpečný pro přístup z více vláken, a v jednom okamžiku umožňuje zapisovat do konfiguračních souborů.
 
  Váš poskytovatel nemusí podporovat všechny <xref:System.Configuration?displayProperty=nameWithType> atributy nastavení definované v oboru názvů, i když musí podporovat minimální podporu <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute>a měla by také podporovat <xref:System.Configuration.DefaultSettingValueAttribute>. U těch atributů, které nepodporuje, by váš poskytovatel měl být neúspěšný bez oznámení; neměl by vyvolat výjimku. Pokud třída nastavení používá neplatnou kombinaci atributů, jako je například použití <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute> ke stejnému nastavení – váš poskytovatel by měl vyvolat výjimku a zastavit operaci.
 

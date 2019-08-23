@@ -7,32 +7,32 @@ helpviewer_keywords:
 - animation [WPF], basic animation
 - From/to/by animation
 ms.assetid: 59afba57-6fc1-44c8-987e-8a5f4142adad
-ms.openlocfilehash: 56522ee5bd4391e43c261558b2fa622234c9ea3b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 812217a2905671567271687b974a435dd85cea47
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008782"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930088"
 ---
 # <a name="how-to-control-an-animation-using-from-to-and-by"></a>Postupy: Řízení animací pomocí polí Od, Komu a Kdo
-"Od/Komu/kým" nebo "základní animace" vytvoří přechod mezi dvě cílové hodnoty (naleznete v tématu [přehled animace](animation-overview.md) s úvodem do různé typy animací). Chcete-li nastavit cílové hodnoty základní animace, použijte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.  Následující tabulka shrnuje, jak <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti mohou být použity společně nebo samostatně k určení cílové animace hodnoty.  
+"Od/do/" nebo "základní animace" vytvoří přechod mezi dvěma cílovými hodnotami (viz [Přehled animace](animation-overview.md) pro Úvod k různým typům animací). K nastavení cílových hodnot základní animace použijte své <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>vlastnosti, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> .  Následující tabulka shrnuje <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, jak lze vlastnosti, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> použít společně nebo samostatně k určení cílových hodnot animace.  
   
-|Byly zadány vlastnosti|Výsledné chování|  
+|Zadané vlastnosti|Výsledné chování|  
 |--------------------------|------------------------|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnoty v závislosti na konfiguraci předchozí animace.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou proměnnou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou pomocí součtu <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace postupuje od základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnota, která má hodnotu určenou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace postupuje od základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnotu na součet dané hodnoty a hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>|Animace pokračuje z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastností na základní hodnotu vlastnosti Animated nebo na výstupní hodnotu předchozí animace v závislosti na tom, jak je nakonfigurované předchozí animace.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace pokračuje z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastností na hodnotu určenou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastností.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace pokračuje z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastností na hodnotu určenou součtem <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastností a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> .|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace pokračuje od základní hodnoty animované vlastnosti nebo z výstupní hodnoty předchozí animace s hodnotou určenou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastností.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace pokračuje od základní hodnoty vlastnosti Animated nebo z výstupní hodnoty předchozí animace k součtu hodnoty a hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastností.|  
   
 > [!NOTE]
->  Nenastavujte i <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost u stejného animace.  
+> <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> Nenastavujte vlastnost<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> i vlastnost ve stejné animaci.  
   
- Pokud chcete použít jiné metody interpolace nebo mezi více než dva cílových hodnot animace, použijte animace klíčových snímků. Zobrazit [přehled animací klíčových snímků](key-frame-animations-overview.md) Další informace.  
+ Chcete-li použít jiné metody interpolace nebo animovat mezi více než dvěma cílovými hodnotami, použijte animaci klíčových snímků. Další informace najdete v tématu [Přehled animací klíčových snímků](key-frame-animations-overview.md) .  
   
- Informace o použití více animace do vlastnosti jediné najdete v tématu [přehled animací klíčových snímků](key-frame-animations-overview.md).  
+ Informace o použití více animací pro jednu vlastnost najdete v tématu [Přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
- Následující příklad ukazuje různé účinky nastavení <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnosti animace.  
+ Následující příklad ukazuje různé účinky nastavení <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>a <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastností na animacích.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[BasicAnimations_snippet#AnimationTargetValuesWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snippet/CS/AnimationTargetValuesExample.xaml#animationtargetvalueswholepage)]  
@@ -41,4 +41,4 @@ ms.locfileid: "62008782"
 
 - [Přehled animace](animation-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
-- [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)
+- [Ukázka cílových hodnot z, do a podle animace](https://go.microsoft.com/fwlink/?LinkID=159988)

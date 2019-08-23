@@ -1,5 +1,5 @@
 ---
-title: <add> – element pro NameValueSectionHandler a DictionarySectionHandler
+title: <add>– element pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/add
@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 3bbe4ad6559e324db5853b95e797f50a7b908dcb
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: ec6d5045580e887de5f05a05c8f39fa62c6e3f2e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301435"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921341"
 ---
-# <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Přidat > – element pro NameValueSectionHandler a DictionarySectionHandler
+# <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Přidat > element pro NameValueSectionHandler a DictionarySectionHandler
 
-Přidá nastavení vlastní aplikace. Každý  **\<Přidat >** značka obsahuje dvojice klíč/hodnota.
+Přidá vlastní nastavení aplikace. Každá značka přidání > obsahuje dvojici klíč/hodnota.  **\<**
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<add>**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,13 +35,13 @@ Přidá nastavení vlastní aplikace. Každý  **\<Přidat >** značka obsahuje 
 | Atribut | Popis |
 | --------- | ----------- |
 | **key**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
-| **value** | Požadovaný atribut.<br><br>Určuje hodnotu daného nastavení. |
+| **value** | Požadovaný atribut.<br><br>Určuje hodnotu nastavení. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 | Prvek | Popis |
 | ------- | ------------|
-| [ **\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy. |
+| [ **sectionGroup>\<** element](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> třídy <xref:System.Configuration.DictionarySectionHandler> a. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -49,7 +49,7 @@ Přidá nastavení vlastní aplikace. Každý  **\<Přidat >** značka obsahuje 
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak definovat vlastní konfigurační oddíl a použít  **\<Přidat >** element umístit do části nastavení:
+Následující příklad ukazuje, jak definovat vlastní konfigurační oddíl a použít  **\<element add >** k umístění nastavení do oddílu:
 
 ```xml
 <configuration>
@@ -64,8 +64,8 @@ Následující příklad ukazuje, jak definovat vlastní konfigurační oddíl a
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

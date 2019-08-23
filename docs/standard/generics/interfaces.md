@@ -10,37 +10,37 @@ helpviewer_keywords:
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9570578e8ae4397f060805b891f86d7d4f273cd4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 09e9a51fe9c1fd25a6791cf924180329718138c8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487042"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915895"
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
-Toto téma obsahuje základní informace o obecných rozhraní, které poskytují společné funkce napříč řady obecných typů.  
+Toto téma obsahuje přehled obecných rozhraní, která poskytují společné funkce napříč rodinami obecných typů.  
   
 ## <a name="generic-interfaces"></a>Obecná rozhraní  
- Obecná rozhraní poskytuje typově bezpečné ekvivalenty rozhraním neobecná pro porovnání rovnosti a řazení a funkce, které jsou sdíleny obecných typů kolekce.  
+ Obecná rozhraní poskytují typově bezpečné protějšky pro neobecná rozhraní pro porovnání řazení a rovnosti a pro funkce, které jsou sdíleny pomocí obecných typů kolekcí.  
   
 > [!NOTE]
->  Od verze rozhraní .NET Framework 4, typ, několik obecných rozhraní parametry označen jako kovariantní nebo kontravariantní, takže má větší flexibilitu při přiřazování a používání typy, které implementují tato rozhraní. Zobrazit [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+> Počínaje .NET Framework 4 jsou parametry typu několika obecných rozhraní označeny kovariantní nebo kontravariantní a poskytují větší flexibilitu při přiřazování a používání typů, které implementují tato rozhraní. Viz [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
 ### <a name="equality-and-ordering-comparisons"></a>Porovnání rovnosti a řazení  
- V <xref:System> obor názvů, <xref:System.IComparable%601?displayProperty=nameWithType> a <xref:System.IEquatable%601?displayProperty=nameWithType> obecných rozhraní, jako je jejich protějšků, definuje metody pro porovnání řazení a porovnání rovnosti, v uvedeném pořadí. Typy implementují tato rozhraní umožňují provádět takové porovnání.  
+ V oboru názvů <xref:System.IComparable%601?displayProperty=nameWithType> ,<xref:System.IEquatable%601?displayProperty=nameWithType> Obecná rozhraní, jako jsou jejich neobecné protějšky, definujte metody pro řazení porovnávání a porovnávání rovnosti v uvedeném pořadí. <xref:System> Typy implementují tato rozhraní, aby poskytovaly možnost provádět taková porovnání.  
   
- V <xref:System.Collections.Generic> obor názvů, <xref:System.Collections.Generic.IComparer%601> a <xref:System.Collections.Generic.IEqualityComparer%601> obecných rozhraní nabízejí způsob, jak definovat porovnání řazení nebo rovnost pro typy, které neimplementují <xref:System.IComparable%601?displayProperty=nameWithType> nebo <xref:System.IEquatable%601?displayProperty=nameWithType> obecné rozhraní a poskytují způsob, jak znovu definujte tyto relace pro typy, které provést. Tato rozhraní jsou používány metody a konstruktory mnoha obecné kolekce tříd. Například můžete předat obecný <xref:System.Collections.Generic.IComparer%601> objekt konstruktoru <xref:System.Collections.Generic.SortedDictionary%602> třídu k určení pořadí řazení pro typ, který neimplementuje obecný <xref:System.IComparable%601?displayProperty=nameWithType>. Existují přetížení <xref:System.Array.Sort%2A?displayProperty=nameWithType> obecné statické metody a <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> metodu instance pro řazení polí a seznamů pomocí obecného <xref:System.Collections.Generic.IComparer%601> implementace.  
+ <xref:System.Collections.Generic.IEqualityComparer%601> <xref:System.IComparable%601?displayProperty=nameWithType> <xref:System.IEquatable%601?displayProperty=nameWithType> V oboru názvů <xref:System.Collections.Generic.IComparer%601> nabízí Obecná rozhraní a možnost definovat porovnání řazení nebo rovnosti pro typy, které neimplementují obecné rozhraní nebo a poskytují způsob, jak <xref:System.Collections.Generic> předefinujte tyto relace pro typy, které mají. Tato rozhraní jsou používána metodami a konstruktory mnoha obecných tříd kolekcí. Například můžete předat obecný <xref:System.Collections.Generic.IComparer%601> objekt konstruktoru <xref:System.Collections.Generic.SortedDictionary%602> třídy pro určení pořadí řazení pro typ, který neimplementuje obecné <xref:System.IComparable%601?displayProperty=nameWithType>. Existují přetížení <xref:System.Array.Sort%2A?displayProperty=nameWithType> obecné statické metody <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> a metody instance pro řazení polí a seznamů pomocí obecných <xref:System.Collections.Generic.IComparer%601> implementací.  
   
- <xref:System.Collections.Generic.Comparer%601> a <xref:System.Collections.Generic.EqualityComparer%601> obecné třídy poskytují základní třídy pro implementaci <xref:System.Collections.Generic.IComparer%601> a <xref:System.Collections.Generic.IEqualityComparer%601> obecných rozhraní a také poskytují výchozí porovnání rovnosti a řazení prostřednictvím jejich <xref:System.Collections.Generic.Comparer%601.Default%2A?displayProperty=nameWithType> a <xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType> vlastnosti.  
+ <xref:System.Collections.Generic.IComparer%601> <xref:System.Collections.Generic.Comparer%601.Default%2A?displayProperty=nameWithType> <xref:System.Collections.Generic.IEqualityComparer%601> Obecné třídy <xref:System.Collections.Generic.EqualityComparer%601> a poskytují základní třídy pro implementaci a Obecná rozhraní a také poskytují výchozí porovnání řazení a rovnosti přes jejich příslušné <xref:System.Collections.Generic.Comparer%601> a <xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType> vlastnosti.  
   
-### <a name="collection-functionality"></a>Funkci shromažďování  
- <xref:System.Collections.Generic.ICollection%601> Obecného rozhraní je základní rozhraní pro obecné typy kolekcí. Poskytuje základní funkce pro přidání, odebrání, kopírování a vytvoření výčtu prvků. <xref:System.Collections.Generic.ICollection%601> dědí z obou obecného <xref:System.Collections.Generic.IEnumerable%601> a neobecných <xref:System.Collections.IEnumerable>.  
+### <a name="collection-functionality"></a>Funkce kolekce  
+ <xref:System.Collections.Generic.ICollection%601> Obecné rozhraní je základní rozhraní pro obecné typy kolekcí. Poskytuje základní funkce pro přidávání, odebírání, kopírování a vytváření výčtu prvků. <xref:System.Collections.Generic.ICollection%601>dědí z obecného <xref:System.Collections.Generic.IEnumerable%601> i neobecného <xref:System.Collections.IEnumerable>.  
   
- <xref:System.Collections.Generic.IList%601> Obecné rozhraní rozšiřuje <xref:System.Collections.Generic.ICollection%601> obecné rozhraní pomocí metody načítání.  
+ <xref:System.Collections.Generic.IList%601> Obecné rozhraní<xref:System.Collections.Generic.ICollection%601> rozšiřuje obecné rozhraní o metody pro indexované načítání.  
   
- <xref:System.Collections.Generic.IDictionary%602> Obecné rozhraní rozšiřuje <xref:System.Collections.Generic.ICollection%601> obecné rozhraní pomocí metody pro načítání s klíčem. Generický slovník typy v knihovně základních tříd rozhraní .NET Framework také implementovat neobecné <xref:System.Collections.IDictionary> rozhraní.  
+ <xref:System.Collections.Generic.IDictionary%602> Obecné rozhraní<xref:System.Collections.Generic.ICollection%601> rozšiřuje obecné rozhraní o metody pro načtení klíčů. Obecné typy slovníku v knihovně .NET Framework Base Class Library také implementují neobecné <xref:System.Collections.IDictionary> rozhraní.  
   
- <xref:System.Collections.Generic.IEnumerable%601> Obecné rozhraní poskytuje obecnou strukturu pro výčty. <xref:System.Collections.Generic.IEnumerator%601> Obecné rozhraní implementované obecný výčty dědí neobecné <xref:System.Collections.IEnumerator> rozhraní; <xref:System.Collections.IEnumerator.MoveNext%2A> a <xref:System.Collections.IEnumerator.Reset%2A> členy, které nezávisí na parametr typu `T`, se zobrazí pouze v neobecné rozhraní. To znamená, že příjemci neobecné rozhraní můžete také využívat její obecná rozhraní.  
+ <xref:System.Collections.Generic.IEnumerable%601> Obecné rozhraní poskytuje obecnou strukturu výčtu. <xref:System.Collections.IEnumerator.MoveNext%2A> <xref:System.Collections.IEnumerator> `T` <xref:System.Collections.IEnumerator.Reset%2A> Obecné rozhraní implementované obecnými enumerátory dědí neobecné rozhraní; členy a, které nejsou závislé na parametru typu, se zobrazí pouze u neobecných. <xref:System.Collections.Generic.IEnumerator%601> prostředí. To znamená, že každý příjemce neobecného rozhraní může také spotřebovat obecné rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 

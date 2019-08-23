@@ -6,66 +6,66 @@ helpviewer_keywords:
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-ms.openlocfilehash: b77e0bf52e20ce5bd8f1c0deecfc822e9f910675
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 963325604f66ddd4f8470933584b7880c86403bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648375"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951563"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
-Windows Communication Foundation (WCF) je určený pro spolupráci s webovými službami, které podporují sadu specifikace říká specifikací webových služeb. Pokud chcete zjednodušit konfiguraci služby pro spolupráci osvědčené postupy, WCF zavádí tři interoperabilní vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. WCF pro spolupráci s organizací standardů rozvoj z strukturovaných informace standardy OASIS (Organization) zahrnuje jeden interoperabilní vazeb poskytovaných systémem: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace WCF obsahuje dvě interoperabilní vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma obsahuje seznam specifikace, které podporují interoperabilní vazby poskytované systémem.  
+Windows Communication Foundation (WCF) je postaven na spolupráci s webovými službami, které podporují sadu specifikací označovaných jako specifikace webových služeb. Pro zjednodušení konfigurace služby pro osvědčené postupy interoperability přináší WCF tři interoperabilní vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro interoperabilitu s organizací pro účely standardů OASIS (Structured Information Standards) zahrnuje WCF jednu interoperabilní vazbu poskytovanou systémem: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. V případě publikace metadat zahrnuje WCF dvě interoperabilní vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). V tomto tématu je uveden seznam specifikací, které poskytuje podpora vazeb interoperabilních systémem.  
   
-## <a name="web-services-protocols-supported-by-basichttpbinding-wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding-bindings"></a>Webové služby protokoly podporované vazbami basicHttpBinding, wsHttpBinding, ws2007HttpBinding a wsDualHttpBinding  
+## <a name="web-services-protocols-supported-by-basichttpbinding-wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding-bindings"></a>Protokoly webových služeb podporované pomocí vazeb basicHttpBinding, wsHttpBinding, ws2007HttpBinding a wsDualHttpBinding  
   
 ### <a name="all-bindings"></a>Všechny vazby  
- [ \<BasicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md), [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), a [ \<ws2007HttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) podporu vazeb ve službě Tyto protokoly.  
+ Vazby BasicHttpBinding >, [ \<WSHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)a [ \<WS2007HttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) podporují následující protokoly. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)  
   
 > [!NOTE]
->  Informace o vazbách k publikování metadat naleznete v části "Metadata vazeb System-Provided" dále v tomto tématu.  
+> Informace o vazbách použitých k publikování metadat naleznete v části "systémové vazby metadat" dále v tomto tématu.  
   
-|Kategorie|Protocol (Protokol)|Specifikace a využití|  
+|Kategorie|Protocol|Specifikace a použití|  
 |--------------|--------------|-----------------------------|  
-|Přenos|HTTP 1.1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding`, a `WS2007HttpBinding` použít přenosy HTTP a HTTPS.|  
-|Zasílání zpráv|MTOM|[MTOM](https://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding`, a `ws2007HttpBinding` podporují zpráv přenosu optimalizace mechanismus (MTOM). Nepoužívá se ve výchozím nastavení. Chcete-li použít MTOM, nastavte `messageEncoding` atribut `"Mtom"`.<br /><br /> Příklad:<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
-|Metadata|WSDL 1.1|[WSDL 1.1](https://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF webové služby WSDL (Description Language) používá k popisu služby.|  
-|Metadata|WS-Policy|[WS-Policy](https://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> WCF používá k popisu služby požadavky a možnostmi specifikaci WS-Policy spolu s kontrolní výrazy specifického pro doménu.|  
-|Metadata|1.5 WS-Policy|[1.5 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> WCF používá k popisu služby požadavky a možnostmi specifikaci WS-Policy spolu s kontrolní výrazy specifického pro doménu.|  
-|Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](https://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> WCF implementuje WS-PolicyAttachment připojit výrazy zásad v různých oborech v webové služby WSDL (Description Language).|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-Policy.|  
+|Přepravu|HTTP 1,1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding` a`WS2007HttpBinding` použijte přenosy HTTP a HTTPS.|  
+|Messaging|MAXIMÁLNÍ|[MTOM](https://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding` a`ws2007HttpBinding` podporují mechanismus pro optimalizaci přenosu zpráv (MTOM). Nepoužívá se ve výchozím nastavení. Chcete-li použít MTOM, `messageEncoding` nastavte atribut `"Mtom"`na.<br /><br /> Příklad:<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
+|Metadata|WSDL 1,1|[WSDL 1,1](https://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF používá k popisu služeb službu Web Services Description Language (WSDL).|  
+|Metadata|WS-Policy|[WS-Policy](https://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> Služba WCF používá specifikace WS-Policy spolu s kontrolními výrazy specifickými pro doménu k popisu požadavků a možností služby.|  
+|Metadata|WS-Policy 1,5|[WS-Policy 1,5](https://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> Služba WCF používá specifikace WS-Policy spolu s kontrolními výrazy specifickými pro doménu k popisu požadavků a možností služby.|  
+|Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](https://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> WCF implementuje příkazy WS-PolicyAttachment pro připojení výrazů zásad v různých oborech v jazyce WSDL (Web Services Description Language).|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange k načtení schématu XML, WSDL a WS-Policy.|  
   
 ### <a name="basichttpbinding"></a>basicHttpBinding  
   
-|Kategorie|Protocol (Protokol)|Specifikace a využití|  
+|Kategorie|Protocol|Specifikace a použití|  
 |--------------|--------------|-----------------------------|  
-|Zasílání zpráv|PROTOKOL SOAP 1.1|[PROTOKOL SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=90520)<br /><br /> V souladu s Basic Profile 1.1 `basicHttpBinding` prvek implementuje zprávy protokolu SOAP 1.1.|  
-|Zabezpečení|Zabezpečení zpráv SOAP WSS 1.0|[Zabezpečení zpráv SOAP WSS 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> V souladu s základní profil zabezpečení `basicHttpBinding` prvek implementuje specifikace zabezpečení zpráv SOAP zabezpečení služby (webové služby WSS) 1.0 pro uživatelské jméno/heslo a zabezpečení založené na X.509.<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential &#124;                     "Message" .../> </binding> </basicHttpBinding>`|  
-|Zabezpečení|Profil UsernameToken zabezpečení zprávy protokolu SOAP WSS 1.0|[Profil UsernameToken zabezpečení zprávy protokolu SOAP WSS 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential"> <transport clientCredentialType="Basic"/> </security> </basicHttpBinding>`|  
-|Zabezpečení|WSS protokolu SOAP zprávy X.509 certifikátu tokenu profil zabezpečení 1.0|[WSS protokolu SOAP zprávy X.509 certifikátu tokenu profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95335)<br /><br /> `<basicHttpBinding>   <security mode="Message"> <message clientCredentialType="Certificate"/> </security> </basicHttpBinding>`|  
+|Messaging|PROTOKOL SOAP 1,1|[PROTOKOL SOAP 1,1](https://go.microsoft.com/fwlink/?LinkId=90520)<br /><br /> V souladu se základním profilem 1,1 `basicHttpBinding` prvek implementuje protokol zpráv SOAP 1,1.|  
+|Zabezpečení|WSS SOAP Message Security 1,0|[WSS SOAP Message Security 1,0](https://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> V souladu se základním profilem `basicHttpBinding` zabezpečení prvek implementuje specifikaci specifikace Web Services Security (WSS) SOAP Message Security 1,0 pro uživatelské jméno/heslo a zabezpečení založené na X. 509.<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential &#124;                     "Message" .../> </binding> </basicHttpBinding>`|  
+|Zabezpečení|WSS SOAP Message Security UsernameToken Profile 1,0|[WSS SOAP Message Security UsernameToken Profile 1,0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential"> <transport clientCredentialType="Basic"/> </security> </basicHttpBinding>`|  
+|Zabezpečení|WSS SOAP Message Security Security X. 509 – profil tokenu certifikátu 1,0|[WSS SOAP Message Security Security X. 509 – profil tokenu certifikátu 1,0](https://go.microsoft.com/fwlink/?LinkId=95335)<br /><br /> `<basicHttpBinding>   <security mode="Message"> <message clientCredentialType="Certificate"/> </security> </basicHttpBinding>`|  
   
-### <a name="wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding"></a>wsHttpBinding ws2007HttpBinding a wsDualHttpBinding  
+### <a name="wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding"></a>wsHttpBinding, ws2007HttpBinding a wsDualHttpBinding  
   
-|Kategorie|Protocol (Protokol)|Specifikace a využití|  
+|Kategorie|Protocol|Specifikace a použití|  
 |--------------|--------------|-----------------------------|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
-|Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)<br /><br /> `wsHttpBinding`, `ws2007HttpBinding`, A `wsDualHttpBinding` implementace WS-Addressing World Wide Web Consortium (W3C) doporučení Povolit asynchronní zasílání zpráv, korelace zprávy a adresování mechanismy přenosu doménově neutrální.<br /><br /> WCF nepodporuje šifrování záhlaví WS-Addressing, i když je to povoleno parametrem WS-* specifikace.|  
-|Zasílání zpráv|WS-Addressing 1.0 - metadat|[WS-Addressing metadat 1.0](https://www.w3.org/2007/05/addressing/metadata) podporu pro tento protokol se povoluje nastavením verze zásad chování ServiceMetadata – s policyversion nastavena na 1.2 (výchozí), popis wsdl je v souladu s WS-Addressing wsdl, s policyversion nastavena na 1.5, popis wsdl je kompatibilní s metadaty ws-addressing.<br /><br /> WCF nepodporuje šifrování záhlaví WS-Addressing, i když je to povoleno parametrem WS-* specifikace.|  
-|Zabezpečení|Zabezpečení zpráv SOAP WSS 1.0|[Zabezpečení zpráv SOAP WSS 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> Použít, když `securityMode` atribut je nastaven na "wsSecurityOverHttp" (výchozí) a parametry jsou nakonfigurovány pomocí `wsSecurity` podřízený element.<br /><br /> `<wsHttpBinding>   <binding name="myBinding">      <security mode="Message" .../>   </binding> </wsHttpBinding>`|  
-|Zabezpečení|Doplněk WSS protokolu SOAP zprávy zabezpečení UsernameToken Profile 1.1|[Profil UsernameToken zabezpečení zprávy protokolu SOAP WSS 1.0](https://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> Použít, když `wsSecurity` elementu `authenticationMode` atribut je nastaven na "Username".<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="UserName        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security> </binding> </wsHttpBinding>`|  
-|Zabezpečení|WSS protokolu SOAP zprávy zabezpečení X.509 certifikátu tokenu Profile 1.1|[WSS protokolu SOAP zprávy zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)<br /><br /> Používání pro ochranu zpráva při `wsSecurity` elementu `authenticationMode` atribut je nastaven na "Username", "Certifikáty" nebo "None". Kromě toho to používat pro ověřování klientů při `wsSecurity` elementu `authenticationMode` atribut je nastaven na "Certifikátu".<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="Certificate"        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security>   </binding> </wsHttpBinding>`|  
-|Zabezpečení|Doplněk WSS protokolu SOAP zprávy zabezpečení Token protokolu Kerberos Profile 1.1|[Doplněk WSS protokolu SOAP zprávy zabezpečení Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)<br /><br /> Používání pro ochranu ověřování a zpráva při `wsSecurity` elementu `authenticationMode` atribut je nastaven na "Windows".<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="Windows"        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security>   </binding> </wsHttpBinding>`|  
-|Zabezpečení|WS-SecureConversation|[WS-SecureConversation](https://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Použít k poskytnutí zabezpečenou relaci při `security/@mode` atribut je nastaven na "Zpráva" a `message/@establishSecurityContext` atribut je nastaven na hodnotu "PRAVDA" (výchozí).|  
-|Zabezpečení|WS-Trust|[WS-Trust](https://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> Použít WS-SecureConversation (viz výše).|  
-|Spolehlivé zasílání zpráv|WS-ReliableMessaging|[WS-ReliableMessaging](https://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Použijte, pokud je vazba konfigurována pro použití `reliableSession`.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
-|Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](https://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používá se pro komunikaci mezi správci transakcí. Klienti WCF a služby vždy používá správce místní transakce.|  
-|Transakce|Koordinace WS|[WS-Coordination](https://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Použijte tok kontext transakce při `flowTransactions` atribut je nastaven na "Povoleno" nebo "Required".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
+|Messaging|PROTOKOL SOAP 1,2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Rozhraní pro zasílání zpráv](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Messaging|WS-Addressing 2005/08|[Webové služby Addressing 1,0 – Core](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby Addressing 1,0 – SOAP](https://go.microsoft.com/fwlink/?LinkId=95330)<br /><br /> Rozhraní `wsHttpBinding`, `ws2007HttpBinding` a`wsDualHttpBinding` implementují doporučení WS-Addressing konsorcium World Wide Web (W3C) pro povolení asynchronního zasílání zpráv, korelace zpráv a mechanismů pro adresování v neutrálním přenosu.<br /><br /> Služba WCF nepodporuje šifrování hlaviček WS-Addressing, přestože jsou povoleny specifikacemi WS-*.|  
+|Messaging|WS-Addressing 1,0 – metadata|[Metadata specifikace WS-addressing 1,0](https://www.w3.org/2007/05/addressing/metadata) Podpora pro tento protokol je povolená nastavením verze zásady v oddílu serviceMetadata chování – s PolicyVersion nastavenou na 1,2 (výchozí), popis WSDL je kompatibilní s elementem WS-Addressing WSDL s PolicyVersion nastavenou na 1,5, popis WSDL je kompatibilní s metadaty WS-Addressing.<br /><br /> Služba WCF nepodporuje šifrování hlaviček WS-Addressing, přestože jsou povoleny specifikacemi WS-*.|  
+|Zabezpečení|WSS SOAP Message Security 1,0|[WSS SOAP Message Security 1,0](https://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> Použijte, pokud `securityMode` je atribut nastaven na "wsSecurityOverHttp" (výchozí) a parametry jsou konfigurovány `wsSecurity` pomocí podřízeného elementu.<br /><br /> `<wsHttpBinding>   <binding name="myBinding">      <security mode="Message" .../>   </binding> </wsHttpBinding>`|  
+|Zabezpečení|WSS SOAP Message Security UsernameToken Profile 1,1|[WSS SOAP Message Security UsernameToken Profile 1,0](https://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> Použijte, pokud `wsSecurity` je `authenticationMode` atribut elementu nastavený na username.<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="UserName        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security> </binding> </wsHttpBinding>`|  
+|Zabezpečení|WSS SOAP Message Security Security X. 509 – profil tokenu certifikátu 1,1|[WSS SOAP Message Security Security X. 509 – profil tokenu certifikátu 1,1](https://go.microsoft.com/fwlink/?LinkId=95332)<br /><br /> Tuto `wsSecurity` možnost použijte pro ochranu zpráv, je `authenticationMode` -li atribut elementu nastaven na "username", "Certificate" nebo "none". Kromě toho použijte tuto možnost pro ověřování klienta, `wsSecurity` Pokud je `authenticationMode` atribut prvku nastaven na "Certificate".<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="Certificate"        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security>   </binding> </wsHttpBinding>`|  
+|Zabezpečení|WSS SOAP Message Security – profil tokenu protokolu Kerberos 1,1|[WSS SOAP Message Security – profil tokenu protokolu Kerberos 1,1](https://go.microsoft.com/fwlink/?LinkId=95333)<br /><br /> Používá se pro ověřování a ochranu zpráv, `wsSecurity` když je `authenticationMode` atribut elementu nastavený na Windows.<br /><br /> `<wsHttpBinding>   <binding name="MyBinding">     <security mode="Message>       <message           clientCredentialType="Windows"        negotiateServiceCredential="false"        establishSecurityContext="false"/>     </security>   </binding> </wsHttpBinding>`|  
+|Zabezpečení|WS-SecureConversation|[WS-SecureConversation](https://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Slouží k poskytnutí zabezpečené relace, pokud `security/@mode` je atribut nastaven na hodnotu "Message" `message/@establishSecurityContext` a atribut je nastaven na hodnotu "pravda" (výchozí).|  
+|Zabezpečení|WS-Trust|[WS-Trust](https://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> Používá se WS-SecureConversation (viz výše).|  
+|Spolehlivé zasílání zpráv|WS-ReliableMessaging|[WS-ReliableMessaging](https://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Použijte, pokud je vazba nakonfigurovaná na `reliableSession`použití.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
+|Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](https://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používá se pro komunikaci mezi správci transakcí. Klienti a služby WCF používají vždy místní správce transakcí.|  
+|Transakce|WS-koordinace|[WS-Coordination](https://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Slouží k vytvoření toku transakčního kontextu, `flowTransactions` Pokud je atribut nastaven na hodnotu povoleno nebo požadováno.<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>wsFederationHttpBinding a ws2007FederationHttpBinding  
- [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a [ \<ws2007FederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) prvky jsou zavedené kvůli zajištění podpory pro federovaných scénářích, kde je třetí strana vystaví token pro ověření klienta. Kromě protokolech používaných `wsHttpBinding`, `wsFederationHttpBinding` využívá:  
+ WSFederationHttpBinding > a [WS2007FederationHttpBinding prvky > jsou představeny pro zajištění podpory pro federované scénáře, kdy třetí strana vydá token použitý k ověření klienta. \<](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) Kromě protokolů používaných nástrojem `wsHttpBinding` `wsFederationHttpBinding` nástroj využívá:  
   
-- `WS-Trust` pro vydávání tokenů.  
+- `WS-Trust`pro vystavení tokenu.  
   
-- Doplněk WSS zabezpečení kontrolní výrazy SAML (Markup Language) Token profil 1.0 a 1.1 pro nejčastěji běžně vydané formát tokenu.  
+- Profil tokenu protokolu SAML (WSS Security Assert Markup Language) 1,0 a 1,1 pro nejčastěji vydaný formát tokenu.  
   
  Příklad:  
   
@@ -85,28 +85,28 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
   
  Další informace najdete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md) .  
   
-## <a name="system-provided-metadata-bindings"></a>Vazby poskytované systémem metadat  
- Následující tabulky popisují protokoly podporované vazbami interoperabilní metadat poskytované systémem zveřejněn prostřednictvím <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType> třídy.  
+## <a name="system-provided-metadata-bindings"></a>Vazby metadat poskytovaných systémem  
+ V následujících tabulkách jsou popsány protokoly podporované systémem, které jsou k dispozici vazby <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType> metadat, které poskytuje třída.  
   
 ### <a name="mexhttpbinding"></a>mexHttpBinding  
- [ \<MexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) vazba podporuje následující protokoly. Další informace o použití této vazbě naleznete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
+ Vazba [ mexHttpBinding>podporujenásledujícíprotokoly.\<](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) Další informace o použití této vazby najdete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
-|Kategorie|Protocol (Protokol)|Specifikace a využití|  
+|Kategorie|Protocol|Specifikace a použití|  
 |--------------|--------------|-----------------------------|  
-|Přenos|HTTP 1.1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
-|Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-Policy.|  
+|Přepravu|HTTP 1,1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)|  
+|Messaging|PROTOKOL SOAP 1,2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Rozhraní pro zasílání zpráv](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Messaging|WS-Addressing 2005/08|[Webové služby Addressing 1,0 – Core](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby Addressing 1,0 – SOAP](https://go.microsoft.com/fwlink/?LinkId=95330)|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange k načtení schématu XML, WSDL a WS-Policy.|  
   
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
- [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md) podporuje následující protokoly. Další informace o použití této vazbě naleznete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
+ mexHttpsBinding > podporuje následující protokoly. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md) Další informace o použití této vazby najdete v tématu [publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
-|Kategorie|Protocol (Protokol)|Specifikace a využití|  
+|Kategorie|Protocol|Specifikace a použití|  
 |--------------|--------------|-----------------------------|  
-|Přenos|HTTP 1.1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> Zabezpečení přenosu je povoleno.|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
-|Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)|  
-|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-Policy.|  
+|Přepravu|HTTP 1,1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> Zabezpečení přenosu je povolené.|  
+|Messaging|PROTOKOL SOAP 1,2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Rozhraní pro zasílání zpráv](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Messaging|WS-Addressing 2005/08|[Webové služby Addressing 1,0 – Core](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby Addressing 1,0 – SOAP](https://go.microsoft.com/fwlink/?LinkId=95330)|  
+|Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange k načtení schématu XML, WSDL a WS-Policy.|  
   
 ## <a name="see-also"></a>Viz také:
 

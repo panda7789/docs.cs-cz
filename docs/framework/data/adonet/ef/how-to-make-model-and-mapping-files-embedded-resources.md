@@ -2,28 +2,28 @@
 title: 'Postupy: Vytvoření vložených prostředků modelu a souborů mapování'
 ms.date: 03/30/2017
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
-ms.openlocfilehash: 3abb0ead210903a4ac2d16e4a977aaefbcde8ceb
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 53817498f6d772c308888c5e994fb25239c4ed61
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307363"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949745"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Postupy: Vytvoření vložených prostředků modelu a souborů mapování
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje nasadit modelu a souborů mapování jako vložené prostředky aplikace. Sestavení s vloženým modelem a souborů mapování musí být ve stejné doméně aplikace jako připojení entity načíst. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md). Ve výchozím nastavení vložit nástroje modelu Entity Data Model modelu a souborů mapování. Když definujete modelu a souborů mapování ručně, pomocí tohoto postupu můžete zajistit, že jsou soubory nasazeny jako vložené prostředky spolu s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
+[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje nasadit model a mapování souborů jako vložené prostředky aplikace. Sestavení s vloženým modelem a soubory mapování musí být načteny ve stejné doméně aplikace jako připojení k entitě. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md). Ve výchozím nastavení nástroje model EDM (Entity Data Model) vkládají model a mapování souborů. Při ručním definování modelu a mapování souborů použijte tento postup, chcete-li zajistit, aby byly soubory nasazeny jako integrované prostředky spolu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] s aplikací.  
   
 > [!NOTE]
->  Pokud chcete zachovat vložené prostředky, musíte tento postup zopakovat vždy, když se mění modelu a souborů mapování.  
+> Chcete-li zachovat vložené prostředky, je nutné tento postup opakovat vždy, když dojde ke změně modelu a souborů mapování.  
   
-### <a name="to-embed-model-and-mapping-files"></a>Chcete-li vložit modelu a souborů mapování  
+### <a name="to-embed-model-and-mapping-files"></a>Vložení modelu a souborů mapování  
   
-1. V **Průzkumníka řešení**, vyberte soubor koncepční (.csdl).  
+1. V **Průzkumník řešení**vyberte koncepční soubor (. CSDL).  
   
-2. V **vlastnosti** podokně nastavte **akce sestavení** k **integrovaný prostředek**.  
+2. V podokně **vlastnosti** nastavte **akci sestavení** na **Integrovaný prostředek**.  
   
-3. Opakujte kroky 1 a 2 pro soubor úložiště (ssdl) a soubor mapování (.msl).  
+3. Opakujte kroky 1 a 2 pro soubor úložiště (. ssdl) a soubor mapování (. MSL).  
   
-4. V **Průzkumníka řešení**, poklikejte na soubor App.config a potom změňte `Metadata` parametr `connectionString` atributů na základě jedné z následujících formátů:  
+4. V **Průzkumník řešení**dvakrát klikněte na soubor App. config a pak změňte `Metadata` parametr v `connectionString` atributu na základě jednoho z následujících formátů:  
   
     - `Metadata=``res://<assemblyFullName>/<resourceName>;`  
   
@@ -34,11 +34,11 @@ ms.locfileid: "67307363"
      Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  
   
 ## <a name="example"></a>Příklad  
- Vložený modelu a souborů mapování pro odkazuje na následující připojovací řetězec [AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks). Tento připojovací řetězec je uložen v souboru App.config projektu.  
+ Následující připojovací řetězec odkazuje na vložený model a soubory mapování pro [model prodeje AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks). Tento připojovací řetězec je uložený v souboru App. config projektu.  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)
 - [Postupy: Definování připojovacího řetězce](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md)
 - [Postupy: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

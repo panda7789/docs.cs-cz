@@ -2,39 +2,39 @@
 title: Konfigurační schéma služby WCF
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
-ms.openlocfilehash: baea1e49bce10054530afa5b6f282023d5ceb981
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d7b4cbad1876888e7a22a92bdb28a17b880e159
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755813"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925394"
 ---
 # <a name="wcf-configuration-schema"></a>Konfigurační schéma služby WCF
-Windows Communication Foundation (WCF) konfigurační prvky umožňují nakonfigurovat služeb a klientských aplikací WCF. Můžete použít [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) vytvářet a upravovat konfigurační soubory pro klienty a služby. Protože konfigurační soubory jsou formátovány jako XML, musíte znát XML Pokud budete chtít ručně upravovat pomocí textového editoru. Jinak můžete jej spustit do problémy jako k unfound značky elementu XML nebo atributu. Důvodem je, že značky elementu XML a atributy jsou malá a velká písmena.  
+Konfigurační prvky Windows Communication Foundation (WCF) umožňují nakonfigurovat službu WCF a klientské aplikace. Pomocí [nástroje Configuration Editor (SvcConfigEditor. exe)](../../../wcf/configuration-editor-tool-svcconfigeditor-exe.md) můžete vytvářet a upravovat konfigurační soubory pro klienty a služby. Vzhledem k tomu, že konfigurační soubory jsou formátovány jako XML, musíte být obeznámeni s XML, pokud je chcete ručně upravovat pomocí textového editoru. Jinak můžete jej spustit do problémy jako k unfound značky elementu XML nebo atributu. Důvodem je, že značky elementu XML a atributy jsou malá a velká písmena.  
   
- Systém konfigurace WCF je založen na <xref:System.Configuration> oboru názvů. Proto můžete použít všechny funkce úrovně standard poskytuje <xref:System.Configuration> obor názvů, jako např. konfigurace zámku, šifrování a slučování ke zvýšení zabezpečení aplikace a její konfiguraci. Další informace o těchto konceptech naleznete v následujících tématech.  
+ Konfigurační systém WCF je založen na <xref:System.Configuration> oboru názvů. Proto můžete použít všechny standardní funkce poskytované <xref:System.Configuration> oborem názvů, například uzamykání konfigurace, šifrování a sloučení, a zvýšit tak zabezpečení vaší aplikace a její konfigurace. Další informace o těchto konceptech najdete v následujících tématech.  
   
- [Informace o konfiguraci šifrování](https://go.microsoft.com/fwlink/?LinkId=95337)  
+ [Šifrování informací o konfiguraci](https://go.microsoft.com/fwlink/?LinkId=95337)  
   
- [Nastavení uzamčení](https://go.microsoft.com/fwlink/?LinkId=95338)  
+ [Uzamykání nastavení konfigurace](https://go.microsoft.com/fwlink/?LinkId=95338)  
   
- Tato část popisuje všechny možné hodnoty každé položky konfigurace a interakci s ostatními prvky konfigurace WCF. Následující mapa znázorňuje schéma konfigurace služby WCF:  
+ Tato část popisuje všechny možné hodnoty každé položky konfigurace a způsob, jakým komunikuje s ostatními konfiguračními prvky služby WCF. Následující mapa znázorňuje schéma konfigurace WCF:  
   
- ![Diagram zobrazující průběh konfigurační schéma služby WCF.](./media/index/windows-communication-foundation-configuration-schema.gif)  
+ ![Diagram, který zobrazuje schéma konfigurace WCF.](./media/index/windows-communication-foundation-configuration-schema.gif)  
   
 > [!CAUTION]
->  Měli byste chránit WCF konfigurační oddíly funkce v konfigurační soubory aplikace (app.config) s odpovídající řízení přístupu jsou uvedeny (ACL) aby všechny potenciální ohrožení zabezpečení.  Například by měl Ujistěte se, že pouze na příslušné osoby můžete upravit nebo přistoupit k nastavení zabezpečení v aplikaci vazby nebo model oddílu služby konfiguračního souboru pro službu.  
+>  Měli byste chránit konfigurační oddíly WCF v konfiguračních souborech aplikace (App. config) pomocí příslušných seznamů Access Control (ACL), aby se předešlo potenciálním bezpečnostním hrozbám.  Měli byste se třeba ujistit, že k nastavení zabezpečení pro vazby aplikací nebo v oddílu modelu služby v konfiguračním souboru pro službu mají přístup jenom odpovídající uživatelé.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
+ [\<system.serviceModel>](system-servicemodel.md)  
  Popisuje `ServiceModel` elementu.  
   
- [\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)  
- Konfiguruje nástroj SMSvcHost.exe.  
+ [\<system.serviceModel.activation>](system-servicemodel-activation.md)  
+ Konfiguruje nástroj SMSvcHost. exe.  
   
- [\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)  
- Element nejvyšší úrovně pro nastavení možností při použití serializátory, jako <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ [\<system.runtime.serialization>](system-runtime-serialization.md)  
+ Element nejvyšší úrovně pro nastavení možností při použití serializátorů, jako je <xref:System.Runtime.Serialization.DataContractSerializer>například.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Konfigurace aplikací Windows Communication Foundation](../../../wcf/configuring-services.md)  
- Popisuje postup konfigurace služby WCF a klienty.
+ Popisuje postup konfigurace služeb a klientů služby WCF.

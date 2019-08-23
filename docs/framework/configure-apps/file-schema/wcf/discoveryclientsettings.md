@@ -2,18 +2,18 @@
 title: <discoveryClientSettings>
 ms.date: 03/30/2017
 ms.assetid: 02e1b823-a8bb-4074-90d5-8599f71e8f9d
-ms.openlocfilehash: 0b014a9d797ded61949a374486824ee3ebc34661
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2783796166d56be3d4983ab09a60d62491699fe3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673475"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925866"
 ---
 # <a name="discoveryclientsettings"></a>\<discoveryClientSettings>
-Obsahuje nastavení potřeby aplikací a součástí procesu zjišťování služby jako klient.  
+Obsahuje nastavení, která aplikace potřebuje k účasti v procesu zjišťování služby jako klient.  
   
 \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,19 +49,19 @@ Obsahuje nastavení potřeby aplikací a součástí procesu zjišťování slu�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|discoveryEndpoint|Řetězec, který obsahuje název koncového bodu zjišťování, která umožňuje klientské aplikaci automaticky vyhledávat zjistitelné služby a najít adresu za běhu.|  
+|discoveryEndpoint|Řetězec, který obsahuje název koncového bodu zjišťování, který umožňuje klientské aplikaci automaticky vyhledávat zjistitelnou službu a najít její adresu za běhu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Konfigurace element, který dodává sadu kritérií pro službu zjišťování používá klientská aplikace pro hledání. Kritéria mohou být seskupeny do kritéria vyhledávání (určení služby, kterou hledáte) a nalézt ukončení kritéria (jak dlouho vyhledávání by měl trvat).|  
+|[\<standardEndpoints>](standardendpoints.md)|Prvek konfigurace, který poskytuje sadu kritérií používaných klientskou aplikací pro hledání služby zjišťování. Kritéria se dají seskupit do vyhledávacích kritérií (určení služeb, které hledáte), a najít kritéria ukončení (jak dlouho má hledání trvat).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Definuje standardní koncový bod, který obsahuje informace, které umožní, aby aplikace fungovala jako klientský program, který může najít adresu koncového bodu dynamicky za běhu.|  
+|[\<standardEndpoints>](standardendpoints.md)|Definuje standardní koncový bod, který obsahuje informace, které umožní aplikaci fungovat jako klientský program, který může najít adresu koncového bodu dynamicky za běhu.|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,18 +8,18 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 73029c2ec1f144d7c164c34b04383e31d7c149c0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: dc876f609643b7112c0f54574bd202c7c19cb119
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606908"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924773"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (C# možnosti kompilátoru)
 Tato možnost nabízí pohodlný způsob, jak hlásit C# vnitřní chybu kompilátoru společnosti Microsoft.  
   
 > [!NOTE]
->  V systémech Windows Vista a Windows Server 2008 nastavení zasílání zpráv o chybách, která uděláte pro Visual Studio, nepřepisují nastavení vytvořená prostřednictvím služby Zasílání zpráv o chybách systému Windows (WER). Nastavení funkce WER vždycky mají přednost před nastavením zasílání zpráv o chybách sady Visual Studio.  
+> V systémech Windows Vista a Windows Server 2008 nastavení zasílání zpráv o chybách, která uděláte pro Visual Studio, nepřepisují nastavení vytvořená prostřednictvím služby Zasílání zpráv o chybách systému Windows (WER). Nastavení funkce WER vždycky mají přednost před nastavením zasílání zpráv o chybách sady Visual Studio.  
   
 ## <a name="syntax"></a>Syntaxe  
   

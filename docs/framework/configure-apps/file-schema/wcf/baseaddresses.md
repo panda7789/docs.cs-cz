@@ -2,18 +2,18 @@
 title: <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 78918102-2898-46e0-9ea8-6b8afe65603e
-ms.openlocfilehash: 7d0afd638e9a311b69ff47b6789d5fde093945ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 059ea4e637ab906d1fde9807a73ac8341f81c574
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673521"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926414"
 ---
 # <a name="baseaddresses"></a>\<baseAddresses>
-Představuje kolekci `baseAddress` elementy, které jsou základními adresami hostitele služby v prostředí Self-Hosted. Pokud základní adresa je k dispozici, můžete být koncové body nakonfigurované adresy relativní k základní adrese.  
+Představuje kolekci `baseAddress` prvků, které jsou základními adresami hostitele služby v prostředí s místním hostováním. Pokud je k dispozici základní adresa, lze koncovým bodům nakonfigurovat adresy relativní vzhledem k základní adrese.  
   
  \<system.ServiceModel>  
-\<client>  
+\<> klienta  
 \<endpoint>  
 \<host>  
 \<baseAddresses>  
@@ -26,7 +26,7 @@ Představuje kolekci `baseAddress` elementy, které jsou základními adresami h
 </baseAddresses>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -39,17 +39,17 @@ Představuje kolekci `baseAddress` elementy, které jsou základními adresami h
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-baseaddresses.md)|Konfigurační element určující základní adresy použité hostitelem služby.|  
+|[\<add>](add-of-baseaddresses.md)|Prvek konfigurace, který určuje základní adresy používané hostitelem služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Konfigurace element, který určuje nastavení pro hostitele služby.|  
+|[\<host>](host.md)|Prvek konfigurace, který určuje nastavení pro hostitele služby.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>
 - <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A>
-- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+- [Hostování](../../../wcf/feature-details/hosting.md)

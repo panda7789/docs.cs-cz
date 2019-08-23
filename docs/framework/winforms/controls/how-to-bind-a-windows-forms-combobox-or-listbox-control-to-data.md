@@ -15,25 +15,25 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: dfd7f081-8bea-4a41-86a3-86a1934828ef
-ms.openlocfilehash: b869898a20008343b6c6cbe4bc7e399fc86fb232
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f361526c44f8fbb9ab282fe15ae109b67e8f01dd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054013"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922745"
 ---
 # <a name="how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data"></a>Postupy: Vázání ovládacího prvku Windows Forms ComboBox nebo ListBox k datům
-Můžete vytvořit vazbu <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.ListBox> k datům s cílem provést úlohy, jako je procházení dat v databázi, zadáním nových dat nebo úpravy existující data.  
+Můžete vytvořit <xref:System.Windows.Forms.ComboBox> propojení s daty <xref:System.Windows.Forms.ListBox> a provádět úkoly, jako je například procházení dat v databázi, zadávání nových dat nebo úprava stávajících dat.  
   
-### <a name="to-bind-a-combobox-or-listbox-control"></a>K vytvoření vazby ovládacího prvku ComboBox nebo ListBox  
+### <a name="to-bind-a-combobox-or-listbox-control"></a>Svázání ovládacího prvku ComboBox nebo ListBox  
   
-1. Nastavte `DataSource` vlastnost na objekt zdroje dat. Zdroje dat patří <xref:System.Windows.Forms.BindingSource> vázán na data, data tabulky, zobrazení dat, datové sady, data zobrazení, správce, pole nebo jakékoli třídy, která implementuje <xref:System.Collections.IList> rozhraní. Další informace najdete v tématu [zdroje dat podporované rozhraním Windows Forms](../data-sources-supported-by-windows-forms.md).  
+1. `DataSource` Nastavte vlastnost na objekt zdroje dat. Možné zdroje dat zahrnují <xref:System.Windows.Forms.BindingSource> vazbu na data, datovou tabulku, zobrazení dat, datovou sadu, Správce zobrazení dat, pole nebo libovolnou třídu, která <xref:System.Collections.IList> implementuje rozhraní. Další informace najdete v tématu [zdroje dat podporované nástrojem model Windows Forms](../data-sources-supported-by-windows-forms.md).  
   
-2. Pokud vytváříte vazbu na tabulku, nastavte `DisplayMember` nastavte na název sloupce ve zdroji dat.  
+2. Pokud vytváříte vazbu na tabulku, nastavte `DisplayMember` vlastnost na název sloupce ve zdroji dat.  
   
      \- nebo –  
   
-     Pokud se vazba na <xref:System.Collections.IList>, nastavte veřejnou vlastnost typu v seznamu zobrazit člena.  
+     Pokud vytváříte vazbu na <xref:System.Collections.IList>, nastavte člena zobrazení na veřejnou vlastnost typu v seznamu.  
   
     ```vb  
     Private Sub BindComboBox()  
@@ -51,7 +51,7 @@ Můžete vytvořit vazbu <xref:System.Windows.Forms.ComboBox> a <xref:System.Win
     ```  
   
     > [!NOTE]
-    >  Pokud jsou vázány na zdroj dat, který neimplementuje <xref:System.ComponentModel.IBindingList> rozhraní, například <xref:System.Collections.ArrayList>, vázaného ovládacího prvku dat nebude aktualizovat, když dojde k aktualizaci zdroje dat. Například pokud máte pole se seznamem povinen <xref:System.Collections.ArrayList> a data je přidána do <xref:System.Collections.ArrayList>, tyto nové položky v poli se seznamem nezobrazí. Ale můžete vynutit pole se seznamem aktualizovat voláním <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> a <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> metody instance <xref:System.Windows.Forms.BindingContext> třídy pro ovládací prvek vázán.  
+    > Pokud jste vázáni na zdroj dat, který neimplementuje <xref:System.ComponentModel.IBindingList> rozhraní, <xref:System.Collections.ArrayList>jako je například, data vázaného ovládacího prvku nebudou aktualizována při aktualizaci zdroje dat. Například pokud máte pole se seznamem svázané <xref:System.Collections.ArrayList> s a data jsou přidána <xref:System.Collections.ArrayList>do, tyto nové položky se nezobrazí v poli se seznamem. Můžete však vynutit aktualizaci pole se seznamem voláním <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> metod a <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> <xref:System.Windows.Forms.BindingContext> na instanci třídy, ke které je ovládací prvek vázán.  
   
 ## <a name="see-also"></a>Viz také:
 

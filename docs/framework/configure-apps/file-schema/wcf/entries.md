@@ -2,21 +2,21 @@
 title: <entries>
 ms.date: 03/30/2017
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
-ms.openlocfilehash: 5561cf61cef2258ec61bd32770538add1c69f5c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 610ba29ec98f4b1f2a9b1db3542bcb3aefb46457
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704203"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925652"
 ---
-# <a name="entries"></a>\<položky >
-Směrování položky, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.  
+# <a name="entries"></a>\<> položky
+Záznam směrování obsahující mapování mezi směrovacími filtry a cílovými koncovými body, na které se odesílají zprávy, když se filtr shoduje.  
   
  \<system.serviceModel>  
-\<směrování >  
-\<routingTables>  
-\<Tabulka >  
-\<položky >  
+\<> směrování  
+\<routingTables >  
+\<> tabulky  
+\<> položky  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,13 +45,13 @@ Směrování položky, které obsahují mapování mezi směrovacími filtry a c
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Filtr se mapuje na koncový bod klienta, který byl dříve definován. Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.|  
+|[\<Filtry>](filters-of-routing.md)|Mapuje filtr na koncový bod klienta, který byl dříve definován. Zprávy, které odpovídají tomuto filtru, budou odeslány do tohoto cíle.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje směrovací tabulky.|  
+|[\<> směrování](routing.md)|Konfigurační oddíl, který obsahuje směrovací tabulku.|  
   
 ## <a name="see-also"></a>Viz také:
 

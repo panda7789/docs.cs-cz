@@ -2,12 +2,12 @@
 title: Zrušení zbývajících asynchronních úloh po dokončení jedné zC#nich ()
 ms.date: 07/20/2015
 ms.assetid: d3cebc74-c392-497b-b1e6-62a262eabe05
-ms.openlocfilehash: 5237d82506da5e304a8f265feab7d7f3beaa45b0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 81aed54d4854ad505971fbf85cf9a080a7c392d1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595692"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922018"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>Zrušení zbývajících asynchronních úloh po dokončení jedné zC#nich ()
 Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metody společně s a <xref:System.Threading.CancellationToken>můžete zrušit všechny zbývající úlohy, když je jeden úkol dokončen. `WhenAny` Metoda přebírá argument, který je kolekcí úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena, když je dokončen libovolný úkol v kolekci.  
@@ -15,7 +15,7 @@ Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithTyp
  Tento příklad ukazuje, jak použít token zrušení ve spojení s `WhenAny` pro uložení na první úkol pro dokončení z kolekce úkolů a zrušení zbývajících úkolů. Každý úkol stáhne obsah webu. V příkladu se zobrazí délka obsahu prvního stažení, která se má dokončit, a ostatní soubory ke stažení se zruší.  
   
 > [!NOTE]
->  Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.  
+> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.  
   
 ## <a name="downloading-the-example"></a>Stažení příkladu  
  Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  

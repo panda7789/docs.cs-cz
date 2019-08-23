@@ -6,15 +6,15 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: 51cfe4a52af2fbcd51a4f9e2dc738e83fe0852c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5892baaa2732d95cfe698147e06b914af968adc5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793975"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929429"
 ---
 # <a name="-keycontainer"></a>-keycontainer
-Určuje název kontejneru klíčů pro dvojice klíčů poskytnout sestavení silným názvem.  
+Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestavení silného názvu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,24 +26,24 @@ Určuje název kontejneru klíčů pro dvojice klíčů poskytnout sestavení si
   
 |Termín|Definice|  
 |---|---|  
-|`container`|Povinný parametr. Soubor kontejneru, který obsahuje klíč. Název souboru uzavřete do uvozovek ("") Pokud název obsahuje mezery.|  
+|`container`|Povinný parametr. Soubor kontejneru, který obsahuje klíč. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Kompilátor vytvoří komponentu sdílet tak, že vloží veřejný klíč do manifestu sestavení a podepíše konečné sestavení soukromým klíčem. Chcete-li generovat soubor s klíčem, zadejte `sn -k file` na příkazovém řádku. `-i` Možnost nainstaluje pár klíčů do kontejneru. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
+ Kompilátor vytvoří součást, kterou může sdílet, vložením veřejného klíče do manifestu sestavení a podepsáním konečného sestavení pomocí privátního klíče. Chcete-li vygenerovat soubor klíče `sn -k file` , zadejte do příkazového řádku. `-i` Možnost nainstaluje dvojici klíčů do kontejneru. Další informace naleznete v tématu [sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
- Pokud kompilujete s `-target:module`, je název souboru klíče uložené v modulu a součástí sestavení, které se vytvoří, když kompilujete sestavení s [- addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
+ Pokud kompilujete s `-target:module`, název souboru klíče je uložen v modulu a začleněn do sestavení, které je vytvořeno při kompilaci sestavení pomocí [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
   
- Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyKeyNameAttribute>) ve zdrojovém kódu pro jakýkoli modul Microsoft intermediate language (MSIL).  
+ Tuto možnost lze také zadat jako vlastní atribut (<xref:System.Reflection.AssemblyKeyNameAttribute>) ve zdrojovém kódu pro libovolný modul jazyka MSIL (Microsoft Intermediate Language).  
   
- Můžete také předat údaje o šifrování pro kompilátor [- keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md). Použití [- delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) potřebujete částečně podepsaného sestavení.  
+ Můžete také předat informace o šifrování kompilátoru s parametrem [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md). Použijte [-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) , pokud chcete použít částečně podepsané sestavení.  
   
- Zobrazit [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
+ Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) .  
   
 > [!NOTE]
->  `-keycontainer` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
+> Tato `-keycontainer` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód se zkompiluje zdrojový soubor `Input.vb` a Určuje kontejner klíče.  
+ Následující kód zkompiluje zdrojový soubor `Input.vb` a určí kontejner klíčů.  
   
 ```  
 vbc -keycontainer:key1 input.vb  
@@ -52,6 +52,6 @@ vbc -keycontainer:key1 input.vb
 ## <a name="see-also"></a>Viz také:
 
 - [Sestavení v .NET](../../../standard/assembly/index.md)
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

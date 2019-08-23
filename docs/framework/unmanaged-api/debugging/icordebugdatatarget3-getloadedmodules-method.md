@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 9a48c05b-1949-416e-933c-52549b6fcf5e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fc62618c5872a2c3e3740be4c60ae02e386c1868
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 120b839b2b11c85f42bb1a0ae4701de0dea33879
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750025"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912825"
 ---
 # <a name="icordebugdatatarget3getloadedmodules-method"></a>Metoda ICorDebugDataTarget3::GetLoadedModules
-Získá seznam modulů, které zatím byly načteny.  
+Načte seznam modulů, které byly doposud načteny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,27 +26,27 @@ HRESULT GetLoadedModules(
   
 ## <a name="parameters"></a>Parametry  
  `cRequestedModules`  
- [in] Počet modulů, pro které je požadované informace.  
+ pro Počet modulů, pro které jsou požadovány informace.  
   
  `pcFetchedModules`  
- [out] Ukazatel na počet modulů, které se vrátí informace.  
+ mimo Ukazatel na počet modulů, které informace byly vráceny.  
   
  `pLoadedModules`  
- [out] Ukazatel na pole [ICorDebugLoadedModule](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-interface.md) objekty, které poskytují informace o načtené moduly.  
+ mimo Ukazatel na pole objektů [Metoda ICorDebugLoadedModule](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-interface.md) , které poskytují informace o načtených modulech.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

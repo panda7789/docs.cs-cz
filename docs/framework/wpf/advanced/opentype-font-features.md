@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: 580f9ce81e9b3652a9defec25dfd05f47e296d7a
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 7d73176a68d8b4b19b6c980ef52e1f47408127fb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545392"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933691"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
@@ -37,7 +37,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
 - Širší podpora pro pokročilou typografickou kontrolu.  
   
 > [!NOTE]
->  Windows SDK obsahuje sadu ukázkových písem OpenType, která můžete použít s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikacemi. Tato písma poskytují většinu funkcí, které jsou znázorněné ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+> Windows SDK obsahuje sadu ukázkových písem OpenType, která můžete použít s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikacemi. Tato písma poskytují většinu funkcí, které jsou znázorněné ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
  Podrobnosti o formátu písma OpenType najdete v tématu [specifikace OpenType](https://go.microsoft.com/fwlink/?LinkId=96731) .  
   

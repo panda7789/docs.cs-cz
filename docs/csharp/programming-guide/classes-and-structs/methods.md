@@ -6,24 +6,24 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 7255d4a2c57ea9e0469174cfe139a4ab54d62372
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 6e7a1dfc739278eecfa8582bb0a9f8938c561acf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596393"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924460"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že budou příkazy provedeny voláním metody a zadáním požadovaných argumentů metody. V C#je každá spuštěná instrukce provedena v kontextu metody. Metoda Main je vstupním bodem pro každou C# aplikaci a je volána modulem CLR (Common Language Runtime) při spuštění programu.  
   
 > [!NOTE]
->  Toto téma popisuje pojmenované metody. Informace o anonymních funkcích naleznete v tématu [Anonymous Functions](../statements-expressions-operators/anonymous-functions.md).  
+> Toto téma popisuje pojmenované metody. Informace o anonymních funkcích naleznete v tématu [Anonymous Functions](../statements-expressions-operators/anonymous-functions.md).  
   
 ## <a name="method-signatures"></a>Signatury metod  
  Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md) zadáním `public` úrovně přístupu, jako jsou nebo `private`, volitelné modifikátory `abstract` , jako je `sealed`například nebo, návratová hodnota, název metody a všechny parametry metody. . Tyto části jsou společně signaturou metody.  
   
 > [!NOTE]
->  Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.  
+> Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.  
   
  Parametry metody jsou uzavřeny v závorkách a jsou odděleny čárkami. Prázdné kulaté závorky označují, že metoda nepožaduje žádné parametry. Tato třída obsahuje čtyři metody:  
   
@@ -116,7 +116,7 @@ public static void FillMatrix(int[,] matrix)
  Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/keywords/await.md) v metodě. Když ovládací prvek dosáhne výrazu await v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.  
   
 > [!NOTE]
->  Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.  
+> Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.  
   
  Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>nebo void. Typ vrácené hodnoty void slouží hlavně k definování obslužných rutin událostí, kde je požadován návratový typ void. Asynchronní metoda, která vrací typ void, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.  
   

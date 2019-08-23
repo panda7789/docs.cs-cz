@@ -2,15 +2,15 @@
 title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: 5d6bfb1e4aa1651cd8c3a869f681d71cfb15725c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ef980c86efad4fda86cf62148e50688fd22afe49
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751868"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926092"
 ---
 # <a name="comcontract"></a>\<comContract>
-Určuje kontrakt služby integrace modelu COM +.  
+Určuje kontrakt služby integrace modelu COM+.  
   
  \<system.ServiceModel>  
 \<comContracts>  
@@ -49,27 +49,27 @@ Určuje kontrakt služby integrace modelu COM +.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|kontrakt|Řetězec, který obsahuje typ kontraktu.|  
-|name|Řetězec obsahující název kontraktu.|  
+|dodavatele|Řetězec, který obsahuje typ kontraktu.|  
+|name|Řetězec, který obsahuje název kontraktu.|  
 |– obor názvů|Řetězec, který obsahuje obor názvů kontraktu.|  
-|Vlastnost requiresSession|Logická hodnota, která určuje, zda lze kontrakt použít pouze vazby s relacemi. Při inicializaci služby modulu runtime integrace zajišťuje, že toto nastavení je konzistentní s typem vazby který se má použít. Je vygenerována výjimka, pokud jeden nebo více vazeb pro kontrakt je v konfliktu. Pokud je tato vlastnost `false`a je jednosměrná kanál používá a [parametry out] existuje, je vygenerována výjimka.|  
+|requiresSession|Logická hodnota určující, zda lze kontrakt použít pouze pro vazby s relacemi. Po inicializaci služby Integration runtime zajistí, že toto nastavení je konzistentní s typem vazby, která se má použít. Výjimka je vygenerována v případě, že jedna nebo více vazeb pro kontrakt jsou v konfliktu. Pokud je `false`Tato vlastnost a používá se jednosměrný kanál a existují parametry [out], vygeneruje se taky výjimka.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|persistableTypes|Všechny trvalé typy.|  
-|userDefinedTypes|Kolekce z uživateli definované typy (UDT), který je součástí kontraktu služby.|  
-|exposedMethods|Kolekce metod modelu COM +, které jsou vystaveny při vystavení rozhraní komponenty COM + jako webovou službu.|  
+|persistableTypes|Všechny typy, které jsou trvalé.|  
+|userDefinedTypes|Kolekce uživatelsky definovaných typů (UDT), které mají být zahrnuty do kontraktu služby.|  
+|exposedMethods|Kolekce metod modelu COM+, která je vystavena v případě, že je rozhraní součásti modelu COM vystaveno jako webová služba.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|comContracts|Obsahuje kolekci `comContract` elementy.|  
+|comContracts|Obsahuje kolekci `comContract` prvků.|  
   
 ## <a name="remarks"></a>Poznámky  
- Kontrakty služby integrace modelu COM + jsou momentálně omezené jenom na `http://tempuri.org` oboru názvů a název smlouvy je odvozen z rozhraní COM podpůrné. Alternativy můžete však určit pomocí `comContracts` část, stejně jako `comContract` element v konfiguračním souboru. Například můžete použít následující konfigurace k určení oboru názvů, název kontraktu a uživatelsky definované typy, které mají být zahrnuty, jakož i další nastavení pro kontrakt služby.  
+ Kontrakty integrační služby com+ jsou aktuálně omezeny `http://tempuri.org` na obor názvů a název kontraktu je odvozen z doprovodného rozhraní modelu COM. Můžete však zadat alternativy pomocí `comContracts` oddílu a také `comContract` elementu v konfiguračním souboru. Pomocí následující konfigurace můžete například zadat obor názvů, název kontraktu a uživatelsky definované typy, které se mají zahrnout, a další nastavení pro kontrakt služby.  
   
 ```xml  
 <comContracts>
@@ -86,12 +86,12 @@ Určuje kontrakt služby integrace modelu COM +.
 </comContracts>
 ```  
   
- Při inicializaci služby zadaných oborů názvů trasy a názvy kontraktů se použijí na popis generované služeb.  
+ Po inicializaci služby se zadané obory názvů a názvy kontraktů aplikují na vygenerované popisy služby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElement>
-- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
-- [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<comContracts>](comcontracts.md)
+- [Integrace s aplikacemi modelu COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Postupy: Konfigurace nastavení služby modelu COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

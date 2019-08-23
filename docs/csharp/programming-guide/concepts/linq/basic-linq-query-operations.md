@@ -17,12 +17,12 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: f4a990fae612f4135f5957a2222d672ff90bde2c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 013e1960e6c5721e0bd7ce6998848ddce15a4e4d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594898"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924396"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
 Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazů dotazů a některé z typických typů operací, které v dotazu provedete. Podrobnější informace najdete v následujících tématech:  
@@ -34,7 +34,7 @@ Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclin
  [Návod: Zápis dotazů vC#](./walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
->  Pokud už jste obeznámeni s dotazovacím jazykem, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si o`from` klauzuli v následující části, kde najdete další informace o pořadí klauzulí ve [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů.  
+> Pokud už jste obeznámeni s dotazovacím jazykem, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si o`from` klauzuli v následující části, kde najdete další informace o pořadí klauzulí ve [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů.  
   
 ## <a name="obtaining-a-data-source"></a>Získání zdroje dat  
  [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] V dotazu je prvním krokem určení zdroje dat. V C# nástroji as ve většině programovacích jazyků musí být před použitím deklarována proměnná. `cust``customers`V dotazu je klauzule nejprve první, aby zavedla zdroj dat () a proměnnou rozsahu (). `from` [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]  
@@ -44,7 +44,7 @@ Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclin
  Proměnná rozsahu je stejná jako proměnná iterace ve `foreach` smyčce s tím rozdílem, že ve výrazu dotazu nedochází k žádným skutečným iteracím. Při spuštění dotazu bude proměnná rozsahu sloužit jako odkaz na každý následný prvek v `customers`. Vzhledem k tomu `cust`, že kompilátor může odvodit typ, nemusíte ho explicitně určovat. Další proměnné rozsahu mohou být zavedeny `let` klauzulí. Další informace naleznete v [klauzuli let](../../../language-reference/keywords/let-clause.md).  
   
 > [!NOTE]
->  U neobecných zdrojů <xref:System.Collections.ArrayList>dat, jako například, je nutné explicitně zadat proměnnou rozsahu. Další informace najdete v tématu [jak: Dotazujte objekt ArrayList pomocí klauzuleC#LINQ](./how-to-query-an-arraylist-with-linq.md) () a [klauzule FROM](../../../language-reference/keywords/from-clause.md).  
+> U neobecných zdrojů <xref:System.Collections.ArrayList>dat, jako například, je nutné explicitně zadat proměnnou rozsahu. Další informace najdete v tématu [jak: Dotazujte objekt ArrayList pomocí klauzuleC#LINQ](./how-to-query-an-arraylist-with-linq.md) () a [klauzule FROM](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrování  
  Pravděpodobně nejběžnější operace dotazu je použití filtru ve formě logického výrazu. Filtr způsobí, že dotaz vrátí pouze prvky, pro které je výraz pravdivý. Výsledek je vytvořen pomocí `where` klauzule. Filtr v důsledku určuje, které prvky mají být vyloučeny ze zdrojové sekvence. V následujícím příkladu jsou vráceny pouze ty `customers` , kteří mají adresu v Londýně.  

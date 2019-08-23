@@ -5,22 +5,22 @@ ms.technology: dotnet-standard
 ms.assetid: a0b536b6-cdb3-4a44-86c2-3b2ebc7bd4c9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 308725ecc139d3c95ddff6bdf2d75746750673ce
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: a5c2fb203a1a6975d2b30e47528b15a9005a2583
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170855"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916021"
 ---
 # <a name="xmldatadocument-input-to-xsltransform"></a>Vstup XmlDataDocument do XslTransform
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- Rozhraní Microsoft .NET Framework implementuje XML Document Object Model (DOM) a zajistit tak přístup k datům v dokumentech XML a další třídy pro čtení, zápisu a přejděte v dokumentech XML. <xref:System.Xml.XmlDataDocument>Byl nalezen v <xref:System.Xml> obor názvů, poskytuje schopnost synchronizovat s relačními daty v relační přístup k datům <xref:System.Data.DataSet>. Najednou můžete zobrazit a pracovat s strukturovaná data XML do relační reprezentace <xref:System.Data.DataSet> částečně strukturovaných XML pomocí modelu DOM reprezentace pro práci s nimi <xref:System.Xml.XmlDataDocument>. <xref:System.Xml.XmlDataDocument> Proto překročí hranice XML a relační světů.  
+ Microsoft .NET Framework implementuje XML model DOM (Document Object Model) (DOM) pro poskytnutí přístupu k datům v dokumentech XML a dalších tříd pro čtení, zápis a navigaci v dokumentech XML. Rozhraní <xref:System.Xml.XmlDataDocument>, které se nachází <xref:System.Xml> v oboru názvů, poskytuje relační přístup k datům s možností synchronizace s relačními daty v <xref:System.Data.DataSet>. Strukturovaný kód XML lze současně zobrazit a manipulovat prostřednictvím relační reprezentace <xref:System.Data.DataSet> nebo manipulovat s částečně strukturovaným kódem XML prostřednictvím reprezentace <xref:System.Xml.XmlDataDocument>modelu DOM. <xref:System.Xml.XmlDataDocument> Proto překračuje hranice XML a relační světů.  
   
- Pokud chcete, aby vstup k transformaci XSLT, data se ukládají do relační struktury můžete načíst relačních dat do <xref:System.Data.DataSet> a přidružte jej k <xref:System.Xml.XmlDataDocument>. <xref:System.Xml.XPath.XPathNavigator>, Vstup <xref:System.Xml.Xsl.XslTransform>, se implementuje na <xref:System.Xml.XmlDataDocument> prostřednictvím <xref:System.Xml.XPath.IXPathNavigable> rozhraní. Provedením relačních dat načítání do aplikace <xref:System.Data.DataSet>a pomocí synchronizace v rámci <xref:System.Xml.XmlDataDocument>, relačních dat teď můžou mít transformace XSLT provádí.  
+ Pokud jsou data uložena v relační struktuře a chcete, aby byla vložena do transformace XSLT, můžete načítat relační data do <xref:System.Data.DataSet> a přidružit je <xref:System.Xml.XmlDataDocument>k. Vstupní hodnoty, <xref:System.Xml.XmlDataDocument> jsou<xref:System.Xml.XPath.IXPathNavigable> implementovány v rozhraní prostřednictvím rozhraní. <xref:System.Xml.Xsl.XslTransform> <xref:System.Xml.XPath.XPathNavigator> Když narazíte na relační data, načteme je do <xref:System.Data.DataSet>a pomocí synchronizace <xref:System.Xml.XmlDataDocument>v rámci, v relačních datech teď můžou být provedené transformace XSLT.  
   
- Další informace o použití transformace na relační data, najdete v tématu [použití transformaci XSLT na datovou sadu](../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md).  
+ Další informace o použití transformace na relační data naleznete v tématu [použití transformace XSLT na datovou sadu](../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md).  
   
 ## <a name="see-also"></a>Viz také:
 

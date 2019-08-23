@@ -6,12 +6,12 @@ helpviewer_keywords:
 - masks [WPF], opacity
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-ms.openlocfilehash: 76ec595b1d2cc732e1c8bc2dc2ca6def904bf94c
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: d0fea1aac4efb17811404ce45769615bb2e7234f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545339"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929661"
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
 Masky neprůhlednosti umožňují nastavit části prvku nebo vizuálu buď transparentní, nebo částečně transparentní. Chcete-li vytvořit masku neprůhlednosti, <xref:System.Windows.Media.Brush> použijte <xref:System.Windows.UIElement.OpacityMask%2A> pro vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec je namapován na prvek nebo vizuál a hodnota neprůhlednosti každého obrazového bodu štětce se používá k určení výsledné neprůhlednosti každého odpovídajícího pixelu prvku nebo vizuálu.  
@@ -25,7 +25,7 @@ Masky neprůhlednosti umožňují nastavit části prvku nebo vizuálu buď tran
  Maska neprůhlednosti funguje tak, že mapuje její obsah na prvek nebo vizuál. Alfa kanál každého z obrazových bodů štětce se pak použije k určení výsledné neprůhlednosti prvku nebo odpovídajících obrazových bodů vizuálu; skutečná barva štětce je ignorována. Pokud je předaná část štětce průhledná, odpovídající část prvku nebo vizuálu se změní na transparentní. Pokud je daná část štětce neprůhledná, nezůstane průhlednost odpovídající části prvku nebo vizuálu beze změny. Krytí určené maskou neprůhlednosti je kombinováno s jakýmkoli nastavením neprůhlednosti, které je přítomno v prvku nebo vizuálu. Například pokud je prvek 25 procent neprůhledný a je použita maska neprůhlednosti, která přechází z zcela neprůhledných na plně transparentní, výsledkem je prvek, který přechází z neprůhlednosti 25 procent na plně transparentní.  
   
 > [!NOTE]
->  I když příklady v tomto přehledu ukazují použití masek neprůhlednosti pro prvky obrázku, může být použita maska neprůhlednosti pro libovolný prvek <xref:System.Windows.Media.Visual>nebo, včetně panelů a ovládacích prvků.  
+> I když příklady v tomto přehledu ukazují použití masek neprůhlednosti pro prvky obrázku, může být použita maska neprůhlednosti pro libovolný prvek <xref:System.Windows.Media.Visual>nebo, včetně panelů a ovládacích prvků.  
   
  Masky neprůhlednosti slouží k vytváření zajímavých vizuálních efektů, jako je například vytváření obrázků nebo tlačítek, které se zobrazují v zobrazení, přidávání textur k prvkům nebo kombinování přechodů za účelem vytvoření povrchů podobných skleněným. Následující obrázek ukazuje použití masky krytí. K zobrazení průhledných částí masky se používá šachovnicové pozadí.  
   

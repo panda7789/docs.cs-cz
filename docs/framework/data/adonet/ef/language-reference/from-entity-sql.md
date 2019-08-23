@@ -2,15 +2,15 @@
 title: Z (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-ms.openlocfilehash: 69a6af868ace384a63d08d705c395b58a173ca8e
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 77e22a64310959f66af14137f312b225d42fe56f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662158"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950370"
 ---
 # <a name="from-entity-sql"></a>Z (Entity SQL)
-Určuje kolekci používané [vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) příkazy.  
+Určuje kolekci používanou v příkazech [Select](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,101 +20,101 @@ FROM expression [ ,...n ] as C
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný dotaz výraz, jehož výsledkem jsou použít jako zdroj v kolekci `SELECT` příkazu.  
+ Libovolný platný výraz dotazu, který vydává kolekci, která se má použít jako `SELECT` zdroj v příkazu  
   
 ## <a name="remarks"></a>Poznámky  
- A `FROM` klauzule je čárkou oddělený seznam jednoho nebo víc `FROM` klauzule položky. `FROM` Klauzuli lze použít k určení pro jeden nebo více zdrojů `SELECT` příkazu. Nejjednodušší forma `FROM` je klauzule výrazu jednoho dotazu, která identifikuje kolekci a použít jako zdroj v aliasu `SELECT` příkaz, jak je znázorněno v následujícím příkladu:  
+ Klauzule je čárkami oddělený seznam jedné nebo více `FROM` položek klauzule. `FROM` Klauzuli lze použít k zadání jednoho nebo více zdrojů `SELECT` pro příkaz. `FROM` Nejjednodušší forma `FROM` klauzule je jeden výraz dotazu, který identifikuje kolekci a alias použitý jako zdroj `SELECT` v příkazu, jak je znázorněno v následujícím příkladu:  
   
  `FROM C as c`  
   
-## <a name="from-clause-items"></a>Z položky – klauzule  
- Každý `FROM` klauzule položka odkazuje na kolekci zdrojové v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje následující třídy `FROM` klauzule položky: jednoduché `FROM` klauzule položky `JOIN FROM` klauzule položky a `APPLY FROM` klauzule položky. Každá z těchto `FROM` klauzule položky je popsána podrobněji v následujících částech.  
+## <a name="from-clause-items"></a>Položky klauzule FROM  
+ Každá `FROM` položka klauzule odkazuje na zdrojovou kolekci [!INCLUDE[esql](../../../../../../includes/esql-md.md)] v dotazu. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje následující třídy `FROM` položek klauzule: jednoduché `FROM` položky klauzule, `JOIN FROM` položky klauzule a `APPLY FROM` položky klauzule. Každá z těchto `FROM` položek klauzule je podrobněji popsána v následujících částech.  
   
-### <a name="simple-from-clause-item"></a>Jednoduché položka klauzule FROM  
- Nejjednodušší `FROM` položka klauzule je jediný výraz, který identifikuje kolekci a alias. Výraz může být jednoduše sadu entit, nebo poddotaz nebo jiný výraz, který se o typ kolekce. Následuje příklad:  
+### <a name="simple-from-clause-item"></a>Jednoduchá položka klauzule FROM  
+ Nejjednodušší `FROM` položka klauzule je jeden výraz, který identifikuje kolekci a alias. Výraz může být jednoduše sada entit nebo poddotaz nebo jakýkoli jiný výraz, který je typem kolekce. Následuje příklad:  
   
 ```  
 LOB.Customers as c  
 ```  
   
- Specifikace alias je volitelné. Alternativní specifikace z výše uvedených položka klauzule from může být následující:  
+ Specifikace aliasu je volitelná. Alternativní specifikace předchozí položky klauzule FROM by mohla být následující:  
   
 ```  
 LOB.Customers  
 ```  
   
- Pokud není zadán žádný alias, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí vygenerovat alias založené na výrazu kolekce.  
+ Pokud není zadán žádný alias, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] aplikace se pokusí vygenerovat alias na základě výrazu kolekce.  
   
-### <a name="join-from-clause-item"></a>Připojte se k položka klauzule FROM  
- A `JOIN FROM` položka klauzule představuje spojení mezi dvěma `FROM` klauzule položky. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje různé spojení, vnitřní spojení, levé a pravé vnější spojení a plné vnější spojení. Všechny tyto spojení jsou podporovány podobným způsobem, že jsou podporovány v příkazů jazyka Transact-SQL. Stejně jako v příkazů jazyka Transact-SQL, dva `FROM` součástí klauzule položky `JOIN` musí být nezávislé. To znamená že nelze korelaci. A `CROSS APPLY` nebo `OUTER APPLY` lze použít pro tyto případy.  
+### <a name="join-from-clause-item"></a>PROPOJIT položku klauzule FROM  
+ Položka klauzule představuje spojení mezi dvěma `FROM` položkami klauzule. `JOIN FROM` [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje vzájemné spojení, vnitřní spojení, levé a pravé vnější spojení a úplné vnější spojení. Všechna tato spojení jsou podporovaná podobným způsobem, jakým jsou podporované v jazyce Transact-SQL. Stejně jako v jazyce Transact-SQL `FROM` `JOIN` musí být položky obou klauzulí, které jsou součástí, nezávislé. To znamená, že nelze provést korelaci. V `CROSS APPLY` těchto `OUTER APPLY` případech lze použít nebo.  
   
-#### <a name="cross-joins"></a>Křížové spojení  
- A `CROSS JOIN` dotazu výraz vytvoří kartézský součin dvou kolekcí, jak je znázorněno v následujícím příkladu:  
+#### <a name="cross-joins"></a>Vzájemné spojení  
+ Výraz `CROSS JOIN` dotazu vytvoří produkt kartézském ze dvou kolekcí, jak je znázorněno v následujícím příkladu:  
   
  `FROM C AS c CROSS JOIN D as d`  
   
 #### <a name="inner-joins"></a>Vnitřní spojení  
- `INNER JOIN` Vytváří omezené kartézský součin dvou kolekcí, jak je znázorněno v následujícím příkladu:  
+ `INNER JOIN` Vytvoří omezený kartézském produkt dvou kolekcí, jak je znázorněno v následujícím příkladu:  
   
  `FROM C AS c [INNER] JOIN D AS d ON e`  
   
- Předchozí výrazu dotazu zpracovává kombinaci každý prvek kolekce na levé straně spáruje každý prvek v kolekci podle pravé, kde `ON` je podmínka pravdivá. Pokud ne `ON` je zadána podmínka, `INNER JOIN` degeneruje k `CROSS JOIN`.  
+ Předchozí výraz dotazu zpracuje kombinaci každého prvku kolekce na levé straně párování s každým prvkem kolekce na pravé straně, kde `ON` je podmínka pravdivá. Pokud není `ON` zadána žádná podmínka, výjimku `INNER JOIN` vygeneruje `CROSS JOIN`.  
   
-#### <a name="left-outer-joins-and-right-outer-joins"></a>Levé vnější spojení a levé vnější spojení  
- `OUTER JOIN` Dotazu výraz vytvoří omezené kartézský součin dvou kolekcí, jak je znázorněno v následujícím příkladu:  
+#### <a name="left-outer-joins-and-right-outer-joins"></a>Levé vnější spojení a pravé vnější spojení  
+ Výraz `OUTER JOIN` dotazu vytváří omezený kartézském produkt dvou kolekcí, jak je znázorněno v následujícím příkladu:  
   
  `FROM C AS c LEFT OUTER JOIN D AS d ON e`  
   
- Předchozí výrazu dotazu zpracovává kombinaci každý prvek kolekce na levé straně spáruje každý prvek v kolekci podle pravé, kde `ON` je podmínka pravdivá. Pokud `ON` podmínka není splněna, výraz stále zpracovává jednu instanci elementu na levé straně spáruje elementu na pravé straně s hodnotou null.  
+ Předchozí výraz dotazu zpracuje kombinaci každého prvku kolekce na levé straně párování s každým prvkem kolekce na pravé straně, kde `ON` je podmínka pravdivá. Pokud je `ON` podmínka NEPRAVDA, výraz stále zpracovává jednu instanci elementu vlevo spárovaného proti elementu na pravé straně s hodnotou null.  
   
- A `RIGHT OUTER JOIN` podobným způsobem je možné vyjádřit.  
+ `RIGHT OUTER JOIN` Může být vyjádřen podobným způsobem.  
   
 #### <a name="full-outer-joins"></a>Úplné vnější spojení  
- Explicitní `FULL OUTER JOIN` vytváří omezené kartézský součin dvou kolekcí, jak je znázorněno v následujícím příkladu:  
+ Explicitní `FULL OUTER JOIN` vytvoří omezený kartézském produkt dvou kolekcí, jak je znázorněno v následujícím příkladu:  
   
  `FROM C AS c FULL OUTER JOIN D AS d ON e`  
   
- Předchozí výrazu dotazu zpracovává kombinaci každý prvek kolekce na levé straně spáruje každý prvek v kolekci podle pravé, kde `ON` je podmínka pravdivá. Pokud `ON` podmínka není splněna, výraz stále zpracovává jeden výskyt elementu na levé straně spáruje elementu na pravé straně s hodnotou null. Zpracovává také jednu instanci elementu na pravé straně spáruje elementu na levé straně, s hodnotou null.  
+ Předchozí výraz dotazu zpracuje kombinaci každého prvku kolekce na levé straně párování s každým prvkem kolekce na pravé straně, kde `ON` je podmínka pravdivá. Pokud je `ON` podmínka NEPRAVDA, výraz stále zpracovává jednu instanci elementu vlevo spárovaného proti elementu na pravé straně s hodnotou null. Také zpracovává jednu instanci prvku na pravé straně spárovánou s elementem vlevo s hodnotou null.  
   
 > [!NOTE]
->  Chcete-li zachovat kompatibilitu s SQL-92 v příkazů jazyka Transact-SQL – klíčové slovo vnější je volitelný. Proto `LEFT JOIN`, `RIGHT JOIN`, a `FULL JOIN` jsou synonyma pro `LEFT OUTER JOIN`, `RIGHT OUTER JOIN`, a `FULL OUTER JOIN`.  
+> Aby se zachovala kompatibilita s SQL-92, je klíčové slovo OUTER v jazyce Transact-SQL volitelné. `LEFT JOIN` `FULL JOIN` `RIGHT OUTER JOIN`Proto,, a jsou synonyma pro `LEFT OUTER JOIN`, a. `FULL OUTER JOIN` `RIGHT JOIN`  
   
-### <a name="apply-clause-item"></a>POUŽITÍ klauzule položky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dva typy z `APPLY`: `CROSS APPLY` a `OUTER APPLY`.  
+### <a name="apply-clause-item"></a>Položka klauzule APPLy  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje dva druhy `APPLY`: `CROSS APPLY` a `OUTER APPLY`.  
   
- A `CROSS APPLY` vytvoří jedinečný párování jednotlivých elementů kolekce na levé straně s elementem kolekci vytvořenou testovaným vyhodnocení výrazu na pravé straně. S `CROSS APPLY`, výraz na pravé straně je funkčně závislé na element na levé straně, jak je znázorněno v následujícím příkladu přiřazené kolekce:  
+ Vytvoří `CROSS APPLY` jedinečné párování každého prvku kolekce na levé straně s prvkem kolekce vytvořeným vyhodnocením výrazu na pravé straně. `CROSS APPLY`V případě, je výraz na pravé straně funkčně závislý na elementu na levé straně, jak je znázorněno v následujícím příkladu přidružené kolekce:  
   
  `SELECT c, f FROM C AS c CROSS APPLY c.Assoc AS f`  
   
- Chování `CROSS APPLY` se podobá seznamu spojení. Pokud výraz na pravé straně je vyhodnocen jako prázdnou kolekci, `CROSS APPLY` vytváří žádné párování pro tuto instanci elementu na levé straně.  
+ Chování `CROSS APPLY` je podobné jako v seznamu spojení. Pokud je výraz na pravé straně vyhodnocen jako prázdná kolekce, `CROSS APPLY` nevytvoří žádné párování pro tuto instanci elementu vlevo.  
   
- `OUTER APPLY` Vypadá podobně jako `CROSS APPLY`, s výjimkou párování se stále vytváří, i v případě, že výraz na pravé straně je vyhodnocen jako prázdnou kolekci. Následující je příkladem `OUTER APPLY`:  
+ Se podobá `CROSS APPLY`, s tím rozdílem, že párování je stále vytvořeno i v případě, že je výraz na pravé straně vyhodnocen jako prázdná kolekce. `OUTER APPLY` Následuje příklad `OUTER APPLY`:  
   
  `SELECT c, f FROM C AS c OUTER APPLY c.Assoc AS f`  
   
 > [!NOTE]
->  Na rozdíl od není nutné pro explicitní unnest krok v příkazů jazyka Transact-SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+> Na rozdíl od jazyka Transact-SQL není nutné explicitní krok unvnořování v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 > [!NOTE]
->  `CROSS` a `OUTER APPLY` operátory byly zavedeny v systému SQL Server 2005. V některých případech může být kanálu dotazu jazyka Transact-SQL, který obsahuje `CROSS APPLY` a/nebo `OUTER APPLY` operátory. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí systému SQL Server starších než SQL Server 2005 nepodporuje tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
+> `CROSS`operátory `OUTER APPLY` a byly představeny v SQL Server 2005. V některých případech může kanál dotazů vydávat Transact-SQL, který obsahuje `CROSS APPLY` operátory and/ `OUTER APPLY` or. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí SQL Server starších než SQL Server 2005, tyto operátory nepodporují, takové dotazy nelze na těchto back-end poskytovateli spustit.  
 >   
->  Některé typické scénáře, které by mohly vést k výskytu `CROSS APPLY` a/nebo `OUTER APPLY` operátory v dotazu výstupu jsou následující: korelační poddotaz s stránkování; AnyElement přes korelační poddotaz nebo kolekci vytvořenou testovaným navigace; LINQ dotazy, které používají metody, které přijímají elementu selektoru; seskupení dotaz, ve kterém `CROSS APPLY` nebo `OUTER APPLY` jsou explicitně zadány; dotaz, který má `DEREF` vytvořit přes `REF` vytvořit.  
+>  Některé typické scénáře, které by mohly vést k přítomnosti `CROSS APPLY` operátorů a `OUTER APPLY` /nebo ve výstupním dotazu, jsou následující: korelační poddotaz se stránkováním; AnyElement přes korelační poddotaz nebo přes kolekci vytvořenou navigací; Dotazy LINQ používající seskupovací metody, které přijímají selektor elementu; `CROSS APPLY` dotaz, ve kterém `OUTER APPLY` je explicitně zadáno, a dotaz, který `REF` má `DEREF` konstruktor nad konstrukcí.  
   
-## <a name="multiple-collections-in-the-from-clause"></a>Více kolekcí v FROM – klauzule  
- `FROM` Klauzule může obsahovat více než jednu kolekci, oddělené čárkami. V těchto případech kolekce se předpokládá, že spojit dohromady. Si můžete představte jako křížové spojení n způsobem.  
+## <a name="multiple-collections-in-the-from-clause"></a>Více kolekcí v klauzuli FROM  
+ `FROM` Klauzule může obsahovat více než jednu kolekci oddělenou čárkami. V těchto případech se předpokládá, že se kolekce spojí dohromady. Ty si můžete představit jako n-Way KŘÍŽové spojení.  
   
- V následujícím příkladu `C` a `D` jsou nezávislé kolekce, ale `c.Names` závisí na `C`.  
+ V `C` následujícím příkladu `D` jsou nezávislé kolekce, ale `c.Names` závisí na `C`.  
   
 ```  
 FROM C AS c, D AS d, c.Names AS e  
 ```  
   
- V předchozím příkladu je logicky ekvivalentní v následujícím příkladu:  
+ Předchozí příklad je logicky shodný s následujícím příkladem:  
   
  `FROM (C AS c JOIN D AS d) CROSS APPLY c.Names AS e`  
   
 ## <a name="left-correlation"></a>Levá korelace  
- Položky v `FROM` klauzule mohou odkazovat na položky uvedené v předchozích klauzule. V následujícím příkladu `C` a `D` jsou nezávislé kolekce, ale `c.Names` závisí na `C`:  
+ Položky v `FROM` klauzuli mohou odkazovat na položky zadané v předchozích klauzulích. V `C` následujícím příkladu `D` jsou nezávislé kolekce, ale `c.Names` závisí na `C`:  
   
 ```  
 from C as c, D as d, c.Names as e  
@@ -126,27 +126,27 @@ from C as c, D as d, c.Names as e
 from (C as c join D as d) cross apply c.Names as e  
 ```  
   
-## <a name="semantics"></a>Sémantika  
- Logicky, kolekce v `FROM` klauzule jsou považovány za součást `n`-způsobem křížové spojení (s výjimkou v případě 1způsob cross join). Aliasy v `FROM` klauzule jsou zpracovávány zleva doprava a jsou přidány do aktuálního oboru pro pozdější použití. `FROM` Klauzule předpokládá, že je vytvořit multiset řádků. Bude mít jedno pole pro každou položku v `FROM` klauzuli, která představuje jeden element z této položky kolekce.  
+## <a name="semantics"></a>Sémantiku  
+ Logicky, kolekce v `FROM` klauzuli se považují za součást `n`vzájemného křížového spojení (kromě případu, kdy se jedná o jednosměrné křížové spojení). Aliasy v `FROM` klauzuli jsou zpracovávány zleva doprava a jsou přidány do aktuálního oboru pro pozdější použití referenčních informací. `FROM` Klauzule se předpokládá, že se vytvoří multiset řádků. Pro každou položku v `FROM` klauzuli, která představuje jeden prvek z této položky kolekce, bude k dispozici jedno pole.  
   
- `FROM` Vytvoří logicky klauzule multiset řádků typu řádku (c, d, e), kde pole jazyka c, d a e se předpokládá se, že element typu `C`, `D`, a `c.Names`.  
+ Klauzule logicky vytvoří multiset řádků typu řádek (c, d, e), kde se předpokládá, že pole c, d a e jsou `C`typu prvku, `D`a `c.Names`. `FROM`  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představuje alias pro každý jednoduchý `FROM` položka klauzule v oboru. V následujícím z klauzule fragment, například názvy zavedené v oboru jsou c, d a e.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zavádí alias pro každou položku jednoduché `FROM` klauzule v oboru. Například v následujícím fragmentu klauzule FROM, názvy zavedené do rozsahu jsou c, d a e.  
   
 ```  
 from (C as c join D as d) cross apply c.Names as e  
 ```  
   
- V [!INCLUDE[esql](../../../../../../includes/esql-md.md)] (na rozdíl od příkazů jazyka Transact-SQL), `FROM` klauzule pouze zavádí aliasy do oboru. Všechny odkazy na sloupce (Vlastnosti) těchto kolekcí musí být kvalifikován s aliasem.  
+ V [!INCLUDE[esql](../../../../../../includes/esql-md.md)] (na rozdíl od jazyka Transact-SQL) `FROM` klauzule zavádí pouze aliasy do oboru. Všechny odkazy na sloupce (vlastnosti) těchto kolekcí musí být kvalifikovány s aliasem.  
   
-## <a name="pulling-up-keys-from-nested-queries"></a>Stahují se klíče z vnořené dotazy  
- Některé typy dotazů, které vyžadují stahují do klíče z vnořeného dotazu nejsou podporovány. Například následující dotaz je neplatný:  
+## <a name="pulling-up-keys-from-nested-queries"></a>Přijímání klíčů z vnořených dotazů  
+ Některé typy dotazů, které vyžadují přijetí klíčů z vnořeného dotazu, nejsou podporovány. Například následující dotaz je platný:  
   
 ```  
 select c.Orders from Customers as c   
 ```  
   
- Následující dotaz, ale není platný, protože vnořený dotaz nemá žádné klíče:  
+ Následující dotaz však není platný, protože vnořený dotaz nemá žádné klíče:  
   
 ```  
 select {1} from {2, 3}  

@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fb09e298-0b53-47e5-97fb-ab318bcd4fad
-ms.openlocfilehash: 131562e9ee0fbfde8c94f580bcb6d452918f42ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b98c5e6ea49695015eb566ca2176b23c5260017a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037580"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928703"
 ---
 # <a name="how-to-retrieve-information-as-read-only"></a>Postupy: Načtení informací ve stavu jen pro čtení
-Pokud je nemáte v úmyslu změnit data, můžete zvýšit výkon dotazů jen pro čtení výsledků hledání.  
+Pokud nechcete data změnit, můžete zvýšit výkon dotazů hledáním výsledků jen pro čtení.  
   
- Implementace zpracování jen pro čtení tak, že nastavíte <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> k `false`.  
+ Implementujete zpracování <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> jen pro čtení nastavením na `false`.  
   
 > [!NOTE]
->  Když <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> je nastavena na `false`, <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> implicitně nastavena na `false`.  
+> Pokud <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> je nastaveno na `false`, <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> je implicitně nastaveno na `false`.  
   
 ## <a name="example"></a>Příklad  
- Následující kód načte kolekci jen pro čtení dat zaměstnanců.  
+ Následující kód načte kolekci kalendářních dat o přijímácích zaměstnanců jen pro čtení.  
   
  [!code-csharp[DLinqQuerying#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQuerying/cs/Program.cs#2)]
  [!code-vb[DLinqQuerying#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQuerying/vb/Module1.vb#2)]  

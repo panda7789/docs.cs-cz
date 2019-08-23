@@ -2,15 +2,15 @@
 title: Nástroj ServiceModel Registration (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: 5fab1a356cd035ed006bfe90d713e179907e0137
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 519f303507ed873266cc05a7556073887b66ba6f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051777"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923032"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Nástroj ServiceModel Registration (ServiceModelReg.exe)
-Tento nástroj příkazového řádku umožňuje spravovat registraci součástí WCF a WF v jednom počítači. Za normálních okolností by neměl muset použít tento nástroj jako WCF a WF součásti konfigurují při instalaci. Ale pokud máte problémy s aktivací služby, můžete zkusit k registraci komponenty pomocí tohoto nástroje.  
+Tento nástroj příkazového řádku poskytuje možnost spravovat registraci komponent WCF a WF na jednom počítači. Za normálních okolností byste neměli tento nástroj používat, protože komponenty technologie WCF a WF se nakonfigurují po instalaci. Pokud ale máte problémy s aktivací služby, můžete se pokusit zaregistrovat komponenty pomocí tohoto nástroje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -21,54 +21,54 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 ## <a name="remarks"></a>Poznámky  
  Nástroj najdete v následujícím umístění:  
   
- %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
+ %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation \  
   
 > [!NOTE]
->  Při spuštění nástroje pro registraci ServiceModel [!INCLUDE[wv](../../../includes/wv-md.md)], **funkce Windows** dialogového okna, která nemusí odrážet **aktivace Windows Communication Foundation HTTP** možnost **Rozhraní Microsoft .NET Framework 3.0** zapnutý. **Funkce Windows** dialogového okna můžete dostat kliknutím **Start**, pak klikněte na tlačítko **spustit** a zadáním **OptionalFeatures**.  
+> [!INCLUDE[wv](../../../includes/wv-md.md)]Když je nástroj pro registraci ServiceModel spuštěný, dialogové okno **funkce systému Windows** nemusí odrážet, že je zapnutá možnost **Windows Communication Foundation aktivace protokolem HTTP** pod **Microsoft .NET Framework 3,0** . K dialogovému oknu **funkcí Windows** se dostanete tak, že kliknete na **Start**, pak na **Spustit** a pak zadáte **optionalfeatures**.  
   
- Následující tabulky popisují požadované možnosti, které lze použít s ServiceModelReg.exe.  
+ V následujících tabulkách jsou popsány možnosti, které lze použít s ServiceModelReg. exe.  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|`-ia`|Nainstaluje všechny komponenty WCF a WF.|  
+|`-ia`|Nainstaluje všechny součásti WCF a WF.|  
 |`-ua`|Odinstaluje všechny součásti WCF a WF.|  
 |`-r`|Opraví všechny součásti WCF a WF.|  
-|`-i`|Nainstaluje součásti WCF a WF zadaným – c.|  
-|`-u`|Odinstaluje součástí WCF a WF zadaným – c.|  
-|`-c`|Nainstaluje nebo odinstaluje komponentu:<br /><br /> -httpnamespace – Namespace rezervace protokolu HTTP<br />služby Sdílení portů - tcpportsharing – TCP<br />aktivační služba - tcpactivation – TCP (Nepodporovaná na profil klienta rozhraní .NET 4)<br />služby - namedpipeactivation – aktivace pojmenovaného kanálu (Nepodporovaná na profil klienta rozhraní .NET 4<br />aktivační služba - služba msmqactivation – služby MSMQ (Nepodporovaná na profil klienta rozhraní .NET 4<br />manifesty trasování událostí trasování událostí pro – Windows – trasování událostí pro Windows (Windows Vista nebo novější)|  
-|`-q`|Nastaví tichý režim (jenom protokolování zobrazení chyb)|  
-|`-v`|Režim s komentářem.|  
-|`-nologo`|Potlačí zprávu o autorských právech a úvodní nápis.|  
-|`-?`|Zobrazí text nápovědy|  
+|`-i`|Nainstaluje WCF a součásti WF zadané pomocí – c.|  
+|`-u`|Odinstaluje komponenty WCF a WF zadané pomocí – c.|  
+|`-c`|Nainstaluje nebo odinstaluje součást:<br /><br /> -httpnamespace – rezervace oboru názvů HTTP<br />-tcpportsharing – služba sdílení portů TCP<br />-tcpactivation – aktivační služba TCP (nepodporovaná v profilu klienta .NET 4)<br />-namedpipeactivation – aktivační služba pojmenovaného kanálu (nepodporovaná v profilu klienta .NET 4<br />-Služba MsmqActivation – aktivační služba MSMQ (nepodporovaná v profilu klienta .NET 4<br />-ETW – manifesty trasování událostí ETW (Windows Vista nebo novější)|  
+|`-q`|Tichý režim (zobrazí se pouze protokolování chyb)|  
+|`-v`|Podrobný režim.|  
+|`-nologo`|Potlačí zprávu o autorských právech a bannerech.|  
+|`-?`|Zobrazí text v nápovědě.|  
   
-## <a name="fixing-the-fileloadexception-error"></a>Oprava chyby FileLoadException –  
- Pokud jste nainstalovali dřívější verze služby WCF na svém počítači, může se zobrazit `FileLoadFoundException` při spuštění nástroje ServiceModelReg zaregistrovat nové instalace došlo k chybě. Může to i v případě, že máte ručně odebrat soubory z předchozí instalace, ale nastavení machine.config zůstává nedotčeno.  
+## <a name="fixing-the-fileloadexception-error"></a>Oprava chyby FileLoadException  
+ Pokud jste na svém počítači nainstalovali předchozí verze služby WCF, může se při spuštění `FileLoadFoundException` nástroje ServiceModelReg k registraci nové instalace zobrazit chyba. K tomu může dojít i v případě, že jste ručně odebrali soubory z předchozí instalace, ale ponechali jste nastavení Machine. config beze změny.  
   
- Chybová zpráva podobná následující.  
+ Chybová zpráva se podobá následujícímu.  
   
 ```  
 Error: System.IO.FileLoadException: Could not load file or assembly 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)  
 File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'  
 ```  
   
- Nezapomeňte přitom z chybové zprávy, že byla nainstalována sestavení verze 2.0.0.0 System.ServiceModel podle raného vydání zákazníka Technology Preview (CTP). Aktuální verze sestavení System.ServiceModel vydání je 3.0.0.0 místo. Proto se tento problém je došlo při chcete nainstalovat oficiálním vydáním WCF na počítači, kde byla nainstalována dřívější verzi CTP služby WCF, ale není zcela odinstalována.  
+ Poznamenejte si z chybové zprávy, že sestavení System. ServiceModel verze 2.0.0.0 bylo nainstalováno vydáním verze CTP (Release Customer Technology Preview). Aktuální verze sestavení System. ServiceModel byla uvolněna místo toho 3.0.0.0. Proto k tomuto problému dochází, když chcete nainstalovat oficiální verzi služby WCF na počítač, na kterém je nainstalovaná verze služby WCF pro starší verzi CTP, ale ne úplně odinstalována.  
   
- ServiceModelReg.exe nelze vymazat, starší verze položky ani můžete zaregistrovat nové verze položky. Jediným alternativním řešením je ručně upravit soubor machine.config. Můžete najít tento soubor v následujícím umístění.  
+ ServiceModelReg. exe nemůže vyčistit předchozí položky verze, ani nemůže registrovat nové položky verze. Jediným alternativním řešením je ruční úprava souboru Machine. config. Tento soubor najdete v následujícím umístění.  
   
 ```  
 %windir%\Microsoft.NET\Framework\v2.0.50727\config\machine.config   
 ```  
   
- Pokud používáte WCF na 64bitovém počítači, byste měli upravovat stejný soubor v tomto umístění.  
+ Pokud používáte WCF na 64m počítači, měli byste také upravit stejný soubor v tomto umístění.  
   
 ```  
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   
 ```  
   
- Vyhledejte žádnému z uzlů XML v tomto souboru, který najdete "System.ServiceModel, verze = 2.0.0.0", odstraňte je a všechny podřízené uzly. Uložte soubor a znovu spusťte ServiceModelReg.exe Tento problém se vyřeší.  
+ Vyhledejte v tomto souboru všechny uzly XML, které odkazují na "System. ServiceModel, Version = 2.0.0.0", odstraňte je a všechny podřízené uzly. Uložte soubor a znovu spusťte ServiceModelReg. exe. Tento problém se vyřeší.  
   
 ## <a name="examples"></a>Příklady  
- Následující příklady ukazují, jak používat nástroj ServiceModelReg.exe nejběžnější možnosti.  
+ Následující příklady ukazují, jak používat nejběžnější možnosti nástroje ServiceModelReg. exe.  
   
 ```  
 ServiceModelReg.exe -ia  

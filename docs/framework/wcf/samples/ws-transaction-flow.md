@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 8c021e3b3de1dbe000ab328f7a09d79a4bc966fe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6fd84d9cc1f7df397e26e41c55f51d45406228d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592217"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942155"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
-Tato ukázka demonstruje použití transakce koordinovaný klienta a klient a server možnosti pro transakci tok pomocí protokolu WS-Atomic Transactions nebo OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale operace mají atributy pro demonstraci použití `TransactionFlowAttribute` s **TransactionFlowOption** výčet, chcete-li zjistit, jaké úroveň transakce je povolen tok. V rámci oboru sdružení probíhajících transakcí, protokol požadované operace jsou zapsána do databáze a zůstává v platnosti do klienta koordinované transakce byla dokončena – Pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že příslušné aktualizace do databáze nejsou potvrzeny.  
+Tato ukázka demonstruje použití transakce s koordinovaným klientem a možností klienta a serveru pro tok transakce pomocí protokolu WS-Atomic nebo protokolu OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky, ale operace jsou popsány k tomu, aby ukázaly použití `TransactionFlowAttribute` s výčtem **TransactionFlowOption** k určení toho, jakou úroveň tok transakce je povolený. V rámci rozsahu transakce toku se do databáze zapíše protokol požadovaných operací, dokud se nedokončila koordinovaný transakce klienta – Pokud se transakce klienta nedokončila, transakce webové služby zajistí, že příslušné aktualizace databáze nejsou potvrzeny.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Po zahájení připojení do služby a transakce ke kterým přistupuje klient několik operací služby. Kontrakt služby je definovaná následujícím způsobem s každou operací demonstrace různých nastavení `TransactionFlowOption`.  
+ Po zahájení připojení ke službě a transakci klient přistupuje k několika operacím služby. Smlouva pro službu je definována následujícím způsobem u každé operace, která demonstruje jiné nastavení pro `TransactionFlowOption`.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -37,17 +37,17 @@ public interface ICalculator
 }  
 ```
 
- Definuje operace v pořadí, ve kterém jsou ke zpracování:  
+ Tím se definují operace v pořadí, ve kterém se mají zpracovat:  
   
-- `Add` Žádost o operaci musí obsahovat sdružení probíhajících transakcí.  
+- Požadavek `Add` operace musí zahrnovat transakci toku.  
   
-- A `Subtract` žádost o operaci může zahrnovat sdružení probíhajících transakcí.  
+- Požadavek `Subtract` operace může zahrnovat transakci typu Flow.  
   
-- A `Multiply` žádost o operaci, nesmí obsahovat toku transakce pomocí explicitní nastavení hodnotu NotAllowed.  
+- Požadavek `Multiply` operace nesmí zahrnovat transakci toku prostřednictvím explicitního nastavení.  
   
-- A `Divide` žádost o operaci, nesmí obsahovat sdružení probíhajících transakcí prostřednictvím vynechání `TransactionFlow` atribut.  
+- Požadavek operace nesmí zahrnovat tok transakce v důsledku vynechání `TransactionFlow` atributu. `Divide`  
   
- Povolení toku transakcí, vazby s [ \<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) vlastnost povoleno je nutné použít kromě atributů příslušné operace. Konfigurace služby v této ukázce zpřístupňuje koncový bod TCP a koncový bod HTTP kromě koncový bod výměny metadat. Koncový bod TCP a koncový bod protokolu HTTP použijte následující vazby, které mají [ \<transactionFlow >](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) vlastnost povolena.  
+ Aby bylo možné tok transakcí povolit, musí [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) být kromě příslušných atributů operace použity vazby s povolenou vlastností TransactionFlow >. V této ukázce konfigurace služby zveřejňuje koncový bod TCP a koncový bod HTTP kromě koncového bodu výměny metadat. Koncový bod TCP a koncový bod HTTP používají následující vazby, které mají [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) povolenou vlastnost TransactionFlow >.  
   
 ```xml  
 <bindings>  
@@ -64,12 +64,12 @@ public interface ICalculator
 ```  
   
 > [!NOTE]
->  NetTcpBinding poskytované systémem zatímco wsHttpBinding poskytované systémem používá více interoperabilní protokol WSAtomicTransactionOctober2004 umožňuje volbu specifikace třídu transactionProtocol. Použít OleTransactions, který protokol je dostupná jenom pro klienty Windows Communication Foundation (WCF).  
+> Systém netTcpBinding poskytuje specifikace transactionProtocol, zatímco systém wsHttpBinding používá pouze bezpečnější WSAtomicTransactionOctober2004 protokol. Protokol OleTransactions je k dispozici pouze pro klienty Windows Communication Foundation (WCF).  
   
- Pro třídu, která implementuje `ICalculator` rozhraní, všechny metody jsou připisuje <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> nastavenou na `true`. Toto nastavení deklaruje, že všechny akce prováděné v metodě dojít v rámci oboru transakce. Akce prováděné v tomto případě patří nahrávání protokolu databáze. Pokud žádost o operaci zahrnují sdružení probíhajících transakcí dojde k akcím v rámci oboru příchozí transakce nebo nový obor transakce není automaticky vygenerován.  
+ Pro třídu, která implementuje `ICalculator` rozhraní, jsou všechny metody vytvořeny s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> vlastností nastavenou na `true`. Toto nastavení deklaruje, že všechny akce provedené v rámci metody nastávají v rámci rozsahu transakce. V takovém případě akce prováděné zahrnují záznam do databáze protokolu. Pokud požadavek na operaci zahrnuje transakci typu flow, pak dojde k akcím v rámci oboru příchozí transakce nebo je automaticky vygenerován nový obor transakce.  
   
 > [!NOTE]
->  <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> Vlastnost definuje chování místní implementace metod služby a nedefinuje schopnost klienta nebo požadavek toku transakce.  
+> <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> Vlastnost definuje chování jako lokální pro implementace metod služby a nedefinuje schopnost klienta nebo požadavek na tok transakce.  
 
 ```csharp
 // Service class that implements the service contract.  
@@ -108,7 +108,7 @@ public class CalculatorService : ICalculator
 }  
 ```
 
- Na klienta, služba `TransactionFlowOption` nastavení na operace se projeví v definici generovaného klienta `ICalculator` rozhraní. Kromě toho služby `transactionFlow` nastavení vlastnosti se projeví v konfiguraci klienta aplikace. Klienta můžete vybrat přenosu a protokol tak, že vyberete příslušný `endpointConfigurationName`.  
+ V klientovi se `TransactionFlowOption` nastavení služby na operacích projeví v definici `ICalculator` generovaného rozhraním klienta. Také nastavení `transactionFlow` vlastností služby se projeví v konfiguraci aplikace klienta. Klient může vybrat přenos a protokol výběrem příslušné `endpointConfigurationName`možnosti.  
 
 ```csharp
 // Create a client using either wsat or oletx endpoint configurations  
@@ -117,9 +117,9 @@ CalculatorClient client = new CalculatorClient("WSAtomicTransaction_endpoint");
 ```
 
 > [!NOTE]
->  Vypozorovaná chování této ukázky je stejný bez ohledu na to, který je vybrán protokol nebo přenos.  
+> Zjištěné chování této ukázky je stejné bez ohledu na to, který protokol nebo přenos se volí.  
   
- Zahájení připojení ke službě vytvoří klient nový `TransactionScope` po volání operace služby.  
+ Po navázání připojení ke službě klient vytvoří nové `TransactionScope` rozhraní kolem volání operací služby.  
 
 ```csharp
 // Start a transaction scope  
@@ -180,19 +180,19 @@ using (TransactionScope tx =
 Console.WriteLine("Transaction committed");  
 ```
 
- Volání operace jsou následující:  
+ Volání operací jsou následující:  
   
-- `Add` Požadavek toky požadovanou transakci ke službě a k akcím služby v rámci oboru transakce na straně klienta.  
+- `Add` Požadavek zavede požadovanou transakci do služby a akce služby probíhají v rámci oboru transakce klienta.  
   
-- První `Subtract` požadavku se přenášejí také povolené transakce ve službě a znovu k akcím služby v rámci oboru transakce na straně klienta.  
+- První `Subtract` požadavek také natéká povolenou transakci do služby a akce služby se projeví v rámci oboru transakce klienta.  
   
-- Druhá `Subtract` žádosti se provede v rámci nového oboru transakce deklarována s `TransactionScopeOption.Suppress` možnost. Toto potlačí počáteční vnější transakci klienta a požadavek nepostupuje transakci ke službě. Tento přístup umožňuje klientovi explicitně odhlásit a ochranu proti toku transakce služby, při které se nevyžaduje. V rámci oboru transakce nové a nepřipojené provedou služby akce.  
+- Druhá `Subtract` žádost se provádí v rámci nového oboru transakce deklarovaného `TransactionScopeOption.Suppress` s možností. Tím se potlačí počáteční vnější transakce klienta a požadavek neflowe transakci ke službě. Tento přístup umožňuje klientovi explicitně se odhlásit a chránit před přetečením transakce do služby, když to není nutné. Akce služby se vyskytují v rámci rozsahu nové a nepřipojené transakce.  
   
-- `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption> `NotAllowed`.  
+- <xref:System.ServiceModel.TransactionFlowAttribute> `ICalculator` `NotAllowed` <xref:System.ServiceModel.TransactionFlowOption>Požadavek neflowe transakci ke službě, protože vygenerovaná definice rozhraní klienta obsahuje sadu na. `Multiply`  
   
-- `Divide` Požadavek nepostupuje transakce ve službě, protože znovu klienta vygenerovaný definice `ICalculator` rozhraní nezahrnuje `TransactionFlowAttribute`. V rámci oboru jinou transakcí nové a nepřipojené dojde znovu k akcím služby.  
+- Požadavek neflowe transakci ke službě, protože znovu vygenerovaná definice `ICalculator` `TransactionFlowAttribute`rozhraní pro klienta neobsahuje. `Divide` Akce služby se znovu vyskytují v rozsahu jiné nové a nepřipojené transakce.  
   
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```  
 Starting transaction  
@@ -206,7 +206,7 @@ Transaction committed
 Press <ENTER> to terminate client.  
 ```  
   
- Protokolování žádosti o operaci služby se zobrazí v okně konzoly služby. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Protokolování požadavků na operace služby se zobrazí v okně konzoly služby. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```  
 Press <ENTER> to terminate the service.  
@@ -217,74 +217,74 @@ Press <ENTER> to terminate the service.
   Writing row to database: Dividing 22 by 7  
 ```  
   
- Po úspěšném spuštění klienta oboru transakce dokončena a usilujeme o to všechny akce v daném oboru. Konkrétně uvedené 5 záznamů se uchovávají v databázi služby. První 2 z nich došlo v rámci oboru transakce na straně klienta.  
+ Po úspěšném provedení se rozsah transakce klienta dokončí a všechny akce prováděné v rámci tohoto oboru jsou potvrzeny. Konkrétně zaznamenané 5 záznamy jsou v databázi služby trvalé. První 2 z nich došlo v rámci oboru transakce klienta.  
   
- Pokud došlo k výjimce kdekoli v rámci klienta `TransactionScope` pak transakce nelze dokončit. To způsobí, že záznamy, které jsou zaznamenány v daném oboru na nebudou zapíšou do databáze. Tomu můžete dodržovat opakující se ukázku spustit po okomentováním odpovídajícího volání k dokončení vnější `TransactionScope`. Na těchto spustit pouze poslední 3 akce (druhého `Subtract`, `Multiply` a `Divide` požadavků) jsou protokolována, protože klientská transakce není tok na ty.  
+ Pokud došlo k výjimce kdekoli v rámci klienta `TransactionScope` , transakce nemůže být dokončena. To způsobí, že záznamy zaznamenané do tohoto oboru nebudou potvrzeny do databáze. Tento efekt lze pozorovat opakovaným spuštěním ukázkového běhu po zakomentování volání za účelem dokončení vnějšího `TransactionScope`. V takovém případě jsou protokolovány pouze poslední 3 akce (od druhé `Subtract` `Multiply` , a `Divide` požadavky), protože transakce klienta nepostupuje.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Chcete-li sestavení C# nebo Visual Basic .NET verze řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
+1. Pokud chcete vytvořit C# nebo Visual Basic verzi rozhraní .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
   
-2. Ujistěte se, že jste nainstalovali SQL Server Express Edition nebo SQL Server a že připojovací řetězec správně nastavena v konfiguračním souboru aplikace služby. Ke spuštění ukázky bez použití databáze, nastavte `usingSql` hodnoty v konfiguračním souboru aplikace služby k `false`  
+2. Ujistěte se, že máte nainstalovanou edici SQL Server Express nebo SQL Server a že připojovací řetězec byl v konfiguračním souboru aplikace služby správně nastaven. Chcete-li spustit ukázku bez použití databáze, nastavte `usingSql` hodnotu v konfiguračním souboru aplikace služby na`false`  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pro konfigurace mezi počítači povolte koordinátor distribuovaných transakcí pomocí následujícího postupu a použít nástroj WsatConfig.exe ze sady Windows SDK k povolení podpory síťové transakce WCF. Zobrazit [konfigurace WS-Atomic podpora transakcí](https://go.microsoft.com/fwlink/?LinkId=190370) informace o nastavení WsatConfig.exe.  
+    >  V případě konfigurace mezi počítači povolte DTC (Distributed Transaction Coordinator) podle níže uvedených pokynů a pomocí nástroje WsatConfig. exe z Windows SDK povolte podporu transakcí WCF v síti. Informace o nastavení WsatConfig. exe najdete v tématu [Konfigurace podpory transakcí WS-Atomic](https://go.microsoft.com/fwlink/?LinkId=190370) .  
   
- Zda ukázku spustíte ve stejném počítači nebo na různých počítačích, musíte nakonfigurovat Microsoft distribuované transakce koordinátor (MSDTC) k povolení toku transakcí sítě a nástrojem WsatConfig.exe povolit podporu sítě transakce WCF.  
+ Bez ohledu na to, jestli spouštíte ukázku na stejném počítači nebo na různých počítačích, musíte nakonfigurovat Microsoft DTC (Distributed Transaction Coordinator) (MSDTC), aby se povolil tok síťových transakcí, a pomocí nástroje WsatConfig. exe povolit podporu sítě WCF Transactions.  
   
-### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Konfigurace Microsoft distribuované transakce koordinátor (MSDTC) k podpoře spouštění vzorku  
+### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Konfigurace služby Microsoft DTC (Distributed Transaction Coordinator) (MSDTC) pro podporu spuštění ukázky  
   
-1. V rámci služby počítače se systémem Windows Server 2003 nebo Windows XP nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
+1. V počítači služby se systémem Windows Server 2003 nebo Windows XP nakonfigurujte službu MSDTC tak, aby povolovala příchozí síťové transakce pomocí následujících pokynů.  
   
-    1. Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. V nabídce **Start** přejděte na **Ovládací panely**, klikněte na **Nástroje pro správu**a pak na **služby komponent**.  
   
-    2. Rozbalte **služby Component Services**. Otevřít **počítače** složky.  
+    2. Rozbalte položku **Služba komponent**. Otevřete složku **počítače** .  
   
-    3. Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
+    3. Pravým tlačítkem myši klikněte na položku **Tento počítač** a vyberte možnost **vlastnosti**.  
   
-    4. Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
+    4. Na kartě **MSDTC** klikněte na **Konfigurace zabezpečení**.  
   
-    5. Zkontrolujte **DTC přístup k síti** a **povolit příchozí**.  
+    5. Ověřte **přístup k síťovému DTC** a **povolte příchozí**.  
   
-    6. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    6. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
     7. Kliknutím na **OK** zavřete dialogové okno.  
   
-2. V rámci služby počítače se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
+2. V počítači služby se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte službu MSDTC tak, aby povolovala příchozí síťové transakce pomocí následujících pokynů.  
   
-    1. Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. V nabídce **Start** přejděte na **Ovládací panely**, klikněte na **Nástroje pro správu**a pak na **služby komponent**.  
   
-    2. Rozbalte **služby Component Services**. Otevřít **počítače** složky. Vyberte **koordinátor distribuovaných transakcí**.  
+    2. Rozbalte položku **Služba komponent**. Otevřete složku **počítače** . Vyberte **DTC (Distributed Transaction Coordinator)** .  
   
-    3. Klikněte pravým tlačítkem na **Koordinátor DTC** a vyberte **vlastnosti**.  
+    3. Klikněte pravým tlačítkem na **koordinátor DTC** a vyberte **vlastnosti**.  
   
-    4. Na **zabezpečení** kartě **síťový přístup DTC** a **povolit příchozí**.  
+    4. Na kartě **zabezpečení** ověřte **přístup k síti DTC** a **povolte příchozí**.  
   
-    5. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    5. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
     6. Kliknutím na **OK** zavřete dialogové okno.  
   
-3. V klientském počítači nakonfigurujte MSDTC povolit odchozí síťové transakce:  
+3. Na klientském počítači nakonfigurujte koordinátor MSDTC tak, aby povoloval odchozí síťové transakce:  
   
-    1. Z **Start** nabídky, přejděte na `Control Panel`, pak **nástroje pro správu**a potom **služby Component Services**.  
+    1. V nabídce **Start** přejděte na `Control Panel` **Nástroje pro správu**a pak na **služby komponent**.  
   
-    2. Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
+    2. Pravým tlačítkem myši klikněte na položku **Tento počítač** a vyberte možnost **vlastnosti**.  
   
-    3. Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
+    3. Na kartě **MSDTC** klikněte na **Konfigurace zabezpečení**.  
   
-    4. Zkontrolujte **DTC přístup k síti** a **povolit odchozí**.  
+    4. Ověřte **přístup k síťovému DTC** a **Povolte odchozí**.  
   
-    5. Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
+    5. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
     6. Kliknutím na **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\TransactionFlow`

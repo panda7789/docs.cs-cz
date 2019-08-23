@@ -2,32 +2,32 @@
 title: Základní vazby u zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: f49b1de6-0254-4362-8ef2-fccd8ff9688b
-ms.openlocfilehash: adc6d7c2a2784e0552587761a291e647239897d3
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 8904c9460e6a54f092d60b4f735c8afe34466f11
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880211"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968746"
 ---
 # <a name="basicbinding-with-transport-security"></a>Základní vazby u zabezpečení přenosu
-Tento příklad ukazuje použití zabezpečení přenosu SSL s základní vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
+Tato ukázka demonstruje použití zabezpečení přenosu SSL se základní vazbou. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\TransportSecurity`  
   
-## <a name="sample-details"></a>Ukázka podrobnosti  
- Základní vazby ve výchozím nastavení podporuje komunikaci pomocí protokolu HTTP. Vzorek ukazuje, jak povolit zabezpečení přenosu pro základní vazby. Před spuštěním ukázky, musíte vytvořit certifikát a přiřaďte ji pomocí Průvodce certifikát webového serveru.  
+## <a name="sample-details"></a>Podrobnosti ukázky  
+ Základní vazba standardně podporuje komunikaci pomocí protokolu HTTP. Ukázka ukazuje, jak povolit zabezpečení přenosu pro základní vazbu. Před spuštěním této ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Programového kódu v ukázce je shodná s [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) služby. Definice koncového bodu a vazby definice v souboru nastavení konfigurace jsou použity povolení zabezpečené komunikace, jak je znázorněno v následující ukázková konfigurace.  
+ Kód programu v ukázce je stejný jako u služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Definice koncového bodu a definice vazby v nastavení konfiguračního souboru jsou upraveny tak, aby umožňovaly zabezpečenou komunikaci, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <system.serviceModel>  
@@ -54,7 +54,7 @@ Tento příklad ukazuje použití zabezpečení přenosu SSL s základní vazby.
 </system.serviceModel>  
 ```  
   
- Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, výstrahu zabezpečení se zobrazí při pokusu o přístup protokolu HTTPS: adresa v prohlížeči, jako například https://localhost/servicemodelsamples/service.svc. Povolit klienta Windows Communication Foundation (WCF) pro práci s testovacím certifikátem, je další kód přidali do klienta pro potlačení výstrahy zabezpečení. Při použití skutečné certifikátů, tento kód a související třídy, není nutné.  
+ Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k HTTPS: adresa v prohlížeči https://localhost/servicemodelsamples/service.svc, jako je například. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, je do klienta přidán nějaký další kód, který výstrahu zabezpečení potlačí. Tento kód a doprovodná třída nejsou nutné při použití skutečných certifikátů.  
 
 ```csharp
 // This code is required only for test certificates such as those   
@@ -62,7 +62,7 @@ Tento příklad ukazuje použití zabezpečení přenosu SSL s základní vazby.
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
 ```
 
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -73,18 +73,18 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Instalace technologie ASP.NET 4.0 pomocí následujícího příkazu:  
+1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0:  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
-4. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

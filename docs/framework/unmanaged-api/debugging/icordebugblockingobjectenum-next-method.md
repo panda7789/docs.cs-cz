@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8fd82418da26ab0cd32b007b4613d588dfa695eb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e94e4da0eea06ce9cc0110002b1def9e4dd4989
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745301"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939143"
 ---
 # <a name="icordebugblockingobjectenumnext-method"></a>ICorDebugBlockingObjectEnum::Next – metoda
-Získá zadaný počet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objekty z výčtu od aktuální pozice.  
+Získá zadaný počet objektů [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) z výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT Next([in] ULONG  celt,
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet objektů, které chcete načíst.  
+ pro Počet objektů, které se mají načíst.  
   
  `values`  
- [out] Pole ukazatelů na [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objekty.  
+ mimo Pole ukazatelů na [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objekty.  
   
  `pceltFetched`  
- [out] Ukazatel na počet objektů, které byly načteny.  
+ mimo Ukazatel na počet objektů, které byly načteny.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrátí následující konkrétní HRESULT.  
@@ -52,24 +52,24 @@ HRESULT Next([in] ULONG  celt,
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|S_FALSE|`pceltFetched` se nerovná `celt`.|  
+|S_FALSE|`pceltFetched`se nerovná `celt`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce v této metody, jako je typické COM enumerátor.  
+ Tato metoda funguje jako typický enumerátor COM.  
   
- Vstupní pole hodnoty musí být minimálně o velikosti `celt`. Pole bude vyplněn buď na další `celt` hodnot ve výčtu nebo se všemi hodnotami zbývající Pokud méně než `celt` zůstanou. Po návratu tato metoda `pceltFetched` se počet hodnot, které byly načteny. Pokud `values` obsahuje neplatné ukazatele nebo odkazuje na vyrovnávací paměť, která je menší než `celt`, nebo pokud `pceltFetched` je neplatný ukazatel, výsledek nedefinován.  
+ Hodnoty vstupního pole musí mít aspoň velikost `celt`. Pole bude vyplněno buď pomocí dalších `celt` hodnot ve výčtu, nebo se všemi zbývajícími hodnotami, pokud je méně než `celt` zbývá. Když se tato metoda vrátí `pceltFetched` , vyplní se počtem hodnot, které byly načteny. Pokud `values` obsahuje neplatné ukazatele nebo odkazuje na vyrovnávací paměť, která je menší než `celt`nebo pokud `pceltFetched` je neplatný ukazatel, výsledek není definován.  
   
 > [!NOTE]
->  I když [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) není nutné uvolnit strukturu, rozhraní "ICorDebugValue" uvnitř této nutné uvolnit.  
+> I když struktura [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) nemusí být uvolněna, je nutné uvolnit rozhraní "ICorDebugValue" uvnitř této struktury.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -11,46 +11,46 @@ helpviewer_keywords:
 - StatusBar control [Windows Forms], refreshing panels
 - panels [Windows Forms], refreshing status bar
 ms.assetid: cc2abb06-c082-49f7-a5a3-2fd1bbcb58d1
-ms.openlocfilehash: 7beae9bb886c7c79d4d97375887bfecb0c2a40c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 670746a1b964a85bc5136d976d831c6848466797
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792155"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930986"
 ---
 # <a name="walkthrough-updating-status-bar-information-at-run-time"></a>Návod: Aktualizace informací stavového řádku za běhu
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
+> <xref:System.Windows.Forms.ToolStripStatusLabel> <xref:System.Windows.Forms.StatusBar> <xref:System.Windows.Forms.StatusBarPanel> <xref:System.Windows.Forms.StatusBarPanel> Ovládací prvky <xref:System.Windows.Forms.StatusStrip> a nahrazují<xref:System.Windows.Forms.StatusBar> a přidávají funkce ovládacím prvkům a; ovládací prvky a jsou však uchovávány pro zpětnou kompatibilitu i pro budoucí použití, pokud výběrem.  
   
- Často program bude volat pro vás k aktualizaci obsahu stav panelu panelů dynamicky za běhu na základě změn stavu aplikace nebo jiných interakcí uživatele. Toto je běžný způsob signál uživatele, že jsou povolené kláves, jako jsou CAPS LOCK, NUM LOCK nebo SCROLL LOCK, nebo zadejte datum nebo čas jako pohodlný odkaz.  
+ Program často zavolá za účelem dynamické aktualizace obsahu panelů stavového řádku v době běhu na základě změn stavu aplikace nebo jiné interakce uživatele. To je běžný způsob, jak uživatele signalizovat, že jsou povolené klíče, jako je například Caps Lock, NUM LOCK nebo SCROLL LOCK, nebo aby jako pohodlný odkaz poskytovaly datum nebo hodiny.  
   
- V následujícím příkladu použijete instance <xref:System.Windows.Forms.StatusBarPanel> třídy k hostování hodin.  
+ V následujícím příkladu použijete instanci <xref:System.Windows.Forms.StatusBarPanel> třídy k hostování hodin.  
   
-### <a name="to-get-the-status-bar-ready-for-updating"></a>Připravit na stavovém řádku pro aktualizaci  
+### <a name="to-get-the-status-bar-ready-for-updating"></a>Získání stavového řádku připraveného k aktualizaci  
   
-1. Vytvoření nového formuláře Windows.  
+1. Vytvoří nový formulář Windows.  
   
-2. Přidat <xref:System.Windows.Forms.StatusBar> ovládací prvek do formuláře. Podrobnosti najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
+2. <xref:System.Windows.Forms.StatusBar> Přidejte ovládací prvek do formuláře. Podrobnosti najdete v tématu [How to: Přidejte ovládací prvky do](how-to-add-controls-to-windows-forms.md)model Windows Forms.  
   
-3. Přidat stav panelu panelu s vaší <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [jak: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md).  
+3. Přidejte panel stavového řádku do <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [How to: Přidejte panely do ovládacího prvku](how-to-add-panels-to-a-statusbar-control.md)stavový řádek.  
   
-4. Pro <xref:System.Windows.Forms.StatusBar> jste přidali do svého formuláře ovládací prvek nastavit <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `true`.  
+4. Pro ovládací prvek, který jste přidali do formuláře, <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> nastavte vlastnost na `true`hodnotu. <xref:System.Windows.Forms.StatusBar>  
   
-5. Přidání prvku Windows Forms <xref:System.Windows.Forms.Timer> komponentu do formuláře.  
+5. Přidejte do formuláře <xref:System.Windows.Forms.Timer> komponentu model Windows Forms.  
   
     > [!NOTE]
-    >  Windows Forms <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> součásti je určen pro prostředí Windows Forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, přečtěte si [Úvod do serverových časovače](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
+    > Komponenta model Windows Forms <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> je navržena pro model Windows Forms prostředí. Pokud potřebujete časovač, který je vhodný pro serverové prostředí, přečtěte si téma [Úvod k časovačům založeným na serveru](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
   
 6. Nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `true`.  
   
-7. Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost <xref:System.Windows.Forms.Timer> na 30000.  
+7. <xref:System.Windows.Forms.Timer.Interval%2A> Nastavte vlastnost <xref:System.Windows.Forms.Timer> na hodnotu na 30000.  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.Timer.Interval%2A> Vlastnost <xref:System.Windows.Forms.Timer> komponenty nastavena na 30 sekund (30 000 milisekund) k zajištění, že v čase, zobrazí se projeví přesnému času.  
+    > <xref:System.Windows.Forms.Timer.Interval%2A> Vlastnost<xref:System.Windows.Forms.Timer> komponenty je nastavená na 30 sekund (30 000 milisekund), aby se zajistilo, že se v zobrazeném čase projeví přesné časy.  
   
-### <a name="to-implement-the-timer-to-update-the-status-bar"></a>K implementaci časovače aktualizace stavového řádku  
+### <a name="to-implement-the-timer-to-update-the-status-bar"></a>Implementace časovače k aktualizaci stavového řádku  
   
-1. Vložte následující kód do obslužné rutiny události <xref:System.Windows.Forms.Timer> součásti na panelu aktualizovat <xref:System.Windows.Forms.StatusBar> ovládacího prvku.  
+1. Vložte následující kód do obslužné rutiny <xref:System.Windows.Forms.Timer> události komponenty pro aktualizaci panelu <xref:System.Windows.Forms.StatusBar> ovládacího prvku.  
   
     ```vb  
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick  
@@ -75,19 +75,19 @@ ms.locfileid: "61792155"
       }  
     ```  
   
-     V tuto chvíli jste připraveni ke spuštění aplikace a sledujte hodin spuštěna v panelu Stav panelu.  
+     V tuto chvíli jste připraveni spustit aplikaci a sledovat, jak se na panelu stavového řádku spouští hodiny.  
   
 ### <a name="to-test-the-application"></a>Testování aplikace  
   
-1. Ladit aplikaci a stiskněte klávesu F5 a spusťte ho. Podrobnosti o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
+1. Spusťte ladění aplikace a stisknutím klávesy F5 ji spusťte. Podrobnosti o ladění naleznete v tématu [ladění v aplikaci Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
   
     > [!NOTE]
-    >  To bude trvat přibližně 30 sekund hodin se zobrazí ve stavovém řádku. Toto je získat nejpřesnější čas je to možné. Naopak, aby hodiny zobrazí dříve, můžete snížit hodnotu <xref:System.Windows.Forms.Timer.Interval%2A> vlastnosti, které jste nastavili v kroku 7 v předchozím postupu.  
+    > Bude trvat přibližně 30 sekund, než se hodiny zobrazí ve stavovém řádku. Tato možnost získá nejpřesnější čas. Naopak, pokud chcete, aby se hodiny zobrazovaly dřív, můžete snížit hodnotu <xref:System.Windows.Forms.Timer.Interval%2A> vlastnosti, kterou jste nastavili v kroku 7 v předchozím postupu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>
-- [Postupy: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md)
-- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](determine-which-panel-wf-statusbar-control-was-clicked.md)
+- [Postupy: Přidání panelů do ovládacího prvku stavový řádek](how-to-add-panels-to-a-statusbar-control.md)
+- [Postupy: Určete, na který panel model Windows Forms ovládací prvek stavový řádek.](determine-which-panel-wf-statusbar-control-was-clicked.md)
 - [Přehled ovládacího prvku StatusBar](statusbar-control-overview-windows-forms.md)

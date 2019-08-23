@@ -5,21 +5,21 @@ helpviewer_keywords:
 - retrieving the DrawingGroup value of a Visual [WPF]
 - enumerating the contents of a Visual [WPF]
 ms.assetid: 2974ddb3-2997-4713-8fd2-e93d549c58a8
-ms.openlocfilehash: 4f0afc1075fe66c7f154fcef3cd883709db55316
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25aa0c3706005c1e16cedd7e06914db764545ebb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947469"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930073"
 ---
 # <a name="how-to-enumerate-drawing-content-of-a-visual"></a>Postupy: Vyčíslení vykreslovaného vizuálního obsahu
-<xref:System.Windows.Media.Drawing> Objekt neposkytuje objektový model pro vytvoření výčtu obsah <xref:System.Windows.Media.Visual>.  
+Objekt poskytují objektový model pro vytváření výčtu obsahu <xref:System.Windows.Media.Visual>. <xref:System.Windows.Media.Drawing>  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Windows.Media.VisualTreeHelper.GetDrawing%2A> metodu pro načtení <xref:System.Windows.Media.DrawingGroup> hodnotu <xref:System.Windows.Media.Visual> a výčet ho.  
+ Následující příklad používá <xref:System.Windows.Media.VisualTreeHelper.GetDrawing%2A> metodu k <xref:System.Windows.Media.DrawingGroup> načtení hodnoty <xref:System.Windows.Media.Visual> a k jejímu vytvoření.  
   
 > [!NOTE]
->  Když jsou výčet obsah vizuálu, jsou načítání <xref:System.Windows.Media.Drawing> objekty a není základní reprezentace dat vykreslení jako seznam vektorové grafiky instrukce. Další informace najdete v tématu [přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md).  
+> Při vytváření výčtu obsahu vizuálu načítáte <xref:System.Windows.Media.Drawing> objekty, a ne základní reprezentace dat vykreslování jako seznam instrukcí pro vektorovou grafiku. Další informace naleznete v tématu [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md).  
   
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMRetrieveDrawings](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/EnumerateDrawingsExample.xaml.cs#graphicsmmretrievedrawings)]  
   

@@ -2,15 +2,15 @@
 title: <add> z <allowAccounts>
 ms.date: 03/30/2017
 ms.assetid: 763c7b1f-e7b0-4d99-a42c-4506fcb8da00
-ms.openlocfilehash: 1c6764b37b2aa5349b8ccf63e6b7c2bc580b69b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1ed0b5025ab969c45d7440f2a209426c5c87f549
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701135"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920278"
 ---
-# <a name="add-of-allowaccounts"></a>\<add> of \<allowAccounts>
-Určuje uživatelský účet pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.  
+# <a name="add-of-allowaccounts"></a>\<Přidat > \<> allowAccounts
+Určuje uživatelský účet pro procesy, které hostují služby WCF, a kterým je udělen přístup k připojení ke službě sdílení.  
   
  \<system.serviceModel.activation>  
   
@@ -29,7 +29,7 @@ Určuje uživatelský účet pro procesy, které hostují služby WCF a jemuž j
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|securityIdentifier|Řetězec určující jedinečný identifikátor sloužící k identifikaci uživatelského účtu. Výchozí hodnoty jsou LocalSystem, správci, NS, LS a IIS_USRS.|  
+|securityIdentifier|Řetězec, který určuje jedinečný identifikátor, který slouží k identifikaci uživatelského účtu. Výchozí hodnoty jsou LocalSystem, Administrators, NS, LS a IIS_USRS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -38,10 +38,10 @@ Určuje uživatelský účet pro procesy, které hostují služby WCF a jemuž j
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atributy uživatelské účty pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.|  
+|[\<allowAccounts>](allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atribut pro určení uživatelských účtů pro procesy, které hostují služby WCF, a kterým je udělen přístup k připojení ke službě sdílení.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfigurace přidá pět výchozích identifikátorů pro uživatelské účty do této kolekce.  
+ Následující konfigurační příklad přidá pět výchozích identifikátorů pro uživatelské účty do této kolekce.  
   
 ```xml  
 <allowAccounts>

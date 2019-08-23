@@ -2,36 +2,36 @@
 title: 220 – MessageSentToTransport
 ms.date: 03/30/2017
 ms.assetid: aef4e781-240b-45bc-bff8-400053037e71
-ms.openlocfilehash: 92ec664aead15470fbed576bf157d64d984ddebf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f95edf42e0b1ec19d2019773def282fc279871b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781742"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948287"
 ---
 # <a name="220---messagesenttotransport"></a>220 – MessageSentToTransport
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
-|ID|220|  
-|klíčová slova|EndToEndMonitoring, řešení potíží s ServiceModel|  
-|úroveň|Informace o|  
+|Id|220|  
+|klíčová slova|EndToEndMonitoring, řešení potíží, ServiceModel|  
+|Level|Informace o|  
 |Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerován Model služby odešle zprávu přenosu.  
+ Tato událost je generována, když model služby pošle zprávu na přenos.  
   
 > [!NOTE]
->  Tato událost nebude se emitovat pro jednosměrnou přenosy.  
+> Tato událost nebude vygenerována pro jednosměrná přenos.  
   
-## <a name="message"></a>Zpráva  
- Dispečer odeslal zprávu přenosu. ID korelace == '%1'.  
+## <a name="message"></a>Message  
+ Dispečer odeslal zprávu přenosu. ID korelace =% 1.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datový typ položky|Popis|  
+|Název datové položky|Typ datové položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|ID korelace|`xs:GUID`|Aktivita ID použít ke korelaci `MessageSentToTransport` událostí ze služby ani klienta k jeho odpovídajícím `MessageReceivedFromTransport` na druhém konci.|  
-|HostReference|`xs:string`|Toto pole pro hostované webové služby, jednoznačně identifikuje v hierarchii webové služby. Jeho formát je definován jako "virtuální cesta aplikace název webu&#124;virtuální cesta služby&#124;ServiceName". Příklad: "Výchozí webový server/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService".|  
-|AppDomain|`xs:string`|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|
+|ID korelace|`xs:GUID`|ID aktivity, které se používá ke korelaci `MessageSentToTransport` události ze služby nebo klienta s odpovídajícím `MessageReceivedFromTransport` na druhém konci.|  
+|HostReference|`xs:string`|V případě služeb hostovaných na webu toto pole jedinečně identifikuje službu ve webové hierarchii. Jeho formát je definován jako název webové stránky služba virtuální cesta&#124;&#124;ServiceName. Příklad: ' Výchozí web site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService '.|  
+|AppDomain|`xs:string`|Řetězec vrácený třídou AppDomain. CurrentDomain. FriendlyName|

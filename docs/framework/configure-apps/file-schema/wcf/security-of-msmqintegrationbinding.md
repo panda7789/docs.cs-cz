@@ -2,21 +2,21 @@
 title: <security> z <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: 8d79523db2a1567283b934abbd3de1adbbe6b0b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b74c95ef2933fcf7e8d49aed89d95acbd288b80
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670531"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936697"
 ---
-# <a name="security-of-msmqintegrationbinding"></a>\<security> of \<msmqIntegrationBinding>
-Definuje nastavení zabezpečení přenosu pro kanál integrace služby Řízení front zpráv (MSMQ).  
+# <a name="security-of-msmqintegrationbinding"></a>\<> zabezpečení > \<MsmqIntegrationBinding
+Definuje nastavení zabezpečení přenosu pro integrační kanál služby Řízení front zpráv (MSMQ).  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 msmqIntegrationBinding  
-\<Vytvoření vazby >  
-\<security>  
+\<> vazby  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,19 +43,19 @@ msmqIntegrationBinding
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje typ zabezpečení této kontroly integrity, šifrování a ověřování s kanálem integrace služby Řízení front zpráv. Platné hodnoty patří:<br /><br /> -Žádný: Zakáže zabezpečení.<br />-Přenos: Ochrana a ověřování se nabízejí Transport. To platí pro zabezpečení zpráv mezi správci fronty dvě. Neexistuje žádné zabezpečení nabízené mezi aplikací a správce fronty. Existující aplikacím služby Msmq jsou funkčně ekvivalentní s tímto typem režim zabezpečení.<br /><br /> Výchozí hodnota je `Transport`. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>.|  
+|režim|Určuje typ zabezpečení, který řídí integritu, důvěrnost a ověřování pomocí integračního kanálu služby Řízení front zpráv. Platné hodnoty jsou následující:<br /><br /> NTato Tím se zakáže zabezpečení.<br />Přepravu Přenos nabízí ochranu a ověřování. To platí pro zabezpečení zpráv mezi dvěma správci fronty. Mezi aplikací a správcem front se nenabízí žádné zabezpečení. Stávající aplikace služby MSMQ jsou funkčně ekvivalentní s tímto typem režimu zabezpečení.<br /><br /> Výchozí hodnota je `Transport`. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos integrace služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[\<> přenosu](transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos Integration služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Prvek vazby [ \<msmqIntegrationBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).|  
+|[\<> vazby](../../../misc/binding.md)|[ Prvek\<vazby > MsmqIntegrationBinding](msmqintegrationbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -63,10 +63,10 @@ msmqIntegrationBinding
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement.Security%2A>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity>
-- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [\<msmqIntegrationBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)
+- [Fronty ve WCF](../../../wcf/feature-details/queues-in-wcf.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)
+- [\<msmqIntegrationBinding>](msmqintegrationbinding.md)

@@ -2,27 +2,27 @@
 title: Typy Oracle
 ms.date: 03/30/2017
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
-ms.openlocfilehash: eb45bc5b7bc317d04f5275afadbb1879117e3af0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2f3820a0a61241643894533cc431ecc88b58fcef
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586944"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938892"
 ---
 # <a name="oracletypes"></a>Typy Oracle
-Zprostředkovatel dat .NET Framework pro Oracle zahrnuje řady struktur, kterými můžete pracovat s typy dat Oracle. Patří mezi ně <xref:System.Data.OracleClient.OracleNumber> a <xref:System.Data.OracleClient.OracleString>.  
+Zprostředkovatel dat .NET Framework pro Oracle obsahuje několik struktur, které můžete použít pro práci s datovými typy Oracle. Mezi ně <xref:System.Data.OracleClient.OracleNumber> patří <xref:System.Data.OracleClient.OracleString>a.  
   
 > [!NOTE]
->  Úplný seznam těchto struktur, naleznete v tématu <xref:System.Data.OracleClient>.  
+> Úplný seznam těchto struktur naleznete v tématu <xref:System.Data.OracleClient>.  
   
- Následující příklady jazyka C#:  
+ Následující C# příklady:  
   
-- Vytvoření tabulky Oracle a načíst do ní data.  
+- Vytvořte tabulku Oracle a načtěte ji s daty.  
   
-- Použití <xref:System.Data.OracleClient.OracleDataReader> přístup k datům a používat několik <xref:System.Data.OracleClient.OracleType> struktury zobrazit data.  
+- Použijte pro přístup k datům a použijte několik <xref:System.Data.OracleClient.OracleType> struktur k zobrazení dat. <xref:System.Data.OracleClient.OracleDataReader>  
   
-## <a name="creating-an-oracle-table"></a>Vytváří se tabulka Oracle  
- Tento příklad vytvoří tabulku Oracle a načte s daty. V tomto příkladu je nutné spustit před spuštěním v dalším příkladu.  
+## <a name="creating-an-oracle-table"></a>Vytvoření tabulky Oracle  
+ Tento příklad vytvoří tabulku Oracle a načte ji s daty. Před spuštěním následujícího příkladu je nutné spustit tento příklad.  
   
 ```csharp  
 public void Setup(string connectionString)  
@@ -52,7 +52,7 @@ public void Setup(string connectionString)
 ```  
   
 ## <a name="retrieving-data-from-the-oracle-table"></a>Načítání dat z tabulky Oracle  
- Tento příklad používá **připojení OracleDataReader** pro přístup k datům a používá několik **OracleType** struktury zobrazit data.  
+ V tomto příkladu se pro přístup k datům používá **OracleDataReader** a k zobrazení dat používá několik struktur **OracleType** .  
   
 ```csharp  
 public void ReadOracleTypesExample(string connectionString)  
@@ -118,4 +118,4 @@ public void ReadOracleTypesExample(string connectionString)
 ## <a name="see-also"></a>Viz také:
 
 - [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,35 +2,35 @@
 title: Asynchronní operace
 ms.date: 03/30/2017
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
-ms.openlocfilehash: 72c2cc33185cb7fba5b8c8ce8d3805a6bb76f8d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c104176d92667d7c8e2dc83c33bf3eb566437d7f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663970"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918131"
 ---
 # <a name="asynchronous-operations"></a>Asynchronní operace
-Některé databázové operace, jako je například spuštění příkazu může trvat spoustu času k dokončení. V takovém případě musí aplikace s jedním vláknem blokování jiných operace a počkejte na dokončení předtím, než může i dál své vlastní operace příkazu. Naproti tomu nebudou moct přiřadit dlouho běžící operace ve vlákně na pozadí umožňuje vláknu popředí zůstanou aktivní v průběhu operace. V aplikaci Windows například delegování dlouho běžící operace ve vlákně na pozadí umožňuje vlákně uživatelského rozhraní nadále reagovat při provádění operace.  
+Některé databázové operace, například spuštění příkazu, mohou trvat poměrně dlouho. V takovém případě musí aplikace s jedním vláknem blokovat jiné operace a počkat na dokončení příkazu, aby mohli pokračovat v jejich vlastních operacích. Naproti tomu možnost přiřazení dlouhotrvající operace do vlákna na pozadí umožňuje, aby vlákno na popředí zůstalo aktivní v průběhu operace. V aplikaci systému Windows, například delegování dlouhotrvající operace do vlákna na pozadí umožňuje, aby vlákno uživatelského rozhraní zůstalo při provádění operace reagovat.  
   
- Rozhraní .NET Framework poskytuje několik standardních asynchronní vzory návrhu, které mohou vývojáři využít vláken na pozadí a bez uživatelského rozhraní a vlákna s vysokou prioritou k dokončení dalších operací. ADO.NET podporuje tyto stejné způsoby návrhu v jeho <xref:System.Data.SqlClient.SqlCommand> třídy. Konkrétně <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, a <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metody souřadnicí <xref:System.Data.SqlClient.SqlCommand.EndExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A>, a <xref:System.Data.SqlClient.SqlCommand.EndExecuteXmlReader%2A> metody, poskytujte asynchronní podporu.  
+ .NET Framework poskytuje několik standardních asynchronních vzorů návrhu, které mohou vývojáři využít k využití vláken na pozadí, k uvolnění uživatelského rozhraní nebo s vysokou prioritou k dokončení jiných operací. ADO.NET podporuje stejné vzory návrhu ve své <xref:System.Data.SqlClient.SqlCommand> třídě. <xref:System.Data.SqlClient.SqlCommand.EndExecuteNonQuery%2A> <xref:System.Data.SqlClient.SqlCommand.EndExecuteXmlReader%2A> <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A>Konkrétně metody, a<xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> , které jsou spárovány s metodami, a, poskytují asynchronní podporu. <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>  
   
 > [!NOTE]
->  Asynchronní programování je základní funkce rozhraní .NET Framework a ADO.NET plně využívá standardní návrhové vzory. Další informace o různých technikách asynchronní k dispozici pro vývojáře najdete v tématu [voláním synchronní metody asynchronně](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
+> Asynchronní programování je základní funkcí .NET Framework a ADO.NET plně využívá standardní vzory návrhu. Další informace o různých asynchronních technikách dostupných vývojářům naleznete v tématu [asynchronní volání synchronních metod](../../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
   
- Ačkoli použití asynchronních metod pomocí ADO.NET funkce nepřidá žádná zvláštní opatření, je pravděpodobné, že další vývojáři použijí asynchronní funkce v ADO.NET než v jiných oblastech sady rozhraní .NET Framework. Je důležité znát výhody a nástrahy vytváření aplikací s více vlákny. Následující příklady v tomto bodě části si několik důležité problémy této vývojáři muset vzít v úvahu při sestavování aplikací zahrnujících různé funkce s více vlákny.  
+ I když použití asynchronních technik s funkcemi ADO.NET nepřidává žádné zvláštní požadavky, je pravděpodobnější, že více vývojářů bude používat asynchronní funkce v ADO.NET než v jiných oblastech .NET Framework. Je důležité si uvědomit, že výhody a nástrah vytváření vícevláknových aplikací. Příklady, které následují v této části, ukazují několik důležitých problémů, které můžou vývojáři vzít v úvahu při sestavování aplikací, které zahrnují funkce s více vlákny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Aplikace Windows využívající zpětná volání](../../../../../docs/framework/data/adonet/sql/windows-applications-using-callbacks.md)  
- Poskytuje příklad ukazuje, jak bezpečně, provedení příkazu k asynchronní správné zpracování interakci s formuláři a jeho obsah v samostatném vlákně.  
+ Obsahuje příklad demonstrující, jak bezpečně spustit asynchronní příkaz, který správně zpracovává interakci s formulářem a jeho obsahem z samostatného vlákna.  
   
  [Aplikace ASP.NET využívající obslužné rutiny čekání](../../../../../docs/framework/data/adonet/sql/aspnet-apps-using-wait-handles.md)  
- Poskytuje příklad ukazuje, jak provádět několik souběžných příkazy ze stránky ASP.NET, pomocí obslužné rutiny čekání ke správě operaci po dokončení všech příkazů.  
+ Poskytuje příklad demonstrující, jak spustit více souběžných příkazů ze stránky ASP.NET pomocí čekacích obslužných rutin ke správě operace při dokončování všech příkazů.  
   
  [Dotazování v konzolových aplikacích](../../../../../docs/framework/data/adonet/sql/polling-in-console-applications.md)  
- Obsahuje příklad používání dotazování čekání na dokončení provádění asynchronního příkazu z konzolové aplikace. Tento postup platí také na knihovny tříd nebo v jiné aplikaci bez uživatelského rozhraní.  
+ Poskytuje příklad demonstrující použití cyklického dotazování pro čekání na dokončení asynchronního příkazu z konzolové aplikace. Tato technika je také platná v knihovně tříd nebo jiné aplikaci bez uživatelského rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [Asynchronní volání synchronních metod](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Asynchronní volání synchronních metod](../../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

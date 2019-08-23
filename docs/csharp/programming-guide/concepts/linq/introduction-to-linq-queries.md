@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: a4ad928c479c971e5cf7191b95a3ed4d80bb1e57
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 6188af0ffea699899212e4bcf20b7c19f68858b4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592216"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924335"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 *Dotaz* je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřeny ve specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]zjednodušuje tuto situaci tím, že nabízí jednotný model pro práci s daty napříč různými druhy datových zdrojů a formátů. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] V dotazu vždy pracujete s objekty. Použijete stejné základní vzory kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL, datových sadách ADO.NET, kolekcích .NET a jakémkoli jiném formátu, [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pro který je poskytovatel k dispozici.  
@@ -56,7 +56,7 @@ IQueryable<Customer> custQuery =
  Další informace o tom, jak vytvořit konkrétní typy zdrojů dat, najdete v dokumentaci pro různé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatele. Základní pravidlo je ale velmi jednoduché: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdrojem dat je libovolný objekt, který podporuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, nebo rozhraní, které z něj dědí.  
   
 > [!NOTE]
->  Typy, jako je například podpora neobecného <xref:System.Collections.IEnumerable> rozhraní, lze použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] také jako zdroj dat. <xref:System.Collections.ArrayList> Další informace najdete v tématu [jak: Dotazování objektu ArrayList pomocí LINQC#(](./how-to-query-an-arraylist-with-linq.md))  
+> Typy, jako je například podpora neobecného <xref:System.Collections.IEnumerable> rozhraní, lze použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] také jako zdroj dat. <xref:System.Collections.ArrayList> Další informace najdete v tématu [jak: Dotazování objektu ArrayList pomocí LINQC#(](./how-to-query-an-arraylist-with-linq.md))  
   
 ## <a name="query"></a>Dotaz  
  Dotaz určuje, jaké informace se mají načíst ze zdroje dat nebo zdrojů. V případě potřeby dotaz také určuje, jak se mají tyto informace seřadit, seskupit a tvarovat před tím, než se vrátí. Dotaz je uložen v proměnné dotazu a inicializován pomocí výrazu dotazu. Pro snazší zápis dotazů C# zavedla novou syntaxi dotazu.  
@@ -64,7 +64,7 @@ IQueryable<Customer> custQuery =
  Dotaz v předchozím příkladu vrátí všechna sudá čísla z pole Integer. Výraz dotazu obsahuje tři klauzule: `from` `where` a `select`. (Pokud znáte SQL, jste si všimli, že řazení klauzulí je obrácené z pořadí v SQL.) Klauzule určuje zdroj dat `where` , klauzule aplikuje filtr a `select` klauzule určuje typ vrácených prvků. `from` Tyto a další klauzule dotazu jsou podrobněji popsány v části [výrazy dotazů LINQ](../../linq-query-expressions/index.md) . V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]současné době je důležité, aby proměnná dotazu sama nevrátila žádnou akci a nevrátila žádná data. Pouze ukládá informace, které jsou požadovány k vyprodukování výsledků při spuštění dotazu v pozdějším okamžiku. Další informace o tom, jak jsou dotazy vytvářeny na pozadí, naleznete v tématu [standardní operátoryC#dotazu Overview ()](./standard-query-operators-overview.md).  
   
 > [!NOTE]
->  Dotazy lze také vyjádřit pomocí syntaxe metody. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](./query-syntax-and-method-syntax-in-linq.md).  
+> Dotazy lze také vyjádřit pomocí syntaxe metody. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](./query-syntax-and-method-syntax-in-linq.md).  
   
 ## <a name="query-execution"></a>Provádění dotazů  
   

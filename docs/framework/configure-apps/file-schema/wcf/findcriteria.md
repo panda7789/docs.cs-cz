@@ -2,18 +2,18 @@
 title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
-ms.openlocfilehash: eaa3998d3d0b1642c0c92380ec1228eea69d4da8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb8ff3905f7696f4c71a79e31db1b8f82c9f0d3b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700888"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925582"
 ---
-# <a name="findcriteria"></a>\<kritéria hledání >
-Konfigurace element, který dodává sadu kritérií pro službu zjišťování používá klientská aplikace pro hledání. Kritéria mohou být seskupeny do kritéria vyhledávání (určení služby, kterou hledáte) a nalézt ukončení kritéria (jak dlouho vyhledávání by měl trvat).  
+# <a name="findcriteria"></a>\<Kritéria hledání >
+Prvek konfigurace, který poskytuje sadu kritérií používaných klientskou aplikací pro hledání služby zjišťování. Kritéria se dají seskupit do vyhledávacích kritérií (určení služeb, které hledáte), a najít kritéria ukončení (jak dlouho má hledání trvat).  
   
  \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,23 +49,23 @@ Konfigurace element, který dodává sadu kritérií pro službu zjišťování 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|doba trvání|Časový interval hodnotu, která určuje maximální dobu čekání na odpovědi služby v síti. Výchozí doba je 20 sekund.|  
-|maxResults|Celé číslo určující maximální počet odpovědí čekat od služby v síti nebo Internetu. Pokud se maximální odpovědi obdrženy předtím, než hodnota zadaná v `duration` atribut uplynul, skončí operace find.|  
-|scopeMatchBy|Identifikátor URI určující porovnávací algoritmus, který bude použit při porovnání rozsahů průzkumné zprávy, která koncového bodu.<br /><br /> Existují pravidla pět oboru odpovídajícím podporované. Pokud nezadáte pravidlo odpovídající oboru `ScopeMatchByPrefix` se používá. Další informace o tomto naleznete v tématu <xref:System.ServiceModel.Discovery.FindCriteria>.|  
+|doba trvání|Hodnota TimeSpan, která určuje maximální dobu čekání na odpovědi ze služeb v síti. Výchozí doba trvání je 20 sekund.|  
+|maxResults|Celé číslo určující maximální počet odpovědí, na které se má čekat, ze služeb v síti nebo Internetu. Pokud jsou přijaty maximální odpovědi před hodnotou zadanou v `duration` atributu, operace Find skončí.|  
+|scopeMatchBy|Identifikátor URI, který určuje odpovídající algoritmus, který se má použít při porovnání oborů v rámci zprávy sondy s bodem koncového bodu.<br /><br /> Existuje pět podporovaných pravidel pro porovnání oboru. Pokud neurčíte pravidlo pro porovnání s oborem, `ScopeMatchByPrefix` použije se. Další informace o tomto naleznete v tématu <xref:System.ServiceModel.Discovery.FindCriteria>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<contractTypeNames>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Kolekci elementů konfigurace, které obsahují názvy typů kontraktu služby pracovního postupu.|  
-|\<Rozšíření > z \<kritéria hledání >|Kolekce objektů – element XML, které poskytují rozšíření.|  
-|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce objektů, které obsahují absolutní URI, které se používají během operace find k nalezení konkrétní služby nebo služeb.<br /><br /> Pokud konkrétní služba nalezena, byl proveden úspěšná shoda mezi identifikátor URI služby a identifikátor URI oboru, někdy pomocí pravidel oboru, které zpracovávají komplikace párování.|  
+|[\<contractTypeNames>](contracttypenames.md)|Kolekce elementů konfigurace, které obsahují názvy typů kontraktů služby pracovního postupu.|  
+|\<rozšíření > \<kritéria hledání >|Kolekce objektů XML elementů, které poskytují rozšíření.|  
+|[\<> oborů](scopes.md)|Kolekce objektů, které obsahují absolutní identifikátory URI, které jsou použity během operace Find k vyhledání konkrétní služby nebo služeb.<br /><br /> Pokud je nalezena konkrétní služba, byla provedena úspěšná shoda mezi identifikátorem URI služby a identifikátorem URI oboru, někdy s použitím pravidel oboru, které zpracovávají komplikace při porovnávání.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Obsahuje nastavení potřeby aplikací a součástí procesu zjišťování služby jako klient.|  
+|[\<standardEndpoints>](standardendpoints.md)|Obsahuje nastavení, která aplikace potřebuje k účasti v procesu zjišťování služby jako klient.|  
   
 ## <a name="see-also"></a>Viz také:
 

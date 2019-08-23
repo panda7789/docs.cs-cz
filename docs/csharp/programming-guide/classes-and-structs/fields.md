@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-ms.openlocfilehash: 722e028311530336749d259207c681ac3f9a0f34
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: c07f058eb081fa1c9e0a3756959570d1ba9e47f6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597066"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924519"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 *Pole* je proměnná libovolného typu, který je deklarován přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md). Pole jsou *členy* jejich nadřazeného typu.  
@@ -36,7 +36,7 @@ ms.locfileid: "69597066"
  Pole jsou inicializována bezprostředně před voláním konstruktoru pro instanci objektu. Pokud konstruktor přiřadí hodnotu pole, přepíše se jakákoli hodnota zadaná během deklarace pole. Další informace najdete v tématu [Použití konstruktorů](./using-constructors.md).  
   
 > [!NOTE]
->  Inicializátor pole nemůže odkazovat na jiná pole instance.  
+> Inicializátor pole nemůže odkazovat na jiná pole instance.  
   
  Pole mohou být označena jako [Veřejná](../../language-reference/keywords/public.md), [soukromá](../../language-reference/keywords/private.md), chráněná, [interní](../../language-reference/keywords/internal.md), [chráněná interní](../../language-reference/keywords/protected-internal.md) nebo [soukromá ochrana](../../language-reference/keywords/private-protected.md). [](../../language-reference/keywords/protected.md) Tyto modifikátory přístupu definují, jak budou uživatelé třídy mít přístup k polím. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).  
   
