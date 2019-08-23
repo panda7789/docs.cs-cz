@@ -12,17 +12,17 @@ api_type:
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a878ccf94fb4f6d67daa3a4dd42fcf98faf34a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 95b463b23c230d620d746e48da49d75238ef2cb7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748638"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955373"
 ---
 # <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
-[Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
+[Podporováno v .NET Framework 4.6.1 a novějších verzích]  
   
- Přečte bajtů ze symbolů v paměti datového proudu.  
+ Načte bajty z datového proudu symbolů v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,39 +38,39 @@ HRESULT ReadInMemorySymbols(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] Identifikátor modulu, který obsahuje datový proud v paměti.  
+ pro Identifikátor modulu, který obsahuje datový proud v paměti.  
   
  `symbolsReadOffset`  
- [in] Posun v rámci datového proudu v paměti od kterého začne číst bajty.  
+ pro Posun v rámci proudu v paměti, ve kterém se mají začít číst bajty.  
   
  `pSymbolBytes`  
- [out] Ukazatel do vyrovnávací paměti, do které se kopírují data. Vyrovnávací paměť by měl mít `countSymbolBytes` volného místa.  
+ mimo Ukazatel na vyrovnávací paměť, do které budou kopírována data. Velikost vyrovnávací paměti by `countSymbolBytes` měla být místo k dispozici.  
   
  `countSymbolBytes`  
- [in] Počet bajtů, které mají kopírovat.  
+ pro Počet bajtů, které mají být zkopírovány.  
   
  `pCountSymbolBytesRead`  
- [out] Po návratu metody obsahuje skutečný počet přečtených bajtů.  
+ mimo Když metoda vrátí, obsahuje skutečný počet přečtených bajtů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`, pokud byla přečtena nenulové počet bajtů.  
+ `S_OK`, pokud bylo přečteno nenulový počet bajtů.  
   
- `CORPROF_E_MODULE_IS_DYNAMIC`, pokud modul byl vytvořen pomocí <xref:System.Reflection.Emit>.  
+ `CORPROF_E_MODULE_IS_DYNAMIC`, pokud byl modul vytvořen pomocí <xref:System.Reflection.Emit>.  
   
 ## <a name="remarks"></a>Poznámky  
- `ReadInMemorySymbols` Metoda se pokusí přečíst `countSymbolBytes` dat začínající na posunu `symbolsReadOffset` v rámci datového proudu v paměti. Data zkopírována do `pSymbolBytes`, která má mít `countSymbolBytes` volného místa.     `pCountSymbolsBytesRead` obsahuje skutečný počet bajtů, přečtěte si, které mohou být menší než `countSymbolBytes` Pokud je dosaženo konce datového proudu.  
+ Metoda `ReadInMemorySymbols` se pokusí přečíst `countSymbolBytes` data začínající na posunu `symbolsReadOffset` v datovém proudu v paměti. Data se zkopírují do `pSymbolBytes`, což by mělo být `countSymbolBytes` dostupné místo.     `pCountSymbolsBytesRead`obsahuje skutečný počet přečtených bajtů, který může být menší, než `countSymbolBytes` je dosaženo konce datového proudu.  
   
 > [!NOTE]
->  Aktuální implementace nepodporuje Reflection.Emit. Pokud modul byl vytvořen pomocí třídy Reflection.Emit, metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC`.  
+> Aktuální implementace nepodporuje reflexe. Emit. Pokud byl modul vytvořen pomocí reflexe. Emit, vrátí `CORPROF_E_MODULE_IS_DYNAMIC`metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

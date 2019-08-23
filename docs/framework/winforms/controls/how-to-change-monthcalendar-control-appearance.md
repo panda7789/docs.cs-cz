@@ -9,19 +9,19 @@ helpviewer_keywords:
 - examples [Windows Forms], calendar controls
 - MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d09b95c9-e108-4608-9b31-b9100c0677bf
-ms.openlocfilehash: 21fa6798c431b71d36c1909937ddad6bf5030782
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 5582624d881b2d8039bcd5e8ac45e548c7b38f57
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053093"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929050"
 ---
 # <a name="how-to-change-the-windows-forms-monthcalendar-controls-appearance"></a>Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar
-Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožňuje přizpůsobit vzhled kalendáře mnoha způsoby. Můžete například nastavit barevné schéma a zvolte možnost zobrazit nebo skrýt čísla týdnů a aktuální datum.  
+Ovládací prvek <xref:System.Windows.Forms.MonthCalendar> model Windows Forms umožňuje přizpůsobit vzhled kalendáře mnoha způsoby. Můžete například nastavit barevné schéma a zvolit zobrazení nebo skrytí čísel týdnů a aktuálního data.  
   
-### <a name="to-change-the-month-calendars-color-scheme"></a>Chcete-li změnit barevné schéma měsíční kalendář  
+### <a name="to-change-the-month-calendars-color-scheme"></a>Změna barevného schématu měsíčního kalendáře  
   
-- Nastavte vlastnosti, jako je třeba <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A> a <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>. <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A> Vlastnost také určuje barvu písma pro dny v týdnu. <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> Vlastnost určuje barvu kalendářních dat, které předcházejí a následují zobrazený měsíc nebo měsíců.  
+- Nastavte vlastnosti <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, jako jsou <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A> a <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>. <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A> Vlastnost také určuje barvu písma pro dny v týdnu. <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> Vlastnost určuje barvu kalendářních dat, která předchází, a následují po zobrazených měsících nebo měsících.  
   
     ```vb  
     MonthCalendar1.TitleBackColor = System.Drawing.Color.Blue  
@@ -42,11 +42,11 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
     ```  
   
     > [!NOTE]
-    >  Spouští se s Windows Vista a v závislosti na motiv, nastavení některé vlastnosti nemusí změnit vzhled kalendáře. Například pokud Windows je nastaveno pro použití motivu Aero, nastavíte <xref:System.Windows.Forms.MonthCalendar.BackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> vlastnosti nemá žádný vliv. Je to proto, že aktualizovaná verze kalendář je vykreslen pomocí vzhled, který pochází z aktuálního motivu operačního systému v době běhu. Pokud chcete použít tyto vlastnosti a povolit starší verze kalendář, můžete zakázat vizuálních stylů pro vaši aplikaci. Zakázání vizuální styly může ovlivnit vzhled a chování jiných ovládacích prvků ve vaší aplikaci. Pokud chcete zakázat vizuálních stylů v jazyce Visual Basic, otevřete Návrhář projektu a zrušte zaškrtnutí políčka **vizuální styly XP povolit** zaškrtávací políčko. Pokud chcete zakázat vizuálních stylů v jazyce C#, otevřete soubor Program.cs a nastavte komentář `Application.EnableVisualStyles();`. Další informace o vizuálních stylů, najdete v části [povolení vizuálních stylů](/windows/desktop/controls/cookbook-overview).  
+    > Počínaje systémem Windows Vista a v závislosti na motivu se může stát, že nastavením některých vlastností se nezmění vzhled kalendáře. Pokud je <xref:System.Windows.Forms.MonthCalendar.BackColor%2A>například Windows nastavené na použití motivu Aero, nastavení vlastností, <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A>nebo <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> nemá žádný vliv. Je to proto, že aktualizovaná verze kalendáře je vykreslena s vzhled, který je odvozen v době běhu z aktuálního motivu operačního systému. Pokud chcete tyto vlastnosti použít a povolit starší verzi kalendáře, můžete pro svou aplikaci zakázat vizuální styly. Zakázání vizuálních stylů může mít vliv na vzhled a chování jiných ovládacích prvků v aplikaci. Chcete-li zakázat vizuální styly v Visual Basic, otevřete Návrháře projektu a zrušte zaškrtnuté políčko **Povolit vizuální styly pro XP** . Chcete-li zakázat vizuální C#styly v nástroji, otevřete program.cs `Application.EnableVisualStyles();`a přidejte komentář. Další informace o vizuálních stylech naleznete v tématu [Povolení vizuálních stylů](/windows/desktop/controls/cookbook-overview).  
   
-### <a name="to-display-the-current-date-at-the-bottom-of-the-control"></a>Chcete-li zobrazit aktuální datum v dolní části ovládacího prvku  
+### <a name="to-display-the-current-date-at-the-bottom-of-the-control"></a>Zobrazení aktuálního data v dolní části ovládacího prvku  
   
-- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> vlastnost `true`. Následující příklad Přepne mezi zobrazením a vynechání dnešní datum, když je formulář dvojitému kliknutí.  
+- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> vlastnost `true`. Následující příklad přepíná mezi zobrazením a vynecháním dnešního data při dvojitém kliknutí na formulář.  
   
     ```vb  
     Private Sub Form1_DoubleClick(ByVal sender As Object, _  
@@ -74,7 +74,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
        }  
     ```  
   
-     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuál C#, vizuál C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.DoubleClick += new System.EventHandler(this.Form1_DoubleClick);  
@@ -85,11 +85,11 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
        &Form1::Form1_DoubleClick);  
     ```  
   
-### <a name="to-display-week-numbers"></a>Chcete-li zobrazovat čísla týdnů  
+### <a name="to-display-week-numbers"></a>Zobrazení čísel týdnů  
   
-- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tuto vlastnost lze nastavit v kódu nebo v okně Vlastnosti.  
+- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tuto vlastnost lze nastavit buď v kódu, nebo v okno Vlastnosti.  
   
-     Čísla týdnů joinkind samostatný sloupec nalevo od první den v týdnu.  
+     Čísla týdnů se zobrazí v samostatném sloupci nalevo od prvního dne v týdnu.  
   
     ```vb  
     MonthCalendar1.ShowWeekNumbers = True  
@@ -106,6 +106,6 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
-- [Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
-- [Postupy: Zobrazení konkrétních dnů Bold s Windows Forms MonthCalendar – ovládací prvek](display-specific-days-in-bold-with-wf-monthcalendar-control.md)
-- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar](display-more-than-one-month-wf-monthcalendar-control.md)
+- [Postupy: Vyberte rozsah dat v ovládacím prvku model Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
+- [Postupy: Zobrazit konkrétní dny tučně pomocí ovládacího prvku model Windows Forms MonthCalendar](display-specific-days-in-bold-with-wf-monthcalendar-control.md)
+- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku model Windows Forms MonthCalendar](display-more-than-one-month-wf-monthcalendar-control.md)

@@ -2,21 +2,21 @@
 title: <localServiceSettings> – element
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 91e9944de30a78b904d1679512f622bcc2955af4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 36fcc9454a5762a4a375cc7f6eaee1c4cf0580e2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610198"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931718"
 ---
-# <a name="localservicesettings-element"></a>\<localServiceSettings > – element
+# <a name="localservicesettings-element"></a>\<localServiceSettings – element >
 Určuje nastavení zabezpečení místní služby pro tuto vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
-\<security>  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,20 +46,20 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`detectReplays`|Logická hodnota určující, zda jsou zjištěny a řešeny automaticky opakované útoky proti kanálu. Výchozí hodnota je `false`.|  
-|`inactivityTimeout`|Pozitivní <xref:System.TimeSpan> , který určuje dobu nečinnosti kanálu čeká předtím, než vyprší časový limit. Výchozí hodnota je "01: 00:00".|  
-|`issuedCookieLifeTime`|A <xref:System.TimeSpan> , který určuje životnost vydanou pro všechny nové bezpečnostní soubory cookie. Soubory cookie, které překračují jejich životního cyklu jsou recyklovány a potřebují pro znovu. Výchozí hodnota je "10: 00:00".|  
-|`maxCachedCookies`|Kladné celé číslo, které určuje maximální počet souborů cookie, které lze uložit do mezipaměti. Výchozí hodnota je 1000.|  
-|`maxClockSkew`|A <xref:System.TimeSpan> , která určuje maximální časový rozdíl mezi systémovými hodinami dvou komunikujících stran. Výchozí hodnota je "00: 05:00".<br /><br /> Pokud tato hodnota nastavena na výchozí hodnotu, příjemce přijímá zprávy s čas odeslání časová razítka na 5 minut později nebo dříve než čas přijetí zprávy. Nepředávejte test čas odeslání zprávy jsou odmítnuta. Toto nastavení se používá ve spojení s `replayWindow` atribut.|  
-|`maxPendingSessions`|Kladné celé číslo, určující maximální počet nevyřešených bezpečnostních relací, které služba podporuje. Při dosažení tohoto limitu, všichni noví klienti zobrazí chyb SOAP. Výchozí hodnota je 1000.|  
-|`maxStatefulNegotiations`|Kladné celé číslo, určující počet bezpečnostních vyjednávání, které mohou být souběžně aktivní. Vyjednávání relace nad tento limit se zařadí do fronty a je možné dokončit, jakmile je k dispozici prostor pod limit. Výchozí hodnota je 1024.|  
-|`negotiationTimeout`|A <xref:System.TimeSpan> určující dobu života zásad zabezpečení, používaných kanálem. Když čas vyprší, kanál vyjednávání s klientem pro nové zásady zabezpečení. Výchozí hodnota je "00: 02:00".|  
-|`reconnectTransportOnFailure`|Logická hodnota určující, zda připojení používající posílání WS-Reliable se pokusí znovu připojit po selhání přenosu. Výchozí hodnota je `true`, což znamená, že nedochází k pokusům o nekonečné pokusí znovu připojit. Cyklus je porušena časový limit nečinnosti, což způsobí, že kanálů pokusí vyvolat výjimku, pokud nelze je připojit.|  
-|`replayCacheSize`|Celé kladné číslo určující počet náhodně generované identifikátory použitých pro zjištění opakování ukládat do mezipaměti. Pokud je tento limit překročen, nejstarší hodnota nonce je odebrán a nová hodnota nonce je vytvořen pro nové zprávy. Výchozí hodnota je 500000.|  
-|`replayWindow`|A <xref:System.TimeSpan> , který určuje dobu, po kterou jsou platné náhodně generované identifikátory jednotlivých zpráv.<br /><br /> Po této hodnotě duration zprávy se stejnou hodnotu nonce jako odeslaným před nepřijme. Tento atribut se používá ve spojení s `maxClockSkew` atribut, aby se zabránilo opakované útoky. Útočník by mohl znovu přehrát zprávu po vypršení její okno opětovného přehrání. Tato zpráva, ale selže `maxClockSkew` testu, který odmítne zprávy s časovými razítky čas odeslání až po určitou dobu později nebo starší, než čas přijetí zprávy.|  
-|`sessionKeyRenewalInterval`|A <xref:System.TimeSpan> , který určuje dobu, po které iniciátor obnoví klíč relace zabezpečení. Výchozí hodnota je "10: 00:00".|  
-|`sessionKeyRolloverInterval`|A <xref:System.TimeSpan> , který určuje časový interval klíč předchozí relace je platný na příchozích zprávách během obnovení klíče. Výchozí hodnota je "00: 05:00".<br /><br /> Během obnovení klíče musí klient a server vždy odesílat zprávy pomocí nejnovější dostupné klíče. Obě strany bude přijímat příchozí zprávy, které jsou zabezpečené pomocí klíč předchozí relace, dokud nevyprší čas přechodu.|  
-|`timestampValidityDuration`|Pozitivní <xref:System.TimeSpan> , který určuje dobu, ve kterém je platné časové razítko. Výchozí hodnota je "00: 15:00".|  
+|`detectReplays`|Logická hodnota určující, zda jsou zjištěny opakované útoky proti kanálu a zda jsou řešeny automaticky. Výchozí hodnota je `false`.|  
+|`inactivityTimeout`|Kladná <xref:System.TimeSpan> hodnota, která určuje dobu, po kterou kanál čeká, než vyprší časový limit. Výchozí hodnota je "01:00:00".|  
+|`issuedCookieLifeTime`|A <xref:System.TimeSpan> určuje dobu života vydanou pro všechny nové soubory cookie zabezpečení. Soubory cookie, které překračují jejich životnost, se recyklují a je nutné je znovu vyjednávat. Výchozí hodnota je "10:00:00".|  
+|`maxCachedCookies`|Celé kladné číslo určující maximální počet souborů cookie, které lze uložit do mezipaměti. Výchozí hodnota je 1000.|  
+|`maxClockSkew`|A <xref:System.TimeSpan> určuje maximální časový rozdíl mezi systémovými hodinami dvou komunikujících stran. Výchozí hodnota je "00:05:00".<br /><br /> Pokud je tato hodnota nastavená na výchozí hodnotu, příjemce přijímá zprávy s časovými razítky pro odeslání až 5 minut později nebo dříve, než čas, kdy byla zpráva přijata. Zprávy, které nevyhověly testu při odeslání, jsou odmítnuty. Toto nastavení se používá ve spojení s `replayWindow` atributem.|  
+|`maxPendingSessions`|Celé kladné číslo určující maximální počet nevyřešených bezpečnostních relací, které služba podporuje. Po dosažení tohoto limitu získají všichni noví klienti chyby protokolu SOAP. Výchozí hodnota je 1000.|  
+|`maxStatefulNegotiations`|Celé kladné číslo určující počet vyjednávání zabezpečení, která mohou být souběžně aktivní. Relace vyjednávání přesahující limit jsou zařazené do fronty a můžou se dokončit jenom v případě, že bude k dispozici mezera pod limitem. Výchozí hodnota je 1024.|  
+|`negotiationTimeout`|A <xref:System.TimeSpan> určuje dobu života zásad zabezpečení, kterou používá kanál. Po vypršení časového limitu bude kanál znovu vyjednávat s klientem pro nové zásady zabezpečení. Výchozí hodnota je "00:02:00".|  
+|`reconnectTransportOnFailure`|Logická hodnota, která určuje, zda se připojení využívající zprávy WS-Reliable pokusí znovu připojit po selhání přenosu. Výchozí hodnota je `true`, což znamená, že došlo k pokusu o nekonečné pokusy o opětovné připojení. Cyklus je přerušen časovým limitem nečinnosti, což způsobí, že kanál vyvolá výjimku, když se nedá znovu připojit.|  
+|`replayCacheSize`|Kladné celé číslo, které určuje počet hodnot náhodně generovaných identifikátorů v mezipaměti používaných pro detekci opakovaného přehrání. Pokud je tento limit překročen, je odebrána nejstarší hodnota nonce a pro novou zprávu je vytvořena nová hodnota nonce. Výchozí hodnota je 500000.|  
+|`replayWindow`|A <xref:System.TimeSpan> určuje dobu, po kterou jsou jednotlivé náhodně generované identifikátory zprávy platné.<br /><br /> Po uplynutí této doby nebude přijata zpráva odeslaná se stejnou hodnota nonce jako ta, která byla odeslána před. Tento atribut se používá společně s `maxClockSkew` atributem, aby se zabránilo útokům přes opakované přehrání. Útočník může znovu přehrát zprávu po vypršení platnosti jejího okna opětovného přehrání. Tato zpráva však selže při selhání `maxClockSkew` testu, který odmítne zprávy s časovými razítky času odeslání až do určeného času později nebo dříve, než čas, kdy byla zpráva přijata.|  
+|`sessionKeyRenewalInterval`|A <xref:System.TimeSpan> určuje dobu, po které iniciátor obnoví klíč pro relaci zabezpečení. Výchozí hodnota je "10:00:00".|  
+|`sessionKeyRolloverInterval`|A <xref:System.TimeSpan> určuje časový interval, po který je klíč předchozí relace platný pro příchozí zprávy během obnovování klíče. Výchozí hodnota je "00:05:00".<br /><br /> Během obnovování klíče musí klient a server vždy odesílat zprávy pomocí nejaktuálnějšího dostupného klíče. Obě strany budou přijímat příchozí zprávy zabezpečené s předchozí klíčovou relací, dokud nevyprší doba přeběhu.|  
+|`timestampValidityDuration`|Kladná <xref:System.TimeSpan> hodnota, která určuje dobu, po kterou je časové razítko platné. Výchozí hodnota je "00:15:00".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,23 +68,23 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
-|[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
+|[\<> zabezpečení](security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
+|[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Určuje výchozí hodnoty, které se použijí při inicializaci služby zabezpečené konverzace.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nastavení jsou místní, protože nejsou publikované jako součást zásady zabezpečení služby a nemají vliv na vazby.  
+ Nastavení jsou místní, protože nejsou publikována jako součást zásad zabezpečení služby a neovlivňují vazbu klienta.  
   
- Následující atributy `localServiceSecuritySettings` element může pomoci zmírnit útok s cílem odepření služby (DOS) zabezpečení:  
+ Následující atributy `localServiceSecuritySettings` prvku mohou přispět k zmírnění útoku zabezpečení DOS (Denial of Service):  
   
-- `maxCachedCookies`: Určuje maximální počet SecurityContextTokens časově, které jsou uložené v mezipaměti na serveru poté, co provede vyjednávání SPNEGO nebo SSL.  
+- `maxCachedCookies`: řídí maximální počet SecurityContextTokens s časovými rozsahy, které server ukládá po provedení SPNEGO nebo vyjednávání SSL do mezipaměti.  
   
-- `issuedCookieLifetime`: Určuje životnost SecurityContextTokens, které jsou vystavované vyjednávání SPNEGO nebo SSL serveru. Server ukládá do mezipaměti SecurityContextTokens pro tuto dobu.  
+- `issuedCookieLifetime`: řídí životnost SecurityContextTokens vydaných serverem po vyjednávání SPNEGO nebo SSL. Server ukládá SecurityContextTokens do mezipaměti pro toto časové období.  
   
-- `maxPendingSessions`: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
+- `maxPendingSessions`: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které nebyly zpracovány žádné zprávy aplikace. Tato kvóta zabraňuje klientům v vytváření zabezpečených konverzací v rámci služby, což způsobuje, že služba udržuje stav pro každého klienta, ale nikdy je nepoužívá.  
   
-- `inactivityTimeout`: Určuje maximální dobu, že služba zachová zabezpečené konverzace aktivní bez někdy příjem zprávy aplikace. v něm. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
+- `inactivityTimeout`: Určuje maximální dobu, po kterou služba udržuje zabezpečenou konverzaci, aniž by na ní nikdy přijímala zprávu aplikace. Tato kvóta zabraňuje klientům v vytváření zabezpečených konverzací v rámci služby, což způsobuje, že služba udržuje stav pro každého klienta, ale nikdy je nepoužívá.  
   
- V relaci zabezpečené konverzace, Všimněte si, že oba `inactivityTimeout` a `receiveTimeout` ovlivňují atributy ve vazbě časový limit relace. Čím kratší je časový z nich určuje, když dojde k vypršení časového limitu.  
+ V relaci zabezpečené konverzace mějte na paměti, že `inactivityTimeout` i `receiveTimeout` atributy u vazby mají vliv na časový limit relace. Kratší z obou určuje, kdy dojde k vypršení časového limitu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -93,9 +93,9 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Zabezpečení vlastních vazeb](../../../wcf/samples/custom-binding-security.md)

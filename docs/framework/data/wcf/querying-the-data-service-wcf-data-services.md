@@ -1,5 +1,5 @@
 ---
-title: Dotazování v datové službě (WCF Data Services)
+title: Dotazování na datovou službu (WCF Data Services)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,127 +9,127 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: c2eb6d8f8bb7886e4615438e463aeea3c3825662
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 50dc56a3c4c87bf9ac197b127c036c41ac833a88
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582627"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931127"
 ---
-# <a name="querying-the-data-service-wcf-data-services"></a>Dotazování v datové službě (WCF Data Services)
+# <a name="querying-the-data-service-wcf-data-services"></a>Dotazování na datovou službu (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje spouštění dotazů na datovou službu pomocí známých rozhraní .NET Framework programovací modely, včetně použití jazyka integrované dotazu (LINQ). Knihovna klienta přeloží dotaz, který je definován v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třídy do zprávy požadavku HTTP GET. Knihovny přijímá zprávy s odpovědí a přeloží ho do instancí tříd klientské datové služby. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje spouštět dotazy na datovou službu pomocí známých .NET Framework programovacích vzorů, včetně použití jazyka LINQ (Language Integrated Query). Klientská knihovna překládá dotaz, který je definován v klientovi jako instance <xref:System.Data.Services.Client.DataServiceQuery%601> třídy, do zprávy požadavku HTTP GET. Knihovna obdrží zprávu s odpovědí a přeloží ji do instancí tříd služby Klient data Service. Tyto třídy jsou sledovány <xref:System.Data.Services.Client.DataServiceContext> třídou, do <xref:System.Data.Services.Client.DataServiceQuery%601> které patří.
 
-## <a name="data-service-queries"></a>Dotazů v datové službě
+## <a name="data-service-queries"></a>Dotazy na datovou službu
 
-<xref:System.Data.Services.Client.DataServiceQuery%601> Generické třídě představuje dotaz, který vrátí kolekci nula nebo více instancí typu entity. Dotaz datové služby vždy patří do existujícího kontextu datové služby. Tento kontext udržuje identifikátor URI a metadata informace o služby, které je nutné k vytvoření a provedení dotazu.
+<xref:System.Data.Services.Client.DataServiceQuery%601> Obecná třída reprezentuje dotaz, který vrací kolekci nula nebo více instancí typu entity. Dotaz datové služby vždy patří do stávajícího kontextu datové služby. Tento kontext udržuje informace o identifikátorech URI a metadatech služby, které jsou nutné k vytvoření a spuštění dotazu.
 
-Při použití **přidat odkaz na službu** dialogové okno pro přidání datovou službu do aplikace klienta na základě rozhraní .NET Framework, kontejner třídu entity, která dědí z proběhne <xref:System.Data.Services.Client.DataServiceContext> třídy. Tato třída obsahuje vlastnosti, které vrací zadaný <xref:System.Data.Services.Client.DataServiceQuery%601> instancí. Existuje jedna vlastnost pro každou sadu entit, které data služba zpřístupňuje. Tyto vlastnosti usnadňují vytvoření instance typovaného <xref:System.Data.Services.Client.DataServiceQuery%601>.
+Při použití dialogového okna **Přidat odkaz na službu** k přidání datové služby do klientské aplikace založené na .NET Framework je vytvořena třída kontejneru entity, která dědí z <xref:System.Data.Services.Client.DataServiceContext> třídy. Tato třída obsahuje vlastnosti, které vracejí <xref:System.Data.Services.Client.DataServiceQuery%601> typované instance. Pro každou sadu entit, kterou datová služba zpřístupňuje, existuje jedna vlastnost. Tyto vlastnosti usnadňují vytvoření instance <xref:System.Data.Services.Client.DataServiceQuery%601>typu.
 
-Dotaz je proveden v následujících scénářích:
+Dotaz se spustí v následujících scénářích:
 
-- Když výsledky jsou uvedené implicitně, jako například:
+- Při implicitním vyčíslení výsledků, jako například:
 
-  - Pokud vlastnost <xref:System.Data.Services.Client.DataServiceContext> , který představuje a je vypočten sadu entit, jako například během `foreach` (C#) nebo `For Each` smyčky (Visual Basic).
+  - Když je vyhodnocena <xref:System.Data.Services.Client.DataServiceContext> vlastnost v, která představuje a sada entit, například `foreach` během smyčky (C#) nebo `For Each` (Visual Basic).
 
-  - Když je přiřazen dotaz `List` kolekce.
+  - Když se dotaz přiřadí do `List` kolekce.
 
-- Když <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> metoda je explicitně zavolán.
+- , Pokud je <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> Metoda neboexplicitněvolána.<xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A>
 
-- Když LINQ provádění – operátor dotazu, jako například <xref:System.Linq.Enumerable.First%2A> nebo <xref:System.Linq.Enumerable.Single%2A> je volána.
+- V případě, že je volán operátor spuštění dotazu <xref:System.Linq.Enumerable.First%2A> LINQ <xref:System.Linq.Enumerable.Single%2A> , například nebo.
 
-Následující dotaz, pokud je spuštěn, vrátí všechny `Customers` entity v datová služba Northwind:
+Následující dotaz, když se spustí, vrátí všechny `Customers` entity ve službě Northwind data Service:
 
 [!code-csharp[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomersspecific)]
 [!code-vb[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomersspecific)]
 
-Další informace najdete v tématu [jak: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md).
+Další informace najdete v tématu [jak: Spusťte dotazy](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)datové služby.
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klient podporuje dotazy pro objekty s pozdní vazbou, například při použití *dynamické* zadejte C#. Z důvodů výkonu by ale vždy compose silného typu dotazů vůči datové služby. <xref:System.Tuple> Klient nepodporuje typ a dynamické objekty.
+Klient podporuje dotazy na objekty s pozdní vazbou, například při použití dynamického typu v C# [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Z důvodu výkonu byste však měli vždy vytvářet dotazy silného typu proti datové službě. <xref:System.Tuple> Typ a dynamické objekty nejsou klientem podporovány.
 
 ## <a name="linq-queries"></a>Dotazy LINQ
 
-Protože <xref:System.Data.Services.Client.DataServiceQuery%601> implementuje třída <xref:System.Linq.IQueryable%601> rozhraní určené LINQ, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny je možné transformovat LINQ dotazů na data sady entit na identifikátor URI, který představuje výraz dotazu, který je porovnán s datové služby prostředek. V následujícím příkladu je dotaz LINQ, který je ekvivalentem předchozího <xref:System.Data.Services.Client.DataServiceQuery%601> , která vrací `Orders` , která mají svou cenu freight více než 30 USD a objednávek výsledky podle freight náklady:
+Vzhledem k <xref:System.Data.Services.Client.DataServiceQuery%601> tomu, že <xref:System.Linq.IQueryable%601> třída implementuje rozhraní definované technologií LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] , může Klientská knihovna transformovat dotazy LINQ proti sadě entit na identifikátor URI, který představuje výraz dotazu vyhodnocený proti datové službě. partner. V následujícím příkladu je dotaz LINQ, který je ekvivalentní předchozímu <xref:System.Data.Services.Client.DataServiceQuery%601> , který vrací `Orders` náklady na dopravné více než $30 a objedná výsledky podle nákladů na dopravu:
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]
 
-Tento dotaz LINQ, je přeložen do následujícího dotazu identifikátoru URI, který se provede na základě Northwind [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) datové služby:
+Tento dotaz LINQ se převede na následující identifikátor URI dotazu, který se spustí pro službu [rychlého](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) startu dat založenou na Northwind:
 
 ```
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30
 ```
 
 > [!NOTE]
-> Sadu dotazů v syntaxi LINQ anyAttribute je rozsáhlejší než ty, které povolené v (REST) representational state transfer-podle syntaxe identifikátoru URI, který používá datové služby. A <xref:System.NotSupportedException> se vyvolá, když dotaz nelze namapovat na identifikátor URI v cílové datové služby.
+> Sada dotazů vyhodnotit ve syntaxi LINQ je širší než ty, které jsou povolené v syntaxi URI representationed state transfer (REST), která je používána datovými službami. <xref:System.NotSupportedException> Je vyvolána, když dotaz nelze namapovat na identifikátor URI v cílové datové službě.
 
-Další informace najdete v tématu [aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md).
+Další informace najdete v tématu věnovaném [hlediskům LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md).
 
-## <a name="adding-query-options"></a>Přidání možnosti dotazu
+## <a name="adding-query-options"></a>Přidání možností dotazu
 
-Data služby dotazy dotazu se na možnosti podpory, který [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]s poskytuje. Volání <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda pro přidání možností dotazu <xref:System.Data.Services.Client.DataServiceQuery%601> instance. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> vrátí nový <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní k původní dotaz ale s nový dotaz sada možností. Následující dotaz, při spuštění vrátí `Orders` , které jsou filtrovány podle `Freight` hodnotu a seřazené podle `OrderID`sestupně:
+Dotazy na datové služby podporují všechny možnosti dotazů, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]které s nabízí. Zavoláte <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro připojení možností dotazu <xref:System.Data.Services.Client.DataServiceQuery%601> k instanci. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>Vrátí novou <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní původnímu dotazu, ale s nastavenou možností nového dotazu. Následující dotaz, pokud je proveden, vrátí `Orders` `Freight` `OrderID`hodnoty, které jsou filtrovány podle hodnoty a seřazeny sestupně:
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]
 
-Můžete použít `$orderby` možnost pořadí dotazování a filtrování dotazu podle jedné vlastnosti, jako v následujícím příkladu, který filtruje a řadí vráceného `Orders` objekty podle hodnoty `Freight` vlastnost:
+Možnost `$orderby` dotazu můžete použít pro řazení a filtrování dotazu založeného na jedné vlastnosti, jako v následujícím příkladu, který filtruje a řadí vrácené `Orders` objekty na základě hodnoty `Freight` vlastnosti:
 
 [!code-csharp[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#orderwithfilter)]
 [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#orderwithfilter)]
 
-Můžete volat <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda postupně k vytvoření složitých dotazů výrazy. Další informace najdete v tématu [jak: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md).
+Můžete zavolat <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu po sobě a vytvořit složité výrazy dotazu. Další informace najdete v tématu [jak: Přidejte možnosti dotazu do dotazu](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)datové služby.
 
-Možnosti dotazu zadejte jiný způsob, jak vyjádřit syntaktické součásti dotazu LINQ. Další informace najdete v tématu [aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md).
+Možnosti dotazu poskytují další způsob, jak vyjádřit syntaktické komponenty dotazu LINQ. Další informace najdete v tématu věnovaném [hlediskům LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md).
 
 > [!NOTE]
->  `$select` Povolena možnost dotazu nelze přidat do dotazu identifikátoru URI pomocí <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metody. Doporučujeme použít LINQ <xref:System.Linq.Enumerable.Select%2A> metoda může mít klienta generovat `$select` možnosti v identifikátoru URI požadavku dotazu.
+> Možnost dotazu nelze přidat k identifikátoru URI dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pomocí metody. `$select` Doporučujeme použít metodu LINQ <xref:System.Linq.Enumerable.Select%2A> , pokud má klient `$select` generovat možnost dotazu v identifikátoru URI požadavku.
 
 <a name="executingQueries"></a>
 
-## <a name="client-versus-server-execution"></a>Klient a spuštění serveru
+## <a name="client-versus-server-execution"></a>Spuštění klienta versus serveru
 
-Klient provede dotaz ve dvou částech. Kdykoli je to možné, výrazy v dotazu se nejdřív vyhodnotit na straně klienta, a pak vygeneruje a odešle do služby data pro vyhodnocení s daty ve službě dotazů založených na identifikátor URI. Vezměte v úvahu následující dotaz LINQ:
+Klient spustí dotaz ve dvou částech. Kdykoli je to možné, výrazy v dotazu se nejprve vyhodnotí na klientovi a pak se vygeneruje dotaz založený na identifikátorech URI a pošle se do datové služby pro vyhodnocení dat ve službě. Vezměte v úvahu následující dotaz LINQ:
 
 [!code-csharp[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#linqqueryclientevalspecific)]
 [!code-vb[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#linqqueryclientevalspecific)]
 
-V tomto příkladu výraz `(basePrice – (basePrice * discount))` vyhodnotit na straně klienta. Z toho důvodu samotný dotaz URI `http://localhost:12345/northwind.svc/Products()?$filter=(UnitPrice gt 90.00M) and substringof('bike',ProductName)` , který se odešle k datům služby obsahuje již vypočtenou hodnotu decimal `90` v klauzuli filtru. Ostatní části výrazu filtrování, včetně podřetězec výraz jsou vyhodnoceny datovou službou. Výrazy, které se vyhodnocují na straně klienta podle běžné language runtime (CLR) sémantiku, zatímco odeslána do služby data výrazy se spoléhají na implementaci služby data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu. Jste měli také něco vědět o scénářích, kde může toto samostatné vyhodnocení vést k neočekávaným výsledkům, například když klient a služba provádět v různých časových pásmech podle času hodnocení.
+V tomto příkladu je výraz `(basePrice – (basePrice * discount))` vyhodnocen na straně klienta. Z tohoto důvodu skutečný identifikátor URI `http://localhost:12345/northwind.svc/Products()?$filter=(UnitPrice gt 90.00M) and substringof('bike',ProductName)` dotazu, který je odeslán do datové služby, obsahuje již počítanou desítkovou `90` hodnotu v klauzuli Filter. Ostatní části filtrovacího výrazu, včetně výrazu podřetězce, jsou vyhodnocovány datovou službou. Výrazy, které jsou vyhodnocovány v klientovi, následují sémantiku modulu CLR (Common Language Runtime), zatímco výrazy odesílané datové službě spoléhají na implementaci [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu datové služby. Měli byste si také uvědomit scénáře, kdy může toto samostatné vyhodnocení způsobit neočekávané výsledky, například když klient i služba provádějí vyhodnocení na základě času v různých časových pásmech.
 
 ## <a name="query-responses"></a>Odpovědi na dotazy
 
-Při spuštění <xref:System.Data.Services.Client.DataServiceQuery%601> vrátí <xref:System.Collections.Generic.IEnumerable%601> typu požadovaná entita. Tento výsledek dotazu může být převeden <xref:System.Data.Services.Client.QueryOperationResponse%601> objektů, jako v následujícím příkladu:
+Po spuštění <xref:System.Data.Services.Client.DataServiceQuery%601> <xref:System.Collections.Generic.IEnumerable%601> vrátí funkce požadovaný typ entity. Tento výsledek dotazu lze přetypovat na <xref:System.Data.Services.Client.QueryOperationResponse%601> objekt, jak je uvedeno v následujícím příkladu:
 
 [!code-csharp[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getresponsespecific)]
 [!code-vb[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getresponsespecific)]
 
-Instance typu entity, které představují entit ve službě data jsou vytvořeny na straně klienta pomocí procesu nazývaného materializace objektů. Další informace najdete v tématu [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md). <xref:System.Data.Services.Client.QueryOperationResponse%601> Objekt implementuje <xref:System.Collections.Generic.IEnumerable%601> a zajistit tak přístup k výsledkům dotazu.
+Instance typu entity, které představují entity v datové službě, jsou vytvořeny v klientovi pomocí procesu nazývaného materializace objektů. Další informace naleznete v tématu [materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md). <xref:System.Data.Services.Client.QueryOperationResponse%601> Objekt implementuje<xref:System.Collections.Generic.IEnumerable%601> k poskytnutí přístupu k výsledkům dotazu.
 
-<xref:System.Data.Services.Client.QueryOperationResponse%601> Také má následující členy, které vám umožní získat další informace o výsledku dotazu:
+Má <xref:System.Data.Services.Client.QueryOperationResponse%601> také následující členy, kteří vám umožní získat přístup k dalším informacím o výsledku dotazu:
 
-- <xref:System.Data.Services.Client.OperationResponse.Error%2A> -Získá chybu vyvolané operace, pokud některý došlo k chybě.
+- <xref:System.Data.Services.Client.OperationResponse.Error%2A>– Načte chybu vyvolanou operací, pokud k nějakému došlo.
 
-- <xref:System.Data.Services.Client.OperationResponse.Headers%2A> -obsahuje kolekci hlaviček odpovědí HTTP přidružený k odpovědi na dotaz.
+- <xref:System.Data.Services.Client.OperationResponse.Headers%2A>-obsahuje kolekci hlaviček HTTP odpovědi přidružených k odpovědi na dotaz.
 
-- <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A> -Získá původní <xref:System.Data.Services.Client.DataServiceQuery%601> vygenerovanou <xref:System.Data.Services.Client.QueryOperationResponse%601>.
+- <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A>– Získá originál <xref:System.Data.Services.Client.DataServiceQuery%601> , který <xref:System.Data.Services.Client.QueryOperationResponse%601>vygeneroval.
 
-- <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A> -Získá kód odpovědi HTTP pro odpověď na dotaz.
+- <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A>– Získá kód odpovědi HTTP pro odpověď na dotaz.
 
-- <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> -získá celkový počet entit v entitě nastavena, když <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> byla volána metoda <xref:System.Data.Services.Client.DataServiceQuery%601>.
+- <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A>– Získá celkový počet entit v sadě entit, když <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> byla metoda volána <xref:System.Data.Services.Client.DataServiceQuery%601>na.
 
-- <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> -Vrátí <xref:System.Data.Services.Client.DataServiceQueryContinuation> objekt, který obsahuje identifikátor URI další stránky výsledků.
+- <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A>-Vrátí <xref:System.Data.Services.Client.DataServiceQueryContinuation> objekt, který obsahuje identifikátor URI další stránky výsledků.
 
-Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vrátí jenom data, která je explicitně vybrána v dotazu identifikátoru URI. To vám umožňuje explicitně načíst další data z datové služby, když ho nepotřebují. Žádost se odesílají službě dat pokaždé, když explicitně načíst data z datové služby. Data, která je explicitně načíst zahrnuje související entity, data stránkované odpovědi a binární datové proudy.
+Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vrací jenom data, která jsou explicitně vybraná pomocí identifikátoru URI dotazu. Díky tomu máte možnost explicitně načíst další data z datové služby, když je to potřeba. Požadavek se pošle do datové služby pokaždé, když explicitně načtete data z datové služby. Data, která je možné explicitně načíst, zahrnují související entity, data stránkované odpovědi a binární datové proudy.
 
 > [!NOTE]
-> Vzhledem k tomu, že datové služby může vrátit stránkovaná odpověď, doporučujeme, aby vaše aplikace používat programovací model pro zpracování odpovědi služby stránkovaná data. Další informace najdete v tématu [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).
+> Vzhledem k tomu, že datová služba může vracet stránkované odpovědi, doporučujeme, aby vaše aplikace používala programovací model pro zpracování odpovědi stránkované datové služby. Další informace najdete v tématu [načítání odloženého obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).
 
-Množství dat vrácených dotazem může také snížit tak, že určíte, že se v odpovědi vrátí pouze určité vlastnosti entity. Další informace najdete v tématu [projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md).
+Množství dat vrácených dotazem se může také snížit tak, že se v odpovědi vrátí jenom některé vlastnosti entity. Další informace najdete v tématu [projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md).
 
-## <a name="getting-a-count-of-the-total-number-of-entities-in-the-set"></a>Získávání počet celkový počet entit v sadě
+## <a name="getting-a-count-of-the-total-number-of-entities-in-the-set"></a>Získává se celkový počet entit v sadě.
 
-V některých případech je užitečné vědět, celkový počet entit v sadu entit a nikoli pouze počet vrácených dotazem. Volání <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> metodu <xref:System.Data.Services.Client.DataServiceQuery%601> požádat o zahrnou celkový počet entit v sadě s výsledkem dotazu. V takovém případě <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> vlastnost vráceného <xref:System.Data.Services.Client.QueryOperationResponse%601> vrátí celkový počet entit v sadě.
+V některých scénářích je užitečné znát celkový počet entit v sadě entit a nikoli pouze počet vrácený dotazem. <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> Zavolejte metodu<xref:System.Data.Services.Client.DataServiceQuery%601> na pro požadavek, aby tento celkový počet entit v sadě zahrnoval výsledek dotazu. V tomto případě <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> vrátí vlastnost vrácenou <xref:System.Data.Services.Client.QueryOperationResponse%601> celkový počet entit v sadě.
 
-Můžete také získat jenom celkový počet entit v sadě buď jako <xref:System.Int32> nebo jako <xref:System.Int64> pomocí volání <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.LongCount%2A> metody v uvedeném pořadí. Při volání těchto metod <xref:System.Data.Services.Client.QueryOperationResponse%601> nevrátí; vrátil hodnotu count. Další informace najdete v tématu [jak: Určení počtu entit vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md).
+Můžete také získat celkový počet entit v sadě <xref:System.Int32> jako nebo <xref:System.Int64> jako hodnotu voláním <xref:System.Linq.Enumerable.Count%2A> metod nebo <xref:System.Linq.Enumerable.LongCount%2A> v uvedeném pořadí. Při volání těchto metod se nevrátí <xref:System.Data.Services.Client.QueryOperationResponse%601> a vrátí se jenom hodnota Count. Další informace najdete v tématu [jak: Určete počet entit vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -139,15 +139,15 @@ Můžete také získat jenom celkový počet entit v sadě buď jako <xref:Syste
 
 - [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)
 
-- [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
+- [Postupy: Spouštění dotazů datové služby](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
 
-- [Postupy: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
+- [Postupy: Přidání možností dotazu do dotazu datové služby](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
 
 - [Postupy: Určení počtu entit vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)
 
-- [Postupy: Zadejte požádat o přihlašovací údaje klienta datové služby](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)
+- [Postupy: Zadání přihlašovacích údajů klienta pro žádost datové služby](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)
 
-- [Postupy: Nastavit hlavičky v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)
+- [Postupy: Nastavení hlaviček v žádosti klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)
 
 - [Postupy: Výsledky dotazu projektu](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 841965becd6c4998692b83d5c64521f7c3e1b227
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 57ab0282c88a85b59c8fed7506ef811c8cced58f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596143"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924450"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 
@@ -41,7 +41,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Stejně jako u všech typů tříd jsou informace o typu statické třídy načteny modulem .NET Framework Common Language Runtime (CLR) při načtení programu, který odkazuje na třídu. Program nemůže přesně určovat, kdy je třída načtena. Je však zaručeno, že bude načteno a že jeho pole jsou inicializována a jeho statický konstruktor byl volán před tím, než je třída poprvé odkazována v programu. Statický konstruktor se volá jenom jednou a statická třída zůstane v paměti po dobu života domény aplikace, ve které se váš program nachází.  
   
 > [!NOTE]
->  Chcete-li vytvořit nestatickou třídu, která umožňuje vytvořit pouze jednu instanci sebe sama, viz téma [implementace typu Singleton C#v ](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
+> Chcete-li vytvořit nestatickou třídu, která umožňuje vytvořit pouze jednu instanci sebe sama, viz téma [implementace typu Singleton C#v ](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
   
  Následující seznam poskytuje hlavní funkce statické třídy:  
   

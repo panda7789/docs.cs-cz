@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
-ms.openlocfilehash: abfb91c61ef72bfc1626b4cc4dcea42b75e2ab35
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: cb54ef372e6da551b95f1edf61e3844b9dcba4c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040245"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950044"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu
 Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvořit a znovu použít vlastní grafická rozhraní. Složený ovládací prvek je v podstatě součástí vizuální reprezentace. V takovém případě se může skládat z jednoho nebo více model Windows Forms ovládacích prvků, komponent nebo bloků kódu, které mohou rozšiřování funkcí pomocí ověření vstupu uživatele, změny vlastností zobrazení nebo provádění jiných úloh vyžadovaných autorem. Složené ovládací prvky lze umístit na model Windows Forms stejným způsobem jako jiné ovládací prvky. V první části tohoto návodu vytvoříte jednoduchý složený ovládací prvek s názvem `ctlClock`. V druhé části návodu rozšíříte funkce `ctlClock` nástroje prostřednictvím dědičnosti.
@@ -37,7 +37,7 @@ Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvoři
 3. V Průzkumník řešení klikněte pravým tlačítkem na **UserControl1. vb**a pak klikněte na **Přejmenovat**. Změňte název souboru na `ctlClock.vb`. Pokud se zobrazí dotaz, zda chcete přejmenovat všechny odkazy na prvek kódu "UserControl1", klikněte na tlačítko **Ano** .
 
     > [!NOTE]
-    >  Ve výchozím nastavení dědí složený ovládací prvek ze <xref:System.Windows.Forms.UserControl> třídy poskytované systémem. <xref:System.Windows.Forms.UserControl> Třída poskytuje funkce vyžadované všemi složenými ovládacími prvky a implementuje standardní metody a vlastnosti.
+    > Ve výchozím nastavení dědí složený ovládací prvek ze <xref:System.Windows.Forms.UserControl> třídy poskytované systémem. <xref:System.Windows.Forms.UserControl> Třída poskytuje funkce vyžadované všemi složenými ovládacími prvky a implementuje standardní metody a vlastnosti.
 
 4. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
 
@@ -184,7 +184,7 @@ Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvoři
 5. V Průzkumník řešení Procházet aktuální projekty.
 
     > [!NOTE]
-    >  Do aktuálního projektu byl přidán soubor s názvem **ctlAlarmClock. vb** .
+    > Do aktuálního projektu byl přidán soubor s názvem **ctlAlarmClock. vb** .
 
 ### <a name="adding-the-alarm-properties"></a>Přidání vlastností alarmu
  Vlastnosti jsou přidány do zděděného ovládacího prvku stejným způsobem jako přidaným do složeného ovládacího prvku. Nyní použijete syntaxi deklarace vlastností k přidání dvou vlastností do ovládacího prvku: `AlarmTime`, který bude uchovávat hodnotu data a času, kdy má alarm přejít, a `AlarmSet`, který bude označovat, zda je alarm nastaven.
@@ -230,10 +230,10 @@ Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvoři
 2. Klikněte `lblDisplay` na tlačítko (zobrazená část ovládacího prvku) a zobrazte okno Vlastnosti.
 
     > [!NOTE]
-    >  Všechny vlastnosti jsou zobrazeny šedě. To znamená, že tyto vlastnosti jsou nativní `lblDisplay` a nelze je upravovat nebo k nim nelze přicházet v okno Vlastnosti. Ve výchozím nastavení jsou `Private`ovládací prvky obsažené ve složeném ovládacím prvku a jejich vlastnosti přístupné žádným způsobem.
+    > Všechny vlastnosti jsou zobrazeny šedě. To znamená, že tyto vlastnosti jsou nativní `lblDisplay` a nelze je upravovat nebo k nim nelze přicházet v okno Vlastnosti. Ve výchozím nastavení jsou `Private`ovládací prvky obsažené ve složeném ovládacím prvku a jejich vlastnosti přístupné žádným způsobem.
 
     > [!NOTE]
-    >  Pokud chcete, aby následující uživatelé složeného ovládacího prvku měli přístup k vnitřním ovládacím prvkům, deklarujte `Public` je `Protected`jako nebo. To vám umožní nastavit a upravit vlastnosti ovládacích prvků obsažených v rámci složeného ovládacího prvku pomocí příslušného kódu.
+    > Pokud chcete, aby následující uživatelé složeného ovládacího prvku měli přístup k vnitřním ovládacím prvkům, deklarujte `Public` je `Protected`jako nebo. To vám umožní nastavit a upravit vlastnosti ovládacích prvků obsažených v rámci složeného ovládacího prvku pomocí příslušného kódu.
 
 3. <xref:System.Windows.Forms.Label> Přidejte ovládací prvek do složeného ovládacího prvku.
 
@@ -298,7 +298,7 @@ Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvoři
      Přidání tohoto kódu dosahuje několika úloh. `Overrides` Příkaz nasměruje ovládací prvek na použití této metody místo metody, která byla zděděna ze základního ovládacího prvku. Při volání této metody volá metodu, kterou Přepisuje, vyvoláním `MyBase.Timer1_Tick` příkazu, čímž se zajistí, že všechny funkce zahrnuté v původním ovládacím prvku budou v tomto ovládacím prvku reprodukovány. Potom spustí další kód, který bude začlenit funkci alarmu. Pokud dojde k alarmu, zobrazí se ovládací prvek popisku, který se bude objevovat zvukovým signálem.
 
     > [!NOTE]
-    >  Vzhledem k tomu, že přepisujete zděděnou obslužnou rutinu události, nemusíte zadávat událost `Handles` s klíčovým slovem. Událost je již zapojena. Vše, co přepisujete, je implementace obslužné rutiny.
+    > Vzhledem k tomu, že přepisujete zděděnou obslužnou rutinu události, nemusíte zadávat událost `Handles` s klíčovým slovem. Událost je již zapojena. Vše, co přepisujete, je implementace obslužné rutiny.
 
      Ovládací prvek hodiny budíku je skoro kompletní. Jediná věc, kterou zbývá, je implementovat způsob, jak ho vypnout. K tomu je třeba přidat kód do `lblAlarm_Click` metody.
 

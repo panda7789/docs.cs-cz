@@ -16,37 +16,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c6ef901f43cd6568f17657ed8e58bc2cc2cc0a1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63772c6642cc6f7f96a375beab4f7ef1b4884139
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922262"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959849"
 ---
 # <a name="icordebugappdomain2-interface"></a>ICorDebugAppDomain2 – rozhraní
 
-Poskytuje metody pro práci s pole, odkazy, ukazatele na funkce a typy odkazů. Toto rozhraní je rozšířením icordebugappdomain – rozhraní.  
+Poskytuje metody pro práci s poli, ukazateli, ukazateli na funkci a typy odkazů. Toto rozhraní je rozšířením rozhraní ICorDebugAppDomain.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetArrayOrPointerType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|Získá pole objektů zadaného typu nebo ukazatel nebo odkaz na zadaný typ.|  
-|[GetFunctionPointerType](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|Získá ukazatel na funkci, která má daným podpisem.|  
+|[GetArrayOrPointerType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|Získá pole zadaného typu nebo ukazatel nebo odkaz na zadaný typ.|  
+|[GetFunctionPointerType](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|Získá ukazatel na funkci, která má daný podpis.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

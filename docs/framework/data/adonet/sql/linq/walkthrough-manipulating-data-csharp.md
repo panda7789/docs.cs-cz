@@ -2,164 +2,164 @@
 title: 'Návod: Manipulace s daty (C#)'
 ms.date: 03/30/2017
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-ms.openlocfilehash: 2d45861569bc4a8b57427b01e107f87809203e11
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7921f0aa7582e70967f7fec633f37ef0dbc766de
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742732"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946977"
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Návod: Manipulace s daty (C#)
-Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
+Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravu a odstranění dat v databázi. Budete používat kopii ukázkové databáze Northwind pro přidání zákazníka, změnu názvu zákazníka a odstranění objednávky.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
- Tento návod byl napsán s použitím Visual C# vývojovým nastavením.  
+ Tento návod byl napsán s použitím nastavení C# vizuálního vývoje.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Tento postup vyžaduje následující:  
+ Tento návod vyžaduje následující:  
   
-- Tento návod používá vyhrazené složky ("c:\linqtest6") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
+- Tento návod používá pro uchovávání souborů vyhrazenou složku (c:\linqtest6). Před zahájením tohoto návodu vytvořte tuto složku.  
   
 - Ukázkovou databázi Northwind  
   
-     Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte do složky c:\linqtest6 northwnd.mdf souboru.  
+     Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze zkopírujte soubor northwnd. mdf do složky c:\linqtest6.  
   
-- A C# soubor kód generovaný z databáze Northwind.  
+- Soubor C# kódu vygenerovaný z databáze Northwind.  
   
-     Tento soubor můžete vygenerovat pomocí Návrháře relací objektů nebo nástroji SQLMetal. Tento návod byl napsán s použitím nástroje SQLMetal s následujícím příkazovým řádkem:  
+     Tento soubor můžete vygenerovat buď pomocí Návrhář relací objektů, nebo pomocí nástroje SQLMetal. Tento návod byl napsán pomocí nástroje SQLMetal s následujícím příkazovým řádkem:  
   
-     **SqlMetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" / pluralize**  
+     **SQLMetal/Code: "c:\linqtest6\northwind.cs"/Language: CSharp "C:\linqtest6\northwnd.mdf"/pluralize**  
   
-     Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+     Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Přehled  
- Tento názorný postup se skládá z šesti hlavních úloh:  
+ Tento názorný postup se skládá ze šesti hlavních úloh:  
   
-- Vytváří [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Vytvoření řešení v aplikaci Visual Studio.  
   
-- Přidání kódu databázový soubor do projektu.  
+- Do projektu se přidává soubor s kódem databáze.  
   
-- Vytváří se nový objekt zákazníka.  
+- Vytváření nového objektu zákazníka  
   
-- Úprava kontaktní jméno zákazníka.  
+- Změna jména kontaktu zákazníka.  
   
-- Odstraňuje se objednávky.  
+- Odstranění objednávky.  
   
-- Odesílá se tyto změny k databázi Northwind.  
+- Odesílají se tyto změny do databáze Northwind.  
   
-## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
- V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
+## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření řešení LINQ to SQL  
+ V tomto prvním úkolu vytvoříte řešení sady Visual Studio, které obsahuje nezbytné odkazy pro sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
   
-#### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
+#### <a name="to-create-a-linq-to-sql-solution"></a>Vytvoření řešení LINQ to SQL  
   
-1. V sadě Visual Studio **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
+1. V nabídce **soubor** v aplikaci Visual Studio přejděte na **Nový**a klikněte na **projekt**.  
   
-2. V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#** .  
+2. V podokně **typy projektů** v dialogovém okně **Nový projekt** klikněte na položku **vizuál C#** .  
   
-3. V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
+3. V podokně **šablony** klikněte na **Konzolová aplikace**.  
   
-4. V **název** zadejte **LinqDataManipulationApp**.  
+4. Do pole **název** zadejte **LinqDataManipulationApp**.  
   
-5. V **umístění** pole, ověřte, kam chcete uložit soubory projektu.  
+5. V poli **umístění** ověřte, kam chcete uložit soubory projektu.  
   
 6. Klikněte na **OK**.  
   
-## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
- Tento návod používá sestavení, která nemusí být nainstalován ve výchozím nastavení ve vašem projektu. Pokud System.Data.Linq není uveden jako odkaz v projektu, přidejte ji tak, jak je popsáno v následujících krocích:  
+## <a name="adding-linq-references-and-directives"></a>Přidání odkazů a direktiv LINQ  
+ Tento návod používá sestavení, která nemusí být nainstalována ve výchozím nastavení v projektu. Pokud System. data. Linq není v projektu uveden jako odkaz, přidejte jej, jak je vysvětleno v následujícím postupu:  
   
-#### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
+#### <a name="to-add-systemdatalinq"></a>Přidání System. data. Linq  
   
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **odkazy**a pak klikněte na **Přidat odkaz**.  
   
-2. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
+2. V dialogovém okně **Přidat odkaz** klikněte na položku **.NET**, klikněte na položku sestavení System. data. Linq a pak klikněte na tlačítko **OK**.  
   
-     Sestavení se přidá do projektu.  
+     Sestavení je přidáno do projektu.  
   
-3. V horní části souboru program.cs přidejte následující direktivy:  
+3. Do horní části Program.cs přidejte následující direktivy:  
   
      [!code-csharp[DLinqWalk3CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#1)]  
   
-## <a name="adding-the-northwind-code-file-to-the-project"></a>Přidání souboru Northwind kódu do projektu  
- Tento postup předpokládá, že jste použili nástroj SQLMetal ke generování souboru kódu z ukázkové databáze Northwind. Další informace najdete v oddílu požadavky dříve v tomto návodu.  
+## <a name="adding-the-northwind-code-file-to-the-project"></a>Přidání souboru s kódem Northwind do projektu  
+ Tyto kroky předpokládají, že jste použili nástroj SQLMetal k vygenerování souboru kódu z ukázkové databáze Northwind. Další informace najdete v části požadavky výše v tomto návodu.  
   
-#### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
+#### <a name="to-add-the-northwind-code-file-to-the-project"></a>Přidání souboru s kódem Northwind do projektu  
   
-1. Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
+1. V nabídce **projekt** klikněte na položku **Přidat existující položku**.  
   
-2. V **přidat existující položku** dialogové okno, přejděte do c:\linqtest6\northwind.cs a potom klikněte na tlačítko **přidat**.  
+2. V dialogovém okně **Přidat existující položku** přejděte na c:\linqtest6\northwind.cs a pak klikněte na **Přidat**.  
   
-     Soubor northwind.cs je přidán do projektu.  
+     Soubor northwind.cs se přidá do projektu.  
   
 ## <a name="setting-up-the-database-connection"></a>Nastavení připojení k databázi  
- Nejprve zkontrolujte připojení k databázi. Zejména Všimněte si, že databáze, Northwnd, nemá žádné i znak. Pokud se generují chyby v dalších krocích, zkontrolujte soubor northwind.cs k určení, jak je napsaný částečné třídy Northwind.  
+ Nejprve otestujte připojení k databázi. Pamatujte na to, že databáze northwnd nemá žádný znak. Pokud generujete chyby v dalších krocích, zkontrolujte soubor northwind.cs a určete, jak je částečná třída Northwind napsaná.  
   
-#### <a name="to-set-up-and-test-the-database-connection"></a>K nastavení a otestovat připojení k databázi  
+#### <a name="to-set-up-and-test-the-database-connection"></a>Nastavení a otestování připojení k databázi  
   
-1. Zadejte nebo vložte následující kód do `Main` metodu do třídy Program:  
+1. Zadejte nebo vložte následující kód do `Main` metody ve třídě program:  
   
      [!code-csharp[DLinqWalk3CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#2)]  
   
-2. Testování aplikace v tomto okamžiku stisknutím klávesy F5.  
+2. V tomto okamžiku otestujte aplikaci stisknutím klávesy F5.  
   
-     A **konzoly** otevře se okno.  
+     Otevře se okno **konzoly** .  
   
-     Aplikace můžete zavřít stisknutím klávesy Enter v **konzoly** okna, nebo kliknutím **Zastavit ladění** v sadě Visual Studio **ladění** nabídky.  
+     Aplikaci můžete zavřít stisknutím klávesy ENTER v okně **konzoly** nebo kliknutím na **Zastavit ladění** v nabídce **ladění** aplikace Visual Studio.  
   
-## <a name="creating-a-new-entity"></a>Vytvoření nové Entity  
- Vytvoření nové entity je jednoduché. Můžete vytvořit objekty (například `Customer`) s použitím `new` – klíčové slovo.  
+## <a name="creating-a-new-entity"></a>Vytvoření nové entity  
+ Vytvoření nové entity je jednoduché. Můžete vytvořit objekty (například `Customer`) `new` pomocí klíčového slova.  
   
- V této a v dalších částech provádíte změny pouze do místní mezipaměti. Žádné změny se odesílají do databáze až do okamžiku volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na konci tohoto návodu.  
+ V tomto a v následujících částech provedete změny pouze v místní mezipaměti. Do databáze se neodesílají žádné změny, dokud nebudete volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> směrem ke konci tohoto návodu.  
   
-#### <a name="to-add-a-new-customer-entity-object"></a>Chcete-li přidat nový objekt entity zákazníka  
+#### <a name="to-add-a-new-customer-entity-object"></a>Přidání nového objektu entity zákazníka  
   
-1. Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine();` v `Main` metody:  
+1. Vytvořte nový `Customer` přidáním následujícího `Console.ReadLine();` kódu do `Main` metody:  
   
      [!code-csharp[DLinqWalk3CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#3)]  
   
-2. Stiskněte klávesu F5, chcete-li ladit řešení.  
+2. Pro ladění řešení stiskněte klávesu F5.  
   
-3. Stisknutím klávesy Enter v **konzoly** okna Zastavit ladění a pokračovat v tomto návodu.  
+3. V okně **konzoly** stiskněte klávesu ENTER a zastavte ladění a pokračujte v tomto postupu.  
   
-## <a name="updating-an-entity"></a>Aktualizují se Entity  
- V následujících krocích se budou načítat `Customer` objektu a změňte některou z jeho vlastností.  
+## <a name="updating-an-entity"></a>Aktualizace entity  
+ V následujících krocích `Customer` navedete objekt a upravíte jednu z jeho vlastností.  
   
-#### <a name="to-change-the-name-of-a-customer"></a>Chcete-li změnit název zákazníka  
+#### <a name="to-change-the-name-of-a-customer"></a>Změna názvu zákazníka  
   
-- Přidejte následující kód nad `Console.ReadLine();`:  
+- Níže přidejte následující kód `Console.ReadLine();`:  
   
      [!code-csharp[DLinqWalk3CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#4)]  
   
-## <a name="deleting-an-entity"></a>Odstraňuje se entita  
- Pomocí stejného objektu zákazníka, můžete odstranit první pořadí.  
+## <a name="deleting-an-entity"></a>Odstranění entity  
+ Pomocí stejného objektu zákazníka můžete odstranit první objednávku.  
   
- Následující kód ukazuje, jak server vztahy mezi řádky a tom, jak můžete z databáze odstranit řádek. Přidejte následující kód před `Console.ReadLine` zobrazíte, jak je možné odstranit objekty:  
+ Následující kód ukazuje, jak se mají mezi řádky vymezit servery a jak odstranit řádek z databáze. `Console.ReadLine` Chcete-li zjistit, jak lze objekty odstranit, přidejte následující kód:  
   
-#### <a name="to-delete-a-row"></a>Odstranit řádek  
+#### <a name="to-delete-a-row"></a>Odstranění řádku  
   
-- Následující kód přidejte přímo nad `Console.ReadLine();`:  
+- Přidejte následující kód, který je `Console.ReadLine();`právě uveden výše:  
   
      [!code-csharp[DLinqWalk3CS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#5)]  
   
-## <a name="submitting-changes-to-the-database"></a>Odeslání změn do databáze  
- Posledním krokem vyžadovaný pro vytvoření, aktualizaci a odstraňování objektů, je ve skutečnosti odeslání změn do databáze. Bez tohoto kroku změny jsou pouze místní a nezobrazí se ve výsledcích dotazu.  
+## <a name="submitting-changes-to-the-database"></a>Odesílání změn do databáze  
+ Poslední krok potřebný k vytváření, aktualizaci a odstraňování objektů slouží ke skutečnému odeslání změn do databáze. Bez tohoto kroku budou vaše změny jenom místní a ve výsledcích dotazu se nezobrazí.  
   
-#### <a name="to-submit-changes-to-the-database"></a>K odeslání změn do databáze  
+#### <a name="to-submit-changes-to-the-database"></a>Odeslání změn do databáze  
   
-1. Vložte následující kód nad `Console.ReadLine`:  
+1. Vložte následující kód hned `Console.ReadLine`takto:  
   
      [!code-csharp[DLinqWalk3CS#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#6)]  
   
-2. Vložte následující kód (po `SubmitChanges`) zobrazíte před a po účinky odeslání změn:  
+2. Vložte následující kód (po `SubmitChanges`), chcete-li zobrazit před a za následky odeslání změn:  
   
      [!code-csharp[DLinqWalk3CS#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#7)]  
   
-3. Stiskněte klávesu F5, chcete-li ladit řešení.  
+3. Pro ladění řešení stiskněte klávesu F5.  
   
-4. Stisknutím klávesy Enter v **konzoly** okno zavřít aplikaci.  
+4. V okně **konzoly** stiskněte klávesu ENTER, aby se aplikace zavřela.  
   
 > [!NOTE]
->  Po přidání nového zákazníka, odešlete změny nelze provést toto řešení znovu, jak je. Pokud chcete znovu spustit řešení, změňte název zákazníka a ID zákazníka, které mají být přidány.  
+> Po přidání nového zákazníka odesláním změn už toto řešení nebudete moct znovu spustit, jak je. Pokud chcete řešení znovu spustit, změňte jméno zákazníka a ID zákazníka, které chcete přidat.  
   
 ## <a name="see-also"></a>Viz také:
 

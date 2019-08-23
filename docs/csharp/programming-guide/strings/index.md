@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 1b80082d10ad9ee760a184f496793ad5c69202da
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: MT
+ms.openlocfilehash: 39b48e7a0a296c2f4a4a2be76e0663ea3018e453
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588476"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928176"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> , jehož hodnota je text. Interně je text uložen jako sekvenční kolekce <xref:System.Char> objektů jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost řetězce představuje `Char` počet objektů, které obsahuje, nikoli počet znaků Unicode. <xref:System.String.Length%2A> Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte <xref:System.Globalization.StringInfo> objekt.  
@@ -71,7 +71,7 @@ ms.locfileid: "69588476"
 >  Při použití `\x` řídicí sekvence a zadání méně než 4 šestnáctkových číslic, pokud jsou znaky, které bezprostředně následují řídicí sekvence, platné šestnáctkové číslice (tj. 0-9, a-f a a-F), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je kódový bod U + 00A1. Pokud je však další znak "a" nebo "a", pak bude řídicí sekvence místo interpretovat jako `\xA1A` "&#x0A1A;", což je kódový bod U + 0A1A. V takových případech zadáním všech 4 hex číslic (např. `\x00A1` ) zabráníte případnému případnému mylnému výkladu.  
   
 > [!NOTE]
->  V době kompilace jsou doslovné řetězce převedeny na běžné řetězce se všemi stejnými řídicími sekvencemi. Proto pokud si v okně kukátka ladicího programu zobrazíte doslovné řetězce, zobrazí se řídicí znaky, které byly přidány kompilátorem, nikoli doslovné verze ze zdrojového kódu. Například doslovné řetězec `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  
+> V době kompilace jsou doslovné řetězce převedeny na běžné řetězce se všemi stejnými řídicími sekvencemi. Proto pokud si v okně kukátka ladicího programu zobrazíte doslovné řetězce, zobrazí se řídicí znaky, které byly přidány kompilátorem, nikoli doslovné verze ze zdrojového kódu. Například doslovné řetězec `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  
   
 ## <a name="format-strings"></a>Řetězce formátu  
  Formátovací řetězec je řetězec, jehož obsah je za běhu určen dynamicky. Řetězce formátu jsou vytvářeny vložením *interpolované výrazy* nebo zástupných symbolů do složených závorek v rámci řetězce. Vše, co uvnitř složených závorek (`{...}`), bude za běhu přeloženo na hodnotu a výstup jako formátovaný řetězec. Existují dvě metody vytváření řetězců formátu: interpolace řetězce a složené formátování.

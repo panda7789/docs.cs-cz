@@ -2,34 +2,34 @@
 title: Mapování vlastních typů SQL a CLR
 ms.date: 03/30/2017
 ms.assetid: d916c7fb-4b56-4214-acbe-5e23365047b2
-ms.openlocfilehash: bc92d54cad6a977268ef3f000c684d5f195a933d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5aff9a78349cbf9443c5b663a41d7c13a109e625
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037047"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945049"
 ---
 # <a name="sql-clr-custom-type-mappings"></a>Mapování vlastních typů SQL a CLR
-Typ mapování mezi systému SQL Server a common language runtime (CLR) bylo automaticky zadáno při použití SQLMetal nástroj příkazového řádku, Návrhář relací objektů (O/R Designer).  
+Mapování typů mezi SQL Server a modulem CLR (Common Language Runtime) je automaticky zadáno při použití nástroje příkazového řádku SQLMetal Návrhář relací objektů (O/R Designer).  
   
- Pokud žádné vlastní mapování se provádí, tyto nástroje přiřadit výchozí mapování typů jak je popsáno v [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md). Pokud chcete zadat mapování odlišně od tyto výchozí hodnoty, je potřeba některé přizpůsobení mapování typů.  
+ Pokud není provedeno žádné přizpůsobené mapování, tyto nástroje přiřadí výchozí mapování typů, jak je popsáno v [mapování typu SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md). Pokud chcete zadat mapování odlišně od těchto výchozích hodnot, je nutné provést některé vlastní nastavení mapování typů.  
   
- Při přizpůsobování mapování typů, doporučuje provést změny v souboru DBML zprostředkující. Pak upravený soubor DBML by měl použít při vytváření kódu a souborů mapování SQLMetal nebo Návrháře relací objektů.  
+ Při přizpůsobování mapování typů je doporučeným přístupem udělat změny v souboru. DBML. Přizpůsobený soubor DBML by pak měl být použit při vytváření kódu a mapování souborů pomocí návrháře SQLMetal nebo O/R.  
   
- Jakmile vytvoříte instanci <xref:System.Data.Linq.DataContext> objekt z kódu a souborů mapování <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda vytvoří databázi podle mapování typů, které jsou uvedeny. Pokud neexistují žádné CLR `type` zadané atributy v mapování, použije se výchozí mapování typů.  
+ Po vytvoření instance <xref:System.Data.Linq.DataContext> objektu z kódu a mapování souborů <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metoda vytvoří databázi na základě mapování typů, které jsou zadány. Pokud v mapování nejsou zadány žádné atributy CLR `type` , budou použity výchozí mapování typů.  
   
-## <a name="customization-with-sqlmetal-or-or-designer"></a>Přizpůsobení s SQLMetal nebo Návrháře relací objektů  
- SQLMetal a O/R Designer můžete automaticky vytvořit objektový model, který obsahuje informace o mapování typu uvnitř nebo vně souboru kódu. Protože tyto soubory jsou přepsány SQLMetal nebo O/R Designer, pokaždé, když znovu vytvoříte mapování pracovního doporučený postup pro určení mapování vlastních typů je pro přizpůsobení souboru DBML.  
+## <a name="customization-with-sqlmetal-or-or-designer"></a>Přizpůsobení pomocí SQLMetal nebo O/R návrháře  
+ Pomocí SQLMetal a O/R designeru můžete automaticky vytvořit objektový model, který obsahuje informace o mapování typů uvnitř nebo vně souboru kódu. Vzhledem k tomu, že jsou tyto soubory přepsány návrhářem SQLMetal nebo O/R, pokaždé, když znovu vytvoříte mapování, doporučený postup pro určení vlastního mapování typů je přizpůsobení souboru DBML.  
   
- Přizpůsobení mapování typů s SQLMetal nebo O/R Designer, nejprve generování souboru DBML. Před generováním kódu souboru nebo souboru mapování, upravte souboru DBML k identifikaci mapování požadovaného typu. S SQLMetal, budete muset ručně změnit `Type` a `DbType` atributy v souboru DBML, aby váš typ mapování přizpůsobení. Pomocí Návrháře relací objektů provedete změny v návrháři. Další informace o používání návrháře relací objektů naleznete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Chcete-li přizpůsobit mapování typů pomocí SQLMetal nebo O/R návrháře, nejprve vygenerujte soubor DBML. Před vygenerováním souboru kódu nebo mapováním souboru upravte soubor DBML tak, aby identifikoval požadovaná mapování typů. Pomocí SQLMetal je nutné ručně změnit `Type` atributy a `DbType` v souboru DBML, aby bylo možné přizpůsobit mapování typů. Pomocí jazyka O/R Designer můžete provádět změny v návrháři. Další informace o použití návrháře O/R naleznete v tématu [nástroje LINQ to SQL v aplikaci Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 > [!NOTE]
->  Některé mapování typu může vést ke ztrátě výjimky přetečení nebo dat při překladu do nebo z databáze. Pečlivě si prostudujte matice chování mapování typu za běhu v [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) před provedením jakékoli vlastní nastavení.  
+> Některé mapování typů může způsobit přetečení nebo výjimky ztráty dat při převodu do nebo z databáze. Před provedením jakýchkoli úprav pečlivě zkontrolujte matrici chování mapování typů v [mapování typu SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) .  
   
- Aby vlastní typ mapování podle SQLMetal nebo O/R Designer budete muset Ujistěte se, že tyto nástroje jsou součástí cesty do vlastního souboru DBML při generování souboru kódu nebo externí mapování souboru. Ačkoli to není vyžadováno pro mapování typu vlastního nastavení, doporučujeme vám vždy oddělení vašich informací o mapování typ ze souboru s kódem a generovat soubor mapování další externí. Tím ponechá určitá flexibilita vyžadováním není třeba znovu zkompilovat soubor kódu.  
+ Aby bylo přizpůsobení mapování typů rozpoznáno návrhářem SQLMetal nebo O/R, je nutné zajistit, aby tyto nástroje byly dodány s cestou k vlastnímu souboru DBML při generování souboru kódu nebo externího souboru mapování. I když není vyžadováno pro přizpůsobení mapování typů, je doporučeno vždy oddělit informace mapování typů ze souboru kódu a vytvořit další soubor mapování externího typu. Tím dojde k větší flexibilitě tím, že nebudete muset znovu kompilovat soubor kódu.  
   
-## <a name="incorporating-database-changes"></a>Zahrnutí změny databáze  
- Když změny databáze, je potřeba v souboru DBML odrážet provedené změny. Jeden ze způsobů, jak provést toto je pro automatické vytvoření nového souboru DBML a pak znovu proveďte vlastní typ mapování. Alternativně může porovnat rozdíly mezi nového souboru DBML a vaše přizpůsobené souboru DBML a aktualizace vašeho vlastního souboru DBML ručně tak, aby odrážely změny databáze.  
+## <a name="incorporating-database-changes"></a>Zahrnutí změn databáze  
+ Když se databáze změní, budete muset aktualizovat svůj soubor DBML, aby odrážel tyto změny. Jedním ze způsobů, jak to provést, je automaticky vytvořit nový soubor DBML a pak znovu provést vlastní nastavení mapování typů. Alternativně můžete porovnat rozdíly mezi novým souborem DBML a vlastním souborem DBML a ručně aktualizovat vlastní soubor DBML, aby odrážel změnu databáze.  
   
 ## <a name="see-also"></a>Viz také:
 

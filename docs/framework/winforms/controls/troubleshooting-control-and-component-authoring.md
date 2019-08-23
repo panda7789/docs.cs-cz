@@ -11,12 +11,12 @@ helpviewer_keywords:
 - components [Windows Forms], troubleshooting
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
-ms.openlocfilehash: 6494a154b9b4bd5bf29fc0e2fbd0b4e5e84550ff
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c05e849705f851b51a362d3a1d1d3f81a9eaf0e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364162"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923600"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>Řešení potíží s vytvářením ovládacích prvků a komponent
 Toto téma uvádí následující běžné problémy, které vznikají při vývoji komponent a ovládacích prvků. Další informace najdete v tématu [programování s komponentami](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
@@ -96,7 +96,7 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
  Další informace o ladění naleznete v tématu [ladění v aplikaci Visual Studio](/visualstudio/debugger/debugging-in-visual-studio) a [Návod: Ladění vlastních ovládacích prvků model Windows Forms v době](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)návrhu.  
   
 ## <a name="event-is-raised-twice-in-inherited-control-or-component"></a>Událost je vyvolána dvakrát v zděděném ovládacím prvku nebo komponentě.  
- Pravděpodobnou příčinou je duplicitní `Handles` klauzule. Další informace najdete v tématu [řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
+ Pravděpodobnou příčinou je duplicitní `Handles` klauzule. Další informace najdete v tématu [řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
   
 ## <a name="design-time-error-failed-to-create-component-component-name"></a>Chyba v době návrhu: "Nepovedlo se vytvořit součást s názvem součásti".  
  Komponenta nebo ovládací prvek musí poskytovat konstruktor bez parametrů bez parametrů. Když vývojové prostředí vytvoří instanci vaší komponenty nebo ovládacího prvku, nepokusí se poskytnout žádné parametry přetížení konstruktoru, které přijímají parametry.  

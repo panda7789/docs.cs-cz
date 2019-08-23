@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: bcd0a11aef2372cc6e5830892eb3b71fa841ba2f
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 8b33ac800144577ba5f8610afdc50a1ba56eec0f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545248"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937698"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] znát při psaní aplikací pro globální trh. Programovací prvky globalizace jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -152,7 +152,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
  Z pohledu prostředku je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor navržený tak, aby popisoval závislé [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] na jazyku, který je prvkem prostředku, a proto je nutné lokalizovat jeho konečný formát distribuce, aby podporoval mezinárodní jazyky. Protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovat události, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mnoho aplikací obsahuje bloky kódu k tomu. Další informace naleznete v tématu [Přehled XAML (WPF)](xaml-overview-wpf.md). Kód je odstraněn a zkompilován do různých binárních souborů v případě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , že je soubor přidaný do formuláře BAML typu XAML. Formulář BAML souborů XAML, obrázků a dalších typů spravovaných objektů prostředků jsou vloženy do satelitního sestavení prostředků, které lze lokalizovat do jiných jazyků, nebo do hlavního sestavení, pokud není nutná lokalizace.
 
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]prostředky CLR, včetně tabulek řetězců, obrázků a tak dále.
+> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]prostředky CLR, včetně tabulek řetězců, obrázků a tak dále.
 
 <a name="building_localizable_apps"></a>
 ### <a name="building-localizable-applications"></a>Vytváření lokalizovatelných aplikací

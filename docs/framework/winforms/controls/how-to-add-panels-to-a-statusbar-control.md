@@ -10,27 +10,27 @@ helpviewer_keywords:
 - status bars [Windows Forms], adding panels
 - StatusBar control [Windows Forms], adding panels
 ms.assetid: 835e3902-288c-4c38-9d69-0696d8695009
-ms.openlocfilehash: 9d7a21ee686b0c6faa05f68f13eccc6a39d49164
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27d65c07f0a6ec4a25d057e2c16a8b59933bb8fd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011070"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925112"
 ---
 # <a name="how-to-add-panels-to-a-statusbar-control"></a>Postupy: Přidání panelů do ovládacího prvku StatusBar
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
+> <xref:System.Windows.Forms.ToolStripStatusLabel> <xref:System.Windows.Forms.StatusBar> <xref:System.Windows.Forms.StatusBarPanel> <xref:System.Windows.Forms.StatusBarPanel> Ovládací prvky <xref:System.Windows.Forms.StatusStrip> a nahrazují<xref:System.Windows.Forms.StatusBar> a přidávají funkce ovládacím prvkům a; ovládací prvky a jsou však uchovávány pro zpětnou kompatibilitu i pro budoucí použití, pokud výběrem.  
   
- Programovatelný oblasti v rámci [ovládacího prvku StatusBar](statusbar-control-windows-forms.md) ovládací prvek se skládá z instance <xref:System.Windows.Forms.StatusBarPanel> třídy. Přidají se prostřednictvím doplňky <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> třídy.  
+ Programovatelné oblasti v ovládacím prvku seznam [řízení](statusbar-control-windows-forms.md) se skládá z instancí <xref:System.Windows.Forms.StatusBarPanel> třídy. Ty se přidávají prostřednictvím přidání do <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> třídy.  
   
-### <a name="to-add-panels-to-a-status-bar"></a>K přidání panelů do stavového řádku  
+### <a name="to-add-panels-to-a-status-bar"></a>Přidání panelů do stavového řádku  
   
-1. V postupu, vytvořit panelů stavového jejich přidáním do <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>. Zadejte nastavení vlastností pro jednotlivé panely pomocí indexu předává <xref:System.Windows.Forms.StatusBar.Panels%2A> vlastnost.  
+1. V proceduře vytvořte panely stavového řádku jejich přidáním do <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>. Určete nastavení vlastností pro jednotlivé panely pomocí jejího indexu předaného přes <xref:System.Windows.Forms.StatusBar.Panels%2A> vlastnost.  
   
-     V následujícím příkladu kódu nastavena cesta pro umístění ikony **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění také umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spusťte aplikaci. V následujícím příkladu vyžaduje formulář s <xref:System.Windows.Forms.StatusBar> ovládací prvek již přidán.  
+     V následujícím příkladu kódu je cesta nastavená pro umístění ikony složka **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tuto složku. Zvolíte-li toto umístění, mohou uživatelé s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad vyžaduje formulář s <xref:System.Windows.Forms.StatusBar> ovládacím prvkem, který již byl přidán.  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> Je založený na nule kolekce, takže kód by měl pokračovat v odpovídajícím způsobem.  
+    > <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> Je kolekce založená na nule, takže kód by měl odpovídajícím způsobem pokračovat.  
   
     ```vb  
     Public Sub CreateStatusBarPanels()  
@@ -127,5 +127,5 @@ ms.locfileid: "62011070"
 - [Dialogové okno Editor kolekcí](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/xc4yyekt(v=vs.100))
 - [Postupy: Nastavení velikosti panelů stavového řádku](how-to-set-the-size-of-status-bar-panels.md)
 - [Návod: Aktualizace informací stavového řádku za běhu](walkthrough-updating-status-bar-information-at-run-time.md)
-- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](determine-which-panel-wf-statusbar-control-was-clicked.md)
+- [Postupy: Určete, na který panel model Windows Forms ovládací prvek stavový řádek.](determine-which-panel-wf-statusbar-control-was-clicked.md)
 - [Přehled ovládacího prvku StatusBar](statusbar-control-overview-windows-forms.md)

@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
-ms.openlocfilehash: 18c391e97baa170b78dcfe0165fb38b6c6d739f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 05f95a9c4f250100ca97e3ab52e4073d027df1b8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607281"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932186"
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>Přidání existujících omezení do datové sady
-**Vyplnit** metodu **DataAdapter** vyplní <xref:System.Data.DataSet> jenom pomocí sloupce tabulky a řádky ze zdroje dat, i když omezení běžně nastavené ve zdroji dat **vyplnit** metoda nepřidá informace o tomto schématu **datovou sadu** ve výchozím nastavení. K naplnění **datovou sadu** s stávající informace o omezení primárního klíče ze zdroje dat, můžete buď zavolat **FillSchema** metodu **DataAdapter**, nebo nastavte **MissingSchemaAction** vlastnost **DataAdapter** k **AddWithKey** před voláním **vyplnit**. To zajistí, že primární klíče omezení **datovou sadu** odrážejí hodnoty ve zdroji dat. Informace o omezení pro cizí klíč nezahrnuje a musí být vytvořen explicitně, jak je znázorněno v [omezení datových tabulek](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).  
+Metoda **Fill** v metodě **DataAdapter** vyplní <xref:System.Data.DataSet> pouze sloupce tabulky a řádky ze zdroje dat; i když jsou omezení obvykle nastavena zdrojem dat, metoda **Fill** nepřidá tyto informace o schématu do  **Datová sada** ve výchozím nastavení. Chcete-li naplnit **datovou sadu** stávajícími informacemi o omezení primárního klíče ze zdroje dat, můžete buď zavolat metodu **FillSchema** objektu **DataAdapter**, nebo nastavit vlastnost **MissingSchemaAction** objektu **DataAdapter** do **AddWithKey** před voláním metody **Fill**. Tím se zajistí, aby omezení primárního klíče v **datové sadě** odrážela ta, která jsou ve zdroji dat. Informace o omezeních cizích klíčů nejsou zahrnuty a je nutné je vytvořit explicitně, jak je znázorněno v [omezeních DataTable](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).  
   
- Přidání informací o schématu pro **datovou sadu** před naplňování daty zajistí, že jsou součástí omezení primárního klíče <xref:System.Data.DataTable> objekty v **datovou sadu**. V důsledku toho při dalších volání tak, aby vyplnil **datovou sadu** probíhají primární informace o sloupci klíče se používá tak, aby odpovídala nové řádky ze zdroje dat s aktuální řádky v každém **DataTable**a aktuální data s daty ze zdroje dat je přepsán v tabulkách. Bez informace o schématu, nových řádků ze zdroje dat jsou připojeny k **datovou sadu**výsledkem duplicitní řádky.  
+ Přidání informací o schématu do **datové sady** předtím, než je naplní data, zajistí, že omezení primárního <xref:System.Data.DataTable> klíče jsou zahrnuta s objekty v **datové sadě**. Výsledkem je, že když se vytvoří další volání pro vyplnění **datové sady** , použijí se informace o sloupci primárního klíče, aby se shodovaly s novými řádky ze zdroje dat s aktuálními řádky v každém **objektu DataTable**a aktuální data v tabulkách byly přepsána daty z zdroj dat Bez informací o schématu se nové řádky ze zdroje dat připojí k **datové sadě**, což vede k duplicitním řádkům.  
   
 > [!NOTE]
->  Pokud sloupce ve zdroji dat se identifikuje jako automatické zvyšování **FillSchema** metodu, nebo **vyplnit** metodou **MissingSchemaAction** z  **AddWithKey**, vytvoří **DataColumn** s **AutoIncrement** nastavenou na `true`. Ale budete muset nastavit **AutoIncrementStep** a **AutoIncrementSeed** hodnoty sami. Další informace o automatické zvyšování sloupců, naleznete v tématu [vytváření sloupců s automatickým navyšováním](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md).  
+> Pokud je sloupec ve zdroji dat identifikován jako Automatický přírůstek, metoda **FillSchema** nebo metoda **Fill** s **MissingSchemaAction** **AddWithKey**, vytvoří DataColumn s vlastností AutoIncrement. Nastavte na `true`. Hodnoty **hodnota AutoIncrementStep** a **AutoIncrementSeed** ale budete muset nastavit sami. Další informace o automatických přírůstcích sloupců najdete v tématu [vytváření sloupců AutoIncrement](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md).  
   
- Pomocí **FillSchema** nebo nastavení **MissingSchemaAction** k **AddWithKey** vyžaduje další zpracování na zdroj dat zjistit informace o sloupec primárního klíče. Tato další zpracování může bránit výkonu. Pokud víte, informace o primárním klíči v době návrhu, doporučujeme, že explicitně neurčíte sloupec primárního klíče nebo sloupce, abyste dosáhli optimálního výkonu. Informace o explicitním nastavením informacemi o primárním klíči pro tabulku, naleznete v tématu [definování primárních klíčů](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
+ Použití **FillSchema** nebo nastavení **MissingSchemaAction** na **AddWithKey** vyžaduje dodatečné zpracování ve zdroji dat za účelem určení informací o sloupci primárního klíče. Toto dodatečné zpracování může bránit výkonu. Pokud znáte informace o primárním klíči v době návrhu, doporučujeme explicitně zadat sloupec nebo sloupce primárního klíče, abyste dosáhli optimálního výkonu. Informace o explicitním nastavení informací o primárním klíči pro tabulku najdete v tématu [Definování primárních klíčů](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
   
- Následující příklad kódu ukazuje, jak přidat informace o schématu **datovou sadu** pomocí **FillSchema**.  
+ Následující příklad kódu ukazuje, jak přidat informace o schématu do **datové sady** pomocí **FillSchema**.  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -38,7 +38,7 @@ custAdapter.FillSchema(custDataSet, SchemaType.Source, "Customers");
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
- Následující příklad kódu ukazuje, jak přidat informace o schématu **datovou sadu** pomocí **MissingSchemaAction.AddWithKey** vlastnost **vyplnit** metoda.  
+ Následující příklad kódu ukazuje, jak přidat informace o schématu do **datové sady** pomocí vlastnosti **MissingSchemaAction. AddWithKey** metody **Fill** .  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -54,15 +54,15 @@ custAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
-## <a name="handling-multiple-result-sets"></a>Zpracování více sad výsledků dotazu  
- Pokud **DataAdapter** nalezne více sad výsledků dotazu vrácená **SelectCommand**, vytvoří více tabulek v **datovou sadu**. Tabulky dostanou od nuly přírůstkové výchozí název **tabulky** *N*počínaje **tabulky** namísto "Table0". Pokud zadáte název tabulky je předán jako argument **FillSchema** metody tabulky dostanou od nuly přírůstkové název **TableName** *N*počínaje **TableName** namísto "TableName0".  
+## <a name="handling-multiple-result-sets"></a>Zpracování více sad výsledků  
+ Pokud modul **DataAdapter** narazí na více sad výsledků vrácených z vlastnosti **SelectCommand**, vytvoří v **datové sadě**více tabulek. Tabulkám bude předána přírůstkový výchozí název **tabulky** *N*založený na nule, počínaje tabulkou namísto "Table0". Pokud je název tabulky předán jako argument pro metodu **FillSchema** , tabulky budou předány s nulovým přírůstkovým názvem **TableName** *N*, počínaje hodnotou **TableName** namísto "TableName0".  
   
 > [!NOTE]
->  Pokud **FillSchema** metodu **objektu OleDbDataAdapter** objektu je volána pro příkaz, který vrátí více sad výsledků dotazu, se vrátí jenom informace o schématu z první sady výsledků. Při vrácení informací o schématu pro více výsledku nastaví pomocí **objektu OleDbDataAdapter**, doporučuje se, že zadáte **MissingSchemaAction** z **AddWithKey** a získat informace o schématu při volání **vyplnit** metody.  
+> Pokud je metoda **FillSchema** objektu **objektu OleDbDataAdapter** volána pro příkaz, který vrací více sad výsledků, vrátí se pouze informace o schématu z první sady výsledků dotazu. Při vracení informací o schématu pro více sad výsledků pomocí **objektu OleDbDataAdapter**se doporučuje zadat **MissingSchemaAction** **AddWithKey** a získat informace o schématu při volání **výplně** . Metoda.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
 - [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

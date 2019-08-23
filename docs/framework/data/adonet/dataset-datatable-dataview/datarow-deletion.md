@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c34f531d-4b9b-4071-b2d7-342c402aa586
-ms.openlocfilehash: 57f51ada00bf24617ca3e295a010aae64f0aa849
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c80294c4bc879e6a1df4c9d1170eef14b8b83de
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879863"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915816"
 ---
 # <a name="datarow-deletion"></a>Odstranění datového řádku
-Existují dvě metody, které slouží k odstranění <xref:System.Data.DataRow> objektu z <xref:System.Data.DataTable> objektu: **odebrat** metodu <xref:System.Data.DataRowCollection> objektu a <xref:System.Data.DataRow.Delete%2A> metodu **DataRow**objektu. Vzhledem k tomu <xref:System.Data.DataRowCollection.Remove%2A> metoda odstraní **DataRow** z **kolekci DataRowCollection**, <xref:System.Data.DataRow.Delete%2A> metoda pouze označuje řádek pro odstranění. Skutečné odebrání dochází, když aplikace volá **metoda AcceptChanges** metody. S použitím <xref:System.Data.DataRow.Delete%2A>, můžete prostřednictvím kódu programu zkontrolovat, které řádky jsou označená k odstranění předtím než je ve skutečnosti odeberete. Pokud je řádek označený k odstranění, jeho <xref:System.Data.DataRow.RowState%2A> je nastavena na <xref:System.Data.DataRow.Delete%2A>.  
+Existují dvě metody, které <xref:System.Data.DataRow> lze použít k odstranění objektu <xref:System.Data.DataTable> z objektu: <xref:System.Data.DataRow.Delete%2A> metodu <xref:System.Data.DataRowCollection> **Remove** objektu a metodu objektu **DataRow** . Zatímco metoda odstraní **objekt DataRow** z **kolekci DataRowCollection**, <xref:System.Data.DataRow.Delete%2A> metoda označí řádek pouze pro odstranění. <xref:System.Data.DataRowCollection.Remove%2A> Ke skutečnému odebrání dojde, když aplikace zavolá metodu **AcceptChanges** . Pomocí nástroje <xref:System.Data.DataRow.Delete%2A>můžete programově ověřit, které řádky jsou označené k odstranění, než je skutečně odeberete. Když je řádek označený k odstranění, jeho <xref:System.Data.DataRow.RowState%2A> vlastnost je nastavena na. <xref:System.Data.DataRow.Delete%2A>  
   
- Ani <xref:System.Data.DataRow.Delete%2A> ani <xref:System.Data.DataRowCollection.Remove%2A> by měla být volána ve smyčce foreach během iterace <xref:System.Data.DataRowCollection> objektu. <xref:System.Data.DataRow.Delete%2A> ani <xref:System.Data.DataRowCollection.Remove%2A> upravují stav kolekce.  
+ Ani ani <xref:System.Data.DataRowCollection.Remove%2A> by neměl být volán ve <xref:System.Data.DataRowCollection> smyčce foreach při iteraci objektu. <xref:System.Data.DataRow.Delete%2A> <xref:System.Data.DataRow.Delete%2A>ani <xref:System.Data.DataRowCollection.Remove%2A> nezmění stav kolekce.  
   
- Při použití <xref:System.Data.DataSet> nebo **DataTable** ve spojení s **DataAdapter** a zdroje relačních dat, použijte **odstranit** metodu  **Objekt DataRow** odebrat řádek. **Odstranit** metoda řádek bude označen jako **odstraněné** v **datovou sadu** nebo **DataTable** , ale neodstraní ho. Místo toho, když **DataAdapter** zaznamená řádek označený jako **odstraněné**, se provede jeho **událost DeleteCommand** metoda odstraňte řádek ve zdroji dat. Na řádku můžete poté trvale odebrány **metoda AcceptChanges** metody. Pokud používáte **odebrat** odstranění řádku, řádku je zcela odeberou z tabulky, ale **DataAdapter** nedojde k odstranění řádků ve zdroji dat.  
+ <xref:System.Data.DataSet> Při použití objektu nebo **DataTable** ve spojení s **metodou DataAdapter** a relačním zdrojem dat odeberte řádek pomocí metody **Delete** objektu **DataRow** . Metoda **Delete** označí řádek jako **Odstraněný** v **datové sadě** nebo **DataTable** , ale neodebere jej. Místo toho, když modul **DataAdapter** nalezne řádek označený jako **Odstraněný**, provede jeho metodu **DeleteCommand** k odstranění řádku ve zdroji dat. Řádek je pak možné trvale odebrat pomocí metody **AcceptChanges** . Použijete-li příkaz **Remove** k odstranění řádku, řádek bude z tabulky zcela odebrán, ale objekt **DataAdapter** neodstraní řádek ze zdroje dat.  
   
- **Odebrat** metodu **kolekci DataRowCollection** přijímá **DataRow** jako argument a odebere ji z kolekce, jak je znázorněno v následujícím příkladu.  
+ Metoda **Remove** **kolekci DataRowCollection** přebírá **objekt DataRow** jako argument a odebírá jej z kolekce, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workTable.Rows.Remove(workRow)  
@@ -29,7 +29,7 @@ workTable.Rows.Remove(workRow)
 workTable.Rows.Remove(workRow);  
 ```  
   
- Naproti tomu následující příklad ukazuje, jak volat **odstranit** metodu na **DataRow** změnit jeho **RowState** k **odstraněné** .  
+ Naopak následující příklad ukazuje, jak zavolat metodu **Delete** na **objekt DataRow** , aby změnila její **RowState** na hodnotu **Deleted**.  
   
 ```vb  
 workRow.Delete  
@@ -39,10 +39,10 @@ workRow.Delete
 workRow.Delete();  
 ```  
   
- Pokud je řádek označený k odstranění a zavoláte **metoda AcceptChanges** metodu **DataTable** objekt řádku je odebrán z **DataTable**. Naopak pokud zavoláte **RejectChanges**, **RowState** řádku, který se vrátí do byl před jako **odstraněné**.  
+ Pokud je řádek označen pro odstranění a zavoláte metodu **AcceptChanges** objektu **DataTable** , řádek je odebrán z **objektu DataTable**. Naopak pokud voláte **RejectChanges**, **RowState** řádku se vrátí k tomu, co bylo předtím označeno jako odstraněné.  
   
 > [!NOTE]
->  Pokud **RowState** z **DataRow** je **přidané**, znamená to zrovna došlo k přidání do tabulky a pak je označen jako **odstraněné**, je odebrat z tabulky.  
+> Pokud se **přidá** **RowState** objektu **DataRow** , znamená to, že se právě přidal do tabulky a pak je označený jako **Odstraněný**, odebere se z tabulky.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -50,4 +50,4 @@ workRow.Delete();
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
 - [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

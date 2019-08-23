@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3adeb57e853d26415c53b5ac2579f14187e45969
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5a71277c6e5183f855ef07a6fc3a20e29b06998f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658976"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920925"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides – element >
 Definuje jeden nebo více přepínačů používaných <xref:System.AppContext> třídou k poskytnutí mechanismu odhlášení pro nové funkce.  
@@ -138,7 +138,7 @@ Definuje jeden nebo více přepínačů používaných <xref:System.AppContext> 
 |`System.Xml.`<br /><br /> `IgnoreEmptyKeySequences`|Určuje, zda jsou prázdné posloupnosti klíčů ve složených klíčích ignorovány ověřováním schématu XSD. Další informace najdete v tématu [zmírnění rizika: Ověřování](../../../migration-guide/mitigation-xml-schema-validation.md)schématu XML.|.NET Framework 4.6|  
   
 > [!NOTE]
->  `AppContextSwitchOverrides` Místo přidávání elementu do konfiguračního souboru aplikace lze také nastavit přepínače programově `static` voláním metody (in C#) nebo `Shared` (in Visual Basic) <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> .  
+> `AppContextSwitchOverrides` Místo přidávání elementu do konfiguračního souboru aplikace lze také nastavit přepínače programově `static` voláním metody (in C#) nebo `Shared` (in Visual Basic) <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> .  
   
  Vývojáři knihovny mohou také definovat vlastní přepínače, aby mohli volající odhlásit ze změněných funkcí zavedených v novějších verzích jejich knihoven. Další informace naleznete v tématu <xref:System.AppContext> třída.  
   

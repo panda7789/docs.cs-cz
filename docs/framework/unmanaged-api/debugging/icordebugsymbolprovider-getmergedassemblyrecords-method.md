@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider::GetMergedAssemblyRecords – metoda
+title: 'ICorDebugSymbolProvider:: GetMergedAssemblyRecords – metoda'
 ms.date: 03/30/2017
 ms.assetid: cc4c510d-550d-4941-af34-81987caf3425
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b436bd844f917aab3c653428c7cd38809be870b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9f7859b095d80edb5592af1386457ad72b85bc48
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771393"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957390"
 ---
-# <a name="icordebugsymbolprovidergetmergedassemblyrecords-method"></a>ICorDebugSymbolProvider::GetMergedAssemblyRecords – metoda
-Získá záznamy symbolů pro sloučený sestavení.  
+# <a name="icordebugsymbolprovidergetmergedassemblyrecords-method"></a>ICorDebugSymbolProvider:: GetMergedAssemblyRecords – metoda
+Získá záznamy symbolů pro všechna Sloučená sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,27 +26,27 @@ HRESULT GetMergedAssemblyRecords(
   
 ## <a name="parameters"></a>Parametry  
  `cRequestedRecords`  
- [in] Počet záznamů symbol požadavku.  
+ pro Počet vyžádaných záznamů symbolů.  
   
  `pcFetchedRecords`  
- [out] Ukazatel na počet záznamů symbol načíst pomocí metody.  
+ mimo Ukazatel na počet záznamů symbolů načtených metodou.  
   
  `pRecords`  
- Ukazatel na pole [icordebugmergedassemblyrecord –](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md) objekty.  
+ Ukazatel na pole objektů [ICorDebugMergedAssemblyRecord](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md) .  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

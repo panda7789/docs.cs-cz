@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: 40d89f7bd7a1f4a38a1c4030a86405e09c497899
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ee60b990bc749dbb9c5d0e7426c57e9392ddf9d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659317"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920977"
 ---
 # <a name="network-element-network-settings"></a>\<Network > – element (nastavení sítě)
 Nakonfiguruje možnosti sítě pro externí server SMTP (Simple Mail Transport Protocol).  
@@ -70,7 +70,7 @@ Nakonfiguruje možnosti sítě pro externí server SMTP (Simple Mail Transport P
  K ověření vašeho vlastního serveru SMTP můžete použít také základní ověřování (uživatelské jméno a heslo). Chcete-li použít tuto možnost, je nutné zadat platné uživatelské jméno a heslo pro zadaný server SMTP.  
   
 > [!NOTE]
->  Základní ověřování odesílá `userName` hodnoty a `password` na server nešifrovaný. Kdokoli, kdo sleduje síťový provoz, může zobrazit vaše přihlašovací údaje a použít je k připojení k serveru. Měli byste zvážit použití bezpečnějšího mechanismu ověřování, jako je například Kerberos nebo NT LAN Manager (NTLM). Pokud `defaultCredentials` je`true`, použije se protokol Kerberos nebo NTLM, pokud server tyto protokoly podporuje.  
+> Základní ověřování odesílá `userName` hodnoty a `password` na server nešifrovaný. Kdokoli, kdo sleduje síťový provoz, může zobrazit vaše přihlašovací údaje a použít je k připojení k serveru. Měli byste zvážit použití bezpečnějšího mechanismu ověřování, jako je například Kerberos nebo NT LAN Manager (NTLM). Pokud `defaultCredentials` je`true`, použije se protokol Kerberos nebo NTLM, pokud server tyto protokoly podporuje.  
   
  Možnosti základního ověřování a výchozích síťových přihlašovacích údajů se vzájemně vylučují. Pokud nastavíte `defaultCredentials` `true` a zadáte uživatelské jméno a heslo, použije se výchozí síťová pověření a data základního ověřování se ignorují.  
   

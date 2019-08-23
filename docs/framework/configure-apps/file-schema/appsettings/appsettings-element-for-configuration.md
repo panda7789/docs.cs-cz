@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: e8f85be2efe972fc45230855d18649a89f2fbd61
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: a64db49b521651ccff8b928720fe3273f8600b68
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300810"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921328"
 ---
-# <a name="appsettings-element-for-configuration"></a>\<appSettings > – element pro \<configuration >
+# <a name="appsettings-element-for-configuration"></a>\<appSettings > element pro \<konfigurační >
 
-Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační oddíl poskytuje rozhraní .NET Framework.
+Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační oddíl poskytnutý .NET Framework.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+[ **\<> Konfigurace**](../configuration-element.md)   
 &nbsp;&nbsp; **\<appSettings>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -35,33 +35,33 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |           | Popis |
 | --------- | ----------- |
-| **Soubor**  | Nepovinný atribut.<br><br>Určuje relativní cestu na externí soubor, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou určené v  **\<Přidat >** ,  **\<odebrat >** , a  **\<vymazat >** prvků a používá tyto prvky formátování stejného páru klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavní konfigurační soubor. Pro aplikace Windows Forms, je to binární složka (například */bin/debug*), ne však umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů, cesta je relativní vzhledem k kořenový adresář aplikace, kde *web.config* se nachází soubor.<br><br>Všimněte si, že modul runtime ignorovat atribut, pokud zadaný soubor nebyl nalezen. |
+| **souborů**  | Nepovinný atribut.<br><br>Určuje relativní cestu k externímu souboru, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou zadány v  **\<> Přidat**,  **\<odebrat >** a  **\<vymazat >** prvky a jako tyto prvky používá stejný formát dvojice klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavnímu konfiguračnímu souboru. V případě aplikace model Windows Forms se jedná o binární složku (například */bin/Debug*), nikoli o umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů je cesta relativní k kořenovému adresáři aplikace, kde je umístěn soubor *Web. config* .<br><br>Všimněte si, že modul runtime ignoruje atribut, pokud zadaný soubor nelze nalézt. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<Konfigurace >** – Element](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [Element  **>\<konfigurace**](../configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) | Přidá nastavení vlastní aplikace. |
-| [ **\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md) | Vymaže všechny dříve definované aplikaci nastavení. |
-| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md) | Odebere nastavení dříve definované aplikace. |
+| [ **\<add>** ](add-element-for-appsettings.md) | Přidá vlastní nastavení aplikace. |
+| [ **\<Vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna dříve definovaná nastavení aplikace. |
+| [ **\<remove>** ](remove-element-for-appsettings.md) | Odebere dříve definované nastavení aplikace. |
 
 ## <a name="remarks"></a>Poznámky
 
-**\<AppSettings >** element ukládá informace o konfiguraci vlastních aplikací, jako jsou databázové připojovací řetězce, cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikace. Páry klíč/hodnota zadaná v  **\<appSettings >** element jsou přístupné z kódu pomocí <xref:System.Configuration.ConfigurationSettings> třídy.
+Element **appSettings > ukládá vlastní informace o konfiguraci aplikace, například připojovací řetězce k databázi, cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci. \<** Páry klíč/hodnota zadané v <xref:System.Configuration.ConfigurationSettings>  **\<elementu appSettings >** jsou k dispozici v kódu pomocí třídy.
 
-Můžete použít **souboru** atribut  **\<appSettings >** elementu *Web.config* a konfiguračních souborů aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepíše nastavení zadaná  **\<appSettings >** elementu. **Souboru** atribut lze použít v týmu vývoje scénářích správy zdrojového kódu, jako je například, pokud uživatel požaduje přepsat nastavení projektu zadané v konfiguračním souboru aplikace.
+Můžete použít atribut **File** v  **\<elementu appSettings >** souboru *Web. config* a konfiguračních souborů aplikace. Tento atribut určuje konfigurační soubor, který poskytuje další nastavení nebo přepisuje nastavení zadané v  **\<elementu appSettings >** . Atribut **File** lze použít ve scénářích vývoje týmu správy zdrojového kódu, například když chce uživatel přepsat nastavení projektu zadané v konfiguračním souboru aplikace.
 
-Konfigurační soubory, které jsou určené **souboru** atribut musí mít kořenový uzel  **\<appSettings >** spíše než  **\<konfigurace >** .
+Konfigurační soubory určené atributem **souboru** musí mít kořenový uzel  **\<appSettings >** spíše než  **\<konfigurační >** .
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje soubor nastavení externí aplikace (*custom.config*), který definuje vlastní nastavení aplikace:
+Následující příklad ukazuje soubor nastavení externí aplikace (*Custom. config*), který definuje vlastní nastavení aplikace:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -70,7 +70,7 @@ Následující příklad ukazuje soubor nastavení externí aplikace (*custom.co
 </appSettings>
 ```
 
-Následující příklad ukazuje konfigurační soubor aplikace, která načítá nastavení v souboru externích nastavení a nastaví vlastní nastavení aplikace:
+Následující příklad ukazuje konfigurační soubor aplikace, který využívá nastavení v souboru externího nastavení a nastavuje vlastní nastavení aplikace:
 
 ```xml
 <configuration>
@@ -82,8 +82,8 @@ Následující příklad ukazuje konfigurační soubor aplikace, která načít�
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](../index.md)

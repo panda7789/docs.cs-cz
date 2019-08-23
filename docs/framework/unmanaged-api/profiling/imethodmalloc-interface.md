@@ -16,36 +16,36 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee825da1f3f0fd72a3b47b48783f0f344af99b65
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c67ce15175f8667139f99cec1ed17531eab473e1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969803"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935649"
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc – rozhraní
-Poskytuje metodu, jak přidělit paměť pro nové tělo funkce Microsoft intermediate language (MSIL).  
+Poskytuje metodu pro přidělení paměti pro nové tělo funkce jazyka MSIL (Microsoft Intermediate Language).  
   
 > [!NOTE]
->  `IMethodMalloc` Rozhraní je jednoduché paměti alokátoru. Je možné přidělit paměť, ale nechcete ho zdarma.  
+> `IMethodMalloc` Rozhraní je jednoduchý Alokátor paměti. Umožňuje přidělit paměť, ale neuvolňuje ji.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Alloc – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit zadanou velikost paměti pro nové tělo funkce jazyka MSIL.|  
+|[Alloc – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit určenou velikost paměti pro nové tělo funkce jazyka MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každý allocator je modulů a zajistí, že tělo funkce bude kladné posunem od báze modulu. Paměť nad základní modul může být účely, proto alokátoru by měla sloužit pouze pro tělo funkce přidělení paměti.  
+ Každé přidělování je specifické pro modul a zajišťuje, aby tělo funkce bylo kladné posun od základu modulu. Paměť nad základem modulu může být úžasné, takže k přidělení paměti pro tělo funkce by se mělo použít přidělování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

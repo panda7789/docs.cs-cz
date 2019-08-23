@@ -9,42 +9,42 @@ helpviewer_keywords:
 ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd41051bd770d3579137aa158e70cef41aed49f8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d1334f8c8e1b5898e93697461f609429d4aae764
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607831"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921706"
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
-Obecně platí Statická sestavení se může skládat z čtyři elementy:  
+Obecně platí, že statické sestavení se může skládat ze čtyř prvků:  
   
-- [Manifestu sestavení](../../../docs/framework/app-domains/assembly-manifest.md), který obsahuje metadata sestavení.  
+- [Manifest sestavení](../../../docs/framework/app-domains/assembly-manifest.md), který obsahuje metadata sestavení.  
   
-- Typ metadat.  
+- Zadejte metadata.  
   
-- Microsoft intermediate language (MSIL) kód, který implementuje typy.  
+- Kód jazyka MSIL (Microsoft Intermediate Language), který implementuje typy.  
   
 - Sada prostředků.  
   
- Vyžaduje se jenom manifest sestavení, ale typy nebo prostředky je nutné poskytnout sestavení žádné smysluplné funkce.  
+ Vyžaduje se pouze manifest sestavení, ale k sestavení všech smysluplných funkcí je nutné zadat buď typy, nebo prostředky.  
   
- Existuje několik způsobů seskupení těchto prvků v sestavení. Můžete seskupit všechny prvky v jednom fyzickém souboru, která je znázorněna na následujícím obrázku.  
+ Existuje několik způsobů, jak seskupit tyto prvky do sestavení. Všechny prvky můžete seskupit v jednom fyzickém souboru, který je znázorněn na následujícím obrázku.  
   
- ![Diagram zobrazující průběh jednosouborového sestavení nazvané MyAssembly.dll.](./media/assembly-contents/single-file-assembly.gif)  
+ ![Diagram, který zobrazuje sestavení s jedním souborem s názvem MyAssembly. dll.](./media/assembly-contents/single-file-assembly.gif)  
   
- Alternativně prvky sestavení mohou být obsaženy v několika souborů. Tyto soubory mohou být moduly zkompilovaného kódu (.netmodule), prostředky (například soubory .bmp nebo .jpg) nebo jiné soubory vyžadované aplikací. Pokud chcete kombinovat modulů napsaných v různých jazycích tak, že aplikace tak, že vložíte zřídka použít typy v modulu, který se stáhne jenom v případě potřeby vytvořte vícesouborové sestavení.  
+ Alternativně mohou být prvky sestavení obsaženy v několika souborech. Tyto soubory mohou být moduly zkompilovaného kódu (.netmodule), prostředky (například soubory .bmp nebo .jpg) nebo jiné soubory vyžadované aplikací. Vytvořte vícesouborové sestavení, pokud chcete kombinovat moduly napsané v různých jazycích a optimalizovat stahování aplikace tím, že zadáte zřídka používané typy v modulu, který se stáhne pouze v případě potřeby.  
   
- Na následujícím obrázku vývojář aplikace hypotetické zvolil oddělit nějaký kód nástroje do jiného modulu a zachovat velkého souboru prostředků (v tomto případě obrázek bmp) v původním souboru. Rozhraní .NET Framework stáhne soubor pouze v případě, že se na ni odkazuje; udržování kódu zřídka odkazované v samostatném souboru z aplikace optimalizuje kód ke stažení.  
+ Na následujícím obrázku se vývojář hypotetické aplikace rozhodl oddělit některé kódy nástrojů do jiného modulu a uchovávat velký soubor prostředků (v tomto případě obrázek. bmp) v původním souboru. .NET Framework stáhne soubor pouze v případě, že je odkazováno. udržování zřídka odkazovaného kódu v samostatném souboru z aplikace optimalizuje stahování kódu.  
   
- ![Diagram zobrazující průběh vícesouborové sestavení.](./media/assembly-contents/multifile-assembly-diagram.gif) 
+ ![Diagram, který zobrazuje vícesouborové sestavení.](./media/assembly-contents/multifile-assembly-diagram.gif) 
   
 > [!NOTE]
->  Soubory, které tvoří vícesouborového sestavení nejsou fyzicky připojeny systémem souborů. Místo toho jsou propojeny prostřednictvím manifest sestavení a modul common language runtime spravuje jako celek.  
+> Soubory, které tvoří vícesouborové sestavení, nejsou fyzicky propojeny systémem souborů. Místo toho jsou propojeny prostřednictvím manifestu sestavení a modul CLR (Common Language Runtime) je spravuje jako celek.  
   
- Na tomto obrázku všechny tři soubory patří do sestavení, jak je popsáno v manifestu sestavení součástí MyAssembly.dll. Jsou tři samostatné soubory do systému souborů. Soubor Util.netmodule byl zkompilován jako modul, protože neobsahuje žádné informace o sestavení. Při vytváření sestavení byl manifest sestavení přidán do knihovny MyAssembly.dll, čímž je naznačen vztah se soubory Util.netmodule a Graphic.bmp.  
+ Na tomto obrázku všechny tři soubory patří do sestavení, jak je popsáno v manifestu sestavení obsaženém v MyAssembly. dll. Do systému souborů jsou tři samostatné soubory. Soubor Util.netmodule byl zkompilován jako modul, protože neobsahuje žádné informace o sestavení. Při vytváření sestavení byl manifest sestavení přidán do knihovny MyAssembly.dll, čímž je naznačen vztah se soubory Util.netmodule a Graphic.bmp.  
   
- Při návrhu aktuálně zdrojového kódu, proveďte explicitní rozhodnutí o tom, jak rozdělit funkce vaší aplikace do jednoho nebo více souborů. Při navrhování kódu rozhraní .NET Framework, bude podobné rozhodnutí o tom, jak rozdělit funkce do jednoho nebo více sestavení.  
+ Při navrhování zdrojového kódu se při rozhodování o tom, jak rozdělit funkce aplikace do jednoho nebo více souborů, provést explicitní rozhodnutí. Při navrhování .NET Framework kódu provedete podobná rozhodnutí týkající se dělení funkcí do jednoho nebo více sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

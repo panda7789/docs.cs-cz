@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: abcbfaf803e930baaaf798986a585a7da5f9134d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b9bb5a2629e435d76691d48feef6689191b66373
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780802"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957891"
 ---
 # <a name="icorprofilerinfo4initializecurrentthread-method"></a>ICorProfilerInfo4::InitializeCurrentThread – metoda
-Inicializuje aktuální vlákno s předstihem následné profiler volání rozhraní API ve stejném vlákně, takže se lze vyvarovat této zablokování.  
+Inicializuje aktuální vlákno předem v následných voláních rozhraní API profileru ve stejném vlákně, aby bylo možné zablokování zabránit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT InitializeCurrentThread ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Doporučujeme vám, že zavoláte `InitializeCurrentThread` v libovolném vlákně, který bude volat profilování rozhraní API, i když existují pozastavená vlákna. Tato metoda je obvykle používána vzorkování profilovací programy, které vytvoření vlastních vláken k volání [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metodu za účelem zásobníku vás během cílové vlákno je pozastaveno. Voláním `InitializeCurrentThread` až když profiler nejprve vytvoří vlákno vzorkování, profilery můžete zajistit, že opožděná vlákno inicializace, které modul CLR by jinak provádět při prvním volání `DoStackSnapshot` nyní provést bezpečně kdy mají být nejsou žádná jiná vlákna pozastaveno.  
+ Doporučujeme, abyste volali `InitializeCurrentThread` jakékoli vlákno, které bude volat rozhraní API profileru, když dojde k pozastaveným vláknům. Tato metoda je obvykle používána vzorkovacími profily, které vytvoří vlastní vlákno pro volání metody [ICorProfilerInfo2::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) pro provádění procházení zásobníku, zatímco cílové vlákno je pozastaveno. Vyvoláním metody `InitializeCurrentThread` jednou, když Profiler nejprve vytvoří vlákno vzorkování, profilery mohou zajistit, aby byla inicializace opožděného vlákna, kterou by CLR jinak prováděla během prvního `DoStackSnapshot` volání, mohla být bezpečně provedena, pokud nejsou žádná jiná vlákna. rozpuštěn.  
   
 > [!NOTE]
->  `InitializeCurrentThread` provede inicializaci předem na dokončení úlohy, které povede a může zablokování. Volání `InitializeCurrentThread` pouze v případě, že neexistují žádná pozastavená vlákna.  
+> `InitializeCurrentThread`provádí inicializaci předem úlohy, které přijímají zámky a mohou zablokovat. Volat `InitializeCurrentThread` pouze v případě, že nejsou k dispozici žádná pozastavená vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

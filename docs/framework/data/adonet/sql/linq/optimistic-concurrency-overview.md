@@ -2,71 +2,71 @@
 title: 'Optimistická metoda souběžného zpracování: Přehled'
 ms.date: 03/30/2017
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
-ms.openlocfilehash: a6e654ea1ae199cb086e9377454d05e6eaa03ad6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a61d4c5b35f3797539fe845045b8a959b0351350
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609956"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938628"
 ---
 # <a name="optimistic-concurrency-overview"></a>Optimistická metoda souběžného zpracování: Přehled
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje optimistického řízení souběžnosti. Následující tabulka popisuje podmínky, které se vztahují k optimistického řízení souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci:  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje optimistické řízení souběžnosti. Následující tabulka popisuje podmínky, které platí pro optimistickou souběžnost [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v dokumentaci:  
   
-|Podmínky|Popis|  
+|Uvedenými|Popis|  
 |-----------|-----------------|  
-|souběžnost|Situace, ve kterém dvě nebo více uživatelů současně pokusí aktualizovat na stejném řádku databáze.|  
-|ke konfliktu souběžnosti|Situace, ve kterém dvě nebo více uživatelů současně pokusí odeslat konfliktní hodnoty pro jeden nebo více sloupců řádků.|  
-|kontrola souběžnosti|Metoda používaná k řešení konfliktů souběžnosti.|  
-|Optimistického řízení souběžnosti|Technika, který nejprve prověří, zda ostatní transakce změnily hodnoty v řádku před umožňující změny k odeslání.<br /><br /> Rozdíl oproti *pesimistické řízení souběžnosti*, které se uzamkne záznamu, aby nedocházelo ke konfliktům souběžnosti.<br /><br /> *Optimistická* protože považuje za šance na jednu transakci zasahovala do jiného a pravděpodobně nebude tak jako ovládací prvek.|  
-|Řešení konfliktů|Proces aktualizace konfliktní položku znovu dotazování na databázi a potom sjednocování rozdílů.<br /><br /> Při aktualizaci objektu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul sledování změny obsahuje následující data:<br /><br /> -Zkontrolujte hodnoty původně přijatých z databáze a použít pro aktualizaci.<br />-Nových hodnot v databázi z dalších dotazů.<br /><br /> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pak určuje, zda je objekt v konfliktu (to znamená, zda jeden nebo více hodnot členů změnil). Pokud objekt je v konfliktu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vedle Určuje, které její členy jsou v konfliktu.<br /><br /> Každý člen v konfliktu, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zjišťuje se přidá do seznamu ke konfliktu.|  
+|souběžnost|Situace, kdy se dva nebo více uživatelů současně pokusí aktualizovat stejný řádek databáze.|  
+|konflikt souběžnosti|Situace, kdy se dva nebo více uživatelů ve stejnou chvíli pokusí odeslat konfliktní hodnoty do jednoho nebo více sloupců řádku.|  
+|kontrola souběžnosti|Technika používaná k vyřešení konfliktů souběžnosti.|  
+|optimistické řízení souběžnosti|Technika, která nejprve prověří, zda jiné transakce změnily hodnoty v řádku před tím, než povolí změny, které se mají odeslat.<br /><br /> Naproti tomu *pesimistické řízení souběžnosti*, které uzamkne záznam, aby nedocházelo ke konfliktům souběžnosti.<br /><br /> *Optimistický* ovládací prvek je tak považován za nepravděpodobné, že by to mělo vliv na jednu transakci, která je v konfliktu s jiným.|  
+|řešení konfliktů|Proces aktualizace konfliktní položky opakovaným dotazem na databázi a následným sjednocením rozdílů.<br /><br /> Když je objekt aktualizován, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sledování změn obsahuje následující data:<br /><br /> – Hodnoty původně odebrané z databáze a použité pro kontrolu aktualizací.<br />– Nové hodnoty databáze z následujícího dotazu.<br /><br /> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pak určuje, zda je objekt v konfliktu (tj. zda došlo ke změně jedné nebo více hodnot jeho členů). Pokud je objekt v konfliktu, další [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] určuje, který z jeho členů je v konfliktu.<br /><br /> Všechny konflikty členů, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] které zjišťují, jsou přidány do seznamu konfliktů.|  
   
- V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model *optimistického řízení souběžnosti konflikt* nastane, pokud jsou splněny obě následující podmínky:  
+ V objektovém modelu dochází *ke konfliktu optimistické souběžnosti* , pokud jsou splněny obě následující podmínky: [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]  
   
 - Klient se pokusí odeslat změny do databáze.  
   
-- Jeden nebo více hodnot kontrolu aktualizací v databázi byly aktualizovány od klienta posledního čtení.  
+- Jedna nebo více hodnot kontroly aktualizace byly v databázi aktualizovány, protože je klient naposledy přečetl.  
   
- Řešení konfliktu obsahuje zjišťování, které členy objektu je v konfliktu a potom rozhodování o tom, co chcete udělat.  
+ Řešení tohoto konfliktu zahrnuje zjišťování, které členy objektu jsou v konfliktu, a pak rozhodnutí o tom, co chcete dělat.  
   
 > [!NOTE]
->  Pouze členové mapován jako <xref:System.Data.Linq.Mapping.UpdateCheck.Always> nebo <xref:System.Data.Linq.Mapping.UpdateCheck.WhenChanged> účastnit kontroly optimistické souběžnosti. Není žádná kontrola se provádí pro členy označené <xref:System.Data.Linq.Mapping.UpdateCheck.Never>. Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.UpdateCheck>.  
+> Pouze členové, kteří <xref:System.Data.Linq.Mapping.UpdateCheck.Always> jsou <xref:System.Data.Linq.Mapping.UpdateCheck.WhenChanged> mapováni nebo zapojeni do kontroly optimistického řízení souběžnosti. U označených <xref:System.Data.Linq.Mapping.UpdateCheck.Never>členů není provedena žádná kontroler. Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.UpdateCheck>.  
   
 ## <a name="example"></a>Příklad  
- Například v následujícím scénáři User1 začne připravit aktualizace dotazování na databázi pro řádek. Uživatel1 obdrží řádek s hodnotami Alfreds, Marie a prodej.  
+ Například v následujícím scénáři uživatel1 začíná připraví aktualizaci o dotazování databáze na řádek. Uživatel1 obdrží řádek s hodnotami Alfreds, Marie a Sales.  
   
- Chcete-li změnit hodnotu sloupce správce Alfred a hodnota sloupce oddělení marketingu chce, aby User1. Předtím, než tyto změny můžete odeslat uživatel1, uživatel2 odeslal změny v databázi. Takže teď hodnotu sloupce Pomocníka s nastavením se změnil na Marie a hodnota sloupce oddělení do služby.  
+ Uživatel1 chce změnit hodnotu sloupce nadřízený na Alfred a hodnotu sloupce oddělení na marketing. Aby mohl uživatel user1 odeslat tyto změny, uživatel2 odeslal změny do databáze. Takže teď se hodnota sloupce asistent změnila na Marie a hodnota sloupce oddělení na službu.  
   
- Když User1 se nyní pokusí odeslat změny, odesílání selže a <xref:System.Data.Linq.ChangeConflictException> je vyvolána výjimka. Tato situace nastane, protože pro oddělení a Pomocníka s nastavením sloupec hodnot v databázi nejsou ty, které nebyly očekávány. Představuje sloupci Pomocníka s nastavením a oddělení členy jsou v konfliktu. Následující tabulka shrnuje situace.  
+ Když se uživatel1 nyní pokusí odeslat změny, odeslání se nepovede a <xref:System.Data.Linq.ChangeConflictException> vyvolá se výjimka. K tomuto výsledku dochází, protože hodnoty databáze pro sloupec asistent a sloupec oddělení nejsou očekávané. Členové, kteří představují sloupce asistenta a oddělení, jsou v konfliktu. Následující tabulka shrnuje situaci.  
   
-||Správce|Pomocníka s nastavením|Oddělení|  
+||Správce|Pomocníka|Oddělení|  
 |------|-------------|---------------|----------------|  
 |Původní stav|Alfreds|Maria|Prodej|  
 |User1|Alfred||Marketing|  
-|User2||Mary|Služba|  
+|Přidal||Marie|Služba|  
   
- Konflikt takovou situaci můžete vyřešit různými způsoby. Další informace najdete v tématu [jak: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md).  
+ Tyto konflikty můžete vyřešit různými způsoby. Další informace najdete v tématu [jak: Spravujte konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)změn.  
   
-## <a name="conflict-detection-and-resolution-checklist"></a>Kontrolní seznam řešení a zjišťování konfliktů  
- Můžete zjišťovat a řešit konflikty na libovolné úrovni podrobností. Na jeden extreme, můžete vyřešit všechny konflikty v jednom ze tří způsobů (viz <xref:System.Data.Linq.RefreshMode>) bez pečlivě zvážit. V jiných extreme můžete určit konkrétní akci pro každý typ konfliktu na každého člena v konfliktu.  
+## <a name="conflict-detection-and-resolution-checklist"></a>Kontrolní seznam pro detekci konfliktů a rozlišení  
+ Konflikty můžete detekovat a řešit na libovolné úrovni podrobností. V jednom krajním případě můžete vyřešit všechny konflikty jedním ze tří způsobů (viz <xref:System.Data.Linq.RefreshMode>) bez dalšího zvážení. V ostatních extrémních případech můžete určit určitou akci pro každý typ konfliktu u každého člena v konfliktu.  
   
-- Zadejte nebo revidovat <xref:System.Data.Linq.Mapping.UpdateCheck> možnosti v objektovém modelu.  
+- Zadejte nebo opravte <xref:System.Data.Linq.Mapping.UpdateCheck> možnosti v objektovém modelu.  
   
-     Další informace najdete v tématu [jak: Zadejte, kteří členové jsou testovat na konflikty souběžnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-which-members-are-tested-for-concurrency-conflicts.md).  
+     Další informace najdete v tématu [jak: Určete, kteří členové jsou testováni pro konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-which-members-are-tested-for-concurrency-conflicts.md)souběžnosti.  
   
-- V bloku try/catch – volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, určete, kdy chcete výjimky, která je vyvolána.  
+- V bloku try/catch volání metody <xref:System.Data.Linq.DataContext.SubmitChanges%2A>určete, kde má být vyvolána výjimka.  
   
-     Další informace najdete v tématu [jak: Zadejte mají objevit výjimky souběžnosti při](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-when-concurrency-exceptions-are-thrown.md).  
+     Další informace najdete v tématu [jak: Určete, kdy jsou vyvolány](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-when-concurrency-exceptions-are-thrown.md)výjimky souběžnosti.  
   
-- Určit, kolik detailů konflikt, které chcete načíst a zahrnutí kódu do vašeho bloku try/catch odpovídajícím způsobem.  
+- Určete, kolik podrobností o konfliktech chcete načíst, a odpovídajícím způsobem zahrňte kód do bloku try/catch.  
   
-     Další informace najdete v tématu [jak: Načtení informací o konfliktech entit](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-entity-conflict-information.md) a [jak: Načtení informací o konfliktech členů](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-member-conflict-information.md).  
+     Další informace najdete v tématu [jak: Načtení informací o](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-entity-conflict-information.md) konfliktech [entit a postupy: Načte informace o](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-member-conflict-information.md)konfliktu členů.  
   
-- Zahrnout do vaší `try` / `catch` kódu, jak chcete vyřešit konflikty různých zjistíte.  
+- Dokóduzahrňtezpůsob,jakýmchcetevyřešitrůznékonflikty,kteréjstezjistili./ `try` `catch`  
   
-     Další informace najdete v tématu [jak: Řešení konfliktů zachováním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md), [jak: Řešení konfliktů přepsáním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md), a [jak: Řešení konfliktů sloučení s hodnotami v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-merging-with-database-values.md).  
+     Další informace najdete v tématu [jak: Vyřešte konflikty tím, že zachováte hodnoty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)databáze a [postupy: Řešení konfliktů přepsáním hodnot](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)databáze a [postupy: Vyřešte konflikty sloučením s hodnotami](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-merging-with-database-values.md)databáze.  
   
-## <a name="linq-to-sql-types-that-support-conflict-discovery-and-resolution"></a>Technologie LINQ to SQL typy, které podporují konflikt zjišťování a řešení  
- Třídy a funkce, které podporují řešení konfliktů v optimistického řízení souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] patří následující:  
+## <a name="linq-to-sql-types-that-support-conflict-discovery-and-resolution"></a>LINQ to SQL typy, které podporují zjišťování a řešení konfliktů  
+ Třídy a funkce pro podporu řešení konfliktů v rámci optimistická souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] systému zahrnují následující:  
   
 - <xref:System.Data.Linq.ObjectChangeConflict?displayProperty=nameWithType>  
   

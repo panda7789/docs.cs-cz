@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4ae9710b99c85cfcbe3de2669c7ee85d0d24ef4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7a6af73a5251cdc52589967178218f8675cac869
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629356"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946460"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
 Obálky modelu COM (Component Object Model) můžete vytvořit pomocí funkcí sady Visual Studio 2005 nebo nástrojů .NET Framework nástroje Tlbimp. exe a Regasm. exe. Obě metody generují dva typy wrapperů COM:
 
-- Běhová obálka, která se má [volat](../../../docs/standard/native-interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
+- Běhová obálka, která se má [volat](../../standard/native-interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
 
-- Obálka s možnostmi [modelu COM](../../../docs/standard/native-interop/com-callable-wrapper.md) s požadovaným nastavením registru pro spuštění spravovaného objektu v nativní aplikaci.
+- Obálka s možnostmi [modelu COM](../../standard/native-interop/com-callable-wrapper.md) s požadovaným nastavením registru pro spuštění spravovaného objektu v nativní aplikaci.
 
 V aplikaci Visual Studio 2005 můžete přidat obálku COM jako odkaz na projekt.
 
@@ -75,5 +75,5 @@ Můžete spustit nástroj Regasm. exe pro sestavení nacházející se v jakémk
   
 ## <a name="see-also"></a>Viz také:
 
-- [Obálka volatelná za běhu](../../../docs/standard/native-interop/runtime-callable-wrapper.md)
-- [Obálka volatelná aplikacemi COM](../../../docs/standard/native-interop/com-callable-wrapper.md)
+- [Obálka volatelná za běhu](../../standard/native-interop/runtime-callable-wrapper.md)
+- [Obálka volatelná aplikacemi COM](../../standard/native-interop/com-callable-wrapper.md)

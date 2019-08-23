@@ -2,20 +2,20 @@
 title: Adresování
 ms.date: 03/30/2017
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-ms.openlocfilehash: a59c3b354404169c2baadd4ab8c2702728d9a891
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 290c4648c0904135d11ad3d62280a30cd25bcbe5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002934"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945245"
 ---
 # <a name="addressing"></a>Adresování
-Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bodu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba v místním prostředí. Službu a klienta jsou konzolové aplikace. Služba definuje několik koncových bodů pomocí kombinace relativní a absolutní koncový bod adresy.  
+Ukázka adresování znázorňuje různé aspekty a funkce adres koncových bodů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba hostovaná v místním prostředí. Služba i klient jsou konzolové aplikace. Služba definuje více koncových bodů pomocí kombinace relativních a absolutních adres koncových bodů.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Konfigurační soubor služby definuje čtyři koncových bodů a základní adresa. Základní adresa určena pomocí elementu přidat v části service/hostitele/baseAddresses, jak je ukázáno v následující ukázková konfigurace.  
+ Konfigurační soubor služby určuje základní adresu a čtyři koncové body. Základní adresa je určena pomocí elementu add v části Služba/Hostitel/adres BaseAddresses, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -28,7 +28,7 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
 </service>  
 ```  
   
- První definice koncového bodu je znázorněno v následující ukázková konfigurace určuje relativní adresa, což znamená, že adresa koncového bodu je kombinací základní adresu a relativní adresu dle pravidel složení identifikátoru URI.  
+ První definice koncového bodu uvedená v následující ukázkové konfiguraci Určuje relativní adresu, což znamená, že adresa koncového bodu je kombinací základní adresy a relativní adresy podle pravidel složení identifikátoru URI.  
   
 ```xml
 <!-- Empty relative address specified:   
@@ -40,9 +40,9 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- V takovém případě je relativní adresa prázdná (""), takže adresu koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service`.
+ V tomto případě je relativní adresa prázdná (""), takže adresa koncového bodu je stejná jako základní adresa. Skutečná adresa koncového bodu `http://localhost:8000/servicemodelsamples/service`je.
   
- Druhá definice koncového bodu také určuje relativní adresa, jak je znázorněno v následující ukázková konfigurace.  
+ Druhá definice koncového bodu také určuje relativní adresu, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <!-- The relative address specified: use the base address -->  
@@ -53,9 +53,9 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Relativní adresa "test", se připojí k základní adrese. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service/test`.
+ Relativní adresa "test" se připojí k základní adrese. Skutečná adresa koncového bodu `http://localhost:8000/servicemodelsamples/service/test`je.
   
- Třetí definice koncového bodu určuje absolutní adresu, jak je znázorněno v následující ukázková konfigurace.  
+ Třetí definice koncového bodu určuje absolutní adresu, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -63,9 +63,9 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je `http://localhost:8001/hello/servicemodelsamples`.
+ Základní adresa nehraje v adrese žádnou roli. Skutečná adresa koncového bodu `http://localhost:8001/hello/servicemodelsamples`je.
   
- Na čtvrté adresu koncového bodu určuje absolutní adresu a různé přenosové – TCP. Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je `net.tcp://localhost:9000/servicemodelsamples/service`.
+ Čtvrtá adresa koncového bodu určuje absolutní adresu a jiný přenos – TCP. Základní adresa nehraje v adrese žádnou roli. Skutečná adresa koncového bodu `net.tcp://localhost:9000/servicemodelsamples/service`je.
   
 ```xml  
 <!-- The absolute address specified, different transport: -->  
@@ -79,9 +79,9 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
 </service>  
 ```  
   
- Klient přistupuje k právě jeden z koncových bodů služby čtyři, ale všechny čtyři jsou definovány v jeho konfiguračnímu souboru. Klient vybere koncový bod, když vytváří `CalculatorProxy` objektu. Tak, že změníte název konfigurace z `CalculatorEndpoint1` prostřednictvím `CalculatorEndpoint4`, je také možné získat jednotlivé koncové body.  
+ Klient přistupuje pouze k jednomu ze čtyř koncových bodů služby, ale všechny čtyři jsou definovány v konfiguračním souboru. Klient vybere koncový bod při vytváření `CalculatorProxy` objektu. Změnou názvu konfigurace z `CalculatorEndpoint1` `CalculatorEndpoint4`nástroje můžete uplatnit jednotlivé koncové body.  
   
- Při spuštění ukázky služby zobrazí adresy, vazby název a název smlouvy pro každý z jeho koncových bodů. Koncový bod metadat exchange (MEX) je jenom další koncový bod z pohledu hostitele ServiceHost, zobrazí se v seznamu.  
+ Při spuštění ukázky služba vytvoří výčet adresy, názvu vazby a názvu kontraktu pro každý z jeho koncových bodů. Koncový bod výměny metadat (MEX) je pouze jiný koncový bod od perspektivy hostitele, takže se zobrazí v seznamu.  
   
 ```  
 Service endpoints:  
@@ -105,7 +105,7 @@ The service is ready.
 Press <ENTER> to terminate service.  
 ```  
   
- Když spustíte klienta, operace žádosti a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby.  
+ Když spustíte klienta nástroje, požadavky na operace a odpovědi se zobrazí v oknech služba i klientská konzola. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -116,22 +116,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pokud používáte Svcutil.exe k opětovnému vytvoření konfigurace pro tuto ukázku, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídaly klientský kód.  
+    >  Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídal kódu klienta.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Addressing`  

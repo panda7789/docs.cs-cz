@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: dc4fb2d5f0c48c077d2ff7ca5e5269ce5cba71e5
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 4833e024fcd352094a2163f11df8572aa4c241f8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400496"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944651"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit propojení [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] s daty <xref:System.Windows.Data.XmlDataProvider>pomocí.  
@@ -22,13 +22,13 @@ Tento příklad ukazuje, jak vytvořit propojení [!INCLUDE[TLA#tla_xml](../../.
  V následujícím příkladu jsou data vložena přímo jako [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] *datový* <xref:System.Windows.FrameworkElement.Resources%2A> ostrůvek v rámci oddílu. Datový ostrůvek musí být zabalen do `<x:XData>` značek a vždy mít jeden kořenový uzel, který je v tomto příkladu *inventářem* . [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]  
   
 > [!NOTE]
->  Kořenový uzel [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] dat má [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] atribut **xmlns** , který nastaví obor názvů na prázdný řetězec. Toto je požadavek na použití dotazů XPath na datový ostrůvek, který je vložen do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. V tomto vloženém případě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] <xref:System.Windows> dědí obor názvů a tudíž datový ostrov. Z tohoto důvodu je třeba nastavit obor názvů jako prázdný, aby byly dotazy XPath v <xref:System.Windows> oboru názvů kvalifikovány, což by mělo být dotazům příliš nasměrované.  
+> Kořenový uzel [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] dat má [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] atribut **xmlns** , který nastaví obor názvů na prázdný řetězec. Toto je požadavek na použití dotazů XPath na datový ostrůvek, který je vložen do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. V tomto vloženém případě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] <xref:System.Windows> dědí obor názvů a tudíž datový ostrov. Z tohoto důvodu je třeba nastavit obor názvů jako prázdný, aby byly dotazy XPath v <xref:System.Windows> oboru názvů kvalifikovány, což by mělo být dotazům příliš nasměrované.  
   
  [!code-xaml[XMLDataSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   
  Jak ukazuje tento příklad, chcete-li vytvořit stejnou deklaraci vazby v syntaxi atributu, je nutné speciální znaky správně Escape. Další informace naleznete v tématu [znakové entity XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
   
- V <xref:System.Windows.Controls.ListBox> případě spuštění tohoto příkladu se zobrazí následující položky. Jedná se o *název*všech prvků v knihách, které  *mají hodnotu "* *out*" nebo *číslo* hodnoty 3 nebo větší nebo rovno 8. Všimněte si,  že nejsou vráceny žádné položky CD <xref:System.Windows.Data.XmlDataProvider.XPath%2A> , protože hodnota nastavená v poli <xref:System.Windows.Data.XmlDataProvider> označuje, že by měly být vystaveny pouze prvky *Books* (v zásadě nastavení filtru).  
+ V <xref:System.Windows.Controls.ListBox> případě spuštění tohoto příkladu se zobrazí následující položky. Jedná se o *název*všech prvků v *knihách* , které mají hodnotu "*out*" nebo *číslo* hodnoty 3 nebo větší nebo rovno 8. Všimněte si, že nejsou vráceny žádné položky CD <xref:System.Windows.Data.XmlDataProvider.XPath%2A> , protože hodnota nastavená v poli <xref:System.Windows.Data.XmlDataProvider> označuje, že by měly být vystaveny pouze prvky *Books* (v zásadě nastavení filtru).  
   
  ![Snímek obrazovky s příkladem XPath znázorňující název čtyř knih](./media/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries/xpath-example-listbox-details.png)  
   

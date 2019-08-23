@@ -2,25 +2,25 @@
 title: Víc koncových bodů na jedné adrese ListenUri
 ms.date: 03/30/2017
 ms.assetid: 911ffad4-4d47-4430-b7c2-79192ce6bcbd
-ms.openlocfilehash: 6249690b7fdc95affd21eee13e0c6e2af1c4f8a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea0cd0d8636f5301dab3fe60b181dfd36fc30d54
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755971"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930336"
 ---
 # <a name="multiple-endpoints-at-a-single-listenuri"></a>Víc koncových bodů na jedné adrese ListenUri
-Tato ukázka předvádí, služby, který je hostitelem více koncových bodů na jedné `ListenUri`. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
+Tato ukázka demonstruje službu, která hostuje více koncových bodů v jednom `ListenUri`. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Jak je ukázáno v [několik koncových bodů](../../../../docs/framework/wcf/samples/multiple-endpoints.md) ukázku, služba může hostovat více koncových bodů, každá má různé adresy a případně také různé vazby. Tento příklad ukazuje, že je možné k hostování více koncových bodů na stejné adrese. Tento příklad také znázorňuje rozdíly mezi těmito dvěma typy adres, které má koncový bod služby: `EndpointAddress` a `ListenUri`.  
+ Jak je znázorněno v ukázce [více koncových bodů](../../../../docs/framework/wcf/samples/multiple-endpoints.md) , může služba hostovat více koncových bodů, každý s různými adresami a případně také různé vazby. Tento příklad ukazuje, že je možné hostovat více koncových bodů na stejné adrese. Tato ukázka také ukazuje rozdíly mezi dvěma druhy adres, které koncový bod služby obsahuje: `EndpointAddress` a. `ListenUri`  
   
- `EndpointAddress` Logické adresu služby. Je to adresa, že zprávy protokolu SOAP. `ListenUri` Je na fyzickou adresu služby. Obsahuje informace o portu a adresu kde koncový bod služby ve skutečnosti přijímají zprávy na aktuálním počítači. Ve většině případů není nutné pro tyto adresy, které se liší; Když `ListenUri` nebyl explicitně zadán, použije se výchozí identifikátor URI `EndpointAddress` koncového bodu. V několika případech je užitečné k rozlišení, jako je například při konfiguraci směrovač, který může přijímat zprávy adresované celou řadou různých služeb.  
+ `EndpointAddress` Je logická adresa služby. Jedná se o adresu, na kterou jsou adresovány zprávy SOAP. `ListenUri` Je fyzickou adresou služby. Obsahuje informace o portu a adrese, kde koncový bod služby ve skutečnosti čeká na zprávy v aktuálním počítači. Ve většině případů není potřeba, aby se tyto adresy lišily. Pokud není explicitně zadáno, použije se výchozí identifikátor URI `EndpointAddress` koncového bodu. `ListenUri` V několika případech je vhodné je odlišit, například při konfigurování směrovače, který může přijímat zprávy s adresováním na několik různých služeb.  
   
 ## <a name="service"></a>Služba  
- Služby v této ukázce má dva kontrakty `ICalculator` a `IEcho`. Kromě obvyklý `IMetadataExchange` koncový bod, existují tři aplikačními koncovými body, jak je znázorněno v následujícím kódu.  
+ Služba v této ukázce má dvě smlouvy `ICalculator` a. `IEcho` Kromě vlastního `IMetadataExchange` koncového bodu existují tři koncové body aplikace, jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <endpoint address="urn:Stuff"  
@@ -37,16 +37,16 @@ Tato ukázka předvádí, služby, který je hostitelem více koncových bodů n
         listenUri="http://localhost/servicemodelsamples/service.svc" />  
 ```  
   
- Všechny tři koncové body jsou hostované na stejné `ListenUri` a použít stejné `binding` -koncových bodů na stejné `ListenUri` musí mít stejnou vazbu, protože sdílí jeden kanál zásobníku, které přijímají zprávy na tuto fyzickou adresu na počítač. `address` Každého koncového bodu je název URN, i když obvykle představují adresy fyzických umístění, ve skutečnosti adresa může být libovolný typ identifikátoru URI, protože adresa se používá pro porovnávání a účely filtrování, jak je uvedeno v této ukázce.  
+ Všechny tři koncové body jsou hostovány na `ListenUri` stejné úrovni a používají `binding` stejné koncové body na stejné `ListenUri` úrovni, které musí mít stejnou vazbu, protože sdílejí jeden zásobník kanálů, který naslouchá zprávám na dané fyzické adrese. počítačové. U `address` každého koncového bodu je urn; i když obvykle adresy představuje fyzická umístění, adresa může být jakýkoli druh identifikátoru URI, protože adresa se používá pro účely porovnání a filtrování, jak je znázorněno v této ukázce.  
   
- Protože všechny tři koncové body sdílet stejný `ListenUri`, při přijetí e-mailu, Windows Communication Foundation (WCF) musíte se rozhodnout, který koncový bod zprávy je určený pro. Každý koncový bod má filtru zpráv, která se skládá ze dvou částí: filtr adresy a filtru smlouvy. Filtr adresy odpovídá `To` zprávy protokolu SOAP, která se adresa koncového bodu služby. Například pouze zprávy adresované `To "Urn:OtherEcho"` jsou kandidáty na třetí koncového bodu této služby. Akce přidružené těmto operacím kontrakt konkrétní bod odpovídá filtru kontraktu. Příklad zprávy s akcí `IEcho`. `Echo` odpovídá kontraktu filtry druhého a třetího koncové body služby, protože obě tyto koncové body hostitele `IEcho` kontraktu.  
+ Vzhledem k tomu, že všechny tři `ListenUri`koncové body mají stejné sdílení, když tam přijde zpráva, Windows Communication Foundation (WCF) musí rozhodnout, pro který koncový bod je zpráva určena. Každý koncový bod má filtr zpráv, který se skládá ze dvou částí: Filtr adres a filtr kontraktu. Filtr adres odpovídá `To` zprávě protokolu SOAP na adresu koncového bodu služby. Například pouze vyřešené `To "Urn:OtherEcho"` zprávy jsou kandidáty na třetí koncový bod této služby. Filtr kontraktu odpovídá akcím přidruženým k operacím konkrétní smlouvy. Například zprávy s akcí `IEcho`. `Echo`odpovídá filtrům kontraktu obou druhý i třetí koncových bodů této služby, protože oba z těchto koncových bodů `IEcho` hostují kontrakt.  
   
- Proto kombinace adresy filtr a kontrakt díky tomu je možné směrovat každá zpráva, která dorazí na tuto službu `ListenUri` na správný koncový bod. Třetí koncový bod je z další dvě jako liší, protože přijímá zprávy odeslané na adresu odlišnou z ostatních koncových bodů. Koncové body prvního a druhého se liší od sebe navzájem podle jejich kontrakty (akce příchozí zprávy).  
+ Kombinace filtru adres a filtru kontraktů proto umožňuje směrovat každou zprávu, která dorazí na tuto službu `ListenUri` do správného koncového bodu. Třetí koncový bod se odlišuje od ostatních dvou, protože přijímá zprávy odeslané na jinou adresu z ostatních koncových bodů. První a druhý koncový bod se odlišuje od ostatních na základě jejich smluv (Akce příchozí zprávy).  
   
 ## <a name="client"></a>Klient  
- Stejně jako koncových bodů na serveru máte dvě různé adresy, koncové body klienta také mít dvě adresy. Na serveru a klienta, se nazývá logického adresního `EndpointAddress`. Ale vzhledem k tomu je volána na fyzickou adresu `ListenUri` na serveru, na straně klienta, se nazývá fyzickou adresu `Via`.  
+ Stejně jako koncové body na serveru mají dvě různé adresy, koncové body klienta mají také dvě adresy. Na straně serveru i klienta se logická adresa nazývá `EndpointAddress`. Ale zatímco fyzická adresa se nazývá `ListenUri` na serveru, na straně klienta se fyzická adresa `Via`nazývá.  
   
- Tyto dvě adresy jako na serveru, ve výchozím nastavení jsou stejné. K určení `Via` na klientovi, který se liší od koncového bodu adresy `ClientViaBehavior` se používá:  
+ Stejně jako na serveru jsou tyto dvě adresy stejné. Pokud chcete zadat `Via` v klientovi, který se liší od adresy koncového bodu, `ClientViaBehavior` použije se:  
   
 ```csharp  
 Uri via = new Uri("http://localhost/ServiceModelSamples/service.svc");  
@@ -55,26 +55,26 @@ calcClient.ChannelFactory.Endpoint.Behaviors.Add(
         new ClientViaBehavior(via));  
 ```  
   
- Adresu jako obvykle pocházejí z klienta konfigurační soubor, který byl vygenerován pomocí Svcutil.exe. `Via` (Který odpovídá `ListenUri` služby) se nezobrazují v metadat služby a proto musí být tyto informace předávají klienta out-of-band (stejně jako adresu metadat služby).  
+ V obvyklých případech adresa pochází z konfiguračního souboru klienta, který byl vygenerován nástrojem Svcutil. exe. Rozhraní `Via` (které odpovídá `ListenUri` službě) se nezobrazí v metadatech služby, takže tyto informace musí být sdělovány klientovi mimo IP síť (stejně jako adresa metadat služby).  
   
- Klient v této ukázce odešle zprávy u každého serveru tři koncových bodů aplikace prokázat, že se může komunikovat s (a odlišení) všechny tři koncové body, i když všechny mají stejnou `Via`.  
+ Klient v této ukázce odesílá zprávy do každého ze tří koncových bodů aplikace serveru, aby ukázal, že může komunikovat s (a odlišit) všechny tři koncové body, i když všechny mají stejnou `Via`.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pro mezi počítači musíte místního hostitele v souboru Client.cs nahraďte název počítače, služby.  
+    >  V případě více počítačů je třeba v souboru Client.cs nahradit localhost názvem počítače služby.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleEndpointsSingleUri`  

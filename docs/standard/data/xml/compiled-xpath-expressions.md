@@ -8,22 +8,22 @@ dev_langs:
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a75534bdfb1eef5902d3cd5071b4f5b4bfba8caa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb6e3677d79f3131432c3daebeee4d166b5450b2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647957"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916664"
 ---
 # <a name="compiled-xpath-expressions"></a>Zkompilované výrazy XPath
-<xref:System.Xml.XPath.XPathExpression> Objekt představuje zkompilovaný dotaz XPath vrácený buď statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu <xref:System.Xml.XPath.XPathExpression> třídy nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy.  
+<xref:System.Xml.XPath.XPathExpression> <xref:System.Xml.XPath.XPathExpression.Compile%2A> <xref:System.Xml.XPath.XPathNavigator> <xref:System.Xml.XPath.XPathNavigator.Compile%2A> Objekt představuje kompilovaný dotaz XPath vrácený buď statickou metodou třídy, nebo metodou třídy. <xref:System.Xml.XPath.XPathExpression>  
   
 ## <a name="the-xpathexpression-class"></a>Třída XPathExpression  
- Dotaz XPath reprezentována zkompilován A <xref:System.Xml.XPath.XPathExpression> objektu je užitečné, pokud se stejný dotaz XPath používá více než jednou.  
+ Kompilovaný dotaz XPath reprezentovaný <xref:System.Xml.XPath.XPathExpression> objektem je užitečný, pokud je stejný dotaz XPath použit více než jednou.  
   
- Například při volání <xref:System.Xml.XPath.XPathNavigator.Select%2A> metoda více než jednou, namísto použití řetězec představující pokaždé, když dotaz XPath, použijte <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu <xref:System.Xml.XPath.XPathExpression> třídy nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy pro kompilaci a dotaz XPath v mezipaměti <xref:System.Xml.XPath.XPathExpression> objekt pro opakované použití a vylepšení výkonu.  
+ Například <xref:System.Xml.XPath.XPathNavigator.Select%2A> při volání metody víckrát namísto použití řetězce představujícího dotaz XPath pokaždé, <xref:System.Xml.XPath.XPathExpression> <xref:System.Xml.XPath.XPathExpression.Compile%2A> použijte metodu třídy nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy pro zkompilování a ukládat do mezipaměti dotaz XPath v <xref:System.Xml.XPath.XPathExpression> objektu pro opakované použití a zlepšení výkonu.  
   
- Po kompilaci, <xref:System.Xml.XPath.XPathExpression> objektu mohou být použity jako vstup pro následující <xref:System.Xml.XPath.XPathNavigator> metody třídy v závislosti na typu vrácená z dotazu XPath.  
+ Po kompilaci <xref:System.Xml.XPath.XPathExpression> lze objekt použít jako vstup do následujících <xref:System.Xml.XPath.XPathNavigator> metod třídy v závislosti na typu vráceném z dotazu XPath.  
   
 - <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
   
@@ -35,22 +35,22 @@ ms.locfileid: "64647957"
   
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
- Následující tabulka popisuje každý návratové typy W3C XPath, jejich vztahů rozhraní Microsoft .NET Framework a jaké metody <xref:System.Xml.XPath.XPathExpression> objekt může být použit s podle jejího návratového typu.  
+ V následující tabulce jsou popsány všechny návratové typy XPath W3C, jejich Microsoft .NET Framework equivalencies a jaké metody <xref:System.Xml.XPath.XPathExpression> lze použít pro objekt na základě jeho návratového typu.  
   
-|XPath návratový typ W3C|Ekvivalentní typ rozhraní .NET framework|Popis|Metody|  
+|Návratový typ XPath W3C|.NET Framework ekvivalentní typ|Popis|Metody|  
 |---------------------------|------------------------------------|-----------------|-------------|  
-|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Neseřazený kolekce uzlů bez duplicitní položky vytvořené v pořadí dokumentů.|<xref:System.Xml.XPath.XPathNavigator.Select%2A> Nebo <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
-|`Boolean`|<xref:System.Boolean>|A `true` nebo `false` hodnotu.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Nebo<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
+|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Neuspořádaná kolekce uzlů bez duplicit vytvořených v pořadí dokumentů.|<xref:System.Xml.XPath.XPathNavigator.Select%2A> Nebo <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
+|`Boolean`|<xref:System.Boolean>|Hodnota `true` nebo `false` .|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>ani<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
 |`Number`|<xref:System.Double>|Číslo s plovoucí desetinnou čárkou.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
 |`String`|<xref:System.String>|Posloupnost znaků UCS.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda přijímá jako svůj parametr pomocí výrazu XPath. <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> Vrátí metoda <xref:System.Xml.XPath.XPathNavigator> objektu, není jednou z návratové typy W3C XPath.  
+> <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda přijímá výraz XPath jako svůj parametr. <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> Metoda<xref:System.Xml.XPath.XPathNavigator> vrátí objekt, nikoli jeden z návratových typů XPath W3C.  
   
 ### <a name="the-returntype-property"></a>Vlastnost ReturnType  
- Po XPath byl zkompilován dotaz do <xref:System.Xml.XPath.XPathExpression> objektu, můžete použít <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> vlastnost <xref:System.Xml.XPath.XPathExpression> zjistíte, co vrátí dotaz XPath.  
+ Poté, co byl dotaz XPath zkompilován do <xref:System.Xml.XPath.XPathExpression> objektu, můžete <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> použít vlastnost <xref:System.Xml.XPath.XPathExpression> objektu k určení, co dotaz XPath vrátí.  
   
- <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> Vlastnost vrátí jednu z následujících <xref:System.Xml.XPath.XPathResultType> hodnot výčtu představující W3C XPath návratové typy.  
+ Vlastnost vrací jednu z následujících <xref:System.Xml.XPath.XPathResultType> hodnot výčtu reprezentujících návratové typy XPath W3C. <xref:System.Xml.XPath.XPathExpression.ReturnType%2A>  
   
 - <xref:System.Xml.XPath.XPathResultType.Any>  
   
@@ -66,7 +66,7 @@ ms.locfileid: "64647957"
   
 - <xref:System.Xml.XPath.XPathResultType.String>  
   
- V následujícím příkladu <xref:System.Xml.XPath.XPathExpression> objekt vrátí číslo a nastavení z uzlu `books.xml` souboru. <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> Vlastnosti každého <xref:System.Xml.XPath.XPathExpression> objektu a také výsledky z <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> a <xref:System.Xml.XPath.XPathNavigator.Select%2A> metody jsou zapsány do konzoly.  
+ Následující příklad používá <xref:System.Xml.XPath.XPathExpression> objekt k vrácení čísla a sady uzlů `books.xml` ze souboru. Vlastnost každého <xref:System.Xml.XPath.XPathExpression> objektu i výsledky z <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metod a <xref:System.Xml.XPath.XPathNavigator.Select%2A> jsou zapsány do konzoly. <xref:System.Xml.XPath.XPathExpression.ReturnType%2A>  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -108,16 +108,16 @@ nodes.MoveNext();
 Console.WriteLine(nodes.Current.Value);  
 ```  
   
- V příkladu přebírá `books.xml` souboru jako vstup.  
+ Příklad přebírá `books.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
-### <a name="higher-performance-xpath-expressions"></a>Vyšší výkon výrazy XPath  
- Pro lepší výkon pomocí nejspecifičtější výraz XPath, je to možné v dotazech. Například pokud `book` podřízený uzel je uzel `bookstore` uzlu a `bookstore` je nejvyšší element v dokumentu XML, pomocí výrazu XPath uzel `/bookstore/book` je rychlejší než použití `//book`. `//book` Výraz XPath bude kontrolovat každý uzel ve stromu XML k určení odpovídající uzly.  
+### <a name="higher-performance-xpath-expressions"></a>Výrazy XPath s vyšším výkonem  
+ Pro lepší výkon použijte ve svých dotazech nejvíce konkrétní výraz XPath. Například `book` Pokud uzel je podřízený uzel `bookstore` uzlu a `bookstore` uzel je nejvyšší prvek v dokumentu XML, použití výrazu `/bookstore/book` XPath je rychlejší než použití `//book`. Výraz `//book` XPath zkontroluje každý uzel ve stromu XML a určí tak vyhovující uzly.  
   
- Kromě, pomocí uzlu nastavit navigační metody poskytnuté <xref:System.Xml.XPath.XPathNavigator> třída může vést k vylepšení výkonu prostřednictvím výběr metod poskytovaných <xref:System.Xml.XPath.XPathNavigator> třídy v případech, kdy jsou jednoduché kritéria pro výběr. Například, pokud je potřeba vybrat prvního podřízeného člena aktuální uzel, je rychlejší použít <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> metodu než `child::*[1]` výraz XPath a <xref:System.Xml.XPath.XPathNavigator.Select%2A> metoda.  
+ Kromě toho může použití metod navigace v uzlu, které poskytuje <xref:System.Xml.XPath.XPathNavigator> třída, způsobit lepší výkon přes metody výběru poskytované <xref:System.Xml.XPath.XPathNavigator> třídou v případech, kde jsou kritéria výběru jednoduchá. Například pokud potřebujete vybrat první podřízenou položku aktuálního uzlu, je rychlejší použít <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> metodu než pro `child::*[1]` použití výrazu XPath a <xref:System.Xml.XPath.XPathNavigator.Select%2A> metody.  
   
- Další informace o uzlu sady metody navigace <xref:System.Xml.XPath.XPathNavigator> najdete v tématu [uzlu nastavení navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).  
+ Další informace o tom, jak uzel nastavuje navigační metody <xref:System.Xml.XPath.XPathNavigator> třídy, najdete v tématu věnovaném navigaci v uzlech [pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).  
   
 ## <a name="see-also"></a>Viz také:
 

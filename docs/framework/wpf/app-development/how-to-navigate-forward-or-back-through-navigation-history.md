@@ -8,12 +8,12 @@ helpviewer_keywords:
 - history [WPF], navigating forward
 - navigation [WPF], through navigation history (forward)
 ms.assetid: 5939d574-5f53-469e-85f5-1f2b13607caa
-ms.openlocfilehash: 85d3562246170901d83d6314caec5747d52fb9a0
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 76a78debdce14123cc465ac9abf4db906fe0a2df
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817961"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961355"
 ---
 # <a name="how-to-navigate-forward-or-back-through-navigation-history"></a>Postupy: Přecházení vpřed a zpět v historii navigace
 Tento příklad ukazuje, jak přejít vpřed nebo zpět k položkám v historii navigace.  
@@ -40,4 +40,4 @@ Tento příklad ukazuje, jak přejít vpřed nebo zpět k položkám v historii 
  **CanGoForward**, **GoForward**, **CanGoBack**a **GoBack** jsou implementovány pomocí <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Frame>a <xref:System.Windows.Navigation.NavigationService>.  
   
 > [!NOTE]
->  Pokud zavoláte **GoForward**a neexistují žádné položky v historii navigace před přechodem nebo pokud volátea v <xref:System.InvalidOperationException> historii navigace neexistují žádné položky, je vyvolána výjimka.
+> Pokud zavoláte **GoForward**a neexistují žádné položky v historii navigace před přechodem nebo pokud volátea v <xref:System.InvalidOperationException> historii navigace neexistují žádné položky, je vyvolána výjimka.

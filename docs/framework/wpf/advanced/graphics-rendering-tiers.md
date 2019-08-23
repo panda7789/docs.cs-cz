@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: fa59621aaf73922af957961af5401170c2872aa9
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 9da519f8d258673498f45a425c13863437cac597
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972348"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937520"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zařízení, na kterém běží [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -48,7 +48,7 @@ Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zař�
 ### <a name="rendering-tier-1-and-rendering-tier-2"></a>Vrstva vykreslování 1 a vrstva vykreslování 2  
   
 > [!NOTE]
->  Počínaje .NET Framework 4 byla vrstva vykreslování 1 Předefinovaná tak, aby obsahovala pouze grafický hardware, který podporuje rozhraní DirectX 9,0 nebo vyšší. Grafický hardware, který podporuje rozhraní DirectX 7 nebo 8, je nyní definován jako vrstva vykreslování 0.  
+> Počínaje .NET Framework 4 byla vrstva vykreslování 1 Předefinovaná tak, aby obsahovala pouze grafický hardware, který podporuje rozhraní DirectX 9,0 nebo vyšší. Grafický hardware, který podporuje rozhraní DirectX 7 nebo 8, je nyní definován jako vrstva vykreslování 0.  
   
  Hodnota vrstvy vykreslování 1 nebo 2 znamená, že většina grafických funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] bude používat hardwarovou akceleraci, pokud jsou k dispozici potřebné systémové prostředky a nebyly vyčerpány. To odpovídá verzi rozhraní DirectX, která je větší nebo rovna 9,0.  
   
@@ -105,7 +105,7 @@ Vrstva vykreslování definuje úroveň grafického hardwaru a výkonu pro zař�
 |**Požadované nastavení data ovladače videa**|Určuje, jestli systém zakáže hardwarovou akceleraci pro ovladače vydané před listopadu 2004.|  
 |**Použít možnost rastrového odkazu**|Určuje, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jestli se má použít rastrový rastrový odkaz.|  
   
- K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na nastavení registru. Tato nastavení lze také vytvořit nebo upravit přístupem k hodnotám přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] editoru registru. Další informace najdete v tématu [nastavení registru pro vykreslování grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
+ K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na nastavení registru. Tato nastavení se dají vytvářet nebo upravovat taky tak, že se přistupují k hodnotám přímo pomocí Editoru registru Windows. Další informace najdete v tématu [nastavení registru pro vykreslování grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
   
 ### <a name="wpf-performance-profiling-tools"></a>Nástroje pro profilaci výkonu WPF  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje sadu nástrojů pro profilaci výkonu, které umožňují analyzovat chování aplikace za běhu a určují typy optimalizací výkonu, které můžete použít. V následující tabulce jsou uvedeny nástroje pro profilaci výkonu, které jsou součástí nástroje Windows SDK, sady Performance Suite WPF:  

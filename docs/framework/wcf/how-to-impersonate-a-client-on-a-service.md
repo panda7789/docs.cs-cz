@@ -9,38 +9,38 @@ helpviewer_keywords:
 - impersonation
 - WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
-ms.openlocfilehash: 3dd40efe27687b048984c4592db0d3787d061eeb
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 918cbba30cbb997a1f029a250adbdc4ed6310299
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402323"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951049"
 ---
 # <a name="how-to-impersonate-a-client-on-a-service"></a>Postupy: Zosobnění klienta ve službě
-Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuje službě a provádět akce jménem klienta. Pro akce v souladu s přístup ovládacího prvku seznam (ACL) kontroly, jako je například přístup k adresářů a souborů na počítači nebo přístup k databázi serveru SQL Server že je kontrola seznamu ACL pro uživatelský účet klienta. Toto téma popisuje základní kroky potřebné k povolení klientům v doméně Windows nastavte úroveň zosobnění klienta. Funkční příklad tohoto objektu, najdete v části [zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md). Další informace o zosobnění klienta najdete v tématu [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuje službě provádět akce jménem klienta. U akcí, které se týkají kontrol seznamu řízení přístupu (ACL), jako je například přístup k adresářům a souborům v počítači nebo přístup k databázi SQL Server, se kontrola seznamu ACL vztahuje na uživatelský účet klienta. V tomto tématu se dozvíte o základních krocích potřebných k tomu, aby klient v doméně Windows nastavil úroveň zosobnění klienta. Pracovní příklad najdete v tématu [zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md). Další informace o zosobnění klienta najdete v tématu [delegování a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (to znamená `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace pomocí stavového tokenů kontextu zabezpečení. WinForms nebo konzolové aplikace obvykle běží pod aktuálně přihlášený účet tak, aby ve výchozím nastavení se můžou zosobnit účet. Ale při klienta je stránka technologie ASP.NET a této stránce je hostované v IIS 6.0 a IIS 7.0, pak klient spuštěn pod `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí bezstavové token kontextu zabezpečení. Nicméně pokud je klient stránky technologie ASP.NET a zabezpečené relace pomocí stavového tokenů kontextu zabezpečení se používají, nelze zosobnit klienta. Další informace o používání stavové tokenů kontextu zabezpečení v zabezpečené relaci, najdete v části [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+> Když je klient a služba spuštěná ve stejném počítači a klient nástroje je spuštěný pod účtem systému (tj `Local System` . nebo `Network Service`), klient se nemůže zosobnit, když se naváže zabezpečená relace s tokeny kontextového kontextu zabezpečení. Modul WinForms nebo Konzolová aplikace se obvykle spouští pod aktuálně přihlášeným účtem, takže účet může být ve výchozím nastavení zosobněn. Pokud je však klient ASP.NET stránka a tato stránka je hostována ve službě IIS 6,0 nebo IIS 7,0, bude klient ve výchozím nastavení spuštěn pod `Network Service` účtem. Všechny vazby poskytnuté systémem, které podporují zabezpečené relace, používají ve výchozím nastavení token kontextu zabezpečení bez stavů. Pokud je však klient ASP.NET stránku a jsou použity zabezpečené relace s tokeny kontextového kontextu zabezpečení, nelze klienta zosobnit. Další informace o použití tokenů kontextového kontextu zabezpečení v zabezpečené relaci naleznete v [tématu How to: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
-### <a name="to-enable-impersonation-of-a-client-from-a-cached-windows-token-on-a-service"></a>Chcete-li povolit zosobnění klienta z Windows token v mezipaměti ve službě  
+### <a name="to-enable-impersonation-of-a-client-from-a-cached-windows-token-on-a-service"></a>Povolení zosobnění klienta od tokenu Windows uloženého v mezipaměti ve službě  
   
-1. Vytvořte službu. Kurz tento základní postup najdete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  
+1. Vytvořte službu. Kurz tohoto základního postupu najdete v tématu [Začínáme kurzu](../../../docs/framework/wcf/getting-started-tutorial.md).  
   
-2. Použít vazbu, která používá ověřování Windows a vytvoří relaci, jako například <xref:System.ServiceModel.NetTcpBinding> nebo <xref:System.ServiceModel.WSHttpBinding>.  
+2. Použijte vazbu, která používá ověřování systému Windows, a vytvoří relaci, například <xref:System.ServiceModel.NetTcpBinding> nebo <xref:System.ServiceModel.WSHttpBinding>.  
   
-3. Při vytváření implementací rozhraní služby se vztahují <xref:System.ServiceModel.OperationBehaviorAttribute> třídy v metodě, která vyžaduje zosobnění klienta. Nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost <xref:System.ServiceModel.ImpersonationOption.Required>.  
+3. Při vytváření implementace rozhraní služby použijte <xref:System.ServiceModel.OperationBehaviorAttribute> třídu na metodu, která vyžaduje zosobnění klienta. Nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost <xref:System.ServiceModel.ImpersonationOption.Required>.  
   
      [!code-csharp[c_SimpleImpersonation#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_simpleimpersonation/cs/source.cs#2)]
      [!code-vb[c_SimpleImpersonation#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#2)]  
   
-### <a name="to-set-the-allowed-impersonation-level-on-the-client"></a>Nastavení úrovně povolené zosobnění klienta  
+### <a name="to-set-the-allowed-impersonation-level-on-the-client"></a>Nastavení povolené úrovně zosobnění u klienta  
   
-1. Vytvoření kódu klienta služby pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace najdete v tématu [přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).  
+1. Kód klienta služby vytvoříte pomocí nástroje pro tvorbu [metadat ServiceModel (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Další informace najdete v tématu [přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).  
   
-2. Po vytvoření klienta WCF <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy do jednoho z <xref:System.Security.Principal.TokenImpersonationLevel> hodnot výčtu.  
+2. Po vytvoření klienta služby WCF nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> <xref:System.Security.Principal.TokenImpersonationLevel> třídy na jednu z hodnot výčtu.  
   
     > [!NOTE]
-    >  Použití <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, vyjednávaný ověřování protokolu Kerberos (říká se jim *více fáze* nebo *vícekrokového* protokolu Kerberos) musí být použita. Popis toho, jak toto implementovat, najdete v části [osvědčené postupy pro zabezpečení](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
+    > Chcete- <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>li použít, je třeba použít dohodnuté ověřování protokolem Kerberos (někdy označované jako *multi-nohy* nebo *multi-step* Kerberos). Popis toho, jak to provést, najdete v tématu [osvědčené postupy pro zabezpečení](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
   
      [!code-csharp[c_SimpleImpersonation#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_simpleimpersonation/cs/source.cs#1)]
      [!code-vb[c_SimpleImpersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#1)]  

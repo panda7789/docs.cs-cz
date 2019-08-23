@@ -2,20 +2,20 @@
 title: <clientCredentials>
 ms.date: 03/30/2017
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
-ms.openlocfilehash: ebe976df9af0c316e95a1e089412e57a575a6df1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3e756f49b7054d6553eb6c3f1850f0fbce14943
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673371"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926115"
 ---
 # <a name="clientcredentials"></a>\<clientCredentials>
-Určuje pověření pro ověření klienta ke službě.  
+Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<clientCredentials>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,32 +45,32 @@ Určuje pověření pro ověření klienta ke službě.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`supportInteractive`|Logická hodnota, která určuje, zda může být interaktivní uživatelské součástí výběru pověření klienta za běhu. Výchozí hodnota je `true`.|  
+|`supportInteractive`|Logická hodnota určující, zda může být interaktivní uživatel zapojen do výběru přihlašovacích údajů klienta za běhu. Výchozí hodnota je `true`.|  
 |`type`|Řetězec, který určuje typ tohoto konfiguračního prvku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateClientElement>.|  
-|[\<httpDigest>](../../../../../docs/framework/configure-apps/file-schema/wcf/httpdigest-element.md)|Určuje algoritmu digest pro ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.HttpDigestClientElement>.|  
-|[\<issuedToken>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní typ tokenu pro ověření klienta k zabezpečení tokenu služby (STS). Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>.|  
-|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje aktuální peer pověření. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
-|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověřování klienta a poskytuje strukturu pro nastavení možnosti certifikátu. Tento certifikát musí být zadaný out-of-band ze služby ke klientovi. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>.|  
-|[\<windows>](../../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)|Určuje přihlašovací údaje Windows. Výchozí hodnota je přihlašovacích údajů aktuálního vlákna. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsClientElement>.|  
+|[\<clientCertificate>](clientcertificate-of-clientcredentials-element.md)|Určuje certifikát, který se používá k ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateClientElement>.|  
+|[\<httpDigest>](httpdigest-element.md)|Určuje výtah, který se používá k ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.HttpDigestClientElement>.|  
+|[\<issuedToken>](issuedtoken.md)|Určuje vlastní typ tokenu, který se používá k ověření klienta ke službě tokenů zabezpečení (STS). Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>.|  
+|[\<peer>](peer-of-clientcredentials-element.md)|Určuje aktuální přihlašovací údaje partnerského vztahu. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
+|[\<serviceCertificate>](servicecertificate-of-clientcredentials-element.md)|Určuje certifikát použitý k ověření služby klientovi a poskytuje strukturu pro nastavení možností certifikátu. Tento certifikát musí být dodán od služby ke klientovi. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>.|  
+|[\<windows>](windows-of-clientcredentials-element.md)|Určuje pověření systému Windows. Výchozí hodnota je přihlašovací údaje aktuálního vlákna. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsClientElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přihlašovací údaje pro klienta se používají k ověření klienta ke službám v případech, kdy je vyžaduje vzájemné ověřování. Tento oddíl konfigurace lze také určení certifikátů služby pro scénáře, ve kterém musí klient zabezpečené zprávy do služby pomocí certifikátu služby.  
+ Pověření klienta slouží k ověřování klienta se službami v případech, kdy je nutné vzájemné ověřování. Tento oddíl konfigurace lze také použít k určení certifikátů služby pro scénáře, ve kterých musí klient zabezpečit zprávy do služby pomocí certifikátu služby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Description.ClientCredentials>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)

@@ -37,59 +37,59 @@ helpviewer_keywords:
 - storage order, controlling in Visual Basic
 - data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
-ms.openlocfilehash: 46a65972a1ea96435002ff6956bc2837c07b0e57
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 57f6caa00806f4874cb8070805e8b6784ec82e40
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913113"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956806"
 ---
 # <a name="data-type-summary-visual-basic"></a>Souhrn datových typů (Visual Basic)
-Následující tabulka uvádí datové typy jazyka Visual Basic, jejich podpůrné běžných typů modulu runtime jazyka, jejich přidělení nominální úložiště a jejich rozsahy hodnot.  
+V následující tabulce jsou uvedeny Visual Basic datových typů, jejich podporují typy společného jazykového modulu runtime, jejich jmenovité přidělení úložiště a jejich rozsahy hodnot.  
   
-|Typ jazyka Visual Basic|Obvyklá struktura typu modulu runtime jazyka|Přidělení úložiště nominální|Rozsah hodnot|  
+|Typ Visual Basic|Struktura typů společného jazykového modulu runtime|Přidělení nominálního úložiště|Rozsah hodnot|  
 |-----------------------|--------------------------------------------|--------------------------------|-----------------|  
 |[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|Závisí na implementaci platformy|`True` Nebo `False`|  
-|[Bajtů](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|1 bajt|0 až 255 (unsigned)|  
-|[Char –](../../../visual-basic/language-reference/data-types/char-data-type.md) (jeden znak)|<xref:System.Char>|2 bajty|0 až 65535 (unsigned)|  
-|[Datum](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 bajtů|0:00:00 (půlnoc) na 1. ledna 0001 až 11:59:59 odp v 31. prosince 9999|  
-|[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 bajtů|0 až +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9... E + 28) <sup>†</sup> s žádné desetinné čárky, 0 až +/-7,9228162514264337593543950335 28 míst napravo od desetinné čárky;<br /><br /> nejmenší nenulové číslo je +/-0,0000000000000000000000000001 (+/-1E-28) <sup>†</sup>|  
-|[Dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) (dvojité přesnosti s plovoucí desetinnou čárkou)|<xref:System.Double>|8 bajtů|-1.79769313486231570E + 308 do - 4.94065645841246544E-324 <sup>†</sup> pro záporné hodnoty;<br /><br /> 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 <sup>†</sup> pro kladné hodnoty|  
-|[Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 bajty|-2,147,483,648 prostřednictvím 2 147 483 647 (se znaménkem)|  
-|[Dlouhé](../../../visual-basic/language-reference/data-types/long-data-type.md) (long integer)|<xref:System.Int64>|8 bajtů|-9,223,372,036,854,775,808 prostřednictvím 9,223,372,036,854,775,807 (9.2... E + 18 <sup>†</sup>) (se znaménkem)|  
-|[objekt](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> (třídy)|4 bajtů na 32bitové platformě<br /><br /> 8 bajtů na 64bitové platformě|Libovolný typ může být uložen v proměnné typu `Object`|  
-|[SByte –](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 bajt|-128 až 127 (se znaménkem)|  
-|[Krátký](../../../visual-basic/language-reference/data-types/short-data-type.md) (krátké celé číslo)|<xref:System.Int16>|2 bajty|-32 768 až 32 767 (se znaménkem)|  
-|[Jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) (jednoduchou přesnost s plovoucí desetinnou čárkou)|<xref:System.Single>|4 bajty|-3.4028235E + 38-1, 401298E-45 <sup>†</sup> pro záporné hodnoty;<br /><br /> 1, 401298E-45 prostřednictvím 3.4028235E + 38 <sup>†</sup> pro kladné hodnoty|  
-|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md) (proměnné délky)|<xref:System.String> (třídy)|Závisí na implementaci platformy|0 na přibližně 2 miliardy znaků Unicode|  
-|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 bajty|0 až 4 294 967 295 (unsigned)|  
-|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 bajtů|0 až 18,446,744,073,709,551,615 (1.8... E + 19 <sup>†</sup>) (unsigned)|  
-|[Uživatelem definované](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) (struktura)|(dědí z <xref:System.ValueType>)|Závisí na implementaci platformy|Každý člen struktury má rozsah určují jeho datový typ a nezávislé z rozsahů jiných členů|  
-|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|2 bajty|0 až 65535 (unsigned)|  
+|[Bytové](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|1 bajt|0 až 255 (bez znaménka)|  
+|[Znak](../../../visual-basic/language-reference/data-types/char-data-type.md) (jeden znak)|<xref:System.Char>|2 bajty|0 až 65535 (bez znaménka)|  
+|[Datum](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 bajtů|0:00:00 (půlnoc) 1. ledna 0001 až 11:59:59 odp. prosince 9999|  
+|[Notaci](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 bajtů|od 0 do +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9...E + 28) <sup>†</sup> bez desetinné čárky; 0 až +/-7.9228162514264337593543950335 s 28 místy napravo od desetinné čárky;<br /><br /> nejmenší nenulové číslo je +/-0,0000000000000000000000000001 (+/-1E-28) <sup>†</sup> .|  
+|[Typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (plovoucí desetinná čárka s dvojitou přesností)|<xref:System.Double>|8 bajtů|-1.79769313486231570 e + 308 do-4.94065645841246544 E-324 <sup>†</sup> pro záporné hodnoty;<br /><br /> 4.94065645841246544 e-324 až 1.79769313486231570 E + 308 <sup>†</sup> pro kladné hodnoty|  
+|[Čísla](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 bajty|-2 147 483 648 až 2 147 483 647 (podepsáno)|  
+|[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (dlouhé celé číslo)|<xref:System.Int64>|8 bajtů|-9223372036854775808 až 9 223 372 036 854 775 807 (9.2... E + 18 <sup>†</sup>) (podepsáno)|  
+|[objekt](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object>Deník|4 bajty na 32 bitové platformě<br /><br /> 8 bajtů na 64. bitová platforma|Libovolný typ může být uložený v proměnné typu.`Object`|  
+|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 bajt|-128 až 127 (podepsáno)|  
+|[Krátká](../../../visual-basic/language-reference/data-types/short-data-type.md) (krátké celé číslo)|<xref:System.Int16>|2 bajty|-32 768 až 32 767 (podepsáno)|  
+|[Jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) (plovoucí desetinná čárka s jednoduchou přesností)|<xref:System.Single>|4 bajty|-3.4028235 e + + 38 do-1.401298 E-45 <sup>†</sup> pro záporné hodnoty;<br /><br /> 1.401298 e-45 až 3.4028235 E + 38 <sup>†</sup> pro kladné hodnoty|  
+|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md) (proměnlivá délka)|<xref:System.String>Deník|Závisí na implementaci platformy|0 až přibližně 2 000 000 000 znaků Unicode|  
+|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 bajty|0 až 4 294 967 295 (bez znaménka)|  
+|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 bajtů|0 až 18446744073709551615 (1.8... E + 19 <sup>†</sup>) (bez znaménka)|  
+|[Uživatelsky definované](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) strukturované|(dědí z <xref:System.ValueType>)|Závisí na implementaci platformy|Každý člen struktury má rozsah určený jeho datovým typem a nezávisle na rozsahu ostatních členů.|  
+|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|2 bajty|0 až 65 535 (bez znaménka)|  
   
- <sup>†</sup> v *vědecký zápis*, "E" odkazuje na násobky 10. Takže 3.56E + 2 označuje 3.56 x 10<sup>2</sup> nebo 356 a 3.56E-2 označuje 3.56 / 10<sup>2</sup> nebo 0.0356.  
+ <sup>†</sup> V *matematickém zápisu*"E" odkazuje na sílu 10. Takže 3.56 E + 2 znamená 3,56 x 10<sup>2</sup> nebo 356 a 3.56 e-2 znamená 3,56/10<sup>2</sup> nebo 0,0356.  
   
 > [!NOTE]
->  U řetězců obsahující text, použijte <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkce pro převod z jednoho formátu do jiného.  
+> Pro řetězce obsahující text použijte <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkci pro převod z jednoho textového formátu do jiného.  
   
- Kromě zadání datový typ v příkazu deklarace, můžete vynutit datový typ některé programovací prvky pomocí znak typu. Zobrazit [znaky](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+ Kromě určení datového typu v příkazu deklarace můžete vynutit datový typ některých programovacích prvků pomocí znaku typu. Viz [znaky typu](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
   
-## <a name="memory-consumption"></a>Využití paměti  
- Při deklaraci základní datový typ není bezpečné předpokládá, že jeho využití paměti je stejné jako jeho přidělení nominální úložiště. Je to z důvodu následující aspekty:  
+## <a name="memory-consumption"></a>Spotřeba paměti  
+ Pokud deklarujete základní datový typ, není bezpečné předpokládat, že jeho využití paměti je stejné jako jeho jmenovité přidělení úložiště. To je způsobeno následujícími požadavky:  
   
-- **Přiřazení úložiště.** Modul common language runtime můžete přiřadit úložiště založené na aktuální vlastnosti platformy, na kterém vaše aplikace provádí. Pokud paměti je téměř plná, může ji co nejblíže k sobě pack vaše deklarované elementy co nejvíce. V ostatních případech to může být zarovnat jejich adresy paměti na hranice fyzických hardwarových vazeb pro optimalizaci výkonu.  
+- **Přiřazení úložiště** Modul CLR (Common Language Runtime) může přiřazovat úložiště na základě aktuálních vlastností platformy, na které je aplikace spuštěná. Pokud je paměť skoro plná, může vaše deklarované prvky nabalit co nejpřesněji. V ostatních případech může zarovnávat jejich paměťové adresy s přirozenými hranicemi hardwaru za účelem optimalizace výkonu.  
   
-- **Šířka platformy.** Přiřazení úložiště na 64bitové platformě se liší od přiřazení na 32bitové platformě.  
+- **Šířka platformy.** Přiřazení úložiště na 64 platformě se liší od přiřazení na 32 platformě.  
   
 ### <a name="composite-data-types"></a>Složené datové typy  
- Jaké jsou požadavky stejné platí pro každý člen složené datového typu, jako je například struktura nebo pole. Nelze spoléhat na jednoduše sečtením nominálních přidělení úložiště členů typu. Kromě toho existují další důležité informace, jako je následující:  
+ Stejné požadavky platí pro každého člena složeného datového typu, jako je například struktura nebo pole. Nemůžete spoléhat na pouhé přidání nominálního přidělení úložiště členů typu. Kromě toho existují i další okolnosti, například následující:  
   
-- **Režie.** Některé složené typy mají požadavky na paměť navíc. Například pole používá extra paměť pro pole samotného a také pro jednotlivé rozměry. Na 32bitové platformě právě tato dodatečná režie 12 bajtů plus 8 bajtů pro jednotlivé rozměry. Na 64bitové platformě je dvojitá tento požadavek.  
+- **Zvyšoval.** Některé složené typy mají další požadavky na paměť. Například pole používá dodatečnou paměť pro samotné pole a také pro každou dimenzi. Na 32 platformě je tato režie aktuálně 12 bajtů plus 8 bajtů pro každou dimenzi. Na 64 platformě se tento požadavek zdvojnásobuje.  
   
-- **Rozložení úložiště.** Nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. I nelze vytvořit předpoklady o zarovnání bajt, jako jsou hranice bajtu 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a je nutné řídit rozložení úložiště z jejích členů, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut třídy nebo struktury.  
+- **Rozložení úložiště** Nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Nemůžete ani dělat předpoklady o zarovnání bajtů, jako je například hranice 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a potřebujete řídit rozložení úložiště členů, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut pro třídu nebo strukturu.  
   
-### <a name="object-overhead"></a>Režijní náklady na objekt  
- `Object` Vztahující se k libovolným datům základní nebo složený typ používá 4 bajty kromě data obsažená v datovém typu.  
+### <a name="object-overhead"></a>Režie objektu  
+ `Object` Odkaz na jakýkoli základní nebo složený datový typ používá kromě dat obsažených v datovém typu 4 bajty.  
   
 ## <a name="see-also"></a>Viz také:
 

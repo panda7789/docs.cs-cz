@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cb8c232e63d1f3066737ff755d5911c185abe6fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f323e91e60c9735a51e955eaab6673ca167f294d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755367"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951869"
 ---
 # <a name="imetadataimportresolvetyperef-method"></a>IMetaDataImport::ResolveTypeRef – metoda
-Řeší <xref:System.Type> odkaz reprezentována zadaný token TypeRef.  
+<xref:System.Type> Vyřeší odkaz reprezentovaný zadaným tokenem TypeRef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,34 +40,34 @@ HRESULT ResolveTypeRef (
   
 ## <a name="parameters"></a>Parametry  
  `tr`  
- [in] Token TypeRef metadat nevrátil informace odkazovaného typu pro.  
+ pro Token metadat TypeRef, pro který se mají vrátit odkazované informace o typu pro.  
   
  `riid`  
- [in] Identifikátor IID rozhraní vrátit v `ppIScope`. Obvykle by to IID_IMetaDataImport.  
+ pro IID rozhraní, které se má vrátit `ppIScope`. Obvykle by to bylo IID_IMetaDataImport.  
   
  `ppIScope`  
- [out] Rozhraní pro rozsah modulu, ve kterém odkazovaný typ je definován.  
+ mimo Rozhraní pro obor modulu, ve kterém je definován odkazovaný typ.  
   
  `ptd`  
- [out] Ukazatel na token TypeDef, který představuje odkazovaného typu.  
+ mimo Ukazatel na token TypeDef, který představuje odkazovaný typ.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
->  Nepoužívejte tuto metodu, pokud jsou načteny více domén aplikace. Metoda nerespektuje hranice aplikační domény. Pokud jsou načteno více verzí sestavení a obsahují stejný typ s stejný obor názvů, metoda vrátí rozsah modulu první typu, které nalezne.  
+> Tuto metodu nepoužívejte, pokud je načteno více domén aplikace. Metoda nerespektuje hranice aplikační domény. Je-li načteno více verzí sestavení a obsahují stejný typ se stejným oborem názvů, metoda vrátí rozsah modulu prvního hledaného typu.  
   
- `ResolveTypeRef` Metoda vyhledá do definice typu v dalších modulů. Pokud se najde definici typu `ResolveTypeRef` vrátí rozsah tohoto modulu, jakož i token TypeDef pro typ rozhraní.  
+ `ResolveTypeRef` Metoda hledá definici typu v jiných modulech. Pokud je nalezena definice typu, `ResolveTypeRef` vrátí rozhraní do tohoto oboru modulu a také token typedef pro typ.  
   
- Pokud má rozlišení oboru odkaz AssemblyRef, které je potřeba vyřešit odkaz na typ `ResolveTypeRef` metoda vyhledá shodu pouze v obory metadat, které již byly otevřeny pomocí volání na buď [imetadatadispenser::openscope –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md)metoda nebo [imetadatadispenser::openscopeonmemory –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) metody. Důvodem je, že `ResolveTypeRef` nelze určit ze pouze odkaz AssemblyRef obor na disk nebo do globální mezipaměti sestavení sestavení se mají ukládat.  
+ Pokud odkaz na typ, který má být vyřešen, má obor rozlišení AssemblyRef, `ResolveTypeRef` metoda vyhledá shodu pouze v oborech metadat, které již byly otevřeny s voláním metody [IMetaDataDispenser:: OpenScope –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) nebo [ IMetaDataDispenser:: OpenScopeOnMemory – –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) metoda Důvodem je, `ResolveTypeRef` že nelze určit pouze z oboru AssemblyRef, kde na disku nebo v globální mezipaměti sestavení (GAC) sestavení je uloženo.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

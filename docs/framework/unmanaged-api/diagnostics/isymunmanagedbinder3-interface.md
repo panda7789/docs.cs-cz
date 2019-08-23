@@ -16,27 +16,27 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fdfd8e8fc419809a3a490639ada1c533f286fe8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6f514cc070a0a38eb09a5387efc8611100765b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939994"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944100"
 ---
 # <a name="isymunmanagedbinder3-interface"></a>ISymUnmanagedBinder3 – rozhraní
-Rozšiřuje rozhraní symbol vazače. Získat po zavolání tohoto rozhraní `QueryInterface` na objekt, který implementuje `ISymUnmanagedBinder` rozhraní.  
+Rozšiřuje rozhraní pořadače symbolů. Získejte toto rozhraní voláním `QueryInterface` objektu, který `ISymUnmanagedBinder` implementuje rozhraní.  
   
 > [!IMPORTANT]
->  To představuje bezpečnostní riziko pro otevření souboru databáze (PDB) programu z nedůvěryhodného zdroje.  
+> Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetReaderFromCallback – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Umožňuje uživatelům implementovat nebo zadat buď prostřednictvím zpětného volání `IID_IDiaReadExeAtRVACallback` nebo `IID_IDiaReadExeAtOffsetCallback` získat informace o ladění adresáře z paměti|  
+|[GetReaderFromCallback – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Umožňuje uživateli implementovat nebo dodávkovat prostřednictvím zpětného volání `IID_IDiaReadExeAtRVACallback` buď `IID_IDiaReadExeAtOffsetCallback` nebo, aby získal informace adresáře ladění z paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlaviček** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

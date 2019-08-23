@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: 013994e36c4c63410a753967cbac92c38783ae62
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: cbdf6150010ca2dace3f0610d9caa90c2bf52746
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659591"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921047"
 ---
 # <a name="oidentry-element"></a>\<oidEntry – element >
 Mapuje identifikátor objektu ASN. 1 (OID) na popisný název.  
@@ -82,6 +82,6 @@ Mapuje identifikátor objektu ASN. 1 (OID) na popisný název.
 
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)
 - [Mapování identifikátorů objektů na algoritmy šifrování](../../map-object-identifiers-to-cryptography-algorithms.md)

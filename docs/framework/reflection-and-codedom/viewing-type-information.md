@@ -13,62 +13,62 @@ helpviewer_keywords:
 ms.assetid: 7e7303a9-4064-4738-b4e7-b75974ed70d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2028bc8d9f160daef8afcdf881e1dfd514b4c94f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e658b2c86eecdbc45a9adde8d28cfb890dd591b9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792922"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956664"
 ---
 # <a name="viewing-type-information"></a>Zobrazení informací o typu
-<xref:System.Type?displayProperty=nameWithType> Třídy je zásadním reflexe. Vytvoří modul common language runtime **typ** pro typ načtený reflexe o to požádá. Můžete použít **typ** metody, pole, vlastnosti a vnořené třídy a zjistěte všechno, co o tomto typu objektu.  
+Třída <xref:System.Type?displayProperty=nameWithType> je od střední k reflexi. Modul CLR (Common Language Runtime) vytvoří **typ** načteného typu, když ho požádá o reflexi. Můžete použít metody, pole, vlastnosti a vnořené třídy **typu** objektu, abyste zjistili vše o tomto typu.  
   
- Použití <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> získat **typ** objekty ze sestavení, které nebyly načteny, předejte název typu nebo typy, které chcete. Použití <xref:System.Type.GetType%2A?displayProperty=nameWithType> zobrazíte **typ** objekty ze sestavení, který je již načten. Použití <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType> a <xref:System.Reflection.Module.GetTypes%2A?displayProperty=nameWithType> získat modul **typ** objekty.  
+ Použijte <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> nebo<xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> k získání objektů **typu** ze sestavení, která nebyla načtena, předejte název typu nebo typy, které chcete. Slouží <xref:System.Type.GetType%2A?displayProperty=nameWithType> k získání **typu** objektů ze sestavení, které je již načteno. Použijte <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType> a<xref:System.Reflection.Module.GetTypes%2A?displayProperty=nameWithType> k získání objektů **typu** modulu.  
   
 > [!NOTE]
->  Pokud chcete k prozkoumání a manipulaci s obecnými typy a metody, naleznete další informace uvedené v [reflexe a obecné typy](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md) a [jak: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md).  
+> Pokud chcete prošetřit a manipulovat s obecnými typy a metodami, přečtěte si další informace, které jsou k dispozici [v reflexi [a obecných typech](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md) a postupy: Prověřte a vytvořte instanci obecných typů pomocí](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
   
- Následující příklad ukazuje syntaxi nezbytné pro uvedení <xref:System.Reflection.Assembly> objektu a modul pro sestavení.  
+ Následující příklad ukazuje syntaxi nutnou k získání <xref:System.Reflection.Assembly> objektu a modulu pro sestavení.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#6)]
  [!code-csharp[Conceptual.Types.ViewInfo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#6)]
  [!code-vb[Conceptual.Types.ViewInfo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#6)]  
   
- Následující příklad ukazuje získání **typ** objekty z načteného sestavení.  
+ Následující příklad ukazuje, jak načíst objekty **typu** z načteného sestavení.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source5.cpp#7)]
  [!code-csharp[Conceptual.Types.ViewInfo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source5.cs#7)]
  [!code-vb[Conceptual.Types.ViewInfo#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source5.vb#7)]  
   
- Po získání **typ**, existuje mnoho způsobů, můžete zjistit informace o členy tohoto typu. Například můžete zjistit členy všechny typu při volání <xref:System.Type.GetMembers%2A?displayProperty=nameWithType> metodu, která získá pole <xref:System.Reflection.MemberInfo> popisem jednotlivých členů aktuální typ objektů.  
+ Jakmile získáte **typ**, existuje mnoho způsobů, jak můžete zjistit informace o členech tohoto typu. Můžete například získat informace o všech členech typu voláním <xref:System.Type.GetMembers%2A?displayProperty=nameWithType> metody, která získá <xref:System.Reflection.MemberInfo> pole objektů popisujících každého z členů aktuálního typu.  
   
- Můžete také použít metody na **typ** třídy k načtení informací o jeden nebo více konstruktorů, metod, události, pole nebo vlastnosti, které zadáte podle názvu. Například <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType> zapouzdřuje konkrétního konstruktoru aktuální třídy.  
+ Můžete také použít metody třídy **Type** pro načtení informací o jednom nebo více konstruktorech, metodách, událostech, polích nebo vlastnostech, které určíte podle názvu. Například <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType> zapouzdřuje konkrétní konstruktor aktuální třídy.  
   
- Pokud máte **typ**, můžete použít <xref:System.Type.Module%2A?displayProperty=nameWithType> vlastnost získat objekt, který zapouzdřuje modulu, který obsahuje tohoto typu. Použití <xref:System.Reflection.Module.Assembly%2A?displayProperty=nameWithType> vlastnost vyhledat objekt, který zapouzdřuje sestavení obsahující modul. Můžete získat sestavení, který zapouzdřuje typ přímo pomocí <xref:System.Type.Assembly%2A?displayProperty=nameWithType> vlastnost.  
+ Pokud máte **typ**, můžete použít <xref:System.Type.Module%2A?displayProperty=nameWithType> vlastnost k získání objektu, který zapouzdřuje modul obsahující tento typ. <xref:System.Reflection.Module.Assembly%2A?displayProperty=nameWithType> Pomocí vlastnosti vyhledejte objekt, který zapouzdřuje sestavení obsahující modul. Sestavení, které zapouzdřuje typ, lze získat přímo pomocí <xref:System.Type.Assembly%2A?displayProperty=nameWithType> vlastnosti.  
   
-## <a name="systemtype-and-constructorinfo"></a>System.Type a ConstructorInfo  
- Následující příklad ukazuje, jak zobrazit seznam konstruktory pro třídy, v takovém případě <xref:System.String> třídy.  
+## <a name="systemtype-and-constructorinfo"></a>System. Type a ConstructorInfo  
+ Následující příklad ukazuje, jak vytvořit seznam konstruktorů pro třídu, v tomto případě <xref:System.String> třída.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source1.cpp#1)]
  [!code-csharp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source1.cs#1)]
  [!code-vb[Conceptual.Types.ViewInfo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source1.vb#1)]  
   
-## <a name="memberinfo-methodinfo-fieldinfo-and-propertyinfo"></a>MemberInfo, MethodInfo, FieldInfo nebo PropertyInfo  
- Získání informací o typu metody, vlastnosti, události a pole pomocí <xref:System.Reflection.MemberInfo>, <xref:System.Reflection.MethodInfo>, <xref:System.Reflection.FieldInfo>, nebo <xref:System.Reflection.PropertyInfo> objekty.  
+## <a name="memberinfo-methodinfo-fieldinfo-and-propertyinfo"></a>MemberInfo, MethodInfo, FieldInfo a PropertyInfo  
+ Získejte informace <xref:System.Reflection.MemberInfo>o metodách, vlastnostech, událostech a polích typu pomocí objektů, <xref:System.Reflection.MethodInfo>, <xref:System.Reflection.FieldInfo>nebo. <xref:System.Reflection.PropertyInfo>  
   
- Následující příklad používá **MemberInfo** počet členů v seznamu **System.IO.File** třídy a používá <xref:System.Type.IsPublic%2A> a určí, zda se třída.  
+ Následující příklad používá **MemberInfo** pro výpis počtu členů ve třídě **System. IO. File** <xref:System.Type.IsPublic%2A> a používá vlastnost k určení viditelnosti třídy.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source2.cpp#2)]
  [!code-csharp[Conceptual.Types.ViewInfo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source2.cs#2)]
  [!code-vb[Conceptual.Types.ViewInfo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source2.vb#2)]  
   
- Následující příklad prozkoumá typu zadaného člena. Provádí reflexi u člena **MemberInfo** třídy a zobrazení jeho typu.  
+ Následující příklad prozkoumá typ zadaného člena. Provádí reflexi člena třídy **MemberInfo** a seznam jeho typu.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source3.cpp#3)]
  [!code-csharp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source3.cs#3)]
  [!code-vb[Conceptual.Types.ViewInfo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source3.vb#3)]  
   
- V následujícím příkladu všechny reflexe  **\*informace** třídy společně s <xref:System.Reflection.BindingFlags> seznam členů (konstruktorů, pole, vlastnosti, události a metody) ze zadané třídy dělení členy do statické a instanci kategorie.  
+ Následující příklad používá všechny třídy  **\*informací o** reflexi společně <xref:System.Reflection.BindingFlags> s pro výpis všech členů (konstruktory, pole, vlastnosti, události a metody) zadané třídy a rozdělení členů na statické a instance. kategorie.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)]

@@ -5,22 +5,22 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: d6c931ec904e9a7e58d5b747c74898208863b8e9
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 786f667bcba7959ac485b4abe667239b05059c45
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486723"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941447"
 ---
-# <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
-Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikace ASP.NET ve službě IIS 7.0 nebo novější verze běží v integrovaném režimu.  
+# <a name="applicationpool-element-web-settings"></a>\<applicationPool – element > (nastavení webu)
+Určuje nastavení konfigurace, které ASP.NET používá ke správě chování v rámci procesu, když je aplikace ASP.NET spuštěná v integrovaném režimu na IIS 7,0 nebo novější verzi.  
   
 > [!IMPORTANT]
->  Tento element a funkci podporuje fungovat, pouze pokud je vaše aplikace ASP.NET hostované na IIS 7.0 nebo novější verze.  
+> Tento prvek a funkce, které podporuje, fungují pouze v případě, že je vaše aplikace ASP.NET hostována ve službě IIS 7,0 nebo novějších verzích.  
   
- \<Konfigurace >  
-\<System.Web > – Element (nastavení webu)  
-\<applicationPool > – Element (nastavení webu)  
+ \<> Konfigurace  
+\<System. Web > – element (nastavení webu)  
+\<applicationPool – element > (nastavení webu)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,9 +38,9 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`maxConcurrentRequestsPerCPU`|Určuje, kolik souběžných požadavků ASP.NET umožňuje jeden procesor.|  
-|`maxConcurrentThreadsPerCPU`|Určuje, kolik souběžných vláken může být spuštěn fond aplikací, pro každý procesor. To poskytuje alternativní způsob řízení souběžnosti ASP.NET, protože můžete omezit počet spravovaných vláken, které můžete použít jeden procesor a jsou k obsluze požadavků. Ve výchozím nastavení toto nastavení je 0, což znamená, že technologie ASP.NET neomezuje počet vláken, která je možné vytvořit jeden procesor, i když fondu vláken CLR také omezuje počet vláken, která je možné vytvořit.|  
-|`requestQueueLimit`|Určuje maximální počet požadavků, které lze zařadit do fronty pro technologii ASP.NET v jediném procesu. Když dva nebo více aplikací ASP.NET spustit v jediného fondu aplikací, můžou toto nastavení je kumulativní sadu požadavky na všechny aplikace ve fondu aplikací.|  
+|`maxConcurrentRequestsPerCPU`|Určuje, kolik souběžných požadavků ASP.NET povoluje jednotlivé PROCESORy.|  
+|`maxConcurrentThreadsPerCPU`|Určuje, kolik souběžných vláken může být spuštěno pro fond aplikací pro každý procesor. To poskytuje alternativní způsob pro řízení souběžnosti ASP.NET, protože můžete omezit počet spravovaných vláken, která lze použít pro jednotlivé PROCESORy k obsluze požadavků. Ve výchozím nastavení je toto nastavení 0, což znamená, že ASP.NET neomezuje počet vláken, která lze vytvořit pro jednotlivé PROCESORy, i když fond vláken CLR také omezuje počet vláken, která lze vytvořit.|  
+|`requestQueueLimit`|Určuje maximální počet požadavků, které mohou být zařazeny do fronty pro ASP.NET v jednom procesu. V případě, že dvě nebo více ASP.NETch aplikací běží v jednom fondu aplikací, toto nastavení se vztahuje na kumulativní sadu požadavků, které se přidávají do jakékoli aplikace ve fondu aplikací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -49,30 +49,30 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o způsobu interakce ASP.NET s hostitelskou aplikací.|  
+|[\<system.web>](system-web-element-web-settings.md)|Obsahuje informace o tom, jak ASP.NET komunikuje s hostitelskou aplikací.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když spustíte v integrovaném režimu služby IIS 7.0 nebo novější verze, tato kombinace elementu vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostovaná ve fondu aplikací služby IIS. Pokud spustíte IIS 6 nebo spuštění služby IIS 7.0 v klasickém režimu nebo v režimu ISAPI, tato nastavení budou ignorovány.  
+ Pokud spustíte službu IIS 7,0 nebo novější verzi v integrovaném režimu, tato kombinace prvků vám umožní nakonfigurovat, jak ASP.NET spravuje vlákna a fronty, když je aplikace hostována ve fondu aplikací služby IIS. Pokud spouštíte IIS 6 nebo v klasickém režimu nebo v režimu ISAPI spouštíte IIS 7,0, tato nastavení se ignorují.  
   
- `applicationPool` Nastavení platí pro všechny fondy aplikací, které běží na konkrétní verzi rozhraní .NET Framework. Nastavení jsou obsaženy v souboru aspnet.config. Existuje verze tohoto souboru pro verze 2.0, 4.0 rozhraní .NET Framework. (Verze 3.0 a 3.5 rozhraní .NET Framework sdílet s verzí 2.0 Soubor aspnet.config.)  
+ `applicationPool` Nastavení platí pro všechny fondy aplikací, které běží na konkrétní verzi .NET Framework. Nastavení jsou obsažena v souboru ASPNET. config. Verze tohoto souboru je verze 2,0 a 4,0 .NET Framework. (Verze 3,0 a 3,5 .NET Framework sdílet soubor ASPNET. config s verzí 2,0.)  
   
 > [!IMPORTANT]
->  Při spuštění služby IIS 7.0 [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný aspnet.config souboru pro každý fond aplikací. Díky tomu můžete přizpůsobit výkonu vláken pro každý fond aplikací.  
+> Pokud spustíte IIS 7,0 na [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný soubor ASPNET. config pro každý fond aplikací. To vám umožní přizpůsobit výkon vláken pro každý fond aplikací.  
   
- Pro `maxConcurrentRequestsPerCPU` nastavení, ve výchozím nastavení "5000" v rozhraní .NET Framework 4 efektivně vypne omezování žádostí, které je řízen pomocí technologie ASP.NET, pokud máte ve skutečnosti 5000 nebo více požadavků na CPU. Ve výchozím nastavení závisí na modulu CLR-fondu vláken k automatické správě souběžnosti jeden procesor a místo toho. Aplikace, které usnadňují používání příliš často používá asynchronní zpracování požadavků, nebo jež mají velký počet požadavků dlouhotrvající blokován v síti vstupně-výstupních operací, bude využít zvýšenou výchozí limit v rozhraní .NET Framework 4. Nastavení `maxConcurrentRequestsPerCPU` na nulovou vypne použití spravovaných vláken pro zpracování požadavků ASP.NET. Pokud je aplikace spuštěna ve fondu aplikací služby IIS, požadavky zůstat ve vlákně vstupně-výstupních operací služby IIS a proto se omezuje souběžnosti vláken nastavením služby IIS.  
+ V případě `maxConcurrentRequestsPerCPU` nastavení výchozí nastavení "5000" v .NET Framework 4 efektivně vypne omezení požadavků, které je řízeno ASP.NETou, pokud ve skutečnosti nemáte 5000 nebo více požadavků na procesor. Výchozí nastavení závisí na fondu vláken CLR k automatické správě souběžnosti na procesor. Aplikace, které vytvářejí rozsáhlé použití asynchronního zpracování požadavků nebo které mají v síťové vstupně-výstupní operaci blokované množství dlouhotrvajících požadavků, budou těžit z zvýšeného výchozího limitu .NET Framework 4. Nastavení `maxConcurrentRequestsPerCPU` na hodnotu nula vypne používání spravovaných vláken pro zpracování požadavků ASP.NET. Když je aplikace spuštěná ve fondu aplikací služby IIS, požadavky zůstanou ve vstupně-výstupních vláknech služby IIS a proto souběžnost je omezena nastavením vlákna IIS.  
   
- `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) element, který je nastavení v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud oba atributy jsou nastavené (ve výchozím nastavení, to je PRAVDA), `requestQueueLimit` přednost má nastavení v souboru aspnet.config.  
+ Nastavení funguje stejným způsobem `requestQueueLimit` jako atribut prvku processModel, který je nastaven v souborech Web. config pro aplikace ASP.NET. [](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) `requestQueueLimit` Nastavení v souboru ASPNET. config však `requestQueueLimit` přepisuje nastavení v souboru Web. config. `requestQueueLimit` Jinými slovy, pokud jsou oba atributy nastaveny (ve výchozím nastavení je to pravda), `requestQueueLimit` má přednost nastavení v souboru ASPNET. config.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak nakonfigurovat chování v celém procesu ASP.NET v souboru aspnet.config za následujících okolností:  
+ Následující příklad ukazuje, jak nakonfigurovat ASP.NET chování v rámci procesu v souboru ASPNET. config v následujících případech:  
   
-- Aplikace je hostována ve fondu aplikací služby IIS 7.0.  
+- Aplikace je hostována ve fondu aplikací služby IIS 7,0.  
   
-- V integrovaném režimu je spuštěna služba IIS 7.0.  
+- Služba IIS 7,0 je spuštěna v integrovaném režimu.  
   
-- Aplikace používá rozhraní .NET Framework 3.5 SP1 nebo novější.  
+- Aplikace používá .NET Framework 3,5 SP1 nebo novější verzi.  
   
- Hodnoty v tomto příkladu jsou výchozí hodnoty.  
+ Hodnoty v příkladu jsou výchozími hodnotami.  
   
 ```xml  
 <configuration>  
@@ -92,8 +92,8 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 |Obor názvů||  
 |Název schématu||  
 |Soubor ověření||  
-|Může být prázdné.||  
+|Může být prázdné||  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<System.Web > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)
+- [\<System. Web > – element (nastavení webu)](system-web-element-web-settings.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd337ca6d7b03ad22f178c9c7084cfa2585da73c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2ad2092c902b137df0dfe108743ef4081ca5f04d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782753"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948117"
 ---
 # <a name="icorprofilerinfogetobjectsize-method"></a>ICorProfilerInfo::GetObjectSize – metoda
 Získá velikost zadaného objektu.  
@@ -37,32 +37,32 @@ HRESULT GetObjectSize(
   
 ## <a name="parameters"></a>Parametry  
  `objectId`  
- [in] ID objektu.  
+ pro ID objektu  
   
  `pcSize`  
- [out] Ukazatel objekt velikost v bajtech.  
+ mimo Ukazatel na velikost objektu v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
->  Tato metoda je zastaralá. Vrátí COR_E_OVERFLOW pro objekty větší než 4GB na 64bitových platformách. Použití [icorprofilerinfo4::getobjectsize2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) metoda místo.  
+> Tato metoda je zastaralá. Vrátí COR_E_OVERFLOW pro objekty větší než 4GB na 64 platformách. Místo toho použijte metodu [ICorProfilerInfo4:: getobjectsize2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) .  
   
- Různé objekty stejné typy často mají stejnou velikost. Některé typy, například pole nebo řetězce, ale může mít jinou velikost pro každý objekt.  
+ Různé objekty stejného typu mají často stejnou velikost. Některé typy, například pole nebo řetězce, mohou mít různé velikosti pro každý objekt.  
   
- Velikost vrácené `GetObjectSize` způsob neobsahuje žádné zarovnání odsazení, který se může zdát, jakmile je objekt na haldě uvolňování paměti. Pokud používáte `GetObjectSize` metoda pro přechod z objektu na haldě uvolňování paměti kolekce přidat zarovnání odsazení ručně, podle potřeby.  
+ Velikost vrácená `GetObjectSize` metodou nezahrnuje žádné odsazení zarovnání, které se může zobrazit poté, co je objekt v haldě uvolňování paměti. Pokud použijete `GetObjectSize` metodu pro přechod z objektu na objekt v haldě uvolňování paměti, podle potřeby přidejte odsazení zarovnání ručně.  
   
-- Na Windows 32-bit COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1 a COR_PRF_GC_GEN_2 používat 4bajtové zarovnání a COR_PRF_GC_LARGE_OBJECT_HEAP používá zarovnání 8 bajtů.  
+- Na 32 Windows, COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1 a COR_PRF_GC_GEN_2 použijte zarovnání 4 bajty a COR_PRF_GC_LARGE_OBJECT_HEAP používá zarovnání na 8 bajtů.  
   
-- Na Windows 64-bit zarovnání je vždy 8 bajtů.  
+- V 64 bitových oknech je zarovnání vždy 8 bajtů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

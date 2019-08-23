@@ -7,81 +7,81 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: ee53e6e5fc360c5155e1682f829a45be922caf22
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 968e5d9bb08f168e3c77b40ea42b16dc66e93e64
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665412"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956297"
 ---
 # <a name="interfaces-visual-basic"></a>Rozhraní (Visual Basic)
-*Rozhraní* definovat vlastnosti, metody a události, které můžete implementovat třídy. Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metody a události; To snižuje problémy s kompatibilitou, protože vám umožní vytvářet lepší implementace pro vaše rozhraní bez ohrožující existující kód. Kdykoli můžete přidat nové funkce ve vývoji, implementace a dalších rozhraní.  
+*Rozhraní* definují vlastnosti, metody a události, které třídy mohou implementovat. Rozhraní umožňují definovat funkce jako malé skupiny úzce souvisejících vlastností, metod a událostí. Tím se sníží problémy s kompatibilitou, protože můžete vyvíjet rozšířená implementace pro vaše rozhraní bez nutnosti přecházet z existujícího kódu. Nové funkce můžete kdykoli přidat pomocí vývoje dalších rozhraní a implementací.  
   
- Existuje několik jiných důvodů, proč můžete chtít použít rozhraní namísto dědičnosti třídy:  
+ Existuje několik dalších důvodů, proč možná budete chtít použít rozhraní namísto dědičnosti tříd:  
   
-- Rozhraní se lépe hodí pro situace, ve kterých vaše aplikace vyžadují že mnoho pravděpodobně nesouvisejících typů objektů pro poskytnutí některých funkcí.  
+- Rozhraní jsou lépe vhodná pro situace, kdy vaše aplikace vyžadují mnoho možných nesouvisejících typů objektů, které poskytují určité funkce.  
   
-- Rozhraní jsou flexibilnější, než základní třídy, protože můžete definovat jedna implementace, které můžou implementovat více rozhraní.  
+- Rozhraní jsou pružnější než základní třídy, protože lze definovat jednu implementaci, která může implementovat více rozhraní.  
   
-- Rozhraní jsou lepší v situacích, ve kterých nemáte implementace dědit ze základní třídy.  
+- Rozhraní jsou lépe v situacích, kdy není nutné dědit implementaci ze základní třídy.  
   
-- Rozhraní jsou užitečné, pokud nemůžete použít dědičnost tříd. Například struktury nemůže dědit z třídy, ale mohou implementovat rozhraní.  
+- Rozhraní jsou užitečná, když nemůžete použít dědičnost tříd. Struktury například nemohou dědit z tříd, ale mohou implementovat rozhraní.  
   
 ## <a name="declaring-interfaces"></a>Deklarace rozhraní  
- Definice rozhraní jsou uzavřený do složených závorek `Interface` a `End Interface` příkazy. Následující `Interface` příkazu, můžete přidat volitelný `Inherits` příkaz, který obsahuje jeden nebo více zděděných rozhraních. `Inherits` Příkazy musí předcházet před všechny ostatní příkazy v deklaraci s výjimkou komentáře. Zbývající příkazy v definici rozhraní by měl být `Event`, `Sub`, `Function`, `Property`, `Interface`, `Class`, `Structure`, a `Enum` příkazy. Rozhraní nemůžou obsahovat žádné implementační kód nebo příkazy, které jsou přidružené k provádění kódu, jako například `End Sub` nebo `End Property`.  
+ Definice rozhraní jsou uzavřeny v `Interface` příkazech a `End Interface` . Po příkazu můžete přidat volitelný `Inherits` příkaz, který zobrazí seznam jednoho nebo více zděděných rozhraní. `Interface` `Inherits` Příkazy musí předcházet před všemi ostatními příkazy v deklaraci s výjimkou komentářů. Zbývající příkazy `Event`v definici rozhraní by měly být příkazy, `Sub`, `Function` `Interface` `Class` `Property`,,,, `Structure`a `Enum` . Rozhraní nemůžou obsahovat žádný implementační kód ani příkazy spojené s implementačním kódem, `End Sub` jako `End Property`je například nebo.  
   
- V oboru názvů, jsou rozhraní příkazů `Friend` ve výchozím nastavení, ale mohou také být explicitně deklarovány jako `Public` nebo `Friend`. Rozhraní definované v rámci třídy, rozhraní a moduly a struktury jsou `Public` ve výchozím nastavení, ale mohou také být explicitně deklarovány jako `Public`, `Friend`, `Protected`, nebo `Private`.  
+ V oboru názvů jsou `Friend` příkazy rozhraní ve výchozím nastavení, ale lze je také explicitně deklarovat jako `Public` nebo `Friend`. Rozhraní definovaná v rámci tříd, modulů, rozhraní a struktur jsou `Public` ve výchozím nastavení, ale mohou být také explicitně deklarována `Public`jako `Friend`, `Protected`, nebo `Private`.  
   
 > [!NOTE]
->  `Shadows` – Klíčové slovo lze použít pro všechny členy rozhraní. `Overloads` – Klíčové slovo lze použít u `Sub`, `Function`, a `Property` příkazy deklarované v definici rozhraní. Kromě toho `Property` příkazů může mít `Default`, `ReadOnly`, nebo `WriteOnly` modifikátory. Žádná z jiných modifikátory –`Public`, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride`, nebo `Overridable`– jsou povoleny. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+> `Shadows` Klíčové slovo lze použít pro všechny členy rozhraní. Klíčové slovo lze použít pro `Sub`příkazy, `Function`a `Property` deklarované v definici rozhraní. `Overloads` Kromě toho `Property` příkazy mohou `Default`mít modifikátory, `ReadOnly`nebo `WriteOnly` . `Public`Žádný z ostatních modifikátorů –, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride`nebo –jsoupovoleny.`Overridable` Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Například následující kód definuje rozhraní s jednu funkci, jednu vlastnost a jednu událost.  
+ Například následující kód definuje rozhraní s jednou funkcí, jednu vlastnost a jednu událost.  
   
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>Implementace rozhraní  
- Visual Basic vyhrazené slovo `Implements` slouží dvěma způsoby. `Implements` Prohlášení znamená, že třída nebo struktura implementuje rozhraní. `Implements` – Klíčové slovo znamená, že člen třídy nebo struktury člen implementuje člen konkrétní rozhraní.  
+ Vyhrazené slovo `Implements` Visual Basic se používá dvěma způsoby. `Implements` Příkaz znamená, že třída nebo struktura implementuje rozhraní. `Implements` Klíčové slovo označuje, že člen třídy nebo člen struktury implementuje konkrétního člena rozhraní.  
   
 ### <a name="implements-statement"></a>Implements – Příkaz  
- Pokud jeden nebo více rozhraní implementuje, třídy nebo struktury, musí zahrnovat `Implements` příkaz ihned po `Class` nebo `Structure` příkazu. `Implements` Příkaz vyžaduje čárkou oddělený seznam rozhraní k implementaci třídy. Třída nebo struktura musí implementovat všechny členy rozhraní pomocí `Implements` – klíčové slovo.  
+ Pokud třída nebo struktura implementuje jedno nebo více rozhraní, musí obsahovat `Implements` příkaz hned `Class` za příkazem or `Structure` . `Implements` Příkaz vyžaduje čárkami oddělený seznam rozhraní, která má být implementována třídou. Třída nebo struktura musí implementovat všechny členy rozhraní pomocí `Implements` klíčového slova.  
   
-### <a name="implements-keyword"></a>Implements – klíčové slovo  
- `Implements` – Klíčové slovo vyžaduje oddělený čárkami seznam členů rozhraní k implementaci. Obecně platí pouze jedno rozhraní člen je zadána, ale můžete zadat více členů. Specifikace člena rozhraní se skládá z názvu rozhraní, který musí být zadán v příkazu implementuje v rámci třídy. období; a název členské funkce, vlastnost nebo událost k implementaci. Jméno člena, který implementuje člen rozhraní, můžete použít libovolný platný identifikátor a se neomezuje `InterfaceName_MethodName` konvence použité v dřívějších verzích jazyka Visual Basic.  
+### <a name="implements-keyword"></a>Klíčové slovo Implements  
+ `Implements` Klíčové slovo vyžaduje, aby byly implementovány čárkami oddělený seznam členů rozhraní. Obecně je určen pouze jeden člen rozhraní, ale lze zadat více členů. Specifikace člena rozhraní se skládá z názvu rozhraní, který musí být zadán v příkazu Implements v rámci třídy; období; a název členské funkce, vlastnost nebo událost, která má být implementována. Název členu, který implementuje člena rozhraní, může použít jakýkoliv platný identifikátor a není omezen na `InterfaceName_MethodName` konvenci použitou v dřívějších verzích Visual Basic.  
   
- Například následující kód ukazuje, jak deklarujete podprogram s názvem `Sub1` , který implementuje metodu rozhraní:  
+ Například následující kód ukazuje, jak deklarovat podprogram s názvem `Sub1` , který implementuje metodu rozhraní:  
   
  [!code-vb[VbVbalrOOP#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#69)]  
   
- Typy parametrů a návratové typy implementující členu musí odpovídat rozhraní deklaraci vlastnosti nebo člena v rozhraní. Nejběžnější způsob implementace prvek rozhraní se člen, který má stejný název jako rozhraní, jak je znázorněno v předchozím příkladu.  
+ Typy parametrů a návratové typy implementující člena se musí shodovat s vlastností rozhraní nebo deklarací členů v rozhraní. Nejběžnější způsob, jak implementovat element rozhraní, je člen, který má stejný název jako rozhraní, jak je znázorněno v předchozím příkladu.  
   
- Chcete-li deklarovat implementaci metody rozhraní, můžete použít všechny atributy, které jsou platné u deklarací metody instance, včetně `Overloads`, `Overrides`, `Overridable`, `Public`, `Private`, `Protected`, `Friend`, `Protected Friend`, `MustOverride`, `Default`, a `Static`. `Shared` Atribut není platný, protože definuje třídu spíše než metody instance.  
+ Chcete-li deklarovat implementaci metody rozhraní, můžete použít všechny atributy, které jsou platné pro deklarace metod instance, včetně `Overloads`, `Overrides`, `Overridable`, `Public`, `Private`, `Protected`, `Friend` ,`Protected Friend`, `MustOverride` ,a`Static`. `Default` `Shared` Atribut není platný, protože definuje třídu namísto metody instance.  
   
- Pomocí `Implements`, můžete je zapsat také jedinou metodu, která implementuje několik metod, které jsou definované v rozhraní, jako v následujícím příkladu:  
+ Pomocí `Implements`, můžete také napsat jedinou metodu, která implementuje více metod definovaných v rozhraní, jako v následujícím příkladu:  
   
  [!code-vb[VbVbalrOOP#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#70)]  
   
- Chcete-li implementovat člen rozhraní, můžete použít privátní člen. Pokud privátní člen implementuje člena rozhraní, tento člen mít k dispozici prostřednictvím rozhraní, i když není k dispozici přímo v objektových proměnných pro třídu.  
+ Můžete použít privátního člena k implementaci člena rozhraní. Když soukromý člen implementuje člen rozhraní, bude tento člen dostupný prostřednictvím rozhraní, i když není k dispozici přímo na objektových proměnných pro třídu.  
   
 ### <a name="interface-implementation-examples"></a>Příklady implementace rozhraní  
- Třídy, které implementují rozhraní musí implementovat všechny jeho vlastnosti, metody a události.  
+ Třídy, které implementují rozhraní, musí implementovat všechny jeho vlastnosti, metody a události.  
   
- Následující příklad definuje dvě rozhraní. Druhé síťové rozhraní, `Interface2`, dědí `Interface1` a definuje další vlastnosti a metody.  
+ Následující příklad definuje dvě rozhraní. Druhé rozhraní `Interface2`dědí `Interface1` a definuje další vlastnost a metodu.  
   
  [!code-vb[VbVbalrOOP#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#39)]  
   
- Následující příklad implementuje `Interface1`, rozhraní definované v předchozím příkladu:  
+ Následující příklad implementuje `Interface1`rozhraní definované v předchozím příkladu:  
   
  [!code-vb[VbVbalrOOP#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#40)]  
   
- V posledním příkladu implementuje `Interface2`, včetně metody zděděné z `Interface1`:  
+ Konečný příklad implementuje `Interface2`, včetně metody zděděné z `Interface1`:  
   
  [!code-vb[VbVbalrOOP#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#41)]  
   
- Můžete implementovat vlastnost jen pro čtení s vlastností readwrite (to znamená, není nutné deklarovat je jen pro čtení v implementaci třídy).  Implementace rozhraní, že alespoň implementujte členy, které deklaruje rozhraní, ale můžou nabízet další funkce, jako je umožňuje vaše vlastnost jako zapisovatelný.  
+ Můžete implementovat vlastnost jen pro čtení s vlastností ReadOnly (to znamená, že ji nemusíte deklarovat jen pro čtení v implementaci třídy).  Implementace rozhraní příslibů k implementaci alespoň členů, které rozhraní deklaruje, ale můžete nabízet více funkcí, jako je například umožnění zapisovatelné vlastnosti.  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Vytvoření a implementace rozhraní](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Poskytuje podrobný postup, který vás provede procesem definování a provádění vlastní rozhraní.|  
-|[Odchylky obecných rozhraní](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Tento článek popisuje kovariance a kontravariance v obecných rozhraních a obsahuje seznam variantních obecných rozhraní v rozhraní .NET Framework.|
+|[Návod: Vytvoření a implementace rozhraní](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Poskytuje podrobný postup, který vás provede procesem definování a implementace vlastního rozhraní.|  
+|[Odchylky obecných rozhraní](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Popisuje kovarianci a kontravariance v obecných rozhraních a poskytuje seznam variantních obecných rozhraní v .NET Framework.|

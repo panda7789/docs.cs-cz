@@ -2,26 +2,26 @@
 title: 'Postupy: Vytvoření oddílů dat služby'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 17cb80bf253491eb563d6fd45b5997e452f542e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49aefd88d73732a139a79f8c53d5beca44d4d4ba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047526"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947876"
 ---
 # <a name="how-to-service-data-partitioning"></a>Postupy: Vytvoření oddílů dat služby
-Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika instancí stejné cílové služby. Dělení dat služby se obvykle používá, když budete chtít škálování služby, aby bylo možné poskytovat lepší kvalitu služby, nebo pokud potřebujete zpracovávat požadavky různých zákazníků určitým způsobem. Zprávy z vysoké hodnoty nebo zákazníky za "Zlatá" může například potřeba zpracovat s vyšší prioritou než zpráv od standardní zákazníka.  
+Toto téma popisuje základní kroky potřebné k rozdělení zpráv mezi více instancí stejné cílové služby. Vytváření oddílů dat služby se obvykle používá v případě, že potřebujete škálovat službu tak, aby poskytovala lepší kvalitu služeb, nebo když potřebujete konkrétní způsob zpracovávat žádosti od různých zákazníků. Například zprávy od vysoké hodnoty nebo "Gold" můžou být potřeba zpracovat s vyšší prioritou než zprávy ze standardního zákazníka.  
   
- V tomto příkladu zprávy jsou směrovány na jednu ze dvou instancí služby regularCalc. Obě instance služby jsou identické; ale reprezentované zprávami procesy calculator1 koncový bod služby obdrželi od zákazníků vysoké hodnoty, koncový bod Kalkulačka 2 procesy zpráv od ostatních zákazníků  
+ V tomto příkladu jsou zprávy směrovány do jedné ze dvou instancí služby regularCalc. Obě instance služby jsou identické. Nicméně služba reprezentovaná koncovým bodem calculator1 zpracovává zprávy obdržené od zákazníků s vysokou hodnotou a koncovým bodem kalkulačky zpracovává zprávy od jiných zákazníků.  
   
- Z klienta byla odeslána zpráva nemá jedinečných dat, který můžete použít k identifikaci které se mají směrovat zprávy k instanci služby. Povolit každá klient data trasy pro konkrétní cílové služby Implementujeme dva koncové body služby, které se použijí pro příjem zpráv.  
+ Zpráva odeslaná z klienta neobsahuje žádná jedinečná data, která by bylo možné použít k identifikaci instance služby, na kterou se má zpráva směrovat. Aby každý klient mohl směrovat data do konkrétní cílové služby, implementujeme dva koncové body služby, které budou použity pro příjem zpráv.  
   
 > [!NOTE]
->  Přestože tento příklad používá konkrétní koncové body k dělení dat, to může také provést pomocí informací obsažených v rámci vlastní zprávě například Hlavička nebo text data.  
+> I když tento příklad používá ke dělení dat konkrétní koncové body, může to být také provedeno pomocí informací obsažených v samotné zprávě, jako jsou například záhlaví nebo textová data.  
   
-### <a name="implement-service-data-partitioning"></a>Dělení dat implementace služby  
+### <a name="implement-service-data-partitioning"></a>Implementace dělení dat služby  
   
-1. Vytvoření základní konfigurace služby směrování zadat koncové body služby určeného službou. Následující příklad definuje dva koncové body, které se budou používat pro příjem zpráv. Také definuje koncové body klienta, které se používají k odesílání zpráv do instance služby regularCalc.  
+1. Vytvořte základní konfiguraci směrovací služby zadáním koncových bodů služby vystavených službou. Následující příklad definuje dva koncové body, které budou použity pro příjem zpráv. Také definuje koncové body klienta, které slouží k posílání zpráv do instancí služby regularCalc.  
   
     ```xml  
     <services>  
@@ -58,7 +58,7 @@ Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika i
      </client>  
     ```  
   
-2. Určit filtry, které slouží ke směrování zpráv do cílové koncové body.  V tomto příkladu Název_koncového_bodu filtr slouží k určení, které koncový bod služby zobrazila zpráva. Následující příklad definuje oddíl nezbytné směrování a filtry.  
+2. Definujte filtry používané ke směrování zpráv do cílových koncových bodů.  V tomto příkladu se používá filtr koncového bodu k určení, který koncový bod služby obdržel zprávu. Následující příklad definuje nezbytný oddíl směrování a filtry.  
   
     ```xml  
     <filters>  
@@ -71,9 +71,9 @@ Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika i
     </filters>  
     ```  
   
-3. Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta. V tomto příkladu budou směrovat zprávy na základě konkrétní koncového bodu, který byl přijat přes. Vzhledem k tomu, že zpráva odpovídá pouze jeden z filtrů dva možné, není nutné pro řídit pořadí, ve které filtry jsou vyhodnocovány pomocí Priorita filtru.  
+3. Definujte tabulku filtru, která přidruží jednotlivé filtry ke koncovému bodu klienta. V tomto příkladu bude zpráva směrována podle konkrétního koncového bodu, ve kterém byla přijata. Vzhledem k tomu, že zpráva může odpovídat pouze jednomu ze dvou možných filtrů, není nutné používat prioritu filtru k řízení pořadí, ve kterém jsou filtry vyhodnocovány.  
   
-     Následující definuje filtr tabulky a přidá filtry definovali dříve.  
+     Následující definice tabulky filtru a přidává filtry definované dříve.  
   
     ```xml  
     <filterTables>  
@@ -85,7 +85,7 @@ Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika i
     </filterTables>  
     ```  
   
-4. Vyhodnocování příchozích zpráv proti filtry, které jsou obsaženy v tabulce, musíte přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přiřazování "filterTable1" s koncovými body služby:  
+4. Chcete-li vyhodnotit příchozí zprávy proti filtrům obsaženým v tabulce, je nutné přidružit tabulku filtru k koncovým bodům služby pomocí chování směrování. Následující příklad ukazuje přidružení "filterTable1" k koncovým bodům služby:  
   
     ```xml  
     <behaviors>  
@@ -99,7 +99,7 @@ Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika i
     ```  
   
 ## <a name="example"></a>Příklad  
- Tady je úplný seznam všech konfiguračního souboru.  
+ Následuje úplný seznam konfiguračního souboru.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

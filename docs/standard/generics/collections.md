@@ -13,38 +13,38 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa6cd032ecf3a35c1dc32d9907218c9b6efd4bcc
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: b0de14fd5d576774ed1605784f5f0c6b0fae2c8c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592263"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948925"
 ---
 # <a name="generic-collections-in-net"></a>Obecné kolekce na platformě .NET
 
- Nabízí celou řadu obecné kolekce tříd v knihovně tříd rozhraní .NET <xref:System.Collections.Generic> a <xref:System.Collections.ObjectModel> obory názvů. Podrobné informace o těchto tříd, naleznete v tématu [běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md).  
+ Knihovna tříd .NET poskytuje řadu obecných tříd kolekcí v <xref:System.Collections.Generic> oborech názvů a. <xref:System.Collections.ObjectModel> Podrobnější informace o těchto třídách naleznete v tématu [běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md).  
   
 ### <a name="systemcollectionsgeneric"></a>System.Collections.Generic  
- Mnoho typů obecných kolekcí jsou analogických neobecné typy. <xref:System.Collections.Generic.Dictionary%602> je obecný verze <xref:System.Collections.Hashtable>; používá obecná struktura <xref:System.Collections.Generic.KeyValuePair%602> pro výčet místo <xref:System.Collections.DictionaryEntry>.  
+ Mnohé z obecných typů kolekcí jsou přímé analogické pro neobecné typy. <xref:System.Collections.Generic.Dictionary%602>je obecná verze <xref:System.Collections.Hashtable>; používá obecnou strukturu <xref:System.Collections.Generic.KeyValuePair%602> pro výčet místo <xref:System.Collections.DictionaryEntry>.  
   
- <xref:System.Collections.Generic.List%601> je obecný verze <xref:System.Collections.ArrayList>. Jsou Obecné <xref:System.Collections.Generic.Queue%601> a <xref:System.Collections.Generic.Stack%601> třídy, které odpovídají neobecné verze.  
+ <xref:System.Collections.Generic.List%601>je obecná verze <xref:System.Collections.ArrayList>. Existují obecné <xref:System.Collections.Generic.Queue%601> třídy a <xref:System.Collections.Generic.Stack%601> třídy, které odpovídají neobecným verzím.  
   
- Existují verze obecných a neobecných <xref:System.Collections.Generic.SortedList%602>. Obě verze jsou hybridních slovník a seznam. <xref:System.Collections.Generic.SortedDictionary%602> Obecné třídy je čistě slovníku a nemá neobecný protějšek.  
+ Existují obecné a neobecné verze <xref:System.Collections.Generic.SortedList%602>. Obě verze jsou hybridy slovníku a seznamu. <xref:System.Collections.Generic.SortedDictionary%602> Obecná třída je čistě slovník a nemá žádné neobecné protějšky.  
   
- <xref:System.Collections.Generic.LinkedList%601> Obecná třída je true propojeného seznamu. Nemá žádný neobecný protějšek.  
+ <xref:System.Collections.Generic.LinkedList%601> Obecná třída je skutečný propojený seznam. Nemá žádný obecný protějšek.  
   
 ### <a name="systemcollectionsobjectmodel"></a>System.Collections.ObjectModel  
- <xref:System.Collections.ObjectModel.Collection%601> Obecná třída poskytuje základní třídu pro odvození typů obecných kolekcí. <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> Třída poskytuje snadný způsob, jak vytvořit kolekci určenou jen pro čtení z libovolného typu, který implementuje <xref:System.Collections.Generic.IList%601> obecného rozhraní. <xref:System.Collections.ObjectModel.KeyedCollection%602> Obecná třída poskytuje způsob, jak ukládat objekty, které obsahují vlastní klíče.  
+ <xref:System.Collections.ObjectModel.Collection%601> Obecná třída poskytuje základní třídu pro odvození vlastních typů obecných kolekcí. Třída poskytuje snadný způsob, jak vytvořit kolekci jen pro čtení z libovolného typu, který <xref:System.Collections.Generic.IList%601> implementuje obecné rozhraní. <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> <xref:System.Collections.ObjectModel.KeyedCollection%602> Obecná třída poskytuje způsob, jak ukládat objekty, které obsahují vlastní klíče.  
   
-## <a name="other-generic-types"></a>Další obecné typy  
- <xref:System.Nullable%601> Obecná struktura umožňuje používat typy hodnot, jako by mohla být přiřazena `null`. To může být užitečné při práci s dotazy na databázi, kde může být chybějící pole, které obsahují typy hodnot. Parametr obecného typu může být libovolný typ hodnoty.  
+## <a name="other-generic-types"></a>Jiné obecné typy  
+ Obecná struktura umožňuje používat typy hodnot, jako by mohly být přiřazeny `null`. <xref:System.Nullable%601> To může být užitečné při práci s databázovými dotazy, kde mohou chybět pole, která obsahují hodnotové typy. Parametr obecného typu může být libovolný typ hodnoty.  
   
 > [!NOTE]
->  V jazyce C# a Visual Basic, není nutné používat <xref:System.Nullable%601> explicitně, protože jazyk má syntaxi pro typy připouštějící hodnotu Null. Zobrazit [typy s možnou hodnotou Null (C# Programming Guide)](../../csharp/programming-guide/nullable-types/index.md) a [typy s možnou hodnotou Null (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md). 
+> V C# a Visual Basic není nutné explicitně používat <xref:System.Nullable%601> , protože jazyk obsahuje syntaxi pro typy s možnou hodnotou null. V části [typy sC# možnou hodnotou null (Průvodce programováním)](../../csharp/programming-guide/nullable-types/index.md) a typy s možnou hodnotou [null (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) 
   
- <xref:System.ArraySegment%601> Obecná struktura poskytuje způsob, jak omezíte rozsah prvků v rámci založený na nule, jednorozměrné pole libovolného typu. Parametr obecného typu je typ prvků pole.  
+ <xref:System.ArraySegment%601> Obecná struktura poskytuje způsob, jak omezit rozsah prvků v rámci jednorozměrného pole libovolného typu, který je založený na nule. Parametr obecného typu je typ prvků pole.  
   
- <xref:System.EventHandler%601> Obecného delegáta se eliminuje potřeba deklarovat typ delegáta pro zpracování událostí, pokud událost následuje vzor zpracování událostí pomocí rozhraní .NET Framework. Předpokládejme například, že jste vytvořili `MyEventArgs` třídu odvozenou z <xref:System.EventArgs>, pro uchovávání dat pro událost. Událost je pak může deklarovat následujícím způsobem:  
+ <xref:System.EventHandler%601> Obecný delegát eliminuje nutnost deklarovat typ delegáta pro zpracování událostí, pokud událost následuje vzor zpracování událostí, který používá .NET Framework. Předpokládejme například, že jste vytvořili `MyEventArgs` třídu, která je odvozena z <xref:System.EventArgs>, pro uchovávání dat pro vaši událost. Následně můžete deklarovat událost následujícím způsobem:  
   
  [!code-cpp[Conceptual.Generics.Overview#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source2.cpp#7)]
  [!code-csharp[Conceptual.Generics.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source2.cs#7)]

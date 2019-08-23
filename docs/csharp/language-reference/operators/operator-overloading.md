@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 93e4845cab6735e74c711d720beeb06c8883a44b
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 5fcf9c774592c0fbcdcca951ef99c1a2efa6f05e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566877"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922298"
 ---
 # <a name="operator-overloading-c-reference"></a>Přetížení operátoru (C# reference)
 
-Uživatelsky definovaný typ může přetížit předdefinovaný C# operátor. To znamená, že typ může poskytnout vlastní implementaci operace, když je jeden nebo oba operandy daného typu. Oddíl [přetížené operátory](#overloadable-operators) ukazuje, které C# operátory mohou být přetíženy.
+Uživatelsky definovaný typ může přetížit předdefinovaný C# operátor. To znamená, že typ může poskytnout vlastní implementaci operace, když jeden nebo oba operandy jsou tohoto typu. Oddíl [přetížené operátory](#overloadable-operators) ukazuje, které C# operátory mohou být přetíženy.
 
 `operator` Použijte klíčové slovo k deklarování operátoru. Deklarace operátoru musí splňovat následující pravidla:
 

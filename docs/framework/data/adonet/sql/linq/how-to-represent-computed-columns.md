@@ -2,26 +2,26 @@
 title: 'Postupy: Znázornění vypočítaných sloupců'
 ms.date: 03/30/2017
 ms.assetid: 4025f1fd-9dfa-46c0-b04f-34e8bc7957a2
-ms.openlocfilehash: df72562b303e5b9a7c31334df06926f157b59b05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 01c3442448285893ebb476ed11889e073065d4d8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903863"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943535"
 ---
 # <a name="how-to-represent-computed-columns"></a>Postupy: Znázornění vypočítaných sloupců
-Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> vlastnosti <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k reprezentaci sloupec, jehož obsahem je výsledek výpočtu.  
+Použijte vlastnost u<xref:System.Data.Linq.Mapping.ColumnAttribute> atributu pro reprezentaci sloupce, jehož obsah je výsledkem výpočtu. <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]  
   
  Příklady kódu naleznete v tématu <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Počítané sloupce nepodporuje jako primární klíče.  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje počítané sloupce jako primární klíče.  
   
-### <a name="to-represent-a-computed-column"></a>K reprezentaci počítaný sloupec  
+### <a name="to-represent-a-computed-column"></a>Reprezentace vypočítaného sloupce  
   
-1. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+1. <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> Přidejte vlastnost<xref:System.Data.Linq.Mapping.ColumnAttribute> do atributu.  
   
-2. Přiřadit řetězcovou reprezentaci vzorec tak, aby <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> vlastnost.  
+2. Do <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A> vlastnosti přiřaďte řetězcovou reprezentaci vzorce.  
   
 ## <a name="see-also"></a>Viz také:
 

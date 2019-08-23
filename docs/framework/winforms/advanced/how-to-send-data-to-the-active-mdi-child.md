@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: f4399d8548eff76aaa4effae6da7239cd3b0284b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a7a2475891488d1fdd60f0db4a483c144a73f0d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966903"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947845"
 ---
 # <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného formuláře MDI
-Často, v rámci kontextu [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), budete muset odeslat data na aktivní podřízené okno, například když uživatel vloží dat ze schránky do aplikace MDI.  
+V rámci kontextu [aplikací rozhraní MDI (Multiple Document Interface)](multiple-document-interface-mdi-applications.md)je často potřeba odeslat data do aktivního podřízeného okna, například když uživatel vloží data ze schránky do aplikace MDI.  
   
 > [!NOTE]
->  Informace o ověření, které podřízené okno má fokus a odesílat její obsah do schránky, naleznete v tématu [určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md).  
+> Informace o ověření, které podřízené okno má fokus a který odesílá obsah do schránky, naleznete v tématu [určení aktivního podřízeného prvku MDI](how-to-determine-the-active-mdi-child.md).  
   
-### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>K odesílání dat na aktivní podřízené okno MDI ze schránky  
+### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Odeslání dat do aktivního podřízeného okna MDI ze schránky  
   
-1. V rámci metody zkopírujte text do schránky k aktivním ovládacím prvkem aktivní podřízený formulář.  
+1. V rámci metody zkopírujte text ve schránce do aktivního ovládacího prvku aktivního podřízeného formuláře.  
   
     > [!NOTE]
-    >  Tento příklad předpokládá, že je nadřazený formulář MDI (`Form1`), který má jeden nebo více podřízených oken MDI obsahující <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Další informace najdete v tématu [vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
+    > Tento příklad předpokládá, že existuje nadřazený formulář MDI (`Form1`), který obsahuje jeden nebo více podřízených oken MDI <xref:System.Windows.Forms.RichTextBox> obsahující ovládací prvek. Další informace najdete v tématu [Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -94,7 +94,7 @@ ms.locfileid: "61966903"
 ## <a name="see-also"></a>Viz také:
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
-- [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
-- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)
+- [Postupy: Vytvoření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
+- [Postupy: Vytvořit podřízené formuláře MDI](how-to-create-mdi-child-forms.md)
+- [Postupy: Zjistit aktivní podřízenou položku MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Uspořádat podřízené formuláře MDI](how-to-arrange-mdi-child-forms.md)

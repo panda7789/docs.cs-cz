@@ -2,18 +2,18 @@
 title: <udpDiscoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 1f485329-2771-43bc-88de-df8f2faa3bb7
-ms.openlocfilehash: 180763404ee9070e9ed6e5476d4568a0a018dcb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e6e567e8a657b4c1683ae4abfb14f96a0f272e4a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788151"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934583"
 ---
 # <a name="udpdiscoveryendpoint"></a>\<udpDiscoveryEndpoint>
-Tento prvek konfigurace definuje standardní koncový bod, který je předkonfigurován pro operace zjišťování přes UDP vazby vícesměrného vysílání. Tento koncový bod má pevnou kontrakt a podporuje dvě verze protokolu WS-Discovery. Kromě toho má pevnou vazbou UDP a adresu výchozí podle specifikace WS-Discovery (WS-Discovery dubna 2005 nebo V1.1 WS-Discovery).  
+Tento prvek konfigurace definuje standardní koncový bod, který je předem nakonfigurovaný pro operace zjišťování prostřednictvím vazby vícesměrového vysílání UDP. Tento koncový bod má pevný kontrakt a podporuje dvě verze protokolu WS-Discovery. Kromě toho má pevnou vazbu UDP a výchozí adresu uvedenou ve specifikacích WS-Discovery (WS-Discovery duben 2005 nebo WS-Discovery V 1.1).  
   
  \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,26 +38,26 @@ Tento prvek konfigurace definuje standardní koncový bod, který je předkonfig
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|discoveryMode|Řetězec, který určuje režim protokolu zjišťování. Platné hodnoty jsou "Ad hoc" a "Spravovaný". Ve spravovaném režimu protokol spoléhá na Proxy zjišťování, která slouží jako úložiště zjistitelné služby. Režimu ad hoc vyžaduje protokol UDP použití vícesměrového vysílání mechanismus pro vyhledání dostupných služeb. Tato hodnota je typu <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode>.|  
-|discoveryVersion|Řetězec, který určuje jeden ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.DiscoveryVersion>.|  
-|maxResponseDelay|Časový interval hodnotu, která určuje maximální hodnotu zpoždění protokolu zjišťování bude čekat před odesláním některé zprávy, jako je například sběru dat nebo vyřešit shoda.<br /><br /> Pokud se všechny ProbeMatches odesílají ve stejnou dobu, může docházet k síti storm. Chcete-li tomu zabránit, ProbeMatches odesílají pomocí náhodného zpoždění mezi každou ProbeMatch. Náhodné zpoždění je v rozsahu od 0 do hodnoty nastavené v tomto atributu. Pokud tento atribut je nastaven na hodnotu 0, jsou odesílány zprávy ProbeMatches v těsné smyčce bez jakéhokoli zpoždění. V opačném případě případě odesílají zprávy ProbeMatches s některé náhodné zpoždění nepřekročí celkový čas potřebný k odeslání všech zpráv ProbeMatches maxResponseDelay. Tato hodnota platí pouze pro služby, se používají klienti.|  
-|multicastAddress|Identifikátor Uri určující adresu vícesměrového vysílání pro odesílání a přijímání zpráv zjišťování. Výchozí hodnota je jako vyhovující specifikace protokolu adresu vícesměrového vysílání.|  
-|`name`|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atribut koncového bodu služby propojit s jeho konfigurace je standardní koncový bod.|  
+|discoveryMode|Řetězec, který určuje režim protokolu zjišťování. Platné hodnoty jsou "ad hoc" a "spravovaná". V spravovaném režimu protokol spoléhá na proxy zjišťování, které funguje jako úložiště zjistitelných služeb. Režim ad hoc vyžaduje, aby protokol používal k vyhledání dostupných služeb mechanismus vícesměrového vysílání UDP. Tato hodnota je typu <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode>.|  
+|discoveryVersion|Řetězec, který určuje jednu ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.DiscoveryVersion>.|  
+|maxResponseDelay|Hodnota TimeSpan, která určuje maximální hodnotu pro prodlevu, po kterou bude protokol zjišťování čekat před odesláním určitých zpráv, jako je například shoda sondy nebo vyřešení shody.<br /><br /> Pokud jsou všechny ProbeMatches odesílány ve stejnou dobu, může dojít k zaplavení sítě. Aby k tomu nedošlo, ProbeMatches se odesílají s náhodným zpožděním mezi jednotlivými ProbeMatch. Náhodné zpoždění je v rozsahu 0 až k hodnotě nastavené tímto atributem. Pokud je tento atribut nastaven na hodnotu 0, zprávy ProbeMatches se odesílají v těsné smyčce bez jakéhokoli zpoždění. V opačném případě se zprávy ProbeMatches odesílají s náhodným zpožděním tak, aby celková doba potřebná k odeslání všech ProbeMatches zpráv nepřekročila maxResponseDelay. Tato hodnota je relevantní jenom pro služby, které nepoužívají klienti.|  
+|multicastAddress|Identifikátor URI, který určuje adresu vícesměrového vysílání, která se má použít pro odesílání a příjem zpráv zjišťování. Výchozí hodnota je adresa vícesměrového vysílání, která odpovídá specifikaci protokolu.|  
+|`name`|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atributu koncového bodu služby k propojení standardního koncového bodu s jeho konfigurací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<udpTransportSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/udptransportsettings.md)|Kolekce nastavení, která vám umožní nakonfigurovat přenos UDP pro koncový bod protokolu UDP.|  
+|[\<udpTransportSettings>](udptransportsettings.md)|Kolekce nastavení, která umožňují nakonfigurovat přenos UDP pro koncový bod UDP.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
+|[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje služby přes UDP naslouchání pro zjišťování zprávy vícesměrového vysílání přenosu.  
+ Následující příklad ukazuje službu, která naslouchá zprávám zjišťování prostřednictvím přenosu vícesměrového vysílání UDP.  
   
 ```xml  
 <services>

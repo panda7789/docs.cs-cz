@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 499a64362f7a23f0c4c595469fceaa1612bf44dd
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: b9e1ba7e92614eab4d94fe953e5a0ae19611604f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927981"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložen v metadatech a má významný dopad na rozsah sestavení a použití aplikací. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název, jazykovou verzi, veřejný klíč a číslo verze sestavení. Tato možnost je často označována jako zobrazované jméno a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnosti.  
@@ -24,7 +24,7 @@ myTypes, Version=1.0.1234.0, Culture=en-US, PublicKeyToken=b77a5c561934e089c, Pr
 ```  
   
 > [!NOTE]
->  Do identity sestavení v .NET Framework verze 2,0 se přidá architektura procesoru, aby se povolily verze sestavení specifické pro procesor. Můžete vytvořit verze sestavení, jehož identita se liší pouze architekturou procesoru, například 32-bit a 64-bit specifických verzí procesoru. Architektura procesoru není pro silné názvy nutná. Další informace naleznete v tématu <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>.  
+> Do identity sestavení v .NET Framework verze 2,0 se přidá architektura procesoru, aby se povolily verze sestavení specifické pro procesor. Můžete vytvořit verze sestavení, jehož identita se liší pouze architekturou procesoru, například 32-bit a 64-bit specifických verzí procesoru. Architektura procesoru není pro silné názvy nutná. Další informace naleznete v tématu <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>.  
   
  V tomto příkladu plně kvalifikovaný název označuje, že `myTypes` sestavení má silný název s tokenem veřejného klíče, má hodnotu jazykové verze pro americkou angličtinu a má číslo verze 1.0.1234.0. Jeho architektura procesoru je "MSIL", což znamená, že bude za běhu (JIT) zkompilován do 32 bitového kódu nebo 64 kódu v závislosti na operačním systému a procesoru.  
   
@@ -45,7 +45,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ```  
   
 > [!NOTE]
->  Modul runtime považuje názvy sestavení za nerozlišování velkých a malých písmen při vytváření vazby na sestavení, ale zachová bez ohledu na případ použití v názvu sestavení. Několik nástrojů v Windows SDK zpracovává názvy sestavení při rozlišování velkých a malých písmen. Pro dosažení nejlepších výsledků spravujte názvy sestavení, jako by se jednalo o velká a malá písmena.  
+> Modul runtime považuje názvy sestavení za nerozlišování velkých a malých písmen při vytváření vazby na sestavení, ale zachová bez ohledu na případ použití v názvu sestavení. Několik nástrojů v Windows SDK zpracovává názvy sestavení při rozlišování velkých a malých písmen. Pro dosažení nejlepších výsledků spravujte názvy sestavení, jako by se jednalo o velká a malá písmena.  
   
 ## <a name="naming-application-components"></a>Pojmenovávání součástí aplikace  
  Modul runtime při určování identity sestavení nebere v úvahu název souboru. Identita sestavení, která se skládá z názvu sestavení, verze, jazykové verze a silného názvu, musí být pro modul runtime nejasná.  
@@ -55,7 +55,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
  Chcete-li se tomuto problému vyhnout, ujistěte se, že sestavení, která tvoří vaši aplikaci, nemají stejný název sestavení nebo umísťují sestavení se stejným názvem do různých adresářů.  
   
 > [!NOTE]
->  Pokud zadáte sestavení se silným názvem do globální mezipaměti sestavení (GAC), název souboru sestavení musí odpovídat názvu sestavení (bez přípony názvu souboru, například. exe nebo. dll). Například pokud název souboru sestavení je myAssembly. dll, název sestavení musí být myAssembly. Soukromá sestavení nasazená pouze v kořenovém adresáři aplikace mohou mít název sestavení, který se liší od názvu souboru.  
+> Pokud zadáte sestavení se silným názvem do globální mezipaměti sestavení (GAC), název souboru sestavení musí odpovídat názvu sestavení (bez přípony názvu souboru, například. exe nebo. dll). Například pokud název souboru sestavení je myAssembly. dll, název sestavení musí být myAssembly. Soukromá sestavení nasazená pouze v kořenovém adresáři aplikace mohou mít název sestavení, který se liší od názvu souboru.  
   
 ## <a name="see-also"></a>Viz také:
 

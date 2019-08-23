@@ -1,28 +1,28 @@
 ---
-title: <state> služby WCF, <workflowInstanceQuery>
+title: <state>služby WCF,<workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
-ms.openlocfilehash: 1615c83ffe0735d9e55e822f2651da41d02b1610
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 99387a8f60e96beb2ec7706d9abf4bb6ae84b868
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757960"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938211"
 ---
-# <a name="state-of-wcf-workflowinstancequery"></a>\<Stav > služby WCF, \<workflowInstanceQuery >
+# <a name="state-of-wcf-workflowinstancequery"></a>\<Stavová > služby WCF \<, workflowInstanceQuery >
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  
   
- Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
 \<system.serviceModel>  
 \<sledování >  
 \<profiles>  
-\<trackingProfile>  
-\<pracovní postup >  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
 \<workflowInstanceQueries>  
 \<workflowInstanceQuery>  
-\<states>  
-\<Stav >  
+\<stavy >  
+\<> stavu  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,7 +68,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 Vrácené záznamy jsou filtrovány státy v této kolekci.  
   
-Stav možné hodnoty jsou popsány v následující tabulce:
+Hodnoty možných stavů jsou popsány v následující tabulce:
   
 |Stav|Popis|  
 |-----------|-----------------|  
@@ -105,5 +105,5 @@ Následující konfigurace přihlásí na úrovni instance sledování záznamů
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

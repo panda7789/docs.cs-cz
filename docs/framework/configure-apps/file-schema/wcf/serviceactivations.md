@@ -2,16 +2,16 @@
 title: <serviceActivations>
 ms.date: 03/30/2017
 ms.assetid: 97e665b6-1c51-410b-928a-9bb42c954ddb
-ms.openlocfilehash: 7506cce61966a4a4650ff591cd6106dfd4a33b67
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb7c699612ef12aae39aaeadaf170d0e8f2553cd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670362"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936445"
 ---
 # <a name="serviceactivations"></a>\<serviceActivations>
 
-Konfigurace element, který slouží k přidání nastavení, jenž definuje nastavení aktivace virtuální služby, která je namapována na daný typ služby Windows Communication Foundation (WCF). To umožňuje aktivovat službám hostovaným ve WAS / IIS bez souboru .svc.
+Prvek konfigurace, který umožňuje přidat nastavení definující nastavení aktivace virtuální služby, která jsou namapována na vaše typy služeb Windows Communication Foundation (WCF). Díky tomu je možné aktivovat služby hostované v rámci služby/IIS bez souboru. svc.
 
 \<system.ServiceModel>\
 \<serviceHostingEnvironment>\
@@ -40,17 +40,17 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-serviceactivations.md)|Přidá prvek konfigurace, který určuje aktivace aplikace služby.|
+|[\<add>](add-of-serviceactivations.md)|Přidá prvek konfigurace, který určuje aktivaci aplikace služby.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<serviceHostingEnvironment>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|Definuje typ, který vytvoří instanci hostitelským prostředím služby pro konkrétní přenos.|
+|[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Definuje typ, který hostující prostředí služby vytvoří pro konkrétní přenos.|
 
 ## <a name="remarks"></a>Poznámky
 
-Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v souboru web.config.
+Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v souboru Web. config.
 
 ```xml
 <configuration>
@@ -64,11 +64,11 @@ Následující příklad ukazuje, jak nakonfigurovat nastavení aktivace v soubo
 </configuration>
 ```
 
-Pomocí této konfigurace, můžete aktivovat GreetingService bez použití souboru .svc.
+Pomocí této konfigurace můžete aktivovat GreetingService bez použití souboru. svc.
 
-Všimněte si, že `<serviceHostingEnvironment>` je konfigurace na úrovni aplikace. Je nutné umístit `web.config` obsahující konfiguraci v kořenu virtuální aplikace. Kromě toho `serviceHostingEnvironment` machineToApplication odvoditelný oddíl. Když si zaregistrujete jedinou službou v kořenové složce na počítači, každá služba aplikace zdědí tuto službu.
+Všimněte si `<serviceHostingEnvironment>` , že je konfigurace na úrovni aplikace. Je nutné umístit `web.config` konfiguraci obsahující konfiguraci do kořenového adresáře virtuální aplikace. Kromě toho `serviceHostingEnvironment` je machineToApplication dědičná část. Pokud v kořenovém adresáři počítače zaregistrujete jednu službu, bude tato služba dědit všechny služby v aplikaci.
 
-Aktivace podle konfigurace podporuje aktivaci přes protokol http a jiným protokolem než http. Vyžaduje adresu relativeAddress, tj. .svc, XOML nebo .xamlx s rozšířeními. Vlastní rozšíření můžete namapovat buildProviders ví, která vám pak umožní k aktivaci služby přes jakékoli rozšíření. Při konfliktu `<serviceActivations>` části přepíše .svc registrace.
+Aktivace založená na konfiguraci podporuje aktivaci prostřednictvím protokolu HTTP i jiného typu než HTTP. Vyžaduje rozšíření v adresa relativeAddress, tj. svc,. XOML nebo. xamlx. Můžete namapovat vlastní rozšíření na know buildProviders, které vám pak umožní aktivovat službu přes jakékoli rozšíření. Po konfliktu `<serviceActivations>` oddíl přepíše registraci. svc.
 
 ## <a name="see-also"></a>Viz také:
 

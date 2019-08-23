@@ -2,20 +2,20 @@
 title: <sslStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 430a378b-a742-4858-8a12-9f9b235fd627
-ms.openlocfilehash: 67ec30b2bf3c322b949700789ce942e4281b77a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ed87adfb3963513602844fc69afce8f7994fa8e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757986"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932426"
 ---
 # <a name="sslstreamsecurity"></a>\<sslStreamSecurity>
-Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomocí datového proudu protokolu SSL.  
+Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomocí datového proudu SSL.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<sslStreamSecurity>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,8 +32,8 @@ Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomoc�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|requireClientCertificate|Logická hodnota, která určuje, jestli je certifikát klienta pro tuto vazbu vyžadován. Výchozí hodnota je `false`.|  
-|sslProtocols|SslProtocols příznak hodnotu výčtu, která určuje, které SslProtocols jsou podporovány. Výchozí hodnota je Ssl3&#124;Tls&#124;Tls11&#124;Tls12.|  
+|requireClientCertificate|Logická hodnota určující, zda je klientský certifikát pro tuto vazbu vyžadován. Výchozí hodnota je `false`.|  
+|sslProtocols|Hodnota příznaku výčtu SslProtocols určující, která určuje, které SslProtocols určující jsou podporovány. Výchozí hodnota je SSL3&#124;TLS&#124;Tls11&#124;Tls12.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,14 +42,14 @@ Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomoc�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

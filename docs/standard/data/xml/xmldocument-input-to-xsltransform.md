@@ -8,25 +8,25 @@ dev_langs:
 ms.assetid: 97115892-410a-4657-ab47-1e14dfba73f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c80cb772f280c064e420e83a99b5f7ce41fe05e3
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 60b9b66ea9b1c74dc34e2e99dcf651f9dac1725e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170821"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915974"
 ---
 # <a name="xmldocument-input-to-xsltransform"></a>Vstup XmlDocument do XslTransform
-<xref:System.Xml.XmlDocument> Třída poskytuje možnosti úprav pro dokument XML. Pokud XML se musí upravit nebo změnit před odesláním do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody načtení XML do <xref:System.Xml.XmlDocument>, upravit ji a odeslat ho do <xref:System.Xml.Xsl.XslTransform>.  
+<xref:System.Xml.XmlDocument> Třída poskytuje možnosti úprav dokumentu XML. Pokud je nutné XML upravit nebo upravit před odesláním do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody, načtěte XML <xref:System.Xml.XmlDocument>do, upravte jej a <xref:System.Xml.Xsl.XslTransform>odešlete do.  
   
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- <xref:System.Xml.XmlDocument> Implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní, tak může být předán dokumentu <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda po dokončení úprav.  
+ Implementuje rozhraní, aby bylo <xref:System.Xml.Xsl.XslTransform.Transform%2A> možné dokument předat metodě po úpravě. <xref:System.Xml.XPath.IXPathNavigable> <xref:System.Xml.XmlDocument>  
   
- Z důvodu úprav schopnost <xref:System.Xml.XmlDocument>s použitím <xref:System.Xml.XmlDocument> třídy jako vstup pro transformaci je nižší než při použití <xref:System.Xml.XPath.XPathDocument> pro rozšiřitelné jazyk šablony stylů transformace XSLT () transformaci jako <xref:System.Xml.XPath.XPathDocument> je optimalizované pro dotazy jazyk XML Path (XPath) z důvodu interní úložiště.  
+ Vzhledem k možnosti <xref:System.Xml.XmlDocument>úprav <xref:System.Xml.XmlDocument> třídy <xref:System.Xml.XPath.XPathDocument> je použití třídy jako vstupu na transformaci pomalejší než použití pro transformace XSLT (Extensible Stylesheet Language), protože <xref:System.Xml.XPath.XPathDocument> je Optimalizováno pro dotazy jazyka XML Path (XPath) z důvodu interního úložiště.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje jak <xref:System.Xml.XmlDocument> mohou být poskytnuty <xref:System.Xml.Xsl.XslTransform>, s výstupem odesílat <xref:System.Xml.XmlReader>.  
+ Následující příklad kódu ukazuje <xref:System.Xml.XmlDocument> <xref:System.Xml.Xsl.XslTransform>, jak lze dodávat do, s výstupem odeslaným do <xref:System.Xml.XmlReader>.  
   
 ```vb  
 Dim doc as XmlDocument = new XmlDocument()  

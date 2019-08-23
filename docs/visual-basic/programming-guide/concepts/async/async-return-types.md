@@ -2,25 +2,25 @@
 title: Asynchronní návratové typy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 07890291-ee72-42d3-932a-fa4d312f2c60
-ms.openlocfilehash: 227a187f7046d128a7170b272f90f77cfaac61c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: ef059eca9b97ed0c7c4fdf5a82389eff816d53b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022100"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958224"
 ---
 # <a name="async-return-types-visual-basic"></a>Asynchronní návratové typy (Visual Basic)
-Asynchronní metody mají tři možné návratové typy: <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>a void. V jazyce Visual Basic je návratový typ void napsán jako [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) postup. Další informace o metodách async naleznete v tématu [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
+Asynchronní metody mají tři možné návratové typy <xref:System.Threading.Tasks.Task%601>: <xref:System.Threading.Tasks.Task>, a void. V Visual Basic typ vrácené hodnoty void je zapsán jako procedura [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) . Další informace o metodách async naleznete v tématu [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
   
- Každý návratový typ je zkontrolován v jedné z následujících částí a najdete úplný příklad, který používá všechny tři typy na konci tohoto tématu.  
+ Každý návratový typ je zkontrolován v jednom z následujících sekcí a můžete najít úplný příklad, který používá všechny tři typy na konci tématu.  
   
 > [!NOTE]
->  Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
+> Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.  
   
-## <a name="BKMK_TaskTReturnType"></a> Návratový typ Task(T)  
- <xref:System.Threading.Tasks.Task%601> Typ vrácení se používá pro asynchronní metodu, která obsahuje [vrátit](../../../../visual-basic/language-reference/statements/return-statement.md) příkazem, ve kterém je operand typu `TResult`.  
+## <a name="BKMK_TaskTReturnType"></a>Návratový typ úlohy (T)  
+ Návratový typ se používá pro asynchronní metodu, která obsahuje příkaz [return](../../../../visual-basic/language-reference/statements/return-statement.md) , ve kterém je operand typu `TResult`. <xref:System.Threading.Tasks.Task%601>  
   
- V následujícím příkladu `TaskOfT_MethodAsync` asynchronní metoda obsahuje příkaz return, který vrátí celé číslo. Proto deklarace metody musíte zadat návratový typ `Task(Of Integer)`.  
+ V následujícím příkladu `TaskOfT_MethodAsync` asynchronní metoda obsahuje příkaz return, který vrací celé číslo. Proto deklarace metody musí specifikovat návratový typ `Task(Of Integer)`.  
   
 ```vb  
 ' TASK(OF T) EXAMPLE  
@@ -45,19 +45,19 @@ Async Function TaskOfT_MethodAsync() As Task(Of Integer)
 End Function  
 ```  
   
- Když `TaskOfT_MethodAsync` je volána z v rámci výrazu await výraz await získá celočíselnou hodnota (hodnotu `leisureHours`), která je uložena v úkolu, který je vrácený `TaskOfT_MethodAsync`. Další informace o výrazech await naleznete [operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md).  
+ Když `TaskOfT_MethodAsync` je volána z výrazu await, výraz await načte celočíselnou hodnotu ( `leisureHours`hodnotu), která je uložena v `TaskOfT_MethodAsync`úkolu, který vrací. Další informace o výrazech await naleznete v tématu [operátor await](../../../../visual-basic/language-reference/operators/await-operator.md).  
   
- Následující kód volá a čeká metodu `TaskOfT_MethodAsync`. Výsledek je přiřazen k `result1` proměnné.  
+ Následující kód volá a očekává metodu `TaskOfT_MethodAsync`. Výsledek je přiřazen `result1` proměnné.  
   
 ```vb  
 ' Call and await the Task(Of T)-returning async method in the same statement.  
 Dim result1 As Integer = Await TaskOfT_MethodAsync()  
 ```  
   
- Můžete lépe pochopit, jak to probíhá oddělením volání `TaskOfT_MethodAsync` od aplikace `Await`, jak ukazuje následující kód. Volání metody `TaskOfT_MethodAsync` , které není okamžitě očekáváno, vrátí `Task(Of Integer)`, dle očekávání od deklarace metody. Úkol je přidělen `integerTask` proměnné v příkladu. Protože `integerTask` je <xref:System.Threading.Tasks.Task%601>, obsahuje <xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. V tomto případě TResult představuje typ integer. Když `Await` platí pro `integerTask`, výraz await se vyhodnocuje na obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost `integerTask`. Je hodnota přiřazená `result2` proměnné.  
+ Můžete lépe porozumět tomu `TaskOfT_MethodAsync` `Await`, jak se to stane, oddělením volání z aplikace, jak ukazuje následující kód. Volání metody `TaskOfT_MethodAsync` , která není okamžitě očekávána `Task(Of Integer)`, vrátí, jak byste očekávali od deklarace metody. Úkol je přiřazen k `integerTask` proměnné v příkladu. Protože `integerTask` je,obsahuje<xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. <xref:System.Threading.Tasks.Task%601> V tomto případě TResult představuje typ Integer. Při `Await` použití na `integerTask`je výraz await vyhodnocen jako `integerTask`obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti. Hodnota je přiřazena `result2` proměnné.  
   
 > [!WARNING]
->  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastností je vlastnost blokování. Pokud se pokusíte o přístup k ní před dokončením její úlohy, blokovaný vláknem, které je právě aktivní až do dokončení úlohy a hodnota je k dispozici. Ve většině případů byste měli přistupovat k hodnotě pomocí `Await` namísto přímého přístupu.  
+>  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnost je vlastnost blokování. Pokud se pokusíte o přístup k tomuto úkolu před jeho dokončením, bude vlákno, které je aktuálně aktivní, blokováno, dokud se úloha nedokončí a hodnota nebude k dispozici. Ve většině případů byste měli k hodnotě přistupovat pomocí `Await` místo přímého přístupu k vlastnosti.  
   
 ```vb  
 ' Call and await in separate statements.  
@@ -69,7 +69,7 @@ textBox1.Text &= String.Format("Application can continue working while the Task(
 Dim result2 As Integer = Await integerTask  
 ```  
   
- Zobrazení příkazů v následujícím kódu ověřte, že hodnoty `result1` proměnné, `result2` proměnnou a `Result` vlastnosti jsou stejné. Mějte na paměti, `Result` vlastností je vlastnost blokování a by neměl být přístupný, než bylo očekáváno úkolem.  
+ Příkazy zobrazení v následujícím kódu ověřují, zda hodnoty `result1` proměnné `result2` , proměnné a `Result` vlastnosti jsou stejné. Mějte na `Result` paměti, že vlastnost je blokující vlastnost a neměla by k ní být přistupovaná před tím, než se její úloha očekává.  
   
 ```vb  
 ' Display the values of the result1 variable, the result2 variable, and  
@@ -79,10 +79,10 @@ textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, resu
 textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)  
 ```  
   
-## <a name="BKMK_TaskReturnType"></a> Návratový typ úlohy  
- Asynchronní metody, které neobsahují příkaz return nebo obsahující příkaz return, který nevrací operand obvykle mají návratový typ <xref:System.Threading.Tasks.Task>. Tyto metody by měly [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) postupy, pokud byly napsány, aby běžely synchronně. Pokud používáte `Task` návratový typ pro asynchronní metodu, volající metoda můžete použít `Await` operátor k pozastavení dokončení volajícího až do dokončení volané asynchronní metody.  
+## <a name="BKMK_TaskReturnType"></a>Návratový typ úlohy  
+ Asynchronní metody, které neobsahují příkaz return nebo obsahující příkaz return, který nevrací operand, obvykle mají návratový typ <xref:System.Threading.Tasks.Task>. Tyto metody by byly procedury [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) , pokud byly zapsány pro spuštění synchronně. Použijete- `Task` li návratový typ pro asynchronní metodu, volající metoda může `Await` použít operátor pro pozastavení dokončování volajícího až do dokončení volané asynchronní metody.  
   
- V následujícím příkladu asynchronní metoda `Task_MethodAsync` neobsahuje příkaz return. Tedy zadáte návratový typ `Task` pro metodu, která umožňuje `Task_MethodAsync` do ní použít operátor await. Definice `Task` neobsahuje `Result` vlastnost k ukládání vrácené hodnoty.  
+ V následujícím příkladu asynchronní metoda `Task_MethodAsync` neobsahuje příkaz return. Proto zadáte návratový typ `Task` pro metodu, která umožňuje `Task_MethodAsync` očekávat. Definice `Task` typu`Result` nezahrnuje vlastnost pro uložení návratové hodnoty.  
   
 ```vb  
 ' TASK EXAMPLE  
@@ -98,18 +98,18 @@ Async Function Task_MethodAsync() As Task
 End Function  
 ```  
   
- `Task_MethodAsync` je volán a očekáván pomocí příkazu await namísto výrazu await, podobného volání příkazu pro synchronní `Sub` nebo metody vracející hodnotu void. Použití `Await` operátor v tomto případě nevytvoří hodnotu.  
+ `Task_MethodAsync`se volá a očekává se pomocí příkazu await namísto výrazu await, podobně jako volání příkazu pro synchronní `Sub` nebo návratovou metodu typu void. Použití `Await` operátoru v tomto případě nevytvoří hodnotu.  
   
- Následující kód volá a čeká metodu `Task_MethodAsync`.  
+ Následující kód volá a očekává metodu `Task_MethodAsync`.  
   
 ```vb  
 ' Call and await the Task-returning async method in the same statement.  
 Await Task_MethodAsync()  
 ```  
   
- Stejně jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit volání `Task_MethodAsync` od aplikace `Await` operátoru, jak ukazuje následující kód. Nezapomeňte však, že `Task` nemá `Result` vlastnost a že se při použití operátoru await nevytvoří žádná hodnota `Task`.  
+ Jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit `Task_MethodAsync` volání `Await` od aplikace operátora, jak ukazuje následující kód. Mějte ale na paměti, `Task` že `Result` vlastnost neobsahuje vlastnost a že při použití operátoru await na objekt `Task`není vyprodukována žádná hodnota.  
   
- Následující kód oddělí volání `Task_MethodAsync` z čekajícího na úkol, který `Task_MethodAsync` vrátí.  
+ Následující kód odděluje volání `Task_MethodAsync` z čekání na úkol, který `Task_MethodAsync` vrací.  
   
 ```vb  
 ' Call and await in separate statements.  
@@ -121,12 +121,12 @@ textBox1.Text &= String.Format(vbCrLf & "Application can continue working while 
 Await simpleTask  
 ```  
   
-## <a name="BKMK_VoidReturnType"></a> Návratový typ void  
- Primární použití `Sub` postupy je v obslužných rutinách událostí, kde neexistuje žádný návratový typ (označované jako návratový typ void v jiných jazycích). Vrácení void lze použít také k přepsání metod vracejících void nebo pro metody, které vykonávají činnosti, které lze označit jako "vypal a zapomeň." Nicméně, měli byste vrátit `Task` kdykoli je to možné, protože asynchronní metody vracející typ void nemůže být očekávána. Jakýkoli volající této metody musí být schopen pokračovat v dokončení bez čekání na dokončení volané asynchronní metody a volající musí být nezávislé na všech hodnotách nebo výjimkách, které generuje asynchronní metoda.  
+## <a name="BKMK_VoidReturnType"></a>Návratový typ void  
+ Primární použití `Sub` procedur je v obslužných rutinách událostí, kde neexistuje návratový typ (v jiných jazycích se označuje jako návratový typ void). Návratový typ void také lze použít k přepsání metod vracejících anulování nebo pro metody, které provádějí aktivity, které mohou být zařazeny do kategorie "oheň a zapomenout". Měli byste však vracet `Task` , kdykoli je to možné, protože asynchronní metoda vracející typ void nemůže být očekávána. Každý volající takové metody musí být schopný pokračovat v dokončování bez čekání na dokončení volané asynchronní metody a volající musí být nezávislý na všech hodnotách nebo výjimkách, které asynchronní metoda generuje.  
   
- Volající asynchronní metody vracející typ void nemůže zachytit výjimky, které jsou vyvolány z metody a takové neošetřené výjimky mohou způsobit selhání aplikace. Pokud dojde k výjimce v asynchronní metodě, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimka je uložen v rámci vrácené úlohy a znovu vyvolána při očekávání úkolu. Proto se ujistěte, že asynchronní metody, které mohou způsobit výjimku má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že volání metody jsou očekávaná.  
+ Volající asynchronní metody vracející hodnotu void nemůže zachytit výjimky, které jsou vyvolány z metody, a tyto neošetřené výjimky pravděpodobně způsobí selhání aplikace. Pokud dojde k výjimce v asynchronní metodě, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimka je uložena v vrácené úloze a znovu vyvolána, když je úloha očekávána. Proto se ujistěte, že jakákoliv asynchronní metoda, která může vyvolat výjimku, má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že volání metody jsou očekávána.  
   
- Další informace o tom, jak zachytávat výjimky v asynchronních metodách, naleznete v tématu [zkuste... Catch... Příkaz finally](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Další informace o tom, jak zachytit výjimky v asynchronních metodách, naleznete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
  Následující kód definuje asynchronní obslužnou rutinu události.  
   
@@ -145,10 +145,10 @@ Async Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.
 End Sub  
 ```  
   
-## <a name="BKMK_Example"></a> Kompletní příklad  
- Následující projekt Windows Presentation Foundation (WPF) obsahuje příklady kódů z tohoto tématu.  
+## <a name="BKMK_Example"></a>Kompletní příklad  
+ Následující projekt Windows Presentation Foundation (WPF) obsahuje příklady kódu z tohoto tématu.  
   
- Spusťte projekt, proveďte následující kroky:  
+ Chcete-li spustit projekt, proveďte následující kroky:  
   
 1. Spusťte Visual Studio.  
   
@@ -156,17 +156,17 @@ End Sub
   
      **Nový projekt** zobrazí se dialogové okno.  
   
-3. V **nainstalováno**, **šablony** kategorie, zvolte **jazyka Visual Basic**a klikněte na tlačítko **Windows**. Zvolte **aplikace WPF** ze seznamu typů projektů.  
+3. V kategorii **nainstalováno**, **šablony** zvolte možnost **Visual Basic**a pak zvolte možnost **Windows**. V seznamu typů projektů vyberte možnost **aplikace WPF** .  
   
-4. Zadejte `AsyncReturnTypes` jako název projektu a klikněte na tlačítko **OK** tlačítko.  
+4. Jako `AsyncReturnTypes` název projektu zadejte a pak klikněte na tlačítko **OK** .  
   
-     Nový projekt se zobrazí v **Průzkumníka řešení**.  
+     Nový projekt se zobrazí v **Průzkumník řešení**.  
   
-5. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+5. V editoru Visual Studio Code klikněte na kartu **MainWindow. XAML** .  
   
-     Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **otevřete**.  
+     Pokud karta není viditelná, otevřete místní nabídku pro MainWindow. XAML v **Průzkumník řešení**a pak zvolte **otevřít**.  
   
-6. V **XAML** okno soubor mainwindow.XAML nahraďte kód následujícím kódem.  
+6. V okně **XAML** souboru MainWindow. xaml nahraďte kód následujícím kódem.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -181,11 +181,11 @@ End Sub
     </Window>  
     ```  
   
-     Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** okna souboru mainwindow.XAML.  
+     Jednoduché okno obsahující textové pole a tlačítko se zobrazí v okně **Návrh** souboru MainWindow. XAML.  
   
-7. V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
+7. V **Průzkumník řešení**otevřete místní nabídku pro MainWindow. XAML. vb a pak zvolte **Zobrazit kód**.  
   
-8. Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
+8. Nahraďte kód v souboru MainWindow. XAML. vb následujícím kódem.  
   
     ```vb  
     Class MainWindow  
@@ -272,9 +272,9 @@ End Sub
     End Class  
     ```  
   
-9. Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
+9. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .  
   
-     By se zobrazit následující výstup.  
+     Měl by se zobrazit následující výstup.  
   
     ```  
     Application can continue working while the Task<T> runs. . . .   
@@ -296,6 +296,6 @@ End Sub
 
 - <xref:System.Threading.Tasks.Task.FromResult%2A>
 - [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
+- [Řízení toku v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)
 - [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)

@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 71d5bbf7eb2df4065362031f30840635062a9298
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5dd2bfa0884eac6864630bf393e232cf45bd1c99
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583505"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938202"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
-Více sad aktivní výsledků (MARS) je funkce, která funguje se serverem SQL Server, aby bylo možné spouštění více dávek na jedno připojení. Pokud MARS je povolené pro použití se serverem SQL Server, přidá každý objekt příkazu použít relaci připojení.  
+Několik aktivních sad výsledků dotazu (MARS) je funkce, která funguje s SQL Server, aby bylo možné spouštět více dávek v jednom připojení. Když je u služby MARS povolený použití s SQL Server, přidá každý objekt příkazu k připojení relaci.  
   
 > [!NOTE]
->  Jedné relace MARS otevře pro MARS použít několik logických připojení a pak jeden logický připojení pro každý aktivní příkaz.  
+> Jedna relace MARS otevře jedno logické připojení pro službu MARS, které bude používat, a potom jedno logické připojení pro každý aktivní příkaz.  
   
 ## <a name="enabling-and-disabling-mars-in-the-connection-string"></a>Povolení a zakázání MARS v připojovacím řetězci  
   
 > [!NOTE]
->  Následující připojovací řetězce použitím této ukázky **AdventureWorks** databáze je součástí systému SQL Server. Připojovací řetězce k dispozici se předpokládá, že je databáze nainstalována na serveru s názvem MSSQL1. Úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
+> Následující připojovací řetězce používají ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Zadané připojovací řetězce předpokládají, že je databáze nainstalována na serveru s názvem MSSQL1. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
   
- Ve výchozím nastavení je zakázána funkce MARS. To se dá nastavit tak, že přidáte "MultipleActiveResultSets = True" spárovat – klíčové slovo připojovacího řetězce. Jediná platná hodnota pro povolování relace MARS je "True". Následující příklad ukazuje, jak se připojit k instanci systému SQL Server a jak určit, že by měla být povolená MARS.  
+ Funkce MARS je ve výchozím nastavení zakázána. Můžete ji povolit přidáním dvojice klíčového slova "MultipleActiveResultSets = True" do připojovacího řetězce. Jedinou platnou hodnotou pro povolení služby MARS je "true". Následující příklad ukazuje, jak se připojit k instanci SQL Server a jak určit, že má být povolen MARS.  
   
 ```vb  
 Dim connectionString As String = "Data Source=MSSQL1;" & _  
@@ -37,7 +37,7 @@ string connectionString = "Data Source=MSSQL1;" +
     "MultipleActiveResultSets=True";  
 ```  
   
- MARS můžete zakázat tak, že přidáte "MultipleActiveResultSets = False" spárovat – klíčové slovo připojovacího řetězce. "False" je jedinou platnou hodnotou pro zakázání MARS. Následující připojovací řetězec ukazuje, jak zakázat MARS.  
+ MARS můžete zakázat přidáním dvojice klíčového slova "MultipleActiveResultSets = false" do připojovacího řetězce. Jedinou platnou hodnotou pro zakázání služby MARS je "false". Následující připojovací řetězec ukazuje, jak zakázat MARS.  
   
 ```vb  
 Dim connectionString As String = "Data Source=MSSQL1;" & _  
@@ -51,67 +51,67 @@ string connectionString = "Data Source=MSSQL1;" +
     "MultipleActiveResultSets=False";  
 ```  
   
-## <a name="special-considerations-when-using-mars"></a>Zvláštní aspekty při používání MARS  
- Obecně platí stávající aplikace nemusí změny použít pro připojení MARS. Ale pokud chcete používat funkce MARS ve svých aplikacích, měli byste porozumět následující zvláštní požadavky.  
+## <a name="special-considerations-when-using-mars"></a>Zvláštní důležité důvody při použití MARS  
+ Obecně platí, že stávající aplikace by neměly potřebovat úpravu pro použití připojení s povoleným MARS. Pokud ale chcete ve svých aplikacích používat funkce MARS, měli byste se seznámit s následujícími zvláštními požadavky.  
   
-### <a name="statement-interleaving"></a>Prokládání – příkaz  
- Operace MARS synchronnímu provádění na serveru. Příkaz prokládání příkazů SELECT a BULK INSERT je povolen. Však jazyk pro manipulaci dat (DML) a data (příkazy DDL definition language) spusťte atomicky. Všechny příkazy pokusu o provedení při provádění atomických batch jsou zablokované. Paralelní provádění na serveru není funkce MARS.  
+### <a name="statement-interleaving"></a>Vynechávání příkazu  
+ Operace MARS se na serveru spouštějí synchronně. Příkaz, který prochází příkazy SELECT a BULK INSERT, je povolen. Nicméně příkazy jazyka DML (data Language) a DDL (Data Definition Language) se provádějí atomicky. Jakékoli příkazy, které se pokoušejí provést během provádění atomické dávky, jsou blokované. Paralelní provádění na serveru není funkce MARS.  
   
- Pokud jsou dvě dávky odeslané v rámci připojení MARS, jeden z nich obsahující příkaz SELECT, druhý příkaz DML, který obsahuje DML můžete zahájit provádění v rámci spuštění příkazu SELECT. Nicméně příkaz DML musí být spuštěny pro dokončení před příkaz SELECT lze dosáhnout pokroku. Pokud oba příkazy běží v rámci stejné transakce, všechny změny provedené příkazem DML po zahájení provádění příkazu SELECT nejsou viditelné pro operace čtení.  
+ Pokud jsou dvě dávky odesílány v rámci připojení MARS, jeden z nich obsahující příkaz SELECT, druhý obsahující příkaz DML, může DML zahájit provádění během provádění příkazu SELECT. Nicméně příkaz DML musí být spuštěn, aby bylo dokončeno, než může provést příkaz SELECT. Pokud jsou oba příkazy spuštěny v rámci stejné transakce, všechny změny provedené příkazem DML po spuštění příkazu SELECT nejsou viditelné pro operaci čtení.  
   
- Příkaz WAITFOR uvnitř příkazu SELECT transakci nevydává, zatímco čeká, to znamená, dokud je vytvořen na prvním řádku. Z toho vyplývá, že žádné další dávky můžete spustit v rámci stejného připojení při čekání příkazu WAITFOR.  
+ Příkaz WAITFOR uvnitř příkazu SELECT nevrací transakci, pokud čeká na vyčerpání, to znamená až do vytvoření prvního řádku. To znamená, že žádné další dávky nemohou být spuštěny v rámci stejného připojení, zatímco příkaz WAITFOR čeká.  
   
 ### <a name="mars-session-cache"></a>Mezipaměť relace MARS  
- Při otevření připojení s MARS povolena, se vytvoří logickou relaci, přidává režijní náklady na další. Aby se minimalizovala režijní náklady a zvýšit výkon, **SqlClient** ukládá do mezipaměti v rámci určitého připojení relace MARS. Mezipaměť obsahuje maximálně 10 relace MARS. Tato hodnota není měnitelné uživatele. Pokud dosáhnete limitu relace, je vytvořena nová relace – není generována chyba. Mezipaměť a relace jsou v něm obsažené se za připojení. že se mezi připojení nesdílí. Když se uvolní relace, je vrácen do fondu pokud bylo dosaženo horního limitu fondu. Pokud fond mezipaměti je plná, není zavřena relace. Relace MARS, nevyprší platnost. Jsou pouze vyčistily při uvolnění objekt připojení. Mezipaměť relace MARS se předem načtena. Načte se aplikace vyžaduje další relace.  
+ Když je připojení otevřené s povoleným MARS, vytvoří se logická relace, která přidá další režii. Pro minimalizaci režie a zvýšení výkonu **SqlClient** v rámci připojení ukládá do mezipaměti relaci Mars. Mezipaměť obsahuje maximálně 10 relací MARS. Tato hodnota není přizpůsobitelná uživatelem. Pokud je dosaženo limitu relace, vytvoří se nová relace – chyba se nevygeneruje. Mezipaměť a relace, které jsou v ní obsažené, jsou vázané na připojení; nesdílí se mezi připojeními. Když se relace uvolní, vrátí se do fondu, pokud se nedosáhne horní meze fondu. Pokud je fond mezipaměti plný, relace je zavřena. Relace MARS do vypršení platnosti nekončí. Vyčistí se jenom v případě, že je objekt připojení vyřazený. Mezipaměť relace MARS není předem načtena. Je načtená, protože aplikace vyžaduje více relací.  
   
 ### <a name="thread-safety"></a>Bezpečnost vlákna  
- Operace MARS nejsou bezpečné pro vlákna.  
+ Operace MARS nejsou bezpečné pro přístup z více vláken.  
   
 ### <a name="connection-pooling"></a>Sdružování připojení  
- Připojení MARS povolené ve fondu stejně jako jakékoli jiné připojení. Pokud se aplikace otevře dvě připojení, jednu s MARS povolená a jednu s MARS zakázán, jsou dvě připojení v samostatné fondy. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Připojení s povoleným MARSm jsou ve fondu jako jakékoli jiné připojení. Pokud aplikace otevře dvě připojení, jedna s povoleným MARS a jedna se zakázaným MARSm, jsou tato dvě připojení v samostatných fondech. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
   
-### <a name="sql-server-batch-execution-environment"></a>Prostředí pro spuštění dávky SQL serveru  
- Při otevření připojení, je definován výchozí prostředí. Toto prostředí je poté zkopírován do logické relace MARS.  
+### <a name="sql-server-batch-execution-environment"></a>SQL Server prostředí pro spuštění dávky  
+ Při otevření připojení je definováno výchozí prostředí. Toto prostředí se pak zkopíruje do logické relace MARS.  
   
- Prostředí pro spouštění služby batch zahrnuje následující součásti:  
+ Prostředí provádění dávky zahrnuje následující součásti:  
   
-- Nastavení možností (například ANSI_NULLS DATE_FORMAT, jazyka, velikost textu)  
+- Nastavení možností (například ANSI_NULLS, DATE_FORMAT, LANGUAGE, TEXTSIZE)  
   
-- Kontext zabezpečení (role uživatelů a aplikací)  
+- Kontext zabezpečení (role uživatel/aplikace)  
   
 - Kontext databáze (aktuální databáze)  
   
-- Proměnné stavu spuštění (například @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)  
+- Proměnné stavu provádění@ERROR(například @, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)  
   
-- Nejvyšší úrovně dočasné tabulky  
+- Dočasné tabulky nejvyšší úrovně  
   
- S MARS je výchozí prostředí spuštění přidružené k připojení. Každý nový list, který se spustí provádění v rámci dané připojení obdrží kopii výchozího prostředí. Pokaždé, když je kód spuštěn v dané dávce, všechny změny provedené v prostředí oborem pro určité služby batch. Jakmile se dokončí provádění, nastavení spuštění se zkopírují do výchozího prostředí. V případě vydávání několika příkazů postupně provádět v rámci stejné transakce v jedné dávce sémantika je stejné jako vystavené připojení týkajících se starších klientů nebo serverů.  
+ Pomocí MARS je k připojení přidruženo výchozí prostředí pro spuštění. Každá nová dávka, která se spustí v rámci daného připojení, obdrží kopii výchozího prostředí. Vždy, když je kód proveden v rámci dané dávky, všechny změny provedené v prostředí jsou vymezeny na konkrétní dávku. Po dokončení spuštění se nastavení spuštění zkopíruje do výchozího prostředí. V případě jedné dávky vydávající několik příkazů, které se mají provést postupně v rámci stejné transakce, jsou sémantika stejná jako ta, která je vystavená připojeními, která zahrnují starší klienty nebo servery.  
   
 ### <a name="parallel-execution"></a>Paralelní provádění  
- Chcete-li odebrat všechny požadavky pro víc připojení v aplikaci není určená MARS. Pokud aplikace potřebuje true pro paralelní zpracování příkazů pro server, by měla sloužit více připojení.  
+ Služba MARS není navržena tak, aby odebrala všechny požadavky na více připojení v aplikaci. Pokud aplikace potřebuje pravdivé paralelní spouštění příkazů na serveru, je třeba použít více připojení.  
   
- Představte si třeba následující scénář. Příkaz jsou vytvořeny dva objekty, jeden pro zpracování je sada výsledků dotazu a druhý pro aktualizaci dat; sdílejí společné připojení přes MARS. V tomto scénáři `Transaction`.`Commit` Při aktualizaci selhávat, dokud se všechny výsledky byly načteny na první příkaz objekt, což má za následek následující výjimku:  
+ Zvažte například následující scénář. Vytvoří se dva objekty příkazu, jeden pro zpracování sady výsledků dotazu a další pro aktualizaci dat; sdílejí společné připojení prostřednictvím MARS. V tomto scénáři `Transaction`.`Commit` dojde k neúspěchu aktualizace, dokud všechny výsledky nebyly přečteny na prvním objektu příkazu a vrátila následující výjimku:  
   
- zpráva: Kontext transakce používá jiná relace.  
+ Zpráva Kontext transakce používá jiná relace.  
   
- Zdroj: Zprostředkovatel dat SqlClient .NET  
+ Zdroj: Zprostředkovatel dat .NET SqlClient  
   
- Byl očekáván: (null)  
+ Očekáváno: (null)  
   
- Přijal: System.Data.SqlClient.SqlException  
+ Doručen System.Data.SqlClient.SqlException  
   
- Existují tři možnosti pro takové situaci:  
+ Existují tři možnosti pro zpracování tohoto scénáře:  
   
-1. Spuštění transakce po vytvoření čtečky tak, že není součástí transakce. Každá aktualizace se pak stane vlastní transakce.  
+1. Spusťte transakci po vytvoření čtecího zařízení, aby nebylo součástí transakce. Každá aktualizace pak bude svou vlastní transakcí.  
   
-2. Potvrďte veškerou práci po zavření čtečky. Toto řešení má potenciál pro významné hromadné aktualizace.  
+2. Po zavření čtecího zařízení potvrďte veškerou práci. To má potenciál pro značnou dávku aktualizací.  
   
-3. Nepoužívejte MARS; Místo toho použijte samostatného připojení pro každý objekt příkazu, jako byste před MARS.  
+3. Nepoužívejte MARS; místo toho použijte samostatné připojení pro každý objekt příkazu, který byste měli mít před MARS.  
   
-### <a name="detecting-mars-support"></a>Zjišťování MARS podpory  
- Aplikace můžete zkontrolovat MARS podpory najdete `SqlConnection.ServerVersion` hodnotu. Hlavní číslo musí být pro SQL Server 2005 9 a 10 pro SQL Server 2008.  
+### <a name="detecting-mars-support"></a>Zjišťování podpory MARS  
+ Aplikace může vyhledat podporu služby Mars načtením `SqlConnection.ServerVersion` hodnoty. Hlavní číslo by mělo být 9 pro SQL Server 2005 a 10 pro SQL Server 2008.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

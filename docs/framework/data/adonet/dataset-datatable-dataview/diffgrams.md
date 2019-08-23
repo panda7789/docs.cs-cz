@@ -2,50 +2,50 @@
 title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
-ms.openlocfilehash: 048c5331028bbe2bb232302637dbb12bcdd2adc3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2bf736445a041ec678ab30474da51fddfba1773b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607810"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934483"
 ---
 # <a name="diffgrams"></a>DiffGrams
-Formát DiffGram je formát XML, který identifikuje aktuální a původní verzí datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a uložení jeho obsah a k serializaci jeho obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsán jako formát DiffGram, naplní formát DiffGram přesně znovu vytvořit obsah, i když není schéma, o všechny potřebné informace <xref:System.Data.DataSet>, včetně hodnot sloupců z obou **původní** a **aktuální** verze řádků, informace o chybě řádek a řádek pořadí.  
+Formát DiffGram je formát XML, který identifikuje aktuální a původní verzi datových prvků. <xref:System.Data.DataSet> Používá formát formátu DiffGram k načtení a uchování jeho obsahu a k serializaci jeho obsahu pro přenos přes síťové připojení. Když je zapsán jako formát formátu DiffGram, naplní formát DiffGram všemi potřebnými informacemi, aby bylo možné obsah přesně znovu vytvořit, ale ne schématu <xref:System.Data.DataSet>, včetně hodnot sloupců z **originálu** i <xref:System.Data.DataSet>  **Aktuální** verze řádku, informace o chybě řádku a pořadí řádků.  
   
- Při posílání a stahování <xref:System.Data.DataSet> z webové služby XML, je implicitně používá formát DiffGram formátu. Kromě toho při načítání obsahu <xref:System.Data.DataSet> pomocí XML **ReadXml** metodu, nebo při zápisu obsah <xref:System.Data.DataSet> v XML pomocí **WriteXml** metodu, můžete zadat že obsah nelze číst ani zapisovat jako formát DiffGram. Další informace najdete v tématu [načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis obsahu datové sady jako dat XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Při odesílání a načítání <xref:System.Data.DataSet> z webové služby XML je formát formátu DiffGram implicitně použit. Kromě <xref:System.Data.DataSet> toho při načítání obsahu z XML pomocí metody **ReadXml** nebo při psaní obsahu <xref:System.Data.DataSet> v XML pomocí metody **WriteXml** můžete určit, že se má obsah číst nebo zapisovat jako formát formátu DiffGram. Další informace naleznete v tématu [načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis obsahu datové sady jako XML data](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Zatímco formát DiffGram formátu je převážně používána rozhraní .NET Framework jako formát serializace pro obsah <xref:System.Data.DataSet>, můžete také použít DiffGrams upravovat data v tabulkách v databázi Microsoft SQL Server.  
+ Přestože formát formátu DiffGram je primárně používán .NET Framework jako formát serializace pro obsah a <xref:System.Data.DataSet>, můžete také pomocí formátu DiffGram upravovat data v tabulkách v databázi Microsoft SQL Server.  
   
- Formát Diffgram je generován zatímco zapisuje obsah pro všechny tabulky  **\<formát diffgram >** elementu.  
+ Formát DiffGram je vygenerován zápisem obsahu všech tabulek do  **\<prvku DiffGram >** .  
   
-### <a name="to-generate-a-diffgram"></a>Chcete-li generovat formát Diffgram  
+### <a name="to-generate-a-diffgram"></a>Generování DiffGram  
   
-1. Vygeneruje seznam kořenových tabulky (to znamená, že tabulky bez jakékoli nadřazené).  
+1. Vygeneruje seznam kořenových tabulek (tj. tabulky bez nadřazeného objektu).  
   
-2. Pro každou tabulku a její potomci v seznamu vypsat aktuální verzi všech řádků v první části formát Diffgram.  
+2. Pro každou tabulku a její následníky v seznamu zapište aktuální verzi všech řádků v prvním oddílu DiffGram.  
   
-3. Pro každou tabulku v <xref:System.Data.DataSet>, vypsat původní verzi všechny řádky, pokud existuje v  **\<před >** část formát Diffgram.  
+3. Pro každou tabulku v <xref:System.Data.DataSet>nástroji zapište původní verzi všech řádků, pokud existují,  **\<v části před >** ve vlastnosti DiffGram.  
   
-4. Pro obsah v Chyba při zápisu řádků s chybami,  **\<chyby >** část formát Diffgram.  
+4. V případě řádků, které obsahují chyby, zapište obsah chyby v  **\<části chyby >** oddílu DiffGram.  
   
- Formát Diffgram, jsou zpracovávána v pořadí od začátku souboru XML do konce.  
+ Formát DiffGram je zpracován v pořadí od začátku souboru XML do konce.  
   
-### <a name="to-process-a-diffgram"></a>Ke zpracování formát Diffgram  
+### <a name="to-process-a-diffgram"></a>Zpracování DiffGram  
   
-1. Proces první část formát Diffgram, která obsahuje aktuální verzi řádky.  
+1. Zpracuje první oddíl ovládacího panelu DiffGram, který obsahuje aktuální verzi řádků.  
   
-2. Zpracování druhý nebo  **\<před >** oddíl, který obsahuje původní verze řádku upravit a odstranit řádky.  
+2. Zpracujte druhý nebo  **\<před >** oddíl, který obsahuje původní verzi řádku změněného a odstraněného řádku.  
   
     > [!NOTE]
-    >  Pokud řádek je označen jako odstraněný, operace odstranění odstraněním řádku následníky, v závislosti na tom `Cascade` vlastnost aktuálního <xref:System.Data.DataSet>.  
+    > Pokud je řádek označený jako odstraněný, může operace odstranění odstranit i následníky daného řádku, a to v závislosti na `Cascade` vlastnosti aktuálního. <xref:System.Data.DataSet>  
   
-3. Proces  **\<chyby >** oddílu. Nastavte informace o chybě pro zadaný řádek a sloupec pro každou položku v této části.  
+3. Zpracujte > chybového oddílu.  **\<** Nastavte informace o chybě pro zadaný řádek a sloupec pro jednotlivé položky v této části.  
   
 > [!NOTE]
->  Pokud jste nastavili <xref:System.Data.XmlWriteMode> na formát Diffgram obsah cíle <xref:System.Data.DataSet> a původní <xref:System.Data.DataSet> se může lišit.  
+> Pokud nastavíte <xref:System.Data.XmlWriteMode> formát DiffGram, obsah cíle <xref:System.Data.DataSet> a původní <xref:System.Data.DataSet> se může lišit.  
   
-## <a name="diffgram-format"></a>Formát DiffGram formátu  
- Formát DiffGram formátu je rozdělen na tři části: aktuální data, původní (nebo "před") dat a části chyby, jak je znázorněno v následujícím příkladu.  
+## <a name="diffgram-format"></a>Formát formátu DiffGram  
+ Formát formátu DiffGram je rozdělen na tři části: aktuální data, původní data (nebo "před") a část s chybami, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -65,39 +65,39 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
 </diffgr:diffgram>  
 ```  
   
- Formát DiffGram formátu se skládá z následujících bloků dat:  
+ Formát formátu DiffGram se skládá z následujících bloků dat:  
   
  **\<**  ***DataInstance***  **>**  
- Název tohoto elementu ***DataInstance***, se používá pro účely vysvětlení v této dokumentaci. A ***DataInstance*** reprezentuje element <xref:System.Data.DataSet> nebo řádek <xref:System.Data.DataTable>. Místo *DataInstance*, element bude obsahovat název <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable>. Tento blok formát DiffGram formátu obsahuje aktuální data, zda byl upraven, nebo ne. Je označen elementu, nebo řádek, který byl změněn **diffgr:hasChanges** poznámky.  
+ Název tohoto elementu, DataInstance, se používá pro vysvětlení pro účely v této dokumentaci. Element ***DataInstance*** představuje <xref:System.Data.DataSet> řádek <xref:System.Data.DataTable>nebo. Namísto prvku *DataInstance*by element obsahoval název <xref:System.Data.DataSet> nebo. <xref:System.Data.DataTable> Tento blok formátu DiffGram obsahuje aktuální data, zda byla upravena nebo nikoli. Prvek nebo řádek, který byl změněn, je identifikován pomocí anotace **diffgr: hasChanges** .  
   
  **\<diffgr:before>**  
- Tento blok formát DiffGram formátu obsahuje původní verzi řádku. Prvky v tomto bloku budou odpovídat na prvky ***DataInstance*** blokovat, s využitím **diffgr:id** poznámky.  
+ Tento blok formátu DiffGram obsahuje původní verzi řádku. Prvky v tomto bloku se shodují s prvky v bloku ***DataInstance*** pomocí anotace **diffgr: ID** .  
   
  **\<diffgr:errors>**  
- Tento blok formát DiffGram formátu obsahuje informace o chybách u konkrétního řádku ***DataInstance*** bloku. Prvky v tomto bloku budou odpovídat na prvky ***DataInstance*** blokovat, s využitím **diffgr:id** poznámky.  
+ Tento blok formátu DiffGram obsahuje informace o chybě pro určitý řádek v bloku DataInstance . Prvky v tomto bloku se shodují s prvky v bloku ***DataInstance*** pomocí anotace **diffgr: ID** .  
   
-## <a name="diffgram-annotations"></a>Formát DiffGram poznámky  
- DiffGrams použít několik poznámek prvky z různých formát DiffGram bloky, které představují verze různých řádků nebo informace o chybě v <xref:System.Data.DataSet>.  
+## <a name="diffgram-annotations"></a>Poznámky ke DiffGram  
+ Formát DiffGram používá několik poznámek k přidružení prvků z různých bloků DiffGram, které reprezentují různé verze řádků nebo informace o <xref:System.Data.DataSet>chybách v.  
   
- Následující tabulka popisuje formát DiffGram poznámky, které jsou definovány v oboru názvů formát DiffGram **urn: schémata-microsoft-schemas-formát diffgram-v1**.  
-  
-|Poznámka|Popis|  
-|----------------|-----------------|  
-|**id**|Použít na dvojici prvků v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky na prvky **\<** ***DataInstance*** **>** bloku. Hodnoty s **diffgr:id** poznámky jsou ve formě *[TableName] [RowIdentifier]* . Například: `<Customers diffgr:id="Customers1">`.|  
-|**parentId**|Určuje které elementy ze **\<** ***DataInstance*** **>** blok je nadřazený element aktuálního prvku. Hodnoty s **diffgr:parentId** poznámky jsou ve formě *[TableName] [RowIdentifier]* . Například: `<Orders diffgr:parentId="Customers1">`.|  
-|**hasChanges**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat, jako jsou změny. **Haschanges –** anotace může mít jednu z následujících dvou hodnot:<br /><br /> **inserted**<br /> Identifikuje **přidané** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádku, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale nebudou mít žádný element s poznámkami v **\<** ***DataInstance*** **>** bloku.|  
-|**hasErrors**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat s **RowError**. Chyba prvek je umístěn v  **\<diffgr:errors >** bloku.|  
-|**Chyba**|Obsahuje text **RowError** pro konkrétní element v  **\<diffgr:errors >** bloku.|  
-  
- <xref:System.Data.DataSet> Zahrnuje další poznámky při čtení nebo zápisu formát DiffGram jeho obsah. Následující tabulka popisuje tyto další poznámky, které jsou definovány v oboru názvů **urn: schémata-microsoft-com: XML-msdata**.  
+ V následující tabulce jsou popsány poznámky formátu DiffGram definované v oboru názvů **urn: schemas-microsoft-com: XML-DiffGram-v1**.  
   
 |Poznámka|Popis|  
 |----------------|-----------------|  
-|**RowOrder**|Zachovává pořadí řádku původní data a identifikuje index řádku v konkrétní <xref:System.Data.DataTable>.|  
-|**Hidden**|Identifikuje sloupce tak, že má **ColumnMapping** vlastnost nastavena na hodnotu **MappingType.Hidden**. Atribut je napsané ve formátu **msdata: skrytý** *[Názevsloupce]* = "*hodnotu*". Například: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Všimněte si, že skryté sloupce zapíšou jenom jako atribut formát DiffGram pokud obsahují data. V opačném případě se ignorují.|  
+|**id**|Slouží k párování prvků v  **\<diffgr: před >** a **\<**  **\<diffgr: chyby >** bloky do prvků v bloku DataInstance. **>** Hodnoty s poznámkou **diffgr: ID** jsou ve formátu *[TableName] [RowIdentifier]* . Například: `<Customers diffgr:id="Customers1">`.|  
+|**parentId**|Určuje, který prvek z **\<** bloku DataInstance **>** je nadřazeným prvkem aktuálního prvku. Hodnoty s poznámkou **diffgr: parentID** jsou ve formátu *[TableName] [RowIdentifier]* . Například: `<Orders diffgr:parentId="Customers1">`.|  
+|**hasChanges**|Identifikuje řádek v **\<** bloku DataInstance **>** jako změněný. **HasChanges** anotace může mít jednu z následujících dvou hodnot:<br /><br /> **vložený**<br /> Identifikuje **přidaný** řádek.<br /><br /> **změn**<br /> Určuje **upravený** řádek, který obsahuje **původní**  **\<verzi řádku v diffgr: před >** bloku. Všimněte si , že odstraněné řádky budou mít **>** **původní** **\<**  **\<verzi řádku v diffgr: před >** blok, ale v bloku DataInstance nebude žádný žádný element s poznámkami.|  
+|**hasErrors**|Identifikuje řádek v **\<** bloku DataInstance **>** pomocí **RowError**. Element Error je umístěný v  **\<diffgr: Errors >** Block.|  
+|**Chyba**|Obsahuje text **RowError** pro určitý element v  **\<bloku diffgr: Errors >** .|  
   
-## <a name="sample-diffgram"></a>Formát DiffGram vzorku  
- Níže je uveden příklad formát DiffGram formátu. Tento příklad ukazuje výsledek aktualizace na řádek v tabulce předtím, než se změny byly potvrzeny. Řádek s CustomerID "ALFKI" má byla upravena, ale není aktualizovaná. V důsledku toho je **aktuální** řádek s **diffgr:id** z "Customers1" v **\<** ***DataInstance*** **>** bloku a **původní** řádek s **diffgr:id** z "Customers1" v  **\<diffgr: před >** bloku. Řádek s CustomerID "ANATR" zahrnuje **RowError**, takže je opatřen poznámkou `diffgr:hasErrors="true"` a související prvek,  **\<diffgr:errors >** bloku.  
+ <xref:System.Data.DataSet> Zahrnuje další poznámky při čtení nebo zápisu jeho obsahu jako formátu DiffGram. Následující tabulka popisuje tyto další poznámky, které jsou definovány v oboru názvů **urn: schemas-microsoft-com: XML-msdata**.  
+  
+|Poznámka|Popis|  
+|----------------|-----------------|  
+|**RowOrder**|Zachovává pořadí řádků původních dat a identifikuje index řádku v konkrétní <xref:System.Data.DataTable>.|  
+|**Hidden**|Určuje sloupec, který má vlastnost **ColumnMapping** nastavenou na **MappingType. Hidden**. Atribut je zapsán ve formátu **msdata: Hidden** *[ColumnName]* = "*Value*". Například: `<Customers diffgr:id="Customers1" msdata:hiddenContactTitle="Owner">`.<br /><br /> Skryté sloupce se zapisují jenom jako atribut DiffGram, pokud obsahují data. V opačném případě jsou ignorovány.|  
+  
+## <a name="sample-diffgram"></a>Ukázka souboru DiffGram  
+ Příklad formátu DiffGram je uveden níže. Tento příklad ukazuje výsledek aktualizace řádku v tabulce předtím, než byly změny potvrzeny. Řádek s ID zákazníka "ALFKI" byl změněn, ale nebyl aktualizován. Výsledkem je, **\<** že v bloku DataInstance **>** je **aktuální** řádek s **diffgr: ID** "Customers1" a **původní** řádek s **diffgr: ID** "Customers1" v  **\< diffgr: před** blokem >. Řádek s ID položky (KódZákazníka) "ANATR" obsahuje **RowError**, takže je opatřen s `diffgr:hasErrors="true"` poznámkami a existuje  **\<související element v diffgr: Errors >** Block.  
   
 ```xml  
 <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">  
@@ -137,4 +137,4 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Kopírování obsahu datové sady jako dat XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,15 +2,15 @@
 title: <system.runtime.serialization>
 ms.date: 03/30/2017
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
-ms.openlocfilehash: c34eba2614a354f1753d8da077f8653f2c260a97
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ec5cd19ccdc5c21a3caf426520d51442dc5ab3f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757908"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938926"
 ---
 # <a name="systemruntimeserialization"></a>\<system.runtime.serialization>
-Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.  
+Představuje kořenový prvek <xref:System.Runtime.Serialization> oddílu oboru názvů a obsahuje prvky pro nastavení možností <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
  system.runtime.serialization  
   
@@ -34,7 +34,7 @@ Představuje kořenový element <xref:System.Runtime.Serialization> části obor
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
  Žádné  
@@ -43,16 +43,16 @@ Představuje kořenový element <xref:System.Runtime.Serialization> části obor
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání ze známých typů, který se má použít při deserializaci.|  
+|[\<dataContractSerializer>](datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání známých typů, které se použijí při deserializaci.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Element nejvyšší úrovně pro konfiguraci.|  
+|[\<Element > Konfigurace](../configuration-element.md)|Element nejvyšší úrovně pro konfiguraci.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Serialization>
-- [Použití kontraktů dat](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [Použití kontraktů dat](../../../wcf/feature-details/using-data-contracts.md)
+- [Známé typy kontraktů dat](../../../wcf/feature-details/data-contract-known-types.md)
