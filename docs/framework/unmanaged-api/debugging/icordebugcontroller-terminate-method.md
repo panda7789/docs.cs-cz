@@ -17,20 +17,20 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06c91a813a80af5cf09914ca134ac9935ed787c8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ee1c30809567097e67b6b1e40f5534429d748abd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750068"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964373"
 ---
-# <a name="icordebugcontrollerterminate-method"></a><span data-ttu-id="c56de-102">ICorDebugController::Terminate – metoda</span><span class="sxs-lookup"><span data-stu-id="c56de-102">ICorDebugController::Terminate Method</span></span>
-<span data-ttu-id="c56de-103">Ukončí proces s uvedený ukončovací kód.</span><span class="sxs-lookup"><span data-stu-id="c56de-103">Terminates the process with the specified exit code.</span></span>  
+# <a name="icordebugcontrollerterminate-method"></a><span data-ttu-id="31273-102">ICorDebugController::Terminate – metoda</span><span class="sxs-lookup"><span data-stu-id="31273-102">ICorDebugController::Terminate Method</span></span>
+<span data-ttu-id="31273-103">Ukončí proces se zadaným ukončovacím kódem.</span><span class="sxs-lookup"><span data-stu-id="31273-103">Terminates the process with the specified exit code.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="c56de-104">Tato metoda je obálka pro Win32 `TerminateProcess` funkce.</span><span class="sxs-lookup"><span data-stu-id="c56de-104">This method is a wrapper for the Win32 `TerminateProcess` function.</span></span> <span data-ttu-id="c56de-105">Proto `Terminate` používá ukončovací kód procesu ve stejném způsobu, jakým Win32 `TerminateProcess` funkce použije.</span><span class="sxs-lookup"><span data-stu-id="c56de-105">Thus, `Terminate` uses the exit code in the same way that the Win32 `TerminateProcess` function uses it.</span></span>  
+> <span data-ttu-id="31273-104">Tato metoda je obálkou pro funkci Win32 `TerminateProcess` .</span><span class="sxs-lookup"><span data-stu-id="31273-104">This method is a wrapper for the Win32 `TerminateProcess` function.</span></span> <span data-ttu-id="31273-105">Proto používá ukončovací kód stejným způsobem, jaký používá funkce Win32 `TerminateProcess`. `Terminate`</span><span class="sxs-lookup"><span data-stu-id="31273-105">Thus, `Terminate` uses the exit code in the same way that the Win32 `TerminateProcess` function uses it.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c56de-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c56de-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="31273-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31273-106">Syntax</span></span>  
   
 ```cpp  
 HRESULT Terminate (  
@@ -38,23 +38,23 @@ HRESULT Terminate (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c56de-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="c56de-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="31273-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="31273-107">Parameters</span></span>  
  `exitCode`  
- <span data-ttu-id="c56de-108">[in] Číselná hodnota, která je ukončovací kód.</span><span class="sxs-lookup"><span data-stu-id="c56de-108">[in] A numeric value that is the exit code.</span></span> <span data-ttu-id="c56de-109">Platné číselné hodnoty jsou definovány v Winbase.h.</span><span class="sxs-lookup"><span data-stu-id="c56de-109">The valid numeric values are defined in Winbase.h.</span></span>  
+ <span data-ttu-id="31273-108">pro Číselná hodnota, která je ukončovacím kódem.</span><span class="sxs-lookup"><span data-stu-id="31273-108">[in] A numeric value that is the exit code.</span></span> <span data-ttu-id="31273-109">Platné číselné hodnoty jsou definovány v Winbase. h.</span><span class="sxs-lookup"><span data-stu-id="31273-109">The valid numeric values are defined in Winbase.h.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c56de-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c56de-110">Remarks</span></span>  
- <span data-ttu-id="c56de-111">Zastavení procesu, kdy `Terminate` je volána, proces by měly pokračovat s použitím [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) metodu tak, aby ladicí program přijímá potvrzení ukončení prostřednictvím [ Icordebugmanagedcallback::exitprocess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) nebo [icordebugmanagedcallback::exitappdomain –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="c56de-111">If the process is stopped when `Terminate` is called, the process should be continued by using the [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) method so that the debugger receives confirmation of the termination through the [ICorDebugManagedCallback::ExitProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) or [ICorDebugManagedCallback::ExitAppDomain](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) callback.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="31273-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="31273-110">Remarks</span></span>  
+ <span data-ttu-id="31273-111">Pokud je proces zastaven při `Terminate` volání, proces by měl pokračovat pomocí metody [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , aby ladicí program přijal potvrzení ukončení prostřednictvím [ICorDebugManagedCallback:: ExitProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) nebo [ICorDebugManagedCallback:: ExitAppDomain –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) zpětné volání.</span><span class="sxs-lookup"><span data-stu-id="31273-111">If the process is stopped when `Terminate` is called, the process should be continued by using the [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) method so that the debugger receives confirmation of the termination through the [ICorDebugManagedCallback::ExitProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) or [ICorDebugManagedCallback::ExitAppDomain](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) callback.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="c56de-112">Tato metoda není implementována podle domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="c56de-112">This method is not implemented by an application domain.</span></span> <span data-ttu-id="c56de-113">To znamená, že není implementovaná v <xref:System.AppDomain> úroveň.</span><span class="sxs-lookup"><span data-stu-id="c56de-113">That is, it is not implemented at the <xref:System.AppDomain> level.</span></span>  
+> <span data-ttu-id="31273-112">Tato metoda není implementována doménou aplikace.</span><span class="sxs-lookup"><span data-stu-id="31273-112">This method is not implemented by an application domain.</span></span> <span data-ttu-id="31273-113">To znamená, že není implementován na <xref:System.AppDomain> úrovni.</span><span class="sxs-lookup"><span data-stu-id="31273-113">That is, it is not implemented at the <xref:System.AppDomain> level.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c56de-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c56de-114">Requirements</span></span>  
- <span data-ttu-id="c56de-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c56de-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="31273-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="31273-114">Requirements</span></span>  
+ <span data-ttu-id="31273-115">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="31273-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c56de-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c56de-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="31273-116">**Hlaviček** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="31273-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="c56de-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c56de-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="31273-117">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="31273-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c56de-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c56de-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="31273-118">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="31273-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c56de-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c56de-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="31273-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="31273-119">See also</span></span>

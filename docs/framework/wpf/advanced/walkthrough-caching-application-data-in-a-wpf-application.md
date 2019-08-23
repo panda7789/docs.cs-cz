@@ -9,153 +9,153 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: 4ee973eb5a81a6428ee5a5fcfc00e28425ff2a44
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 2609a54ce8ba2076c35567fe5bc1d9961f6fef3f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457512"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942063"
 ---
-# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a><span data-ttu-id="49a20-102">Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-102">Walkthrough: Caching Application Data in a WPF Application</span></span>
-<span data-ttu-id="49a20-103">Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup.</span><span class="sxs-lookup"><span data-stu-id="49a20-103">Caching enables you to store data in memory for rapid access.</span></span> <span data-ttu-id="49a20-104">Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje.</span><span class="sxs-lookup"><span data-stu-id="49a20-104">When the data is accessed again, applications can get the data from the cache instead of retrieving it from the original source.</span></span> <span data-ttu-id="49a20-105">Tím lze vylepšit výkon a škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="49a20-105">This can improve performance and scalability.</span></span> <span data-ttu-id="49a20-106">Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.</span><span class="sxs-lookup"><span data-stu-id="49a20-106">In addition, caching makes data available when the data source is temporarily unavailable.</span></span>
+# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a><span data-ttu-id="4e09a-102">Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-102">Walkthrough: Caching Application Data in a WPF Application</span></span>
+<span data-ttu-id="4e09a-103">Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup.</span><span class="sxs-lookup"><span data-stu-id="4e09a-103">Caching enables you to store data in memory for rapid access.</span></span> <span data-ttu-id="4e09a-104">Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje.</span><span class="sxs-lookup"><span data-stu-id="4e09a-104">When the data is accessed again, applications can get the data from the cache instead of retrieving it from the original source.</span></span> <span data-ttu-id="4e09a-105">To může zvýšit výkon a škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="4e09a-105">This can improve performance and scalability.</span></span> <span data-ttu-id="4e09a-106">Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.</span><span class="sxs-lookup"><span data-stu-id="4e09a-106">In addition, caching makes data available when the data source is temporarily unavailable.</span></span>
 
- <span data-ttu-id="49a20-107">Rozhraní .NET Framework poskytuje třídy, které vám umožní používat ukládání do mezipaměti v aplikacích .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="49a20-107">The .NET Framework provides classes that enable you to use caching in .NET Framework applications.</span></span> <span data-ttu-id="49a20-108">Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="49a20-108">These classes are located in the <xref:System.Runtime.Caching> namespace.</span></span>
+ <span data-ttu-id="4e09a-107">.NET Framework poskytuje třídy, které umožňují používat ukládání do mezipaměti v aplikacích .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4e09a-107">The .NET Framework provides classes that enable you to use caching in .NET Framework applications.</span></span> <span data-ttu-id="4e09a-108">Tyto třídy jsou umístěny v <xref:System.Runtime.Caching> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="4e09a-108">These classes are located in the <xref:System.Runtime.Caching> namespace.</span></span>
 
 > [!NOTE]
->  <span data-ttu-id="49a20-109"><xref:System.Runtime.Caching> Obor názvů je nového v rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="49a20-109">The <xref:System.Runtime.Caching> namespace is new in the .NET Framework 4.</span></span> <span data-ttu-id="49a20-110">Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici pro všechny aplikace rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="49a20-110">This namespace makes caching is available to all .NET Framework applications.</span></span> <span data-ttu-id="49a20-111">V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="49a20-111">In previous versions of the .NET Framework, caching was available only in the <xref:System.Web> namespace and therefore required a dependency on ASP.NET classes.</span></span>
+> <span data-ttu-id="4e09a-109"><xref:System.Runtime.Caching> Obor názvů je v .NET Framework 4 nový.</span><span class="sxs-lookup"><span data-stu-id="4e09a-109">The <xref:System.Runtime.Caching> namespace is new in the .NET Framework 4.</span></span> <span data-ttu-id="4e09a-110">Tento obor názvů zpřístupňuje ukládání do mezipaměti pro všechny .NET Framework aplikace.</span><span class="sxs-lookup"><span data-stu-id="4e09a-110">This namespace makes caching is available to all .NET Framework applications.</span></span> <span data-ttu-id="4e09a-111">V předchozích verzích .NET Framework bylo ukládání do mezipaměti k dispozici pouze v <xref:System.Web> oboru názvů, a proto je vyžadována závislost na třídách ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="4e09a-111">In previous versions of the .NET Framework, caching was available only in the <xref:System.Web> namespace and therefore required a dependency on ASP.NET classes.</span></span>
 
- <span data-ttu-id="49a20-112">Tento návod ukazuje, jak používat ukládání do mezipaměti, která je k dispozici v rozhraní .NET Framework jako součást funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="49a20-112">This walkthrough shows you how to use the caching functionality that is available in the .NET Framework as part of a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="49a20-113">V tomto návodu můžete ukládat do mezipaměti obsah textového souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-113">In the walkthrough, you cache the contents of a text file.</span></span>
+ <span data-ttu-id="4e09a-112">V tomto návodu se dozvíte, jak používat funkce ukládání do mezipaměti, které jsou k dispozici v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] .NET Framework jako součást aplikace.</span><span class="sxs-lookup"><span data-stu-id="4e09a-112">This walkthrough shows you how to use the caching functionality that is available in the .NET Framework as part of a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="4e09a-113">V tomto návodu ukládáte obsah textového souboru do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-113">In the walkthrough, you cache the contents of a text file.</span></span>
 
- <span data-ttu-id="49a20-114">Tento návod obsahuje následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="49a20-114">Tasks illustrated in this walkthrough include the following:</span></span>
+ <span data-ttu-id="4e09a-114">Tento návod obsahuje následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="4e09a-114">Tasks illustrated in this walkthrough include the following:</span></span>
 
-- <span data-ttu-id="49a20-115">Vytvoření projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="49a20-115">Creating a WPF application project.</span></span>
+- <span data-ttu-id="4e09a-115">Vytvoření projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="4e09a-115">Creating a WPF application project.</span></span>
 
-- <span data-ttu-id="49a20-116">Přidává se odkaz na rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="49a20-116">Adding a reference to the .NET Framework 4.</span></span>
+- <span data-ttu-id="4e09a-116">Přidání odkazu na .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="4e09a-116">Adding a reference to the .NET Framework 4.</span></span>
 
-- <span data-ttu-id="49a20-117">Inicializuje se mezipaměť.</span><span class="sxs-lookup"><span data-stu-id="49a20-117">Initializing a cache.</span></span>
+- <span data-ttu-id="4e09a-117">Inicializuje se mezipaměť.</span><span class="sxs-lookup"><span data-stu-id="4e09a-117">Initializing a cache.</span></span>
 
-- <span data-ttu-id="49a20-118">Přidává se položka v mezipaměti, který obsahuje obsah textového souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-118">Adding a cache entry that contains the contents of a text file.</span></span>
+- <span data-ttu-id="4e09a-118">Přidání položky mezipaměti, která obsahuje obsah textového souboru.</span><span class="sxs-lookup"><span data-stu-id="4e09a-118">Adding a cache entry that contains the contents of a text file.</span></span>
 
-- <span data-ttu-id="49a20-119">Poskytování zásadu vyřazení pro položku mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-119">Providing an eviction policy for the cache entry.</span></span>
+- <span data-ttu-id="4e09a-119">Poskytnutí zásad vyřazení pro položku mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-119">Providing an eviction policy for the cache entry.</span></span>
 
-- <span data-ttu-id="49a20-120">Monitorování cestu k souboru v mezipaměti a upozornit na instanci mezipaměti se změní na maximální počet monitorovaných položek.</span><span class="sxs-lookup"><span data-stu-id="49a20-120">Monitoring the path of the cached file and notifying the cache instance about changes to the monitored item.</span></span>
+- <span data-ttu-id="4e09a-120">Monitorování cesty k souboru uloženého v mezipaměti a oznamování instance mezipaměti o změnách monitorované položky.</span><span class="sxs-lookup"><span data-stu-id="4e09a-120">Monitoring the path of the cached file and notifying the cache instance about changes to the monitored item.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="49a20-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="49a20-121">Prerequisites</span></span>
- <span data-ttu-id="49a20-122">K dokončení tohoto návodu budete potřebovat:</span><span class="sxs-lookup"><span data-stu-id="49a20-122">In order to complete this walkthrough, you will need:</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="4e09a-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4e09a-121">Prerequisites</span></span>
+ <span data-ttu-id="4e09a-122">Aby bylo možné dokončit tento návod, budete potřebovat:</span><span class="sxs-lookup"><span data-stu-id="4e09a-122">In order to complete this walkthrough, you will need:</span></span>
 
-- <span data-ttu-id="49a20-123">Microsoft Visual Studio 2010.</span><span class="sxs-lookup"><span data-stu-id="49a20-123">Microsoft Visual Studio 2010.</span></span>
+- <span data-ttu-id="4e09a-123">Microsoft Visual Studio 2010.</span><span class="sxs-lookup"><span data-stu-id="4e09a-123">Microsoft Visual Studio 2010.</span></span>
 
-- <span data-ttu-id="49a20-124">Textový soubor, který obsahuje malé množství textu.</span><span class="sxs-lookup"><span data-stu-id="49a20-124">A text file that contains a small amount of text.</span></span> <span data-ttu-id="49a20-125">(Obsah textového souboru se zobrazí v okně se zprávou.) Kód popsaných v tomto návodu se předpokládá, že pracujete s následující soubor:</span><span class="sxs-lookup"><span data-stu-id="49a20-125">(You will display the contents of the text file in a message box.) The code illustrated in the walkthrough assumes that you are working with the following file:</span></span>
+- <span data-ttu-id="4e09a-124">Textový soubor, který obsahuje malé množství textu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-124">A text file that contains a small amount of text.</span></span> <span data-ttu-id="4e09a-125">(Obsah textového souboru se zobrazí v okně se zprávou.) Kód, který je znázorněn v návodu, předpokládá, že pracujete s následujícím souborem:</span><span class="sxs-lookup"><span data-stu-id="4e09a-125">(You will display the contents of the text file in a message box.) The code illustrated in the walkthrough assumes that you are working with the following file:</span></span>
 
      `c:\cache\cacheText.txt`
 
-     <span data-ttu-id="49a20-126">Můžete však použít libovolný textový soubor a dělat malé změny kódu v tomto názorném postupu.</span><span class="sxs-lookup"><span data-stu-id="49a20-126">However, you can use any text file and make small changes to the code in this walkthrough.</span></span>
+     <span data-ttu-id="4e09a-126">V tomto návodu ale můžete použít libovolný textový soubor a udělat drobné změny kódu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-126">However, you can use any text file and make small changes to the code in this walkthrough.</span></span>
 
-## <a name="creating-a-wpf-application-project"></a><span data-ttu-id="49a20-127">Vytvoření projektu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-127">Creating a WPF Application Project</span></span>
- <span data-ttu-id="49a20-128">Začněte vytvořením projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="49a20-128">You will start by creating a WPF application project.</span></span>
+## <a name="creating-a-wpf-application-project"></a><span data-ttu-id="4e09a-127">Vytvoření projektu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-127">Creating a WPF Application Project</span></span>
+ <span data-ttu-id="4e09a-128">Začnete vytvořením projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="4e09a-128">You will start by creating a WPF application project.</span></span>
 
-#### <a name="to-create-a-wpf-application"></a><span data-ttu-id="49a20-129">Vytvoření aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-129">To create a WPF application</span></span>
+#### <a name="to-create-a-wpf-application"></a><span data-ttu-id="4e09a-129">Vytvoření aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-129">To create a WPF application</span></span>
 
-1. <span data-ttu-id="49a20-130">Spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="49a20-130">Start Visual Studio.</span></span>
+1. <span data-ttu-id="4e09a-130">Spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4e09a-130">Start Visual Studio.</span></span>
 
-2. <span data-ttu-id="49a20-131">V **souboru** nabídky, klikněte na tlačítko **nový**a potom klikněte na tlačítko **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="49a20-131">In the **File** menu, click **New**, and then click **New Project**.</span></span>
+2. <span data-ttu-id="4e09a-131">V nabídce **soubor** klikněte na příkaz **Nový**a potom klikněte na **Nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-131">In the **File** menu, click **New**, and then click **New Project**.</span></span>
 
-     <span data-ttu-id="49a20-132">**Nový projekt** se zobrazí dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="49a20-132">The **New Project** dialog box is displayed.</span></span>
+     <span data-ttu-id="4e09a-132">**Nový projekt** se zobrazí dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="4e09a-132">The **New Project** dialog box is displayed.</span></span>
 
-3. <span data-ttu-id="49a20-133">V části **nainstalované šablony**, vyberte programovací jazyk, který chcete použít (**jazyka Visual Basic** nebo **Visual C#** ).</span><span class="sxs-lookup"><span data-stu-id="49a20-133">Under **Installed Templates**, select the programming language you want to use (**Visual Basic** or **Visual C#**).</span></span>
+3. <span data-ttu-id="4e09a-133">V části **Nainstalované šablony**vyberte programovací jazyk, který chcete použít (**Visual Basic** nebo **vizuál C#** ).</span><span class="sxs-lookup"><span data-stu-id="4e09a-133">Under **Installed Templates**, select the programming language you want to use (**Visual Basic** or **Visual C#**).</span></span>
 
-4. <span data-ttu-id="49a20-134">V **nový projekt** dialogu **aplikace WPF**.</span><span class="sxs-lookup"><span data-stu-id="49a20-134">In the **New Project** dialog box, select **WPF Application**.</span></span>
+4. <span data-ttu-id="4e09a-134">V dialogovém okně **Nový projekt** vyberte **aplikace WPF**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-134">In the **New Project** dialog box, select **WPF Application**.</span></span>
 
     > [!NOTE]
-    >  <span data-ttu-id="49a20-135">Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi rozhraní .NET Framework, která podporuje WPF.</span><span class="sxs-lookup"><span data-stu-id="49a20-135">If you do not see the **WPF Application** template, make sure that you are targeting a version of the .NET Framework that supports WPF.</span></span> <span data-ttu-id="49a20-136">V **nový projekt** dialogové okno, vyberte možnost rozhraní .NET Framework 4 ze seznamu.</span><span class="sxs-lookup"><span data-stu-id="49a20-136">In the **New Project** dialog box, select .NET Framework 4 from the list.</span></span>
+    > <span data-ttu-id="4e09a-135">Pokud nevidíte šablonu **aplikace WPF** , ujistěte se, že cílíte na verzi .NET Framework, která podporuje WPF.</span><span class="sxs-lookup"><span data-stu-id="4e09a-135">If you do not see the **WPF Application** template, make sure that you are targeting a version of the .NET Framework that supports WPF.</span></span> <span data-ttu-id="4e09a-136">V dialogovém okně **Nový projekt** vyberte ze seznamu položku .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="4e09a-136">In the **New Project** dialog box, select .NET Framework 4 from the list.</span></span>
 
-5. <span data-ttu-id="49a20-137">V **název** textové pole, zadejte název pro váš projekt.</span><span class="sxs-lookup"><span data-stu-id="49a20-137">In the **Name** text box, enter a name for your project.</span></span> <span data-ttu-id="49a20-138">Například můžete zadat **WPFCaching**.</span><span class="sxs-lookup"><span data-stu-id="49a20-138">For example, you can enter **WPFCaching**.</span></span>
+5. <span data-ttu-id="4e09a-137">Do textového pole **název** zadejte název projektu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-137">In the **Name** text box, enter a name for your project.</span></span> <span data-ttu-id="4e09a-138">Můžete například zadat **WPFCaching**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-138">For example, you can enter **WPFCaching**.</span></span>
 
-6. <span data-ttu-id="49a20-139">Vyberte **vytvořit adresář pro řešení** zaškrtávací políčko.</span><span class="sxs-lookup"><span data-stu-id="49a20-139">Select the **Create directory for solution** check box.</span></span>
+6. <span data-ttu-id="4e09a-139">Zaškrtněte políčko **vytvořit adresář pro řešení** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-139">Select the **Create directory for solution** check box.</span></span>
 
-7. <span data-ttu-id="49a20-140">Klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="49a20-140">Click **OK**.</span></span>
+7. <span data-ttu-id="4e09a-140">Klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-140">Click **OK**.</span></span>
 
-     <span data-ttu-id="49a20-141">Otevře se Návrhář WPF v **návrhu** zobrazení a zobrazí soubor MainWindow.xaml.</span><span class="sxs-lookup"><span data-stu-id="49a20-141">The WPF Designer opens in **Design** view and displays the MainWindow.xaml file.</span></span> <span data-ttu-id="49a20-142">Visual Studio vytvoří **Můj projekt** složka, soubor Application.xaml a souboru MainWindow.xaml.</span><span class="sxs-lookup"><span data-stu-id="49a20-142">Visual Studio creates the **My Project** folder, the Application.xaml file, and the MainWindow.xaml file.</span></span>
+     <span data-ttu-id="4e09a-141">Návrhář WPF se otevře v **návrhovém** zobrazení a zobrazí soubor MainWindow. XAML.</span><span class="sxs-lookup"><span data-stu-id="4e09a-141">The WPF Designer opens in **Design** view and displays the MainWindow.xaml file.</span></span> <span data-ttu-id="4e09a-142">Visual Studio vytvoří složku **moje projekt** , soubor Application. XAML a soubor MainWindow. XAML.</span><span class="sxs-lookup"><span data-stu-id="4e09a-142">Visual Studio creates the **My Project** folder, the Application.xaml file, and the MainWindow.xaml file.</span></span>
 
-## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a><span data-ttu-id="49a20-143">Cílení na rozhraní .NET Framework a přidání odkazu na ukládání do mezipaměti sestavení</span><span class="sxs-lookup"><span data-stu-id="49a20-143">Targeting the .NET Framework and Adding a Reference to the Caching Assemblies</span></span>
- <span data-ttu-id="49a20-144">Ve výchozím nastavení, cílové aplikace WPF [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="49a20-144">By default, WPF applications target the [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].</span></span> <span data-ttu-id="49a20-145">Použít <xref:System.Runtime.Caching> oboru názvů v aplikaci WPF, aplikace musí cílit na rozhraní .NET Framework 4 (ne [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí obsahovat odkaz na obor názvů.</span><span class="sxs-lookup"><span data-stu-id="49a20-145">To use the <xref:System.Runtime.Caching> namespace in a WPF application, the application must target the .NET Framework 4 (not the [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) and must include a reference to the namespace.</span></span>
+## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a><span data-ttu-id="4e09a-143">Cílení na .NET Framework a přidání odkazu na sestavení pro ukládání do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="4e09a-143">Targeting the .NET Framework and Adding a Reference to the Caching Assemblies</span></span>
+ <span data-ttu-id="4e09a-144">Ve výchozím nastavení aplikace WPF cílí na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4e09a-144">By default, WPF applications target the [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].</span></span> <span data-ttu-id="4e09a-145">Chcete-li <xref:System.Runtime.Caching> použít obor názvů v aplikaci WPF, musí aplikace cílit na .NET Framework 4 (ne na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí zahrnovat odkaz na obor názvů.</span><span class="sxs-lookup"><span data-stu-id="4e09a-145">To use the <xref:System.Runtime.Caching> namespace in a WPF application, the application must target the .NET Framework 4 (not the [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) and must include a reference to the namespace.</span></span>
 
- <span data-ttu-id="49a20-146">Proto, dalším krokem je změnit cílové rozhraní .NET Framework a přidejte odkaz na <xref:System.Runtime.Caching> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="49a20-146">Therefore, the next step is to change the .NET Framework target and add a reference to the <xref:System.Runtime.Caching> namespace.</span></span>
+ <span data-ttu-id="4e09a-146">Proto je dalším krokem Změna cíle .NET Framework a přidání odkazu na <xref:System.Runtime.Caching> obor názvů.</span><span class="sxs-lookup"><span data-stu-id="4e09a-146">Therefore, the next step is to change the .NET Framework target and add a reference to the <xref:System.Runtime.Caching> namespace.</span></span>
 
 > [!NOTE]
->  <span data-ttu-id="49a20-147">Postup pro změnu cílové rozhraní .NET Framework se liší v projektu jazyka Visual Basic a v projektu jazyka Visual C#.</span><span class="sxs-lookup"><span data-stu-id="49a20-147">The procedure for changing the .NET Framework target is different in a Visual Basic project and in a Visual C# project.</span></span>
+> <span data-ttu-id="4e09a-147">Postup změny cíle .NET Framework se liší v projektu Visual Basic a ve vizuálním C# projektu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-147">The procedure for changing the .NET Framework target is different in a Visual Basic project and in a Visual C# project.</span></span>
 
-#### <a name="to-change-the-target-net-framework-in-visual-basic"></a><span data-ttu-id="49a20-148">Chcete-li změnit cílové rozhraní .NET Framework v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="49a20-148">To change the target .NET Framework in Visual Basic</span></span>
+#### <a name="to-change-the-target-net-framework-in-visual-basic"></a><span data-ttu-id="4e09a-148">Změna cílového .NET Framework v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="4e09a-148">To change the target .NET Framework in Visual Basic</span></span>
 
-1. <span data-ttu-id="49a20-149">V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="49a20-149">In **Solutions Explorer**, right-click the project name, and then click **Properties**.</span></span>
+1. <span data-ttu-id="4e09a-149">V **Průzkumníku řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-149">In **Solutions Explorer**, right-click the project name, and then click **Properties**.</span></span>
 
-     <span data-ttu-id="49a20-150">Zobrazí se okno Vlastnosti pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="49a20-150">The properties window for the application is displayed.</span></span>
+     <span data-ttu-id="4e09a-150">Zobrazí se okno Vlastnosti aplikace.</span><span class="sxs-lookup"><span data-stu-id="4e09a-150">The properties window for the application is displayed.</span></span>
 
-2. <span data-ttu-id="49a20-151">Klikněte na tlačítko **kompilaci** kartu.</span><span class="sxs-lookup"><span data-stu-id="49a20-151">Click the **Compile** tab.</span></span>
+2. <span data-ttu-id="4e09a-151">Klikněte na kartu **kompilovat** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-151">Click the **Compile** tab.</span></span>
 
-3. <span data-ttu-id="49a20-152">V dolní části okna klikněte na tlačítko **Upřesnit možnosti kompilace...** .</span><span class="sxs-lookup"><span data-stu-id="49a20-152">At the bottom of the window, click **Advanced Compile Options…**.</span></span>
+3. <span data-ttu-id="4e09a-152">V dolní části okna klikněte na možnost **Pokročilé možnosti kompilace...** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-152">At the bottom of the window, click **Advanced Compile Options…**.</span></span>
 
-     <span data-ttu-id="49a20-153">**Pokročilé nastavení kompilátoru** se zobrazí dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="49a20-153">The **Advanced Compiler Settings** dialog box is displayed.</span></span>
+     <span data-ttu-id="4e09a-153">Zobrazí se dialogové okno **Upřesnit nastavení kompilátoru** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-153">The **Advanced Compiler Settings** dialog box is displayed.</span></span>
 
-4. <span data-ttu-id="49a20-154">V **cílového rozhraní (všechny konfigurace)** vyberte rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="49a20-154">In the **Target framework (all configurations)** list, select .NET Framework 4.</span></span> <span data-ttu-id="49a20-155">(Nesmí být zvolen [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)</span><span class="sxs-lookup"><span data-stu-id="49a20-155">(Do not select [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)</span></span>
+4. <span data-ttu-id="4e09a-154">V seznamu **cílové rozhraní (všechny konfigurace)** vyberte .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="4e09a-154">In the **Target framework (all configurations)** list, select .NET Framework 4.</span></span> <span data-ttu-id="4e09a-155">(Nevybírejte [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)</span><span class="sxs-lookup"><span data-stu-id="4e09a-155">(Do not select [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)</span></span>
 
-5. <span data-ttu-id="49a20-156">Klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="49a20-156">Click **OK**.</span></span>
+5. <span data-ttu-id="4e09a-156">Klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-156">Click **OK**.</span></span>
 
-     <span data-ttu-id="49a20-157">**Změnit cílový rámec** se zobrazí dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="49a20-157">The **Target Framework Change** dialog box is displayed.</span></span>
+     <span data-ttu-id="4e09a-157">**Změnit cílový rámec** se zobrazí dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="4e09a-157">The **Target Framework Change** dialog box is displayed.</span></span>
 
-6. <span data-ttu-id="49a20-158">V **změnit cílový rámec** dialogové okno, klikněte na tlačítko **Ano**.</span><span class="sxs-lookup"><span data-stu-id="49a20-158">In the **Target Framework Change** dialog box, click **Yes**.</span></span>
+6. <span data-ttu-id="4e09a-158">V dialogovém okně **změnit cílovou architekturu** klikněte na tlačítko **Ano**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-158">In the **Target Framework Change** dialog box, click **Yes**.</span></span>
 
-     <span data-ttu-id="49a20-159">Projekt je uzavřen a pak znovu otevřelo.</span><span class="sxs-lookup"><span data-stu-id="49a20-159">The project is closed and is then reopened.</span></span>
+     <span data-ttu-id="4e09a-159">Projekt je uzavřený a pak se znovu otevřel.</span><span class="sxs-lookup"><span data-stu-id="4e09a-159">The project is closed and is then reopened.</span></span>
 
-7. <span data-ttu-id="49a20-160">Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="49a20-160">Add a reference to the caching assembly by following these steps:</span></span>
+7. <span data-ttu-id="4e09a-160">Pomocí následujících kroků přidejte odkaz na sestavení pro ukládání do mezipaměti:</span><span class="sxs-lookup"><span data-stu-id="4e09a-160">Add a reference to the caching assembly by following these steps:</span></span>
 
-    1. <span data-ttu-id="49a20-161">V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="49a20-161">In **Solution Explorer**, right-click the name of the project and then click **Add Reference**.</span></span>
+    1. <span data-ttu-id="4e09a-161">V **Průzkumník řešení**klikněte pravým tlačítkem na název projektu a pak klikněte na **Přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-161">In **Solution Explorer**, right-click the name of the project and then click **Add Reference**.</span></span>
 
-    2. <span data-ttu-id="49a20-162">Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="49a20-162">Select the **.NET** tab, select `System.Runtime.Caching`, and then click **OK**.</span></span>
+    2. <span data-ttu-id="4e09a-162">Vyberte kartu **.NET** , vyberte `System.Runtime.Caching`a pak klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-162">Select the **.NET** tab, select `System.Runtime.Caching`, and then click **OK**.</span></span>
 
-#### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a><span data-ttu-id="49a20-163">Chcete-li změnit cílové rozhraní .NET Framework v projektu jazyka Visual C#</span><span class="sxs-lookup"><span data-stu-id="49a20-163">To change the target .NET Framework in a Visual C# project</span></span>
+#### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a><span data-ttu-id="4e09a-163">Změna cílového .NET Framework ve vizuálním C# projektu</span><span class="sxs-lookup"><span data-stu-id="4e09a-163">To change the target .NET Framework in a Visual C# project</span></span>
 
-1. <span data-ttu-id="49a20-164">V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="49a20-164">In **Solution Explorer**, right-click the project name and then click **Properties**.</span></span>
+1. <span data-ttu-id="4e09a-164">V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-164">In **Solution Explorer**, right-click the project name and then click **Properties**.</span></span>
 
-     <span data-ttu-id="49a20-165">Zobrazí se okno Vlastnosti pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="49a20-165">The properties window for the application is displayed.</span></span>
+     <span data-ttu-id="4e09a-165">Zobrazí se okno Vlastnosti aplikace.</span><span class="sxs-lookup"><span data-stu-id="4e09a-165">The properties window for the application is displayed.</span></span>
 
-2. <span data-ttu-id="49a20-166">Klikněte na tlačítko **aplikace** kartu.</span><span class="sxs-lookup"><span data-stu-id="49a20-166">Click the **Application** tab.</span></span>
+2. <span data-ttu-id="4e09a-166">Klikněte na kartu **aplikace** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-166">Click the **Application** tab.</span></span>
 
-3. <span data-ttu-id="49a20-167">V **Cílová architektura** vyberte rozhraní .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="49a20-167">In the **Target framework** list, select .NET Framework 4.</span></span> <span data-ttu-id="49a20-168">(Nesmí být zvolen **rozhraní .NET Framework 4 Client Profile**.)</span><span class="sxs-lookup"><span data-stu-id="49a20-168">(Do not select **.NET Framework 4 Client Profile**.)</span></span>
+3. <span data-ttu-id="4e09a-167">V seznamu **cílové rozhraní** vyberte .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="4e09a-167">In the **Target framework** list, select .NET Framework 4.</span></span> <span data-ttu-id="4e09a-168">(Nevybírejte **.NET Framework 4 profil klienta**.)</span><span class="sxs-lookup"><span data-stu-id="4e09a-168">(Do not select **.NET Framework 4 Client Profile**.)</span></span>
 
-4. <span data-ttu-id="49a20-169">Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="49a20-169">Add a reference to the caching assembly by following these steps:</span></span>
+4. <span data-ttu-id="4e09a-169">Pomocí následujících kroků přidejte odkaz na sestavení pro ukládání do mezipaměti:</span><span class="sxs-lookup"><span data-stu-id="4e09a-169">Add a reference to the caching assembly by following these steps:</span></span>
 
-    1. <span data-ttu-id="49a20-170">Klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="49a20-170">Right-click the **References** folder and then click **Add Reference**.</span></span>
+    1. <span data-ttu-id="4e09a-170">Klikněte pravým tlačítkem na složku **odkazy** a pak klikněte na **Přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-170">Right-click the **References** folder and then click **Add Reference**.</span></span>
 
-    2. <span data-ttu-id="49a20-171">Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="49a20-171">Select the **.NET** tab, select `System.Runtime.Caching`, and then click **OK**.</span></span>
+    2. <span data-ttu-id="4e09a-171">Vyberte kartu **.NET** , vyberte `System.Runtime.Caching`a pak klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-171">Select the **.NET** tab, select `System.Runtime.Caching`, and then click **OK**.</span></span>
 
-## <a name="adding-a-button-to-the-wpf-window"></a><span data-ttu-id="49a20-172">Přidání tlačítka do okna WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-172">Adding a Button to the WPF Window</span></span>
- <span data-ttu-id="49a20-173">V dalším kroku přidáte ovládací prvek button a vytvořit obslužnou rutinu události pro tlačítka `Click` událostí.</span><span class="sxs-lookup"><span data-stu-id="49a20-173">Next, you will add a button control and create an event handler for the button's `Click` event.</span></span> <span data-ttu-id="49a20-174">Kód, který později přidáte tak, aby po kliknutí na tlačítko, jsou uložené v mezipaměti a zobrazí obsah textového souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-174">Later you will add code to so when you click the button, the contents of the text file are cached and displayed.</span></span>
+## <a name="adding-a-button-to-the-wpf-window"></a><span data-ttu-id="4e09a-172">Přidání tlačítka do okna WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-172">Adding a Button to the WPF Window</span></span>
+ <span data-ttu-id="4e09a-173">Dále přidáte ovládací prvek tlačítko a vytvoříte obslužnou rutinu události pro `Click` událost tlačítka.</span><span class="sxs-lookup"><span data-stu-id="4e09a-173">Next, you will add a button control and create an event handler for the button's `Click` event.</span></span> <span data-ttu-id="4e09a-174">Později přidáte kód, takže když kliknete na tlačítko, obsah textového souboru se uloží do mezipaměti a zobrazí se.</span><span class="sxs-lookup"><span data-stu-id="4e09a-174">Later you will add code to so when you click the button, the contents of the text file are cached and displayed.</span></span>
 
-#### <a name="to-add-a-button-control"></a><span data-ttu-id="49a20-175">Chcete-li přidat ovládací prvek button</span><span class="sxs-lookup"><span data-stu-id="49a20-175">To add a button control</span></span>
+#### <a name="to-add-a-button-control"></a><span data-ttu-id="4e09a-175">Přidání ovládacího prvku tlačítko</span><span class="sxs-lookup"><span data-stu-id="4e09a-175">To add a button control</span></span>
 
-1. <span data-ttu-id="49a20-176">V **Průzkumníka řešení**, poklikejte na soubor MainWindow.xaml a otevřete ho.</span><span class="sxs-lookup"><span data-stu-id="49a20-176">In **Solution Explorer**, double-click the MainWindow.xaml file to open it.</span></span>
+1. <span data-ttu-id="4e09a-176">V **Průzkumník řešení**dvakrát klikněte na soubor MainWindow. XAML a otevřete ho.</span><span class="sxs-lookup"><span data-stu-id="4e09a-176">In **Solution Explorer**, double-click the MainWindow.xaml file to open it.</span></span>
 
-2. <span data-ttu-id="49a20-177">Z **nástrojů**v části **běžných ovládacích prvků WPF**, přetáhněte `Button` ovládací prvek `MainWindow` okna.</span><span class="sxs-lookup"><span data-stu-id="49a20-177">From the **Toolbox**, under **Common WPF Controls**, drag a `Button` control to the `MainWindow` window.</span></span>
+2. <span data-ttu-id="4e09a-177">Z **panelu nástrojů**v části **běžné ovládací prvky WPF**přetáhněte `Button` ovládací prvek do `MainWindow` okna.</span><span class="sxs-lookup"><span data-stu-id="4e09a-177">From the **Toolbox**, under **Common WPF Controls**, drag a `Button` control to the `MainWindow` window.</span></span>
 
-3. <span data-ttu-id="49a20-178">V **vlastnosti** okno, nastaveno `Content` vlastnost `Button` mít pod kontrolou **získat mezipaměti**.</span><span class="sxs-lookup"><span data-stu-id="49a20-178">In the **Properties** window, set the `Content` property of the `Button` control to **Get Cache**.</span></span>
+3. <span data-ttu-id="4e09a-178">V okně **vlastnosti** nastavte `Content` vlastnost `Button` ovládacího prvku na **získat mezipaměť**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-178">In the **Properties** window, set the `Content` property of the `Button` control to **Get Cache**.</span></span>
 
-## <a name="initializing-the-cache-and-caching-an-entry"></a><span data-ttu-id="49a20-179">Inicializace mezipaměti a ukládání do mezipaměti položku</span><span class="sxs-lookup"><span data-stu-id="49a20-179">Initializing the Cache and Caching an Entry</span></span>
- <span data-ttu-id="49a20-180">V dalším kroku přidáte kód k provádění následujících úloh:</span><span class="sxs-lookup"><span data-stu-id="49a20-180">Next, you will add the code to perform the following tasks:</span></span>
+## <a name="initializing-the-cache-and-caching-an-entry"></a><span data-ttu-id="4e09a-179">Inicializuje se mezipaměť a zapíše do mezipaměti záznam.</span><span class="sxs-lookup"><span data-stu-id="4e09a-179">Initializing the Cache and Caching an Entry</span></span>
+ <span data-ttu-id="4e09a-180">V dalším kroku přidáte kód, který provede následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="4e09a-180">Next, you will add the code to perform the following tasks:</span></span>
 
-- <span data-ttu-id="49a20-181">Vytvoření instance třídy mezipaměti – to znamená, že jste se vytvořit novou instanci <xref:System.Runtime.Caching.MemoryCache> objektu.</span><span class="sxs-lookup"><span data-stu-id="49a20-181">Create an instance of the cache class—that is, you will instantiate a new <xref:System.Runtime.Caching.MemoryCache> object.</span></span>
+- <span data-ttu-id="4e09a-181">Vytvořte instanci třídy cache – to znamená, že vytvoříte instanci nového <xref:System.Runtime.Caching.MemoryCache> objektu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-181">Create an instance of the cache class—that is, you will instantiate a new <xref:System.Runtime.Caching.MemoryCache> object.</span></span>
 
-- <span data-ttu-id="49a20-182">Určete, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objektů pro sledování změn v textovém souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-182">Specify that the cache uses a <xref:System.Runtime.Caching.HostFileChangeMonitor> object to monitor changes in the text file.</span></span>
+- <span data-ttu-id="4e09a-182">Určuje, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objekt k monitorování změn v textovém souboru.</span><span class="sxs-lookup"><span data-stu-id="4e09a-182">Specify that the cache uses a <xref:System.Runtime.Caching.HostFileChangeMonitor> object to monitor changes in the text file.</span></span>
 
-- <span data-ttu-id="49a20-183">Čtení textového souboru a jeho obsah v mezipaměti jako položka v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-183">Read the text file and cache its contents as a cache entry.</span></span>
+- <span data-ttu-id="4e09a-183">Přečtěte si textový soubor a zapíšete jeho obsah do mezipaměti jako položku mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-183">Read the text file and cache its contents as a cache entry.</span></span>
 
-- <span data-ttu-id="49a20-184">Zobrazte obsah v mezipaměti textového souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-184">Display the contents of the cached text file.</span></span>
+- <span data-ttu-id="4e09a-184">Zobrazí obsah textového souboru v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-184">Display the contents of the cached text file.</span></span>
 
-#### <a name="to-create-the-cache-object"></a><span data-ttu-id="49a20-185">Chcete-li vytvořit objekt mezipaměti</span><span class="sxs-lookup"><span data-stu-id="49a20-185">To create the cache object</span></span>
+#### <a name="to-create-the-cache-object"></a><span data-ttu-id="4e09a-185">Vytvoření objektu mezipaměti</span><span class="sxs-lookup"><span data-stu-id="4e09a-185">To create the cache object</span></span>
 
-1. <span data-ttu-id="49a20-186">Dvakrát klikněte na tlačítko, které jste právě přidali, chcete-li vytvořit obslužnou rutinu události v souboru MainWindow.xaml.cs nebo soubor MainWindow.Xaml.vb.</span><span class="sxs-lookup"><span data-stu-id="49a20-186">Double-click the button you just added in order to create an event handler in the MainWindow.xaml.cs or MainWindow.Xaml.vb file.</span></span>
+1. <span data-ttu-id="4e09a-186">Dvakrát klikněte na tlačítko, které jste právě přidali, aby se vytvořila obslužná rutina události v souboru MainWindow.xaml.cs nebo MainWindow. XAML. vb.</span><span class="sxs-lookup"><span data-stu-id="4e09a-186">Double-click the button you just added in order to create an event handler in the MainWindow.xaml.cs or MainWindow.Xaml.vb file.</span></span>
 
-2. <span data-ttu-id="49a20-187">V horní části souboru (před deklaraci třídy), přidejte následující `Imports` (Visual Basic) nebo `using` příkazy (C#):</span><span class="sxs-lookup"><span data-stu-id="49a20-187">At the top of the file (before the class declaration), add the following `Imports` (Visual Basic) or `using` (C#) statements:</span></span>
+2. <span data-ttu-id="4e09a-187">V horní části souboru (před deklarací třídy) přidejte následující `Imports` příkazy (Visual Basic) nebo `using` (C#):</span><span class="sxs-lookup"><span data-stu-id="4e09a-187">At the top of the file (before the class declaration), add the following `Imports` (Visual Basic) or `using` (C#) statements:</span></span>
 
     ```csharp
     using System.Runtime.Caching;
@@ -167,7 +167,7 @@ ms.locfileid: "66457512"
     Imports System.IO
     ```
 
-3. <span data-ttu-id="49a20-188">V obslužné rutině události přidejte následující kód k vytvoření instance objektu mezipaměti:</span><span class="sxs-lookup"><span data-stu-id="49a20-188">In the event handler, add the following code to instantiate the cache object:</span></span>
+3. <span data-ttu-id="4e09a-188">V obslužné rutině události přidejte následující kód pro vytvoření instance objektu Cache:</span><span class="sxs-lookup"><span data-stu-id="4e09a-188">In the event handler, add the following code to instantiate the cache object:</span></span>
 
     ```csharp
     ObjectCache cache = MemoryCache.Default;
@@ -177,9 +177,9 @@ ms.locfileid: "66457512"
     Dim cache As ObjectCache = MemoryCache.Default
     ```
 
-     <span data-ttu-id="49a20-189"><xref:System.Runtime.Caching.ObjectCache> Třída je integrované třídu, která poskytuje mezipaměti objektů v paměti do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-189">The <xref:System.Runtime.Caching.ObjectCache> class is a built-in class that provides an in-memory object cache.</span></span>
+     <span data-ttu-id="4e09a-189"><xref:System.Runtime.Caching.ObjectCache> Třída je vestavěná třída, která poskytuje mezipaměť objektů v paměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-189">The <xref:System.Runtime.Caching.ObjectCache> class is a built-in class that provides an in-memory object cache.</span></span>
 
-4. <span data-ttu-id="49a20-190">Přidejte následující kód k načtení obsahu položky mezipaměti s názvem `filecontents`:</span><span class="sxs-lookup"><span data-stu-id="49a20-190">Add the following code to read the contents of a cache entry named `filecontents`:</span></span>
+4. <span data-ttu-id="4e09a-190">Přidejte následující kód pro čtení obsahu položky mezipaměti s názvem `filecontents`:</span><span class="sxs-lookup"><span data-stu-id="4e09a-190">Add the following code to read the contents of a cache entry named `filecontents`:</span></span>
 
     ```vb
     Dim fileContents As String = TryCast(cache("filecontents"), String)
@@ -189,7 +189,7 @@ ms.locfileid: "66457512"
     string fileContents = cache["filecontents"] as string;
     ```
 
-5. <span data-ttu-id="49a20-191">Přidejte následující kód, který zkontrolujte, zda položka mezipaměti s názvem `filecontents` existuje:</span><span class="sxs-lookup"><span data-stu-id="49a20-191">Add the following code to check whether the cache entry named `filecontents` exists:</span></span>
+5. <span data-ttu-id="4e09a-191">Přidejte následující kód, který zkontroluje, zda existuje položka mezipaměti `filecontents` s názvem:</span><span class="sxs-lookup"><span data-stu-id="4e09a-191">Add the following code to check whether the cache entry named `filecontents` exists:</span></span>
 
     ```vb
     If fileContents Is Nothing Then
@@ -204,9 +204,9 @@ ms.locfileid: "66457512"
     }
     ```
 
-     <span data-ttu-id="49a20-192">Určená položka mezipaměti neexistuje, musíte přečíst textový soubor a přidejte jej jako položka v mezipaměti do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-192">If the specified cache entry does not exist, you must read the text file and add it as a cache entry to the cache.</span></span>
+     <span data-ttu-id="4e09a-192">Pokud zadaná položka mezipaměti neexistuje, musíte si přečíst textový soubor a přidat ho jako položku mezipaměti do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-192">If the specified cache entry does not exist, you must read the text file and add it as a cache entry to the cache.</span></span>
 
-6. <span data-ttu-id="49a20-193">V `if/then` blokovat, přidejte následující kód k vytvoření nového <xref:System.Runtime.Caching.CacheItemPolicy> objekt, který určuje, že položka mezipaměti vyprší po 10 sekundách.</span><span class="sxs-lookup"><span data-stu-id="49a20-193">In the `if/then` block, add the following code to create a new <xref:System.Runtime.Caching.CacheItemPolicy> object that specifies that the cache entry expires after 10 seconds.</span></span>
+6. <span data-ttu-id="4e09a-193">V bloku přidejte následující kód pro vytvoření nového <xref:System.Runtime.Caching.CacheItemPolicy> objektu, který určuje, že platnost položky mezipaměti vyprší po 10 sekundách. `if/then`</span><span class="sxs-lookup"><span data-stu-id="4e09a-193">In the `if/then` block, add the following code to create a new <xref:System.Runtime.Caching.CacheItemPolicy> object that specifies that the cache entry expires after 10 seconds.</span></span>
 
     ```vb
     Dim policy As New CacheItemPolicy()
@@ -218,9 +218,9 @@ ms.locfileid: "66457512"
     policy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(10.0);
     ```
 
-     <span data-ttu-id="49a20-194">Pokud je k dispozici žádné informace o vyřazení nebo vypršení platnosti, výchozí hodnota je <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, což znamená, že položky mezipaměti nikdy nevyprší závislosti pouze na absolutním čase.</span><span class="sxs-lookup"><span data-stu-id="49a20-194">If no eviction or expiration information is provided, the default is <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, which means the cache entries never expire based only on an absolute time.</span></span> <span data-ttu-id="49a20-195">Místo toho platnost položky mezipaměti pouze v případě nedostatku paměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-195">Instead, cache entries expire only when there is memory pressure.</span></span> <span data-ttu-id="49a20-196">Jako osvědčený postup byste měli vždy explicitně poskytnout buď absolutní, nebo klouzavé vypršení platnosti.</span><span class="sxs-lookup"><span data-stu-id="49a20-196">As a best practice, you should always explicitly provide either an absolute or a sliding expiration.</span></span>
+     <span data-ttu-id="4e09a-194">Pokud nejsou k dispozici žádné informace o vyřazení nebo vypršení <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>platnosti, výchozí hodnota je, což znamená, že položky mezipaměti nikdy neprošly platností na základě pouze absolutního času.</span><span class="sxs-lookup"><span data-stu-id="4e09a-194">If no eviction or expiration information is provided, the default is <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, which means the cache entries never expire based only on an absolute time.</span></span> <span data-ttu-id="4e09a-195">Místo toho vyprší platnost položek mezipaměti pouze v případě, že dojde k tlaku na paměť.</span><span class="sxs-lookup"><span data-stu-id="4e09a-195">Instead, cache entries expire only when there is memory pressure.</span></span> <span data-ttu-id="4e09a-196">V souladu s osvědčeným postupem byste vždy měli explicitně zadat absolutní nebo klouzavé vypršení platnosti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-196">As a best practice, you should always explicitly provide either an absolute or a sliding expiration.</span></span>
 
-7. <span data-ttu-id="49a20-197">Uvnitř `if/then` blokovat a následující kód, kterou jste přidali v předchozím kroku, přidejte následující kód k vytvoření kolekce pro cesty k souborům, které chcete monitorovat a přidejte cestu k souboru text do kolekce:</span><span class="sxs-lookup"><span data-stu-id="49a20-197">Inside the `if/then` block and following the code you added in the previous step, add the following code to create a collection for the file paths that you want to monitor, and to add the path of the text file to the collection:</span></span>
+7. <span data-ttu-id="4e09a-197">`if/then` Uvnitř bloku a za kódem, který jste přidali v předchozím kroku, přidejte následující kód, který vytvoří kolekci pro cesty k souborům, které chcete monitorovat, a přidejte cestu k textovému souboru do kolekce:</span><span class="sxs-lookup"><span data-stu-id="4e09a-197">Inside the `if/then` block and following the code you added in the previous step, add the following code to create a collection for the file paths that you want to monitor, and to add the path of the text file to the collection:</span></span>
 
     ```vb
     Dim filePaths As New List(Of String)()
@@ -233,9 +233,9 @@ ms.locfileid: "66457512"
     ```
 
     > [!NOTE]
-    >  <span data-ttu-id="49a20-198">Pokud není textový soubor, který chcete použít `c:\cache\cacheText.txt`, zadejte cestu k umístění textového souboru, kterou chcete použít.</span><span class="sxs-lookup"><span data-stu-id="49a20-198">If the text file you want to use is not `c:\cache\cacheText.txt`, specify the path where the text file is that you want to use.</span></span>
+    > <span data-ttu-id="4e09a-198">Pokud textový soubor, který chcete použít `c:\cache\cacheText.txt`, není, zadejte cestu, kde je textový soubor, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="4e09a-198">If the text file you want to use is not `c:\cache\cacheText.txt`, specify the path where the text file is that you want to use.</span></span>
 
-8. <span data-ttu-id="49a20-199">Následující kód, který jste přidali v předchozím kroku, přidejte následující kód přidejte nový <xref:System.Runtime.Caching.HostFileChangeMonitor> do kolekce změnu monitoruje položky mezipaměti:</span><span class="sxs-lookup"><span data-stu-id="49a20-199">Following the code that you added in the previous step, add the following code to add a new <xref:System.Runtime.Caching.HostFileChangeMonitor> object to the collection of change monitors for the cache entry:</span></span>
+8. <span data-ttu-id="4e09a-199">Po kódu, který jste přidali v předchozím kroku, přidejte následující kód pro přidání nového <xref:System.Runtime.Caching.HostFileChangeMonitor> objektu do kolekce monitorování změn pro položku mezipaměti:</span><span class="sxs-lookup"><span data-stu-id="4e09a-199">Following the code that you added in the previous step, add the following code to add a new <xref:System.Runtime.Caching.HostFileChangeMonitor> object to the collection of change monitors for the cache entry:</span></span>
 
     ```vb
     policy.ChangeMonitors.Add(New HostFileChangeMonitor(filePaths))
@@ -245,9 +245,9 @@ ms.locfileid: "66457512"
     policy.ChangeMonitors.Add(new HostFileChangeMonitor(filePaths));
     ```
 
-     <span data-ttu-id="49a20-200"><xref:System.Runtime.Caching.HostFileChangeMonitor> Objekt cesta k souboru text sleduje a upozorní mezipaměti, pokud dojde ke změnám.</span><span class="sxs-lookup"><span data-stu-id="49a20-200">The <xref:System.Runtime.Caching.HostFileChangeMonitor> object monitors the text file's path and notifies the cache if changes occur.</span></span> <span data-ttu-id="49a20-201">V tomto příkladu položky uložené v mezipaměti vyprší, pokud se změní obsah souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-201">In this example, the cache entry will expire if the content of the file changes.</span></span>
+     <span data-ttu-id="4e09a-200"><xref:System.Runtime.Caching.HostFileChangeMonitor> Objekt sleduje cestu k textovému souboru a upozorní mezipaměť, pokud dojde k provedeným změnám.</span><span class="sxs-lookup"><span data-stu-id="4e09a-200">The <xref:System.Runtime.Caching.HostFileChangeMonitor> object monitors the text file's path and notifies the cache if changes occur.</span></span> <span data-ttu-id="4e09a-201">V tomto příkladu vyprší platnost položky mezipaměti, pokud dojde ke změně obsahu souboru.</span><span class="sxs-lookup"><span data-stu-id="4e09a-201">In this example, the cache entry will expire if the content of the file changes.</span></span>
 
-9. <span data-ttu-id="49a20-202">Následující kód, který jste přidali v předchozím kroku přidejte následující kód k načtení obsahu textového souboru:</span><span class="sxs-lookup"><span data-stu-id="49a20-202">Following the code that you added in the previous step, add the following code to read the contents of the text file:</span></span>
+9. <span data-ttu-id="4e09a-202">Po kódu, který jste přidali v předchozím kroku, přidejte následující kód, který přečte obsah textového souboru:</span><span class="sxs-lookup"><span data-stu-id="4e09a-202">Following the code that you added in the previous step, add the following code to read the contents of the text file:</span></span>
 
     ```vb
     fileContents = File.ReadAllText("c:\cache\cacheText.txt") & vbCrLf & DateTime.Now.ToString()
@@ -257,9 +257,9 @@ ms.locfileid: "66457512"
     fileContents = File.ReadAllText("c:\\cache\\cacheText.txt") + "\n" + DateTime.Now;
     ```
 
-     <span data-ttu-id="49a20-203">Časové razítko data a času je přidán, takže budete moci zobrazit, když vyprší platnost položky mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-203">The date and time timestamp is added so that you will be able to see when the cache entry expires.</span></span>
+     <span data-ttu-id="4e09a-203">Časové razítko pro datum a čas je přidané, takže budete moct zobrazit, kdy vyprší platnost položky mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-203">The date and time timestamp is added so that you will be able to see when the cache entry expires.</span></span>
 
-10. <span data-ttu-id="49a20-204">Následující kód, který jste přidali v předchozím kroku, přidejte následující kód k vložení obsahu souboru do objektu mezipaměti jako <xref:System.Runtime.Caching.CacheItem> instance:</span><span class="sxs-lookup"><span data-stu-id="49a20-204">Following the code that you added in the previous step, add the following code to insert the contents of the file into the cache object as a <xref:System.Runtime.Caching.CacheItem> instance:</span></span>
+10. <span data-ttu-id="4e09a-204">Po kódu, který jste přidali v předchozím kroku, přidejte následující kód pro vložení obsahu souboru do objektu mezipaměti jako <xref:System.Runtime.Caching.CacheItem> instanci:</span><span class="sxs-lookup"><span data-stu-id="4e09a-204">Following the code that you added in the previous step, add the following code to insert the contents of the file into the cache object as a <xref:System.Runtime.Caching.CacheItem> instance:</span></span>
 
     ```vb
     cache.Set("filecontents", fileContents, policy)
@@ -269,9 +269,9 @@ ms.locfileid: "66457512"
     cache.Set("filecontents", fileContents, policy);
     ```
 
-     <span data-ttu-id="49a20-205">Zadejte informace o tom, jak položka mezipaměti by měla být vyřazena předáním <xref:System.Runtime.Caching.CacheItemPolicy> objekt, který jste vytvořili dříve jako parametr.</span><span class="sxs-lookup"><span data-stu-id="49a20-205">You specify information about how the cache entry should be evicted by passing the <xref:System.Runtime.Caching.CacheItemPolicy> object that you created earlier as a parameter.</span></span>
+     <span data-ttu-id="4e09a-205">Informace o tom, jak by měla být položka mezipaměti vyřazena, zadáte <xref:System.Runtime.Caching.CacheItemPolicy> předáním objektu, který jste vytvořili dříve jako parametr.</span><span class="sxs-lookup"><span data-stu-id="4e09a-205">You specify information about how the cache entry should be evicted by passing the <xref:System.Runtime.Caching.CacheItemPolicy> object that you created earlier as a parameter.</span></span>
 
-11. <span data-ttu-id="49a20-206">Po `if/then` blokovat, přidejte následující kód k zobrazení obsahu v mezipaměti souborů v okně se zprávou:</span><span class="sxs-lookup"><span data-stu-id="49a20-206">After the `if/then` block, add the following code to display the cached file content in a message box:</span></span>
+11. <span data-ttu-id="4e09a-206">`if/then` Po bloku přidejte následující kód pro zobrazení obsahu souboru uloženého v mezipaměti v okně se zprávou:</span><span class="sxs-lookup"><span data-stu-id="4e09a-206">After the `if/then` block, add the following code to display the cached file content in a message box:</span></span>
 
     ```vb
     MessageBox.Show(fileContents)
@@ -281,53 +281,53 @@ ms.locfileid: "66457512"
     MessageBox.Show(fileContents);
     ```
 
-12. <span data-ttu-id="49a20-207">V **sestavení** nabídky, klikněte na tlačítko **sestavení WPFCaching** k sestavení projektu.</span><span class="sxs-lookup"><span data-stu-id="49a20-207">In the **Build** menu, click **Build WPFCaching** to build your project.</span></span>
+12. <span data-ttu-id="4e09a-207">V nabídce **sestavení** klikněte na **sestavit WPFCaching** a sestavte projekt.</span><span class="sxs-lookup"><span data-stu-id="4e09a-207">In the **Build** menu, click **Build WPFCaching** to build your project.</span></span>
 
-## <a name="testing-caching-in-the-wpf-application"></a><span data-ttu-id="49a20-208">Testování ukládání do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-208">Testing Caching in the WPF Application</span></span>
- <span data-ttu-id="49a20-209">Teď můžete aplikaci otestovat.</span><span class="sxs-lookup"><span data-stu-id="49a20-209">You can now test the application.</span></span>
+## <a name="testing-caching-in-the-wpf-application"></a><span data-ttu-id="4e09a-208">Testování ukládání do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-208">Testing Caching in the WPF Application</span></span>
+ <span data-ttu-id="4e09a-209">Nyní můžete aplikaci otestovat.</span><span class="sxs-lookup"><span data-stu-id="4e09a-209">You can now test the application.</span></span>
 
-#### <a name="to-test-caching-in-the-wpf-application"></a><span data-ttu-id="49a20-210">K testování ukládání do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="49a20-210">To test caching in the WPF application</span></span>
+#### <a name="to-test-caching-in-the-wpf-application"></a><span data-ttu-id="4e09a-210">Testování ukládání do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="4e09a-210">To test caching in the WPF application</span></span>
 
-1. <span data-ttu-id="49a20-211">Stisknutím kláves CTRL + F5 spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="49a20-211">Press CTRL+F5 to run the application.</span></span>
+1. <span data-ttu-id="4e09a-211">Stisknutím kombinace kláves CTRL + F5 spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="4e09a-211">Press CTRL+F5 to run the application.</span></span>
 
-     <span data-ttu-id="49a20-212">`MainWindow` Se zobrazí okno.</span><span class="sxs-lookup"><span data-stu-id="49a20-212">The `MainWindow` window is displayed.</span></span>
+     <span data-ttu-id="4e09a-212">Zobrazí `MainWindow` se okno.</span><span class="sxs-lookup"><span data-stu-id="4e09a-212">The `MainWindow` window is displayed.</span></span>
 
-2. <span data-ttu-id="49a20-213">Klikněte na tlačítko **získat mezipaměti**.</span><span class="sxs-lookup"><span data-stu-id="49a20-213">Click **Get Cache**.</span></span>
+2. <span data-ttu-id="4e09a-213">Klikněte na **získat mezipaměť**.</span><span class="sxs-lookup"><span data-stu-id="4e09a-213">Click **Get Cache**.</span></span>
 
-     <span data-ttu-id="49a20-214">Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou.</span><span class="sxs-lookup"><span data-stu-id="49a20-214">The cached content from the text file is displayed in a message box.</span></span> <span data-ttu-id="49a20-215">Všimněte si, že časové razítko souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-215">Notice the timestamp on the file.</span></span>
+     <span data-ttu-id="4e09a-214">Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou.</span><span class="sxs-lookup"><span data-stu-id="4e09a-214">The cached content from the text file is displayed in a message box.</span></span> <span data-ttu-id="4e09a-215">Všimněte si časového razítka v souboru.</span><span class="sxs-lookup"><span data-stu-id="4e09a-215">Notice the timestamp on the file.</span></span>
 
-3. <span data-ttu-id="49a20-216">Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.</span><span class="sxs-lookup"><span data-stu-id="49a20-216">Close the message box and then click **Get Cache** again.</span></span>
+3. <span data-ttu-id="4e09a-216">Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-216">Close the message box and then click **Get Cache** again.</span></span>
 
-     <span data-ttu-id="49a20-217">Časové razítko je beze změny.</span><span class="sxs-lookup"><span data-stu-id="49a20-217">The timestamp is unchanged.</span></span> <span data-ttu-id="49a20-218">To znamená, že je zobrazen obsah uložený v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-218">This indicates the cached content is displayed.</span></span>
+     <span data-ttu-id="4e09a-217">Časové razítko je beze změny.</span><span class="sxs-lookup"><span data-stu-id="4e09a-217">The timestamp is unchanged.</span></span> <span data-ttu-id="4e09a-218">To znamená, že se zobrazí obsah uložený v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-218">This indicates the cached content is displayed.</span></span>
 
-4. <span data-ttu-id="49a20-219">Počkejte 10 sekund nebo informace a pak klikněte na tlačítko **získat mezipaměti** znovu.</span><span class="sxs-lookup"><span data-stu-id="49a20-219">Wait 10 seconds or more and then click **Get Cache** again.</span></span>
+4. <span data-ttu-id="4e09a-219">Počkejte 10 sekund nebo více a pak znovu klikněte na **načíst mezipaměť** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-219">Wait 10 seconds or more and then click **Get Cache** again.</span></span>
 
-     <span data-ttu-id="49a20-220">Tentokrát se zobrazí nové časové razítko.</span><span class="sxs-lookup"><span data-stu-id="49a20-220">This time a new timestamp is displayed.</span></span> <span data-ttu-id="49a20-221">To znamená, že umožňují zásady vypršení platnosti položky mezipaměti a zobrazí se nový obsah uložený v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="49a20-221">This indicates that the policy let the cache entry expire and that new cached content is displayed.</span></span>
+     <span data-ttu-id="4e09a-220">Tentokrát se zobrazí nové časové razítko.</span><span class="sxs-lookup"><span data-stu-id="4e09a-220">This time a new timestamp is displayed.</span></span> <span data-ttu-id="4e09a-221">To znamená, že zásada umožňuje vypršení platnosti položky mezipaměti a zobrazí se nový obsah uložený v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4e09a-221">This indicates that the policy let the cache entry expire and that new cached content is displayed.</span></span>
 
-5. <span data-ttu-id="49a20-222">V textovém editoru otevřete textový soubor, který jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="49a20-222">In a text editor, open the text file that you created.</span></span> <span data-ttu-id="49a20-223">Ještě neprovádějte žádné změny.</span><span class="sxs-lookup"><span data-stu-id="49a20-223">Do not make any changes yet.</span></span>
+5. <span data-ttu-id="4e09a-222">V textovém editoru otevřete textový soubor, který jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="4e09a-222">In a text editor, open the text file that you created.</span></span> <span data-ttu-id="4e09a-223">Zatím žádné změny neprovádějte.</span><span class="sxs-lookup"><span data-stu-id="4e09a-223">Do not make any changes yet.</span></span>
 
-6. <span data-ttu-id="49a20-224">Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.</span><span class="sxs-lookup"><span data-stu-id="49a20-224">Close the message box and then click **Get Cache** again.</span></span>
+6. <span data-ttu-id="4e09a-224">Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-224">Close the message box and then click **Get Cache** again.</span></span>
 
-     <span data-ttu-id="49a20-225">Všimněte si, že časové razítko znovu.</span><span class="sxs-lookup"><span data-stu-id="49a20-225">Notice the timestamp again.</span></span>
+     <span data-ttu-id="4e09a-225">Všimněte si časového razítka znovu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-225">Notice the timestamp again.</span></span>
 
-7. <span data-ttu-id="49a20-226">Proveďte změnu do textového souboru a pak soubor uložte.</span><span class="sxs-lookup"><span data-stu-id="49a20-226">Make a change to the text file and then save the file.</span></span>
+7. <span data-ttu-id="4e09a-226">Proveďte změnu v textovém souboru a pak soubor uložte.</span><span class="sxs-lookup"><span data-stu-id="4e09a-226">Make a change to the text file and then save the file.</span></span>
 
-8. <span data-ttu-id="49a20-227">Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.</span><span class="sxs-lookup"><span data-stu-id="49a20-227">Close the message box and then click **Get Cache** again.</span></span>
+8. <span data-ttu-id="4e09a-227">Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .</span><span class="sxs-lookup"><span data-stu-id="4e09a-227">Close the message box and then click **Get Cache** again.</span></span>
 
-     <span data-ttu-id="49a20-228">Toto okno se zprávou obsahuje aktualizovaný obsah z textového souboru a nové časové razítko.</span><span class="sxs-lookup"><span data-stu-id="49a20-228">This message box contains the updated content from the text file and a new timestamp.</span></span> <span data-ttu-id="49a20-229">To znamená, že sledování změn souboru hostitele vyřazení položka mezipaměti okamžitě při změně souboru i v případě, kdyby absolutní časový limit vypršel.</span><span class="sxs-lookup"><span data-stu-id="49a20-229">This indicates that the host-file change monitor evicted the cache entry immediately when you changed the file, even though the absolute timeout period had not expired.</span></span>
+     <span data-ttu-id="4e09a-228">Toto okno se zprávou obsahuje aktualizovaný obsah z textového souboru a nové časové razítko.</span><span class="sxs-lookup"><span data-stu-id="4e09a-228">This message box contains the updated content from the text file and a new timestamp.</span></span> <span data-ttu-id="4e09a-229">To znamená, že sledování změn v hostitelském souboru vyřadí položku mezipaměti hned po změně souboru, a to i v případě, že nevypršela absolutní doba časového limitu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-229">This indicates that the host-file change monitor evicted the cache entry immediately when you changed the file, even though the absolute timeout period had not expired.</span></span>
 
     > [!NOTE]
-    >  <span data-ttu-id="49a20-230">Vám může prodloužit dobu vyřazení na 20 sekund nebo více a více času, abyste provedli změnu v souboru.</span><span class="sxs-lookup"><span data-stu-id="49a20-230">You can increase the eviction time to 20 seconds or more to allow more time for you to make a change in the file.</span></span>
+    > <span data-ttu-id="4e09a-230">Dobu vyřazení můžete zvýšit na 20 sekund nebo více, aby bylo možné provést změnu v souboru více času.</span><span class="sxs-lookup"><span data-stu-id="4e09a-230">You can increase the eviction time to 20 seconds or more to allow more time for you to make a change in the file.</span></span>
 
-## <a name="code-example"></a><span data-ttu-id="49a20-231">Příklad kódu</span><span class="sxs-lookup"><span data-stu-id="49a20-231">Code Example</span></span>
- <span data-ttu-id="49a20-232">Po dokončení tohoto návodu, kód, který jste vytvořili projekt bude vypadat podobně jako v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="49a20-232">After you have completed this walkthrough, the code for the project you created will resemble the following example.</span></span>
+## <a name="code-example"></a><span data-ttu-id="4e09a-231">Příklad kódu</span><span class="sxs-lookup"><span data-stu-id="4e09a-231">Code Example</span></span>
+ <span data-ttu-id="4e09a-232">Po dokončení tohoto návodu se kód projektu, který jste vytvořili, podobá následujícímu příkladu.</span><span class="sxs-lookup"><span data-stu-id="4e09a-232">After you have completed this walkthrough, the code for the project you created will resemble the following example.</span></span>
 
  [!code-csharp[CachingWPFApplications#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]
 
-## <a name="see-also"></a><span data-ttu-id="49a20-233">Viz také:</span><span class="sxs-lookup"><span data-stu-id="49a20-233">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4e09a-233">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e09a-233">See also</span></span>
 
 - <xref:System.Runtime.Caching.MemoryCache>
 - <xref:System.Runtime.Caching.ObjectCache>
 - <xref:System.Runtime.Caching>
-- [<span data-ttu-id="49a20-234">Ukládání do vyrovnávací paměti v aplikacích .NET Framework</span><span class="sxs-lookup"><span data-stu-id="49a20-234">Caching in .NET Framework Applications</span></span>](../../performance/caching-in-net-framework-applications.md)
+- [<span data-ttu-id="4e09a-234">Ukládání do vyrovnávací paměti v aplikacích .NET Framework</span><span class="sxs-lookup"><span data-stu-id="4e09a-234">Caching in .NET Framework Applications</span></span>](../../performance/caching-in-net-framework-applications.md)

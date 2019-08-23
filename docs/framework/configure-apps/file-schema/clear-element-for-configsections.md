@@ -9,52 +9,52 @@ helpviewer_keywords:
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: e79def513637937262d00b0edb1b0f7676fd120b
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: c06fca8b83638fb47bedb21863cb9b200cd211f3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300807"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927733"
 ---
-# <a name="clear-element-for-configsections"></a><span data-ttu-id="4a034-102">\<Vymazat > – element pro \<configSections ></span><span class="sxs-lookup"><span data-stu-id="4a034-102">\<clear> element for \<configSections></span></span>
+# <a name="clear-element-for-configsections"></a><span data-ttu-id="6a8e5-102">\<Clear – element > \<pro configSections ></span><span class="sxs-lookup"><span data-stu-id="6a8e5-102">\<clear> element for \<configSections></span></span>
 
-<span data-ttu-id="4a034-103">Vymaže všechny dříve definované oddíly a skupin oddílů.</span><span class="sxs-lookup"><span data-stu-id="4a034-103">Clears all previously defined sections and section groups.</span></span>
+<span data-ttu-id="6a8e5-103">Vymaže všechny dříve definované oddíly a skupiny oddílů.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-103">Clears all previously defined sections and section groups.</span></span>
 
-<span data-ttu-id="4a034-104">[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="4a034-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="4a034-105">&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="4a034-105">&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) </span></span>  
-<span data-ttu-id="4a034-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**</span><span class="sxs-lookup"><span data-stu-id="4a034-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**</span></span>
+<span data-ttu-id="6a8e5-104">[ **\<> Konfigurace**](configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="6a8e5-104">[**\<configuration>**](configuration-element.md) </span></span>  
+<span data-ttu-id="6a8e5-105">&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="6a8e5-105">&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md) </span></span>  
+<span data-ttu-id="6a8e5-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**</span><span class="sxs-lookup"><span data-stu-id="6a8e5-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="4a034-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4a034-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="6a8e5-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6a8e5-107">Syntax</span></span>
 
 ```xml
 <clear/>
 ```
 
-## <a name="attribute"></a><span data-ttu-id="4a034-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="4a034-108">Attribute</span></span>
+## <a name="attribute"></a><span data-ttu-id="6a8e5-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="6a8e5-108">Attribute</span></span>
 
-|           | <span data-ttu-id="4a034-109">Popis</span><span class="sxs-lookup"><span data-stu-id="4a034-109">Description</span></span> |
+|           | <span data-ttu-id="6a8e5-109">Popis</span><span class="sxs-lookup"><span data-stu-id="6a8e5-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="4a034-110">**name**</span><span class="sxs-lookup"><span data-stu-id="4a034-110">**name**</span></span>  | <span data-ttu-id="4a034-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="4a034-111">Required attribute.</span></span><br><br><span data-ttu-id="4a034-112">Určuje název sekce nebo skupiny části odebrat.</span><span class="sxs-lookup"><span data-stu-id="4a034-112">Specifies the name of the section or section group to remove.</span></span> |
+| <span data-ttu-id="6a8e5-110">**name**</span><span class="sxs-lookup"><span data-stu-id="6a8e5-110">**name**</span></span>  | <span data-ttu-id="6a8e5-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-111">Required attribute.</span></span><br><br><span data-ttu-id="6a8e5-112">Určuje název oddílu nebo skupiny oddílů, které se mají odebrat.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-112">Specifies the name of the section or section group to remove.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="4a034-113">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="4a034-113">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="6a8e5-113">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="6a8e5-113">Parent element</span></span>
 
-|     | <span data-ttu-id="4a034-114">Popis</span><span class="sxs-lookup"><span data-stu-id="4a034-114">Description</span></span> |
+|     | <span data-ttu-id="6a8e5-114">Popis</span><span class="sxs-lookup"><span data-stu-id="6a8e5-114">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="4a034-115"> *\*\<configSections>** Element</span><span class="sxs-lookup"><span data-stu-id="4a034-115">**\<configSections>** Element</span></span>](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | <span data-ttu-id="4a034-116">Obsahuje konfigurační oddíl a deklarace oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="4a034-116">Contains configuration section and namespace declarations.</span></span> |
+| [<span data-ttu-id="6a8e5-115">configSections – > element  **\<** </span><span class="sxs-lookup"><span data-stu-id="6a8e5-115">**\<configSections>** Element</span></span>](configsections-element-for-configuration.md) | <span data-ttu-id="6a8e5-116">Obsahuje konfigurační oddíl a deklarace oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-116">Contains configuration section and namespace declarations.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="4a034-117">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="4a034-117">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="6a8e5-117">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="6a8e5-117">Child elements</span></span>
 
-<span data-ttu-id="4a034-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="4a034-118">None</span></span>
+<span data-ttu-id="6a8e5-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="6a8e5-118">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="4a034-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4a034-119">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="6a8e5-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6a8e5-119">Remarks</span></span>
 
-<span data-ttu-id="4a034-120">**\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="4a034-120">The **\<clear>** element removes all sections and section groups from your application that were defined earlier in the current configuration file or at a higher level in the configuration file hierarchy.</span></span>
+<span data-ttu-id="6a8e5-120">**\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-120">The **\<clear>** element removes all sections and section groups from your application that were defined earlier in the current configuration file or at a higher level in the configuration file hierarchy.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4a034-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="4a034-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="6a8e5-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="6a8e5-121">Example</span></span>
 
-<span data-ttu-id="4a034-122">Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje způsob použití  **\<vymazat >** prvku v konfiguračním souboru aplikace, zrušte dříve definované v části konfigurační soubor počítače.</span><span class="sxs-lookup"><span data-stu-id="4a034-122">This example defines a machine configuration file and an application configuration file and shows how to use the **\<clear>** element in an application configuration file to clear sections previously defined in the machine configuration file.</span></span>
+<span data-ttu-id="6a8e5-122">Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak pomocí  **\<elementu Clear >** v konfiguračním souboru aplikace vymazat oddíly dříve definované v konfiguraci počítače. souborů.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-122">This example defines a machine configuration file and an application configuration file and shows how to use the **\<clear>** element in an application configuration file to clear sections previously defined in the machine configuration file.</span></span>
 
-<span data-ttu-id="4a034-123">Následující počítače konfigurační soubor kód deklaruje dvě části  **\<sampleSection >** a  **\<anotherSampleSection >** , které jsou přečteny před aplikace konfigurační soubor:</span><span class="sxs-lookup"><span data-stu-id="4a034-123">The following machine configuration file code declares two sections, **\<sampleSection>** and **\<anotherSampleSection>**, which are read before the application configuration file:</span></span>
+<span data-ttu-id="6a8e5-123">Následující kód konfiguračního souboru počítače deklaruje dva oddíly,  **\<sampleSection >** a  **\<> anotherSampleSection**, které jsou čteny před konfiguračním souborem aplikace:</span><span class="sxs-lookup"><span data-stu-id="6a8e5-123">The following machine configuration file code declares two sections, **\<sampleSection>** and **\<anotherSampleSection>**, which are read before the application configuration file:</span></span>
 
 ```xml
 <!-- Machine.config file -->
@@ -71,7 +71,7 @@ ms.locfileid: "66300807"
 </configuration>
 ```
 
-<span data-ttu-id="4a034-124">Následující kód souboru konfigurace aplikace vymaže všechny dříve deklarovaný oddíly.</span><span class="sxs-lookup"><span data-stu-id="4a034-124">The following application configuration file code clears all previously declared sections.</span></span> <span data-ttu-id="4a034-125">Aplikaci nejde použít nebo načíst nastavení v některém z části, které byly deklarovány v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="4a034-125">The application cannot use or retrieve settings in either of the sections that were declared in the machine configuration file.</span></span> <span data-ttu-id="4a034-126">Ale můžete použít nastavení z  **\<anotherSection >** vzhledem k tomu, že jde o po  **\<vymazat >** elementu.</span><span class="sxs-lookup"><span data-stu-id="4a034-126">However, it can use settings from **\<anotherSection>** because it comes after the **\<clear>** element.</span></span>
+<span data-ttu-id="6a8e5-124">Následující kód konfiguračního souboru aplikace vymaže všechny dříve deklarované oddíly.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-124">The following application configuration file code clears all previously declared sections.</span></span> <span data-ttu-id="6a8e5-125">Aplikace nemůže použít nebo načíst nastavení v některé z oddílů, které byly deklarovány v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-125">The application cannot use or retrieve settings in either of the sections that were declared in the machine configuration file.</span></span> <span data-ttu-id="6a8e5-126">Může však použít nastavení z  **\<anotherSection >**  **\<** , protože se nachází po elementu Clear >.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-126">However, it can use settings from **\<anotherSection>** because it comes after the **\<clear>** element.</span></span>
 
 ```xml
 <!-- Application configuration file -->
@@ -87,10 +87,10 @@ ms.locfileid: "66300807"
 </configuration>
 ```
 
-## <a name="configuration-file"></a><span data-ttu-id="4a034-127">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="4a034-127">Configuration file</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="6a8e5-127">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="6a8e5-127">Configuration file</span></span>
 
-<span data-ttu-id="4a034-128">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="4a034-128">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
+<span data-ttu-id="6a8e5-128">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="6a8e5-128">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4a034-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a034-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6a8e5-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6a8e5-129">See also</span></span>
 
-- [<span data-ttu-id="4a034-130">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="4a034-130">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="6a8e5-130">Schéma konfiguračního souboru pro .NET Framework</span><span class="sxs-lookup"><span data-stu-id="6a8e5-130">Configuration file schema for the .NET Framework</span></span>](index.md)

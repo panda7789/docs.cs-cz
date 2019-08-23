@@ -2,22 +2,22 @@
 title: <backupList>
 ms.date: 03/30/2017
 ms.assetid: a3d9d1f9-4a53-45e9-a880-86c8bee0b833
-ms.openlocfilehash: b0a6c604b5741c1355c35fca510cd10544dab9f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d5feab6cb374f98e683cf15f797de4f478e23131
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704424"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919926"
 ---
-# <a name="backuplist"></a><span data-ttu-id="9ed1f-101">\<backupList></span><span class="sxs-lookup"><span data-stu-id="9ed1f-101">\<backupList></span></span>
-<span data-ttu-id="9ed1f-102">Představuje konfigurační oddíl pro definování zálohování seznamu, který uvádí sady koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-102">Represents a configuration section for defining a backup list that enumerates a set of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="9ed1f-103">Pokud je první koncový bod v seznamu dolů, směrovací služba se automaticky převzetí služby při selhání k dalším objektem v seznamu.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-103">If the first endpoint in the list is down, the Routing Service will automatically fail-over to the next one in the list.</span></span>  <span data-ttu-id="9ed1f-104">To umožňuje rychlé přidání spolehlivosti do aplikace bez nutnosti představuje klientskou aplikaci, jak zpracovávat složité vzory nebo všechny služby, ve které jsou nasazené.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-104">This gives you a quick way to add reliability to your application without having to teach your client application how to handle complex patterns or where all of your services are deployed.</span></span>  
+# <a name="backuplist"></a><span data-ttu-id="b9108-101">\<backupList ></span><span class="sxs-lookup"><span data-stu-id="b9108-101">\<backupList></span></span>
+<span data-ttu-id="b9108-102">Představuje konfigurační oddíl pro definování seznamu zálohování, který vytvoří výčet sady koncových bodů, které chcete, aby služba Směrování použila v případě, že není dostupný primární koncový bod.</span><span class="sxs-lookup"><span data-stu-id="b9108-102">Represents a configuration section for defining a backup list that enumerates a set of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="b9108-103">Pokud je první koncový bod v seznamu mimo provoz, směrovací služba se v seznamu automaticky převezme na další.</span><span class="sxs-lookup"><span data-stu-id="b9108-103">If the first endpoint in the list is down, the Routing Service will automatically fail-over to the next one in the list.</span></span>  <span data-ttu-id="b9108-104">Díky tomu můžete rychle přidat do své aplikace spolehlivost, aniž byste museli poučit klientské aplikace o tom, jak zpracovávat složité vzory nebo kde jsou nasazené všechny služby.</span><span class="sxs-lookup"><span data-stu-id="b9108-104">This gives you a quick way to add reliability to your application without having to teach your client application how to handle complex patterns or where all of your services are deployed.</span></span>  
   
- <span data-ttu-id="9ed1f-105">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="9ed1f-105">\<system.serviceModel></span></span>  
-<span data-ttu-id="9ed1f-106">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="9ed1f-106">\<routing></span></span>  
-<span data-ttu-id="9ed1f-107">\<backupLists></span><span class="sxs-lookup"><span data-stu-id="9ed1f-107">\<backupLists></span></span>  
-<span data-ttu-id="9ed1f-108">\<backupList></span><span class="sxs-lookup"><span data-stu-id="9ed1f-108">\<backupList></span></span>  
+ <span data-ttu-id="b9108-105">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="b9108-105">\<system.serviceModel></span></span>  
+<span data-ttu-id="b9108-106">\<> směrování</span><span class="sxs-lookup"><span data-stu-id="b9108-106">\<routing></span></span>  
+<span data-ttu-id="b9108-107">\<backupLists ></span><span class="sxs-lookup"><span data-stu-id="b9108-107">\<backupLists></span></span>  
+<span data-ttu-id="b9108-108">\<backupList ></span><span class="sxs-lookup"><span data-stu-id="b9108-108">\<backupList></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9ed1f-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ed1f-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b9108-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b9108-109">Syntax</span></span>  
   
 ```xml  
 <routing>
@@ -29,33 +29,33 @@ ms.locfileid: "61704424"
 </routing>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="9ed1f-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="9ed1f-110">Attributes and Elements</span></span>  
- <span data-ttu-id="9ed1f-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b9108-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="b9108-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="b9108-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="b9108-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="9ed1f-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="9ed1f-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="b9108-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="b9108-112">Attributes</span></span>  
   
-|<span data-ttu-id="9ed1f-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="9ed1f-113">Attribute</span></span>|<span data-ttu-id="9ed1f-114">Popis</span><span class="sxs-lookup"><span data-stu-id="9ed1f-114">Description</span></span>|  
+|<span data-ttu-id="b9108-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="b9108-113">Attribute</span></span>|<span data-ttu-id="b9108-114">Popis</span><span class="sxs-lookup"><span data-stu-id="b9108-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="9ed1f-115">name</span><span class="sxs-lookup"><span data-stu-id="9ed1f-115">name</span></span>|<span data-ttu-id="9ed1f-116">Řetězec určující název používaný k identifikaci tohoto seznamu koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-116">A string that specifies the name used to identify this endpoint list.</span></span>|  
+|<span data-ttu-id="b9108-115">name</span><span class="sxs-lookup"><span data-stu-id="b9108-115">name</span></span>|<span data-ttu-id="b9108-116">Řetězec, který určuje název, který slouží k identifikaci tohoto seznamu koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="b9108-116">A string that specifies the name used to identify this endpoint list.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="9ed1f-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="9ed1f-117">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="b9108-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="b9108-117">Child Elements</span></span>  
   
-|<span data-ttu-id="9ed1f-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="9ed1f-118">Element</span></span>|<span data-ttu-id="9ed1f-119">Popis</span><span class="sxs-lookup"><span data-stu-id="9ed1f-119">Description</span></span>|  
+|<span data-ttu-id="b9108-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="b9108-118">Element</span></span>|<span data-ttu-id="b9108-119">Popis</span><span class="sxs-lookup"><span data-stu-id="b9108-119">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9ed1f-120">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="9ed1f-120">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md)||  
+|[<span data-ttu-id="b9108-120">\<Filtrovat ></span><span class="sxs-lookup"><span data-stu-id="b9108-120">\<filter></span></span>](filter.md)||  
   
-### <a name="parent-elements"></a><span data-ttu-id="9ed1f-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="9ed1f-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="b9108-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="b9108-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="9ed1f-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="9ed1f-122">Element</span></span>|<span data-ttu-id="9ed1f-123">Popis</span><span class="sxs-lookup"><span data-stu-id="9ed1f-123">Description</span></span>|  
+|<span data-ttu-id="b9108-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="b9108-122">Element</span></span>|<span data-ttu-id="b9108-123">Popis</span><span class="sxs-lookup"><span data-stu-id="b9108-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9ed1f-124">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="9ed1f-124">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|<span data-ttu-id="9ed1f-125">Seznamu zálohy koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-125">A list of backup endpoints.</span></span>|  
+|[<span data-ttu-id="b9108-124">\<> směrování</span><span class="sxs-lookup"><span data-stu-id="b9108-124">\<routing></span></span>](routing.md)|<span data-ttu-id="b9108-125">Seznam koncových bodů zálohy.</span><span class="sxs-lookup"><span data-stu-id="b9108-125">A list of backup endpoints.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="9ed1f-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9ed1f-126">Remarks</span></span>  
- <span data-ttu-id="9ed1f-127">Tato část obsahuje řazená kolekce koncových bodů, které zprávy budou předány v případě výjimky komunikace při odesílání na primární koncový bod.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-127">This section contains an ordered collection of endpoints that a message will be transmitted to in the event of a communications exception when sending to the primary endpoint.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b9108-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b9108-126">Remarks</span></span>  
+ <span data-ttu-id="b9108-127">Tato část obsahuje uspořádanou kolekci koncových bodů, na které se v případě výjimky komunikace při odesílání do primárního koncového bodu přenáší zpráva.</span><span class="sxs-lookup"><span data-stu-id="b9108-127">This section contains an ordered collection of endpoints that a message will be transmitted to in the event of a communications exception when sending to the primary endpoint.</span></span>  
   
- <span data-ttu-id="9ed1f-128">Pokud uvedený na seznamu odeslat na primární koncový bod `endpointName` atribut [ \<Přidat >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-entries.md) selže s výjimkou komunikace, směrovací služba se pokusí o odeslání zprávy na první koncový bod v tomto konfigurační oddíl.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-128">If a send to the primary endpoint listed in the `endpointName` attribute of [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-entries.md) fails with a communications exception, the Routing Service will attempt to send the message to the first endpoint in this configuration section.</span></span> <span data-ttu-id="9ed1f-129">Pokud to je také neúspěšná, s výjimkou komunikace, směrovací služba se pokusí odeslat zprávu na další zprávu obsažené v této části, až do pokusu o odeslání úspěšná, vrátí selhání než výjimky komunikace nebo všechny koncové body v kolekce mají vrátila chybu.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-129">If this also fails with a communications exception, the Routing Service will attempt to send the message to the next message contained in this section until the send attempt succeeds, returns a failure other than a communication exception, or all endpoints in the collection have returned a failure.</span></span>  
+ <span data-ttu-id="b9108-128">Pokud se odeslání do primárního koncového bodu uvedeného v `endpointName` [ \<atributu Add >](add-of-entries.md) nezdaří s výjimkou komunikace, služba Směrování se pokusí odeslat zprávu do prvního koncového bodu v této části konfigurace.</span><span class="sxs-lookup"><span data-stu-id="b9108-128">If a send to the primary endpoint listed in the `endpointName` attribute of [\<add>](add-of-entries.md) fails with a communications exception, the Routing Service will attempt to send the message to the first endpoint in this configuration section.</span></span> <span data-ttu-id="b9108-129">Pokud se tím také nezdaří s výjimkou komunikace, směrovací služba se pokusí odeslat zprávu na další zprávu obsaženou v této části, dokud pokus o odeslání nebude úspěšný, vrátí chybu jinou než výjimka komunikace nebo všechny koncové body v kolekce vrátila chybu.</span><span class="sxs-lookup"><span data-stu-id="b9108-129">If this also fails with a communications exception, the Routing Service will attempt to send the message to the next message contained in this section until the send attempt succeeds, returns a failure other than a communication exception, or all endpoints in the collection have returned a failure.</span></span>  
   
- <span data-ttu-id="9ed1f-130">V následujícím příkladu Pokud odeslat na primární koncový bod s názvem "Cíl" vrátí výjimky komunikace, služba se pokusí odeslání zprávy do "alternateServiceQueue".</span><span class="sxs-lookup"><span data-stu-id="9ed1f-130">In the following example, if a send to the primary endpoint named "Destination" returns a communication exception, the service will attempt to send the message to the "alternateServiceQueue".</span></span> <span data-ttu-id="9ed1f-131">Pokud tento pokus také vrátí hodnotu výjimky komunikace, směrovací služba se pokusí odeslat zprávu do další koncový bod v kolekci.</span><span class="sxs-lookup"><span data-stu-id="9ed1f-131">If this attempt also returns a communication exception, the Routing Service will attempt to send the message to the next endpoint in the collection.</span></span>  
+ <span data-ttu-id="b9108-130">V následujícím příkladu, pokud odeslání do primárního koncového bodu s názvem "cíl" vrátí výjimku komunikace, služba se pokusí odeslat zprávu do "alternateServiceQueue".</span><span class="sxs-lookup"><span data-stu-id="b9108-130">In the following example, if a send to the primary endpoint named "Destination" returns a communication exception, the service will attempt to send the message to the "alternateServiceQueue".</span></span> <span data-ttu-id="b9108-131">Pokud se tento pokus vrátí taky výjimku komunikace, pokusí se služba Směrování odeslat zprávu na další koncový bod v kolekci.</span><span class="sxs-lookup"><span data-stu-id="b9108-131">If this attempt also returns a communication exception, the Routing Service will attempt to send the message to the next endpoint in the collection.</span></span>  
   
 ```xml  
 <filterTables>
@@ -73,6 +73,6 @@ ms.locfileid: "61704424"
 </backupLists>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9ed1f-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ed1f-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b9108-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b9108-132">See also</span></span>
 
 - <xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection?displayProperty=nameWithType>

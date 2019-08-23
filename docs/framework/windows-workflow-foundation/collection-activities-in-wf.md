@@ -1,31 +1,31 @@
 ---
-title: Kolekce aktivit v WF
+title: Aktivity shromažďování v WF
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-ms.openlocfilehash: 6e4b9ce6f967ba9405f55dbf5fd4708d3319b458
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b14d6f8bdebd349467004a8fa950927f848d0f21
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945974"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935461"
 ---
-# <a name="collection-activities-in-wf"></a><span data-ttu-id="1a44b-102">Kolekce aktivit v WF</span><span class="sxs-lookup"><span data-stu-id="1a44b-102">Collection Activities in WF</span></span>
-<span data-ttu-id="1a44b-103">Kolekce aktivity se používají pro práci s objekty kolekcí v pracovním postupu.</span><span class="sxs-lookup"><span data-stu-id="1a44b-103">Collection activities are used to work with collection objects in a workflow.</span></span> [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] <span data-ttu-id="1a44b-104">má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položku v kolekci a vymazání kolekce.</span><span class="sxs-lookup"><span data-stu-id="1a44b-104">has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection.</span></span> <span data-ttu-id="1a44b-105">`ExistsInCollection` a `RemoveFromCollection` mají <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.</span><span class="sxs-lookup"><span data-stu-id="1a44b-105">`ExistsInCollection` and `RemoveFromCollection` have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.</span></span>  
+# <a name="collection-activities-in-wf"></a><span data-ttu-id="9cafa-102">Aktivity shromažďování v WF</span><span class="sxs-lookup"><span data-stu-id="9cafa-102">Collection Activities in WF</span></span>
+<span data-ttu-id="9cafa-103">Aktivity shromažďování se používají pro práci s objekty kolekce v pracovním postupu.</span><span class="sxs-lookup"><span data-stu-id="9cafa-103">Collection activities are used to work with collection objects in a workflow.</span></span> [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="9cafa-104">obsahuje aktivity poskytované systémem pro přidávání a odebírání položek z kolekce, testování existence položky v kolekci a mazání kolekce.</span><span class="sxs-lookup"><span data-stu-id="9cafa-104">has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection.</span></span> <span data-ttu-id="9cafa-105">`ExistsInCollection`a `RemoveFromCollection` musímít<xref:System.Boolean>typ,který označuje výsledek. <xref:System.Activities.OutArgument%601></span><span class="sxs-lookup"><span data-stu-id="9cafa-105">`ExistsInCollection` and `RemoveFromCollection` have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="1a44b-106">Pokud se kolekce aktivita provádí před nastavením základní objekt kolekce <xref:System.InvalidOperationException> je vyvolána a chyb aktivit.</span><span class="sxs-lookup"><span data-stu-id="1a44b-106">If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.</span></span>  
+> <span data-ttu-id="9cafa-106"><xref:System.InvalidOperationException> Je-li aktivita kolekce provedena před nastavením podkladového objektu kolekce, je vyvolána a dojde k chybám aktivity.</span><span class="sxs-lookup"><span data-stu-id="9cafa-106">If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.</span></span>  
   
-## <a name="collection-activities"></a><span data-ttu-id="1a44b-107">Kolekce aktivity</span><span class="sxs-lookup"><span data-stu-id="1a44b-107">Collection activities</span></span>  
+## <a name="collection-activities"></a><span data-ttu-id="9cafa-107">Aktivity shromažďování</span><span class="sxs-lookup"><span data-stu-id="9cafa-107">Collection activities</span></span>  
   
 |||  
 |-|-|  
-|<xref:System.Activities.Statements.AddToCollection%601>|<span data-ttu-id="1a44b-108">Přidá položku do zadané kolekce.</span><span class="sxs-lookup"><span data-stu-id="1a44b-108">Adds an item to a specified collection.</span></span>|  
-|<xref:System.Activities.Statements.ClearCollection%601>|<span data-ttu-id="1a44b-109">Vymaže všechny položky z kolekce.</span><span class="sxs-lookup"><span data-stu-id="1a44b-109">Clears all items from a specified collection.</span></span>|  
-|<xref:System.Activities.Statements.ExistsInCollection%601>|<span data-ttu-id="1a44b-110">Vrátí `true` Pokud položka v kolekci existuje.</span><span class="sxs-lookup"><span data-stu-id="1a44b-110">Returns `true` if an item exists in a collection.</span></span>|  
-|<xref:System.Activities.Statements.RemoveFromCollection%601>|<span data-ttu-id="1a44b-111">Odebere položku z kolekce a vrátí `true` Pokud byla položka úspěšně odebrána.</span><span class="sxs-lookup"><span data-stu-id="1a44b-111">Removes an item from a specified collection and returns `true` if the item was successfully removed.</span></span>|  
+|<xref:System.Activities.Statements.AddToCollection%601>|<span data-ttu-id="9cafa-108">Přidá položku do zadané kolekce.</span><span class="sxs-lookup"><span data-stu-id="9cafa-108">Adds an item to a specified collection.</span></span>|  
+|<xref:System.Activities.Statements.ClearCollection%601>|<span data-ttu-id="9cafa-109">Vymaže všechny položky ze zadané kolekce.</span><span class="sxs-lookup"><span data-stu-id="9cafa-109">Clears all items from a specified collection.</span></span>|  
+|<xref:System.Activities.Statements.ExistsInCollection%601>|<span data-ttu-id="9cafa-110">Vrátí `true` , zda položka v kolekci existuje.</span><span class="sxs-lookup"><span data-stu-id="9cafa-110">Returns `true` if an item exists in a collection.</span></span>|  
+|<xref:System.Activities.Statements.RemoveFromCollection%601>|<span data-ttu-id="9cafa-111">Odstraní položku ze zadané kolekce a vrátí `true` , zda byla položka úspěšně odebrána.</span><span class="sxs-lookup"><span data-stu-id="9cafa-111">Removes an item from a specified collection and returns `true` if the item was successfully removed.</span></span>|  
   
-## <a name="using-collection-activities"></a><span data-ttu-id="1a44b-112">Použití aktivit collection</span><span class="sxs-lookup"><span data-stu-id="1a44b-112">Using collection activities</span></span>  
- <span data-ttu-id="1a44b-113">Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarován jako proměnné pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="1a44b-113">The following code example demonstrates how to interact with a collection declared as a workflow variable.</span></span> <span data-ttu-id="1a44b-114">Kolekce, kterou používá se <xref:System.Collections.Generic.List%601> z <xref:System.String> objektů s názvem `fruitList`.</span><span class="sxs-lookup"><span data-stu-id="1a44b-114">The collection used is a <xref:System.Collections.Generic.List%601> of <xref:System.String> objects named `fruitList`.</span></span>  
+## <a name="using-collection-activities"></a><span data-ttu-id="9cafa-112">Používání aktivit shromažďování</span><span class="sxs-lookup"><span data-stu-id="9cafa-112">Using collection activities</span></span>  
+ <span data-ttu-id="9cafa-113">Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarovanou jako proměnnou pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9cafa-113">The following code example demonstrates how to interact with a collection declared as a workflow variable.</span></span> <span data-ttu-id="9cafa-114">Použitá kolekce je <xref:System.Collections.Generic.List%601> <xref:System.String> objektem s názvem `fruitList`.</span><span class="sxs-lookup"><span data-stu-id="9cafa-114">The collection used is a <xref:System.Collections.Generic.List%601> of <xref:System.String> objects named `fruitList`.</span></span>  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -225,7 +225,7 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
- <span data-ttu-id="1a44b-115">Výše uvedené ukázky kódu můžete vytvořit také pomocí <xref:Microsoft.CSharp.Activities.CSharpValue%601> místo <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601></span><span class="sxs-lookup"><span data-stu-id="1a44b-115">The above code samples can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601></span></span>  
+ <span data-ttu-id="9cafa-115">Výše uvedené ukázky kódu lze také vytvořit pomocí nástroje <xref:Microsoft.CSharp.Activities.CSharpValue%601> místo<xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601></span><span class="sxs-lookup"><span data-stu-id="9cafa-115">The above code samples can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601></span></span>  
   
 ```csharp
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -425,6 +425,6 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1a44b-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a44b-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9cafa-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9cafa-116">See also</span></span>
 
-- [<span data-ttu-id="1a44b-117">Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu</span><span class="sxs-lookup"><span data-stu-id="1a44b-117">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](authoring-workflows-activities-and-expressions-using-imperative-code.md)
+- [<span data-ttu-id="9cafa-117">Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu</span><span class="sxs-lookup"><span data-stu-id="9cafa-117">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](authoring-workflows-activities-and-expressions-using-imperative-code.md)
