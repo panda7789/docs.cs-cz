@@ -7,8 +7,6 @@
       href: expressions.md
     - name: Členové tvoření výrazy
       href: expression-bodied-members.md
-    - name: Operátory
-      href: operators.md
     - name: Anonymní funkce
       items:
         - name: Přehled
