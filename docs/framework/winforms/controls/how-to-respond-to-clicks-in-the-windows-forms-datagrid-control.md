@@ -12,22 +12,22 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: 60c4dac76b4a7868da9143cab1433ee93f97c7d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 54e41c6960c24f68cb27a6f6fb859b4b9223ed27
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64636813"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914998"
 ---
 # <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Po Windows Forms <xref:System.Windows.Forms.DataGrid> je připojený k databázi, můžete sledovat, které uživatel klikl na buňky.  
+ Po připojení model Windows Forms <xref:System.Windows.Forms.DataGrid> k databázi můžete monitorovat, na kterou buňku uživatel kliknul.  
   
-### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>Chcete-li zjistit, kdy uživatel v prvku DataGrid vybere jinou buňku  
+### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>Zjištění, že uživatel ovládacího prvku DataGrid vybere jinou buňku  
   
-- V <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> obslužná rutina události, napište kód, který odpovídajícím způsobem reagovat.  
+- V obslužné rutině události napište kód pro správné reakce. <xref:System.Windows.Forms.DataGrid.CurrentCellChanged>  
   
     ```vb  
     Private Sub myDataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles myDataGrid.CurrentCellChanged  
@@ -47,18 +47,18 @@ ms.locfileid: "64636813"
     }  
     ```  
   
-     (Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuální C#) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.myDataGrid.CurrentCellChanged += new  
        System.EventHandler(this.myDataGrid_CurrentCellChanged);  
     ```  
   
-### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a>Chcete-li zjistit, které části objektu DataGrid uživatel klikl na  
+### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a>Určení části ovládacího prvku DataGrid, na kterou uživatel kliknul  
   
-- Volání <xref:System.Windows.Forms.DataGrid.HitTest%2A> metoda v obslužné rutině události, například jako pro <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.Click> událostí.  
+- Volejte metodu v příslušné obslužné rutině události, například <xref:System.Windows.Forms.Control.MouseDown> pro událost nebo <xref:System.Windows.Forms.Control.Click>. <xref:System.Windows.Forms.DataGrid.HitTest%2A>  
   
-     <xref:System.Windows.Forms.DataGrid.HitTest%2A> Metoda vrátí hodnotu <xref:System.Windows.Forms.DataGrid.HitTestInfo> objekt, který obsahuje řádek a sloupec na kliknutí na oblast.  
+     <xref:System.Windows.Forms.DataGrid.HitTest%2A> Metoda<xref:System.Windows.Forms.DataGrid.HitTestInfo> vrátí objekt, který obsahuje řádek a sloupec kliknutí na oblast.  
   
     ```vb  
     Private Sub myDataGrid_MouseDown(ByVal sender As Object, _  
@@ -132,7 +132,7 @@ ms.locfileid: "64636813"
     }  
     ```  
   
-     (Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuální C#) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.myDataGrid.MouseDown += new  
@@ -143,4 +143,4 @@ ms.locfileid: "64636813"
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)
+- [Postupy: Změna zobrazených dat v době běhu v ovládacím prvku model Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)

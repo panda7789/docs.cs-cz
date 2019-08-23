@@ -1,17 +1,17 @@
 ---
-title: ICorDebugMergedAssemblyRecord::GetPublicKey – metoda
+title: 'ICorDebugMergedAssemblyRecord:: GetPublicKey – metoda'
 ms.date: 03/30/2017
 ms.assetid: 6f4e78ba-082b-489d-8b58-4c35fbcc7a5b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7540a87b007656ad3363576f835a89846d287ed1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e08b1edcef3e93caa82be3a4342c6a0264734bea
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752727"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940020"
 ---
-# <a name="icordebugmergedassemblyrecordgetpublickey-method"></a>ICorDebugMergedAssemblyRecord::GetPublicKey – metoda
+# <a name="icordebugmergedassemblyrecordgetpublickey-method"></a>ICorDebugMergedAssemblyRecord:: GetPublicKey – metoda
 Získá veřejný klíč sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,27 +25,27 @@ HRESULT GetPublicKey(
   
 ## <a name="parameters"></a>Parametry  
  `cbPublicKey`  
- [in] Maximální počet bajtů `pbPublicKey` pole.  
+ pro Maximální počet bajtů v `pbPublicKey` poli.  
   
  `pcbPublicKey`  
- [out] Ukazatel na skutečný počet bajtů zapsaný na `pbPublicKey` pole.  
+ mimo Ukazatel na skutečný počet bajtů zapsaných do `pbPublicKey` pole.  
   
  `pbPublicKey`  
- [out] Ukazatel na bajtové pole obsahující veřejný klíč sestavení.  
+ mimo Ukazatel na pole bajtů, které obsahuje veřejný klíč sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

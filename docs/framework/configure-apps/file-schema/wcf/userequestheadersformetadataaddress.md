@@ -2,20 +2,20 @@
 title: <useRequestHeadersForMetadataAddress>
 ms.date: 03/30/2017
 ms.assetid: 679f0eae-f353-44d1-b42d-a9e247509774
-ms.openlocfilehash: 969461d0e5bdc9f8c49b7a019a6000af5af77eec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84310d4ae5e04e76e4484f4fc606c9896239c776
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788723"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940554"
 ---
 # <a name="userequestheadersformetadataaddress"></a>\<useRequestHeadersForMetadataAddress>
-Umožňuje načítání informací o adrese metadat ze záhlaví zpráv požadavku.  
+Umožňuje načtení informací o adrese metadat ze záhlaví zpráv požadavku.  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<useRequestHeadersForMetadataAddress>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,13 +39,13 @@ Umožňuje načítání informací o adrese metadat ze záhlaví zpráv požadav
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<defaultPorts>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultports.md)|Kolekce výchozích portů obsahující seznam výchozích komunikačních koncových bodů, které naslouchá klientská aplikace.|  
+|[\<defaultPorts>](defaultports.md)|Kolekce výchozích portů, které jsou uvedeny v seznamu výchozích koncových bodů komunikace, na které klientská aplikace naslouchá.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 

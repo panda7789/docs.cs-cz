@@ -5,32 +5,32 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 26a43a4f-83c9-4732-806d-bb23aad0ff6b
-ms.openlocfilehash: fa3690ae74869f5dc0fbaa8d824d4aebca8ce724
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0d2889ef0aeab4a1ca60b1b44a067a221ab541c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743066"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956844"
 ---
 # <a name="insert-update-and-delete-operations"></a>Operace vložení, aktualizace a odstranění
-Provedete `Insert`, `Update`, a `Delete` operace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přidáním, změně a odebrání objekty v objektovém modelu. Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přeloží své akce pro SQL a odeslání změn do databáze.  
+Operace, `Insert` `Update`a vnástroji[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provádíte přidáním, změnou a odebráním objektů v objektovém modelu. `Delete` Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] převede vaše akce na SQL a odešle změny do databáze.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nabízí maximální flexibilitu při manipulaci a při zachování změn, které jste provedli objekty. Jakmile objekty entity jsou k dispozici (buď načítat pomocí dotazu nebo tak, že je nový vytváří), můžete změnit jejich jako typický objekty ve vaší aplikaci. To znamená můžete změnit jejich hodnoty, můžete je přidat do kolekce a můžete ho odebrat z kolekce. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sleduje změny a je připravený k přenosu zpět do databáze při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nabízí maximální flexibilitu v manipulaci s a trvalými změnami, které jste provedli u svých objektů. Jakmile jsou objekty entit k dispozici (buď je načtete prostřednictvím dotazu, nebo je sestavíte poruše), můžete je změnit jako typické objekty v aplikaci. To znamená, že můžete změnit jejich hodnoty, můžete je přidat do kolekcí a můžete je odebrat z kolekcí. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]sleduje vaše změny a je připravená je přenést zpět do databáze při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje ani rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, je nutné buď nastaven `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi, nebo pomocí vlastního kódu nejprve odstranit podřízené objekty, které brání nadřazený objekt odstranit. V opačném případě je vyvolána výjimka. Další informace najdete v tématu [jak: Odstranit řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje ani nerozeznává operace kaskádového odstranění. Chcete-li odstranit řádek v tabulce, která má omezení proti němu, je nutné buď nastavit `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi, nebo použít vlastní kód pro první odstranění podřízených objektů, které brání odstranění nadřazeného objektu. V opačném případě je vyvolána výjimka. Další informace najdete v tématu [jak: Odstraní řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
   
- Následující ukázky použijte `Customer` a `Order` třídy z ukázkové databáze Northwind. Definice tříd nejsou zobrazeny pro zkrácení.  
+ Následující výňatky používají `Customer` třídy a `Order` z ukázkové databáze Northwind. Pro zkrácení nejsou zobrazeny definice tříd.  
   
  [!code-csharp[DLinqCRUDOps#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCRUDOps/cs/Program.cs#1)]
  [!code-vb[DLinqCRUDOps#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCRUDOps/vb/Module1.vb#1)]  
   
- Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] automaticky generuje a provede příkazy SQL, které musí mít přenést vaše změny zpět do databáze.  
+ Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A>zavoláte [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , automaticky generuje a spustí příkazy SQL, které musí mít, aby předávaly vaše změny zpět do databáze.  
   
 > [!NOTE]
->  Toto chování můžete přepsat pomocí vlastních vlastní logiku, obvykle prostřednictvím uložené procedury. Další informace najdete v tématu [odpovědnosti pro vývojáře v přepisuje výchozí chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
+> Toto chování můžete přepsat pomocí vlastní logiky, obvykle prostřednictvím uložené procedury. Další informace najdete v tématu [zodpovědnosti vývojáře při přepisu výchozího chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
 >   
->  Vývojáři, kteří používají Visual Studio můžete použít Návrháře relací objektů na vývoj uložené procedury pro tento účel.  
+>  Vývojáři, kteří používají Visual Studio, mohou použít Návrhář relací objektů k vývoji uložených procedur pro tento účel.  
   
 ## <a name="see-also"></a>Viz také:
 

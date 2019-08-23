@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d75412394ce42f786da88f3d334853b99f266aca
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 9674e4d3f465cd3bad55a32d0a13136e6cff974d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567188"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946379"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
 Nástroj Assembly Linker generuje soubor, který obsahuje sestavení z jednoho nebo více souborů, které jsou buď moduly, nebo soubory prostředků. Modul je soubor jazyka IL, který nemá manifest sestavení.
 
 > [!NOTE]
-> Počínaje sadou Visual Studio 2008 budou C# kompilátory a Visual Basic automaticky vkládat manifest Win32 do sestavení. Další informace naleznete v tématu [/win32manifest (C# možnosti kompilátoru)](~/docs/csharp/language-reference/compiler-options/win32manifest-compiler-option.md).
+> Počínaje sadou Visual Studio 2008 budou C# kompilátory a Visual Basic automaticky vkládat manifest Win32 do sestavení. Další informace naleznete v tématu [/win32manifest (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/win32manifest-compiler-option.md).
 
 Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
@@ -41,7 +41,7 @@ Můžete zadat jednu nebo více z následujících možností `sources`.
 | ------ | ----------- |
 |`file`[,`target`]|Zkopíruje obsah `file` (modulu) do názvu souboru zadaného parametrem `target`. Po zkopírování se *Al. exe* zkompiluje `target` do sestavení.|
 |**/embed [prostředek]:** `file`[,`name`[,`private`]]|Vloží prostředek určený `file` v bitové kopii, která obsahuje manifest sestavení; *Al. exe* zkopíruje obsah `file` do přenositelného spustitelného souboru (PE).<br /><br /> `name` Parametr je interní identifikátor prostředku. Ve výchozím nastavení jsou prostředky v sestavení veřejné (viditelné pro jiná sestavení). Určení `private` způsobí, že prostředek není viditelný pro jiná sestavení.<br /><br /> Pokud `file` je vytvořen soubor prostředků .NET Framework, například pomocí [generátoru souboru prostředků (*Resgen. exe*)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí, lze k němu přistupovat pomocí členů v. <xref:System.Resources> Další informace naleznete v tématu <xref:System.Resources.ResourceManager>. Pro všechny ostatní prostředky použijte `GetManifestResource`metody * v rozhraní <xref:System.Reflection.Assembly> pro přístup k prostředku v době běhu.<br /><br /> Pokud jsou do nástroje *Al. exe*předány pouze soubory prostředků, je výstupním souborem sestavení satelitního prostředku.|
-|**/Link [prostředek]:** `file`[,`name`[,`target`[,`private`]]]|Propojuje soubor prostředků se sestavením. Prostředek zadaný pomocí `file` se stal součástí sestavení. soubor není zkopírovaný. `file` Parametr může být v libovolném formátu souboru. Například můžete jako `file` parametr zadat nativní knihovnu DLL. Tím se nativní knihovna DLL stane součástí sestavení, aby mohla být nainstalována do globální mezipaměti sestavení (GAC) a mohlo k ní být přistupováno ze spravovaného kódu v sestavení. Můžete to provést také pomocí možnosti kompilátoru **/linkresource** . Další informace naleznete v tématu [/linkresource (C# možnosti kompilátoru)](~/docs/csharp/language-reference/compiler-options/linkresource-compiler-option.md).<br /><br /> `name` Parametr je interní identifikátor prostředku. Parametr určuje cestu a název souboru, do kterého `file` *Al. exe* zkopíruje *.* `target` Po zkopírování se *Al. exe* zkompiluje `target` do sestavení. Ve výchozím nastavení jsou prostředky v sestavení veřejné (viditelné pro jiná sestavení). Určení `private` způsobí, že prostředek není viditelný pro jiná sestavení.<br /><br /> Pokud `file` je vytvořen soubor prostředků .NET Framework, například pomocí generátoru souboru prostředků (*Resgen. exe*) nebo ve vývojovém prostředí, lze k němu přistupovat <xref:System.Resources> pomocí členů v oboru názvů. Další informace naleznete v tématu <xref:System.Resources.ResourceManager>. Pro všechny ostatní prostředky použijte `GetManifestResource` metody * <xref:System.Reflection.Assembly> ve třídě pro přístup k prostředku v době běhu.<br /><br /> Pokud jsou do nástroje *Al. exe*předány pouze soubory prostředků, je výstupním souborem sestavení satelitního prostředku.|
+|**/Link [prostředek]:** `file`[,`name`[,`target`[,`private`]]]|Propojuje soubor prostředků se sestavením. Prostředek zadaný pomocí `file` se stal součástí sestavení. soubor není zkopírovaný. `file` Parametr může být v libovolném formátu souboru. Například můžete jako `file` parametr zadat nativní knihovnu DLL. Tím se nativní knihovna DLL stane součástí sestavení, aby mohla být nainstalována do globální mezipaměti sestavení (GAC) a mohlo k ní být přistupováno ze spravovaného kódu v sestavení. Můžete to provést také pomocí možnosti kompilátoru **/linkresource** . Další informace naleznete v tématu [/linkresource (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/linkresource-compiler-option.md).<br /><br /> `name` Parametr je interní identifikátor prostředku. Parametr určuje cestu a název souboru, do kterého `file` *Al. exe* zkopíruje *.* `target` Po zkopírování se *Al. exe* zkompiluje `target` do sestavení. Ve výchozím nastavení jsou prostředky v sestavení veřejné (viditelné pro jiná sestavení). Určení `private` způsobí, že prostředek není viditelný pro jiná sestavení.<br /><br /> Pokud `file` je vytvořen soubor prostředků .NET Framework, například pomocí generátoru souboru prostředků (*Resgen. exe*) nebo ve vývojovém prostředí, lze k němu přistupovat <xref:System.Resources> pomocí členů v oboru názvů. Další informace naleznete v tématu <xref:System.Resources.ResourceManager>. Pro všechny ostatní prostředky použijte `GetManifestResource` metody * <xref:System.Reflection.Assembly> ve třídě pro přístup k prostředku v době běhu.<br /><br /> Pokud jsou do nástroje *Al. exe*předány pouze soubory prostředků, je výstupním souborem sestavení satelitního prostředku.|
 
 Můžete zadat následující: `options`, je nutné zadat **/out**.
 

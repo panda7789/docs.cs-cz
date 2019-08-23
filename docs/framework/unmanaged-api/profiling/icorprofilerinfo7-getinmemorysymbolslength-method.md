@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerInfo7::GetInMemorySymbolsLength Method
+title: 'ICorProfilerInfo7:: GetInMemorySymbolsLength – metoda'
 ms.date: 03/30/2017
 api_name:
 - ICorProfilerInfo7.GetInMemorySymbolsLength
@@ -11,17 +11,17 @@ api_type:
 ms.assetid: d62c4a4c-8a62-45aa-8f01-a8387cf36159
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03c70b97e7af9fdc76c579c5940e2436232f6bc2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 157b0e215f8afa58cccb3d54a65baa9c307ba966
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748648"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955429"
 ---
-# <a name="icorprofilerinfo7getinmemorysymbolslength-method"></a>ICorProfilerInfo7::GetInMemorySymbolsLength Method
-[Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
+# <a name="icorprofilerinfo7getinmemorysymbolslength-method"></a>ICorProfilerInfo7:: GetInMemorySymbolsLength – metoda
+[Podporováno v .NET Framework 4.6.1 a novějších verzích]  
   
- Vrátí délku datového proudu symbolu v paměti.  
+ Vrátí délku datového proudu symbolů v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,30 +34,30 @@ HRESULT GetInMemorySymbolsLength(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] Identifikátor modulu, který obsahuje datový proud v paměti.  
+ pro Identifikátor modulu, který obsahuje datový proud v paměti.  
   
  pCountSymbolBytes  
- [out] Ukazatel `DWORD` hodnotu, která po návratu metody obsahuje délku datového proudu v bajtech.  
+ mimo Ukazatel na `DWORD` hodnotu, která, když metoda vrátí, obsahuje délku datového proudu v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Metoda vrátí `S_OK` Pokud nelze určit délka datového proudu paměti, i když je nula (0).  
+ Metoda vrátí `S_OK` , zda lze určit délku paměťového proudu, i když je hodnota nulová (0).  
   
- Metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC` Pokud metoda byl vytvořen pomocí <xref:System.Reflection.Emit?displayProperty=nameWithType>.  
+ Metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC` , zda byla metoda vytvořena pomocí <xref:System.Reflection.Emit?displayProperty=nameWithType>.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud ho modul obsahuje symboly v paměti, délku datového proudu je umístěn v `pCountSymbolBytes`. Pokud modul nemá symboly v paměti `*pCountSymbolBytes = 0`.  
+ Pokud má modul symboly v paměti, je délka datového proudu umístěna v `pCountSymbolBytes`. Pokud modul neobsahuje symboly v paměti, `*pCountSymbolBytes = 0`.  
   
 > [!NOTE]
->  Aktuální implementace nepodporuje Reflection.Emit. Pokud modul byl vytvořen pomocí třídy Reflection.Emit, metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC`.  
+> Aktuální implementace nepodporuje reflexe. Emit. Pokud byl modul vytvořen pomocí reflexe. Emit, vrátí `CORPROF_E_MODULE_IS_DYNAMIC`metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

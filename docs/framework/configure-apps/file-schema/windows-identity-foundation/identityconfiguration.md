@@ -3,16 +3,16 @@ title: <identityConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
-ms.openlocfilehash: 91d64ce0d6a5cdbf32fec4a476fb111afe9a7952
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f5e0c5ded3d750a1102492c7a506e6d5643b2d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791700"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942753"
 ---
 # <a name="identityconfiguration"></a>\<identityConfiguration>
 
-Určuje nastavení identit na úrovni služby.
+Určuje nastavení identity na úrovni služby.
 
  \<system.identityModel>\
 \<identityConfiguration>
@@ -37,59 +37,59 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|name|Název oddílu konfigurace identity. Tento název slouží k odkazování konkrétní konfigurační oddíl. Pokud ne `name` atribut zadán, oddíl definuje výchozí konfiguraci. Výchozí konfigurace je vždy používá pro scénáře pasivní federaci. Další informace najdete v tématu [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) elementu.|
-|saveBootstrapContext|Určuje, zda mají být zahrnuty bootstrap tokeny v tokenu relace. Hodnota může také nastavit na kolekci obslužné rutiny tokenů nastavením `saveBootstrapContext` atribut na [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) elementu. Hodnota nastavení kolekce obslužná rutina tokenů přepíše hodnoty nastavené ve službě.|
-|maximumClockSkew|A <xref:System.TimeSpan> , která určuje maximální povolený posun. Určuje maximální povolený posun při provádění operace citlivé na čas, jako je například ověřování čas vypršení platnosti relace přihlášení. Výchozí hodnota je 5 minut, "00: 05:00". Další informace o tom, jak zadat <xref:System.TimeSpan> hodnoty, najdete v článku [hodnoty prvku Timespan](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md). Maximální posun může také nastavit na kolekci obslužné rutiny tokenů nastavením `maximumClockSkew` atribut na [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) elementu. Hodnota nastavení kolekce obslužná rutina tokenů přepíše hodnoty nastavené ve službě.|
+|name|Název oddílu konfigurace identity Tento název můžete použít k odkazování na konkrétní konfigurační oddíl. Pokud není `name` zadán žádný atribut, oddíl definuje výchozí konfiguraci. Výchozí konfigurace se vždycky používá pro scénáře pasivní federace. Další informace naleznete v [ \<tématu federationConfiguration >](federationconfiguration.md) element.|
+|saveBootstrapContext|Určuje, zda mají být do tokenu relace zahrnuty tokeny Bootstrap. Hodnotu lze také nastavit pro kolekci obslužných rutin tokenů nastavením `saveBootstrapContext` atributu [ \<v elementu securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Hodnota nastavená v kolekci obslužných rutin tokenu Přepisuje hodnotu nastavenou ve službě.|
+|maximumClockSkew|A <xref:System.TimeSpan> určuje maximální povolený časový posun. Určuje maximální povolený časový posun při provádění operací závislých na čase, jako je například ověření doby platnosti přihlašovací relace. Výchozí hodnota je 5 minut, "00:05:00". Další informace o tom, jak zadat <xref:System.TimeSpan> hodnoty, najdete v tématu [hodnoty TimeSpan](../windows-workflow-foundation/index.md). Maximální hodinový posun lze také nastavit pro kolekci obslužných rutin tokenů nastavením `maximumClockSkew` atributu [ \<u prvku securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Hodnota nastavená v kolekci obslužných rutin tokenu Přepisuje hodnotu nastavenou ve službě.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipaměti používané pro tokeny relace a rozpoznání opětovného přehrání tokenu. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|
-|[\<certificateValidation>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používat ověřování certifikátů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|
-|[\<claimsAuthenticationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity. Volitelné.|
-|[\<claimsAuthorizationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace identity. Volitelné.|
-|[\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Určuje sadu požadované deklarace identit pro příchozí tokeny zabezpečení. Volitelné.|
-|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení. Je možné zadat nuly nebo více kolekcí obslužné rutiny tokenů zabezpečení. Volitelné.|
-|[\<tokenReplayDetection>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|Umožňuje rozpoznání opětovného přehrání tokenu a určuje dobu vypršení platnosti tokenů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|
+|[\<caches>](caches.md)|Registruje mezipaměti používané pro tokeny relací a detekci opětovného přehrání tokenu. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Volitelný parametr.|
+|[\<certificateValidation>](certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používají k ověření certifikátů. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Volitelný parametr.|
+|[\<claimsAuthenticationManager>](claimsauthenticationmanager.md)|Zaregistruje Správce ověřování deklarací identity pro příchozí deklarace identity. Volitelný parametr.|
+|[\<claimsAuthorizationManager>](claimsauthorizationmanager.md)|Registruje Správce autorizací deklarací identity pro příchozí deklarace identity. Volitelný parametr.|
+|[\<claimTypeRequired>](claimtyperequired.md)|Určuje sadu požadovaných deklarací pro příchozí tokeny zabezpečení. Volitelný parametr.|
+|[\<securityTokenHandlers>](securitytokenhandlers.md)|Určuje kolekci obslužných rutin tokenů zabezpečení. Je možné zadat nula nebo více kolekcí obslužných rutin tokenů zabezpečení. Volitelný parametr.|
+|[\<tokenReplayDetection>](tokenreplaydetection.md)|Umožňuje detekci opětovného přehrání tokenu a určuje dobu vypršení platnosti tokenů. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Volitelný parametr.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.|
+|[\<system.identityModel>](system-identitymodel.md)|Poskytuje konfiguraci pro povolení možností Windows Identity Foundation (WIF) v aplikacích.|
 
 ## <a name="remarks"></a>Poznámky
 
-Více identit konfigurace mohou být definovány, každý s jedinečným názvem. Chování vypadá takto:
+Je možné definovat více konfigurací identity, z nichž každý má jedinečný název. Chování je následující:
 
-1. Pokud ne `<identityConfiguration>` zadaný element. Výchozí konfigurace identity se za běhu a zadat výchozí hodnoty.
+1. Pokud není `<identityConfiguration>` zadán žádný element. Výchozí konfigurace identity se vytvoří za běhu a naplní se výchozími hodnotami.
 
-2. Pokud jeden `<identityConfiguration>` zadaný element. To je výchozí konfigurace identity. Nezáleží, jestli je soubor s názvem nebo nepojmenované.
+2. Je-li `<identityConfiguration>` zadán jeden prvek. Jedná se o výchozí konfiguraci identity. Nezáleží na tom, zda má název nebo není pojmenován.
 
-3. Pokud je položek víc `<identityConfiguration>` zadaných elementů. Nepojmenované prvek určuje výchozí konfigurace identity. Doporučuje, pokud zadáte více `<identityConfiguration>` prvky, jeden z nich měli nepojmenované.
+3. Je- `<identityConfiguration>` li zadáno více prvků. Nepojmenovaný element určuje výchozí konfiguraci identity. Doporučuje se, když zadáte více `<identityConfiguration>` prvků, jeden z nich by měl být nepojmenovaný.
 
 > [!WARNING]
-> Pokud zadáte více `<identityConfiguration>` prvky, jeden z nich měli nepojmenované. Nepojmenované prvek bude výchozí konfigurace identity.
+> Pokud zadáte více `<identityConfiguration>` prvků, jeden z nich by měl být nepojmenovaný. Nepojmenovaný prvek bude výchozí konfigurace identity.
 
- Některé z nastavení uvedená v `<identityConfiguration>` element lze přepsat nastavením na kolekci obslužné rutiny tokenů zabezpečení nebo nastavení obslužné rutiny tokenů zabezpečení.
-
-> [!IMPORTANT]
-> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity ve vašem kódu, konfigurace identity, na který odkazuje `<federationConfiguration>` element nakonfiguruje Správce autorizací deklarace identity a zásadu, která se využívá k Prognózování rozhodování o autorizaci. To platí dokonce i ve scénářích, které nejsou pasivní scénáře pro webové, například aplikace Windows Communication Foundation (WCF) nebo aplikaci, která není založena na Web. Pokud aplikace není pasivní webové aplikace [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) – element (a jeho podřízených elementů zásad, pokud jsou k dispozici) konfigurace odkazované identity jsou jenom nastavení, která použijí. Všechna ostatní nastavení se ignorují. Další informace najdete v tématu [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) elementu.
-
-`<identityConfiguration>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.IdentityConfigurationElement> třídy. Identit konfigurační oddíl představuje <xref:System.IdentityModel.Configuration.IdentityConfiguration> třídy.
+ Některá nastavení zadaná v `<identityConfiguration>` elementu lze přepsat nastavením v kolekci obslužných rutin tokenu zabezpečení nebo pomocí nastavení u jednotlivých obslužných rutin tokenů zabezpečení.
 
 > [!IMPORTANT]
-> Zadáním následujících prvků jako podřízených elementů `<identityConfiguration>` prvek se už nepoužívá, i když je chování stále podporována z důvodu zpětné kompatibility. Tyto prvky musí, místo toho nastavit v rámci [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) elementu.
+> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy nebo k poskytnutí řízení přístupu založeného na deklaracích ve vašem kódu, konfigurace identity `<federationConfiguration>` , na kterou se odkazuje element, konfiguruje správce autorizací deklarací identity a zásadu, která se používá k provedení autorizační rozhodnutí. To platí i ve scénářích, které nejsou pasivními webovými scénáři, například v aplikacích Windows Communication Foundation (WCF) nebo v aplikaci, která není založená na webu. Pokud se nejedná o pasivní webovou aplikaci, [ \<](claimsauthorizationmanager.md) vztahují se pouze na element claimsAuthorizationManager > (a jeho podřízené prvky zásad, jsou-li k dispozici) odkazované konfigurace identity. Všechna ostatní nastavení se ignorují. Další informace naleznete v [ \<tématu federationConfiguration >](federationconfiguration.md) element.
+
+Element je reprezentován <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>třídou. `<identityConfiguration>` Oddíl konfigurace identity je reprezentovaný <xref:System.IdentityModel.Configuration.IdentityConfiguration> třídou.
+
+> [!IMPORTANT]
+> Určení následujících prvků jako podřízených elementů `<identityConfiguration>` elementu je zastaralé, přestože chování je stále podporováno pro zpětnou kompatibilitu. Tyto prvky by měly být místo toho zadány pod [ \<prvkem securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) .
 >
-> - [\<audienceUris>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)
-> - [\<issuerNameRegistry>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)
-> - [\<issuerTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)
-> - [\<serviceTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)
+> - [\<audienceUris>](audienceuris.md)
+> - [\<issuerNameRegistry>](issuernameregistry.md)
+> - [\<issuerTokenResolver>](issuertokenresolver.md)
+> - [\<serviceTokenResolver>](servicetokenresolver.md)
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu se vytvoří konfigurace identity s názvem "alternateConfiguration". Konfigurace identity Určuje výchozí nastavení.
+Následující příklad vytvoří konfiguraci identity s názvem "alternateConfiguration". Konfigurace identity určuje výchozí nastavení.
 
 ```xml
 <system.identityModel>

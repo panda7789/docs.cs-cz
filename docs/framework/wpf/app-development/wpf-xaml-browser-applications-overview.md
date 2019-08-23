@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 8017895450c989683b7fb246c9c1fb7c23fa9e5e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a83b3e68365cccc96cfe7eaa4baaabf8c991c98f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611469"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956052"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -40,7 +40,7 @@ ms.locfileid: "69611469"
  Když spustíte projekt XBAP, otevře se v okně prohlížeče namísto samostatného okna. Když ladíte aplikaci XBAP ze sady Visual Studio, aplikace se spustí s oprávněním pro internetovou zónu a bude proto generovat výjimky zabezpečení, pokud jsou tato oprávnění překročena. Další informace najdete v tématu zabezpečení s [částečnou důvěryhodností](../wpf-partial-trust-security.md) [zabezpečení](../security-wpf.md) a WPF.  
   
 > [!NOTE]
->  Pokud nevyvíjíte pomocí sady Visual Studio nebo chcete získat další informace o souborech projektu, přečtěte si téma [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md).  
+> Pokud nevyvíjíte pomocí sady Visual Studio nebo chcete získat další informace o souborech projektu, přečtěte si téma [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md).  
   
 <a name="deploying_a_xbap"></a>   
 ## <a name="deploying-an-xbap"></a>Nasazení aplikace XBAP  
@@ -174,7 +174,7 @@ ms.locfileid: "69611469"
 |Internet|Neúspěch s "důvěryhodným neuděleným"|Podepište aplikaci XBAP pomocí certifikátu.|  
   
 > [!NOTE]
->  Chování popsané v předchozí tabulce je pro plně důvěryhodná aplikace XBAP, které nedodržují model důvěryhodného nasazení ClickOnce.  
+> Chování popsané v předchozí tabulce je pro plně důvěryhodná aplikace XBAP, které nedodržují model důvěryhodného nasazení ClickOnce.  
   
  Doporučuje se použít model důvěryhodného nasazení ClickOnce pro nasazení plně důvěryhodného prostředí XBAP. Tento model umožňuje, aby se XBAP automaticky udělila Plná důvěra bez ohledu na zónu zabezpečení, takže se uživateli nezobrazí výzva. V rámci tohoto modelu musíte aplikaci podepsat pomocí certifikátu od důvěryhodného vydavatele. Další informace naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod do podepisování kódu](https://go.microsoft.com/fwlink/?LinkId=166327).  
   

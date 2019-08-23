@@ -2,20 +2,20 @@
 title: Chyba – kontrakt
 ms.date: 03/30/2017
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-ms.openlocfilehash: 21c4894b3927b6fdcf9aff16ea07020eeb073977
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 914ac85d0aaecfaec84eeacc12461bd3c7023e54
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990117"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961413"
 ---
 # <a name="fault-contract"></a>Chyba – kontrakt
-Chyba – kontrakt ukázka ukazuje, jak komunikovat se informace o chybě ze služby klienta. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat do služby k převodu výjimku interní chybu. Klient se pokusí provádět dělení nulou vynutit chybový stav služby.  
+Ukázka smlouvy o selhání ukazuje, jak sdělit informace o chybě ze služby klientovi. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)s nějakým dalším kódem přidaným do služby pro převod vnitřní výjimky na chybu. Klient se pokusí provést dělení nulou, aby vynutil chybový stav služby.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Kalkulačka smlouvy se změnila zahrnout <xref:System.ServiceModel.FaultContractAttribute> jak je znázorněno v následujícím ukázkovém kódu.  
+ Smlouva kalkulačky byla upravena tak, aby <xref:System.ServiceModel.FaultContractAttribute> obsahovala, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -33,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <xref:System.ServiceModel.FaultContractAttribute> Atribut označuje, že `Divide` operace může vrátit chybu typu `MathFault`. Chyba může být libovolného typu, který lze serializovat. V takovém případě `MathFault` kontraktu dat, vypadá takto:  
+ Atribut označuje, že operace může vracet chybu typu `MathFault`. `Divide` <xref:System.ServiceModel.FaultContractAttribute> Chyba může být libovolného typu, který lze serializovat. V tomto případě `MathFault` je to kontrakt dat, jak je znázorněno níže:  
   
 ```csharp
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -58,7 +58,7 @@ public class MathFault
 }  
 ```  
   
- `Divide` Vyvolá metoda výjimku <xref:System.ServiceModel.FaultException%601> dojde k výjimce při dělení nulovou výjimky, jak je znázorněno v následujícím ukázkovém kódu. Tato výjimka za následek selhání odesílané do klienta.  
+ `Divide` Metoda<xref:System.ServiceModel.FaultException%601> vyvolá výjimku, pokud dojde k výjimce nulou, jak je znázorněno v následujícím ukázkovém kódu. Tato výjimka vede k odeslání chyby klientovi.  
   
 ```csharp
 public int Divide(int n1, int n2)  
@@ -77,7 +77,7 @@ public int Divide(int n1, int n2)
 }  
 ```  
   
- Klientský kód způsobí chybu vyžádáním dělení nulou. Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Zobrazí dělení nulou uváděny jako chyba. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Kód klienta vynutí chybu tím, že si vyžádá dělení nulou. Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. Uvidíte, že dělení nulou se hlásí jako chyba. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console  
 Add(15,3) = 18  
@@ -88,7 +88,7 @@ FaultException<MathFault>: Math fault while doing division. Problem: divide by z
 Press <ENTER> to terminate client.  
 ```  
   
- Klient k tomu zachytávání odpovídající `FaultException<MathFault>` výjimka:  
+ Klient to provede zachycením příslušné `FaultException<MathFault>` výjimky:  
   
 ```csharp
 catch (FaultException<MathFault> e)  
@@ -98,9 +98,9 @@ catch (FaultException<MathFault> e)
 }  
 ```  
   
- Ve výchozím nastavení podrobnosti neočekávané výjimky neodešlou do klienta zabránit podrobnosti o implementaci služby z uvození hranici zabezpečení služby. `FaultContract` poskytuje způsob, jak popisují chyby v kontraktu a označit určité typy výjimek podle potřeby pro přenos do klienta. `FaultException<T>` poskytuje mechanismus za běhu pro odesílání chyb spotřebitelům.  
+ Ve výchozím nastavení se klientovi neodesílají podrobnosti o neočekávaných výjimkách, aby se předešlo podrobnostem implementace služby z řídicího panelu zabezpečené hranice služby. `FaultContract`poskytuje způsob, jak popsat chyby ve smlouvě a označovat určité typy výjimek, které jsou vhodné pro přenos klientovi. `FaultException<T>`poskytuje mechanizmus běhu pro posílání chyb příjemcům.  
   
- Je však užitečné při ladění, naleznete v tématu interních detailů selhání služby. Chcete-li vypnout zabezpečené chování výše popsaný, můžete určit, že podrobnosti o každé neošetřená výjimka na serveru součástí by měly být chyby, která je odeslána do klienta. To lze provést nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> k `true`. Můžete buď nastavit ji v kódu nebo v konfiguraci, jak je znázorněno v následujícím příkladu.  
+ Je však vhodné zobrazit interní podrobnosti o selhání služby při ladění. Chcete-li vypnout zabezpečené chování popsané výše, můžete určit, že podrobnosti o každé neošetřené výjimce na serveru by měly být zahrnuty do chyby, která je odeslána klientovi. To je provedeno nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> na. `true` Můžete ho buď nastavit v kódu, nebo v konfiguraci, jak je znázorněno v následující ukázce.  
   
 ```xml  
 <behaviors>  
@@ -113,25 +113,25 @@ catch (FaultException<MathFault> e)
 </behaviors>  
 ```  
   
- Dále chování musí být přidružené služby tak, že nastavíte `behaviorConfiguration` atribut služby v konfiguračním souboru na "CalculatorServiceBehavior".  
+ Kromě toho musí být chování přidruženo ke službě `behaviorConfiguration` nastavením atributu služby v konfiguračním souboru na hodnotu "CalculatorServiceBehavior".  
   
- K zachytávání těchto chyb na straně klienta, který není obecný <xref:System.ServiceModel.FaultException> musí být zachycena.  
+ Chcete-li zachytit taková selhání klienta, musí být zachycena neobecná <xref:System.ServiceModel.FaultException> .  
   
- Toto chování by měla sloužit pouze pro účely ladění a nikdy by měl být povoleno v produkčním prostředí.  
+ Toto chování by se mělo používat jenom pro účely ladění a nikdy by nemělo být povolené v produkčním prostředí.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Faults`  

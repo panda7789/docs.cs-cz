@@ -4,25 +4,25 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: be4798663d0b39301ec496df45a4a7a5bf9c88e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16f428b614fe331faffabab477c6584fb682801d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918581"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955235"
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: Použití monikeru služby Windows Communication Foundation bez registrace
-K připojení a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientská aplikace WCF podrobnosti adresu služby, konfigurace vazby a kontrakt služby.  
+Chcete-li se připojit ke službě Windows Communication Foundation (WCF) a komunikovat s ní, musí mít klientská aplikace WCF podrobné informace o adrese služby, konfiguraci vazby a kontraktu služby.  
   
- Monikeru služby WCF obvykle získá požadované smlouvy prostřednictvím předchozí registrace typů požadovaný atribut, ale můžou nastat případy, kdy to není proveditelné. Zástupný název místo registrace, můžete získat definici kontraktu ve formě dokumentem definice jazyka WSDL (Web Services) prostřednictvím `wsdl` parametr nebo prostřednictvím výměny metadat prostřednictvím použití `mexAddress` parametr.  
+ Moniker služby WCF obvykle získá požadovanou kontrakt prostřednictvím předchozí registrace požadovaných typů atributů, ale v některých případech mohou nastat případy, kdy to není proveditelné. Místo registrace může moniker získat definici kontraktu ve formě dokumentu WSDL (Web Services Definition Language), prostřednictvím použití `wsdl` parametru nebo prostřednictvím výměny metadat prostřednictvím použití `mexAddress` ukazatele.  
   
- To umožňuje scénáře, jako je distribuce tabulky aplikace Excel, kde některé z hodnot buňky se počítají prostřednictvím interakce webové služby. V tomto scénáři nemusí být možné zaregistrovat sestavení kontraktu služby ve všech klientech, které může otevřít dokument. `wsdl` Parametr nebo `mexAddress` parametr povoluje samostatná řešení.  
+ To umožňuje scénáře, jako je například distribuce excelové tabulky, kde se některé hodnoty buňky vypočítávají prostřednictvím interakcí webové služby. V tomto scénáři nemusí být možné zaregistrovat sestavení kontraktu služby na všech klientech, kteří můžou dokument otevřít. `wsdl` Parametr`mexAddress` nebo parametr umožňuje samostatně obsažené řešení.  
   
 > [!NOTE]
->  Vzájemné ověřování musí použít pro ochranu před žádostí a odpovědí, manipulaci nebo falšování identity. Konkrétně je důležité pro klienty být jistí, že je koncový bod výměny metadat, který odpovídá určené důvěryhodná strana.  
+> Vzájemné ověřování se musí použít k ochraně proti manipulaci s žádostmi a falšování nebo falšování identity. Konkrétně je důležité, aby klienti měli jistotu, že koncový bod výměny metadat, který odpovídá, je zamýšlená důvěryhodná strana.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje použití monikeru služby s kontraktem MEX. Služba s tímto kontraktem je vystavena s wsHttpBinding.  
+ Tento příklad ukazuje použití monikeru služby se smlouvou MEX. Služba s následujícím kontraktem se zveřejňuje s wsHttpBinding.  
   
 ```  
 using System.ServiceModel;  
@@ -43,7 +43,7 @@ public interface IAffiliate
 }  
 ```  
   
- Lze použít k vytvoření klienta WCF pro vzdálené služby řetězce monikeru následující příklad.  
+ Chcete-li vytvořit klienta WCF pro vzdálenou službu, lze použít následující vzorový řetězec monikeru.  
   
 ```  
 service4:mexAddress="http://servername/Affiliates/service.svc/mex",  
@@ -52,11 +52,11 @@ contract=IAffiliate, contractNamespace=http://Microsoft.ServiceModel.Demo,
 binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/  
 ```  
   
- Při spuštění klientské aplikace, klient provádí `WS-MetadataExchange` za poskytnutý `mexAddress`. To může vrátit adresy, vazby a podrobnosti o kontraktu pro celou řadou služeb. `address`, `contract`, `contractNamespace`, `binding` a `bindingNamespace` parametry slouží k identifikaci určené služby. Jakmile tyto parametry pravá složená závorka, zástupný název vytvoří klienta WCF s definicí příslušné smlouvy a volání je pak možné provádět pomocí klienta WCF stejně jako u typu kontraktu.  
+ Během provádění klientské aplikace provede `WS-MetadataExchange` klient s poskytnutou `mexAddress`součástí. To může vracet adresu, vazbu a podrobnosti o kontraktu pro určitý počet služeb. `binding` `contract` `contractNamespace`K identifikaci zamýšlené služby se `bindingNamespace` používají parametry,, a. `address` Jakmile se tyto parametry shodují, moniker vytvoří klienta WCF s příslušnou definicí kontraktu a volání se pak dá pomocí klienta WCF použít jako se zadaným kontraktem.  
   
 > [!NOTE]
->  Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
+> Pokud je moniker poškozený nebo pokud není služba k dispozici, volání vrátí chybu `GetObject` s názvem neplatná syntaxe. Pokud se zobrazí tato chyba, ujistěte se, že moniker, který používáte, je správný a služba je k dispozici.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

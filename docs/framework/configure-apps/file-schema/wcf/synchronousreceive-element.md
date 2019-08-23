@@ -2,20 +2,20 @@
 title: <synchronousReceive> – element
 ms.date: 03/30/2017
 ms.assetid: cc070387-3d11-4b02-a952-bc08ad2df05a
-ms.openlocfilehash: 20390f747c8beaccba1cfea7a9ea0ed366037ecb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa14d4606303b2d67cf5ef845d428bb086680204
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757921"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938969"
 ---
-# <a name="synchronousreceive-element"></a>\<synchronousReceive > – element
-Tento prvek konfigurace slouží k určení chování za běhu pro příjem zpráv v aplikaci klienta nebo službě. Nemá žádné atributy nebo podřízené prvky.  
+# <a name="synchronousreceive-element"></a>\<synchronousReceive – element >
+Tento prvek konfigurace slouží k určení chování za běhu pro příjem zpráv v klientské aplikaci nebo službě. Neobsahuje žádné atributy ani podřízené elementy.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<synchronousReceive >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,10 +37,10 @@ Tento prvek konfigurace slouží k určení chování za běhu pro příjem zpr�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto chování použijte dáte pokyn, aby modul pro naslouchání kanálu pro použití synchronního přijímat spíše než výchozí, asynchronní. Windows Communication Foundation (WCF) vydá nové vlákno odeslané pro každé přijaté kanálu. Pokud existuje mnoho kanálů, je možné došly vlákna.  
+ Toto chování použijte, pokud chcete, aby naslouchací proces kanálu použil synchronní příjem, nikoli jako výchozí, asynchronní. Windows Communication Foundation (WCF) vydá nové vlákno pro každý přijatý kanál. Pokud existuje spousta kanálů, existuje možnost, že je možné vymezit vlákna z provozu.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,47 +2,47 @@
 title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 530c626a1f134190bb90fcee3a4e3bbba91d9516
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: dfff099a6bf45911f9327622a84a8803ad7dd0ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878296"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953673"
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
-Tento příklad ukazuje použití model rozšiřitelnosti kanálu. Konkrétně se ukazuje, jak implementovat vlastní prvek vazby, která vytváří objekty pro vytváření kanálů a moduly pro naslouchání kanálů aby se zachytily všechny příchozí a odchozí zprávy v určitém místě v zásobníku za běhu. Ukázka zahrnuje také klienta a serveru, které ukazují použití tyto vlastní objekty pro vytváření.  
+Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně ukazuje, jak implementovat vlastní prvek vazby, který vytváří objekty pro vytváření kanálů a naslouchací procesy kanálu pro zachycení všech příchozích a odchozích zpráv v určitém bodě v zásobníku běhu. Ukázka zahrnuje také klienta a server, který předvádí použití těchto vlastních továrn.  
   
- V této ukázce jsou klient a služba konzoly programů (.exe). Klient a služba, ujistěte se, jak použít společné knihovny (DLL), který obsahuje element vlastní vazby a jejích přidružených objektů za běhu.  
+ V této ukázce jsou klientem i služba konzolové programy (. exe). Klient a služba obě využívají společnou knihovnu (. dll), která obsahuje vlastní prvek vazby a příslušné objekty modulu runtime.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\MessageInterceptor`  
   
- Ukázka popisuje doporučený postup pro vytváření vlastních vrstev kanálu ve Windows Communication Foundation (WCF), pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastního kanálu vrstvami jsou následující:  
+ Ukázka popisuje doporučený postup pro vytvoření vlastního vrstveného kanálu v Windows Communication Foundation (WCF) pomocí architektury kanálů a následujících osvědčených postupů pro WCF. Postup vytvoření vlastního vrstveného kanálu je následující:  
   
-1. Rozhodněte, které z tvarů kanálu objekt pro vytváření kanálů a modul pro naslouchání kanálu se podporují.  
+1. Rozhodněte, které z obrazců kanálů bude podporovat objekt pro vytváření kanálů a naslouchací proces kanálu.  
   
-2. Vytvořte objekt pro vytváření kanálů a naslouchací proces kanálu, které podporují obrazcích kanálu.  
+2. Vytvořte objekt pro vytváření kanálů a naslouchací proces kanálu, který podporuje obrazce kanálu.  
   
-3. Přidejte prvek vazby, který přidá vlastní vrstvami kanál do zásobníku kanálu.  
+3. Přidejte prvek vazby, který přidá vlastní vrstvený kanál do zásobníku kanálů.  
   
-4. Přidání sekce rozšíření elementu vazby vystavit nový element vazby na konfigurační systém.  
+4. Přidejte část rozšíření elementu vazby, která zpřístupňuje nový prvek vazby na konfigurační systém.  
   
-## <a name="channel-shapes"></a>Kanál obrazce  
- Prvním krokem při psaní vlastního kanálu vrstvami je rozhodnout, jaké tvary jsou požadovány pro kanál. Pro naše inspektoru zpráva podporujeme žádný obrazec, který podporuje vrstvy pod nám (například pokud vrstvy pod nám můžete vytvářet <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, pak také zveřejňujeme <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>).  
+## <a name="channel-shapes"></a>Obrazce kanálu  
+ Prvním krokem při psaní vlastního vrstveného kanálu je rozhodování o tom, které obrazce jsou pro kanál vyžadovány. Pro náš inspektor zpráv podporujeme jakýkoliv tvar, který vrstva níže podporuje (například v <xref:System.ServiceModel.Channels.IOutputChannel> případě, že vrstva níže může sestavovat a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>a pak také zveřejňuje <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>).  
   
-## <a name="channel-factory-and-listener-factory"></a>Objekt pro vytváření kanálů a Výroba naslouchací služby  
- Dalším krokem při psaní vlastního kanálu vrstvami je vytvořte implementaci třídy <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klientů a jejich <xref:System.ServiceModel.Channels.IChannelListener> pro kanály service.  
+## <a name="channel-factory-and-listener-factory"></a>Továrna kanálu a továrna naslouchacího procesu  
+ Dalším krokem při psaní vlastního vrstveného kanálu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro klientské kanály <xref:System.ServiceModel.Channels.IChannelListener> a pro kanály služby.  
   
- Tyto třídy vnitřní objekt pro vytváření a naslouchací proces a delegovat vše kromě na `OnCreateChannel` a `OnAcceptChannel` volání vnitřní objekt pro vytváření a naslouchacího procesu.  
+ Tyto třídy přebírají interní továrnu a naslouchací proces a přesměrují `OnCreateChannel` vše `OnAcceptChannel` , ale volání a do interního továrny a naslouchacího procesu.  
   
 ```  
 class InterceptingChannelFactory<TChannel> : ChannelFactoryBase<TChannel>  
@@ -52,24 +52,24 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 ```  
   
 ## <a name="adding-a-binding-element"></a>Přidání elementu vazby  
- Ukázka definuje vlastní prvek vazby: `InterceptingBindingElement`. `InterceptingBindingElement` přijímá `ChannelMessageInterceptor` jako vstup a využívá ji `ChannelMessageInterceptor` k manipulaci s zprávy předávané přes něj. Toto je pouze třídu, která musí být veřejné. Objekt pro vytváření, naslouchací proces a kanály můžou být interní implementace veřejné rozhraní za běhu.  
+ Ukázka definuje vlastní prvek vazby: `InterceptingBindingElement`. `InterceptingBindingElement`provede jako vstup a použije to `ChannelMessageInterceptor` k manipulaci se zprávami, které ji procházejí. `ChannelMessageInterceptor` Toto je jediná třída, která musí být veřejná. Továrny, naslouchací proces a kanály můžou být interními implementacemi pro veřejná rozhraní za běhu.  
   
 ```  
 public class InterceptingBindingElement : BindingElement  
 ```  
   
 ## <a name="adding-configuration-support"></a>Přidání podpory konfigurace  
- K integraci s konfigurací vazby knihovny definuje obslužné rutiny konfiguračního oddílu jako část rozšíření elementu vazby. Konfiguračních souborů klienta a serveru musí registraci rozšíření elementu vazby v konfiguraci systému. Implementátory, které chcete je zveřejnit své element vazby na konfigurační systém lze odvodit z této třídy.  
+ Pro integraci s konfigurací vazby knihovna definuje obslužnou rutinu konfiguračního oddílu jako rozšíření elementu vazby. Konfigurační soubory klienta a serveru musí registrovat rozšíření elementu vazby s konfiguračním systémem. Implementátori, kteří chtějí zveřejnit svůj element vazby do konfiguračního systému, lze odvodit z této třídy.  
   
 ```  
 public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
 ```  
   
-## <a name="adding-policy"></a>Přidání zásad  
- Integrace s naší systému zásad `InterceptingBindingElement` implementuje IPolicyExportExtension signál, že jsme měli zúčastnit generování zásad. Podporu importu zásad na generovaného klienta, může uživatel zaregistrovat odvozenou třídu `InterceptingBindingElementImporter` a přepsat `CreateMessageInterceptor`() k vygenerování jejich zásady podporou `ChannelMessageInterceptor` třídy.  
+## <a name="adding-policy"></a>Přidávání zásad  
+ Pro integraci s naším systémem `InterceptingBindingElement` zásad implementuje IPolicyExportExtension k signalizaci, že by se měl zúčastnit generování zásad. Pro podporu importu zásad na vygenerovaného klienta může uživatel zaregistrovat odvozenou třídu třídy `InterceptingBindingElementImporter` a přepsat `CreateMessageInterceptor`(), aby vygenerovala svou třídu `ChannelMessageInterceptor` s povolenými zásadami.  
   
-## <a name="example-droppable-message-inspector"></a>Příklad: Inspektor droppable zprávy  
- Ukázka je příklad implementace `ChannelMessageInspector` které zahodí zprávy.  
+## <a name="example-droppable-message-inspector"></a>Příklad: Droppable Message Inspector  
+ Zahrnuté v ukázce je příklad implementace `ChannelMessageInspector` , která vyřazuje zprávy.  
   
 ```  
 class DroppingServerElement : InterceptingElement  
@@ -81,7 +81,7 @@ class DroppingServerElement : InterceptingElement
 }  
 ```  
   
- Můžete k němu přístup z konfigurace následujícím způsobem:  
+ K němu můžete přistupovat z konfigurace následujícím způsobem:  
   
 ```xml  
 <configuration>  
@@ -99,7 +99,7 @@ class DroppingServerElement : InterceptingElement
 </configuration>  
 ```  
   
- Klient a server použijte tento oddíl konfigurace nově vytvořený k vložení vlastní objekty Factory do svých zásobníků kanál za běhu (nad transportní) nejnižší úroveň.  
+ Klient a server používají tento nově vytvořený konfigurační oddíl k vložení vlastních továren do nejnižší úrovně jejich zásobníků kanálů za běhu (nad úroveň transportu).  
   
 ```xml  
 <customBinding>  
@@ -110,9 +110,9 @@ class DroppingServerElement : InterceptingElement
 </customBinding>  
 ```  
   
- Klient použije `MessageInterceptor` knihovny přidat vlastní hlavičku do i číslované zprávy. Služba používá na druhé straně `MessageInterceptor` knihovny vyřaďte všechny zprávy, které nemají toto zvláštní záhlaví.  
+ Klient používá `MessageInterceptor` knihovnu k přidání vlastní hlavičky i k číslování zpráv. Služba na druhé straně používá `MessageInterceptor` knihovnu k vyřazení všech zpráv, které nemají toto speciální hlavičku.  
   
- Měli byste vidět následující výstup klienta po spuštění služby a potom klienta.  
+ Po spuštění služby a poté klientovi by se měl zobrazit následující výstup klienta.  
   
 ```  
 Reporting the next 10 wind speed  
@@ -134,9 +134,9 @@ Server dropped a message.
 Press ENTER to shut down client  
 ```  
   
- Klient sestavy 10 rychlost větru jiné službě, ale pouze první z nich s hlavičkou speciální značek.  
+ Klient oznamuje službě 10 různých rychlostí větru, ale pouze ty, které jsou ve stejném záhlaví, pouze se speciální hlavičkou.  
   
- Ve službě byste měli vidět následující výstup:  
+ Ve službě by se měl zobrazit následující výstup:  
   
 ```  
 Press ENTER to exit.  
@@ -145,18 +145,18 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
 5 wind speed reports have been received.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Instalace technologie ASP.NET 4.0 pomocí následujícího příkazu.  
+1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5. Nejprve spusťte Service.exe, pak spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
+5. Nejprve spusťte Service. exe a spusťte soubor Client. exe a Sledujte výstup okna konzoly.  

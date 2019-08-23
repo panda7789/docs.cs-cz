@@ -13,59 +13,59 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aabf2ad437ee8a50614ca27978aa0a031f5d7e55
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5f003795bf2b8987786043a62d48b2623eb64015
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592234"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949369"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
-Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  
+Skoro každá aplikace v produkční kvalitě musí používat prostředky. Prostředek je jakákoli nespustitelná data, která jsou logicky nasazena s aplikací. Prostředek se může v aplikaci zobrazit jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v několika formách, včetně řetězců, obrázků a trvalých objektů. (Pro zápis trvalých objektů do souboru prostředků musí být objekty serializovatelné.) Uložení dat do souboru prostředků umožňuje změnit data, aniž by bylo nutné znovu kompilovat celou aplikaci. Umožňuje také ukládat data do jednoho umístění a eliminovat nutnost spoléhat na pevně zakódované údaje, které jsou uloženy na více místech.  
   
- Rozhraní .NET Framework a .NET Core poskytují komplexní podporu pro vytváření a lokalizace prostředků. Kromě toho .NET podporuje jednoduchý model pro vytváření balíčků a nasazení lokalizované prostředky.  
+ .NET Framework a .NET Core poskytují komplexní podporu pro vytváření a lokalizaci prostředků. Rozhraní .NET navíc podporuje jednoduchý model pro balení a nasazování lokalizovaných prostředků.  
   
- Informace o prostředcích v technologii ASP.NET, naleznete v tématu [webové stránky ASP.NET: Přehled prostředků](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
+ Informace o prostředcích v ASP.NET najdete v tématu [Přehled prostředků webové stránky ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
   
 ## <a name="creating-and-localizing-resources"></a>Vytváření a lokalizace prostředků  
 
-V aplikaci nelokalizovaný můžete použít zdrojové soubory jako úložiště pro data aplikací, zejména pro řetězce, která se můžou v opačném případě pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji, můžete vytvářet prostředky jako text (TXT) nebo soubory XML (.resx) a použít [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) pro jejich zkompilování do binárních souborů .resources. Tyto soubory může být potom vložen do spustitelného souboru aplikace pomocí kompilátoru jazyka. Další informace o vytváření prostředků najdete v tématu [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
+V nelokalizované aplikaci můžete použít soubory prostředků jako úložiště pro data aplikací, zejména pro řetězce, které by jinak byly pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji vytváříte prostředky jako textový soubor (. txt) nebo soubory XML (. resx) a pomocí nástroje [Resgen. exe (generátor souborů prostředků)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) je zkompilujete do binárních souborů. Resources. Tyto soubory pak mohou být vloženy do spustitelného souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
 
-Také je možné lokalizovat prostředky vaší aplikace pro specifické jazykové verze. To vám umožní sestavovat lokalizované verze (přeloženého) vaší aplikace. Když vyvíjíte aplikaci, která využívá lokalizované prostředky, určíte jazykovou verzi, která slouží jako neutrální nebo záložní jazykovou verzi, jehož prostředky se použijí, pokud jsou k dispozici žádné vhodné prostředky. Ve spustitelném souboru aplikace se obvykle ukládají prostředky neutrální jazykové verze. Zbývající prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v samostatné satelitních sestavení. Další informace najdete v tématu [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
+Prostředky vaší aplikace můžete také lokalizovat pro konkrétní jazykové verze. To umožňuje vytvářet lokalizované (přeložené) verze vašich aplikací. Když vyvíjíte aplikaci, která používá lokalizované prostředky, určíte jazykovou verzi, která slouží jako neutrální nebo záložní jazyková verze, jejíž prostředky jsou používány, pokud nejsou k dispozici žádné vhodné prostředky. Prostředky neutrální jazykové verze se obvykle ukládají ve spustitelném souboru aplikace. Zbývající prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v samostatných satelitních sestaveních. Další informace naleznete v tématu [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
   
 ## <a name="packaging-and-deploying-resources"></a>Zabalení a nasazení prostředků  
- Nasazení aplikace lokalizované prostředky v [satelitní sestavení](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Satelitní sestavení obsahuje prostředky jednu kulturu; neobsahuje žádný kód aplikace. V modelu nasazení satelitního sestavení vytvoříte aplikaci s jedno sestavení (což je obvykle hlavní sestavení) a jeden satelitní sestavení pro jednotlivé jazykové verze, který aplikace podporuje. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno nahradit nebo aktualizují prostředky s odpovídající konkrétní jazykovou verzi bez nutnosti vyměnit sestavení hlavní aplikace.  
+ Lokalizované prostředky aplikace nasadíte do [satelitních sestavení](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Satelitní sestavení obsahuje prostředky jediné jazykové verze; neobsahuje žádný kód aplikace. V modelu nasazení satelitního sestavení vytvoříte aplikaci s jedním výchozím sestavením (což je obvykle hlavní sestavení) a jedním satelitním sestavením pro každou jazykovou verzi, kterou aplikace podporuje. Vzhledem k tomu, že satelitní sestavení nejsou součástí hlavního sestavení, můžete snadno nahradit nebo aktualizovat prostředky odpovídající konkrétní jazykové verzi, aniž byste museli nahradit hlavní sestavení aplikace.  
   
- Pečlivě určete, které prostředky budou použity k vytvoření sestavení výchozích prostředků vaší aplikace. Protože je součástí hlavní sestavení, všechny změny nutné k nahrazení hlavní sestavení. Pokud nezadáte výchozí prostředek, bude vyvolána výjimka při [proces získávání náhradních prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) pokusí se ji najít. V dobře navržená aplikace by měl použití prostředků nikdy nevyvolají výjimku.  
+ Pečlivě určete, které prostředky budou vytvářet výchozí sestavení prostředků vaší aplikace. Vzhledem k tomu, že je součástí hlavního sestavení, všechny změny v ní budou vyžadovat, abyste nahradili hlavní sestavení. Pokud nezadáte výchozí prostředek, vyvolá se výjimka, když se [záložní proces prostředku](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) pokusí ho najít. V dobře navržené aplikaci nesmí použití prostředků nikdy vyvolat výjimku.  
   
- Další informace najdete v tématu [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) článku.  
+ Další informace najdete v článku o [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) .  
   
 ## <a name="retrieving-resources"></a>Načítání prostředků  
- V době běhu aplikace načte odpovídající lokalizované prostředky na základě vlákno podle jazykové verze určený poskytovatelem <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost. Hodnota této vlastnosti je odvozen následovně:  
+ V době běhu aplikace načte příslušné lokalizované prostředky na základě vlákna na základě jazykové verze určené <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastností. Hodnota této vlastnosti je odvozena takto:  
   
-- Přímo přiřazením <xref:System.Globalization.CultureInfo> objekt, který reprezentuje lokalizovanou jazykovou verzi <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
+- Přímým přiřazením <xref:System.Globalization.CultureInfo> objektu, který představuje lokalizovanou jazykovou <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> verzi vlastnosti.  
   
-- Pokud není explicitně přiřazeny jazykovou verzi, načtením výchozí jazyková verze vlákna uživatelského rozhraní z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
+- Pokud není jazyková verze explicitně přiřazena, načtením výchozí jazykové verze uživatelského rozhraní vlákna z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> vlastnosti.  
   
-- Pokud vlákno výchozí jazyková verze uživatelského rozhraní není explicitně přiřazeny, načtením jazykovou verzi pro aktuálního uživatele v místním počítači. Implementace .NET běžící na Windows to provést pomocí volání Windows [ `GetUserDefaultUILanguage` ](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) funkce.  
+- Pokud výchozí jazyková verze uživatelského rozhraní vlákna není explicitně přiřazena, načtením jazykové verze pro aktuálního uživatele v místním počítači. Implementace rozhraní .NET spuštěné v systému Windows provede voláním funkce [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) Windows.  
   
- Další informace o tom, jak je nastavena aktuální jazyková verze uživatelského rozhraní, najdete v článku <xref:System.Globalization.CultureInfo> a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> odkazují na stránky.  
+ Další informace o nastavení aktuální jazykové verze uživatelského rozhraní naleznete na <xref:System.Globalization.CultureInfo> referenčních stránkách a. <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>  
   
- Potom můžete načíst prostředky pro aktuální jazykové verze uživatelského rozhraní nebo pro konkrétní jazykovou verzi pomocí <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třídy. I když <xref:System.Resources.ResourceManager> třídy se nejčastěji používá pro načítání prostředků, <xref:System.Resources?displayProperty=nameWithType> obor názvů obsahuje další typy, které slouží k načtení prostředků. Zde jsou některé z nich:  
+ Pak můžete načíst prostředky pro aktuální jazykovou verzi uživatelského rozhraní nebo pro konkrétní jazykovou verzi pomocí <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třídy. I když je <xref:System.Resources?displayProperty=nameWithType> Třídanejčastějipoužívánapronačítáníprostředků,obornázvůobsahujedalšítypy,kterélzepoužít<xref:System.Resources.ResourceManager> k načtení prostředků. Zde jsou některé z nich:  
   
-- <xref:System.Resources.ResourceReader> Třídu, která umožňuje vytvořit výčet prostředků vloženy do sestavení nebo uložená v samostatných binárního souboru .resources. To je užitečné, pokud si nejste jisti přesné názvy prostředků, které jsou k dispozici v době běhu.  
+- <xref:System.Resources.ResourceReader> Třída, která umožňuje vytvořit výčet prostředků vložených do sestavení nebo Uložit do samostatného binárního souboru. Resources. To je užitečné, pokud neznáte přesné názvy prostředků, které jsou k dispozici v době běhu.  
   
-- <xref:System.Resources.ResXResourceReader> Třídu, která vám umožňuje načíst prostředky ze souboru XML (.resx).  
+- <xref:System.Resources.ResXResourceReader> Třída, která umožňuje načtení prostředků ze souboru XML (. resx).  
   
-- <xref:System.Resources.ResourceSet> Třídu, která vám umožňuje načíst prostředky specifické jazykové verze bez sledování pravidla pro použití náhradní lokality. Prostředky mohou být uloženy v sestavení nebo samostatné binárního souboru .resources. Můžete také vyvíjet <xref:System.Resources.IResourceReader> implementace, která vám umožní použít <xref:System.Resources.ResourceSet> třídy pro načtení prostředků z nějakého jiného zdroje.  
+- <xref:System.Resources.ResourceSet> Třída, která umožňuje načíst prostředky konkrétní jazykové verze bez pozorování náhradních pravidel. Prostředky mohou být uloženy v sestavení nebo samostatném binárním souboru. Resources. Můžete také vyvinout <xref:System.Resources.IResourceReader> implementaci, která umožňuje <xref:System.Resources.ResourceSet> použít třídu k načtení prostředků z jiného zdroje.  
   
-- <xref:System.Resources.ResXResourceSet> Třídu, která vám umožňuje načíst všechny položky v souboru prostředků jazyka XML do paměti.  
+- <xref:System.Resources.ResXResourceSet> Třída, která umožňuje načíst všechny položky v souboru prostředků XML do paměti.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Globalization.CultureInfo>
 - <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
-- [Základy vytváření aplikací](../../../docs/standard/application-essentials.md)
+- [Základy vytváření aplikací](../../standard/application-essentials.md)
 - [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
 - [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
 - [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

@@ -2,25 +2,25 @@
 title: Použití vlastní aktivity
 ms.date: 03/30/2017
 ms.assetid: 8f356419-681a-4175-ae93-878eee970249
-ms.openlocfilehash: 47ddd42168445aa23eaaded6fd19ffe4698e4117
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ca67ef7a8c4330d0182e960fc3fdcce656976a4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669573"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962225"
 ---
 # <a name="using-a-custom-activity"></a>Použití vlastní aktivity
-Aktivity, které jsou odvozeny z <xref:System.Activities.Activity> nebo jejích podtříd složený do větší pracovních postupů, nebo přímo v kódu. Toto téma popisuje použití vlastních aktivit v vytvořených v kódu nebo v Návrháři pracovních postupů.  
+Aktivity, které jsou <xref:System.Activities.Activity> odvozeny z nebo jejich podtříd, mohou být tvořeny většími pracovními postupy nebo přímo v kódu. V tomto tématu se dozvíte, jak používat vlastní aktivity v pracovních postupech vytvořených buď v kódu, nebo v návrháři.  
   
 > [!NOTE]
->  Můžete použít vlastní aktivity ve stejném projektu, ve kterém jsou definovány, tak dlouho, dokud vlastní aktivity a aktivity, která ji používá jsou zkompilovány (například načíst konkretizujete typem generovaných proces sestavení) Pokud je načtena odkazující aktivita dynamicky (např. při použití služba ActivityXAMLServices), pak odkazované sestavení umístit do jiného projektu nebo generovaný návrhářem XAML je třeba ručně upravit a povolit.  
+> Vlastní aktivity lze použít ve stejném projektu, ve kterém jsou definovány, pokud vlastní aktivita i aktivita, která ji používá, je kompilována (tj. načtena typem vytvořeným procesem sestavení), pokud Odkazovaná aktivita je načtena. dynamicky (například s použitím metodu ActivityXamlServices), pak by odkazované sestavení mělo být umístěno v jiném projektu, nebo je nutné ručně upravit XAML generovaný návrhářem, aby to bylo možné povolit.  
   
 #### <a name="using-a-custom-activity-to-a-workflow-project"></a>Použití vlastní aktivity do projektu pracovního postupu  
   
-1. Přidáte odkaz na projekt knihovny aktivit obsahující vlastní aktivitu z projektu hostitel.  
+1. Přidejte odkaz z projektu hostitele do projektu knihovny aktivit, který obsahuje vlastní aktivitu.  
   
 2. Sestavte řešení.  
   
-3. Chcete-li použít vlastní aktivity v návrháři, vyhledejte vlastní aktivity v sadě nástrojů a přetažením aktivity na plochu návrháře.  
+3. Chcete-li použít vlastní aktivitu v návrháři, najděte vlastní aktivitu v sadě nástrojů a přetáhněte aktivitu na plochu návrháře.  
   
-4. Použití vlastní aktivity v kódu, přidejte příkaz Using, který odkazuje na projekt vlastní aktivity a předat novou instanci třídy aktivity na <xref:System.Activities.WorkflowInvoker.Invoke%2A>.
+4. Chcete-li použít vlastní aktivitu v kódu, přidejte příkaz using, který odkazuje na projekt vlastní aktivity a předejte novou instanci aktivity do <xref:System.Activities.WorkflowInvoker.Invoke%2A>.

@@ -2,18 +2,18 @@
 title: Změna úrovní sdílení mezipaměti pro aktivity odesílání
 ms.date: 03/30/2017
 ms.assetid: 03926a64-753d-460e-ac06-2a4ff8e1bbf5
-ms.openlocfilehash: ac4f2e4fe85d6b243999add6bda65f4fb202f79c
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 587440bd343513aeff51f1ed0947573fbe612f22
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363835"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952591"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Změna úrovní sdílení mezipaměti pro aktivity odesílání
 Rozšíření umožňuje přizpůsobit úroveň sdílení mezipaměti, nastavení mezipaměti objektu pro vytváření kanálu a nastavení mezipaměti kanálu pro pracovní postupy, které odesílají zprávy do koncových bodů služby pomocí <xref:System.ServiceModel.Activities.Send> aktivit zasílání zpráv. <xref:System.ServiceModel.Activities.SendMessageChannelCache> Tyto pracovní postupy jsou obvykle pracovní postupy klienta, ale mohou být také služby pracovního postupu, které jsou hostovány v <xref:System.ServiceModel.WorkflowServiceHost>. Mezipaměť objektu pro vytváření kanálů obsahuje <xref:System.ServiceModel.ChannelFactory%601> objekty v mezipaměti. Mezipaměť kanálu obsahuje kanály v mezipaměti.  
   
 > [!NOTE]
->  Pracovní postupy mohou <xref:System.ServiceModel.Activities.Send> používat aktivity zasílání zpráv k odeslání buď zpráv, nebo parametrů. Modul runtime pracovního postupu přidává do mezipaměti továrny kanálů, které vytvářejí kanály typu <xref:System.ServiceModel.Channels.IRequestChannel> při <xref:System.ServiceModel.Activities.ReceiveReply> použití aktivity s <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.Send> aktivitou a <xref:System.ServiceModel.Channels.IOutputChannel> při pouhém použití aktivity (ne <xref:System.ServiceModel.Activities.ReceiveReply>).  
+> Pracovní postupy mohou <xref:System.ServiceModel.Activities.Send> používat aktivity zasílání zpráv k odeslání buď zpráv, nebo parametrů. Modul runtime pracovního postupu přidává do mezipaměti továrny kanálů, které vytvářejí kanály typu <xref:System.ServiceModel.Channels.IRequestChannel> při <xref:System.ServiceModel.Activities.ReceiveReply> použití aktivity s <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.Send> aktivitou a <xref:System.ServiceModel.Channels.IOutputChannel> při pouhém použití aktivity (ne <xref:System.ServiceModel.Activities.ReceiveReply>).  
   
 ## <a name="the-cache-sharing-levels"></a>Úrovně sdílení mezipaměti  
  Ve výchozím nastavení se v pracovním postupu hostovaném <xref:System.ServiceModel.WorkflowServiceHost> v mezipaměti <xref:System.ServiceModel.Activities.Send> používané aktivity zasílání zpráv sdílí mezi <xref:System.ServiceModel.WorkflowServiceHost> všemi instancemi pracovního postupu v (ukládání do mezipaměti na úrovni hostitele). Pro klienta pracovní postup, který není hostované <xref:System.ServiceModel.WorkflowServiceHost>, mezipaměť je k dispozici pouze pro instanci pracovního postupu (ukládání do mezipaměti na úrovni instance). Mezipaměť je k dispozici pouze <xref:System.ServiceModel.Activities.Send> pro aktivity, které nepoužívají koncové body definované v konfiguraci, pokud není povoleno zabezpečené ukládání do mezipaměti.  

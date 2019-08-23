@@ -2,21 +2,21 @@
 title: <oneWay>
 ms.date: 03/30/2017
 ms.assetid: 00e67e0e-77c0-4695-9138-c0997b0e5f3c
-ms.openlocfilehash: 2458cdd4d593637c2025047d5dd510f0f89b2a0f
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: f4a9422f4385e37a61ec85d680fcf7743a57bc0c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423076"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932942"
 ---
-# <a name="oneway"></a>\<oneWay>
-Umožňuje směrování paketů a použití jednosměrné metody pro vlastní vazbu.  
+# <a name="oneway"></a>\<> oneWay
+Povoluje směrování paketů a používání jednosměrných metod pro vlastní vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
-\<oneWay>  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
+\<> oneWay  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +35,30 @@ Umožňuje směrování paketů a použití jednosměrné metody pro vlastní va
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`packetRoutable`|Logická hodnota určující, zda je povoleno směrování paketů. Výchozí hodnota je `false`.|  
-|`MaxAcceptedChannels`|Celé číslo určující maximální počet kanálů, které jdou přijmout.|  
+|`packetRoutable`|Logická hodnota, která určuje, zda je povoleno směrování paketů. Výchozí hodnota je `false`.|  
+|`MaxAcceptedChannels`|Celé číslo, které určuje maximální počet kanálů, které mohou být přijaty.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<channelPoolSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/channelpoolsettings.md)|A <xref:System.ServiceModel.Configuration.ChannelPoolSettingsElement> objekt, který obsahuje vlastnosti fondu kanálu pro current channel.|  
+|[\<channelPoolSettings>](channelpoolsettings.md)|<xref:System.ServiceModel.Configuration.ChannelPoolSettingsElement> Objekt, který obsahuje vlastnosti fondu kanálů pro aktuální kanál.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Umožňuje směrování paketů jednosměrného převod vrstvy je nutné, který poskytuje tento element. Uživatel může vytvořit vlastní vazby, které se za přenos s ohledem na relaci nebo požadavku a odpovědi k němu paketů směrovatelné vrstvy tuto vazbu. Tento prvek je také užitečné, když chcete vystavit jednosměrné metody více nativní způsobem. V této vrstvě, jako je například kompozitní duplexní a spolehlivé zasílání zpráv je možné použít dalších transformací.  
+ Chcete-li povolit směrování paketů, je požadována jednosměrná konverzní vrstva, která tento prvek poskytuje. Uživatel může vytvořit vlastní vazbu, která tuto vazbu navrství prostřednictvím přenosu, který je v relaci nebo požadavek-odpověď, aby bylo možné směrovat paket. Tento prvek je také užitečný, pokud chcete zveřejnit jednosměrné metody v nativním režimu. Pro tuto vrstvu lze použít více transformací, jako je kompozitní duplexní a spolehlivé zasílání zpráv.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Channels.OneWayBindingElement>
 - <xref:System.ServiceModel.Configuration.OneWayElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

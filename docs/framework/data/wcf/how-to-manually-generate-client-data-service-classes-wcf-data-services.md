@@ -1,93 +1,93 @@
 ---
-title: 'Postupy: Ruční generování tříd klientské datové služby (WCF Data Services)'
+title: 'Postupy: Ruční generování tříd klientských datových služeb (WCF Data Services)'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, client library
 ms.assetid: b98cb1d6-956a-4e50-add6-67e4f2587346
-ms.openlocfilehash: fdca85360e34d6854604103c9d0ac22c5b829cf5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2a827e4909b18d9cca74fc20a2d83d2730ea0cd9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634021"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952287"
 ---
-# <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>Postupy: Ruční generování tříd klientské datové služby (WCF Data Services)
-Služeb WCF Data Services se integruje se sadou Visual Studio umožňuje automatické generování tříd klientské datové služby, pokud použijete **přidat odkaz na službu** dialogové okno Přidat odkaz na datovou službu v projektu sady Visual Studio. Další informace najdete v tématu [jak: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md). Můžete také ručně generovat stejný tříd klientské datové služby pomocí nástroje pro generování kódu, `DataSvcUtil.exe`. Tento nástroj, který je součástí služeb WCF Data Services, vygeneruje třídy rozhraní .NET Framework v definici datové služby. Je také slouží ke generování třídy služeb data ze souboru koncepčního modelu (.csdl) a ze souboru EDMX, který představuje model Entity Framework v projektu sady Visual Studio.
+# <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>Postupy: Ruční generování tříd klientských datových služeb (WCF Data Services)
+WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automatické generování tříd klientské datové služby při použití dialogového okna **Přidat odkaz na službu** k přidání odkazu na datovou službu v projektu sady Visual Studio. Další informace najdete v tématu [jak: Přidejte odkaz](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu. Můžete také ručně vygenerovat stejné třídy datové služby klienta pomocí nástroje `DataSvcUtil.exe`pro generování kódu. Tento nástroj, který je součástí WCF Data Services, generuje .NET Framework třídy z definice datové služby. Lze ji také použít ke generování tříd datové služby ze souboru koncepčního modelu (. CSDL) a ze souboru. edmx, který představuje model Entity Framework v projektu sady Visual Studio.
 
- V příkladu v tomto tématu se vytvoří tříd klientské datové služby založené na vzorku datová služba Northwind. Tato služba se vytvoří při dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md). Příklady v tomto tématu vyžadují souboru koncepčního modelu pro Northwind model. Další informace najdete v tématu [jak: Použití EdmGen.exe pro generování modelu a souborů mapování](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md). Příklady v tomto tématu vyžadují soubor .edmx pro Northwind model. Další informace najdete v tématu [edmx soubor přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).
+ Příklad v tomto tématu vytvoří klientské třídy datové služby založené na ukázkové datové službě Northwind. Tato služba se vytvoří po dokončení [WCF Data Services rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md). Některé příklady v tomto tématu vyžadují koncepční soubor modelu pro model Northwind. Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe. Některé příklady v tomto tématu vyžadují soubor. edmx pro model Northwind. Další informace najdete v tématu [Přehled souborů. edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).
 
-### <a name="to-generate-c-classes-that-support-data-binding"></a>Ke generování třídy jazyka C#, které podporují vytváření datových vazeb
+### <a name="to-generate-c-classes-that-support-data-binding"></a>Generovat C# třídy, které podporují datové vazby
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```console
     "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:CSharp /out:Northwind.cs /uri:http://localhost:12345/Northwind.svc
     ```
 
     > [!NOTE]
-    >  Je třeba nahradit hodnota předaná `/uri:` parametr s identifikátorem URI vaší instance služby Northwind ukázková data.
+    > Je nutné nahradit hodnotu `/uri:` dodanou parametr identifikátorem URI vaší instance služby ukázkových dat Northwind.
 
-### <a name="to-generate-visual-basic-classes-that-support-data-binding"></a>Ke generování třídy jazyka Visual Basic, které podporují vytváření datových vazeb
+### <a name="to-generate-visual-basic-classes-that-support-data-binding"></a>Generování Visual Basic třídy, které podporují datové vazby
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```console
     "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc
     ```
 
     > [!NOTE]
-    >  Je třeba nahradit hodnota předaná `/uri:` parametr s identifikátorem URI vaší instance služby Northwind ukázková data.
+    > Je nutné nahradit hodnotu dodanou `/uri:` parametr identifikátorem URI vaší instance služby ukázkových dat Northwind.
 
-### <a name="to-generate-c-classes-based-on-the-service-uri"></a>Ke generování třídy jazyka C# založeny na identifikátor URI služby
+### <a name="to-generate-c-classes-based-on-the-service-uri"></a>Generování C# tříd založených na identifikátoru URI služby
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /language:CSharp /out:northwind.cs /uri:http://localhost:12345/Northwind.svc
     ```
 
     > [!NOTE]
-    >  Je třeba nahradit hodnota předaná `/uri:` parametr s identifikátorem URI vaší instance služby Northwind ukázková data.
+    > Je nutné nahradit hodnotu `/uri:` dodanou parametr identifikátorem URI vaší instance služby ukázkových dat Northwind.
 
-### <a name="to-generate-visual-basic-classes-based-on-the-service-uri"></a>Ke generování třídy jazyka Visual Basic založené na identifikátor URI služby
+### <a name="to-generate-visual-basic-classes-based-on-the-service-uri"></a>Generování tříd Visual Basic na základě identifikátoru URI služby
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc
     ```
 
     > [!NOTE]
-    >  Je třeba nahradit hodnota předaná `/uri:` parametr s identifikátorem URI vaší instance služby Northwind ukázková data.
+    > Je nutné nahradit hodnotu dodanou `/uri:` parametr identifikátorem URI vaší instance služby ukázkových dat Northwind.
 
-### <a name="to-generate-c-classes-based-on-the-conceptual-model-file-csdl"></a>Ke generování třídy jazyka C# založeny na souboru koncepčního modelu (CSDL)
+### <a name="to-generate-c-classes-based-on-the-conceptual-model-file-csdl"></a>Generování C# tříd založených na souboru koncepčního modelu (CSDL)
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.csdl /out:Northwind.cs
     ```
 
-### <a name="to-generate-visual-basic-classes-based-on-the-conceptual-model-file-csdl"></a>Ke generování třídy jazyka Visual Basic konceptuálního modelu souboru (CSDL)
+### <a name="to-generate-visual-basic-classes-based-on-the-conceptual-model-file-csdl"></a>Vygenerování Visual Basic třídy založené na souboru koncepčního modelu (CSDL)
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.csdl /out:Northwind.vb
     ```
 
-### <a name="to-generate-c-classes-based-on-the-edmx-file"></a>Ke generování třídy jazyka C# na základě souboru EDMX
+### <a name="to-generate-c-classes-based-on-the-edmx-file"></a>Generování C# tříd založených na souboru. edmx
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.edmx /out:c:\northwind.cs
     ```
 
-### <a name="to-generate-visual-basic-classes-based-on-the-edmx-file"></a>Ke generování třídy jazyka Visual Basic na základě souboru EDMX
+### <a name="to-generate-visual-basic-classes-based-on-the-edmx-file"></a>Generování Visual Basic tříd založených na souboru. edmx
 
-- Na příkazovém řádku spusťte následující příkaz bez konce řádků:
+- Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
     ```
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.edmx /out:c:\northwind.vb
@@ -96,5 +96,5 @@ Služeb WCF Data Services se integruje se sadou Visual Studio umožňuje automat
 ## <a name="see-also"></a>Viz také:
 
 - [Generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)
-- [Postupy: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)
+- [Postupy: Přidat odkaz na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)
 - [Nástroj klienta WCF Data Services (DataSvcUtil.exe)](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md)

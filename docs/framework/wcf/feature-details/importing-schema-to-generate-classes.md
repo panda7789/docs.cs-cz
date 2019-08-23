@@ -8,176 +8,176 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-ms.openlocfilehash: 986f8c2d1eec91ee9a68d2b6068f5b38dfdf14f1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: dc33088c3519bfd088ed64a4de087c5086890804
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591258"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918478"
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
-Chcete-li generovat třídy ze schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a odchylky.  
+Chcete-li generovat třídy ze schémat, která jsou použitelná pomocí Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.XsdDataContractImporter> , použijte třídu. Toto téma popisuje proces a variace.  
   
 ## <a name="the-import-process"></a>Proces importu
- Proces importu schématu začíná <xref:System.Xml.Schema.XmlSchemaSet> a vytváří <xref:System.CodeDom.CodeCompileUnit>.  
+ Proces importu schématu začíná <xref:System.Xml.Schema.XmlSchemaSet> na a a <xref:System.CodeDom.CodeCompileUnit>vytvoří.  
   
- `XmlSchemaSet` Je součástí z objektu schématu rozhraní .NET Framework Model (SOM), který představuje sadu dokumentů schématu XML definice jazyk (XSD) schématu. Vytvoření `XmlSchemaSet` objekt ze sady dokumentů XSD, každý dokument v deserializaci <xref:System.Xml.Schema.XmlSchema> objektu (pomocí <xref:System.Xml.Serialization.XmlSerializer>) a přidejte tyto objekty do nového `XmlSchemaSet`.  
+ `XmlSchemaSet` Je součástí modelu objektu schématu .NET Framework (SOM), který představuje sadu dokumentů schémat XML Schema Definition Language (XSD). Chcete-li `XmlSchemaSet` vytvořit objekt ze sady dokumentů XSD, proveďte deserializaci každého dokumentu <xref:System.Xml.Schema.XmlSchema> do objektu (pomocí <xref:System.Xml.Serialization.XmlSerializer>) a přidejte tyto objekty do nového `XmlSchemaSet`.  
   
- `CodeCompileUnit` Je součástí rozhraní .NET Framework Code Document Object Model (CodeDOM), který představuje kód rozhraní .NET Framework abstraktní způsobem. K vygenerování skutečného kódu z `CodeCompileUnit`, použijte podtřídou třídy <xref:System.CodeDom.Compiler.CodeDomProvider> třídy, jako <xref:Microsoft.CSharp.CSharpCodeProvider> nebo <xref:Microsoft.VisualBasic.VBCodeProvider> třídy.  
+ `CodeCompileUnit` Je součástí Code Document Object Model .NET Framework (CodeDOM), která představuje kód .NET Framework abstraktním způsobem. Chcete-li vygenerovat skutečný kód `CodeCompileUnit`z a, použijte podtřídu <xref:System.CodeDom.Compiler.CodeDomProvider> třídy, jako je <xref:Microsoft.CSharp.CSharpCodeProvider> například třída <xref:Microsoft.VisualBasic.VBCodeProvider> nebo.  
   
-### <a name="to-import-a-schema"></a>Chcete-li importovat schéma  
+### <a name="to-import-a-schema"></a>Import schématu  
   
-1. Vytvoření instance <xref:System.Runtime.Serialization.XsdDataContractImporter>.  
+1. Vytvořte instanci <xref:System.Runtime.Serialization.XsdDataContractImporter>.  
   
-2. Volitelné. Předat `CodeCompileUnit` v konstruktoru. Typy generované při importu schématu jsou přidány do tohoto `CodeCompileUnit` instanci místo počínaje prázdnou hodnotu `CodeCompileUnit`.  
+2. Volitelný parametr. `CodeCompileUnit` Předat v konstruktoru. Typy generované během importu schématu jsou přidány do této `CodeCompileUnit` instance namísto začátku s prázdným. `CodeCompileUnit`  
   
-3. Volitelné. Volání jednoho z <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> metody. Metoda určuje, zda dané schéma je platný datový kontrakt schéma a mohou být naimportovány. `CanImport` Metoda má stejný přetížení jako `Import` (dál).  
+3. Volitelný parametr. Zavolejte jednu z <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> metod. Metoda určuje, zda je dané schéma platné schéma kontraktu dat a lze jej importovat. Metoda má stejná přetížení jako `Import` (další krok). `CanImport`  
   
-4. Voláním přetížené `Import` metody, například <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%28System.Xml.Schema.XmlSchemaSet%29> metody.  
+4. Zavolejte jednu z přetížených `Import` metod, <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%28System.Xml.Schema.XmlSchemaSet%29> například metoda.  
   
-     Nejjednodušší přetížená nepoužívá `XmlSchemaSet` a importuje všechny typy, včetně anonymních typů nalezena v dané sadě schémat. Další přetížení umožňují určit typ XSD nebo seznam typů pro import (ve formě <xref:System.Xml.XmlQualifiedName> nebo kolekci `XmlQualifiedName` objekty). V takovém případě budou importovány pouze na určené typy. Přijímá přetížení <xref:System.Xml.Schema.XmlSchemaElement> , který importuje konkrétní element z celkového počtu `XmlSchemaSet`, stejně jako jeho přidruženého typu (Určuje, zda je anonymní nebo ne). Vrátí toto přetížení `XmlQualifiedName`, která představuje název kontraktu dat typu vygenerovaného pro tento element.  
+     Nejjednodušší přetížení přebírá `XmlSchemaSet` a importuje všechny typy, včetně anonymních typů, které jsou v této sadě schémat nalezeny. Další přetížení umožňují zadat typ XSD nebo seznam typů pro import (ve formě <xref:System.Xml.XmlQualifiedName> nebo `XmlQualifiedName` kolekce objektů). V takovém případě se importují pouze zadané typy. Přetížení přebírá <xref:System.Xml.Schema.XmlSchemaElement> , které importuje konkrétní element mimo `XmlSchemaSet`, a také přidružený typ (bez ohledu na to, jestli je anonymní nebo ne). Toto přetížení vrátí hodnotu `XmlQualifiedName`, která představuje název kontraktu dat typu generovaného pro tento element.  
   
-     Více volání z `Import` výsledek metody ve více položek, které se přidávají do stejné `CodeCompileUnit`. Typ negeneruje do `CodeCompileUnit` Pokud již existuje. Volání `Import` více než jednou ve stejném `XsdDataContractImporter` namísto použití více `XsdDataContractImporter` objekty. Toto je doporučený postup, aby se generuje duplicitní typy.  
+     Více volání `Import` metody má za následek přidání více položek do stejného `CodeCompileUnit`. Typ se negeneruje do, `CodeCompileUnit` Pokud již existuje. Volejte `Import` `XsdDataContractImporter` víckrát `XsdDataContractImporter` namísto použití více objektů. Toto je doporučený způsob, jak se vyhnout vygenerování duplicitních typů.  
   
     > [!NOTE]
-    > Pokud dojde k chybě při importu, `CodeCompileUnit` bude v nepředvídatelném stavu. Použití `CodeCompileUnit` vyplývající z neúspěšných importu může zpřístupnit můžete k ohrožení bezpečnosti.  
+    > Pokud během importu dojde k chybě, `CodeCompileUnit` bude v nepředvídatelném stavu. `CodeCompileUnit` Použití výsledku importu z neúspěšného importu vám může vystavit ohrožení zabezpečení.  
   
-5. Přístup `CodeCompileUnit` prostřednictvím <xref:System.Runtime.Serialization.XsdDataContractImporter.CodeCompileUnit%2A> vlastnost.  
+5. Přístup k `CodeCompileUnit` <xref:System.Runtime.Serialization.XsdDataContractImporter.CodeCompileUnit%2A> vlastnostem.  
   
-### <a name="import-options-customizing-the-generated-types"></a>Možnosti importu: Přizpůsobení generované typy  
- Můžete nastavit <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastnost <xref:System.Runtime.Serialization.XsdDataContractImporter> do instance <xref:System.Runtime.Serialization.ImportOptions> třídy pro řízení různých aspektů proces importu. Řadu možností mají přímý vliv na typy, které jsou generovány.  
+### <a name="import-options-customizing-the-generated-types"></a>Možnosti importu: Přizpůsobení generovaných typů  
+ Můžete nastavit <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastnost <xref:System.Runtime.Serialization.XsdDataContractImporter> na instanci <xref:System.Runtime.Serialization.ImportOptions> třídy pro řízení různých aspektů procesu importu. Mnoho možností má přímý vliv na typy, které jsou generovány.  
   
-#### <a name="controlling-the-access-level-generateinternal-or-the-internal-switch"></a>Řízení úrovně přístupu (GenerateInternal nebo / interní přepnutí)  
- To odpovídá **/ interní** zapnout [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+#### <a name="controlling-the-access-level-generateinternal-or-the-internal-switch"></a>Řízení úrovně přístupu (GenerateInternal nebo přepínač/Internal)  
+ To odpovídá přepínači **/internal** v nástroji pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
- Za normálních okolností jsou veřejné typy generované ze schématu, s privátní pole a odpovídající vlastnosti člena veřejná data. Chcete-li místo toho generovat vnitřní typy, nastavte <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> vlastnost `true`.  
+ V normálním případě veřejné typy jsou generovány ze schématu s privátními poli a se shodnými vlastnostmi členů veřejných dat. Chcete-li místo toho vytvořit interní typy <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> , nastavte `true`vlastnost na hodnotu.  
   
- Následující příklad ukazuje schématu transformují do vnitřní třídu při <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> je nastavena na `true.`  
+ Následující příklad ukazuje schéma transformované na interní třídu, <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> Pokud je vlastnost nastavena na`true.`  
   
  [!code-csharp[c_SchemaImportExport#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#2)]
  [!code-vb[c_SchemaImportExport#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#2)]  
   
-#### <a name="controlling-namespaces-namespaces-or-the-namespace-switch"></a>Řízení obory názvů (obory názvů nebo parametru/Namespace přepnutí)  
- To odpovídá **/Namespace** zapnout `Svcutil.exe` nástroj.  
+#### <a name="controlling-namespaces-namespaces-or-the-namespace-switch"></a>Řízení oborů názvů (obory názvů nebo přepínač/namespace)  
+ To odpovídá přepínači **/Namespace** na `Svcutil.exe` nástroji.  
   
- Za normálních okolností se generují typy generované ze schématu do oborů názvů rozhraní .NET Framework, se každý obor názvů XSD odpovídající konkrétní obor názvů rozhraní .NET Framework podle popisu v mapování [referenční dokumentace schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto mapování tak můžete přizpůsobit <xref:System.Runtime.Serialization.ImportOptions.Namespaces%2A> vlastnost <xref:System.Collections.Generic.Dictionary%602>. Pokud se najde daném oboru názvů XSD ve slovníku, odpovídající obor názvů rozhraní .NET Framework také provést ze slovníku.  
+ Obvykle se typy generované ze schématu generují do .NET Framework obory názvů s každým oborem názvů XSD odpovídajícím konkrétnímu .NET Framework oboru názvů podle mapování popsaného v tématu [referenční informace schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto mapování <xref:System.Runtime.Serialization.ImportOptions.Namespaces%2A> můžete přizpůsobit vlastností <xref:System.Collections.Generic.Dictionary%602>na. Pokud je daný obor názvů XSD nalezen ve slovníku, povedený .NET Framework obor názvů je také z vašeho slovníku.  
   
  Zvažte například následující schéma.  
   
  [!code-xml[c_SchemaImportExport#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
   
- V následujícím příkladu `Namespaces` vlastnost mapovat `http://schemas.contoso.com/carSchema` obor názvů pro "Contoso.Cars".  
+ Následující příklad používá `Namespaces` vlastnost k `http://schemas.contoso.com/carSchema` mapování oboru názvů na "contoso. auta".  
   
  [!code-csharp[c_SchemaImportExport#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#8)]
  [!code-vb[c_SchemaImportExport#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#8)]  
   
-#### <a name="adding-the-serializableattribute-generateserializable-or-the-serializable-switch"></a>Přidat atribut SerializableAttribute (GenerateSerializable nebo / serializovatelný přepnutí)  
- To odpovídá **/ serializovatelný** zapnout `Svcutil.exe` nástroj.  
+#### <a name="adding-the-serializableattribute-generateserializable-or-the-serializable-switch"></a>Přidání parametru SerializableAttribute (GenerateSerializable nebo/Serializable)  
+ To odpovídá přepínači **/Serializable** na `Svcutil.exe` nástroji.  
   
- Někdy je důležité pro typy generované ze schématu má být použitelná s serializace moduly runtime rozhraní .NET Framework (třeba <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy). To je užitečné při použití typů pro vzdálené komunikace rozhraní .NET Framework. Chcete-li povolit, musíte použít <xref:System.SerializableAttribute> atribut generované typy kromě standardní <xref:System.Runtime.Serialization.DataContractAttribute> atribut. Atribut je generován automaticky, pokud `GenerateSerializable` možnost importu je nastavena na `true`.  
+ Někdy je důležité, aby typy generované ve schématu byly použitelné s .NET Framework modulem runtime serializace (například <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=nameWithType> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy a třídy). To je užitečné, když používáte typy pro vzdálenou komunikaci .NET Framework. Chcete-li tuto možnost povolit, je <xref:System.SerializableAttribute> nutné použít atribut pro vygenerované typy kromě regulárního <xref:System.Runtime.Serialization.DataContractAttribute> atributu. Atribut je generován automaticky, pokud `GenerateSerializable` je možnost importu nastavena na. `true`  
   
- Následující příklad ukazuje `Vehicle` generuje s použitím třídy `GenerateSerializable` nastavena na možnost importu `true`.  
+ Následující příklad ukazuje `Vehicle` třídu generovanou `GenerateSerializable` s možností import nastavenou na `true`.  
   
  [!code-csharp[c_SchemaImportExport#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#4)]
  [!code-vb[c_SchemaImportExport#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#4)]  
   
-#### <a name="adding-data-binding-support-enabledatabinding-or-the-enabledatabinding-switch"></a>Přidání podpory vazby dat (EnableDataBinding nebo přepínač /enableDataBinding)  
- To odpovídá **/enableDataBinding** zapnout nástroje Svcutil.exe.  
+#### <a name="adding-data-binding-support-enabledatabinding-or-the-enabledatabinding-switch"></a>Přidání podpory datových vazeb (EnableDataBinding nebo přepínač/enableDataBinding)  
+ To odpovídá přepínači **/EnableDataBinding** pro nástroj Svcutil. exe.  
   
- V některých případech můžete chtít vytvořit vazbu typy generované ze schématu součásti grafického uživatelského rozhraní tak, aby se jakýmkoli aktualizacím instancí těchto typů budou automaticky aktualizovat uživatelské rozhraní. `XsdDataContractImporter` Můžete vygenerovat typy, které implementují <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní tak, že všechny změny vlastností aktivuje událost. Pokud jsou generování typů pro použití s programovací prostředí klienta uživatelského rozhraní, která podporuje toto rozhraní (jako je například Windows Presentation Foundation (WPF)), nastavte <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> vlastnost `true` tuto funkci povolil.  
+ V některých případech můžete chtít navazovat typy generované ze schématu na komponenty grafického uživatelského rozhraní, aby každá aktualizace instancí těchto typů automaticky aktualizovala uživatelské rozhraní. Může generovat typy, které <xref:System.ComponentModel.INotifyPropertyChanged> implementují rozhraní takovým způsobem, že jakákoli změna vlastnosti aktivuje událost. `XsdDataContractImporter` Pokud generujete typy pro použití s prostředím programování klientského uživatelského rozhraní, které podporuje toto rozhraní (například Windows Presentation Foundation (WPF)), nastavte <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> vlastnost na `true` hodnotu Povolit tuto funkci.  
   
- Následující příklad ukazuje `Vehicle` generuje s použitím třídy <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> nastavena na `true`.  
+ Následující příklad ukazuje `Vehicle` třídu generovanou <xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> s nastavením na `true`.  
   
  [!code-csharp[C_SchemaImportExport#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#5)]
  [!code-vb[C_SchemaImportExport#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#5)]  
   
-### <a name="import-options-choosing-collection-types"></a>Možnosti importu: Když zvolíte typy kolekcí  
- Kolekce položek představují dva speciální vzory v kódu XML: seznam položek a přidružení mezi jednu položku a další. Následuje příklad seznamu řetězců.  
+### <a name="import-options-choosing-collection-types"></a>Možnosti importu: Výběr typů kolekce  
+ Dva speciální vzory v XML reprezentují kolekce položek: seznam položek a přidružení mezi jednou a druhou položkou. Následuje příklad seznamu řetězců.  
   
  [!code-xml[C_SchemaImportExport#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  
   
- Následuje příklad asociace mezi řetězci a celé číslo (`city name` a `population`).  
+ Následuje příklad přidružení mezi řetězcem a celým číslem (`city name` a `population`).  
   
  [!code-xml[C_SchemaImportExport#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
   
 > [!NOTE]
->  Žádné přidružení může také zvážit seznamu. Například můžete zobrazit předchozí asociace jako seznam komplexní `city` objekty, ke kterým dochází na dvou polí (pole řetězce a pole celé číslo). Oba vzorky mít reprezentaci ve schématu XSD. Neexistuje žádný způsob k rozlišení mezi seznamem a přidružení, tak tyto vzory jsou vždy považovány za seznamy, pokud je k dispozici ve schématu speciální poznámky specifické pro WCF. Anotace označuje, že zadaný vzor představuje přidružení. Další informace najdete v tématu [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+> Jakékoli přidružení může být také považováno za seznam. Můžete například zobrazit předchozí přidružení jako seznam komplexních `city` objektů, které se stávají mít dvě pole (pole řetězce a pole typu Integer). Oba vzory mají reprezentaci ve schématu XSD. Neexistuje žádný způsob, jak rozlišovat mezi seznamem a přidruženími, takže takové vzory jsou vždy považovány za seznamy, pokud není ve schématu k dispozici speciální Poznámka specifická pro WCF. Poznámka označuje, že daný vzor představuje přidružení. Další informace najdete v tématu [referenční informace o schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
- Za normálních okolností je seznam importován jako kontraktu dat kolekce, který je odvozen z obecného seznamu nebo pole rozhraní .NET Framework, v závislosti na tom, zda schéma dodržuje standardní pojmenování pro kolekce. To je popsáno podrobněji v [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení se obvykle importují jako buď <xref:System.Collections.Generic.Dictionary%602> nebo kontraktu dat kolekce, která je odvozena z objektu slovník. Zvažte například následující schéma.  
+ V normálním případě je seznam importován jako kontrakt dat kolekce, který je odvozen z obecného seznamu nebo jako .NET Framework pole, podle toho, zda schéma řídí standardní vzor názvů pro kolekce. Tato informace je podrobněji popsána v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Přidružení jsou obvykle importována jako <xref:System.Collections.Generic.Dictionary%602> kontrakt dat kolekce nebo, který je odvozen z objektu Dictionary. Zvažte například následující schéma.  
   
  [!code-xml[c_SchemaImportExport#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  
   
- To by byl importován následujícím způsobem (pole se zobrazí místo vlastnosti pro lepší čitelnost).  
+ To by se importovalo takto (pole se zobrazují místo vlastností pro čitelnost).  
   
  [!code-csharp[c_SchemaImportExport#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#6)]
  [!code-vb[c_SchemaImportExport#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#6)]  
   
- Je možné přizpůsobit typy kolekcí, které jsou generovány pro tyto vzory schématu. Například můžete chtít generovat kolekce odvozené od <xref:System.ComponentModel.BindingList%601> místo <xref:System.Collections.Generic.List%601> třídy, aby bylo možné navázat na pole se seznamem a jeho automaticky aktualizovat při změně obsahu z kolekce. Chcete-li to provést, nastavte <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> vlastnost <xref:System.Runtime.Serialization.ImportOptions> třídy do seznamu typy kolekce, který se má použít (dále jen označované jako odkazované typy). Při importu jakoukoli kolekci, je možné tento seznam odkazovaných typů kolekce a nejlépe odpovídající kolekci se používá, pokud je takový nalezen. Přidružení jsou porovnány pouze s typy, které implementují obecné a neobecné <xref:System.Collections.IDictionary> rozhraní, zatímco seznamy jsou porovnány s jakýkoli typ podporovaných kolekce.  
+ Je možné přizpůsobit typy kolekce, které jsou generovány pro tyto vzory schématu. Například můžete chtít generovat kolekce, které jsou odvozeny od <xref:System.ComponentModel.BindingList%601> <xref:System.Collections.Generic.List%601> třídy namísto třídy, aby bylo možné vytvořit vazby typu k poli seznamu a automaticky aktualizovat při změně obsahu kolekce. Chcete-li to provést, <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> nastavte vlastnost <xref:System.Runtime.Serialization.ImportOptions> třídy na seznam typů kolekce, které mají být použity (dále označované jako odkazované typy). Při importu libovolné kolekce se prohledají tento seznam odkazovaných typů kolekce a když se najde ten, použije se nejlepší vyhovující kolekce. Přidružení jsou shodná pouze s typy, které implementují obecné nebo neobecné <xref:System.Collections.IDictionary> rozhraní, zatímco seznamy jsou porovnány s libovolným podporovaným typem kolekce.  
   
- Například pokud <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> je nastavena na <xref:System.ComponentModel.BindingList%601>, `people` typ v předchozím příkladu je generován následujícím způsobem.  
+ Například pokud <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> je vlastnost nastavena <xref:System.ComponentModel.BindingList%601>na, `people` typ v předchozím příkladu je generován následujícím způsobem.  
   
  [!code-csharp[C_SchemaImportExport#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#7)]
  [!code-vb[C_SchemaImportExport#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#7)]  
   
- Uzavřený obecný se považuje za nejvhodnější. Například pokud typy `BindingList(Of Integer)` a <xref:System.Collections.ArrayList> jsou předány do kolekce odkazované typy, jsou importovány všechny seznamy celá čísla nalezena ve schématu jako `BindingList(Of Integer)`. Jakékoli další seznamy, například `List(Of String)`, jsou naimportované jako `ArrayList`.  
+ Uzavřená obecná je považována za nejlepší shodu. Například pokud jsou typy `BindingList(Of Integer)` a <xref:System.Collections.ArrayList> předány do kolekce odkazovaných typů, všechny seznamy celých čísel nalezených ve `BindingList(Of Integer)`schématu jsou importovány jako. Všechny ostatní seznamy, například a `List(Of String)`, jsou importovány `ArrayList`jako.  
   
- Pokud typ, který implementuje obecné `IDictionary` rozhraní se přidá do kolekce odkazovaných typů, jeho parametry typu musí být zcela otevřená nebo plně uzavřené.  
+ Pokud je typ, který implementuje obecné `IDictionary` rozhraní, přidán do kolekce odkazovaných typů, jeho parametry typu musí být buď plně otevřené, nebo zcela uzavřeny.  
   
- Duplicitní položky nejsou povoleny. Například nelze přidat i `List(Of Integer)` a `Collection(Of Integer)` pro odkazované typy. Který by ji činilo možné určit, který má být použit, pokud je seznam celá čísla nalezena ve schématu. Duplicitní položky se zjistil pouze v případě, že je typ ve schématu, která zveřejňuje problém duplicitní položky. Například pokud importované schéma neobsahuje seznam celých čísel, to může mít oba `List(Of Integer)` a `Collection(Of Integer)` v odkazovaných typů kolekce, ale ani jeden bude mít žádný efekt.  
+ Duplicity nejsou povoleny. Například nelze přidat jak `List(Of Integer)` `Collection(Of Integer)` a, do odkazovaných typů. Takže by nebylo možné určit, která by se měla použít, když se ve schématu najde seznam celých čísel. Duplicity budou zjištěny pouze v případě, že existuje typ ve schématu, který zveřejňuje problém s duplicitami. Například pokud importované schéma neobsahuje seznam celých čísel, může mít `List(Of Integer)` `Collection(Of Integer)` i v kolekci odkazovaných typů, ale ani to nebude mít žádný vliv.  
   
- Odkazovaných typů kolekce, které mechanismus funguje stejně dobře pro kolekce komplexních typů (včetně kolekce jiných kolekcí) a ne jenom pro kolekce primitivních elementů.  
+ Seznam odkazovaných typů kolekce funguje stejně dobře pro kolekce komplexních typů (včetně kolekcí jiných kolekcí), a ne pouze pro kolekce primitivních elementů.  
   
- `ReferencedCollectionTypes` Odpovídá vlastnosti **/collectionType** zapnout nástroje SvcUtil.exe. Všimněte si, že odkazují na více typy kolekcí **/collectionType** přepínač musí být zadán více než jednou. Pokud typ není v knihovnu MsCorLib.dll, jeho sestavení musí také být odkazovány **/reference** přepnout.  
+ Vlastnost odpovídá přepínači/CollectionType pro nástroj Svcutil. exe. `ReferencedCollectionTypes` Všimněte si, že pro odkazování na více typů kolekce je třeba zadat přepínač **/CollectionType** několikrát. Pokud typ není v knihovně MsCorLib. dll, jeho sestavení musí být také odkazováno pomocí přepínače **/reference** .  
   
 #### <a name="import-options-referencing-existing-types"></a>Možnosti importu: Odkazování na existující typy  
- V některých případech typy ve schématu odpovídají existující typy rozhraní .NET Framework a není nutné ke generování těchto typů úplně od začátku. (Tato část platí pouze pro typy noncollection. Typy kolekcí najdete v předchozí části.)  
+ V některých případech typy ve schématu odpovídají existujícím typům .NET Framework a není nutné generovat tyto typy od začátku. (Tato část se vztahuje pouze na typy nekolekce. Typy kolekcí najdete v předchozí části.)  
   
- Například může mít standardní pořádaného microsoftem "Osoba" typ kontraktu dat, který chcete vždy použít při vyjadřování osoby. Pokaždé, když některé služby díky použití tohoto typu a jeho schématu se zobrazí v metadata služby, můžete chtít znovu použít existující `Person` zadejte při importu tohoto schématu namísto generování nové pro každou službu.  
+ Můžete mít například standardní typ kontraktu dat "osoba", který je možné vždy použít při reprezentaci osoby. Když některá služba využívá tento typ a jeho schéma se zobrazí v metadatech služby, můžete chtít znovu použít existující `Person` typ při importu tohoto schématu místo generování nového pro každou službu.  
   
- K tomuto účelu předat seznam typů rozhraní .NET Framework, které chcete znovu použít do kolekce <xref:System.Runtime.Serialization.ImportOptions.ReferencedTypes%2A> vlastnost vrátí na <xref:System.Runtime.Serialization.ImportOptions> třídy. Pokud některý z těchto typů názvem kontraktu dat a obor názvů, který odpovídá názvu a oboru názvů typu schématu, strukturálního porovnání je provedeno. Pokud je zjištěno, že typy mají odpovídající názvy a odpovídající struktury, existující typ rozhraní .NET Framework je znovu namísto generování nové. Pokud pouze název odpovídá ale není struktury, je vyvolána výjimka. Všimněte si, že neexistuje žádný příspěvek pro správu verzí při odkazování na typy (například přidávání nové volitelné datové členy). Struktury musí přesně odpovídat.  
+ Provedete to tak, že předáte seznam typů .NET Framework, které chcete znovu použít do kolekce <xref:System.Runtime.Serialization.ImportOptions.ReferencedTypes%2A> , kterou vlastnost vrátí <xref:System.Runtime.Serialization.ImportOptions> u třídy. Pokud některý z těchto typů má název kontraktu dat a obor názvů, který se shoduje s názvem a oborem názvů typu schématu, provede se strukturální porovnání. Je-li zjištěno, že typy mají jak stejné názvy, tak i odpovídající struktury, je místo generování nového typu .NET Framework znovu použit existující typ. Pokud pouze název odpovídá pouze názvu, ale nikoli struktuře, je vyvolána výjimka. Všimněte si, že při odkazování na typy (například přidávání nových volitelných datových členů) neplatí žádná náhrada při vytváření verzí. Struktury se musí přesně shodovat.  
   
- Žádné typy schémat se importují s daným názvem a obor názvů, je možné přidat více typů se stejným názvem kontraktu dat a obor názvů do odkazovaných typů kolekce. To umožňuje snadno přidat všechny typy v sestavení do kolekce bez starostí o duplicitní položky pro typy, které skutečně nedojde ve schématu.  
+ Je možné přidat více typů se stejným názvem kontraktu dat a oborem názvů do odkazované kolekce typů, pokud nejsou importovány žádné typy schémat s tímto názvem a oborem názvů. To umožňuje snadno přidat všechny typy v sestavení do kolekce, aniž byste se museli starat o duplicity pro typy, které ve schématu skutečně nevzniknou.  
   
- `ReferencedTypes` Odpovídá vlastnosti **/reference** v určitých režimy fungování nástroje Svcutil.exe přepínač.  
-  
-> [!NOTE]
->  Při použití Svcutil.exe nebo (v sadě Visual Studio) **přidat odkaz na službu** jsou automaticky odkazována nástroje, všechny typy v knihovně MsCorLib.dll.  
-  
-#### <a name="import-options-importing-non-datacontract-schema-as-ixmlserializable-types"></a>Možnosti importu: Import schématu jiné než DataContract jako IXmlSerializable typy  
- <xref:System.Runtime.Serialization.XsdDataContractImporter> Podporuje omezenou podmnožinou schématu. Pokud je konstrukce nepodporované schéma (například atributy ve formátu XML), pokus o import selže s výjimku. Však nastavení <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> vlastnost `true` rozšiřuje škálu schématu nepodporuje. Pokud je nastavena na `true`, <xref:System.Runtime.Serialization.XsdDataContractImporter> generuje typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní. To umožňuje přímý přístup k reprezentaci XML pro tyto typy.  
-  
-##### <a name="design-considerations"></a>Aspekty návrhu  
-  
-- Může být obtížné pracovat přímo s slabě typované reprezentaci XML. Zvažte použití alternativní Serializační stroj, jako <xref:System.Xml.Serialization.XmlSerializer>, pro práci se schématem není kompatibilní s daty smlouvy tak silného typu. Další informace najdete v tématu [horizontálních oddílů pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
-  
-- Některé schémat nejde importovat podle <xref:System.Runtime.Serialization.XsdDataContractImporter> i v případě <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je nastavena na `true`. Znovu, zvažte použití <xref:System.Xml.Serialization.XmlSerializer> pro tyto případy.  
-  
-- Přesné schémat, které jsou podporované jak při <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> je `true` nebo `false` jsou popsány v [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
-  
-- Generované schéma pro <xref:System.Xml.Serialization.IXmlSerializable> typy nezachovávají si věrnost při importovat a exportovat. To znamená export schématu z generované typy a import jako třídy vracet původnímu schématu.  
-  
- Je možné kombinovat <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> spolu s možností <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> možnost popsaných výše. Pro typy, které mají být generován jako <xref:System.Xml.Serialization.IXmlSerializable> implementace, zkontrolujte strukturální bude přeskočena při použití <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> funkce.  
-  
- <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> Možnost odpovídá nabídce **/importXmlTypes** zapnout nástroje Svcutil.exe.  
-  
-##### <a name="working-with-generated-ixmlserializable-types"></a>Práce s typy generované IXmlSerializable  
- Vygenerovaný `IXmlSerializable` soukromé pole s názvem "nodesField," obsahují typy, které vrátí pole <xref:System.Xml.XmlNode> objekty. Při deserializaci instance takový typ, můžete přístup k datům XML přímo přes toto pole s použitím modelu objektu dokumentu XML. Při serializaci instance tohoto typu, toto pole můžete nastavit na požadovaná data XML a bude serializována.  
-  
- To lze provést prostřednictvím `IXmlSerializable` implementace. V generované `IXmlSerializable` typ, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> implementace volá <xref:System.Runtime.Serialization.XmlSerializableServices.ReadNodes%2A> metodu <xref:System.Runtime.Serialization.XmlSerializableServices> třídy. Metoda je metoda helper, který převádí kód XML poskytnutý prostřednictvím <xref:System.Xml.XmlReader> pole <xref:System.Xml.XmlNode> objekty. <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> Implementace provádí opak a převede pole `XmlNode` objekty na řadu <xref:System.Xml.XmlWriter> volání. Využívá se při něm <xref:System.Runtime.Serialization.XmlSerializableServices.WriteNodes%2A> metody.  
-  
- Je možné spustit proces exportu schématu generované `IXmlSerializable` třídy. Jak je uvedeno výše nebude původní schématu vrátit zpět. Místo toho se zobrazí "anyType" standardní XSD typu, což je zástupný znak pro jakýkoli typ XSD.  
-  
- To lze provést použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut generované `IXmlSerializable` třídy a zadávání metody, která volá <xref:System.Runtime.Serialization.XmlSerializableServices.AddDefaultSchema%2A> metoda ke generování typu "anyType".  
+ Vlastnost odpovídá přepínači/reference v určitých režimech provozu nástroje Svcutil. exe. `ReferencedTypes`  
   
 > [!NOTE]
->  <xref:System.Runtime.Serialization.XmlSerializableServices> Typ existuje výhradně na podporu této konkrétní funkce. To se nedoporučuje používat za žádným jiným účelem.  
+> Při použití nástroje Svcutil. exe nebo (v aplikaci Visual Studio) **Přidat odkaz na službu** nástrojů jsou automaticky odkazovány všechny typy v knihovně Mscorlib. dll.  
+  
+#### <a name="import-options-importing-non-datacontract-schema-as-ixmlserializable-types"></a>Možnosti importu: Import schématu nesouvisejících kontraktů dat jako typů IXmlSerializable  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter> Podporuje omezené podmnožinu schématu. Pokud jsou k dispozici nepodporované konstrukce schématu (například atributy XML), pokus o import se nezdaří s výjimkou. Nicméně nastavení <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> vlastnosti na `true` prodlouží rozsah podporovaných schémat. Když je `true` <xref:System.Runtime.Serialization.XsdDataContractImporter> nastavena na, <xref:System.Xml.Serialization.IXmlSerializable> vygeneruje typy, které implementují rozhraní. To umožňuje přímý přístup k reprezentace XML těchto typů.  
+  
+##### <a name="design-considerations"></a>Faktory návrhu  
+  
+- Může být obtížné pracovat se slabě typovou reprezentací XML přímo. Zvažte použití alternativního modulu serializace, jako je <xref:System.Xml.Serialization.XmlSerializer>, pro práci se schématem, který není kompatibilní s kontrakty dat se silným typem. Další informace naleznete v tématu [použití třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+  
+- Některé konstrukce schématu nelze importovat <xref:System.Runtime.Serialization.XsdDataContractImporter> ani v případě, <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> že je vlastnost nastavena na `true`hodnotu. Znovu zvažte použití <xref:System.Xml.Serialization.XmlSerializer> pro tyto případy.  
+  
+- Přesné konstrukce schématu, které jsou podporovány v případě, <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> kdy `true` je `false` , nebo jsou popsány v tématu [referenční informace schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+  
+- Schéma pro vygenerované <xref:System.Xml.Serialization.IXmlSerializable> typy nezachovává věrnost při importu a exportu. To znamená, že exportování schématu z generovaných typů a import jako třídy nevrátí původní schéma.  
+  
+ Je možné zkombinovat <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> možnost <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> s výše popsanou možností. Pro typy, které musí být vygenerovány jako <xref:System.Xml.Serialization.IXmlSerializable> implementace, je při <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> používání funkce při použití této funkce vynechána strukturální kontroly.  
+  
+ Možnost odpovídá přepínači/importXmlTypes v nástroji Svcutil. exe. <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A>  
+  
+##### <a name="working-with-generated-ixmlserializable-types"></a>Práce s generovanými typy IXmlSerializable  
+ Generované `IXmlSerializable` typy obsahují soukromé pole s názvem "nodesField", které vrací <xref:System.Xml.XmlNode> pole objektů. Při deserializaci instance takového typu můžete k datům XML přistupovat přímo prostřednictvím tohoto pole pomocí model DOM (Document Object Model) XML. Při serializaci instance tohoto typu můžete nastavit toto pole na požadovaná data XML a bude serializován.  
+  
+ To je provedeno `IXmlSerializable` implementací. Ve vygenerovaném `IXmlSerializable` typu <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> implementuje implementace <xref:System.Runtime.Serialization.XmlSerializableServices> volání <xref:System.Runtime.Serialization.XmlSerializableServices.ReadNodes%2A> metody třídy. Metoda je pomocná metoda, která převádí XML poskytnuté přes <xref:System.Xml.XmlReader> <xref:System.Xml.XmlNode> pole objektů. Implementace provede opak a převede `XmlNode` pole <xref:System.Xml.XmlWriter> objektů na posloupnost volání. <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> To je provedeno pomocí <xref:System.Runtime.Serialization.XmlSerializableServices.WriteNodes%2A> metody.  
+  
+ Pro vygenerované `IXmlSerializable` třídy je možné spustit proces exportu schématu. Jak bylo uvedeno výše, původní schéma se zpátky nevrátí. Místo toho se zobrazí standardní typ XSD "anyType", což je zástupný znak pro libovolný typ XSD.  
+  
+ To lze provést použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atributu na generované `IXmlSerializable` třídy a zadáním metody, která volá <xref:System.Runtime.Serialization.XmlSerializableServices.AddDefaultSchema%2A> metodu pro vygenerování typu "anyType".  
+  
+> [!NOTE]
+> <xref:System.Runtime.Serialization.XmlSerializableServices> Typ existuje výhradně pro podporu této konkrétní funkce. Nedoporučuje se používat pro žádné jiné účely.  
   
 #### <a name="import-options-advanced-options"></a>Možnosti importu: Rozšířené možnosti  
- Následující jsou rozšířené možnosti importu:  
+ Níže jsou uvedené rozšířené možnosti importu:  
   
-- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastaven, kompletní sadu funkcí rozhraní .NET Framework se používá bez omezení.  
+- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A>majetek. Určete, <xref:System.CodeDom.Compiler.CodeDomProvider> který má být použit k vygenerování kódu pro vygenerované třídy. Mechanismus importu se pokusí vyhnout funkcím, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Pokud není nastavená, použije se úplná sada funkcí .NET Framework bez omezení.  
   
-- <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace se dá nastavit pomocí této vlastnosti. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí proces importu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
+- <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A>majetek. Pomocí této vlastnosti lze určit implementaci.<xref:System.Runtime.Serialization.IDataContractSurrogate> <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobuje proces importu. Další informace najdete v tématu [náhrada za kontrakty dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení se nepoužívá žádná náhrada.  
   
 ## <a name="see-also"></a>Viz také:
 

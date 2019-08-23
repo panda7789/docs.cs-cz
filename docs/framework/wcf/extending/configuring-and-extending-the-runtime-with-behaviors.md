@@ -4,117 +4,117 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-ms.openlocfilehash: 297a951e4678e05da73193133bd6050360b041ff
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 481e0983a40bb551d08894ea32f76f332b8fe5a3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587332"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943140"
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
-Chování umožňují změnit výchozí chování a přidejte vlastní rozšíření, které kontrola a ověření konfigurace služby a změny chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak je implementovat a jak přidat popis služby (v aplikaci služby) nebo koncový bod (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [určení chování za běhu klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
+Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která kontrolují a ověřují konfiguraci služby nebo mění chování modulu runtime v klientech a aplikacích služby Windows Communication Foundation (WCF). Toto téma popisuje rozhraní chování, způsob jejich implementace a postup jejich přidání do popisu služby (v aplikaci služby) nebo koncového bodu (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o použití chování poskytované systémem naleznete v tématu [Určení chování služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) za běhu a [Určení chování při spuštění klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
   
 ## <a name="behaviors"></a>Chování  
- Chování typy jsou přidány do služby nebo objekty popis koncový bod služby (na službu nebo klienta, v uvedeném pořadí) předtím, než tyto objekty se používají ve Windows Communication Foundation (WCF) k vytvoření modulu runtime, který se spustí služby WCF nebo klienta WCF. Při volání těchto projevů během procesu vytváření modulu runtime jsou pak přístup k modulu runtime vlastnosti a metody, které upravují modul runtime, a to provedením smlouvy, vazeb a adresy.  
+ Typy chování jsou přidány do objektů služby nebo popisu koncového bodu služby (ve službě nebo klientovi) předtím, než tyto objekty používají Windows Communication Foundation (WCF) k vytvoření modulu runtime, který spouští službu WCF nebo klienta WCF. Když jsou tato chování volána během procesu výroby za běhu, pak mají přístup k vlastnostem a metodám modulu runtime, které upravují modul runtime vytvořený Smlouvou, vazbami a adresami.  
   
-### <a name="behavior-methods"></a>Chování metody  
- Mají všechny chování `AddBindingParameters` metody `ApplyDispatchBehavior` metoda, `Validate` metoda a `ApplyClientBehavior` metody s jednou výjimkou: Protože <xref:System.ServiceModel.Description.IServiceBehavior> nelze provést v klientovi, neimplementuje `ApplyClientBehavior`.  
+### <a name="behavior-methods"></a>Metody chování  
+ Všechna chování mají `AddBindingParameters` metodu `ApplyDispatchBehavior` , metodu, `Validate` metodu a `ApplyClientBehavior` metodu s jednou výjimkou: Vzhledem <xref:System.ServiceModel.Description.IServiceBehavior> k tomu, že nelze provést v klientovi, neimplementuje. `ApplyClientBehavior`  
   
-- Použít `AddBindingParameters` metoda změnit nebo přidat vlastní objekty do kolekce, která vlastní vazby mít přístup k jejich použití, jakmile modul runtime je vytvořena. Například to způsob, jakým požadavkům na ochranu jsou zadány, která mají vliv na způsob je postavená na kanál, ale nejsou platná pro kanál pro vývojáře.  
+- `AddBindingParameters` Použijte metodu pro úpravu nebo přidání vlastních objektů do kolekce, které vlastní vazby mají přístup k jejich použití, když je modul runtime vytvořen. Například to, jak jsou zadány požadavky na ochranu, které ovlivňují způsob sestavení kanálu, ale nejsou známy vývojářem kanálu.  
   
-- Použití `Validate` metoda podívejte se na popis stromu a odpovídající objekt runtime tak, aby byl odpovídá některé sadu kritérií.  
+- `Validate` Použijte metodu k prohlédnutí stromu popis a odpovídajícího běhového objektu, abyste se ujistili, že je v souladu s určitou sadou kritérií.  
   
-- Použití `ApplyDispatchBehavior` a `ApplyClientBehavior` metody ke kontrole popisu stromové struktury a upravit modul runtime pro konkrétní obor na službu nebo klienta. Můžete také vložit také objektů rozšíření.  
+- Použijte metody `ApplyClientBehavior` a k prohlédnutí stromu Description a upravte modul runtime pro konkrétní obor buď na službě, nebo na klientovi. `ApplyDispatchBehavior` Také můžete vkládat i objekty rozšíření.  
   
     > [!NOTE]
-    >  I když popis stromu je k dispozici v těchto metod, je pro zkoumání pouze. Pokud se změní popis stromu, není chování definováno.  
+    > I když je v těchto metodách k dispozici strom popisu, je určen pouze k posouzení. Pokud se změní strom popisu, chování není definováno.  
   
- Vlastnosti můžete upravit a vlastního nastavení rozhraní, které můžete implementovat jsou přístupné prostřednictvím runtime třídy klienta a služby. Typy služby jsou <xref:System.ServiceModel.Dispatcher.DispatchRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy. Jsou typy klientů <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.ClientOperation> třídy. <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy jsou vstupní body rozšiřitelnosti pro přístup k úrovni klienta a služby modulu runtime, vlastnosti a kolekce rozšíření. Podobně platí <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy poskytují operace klienta a služby operace runtime vlastnosti a kolekce rozšíření, v uvedeném pořadí. Je možné, ale potřebovat přístup k širší s vymezeným oborem runtime objekt z modulu runtime a naopak versa operace by být.  
+ Vlastnosti, které lze upravit, a rozhraní vlastního nastavení, které lze implementovat, jsou k dispozici prostřednictvím tříd modulu runtime služby a klienta. Typy služeb jsou <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy a <xref:System.ServiceModel.Dispatcher.DispatchOperation> . Typy klientů jsou <xref:System.ServiceModel.Dispatcher.ClientRuntime> třídy a <xref:System.ServiceModel.Dispatcher.ClientOperation> . Třídy <xref:System.ServiceModel.Dispatcher.ClientRuntime> a<xref:System.ServiceModel.Dispatcher.DispatchRuntime> jsou vstupními body rozšiřitelnosti pro přístup k běhovým vlastnostem a kolekcím rozšíření v rámci služby na úrovni klienta. Podobně třídy <xref:System.ServiceModel.Dispatcher.DispatchOperation> a zveřejňují operace klienta a vlastnosti a kolekce rozšíření běhu služby. <xref:System.ServiceModel.Dispatcher.ClientOperation> V případě potřeby však můžete získat přístup k širšímu objektu modulu runtime z běhového objektu operace a naopak.  
   
 > [!NOTE]
->  Informace o modulu runtime vlastnosti a typy rozšíření, které můžete použít k úpravě chování při spuštění klienta, najdete v článku [rozšíření klienti](../../../../docs/framework/wcf/extending/extending-clients.md). Informace o modulu runtime vlastnosti a typy rozšíření, které můžete použít k úpravě chování při spuštění služby odesílatele, naleznete v tématu [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md).  
+> Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování klienta, najdete v tématu [rozšíření klientů](../../../../docs/framework/wcf/extending/extending-clients.md). Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování vykonávání dispečera služby, najdete v tématu [rozšíření expedičních](../../../../docs/framework/wcf/extending/extending-dispatchers.md)modulů.  
   
- Většina uživatelů WCF nemají možnost zasahovat modulu runtime přímo. Místo toho používají programovací model konstrukce, jako koncové body, kontrakty, vazby, adresy a chování atributů na třídy nebo chování v konfiguračních souborech core. Tyto konstrukce tvoří *popis stromu*, což je kompletní specifikace sestavení modulu runtime pro podporu služby nebo klienta popsal stromu popis.  
+ Většina uživatelů WCF nekomunikuje s modulem runtime přímo; místo toho používají konstrukce základního programovacího modelu, jako jsou koncové body, kontrakty, vazby, adresy a atributy chování pro třídy nebo chování v konfiguračních souborech. Tyto konstrukce tvoří *strom popisů*, což je kompletní specifikace pro sestavení modulu runtime pro podporu služby nebo klienta popsaných ve stromu popis.  
   
- Existují čtyři druhy chování ve službě WCF:  
+ WCF nabízí čtyři druhy chování:  
   
-- Služba chování (<xref:System.ServiceModel.Description.IServiceBehavior> typy) povolte vlastní nastavení v celé služby modulu runtime, včetně <xref:System.ServiceModel.ServiceHostBase>.  
+- Chování služby (<xref:System.ServiceModel.Description.IServiceBehavior> typy) umožňuje přizpůsobení celého modulu runtime služby, včetně. <xref:System.ServiceModel.ServiceHostBase>  
   
-- Chování koncového bodu (<xref:System.ServiceModel.Description.IEndpointBehavior> typy) umožňují přizpůsobení koncových bodů služby a jejich přidružených <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> objekty.  
+- Chování koncového<xref:System.ServiceModel.Description.IEndpointBehavior> bodu (typy) umožňují přizpůsobení koncových bodů služby a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> jejich přidružených objektů.  
   
-- Smlouvy chování (<xref:System.ServiceModel.Description.IContractBehavior> typy) umožňují přizpůsobení i <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy v aplikacích pro klienta a služby, v uvedeném pořadí.  
+- Chování kontraktu<xref:System.ServiceModel.Description.IContractBehavior> (typy) umožňuje přizpůsobení <xref:System.ServiceModel.Dispatcher.ClientRuntime> tříd a <xref:System.ServiceModel.Dispatcher.DispatchRuntime> v aplikacích klienta i služby.  
   
-- Chování operace (<xref:System.ServiceModel.Description.IOperationBehavior> typy) povolte vlastní nastavení <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy opět na klienta a služby.  
+- Chování operace (<xref:System.ServiceModel.Description.IOperationBehavior> typy) umožňují v klientech a <xref:System.ServiceModel.Dispatcher.ClientOperation> službách <xref:System.ServiceModel.Dispatcher.DispatchOperation> znovu přizpůsobit třídy a.  
   
- Můžete přidat tyto chování s různými objekty popis implementací vlastní atributy, pomocí konfiguračních souborů aplikace, nebo přímo jejich přidáním do kolekce chování na objekt příslušný popis. Musíte však přidat popis služby nebo objekt popis koncový bod služby před voláním <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>.  
+ Tato chování můžete přidat do různých objektů popisu implementací vlastních atributů, pomocí konfiguračních souborů aplikace nebo přímo jejich přidáním do kolekce chování na příslušném objektu Description. Před voláním metody <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>je však nutné přidat k objektu popisu služby nebo popisu koncového bodu služby.  
   
-### <a name="behavior-scopes"></a>Chování obory  
- Existují čtyři typy chování, každá z nich odpovídá na konkrétní rozsah přístupu modulu runtime.  
+### <a name="behavior-scopes"></a>Rozsahy chování  
+ Existují čtyři typy chování, z nichž každý odpovídá konkrétnímu oboru přístupu za běhu.  
   
 #### <a name="service-behaviors"></a>Chování služby  
- Chování služby, které implementují <xref:System.ServiceModel.Description.IServiceBehavior>, představují hlavní mechanismus, pomocí kterého upravíte celé služby modulu runtime. Existují tři mechanismy pro přidání chování služby ke službě.  
+ Chování služby, které implementuje <xref:System.ServiceModel.Description.IServiceBehavior>, jsou primárním mechanismem, pomocí kterého upravujete celý modul runtime služby. Existují tři mechanismy pro přidání chování služby ke službě.  
   
-1. Pomocí atributu na třídu služby.  Když <xref:System.ServiceModel.ServiceHost> je vytvořen, <xref:System.ServiceModel.ServiceHost> implementace používá reflexi ke zjišťování sady atributů na typ služby. Pokud tyto atributy jsou implementace <xref:System.ServiceModel.Description.IServiceBehavior>, se přidají do kolekce chování na <xref:System.ServiceModel.Description.ServiceDescription>. To umožňuje tohoto chování k účasti v konstrukci čas spuštění služby.  
+1. Použití atributu pro třídu služby.  Když je vytvořen <xref:System.ServiceModel.ServiceHost> , implementace používá reflexi k zjištění sady atributů typu služby. <xref:System.ServiceModel.ServiceHost> Pokud jsou některé z těchto atributů implementace <xref:System.ServiceModel.Description.IServiceBehavior>, jsou přidány do kolekce chování v <xref:System.ServiceModel.Description.ServiceDescription>nástroji. To umožňuje, aby se toto chování účastnilo konstrukce doby běhu služby.  
   
-2. Programové přidání chování k kolekce chování na <xref:System.ServiceModel.Description.ServiceDescription>. Můžete to provést s následujícími řádky kódu:  
+2. Programové přidání chování do kolekce chování na <xref:System.ServiceModel.Description.ServiceDescription>. To lze provést s následujícími řádky kódu:  
   
     ```csharp
     ServiceHost host = new ServiceHost(/* Parameters */);  
     host.Description.Behaviors.Add(/* Service Behavior */);  
     ```  
   
-3. Implementace vlastního <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který rozšiřuje konfigurace. To umožňuje použití chování služby z konfiguračních souborů aplikace.  
+3. Implementace vlastního <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který rozšiřuje konfiguraci. To umožňuje použití chování služby z konfiguračních souborů aplikace.  
   
- Příklady chování služby ve službě WCF <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut, <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
+ Příklady chování služby ve službě WCF zahrnují <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>, a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
   
 #### <a name="contract-behaviors"></a>Chování kontraktu  
- Chování, které implementují smlouvy <xref:System.ServiceModel.Description.IContractBehavior> rozhraní, se používají k rozšíření modulu runtime klient a služba napříč kontrakt.  
+ Chování kontraktu, které implementuje <xref:System.ServiceModel.Description.IContractBehavior> rozhraní, slouží k rozšiřování klienta i modulu runtime služby v rámci smlouvy.  
   
- Existují dva mechanismy pro přidání smlouvy chování kontrakt.  První mechanismus je vytvoření vlastního atributu se použije na rozhraní kontraktu. Když rozhraní kontraktu je předán buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>, WCF prozkoumá atributy na rozhraní. Pokud jsou všechny atributy implementace <xref:System.ServiceModel.Description.IContractBehavior>, ty jsou přidány do kolekce chování na <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> vytvořené pro dané rozhraní.  
+ Existují dva mechanismy pro přidání chování kontraktu do smlouvy.  Prvním mechanismem je vytvoření vlastního atributu pro použití v rozhraní kontraktu. Když je rozhraní kontraktu předáno do <xref:System.ServiceModel.ServiceHost> <xref:System.ServiceModel.ChannelFactory%601>nebo, WCF prověřuje atributy v rozhraní. Pokud jsou některé atributy implementace <xref:System.ServiceModel.Description.IContractBehavior>, přidají se do kolekce <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> chování vytvořené pro toto rozhraní.  
   
- Můžete také implementovat <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=nameWithType> na atribut smlouvy vlastní chování. V takovém případě chování je následujícím způsobem při použití:  
+ <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=nameWithType> U atributu chování vlastní smlouvy taky můžete implementovat. V takovém případě je chování následující při použití na:  
   
- •A rozhraní kontraktu. V takovém případě je chování aplikováno na všechny kontrakty daného typu v libovolný koncový bod a WCF ignoruje <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> vlastnost.  
+ • Rozhraní kontraktu. V takovém případě se chování použije na všechny kontrakty daného typu v libovolném koncovém bodě a WCF ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> vlastnosti.  
   
- Třída •A služby. V takovém případě je chování aplikováno pouze ke koncovým bodům smlouvy, což je hodnota <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnost.  
+ • Třída služby. V tomto případě se chování aplikuje jenom na koncové body, jejichž kontrakt je hodnota <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnosti.  
   
- Třída •A zpětného volání. V takovém případě je chování aplikováno na duplexní klienta endpoint a WCF ignoruje <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnost.  
+ • Třída zpětného volání. V takovém případě se chování aplikuje na koncový bod duplexního klienta a WCF ignoruje hodnotu <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> vlastnosti.  
   
- Druhý mechanismus je přidat do kolekce chování chování na <xref:System.ServiceModel.Description.ContractDescription>.  
+ Druhým mechanismem je přidat chování do kolekce chování v <xref:System.ServiceModel.Description.ContractDescription>.  
   
- Příklady smlouvy chování ve službě WCF <xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType> atribut. Další informace a příklad najdete v tématu v referenčním tématu.  
+ Příklady chování kontraktu ve službě WCF zahrnují <xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType> atribut. Další informace a příklad najdete v referenčním tématu.  
   
 #### <a name="endpoint-behaviors"></a>Chování koncového bodu  
- Chování koncového bodu, které implementují <xref:System.ServiceModel.Description.IEndpointBehavior>, představují hlavní mechanismus, pomocí kterého upravíte celou službu nebo klienta běhu pro určitý koncový bod.  
+ Chování koncového bodu, <xref:System.ServiceModel.Description.IEndpointBehavior>které implementuje, jsou primárním mechanismem, kterým měníte celou službu nebo dobu běhu klienta pro konkrétní koncový bod.  
   
- Existují dva mechanismy pro přidání chování koncového bodu služby.  
+ Existují dva mechanismy pro přidání chování koncového bodu ke službě.  
   
-1. Přidání chování k <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> vlastnost.  
+1. Přidejte chování do <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> vlastnosti.  
   
-2. Implementovat vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který rozšiřuje konfigurace.  
+2. Implementujte vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který rozšiřuje konfiguraci.  
   
- Další informace a příklad najdete v tématu v referenčním tématu.  
+ Další informace a příklad najdete v referenčním tématu.  
   
 #### <a name="operation-behaviors"></a>Chování operace  
- Chování operace, které implementují <xref:System.ServiceModel.Description.IOperationBehavior> rozhraní, se používají k rozšíření modulu runtime klient a služba pro každou operaci.  
+ Chování operace, která implementuje <xref:System.ServiceModel.Description.IOperationBehavior> rozhraní, slouží k rozšiřování klienta i služby Service runtime pro každou operaci.  
   
- Přidání chování operace operace dvěma způsoby. První mechanismus je vytvoření vlastního atributu se použije na metodu, která modeluje operaci. Při operaci přidání buď <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory>, WCF přidá všechny <xref:System.ServiceModel.Description.IOperationBehavior> atributy do kolekce chování na <xref:System.ServiceModel.Description.OperationDescription> vytvoří pro danou operaci.  
+ Existují dva mechanismy pro přidání chování operace do operace. Prvním mechanismem je vytvoření vlastního atributu, který bude použit pro metodu, která modeluje operaci. <xref:System.ServiceModel.ServiceHost> Při přidání operace do <xref:System.ServiceModel.ChannelFactory>nebo a přidá WCF všechny <xref:System.ServiceModel.Description.IOperationBehavior> atributy do kolekce <xref:System.ServiceModel.Description.OperationDescription> chování vytvořené pro tuto operaci.  
   
- Druhý mechanismus je přímo přidáním chování do kolekce chování na konstruovaný <xref:System.ServiceModel.Description.OperationDescription>.  
+ Druhý mechanismus je přímým přidáním chování do kolekce chování na vytvořeném <xref:System.ServiceModel.Description.OperationDescription>.  
   
- Příklady chování operace ve službě WCF <xref:System.ServiceModel.OperationBehaviorAttribute> a <xref:System.ServiceModel.TransactionFlowAttribute>.  
+ Příklady chování operace ve službě WCF zahrnují <xref:System.ServiceModel.OperationBehaviorAttribute> <xref:System.ServiceModel.TransactionFlowAttribute>a.  
   
- Další informace a příklad najdete v tématu v referenčním tématu.  
+ Další informace a příklad najdete v referenčním tématu.  
   
-### <a name="using-configuration-to-create-behaviors"></a>Použití konfigurace k vytvoření chování  
- Služby a koncového bodu a kontrakt chování může za účelem je zadat v kódu nebo použití atributů pouze chování služby a koncového bodu můžete konfigurovat pomocí aplikace nebo Web konfigurační soubory. Vystavení Chování pomocí atributů umožňuje vývojářům k určení chování v době kompilace, kterou nelze přidat, odebrat nebo změnit za běhu. To je často vhodné pro chování, které jsou vždy vyžaduje pro správné fungování služby (například transakce související s parametry, které mají <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> atributu). Vystavení Chování pomocí konfigurace umožňuje vývojářům ponechte specifikaci a konfiguraci tohoto chování na ty, kteří nasazují služby. To je vhodné pro chování, které jsou volitelné součásti nebo jiná konfigurace specifické pro nasazení, jako je například určuje, zda je přístupný metadat pro konfiguraci konkrétní autorizace pro službu nebo služby.  
+### <a name="using-configuration-to-create-behaviors"></a>Chování při vytváření pomocí konfigurace  
+ Chování služeb a koncových bodů a kontraktů může být navrženo v kódu nebo pomocí atributů; pomocí konfiguračních souborů aplikace nebo webu lze nakonfigurovat pouze chování služby a koncového bodu. Vystavení chování pomocí atributů umožňuje vývojářům určit chování při kompilaci, které nelze přidat, odebrat nebo upravit za běhu. To je často vhodné pro chování, která jsou vždy vyžadována pro správnou operaci služby (například parametry vztahující se k <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> transakcím atributu). Vystavení chování pomocí konfigurace umožňuje vývojářům ponechat specifikaci a konfiguraci těchto chování pro ty, kteří nasazují službu. To je vhodné pro chování, které jsou volitelné součásti nebo jiná konfigurace specifická pro nasazení, jako je třeba to, jestli jsou metadata pro službu nebo konkrétní konfiguraci autorizace pro službu vystavená.  
   
 > [!NOTE]
->  Můžete také použít chování, které podporují konfigurace k vynucování zásad společnosti aplikaci tak, že jejich vložením do konfiguračního souboru machine.config a omezovat se jenom ty položky. Popis a příklad najdete v tématu [jak: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
+> Můžete také použít chování, které podporuje konfiguraci k vymáhání zásad firemních aplikací, a to tak, že je vložíte do konfiguračního souboru Machine. config a tyto položky zamknete. Popis a příklad naleznete v tématu [How to: Zamčení koncových bodů v](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)podniku.  
   
- Pokud chcete zpřístupnit chování pomocí konfigurace, musíte vytvořit vývojář odvozenou třídu <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> a pak zaregistrovat toto rozšíření s konfigurací.  
+ Aby bylo možné vystavit chování pomocí konfigurace, musí vývojář vytvořit odvozenou <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> třídu a pak toto rozšíření registrovat s konfigurací.  
   
- Následující příklad kódu ukazuje jak <xref:System.ServiceModel.Description.IEndpointBehavior> implementuje <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>:  
+ Následující příklad kódu ukazuje, jak <xref:System.ServiceModel.Description.IEndpointBehavior> implementace: <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>  
   
 ```csharp
 // BehaviorExtensionElement members  
@@ -129,7 +129,7 @@ protected override object CreateBehavior()
 }  
 ```  
   
- Aby systém konfigurace načíst vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>, musí být registrovaný jako rozšíření. Následující příklad kódu ukazuje konfigurační soubor pro předchozí chování koncového bodu:  
+ Aby konfigurační systém mohl načíst vlastní <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>, musí být zaregistrován jako rozšíření. Následující příklad kódu ukazuje konfigurační soubor pro předchozí chování koncového bodu:  
   
 ```xml  
 <configuration>  
@@ -181,12 +181,12 @@ protected override object CreateBehavior()
 </configuration>  
 ```  
   
- Kde `Microsoft.WCF.Documentation.EndpointBehaviorMessageInspector` je typ rozšíření chování a `HostApplication` je název sestavení, do kterého byl zkompilován dané třídy.  
+ Kde `Microsoft.WCF.Documentation.EndpointBehaviorMessageInspector` je typ rozšíření chování a `HostApplication` je název sestavení, do kterého byla tato třída zkompilována.  
   
-### <a name="evaluation-order"></a>Pořadí vyhodnocení  
- <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> a <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> jsou zodpovědného za sestavení modulu runtime z programovací model a popis. Chování, jak je uvedeno výše, přispívají k, které proces na služby, koncový bod, kontrakt a operace sestavení.  
+### <a name="evaluation-order"></a>Pořadí vyhodnocování  
+ <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> Ajsouzodpovědnézasestavenímoduluruntimezprogramovacího<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> modelu a popisu. Chování, jak je popsáno výše, přispívá k procesu sestavení v rámci služby, koncového bodu, kontraktu a operace.  
   
- <xref:System.ServiceModel.ServiceHost> Platí chování v následujícím pořadí:  
+ Chování <xref:System.ServiceModel.ServiceHost> při použití v následujícím pořadí:  
   
 1. Služba  
   
@@ -196,9 +196,9 @@ protected override object CreateBehavior()
   
 4. Operace  
   
- V rámci každé kolekci chování žádné pořadí je zaručena.  
+ V rámci libovolné kolekce chování není zaručena žádná objednávka.  
   
- <xref:System.ServiceModel.ChannelFactory%601> Platí chování v následujícím pořadí:  
+ Chování <xref:System.ServiceModel.ChannelFactory%601> při použití v následujícím pořadí:  
   
 1. Kontrakt  
   
@@ -206,22 +206,22 @@ protected override object CreateBehavior()
   
 3. Operace  
   
- V rámci žádné kolekce chování, žádné pořadí je zaručena.  
+ V rámci libovolné kolekce chování není zaručena žádná objednávka.  
   
-### <a name="adding-behaviors-programmatically"></a>Přidání chování prostřednictvím kódu programu  
- Vlastnosti <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> ve službě application nesmí upravit subsequent tak, aby <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType> metodu na <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>. Některé členy, jako jsou <xref:System.ServiceModel.ServiceHostBase.Credentials%2A?displayProperty=nameWithType> vlastnost a `AddServiceEndpoint` metody <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>, vyvolat výjimku, pokud byl změněn za tímto bodem. Ostatní umožňují upravovat, ale výsledek není definován.  
+### <a name="adding-behaviors-programmatically"></a>Programové přidání chování  
+ Vlastnosti v aplikaci služby nesmí být upraveny <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType> metodou na <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> Někteří členové, například vlastnost <xref:System.ServiceModel.ServiceHostBase.Credentials%2A?displayProperty=nameWithType> `AddServiceEndpoint` a metody na <xref:System.ServiceModel.ServiceHostBase> a <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>, vyvolávají výjimku, pokud byla změněna za tento bod. Jiné vám umožní je upravovat, ale výsledek není definován.  
   
- Podobně na straně klienta <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> hodnoty nesmí být změněny po volání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> na <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType>. <xref:System.ServiceModel.ChannelFactory.Credentials%2A?displayProperty=nameWithType> Vlastnost vyvolá výjimku, pokud byl změněn za tímto bodem, ale ostatní hodnoty Popis klienta můžete změnit bez chyb. Výsledek, ale není definován.  
+ Podobně na straně klienta <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> hodnoty nesmí být upraveny po volání metody do. <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A> <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> <xref:System.ServiceModel.ChannelFactory.Credentials%2A?displayProperty=nameWithType> Vlastnost vyvolá výjimku, pokud byla změněna za tento bod, ale ostatní hodnoty Popis klienta lze upravovat bez chyby. Výsledek však není definován.  
   
- Ať už pro službu nebo klienta, se doporučuje, že upravíte popis před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType>.  
+ Bez ohledu na to, jestli pro službu nebo klienta, se doporučuje změnit popis před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType>.  
   
 ### <a name="inheritance-rules-for-behavior-attributes"></a>Pravidla dědičnosti pro atributy chování  
- Všechny čtyři typy chování je možné naplnit s použitím atributů – chování služby a chování kontraktu. Protože atributy jsou definovány na spravované objekty a členy a spravované objekty a členy podporují dědičnost, je potřeba definovat, jak fungují chování atributů v rámci dědičnosti.  
+ Všechny čtyři typy chování lze naplnit pomocí atributů – chování služby a chování kontraktu. Vzhledem k tomu, že atributy jsou definovány pro spravované objekty a členy a spravované objekty a členy podporují dědičnost, je nutné definovat způsob fungování atributů chování v kontextu dědičnosti.  
   
- Na vysoké úrovni je pravidlo určitého oboru (například služby, smlouvy nebo operace), platí všechny atributy chování v hierarchii dědičnosti pro tento obor. Pokud existují dva atributy chování stejného typu, se používá jenom nejvíce odvozeným typem.  
+ Toto pravidlo je na nejvyšší úrovni nastaveno pro konkrétní obor (například služba, kontrakt nebo operace). jsou aplikovány všechny atributy chování v hierarchii dědičnosti pro daný obor. Pokud existují dva atributy chování stejného typu, je použit pouze nejvíc odvozený typ.  
   
 #### <a name="service-behaviors"></a>Chování služby  
- Pro třídu dané služby se použijí všechny atributy chování služby v dané třídě a na nadřazených objektů této třídy. Pokud stejný typ atributu se použije na více místech v hierarchii dědičnosti, použije se nejvíce odvozeným typem.  
+ Pro danou třídu služby se používají všechny atributy chování služby na této třídě a v nadřazených třídách dané třídy. Pokud je stejný typ atributu použit na více místech v hierarchii dědičnosti, je použit nejvíc odvozený typ.  
   
 ```csharp  
 [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]  
@@ -233,12 +233,12 @@ public class A { /* … */ }
 public class B : A { /* … */}  
 ```  
   
- Například v předchozím případě služba B skončilo <xref:System.ServiceModel.InstanceContextMode> z <xref:System.ServiceModel.InstanceContextMode.Single>, <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> režim <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>a <xref:System.ServiceModel.ConcurrencyMode> z <xref:System.ServiceModel.ConcurrencyMode.Single>. <xref:System.ServiceModel.ConcurrencyMode> Je <xref:System.ServiceModel.ConcurrencyMode.Single>, protože <xref:System.ServiceModel.ServiceBehaviorAttribute> atributu ve službě B je na "více odvozené" než na službu A.  
+ Například v předchozím případě služba B skončí s <xref:System.ServiceModel.InstanceContextMode> z <xref:System.ServiceModel.InstanceContextMode.Single>, <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> režimem <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>a a <xref:System.ServiceModel.ConcurrencyMode>. <xref:System.ServiceModel.ConcurrencyMode.Single> <xref:System.ServiceModel.ConcurrencyMode> Je ,<xref:System.ServiceModel.ConcurrencyMode.Single>protože atributuslužbyBjena"víceodvozených<xref:System.ServiceModel.ServiceBehaviorAttribute> ", než je u služby A.  
   
 #### <a name="contract-behaviors"></a>Chování kontraktu  
- Pro daný kontrakt všechny smlouvy atributy chování na rozhraní, která se použijí na nadřazené rozhraní. Pokud stejný typ atributu se použije na více místech v hierarchii dědičnosti, použije se nejvíce odvozeným typem.  
+ V případě konkrétní smlouvy se aplikují všechny atributy chování kontraktů na daném rozhraní a v nadřazených objektech tohoto rozhraní. Pokud je stejný typ atributu použit na více místech v hierarchii dědičnosti, je použit nejvíc odvozený typ.  
   
 #### <a name="operation-behaviors"></a>Chování operace  
- Pokud danou operaci nepřepisuje k existující abstraktní nebo virtuální operace, použijte žádná pravidla dědičnosti.  
+ Pokud daná operace nepřepisuje existující abstraktní nebo virtuální operaci, nepoužijí se žádná pravidla dědičnosti.  
   
- Pokud operace přepsat existující operace a pak všechny operace atributy chování pro tuto operaci a v této operace se soubory nadřazené, se použijí.  Pokud stejný typ atributu se použije na více místech v hierarchii dědičnosti, použije se nejvíce odvozeným typem.
+ Pokud operace přepíše existující operaci, budou aplikovány všechny atributy chování operace v této operaci a v nadřazených objektech této operace.  Pokud je stejný typ atributu použit na více místech v hierarchii dědičnosti, je použit nejvíc odvozený typ.

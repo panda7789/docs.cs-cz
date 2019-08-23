@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)'
+title: 'Postupy: Přerušení a kombinování příkazů v kódu (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb._
@@ -21,40 +21,40 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-ms.openlocfilehash: d3656b924ebaca67c90dc602701c4cef9ce088b4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 745974523bd747dd23f3cfaf7cb70bb6cd4513f0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648777"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946201"
 ---
-# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
-Při psaní kódu, může být čas od času vytvoření dlouhé příkazy, které vyžadují vodorovného posouvání v editoru kódu. I když to nemá vliv způsob, jak kód poběží, to ztěžuje pro vás nebo někdo jiný kód přečíst, jak je zobrazen na monitorování. V takovém případě zvažte rozdělení jeden dlouhý příkaz na několika řádcích.  
+# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinování příkazů v kódu (Visual Basic)
+Při psaní kódu můžete občas vytvořit zdlouhavé příkazy, které vyžadují horizontální posouvání v editoru kódu. I když to nemá vliv na způsob, jakým se váš kód spouští, ztěžuje vám nebo někomu jinému čtení kódu, jak se zobrazuje na monitoru. V takových případech byste měli zvážit rozdělení jednoho dlouhého příkazu na několik řádků.  
   
-### <a name="to-break-a-single-statement-into-multiple-lines"></a>Chcete rozdělit jeden příkaz na více řádků  
+### <a name="to-break-a-single-statement-into-multiple-lines"></a>Přerušení jednoho příkazu na více řádků  
   
-- Použijte znak pro pokračování řádku, který je podtržítko (`_`), v okamžiku, kdy chcete řádek rozdělit. Podtržítka musí být bezprostředně předchází mezerou a ihned následovány znakem ukončení řádku (návrat).  
+- Použijte znak pro pokračování řádku, což je podtržítko (`_`), v místě, kde má být řádek přerušen. Podtržítko musí bezprostředně předcházet mezerou a ihned po něm následovat ukončovací znak (návrat do řádku).  
   
     > [!NOTE]
-    >  V některých případech Pokud vynecháte znak pro pokračování řádku, kompilátor jazyka Visual Basic implicitně bude příkaz na další řádek kódu. Seznam prvky syntaxe, pro které je možné vynechat znak pro pokračování řádku naleznete v části "Implicitní pokračování řádku" v [příkazy](../../../visual-basic/programming-guide/language-features/statements.md).  
+    > V některých případech, Pokud vynecháte znak pro pokračování řádku, kompilátor Visual Basic implicitně pokračuje v příkazu na dalším řádku kódu. Seznam elementů syntaxe, pro které můžete vynechat znak pro pokračování řádku, naleznete v tématu "implicitní pokračování řádku" v [prohlášeních](../../../visual-basic/programming-guide/language-features/statements.md).  
   
-     V následujícím příkladu příkaz rozdělená do čtyř řádků se ukončuje všechny znaky pokračování řádku, ale na posledním řádku.  
+     V následujícím příkladu je příkaz rozdělen na čtyři řádky se znaky pro pokračování řádku, které končí všechny kromě posledního řádku.  
   
      [!code-vb[VbVbcnConventions#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#20)]  
   
-     Pomocí tohoto pořadí díky váš kód lépe čitelný, online i při tisku.  
+     Použití této sekvence usnadňuje čtení kódu, jak online, tak i po vytištění.  
   
-     Znak pokračování řádku musí být poslední znak na řádku. Ho nemůže následovat s cokoli na stejném řádku.  
+     Znak pro pokračování řádku musí být poslední znak na řádku. Na stejném řádku nemůžete postupovat s jakýmkoli jiným.  
   
-     Existují určitá omezení, kde můžete použít znak pokračování řádku. například nelze použít uprostřed název argumentu. Můžete přerušit seznam argumentů znakem pokračování řádku, ale jednotlivé názvy argumentů, musí zůstat beze změny.  
+     Některá omezení existují, jako na to, kde můžete použít znak pro pokračování řádku; Nemůžete ho například použít uprostřed názvu argumentu. Seznam argumentů lze přerušit pomocí znaku pro pokračování řádku, ale jednotlivé názvy argumentů musí zůstat beze změny.  
   
-     Komentář nemůže pokračovat s použitím znak pro pokračování řádku. Kompilátor nebude zkontrolujte znaky v komentáři pro zvláštní význam. Více řádků komentáře, opakujte symbol komentáře (`'`) na každém řádku.  
+     Komentář nelze pokračovat pomocí znaku pro pokračování řádku. Kompilátor neověřuje znaky v komentáři pro zvláštní význam. V případě víceřádkového komentáře opakujte symbol komentáře (`'`) na každém řádku.  
   
- I když každý příkaz umístit na samostatný řádek je doporučená metoda, Visual Basic také umožňuje umístit více příkazů na stejném řádku.  
+ I když je umístění každého příkazu na samostatném řádku doporučený způsob, Visual Basic také umožňuje umístit více příkazů na stejný řádek.  
   
-### <a name="to-place-multiple-statements-on-the-same-line"></a>Umístit více příkazů na stejném řádku  
+### <a name="to-place-multiple-statements-on-the-same-line"></a>Postup umístění více příkazů na stejný řádek  
   
-- Oddělení příkazů s dvojtečkou (`:`), jako v následujícím příkladu.  
+- Příkazy oddělte dvojtečkou (`:`), jako v následujícím příkladu.  
   
      [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]  
   

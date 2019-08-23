@@ -10,57 +10,57 @@ helpviewer_keywords:
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc2ed1a450921452dee894caeb52c477d501b573
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d9c90a3bd272b54d2884d013e62123dd67d836e3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926347"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960055"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
-<xref:System.Threading.EventWaitHandle> Třída umožňuje vlákna ke komunikaci mezi sebou signalizace a čeká na signál. Obslužné rutiny události čekání (také označované jednoduše jako události) jsou obslužné rutiny čekání, které mohou být signalizovanými, aby verze jednoho nebo více čekajících vláken. Po to bylo signalizováno, popisovače čekání události se vynuluje, ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Může představovat buď místní události popisovač čekání (místní události), nebo událost s názvem systému počkat popisovač (s názvem události nebo viditelné pro všechny procesy systémové události).  
+<xref:System.Threading.EventWaitHandle> Třída umožňuje vláknům vzájemně komunikovat pomocí signalizace a čekáním na signály. Obslužné rutiny čekání na události (také označované jako události) jsou obslužné rutiny čekání, které mohou být vydány k uvolnění jednoho nebo více čekajících vláken. Po signalizaci je obslužná rutina čekání na událost resetována ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Třída může představovat buď obslužná rutina čekání na místní událost (místní událost), nebo pojmenovaná systémová událost (událost nebo systémová událost), která je viditelná pro všechny procesy.  
   
 > [!NOTE]
->  Obslužné rutiny čekání událostí nejsou .NET [události](../events/index.md). Neexistují žádné delegáty nebo obslužné rutiny události zahrnuté. Slova "událost" slouží k popisu je vzhledem k tomu, že se mají tradičně se označuje jako událostí operačního systému, a vzhledem k tomu, že v rámci signalizace popisovač čekání znamená čekajících vláken, která došlo k události.  
+> Obslužné rutiny čekání událostí nejsou [událostmi](../events/index.md).NET. Nejsou zapojeni žádní Delegáti nebo obslužné rutiny událostí. Slovo "Event" se používá k popsání, protože byly tradičně označovány jako události operačního systému a vzhledem k tomu, že poznámení popisovače čekání čeká na čekající vlákna, ke kterým došlo událost.  
   
- Obslužné rutiny čekání i místní a pojmenované události pomocí synchronizace systémové objekty, které jsou chráněny <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> obálky zajistit uvolnění prostředků. Můžete použít <xref:System.Threading.WaitHandle.Dispose%2A> metodu pro uvolnění prostředků ihned po dokončení používání objektu.  
+ Místní i pojmenované události čekají na používání objektů synchronizace systému, které jsou chráněny <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> obálkami, aby bylo zajištěno, že se prostředky uvolní. <xref:System.Threading.WaitHandle.Dispose%2A> Metodu můžete použít k uvolnění prostředků hned po dokončení používání objektu.  
   
-## <a name="event-wait-handles-that-reset-automatically"></a>Obslužné rutiny čekání události, které automaticky obnovit  
- Vytvořit událost automatického obnovení tak, že zadáte <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> při vytváření <xref:System.Threading.EventWaitHandle> objektu. Jak již název napovídá, tato událost synchronizace obnoví automaticky při signalizován po uvolnění jedno vlákno čekání. Signalizuje, že události po zavolání jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda.  
+## <a name="event-wait-handles-that-reset-automatically"></a>Obslužné rutiny čekání na události, které se automaticky resetují  
+ Událost automatického resetování vytvoříte zadáním <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> při <xref:System.Threading.EventWaitHandle> vytváření objektu. Jak je uvedeno, tato událost synchronizace se automaticky obnoví po vyřízení signálu po uvolnění jediného čekajícího vlákna. Vysignálit událost voláním <xref:System.Threading.EventWaitHandle.Set%2A> její metody.  
   
- Automatický reset události se obvykle používají k poskytování exkluzivní přístup k prostředku pro jedno vlákno v čase. Vlákno požadavek na prostředek voláním <xref:System.Threading.WaitHandle.WaitOne%2A> metody. Pokud žádné jiné vlákno drží popisovač čekání, metoda vrátí `true` a volajícího vlákna má ovládací prvek prostředku.  
+ Události automatického resetování se obvykle používají k poskytování výhradního přístupu k prostředku pro jedno vlákno v jednom okamžiku. Vlákno požaduje prostředek voláním <xref:System.Threading.WaitHandle.WaitOne%2A> metody. Pokud žádné jiné vlákno nedrží popisovač čekání, metoda se vrátí `true` a volající vlákno má kontrolu nad prostředkem.  
   
 > [!IMPORTANT]
->  Stejně jako u všech mechanismů synchronizace, musíte zajistit, že všechny cesty kódu čekání na popisovač odpovídající čekání před přístupem k chráněnému prostředku. Synchronizace vláken je kooperativní.  
+> Stejně jako u všech synchronizačních mechanismů je nutné zajistit, aby všechny cesty kódu čekaly příslušnému popisovači čekání před přístupem k chráněnému prostředku. Synchronizace vláken je kooperativní.  
   
- Pokud automatický reset událost je signalizována při žádná vlákna čekající, zůstane signalizovaného, dokud vlákno pokusy o čekání na něj. Události uvolní vlákna a okamžitě resetuje, blokování následné vlákna.  
+ Pokud dojde k signalizaci události automatického resetování, když nečekají žádná vlákna, zůstane signál, dokud se vlákno nepokusí o čekání. Událost uvolní vlákno a okamžitě obnoví a blokuje následná vlákna.  
   
-## <a name="event-wait-handles-that-reset-manually"></a>Obslužné rutiny čekání události, které ručně obnovit  
- Vytvoření ruční vynulování události tak, že zadáte <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> při vytváření <xref:System.Threading.EventWaitHandle> objektu. Jak již název napovídá, tato událost synchronizace musíte obnovit ručně, jakmile bylo signalizováno. Dokud se vynuluje, voláním jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda, vlákna, která čekání na popisovač události okamžitě pokračovat bez blokování.  
+## <a name="event-wait-handles-that-reset-manually"></a>Obslužné rutiny čekání na události, které se resetují ručně  
+ Můžete vytvořit událost ručního resetování zadáním <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> při <xref:System.Threading.EventWaitHandle> vytváření objektu. Vzhledem k tomu, že je tato událost synchronizace nutná, je nutné ji po signalizaci resetovat ručně. Dokud není resetováno, voláním jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metody, vlákna, která čekají na zpracování události, okamžitě bez blokování.  
   
- Ruční obnovení události úkony jako brány corral. Pokud není signalizován události, zablokovat vlákna, počkejte na to, jako koně v corral. Pokud událost signalizován voláním jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda, všechny čekajících vláken jsou zdarma, aby bylo možné pokračovat. Události zůstane až do signalizovaného jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda je volána. Díky tomu Ruční vynulování události ideální způsob, jak zdržet vlákna, které je třeba počkat, až se dokončí úkol jedno vlákno.  
+ Událost ručního resetování funguje jako brána Corral. Pokud událost není signalizována, vlákny, které čekají na blok IT, jako jsou koně v Corral. Je-li událost signalizována voláním <xref:System.Threading.EventWaitHandle.Set%2A> metody, všechna čekající vlákna jsou zadarmo pokračovat. Událost zůstává signalizována, dokud není volána <xref:System.Threading.EventWaitHandle.Reset%2A> její metoda. Tím se vytvoří událost ručního resetování ideální způsob, jak umístit vlákna, která musí čekat, až jeden podproces dokončí úlohu.  
   
- Stejně jako byste museli opustit corral koně nějakou dobu trvá vydané vlákna, k naplánování podle operačního systému a pokračovat v provádění. Pokud <xref:System.Threading.EventWaitHandle.Reset%2A> metoda je volána před všechna vlákna mít obnovil provádění, zbývající vlákna znovu blokovat. Které opětovné spuštění vlákna a které bloku vláken závisí na náhodných faktorů, jako je zatížení systému, počet vláken čeká se na Plánovač a tak dále. To není problém, pokud podproces, který signalizuje událost skončí po ohlášení, což je nejběžnější vzor využití. Pokud chcete, aby vlákno, které signál události po všech zahájíte nový úkol, čekání, které mají obnoveno vlákna, musíte zablokovat dokud čekajících vláken mít obnoveno. V opačném případě máte časování a nepředvídatelné chování kódu.  
+ Stejně jako koně opouštějící Corral trvá čas vydaných vláken operačním systémem a k pokračování v provádění. Pokud je <xref:System.Threading.EventWaitHandle.Reset%2A> metoda volána před tím, než všechna vlákna obnovila spuštění, zbývající vlákna znovu zablokují. Které vlákna obnoví a které blok vlákna závisí na náhodných faktorech, jako je zatížení systému, počet vláken, která čekají na Plánovač, a tak dále. Nejedná se o problém, pokud vlákno signalizující událost končí po signalizaci, což je nejběžnější vzor použití. Pokud chcete, aby vlákno, které signalizuje událost, zahájilo novou úlohu po obnovení všech čekajících vláken, je nutné ji zablokovat, dokud nebudou obnovena všechna čekající vlákna. V opačném případě máte spor a chování vašeho kódu nepředvídatelné.  
   
-## <a name="features-common-to-automatic-and-manual-events"></a>Běžné funkce na automatické a ruční události  
- Obvykle zablokovat jednu nebo více vláken <xref:System.Threading.EventWaitHandle> dokud odblokované vlákna volání <xref:System.Threading.EventWaitHandle.Set%2A> metodu, která uvolní jeden čekajících vláken (v případě události automatického resetu) nebo všechny z nich (v případě ruční obnovení události). Vlákna mohou signalizovat <xref:System.Threading.EventWaitHandle> a pak blokování, jako atomickou operaci, voláním statické <xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType> metody.  
+## <a name="features-common-to-automatic-and-manual-events"></a>Funkce společné pro automatické a ruční události  
+ Obvykle jedno nebo více vláken zablokuje <xref:System.Threading.EventWaitHandle> , dokud neblokované vlákno <xref:System.Threading.EventWaitHandle.Set%2A> nevolá metodu, která uvolní jeden z čekajících vláken (v případě událostí automatického resetování) nebo všechny (v případě událostí ručního resetování). Vlákno může signalizovat <xref:System.Threading.EventWaitHandle> a pak ho zablokovat jako atomickou operaci voláním statické <xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType> metody.  
   
- <xref:System.Threading.EventWaitHandle> objekty lze použít s statické <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> a <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> metody. Protože <xref:System.Threading.EventWaitHandle> a <xref:System.Threading.Mutex> obě třídy odvozovat <xref:System.Threading.WaitHandle>, můžete použít obě třídy s těmito metodami.  
+ <xref:System.Threading.EventWaitHandle>objekty lze použít se statickými <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> a <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> metodami. Vzhledem k <xref:System.Threading.EventWaitHandle> tomu <xref:System.Threading.Mutex> , že třídy a <xref:System.Threading.WaitHandle>jsou odvozeny z, můžete použít obě třídy s těmito metodami.  
   
 ### <a name="named-events"></a>Pojmenované události  
- Operační systém Windows umožňuje událost obslužné rutiny čekání mít názvy. Na pojmenovanou událost je v systému. To znamená že po vytvoření pojmenované události je viditelný na všechna vlákna ve všech procesech. Proto je možné pojmenované události pro synchronizaci činností procesy a také vlákna.  
+ Operační systém Windows umožňuje obslužným rutinám čekání na název mít názvy. Pojmenovaná událost je celá systémová. To znamená, že jakmile je vytvořena pojmenovaná událost, je viditelná pro všechna vlákna ve všech procesech. Proto lze pomocí pojmenovaných událostí synchronizovat aktivity procesů i vlákna.  
   
- Můžete vytvořit <xref:System.Threading.EventWaitHandle> objekt, který představuje událost s názvem systému pomocí jednoho z konstruktorů, které určuje název události.  
-  
-> [!NOTE]
->  Protože jsou pojmenované události v systému, je možné mít více <xref:System.Threading.EventWaitHandle> objekty, které představují stejné pojmenované události. Pokaždé, když volat konstruktor, nebo <xref:System.Threading.EventWaitHandle.OpenExisting%2A> metodu, nové <xref:System.Threading.EventWaitHandle> je vytvořen objekt. Zadání se stejným názvem opakovaně vytvoří více objektů, které představují stejné pojmenované události.  
-  
- Upozornění se doporučuje při použití s názvem události. Protože jsou v systému, jiný proces, který používá stejný název, můžete zablokovat vlákna neočekávaně. Škodlivý kód, spouští ve stejném počítači může použít jako základ útok s cílem odepření služby.  
-  
- Použití řízení přístupu k ochraně <xref:System.Threading.EventWaitHandle> objekt, který reprezentuje na pojmenovanou událost, pokud možno pomocí konstruktoru, který určuje <xref:System.Security.AccessControl.EventWaitHandleSecurity> objektu. Můžete také použít pomocí zabezpečení řízení přístupu <xref:System.Threading.EventWaitHandle.SetAccessControl%2A> metody, ale ponechá okno na ohrožení zabezpečení mezi čas vytvoření události popisovač čekání a je chráněn. Ochrana události pomocí řízení přístupu zabezpečení pomáhá zabránit útoky se zlými úmysly, ale nebyl vyřešen problém kolize názvů neúmyslné.  
+ Můžete vytvořit <xref:System.Threading.EventWaitHandle> objekt, který představuje pojmenovanou systémovou událost pomocí jednoho z konstruktorů, které určují název události.  
   
 > [!NOTE]
->  Na rozdíl od <xref:System.Threading.EventWaitHandle> třídy, odvozené třídy <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent> můžete představují pouze místní obslužné rutiny čekání. Nelze představují pojmenované systémové události.  
+> Vzhledem k tomu, že pojmenované události jsou napříč systémem, je možné <xref:System.Threading.EventWaitHandle> mít více objektů, které představují stejnou pojmenovanou událost. Pokaždé, když zavoláte konstruktor, <xref:System.Threading.EventWaitHandle.OpenExisting%2A> nebo metoda, je <xref:System.Threading.EventWaitHandle> vytvořen nový objekt. Zadáním stejného názvu opakovaně vytvoříte více objektů, které reprezentují stejnou pojmenovanou událost.  
+  
+ Při používání pojmenovaných událostí se doporučuje opatrnost. Vzhledem k tomu, že se jedná o systém, může jiný proces, který používá stejný název, blokovat vlákna neočekávaně. Škodlivý kód spuštěný ve stejném počítači může použít tento způsob útoku DOS (Denial of Service).  
+  
+ Použijte zabezpečení řízení přístupu k ochraně <xref:System.Threading.EventWaitHandle> objektu, který představuje pojmenovanou událost, nejlépe pomocí konstruktoru, který <xref:System.Security.AccessControl.EventWaitHandleSecurity> určuje objekt. Můžete také použít zabezpečení řízení přístupu pomocí <xref:System.Threading.EventWaitHandle.SetAccessControl%2A> metody, ale to zachová okno s chybou v době mezi tím, kdy je obslužná rutina čekání události vytvořena, a časem, který je chráněn. Ochrana událostí pomocí zabezpečení řízení přístupu pomáhá zabránit škodlivým útokům, ale neřeší problém kolizí neúmyslného názvu.  
+  
+> [!NOTE]
+> Na rozdíl od <xref:System.Threading.EventWaitHandle> třídy odvozené třídy <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.ManualResetEvent> mohou reprezentovat pouze místní čekací obslužné rutiny. Nemůžou představovat pojmenované systémové události.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,18 +2,18 @@
 title: Procedurální pracovní postupy
 ms.date: 03/30/2017
 ms.assetid: 52401de9-9115-472d-8fd9-047af6a072b9
-ms.openlocfilehash: 15ff155fb057c4c10663d383a8942108c6e4375c
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: d1edd73b2276d0a3918b61c8da2d04769d09e7c8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348371"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956107"
 ---
 # <a name="procedural-workflows"></a>Procedurální pracovní postupy
-Procedurální pracovní postupy používající řízení toku metody podobné těm v jazycích procedury. Tyto konstrukce obsahují `While` a `If`. Tyto pracovní postupy mohou být složené volně, například pomocí další aktivity toku řízení <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Sequence>.  
+Procedurální pracovní postupy používají metody řízení toku podobné těm, které byly nalezeny v procedurálních jazycích. Tyto konstrukce zahrnují `While` a `If`. Tyto pracovní postupy mohou být volně tvořeny pomocí jiných aktivit řízení toku <xref:System.Activities.Statements.Flowchart> , <xref:System.Activities.Statements.Sequence>jako jsou a.  
   
-## <a name="controlling-execution-flow"></a>Řízení toku provádění  
- Knihovna aktivit pracovního postupu má aktivity pro modelování Většina metod řízení toku procedury jazyků. Zde jsou některé z nich:  
+## <a name="controlling-execution-flow"></a>Řízení toku spuštění  
+ Knihovna aktivit pracovního postupu obsahuje aktivity pro modelování většiny metod řízení toku používaných v procedurálních jazycích. Zde jsou některé z nich:  
   
 - <xref:System.Activities.Statements.While>  
   
@@ -31,10 +31,10 @@ Procedurální pracovní postupy používající řízení toku metody podobné 
   
 - <xref:System.Activities.Statements.Pick>  
   
- Použití aktivity toku řízení přetažení z **aktivity** nástrojů do složených aktivit uvnitř okna návrháře.  
+ Chcete-li používat aktivity řízení toku, přetáhněte je z panelu nástrojů **aktivity** do složené aktivity uvnitř okna návrháře.  
   
 > [!NOTE]
->  Pokud používáte funkce sady Windows Server AppFabric hostování pracovních postupů hostitele ve webové farmě, přesune AppFabric instance mezi různými servery AppFabric. To vyžaduje, že prostředky budou moct sdílet mezi všemi uzly.  Žádný výchozí aktivity pracovního postupu NET 4 neobsahuje žádné operace, které přístup k místním prostředkům. Protože AppFabric nenabízí každý použitý mechanizmus k označení pracovního postupu jako nemovitostí, vývojář nesmí vytvořit vlastní aktivity, které nesplní při přesunu pracovní postup.  
+> Pokud používáte funkce hostování Windows serveru AppFabric k hostování pracovních postupů ve webové farmě, technologie AppFabric přesune instance mezi různými servery AppFabric. To vyžaduje, aby se prostředky mohly sdílet mezi všemi uzly.  Žádná z výchozích aktivit pracovního postupu NET 4 neobsahuje žádné operace, které přistupují k místním prostředkům. Vzhledem k tomu, že technologie AppFabric nenabízí žádný mechanismus pro označení pracovního postupu jako nemovitého, nemůže vývojář vytvořit vlastní aktivity, které selžou při přesunu pracovního postupu.  
   
 ## <a name="see-also"></a>Viz také:
 

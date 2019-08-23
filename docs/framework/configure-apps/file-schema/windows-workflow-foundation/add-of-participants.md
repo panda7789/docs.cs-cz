@@ -3,21 +3,21 @@ title: <add> z <participants>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 3c730850-6f8e-4102-acb8-8effb4e09463
-ms.openlocfilehash: 291d1a006bc16769e36774dd9507017cb555e547
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6dc07b6f419fcb98e3f182269a99cb281139ba9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790374"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946187"
 ---
-# <a name="add-of-participants"></a>\<Přidat > z \<participants >
+# <a name="add-of-participants"></a>\<Přidat > \<účastníků >
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
   
- Další informace v sledování pracovních postupů a sledování účastníci naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) a [sledování účastníci](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md).  
+ Další informace o sledování pracovních postupů a sledování účastníků najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Sledování účastníků](../../../windows-workflow-foundation/tracking-participants.md).  
   
 \<system.serviceModel>  
 \<sledování >  
-\<participants >  
+\<Účastníci >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,7 +39,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 |-------------|-----------------|  
 |name|Řetězec, který určuje název člena sledování.|  
 |Název_profilu|Řetězec, který určuje název profilu sledování, která definuje sledování záznamů účastník sledování přihlásí k odběru.|  
-| – typ|Řetězec, který určuje typ sledování člena.|  
+|– typ|Řetězec, který určuje typ sledování člena.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,7 +48,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<participants>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
+|[\<Účastníci >](participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  
@@ -60,7 +60,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 ## <a name="example"></a>Příklad  
  Následující příklad konfigurace ukazuje standardní účastník sledování ETW konfigurován v souboru Web.config.  
   
- Id zprostředkovatele, které účastník sledování ETW používá k zápisu do ETW sledování záznamů je definována v  **\<diagnostiky >** oddílu. Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru. Toto je definován **profileName** atribut  **\<Přidat >** elementu. Jakmile jsou definovány, sledování účastník bude přidán do  **\<etwTracking >** služeb chování. Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.  
+ ID zprostředkovatele, které používá účastník sledování ETW k zápisu záznamů sledování do ETW, je definováno v  **\<části > diagnostiky** . Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru. Tato definice je definována atributem  **\<** proformátu elementu add >. Po definování je účastník sledování přidán do  **\<chování služby etwTracking >** Service. Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.  
   
 ```xml  
 <configuration>   
@@ -92,5 +92,5 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Účastníci sledování](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Účastníci sledování](../../../windows-workflow-foundation/tracking-participants.md)

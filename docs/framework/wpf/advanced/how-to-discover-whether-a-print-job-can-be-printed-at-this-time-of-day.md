@@ -10,65 +10,65 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: ee38caedc5d5a29d2221d6e5a6bf6cf74617bf8c
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 859dc75169e443d07361951692a428507886fa2e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859723"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947799"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
-Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  
+Tiskové fronty nejsou vždy k dispozici po dobu 24 hodin denně. Mají vlastnosti počáteční a koncového času, které je možné nastavit tak, aby byly v určitou dobu nedostupné. Tato funkce se dá použít například k vyhrazení tiskárny pro výhradní použití určitého oddělení po dobu 5 hodin. Toto oddělení by mělo jinou frontu, která obsluhuje tiskárnu, než jiné oddělení používají. Fronta pro ostatní oddělení se nastaví jako nedostupná po dobu 5 hodin, zatímco fronta pro Upřednostněné oddělení by mohla být na všech místech k dispozici.  
   
- Navíc je možné nastavit tiskové úlohy, sami bude tisknutelný pouze v rámci dané rozpětí času.  
+ Tisk samotných úloh se navíc dá nastavit tak, aby se daly tisknout jenom v určeném časovém intervalu.  
   
- <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> třídy v rozhraní API pro Microsoft .NET Framework umožňují vzdálené kontroly, zda danou tiskovou úlohu můžete tisknout do dané fronty v současné době.  
+ Třídy <xref:System.Printing.PrintQueue> a<xref:System.Printing.PrintSystemJobInfo> zveřejněné v rozhraní API Microsoft .NET Framework poskytují prostředky pro vzdálenou kontrolu toho, zda může daná tisková úloha tisknout v dané frontě v aktuálním čase.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad je ukázka, můžete diagnostikovat problémy s tiskovou úlohou.  
+ Příkladem níže je ukázka, která může diagnostikovat problémy s tiskovou úlohou.  
   
- Existují dva hlavní kroky pro tento druh funkce následujícím způsobem.  
+ Existují dva hlavní kroky pro tento druh funkce, jak je znázorněno níže.  
   
-1. Přečtěte si <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> a <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintQueue> k určení, zda aktuální čas je mezi nimi.  
+1. Přečtěte si <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> <xref:System.Printing.PrintQueue> a a určete, zda je mezi nimi aktuální čas.  
   
-2. Přečtěte si <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> a <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintSystemJobInfo> k určení, zda aktuální čas je mezi nimi.  
+2. Přečtěte si <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> <xref:System.Printing.PrintSystemJobInfo> a a určete, zda je mezi nimi aktuální čas.  
   
- Ale komplikace způsobit skutečnost, že tyto vlastnosti nejsou <xref:System.DateTime> objekty. Místo toho jsou <xref:System.Int32> objekty, které je možné vyjádřit jako počet minut od půlnoci denní dobu. Kromě toho nejedná o půlnoci v aktuálním časovém pásmu, ale o půlnoci UTC (Coordinated Universal Time).  
+ Ale komplikace se projeví z faktu, že <xref:System.DateTime> tyto vlastnosti nejsou objekty. Místo toho jsou <xref:System.Int32> objekty, které vyjadřují denní dobu jako počet minut od půlnoci. Kromě toho se nejedná o půlnoc v aktuálním časovém pásmu, ale o půlnoci UTC (koordinovaný světový čas).  
   
- První příklad kódu představuje statickou metodu **ReportQueueAndJobAvailability**, který je předán <xref:System.Printing.PrintSystemJobInfo> a volání pomocné metody k určení, zda v současné době můžete vytisknout úlohy, a pokud ne, při tisku. Všimněte si, že <xref:System.Printing.PrintQueue> není předaný metodě. Je to proto, <xref:System.Printing.PrintSystemJobInfo> obsahuje odkaz na frontu v jeho <xref:System.Printing.PrintSystemJobInfo.HostingPrintQueue%2A> vlastnost.  
+ První příklad kódu představuje statickou metodu **ReportQueueAndJobAvailability**, která je předána <xref:System.Printing.PrintSystemJobInfo> a volá pomocné metody k určení, zda se může úloha tisknout v aktuálním čase a v případě, že je může tisknout. Všimněte si, <xref:System.Printing.PrintQueue> že metoda není předána metodě. Důvodem je, <xref:System.Printing.PrintSystemJobInfo> že zahrnuje odkaz na frontu ve své <xref:System.Printing.PrintSystemJobInfo.HostingPrintQueue%2A> vlastnosti.  
   
- Zahrnout přetížené metody podřízené **ReportAvailabilityAtThisTime** metodu, která můžete provést buď <xref:System.Printing.PrintQueue> nebo <xref:System.Printing.PrintSystemJobInfo> jako parametr. K dispozici je také **TimeConverter.ConvertToLocalHumanReadableTime**. Všechny tyto metody jsou popsané dále.  
+ Podřízené metody zahrnují přetíženou metodu **ReportAvailabilityAtThisTime** , která může použít buď <xref:System.Printing.PrintQueue> nebo <xref:System.Printing.PrintSystemJobInfo> jako parametr. K dispozici je také **TimeConverter. ConvertToLocalHumanReadableTime**. Všechny tyto metody jsou popsány níže.  
   
- **ReportQueueAndJobAvailability** metoda začíná kontroluje se, pokud se v tuto chvíli není k dispozici fronty nebo tiskové úlohy. Pokud platí některá z nich není k dispozici, pak zkontroluje a zjistěte, jestli fronta není k dispozici. Pokud není k dispozici, metodu sestavy tuto skutečnost a čas, kdy fronty bude opět k dispozici. Potom zkontroluje úlohy a pokud je k dispozici, oznámí příště span, kdy při tisku. Nakonec metoda hlásí Nejdřívější čas, kdy můžete vytisknout úlohy. Toto je později z následujících dvakrát.  
+ Metoda **ReportQueueAndJobAvailability** se spustí tak, že zkontroluje, jestli není v tuto chvíli fronta nebo tisková úloha dostupná. Pokud je některá z nich nedostupná, zkontroluje, jestli není fronta k dispozici. Pokud není k dispozici, pak metoda oznámí tuto skutečnost a čas, kdy bude fronta opět k dispozici. Pak zkontroluje úlohu a pokud není k dispozici, ohlásí příští časové období, kdy může tisknout. Nakonec metoda oznamuje Nejdřívější čas, kdy může úloha tisknout. To je pozdější, než dvakrát.  
   
-- Čas, kdy je tiskovou frontu dále k dispozici.  
+- Čas, kdy bude tisková fronta příště dostupná.  
   
-- Čas, kdy je tisková úloha dále k dispozici.  
+- Čas, kdy bude tisková úloha příště k dispozici.  
   
- Při vytváření sestav denní dobu, <xref:System.DateTime.ToShortTimeString%2A> metodu je také volat, protože tato metoda potlačí roků, měsíců a dnů z výstupu. Dostupnost tiskovou frontu nebo tiskovou úlohu nelze omezit na konkrétní roků, měsíců nebo dokonce dny.  
+ Při vykazování času dne <xref:System.DateTime.ToShortTimeString%2A> je metoda volána také proto, že tato metoda potlačuje roky, měsíce a dny z výstupu. Nemůžete omezit dostupnost tiskové fronty ani tiskové úlohy na konkrétní roky, měsíce nebo dny.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#reportqueueandjobavailability)]
  [!code-csharp[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#reportqueueandjobavailability)]
  [!code-vb[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#reportqueueandjobavailability)]  
   
- Dvě přetížení **ReportAvailabilityAtThisTime** metody jsou stejné s výjimkou předaný k nim, takže pouze typ <xref:System.Printing.PrintQueue> verze je uveden níže.  
+ Dvě přetížení metody **ReportAvailabilityAtThisTime** jsou identická s výjimkou typu, který je předaný, takže níže je uvedena pouze <xref:System.Printing.PrintQueue> verze.  
   
 > [!NOTE]
->  Fakt, že metody jsou stejné s výjimkou typu vyvolá na otázku, proč vzorku nevytváří žádné obecné metody **ReportAvailabilityAtThisTime\<T >** . Důvodem je, že tato metoda by mohl být omezeny na třídu, která má **StartTimeOfDay** a **UntilTimeOfDay** vlastnosti, které volá metodu, ale obecná metoda může být pouze omezené na jednotné třídy a třídy pouze společné pro <xref:System.Printing.PrintQueue> a <xref:System.Printing.PrintSystemJobInfo> v dědičnosti je strom <xref:System.Printing.PrintSystemObject> která nemá žádné takové vlastnosti.  
+> Skutečnost, že metody jsou identické s výjimkou typu, vyvolává otázku proč ukázka nevytvoří obecnou metodu **\<ReportAvailabilityAtThisTime T >** . Důvodem je, že taková metoda by musela být omezena na třídu, která má vlastnosti **StartTimeOfDay** a **UntilTimeOfDay** , kterou metoda volá, ale obecnou metodu lze omezit pouze na jedinou třídu a jedinou třídou, která je společná pro obě. <xref:System.Printing.PrintQueue> a ve<xref:System.Printing.PrintSystemJobInfo>stromové struktuře dědičnosti<xref:System.Printing.PrintSystemObject> nemá takové vlastnosti.  
   
- **ReportAvailabilityAtThisTime** – metoda (uvedené v následujícím příkladu kódu) začíná inicializace <xref:System.Boolean> proměnnou sentinel `true`. Se resetuje na `false`, pokud není k dispozici do fronty.  
+ Metoda **ReportAvailabilityAtThisTime** (uvedená v následujícím příkladu kódu) začíná inicializací <xref:System.Boolean> proměnné Sentinel na. `true` V případě `false`, že fronta není k dispozici, bude obnovena.  
   
- Dále metoda zkontroluje a zjistěte, jestli začátku a "až" časy jsou identické. Pokud jsou, fronta je vždy k dispozici, a tak, aby metoda `true`.  
+ Dále metoda zkontroluje, zda jsou časy Start a "do" stejné. Pokud jsou, fronta je vždy k dispozici, takže se metoda vrátí `true`.  
   
- Pokud fronta není k dispozici vždy, metoda používá statickou <xref:System.DateTime.UtcNow%2A> vlastnost k získání aktuálního času jako <xref:System.DateTime> objektu. (Jsme není nutné místního času, protože <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> a <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> vlastnosti představují samy o sobě v čase UTC.)  
+ Pokud není fronta k dispozici po celou dobu, metoda použije statickou <xref:System.DateTime.UtcNow%2A> vlastnost k získání aktuálního času <xref:System.DateTime> jako objektu. (Nepotřebujeme místní čas, protože <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> vlastnosti a <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> jsou samy v čase UTC.)  
   
- Ale tyto dvě vlastnosti nejsou <xref:System.DateTime> objekty. Jsou <xref:System.Int32>s vyjadřuje čas jako počet minut po času UTC půlnoc. Abychom měli převést naše <xref:System.DateTime> objekt minut po půlnoci. Po dokončení, která metoda jednoduše zkontroluje, můžete zjistit, zda "teď" je mezi počáteční do fronty a "časy, nastaví sentinel na hodnotu false, pokud"teď"se nenachází mezi dvěma časy a vrátí ověřovacích do".  
+ Tyto dvě vlastnosti <xref:System.DateTime> však nejsou objekty. Jsou <xref:System.Int32>v čase vyjádřené jako počet minut po UTC-půlnoci. Proto musíme převést náš <xref:System.DateTime> objekt na minuty po půlnoci. V takovém případě metoda jednoduše zkontroluje, jestli je "Now" mezi dobou spuštění fronty a "do", nastaví Sentinel na hodnotu false, pokud "Now" není mezi dvěma časy a vrátí Sentinel.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#printqueuestartuntil)]
  [!code-csharp[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#printqueuestartuntil)]
  [!code-vb[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#printqueuestartuntil)]  
   
- **TimeConverter.ConvertToLocalHumanReadableTime** – metoda (uvedené v následujícím příkladu kódu) nepoužívá žádné metody představeny s nástrojem Microsoft .NET Framework, tedy stručný diskuse. Tato metoda má dvojitý převod úkolu: musíte trvat celé číslo vyjadřující minut po půlnoci a převést ji do čitelné čas a je nutné ji převést na místní čas. Provádí se to nejprve <xref:System.DateTime> objekt, který je nastaven na půlnoc UTC a pak používá <xref:System.DateTime.AddMinutes%2A> způsob, jak přidat dobu, po které byly předány metodě. Vrátí nový <xref:System.DateTime> vyjádření původní čas, který byl předán metodě. <xref:System.DateTime.ToLocalTime%2A> Metoda potom převede na místní čas.  
+ Metoda **TimeConverter. ConvertToLocalHumanReadableTime** (uvedená v následujícím příkladu kódu) nepoužívá žádné metody, které jsou zavedeny v rámci Microsoft .NET Framework, takže diskuze je stručná. Metoda má úlohu s dvojitou konverzí: musí přijmout celé číslo vyjadřující minuty po půlnoci a převést ji na čas, který je čitelný člověkem, a musí to převést na místní čas. To to provede tím, že nejprve vytvoří <xref:System.DateTime> objekt, který je nastaven na půlnoc UTC, a pak <xref:System.DateTime.AddMinutes%2A> použije metodu k přidání minut, které byly předány metodě. To vrací nové <xref:System.DateTime> vyjádření původního času, který byl předán metodě. <xref:System.DateTime.ToLocalTime%2A> Metoda pak tuto metodu převede na místní čas.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#TimeConverter](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#timeconverter)]
  [!code-csharp[DiagnoseProblematicPrintJob#TimeConverter](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#timeconverter)]

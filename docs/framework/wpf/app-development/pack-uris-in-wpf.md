@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: f9ea4acfc7ba86d3424bb11af0de685651f99c61
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: ad928fb223ce22c65bb86a78c7d4cd006651a2d5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796752"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950760"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
@@ -85,7 +85,7 @@ V následujících částech se dozvíte, jak [!INCLUDE[TLA2#tla_uri#plural](../
 
 ## <a name="resource-file-pack-uris"></a>Identifikátory URI sad prostředků souboru
 
-Soubory prostředků jsou konfigurovány [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako `Resource` položky a zkompilovány do sestavení. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporuje konstrukci balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , který lze použít k identifikaci souborů prostředků, které jsou zkompilovány do místního sestavení nebo zkompilovány do sestavení, které je odkazováno z místního sestavení.
+Soubory prostředků jsou nakonfigurovány jako `Resource` položky MSBuild a jsou zkompilovány do sestavení. WPF podporuje konstrukci identifikátorů URI balíčku, které lze použít k identifikaci souborů prostředků, které jsou zkompilovány do místního sestavení nebo zkompilovány do sestavení, které je odkazováno z místního sestavení.
 
 <a name="Local_Assembly_Resource_File"></a>
 
@@ -186,9 +186,9 @@ Následující příklad ukazuje balíček [!INCLUDE[TLA2#tla_uri](../../../../i
 
 ## <a name="page-files"></a>Stránkovací soubory
 
-[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]soubory, které jsou konfigurovány jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho mohou být [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] položkyidentifikoványpomocíbalíčkuprosouboryprostředků.`Page` [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]
+Soubory XAML, které jsou konfigurovány `Page` jako položky MSBuild, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho `Page` mohou být položky MSBuild identifikovány pomocí identifikátorů URI balíčků pro soubory prostředků.
 
-Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně konfigurovány jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky, mají jeden z následujících prvků jako svůj kořenový prvek:
+Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně nakonfigurované jako položky`Page` MSBuild, mají jako svůj kořenový prvek jednu z následujících hodnot:
 
 - <xref:System.Windows.Window?displayProperty=nameWithType>
 

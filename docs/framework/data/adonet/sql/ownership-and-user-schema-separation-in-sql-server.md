@@ -2,32 +2,32 @@
 title: Vlastnictví a oddělení uživatelských schémat na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 2702f56e8b3b339487ffacf7bc1ceb077d4d8b30
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 520772acc5edd812f64c61cc7fdda9db3441c87c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645722"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961088"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Vlastnictví a oddělení uživatelských schémat na SQL Serveru
-Základním konceptem zabezpečení SQL serveru je, že vlastníci objekty mají neodvolatelnou oprávnění ke správě je. Nelze odebrat oprávnění z objektu vlastníka a z databáze nelze vyřadit uživatele, pokud vlastní objekty v ní.  
+Základní pojem zabezpečení SQL Server je, že vlastníci objektů mají neodvolatelná oprávnění ke správě. Nemůžete odebrat oprávnění vlastníka objektu a nemůžete vyřadit uživatele z databáze, pokud v ní vlastní objekty.  
   
-## <a name="user-schema-separation"></a>Oddělení uživatelských schémat  
- Oddělení uživatelských schémat umožňuje větší flexibilitu při správě oprávnění objektu databáze. A *schématu* je pojmenovaný kontejner pro databázové objekty, což vám umožní do objektů skupiny do samostatných oborů názvů. Například ukázkové databáze AdventureWorks obsahuje schémata pro produkci, prodej a lidských zdrojů.  
+## <a name="user-schema-separation"></a>Oddělení schématu uživatele  
+ Oddělení uživatelsky definovaných schémat zajišťuje větší flexibilitu při správě oprávnění databázových objektů. *Schéma* je pojmenovaný kontejner pro databázové objekty, který umožňuje seskupení objektů do samostatných oborů názvů. Například ukázková databáze AdventureWorks obsahuje schémata pro produkci, prodej a Lidskézdroje.  
   
- Složené ze čtyř částí názvů syntaxe pro odkazování na objekty Určuje název schématu.  
+ Syntaxe názvů čtyř částí pro odkazování na objekty určuje název schématu.  
   
 ```  
 Server.Database.DatabaseSchema.DatabaseObject  
 ```  
   
-### <a name="schema-owners-and-permissions"></a>Vlastníci schématu a oprávnění  
- Schémata může být vlastněn libovolný objekt zabezpečení databáze, a vytvoří se jeden objekt může vlastnit více schémat. Pravidla lze použít zabezpečení na schéma, které dědí všechny objekty ve schématu. Až nastavíte přístupová oprávnění pro schéma, tato oprávnění se automaticky použijí jako nové objekty jsou přidány do schématu. Uživatelům je možné přiřadit výchozí schéma a více uživatelů databáze můžete sdílet stejné schéma.  
+### <a name="schema-owners-and-permissions"></a>Vlastníci a oprávnění schématu  
+ Schémata může vlastnit libovolný objekt zabezpečení databáze a jeden instanční objekt může mít několik schémat. Můžete použít pravidla zabezpečení pro schéma, které jsou zděděné všemi objekty ve schématu. Po nastavení oprávnění k přístupu pro schéma se tato oprávnění automaticky uplatní, protože do schématu se přidají nové objekty. Uživatelům může být přiřazeno výchozí schéma a více uživatelů databáze může sdílet stejné schéma.  
   
- Ve výchozím nastavení když vývojáři vytvářet objekty ve schématu, objekty jsou vlastněny objektu zabezpečení, který vlastní schéma není pro vývojáře. Pomocí příkazu ALTER AUTORIZACE Transact-SQL lze přenést vlastnictví objektu. Schéma může také obsahovat objekty, které jsou vlastněny různých uživatelů a oprávnění podrobnější než přiřazené do schématu, i když se to nedoporučuje, protože přispějete ke složitosti správy oprávnění. Objekty lze přesunout mezi schémata a schéma vlastnictví, dají se přenášet mezi objekty zabezpečení. Uživatelé databáze můžete vyřadit bez ovlivnění schémata.  
+ Ve výchozím nastavení, když vývojáři vytvářejí objekty ve schématu, objekty vlastní objekt zabezpečení, který vlastní schéma, nikoli vývojář. Vlastnictví objektu lze přenést pomocí příkazu ALTER-SQL příkazu ALTER AUTHORIZATION. Schéma může obsahovat také objekty, které jsou vlastněny různými uživateli a mají podrobnější oprávnění než přiřazení ke schématu, i když to nedoporučujeme, protože zvyšuje složitost správy oprávnění. Objekty lze přesouvat mezi schématy a vlastnictví schématu lze přenášet mezi objekty zabezpečení. Uživatele databáze je možné vyřadit, aniž by to ovlivnilo schémata.  
   
-### <a name="built-in-schemas"></a>Předdefinovaných schémat  
- SQL Server se dodává s deset předem definovaná schémata, které mají stejné názvy jako integrované databáze uživatelů a rolí. Existují především z důvodu zpětné kompatibility. Schémata, která mají stejné názvy jako pevné databázové role, pokud je nepotřebujete, můžete zrušit. Nelze vyřadit následující schémata:  
+### <a name="built-in-schemas"></a>Vestavěná schémata  
+ SQL Server se dodává s deseti předem definovanými schématy, které mají stejné názvy jako předdefinované uživatele a role databáze. Existují hlavně pro zpětnou kompatibilitu. Schémata, která mají stejné názvy jako pevné databázové role, můžete odstranit, pokud je nepotřebujete. Nemůžete vyřadit následující schémata:  
   
 - `dbo`  
   
@@ -37,25 +37,25 @@ Server.Database.DatabaseSchema.DatabaseObject
   
 - `INFORMATION_SCHEMA`  
   
- Pokud je vyřadit z databáze modelu, nezobrazí se v nové databáze.  
+ Pokud je z databáze modelů vyřadíte, nebudou se zobrazovat v nových databázích.  
   
 > [!NOTE]
->  `sys` a `INFORMATION_SCHEMA` schémata jsou rezervované pro systémové objekty. Nemůže vytvořit objekty v těchto schématech a nelze je vyřadit.  
+> Schémata `sys` a`INFORMATION_SCHEMA` jsou vyhrazena pro systémové objekty. V těchto schématech nemůžete vytvářet objekty a nemůžete je vyřadit.  
   
-#### <a name="the-dbo-schema"></a>Dbo schématu  
- `dbo` Schéma je výchozí schéma pro nově vytvořenou databázi. `dbo` Vlastní schéma `dbo` uživatelský účet. Ve výchozím nastavení, mají uživatelé vytvoření pomocí příkazu Vytvořit uživatele příkazů jazyka Transact-SQL `dbo` jako jejich výchozí schéma.  
+#### <a name="the-dbo-schema"></a>Schéma dbo  
+ `dbo` Schéma je výchozí schéma pro nově vytvořenou databázi. `dbo` Schéma vlastní`dbo` tento uživatelský účet. Ve výchozím nastavení mají `dbo` uživatelé vytvořeni pomocí příkazu Transact-SQL Create User jako výchozí schéma.  
   
- Uživatelé, kteří jsou přiřazeni `dbo` schématu nedědí oprávnění `dbo` uživatelský účet. Žádná oprávnění jsou zděděny z schématu uživatelů. oprávnění schématu jsou děděné databázové objekty obsažené ve schématu.  
+ Uživatelé, kteří jsou přiřazeni `dbo` schématu, nedědí oprávnění `dbo` k uživatelskému účtu. Pro uživatele nejsou děděna žádná oprávnění od schématu. objektům databáze obsaženým ve schématu jsou zděděna oprávnění schématu.  
   
 > [!NOTE]
->  Databázové objekty je odkazováno pomocí názvu jednu část, SQL Server nejprve hledá v výchozí schéma uživatele. Pokud se objekt nenajde existuje, hledá dále v systému SQL Server `dbo` schématu. Pokud není v objektu `dbo` schéma, je vrácena chyba.  
+> Pokud jsou objekty databáze odkazovány pomocí názvu jedné součásti, SQL Server nejprve vyhledá ve výchozím schématu uživatele. Pokud se objekt nenalezne, SQL Server ve `dbo` schématu dál. Pokud objekt není ve `dbo` schématu, je vrácena chyba.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace o vlastnictví objektu a schémat najdete v následující prostředky.  
+ Další informace o vlastnictví objektů a schématech naleznete v následujících zdrojích informací.  
   
 |Resource|Popis|  
 |--------------|-----------------|  
-|[Oddělení uživatelských schémat](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Jsou zde popsány změny zavedené oddělení uživatelských schémat. Zahrnuje nové chování, jeho dopad na vlastnictví, zobrazení katalogu a oprávnění.|  
+|[Oddělení schématu uživatele](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Popisuje změny zavedené oddělením schématu uživatele. Zahrnuje nové chování, jeho dopad na vlastnictví, zobrazení katalogu a oprávnění.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -64,4 +64,4 @@ Server.Database.DatabaseSchema.DatabaseObject
 - [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)
 - [Serverové a databázové role na SQL Serveru](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)
 - [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

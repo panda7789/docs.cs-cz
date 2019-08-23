@@ -1,21 +1,21 @@
 ---
-title: Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
+title: Staticky kompilované dotazy (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3f4825c7-c3b0-48da-ba4e-8e97fb2a2f34
-ms.openlocfilehash: b26e0e21ae88ae0a40de1593294c004d394e38ed
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f9e703e65b333c0fd0c2a3219d537466c686af10
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610671"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961903"
 ---
-# <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
-Jeden z vašich nejdůležitějších výkonu výhody LINQ to XML, nikoli <xref:System.Xml.XmlDocument>, dotazy v LINQ to XML nejsou staticky zkompilován, zatímco v době běhu musí být interpretován dotazy XPath. Tato funkce je založená na technologii LINQ to XML, takže není potřeba provést další kroky pro jejich výhod, ale je vhodné pochopit v čem při volbě mezi tyto technologie. Toto téma vysvětluje rozdíl.  
+# <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky kompilované dotazy (LINQ to XML) (Visual Basic)
+Jedna z nejdůležitějších výhod výkonu LINQ to XML, na rozdíl od <xref:System.Xml.XmlDocument>, je, že dotazy v LINQ to XML jsou staticky kompilovány, zatímco dotazy XPath musí být interpretovány za běhu. Tato funkce je integrovaná do LINQ to XML, takže není nutné provádět další kroky, abyste je mohli využít, ale je užitečné pochopit rozdíl mezi těmito dvěma technologiemi. Toto téma popisuje rozdíl.  
   
-## <a name="statically-compiled-queries-vs-xpath"></a>Staticky kompilaci dotazů vs. XPath  
- Následující příklad ukazuje, jak získat Následnické prvky se zadaným názvem a atribut se zadanou hodnotou.  
+## <a name="statically-compiled-queries-vs-xpath"></a>Staticky kompilované dotazy vs. XPath  
+ Následující příklad ukazuje, jak získat odvozené prvky se zadaným názvem a s atributem se zadanou hodnotou.  
   
- Toto je ekvivalentní výraz XPath:  
+ Následuje ekvivalentní výraz XPath:  
   
 ```  
 //Address[@Type='Shipping']  
@@ -32,7 +32,7 @@ For Each el In list1
 Next  
 ```  
   
- Výraz dotazu v tomto příkladu je znovu zapsat pomocí kompilátoru, aby syntaxe dotazů založených na volání metody. V následujícím příkladu, který je napsán v syntaxe dotazů založených na volání metody, vytvoří stejné výsledky jako předchozí:  
+ Výraz dotazu v tomto příkladu je znovu napsán kompilátorem do syntaxe dotazu založeného na metodě. Následující příklad, který je napsán v syntaxi dotazu založeného na metodách, vytváří stejné výsledky jako předchozí:  
   
 ```vb  
 Dim po = XDocument.Load("PurchaseOrders.xml")  
@@ -44,7 +44,7 @@ For Each el In list1
 Next   
 ```  
   
- <xref:System.Linq.Enumerable.Where%2A> Metoda je metodou rozšíření. Další informace najdete v tématu [rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Protože <xref:System.Linq.Enumerable.Where%2A> je metodu rozšíření se výše uvedený dotaz je zkompilován, jako by byl napsán takto:  
+ <xref:System.Linq.Enumerable.Where%2A> Metoda je rozšiřující metoda. Další informace naleznete v tématu [metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Vzhledem <xref:System.Linq.Enumerable.Where%2A> k tomu, že je metoda rozšíření, je dotaz výše zkompilován, jako by byl napsán takto:  
   
 ```vb  
 Dim po = XDocument.Load("PurchaseOrders.xml")  
@@ -56,13 +56,13 @@ For Each el In list1
 Next  
 ```  
   
- Tento příklad vytvoří stejné výsledky jako v předchozích dvou příkladech. To ukazuje na skutečnost, že jsou dotazy efektivně kompilovány do volání metody staticky propojené. Ve spojení se sémantika odložené provedení iterátory, přičemž zlepšuje výkon. Další informace o sémantice odložené provedení iterátory, naleznete v tématu [odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
+ Tento příklad vytváří přesně stejné výsledky jako v předchozích dvou příkladech. To ukazuje fakt, že dotazy jsou efektivně zkompilovány do staticky propojených volání metody. V kombinaci s sémantikou pro odložené provádění iterátorů zvyšuje výkon. Další informace o devodit sémantikě iterátorů naleznete [v tématu Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
 > [!NOTE]
->  Tyto příklady jsou zástupce kód, který kompilátor může zapsat. Skutečná implementace může mírně lišit od těchto příkladech, ale výkon bude stejná nebo podobný tyto příklady.  
+> Tyto příklady jsou zástupci kódu, který kompilátor může zapisovat. Skutečná implementace se může mírně lišit od těchto příkladů, ale výkon bude stejný nebo podobný jako v těchto příkladech.  
   
-## <a name="executing-xpath-expressions-with-xmldocument"></a>Výrazy XPath s třídou XMLDocument nastavenou na provádění  
- Následující příklad používá <xref:System.Xml.XmlDocument> provádět stejné výsledky jako v předchozích příkladech:  
+## <a name="executing-xpath-expressions-with-xmldocument"></a>Provádění výrazů XPath s XmlDocument  
+ Následující příklad používá <xref:System.Xml.XmlDocument> k dosažení stejných výsledků jako předchozí příklady:  
   
 ```vb  
 Dim reader = Xml.XmlReader.Create("PurchaseOrders.xml")  
@@ -75,19 +75,19 @@ Next
 reader.Close()  
 ```  
   
- Tento dotaz vrací stejný výstup jako příklady, které používají technologii LINQ to XML jediným rozdílem je, že technologie LINQ to XML odsazení tištěné XML, zatímco <xref:System.Xml.XmlDocument> tak není.  
+ Tento dotaz vrátí stejný výstup jako příklady, které používají LINQ to XML; Jediným rozdílem je, že LINQ to XML odsadí vytištěný XML, <xref:System.Xml.XmlDocument> zatímco ne.  
   
- Ale <xref:System.Xml.XmlDocument> přístup obvykle neprovádí tak LINQ to XML, protože <xref:System.Xml.XmlNode.SelectNodes%2A> metoda musí takto interně pokaždé, když je volána:  
+ Obecně se ale neprovádí ani LINQ to XML, <xref:System.Xml.XmlNode.SelectNodes%2A> protože metoda musí provést následující interně při každém volání: <xref:System.Xml.XmlDocument>  
   
-- Analyzuje řetězec, který obsahuje výraz XPath, rozdělení řetězec do tokenů.  
+-   Analyzuje řetězec, který obsahuje výraz XPath a přerušuje řetězec na tokeny.  
   
-- Ověřuje tokeny, abyste měli jistotu, že výraz XPath je neplatný.  
+-   Ověřuje tokeny, aby bylo zajištěno, že je výraz XPath platný.  
   
-- Převádí výraz, který strom interních výrazů.  
+-   Převede výraz do vnitřního stromu výrazu.  
   
-- Prochází uzly, odpovídajícím způsobem výběru uzlů pro sady výsledků na základě vyhodnocení výrazu.  
+-   Projde uzly a odpovídajícím způsobem vybere uzly sady výsledků na základě vyhodnocení výrazu.  
   
- To je mnohem větší než práce provádí odpovídající dotazu LINQ to XML. Rozdíl měřené liší pro jednotlivé typy dotazů, ale v obecné LINQ to XML dotazy méně práci a proto fungoval lépe, než vyhodnocení výrazů XPath pomocí <xref:System.Xml.XmlDocument>.  
+ To je podstatně větší než práce prováděná odpovídajícím dotazem LINQ to XML. Konkrétní rozdíl mezi výkonem se liší v různých typech dotazů, ale obecně LINQ to XML dotazy méně fungují, a proto je lepší, než vyhodnocování výrazů XPath pomocí <xref:System.Xml.XmlDocument>.  
   
 ## <a name="see-also"></a>Viz také:
 

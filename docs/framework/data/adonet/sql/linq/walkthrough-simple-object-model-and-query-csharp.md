@@ -2,12 +2,12 @@
 title: 'Návod: Jednoduchý objektový model a dotaz (C#)'
 ms.date: 03/30/2017
 ms.assetid: 419961cc-92d6-45f5-ae8a-d485bdde3a37
-ms.openlocfilehash: 43092eb7490d5629f1ababac1d8f8b3aff94299b
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 4661dffa037504d9157f30af12d4308a4d7644a2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971868"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946926"
 ---
 # <a name="walkthrough-simple-object-model-and-query-c"></a>Návod: Jednoduchý objektový model a dotaz (C#)
 
@@ -117,7 +117,7 @@ Deklarujete také, `Table<Customer>` aby sloužil jako logická, typová tabulka
 
 ## <a name="creating-a-simple-query"></a>Vytvoření jednoduchého dotazu
 
-V tomto kroku vytvoříte dotaz pro vyhledání zákazníků v tabulce Database Customers (zákazníci), kteří se nacházejí v Londýně. Dotazový kód v tomto kroku pouze popisuje dotaz. Nespustí ho. Tento přístup se označuje jako *odložené provádění*. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).
+V tomto kroku vytvoříte dotaz pro vyhledání zákazníků v tabulce Database Customers (zákazníci), kteří se nacházejí v Londýně. Dotazový kód v tomto kroku pouze popisuje dotaz. Nespustí ho. Tento přístup se označuje jako *odložené provádění*. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
 Vytvoří se také výstup protokolu pro zobrazení příkazů SQL, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generují. Tato funkce protokolování (která používá <xref:System.Data.Linq.DataContext.Log%2A>) je užitečná při ladění a při určování, zda jsou příkazy, které jsou odesílány do databáze, přesně reprezentovány vaším dotazem.
 
@@ -140,7 +140,7 @@ V tomto kroku ve skutečnosti spustíte dotaz. Výrazy dotazu, které jste vytvo
 2. Pro ladění aplikace stiskněte klávesu F5.
 
     > [!NOTE]
-    >  Pokud vaše aplikace vygeneruje chybu za běhu, přečtěte si pokyny v části věnované řešení potíží v tématu [učení](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
+    > Pokud vaše aplikace vygeneruje chybu za běhu, přečtěte si pokyny v části věnované řešení potíží v tématu [učení](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
 
      Výsledky dotazu v okně konzoly by měly vypadat takto:
 

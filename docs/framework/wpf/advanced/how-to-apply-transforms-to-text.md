@@ -15,54 +15,54 @@ helpviewer_keywords:
 - scaled text [WPF]
 - typography [WPF], skewed text
 ms.assetid: 0d61678a-4185-4f2a-85c6-c1d020f96fa0
-ms.openlocfilehash: 46a57364e0c18cc4c9fe7884642cd0b718c20f31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b749d21c1b5940d216e244393eeb3c133dc153b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776935"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956473"
 ---
 # <a name="how-to-apply-transforms-to-text"></a>Postupy: Použití transformací na text
-Transformace můžete změnit zobrazení textu v aplikaci. Následující příklady používají různé druhy transformace vykreslování ovlivnit zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacího prvku.  
+Transformace mohou změnit zobrazení textu v aplikaci. Následující příklady používají různé typy transformací vykreslování pro vliv zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacím prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje text otočený o určitému bodu v rovině dvojrozměrné x-y.  
+ Následující příklad ukazuje text otočený o zadaný bod v dvojrozměrné rovině x-y.  
   
- ![Text otočen pomocí RotateTransform](./media/how-to-apply-transforms-to-text/text-rotated-ninety-degrees.jpg)  
+ ![Text otočený pomocí RotateTransform](./media/how-to-apply-transforms-to-text/text-rotated-ninety-degrees.jpg)  
   
- Následující příklad kódu používá <xref:System.Windows.Media.RotateTransform> otočit text. <xref:System.Windows.Media.RotateTransform.Angle%2A> Hodnotu 90 otočí element 90 stupňů po směru hodinových ručiček.  
+ Následující příklad kódu používá <xref:System.Windows.Media.RotateTransform> pro otočení textu. <xref:System.Windows.Media.RotateTransform.Angle%2A> Hodnota 90 otočí prvek 90 stupňů po směru hodinových ručiček.  
   
  [!code-xaml[TextTransformSample#TextTransformSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTransformSample/CS/Window1.xaml#texttransformsample1)]  
   
- Následující příklad ukazuje, druhý řádek textu měřítkem řídit 150 % podél osy x a třetí řádek textu měřítkem řídit 150 % podél osy y.  
+ Následující příklad ukazuje druhý řádek textu škálované o 150% podél osy x a třetí řádek textu se škáluje o 150% podél osy y.  
   
- ![Škálování, použití ScaleTransform – text](./media/how-to-apply-transforms-to-text/scaled-text-scaletransform.jpg) 
+ ![Zvětšený text pomocí ScaleTransform](./media/how-to-apply-transforms-to-text/scaled-text-scaletransform.jpg) 
   
- Následující příklad kódu používá <xref:System.Windows.Media.ScaleTransform> na škálování text z jeho původní velikost.  
+ Následující příklad kódu používá <xref:System.Windows.Media.ScaleTransform> pro horizontální navýšení kapacity textu z jeho původní velikosti.  
   
  [!code-xaml[TextTransformSample#TextTransformSample2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTransformSample/CS/Window1.xaml#texttransformsample2)]  
   
 > [!NOTE]
->  Škálování text není stejný jako zvýšit velikost písma textu. Velikost písma se počítají nezávisle na sobě negace nejlepší řešení při různých velikostech. Text se změnou měřítka, na druhé straně zachová poměr stran původní velikost textu.  
+> Škálování textu není stejné jako zvětšení velikosti písma textu. Velikosti písem jsou počítány nezávisle na sobě, aby bylo možné zajistit optimální rozlišení v různých velikostech. Na druhé straně škálované textu zachovává proporce textu původní velikosti.  
   
  Následující příklad ukazuje text zkosený podél osy x.  
   
  ![Text zkosený pomocí SkewTransform](./media/how-to-apply-transforms-to-text/skewed-transformed-text.jpg)
    
- Následující příklad kódu používá <xref:System.Windows.Media.SkewTransform> zkosení text. Nerovnoměrná distribuce, označované také jako zkosení je transformace, která roztáhne souřadnicového prostoru nerovnoměrné způsobem. V tomto příkladu jsou dva textové řetězce výrazně nerovnoměrnou distribucí °-30 a 30 ° podél souřadnici x.  
+ Následující příklad kódu používá <xref:System.Windows.Media.SkewTransform> pro zkosení textu. Zkosení, označované také jako zkosit, je transformace, která roztáhne prostor souřadnic nejednotným způsobem. V tomto příkladu jsou dva textové řetězce zkosených – 30 ° a 30 ° podél souřadnice x.  
   
  [!code-xaml[TextTransformSample#TextTransformSample3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTransformSample/CS/Window1.xaml#texttransformsample3)]  
   
- Následující příklad ukazuje textové přeložit nebo přesunuty podél x a osy y.  
+ Následující příklad zobrazuje přeložený nebo přesunutý text podél osy x a y.  
   
- ![Text odsazení pomocí TranslateTransform](./media/how-to-apply-transforms-to-text/transformed-text-x-y-axis.jpg)
+ ![Posun textu pomocí TranslateTransform](./media/how-to-apply-transforms-to-text/transformed-text-x-y-axis.jpg)
   
- Následující příklad kódu používá <xref:System.Windows.Media.TranslateTransform> odsazení textu. V tomto příkladu vytvoří kopii mírně posunu text pod primární text efektem stínování.  
+ Následující příklad kódu používá <xref:System.Windows.Media.TranslateTransform> k posunu textu. V tomto příkladu mírně posunutí kopie textu pod primárním textem vytvoří stínový efekt.  
   
  [!code-xaml[TextTransformSample#TextTransformSample4](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTransformSample/CS/Window1.xaml#texttransformsample4)]  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> Poskytuje bohatou sadu funkcí pro zajištění efekty stínování. Další informace najdete v tématu [vytvoření textu se stínem](how-to-create-text-with-a-shadow.md).  
+> <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> Poskytuje bohatou sadu funkcí pro zajištění stínových efektů. Další informace najdete v tématu [Vytvoření textu se stínem](how-to-create-text-with-a-shadow.md).  
   
 ## <a name="see-also"></a>Viz také:
 

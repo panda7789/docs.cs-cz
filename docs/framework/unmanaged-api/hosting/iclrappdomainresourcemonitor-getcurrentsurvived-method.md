@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10df17f2f21928ab89c65be7fd07afe81c468a07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bf285b6e1f703c8776937fa33c7ab5801f04f80f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766554"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950163"
 ---
 # <a name="iclrappdomainresourcemonitorgetcurrentsurvived-method"></a>ICLRAppDomainResourceMonitor::GetCurrentSurvived – metoda
-Získá počet bajtů, které zůstat naživu při poslední úplné blokující uvolňování paměti a, který je odkazováno dle aktuální domény aplikace.  
+Vrátí počet bajtů, které byly zachovány při posledním plném, blokování uvolnění paměti a odkazují aktuální doménu aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,39 +38,39 @@ HRESULT STDMETHODCALLTYPE GetCurrentSurvived(
   
 ## <a name="parameters"></a>Parametry  
  `dwAppDomainId`  
- [in] ID domény požadované aplikace.  
+ pro ID požadované aplikační domény  
   
  `pAppDomainBytesSurvived`  
- [out] Ukazatel na počet bajtů, které zůstat naživu po poslední uvolnění paměti, které jsou uloženy v této doméně aplikace. Toto číslo po celé kolekce, je přesné a úplné. Toto číslo je po dočasné kolekce, potenciálně neúplné. Tento parametr může být `null`.  
+ mimo Ukazatel na počet bajtů, které byly zachovány po posledním uvolňování paměti, které jsou uloženy touto doménou aplikace. Po úplné kolekci je toto číslo přesné a úplné. Po dočasné kolekci je toto číslo potenciálně neúplné. Tento parametr může být `null`.  
   
  `pRuntimeBytesSurvived`  
- [out] Ukazatel na celkový počet bajtů, které zůstat naživu z posledního kolekce uvolnění paměti. Po celé kolekce toto číslo představuje počet bajtů, které jsou uloženy ve spravované haldy. Po dočasné kolekce toto číslo představuje počet bajtů, které jsou uloženy v dočasné generace. Tento parametr může být `null`.  
+ mimo Ukazatel na celkový počet bajtů, které byly zachovány z posledního uvolňování paměti. Po úplné kolekci představuje toto číslo počet bajtů, které jsou uloženy ve spravovaných haldách. Po dočasné kolekci představuje toto číslo počet bajtů, které jsou v dočasných generacích uloženy v reálném čase. Tento parametr může být `null`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|COR_E_APPDOMAINUNLOADED|Aplikační domény byl odpojen nebo neexistuje.|  
+|COR_E_APPDOMAINUNLOADED|Doména aplikace byla uvolněna nebo neexistuje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Statistiky jsou aktualizovány pouze po úplné blokující uvolňování paměti; To znamená, že dojde k kolekci, která obsahuje všechny generace, která ukončí aplikaci při shromažďování. Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody provede úplné blokující kolekce. Souběžné uvolňování paměti probíhá na pozadí a nedochází k blokování aplikace.  
+ Statistika se aktualizuje až po úplném a blokujícím uvolňování paměti. To znamená, že kolekce obsahující všechny generace a zastavuje aplikaci, když dojde ke shromažďování. Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody provádí úplnou, blokující kolekci. Souběžné uvolňování paměti probíhá na pozadí a neblokuje aplikaci.  
   
- `GetCurrentSurvived` Metoda odpovídá nespravované spravované <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
+ Metoda je nespravovaný ekvivalent spravované <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnosti. `GetCurrentSurvived`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlaviček** MetaHost.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [ICLRAppDomainResourceMonitor – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
-- [Sledování prostředků domény aplikace](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)
+- [Sledování prostředků domény aplikace](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
 - [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

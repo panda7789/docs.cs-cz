@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider2::GetFrameProps Method
+title: 'ICorDebugSymbolProvider2:: GetFrameProps – metoda'
 ms.date: 03/30/2017
 ms.assetid: f07b73f3-188d-43a9-8f7d-44dce2f1ddb7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 274da030bbbb7c614709b5150f08f37ddf5aaf5a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c22e9c58a203c13611298e1956a6951d8ca7e8b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771162"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955499"
 ---
-# <a name="icordebugsymbolprovider2getframeprops-method"></a>ICorDebugSymbolProvider2::GetFrameProps Method
-Vrátí metodu počáteční relativní virtuální adresa metodu a daný kód relativní virtuální adresu nadřazeného rámce.  
+# <a name="icordebugsymbolprovider2getframeprops-method"></a>ICorDebugSymbolProvider2:: GetFrameProps – metoda
+Vrátí metodu, která spouští relativní virtuální adresu metody a nadřazený rámec pro relativní virtuální adresu kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,27 +26,27 @@ HRESULT GetFrameProps(
   
 ## <a name="parameters"></a>Parametry  
  `codeRva`  
- [in] Kód relativní virtuální adresu.  
+ pro Relativní virtuální adresa pro kód.  
   
  `pCodeStartRva`  
- [out] Ukazatel způsob spuštění relativní virtuální adresu.  
+ mimo Ukazatel na počáteční relativní virtuální adresu metody.  
   
  `pParentFrameStartRva`  
- [out] Ukazatel rámec počáteční relativní virtuální adresa.  
+ mimo Ukazatel na počáteční relativní virtuální adresu rámce.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

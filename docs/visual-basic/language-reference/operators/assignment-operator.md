@@ -8,15 +8,15 @@ helpviewer_keywords:
 - = operator [Visual Basic]
 - = assignment statements [Visual Basic]
 ms.assetid: 2dac2e49-86c8-42f8-80c1-458452fb5e29
-ms.openlocfilehash: ad74e3ebc947af4f36022be838b69df6ce24997a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d260dffb7175e9dddcbf9acb75415f5f973727e2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608268"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962019"
 ---
 # <a name="-operator-visual-basic"></a>= – operátor (Visual Basic)
-Přiřadí hodnotu k proměnné nebo vlastnosti.  
+Přiřadí hodnotu proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,19 +26,19 @@ variableorproperty = value
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Jakékoli zapisovatelné proměnnou nebo vlastnost.  
+ Jakákoli zapisovatelná proměnná nebo libovolná vlastnost.  
   
  `value`  
- Všechny literál, konstanta nebo výraz.  
+ Libovolný literál, konstanta nebo výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Element na levé straně znaménka rovnosti (`=`) může být jednoduché skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md). `=` Operátor přiřadí hodnotu napravo na proměnnou nebo vlastnost na levé straně.  
+ Element na levé straně znaménka rovná se (`=`) může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md). `=` Operátor přiřadí hodnotu přímo k proměnné nebo vlastnosti nalevo.  
   
 > [!NOTE]
->  `=` Operátor slouží také jako operátor porovnání. Podrobnosti najdete v tématu [operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md).  
+> `=` Operátor je také použit jako operátor porovnání. Podrobnosti naleznete v tématu [operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md).  
   
 ## <a name="overloading"></a>Přetížení  
- `=` Operátor může být přetížená pouze jako operátor porovnání relační, nikoli jako operátor přiřazení. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ `=` Operátor může být přetížen pouze jako relační relační operátor, nikoli jako operátor přiřazení. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje operátor přiřazení. Hodnota na pravé straně je přiřazena k proměnné na levé straně.  
@@ -51,8 +51,8 @@ variableorproperty = value
 - [*= – operátor](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)
 - [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
 - [-= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
-- [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
-- [\\= Operator](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
+- [/= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
+- [\\= – Operátor](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
 - [^= – operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)

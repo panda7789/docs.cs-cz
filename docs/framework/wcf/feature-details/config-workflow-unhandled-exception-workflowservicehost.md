@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace chování pracovního postupu nezpracované výjimky pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 51b25c86-292c-43e4-8d13-273d2badc8ad
-ms.openlocfilehash: cd3729019b5371b5313bba3814758c723c0d448a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aec2fd80e10ae1959b29c0883d51c4045517d792
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857555"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957260"
 ---
 # <a name="how-to-configure-workflow-unhandled-exception-behavior-with-workflowservicehost"></a>Postupy: Konfigurace chování pracovního postupu nezpracované výjimky pomocí třídy WorkflowServiceHost
-<xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> Je chování, které vám umožní zadat akce má být provedena, pokud dojde k neošetřené výjimce v pracovním postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Toto téma ukazuje, jak konfigurovat toto chování v konfiguračním souboru.  
+Je chování, které umožňuje určit akci, která se má provést, pokud dojde k neošetřené výjimce v rámci pracovního postupu, který je hostovaný v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> V tomto tématu se dozvíte, jak nakonfigurovat toto chování v konfiguračním souboru.  
   
-### <a name="to-configure-workflowunhandledexceptionbehavior"></a>Ke konfiguraci WorkflowUnhandledExceptionBehavior  
+### <a name="to-configure-workflowunhandledexceptionbehavior"></a>Konfigurace WorkflowUnhandledExceptionBehavior  
   
-1. Přidat <`workflowUnhandledException`> element v <`behavior`> element v rámci <`serviceBehaviors`> element, pomocí `action` atribut k určení akce má být provedena, když dojde k neošetřené výjimce, jak je znázorněno v následujícím příkladu.  
+1. Přidejte <`workflowUnhandledException`> prvek do <`behavior`> element v rámci <`serviceBehaviors`> elementu pomocí `action` atributu pro určení akce, která se má provést, když dojde k neošetřené výjimce, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <behaviors>  
@@ -27,29 +27,29 @@ ms.locfileid: "61857555"
     ```  
   
     > [!NOTE]
-    >  Zjednodušená konfigurace používá předchozí ukázka konfigurace. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
+    > Předchozí konfigurační ukázka používá zjednodušenou konfiguraci. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
   
-     Toto chování lze nastavit v kódu, jak je znázorněno v následujícím příkladu.  
+     Toto chování lze nakonfigurovat v kódu, jak je znázorněno v následujícím příkladu.  
   
     ```csharp  
     host.Description.Behaviors.Add(new WorkflowUnhandledExceptionBehavior { Action = WorkflowUnhandledExceptionAction.AbandonAndSuspend });  
     ```  
   
-     `action` Atribut <`workflowUnhandledException`> element můžete nastavit na jedno z následujících hodnot:  
+     Atribut prvku <`workflowUnhandledException`> může být nastaven na jednu z následujících hodnot: `action`  
   
      **abandon**  
-     Zruší instance v paměti bez zásahu do stavu trvalé instanci (který se vrátit k poslední bod trvalého).  
+     Přeruší instanci v paměti, aniž by se dotkla trvalého stavu instance (tj. návrat k poslednímu bodu trvalého uložení).  
   
      **abandonAndSuspend**  
-     Zruší instance v paměti a aktualizuje trvalou instanci bude pozastavena.  
+     Přeruší instanci v paměti a aktualizuje trvale pozastavenou instanci.  
   
-     **Zrušit**  
-     Obslužné rutiny zrušení volání pro instanci a pak dokončí instance v paměti, což může také odebrat z úložiště instancí  
+     **operaci**  
+     Volá obslužné rutiny zrušení pro instanci a pak dokončí instanci v paměti, což může také odebrat z úložiště instance.  
   
-     **ukončit**  
-     Dokončení instance v paměti a odstraní ji z úložiště instancí.  
+     **ruší**  
+     Dokončí instanci v paměti a odebere ji z úložiště instance.  
   
-     Další informace o <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>, naleznete v tématu [rozšíření hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
+     Další informace o <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>najdete v tématu [rozšiřitelnost hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
   
 ## <a name="see-also"></a>Viz také:
 

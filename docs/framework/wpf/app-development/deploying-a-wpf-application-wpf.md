@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 16a0436accfb031ddd0bb413e519d80e550786b4
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: cfb617fde514c93596d52b0ca70da39c6e5be301
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972273"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958651"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
-Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
+Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, závisí na typu aplikace. V tomto tématu najdete stručný přehled jednotlivých technologií nasazení a jejich použití ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typů aplikací.  
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]a .NET Framework zahrnují několik technologií nasazení, včetně:  
+ Windows a .NET Framework zahrnují několik technologií nasazení, včetně:  
   
 - Nasazení XCopy.  
   
@@ -39,7 +39,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Windows_Installer"></a>   
 ### <a name="windows-installer"></a>Instalační služba systému Windows  
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]umožňuje, aby se aplikace zabalené jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] se instaluje s [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a umožňuje integraci s desktopem, nabídkou Start a ovládacími panely programu.  
+ [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]umožňuje, aby se aplikace zabalené jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] je nainstalována se systémem Windows a umožňuje integraci s plochou, nabídkou Start a ovládacími panely programu.  
   
  [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje vybavení pro zajištění aktuálnosti nainstalovaných aplikací z hlediska správy verzí.  
   
@@ -96,7 +96,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
 - *ApplicationName*.exe.manifest: Manifest aplikace  
   
 > [!NOTE]
->  Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
+> Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
  Tyto soubory jsou vytvářeny, [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] když je sestavena. Další informace najdete v tématu [jak: Vytvořte nový projekt](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))aplikace WPF Browser. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Například[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] stránky pouze s označením jsou obvykle publikovány na webový server a zobrazovány pomocí aplikace Internet Explorer.  
   

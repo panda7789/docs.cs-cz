@@ -12,33 +12,33 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-ms.openlocfilehash: 786466cb0b94a96e629a1f173388ed7d40be7256
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 59559f8775a5fd66a567897b009272df1727b1e8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661910"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953334"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
-Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat místní proměnné deklarované bez `As` klauzuli. Kompilátor odvodí typ proměnné z typu výrazu inicializace. To umožňuje deklarovat proměnné bez explicitně typu, s informacemi o tom, jak je znázorněno v následujícím příkladu. V důsledku deklarace obě `num1` a `num2` jsou silného typu jako celá čísla.  
+Kompilátor Visual Basic používá *odvození typu* k určení datových typů místních proměnných deklarovaných bez `As` klauzule. Kompilátor odvodí typ proměnné z typu inicializačního výrazu. To umožňuje deklarovat proměnné bez explicitního oznámení typu, jak je znázorněno v následujícím příkladu. V důsledku deklarací jsou oba `num1` a `num2` silně typované jako celá čísla.  
   
  [!code-vb[VbVbalrTypeInference#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#1)]  
  
 > [!NOTE]
->  Pokud nechcete, aby `num2` v předchozím příkladu na zadaný jako `Integer`, můžete určit jiný typ pomocí deklarací, jako `Dim num3 As Object = 3` nebo `Dim num4 As Double = 3`.  
+> `num2` Pokud nechcete `Integer`, aby byl v předchozím příkladu zadán jako, lze zadat jiný typ pomocí deklarace jako `Dim num3 As Object = 3` nebo `Dim num4 As Double = 3`.  
 
 > [!NOTE]
->  Odvození typu proměnné lze použít pouze pro nestatické lokální proměnné; nedá se použít k určení typu třídy pole, vlastnosti a funkce.
+> Odvození typu lze použít pouze pro nestatické lokální proměnné; nelze ji použít k určení typu polí třídy, vlastností nebo funkcí.
  
- Odvození místního typu se vztahuje na úrovni postup. Nelze použít pro deklarování proměnných na úrovni modulu (v rámci třídy, struktury, modul nebo rozhraní, ale není v rozsahu proceduru nebo blok). Pokud `num2` v předchozím příkladu se o pole třídy místo místní proměnné v postupu, deklarace by způsobila chybu s `Option Strict` a bude klasifikovat `num2` jako `Object` s `Option Strict` vypnout. Podobně, se nedá použít odvození místního typu k postupu úrovně proměnné deklarované jako `Static`.  
+ Odvození místního typu se vztahuje na úrovni procedury. Nedá se použít k deklaraci proměnných na úrovni modulu (v rámci třídy, struktury, modulu nebo rozhraní, ale ne v rámci procedury nebo bloku). Pokud `num2` byl v předchozím příkladu pole třídy namísto lokální proměnné v proceduře, deklarace by způsobila `Option Strict` chybu na v `Object` a `Option Strict` měla by klasifikovat `num2` jako off. Podobně odvození místního typu se nevztahuje na proměnné na úrovni procedury deklarované jako `Static`.  
   
-## <a name="type-inference-vs-late-binding"></a>Typ odvození vs. Pozdní vazby  
- Kód, že použití odvození typu vypadá podobně jako kód, který využívá pozdní vazby. Však odvození typu silnými typy proměnnou nenechávejte jako `Object`. Kompilátor používá k určení typu proměnné v době kompilace pro vytvoření kódu časné vazby proměnná inicializátor. V předchozím příkladu `num2`, třeba `num1`, je `Integer`.  
+## <a name="type-inference-vs-late-binding"></a>Odvození typu vs. Pozdní vazba  
+ Kód, který používá odvození typu, se podobá kódu, který závisí na pozdní vazbě. Nicméně odvození typu je místo toho, aby je proměnná zanechala `Object`jako. Kompilátor používá inicializátor proměnné k určení typu proměnné v době kompilace pro vytvoření kódu na začátku vazby. V předchozím příkladu `num2` `num1`, například `Integer`, je jako typ zadán.  
   
- Chování časné vazby proměnné se liší od proměnné s pozdní vazbou, pro které typ je znám pouze za běhu. Vědomí, že typ již v rané fázi umožňuje kompilátoru k identifikaci problémů před spuštěním, přesně přidělení paměti a provádět další optimalizace. Časná vazba umožňuje také integrovaného vývojového prostředí (IDE) k poskytnutí technologie IntelliSense nápovědy o členy objektu jazyka Visual Basic. Časná vazba je také upřednostněny výkonu. Důvodem je, že všechna data uložená v proměnné s pozdní vazbou, musí být zabalené jako typ `Object`, a přístup k členům typu za běhu programu pomalejší.  
+ Chování proměnných s časnou vazbou se liší od proměnné s pozdní vazbou, pro které je typ znám pouze v době běhu. Znalost typu předčasné umožňuje kompilátoru identifikovat problémy před provedením, přidělit paměť přesně a provádět další optimalizace. Časná vazba také umožňuje Visual Basic integrované vývojové prostředí (IDE), které poskytuje nápovědu IntelliSense o členech objektu. Pro výkon je upřednostňována i počáteční vazba. Důvodem je, že všechna data uložená v proměnné s pozdní vazbou musí být zabalena `Object`jako typ a přístup k členům typu za běhu program zpomalí.  
   
 ## <a name="examples"></a>Příklady  
- Odvození typu vyvolá se v případě lokální proměnná je deklarovaná bez `As` klauzule a inicializován. Kompilátor používá jako typ proměnné typu počáteční hodnota. Například všechny následující řádky kódu deklaruje proměnnou typu `String`.  
+ Odvození typu nastane, pokud je místní proměnná deklarována bez `As` klauzule a inicializovaná. Kompilátor používá typ přiřazené počáteční hodnoty jako typ proměnné. Například každý z následujících řádků kódu deklaruje proměnnou typu `String`.  
   
  [!code-vb[VbVbalrTypeInference#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#2)]  
   
@@ -46,30 +46,30 @@ Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat mís
   
  [!code-vb[VbVbalrTypeInference#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#3)]  
   
- Je vhodné použít odvození typu k určení typu řídicí proměnná smyčky for. V následujícím kódu, kompilátor odvodí, které `number` je `Integer` protože `someNumbers2` z předchozího příkladu je pole celých čísel.  
+ Je vhodné použít odvození typu k určení typu řídicí proměnné smyčky. V následujícím kódu kompilátor odvodí, že `number` `Integer` `someNumbers2` v předchozím příkladu je pole celých čísel.  
   
  [!code-vb[VbVbalrTypeInference#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#4)]  
   
- Odvození místního typu lze použít v `Using` příkazy k vytvoření typu název prostředku, jak ukazuje následující příklad.  
+ Odvození místního typu lze použít v `Using` příkazech k vytvoření typu názvu prostředku, jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrTypeInference#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#7)]  
   
- Typ proměnné také jde odvodit z návratové hodnoty funkce, jak ukazuje následující příklad. Obě `pList1` a `pList2` jsou pole procesů, protože `Process.GetProcesses` vrátí celou řadu procesů.  
+ Typ proměnné lze také odvodit z vrácených hodnot funkcí, jak ukazuje následující příklad. A jsou pole procesů, protože `Process.GetProcesses` vrací pole procesů. `pList2` `pList1`  
   
  [!code-vb[VbVbalrTypeInference#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#5)]  
   
-## <a name="option-infer"></a>Option Infer  
- `Option Infer` Umožňuje určit, zda je povolena odvození místního typu v určitý soubor. Povolit nebo blokovat možnost, zadejte jeden z následujících příkazů na začátku souboru.  
+## <a name="option-infer"></a>Odvoditelné možnosti  
+ `Option Infer`umožňuje určit, zda bude odvození místního typu povoleno v určitém souboru. Chcete-li povolit nebo zablokovat možnost, zadejte na začátku souboru jeden z následujících příkazů.  
   
  `Option Infer On`  
   
  `Option Infer Off`  
   
- Pokud nezadáte hodnotu `Option Infer` ve vašem kódu, je výchozí nastavení kompilátoru `Option Infer On`. 
+ Pokud nezadáte hodnotu pro `Option Infer` v kódu, je `Option Infer On`výchozí kompilátor. 
   
- Je-li nastavena hodnota pro `Option Infer` v souboru konflikty s hodnotou nastavenou v integrovaném vývojovém prostředí nebo na příkazovém řádku, hodnota v souboru má prioritu.  
+ Pokud je hodnota nastavená `Option Infer` v souboru v konfliktu s hodnotou nastavenou v integrovaném vývojovém prostředí (IDE) nebo na příkazovém řádku, má hodnota v souboru přednost.  
   
- Další informace najdete v tématu [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md) a [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
+ Další informace naleznete v tématu [možnost odvození příkazu](../../../../visual-basic/language-reference/statements/option-infer-statement.md) a [Stránka kompilace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -79,4 +79,4 @@ Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat mís
 - [Příkaz For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md)
 - [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
 - [/optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

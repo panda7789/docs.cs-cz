@@ -2,34 +2,34 @@
 title: Členství a poskytovatel rolí
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: c172402f95b137117941381fd4803b8b6e4a5d61
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 894fcef0cbb25f85043aa6f5c55c45bae5161546
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876748"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948550"
 ---
 # <a name="membership-and-role-provider"></a>Členství a poskytovatel rolí
-Zprostředkovatel členství a rolí ukázka demonstruje, jak může služba použít členství technologie ASP.NET a zprostředkovatele rolí k ověřování a autorizaci klientů.  
+Ukázka členství a zprostředkovatele rolí předvádí, jak může služba k ověřování a autorizaci klientů použít poskytovatele členství a rolí ASP.NET.  
   
- V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
+ V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Vzorek ukazuje, jak:  
+ Ukázka ukazuje, jak:  
   
-- Klient může ověřit pomocí kombinace uživatelského jména hesla.  
+- Klient se může ověřit pomocí kombinace uživatelského jména a hesla.  
   
-- Server můžete ověřit přihlašovací údaje klienta pro poskytovatele členství prostředí ASP.NET.  
+- Server může ověřit pověření klienta pro poskytovatele členství ASP.NET.  
   
-- Na serveru, lze ověřit pomocí certifikátu X.509 serveru.  
+- Server se dá ověřit pomocí certifikátu X. 509 serveru.  
   
-- Server můžete namapovat ověřený klient do role pomocí poskytovatele rolí prostředí ASP.NET.  
+- Server může mapovat ověřeného klienta na roli pomocí poskytovatele rolí ASP.NET.  
   
-- Server můžete použít `PrincipalPermissionAttribute` pro řízení přístupu k určité metody, které jsou vystaveny službou.  
+- Server může použít `PrincipalPermissionAttribute` k řízení přístupu k určitým metodám, které jsou zpřístupněné službou.  
   
- Zprostředkovatele členství a role jsou nakonfigurovány pro použití úložiště se opírá o systému SQL Server. Připojovací řetězec a různé možnosti jsou uvedeny v konfiguračním souboru služby. Zprostředkovatel členství je označen názvem `SqlMembershipProvider` při zprostředkovatele rolí je označen názvem `SqlRoleProvider`.  
+ Zprostředkovatelé členství a rolí jsou nakonfigurováni tak, aby používal úložiště zajištěné SQL Server. Připojovací řetězec a různé možnosti jsou zadány v konfiguračním souboru služby. Zprostředkovateli členství je uveden název `SqlMembershipProvider` , zatímco poskytovatel role má název. `SqlRoleProvider`  
   
 ```xml  
 <!-- Set the connection string for SQL Server -->  
@@ -69,7 +69,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak může služba pou
 </system.web>  
 ```  
   
- Služba poskytuje jeden koncový bod pro komunikaci se službou, která je definována pomocí konfiguračního souboru Web.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding`, která ve výchozím nastavení používá ověřování Windows. Tato ukázka nastaví standardní `wsHttpBinding` ověřování uživatelského jména. Chování Určuje, že certifikát serveru se bude používat pro ověřování služby. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) konfiguračního prvku. Kromě toho chování Určuje, že proběhne ověření uživatelského jména hesla páry podle poskytovatele členství ASP.NET a role mapování se provádí pomocí poskytovatele rolí prostředí ASP.NET tak, že zadáte názvy definované pro dva poskytovatelé.  
+ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, která je definována pomocí konfiguračního souboru Web. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována se standardem `wsHttpBinding`, který používá ověřování systému Windows. Tato ukázka nastavuje standard `wsHttpBinding` pro použití ověřování uživatelského jména. Chování určuje, že se má certifikát serveru použít k ověřování služby. Certifikát serveru musí obsahovat stejnou hodnotu `SubjectName` `findValue` jako atribut v [ \<prvku konfigurace > serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) . Kromě toho chování určuje, že zprostředkovatel členství v ASP.NET a mapování rolí provádí zprostředkovatel rolí ASP.NET zadáním názvů definovaných pro tyto dva zprostředkovatele.  
   
 ```xml  
 <system.serviceModel>  
@@ -114,71 +114,71 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak může služba pou
 </system.serviceModel>  
 ```  
   
- Při spuštění ukázky klient volá různé operace služby do dvou různých uživatelských účtů: Alici, Roberta a Karel. Operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři volání provedli jako uživatel "Alice" uspěli. Uživatel "Bob" by měl získat chybu při pokusu o volání metody dělení odepření přístupu. Uživatel "Karel" by měl získat chybu při pokusu o volání odepření přístupu vynásobí metody. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Když spustíte ukázku, klient zavolá různé operace služby za tři různé uživatelské účty: Alice, Bob a Charlie. Požadavky na operace a odpovědi se zobrazí v okně konzoly klienta. Všechna čtyři volání vytvořená jako uživatel "Alice" by měla být úspěšná. Uživatel Bob by měl při pokusu o volání metody dělení získat chybu odepření přístupu. Při pokusu o volání metody násobení by uživatel Charlie měl získat chybu odepření přístupu. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+1. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-2. Ujistěte se, že jste nakonfigurovali [databáze aplikačních služeb ASP.NET](https://go.microsoft.com/fwlink/?LinkId=94997).  
-  
-    > [!NOTE]
-    >  Pokud používáte systém SQL Server Express Edition, je název vašeho serveru. \SQLEXPRESS. Tento server by měla sloužit při konfiguraci ASP.NET databázi služeb aplikací stejně jako v souboru Web.config připojovací řetězec.  
+2. Ujistěte se, že jste nakonfigurovali [databázi ASP.NET aplikační služby](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    >  Účet pracovního procesu technologie ASP.NET musí mít oprávnění databáze, která se vytvoří v tomto kroku. K tomu použijte nástroj sqlcmd nebo SQL Server Management Studio.  
+    >  Pokud používáte edici SQL Server Express, název serveru je .\SQLEXPRESS. Tento server by měl být použit při konfiguraci databáze ASP.NET Aplikační služby a také v připojovacím řetězci Web. config.  
   
-3. Ke spuštění ukázky v konfiguraci s jedním nebo více počítači, použijte následující pokyny.  
+    > [!NOTE]
+    >  Účet pracovního procesu ASP.NET musí mít oprávnění pro databázi, která je vytvořena v tomto kroku. Provedete to pomocí nástroje Sqlcmd nebo SQL Server Management Studio.  
   
-### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.  
   
-1. Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.  
+### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači  
   
-2. Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku pro vývojáře pro sadu Visual Studio spusťte s oprávněními správce. Tím se nainstaluje služba certifikáty požadované ke spuštění ukázky.  
+1. Ujistěte se, že cesta obsahuje složku, ve které se nachází nástroj Makecert. exe.  
   
-3. Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+2. Spusťte Setup. bat z ukázkové instalační složky ve Developer Command Prompt pro Visual Studio spusťte s oprávněními správce. Tím se nainstaluje certifikát služby vyžadovaný pro spuštění ukázky.  
   
-4. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+3. Spustit soubor Client. exe z \client\bin. Aktivita klienta se zobrazí v klientské aplikaci konzoly.  
   
-### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
+4. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-1. Vytvoření adresáře na počítači se službou. Vytvořte virtuální aplikaci s názvem servicemodelsamples pro tento adresář pomocí nástroje pro správu Internetové informační služby (IIS).  
+### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači  
   
-2. Zkopírujte soubory programu služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači se službou. Ujistěte se, že zkopírujete soubory v podadresáři \bin. Také kopírovat soubory Setup.bat GetComputerName.vbs a Cleanup.bat k počítači služby.  
+1. Vytvořte adresář na počítači služby. Vytvořte virtuální aplikaci s názvem ServiceModelSamples pro tento adresář pomocí nástroje pro správu služby Internetová informační služba (IIS).  
   
-3. Vytvoření adresáře v klientském počítači pro binární soubory klienta.  
+2. Zkopírujte programové soubory služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači služby. Ujistěte se, že jste zkopírovali soubory do podadresáře \Bin. Zkopírujte také soubory Setup. bat, GetComputerName. vbs a Cleanup. bat do počítače služby.  
   
-4. Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
+3. Vytvořte v klientském počítači adresář pro binární soubory klienta.  
   
-5. Na serveru, otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte `setup.bat service`. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
+4. Zkopírujte soubory klientských programů do adresáře klienta v klientském počítači. Zkopírujte také do klienta soubory Setup. bat, Cleanup. bat a ImportServiceCert. bat.  
   
-6. Upravit soubor Web.config tak, aby odrážely nový název certifikátu (v `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), což je stejné jako plně kvalifikovaný název domény počítače.  
+5. Na serveru otevřete Developer Command Prompt pro Visual Studio s oprávněními správce a spusťte `setup.bat service`. Při `setup.bat` spuštění`service` s argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
   
-7. Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
+6. Upravte soubor Web. config tak, aby odrážel nový název certifikátu ( `findValue` v atributu [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), který je stejný jako plně kvalifikovaný název domény počítače.  
   
-8. V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
+7. Zkopírujte soubor Service. cer z adresáře služby do adresáře klienta v klientském počítači.  
   
-9. V klientském počítači otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte ImportServiceCert.bat. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
+8. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby.  
   
-10. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+9. V klientovi otevřete Developer Command Prompt pro Visual Studio s oprávněními správce a spusťte ImportServiceCert. bat. Tím se certifikát služby importuje ze souboru Service. cer do úložiště CurrentUser-TrustedPeople.  
   
-### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
+10. V klientském počítači spusťte z příkazového řádku soubor Client. exe. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
+  
+- Po dokončení ukázky Spusťte Cleanup. bat ve složce Samples.  
   
 > [!NOTE]
->  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+> Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
 ## <a name="the-setup-batch-file"></a>Instalační dávkový soubor  
- Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušné certifikáty ke spuštění aplikace v místním prostředí, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.  
+ Dávkový soubor Setup. bat, který je součástí této ukázky, vám umožní nakonfigurovat server s příslušnými certifikáty pro spuštění samoobslužné aplikace, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upraven pro práci napříč počítači nebo pro práci v nehostovaném případě.  
   
- Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.  
+ Níže najdete stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby se spouštěla v příslušné konfiguraci.  
   
 - Vytváří se certifikát serveru.  
   
-     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Tento dávkový soubor výchozí hodnota je localhost.  
+     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. Proměnná% Název_serveru% Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Tato dávková soubor se nastaví jako výchozí hodnota localhost.  
   
-     Certifikát je uložen v úložišti (osobních) v části umístění úložiště LocalMachine.  
+     Certifikát je uložený v osobním úložišti (osobní) v umístění úložiště LocalMachine.  
   
     ```  
     echo ************  
@@ -190,9 +190,9 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak může služba pou
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.  
+- Instalace certifikátu serveru do důvěryhodného úložiště certifikátů klienta.  
   
-     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
+     Následující řádky v dávkovém souboru Setup. bat kopírují certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty vygenerované pomocí nástroje MakeCert. exe nejsou implicitně důvěryhodné klientským systémem. Pokud už máte certifikát, který je rootem v důvěryhodném kořenovém certifikátu klienta – například certifikát vydaný společností Microsoft – tento krok naplnění úložiště certifikátů klienta s certifikátem serveru není vyžadován.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  

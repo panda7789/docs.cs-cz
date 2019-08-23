@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data [Windows Forms], displaying
 - columns [Windows Forms], read-only
 ms.assetid: b4ef7a75-ab33-4ee3-b2cf-201530e454e9
-ms.openlocfilehash: 6bdd561c863a461f43a5a7aac025fead1f971bb0
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 82be9d31ff6bb3f2f5dd8a55b4426103d466bdd6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039807"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952095"
 ---
 # <a name="how-to-make-columns-read-only-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Převedení sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Ve výchozím nastavení mohou uživatelé upravovat text a číselná data zobrazená v ovládacím <xref:System.Windows.Forms.DataGridView> prvku model Windows Forms. Chcete-li zobrazit data, která nejsou určena k úpravám, je nutné vytvořit sloupce, které obsahují data jen pro čtení. Informace o tom, jak nastavit ovládací prvek jen pro čtení, najdete v [tématu How to: Zabraňte přidávání a odstraňování řádků v ovládacím prvku DataGridView model Windows Forms pomocí návrháře](prevent-row-addition-and-deletion-in-the-datagrid-using-the-designer.md).
@@ -28,7 +28,7 @@ Ve výchozím nastavení mohou uživatelé upravovat text a číselná data zobr
 3. V mřížce **vlastnosti sloupce** nastavte <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost na `true`hodnotu.
 
     > [!NOTE]
-    >  Sloupec můžete také nastavit jen pro čtení, když ho přidáte výběrem zaškrtávacího políčka jen **pro čtení** v dialogovém okně **Přidat sloupec** .
+    > Sloupec můžete také nastavit jen pro čtení, když ho přidáte výběrem zaškrtávacího políčka jen **pro čtení** v dialogovém okně **Přidat sloupec** .
 
 ## <a name="see-also"></a>Viz také:
 

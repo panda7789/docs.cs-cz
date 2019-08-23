@@ -8,38 +8,38 @@ dev_langs:
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3d47fa4d4ef7a55182dd27aa6f64542fec1fa99c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40d7ef11dde882d99c21fe541c2689c52a634edf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776035"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915941"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection Schema Compilation
-**Třídou XmlSchemaCollection** mezipaměti nebo knihovny, kde můžete ukládat a ověřit XML-Data Reduced (XDR) a schéma XML definice jazyk (XSD) schémata. **Kolekci XmlSchemaCollection** zvyšuje výkon díky ukládání do mezipaměti schémat v paměti namísto se k nim dostanete ze souboru nebo adresy URL.  
+**XmlSchemaCollection** je mezipaměť nebo knihovna, kde mohou být uloženy a ověřeny schémata XML-data redukovaná (XDR) a XML Schema Definition Language (XSD). **XmlSchemaCollection** vylepšuje výkon ukládáním schémat do paměti místo přístupu ze souboru nebo adresy URL.  
   
 > [!NOTE]
->  I když **třídou XmlSchemaCollection** třída uchovává XDR schémat a schémat XML, všechny metody a vlastnosti, která přijímá nebo vrátí **XmlSchema** objekt podporuje pouze schémata XML.  
+> I když třída XmlSchemaCollection ukládá schémata XDR i schémata XML, jakákoliv metoda a vlastnost, která přijímá nebo vrací objekt **XmlSchema** , podporuje pouze schémata XML.  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaCollection> Třída je zastaralá a bylo nahrazeno tématem <xref:System.Xml.Schema.XmlSchemaSet> třídy. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídy viz [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. <xref:System.Xml.Schema.XmlSchemaCollection> Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
-## <a name="add-schemas-to-the-collection"></a>Přidání do kolekce schémat  
- Schémata jsou načteny do kolekce pomocí **přidat** metoda **třídou XmlSchemaCollection**, po kterém schéma je přidružen k oboru názvů identifikátoru URI. Schémat XML obor názvů URI bude obvykle cílový obor názvů pro schéma. Pro schémata XDR identifikátor URI oboru názvů je že obor názvů určený při schématu byl přidán do kolekce.  
+## <a name="add-schemas-to-the-collection"></a>Přidání schémat do kolekce  
+ Schémata jsou načtena do kolekce pomocí metody **Add** kolekce **XmlSchemaCollection**, v níž je schéma přidruženo k identifikátoru URI oboru názvů. V případě schémat XML bude identifikátor URI oboru názvů obvykle cílovým oborem názvů schématu. V případě schémat XDR je identifikátor URI oboru názvů zadaný při přidání schématu do kolekce.  
   
 ## <a name="check-for-a-schema-in-the-collection"></a>Vyhledat schéma v kolekci  
- Můžete zkontrolovat, jestli schéma je v kolekci pomocí **obsahuje** metoda. **Obsahuje** metoda přebírá buď **XmlSchema** objekt (pouze schémata XML) nebo řetězec představující obor názvů URI přidružený k schématu (pro schémata schémat XML a XDR).  
+ Můžete zjistit, zda je schéma v kolekci, pomocí metody **Contains** . Metoda **Contains** přebírá buď objekt **XmlSchema** (pouze schémata XML), nebo řetězec představující identifikátor URI oboru názvů přidruženého ke schématu (pro schémata XML schémat a XDR).  
   
-## <a name="retrieve-a-schema-from-the-collection"></a>Načíst schéma z kolekce  
- Můžete načíst schéma z kolekce pomocí **položky** vlastnost. **Položky** vlastnost přebírá řetězec představující obor názvů URI přidružený k schématu, obvykle jeho cílový obor názvů a vrátí **XmlSchema** objektu. **Položky** vlastnost se vztahuje pouze na schématech XML. Vrácená hodnota je vždy odkaz s hodnotou null pro schémata XDR, protože nemají objekt modelu, který je k dispozici.  
+## <a name="retrieve-a-schema-from-the-collection"></a>Načtení schématu z kolekce  
+ Schéma můžete z kolekce načíst pomocí vlastnosti **Item** . Vlastnost **Item** přebírá řetězec představující identifikátor URI oboru názvů přidružený ke schématu, obvykle jeho cílový obor názvů a vrací objekt **XmlSchema** . Vlastnost **Item** se vztahuje pouze na schémata XML. Návratová hodnota je vždy nulový odkaz pro schémata XDR, protože nemají k dispozici objektový model.  
   
-## <a name="validate-xml-documents-using-xmlschemacollection"></a>Ověření XML dokumenty v kolekci XmlSchemaCollection  
- Můžete ověřit v instanci dokumentu XML pomocí **třídou XmlSchemaCollection** tak, že vytvoříte **třídou XmlSchemaCollection** objektu, přidání vašeho schémata do kolekce a nastavení **schémata**  vlastnost **objekt XmlValidatingReader** přiřadit vytvořený **třídou XmlSchemaCollection** k **objekt XmlValidatingReader**.  
+## <a name="validate-xml-documents-using-xmlschemacollection"></a>Ověřování dokumentů XML pomocí XmlSchemacollection  
+ Dokument instance XML můžete ověřit pomocí kolekce XmlSchemaCollection vytvořením objektu XmlSchemaCollection , přidáním schémat do kolekce a nastavením vlastnosti schemas v **XmlValidatingReader** na hodnotu Přiřaďte vytvořenou **kolekci XmlSchemaCollection** k **XmlValidatingReader**.  
   
-### <a name="improved-performance"></a>Vylepšení výkonu  
- Doporučuje, pokud se ověření více než jeden dokument pomocí stejné schéma, že používáte **třídou XmlSchemaCollection** vzhledem k tomu, že poskytuje lepší výkon díky ukládání do mezipaměti schémat v paměti.  
+### <a name="improved-performance"></a>Vylepšený výkon  
+ Doporučuje se, pokud ověřujete více než jeden dokument proti stejnému schématu, že použijete sadu XmlSchemaCollection , protože poskytuje lepší výkon ukládáním schémat do mezipaměti v paměti.  
   
- Následující příklad kódu vytvoří **třídou XmlSchemaCollection** objekt, přidá do kolekce schémat a nastaví **schémata** vlastnost.  
+ Následující příklad kódu vytvoří objekt **XmlSchemaCollection** , přidá schémata do kolekce a nastaví vlastnost **schemas** .  
   
 ```vb  
 Dim tr as XmlTextReader = new XmlTextReader("Books.xml")  

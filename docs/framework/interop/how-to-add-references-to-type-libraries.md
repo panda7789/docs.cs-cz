@@ -9,46 +9,46 @@ helpviewer_keywords:
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b3fda2af84ff74e129c36dc966bad247bdf9e20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f0f254b7794ce1cd4c765bee70c78e3c60a14aa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643280"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946498"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Postupy: Přidávání odkazů do knihoven typů
-Visual Studio vytvoří definiční sestavení obsahující metadata, když přidáte odkaz na knihovnu typů. Pokud je k dispozici primární sestavení zprostředkovatele komunikace, Visual Studio používá existující sestavení před generováním nového sestavení zprostředkovatele komunikace.  
+Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vzájemné spolupráce obsahující metadata. Pokud je k dispozici primární sestavení vzájemné spolupráce, Visual Studio použije existující sestavení před generováním nového definičního sestavení.  
   
-### <a name="to-add-a-reference-to-a-type-library-in-visual-studio"></a>Chcete-li přidat odkaz na knihovnu typů v sadě Visual Studio  
+### <a name="to-add-a-reference-to-a-type-library-in-visual-studio"></a>Přidání odkazu na knihovnu typů v aplikaci Visual Studio  
   
-1. Instalace knihovny COM DLL nebo EXE soubor v počítači, není-li soubor Windows Setup.exe provede instalaci za vás.  
+1. Nainstalujte do počítače soubor DLL nebo EXE knihovny COM, pokud soubor instalační program systému Windows. exe instalaci neprovede.  
   
-2. Zvolte **projektu**, **přidat odkaz na**.  
+2. Vyberte **projekt**, **Přidat odkaz**.  
   
-3. Vyberte ve Správci odkazů **COM**.  
+3. Ve Správci odkazů vyberte **com**.  
   
-4. Vyberte knihovnu typů, ze seznamu nebo vyhledání souboru .tlb.  
+4. V seznamu vyberte knihovnu typů nebo vyhledejte soubor. tlb.  
   
 5. Zvolte **OK**.  
   
-6. V Průzkumníku řešení otevřete místní nabídku pro odkaz, který jste právě přidali a klikněte na tlačítko **vlastnosti**.  
+6. V Průzkumník řešení otevřete místní nabídku pro odkaz, který jste právě přidali, a pak zvolte **vlastnosti**.  
   
-7. V **vlastnosti** okno, ujistěte se, že **Embed Interop Types** je nastavena na **True**. To způsobí, že Visual Studio pro vložení informací o typu pro typy modelu COM v spustitelné soubory, takže odpadá potřeba k nasazení primárních sestavení vzájemné spolupráce s vaší aplikací.  
+7. V okně **vlastnosti** se ujistěte, že je vlastnost **Embed Interop Types** nastavená na **hodnotu true**. To způsobí, že Visual Studio vloží do vašich spustitelných souborů informace o typu modelu COM, což eliminuje nutnost nasazení primárních sestavení vzájemné spolupráce s vaší aplikací.  
   
 > [!NOTE]
->  Pole možnosti nabídky a dialogové okno se mohou lišit v závislosti na verzi sady Visual Studio, kterou používáte.  
+> Možnosti nabídky a dialogového okna se můžou lišit v závislosti na verzi sady Visual Studio, kterou používáte.  
   
-### <a name="to-add-a-reference-to-a-type-library-for-command-line-compilation"></a>Chcete-li přidat odkaz na knihovnu typů pro sestavení příkazového řádku  
+### <a name="to-add-a-reference-to-a-type-library-for-command-line-compilation"></a>Přidání odkazu na knihovnu typů pro kompilaci příkazového řádku  
   
-1. Generování sestavení vzájemné spolupráce, jak je popsáno v [jak: Generování sestavení vzájemné spolupráce z knihoven typů](how-to-generate-interop-assemblies-from-type-libraries.md).  
+1. Vygenerujte sestavení vzájemné spolupráce, jak [je popsáno v tématu Postupy: Vygenerujte sestavení vzájemné spolupráce z](how-to-generate-interop-assemblies-from-type-libraries.md)knihoven typů.  
   
-2. Použití [/link (C# – možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) – možnost kompilátoru s názvem sestavení vzájemné spolupráce pro vložení informací o typu pro model COM typy, které do vašeho spustitelné soubory.  
+2. K vložení informací o typu pro typy COM ve vašich spustitelných souborech použijte možnost kompilátoru [/Link (C# Compiler Options)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) s názvem sestavení spolupráce.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
-- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md) 
-- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
-- [/ Link (možnosti kompilátoru C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
-- [/ Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)
+- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual StudioC#()](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md) 
+- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
+- [/Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
+- [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)

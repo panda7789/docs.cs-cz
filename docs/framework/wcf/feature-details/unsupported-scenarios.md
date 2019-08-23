@@ -2,111 +2,111 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 884349739730510c356e1efc1f866d146f6ed946
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: cc40ccbf83e92404dca07344fae0a6f56f92cefa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959963"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955325"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
-Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
+Z různých důvodů nepodporuje Windows Communication Foundation (WCF) některé konkrétní scénáře zabezpečení. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním systému Windows na této platformě. Další mechanismy ověřování, jako je uživatelské jméno/heslo a integrované ověřování HTTP/HTTPS, se podporují při použití WCF v systému Windows XP Home Edition.  
   
-## <a name="impersonation-scenarios"></a>Zosobnění scénáře  
+## <a name="impersonation-scenarios"></a>Scénáře zosobnění  
   
-### <a name="impersonated-identity-might-not-flow-when-clients-make-asynchronous-calls"></a>Zosobněnou identitou může není tok, když klienti provádět asynchronní volání  
- Když klient WCF umožňuje asynchronní volání služeb WCF pomocí ověřování Windows v zosobnění, může dojít k ověření, s identitou procesu klienta místo zosobněnou identitou.  
+### <a name="impersonated-identity-might-not-flow-when-clients-make-asynchronous-calls"></a>Zosobněná identita možná není při provádění asynchronních volání vydávána klientem.  
+ Když klient služby WCF provede asynchronní volání služby WCF pomocí ověřování systému Windows v zosobnění, může dojít k ověřování pomocí identity klientského procesu namísto zosobněné identity.  
   
-### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP a zabezpečené kontextu Token souboru Cookie povolené  
- WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> je vyvolána při dodržení následujících podmínek:  
+### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Systém Windows XP a soubor cookie zabezpečeného tokenu kontextu povoleny  
+ WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> vyvolá se, když existují následující podmínky:  
   
 - Operační systém je [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
-- Režim ověřování výsledkem identita Windows.  
+- Režim ověřování má za následek identitu Windows.  
   
-- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> Vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Required>.  
+- Vlastnost je nastavena na<xref:System.ServiceModel.ImpersonationOption.Required>hodnotu. <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> <xref:System.ServiceModel.OperationBehaviorAttribute>  
   
-- Vytvoří token kontextu zabezpečení na základě stavu (SCT) (ve výchozím nastavení, je zakázáno vytváření).  
+- Vytvoří se token kontextu zabezpečení založený na stavu (SCT) (ve výchozím nastavení je vytváření zakázané).  
   
- Základě stavu SCT lze vytvořit pouze použití vlastní vazby. Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).) V kódu, je tak, že vytvoříte element vazby zabezpečení povoleno token (buď <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> metoda a nastavení `requireCancellation` parametr `false`. Parametr odkazuje na ukládání do mezipaměti SCT. Nastavením této hodnoty na `false` povolí tuto funkci SCT na základě stavu.  
+ SCT založenou na stavu lze vytvořit pouze pomocí vlastní vazby. Další informace najdete v tématu [jak: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).) V kódu je token povolen <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vytvořením elementu vazby zabezpečení (buď nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> `false` <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> ) pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> metody nebo a nastavením `requireCancellation` parametru na. Parametr odkazuje na ukládání do mezipaměti pro SCT. Nastavením hodnoty `false` povolíte funkci SCT založenou na stavu.  
   
- V konfiguraci, případně token je povoleno tak, že vytvoříte <`customBinding`>, následným přidáním <`security`> element a nastavení `authenticationMode` atribut SecureConversation a `requireSecurityContextCancellation` atribut `true`.  
-  
-> [!NOTE]
->  Předchozí požadavky jsou specifické. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří element vazby, která má za následek Windows identity, ale nevytváří SCT. Proto ji můžete použít `Required` možnost [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
-  
-### <a name="possible-aspnet-conflict"></a>Konfliktům technologie ASP.NET  
- WCF a ASP.NET můžete jak povolit nebo zakázat zosobnění. Když aplikace WCF je hostitelem technologie ASP.NET, mohou existovat ke konfliktu mezi nastavení konfigurace WCF a ASP.NET. V případě konfliktu, nastavení WCF má přednost, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, v takovém případě má přednost nastavení zosobnění technologie ASP.NET.  
-  
-### <a name="assembly-loads-may-fail-under-impersonation"></a>Načítání sestavení může selhat v zosobnění  
- Pokud zosobněného kontextu nemá přístupová práva k načtení sestavení a pokud je první common language runtime (CLR) se pokouší načíst sestavení pro tuto doménu AppDomain, <xref:System.AppDomain> ukládá do mezipaměti selhání. Následné pokusy o načtení tohoto sestavení (nebo sestavení) nezdaří, i po vrácení zosobnění a i když vrácený kontext má přístupová práva k načtení sestavení. Je to proto, že modul CLR nebude znovu pokoušet zatížení po změně kontextu uživatele. Je nutné restartovat aplikační domény na obnovení po chybě.  
+ Alternativně je v konfiguraci`customBinding`povolen token vytvořením < > a poté přidáním `authenticationMode` prvku <`security`> a nastavením atributu na hodnotu SecureConversation a `requireSecurityContextCancellation` atributu na `true`.  
   
 > [!NOTE]
->  Výchozí hodnota <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třída je <xref:System.Security.Principal.TokenImpersonationLevel.Identification>. Ve většině případů objekt context identifikace úroveň zosobnění nemá žádná práva k načtení žádné další sestavení. Toto je výchozí hodnota, tohle je velmi běžné podmínku je potřeba vědět. Identifikace úroveň zosobnění také nastane, pokud proces zosobnění nemá `SeImpersonate` oprávnění. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+> Předchozí požadavky jsou specifické. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří prvek vazby, který má za následek identitu Windows, ale nevytvoří SCT. Proto ji můžete použít s `Required` možností zapnuto. [!INCLUDE[wxp](../../../../includes/wxp-md.md)]  
+  
+### <a name="possible-aspnet-conflict"></a>Možný konflikt ASP.NET  
+ WCF a ASP.NET můžou povolit nebo zakázat zosobnění. Když je ASP.NET hostitelem aplikace WCF, může mezi nastaveními konfigurace WCF a ASP.NET existovat konflikt. V případě konfliktu má nastavení WCF přednost, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost není nastavena na <xref:System.ServiceModel.ImpersonationOption.NotAllowed>hodnotu. v takovém případě má přednost nastavení ASP.NET zosobnění.  
+  
+### <a name="assembly-loads-may-fail-under-impersonation"></a>Načtení sestavení může v zosobnění selhat.  
+ Pokud zosobněný kontext nemá přístupová práva k načtení sestavení a pokud je první, když se modul CLR (Common Language Runtime) pokusí načíst sestavení pro tuto doménu AppDomain, <xref:System.AppDomain> dojde k ukládání chyb do mezipaměti. Následné pokusy o načtení tohoto sestavení (nebo sestavení) selžou, dokonce i po vrácení zosobnění a i v případě, že má kontext vrácená přístupová práva k načtení sestavení. Důvodem je to, že modul CLR se znovu nepokusí o načtení po změně kontextu uživatele. Je nutné restartovat doménu aplikace pro zotavení po selhání.  
+  
+> [!NOTE]
+> Výchozí hodnota <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnosti <xref:System.ServiceModel.Security.WindowsClientCredential> třídy je <xref:System.Security.Principal.TokenImpersonationLevel.Identification>. Ve většině případů kontext zosobnění na úrovni identifikace nemá žádná práva k načtení dalších sestavení. Toto je výchozí hodnota, takže se jedná o velmi běžnou podmínku, kterou je třeba znát. K zosobnění na úrovni identifikace dojde také v případě, že proces `SeImpersonate` zosobnění nemá oprávnění. Další informace najdete v tématu [delegování a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ### <a name="delegation-requires-credential-negotiation"></a>Delegování vyžaduje vyjednávání přihlašovacích údajů  
- Delegování používat ověřování protokolu Kerberos, musí implementovat protokol Kerberos s vyjednávání přihlašovacích údajů (říká se jim více větev nebo vícekrokové protokolu Kerberos). Pokud se rozhodnete implementovat ověřování protokolem Kerberos bez vyjednávání přihlašovacích údajů (říká se jim konečný nebo jedné fáze Kerberos), je vyvolána výjimka. Další informace o tom, jak implementovat vyjednávání přihlašovacích údajů najdete v tématu [ladění chyby s ověřováním Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
+ Chcete-li použít ověřovací protokol Kerberos s delegováním, je nutné implementovat protokol Kerberos s vyjednáváním přihlašovacích údajů (někdy označovaným jako multi-nohy nebo multi-step Kerberos). Pokud implementujete ověřování protokolu Kerberos bez vyjednávání přihlašovacích údajů (někdy nazývaného jednorázové rozhraní Kerberos), vyvolá se výjimka. Další informace o tom, jak implementovat vyjednávání pověření, najdete v tématu [ladění chyb ověřování systému Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
   
-## <a name="cryptography"></a>Cryptography  
+## <a name="cryptography"></a>Kryptografick  
   
-### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>SHA-256 se podporuje jenom pro použití symetrického klíče  
- WCF podporuje širokou škálu šifrování a podpis digest vytváření algoritmy, které můžete zadat pomocí sadu algoritmů v vazeb poskytovaných systémem. Pro důkladnější zabezpečení WCF podporuje algoritmy zabezpečení hashovací algoritmus (SHA) 2, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a pokud se certifikát X.509, který nepoužívá k podepisování zpráv. WCF nepodporuje podpisy RSA (používá se v certifikátech X.509) pomocí hodnot hash SHA-256 kvůli aktuální chybějící podpora pro RSA-SHA256 v WinFX.  
+### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>SHA-256 se podporuje jenom pro použití symetrického klíče.  
+ WCF podporuje nejrůznější algoritmy pro vytváření algoritmů šifrování a otisků podpisů, které můžete zadat pomocí sady algoritmů v rámci vazeb poskytovaných systémem. Pro lepší zabezpečení podporuje WCF algoritmy SHA (Secure Hash Algorithm) 2, konkrétně SHA-256, pro vytváření hodnot hash MD5 signatur. Tato verze podporuje SHA-256 jenom pro použití symetrického klíče, jako jsou klíče Kerberos, a kde se k podpisu zprávy nepoužívá certifikát X. 509. WCF nepodporuje signatury RSA (používané v certifikátech X. 509) pomocí algoritmu SHA-256 hash kvůli současnému nedostatku podpory RSA-SHA256 v WinFX.  
   
-### <a name="fips-compliant-sha-256-hashes-not-supported"></a>Kompatibilní se standardem FIPS hodnoty hash SHA-256 není podporován  
- WCF nepodporuje hodnoty hash SHA-256 kompatibilní se standardem FIPS, takže algoritmus sad, které používají algoritmus SHA-256 nepodporují službou WCF na systémech, kde je nutné používat algoritmy splňující standard FIPS.  
+### <a name="fips-compliant-sha-256-hashes-not-supported"></a>Hodnoty hash SHA-256 kompatibilní se standardem FIPS nejsou podporovány.  
+ Služba WCF nepodporuje hodnoty hash kompatibilní se standardem FIPS-256, takže sady algoritmů, které používají algoritmus SHA-256, nejsou podporovány službou WCF v systémech, kde je vyžadováno použití algoritmů kompatibilních se standardem FIPS.  
   
-### <a name="fips-compliant-algorithms-may-fail-if-registry-is-edited"></a>Při úpravě registru může dojít k selhání algoritmy odpovídající standardu FIPS  
- Můžete povolit nebo zakázat informace o zpracování normy FIPS (Federal) - algoritmy odpovídající s použitím místní zabezpečení nastavení Microsoft Management Console (MMC) snap - v. Můžete také přístup k nastavení v registru. Upozorňujeme však, že WCF nepodporuje použití obnovte nastavení registru. Pokud je hodnota nastavena na jinou hodnotu než 1 nebo 0, nekonzistentní výsledky mohla probíhat CLR a operačního systému.  
+### <a name="fips-compliant-algorithms-may-fail-if-registry-is-edited"></a>Pokud upravíte registr, může dojít k selhání algoritmů kompatibilních se standardem FIPS.  
+ Algoritmy kompatibilní se standardem FIPS (Federal Information Processing Standards) můžete povolit a zakázat pomocí modulu snap-in Místní nastavení zabezpečení konzoly Microsoft Management Console (MMC). Můžete také použít nastavení v registru. Všimněte si ale, že WCF nepodporuje použití registru k resetování nastavení. Pokud je hodnota nastavena na jinou hodnotu než 1 nebo 0, může dojít k nekonzistentním výsledkům mezi CLR a operačním systémem.  
   
 ### <a name="fips-compliant-aes-encryption-limitation"></a>Omezení šifrování AES kompatibilní se standardem FIPS  
- Šifrování AES kompatibilní s FIPS v duplexní zpětná volání v úrovni zosobnění identifikace nefunguje.  
+ Šifrování AES kompatibilní se standardem FIPS nefunguje v duplexních voláních v rámci zosobnění na úrovni identifikace.  
   
-### <a name="cngksp-certificates"></a>Certifikátů CNG/KSP  
- *Rozhraní API kryptografie: Generace (CNG)* dlouhodobé nahrazuje rozhraní CryptoAPI. Toto rozhraní API je k dispozici v nespravovaném kódu na [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)] a novějších verzích Windows.  
+### <a name="cngksp-certificates"></a>CNG/KSP – certifikáty  
+ *Kryptografické rozhraní API: Nové generace (CNG)* je dlouhodobá náhrada za rozhraní CryptoAPI. Toto rozhraní API je k dispozici v [!INCLUDE[wv](../../../../includes/wv-md.md)]nespravovaném kódu [!INCLUDE[lserver](../../../../includes/lserver-md.md)] v a novějších verzích Windows.  
   
- Rozhraní .NET framework 4.6.1 a starší verze nepodporují tyto certifikáty, protože používají starší verzi rozhraní CryptoAPI pro zpracování certifikátů CNG/KSP. Použití těchto certifikátů pomocí rozhraní .NET Framework 4.6.1 a dřívějších verzích způsobí výjimku.  
+ .NET Framework 4.6.1 a starší verze tyto certifikáty nepodporují, protože využívají starší rozhraní CryptoAPI ke zpracování certifikátů CNG/KSP. Použití těchto certifikátů s .NET Framework 4.6.1 a staršími verzemi způsobí výjimku.  
   
- Existují dva možné způsoby, jak zjistit, pokud certifikát využívá KSP:  
+ Existují dva možné způsoby, jak zjistit, jestli certifikát používá KSP:  
   
-- Proveďte `p/invoke` z `CertGetCertificateContextProperty`a zkontrolujte `dwProvType` na vrácený `CertGetCertificateContextProperty`.  
+- Udělejte a Zkontrolujte`dwProvType` vrácené výsledky .`CertGetCertificateContextProperty` `p/invoke` `CertGetCertificateContextProperty`  
   
-- Použití `certutil` příkazu z příkazového řádku pro dotazování na certifikáty. Další informace najdete v tématu [úkoly programu Certutil pro řešení problémů s certifikáty](https://go.microsoft.com/fwlink/?LinkId=120056).  
+- `certutil` Použijte příkaz z příkazového řádku pro dotazování certifikátů. Další informace najdete v tématu [úlohy certutil při řešení potíží s certifikáty](https://go.microsoft.com/fwlink/?LinkId=120056).  
   
-## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Zpráva zabezpečení nezdaří, pokud pomocí zosobnění technologie ASP.NET a režim kompatibility ASP.NET je vyžadován  
- WCF nepodporuje následující kombinaci nastavení, protože nebrání ověření klienta před:  
+## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>Pokud se vyžaduje použití zosobnění ASP.NET a je vyžadována kompatibilita ASP.NET, zabezpečení zprávy se nezdařila.  
+ Služba WCF nepodporuje následující kombinaci nastavení, protože může zabránit tomu, aby se ověřování klienta objevilo:  
   
-- Zosobnění technologie ASP.NET je povolena. To se provádí v souboru Web.config tak, že nastavíte `impersonate` atribut <`identity`> element `true`.  
+- Zosobnění ASP.NET je povoleno. To se provádí v souboru Web. config nastavením `impersonate` atributu <`identity`> elementu na `true`.  
   
-- Režim kompatibility ASP.NET se povoluje nastavením `aspNetCompatibilityEnabled` atribut [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) k `true`.  
+- Režim kompatibility ASP.NET je povolen nastavením `aspNetCompatibilityEnabled` atributu [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) na. `true`  
   
-- Režim zabezpečení zprávy se používá.  
+- Používá se zabezpečení režimu zpráv.  
   
- Vyřešit se vypnout režim kompatibility ASP.NET. Nebo, pokud se vyžaduje režim kompatibility ASP.NET, zakázat funkce zosobnění technologie ASP.NET a místo toho použijte zosobnění poskytované WCF. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Rozhlasem je vypnutí režimu kompatibility ASP.NET. Nebo, pokud je vyžadován režim kompatibility ASP.NET, zakažte funkci zosobnění ASP.NET a místo ní použijte zosobnění poskytované WCF. Další informace najdete v tématu [delegování a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
-## <a name="ipv6-literal-address-failure"></a>Selhání literálu adresu IPv6  
- Požadavky na zabezpečení nezdaří, pokud klient a služba se ve stejném počítači, a literál adresy IPv6 se používají pro službu.  
+## <a name="ipv6-literal-address-failure"></a>Chyba adresy literálu IPv6  
+ Požadavky na zabezpečení selžou, pokud se klient a služba nacházejí ve stejném počítači a pro službu se používají adresy literálu IPv6.  
   
- Literál IPv6 adresy práce, pokud klienta a služby jsou na různých strojích.  
+ Pokud je služba a klient v různých počítačích, je adresa IPv6 literálů funkční.  
   
-## <a name="wsdl-retrieval-failures-with-federated-trust"></a>Selhání načtení WSDL pomocí federovaného vztahu důvěryhodnosti  
- WCF vyžaduje právě jeden dokument WSDL pro každý uzel v řetězci federovaný vztah důvěryhodnosti. Dejte pozor, abyste nastavili smyčku při určení koncových bodů. Jedním ze způsobů, ve kterém mohou vyplývat smyčky je stažení WSDL řetězců federovaný vztah důvěryhodnosti pomocí dvou nebo více odkazů v jednom dokumentu WSDL. Běžný scénář, které mohou způsobit potíže je federované služby, kde jsou obsaženy Server Token zabezpečení a službě uvnitř stejného hostitele ServiceHost.  
+## <a name="wsdl-retrieval-failures-with-federated-trust"></a>Selhání načítání WSDL s federovaným vztahem důvěryhodnosti  
+ WCF vyžaduje přesně jeden dokument WSDL pro každý uzel ve federovaném řetězu důvěryhodných certifikátů. Při zadávání koncových bodů buďte opatrní, abyste nevytvořili smyčku. Jedním ze způsobů, jak mohou nastat smyčky, je použití stažení WSDL řetězců federovaného vztahu důvěryhodnosti se dvěma nebo více odkazy ve stejném dokumentu WSDL. Běžným scénářem, který může způsobovat tento problém, je federované služba, ve které se server tokenu zabezpečení a služba nachází uvnitř stejné třídy ServiceHost.  
   
- Příklad této situace je služba s následující tři adresy koncových bodů:  
+ Příkladem této situace je služba s následujícími třemi adresami koncových bodů:  
   
-- `http://localhost/CalculatorService/service` (služba)  
+- `http://localhost/CalculatorService/service`(služba)  
   
-- `http://localhost/CalculatorService/issue_ticket` (STS)  
+- `http://localhost/CalculatorService/issue_ticket`(STS)  
   
-- `http://localhost/CalculatorService/mex` (koncový bod metadat)  
+- `http://localhost/CalculatorService/mex`(koncový bod metadat)  
   
- Tím dojde k výjimce.  
+ Vyvolá výjimku.  
   
- Provedete tento scénář fungovat tak, že vložíte `issue_ticket` koncový bod jinde.  
+ Tuto situaci můžete udělat tak, že umístíte `issue_ticket` koncový bod jinam.  
   
-## <a name="wsdl-import-attributes-can-be-lost"></a>Atributy pro Import WSDL může být ztraceno  
- WCF ztratí sledování atributů na `<wst:Claims>` prvek `RST` šablony při importu WSDL. To se stane při importu WSDL, když zadáte `<Claims>` přímo v `WSFederationHttpBinding.Security.Message.TokenRequestParameters` nebo `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` přímo namísto kolekce typů deklarací identity.  Protože importu ztratí atributy, vazba není odezvy správně prostřednictvím WSDL a je nesprávné na straně klienta.  
+## <a name="wsdl-import-attributes-can-be-lost"></a>Atributy importu WSDL se můžou ztratit.  
+ WCF ztratí sledování atributů `<wst:Claims>` v prvku `RST` v šabloně při importu WSDL. K tomu dojde během importu WSDL, pokud zadáte `<Claims>` přímo v `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` `WSFederationHttpBinding.Security.Message.TokenRequestParameters` nebo místo použití kolekcí typu deklarace identity přímo.  Vzhledem k tomu, že import ztratí atributy, vazba nezaokrouhlí cestu správně prostřednictvím WSDL, a proto není na straně klienta správná.  
   
- Oprava je upravte vazbu přímo v klientovi po provedení importu.  
+ Opravou je změna vazby přímo na klientovi po provedení importu.  
   
 ## <a name="see-also"></a>Viz také:
 

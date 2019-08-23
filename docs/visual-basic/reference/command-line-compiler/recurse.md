@@ -6,15 +6,15 @@ helpviewer_keywords:
 - -recurse compiler option [Visual Basic]
 - recurse compiler option [Visual Basic]
 ms.assetid: 84a0b670-33ae-44c4-a46a-b90388809317
-ms.openlocfilehash: 2fe1834c3e92c3eff016ffd7857a0473eb2e8b3a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4281c7bf5a7972d323e1e649aaef437c7ee901ff
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788850"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956268"
 ---
 # <a name="-recurse"></a>-recurse
-Zkompiluje soubory zdrojového kódu ve všech adresářích podřízené zadaný adresář nebo adresář projektu.  
+Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď určeného adresáře, nebo adresáře projektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,25 +24,25 @@ Zkompiluje soubory zdrojového kódu ve všech adresářích podřízené zadan�
   
 ## <a name="arguments"></a>Arguments  
  `dir`  
- Volitelné. Adresář, ve kterém chcete, aby hledání začalo. Pokud není zadán, hledání začne v adresáři projektu.  
+ Volitelný parametr. Adresář, ve kterém chcete zahájit hledání. Pokud není zadán, hledání začne v adresáři projektu.  
   
  `file`  
  Povinný parametr. Soubory, které chcete vyhledat. Zástupné znaky jsou povoleny.  
   
 ## <a name="remarks"></a>Poznámky  
- Zástupné znaky v názvu souboru můžete použít ke kompilaci všech odpovídajících souborů v adresáři projektu bez použití `-recurse`. Pokud není zadán žádný název výstupního souboru, kompilátor odvodí název výstupního souboru na první zpracování vstupního souboru. Obvykle se jedná v prvním souboru v seznamu soubory zkompilovány při zobrazení podle abecedy. Z tohoto důvodu je nejvhodnější k určení souboru výstupu pomocí `-out` možnost.  
+ Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bez `-recurse`použití. Pokud není zadán žádný název výstupního souboru, kompilátor vyloží název výstupního souboru v prvním zpracovávaném vstupním souboru. Většinou se jedná o první soubor v seznamu souborů kompilovaných při abecedním zobrazení. Z tohoto důvodu je nejlepší zadat výstupní soubor pomocí `-out` možnosti.  
   
 > [!NOTE]
->  `-recurse` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
+> Tato `-recurse` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz zkompiluje všechny soubory jazyka Visual Basic v aktuálním adresáři.  
+ Následující příkaz zkompiluje všechny Visual Basic soubory v aktuálním adresáři.  
   
 ```console
 vbc *.vb  
 ```  
   
- Následující příkaz zkompiluje všechny soubory jazyka Visual Basic v `Test\ABC` adresář a všechny adresáře pod něj a poté vygeneruje `Test.ABC.dll`.  
+ Následující příkaz zkompiluje všechny Visual Basic soubory v `Test\ABC` adresáři a všech adresářích pod ním a pak vygeneruje. `Test.ABC.dll`  
   
 ```console
 vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb  
@@ -50,6 +50,6 @@ vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

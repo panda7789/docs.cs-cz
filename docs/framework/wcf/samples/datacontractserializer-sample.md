@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
-ms.openlocfilehash: 3cfa4691376689bb8e7b1f8e8f41ed5d93ba0e61
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4a3779b8351ae30f7c316d37952f208a287d5e0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990350"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961817"
 ---
 # <a name="datacontractserializer-sample"></a>Ukázka třídy DataContractSerializer
-Ukázka třídy DataContractSerializer ukazuje <xref:System.Runtime.Serialization.DataContractSerializer>, které provádí obecné serializace a deserializace služeb pro data třídy kontraktu. Ukázka vytvoří `Record` objektu, serializuje do datového proudu paměti a deserializuje zpět do jiného datového proudu paměti `Record` objekt pro demonstraci použití <xref:System.Runtime.Serialization.DataContractSerializer>. Ukázka pak serializuje `Record` pomocí binární zapisovače k předvedení jak zapisovač, který ovlivňuje serializace.  
+Ukázka DataContractSerializer demonstruje <xref:System.Runtime.Serialization.DataContractSerializer>, který provádí obecné serializace a deserializaci služeb pro třídy kontraktu dat. Ukázka vytvoří `Record` objekt, zaserializace jej do paměťového proudu a deserializace paměťového proudu zpět na jiný `Record` objekt k <xref:System.Runtime.Serialization.DataContractSerializer>demonstraci použití. Ukázka potom serializaci `Record` objektu pomocí binárního zapisovače k předvedení, jak má zapisovač vliv na serializaci.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Kontraktu dat pro `Record` je znázorněno v následujícím ukázkovém kódu.  
+ Kontrakt dat pro `Record` je zobrazen v následujícím ukázkovém kódu.  
   
 ```csharp  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -71,14 +71,14 @@ internal class Record
 }  
 ```  
   
- Vzorový kód vytvoří `Record` objekt s názvem `record1` zobrazí objekt.  
+ Vzorový kód vytvoří `Record` objekt s názvem `record1` a potom zobrazí objekt.  
   
 ```csharp
 Record record1 = new Record(1, 2, "+", 3);  
 Console.WriteLine("Original record: {0}", record1.ToString());  
 ```  
   
- Ukázka pak používá <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci `record1` do datový proud paměti.  
+ Ukázka potom používá <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci `record1` do paměťového proudu.  
   
 ```csharp  
 MemoryStream stream1 = new MemoryStream();  
@@ -88,7 +88,7 @@ DataContractSerializer serializer = new DataContractSerializer(typeof(Record));
 serializer.WriteObject(stream1, record1);  
 ```  
   
- Dále Ukázka používá <xref:System.Runtime.Serialization.DataContractSerializer> deserializovat datový proud paměti zpět do nového `Record` objektu a zobrazí ji.  
+ Dále ukázka používá <xref:System.Runtime.Serialization.DataContractSerializer> k deserializaci paměťového proudu zpátky do nového `Record` objektu a zobrazí jej.  
   
 ```csharp  
 stream1.Position = 0;  
@@ -99,7 +99,7 @@ Record record2 = (Record)serializer.ReadObject(stream1);
 Console.WriteLine("Deserialized record: {0}", record2.ToString());  
 ```  
   
- Ve výchozím nastavení `DataContractSerializer` kóduje objekty do datového proudu pomocí textovou reprezentaci řetězce XML. Však můžete ovlivnit kódování XML předáváním různých zapisovače. Ukázka vytvoří binární zapisovače voláním <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>. Pak předá modul pro zápis a záznam objekt serializátoru, který je při volání <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>. Nakonec vzorku vyprázdní modul pro zápis, informuje o délce datové proudy.  
+ Ve výchozím nastavení `DataContractSerializer` kóduje objekty do datového proudu pomocí textové reprezentace XML. Můžete však ovlivnit kódování XML předáním jiného zapisovače. Ukázka vytvoří binární zapisovač pomocí volání <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>. Pak předá serializátor a objekt záznamu do serializátoru při volání <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>. Nakonec ukázka vyprázdní zapisovač a sestavy o délce datových proudů.  
   
 ```csharp  
 MemoryStream stream2 = new MemoryStream();  
@@ -113,7 +113,7 @@ Console.WriteLine("Text Stream is {0} bytes long", stream1.Length);
 Console.WriteLine("Binary Stream is {0} bytes long", stream2.Length);  
 ```  
   
- Při spuštění ukázky původní záznam a deserializovat záznam se zobrazí, za nímž následuje porovnání mezi binární kódování a délka kódování textu. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se zobrazí původní záznam a deserializovaný záznam následovaný porovnáváním mezi délkou kódování textu a binárním kódováním. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console  
 Original record: Record: 1 + 2 = 3  
@@ -124,19 +124,19 @@ Binary Stream is 156 bytes long
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Ke spuštění ukázky, spusťte z příkazového řádku zadáním client\bin\client.exe klienta.  
+3. Chcete-li spustit ukázku, spusťte klienta z příkazového řádku zadáním příkazu client\bin\client.exe.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractSerializer`  

@@ -9,60 +9,60 @@ dev_langs:
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 451893cf09b0d1ebdfb33d0020376aa35240b6d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8c8e1b0d9a79ff22f3194e86cd580f3a7e199b2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669183"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962031"
 ---
 # <a name="building-xml-schemas"></a>Sestavování schémat XML
-Třídy v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů mapovat na struktury definované v doporučení schématu XML World Wide Web Consortium (W3C) a slouží k sestavení XML schémata v paměti.  
+Třídy v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů se mapují na struktury definované v doporučení schématu XML konsorcium World Wide Web (W3C) a lze je použít k sestavení schémat XML v paměti.  
   
-## <a name="building-an-xml-schema"></a>Vytváření schématu XML  
- V příkladech kódu, které následují rozhraní API SOM slouží k vytváření zákazník XML schématu v paměti.  
+## <a name="building-an-xml-schema"></a>Sestavení schématu XML  
+ V příkladech kódu, které následují, se používá rozhraní API SOM k sestavení schématu XML pro zákazníky v paměti.  
   
-### <a name="creating-element-and-attributes"></a>Vytvoření elementu a atributy  
- Příklady kódu sestavte zákazník schématu zdola nahoru, podřízené prvky, atributy a jejich odpovídající typy nejprve vytvoříte a potom prvky nejvyšší úrovně.  
+### <a name="creating-element-and-attributes"></a>Vytváření elementů a atributů  
+ Příklady kódu sestavují schéma zákazníka z dolní části nahoru, vytváření podřízených prvků, atributů a jejich odpovídajících typů a pak prvků na nejvyšší úrovni.  
   
- V následujícím příkladu kódu `FirstName` a `LastName` prvky, stejně jako `CustomerId` atribut schématu zákazníka se vytvoří s použitím <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaAttribute> třídy SOM. Kromě <xref:System.Xml.Schema.XmlSchemaElement.Name%2A> vlastnosti <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaAttribute> třídy, které odpovídají atributu "name" `<xs:element />` a `<xs:attribute />` elementy ve schématu XML, všechny ostatní atributy tímhle schématem povolený (`defaultValue`, `fixedValue`, `form`, a tak dále) odpovídající vlastnosti <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaAttribute> třídy.  
+ `FirstName` V následujícím příkladu kódu jsou prvky a a `LastName` také `CustomerId` atribut schématu zákazníka vytvořeny pomocí <xref:System.Xml.Schema.XmlSchemaElement> tříd a <xref:System.Xml.Schema.XmlSchemaAttribute> třídy SOM. `<xs:element />` `<xs:attribute />` Kromě vlastností tříd <xref:System.Xml.Schema.XmlSchemaElement> a<xref:System.Xml.Schema.XmlSchemaAttribute> , které odpovídají atributu "Name" elementů a ve schématu XML, všech ostatních atributů povolených schématem ( <xref:System.Xml.Schema.XmlSchemaElement.Name%2A> `defaultValue` ,`fixedValue`, a`form`tak dále )mají<xref:System.Xml.Schema.XmlSchemaAttribute> odpovídající vlastnosti v třídách a.<xref:System.Xml.Schema.XmlSchemaElement>  
   
  [!code-cpp[XmlSchemaCreateExample#2](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#2)]
  [!code-csharp[XmlSchemaCreateExample#2](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCreateExample/CS/XmlSchemaCreateExample.cs#2)]
  [!code-vb[XmlSchemaCreateExample#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCreateExample/VB/XmlSchemaCreateExample.vb#2)]  
   
-### <a name="creating-schema-types"></a>Vytváření typů schématu  
- Typy hodnot je definována obsah elementů a atributů. K vytváření elementů a atributů, jejichž typy jsou jedním z typů předdefinovaných schémat <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> nebo <xref:System.Xml.Schema.XmlSchemaAttribute> třídy se nastavují s odpovídající kvalifikovaný název předdefinovaný typ použití <xref:System.Xml.XmlQualifiedName> třídy. Vytvoření uživatelem definovaného typu pro elementy a atributy, je vytvořený pomocí nového typu jednoduché nebo složité <xref:System.Xml.Schema.XmlSchemaSimpleType> nebo <xref:System.Xml.Schema.XmlSchemaComplexType> třídy.  
+### <a name="creating-schema-types"></a>Vytváření typů schémat  
+ Obsah elementů a atributů je definován jejich typy. Chcete-li vytvořit prvky a atributy, jejichž typy jsou jedním z vestavěných typů schémat, <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> nebo <xref:System.Xml.Schema.XmlSchemaAttribute> třídy jsou nastaveny s odpovídajícím kvalifikovaným názvem předdefinovaného typu pomocí <xref:System.Xml.XmlQualifiedName> třídy. Chcete-li vytvořit uživatelsky definovaný typ pro prvky a atributy, je vytvořen nový jednoduchý nebo komplexní typ pomocí <xref:System.Xml.Schema.XmlSchemaSimpleType> třídy or. <xref:System.Xml.Schema.XmlSchemaComplexType>  
   
 > [!NOTE]
->  K vytvoření nepojmenované jednoduchých nebo složitých typů, které jsou anonymní podřízené objekty daného elementu nebo atributu (pouze jednoduché typy lze použít pro atributy), nastavte <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> nebo <xref:System.Xml.Schema.XmlSchemaAttribute> třídy, které nepojmenované jednoduché nebo komplexní typ, místo <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> nebo <xref:System.Xml.Schema.XmlSchemaAttribute> třídy.  
+> Chcete-li vytvořit nepojmenované jednoduché nebo komplexní typy, které jsou anonymními podřízenými prvky elementu nebo atributu (pro atributy platí pouze jednoduché typy <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> ), nastavte <xref:System.Xml.Schema.XmlSchemaElement> vlastnost <xref:System.Xml.Schema.XmlSchemaAttribute> třídy nebo na nepojmenované jednoduché nebo komplexní typ, <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> místo vlastnosti<xref:System.Xml.Schema.XmlSchemaElement> třídy nebo <xref:System.Xml.Schema.XmlSchemaAttribute> .  
   
- Schémata XML povolit anonymní a pojmenované jednoduché typy mají být odvozené omezením z jiných jednoduché typy (integrované nebo uživatelem definovaný) nebo vytvořen jako seznam nebo sjednocení jiných typů jednoduché. <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> Třída se používá k vytvoření jednoduchého typu tak, že omezíte předdefinované `xs:string` typu. Můžete také použít <xref:System.Xml.Schema.XmlSchemaSimpleTypeList> nebo <xref:System.Xml.Schema.XmlSchemaSimpleTypeUnion> tříd pro vytvoření seznamu nebo sjednocení typů. <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A?displayProperty=nameWithType> Vlastnost označuje, zda je omezení jednoduchých typů, seznamu nebo sjednocení.  
+ Schémata XML umožňují odvození anonymních i pojmenovaných jednoduchých typů omezením z jiných jednoduchých typů (předdefinované nebo definované uživatelem) nebo konstruované jako seznam nebo sjednocení jiných jednoduchých typů. Třída se používá k vytvoření jednoduchého typu omezením vestavěného `xs:string` typu. <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> Můžete také použít <xref:System.Xml.Schema.XmlSchemaSimpleTypeList> třídy nebo <xref:System.Xml.Schema.XmlSchemaSimpleTypeUnion> k vytvoření typu seznamu nebo sjednocení. <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A?displayProperty=nameWithType> Vlastnost označuje, zda se jedná o jednoduché omezení typu, seznam nebo sjednocení.  
   
- V následujícím příkladu kódu `FirstName` předdefinovaný typ je typ prvku `xs:string`, `LastName` pojmenované jednoduchý typ, který představuje omezení typu předdefinovaný typ je typ prvku `xs:string`, s `MaxLength` hodnota omezující vlastnosti 20, a `CustomerId` typ atributu je předdefinovaný typ `xs:positiveInteger`. `Customer` Element je anonymní komplexní typ, jehož částice je sekvenci z `FirstName` a `LastName` elementy a jejichž atributy obsahuje `CustomerId` atribut.  
+ `FirstName` V následujícím příkladu kódu je typ prvku vestavěný typ `LastName` `xs:string`, typ prvku je pojmenovaný jednoduchý typ, který je omezením vestavěného typu `xs:string`s `MaxLength` hodnotou omezující vlastnosti 20 a typ atributu je vestavěný typ `xs:positiveInteger`. `CustomerId` Element je anonymní komplexní typ, jehož částice je sekvence `FirstName` prvků a `LastName` a jejichž atributy obsahují `CustomerId` atribut. `Customer`  
   
 > [!NOTE]
->  Můžete také použít <xref:System.Xml.Schema.XmlSchemaChoice> nebo <xref:System.Xml.Schema.XmlSchemaAll> třídy jako částice složitý typ k replikaci `<xs:choice />` nebo `<xs:all />` sémantiku.  
+> Můžete také použít <xref:System.Xml.Schema.XmlSchemaChoice> třídy nebo <xref:System.Xml.Schema.XmlSchemaAll> jako části složeného typu pro replikaci `<xs:choice />` nebo `<xs:all />` sémantiku.  
   
  [!code-cpp[XmlSchemaCreateExample#3](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#3)]
  [!code-csharp[XmlSchemaCreateExample#3](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCreateExample/CS/XmlSchemaCreateExample.cs#3)]
  [!code-vb[XmlSchemaCreateExample#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCreateExample/VB/XmlSchemaCreateExample.vb#3)]  
   
 ### <a name="creating-and-compiling-schemas"></a>Vytváření a kompilování schémat  
- Na tento bod, podřízené prvky a atributy, jejich odpovídající typy a na nejvyšší úrovni `Customer` element byly vytvořeny pomocí rozhraní API SOM v paměti. V následujícím příkladu kódu je vytvořený element schématu pomocí <xref:System.Xml.Schema.XmlSchema> třídy, prvky nejvyšší úrovně a typy jsou přidány pomocí <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> vlastností a dokončení schématu je zkompilován pomocí <xref:System.Xml.Schema.XmlSchemaSet> třídy a do něj zapisovat konzoly.  
+ V tomto okamžiku se podřízené prvky a atributy, jejich odpovídající typy a element nejvyšší úrovně `Customer` vytvořily v paměti pomocí rozhraní API modelu SOM. V následujícím příkladu kódu je prvek schématu vytvořen pomocí <xref:System.Xml.Schema.XmlSchema> třídy, prvky nejvyšší úrovně a typy jsou do něj přidány <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> pomocí vlastnosti a kompletní <xref:System.Xml.Schema.XmlSchemaSet> schéma je kompilováno pomocí třídy a zapsána do stromu.  
   
  [!code-cpp[XmlSchemaCreateExample#4](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#4)]
  [!code-csharp[XmlSchemaCreateExample#4](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCreateExample/CS/XmlSchemaCreateExample.cs#4)]
  [!code-vb[XmlSchemaCreateExample#4](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCreateExample/VB/XmlSchemaCreateExample.vb#4)]  
   
- <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A?displayProperty=nameWithType> Metoda ověří zákazníka schématu s pomocí pravidel pro schématu XML a zpřístupní vlastnosti po schema kompilace.  
+ <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A?displayProperty=nameWithType> Metoda ověřuje schéma zákazníka proti pravidlům pro schéma XML a zpřístupňuje vlastnosti kompilace po schématu.  
   
 > [!NOTE]
->  Všechny vlastnosti po schema kompilace v rozhraní API SOM se liší od po-schema-ověření – informační sadu.  
+> Všechny vlastnosti kompilace post-Schema-compilation v rozhraní API SOM se liší od post-Schema-Validation-informační sady.  
   
- <xref:System.Xml.Schema.ValidationEventHandler> Přidán do <xref:System.Xml.Schema.XmlSchemaSet> je delegát, který volá metodu zpětného volání `ValidationCallback` schématu ověření upozornění a chyby.  
+ Přidaný do je delegát, který volá metodu `ValidationCallback` zpětného volání pro zpracování upozornění a chyb ověřování schématu. <xref:System.Xml.Schema.XmlSchemaSet> <xref:System.Xml.Schema.ValidationEventHandler>  
   
- Tady je příklad úplného kódu a schéma zákazníka zapsána do konzoly.  
+ Následuje příklad kompletního příkladu kódu a schéma zákazníka zapsané do konzoly.  
   
  [!code-cpp[XmlSchemaCreateExample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#1)]
  [!code-csharp[XmlSchemaCreateExample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCreateExample/CS/XmlSchemaCreateExample.cs#1)]

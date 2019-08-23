@@ -11,39 +11,39 @@ helpviewer_keywords:
 - New constraint
 - New keyword [Visual Basic]
 ms.assetid: d7d566d7-fe0e-4336-91f7-641a542de4d0
-ms.openlocfilehash: 630b0c48def77449f426b287a26f95af7cfb930e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36cf71529b1f81c27881638d788117222c37171d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936627"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955880"
 ---
 # <a name="new-operator-visual-basic"></a>New – operátor (Visual Basic)
-Zavádí `New` klauzule, která vytvoří novou instanci objektu, určuje omezení konstruktoru u parametru typu nebo identifikuje `Sub` postupu jako konstruktor třídy.  
+Zavádí klauzuli pro vytvoření nové instance objektu, určuje omezení konstruktoru pro parametr typu nebo `Sub` identifikuje proceduru jako konstruktor třídy. `New`  
   
 ## <a name="remarks"></a>Poznámky  
- V deklaraci nebo příkazu přiřazení `New` klauzuli musí být zadána s definicí třídy, ze kterého lze vytvořit instance. To znamená, že třída musí vystavit jeden nebo více konstruktorů, které volající kód může přistupovat.  
+ V deklaraci nebo příkazu `New` přiřazení musí klauzule určovat definovanou třídu, ze které lze instanci vytvořit. To znamená, že třída musí vystavit jeden nebo více konstruktorů, ke kterým může přistupovat volající kód.  
   
- Můžete použít `New` klauzuli v příkazu deklarace nebo příkazu přiřazení. Když příkaz spustíte, zavolá odpovídající konstruktor zadané třídy, prochází žádné argumenty, které jste zadali. Následující příklad ukazuje to ve vytváření instancí `Customer` třídu, která má dva konstruktory, která nepřijímá žádné parametry a ten, který se použije parametr řetězce.  
+ Můžete použít `New` klauzuli v příkazu deklarace nebo v příkazu přiřazení. Při spuštění příkazu volá příslušný konstruktor zadané třídy a předává všechny argumenty, které jste zadali. Následující příklad ukazuje to vytvořením instancí `Customer` třídy, která má dva konstruktory, jeden, který přebírá žádné parametry a jeden, který přijímá řetězcový parametr.  
   
  [!code-vb[VbVbalrKeywords#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class6.vb#11)]  
   
- Protože pole jsou třídy, `New` můžete vytvořit novou instanci pole, jak je znázorněno v následujícím příkladu.  
+ Vzhledem k tomu, že `New` pole jsou třídy, může vytvořit novou instanci pole, jak je znázorněno v následujících příkladech.  
   
  [!code-vb[VbVbalrKeywords#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class6.vb#12)]  
   
- Vyvolá common language runtime (CLR) <xref:System.OutOfMemoryException> chyby, pokud není dostatek paměti k vytvoření nové instance.  
+ Modul CLR (Common Language Runtime) vyvolá <xref:System.OutOfMemoryException> chybu, pokud není k dispozici dostatek paměti pro vytvoření nové instance.  
   
 > [!NOTE]
->  `New` – Klíčové slovo se také používá v seznamech parametrů typu k určení, že zadaný typ musí vystavit dostupný konstruktor bez parametrů. Další informace o parametry typu a omezení, najdete v části [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).  
+> `New` Klíčové slovo se používá také v seznamech parametrů typu k určení toho, že zadaný typ musí vystavit přístupný konstruktor bez parametrů. Další informace o parametrech typu a omezeních najdete v tématu [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).  
   
- Chcete-li vytvořit proceduru konstruktor pro třídu, nastavte název `Sub` postup `New` – klíčové slovo. Další informace najdete v tématu [doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
+ Chcete-li vytvořit proceduru konstruktoru pro třídu, nastavte název `Sub` procedury `New` na klíčové slovo. Další informace najdete v tématu [životnost objektu: Způsob vytváření a zničení](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)objektů.  
   
- `New` – Klíčové slovo lze použít v těchto kontextech:  
+ `New` Klíčové slovo lze použít v těchto kontextech:  
   
  [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [z](../../../visual-basic/language-reference/statements/of-clause.md)  
+ [Tohoto](../../../visual-basic/language-reference/statements/of-clause.md)  
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
@@ -52,5 +52,5 @@ Zavádí `New` klauzule, která vytvoří novou instanci objektu, určuje omezen
 - <xref:System.OutOfMemoryException>
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [Doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Doba života objektu: Vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

@@ -28,18 +28,18 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 6ab547951b00cc4a479034129254e4060486348d
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 16f4155cefea20868185febb3d2a566dc1524cc4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817951"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956275"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují vlastní okna <xref:System.Windows.Window> pomocí třídy. V tomto tématu <xref:System.Windows.Window> se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
   
 > [!NOTE]
->  Aplikace hostované [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] v prohlížeči, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a volné [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky, neposkytují vlastní okna. Místo toho jsou hostovány ve Windows, poskytovaném aplikací Windows Internet Explorer. Viz téma [Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
+> Aplikace hostované [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] v prohlížeči, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a volné [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky, neposkytují vlastní okna. Místo toho jsou hostovány ve Windows, poskytovaném aplikací Windows Internet Explorer. Viz téma [Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
 
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Třída okna  
@@ -88,14 +88,14 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  Chcete-li [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] povolit spolupráci souboru značek a souboru s kódem na pozadí, jsou vyžadovány následující:  
   
-- V kódu `Window` musí element `x:Class` obsahovat atribut. Když je aplikace `x:Class` sestavena, existence v souboru označení způsobí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] , že vytvoří `partial` třídu, která je odvozena z <xref:System.Windows.Window> a má název, který je určen `x:Class` atributem. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` třída `InitializeComponent` implementuje metodu, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.  
+- V kódu `Window` musí element `x:Class` obsahovat atribut. Když je `x:Class` aplikace sestavena, existence v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) `partial` vytvoří třídu, která je odvozena z <xref:System.Windows.Window> a `x:Class` má název, který je určen atributem. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` třída `InitializeComponent` implementuje metodu, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.  
   
 - V kódu na pozadí třída musí být `partial` třída se stejným názvem, který je určen `x:Class` atributem v označení a musí odvozovat z <xref:System.Windows.Window>. To umožňuje, aby soubor s kódem na pozadí byl přidružen `partial` ke třídě, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).  
   
 - V kódu na pozadí <xref:System.Windows.Window> třída musí implementovat konstruktor, který `InitializeComponent` volá metodu. `InitializeComponent`je implementována třídou vygenerovanou `partial` souborem označení pro registraci událostí a nastavení vlastností, které jsou definovány v označení.  
   
 > [!NOTE]
->  Když do projektu přidáte nový <xref:System.Windows.Window> pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], <xref:System.Windows.Window> je implementováno pomocí kódu a kódu na pozadí a zahrnuje nezbytnou konfiguraci pro vytvoření přidružení mezi značkami a soubory kódu na pozadí jako popsané tady.  
+> Když do projektu přidáte nový <xref:System.Windows.Window> pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], <xref:System.Windows.Window> je implementováno pomocí kódu a kódu na pozadí a zahrnuje nezbytnou konfiguraci pro vytvoření přidružení mezi značkami a soubory kódu na pozadí jako popsané tady.  
   
  S touto konfigurací se můžete soustředit na definování vzhledu okna v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu a implementaci jeho chování v kódu na pozadí. Následující příklad ukazuje okno s tlačítkem, implementované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu a obslužná rutina události pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost tlačítka, implementovaná v kódu na pozadí.  
   
@@ -106,13 +106,13 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 <a name="ConfiguringWindowForMSBuild"></a>   
 ## <a name="configuring-a-window-definition-for-msbuild"></a>Konfigurace definice okna pro MSBuild  
- Způsob implementace vašeho okna určuje, jak je nakonfigurován pro [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]. Pro okno, které je definováno pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu na pozadí:  
+ Způsob implementace vašeho okna určuje, jak je nakonfigurován pro nástroj MSBuild. Pro okno, které je definováno pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu na pozadí:  
   
-- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]soubory značek jsou konfigurovány [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako `Page` položky.  
+- Soubory značek XAML jsou konfigurovány jako `Page` položky MSBuild.  
   
-- Soubory kódu na pozadí jsou konfigurovány [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako `Compile` položky.  
+- Soubory kódu na pozadí jsou konfigurovány jako `Compile` položky nástroje MSBuild.  
   
- Tento soubor je zobrazen v následujícím [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] souboru projektu.  
+ Tento soubor je zobrazen v následujícím souboru projektu MSBuild.  
   
 ```xml  
 <Project ...  
@@ -149,7 +149,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Okno otevřené voláním <xref:System.Windows.Window.Show%2A> je nemodální okno, což znamená, že aplikace funguje v režimu, který umožňuje uživatelům aktivovat další okna ve stejné aplikaci.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.ShowDialog%2A>je volána pro otevření oken, například dialogová okna v modálním formátu. Další informace najdete v tématu Přehled dialogových [oken](dialog-boxes-overview.md) .  
+> <xref:System.Windows.Window.ShowDialog%2A>je volána pro otevření oken, například dialogová okna v modálním formátu. Další informace najdete v tématu Přehled dialogových [oken](dialog-boxes-overview.md) .  
   
  Když <xref:System.Windows.Window.Show%2A> je volána, okno provede inicializační práci předtím, než se zobrazí, aby se navázala infrastruktura, která umožňuje přijímat uživatelský vstup. Po inicializaci <xref:System.Windows.Window.SourceInitialized> okna se událost vyvolá a zobrazí se okno.  
   
@@ -205,7 +205,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Při prvním otevření okna se zobrazí okno aktivní (Pokud se nezobrazí s <xref:System.Windows.Window.ShowActivated%2A> nastavením na `false`). *Aktivní okno* je okno, které aktuálně zachytí vstup uživatele, například tahy kláves a kliknutí myší. Když dojde k aktivaci okna, vyvolá <xref:System.Windows.Window.Activated> událost.  
   
 > [!NOTE]
->  Při prvním otevření <xref:System.Windows.FrameworkElement.Loaded> okna se události a <xref:System.Windows.Window.ContentRendered> vyvolá až po <xref:System.Windows.Window.Activated> vyvolání události. V takovém případě může být okno efektivně považováno za otevřené při <xref:System.Windows.Window.ContentRendered> vyvolání.  
+> Při prvním otevření <xref:System.Windows.FrameworkElement.Loaded> okna se události a <xref:System.Windows.Window.ContentRendered> vyvolá až po <xref:System.Windows.Window.Activated> vyvolání události. V takovém případě může být okno efektivně považováno za otevřené při <xref:System.Windows.Window.ContentRendered> vyvolání.  
   
  Po aktivaci okna může uživatel aktivovat jiné okno ve stejné aplikaci nebo aktivovat jinou aplikaci. Pokud k tomu dojde, stane se aktuálně aktivní okno deaktivováno a vyvolá <xref:System.Windows.Window.Deactivated> událost. Podobně když uživatel vybere aktuálně deaktivované okno, okno se znovu aktivuje a <xref:System.Windows.Window.Activated> vyvolá se.  
   
@@ -221,7 +221,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Pokud je úloha na pozadí dokončena, okno může chtít uživateli upozorňovat na naléhavější voláním <xref:System.Windows.Window.Activate%2A> metody. Pokud uživatel pracuje s jinou aplikací aktivovanou, když <xref:System.Windows.Window.Activate%2A> je volána, tlačítko na hlavním panelu bude blikat. Pokud uživatel spolupracuje s aktuální aplikací, volání <xref:System.Windows.Window.Activate%2A> přepne okno do popředí.  
   
 > [!NOTE]
->  Můžete zpracovávat aktivaci rozsahu aplikace pomocí <xref:System.Windows.Application.Activated?displayProperty=nameWithType> událostí a. <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType>  
+> Můžete zpracovávat aktivaci rozsahu aplikace pomocí <xref:System.Windows.Application.Activated?displayProperty=nameWithType> událostí a. <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType>  
   
 <a name="Closing_a_Window"></a>   
 ### <a name="closing-a-window"></a>Zavření okna  
@@ -262,9 +262,9 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Pokud <xref:System.Windows.Window.Closing> není zpracována nebo je zpracována, ale není zrušeno, okno se zavře. Těsně před tím, než se okno <xref:System.Windows.Window.Closed> skutečně zavře, se vyvolá. V tuto chvíli není možné zabránit zavření okna.  
   
 > [!NOTE]
->  Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A>) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
+> Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A>) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
   
- I když může být okno explicitně uzavřeno prostřednictvím mechanismů, které jsou k dispozici v klientských a klientských oblastech, může být okno také implicitně uzavřeno v důsledku chování v jiných částech aplikace nebo [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], včetně následujících:  
+ I když může být okno explicitně uzavřeno prostřednictvím mechanismů, které jsou k dispozici v klientských a klientských oblastech, může být okno také implicitně uzavřeno v důsledku chování v jiných částech aplikace nebo Windows, včetně následujících:  
   
 - Uživatel se odhlásí nebo vypne v systému Windows.  
   
@@ -275,7 +275,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
 - <xref:System.Windows.Application.Shutdown%2A>je volána.  
   
 > [!NOTE]
->  Po zavření okna nelze znovu otevřít.  
+> Po zavření okna nelze znovu otevřít.  
   
 <a name="Window_Lifetime_Events"></a>   
 ### <a name="window-lifetime-events"></a>Události životního cyklu okna  
@@ -377,7 +377,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Okno s maximalizovaném stavem se zvětšuje na maximální velikost, která může být, což bude mít až velkou <xref:System.Windows.FrameworkElement.MaxWidth%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A>hodnotu, a <xref:System.Windows.Window.SizeToContent%2A> vlastnosti se určí. Podobně jako minimalizované okno nelze upravit velikost maximalizovaného okna pomocí úchytu pro změnu velikosti nebo přetažením ohraničení.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.Top%2A> <xref:System.Windows.Window.Left%2A>Hodnoty vlastností<xref:System.Windows.FrameworkElement.Height%2A> , ,<xref:System.Windows.FrameworkElement.Width%2A>a v okně vždy reprezentují hodnoty pro normální stav, a to i v případě, že je okno momentálně maximalizováno nebo minimalizováno.  
+> <xref:System.Windows.Window.Top%2A> <xref:System.Windows.Window.Left%2A>Hodnoty vlastností<xref:System.Windows.FrameworkElement.Height%2A> , ,<xref:System.Windows.FrameworkElement.Width%2A>a v okně vždy reprezentují hodnoty pro normální stav, a to i v případě, že je okno momentálně maximalizováno nebo minimalizováno.  
   
  Stav okna lze nakonfigurovat nastavením jeho <xref:System.Windows.Window.WindowState%2A> vlastnosti, která může mít jednu z následujících <xref:System.Windows.WindowState> hodnot výčtu:  
   

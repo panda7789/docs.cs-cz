@@ -2,38 +2,38 @@
 title: 'Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování'
 ms.date: 03/30/2017
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
-ms.openlocfilehash: f5781b49817054923cbbbf4d52205b9280ea131a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 37234d8f0631ea11ea0d9c7d4e8f027a7266814e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64632212"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958438"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a>Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování
-Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete vygenerovat následující soubory podle databáze školy:  
+V tomto tématu se dozvíte, jak pomocí nástroje generátoru EDM (EdmGen. exe) vygenerovat následující soubory založené na školní databázi:  
   
-- Koncepční model (soubor .csdl).  
+- Koncepční model (soubor. CSDL).  
   
-- Model úložiště (souboru ssdl).  
+- Model úložiště (soubor. ssdl).  
   
-- Mapování mezi modely koncepční a úložiště (soubor .msl).  
+- Mapování mezi koncepční modely a modely úložiště (soubor. MSL).  
   
-- Objektové vrstvě kód v jazyce Visual Basic nebo C#.  
+- Kód vrstvy objektu v Visual Basic nebo C#.  
   
 - Zobrazit soubory.  
   
- Nástroje EdmGen.exe /mode:FullGeneration používá ke generování souborů uvedených výše. Další informace o příkazech EdmGen.exe najdete v tématu [generátor EDM (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).  
+ Nástroj EdmGen. exe používá/Mode: FullGeneration k vygenerování souborů uvedených výše. Další informace o příkazech EdmGen. exe najdete v tématu [generátor EDM (EdmGen. exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).  
   
- Pokud použití EdmGen.exe pro generování modelu a souborů mapování, je stále potřeba konfigurace projektu Visual Studio pro použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).  
+ Použijete-li EdmGen. exe ke generování modelu a mapování souborů, je stále nutné nakonfigurovat projekt sady Visual Studio tak, aby používal [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Ručně nakonfigurujte Entity Framework projekt](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).  
   
 > [!NOTE]
->  Koncepční model generovaných EdmGen.exe zahrnuje všechny objekty v databázi. Pokud chcete generovat Koncepční model, který obsahuje pouze konkrétní objekty, použijte Průvodce datovým modelem Entity. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
+> Koncepční model generovaný nástrojem EdmGen. exe obsahuje všechny objekty v databázi. Pokud chcete vygenerovat koncepční model, který obsahuje pouze konkrétní objekty, použijte Průvodce model EDM (Entity Data Model). Další informace najdete v tématu [jak: Použijte průvodce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))model EDM (Entity Data Model).  
   
-### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Generování modelu školní pro projekt jazyka Visual Basic pomocí EdmGen.exe  
+### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Vygenerování školního modelu pro Visual Basic projekt pomocí nástroje EdmGen. exe  
   
-1. Vytvoření databáze školy. Další informace najdete v tématu [vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
+1. Vytvořte školní databázi. Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
   
-2. Na příkazovém řádku spusťte následující příkaz bez konce řádků:  
+2. Na příkazovém řádku spusťte následující příkaz bez konců řádků:  
   
     ```  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
@@ -41,11 +41,11 @@ Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete
     /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:VB  
     ```  
   
-### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a>Generování modelu School pomocí EdmGen.exe projektu C#  
+### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a>Vygenerování školního modelu pro C# projekt pomocí EdmGen. exe  
   
-1. Vytvoření databáze školy. Další informace najdete v tématu [vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
+1. Vytvořte školní databázi. Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
   
-2. Na příkazovém řádku spusťte následující příkaz bez konce řádků:  
+2. Na příkazovém řádku spusťte následující příkaz bez konců řádků:  
   
     ```  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
@@ -56,7 +56,7 @@ Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete
 ## <a name="see-also"></a>Viz také:
 
 - [Modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)
-- [Postupy: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
-- [Postupy: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
+- [Postupy: Ruční konfigurace Entity Frameworkho projektu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
+- [Postupy: Předem generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
+- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Postupy: Použití EdmGen. exe k ověření modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)

@@ -3,48 +3,48 @@ title: Referenční dokumentace k rozhraní API WIF
 ms.date: 03/30/2017
 ms.assetid: a027d902-9314-4bfd-b172-4e81847b1d68
 author: BrucePerlerMS
-ms.openlocfilehash: c94ccd3f25be576c57fda798c6b2b8cc25357022
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17a1da0a3b0ea6567fd805e7273f793ace35ae69
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645880"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958348"
 ---
 # <a name="wif-api-reference"></a>Referenční dokumentace k rozhraní API WIF
-Třídy technologie Windows Identity Foundation (WIF) se rozdělit mezi následující sestavení: `mscorlib` (mscorlib.dll) `System.IdentityModel` (System.IdentityModel.dll) `System.IdentityModel.Services` (System.IdentityModel.Services.dll), a `System.ServiceModel` () System.ServiceModel.dll). Toto téma obsahuje odkazy na obory názvů WIF a stručné vysvětlení tříd, které obsahuje každý obor názvů.  
+Třídy Windows Identity Foundation (WIF) jsou rozdělené mezi následující sestavení: `mscorlib` (mscorlib. dll), `System.IdentityModel` (System. IdentityModel. dll), `System.IdentityModel.Services` (System. IdentityModel. Services. dll) a `System.ServiceModel` ( System. ServiceModel. dll). Toto téma obsahuje odkazy na obory názvů WIF a stručné vysvětlení tříd, které obsahují jednotlivé obory názvů.  
   
 > [!IMPORTANT]
->  Následující `System.IdentityModel` obory názvů obsahují třídy, které implementují model deklarovaných identit WCF: <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType>, a <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>. Od verze rozhraní .NET Framework 4.5, model deklarovaných identit WCF je nahrazen technologií WIF. Při vytváření řešení založených na technologii WIF byste neměli používat třídy v těchto třech oborech názvů.  
+> Následující `System.IdentityModel` obory názvů obsahují třídy, které implementují model identity založené na deklaracích <xref:System.IdentityModel.Policy?displayProperty=nameWithType>identity WCF <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>: <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, a. Počínaje .NET Framework 4,5 se model identity založený na deklaracích identity WCF nahrazuje WIF. Při sestavování řešení založených na WIF byste neměli v těchto třech oborech názvů používat třídy.  
   
  <xref:System.IdentityModel?displayProperty=nameWithType>  
- Obsahuje třídy, které představují transformace souborů cookie, služby tokenu zabezpečení a specializované čtenáře slovníku XML.  
+ Obsahuje třídy, které reprezentují transformační soubory souborů cookie, služby tokenů zabezpečení a specializované čtečky slovníku XML.  
   
  <xref:System.IdentityModel.Configuration?displayProperty=nameWithType>  
- Obsahuje třídy, které poskytují konfiguraci aplikací a služeb vytvořených pomocí technologie Windows Identity Foundation (WIF). Nastavení v části představují třídy v tomto oboru názvů [ \<identityConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) elementu.  
+ Obsahuje třídy, které poskytují konfiguraci pro aplikace a služby sestavené pomocí rozhraní Windows Identity Foundation (WIF). Třídy v tomto oboru názvů reprezentují nastavení v rámci [ \<elementu IdentityConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) .  
   
  <xref:System.IdentityModel.Metadata?displayProperty=nameWithType>  
- Obsahuje třídy představující prvky v dokumentu federačních metadat.  
+ Obsahuje třídy, které reprezentují elementy v dokumentu federačních metadat.  
   
  <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=nameWithType>  
  Obsahuje třídy, které reprezentují artefakty WS-Trust.  
   
  <xref:System.IdentityModel.Services?displayProperty=nameWithType>  
- Obsahuje třídy, které se používají ve scénářích pasivní (WS-Federation). Obsahuje také některé třídy, které představují v nastavení [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) elementu. Nastavení v části Tento prvek konfigurace WS-Federation pro aplikace. `System.IdentityModel.Services.Configuration` Obor názvů obsahuje třídy, které se používají ke konfiguraci WS-Federation.  
+ Obsahuje třídy, které se používají v pasivních scénářích (WS-Federation). Obsahuje také některé třídy, které reprezentují nastavení pod [ \<> element System. IdentityModel. Services](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) . Nastavení pod tímto prvkem konfigurují pro aplikace WS-Federation. `System.IdentityModel.Services.Configuration` Obor názvů obsahuje většinu tříd, které se používají ke konfiguraci WS-Federation.  
   
  <xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>  
- Obsahuje třídy, které poskytují konfiguraci technologie WIF aplikace, které používají protokol WS-Federation. Nastavení v části představují třídy v tomto oboru názvů [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) elementu. `System.IdentityModel.Services` Obor názvů také obsahuje některé třídy, které se používají ke konfiguraci WS-Federation.  
+ Obsahuje třídy, které poskytují konfiguraci pro aplikace WIF používající protokol WS-Federation. Třídy v tomto oboru názvů reprezentují nastavení v rámci [ \<prvku System. IdentityModel. Services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) . `System.IdentityModel.Services` Obor názvů také obsahuje některé třídy, které se používají ke konfiguraci protokolu WS-Federation.  
   
  <xref:System.IdentityModel.Services.Tokens?displayProperty=nameWithType>  
- Obsahuje obslužné rutiny tokenů zabezpečení specializované webových farem.  
+ Obsahuje obslužné rutiny specializovaného tokenu zabezpečení pro scénáře webové farmy.  
   
  <xref:System.IdentityModel.Tokens?displayProperty=nameWithType>  
- Obsahuje třídy, které představují tokeny zabezpečení, obslužné rutiny tokenů zabezpečení a další artefakty tokenu zabezpečení.  
+ Obsahuje třídy, které reprezentují tokeny zabezpečení, obslužné rutiny tokenů zabezpečení a další artefakty tokenů zabezpečení.  
   
  <xref:System.Security.Claims?displayProperty=nameWithType>  
- Obsahuje třídy, které představují deklarace identity, založené na deklaracích identity, objekty zabezpečení založené na deklaracích a další artefakty model deklarovaných identit.  
+ Obsahuje třídy, které reprezentují deklarace identity, identity založené na deklaracích, objekty zabezpečení založené na deklaracích a další artefakty modelu identity založené na deklaracích.  
   
  <xref:System.ServiceModel.Security?displayProperty=nameWithType>  
- Obsahuje třídy, které představují WCF kontrakty, kanály, obsluha hostitelů a další artefakty, které se používají ve scénářích aktivní (WS-Trust). Tento obor názvů také obsahuje třídy, které jsou specifické pro Windows Communication Foundation (WCF) a které nejsou používány technologie WIF.  
+ Obsahuje třídy, které představují kontrakty WCF, kanály, hostitele služeb a jiné artefakty, které se používají ve scénářích aktivních (WS-Trust). Tento obor názvů obsahuje také třídy, které jsou specifické pro Windows Communication Foundation (WCF) a které nepoužívá WIF.  
   
 ## <a name="see-also"></a>Viz také:
 

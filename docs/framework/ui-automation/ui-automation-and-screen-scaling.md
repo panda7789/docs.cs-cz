@@ -10,16 +10,16 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: a59223bfbe9506aa0028933d55b74e24d5595c32
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9f6c82144031cb2bf4824985b8211453bb7f51ea
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629549"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959172"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
->  Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
  [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]umožňuje uživatelům změnit nastavení bodů na palec (dpi) tak, aby se většina [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvků na obrazovce zobrazovala větší. I když je tato funkce dlouhodobě dostupná [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]v, v předchozích verzích bylo škálování nutné implementovat aplikacemi. V [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]nástroji Správce oken plochy provádí výchozí škálování pro všechny aplikace, které nezpracovávají vlastní škálování. Klientské aplikace automatizace uživatelského rozhraní musí tuto funkci vzít v úvahu.  
   
@@ -32,7 +32,7 @@ ms.locfileid: "68629549"
  V důsledku toho, když uživatel nastaví faktor škálování na 120 dpi, změní se na obrazovku svislá nebo vodorovná palec o 25 procent. Všechny rozměry jsou odpovídajícím způsobem upraveny. Posun okna aplikace od horního a pravého okraje obrazovky se zvyšuje o 25 procent. Pokud je povoleno škálování aplikace a aplikace nezohledňuje rozlišení DPI, velikost okna se zvětšuje ve stejném poměru, a to spolu s posuny a velikostmi všech [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvků, které obsahuje.  
   
 > [!NOTE]
->  Ve výchozím nastavení DWM neprovádí škálování pro aplikace, které nepodporují rozlišení DPI, když uživatel nastaví DPI na 120, ale provede ho, když je DPI nastaveno na vlastní hodnotu 144 nebo vyšší. Uživatel však může přepsat výchozí chování.  
+> Ve výchozím nastavení DWM neprovádí škálování pro aplikace, které nepodporují rozlišení DPI, když uživatel nastaví DPI na 120, ale provede ho, když je DPI nastaveno na vlastní hodnotu 144 nebo vyšší. Uživatel však může přepsat výchozí chování.  
   
  Škálování obrazovky vytvoří nové výzvy pro aplikace, které jsou v jakémkoli případě v souřadnicích obrazovky. Obrazovka teď obsahuje dva systémy souřadnic: fyzické a logické. Fyzické souřadnice bodu jsou skutečný posun v pixelech od levého horního rohu od počátku. Logické souřadnice jsou posuny, protože by se jednalo o škálu pixelů samotných.  
   

@@ -2,23 +2,23 @@
 title: Metody System.DateTimeOffset
 ms.date: 03/30/2017
 ms.assetid: 25b3e5c0-7603-4a70-b3e5-2149e3da69a2
-ms.openlocfilehash: 288a0d99feecdeccc0d215ec3c14ec31bb3ccb54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a638a4fcc156727f734ff480a18b9997bc9d2e34
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876899"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959088"
 ---
 # <a name="systemdatetimeoffset-methods"></a>Metody System.DateTimeOffset
-Jakmile mapován v objektovém modelu nebo externí mapování souboru LINQ to SQL umožňuje volat většinu <xref:System.DateTimeOffset?displayProperty=nameWithType> metody, operátory a vlastností z LINQ na dotazy SQL.  
+Po namapování v objektovém modelu nebo v souboru externího mapování vám LINQ to SQL umožňuje volat většinu <xref:System.DateTimeOffset?displayProperty=nameWithType> metod, operátorů a vlastností v rámci vašich LINQ to SQL dotazů.  
   
- Pouze metody nejsou podporovány jsou tyto zděděné z <xref:System.Object?displayProperty=nameWithType> , který nedávají smysl v kontextu technologie LINQ dotazy SQL, například: `Finalize`, `GetHashCode`, `GetType`, a `MemberwiseClone`. Tyto metody nejsou podporovány, protože technologie LINQ to SQL nelze přeložit spuštěn na serveru SQL Server.  
+ Jediné metody nejsou podporovány, jsou zděděny z <xref:System.Object?displayProperty=nameWithType> , které nemají smysl v kontextu LINQ to SQL dotazů, jako jsou například: `Finalize`, `GetHashCode`, `GetType` `MemberwiseClone`a. Tyto metody nejsou podporovány, protože LINQ to SQL je nelze přeložit ke spuštění v SQL Server.  
   
 > [!NOTE]
->  Modul CLR (CLR) <xref:System.DateTimeOffset?displayProperty=nameWithType> strukturu a schopnost mapování na SQL `DATETIMEOFFSET` sloupec s LINQ to SQL, vyžaduje rozhraní .NET Framework 3.5 SP1 nebo novější. SQL `DATETIMEOFFSET` sloupec je k dispozici v systému Microsoft SQL Server 2008 a nad rámec.  
+> Struktura modulu CLR (Common Language Runtime <xref:System.DateTimeOffset?displayProperty=nameWithType> ) a schopnost namapovat ji na sloupec SQL `DATETIMEOFFSET` s LINQ to SQL vyžaduje .NET Framework 3,5 SP1 nebo novější. Sloupec SQL `DATETIMEOFFSET` je k dispozici pouze v Microsoft SQL Server 2008 a novějších.  
   
-## <a name="sqlmethods-date-and-time-methods"></a>SQLMethods datum a čas metody  
- Kromě metod, které nabízí <xref:System.DateTimeOffset> strukturu, LINQ to SQL nabízí metody uvedené v následující tabulce z <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> tříd pro práci s datem a časem.  
+## <a name="sqlmethods-date-and-time-methods"></a>SQLMethods metody data a času  
+ Kromě metod, které jsou <xref:System.DateTimeOffset> nabízeny strukturou, LINQ to SQL nabízí metody uvedené v následující tabulce <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> z třídy pro práci s datem a časem.  
   
 ||||  
 |-|-|-|  
