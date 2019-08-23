@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 630c365c8710388ae3e913bedece0fb710da7cd9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1085bec812d797d3fbe4ea63ef447d4c466149f2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768133"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965060"
 ---
-# <a name="corgcstats-structure"></a>COR_GC_STATS – struktura
-Poskytuje statistické údaje o mechanismu uvolnění paměti kolekce modulu common language runtime (CLR).  
+# <a name="cor_gc_stats-structure"></a>COR_GC_STATS – struktura
+Poskytuje statistiku o mechanizmu uvolňování paměti modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,28 +48,28 @@ typedef struct _COR_GC_STATS {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`Flags`|Určuje pole hodnot, které by měl vypočítá a vrátí.|  
-|`ExplicitGCCount`|Označuje počet uvolnění paměti, které byly vynutit externí požadavek.|  
-|`GenCollectionsTaken`|Označuje číslo, které provádí pro každé generaci uvolňování pamětí.|  
-|`CommittedKBytes`|Celkový počet kilobajtů potvrzeny ve všech haldách.|  
-|`ReservedKBytes`|Celkový počet kilobajtů vyhrazené ve všech haldách.|  
-|`Gen0HeapSizeKBytes`|Velikost v kilobajtech, generování nuly haldy.|  
-|`Gen1HeapSizeKBytes`|Velikost v kilobajtech haldy generování: 1.|  
-|`Gen2HeapSizeKBytes`|Velikost v kilobajtech haldy 2. generace.|  
-|`LargeObjectHeapSizeKBytes`|Velikost v kilobajtech velkých objektových haldách.|  
-|`KBytesPromotedFromGen0`|Velikost v kilobajtech objektů, které jsou přesunuty z generace nula do generování jednoho.|  
-|`KBytesPromotedFromGen1`|Velikost v kilobajtech objektů, které jsou přesunuty z jednoho. generace do 2. generace.|  
+|`Flags`|Určuje, které hodnoty pole se mají vypočítat a vrátit.|  
+|`ExplicitGCCount`|Označuje počet uvolňování paměti, které byly vynuceny externím požadavkem.|  
+|`GenCollectionsTaken`|Označuje počet uvolňování paměti provedených pro každou generaci.|  
+|`CommittedKBytes`|Celkový počet kilobajtů potvrzených ve všech haldách.|  
+|`ReservedKBytes`|Celkový počet kilobajtů rezervovaných ve všech haldách.|  
+|`Gen0HeapSizeKBytes`|Velikost haldy generace s hodnotou v kilobajtech.|  
+|`Gen1HeapSizeKBytes`|Velikost haldy generace-jedna v kilobajtech.|  
+|`Gen2HeapSizeKBytes`|Velikost haldy generace-dvě v kilobajtech.|  
+|`LargeObjectHeapSizeKBytes`|Velikost haldy velkých objektů v kilobajtech.|  
+|`KBytesPromotedFromGen0`|Velikost objektů pozměněných z generace na hodnotu v kilobajtech na jednu generaci.|  
+|`KBytesPromotedFromGen1`|Velikost objektů povýšených od generace od generace do 2. generace v kilobajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Iclrgcmanager::getstats –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) metoda vyžaduje `Flags` pole `COR_GC_STATS` struktura nastavili na jeden nebo více hodnot [cor_gc_stat_types –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) výčet k určení statistiky jsou nastavení.  
+ Metoda [ICLRGCManager::](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) GetStats vyžaduje, `Flags` aby pole `COR_GC_STATS` struktury bylo nastavené na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) , aby se určilo, která Statistika se má nastavit.  
   
- Následující tabulka mapuje statistiky poskytuje tuto strukturu pro dvě [cor_gc_stat_types –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) hodnot výčtu, `COR_GC_COUNTS` a `COR_GC_MEMORYUSAGE`.  
+ Následující tabulka mapuje statistiky poskytované touto strukturou na dvě hodnoty `COR_GC_COUNTS` výčtu COR_GC_STAT_TYPES a. [](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) `COR_GC_MEMORYUSAGE`  
   
-|Určená COR_GC_COUNTS|Určená COR_GC_MEMORYUSAGE|  
+|Určeno COR_GC_COUNTS|Určeno COR_GC_MEMORYUSAGE|  
 |----------------------------------|---------------------------------------|  
 |`ExplicitGCCount`<br /><br /> `GenCollectionsTaken`|`CommittedKBytes`<br /><br /> `ReservedKBytes`<br /><br /> `Gen0HeapSizeKBytes`<br /><br /> `Gen1HeapSizeKBytes`<br /><br /> `Gen2HeapSizeKBytes`<br /><br /> `LargeObjectHeapSizeKBytes`<br /><br /> `KBytesPromotedFromGen0`<br /><br /> `KBytesPromotedFromGen1`|  
   
- Příklad použití je následujícím způsobem:  
+ Příklad použití je následující:  
   
 ```cpp  
 COR_GC_STATS GCStats;  
@@ -78,16 +78,16 @@ pCLRGCManager->GetStats(&GCStats);
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl  
+ **Hlaviček** GCHost.idl  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
-- [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)
-- [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)
+- [Automatická správa paměti](../../../standard/automatic-memory-management.md)
+- [Uvolňování paměti](../../../standard/garbage-collection/index.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: b43c692c8fd54ef1cbfac334b4986d8332462848
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ad3f7949e01a387c3c7de2a0702d11b106ea0040
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596487"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922213"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umožňují zadat argument pro konkrétní parametr přiřazením argumentu s názvem parametru, nikoli zadáním pozice parametru v seznamu parametrů. *Volitelné argumenty* umožňují vynechat argumenty pro některé parametry. Oba postupy lze použít s metodami, indexery, konstruktory a delegáty.  
@@ -91,7 +91,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
  ![Snímek obrazovky znázorňující rychlé informace technologie IntelliSense pro metodu ExampleMethod](./media/named-and-optional-arguments/optional-examplemethod-parameters.png)  
   
 > [!NOTE]
->  Můžete také deklarovat volitelné parametry pomocí třídy .NET <xref:System.Runtime.InteropServices.OptionalAttribute> . `OptionalAttribute`Parametry nevyžadují výchozí hodnotu.  
+> Můžete také deklarovat volitelné parametry pomocí třídy .NET <xref:System.Runtime.InteropServices.OptionalAttribute> . `OptionalAttribute`Parametry nevyžadují výchozí hodnotu.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu má konstruktor pro `ExampleClass` jeden parametr, který je nepovinný. Metoda `ExampleMethod` instance má jeden povinný `required`parametr, `optionalstr` a dva volitelné parametry a `optionalint`. Kód v `Main` ukazuje různé způsoby, jak lze vyvolat konstruktor a metodu.  

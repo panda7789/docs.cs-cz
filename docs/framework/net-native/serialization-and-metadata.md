@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 440debe875a0d00d240849ba4b60b548f46e2c0e
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 937577f86ec854f5a458fe6067836a85a540695a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567044"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913806"
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 
@@ -39,7 +39,7 @@ Pokud vaše aplikace serializace a deserializace objekty, může být nutné př
   
 ### <a name="typeof-used-in-the-constructor"></a>typeof použitý v konstruktoru
 
- Pokud voláte konstruktor těchto tříd serializace a zahrnete C# do volání metody operátor [typeof](~/docs/csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) , **není nutné provádět žádnou další práci**. Například v každém z následujících volání konstruktoru `typeof` třídy serializace je klíčové slovo použito jako součást výrazu předaného konstruktoru.  
+ Pokud voláte konstruktor těchto tříd serializace a zahrnete C# do volání metody operátor [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) , **není nutné provádět žádnou další práci**. Například v každém z následujících volání konstruktoru `typeof` třídy serializace je klíčové slovo použito jako součást výrazu předaného konstruktoru.  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
@@ -47,7 +47,7 @@ Pokud vaše aplikace serializace a deserializace objekty, může být nutné př
   
 ### <a name="typeof-used-outside-the-constructor"></a>typeof se používá mimo konstruktor.
 
- Pokud voláte konstruktor těchto tříd serializace a použijete C# operátor [typeof](~/docs/csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) mimo výraz dodaný <xref:System.Type> parametru konstruktoru, jak je uvedeno v následujícím kódu, kompilátor .NET Native nemůže přeložit typ:  
+ Pokud voláte konstruktor těchto tříd serializace a použijete C# operátor [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) mimo výraz dodaný <xref:System.Type> parametru konstruktoru, jak je uvedeno v následujícím kódu, kompilátor .NET Native nemůže přeložit typ:  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   

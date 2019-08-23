@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: eb9b61f0c0b787a2de0a39a0d47c5767acad9cc5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f76b1f0a09be2f745156437919f43ebaa8840519
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645881"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938484"
 ---
 # <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
-Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je dostupná jenom při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelské instance se samostatnou instanci SQL serveru Express databázového stroje, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích k připojení a připojení k databázím SQL Server Express. Každá instance spouští v kontextu zabezpečení jednotlivých uživatelů, na jednu instanci každého uživatele zvlášť.  
+Edice Microsoft SQL Server Express (SQL Server Express) podporuje funkci uživatelské instance, která je k dispozici pouze při použití .NET Framework Zprostředkovatel dat pro SQL Server (`SqlClient`). Uživatelská instance je samostatná instance SQL Server Express databázového stroje, který je generován nadřazenou instancí. Uživatelské instance umožňují uživatelům, kteří nejsou správci na místních počítačích, připojovat se k SQL Server Express databází a připojovat se k nim. Každá instance se spouští v rámci kontextu zabezpečení jednotlivého uživatele, a to na základě jednoho jednotlivého uživatele.  
   
-## <a name="user-instance-capabilities"></a>Možnosti uživatele Instance  
- Uživatelské instance jsou užitečné pro uživatele, kteří používají Windows pod účtem uživatele s minimálními oprávněními (LUA), protože každý uživatel má správce systému SQL Server (`sysadmin`) oprávnění v instanci spuštěné na svém počítači bez nutnosti spustit jako Windows i správce. Spuštění softwaru na uživatelskou instanci s omezenými oprávněními nemůže provádět změny celý systém, protože instance systému SQL Server Express je spuštěný pod účtem Windows bez oprávnění správce uživatele, ne jako službu. Každý uživatel instance je izolovaná od své nadřazené instance a z dalších uživatelské instance běží na stejném počítači. Databáze spuštěné v instanci uživatele jsou otevřeny v jednouživatelském režimu pouze a není možné pro více uživatelů pro připojení k databázím běžící na uživatelskou instanci. Replikace a distribuovaných dotazů jsou zakázané taky pro uživatelské instance.  
+## <a name="user-instance-capabilities"></a>Možnosti uživatelské instance  
+ Uživatelské instance jsou užitečné pro uživatele, kteří používají Windows pod uživatelským účtem s minimálním oprávněním (lua), protože každý uživatel má SQL Server`sysadmin`oprávnění správce systému () nad instancí běžící na svém počítači, aniž by bylo nutné spouštět jako Windows. také správce. Software spuštěný na uživatelské instanci s omezenými oprávněními nemůže provádět změny v rámci systému, protože instance SQL Server Express je spuštěna v účtu uživatele systému Windows bez oprávnění správce, nikoli jako služba. Každá uživatelská instance je izolovaná od své nadřazené instance a ze všech ostatních uživatelských instancí spuštěných ve stejném počítači. Databáze běžící v uživatelské instanci se otevírají pouze v jednouživatelském režimu a není možné, aby se k databázím spuštěným v uživatelské instanci připojovali více uživatelů. Replikace a distribuované dotazy jsou taky pro uživatelské instance zakázané.  
   
- Další informace najdete v tématu "Uživatelské instance" SQL Server Books Online.  
+ Další informace najdete v části "uživatelské instance" v tématu SQL Server Books Online.  
   
 > [!NOTE]
->  Uživatelské instance nejsou potřeba pro uživatele, kteří už jsou správci na svých počítačích nebo pro scénáře zahrnující více uživatelů databáze.  
+> Uživatelské instance nejsou nutné pro uživatele, kteří jsou již správci na svých počítačích, nebo pro scénáře zahrnující více uživatelů databáze.  
   
-## <a name="enabling-user-instances"></a>Povolení uživatelské instance  
- Ke generování uživatelských instancí, musí být spuštěná nadřazená instance systému SQL Server Express. Uživatelské instance se ve výchozím nastavení povolená, když je nainstalován systém SQL Server Express a může být explicitně povoleno nebo zakázáno správcem systému spouštění **uložené procedury sp_configure** systémové uložené procedury na nadřazená instance.  
+## <a name="enabling-user-instances"></a>Povolení uživatelských instancí  
+ Aby bylo možné generovat uživatelské instance, musí být spuštěná Nadřazená instance SQL Server Express. Uživatelské instance jsou ve výchozím nastavení povolené, když je nainstalovaná SQL Server Express a může je explicitně povolit nebo zakázat Správce systému, který spouští systémovou uloženou proceduru **sp_configure** u nadřazené instance.  
   
 ```  
 -- Enable user instances.  
@@ -34,22 +34,22 @@ sp_configure 'user instances enabled','1'
 sp_configure 'user instances enabled','0'  
 ```  
   
- Síťový protokol pro uživatelské instance musí být místní pojmenovaných kanálů. Uživatelské instance nelze spustit ve vzdálené instanci systému SQL Server a SQL serveru přihlašovací jména nejsou povoleny.  
+ Síťový protokol pro uživatelské instance musí být místní pojmenované kanály. Uživatelskou instanci nelze spustit ve vzdálené instanci SQL Server a přihlášení SQL Server nejsou povolena.  
   
-## <a name="connecting-to-a-user-instance"></a>Připojování k uživatelské instanci  
- `User Instance` a `AttachDBFilename` <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> povolit klíčová slova <xref:System.Data.SqlClient.SqlConnection> pro připojení k uživatelské instanci. Uživatelské instance jsou také podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder> `UserInstance` a `AttachDBFilename` vlastnosti.  
+## <a name="connecting-to-a-user-instance"></a>Připojení k uživatelské instanci  
+ Klíčová `AttachDBFilename` slova a<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>umožňují připojení<xref:System.Data.SqlClient.SqlConnection> k uživatelské instanci. `User Instance` Uživatelské instance jsou podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder> `UserInstance` také vlastnostmi a `AttachDBFilename` .  
   
- Mějte na paměti následující skutečnosti související ukázkové připojovací řetězec je uvedeno níže:  
+ Všimněte si následujícího ukázkového připojovacího řetězce, který vidíte níže:  
   
-- `Data Source` – Klíčové slovo odkazuje na nadřazený instanci systému SQL Server Express, která generuje uživatelské instance. Je výchozí instanci. \sqlexpress.  
+- `Data Source` Klíčové slovo odkazuje na nadřazenou instanci SQL Server Express, která generuje uživatelskou instanci. Výchozí instance je .\SQLEXPRESS.  
   
-- `Integrated Security` je nastavena na `true`. Pokud chcete připojit k uživatelské instanci, je potřeba; ověřování Windows Přihlášení serveru SQL Server nejsou podporovány.  
+- `Integrated Security`je nastaven na `true`. Pro připojení k uživatelské instanci je vyžadováno ověřování systému Windows. Přihlašovací jména SQL Server nejsou podporovaná.  
   
-- `User Instance` Je nastavena na `true`, která vyvolá uživatelskou instanci. (Výchozí hodnota je `false`.)  
+- Je nastaven na `true`, který vyvolá uživatelskou instanci. `User Instance` (Výchozí hodnota je `false`.)  
   
-- `AttachDbFileName` Klíčové slovo připojovacího řetězce se použije k připojení primární soubor databáze (MDF), který musí obsahovat úplný název cesty. `AttachDbFileName` také odpovídá "rozšířené vlastnosti" a "počáteční název souboru" klíče v rámci <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec.  
+- Klíčové `AttachDbFileName` slovo připojovacího řetězce se používá pro připojení primárního databázového souboru (. mdf), který musí obsahovat úplný název cesty. `AttachDbFileName`také odpovídá klíčům "rozšířené vlastnosti" a "prvotnímu názvu souboru" v <xref:System.Data.SqlClient.SqlConnection> připojovacím řetězci.  
   
-- `|DataDirectory|` Náhradní řetězec v kanálu symboly odkazuje na data adresáře aplikace otevřete připojení a poskytuje relativní cesta určující umístění soubory MDF a LDF databáze a protokolu. Pokud chcete vyhledat tyto soubory jinde, musí zadat úplnou cestu k souborům.  
+- `|DataDirectory|` Náhradní řetězec uzavřený v symbolech kanálu označuje datový adresář aplikace, který otevírá připojení, a poskytuje relativní cestu, která označuje umístění databáze. mdf a. ldf a souborů protokolu. Pokud chcete tyto soubory najít jinde, musíte zadat úplnou cestu k souborům.  
   
 ```  
 Data Source=.\\SQLExpress;Integrated Security=true;  
@@ -58,12 +58,12 @@ Initial Catalog=InstanceDB;
 ```  
   
 > [!NOTE]
->  Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec při běhu.  
+> Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> vlastnosti a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> k sestavení připojovacího řetězce v době běhu.  
   
-### <a name="using-the-124datadirectory124-substitution-string"></a>Použití &#124;DataDirectory&#124; náhradní řetězec  
- `AttachDbFileName` rozšířila po zavedení služby ve verzi 2.0 rozhraní ADO.NET `|DataDirectory|` (ohraničen symboly kanálu) náhradní řetězec. `DataDirectory` používá se společně s `AttachDbFileName` označující relativní cesta k souboru dat, umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestu ke zdroji dat namísto zapotřebí zadat úplnou cestu.  
+### <a name="using-the-124datadirectory124-substitution-string"></a>&#124;Použití náhradního řetězce&#124; DataDirectory  
+ `AttachDbFileName`bylo rozšířeno v ADO.NET 2,0 s úvodním `|DataDirectory|` řetězcem (uzavřeným v symbolech kanálu). `DataDirectory`používá se ve spojení s `AttachDbFileName` nástrojem k označení relativní cesty k datovému souboru a umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestě ke zdroji dat místo nutnosti zadat úplnou cestu.  
   
- Fyzické umístění, která `DataDirectory` odkazuje na závisí na typu aplikace. V tomto příkladu je soubor Northwind.mdf bude připojený umístěn ve složce \app_data aplikace.  
+ Fyzické umístění, na `DataDirectory` které odkazuje, závisí na typu aplikace. V tomto příkladu je soubor Northwind. mdf, který se má připojit, umístěný ve složce \App_Data aplikace.  
   
 ```  
 Data Source=.\\SQLExpress;Integrated Security=true;  
@@ -72,19 +72,19 @@ AttachDBFilename=|DataDirectory|\app_data\Northwind.mdf;
 Initial Catalog=Northwind;  
 ```  
   
- Když `DataDirectory` se používá, výsledná cesta k souboru nemůže být vyšší v adresářové struktuře než directory, na které odkazují náhradní řetězec. Například pokud plně rozšířené `DataDirectory` C:\AppDirectory\app_data, je ukázkový řetězec připojení uvedené nahoře funguje, protože je pod c:\AppDirectory. Ale pokus zadat `DataDirectory` jako `|DataDirectory|\..\data` způsobí chybu, protože \data není kompatibilní se jedná o podadresář \AppDirectory.  
+ Když `DataDirectory` se použije, výsledná cesta k souboru nemůže být vyšší v adresářové struktuře než adresář, na který odkazuje náhradní řetězec. Pokud je například plně rozbalený `DataDirectory` C:\AppDirectory\app_data, pak vzorový připojovací řetězec zobrazený výše funguje, protože je pod c:\AppDirectory. Ale pokus o zadání `DataDirectory` jako `|DataDirectory|\..\data` způsobí chybu, protože \Data není podadresářem \AppDirectory.  
   
- Pokud má nesprávně naformátovanou náhradní řetězec, připojovací řetězec <xref:System.ArgumentException> bude vyvolána výjimka.  
-  
-> [!NOTE]
->  <xref:System.Data.SqlClient> Přeloží náhradní řetězce do úplné cesty prověří se systémem souborů místního počítače. Proto vzdálený server HTTP a UNC cestu názvy nejsou podporovány. Když je otevřeno připojení, pokud server není umístěný v místním počítači, je vyvolána výjimka.  
-  
- Když <xref:System.Data.SqlClient.SqlConnection> je otevřen, přesměruje se z výchozí instance systému SQL Server Express na spuštěné instance za běhu spuštěný pod účtem volajícího.  
+ Pokud je v připojovacím řetězci nesprávně formátovaný řetězec nahrazení, <xref:System.ArgumentException> bude vyvolána výjimka.  
   
 > [!NOTE]
->  Může být nutné zvýšit <xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A> hodnotu, protože uživatelské instance může trvat déle než pravidelných instancí.  
+> <xref:System.Data.SqlClient>přeloží nahrazující řetězce na úplné cesty proti systému souborů místního počítače. Proto se názvy vzdáleného serveru, protokolu HTTP a cesty UNC nepodporují. Pokud se server nenachází v místním počítači, vyvolá se při otevření připojení výjimka.  
   
- Následující fragment kódu se otevře nový `SqlConnection`, připojovací řetězec se zobrazí v okně konzoly a poté uzavře připojení při ukončení `using` bloku kódu.  
+ <xref:System.Data.SqlClient.SqlConnection> Když je otevřen, je přesměrován z výchozí instance SQL Server Express do spuštěné instance spuštěné v rámci účtu volajícího.  
+  
+> [!NOTE]
+> Může být nutné zvýšit hodnotu, <xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A> protože instance uživatelů mohou trvat déle než běžné instance.  
+  
+ Následující fragment kódu otevře nový `SqlConnection`, zobrazí připojovací řetězec v okně konzoly a pak ukončí připojení při ukončení `using` bloku kódu.  
   
 ```vb  
 Private Sub OpenSqlConnection()  
@@ -116,43 +116,43 @@ private static void OpenSqlConnection()
 ```  
   
 > [!NOTE]
->  Uživatelské instance nejsou podporovány v společný kód jazyka runtime (CLR), na kterém běží v rámci služby SQL Server. <xref:System.InvalidOperationException> Je vyvolána, pokud `Open` je volán na <xref:System.Data.SqlClient.SqlConnection> , který má `User Instance=true` v připojovacím řetězci.  
+> Uživatelské instance nejsou podporovány v modulu CLR (Common Language Runtime), který je spuštěn v rámci SQL Server. Je vyvolána výjimka, `Open` Pokud je volána na <xref:System.Data.SqlClient.SqlConnection> typu, `User Instance=true` který obsahuje připojovací řetězec. <xref:System.InvalidOperationException>  
   
-## <a name="lifetime-of-a-user-instance-connection"></a>Životnost Instance připojení uživatele  
- Na rozdíl od verze SQL serveru, spuštěn jako služba, instance SQL serveru Express nemusí být ručně spustit a zastavit. Pokaždé, když uživatel přihlásí a připojí se k uživatelské instanci uživatelské instance se spustí, pokud ještě není spuštěná. Máte uživatelské instanci databáze `AutoClose` sada možností tak, že databáze je po určité době nečinnosti automaticky vypnout. Sqlservr.exe proces, který se spustil, zůstane spuštění pro omezený časový limit po uzavření posledního připojení k instanci, takže není nutné restartovat, pokud je otevřen jiným připojením, dříve, než vypršel časový limit. Uživatelské instance automaticky vypne pokud dříve, než tento časový limit vypršel, otevře se nové připojení. Správce systému v instanci nadřazeného můžete nastavit dobu trvání časového limitu pro uživatelskou instanci pomocí **uložené procedury sp_configure** změnit **uživatelské instance vypršení časového limitu** možnost. Výchozí hodnota je 60 minut.  
-  
-> [!NOTE]
->  Pokud `Min Pool Size` se používá v připojovacím řetězci s hodnotou větší než nula, bude pro sdružování připojení vždy udržovat několik otevřené připojení a uživatelské instance nebude automaticky vypnout.  
-  
-## <a name="how-user-instances-work"></a>Jak uživatel instance práce  
- Prvním je vygenerovat uživatelskou instanci pro každého uživatele, **hlavní** a **msdb** systémové databáze se zkopírují ze složky dat šablony na cestu v úložišti dat uživatele místní aplikace adresář pro výhradní použití podle uživatelské instance. Tato cesta je obvykle `C:\Documents and Settings\<UserName>\Local Settings\Application Data\Microsoft\Microsoft SQL Server Data\SQLEXPRESS`. Při spouštění uživatelské instance, **tempdb**, protokolování a trasování soubory se zapisují také do tohoto adresáře. Název je generován pro instanci, která je zaručeně jedinečná pro každého uživatele.  
-  
- Ve výchozím nastavení jsou všechny členy skupiny Windows Builtin\Users udělit oprávnění k připojení v místní instanci a oprávnění číst a spouštět na binární soubory systému SQL Server. Jakmile ověříte pověření volajícího uživatele hostování uživatelské instance, stane `sysadmin` u dané instance. Pouze sdílené paměti je povolená pro uživatelské instance, což znamená, že je možné pouze operace v místním počítači.  
-  
- Uživatelé musejí mít oprávnění číst i zapisovat oprávnění u souborů .mdf a .ldf, zadaný v připojovacím řetězci.  
+## <a name="lifetime-of-a-user-instance-connection"></a>Doba života připojení uživatelské instance  
+ Na rozdíl od verzí SQL Server spouštěných jako služba nemusí být instance SQL Server Express spouštěna a zastavena ručně. Pokaždé, když se uživatel přihlásí a připojí k uživatelské instanci, spustí se instance uživatele, pokud ještě není spuštěná. Databáze uživatelské instance mají `AutoClose` nastavenou možnost, aby se databáze automaticky ukončila po určité době nečinnosti. Proces soubor Sqlservr. exe, který je spuštěný, je spuštěný po dobu omezeného časového limitu po zavření posledního připojení k instanci, takže není potřeba ho restartovat, pokud se před vypršením časového limitu otevře jiné připojení. Uživatelská instance se automaticky vypne, pokud se žádné nové připojení neotevře před uplynutím časového limitu. Správce systému v nadřazené instanci může nastavit dobu trvání časového limitu pro uživatelskou instanci pomocí **procedury sp_configure** pro změnu **časového limitu uživatelské instance** . Výchozí hodnota je 60 minut.  
   
 > [!NOTE]
->  Soubory MDF a LDF představují databázi a soubory protokolů, v uvedeném pořadí. Tyto dva soubory jsou odpovídající sady, tak, aby péče vzít do úvahy při zálohování a obnovení operací. Soubor databáze obsahuje informace o přesnou verzi souboru protokolu a databázi nelze otevřít, pokud je párována s chybný soubor protokolu.  
+> Pokud `Min Pool Size` se používá v připojovacím řetězci s hodnotou větší než nula, připojení Pooler vždycky udržuje několik otevřených připojení a uživatelská instance se automaticky nevypne.  
   
- Abyste zabránili poškození dat, s výhradním přístupem otevření databáze v uživatelské instanci. Pokud dvě různé uživatelské instance sdílejí stejnou databázi na stejný počítač, musí uživatel na první instanci zavřít databázi předtím, než ho můžete otevřít v druhé instance.  
+## <a name="how-user-instances-work"></a>Jak fungují uživatelské instance  
+ Při prvním vygenerování uživatelské instance pro každého uživatele jsou **Hlavní** databáze a systémové databáze **msdb** zkopírovány ze složky data šablony do cesty v adresáři úložiště místních dat aplikace uživatele pro výhradní použití instancí uživatele. Tato cesta je obvykle `C:\Documents and Settings\<UserName>\Local Settings\Application Data\Microsoft\Microsoft SQL Server Data\SQLEXPRESS`. Po spuštění uživatelské instance se do tohoto adresáře zapisují také soubory **tempdb**, log a Trace. Pro instanci je vygenerován název, který zaručuje, že bude jedinečný pro každého uživatele.  
   
-## <a name="user-instance-scenarios"></a>Uživatelské Instance scénáře  
- Uživatelské instance poskytují vývojářům aplikací, databázi s úložištěm dat serveru SQL Server, který není závislý na vývojáře s účty pro správu na svých vývojových prostředích. Uživatelské instance jsou založeny na modelu přístup/Jet, databázové aplikace jednoduše připojuje k souboru, kde uživatel automaticky má úplná oprávnění ve všech objektů databáze bez nutnosti zásahu správce systému pro udělení oprávnění. Jeho účelem je fungovat v situacích, kde uživatel je spuštěný pod účtem uživatele s minimálními oprávněními (LUA) a nemá oprávnění správce na serveru nebo v místním počítači, ale potřebuje k vytvoření objektů databáze a aplikace. Uživatelské instance umožňuje uživatelům vytvářet instance v době běhu, které běží v kontextu zabezpečení vlastního uživatele a ne v kontextu zabezpečení privilegovanější systémové služby.  
+ Ve výchozím nastavení mají všichni členové skupiny Windows Builtin\Users oprávnění k připojení k místní instanci a oprávnění ke čtení a spouštění pro SQL Server binárních souborů. Po ověření přihlašovacích údajů volajícího uživatele hostujícího uživatelskou instanci se tento uživatel `sysadmin` v této instanci stala. Pro uživatelské instance je povolena pouze sdílená paměť, což znamená, že jsou možné pouze operace na místním počítači.  
+  
+ Uživatelům musí být udělena oprávnění ke čtení i zápisu u souborů. mdf a. ldf zadaných v připojovacím řetězci.  
+  
+> [!NOTE]
+> Soubory. mdf a. ldf reprezentují databázi a soubory protokolů, v uvedeném pořadí. Tyto dva soubory jsou odpovídající sadou, proto je třeba dbát na to, aby se operace zálohování a obnovení provedla. Databázový soubor obsahuje informace o přesné verzi souboru protokolu a databáze se neotevře, pokud je spojena s nesprávným souborem protokolu.  
+  
+ Aby nedošlo k poškození dat, otevře se databáze v uživatelské instanci s výhradním přístupem. Pokud dvě různé uživatelské instance sdílejí stejnou databázi na stejném počítači, uživatel první instance musí databázi zavřít, aby ji bylo možné otevřít v druhé instanci.  
+  
+## <a name="user-instance-scenarios"></a>Scénáře uživatelské instance  
+ Uživatelské instance poskytují vývojářům databázových aplikací SQL Server úložiště dat, které nezávisí na vývojářích, kteří mají na svých vývojových počítačích účty pro správu. Uživatelské instance jsou založené na modelu Access/jet, kde se databázová aplikace jednoduše připojuje k souboru a uživatel má automaticky úplná oprávnění ke všem databázovým objektům, aniž by museli udělit zásah správce systému. nastaven. Má fungovat v situacích, kdy uživatel běží pod uživatelským účtem s minimálním oprávněním (LUA) a nemá oprávnění správce na serveru nebo v místním počítači, a proto musí vytvářet databázové objekty a aplikace. Uživatelské instance umožňují uživatelům vytvářet instance v době běhu, která běží pod vlastním kontextem zabezpečení uživatele, a ne v kontextu zabezpečení přísnější systémové služby.  
   
 > [!IMPORTANT]
->  Uživatelské instance by měla sloužit pouze ve scénářích kde jsou všechny aplikace pomocí jeho plně důvěryhodné.  
+> Uživatelské instance by se měly používat jenom ve scénářích, kde jsou všechny aplikace, které ji používají, plně důvěryhodné.  
   
- Uživatelské instance scénáře patří:  
+ Mezi scénáře uživatelské instance patří:  
   
-- Všechny aplikace jednoho uživatele, kde sdílení dat se nevyžaduje.  
+- Libovolná aplikace s jedním uživatelem, kde se nevyžadují sdílení dat.  
   
-- ClickOnce – nasazení. Pokud jsou na cílovém počítači již nainstalovány rozhraní .NET Framework 2.0 (nebo novější) a SQL Server Express, instalační balíček stáhli jako výsledek akce ClickOnce lze nainstalovat a používat uživatelé bez oprávnění správce. Mějte na paměti, musí správce nainstalovat systém SQL Server Express Pokud, který je součástí instalace. Další informace najdete v tématu [ClickOnce – nasazení pro Windows Forms](../../../winforms/clickonce-deployment-for-windows-forms.md).
+- Nasazení ClickOnce. Pokud jsou v cílovém počítači již nainstalovány .NET Framework 2,0 (nebo novější) a SQL Server Express, instalační balíček stažený jako výsledek akce ClickOnce může být nainstalován a používán uživateli bez oprávnění správce. Všimněte si, že správce musí nainstalovat SQL Server Express, pokud je součástí instalačního programu. Další informace naleznete v tématu [nasazení ClickOnce pro model Windows Forms](../../../winforms/clickonce-deployment-for-windows-forms.md).
   
-- Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
+- Vyhrazené hostování ASP.NET pomocí ověřování systému Windows. Jedna instance SQL Server Express může být hostována v intranetu. Aplikace se připojuje pomocí účtu ASPNET systému Windows, nikoli pomocí zosobnění. Uživatelské instance by se neměly používat pro scénáře třetích stran nebo sdílené hostování, kde by všechny aplikace sdílely stejnou instanci uživatele a už by nezůstaly izolované od sebe.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
 - [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

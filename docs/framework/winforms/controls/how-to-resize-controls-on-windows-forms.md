@@ -9,28 +9,28 @@ helpviewer_keywords:
 - size [Windows Forms], controls
 - Windows Forms controls, size
 ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
-ms.openlocfilehash: 17ce930a91d2eb3626e92898e00e67be4741cf56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 18c3b300d4e32cee06208caecb7166b73ae1c565
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913104"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915026"
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>Postupy: Změna velikosti ovládacích prvků ve Windows Forms
-Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit velikost více ovládacích prvků stejného nebo jiného druhu, jako například <xref:System.Windows.Forms.Button> a <xref:System.Windows.Forms.GroupBox> ovládací prvky.  
+Můžete změnit velikost jednotlivých ovládacích prvků a změnit velikost více ovládacích prvků stejného nebo jiného typu, například <xref:System.Windows.Forms.Button> a <xref:System.Windows.Forms.GroupBox> ovládacích prvků.  
   
-### <a name="to-resize-a-control"></a>Pro změnu velikosti ovládacího prvku  
+### <a name="to-resize-a-control"></a>Změna velikosti ovládacího prvku  
   
-1. Klikněte na možnost změnit velikost a přetáhněte jednu z osmi úchyty ovládacího prvku.  
+1. Klikněte na ovládací prvek, jehož velikost se má změnit, a přetáhněte jeden z osmi úchytů pro změnu velikosti.  
   
     > [!NOTE]
-    >  Vyberte ovládací prvek a stisknutím klávesy se šipkami když podržíte klávesu SHIFT a změna velikosti ovládacího prvku jeden pixel v čase. Stisknutím klávesy se šipkami dolů a doprava a podržením klávesy SHIFT a CTRL ke změně velikosti ovládacího prvku v přírůstcích po velké.  
+    > Vyberte ovládací prvek a stiskněte klávesy se šipkami a podržte klávesu SHIFT, abyste změnili velikost ovládacího prvku v jednom okamžiku. Chcete-li změnit velikost ovládacího prvku ve velkých přírůstcích, stiskněte klávesy šipka dolů nebo šipka vpravo a podržte klávesu SHIFT a CTRL.  
   
 ### <a name="to-resize-multiple-controls-on-a-form"></a>Změna velikosti více ovládacích prvků ve formuláři  
   
-1. Podržte stisknutou klávesu SHIFT nebo CTRL a vyberte ovládací prvky, které chcete změnit velikost. Velikost první ovládací prvek, který jste vybrali, se používá pro ostatní ovládací prvky.  
+1. Podržte stisknuté klávesy CTRL nebo SHIFT a vyberte ovládací prvky, jejichž velikost chcete změnit. Velikost prvního ovládacího prvku, který vyberete, se použije pro ostatní ovládací prvky.  
   
-2. Na **formátu** nabídce zvolte **nastavit stejnou velikost**a vyberte jednu ze čtyř možností. První tři příkazy Změna velikosti ovládacích prvků tak, aby odpovídaly prvního vybraného ovládacího prvku.  
+2. V nabídce **Formát** zvolte možnost **nastavit stejnou velikost**a vyberte jednu ze čtyř možností. První tři příkazy změní rozměry ovládacích prvků tak, aby odpovídaly prvnímu vybranému ovládacímu prvku.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -39,4 +39,4 @@ Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit v
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)
-- [Postupy: Změna velikosti Windows Forms pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37k2zkwx(v=vs.100))
+- [Postupy: Změna velikosti model Windows Forms pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37k2zkwx(v=vs.100))

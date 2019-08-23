@@ -9,59 +9,59 @@ helpviewer_keywords:
 - custom controls [Windows Forms], keyboard events using code
 - custom controls [Windows Forms], mouse events using code
 ms.assetid: d9b12787-86f6-4022-8e0f-e12d312c4af2
-ms.openlocfilehash: 3ebe82fc18deba52fafe76da7ff85fb247446e46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f92b742c3f6feec72e5b3150204d7d984636281d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971233"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934096"
 ---
 # <a name="handling-user-input"></a>Zpracování uživatelského vstupu
-Toto téma popisuje hlavní události klávesnice a myši poskytované <xref:System.Windows.Forms.Control?displayProperty=nameWithType>. Při zpracování události, ovládací prvek autoři by měly přepsat chráněnou `On` *EventName* metody spíše než připojením delegáta k události. Přehled událostí, naleznete v tématu [vyvolávání událostí z komponenty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/sh2e3k5z(v=vs.120)).  
+Toto téma popisuje hlavní události klávesnice a myši, které <xref:System.Windows.Forms.Control?displayProperty=nameWithType>poskytuje. Při zpracování události by autoři ovládacího prvku měli přepsat chráněnou `On`metodu *EventName* místo připojení delegáta události. Informace o revizi událostí naleznete v tématu [vyvolání událostí ze součásti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/sh2e3k5z(v=vs.120)).  
   
 > [!NOTE]
->  Pokud neexistuje žádná data přidružená k události, instance základní třídy <xref:System.EventArgs> je předán jako argument `On` *EventName* metody.  
+> Pokud nejsou k události přidružena žádná data, instance základní třídy <xref:System.EventArgs> je předána jako argument `On`metodě *EventName* .  
   
 ## <a name="keyboard-events"></a>Události klávesnice  
- Jsou běžné události klávesnice, které dokáže zpracovat váš ovládací prvek <xref:System.Windows.Forms.Control.KeyDown>, <xref:System.Windows.Forms.Control.KeyPress>, a <xref:System.Windows.Forms.Control.KeyUp>.  
+ Běžné události klávesnice, které může váš ovládací prvek zpracovávat <xref:System.Windows.Forms.Control.KeyDown>, <xref:System.Windows.Forms.Control.KeyPress>jsou, <xref:System.Windows.Forms.Control.KeyUp>a.  
   
-|Název události|Metoda přepsání.|Popis události|  
+|Název události|Metoda, která se má přepsat|Popis události|  
 |----------------|------------------------|--------------------------|  
-|`KeyDown`|`void OnKeyDown(KeyEventArgs)`|Vyvolána, pouze když se stiskne klávesa, původně.|  
-|`KeyPress`|`void OnKeyPress`<br /><br /> `(KeyPressEventArgs)`|Vyvolá se pokaždé, když se stiskne klávesa. Pokud je klávesa stisknuta, <xref:System.Windows.Forms.Control.KeyPress> událost se vyvolá při opakovaném rychlostí definované v operačním systému.|  
-|`KeyUp`|`void OnKeyUp(KeyEventArgs)`|Vyvoláno, když se uvolní klávesa.|  
+|`KeyDown`|`void OnKeyDown(KeyEventArgs)`|Vyvolá se pouze při počátečním stisknutí klávesy.|  
+|`KeyPress`|`void OnKeyPress`<br /><br /> `(KeyPressEventArgs)`|Vyvolá se při každém stisknutí klávesy. Pokud je klíč podržený, <xref:System.Windows.Forms.Control.KeyPress> vyvolá se událost na základě rychlosti opakování definované operačním systémem.|  
+|`KeyUp`|`void OnKeyUp(KeyEventArgs)`|Vyvolá se při uvolnění klávesy.|  
   
 > [!NOTE]
->  Zpracování vstupu klávesnice je podstatně složitější než přepsání události v předchozí tabulce a je nad rámec tohoto tématu. Další informace najdete v tématu [uživatelský vstup ve Windows Forms](../user-input-in-windows-forms.md).  
+> Zpracování vstupu z klávesnice je podstatně složitější než přepsání událostí v předchozí tabulce a je nad rámec tohoto tématu. Další informace najdete v tématu [vstup uživatele v model Windows Forms](../user-input-in-windows-forms.md).  
   
 ## <a name="mouse-events"></a>Události myši  
- Události myši, které dokáže zpracovat váš ovládací prvek se <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseLeave>, <xref:System.Windows.Forms.Control.MouseMove>, a <xref:System.Windows.Forms.Control.MouseUp>.  
+ Události myši, které ovládací prvek může zpracovat, <xref:System.Windows.Forms.Control.MouseDown> <xref:System.Windows.Forms.Control.MouseEnter>jsou, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseLeave>, <xref:System.Windows.Forms.Control.MouseMove>, a <xref:System.Windows.Forms.Control.MouseUp>.  
   
-|Název události|Metoda přepsání.|Popis události|  
+|Název události|Metoda, která se má přepsat|Popis události|  
 |----------------|------------------------|--------------------------|  
-|`MouseDown`|`void OnMouseDown(MouseEventArgs)`|Vyvoláno, když se stiskne tlačítko myši, zatímco je ukazatel nad ovládací prvek.|  
-|`MouseEnter`|`void OnMouseEnter(EventArgs)`|Vyvoláno, když ukazatel poprvé vstoupí oblasti ovládacího prvku.|  
-|`MouseHover`|`void OnMouseHover(EventArgs)`|Vyvoláno, když ukazatel myši setrvá na ovládacím prvku.|  
-|`MouseLeave`|`void OnMouseLeave(EventArgs)`|Vyvoláno, když ukazatel opustí oblasti ovládacího prvku.|  
-|`MouseMove`|`void OnMouseMove(MouseEventArgs)`|Vyvolá se při přesunutí ukazatele myši do oblasti ovládacího prvku.|  
-|`MouseUp`|`void OnMouseUp(MouseEventArgs)`|Vyvoláno, když se uvolní tlačítko myši, zatímco je ukazatel myši nad ovládací prvek nebo ukazatel opustí oblasti ovládacího prvku.|  
+|`MouseDown`|`void OnMouseDown(MouseEventArgs)`|Je aktivována při stisknutí tlačítka myši, zatímco je ukazatel nad ovládacím prvkem.|  
+|`MouseEnter`|`void OnMouseEnter(EventArgs)`|Je aktivována, když ukazatel poprvé vstoupí do oblasti ovládacího prvku.|  
+|`MouseHover`|`void OnMouseHover(EventArgs)`|Je aktivována, když ukazatel myši najede myší na ovládací prvek.|  
+|`MouseLeave`|`void OnMouseLeave(EventArgs)`|Je aktivována, když ukazatel opustí oblast ovládacího prvku.|  
+|`MouseMove`|`void OnMouseMove(MouseEventArgs)`|Je aktivována, když se ukazatel pohybuje v oblasti ovládacího prvku.|  
+|`MouseUp`|`void OnMouseUp(MouseEventArgs)`|Je aktivována při uvolnění tlačítka myši, když je ukazatel nad ovládacím prvkem, nebo když ukazatel opustí oblast ovládacího prvku.|  
   
- Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseDown> událostí.  
+ Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseDown> události.  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#7)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#7)]  
   
- Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseMove> událostí.  
+ Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseMove> události.  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#8)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#8)]  
   
- Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseUp> událostí.  
+ Následující fragment kódu ukazuje příklad přepsání <xref:System.Windows.Forms.Control.MouseUp> události.  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#9)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#9)]  
   
- Pro úplný zdrojový kód `FlashTrackBar` ukázkový, přečtěte si téma [jak: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
+ Úplný zdrojový kód pro `FlashTrackBar` ukázku naleznete v tématu [How to: Vytvoří ovládací prvek model Windows Forms, který zobrazuje](how-to-create-a-windows-forms-control-that-shows-progress.md)průběh.  
   
 ## <a name="see-also"></a>Viz také:
 

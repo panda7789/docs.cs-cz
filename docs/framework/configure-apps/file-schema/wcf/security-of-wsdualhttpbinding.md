@@ -2,21 +2,21 @@
 title: <security> z <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: c6f9e34724ccc3a0d05da3e1886b4f0bcbaae064
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bed7f4ce325e0d5e387e310ca15a3b72ac93f18e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670440"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936547"
 ---
-# <a name="security-of-wsdualhttpbinding"></a>\<zabezpečení > z \<wsDualHttpBinding >
-Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
+# <a name="security-of-wsdualhttpbinding"></a>\<> zabezpečení > \<WSDualHttpBinding
+Definuje možnosti [ \<zabezpečení WSDualHttpBinding >](wsdualhttpbinding.md).  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<wsDualHttpBinding>  
-\<Vytvoření vazby >  
-\<security>  
+\<> vazby  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,36 +35,36 @@ Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/fr
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|– Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSDualHttpSecurityMode>.|  
+|režim|Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSDualHttpSecurityMode>.|  
   
-## <a name="mode-attribute"></a>režim atribut  
+## <a name="mode-attribute"></a>Mode – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Žádný|Zabezpečení je zakázaná.|  
-|Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP.|  
+|Žádné|Zabezpečení je zakázané.|  
+|Message|Zabezpečení je k dispozici pomocí protokolu SOAP Message Security.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
+|[\<> zprávy](message-of-wsdualhttpbinding.md)|Definuje nastavení pro zabezpečení na úrovni zprávy. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny vazby funkce [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby wsDualHttpBinding >](wsdualhttpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Duální vazby poskytuje IP adresu klienta do služby. Klient musí použít zabezpečení zajistit, že pouze připojení ke službám ho vztahy důvěryhodnosti.  
+ Duální vazba zpřístupňuje IP adresu klienta ke službě. Klient by měl použít zabezpečení, aby zajistil, že se připojí pouze ke službám, kterým důvěřuje.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.WSDualHttpSecurity>
 - <xref:System.ServiceModel.BasicHttpSecurity>
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

@@ -9,24 +9,24 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 44d2eadf-7eec-443c-a2ac-d601fd919e17
-ms.openlocfilehash: 5c4041f42b0a9d1d1e4bc8438e662911534daa42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6fa864f814d6a9ce04f2bce92c61cd0075ab5145
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775827"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912998"
 ---
 # <a name="how-to-locate-assemblies-by-using-devpath"></a>Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH
-Vývojáři mohou chtít mít jistotu, sdílené sestavení, které navíc teď připravují funguje správně s několika aplikacemi. Namísto vložení sestavení do globální mezipaměti sestavení průběžně během cyklu vývoje, můžete vytvořit vývojář proměnné prostředí DEVPATH, který odkazuje na výstupního adresáře sestavení pro sestavení.  
+Vývojáři mohou chtít zajistit, aby sdílené sestavení, které sestavuje, fungovalo správně s více aplikacemi. Namísto průběžného vkládání sestavení do globální mezipaměti sestavení (GAC) během cyklu vývoje může vývojář vytvořit proměnnou prostředí mechanismu DEVPATH, která odkazuje na výstupní adresář sestavení pro sestavení.  
   
- Předpokládejme například, že vytváříte sdílené sestavení nazvané MySharedAssembly a výstupní adresář je C:\MySharedAssembly\Debug. Můžete vložit C:\MySharedAssembly\Debug DEVPATH proměnné. Musíte zadat [ \<developmentmode – >](../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md) prvku v konfiguračním souboru počítače. Tento prvek říká vyhledání sestavení pomocí mechanismu DEVPATH common language runtime.  
+ Předpokládejme například, že vytváříte sdílené sestavení s názvem MySharedAssembly a výstupní adresář je C:\MySharedAssembly\Debug. C:\MySharedAssembly\Debug můžete umístit do proměnné mechanismu DEVPATH. Pak musíte zadat [ \<developmentMode >](./file-schema/runtime/developmentmode-element.md) element v konfiguračním souboru počítače. Tento prvek oznamuje modulu CLR (Common Language Runtime), aby mohl používat mechanismu DEVPATH k vyhledávání sestavení.  
   
- Sdílená sestavení musí být zjistitelné modulem runtime.  K určení privátní adresář pro řešení pomocí odkazů na sestavení [ \<codeBase > Element](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) nebo [ \<zjišťování > Element](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) v konfiguračním souboru, jak je popsáno v [Určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md).  Můžete také vložit sestavení v podadresáři adresáře aplikace. Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Sdílené sestavení musí být zjistitelné modulem runtime.  Chcete-li určit privátní adresář pro překlad odkazů na sestavení, použijte [ \<> element](./file-schema/runtime/codebase-element.md) nebo [ \<> elementu pro zjišťování](./file-schema/runtime/probing-element.md) v konfiguračním souboru, jak je popsáno v tématu [určení umístění sestavení](specify-assembly-location.md).  Můžete také vložit sestavení do podadresáře adresáře aplikace. Další informace najdete v tématu [jak modul runtime vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md).  
   
 > [!NOTE]
->  Jde o pokročilou funkci určené pouze pro vývoj.  
+> Jedná se o pokročilou funkci, která je určená jenom pro vývoj.  
   
- Následující příklad ukazuje, jak mají hledat sestavení v adresářích určených proměnnou prostředí DEVPATH pomocí běhového modulu.  
+ Následující příklad ukazuje, jak způsobit, aby modul runtime vyhledal sestavení v adresářích určených proměnnou prostředí mechanismu DEVPATH.  
   
 ## <a name="example"></a>Příklad  
   
@@ -38,10 +38,10 @@ Vývojáři mohou chtít mít jistotu, sdílené sestavení, které navíc teď 
 </configuration>  
 ```  
   
- Toto nastavení výchozí hodnota je false.  
+ Toto nastavení má výchozí hodnotu NEPRAVDA.  
   
 > [!NOTE]
->  Toto nastavení použijte jenom v době vývoje. Modul runtime verze sestavení se silným názvem součástí mechanismu DEVPATH nekontroluje. Jednoduše použije první sestavení, které nalezne.  
+> Toto nastavení použijte pouze v době vývoje. Modul runtime nekontroluje verze v sestaveních se silným názvem nalezenými v mechanismu DEVPATH. Jednoduše používá první nalezené sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

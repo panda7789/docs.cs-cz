@@ -5,17 +5,17 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: a988baa64025dd9c188e367949c07d861413c197
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 519ff6f40ea303b64864683db222b55c6e5a23aa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817986"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964805"
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a>Windows Presentation Foundation (WPF) je prezentační rozhraní, které lze použít k vývoji následujících typů aplikací:  
   
-- Samostatné aplikace (tradiční aplikace [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] stylu sestavené jako spustitelná sestavení, která jsou nainstalovaná a spouštěná z klientského počítače).  
+- Samostatné aplikace (tradiční styly aplikací pro Windows postavené jako spustitelná sestavení, která jsou nainstalovaná a spouštěná z klientského počítače).  
   
 - [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)](aplikace tvořené navigačními stránkami, které jsou sestaveny jako spustitelná sestavení a hostovány webovými prohlížeči, jako je například Microsoft Internet Explorer nebo Mozilla Firefox).  
   
@@ -24,7 +24,7 @@ ms.locfileid: "68817986"
 - Knihovny tříd (nespustitelná sestavení, která obsahují opakovaně použitelné třídy).  
   
 > [!NOTE]
->  Použití typů WPF ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte tyto funkce použít ve službě systému Windows, nemusí fungovat podle očekávání.  
+> Použití typů WPF ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte tyto funkce použít ve službě systému Windows, nemusí fungovat podle očekávání.  
   
  Chcete-li vytvořit tuto sadu aplikací [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] , implementuje hostitele služeb. V tomto tématu najdete přehled těchto služeb a kde najdete další informace.  
 

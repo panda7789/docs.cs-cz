@@ -2,16 +2,16 @@
 title: <filter>
 ms.date: 03/30/2017
 ms.assetid: 3266700b-904b-44e4-93a7-e06a1a445100
-ms.openlocfilehash: bff19f106d86c73dea80b8b57bb73442eaa2cf9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 68de255b9f11dc4377159d1cc3efa575633db316
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704034"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918899"
 ---
-# <a name="filter"></a>\<Filtr >
+# <a name="filter"></a>\<Filtrovat >
 
-Definuje směrovací filtr, který určuje typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jako a libovolných podpůrných dat nebo parametrů vyžadovaných filtrem.
+Definuje filtr směrování, který určuje typ Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> , který se má použít při vyhodnocování příchozích zpráv, a také všechna podpůrná data nebo parametry, které filtr vyžaduje.
 
 \<system.serviceModel> \<routing> \<filters> \<filter>
   
@@ -36,9 +36,9 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | Atribut  | Popis |
 | ---------- | ----------- |
-| customType | Řetězec obsahující název plně kvalifikovaný typ vlastního typu, který má být použit jako filtr. Pokud `filterType` je nastavena na `custom`, tento atribut obsahuje název plně kvalifikovaný typ třídy k vytvoření.  `filterData` může také obsahovat hodnoty, které se použijí při vyhodnocení filtru vlastního typu. |
-| filterData | Řetězec obsahující data filtru. Další informace o tom, jak tento atribut zadán, naleznete v tématu <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>. |
-| filterType | Řetězec obsahující typ filtru. Tento atribut je <xref:System.ServiceModel.Routing.Configuration.FilterType> typu.  Další informace o tom, jak to funguje s `filterData` atributu naleznete v tématu <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>. |
+| customType | Řetězec obsahující plně kvalifikovaný název typu vlastního typu, který má být použit jako filtr. Pokud `filterType` je nastaven na `custom`, tento atribut obsahuje plně kvalifikovaný název třídy, která se má vytvořit.  `filterData`může také obsahovat hodnoty, které mají být použity během hodnocení vlastního filtru typu. |
+| filterData | Řetězec obsahující data filtru. Další informace o tom, jak zadat tento atribut, naleznete <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>v tématu. |
+| filterType | Řetězec obsahující typ filtru. Tento atribut je <xref:System.ServiceModel.Routing.Configuration.FilterType> typu.  Další informace o tom, jak to funguje s `filterData` atributem, <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>naleznete v tématu. |
 | name       | Řetězec obsahující jedinečný název tohoto prvku filtru. |
 
 ### <a name="child-elements"></a>Podřízené prvky
@@ -49,7 +49,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | Prvek | Popis |
 | ------- | ----------- |
-| [\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv. |
+| [\<> směrování](routing.md) | Konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> , který se má použít při vyhodnocování příchozích zpráv. |
 
 ## <a name="see-also"></a>Viz také:
 

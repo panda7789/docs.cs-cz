@@ -4,38 +4,38 @@ ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b682d4b43ece406ee320d6d4f96ed5cda5f17c3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6472f02cf2633d936252bfd2a8daa3ff711a4db8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650356"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967878"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Výjimky za běhu v nativních aplikací .NET
-Je důležité, otestovat buildy vydaných verzí vaší aplikace pro univerzální platformu Windows na jejich cílové platformy, protože jsou zcela odlišná konfigurace debug a release. Ve výchozím nastavení konfiguraci ladění používá modul runtime .NET Core pro kompilaci aplikace ale konfiguraci vydané verze používá .NET Native pro kompilaci aplikace do nativního kódu.  
+Je důležité otestovat buildy vydání vaší Univerzální platforma Windows aplikace na svých cílových platformách, protože konfigurace ladění a vydání jsou zcela odlišné. Ve výchozím nastavení používá konfigurace ladění modul runtime .NET Core ke kompilaci vaší aplikace, ale konfigurace vydané verze používá .NET Native ke kompilaci vaší aplikace do nativního kódu.  
   
 > [!IMPORTANT]
->  Informace pro řešení inovací [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky, které vám dává možnost Při testování verze vaší aplikace najdete v tématu "krok 4: Ruční vyřešení chybějí metadata: v [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md) téma, stejně jako [reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md) a [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+> Informace o tom, jak řešit výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) , se kterými se můžete setkat při testování verzí verze vaší aplikace, najdete v části Krok 4: Ruční řešení chybějících metadat: v tématu [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md) a také v odkazech na konfigurační soubor direktivy reflexe [a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md) a [runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
-## <a name="debug-and-release-builds"></a>Ladění a sestavení pro vydání  
- Když sestavení pro ladění spuštěn proti modulu runtime .NET Core, nebyl byl zkompilován do nativního kódu. Díky tomu všechny služby obvykle poskytuje modul runtime, které jsou k dispozici pro vaši aplikaci.  
+## <a name="debug-and-release-builds"></a>Sestavení ladění a vydaných verzí  
+ Když se sestavení ladění provede proti modulu runtime .NET Core, není zkompilováno do nativního kódu. Díky tomu jsou všechny služby běžně poskytované modulem runtime dostupným pro vaši aplikaci.  
   
- Na druhé straně sestavení pro vydání kompiluje do nativního kódu pro jeho cílové platformy, odebere většina závislostí na externí moduly runtime a knihovny a silně optimalizuje kód pro maximální výkon.  
+ Na druhé straně sestavení pro vydání se zkompiluje do nativního kódu pro své cílové platformy, odebírá většinu závislostí na externích modulech runtime a knihoven a silně optimalizuje kód pro maximální výkon.  
   
- Při ladění buildů vydaných verzí, které jsou kompilovány pomocí .NET Native:  
+ Při ladění sestavení vydaných verzí, která jsou kompilována pomocí .NET Native:  
   
-- Používáte .NET Native ladicího stroje, který se liší od normální .NET nástroje pro ladění.  
+- Použijete modul .NET Native ladění, který se liší od normálních ladicích nástrojů .NET.  
   
-- Spustitelný soubor je zmenšení co největší míře. Jedním ze způsobů, .NET Native snižuje velikost spustitelný soubor je výrazně ořezávání zprávy výjimek modulu runtime, větší podrobně popsány v tématu [zprávy výjimek modulu Runtime](#Messages) oddílu.  
+- Velikost spustitelného souboru se zmenší co nejvíce. Jedním z způsobů, jak .NET Native zmenší velikost spustitelného souboru, je tím, že významně vystřihují zprávy o výjimkách modulu runtime, téma podrobněji popsané v části [zprávy o výjimkách modulu runtime](#Messages) .  
   
-- Váš kód je silně optimalizovaná. To znamená, že vkládání se používá, kdykoli je to možné. (Vkládání přesune kódu z externího rutin do volání rutiny.)   Skutečnost, že .NET Native poskytuje specializované modulu runtime a implementuje agresivní vkládání ovlivňuje zásobníku volání, který se zobrazí při ladění.  Další informace najdete v tématu [zásobníku volání modulu Runtime](#CallStack) oddílu.  
+- Váš kód je intenzivně optimalizovaný. To znamená, že pokud je to možné, používá se vkládání. (Vkládání kódu přesouvá kód z externích rutin do volající rutiny.)   Fakt, že .NET Native poskytuje specializované prostředí runtime a implementuje agresivní vkládání, má vliv na zásobník volání, který se zobrazí při ladění.  Další informace naleznete v části [zásobník volání modulu runtime](#CallStack) .  
   
 > [!NOTE]
->  Můžete řídit, zda sestavení ladění a vydání se kompilují pomocí .NET Native řetězce nástrojů zaškrtnutím nebo zrušením zaškrtnutí **kompilovat s .NET Native řetězce nástrojů** pole.   Všimněte si však, že Windows Store vždy kompilovat produkční verzi vaší aplikace pomocí .NET Native řetězec nástroje.  
+> Můžete určit, zda jsou sestavení ladění a vydání kompilována pomocí .NET Nativeho řetězu nástroje zaškrtnutím nebo zrušením zaškrtnutí políčka **kompilovat pomocí .NET Nativeho řetězu nástrojů** .   Upozorňujeme však, že Windows Store vždy zkompiluje produkční verzi vaší aplikace s řetězcem nástroje .NET Native.  
   
 <a name="Messages"></a>   
-## <a name="runtime-exception-messages"></a>Zprávy výjimek modulu runtime  
- Chcete-li minimalizovat velikost spustitelný soubor aplikace .NET Native neobsahuje celý text zprávy o výjimkách. Modul runtime výjimky vyvolané v sestaveních pro vydání v důsledku toho nemusí zobrazit celý text zprávy o výjimkách. Místo toho může obsahovat text podřetězec spolu s odkazem pro další informace. Informace o výjimce může například zobrazit jako:  
+## <a name="runtime-exception-messages"></a>Zprávy o výjimkách modulu runtime  
+ Pro minimalizaci velikosti spustitelného souboru aplikace .NET Native neobsahují úplný text zpráv o výjimkách. V důsledku toho nemusí běhové výjimky vyvolané v sestavení vydaných verzí zobrazovat úplný text zpráv o výjimkách. Místo toho se může text skládat z podřetězce spolu s odkazem na Další informace. Například informace o výjimce mohou vypadat takto:  
   
 ```  
 Exception thrown: '$16_System.AggregateException' in Unknown Module.  
@@ -45,7 +45,7 @@ Additional information: AggregateException_ctor_DefaultMessage
 If there is a handler for this exception, the program may be safely continued.  
 ```  
   
- Pokud je třeba zpráva o výjimce dokončeno, spusťte sestavení pro ladění. Předchozí informace o výjimce ze sestavení pro vydání může například vypadat takto v laděném sestavení:  
+ Pokud potřebujete zprávu o úplné výjimce, spusťte místo toho sestavení ladění. Například předchozí informace o výjimce z buildu pro vydání se mohou zobrazit v sestavení ladění následujícím způsobem:  
   
 ```  
 Exception thrown: 'System.AggregateException' in NativeApp.exe.  
@@ -54,12 +54,12 @@ Additional information: Value does not fall within the expected range.
 ```  
   
 <a name="CallStack"></a>   
-## <a name="runtime-call-stack"></a>Zásobník volání modulu runtime  
- Z důvodu vkládání a další optimalizace zásobník volání zobrazí aplikací zkompilován s .NET Native řetězce nástrojů nemusí vám pomohou cestu k výjimku při běhu se tak jasně identifikovat.  
+## <a name="runtime-call-stack"></a>Zásobník volání za běhu  
+ Z důvodu vkládání a dalších optimalizací může být zásobník volání zobrazený aplikací zkompilováným řetězcem nástroje .NET Native moci jednoznačně identifikovat cestu k výjimce modulu runtime.  
   
- Pokud chcete získat úplný zásobník, spusťte místo toho sestavení pro ladění.  
+ Chcete-li získat úplný zásobník, spusťte místo toho sestavení ladění.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění univerzálních aplikací pro .NET Native Windows](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
+- [Ladění .NET Native univerzálních aplikací pro Windows](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
 - [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)

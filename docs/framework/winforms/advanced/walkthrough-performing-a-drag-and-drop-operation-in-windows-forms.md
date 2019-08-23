@@ -8,29 +8,29 @@ helpviewer_keywords:
 - Windows Forms, drag and drop operations
 - drag and drop [Windows Forms], Windows Forms
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
-ms.openlocfilehash: f7551f28d07c9517865f60af99954eb40e57daa2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cda3e87a4b0eb680d374eb0419a6b6b3157dc4a7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747391"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957126"
 ---
 # <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a>Návod: Provádění operace přetažení v modelu Windows Forms
-K provádění operací přetažení myší v rámci aplikace pro systém Windows je třeba ošetřit řadu událostí, zejména <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, a <xref:System.Windows.Forms.Control.DragDrop> události. Při práci s informacemi, které jsou k dispozici události argumenty tyto události, můžete snadno usnadnění operace přetažení myší.  
+K provádění operací přetažení v rámci aplikací pro systém Windows je nutné zpracovat řady událostí, zejména <xref:System.Windows.Forms.Control.DragEnter>události, <xref:System.Windows.Forms.Control.DragLeave>a <xref:System.Windows.Forms.Control.DragDrop> . Při práci s informacemi dostupnými v argumentech událostí těchto událostí můžete snadno usnadnit operace přetažení.  
   
-## <a name="dragging-data"></a>Přetažení dat  
- Všechny operace přetažení myší začínat přetažení. Funkce, které umožňují data shromažďovat, přetažením začíná je implementována v <xref:System.Windows.Forms.Control.DoDragDrop%2A> metody.  
+## <a name="dragging-data"></a>Přetahování dat  
+ Všechny operace přetažení začínají přetahováním. Funkce, která povoluje shromažďování dat, když je zahájeno přetahování, je <xref:System.Windows.Forms.Control.DoDragDrop%2A> implementována v metodě.  
   
- V následujícím příkladu <xref:System.Windows.Forms.Control.MouseDown> událostí se používá ke spuštění operace přetažení, protože je nejvíce intuitivní (většinu akcí a přetahování začínat tlačítko myši stisknuté se). Nezapomeňte však, že všechny události se používal k zahájení proceduru přetahování myší.  
+ V následujícím příkladu <xref:System.Windows.Forms.Control.MouseDown> se událost používá ke spuštění operace přetažení, protože se jedná o nejoblíbenější (většina akcí přetažení začíná tlačítkem myši). Mějte ale na paměti, že k zahájení postupu přetažení se dá použít jakákoli událost.  
   
 > [!NOTE]
->  Některé ovládací prvky mají vlastní události specifické pro přetažení. <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládacích prvků, třeba mít <xref:System.Windows.Forms.TreeView.ItemDrag> událostí.  
+> Některé ovládací prvky mají vlastní události specifické pro přetahování. Ovládací prvky <xref:System.Windows.Forms.TreeView> amají<xref:System.Windows.Forms.TreeView.ItemDrag>napříkladudálost. <xref:System.Windows.Forms.ListView>  
   
-#### <a name="to-start-a-drag-operation"></a>Pokud chcete spustit operaci přetažení  
+#### <a name="to-start-a-drag-operation"></a>Spuštění operace přetažení  
   
-1. V <xref:System.Windows.Forms.Control.MouseDown> události pro ovládací prvek ve kterém se začne přetahování, použijte `DoDragDrop` bude mít metody nastavte data, která mají být kvůli usnadnění použití vypsány a povoleným efektem přetažení. Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Data%2A> a <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
+1. V případě ovládacího prvku, kde bude zahájeno přetahování, `DoDragDrop` použijte metodu k nastavení přetažení dat a povoleného přetahování efektů. <xref:System.Windows.Forms.Control.MouseDown> Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Data%2A> a <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
   
-     Následující příklad ukazuje, jak k zahájení operace přetažení. Ovládací prvek, kde začíná přetahování <xref:System.Windows.Forms.Button> ovládacího prvku, data jsou kvůli usnadnění použití vypsány je řetězec představující <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.Button> ovládacího prvku a povolené efekty jsou kopírování nebo přesunutí.  
+     Následující příklad ukazuje, jak iniciovat operaci přetažení. Ovládací prvek, kde je <xref:System.Windows.Forms.Button> zahájeno přetažení, je ovládací prvek, přetažená data jsou řetězcem <xref:System.Windows.Forms.Control.Text%2A> představujícím <xref:System.Windows.Forms.Button> vlastnost ovládacího prvku a povolené účinky jsou buď zkopírovány nebo přesunuty.  
   
     ```vb  
     Private Sub Button1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button1.MouseDown  
@@ -48,18 +48,18 @@ K provádění operací přetažení myší v rámci aplikace pro systém Window
     ```  
   
     > [!NOTE]
-    >  Všechna data, můžete použít jako parametr v `DoDragDrop` metody; v příkladu výše, <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.Button> ovládací prvek byl použit (místo pevného kódování hodnotu nebo načítání dat z datové sady) vzhledem k tomu, že byla vlastnosti související s přetažen z umístění ( <xref:System.Windows.Forms.Button> ovládací prvek). Mějte na paměti jako začlenit operací přetažení myší do vaší aplikace pro systém Windows.  
+    > Všechna data lze použít jako parametr v `DoDragDrop` metodě; v předchozím příkladu se použila <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.Button> ovládacího prvku (místo hardwarového kódování hodnoty nebo načítání dat z datové sady), protože vlastnost se vztahuje k umístění, ze kterého se přetahuje <xref:System.Windows.Forms.Button> (ovládací prvek) Pamatujte na to, že do aplikací založených na systému Windows zařadíte operace přetažení myší.  
   
- Během operace přetažení je v platnosti, můžete zpracovávat <xref:System.Windows.Forms.Control.QueryContinueDrag> událost, která "požádá oprávnění" systému pokračovat v provádění operace přetažení. Při zpracování této metody, je také odpovídajícím bodě si můžete volat metody, které budou mít vliv na operace přetažení, například rozšíření <xref:System.Windows.Forms.TreeNode> v <xref:System.Windows.Forms.TreeView> ovládací prvek, když se ukazatelem přejde nad ním.  
+ Zatímco je aktivní operace přetažení, můžete <xref:System.Windows.Forms.Control.QueryContinueDrag> událost zpracovat, což znamená, že se zobrazí výzva k zadání oprávnění systému, aby bylo možné pokračovat v operaci přetažení. Při zpracování této metody je také vhodným bodem pro volání metod, které budou mít vliv na operaci přetažení, jako je například rozbalení <xref:System.Windows.Forms.TreeNode> <xref:System.Windows.Forms.TreeView> ovládacího prvku, když se ukazatel myši nachází na pozadí.  
   
 ## <a name="dropping-data"></a>Vyřazení dat  
- Po zahájení přetáhnete data z umístění na Windows formulář nebo ovládací prvek se přirozeně chcete vyřadit někde. Při překročí určitou oblast formuláře nebo ovládací prvek, který je správně nakonfigurovaný pro odstranění dat se změní kurzor. Všechny oblasti v rámci ovládacího prvku formuláře Windows nebo můžete provést tak, aby přijímal vynechaných dat tím, že nastavíte <xref:System.Windows.Forms.Control.AllowDrop%2A> vlastnost a zpracování <xref:System.Windows.Forms.Control.DragEnter> a <xref:System.Windows.Forms.Control.DragDrop> události.  
+ Jakmile začnete přetahovat data z umístění ve formuláři nebo ovládacím prvku Windows, budete ho přirozeně chtít umístit jinam. Kurzor se změní, když přeskočí oblast formuláře nebo ovládacího prvku, který je správně nakonfigurován pro vyřazení dat. Jakékoli oblasti v rámci formuláře nebo ovládacího prvku systému Windows lze použít pro příjem zahozených dat <xref:System.Windows.Forms.Control.AllowDrop%2A> nastavením vlastnosti a <xref:System.Windows.Forms.Control.DragEnter> zpracováním <xref:System.Windows.Forms.Control.DragDrop> událostí a.  
   
-#### <a name="to-perform-a-drop"></a>K provedení přetažení  
+#### <a name="to-perform-a-drop"></a>Provedení přetažení  
   
-1. Nastavte <xref:System.Windows.Forms.Control.AllowDrop%2A> vlastnost na hodnotu true.  
+1. <xref:System.Windows.Forms.Control.AllowDrop%2A> Nastavte vlastnost na hodnotu true.  
   
-2. V `DragEnter` události pro ovládací prvek, pokud dojde k rozevírací nabídku, ujistěte se, že data jsou kvůli usnadnění použití vypsány přijatelné typ (v tomto případě <xref:System.Windows.Forms.Control.Text%2A>). Kód poté nastaví efekt, který se stane, když rozevírací dojde k hodnotě ve <xref:System.Windows.Forms.DragDropEffects> výčtu. Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Effect%2A>.  
+2. V případě ovládacího prvku, kde dojde k vyřazení, se ujistěte, že přetažená data jsou přijatelného typu (v tomto <xref:System.Windows.Forms.Control.Text%2A>případě). `DragEnter` Kód pak nastaví efekt, který se stane, když dojde k zapuštění na hodnotu ve <xref:System.Windows.Forms.DragDropEffects> výčtu. Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Effect%2A>.  
   
     ```vb  
     Private Sub TextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragEnter  
@@ -83,11 +83,11 @@ K provádění operací přetažení myší v rámci aplikace pro systém Window
     ```  
   
     > [!NOTE]
-    >  Můžete definovat vlastní <xref:System.Windows.Forms.DataFormats> tak, že zadáte jako vlastní objekt <xref:System.Object> parametr <xref:System.Windows.Forms.DataObject.SetData%2A> metody. Ujistěte se, když to, že je zadaný objekt serializovatelný. Další informace naleznete v tématu <xref:System.Runtime.Serialization.ISerializable>.  
+    > Můžete definovat <xref:System.Windows.Forms.DataFormats> vlastní objekt zadáním vlastního objektu <xref:System.Object> jako parametru <xref:System.Windows.Forms.DataObject.SetData%2A> metody. Ujistěte se, že v takovém případě je zadaný objekt serializovatelný. Další informace naleznete v tématu <xref:System.Runtime.Serialization.ISerializable>.  
   
-3. V <xref:System.Windows.Forms.Control.DragDrop> události pro ovládací prvek rozevírací kde dojde, použijte <xref:System.Windows.Forms.DataObject.GetData%2A> metodu pro načtení dat se přetáhnout. Další informace naleznete v tématu <xref:System.Security.Cryptography.Xml.DataObject.Data%2A>.  
+3. V případě ovládacího prvku, kde dojde k vyřazení, <xref:System.Windows.Forms.DataObject.GetData%2A> použijte metodu pro načtení přetažených dat. <xref:System.Windows.Forms.Control.DragDrop> Další informace naleznete v tématu <xref:System.Security.Cryptography.Xml.DataObject.Data%2A>.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.TextBox> ovládací prvek je ovládací prvek přetažen (ve kterém bude každý rozevírací). Nastaví kód <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> řídit rovna data jsou kvůli usnadnění použití vypsány.  
+     V následujícím <xref:System.Windows.Forms.TextBox> příkladu je ovládací prvek přetažen do (kde dojde k přetažení). Kód nastaví <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku na hodnotu přetažená na data.  
   
     ```vb  
     Private Sub TextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragDrop  
@@ -104,10 +104,10 @@ K provádění operací přetažení myší v rámci aplikace pro systém Window
     ```  
   
     > [!NOTE]
-    >  Kromě toho můžete pracovat <xref:System.Windows.Forms.DragEventArgs.KeyState%2A> určité účinkům dochází vlastnost, takže v závislosti na klíče stisknuté během operace přetažení myší, (například je standardní kopírování Přetahované dat při stisknutí klávesy CTRL).  
+    > Kromě toho můžete s <xref:System.Windows.Forms.DragEventArgs.KeyState%2A> vlastností pracovat, takže když v závislosti na klíčích, které se během operace přetažení přetáhnete, dojde k určitým dopadům (například na standardu zkopírovat přetažená data při stisknutí klávesy CTRL).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Přidání dat do schránky.](how-to-add-data-to-the-clipboard.md)
+- [Postupy: Přidat data do schránky](how-to-add-data-to-the-clipboard.md)
 - [Postupy: Načtení dat ze schránky](how-to-retrieve-data-from-the-clipboard.md)
 - [Operace přetažení a podpora schránky](drag-and-drop-operations-and-clipboard-support.md)

@@ -9,30 +9,30 @@ helpviewer_keywords:
 - tab pages [Windows Forms], hiding in forms
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
-ms.openlocfilehash: 21592fdd74c43d40310e0fcbc96af6565a42e08b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 888228c28dce591b237be16b6a321afee0105208
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967140"
 ---
 # <a name="how-to-disable-tab-pages"></a>Postupy: Zakázání karet
-V některých případech budete chtít omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Jedním z příkladů může být, pokud máte data zobrazí na stránkách kartu ovládacího prvku karta; Správce může mít informace na stránce kartu, kterou chcete omezit z hosta nebo uživatelé na nižší úrovni.  
+V některých případech budete chtít omezit přístup k datům, která jsou k dispozici v rámci vaší aplikace model Windows Forms. Příkladem může být, když máte data zobrazená na kartách ovládacího prvku karta; Správci mohou mít informace na stránce karet, které byste chtěli omezit od uživatelů typu Host nebo nižší úrovně.  
   
-### <a name="to-disable-tab-pages-programmatically"></a>Chcete-li zákaz stránek karet prostřednictvím kódu programu  
+### <a name="to-disable-tab-pages-programmatically"></a>Chcete-li zakázat stránky karet programově  
   
-1. Napište kód pro zpracování ovládacího prvku karta <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> událostí. Toto je událost, která se vyvolá, když uživatel přepíná z jedné karty na další.  
+1. Napište kód pro zpracování <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> události ovládacího prvku karta. Toto je událost, která je vyvolána, když uživatel přepne z jedné karty na další.  
   
-2. Zkontrolujte přihlašovací údaje. V závislosti na informace uvedené, můžete chtít zkontrolovat uživatelské jméno, které má uživatel s přihlášením nebo jiné formy přihlašovacích údajů předtím, než uživatel zobrazíte na kartě.  
+2. Ověřte přihlašovací údaje. V závislosti na informacích, které jsou k dispozici, můžete chtít ověřit, že uživatel se přihlásil pomocí nebo jinou formu přihlašovacích údajů, než umožní uživateli zobrazit kartu.  
   
-3. Pokud má uživatel příslušná pověření, zobrazení, ke které došlo ke kliknutí na karty. Pokud uživatel nemá příslušná oprávnění, zobrazí okno se zprávou nebo některé jiné uživatelské rozhraní, což indikuje, že se nemají přístup a vrátit na první kartě.  
+3. Pokud má uživatel odpovídající přihlašovací údaje, zobrazte kartu, na kterou jste klikli. Pokud uživatel nemá příslušná pověření, zobrazí okno se zprávou nebo jiné uživatelské rozhraní, které indikuje, že nemají přístup, a vrátí se na úvodní kartu.  
   
     > [!NOTE]
-    >  Při implementaci této funkce ve svých aplikacích v produkčním prostředí, můžete tuto kontrolu můžete provést přihlašovacích údajů během formuláře <xref:System.Windows.Forms.Form.Load> událostí. To vám umožní skrýt kartě předtím, než se zobrazí uživatelské rozhraní, což je mnohem přehlednější přístup k programování. Metoda použitá níže (kontrola přihlašovacích údajů a na kartě při zakázání <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> události) je pro ilustraci.  
+    > Při implementaci této funkce v produkčních aplikacích můžete tuto kontrolu přihlašovacích údajů provést během <xref:System.Windows.Forms.Form.Load> události formuláře. To vám umožní Skrýt kartu před zobrazením libovolného uživatelského rozhraní, což je mnohem čistší přístup k programování. Níže uvedená metodika (kontrola přihlašovacích údajů a zakázání karty během <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> události) je určena pro ilustrativní účely.  
   
-4. Volitelně Pokud máte více než dvě stránky karet, zobrazte stránky karty liší od původní.  
+4. Případně, pokud máte více než dvě stránky karet, zobrazte stránku karet odlišnou od původní.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.CheckBox> ovládací prvek se používá namísto kontrole přihlašovacích údajů, jako kritéria pro přístup ke kartě se liší podle aplikace. Když <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> událost se vyvolá, pokud je kontrola přihlašovacích údajů má hodnotu true (to znamená, že je zaškrtnuto zaškrtávací políčko) a je vybraná karta `TabPage2` (na kartě s důvěrné informace v tomto příkladu), pak `TabPage2` se zobrazí. V opačném případě `TabPage3` se zobrazí a zobrazí se okno se zprávou pro uživatele, označující, že nemá dostatečná oprávnění. Následující kód předpokládá formulář s <xref:System.Windows.Forms.CheckBox> ovládacího prvku (`CredentialCheck`) a <xref:System.Windows.Forms.TabControl> ovládací prvek s tři stránky karet.  
+     V následujícím <xref:System.Windows.Forms.CheckBox> příkladu se místo kontroly přihlašovacích údajů používá ovládací prvek, protože kritéria pro přístup k této kartě se budou lišit v závislosti na aplikaci. Je-li vyvolána `TabPage2` `TabPage2` událost, pokud je provedena kontrola přihlašovacích údajů (tj. zaškrtávací políčko je zaškrtnuto) a vybraná karta je (karta s důvěrnými informacemi v tomto příkladu), zobrazí se. <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> V opačném případě se zobrazí okno se zprávou, že uživatel nemá příslušná přístupová oprávnění. `TabPage3` Níže uvedený kód předpokládá, že formulář má <xref:System.Windows.Forms.CheckBox> ovládací prvek`CredentialCheck`() a <xref:System.Windows.Forms.TabControl> ovládací prvek se třemi stránkami karet.  
   
     ```vb  
     Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged  
@@ -89,7 +89,7 @@ V některých případech budete chtít omezit přístup k datům, která je k d
        }  
     ```  
   
-     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuál C#, vizuál C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.tabControl1.SelectedIndexChanged +=   
@@ -104,6 +104,6 @@ V některých případech budete chtít omezit přístup k datům, která je k d
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
-- [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Postupy: Přidání ovládacího prvku na stránku karty](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Přidání a odebrání karet pomocí model Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+- [Postupy: Změna vzhledu model Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

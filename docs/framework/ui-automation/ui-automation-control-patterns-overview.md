@@ -5,23 +5,23 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 259594858e96897cb377cde4104e17b748f902c4
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 30e8619e70da46cb510fbe28ab2e8bcf27621e19
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971812"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963300"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
  Tento přehled zavádí [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vzory ovládacích prvků. Vzory ovládacích prvků poskytují způsob kategorizace a vystavení funkcí ovládacího prvku nezávisle na typu ovládacího prvku nebo vzhledu ovládacího prvku.  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]používá vzory ovládacích prvků pro reprezentaci obecného chování ovládacího prvku. Například můžete použít vzor ovládacího prvku Invoke pro ovládací prvky, které mohou být vyvolány (například tlačítka) a řídicí vzor posuvníku pro ovládací prvky, které mají posuvníky (například seznamy, zobrazení seznamu nebo pole se seznamem). Vzhledem k tomu, že každý vzor ovládacích prvků představuje samostatné funkce, lze je kombinovat a popsat tak úplnou sadu funkcí podporovaných určitým ovládacím prvkem.  
   
 > [!NOTE]
->  Agregační ovládací prvky – sestavené s podřízenými ovládacími prvky, které poskytují [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] funkcionalitu pro funkce vystavené nadřazeným prvkem, by měly implementovat všechny vzory ovládacích prvků, které jsou obvykle spojeny s každým V takovém případě tyto stejné vzory ovládacích prvků není nutné implementovat podřízenými ovládacími prvky.  
+> Agregační ovládací prvky – sestavené s podřízenými ovládacími prvky, které poskytují [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] funkcionalitu pro funkce vystavené nadřazeným prvkem, by měly implementovat všechny vzory ovládacích prvků, které jsou obvykle spojeny s každým V takovém případě tyto stejné vzory ovládacích prvků není nutné implementovat podřízenými ovládacími prvky.  
   
 <a name="uiautomation_control_pattern_includes"></a>   
 ## <a name="ui-automation-control-pattern-components"></a>Komponenty vzoru ovládacího prvku automatizace uživatelského rozhraní  

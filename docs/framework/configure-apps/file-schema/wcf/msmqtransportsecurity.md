@@ -2,22 +2,22 @@
 title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
-ms.openlocfilehash: fece74e76f879eff51f154eab8c8edea2c27119e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a7dcac4edce75029bb2e0293461557f56e3c3be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772395"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933213"
 ---
-# <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity>
+# <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity >
 Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<msmqIntegration>  
-\<msmqTransportSecurity>  
+\<msmqTransportSecurity >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +36,10 @@ Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`msmqAuthenticationMode`|Určuje, jak ověření zprávy dopravou služby MSMQ. Pokud je nastavené na `None`, hodnota `msmqProtectionLevel` atribut musí být také nastaven na `None`.<br /><br /> Platné hodnoty patří:<br /><br /> -Žádný: Bez ověřování.<br />– Windows: Mechanismus ověřování používá služby Active Directory k získání certifikátů X.509 pro identifikátor SID spojený se zprávou. Potom se používá ke kontrole, že seznam ACL fronty, aby uživatel má oprávnění k zápisu do fronty.<br />-Certifikátu: Kanál obdrží certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je Windows. Tento atribut je typu <xref:System.ServiceModel.MsmqAuthenticationMode>.|  
-|`msmqEncryptionAlgorithm`|Určuje algoritmus se má použít pro šifrování zpráv na lince, přenos zpráv mezi správci fronty zpráv. Platné hodnoty patří:<br /><br /> -RC4Stream<br />-   AES<br /><br /> Výchozí hodnota je RC4Stream. Tento atribut je typu <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
-|`msmqProtectionLevel`|Určuje, jak je zpráva zabezpečena na úrovni přenosu služby MSMQ. Šifrování zajišťuje integrity zprávy, zatímco EncryptAndSign zajišťuje zprávu integrity a nepopiratelnosti; To znamená že zpráva pochází skutečně od odesílatele a odesílatel je, který říká, že je. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />– Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou zašifrovaná a podepsaná.<br /><br /> Výchozí hodnota je znak. Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
-|`msmqSecureHashAlgorithm`|Určuje algoritmus pro výpočet výběru jako součást podpisu. Platné hodnoty patří:<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>Způsobeny problémy kolizí se MD5 a SHA1 společnost Microsoft doporučuje SHA256 nebo vyšší.|  
+|`msmqAuthenticationMode`|Určuje, jak musí být zpráva ověřena přenosem služby MSMQ. Pokud je tento `msmqProtectionLevel` atribut nastaven `None`na hodnotu, musí být hodnota atributu také nastavena na. `None`<br /><br /> Platné hodnoty jsou následující:<br /><br /> NTato Bez ověřování.<br />Systému Ověřovací mechanismus používá službu Active Directory k získání certifikátu X. 509 pro identifikátor SID přidružený ke zprávě. Pomocí této možnosti lze zkontrolovat seznam ACL fronty a zajistit tak, že uživatel má oprávnění k zápisu do fronty.<br />Certifikát Kanál získá certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je Windows. Tento atribut je typu <xref:System.ServiceModel.MsmqAuthenticationMode>.|  
+|`msmqEncryptionAlgorithm`|Určuje algoritmus, který se má použít pro šifrování zpráv na lince při přenosu zpráv mezi správci fronty zpráv. Platné hodnoty jsou následující:<br /><br /> - RC4Stream<br />– AES<br /><br /> Výchozí hodnota je RC4Stream. Tento atribut je typu <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
+|`msmqProtectionLevel`|Určuje, jak je zpráva zabezpečena na úrovni přenosu služby MSMQ. Šifrování zajišťuje integritu zpráv i v době, kdy EncryptAndSign zajišťuje integritu zprávy i neneodvolatelnost; To znamená, že zpráva skutečně pochází od odesílatele a odesilatele se říká, že je. Platné hodnoty jsou následující:<br /><br /> NTato Žádná ochrana.<br />Osobě Zprávy jsou podepsány.<br />EncryptAndSign Zprávy jsou zašifrovány a podepsány.<br /><br /> Výchozí hodnota je Sign (podepsat). Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
+|`msmqSecureHashAlgorithm`|Určuje algoritmus, který se má použít při výpočtu výtahu jako součásti signatur. Platné hodnoty jsou následující:<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>Microsoft doporučuje SHA256 nebo lepší z důvodu kolizí problémů s MD5 a SHA1.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,22 +48,22 @@ Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<msmqIntegration>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegration.md)|Určuje nastavení pro interakci s řízení front zpráv (MSMQ) odesílatele a příjemce.|  
-|[\<msmqTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqtransport.md)|Určuje vlastnosti komunikaci služby Řízení front služby Windows Communication Foundation (WCF), který používá nativní protokol služby MSMQ.|  
+|[\<msmqIntegration>](msmqintegration.md)|Určuje nastavení vyžadované pro interakci s odesílatelem nebo příjemcem služby Řízení front zpráv (MSMQ).|  
+|[\<msmqTransport >](msmqtransport.md)|Určuje vlastnosti komunikace služby Řízení front pro službu Windows Communication Foundation (WCF), která používá nativní protokol MSMQ.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o zabezpečení přenosu, naleznete v tématu [zabezpečení přenosu](../../../../../docs/framework/wcf/feature-details/transport-security.md).  
+ Další informace o zabezpečení přenosu najdete v tématu [zabezpečení přenosu](../../../wcf/feature-details/transport-security.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity>
 - <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Zabezpečení přenosu](../../../../../docs/framework/wcf/feature-details/transport-security.md)
+- [Fronty ve WCF](../../../wcf/feature-details/queues-in-wcf.md)
+- [Přenosy](../../../wcf/feature-details/transports.md)
+- [Volba přenosu](../../../wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Zabezpečení přenosu](../../../wcf/feature-details/transport-security.md)

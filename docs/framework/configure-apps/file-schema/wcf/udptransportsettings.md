@@ -2,18 +2,18 @@
 title: <udpTransportSettings>
 ms.date: 03/30/2017
 ms.assetid: 842d92e9-6199-4ec5-b2d1-58533054e1f0
-ms.openlocfilehash: f5be9681dc69fd68dfdfa90f4eb305dc4aa4514b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed87db92bcbfa0aa9016e36f391d707c5b17bf2b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788749"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934498"
 ---
-# <a name="udptransportsettings"></a>\<udpTransportSettings>
-Tento prvek konfigurace zpřístupňuje nastavení přenosu UDP pro [ \<udpDiscoveryEndpoint >](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md).  
+# <a name="udptransportsettings"></a>\<udpTransportSettings >
+Tento prvek konfigurace zveřejňuje nastavení přenosu UDP pro [ \<udpDiscoveryEndpoint >](udpdiscoveryendpoint.md).  
   
 \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
 \<udpDiscoveryEndpoint>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,15 +45,15 @@ Tento prvek konfigurace zpřístupňuje nastavení přenosu UDP pro [ \<udpDisco
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|duplicateMessageHistoryLength|Celé číslo určující maximální počet Transport používá k identifikaci duplicitních zpráv o hodnotách hash zpráv.  Zjišťování duplicit se provádí na úrovni Správce TransportManager. Nastavení této vlastnosti na hodnotu 0 zakáže vyhledávání duplicit.<br /><br /> Tento atribut umožňuje správcům systému a vývojáři, chcete-li vypnout algoritmy detekce duplicitních zpráv. To může být žádoucí, pokud chcete implementovat vlastní vyhledávání duplicit algoritmus.<br /><br /> Výchozí hodnota je 4112.|  
-|maxBufferPoolSize|Celé číslo, které určuje maximální velikost všechny fondy vyrovnávací paměti používané přenos.|  
-|maxMulticastRetransmitCount|Celé číslo, které určuje maximální počet pokusů, které se zpráva by měl být přenášena (kromě poslat prvním).<br /><br /> Výchozí hodnota je 2.|  
-|maxPendingMessageCount|Celé číslo určující maximální počet zpráv, které bylo přijato, ale ještě nebyla odebrána z InputQueue instance jednotlivých kanálů.  Pokud InputQueue dosáhl svého limitu počtu zpráv, zpráva se zahodí.<br /><br /> Výchozí hodnota je 32.|  
+|duplicateMessageHistoryLength|Celé číslo, které určuje maximální počet hodnot hash zpráv používaných při přenosu pro identifikaci duplicitních zpráv.  Vyhledávání duplicit bude provedeno na úrovni správce TransportManager. Nastavením této vlastnosti na hodnotu 0 zakážete detekci duplicit.<br /><br /> Tento atribut umožňuje správcům systému nebo vývojářům vypnout algoritmy pro detekci duplicitních zpráv. To může být žádoucí, pokud chcete implementovat vlastní algoritmus zjišťování duplicit.<br /><br /> Výchozí hodnota je 4112.|  
+|maxBufferPoolSize|Celé číslo, které určuje maximální velikost všech fondů vyrovnávacích pamětí používaných při přenosu.|  
+|maxMulticastRetransmitCount|Celé číslo, které určuje maximální počet, kolikrát se má zpráva znovu přenést (kromě prvního odeslání).<br /><br /> Výchozí hodnota je 2.|  
+|maxPendingMessageCount|Celé číslo, které určuje maximální počet zpráv, které byly přijaty, ale nebyly odebrány z InputQueue pro jednotlivé instance kanálu.  Pokud InputQueue dosáhlo limitu počtu nedokončených zpráv, zpráva se vynechá.<br /><br /> Výchozí hodnota je 32.|  
 |maxReceivedMessageSize|Celé číslo, které určuje maximální velikost zprávy, která může být zpracována vazbou.<br /><br /> Výchozí hodnota je 65507.|  
-|maxUnicastRetransmitCount|Celé číslo, které určuje maximální počet pokusů, které se zpráva by měl být přenášena (kromě poslat prvním).  Pokud je zpráva odeslána na adresu jednosměrového vysílání a obdrží zprávu odpovědi s odpovídající záhlavím RelatesTo, může ukončit opakovaný přenos zpráv již v rané fázi (před opětovným odesláním nakonfigurovaný počet, kolikrát).<br /><br /> Výchozí hodnota je 1.|  
-|multicastInterfaceId|Řetězec, který jednoznačně identifikuje síťový adaptér, který se má použít při odesílání a přijímání dat na počítačích s více adresami vícesměrového vysílání. Za běhu, použije přenos hodnota tohoto atributu pro vyhledání rozhraní index, který potom slouží k nastavení `IP_MULTICAST_IF` a `IPV6_MULTICAST_IF` soketu možnosti.  Stejný index rozhraní se použijí při připojení ke skupině vícesměrového vysílání, pokud je k dispozici.<br /><br /> Výchozí hodnota je `null`.|  
-|socketReceiveBufferSize|Celé číslo, které určuje velikost vyrovnávací paměti příjmu na základní soketu rozhraní WinSock.<br /><br /> Uživatel přijímající kanálu můžete použít tento atribut ve vazbě řídit, jak se systém chová, když přijme data.  Například aplikace, která je přijímat příchozí zprávy WCF při dosažení maximálního povoleného počtu směru, použitím vyšší hodnoty pro tento atribut by umožnilo zprávy ukládány do vyrovnávací paměti rozhraní WinSock při čekání na aplikaci, která bude moct zpracovat.  Použití nižší hodnotu ve stejné situaci by mít za následek získávání počet ztracených zpráv. Tento atribut zpřístupňuje základní rozhraní WinSock `SO_RCVBUF` možnost soketu. Hodnota tohoto atributu musí být dlouhý aspoň velikost `maxReceivedMessageSize`.   Nastavení na hodnotu menší, než `maxReceivedMessageSize` způsobí výjimku při běhu.<br /><br /> Výchozí hodnota je 65536.|  
-|timeToLive|Celé číslo určující počet segmentů směrování segmentu, které můžete procházet paketů vícesměrového vysílání.  Tento atribut zpřístupňuje funkce související s `IP_MULTICAST_TTL` a `IP_TTL` soketu možnosti.<br /><br /> Výchozí hodnota je 1.|  
+|maxUnicastRetransmitCount|Celé číslo, které určuje maximální počet, kolikrát se má zpráva znovu přenést (kromě prvního odeslání).  Pokud se zpráva pošle na adresu jednosměrového vysílání a přijata zpráva odpovědi s odpovídající hlavičkou RelatesTo, může se opakovaný přenos ukončit včas (před opakovaným odesláním konfigurovaného počtu).<br /><br /> Výchozí hodnota je 1.|  
+|multicastInterfaceId|Řetězec, který jednoznačně identifikuje síťový adaptér, který se má použít při odesílání a přijímání vícesměrového přenosu na více domácích počítačích. Za běhu bude přenos používat tuto hodnotu atributu pro vyhledání indexu rozhraní, který se pak použije k nastavení `IP_MULTICAST_IF` možnosti soketu a. `IPV6_MULTICAST_IF`  Stejný index rozhraní se použije při připojení ke skupině vícesměrového vysílání (Pokud je k dispozici).<br /><br /> Výchozí hodnota je `null`.|  
+|socketReceiveBufferSize|Celé číslo, které určuje velikost vyrovnávací paměti pro příjem na základním soketu WinSock.<br /><br /> Uživatel přijímacího kanálu může tento atribut u vazby použít k řízení toho, jak se systém chová při přijímání dat.  Například vzhledem k tomu, že aplikace, která spotřebovává příchozí zprávy WCF s maximální prahovou hodnotou, bude pomocí vyšší hodnoty pro tento atribut umožňovat, aby se zprávy navrstveny ve vyrovnávací paměti rozhraní WinSock při čekání, až aplikace bude schopna je zpracovat.  Použití nižší hodnoty ve stejné situaci způsobí, že se zprávy vynechává. Tento atribut zpřístupňuje základní možnost `SO_RCVBUF` soketu rozhraní Winsock. Hodnota tohoto atributu musí být alespoň velikost `maxReceivedMessageSize`.   Nastavením na hodnotu menší než `maxReceivedMessageSize` bude výsledkem výjimka za běhu.<br /><br /> Výchozí hodnota je 65536.|  
+|timeToLive|Celé číslo, které určuje počet segmentů směrování sítě, které může procházet paket vícesměrového vysílání.  Tento atribut zpřístupňuje funkce přidružené `IP_MULTICAST_TTL` k možnostem soketu a. `IP_TTL`<br /><br /> Výchozí hodnota je 1.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -62,7 +62,7 @@ Tento prvek konfigurace zpřístupňuje nastavení přenosu UDP pro [ \<udpDisco
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<udpDiscoveryEndpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md)|Je standardní koncový bod, který se má vyřešit zjišťování, kontrakt a UDP přenosu vazby.|  
+|[\<udpDiscoveryEndpoint>](udpdiscoveryendpoint.md)|Standardní koncový bod, který má pevně daný kontrakt zjišťování a přenosovou vazbu UDP.|  
   
 ## <a name="see-also"></a>Viz také:
 

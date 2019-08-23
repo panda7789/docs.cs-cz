@@ -1,25 +1,25 @@
 ---
-title: <add> z <scopedCertificates> – Element
+title: <add><scopedCertificates> elementu
 ms.date: 03/30/2017
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
-ms.openlocfilehash: 06a624d0146745581dfe907d044d1f7d3b857902
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9756d37527fcf888cad930b24677ae8e6a2c8fba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673860"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920046"
 ---
-# <a name="add-of-scopedcertificates-element"></a>\<Přidat > z \<scopedCertificates > – Element
-Přidá certifikát X.509 do kolekce vymezených certifikátů.  
+# <a name="add-of-scopedcertificates-element"></a>\<Přidat > \<prvku > scopedCertificates
+Přidá certifikát X. 509 do kolekce certifikátů s vymezeným oborem.  
   
  \<system.ServiceModel>  
-\<chování >  
-část endpointBehaviors  
-\<chování >  
+\<> chování  
+oddíl endpointBehaviors  
+\<> chování  
 \<clientCredentials>  
 \<serviceCertificate>  
 \<scopedCertificates>  
-\<Přidat > – element pro \<scopedCertificates >  
+\<Přidat > element pro \<> scopedCertificates  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,41 +32,41 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|targetUri|řetězec. Určuje identifikátor URI služby přidruženého k certifikátu.|  
-|findValue|řetězec. Hodnota, kterou chcete vyhledat.|  
-|x509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
-|storeLocation|Výčet. Jedno ze dvou umístění úložišť k prohledání.|  
-|storeName|Výčet. Jedno ze systémových úložišť k prohledání.|  
+|targetUri|Řetezce. Určuje identifikátor URI služby přidružené k certifikátu.|  
+|findValue|Řetezce. Hodnota, kterou chcete vyhledat.|  
+|x509FindType|Enumeration. Jedno z polí certifikátu, které chcete vyhledat.|  
+|storeLocation|Enumeration. Jedno ze dvou umístění úložiště, které chcete vyhledat.|  
+|storeName|Enumeration. Jedno ze systémových úložišť, které chcete vyhledat.|  
   
-## <a name="findvalue-attribute"></a>findValue atribut  
-  
-|Value|Popis|  
-|-----------|-----------------|  
-|String|Hodnota závisí na poli (určenému atributem X509FindType) být vyhledán. Například pokud hledání kryptografickým otiskem, hodnota musí být řetězec šestnáctkových čísel.|  
-  
-## <a name="x509findtype-attribute"></a>Atribut x509FindType  
+## <a name="findvalue-attribute"></a>findValue – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Mezi hodnoty patří: FindByThumbprint FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+|String|Hodnota závisí na poli (určené atributem X509FindType), který je prohledáván. Například pokud hledáte kryptografický otisk, hodnota musí být řetězec hexadecimálních čísel.|  
   
-## <a name="storelocation-attribute"></a>storeLocation atribut  
+## <a name="x509findtype-attribute"></a>x509FindType – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
+|-----------|-----------------|  
+|Výčet|Mezi hodnoty patří: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+  
+## <a name="storelocation-attribute"></a>storeLocation – atribut  
+  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|CurrentUser nebo LocalMachine.|  
   
-## <a name="storename-attribute"></a>storeName atribut  
+## <a name="storename-attribute"></a>storeName – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Mezi hodnoty patří: Adresáře, AuthRoot, CertificateAuthority zakázané, My, Root, TrustedPeople a TrustedPublisher.|  
+|Výčet|Mezi hodnoty patří: AddressBook, AuthRoot, CertificateAuthority, Nepovoleno, my, root, TrustedPeople a TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -75,17 +75,17 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<scopedCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování.|  
+|[\<scopedCertificates>](scopedcertificates-element.md)|Představuje kolekci certifikátů X. 509 poskytovaných konkrétními službami (vymezenými) pro ověřování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek umožňuje klientovi konfigurace certifikátu služby k použití na základě adresy URL služby, se kterým komunikuje. To je zvláště užitečná v vydaný token situacích, kdy může klient komunikovat k více službám (ukončení služby také služby tokenu zabezpečení zprostředkující). U vazeb, které používají zabezpečení na základě certifikátů zpráv tento certifikát se používá k šifrování zpráv ve službě a očekává se využívat službu k podepisování odpovědi klientovi.  
+ Tento prvek umožňuje klientovi nakonfigurovat certifikát služby tak, aby se použil na základě adresy URL služby, se kterou komunikuje. To je užitečné hlavně ve scénářích vydaných tokenů, kde klient může komunikovat s více službami (koncová služba i zprostředkující služba tokenů zabezpečení). U vazeb, které používají zabezpečení zpráv založených na certifikátech, se tento certifikát používá k šifrování zpráv do služby a očekává se, že služba bude službu používat k podepisování odpovědí klientovi.  
   
- Pokud vazba vyžaduje certifikát pro službu a žádné konkrétní certifikát pro službu, kterou adresy URL se nachází v ScopedCertificates, použije se výchozí certifikát.  
+ Pokud vazba vyžaduje certifikát pro službu a v ScopedCertificates se nenajde žádný konkrétní certifikát pro adresu URL služby, použije se výchozí certifikát.  
   
- Další informace najdete v části "Obor certifikáty" v [jak: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md).  
+ Další informace najdete v části ["vymezené certifikáty" v tématu Postupy: Vytvoření federovaného klienta](../../../wcf/feature-details/how-to-create-a-federated-client.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá certifikát X.509 do kolekce.  
+ Následující příklad přidá do kolekce certifikát X. 509.  
   
 ```xml  
 <behaviors>
@@ -114,7 +114,7 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 - <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>
-- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Postupy: Vytvoření federovaného klienta](../../../wcf/feature-details/how-to-create-a-federated-client.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

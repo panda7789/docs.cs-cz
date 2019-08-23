@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], using the designer
 - multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-ms.openlocfilehash: f96124f7d97e733b1f0e2559320ce2e09ba5ff21
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 97888a77dfc731be591d5f0284e87f45ef7dc437
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039950"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930170"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Postupy: Vytváření uživatelského rozhraní s více podokny s Windows Forms pomocí Návrháře
 V následujícím postupu vytvoříte uživatelské rozhraní s více podokny, které je podobné jako v aplikaci Microsoft Outlook, seznam **složek** , podokno **zprávy** a podokno **náhledu** . Toto uspořádání se dosahuje hlavně prostřednictvím ovládacích prvků docking s formulářem.
@@ -39,7 +39,7 @@ V následujícím postupu vytvoříte uživatelské rozhraní s více podokny, k
      Když stisknete klávesu F5 ke spuštění aplikace, formulář zobrazí uživatelské rozhraní se třemi částmi, podobně jako v aplikaci Microsoft Outlook.
 
     > [!NOTE]
-    >  Když umístíte ukazatel myši na některé z rozdělovačů v <xref:System.Windows.Forms.SplitContainer> ovládacích prvcích, můžete změnit velikost vnitřních rozměrů.
+    > Když umístíte ukazatel myši na některé z rozdělovačů v <xref:System.Windows.Forms.SplitContainer> ovládacích prvcích, můžete změnit velikost vnitřních rozměrů.
 
 V tomto okamžiku vývoje aplikací jste si vystavili sofistikované uživatelské rozhraní. Dalším krokem je pokračování v programování samotné aplikace, třeba propojením <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládacích prvků s nějakým druhem zdroje dat. Další informace o připojení ovládacích prvků k datům naleznete v tématu [datové vazby a model Windows Forms](../data-binding-and-windows-forms.md).
 

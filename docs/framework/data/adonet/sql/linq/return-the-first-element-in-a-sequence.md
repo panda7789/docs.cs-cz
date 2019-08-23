@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ccdc3777-b2c2-44e3-a627-abef8d79a555
-ms.openlocfilehash: dca917b3c12b0f9923cc9ea34a2568c412a09831
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39cf9270b08fce64590fef418bb428c5a781b0e9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033446"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963810"
 ---
 # <a name="return-the-first-element-in-a-sequence"></a>Vrácení prvního prvku v posloupnosti
-Použití <xref:System.Linq.Enumerable.First%2A> operátor vrátí první prvek v sekvenci. Dotazy, které používají <xref:System.Linq.Enumerable.First%2A> provádějí okamžitě.  
+<xref:System.Linq.Enumerable.First%2A> Použijte operátor k vrácení prvního prvku v sekvenci. Dotazy, které <xref:System.Linq.Enumerable.First%2A> používají, se spustí okamžitě.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje <xref:System.Linq.Enumerable.Last%2A> operátor.  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<xref:System.Linq.Enumerable.Last%2A> nepodporuje operátor.  
   
 ## <a name="example"></a>Příklad  
- Následující kód najde první `Shipper` v tabulce:  
+ Následující kód vyhledá první `Shipper` v tabulce:  
   
- Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, jsou výsledky  
+ Pokud spustíte tento dotaz proti ukázkové databázi Northwind, výsledky jsou  
   
  `ID = 1, Company = Speedy Express`.  
   
@@ -29,9 +29,9 @@ Použití <xref:System.Linq.Enumerable.First%2A> operátor vrátí první prvek 
  [!code-vb[DLinqQueryExamples#14](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
- Následující kód najde jedné `Customer` , který má `CustomerID` BONAP.  
+ Následující kód najde jeden `Customer` , který `CustomerID` má BONAP.  
   
- Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, výsledky jsou `ID = BONAP, Contact = Laurence Lebihan`.  
+ Pokud spustíte tento dotaz proti ukázkové databázi Northwind, budou `ID = BONAP, Contact = Laurence Lebihan`výsledky.  
   
  [!code-csharp[DLinqQueryExamples#15](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#15)]
  [!code-vb[DLinqQueryExamples#15](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#15)]  

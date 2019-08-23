@@ -2,18 +2,18 @@
 title: <metadata>
 ms.date: 03/30/2017
 ms.assetid: d09653eb-e355-4c73-b87b-28f93d56480d
-ms.openlocfilehash: c0c9848d073c799e1f97dd79b375848dfab71e99
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4555dc9c2e0b783de2fb57e47c9aada0d69462e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763903"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931303"
 ---
-# <a name="metadata"></a>\<metadata >
-Určuje způsob zpracování metadat služby.  
+# <a name="metadata"></a>\<> metadat
+Určuje, jak se můžou zpracovávat metadata služby.  
   
  \<system.ServiceModel>  
-\<client>  
+\<> klienta  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,14 +42,14 @@ Určuje způsob zpracování metadat služby.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<policyImporters>](../../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md)|Určuje všechny nástroje pro import, které řídí import kontrolních výrazů vlastních zásad o vazbách. Import zásady se používá k hledání kontrolních výrazů vlastních zásad o vazbách funkce, jakož i připojit vlastní prvek vazby, který implementuje funkce, které vyžaduje kontrolního výrazu.|  
-|[\<wsdlImporters>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)|Určuje všechny importers WSDL, které importují metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy. Programu pro import WSDL umožňuje importovat metadata a také převést, které informace do různých tříd, které představují smlouvy a informace o koncovém bodu. Selektivně mohl importovat informace o smlouvě a koncový bod a vlastnosti, které zveřejnit jakékoli chyby importu a přijímat informace o typu relevantní pro import a převod balíčků. Podporuje také importovat informace o vazbě a vlastnosti, které poskytují přístup k dokumentům zásad, dokumenty WSDL, rozšíření WSDL a dokumentů schématu XML.|  
+|[\<policyImporters>](policyimporters.md)|Určuje všechny zásady pro import, které řídí import vlastních výrazů zásad o vazbách. Importér zásad slouží k hledání vlastních kontrolních výrazů zásad o funkcích vazby a také k připojení vlastního elementu vazby, který implementuje funkce vyžadované kontrolním výrazem.|  
+|[\<wsdlImporters>](wsdlimporters.md)|Určuje všechny nástroje pro Import WSDL, které importují metadata Web Services Description Language (WSDL) 1,1 s přílohami WS-Policy. Import WSDL slouží k importu metadat a také k převedení těchto informací do různých tříd, které reprezentují informace o kontraktech a koncových bodech. Může selektivně importovat informace o kontraktech a koncových bodech a vlastnosti, které zveřejňují chyby importu a přijímají informace o typu relevantní pro proces importu a převodu. Podporuje také import informací o vazbách a vlastností, které poskytují přístup k jakýmkoli dokumentům zásad, dokumentům WSDL, rozšířením WSDL a dokumentům XML schématu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<client>](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|Oddíl klienta definuje seznam koncových bodů, které se klient může připojit k.|  
+|[\<client>](client.md)|Oddíl Client definuje seznam koncových bodů, ke kterým se klient může připojit.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -58,5 +58,5 @@ Určuje způsob zpracování metadat služby.
 - <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>
 - <xref:System.ServiceModel.Description.MetadataImporter>
 - <xref:System.ServiceModel.Description.WsdlImporter>
-- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Konfigurace klienta WCF](../../../wcf/feature-details/client-configuration.md)
+- [Klienti](../../../wcf/feature-details/clients.md)

@@ -9,26 +9,26 @@ helpviewer_keywords:
 - data grids [Windows Forms], customizing rows
 - DataGridView control [Windows Forms], customizing rows
 ms.assetid: 6db61607-7e57-4a84-8d63-9d6a7ed7f9ff
-ms.openlocfilehash: 1f6312f9ac8520b2131e1d2d7a7fb996aee6060e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0dba318e6aa35761f4e9471fdb13b65644747b57
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651597"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966493"
 ---
 # <a name="how-to-use-the-row-template-to-customize-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Ovládací prvek používá šablony řádku jako základ pro všechny řádky, které se přidá do ovládacího prvku prostřednictvím datové vazby nebo při volání <xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A?displayProperty=nameWithType> metoda bez zadání používat stávající řádek.  
+Ovládací prvek používá šablonu řádku jako základ pro všechny řádky, které přidá do ovládacího prvku buď prostřednictvím vazby dat, nebo při <xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A?displayProperty=nameWithType> volání metody bez určení stávajícího řádku, který má být použit. <xref:System.Windows.Forms.DataGridView>  
   
- Šablony řádku vám dává větší kontrolu nad vzhled a chování řádků, než <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A> poskytuje vlastnost. Pomocí šablony řádek, můžete nastavit některé <xref:System.Windows.Forms.DataGridViewRow> vlastnosti, včetně <xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A>.  
+ Šablona řádku nabízí větší kontrolu nad tím, jak vzhled a chování řádků, než <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A> poskytuje vlastnost. Pomocí šablony řádku můžete nastavit jakékoli <xref:System.Windows.Forms.DataGridViewRow> vlastnosti, včetně. <xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A>  
   
- Existují určité situace, kdy je nutné použít šablony řádku k dosažení určitého efektu. Například nelze uložit informace výšky řádku v <xref:System.Windows.Forms.DataGridViewCellStyle>, takže musíte použít šablonu řádku Chcete-li změnit výchozí výška používají všechny řádky. Šablony řádku je užitečné také při vytváření vlastní třídy odvozené od <xref:System.Windows.Forms.DataGridViewRow> a chcete, aby vaše vlastní typ použitý při přidání nových řádků do ovládacího prvku.  
+ Existují situace, kdy je nutné použít šablonu řádku k dosažení konkrétního efektu. Například informace o výšce řádku nelze uložit do <xref:System.Windows.Forms.DataGridViewCellStyle>, takže je nutné použít šablonu řádku, chcete-li změnit výchozí výšku použitou ve všech řádcích. Šablona řádku je užitečná také v případě, že vytvoříte vlastní třídy odvozené z <xref:System.Windows.Forms.DataGridViewRow> a chcete použít vlastní typ, když jsou do ovládacího prvku přidány nové řádky.  
   
 > [!NOTE]
->  Řádek šablona se používá, pouze když jsou řádky přidány. Existující řádky nelze změnit tak, že změníte šablony řádku.  
+> Šablona řádku se používá pouze v případě, že jsou přidány řádky. Existující řádky nemůžete změnit změnou šablony řádku.  
   
 ### <a name="to-use-the-row-template"></a>Použití šablony řádku  
   
-- Nastavit vlastnosti v objektu načtený ze <xref:System.Windows.Forms.DataGridView.RowTemplate%2A?displayProperty=nameWithType> vlastnost.  
+- Nastavte vlastnosti objektu načteného z <xref:System.Windows.Forms.DataGridView.RowTemplate%2A?displayProperty=nameWithType> vlastnosti.  
   
      [!code-cpp[System.Windows.Forms.DataGridView.RowTemplate#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.RowTemplate/CPP/datagridviewrowtemplate.cpp#1)]
      [!code-csharp[System.Windows.Forms.DataGridView.RowTemplate#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.RowTemplate/CS/datagridviewrowtemplate.cs#1)]
@@ -37,9 +37,9 @@ ms.locfileid: "64651597"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- Ovládací prvek s `dataGridView1`názvem. <xref:System.Windows.Forms.DataGridView>  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType>sestavení, <xref:System.Drawing?displayProperty=nameWithType>a. <xref:System.Windows.Forms?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>Viz také:
 

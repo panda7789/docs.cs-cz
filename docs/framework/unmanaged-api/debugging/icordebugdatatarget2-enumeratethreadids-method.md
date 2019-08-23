@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: af02460f-2a45-496e-bc4e-a1ac4f80fe11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 848929901e91164bdccda5c1e77069364452a782
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1dc5f8b7fa308bdb0fb270c11e044244839a7b47
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750246"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910291"
 ---
 # <a name="icordebugdatatarget2enumeratethreadids-method"></a>ICorDebugDataTarget2::EnumerateThreadIDs – metoda
-Vrátí seznam hodnot aktivní vlákno ID.  
+Vrátí seznam identifikátorů aktivních vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,25 +26,25 @@ HRESULT EnumerateThreadIDs(
   
 ## <a name="parameters"></a>Parametry  
  cThreadIDs  
- [in] Maximální počet vláken, jejichž ID může být vrácen.  
+ pro Maximální počet podprocesů, jejichž ID lze vrátit.  
   
  pcThreadIds  
- [out] Ukazatel `ULONG32` , která indikuje, skutečný počet vláken ID zapsána do `pThreadIds` pole.  
+ mimo Ukazatel na `ULONG32` , který označuje skutečný počet ID vláken zapsaných `pThreadIds` do pole.  
   
  pThreadIDs  
- Pole identifikátory vlákna.  
+ Pole identifikátorů vláken.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md). **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md). **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

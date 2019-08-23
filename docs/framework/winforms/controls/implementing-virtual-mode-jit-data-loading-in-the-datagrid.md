@@ -12,63 +12,63 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - virtual mode [Windows Forms], just-in-time data loading
 ms.assetid: c2a052b9-423c-4ff7-91dc-d8c7c79345f6
-ms.openlocfilehash: 641db19cc6493a20c9f9a34622f466e3623c32ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa40f1657a433f5f4ade3de25648ca04c37dfa67
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973820"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962605"
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView
-Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> je ovládací prvek k načtení dat pouze dle potřeby. Tento postup se nazývá *načítání dat just-in-time*.  
+Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> ovládacím prvku je načíst data pouze tak, jak je potřeba. Tato metoda se označuje jako *načítání dat za běhu*.  
   
- Pokud pracujete s velmi velké tabulky do vzdálené databáze, například můžete chtít vyhnuli prodlevám při spuštění načítá pouze data, která je nezbytná pro zobrazení a načítají se další data pouze v případě, že uživatel posune nových řádků do zobrazení. Pokud klientské počítače se systémem vaší aplikace máte omezené množství paměti k ukládání dat, můžete také zrušit nepoužívaná data při načtení nové hodnoty z databáze.  
+ Pokud pracujete s velmi velkou tabulkou ve vzdálené databázi, například můžete chtít zabránit prodlevám při spouštění, a to tak, že načtete jenom data potřebná pro zobrazení a načítání dalších dat, jenom když uživatel posune nové řádky do zobrazení. Pokud klientské počítače, na kterých běží vaše aplikace, mají k dispozici omezené množství paměti pro ukládání dat, možná budete chtít při načítání nových hodnot z databáze zrušit nepoužívaná data.  
   
- Následující části popisují způsob použití <xref:System.Windows.Forms.DataGridView> ovládacího prvku s mezipamětí just-in-time.  
+ Následující části popisují, jak používat <xref:System.Windows.Forms.DataGridView> ovládací prvek s mezipamětí cache (just-in-time).  
   
- Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Implementace virtuálního režimu s načítáním dat za běhu v Windows Forms DataGridView – ovládací prvek](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
+ Postup kopírování kódu v tomto tématu jako jediného výpisu naleznete v [tématu How to: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)DataGridView model Windows Forms.  
   
 ## <a name="the-form"></a>Formulář  
- Následující příklad kódu definuje formulář obsahující jen pro čtení <xref:System.Windows.Forms.DataGridView> ovládací prvek, který komunikuje `Cache` objektu <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužné rutiny události. `Cache` Objekt spravuje místně uložené hodnoty a používá `DataRetriever` objektu k načtení hodnoty v tabulce objednávky v ukázkové databázi Northwind. `DataRetriever` Objektu, který implementuje `IDataPageRetriever` rozhraní vyžadované `Cache` třídy, slouží k inicializaci <xref:System.Windows.Forms.DataGridView> řídit řádků a sloupců.  
+ Následující příklad kódu definuje formulář obsahující ovládací prvek jen <xref:System.Windows.Forms.DataGridView> pro čtení, který komunikuje `Cache` s objektem prostřednictvím <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužné rutiny události. Objekt spravuje místně uložené hodnoty a `DataRetriever` pomocí objektu načítá hodnoty z tabulky Orders ukázkové databáze Northwind. `Cache` Objekt, který `IDataPageRetriever` implementuje rozhraní `Cache` požadované<xref:System.Windows.Forms.DataGridView> třídou, je také použit k inicializaci řádků a sloupců ovládacího prvku. `DataRetriever`  
   
- `IDataPageRetriever`, `DataRetriever`, A `Cache` typy jsou popsány dále v tomto tématu.  
+ Typy `IDataPageRetriever`, `DataRetriever` a`Cache` jsou popsány dále v tomto tématu.  
   
 > [!NOTE]
->  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../data/adonet/protecting-connection-information.md).  
+> Ukládání citlivých informací, jako je například heslo, v rámci připojovacího řetězce může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [ochrana informací o připojení](../../data/adonet/protecting-connection-information.md).  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#100)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#100)]  
   
 ## <a name="the-idatapageretriever-interface"></a>Rozhraní IDataPageRetriever  
- Následující příklad kódu definuje `IDataPageRetriever` rozhraní, které je implementované `DataRetriever` třídy. Pouze metody deklarované v tomto rozhraní je `SupplyPageOfData` metodu, která vyžaduje počáteční řádek indexu a počet řádků v jediné stránce data. Tyto hodnoty jsou používány implementátora načíst podmnožinu dat z datového zdroje.  
+ Následující příklad kódu definuje `IDataPageRetriever` rozhraní, které je implementováno `DataRetriever` třídou. Jedinou metodou deklarovanou v tomto rozhraní je `SupplyPageOfData` metoda, která vyžaduje počáteční index řádku a počet řádků na jedné stránce dat. Tyto hodnoty používá implementátor k načtení podmnožiny dat ze zdroje dat.  
   
- A `Cache` objektu používá k načtení dat dvě počáteční stránky implementace tohoto rozhraní během konstrukce. Pokaždé, když se potřeby bez vyrovnávací paměti hodnotu mezipaměti odstraní jednu z těchto stránek a požádá o novou stránku obsahující hodnotu z `IDataPageRetriever`.  
+ `Cache` Objekt používá implementaci tohoto rozhraní během konstrukce pro načtení dvou počátečních stránek dat. Pokaždé, když je potřebná hodnota bez mezipaměti, mezipaměť odhodí jednu z těchto stránek a požádá o novou stránku obsahující hodnotu z `IDataPageRetriever`.  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#201)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#201)]  
   
-## <a name="the-dataretriever-class"></a>Třída DataRetriever  
- Následující příklad kódu definuje `DataRetriever` třídy, která implementuje `IDataPageRetriever` rozhraní pro načtení stránek ze serveru. `DataRetriever` Třída rovněž poskytuje `Columns` a `RowCount` vlastnosti, které <xref:System.Windows.Forms.DataGridView> ovládací prvek používá k vytvoření potřebných sloupců a přidejte odpovídající počet prázdných řádků do <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce. Přidání prázdných řádků je nezbytné, aby ovládací prvek se bude chovat, jako by šlo obsahuje všechna data v tabulce. To znamená, že jezdce do oblasti posuvníku bude mít odpovídající velikost, a uživatel bude mít přístup všechny řádky v tabulce. Řádky jsou vyplněny <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužné rutiny události pouze v případě, že jsou přešli do zobrazení.  
+## <a name="the-dataretriever-class"></a>Třída  
+ Následující příklad kódu definuje `DataRetriever` třídu, která `IDataPageRetriever` implementuje rozhraní pro načtení stránek dat ze serveru. `Columns` <xref:System.Windows.Forms.DataGridView.Rows%2A> Třída také poskytuje<xref:System.Windows.Forms.DataGridView> a `RowCount` vlastnosti, které ovládací prvek používá k vytvoření nezbytných sloupců a k přidání příslušného počtu prázdných řádků do kolekce. `DataRetriever` Přidání prázdných řádků je nezbytné, aby se ovládací prvek choval, jako by obsahoval všechna data v tabulce. To znamená, že okno posuvníku v posuvníku bude mít odpovídající velikost a uživatel bude mít přístup k jakémukoli řádku v tabulce. Řádky jsou vyplněny <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužnou rutinou události pouze v případě, že jsou posunuty do zobrazení.  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#200)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#200)]  
   
-## <a name="the-cache-class"></a>Třída Cache  
- Následující příklad kódu definuje `Cache` třídu, která spravuje dvě stránky vyplní pomocí dat `IDataPageRetriever` implementace. `Cache` Třída definuje vnitřního `DataPage` struktura, která obsahuje <xref:System.Data.DataTable> pro uložení hodnot v jedné mezipaměti stránky a která vypočítá řádku indexy, které představují horní a dolní hranice stránky.  
+## <a name="the-cache-class"></a>Třída cache  
+ Následující příklad kódu definuje `Cache` třídu, která spravuje dvě stránky dat vyplněné `IDataPageRetriever` implementací. Třída definuje vnitřní `DataPage` strukturu, která obsahuje a <xref:System.Data.DataTable> , aby ukládala hodnoty na jednu stránku mezipaměti a které vypočítávají indexy řádků, které reprezentují horní a dolní hranice stránky. `Cache`  
   
- `Cache` Třídy načte dvě stránky dat v době konstrukce. Pokaždé, když <xref:System.Windows.Forms.DataGridView.CellValueNeeded> události vyžádá hodnotu, `Cache` objekt určuje, zda hodnota je k dispozici v jednu jeho dvou stránky a, pokud ano, vrátí jej. Pokud hodnota není k dispozici místně, `Cache` objekt určuje jeho dvě stránky nejvzdálenější aktuálně zobrazené řádky a nahradí obsahující požadovanou hodnotu, která pak vrátí novou stránku.  
+ `Cache` Třída načte dvě stránky dat v době konstrukce. Kdykoli událost požádá o hodnotu `Cache` , objekt určí, zda je hodnota k dispozici na jedné z jejích dvou stránek, a pokud ano, vrátí ji. <xref:System.Windows.Forms.DataGridView.CellValueNeeded> Pokud tato hodnota není k dispozici místně, `Cache` objekt určuje, který z jeho dvou stránek je nejvzdálenější z aktuálně zobrazených řádků, a nahradí stránku novým, který obsahuje požadovanou hodnotu, kterou pak vrátí.  
   
- Za předpokladu, že počet řádků na stránce dat je stejný jako počet řádků, které se dají zobrazit na obrazovce najednou, tento model umožňuje uživatelům procházení tabulky efektivně vrátit k naposledy zobrazené stránky.  
+ Za předpokladu, že počet řádků na datové stránce je stejný jako počet řádků, které je možné na obrazovce zobrazit najednou, umožňuje tento model stránkování přes tabulku a efektivně se vracet na naposledy prohlíženou stránku.  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#300)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#300)]  
   
-## <a name="additional-considerations"></a>Další informace  
- Předchozí příklady kódu slouží jako ukázka načítání dat just-in-time. Je potřeba upravit kód pro vaše konkrétní potřeby k dosažení maximální efektivity. Minimálně je potřeba vybrat odpovídající hodnotu pro počet řádků na stránce dat v mezipaměti. Tato hodnota je předána do `Cache` konstruktoru. Počet řádků na stránce by měl být méně než počet řádků, které se dají zobrazit najednou v vaše <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+## <a name="additional-considerations"></a>Další požadavky  
+ Předchozí příklady kódu jsou k dispozici jako ukázka načítání dat za běhu. Abyste dosáhli maximální efektivity, budete muset změnit kód tak, aby vyhovoval. V případě potřeby budete muset vybrat odpovídající hodnotu pro počet řádků na stránku dat v mezipaměti. Tato hodnota je předána do `Cache` konstruktoru. Počet řádků na stránku by neměl být menší než počet řádků, které lze v <xref:System.Windows.Forms.DataGridView> ovládacím prvku současně zobrazit.  
   
- Nejlepších výsledků dosáhnete je potřeba provést testování výkonu a testování k určení požadavků na systém a vaši uživatelé. Několik faktorů, které je potřeba vzít v úvahu zahrnují množství paměti v počítačích klienta aplikace, dostupnou šířku pásma připojení k síti použít a latence serveru použít. Na šířku pásma a čekací doba byste měli určit čas od času využití ve špičce.  
+ Pro dosažení nejlepších výsledků budete muset provést testování výkonu a testování použitelnosti, abyste zjistili požadavky vašeho systému i uživatelů. Mezi faktory, které budete muset vzít v úvahu, patří množství paměti v klientských počítačích, na kterých běží vaše aplikace, dostupná šířka pásma síťového připojení a latence používaného serveru. Šířka pásma a latence by měly být stanoveny v době špičky využití.  
   
- Kvůli zvýšení výkonu posunování prvku vaše aplikace se může zvýšit množství dat uložených místně. K vylepšení doby spouštění, ale je třeba se vyvarovat načítání příliš mnoho dat původně. Můžete chtít změnit `Cache` třídy zvýšit počet stránek data můžete ukládat. Použití více stránek data může zlepšit efektivitu posouvání, ale budete muset zjistit ideální počet řádků na stránce dat, v závislosti na dostupnou šířku pásma a latence serveru. S menší stránky serveru budete přistupovat častěji, ale bude trvat kratší dobu vrací požadovaná data. Pokud je latence větší potíže než šířka pásma, můžete chtít použít větší data stránky.  
+ Chcete-li zlepšit výkon při posouvání aplikace, můžete zvýšit množství uložených dat v místním prostředí. Pokud ale chcete zlepšit čas spuštění, musíte se nejdřív vyhnout načtení příliš velkého množství dat. Možná budete chtít změnit `Cache` třídu, aby se zvýšil počet datových stránek, které může uložit. Použití více datových stránek může zlepšit efektivitu posouvání, ale v závislosti na dostupné šířce pásma a latenci serveru je třeba určit ideální počet řádků na datové stránce. S menšími stránkami bude k serveru k dispozici častěji, ale bude trvat kratší dobu, než budou požadovaná data vrácena. Pokud je latence větší než šířka pásma, možná budete chtít použít stránky s větším množstvím dat.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -77,5 +77,5 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
 - [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
 - [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
 - [Virtuální režim v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md)
-- [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-wf-datagridview-control.md)
-- [Postupy: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)
+- [Návod: Implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms](implementing-virtual-mode-wf-datagridview-control.md)
+- [Postupy: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku DataGridView model Windows Forms](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)

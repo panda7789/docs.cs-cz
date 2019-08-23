@@ -16,50 +16,50 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83c72704ccb01baf68a3cacb6252367e07909fa8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d36d8ef3bfdbd6a1acf787a91003e2ff3139a4d9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638419"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963968"
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2 – rozhraní
-Poskytuje metody, které se používají modulem common language runtime (CLR) pro oznámení profileru kód, pokud dojde k událostem, ke kterým se připojila profileru. `ICorProfilerCallback2` Rozhraní je rozšířením [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) rozhraní. To znamená, že poskytuje nové zpětná volání zavedena v rozhraní .NET Framework verze 2.0.  
+Poskytuje metody, které jsou používány modulem CLR (Common Language Runtime) k oznamování profileru kódu, když dojde k odběru událostí, ke kterým má Profiler odběr. Rozhraní je rozšířením rozhraní ICorProfilerCallback. [](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) `ICorProfilerCallback2` To znamená, že poskytuje nová zpětná volání, která jsou představena ve verzi .NET Framework 2,0.  
   
 > [!NOTE]
->  Každá implementace metoda musí vracet HRESULT s hodnotou S_OK na úspěch nebo E_FAIL při selhání. V současné době CLR ignoruje hodnota HRESULT, který je vrácený každou zpětného volání s výjimkou [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md).  
+> Každá implementace metody musí vracet hodnotu HRESULT s hodnotou S_OK při úspěchu nebo E_FAIL při selhání. V současné době CLR ignoruje hodnotu HRESULT, kterou vrátí každé zpětné volání s výjimkou [ICorProfilerCallback:: objectReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md).  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[FinalizeableObjectQueued – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md)|Upozornění profileru kódu, že objekt s finalizační metody se zařadila do vlákna finalizační metody pro provádění jeho `Finalize` metoda.|  
-|[GarbageCollectionFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)|Profiler upozorní, že dokončení procesu uvolnění paměti a všechny zpětná volání kolekce uvolnění paměti byly vydány pro něj.|  
-|[GarbageCollectionStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md)|Upozornění profileru kódu, uvolňování paměti byla spuštěna.|  
-|[HandleCreated – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handlecreated-method.md)|Upozornění profileru kódu, není vytvořen popisovač kolekce uvolnění paměti.|  
-|[HandleDestroyed – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handledestroyed-method.md)|Upozornění profileru kód zlikvidování popisovač kolekce uvolnění paměti.|  
-|[RootReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md)|Oznámí profileru odkazy na kořenové po uvolňování paměti došlo k chybě. Tato metoda je rozšířením [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) metody.|  
-|[SurvivingReferences – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-survivingreferences-method.md)|Upozornění profileru o odkazy na objekty, které mají zůstat naživu při uvolňování paměti.|  
-|[ThreadNameChanged – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-threadnamechanged-method.md)|Upozornění profileru kód, název vlákna se změnila.|  
+|[FinalizeableObjectQueued – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md)|Upozorní profiler kódu, že objekt s finalizační metodou byl zařazen do finalizačního vlákna pro provedení své `Finalize` metody.|  
+|[GarbageCollectionFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)|Upozorní profileru, že se dokončilo uvolňování paměti a že se pro něj vystavila všechna zpětná volání uvolňování paměti.|  
+|[GarbageCollectionStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md)|Upozorní profiler kódu, že bylo zahájeno uvolňování paměti.|  
+|[HandleCreated – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handlecreated-method.md)|Upozorní profiler kódu, že byl vytvořen popisovač uvolňování paměti.|  
+|[HandleDestroyed – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handledestroyed-method.md)|Upozorní profiler kódu, že byl zničen popisovač uvolňování paměti.|  
+|[RootReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md)|Oznamuje Profiler o kořenových odkazech poté, co došlo k uvolnění paměti. Tato metoda je rozšířením metody [ICorProfilerCallback:: RootReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) .|  
+|[SurvivingReferences – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-survivingreferences-method.md)|Upozorní profiler na odkazy na objekty, které předržely uvolňování paměti.|  
+|[ThreadNameChanged – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-threadnamechanged-method.md)|Upozorní profiler kódu, že se změnil název vlákna.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá metodu v `ICorProfilerCallback` (nebo `ICorProfilerCallback2`) rozhraní pro oznámení profileru po události, ke kterému měl profiler odběru, vyvolá. Toto je primární zpětného volání rozhraní, pomocí kterého CLR komunikuje s profileru kód.  
+ CLR volá metodu v `ICorProfilerCallback` rozhraní (nebo `ICorProfilerCallback2`) k oznámení profileru, když dojde k odběru události, ke které se Profiler přihlásil. Toto je primární rozhraní zpětného volání, přes které CLR komunikuje s profilerem kódu.  
   
- Profiler kódu musí implementovat metody `ICorProfilerCallback` rozhraní. Pro rozhraní .NET Framework 2.0 a novější verze, musí také implementovat profiler `ICorProfilerCallback2` metody. Každá implementace metoda musí vracet HRESULT s hodnotou S_OK na úspěch nebo E_FAIL při selhání. V současné době CLR ignoruje hodnota HRESULT, který je vrácený každou zpětného volání s výjimkou [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md).  
+ Profiler kódu musí implementovat metody `ICorProfilerCallback` rozhraní. Pro .NET Framework 2,0 a novější verze musí Profiler také implementovat `ICorProfilerCallback2` metody. Každá implementace metody musí vracet hodnotu HRESULT s hodnotou S_OK při úspěchu nebo E_FAIL při selhání. V současné době CLR ignoruje hodnotu HRESULT, kterou vrátí každé zpětné volání s výjimkou [ICorProfilerCallback:: objectReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md).  
   
- Profiler kódu musí registrovat v registru Microsoft Windows, jeho objekt modelu COM, který implementuje `ICorProfilerCallback` a `ICorProfilerCallback2` rozhraní. Profiler kódu přihlásí se k odběru událostí, pro které chce přijmout oznámení voláním [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md). To se obvykle provádí v implementaci profileru [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md). Profiler je pak moci přijímat oznámení z modulu runtime při události dojde nebo došlo k právě v spuštěného procesu modulu runtime.  
+ Profiler kódu se musí zaregistrovat v registru Microsoft Windows, jeho objekt com, který implementuje `ICorProfilerCallback` rozhraní a. `ICorProfilerCallback2` Profiler kódu se přihlašuje k odběru událostí, ke kterým chce dostávat oznámení voláním [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md). To se obvykle provádí v implementaci [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)v profileru. Profiler je pak schopný přijímat oznámení z modulu runtime, když dojde k události, která se chystá, nebo k ní došlo pouze v průběhu provádění procesu modulu runtime.  
   
 > [!NOTE]
->  Profiler zaregistruje jeden objekt modelu COM. Pokud profiler je cílen na verzi rozhraní .NET Framework verze 1.0 nebo 1.1, tento objekt modelu COM musí implementovat pouze metody `ICorProfilerCallback`. Pokud je cílen na verzi rozhraní .NET Framework verze 2.0 a novější, musí implementovat objekt modelu COM také metody `ICorProfilerCallback2`.  
+> Profiler registruje jeden objekt COM. Pokud je profiler cílen .NET Framework verze 1,0 nebo 1,1, musí objekt COM implementovat pouze metody `ICorProfilerCallback`. Pokud cílí na .NET Framework verze 2,0 a novější, musí objekt COM také implementovat metody `ICorProfilerCallback2`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

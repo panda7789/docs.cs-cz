@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to Windows Forms controls
 - DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-ms.openlocfilehash: 51e18555a322e32f0877167d42cd30776068c746
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 609878416be26786ce865168c996c78e18b1897f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040040"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917878"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku Windows Forms DataGridView pomocí Návrháře
 Pomocí návrháře můžete propojit <xref:System.Windows.Forms.DataGridView> ovládací prvek se zdroji dat několika různých odrůd, včetně databází, obchodních objektů a webových služeb. Při svázání ovládacího prvku se zdrojem dat pomocí návrháře je ovládací prvek automaticky svázán <xref:System.Windows.Forms.BindingSource> s komponentou, která představuje zdroj dat. Kromě toho se sloupce automaticky generují v ovládacím prvku tak, aby odpovídaly informacím schématu poskytnutým zdrojem dat.
@@ -39,7 +39,7 @@ Pomocí návrháře můžete propojit <xref:System.Windows.Forms.DataGridView> o
 6. Chcete-li vytvořit relaci hlavního a podrobností v rozevíracím okně **Zvolit zdroj dat** pro druhý <xref:System.Windows.Forms.DataGridView> <xref:System.Windows.Forms.BindingSource> ovládací prvek, rozbalte položku Vytvořeno pro nadřazenou tabulku a pak v zobrazeném seznamu vyberte související podřízenou tabulku.
 
     > [!NOTE]
-    >  Pokud projekt již obsahuje zdroj dat, můžete také použít okno **zdroje dat** k vytvoření datového formuláře. Další informace naleznete v tématu [okno zdroje dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/6ckyxa83(v=vs.120)).
+    > Pokud projekt již obsahuje zdroj dat, můžete také použít okno **zdroje dat** k vytvoření datového formuláře. Další informace naleznete v tématu [okno zdroje dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/6ckyxa83(v=vs.120)).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,81 +2,81 @@
 title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 5809a75dbadffbd2528f6882aa586aecd3232408
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 1723552a48ebfa41e8d6a0f963154fc3b864119d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490095"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957491"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
-SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  
+SQL Server podporuje dva režimy ověřování, režim ověřování systému Windows a smíšený režim.  
   
-- Ověřování Windows je výchozí a se často označuje jako integrované zabezpečení tento model zabezpečení systému SQL Server je těsně integrovaná se službami Windows. Určité účty uživatelů a skupin Windows jsou důvěryhodní k přihlášení k SQL serveru. Není potřeba k dispozici další přihlašovací údaje Windows, kteří již byl ověřen.  
+- Ověřování systému Windows je výchozí a často se označuje jako integrované zabezpečení, protože tento model zabezpečení SQL Server je úzce integrovaný se systémem Windows. Pro přihlášení k SQL Server jsou pro konkrétní účty uživatelů a skupin systému Windows důvěryhodné. Uživatelé systému Windows, kteří už byli ověřeni, nemusejí mít k dispozici další přihlašovací údaje.  
   
-- Ve smíšeném režimu podporuje ověřování Windows a SQL Server. Dvojice název a heslo uživatele zachovány v rámci SQL serveru.  
+- Smíšený režim podporuje ověřování jak v systému Windows, tak pomocí SQL Server. Páry uživatelské jméno a heslo se udržují v SQL Server.  
   
 > [!IMPORTANT]
->  Doporučujeme používat ověřování Windows, kdykoli je to možné. Ověřování Windows k ověřování uživatelů v systému SQL Server používá řadu šifrované zprávy. Při přihlášení serveru SQL Server jsou používány, jsou předány přihlašovací jména systému SQL Server a šifrovaná hesla přes síť, což je méně bezpečné.  
+> Pokud je to možné, doporučujeme používat ověřování systému Windows. Ověřování systému Windows používá k ověřování uživatelů v SQL Server řadu šifrovaných zpráv. Při SQL Server používání přihlašovacích jmen SQL Server přihlašovací jména a šifrovaná hesla se předávají přes síť, což snižuje jejich zabezpečení.  
   
- Uživatelé s ověřováním Windows, se už přihlásili do Windows a není nutné samostatně přihlášení k SQL serveru. Následující `SqlConnection.ConnectionString` Určuje ověřování Windows, aniž by uživatelé museli zadat uživatelské jméno nebo heslo.  
+ Při ověřování Windows se uživatelé už přihlásili k Windows a nemusíte se k SQL Server přihlašovat samostatně. `SqlConnection.ConnectionString` Toto Určuje ověřování systému Windows, aniž by uživatelé museli zadat uživatelské jméno nebo heslo.  
   
 ```  
 "Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;  
 ```  
   
 > [!NOTE]
->  Přihlášení se liší od uživatele databáze. Přihlašovací jména nebo skupiny Windows je nutné mapovat do databáze uživatelů nebo rolí v samostatné operaci. Pak udělíte oprávnění uživatelům nebo rolí pro přístup k objektům v databázi.  
+> Přihlášení se liší od uživatelů databáze. Přihlašovací jména nebo skupiny systému Windows je nutné namapovat na uživatele databáze nebo role v samostatné operaci. Pak uživatelům nebo rolím udělíte oprávnění pro přístup k objektům databáze.  
   
 ## <a name="authentication-scenarios"></a>Scénáře ověřování  
- Ověřování Windows je obvykle nejlepší volbou v těchto situacích:  
+ Ověřování systému Windows je obvykle nejlepší volbou v následujících situacích:  
   
-- Je řadič domény.  
+- Existuje řadič domény.  
   
 - Aplikace a databáze jsou ve stejném počítači.  
   
-- Používáte instanci systému SQL Server Express nebo LocalDB.  
+- Používáte instanci SQL Server Express nebo LocalDB.  
   
- Přihlášení serveru SQL Server se často používají v následujících situacích:  
+ Přihlašovací jména SQL Server se často používají v následujících situacích:  
   
-- Pokud máte pracovní skupiny.  
+- Máte-li pracovní skupinu.  
   
-- Uživatelé připojovat z jiné, nedůvěryhodné domény.  
+- Uživatelé se připojují z různých nedůvěryhodných domén.  
   
-- Internetové aplikace, jako je například technologie ASP.NET.  
+- Internetové aplikace, například ASP.NET.  
   
 > [!NOTE]
->  Zadání ověřování Windows nezakáže přihlášení serveru SQL Server. Zakázat přihlášení serveru SQL Server s vysokou úrovní oprávnění pomocí příkazu ALTER LOGIN zakázat jazyka Transact-SQL.  
+> Zadání ověřování systému Windows nezakáže SQL Server přihlašovacích údajů. Pomocí příkazu ALTER LOGIN DISABLE příkaz Transact-SQL zakážete SQL Server přihlašovacích údajů s vysokou úrovní oprávnění.  
   
 ## <a name="login-types"></a>Typy přihlášení  
  SQL Server podporuje tři typy přihlášení:  
   
-- Místní uživatelský účet Windows nebo důvěryhodné doméně účtu. SQL Server závisí na Windows k ověření Windows uživatelské účty.  
+- Místní uživatelský účet systému Windows nebo účet důvěryhodné domény. SQL Server spoléhá na Windows k ověření uživatelských účtů systému Windows.  
   
-- Skupiny Windows. Udělení přístupu ke skupině Windows uděluje přístup ke všem přihlášení uživatele Windows, které jsou členy skupiny.  
+- Skupina systému Windows. Udělení přístupu skupině systému Windows uděluje přístup všem uživatelským přihlašováním systému Windows, která jsou členy skupiny.  
   
-- Přihlašovací jméno SQL serveru. SQL Server uchovává uživatelské jméno a hodnotu hash hesla v hlavní databázi pomocí interní ověřovacích metod ověření pokusů o přihlášení.  
+- SQL Server přihlášení. SQL Server ukládá uživatelské jméno i hodnotu hash hesla v hlavní databázi, a to pomocí metod interního ověřování pro ověření pokusů o přihlášení.  
   
 > [!NOTE]
->  SQL Server poskytuje přihlašovací údaje vytvořené z certifikáty nebo asymetrické klíče, které se používají pouze pro podepisování kódu. Nelze použít pro připojení k SQL serveru.  
+> SQL Server poskytuje přihlášení vytvořená z certifikátů nebo asymetrických klíčů, které se používají jenom pro podepisování kódu. Nelze je použít pro připojení k SQL Server.  
   
 ## <a name="mixed-mode-authentication"></a>Ověřování ve smíšeném režimu  
- Pokud je potřeba použít ve smíšeném režimu ověřování, musíte vytvořit přihlášení systému SQL Server, které jsou uloženy v systému SQL Server. Potom je nutné zadat uživatelské jméno SQL serveru a heslo v době běhu.  
+ Pokud je potřeba použít smíšený režim ověřování, musíte vytvořit SQL Server přihlašovacích údajů, které jsou uložené v SQL Server. Pak je nutné zadejte SQL Server uživatelské jméno a heslo v době běhu.  
   
 > [!IMPORTANT]
->  SQL Server nainstaluje s přihlášením SQL serveru s názvem `sa` (zkratka "správce"). Přiřaďte silné heslo, které `sa` přihlášení a nepoužívají `sa` přihlášení v aplikaci. `sa` Přihlášení se mapuje `sysadmin` pevné role serveru, který má neodvolatelnou přihlašovací údaje pro správu na celý server. Neplatí žádné limity pro možné škody, pokud útočník získá přístup jako správce systému. Všichni členové Windows `BUILTIN\Administrators` skupinu (skupiny local Administrators) jsou členy `sysadmin` roli ve výchozím nastavení, ale můžete odebrat z této role.  
+> SQL Server se instaluje s přihlašovacím SQL Server `sa` s názvem (zkratka "správce systému"). Přiřaďte `sa` přihlášení silné heslo a `sa` nepoužívejte přihlašovací údaje ve vaší aplikaci. Přihlašovací údaje se mapují `sysadmin` na pevnou roli serveru, která má nevratná pověření pro správu na celém serveru. `sa` V případě, že útočník získá přístup jako správce systému, neexistují žádná omezení na potenciální škodu. Všichni členové skupiny Windows `BUILTIN\Administrators` (skupina místních správců) jsou ve výchozím nastavení členy `sysadmin` této role, ale je možné je z této role odebrat.  
   
- SQL Server poskytuje mechanismy zásady hesla Windows pro přihlášení serveru SQL Server při spuštění [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] nebo novější verze. Zásady pro složitost hesla jsou navrženy pro odstraňovat útoky hrubou silou zvýšením počtu možných hesel. SQL Server můžete použít stejné zásady složitosti a vypršení platnosti používané [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] to hesel použitých v SQL serveru.  
+ SQL Server poskytuje mechanismy zásad hesel Windows pro SQL Server přihlášení, když běží v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] systému nebo novějších verzích. Zásady složitosti hesla jsou navržené tak, aby se zvýšil počet útoků hrubou silou, a to zvýšením počtu možných hesel. SQL Server můžou použít stejné zásady složitosti a vypršení platnosti [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] používané v k heslům použitým v rámci SQL Server.  
   
 > [!IMPORTANT]
->  Zřetězení řetězců připojení ze vstupu uživatele můžete nechat je zranitelný vůči útoku prostřednictvím injektáže řetězec připojení. Použití <xref:System.Data.SqlClient.SqlConnectionStringBuilder> k vytváření syntakticky správný připojovací řetězce v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
+> Zřetězení připojovacích řetězců ze vstupu uživatele může opustit útok prostřednictvím injektáže připojovacího řetězce. <xref:System.Data.SqlClient.SqlConnectionStringBuilder> Použijte k vytvoření syntakticky platných připojovacích řetězců v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
 |Resource|Popis|  
 |--------------|-----------------|  
-|[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine)|Popisuje přihlášení a další hlavní služby zabezpečení v systému SQL Server.|  
+|[Objekty](/sql/relational-databases/security/authentication-access/principals-database-engine)|Popisuje přihlašovací údaje a další objekty zabezpečení v SQL Server.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -84,4 +84,4 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
 - [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
 - [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

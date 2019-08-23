@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Reader
 ms.assetid: 60e5848d-7d9c-4ea5-bed9-22758c9ac16c
-ms.openlocfilehash: 03c6949d25497419a55f7baafa33d568817b8f27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e0a26436515e9b8d7597c7e39272e6ac77a110b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007432"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959496"
 ---
 # <a name="xmlreader-sample"></a>Ukázka třídy XmlReader
-Ukázka třídy XmlReader ukazuje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. Operace další službu `Sum`, byla přidána, který přijme zprávu, která obsahuje pole hodnot, které chcete přidat najednou. Služba načte zprávy pomocí <xref:System.Xml.XmlReader>.  
+Ukázka XmlReader ukazuje zpracování těla zprávy pomocí <xref:System.Xml.XmlReader>. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje službu kalkulačky. Byla přidána další operace `Sum`služby, která přijímá zprávu obsahující pole hodnot, které se mají přidat dohromady. Služba přečte zprávu pomocí <xref:System.Xml.XmlReader>.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Kalkulačka rozhraní zahrnuje operace služby s názvem `Sum` , který přijme <xref:System.ServiceModel.Channels.Message> parametru, jak je znázorněno v následujícím ukázkovém kódu.  
+ Rozhraní kalkulačky obsahuje operaci služby s názvem `Sum` , která <xref:System.ServiceModel.Channels.Message> přijímá parametr, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 public interface ICalculator  
@@ -35,7 +35,7 @@ public interface ICalculator
 }  
 ```  
   
- Klient přistupuje k `Sum` prvním vytvoření pole celočíselných hodnot, pak vytváření zprávy z pole a potom voláním `Sum` metodu pomocí vytvořenou zprávu, jak je znázorněno v následujícím ukázkovém kódu.  
+ Přístup `Sum` klienta při prvním vytvoření pole celočíselných hodnot a následným vytvořením zprávy z pole a následným `Sum` voláním metody pomocí vytvořené zprávy, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 CalculatorClient client = new CalculatorClient();  
@@ -53,7 +53,7 @@ using (new OperationContextScope(client.InnerChannel))
 }  
 ```  
   
- Ve službě, provádění operace služby `Sum` přistupuje k textu zprávy použijte <xref:System.Xml.XmlReader> objektu k iteraci v rámci hodnoty tak, aby součet. <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> Metoda je volána pro přístup k textu zprávy, jak je znázorněno v následujícím ukázkovém kódu.  
+ Implementace operace `Sum` služby v rámci služby přistupuje k tělo zprávy <xref:System.Xml.XmlReader> pomocí objektu pro iteraci hodnotami, které se mají sečíst. <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> Metoda je volána pro přístup k tělo zprávy, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp  
 public int Sum(Message message)  
@@ -80,7 +80,7 @@ public int Sum(Message message)
 }  
 ```  
   
- Když spustíte ukázku, požadavky a odpovědi z operace se zobrazují v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se žádosti a odpovědi na operaci zobrazí v okně konzoly klienta. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console  
 Add(100,15.99) = 115.99  
@@ -92,19 +92,19 @@ Sum(1,2,3,4,5) = 15
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\XmlReader`  

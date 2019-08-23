@@ -10,12 +10,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-ms.openlocfilehash: 0891b64fdb26953ab90f3da931f04513ac9e8bcf
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 378d7b0c67791e6c48e9859e0546594df3ccc85e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040214"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931005"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu
 Pomocí Visual Basic můžete pomocí dědičnosti vytvářet výkonné vlastní ovládacíprvky. Prostřednictvím dědičnosti můžete vytvářet ovládací prvky, které budou uchovávat veškerou základní funkci standardních model Windows Formsch ovládacích prvků, ale také zahrnovat vlastní funkce. V tomto návodu vytvoříte jednoduchý Zděděný ovládací prvek s názvem `ValueButton`. Toto tlačítko zdědí funkce ze standardního ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> a zpřístupní vlastní vlastnost s názvem. `ButtonValue`
@@ -29,7 +29,7 @@ Pomocí Visual Basic můžete pomocí dědičnosti vytvářet výkonné vlastní
 
 2. V seznamu Visual Basic projektů vyberte šablonu projektu **knihovny ovládacích prvků model Windows Forms** a do pole **název** zadejte `ValueButtonLib` .
 
-     Název projektu, `ValueButtonLib`, je ve výchozím nastavení přiřazen ke kořenovému oboru názvů. Kořenový obor názvů slouží k získání názvů komponent v sestavení. Například pokud dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete určit svou `ValueButton` komponentu pomocí `ValueButtonLib.ValueButton`. Další informace najdete v tématu [obory názvů v Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).
+     Název projektu, `ValueButtonLib`, je ve výchozím nastavení přiřazen ke kořenovému oboru názvů. Kořenový obor názvů slouží k získání názvů komponent v sestavení. Například pokud dvě sestavení poskytují komponenty s názvem `ValueButton`, můžete určit svou `ValueButton` komponentu pomocí `ValueButtonLib.ValueButton`. Další informace najdete v tématu [obory názvů v Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).
 
 3. V **Průzkumník řešení**klikněte pravým tlačítkem na **UserControl1. vb**a pak zvolte **Přejmenovat** z místní nabídky. Změňte název souboru na `ValueButton.vb`. Pokud se zobrazí dotaz, zda chcete přejmenovat všechny odkazy na prvek kódu ' UserControl1 ', klikněte na tlačítko **Ano** .
 
@@ -46,7 +46,7 @@ Pomocí Visual Basic můžete pomocí dědičnosti vytvářet výkonné vlastní
      Všimněte si, že vizuální Návrhář již není k dispozici. Vzhledem k tomu, že ovládacíprvekprovedevlastnímalování,nemůžetezměnitjehovzhledvnávrháři.<xref:System.Windows.Forms.Button> Jeho vizuální reprezentace bude přesně stejná jako třída, ze které dědí ( <xref:System.Windows.Forms.Button>tj.), pokud není upravena v kódu.
 
 > [!NOTE]
->  Na návrhovou plochu stále můžete přidat komponenty, které nemají žádné prvky uživatelského rozhraní.
+> Na návrhovou plochu stále můžete přidat komponenty, které nemají žádné prvky uživatelského rozhraní.
 
 ## <a name="adding-a-property-to-your-inherited-control"></a>Přidání vlastnosti do zděděného ovládacího prvku
  Jedním z možných použití děděných ovládacích prvků model Windows Forms je vytváření ovládacích prvků, které jsou identické vzhledy a chování (vzhled a chování) pro standardní model Windows Forms ovládací prvky, ale zpřístupňují vlastní vlastnosti. V této části přidáte k ovládacímu prvku vlastnost s `ButtonValue` názvem.
@@ -148,4 +148,4 @@ Pomocí Visual Basic můžete pomocí dědičnosti vytvářet výkonné vlastní
 - [Návod: Vytváření složeného ovládacího prvku pomocí Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
 - [Postupy: Zobrazení ovládacího prvku v dialogovém okně zvolit položky sady nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 - [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
-- [Základy dědičnosti (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [Základy dědičnosti (Visual Basic)](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

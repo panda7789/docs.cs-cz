@@ -7,12 +7,12 @@ helpviewer_keywords:
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-ms.openlocfilehash: ff43fa1d3019af5cd08f86704a05531120201d17
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: fdaa4b511b18495d2a35f72ee017a01aab0b4ee8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596015"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922055"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 Vlastnosti kombinují aspekty obou polí a metod. Pro uživatele objektu se zobrazí vlastnost, která má být pole a přístup k vlastnosti vyžaduje stejnou syntaxi. Pro Implementátor třídy je vlastnost jedním nebo dvěma bloky kódu, které představují přistupující objekt [Get](../../language-reference/keywords/get.md) nebo přístupový objekt [set](../../language-reference/keywords/set.md) . Blok kódu pro `get` přistupující objekt je proveden při čtení vlastnosti. blok kódu `set` pro přistupující objekt je spuštěn, když je vlastnost přiřazena nová hodnota. Vlastnost bez `set` přístupového objektu je považována za jen pro čtení. Vlastnost bez `get` přístupového objektu je považována za jen pro zápis. Vlastnost, která má oba přístupové objekty, je pro čtení i zápis.  
@@ -71,7 +71,7 @@ Vlastnosti kombinují aspekty obou polí a metod. Pro uživatele objektu se zobr
  Vlastnost přepisujecí virtuální vlastnost může být také [zapečetěná](../../language-reference/keywords/sealed.md)a specifikuje, že pro odvozené třídy už není virtuální. Nakonec může být vlastnost deklarována jako [abstraktní](../../language-reference/keywords/abstract.md). To znamená, že ve třídě není žádná implementace, a odvozené třídy musí napsat svou vlastní implementaci. Další informace o těchto možnostech naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](./abstract-and-sealed-classes-and-class-members.md).  
   
 > [!NOTE]
->  Použití modifikátoru [Virtual](../../language-reference/keywords/virtual.md), [abstract](../../language-reference/keywords/abstract.md)nebo [override](../../language-reference/keywords/override.md) u přístupového objektu [statické](../../language-reference/keywords/static.md) vlastnosti je chybné.  
+> Použití modifikátoru [Virtual](../../language-reference/keywords/virtual.md), [abstract](../../language-reference/keywords/abstract.md)nebo [override](../../language-reference/keywords/override.md) u přístupového objektu [statické](../../language-reference/keywords/static.md) vlastnosti je chybné.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje vlastnosti instance, static a jen pro čtení. Přijímá jméno zaměstnance z klávesnice, zvyšuje hodnotu `NumberOfEmployees` o 1 a zobrazuje jméno a číslo zaměstnance.  

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)'
+title: 'Postupy: Určit, na který uzel TreeView se kliknul (model Windows Forms)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,21 +12,21 @@ helpviewer_keywords:
 - tree nodes in TreeView control [Windows Forms], determining node clicked
 - TreeView control [Windows Forms], determining node clicked
 ms.assetid: 06a4a191-d918-42af-9f49-956c93eff261
-ms.openlocfilehash: 71f13c7b160822c92475d4d03e923b40d4f0454d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab93158daf987e2f19516b8fb3abf80bfe79a12c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771043"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967333"
 ---
-# <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a>Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)
-Při práci s formuláři Windows <xref:System.Windows.Forms.TreeView> ovládacího prvku, běžné úlohy je určit došlo ke kliknutí na který uzel a reagují odpovídajícím způsobem.  
+# <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a>Postupy: Určit, na který uzel TreeView se kliknul (model Windows Forms)
+Při práci s ovládacím prvkem <xref:System.Windows.Forms.TreeView> model Windows Forms je běžnou úlohou určit, na který uzel byl kliknuto, a odpovídajícím způsobem reagovat.  
   
-### <a name="to-determine-which-treeview-node-was-clicked"></a>K určení uzlu TreeView označeného kliknutím  
+### <a name="to-determine-which-treeview-node-was-clicked"></a>Určení, který uzel TreeView byl kliknuto  
   
-1. Použití <xref:System.EventArgs> objekt vrací odkaz na objekt kliknutí na uzel.  
+1. <xref:System.EventArgs> Pomocí objektu vraťte odkaz na kliknuto na objekt uzlu.  
   
-2. Určit, který uzel došlo ke kliknutí na kontrolou <xref:System.Windows.Forms.TreeViewEventArgs> třídu, která obsahuje data týkající se události.  
+2. Určete, na který uzel byl kliknuto, <xref:System.Windows.Forms.TreeViewEventArgs> kontrolou třídy, která obsahuje data související s událostí.  
   
     ```vb  
     Private Sub TreeView1_AfterSelect(ByVal sender As System.Object, _  
@@ -56,7 +56,7 @@ Při práci s formuláři Windows <xref:System.Windows.Forms.TreeView> ovládac�
     ```  
   
     > [!NOTE]
-    >  Jako alternativu můžete použít <xref:System.Windows.Forms.MouseEventArgs> z <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.MouseUp> událostí zobrazíte <xref:System.Drawing.Point.X%2A> a <xref:System.Drawing.Point.Y%2A> koordinovat hodnoty <xref:System.Drawing.Point> kde došlo k kliknutím na. Potom použijte <xref:System.Windows.Forms.TreeView> ovládacího prvku <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metodou ke zjištění, který uzel došlo ke kliknutí na.  
+    > Jako alternativu můžete <xref:System.Windows.Forms.MouseEventArgs> použít <xref:System.Windows.Forms.Control.MouseDown> událost <xref:System.Windows.Forms.Control.MouseUp> <xref:System.Drawing.Point.Y%2A> <xref:System.Drawing.Point> nebo a získat tak hodnoty asouřadnici,kdesekliknutíobjevilo.<xref:System.Drawing.Point.X%2A> Poté pomocí <xref:System.Windows.Forms.TreeView> <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metody ovládacího prvku určete, který uzel byl kliknuto.  
   
 ## <a name="see-also"></a>Viz také:
 

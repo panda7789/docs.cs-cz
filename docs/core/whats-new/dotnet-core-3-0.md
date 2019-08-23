@@ -6,24 +6,25 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 07/25/2019
-ms.openlocfilehash: 10e5dfdc873f8dcf9fec0da5f7f3561337033f40
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.date: 08/21/2019
+ms.openlocfilehash: 5f9d7026b270a010d2ba5d4b1165728a100ab6ed
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69604244"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922560"
 ---
-# <a name="whats-new-in-net-core-30-preview-7"></a>Co je nového v .NET Core 3,0 (Preview 7)
+# <a name="whats-new-in-net-core-30-preview-8"></a>Co je nového v .NET Core 3,0 (Preview 8)
 
-Tento článek popisuje, co je v .NET Core 3,0 (v Preview 7) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 (v Preview 8) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
 .NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme použít [nejnovější verzi sady Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview)nebo Visual Studio Code s rozšířením OmniSharp.
 
-[Stáhněte si a začněte používat .NET Core 3,0 Preview 7](https://aka.ms/netcore3download) hned v systémech Windows, Mac a Linux.
+[Stáhněte si a začněte s .NET Core 3,0 Preview 8](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
 Další informace o jednotlivých vydaných verzích Preview najdete v následujících oznámeních:
 
+- [Oznámení .NET Core 3,0 Preview 8](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/)
 - [Oznámení .NET Core 3,0 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/)
 - [Oznámení .NET Core 3,0 Preview 6](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/)
 - [Oznámení .NET Core 3,0 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-5/)
@@ -34,7 +35,9 @@ Další informace o jednotlivých vydaných verzích Preview najdete v následuj
 
 ## <a name="production-supported-preview"></a>Verze Preview podporovaná v produkci
 
-.NET Core Preview 7 se považuje za produkční, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo ve verzi Preview 7, najdete v [oznámení verze Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/).
+.NET Core Preview 8 se považuje za produkčního, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v Preview 8, najdete v tématu [Preview 8 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/).
+
+Pokud používáte předchozí verzi Preview, musíte přejít na verzi Preview 8, abyste pokračovali v podpoře ".
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
@@ -52,11 +55,11 @@ I když .NET Core 3,0 podporuje **.NET Standard 2,1**, výchozí `dotnet new cla
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
- 
+
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
- 
+
 </Project>
 ```
 
@@ -91,7 +94,7 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ## <a name="net-platform-dependent-intrinsics"></a>Vnitřní objekty závislé na platformě .NET
 
-Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady instrukcí pro **manipulaci** . Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně. 
+Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady instrukcí pro **manipulaci** . Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně.
 
 V případě potřeby se pomocí těchto pokynů Vylepšete knihovny .NET, aby se zlepšil výkon.
 
@@ -103,8 +106,8 @@ Další informace najdete v tématu věnovaném [vnitřním procesorům platform
 
 Během `dotnet build` nebo`dotnet publish`se vytvoří spustitelný soubor, který odpovídá prostředí a platformě používané sady SDK. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
-* Můžete dvakrát kliknout na spustitelný soubor.
-* Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` ve Windows, a `./myapp` v systémech Linux a MacOS.
+- Můžete dvakrát kliknout na spustitelný soubor.
+- Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` ve Windows, a `./myapp` v systémech Linux a MacOS.
 
 ## <a name="single-file-executables"></a>Spustitelné soubory s jedním souborem
 
@@ -297,11 +300,11 @@ Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým <xref:
 
 Možné `highDpiMode` hodnoty, jak je vyjádřené <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> výčtem:
 
-* `DpiUnaware`
-* `SystemAware`
-* `PerMonitor`
-* `PerMonitorV2`
-* `DpiUnawareGdiScaled`
+- `DpiUnaware`
+- `SystemAware`
+- `PerMonitor`
+- `PerMonitorV2`
+- `DpiUnawareGdiScaled`
 
 Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows).
 
@@ -335,7 +338,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 {
     await foreach (var result in GetResultsAsync())
     {
-        if (result > 20) yield return result; 
+        if (result > 20) yield return result;
     }
 }
 ```
@@ -350,31 +353,31 @@ Rozhraní API s plovoucí desetinnou čárkou se aktualizují tak, aby odpovída
 
 Mezi aktualizace pro analýzu a formátování patří:
 
-* Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.
-* Správně Analyzujte a formátujete záporné hodnoty nula.
-* Správně analyzovat `Infinity` a `NaN` provést kontrolu bez rozlišení velkých a malých písmen a povolit volitelnou předchozí `+` hodnotu.
+- Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.
+- Správně Analyzujte a formátujete záporné hodnoty nula.
+- Správně analyzovat `Infinity` a `NaN` provést kontrolu bez rozlišení velkých a malých písmen a povolit volitelnou předchozí `+` hodnotu.
 
 Mezi <xref:System.Math?displayProperty=nameWithType> nová rozhraní API patří:
 
-* <xref:System.Math.BitIncrement(System.Double)>ani<xref:System.Math.BitDecrement(System.Double)>\
+- <xref:System.Math.BitIncrement(System.Double)>ani<xref:System.Math.BitDecrement(System.Double)>\
 Odpovídá operacím `nextDown` IEEE a.`nextUp` Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.
 
-* <xref:System.Math.MaxMagnitude(System.Double,System.Double)>ani<xref:System.Math.MinMagnitude(System.Double,System.Double)>\
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)>ani<xref:System.Math.MinMagnitude(System.Double,System.Double)>\
 Odpovídá operacím `minNumMag` IEEE a,vracíhodnotu,kterájevětšínebomenšívrozsahudvouvstupů(vuvedenémpořadí).`maxNumMag` Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.
 
-* <xref:System.Math.ILogB(System.Double)>\
+- <xref:System.Math.ILogB(System.Double)>\
 Odpovídá operaci `logB` IEEE, která vrací celočíselnou hodnotu, vrátí protokol integrálního protokolu Base-2 vstupního parametru. Tato metoda je prakticky stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.
 
-* <xref:System.Math.ScaleB(System.Double,System.Int32)>\
+- <xref:System.Math.ScaleB(System.Double,System.Int32)>\
 Odpovídá operaci `x * pow(2, n)`IEEE, která přebírá celočíselnou hodnotu, vrátí ji efektivně, ale provede minimální chybu zaokrouhlení. `scaleB`
 
-* <xref:System.Math.Log2(System.Double)>\
+- <xref:System.Math.Log2(System.Double)>\
 Odpovídá operaci `log2` IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
 
-* <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
+- <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
 Odpovídá operaci `fma` IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jedná o jedinou operaci, čímž se minimalizuje chyba zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)` vrácení. `1e308` Funkce Regular `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
 
-* <xref:System.Math.CopySign(System.Double,System.Double)>\
+- <xref:System.Math.CopySign(System.Double,System.Double)>\
 Odpovídá operaci `x`IEEE, vrací hodnotu, `y`ale s znaménkem. `copySign`
 
 ## <a name="fast-built-in-json-support"></a>Rychlá integrovaná podpora JSON
@@ -453,8 +456,8 @@ V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované při
 
 .NET Core teď využívá [podporu TLS 1,3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí. S protokolem TLS 1,3:
 
-* Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.
-* Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.
+- Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.
+- Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.
 
 V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Pokud je k dispozici služba **OpenSSL 1.1.1** <xref:System.Net.Security.SslStream?displayProperty=nameWithType> , budou v obou <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typech použity **protokoly TLS 1,3** (za předpokladu, že klient i server podporují protokol **TLS 1,3**).
 
@@ -479,20 +482,20 @@ Následující kód demonstruje `AesGcm` použití šifry k šifrování a deši
 
 Všechny typy klíčů, jako jsou *RSA*, *DSA*, *ECDSA*a *ECDiffieHellman*, podporují následující formáty:
 
-* **Veřejný klíč**
-  * X.509 SubjectPublicKeyInfo
+- **Veřejný klíč**
+  - X.509 SubjectPublicKeyInfo
 
-* **Privátní klíč**
-  * PKCS#8 PrivateKeyInfo
-  * PKCS#8 EncryptedPrivateKeyInfo
+- **Privátní klíč**
+  - PKCS#8 PrivateKeyInfo
+  - PKCS#8 EncryptedPrivateKeyInfo
 
 Klíče RSA podporují i:
 
-* **Veřejný klíč**
-  * RSAPublicKey PKCS # 1
+- **Veřejný klíč**
+  - RSAPublicKey PKCS # 1
 
-* **Privátní klíč**
-  * RSAPrivateKey PKCS # 1
+- **Privátní klíč**
+  - RSAPrivateKey PKCS # 1
 
 Metody exportu vytváří binární data kódovaná v kódování DER a metody importu očekávají stejné. Pokud je klíč uložený v textovém formátu PEM, volající bude muset před voláním metody import kódování Base64 a dekódovat obsah.
 
@@ -512,9 +515,9 @@ Další informace o omezené podpoře sériového portu v systému Linux najdete
 
 Počínaje verzí Preview 3 je používání .NET Core 3,0 na platformě Linux s nástrojem Docker lépe kompatibilní s cgroupmi omezeními paměti. Spuštění kontejneru Docker s omezeními paměti, jako je například `docker run -m`s, se změní způsob, jakým se aplikace .NET Core chová.
 
-* Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.
-* Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.
-* Minimální velikost rezervovaného segmentu na haldě GC je 16 MB. Tato velikost snižuje počet hald, které jsou vytvořeny na počítačích.
+- Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.
+- Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.
+- Minimální velikost rezervovaného segmentu na haldě GC je 16 MB. Tato velikost snižuje počet hald, které jsou vytvořeny na počítačích.
 
 ## <a name="smaller-garbage-collection-heap-sizes"></a>Menší velikosti haldy uvolňování paměti
 
@@ -530,8 +533,8 @@ Systém uvolňování paměti se teď dá nakonfigurovat s nastavením **GCLarge
 
 Do NuGet byly vydány dva balíčky, které můžete použít pro GPIO programování:
 
-* [System. Device. GPIO](https://www.nuget.org/packages/System.Device.Gpio)
-* [IoT. Device. Bindings](https://www.nuget.org/packages/Iot.Device.Bindings)
+- [System. Device. GPIO](https://www.nuget.org/packages/System.Device.Gpio)
+- [IoT. Device. Bindings](https://www.nuget.org/packages/Iot.Device.Bindings)
 
 Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PWM* . Balíček vazeb IoT zahrnuje vazby zařízení. Další informace najdete v [úložišti GitHubu zařízení](https://github.com/dotnet/iot/blob/master/src/devices/).
 

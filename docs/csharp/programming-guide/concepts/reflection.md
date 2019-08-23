@@ -2,12 +2,12 @@
 title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: 0828e59f74ac0c7575df2cea531caa0d42a2dd96
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 9b4322d83ad43cd3e49647df49c15bb5c917e1be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590768"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924094"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
 Reflexe poskytuje objekty ( <xref:System.Type>typu), které popisují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získat typ z existujícího objektu a vyvolat jeho metody nebo získat přístup k jeho polím a vlastnostem. Pokud používáte atributy v kódu, reflexe vám umožní přístup k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
@@ -38,7 +38,7 @@ System.Console.WriteLine(info);
  `mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`  
   
 > [!NOTE]
->  C# Klíčová `protected` slova `internal` a nemají žádný význam v Il a nejsou použity v rozhraních API reflexe. Odpovídající výrazy v IL jsou *rodina* a *sestavení*. K identifikaci `internal` metody pomocí reflexe <xref:System.Reflection.MethodBase.IsAssembly%2A> použijte vlastnost. K identifikaci `protected internal` metody <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>použijte.  
+> C# Klíčová `protected` slova `internal` a nemají žádný význam v Il a nejsou použity v rozhraních API reflexe. Odpovídající výrazy v IL jsou *rodina* a *sestavení*. K identifikaci `internal` metody pomocí reflexe <xref:System.Reflection.MethodBase.IsAssembly%2A> použijte vlastnost. K identifikaci `protected internal` metody <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>použijte.  
   
 ## <a name="reflection-overview"></a>Přehled reflexe  
  Reflexe je užitečná v následujících situacích:  

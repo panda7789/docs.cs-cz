@@ -8,42 +8,42 @@ helpviewer_keywords:
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6851ac334d439f2e5c0f6056f5226e3faa1503d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b47abc2adb7b515e4d1d76da58c150703a8693d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61872336"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957442"
 ---
 # <a name="composition-analysis-tool-mefx"></a>Nástroj pro analýzu sestavení (Mefx)
-Nástroj pro analýzu sestavení (Mefx) je aplikace příkazového řádku, která analyzuje knihovny (.dll) a soubory aplikace (.exe) obsahující části Managed Extensibility Framework (MEF). Primárním účelem Mefx je vývojářům poskytuje způsob, jak Diagnostika selhání sestavení ve svých aplikacích MEF bez nutnosti přidat kód náročné trasování do vlastní aplikace. Může být také užitečné porozumět částí z knihovny poskytované třetích stran. Toto téma popisuje způsob použití Mefx a poskytuje odkaz pro její syntaxe.  
+Nástroj pro analýzu kompozice (Mefx) je aplikace příkazového řádku, která analyzuje soubory knihovny (. dll) a aplikace (. exe) obsahující součásti Managed Extensibility Framework (MEF). Hlavním účelem Mefx je poskytnout vývojářům způsob, jak diagnostikovat chyby ve svých aplikacích MEF bez nutnosti přidat nenáročný kód trasování do samotné aplikace. Může být také užitečné k pochopení částí z knihovny poskytované třetí stranou. Toto téma popisuje, jak používat Mefx a poskytuje odkaz na jeho syntaxi.  
   
 <a name="getting_mefx"></a>   
-## <a name="getting-mefx"></a>Získávání Mefx  
- Je k dispozici na Githubu v Mefx [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0). Jednoduše stáhněte a rozbalte nástroj.  
+## <a name="getting-mefx"></a>Získání Mefx  
+ Mefx je k dispozici na GitHubu na adrese [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0). Stačí stáhnout a rozbalit nástroj.  
   
 <a name="basic_syntax"></a>   
 ## <a name="basic-syntax"></a>Základní syntaxe  
- Mefx vyvolat pomocí příkazového řádku v následujícím formátu:  
+ Mefx je vyvolána z příkazového řádku v následujícím formátu:  
   
 ```  
 mefx [files and directories] [action] [options]  
 ```  
   
- První sadu argumentů určit soubory a adresáře, ze kterého se má načíst součásti pro analýzu. Zadejte soubor s `/file:` přepínače a adresář se `/directory:` přepnout. Můžete zadat více souborů či adresářů, jak je znázorněno v následujícím příkladu:  
+ První sada argumentů Určuje soubory a adresáře, ze kterých se mají načíst části pro analýzu. Zadejte soubor s `/file:` přepínačem a adresář `/directory:` s přepínačem. Můžete zadat více souborů nebo adresářů, jak je znázorněno v následujícím příkladu:  
   
 ```  
 mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]  
 ```  
   
 > [!NOTE]
->  Každý .dll nebo .exe by měla načíst pouze jednou. Pokud je soubor načten více než jednou, nástroj může vrátit nesprávné informace.  
+> Každý soubor. dll nebo. exe by se měl načíst jenom jednou. Pokud je soubor načten několikrát, může nástroj vrátit nesprávné informace.  
   
- Po seznam souborů a adresářů je nutné zadat příkazu a možnosti pro tento příkaz.  
+ Po seznamu souborů a adresářů musíte zadat příkaz a všechny možnosti tohoto příkazu.  
   
 <a name="listing_available_parts"></a>   
 ## <a name="listing-available-parts"></a>Výpis dostupných částí  
- Použití `/parts` akci vypsat všechny součásti deklarované v souborech načíst. Výsledkem je jednoduchý seznam názvů část.  
+ `/parts` Použijte akci k vypsání všech částí deklarovaných v načtených souborech. Výsledkem je jednoduchý seznam názvů částí.  
   
 ```  
 mefx /file:MyAddIn.dll /parts  
@@ -51,7 +51,7 @@ MyAddIn.AddIn
 MyAddIn.MemberPart  
 ```  
   
- Další informace o součástech, použijte `/verbose` možnost. To bude výstupní Další informace o všech dostupných částí. Chcete-li získat další informace o jedné součásti, použijte `/type` akce místo `/parts`.  
+ Další informace o součástech získáte pomocí `/verbose` možnosti. Tím se zobrazí další informace pro všechny dostupné části. Chcete-li získat další informace o jedné části, použijte `/type` akci `/parts`místo.  
   
 ```  
 mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose  
@@ -60,27 +60,27 @@ mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose
 ```  
   
 <a name="listing_imports_and_exports"></a>   
-## <a name="listing-imports-and-exports"></a>Výpis importy a exporty  
- `/imports` a `/exports` akce zobrazí seznam všechny importované části a všechny exportované části, v uvedeném pořadí. Můžete také zařadit části, které importovat nebo exportovat pomocí určitého typu `/importers` nebo `/exporters` akce.  
+## <a name="listing-imports-and-exports"></a>Výpis importu a exportů  
+ Akce `/imports` a`/exports` zobrazí seznam všech importovaných částí a všech exportovaných částí v uvedeném pořadí. Můžete také uvést části, které importují nebo exportují konkrétní typ pomocí `/importers` akcí nebo. `/exporters`  
   
 ```  
 mefx /file:MyAddIn.dll /importers:MyAddin.MemberPart  
 MyAddin.AddIn  
 ```  
   
- Můžete také použít `/verbose` možnost tyto akce.  
+ Tuto `/verbose` možnost můžete použít také u těchto akcí.  
   
 <a name="finding_rejected_parts"></a>   
-## <a name="finding-rejected-parts"></a>Zjištění odmítl částí  
- Po jeho načtení dostupných částí, používá Mefx Kompoziční modul rozhraní MEF k vytvořte z nich. Části, které nemohou být složené úspěšně jsou označovány jako *odmítl*. K zobrazení seznamu všechny odmítnuté části, použijte `/rejected` akce.  
+## <a name="finding-rejected-parts"></a>Hledání odmítnutých částí  
+ Po načtení dostupných částí Mefx použije modul kompozice MEF k jejich sestavení. Části, které se nedají úspěšně sestavit, seoznačují jako zamítnuté. Chcete-li zobrazit seznam všech odmítnutých částí `/rejected` , použijte akci.  
   
- Můžete použít `/verbose` spolu s možností `/rejected` akce k vytištění podrobné informace o odmítl částí. V následujícím příkladu `ClassLibrary1` obsahuje knihovny DLL `AddIn` část, která importuje `MemberPart` a `ChainOne` částí. `ChainOne` Importuje `ChainTwo`, ale `ChainTwo` neexistuje. To znamená, že `ChainOne` byl odmítnut, které způsobí, že `AddIn` zamítnutí.  
+ K tisku podrobných `/verbose` informací o zamítnutých částech můžete použít možnost `/rejected` s akcí. V následujícím příkladu `ClassLibrary1` knihovna DLL `AddIn` obsahuje `MemberPart` část, která importuje části a `ChainOne` . `ChainOne`Importuje `ChainTwo`, ale `ChainTwo` neexistuje. To znamená, `ChainOne` že se zamítlo, `AddIn` což způsobí odmítnutí.  
   
 ```  
 mefx /file:ClassLibrary1.dll /rejected /verbose  
 ```  
   
- Následuje úplný výstup z předchozího příkazu:  
+ Následující příklad ukazuje úplný výstup předchozího příkazu:  
   
 ```  
 [Part] ClassLibrary1.AddIn from: AssemblyCatalog (Assembly="ClassLibrary1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")  
@@ -105,22 +105,22 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
    at Microsoft.ComponentModel.Composition.Diagnostics.CompositionInfo.AnalyzeImportDefinition(ExportProvider host, IEnumerable`1 availableParts, ImportDefinition id)  
 ```  
   
- Zajímavé informace jsou součástí `[Exception]` a `[Unsuitable]` výsledky. `[Exception]` Výsledek obsahuje informace o proč byla odmítnuta část. `[Unsuitable]` Výsledek vyplývá, proč nelze použít jako součást jinak odpovídající tak, aby vyplnil importu, v tomto případě protože tuto část byl sám odmítnutých pro chybějící importuje.  
+ Zajímavé informace jsou obsaženy ve `[Exception]` výsledcích a. `[Unsuitable]` `[Exception]` Výsledek poskytuje informace o tom, proč byla část odmítnuta. `[Unsuitable]` Výsledek indikuje, proč nelze použít součást, která by se shodovala při naplňování importu; v tomto případě by tato část byla pro chybějící importy odmítnutá.  
   
 <a name="analyzing_primary_causes"></a>   
-## <a name="analyzing-primary-causes"></a>Analýza primární způsobí, že  
- Pokud několik částí jsou propojeny v řetězec dlouhý závislostí, může způsobit problém zahrnující část dole celý řetěz zamítnutí. Diagnostika těchto problémů může být obtížné, protože hlavní příčinu selhání není vždy zřejmé. Chcete-li pomoci s problémem, který můžete použít `/causes` akce, která se pokusí najít původní příčinu možných žádné kaskádové zamítnutí.  
+## <a name="analyzing-primary-causes"></a>Analýza primárních příčin  
+ Je-li v dlouhém řetězu závislostí propojeno několik částí, může dojít k zamítnutí celého řetězce. Diagnostikování těchto problémů může být obtížné, protože hlavní příčina selhání není vždy zřejmá. K tomu, abyste mohli problém vyřešit, můžete použít `/causes` akci, která se pokusí najít hlavní příčinu kaskádového zamítnutí.  
   
- Použití `/causes` akce v předchozím příkladu by zobrazila seznam pouze informace o `ChainOne`, jehož nevyplněným import je hlavní příčinou zamítnutí `AddIn`. `/causes` Akce lze použít v obou normální a `/verbose` možnosti.  
+ Pomocí akce v předchozím příkladu by se měly zobrazit jenom informace pro `ChainOne`, jejichž vyplněný import je hlavní příčinou zamítnutí `AddIn`. `/causes` Tuto `/causes` akci lze použít v normálním i `/verbose` možnosti.  
   
 > [!NOTE]
->  Ve většině případů budou moci diagnostikovat původní příčinu selhání kaskádové Mefx. Ale v případech, kde částí se prostřednictvím kódu programu do kontejneru přidá, případech hierarchické kontejnery nebo případech vlastní `ExportProvider` implementacích Mefx nebude možné určování příčin problémů. Obecně platí, výše popsaných případech mělo by se vyhnout tam, kde je to možné, jsou obecně obtížné diagnostikovat selhání.  
+> Ve většině případů bude Mefx moci diagnostikovat hlavní příčinu kaskádového selhání. V případech, kdy jsou do kontejneru přidány části programově, případy zahrnující hierarchické kontejnery, nebo případy zahrnující vlastní `ExportProvider` implementace, Mefx nebude moci diagnostikovat příčinu. Obecně by se výše popsané případy měly vyhýbat, pokud je to možné, protože chyby obecně obtížně diagnostikují.  
   
 <a name="white_lists"></a>   
-## <a name="white-lists"></a>Bílý list  
- `/whitelist` Možnost umožňuje zadat textový soubor, který obsahuje části, které se očekává zamítnutí. Neočekávané zamítnutí pak mají označit příznakem. To může být užitečné při analýze neúplné knihovny nebo dílčí knihovnu, která chybí některé závislosti. `/whitelist` Možnost lze použít pouze k `/rejected` nebo `/causes` akce.  
+## <a name="white-lists"></a>Prázdné seznamy  
+ `/whitelist` Možnost umožňuje zadat textový soubor se seznamem částí, u kterých se očekává odmítnutí. Neočekávaná zamítnutí budou označena příznakem. To může být užitečné při analýze nekompletní knihovny nebo podknihovny, ve které chybí některé závislosti. Možnost lze použít `/rejected` na akce nebo `/causes`. `/whitelist`  
   
- Vezměte v úvahu soubor s názvem test.txt, který obsahuje text "ClassLibrary1.ChainOne". Pokud spustíte `/rejected` akce s `/whitelist` možnost v předchozím příkladu, vytvoří následující výstup:  
+ Zvažte soubor s názvem test. txt, který obsahuje text "ClassLibrary1. ChainOne". Pokud spustíte `/rejected` akci `/whitelist` s možností v předchozím příkladu, vytvoří se následující výstup:  
   
 ```  
 mefx /file:ClassLibrary1.dll /rejected /whitelist:test.txt  

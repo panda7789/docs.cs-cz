@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d8e9a46-1af6-4a02-bf61-969d77ae07e0
-ms.openlocfilehash: 7dfd4f07ba0a0473975d87c7cd166635473344a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ebf5c61010a6f658d846ed435ea3a7d18d0d3832
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772096"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934440"
 ---
 # <a name="modifying-data-with-stored-procedures"></a>Úpravy dat pomocí uložených procedur
-Uložené procedury může přijmout data jako vstupní parametry a vrací data jako výstupní parametry, sad výsledků dotazu nebo návratové hodnoty. Následující ukázka znázorňuje, jak ADO.NET odesílá a přijímá vstupní parametry, výstupních parametrů a návratové hodnoty. V příkladu vloží nového záznamu do tabulky, kde sloupec primárního klíče je sloupec identity v databázi serveru SQL Server.  
+Uložené procedury mohou přijímat data jako vstupní parametry a mohou vracet data jako výstupní parametry, sady výsledků nebo návratové hodnoty. Následující ukázka ukazuje, jak ADO.NET odesílá a přijímá vstupní parametry, výstupní parametry a návratové hodnoty. Příklad vloží nový záznam do tabulky, kde sloupec primárního klíče je sloupec identity v databázi SQL Server.  
   
 > [!NOTE]
->  Pokud chcete upravit nebo odstranit data s využitím používáte uložených procedur SQL serveru <xref:System.Data.SqlClient.SqlDataAdapter>, ujistěte se, že SET NOCOUNT na nepoužívejte v definici uloženou proceduru. To způsobí, že počet ovlivněných řádků vrácena rovno nule, který `DataAdapter` interpretuje jako ke konfliktu souběžnosti. V tomto případě <xref:System.Data.DBConcurrencyException> bude vyvolána výjimka.  
+> Pokud používáte SQL Server uložené procedury k úpravám nebo odstraňování dat pomocí <xref:System.Data.SqlClient.SqlDataAdapter>, ujistěte se, že v definici uložené procedury nepoužijete nastavení počet. To způsobí, že počet ovlivněných řádků vrátil hodnotu nula, což `DataAdapter` interpretuje jako konflikt souběžnosti. V tomto případě <xref:System.Data.DBConcurrencyException> bude vyvolána výjimka.  
   
 ## <a name="example"></a>Příklad  
- Ukázka používá následující uložené procedury pro vložení do nové kategorie **Northwind** **kategorie** tabulky. Uložené procedury přijímá hodnotu **CategoryName** sloupce jako vstupní parametr a použije SCOPE_IDENTITY() funkce k načtení nové hodnoty pole identity **CategoryID**a vrácení výstupní parametr. Příkaz RETURN používá @@ROWCOUNT funkce vrací počet řádků vložit.  
+ Ukázka používá následující uloženou proceduru k vložení nové kategorie do tabulky kategorií **Northwind** . Uložená procedura převezme hodnotu ve sloupci **CategoryName** jako vstupní parametr a pomocí funkce SCOPE_IDENTITY () načte novou hodnotu pole identity, **KódKategorie**a vrátí ji do výstupního parametru. Příkaz return pomocí funkce @@ROWCOUNT vrátí počet vložených řádků.  
   
 ```sql
 CREATE PROCEDURE dbo.InsertCategory  
@@ -31,10 +31,10 @@ SET @Identity = SCOPE_IDENTITY()
 RETURN @@ROWCOUNT  
 ```  
   
- Následující příklad kódu používá `InsertCategory` uloženou proceduru jako zdroj pro uvedené výše <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> z <xref:System.Data.SqlClient.SqlDataAdapter>. `@Identity` Výstupní parametr, se projeví ve <xref:System.Data.DataSet> po záznamu byla vložena do databáze při `Update` metodu <xref:System.Data.SqlClient.SqlDataAdapter> je volána. Kód také použije vrácenou hodnotu.  
+ Následující příklad kódu používá `InsertCategory` uloženou proceduru uvedenou výše jako zdroj <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> pro <xref:System.Data.SqlClient.SqlDataAdapter>. Výstupní parametr se projeví <xref:System.Data.DataSet> v poté, co byl záznam vložen `Update` do databáze <xref:System.Data.SqlClient.SqlDataAdapter> při volání metody. `@Identity` Kód také načte vrácenou hodnotu.  
   
 > [!NOTE]
->  Při použití <xref:System.Data.OleDb.OleDbDataAdapter>, je nutné zadat parametry <xref:System.Data.ParameterDirection> z **ReturnValue** před jinými parametry.  
+> Při použití <xref:System.Data.OleDb.OleDbDataAdapter>, je nutné zadat parametry <xref:System.Data.ParameterDirection> s parametrem **ReturnValue** před jinými parametry.  
   
  [!code-csharp[DataWorks SqlClient.SprocIdentityReturn#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.SprocIdentityReturn/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.SprocIdentityReturn#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.SprocIdentityReturn/VB/source.vb#1)]  
@@ -44,4 +44,4 @@ RETURN @@ROWCOUNT
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
 - [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
 - [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

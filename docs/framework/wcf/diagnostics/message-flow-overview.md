@@ -2,35 +2,35 @@
 title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 009dd05ab299b92ee5f5cafd1c2131a2e6eb0132
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cee579f272700ca37228bacecdf387d03637610a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650246"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963055"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
-V distribuovaném systému obsahující propojených služeb je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí tok požadavku pro podporu důležitých scénářů, jako je stav monitorování, řešení problémů a analýzu kořenových příčin. Chcete-li povolit trasování korelace různých služeb v rozhraní .NET Framework 4 přidali jsme podporu prostřednictvím následujících funkcí:
+V distribuovaném systému, který obsahuje propojené služby, je nutné určit příčinné vztahy mezi službami. Je důležité pochopit různé komponenty, které byly součástí toku požadavků pro podporu kritických scénářů, jako je monitorování stavu, odstraňování potíží a analýza hlavní příčiny. Pokud chcete povolit korelaci trasování mezi různými službami, v .NET Framework 4 jsme přidali podporu prostřednictvím následujících funkcí:
 
-- Analytické trasování: Vysoký výkon a nízkou úroveň podrobností funkce trasování pomocí Event Tracing for Windows (ETW).
+- Analytické trasování: Funkce pro sledování vysokého výkonu a nízké podrobností pomocí trasování událostí pro Windows (ETW).
 
-- Aktivita začátku do konce modelu pro služby WCF/WF: Tato funkce podporuje korelace trasování vygenerovaná <xref:System.ServiceModel> a <xref:System.Workflow.ComponentModel> obory názvů.
+- Koncový model aktivit pro služby WCF/WF: Tato funkce podporuje korelaci trasování vygenerovaných <xref:System.ServiceModel> obory názvů a <xref:System.Workflow.ComponentModel> .
 
-- Trasování událostí pro Windows Sledování pracovního postupu: Tato funkce používá sledování záznamů vygenerovaných službami WF poskytnout přehled o aktuálním stavu a průběhu pracovního postupu.
+- Sledování ETW pro WF: Tato funkce používá sledování záznamů generovaných službami WF k zajištění viditelnosti aktuálního stavu a průběhu pracovního postupu.
 
- Chyby přihlášení sledování nebo sledování záznamů lze použít k vyhledání vad kódu nebo nesprávně vytvořený zprávy. Vlastnost ID korelace uzlu v záhlaví zprávy události. je možné určit neškodné aktivity. Pokud chcete povolit trasování toku zpráv podle ID aktivity, naleznete v tématu [Konfigurace trasování toku zpráv](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Toto téma ukazuje, jak povolit trasování toku zpráv v projektu vytvořeného v tomto kurzu Začínáme.
+ Chyby zaznamenané v záznamu sledování nebo trasování lze použít k vyhledání vad kódu nebo nesprávně vytvořených zpráv. K určení aktivity selhání lze použít vlastnost ActivityId uzlu korelace v hlavičce zprávy události. Postup povolení trasování toku zpráv podle ID aktivity najdete v tématu [Konfigurace trasování toku zpráv](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Toto téma ukazuje, jak povolit trasování toku zpráv v projektu vytvořeném v Začínámem kurzu.
 
-### <a name="to-enable-message-flow-tracing-in-the-getting-started-tutorial"></a>Chcete-li povolit trasování toku zpráv v kurzu Začínáme
+### <a name="to-enable-message-flow-tracing-in-the-getting-started-tutorial"></a>Postup povolení trasování toku zpráv v Začínáme kurzu
 
-1. Otevřete Prohlížeč událostí kliknutím **Start**, **spustit**a zadat `eventvwr.exe`.
+1. Otevřete Prohlížeč událostí kliknutím na **Start**, **Spustit**a zadáním `eventvwr.exe`.
 
-2. Pokud jste ještě nepovolili analytické trasování, rozbalte **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **serveru aplikace** . Vyberte **zobrazení**, **zobrazit analytické a ladit protokoly**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol**. Prohlížeč událostí zůstat otevřeno, takže lze zobrazit trasování.
+2. Pokud jste nepovolili analytické trasování, rozbalte **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikační server – aplikace**. Vyberte **zobrazení**, **Zobrazte protokoly o ladění a ladění**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **Povolit protokol**. Nechejte Prohlížeč událostí otevřené, aby bylo možné zobrazit trasování.
 
-3. Otevřete ukázku v vytvoří [kurz Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md) v sadě Visual Studio 2012. Všimněte si, že spustíte Visual Studio 2012 jako správce tak, že můžete vytvořit službu. Pokud máte nainstalované Ukázky WCF, můžete otevřít [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.
+3. Otevřete ukázku vytvořenou v [Začínáme kurzu](../../../../docs/framework/wcf/getting-started-tutorial.md) v aplikaci Visual Studio 2012. Všimněte si, že je nutné spustit aplikaci Visual Studio 2012 jako správce, aby bylo možné službu vytvořit. Pokud máte nainstalované ukázky WCF, můžete otevřít [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.
 
-4. Klikněte pravým tlačítkem myši **služby** projektu a vyberte **přidat**, **nová položka**. Vyberte **konfiguračního souboru aplikace** a klikněte na tlačítko **OK**.
+4. Klikněte pravým tlačítkem na projekt **služby** a vyberte **Přidat**, **Nová položka**. Vyberte **konfigurační soubor aplikace** a klikněte na **OK**.
 
-5. Přidejte následující kód do souboru App.Config vytvořili v předchozím kroku.
+5. Do souboru App. config, který jste vytvořili v předchozím kroku, přidejte následující kód.
 
     ```xml
     <system.serviceModel>
@@ -40,9 +40,9 @@ V distribuovaném systému obsahující propojených služeb je potřeba určit 
     </system.serviceModel>
     ```
 
-6. Serverová aplikace spusťte bez ladění stisknutím kombinace kláves CTRL + F5. Spusťte klientský projekt kliknutím pravým tlačítkem myši **klienta** projekt a výběrem **ladění**, **spustit novou instanci**.
+6. Spusťte aplikaci serveru bez ladění stisknutím kombinace kláves CTRL + F5. Spusťte projekt klienta kliknutím pravým tlačítkem myši na projekt **klienta** a výběrem možnosti **ladění**, **spustit novou instanci**.
 
-7. Pokud chcete trasovat události z klienta na server, přidejte následující do konfiguračního souboru aplikace v klientském projektu.
+7. Chcete-li trasovat události z klienta na server, přidejte následující do konfiguračního souboru aplikace v klientském projektu.
 
     ```xml
     <diagnostics>
@@ -50,29 +50,29 @@ V distribuovaném systému obsahující propojených služeb je potřeba určit 
     </diagnostics>
     ```
 
-8. V souboru Program.cs v klientovi přidejte následující příkaz Using.
+8. V Program.cs v klientovi přidejte následující příkaz using.
 
     ```csharp
     using System.Diagnostics;
     ```
 
-9. V hlavní metodě v souboru program.cs v projektu klienta nastavte trasování identifikátor GUID mohly rozšířit v protokolu událostí.
+9. V metodě Main v souboru program.cs v projektu klienta nastavte identifikátor GUID trasování, který se má rozšířit do protokolu událostí.
 
     ```csharp
     Guid guid = Guid.NewGuid();
     Trace.CorrelationManager.ActivityId = guid;
     ```
 
-10. Aktualizovat a zkontrolovat **analytické** protokolu.  Hledejte události s ID 220 události.  Vyberte událost a klikněte na tlačítko **podrobnosti** kartě v podokně náhledu. Tato událost bude obsahovat ID korelace pro volání aktivity.
+10. Aktualizujte a Projděte si **analytický** protokol.  Vyhledejte událost s ID události 220.  Vyberte událost a klikněte na kartu **Podrobnosti** v podokně náhledu. Tato událost bude obsahovat ID korelace pro volající aktivitu.
 
     ```xml
     <Correlation ActivityID="{A066CCF1-8AB3-459B-B62F-F79F957A5036}" />
     ```
 
     > [!NOTE]
-    >  Všechny události se stejným GUID v ID se vztahují k jedné žádosti. To lze použít ke korelaci zprávy z konkrétního klienta pro konkrétní službu. Pokud klient volá jinou službu, pak stejného klienta může být identifikován ID aktivity.
+    > Všechny události se stejným identifikátorem GUID v ActivityID souvisejí s jednou žádostí. Dá se použít ke korelaci zpráv od určitého klienta ke konkrétní službě. Pokud klient volal jinou službu, může být stejný klient identifikován nástrojem ActivityID.
 
-11. V některých případech můžete změnit ID z původní GUID na nové ID aktivity. V takovém případě je vygenerován událost přenosu. Toto ID události je 499 a události bude obsahovat následující data v záhlaví.
+11. V některých případech se ActivityID může změnit z původního GUID na nový ActivityID. V takovém případě je vyvolána událost přenosu. ID události je 499 a v hlavičce bude událost obsahovat následující data.
 
     ```xml
     <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
@@ -87,4 +87,4 @@ V distribuovaném systému obsahující propojených služeb je potřeba určit 
     ```
 
     > [!NOTE]
-    >  Událost přenosu zaznamenává změny active ID činnosti z identifikátor GUID specifikovaný jako mít podle ID na identifikátor GUID. Po událost přenosu je vygenerován, bude obsahovat všechny události nový identifikátor GUID jako ID.
+    > Událost přenosu zaznamenává změnu aktivního ActivityID z identifikátoru GUID zadaného jako ActivityID k identifikátoru GUID, který je zadaný jako objekt. Po vygenerování události přenosu budou všechny události obsahovat nový identifikátor GUID jako ActivityID.

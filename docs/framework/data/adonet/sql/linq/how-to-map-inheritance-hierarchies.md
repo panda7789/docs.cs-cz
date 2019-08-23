@@ -5,47 +5,47 @@ ms.assetid: b27c779b-9355-4dc7-b95f-7dfd504b6e48
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: e0ff3fe98fcd9ced0063d2bec85928504ea19bab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 618abc8e681a6f43a1054d0ca2cec2fbdec853f5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743188"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943565"
 ---
 # <a name="how-to-map-inheritance-hierarchies"></a>Postupy: Mapování hierarchií dědičnosti
-Implementace dědičnosti mapování v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)], musíte zadat atributy a atribut vlastnosti ve třídě kořenové hierarchii dědičnosti jak je popsáno v následujících krocích. Pomocí sady Visual Studio mohou vývojáři Návrhář relací objektů mapování hierarchií dědičnosti. Zobrazit [jak: Konfigurace dědičnosti pomocí Návrháře relací objektů](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer).  
+Chcete-li implementovat mapování [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]dědičnosti v nástroji, je nutné zadat atributy a vlastnosti atributu pro kořenovou třídu Hierarchie dědičnosti, jak je popsáno v následujícím postupu. Vývojáři, kteří používají Visual Studio, mohou použít Návrhář relací objektů k mapování hierarchií dědičnosti. Viz [jak: Nakonfigurujte dědičnost pomocí návrháře](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)O/R.  
   
 > [!NOTE]
->  V podtříd jsou požadována žádná speciální atributy nebo vlastnosti. Mějte na paměti zvlášť, podtřídy nemají <xref:System.Data.Linq.Mapping.TableAttribute> atribut.  
+> U podtříd nejsou vyžadovány žádné speciální atributy ani vlastnosti. Všimněte si, že podtřídy <xref:System.Data.Linq.Mapping.TableAttribute> nemají atribut.  
   
 ### <a name="to-map-an-inheritance-hierarchy"></a>Mapování hierarchie dědičnosti  
   
-1. Přidat <xref:System.Data.Linq.Mapping.TableAttribute> atribut kořenový třídy.  
+1. <xref:System.Data.Linq.Mapping.TableAttribute> Přidejte atribut do kořenové třídy.  
   
-2. Také do kořenové třídy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut pro každou třídu ve struktuře hierarchie.  
+2. Také pro kořenovou třídu přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut pro každou třídu v hierarchii struktury.  
   
-3. Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, definovat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> vlastnost.  
+3. Pro každý <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> definujte vlastnost.  
   
-     Tato vlastnost obsahuje hodnotu, která se zobrazí v tabulce databáze <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> sloupec, aby označoval, které třída nebo podtřídou tento řádek dat patří do.  
+     Tato vlastnost obsahuje hodnotu, která se zobrazí v databázové tabulce ve <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> sloupci, aby označovala třídu nebo podtřídu, do které tento řádek dat patří.  
   
-4. Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, také přidat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A> vlastnost.  
+4. Pro každý <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut také <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A> přidejte vlastnost.  
   
-     Tato vlastnost obsahuje hodnotu, která určuje, které třída nebo podtřídou označuje hodnotu klíče.  
+     Tato vlastnost obsahuje hodnotu, která určuje třídu nebo podtřídu hodnoty klíče.  
   
-5. Pouze na jednom z <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atributy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A> vlastnost.  
+5. Pouze v jednom z <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atributů <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A> přidejte vlastnost.  
   
-     Tato vlastnost slouží k určení *záložní* mapování, když hodnota diskriminátoru z databázové tabulky neodpovídá žádnému <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> hodnotu v mapování dědičnosti.  
+     Tato vlastnost slouží k určení *záložního* mapování, pokud hodnota diskriminátoru z tabulky databáze neodpovídá žádné <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> hodnotě v mapování dědičnosti.  
   
-6. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+6. <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> Přidejte vlastnost<xref:System.Data.Linq.Mapping.ColumnAttribute> pro atribut.  
   
      Tato vlastnost znamená, že se jedná o sloupec, který obsahuje <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> hodnotu.  
   
 ## <a name="example"></a>Příklad  
   
 > [!NOTE]
->  Pokud používáte Visual Studio, můžete použít Návrháře relací objektů konfigurace dědičnosti. Zobrazit [jak: Konfigurace dědičnosti pomocí Návrháře relací objektů](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)  
+> Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů ke konfiguraci dědičnosti. Viz [jak: Konfigurace dědičnosti pomocí Návrháře relací objektů](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)  
   
- V následujícím příkladu kódu `Vehicle` je definován jako kořenová třída a byly implementovány v předchozích krocích k popisu hierarchii [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
+ V následujícím příkladu `Vehicle` kódu je definován jako kořenová třída a předchozí kroky byly implementovány pro popis hierarchie pro [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
   
  [!code-csharp[DLinqCustomize#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#4)]
  [!code-vb[DLinqCustomize#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#4)]  

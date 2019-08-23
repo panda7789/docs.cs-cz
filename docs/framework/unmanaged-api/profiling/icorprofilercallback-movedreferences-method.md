@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c037f2509aaa0a5e4c3f7a844614742b6f21bec3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f86c4388fd633c72e846c227d45eff09bb66cf44
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769134"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951125"
 ---
 # <a name="icorprofilercallbackmovedreferences-method"></a>ICorProfilerCallback::MovedReferences – metoda
-Volá se, aby sestavy nové rozložení objektů v haldě jako výsledek komprimaci uvolňování paměti.  
+Volá se, aby se nahlásilo nové rozložení objektů v haldě v důsledku komprimace uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,54 +39,54 @@ HRESULT MovedReferences(
   
 ## <a name="parameters"></a>Parametry  
  `cMovedObjectIDRanges`  
- [in] Počet bloků souvislých objektů, které přesunout v důsledku komprimaci kolekce uvolnění paměti. To znamená, že hodnota `cMovedObjectIDRanges` je celková velikost `oldObjectIDRangeStart`, `newObjectIDRangeStart`, a `cObjectIDRangeLength` pole.  
+ pro Počet bloků souvislých objektů, které byly přesunuty jako výsledek komprimace uvolňování paměti. To `cMovedObjectIDRanges` znamená, že hodnota je celková velikost `oldObjectIDRangeStart`polí, `newObjectIDRangeStart`a `cObjectIDRangeLength` .  
   
- Následující tři argumenty `MovedReferences` jsou paralelní pole. Jinými slovy `oldObjectIDRangeStart[i]`, `newObjectIDRangeStart[i]`, a `cObjectIDRangeLength[i]` všechny týkají jeden blok souvislé objektů.  
+ Další tři argumenty `MovedReferences` jsou paralelní pole. Jinými slovy, `oldObjectIDRangeStart[i]` `newObjectIDRangeStart[i]`, a `cObjectIDRangeLength[i]` všechny se týkají jednoho bloku souvislých objektů.  
   
  `oldObjectIDRangeStart`  
- [in] Pole `ObjectID` hodnot, z nichž každý je počáteční adresa blok souvislé původní (předběžné uvolňování), živé objekty v paměti.  
+ pro Pole `ObjectID` hodnot, z nichž každá je staré (před uvolněním paměti) počáteční adresou bloku souvislých, živých objektů v paměti.  
   
  `newObjectIDRangeStart`  
- [in] Pole `ObjectID` hodnot, z nichž každý je novou počáteční adresu (po uvolňování) blok souvislé, živé objekty v paměti.  
+ pro Pole `ObjectID` hodnot, z nichž každý je novou (po uvolnění paměti), která začíná adresou bloku souvislých objektů, živé objekty v paměti.  
   
  `cObjectIDRangeLength`  
- [in] Pole celých čísel, z nichž každý je velikost bloku souvislých objektů v paměti.  
+ pro Pole celých čísel, z nichž každá je velikost bloku souvislých objektů v paměti.  
   
- Zadat velikost pro každý blok, na který odkazuje `oldObjectIDRangeStart` a `newObjectIDRangeStart` pole.  
+ Velikost je určena pro každý blok, na který je odkazováno `oldObjectIDRangeStart` v `newObjectIDRangeStart` polích a.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
->  Tato metoda oznamuje velikosti jako `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Chcete-li získat velikost objekty, které jsou větší než 4 GB, použijte [icorprofilercallback4::movedreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) metoda místo.  
+> Tato metoda oznamuje velikost `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64 bitů. Chcete-li získat velikost objektů, které jsou větší než 4 GB, použijte místo toho metodu [ICorProfilerCallback4:: MovedReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) .  
   
- Komprimace systému uvolňování paměti získá paměť obsazené nepoužívanými objekty a zkomprimuje uvolní místo. V důsledku toho mohou být přesunuty živé objekty v rámci haldy, a `ObjectID` může změnit hodnoty distribuuje společnost předchozí oznámení.  
+ Komprimace systému uvolňování paměti uvolní paměť, která je obsazená mrtvými objekty, a zkomprimuje uvolněné místo. V důsledku toho mohou být živé objekty přesunuty v rámci haldy a `ObjectID` hodnoty distribuované předchozími oznámeními se mohou změnit.  
   
- Předpokládejme, že existující `ObjectID` hodnotu (`oldObjectID`) najdete v následujícím rozsahu:  
+ Předpokládat, že existující `ObjectID` hodnota (`oldObjectID`) leží v následujícím rozsahu:  
   
  `oldObjectIDRangeStart[i]` <= `oldObjectID` < `oldObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
- Posun od začátku rozsahu na začátek objekt v tomto případě je následujícím způsobem:  
+ V tomto případě je posunutí od začátku rozsahu na začátek objektu následující:  
   
  `oldObjectID` - `oldObjectRangeStart[i]`  
   
- Jakoukoli hodnotu z `i` , který je v následujícím rozsahu:  
+ Pro libovolnou hodnotu `i` , která je v následujícím rozsahu:  
   
  0 <= `i` < `cMovedObjectIDRanges`  
   
- můžete vypočítat nové `ObjectID` následujícím způsobem:  
+ novou `ObjectID` hodnotu můžete vypočítat následujícím způsobem:  
   
  `newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)  
   
- Žádná z `ObjectID` hodnotu předanou `MovedReferences` jsou platné během zpětného volání, protože kolekce uvolnění paměti může být uvnitř přesun objektů ze staré umístění do nového umístění. Proto by se neměly pokoušet profilery pro kontrolu objektů během `MovedReferences` volání. A [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) zpětného volání znamená, že se přesunuly všechny objekty do jejich nových umístění a provést kontrolu.  
+ Žádná z `ObjectID` hodnot `MovedReferences` předaných není platná v rámci samotného zpětného volání, protože uvolňování paměti může být uprostřed přesunutí objektů ze starých umístění do nových umístění. Proto by profilery neměly zkoušet při `MovedReferences` volání kontrolu objektů. Zpětné volání [ICorProfilerCallback2:: GarbageCollectionFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) označuje, že všechny objekty byly přesunuty do jejich nových umístění a lze provést kontrolu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

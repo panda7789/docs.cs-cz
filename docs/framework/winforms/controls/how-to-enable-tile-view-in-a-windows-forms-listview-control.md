@@ -11,28 +11,28 @@ helpviewer_keywords:
 - Windows Forms, controls
 - ListView control [Windows Forms], tile view
 ms.assetid: c20e67a3-2d94-413d-9fcf-ecbd0fe251da
-ms.openlocfilehash: bd152d19567806cf1cc7b1b38d9a3c0e47d2a960
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 44d34ddb00005a0fb86b2d06c4c14e2a5b949819
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591686"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966680"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control"></a>Postupy: Povolení zobrazení Vedle sebe v ovládacím prvku Windows Forms ListView
-S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího prvku, můžete zadat vizuální rovnováhu mezi textové a grafické informace. Textové informace zobrazené položky v zobrazení tile je stejný jako sloupec informace definované pro zobrazení podrobností. Zobrazení Tile funguje v kombinaci s funkcemi označit seskupení nebo vložení ve <xref:System.Windows.Forms.ListView> ovládacího prvku.  
+Pomocí funkce <xref:System.Windows.Forms.ListView> zobrazení dlaždic v ovládacím prvku můžete zadat vizuální vyvážení mezi grafickými a textovými informacemi. Textové informace zobrazené pro položku v zobrazení dlaždic jsou stejné jako informace o sloupci definované pro zobrazení podrobností. Zobrazení dlaždic funguje v kombinaci s funkcemi seskupení nebo vložení v <xref:System.Windows.Forms.ListView> ovládacím prvku.  
   
- Zobrazení tile používá ikony 32 x 32 pixelů a několik řádků textu, jak je znázorněno na následujících obrázcích.  
+ V zobrazení dlaždice se používá ikona 32 x 32 pixelů a několik řádků textu, jak je znázorněno na následujících obrázcích.  
   
- ![Dlaždice zobrazení v ovládacím prvku ListView](./media/how-to-enable-tile-view-in-a-windows-forms-listview-control/tile-view-in-listview-control.gif "dlaždici zobrazení ikon a textu")  
+ ![Zobrazení dlaždic v ovládacím prvku ListView](./media/how-to-enable-tile-view-in-a-windows-forms-listview-control/tile-view-in-listview-control.gif "Ikony a text dlaždicového zobrazení")  
  
- Chcete-li povolit zobrazení tile, nastavte <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Tile>. Můžete nastavit velikost dlaždic tak, že nastavíte <xref:System.Windows.Forms.ListView.TileSize%2A> vlastnost a počet řádků textu se zobrazí na dlaždici úpravou <xref:System.Windows.Forms.ListView.Columns%2A> kolekce.  
+ Chcete-li povolit zobrazení dlaždic, <xref:System.Windows.Forms.ListView.View%2A> nastavte vlastnost <xref:System.Windows.Forms.View.Tile>na hodnotu. Velikost dlaždic můžete upravit nastavením <xref:System.Windows.Forms.ListView.TileSize%2A> vlastnosti a počtu řádků textu zobrazených v dlaždici <xref:System.Windows.Forms.ListView.Columns%2A> úpravou kolekce.  
   
 > [!NOTE]
->  Je k dispozici pouze v zobrazení tile [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] když vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody. Ve starších operačních systémech, jakýkoli kód související s zobrazení tile nemá žádný účinek a <xref:System.Windows.Forms.ListView> ovládací prvek zobrazí v zobrazení LargeIcon. Další informace naleznete v tématu <xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>.  
+> Zobrazení dlaždice je k dispozici pouze [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] v případě, <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> že vaše aplikace volá metodu. V předchozích operačních systémech nemá žádný vliv žádný kód související s zobrazením dlaždice a <xref:System.Windows.Forms.ListView> ovládací prvek se zobrazí v zobrazení velkých ikon. Další informace naleznete v tématu <xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>.  
   
-### <a name="to-set-tile-view-programmatically"></a>Chcete-li nastavit zobrazení tile prostřednictvím kódu programu  
+### <a name="to-set-tile-view-programmatically"></a>Postup při nastavování zobrazení dlaždic prostřednictvím kódu programu  
   
-1. Použití <xref:System.Windows.Forms.View> výčet <xref:System.Windows.Forms.ListView> ovládacího prvku.  
+1. <xref:System.Windows.Forms.View> Použijte výčet <xref:System.Windows.Forms.ListView> ovládacího prvku.  
   
     ```vb  
     ListView1.View = View.Tile  
@@ -43,7 +43,7 @@ S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kompletní kód ukazuje zobrazení Tile s dlaždicemi, které upravit tak, aby zobrazit tři řádky textu. Aby se zabránilo zalomení řádku bylo změněno velikosti dlaždice.  
+ Následující kompletní příklad kódu ukazuje zobrazení dlaždic s upravenými dlaždicemi pro zobrazení tří řádků textu. Velikost dlaždice byla upravena, aby se zabránilo zalamování řádků.  
   
  [!code-cpp[System.Windows.Forms.ListView.Tiling#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Tiling/CPP/listviewtilingexample.cpp#1)]
  [!code-csharp[System.Windows.Forms.ListView.Tiling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Tiling/CS/listviewtilingexample.cs#1)]
@@ -52,9 +52,9 @@ S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení System a System. Windows. Forms.  
   
-- Soubor ikony s názvem book.ico ve stejném adresáři jako spustitelný soubor.  
+- Soubor ikony s názvem book. ico ve stejném adresáři jako spustitelný soubor.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -5,52 +5,52 @@ ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ef31d101769dca00f5cff545c72b3afbd59bc638
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4ba0cbb25e2c83a33ffba99ccbb29d5b414b3c1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703241"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918208"
 ---
 # <a name="resolving-external-resources"></a>Překlad externích prostředků
-**Objekt XmlResolver** vlastnost **XmlDocument** používá **třídou XMLDocument nastavenou na** třídy najít prostředky, které nejsou vložené v datech XML, jako je například typ externího dokumentu definice (DTD), entit a schémata. Tyto položky mohou být umístěny v síti nebo na místním disku a identifikovat podle identifikátor URI (Uniform Resource). Díky tomu **XmlDocument** vyřešit **EntityReference** uzlů, které jsou k dispozici v dokumentu a ověřit dokument podle externí DTD nebo schématu.  
+Vlastnost **objekt XmlResolver** třídy **XmlDocument** je používána třídou **XmlDocument** k vyhledání prostředků, které nejsou vloženy do dat XML, jako jsou definice typu externího dokumentu (DTD), entity a schémata. Tyto položky se můžou nacházet v síti nebo na místním disku a dají se identifikovat pomocí identifikátoru URI (Uniform Resource Identifier). To umožňuje **XmlDocument** přeložit uzly **EntityReference** , které jsou k dispozici v dokumentu, a ověřit dokument v závislosti na externí specifikaci DTD nebo schématu.  
   
-## <a name="fully-trusted-xmldocument"></a>Plně důvěryhodné XmlDocument  
- **Objekt XmlResolver** vlastnost má vliv na funkci **XmlDocument.Load** metody. V tabulce níže ukazuje jak **XmlDocument.XmlResolver** vlastnost funguje, když **XmlDocument** objektu je plně důvěryhodné. Následující tabulka ukazuje **XmlDocument.Load** metody, když je vstup pro zatížení **TextReader**, **řetězec**, **Stream**, nebo  **Identifikátor URI**. Tato tabulka se nedá použít u **zatížení** metoda Pokud **třídou XMLDocument nastavenou na** je načteno z **XmlReader**.  
+## <a name="fully-trusted-xmldocument"></a>Plně důvěryhodná XmlDocument  
+ Vlastnost **objekt XmlResolver** má vliv na funkčnost metody **XmlDocument. Load** . Následující tabulka ukazuje, jak vlastnost **XmlDocument. objekt XmlResolver** funguje, když je objekt **XmlDocument** plně důvěryhodný. V následující tabulce jsou uvedeny metody **XmlDocument. Load** , když vstup do zátěže je **TextReader**, **String**, **Stream**nebo **URI**. Tato tabulka se nevztahuje na metodu **Load** , pokud je **XmlDocument** načten z objektu **XmlReader**.  
   
-|Objekt XmlResolver vlastnost|Funkce|Poznámky|  
+|Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|Je nastavena na **objekt XmlResolver** třídu, která byla dříve vytvořena a má vlastnosti již nastaven na něm uživatel.|**XmlDocument** používá **objekt XmlResolver** , která je přidělena přeložit názvy souborů, chcete-li vyřešit odkazy na externí prostředky, jako je specifikace DTD, entit a schémata.<br /><br /> **Objekt XmlResolver** se také používá při překlad externích prostředků, které jsou potřeba při přidávání nebo úpravách uzly v **XmlDocument**.|**Objekt XmlResolver** věnovat **XmlDocument** je překladače, který se používá při každém externím prostředkům potřeba nachází a vyřešit.|  
-|Je nastavena na **null** (**nic** v aplikaci Microsoft Visual Basic .NET).|Funkce, které vyžadují externího prostředku nejsou podporovány, jako je například hledání externí schéma nebo DTD. Ani externí entity bude vyřešen a provádí úpravy funkce, jako je například vkládání uzlů entity, které vyžadují řešení, se nepodporují.|**XmlDocument** načte soubory pod označením anonymní a nebude pokoušet o vyřešit všechny další prostředky.|  
-|Vlastnost není nastavena, ale zbývá ve svém výchozím stavu.|**XmlUrlResolver** s hodnotou NULL pověření vytvořena instance, který se používá **XmlDocument** při překládání názvů souboru, vyhledávání externí specifikace DTD, entit a schémata, a **null** přihlašovací údaje se používají při úpravách uzly.||  
+|Vlastnost je nastavena na třídu **objekt XmlResolver** , která byla dříve vytvořena a má vlastnosti již nastavené uživatelem.|**XmlDocument** používá **objekt XmlResolver** , který je předaný k překladu názvů souborů, k překladu odkazů na externí prostředky, jako jsou DTD, entity a schémata.<br /><br /> **Objekt XmlResolver** se používá také při překladu externích prostředků, které jsou potřeba při přidávání nebo úpravách uzlů v **XmlDocument**.|**Objekt XmlResolver** , který je dán pro **XmlDocument** , je překladač, který se používá, když je potřeba umístit a vyřešit externí prostředky.|  
+|Vlastnost je nastavena na **hodnotu null** (**Nothing** v Microsoft Visual Basic .NET).|Funkce, které vyžadují externí prostředek, nejsou podporovány, například vyhledání externích schémat nebo DTD. Ani externí entity nebudou vyřešeny a provádět funkce úprav, například vkládání uzlů entit, které vyžadují řešení, nejsou podporovány.|**XmlDocument** načte soubory jako anonymní a nepokusí se přeložit žádné jiné prostředky.|  
+|Vlastnost není nastavena, ale je ponechána ve výchozím stavu.|**XmlUrlResolver** s přihlašovacími údaji s hodnotou null bude při úpravě názvů souborů , vyhledání externích definic DTD, entit a schémat a použití přihlašovacích údajů NULL použita při překladu uzlů.||  
   
- Následující tabulka ukazuje **XmlDocument.Load** – metoda při vstupu do **zatížení** je **XmlReader** a **třídou XMLDocument nastavenou na** je plně důvěryhodné.  
+ V následující tabulce je uvedena metoda **XmlDocument. Load** , když vstup do **zátěže** je XmlReader a **Třída** **XmlDocument** je plně důvěryhodná.  
   
-|Objekt XmlResolver vlastnost|Funkce|Poznámky|  
+|Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|**Objekt XmlResolver** třídy používané **XmlDocument** je stejnou třídou, která je používána ve **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen **XmlReader**.<br /><br /> **XmlDocument.Resolver** nemůže být vlastnost nastavena, bez ohledu na to **XmlDocument** úroveň, důvěryhodnosti, protože je stále **objekt XmlResolver** z  **Objekt XmlReader**. Pokusíte přepsat nastavení **XmlReaders**" **objekt XmlResolver** nastavením **objekt XmlResolver** vlastnost **XmlDocument**.|**XmlReader** může být **XmlTextReader**, **objekt XmlValidatingReader**, nebo čtečku zapisovat vlastní. Pokud čtení byl použit podporuje entity řešení, jsou vyřešeny externí entity. Pokud čtečka nepodporuje odkazy na entity, pak nejsou přeložit odkazy na entity.|  
+|Třída **objekt XmlResolver** , kterou používá **XmlDocument** , je stejná jako třída, kterou používá **třída XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader**nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem XmlReader může být **Třída** **XmlTextReader**, **XmlValidatingReader**nebo uživatelsky napsaného čtecího modulu. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtecí modul předaný nepodporuje odkazy na entity, nevyřešily se odkazy na entity.|  
   
-## <a name="semi-trusted-xmldocument"></a>Částečně důvěryhodné XmlDocument  
- Následující tabulka ukazuje jak **XmlDocument.XmlResolver** vlastnost funguje, když je objekt částečně důvěryhodné. Tato tabulka platí pro **XmlDocument.Load** metody, když je vstup pro zatížení **TextReader**, **řetězec**, **Stream**, nebo  **Identifikátor URI**. Tato tabulka se nedá použít u **zatížení** metoda Pokud **třídou XMLDocument nastavenou na** je načteno z **XmlReader**.  
+## <a name="semi-trusted-xmldocument"></a>Částečně důvěryhodná XmlDocument  
+ Následující tabulka ukazuje, jak vlastnost **XmlDocument. objekt XmlResolver** funguje, když je objekt částečně důvěryhodný. Tato tabulka platí pro metody **XmlDocument. Load** při vstupu do zátěže je **TextReader**, **String**, **Stream**nebo **URI**. Tato tabulka se nevztahuje na metodu **Load** , pokud je **XmlDocument** načten z objektu **XmlReader**.  
   
-|Objekt XmlResolver vlastnost|Funkce|Poznámky|  
+|Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|V částečně důvěryhodné scénáři **objekt XmlResolver** vlastnost nemůže být nastavena na jinou hodnotu než null.|**XmlUrlResolver** s **null** pověření vytvořena instance, který se používá **XmlDocument** při překládání názvů souboru, vyhledávání externí specifikace DTD, entity, a schémata, a **null** přihlašovací údaje se používají při úpravách uzly.|Toto chování je stejné jako chování při **objekt XmlResolver** vlastnost není nastavena, ale zbývá ve svém výchozím stavu.<br /><br /> **XmlDocument** používá anonymní oprávnění pro všechny akce.|  
-|Je nastavena na **null** (**nic** v aplikaci Microsoft Visual Basic .NET).|Žádné funkce, které vyžadují externího prostředku jsou podporovány, jako je například vyhledávání externí schématu nebo souboru DTD. Ani externí entity bude vyřešen a provádí úpravy funkce jako je například vkládání uzlů entity, které vyžadují řešení, nejsou podporovány.|Pokud je vlastnost **null**, chování je stejný bez ohledu na to, když **XmlDocument** plně důvěryhodný nebo je částečně důvěryhodné.|  
-|Vlastnost není nastavena, ale zbývá ve svém výchozím stavu.|**XmlUrlResolver** s **null** pověření vytvořena instance, který se používá **XmlDocument** při překládání názvů souboru, vyhledávání externí specifikace DTD, entity, a schémata, a **null** přihlašovací údaje se používají při úpravách uzly.|**XmlDocument** používá anonymní oprávnění pro všechny akce.|  
+|V částečně důvěryhodném scénáři nelze vlastnost **objekt XmlResolver** nastavit na jinou hodnotu než null.|**XmlUrlResolver** s přihlašovacími údaji s **hodnotou null** bude při úpravě názvů souborů , vyhledání externích definic DTD, entit a schémat a použití přihlašovacích údajů NULL použita při překladu uzlů.|Toto chování se shoduje s chováním, když není nastavena vlastnost **objekt XmlResolver** , ale zůstala ve výchozím stavu.<br /><br /> **XmlDocument** používá anonymní oprávnění pro všechny akce.|  
+|Vlastnost je nastavena na **hodnotu null** (**Nothing** v Microsoft Visual Basic .NET).|Nejsou podporovány žádné funkce, které vyžadují externí prostředek, například vyhledání externího schématu nebo DTD. Ani externí entity nebudou vyřešeny a provádění funkcí úprav, jako je například vkládání uzlů entit, které vyžadují řešení, se nepodporuje.|Pokud má vlastnost **hodnotu null**, chování je stejné bez ohledu na to, jestli je **XmlDocument** plně důvěryhodný nebo částečně důvěryhodný.|  
+|Vlastnost není nastavena, ale je ponechána ve výchozím stavu.|**XmlUrlResolver** s přihlašovacími údaji s **hodnotou null** bude při úpravě názvů souborů , vyhledání externích definic DTD, entit a schémat a použití přihlašovacích údajů NULL použita při překladu uzlů.|**XmlDocument** používá anonymní oprávnění pro všechny akce.|  
   
- Tato tabulka platí pro **XmlDocument.Load** – metoda při vstupu do **zatížení** je **XmlReader**a **třídou XMLDocument nastavenou na** je částečně důvěryhodné.  
+ Tato tabulka platí pro metodu **XmlDocument. Load** v případě, že vstup do **zatížení** je **třída XmlReader**a prvek **XmlDocument** je částečně důvěryhodný.  
   
-|Objekt XmlResolver vlastnost|Funkce|Poznámky|  
+|Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|**Objekt XmlResolver** třídy používané **XmlDocument** je stejná jako ta, která je používána ve **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen **XmlReader**.<br /><br /> **XmlDocument.Resolver** nemůže být vlastnost nastavena, bez ohledu na to **XmlDocument** úroveň, důvěryhodnosti, protože je stále **objekt XmlResolver** z  **Objekt XmlReader**. Pokusíte přepsat nastavení **XmlReaders** **objekt XmlResolver** nastavením **objekt XmlResolver** vlastnost **XmlDocument**.|**XmlReader** může být **XmlTextReader**, ověřování <xref:System.Xml.XmlReader>, nebo čtečku zapisovat vlastní. Pokud čtení byl použit podporuje entity řešení, jsou vyřešeny externí entity. Pokud čtečka předaný nepodporuje odkazy na entity, nejsou přeložit odkazy na entity.|  
+|Třída **objekt XmlResolver** používaná třídou **XmlDocument** je stejná jako ta, kterou používá objekt **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader** nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem XmlReader může být **Třída** **XmlTextReader**, <xref:System.Xml.XmlReader>ověřování nebo uživatelsky napsané čtecí zařízení. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtenář předaný není podporován odkazy na entity, odkazy na entity nejsou vyřešeny.|  
   
- Nastavení objekt XmlResolver tak, aby obsahovala správné přihlašovací údaje umožní přístup k externím prostředkům.  
+ Nastavení objekt XmlResolver tak, aby obsahovalo správné přihlašovací údaje, umožňuje přístup k externím prostředkům.  
   
 > [!NOTE]
->  Neexistuje žádný způsob, jak načíst **objekt XmlResolver** vlastnost. To pomáhá zabránit uživateli v opakovaném použití **objekt XmlResolver** na jaké přihlašovací údaje jsou nastavené. Také pokud **XmlTextReader** nebo ověřování <xref:System.Xml.XmlReader> slouží k načtení **XmlDocument** a **třídou XMLDocument nastavenou na** má překladače byla nastavena, překladače z neukládá do mezipaměti tyto čtenáři **XmlDocument** po **zatížení** fáze, protože to také představuje bezpečnostní riziko.  
+> Neexistuje žádný způsob, jak načíst vlastnost **objekt XmlResolver** . To pomáhá zabránit uživateli v použití **objekt XmlResolver** , u kterého byla nastavena pověření. Kromě toho, pokud se použije položka <xref:System.Xml.XmlReader> XmlTextReader nebo Valid k načtení prvku **XmlDocument** a prvek **XmlDocument** obsahuje překladač, který byl nastaven, překladače těchto čtecích zařízení nejsou uloženy v mezipaměti **XmlDocument** po  **Fáze načítání** , protože tato aktivita také představuje bezpečnostní riziko.  
   
- Další informace najdete v části poznámky <xref:System.Xml.XmlResolver> referenční stránce.  
+ Další informace naleznete v části <xref:System.Xml.XmlResolver> poznámky na referenční stránce.  
   
 ## <a name="see-also"></a>Viz také:
 

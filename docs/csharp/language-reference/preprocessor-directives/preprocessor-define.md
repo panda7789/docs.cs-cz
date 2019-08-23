@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-ms.openlocfilehash: 5de8dc62e352d669c8008fa5ab8477799843375c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d207c96621564acd8070c9d5f618f43a6d8f15a4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605789"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924604"
 ---
 # <a name="define-c-reference"></a>#define (referenční dokumentace jazyka C#)
 Použijte `#define` k definování symbolu. Použijete-li symbol jako výraz, který je předán direktivě [#if](./preprocessor-if.md) , výraz se vyhodnotí na `true`, jak ukazuje následující příklad:  
@@ -24,7 +24,7 @@ Použijte `#define` k definování symbolu. Použijete-li symbol jako výraz, kt
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Direktiva se nedá použít k deklaraci konstantních hodnot, jak se obvykle provádí v C a C++ `#define` Konstanty C# v jsou nejlépe definovány jako statické členy třídy nebo struktury. Pokud máte několik takových konstant, zvažte vytvoření samostatné třídy "konstanty" pro jejich uložení.  
+> Direktiva se nedá použít k deklaraci konstantních hodnot, jak se obvykle provádí v C a C++ `#define` Konstanty C# v jsou nejlépe definovány jako statické členy třídy nebo struktury. Pokud máte několik takových konstant, zvažte vytvoření samostatné třídy "konstanty" pro jejich uložení.  
   
  Symboly lze použít k zadání podmínek pro kompilaci. Symbol můžete testovat buď pomocí [#if](./preprocessor-if.md) nebo [#elif](./preprocessor-elif.md). Můžete také použít <xref:System.Diagnostics.ConditionalAttribute> k provedení podmíněné kompilace.  
   

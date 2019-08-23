@@ -2,19 +2,19 @@
 title: <filterTables>
 ms.date: 03/30/2017
 ms.assetid: 41f1ac35-f559-473a-b2c3-8cc83a6a3831
-ms.openlocfilehash: c49c7cf3a196595556c2bf1b4ed4365bfe1e4cbf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b0a344aa69085d50087eefc746236bc8ceacadaa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704242"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918859"
 ---
 # <a name="filtertables"></a>\<filterTables >
-Představuje konfigurační oddíl pro definování směrovacích tabulek, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv, pokud bod odpovídá filtru.  
+Představuje konfigurační oddíl pro definování směrovacích tabulek, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body, na které se budou posílat zprávy, když se filtr shoduje.  
   
  \<system.serviceModel>  
-\<směrování >  
-\<routingTables>  
+\<> směrování  
+\<routingTables >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +43,13 @@ Představuje konfigurační oddíl pro definování směrovacích tabulek, kter�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Směrovací tabulky, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.|  
+|[\<Filtry>](filters-of-routing.md)|Směrovací tabulka obsahující mapování mezi směrovacími filtry a cílovými koncovými body, na které se budou posílat zprávy, když se filtr shoduje|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje směrovacími filtry a směrovací tabulky.|  
+|[\<> směrování](routing.md)|Konfigurační oddíl, který obsahuje filtry směrování a směrovací tabulky.|  
   
 ## <a name="see-also"></a>Viz také:
 

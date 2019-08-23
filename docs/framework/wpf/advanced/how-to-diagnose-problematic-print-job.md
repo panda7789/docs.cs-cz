@@ -10,72 +10,72 @@ helpviewer_keywords:
 - print jobs [WPF], troubleshooting
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
-ms.openlocfilehash: d64e77b7fc6862eead3cb7e791b3a8f68ac52713
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 181248f69684860fd43648952ef4eb3cced1c0ba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859735"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944637"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
-Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohatou sadu vlastností tiskové úlohy, které jsou zveřejněné v rozhraní API z Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
+Správci sítě často používají stížnosti od uživatelů k tiskovým úlohám, které nefungují pomalu ani netisknou. Bohatá sada vlastností tiskové úlohy zveřejněná v rozhraní API Microsoft .NET Framework poskytuje způsob, jak rychle provést rychlou vzdálenou diagnostiku tiskových úloh.  
   
 ## <a name="example"></a>Příklad  
- Hlavní kroky pro vytvoření tento druh nástroj jsou následující.  
+ Hlavní kroky pro vytvoření tohoto typu nástroje jsou následující.  
   
-1. Identifikujte tiskové úlohy, která je stěžovat uživatele. Uživatelé často nelze provést přesně. Názvy tiskáren nebo tiskových serverů, které nemusí znají. Může popisu umístění tiskárny v odlišnou terminologii, než se používá v nastavení jeho <xref:System.Printing.PrintQueue.Location%2A> vlastnost. Proto je vhodné vytvořit seznam uživatele aktuálně odeslaných úloh. Pokud existuje více než jeden, pak komunikace mezi uživatelem a správce tiskovém systému slouží ke kotvícímu bodu na úlohu, problémy. Dílčí kroky jsou následující.  
+1. Určete tiskovou úlohu, o které uživatel nastížností. Uživatelé to často nemůžou dělat přesně. Nemusí znát názvy tiskových serverů nebo tiskáren. Můžou popsat umístění tiskárny v jiné terminologii, než se použila při nastavení její <xref:System.Printing.PrintQueue.Location%2A> vlastnosti. V důsledku toho je vhodné vygenerovat seznam aktuálně odeslaných úloh uživatele. Pokud je k dispozici více než jedna, je možné použít komunikaci mezi uživatelem a správcem tiskového systému k určení úlohy, u které dochází k problémům. Níže jsou uvedené podkroky.  
   
-    1. Získáte seznam všech tiskových serverů.  
+    1. Získejte seznam všech tiskových serverů.  
   
-    2. Projít servery, které chcete dotazovat jejich tiskové fronty.  
+    2. Projděte servery a Dotazujte tiskové fronty.  
   
-    3. V každém průchodu server smyčky projděte všechny server fronty a dotazování svých úloh  
+    3. V rámci každého průchodu smyčky serveru projdete všemi frontami serveru dotazování na úlohy.  
   
-    4. V každém průchodu fronty smyčky projít jeho úlohy a shromážděte identifikační informace o těch, které byly předány žalující uživatelem.  
+    4. V rámci každého průchodu smyčky frontu prochází úlohy a shromažďují se informace o těch, které poslal uživatel stížnosti.  
   
-2. Pokud byla zjištěna problematické tiskové úlohy, podívejte se na relevantní vlastnosti chcete zobrazit, co může být problém. Například je úloha ve stavu chyby nebo nebyla Údržba tiskárny fronty přejít do režimu offline, než má úloha může vytisknout?  
+2. Když je zjištěna problematická tisková úloha, prostudujte si příslušné vlastnosti, abyste zjistili, co by mohlo být problém. Například úloha je v chybovém stavu nebo tiskárna obsluhuje, že fronta přejde do režimu offline, aby mohla úloha tisknout?  
   
- Následující kód je řada příklady kódu. První příklad kódu obsahuje projděte tiskové fronty. (Krok 1c výše). Proměnná `myPrintQueues` je <xref:System.Printing.PrintQueueCollection> objektů pro aktuální tiskový server.  
+ Níže uvedený kód je série příkladů kódu. První příklad kódu obsahuje smyčku prostřednictvím tiskových front. (Krok 1C výše.) `myPrintQueues` Proměnná<xref:System.Printing.PrintQueueCollection> je objekt aktuálního tiskového serveru.  
   
- Příklad kódu začíná aktualizací aktuální objekt tiskové fronty s <xref:System.Printing.PrintQueue.Refresh%2A?displayProperty=nameWithType>. Tím se zajistí, že vlastnosti objektu přesně reprezentovat stav fyzické tiskárny, který představuje. Potom aplikace získá kolekci tiskových úloh aktuálně v tiskové frontě pomocí <xref:System.Printing.PrintQueue.GetPrintJobInfoCollection%2A>.  
+ Příklad kódu začíná aktualizací aktuálního objektu tiskové fronty pomocí <xref:System.Printing.PrintQueue.Refresh%2A?displayProperty=nameWithType>. Tím se zajistí, že vlastnosti objektu přesně reprezentují stav fyzické tiskárny, kterou představuje. Pak aplikace získá kolekci tiskových úloh, které jsou aktuálně v tiskové frontě, <xref:System.Printing.PrintQueue.GetPrintJobInfoCollection%2A>pomocí.  
   
- Další aplikace prochází <xref:System.Printing.PrintSystemJobInfo> kolekce a porovná <xref:System.Printing.PrintSystemJobInfo.Submitter%2A> vlastnost s aliasem žalující uživatele. Pokud se shodují, aplikace přidá identifikační informace o úloze řetězec, který se zobrazí. ( `userName` a `jobList` proměnné jsou inicializovány dříve v aplikaci.)  
+ V dalším cyklu aplikace projde <xref:System.Printing.PrintSystemJobInfo> kolekce a porovná každou <xref:System.Printing.PrintSystemJobInfo.Submitter%2A> vlastnost s aliasem uživatele, který je stěžovatel. Pokud se shodují, aplikace přidá identifikační informace o úloze do řetězce, který se zobrazí. (Proměnné `jobList` a jsou inicializovány dříve v aplikaci.) `userName`  
   
  [!code-cpp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#enumeratejobsinqueues)]
  [!code-csharp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#enumeratejobsinqueues)]
  [!code-vb[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#enumeratejobsinqueues)]  
   
- Následující příklad kódu načte, začne používat tuto aplikaci v kroku 2. (Viz výše). Byla zjištěna problematické úlohy a aplikace vyzve k zadání informací, které bude identifikovat. Z těchto informací vytvoří <xref:System.Printing.PrintServer>, <xref:System.Printing.PrintQueue>, a <xref:System.Printing.PrintSystemJobInfo> objekty.  
+ Následující příklad kódu v kroku 2 vybere aplikaci. (Viz výše.) Byla zjištěna problematická úloha a aplikace zobrazí výzvu k zadání informací, které ji identifikují. Z těchto informací vytvoří <xref:System.Printing.PrintServer>objekty, <xref:System.Printing.PrintQueue>a. <xref:System.Printing.PrintSystemJobInfo>  
   
- V tomto okamžiku aplikace obsahuje strukturu větvení odpovídající na dva způsoby, jak kontroluje se stav tiskové úlohy:  
+ V tomto okamžiku aplikace obsahuje strukturu větvení odpovídající dvěma způsobům kontroly stavu tiskové úlohy:  
   
-- Můžete si přečíst příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, která je typu <xref:System.Printing.PrintJobStatus>.  
+- Můžete číst příznaky <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnosti, která je typu <xref:System.Printing.PrintJobStatus>.  
   
-- Můžete si přečíst každý relevantní vlastnosti, jako <xref:System.Printing.PrintSystemJobInfo.IsBlocked%2A> a <xref:System.Printing.PrintSystemJobInfo.IsInError%2A>.  
+- Můžete číst jednotlivé relevantní vlastnosti, jako jsou <xref:System.Printing.PrintSystemJobInfo.IsBlocked%2A> a <xref:System.Printing.PrintSystemJobInfo.IsInError%2A>.  
   
- Tento příklad ukazuje obě metody, uživateli se zobrazí výzva, jakou metodu použít a odpověděl zprávou "Y", pokud uživatel chce použít příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost. Níže naleznete podrobnosti ze dvou způsobů. A konečně aplikace používá metodu nazvanou **ReportQueueAndJobAvailability** zprávu o tom, jestli lze vytisknout úlohy v této denní době. Tato metoda je popsána v [zjistit, jestli tisk úlohy můžete být vytisknout na tento denní dobu](how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day.md).  
+ Tento příklad ukazuje obě metody, takže uživatel byl dříve vyzván, aby se použila metoda a odpovídala "Y", pokud chtěla použít příznaky <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnosti. Podrobnosti o těchto dvou metodách najdete níže. Nakonec aplikace používá metodu nazvanou **ReportQueueAndJobAvailability** k tomu, aby nahlásila, zda lze úlohu v této denní době vytisknout. Tato metoda je popsána v tématu [zjištění, zda lze vytisknout tiskovou úlohu v této denní době](how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day.md).  
   
  [!code-cpp[DiagnoseProblematicPrintJob#IdentifyAndDiagnoseProblematicJob](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#identifyanddiagnoseproblematicjob)]
  [!code-csharp[DiagnoseProblematicPrintJob#IdentifyAndDiagnoseProblematicJob](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#identifyanddiagnoseproblematicjob)]
  [!code-vb[DiagnoseProblematicPrintJob#IdentifyAndDiagnoseProblematicJob](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#identifyanddiagnoseproblematicjob)]  
   
- Ke kontrole stavu úlohy pomocí příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, zkontrolujte každý relevantní příznak zobrazíte, pokud je nastavena. K provedení logické operace a sadu příznaků jako jeden operand a příznak samotný jako druhý je standardní způsob, jak zobrazit, pokud jeden bit nastaven sadu bitových příznaků. Protože příznak samotný má pouze jeden bit nastaven, výsledek logické a je to, že, maximálně Tento stejný bit nastaven. Pokud chcete zjistit, jestli je nebo není, stačí porovnání výsledku logické a s příznakem samotný. Další informace najdete v tématu <xref:System.Printing.PrintJobStatus>, [& – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-), a <xref:System.FlagsAttribute>.  
+ Chcete-li kontrolovat stav tiskových úloh pomocí příznaků <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnosti, zkontrolujte každý příslušný příznak, abyste viděli, zda je nastavena. Standardní způsob, jak zjistit, zda je jeden bit nastaven v sadě bitových příznaků, je provést logickou operaci a s množinou příznaků jako jeden operand a příznak jako druhý. Vzhledem k tomu, že příznak samotný má pouze jednu bitovou sadu, výsledek logického typu a je, který je nanejvýš stejný jako bit nastaven. Chcete-li zjistit, zda je nebo není, stačí porovnat výsledek logického operátoru a samotného příznaku. Další informace naleznete v tématu <xref:System.Printing.PrintJobStatus>, [operátor & (C# Referenční dokumentace)](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-)a. <xref:System.FlagsAttribute>  
   
- Kód pro každý atribut, jehož bit nastaven, to hlásí do okna konzoly a někdy navrhuje způsob, jak reagovat. ( **HandlePausedJob** metodu, která je volána, pokud úlohy nebo fronta je pozastavená, jsou popsány níže.)  
+ Pro každý atribut, jehož bit je nastaven, kód hlásí obrazovku konzoly a někdy navrhuje způsob, jak reagovat. (Metoda **HandlePausedJob** , která je volána, pokud je úloha nebo fronta pozastavena, je popsána níže.)  
   
  [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobattributes)]
  [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobattributes)]
  [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobattributes)]  
   
- Ke kontrole stavu tiskové úlohy pomocí samostatné vlastnosti, jednoduše načíst každou vlastnost a, pokud je vlastnost `true`zprávu do okna konzoly a pravděpodobně navrhnout způsob, jak reagovat. ( **HandlePausedJob** metodu, která je volána, pokud úlohy nebo fronta je pozastavená, jsou popsány níže.)  
+ Chcete-li kontrolovat stav tiskové úlohy pomocí samostatných vlastností, jednoduše si přečtete jednotlivé vlastnosti a pokud je `true`vlastnost, nahlaste obrazovku konzoly a pravděpodobně navrhnete způsob, jak reagovat. (Metoda **HandlePausedJob** , která je volána, pokud je úloha nebo fronta pozastavena, je popsána níže.)  
   
  [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
  [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
  [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
   
- **HandlePausedJob** metoda umožňuje uživatelům vaší aplikace vzdáleně obnovit pozastavené úlohy. Protože můžou existovat dobrý důvod, proč byla pozastavena tiskovou frontu, metoda začíná vás vyzve k zadání uživatele rozhodnutí o tom, jestli ho obnovit. Pokud je odpověď "Y", pak bude <xref:System.Printing.PrintQueue.Resume%2A?displayProperty=nameWithType> metoda je volána.  
+ Metoda **HandlePausedJob** umožňuje uživateli aplikace vzdáleně obnovit pozastavené úlohy. Vzhledem k tomu, že existuje dobrý důvod, proč se tisková fronta pozastavila, metoda začíná dotazem na rozhodnutí uživatele o tom, jestli se má obnovit. Pokud je odpověď "Y", pak <xref:System.Printing.PrintQueue.Resume%2A?displayProperty=nameWithType> je volána metoda.  
   
- Dále bude uživatel vyzván k rozhodování, pokud by měl být obnoveno samotnou úlohu, jen v případě, že je pozastavený nezávisle na tiskovou frontu. (Porovnání <xref:System.Printing.PrintQueue.IsPaused%2A?displayProperty=nameWithType> a <xref:System.Printing.PrintSystemJobInfo.IsPaused%2A?displayProperty=nameWithType>.) Pokud je odpověď "Y", pak <xref:System.Printing.PrintSystemJobInfo.Resume%2A?displayProperty=nameWithType> volané; v opačném <xref:System.Printing.PrintSystemJobInfo.Cancel%2A> je volána.  
+ V dalším kroku se zobrazí výzva k rozhodnutí, zda by měla být úloha obnovena, a to pouze v případě, že je pozastavena nezávisle na tiskové frontě. (Porovnat <xref:System.Printing.PrintQueue.IsPaused%2A?displayProperty=nameWithType> a <xref:System.Printing.PrintSystemJobInfo.IsPaused%2A?displayProperty=nameWithType>.) Pokud je odpověď "Y", pak <xref:System.Printing.PrintSystemJobInfo.Resume%2A?displayProperty=nameWithType> je volána; jinak <xref:System.Printing.PrintSystemJobInfo.Cancel%2A> je volána.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#handlepausedjob)]
  [!code-csharp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#handlepausedjob)]
@@ -87,6 +87,6 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
 - <xref:System.Printing.PrintSystemJobInfo>
 - <xref:System.FlagsAttribute>
 - <xref:System.Printing.PrintQueue>
-- [& – Operátor (C# odkaz)](~/docs/csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-)
+- [Operátor & (C# Referenční dokumentace)](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Přehled tisku](printing-overview.md)

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-ms.openlocfilehash: b5044d39d1dc5d2fa7d2ce691cdda7075fa0e32a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1a2c32d133799ee5338c18d0f51bced49cb3dc4b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963185"
 ---
 # <a name="schema-restrictions"></a>Omezení schématu
-Druhý volitelný parametr **GetSchema** metoda je vrácena omezení, které se používají a omezit tak množství informací o schématu, a je předán **GetSchema** metody jako pole řetězců . Pozice v poli určuje hodnoty, které můžete předat, a to je ekvivalentní hodnotě parametru omezení.  
+Druhý volitelný parametr metody GetSchema je omezení, která slouží k omezení množství vrácených informací o schématu a je předána metodě GetSchema jako poli řetězců. Pozice v poli určuje hodnoty, které lze předat, a to je ekvivalentní k číslu omezení.  
   
- Například následující tabulka popisuje omezení kolekcí schémat "Tabulky" pomocí zprostředkovatele dat .NET Framework pro SQL Server podporován. Další omezení kolekce schémat SQL Server jsou uvedeny na konci tohoto tématu.  
+ Například následující tabulka popisuje omezení podporovaná kolekcí schémat "Tables" pomocí Zprostředkovatel dat .NET Framework pro SQL Server. Další omezení pro kolekce schémat SQL Server jsou uvedena na konci tohoto tématu.  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
@@ -24,19 +24,19 @@ Druhý volitelný parametr **GetSchema** metoda je vrácena omezení, které se 
 |Tabulka|@Name|TABLE_NAME|3|  
 |TableType|@TableType|TABLE_TYPE|4|  
   
-## <a name="specifying-restriction-values"></a>Určení hodnoty omezení  
- Použijte jednu z těchto omezení kolekce schémat "Tabulky", jednoduše vytvořit pole řetězců, které se čtyřmi prvky a potom umístili hodnotu v elementu, který se shoduje s počtem omezení. Například k omezení tabulky vrácené **GetSchema** metodu pouze tabulky ve schématu "Prodeje" nastavit druhý prvek pole, které chcete "Prodeje" před předáním do **GetSchema** metody.  
+## <a name="specifying-restriction-values"></a>Určení hodnot omezení  
+ Chcete-li použít jedno z omezení kolekce schématu "Tables", jednoduše vytvořte pole řetězců se čtyřmi prvky a potom umístěte hodnotu do prvku, který odpovídá číslu omezení. Chcete-li například omezit tabulky vrácené metodou GetSchema pouze na tabulky ve schématu "Sales", nastavte druhý prvek pole na "Sales", než jej předáte metodě GetSchema.  
   
 > [!NOTE]
->  Omezení kolekce pro `SqlClient` a `OracleClient` mají další `ParameterName` sloupce. Výchozí sloupec omezení je stále pro zpětnou kompatibilitu, ale aktuálně je ignorována. Chcete-li minimalizovat riziko útoků prostřednictvím injektáže SQL, při zadávání hodnoty omezení by měla sloužit parametrizovaných dotazů místo nahrazení řetězce.  
+> Kolekce omezení pro `SqlClient` a `OracleClient` mají další `ParameterName` sloupec. Výchozí sloupec omezení je stále pro zpětnou kompatibilitu, ale v současné době se ignoruje. Parametrizované dotazy místo nahrazení řetězců by měly být použity k minimalizaci rizika útoku prostřednictvím injektáže SQL při zadávání hodnot omezení.  
   
 > [!NOTE]
->  Počet prvků v poli musí být menší nebo rovna počtu omezení pro ostatní zadané schéma kolekce nepodporuje <xref:System.ArgumentException> bude vyvolána výjimka. Může být méně než maximální počet omezení. Chybí omezení jsou považován za hodnotu null (bez omezení).  
+> Počet elementů v poli musí být menší nebo roven počtu omezení podporovaných pro zadanou kolekci schémat, jinak <xref:System.ArgumentException> bude vyvolána výjimka. Může jich být méně, než je maximální počet omezení. U chybějících omezení se předpokládá, že mají hodnotu null (neomezeno).  
   
- Můžete dát dotaz na zprostředkovatele rozhraní .NET Framework spravované k určení seznamu podporovaných omezení voláním **GetSchema** metodu s názvem kolekce schémat omezení, což je "Omezení". Vrátí <xref:System.Data.DataTable> seznam názvy kolekcí, omezení názvů, omezení výchozí hodnoty a omezení čísla.  
+ Můžete zadat dotaz na .NET Framework spravovaného poskytovatele a určit seznam podporovaných omezení voláním metody **GetSchema** s názvem kolekce schématu omezení, což je "omezení". Tato akce vrátí <xref:System.Data.DataTable> seznam názvů kolekcí, názvy omezení, výchozí hodnoty omezení a čísla omezení.  
   
 ### <a name="example"></a>Příklad  
- Následující příklady ukazují, jak používat <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metoda zprostředkovatele dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlConnection> třídy pro načtení schématu informace o všech tabulek, které jsou součástí **AdventureWorks**ukázková databáze a omezit informace vrátí pouze ty tabulky ve schématu "Prodeje":  
+ Následující příklady ukazují, jak použít <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metodu .NET Framework Zprostředkovatel dat pro třídu SQL Server <xref:System.Data.SqlClient.SqlConnection> k načtení informací o schématu o všech tabulkách obsažených v ukázkové databázi **AdventureWorks** , a omezení vrácených informací pouze do tabulek ve schématu prodej:  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -130,20 +130,20 @@ class Program
 }  
 ```  
   
-## <a name="sql-server-schema-restrictions"></a>Omezení schématu SQL serveru  
- Omezení pro kolekce schémat SQL Server naleznete v následujících tabulkách.  
+## <a name="sql-server-schema-restrictions"></a>SQL Server omezení schématu  
+ V následujících tabulkách jsou uvedeny omezení pro SQL Server kolekcí schémat.  
   
 ### <a name="users"></a>Uživatelé  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Uživatelské_jméno|@Name|name|1|  
+|Uživatelské jméno|@Name|name|1|  
   
 ### <a name="databases"></a>Databáze  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Název|@Name|Název|1|  
+|Name|@Name|Name|1|  
   
 ### <a name="tables"></a>Tabulky  
   
@@ -195,7 +195,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|Název|@Name|SPECIFIC_NAME|3|  
+|Name|@Name|SPECIFIC_NAME|3|  
 |Parametr|@Parameter|PARAMETER_NAME|4|  
   
 ### <a name="procedures"></a>Procedury  
@@ -204,8 +204,8 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|Název|@Name|SPECIFIC_NAME|3|  
-|Type|@Type|ROUTINE_TYPE|4|  
+|Name|@Name|SPECIFIC_NAME|3|  
+|type|@Type|ROUTINE_TYPE|4|  
   
 ### <a name="indexcolumns"></a>IndexColumns  
   
@@ -213,9 +213,9 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|db_name()|1|  
 |Owner|@Owner|user_name()|2|  
-|Tabulka|@Table|o.Name|3|  
-|ConstraintName|@ConstraintName|x.Name|4|  
-|Sloupec|@Column|c.Name|5|  
+|Tabulka|@Table|o.name|3|  
+|Omezení|@ConstraintName|x.name|4|  
+|Sloupec|@Column|c.name|5|  
   
 ### <a name="indexes"></a>Indexy  
   
@@ -223,13 +223,13 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|db_name()|1|  
 |Owner|@Owner|user_name()|2|  
-|Tabulka|@Table|o.Name|3|  
+|Tabulka|@Table|o.name|3|  
   
 ### <a name="userdefinedtypes"></a>UserDefinedTypes  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|název_sestavení|@AssemblyName|assemblies.name|1|  
+|assembly_name|@AssemblyName|assemblies.name|1|  
 |udt_name|@UDTName|types.assembly_class|2|  
   
 ### <a name="foreignkeys"></a>ForeignKeys  
@@ -239,10 +239,10 @@ class Program
 |Katalog|@Catalog|CONSTRAINT_CATALOG|1|  
 |Owner|@Owner|CONSTRAINT_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
-|Název|@Name|CONSTRAINT_NAME|4|  
+|Name|@Name|CONSTRAINT_NAME|4|  
   
 ## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 Schema Restrictions  
- Omezení pro kolekce schémat SQL Server 2008 naleznete v následujících tabulkách. Tato omezení jsou platné od verze SQL Server 2008 a rozhraní .NET Framework 3.5 SP1. Nejsou podporovány v dřívějších verzích rozhraní .NET Framework a systému SQL Server.  
+ V následujících tabulkách jsou uvedeny omezení pro kolekce schémat SQL Server 2008. Tato omezení platí od verze 3,5 SP1 .NET Framework a SQL Server 2008. Nejsou podporované v dřívějších verzích .NET Framework a SQL Server.  
   
 ### <a name="columnsetcolumns"></a>ColumnSetColumns  
   
@@ -263,4 +263,4 @@ class Program
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

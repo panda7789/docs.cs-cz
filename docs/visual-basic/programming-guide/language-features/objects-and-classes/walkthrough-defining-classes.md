@@ -1,5 +1,5 @@
 ---
-title: Definování třídy (Visual Basic)
+title: Definování tříd (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - execution [Visual Basic], ending
@@ -15,69 +15,69 @@ helpviewer_keywords:
 - Terminate event [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-ms.openlocfilehash: 3129824f6e4047420c422503cc366a1c8d28b7e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 679f4fd55f142c2c4bb63a556feb95c074960b12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61865288"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914735"
 ---
-# <a name="walkthrough-defining-classes-visual-basic"></a>Návod: Definování třídy (Visual Basic)
+# <a name="walkthrough-defining-classes-visual-basic"></a>Návod: Definování tříd (Visual Basic)
 
-Tento návod ukazuje, jak definovat třídy, které pak můžete použít k vytváření objektů. Také ukazuje, jak přidat vlastnosti a metody do nové třídy a ukazuje, jak inicializovat objekt.  
+Tento návod ukazuje, jak definovat třídy, které pak můžete použít k vytvoření objektů. Také ukazuje, jak přidat vlastnosti a metody do nové třídy a ukazuje, jak inicializovat objekt.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="to-define-a-class"></a>Definování třídy
   
-1. Vytvořte projekt kliknutím **nový projekt** na **souboru** nabídky. Zobrazí se dialogové okno **Nový projekt**.  
+1. Vytvořte projekt kliknutím na **Nový projekt** v nabídce **soubor** . Zobrazí se dialogové okno **Nový projekt**.  
   
-2. Vyberte ze seznamu šablon projektů jazyka Visual Basic k zobrazení nového projektu aplikace Windows.  
+2. Vyberte možnost aplikace systému Windows ze seznamu Visual Basic šablony projektu, chcete-li zobrazit nový projekt.  
   
-3. Přidejte novou třídu do projektu kliknutím **přidat třídu** na **projektu** nabídky. Zobrazí se dialogové okno **Přidat novou položku**.  
+3. Kliknutím na **Přidat třídu** v nabídce **projekt** přidejte do projektu novou třídu. Zobrazí se dialogové okno **Přidat novou položku**.  
   
-4. Vyberte **třídy** šablony.  
+4. Vyberte šablonu **třídy** .  
   
-5. Pojmenujte novou třídu `UserNameInfo.vb`a potom klikněte na tlačítko **přidat** zobrazíte kód pro novou třídu.  
+5. Pojmenujte novou `UserNameInfo.vb`třídu a potom kliknutím na tlačítko **Přidat** zobrazte kód pro novou třídu.  
   
      [!code-vb[VbVbalrOOP#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#5)]
   
     > [!NOTE]
-    >  Můžete použít Visual Basic **Editor kódu** přidání třídy do svého formuláře po spuštění zadáním `Class` – klíčové slovo, za nímž následuje název nové třídy. **Editor kódu** poskytuje odpovídající `End Class` příkaz za vás.  
+    > Pomocí **editoru kódu** Visual Basic můžete přidat třídu do formuláře po spuštění zadáním `Class` klíčového slova následovaného názvem nové třídy. **Editor kódu** poskytuje odpovídající `End Class` příkaz pro vás.  
   
-6. Definovat privátní pole pro třídu přidáním následujícího kódu mezi `Class` a `End Class` příkazy:  
+6. Definujte soukromé pole pro třídu přidáním následujícího kódu mezi `Class` příkazy a: `End Class`  
   
      [!code-vb[VbVbalrOOP#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#7)]
   
-     Deklarace pole jako `Private` znamená, že je možné pouze v rámci třídy. Můžete zpřístupnit pole z mimo třídu pomocí modifikátorů přístupu, jako `Public` , které poskytují další přístup. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+     Deklarace pole jako `Private` znamená, že se dá použít jenom uvnitř třídy. Pole `Public` , která jsou k dispozici vně třídy, můžete zpřístupnit pomocí modifikátorů přístupu, jako je například, které poskytují více přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-7. Definujte vlastnost třídy přidáním následujícího kódu:  
+7. Definujte vlastnost pro třídu přidáním následujícího kódu:  
   
      [!code-vb[VbVbalrOOP#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#8)]
   
-8. Definování metody pro třídu přidáním následujícího kódu:  
+8. Definujte metodu pro třídu přidáním následujícího kódu:  
   
      [!code-vb[VbVbalrOOP#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#9)]
   
-9. Definování konstruktoru s parametry pro novou třídu přidáním postup s názvem `Sub New`:  
+9. Definujte parametrizovaný konstruktor pro novou třídu přidáním procedury s názvem `Sub New`:  
   
      [!code-vb[VbVbalrOOP#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#10)]
   
-     `Sub New` Konstruktor je automaticky volána, když je vytvořen objekt na základě této třídy. Tento konstruktor nastaví hodnotu pole, která obsahuje uživatelské jméno.  
+     `Sub New` Konstruktor se nazývá automaticky, pokud je objekt založen na této třídě vytvořen. Tento konstruktor nastaví hodnotu pole, které obsahuje uživatelské jméno.  
   
-## <a name="to-create-a-button-to-test-the-class"></a>Chcete-li vytvořit tlačítko pro testovací třídu
+## <a name="to-create-a-button-to-test-the-class"></a>Chcete-li vytvořit tlačítko pro otestování třídy
   
-1. Změna formuláře úvodního formuláře do režimu návrhu kliknutím pravým tlačítkem myši jejího názvu do **Průzkumníka řešení** a pak levým na **Návrhář zobrazení**. Ve výchozím nastavení je formulář spuštění pro projekty aplikací pro Windows s názvem Form1.vb. Hlavní formulář se potom zobrazí.  
+1. Změňte spouštěcí formulář na režim návrhu kliknutím pravým tlačítkem myši na jeho název v **Průzkumník řešení** a následným kliknutím na položku **Návrhář zobrazení**. Ve výchozím nastavení je úvodní formulář pro projekty aplikací pro Windows pojmenovaný Form1. vb. Pak se zobrazí hlavní formulář.  
   
-2. Přidání tlačítka pro hlavní formulář a dvojím kliknutím ho zobrazte kód `Button1_Click` obslužné rutiny události. Přidejte následující kód do volání procedury testu:  
+2. Přidejte do hlavního formuláře tlačítko a dvojím kliknutím na něj zobrazte kód pro `Button1_Click` obslužnou rutinu události. Přidejte následující kód pro volání testovací procedury:  
   
      [!code-vb[VbVbalrOOP#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#12)]
   
-## <a name="to-run-your-application"></a>Ke spuštění aplikace
+## <a name="to-run-your-application"></a>Spuštění aplikace
   
-1. Stisknutím klávesy F5 spusťte aplikaci. Klikněte na tlačítko na formulář pro volání procedury testu. Zobrazí se zpráva oznamující, že původní `UserName` je "MOORE, Jana", protože procedura volána `Capitalize` metodu objektu.  
+1. Spusťte aplikaci stisknutím klávesy F5. Klikněte na tlačítko ve formuláři pro volání testovací procedury. Zobrazí se zpráva s oznámením, že originál `UserName` je "Moore, Bobby", protože procedura se `Capitalize` nazývá metoda objektu.  
   
-2. Klikněte na tlačítko **OK** zavřete okno se zprávou. `Button1 Click` Postupu změní hodnotu `UserName` vlastnost a zobrazí zprávu oznamující, že nová hodnota `UserName` je "Worden Joe".  
+2. Kliknutím na tlačítko **OK** zavřete okno se zprávou. Procedura změní hodnotu `UserName` vlastnosti a zobrazí zprávu s oznámením `UserName` , že nová hodnota je "Worden, Jana". `Button1 Click`  
   
 ## <a name="see-also"></a>Viz také:
 

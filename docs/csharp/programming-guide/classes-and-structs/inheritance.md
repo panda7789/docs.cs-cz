@@ -10,19 +10,19 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: 1fc8303ad4d54bfd3255d725de486281cd09439e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3211a4741eb56ad9e138a848e52fabbc1d3daaeb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596549"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924473"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
 Dědičnost, spolu s zapouzdřením a polymorfismus, je jednou ze tří základních vlastností objektově orientovaného programování. Dědičnost umožňuje vytvořit nové třídy, které znovu použije, rozšíří a mění chování, které je definováno v jiných třídách. Třída, jejíž členové jsou zděděni, se nazývají *základní třídu*a třída, která dědí tyto členy, se nazývá *odvozená třída*. Odvozená třída může mít pouze jednu přímou základní třídu. Dědičnost je však tranzitivní. Pokud je ClassC odvozen z ClassB a ClassB je odvozen z třídy Class, ClassC dědí členy deklarované v ClassB a Class.  
   
 > [!NOTE]
->  Struktury nepodporují dědění, ale mohou implementovat rozhraní. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
+> Struktury nepodporují dědění, ale mohou implementovat rozhraní. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
   
  V koncepčním případě je odvozená třída specializací základní třídy. Například pokud máte základní třídu `Animal`, může mít jednu odvozenou třídu s názvem `Mammal` a jinou odvozenou třídu s názvem `Reptile`. A je ,a`Reptile` je ,alekaždáodvozenátřídapředstavujerůznéspecializacezákladnítřídy.`Animal` `Mammal` `Animal`  
   

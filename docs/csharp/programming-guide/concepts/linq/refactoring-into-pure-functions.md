@@ -2,19 +2,19 @@
 title: Refaktoring do čistě funkcí (C#)
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-ms.openlocfilehash: d6e8657da0f7db06d2fdbe1231bdc48e1aa0f954
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 453b128ecaea62fd58c54bfb383091f65a082370
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591334"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924198"
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistě funkcí (C#)
 
 Důležitým aspektem čistě funkční transformace je učení, jak refaktorovat kód pomocí čistě funkcí.  
   
 > [!NOTE]
->  Běžnou klasifikací při funkčním programování je, že refaktoruje programy pomocí funkce Pure. V Visual Basic a C++se tato možnost zarovnává s použitím funkcí v odpovídajících jazycích. V C#nástroji se však funkce nazývají metody. Pro účely této diskuze je funkce Pure implementována jako metoda v C#.  
+> Běžnou klasifikací při funkčním programování je, že refaktoruje programy pomocí funkce Pure. V Visual Basic a C++se tato možnost zarovnává s použitím funkcí v odpovídajících jazycích. V C#nástroji se však funkce nazývají metody. Pro účely této diskuze je funkce Pure implementována jako metoda v C#.  
   
  Jak bylo uvedeno dříve v této části, funkce Pure má dvě užitečné charakteristiky:  
   
@@ -81,7 +81,7 @@ public class Program
  Tato verze programu vytvoří stejný výstup jako první verze, protože `HyphenatedConcat` funkce změnila hodnotu (stav) jeho prvního parametru <xref:System.Text.StringBuilder.Append%2A> vyvoláním členské funkce. Všimněte si, že tato změna probíhá navzdory tomu `HyphenatedConcat` , že používá předávání parametru volání podle hodnoty.  
   
 > [!IMPORTANT]
->  Pro typy odkazů, Pokud předáte parametr podle hodnoty, výsledkem bude kopie odkazu na předaný objekt. Tato kopie je stále přidružená ke stejným datům instance jako původní odkaz (dokud referenční proměnná není přiřazena k novému objektu). Volání po odkazech nemusí nutně vyžadovat, aby funkce mohla upravovat parametr.  
+> Pro typy odkazů, Pokud předáte parametr podle hodnoty, výsledkem bude kopie odkazu na předaný objekt. Tato kopie je stále přidružená ke stejným datům instance jako původní odkaz (dokud referenční proměnná není přiřazena k novému objektu). Volání po odkazech nemusí nutně vyžadovat, aby funkce mohla upravovat parametr.  
   
 ### <a name="pure-function"></a>Funkce Pure  
 Tato další verze programu ukazuje, jak implementovat `HyphenatedConcat` funkci jako čistě funkci.  

@@ -12,203 +12,203 @@ helpviewer_keywords:
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 124641ed32dc2ea953202dbc6a73ee066a6c4a4e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5cdd2f5538be0e39b5dd3a378825ccf81f314c03
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602512"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916285"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
-Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu jsou určeny pro aplikaci Windows Forms. Tato aplikace neukazuje reálných scénářů, jako je například používání čipových karet. Místo toho ukazuje základní informace o šifrování a dešifrování.  
+Tento návod ukazuje, jak šifrovat a dešifrovat obsah. Příklady kódu jsou určeny pro model Windows Forms aplikace. Tato aplikace nemonstruje scénáře reálného světa, jako je například použití čipových karet. Místo toho ukazuje základy šifrování a dešifrování.  
   
- Tento návod používá k šifrování podle následujících pokynů:  
+ Tento návod používá pro šifrování následující pokyny:  
   
-- Použití <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus pro šifrování a dešifrování dat pomocí jeho automaticky generované třídy <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> a <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>.  
+- Použijte třídu, symetrický algoritmus pro šifrování a dešifrování dat pomocí automatického vygenerovaného <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> a <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>. <xref:System.Security.Cryptography.RijndaelManaged>  
   
-- Použití <xref:System.Security.Cryptography.RSACryptoServiceProvider>, asymetrického algoritmu, k šifrování a dešifrování klíče k data zašifrovaná pomocí <xref:System.Security.Cryptography.RijndaelManaged>. Asymetrické algoritmy jsou nejvhodnější pro menší množství dat, jako jsou klíče.  
+- Použijte asymetrický algoritmus pro šifrování a dešifrování klíče pro data zašifrovaná pomocí <xref:System.Security.Cryptography.RijndaelManaged>. <xref:System.Security.Cryptography.RSACryptoServiceProvider> Asymetrické algoritmy se nejlépe používají pro menší objemy dat, jako je například klíč.  
   
     > [!NOTE]
-    >  Pokud chcete chránit data ve vašem počítači místo výměny šifrovaný obsah s jinými uživateli, zvažte použití <xref:System.Security.Cryptography.ProtectedData> nebo <xref:System.Security.Cryptography.ProtectedMemory> třídy.  
+    > Chcete-li chránit data v počítači namísto výměny šifrovaného obsahu s jinými lidmi, zvažte použití <xref:System.Security.Cryptography.ProtectedData> tříd nebo. <xref:System.Security.Cryptography.ProtectedMemory>  
   
- Následující tabulka shrnuje šifrovací úlohy v tomto tématu.  
+ Následující tabulka shrnuje kryptografické úlohy v tomto tématu.  
   
 |Úloha|Popis|  
 |----------|-----------------|  
-|Vytvoření aplikace Windows Forms|Obsahuje ovládací prvky, které jsou potřeba ke spouštění aplikace.|  
-|Deklarace globálních objektů|Deklaruje řetězec proměnné cesty <xref:System.Security.Cryptography.CspParameters>a <xref:System.Security.Cryptography.RSACryptoServiceProvider> mít globální kontext <xref:System.Windows.Forms.Form> třídy.|  
-|Vytváření asymetrický klíč|Vytvoří pár asymetrických veřejného a privátního klíče hodnotu a přiřadí ji název kontejneru klíčů.|  
-|Šifrování souboru|Zobrazí dialogové okno pro výběr souboru pro šifrování a zašifruje souboru.|  
-|Dešifrování souboru|Zobrazí dialogové okno vybrat zašifrovaný soubor pro dešifrování a dešifruje soubor.|  
-|Získání privátní klíč|Získá úplný pár klíče pomocí názvu kontejneru klíčů.|  
-|Export veřejného klíče|Uloží klíč do souboru XML s pouze veřejné parametry.|  
-|Import veřejného klíče|Načte klíče ze souboru XML do kontejneru klíčů.|  
+|Vytvoření aplikace model Windows Forms|Seznam ovládacích prvků, které jsou požadovány ke spuštění aplikace.|  
+|Deklarace globálních objektů|Deklaruje proměnné cesty <xref:System.Security.Cryptography.CspParameters> <xref:System.Security.Cryptography.RSACryptoServiceProvider> k řetězci, a a má globální kontext <xref:System.Windows.Forms.Form> třídy.|  
+|Vytváření asymetrického klíče|Vytvoří asymetrickou dvojici hodnot veřejného a privátního klíče a přiřadí jí název kontejneru klíčů.|  
+|Šifrování souboru|Zobrazí dialogové okno pro výběr souboru pro šifrování a zašifruje soubor.|  
+|Dešifrování souboru|Zobrazí dialogové okno, ve kterém můžete vybrat zašifrovaný soubor pro dešifrování a dešifrovat soubor.|  
+|Získání privátního klíče|Získá úplnou dvojici klíčů pomocí názvu kontejneru klíčů.|  
+|Export veřejného klíče|Uloží klíč do souboru XML s pouze veřejnými parametry.|  
+|Import veřejného klíče|Načte klíč ze souboru XML do kontejneru klíčů.|  
 |Testování aplikace|Uvádí postupy pro testování této aplikace.|  
   
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
-- Odkazy <xref:System.IO> a <xref:System.Security.Cryptography> obory názvů.  
+- Odkazy na <xref:System.IO> obory <xref:System.Security.Cryptography> názvů a.  
   
-## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
- Většina příkladů kódu v tomto názorném postupu jsou navržené tak, aby obslužné rutiny událostí pro ovládací prvky tlačítek. Následující tabulka uvádí prvky, které jsou vyžadovány pro ukázkovou aplikaci a požadovaná názvy v příkladech kódu.  
+## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace model Windows Forms  
+ Většina příkladů kódu v tomto návodu je navržena jako obslužné rutiny událostí pro ovládací prvky tlačítek. V následující tabulce jsou uvedeny ovládací prvky požadované pro ukázkovou aplikaci a jejich požadované názvy, aby odpovídaly příkladům kódu.  
   
 |Control|Name|Vlastnost text (podle potřeby)|  
 |-------------|----------|---------------------------------|  
-|<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Šifrování souboru|  
-|<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Dešifrování souboru|  
-|<xref:System.Windows.Forms.Button>|`buttonCreateAsmKeys`|Vytvoření klíčů|  
-|<xref:System.Windows.Forms.Button>|`buttonExportPublicKey`|Export veřejného klíče|  
-|<xref:System.Windows.Forms.Button>|`buttonImportPublicKey`|Import veřejného klíče|  
-|<xref:System.Windows.Forms.Button>|`buttonGetPrivateKey`|Získání privátní klíč|  
+|<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Šifrovat soubor|  
+|<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Dešifrovat soubor|  
+|<xref:System.Windows.Forms.Button>|`buttonCreateAsmKeys`|Vytvořit klíče|  
+|<xref:System.Windows.Forms.Button>|`buttonExportPublicKey`|Exportovat veřejný klíč|  
+|<xref:System.Windows.Forms.Button>|`buttonImportPublicKey`|Importovat veřejný klíč|  
+|<xref:System.Windows.Forms.Button>|`buttonGetPrivateKey`|Získat privátní klíč|  
 |<xref:System.Windows.Forms.Label>|`label1`||  
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog1`||  
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog2`||  
   
- Dvakrát klikněte na tlačítka v návrháři aplikace Visual Studio k vytvoření své obslužné rutiny události.  
+ Dvojím kliknutím na tlačítka v návrháři sady Visual Studio vytvořte obslužné rutiny událostí.  
   
 ## <a name="declaring-global-objects"></a>Deklarace globálních objektů  
- Přidejte následující kód do konstruktoru formuláře. Upravte proměnné řetězce pro vaše prostředí a předvolbám.  
+ Do konstruktoru formuláře přidejte následující kód. Upravte řetězcové proměnné pro vaše prostředí a předvolby.  
   
  [!code-csharp[CryptoWalkThru#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#1)]
  [!code-vb[CryptoWalkThru#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#1)]  
   
-## <a name="creating-an-asymmetric-key"></a>Vytváření asymetrický klíč  
- Tato úloha vytváří asymetrický klíč, který šifruje a dešifruje <xref:System.Security.Cryptography.RijndaelManaged> klíč. Tento klíč se použil k zašifrování obsahu a zobrazí se název kontejneru klíčů na ovládací prvek popisku.  
+## <a name="creating-an-asymmetric-key"></a>Vytváření asymetrického klíče  
+ Tato úloha vytvoří asymetrický klíč, který šifruje a dešifruje <xref:System.Security.Cryptography.RijndaelManaged> klíč. Tento klíč se použil k zašifrování obsahu a zobrazuje název kontejneru klíčů v ovládacím prvku popisek.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Create Keys` tlačítko (`buttonCreateAsmKeys_Click`).  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Create Keys` pro tlačítko (`buttonCreateAsmKeys_Click`).  
   
  [!code-csharp[CryptoWalkThru#2](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#2)]
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>Šifrování souboru  
- Tato úloha zahrnuje dvě metody: metoda obslužné rutiny události pro `Encrypt File` tlačítko (`buttonEncryptFile_Click`) a `EncryptFile` metoda. První metoda zobrazí dialogové okno pro výběr souboru a předá název souboru druhá metoda, která provádí šifrování.  
+ Tato úloha zahrnuje dvě metody: metodu obslužné rutiny události pro `Encrypt File` tlačítko (`buttonEncryptFile_Click`) a `EncryptFile` metodu. První metoda zobrazí dialogové okno pro výběr souboru a předá název souboru druhé metodě, která provádí šifrování.  
   
- Šifrovaný obsah, klíč a vektor IV všechna uložena do jedné <xref:System.IO.FileStream>, což se označuje jako balíčku šifrování.  
+ Zašifrovaný obsah, klíč a IV jsou uloženy do jednoho <xref:System.IO.FileStream>, který je označován jako balíček šifrování.  
   
  `EncryptFile` Metoda provede následující akce:  
   
-1. Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus šifrování obsahu.  
+1. <xref:System.Security.Cryptography.RijndaelManaged> Vytvoří symetrický algoritmus pro šifrování obsahu.  
   
-2. Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k šifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
+2. Vytvoří objekt pro šifrování <xref:System.Security.Cryptography.RijndaelManaged>klíče. <xref:System.Security.Cryptography.RSACryptoServiceProvider>  
   
-3. Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a šifrování <xref:System.IO.FileStream> zdrojového souboru, v blocích po bajtů do cílového <xref:System.IO.FileStream> objektu pro šifrovaný soubor.  
+3. Používá objekt ke čtení a <xref:System.IO.FileStream> šifrování zdrojového souboru, v blocích bajtů, do cílového <xref:System.IO.FileStream> objektu pro zašifrovaný soubor. <xref:System.Security.Cryptography.CryptoStream>  
   
-4. Určuje délky šifrovaný klíč a vektor IV a vytvoří jejich hodnoty pro délku pole bajtů.  
+4. Určuje délku šifrovaného klíče a IV a vytvoří pole bajtů jejich hodnot délky.  
   
-5. Zapíše klíče, IV a jejich hodnoty pro délku zašifrovaný balíček.  
+5. Zapíše klíč, IV a jejich hodnoty délky do šifrovaného balíčku.  
   
- Balíček šifrování používá následující formát:  
+ Šifrovací balíček používá následující formát:  
   
-- Délka klíče, bajty 0 – 3  
+- Délka klíče, bajty 0-3  
   
-- Vektor IV délka, bajty 4 – 7  
+- Délka IV, bajty 4-7  
   
 - Šifrovaný klíč  
   
 - IV  
   
-- Šifrovaného textu  
+- Šifrovaný text  
   
- Délek klíč a vektor IV můžete použít k určení počátečních bodů a délek všech částí šifrování balíček, který je pak možné dešifrovat soubor.  
+ Délku klíče a IV můžete použít k určení počátečních bodů a délek všech částí šifrovacího balíčku, které pak můžete použít k dešifrování souboru.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Encrypt File` tlačítko (`buttonEncryptFile_Click`).  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Encrypt File` pro tlačítko (`buttonEncryptFile_Click`).  
   
  [!code-csharp[CryptoWalkThru#3](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#3)]
  [!code-vb[CryptoWalkThru#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#3)]  
   
- Přidejte následující `EncryptFile` metoda do formuláře.  
+ Do formuláře přidejte `EncryptFile` následující metodu.  
   
  [!code-csharp[CryptoWalkThru#5](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#5)]
  [!code-vb[CryptoWalkThru#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#5)]  
   
 ## <a name="decrypting-a-file"></a>Dešifrování souboru  
- Tato úloha zahrnuje dvě metody, metoda obslužné rutiny události pro `Decrypt File` tlačítko (`buttonDecryptFile_Click`) a `DecryptFile` metoda. První metoda zobrazí dialogové okno pro výběr souboru a jeho název souboru předá druhá metoda, která provede dešifrování.  
+ Tato úloha zahrnuje dvě metody, metodu obslužné rutiny události pro `Decrypt File` tlačítko (`buttonDecryptFile_Click`) a `DecryptFile` metodu. První metoda zobrazí dialogové okno pro výběr souboru a předá jeho název souboru druhé metodě, která provádí dešifrování.  
   
  `Decrypt` Metoda provede následující akce:  
   
-1. Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus k dešifrování obsahu.  
+1. <xref:System.Security.Cryptography.RijndaelManaged> Vytvoří symetrický algoritmus pro dešifrování obsahu.  
   
-2. Načte prvních osm bajtů <xref:System.IO.FileStream> šifrované balíčku do pole bajtů k získání délky šifrovaný klíč a vektor IV.  
+2. Přečte prvních osm bajtů <xref:System.IO.FileStream> zašifrovaného balíčku do polí bajtů, aby získala délky šifrovaného klíče a IV.  
   
-3. Extrahuje klíč a vektor IV z balíčku šifrování bajtová pole.  
+3. Extrahuje klíč a IV z šifrovacího balíčku do polí bajtů.  
   
-4. Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k dešifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
+4. Vytvoří objekt pro dešifrování <xref:System.Security.Cryptography.RijndaelManaged>klíče. <xref:System.Security.Cryptography.RSACryptoServiceProvider>  
   
-5. Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a dešifrování části textu šifer <xref:System.IO.FileStream> šifrování balíček, v blocích bajtů do <xref:System.IO.FileStream> objekt dešifrovaný souboru. Po jejím dokončení dešifrování je dokončeno.  
+5. Používá objekt pro čtení a dešifrování oddílu <xref:System.IO.FileStream> šifry textu v balíčku šifrování v blocích bajtů do <xref:System.IO.FileStream> objektu pro dešifrovaný soubor. <xref:System.Security.Cryptography.CryptoStream> Po dokončení se dešifrování dokončí.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Decrypt File` tlačítko.  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Decrypt File` pro tlačítko.  
   
  [!code-csharp[CryptoWalkThru#4](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#4)]
  [!code-vb[CryptoWalkThru#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#4)]  
   
- Přidejte následující `DecryptFile` metoda do formuláře.  
+ Do formuláře přidejte `DecryptFile` následující metodu.  
   
  [!code-csharp[CryptoWalkThru#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#6)]
  [!code-vb[CryptoWalkThru#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#6)]  
   
 ## <a name="exporting-a-public-key"></a>Export veřejného klíče  
- Tato úloha uloží klíč vytvořený `Create Keys` tlačítko do souboru. Exportuje pouze veřejné parametry.  
+ Tento úkol uloží klíč vytvořený `Create Keys` tlačítkem do souboru. Exportuje pouze veřejné parametry.  
   
- Tato úloha simuluje scénář Alice poskytuje Bob svůj veřejný klíč tak, aby mohl šifrovat soubory pro ni. On a ostatní, kteří mají tento veřejný klíč nebude možné dešifrovat, protože nemají úplný pár klíče s privátní parametry.  
+ Tato úloha simuluje scénář Alice, která dává Bobovi veřejný klíč, aby k nim mohl šifrovat soubory. A ostatní, kteří mají tento veřejný klíč, nebudou schopni je dešifrovat, protože nemají úplný pár klíčů s privátními parametry.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Export Public Key` tlačítko (`buttonExportPublicKey_Click`).  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Export Public Key` pro tlačítko (`buttonExportPublicKey_Click`).  
   
  [!code-csharp[CryptoWalkThru#8](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#8)]
  [!code-vb[CryptoWalkThru#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#8)]  
   
 ## <a name="importing-a-public-key"></a>Import veřejného klíče  
- Tato úloha načte klíč s pouze veřejné parametry, jak byly vytvořeny pomocí `Export Public Key` tlačítko a nastaví se jako název kontejneru klíčů.  
+ Tato úloha načte klíč jenom s veřejnými parametry, jak je vytvořil `Export Public Key` tlačítko, a nastaví ho jako název kontejneru klíčů.  
   
- Tato úloha simuluje scénář Bob načítání klíče Alice pouze veřejné parametrů tak může šifrovat soubory pro ni.  
+ Tato úloha simuluje scénář, který Bob načítá klíč Alice, jenom s veřejnými parametry, aby k nim mohl šifrovat soubory.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Import Public Key` tlačítko (`buttonImportPublicKey_Click`).  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Import Public Key` pro tlačítko (`buttonImportPublicKey_Click`).  
   
  [!code-csharp[CryptoWalkThru#9](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#9)]
  [!code-vb[CryptoWalkThru#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#9)]  
   
-## <a name="getting-a-private-key"></a>Získání privátní klíč  
- Tato úloha nastaví název kontejneru klíčů s názvem klíče vytvořeného pomocí `Create Keys` tlačítko. Kontejner klíčů, bude obsahovat úplný pár klíče s privátní parametry.  
+## <a name="getting-a-private-key"></a>Získání privátního klíče  
+ Tato úloha nastaví název kontejneru klíčů na název klíče vytvořeného pomocí `Create Keys` tlačítka. Kontejner klíčů bude obsahovat úplný pár klíčů s privátními parametry.  
   
- Tato úloha simuluje scénář Alici pomocí vlastního soukromého klíče k dešifrování Bob zašifrované soubory.  
+ Tato úloha simuluje scénář Alice, který používá svůj privátní klíč k dešifrování souborů šifrovaných Bobem.  
   
- Přidejte následující kód, jako `Click` obslužné rutiny události pro `Get Private Key` tlačítko (`buttonGetPrivateKey_Click`).  
+ Přidejte následující kód jako `Click` obslužnou rutinu události `Get Private Key` pro tlačítko (`buttonGetPrivateKey_Click`).  
   
  [!code-csharp[CryptoWalkThru#7](../../../samples/snippets/csharp/VS_Snippets_CLR/CryptoWalkThru/cs/Form1.cs#7)]
  [!code-vb[CryptoWalkThru#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#7)]  
   
 ## <a name="testing-the-application"></a>Testování aplikace  
- Po vytvoření aplikace, proveďte následující scénáře testování.  
+ Po vytvoření aplikace proveďte následující testovací scénáře.  
   
-#### <a name="to-create-keys-encrypt-and-decrypt"></a>K vytvoření klíčů, šifrování a dešifrování  
+#### <a name="to-create-keys-encrypt-and-decrypt"></a>Vytvoření klíčů, šifrování a dešifrování  
   
-1. Klikněte na tlačítko `Create Keys` tlačítko. Popisek zobrazí název klíče a ukazuje, že je úplné klíčový pár.  
+1. Klikněte na `Create Keys` tlačítko. Popisek zobrazí název klíče a ukáže, že se jedná o úplný pár klíčů.  
   
-2. Klikněte na tlačítko `Export Public Key` tlačítko. Všimněte si, že export veřejného klíče parametry nedojde ke změně aktuálního klíče.  
+2. Klikněte na `Export Public Key` tlačítko. Všimněte si, že export parametrů veřejného klíče nemění aktuální klíč.  
   
-3. Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
+3. Klikněte na `Encrypt File` tlačítko a vyberte soubor.  
   
-4. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná.  
+4. Klikněte na `Decrypt File` tlačítko a vyberte soubor právě zašifrovaný.  
   
-5. Zkontrolujte soubor jenom dešifrovat.  
+5. Prověřte soubor, který se právě dešifroval.  
   
-6. Ukončete aplikaci a restartujte ji otestovat načítání trvalých kontejnerů klíčů obsahuje další scénář.  
+6. Zavřete aplikaci a restartujte ji, abyste v dalším scénáři otestovali načtení trvalých kontejnerů klíčů.  
   
-#### <a name="to-encrypt-using-the-public-key"></a>K šifrování pomocí veřejného klíče  
+#### <a name="to-encrypt-using-the-public-key"></a>Šifrování pomocí veřejného klíče  
   
-1. Klikněte na tlačítko `Import Public Key` tlačítko. Popisek zobrazí název klíče a ukazuje, že je veřejný pouze.  
+1. Klikněte na `Import Public Key` tlačítko. Popisek zobrazí název klíče a ukáže, že je pouze veřejný.  
   
-2. Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
+2. Klikněte na `Encrypt File` tlačítko a vyberte soubor.  
   
-3. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. To se nezdaří, protože musí mít privátní klíč pro dešifrování.  
+3. Klikněte na `Decrypt File` tlačítko a vyberte soubor právě zašifrovaný. To se nezdaří, protože musíte mít privátní klíč k dešifrování.  
   
- Tento scénář předvádí s pouze veřejný klíč k šifrování souboru pro jinou osobu. Obvykle by tato osoba poskytnout pouze veřejný klíč a odepřít privátní klíč pro dešifrování.  
+ Tento scénář ukazuje pouze veřejný klíč k šifrování souboru pro jinou osobu. Obvykle vám někdo poskytne jenom veřejný klíč a odpírá privátní klíč k dešifrování.  
   
 #### <a name="to-decrypt-using-the-private-key"></a>Dešifrování pomocí privátního klíče  
   
-1. Klikněte na tlačítko `Get Private Key` tlačítko. Popisek zobrazí název klíče a ukazuje, zda je úplný pár klíče.  
+1. Klikněte na `Get Private Key` tlačítko. Popisek zobrazí název klíče a ukáže, zda se jedná o úplný pár klíčů.  
   
-2. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. Toto bude úspěšné, protože budete mít úplný pár klíče k dešifrování.  
+2. Klikněte na `Decrypt File` tlačítko a vyberte soubor právě zašifrovaný. Tato akce bude úspěšná, protože máte úplný pár klíčů k dešifrování.  
   
 ## <a name="see-also"></a>Viz také:
 

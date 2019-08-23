@@ -2,28 +2,28 @@
 title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: a9be679b26e395e8fed0938567184a2e5d4a8f07
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 2a01ba9be5b7939729548863769f4b85f8123dd4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589223"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966688"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
-Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
+Při serializaci uživatelsky definovaného typu do daného formátu nebo deserializaci formátu přenosu zpět do uživatelsky definovaného typu musí být daný uživatelsky definovaný typ k dispozici jak v rámci služby, tak i v klientovi. Obvykle k <xref:System.Runtime.Serialization.DataContractAttribute> tomu je atribut použit pro tyto uživatelsky definované typy <xref:System.Runtime.Serialization.DataMemberAttribute> a atribut je použit na své členy. Tento mechanismus platí také při práci s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [postupy: Serializace a deserializace](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md)dat JSON.  
   
- V některých případech musí přístup služby Windows Communication Foundation (WCF) ani klienta vygeneruje služba nebo klient, který je mimo kontrolu vývojáře objekty JSON. Jako další webové služby vystavují veřejně JSON rozhraní API, může být nepraktické pro vývojáře WCF k vytvoření místního typy definované uživatelem, do které se má deserializovat libovolného objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje vývojářům WCF pro práci s objekty JSON deserializovat, libovolného bez vytvoření uživatelem definovaných typů. To se označuje jako *slabě typovaná serializace* objektů JSON, protože typ, do kterého se deserializuje objekt JSON není známý v době kompilace.  
+ V některých scénářích musí služba Windows Communication Foundation (WCF) nebo klient přistupovat k objektům JSON generovaným službou nebo klientem, který se nachází mimo ovládací prvek vývojáře. V případě, že více webových služeb zveřejňuje rozhraní API JSON, může být pro vývojáře WCF nepraktické vytvořit místní uživatelsky definované typy, do kterých se mají deserializovat libovolné objekty JSON. Tato ukázka poskytuje mechanismus, který vývojářům WCF umožňuje pracovat s deserializovanými a libovolnými objekty JSON, aniž by museli vytvářet uživatelsky definované typy. To se označuje jako *slabě typované serializace* objektů JSON, protože typ, ve kterém je deserializace objektu JSON, není v době kompilace znám.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Například veřejné rozhraní API webové služby vrátí následující objekt JSON, který popisuje některé informace o uživateli služby.  
+ Například rozhraní API veřejné webové služby vrací následující objekt JSON, který popisuje některé informace o uživateli služby.  
   
 ```json  
 {"personal": {"name": "Paul", "age": 23, "height": 1.7, "isSingle": true, "luckyNumbers": [5,17,21]}, "favoriteBands": ["Band ABC", "Band XYZ"]}  
 ```  
   
- K deserializaci tohoto objektu, musí implementovat klienta WCF uživatelem definované typy.  
+ K deserializaci tohoto objektu musí klient WCF implementovat následující uživatelsky definované typy.  
   
 ```  
 [DataContract]  
@@ -56,9 +56,9 @@ Při serializaci uživatelem definovaný typ daného přenosový formát nebo de
  }  
 ```  
   
- To může být náročné, zejména v případě, že klient má pro zpracování více než jeden typ objektu JSON.  
+ To může být náročné, zejména v případě, že klient musí zpracovat více než jeden typ objektu JSON.  
   
- `JsonObject` Typ zadaný v tomto příkladu představuje slabě typovaná reprezentace deserializovaný objekt JSON. `JsonObject` spoléhá na fyzické mapování mezi objekty JSON a slovníky rozhraní .NET Framework a mapování mezi JSON pole a pole rozhraní .NET Framework. Následující kód ukazuje `JsonObject` typu.  
+ `JsonObject` Typ poskytnutý touto ukázkou zavádí slabě typované reprezentace objektu JSON deserializovatelné. `JsonObject`spoléhá na přirozené mapování mezi objekty JSON a .NET Framework slovníku a mapování mezi poli JSON a .NET Framework poli. Následující kód ukazuje `JsonObject` typ.  
   
 ```  
 // Instantiation of JsonObject json omitted  
@@ -78,12 +78,12 @@ string[] favoriteBands = {
                                     };  
 ```  
   
- Všimněte si, že můžete "Vyhledat" objekty JSON a pole bez nutnosti pro deklaraci typu v době kompilace. Vysvětlení požadavek na nejvyšší úrovni `["root"]` objektu, naleznete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
+ Všimněte si, že můžete procházet objekty JSON a pole bez nutnosti deklarovat jejich typ v době kompilace. Vysvětlení požadavku na objekt nejvyšší úrovně `["root"]` naleznete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
   
 > [!NOTE]
->  `JsonObject` Třídy je k dispozici pouze jako příklad. Neprošla dostatečně důkladnými a neměli byste používat v produkčním prostředí. Zřejmé nepřímo slabě typovaná serializace JSON je nedostatek bezpečnost typů, pokud pracujete s `JsonObject`.  
+> `JsonObject` Třída je k dispozici pouze jako příklad. Není důkladně testován a neměl by se používat v produkčním prostředí. Zjevným nedostatečně typované serializace JSON je nedostatečná typ při práci s `JsonObject`.  
   
- Použít `JsonObject` typu, musíte použít klienta kontrakt <xref:System.ServiceModel.Channels.Message> jako její typ vrácené hodnoty.  
+ Chcete-li `JsonObject` použít typ, kontrakt klientské operace musí použít <xref:System.ServiceModel.Channels.Message> jako svůj návratový typ.  
   
 ```  
 [ServiceContract]  
@@ -98,7 +98,7 @@ string[] favoriteBands = {
     }  
 ```  
   
- `JsonObject` Je pak instance, jak je znázorněno v následujícím kódu.  
+ Pak `JsonObject` je vytvořena instance, jak je znázorněno v následujícím kódu.  
   
 ```  
 // Code to instantiate IClientSideProfileService channel omitted…  
@@ -110,9 +110,9 @@ XmlDictionaryReader reader = channel.GetMemberProfile().GetReaderAtBodyContents(
 JsonObject json = new JsonObject(reader);  
 ```  
   
- `JsonObject` Přebírá konstruktor <xref:System.Xml.XmlDictionaryReader>, kterého se získává <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> metoda. Čtecí modul obsahuje reprezentaci v jazyce XML JSON zprávu přijatou klientem. Další informace naleznete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
+ Konstruktor přebírá <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> metodu, která je získána prostřednictvím metody. <xref:System.Xml.XmlDictionaryReader> `JsonObject` Čtecí modul obsahuje reprezentaci XML zprávy JSON, kterou klient přijal. Další informace naleznete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
   
- Program vygeneruje následující výstup:  
+ Program vytvoří následující výstup:  
   
 ```  
 Service listening at http://localhost:8000/.  
@@ -123,19 +123,19 @@ My lucky numbers are 5, 17, and 21.
 My favorite bands are Band ABC and Band XYZ.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Sestavte řešení WeaklyTypedJson.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Sestavte řešení WeaklyTypedJson. sln, jak je popsáno v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spuštění řešení.  
+3. Spusťte řešení.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Ajax\WeaklyTypedJson`  

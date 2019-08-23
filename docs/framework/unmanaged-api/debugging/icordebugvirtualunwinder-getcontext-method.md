@@ -1,18 +1,18 @@
 ---
-title: ICorDebugVirtualUnwinder::GetContext – metoda
+title: 'ICorDebugVirtualUnwinder:: GetContext – Metoda'
 ms.date: 03/30/2017
 ms.assetid: fe502a76-3068-47e5-a0a0-85ccb72dfac3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8377c374ae71c45cf198446d66a5f9a235a2142f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a6a8be489ff2a99bb9da393577514b2442d50db8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775360"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967956"
 ---
-# <a name="icordebugvirtualunwindergetcontext-method"></a>ICorDebugVirtualUnwinder::GetContext – metoda
-Získá aktuální kontext tohoto unwinder.  
+# <a name="icordebugvirtualunwindergetcontext-method"></a>ICorDebugVirtualUnwinder:: GetContext – Metoda
+Získá aktuální kontext tohoto unwind.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,36 +27,36 @@ HRESULT GetContext(
   
 ## <a name="parameters"></a>Parametry  
  `contextFlags`  
- [in] Příznaky, které určují, které části kontext, který má vrátit (definované v souboru WinNT.h).  
+ pro Příznaky, které určují, které části kontextu se mají vrátit (definované v souboru WinNT. h).  
   
  `cbContextBuf`  
- [in] Počet bajtů v `contextBuf`.  
+ pro Počet bajtů v `contextBuf`.  
   
  `contextSize`  
- [out] Ukazatel na počet bajtů zapsaný ve skutečnosti na `contextBuf`.  
+ mimo Ukazatel na počet bajtů, které `contextBuf`jsou ve skutečnosti zapsány.  
   
  `contextBuf`  
- [out] Bajtové pole obsahující aktuální kontext tohoto unwinder.  
+ mimo Bajtové pole obsahující aktuální kontext tohoto unwindu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Žádné služeb při selhání přijme mscordbi hodnotu HRESULT je považovat za fatální a způsobí, že icordebug – rozhraní API vrátit `CORDBG_E_DATA_TARGET_ERROR`.  
+ Jakákoli neúspěšná hodnota HRESULT přijatá v mscordbi se považuje za závažnou a způsobí, že `CORDBG_E_DATA_TARGET_ERROR`rozhraní ICorDebug API vrátí.  
   
 ## <a name="remarks"></a>Poznámky  
- Nastavit počáteční hodnotu `contextBuf` argument do vyrovnávací paměti kontextu vrácená voláním [icordebugstackwalk::getcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) metody.  
+ Nastavte počáteční hodnotu `contextBuf` argumentu na vyrovnávací paměť kontextu vrácenou voláním metody [ICorDebugStackWalk:: GetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md) .  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
- Protože odvíjení může pouze obnovení část registrů, jako je například stálé zaregistruje pouze, kontext nemusí přesně odpovídat stav registrace při volání metody skutečný.  
+ Vzhledem k tomu, že unwind může obnovit pouze podmnožinu registrů, jako jsou pouze nestálé Registry, kontext nemusí přesně odpovídat stavu registrace v době samotného volání metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

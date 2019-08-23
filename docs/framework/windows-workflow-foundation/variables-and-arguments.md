@@ -2,18 +2,18 @@
 title: Proměnné a argumenty
 ms.date: 03/30/2017
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
-ms.openlocfilehash: 29ce5222435b68ed13cbc967e58e72a937625e8e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 251641c924bbf33c176f519f8fc4f9dec59e2eb8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669482"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962197"
 ---
 # <a name="variables-and-arguments"></a>Proměnné a argumenty
-Ve Windows Workflow Foundation (WF), proměnné představují úložiště dat a argumenty představují tok dat do a z aktivity. Aktivita má sadu argumentů a tvoří podpis aktivity. Kromě toho aktivita můžete udržovat seznam proměnných, do kterých Vývojář můžete přidávat nebo odebírat proměnné při návrhu pracovního postupu. Argument je vázán vlastnosti autorefresh pomocí výrazu, který vrací hodnotu.  
+V programovací model Windows Workflow Foundation (WF) proměnné reprezentují úložiště dat a argumenty představuje tok dat do a z aktivity. Aktivita má sadu argumentů a tvoří podpis aktivity. Kromě toho aktivita může udržovat seznam proměnných, ke kterým může vývojář přidávat nebo odebírat proměnné během návrhu pracovního postupu. Argument je svázán pomocí výrazu, který vrací hodnotu.  
   
 ## <a name="variables"></a>Proměnné  
- Proměnné jsou umístění úložiště pro data. Proměnné jsou deklarovány jako součást definice pracovního postupu. Využijte proměnné na hodnoty v době běhu a tyto hodnoty jsou uloženy jako součást stavu instance pracovního postupu. Definice proměnné určuje typ proměnné a volitelně také název. Následující kód ukazuje, jak deklarovat proměnné, přiřadit hodnotu pomocí <xref:System.Activities.Statements.Assign%601> aktivitu a zobrazte její hodnotu na pomocí konzoly <xref:System.Activities.Statements.WriteLine> aktivity.  
+ Proměnné jsou umístění úložiště pro data. Proměnné jsou deklarovány jako součást definice pracovního postupu. Proměnné přebírají hodnoty za běhu a tyto hodnoty jsou uloženy jako součást stavu instance pracovního postupu. Definice proměnné určuje typ proměnné a volitelně i název. Následující kód ukazuje, jak deklarovat proměnnou, přiřadit jí hodnotu pomocí <xref:System.Activities.Statements.Assign%601> aktivity a pak zobrazit její hodnotu v konzole s <xref:System.Activities.Statements.WriteLine> použitím aktivity.  
   
 ```csharp  
 // Define a variable named "str" of type string.  
@@ -44,7 +44,7 @@ Activity wf = new Sequence()
 WorkflowInvoker.Invoke(wf);  
 ```  
   
- Volitelně můžete zadat výraz výchozí hodnoty jako součást deklarace proměnné. Proměnné také můžete mít modifikátory. Pro příklad, pokud je proměnná jen pro čtení a jen pro čtení <xref:System.Activities.VariableModifiers> lze použít modifikátor. V následujícím příkladu se vytvoří proměnnou jen pro čtení, který má přiřazenu výchozí hodnotu.  
+ Výraz výchozí hodnoty lze volitelně zadat jako součást deklarace proměnné. Proměnné mohou mít také modifikátory. Například pokud je proměnná jen pro čtení, lze použít modifikátor jen <xref:System.Activities.VariableModifiers> pro čtení. V následujícím příkladu je vytvořena proměnná jen pro čtení, která má přiřazenou výchozí hodnotu.  
   
 ```csharp  
 // Define a read-only variable with a default value.  
@@ -55,24 +55,24 @@ Variable<string> var = new Variable<string>
 };  
 ```  
   
-## <a name="variable-scoping"></a>Proměnná rozsahu  
- Životnost proměnné v době běhu je rovna hodnotě doba života aktivity, která jej deklaruje. Po dokončení aktivity své proměnné se vyčistí a můžete se už neodkazuje.  
+## <a name="variable-scoping"></a>Rozsah proměnné  
+ Doba života proměnné za běhu se rovná době životnosti aktivity, která je deklaruje. Po dokončení aktivity se vyčistí její proměnné a již na ně nelze odkazovat.  
   
 ## <a name="arguments"></a>Arguments  
- Autoři aktivity používat argumenty pro definování dat, způsob putuje do a z aktivity. Každý argument má směr zadaný: <xref:System.Activities.ArgumentDirection.In>, <xref:System.Activities.ArgumentDirection.Out>, nebo <xref:System.Activities.ArgumentDirection.InOut>.  
+ Autoři aktivit používají argumenty k definování způsobu, jakým se data budou natékat do aktivity a z ní. Každý argument má určený směr: <xref:System.Activities.ArgumentDirection.In>, <xref:System.Activities.ArgumentDirection.Out>nebo <xref:System.Activities.ArgumentDirection.InOut>.  
   
- Modul workflow runtime zaručuje následující skutečnosti o časování přesun dat do a z aktivity:  
+ Modul runtime pracovního postupu poskytuje následující záruky týkající se časování přesunu dat do aktivit a mimo ně:  
   
-1. Při spuštění aktivity spuštění se počítají hodnoty všech argumentů vstupu a vstupu a výstupu. Například, bez ohledu na to při <xref:System.Activities.Argument.Get%2A> je volána, vrácená hodnota se počítá ten modulem runtime před jeho vyvolání `Execute`.  
+1. Při zahájení aktivity se vypočítají hodnoty všech vstupních a vstupních/výstupních argumentů. Například bez ohledu na to, kdy <xref:System.Activities.Argument.Get%2A> je volána, je vrácená hodnota ta, kterou vypočítal modul runtime před jeho `Execute`vyvoláním.  
   
-2. Když <xref:System.Activities.InOutArgument%601.Set%2A> je volána, modul runtime nastaví hodnotu okamžitě.  
+2. Když <xref:System.Activities.InOutArgument%601.Set%2A> je volána, modul runtime hodnotu nastaví okamžitě.  
   
-3. Argumenty můžou mít svoje <xref:System.Activities.Argument.EvaluationOrder%2A> zadané. <xref:System.Activities.Argument.EvaluationOrder%2A> je založený na nule hodnotu, která určuje pořadí, ve kterém je vyhodnocen argument. Ve výchozím nastavení, pořadí vyhodnocení argumentu není zadána a je rovna <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> hodnotu. Nastavte <xref:System.Activities.Argument.EvaluationOrder%2A> na hodnotu větší nebo rovna hodnotě nula. Chcete-li určit pořadí vyhodnocení pro tento argument. Windows Workflow Foundation vyhodnotí argumentů s pořadím vyhodnocení zadané ve vzestupném pořadí. Všimněte si, že před těmi, které mají zadanou evaluationorder jsou vyhodnoceny argumenty s objednávkou neurčené hodnocení.  
+3. Argumenty mohou být <xref:System.Activities.Argument.EvaluationOrder%2A> volitelně zadány. <xref:System.Activities.Argument.EvaluationOrder%2A>je hodnota založená na nule, která určuje pořadí, ve kterém je argument vyhodnocen. Ve výchozím nastavení není pořadí vyhodnocování argumentu určeno a je rovno <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> hodnotě. Nastavte <xref:System.Activities.Argument.EvaluationOrder%2A> na hodnotu větší nebo rovnou nule a určete pořadí vyhodnocování pro tento argument. Programovací model Windows Workflow Foundation vyhodnotí argumenty se zadaným pořadím vyhodnocení ve vzestupném pořadí. Všimněte si, že argumenty s nespecifikovaným pořadím hodnocení jsou vyhodnoceny před hodnotami se zadaným pořadím vyhodnocení.  
   
- Autor aktivity můžete použít mechanismus silného typu pro vystavení svých argumentů. Toho lze dosáhnout deklarování vlastností typu <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>, a <xref:System.Activities.InOutArgument%601>. To umožňuje autorovi aktivity stanovit konkrétní smlouvy o data přicházející do proměnné a z aktivity.  
+ Autor aktivity může použít mechanismus silného typu k odhalení svých argumentů. Toho lze dosáhnout deklarováním vlastností typu <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>a <xref:System.Activities.InOutArgument%601>. To umožňuje autorovi aktivity navázat konkrétní kontrakt na data, která se budou překládat do aktivity a z ní.  
   
-### <a name="defining-the-arguments-on-an-activity"></a>Definování argumenty pro aktivitu  
- Argumenty můžete definovat pro aktivitu tak, že zadáte vlastnosti typu <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>, a <xref:System.Activities.InOutArgument%601>. Následující kód ukazuje, jak definovat argumenty `Prompt` aktivitu, která přijímá řetězec k zobrazení pro uživatele a vrátí řetězec, který obsahuje odpověď uživatele.  
+### <a name="defining-the-arguments-on-an-activity"></a>Definování argumentů aktivity  
+ Argumenty lze definovat u aktivity zadáním vlastností typu <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>a <xref:System.Activities.InOutArgument%601>. Následující kód ukazuje, jak definovat argumenty pro `Prompt` aktivitu, která přebírá řetězec, který se má zobrazit uživateli, a vrátí řetězec, který obsahuje odpověď uživatele.  
   
 ```csharp  
 public class Prompt : Activity  
@@ -84,10 +84,10 @@ public class Prompt : Activity
 ```  
   
 > [!NOTE]
->  Aktivity, které vrátí jednu hodnotu lze odvodit z <xref:System.Activities.Activity%601>, <xref:System.Activities.NativeActivity%601>, nebo <xref:System.Activities.CodeActivity%601>. Tyto aktivity mají jasně definovaných <xref:System.Activities.OutArgument%601> s názvem <xref:System.Activities.Activity%601.Result%2A> , který obsahuje vrácenou hodnotu aktivity.  
+> Aktivity, které vracejí jednu hodnotu, mohou být <xref:System.Activities.Activity%601>odvozeny z <xref:System.Activities.CodeActivity%601>, <xref:System.Activities.NativeActivity%601>nebo. Tyto aktivity mají dobře definovaný <xref:System.Activities.OutArgument%601> název <xref:System.Activities.Activity%601.Result%2A> , který obsahuje vrácenou hodnotu aktivity.  
   
 ### <a name="using-variables-and-arguments-in-workflows"></a>Použití proměnných a argumentů v pracovních postupech  
- Následující příklad ukazuje, jak proměnné a argumenty se používají v pracovním postupu. Pracovní postup je sekvence, která deklaruje tří proměnných: `var1`, `var2`, a `var3`. První aktivitu v pracovním postupu je `Assign` aktivity, který přiřazuje hodnotu proměnné `var1` proměnné `var2`. Následuje `WriteLine` aktivitu, která vytiskne hodnotu `var2` proměnné. Dále je další `Assign` aktivity, který přiřazuje hodnotu proměnné `var2` proměnné `var3`. Nakonec je jiný `WriteLine` aktivitu, která vytiskne hodnotu `var3` proměnné. První `Assign` používá aktivitu `InArgument<string>` a `OutArgument<string>` objekty, které explicitně představují vazby pro argumenty aktivity. `InArgument<string>` slouží k <xref:System.Activities.Statements.Assign.Value%2A> vzhledem k tomu, že hodnota se přenášejí do <xref:System.Activities.Statements.Assign%601> aktivity prostřednictvím jeho <xref:System.Activities.Statements.Assign.Value%2A> argument, a `OutArgument<string>` se používá pro <xref:System.Activities.Statements.Assign.To%2A> vzhledem k tomu, že hodnota se přenášejí z celkového počtu <xref:System.Activities.Statements.Assign.To%2A> argument do proměnné. Druhá `Assign` aktivity totéž provede další compact ale ekvivalentní syntax, který používá implicitní přetypování. `WriteLine` Aktivity také používají nejúspornější syntaxí.  
+ Následující příklad ukazuje, jak jsou proměnné a argumenty použity v pracovním postupu. Pracovní postup je sekvence, která deklaruje tři proměnné: `var1`, `var2`a `var3`. První aktivita v pracovním postupu je `Assign` aktivita, která přiřazuje hodnotu proměnné `var1` proměnné `var2`. Následuje `WriteLine` aktivita, která tiskne hodnotu `var2` proměnné. Dále je `Assign` další aktivita, která přiřadí hodnotu proměnné `var2` `var3`proměnné. Nakonec je k dispozici jiná `WriteLine` aktivita, která vytiskne hodnotu `var3` proměnné. První `Assign` aktivita používá `InArgument<string>` a `OutArgument<string>` objekty, které explicitně reprezentují vazby pro argumenty aktivity. `InArgument<string>`používá se pro <xref:System.Activities.Statements.Assign.Value%2A> , protože hodnota je předávána <xref:System.Activities.Statements.Assign%601> do aktivity pomocí jejího <xref:System.Activities.Statements.Assign.Value%2A> argumentu a `OutArgument<string>` <xref:System.Activities.Statements.Assign.To%2A> používá se pro <xref:System.Activities.Statements.Assign.To%2A> , protože hodnota je předávána z argumentu do proměnné. Druhá `Assign` aktivita dosahuje stejné věci s více kompaktní, ale ekvivalentní syntaxí, která používá implicitní přetypování. `WriteLine` Aktivity také používají syntaxi Compact.  
   
 ```csharp  
 // Declare three variables; the first one is given an initial value.  
@@ -122,8 +122,8 @@ Activity wf = new Sequence
 WorkflowInvoker.Invoke(wf);  
 ```  
   
-### <a name="using-variables-and-arguments-in-code-based-activities"></a>Pomocí proměnné a argumenty aktivity založený na kódu  
- Předchozí příklady ukazují, jak používat argumenty a proměnných v pracovních postupech a deklarativní aktivity. Proměnné a argumenty se používají také v aktivity založený na kódu. Využití je obecně velmi podobné. Proměnné představují úložiště dat v rámci aktivity a argumenty představují tok dat do nebo z něj aktivity a jsou vázány, které představují, kde se data posílají do nebo z jiných proměnných nebo argumentů v pracovním postupu Autor pracovního postupu. Chcete-li get nebo set, použita hodnota proměnné nebo argumentu do aktivity, objekt context aktivita, která představuje aktuální prostředí provádění aktivity. To je předán <xref:System.Activities.CodeActivity%601.Execute%2A> metodu činnosti pomocí modulu runtime pracovního postupu. V tomto příkladu vlastní `Add` aktivity je definován, která má dvě <xref:System.Activities.ArgumentDirection.In> argumenty. Pro přístup k hodnotě argumenty, <xref:System.Activities.Argument.Get%2A> metoda se používá a je použit kontext, který byl předán pomocí modulu runtime pracovního postupu.  
+### <a name="using-variables-and-arguments-in-code-based-activities"></a>Použití proměnných a argumentů v aktivitách založených na kódu  
+ Předchozí příklady ukazují, jak používat argumenty a proměnné v pracovních postupech a deklarativních aktivitách. Argumenty a proměnné jsou také používány v aktivitách založených na kódu. Konceptuální využití je velmi podobné. Proměnné představují úložiště dat v rámci aktivity a argumenty představují tok dat do nebo z aktivity a jsou vázány autorem pracovního postupu na jiné proměnné nebo argumenty v pracovním postupu, které představují, kde data přecházejí do nebo z. Chcete-li získat nebo nastavit hodnotu proměnné nebo argumentu v aktivitě, musí být použit kontext aktivity, který představuje aktuální spouštěcí prostředí aktivity. Toto je předáno do <xref:System.Activities.CodeActivity%601.Execute%2A> metody aktivity modulem runtime pracovního postupu. V tomto příkladu je definována vlastní `Add` aktivita, která má dva <xref:System.Activities.ArgumentDirection.In> argumenty. Pro přístup k hodnotě argumentů <xref:System.Activities.Argument.Get%2A> je použita metoda a je použit kontext, který byl předán modulem runtime pracovního postupu.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -141,4 +141,4 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- Další informace o práci s argumenty, proměnné a výrazy v kódu, naleznete v tématu [vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md) a [povinné argumenty a skupiny přetížení](required-arguments-and-overload-groups.md).
+ Další informace o práci s argumenty, proměnnými a výrazy v kódu naleznete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md) a [vyžadovaných argumentů a přetížených skupin](required-arguments-and-overload-groups.md).

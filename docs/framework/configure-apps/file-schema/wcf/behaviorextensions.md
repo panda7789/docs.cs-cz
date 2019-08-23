@@ -2,15 +2,15 @@
 title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
-ms.openlocfilehash: 81ce9bb0e55fe4570f8a21187d9df80ea22393fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bcf1f1dcdba50c3e7fba8eb170132d0cf47c4271
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673456"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919818"
 ---
-# <a name="behaviorextensions"></a>\<behaviorExtensions>
-Rozšíření chování povolují uživateli vytvořit uživatelem definované chování elementů. Tyto prvky lze použít společně s standardní prvky chování Windows Communication Foundation (WCF). `behaviorExtensions` Oddíl definuje element tak, že je možné v konfiguraci. Tady je příklad obvyklé chování rozšíření.  
+# <a name="behaviorextensions"></a>\<behaviorExtensions >
+Rozšíření chování umožňují uživateli vytvářet uživatelsky definované prvky chování. Tyto prvky lze použít společně se standardními prvky chování Windows Communication Foundation (WCF). `behaviorExtensions` Oddíl definuje prvek tak, aby jej bylo možné použít v konfiguraci. Tady je příklad typického rozšíření chování.  
   
 ```xml  
 <system.serviceModel>
@@ -24,9 +24,9 @@ Rozšíření chování povolují uživateli vytvořit uživatelem definované c
 </system.serviceModel>
 ```  
   
- Chcete-li přidat možnosti konfigurace na prvek, budete muset zápisu a registrace konfiguračního prvku. Další informace najdete v článku <xref:System.Configuration> dokumentaci.  
+ Chcete-li přidat možnosti konfigurace elementu, je nutné zapsat a zaregistrovat prvek konfigurace. Další informace najdete <xref:System.Configuration> v dokumentaci.  
   
- Po definování elementu a jeho typ konfigurace rozšíření je možné, jak je znázorněno v následujícím příkladu.  
+ Po definování prvku a jeho typu konfigurace lze použít rozšíření, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <behaviors>
@@ -43,15 +43,15 @@ Rozšíření chování povolují uživateli vytvořit uživatelem definované c
 ```  
   
 ## <a name="security"></a>Zabezpečení  
- Důrazně doporučujeme použít plně kvalifikované názvy sestavení při registraci typů v `machine.config` a `app.config` soubory. Pokud typ není jednoznačně definována, zavaděč modulu CLR typu prohledá v následujících umístěních v uvedeném pořadí:  
+ Důrazně doporučujeme použít plně kvalifikované názvy sestavení při registraci typů v `machine.config` souborech a. `app.config` Pokud typ není definován jednoznačně, vyhledá zavaděč typu CLR v následujících umístěních v zadaném pořadí:  
   
- Pokud je sestavení typu je známo, prohledá zavaděč konfiguračního souboru přesměrování umístění mezipaměti GAC, aktuální sestavení s využitím informací o konfiguraci a základní adresář aplikace. Pokud sestavení není znám, vyhledá zavaděč aktuální sestavení mscorlib a umístění vrácené `TypeResolve` obslužné rutiny události. Toto pořadí hledání CLR se dají upravovat pomocí háky například mechanismus předávání typu a AppDomain.TypeResolve událostí.  
+ Pokud je známo sestavení typu, zavaděč vyhledá umístění pro přesměrování konfiguračního souboru, GAC, aktuální sestavení s použitím informací o konfiguraci a základního adresáře aplikace. Pokud je sestavení neznámé, zavaděč vyhledá aktuální sestavení, mscorlib a umístění vrácené `TypeResolve` obslužnou rutinou události. Toto pořadí vyhledávání CLR lze upravit pomocí háčků, jako je mechanismus předávání typů a událost AppDomain. TypeResolve.  
   
- Útočník může zneužít pořadí hledání modulu CLR a spustit neoprávněný kód. Pomocí plně kvalifikované názvy (silnou) jednoznačně identifikuje typ a ještě zvyšuje zabezpečení vašeho systému.  
+ Útočník může zneužít pořadí vyhledávání CLR a spustit neautorizovaný kód. Použití plně kvalifikovaných (silných) názvů jednoznačně identifikuje typ a zvyšuje zabezpečení systému.  
   
- Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](https://go.microsoft.com/fwlink/?LinkId=95336) a <xref:System.AppDomain.TypeResolve>.  
+ Další informace najdete v tématu [jak modul runtime vyhledává sestavení](https://go.microsoft.com/fwlink/?LinkId=95336) a <xref:System.AppDomain.TypeResolve>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>
-- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

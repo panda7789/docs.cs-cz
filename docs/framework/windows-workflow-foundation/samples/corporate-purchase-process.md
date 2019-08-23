@@ -2,17 +2,17 @@
 title: Proces nákupu v podniku
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-ms.openlocfilehash: 83290245dd203d4bb63c96e94ca6bdafee4ecffb
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: d019c1915e691fcba00fa8f1b0884a898ce02fab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876174"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951524"
 ---
 # <a name="corporate-purchase-process"></a>Proces nákupu v podniku
-Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.
+V této ukázce se dozvíte, jak vytvořit velmi základní nákupní proces založený na požadavcích na návrhy (RFP) s automatickým výběrem nejlepšího návrhu. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601> aavlastníaktivitukvytvořenípracovníhopostupu,<xref:System.Activities.Statements.ForEach%601> který představuje proces.
 
- Tato ukázka obsahuje klientské aplikace technologie ASP.NET, která umožňuje komunikaci s procesem jako jiný účastníky (jako původní žadatel nebo konkrétního dodavatele).
+ Tato ukázka obsahuje klientskou aplikaci ASP.NET, která umožňuje interakci s procesem v podobě různých účastníků (jako původní žadatel nebo konkrétní dodavatel).
 
 ## <a name="requirements"></a>Požadavky
 
@@ -28,147 +28,147 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
 
 - Záložky.
 
-- Trvalost.
+- Dočasné.
 
-- Schematizovanými trvalosti.
+- Schematized Persistence.
 
-- Trasování.
+- Probíhá.
 
-- Sledování.
+- Rozteč.
 
-- Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů (webových aplikací ASP.NET a WinForms aplikace).
+- Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientech (ASP.NET webové aplikace a aplikace WinForms).
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Application\PurchaseProcess`  
+> `<InstallDrive>:\WF_WCF_Samples\WF\Application\PurchaseProcess`  
   
 ## <a name="description-of-the-process"></a>Popis procesu  
- Tento příklad ukazuje implementaci pro program Windows Workflow Foundation (WF) ke shromáždění návrhy od dodavatelů obecný společnosti.  
+ Tato ukázka předvádí implementaci programovací model Windows Workflow Foundationho (WF) programu pro shromáždění návrhů od dodavatelů pro obecnou firmu.  
   
-1. Zaměstnanec společnosti X vytvoří žádost pro návrh (RFP).  
+1. Zaměstnanec společnosti X vytvoří žádost o návrh (RFP).  
   
-    1. Typy zaměstnanců poptávku (RFP) název a popis.  
+    1. Typy zaměstnanců v názvu a popisu RFP  
   
-    2. Zaměstnanec vybere dodavatelů, které chce odeslat návrhy pozvat.  
+    2. Zaměstnanec vybírá dodavatele, kteří chce pozvat k odeslání návrhů.  
   
-2. Zaměstnanec odešle návrh.  
+2. Zaměstnanec návrh odešle.  
   
-    1. Je vytvořena instance pracovního postupu.  
+    1. Vytvoří se instance pracovního postupu.  
   
-    2. Pracovní postup čeká všichni dodavatelé odesílat své návrhy.  
+    2. Pracovní postup čeká, až všichni dodavatelé odešlou své návrhy.  
   
-3. Po přijetí jsou všechny návrhy, pracovní postup projde všechny přijaté návrhy a vybere ten nejvhodnější.  
+3. Po přijetí všech návrhů pracovní postup projde všechny přijaté návrhy a vybere ten nejlepší.  
   
-    1. Jednotlivých dodavatelů má pověst (Tato ukázka ukládá seznam pověst VendorRepository.cs).  
+    1. Každý dodavatel má reputaci (Tato ukázka uchovává seznam reputace v VendorRepository.cs).  
   
-    2. Celková hodnota návrh je určeno (hodnotu zadanou v dodavatelem) * (dodavatele uživatele zaznamenaná pověst) / 100.  
+    2. Celková hodnota návrhu je určena hodnotou (hodnota zadaná dodavatelem) * (zaznamenaná pověst dodavatele)/100.  
   
-4. Původní žadatel můžete zobrazit všechny odeslané návrhy. Nejlepší návrh se zobrazí v části speciální v sestavě.  
+4. Původní žadatel uvidí všechny odeslané návrhy. Nejlepší návrh se zobrazí ve speciální části sestavy.  
   
 ## <a name="process-definition"></a>Definice procesu  
- Používá základní logiku ukázky <xref:System.Activities.Statements.ParallelForEach%601> aktivitu, která čeká na nabídky od každého dodavatele (s použitím vlastní aktivitu, která vytvoří záložku), a registruje návrh dodavatele jako poptávku (RFP) (pomocí <xref:System.Activities.Statements.InvokeMethod> aktivit).  
+ Základní logika ukázky používá <xref:System.Activities.Statements.ParallelForEach%601> aktivitu, která čeká na nabídky od každého dodavatele (pomocí vlastní aktivity, která vytvoří záložku) a zaregistruje návrh dodavatele jako RFP ( <xref:System.Activities.Statements.InvokeMethod> s použitím aktivity).  
   
- Ukázka pak Iteruje přes všechny přijaté návrhy uložené v `RfpRepository`, výpočtu upravená hodnota (pomocí <xref:System.Activities.Statements.Assign> aktivity a <xref:System.Activities.Expressions> aktivity), a pokud upravená hodnota je lepší než předchozí nejlepší nabídky přiřadí hodnotu nové doporučené nabídky (pomocí <xref:System.Activities.Statements.If> a <xref:System.Activities.Statements.Assign> aktivit).  
+ Ukázka pak projde všechny přijaté návrhy uložené v `RfpRepository`, vypočítá upravenou hodnotu ( <xref:System.Activities.Statements.Assign> pomocí aktivity a <xref:System.Activities.Expressions> aktivit) a pokud je upravená hodnota lepší než předchozí nejlepší nabídka, přiřadí novou hodnotu jako nejlepší nabídku (pomocí <xref:System.Activities.Statements.If> aktivit a <xref:System.Activities.Statements.Assign> ).  
   
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce  
  Tato ukázka obsahuje následující projekty.  
   
 |Project|Popis|  
 |-------------|-----------------|  
-|Společné|Objekty entity používané v rámci procesu (žádost o návrh, výrobce a dodavatele návrh).|  
-|WfDefinition|Definice procesu (jako [!INCLUDE[wf1](../../../../includes/wf1-md.md)] programu) a hostitele (`PurchaseProcessHost`) používají klientské aplikace pro vytváření a používání instancí pracovního procesu nákupu.|  
-|Webový klient|Klientská aplikace technologie ASP.NET, která umožňuje uživatelům vytvořit a účast v instancích služby procesu nákupu. Vytvoření vlastního hostitele se používá k interakci s modul pracovních postupů.|  
-|WinFormsClient|Klientská aplikace Windows Forms, který umožňuje uživatelům vytvořit a účast v instancích služby procesu nákupu. Vytvoření vlastního hostitele se používá k interakci s modul pracovních postupů.|  
+|Společné|Objekty entit použité v rámci procesu (žádost o návrh, dodavatel a návrh dodavatele).|  
+|WfDefinition|Definice procesu (jako [!INCLUDE[wf1](../../../../includes/wf1-md.md)] program) a hostitel (`PurchaseProcessHost`) používané klientskými aplikacemi pro vytváření a používání instancí pracovního postupu procesu nákupu.|  
+|Webový klient|Klientská aplikace ASP.NET, která umožňuje uživatelům vytvářet a přispívat do instancí procesu nákupu. Používá vlastního hostitele k interakci s modulem pracovního postupu.|  
+|WinFormsClient|Klientská aplikace model Windows Forms, která umožňuje uživatelům vytvářet a přispívat do instancí procesu nákupu. Používá vlastního hostitele k interakci s modulem pracovního postupu.|  
   
 ### <a name="wfdefinition"></a>WfDefinition  
- Následující tabulka obsahuje popis nejdůležitější soubory v projektu WfDefinition.  
+ Následující tabulka obsahuje popis nejdůležitějších souborů v projektu WfDefinition.  
   
 |Soubor|Popis|  
 |----------|-----------------|  
 |IPurchaseProcessHost.cs|Rozhraní pro hostitele pracovního postupu.|  
-|PurchaseProcessHost.cs|Implementace hostitele pracovního postupu. Hostitel získává podrobnosti modulu runtime pracovního postupu a používá se v klientských aplikacích načíst, spuštění a interakci s `PurchaseProcess` instancí pracovních postupů.|  
-|PurchaseProcessWorkflow.cs|Aktivita, která obsahuje definice pracovního procesu nákupu (je odvozena z <xref:System.Activities.Activity>).<br /><br /> Aktivity, které jsou odvozeny z <xref:System.Activities.Activity> compose funkce sloučením existující vlastní aktivity a aktivit [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] knihovny aktivit. Tyto aktivity sestavení je nejzákladnější možnost pro vytvoření vlastní funkce.|  
-|WaitForVendorProposal.cs|Tato vlastní aktivita je odvozena z <xref:System.Activities.NativeActivity> a vytvoří pojmenovaný záložku, která musí být obnoveno později dodavatelem při odesílání návrh.<br /><br /> Aktivity, které jsou odvozeny z <xref:System.Activities.NativeActivity>, jako jsou ty, které jsou odvozeny z <xref:System.Activities.CodeActivity>, vytvořit imperativní funkce tak, že přepíšete <xref:System.Activities.NativeActivity.Execute%2A>, ale také mají přístup ke všem funkce modulu runtime pracovního postupu pomocí <xref:System.Activities.ActivityContext> , který získá předán `Execute` metody. Tento kontext zahrnuje podporu pro plánování a zrušení podřízené aktivity, nastavení bez zachování zóny (zablokuje spuštění během které modul runtime není zachována data pro pracovní postupy, jako například v rámci atomické transakce), a <xref:System.Activities.Bookmark> objekty (obslužné rutiny pro obnovení pozastavených pracovních postupů).|  
-|TrackingParticipant.cs|A <xref:System.Activities.Tracking.TrackingParticipant> , který přijímá všechny události sledování a uloží je do textového souboru.<br /><br /> Sledování účastníci se přidají do instance pracovního postupu jako rozšíření.|  
-|XmlWorkflowInstanceStore.cs|Vlastní <xref:System.Runtime.DurableInstancing.InstanceStore> , která ukládá aplikací pracovních postupů do souborů XML.|  
-|XmlPersistenceParticipant.cs|Vlastní <xref:System.Activities.Persistence.PersistenceParticipant> instance žádosti pro návrh, který uloží do souboru XML.|  
-|AsyncResult.cs / CompletedAsyncResult.cs|Pomocné třídy pro implementaci asynchronního vzoru v součástech trvalosti.|  
+|PurchaseProcessHost.cs|Implementace hostitele pro pracovní postup. Hostitel vyabstrakce Podrobnosti modulu runtime pracovního postupu a používá se ve všech klientských aplikacích pro načítání, spouštění a interakci s `PurchaseProcess` instancemi pracovního postupu.|  
+|PurchaseProcessWorkflow.cs|Aktivita, která obsahuje definici pracovního postupu procesu nákupu (je odvozena od <xref:System.Activities.Activity>).<br /><br /> Aktivity, které jsou <xref:System.Activities.Activity> odvozeny od funkce vytváření sestavením existujících vlastních aktivit a [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] aktivit z knihovny aktivit. Sestavování těchto aktivit je nejzákladnější způsob, jak vytvořit vlastní funkce.|  
+|WaitForVendorProposal.cs|Tato vlastní aktivita je odvozena <xref:System.Activities.NativeActivity> z a vytvoří pojmenovanou záložku, kterou musí dodavatel obnovit později při odeslání návrhu.<br /><br /> Aktivity, které jsou <xref:System.Activities.NativeActivity>odvozeny z, podobně jako <xref:System.Activities.CodeActivity>ty, které jsou odvozeny <xref:System.Activities.NativeActivity.Execute%2A>z, vytvoří imperativní funkce přepsáním, ale také mají přístup ke všem funkcím <xref:System.Activities.ActivityContext> modulu runtime pracovního postupu prostřednictvím rozhraní, které získá. předáno do `Execute` metody. Tento kontext má podporu pro plánování a zrušení podřízených aktivit, nastavení zón bez trvalého uložení (bloky spuštění, během kterých modul runtime neuchovává data pracovního postupu, například v rámci atomických transakcí), a <xref:System.Activities.Bookmark> objekty (popisovače pro obnovení pozastavených pracovních postupů.|  
+|TrackingParticipant.cs|<xref:System.Activities.Tracking.TrackingParticipant> Který přijímá všechny události sledování a ukládá je do textového souboru.<br /><br /> Sledování účastníků je přidáno do instance pracovního postupu jako rozšíření.|  
+|XmlWorkflowInstanceStore.cs|Vlastní <xref:System.Runtime.DurableInstancing.InstanceStore> , který ukládá aplikace pracovního postupu do souborů XML.|  
+|XmlPersistenceParticipant.cs|Vlastní <xref:System.Activities.Persistence.PersistenceParticipant> , který uloží instanci žádosti o návrh do souboru XML.|  
+|AsyncResult.cs/CompletedAsyncResult.cs|Pomocné třídy pro implementaci asynchronního vzoru v součástech trvalosti.|  
   
 ### <a name="common"></a>Společné  
- Následující tabulka obsahuje popis nejdůležitější tříd v běžných projektu.  
+ Následující tabulka obsahuje popis nejdůležitějších tříd v rámci společného projektu.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|Dodavatele|Dodavatel, který odešle návrhů v požadavku pro návrhy.|  
-|RequestForProposal|Pozvánku pro dodavatele odeslat návrhy na konkrétní zboží nebo služeb je požadavek pro návrhy (RFP).|  
-|VendorProposal|Návrh dodavatele a konkrétní poptávku (RFP).|  
-|VendorRepository|Úložiště dodavatele. Tato implementace obsahuje kolekci v paměť instancí dodavatele a metody pro vystavení tyto instance.|  
-|RfpRepository|Úložiště požadavky pro návrhy. Tato implementace obsahuje použití Linq to XML do souboru XML požadavků pro návrh vytvořený schematizovanými trvalost dotazu. |  
-|IOHelper|Tato třída zpracovává všechny můžu/O otázky související se (složky, cesty a atd.)|  
+|Dodavatele|Dodavatel, který odešle návrhy v žádosti o návrhy.|  
+|RequestForProposal|Žádost o návrhy (RFP) je pozvánka pro dodavatele, kteří odešlou návrhy na konkrétní komoditu nebo službu.|  
+|VendorProposal|Návrh, který dodavatel odeslal na konkrétní RFP.|  
+|VendorRepository|Úložiště dodavatelů. Tato implementace obsahuje kolekci instancí dodavatele a metod pro vystavení těchto instancí v paměti.|  
+|RfpRepository|Úložiště požadavků pro návrhy. Tato implementace obsahuje použití LINQ to XML k dotazování souboru XML požadavků pro návrh vygenerovaný schematized persistencí. |  
+|IOHelper|Tato třída zpracovává všechny problémy související s vstupně-výstupními operacemi (složky, cesty a tak dále).|  
   
 ### <a name="web-client"></a>Webový klient  
- Následující tabulka obsahuje popis nejdůležitější webové stránky v projektu webového klienta.  
+ Následující tabulka obsahuje popis nejdůležitějších webových stránek v projektu webového klienta.  
   
 |Soubor|Popis|  
 |-|-|  
-|CreateRfp.aspx|Vytvoří a odešle novou žádost o návrhy.|  
+|CreateRfp.aspx|Vytvoří a odešle nový požadavek na návrhy.|  
 |Default.aspx|Zobrazuje všechny aktivní a dokončené žádosti o návrhy.|  
-|GetVendorProposal.aspx|Získá návrh od dodavatele v požadavku konkrétní pro návrhy. Tato stránka slouží jenom podle dodavatele.|  
-|ShowRfp.aspx|Zobrazit všechny informace o požadavku pro návrhy (přijaté návrhy, data, hodnoty a další informace). Tato stránka slouží pouze tvůrcem požadavku pro návrh.|  
+|GetVendorProposal.aspx|Získá návrh od dodavatele v konkrétní žádosti o návrhy. Tato stránka je používána pouze dodavateli.|  
+|ShowRfp.aspx|Zobrazit všechny informace o žádosti o návrhy (obdržené návrhy, data, hodnoty a další informace). Tuto stránku používá pouze tvůrce žádosti o návrh.|  
   
-### <a name="winforms-client"></a>WinForms klienta  
- Následující tabulka obsahuje popis nejdůležitější formuláře v projektu Windows Forms.  
+### <a name="winforms-client"></a>Klient WinForms  
+ Následující tabulka obsahuje popis nejdůležitějších forem v projektu Windows Forms.  
   
 |Formulář|Popis|  
 |-|-|  
-|NewRfp|Vytvoří a odešle novou žádost o návrhy.|  
-|ShowProposals|Zobrazit všechny aktivní a dokončení žádosti o návrhy. **Poznámka:**  Budete muset kliknout na **aktualizovat** tlačítko v uživatelském rozhraní pro zobrazení změn na této obrazovce, po vytvoření nebo úpravě žádost o návrhu.|  
-|SubmitProposal|Návrh získáte od dodavatele v požadavku konkrétní pro návrhy. Toto okno se používá pouze podle dodavatele.|  
-|ViewRfp|Zobrazit všechny informace o požadavku pro návrhy (přijaté návrhy, data, hodnoty a další informace). V tomto okně Tvůrce požadavku použít jenom pro návrhy.|  
+|NewRfp|Vytvoří a odešle nový požadavek na návrhy.|  
+|ShowProposals|Zobrazit všechny aktivní a dokončené žádosti o návrhy. **Poznámka:**  Po vytvoření nebo úpravě žádosti o návrh možná budete muset kliknout na tlačítko **aktualizovat** v uživatelském rozhraní a zobrazit změny provedené na této obrazovce.|  
+|SubmitProposal|Získejte návrh od dodavatele v konkrétní žádosti o návrhy. Toto okno používají pouze dodavatelé.|  
+|ViewRfp|Zobrazit všechny informace o žádosti o návrhy (obdržené návrhy, data, hodnoty a další informace). Toto okno je používáno pouze tvůrcem žádosti o návrhy.|  
   
-### <a name="persistence-files"></a>Trvalé soubory  
- V následující tabulce jsou uvedeny soubory generované záznamem pro poskytovatele trvalého chování (`XmlPersistenceProvider`) jsou umístěny v cestě z aktuálního systému dočasné složky (pomocí <xref:System.IO.Path.GetTempPath%2A>). V aktuální cestě spuštění se vytvoří soubor trasování.  
+### <a name="persistence-files"></a>Soubory trvalosti  
+ V následující tabulce jsou uvedeny soubory generované zprostředkovatelem trvalosti (`XmlPersistenceProvider`), které jsou umístěny v cestě k dočasné složce aktuálního systému (pomocí <xref:System.IO.Path.GetTempPath%2A>). Trasovací soubor se vytvoří v aktuální cestě spuštění.  
   
 |Název souboru|Popis|Cesta|  
 |-|-|-|  
-|rfps.xml|Soubor XML se všechny aktivní a dokončení žádosti pro návrhy.|<xref:System.IO.Path.GetTempPath%2A>|  
-|[instanceid]|Tento soubor obsahuje všechny informace o instanci pracovního postupu.<br /><br /> Tento soubor vygenerovala sada implementace schematizovanými trvalého (PersistenceParticipant v XmlPersistenceProvider).|<xref:System.IO.Path.GetTempPath%2A>|  
-|[instanceId].tracking|Textový soubor s všechny události, ke kterým došlo v rámci konkrétní instance.<br /><br /> Tento soubor vygenerovala sada TrackingParticipant.|<xref:System.IO.Path.GetTempPath%2A>|  
-|PurchaseProcess.Tracing.TraceLog.txt|Soubor trasování vygenerovaná pracovního postupu na základě parametrů konfigurace v souboru App.config nebo Web.config.|Aktuální cesta provedení|  
+|RFPs. XML|Soubor XML se všemi aktivními a dokončenými požadavky pro návrhy.|<xref:System.IO.Path.GetTempPath%2A>|  
+|InstanceId|Tento soubor obsahuje všechny informace o instanci pracovního postupu.<br /><br /> Tento soubor je vygenerován implementací trvalosti schematized (PersistenceParticipant v XmlPersistenceProvider).|<xref:System.IO.Path.GetTempPath%2A>|  
+|[instanceId].tracking|Textový soubor se všemi událostmi, ke kterým došlo v konkrétní instanci.<br /><br /> Tento soubor je vygenerovaný nástrojem TrackingParticipant.|<xref:System.IO.Path.GetTempPath%2A>|  
+|PurchaseProcess. Tracing. nástroji tracelog. txt|Trasovací soubor vygenerovaný pracovním postupem na základě parametrů konfigurace v souborech App. config nebo Web. config.|Aktuální cesta spuštění|  
   
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
+#### <a name="to-use-this-sample"></a>Použití této ukázky  
   
-1. Pomocí sady Visual Studio 2010, otevřete soubor řešení PurchaseProcess.sln.  
+1. Pomocí sady Visual Studio 2010 otevřete soubor řešení PurchaseProcess. sln.  
   
-2. Chcete-li spustit projekt webového klienta, otevřete **Průzkumníku řešení** a klikněte pravým tlačítkem myši **webového klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
+2. Chcete-li spustit projekt webového klienta, otevřete **Průzkumník řešení** a klikněte pravým tlačítkem na projekt **webového klienta** . Vyberte **nastavit jako spouštěný projekt**.  
   
-3. Chcete-li spustit WinForms klientský projekt, otevřete **Průzkumníka řešení** a klikněte pravým tlačítkem na **WinForms klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
+3. Chcete-li spustit projekt klienta WinForms, otevřete **Průzkumník řešení** a klikněte pravým tlačítkem myši na projekt **klienta WinForms** . Vyberte **nastavit jako spouštěný projekt**.  
   
-4. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
+4. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-5. Abyste mohli spustit řešení, stiskněte CTRL + F5.  
+5. Pokud chcete řešení spustit, stiskněte klávesy CTRL + F5.  
   
 ### <a name="web-client-options"></a>Možnosti webového klienta  
   
-- **Vytvořit nový poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
+- **Vytvořit nový RFP**: Vytvoří nový požadavek na návrhy (RFP) a spustí pracovní postup pro nákupní proces.  
   
-- **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
+- **Aktualizovat**: Aktualizuje seznam aktivních a dokončených RFPs v hlavním okně.  
   
-- **Zobrazení**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP)).  
+- **Zobrazit**: Zobrazuje obsah existující RFP. Dodavatelé mohou odeslat své návrhy (Pokud je pozvánka nebo RFPa není dokončená).  
   
-- Zobrazte jako: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.  
+- Zobrazit jako: Uživatel může k RFP přistupovat pomocí různých identit, a to tak, že v aktivní RFPs mřížce vybere požadovaného účastníka v poli **Zobrazit jako** pole se seznamem.  
   
 ### <a name="winforms-client-options"></a>Možnosti klienta WinForms  
   
-- **Vytvoření poptávku (RFP)**: Vytvoří novou žádost o, pro návrhy (RFP) a spustí pracovní postup procesu nákupu.  
+- **Vytvořit RFP**: Vytvoří nový požadavek na návrhy (RFP) a spustí pracovní postup pro nákupní proces.  
   
-- **Aktualizovat**: Aktualizuje seznam aktivních a dokončení RFPs v hlavním okně.  
+- **Aktualizovat**: Aktualizuje seznam aktivních a dokončených RFPs v hlavním okně.  
   
-- **Zobrazit poptávku (RFP)**: Zobrazí obsah existujícího poptávku (RFP). Dodavatelé mohou odesílat své návrhy (Pokud pozváni nebo není dokončen poptávku (RFP))  
+- **Zobrazit RFP**: Zobrazuje obsah existující RFP. Dodavatelé mohou odeslat své návrhy (Pokud je pozvaní nebo RFP není dokončená)  
   
-- **Připojte se jako**: Má uživatel přístup poptávku (RFP) pomocí jiné identity tak, že vyberete požadovaný účastník **zobrazit jako** – pole se seznamem v mřížce RFPs aktivní.
+- **Připojit jako**: Uživatel může k RFP přistupovat pomocí různých identit, a to tak, že v aktivní RFPs mřížce vybere požadovaného účastníka v poli **Zobrazit jako** pole se seznamem.

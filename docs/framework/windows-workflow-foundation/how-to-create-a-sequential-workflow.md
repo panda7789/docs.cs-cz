@@ -5,66 +5,66 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
-ms.openlocfilehash: c8a16dc0269fbd768a73e99f15f53e38c207a8d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c9746305b251e7d48ee34c2cccd5afae174ee90
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945588"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962371"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Postupy: Vytvoření sekvenčního pracovního postupu
-Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Toto téma se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Sequence> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
+Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.Sequence> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.  
   
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](how-to-create-an-activity.md).  
+> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je nutné [nejprve provést následující kroky: Vytvoří aktivitu](how-to-create-an-activity.md).  
   
 > [!NOTE]
->  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
+> Pokud si chcete stáhnout dokončenou verzi kurzu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45) – začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="to-create-the-workflow"></a>Vytvoření pracovního postupu  
   
-1. Klikněte pravým tlačítkem na **NumberGuessWorkflowActivities** v **Průzkumníka řešení** a vyberte **přidat**, **nová položka**.  
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowActivities** a vyberte **Přidat**, **Nová položka**.  
   
-2. V **nainstalováno**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.  
+2. V uzlu **nainstalované**, **běžné položky** vyberte **pracovní postup**. V seznamu **pracovních postupů** vyberte **aktivita** .  
   
-3. Typ `SequentialNumberGuessWorkflow` do **název** pole a klikněte na tlačítko **přidat**.  
+3. Do `SequentialNumberGuessWorkflow` pole **název** zadejte a klikněte na **Přidat**.  
   
-4. Přetáhněte **pořadí** aktivita z **tok řízení** část **nástrojů** a umístěte ho do **Sem přetáhněte aktivitu** popisek pracovní postup návrhovou plochu.  
+4. Přetáhněte aktivitu **sekvence** z části **tok řízení** v **sadě nástrojů** a přetáhněte ji na popisek sem přetáhněte **aktivitu** na návrhové ploše pracovního postupu.  
   
-## <a name="to-create-the-workflow-variables-and-arguments"></a>Chcete-li vytvořit pracovní postup proměnné a argumenty  
+## <a name="to-create-the-workflow-variables-and-arguments"></a>Postup vytvoření proměnných a argumentů pracovního postupu  
   
-1. Dvakrát klikněte na panel **SequentialNumberGuessWorkflow.xaml** v **Průzkumníka řešení** zobrazíte pracovního postupu v návrháři, pokud se už nezobrazí.  
+1. Dvojím kliknutím na **SequentialNumberGuessWorkflow. XAML** v **Průzkumník řešení** zobrazíte pracovní postup v návrháři, pokud ještě není zobrazený.  
   
-2. Klikněte na tlačítko **argumenty** v levém dolním rohu návrháře postupu provádění zobrazit **argumenty** podokně.  
+2. Kliknutím na **argumenty** v levé dolní části návrháře pracovních postupů zobrazíte podokno **argumenty** .  
   
-3. Klikněte na tlačítko **vytvořit Argument**.  
+3. Klikněte na **vytvořit argument**.  
   
-4. Typ `MaxNumber` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **Int32** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER k uložení argument.  
+4. Do `MaxNumber` pole **název** zadejte, v rozevíracím seznamu **směr** vyberte možnost **v vyberte v** rozevíracím seznamu **typ argumentu** možnost **Int32** a potom stiskněte klávesu ENTER a argument uložte.  
   
-5. Klikněte na tlačítko **vytvořit Argument**.  
+5. Klikněte na **vytvořit argument**.  
   
-6. Typ `Turns` do **název** pole, které je pod nově přidaný `MaxNumber` argument, vyberte **si** z **směr** rozevíracího seznamu vyberte  **Datový typ Int32** z **typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER.  
+6. `MaxNumber` Do pole název, které se nachází pod nově přidaným argumentem, vyberte out v rozevíracím seznamu směr, v rozevíracím seznamu typ argumentu vyberte Int32 a potom stiskněte klávesu ENTER. `Turns`  
   
-7. Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit, zavřete **argumenty** podokně.  
+7. Kliknutím na **argumenty** v levé dolní části návrháře aktivit zavřete podokno **argumenty** .  
   
-8. Klikněte na tlačítko **proměnné** v levém dolním rohu návrháře postupu provádění zobrazit **proměnné** podokně.  
+8. Kliknutím na **proměnné** v levém dolním rohu návrháře pracovních postupů zobrazíte podokno **proměnné** .  
   
-9. Klikněte na tlačítko **vytvořit proměnnou**.  
+9. Klikněte na **vytvořit proměnnou**.  
   
     > [!TIP]
-    >  Pokud ne **vytvořit proměnnou** pole se zobrazí, klikněte na tlačítko **pořadí** aktivity na plochu návrháře pracovního postupu a vyberte ji.  
+    >  Pokud se nezobrazí žádné pole **vytvořit proměnnou** , vyberte ji kliknutím na aktivitu **sekvence** na ploše návrháře pracovního postupu.  
   
-10. Typ `Guess` do **název** vyberte **Int32** z **typ proměnné** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení proměnné.  
+10. Do `Guess` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.  
   
-11. Klikněte na tlačítko **vytvořit proměnnou**.  
+11. Klikněte na **vytvořit proměnnou**.  
   
-12. Typ `Target` do **název** vyberte **Int32** z **typ proměnné** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení proměnné.  
+12. Do `Target` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.  
   
-13. Klikněte na tlačítko **proměnné** v levého dolního rohu návrháře aktivit, zavřete **proměnné** podokně.  
+13. Kliknutím na **proměnné** v levém dolním rohu návrháře aktivit zavřete podokno **proměnné** .  
   
 ## <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu  
   
-1. Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a umístěte ho do **pořadí** aktivity. Typ `Target` do **k** pole a následující výraz, který **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
+1. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji na aktivitu **sekvence** . Zadejte `Target` do pole **do** a následující výraz do pole **Zadejte C# výraz** nebo **Zadejte výraz VB** .  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -75,11 +75,11 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     ```  
   
     > [!TIP]
-    >  Pokud **nástrojů** okno nezobrazí, vyberte **nástrojů** z **zobrazení** nabídky.  
+    >  Pokud okno **panelu nástrojů** není zobrazeno, vyberte z nabídky **zobrazení** možnost **Sada nástrojů** .  
   
-2. Přetáhněte **DoWhile** aktivita z **tok řízení** část **nástrojů** a umístěte ho na pracovní postup tak, aby byl pod **přiřadit** aktivita.  
+2. Přetáhněte aktivitu **DoWhile** z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do pracovního postupu tak, aby byla pod aktivitou **přiřazení** .  
   
-3. Zadejte následující výraz do **DoWhile** aktivity **podmínku** pole s hodnotou vlastnosti.  
+3. Do pole hodnota vlastnosti **podmínky** aktivity **DoWhile** zadejte následující výraz.  
   
     ```vb  
     Guess <> Target  
@@ -89,11 +89,11 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     Guess != Target  
     ```  
   
-     A <xref:System.Activities.Statements.DoWhile> aktivita spustí jeho podřízených aktivit a vyhodnocuje jeho <xref:System.Activities.Statements.DoWhile.Condition%2A>. Pokud <xref:System.Activities.Statements.DoWhile.Condition%2A> vyhodnotí jako `True`, pak aktivity <xref:System.Activities.Statements.DoWhile> proveďte znovu. V tomto příkladu je vyhodnocen odhad uživatele a <xref:System.Activities.Statements.DoWhile> pokračuje, dokud je odhad správný.  
+     Aktivita spustí své podřízené aktivity a pak vyhodnotí její <xref:System.Activities.Statements.DoWhile.Condition%2A>. <xref:System.Activities.Statements.DoWhile> Pokud se <xref:System.Activities.Statements.DoWhile.Condition%2A> vyhodnotí `True`jako, <xref:System.Activities.Statements.DoWhile> pak se aktivity v znovu spustí. V tomto příkladu je vyhodnocen odhad uživatele a <xref:System.Activities.Statements.DoWhile> pokračuje, dokud není odhad správný.  
   
-4. Přetáhněte **výzvy** aktivita z **NumberGuessWorkflowActivities** část **nástrojů** a umístěte jej do **DoWhile** aktivity v předchozím kroku.  
+4. Přetáhněte aktivitu **prompt** z části **NumberGuessWorkflowActivities** sady **nástrojů** a přetáhněte ji do aktivity **DoWhile** z předchozího kroku.  
   
-5. V **okno vlastností**, typ `"EnterGuess"` včetně uvozovek do **BookmarkName** pole s hodnotou pro vlastnost **výzvy** aktivity. Typ `Guess` do **výsledek** vlastnost hodnotu pole a zadejte následující výraz do **Text** vlastnosti.  
+5. V **okně Vlastnosti**zadejte `"EnterGuess"` včetně uvozovek do pole hodnota vlastnosti **Bookmark** pro aktivitu **výzvy** . Do `Guess` pole hodnota vlastnosti **výsledek** zadejte a do pole vlastnost **text** zadejte následující výraz.  
   
     ```vb  
     "Please enter a number between 1 and " & MaxNumber  
@@ -104,18 +104,18 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     ```  
   
     > [!TIP]
-    >  Pokud **okno vlastností** není zobrazený, vyberte **okno vlastností** z **zobrazení** nabídky.  
+    >  Pokud se **okno Vlastnosti** nezobrazí, v nabídce **zobrazení** vyberte **okno Vlastnosti** .  
   
-6. Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a umístěte jej do **DoWhile** aktivitu tak, že následuje **Výzvy** aktivity.  
+6. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji do aktivity **DoWhile** , aby se protáhla jako aktivita **výzvy** .  
   
     > [!NOTE]
-    >  Když přetáhnete **přiřadit** aktivita, Všimněte si, jak automaticky přidá návrháře postupu provádění **pořadí** aktivitu tak, aby obsahovala obě **výzvy** aktivity a nově přidané **Přiřadit** aktivity.  
+    > Když vyřadíte aktivitu **přiřazení** , Všimněte si, jak Návrhář pracovního postupu automaticky přidá aktivitu **sekvence** , která bude obsahovat aktivitu **výzvy** i nově přidanou aktivitu **přiřazení** .  
   
-7. Typ `Turns` do **k** pole a `Turns + 1` do **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
+7. `Turns + 1` **C#** Do pole do zadejte a do pole zadejte výraz nebo zadejte výraz VB. `Turns`  
   
-8. Přetáhněte **Pokud** aktivita z **tok řízení** část **nástrojů** a umístěte jej do **pořadí** aktivitu tak, že následuje nově přidané **přiřadit** aktivity.  
+8. Přetáhněte aktivitu **if** z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do aktivity **sekvence** tak, aby se doplnila nově přidaným aktivitou **přiřazení** .  
   
-9. Zadejte následující výraz do **Pokud** aktivity **podmínku** pole s hodnotou vlastnosti.  
+9. Do pole hodnota vlastnosti **Podmínka** pro aktivitu **if** aktivity zadejte následující výraz.  
   
     ```vb  
     Guess <> Target  
@@ -125,37 +125,37 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     Guess != Target  
     ```  
   
-10. Přetáhněte další **Pokud** aktivita z **tok řízení** část **nástrojů** a umístěte jej do **pak** část první **Pokud** aktivity.  
+10. Přetáhněte jinou položku **if** Activity z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do části **then** první aktivity **if** .  
   
-11. Zadejte následující výraz do nově přidaný **Pokud** aktivity **podmínku** pole s hodnotou vlastnosti.  
+11. Do pole nově přidaná hodnota vlastnosti **Condition podmínky** aktivity zadejte následující výraz.  
   
     ```
     Guess < Target  
     ```  
   
-12. Přetáhněte dva **WriteLine** aktivity z **primitiv** část **nástrojů** a umístit je tak, že jeden je v **pak** část nově přidaný **Pokud** aktivity a jeden je v **Else** oddílu.  
+12. Přetáhněte dvě aktivity **WriteLine** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte je tak, aby jedna byla v oddílu **potom** nově přidané aktivity **if** a jedna je v části **Else** .  
   
-13. Klikněte na tlačítko **WriteLine** aktivity v **pak** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
+13. Kliknutím na aktivitu **WriteLine** v části **pak** ji vyberete a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
     ```text
     "Your guess is too low."  
     ```  
   
-14. Klikněte na tlačítko **WriteLine** aktivity v **Else** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
+14. Kliknutím na aktivitu **WriteLine** v části **Else** ji vyberte a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
     ```text
     "Your guess is too high."  
     ```  
   
-     Následující příklad ukazuje dokončený pracovní postup:  
+     Následující příklad znázorňuje dokončený pracovní postup:  
   
-     ![Snímek obrazovky zobrazující dokončené sekvenční pracovní postup.](./media/how-to-create-a-sequential-workflow/complete-sequential-workflow.jpg)  
+     ![Snímek obrazovky zobrazující dokončený sekvenční pracovní postup](./media/how-to-create-a-sequential-workflow/complete-sequential-workflow.jpg)  
   
-## <a name="to-build-the-workflow"></a>K vytvoření pracovního postupu  
+## <a name="to-build-the-workflow"></a>Postup sestavení pracovního postupu  
   
-1. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+1. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.  
   
-     Návod, jak spustit workflow, najdete dalším tématu s názvem [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste už dokončili [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí sekvenčního pracovního postupu v tomto kroku, přeskočte k části [sestavíte a spustíte aplikaci](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) část [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md).  
+     Pokyny ke spuštění pracovního postupu najdete v dalším tématu [postup: Spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste již dokončili [postupy: Spusťte krok pracovního](how-to-run-a-workflow.md) postupu s jiným stylem pracovního postupu a přejete si ho spustit pomocí sekvenčního pracovního postupu z tohoto kroku, přejděte k části [ [Vytvoření a spusťte aplikaci](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) v tématu Postupy: Spuštění pracovního postupu](how-to-run-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,38 +2,38 @@
 title: 'Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient'
 ms.date: 03/30/2017
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
-ms.openlocfilehash: 32acef65ee30d7b80b37c11bdd024e3c09a935ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9558e1943c3886a61c3b19801e22d57732e459a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038763"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968756"
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient
-Použití <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy ke stažení metadat pomocí protokolu WS-MetadataExchange (MEX). Soubory načtených metadat se vrátí jako <xref:System.ServiceModel.Description.MetadataSet> objektu. Vrácený <xref:System.ServiceModel.Description.MetadataSet> objekt obsahuje kolekci <xref:System.ServiceModel.Description.MetadataSection> objektů, z nichž každý obsahuje metadata specifická dialekt a identifikátor. Můžete napsat vrácených metadat pro soubory, nebo pokud vrácených metadat obsahuje dokumenty služby popis jazyka WSDL (Web), můžete importovat pomocí metadat <xref:System.ServiceModel.Description.WsdlImporter>.  
+<xref:System.ServiceModel.Description.MetadataExchangeClient> Pomocí třídy můžete stahovat metadata pomocí protokolu WS-MetadataExchange (MEX). Načtené soubory metadat se vrátí jako <xref:System.ServiceModel.Description.MetadataSet> objekt. Vrácený <xref:System.ServiceModel.Description.MetadataSet> objekt obsahuje <xref:System.ServiceModel.Description.MetadataSection> kolekci objektů, z nichž každý obsahuje konkrétní dialekt metadat a identifikátor. Můžete zapsat vracená metadata do souborů nebo, pokud Vrácená metadata obsahují dokumenty jazyka WSDL (Web Services Description Language), můžete importovat metadata pomocí <xref:System.ServiceModel.Description.WsdlImporter>.  
   
- <xref:System.ServiceModel.Description.MetadataExchangeClient> Konstruktorů, které přijímají adresu tuto vazbu využíval na <xref:System.ServiceModel.Description.MetadataExchangeBindings> statické třídy, která odpovídá schématu identifikátoru URI (Uniform Resource) adresy. Můžete také použít <xref:System.ServiceModel.Description.MetadataExchangeClient> konstruktor, který umožňuje explicitně určit použita. Chcete-li vyřešit všechny odkazy na metadata se používá určenou vazbu.  
+ Konstruktory, které přijímají adresu, používají vazbu <xref:System.ServiceModel.Description.MetadataExchangeBindings> na statické třídě, která odpovídá schématu identifikátoru URI (Uniform Resource Identifier) adresy. <xref:System.ServiceModel.Description.MetadataExchangeClient> Můžete alternativně použít <xref:System.ServiceModel.Description.MetadataExchangeClient> konstruktor, který umožňuje explicitně zadat vazbu, která se má použít. Zadaná vazba se používá k překladu všech odkazů na metadata.  
   
- Stejně jako všechny ostatní klienty Windows Communication Foundation (WCF), <xref:System.ServiceModel.Description.MetadataExchangeClient> typ poskytuje konstruktor pro načtení konfigurace koncových bodů klienta pomocí název konfigurace koncového bodu. Musíte zadat konfigurace zadaný koncový bod <xref:System.ServiceModel.Description.IMetadataExchange> kontraktu. Adresa v konfiguraci koncového bodu není načten, proto je nutné použít jeden z <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> přetížení, která přijímají adresu. Pokud zadáte pomocí adresu metadat <xref:System.ServiceModel.EndpointAddress> instanci, <xref:System.ServiceModel.Description.MetadataExchangeClient> předpokládá, že na adresu odkazuje na koncový bod MEX. Pokud zadáte adresu metadat jako adresu URL, pak musíte také určit, které <xref:System.ServiceModel.Description.MetadataExchangeClientMode> používat MEX nebo HTTP GET.  
+ Stejně jako u jakéhokoli jiného klienta <xref:System.ServiceModel.Description.MetadataExchangeClient> Windows Communication Foundation (WCF) poskytuje typ konstruktor pro načítání konfigurací koncových bodů klienta pomocí názvu konfigurace koncového bodu. Zadaná konfigurace koncového bodu musí určovat <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt. Adresa v konfiguraci koncového bodu není načtena, takže je nutné použít jedno z <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> přetížení, které přebírají adresu. Když zadáte adresu metadat pomocí <xref:System.ServiceModel.EndpointAddress> instance <xref:System.ServiceModel.Description.MetadataExchangeClient> , předpokládá, že adresa odkazuje na koncový bod mex. Pokud zadáte adresu metadat jako adresu URL, je třeba zadat také, která z nich <xref:System.ServiceModel.Description.MetadataExchangeClientMode> se má použít, MEX nebo HTTP GET.  
   
 > [!IMPORTANT]
->  Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient> řeší všechny odkazy, včetně WSDL a schéma XML importuje a zahrnuje. Tuto funkci můžete zakázat nastavením <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost `false`. Můžete určit maximální počet odkazů na řešení pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> vlastnost. Tuto vlastnost můžete použít ve spojení s `MaxReceivedMessageSize` vlastnost pro vazbu k řízení, kolik metadata se načítají.  
+> Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient> vyřeší všechny odkazy za vás, včetně importu schématu WSDL a XML a obsahuje. Tuto funkci můžete zakázat nastavením <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnosti na. `false` Můžete určit maximální počet odkazů, které se mají vyřešit, pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> vlastnosti. Tuto vlastnost lze použít společně s `MaxReceivedMessageSize` vlastností vazby k určení, kolik metadat je načteno.  
   
-### <a name="to-use-metadataexchangeclient-to-obtain-metadata"></a>K získání metadat pomocí vlastnosti MetadataExchangeClient  
+### <a name="to-use-metadataexchangeclient-to-obtain-metadata"></a>Použití metody MetadataExchangeClient k získání metadat  
   
-1. Vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> objekt explicitním zadáním vazbu, název konfigurace koncového bodu nebo adresu metadat.  
+1. Vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> objekt explicitním zadáním vazby, názvu konfigurace koncového bodu nebo adresy metadat.  
   
-2. Konfigurace <xref:System.ServiceModel.Description.MetadataExchangeClient> tak, aby odpovídala vašim potřebám. Například můžete zadat přihlašovací údaje, které chcete použít, pokud se požaduje metadata, řídit, jak jsou odkazy v metadatech vyřešit a nastavit <xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> vlastnosti určují, jak dlouho má požadavek metadat k vrácení před vypršením časového limitu.  
+2. Nakonfigurujte tak, aby vyhovoval vašim potřebám. <xref:System.ServiceModel.Description.MetadataExchangeClient> Můžete například zadat přihlašovací údaje, které se mají použít při vyžadování metadat, řízení způsobu, jakým jsou vyřešeny <xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> odkazy na metadata, a nastavit vlastnost pro řízení, jak dlouho musí požadavek na metadata vrátit před vypršením časového limitu.  
   
-3. Získat <xref:System.ServiceModel.Description.MetadataSet> objekt, který obsahuje voláním jedné z načtených metadat <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> metody. Všimněte si, že lze použít pouze <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> přetížení, které nepřijímá žádné argumenty, pokud jste explicitně zadali adresu při vytváření <xref:System.ServiceModel.Description.MetadataExchangeClient>.  
+3. Získejte objekt, který obsahuje načtená metadata, voláním jedné <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> z metod. <xref:System.ServiceModel.Description.MetadataSet> Všimněte si, že můžete použít <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> pouze přetížení, které nepřijímá žádné argumenty, pokud explicitně zadáte adresu při sestavování. <xref:System.ServiceModel.Description.MetadataExchangeClient>  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak používat <xref:System.ServiceModel.Description.MetadataExchangeClient> ke stažení a vytvoření výčtu souborů metadat.  
+ Následující příklad kódu ukazuje, jak použít <xref:System.ServiceModel.Description.MetadataExchangeClient> ke stažení a zobrazení výčtu souborů metadat.  
 
  [!code-csharp[MetadataResolver#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li tento příklad kódu zkompilovat, musí odkazovat na sestavení System.ServiceModel.dll a importovat <xref:System.ServiceModel.Description> oboru názvů.  
+ Chcete-li zkompilovat tento příklad kódu, musíte odkazovat na sestavení System. ServiceModel. dll a importovat <xref:System.ServiceModel.Description> obor názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

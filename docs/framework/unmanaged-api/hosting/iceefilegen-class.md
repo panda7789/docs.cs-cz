@@ -16,20 +16,20 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6fb0b11c26ff65f74681d1e3bf7324bfb0e559d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 44241d02051c9bd54f93a19fa6044e4973fdef9e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766622"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950262"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen – třída
-Poskytuje funkce pro vytváření nativní přenosný spustitelný soubor (PE). Rozhraní se obvykle používá kompilátory k vygenerování jejich kompilovaný výstup spustitelného souboru.  
+Poskytuje funkce pro vytvoření nativního přenositelného spustitelného souboru (PE). Rozhraní bude obvykle použito kompilátory k vygenerování jejich zkompilovaného výstupního spustitelného souboru.  
   
 > [!NOTE]
->  `ICeeFileGen` podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
+> `ICeeFileGen`podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
   
- Toto rozhraní se už nepoužívá a bude v budoucí verzi odebrána.  
+ Toto rozhraní se už nepoužívá a v budoucí verzi se odebere.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -237,11 +237,11 @@ public:
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** ICeeFileGen.h  
+ **Hlaviček** ICeeFileGen.h  
   
- **Verze rozhraní .NET framework:** 1.0  
+ **Verze .NET Framework:** 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

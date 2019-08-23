@@ -6,15 +6,15 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: c13f34c23cad9c909c2c5bd3447f1a8fa53f9b4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b2084a1c0ee30478cdc9193cdfcb19476499ee93
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793955"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924873"
 ---
 # <a name="-keyfile"></a>-keyfile
-Určuje soubor, který obsahuje klíč nebo dvojici klíčů poskytnout sestavení silným názvem.  
+Určuje soubor obsahující klíč nebo dvojici klíčů, které sestavení poskytují silný název.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,28 +24,28 @@ Určuje soubor, který obsahuje klíč nebo dvojici klíčů poskytnout sestaven
   
 ## <a name="arguments"></a>Arguments  
  `file`  
- Povinný parametr. Soubor, který obsahuje klíč. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek ("").  
+ Povinný parametr. Soubor, který obsahuje klíč. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Kompilátor vloží veřejný klíč do manifestu sestavení a poté podepíše konečné sestavení soukromým klíčem. Chcete-li generovat soubor s klíčem, zadejte `sn -k file` na příkazovém řádku. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
+ Kompilátor vloží veřejný klíč do manifestu sestavení a pak podepíše konečné sestavení pomocí privátního klíče. Chcete-li vygenerovat soubor klíče `sn -k file` , zadejte do příkazového řádku. Další informace naleznete v tématu [sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
- Pokud kompilujete s `-target:module`, je název souboru klíče uložené v modulu a součástí sestavení, které se vytvoří, když kompilujete sestavení s [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
+ Pokud kompilujete s `-target:module`, název souboru klíče je uložen v modulu a začleněn do sestavení, které je vytvořeno při kompilování sestavení pomocí [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
   
- Můžete také předat údaje o šifrování pro kompilátor [- keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md). Použití [- delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) potřebujete částečně podepsaného sestavení.  
+ Můžete také předat informace o šifrování kompilátoru s modulem, který [obsahuje](../../../visual-basic/reference/command-line-compiler/keycontainer.md). Použijte [-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) , pokud chcete použít částečně podepsané sestavení.  
   
- Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyKeyFileAttribute>) ve zdrojovém kódu pro jakýkoli modul jazyka Microsoft.  
+ Tuto možnost lze také zadat jako vlastní atribut (<xref:System.Reflection.AssemblyKeyFileAttribute>) ve zdrojovém kódu pro libovolný modul Microsoft Intermediate Language.  
   
- V případě obě `-keyfile` a [- keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) zadávají (pomocí možnosti příkazového řádku nebo pomocí vlastního atributu) ve stejné kompilaci, kompilátor se pokusí nejprve kontejneru klíčů. Pokud tato operace úspěšná, sestavení je podepsáno pomocí informací v kontejneru klíčů. Pokud kompilátor nenajde kontejneru klíčů, pokusí se použít soubor určený `-keyfile`. Pokud se toto povede, sestavení je podepsáno informacemi ze souboru klíčů a informace o klíči se instaluje v kontejneru klíčů (podobné `sn -i`) tak, aby při další kompilaci bude platný kontejner klíčů.  
+ V případě, `-keyfile` že jsou zadány oba a [-](../../../visual-basic/reference/command-line-compiler/keycontainer.md) klíčové pole (buď parametr příkazového řádku nebo vlastní atribut) ve stejné kompilaci, kompilátor nejprve pokusí kontejner klíčů. Pokud je tato operace úspěšná, sestavení je podepsáno informacemi z kontejneru klíčů. Pokud kompilátor nenajde kontejner klíčů, pokusí se o soubor zadaný pomocí `-keyfile`. Pokud je to úspěšné, sestavení je podepsáno informacemi v souboru klíče a informace o klíči jsou nainstalovány v kontejneru klíčů (podobně jako `sn -i`), takže při další kompilaci bude kontejner klíčů platný.  
   
  Všimněte si, že soubor klíče může obsahovat pouze veřejný klíč.  
   
- Zobrazit [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
+ Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) .  
   
 > [!NOTE]
->  `-keyfile` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
+> Tato `-keyfile` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód se zkompiluje zdrojový soubor `Input.vb` a určuje soubor klíče.  
+ Následující kód zkompiluje zdrojový soubor `Input.vb` a určí soubor klíče.  
   
 ```console  
 vbc -keyfile:myfile.sn input.vb  
@@ -54,6 +54,6 @@ vbc -keyfile:myfile.sn input.vb
 ## <a name="see-also"></a>Viz také:
 
 - [Sestavení v .NET](../../../standard/assembly/index.md)
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

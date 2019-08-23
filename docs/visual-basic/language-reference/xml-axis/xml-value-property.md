@@ -9,15 +9,15 @@ helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
-ms.openlocfilehash: 1c7aa1cc32bc1c5ef637f7a606db7e695f1dfaee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9edf95c7cedced55ab2441baf51b7c2052e4654c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61799161"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942980"
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
-Poskytuje přístup k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> objekty.  
+Poskytuje přístup k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> objektů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,26 +29,26 @@ object.Value
   
 |Termín|Definice|  
 |---|---|  
-|`object`|Povinný parametr. Kolekce <xref:System.Xml.Linq.XElement> objekty.|  
+|`object`|Povinný parametr. <xref:System.Xml.Linq.XElement> Kolekce objektů.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- A `String` , který obsahuje hodnotu elementu první kolekce, nebo `Nothing` Pokud kolekce je prázdná.  
+ , Který obsahuje hodnotu prvního prvku kolekce, nebo `Nothing` Pokud je kolekce prázdná. `String`  
   
 ## <a name="remarks"></a>Poznámky  
- <xref:System.Xml.Linq.XElement.Value%2A> Vlastnost usnadňuje přístup k hodnotě prvního prvku v kolekci <xref:System.Xml.Linq.XElement> objekty. Tato vlastnost nejprve zkontroluje, zda kolekce obsahuje minimálně jeden objekt. Pokud kolekce je prázdná, vrátí tato vlastnost `Nothing`. V opačném případě vrátí tato vlastnost hodnotu <xref:System.Xml.Linq.XElement.Value%2A> vlastnost první prvek v kolekci.  
+ Vlastnost usnadňuje přístup k hodnotě prvního prvku v <xref:System.Xml.Linq.XElement> kolekci objektů. <xref:System.Xml.Linq.XElement.Value%2A> Tato vlastnost nejprve ověří, zda kolekce obsahuje alespoň jeden objekt. Pokud je kolekce prázdná, vrátí `Nothing`Tato vlastnost. V opačném případě tato vlastnost vrátí hodnotu <xref:System.Xml.Linq.XElement.Value%2A> vlastnosti prvního prvku v kolekci.  
   
 > [!NOTE]
->  Když zobrazujete hodnota atributu XML pomocí "\@" identifikátor, jako je vrácena hodnota atributu `String` a není potřeba explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
+> Při přístupu k hodnotě atributu XML pomocí\@identifikátoru se hodnota atributu vrátí `String` jako a <xref:System.Xml.Linq.XAttribute.Value%2A> nemusíte explicitně zadávat vlastnost.  
   
- Pro přístup k další prvky v kolekci, můžete použít vlastnost indexeru rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md).  
+ Chcete-li získat přístup k dalším prvkům v kolekci, můžete použít vlastnost indexer rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md).  
   
 ## <a name="inheritance"></a>Dědičnost  
- Většina uživatelů nebudete muset implementovat <xref:System.Collections.Generic.IEnumerable%601>a proto můžete ignorovat tento oddíl.  
+ Většina uživatelů nebude muset implementovat <xref:System.Collections.Generic.IEnumerable%601>, a proto může tuto část ignorovat.  
   
- <xref:System.Xml.Linq.XElement.Value%2A> Vlastností je vlastnost rozšíření pro typy, které implementují `IEnumerable(Of XElement)`. Vazba této vlastnosti rozšíření se podobá vazba metod rozšíření: Pokud typ jednoho z rozhraní implementuje a definuje vlastnost s názvem "Value", tato vlastnost má vyšší prioritu než vlastnost extension. Jinými slovy to <xref:System.Xml.Linq.XElement.Value%2A> vlastnost může být přepsána definování nové vlastnosti do třídy, která implementuje `IEnumerable(Of XElement)`.  
+ Vlastnost je vlastnost rozšíření pro typy, které implementují `IEnumerable(Of XElement)`. <xref:System.Xml.Linq.XElement.Value%2A> Vazba této vlastnosti rozšíření se podobá vazbě rozšiřujících metod: Pokud typ implementuje jedno z rozhraní a definuje vlastnost s názvem "value", má tato vlastnost přednost před vlastností Extension. Jinými slovy Tato <xref:System.Xml.Linq.XElement.Value%2A> vlastnost může být přepsána definováním nové vlastnosti ve třídě, která implementuje `IEnumerable(Of XElement)`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití <xref:System.Xml.Linq.XElement.Value%2A> vlastnosti pro přístup k prvním uzlem v kolekci <xref:System.Xml.Linq.XElement> objekty. Vlastnost osy podřízeného v příkladu se používá k získání kolekce všech podřízených uzlech s názvem `phone` , které jsou `contact` objektu.  
+ Následující příklad ukazuje, jak použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost pro přístup k prvnímu uzlu v <xref:System.Xml.Linq.XElement> kolekci objektů. V příkladu se používá vlastnost podřízené osy k získání kolekce všech podřízených uzlů s názvem `phone` , které jsou `contact` v objektu.  
   
  [!code-vb[VbXMLSamples#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#15)]  
   
@@ -57,7 +57,7 @@ object.Value
  `Phone number: 206-555-0144`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak má být získána hodnota atributu XML z kolekce <xref:System.Xml.Linq.XAttribute> objekty. V příkladu používá vlastnost osy atributu k zobrazení hodnoty `type` atribut pro všechny `phone` elementy.  
+ Následující příklad ukazuje, jak získat hodnotu atributu XML z kolekce <xref:System.Xml.Linq.XAttribute> objektů. V příkladu se používá vlastnost osa atributu k zobrazení hodnoty `type` atributu pro všechny `phone` elementy.  
   
  [!code-vb[VbXMLSamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#16)]  
   
@@ -73,7 +73,7 @@ object.Value
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
 - [Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)
 - [Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)

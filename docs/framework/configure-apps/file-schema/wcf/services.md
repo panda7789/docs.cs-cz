@@ -2,15 +2,15 @@
 title: <services>
 ms.date: 03/30/2017
 ms.assetid: 80d76ba9-2058-48ad-9b91-5e4be7e5c113
-ms.openlocfilehash: 2db168d48e3959a7d80a10ca27134f58e3fcb2de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c00d5fe3e8b2ba05843e09aca6aaa79386541bad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758155"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937191"
 ---
-# <a name="services"></a>\<services>
-Služby jsou definovány v `services` oddílu konfiguračního souboru. Každá služba má svůj vlastní `service` konfigurační oddíl.  
+# <a name="services"></a>\<> služeb
+Služby jsou definovány v `services` části konfiguračního souboru. Každá služba má vlastní `service` konfigurační oddíl.  
   
  \<system.ServiceModel>  
   
@@ -35,13 +35,13 @@ Služby jsou definovány v `services` oddílu konfiguračního souboru. Každá 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Definování kontraktu služby, chování a koncové body konkrétní služby.|  
+|[\<service>](service.md)|Zadejte kontrakt služby, chování a koncové body konkrétní služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|Kořenový element všechny elementy konfigurace Windows Communication Foundation (WCF).|  
+|[\<system.serviceModel>](system-servicemodel.md)|Kořenový element všech prvků konfigurace Windows Communication Foundation (WCF).|  
   
 ## <a name="see-also"></a>Viz také:
 

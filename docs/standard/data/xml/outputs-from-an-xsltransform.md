@@ -5,57 +5,57 @@ ms.technology: dotnet-standard
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 383cfbe72d89f4360692f002a7104f7ae0bc0bdc
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 0a6c2ea2fe2f02dc1897cb1348f4c2585b730036
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170865"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924958"
 ---
 # <a name="outputs-from-an-xsltransform"></a>Výstupy z XslTransform
-Protože šablony stylů můžete určit formát výstupu pomocí `<xsl:output>` příkaz s `method` atributu, jsou popsány v následující tabulce je formát výstupu, kdy <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda se používá k zápisu výstupu a je výstupní formát deklarovat jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>.  
+Vzhledem k tomu, že šablony stylů mohou určit výstupní `<xsl:output>` formát pomocí příkazu `method` s atributem, následující tabulka popisuje, co je <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupní formát při použití metody k zápisu výstupu a výstupní formát je deklarováno jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>.  
   
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- Protože šablony stylů můžete určit formát výstupu pomocí `<xsl:output>` příkaz s `method` atributu, jsou popsány v následující tabulce je formát výstupu, kdy <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda se používá k zápisu výstupu a je výstupní formát deklarovat jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>. Následující tabulka popisuje, co se stane, když není deklarována typem výstupu <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda ve spojení s použitím `<xsl:output>` – příkaz:  
+ Vzhledem k tomu, že šablony stylů mohou určit výstupní `<xsl:output>` formát pomocí příkazu `method` s atributem, následující tabulka popisuje, co je <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupní formát při použití metody k zápisu výstupu a výstupní formát je deklarováno jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>. Následující tabulka popisuje, co se stane, když je typ výstupu deklarován <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodou ve spojení s použitím `<xsl:output>` příkazu:  
   
-|\<Metoda elementu xsl: Output = > atribut|Výsledný formát|  
+|\<XSL: Output – metoda = > – atribut|Výsledný formát|  
 |-----------------------------------------|-------------------|  
 |method="xml"|XML|  
 |method="html"|HTML|  
 |method="text"|Text|  
   
 > [!NOTE]
->  Poznámka: `<xsl:output>` Příkaz je ignorován při výstupu <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter>.  
+> Poznámka: Příkaz je ignorován, pokud <xref:System.Xml.XmlReader> je výstupem <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody nebo <xref:System.Xml.XmlWriter>. `<xsl:output>`  
   
- Jsou podporovány následující atributy při <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupu metody je <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>:  
+ Následující atributy jsou podporovány, pokud <xref:System.Xml.Xsl.XslTransform.Transform%2A> <xref:System.IO.Stream> je výstupem metody nebo <xref:System.IO.TextWriter>:  
   
-- encoding*  
+- kódování  
   
 - omit-xml-declaration  
   
 - samostatný  
   
-- doctype-public  
+- DOCTYPE – veřejné  
   
-- doctype-system  
+- DOCTYPE – systém  
   
-- cdata-section-elements  
+- CDATA-Section-Elements  
   
-- Odsazení  
+- rážce  
   
     > [!NOTE]
-    >  \* kódování atribut se ignoruje při <xref:System.Xml.Xsl.XslTransform.Transform%2A> odesílá svůj výstup do metody <xref:System.IO.TextWriter>. Vlastnost kódování na <xref:System.IO.TextWriter> místo ní se použije.  
+    > \*Atribut Encoding je ignorován, pokud <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda posílá svůj výstup <xref:System.IO.TextWriter>do. Místo toho se použije vlastnost <xref:System.IO.TextWriter> Encoding v. 
   
- Tento atribut se ignoruje při <xref:System.Xml.Xsl.XslTransform.Transform%2A> výstupu metody je <xref:System.IO.Stream>:  
+ Následující atribut je ignorován, pokud <xref:System.Xml.Xsl.XslTransform.Transform%2A> <xref:System.IO.Stream>je výstupem metody:  
   
-- verze: verze je vždy 1.0  
+- verze: verze je vždycky 1,0.  
   
 - typ média: typ média  
   
-## <a name="escaping-special-characters"></a>Speciální uvozovací znaky  
- `<xsl:text disable-output-escaping>` Značka se používá k označení, zda musí být do formuláře XML uvozeny řídicími znaky speciální znaky (například pomocí `<&lt>` místo `"<"` symbol) nebo left ve přítomna podmínka. `disable-output-escaping` Atribut se ignoruje při transformování do <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> objektů a nemá žádný vliv na speciální znaky.  
+## <a name="escaping-special-characters"></a>Speciální znaky pro uvozovací znaky  
+ Tato `<xsl:text disable-output-escaping>` značka slouží k označení, zda je nutné zadat speciální znaky do formuláře XML (například pomocí `<&lt>` místo `"<"` symbolu) nebo vlevo v aktuální podmínce. Atribut je ignorován při transformaci <xref:System.Xml.XmlReader> na objekt nebo <xref:System.Xml.XmlWriter> a nemá žádný vliv na speciální znaky. `disable-output-escaping`  
   
 ## <a name="see-also"></a>Viz také:
 

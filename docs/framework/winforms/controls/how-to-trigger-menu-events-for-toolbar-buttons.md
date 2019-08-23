@@ -11,26 +11,26 @@ helpviewer_keywords:
 - ToolBar control [Windows Forms], coding button click events
 - toolbars [Windows Forms], click event handlers
 ms.assetid: 98374f70-993d-4ca4-89fb-48fea6ce5b45
-ms.openlocfilehash: 0f5afde1cc0be772baff373c84c82f81df284b9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 381b8ba08db6ff5bb817c9c89008dacb1085ac1b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785824"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956039"
 ---
 # <a name="how-to-trigger-menu-events-for-toolbar-buttons"></a>Postupy: Spouštění událostí nabídky pro tlačítka ToolBar
 > [!NOTE]
->  <xref:System.Windows.Forms.ToolStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> <xref:System.Windows.Forms.ToolBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStrip>  
   
- Pokud vaše funkce formuláře Windows <xref:System.Windows.Forms.ToolBar> ovládacího prvku pomocí tlačítka panelu nástrojů, budou chtít vědět, která tlačítko uživatel klikne.  
+ Pokud formulář Windows obsahuje <xref:System.Windows.Forms.ToolBar> ovládací prvek s tlačítky na panelu nástrojů, budete chtít zjistit, na které tlačítko uživatel klikne.  
   
- Na <xref:System.Windows.Forms.ToolBar.ButtonClick> událost <xref:System.Windows.Forms.ToolBar> ovládacího prvku, lze vyhodnotit <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> vlastnost <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> třídy. V následujícím příkladu se zobrazí okno se zprávou, určující, které tlačítko došlo ke kliknutí na. Podrobnosti najdete v tématu <xref:System.Windows.Forms.MessageBox>.  
+ <xref:System.Windows.Forms.ToolBar.ButtonClick> V případě <xref:System.Windows.Forms.ToolBar> ovládacího prvku <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> můžete<xref:System.Windows.Forms.ToolBarButtonClickEventArgs> vyhodnotit vlastnost třídy. V následujícím příkladu se zobrazí okno se zprávou udávající, na které tlačítko bylo kliknuto. Podrobnosti najdete v tématu <xref:System.Windows.Forms.MessageBox>.  
   
- Následující příklad předpokládá <xref:System.Windows.Forms.ToolBar> ovládací prvek byl přidán do formuláře Windows.  
+ Následující příklad předpokládá, že <xref:System.Windows.Forms.ToolBar> ovládací prvek byl přidán do formuláře Windows Form.  
   
 ### <a name="to-handle-the-click-event-on-a-toolbar"></a>Zpracování události kliknutí na panelu nástrojů  
   
-1. V postupu, přidání tlačítka panelu nástrojů <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+1. V proceduře přidejte k <xref:System.Windows.Forms.ToolBar> ovládacímu prvku tlačítka panelu nástrojů.  
   
     ```vb  
     Public Sub ToolBarConfig()  
@@ -70,10 +70,10 @@ ms.locfileid: "61785824"
        }  
     ```  
   
-2. Přidat obslužnou rutinu události pro <xref:System.Windows.Forms.ToolBar> ovládacího prvku <xref:System.Windows.Forms.ToolBar.ButtonClick> událostí. Přepnutí příkaz případu a <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> třídu k určení, ke které došlo ke kliknutí na tlačítko na panelu nástrojů. Na základě toho zobrazit příslušné pole se zprávou.  
+2. Přidejte obslužnou rutinu události pro <xref:System.Windows.Forms.ToolBar> <xref:System.Windows.Forms.ToolBar.ButtonClick> událost ovládacího prvku. Pomocí příkazu pro přepnutí velikosti písmen a <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> třídy určete tlačítko na panelu nástrojů, na které jste klikli. Na základě toho se zobrazí příslušné okno se zprávou.  
   
     > [!NOTE]
-    >  Okno se zprávou slouží pouze jako zástupný symbol v tomto příkladu. Teď můžete přidat další kód ke spuštění po klepnutí na tlačítka na panelu nástrojů.  
+    > Okno se zprávou se v tomto příkladu používá výhradně jako zástupný symbol. Je možné přidat další kód, který se má provést při kliknutí na tlačítka na panelu nástrojů.  
   
     ```vb  
     Protected Sub ToolBar1_ButtonClick(ByVal sender As Object, _  
@@ -138,5 +138,5 @@ ms.locfileid: "61785824"
 
 - <xref:System.Windows.Forms.ToolBar>
 - [Postupy: Přidání tlačítek do ovládacího prvku ToolBar](how-to-add-buttons-to-a-toolbar-control.md)
-- [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
+- [Postupy: Definování ikony pro tlačítko panelu nástrojů](how-to-define-an-icon-for-a-toolbar-button.md)
 - [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)

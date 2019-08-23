@@ -7,57 +7,57 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-ms.openlocfilehash: a7b70669131ae35135088418e4b33b3ae289d322
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4024f4ad2b2aa8cb1897e83d87a7a00b1ba25e67
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761751"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964705"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Přehled literálů XML (Visual Basic)
-*Literál XML* umožňuje začlenit XML přímo do kódu jazyka Visual Basic. Syntaxe XML literál představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a je podobné syntaxi XML 1.0. To usnadňuje vytvořit XML elementů a dokumentů prostřednictvím kódu programu, protože váš kód má stejnou strukturu jako poslední XML.  
+*Literál XML* umožňuje začlenit XML přímo do kódu Visual Basic. Syntaxe literálu XML reprezentuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a je podobná syntaxi XML 1,0. To usnadňuje vytváření elementů XML a dokumentů programově, protože váš kód má stejnou strukturu jako finální XML.  
   
- Visual Basic zkompiluje literály XML do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje jednoduchý objektový model pro vytváření prostředků a manipulace s XML a tento model se integruje s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
+ Visual Basic zkompiluje literály XML do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje jednoduchý objektový model pro vytváření a manipulaci s XML a tento model se dobře integruje s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
   
- Výraz jazyka Visual Basic můžete vložit v literálu XML. V době běhu, vytvoří aplikaci [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt pro každý literál obsahující hodnoty vložené výrazy. To vám umožní zadat dynamický obsah uvnitř literálu XML. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ Výraz Visual Basic lze vložit do literálu XML. V době běhu aplikace vytvoří [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt pro každý literál, který zahrnuje hodnoty vložených výrazů. To umožňuje zadat dynamický obsah uvnitř literálu XML. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
- Další informace o rozdílech mezi literálu syntaxe jazyka XML a syntaxe XML 1.0 najdete v tématu [literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
+ Další informace o rozdílech mezi syntaxí literálu XML a syntaxí XML 1,0 naleznete v tématu [literály XML a specifikace xml 1,0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
   
 ## <a name="simple-literals"></a>Jednoduché literály  
- Můžete vytvořit [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt v kódu jazyka Visual Basic zadáním nebo vložením v platném formátu XML. Vrátí element XML literál <xref:System.Xml.Linq.XElement> objektu. Další informace najdete v tématu [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md). Následující příklad vytvoří element XML, který má několik podřízených elementů.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Objekt můžete v kódu Visual Basic vytvořit zadáním nebo vložením v platném formátu XML. Literál elementu XML vrací <xref:System.Xml.Linq.XElement> objekt. Další informace naleznete v tématu [literály elementu XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [literály XML a specifikace XML 1,0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md). Následující příklad vytvoří element XML, který má několik podřízených elementů.  
   
  [!code-vb[VbXMLSamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#5)]  
   
- Dokument XML můžete vytvořit spuštěním literálu s XML `<?xml version="1.0"?>`, jak je znázorněno v následujícím příkladu. Literál dokumentu XML vrátí <xref:System.Xml.Linq.XDocument> objektu. Další informace najdete v tématu [literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
+ Dokument XML můžete vytvořit spuštěním literálu XML pomocí `<?xml version="1.0"?>`, jak je znázorněno v následujícím příkladu. Literál dokumentu XML vrací <xref:System.Xml.Linq.XDocument> objekt. Další informace naleznete v tématu [literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
   
  [!code-vb[VbXMLSamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#6)]  
   
 > [!NOTE]
->  Literál syntaxe jazyka XML v jazyce Visual Basic není shodná se syntaxí ve specifikaci XML 1.0. Další informace najdete v tématu [literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
+> Syntaxe literálu XML v Visual Basic není shodná se syntaxí ve specifikaci XML 1,0. Další informace naleznete v tématu [literály XML a specifikace xml 1,0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
   
 ## <a name="line-continuation"></a>Pokračování řádku  
- Literál XML může zahrnovat více řádků bez použití znaky pokračování řádku (místo podtržítka zadejte pořadí). To usnadňuje porovnání literály XML v kódu s XML dokumenty.  
+ Literál XML může zahrnovat více řádků bez použití znaků pro pokračování řádku (mezera-podtržítko-ENTER Sequence). Díky tomu je snazší porovnat literály XML v kódu s dokumenty XML.  
   
- Kompilátor zpracovává jako součást literál XML znaky pokračování řádku. Proto měli používat pořadí místo podtržítka zadejte pouze v případě, že patří [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu.  
+ Kompilátor zpracovává znaky pro pokračování řádku jako součást literálu XML. Proto byste měli použít sekvenci Space-podtržítko-ENTER pouze v případě, že patří do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu.  
   
- Však nutné znaky pokračování řádku máte víceřádkového výrazu v vložený výraz. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ Pokud ale máte víceřádkový výraz ve vloženém výrazu, budete potřebovat znaky pro pokračování řádku. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
-## <a name="embedding-queries-in-xml-literals"></a>Vkládání dotazů v literálech XML  
- Dotaz můžete použít v vložený výraz. Když toto provedete, prvků vrácených dotazem se přidají do elementu XML. Tímto způsobem můžete přidat dynamický obsah, jako je například výsledek dotazu uživatele do literálů XML.  
+## <a name="embedding-queries-in-xml-literals"></a>Vložení dotazů do literálů XML  
+ Dotaz můžete použít ve vloženém výrazu. Když to uděláte, prvky vrácené dotazem jsou přidány do elementu XML. To umožňuje přidat dynamický obsah, jako je například výsledek dotazu uživatele, do literálu XML.  
   
- Například následující kód používá vložený dotaz k vytvoření elementy XML členů `phoneNumbers2` pole a pak přidejte tyto prvky jako podřízené objekty `contact2`.  
+ Například následující kód používá vložený dotaz k vytvoření prvků XML ze členů `phoneNumbers2` pole a poté tyto prvky přidat jako `contact2`podřízené položky.  
   
  [!code-vb[VbXMLSamples#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#7)]  
   
-## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>Jak kompilátor vytvoří objekty z literálů XML  
- Kompilátor jazyka Visual Basic přeloží literály XML do volání na ekvivalentní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] konstruktory Vybudujte [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Například kompilátor jazyka Visual Basic přeloží následující příklad kódu do volání <xref:System.Xml.Linq.XProcessingInstruction> volání konstruktoru pro instrukci verze XML, <xref:System.Xml.Linq.XElement> konstruktor pro `<contact>`, `<name>`, a `<phone>` elementy a volání <xref:System.Xml.Linq.XAttribute> konstruktor pro `type` atribut. Konkrétně uvedené atributy v následující ukázce, zavolá kompilátor jazyka Visual Basic <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> konstruktor dvakrát. První předají hodnotu `type` pro `name` parametru a hodnota `home` pro `value` parametru. Druhá bude také předat hodnotu `type` pro `name` parametr, ale hodnota `work` pro `value` parametru.  
+## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>Jak kompilátor vytváří objekty z literálů XML  
+ Kompilátor Visual Basic překládá literály XML do volání ekvivalentních [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] konstruktorů pro sestavení [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Například kompilátor Visual Basic převede následující příklad kódu do volání <xref:System.Xml.Linq.XProcessingInstruction> konstruktoru pro instrukci verze XML, volání <xref:System.Xml.Linq.XElement> konstruktoru pro `<contact>`, a `<phone>` `<name>` prvky a volání <xref:System.Xml.Linq.XAttribute> konstruktoru `type` pro atribut. Konkrétně při základě atributů v následující ukázce bude kompilátor Visual Basic volat <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> konstruktor dvakrát. První `type` předáte hodnotu `name` parametru `home`ahodnotu parametru.`value` Druhý bude také `type` předávat hodnotu `name` parametru, `value` ale hodnotu `work` parametru.  
   
  [!code-vb[VbXMLSamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XElement>
-- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
 - [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)

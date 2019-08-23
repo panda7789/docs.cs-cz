@@ -1,21 +1,21 @@
 ---
-title: <serviceCertificate> z <clientCredentials> – Element
+title: <serviceCertificate><clientCredentials> elementu
 ms.date: 03/30/2017
 ms.assetid: e50c0ac5-f0df-4c90-b54b-fc602c1f84ea
-ms.openlocfilehash: 4fe196ef8737c7abde939e36c2bb7afd5a0d86b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3013d0f7efd3014892cf6400447d708809c5fcd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670297"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936339"
 ---
-# <a name="servicecertificate-of-clientcredentials-element"></a>\<serviceCertificate > z \<clientCredentials > – Element
-Určuje certifikát používaný při ověřování služby ke klientovi.  
+# <a name="servicecertificate-of-clientcredentials-element"></a>\<serviceCertificate > \<elementu ClientCredentials >
+Určuje certifikát, který se má použít při ověřování služby pro klienta.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<clientCredentials>  
 \<serviceCertificate>  
   
@@ -35,20 +35,20 @@ Určuje certifikát používaný při ověřování služby ke klientovi.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<defaultCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)|Určuje certifikát X.509, který se má použít při služba nebo STS neposkytne pomocí protokolu vyjednávání.|  
-|[\<scopedCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování. Tato kolekce se obvykle používá k určení certifikáty služeb pro služby tokenu zabezpečení v případě federovaných.|  
-|[\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)|Určuje chování ověřování pro klientem používané certifikáty služeb.|  
+|[\<defaultCertificate>](defaultcertificate-element.md)|Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytne protokol pro vyjednávání.|  
+|[\<scopedCertificates>](scopedcertificates-element.md)|Představuje kolekci certifikátů X. 509 poskytovaných konkrétními službami (vymezenými) pro ověřování. Tato kolekce se obvykle používá k určení certifikátů služby pro služby tokenů zabezpečení ve federovaném scénáři.|  
+|[\<> ověřování](authentication-of-servicecertificate-element.md)|Určuje chování ověřování pro certifikáty služeb používané klientem.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření, která používá klient ke svému ověření ke službě.|  
+|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které klient používá k ověření samotné služby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek konfigurace určuje nastavení klient ověřit certifikát předložený službou pomocí ověřování protokolem SSL. Obsahuje také jakýkoliv certifikát pro službu, která je explicitně nakonfigurovaná na straně klienta má použít k zašifrování zprávy do služby pomocí zabezpečení zpráv.  
+ Tento prvek konfigurace určuje nastavení, pomocí kterých klient ověří certifikát prezentovaný službou pomocí ověřování SSL. Obsahuje taky všechny certifikáty pro službu, která je explicitně nakonfigurovaná na straně klienta, aby se mohla používat k šifrování zpráv do služby pomocí zabezpečení zpráv.  
   
- Atributy `serviceCertificate` jsou stejné jako atributy elementu [ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
+ Atributy `serviceCertificate` prvku jsou stejné jako atributy [ \<> ClientCertificate](clientcertificate-of-clientcredentials-element.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -58,7 +58,7 @@ Určuje certifikát používaný při ověřování služby ke klientovi.
 - <xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>
 - <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

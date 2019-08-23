@@ -2,36 +2,36 @@
 title: Prohlížení protokolů zpráv
 ms.date: 03/30/2017
 ms.assetid: 3012fa13-f650-45fb-aaea-c5cca8c7d372
-ms.openlocfilehash: 5e72aef7addb1e517bdf8cab4e300f6f8df5f833
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c926833a48331f191b6dcc3323f0dfda329b7014
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662825"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968673"
 ---
 # <a name="viewing-message-logs"></a>Prohlížení protokolů zpráv
 Toto téma popisuje, jak můžete zobrazit protokoly zpráv.  
   
-## <a name="viewing-message-logs-in-the-service-trace-viewer"></a>Při zobrazení zprávy přihlásí prohlížeče trasování služeb  
- Zpráva se bude transformovat, jako je zpracován programovacím modelem WCF. Proto zprávu přihlašováno odráží jenom obsah zprávy v okamžiku, kdy byla zapsána, není obsah na lince.  
+## <a name="viewing-message-logs-in-the-service-trace-viewer"></a>Zobrazení protokolů zpráv v prohlížeči trasování služby  
+ Zpráva bude transformovaná tak, jak je zpracována službou WCF. Proto se zaprotokolovaná zpráva odrážejí pouze obsah zprávy v okamžiku, kdy byl protokol, nikoli obsah na drátě.  
   
- Protože výstup protokolování zpráv nemá žádný vztah k přenosu formát zprávy, vždy protokolování zpráv výstupy dekódovanou zprávu. Pokud jste nakonfigurovali správně protokolování zpráv, všechny Protokolovaná zpráva musí být ve formátu prostého textu. Například formát (prostý text) zaznamenaných zpráv nemá vliv využití kodér binárních zpráv.  
+ Vzhledem k tomu, že výstup protokolování zpráv nemá žádný vztah k formátu přenosu zprávy, bude protokolování zpráv vždy výstupem dekódování zprávy. Pokud jste správně nakonfigurovali protokolování zpráv, všechny protokolované zprávy by měly být v prostém textu. Například formát (prostý text) protokolovaných zpráv není ovlivněn využitím binárního kodéru zpráv.  
   
- Výstup XmlWriterTraceListener je soubor, který obsahuje posloupnost fragmentů XML. Byste měli vědět, že soubor není platný soubor XML. Doporučuje se, že používáte [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) Chcete-li zobrazit soubory protokolu zpráv. Další informace o tom, jak pomocí tohoto nástroje naleznete v tématu [pomocí prohlížeče trasování služeb k zobrazení korelovaných trasování a řešení potíží](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ Výstupem XmlWriterTraceListener je soubor, který obsahuje sekvenci fragmentů XML. Měli byste si uvědomit, že soubor není platný soubor XML. Pro zobrazení souborů protokolu zpráv se doporučuje použít [Nástroj pro prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) . Další informace o použití tohoto nástroje najdete v tématu [použití prohlížeče trasování služby pro zobrazení korelačních trasování a odstraňování potíží](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
   
- Zprávy jsou v prohlížeče trasování služeb uvedené v **zpráva** kartu. Zprávy, které způsobily, nebo jsou související s, Chyba při zpracování jsou zvýrazněné žlutou barvou (úroveň upozornění) nebo červený (úroveň chyb), v závislosti na závažnosti chyby. Dvojitým kliknutím na zprávu zobrazí trasování zpráv v rámci zpracování požadavku.  
+ V prohlížeči trasování služby jsou zprávy uvedeny na kartě **zpráva** . Zprávy, které způsobily nebo souvisejí s, se chyba zpracování zvýrazní žlutě (úroveň upozornění) nebo červenou (úroveň chyby) v závislosti na závažnosti chyby. Dvojím kliknutím na zprávu se zobrazí trasování zprávy v kontextu žádosti o zpracování.  
   
 > [!NOTE]
->  Pokud zpráva neobsahuje žádné záhlaví `<header/>` značka je zaznamenána.  
+> Pokud zpráva neobsahuje hlavičku, není protokolována `<header/>` žádná značka.  
   
-## <a name="viewing-messages-logged-by-a-client-a-relay-and-a-service"></a>Zobrazení zprávy zaprotokolované pomocí klienta, se při předávání a služby  
- Vaše prostředí může obsahovat klienta, který odešle zprávu do přenos, který následně předá zprávu do služby. Při protokolování zpráv je povolená na všech třech umístěních, a všechny tři protokoly zpráv jsou zobrazeny v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) současně, bude nesprávně vykreslit výměny zpráv protokolu. Je to proto, `CorrelationId` a `ActivityId` v záhlaví zprávy nejsou jedinečné pro každý pár send-receive.  
+## <a name="viewing-messages-logged-by-a-client-a-relay-and-a-service"></a>Zobrazení zpráv protokolovaných klientem, přenosem a službou  
+ Vaše prostředí může obsahovat klienta, který pošle zprávu do přenosu, který následně přepošle zprávu službě. Pokud je povoleno protokolování zpráv na všech třech místech a všechny tři protokoly zpráv se zobrazují současně v [nástroji Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) současně, budou se zprávy o výměně protokolu zpráv nesprávně vykreslovat. Důvodem je, že `CorrelationId` a `ActivityId` v záhlaví zprávy nejsou jedinečné pro každou dvojici Send-Receive.  
   
- Chcete-li vyřešit tento problém můžete použít jednu z následujících metod.  
+ K vyřešení tohoto problému můžete použít některou z následujících metod.  
   
-- Zobrazit pouze dvě ze tří protokolů zpráv v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) kdykoli.  
+- V [nástroji Prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) si kdykoli zobrazit jenom dva ze tří protokolů zpráv.  
   
-- Pokud si musí zobrazit všechny tři protokoly v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) ve stejnou dobu, můžete upravit se službou Relay vytvoříte tak, že vytvoříte nový <xref:System.ServiceModel.Channels.Message> instance. Tato instance musí být kopie tělo z příchozí zprávy a navíc všechny hlavičky s výjimkou `ActivityId` a `Action` záhlaví. Následující příklad kódu ukazuje, jak to provést.  
+- Pokud je nutné zobrazit všechny tři protokoly v [nástroji Prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) současně, můžete službu Relay změnit vytvořením nové <xref:System.ServiceModel.Channels.Message> instance. Tato instance by měla být kopií textu příchozí zprávy a všech hlaviček kromě `ActivityId` hlaviček a. `Action` Následující příklad kódu ukazuje, jak to provést.  
   
 ```csharp
 Message outgoingMessage = Message.CreateMessage(incomingMessage.Version, incomingMessage.Headers.Action, incomingMessage.GetReaderAtBodyContents());  
@@ -47,18 +47,18 @@ incomingMessage.Headers[i].Name.Equals("Action", StringComparison.InvariantCultu
 }  
 ```  
   
-## <a name="exceptional-cases-for-inaccurate-message-logging-content"></a>Výjimečných případech nesprávné zpráva protokolování obsahu  
- Za následujících podmínek nemusí být právě protokolované zprávy přesnou reprezentací octet stream k dispozici na lince.  
+## <a name="exceptional-cases-for-inaccurate-message-logging-content"></a>Výjimečné případy pro nepřesný obsah protokolování zpráv  
+ V následujících podmínkách nemusí být protokolovaná zpráva přesným znázorněním oktetu přítomného na lince.  
   
-- BasicHttpBinding, hlavičky obálky se protokolují pro příchozí zprávy v / adresování/žádný obor názvů.  
+- Pro BasicHttpBinding se pro příchozí zprávy v oboru názvů/Addressing/None protokolují hlavičky obálek.  
   
-- Prázdné znaky může lišit.  
+- Nelze neshodovat prázdné znaky.  
   
-- Pro příchozí zprávy může být jinak reprezentována prázdné prvky. Například \<značka >\</označit > namísto \<značky / >  
+- Pro příchozí zprávy mohou být prázdné prvky reprezentovány jinak. Například \<Tag >\</Tag > namísto \<Tag/>  
   
-- Když je zakázáno přihlášení známého PII, buď ve výchozím nastavení nebo explicitní nastavení enableLoggingKnownPii = "true".  
+- Je-li známé protokolování PII zakázáno buď ve výchozím nastavení, nebo explicitním nastavením enableLoggingKnownPii = "true".  
   
-- Kódování je povolená pro transformaci na UTF-8.  
+- Kódování je povoleno pro transformaci do UTF-8.  
   
 ## <a name="see-also"></a>Viz také:
 

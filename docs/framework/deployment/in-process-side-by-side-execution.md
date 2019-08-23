@@ -7,36 +7,36 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b7964b2a59c67380d7f19077c01efa0a4a636cff
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 5d9d77ef20090e007e22a0d2f90b29f32ff94b46
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170519"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911114"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
-Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
+Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spouštění více verzí modulu CLR (Common Language Runtime) v jednom procesu. Ve výchozím nastavení se spravované komponenty modelu COM spouštějí s verzí .NET Framework, se kterou byly vytvořeny, bez ohledu na .NET Framework verzi, která je pro tento proces načtena.  
   
 ## <a name="background"></a>Pozadí  
- Rozhraní .NET Framework má vždy zadaná vedle sebe hostování pro aplikace spravovaného kódu, ale před rozhraní .NET Framework 4 se neposkytl, které tuto funkci pro spravované komponenty modelu COM. V minulosti spravované komponenty modelu COM, která byla načtena do procesu běžel s verzí modulu runtime, který byl již načten nebo s nainstalovanou verzí rozhraní .NET Framework. Pokud tato verze není kompatibilní s komponenty modelu COM, součást selže.  
+ .NET Framework vždy poskytoval Souběžné hostování pro aplikace spravovaného kódu, ale před .NET Framework 4 neposkytovali tuto funkci pro spravované komponenty modelu COM. V minulosti spravované komponenty modelu COM, které byly načteny do procesu, byly spuštěny buď s verzí modulu runtime, který již byl načten, nebo s nejnovější nainstalovanou verzí .NET Framework. Pokud tato verze není kompatibilní s komponentou modelu COM, komponenta by se nezdařila.  
   
- Rozhraní .NET Framework 4 nabízí nový přístup k hostování vedle sebe, která zajišťuje následující:  
+ .NET Framework 4 poskytuje nový přístup k souběžnému hostování, který zajišťuje následující:  
   
-- Instalace nové verze rozhraní .NET Framework nemá žádný vliv na stávající aplikace.  
+- Instalace nové verze .NET Framework nemá žádný vliv na existující aplikace.  
   
-- Aplikace běží na verzi rozhraní .NET Framework, se kterými byly vytvořeny. Nepoužívají novou verzi rozhraní .NET Framework pokud výslovně směrované. Uděláte to tak. Je však snazší pro aplikace pro přechod na novou verzi rozhraní .NET Framework.  
+- Aplikace běží na verzi .NET Framework, se kterou byly vytvořeny. Nepoužívají novou verzi .NET Framework, pokud to není výslovně přesměrováno. Pro aplikace je však snazší přejít na použití nové verze .NET Framework.  
   
-## <a name="effects-on-users-and-developers"></a>Vliv na uživatele a vývojáře  
+## <a name="effects-on-users-and-developers"></a>Účinky na uživatele a vývojáře  
   
-- **Koncoví uživatelé a správci systému**. Tito uživatelé teď můžou mít větší jistotu, že při instalaci nové verze modulu runtime, buď samostatně, nebo s aplikací, bude mít žádný vliv na svých počítačích. Stávající aplikace bude dál běžet podle před nástupem prostředí.  
+- **Koncoví uživatelé a správci systému**. Tito uživatelé teď můžou mít větší jistotu, že když si nainstalují novou verzi modulu runtime, ať už nezávisle nebo s aplikací, nebude mít žádný vliv na jejich počítače. Stávající aplikace budou i nadále běžet stejně jako dříve.  
   
-- **Vývojáři aplikací**. Hostování vedle sebe nemá téměř žádný vliv na vývojáře aplikací. Ve výchozím nastavení aplikace vždy spustit proti verzi rozhraní .NET Framework, které byly vytvořeny. To se nezměnil. Však mohou vývojáři toto chování přepsat a nasměrovat aplikace na spouštění v novější verzi rozhraní .NET Framework (viz [scénář 2](#scenarios)).  
+- **Vývojáři aplikací** Souběžné hostování nemá téměř žádný vliv na vývojáře aplikací. Ve výchozím nastavení se aplikace vždycky spouštějí proti verzi .NET Framework, na které byly vytvořeny. Tato změna se nezměnila. Vývojáři ale můžou toto chování potlačit a nasměrovat aplikaci tak, aby běžela v novější verzi .NET Framework (viz [scénář 2](#scenarios)).  
   
-- **Vývojáři knihoven a spotřebitelé**. Hostování vedle sebe nevyřeší problémy s kompatibilitou vývojáři této knihovny pro rozpoznávání tváře. Knihovnu, která je přímo načíst aplikací – buď prostřednictvím přímého odkazu nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> volání – pořád používá modul runtime <xref:System.AppDomain> je načten do. Měli byste otestovat knihovny pro všechny verze rozhraní .NET Framework, které chcete podporovat. Pokud aplikace je kompilována použitím modul runtime rozhraní .NET Framework 4, ale obsahuje knihovnu, která byla vytvořena pomocí starší modul runtime, knihovny použije i modul runtime rozhraní .NET Framework 4. Nicméně, pokud máte aplikaci, která byla vytvořena pomocí starší modul runtime a knihovnu, která byla vytvořena pomocí rozhraní .NET Framework 4, je nutné donutit aplikace také pomocí rozhraní .NET Framework 4 (viz [scénář 3](#scenarios)).  
+- **Vývojáři a příjemci knihovny**. Souběžné hostování neřeší problémy s kompatibilitou, které vývojáři knihovny čelí. Knihovna, která je přímo načtena aplikací – buď prostřednictvím přímého odkazu, nebo prostřednictvím <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> volání – nadále používá modul runtime <xref:System.AppDomain> , který je načten do. Své knihovny byste měli testovat ve všech verzích .NET Framework, které chcete podporovat. Pokud je aplikace kompilována pomocí modulu runtime .NET Framework 4, ale obsahuje knihovnu, která byla sestavena pomocí dřívějšího modulu runtime, tato knihovna bude také používat modul runtime .NET Framework 4. Pokud však máte aplikaci vytvořenou pomocí dřívějšího modulu runtime a knihovny, která byla sestavena pomocí .NET Framework 4, musíte aplikaci vynutit, aby používala .NET Framework 4 (viz [scénář 3](#scenarios)).  
   
-- **Vývojáři komponent COM pro spravované**. V minulosti spravované komponenty modelu COM automaticky spustili pomocí nejnovější verze modulu runtime nainstalovaného v počítači. Teď můžete spustit komponenty modelu COM s verzí modulu runtime, které byly vytvořeny.  
+- **Vývojáři komponent spravovaného modelu COM**. V minulosti se spravované komponenty COM automaticky spouštěly pomocí nejnovější verze modulu runtime nainstalovaného v počítači. Nyní můžete spouštět komponenty modelu COM v rámci verze modulu runtime, pomocí něhož byly vytvořeny.  
   
-     Jak je znázorněno v následující tabulce, komponenty, které byly vytvořeny s použitím rozhraní .NET Framework verze 1.1 lze spustit souběžně s verzí 4 komponenty, ale nelze je spustit s verzí 2.0, 3.0 nebo 3.5 komponenty, protože není k dispozici pro ty hostování vedle sebe verze.  
+     Jak je znázorněno v následující tabulce, součásti, které byly vytvořeny pomocí .NET Framework verze 1,1, mohou být spouštěny souběžně s komponentami verze 4, ale nelze je spustit s komponentami verze 2,0, 3,0 nebo 3,5, protože Souběžné hostování není k dispozici pro tyto zachovávaných.  
   
     |Verze rozhraní .NET Framework|1.1|2.0 - 3.5|4|  
     |----------------------------|---------|----------------|-------|  
@@ -45,22 +45,22 @@ Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně
     |4|Ano|Ano|Nelze použít|  
   
 > [!NOTE]
->  Verze rozhraní .NET framework 3.0 a 3.5 jsou postupně sestavena na verzi 2.0 a není potřeba pracovat souběžně. Toto jsou ze své podstaty stejnou verzi.  
+> Verze .NET Framework 3,0 a 3,5 jsou postupně postaveny na verzi 2,0 a nemusejí běžet souběžně. Tato verze je v podstatě stejnou verzí.  
   
 <a name="scenarios"></a>   
-## <a name="common-side-by-side-hosting-scenarios"></a>Běžné scénáře hostování vedle sebe  
+## <a name="common-side-by-side-hosting-scenarios"></a>Společné scénáře souběžného hostování  
   
-- **Scénář 1:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework.  
+- **Scénář 1:** Nativní aplikace, která používá komponenty modelu COM sestavené v předchozích verzích .NET Framework.  
   
-     Nainstalovaná verze rozhraní .NET framework: Rozhraní .NET Framework 4 a všechny ostatní verze rozhraní .NET Framework používá komponenty modelu COM.  
+     Nainstalované verze .NET Framework: .NET Framework 4 a všechny ostatní verze .NET Framework používané komponentami COM.  
   
-     Co dělat: V tomto scénáři neprovádějte žádnou akci. Komponenty modelu COM se spustí s verzí rozhraní .NET Framework byla zaregistrována.  
+     Co dělat: V tomto scénáři neprovádějte žádnou akci. Komponenty modelu COM budou spouštěny s verzí .NET Framework, se kterými byly zaregistrovány.  
   
-- **Scénář 2**: Spravovat aplikaci sestavenou pomocí rozhraní .NET Framework 2.0 SP1, který chcete spustit pomocí rozhraní .NET Framework 2.0, ale jsou natolik, abyste spuštění v rozhraní .NET Framework 4, pokud není k dispozici verze 2.0.  
+- **Scénář 2**: Spravovaná aplikace vytvořená pomocí .NET Framework 2,0 SP1, kterou byste chtěli použít s .NET Framework 2,0, ale mají ochotny běžet na .NET Framework 4, pokud verze 2,0 není k dispozici.  
   
-     Nainstalovaná verze rozhraní .NET framework: Starší verze rozhraní .NET Framework a .NET Framework 4.  
+     Nainstalované verze .NET Framework: Starší verze .NET Framework a .NET Framework 4.  
   
-     Co dělat: V [konfiguračního souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace, použijte [ \<spuštění > element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) a [ \<supportedRuntime >–element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) nastavte následujícím způsobem:  
+     Co dělat: V [konfiguračním souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace použijte [ \<element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) [ \<](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) startup > a sadu > elementu supportedRuntime následujícím způsobem:  
   
     ```xml  
     <configuration>  
@@ -71,11 +71,11 @@ Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně
     </configuration>  
     ```  
   
-- **Scénář 3:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework, kterou chcete spustit pomocí rozhraní .NET Framework 4.  
+- **Scénář 3:** Nativní aplikace, která používá komponenty modelu COM sestavené s dřívějšími verzemi .NET Framework, které chcete spustit s .NET Framework 4.  
   
-     Nainstalovaná verze rozhraní .NET framework: Rozhraní .NET Framework 4.  
+     Nainstalované verze .NET Framework: .NET Framework 4.  
   
-     Co dělat: V konfiguračním souboru aplikace v adresáři aplikace, použijte `<startup>` element s `useLegacyV2RuntimeActivationPolicy` atribut nastaven na `true` a `<supportedRuntime>` element nastavte následujícím způsobem:  
+     Co dělat: V konfiguračním souboru aplikace v adresáři aplikace, `<startup>` použijte element `useLegacyV2RuntimeActivationPolicy` s `<supportedRuntime>` atributem nastaveným na `true` a jako následující prvek sady:  
   
     ```xml  
     <configuration>  
@@ -86,9 +86,9 @@ Od verze rozhraní .NET Framework 4, můžete použít v procesu – souběžně
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje nespravovaný hostitel modelu COM, na kterém běží spravované komponenty modelu COM pomocí verze rozhraní .NET Framework, která komponenta byla sestavena pro použití.  
+ Následující příklad ukazuje nespravovaného hostitele modelu COM, na kterém je spuštěna komponenta spravovaného modelu COM, pomocí verze .NET Framework, která byla komponenta zkompilována pro použití.  
   
- Pokud chcete spustit příklad, kompilaci a zaregistrovat následující spravované komponenty modelu COM pomocí rozhraní .NET Framework 3.5. K registraci komponenty, na **projektu** nabídky, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **sestavení** kartu a potom vyberte **zaregistrovat pro interoperabilitu COM**zaškrtávací políčko.  
+ Chcete-li spustit následující příklad, zkompilujte a zaregistrujte následující spravovanou komponentu COM pomocí .NET Framework 3,5. Chcete-li zaregistrovat součást, klikněte v nabídce **projekt** na příkaz **vlastnosti**, klikněte na kartu **sestavení** a potom zaškrtněte políčko **zaregistrovat pro zprostředkovatele komunikace s objekty COM** .  
   
 ```csharp
 using System;  
@@ -113,7 +113,7 @@ namespace BasicComObject
 }  
 ```  
   
- Zkompilujte následující nespravovaná aplikace C++, která se aktivuje objekt modelu COM, který je vytvořen z předchozího příkladu.  
+ Zkompilujte následující nespravovanou C++ aplikaci, která aktivuje objekt com, který je vytvořen předchozím příkladem.  
   
 ```cpp
 #include "stdafx.h"  
@@ -175,5 +175,5 @@ int _tmain(int argc, _TCHAR* argv[])
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<Po spuštění > – Element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
-- [\<supportedRuntime > – Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<spouštěcí > – element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
+- [\<supportedRuntime – element >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)

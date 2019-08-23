@@ -2,20 +2,20 @@
 title: <userNameAuthentication>
 ms.date: 03/30/2017
 ms.assetid: 24d8b398-770f-418f-ba23-c4325419cfa6
-ms.openlocfilehash: 5a4cf8d429198b889f2bb362294ba3841c814b26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 399158632d5c17a35ded02691ba35a231e6cdc6e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788697"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940535"
 ---
 # <a name="usernameauthentication"></a>\<userNameAuthentication>
-Určuje pověření služby na základě uživatelského jména a hesla.  
+Určuje přihlašovací údaje služby na základě uživatelského jména a hesla.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<userNameAuthentication>  
   
@@ -38,13 +38,13 @@ Určuje pověření služby na základě uživatelského jména a hesla.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`cacheLogonTokenLifetime`|A <xref:System.TimeSpan> , která určuje maximální délku doby token se uloží do mezipaměti. Výchozí hodnota je 00:15:00.|  
-|`cacheLogonTokens`|Logická hodnota určující, zda jsou uložené v mezipaměti tokeny přihlášení. Výchozí hodnota je `false`.|  
-|`customUserNamePasswordValidatorType`|Řetězec, který určuje typ validátoru vlastního uživatelského jména hesla pro použití. Výchozí hodnota je prázdný řetězec.|  
-|`includeWindowsGroups`|Logická hodnota určující, zda jsou skupiny Windows zahrnuty v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má dopad na výkon, protože výsledkem rozšíření skupiny úplné. Tuto vlastnost nastavte na `false` Pokud není potřeba vytvořit seznam skupin uživatel patří.|  
-|`maxCacheLogonTokens`|Celé číslo určující maximální počet tokeny přihlášení do mezipaměti. Tato hodnota by měla být větší než nula. Výchozí hodnota je 128.|  
-|`membershipProviderName`|Když `clientCredentialType` atribut vazby je nastaven na `username`, uživatelské jméno je mapováno na účty Windows. Můžete přepsat toto chování pomocí tohoto atributu, což je řetězec, který obsahuje název <xref:System.Web.Security.MembershipProvider> hodnotu, která poskytuje mechanismus ověřování příslušné heslo.|  
-|`userNamePasswordValidationMode`|Určuje způsob, v jaké uživatelské jméno je ověřit heslo. Platné hodnoty jsou:<br /><br /> – Windows<br />-MembershipProvider<br />– Vlastní<br /><br /> Výchozí hodnota je Windows. Tento atribut je typu <xref:System.ServiceModel.Security.UserNamePasswordValidationMode>.|  
+|`cacheLogonTokenLifetime`|A <xref:System.TimeSpan> určuje maximální dobu, po kterou je token uložen v mezipaměti. Výchozí hodnota je 00:15:00.|  
+|`cacheLogonTokens`|Logická hodnota, která určuje, zda jsou přihlašovací tokeny ukládány do mezipaměti. Výchozí hodnota je `false`.|  
+|`customUserNamePasswordValidatorType`|Řetězec, který určuje typ vlastního validátoru hesla uživatele, který se má použít. Výchozí hodnota je prázdný řetězec.|  
+|`includeWindowsGroups`|Logická hodnota určující, zda jsou skupiny systému Windows zahrnuty v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má vliv na výkon, protože má za následek rozšíření úplného seskupení. Tuto vlastnost nastavte na `false` , pokud nepotřebujete vytvořit seznam skupin, do kterých uživatel patří.|  
+|`maxCacheLogonTokens`|Celé číslo, které určuje maximální počet přihlašovacích tokenů pro ukládání do mezipaměti. Tato hodnota by měla být větší než nula. Výchozí hodnota je 128.|  
+|`membershipProviderName`|`username`Pokud je `clientCredentialType` atribut vazby nastaven na hodnotu, uživatelské jméno je namapováno na účty systému Windows. Toto chování můžete přepsat pomocí tohoto atributu, což je řetězec, který obsahuje název <xref:System.Web.Security.MembershipProvider> hodnoty, která poskytuje příslušný mechanismus ověřování hesla.|  
+|`userNamePasswordValidationMode`|Určuje způsob, jakým se ověřuje heslo k uživatelskému jménu. Platné hodnoty jsou:<br /><br /> – Windows<br />– MembershipProvider<br />– Vlastní<br /><br /> Výchozí hodnota je Windows. Tento atribut je typu <xref:System.ServiceModel.Security.UserNamePasswordValidationMode>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,12 +53,12 @@ Určuje pověření služby na základě uživatelského jména a hesla.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje, který se má použít při ověřování služby, a nastavení příslušného ověřování přihlašovacích údajů klienta.|  
+|[\<serviceCredentials>](servicecredentials.md)|Určuje přihlašovací údaje, které se mají použít při ověřování služby, a nastavení související s ověřováním přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud žádná z vazby používané službou je nakonfigurován pro ověřování založené na jméno/heslo uživatele, atributy u tohoto elementu se ignorují. Patří mezi ně `customUserNamePasswordValidatorType`, `includeWindowsGroups`, `membershipProviderName`, a `userNamePasswordValidationMode`.  
+ Pokud žádná z vazeb používaných službou není nakonfigurovaná pro ověřování pomocí uživatelského jména a hesla, atributy pro tento element se ignorují. Mezi ně `customUserNamePasswordValidatorType`patří `includeWindowsGroups` ,`membershipProviderName`, a `userNamePasswordValidationMode`.  
   
- Pokud žádná z vazby používané službou je nakonfigurován pro použití ověřování Windows pro uživatelské jméno/heslo, jsou ignorovány nastavení týkající se ukládání do mezipaměti tokeny přihlášení. Patří mezi ně `cacheLogonTokenLifetime`, `cacheLogonTokens`, a `maxCacheLogonTokens`.  
+ Pokud není žádná z vazeb používaných službou nakonfigurovaná tak, aby pro uživatelské jméno a heslo používala ověřování systému Windows, ignorují se nastavení související s ukládáním přihlašovacích tokenů do mezipaměti. Mezi ně patří `cacheLogonTokenLifetime`, `cacheLogonTokens`a `maxCacheLogonTokens`.  
   
 ## <a name="see-also"></a>Viz také:
 

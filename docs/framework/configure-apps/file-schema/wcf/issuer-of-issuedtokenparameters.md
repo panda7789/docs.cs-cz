@@ -2,22 +2,22 @@
 title: <issuer> z <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
-ms.openlocfilehash: 690ab14ea33ba9bef29788b2eb35f86ed945ce2b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 77ed9534ce872e805a6a6ea2c21a38710e6bc0fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113539"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925269"
 ---
-# <a name="issuer-of-issuedtokenparameters"></a>\<Issuer > z \<issuedTokenParameters >
-Určuje Token služba zabezpečení (STS), která vydává tokeny zabezpečení.  
+# <a name="issuer-of-issuedtokenparameters"></a>\<Vystavitel > \<issuedTokenParameters >
+Určuje službu tokenů zabezpečení (STS), která vydává tokeny zabezpečení.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<issuedTokenParameters>  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
+\<> zabezpečení  
+\<issuedTokenParameters >  
 \<issuer>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,39 +27,39 @@ Určuje Token služba zabezpečení (STS), která vydává tokeny zabezpečení.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|adresa|Povinný řetězec. Adresa URL služby STS.|  
+|adresa|Povinný řetězec. Adresa URL služby STS|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres pro koncové body, které můžete vytvořit tvůrce.|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Při použití vydaný token, určuje nastavení, které povoluje klient k ověření tohoto serveru.|  
+|[\<headers>](headers-element.md)|Kolekce záhlaví adres pro koncové body, které může tvůrce vytvořit.|  
+|[\<identity>](identity.md)|Při použití vydaného tokenu aplikace určuje nastavení, které klientovi umožní Server ověřit.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje aktuální vydaný token.|  
+|[\<issuedTokenParameters>](issuedtokenparameters.md)|Určuje aktuální vydaný token.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.AdditionalRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.AdditionalRequestParameters%2A>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Možnosti zabezpečení u vlastních vazeb](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Zabezpečení vlastních vazeb](../../../wcf/samples/custom-binding-security.md)

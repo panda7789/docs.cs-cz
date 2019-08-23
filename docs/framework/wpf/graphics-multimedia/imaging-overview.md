@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 6d3dce5c8a34257f8509f239ece4bae3efa02b84
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 13d5ea2735a799332edd8e552198de0f2b970dad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545376"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914093"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)]umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
@@ -99,7 +99,7 @@ Toto téma poskytuje Úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasha
  Následující příklad ukazuje, jak vykreslit obrázek 200 pixelů v širším formátu pomocí kódu.  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Imaging.BitmapImage><xref:System.ComponentModel.ISupportInitialize> implementuje rozhraní pro optimalizaci inicializace u více vlastností. Změny vlastností mohou nastat pouze při inicializaci objektu. Volání <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> signalizace, že inicializace začala a <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> signalizuje, že inicializace byla dokončena. Po inicializaci jsou změny vlastností ignorovány.  
+> <xref:System.Windows.Media.Imaging.BitmapImage><xref:System.ComponentModel.ISupportInitialize> implementuje rozhraní pro optimalizaci inicializace u více vlastností. Změny vlastností mohou nastat pouze při inicializaci objektu. Volání <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> signalizace, že inicializace začala a <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> signalizuje, že inicializace byla dokončena. Po inicializaci jsou změny vlastností ignorovány.  
   
  [!code-csharp[ImageElementExample_snip#ImageSimpleExampleInlineCode1](~/samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml.cs#imagesimpleexampleinlinecode1)]
  [!code-vb[ImageElementExample_snip#ImageSimpleExampleInlineCode1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample_snip/VB/ImageSimpleExample.xaml.vb#imagesimpleexampleinlinecode1)]  
@@ -185,7 +185,7 @@ Různá nastavení Stretch
  Ukázku rozhraní API pro rozšiřitelnost najdete v ukázkovém [kodeku Win32](https://go.microsoft.com/fwlink/?LinkID=160052). Tato ukázka předvádí, jak vytvořit dekodér a kodér pro vlastní formát obrázku.  
   
 > [!NOTE]
->  Kodek musí být digitálně podepsaný pro systém, aby ho mohl rozpoznat.  
+> Kodek musí být digitálně podepsaný pro systém, aby ho mohl rozpoznat.  
   
 ## <a name="see-also"></a>Viz také:
 

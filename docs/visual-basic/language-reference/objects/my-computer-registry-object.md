@@ -1,34 +1,34 @@
 ---
-title: My.Computer.Registry – objekt (Visual Basic)
+title: My. Computer. Registry – objekt (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - DeleteSetting function [Visual Basic], increasing performance
 - My.Computer.Registry object
 ms.assetid: afd9edf9-ef9b-438b-a390-d71a02dc8203
-ms.openlocfilehash: f214378d459ecafc5843a0cbe2cb8db945f3f68b
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: 1015edf1ff7633f873480db9f27a4ec0cf690574
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041686"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966011"
 ---
 # <a name="mycomputerregistry-object"></a>My.Computer.Registry – objekt
-Poskytuje vlastnosti a metody pro práci v registru.  
+Poskytuje vlastnosti a metody pro manipulaci s registrem.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o tom, metody a vlastnosti `My.Computer.Registry` objektu, najdete v článku <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
+ Informace o metodách a vlastnostech `My.Computer.Registry` objektu naleznete v tématu. <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
   
- Další informace najdete v tématu [čtení a zápis do registru](../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md).  
+ Další informace najdete v tématu [čtení z registru a zápis do něj](../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md).  
   
 > [!NOTE]
->  Můžete také pracovat s registru pomocí metod <xref:Microsoft.Win32.Registry?displayProperty=nameWithType> třídy.  
+> Můžete také manipulovat s registrem pomocí metod <xref:Microsoft.Win32.Registry?displayProperty=nameWithType> třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.MyServices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.MyServices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.MyServices.RegistryProxy> (poskytuje přístup k <xref:Microsoft.Win32.Registry>)  
+ **Třída:** (poskytuje přístup k <xref:Microsoft.Win32.Registry>) <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
   
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Shromážděním** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

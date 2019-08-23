@@ -3,22 +3,22 @@ title: 'Postupy: Zobrazení stavu přihlášení pomocí WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: 6d81bd2023886799f939fc9851db516a00aa92df
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e44dc80260e46b81ac723ada32085390a18a153a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742451"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945702"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Postupy: Zobrazení stavu přihlášení pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
   
-- Microsoft Windows® Identity Foundation (WIF) 4.5  
+- Microsoft® Windows® Identity Foundation (WIF) 4,5  
   
-- ASP.NET® webových formulářů  
+- Webové formuláře ASP.NET®  
   
 ## <a name="summary"></a>Souhrn  
- Toto téma popisuje, jak zobrazit znaménko ve stavu v aplikaci technologie ASP.NET s podporou technologie WIF. Technologie WIF poskytuje mechanismus pro provádění vaší aplikace s deklaracemi identity a správu ověřování a autorizace pro prostředky aplikace.  
+ Toto téma popisuje, jak zobrazit stav přihlášení v aplikaci ASP.NET s podporou WIF. WIF poskytuje mechanismus pro poskytování deklarací identity vaší aplikace a správu ověřování a autorizace prostředků aplikace.  
   
 ## <a name="contents"></a>Obsah  
   
@@ -26,78 +26,78 @@ ms.locfileid: "67742451"
   
 - Přehled kroků  
   
-- Krok 1 – instalace identita a přístup k rozšíření  
+- Krok 1 – instalace rozšíření identity and Access Extension  
   
-- Krok 2 – Vytvoření aplikace předávající strany ASP.NET  
+- Krok 2 – Vytvoření aplikace ASP.NET předávající strany  
   
-- Krok 3 – povolit místní služby STS pro vývoj k ověřování uživatelů  
+- Krok 3 – povolení služby STS pro místní vývoj pro ověřování uživatelů  
   
-- Krok 4 – upravit svou aplikaci technologie ASP.NET pro zobrazení přihlašovací ve stavu  
+- Krok 4 – Úprava aplikace v ASP.NET pro zobrazení stavu přihlášení  
   
-- Krok 5 – otestovat integraci technologie WIF a vaše aplikace ASP.NET  
+- Krok 5 – testování integrace mezi WIF a aplikací ASP.NET  
   
 ## <a name="overview"></a>Přehled  
- Toto téma ukazuje, jak vytvořit jednoduchou aplikaci deklaracemi pomocí technologie WIF a jak lze snadno zobrazit, zda je uživatel přihlášený, nebo ne. V následujících krocích se používá místní službu STS, která je součástí Identity a přístupu k rozšíření sady Visual Studio. Místní službu STS je určená pro vývoj a testování prostředí nabízejí jednoduchý způsob začlenění deklarací do vaší aplikace. To byste nikdy neměli používat v produkčním prostředí, jak neprovádí skutečné ověřování a přihlašovací údaje se nevyžadují. Imperativního kódu v následujícím postupu je však stejný pro aplikace připravené pro produkční prostředí pomocí skutečné ověřování.  
+ Toto téma ukazuje, jak vytvořit jednoduchou aplikaci pracující s deklaracemi identity pomocí WIF a jak snadno zobrazit, jestli je uživatel přihlášený nebo ne. V následujících krocích se používá místní vývoj STS, který je součástí identity a přístupu k rozšíření sady Visual Studio. Místní služba STS pro vývoj je určená pro testovací a vývojové prostředí, které poskytuje jednoduchou metodu integrace deklarací identity do vaší aplikace. Nikdy by neměl být použit v produkčním prostředí, protože neprovádí reálné ověřování a přihlašovací údaje nejsou požadovány. Nicméně imperativní kód v následujících krocích je stejný pro aplikaci připravenou pro produkční prostředí pomocí reálného ověřování.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
-- Krok 1 – instalace identita a přístup k rozšíření  
+- Krok 1 – instalace rozšíření identity and Access Extension  
   
-- Krok 2 – Vytvoření aplikace předávající strany ASP.NET  
+- Krok 2 – Vytvoření aplikace ASP.NET předávající strany  
   
-- Krok 3 – povolit místní služby STS pro vývoj k ověřování uživatelů  
+- Krok 3 – povolení služby STS pro místní vývoj pro ověřování uživatelů  
   
-- Krok 4 – upravit svou aplikaci technologie ASP.NET pro zobrazení přihlašovací ve stavu  
+- Krok 4 – Úprava aplikace v ASP.NET pro zobrazení stavu přihlášení  
   
-- Krok 5 – otestovat integraci technologie WIF a vaše aplikace ASP.NET  
+- Krok 5 – testování integrace mezi WIF a aplikací ASP.NET  
   
-## <a name="step-1--install-the-identity-and-access-extension"></a>Krok 1 – instalace identita a přístup k rozšíření  
- Tento krok popisuje postup konfigurace identit a přístupu rozšíření pro Visual Studio 2012. Toto rozšíření automatizuje proces konfigurace vaší aplikace ke komunikaci s koncovými body služby tokenů zabezpečení.  
+## <a name="step-1--install-the-identity-and-access-extension"></a>Krok 1 – instalace rozšíření identity and Access Extension  
+ Tento krok popisuje, jak nakonfigurovat rozšíření identita a přístup k aplikaci Visual Studio 2012. Toto rozšíření automatizuje proces konfigurace vaší aplikace pro komunikaci s koncovými body služby STS.  
   
-### <a name="to-install-the-identity-and-access-extension"></a>Chcete-li nainstalovat rozšíření identit a přístupu  
+### <a name="to-install-the-identity-and-access-extension"></a>Instalace rozšíření identity and Access Extension  
   
 1. Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
   
-2. V sadě Visual Studio, klikněte na tlačítko **nástroje** a klikněte na tlačítko **Správce rozšíření**. **Správce rozšíření** zobrazí se okno.  
+2. V aplikaci Visual Studio klikněte na **nástroje** a pak na **Správce rozšíření**. Zobrazí se okno **Správce rozšíření** .  
   
-3. V **Správce rozšíření**, klikněte na tlačítko **Online rozšíření** v levé nabídce vyberte **Galerie sady Visual Studio**.  
+3. Ve **Správci rozšíření**klikněte v levé nabídce na **rozšíření online** a pak vyberte **Galerie sady Visual Studio**.  
   
-4. V pravém horním rohu **Správce rozšíření**, vyhledejte *identit a přístupu*.  
+4. V pravém horním rohu **Správce rozšíření**vyhledejte *identitu a přístup*.  
   
-5. **Identit a přístupu** položky se zobrazí ve výsledcích hledání. Klikněte na něj a potom klikněte na tlačítko **Stáhnout**.  
+5. Položka **Identita a přístup** se zobrazí ve výsledcích hledání. Klikněte na něj a pak klikněte na **Stáhnout**.  
   
-6. **Stáhnout a nainstalovat** se zobrazí dialogové okno. Pokud s licenčními podmínkami souhlasíte, klikněte na tlačítko **nainstalovat**.  
+6. Zobrazí se dialogové okno **Stáhnout a nainstalovat** . Pokud souhlasíte s licenčními podmínkami, klikněte na **nainstalovat**.  
   
-7. Když **identit a přístupu** rozšíření dokončil instalaci, restartujte Visual Studio v režimu správce.  
+7. Až se instalace rozšíření **identity a přístupu** dokončí, restartujte Visual Studio v režimu správce.  
   
-## <a name="step-2--create-a-relying-party-aspnet-application"></a>Krok 2 – Vytvoření aplikace předávající strany ASP.NET  
- Tento krok popisuje, jak vytvořit webovou aplikaci webových formulářů ASP.NET, které se integrují s WIF předávající stranu.  
+## <a name="step-2--create-a-relying-party-aspnet-application"></a>Krok 2 – Vytvoření aplikace ASP.NET předávající strany  
+ Tento krok popisuje, jak vytvořit aplikaci webových formulářů ASP.NET předávající strany, která se bude integrovat s WIF.  
   
-### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
+### <a name="to-create-a-simple-aspnet-application"></a>Vytvoření jednoduché aplikace ASP.NET  
   
-1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
+1. Spusťte Visual Studio a klikněte na **soubor**, **Nový**a pak na **projekt**.  
   
-2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
+2. V okně **Nový projekt** klikněte na **ASP.NET webová Formulářová aplikace**.  
   
-3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. Do **název**zadejte `TestApp` a stiskněte **OK**.  
   
-## <a name="step-3--enable-local-development-sts-to-authenticate-users"></a>Krok 3 – povolit místní služby STS pro vývoj k ověřování uživatelů  
- Tento krok popisuje, jak povolit místní službu STS pro vývoj ve vaší aplikaci. Místní službu STS je povolit pomocí rozšíření identit a přístupu pro sadu Visual Studio.  
+## <a name="step-3--enable-local-development-sts-to-authenticate-users"></a>Krok 3 – povolení služby STS pro místní vývoj pro ověřování uživatelů  
+ Tento krok popisuje, jak ve vaší aplikaci povolit místní vývoj STS. Místní vývoj STS je povolený pomocí rozšíření identity a přístupu pro Visual Studio.  
   
-### <a name="to-enable-local-development-sts-in-your-aspnet-application"></a>Povolit místní službu STS pro vývoj aplikace ASP.NET  
+### <a name="to-enable-local-development-sts-in-your-aspnet-application"></a>Povolení místního vývojového tokenu STS v aplikaci ASP.NET  
   
-1. V sadě Visual Studio, klikněte pravým tlačítkem myši **TestApp** projektu v části **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
+1. V aplikaci Visual Studio klikněte pravým tlačítkem myši na projekt **TestApp** v části **Průzkumník řešení**a pak vyberte možnost **Identita a přístup**.  
   
-2. **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
+2. Zobrazí se okno **Identita a přístup** . Včásti poskytovatelé vyberte **test aplikace pomocí místní služby tokenů pro vývoj**a pak klikněte na **použít**.  
   
-## <a name="step-4--modify-your-aspnet-application-to-display-sign-in-status"></a>Krok 4 – upravit svou aplikaci technologie ASP.NET pro zobrazení přihlašovací ve stavu  
- Tento krok popisuje, jak upravit svou aplikaci ASP.NET dynamicky uvedena informace, zda aktuální uživatel je přihlášený. Jakmile poskytovatel služby tokenů zabezpečení nakonfigurovaný, technologie WIF zpracovává příchozí deklarace identity. Teď musíte nakonfigurovat kódu vaší aplikace k zobrazení výsledku ověřování.  
+## <a name="step-4--modify-your-aspnet-application-to-display-sign-in-status"></a>Krok 4 – Úprava aplikace v ASP.NET pro zobrazení stavu přihlášení  
+ Tento krok popisuje, jak upravit aplikaci v ASP.NET tak, aby dynamicky zobrazovala informace o tom, jestli je aktuální uživatel přihlášený. Po nakonfigurování zprostředkovatele STS WIF zpracuje příchozí deklarace identity. Teď je potřeba nakonfigurovat kód vaší aplikace, aby zobrazoval výsledek ověřování.  
   
-### <a name="to-display-sign-in-status"></a>Chcete-li zobrazit přihlašování ve stavu  
+### <a name="to-display-sign-in-status"></a>Zobrazení stavu přihlášení  
   
-1. V sadě Visual Studio, otevřete **Default.aspx** soubor **TestApp** projektu.  
+1. V aplikaci Visual Studio otevřete soubor **Default. aspx** v projektu **TestApp** .  
   
-2. Nahraďte stávající značky **Default.aspx** souboru následujícím kódem:  
+2. Nahraďte existující kód ve **výchozím souboru. aspx** následujícím kódem:  
   
     ```  
     <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
@@ -114,12 +114,12 @@ ms.locfileid: "67742451"
     </html>  
     ```  
   
-3. Uložit **Default.aspx**a pak otevřete soubor s názvem jeho kódu **Default.aspx.cs**.  
+3. Uložte **Default. aspx**a pak otevřete svůj soubor kódu na pozadí s názvem **Default.aspx.cs**.  
   
     > [!NOTE]
-    >  **Default.aspx.cs** může být skrytá pod **Default.aspx** v Průzkumníku řešení. Pokud **Default.aspx.cs** není viditelný, rozbalte **Default.aspx** klepnutím na trojúhelník vedle sebe.  
+    > **Default.aspx.cs** může být skrytá pod **Default. aspx** v Průzkumník řešení. Pokud není **Default.aspx.cs** viditelné, rozbalte **Default. aspx** kliknutím na trojúhelník vedle něho.  
   
-4. Nahraďte existující kód ve třídě **Default.aspx.cs** následujícím kódem:  
+4. Existující kód nahraďte v **Default.aspx.cs** následujícím kódem:  
   
     ```csharp  
     using System;  
@@ -144,13 +144,13 @@ ms.locfileid: "67742451"
     }  
     ```  
   
-5. Uložit **Default.aspx.cs**a sestavte aplikaci.  
+5. Uložte **Default.aspx.cs**a sestavte aplikaci.  
   
-## <a name="step-5--test-the-integration-between-wif-and-your-aspnet-application"></a>Krok 5 – otestovat integraci technologie WIF a vaše aplikace ASP.NET  
- Tento krok popisuje, jak otestovat integraci technologie WIF a vaše aplikace ASP.NET.  
+## <a name="step-5--test-the-integration-between-wif-and-your-aspnet-application"></a>Krok 5 – testování integrace mezi WIF a aplikací ASP.NET  
+ Tento krok popisuje, jak můžete testovat integraci mezi WIF a aplikací ASP.NET.  
   
-### <a name="to-test-the-integration-between-wif-and-aspnet"></a>Chcete-li otestovat integraci technologie WIF a ASP.NET  
+### <a name="to-test-the-integration-between-wif-and-aspnet"></a>Otestování integrace mezi WIF a ASP.NET  
   
-1. V sadě Visual Studio, stiskněte klávesu **F5** pro spuštění ladění vaší aplikace. Pokud se nenajdou žádné chyby, otevře se nové okno prohlížeče.  
+1. V aplikaci Visual Studio stiskněte klávesu **F5** a spusťte ladění aplikace. Pokud se nenaleznou žádné chyby, otevře se nové okno prohlížeče.  
   
-2. Můžete si všimnout, že v prohlížeči tiše přesměruje požadavek na službu STS a pak otevře stránku Default.aspx. Pokud technologie WIF je správně nakonfigurovaná, měli byste vidět web zobrazit následující text: **"Přihlášení"** .
+2. Můžete si všimnout, že prohlížeč tiše přesměruje vaši žádost na službu STS a pak otevře stránku Default. aspx. Pokud je WIF správně nakonfigurovaný, měli byste vidět, že se v lokalitě zobrazuje následující text: **Přihlásili jste se**.

@@ -2,20 +2,20 @@
 title: <privacyNoticeAt>
 ms.date: 03/30/2017
 ms.assetid: 4cc96942-4eb9-4241-b2fd-45aa239915e8
-ms.openlocfilehash: e2ce2111e4bb26cc6a51b4a772b1d8a4d3238c70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f7349bf61082c5d8e5bd4249e01b8835a1861cb9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783159"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934258"
 ---
 # <a name="privacynoticeat"></a>\<privacyNoticeAt>
-Představuje prvek konfigurace, který určuje oznámení o ochraně osobních údajů používané `wsFederationHttp` vazby.  
+Představuje prvek konfigurace, který určuje oznámení o ochraně osobních údajů `wsFederationHttp` používané ve vazbě.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<privacyNotice>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,7 +25,7 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
                version="Integer" />
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -35,8 +35,8 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`url`|Řetězec určující identifikátor URI, ve kterém je umístěno oznámení soukromí.|  
-|`version`|Celé číslo, které určuje verzi tohoto oznámení o soukromí.|  
+|`url`|Řetězec určující identifikátor URI, na kterém je umístěno oznámení o ochraně osobních údajů.|  
+|`version`|Celé číslo, které určuje verzi tohoto oznámení o ochraně osobních údajů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,14 +45,14 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.PrivacyNoticeElement>
 - <xref:System.ServiceModel.Channels.PrivacyNoticeBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

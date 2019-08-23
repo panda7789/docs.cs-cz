@@ -6,44 +6,44 @@ helpviewer_keywords:
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-ms.openlocfilehash: 86250d974a4f85e5ccbe2ac636dc252beff0d485
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 428fe49584523bb1386b100838034fc161455d3b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875976"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965166"
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
-Tato část obsahuje informace o tom, jak získat přístup k datům pomocí technologie ADO.NET, Language Integrated Query (LINQ), služeb WCF Data Services a XML.  
+Tato část poskytuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyka Integrated Query (LINQ), WCF Data Services a XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
- Popisuje architekturu ADO.NET a tom, jak použít třídy rozhraní ADO.NET ke správě dat aplikací a interakci se zdroji dat, včetně Microsoft SQL Server, zdroje dat OLE DB a XML.  
+ Popisuje architekturu ADO.NET a způsob použití tříd ADO.NET ke správě aplikačních dat a interakci se zdroji dat, včetně Microsoft SQL Server, OLE DB zdrojů dat a XML.  
   
  [LINQ (Language Integrated Query)](../../csharp/programming-guide/concepts/linq/index.md)  
- Obsahuje odkazy na relevantní dokumentaci pro používání Language Integrated Query (LINQ) C#.  
+ Obsahuje odkazy na příslušnou dokumentaci k jazykově integrovanému dotazu (LINQ C#) pomocí.  
   
- [Language-Integrated Query (LINQ) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)  
- Obsahuje odkazy na relevantní dokumentaci pro Language Integrated Query (LINQ) pomocí jazyka Visual Basic.  
+ [LINQ (Language-Integrated Query) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)  
+ Obsahuje odkazy na příslušnou dokumentaci k jazykově integrovanému dotazu (LINQ) pomocí Visual Basic.  
   
  [Zpracování transakcí](../../../docs/framework/data/transactions/index.md)  
- Tento článek popisuje podporu rozhraní .NET Framework pro transakce.  
+ Popisuje podporu .NET Framework pro transakce.  
   
  [WCF Data Services 4.5](../../../docs/framework/data/wcf/index.md)  
- Poskytuje informace o tom, jak pomocí služeb WCF Data Services pro nasazení datových služeb na webu nebo intranetu.  
+ Poskytuje informace o tom, jak použít WCF Data Services k nasazení datových služeb na webu nebo intranetu.  
   
- [Dokumenty a data XML](../../../docs/standard/data/xml/index.md)  
- Poskytuje přehled s komplexního a integrovaného sadu tříd, které pracují s dokumenty XML a data v rozhraní .NET Framework.  
+ [Dokumenty a data XML](../../standard/data/xml/index.md)  
+ Poskytuje přehled komplexní a integrované sady tříd, které pracují s dokumenty XML a daty v .NET Framework.  
   
- [Reference na standardy XML](https://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
- Obsahuje referenční informace o standardů XML, které podporuje Microsoft.  
+ [Reference standardů XML](https://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
+ Poskytuje referenční informace o standardech XML, které Microsoft podporuje.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Technologie Microsoft SQL Server modelování](https://go.microsoft.com/fwlink/?LinkId=193039)  
- Popisuje sadu technologií, které umožňují rychlé a přizpůsobené aplikace založené na datech návrh a vývoj.  
+ [Technologie Microsoft SQL Server Modeling](https://go.microsoft.com/fwlink/?LinkId=193039)  
+ Popisuje sadu technologií, které umožňují rychlý a přizpůsobený návrh a vývoj aplikací založených na datech.  
   
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  
  Poskytuje postupy pro všechny klíčové oblasti technologie a úkoly pro vývoj aplikací včetně vytváření, konfigurace, ladění, zabezpečení a nasazení aplikace a informací o dynamickém programování, interoperabilitě, rozšiřitelnosti, správě paměti a podprocesech.  
   
- [Zabezpečení](../../../docs/standard/security/index.md)  
- Obsahuje odkazy na další informace o třídách a službách v modulu common language runtime a rozhraní .NET Framework, které usnadňují vývoj zabezpečených aplikací.
+ [Zabezpečení](../../standard/security/index.md)  
+ Obsahuje odkazy na Další informace o třídách a službách v modulu CLR (Common Language Runtime) a .NET Framework, které usnadňují vývoj zabezpečených aplikací.

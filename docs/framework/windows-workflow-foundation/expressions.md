@@ -2,12 +2,12 @@
 title: Výrazy – WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 092272db2f7979cf12917dfe35e116295db79bf3
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 93d437ae6d20f5d31d80ef3a40f409c589ae084e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868899"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962420"
 ---
 # <a name="expressions"></a>Výrazy
 Výraz programovací model Windows Workflow Foundation (WF) je jakákoli aktivita, která vrací výsledek. Všechny aktivity výrazů odvozují nepřímo <xref:System.Activities.Activity%601>z, který <xref:System.Activities.OutArgument> obsahuje vlastnost s <xref:System.Activities.Activity%601.Result%2A> názvem jako návratovou hodnotou aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)]dodává <xref:System.Activities.Expressions.VariableValue%601> se široké škále aktivit výrazů od jednoduchých, jako je a <xref:System.Activities.Expressions.VariableReference%601>, která poskytuje přístup k proměnné s jedním pracovním postupem prostřednictvím aktivit operátora, složitým aktivitám, jako je například <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> Tato nabídka přístup k celé šířce Visual Basic jazyka, aby vznikl výsledek. Další aktivity výrazu lze vytvořit odvozením z <xref:System.Activities.CodeActivity%601> nebo. <xref:System.Activities.NativeActivity%601>  
@@ -16,7 +16,7 @@ Výraz programovací model Windows Workflow Foundation (WF) je jakákoli aktivit
  Návrhář pracovních postupů <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> používá <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a pro všechny výrazy v <xref:Microsoft.CSharp.Activities.CSharpReference%601> Visual Basic projekty a <xref:Microsoft.CSharp.Activities.CSharpValue%601> pro výrazy v C# projektech pracovního postupu.  
   
 > [!NOTE]
->  Podpora C# výrazů v projektech pracovního postupu byla představena v .NET Framework 4,5. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
+> Podpora C# výrazů v projektech pracovního postupu byla představena v .NET Framework 4,5. Další informace najdete v tématu [ C# výrazy](csharp-expressions.md).  
   
  Pracovní postupy vytvořené návrhářem jsou uloženy v jazyce XAML, kde jsou výrazy zobrazeny v hranatých závorkách, jako v následujícím příkladu.  
   

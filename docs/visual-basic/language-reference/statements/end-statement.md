@@ -14,15 +14,15 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-ms.openlocfilehash: 4fc4fd36fb6b057195e9d8a79eb0a5b3ac9ff95c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9307cf10e6125441bd49baa0e663a5a13f234005
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638139"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944466"
 ---
 # <a name="end-statement"></a>End – příkaz
-Ukončí provádění okamžitě.  
+Okamžitě ukončí provádění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,24 +31,24 @@ End
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete umístit `End` příkaz kdekoli v proceduře přinutit celé aplikace ukončené. `End` Zavře všechny soubory otevřené se `Open` příkazu a vymaže všechny aplikace proměnné. Aplikace se zavře, jakmile nejsou žádné jiné programy obsahující odkazy na objekty a žádný z jeho kód běží.  
+ `End` Příkaz lze umístit kdekoli v proceduře pro vynucení zastavení celé aplikace. `End`zavře všechny soubory otevřené `Open` příkazem a vymaže všechny proměnné aplikace. Aplikace se zavře, jakmile neexistují žádné další programy, které by podržely odkazy na své objekty a žádný z jeho kódu není spuštěn.  
   
 > [!NOTE]
->  `End` Příkaz náhle zastaví provádění kódu a se nevyvolá `Dispose` nebo `Finalize` metody nebo jakýkoli jiný kód jazyka Visual Basic. Odkazy na objekty uchovávat jinými programy nejsou zneplatněny. Pokud `End` příkaz dochází v rámci `Try` nebo `Catch` bloku, ovládací prvek nepředává odpovídající `Finally` bloku.  
+> Příkaz zastaví provádění kódu náhlé a `Dispose` nevyvolává metodu or `Finalize` ani žádný jiný kód Visual Basic. `End` Odkazy na objekty držené jinými programy jsou neověřené. Pokud se `Catch` `Finally` v rámci bloku `End` nebovyskytnepříkaz,ovládacíprvekneprojdeodpovídajícím`Try` blokem.  
   
- `Stop` Příkaz pozastaví provádění, ale na rozdíl od `End`, ne zavřít všechny soubory, nebo zrušte všechny proměnné, pokud není nalezen v souboru zkompilovaného spustitelného souboru (.exe).  
+ Příkaz pozastaví provádění, ale na rozdíl od `End`, neuzavře žádné soubory ani nevymaže žádné proměnné, pokud se nevyskytly v kompilovaném spustitelném souboru (. exe). `Stop`  
   
- Protože `End` ukončí vaše aplikace bez vaši účast na všechny prostředky, které může být otevřený, snažte se zavřít čistě před jeho použitím. Například pokud má vaše aplikace formulářů otevřete, zavřete je před ovládací prvek dosáhne `End` příkazu.  
+ Vzhledem `End` k tomu, že aplikace ukončí aplikaci bez účasti na jakýchkoli prostředcích, které mohou být otevřeny, měli byste se před použitím pokusit ukončit činnost. Například pokud má vaše aplikace otevřené nějaké formuláře, měli byste je před tím, `End` než ovládací prvek dosáhne příkazu, zavřít.  
   
- Měli byste použít `End` opatrně a pouze pokud je potřeba zastavit okamžitě. Běžné způsoby ukončí proceduru ([příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) a [příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)) nejen ukončete proces čistě, ale také poskytují možnost Zavřít čistě volajícímu kódu. Konzolová aplikace, například můžete jednoduše `Return` z `Main` postup.  
+ Měli byste používat `End` jenom zřídka a jenom v případě, že potřebujete okamžitě skončit. Normální způsoby ukončení procedury ([příkaz return](../../../visual-basic/language-reference/statements/return-statement.md) a [příkaz exit](../../../visual-basic/language-reference/statements/exit-statement.md)) nezavřou pouze postup, ale také volajícímu kódu, aby příležitost uzavřela čistou činnost. Konzolová aplikace může být například jednoduše `Return` `Main` z procedury.  
   
 > [!IMPORTANT]
->  `End` Příkaz volá <xref:System.Environment.Exit%2A> metodu <xref:System.Environment> třídy v <xref:System> oboru názvů. <xref:System.Environment.Exit%2A> vyžaduje, abyste měli `UnmanagedCode` oprávnění. Pokud tak neučiníte, <xref:System.Security.SecurityException> dojde k chybě.  
+> `End` Příkaz<xref:System.Environment.Exit%2A> volá metodu<xref:System.Environment> třídy v<xref:System> oboru názvů. <xref:System.Environment.Exit%2A>vyžaduje, abyste `UnmanagedCode` měli oprávnění. Pokud to neuděláte, <xref:System.Security.SecurityException> dojde k chybě.  
   
- Pokud následuje další klíčové slovo, [End \<– klíčové slovo > příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md) kolem Konec definice vhodný postup uvedený nebo bloku. Například `End Function` ukončí definici `Function` postup.  
+ Když následuje klíčové slovo Next, [klíčové slovo \<end > příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md) rozděluje konec definice příslušného postupu nebo bloku. Například `End Function` ukončí definici `Function` procedury.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `End` příkaz k ukončení provádění kódu, pokud uživatel požaduje.  
+ Následující příklad používá `End` příkaz k ukončení provádění kódu, pokud si ho uživatel požádá.  
   
  [!code-vb[VbVersHelp60Controls#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVersHelp60Controls/VB/Form1.vb#64)]  
   
@@ -59,4 +59,4 @@ End
 
 - <xref:System.Security.Permissions.SecurityPermissionFlag>
 - [Příkaz Stop](../../../visual-basic/language-reference/statements/stop-statement.md)
-- [End \<– klíčové slovo > – příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md)
+- [Klíčové \<slovo End > – příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md)

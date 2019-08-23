@@ -4,80 +4,80 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 0946e123e10fbad7357c9be356287e5e87b271d2
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: f67a8b2977e84e24654b4b65c0cdd03bcbcb1b20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486938"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968839"
 ---
 # <a name="denial-of-service"></a>Útok DoS
-Útok DoS nastane, pokud je systém zahltil tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu.  
+K odepření služby dojde v případě zahlcení systému takovým způsobem, že zprávy nelze zpracovat nebo jsou zpracovávány extrémně pomalu.  
   
-## <a name="excess-memory-consumption"></a>Spotřeba nadbytek paměti  
- Při čtení dokumentu XML s velkým množstvím jedinečné místní názvy oborů názvů a předpony, může dojít k potížím. Pokud používáte třídu odvozenou z <xref:System.Xml.XmlReader>, a volání buď <xref:System.Xml.XmlReader.LocalName%2A>, <xref:System.Xml.XmlReader.Prefix%2A> nebo <xref:System.Xml.XmlReader.NamespaceURI%2A> pro každou položku, vrácený řetězec je přidána vlastnost <xref:System.Xml.NameTable>. Kolekce drží <xref:System.Xml.NameTable> nikdy zmenšena, vytváří se virtuální "nevracení paměti" popisovačů řetězec.  
+## <a name="excess-memory-consumption"></a>Nadměrné využití paměti  
+ K problému může dojít při čtení dokumentu XML s velkým počtem jedinečných místních názvů, oborů názvů nebo předpon. Pokud používáte třídu, která <xref:System.Xml.XmlReader>je odvozena z a voláte <xref:System.Xml.XmlReader.LocalName%2A>buď vlastnost, <xref:System.Xml.XmlReader.Prefix%2A> nebo <xref:System.Xml.XmlReader.NamespaceURI%2A> <xref:System.Xml.NameTable>pro každou položku, vrácený řetězec je přidán do. Kolekce držená <xref:System.Xml.NameTable> nikdy nesnižuje velikost, což vytváří virtuální "nevracení paměti" obslužných rutin řetězce.  
   
- Zmírnění rizik patří:  
+ Zmírnění rizik zahrnuje:  
   
-- Odvozovat <xref:System.Xml.NameTable> třídy a vynucovat kvóta maximální velikosti. (Nelze zabránit používání <xref:System.Xml.NameTable> nebo přepněte <xref:System.Xml.NameTable> když je plný.)  
+- Je odvozena <xref:System.Xml.NameTable> od třídy a vynutila maximální velikost kvóty. (Nemůžete zabránit použití <xref:System.Xml.NameTable> přepínače nebo, <xref:System.Xml.NameTable> Pokud je zaplněna.)  
   
-- Vyhněte se použití vlastnosti uvedené a místo toho použít <xref:System.Xml.XmlReader.MoveToAttribute%2A> metodu s <xref:System.Xml.XmlReader.IsStartElement%2A> metoda povedou; tyto metody vracet řetězce a vyhněte se tím problém přeplnění <xref:System.Xml.NameTable> kolekce.  
+- Vyhněte se použití zmíněných vlastností a místo <xref:System.Xml.XmlReader.MoveToAttribute%2A> toho použijte metodu <xref:System.Xml.XmlReader.IsStartElement%2A> s metodou, pokud je to možné; tyto metody nevrací řetězce a zabraňují tak problému přeplňování <xref:System.Xml.NameTable> kolekce.  
   
-## <a name="malicious-client-sends-excessive-license-requests-to-service"></a>Škodlivý klient odešle nadměrné licenční požadavky na služby  
- Pokud klient se zlými úmysly bombards služby s nadměrným licenční požadavky, může to způsobit server určený využívala příliš mnoho paměti.  
+## <a name="malicious-client-sends-excessive-license-requests-to-service"></a>Škodlivý klient posílá službě nadměrné požadavky na licence.  
+ Pokud se v případě škodlivého klienta bombards služba s nadměrnými požadavky na licence, může to způsobit, že server bude používat nadměrné množství paměti.  
   
- Omezení rizik: Použijte následující vlastnosti <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> třídy:  
+ Zmírnění Použijte následující vlastnosti <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> třídy:  
   
-- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A>: Určuje maximální počet časově `SecurityContextToken`s, který ukládá do mezipaměti serveru po `SPNego` nebo `SSL` vyjednávání.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A>: Určuje maximální počet časově vázaných `SecurityContextToken`na čas, který je po `SPNego` nebo `SSL` vyjednávání mezipamětí serveru.  
   
-- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime%2A>: Určuje životnost `SecurityContextTokens` , který server problémy následující `SPNego` nebo `SSL` vyjednávání. Server mezipaměti `SecurityContextToken`s pro tuto dobu.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime%2A>: řídí dobu života `SecurityContextTokens` , po kterou server vystavuje následující `SSL` `SPNego` nebo vyjednávání. Server ukládá do mezipaměti rozhraní `SecurityContextToken`s pro toto časové období.  
   
-- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions%2A>: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions%2A>: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které nebyly zpracovány žádné zprávy aplikace. Tato kvóta zabraňuje klientům v vytváření zabezpečených konverzací v rámci služby, což způsobuje, že služba udržuje stav pro každého klienta, ale nikdy je nepoužívá.  
   
-- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>: Určuje maximální dobu službu zachová zabezpečené konverzace aktivní aniž by mu musela zprávy aplikace od klienta pro tuto konverzaci. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>: Určuje maximální dobu, po kterou služba udržuje zabezpečenou konverzaci, aniž by přijímala zprávu aplikace od klienta pro konverzaci. Tato kvóta zabraňuje klientům v vytváření zabezpečených konverzací v rámci služby, což způsobuje, že služba udržuje stav pro každého klienta, ale nikdy je nepoužívá.  
   
-## <a name="wsdualhttpbinding-or-dual-custom-bindings-require-client-authentication"></a>WSDualHttpBinding nebo duální vlastních vazeb vyžadují ověření klienta  
- Ve výchozím nastavení <xref:System.ServiceModel.WSDualHttpBinding> povoleným zabezpečením. Je možné, ale, že pokud ověření klienta zakázal nastavení <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.MessageCredentialType.None>, uživatel se zlými úmysly může způsobit, že útoku služby ve službě třetí. Tato situace může nastat, protože klient se zlými úmysly může směrovat služby umožňující odesílání zpráv do služby třetí.  
+## <a name="wsdualhttpbinding-or-dual-custom-bindings-require-client-authentication"></a>WSDualHttpBinding nebo duální vlastní vazby vyžadují ověření klienta.  
+ Ve výchozím nastavení <xref:System.ServiceModel.WSDualHttpBinding> má zapnuté zabezpečení. Je však možné, že pokud je ověřování klienta zakázáno nastavením <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> vlastnosti na <xref:System.ServiceModel.MessageCredentialType.None>hodnotu, může uživatel se zlými úmysly způsobit útok na službu na třetí službu. Tato situace může nastat, protože škodlivý klient může nasměrovat službu tak, aby odesílala proud zpráv do třetí služby.  
   
- Chcete-li tento problém zmírnit, nenastavujte vlastnost na `None`. Také mějte na paměti tuto možnost při vytváření vlastní vazby, který má vzor duální zprávy.  
+ Chcete-li tuto skutečnost zmírnit, nenastavujte vlastnost na `None`hodnotu. Pamatujte také na tuto možnost při vytváření vlastní vazby, která má vzorec duální zprávy.  
   
-## <a name="auditing-event-log-can-be-filled"></a>Můžou být vyplněné auditování protokolu událostí  
- Pokud uživatel se zlými úmysly rozumí, že je povolené auditování, že útočník odeslat neplatná zprávy, které způsobují auditu má být proveden zápis. Pokud je tímto způsobem protokolu auditu, selhání auditování systému.  
+## <a name="auditing-event-log-can-be-filled"></a>Protokol událostí auditování může být vyplněn.  
+ Pokud uživatel se zlými úmysly rozumí, že auditování je povolené, může útočník odeslat neplatné zprávy, které způsobí zápis záznamů auditu. Pokud se tento způsob vyplní protokolem auditu, systém auditování se nezdařil.  
   
- Chcete-li tento problém zmírnit, nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true` a použití vlastností v prohlížeči událostí pro řízení chování auditování. Další informace o používání v prohlížeči událostí k zobrazení a správě protokolů událostí, naleznete v tématu [Prohlížeč událostí](https://go.microsoft.com/fwlink/?LinkId=186123). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Pokud to chcete zmírnit, nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost na `true` a použijte vlastnosti Prohlížeč událostí k řízení chování auditování. Další informace o použití Prohlížeč událostí k zobrazení a správě protokolů událostí najdete v tématu [Prohlížeč událostí](https://go.microsoft.com/fwlink/?LinkId=186123). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
-## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Neplatná zásada IAuthorizationPolicy implementace může způsobit služba přestane reagovat  
- Volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metodu na chybný provádění <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní může způsobit, že služba přestane reagovat.  
+## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Neplatné implementace zásada IAuthorizationPolicy můžou způsobit, že služba přestane reagovat.  
+ Volání metody na vadnou implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní může způsobit, že služba přestane reagovat. <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A>  
   
- Omezení rizik: Použijte pouze pro důvěryhodného kódu. To znamená použít pouze kód, který slouží k vytvoření a otestování nebo, který pochází z důvěryhodného zprostředkovatele. Nejsou povoleny nedůvěryhodné rozšíření <xref:System.IdentityModel.Policy.IAuthorizationPolicy> zapojené do kódu bez náležité pozornost. To platí pro všechna rozšíření použitý v implementaci služby. WCF nepoužívá žádný rozdíl mezi kódu aplikace a cizí kód, který je připojen pomocí bodů rozšiřitelnosti.  
+ Zmírnění Používejte pouze důvěryhodný kód. To znamená, že použijte pouze kód, který jste napsali a otestovali nebo který pochází od důvěryhodného poskytovatele. Nepovolujte <xref:System.IdentityModel.Policy.IAuthorizationPolicy> , aby nedůvěryhodná rozšíření byla do kódu zapojena bez náležité úvahy. To platí pro všechna rozšíření použitá v implementaci služby. WCF nerozlišuje mezi kódem aplikace a cizím kódem, který je napájený pomocí bodů rozšiřitelnosti.  
   
-## <a name="kerberos-maximum-token-size-may-need-resizing"></a>Token protokolu Kerberos maximální velikost může být nutné změny velikosti  
- Pokud klient patří do velký počet skupin (přibližně 900, i když skutečný počet se liší v závislosti na skupiny), přesáhne 64 kB blok záhlaví zprávy může dojít k potížím. V takovém případě může zvýšit maximální velikost protokolu Kerberos tokenu, jak je popsáno v článek Microsoft Support "[ověřování protokolem Kerberos Internet Exploreru nefunguje kvůli nedostatek vyrovnávací paměti připojení do služby IIS](https://go.microsoft.com/fwlink/?LinkId=89176)." Budete také muset zvýšit maximální velikost zprávy WCF tak, aby vyhovovaly větší token protokolu Kerberos.  
+## <a name="kerberos-maximum-token-size-may-need-resizing"></a>Maximální velikost tokenu protokolu Kerberos může vyžadovat změnu velikosti.  
+ Pokud klient patří do velkého počtu skupin (přibližně 900, i když se skutečný počet liší v závislosti na skupinách), může dojít k problému, když blok záhlaví zprávy překročí 64 kilobajtů. V takovém případě můžete zvýšit maximální velikost tokenu protokolu Kerberos, jak je popsáno v podpora Microsoftu článku "[ověřování pomocí protokolu Kerberos v Internet Exploreru nefunguje kvůli nedostatečnému vyrovnávací paměti při připojování ke službě IIS](https://go.microsoft.com/fwlink/?LinkId=89176)". Je také možné, že budete muset zvětšit maximální velikost zprávy WCF, aby vyhovovala většímu tokenu Kerberos.  
   
-## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>Automatický zápis za následek více certifikátů se stejným názvem předmětu pro počítač  
- *Automatický zápis* je schopnost [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] o automatickou registraci uživatelů a počítačů pro certifikáty. Když počítač je připojen k doméně s povolenou funkcí, certifikát X.509 s zamýšlený účel ověření klienta je automaticky vytvořen a vložit do úložiště osobních certifikátů místního počítače pokaždé, když se nový počítač připojen k síť. Automatický zápis však používá stejný název subjektu pro všechny certifikáty, které vytvoří v mezipaměti.  
+## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>Výsledkem automatického zápisu je více certifikátů se stejným názvem subjektu pro počítač.  
+ Automatický *zápis* je schopnost [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] automaticky registrovat uživatele a počítače pro certifikáty. Když je počítač v doméně s povolenou funkcí, vytvoří se automaticky certifikát X. 509 s zamýšleným účelem ověřování klienta a vloží se do úložiště osobních certifikátů místního počítače, kdykoli se do něj připojí nový počítač. sítě. Automatický zápis ale používá stejný název subjektu pro všechny certifikáty, které vytvoří v mezipaměti.  
   
- Se, že služby WCF se pravděpodobně nezdaří spustit v doménách s automatickým zápisem. K tomu dochází, protože výchozí služby X.509 přihlašovacích údajů kritéria hledání může být nejednoznačný, protože existuje více certifikátů s plně kvalifikovaným názvem systému DNS (Domain Name) počítači. Jeden certifikát pochází z automatického zápisu; druhý může být vystavený certifikát.  
+ Dopadem je, že služby WCF se nemusí podařit otevřít v doménách s automatickým zápisem. K tomu dochází, protože výchozí kritéria vyhledávání pověření X. 509 mohou být nejednoznačná, protože existuje více certifikátů s plně kvalifikovaným názvem DNS (Domain Name System) počítače. Jeden certifikát pochází z automatického zápisu; druhým může být certifikát vydaný svým držitelem.  
   
- Chcete-li tento problém zmírnit, odkazovat na přesně certifikát pomocí přesnější kritérium hledání na [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Například použít <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> možnost a vyberte certifikát pro jeho jedinečné kryptografickým (hodnota hash).  
+ Pokud to chcete zmírnit, odkazujte na přesný certifikát, který chcete použít, pomocí přesnější vyhledávacího kritéria na [ \<ServiceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Použijte <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> například možnost a zadejte certifikát podle jeho jedinečného kryptografického otisku (hash).  
   
- Další informace o funkci automatického zápisu najdete v tématu [automatického zápisu certifikátů ve Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=95166).  
+ Další informace o funkci automatického zápisu najdete v tématu [Automatický zápis certifikátů ve Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=95166).  
   
-## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Posledních několik názvů subjektu alternativní se používají pro autorizaci  
- Ve výjimečných případech, kdy certifikát X.509, který obsahuje několik názvů subjektu alternativní a autorizaci pomocí v alternativním názvu subjektu, může dojít k selhání autorizace.  
+## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Poslední z několika alternativních názvů subjektů používaných k autorizaci  
+ Ve výjimečném případě, kdy certifikát X. 509 obsahuje více alternativních názvů subjektů a Vy autorizujete použití alternativního názvu subjektu, může autorizace selhat.  
   
-## <a name="protect-configuration-files-with-acls"></a>Chránit konfigurační soubory společně se seznamy ACL  
- Můžete určit požadovaných a volitelných deklarací v kódu a konfigurační soubory pro tokeny vydané služby CardSpace. Výsledkem je odpovídající elementy probíhá emitovány v `RequestSecurityToken` zprávy odeslané bezpečnostní token služby. Útočník můžete upravit kódu nebo konfigurace odebrat požadované nebo nepovinné deklarace identity, potenciálně získávání služby tokenů zabezpečení k vydání tokenu, který neumožňuje přístup k cílové službě.  
+## <a name="protect-configuration-files-with-acls"></a>Ochrana konfiguračních souborů pomocí seznamů ACL  
+ Můžete zadat povinné a volitelné deklarace identity v kódu a konfiguračním souboru pro vydávané tokeny služby CardSpace. Výsledkem je odpovídající prvky, které jsou generovány `RequestSecurityToken` ve zprávách, které jsou odesílány do služby tokenu zabezpečení. Útočník může změnit kód nebo konfiguraci, aby odstranil požadované nebo volitelné deklarace identity, a mohl tak získat token, který nepovoluje přístup k cílové službě.  
   
- Zmírnit: Vyžadovat přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL pro konfigurační soubory zabezpečení. WCF vyžaduje, aby kód v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který se má načíst z konfigurace. Pro zabezpečení adresáře, použijte seznamy ACL adresáře.  
+ Pro zmírnění: Pro úpravu konfiguračního souboru vyžadovat přístup k počítači. Pomocí seznamů řízení přístupu (ACL) souborů Zabezpečte konfigurační soubory. WCF vyžaduje, aby byl kód v adresáři aplikace nebo v globální mezipaměti sestavení (GAC) předtím, než bude moci takový kód načíst z konfigurace. K zabezpečení adresářů použijte seznamy ACL adresáře.  
   
-## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>Dosažen maximální počet zabezpečených relací pro službu  
- Po klienta úspěšně ověřen službou a vytvoření zabezpečené relace ve službě, službu uchovává informace o relaci, dokud ho ruší klienta nebo vypršení platnosti relace. Každý navázanou relaci počítat limit pro maximální počet aktivních souběžných relací se službou. Při dosažení tohoto limitu, klienti, kteří se pokusí vytvořit novou relaci s touto službou odmítají do jedné nebo víc aktivních relací vypršení platnosti nebo zrušení klientem. Klient může mít několik relací s využitím služby a jedna z těchto relací se počítá směrem k omezení.  
+## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>Dosáhlo se maximálního počtu zabezpečených relací pro službu.  
+ Pokud se klient úspěšně ověřuje pomocí služby a ve službě se vytvoří zabezpečená relace, služba sleduje relaci, dokud ji klient nezruší nebo dokud relace nevyprší. Každá vytvořená relace se počítá s omezením maximálního počtu aktivních současných relací se službou. Po dosažení tohoto limitu se klienti, kteří se pokoušejí vytvořit novou relaci s touto službou, odmítnou, dokud jedna nebo víc aktivních relací nevyprší nebo neruší klient. Klient může mít několik relací se službou a každá z těchto relací se počítá směrem k limitu.  
   
 > [!NOTE]
->  Při použití stavové relací se nevztahuje předchozím odstavci. Další informace o relacích stavové najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+> Při použití stavových relací se předchozí odstavec netýká. Další informace o stavových relacích naleznete [v tématu How to: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
- Toto riziko lze snížit nastavením limitu pro maximální počet aktivních relací a maximální doba života pro relaci <xref:System.ServiceModel.Channels.SecurityBindingElement> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
+ Pokud to chcete zmírnit, nastavte limit maximálního počtu aktivních relací a maximální životnosti pro relaci nastavením <xref:System.ServiceModel.Channels.SecurityBindingElement> vlastnosti <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
   
 ## <a name="see-also"></a>Viz také:
 

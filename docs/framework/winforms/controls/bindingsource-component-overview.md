@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
-ms.openlocfilehash: 9c9c9fb574b9f3e687b2d8d5c4606bfb66ebfa64
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: bd1b38b434f9932a575745d7a1761ff18b009115
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917815"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
 <xref:System.Windows.Forms.BindingSource> Komponenta je navržena tak, aby zjednodušila proces vazby ovládacích prvků k základnímu zdroji dat. <xref:System.Windows.Forms.BindingSource> Komponenta funguje jako přenosový i zdroj dat pro jiné ovládací prvky, na které lze vytvořit vazby. Poskytuje abstrakci datového připojení formuláře při předávání příkazů do základního seznamu dat. Kromě toho můžete přímo do něj přidat data, aby součást sama fungovala jako zdroj dat.  
@@ -25,7 +25,7 @@ ms.locfileid: "68364449"
  ![Vazba struktury zdroje a vazby dat](./media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")  
   
 > [!NOTE]
->  V době návrhu některé akce, jako je například přetažení databázové tabulky z okna dat do prázdného formuláře, vytvoří <xref:System.Windows.Forms.BindingSource> komponentu, sváže ji s podkladovým zdrojem dat a přidávají ovládací prvky pro práci s daty vše v jedné operaci. Viz také [ovládací prvky Bind model Windows Forms pro data v aplikaci Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
+> V době návrhu některé akce, jako je například přetažení databázové tabulky z okna dat do prázdného formuláře, vytvoří <xref:System.Windows.Forms.BindingSource> komponentu, sváže ji s podkladovým zdrojem dat a přidávají ovládací prvky pro práci s daty vše v jedné operaci. Viz také [ovládací prvky Bind model Windows Forms pro data v aplikaci Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
   
 ## <a name="bindingsource-component-as-a-data-source"></a>Komponenta BindingSource jako zdroj dat  
  Pokud začnete přidávat položky do <xref:System.Windows.Forms.BindingSource> komponenty bez prvotního určení seznamu, ke kterému má být vázáno, bude tato součást fungovat jako zdroj dat ve stylu seznamu a přijímá tyto přidané položky.  

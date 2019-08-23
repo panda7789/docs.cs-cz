@@ -8,12 +8,12 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-ms.openlocfilehash: d31d970e8e95726aa789f853ac12c4830498a743
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: dee5ec65993cf20cb57377694f61af092b0ccf26
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796826"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939692"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě metody, které používají systémy typů XAML a zapisovače XAML ke generování komponent grafu objektů. I když sdílí některé charakteristiky, převaděče typů a rozšíření značek jsou v datovém proudu uzlu XAML reprezentovány jinak. V této sadě dokumentace jsou převaděče typů, přípony značek a podobné konstrukce někdy souhrnně označovány jako převaděče hodnot.  
@@ -45,7 +45,7 @@ Převaděče typů a rozšíření značek jsou dvě metody, které používají
  Další informace o vzoru implementace rozšíření značek pro jazyk XAML naleznete v tématu [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Markup.MarkupExtension> <xref:System.Windows.Markup.ValueSerializer> <xref:System.Xaml> Typy a jsou v oborunázvůivoborunázvů.<xref:System.Windows.Markup> To neznamená, že tyto typy jsou specifické pro technologie WPF nebo model Windows Forms, které jinak naplňují obory názvů CLR obsahující řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension>a <xref:System.Windows.Markup.ValueSerializer> jsou v sestavení System. XAML a nemají žádnou konkrétní závislost architektury. Tyto typy existovaly v oboru názvů CLR pro .NET Framework 3,0 a zůstávají v oboru názvů CLR v .NET Framework 4, aby nedocházelo k přerušení odkazů v existujících projektech WPF. Další informace naleznete v tématu [typy migrované z WPF do System. XAML](types-migrated-from-wpf-to-system-xaml.md).  
+> <xref:System.Windows.Markup.MarkupExtension> <xref:System.Windows.Markup.ValueSerializer> <xref:System.Xaml> Typy a jsou v oborunázvůivoborunázvů.<xref:System.Windows.Markup> To neznamená, že tyto typy jsou specifické pro technologie WPF nebo model Windows Forms, které jinak naplňují obory názvů CLR obsahující řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension>a <xref:System.Windows.Markup.ValueSerializer> jsou v sestavení System. XAML a nemají žádnou konkrétní závislost architektury. Tyto typy existovaly v oboru názvů CLR pro .NET Framework 3,0 a zůstávají v oboru názvů CLR v .NET Framework 4, aby nedocházelo k přerušení odkazů v existujících projektech WPF. Další informace naleznete v tématu [typy migrované z WPF do System. XAML](types-migrated-from-wpf-to-system-xaml.md).  
   
 <a name="value_serializers"></a>   
 ## <a name="value-serializers"></a>Serializátory hodnot  

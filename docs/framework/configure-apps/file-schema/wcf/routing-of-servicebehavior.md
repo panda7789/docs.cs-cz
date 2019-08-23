@@ -2,21 +2,21 @@
 title: <routing> z <serviceBehavior>
 ms.date: 03/30/2017
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
-ms.openlocfilehash: b7a9be18395ef8878900d754b5aa5afdeee0cff8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73a610056f94efe144705968eaf97c8314c1ae0d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783055"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934188"
 ---
-# <a name="routing-of-servicebehavior"></a>\<směrování > z \<serviceBehavior >
-Poskytuje přístup ke službě Směrování a povolit dynamickou změnu konfigurace směrování.  
+# <a name="routing-of-servicebehavior"></a>\<> směrování > \<ServiceBehavior
+Poskytuje přístup ke směrovací službě za běhu, aby umožňoval dynamickou úpravu konfigurace směrování.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
-\<směrování >  
+\<> chování  
+\<> směrování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,9 +39,9 @@ Poskytuje přístup ke službě Směrování a povolit dynamickou změnu konfigu
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|filterTable|Řetězec určující název směrovací tabulku, která obsahuje filtry, který se má vyhodnotit ve službě Směrování. Tato hodnota musí odpovídat `name` atribut [ \<filterTable >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) prvek [ \<filterTables >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) části.|  
-|routeOnHeaderOnly|Logická hodnota, která určuje, zda bude text zprávy a záhlaví nebo pouze záhlaví prozkoumat filtr. Výchozí hodnota je `true`.|  
-|soapProcessingEnabled|Logická hodnota určující, zda by měla probíhat zpracování SOAP.|  
+|filterTable|Řetězec, který určuje název směrovací tabulky obsahující filtry, které mají být vyhodnoceny směrovací službou. Tato hodnota musí odpovídat `name` atributu [ \<> elementu](filtertable.md) [ \<](filtertables.md) Filter v oddílu > filterTables.|  
+|routeOnHeaderOnly|Logická hodnota určující, zda filtr prohlíží text zprávy i záhlaví, nebo pouze záhlaví. Výchozí hodnota je `true`.|  
+|soapProcessingEnabled|Logická hodnota, která určuje, zda by mělo dojít ke zpracování protokolu SOAP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,9 +50,9 @@ Poskytuje přístup ke službě Směrování a povolit dynamickou změnu konfigu
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když se přidá do konfigurace chování služby, umožňuje tento prvek konfigurace, směrování pro službu. Můžete určit skutečný směrovací tabulky používané služby v tomto elementu.  
+ Po přidání do konfigurace chování služby tento prvek konfigurace povolí směrování pro službu. Můžete zadat vlastní směrovací tabulku, kterou bude služba používat v tomto elementu.  
   
- Používá tento konfigurační oddíl, můžete změnit nastavení směrování v reálném čase při změně vzorek vašeho nasazení. Za běhu zaregistrujete vlastní rozšíření směrování s novými nastaveními směrování a služba Směrování se začít používat informace o aktualizovanou konfiguraci pro nové zprávy a relací, ale zároveň je nechává vydávaných za pochodu zpráv/relací pomocí určit jakákoli pravidla byly v místo při jejich spuštění.  Získáte možnost provádět relace typově bezpečný, recyklace bez změny konfigurace směrování služby za běhu.  
+ Pomocí této části konfigurace můžete při změně vzoru nasazení změnit nastavení směrování průběžně. Za běhu můžete zaregistrovat vlastní směrovací rozšíření s novým nastavením směrování a služba Směrování začne používat aktualizované informace o konfiguraci pro nové zprávy a relace a zároveň může ponechává zprávy a relace v letadlech pomocí jakýchkoli pravidel. umístit při spuštění.  Díky tomu je možné v době běhu provádět v rámci služby směrování v relaci, recyklicky méně opakovanou konfiguraci směrovací služby.  

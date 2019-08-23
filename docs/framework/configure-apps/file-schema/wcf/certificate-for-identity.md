@@ -2,20 +2,20 @@
 title: <certificate> pro <identity>
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: 76bdcb40d5016d7fcbff6c0d9769819f710065fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 52d1fa31cebd949c91809464976739ef1334af29
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673344"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919618"
 ---
-# <a name="certificate-for-identity"></a>\<certifikát > pro \<identity >
-Určuje certifikát X.509 sloužící k ověření serveru do klienta.  
+# <a name="certificate-for-identity"></a>\<> certifikátu pro \<> identity
+Určuje certifikát X. 509, který se používá k ověření serveru pro klienta.  
   
- Další informace o nastavení hodnoty prvku naleznete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Další informace o nastavení hodnoty prvku naleznete v tématu [identity a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
- \<identity>  
-\<certifikát >  
+ \<> identity  
+\<> certifikátu  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +30,7 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|encodedValue|Kódování Base64 z certifikátu.|  
+|encodedValue|Kódování Base64 certifikátu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -39,10 +39,10 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
+|[\<identity>](identity.md)|Určuje identitu služby, kterou má klient ověřit.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód určuje kódovaného reprezentace certifikát používaný k ověření serveru do klienta.  
+ Následující kód určuje zakódovaný reprezentace certifikátu používaného k ověření serveru klientovi.  
   
 ```xml  
 <identity>
@@ -56,5 +56,5 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - <xref:System.ServiceModel.EndpointIdentity>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [\<identity>](identity.md)

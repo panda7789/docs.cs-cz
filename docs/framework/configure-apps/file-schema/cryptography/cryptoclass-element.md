@@ -8,12 +8,12 @@ helpviewer_keywords:
 - cryptoClass element
 - <cryptoClass> element
 ms.assetid: 03db52ef-010e-44ea-b6fd-b9c900ecad50
-ms.openlocfilehash: c8076fba1ebae693aa5e4c80e822b9ae840ff1c5
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 6a868f62c6a327012a6225b86bf0103d178d6ab7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664326"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921174"
 ---
 # <a name="cryptoclass-element"></a>\<cryptoClass – element >
 Obsahuje třídu kryptografie, která má mapování na popisný název v [ \<elementu nameEntry >](nameentry-element.md) .  
@@ -79,5 +79,5 @@ Obsahuje třídu kryptografie, která má mapování na popisný název v [ \<el
 
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)

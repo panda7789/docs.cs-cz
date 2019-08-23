@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: e6848c47-ee5d-401a-89a5-50b5eed40f30
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 525c8332d2884415ccf883dae03866776510f354
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 882e92c6c8cb6e638ca299ed4c43b9da8f4bf235
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650164"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923330"
 ---
 # <a name="matching-nodes-using-xpathnavigator"></a>Párování uzlů pomocí XPathNavigator
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.Matches%2A> metodou ke zjištění, pokud uzel odpovídá výrazu XPath. <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda výraz XPath jako vstup převezme a vrátí <xref:System.Boolean> , která indikuje, jestli aktuální uzel odpovídá dané výraz XPath nebo zadaný kompilované <xref:System.Xml.XPath.XPathExpression> objektu.  
+<xref:System.Xml.XPath.XPathNavigator> Třída<xref:System.Xml.XPath.XPathNavigator.Matches%2A> poskytuje metodu pro určení, zda uzel odpovídá výrazu XPath. Metoda přijímá výraz XPath jako vstup a <xref:System.Boolean> vrátí hodnotu, která označuje, zda aktuální uzel odpovídá danému výrazu XPath nebo danému kompilovanému <xref:System.Xml.XPath.XPathExpression> objektu. <xref:System.Xml.XPath.XPathNavigator.Matches%2A>  
   
-## <a name="matching-nodes"></a>Odpovídající uzly  
- <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Vrátí metoda `true` Pokud výraz XPath určeného odpovídá aktuální uzel. Například v následujícím příkladu kódu <xref:System.Xml.XPath.XPathNavigator.Matches%2A> vrátí metoda `true` Pokud je aktuální uzel elementu `b`a element `b` má atribut `c`.  
+## <a name="matching-nodes"></a>Vyhovující uzly  
+ <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda vrátí`true` , pokud aktuální uzel odpovídá zadanému výrazu XPath. Například <xref:System.Xml.XPath.XPathNavigator.Matches%2A> v následujícím příkladu kódu metoda vrátí `b` `true` , pokud je aktuální uzel element a element `b` má atribut `c`.  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda nezmění stav <xref:System.Xml.XPath.XPathNavigator>.  
+> Metoda nemění stav <xref:System.Xml.XPath.XPathNavigator>. <xref:System.Xml.XPath.XPathNavigator.Matches%2A>  
   
 ```vb  
 Dim document as XPathDocument = New XPathDocument("input.xml")  

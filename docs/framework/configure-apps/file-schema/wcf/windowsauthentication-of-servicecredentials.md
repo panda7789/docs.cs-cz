@@ -2,20 +2,20 @@
 title: <windowsAuthentication> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-ms.openlocfilehash: ffddbae7effabcdafdc2638d588bbbf3e42d2c2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 81793b0d58a95166bc23f98d46ce94a5f1e1d018
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769691"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940294"
 ---
-# <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication> of \<serviceCredentials>
-Určuje nastavení přihlašovacích údajů služby Windows.  
+# <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication > \<ServiceCredentials >
+Určuje nastavení pověření služby systému Windows.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<windowsAuthentication>  
   
@@ -33,8 +33,8 @@ Určuje nastavení přihlašovacích údajů služby Windows.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`includeWindowsGroups`|Volitelný logický atribut, který určuje, zda tento systém zahrnuje skupiny Windows v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má dopad na výkon, protože výsledkem rozšíření skupiny úplné. Tento atribut nastavte na `false` Pokud není potřeba vytvořit seznam skupin uživatel patří.|  
-|`allowAnonymousLogons`|Volitelný logický atribut, který určuje, jestli jsou povolené anonymní, neověření volající. Výchozí hodnota je `false`.<br /><br /> Když `clientCredentialType` atribut vazby je nastaven na `Windows`, systém nepovoluje anonymní volající. To znamená, že pouze domény nebo pracovní skupině authenticated volající je povolen přístup k systému. Toto chování můžete přepsat pomocí tohoto atributu.<br /><br /> Pomocí tohoto nastavení s nejvyšší opatrností.|  
+|`includeWindowsGroups`|Volitelný logický atribut, který určuje, zda systém zahrnuje skupiny systému Windows v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má vliv na výkon, protože má za následek rozšíření úplného seskupení. Nastavte tento atribut na `false` , pokud nepotřebujete vytvořit seznam skupin, do kterých uživatel patří.|  
+|`allowAnonymousLogons`|Volitelný logický atribut, který určuje, zda jsou povoleny anonymní neověřené volající. Výchozí hodnota je `false`.<br /><br /> `Windows`Pokud je `clientCredentialType` atribut vazby nastaven na, systém nepovoluje anonymní volající. To znamená, že přístup k systému má povolen pouze ověřený volající domény nebo pracovní skupiny. Toto chování můžete přepsat pomocí tohoto atributu.<br /><br /> Toto nastavení se používá s mimořádnou opatrností.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,10 +43,10 @@ Určuje nastavení přihlašovacích údajů služby Windows.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
+|[\<serviceCredentials>](servicecredentials.md)|Určuje přihlašovací údaje, které se mají použít při ověřování služby, a nastavení související s ověřením přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento element slouží k určení, jestli se má povolit přístup anonymní uživatelé Windows tak, že nastavíte `allowAnonymousLogons` atribut. Můžete také určit, zda mají být zahrnuty informace o skupinách, ke kterému uživatelé patří AuthorizationContext tak, že nastavíte `includeWindowsGroups` atribut. Pokud je nastavena na `true` (výchozí nastavení), službu můžete určit skupiny Windows, na které klient patří.  
+ Tento prvek použijte k určení, zda má být povolen anonymní přístup uživatelů systému Windows `allowAnonymousLogons` nastavením atributu. Nastavením `includeWindowsGroups` atributu můžete také určit, jestli se mají zahrnout informace o skupině, ke kterým uživatelé patří, do AuthorizationContext. Pokud je nastavená na `true` (výchozí nastavení), může služba určit skupiny systému Windows, ke kterým klient patří.  
   
 ## <a name="see-also"></a>Viz také:
 
