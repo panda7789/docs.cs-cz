@@ -5,54 +5,54 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5e7ff0be-3f23-4996-a92c-bd54d65c3836
-ms.openlocfilehash: b2783779965505d09f73c7203770c19ccaa78d26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8cba2201bf8087633103efe45c5236cab3af0a0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876366"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964745"
 ---
 # <a name="single-bulk-copy-operations"></a>Jednorázové operace hromadného kopírování
-Nejjednodušším přístupem při provádění hromadného kopírování systému SQL Server je k provedení jedné operace proti databázi. Ve výchozím nastavení, se provádí operaci hromadného kopírování jako izolované operace: způsobem beztransakční, dojde k operaci kopírování s distribucí nebude mít možnost zpět.  
+Nejjednodušší způsob, jak provádět operace hromadného kopírování SQL Server, je provést jednu operaci s databází. Ve výchozím nastavení se operace hromadného kopírování provádí jako izolovaná operace: operace kopírování probíhá v netransakčním režimu bez příležitostí pro vrácení zpět.  
   
 > [!NOTE]
->  Pokud je potřeba vrátit zpět nebo její část hromadného kopírování při výskytu chyby, můžete použít <xref:System.Data.SqlClient.SqlBulkCopy>– spravované transakce, nebo provést operaci hromadného kopírování v rámci existující transakce. **SqlBulkCopy** budou fungovat i pro <xref:System.Transactions> Pokud připojení zařazen (implicitně nebo explicitně) do **System.Transactions** transakce.  
+> Pokud potřebujete vrátit zpátky veškerou nebo část hromadného kopírování, když dojde k chybě, můžete buď použít <xref:System.Data.SqlClient.SqlBulkCopy>transakci spravovanou, nebo provést operaci hromadného kopírování v rámci existující transakce. **SqlBulkCopy** bude také fungovat s <xref:System.Transactions> , pokud je připojení zařazeno (implicitně nebo explicitně) do transakce **System. Transactions** .  
 >   
 >  Další informace najdete v tématu [transakce a operace hromadného kopírování](../../../../../docs/framework/data/adonet/sql/transaction-and-bulk-copy-operations.md).  
   
- Obecné kroky pro provedení operace hromadného kopírování jsou následující:  
+ Pro provedení hromadné operace kopírování jsou k dishlavní kroky následující:  
   
-1. Připojit ke zdrojovému serveru a získat data, která mají být zkopírovány. Data mohou pocházet také z jiných zdrojů, pokud se dá načíst ze <xref:System.Data.IDataReader> nebo <xref:System.Data.DataTable> objektu.  
+1. Připojte se ke zdrojovému serveru a Získejte data, která se mají zkopírovat. Data mohou být také převzata z jiných zdrojů, pokud je lze načíst z <xref:System.Data.IDataReader> objektu <xref:System.Data.DataTable> nebo.  
   
-2. Připojení k cílovému serveru (Pokud chcete, aby **SqlBulkCopy** k navázání připojení pro vás).  
+2. Připojte se k cílovému serveru (Pokud nechcete, aby **SqlBulkCopy** navázalo připojení).  
   
-3. Vytvoření <xref:System.Data.SqlClient.SqlBulkCopy> objekt nastavení všechny nezbytné vlastnosti.  
+3. <xref:System.Data.SqlClient.SqlBulkCopy> Vytvořte objekt a nastavte potřebné vlastnosti.  
   
-4. Nastavte **DestinationTableName** vlastnost umožňující označit v cílové tabulce hromadného vložení operace.  
+4. Nastavte vlastnost **DestinationTableName** tak, aby označovala cílovou tabulku pro operaci hromadného vložení.  
   
-5. Volání jednoho z **WriteToServer** metody.  
+5. Zavolejte jednu z metod **WriteToServer** .  
   
-6. Volitelně můžete aktualizovat vlastnosti a volání **WriteToServer** opakujte podle potřeby.  
+6. Volitelně můžete aktualizovat vlastnosti a znovu volat **WriteToServer** podle potřeby.  
   
-7. Volání <xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>, nebo zabalovat operace hromadného kopírování v rámci `Using` příkazu.  
+7. Volání <xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>nebo zabalení operací hromadného kopírování `Using` v rámci příkazu.  
   
 > [!CAUTION]
->  Doporučujeme vám, že datové typy sloupce zdrojovou a cílovou odpovídají. Pokud datové typy, které se neshodují, **SqlBulkCopy** pokusí převést hodnotu každého zdroje do cílového typu dat, pomocí pravidel náhradník <xref:System.Data.SqlClient.SqlParameter.Value%2A>. Převody může ovlivnit výkon a může také způsobit neočekávané chyby. Například `Double` datového typu lze převést na `Decimal` datový typ většinu času, ale ne vždy.  
+>  Doporučujeme, aby se shodovaly datové typy zdrojového a cílového sloupce. Pokud se datové typy neshodují, **SqlBulkCopy** se pokusí převést jednotlivé zdrojové hodnoty na cílový datový typ pomocí pravidel používaných v <xref:System.Data.SqlClient.SqlParameter.Value%2A>. Převod může ovlivnit výkon a může také vést k neočekávaným chybám. Například `Double` datový typ lze převést `Decimal` na datový typ většinou v čase, ale ne vždy.  
   
 ## <a name="example"></a>Příklad  
- Následující konzolové aplikace ukazuje, jak načíst data pomocí <xref:System.Data.SqlClient.SqlBulkCopy> třídy. V tomto příkladu <xref:System.Data.SqlClient.SqlDataReader> se použije ke zkopírování dat z **Production.Product** tabulka na SQL serveru **AdventureWorks** databáze do podobné tabulky ve stejné databázi.  
+ Následující aplikace konzoly ukazuje, jak načíst data pomocí <xref:System.Data.SqlClient.SqlBulkCopy> třídy. V tomto příkladu <xref:System.Data.SqlClient.SqlDataReader> se používá ke kopírování dat z tabulky produkčního **produktu** v databázi SQL Server **AdventureWorks** do podobné tabulky ve stejné databázi.  
   
 > [!IMPORTANT]
->  Tato ukázka se nespustí, pokud jste vytvořili pracovní tabulky, jak je popsáno v [příklad nastavení hromadného kopírování](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pro používání **SqlBulkCopy** pouze. Pokud zdrojové a cílové tabulky jsou umístěny ve stejné instanci systému SQL Server, je jednodušší a rychlejší použití příkazů jazyka Transact-SQL `INSERT … SELECT` příkaz Kopírovat data.  
+> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL `INSERT … SELECT` ke zkopírování dat.  
   
  [!code-csharp[DataWorks BulkCopy.Single#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/CS/source.cs#1)]
  [!code-vb[DataWorks BulkCopy.Single#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/VB/source.vb#1)]  
   
-## <a name="performing-a-bulk-copy-operation-using-transact-sql-and-the-command-class"></a>Provedení operace hromadného kopírování pomocí jazyka Transact-SQL a třídu příkazu  
- Následující příklad ukazuje způsob použití <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> metody k provedení příkazu BULK INSERT.  
+## <a name="performing-a-bulk-copy-operation-using-transact-sql-and-the-command-class"></a>Provádění operace hromadného kopírování s použitím jazyka Transact-SQL a třídy příkazu  
+ Následující příklad ukazuje, jak použít <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> metodu ke spuštění příkazu Bulk INSERT.  
   
 > [!NOTE]
->  Cesta k souboru pro zdroj dat je relativní k serveru. Proces serveru musí mít přístup k této cestě v pořadí pro operaci hromadného kopírování úspěšné.  
+> Cesta k souboru pro zdroj dat je relativní vzhledem k serveru. Aby operace hromadného kopírování proběhla úspěšně, musí mít proces serveru přístup k této cestě.  
   
 ```vb  
 Using connection As SqlConnection = New SqlConnection(connectionString)  
@@ -82,4 +82,4 @@ command.ExecuteNonQuery();
 ## <a name="see-also"></a>Viz také:
 
 - [Operace hromadného kopírování na SQL Serveru](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

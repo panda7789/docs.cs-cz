@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e67861a32d5863e4c1b4d9b147c507c1bb54c39
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: bc2ca7a94ffb19f62f354bdfc3040490b57e2689
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66491093"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968553"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
 <a name="Top"></a>Standardní <xref:System.TimeSpan> formátovací řetězec používá jeden specifikátor formátu pro definování textové reprezentace <xref:System.TimeSpan> hodnoty, která je výsledkem operace formátování. Libovolný formátovací řetězec, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako <xref:System.TimeSpan> řetězec vlastního formátu. Další informace najdete v tématu [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
@@ -67,7 +67,7 @@ ms.locfileid: "66491093"
  Na rozdíl od specifikátorů formátu "g" a "G" specifikátor formátu "c" nezohledňuje jazykovou verzi. Vytváří řetězcové vyjádření <xref:System.TimeSpan> hodnoty, která je invariantní a je společná pro všechny předchozí verze .NET Framework před .NET Framework 4. "c" je výchozí <xref:System.TimeSpan> formátovací řetězec <xref:System.TimeSpan.ToString?displayProperty=nameWithType> ; Metoda formátuje hodnotu časového intervalu pomocí formátovacího řetězce "c".  
   
 > [!NOTE]
->  <xref:System.TimeSpan>také podporuje standardní formátovací řetězce "t" a "T", které jsou identické v chování jako standardní formátovací řetězec "c".  
+> <xref:System.TimeSpan>také podporuje standardní formátovací řetězce "t" a "T", které jsou identické v chování jako standardní formátovací řetězec "c".  
   
  Následující příklad vytvoří instanci dvou <xref:System.TimeSpan> objektů, používá je k provádění aritmetických operací a zobrazí výsledek. V každém případě používá složené formátování k zobrazení <xref:System.TimeSpan> hodnoty pomocí specifikátoru formátu "c".  
   

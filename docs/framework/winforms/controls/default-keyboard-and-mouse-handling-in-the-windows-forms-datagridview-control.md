@@ -1,5 +1,5 @@
 ---
-title: Výchozí klávesnice a myši v ovládacím prvku Windows Forms DataGridView
+title: Výchozí zpracování klávesnice a myši v ovládacím prvku DataGridView model Windows Forms
 ms.date: 02/13/2018
 helpviewer_keywords:
 - data grids [Windows Forms], mouse handling
@@ -10,109 +10,109 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], mouse handling
 - navigation keys [Windows Forms], DataGridView control
 ms.assetid: 4519b928-bfc8-4e8b-bb9c-b1e76a0ca552
-ms.openlocfilehash: 56585bf91a559844f15aede4519706674357a924
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97b8c8c3e418586bbc0053c358a2924484115a26
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969133"
 ---
-# <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Výchozí klávesnice a myši v ovládacím prvku Windows Forms DataGridView
+# <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Výchozí zpracování klávesnice a myši v ovládacím prvku DataGridView model Windows Forms
 
-Následující tabulky popisují, jak mohou uživatelé komunikovat s <xref:System.Windows.Forms.DataGridView> ovládacího prvku pomocí klávesnice a myši.  
+Následující tabulky popisují, jak můžou uživatelé s <xref:System.Windows.Forms.DataGridView> ovládacím prvkem pracovat prostřednictvím klávesnice a myši.  
   
 > [!NOTE]
->  Přizpůsobení chování klávesnice, můžete zpracovávat události standardní klávesnice, jako <xref:System.Windows.Forms.Control.KeyDown>. V režimu úprav, ale hostované ovládací prvek pro úpravu přijímá vstup z klávesnice a události klávesnice pro nedochází, <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Zpracování událostí úprav ovládacího prvku, připojit k ovládací prvek pro úpravu v obslužné rutině <xref:System.Windows.Forms.DataGridView.EditingControlShowing> obslužné rutiny události. Alternativně můžete přizpůsobit chování klávesnice <xref:System.Windows.Forms.DataGridView> podtřídy tak, že přepíšete <xref:System.Windows.Forms.DataGridView.ProcessDialogKey%2A> a <xref:System.Windows.Forms.DataGridView.ProcessDataGridViewKey%2A> metody.  
+> Chcete-li přizpůsobit chování klávesnice, můžete zpracovávat standardní události klávesnice, <xref:System.Windows.Forms.Control.KeyDown>jako například. V režimu úprav však ovládací prvek hostovaného úprav přijímá vstup z klávesnice a události klávesnice nejsou pro <xref:System.Windows.Forms.DataGridView> ovládací prvek k. Chcete-li zpracovat události úprav ovládacího prvku, připojte obslužné rutiny k ovládacímu prvku pro úpravy v <xref:System.Windows.Forms.DataGridView.EditingControlShowing> obslužné rutině události. Alternativně můžete přizpůsobit chování klávesnice v <xref:System.Windows.Forms.DataGridView> podtřídě <xref:System.Windows.Forms.DataGridView.ProcessDialogKey%2A> přepsáním metod a <xref:System.Windows.Forms.DataGridView.ProcessDataGridViewKey%2A> .  
   
 ## <a name="default-keyboard-handling"></a>Výchozí zpracování klávesnice  
   
-### <a name="basic-navigation-and-entry-keys"></a>Základní navigace a položka klíče  
+### <a name="basic-navigation-and-entry-keys"></a>Základní navigační a vstupní klíče  
   
-|Klávesy nebo kombinace kláves|Popis|  
+|Kombinace kláves nebo klíčů|Popis|  
 |----------------------------|-----------------|  
-|ŠIPKA DOLŮ|Přesune fokus na buňku přímo pod aktuální buňky. Pokud je zaměření na posledním řádku, nemá žádný účinek.|  
-|ŠIPKA DOLEVA|Přesune fokus na předcházejí buňky v řádku. Pokud je zaměřena tak do první buňky v řádku, nemá žádný účinek.|  
-|ŠIPKA DOPRAVA|Přesune fokus na další buňku v řádku. Pokud je zaměřena tak do poslední buňky v řádku, nemá žádný účinek.|  
-|ŠIPKA NAHORU|Přesune fokus na buňku přímo nad aktuální buňky. Pokud je zaměření na prvním řádku, nemá žádný účinek.|  
-|DOMOVSKÁ STRÁNKA|Přesune fokus na první buňky v aktuálním řádku.|  
-|END|Přesune fokus na poslední buňku na aktuálním řádku.|  
-|O STRÁNKU DOLŮ|Posune ovládací prvek dolů podle počtu řádků, které jsou plně zobrazeny. Přesune fokus na poslední řádek plně zobrazené beze změny sloupců.|  
-|PAGE UP|Posune ovládací prvek směrem nahoru podle počtu řádků, které jsou plně zobrazeny. Přesune fokus na první řádek zobrazené beze změny sloupců.|  
-|TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přesune fokus na další buňku v aktuálním řádku. Pokud už fokus do poslední buňky v řádku, přesune fokus na první buňky v dalším řádku. Pokud je zaměřena tak do poslední buňky v ovládacím prvku, přesune fokus na další ovládací prvek v pořadí jeho nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přesune fokus na další ovládací prvek v pořadí jeho nadřazeného kontejneru.|  
-|SHIFT+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přesune fokus na předchozí buňku na aktuálním řádku. Pokud je již zaměření první buňky řádku, přesune fokus na poslední buňky v předchozím řádku. Pokud je zaměřena tak do první buňky v ovládacím prvku, přesune fokus na předchozí ovládací prvek v pořadí jeho nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přesune fokus na předchozí ovládací prvek v pořadí jeho nadřazeného kontejneru.|  
-|CTRL+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přesune fokus na další ovládací prvek v pořadí jeho nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přesune fokus na další buňku v aktuálním řádku. Pokud už fokus do poslední buňky v řádku, přesune fokus na první buňky v dalším řádku. Pokud je zaměřena tak do poslední buňky v ovládacím prvku, přesune fokus na další ovládací prvek v pořadí jeho nadřazeného kontejneru.|  
-|CTRL+SHIFT+TAB|Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `false`, přesune fokus na předchozí ovládací prvek v pořadí jeho nadřazeného kontejneru.<br /><br /> Pokud <xref:System.Windows.Forms.DataGridView.StandardTab%2A> hodnota vlastnosti je `true`, přesune fokus na předchozí buňku na aktuálním řádku. Pokud je již zaměření první buňky řádku, přesune fokus na poslední buňky v předchozím řádku. Pokud je zaměřena tak do první buňky v ovládacím prvku, přesune fokus na předchozí ovládací prvek v pořadí jeho nadřazeného kontejneru.|  
-|CTRL + ŠIPKA|Přesune fokus na buňku nejvíce směrem šipky.|  
-|CTRL + HOME|Přesune fokus na první buňky v ovládacím prvku.|  
-|CTRL+END|Přesune fokus na poslední buňky v ovládacím prvku.|  
-|CTRL + PAGE DOWN/NAHORU|Totéž jako PAGE DOWN nebo stránku nahoru.|  
-|F2|Vloží aktuální buňky do buňky režimu úprav, pokud <xref:System.Windows.Forms.DataGridView.EditMode%2A> hodnota vlastnosti je <xref:System.Windows.Forms.DataGridViewEditMode.EditOnF2> nebo <xref:System.Windows.Forms.DataGridViewEditMode.EditOnKeystrokeOrF2>.|
-|F3|Seřadí aktuální sloupec, pokud <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType> hodnota vlastnosti je <xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>. Je stejný jako při kliknutí na aktuální záhlaví sloupce. Dostupné od verze rozhraní .NET Framework 4.7.2. Pokud chcete tuto funkci povolit, aplikace musí cílit na rozhraní .NET Framework 4.7.2 nebo novější verze nebo explicitně přihlašují pomocí přepínačů AppContext vylepšení přístupnosti.|  
-|F4|Pokud je aktuální buňky <xref:System.Windows.Forms.DataGridViewComboBoxCell>, umístí do režimu úprav buňku a zobrazí rozevírací seznam.|  
-|ALT + ŠIPKA NAHORU/ŠIPKA|Pokud je aktuální buňky <xref:System.Windows.Forms.DataGridViewComboBoxCell>, umístí do režimu úprav buňku a zobrazí rozevírací seznam.|  
-|MÍSTO|Pokud je aktuální buňky <xref:System.Windows.Forms.DataGridViewButtonCell>, <xref:System.Windows.Forms.DataGridViewLinkCell>, nebo <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, vyvolá <xref:System.Windows.Forms.DataGridView.CellClick> a <xref:System.Windows.Forms.DataGridView.CellContentClick> události. Pokud je aktuální buňky <xref:System.Windows.Forms.DataGridViewButtonCell>, také stiskne tlačítko. Pokud je aktuální buňky <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, také změní stav kontroly.|  
-|ZADEJTE|Potvrdí změny aktuální buňky a buňku a přesune fokus na buňku přímo pod aktuální buňky. Pokud je zaměření na posledním řádku, potvrdí změny bez přesouvání fokus.|  
-|ESC|Pokud je ovládací prvek v režimu úprav, zruší upravit. Pokud ovládací prvek není v režimu úprav, vrátí se všechny změny, které byly provedeny na aktuálním řádku Pokud je ovládací prvek vázán na zdroj dat, který podporuje úpravy nebo implementoval virtuálního režimu s rozsahem potvrzení změn na úrovni řádků.|  
-|BACKSPACE|Odstraní znak před kurzoru při úpravách buňky.|  
-|DELETE|Odstraní znak za kurzorem při úpravách buňky.|  
-|CTRL+ENTER|Potvrzení změny bez přesouvání fokus na aktuální buňku. Také všechny změny na aktuálním řádku, pokud je ovládací prvek vázán ke zdroji dat, který podporuje režim úprav nebo virtuální implementován s potvrzení změn na úrovni řádků rozsah potvrzení.|  
-|CTRL+0|Zadá <xref:System.DBNull.Value?displayProperty=nameWithType> hodnotu do aktuální buňky, pokud lze upravovat buňky. Ve výchozím nastavení, hodnota zobrazovat <xref:System.DBNull> hodnota je hodnota buňky <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle> platit pro aktuální buňku.|  
+|ŠIPKA DOLŮ|Přesune fokus na buňku přímo pod aktuální buňkou. Pokud je fokus na posledním řádku, neprovede žádnou akci.|  
+|ŠIPKA VLEVO|Přesune fokus na předchozí buňku v řádku. Pokud je fokus v první buňce řádku, neprovede žádnou akci.|  
+|ŠIPKA DOPRAVA|Přesune fokus na další buňku na řádku. Pokud je fokus v poslední buňce řádku, neprovede žádnou akci.|  
+|ŠIPKA NAHORU|Přesune fokus na buňku přímo nad aktuální buňkou. Pokud je fokus v prvním řádku, neprovede žádnou akci.|  
+|DOMOVSKÉ|Přesune fokus na první buňku v aktuálním řádku.|  
+|END|Přesune fokus na poslední buňku v aktuálním řádku.|  
+|O STRÁNKU DOLŮ|Posune ovládací prvek dolů o počet zobrazených řádků, které jsou plně zobrazeny. Přesune fokus na poslední plně zobrazený řádek bez změny sloupců.|  
+|O STRÁNKU NAHORU|Posune ovládací prvek nahoru o počet zobrazených řádků, které jsou plně zobrazeny. Přesune fokus na první zobrazený řádek bez změny sloupců.|  
+|RÁŽKY|Pokud je`false`hodnota vlastnosti, přesune fokus na další buňku na aktuálním řádku. <xref:System.Windows.Forms.DataGridView.StandardTab%2A> Pokud je fokus již v poslední buňce řádku, přesune fokus na první buňku v dalším řádku. Pokud je fokus v poslední buňce ovládacího prvku, přesune fokus na další ovládací prvek v pořadí prvků nadřazeného kontejneru.<br /><br /> Pokud je`true`hodnota vlastnosti, přesune fokus na další ovládací prvek v pořadí prvků nadřazeného kontejneru. <xref:System.Windows.Forms.DataGridView.StandardTab%2A>|  
+|SHIFT + TAB|Pokud je`false`hodnota vlastnosti, přesune fokus na předchozí buňku na aktuálním řádku. <xref:System.Windows.Forms.DataGridView.StandardTab%2A> Pokud je fokus již v první buňce řádku, přesune fokus na poslední buňku v předchozím řádku. Pokud je fokus v první buňce v ovládacím prvku, přesune fokus na předchozí ovládací prvek v pořadí prvků nadřazeného kontejneru.<br /><br /> Pokud je`true`hodnota vlastnosti, přesune fokus na předchozí ovládací prvek v pořadí prvků nadřazeného kontejneru. <xref:System.Windows.Forms.DataGridView.StandardTab%2A>|  
+|CTRL+TAB|Pokud je`false`hodnota vlastnosti, přesune fokus na další ovládací prvek v pořadí prvků nadřazeného kontejneru. <xref:System.Windows.Forms.DataGridView.StandardTab%2A><br /><br /> Pokud je`true`hodnota vlastnosti, přesune fokus na další buňku na aktuálním řádku. <xref:System.Windows.Forms.DataGridView.StandardTab%2A> Pokud je fokus již v poslední buňce řádku, přesune fokus na první buňku v dalším řádku. Pokud je fokus v poslední buňce ovládacího prvku, přesune fokus na další ovládací prvek v pořadí prvků nadřazeného kontejneru.|  
+|CTRL+SHIFT+TAB|Pokud je`false`hodnota vlastnosti, přesune fokus na předchozí ovládací prvek v pořadí prvků nadřazeného kontejneru. <xref:System.Windows.Forms.DataGridView.StandardTab%2A><br /><br /> Pokud je`true`hodnota vlastnosti, přesune fokus na předchozí buňku na aktuálním řádku. <xref:System.Windows.Forms.DataGridView.StandardTab%2A> Pokud je fokus již v první buňce řádku, přesune fokus na poslední buňku v předchozím řádku. Pokud je fokus v první buňce v ovládacím prvku, přesune fokus na předchozí ovládací prvek v pořadí prvků nadřazeného kontejneru.|  
+|CTRL + ŠIPKA|Přesune fokus na nejvzdálenější buňku ve směru šipky.|  
+|CTRL + HOME|Přesune fokus na první buňku v ovládacím prvku.|  
+|CTRL + END|Přesune fokus na poslední buňku v ovládacím prvku.|  
+|CTRL + PAGEDOWN + ŠIPKA NAHORU|Stejné jako PAGE DOWN nebo PAGE UP.|  
+|F2|Vloží aktuální buňku do režimu úprav buňky, pokud <xref:System.Windows.Forms.DataGridView.EditMode%2A> je <xref:System.Windows.Forms.DataGridViewEditMode.EditOnF2> hodnota vlastnosti nebo <xref:System.Windows.Forms.DataGridViewEditMode.EditOnKeystrokeOrF2>.|
+|F3|Seřadí aktuální sloupec, pokud <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType> je <xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>hodnota vlastnosti. Je stejný jako při kliknutí na záhlaví aktuálního sloupce. K dispozici od .NET Framework 4.7.2. Chcete-li povolit tuto funkci, musí být aplikace cíleny na .NET Framework 4.7.2 nebo novější verze, nebo explicitně zapínat do vylepšení přístupnosti pomocí přepínačů AppContext.|  
+|F4|Pokud je aktuální buňka a <xref:System.Windows.Forms.DataGridViewComboBoxCell>, aplikace Vloží buňku do režimu úprav a zobrazí rozevírací seznam.|  
+|ALT + ŠIPKA NAHORU/DOLŮ|Pokud je aktuální buňka a <xref:System.Windows.Forms.DataGridViewComboBoxCell>, aplikace Vloží buňku do režimu úprav a zobrazí rozevírací seznam.|  
+|SPACE|Pokud <xref:System.Windows.Forms.DataGridViewButtonCell>je aktuální buňka, <xref:System.Windows.Forms.DataGridViewCheckBoxCell> <xref:System.Windows.Forms.DataGridViewLinkCell>nebo, vyvolá <xref:System.Windows.Forms.DataGridView.CellClick> události a <xref:System.Windows.Forms.DataGridView.CellContentClick> . Pokud je aktuální buňka a <xref:System.Windows.Forms.DataGridViewButtonCell>, také stiskne tlačítko. Pokud je aktuální buňka a <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, změní se také stav check.|  
+|NAPIŠTE|Potvrdí všechny změny v aktuální buňce a řádku a přesune fokus na buňku přímo pod aktuální buňkou. Pokud je fokus na posledním řádku, potvrdí všechny změny bez přesunutí fokusu.|  
+|ESC|Pokud je ovládací prvek v režimu úprav, aplikace zruší úpravy. Pokud ovládací prvek není v režimu úprav, vrátí všechny změny provedené na aktuálním řádku, pokud je ovládací prvek svázán se zdrojem dat, který podporuje úpravy nebo virtuální režim, s rozsahem potvrzení na úrovni řádku.|  
+|BACKSPACE|Odstraní znak před bodem vložení při úpravě buňky.|  
+|DELETE|Odstraní znak za kurzorem při úpravě buňky.|  
+|CTRL + ENTER|Potvrdí všechny změny v aktuální buňce bez přesunutí fokusu. Také potvrdí všechny změny aktuálního řádku, pokud je ovládací prvek svázán se zdrojem dat, který podporuje úpravy nebo virtuální režim, s rozsahem potvrzení na úrovni řádků.|  
+|CTRL + 0|Pokud lze upravovat buňku, zadá hodnotudoaktuálníbuňky.<xref:System.DBNull.Value?displayProperty=nameWithType> Ve výchozím nastavení je hodnota zobrazení <xref:System.DBNull> hodnoty buňky hodnotou <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> v platném pro aktuální buňku.|  
   
-### <a name="selection-keys"></a>Výběr klíče
+### <a name="selection-keys"></a>Klávesy pro výběr
 
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `false` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>, změna aktuální buňky pomocí navigačních kláves změní výběr do nové buňky. Toto chování neovlivňují SHIFT, CTRL a ALT – klávesy.  
+ Pokud je `false` <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> vlastnost nastavena na hodnotu a vlastnost je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>hodnotu, změna aktuální buňky pomocí navigačních kláves změní výběr na novou buňku. <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> Klávesy SHIFT, CTRL a ALT toto chování neovlivňují.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>, stejné chování, ale s těmito přídavky.  
+ Pokud je nastavené na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>, dojde k stejnému chování, ale s následujícími přídavky. <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>  
   
-|Klávesy nebo kombinace kláves|Popis|  
+|Kombinace kláves nebo klíčů|Popis|  
 |----------------------------|-----------------|  
-|SHIFT + MEZERNÍK|Vybere celý řádek nebo sloupec (stejného jako je jako kliknutí na záhlaví sloupce či řádku).|  
-|klíč navigace (šipka, sloupce stránky vzrůstu HOME, END)|Pokud je vybrán celého řádku nebo sloupce, změnit aktuální buňky na nový řádek nebo sloupec posune výběr úplné nového řádku nebo sloupce (v závislosti na režimu výběru).|  
+|SHIFT + MEZERNÍK|Vybere celý řádek nebo sloupec (stejné jako při kliknutí na záhlaví řádku nebo sloupce).|  
+|navigační klíč (šipkový klíč, stránka nahoru/dolů, HOME, END)|Pokud je vybrán celý řádek nebo sloupec, změna aktuální buňky na nový řádek nebo sloupec přesune výběr na celý nový řádek nebo sloupec (v závislosti na režimu výběru).|  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `false` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, změnit aktuální buňky na nový řádek nebo sloupec pomocí klávesnice posune výběr úplné nového řádku nebo sloupce. Toto chování neovlivňují SHIFT, CTRL a ALT – klávesy.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavená `false` na <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> a je nastavená <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo, změna aktuální buňky na nový řádek nebo sloupec pomocí klávesnice přesune výběr na celý nový řádek nebo sloupec. Klávesy SHIFT, CTRL a ALT toto chování neovlivňují.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true`, chování navigace nezmění, ale navigaci pomocí klávesnice, při stisknutí klávesy SHIFT (včetně CTRL + SHIFT) slouží k úpravě výběru více buněk. Před zahájením navigační ovládací prvek aktuální buňky označí jako na buňku ukotvení. Při navigaci při stisknutí klávesy SHIFT výběr zahrnuje všechny buňky mezi ukotvení buňky a buňku aktuální. Ostatní buňky v ovládacím prvku zůstane vybrané v případě, že již vybrána, ale mohou být zrušen výběr cesty pokud navigační klávesnice dočasně vloží mezi ukotvení buňky a buňku aktuální je.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavená `true`na, navigační chování se nezmění, ale navigace pomocí klávesnice při stisknutí klávesy Shift (včetně kláves CTRL + SHIFT) upraví výběr více buněk. Před zahájením navigace ovládací prvek označí aktuální buňku jako kotvicí buňku. Když při stisknutí klávesy SHIFT procházíte, výběr zahrnuje všechny buňky mezi buňkou ukotvení a aktuální buňkou. Ostatní buňky v ovládacím prvku zůstanou vybrány, pokud již byly vybrány, ale mohou být nezaškrtnuté, pokud je navigace klávesnicí dočasně umístěna mezi buňkou ukotvení a aktuální buňkou.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, chování ukotvení buňky a aktuální buňky je stejný, ale budou vybrané nebo zrušení výběru pouze úplné řádky nebo sloupce.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastaven na `true` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastaven <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> na nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, chování buňky ukotvení a aktuální buňky je stejné, ale je vybráno nebo Nevybráno pouze celé řádky nebo sloupce.  
   
-## <a name="default-mouse-handling"></a>Výchozí zpracování myši
+## <a name="default-mouse-handling"></a>Výchozí zpracování myší
   
-### <a name="basic-mouse-handling"></a>Zpracování základ.
+### <a name="basic-mouse-handling"></a>Základní zpracování myši
   
 > [!NOTE]
->  Vždy kliknete na buňku s levým tlačítkem myši se změní aktuální buňky. Klepnutím pravým tlačítkem myši na buňku otevře místní nabídku, když je k dispozici.  
+> Kliknutí na buňku s levým tlačítkem myši vždy změní aktuální buňku. Kliknutím pravým tlačítkem myši na buňku otevřete místní nabídku, jakmile bude k dispozici.  
   
 |Akce myši|Popis|  
 |------------------|-----------------|  
-|Levé tlačítko myši dolů|Díky buňku kliknutí na aktuální buňku a vyvolává <xref:System.Windows.Forms.DataGridView.CellMouseDown?displayProperty=nameWithType> událostí.|  
-|Levé tlačítko myši nahoru|Vyvolá <xref:System.Windows.Forms.DataGridView.CellMouseUp?displayProperty=nameWithType> událostí|  
-|Klikněte na tlačítko levé tlačítko myši.|Vyvolá <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> a <xref:System.Windows.Forms.DataGridView.CellMouseClick?displayProperty=nameWithType> události|  
-|Levé tlačítko myši dolů a přetáhněte na buňky záhlaví sloupce|Pokud <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType> vlastnost `true`, přesune sloupce, takže ji můžete přetáhnout do nové pozice.|  
+|Levé tlačítko myši dolů|Nastaví buňku po kliknutí na aktuální buňku a vyvolá <xref:System.Windows.Forms.DataGridView.CellMouseDown?displayProperty=nameWithType> událost.|  
+|Levé tlačítko myši nahoru|<xref:System.Windows.Forms.DataGridView.CellMouseUp?displayProperty=nameWithType> Vyvolá událost.|  
+|Kliknutí levým tlačítkem myši|Vyvolá události <xref:System.Windows.Forms.DataGridView.CellMouseClick?displayProperty=nameWithType>a. <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>|  
+|Levé tlačítko myši a přetáhnutí na buňku záhlaví sloupce|Pokud je <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType> `true`vlastnost, přesune sloupec, aby jej bylo možné vyřadit do nové pozice.|  
   
 ### <a name="mouse-selection"></a>Výběr myši
 
- Žádný výběr chování je přidružen prostřední tlačítko myši nebo kolečka myši.  
+ Žádné chování při výběru není přidruženo k prostřednímu tlačítku myši nebo kolečkem myši.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `false` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>, očekávejte toto chování.  
+ Pokud je `false` <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> vlastnost nastavena na hodnotu a vlastnost je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>hodnotu, dojde k následujícímu chování. <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>  
   
 |Akce myši|Popis|  
 |------------------|-----------------|  
-|Klikněte na tlačítko levé tlačítko myši.|Pokud uživatel klikne na buňku, vybere pouze aktuální buňku. Žádný výběr chování když uživatel klikne záhlaví sloupce či řádku.|  
-|Klikněte pravým tlačítkem myši|Zobrazí místní nabídku, pokud je k dispozici.|  
+|Kliknutí levým tlačítkem myši|Vybere pouze aktuální buňku, pokud uživatel klikne na buňku. Žádné chování při výběru, pokud uživatel klikne na záhlaví řádku nebo sloupce.|  
+|Kliknutí pravým tlačítkem myši|Zobrazí místní nabídku, je-li k dispozici.|  
   
- Stejné chování při <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>, s tím rozdílem, že v závislosti na režimu výběru kliknutím na záhlaví sloupce či řádku výběr celého řádku nebo sloupce, který se nastavení aktuální buňky do první buňky v řádku nebo sloupce.  
+ K stejnému chování dochází, <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> když je nastavená <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo, s výjimkou toho, že v závislosti na režimu výběru se kliknutím na záhlaví řádku nebo sloupce vybere celý řádek nebo sloupec a nastaví se aktuální buňka na první buňku v řádku nebo sloupci.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, kliknutím na libovolnou buňku v řádku nebo sloupce vybere celý řádek nebo sloupec.  
+ Pokud <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavená <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>nebo, kliknutím na libovolnou buňku v řádku nebo sloupci se vybere celý řádek nebo sloupec.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true`, kliknete na buňku při stisknutí klávesy CTRL nebo SHIFT slouží k úpravě výběru více buněk.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastaveno na `true`, kliknutí na buňku při stisknutí klávesy CTRL nebo Shift změní výběr více buněk.  
   
- Když kliknete na buňku při stisknutí klávesy CTRL, buňky zatímco všechny ostatní buňky zachovat jejich aktuální stav výběru změní jeho stav výběru.  
+ Když při stisknutí klávesy CTRL kliknete na buňku, změní se její stav výběru, zatímco všechny ostatní buňky si budou uchovávat svůj aktuální stav výběru.  
   
- Když kliknete na buňku nebo sadu buněk při stisknutí klávesy SHIFT, výběr zahrnuje všechny buňky mezi aktuální buňky a na buňku ukotvení na pozici aktuální buňky před prvním kliknutí. Klikněte a tažením ukazatele více buněk, buňku ukotvení při buňku klikli na začátku operace přetažení. Následné kliknutí při stisknutí klávesy SHIFT změnit aktuální buňky, ale ne buňku ukotvení. Ostatní buňky v ovládacím prvku zůstane vybrané v případě, že již vybrána, ale mohou být zrušen výběr cesty pokud navigační myši dočasně vloží mezi ukotvení buňky a buňku aktuální je.  
+ Když při stisknutí klávesy SHIFT kliknete na buňku nebo řadu buněk, výběr zahrnuje všechny buňky mezi aktuální buňkou a ukotvenou buňkou umístěnou na pozici aktuální buňky před prvním kliknutím. Když kliknete na ukazatel myši a přetáhnete ho mezi více buněk, buňka ukotvení je buňka, na které se na začátku operace přetažení klikne. Následné kliknutí při stisknutí klávesy SHIFT změní aktuální buňku, ale ne buňku ukotvení. Ostatní buňky v ovládacím prvku zůstanou vybrány, pokud již byly vybrány, ale mohou být nezaškrtnuté, pokud je navigace myší dočasně umístěna mezi buňkou ukotvení a aktuální buňkou.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>, kliknutím na záhlaví sloupce či řádku (v závislosti na výběru režimu) při stisknutí klávesy SHIFT změní stávající výběr celé řádky nebo sloupce, pokud takové Výběr existuje. V opačném případě bude zrušte výběr a začít nový výběr úplné řádků nebo sloupců. Kliknutím na záhlaví sloupce či řádku při stisknutí klávesy CTRL, ale přidá nebo odebere kliknutí na řádku nebo sloupce z aktuálního výběru bez jiné změny aktuálního výběru.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavená `true` na <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> a je nastavená <xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>na <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> nebo, klikne na záhlaví řádku nebo sloupce (v závislosti na režimu výběru) a při stisknutí klávesy SHIFT se změní stávající výběr celých řádků nebo sloupců, pokud taková výběr existuje. V opačném případě Smaže výběr a spustí nový výběr celých řádků nebo sloupců. Po kliknutí na záhlaví řádku nebo sloupce se ale při stisknutí klávesy CTRL přidají nebo odeberou vybraný řádek nebo sloupec z aktuálního výběru bez dalších úprav aktuálního výběru.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavena na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, kliknete na buňku při stisknutí klávesy SHIFT nebo CTRL se chová stejně jako s výjimkou, že pouze plně řádky a sloupce se nekonzistence týká.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavená `true` na <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> a je nastavená <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo, klikněte na buňku, zatímco stisknutí klávesy SHIFT nebo CTRL se chová stejným způsobem s tím rozdílem, že jsou ovlivněny pouze celé řádky a sloupce.  
   
 ## <a name="see-also"></a>Viz také:
 

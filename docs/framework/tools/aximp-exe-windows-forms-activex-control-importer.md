@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69cc2459f1944c8101be9c58b1462217ee7ac78f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cd3d7ea4d9639c5c68ecf977b4e95e816d99a4f6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629580"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915423"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
 Importér ovládacích prvků ActiveX převede definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
@@ -49,7 +49,7 @@ aximp [options]{file.dll | file.ocx}
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |`/out:`*název souboru*|Určuje název sestavení, které se má vytvořit.|  
 |`/publickey:`*název souboru*|Podepíše výsledný ovládací prvek se silným názvem pomocí veřejného klíče, který se nachází v souboru určeném parametrem *filename*.|  
-|`/rcw:`*název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu Obálka s vydanou [modulem runtime](../../../docs/standard/native-interop/runtime-callable-wrapper.md).|  
+|`/rcw:`*název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu Obálka s vydanou [modulem runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Potlačí zobrazování zpráv o úspěšném dokončení.|  
 |`/source`|Generuje zdrojový kód jazyka C# pro obálku Windows Forms.|  
 |`/verbose`|Určuje režim podrobného vypisování; zobrazuje dodatečné informace o průběhu.|  
@@ -62,7 +62,7 @@ aximp [options]{file.dll | file.ocx}
  Model Windows Forms proxy pro ovládací prvky ActiveX (kde AX označuje prvek ActiveX): Aplikace AX*ProgID*. dll  
   
 > [!NOTE]
->  Pokud název členu ovládacího prvku ActiveX odpovídá názvu definovanému v rozhraní .NET Framework, Aximp.exe při vytváření odvozené třídy AxHost před název člena přidá „Ctl“. Například, pokud ovládací prvek ActiveX má člen nazvaný „Layout“, přejmenuje se v odvozené třídě AxHost na „CtlLayout“, protože událost Layout je definována v rámci .NET Framework.  
+> Pokud název členu ovládacího prvku ActiveX odpovídá názvu definovanému v rozhraní .NET Framework, Aximp.exe při vytváření odvozené třídy AxHost před název člena přidá „Ctl“. Například, pokud ovládací prvek ActiveX má člen nazvaný „Layout“, přejmenuje se v odvozené třídě AxHost na „CtlLayout“, protože událost Layout je definována v rámci .NET Framework.  
   
  Tyto generované soubory můžete prozkoumávat pomocí nástrojů, jako je [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
   

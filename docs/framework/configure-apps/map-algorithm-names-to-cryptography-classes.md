@@ -7,12 +7,12 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-ms.openlocfilehash: 49f4b5b4b3634df5e648b5208448d644168e9d19
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 513000169504473aa6dd46feaca214f58502ffd0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566719"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912871"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mapování názvů algoritmů na třídy šifrování
 Existují čtyři způsoby, jak může vývojář vytvořit objekt kryptografie pomocí Windows SDK:  
@@ -58,16 +58,16 @@ Existují čtyři způsoby, jak může vývojář vytvořit objekt kryptografie 
 </configuration>  
 ```  
   
- Můžete zadat název atributu v [elementu < cryptoClass\> ](../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) (předchozí příklad název atributu `MySHA1Hash`). Hodnota atributu v  **\<prvku cryptoClass >** je řetězec, který modul CLR (Common Language Runtime) používá k nalezení třídy. Můžete použít libovolný řetězec, který splňuje požadavky zadané v části [určení plně kvalifikovaných názvů typů](../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).  
+ Můžete zadat název atributu v [elementu < cryptoClass\> ](./file-schema/cryptography/cryptoclass-element.md) (předchozí příklad název atributu `MySHA1Hash`). Hodnota atributu v  **\<prvku cryptoClass >** je řetězec, který modul CLR (Common Language Runtime) používá k nalezení třídy. Můžete použít libovolný řetězec, který splňuje požadavky zadané v části [určení plně kvalifikovaných názvů typů](../reflection-and-codedom/specifying-fully-qualified-type-names.md).  
   
- Mnoho názvů algoritmů může být mapováno na stejnou třídu. Element nameEntry > mapuje třídu na jeden popisný název algoritmu. [ \<](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) Atribut **Name** může být buď řetězec, který se používá při volání metody **System. Security. Cryptography. objektu CryptoConfig. CreateFromName** nebo názvu abstraktní <xref:System.Security.Cryptography> třídy kryptografie v oboru názvů. Hodnota atributu **Class** je název atributu v  **\<elementu cryptoClass >** .  
+ Mnoho názvů algoritmů může být mapováno na stejnou třídu. Element nameEntry > mapuje třídu na jeden popisný název algoritmu. [ \<](./file-schema/cryptography/nameentry-element.md) Atribut **Name** může být buď řetězec, který se používá při volání metody **System. Security. Cryptography. objektu CryptoConfig. CreateFromName** nebo názvu abstraktní <xref:System.Security.Cryptography> třídy kryptografie v oboru názvů. Hodnota atributu **Class** je název atributu v  **\<elementu cryptoClass >** .  
   
 > [!NOTE]
->  Algoritmus SHA1 lze získat voláním <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> metody nebo metody **Security. objektu CryptoConfig. CreateFromName ("SHA1")** . Každá metoda zaručuje pouze to, že vrátí objekt, který implementuje algoritmus SHA1. V konfiguračním souboru není nutné namapovat každý popisný název algoritmu na stejnou třídu.  
+> Algoritmus SHA1 lze získat voláním <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> metody nebo metody **Security. objektu CryptoConfig. CreateFromName ("SHA1")** . Každá metoda zaručuje pouze to, že vrátí objekt, který implementuje algoritmus SHA1. V konfiguračním souboru není nutné namapovat každý popisný název algoritmu na stejnou třídu.  
   
  Seznam výchozích názvů a tříd, na které se mapují, najdete v tématu <xref:System.Security.Cryptography.CryptoConfig>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
-- [Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [Kryptografické služby](../../standard/security/cryptographic-services.md)
+- [Konfigurace šifrovacích tříd](configure-cryptography-classes.md)

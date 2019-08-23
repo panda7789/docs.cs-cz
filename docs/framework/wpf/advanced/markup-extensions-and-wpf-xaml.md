@@ -15,12 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: 25f6cbbc1df8a4a2b4ad9025b2381d26153e4b66
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: f0eb4a90b09f49ced45fa8453356e1d6fb3b4af1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364438"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965281"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně pravidel jejich syntaxe, účelu a modelu objektu třídy, který je v nich umístěn. Rozšíření značek jsou obecná funkce jazyka XAML a implementace .NET služeb XAML. Toto téma konkrétně popisuje rozšíření značek pro použití v jazyce WPF XAML.  
@@ -50,7 +50,7 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 - `x:Array`poskytuje podporu pro vytváření obecných polí v syntaxi jazyka XAML pro případy, kdy podpora kolekce poskytovaná základními prvky WPF a modely ovládacích prvků není použita záměrně. Podrobnosti najdete v tématu [rozšíření značek x:Array](../../xaml-services/x-array-markup-extension.md).  
   
 > [!NOTE]
->  `x:` Předpona se používá pro typické mapování oboru názvů XAML vnitřních prvků jazyka XAML, v kořenovém elementu souboru XAML nebo v produkčním prostředí. Například šablony sady Visual Studio pro aplikace WPF inicializují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML pro jazyk XAML, a to na rozdíl od na výchozí obor názvů WPF nebo jiné obory názvů jazyka XAML, které nesouvisí s konkrétním rozhraním.  
+> `x:` Předpona se používá pro typické mapování oboru názvů XAML vnitřních prvků jazyka XAML, v kořenovém elementu souboru XAML nebo v produkčním prostředí. Například šablony sady Visual Studio pro aplikace WPF inicializují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML pro jazyk XAML, a to na rozdíl od na výchozí obor názvů WPF nebo jiné obory názvů jazyka XAML, které nesouvisí s konkrétním rozhraním.  
   
 <a name="WPF_Specific_Markup_Extensions"></a>   
 ## <a name="wpf-specific-markup-extensions"></a>Rozšíření značek specifická pro WPF  
@@ -71,7 +71,7 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 - `ComponentResourceKey`a `ThemeDictionary` podporují aspekty vyhledávání prostředků, zejména pro prostředky a motivy, které jsou zabaleny s vlastními ovládacími prvky. Další informace najdete v tématu [rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md), [rozšíření značek ThemeDictionary](themedictionary-markup-extension.md)nebo [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md).  
   
 <a name="StarExtension"></a>   
-## <a name="extension-classes"></a>\* Třídy rozšíření  
+## <a name="extension-classes"></a>\*Třídy rozšíření  
  Pro obecné kódování kódu XAML a pro rozšíření značek specifických pro WPF je chování jednotlivých rozšíření značek identifikováno pro procesor XAML prostřednictvím `*Extension` třídy, která je odvozena z <xref:System.Windows.Markup.MarkupExtension>a <xref:System.Windows.Markup.StaticExtension.ProvideValue%2A> poskytuje implementaci Metoda. Tato metoda pro každé rozšíření poskytuje objekt, který je vrácen při vyhodnocování rozšíření značek. Vrácený objekt je obvykle vyhodnocován v závislosti na různých tokenech řetězců, které jsou předány příponě značek.  
   
  Například <xref:System.Windows.StaticResourceExtension> Třída poskytuje plochu pro skutečné vyhledávání prostředků, aby jeho <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> implementace vrátila požadovaný objekt, se vstupem této konkrétní implementace je řetězec, který se používá k Vyhledejte prostředek podle jeho `x:Key`. Většina této podrobnosti implementace je neimportovaná, pokud používáte existující rozšíření značek.  
@@ -88,11 +88,11 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 - Pokud jednotlivé oddělené tokeny neobsahují žádné rovnítko, každý token je považován za argument konstruktoru. Každý parametr konstruktoru musí být uveden jako typ očekávaný tímto podpisem a ve správném pořadí očekávaném daným podpisem.  
   
     > [!NOTE]
-    >  Procesor XAML musí volat konstruktor, který odpovídá počtu argumentů v počtu párů. Z tohoto důvodu, Pokud implementujete vlastní rozšíření značek, Neposkytněte více konstruktorů se stejným počtem argumentů. Chování pro způsob, jakým se procesor XAML chová, pokud více než jedna cesta konstruktoru rozšíření značek se stejným počtem parametrů je nedefinovaná, ale měli byste předpokládat, že procesor XAML smí vyvolat výjimku při použití, pokud tato situace existuje v definice typu rozšíření značek.  
+    > Procesor XAML musí volat konstruktor, který odpovídá počtu argumentů v počtu párů. Z tohoto důvodu, Pokud implementujete vlastní rozšíření značek, Neposkytněte více konstruktorů se stejným počtem argumentů. Chování pro způsob, jakým se procesor XAML chová, pokud více než jedna cesta konstruktoru rozšíření značek se stejným počtem parametrů je nedefinovaná, ale měli byste předpokládat, že procesor XAML smí vyvolat výjimku při použití, pokud tato situace existuje v definice typu rozšíření značek.  
   
 - Pokud jednotlivé samostatné tokeny obsahují znaménka rovná se, pak procesor XAML nejprve zavolá konstruktor bez parametrů pro rozšíření značek. Pak každá dvojice název = hodnota je interpretována jako název vlastnosti, který existuje v rozšíření značek, a hodnotu, která se má přiřadit k této vlastnosti.  
   
-- Pokud dojde k paralelnímu výsledku mezi chováním konstruktoru a chováním nastavení vlastnosti v rozšíření značek, nezáleží na tom, jaké chování používáte. Je běžné použití pro `=`rozšíření značek, které má více než jednu nastavitelnou vlastnost, pokud je to pouze proto, že je váš kód přesnější a že je méně pravděpodobně úmyslně transponovat parametry konstruktoru (Pokud zadáte páry Property = hodnota, tyto vlastnosti mohou být v libovolném pořadí.) Navíc není nijak zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každou ze svých vlastností. Například <xref:System.Windows.Data.Binding> je rozšíření značek s mnoha vlastnostmi, které lze nastavit prostřednictvím rozšíření ve formuláři*hodnoty* <xref:System.Windows.Data.Binding> *vlastnosti*`=`, ale podporuje pouze dva konstruktory: konstruktor bez parametrů a jeden který nastaví počáteční cestu.  
+- Pokud dojde k paralelnímu výsledku mezi chováním konstruktoru a chováním nastavení vlastnosti v rozšíření značek, nezáleží na tom, jaké chování používáte. Je běžné použití pro`=`rozšíření značek, které má více než jednu nastavitelnou vlastnost, pokud je to pouze proto, že je váš kód přesnější a že je méně pravděpodobně úmyslně transponovat parametry konstruktoru (Pokud zadáte páry Property = hodnota, tyto vlastnosti mohou být v libovolném pořadí.) Navíc není nijak zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každou ze svých vlastností. Například <xref:System.Windows.Data.Binding> je rozšíření značek s mnoha vlastnostmi, které lze nastavit prostřednictvím rozšíření ve formuláři*hodnoty* <xref:System.Windows.Data.Binding> *vlastnosti*`=`, ale podporuje pouze dva konstruktory: konstruktor bez parametrů a jeden který nastaví počáteční cestu.  
   
 - Literálovou čárku nelze předat rozšíření značek bez řídicího znaku.  
   

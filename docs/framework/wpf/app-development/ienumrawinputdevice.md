@@ -4,28 +4,28 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - IEnumRAWINPUTDEVICE interface [WPF]
 ms.assetid: 88c8b389-a48b-46b9-b895-8ed7b1e26fea
-ms.openlocfilehash: 04caca0c580d26fde7fc9a3e3a11b7a8fed26d65
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5249d7ea359db5d5c58ae87600f61048b465b4c1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949562"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964770"
 ---
 # <a name="ienumrawinputdevice"></a>IEnumRAWINPUTDEVICE
-Toto rozhraní zobrazí nezpracované vstupní zařízení a používá se pouze podle PresentationHost.exe.  
+Toto rozhraní vytvoří výčet nezpracovaných vstupních zařízení a používá se pouze PresentationHost. exe.  
   
 > [!NOTE]
->  Toto rozhraní API je určen a podporovaných pro použití v místním klientském počítači.  
+> Toto rozhraní API je zamýšlené a podporované jenom pro použití v místním klientském počítači.  
   
 ## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|[IEnumRAWINPUTDEVIC:Next](ienumrawinputdevic-next.md)|Vytvoří výčet Další `celt` elementy (to znamená, RAWINPUTDEVICE struktury) v seznamu čítače výčtu je vrácení `rgelt` spolu s skutečný počet prvků ve výčtu v `pceltFetched`.|  
-|[IEnumRAWINPUTDEVIC:Skip](ienumrawinputdevic-skip.md)|Dává pokyn enumerátorem přeskočit na další `celt` elementy ve výčtu tak, aby na další volání [IEnumRAWINPUTDEVIC:Next](ienumrawinputdevic-next.md) nevrátí tyto elementy.|  
-|[IEnumRAWINPUTDEVIC:Reset](ienumrawinputdevic-reset.md)|Návrat na začátek pořadí výčtu.|  
-|[IEnumRAWINPUTDEVIC:Clone](ienumrawinputdevic-clone.md)|Vytvoří další enumerátor nezpracované vstupní zařízení pomocí stejného stavu jako aktuální enumerátor k iteraci přes stejného seznamu.|  
+|[IEnumRAWINPUTDEVIC:Next](ienumrawinputdevic-next.md)|Vytvoří výčet dalších `celt` prvků (tj. RAWINPUTDEVICE struktury) v seznamu enumerátoru a vrátí `rgelt` je spolu se skutečným počtem výčtových prvků v `pceltFetched`.|  
+|[IEnumRAWINPUTDEVIC:Skip](ienumrawinputdevic-skip.md)|Instruuje enumerátor pro přeskočení dalších `celt` prvků výčtu, aby další volání [IEnumRAWINPUTDEVIC: Next](ienumrawinputdevic-next.md) nevrátí tyto prvky.|  
+|[IEnumRAWINPUTDEVIC:Reset](ienumrawinputdevic-reset.md)|Obnoví posloupnost výčtu na začátek.|  
+|[IEnumRAWINPUTDEVIC:Clone](ienumrawinputdevic-clone.md)|Vytvoří další výčet nezpracovaných vstupních zařízení se stejným stavem, jako je aktuální enumerátor pro iteraci přes stejný seznam.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [O vstup nezpracovaných dat](/windows/desktop/inputdev/about-raw-input)
+- [O nezpracovaném vstupu](/windows/desktop/inputdev/about-raw-input)

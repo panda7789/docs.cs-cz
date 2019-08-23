@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: d2b35a50d9d09bffd69ae8b8217d6e778ce66ea0
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: b009c2503c7cbf6aca847fc7318135842a060f69
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796401"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965042"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jakékoli jiné vývojové platformy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšenou levou a pravou a zprava doleva data ve stejném dokumentu. Ve stejnou chvíli [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří Skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako jsou arabské a hebrejské speaking Users.  
@@ -154,9 +154,9 @@ Na rozdíl od jakékoli jiné vývojové platformy [!INCLUDE[TLA2#tla_winclient]
   
 <a name="NumberSubstitution"></a>   
 ## <a name="number-substitution"></a>Nahrazování čísel  
- Historicky se [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] zavedlo substituce čísel tím, že umožňuje reprezentace různých kulturních tvarů pro stejné číslice a přitom zachovat interní úložiště těchto číslic v různých národních prostředích, jako jsou například čísla uložená v jejich dobře známé hexadecimální hodnoty, 0x40, 0x41, ale zobrazeny podle vybraného jazyka.  
+ V minulosti systém Windows podporuje substituci čísel tím, že umožňuje znázornění různých kulturních tvarů pro stejné číslice a přitom zachovat interní úložiště těchto číslic v různých národních prostředích, jako jsou například čísla uložená v jejich dobře známé hexadecimální hodnoty, 0x40, 0x41, ale zobrazené v závislosti na vybraném jazyce.  
   
- To umožňuje aplikacím zpracovávat číselné hodnoty, aniž by je museli převést z jednoho jazyka na jiný, například uživatel může otevřít [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] tabulku v lokalizované arabštině [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a zobrazit čísla v arabštině, ale otevřít ji v Evropská verze [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nástroje a viz Evropské vyjádření stejných čísel. To je také nutné pro jiné symboly, jako jsou oddělovače čárky a symbol procenta, protože obvykle doprovázejí čísla ve stejném dokumentu.  
+ To umožňuje aplikacím zpracovávat číselné hodnoty, aniž by je museli převádět z jednoho jazyka na jiný, například uživatel může otevřít [!INCLUDE[TLA#tla_xl](../../../../includes/tlasharptla-xl-md.md)] tabulku v lokalizovaných arabských oknech a zobrazit čísla ve tvaru arabské, ale otevřít je v Evropská verze Windows a viz Evropské vyjádření stejných čísel. To je také nutné pro jiné symboly, jako jsou oddělovače čárky a symbol procenta, protože obvykle doprovázejí čísla ve stejném dokumentu.  
   
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]pokračuje v rámci stejné tradice a přidá další podporu pro tuto funkci, která umožňuje větší kontrolu nad tím, kdy a jak se použije náhrada. I když je tato funkce navržena pro libovolný jazyk, je zvláště užitečná v obousměrném obsahu, kde tvarování číslic pro určitý jazyk je obvykle výzvou pro vývojáře aplikací z důvodu různých kultur, na kterých může aplikace běžet.  
   
@@ -190,7 +190,7 @@ Na rozdíl od jakékoli jiné vývojové platformy [!INCLUDE[TLA2#tla_winclient]
   
 - <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>: Čísla se vykreslují pomocí tradičních číslic pro jazykovou verzi. Pro většinu jazykových verzí je to stejné jako <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>. Výsledkem ale <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> jsou číslice latinky pro některé Arabské jazykové verze, zatímco tato hodnota má za následek arabské číslice pro všechny Arabské jazykové verze.  
   
- Co tyto hodnoty znamenají pro vývojáře s obousměrným obsahem? Ve většině případů může vývojář potřebovat definovat <xref:System.Windows.FlowDirection> a jazyk každého textového [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvku <xref:System.Windows.Media.NumberSubstitution> , například `Language="ar-SA"` a logika se postará o zobrazení čísel podle správné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]hodnoty. Následující příklad ukazuje použití arabských a anglické číslice v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci běžící v arabštině verze systému. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]  
+ Co tyto hodnoty znamenají pro vývojáře s obousměrným obsahem? Ve většině případů může vývojář potřebovat definovat <xref:System.Windows.FlowDirection> a jazyk každého textového [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvku <xref:System.Windows.Media.NumberSubstitution> , například `Language="ar-SA"` a logika se postará o zobrazení čísel podle správné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]hodnoty. Následující příklad ukazuje použití arabských a anglické číslice v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci běžící v arabštině verze Windows.  
   
  [!code-xaml[Numbers#Numbers](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers/CS/Window1.xaml#numbers)]  
   

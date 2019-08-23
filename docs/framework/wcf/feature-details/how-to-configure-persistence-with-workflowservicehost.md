@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: b8839f42a9b8b5f4da0a1a8364c7eac5a4c06d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2cae73bd503afec6ddd1faf435645ebc21f4fc76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699770"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968486"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost
-Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního postupu pro povolení trvalosti pro pracovní postupy hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> pomocí konfiguračního souboru. Před použitím funkce SQL Store Instance pracovního postupu musíte vytvořit databázi SQL, který se používá k uchování instance pracovního postupu. Další informace najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
+Toto téma popisuje, jak nakonfigurovat funkci úložiště instance pracovního postupu SQL pro povolení trvalosti pro pracovní postupy <xref:System.ServiceModel.Activities.WorkflowServiceHost> hostované v nástroji pomocí konfiguračního souboru. Před použitím funkce úložiště instance pracovního postupu SQL je nutné vytvořit databázi SQL, která se používá k zachování instancí pracovního postupu. Další informace najdete v tématu [jak: Povolte trvalost SQL pro pracovní postupy a služby](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)pracovních postupů.  
   
-### <a name="to-configure-the-sql-workflow-instance-store-in-configuration"></a>Ke konfiguraci Store Instance pracovního postupu SQL v konfiguraci  
+### <a name="to-configure-the-sql-workflow-instance-store-in-configuration"></a>Konfigurace úložiště instance pracovního postupu SQL v konfiguraci  
   
-1. Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím konfigurace XML. Následující příklad konfigurace ukazuje postup při konfiguraci úložiště instancí pracovních postupů SQL s použitím <`sqlWorkflowInstanceStore`> prvek chování v konfiguračním souboru.  
+1. Vlastnosti úložiště instancí pracovních postupů SQL lze konfigurovat prostřednictvím rozhraní <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, což je chování služby, které umožňuje změnit nastavení prostřednictvím konfigurace XML. Následující příklad konfigurace ukazuje, jak nakonfigurovat úložiště instance pracovního postupu SQL pomocí elementu <`sqlWorkflowInstanceStore`> chování v konfiguračním souboru.  
   
     ```xml  
     <serviceBehaviors>  
@@ -31,14 +31,14 @@ Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního pos
     </serviceBehaviors>  
     ```  
   
-     Další informace o tom, jak nakonfigurovat úložiště instancí pracovních postupů SQL najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md). Další informace o jednotlivých nastaveních pro <`sqlWorkflowInstanceStore`> prvek chování, naleznete v tématu [Store Instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric poskytuje své vlastní úložiště pro trvalé. Další informace najdete v tématu [systému Windows Server App Fabric trvalost](https://go.microsoft.com/fwlink/?LinkId=193121).  
+     Další informace o tom, jak nakonfigurovat úložiště instancí pracovních postupů SQL, najdete [v tématu How to: Povolte trvalost SQL pro pracovní postupy a služby](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)pracovních postupů. Další informace o jednotlivých nastaveních prvku <`sqlWorkflowInstanceStore`> chování najdete v tématu [úložiště instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric poskytuje vlastní úložiště trvalosti. Další informace najdete v tématu [trvalost Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121).  
   
     > [!NOTE]
-    >  Předchozí příklad konfigurace používá zjednodušené konfigurace. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md)  
+    > Předchozí příklad konfigurace používá zjednodušenou konfiguraci. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) .  
   
-### <a name="to-configure-the-sql-workflow-instance-store-in-code"></a>Ke konfiguraci Store Instance pracovního postupu SQL v kódu  
+### <a name="to-configure-the-sql-workflow-instance-store-in-code"></a>Konfigurace úložiště instance pracovního postupu SQL v kódu  
   
-1. Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím kódu. Následující příklad ukazuje, jak nakonfigurovat úložiště instancí pracovních postupů SQL s použitím <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> prvek chování v kódu  
+1. Vlastnosti úložiště instance pracovního postupu SQL lze konfigurovat prostřednictvím rozhraní <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, což je chování služby, které umožňuje změnit nastavení prostřednictvím kódu. Následující příklad ukazuje, jak nakonfigurovat úložiště instance pracovního postupu SQL pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> elementu Behavior v kódu  
   
     ```csharp  
     host.Description.Behaviors.Add(new SqlWorkflowInstanceStoreBehavior  
@@ -52,15 +52,15 @@ Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního pos
     });  
     ```  
   
-     Další informace o tom, jak nakonfigurovat úložiště instancí pracovních postupů SQL najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md). Další informace o jednotlivých nastaveních pro <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> chování prvku, naleznete v tématu [Store Instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric poskytuje své vlastní úložiště pro trvalé. Další informace najdete v tématu [systému Windows Server App Fabric trvalost](https://go.microsoft.com/fwlink/?LinkId=193121).  
+     Další informace o tom, jak nakonfigurovat úložiště instancí pracovních postupů SQL, najdete [v tématu How to: Povolte trvalost SQL pro pracovní postupy a služby](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)pracovních postupů. Další informace o jednotlivých nastaveních <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> prvku chování najdete v tématu [úložiště instance pracovního postupu SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric poskytuje vlastní úložiště trvalosti. Další informace najdete v tématu [trvalost Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121).  
   
     > [!NOTE]
-    >  Předchozí příklad konfigurace používá zjednodušené konfigurace. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md)  
+    > Předchozí příklad konfigurace používá zjednodušenou konfiguraci. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) .  
   
-     Příklad toho, jak prostřednictvím kódu programu Konfigurace trvalosti najdete v části [jak: Povolení trvalosti pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-persistence-for-workflows-and-workflow-services.md).  
+     Příklad, jak nakonfigurovat trvalost programově, najdete v tématu [How to: Povolte trvalost pro pracovní postupy a služby](../../../../docs/framework/windows-workflow-foundation/how-to-enable-persistence-for-workflows-and-workflow-services.md)pracovních postupů.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Trvalost pracovního postupu](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)
-- [Windows Server App Fabric trvalosti](https://go.microsoft.com/fwlink/?LinkId=193121)
+- [Trvalost prostředků Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121)

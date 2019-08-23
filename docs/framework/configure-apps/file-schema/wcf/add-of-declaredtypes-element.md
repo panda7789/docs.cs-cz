@@ -1,5 +1,5 @@
 ---
-title: <add> z <declaredTypes> – Element
+title: <add><declaredTypes> elementu
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: 9b280a63e85beac3231bc1a414430239bea4a1f8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1ea008dcc72d555b00e9648ace95bb9522ffc2c8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701109"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920175"
 ---
-# <a name="add-of-declaredtypes-element"></a>\<Přidat > z \<declaredTypes > – Element
-Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.  
+# <a name="add-of-declaredtypes-element"></a>\<Přidat > \<prvku > declaredTypes
+Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> Při deserializaci. Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.  
   
  system.runtime.serialization  
 \<dataContractSerializer>  
-\<declaredTypes>  
-\<Přidat > z \<declaredTypes >  
+\<declaredTypes >  
+\<Přidat > \<> declaredTypes  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +40,27 @@ Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializ
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-| – typ|Požadovaný atribut typu string.<br /><br /> Určuje název typu (včetně oboru názvů), název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.|  
+|– typ|Požadovaný atribut typu string.<br /><br /> Určuje název typu (včetně oboru názvů), název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<knownType>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|Určuje známý typ deklarovaný typ, který je přidáván. Pokud je deklarovaný typ obecného typu, pak musíte taky přidat prvek parametru, který se `<knownType>` element k určení, které obecný parametr se používá k vrácení známého typu.|  
+|[\<knownType>](knowntype.md)|Určuje známý typ pro deklarovaný typ, který se přidává. Je-li deklarovaný typ obecný typ, je nutné také přidat prvek `<knownType>` parametru k elementu pro určení, který obecný parametr slouží k vrácení známého typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<declaredTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Obsahuje typy, které vyžadují během deserializace za pomocí známých typů <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<declaredTypes>](declaredtypes.md)|Obsahuje typy, které během deserializace <xref:System.Runtime.Serialization.DataContractSerializer>vyžadují známé typy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ Další informace o známých typech naleznete v tématu [známé typy kontraktů dat](../../../wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- Zobrazit [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) příklad použití tohoto prvku.  
+ Příklad použití tohoto prvku naleznete v [ \<> DataContractSerializer](datacontractserializer-element.md) .  
   
 > [!NOTE]
->  Pokud chcete přidat <xref:System.Object> jako typ `<declaredType>`, <xref:System.Configuration.ConfigurationErrorsException> je vyvolána výjimka. Je to proto, <xref:System.Object> typ nelze použít jako deklarovaný typ v konfiguraci.  
+> Pokud přidáte <xref:System.Object> typ `<declaredType>`jako, <xref:System.Configuration.ConfigurationErrorsException> je vyvolána. Důvodem je, že <xref:System.Object> typ nelze použít jako deklarovaný typ v konfiguraci.  
   
 ## <a name="example"></a>Příklad  
   
@@ -78,6 +78,6 @@ Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializ
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
-- [\<Přidat > z \<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+- [Známé typy kontraktů dat](../../../wcf/feature-details/data-contract-known-types.md)
+- [\<dataContractSerializer>](datacontractserializer-element.md)
+- [\<Přidat > \<> declaredTypes](add-of-declaredtypes-element.md)

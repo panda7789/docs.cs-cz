@@ -2,22 +2,22 @@
 title: Popis služby
 ms.date: 03/30/2017
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
-ms.openlocfilehash: d68bc3f304a9ade8ab17729fb23b5bd89b007d0b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 96113c8a86d17f66f2561f72a35d6ff22994a33d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007952"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964528"
 ---
 # <a name="service-description"></a>Popis služby
-Popis služby ukázka demonstruje, jak může služba načíst jeho informace popisu služby za běhu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), se vrací popisné informace o službě operace další služby. Vrácené informace uvádí základní adresy a koncové body pro službu. Tato služba poskytuje informace pomocí <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost>, a <xref:System.ServiceModel.Description.ServiceDescription> třídy.  
+Ukázka popis služby ukazuje, jak může služba získat informace o popisu služby za běhu. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)s definovanou další operací služby, která vrací popisné informace o službě. Vrácené informace obsahují seznam základních adres a koncových bodů pro službu. Služba poskytuje tyto informace pomocí <xref:System.ServiceModel.OperationContext>tříd, <xref:System.ServiceModel.ServiceHost>a <xref:System.ServiceModel.Description.ServiceDescription> .  
   
- V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
+ V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tato ukázka má upravenou verzi smlouvy kalkulačky volat `IServiceDescriptionCalculator`. Kontrakt definuje operaci Další službu s názvem `GetServiceDescriptionInfo` Víceřádkový řetězec, který vrátí klientovi, který popisuje základní adresa nebo adresy a koncový bod služby nebo koncové body pro službu.  
+ V této ukázce je nazvaná `IServiceDescriptionCalculator`upravená verze kontraktu kalkulačky. Smlouva definuje další operaci služby s názvem `GetServiceDescriptionInfo` , která vrací víceřádkový řetězec klientovi, který popisuje základní adresu, adresy a koncový bod služby nebo koncové body služby.  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -36,7 +36,7 @@ public interface IServiceDescriptionCalculator
 }  
 ```  
   
- Implementace kódu pro `GetServiceDescriptionInfo` používá <xref:System.ServiceModel.Description.ServiceDescription> do seznamu koncových bodů služby. Protože koncové body služby může mít relativní adresy, nejprve uvádí bázové adresy pro službu. Všechny tyto informace získáte kód získá jeho použití kontextu operace <xref:System.ServiceModel.OperationContext.Current%2A>. <xref:System.ServiceModel.ServiceHost> a jeho <xref:System.ServiceModel.Description.ServiceDescription> objektu jsou načteny z kontextu operace. Seznam základních koncové body pro službu, kód Iteruje přes hostitele služby <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A> kolekce. Seznam koncových bodů služby pro službu, kód Iteruje přes kolekci koncové body služby popis.  
+ Implementační kód pro `GetServiceDescriptionInfo` <xref:System.ServiceModel.Description.ServiceDescription> používá pro výpis koncových bodů služby. Vzhledem k tomu, že koncové body služby mohou mít relativní adresy, nejprve vypíše základní adresy pro službu. Chcete-li získat všechny tyto informace, kód získá svůj kontext operace pomocí <xref:System.ServiceModel.OperationContext.Current%2A>. <xref:System.ServiceModel.ServiceHost> A jeho<xref:System.ServiceModel.Description.ServiceDescription> objekt jsou načteny z kontextu operace. Chcete-li zobrazit seznam základních koncových bodů pro službu, kód provede iteraci v <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A> kolekci hostitele služby. Chcete-li zobrazit seznam koncových bodů služby pro službu, kód prochází z kolekce koncových bodů popisu služby.  
   
 ```csharp
 public string GetServiceDescriptionInfo()  
@@ -63,7 +63,7 @@ public string GetServiceDescriptionInfo()
 }  
 ```  
   
- Když spustíte ukázku, uvidíte operace kalkulačky a pak informace o službě vrácené `GetServiceDescriptionInfo` operace. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Když spustíte ukázku, zobrazí se operace kalkulačky a potom informace o službě vrácené `GetServiceDescriptionInfo` operací. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console  
 Add(15,3) = 18  
@@ -85,19 +85,19 @@ Service endpoints:
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ServiceDescription`  

@@ -2,43 +2,43 @@
 title: Migrace webových služeb ASP.NET na WCF
 ms.date: 03/30/2017
 ms.assetid: 1adbb931-f0b1-47f3-9caf-169e4edc9907
-ms.openlocfilehash: 8102b91ba14b75ec9cbd2a683b68c3723a77aed0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 52e0e499b5338e20377c14b598c045a5173df7d3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649437"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965343"
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>Migrace webových služeb ASP.NET na WCF
-Technologie ASP.NET poskytuje nástroje a knihovny tříd rozhraní .NET Framework pro vytváření webových služeb, stejně jako zařízení pro hostování služby v rámci Internetové informační služby (IIS). Windows Communication Foundation (WCF) poskytuje knihovny tříd rozhraní .NET Framework, nástroje a hostingové zařízení umožňující použití softwaru entity na komunikaci pomocí žádné protokoly, včetně těch, které používají webové služby.  Migrace webových služeb ASP.NET na WCF umožňuje vašim aplikacím, abyste mohli využívat nové funkce a vylepšení, které jsou jedinečné pro WCF.  
+ASP.NET poskytuje .NET Framework knihovny tříd a nástroje pro vytváření webových služeb a také zařízení pro hostování služeb v rámci služby Internetová informační služba (IIS). Windows Communication Foundation (WCF) poskytuje .NET Framework knihoven tříd, nástrojů a hostitelských prostředí pro umožnění komunikace softwarových entit pomocí libovolných protokolů, včetně těch, které používá webová služba.  Migrace webových služeb ASP.NET do WCF umožňuje vašim aplikacím využívat nové funkce a vylepšení, které jsou jedinečné pro službu WCF.  
   
- WCF má několik výhod důležité vzhledem k webové služby ASP.NET. Nástroje služby pro ASP.NET Web jsou výhradně pro vytváření webových služeb, WCF poskytuje nástroje, které se dá použít při softwarové entity se musí provádět komunikovat mezi sebou. Tím se sníží počet technologie, které jsou potřeba vědět, aby bylo možné ošetřit scénáře komunikace jiný software, které bude zase snížit náklady na prostředky pro vývoj softwaru, jakož i čas k dokončení softwaru vývojáře vývojové projekty.  
+ Služba WCF má vzhledem k ASP.NET webovým službám několik důležitých výhod. I když jsou nástroje webové služby ASP.NET výhradně pro vytváření webových služeb, služba WCF poskytuje nástroje, které lze použít, pokud je třeba, aby mohly komunikovat s jinými softwarovými entitami. Tím se sníží počet technologií, které vývojáři vyžadují k tomu, aby pokryly různé scénáře komunikace softwaru. tím se sníží náklady na prostředky vývoje softwaru i čas potřebný k dokončení softwaru. vývojové projekty.  
   
- I pro webové služby vývojové projekty WCF podporuje další protokoly webové služby, než rozhraní ASP.NET Web služby podpory. Tyto další protokoly poskytují pro složitější řešení zahrnující, mimo jiné spolehlivé relace a transakce.  
+ I v případě projektů vývoje webové služby podporuje WCF více protokolů webové služby než podpora webových služeb ASP.NET. Tyto další protokoly poskytují složitější řešení zahrnující mimo jiné i spolehlivé relace a transakce.  
   
- WCF podporuje více protokolů pro přenos zpráv, než webové služby ASP.NET. Webových služeb ASP.NET se podporují jenom odesílání zpráv s použitím protokol HTTP (Hypertext Transfer). WCF podporuje odesílání zpráv pomocí protokolu HTTP, jakož i protokolu TCP (Transmission Control), pojmenované kanály a Microsoft Message Queuing (MSMQ). Důležitější, WCF je možné rozšířit na podporu dalších přenosové protokoly. Proto může být software vyvinutý pomocí technologie WCF přizpůsobena fungují společně s širší dalšího softwaru, čímž roste potenciální návratnost investic.  
+ Služba WCF podporuje další protokoly pro přenos zpráv, než ASP.NET webové služby. Webové služby ASP.NET podporují posílání zpráv jenom pomocí protokolu HTTP (Hypertext Transfer Protocol). Služba WCF podporuje odesílání zpráv pomocí protokolu HTTP a také protokolu TCP (Transmission Control Protocol), pojmenovaných kanálů a služby Microsoft řízení front zpráv (MSMQ). Důležitější je, že WCF se dá rozšířit na podporu dalších přenosových protokolů. Software vyvinutý pomocí WCF se proto dá přizpůsobit tak, aby spolupracoval s širší škálou jiného softwaru, což zvyšuje potenciální návratnost investic.  
   
- WCF poskytuje mnohem bohatší zařízení pro nasazení a správu aplikací než webové služby ASP.NET. Kromě konfigurace systému, která má také technologie ASP.NET, WCF, nabízí editor konfigurací, trasování činnosti z odesílatelů příjemců a zpět prostřednictvím libovolný počet prostředníci, prohlížeče trasování, protokolování zpráv, rozsáhlé počet čítačů výkonu, a Podpora pro Windows Management Instrumentation.  
+ Služba WCF nabízí mnohem rozsáhlejší možnosti pro nasazování a správu aplikací než ASP.NET webové služby. Kromě konfiguračního systému, který ASP.NET má také, WCF nabízí Editor konfigurací, trasování aktivity od odesílatelů a zpětně prostřednictvím libovolného počtu zprostředkovatelů, prohlížeče trasování, protokolování zpráv, velkého počtu čítačů výkonu a Podpora pro rozhraní WMI (Windows Management Instrumentation).  
   
- Zadaný tyto výhody služby WCF vzhledem k rozhraní ASP.NET Web services, pokud používáte nebo zvažuje použít webových služeb ASP.NET s máte několik možností:  
+ Vzhledem k tomu, že tyto potenciální výhody WCF souvisí s ASP.NET webovými službami, pokud používáte nebo zvažujete použití webových služeb ASP.NET, máte několik možností:  
   
-- Nadále používat webových služeb ASP.NET a připadají výhody proffered službou WCF.  
+- Můžete dál používat webové služby ASP.NET a forego výhody proffered službou WCF.  
   
-- Dál používejte webových služeb ASP.NET s tak přijetí WCF někdy v budoucnu. Témata v této části popisují, jak maximalizovat perspektivami bude možné použít nové aplikace ASP.NET Web service společně s budoucí aplikace WCF. Témata v této části popisují, jak vytvářet nové webové služby tak, aby bylo snazší migrace do WCF. Ale pokud zabezpečení služeb je důležité, nebo spolehlivost nebo transakce záruky, které jsou požadovány, nebo pokud vlastní správy zařízení budou muset sestavit, pak je lepší volbou přijmout WCF. WCF je určená pro přesně takové scénáře.  
+- Používejte webové služby ASP.NET s úmyslem přijmout WCF v určitou dobu v budoucnu. Témata v této části vysvětlují, jak maximalizovat potenciální zákazníky, aby mohli používat nové aplikace webové služby ASP.NET spolu s budoucími aplikacemi WCF. Témata v této části také vysvětlují, jak vytvořit nové webové služby ASP.NET, aby je bylo snazší migrovat do WCF. Pokud je však důležité zabezpečení služeb, nebo jsou vyžadovány spolehlivost či transakce, nebo pokud bude nutné vytvořit vlastní zařízení správy, je lepší volbou WCF přijmout. WCF je navržené pro tyto scénáře přesně.  
   
-- Přijmout pro vývoj nových projektů, zatímco i nadále bude udržovat vaše stávající technologie ASP.NET webové aplikace služby WCF. Tato volba je velmi pravděpodobné, že optimální. Výhody služby WCF, bude vrácen při Reserve Sparing Table náklady na úpravy existujících aplikací používat. V tomto scénáři můžete nové aplikace WCF existovat vedle sebe se stávajícími aplikacemi ASP.NET. Nové aplikace WCF budete moct používat existující webové služby ASP.NET a WCF je možné program nové možnosti provozní do stávajících aplikací ASP.NET tím, že režim kompatibility WCF ASP.NET.  
+- Přijímají WCF pro nový vývoj a přitom nadále udržuje stávající aplikace webové služby ASP.NET. Tato volba je velmi pravděpodobně optimální. Přináší výhody služby WCF, a přitom převede náklady na změnu stávajících aplikací, které ji používají. V tomto scénáři můžou nové aplikace WCF existovat společně s existujícími ASP.NET aplikacemi. Nové aplikace WCF budou moci používat stávající webové služby ASP.NET a WCF lze použít k naprogramování nových provozních funkcí do stávajících aplikací ASP.NET, a to na základě režimu kompatibility WCF ASP.NET.  
   
-- Přijmout WCF a migrace existujících aplikací služby technologie ASP.NET na WCF. Můžete tuto možnost k vylepšení stávajících aplikací pomocí funkce poskytované službou WCF a reprodukovat funkce stávajících webových služeb ASP.NET v rámci nové, výkonnější aplikace WCF.  
+- Přijme WCF a migruje stávající aplikace webové služby ASP.NET do WCF. Tuto možnost můžete zvolit, chcete-li vylepšit existující aplikace pomocí funkcí poskytovaných službou WCF nebo reprodukování funkcí stávajících webových služeb ASP.NET v rámci nových, výkonnějších aplikací WCF.  
   
 > [!NOTE]
->  Třeba dávat pozor, pokud je služba WCF hostovaná ve službě IIS se odinstaluje 5.x a ASP.NET. Když je služby WCF hostované službou IIS 5.x kód služby, mohou být požadována Pokud odinstalaci technologie ASP.NET. Při odinstalaci technologie ASP.NET v operačním systému, na kterém běží služba IIS 5.x a WCF se odinstaluje, považuje za soubor s příponou .svc textový soubor a obsah, včetně zdrojového kódu, je vrácena žadateli.  
+> Pokud je služba WCF hostována službou IIS 5. x a ASP.NET je odinstalována, je nutné provést péči. Pokud je služba WCF hostována službou IIS 5. x, může být kód pro službu požadován, pokud je ASP.NET odinstalována. Když se ASP.NET odinstaluje v operačním systému, na kterém běží IIS 5. x a služba WCF se odinstaluje, považuje se soubor s příponou. svc za textový soubor a obsah, včetně jakéhokoliv zdrojového kódu, se vrátí žadateli.  
   
- Tato část popisuje tyto možnosti podrobně, porovná webových služeb ASP.NET na WCF a obsahuje pokyny, jak migrace kódu webové služby ASP.NET na WCF.  
+ Tato část podrobně popisuje tyto možnosti, porovnává webové služby v ASP.NET s WCF a poskytuje pokyny k migraci kódu služby ASP.NET Web Services do WCF.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
-- [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí integrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
+- [Předvídání přijetí Windows Communication Foundation: Zjednodušení budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
+- [Předvídání přijetí Windows Communication Foundation: Usnadnění budoucí integrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
 - [Přijetí Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)
 - [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
 - [Porovnání webových služeb ASP.NET s technologií WCF z hlediska vývojových požadavků](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)

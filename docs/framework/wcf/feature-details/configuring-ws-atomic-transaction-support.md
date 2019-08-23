@@ -4,119 +4,119 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 2ec4fd65b97808fbf1a8401f5c0913face5835f0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 986481cb2ee52cd1d5737f7422bf2fc4eea70f33
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651131"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911230"
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)
-Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (WS-AT) pomocí nástroje Konfigurace WS-AT.  
+Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (WS-AT) pomocí konfiguračního nástroje WS-AT.  
   
-## <a name="using-the-ws-at-configuration-utility"></a>Pomocí nástroje pro konfiguraci WS-AT  
- Nástroj WS-AT Configuration Utility (wsatConfig.exe) se používá ke konfiguraci nastavení WS-AT. Chcete-li povolit službu protokolu WS-AT, musíte použít nástroj pro konfiguraci nakonfigurovat HTTPS port pro WS-AT navázat certifikát X.509 na HTTPS port a konfigurace certifikátů autorizovaný partner tak, že zadáte názvy předmětu certifikátů nebo kryptografické otisky. Nástroj pro konfiguraci můžete také vybrat režimu trasování a odchozí výchozí sadu a maximální příchozí časový limit transakce.  
+## <a name="using-the-ws-at-configuration-utility"></a>Použití konfiguračního nástroje WS-AT  
+ Konfigurační nástroj WS-AT (wsatConfig. exe) se používá ke konfiguraci nastavení WS-AT. Aby bylo možné povolit službu protokolu WS-AT, je nutné pomocí konfiguračního nástroje nakonfigurovat port HTTPS pro WS-AT, vytvořit z něj certifikát X. 509 a nakonfigurovat autorizované partnerské certifikáty zadáním názvů subjektů certifikátů nebo kryptografické otisky. Nástroj pro konfiguraci také umožňuje vybrat režim trasování a nastavit výchozí odchozí a maximální počet příchozích transakcí.  
   
- Tento nástroj funkce se zpřístupní v konzole pro správu služby Component Services nebo z okna příkazového řádku pomocí modul snap-in konzoly Microsoft Management Console (MMC) vlastnosti stránky. Konfigurace podpory WS-AT na místním počítači pomocí okna příkazového řádku. Konfigurace nastavení na místních i vzdálených počítačích pomocí modulu snap-in konzoly MMC.  
+ Přístup k funkcím tohoto nástroje můžete získat pomocí modulu snap-in stránky vlastností konzoly Microsoft Management Console (MMC) v konzole pro správu služby Component Services nebo z okna příkazového řádku. Nakonfigurujte podporu WS-AT na místním počítači prostřednictvím okna příkazového řádku. Nakonfigurujte nastavení na místních i vzdálených počítačích pomocí modulu snap-in konzoly MMC.  
   
- Okno příkazového řádku je možný v umístění instalace sady Windows SDK "%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation".  
+ Okno příkazového řádku je k dispozici v umístění instalace Windows SDK "%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation".  
   
- Další informace o nástroj příkazového řádku najdete v tématu [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).  
+ Další informace o nástroji příkazového řádku najdete v tématu [konfigurační nástroj WS-AtomicTransaction (WsatConfig. exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).  
   
- Pokud používáte [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], můžete přístup k modulu snap-in konzoly MMC tak, že přejdete do **ovládací panely/pro správu nástroje/Component Services**, pravým tlačítkem myši **tento počítač**, a Výběr **vlastnosti**. Toto je na stejném umístění, kde můžete nakonfigurovat Microsoft distribuované transakce koordinátor (MSDTC). Možnosti pro konfiguraci k dispozici jsou seskupené podle **WS-AT** kartu. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], modul snap-in konzoly MMC najdete po kliknutí **Start** tlačítko a zadáním `dcomcnfg.exe` v **hledání** pole. Při otevření konzoly MMC, přejděte **Moje Computer\Distributed transakce Coordinator\Local DTC** uzel, klikněte pravým tlačítkem myši a vyberte **vlastnosti**. Možnosti pro konfiguraci k dispozici jsou seskupené podle **WS-AT** kartu.  
+ Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]nebo, získáte přístup k modulu snap-in konzoly MMC tak, že přejdete na **Ovládací panely/nástroje pro správu/služby komponent**, kliknete pravým tlačítkem na položku **Tento počítač**a vyberete možnost **Vlastnosti.** [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Toto je stejné umístění, kde můžete nakonfigurovat Microsoft DTC (Distributed Transaction Coordinator) (MSDTC). Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** . Pokud používáte [!INCLUDE[lserver](../../../../includes/lserver-md.md)]systém Windows Vista nebo, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
   
- Další informace o modulu snap-in, najdete v článku [modul Snap-in konzoly MMC konfigurace WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md).  
+ Další informace o modulu snap-in najdete v [modulu snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md).  
   
- Pokud chcete povolit uživatelské rozhraní nástroje, musíte se nejprve zaregistrovat soubor WsatUI.dll umístěný v následující cestě  
+ Chcete-li povolit uživatelské rozhraní nástroje, je třeba nejprve zaregistrovat soubor WsatUI. dll, který je umístěn v následující cestě.  
   
  %PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin  
   
- K registraci, spusťte následující příkaz z okna příkazového řádku:  
+ Chcete-li zaregistrovat produkt, spusťte následující příkaz z okna příkazového řádku:  
   
  `regasm.exe /codebase WsatUI.dll`  
   
 ## <a name="enabling-ws-at"></a>Povolení WS-AT  
- Povolit službu protokolu WS-AT uvnitř nástroje MSDTC pomocí portu 443 a certifikát X.509 s privátním klíčem, který je nainstalovaný v úložišti místního počítače, použijte nástroj wsatConfig.exe pomocí následujícího příkazu.  
+ Pokud chcete povolit službu protokolu WS-AT v nástroji MSDTC pomocí portu 443 a certifikátu X. 509 s privátním klíčem, který byl nainstalován v úložišti místního počítače, použijte nástroj wsatConfig. exe s následujícím příkazem.  
   
  `WsatConfig.exe –network:enable –port:8443 –endpointCert:<machine|"Issuer\SubjectName"> -accountsCerts:<thumbprint|"Issuer\SubjectName"> -restart`  
   
- Nahrazení odpovídajících parametrů s hodnotami, které se vztahují k vašemu prostředí.  
+ Příslušné parametry nahraďte hodnotami, které jsou relevantní pro vaše prostředí.  
   
- Zakázat službu protokolu WS-AT uvnitř MSDTC, nástrojem wsatConfig.exe pomocí následujícího příkazu.  
+ Chcete-li zakázat službu protokolu WS-AT ve službě MSDTC, použijte nástroj wsatConfig. exe s následujícím příkazem.  
   
  `WsatConfig.exe –network:disable -restart`  
   
 ## <a name="configuring-trust-between-two-machines"></a>Konfigurace vztahu důvěryhodnosti mezi dvěma počítači  
- Služba protokolu WS-AT vyžaduje, aby správce explicitně povolit jednotlivé účty účastnit v distribuovaných transakcích. Pokud jste správce pro dva počítače, můžete nakonfigurovat oba počítače, na navázání vztahu důvěryhodnosti obousměrnou výměnu správnou sadu certifikáty mezi počítači, instalace do úložišť příslušný certifikát a použitím Nástroj wsatConfig.exe přidání certifikátu každý počítač do druhé strany seznamu autorizovaných účastníka certifikátů. Tento krok je nezbytný k provádění distribuované transakce mezi dvěma počítači pomocí WS-AT.  
+ Služba protokolu WS-AT vyžaduje, aby správce explicitně schvaloval jednotlivé účty k účasti v distribuovaných transakcích. Pokud jste správcem dvou počítačů, můžete nakonfigurovat oba počítače tak, aby navázaly vzájemný vztah důvěryhodnosti tím, že si vyměňujete správnou sadu certifikátů mezi počítači, nainstalujete je do příslušných úložišť certifikátů a použijete Nástroj wsatConfig. exe, který přidá certifikát každého počítače do seznamu autorizovaných certifikátů účastníků. Tento krok je nezbytný k provádění distribuovaných transakcí mezi dvěma počítači pomocí WS-AT.  
   
- Následující příklad popisuje kroky k navázání vztahu důvěryhodnosti mezi dvěma počítači, A a B.  
+ V následujícím příkladu je popsán postup navázání vztahu důvěryhodnosti mezi dvěma počítači, a a B.  
   
-### <a name="creating-and-exporting-certificates"></a>Vytvoření a export certifikátů  
- Tento postup vyžaduje modul snap-in Certifikáty konzoly MMC. Modul snap-in můžete přístup otevřením nabídky Start nebo spuštění, do vstupního pole zadáním "konzoly mmc" a kliknutím na tlačítko OK. Potom v **Konzola1** okno, přejděte na **soubor a přidat nebo odebrat** modul Snap-in klikněte na tlačítko Přidat a vybrat **certifikáty** z **k dispozici samostatná Moduly snap-in** seznamu. Nakonec vyberte **účet počítače** pro správu a klikněte na tlačítko **OK**. **Certifikáty** uzel se zobrazí v modulu snap-in konzoly.  
+### <a name="creating-and-exporting-certificates"></a>Vytváření a exportování certifikátů  
+ Tento postup vyžaduje modul snap-in Certifikáty konzoly MMC. K modulu snap-in lze přistupovat otevřením nabídky Start/Run, zadáním příkazu MMC do vstupního pole a stisknutím tlačítka OK. Pak v okně **Konzola1** přejděte do modulu snap-in **soubor/přidat-odstranit** , klikněte na tlačítko Přidat a vyberte možnost **certifikáty** ze seznamu **Dostupné samostatné Snapins** . Nakonec vyberte **účet počítače** , který chcete spravovat, a klikněte na **OK**. Uzel **certifikáty** se zobrazí v konzole modulu snap-in.  
   
- Musíte již vlastnit požadované certifikáty k navázání vztahu důvěryhodnosti. Zjistěte, jak vytvořit a nainstalovat nové certifikáty před následující kroky, najdete v článku [jak: Vytvoření a instalace dočasné klientských certifikátů ve službě WCF při vývoji](https://go.microsoft.com/fwlink/?LinkId=158925).  
+ K navázání vztahu důvěryhodnosti už musíte mít požadované certifikáty. Informace o tom, jak vytvořit a nainstalovat nové certifikáty před následujícím postupem, najdete v [tématu How to: Během vývoje](https://go.microsoft.com/fwlink/?LinkId=158925)Vytvářejte a instalujte dočasné klientské certifikáty ve službě WCF.  
   
-1. Na počítač A pomocí importu modulu snap-in Certifikáty konzoly MMC existujícího certifikátu (certA) do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu). Chcete-li importovat certifikát na konkrétním uzlu, klikněte pravým tlačítkem na uzel a zvolte **všechny úlohy/Import**.  
+1. V počítači A pomocí modulu snap-in Certifikáty konzoly MMC importujte stávající certifikát (CERT) do úložišti LocalMachine\MY (osobní uzel) a úložiště LocalMachine\ROOT (uzel důvěryhodných kořenových certifikačních autorit). Chcete-li importovat certifikát do konkrétního uzlu, klikněte na něj pravým tlačítkem myši a vyberte možnost **všechny úlohy a importovat**.  
   
-2. V počítači B, pomocí modulu snap-in Certifikáty konzoly MMC vytvořit nebo získat certB certifikátu s privátním klíčem a naimportujete do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu).  
+2. V počítači B použijte modul snap-in Certifikáty konzoly MMC, vytvořte nebo Získejte certifikát certB s privátním klíčem a naimportujte ho do úložišti LocalMachine\MY (osobní uzel) a do úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority).  
   
-3. Exportujte veřejného klíče pro certA do souboru, pokud to není již bylo provedeno.  
+3. Exportujte veřejný klíč certifikátu CERT do souboru, pokud již nebyl proveden.  
   
-4. Exportujte veřejného klíče pro certB do souboru, pokud to není již bylo provedeno.  
+4. Exportujte veřejný klíč certB do souboru, pokud jste to ještě neudělali.  
   
-### <a name="establishing-mutual-trust-between-machines"></a>Vytvoření vzájemném vztahu důvěryhodnosti mezi počítači  
+### <a name="establishing-mutual-trust-between-machines"></a>Vytvoření vzájemné důvěry mezi počítači  
   
-1. Na počítači A naimportujte soubor reprezentace certB LocalMachine\MY a LocalMachine\ROOT úložiště. To deklaruje tento počítač vztahy důvěryhodnosti certB komunikovat s ním.  
+1. V počítači a importujte soubor certB do úložišť úložišti LocalMachine\MY a LocalMachine\ROOT. Tato deklarace deklaruje, že počítač, kterému důvěřují certB, komunikuje.  
   
-2. V počítači B od certA soubor importujte do úložiště LocalMachine\MY a LocalMachine\ROOT. To znamená tento počítač B certA vztahy důvěryhodnosti pro komunikaci s ním.  
+2. V počítači B importujte soubor CERT. do úložišť úložišti LocalMachine\MY a LocalMachine\ROOT. To znamená, že počítač B důvěřuje certifikačnímu programu, aby s ním komunikoval.  
   
- Po dokončení těchto kroků, důvěru lze navázat mezi dvěma počítači a se dají konfigurovat pro komunikaci mezi sebou pomocí WS-AT.  
+ Po dokončení těchto kroků se mezi těmito dvěma počítači vytvoří vztah důvěryhodnosti a můžete je nakonfigurovat tak, aby se navzájem komunikovaly pomocí WS-AT.  
   
-### <a name="configuring-msdtc-to-use-certificates"></a>Konfigurace služby MSDTC používat certifikáty  
- Protože služba WS-AT protokolu funguje jako klient a server, musí i přijímat příchozí připojení a iniciovat odchozí připojení. Proto budete muset nakonfigurovat MSDTC tak, aby věděl, který certifikát se má použít při komunikaci s externími stranami a které certifikáty k ověření při přijetí příchozí komunikaci.  
+### <a name="configuring-msdtc-to-use-certificates"></a>Konfigurace služby MSDTC pro použití certifikátů  
+ Vzhledem k tomu, že služba protokolu WS-AT funguje jako klient i server, musí naslouchat příchozím připojením a iniciovat odchozí připojení. Proto je nutné nakonfigurovat MSDTC tak, aby znal, který certifikát se má použít při komunikaci s externími stranami a které certifikáty se mají autorizovat při přijímání příchozí komunikace.  
   
- To můžete nakonfigurovat pomocí modulu snap-in konzoly MMC WS-AT. Další informace o tomto nástroji najdete v tématu [modul Snap-in konzoly MMC konfigurace WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) tématu. Následující kroky popisují, jak vytvořit vztah důvěryhodnosti mezi dva počítače se systémem MSDTC.  
+ Tuto konfiguraci můžete provést pomocí modulu snap-in konzoly MMC WS. Další informace o tomto nástroji naleznete v tématu [modul snap-in konzoly MMC konfigurace WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) . Následující postup popisuje, jak vytvořit vztah důvěryhodnosti mezi dvěma počítači se spuštěným koordinátorem MSDTC.  
   
-1. Konfigurace počítačů A nastavení. "Certifikát koncového bodu" Vyberte certA. "Autorizované certifikáty" Vyberte certB.  
+1. Nakonfigurujte nastavení počítače A. V části certifikát koncového bodu vyberte CERT. V případě "autorizovaných certifikátů" vyberte certB.  
   
-2. Konfigurace nastavení počítače B. "Certifikát koncového bodu" Vyberte certB. "Autorizované certifikáty" Vyberte certA.  
+2. Nakonfigurujte nastavení počítače B. U možnosti "certifikát koncového bodu" vyberte certB. V části autorizované certifikáty vyberte CERT.  
   
 > [!NOTE]
->  Pokud jeden počítač odešle zprávu do dalších počítačů, odesílatel se pokusí ověřte, že odpovídají názvu předmětu certifikátu příjemce a název počítače příjemce. Pokud shodné nejsou, se nezdaří ověření certifikátů a dva počítače nemohou komunikovat.  
+> Když jeden počítač pošle zprávu druhému počítači, odesilatel se pokusí ověřit, že název předmětu certifikátu příjemce a název počítače příjemce se shodují. Pokud se neshodují, ověření certifikátu se nezdařilo a dva počítače nemohou komunikovat.  
 >   
->  Pro počítač připojený k doméně je název plně kvalifikovaný název domény. Ve výchozím nastavení je název počítače v pracovní skupině název NetBIOS počítače. Název může také mohou obsahovat příponu systému DNS (Domain Name)-Pokud je k dispozici připojení mezi dvěma počítači používán.  
+>  Pro počítač připojený k doméně je název plně kvalifikovaný název domény. Ve výchozím nastavení je název počítače v pracovní skupině název NetBIOS počítače. Název může ale také zahrnovat příponu DNS (Domain Name System), pokud je k dispozici připojení mezi dvěma počítači.  
 >   
->  Pokud se změní název počítače, například když počítači pracovní skupiny připojí k doméně, musíte znovu vystavit certifikáty nebo ručně konfigurovat přípony DNS.  
+>  Pokud se název počítače změní, například když se počítač pracovní skupiny připojí k doméně, je nutné vystavit certifikáty nebo ručně nakonfigurovat přípony serveru DNS.  
   
 ## <a name="security"></a>Zabezpečení  
- Vzhledem k tomu, že některá nastavení týkající se služby MSDTC a WS-AT uložené v registru v HKLM\Software\Microsoft\MSDTC a HKLM\Software\Microsoft\WSAT, respektive, ujistěte se, že jsou tyto klíče registru zabezpečen tak, aby k nim můžete napsat jenom správci. V nástroji editoru registru klikněte pravým tlačítkem na klíč, který chcete zabezpečit a vyberte **oprávnění** nastavení správy odpovídající přístup. Je důležité pro zabezpečení a integrity systému, který důležité klíče jsou jen pro čtení pro uživatele s nízkými oprávněními.  
+ Vzhledem k tomu, že některá nastavení týkající se MSDTC a WS-AT se ukládají v registru na adrese HKLM\Software\Microsoft\MSDTC a v HKLM\Software\Microsoft\WSAT, zajistěte, aby byly tyto klíče registru zabezpečené, aby do nich mohli zapisovat jenom správci. V nástroji Editor registru klikněte pravým tlačítkem na klíč, který chcete zabezpečit, a vyberte **oprávnění** k nastavení příslušného řízení přístupu. Je zásadní pro zabezpečení a integritu systému, že jsou důležité klíče jen pro čtení pro uživatele s nízkými oprávněními.  
   
- Při nasazování služby MSDTC, správce musíte zajistit, že všechny výměny dat MSDTC je zabezpečené. V pracovní skupině nasazení izolovat transakční infrastruktury z uživateli se zlými úmysly; v nasazení clusteru secure registru clusteru.  
+ Při nasazování služby MSDTC musí správce zajistit zabezpečení výměny dat MSDTC. V nasazení pracovní skupiny izolujte transakční infrastrukturu od uživatelů se zlými úmysly. v nasazení clusteru Zabezpečte registr clusteru.  
   
 ## <a name="tracing"></a>Trasování  
- Tato služba podporuje protokol WS-AT obslužných rutin integrated, transakce konkrétní trasování můžete povolit a spravovat prostřednictvím [modul Snap-in konzoly MMC konfigurace WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) nástroj.  Trasování může zahrnovat údaje, které indikují, že se čas zařazení se provádí pro určitou transakci, čas transakce dosáhne stavu terminálu, výsledek každou zařazení transakce byl přijat. Všechna trasování můžete zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) nástroj.  
+ Služba protokolu WS-AT podporuje integrované trasování specifické pro transakce, které lze povolit a spravovat prostřednictvím použití nástroje pro [modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) .  Trasování mohou zahrnovat data indikující dobu, po kterou je zařazení pro konkrétní transakci, čas, kdy transakce dosáhne svého stavu terminálu, výsledek přijetí každého zařazení transakce. Všechna trasování lze zobrazit pomocí nástroje pro [Prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) .  
   
- Službě protokolu WS-AT podporuje také integrovaného ServiceModel trasováním relaci sledování ETW. To poskytuje podrobnější, specifické pro komunikaci trasování kromě existující transakce trasování.  Povolit další trasování, postupujte podle těchto kroků  
+ Služba protokolu WS-AT podporuje také integrované trasování ServiceModel prostřednictvím relace trasování ETW. To poskytuje podrobnější informace o trasování specifických pro komunikaci spolu s existujícími trasováními transakcí.  Pokud chcete povolit tato další trasování, postupujte podle těchto kroků.  
   
-1. Otevřít **spuštění nebo spuštění** nabídky, do vstupního pole zadejte "regedit" a vyberte **OK**.  
+1. Otevřete nabídku **Start/Run** , do pole vstup zadejte "regedit" a vyberte **OK**.  
   
-2. V **Editor registru**, přejděte do následující složky v levém podokně Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\  
+2. V **Editoru registru**přejděte do následující složky v levém podokně, Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\  
   
-3. Klikněte pravým tlačítkem myši `ServiceModelDiagnosticTracing` hodnotu v pravém podokně a vyberte **změnit**.  
+3. V pravém podokně `ServiceModelDiagnosticTracing` klikněte pravým tlačítkem myši na hodnotu a vyberte **změnit**.  
   
-4. V **údaj hodnoty** vstupní pole, zadejte jednu z následujících platné hodnoty k určení úrovně trasování, které chcete povolit.  
+4. Do pole vstup **dat hodnoty** zadejte jednu z následujících platných hodnot a určete úroveň trasování, kterou chcete povolit.  
   
 - 0: vypnuto  
   
-- 1: kritické  
+- 1: kritická  
   
-- 3: Chyba. Toto je výchozí hodnota  
+- 3: Chyba. Toto je výchozí hodnota.  
   
 - 7: upozornění  
   
 - 15: informace  
   
-- do 31: podrobné  
+- 31: verbose  
   
 ## <a name="see-also"></a>Viz také:
 

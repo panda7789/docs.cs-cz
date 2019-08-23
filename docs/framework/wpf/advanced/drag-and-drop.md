@@ -8,23 +8,23 @@ helpviewer_keywords:
 - drag and drop [WPF]
 - drag-and-drop [WPF]
 ms.assetid: 77c48920-8c8b-41eb-8fe8-b411962c8623
-ms.openlocfilehash: 4a0e7cac9262908e4683aebeb653559c1513d4d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a610d41d9db7f205d868713a6e1cd59c311ea916
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964825"
 ---
 # <a name="drag-and-drop"></a>Přetažení
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vysoce flexibilní přetahování a přetažení infrastrukturu, která podporuje přetahování a vkládání velkých dat do obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace i jiné [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikací.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje vysoce flexibilní infrastrukturu přetažení, která podporuje přetahování a odstraňování dat v obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacích i v jiných aplikacích pro Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled přetažení](drag-and-drop-overview.md)  
  [Data a datové objekty](data-and-data-objects.md)  
- [Návod: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [Návod: Povolení přetažení na uživatelském ovládacím prvku](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
  [Témata s postupy](drag-and-drop-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.DataFormat>  
   <xref:System.Windows.DataObject>  
   <xref:System.Windows.DragDrop>  

@@ -7,19 +7,19 @@ helpviewer_keywords:
 - assemblyBinding Element
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
-ms.openlocfilehash: f5992a6085c32d37f56319cf8b2c361542c441e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e0b83c4b3573ab6819654e72cac1bf3e4a0ba637
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674828"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921276"
 ---
-# <a name="assemblybinding-element-for-configuration"></a>\<assemblybinding – > – element pro \<configuration >
+# <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding element > pro \<konfigurační >
 
-Určuje zásady vazeb sestavení na úrovni konfigurace.
+Určuje zásadu vazby sestavení na úrovni konfigurace.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp; **\<assemblyBinding>**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp; **\<assemblyBinding >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,30 +33,30 @@ Určuje zásady vazeb sestavení na úrovni konfigurace.
 
 |           | Popis |
 | --------- | ----------- |
-| **xmlns** | Požadovaný atribut.<br><br>Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu. |
+| **xmlns** | Požadovaný atribut.<br><br>Určuje obor názvů XML vyžadovaný pro vazbu sestavení. Jako hodnotu použijte řetězec "urn: schemas-microsoft-com: asm. v1". |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [ **\<> Konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
-## <a name="child-element"></a>Podřízený element.
+## <a name="child-element"></a>Podřízený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<linkedConfiguration>** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Určuje konfigurační soubor, který chcete zahrnout. |
+| [ **\<linkedConfiguration>** ](linkedconfiguration-element.md) | Určuje konfigurační soubor, který se má zahrnout. |
 
 ## <a name="remarks"></a>Poznámky
 
-[  **\<Linkedconfiguration – >** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) element zjednodušuje správu sestavení komponent tím, že konfigurační soubory v konfiguračních souborech aplikace, které chcete zahrnout sestavení dobře známé umístění, spíše než duplikace nastavení konfigurace sestavení.
+Element [**linkedConfiguration > zjednodušuje správu sestavení komponent tím, že umožňuje aplikačním konfiguračním souborům zahrnout konfigurační soubory sestavení do známých umístění místo duplikace sestavení. \<** ](linkedconfiguration-element.md) nastavení konfigurace.
 
 > [!NOTE]
 > **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak zahrnout konfigurační soubor na místním pevném disku:
+Následující příklad ukazuje, jak zahrnout konfigurační soubor na místní pevný disk:
 
 ```xml
 <configuration>
@@ -68,4 +68,4 @@ Následující příklad ukazuje, jak zahrnout konfigurační soubor na místní
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

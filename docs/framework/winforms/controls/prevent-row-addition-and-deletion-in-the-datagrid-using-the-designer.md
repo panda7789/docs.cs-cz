@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], preventing row addition or deletion
 ms.assetid: a17722bd-9400-41e6-8dcc-c9c151f0a749
-ms.openlocfilehash: 20f9b85dc48ccd634468d0fed000120723f8ee5c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: f47eb29bf9ae077555f352d10c667bac4ade9373
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038193"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968326"
 ---
 # <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Ochrana před přidáním a odstraněním řádku v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít uživatelům zabránit v zadávání nových řádků dat nebo při odstraňování stávajících řádků v <xref:System.Windows.Forms.DataGridView> ovládacím prvku. Nové řádky jsou zadány do speciálního řádku pro nové záznamy v dolní části ovládacího prvku. Když zaškrtnete přidávání řádků, řádek pro nové záznamy se nezobrazí. Ovládací prvek lze následně nastavit jen pro čtení zakázáním odstranění řádků a úprav buňky.
@@ -21,7 +21,7 @@ Někdy budete chtít uživatelům zabránit v zadávání nových řádků dat n
 - V <xref:System.Windows.Forms.DataGridView> pravém horním rohu ovládacího prvku klikněte na glyf inteligentních značek ((./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")![glyf inteligentních značek]) a zrušte zaškrtnutí políčka **Povolit přidávání** a **povolování odstraňování** .
 
     > [!NOTE]
-    >  Chcete-li nastavit, aby byl ovládací prvek úplně jen pro čtení, zrušte zaškrtnutí políčka **Povolit úpravy** .
+    > Chcete-li nastavit, aby byl ovládací prvek úplně jen pro čtení, zrušte zaškrtnutí políčka **Povolit úpravy** .
 
 ## <a name="see-also"></a>Viz také:
 

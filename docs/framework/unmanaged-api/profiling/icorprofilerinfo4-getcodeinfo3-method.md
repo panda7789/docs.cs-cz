@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0aefc9b21381f77fbe80db36da3e9932ad483750
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 084007bd7ab20449c28d2c5e6125cbacfa280526
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780842"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912706"
 ---
 # <a name="icorprofilerinfo4getcodeinfo3-method"></a>ICorProfilerInfo4::GetCodeInfo3 – metoda
-Získá rozsah nativního kódu přidružené verze překompilován JIT zadanou funkci.  
+Získá rozsahy nativního kódu přidruženého k Rekompilované verzi JIT zadané funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,40 +41,40 @@ HRESULT GetCodeInfo3(
   
 ## <a name="parameters"></a>Parametry  
  `functionID`  
- [in] ID funkce, ke kterému je přidružen nativní kód.  
+ pro ID funkce, ke které je přidružen nativní kód.  
   
  `reJitId`  
- [in] Identita funkce překompilován JIT.  
+ pro Identita funkce Rekompilované JIT.  
   
  `cCodeInfos`  
- [in] Velikost `codeInfos` pole.  
+ pro Velikost `codeInfos` pole.  
   
  `pcCodeInfos`  
- [out] Ukazatel na celkový počet [cor_prf_code_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) struktury k dispozici.  
+ mimo Ukazatel na celkový počet dostupných struktur [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md)  
   
  `codeInfos`  
- [out] Pokud volající vyrovnávací paměti. Po návratu metody obsahuje celou řadu `COR_PRF_CODE_INFO` struktury, z nichž každý popisuje blok nativního kódu.  
+ mimo Vyrovnávací paměť poskytnutá volajícím. Poté, co metoda vrátí, obsahuje pole `COR_PRF_CODE_INFO` struktury, z nichž každý popisuje blok nativního kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetCodeInfo3` Metoda je podobná [getcodeinfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md), s tím rozdílem, že se budou získávat překompilován JIT ID funkce, která obsahuje zadaná IP adresa.  
+ Metoda je podobná GetCodeInfo2 –, s tím rozdílem, že získá znovu zkompilované ID JIT funkce, která obsahuje zadanou IP adresu. [](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) `GetCodeInfo3`  
   
 > [!NOTE]
->  `GetCodeInfo3` můžete aktivovat kolekce uvolnění paměti, že [getcodeinfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) se tak nestane. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md) HRESULT.  
+> `GetCodeInfo3`může aktivovat uvolňování paměti, zatímco [GetCodeInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) nebude. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md) HRESULT.  
   
- Rozsahy jsou seřazeny v pořadí podle zvýšení posun Common Intermediate Language (CIL).  
+ Rozsahy jsou seřazené v pořadí zvyšování Common Intermediate Language (CIL) posun.  
   
- Po `GetCodeInfo3` vrátí, musíte ověřit, že `codeInfos` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny [cor_prf_code_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) struktury. K tomuto účelu porovnat hodnotu `cCodeInfos` s hodnotou `cchName` parametru. Pokud `cCodeInfos` rozdělené podle velikosti [cor_prf_code_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) struktura je menší než `pcCodeInfos`, přidělte větší `codeInfos` vyrovnávací paměti, aktualizujte `cCodeInfos` nové, větší velikosti a volání `GetCodeInfo3` znovu.  
+ Po `GetCodeInfo3` návratu je nutné ověřit `codeInfos` , zda byla vyrovnávací paměť dostatečně velká, aby obsahovala všechny struktury [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) . Chcete-li to provést, porovnejte `cCodeInfos` hodnotu s hodnotou `cchName` parametru. Je `cCodeInfos` -li děleno velikostí struktury [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) menší než `pcCodeInfos`, přidělte větší `codeInfos` vyrovnávací paměť, aktualizujte `cCodeInfos` novou, větší velikost a zavolejte `GetCodeInfo3` znovu.  
   
- Alternativně můžete nejprve volat `GetCodeInfo3` s nulovou délkou `codeInfos` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit `codeInfos` velikost k hodnotě vrácené ve vyrovnávací paměti `pcCodeInfos`, vynásobený velikostí [cor_prf_code_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) strukturu a volání `GetCodeInfo3` znovu.  
+ Případně můžete pro získání správné velikosti `GetCodeInfo3` vyrovnávací paměti nejprve zavolat s `codeInfos` nulovou délkou vyrovnávací paměti. Pak můžete `codeInfos` nastavit velikost vyrovnávací paměti na hodnotu vrácenou `pcCodeInfos`v, vynásobenou velikostí [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) struktury a volat `GetCodeInfo3` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlaviček** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

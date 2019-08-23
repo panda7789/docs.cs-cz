@@ -5,78 +5,78 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c3f6e4b0-1131-4c94-aa39-a197c5c2f2ca
-ms.openlocfilehash: dedfa55cb7be7eed396c897dedc6bf375c34436e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6bc921355e54023ead3a308a7877ab609f868221
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626266"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968624"
 ---
 # <a name="understanding-generated-client-code"></a>Principy generovaného klientského kódu
-[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje kód klienta a konfiguračního souboru aplikace klienta pro použití při vytváření klientských aplikací. Toto téma poskytuje přehled příklady generovaného kódu pro scénáře, kontrakt služby standard. Další informace o vytváření klientských aplikací, který pomocí generovaného kódu najdete v tématu [přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md).  
+Nástroj pro dodávání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje klientský kód a konfigurační soubor klientské aplikace pro použití při sestavování klientských aplikací. Toto téma poskytuje ukázku generovaných příkladů kódu pro scénáře standardních kontraktů služeb. Další informace o vytváření klientských aplikací pomocí vygenerovaného kódu naleznete v tématu [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md).  
   
 ## <a name="overview"></a>Přehled  
- Pokud používáte sadu Visual Studio generovat klientské typy Windows Communication Foundation (WCF) pro váš projekt, obvykle není potřeba zkoumání kódu generovaného klienta. Pokud nepoužíváte prostředí pro vývoj, který provede stejné služby za vás, můžete použít nástroje, jako je Svcutil.exe generování kódu klienta a pak pomocí tohoto kódu pro vývoj klientské aplikace.  
+ Použijete-li aplikaci Visual Studio k vygenerování typů klientů Windows Communication Foundation (WCF) pro váš projekt, obvykle není nutné kontrolovat generovaný kód klienta. Pokud nepoužíváte vývojové prostředí, které pro vás provádí stejné služby, můžete pomocí nástroje, jako je Svcutil. exe, vygenerovat kód klienta a potom použít tento kód k vývoji klientské aplikace.  
   
- Protože Svcutil.exe má řadu možností, které upravují generovaný typ informací, toto téma nepopisuje všechny scénáře. Následující standardní úkoly zahrnují vyhledání generovaného kódu:  
+ Vzhledem k tomu, že Svcutil. exe má několik možností, které upravují informace o vygenerovaném typu, toto téma se nezabývá všemi scénáři. Následující standardní úlohy však zahrnují umístění vygenerovaného kódu:  
   
-- Identifikace rozhraní kontraktu služby.  
+- Identifikujte rozhraní kontraktu služby.  
   
-- Identifikační třída klienta WCF.  
+- Identifikace třídy klienta WCF.  
   
-- Určení datové typy.  
+- Identifikace datových typů.  
   
-- Identifikace kontrakty zpětného volání pro duplexní služby.  
+- Identifikujte kontrakty zpětného volání pro duplexní služby.  
   
-- Identifikace rozhraní pomocné rutiny servisní smlouvy kanálu.  
+- Identifikujte rozhraní kanálu smlouvy pomocné služby.  
   
-### <a name="finding-service-contract-interfaces"></a>Zjištění rozhraní kontraktu služby  
- Vyhledejte rozhraní, které modelují kontraktů služby, vyhledáte rozhraní, které jsou označeny <xref:System.ServiceModel.ServiceContractAttribute?displayProperty=nameWithType> atribut. Tento atribut často může být obtížné vyhledat s rychlým číst z důvodu přítomnosti dalších atributů a explicitní vlastnosti nastavené u samotného atributu. Mějte na paměti, že rozhraní servisní smlouvy a smlouvy rozhraní klienta jsou dva různé typy. Následující příklad kódu ukazuje původní kontrakt služby.  
+### <a name="finding-service-contract-interfaces"></a>Hledání rozhraní kontraktu služby  
+ Chcete-li vyhledat rozhraní, která modelují kontrakty služby, vyhledejte rozhraní, která <xref:System.ServiceModel.ServiceContractAttribute?displayProperty=nameWithType> jsou označena atributem. Tento atribut často může být obtížné vyhledat s rychlým čtením z důvodu přítomnosti jiných atributů a explicitních vlastností nastavených u atributu samotného. Mějte na paměti, že rozhraní kontraktu služby a klientské rozhraní klienta jsou dva různé typy. Následující příklad kódu ukazuje původní kontrakt služby.  
   
  [!code-csharp[C_GeneratedCodeFiles#22](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#22)]  
   
- Následující příklad kódu ukazuje stejný kontrakt služby generovaná Svcutil.exe.  
+ Následující příklad kódu ukazuje stejný kontrakt služby, jak je vygenerován nástrojem Svcutil. exe.  
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- Můžete použít rozhraní vygenerovaný servisní smlouvy spolu s <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> třídy za účelem vytvoření kanálu objekt WCF, pomocí kterého se má vyvolat operace služby. Další informace najdete v tématu [jak: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md).  
+ Pomocí vygenerovaného rozhraní <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> kontraktu služby můžete vytvořit objekt kanálu WCF, se kterým chcete vyvolat operace služby. Další informace najdete v tématu [jak: Použijte třídu ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md).  
   
-### <a name="finding-wcf-client-classes"></a>Hledání třídy klienta WCF  
- Najít třídu klienta WCF, která implementuje kontrakt služby, kterou chcete použít, vyhledejte rozšíření <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>, kde parametr typu kontraktu služby rozhraní, které jste dříve sídlo a, který rozšiřuje rozhraní. Následující příklad kódu ukazuje <xref:System.ServiceModel.ClientBase%601> třídu typu `ISampleService`.  
+### <a name="finding-wcf-client-classes"></a>Hledání tříd klienta WCF  
+ Chcete-li vyhledat třídu klienta WCF, která implementuje kontrakt služby, který chcete použít, vyhledejte rozšíření <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>, kde parametr Type je rozhraní kontraktu služby, které jste předtím našli a které rozšiřuje toto rozhraní. Následující příklad kódu ukazuje <xref:System.ServiceModel.ClientBase%601> třídu typu. `ISampleService`  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   
- Tato třída klienta WCF můžete použít novou instanci vytvořením a voláním metody, které implementuje. Tyto metody volat operace služby, pomocí kterého je navržené a nakonfigurované k interakci. Další informace najdete v tématu [přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md).  
+ Tuto třídu klienta WCF můžete použít vytvořením nové instance a voláním metod, které implementuje. Tyto metody vyvolávají operaci služby, se kterou je navržená a nakonfigurovaná pro interakci. Další informace najdete v tématu [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md).  
   
 > [!NOTE]
->  SvcUtil.exe vygeneruje třídy klienta WCF, přidá <xref:System.Diagnostics.DebuggerStepThroughAttribute> do třídy klienta, která zabrání ladicí programy z krokování třída klienta WCF.  
+> Když Svcutil. exe vygeneruje třídu klienta WCF, přidá <xref:System.Diagnostics.DebuggerStepThroughAttribute> do třídy Client, která brání ladicím programům v procházení klientské třídy WCF.  
   
-### <a name="finding-data-types"></a>Vyhledávání datové typy  
- Vyhledejte datové typy ve vygenerovaném kódu, je nejzákladnější mechanismus identifikovat uvedených ve smlouvě o název typu a vyhledávání kódu pro deklaraci tohoto typu. Například následující kontrakt Určuje, že `SampleMethod` může vrátit chybu protokolu SOAP typu `microsoft.wcf.documentation.SampleFault`.  
+### <a name="finding-data-types"></a>Hledání datových typů  
+ Chcete-li vyhledat datové typy ve vygenerovaném kódu, je nejzákladnější mechanismus identifikovat název typu zadaný ve kontraktu a vyhledat kód pro danou deklaraci typu. Například následující kontrakt Určuje, že `SampleMethod` může vrátit chybu SOAP typu. `microsoft.wcf.documentation.SampleFault`  
   
  [!code-csharp[C_GeneratedCodeFiles#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#11)]  
   
- Hledání `SampleFault` vyhledá následující deklaraci typu.  
+ `SampleFault` Hledání vyhledá následující deklaraci typu.  
   
  [!code-csharp[C_GeneratedCodeFiles#30](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#30)]  
   
- V tomto případě datový typ je typ podrobností vyvolané určité výjimky na straně klienta <xref:System.ServiceModel.FaultException%601> kde je parametr typu podrobností `microsoft.wcf.documentation.SampleFault`. Další informace o datových typech najdete v tématu [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Další informace o zpracování výjimek v klientech najdete v tématu [odesílání a příjem chyb](../../../../docs/framework/wcf/sending-and-receiving-faults.md).  
+ V tomto případě datový typ je typ podrobností vyvolaný specifickou výjimkou u klienta, <xref:System.ServiceModel.FaultException%601> přičemž parametr detailního typu je. `microsoft.wcf.documentation.SampleFault` Další informace o datových typech najdete v tématu [určení přenos dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md). Další informace o zpracování výjimek v klientech najdete v tématu [odesílání a příjem chyb](../../../../docs/framework/wcf/sending-and-receiving-faults.md).  
   
-### <a name="finding-callback-contracts-for-duplex-services"></a>Vyhledání kontrakty zpětného volání pro duplexní služby  
- Pokud se vám najít kontraktu služby, pro kterou rozhraní kontraktu Určuje hodnotu <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnost a potom tento kontrakt určuje duplexního kontraktu. Vyžadovat klientské aplikaci vytvořit třídu zpětné volání, která implementuje tento kontrakt zpětného volání a předejte instanci této třídy pro duplexní kontrakty <xref:System.ServiceModel.DuplexClientBase%601?displayProperty=nameWithType> nebo <xref:System.ServiceModel.DuplexChannelFactory%601?displayProperty=nameWithType> používaný ke komunikaci se službou. Další informace o duplexní klientů najdete v tématu [jak: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md).  
+### <a name="finding-callback-contracts-for-duplex-services"></a>Hledání kontraktů zpětného volání pro duplexní služby  
+ Pokud najdete kontrakt služby, pro který rozhraní kontraktu Určuje hodnotu <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnosti, pak tato smlouva určuje oboustranný kontrakt. Duplexní kontrakty vyžadují, aby klientská aplikace vytvořila třídu zpětného volání, která implementuje kontrakt zpětného volání, a <xref:System.ServiceModel.DuplexClientBase%601?displayProperty=nameWithType> předala instanci této třídy do nebo <xref:System.ServiceModel.DuplexChannelFactory%601?displayProperty=nameWithType> , která se používá ke komunikaci se službou. Další informace o oboustranných klientech najdete [v tématu How to: Přístup ke službám pomocí duplexního](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)kontraktu.  
   
- Následující kontrakt určuje kontrakt zpětného volání typu `SampleDuplexHelloCallback`.  
+ Následující kontrakt Určuje kontrakt zpětného volání typu `SampleDuplexHelloCallback`.  
   
  [!code-csharp[C_GeneratedCodeFiles#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/duplexproxycode.cs#2)]
  [!code-vb[C_GeneratedCodeFiles#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_generatedcodefiles/vb/duplexproxycode.vb#2)]  
   
- Hledání pro tuto kontrakt zpětného volání vyhledá následující klientská aplikace musí implementovat rozhraní.  
+ Hledání této smlouvy zpětného volání vyhledá následující rozhraní, které musí klientská aplikace implementovat.  
   
  [!code-csharp[C_GeneratedCodeFiles#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/duplexproxycode.cs#4)]
  [!code-vb[C_GeneratedCodeFiles#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_generatedcodefiles/vb/duplexproxycode.vb#4)]  
   
-### <a name="finding-service-contract-channel-interfaces"></a>Rozhraní kanálu kontraktu služby hledání  
- Při použití <xref:System.ServiceModel.ChannelFactory> třídy pomocí rozhraní kontraktu služby, musíte přetypovat <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> rozhraní explicitně otevření, zavření nebo přerušení kanálu. Aby bylo snazší pracovat, nástroje Svcutil.exe také vygeneruje rozhraní pomocné rutiny, která implementuje oba rozhraní servisní smlouvy a <xref:System.ServiceModel.IClientChannel> umožňuje interakci s vaší stávající infrastrukturou kanálu klienta bez nutnosti přetypování. Následující kód znázorňuje definici kanálu pomocné rutiny klienta, který implementuje předchozí kontrakt služby.  
+### <a name="finding-service-contract-channel-interfaces"></a>Hledání rozhraní kanálu kontraktu služby  
+ Při použití <xref:System.ServiceModel.ChannelFactory> třídy s rozhraním kontraktu služby je nutné přetypovat <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> na rozhraní, aby bylo možné explicitně otevřít, zavřít nebo přerušit kanál. Aby bylo snazší pracovat s nástrojem, nástroj Svcutil. exe také generuje pomocné rozhraní, které implementuje rozhraní kontraktu služby, a <xref:System.ServiceModel.IClientChannel> umožňuje interakci s infrastrukturou kanálu klienta bez nutnosti přetypování. Následující kód ukazuje definici kanálu pomocníka klienta, který implementuje předchozí kontrakt služby.  
   
  [!code-csharp[C_GeneratedCodeFiles#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#13)]  
   

@@ -8,23 +8,23 @@ dev_langs:
 ms.assetid: 095b0987-ee4b-4595-a160-da1c956ad576
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f25fa9706d43dd69da233e474127543dfdf83fb1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f789317defe3f4b44b37e6d94d37b974d003bcae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027222"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967000"
 ---
 # <a name="extract-xml-data-using-xpathnavigator"></a>Extrahování dat XML pomocí XPathNavigator
-Představuje dokumentu XML v rozhraní Microsoft .NET Framework několika různými způsoby. Jedná se o používání <xref:System.String>, nebo pomocí <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, <xref:System.Xml.XmlDocument>, nebo <xref:System.Xml.XPath.XPathDocument> třídy. Pro usnadnění přesouvání mezi tyto různé reprezentace dokumentu XML <xref:System.Xml.XPath.XPathNavigator> třída poskytuje několik metod a vlastností pro extrahování XML jako <xref:System.String>, <xref:System.Xml.XmlReader> objektu nebo <xref:System.Xml.XmlWriter> objektu.  
+Dokument XML lze v .NET Framework společnosti Microsoft znázornit několika různými způsoby. <xref:System.String>To zahrnuje použití <xref:System.Xml.XPath.XPathDocument> třídy, nebo <xref:System.Xml.XmlReader>pomocí tříd, <xref:System.Xml.XmlWriter>, <xref:System.Xml.XmlDocument>nebo. Aby bylo možné se pohybovat mezi těmito různými <xref:System.Xml.XPath.XPathNavigator> reprezentacemi dokumentu XML, poskytuje třída množství metod a vlastností pro extrakci XML <xref:System.String>jako <xref:System.Xml.XmlReader> objekt nebo <xref:System.Xml.XmlWriter> objekt.  
   
-## <a name="convert-an-xpathnavigator-to-a-string"></a>Převést na řetězec, objektem XPathNavigator nastaveným na  
- <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> třída se používá k získání značek celého dokumentu XML nebo značky jeden uzel a jeho podřízené uzly.  
+## <a name="convert-an-xpathnavigator-to-a-string"></a>Převod XPathNavigator na řetězec  
+ <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> Vlastnost<xref:System.Xml.XPath.XPathNavigator> třídy slouží k získání značky celého dokumentu XML nebo pouze označení jednoho uzlu a jeho podřízených uzlů.  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> Vlastnost získá značky pouze podřízené uzly uzlu.  
+> <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> Vlastnost získá označení pouze podřízených uzlů uzlu.  
   
- Následující příklad kódu ukazuje, jak uložit celý dokument XML obsažených v <xref:System.Xml.XPath.XPathNavigator> objektu jako <xref:System.String>, stejně jako jeden uzel a jeho podřízených uzlů.  
+ Následující příklad kódu ukazuje, jak uložit celý dokument XML obsažený v <xref:System.Xml.XPath.XPathNavigator> objektu <xref:System.String>jako a také v jednom uzlu a jeho podřízených uzlech.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("input.xml")  
@@ -50,14 +50,14 @@ navigator.MoveToChild(XPathNodeType.Element);
 string root = navigator.OuterXml;  
 ```  
   
-## <a name="convert-an-xpathnavigator-to-an-xmlreader"></a>Převést objektem XPathNavigator nastaveným na do třídy XmlReader  
- <xref:System.Xml.XPath.XPathNavigator.ReadSubtree%2A> Metoda se používá ke streamování celý obsah dokumentu XML nebo jenom jeden uzel a jeho podřízené uzly <xref:System.Xml.XmlReader> objektu.  
+## <a name="convert-an-xpathnavigator-to-an-xmlreader"></a>Převod XPathNavigator na XmlReader  
+ Metoda se používá pro streamování celého obsahu dokumentu XML nebo pouze jednoho uzlu a jeho podřízených uzlů <xref:System.Xml.XmlReader> objektu. <xref:System.Xml.XPath.XPathNavigator.ReadSubtree%2A>  
   
- Když <xref:System.Xml.XmlReader> s aktuální uzel a jeho podřízených uzlů, je vytvořen objekt <xref:System.Xml.XmlReader> objektu <xref:System.Xml.XmlReader.ReadState%2A> je nastavena na <xref:System.Xml.ReadState.Initial>. Když <xref:System.Xml.XmlReader> objektu <xref:System.Xml.XmlReader.Read%2A> je metoda volána poprvé, <xref:System.Xml.XmlReader> se přesune na aktuálním uzlu <xref:System.Xml.XPath.XPathNavigator>. Nové <xref:System.Xml.XmlReader> objekt pokračovat ve čtení, dokud nebude dosaženo konce stromové struktuře XML. V tomto okamžiku <xref:System.Xml.XmlReader.Read%2A> vrátí metoda `false` a <xref:System.Xml.XmlReader> objektu <xref:System.Xml.XmlReader.ReadState%2A> je nastavena na <xref:System.Xml.ReadState.EndOfFile>.  
+ Když je <xref:System.Xml.XmlReader> <xref:System.Xml.XmlReader.ReadState%2A> <xref:System.Xml.ReadState.Initial>objekt vytvořen s aktuálním uzlem a jeho podřízenými uzly, vlastnost objektu je nastavena na hodnotu. <xref:System.Xml.XmlReader> Při prvním <xref:System.Xml.XmlReader.Read%2A>volánímetody <xref:System.Xml.XmlReader> objektu <xref:System.Xml.XPath.XPathNavigator>je objekt přesunut do aktuálního uzlu. <xref:System.Xml.XmlReader> Nový <xref:System.Xml.XmlReader> objekt bude pokračovat v čtení, dokud nebude dosaženo konce stromu XML. <xref:System.Xml.XmlReader.Read%2A> V tomto okamžiku se metoda vrátí <xref:System.Xml.XmlReader> `false` a <xref:System.Xml.XmlReader.ReadState%2A> vlastnost objektu je nastavena na <xref:System.Xml.ReadState.EndOfFile>.  
   
- <xref:System.Xml.XPath.XPathNavigator> Pozici objektu je beze změny ve vytváření nebo přesun <xref:System.Xml.XmlReader> objektu. <xref:System.Xml.XPath.XPathNavigator.ReadSubtree%2A> Metoda je platná jenom při umístěna na elementu nebo kořenového uzlu.  
+ Pozice objektu je beze změny vytvořením nebo přesunem <xref:System.Xml.XmlReader> objektu. <xref:System.Xml.XPath.XPathNavigator> <xref:System.Xml.XPath.XPathNavigator.ReadSubtree%2A> Metoda je platná pouze v případě, že je umístěna na elementu nebo kořenovém uzlu.  
   
- Následující příklad ukazuje, jak získat <xref:System.Xml.XmlReader> objekt, který obsahuje celý kód XML dokumentů v <xref:System.Xml.XPath.XPathDocument> objektu stejně jako jeden uzel a jeho podřízených uzlů.  
+ Následující příklad ukazuje, jak získat <xref:System.Xml.XmlReader> objekt obsahující celý dokument XML <xref:System.Xml.XPath.XPathDocument> v objektu a také jeden uzel a jeho podřízené uzly.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -113,16 +113,16 @@ while (book.Read())
 book.Close();  
 ```  
   
- V příkladu přebírá `books.xml` souboru jako vstup.  
+ Příklad přebírá `books.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
-## <a name="converting-an-xpathnavigator-to-an-xmlwriter"></a>Převod objektem XPathNavigator nastaveným na třídy XmlWriter  
- <xref:System.Xml.XPath.XPathNavigator.WriteSubtree%2A> Metoda se používá ke streamování celý obsah dokumentu XML nebo jenom jeden uzel a jeho podřízené uzly <xref:System.Xml.XmlWriter> objektu.  
+## <a name="converting-an-xpathnavigator-to-an-xmlwriter"></a>Převod XPathNavigator na XmlWriter  
+ Metoda se používá pro streamování celého obsahu dokumentu XML nebo pouze jednoho uzlu a jeho podřízených uzlů <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.XPath.XPathNavigator.WriteSubtree%2A>  
   
- <xref:System.Xml.XPath.XPathNavigator> Pozici objektu je beze změny ve vytváření <xref:System.Xml.XmlWriter> objektu.  
+ Pozice objektu je beze změny vytvoření <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.XPath.XPathNavigator>  
   
- Následující příklad ukazuje, jak získat <xref:System.Xml.XmlWriter> objekt, který obsahuje celý kód XML dokumentů v <xref:System.Xml.XPath.XPathDocument> objektu stejně jako jeden uzel a jeho podřízených uzlů.  
+ Následující příklad ukazuje, jak získat <xref:System.Xml.XmlWriter> objekt obsahující celý dokument XML <xref:System.Xml.XPath.XPathDocument> v objektu a také jeden uzel a jeho podřízené uzly.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -160,7 +160,7 @@ navigator.WriteSubtree(book);
 book.Close();  
 ```  
   
- V příkladu přebírá `books.xml` soubor nalezen dříve v tomto tématu jako vstup.  
+ Příklad převezme soubor `books.xml` , který byl nalezen dříve v tomto tématu, jako vstup.  
   
 ## <a name="see-also"></a>Viz také:
 

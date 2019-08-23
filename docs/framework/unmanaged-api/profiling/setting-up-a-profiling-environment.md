@@ -12,68 +12,68 @@ helpviewer_keywords:
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 33762e08192fae379f3cd249f50cc544e1c89b5a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e6c87a408b348cb6ecc7a3f6afa7060a1568a37
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775739"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966103"
 ---
 # <a name="setting-up-a-profiling-environment"></a>Nastavení prostředí profilace
 > [!NOTE]
->  Byly provedeny podstatné změny profilování v rozhraní .NET Framework 4.  
+> V .NET Framework 4 byly zásadní změny profilace.  
   
- Při spuštění spravovaného procesu (aplikace nebo služby) načte modul CLR (CLR). Když je modul CLR inicializován, vyhodnocuje dvě následující proměnné prostředí se rozhodnout, jestli se má proces připojit k profileru:  
+ Při spuštění spravovaného procesu (aplikace nebo služby) načte modul CLR (Common Language Runtime). Při inicializaci modulu CLR vyhodnotí následující dvě proměnné prostředí k rozhodnutí, zda se má proces připojit k profileru:  
   
-- COR_ENABLE_PROFILING: Modul CLR se připojí k profileru pouze v případě, že tato proměnná prostředí existuje a je nastaven na hodnotu 1.  
+- COR_ENABLE_PROFILING: Modul CLR se připojí k profileru pouze v případě, že tato proměnná prostředí existuje a je nastavena na hodnotu 1.  
   
-- COR_PROFILER: Pokud COR_ENABLE_PROFILING kontrolovat PASS, CLR se připojí k profileru, který má tento identifikátor CLSID nebo ProgID, který musí být již uložen v registru. Proměnná prostředí COR_PROFILER je definována jako řetězec, jak je znázorněno v následující dva příklady.  
+- COR_PROFILER: Pokud kontrolu COR_ENABLE_PROFILING projde, modul CLR se připojí k profileru, který má tento identifikátor CLSID nebo ProgID, který musí být uložen dříve v registru. Proměnná prostředí COR_PROFILER je definována jako řetězec, jak je znázorněno v následujících dvou příkladech.  
   
     ```cpp  
     set COR_PROFILER={32E2F4DA-1BEA-47ea-88F9-C5DAF691C94A}  
     set COR_PROFILER="MyProfiler"  
     ```  
   
- Chcete-li Profilovat aplikaci CLR, musíte nastavit proměnné prostředí COR_ENABLE_PROFILING a COR_PROFILER před spuštěním aplikace. Také musíte zkontrolovat, že profiler DLL registrován.  
+ Chcete-li profilovat aplikaci CLR, je nutné před spuštěním aplikace nastavit proměnné prostředí COR_ENABLE_PROFILING a COR_PROFILER. Musíte se také ujistit, že je knihovna DLL profileru zaregistrovaná.  
   
 > [!NOTE]
->  Od verze rozhraní .NET Framework 4, profilovací programy není třeba registrovat.  
+> Od .NET Framework 4 se profilery nemusí registrovat.  
   
 > [!NOTE]
->  Použití rozhraní .NET Framework verze 2.0, 3.0 a 3.5 profilerů v rozhraní .NET Framework 4 a novější verze, musíte nastavit proměnnou prostředí COMPLUS_ProfAPI_ProfilerCompatibilitySetting.  
+> Chcete-li použít .NET Framework verze 2,0, 3,0 a 3,5 profilery v .NET Framework 4 a novějších verzích, je nutné nastavit proměnnou prostředí COMPLUS_ProfAPI_ProfilerCompatibilitySetting.  
   
 ## <a name="environment-variable-scope"></a>Rozsah proměnné prostředí  
- Jak je nastavit proměnné prostředí COR_ENABLE_PROFILING a COR_PROFILER, určí jejich rozsah vlivu. Tyto proměnné můžete nastavit v jednom z následujících způsobů:  
+ Způsob, jakým nastavíte proměnné prostředí COR_ENABLE_PROFILING a COR_PROFILER, bude určovat jejich rozsah vlivu. Tyto proměnné můžete nastavit jedním z následujících způsobů:  
   
-- Pokud jste nastavili proměnné [ICorDebug::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) volání, použijí se jenom na aplikace, která spustíte v době. (Budou také použity k ostatním aplikacím spuštěné aplikací, které dědí prostředí.)  
+- Pokud jste nastavili proměnné v volání [ICorDebug:: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) , budou se vztahovat jenom na aplikaci, kterou používáte v daném okamžiku. (Budou platit také pro ostatní aplikace spuštěné aplikací, které dědí prostředí.)  
   
-- Pokud jste nastavili proměnné v okně příkazového řádku, použijí se na všechny aplikace, které jsou spuštěny z tohoto okna.  
+- Pokud jste nastavili proměnné v okně příkazového řádku, budou platit pro všechny aplikace, které jsou spuštěny z tohoto okna.  
   
-- Pokud jste nastavili proměnné na úrovni uživatele, použijí se na všechny aplikace, které spustíte pomocí Průzkumníka souborů. Okno příkazového řádku otevřete po nastavení proměnných, bude mít tato nastavení prostředí, a stejně tomu bude u všech aplikací, které spustíte z tohoto okna. Chcete-li nastavit proměnné prostředí na úrovni uživatele, klikněte pravým tlačítkem na **tento počítač**, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **Upřesnit** klikněte na tlačítko **prostředí Proměnné**a přidejte proměnné do **uživatelské proměnné** seznamu.  
+- Pokud jste nastavili proměnné na úrovni uživatele, použijí se na všechny aplikace, které spustíte v Průzkumníkovi souborů. Okno příkazového řádku, které otevřete po nastavení proměnných, bude mít tato nastavení prostředí, a takže bude mít všechny aplikace spouštěné z tohoto okna. Chcete-li nastavit proměnné prostředí na úrovni uživatele, klikněte pravým tlačítkem myši na položku **Tento počítač**, klikněte na příkaz **vlastnosti**, klikněte na kartu **Upřesnit** , klikněte na položku **proměnné prostředí**a přidejte proměnné do seznamu **uživatelské proměnné** .  
   
-- Pokud jste nastavili proměnné na úrovni počítače, použijí se na všechny aplikace, které jsou spuštěny v počítači. Okno příkazového řádku, které otevřete na tomto počítači bude mít tato nastavení prostředí a stejně tomu bude u všech aplikací, které spustíte z tohoto okna. To znamená, že všechny spravované procesy v tomto počítači se spustí s vaším profilerem. Chcete-li nastavit proměnné prostředí na úrovni počítače, klikněte pravým tlačítkem na **tento počítač**, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **Upřesnit** klikněte na tlačítko **prostředí Proměnné**, přidejte proměnné do **systémové proměnné** seznamu a pak restartujte počítač. Po restartování počítače se budou proměnné k dispozici celý systém.  
+- Pokud jste nastavili proměnné na úrovni počítače, budou platit pro všechny aplikace, které jsou na tomto počítači spuštěné. Okno příkazového řádku, které otevřete na tomto počítači, bude mít tato nastavení prostředí, a takže bude mít všechny aplikace, které z tohoto okna spustíte. To znamená, že všechny spravované procesy v tomto počítači budou začínat vaším profilerem. Chcete-li nastavit proměnné prostředí na úrovni počítače, klikněte pravým tlačítkem myši na položku **Tento počítač**, klikněte na příkaz **vlastnosti**, klikněte na kartu **Upřesnit** , klikněte na položku **proměnné prostředí**, přidejte proměnné do seznamu **systémové proměnné** a poté Restartujte počítač. Po restartování budou proměnné dostupné v rámci systému.  
   
- Pokud profilujete službu Windows, musí se po nastavení proměnných prostředí a registraci profileru DLL restartovat počítač. Další informace o těchto možnostech najdete v části [profilování služby Windows](#windows_service).  
+ Pokud vytváříte profilaci služby systému Windows, musíte restartovat počítač po nastavení proměnných prostředí a registraci knihovny DLL profileru. Další informace o těchto doporučeních najdete v části [profilování služby systému Windows](#windows_service).  
   
-## <a name="additional-considerations"></a>Další informace  
+## <a name="additional-considerations"></a>Další požadavky  
   
-- Třída profileru implementuje [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) rozhraní. V rozhraní .NET Framework verze 2.0 musí profiler implementovat `ICorProfilerCallback2`. Pokud ne, `ICorProfilerCallback2` nebudou načteny.  
+- Třída profileru implementuje rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) . V .NET Framework verze 2,0 musí být profiler implementovaný `ICorProfilerCallback2`. Pokud ne, `ICorProfilerCallback2` nebudou načteny.  
   
-- Pouze jeden profiler může Profilovat proces v jednom okamžiku v daném prostředí. V různých prostředích můžete zaregistrovat dva různé profilovací programy, ale každý musí Profilovat samostatné procesy. Profiler musí být implementován jako modelu COM v procesový server knihovny DLL, která je namapována na stejném adresním prostoru jako proces, který je právě profilována. To znamená, že profiler běží v procesu. Rozhraní .NET Framework nepodporuje žádný jiný typ serveru COM. Například pokud profiler chce sledovat aplikace ze vzdáleného počítače, musí implementovat kolektor agentů v každém počítači. Tito agenti budou dávkovat výsledky a sdělovat počítač centrální kolekce dat.  
+- Pouze jeden profiler může profilovat proces v jednom okamžiku v daném prostředí. V různých prostředích můžete registrovat dva různé profilery, ale každý musí profilovat samostatné procesy. Profiler se musí implementovat jako vnitroprocesové knihovna DLL COM serveru, která je namapovaná do stejného adresního prostoru jako proces, který se profiluje. To znamená, že Profiler běží vnitroprocesově. .NET Framework nepodporuje žádný jiný typ serveru COM. Pokud profiler chce například monitorovat aplikace ze vzdáleného počítače, musí implementovat agenty kolektoru na každém počítači. Tito agenti budou mít za následek dávkování výsledků a oznámí je centrálnímu počítači pro shromažďování dat.  
   
-- Protože profiler je objekt modelu COM, který je vytvořeny během procesu, každá profilovaná aplikace bude mít svou vlastní kopii profileru. Proto jediná instance profileru nemusí zpracovávat data z více aplikací. Musíte však přidat logiku pro kód protokolování profileru Chcete-li zabránit souboru protokolu v přepsání z jiných profilovaných aplikací.  
+- Vzhledem k tomu, že Profiler je objekt modelu COM, který je vytvořen v procesu, každá profilovaná aplikace bude mít svou vlastní kopii profileru. Proto jedna instance profileru nemusí zpracovávat data z více aplikací. Budete však muset přidat logiku k kódu protokolování profileru, abyste zabránili přepsání souboru protokolu z jiných profilových aplikací.  
   
-## <a name="initializing-the-profiler"></a>Inicializuje Profiler  
- Když obě kontroly proměnné prostředí projdou, CLR vytvoří instanci okna profilování podobným způsobem jako do modelu COM `CoCreateInstance` funkce. Profiler není načten pomocí přímého volání `CoCreateInstance`. Proto volání `CoInitialize`, což vyžaduje nastavení modelu vláken, je vyloučeno. CLR pak zavolá [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) metoda v profileru. Signatura této metody je následující.  
+## <a name="initializing-the-profiler"></a>Inicializuje se Profiler.  
+ Když obě kontroly proměnné prostředí přejdou, vytvoří CLR instanci profileru podobným způsobem jako funkce com `CoCreateInstance` . Profiler není načten prostřednictvím přímého volání `CoCreateInstance`. Proto se zabrání volání `CoInitialize`, které vyžaduje nastavení modelu vláken. Modul CLR pak zavolá metodu [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) v profileru. Signatura této metody je následující.  
   
 ```cpp  
 HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)  
 ```  
   
- Profiler se musí dotazovat `pICorProfilerInfoUnk` pro [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) ukazatele rozhraní a uložte ho tak, aby mohl požadovat další informace později při profilování.  
+ Profiler musí zadat dotaz `pICorProfilerInfoUnk` na ukazatel rozhraní [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) a uložit ho tak, aby si mohl vyžádat další informace později během profilace.  
   
-## <a name="setting-event-notifications"></a>Nastavení oznámení události  
- Profiler pak zavolá [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metodu k určení, které kategorie oznámení ho zajímají. Například pokud se profiler zajímá pouze funkce a opuštění oznámení a oznámení pro kolekci paměti, určuje následující.  
+## <a name="setting-event-notifications"></a>Nastavení oznámení událostí  
+ Profiler pak zavolá metodu [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) k určení kategorií oznámení, která vás zajímá. Například pokud má Profiler zajímat pouze oznámení o vstupu a opuštění funkce a oznámení o uvolňování paměti, určuje následující.  
   
 ```cpp  
 ICorProfilerInfo* pInfo;  
@@ -81,19 +81,19 @@ pICorProfilerInfoUnk->QueryInterface(IID_ICorProfilerInfo, (void**)&pInfo);
 pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)  
 ```  
   
- Nastavením masky upozornění tímto způsobem může profiler omezit, která oznámení obdrží. Tento přístup pomáhá uživateli vytvářet jednoduchý nebo speciální profiler. Také snižuje čas procesoru, který by byl vyplýtván odesíláním oznámení, které by profiler ignoroval.  
+ Nastavením masky oznámení tímto způsobem může Profiler omezit, která oznámení obdrží. Tento přístup pomáhá uživateli vytvořit jednoduchý Profiler nebo profil pro speciální účely. Zároveň se tím zkrátí čas procesoru, který by využíval zasílání oznámení o tom, že Profiler bude jenom ignorovat.  
   
- Některé události profileru jsou neměnné. To znamená, že jakmile tyto události jsou nastaveny `ICorProfilerCallback::Initialize` zpětné volání, není možné zapnout a nové události nelze zapnout. Výsledkem bude pokusy o změnu neměnné události `ICorProfilerInfo::SetEventMask` vrátí selhání HRESULT.  
+ Některé události profileru jsou neměnné. To znamená, že jakmile budou tyto události nastaveny ve `ICorProfilerCallback::Initialize` zpětném volání, nelze je vypnout a nové události nelze zapnout. Pokusy o změnu neměnné události budou mít za `ICorProfilerInfo::SetEventMask` následek vrácení neúspěšného HRESULT.  
   
 <a name="windows_service"></a>   
-## <a name="profiling-a-windows-service"></a>Profilování služby Windows  
- Profilování služby Windows je jako profilování aplikace common language runtime. Prostřednictvím proměnných prostředí jsou povoleny obě operace profilování. Protože služba Windows se spustí při spuštění operačního systému, proměnné prostředí uvedené dříve v tomto tématu již musí být přítomny a nastaveny na požadované hodnoty před spuštěním systému. Kromě toho musí být profilování DLL již registrován v systému.  
+## <a name="profiling-a-windows-service"></a>Profilace služby systému Windows  
+ Profilování služby systému Windows je jako profilace aplikace modulu CLR (Common Language Runtime). Operace profilování jsou povolené prostřednictvím proměnných prostředí. Vzhledem k tomu, že je spuštěna služba systému Windows při spuštění operačního systému, proměnné prostředí popsané dříve v tomto tématu již musí být přítomny a nastaveny na požadované hodnoty před spuštěním systému. Kromě toho musí být profilace DLL již v systému registrována.  
   
- Po nastavení proměnných prostředí COR_ENABLE_PROFILING a COR_PROFILER a zaregistrování profileru DLL je třeba restartovat cílový počítač tak, aby služba Windows mohla rozpoznat tyto změny.  
+ Po nastavení proměnných prostředí COR_ENABLE_PROFILING a COR_PROFILER a registraci knihovny DLL profileru byste měli cílový počítač restartovat, aby služba systému Windows mohla tyto změny detekovat.  
   
- Všimněte si, že tyto změny umožní profilování v celého systému. Aby se zabránilo všechny spravované aplikace, které jsou následně spuštěny, profilovány, byste měli odstranit systémové proměnné prostředí po restartování cílového počítače.  
+ Všimněte si, že tyto změny umožní profilaci na úrovni systému. Chcete-li zabránit každé spravované aplikaci, která je následně spouštěna profilování, měli byste po restartování cílového počítače odstranit proměnné prostředí systému.  
   
- Tato technika také vede k každý proces CLR profilován. Profiler by měl přidat logiku pro jeho [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) zpětného volání k detekci, zda je aktuální proces zájmu. Pokud není, profiler může selhat při zpětném volání bez provedení inicializace.  
+ Tato technika také vede ke každému procesu CLR s profilací. Profiler by měl přidat logiku do svého [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) zpětného volání pro zjištění, zda je aktuální proces důležité. V opačném případě může Profiler selhání zpětného volání bez provedení inicializace.  
   
 ## <a name="see-also"></a>Viz také:
 

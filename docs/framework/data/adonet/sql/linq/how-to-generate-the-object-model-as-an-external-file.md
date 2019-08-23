@@ -2,28 +2,28 @@
 title: 'Postupy: Generování objektového modelu jako externího souboru'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 828e92903447b5c7cd3d7d27ed72bfe61d0dc6a9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7451dfbaf85c1cbd4635ae0cce1219853a2b01a3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743301"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911940"
 ---
 # <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: Generování objektového modelu jako externího souboru
-Jako alternativu k mapování založených na atributech můžete vygenerovat objektového modelu jako externího souboru XML s použitím nástroje příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). S použitím externí soubor mapování XML, snížíte nepořádku v kódu. Chování můžete také změnit úpravou souboru externí bez opětovné kompilace binární soubory vaší aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+Jako alternativu k mapování na základě atributů můžete vytvořit objektový model jako externí soubor XML pomocí nástroje příkazového řádku SQLMetal. Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Pomocí externího souboru mapování XML můžete v kódu zmenšit přehlednost. Můžete také změnit chování úpravou externího souboru bez nutnosti opětovné kompilace binárních souborů aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
 > [!NOTE]
->  Návrhář relací objektů nepodporuje generování souboru mapování externí.  
+> Návrhář relací objektů nepodporuje generování externího mapovacího souboru.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz vygeneruje soubor mapování externí z ukázkové databáze Northwind.  
+ Následující příkaz generuje externí mapovací soubor z ukázkové databáze Northwind.  
   
 ```  
 sqlmetal /server:myserver /database:northwind /map:externalfile.xml  
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující úryvek z externí mapování souboru ukazuje mapování pro tabulku Customers v ukázkové databázi Northwind. Tento výpis vygeneroval SQLMetal pomocí provádí **/map** možnost.  
+ Následující úryvek z externího souboru mapování zobrazuje mapování pro tabulku Customers v ukázkové databázi Northwind. Tento úryvek byl vygenerován spuštěním SQLMetal s možností **/map** .  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -52,4 +52,4 @@ sqlmetal /server:myserver /database:northwind /map:externalfile.xml
 
 - [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
 - [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-- [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Postupy: Generování objektového modelu v Visual Basic neboC#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)

@@ -13,15 +13,15 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: c4dd249620ba1bf445642ce4600498f6beb30461
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3034c84684e94dfe8c334107a16df8cbd227c4d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61637971"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912451"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
-Rozvětví se nepodmíněně na určený řádek v proceduře.  
+Větve nepodmíněně na určený řádek v proceduře.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,35 +29,35 @@ Rozvětví se nepodmíněně na určený řádek v proceduře.
 GoTo line  
 ```  
   
-## <a name="part"></a>Část  
+## <a name="part"></a>Částí  
  `line`  
- Povinný parametr. Žádné čáry popisku.  
+ Povinný parametr. Libovolný popisek čáry.  
   
 ## <a name="remarks"></a>Poznámky  
- `GoTo` Příkaz větvit pouze pro řádky v postupu, ve kterém se zobrazí. Na řádku musí mít popisek, který řádek `GoTo` mohou odkazovat na. Další informace najdete v tématu [jak: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ `GoTo` Příkaz může být větví pouze na řádky v proceduře, ve které se vyskytuje. Řádek musí mít popisek řádku, na který `GoTo` může odkazovat. Další informace najdete v tématu [jak: Příkazy](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)Label.  
   
 > [!NOTE]
->  `GoTo` příkazy může ztěžovat kód ke čtení a udržovat. Kdykoli je to možné, použijte řídicí struktura. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
+> `GoTo`příkazy mohou ztížit čtení a údržbu kódu. Kdykoli je to možné, použijte místo toho strukturu ovládacího prvku. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
   
- Nelze použít `GoTo` příkaz do větve z mimo `For`... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, `With`... `End With`, nebo `Using`... `End Using` konstrukce na popisek uvnitř.  
+ Nemůžete použít `GoTo` příkaz k vytvoření `For`větve mimo... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, `With`... `End With`, nebo`Using`... `End Using` konstrukce na návěští uvnitř.  
   
-## <a name="branching-and-try-constructions"></a>Větvení a konstrukce akci  
- V rámci `Try`... `Catch`... `Finally` konstrukce, platí následující pravidla pro větvení s `GoTo` příkazu.  
+## <a name="branching-and-try-constructions"></a>Větvení a vytváření try  
+ V rámci `Try`... `Catch`... konstrukce: následující pravidla platí pro větvení `GoTo` s příkazem. `Finally`  
   
-|Blokování nebo oblasti|Větvení v z mimo|Větvení navýšení kapacity v rámci|  
+|Blok nebo oblast|Větvení z vnějšku|Vyskočení z vnitřku|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try` Blok|Pouze z `Catch` bloku stejné konstrukce <sup>1</sup>|Pouze mimo celý konstrukce|  
-|`Catch` Blok|Nikdy povoleno|Pouze mimo celého procesu vytváření, nebo do adresáře `Try` bloku stejné konstrukce <sup>1</sup>|  
-|`Finally` Blok|Nikdy povoleno|Nikdy povoleno|  
+|`Try`Blokované|Pouze z `Catch` bloku stejné konstrukce <sup>1</sup>|Jenom mimo celou konstrukci|  
+|`Catch`Blokované|Nikdy Nepovoleno|Pouze vně celé konstrukce nebo do `Try` bloku stejné konstrukce <sup>1</sup>|  
+|`Finally`Blokované|Nikdy Nepovoleno|Nikdy Nepovoleno|  
   
- <sup>1</sup> Pokud `Try`... `Catch`... `Finally` konstrukce je vnořená v jiném, `Catch` větvit do bloku `Try` bloku na vlastní úroveň vnoření, ale ne do jiného `Try` bloku. Vnořený `Try`... `Catch`... `Finally` konstrukce musí být obsažena v úplně `Try` nebo `Catch` bloku konstrukce, ve kterém je vnořená.  
+ <sup>1</sup> , pokud `Try`jedna... `Catch`... konstrukce je vnořena do jiného, `Catch` `Try` blok může být větví do bloku na vlastní úrovni vnoření, ale ne do žádného jiného `Try` bloku. `Finally` Vnořený `Try`... `Catch`... konstrukce musí být zcela obsažena `Try` v bloku `Catch` nebo konstrukce, v rámci které je vnořena. `Finally`  
   
- Následující obrázek znázorňuje jeden `Try` konstrukce vnořit do jiného. Různými větvemi mezi bloky dvě konstrukce jsou označeny jako platný nebo neplatný.  
+ Následující ilustrace znázorňuje jeden `Try` konstrukcí vnořený do jiného. Různé větve mezi bloky dvou konstrukcí jsou označeny jako platné nebo neplatné.  
   
- ![Grafický diagram větvení v konstrukcích Try](./media/goto-statement/try-construction-branching.gif)  
+ ![Grafický diagram větvení v konstrukcích try](./media/goto-statement/try-construction-branching.gif)  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `GoTo` příkaz vzorce pro větvení popisků čáry v postupu.  
+ Následující příklad používá `GoTo` příkaz pro větvení popiskům čáry v proceduře.  
   
  [!code-vb[VbVbalrStatements#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#31)]  
   

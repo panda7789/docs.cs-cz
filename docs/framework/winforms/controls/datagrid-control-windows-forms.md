@@ -8,74 +8,74 @@ helpviewer_keywords:
 - displaying data [Windows Forms], on forms
 - data [Windows Forms], displaying on Windows Forms
 ms.assetid: 1d9d5683-43d2-42dd-b6c3-e43f4cf0de99
-ms.openlocfilehash: 5a69605901eef7366c7a9ff9930e5f4ec6cece23
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: f50f32ad65dd621dee3847d72b5a186afcc4a86d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969156"
 ---
 # <a name="datagrid-control-windows-forms"></a>DataGrid – ovládací prvek (Windows Forms)
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které `DataGrid` řízení; však `DataGrid` ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek nahrazuje a přidává funkce `DataGrid` `DataGrid` ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Windows Forms `DataGrid` poskytuje uživatelské rozhraní s datovými sadami ADO.NET, zobrazení tabulkových dat a povolení aktualizací ke zdroji dat ovládacího prvku.  
+ Ovládací prvek `DataGrid` model Windows Forms poskytuje uživatelské rozhraní pro ADO.NET datových sad, zobrazení tabulkových dat a povolení aktualizací zdroje dat.  
   
- Když `DataGrid` řízení je nastavené na platný zdroj dat, ovládací prvek se vyplní automaticky, vytváření sloupců a řádků v závislosti na struktuře dat. `DataGrid` Ovládací prvek lze použít k zobrazení jedné tabulky nebo hierarchické vztahy mezi sadou tabulek.  
+ Když je `DataGrid` ovládací prvek nastaven na platný zdroj dat, ovládací prvek se vyplní automaticky a vytvoří sloupce a řádky založené na tvaru dat. `DataGrid` Ovládací prvek lze použít k zobrazení jedné tabulky nebo hierarchických vztahů mezi sadou tabulek.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)  
  Popisuje základní funkce `DataGrid` ovládacího prvku.  
   
- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid pomocí návrháře](add-tables-and-columns-to-wf-datagrid-control-using-the-designer.md)  
- Popisuje postup přidání tabulky a sloupce, které chcete `DataGrid` řídit pomocí návrháře.  
+ [Postupy: Přidání tabulek a sloupců do ovládacího prvku model Windows Forms DataGrid pomocí návrháře](add-tables-and-columns-to-wf-datagrid-control-using-the-designer.md)  
+ Popisuje, jak přidat tabulky a sloupce do `DataGrid` ovládacího prvku pomocí návrháře.  
   
- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  
- Popisuje postup přidání tabulky a sloupce, které chcete `DataGrid` řídit prostřednictvím kódu programu.  
+ [Postupy: Přidání tabulek a sloupců do model Windows Forms ovládacího prvku DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  
+ Popisuje, jak přidat tabulky a sloupce do `DataGrid` ovládacího prvku programově.  
   
- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)  
- Popisuje, jak vytvořit vazbu ADO.NET datovou sadu, která `DataGrid` řídit pomocí návrháře.  
+ [Postupy: Svázání model Windows Forms ovládacího prvku DataGrid ke zdroji dat pomocí návrháře](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)  
+ Popisuje, jak vytvořit datovou sadu ADO.NET s `DataGrid` ovládacím prvkem pomocí návrháře.  
   
- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
- Popisuje, jak vytvořit vazbu ADO.NET datovou sadu, která `DataGrid` ovládacího prvku.  
+ [Postupy: Navázání model Windows Forms ovládacího prvku DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
+ Popisuje, jak vytvořit datovou sadu ADO.NET s `DataGrid` ovládacím prvkem.  
   
- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)  
- Popisuje, jak změnit dat prostřednictvím kódu programu v `DataGrid` ovládacího prvku.  
+ [Postupy: Změna zobrazených dat v době běhu v ovládacím prvku model Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)  
+ Popisuje, jak změnit data programově v `DataGrid` ovládacím prvku.  
   
- [Postupy: Vytváření hlavních podrobných seznamů pomocí ovládacího prvku Windows Forms DataGrid pomocí návrháře](create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
- Popisuje způsob zobrazení dvou tabulek, vázané nadřazené a podřízené relací, dva samostatné `DataGrid` ovládací prvky pomocí návrháře.  
+ [Postupy: Vytvoření seznamu hlavní-podrobnosti s ovládacím prvkem model Windows Forms DataGrid pomocí návrháře](create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
+ Popisuje způsob zobrazení dvou tabulek, které jsou spojeny s relací nadřazený/podřízený ve dvou samostatných `DataGrid` ovládacích prvcích pomocí návrháře.  
   
- Postupy: Vytváření hlavních podrobných seznamů pomocí ovládacího prvku Windows Forms DataGrid  
- Popisuje způsob zobrazení dvou tabulek, vázané nadřazené a podřízené relací, dva samostatné `DataGrid` ovládacích prvků.  
+ Postupy: Vytvoření seznamu hlavní-podrobnosti pomocí model Windows Forms ovládacího prvku DataGrid  
+ V této části najdete popis postupu zobrazení dvou tabulek, které jsou spojeny s relací nadřazený-podřízený `DataGrid` ve dvou samostatných ovládacích prvcích.  
   
- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
- Popisuje, jak odebrat sloupce v `DataGrid` ovládacího prvku.  
+ [Postupy: Odstranění nebo skrytí sloupců v model Windows Forms ovládacím prvku DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
+ Popisuje, jak odebrat sloupce v `DataGrid` ovládacím prvku.  
   
- [Postupy: Formátování v ovládacím prvku Windows Forms DataGrid pomocí návrháře](how-to-format-the-windows-forms-datagrid-control-using-the-designer.md)  
- Popisuje, jak změnit vzhled související vlastnosti `DataGrid` řídit pomocí návrháře.  
+ [Postupy: Formátování ovládacího prvku DataGrid model Windows Forms pomocí návrháře](how-to-format-the-windows-forms-datagrid-control-using-the-designer.md)  
+ V této části najdete popis postupu změny vlastností `DataGrid` ovládacího prvku souvisejících s jeho vzhledy pomocí návrháře.  
   
- [Postupy: Formátování ovládacího prvku Windows Forms DataGrid](how-to-format-the-windows-forms-datagrid-control.md)  
- Popisuje, jak změnit vzhled související vlastnosti `DataGrid` ovládacího prvku.  
+ [Postupy: Formátování model Windows Forms ovládacího prvku DataGrid](how-to-format-the-windows-forms-datagrid-control.md)  
+ Popisuje, jak změnit vlastnosti `DataGrid` ovládacího prvku souvisejícího s jeho zobrazením.  
   
  [Klávesové zkratky pro ovládací prvek Windows Forms DataGrid](keyboard-shortcuts-for-the-windows-forms-datagrid-control.md)  
- Uvádí klávesové zkratky pro navigaci `DataGrid` ovládacího prvku.  
+ Seznam klávesových zkratek pro navigaci `DataGrid` prostřednictvím ovládacího prvku.  
   
- [Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid](how-to-respond-to-clicks-in-the-windows-forms-datagrid-control.md)  
- Popisuje, jak určit, která buňka uživatel klikne v `DataGrid` ovládacího prvku.  
+ [Postupy: Reakce na kliknutí v ovládacím prvku DataGrid model Windows Forms](how-to-respond-to-clicks-in-the-windows-forms-datagrid-control.md)  
+ Popisuje, jak určit, na kterou buňku uživatel kliknul v `DataGrid` ovládacím prvku.  
   
- [Postupy: Ověřování vstupu s ovládacím prvku Windows Forms DataGrid](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
- Popisuje, jak ověřit vstup v datové sadě vázán na `DataGrid` ovládacího prvku.  
+ [Postupy: Ověření vstupu pomocí model Windows Forms ovládacího prvku DataGrid](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
+ Popisuje, jak ověřit vstup v datové sadě svázané s `DataGrid` ovládacím prvkem.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.DataGrid>  
- Najdete zde přehled <xref:System.Windows.Forms.DataGrid> třídy.  
+ Poskytuje přehled <xref:System.Windows.Forms.DataGrid> třídy.  
   
  <xref:System.Windows.Forms.DataGrid.DataSource%2A>  
- Poskytuje podrobnosti o použití této vlastnosti se vytvořit vazbu <xref:System.Windows.Forms.DataGrid> ovládacího prvku k datům.  
+ Poskytuje podrobnosti o použití této vlastnosti k navázání <xref:System.Windows.Forms.DataGrid> ovládacího prvku na data.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Windows Forms – datová vazba](../windows-forms-data-binding.md)  
- Obsahuje odkazy na témata o datové vazby v modelu Windows Forms.  
+ Obsahuje odkazy na témata týkající se datových vazeb v model Windows Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

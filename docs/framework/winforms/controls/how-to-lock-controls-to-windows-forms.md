@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms controls, locking
 - controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-ms.openlocfilehash: cbf82f1481ee9779cec5cfbf3fb057b7ea399a1c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 9eb762a9691a6127e2419f9ddc25f3010d3383fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039907"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966526"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>Postupy: Uzamykání ovládacích prvků ve Windows Forms
 Při návrhu uživatelského rozhraní (UI) aplikace systému Windows můžete ovládací prvky uzamknout, jakmile jsou umístěny správně, takže při nastavování dalších vlastností je neúmyslně přesunovat ani měnit jejich velikost.
@@ -24,14 +24,14 @@ Při návrhu uživatelského rozhraní (UI) aplikace systému Windows můžete o
      Případně klikněte pravým tlačítkem myši na ovládací prvek a vyberte **Zamknout ovládací prvky**.
 
     > [!NOTE]
-    >  Blokovací ovládací prvky zabraňují jejich přetažení na novou velikost nebo umístění na návrhové ploše. Můžete však i nadále měnit velikost nebo umístění ovládacích prvků pomocí okna **vlastnosti** nebo v kódu.
+    > Blokovací ovládací prvky zabraňují jejich přetažení na novou velikost nebo umístění na návrhové ploše. Můžete však i nadále měnit velikost nebo umístění ovládacích prvků pomocí okna **vlastnosti** nebo v kódu.
 
 ## <a name="to-lock-all-the-controls-on-a-form"></a>Uzamčení všech ovládacích prvků ve formuláři
 
 1. V nabídce **Formát** vyberte možnost **Zamknout ovládací prvky**.
 
     > [!NOTE]
-    >  Tento příkaz zamkne i velikost formuláře, protože formulář je ovládací prvek.
+    > Tento příkaz zamkne i velikost formuláře, protože formulář je ovládací prvek.
 
 ## <a name="to-unlock-all-locked-controls-on-a-form"></a>Odemčení všech uzamčených ovládacích prvků na formuláři
 

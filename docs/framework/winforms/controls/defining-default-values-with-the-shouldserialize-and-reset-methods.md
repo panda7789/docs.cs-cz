@@ -8,26 +8,26 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property methods
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-ms.openlocfilehash: 5c95272c672d9b35d61e2fca8cccdbc532ef6776
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 609fe4896a2b01b8a69ff8a3d0854c85ddbd6a26
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211284"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969097"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
-`ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat vlastnosti, pokud vlastnost není máte jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduchý výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu pro atribut konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:
+`ShouldSerialize`a `Reset` jsou volitelné metody, které lze zadat pro vlastnost, pokud vlastnost nemá jednoduchou výchozí hodnotu. Pokud má vlastnost jednoduchou výchozí hodnotu, měli byste použít <xref:System.ComponentModel.DefaultValueAttribute> a dodat výchozí hodnotu konstruktoru třídy atributů. Jeden z těchto mechanismů v Návrháři povoluje následující funkce:
 
-- Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila od jeho výchozí hodnotu.
+- Vlastnost poskytuje vizuální indikaci v prohlížeči vlastností, pokud byl změněn z výchozí hodnoty.
 
-- Uživatel může kliknout pravým tlačítkem na vlastnosti a zvolte **resetování** obnovíte jeho výchozí hodnota vlastnosti.
+- Uživatel může kliknout pravým tlačítkem na vlastnost a zvolit **obnovit** pro obnovení výchozí hodnoty vlastnosti.
 
-- Návrhář vytvoří efektivnějšího kódu.
+- Návrhář generuje efektivnější kód.
 
     > [!NOTE]
-    >  Buď použijte <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody. Nepoužívejte obojí.
+    > <xref:System.ComponentModel.DefaultValueAttribute> Buď použijte nebo poskytněte `Reset`metody *PropertyName* a `ShouldSerialize` *PropertyName* . Nepoužívejte obojí.
 
- `Reset` *PropertyName* metoda nastaví vlastnost na výchozí hodnotu, jak je znázorněno v následujícím fragmentu kódu.
+ Metoda propertyName nastaví vlastnost na výchozí hodnotu, jak je znázorněno v následujícím fragmentu kódu. `Reset`
 
 ```vb
 Public Sub ResetMyFont()
@@ -42,9 +42,9 @@ public void ResetMyFont() {
 ```
 
 > [!NOTE]
->  Pokud nemá žádné vlastnosti `Reset` metoda, není označena třídou <xref:System.ComponentModel.DefaultValueAttribute>a výchozí hodnota zadaná v jeho deklaraci, nemá `Reset` možnost pro tuto vlastnost je zakázaný v místní nabídce **vlastnosti** okna Návrháře formulářů Windows v sadě Visual Studio.
+> Pokud vlastnost `Reset` neobsahuje metodu, není označena jako <xref:System.ComponentModel.DefaultValueAttribute>a nemá `Reset` ve své deklaraci výchozí hodnotu, je možnost pro tuto vlastnost zakázána v místní nabídce okna **vlastnosti** . Návrhář formulářů v aplikaci Visual Studio.
 
- Použití návrháře, jako je Visual Studio `ShouldSerialize` *PropertyName* metodu ke kontrole, zda má došlo ke změně vlastnosti z výchozí hodnoty a napsat kód do formuláře pouze tehdy, pokud vlastnost změnit, což umožňuje mnohem efektivnější kódu generování. Příklad:
+ Návrháři, jako je například Visual Studio `ShouldSerialize`, používají metodu *PropertyName* k ověření, zda se vlastnost změnila z výchozí hodnoty, a zápis kódu do formuláře pouze v případě, že dojde ke změně vlastnosti, což umožňuje efektivnější generování kódu. Příklad:
 
 ```vb
 'Returns true if the font has changed; otherwise, returns false.
@@ -62,7 +62,7 @@ public bool ShouldSerializeMyFont() {
 }
 ```
 
- Následuje příklad úplného kódu.
+ Příklad úplného kódu:
 
 ```vb
 Option Explicit
@@ -141,7 +141,7 @@ public class MyControl : Control {
 }
 ```
 
- V takovém případě i v případě, že hodnota soukromé proměnné přistupuje `MyFont` vlastnost je `null`, vlastnost prohlížeče nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnosti nadřazeného objektu, pokud není `null`, nebo výchozí hodnotu <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>. Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost. Místo toho `ShouldSerialize` a `Reset` metod je nutné implementovat pro `MyFont` vlastnost.
+ V tomto případě, a to i `MyFont` v případě `null`, že je hodnota soukromé proměnné, ke které má vlastnost přistupovaná, `null`nezobrazuje prohlížeč vlastností, ale <xref:System.Windows.Forms.Control.Font%2A> zobrazuje vlastnost nadřazeného objektu, pokud `null`není, nebo výchozí <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>. Proto nelze nastavit výchozí hodnotu `MyFont` pro tuto vlastnost <xref:System.ComponentModel.DefaultValueAttribute> a nelze ji použít pro tuto vlastnost. Místo toho `Reset`musíbýt pro `ShouldSerialize` vlastnostimplementovány`MyFont` metody a.
 
 ## <a name="see-also"></a>Viz také:
 

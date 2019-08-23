@@ -2,15 +2,15 @@
 title: Vytváření vlastních atributů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5c9ef584-6c7c-496b-92a9-6e42f8d9ca28
-ms.openlocfilehash: 90e8e9b9a3fa8e0b488f41d035b017d6113213b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4b55f92466fde47011937d08c946c9c75ca07b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903549"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966334"
 ---
 # <a name="creating-custom-attributes-visual-basic"></a>Vytváření vlastních atributů (Visual Basic)
-Můžete vytvořit vlastní atributy definováním třídy atributu, třídu, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, díky kterému budou Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značek s názvem programátora, který napsal typu. Můžete třeba definovat vlastní `Author` třídy atributů:  
+Můžete vytvořit vlastní atributy definováním třídy atributů, třídy, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, což umožňuje rychlou a jednoduchou identifikaci definic atributů v metadatech. Předpokládejme, že chcete označit typy s názvem programátora, který typ napsal. Je možné definovat vlastní `Author` třídu atributu:  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.Class Or   
@@ -26,9 +26,9 @@ Public Class Author
 End Class  
 ```  
   
- Název třídy je název atributu, `Author`. Je odvozen z `System.Attribute`, tak, aby byl třídu vlastního atributu. Vlastní atribut poziční parametry jsou parametry konstruktoru. V tomto příkladu `name` je poziční parametr. Žádné vlastnosti nebo pole veřejné čtení a zápis jsou pojmenované parametry. V takovém případě `version` je pouze s názvem parametru. Všimněte si použití `AttributeUsage` atribut, aby `Author` atribut je platný pouze pro třídy a `Structure` deklarace.  
+ Název třídy je název atributu, `Author`. Je odvozen z `System.Attribute`, takže se jedná o vlastní třídu atributu. Parametry konstruktoru jsou poziční parametry vlastního atributu. V tomto příkladu `name` je poziční parametr. Všechna veřejná pole nebo vlastnosti pro čtení i zápis se nazývají parametry. V tomto případě `version` je jediným pojmenovaným parametrem. Všimněte si, že použití `AttributeUsage` atributu pro nastavení atributu `Author` je platné pouze pro třídu a `Structure` deklarace.  
   
- Tento nový atribut můžete použít takto:  
+ Tento nový atribut můžete použít následujícím způsobem:  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1)>   
@@ -37,7 +37,7 @@ Class SampleClass
 End Class  
 ```  
   
- `AttributeUsage` nemá parametr pojmenovaný `AllowMultiple`, pomocí které můžete vytvořit vlastní atribut jedno použití nebo multiuse. V následujícím příkladu kódu je vytvořen multiuse atribut.  
+ `AttributeUsage`má pojmenovaný parametr, `AllowMultiple`pomocí kterého můžete vytvořit vlastní atribut s jedním použitím nebo Multiuse. V následujícím příkladu kódu je vytvořen atribut Multiuse.  
   
 ```vb  
 ' multiuse attribute  
@@ -48,7 +48,7 @@ Public Class Author
     Inherits System.Attribute  
 ```  
   
- V následujícím příkladu kódu se více atributů stejného typu aplikován na třídu.  
+ V následujícím příkladu kódu je pro třídu použito více atributů stejného typu.  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1),   
@@ -60,12 +60,12 @@ End Class
 ```  
   
 > [!NOTE]
->  Pokud vaše třída atributů obsahuje vlastnost, musí být tuto vlastnost pro čtení i zápis.  
+> Pokud vaše třída atributu obsahuje vlastnost, musí být tato vlastnost pro čtení i zápis.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>
-- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
 - [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)
 - [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
 - [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)

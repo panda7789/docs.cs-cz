@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 145c4e33bd601fa61750df56b949bda5d43cc372
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 574449f95ee9632d37f277d61806802457494df0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817998"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964589"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 
@@ -106,7 +106,7 @@ Pouze <xref:System.Windows.Controls.Page> označení je užitečné pro zobrazen
 
 Chcete-li, aby soubor značek a soubor s kódem na pozadí pracovaly společně, je vyžadována následující konfigurace:
 
-- V kódu `Page` musí element `x:Class` obsahovat atribut. Když je aplikace `x:Class` sestavena, existence v souboru označení způsobí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] , že vytvoří `partial` třídu, která je odvozena z <xref:System.Windows.Controls.Page> a má název, který je určen `x:Class` atributem. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` třída implementuje `InitializeComponent`rozhraní, které je voláno k registraci událostí a nastavení vlastností, které jsou implementovány v označení.
+- V kódu `Page` musí element `x:Class` obsahovat atribut. Když je `x:Class` aplikace sestavena, existence v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) `partial` vytvoří třídu, která je odvozena z <xref:System.Windows.Controls.Page> a `x:Class` má název, který je určen atributem. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` třída implementuje `InitializeComponent`rozhraní, které je voláno k registraci událostí a nastavení vlastností, které jsou implementovány v označení.
 
 - V kódu na pozadí třída musí být `partial` třída se stejným názvem, který je určen `x:Class` atributem v označení a musí odvozovat z <xref:System.Windows.Controls.Page>. To umožňuje, aby soubor s kódem na pozadí byl přidružen `partial` ke třídě, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).
 
@@ -123,7 +123,7 @@ Jakmile budete mít <xref:System.Windows.Controls.Page>, můžete na něj přej�
 
 [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]vyžaduje hostování určitého množství aplikační infrastruktury v prohlížeči. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástrojije třídasoučástídefiniceaplikace,kterávytvářípožadovanouaplikačníinfrastrukturu(vizPřehledsprávyaplikací).<xref:System.Windows.Application> [](application-management-overview.md)
 
-Definice aplikace je obvykle implementována pomocí značek i kódu na pozadí se souborem označení, který je nakonfigurován jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `ApplicationDefinition` položka. Následuje definice aplikace pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
+Definice aplikace je obvykle implementována pomocí značek i kódu na pozadí se souborem označení nakonfigurovaným jako položka MSBuild`ApplicationDefinition` . Následuje definice aplikace pro [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
 
 [!code-xaml[XBAPAppDefSnippets#XBAPApplicationDefinitionMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/XBAPAppDefSnippets/CSharp/App.xaml#xbapapplicationdefinitionmarkup)]
 
@@ -527,7 +527,7 @@ Chcete-li uložit soubor cookie mezi relacemi aplikace, je nutné do souboru coo
 
 *NÁZEV* `=` *HODNOTA*`; expires=DAY, DD-MMM-YYYY HH:MM:SS GMT`
 
-Soubor cookie s datem vypršení platnosti je uložen ve složce [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] dočasných internetových souborů aktuální instalace do doby, než vyprší platnost souboru cookie. Takový soubor cookie je známý jako *trvalý soubor cookie* , protože trvá napříč relacemi aplikací.
+Soubor cookie s datem vypršení platnosti je uložen ve složce dočasných internetových souborů instalace systému Windows, dokud nevyprší platnost souboru cookie. Takový soubor cookie je známý jako *trvalý soubor cookie* , protože trvá napříč relacemi aplikací.
 
 Můžete načíst relaci i trvalé soubory cookie voláním <xref:System.Windows.Application.GetCookie%2A> metody a <xref:System.Uri> předáním umístění, kde byl <xref:System.Windows.Application.SetCookie%2A> soubor cookie nastaven pomocí metody.
 

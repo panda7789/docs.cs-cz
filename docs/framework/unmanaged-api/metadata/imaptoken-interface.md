@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a50f8b13979426b8ea04f1952216afe5de337386
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3fed44fe814ec873cffb1aa4006e11445f8e03db
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59111667"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965775"
 ---
 # <a name="imaptoken-interface"></a>IMapToken – rozhraní
-Poskytuje funkce mapování mezi sestaveními.  
+Poskytuje možnosti mapování mezi sestaveními.  
   
 > [!NOTE]
->  `IMapToken` Pomocí klienta musí implementovat rozhraní.  
+> `IMapToken` Rozhraní musí být implementováno klientem.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Map – metoda](../../../../docs/framework/unmanaged-api/metadata/imaptoken-map-method.md)|Mapuje vztah mezi dvěma sestavení pomocí metadat podpisy.|  
+|[Map – metoda](../../../../docs/framework/unmanaged-api/metadata/imaptoken-map-method.md)|Mapuje relaci mezi dvěma sestaveními pomocí podpisů metadat.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

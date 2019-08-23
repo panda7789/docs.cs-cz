@@ -11,36 +11,36 @@ helpviewer_keywords:
 ms.assetid: 1432aa2d-bd83-4346-bf3b-a1b7920e2aa9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4d785ae9b3bce0b5c77414057ef063d6e9d3e14a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f21126361ce69ab14d18e12d2787b2c264116b02
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593594"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921526"
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a>Postupy: Načtení sestavení do domény aplikace
-Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporučeným způsobem je použít `static` (`Shared` v jazyce Visual Basic) <xref:System.Reflection.Assembly.Load%2A> metodu <xref:System.Reflection.Assembly?displayProperty=nameWithType> třídy. Další způsoby, které lze načíst sestavení patří:  
+Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporučeným `static` způsobem je použít metodu (`Shared` v <xref:System.Reflection.Assembly?displayProperty=nameWithType> Visual Basic) <xref:System.Reflection.Assembly.Load%2A> třídy. Další způsoby, jak lze načíst sestavení, zahrnují:  
   
-- <xref:System.Reflection.Assembly.LoadFrom%2A> Metodu <xref:System.Reflection.Assembly> třídy načte sestavení zadané umístění souboru. Načtení sestavení se tato metoda používá různé zatížení kontext.  
+- <xref:System.Reflection.Assembly.LoadFrom%2A> Metoda<xref:System.Reflection.Assembly> třídy načte sestavení příslušné umístění souboru. Načítání sestavení s touto metodou používá jiný kontext zatížení.  
   
-- <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody načtení sestavení do kontextu pouze pro reflexi. Sestavení zavedených v tomto kontextu můžete prověřit, ale nebyl proveden, umožňující zkoumání sestavení, které se zaměřují na jiných platformách. Zobrazit [jak: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
-  
-> [!NOTE]
->  Kontextu pouze pro reflexi je v rozhraní .NET Framework verze 2.0 nová.  
-  
-- Metody jako <xref:System.AppDomain.CreateInstance%2A> a <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> z <xref:System.AppDomain> třídy lze načíst sestavení do domény aplikace.  
-  
-- <xref:System.Type.GetType%2A> Metodu <xref:System.Type> třídy lze načíst sestavení.  
-  
-- <xref:System.AppDomain.Load%2A> Metodu <xref:System.AppDomain?displayProperty=nameWithType> třídy lze načíst sestavení, ale používá se především pro interoperabilitu COM. Není vhodné používat k načtení sestavení do domény aplikace, ze kterého se označuje jako domény aplikace.  
+- Metody <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a<xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> načtou sestavení do kontextu pouze pro reflexi. Sestavení, která jsou načtena do tohoto kontextu, lze prozkoumat, ale nejsou provedena, a umožnit tak zkoumání sestavení, která cílí na jiné platformy. Viz [jak: Načíst sestavení do kontextu](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)pouze pro reflexi.  
   
 > [!NOTE]
->  Od verze rozhraní .NET Framework verze 2.0, nenačte modul runtime, který byl zkompilován s verzí rozhraní .NET Framework, která má vyšší číslo verze než aktuálně zavedený modul runtime sestavení. To platí pro kombinaci hlavní a vedlejší součásti číslo verze.  
+> Kontext pouze pro reflexi je v .NET Framework verze 2,0 nový.  
   
- Můžete zadat tak, jak just-in-time (JIT) kompilaci kódu z načtených sestavení jsou sdílena mezi doménami aplikace. Další informace najdete v tématu [doménám a sestavením aplikací](application-domains.md#application-domains-and-assemblies).  
+- <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> Metody jako <xref:System.AppDomain.CreateInstance%2A> a<xref:System.AppDomain> třídy mohou načítat sestavení do domény aplikace.  
+  
+- <xref:System.Type.GetType%2A> Metoda<xref:System.Type> třídy může načíst sestavení.  
+  
+- <xref:System.AppDomain.Load%2A> Metoda<xref:System.AppDomain?displayProperty=nameWithType> třídy může načíst sestavení, ale používá se hlavně pro interoperabilitu modelu COM. Neměl by být použit pro načtení sestavení do domény aplikace jiné než domény aplikace, ze které je volána.  
+  
+> [!NOTE]
+> Počínaje verzí 2,0 .NET Framework modul runtime nenačte sestavení, které bylo zkompilováno s verzí .NET Framework, která má vyšší číslo verze než aktuálně načtený modul runtime. To platí pro kombinaci hlavních a vedlejších součástí čísla verze.  
+  
+ Můžete určit způsob, jakým je zkompilovaný kód JIT (just-in-time) z načtených sestavení sdílen mezi doménami aplikace. Další informace naleznete v tématu [aplikační domény a sestavení](application-domains.md#application-domains-and-assemblies).  
   
 ## <a name="example"></a>Příklad  
- Následující kód načte sestavení do aktuální domény aplikace s názvem "example.exe" nebo "example.dll" získá typ s názvem `Example` ze sestavení, získá konstruktor bez parametrů metodu s názvem `MethodA` u tohoto typu a provede metodu. Úplné informace o získání informací z načtené sestavení, naleznete v tématu [dynamické načtení a použití typů](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+ Následující kód načte sestavení s názvem "example. exe" nebo "example. dll" do aktuální domény aplikace, získá typ pojmenovaný `Example` ze sestavení, získá metodu bez parametrů pojmenovanou `MethodA` pro daný typ a spustí metodu. Kompletní diskuzi o získání informací z načteného sestavení naleznete v tématu [Dynamické načítání a používání typů](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
  [!code-cpp[System.AppDomain.Load#2](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.appdomain.load/cpp/source2.cpp#2)]
  [!code-csharp[System.AppDomain.Load#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.load/cs/source2.cs#2)]
@@ -49,8 +49,8 @@ Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporu
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>
-- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)
+- [Programování s aplikačními doménami](application-domains.md#programming-with-application-domains)
 - [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)
 - [Používání domén aplikací](../../../docs/framework/app-domains/use.md)
-- [Postupy: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)
-- [Doménám a sestavením aplikací](application-domains.md#application-domains-and-assemblies)
+- [Postupy: Načíst sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)
+- [Aplikační domény a sestavení](application-domains.md#application-domains-and-assemblies)

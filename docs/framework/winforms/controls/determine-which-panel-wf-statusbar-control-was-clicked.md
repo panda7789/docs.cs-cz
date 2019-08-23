@@ -13,27 +13,27 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: a659de62965d17e965eee2f750337a08ae1801e0
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 6229d8965949641105cd0e9708474c3249d52d1d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053724"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965725"
 ---
 # <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
+> <xref:System.Windows.Forms.ToolStripStatusLabel> <xref:System.Windows.Forms.StatusBar> <xref:System.Windows.Forms.StatusBarPanel> <xref:System.Windows.Forms.StatusBarPanel> Ovládací prvky <xref:System.Windows.Forms.StatusStrip> a nahrazují<xref:System.Windows.Forms.StatusBar> a přidávají funkce ovládacím prvkům a; ovládací prvky a jsou však uchovávány pro zpětnou kompatibilitu i pro budoucí použití, pokud výběrem.  
   
- Do programu [ovládacího prvku StatusBar](statusbar-control-windows-forms.md) ovládacího prvku na reakce na kliknutí na uživatele, použijte příkazy case v rámci <xref:System.Windows.Forms.StatusBar.PanelClick> událostí. Událost obsahuje argument (panel argument), který obsahuje odkaz na kliknutí na <xref:System.Windows.Forms.StatusBarPanel>. Pomocí tohoto odkazu, můžete určit index panelu kliknutí a odpovídajícím způsobem programu.  
+ Chcete-li programovat ovládací prvek stavového [ovládacího prvku](statusbar-control-windows-forms.md) pro reakci na kliknutí uživatele, použijte příkaz <xref:System.Windows.Forms.StatusBar.PanelClick> Case v rámci události. Událost obsahuje argument (argument panel), který obsahuje odkaz na kliknutí <xref:System.Windows.Forms.StatusBarPanel>. Pomocí tohoto odkazu můžete určit index kliknutí na panely a program odpovídajícím způsobem.  
   
 > [!NOTE]
->  Ujistěte se, <xref:System.Windows.Forms.StatusBar> ovládacího prvku <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> je nastavena na `true`.  
+> Zajistěte <xref:System.Windows.Forms.StatusBar> , aby <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost ovládacího prvku byla `true`nastavena na hodnotu.  
   
-### <a name="to-determine-which-panel-was-clicked"></a>Chcete-li zjistit panelu označeného kliknutím  
+### <a name="to-determine-which-panel-was-clicked"></a>Určení panelu, na který byl kliknuto  
   
-1. V <xref:System.Windows.Forms.StatusBar.PanelClick> obslužná rutina události, použijte `Select Case` (v jazyce Visual Basic) nebo `switch case` (Visual C# nebo Visual C++) zjistíte, došlo ke kliknutí na panelu tím, že kontroluje indexu v argumentech události kliknutí na panel.  
+1. `switch case` `Select Case`Vobslužné rutině události použijte příkaz (v Visual Basic) nebo (Visual C# nebo Visual C++) a určete, na který panel byl klikl, prozkoumejte index kliknutí na panelu v argumentech události. <xref:System.Windows.Forms.StatusBar.PanelClick>  
   
-     Následující příklad kódu vyžaduje přítomnost ve formuláři <xref:System.Windows.Forms.StatusBar> ovládacího prvku, `StatusBar1`a dvě <xref:System.Windows.Forms.StatusBarPanel> objekty, `StatusBarPanel1` a `StatusBarPanel2`.  
+     Následující příklad kódu vyžaduje přítomnost, ve <xref:System.Windows.Forms.StatusBar> formuláři ovládacího prvku, `StatusBarPanel1` `StatusBar1`, a dvou <xref:System.Windows.Forms.StatusBarPanel> objektů a `StatusBarPanel2`.  
   
     ```vb  
     Private Sub StatusBar1_PanelClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.StatusBarPanelClickEventArgs) Handles StatusBar1.PanelClick  
@@ -79,7 +79,7 @@ ms.locfileid: "66053724"
        }  
     ```  
   
-     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuál C#, vizuál C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.statusBar1.PanelClick += new   

@@ -12,15 +12,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 593644802fa490c80b361bfdad3473abe4e82922
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4b5de58caeeac5ae85402e91a1402958e68336bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740275"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967591"
 ---
 # <a name="cordebugcodeinvokepurpose-enumeration"></a>Výčet CorDebugCodeInvokePurpose
-Popisuje, proč exportované funkce volá spravovaný kód.  
+Popisuje, proč exportovaná funkce volá spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ typedef enum CorDebugCodeInvokePurpose
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CODE_INVOKE_PURPOSE_NONE`|Žádné nebo neznámý.|  
-|`CODE_INVOKE_PURPOSE_NATIVE_TO_MANAGED_TRANSITION`|Spravovaný kód se spustí všechny spravovaný vstupní bod, jako je například reverzní p-invoke. Jakýkoli účel podrobnější neznámý modul runtime.|  
-|`CODE_INVOKE_PURPOSE_CLASS_INIT`|Spravovaný kód se spustí statický konstruktor.|  
-|`CODE_INVOKE_PURPOSE_INTERFACE_DISPATCH`|Spravovaný kód se spustí provádění pro některé metody rozhraní, která byla volána.|  
+|`CODE_INVOKE_PURPOSE_NONE`|Žádná nebo neznámá.|  
+|`CODE_INVOKE_PURPOSE_NATIVE_TO_MANAGED_TRANSITION`|Spravovaný kód spustí všechny spravované vstupní body, jako je reverzní volání nespravovaného kódu. Jakýkoli podrobnější účel není modulem runtime znám.|  
+|`CODE_INVOKE_PURPOSE_CLASS_INIT`|Spravovaný kód spustí statický konstruktor.|  
+|`CODE_INVOKE_PURPOSE_INTERFACE_DISPATCH`|Spravovaný kód spustí implementaci pro některou metodu rozhraní, která byla volána.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet je používán [icordebugprocess6::getexportstepinfo –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-getexportstepinfo-method.md) metodu k dispozici informace o procházení spravovaného kódu.  
+ Tento výčet používá metoda [ICorDebugProcess6:: GetExportStepInfo –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-getexportstepinfo-method.md) k poskytnutí informací o prokrokování prostřednictvím spravovaného kódu.  
   
 > [!NOTE]
->  Tento výčet je určena pro použití v .NET Native ladění pouze scénáře.  
+> Tento výčet je určený pro použití pouze v .NET Nativech scénářích ladění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
