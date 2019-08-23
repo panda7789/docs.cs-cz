@@ -1,43 +1,43 @@
 ---
-title: 'Postupy: Vytvoření dokumentace XML v jazyce Visual Basic'
+title: 'Postupy: Vytvoření dokumentace XML v Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML comments
 - XML documentation [Visual Basic], creating
 ms.assetid: 27b5b06c-09b9-496a-8245-f9542d846230
-ms.openlocfilehash: 95f6c5b23deadc16eb1e81f274e2cc5149598fb7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9380c23ab6cfdbecd519926229b45ed863f07f9e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050428"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947719"
 ---
-# <a name="how-to-create-xml-documentation-in-visual-basic"></a><span data-ttu-id="2eb5d-102">Postupy: Vytvoření dokumentace XML v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="2eb5d-102">How to: Create XML Documentation in Visual Basic</span></span>
-<span data-ttu-id="2eb5d-103">Tento příklad ukazuje, jak přidat komentáře k dokumentaci XML do kódu.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-103">This example shows how to add XML documentation comments to your code.</span></span>  
+# <a name="how-to-create-xml-documentation-in-visual-basic"></a><span data-ttu-id="ba228-102">Postupy: Vytvoření dokumentace XML v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="ba228-102">How to: Create XML Documentation in Visual Basic</span></span>
+<span data-ttu-id="ba228-103">Tento příklad ukazuje, jak přidat dokumentační komentáře XML do kódu.</span><span class="sxs-lookup"><span data-stu-id="ba228-103">This example shows how to add XML documentation comments to your code.</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-xml-documentation-for-a-type-or-member"></a><span data-ttu-id="2eb5d-104">K vytvoření dokumentace XML pro typ nebo člen</span><span class="sxs-lookup"><span data-stu-id="2eb5d-104">To create XML documentation for a type or member</span></span>  
+### <a name="to-create-xml-documentation-for-a-type-or-member"></a><span data-ttu-id="ba228-104">Vytvoření dokumentace XML pro typ nebo člen</span><span class="sxs-lookup"><span data-stu-id="ba228-104">To create XML documentation for a type or member</span></span>  
   
-1. <span data-ttu-id="2eb5d-105">V **Editor kódu**, umístěte kurzor na řádek nad tento typ nebo člen, pro kterou chcete vytvořit dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-105">In the **Code Editor**, position your cursor on the line above the type or member for which you want to create documentation.</span></span>  
+1. <span data-ttu-id="ba228-105">V **editoru kódu**umístěte kurzor na řádek nad typ nebo člen, pro který chcete vytvořit dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="ba228-105">In the **Code Editor**, position your cursor on the line above the type or member for which you want to create documentation.</span></span>  
   
-2. <span data-ttu-id="2eb5d-106">Typ `'''` (tří jednoduchých uvozovek).</span><span class="sxs-lookup"><span data-stu-id="2eb5d-106">Type `'''` (three single-quotation marks).</span></span>  
+2. <span data-ttu-id="ba228-106">Typ `'''` (tři jednoduché uvozovky).</span><span class="sxs-lookup"><span data-stu-id="ba228-106">Type `'''` (three single-quotation marks).</span></span>  
   
-     <span data-ttu-id="2eb5d-107">Kostra XML pro typ nebo člen bude přidán do **Editor kódu**.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-107">An XML skeleton for the type or member is added in the **Code Editor**.</span></span>  
+     <span data-ttu-id="ba228-107">V **editoru kódu**se přidá kostra XML pro daný typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="ba228-107">An XML skeleton for the type or member is added in the **Code Editor**.</span></span>  
   
-3. <span data-ttu-id="2eb5d-108">Přidáte popisné informace mezi odpovídající značky.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-108">Add descriptive information between the appropriate tags.</span></span>  
+3. <span data-ttu-id="ba228-108">Přidejte popisné informace mezi příslušné značky.</span><span class="sxs-lookup"><span data-stu-id="ba228-108">Add descriptive information between the appropriate tags.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="2eb5d-109">Pokud chcete přidat další řádky v rámci bloku dokumentace XML, musí začínat každého řádku `'''`.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-109">If you add additional lines within the XML documentation block, each line must begin with `'''`.</span></span>  
+    > <span data-ttu-id="ba228-109">Pokud přidáte další řádky do bloku dokumentace XML, musí každý řádek začínat `'''`na.</span><span class="sxs-lookup"><span data-stu-id="ba228-109">If you add additional lines within the XML documentation block, each line must begin with `'''`.</span></span>  
   
-4. <span data-ttu-id="2eb5d-110">Přidejte další kód, který používá typ nebo člen pomocí nového komentáře k dokumentaci XML.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-110">Add additional code that uses the type or member with the new XML documentation comments.</span></span>  
+4. <span data-ttu-id="ba228-110">Přidejte další kód, který používá typ nebo člen s novými dokumentačními komentáři XML.</span><span class="sxs-lookup"><span data-stu-id="ba228-110">Add additional code that uses the type or member with the new XML documentation comments.</span></span>  
   
-     <span data-ttu-id="2eb5d-111">Technologie IntelliSense zobrazí text z \<summary > značky pro tento typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-111">IntelliSense displays the text from the \<summary> tag for the type or member.</span></span>  
+     <span data-ttu-id="ba228-111">IntelliSense zobrazí text z \<značky Summary > pro daný typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="ba228-111">IntelliSense displays the text from the \<summary> tag for the type or member.</span></span>  
   
-5. <span data-ttu-id="2eb5d-112">Zkompilujte kód a vygenerovat soubor XML obsahující komentáře k dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="2eb5d-112">Compile the code to generate an XML file containing the documentation comments.</span></span> <span data-ttu-id="2eb5d-113">Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span><span class="sxs-lookup"><span data-stu-id="2eb5d-113">For more information, see [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span></span>  
+5. <span data-ttu-id="ba228-112">Zkompilujte kód pro vygenerování souboru XML obsahujícího dokumentační komentáře.</span><span class="sxs-lookup"><span data-stu-id="ba228-112">Compile the code to generate an XML file containing the documentation comments.</span></span> <span data-ttu-id="ba228-113">Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span><span class="sxs-lookup"><span data-stu-id="ba228-113">For more information, see [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2eb5d-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2eb5d-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ba228-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ba228-114">See also</span></span>
 
-- [<span data-ttu-id="2eb5d-115">Dokumentace kódu s XML</span><span class="sxs-lookup"><span data-stu-id="2eb5d-115">Documenting Your Code with XML</span></span>](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
-- [<span data-ttu-id="2eb5d-116">Značky pro komentáře XML</span><span class="sxs-lookup"><span data-stu-id="2eb5d-116">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/index.md)
-- [<span data-ttu-id="2eb5d-117">/doc</span><span class="sxs-lookup"><span data-stu-id="2eb5d-117">/doc</span></span>](../../../visual-basic/reference/command-line-compiler/doc.md)
+- [<span data-ttu-id="ba228-115">Dokumentace kódu s XML</span><span class="sxs-lookup"><span data-stu-id="ba228-115">Documenting Your Code with XML</span></span>](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+- [<span data-ttu-id="ba228-116">Značky pro komentáře XML</span><span class="sxs-lookup"><span data-stu-id="ba228-116">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/index.md)
+- [<span data-ttu-id="ba228-117">/doc</span><span class="sxs-lookup"><span data-stu-id="ba228-117">/doc</span></span>](../../../visual-basic/reference/command-line-compiler/doc.md)

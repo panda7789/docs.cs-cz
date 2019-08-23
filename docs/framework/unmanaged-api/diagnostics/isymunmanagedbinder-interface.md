@@ -16,31 +16,31 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b6d91f68ac737ce28cdbef926119bb3711bc1096
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e2160ad4174d9cdfe6e27d2ba7f4748bd473a5f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940059"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944235"
 ---
-# <a name="isymunmanagedbinder-interface"></a><span data-ttu-id="8f93a-102">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f93a-102">ISymUnmanagedBinder Interface</span></span>
-<span data-ttu-id="8f93a-103">Představuje vazač symbolů pro nespravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="8f93a-103">Represents a symbol binder for unmanaged code.</span></span>  
+# <a name="isymunmanagedbinder-interface"></a><span data-ttu-id="f547e-102">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f547e-102">ISymUnmanagedBinder Interface</span></span>
+<span data-ttu-id="f547e-103">Představuje pořadač symbolů pro nespravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="f547e-103">Represents a symbol binder for unmanaged code.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="8f93a-104">To představuje bezpečnostní riziko pro otevření souboru databáze (PDB) programu z nedůvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="8f93a-104">It is a security risk to open a program database (PDB) file from an untrusted source.</span></span>  
+> <span data-ttu-id="f547e-104">Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="f547e-104">It is a security risk to open a program database (PDB) file from an untrusted source.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="8f93a-105">Metody</span><span class="sxs-lookup"><span data-stu-id="8f93a-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="f547e-105">Metody</span><span class="sxs-lookup"><span data-stu-id="f547e-105">Methods</span></span>  
   
-|<span data-ttu-id="8f93a-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="8f93a-106">Method</span></span>|<span data-ttu-id="8f93a-107">Popis</span><span class="sxs-lookup"><span data-stu-id="8f93a-107">Description</span></span>|  
+|<span data-ttu-id="f547e-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="f547e-106">Method</span></span>|<span data-ttu-id="f547e-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f547e-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="8f93a-108">GetReaderForFile – metoda</span><span class="sxs-lookup"><span data-stu-id="8f93a-108">GetReaderForFile Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|<span data-ttu-id="8f93a-109">Rozhraní metadat a název souboru, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) struktura, která načte symboly pro ladění související s modulem.</span><span class="sxs-lookup"><span data-stu-id="8f93a-109">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols associated with the module.</span></span>|  
-|[<span data-ttu-id="8f93a-110">GetReaderFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="8f93a-110">GetReaderFromStream Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|<span data-ttu-id="8f93a-111">Rozhraní metadat a datový proud, který obsahuje úložiště symbolů, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) struktura, která bude číst ladění symboly z úložiště daného symbolu.</span><span class="sxs-lookup"><span data-stu-id="8f93a-111">Given a metadata interface and a stream that contains the symbol store, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols from the given symbol store.</span></span>|  
+|[<span data-ttu-id="f547e-108">GetReaderForFile – metoda</span><span class="sxs-lookup"><span data-stu-id="f547e-108">GetReaderForFile Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|<span data-ttu-id="f547e-109">Vzhledem k rozhraní metadat a názvu souboru vrátí správnou strukturu [ISymUnmanagedReader](isymunmanagedreader-interface.md) , která načte symboly ladění přidružené k modulu.</span><span class="sxs-lookup"><span data-stu-id="f547e-109">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols associated with the module.</span></span>|  
+|[<span data-ttu-id="f547e-110">GetReaderFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="f547e-110">GetReaderFromStream Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|<span data-ttu-id="f547e-111">Vzhledem k rozhraní metadat a datovému proudu, který obsahuje úložiště symbolů, vrátí správnou strukturu [ISymUnmanagedReader](isymunmanagedreader-interface.md) , která načte symboly ladění z daného úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="f547e-111">Given a metadata interface and a stream that contains the symbol store, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols from the given symbol store.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="8f93a-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8f93a-112">Requirements</span></span>  
- <span data-ttu-id="8f93a-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="8f93a-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f547e-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f547e-112">Requirements</span></span>  
+ <span data-ttu-id="f547e-113">**Hlaviček** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="f547e-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8f93a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8f93a-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f547e-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f547e-114">See also</span></span>
 
-- [<span data-ttu-id="8f93a-115">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="8f93a-115">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [<span data-ttu-id="8f93a-116">ISymUnmanagedBinder2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f93a-116">ISymUnmanagedBinder2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)
-- [<span data-ttu-id="8f93a-117">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f93a-117">ISymUnmanagedBinder3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)
+- [<span data-ttu-id="f547e-115">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="f547e-115">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="f547e-116">ISymUnmanagedBinder2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f547e-116">ISymUnmanagedBinder2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)
+- [<span data-ttu-id="f547e-117">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f547e-117">ISymUnmanagedBinder3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)

@@ -3,23 +3,23 @@ title: <workflowInstanceManagement>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 63ac89ba-c844-4ae2-96ae-cd752a90a109
-ms.openlocfilehash: 98bc1b24da6e65a11a39d133057c1bb55b003a58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a22c72b7a683e3ecab4344c92e7d835a184a58d5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613423"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947149"
 ---
-# <a name="workflowinstancemanagement"></a><span data-ttu-id="4c578-101">\<workflowInstanceManagement></span><span class="sxs-lookup"><span data-stu-id="4c578-101">\<workflowInstanceManagement></span></span>
-<span data-ttu-id="4c578-102">Chování služby, která vám umožní zadat nastavení, které určují, jak jsou spuštěny instance pracovních postupů, včetně stálost, neošetřené výjimky chování a nečinnosti chování.</span><span class="sxs-lookup"><span data-stu-id="4c578-102">A service behavior that enables you to specify settings that control how workflow instances are run, including persistence, unhandled Exception behavior and idle behavior.</span></span>  
+# <a name="workflowinstancemanagement"></a><span data-ttu-id="e9527-101">\<workflowInstanceManagement></span><span class="sxs-lookup"><span data-stu-id="e9527-101">\<workflowInstanceManagement></span></span>
+<span data-ttu-id="e9527-102">Chování služby, která vám umožní zadat nastavení, které určují, jak jsou spuštěny instance pracovních postupů, včetně stálost, neošetřené výjimky chování a nečinnosti chování.</span><span class="sxs-lookup"><span data-stu-id="e9527-102">A service behavior that enables you to specify settings that control how workflow instances are run, including persistence, unhandled Exception behavior and idle behavior.</span></span>  
   
-<span data-ttu-id="4c578-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="4c578-103">\<system.ServiceModel></span></span>  
-<span data-ttu-id="4c578-104">\<chování ></span><span class="sxs-lookup"><span data-stu-id="4c578-104">\<behaviors></span></span>  
-<span data-ttu-id="4c578-105">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="4c578-105">\<serviceBehaviors></span></span>  
-<span data-ttu-id="4c578-106">\<chování ></span><span class="sxs-lookup"><span data-stu-id="4c578-106">\<behavior></span></span>  
-<span data-ttu-id="4c578-107">\<workflowInstanceManagement></span><span class="sxs-lookup"><span data-stu-id="4c578-107">\<workflowInstanceManagement></span></span>  
+<span data-ttu-id="e9527-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="e9527-103">\<system.ServiceModel></span></span>  
+<span data-ttu-id="e9527-104">\<> chování</span><span class="sxs-lookup"><span data-stu-id="e9527-104">\<behaviors></span></span>  
+<span data-ttu-id="e9527-105">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="e9527-105">\<serviceBehaviors></span></span>  
+<span data-ttu-id="e9527-106">\<> chování</span><span class="sxs-lookup"><span data-stu-id="e9527-106">\<behavior></span></span>  
+<span data-ttu-id="e9527-107">\<workflowInstanceManagement></span><span class="sxs-lookup"><span data-stu-id="e9527-107">\<workflowInstanceManagement></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4c578-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4c578-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e9527-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e9527-108">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -31,25 +31,25 @@ ms.locfileid: "61613423"
 </behaviors>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="4c578-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4c578-109">Attributes and Elements</span></span>  
- <span data-ttu-id="4c578-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4c578-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="e9527-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="e9527-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="e9527-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="e9527-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="4c578-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="4c578-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="e9527-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="e9527-111">Attributes</span></span>  
   
-|<span data-ttu-id="4c578-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="4c578-112">Attribute</span></span>|<span data-ttu-id="4c578-113">Popis</span><span class="sxs-lookup"><span data-stu-id="4c578-113">Description</span></span>|  
+|<span data-ttu-id="e9527-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="e9527-112">Attribute</span></span>|<span data-ttu-id="e9527-113">Popis</span><span class="sxs-lookup"><span data-stu-id="e9527-113">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="4c578-114">authorizedWindowsGroup</span><span class="sxs-lookup"><span data-stu-id="4c578-114">authorizedWindowsGroup</span></span>||  
+|<span data-ttu-id="e9527-114">authorizedWindowsGroup</span><span class="sxs-lookup"><span data-stu-id="e9527-114">authorizedWindowsGroup</span></span>||  
   
-### <a name="child-elements"></a><span data-ttu-id="4c578-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4c578-115">Child Elements</span></span>  
- <span data-ttu-id="4c578-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="4c578-116">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="e9527-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="e9527-115">Child Elements</span></span>  
+ <span data-ttu-id="e9527-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="e9527-116">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="4c578-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4c578-117">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="e9527-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="e9527-117">Parent Elements</span></span>  
   
-|<span data-ttu-id="4c578-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="4c578-118">Element</span></span>|<span data-ttu-id="4c578-119">Popis</span><span class="sxs-lookup"><span data-stu-id="4c578-119">Description</span></span>|  
+|<span data-ttu-id="e9527-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="e9527-118">Element</span></span>|<span data-ttu-id="e9527-119">Popis</span><span class="sxs-lookup"><span data-stu-id="e9527-119">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4c578-120">\<chování > z \<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="4c578-120">\<behavior> of \<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="4c578-121">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="4c578-121">Specifies a behavior element.</span></span>|  
+|[<span data-ttu-id="e9527-120">\<chování > \<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="e9527-120">\<behavior> of \<serviceBehaviors></span></span>](behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="e9527-121">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="e9527-121">Specifies a behavior element.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="4c578-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4c578-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e9527-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9527-122">See also</span></span>
 
 - <xref:System.ServiceModel.Activities.Description.WorkflowInstanceManagementBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.WorkflowInstanceManagementElement>
