@@ -2,20 +2,20 @@
 title: <clientVia>
 ms.date: 03/30/2017
 ms.assetid: c27ee94e-babd-459b-9574-2a6d67d11314
-ms.openlocfilehash: b8864760c1700cd785922b922346204d194f56cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b12a882d942555a24c145b243d2cea764ba106b1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673625"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919507"
 ---
 # <a name="clientvia"></a>\<clientVia>
-Určuje identifikátor URI, pro který by měl být vytvořen přenosový kanál. Další informace naleznete v tématu <xref:System.ServiceModel.Description.ClientViaBehavior>.  
+Určuje identifikátor URI, pro který má být vytvořen přenosový kanál. Další informace naleznete v tématu <xref:System.ServiceModel.Description.ClientViaBehavior>.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<clientVia>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,7 +31,7 @@ Určuje identifikátor URI, pro který by měl být vytvořen přenosový kanál
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`viaUri`|Řetězec určující identifikátor URI, který označuje cestu zpráva měla použít.|  
+|`viaUri`|Řetězec určující identifikátor URI, který označuje cestu, kterou by měla zpráva trvat.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -40,7 +40,7 @@ Určuje identifikátor URI, pro který by měl být vytvořen přenosový kanál
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="see-also"></a>Viz také:
 

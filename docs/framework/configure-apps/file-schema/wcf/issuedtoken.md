@@ -2,22 +2,22 @@
 title: <issuedToken>
 ms.date: 03/30/2017
 ms.assetid: b6eae4b7-a6cd-4e1a-b0f6-f407022550b0
-ms.openlocfilehash: 83061b283c9430af7bcda9cbc832811fa805ed4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 68e3a0802a10b14148188a81ee24ed901caa147f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756283"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925384"
 ---
-# <a name="issuedtoken"></a>\<issuedToken>
-Určuje vlastní token pro ověření klienta ke službě.  
+# <a name="issuedtoken"></a>\<Třídy IssuedToken >
+Určuje vlastní token, který slouží k ověření klienta ke službě.  
   
  \<system.ServiceModel>  
-\<chování >  
-část endpointBehaviors  
-\<chování >  
+\<> chování  
+oddíl endpointBehaviors  
+\<> chování  
 \<clientCredentials>  
-\<issuedToken>  
+\<Třídy IssuedToken >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,30 +38,30 @@ Určuje vlastní token pro ověření klienta ke službě.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`cacheIssuedTokens`|Volitelný logický atribut, který určuje, zda tokeny uchovávány v mezipaměti. Výchozí hodnota je `true`.|  
-|`defaultKeyEntropyMode`|Volitelný atribut řetězce, který určuje náhodné hodnoty (entropies) se používají pro metodu handshake. Mezi hodnoty patří `ClientEntropy`, `ServerEntropy`, a `CombinedEntropy`, výchozí hodnota je `CombinedEntropy`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
-|`issuedTokenRenewalThresholdPercentage`|Volitelný celočíselný atribut, který určuje procento platných období (poskytnutých vystavitelem tokenu), která mohou uplynout před obnovením tokenu. Hodnoty jsou od 0 do 100. Výchozí hodnota je 60, který určuje 60 % časových intervalech, než dojde k pokusu o obnovení.|  
-|`issuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu při komunikaci s vystavitelem.|  
-|`localIssuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu při komunikaci s místním vystavitelem.|  
-|`maxIssuedTokenCachingTime`|Volitelný atribut Timespan, který určuje dobu, po kterou jsou vydané tokeny ukládány do mezipaměti, když vystavitel (STS) neurčuje čas. Výchozí hodnota je "10675199.02:48:05.4775807."|  
+|`cacheIssuedTokens`|Volitelný logický atribut, který určuje, zda jsou tokeny uloženy v mezipaměti. Výchozí hodnota je `true`.|  
+|`defaultKeyEntropyMode`|Volitelný řetězcový atribut určující, které náhodné hodnoty (jenž) se používají pro operace handshake. Mezi hodnoty `ClientEntropy`patří `ServerEntropy`, a `CombinedEntropy`. výchozí hodnota je `CombinedEntropy`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
+|`issuedTokenRenewalThresholdPercentage`|Volitelný celočíselný atribut, který určuje procentuální hodnotu platného časového rámce (poskytnutý vystavitelem tokenu), který může uplynout před obnovením tokenu. Hodnoty jsou od 0 do 100. Výchozí hodnota je 60, která určuje 60% času průchodu před pokusem o obnovení.|  
+|`issuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu, které se má použít při komunikaci s vystavitelem.|  
+|`localIssuerChannelBehaviors`|Volitelný atribut, který určuje chování kanálu, které se má použít při komunikaci s místním vystavitelem.|  
+|`maxIssuedTokenCachingTime`|Volitelný atribut TimeSpan, který určuje dobu, po kterou jsou vydané tokeny ukládány do mezipaměti v případě, že Vystavitel tokenů (STS) neurčuje čas. Výchozí hodnota je "10675199.02:48:05.4775807."|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<localIssuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)|Určuje adresu místního vystavitele tokenu a vazby používaný ke komunikaci s koncovým bodem.|  
-|[\<issuerChannelBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Určuje chování koncového bodu při kontaktování místního vystavitele.|  
+|[\<localIssuer>](localissuer.md)|Určuje adresu místního vystavitele tokenu a vazbu, která se používá ke komunikaci s koncovým bodem.|  
+|[\<issuerChannelBehaviors>](issuerchannelbehaviors-element.md)|Určuje chování koncového bodu, které se má použít při kontaktování místního vystavitele.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
+|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vydaný token má typ vlastní pověření, například používaný při ověřování s zabezpečení tokenu služby (STS) ve scénáři federované. Ve výchozím nastavení token je SAML token. Další informace najdete v tématu [federace a vydané tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). a [federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+ Vydaný token je vlastní typ přihlašovacích údajů, který se používá například při ověřování pomocí služby tokenů zabezpečení (STS) ve federovaném scénáři. Ve výchozím nastavení je tokenem token SAML. Další informace najdete v tématu [federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md). a [federačních a](../../../wcf/feature-details/federation-and-issued-tokens.md)vydaných tokenů.  
   
- Tato část obsahuje prvků, které slouží ke konfiguraci místního vystavitele tokeny nebo chování používaná službou tokenu zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele, naleznete v tématu [jak: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
+ Tato část obsahuje prvky, které slouží ke konfiguraci místního vystavitele tokenů nebo chování používaného se službou tokenů zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele najdete v tématu [How to: Konfigurace místního vystavitele](../../../wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -71,10 +71,10 @@ Určuje vlastní token pro ověření klienta ke službě.
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement.IssuedToken%2A>
 - <xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A>
 - <xref:System.ServiceModel.Security.IssuedTokenClientCredential>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
-- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [Postupy: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)
+- [Postupy: Vytvoření federovaného klienta](../../../wcf/feature-details/how-to-create-a-federated-client.md)
+- [Postupy: Konfigurace místního vystavitele](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)

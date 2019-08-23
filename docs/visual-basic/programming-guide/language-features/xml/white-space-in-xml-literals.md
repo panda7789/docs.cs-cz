@@ -5,38 +5,38 @@ helpviewer_keywords:
 - white space [XML in Visual Basic]
 - XML literals [Visual Basic], white space
 ms.assetid: dfe3a9ff-d69a-418e-a6b5-476f4ed84219
-ms.openlocfilehash: 903928087d5ad9c51040ba6bf65639f44d8c7dd6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f72dcc25b158d793850069e5cc32c3a3c02fad17
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627441"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939214"
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>Prázdné znaky v literálech XML (Visual Basic)
-Kompilátor jazyka Visual Basic zahrnuje pouze znaky významných mezer literál XML při vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Neplatné prázdné znaky nejsou zahrnuty.  
+Kompilátor Visual Basic při vytváření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu zahrnuje pouze významné prázdné znaky z literálu XML. Nevýznamné prázdné znaky nejsou začleněny.  
   
-## <a name="significant-and-insignificant-white-space"></a>Prázdné místo důležité a nevýznamné  
- Prázdné znaky v literálech XML jsou významné v pouze tři oblasti:  
+## <a name="significant-and-insignificant-white-space"></a>Významné a nevýznamné prázdné znaky  
+ Prázdné znaky v literálech XML jsou významné pouze v třech oblastech:  
   
-- Když jsou v hodnotě atributu.  
+- Pokud jsou v hodnotě atributu.  
   
-- Když jsou součástí obsahu prvku textu a text také obsahuje jiné znaky.  
+- Pokud jsou součástí textového obsahu elementu a text obsahuje také jiné znaky.  
   
-- Když jsou v vložený výraz pro textový obsah elementu.  
+- Když jsou ve vloženém výrazu pro textový obsah elementu.  
   
- V opačném případě kompilátor považuje za prázdné znaky neplatné a potom nezahrnuje v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt pro literál.  
+ V opačném případě kompilátor zpracovává prázdné znaky jako nevýznamný a nezahrnuje pak v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu pro literál.  
   
- Zahrnout nevýznamné prázdný znak literálu XML, použijte vložený výraz, který obsahuje řetězcový literál s prázdné znaky.  
+ Chcete-li zahrnout do literálu XML nevýznamné prázdné znaky, použijte vložený výraz, který obsahuje řetězcový literál s prázdným znakem.  
   
 > [!NOTE]
->  Pokud `xml:space` atributu se zobrazí v elementu XML literál, kompilátor jazyka Visual Basic obsahuje atribut v <xref:System.Xml.Linq.XElement> objektu, ale přidat tento atribut nedojde ke změně způsobu, jakým kompilátor zpracovává prázdné znaky.  
+> Pokud se <xref:System.Xml.Linq.XElement> atribut objeví v literálu elementu XML, kompilátor Visual Basic obsahuje atribut v objektu, ale přidáním tohoto atributu se nezmění způsob, jakým kompilátor zpracovává prázdné znaky. `xml:space`  
   
 ## <a name="examples"></a>Příklady  
- Následující příklad obsahuje dva elementy XML, vnitřní a vnější. Oba prvky obsahovat prázdné znaky ve svém textového obsahu. Prázdné znaky na vnější element je neplatné, protože obsahuje pouze prázdné znaky a platný element XML. Prázdný znak ve vnitřní element je důležité, protože obsahuje prázdné znaky a text.  
+ Následující příklad obsahuje dva elementy XML, vnější a vnitřní. Oba elementy obsahují prázdné znaky v textovém obsahu. Prázdné znaky vnějšího prvku jsou nevýznamné, protože obsahují pouze prázdné znaky a XML element. Prázdné znaky v vnitřním prvku jsou významné, protože obsahují prázdné znaky a text.  
   
  [!code-vb[VbXMLSamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#29)]  
   
- Při spuštění, tento kód zobrazí následující text.  
+ Při spuštění tento kód zobrazí následující text.  
   
 ```xml  
 <outer>  
@@ -48,4 +48,4 @@ Kompilátor jazyka Visual Basic zahrnuje pouze znaky významných mezer literál
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

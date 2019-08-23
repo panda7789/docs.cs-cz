@@ -2,20 +2,20 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 4b56da9abc4f7bf30601fec7d0c79f454124f41a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: b85f3b77ca42eaaae8eae261df6414b5f9378560
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423147"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938955"
 ---
 # <a name="tcptransport"></a>\<tcpTransport>
-Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro přenos zpráv.  
+Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastní vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<tcpTransport>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,35 +49,35 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|třídě channelInitializationTimeout|Získá nebo nastaví časový limit pro inicializaci kanálu na přijetí.  Maximální doba kanálu může být ve stavu inicializace před jeho odpojením během několika sekund. Tato kvóta obsahuje čas připojení TCP provádět ověření pomocí protokolu rámce zpráv technologie .NET. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Výchozí hodnota je 30 sekund.|  
-|connectionBufferSize|Získá nebo nastaví velikost vyrovnávací paměti použité k přenosu bloku serializovaných zpráv od klienta nebo služby.|  
-|hostNameComparisonMode|Získá nebo nastaví hodnotu určující, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.|  
-|listenBacklog|Maximální počet připojení zařazených do fronty požadavků, které mohou být nevyřízeny pro webovou službu. `connectionLeaseTimeout` Atribut omezuje doby trvání, klient bude čekat před vyvolání výjimky připojení připojený k Internetu. Toto je vlastnost úrovni soketu, která určuje maximální počet připojení zařazených do fronty požadavků, které mohou být nevyřízeny pro webovou službu. Když ListenBacklog je příliš nízké, WCF zastaví přijímá žádosti a proto vyřadit nová připojení, dokud server potvrdí některé z existujících připojení zařazených do fronty. Výchozí hodnota je 16 * počet procesorů.|  
-|Vlastnost manualAddressing|Získá nebo nastaví hodnotu určující, jestli je potřeba ruční adresování zprávy.|  
-|maxBufferPoolSize|Získá nebo nastaví maximální velikost všechny fondy vyrovnávací paměti používané přenos.|  
-|maxBufferSize|Získá nebo nastaví maximální velikost vyrovnávací paměti pro použití. Pro proudu zpráv tato hodnota by měla být aspoň maximální možná velikost záhlaví zpráv, které jsou v režimu vyrovnávací paměti pro čtení.|  
-|maxOutputDelay|Získá nebo nastaví maximální interval času, který blok zprávy, nebo celá zpráva může zůstat ve vyrovnávací paměti v paměti před odesláním navýšení kapacity.|  
-|maxPendingAccepts|Získá nebo nastaví maximální počet nevyřízených asynchronních přijmout operace, které jsou k dispozici pro zpracování příchozích připojení ke službě.|  
-|maxPendingConnections|Získá nebo nastaví maximální počet připojení čeká na odeslání ve službě.|  
-|maxReceivedMessageSize|Získá nebo nastaví maximální povolenou velikost zprávy, která může být přijata.|  
-|portSharingEnabled|Logická hodnota určující, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je to `false`, každá vazba bude používat výhradně portu. Výchozí hodnota je `false`.<br /><br /> Toto nastavení je relevantní pouze pro služby. Klienti nejsou ovlivněny.<br /><br /> Použití tohoto nastavení vyžaduje povolení službu Windows Communication Foundation (WCF) protokolu TCP Port Sharing tak, že změníte její typ spouštění na ruční nebo automatické|  
-|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za firewally). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje Teredo pro základní soket TCP. Další informace najdete v tématu [Teredo přehled](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. [!INCLUDE[wv](../../../../../includes/wv-md.md)] nabízí možnost konfiguraci celého počítače Teredo, takže při spuštění Vista, tato vlastnost se ignoruje. Teredo vyžaduje počítače klienta a služby Microsoftu IPv6 zásobníku nainstalované a správně nakonfigurován pro použití Teredo. Další informace o konfiguraci Teredo, naleznete v tématu [Teredo přehled](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu [systému Windows Server 2003 technologie centra](https://go.microsoft.com/fwlink/?LinkId=49888).|  
-|transferMode|Získá nebo nastaví hodnotu určující, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.|  
+|channelInitializationTimeout|Získá nebo nastaví časový limit pro inicializaci kanálu, který se má přijmout.  Maximální doba, po kterou kanál může být ve stavu inicializace, než bude odpojen během několika sekund. Tato kvóta zahrnuje dobu, kterou může připojení TCP trvat při ověřování pomocí protokolu rámce zpráv .NET. Klient potřebuje odeslat některá počáteční data předtím, než server bude mít dostatek informací k provedení ověření. Výchozí hodnota je 30 sekund.|  
+|connectionBufferSize|Získá nebo nastaví velikost vyrovnávací paměti, která se používá k přenosu bloku serializované zprávy na lince z klienta nebo služby.|  
+|hostNameComparisonMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se k dosažení služby při shodě s identifikátorem URI používá název hostitele.|  
+|listenBacklog|Maximální počet požadavků na připojení zařazených do fronty, které mohou být vyřízeny u webové služby. `connectionLeaseTimeout` Atribut omezuje dobu, po kterou bude klient čekat na připojení, než dojde k výjimce připojení. Toto je vlastnost na úrovni soketu, která určuje maximální počet požadavků na připojení zařazených do fronty, které mohou být vyřízeny u webové služby. Pokud je ListenBacklog příliš nízké, WCF přestane přijímat požadavky, a proto vyřadí nová připojení, dokud server nepotvrdí některá existující připojení ve frontě. Výchozí hodnota je 16 * počet procesorů.|  
+|Jeho|Získává nebo nastavuje hodnotu, která indikuje, jestli se vyžaduje ruční adresování zprávy.|  
+|maxBufferPoolSize|Získá nebo nastaví maximální velikost všech fondů vyrovnávací paměti používaných pro přenos.|  
+|Třída|Získá nebo nastaví maximální velikost vyrovnávací paměti, která se má použít. U zpráv v datových proudech by tato hodnota měla být alespoň maximální možná velikost záhlaví zprávy, která je čtena v režimu vyrovnávací paměti.|  
+|maxOutputDelay|Získá nebo nastaví maximální časový interval, po který může blok zprávy nebo úplná zpráva zůstat v paměti před odesláním do vyrovnávací paměti.|  
+|maxPendingAccepts|Získá nebo nastaví maximální počet nedokončených asynchronních operací přijetí, které jsou k dispozici pro zpracování příchozích připojení ke službě.|  
+|maxPendingConnections|Získá nebo nastaví maximální počet připojení čekajících na odeslání ve službě.|  
+|maxReceivedMessageSize|Získá a nastaví maximální povolenou velikost zprávy, kterou lze přijmout.|  
+|portSharingEnabled|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. `false`V takovém případě bude každá vazba používat vlastní výhradní port. Výchozí hodnota je `false`.<br /><br /> Toto nastavení je relevantní pouze pro služby. Klienti nejsou ovlivněni.<br /><br /> Použití tohoto nastavení vyžaduje povolení služby sdílení portů služby Windows Communication Foundation (WCF) TCP změnou typu spuštění na ruční nebo automatické.|  
+|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za branami firewall). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje technologii Teredo pro základní soket TCP. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. [!INCLUDE[wv](../../../../../includes/wv-md.md)]má pro Teredo možnost konfigurace na úrovni počítače, takže při spuštění systému Vista se tato vlastnost ignoruje. Teredo vyžaduje, aby v počítačích klientů a služeb byla nainstalovaná služba Microsoft IPv6 stack a správně nakonfigurovaná pro použití Teredo. Další informace o konfiguraci Teredo najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu věnovaném [technologickým centrům Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|transferMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se zprávy ukládají do vyrovnávací paměti nebo streamují s přenosem orientovaným na připojení.|  
 |connectionPoolSettings|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento přenos používá identifikátory URI ve tvaru "net.tcp://hostname: port/cesty". Ostatní součásti URI jsou volitelné.  
+ Tento přenos používá identifikátory URI ve formátu "NET. TCP://hostname: port/cesta". Jiné součásti identifikátoru URI jsou volitelné.  
   
- `tcpTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol TCP. Tento přenos je optimalizovaná pro komunikaci WCF WCF.  
+ `tcpTransport` Element je výchozím bodem pro vytvoření vlastní vazby, která implementuje transportní protokol TCP. Tento přenos je optimalizovaný pro komunikaci WCF-to-WCF.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -85,9 +85,9 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Přenosy](../../../wcf/feature-details/transports.md)
+- [Volba přenosu](../../../wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

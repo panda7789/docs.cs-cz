@@ -9,78 +9,78 @@ dev_langs:
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fabd95d8fee6f6d8590036001ce2b0c7c23b12da
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2ea3bdea9c65b326953d16d7824114763ff4d017
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589853"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939412"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
-<xref:System.Xml.XmlDocument> Třídy nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schéma XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) ve výchozím nastavení; XML je jenom ověřit, být ve správném formátu.  
+<xref:System.Xml.XmlDocument> Třída neověřuje XML v model DOM (Document Object Model) (DOM) proti schématu XSD (XML Schema Definition Language) nebo definici typu dokumentu (DTD) ve výchozím nastavení. XML je ověřeno pouze ve správném formátu.  
   
- Ověření XML v modelu DOM, můžete ověřit XML jako načtení do modelu DOM předáním schéma ověřování <xref:System.Xml.XmlReader> k <xref:System.Xml.XmlDocument.Load%2A> metodu <xref:System.Xml.XmlDocument> třídy nebo ověřit dřív neověřených dokument XML v modelu DOM pomocí <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy.  
+ Chcete-li ověřit XML v modelu DOM, můžete ověřit XML, jak je načteno do modelu DOM předáním schématu – ověření <xref:System.Xml.XmlReader> <xref:System.Xml.XmlDocument.Load%2A> do metody <xref:System.Xml.XmlDocument> třídy, nebo ověření dříve neověřeného dokumentu XML v modelu DOM pomocí <xref:System.Xml.XmlDocument.Validate%2A> metoda třídy.<xref:System.Xml.XmlDocument>  
   
-## <a name="validating-an-xml-document-as-it-is-loaded-into-the-dom"></a>Ověřování dokumentu XML jako jeho načtení do modelu DOM  
- <xref:System.Xml.XmlDocument> Třídy ověří XML data jako načtení do modelu DOM při ověřování <xref:System.Xml.XmlReader> je předán <xref:System.Xml.XmlDocument.Load%2A> metodu <xref:System.Xml.XmlDocument> třídy.  
+## <a name="validating-an-xml-document-as-it-is-loaded-into-the-dom"></a>Ověření dokumentu XML, jak je načteno do modelu DOM  
+ Třída ověřuje data XML, když jsou načtena do modelu DOM při ověřování <xref:System.Xml.XmlReader> je předán <xref:System.Xml.XmlDocument.Load%2A> metodě <xref:System.Xml.XmlDocument> třídy. <xref:System.Xml.XmlDocument>  
   
- Po úspěšném ověření se použijí výchozí hodnoty schématu, textové hodnoty se převedou na Atomický hodnoty podle potřeby a informace o typu je přidružený k ověřených informačních položek. Typy dat XML v důsledku toho nahrazuje dříve netypový kód XML data.  
+ Po úspěšném ověření se použije výchozí nastavení schématu, textové hodnoty se v případě potřeby převedou na atomické hodnoty a informace o typu se přidruží k položkám ověřovaných informací. V důsledku toho typované XML data nahradí dříve netypové XML data.  
   
-### <a name="creating-an-xml-schema-validating-xmlreader"></a>Vytváření XML schéma ověřování XmlReader  
- Vytvoření XML schémat ověřování <xref:System.Xml.XmlReader>, postupujte podle těchto kroků.  
+### <a name="creating-an-xml-schema-validating-xmlreader"></a>Vytvoření schématu XML – ověření objektu XmlReader  
+ Chcete-li vytvořit schéma XML – <xref:System.Xml.XmlReader>ověřování, postupujte podle těchto kroků.  
   
-1. Vytvořit nový <xref:System.Xml.XmlReaderSettings> instance.  
+1. Vytvořte novou <xref:System.Xml.XmlReaderSettings> instanci.  
   
-2. Přidat schéma XML <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> instance.  
+2. Přidejte schéma XML do <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnosti <xref:System.Xml.XmlReaderSettings> instance.  
   
-3. Zadejte `Schema` jako <xref:System.Xml.XmlReaderSettings.ValidationType%2A>.  
+3. `Schema` Zadejte<xref:System.Xml.XmlReaderSettings.ValidationType%2A>jako.  
   
-4. Volitelně můžete zadat <xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> a <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> pro zpracování chyby ověřování schématu a při ověřování došlo k upozornění.  
+4. Volitelně můžete <xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> zadat <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> a a zpracovat chyby ověřování schématu a upozornění zjištěná během ověřování.  
   
-5. Nakonec předat <xref:System.Xml.XmlReaderSettings> objektu <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy společně s dokumentu XML, vytváří se schéma ověřování <xref:System.Xml.XmlReader>.  
+5. Nakonec předejte <xref:System.Xml.XmlReaderSettings> objekt <xref:System.Xml.XmlReader.Create%2A> do metody <xref:System.Xml.XmlReader> třídy spolu s dokumentem XML a vytvořte ověřování <xref:System.Xml.XmlReader>schématu.  
   
 ### <a name="example"></a>Příklad  
- V příkladu kódu, který následuje, schématu ověření <xref:System.Xml.XmlReader> ověří data XML načtení do modelu DOM. Neplatný úpravy probíhají v dokumentu XML a je dokument poté ověřit, což způsobí chyby ověřování schématu. Nakonec jeden z chyby opravit a pak je součástí dokumentu XML částečně ověřený.  
+ V následujícím příkladu kódu ověřování <xref:System.Xml.XmlReader> schématu ověřuje XML data načtená do modelu DOM. V dokumentu XML jsou provedeny neplatné změny a potom se dokument znovu ověří a způsobuje chyby při ověřování schématu. Nakonec se jedna z chyb opravuje a pak je částečně ověřená část dokumentu XML.  
   
  [!code-cpp[XmlDocumentValidation.Load#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlDocumentValidation.Load/CPP/XmlDocumentValidationExample.cpp#1)]
  [!code-csharp[XmlDocumentValidation.Load#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlDocumentValidation.Load/CS/XmlDocumentValidationExample.cs#1)]
  [!code-vb[XmlDocumentValidation.Load#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlDocumentValidation.Load/VB/XmlDocumentValidationExample.vb#1)]  
   
- V příkladu přebírá `contosoBooks.xml` souboru jako vstup.  
+ Příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
- Tento příklad využívá taky `contosoBooks.xsd` souboru jako vstup.  
+ Příklad také přebírá `contosoBooks.xsd` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
- Vezměte v úvahu následující při ověřování dat XML, jako je načten do modelu DOM.  
+ Při ověřování dat XML při jejich načítání do modelu DOM Vezměte v úvahu následující skutečnosti.  
   
-- Ve výše uvedeném příkladu <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> je volána pokaždé, když se zjistil se neplatný typ. Pokud <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> není nastavená na ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.Schema.XmlSchemaValidationException> je vyvolána, když <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud libovolný typ atributu nebo elementu se neshoduje s odpovídající typ zadaný v ověřování schématu.  
+- Ve výše uvedeném příkladu <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> je volána při každém zjištění neplatného typu. Pokud není nastavena při ověřování <xref:System.Xml.XmlReader>, <xref:System.Xml.Schema.XmlSchemaValidationException> je vyvolána výjimka, když <xref:System.Xml.XmlDocument.Load%2A> je volána, pokud jakýkoli typ atributu nebo elementu neodpovídá odpovídajícímu typu zadanému v rámci ověřování schématu. <xref:System.Xml.XmlReaderSettings.ValidationEventHandler>  
   
-- Po načtení dokumentu XML do <xref:System.Xml.XmlDocument> objekt s přidružené schéma, který definuje výchozí hodnoty <xref:System.Xml.XmlDocument> zpracuje tato výchozí nastavení, jako jsou uvedeny v dokumentu XML. To znamená, že <xref:System.Xml.XmlReader.IsEmptyElement%2A> vždy vrátí vlastnost `false` pro element, který byl převezme ve schématu. I v případě, že v dokumentu XML, byla zapsána jako prázdný prvek.  
+- Při načtení dokumentu XML do <xref:System.Xml.XmlDocument> objektu s přidruženým schématem, které definuje výchozí hodnoty <xref:System.Xml.XmlDocument> , zpracovává tyto výchozí hodnoty, jako by se zobrazily v dokumentu XML. To znamená, že <xref:System.Xml.XmlReader.IsEmptyElement%2A> vlastnost vždy vrátí `false` pro prvek, který byl nastaven jako výchozí ze schématu. I když v dokumentu XML, byl napsán jako prázdný prvek.  
   
 ## <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM  
- <xref:System.Xml.XmlDocument.Validate%2A> Metodu <xref:System.Xml.XmlDocument> třídy ověří data XML, který je načten v modelu DOM pomocí schémat v <xref:System.Xml.XmlDocument> objektu <xref:System.Xml.XmlDocument.Schemas%2A> vlastnost. Po úspěšném ověření se použijí výchozí hodnoty schématu, textové hodnoty se převedou na Atomický hodnoty podle potřeby a informace o typu je přidružený k ověřených informačních položek. Typy dat XML v důsledku toho nahrazuje dříve netypový kód XML data.  
+ Metoda třídy ověřuje data XML načtená v modelu DOM <xref:System.Xml.XmlDocument> proti <xref:System.Xml.XmlDocument.Schemas%2A> schématům ve vlastnosti objektu. <xref:System.Xml.XmlDocument> <xref:System.Xml.XmlDocument.Validate%2A> Po úspěšném ověření se použije výchozí nastavení schématu, textové hodnoty se v případě potřeby převedou na atomické hodnoty a informace o typu se přidruží k položkám ověřovaných informací. V důsledku toho typované XML data nahradí dříve netypové XML data.  
   
- Následující příklad je podobné jako v příkladu v "Ověřování XML dokumentu jako to je načten do modelu DOM" výše. V tomto příkladu není ověřený dokumentu XML, jako je načteno do modelu DOM, ale místo toho se ověří po načtení do modelu DOM pomocí <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. <xref:System.Xml.XmlDocument.Validate%2A> Metoda ověří proti schémat XML obsažených v dokumentu XML <xref:System.Xml.XmlDocument.Schemas%2A> vlastnost <xref:System.Xml.XmlDocument>. Neplatný pak změn v dokumentu XML a je dokument poté ověřit, což způsobí chyby ověřování schématu. Nakonec jeden z chyby opravit a pak je součástí dokumentu XML částečně ověřený.  
+ Následující příklad je podobný příkladu v tématu "ověřování dokumentu XML při jeho načtení do modelu DOM" výše. V tomto příkladu není dokument XML ověřen, protože je načten do modelu DOM, ale je ověřen poté, co byl načten do modelu DOM pomocí <xref:System.Xml.XmlDocument.Validate%2A> metody <xref:System.Xml.XmlDocument> třídy. Metoda ověří dokument XML proti schématům XML obsaženým <xref:System.Xml.XmlDocument.Schemas%2A> ve vlastnosti <xref:System.Xml.XmlDocument>. <xref:System.Xml.XmlDocument.Validate%2A> V dokumentu XML jsou následně provedeny neplatné změny a pak se dokument znovu ověří a způsobuje chyby při ověřování schématu. Nakonec se jedna z chyb opravuje a pak je částečně ověřená část dokumentu XML.  
   
  [!code-csharp[XmlDocumentValidation.Validate#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlDocumentValidation.Validate/CS/XmlDocumentValidationExample.cs#1)]
  [!code-vb[XmlDocumentValidation.Validate#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlDocumentValidation.Validate/VB/XmlDocumentValidationExample.vb#1)]  
   
- Příklad přijímá jako vstup `contosoBooks.xml` a `contosoBooks.xsd` soubory uvedené v "Ověřování XML dokumentu jako to je načten do modelu DOM" výše.  
+ Příklad přijímá jako vstup `contosoBooks.xml` soubory a `contosoBooks.xsd` , na které se říká "ověřování dokumentu XML, jak je načten do modelu DOM" výše.  
   
-## <a name="handling-validation-errors-and-warnings"></a>Zpracování chyby a upozornění ověření  
- Chyby ověřování schématu XML jsou hlášeny při ověřování dat XML načtení do modelu DOM. Se zobrazí oznámení o všechny chyby ověřování schématu při ověřování dat XML, jako jsou načítány, nebo při ověřování dřív neověřených dokumentu XML.  
+## <a name="handling-validation-errors-and-warnings"></a>Zpracování chyb ověřování a upozornění  
+ Při ověřování dat XML načtených v modelu DOM jsou hlášeny chyby ověřování schématu XML. Zobrazí se oznámení o všech chybách ověřování schématu při ověřování dat XML při jejich načítání nebo při ověřování dříve neověřeného dokumentu XML.  
   
- Chyby ověření jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler>. Pokud <xref:System.Xml.Schema.ValidationEventHandler> přiřadila se <xref:System.Xml.XmlReaderSettings> instance nebo předat <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy, <xref:System.Xml.Schema.ValidationEventHandler> bude zpracovávat chyby ověřování schématu. v opačném <xref:System.Xml.Schema.XmlSchemaValidationException> se vyvolá, když se ověřování schématu došlo k chybě.  
+ Chyby ověřování jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler>. <xref:System.Xml.XmlReaderSettings> <xref:System.Xml.XmlDocument.Validate%2A> <xref:System.Xml.XmlDocument> <xref:System.Xml.Schema.ValidationEventHandler> Pokud byla přiřazena instance nebo předána metodě<xref:System.Xml.Schema.XmlSchemaValidationException> třídy, zpracuje chyby ověřování schématu. v opačném případě je vyvolána při ověřování schématu <xref:System.Xml.Schema.ValidationEventHandler> došlo k chybě.  
   
 > [!NOTE]
->  XML data se načtou do modelu DOM, bez ohledu na chyby ověřování schématu, pokud vaše <xref:System.Xml.Schema.ValidationEventHandler> vyvolává výjimku ukončit proces.  
+> Data XML jsou načtena do modelu DOM navzdory chybám ověřování schématu, <xref:System.Xml.Schema.ValidationEventHandler> Pokud nevyvolává výjimku k zastavení procesu.  
 >   
->  Upozornění při ověřování schématu nezobrazují, dokud <xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings> označen příznakem do <xref:System.Xml.XmlReaderSettings> objektu.  
+>  Upozornění ověřování schématu nejsou hlášeny, pokud <xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings> není příznak určen <xref:System.Xml.XmlReaderSettings> pro objekt.  
   
- Příklady ilustrující <xref:System.Xml.Schema.ValidationEventHandler>, naleznete v tématu "Ověřování XML dokumentu jako to je načten do modelu DOM" a "Ověřování XML dokumentu v modelu DOM" výše.  
+ Příklady ilustrující rozhraní <xref:System.Xml.Schema.ValidationEventHandler>naleznete v části "ověřování dokumentu XML, jak je načten do modelu DOM" a "ověřování dokumentu XML v modelu DOM" výše.  
   
 ## <a name="see-also"></a>Viz také:
 

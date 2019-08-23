@@ -7,26 +7,26 @@ helpviewer_keywords:
 - PrintDocument component [Windows Forms], about PrintDocument component
 - printing [Windows Forms], PrintDocument component
 ms.assetid: b59b4b60-dce5-42ca-8421-3a54a2f7bab0
-ms.openlocfilehash: 96bca5d96722098f76059c58c32b3fea0ff78cd2
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 16a7f3a34ccb280f7bf91c52e29b20edc22130b9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211731"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928977"
 ---
 # <a name="printdocument-component-overview-windows-forms"></a>PrintDocument – přehled komponenty (Windows Forms)
 
-Windows Forms [PrintDocument](printdocument-component-windows-forms.md) komponenty se používá k nastavení vlastnosti, které popisují, jak vytisknout a umožňuje vytisknout dokument v rámci aplikace pro systém Windows. Je možné použít ve spojení s [PrintDialog](printdialog-component-windows-forms.md) komponenty v řízení všech aspektů tisk dokumentu.
+Komponenta model Windows Forms [PrintDocument](printdocument-component-windows-forms.md) slouží k nastavení vlastností, které popisují, co tisknout a možnost tisku dokumentu v aplikacích určených pro systém Windows. Dá se použít společně s komponentou [PrintDialog](printdialog-component-windows-forms.md) k tomu, aby měla kontrolu nad všemi aspekty tisku dokumentu.
 
-## <a name="working-with-the-printdocument-component"></a>Práce s PrintDocument – komponenta
+## <a name="working-with-the-printdocument-component"></a>Práce s komponentou PrintDocument
 
-Dva hlavní scénáře, které se týkají <xref:System.Drawing.Printing.PrintDocument> komponenty jsou:
+Existují dva z hlavních scénářů, které <xref:System.Drawing.Printing.PrintDocument> zahrnují komponentu:
 
-- Jednoduché tiskové úlohy, jako je například tisk jednotlivé textového souboru. V takovém případě přidejte <xref:System.Drawing.Printing.PrintDocument> komponentu do formuláře Windows, pak přidejte programovou logiku, která vytiskne souboru v <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužné rutiny události. By měla s přineslo programovou logiku <xref:System.Drawing.Printing.PrintDocument.Print%2A> metoda se dokument vytiskne na. Tato metoda odesílá <xref:System.Drawing.Graphics> objektů obsažených v <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy tiskárny. Příklad, který ukazuje, jak vytisknout textu dokumentu pomocí <xref:System.Drawing.Printing.PrintDocument> komponenty, naleznete v tématu [jak: Tisk vícestránkového textového souboru ve Windows Forms](../advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md).
+- Jednoduché tiskové úlohy, jako je například tisk jednotlivého textového souboru. V takovém případě <xref:System.Drawing.Printing.PrintDocument> přidejte komponentu do formuláře Windows a pak přidejte programovací logiku, která vytiskne soubor <xref:System.Drawing.Printing.PrintDocument.PrintPage> v obslužné rutině události. Programovací logika by měla být ukončená <xref:System.Drawing.Printing.PrintDocument.Print%2A> metodou pro tisk dokumentu. Tato metoda odesílá <xref:System.Drawing.Graphics> objekt, který je obsažen <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> v vlastnosti <xref:System.Drawing.Printing.PrintPageEventArgs> třídy, do tiskárny. Příklad, který ukazuje, jak vytisknout textový dokument pomocí <xref:System.Drawing.Printing.PrintDocument> komponenty, naleznete v tématu [How to: Vytiskněte textový soubor s více stránkami v](../advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)model Windows Forms.
 
-- Složitější tiskové úlohy, jako je situace, ve kterém můžete opakovaně použít logiku tisk, který jste napsali. V takovém případě by odvozovat nové komponenty z <xref:System.Drawing.Printing.PrintDocument> komponenty a přepsání (naleznete v tématu [přepíše](~/docs/visual-basic/language-reference/modifiers/overrides.md) v jazyce Visual Basic nebo [přepsat](~/docs/csharp/language-reference/keywords/override.md) pro C#) <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí.
+- Složitější tiskové úlohy, jako je situace, kdy budete chtít znovu použít logiku tisku, kterou jste napsali. V takovém případě byste měli odvodit <xref:System.Drawing.Printing.PrintDocument> novou komponentu z komponenty a přepsat ji <xref:System.Drawing.Printing.PrintDocument.PrintPage> (viz [přepsání](../../../visual-basic/language-reference/modifiers/overrides.md) pro Visual Basic nebo [přepsání](../../../csharp/language-reference/keywords/override.md) pro C#) události.
 
-Když se přidá do formuláře, <xref:System.Drawing.Printing.PrintDocument> součást se zobrazí v hlavním panelu v dolní části Návrháře formulářů Windows v sadě Visual Studio.
+Při přidání do formuláře <xref:System.Drawing.Printing.PrintDocument> se komponenta zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61dcf014a65f524d2b2e7b92bcc7f007d1a47125
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fb7e2ed7b076cfa20064902b3592c8f958efc0ee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754510"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917041"
 ---
 # <a name="icordebugfunction2enumeratenativecode-method"></a>ICorDebugFunction2::EnumerateNativeCode – metoda
-Získá ukazatel rozhraní na icordebugcodeenum – objekt, který obsahuje příkazy nativního kódu ve funkci odkazuje tento objekt icordebugfunction2 –.  
+Získá ukazatel rozhraní na objekt ICorDebugCodeEnum, který obsahuje příkazy nativního kódu ve funkci, na kterou odkazuje tento objekt ICorDebugFunction2.  
   
 > [!NOTE]
->  `EnumerateNativeCode` není implementováno v aktuální verzi rozhraní .NET Framework.  
+> `EnumerateNativeCode`není implementován v aktuální verzi .NET Framework.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,4 +39,4 @@ HRESULT EnumerateNativeCode (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorDebug.idl, CorDebug.h
+ **Hlaviček** CorDebug. idl, CorDebug. h

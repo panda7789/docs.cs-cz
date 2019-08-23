@@ -5,40 +5,40 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: f1f2b462ef0412b0f11a9ba5074f7546e6ee84f2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d14facf435d575b9db5129b732938658c921f97f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643771"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934310"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: Registrace a konfigurace monikeru služby
-Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontraktu, musí zaregistrovat požadované typy s atributy s modelem COM a konfigurace aplikace modelu COM a zástupný název požadované vazby konfigurace.  
+Předtím, než použijete moniker služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM se zadaným kontraktem, je nutné zaregistrovat požadované typy s atributem COM a nakonfigurovat aplikaci COM a moniker s požadovanou vazbou. rozšířeného.  
   
-### <a name="to-register-the-required-attributed-types-with-com"></a>Zaregistrovat s atributy požadované typy modelu COM  
+### <a name="to-register-the-required-attributed-types-with-com"></a>Registrace požadovaných typů s atributy pomocí modelu COM  
   
-1. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj k načtení metadat kontraktu služby WCF. Tím se vytvoří zdrojový kód pro sestavení klienta WCF a konfigurační soubor aplikace klienta.  
+1. Pomocí nástroje [Svcutil. exe (ServiceModel Metadata Utility)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) načtěte kontrakt metadat ze služby WCF. Tím se vygeneruje zdrojový kód pro sestavení klienta WCF a konfigurační soubor klientské aplikace.  
   
-2. Ujistěte se, že typy v sestavení jsou označeny jako `ComVisible`. Uděláte to tak, přidejte následující atribut souboru AssemblyInfo.cs projektu sady Visual Studio.  
+2. Ujistěte se, že typy v sestavení jsou označeny jako `ComVisible`. Chcete-li to provést, přidejte následující atribut do souboru AssemblyInfo.cs v projektu sady Visual Studio.  
   
     ```  
     [assembly: ComVisible(true)]  
     ```  
   
-3. Kompilaci spravovaného klienta WCF jako sestavení se silným názvem. Tento postup vyžaduje přihlášení pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepisování sestavení silným názvem](https://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
+3. Zkompilujte spravovaný klient služby WCF jako sestavení se silným názvem. To vyžaduje podepisování pomocí páru kryptografických klíčů. Další informace naleznete v tématu [podepisování sestavení silným názvem](https://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře na platformě .NET.  
   
-4. Nástroj Assembly Registration (Regasm.exe) se `/tlb` možnost zaregistrovat typy v sestavení s modelu COM.  
+4. Použijte nástroj registrace sestavení (Regasm. exe) s `/tlb` možností pro registraci typů v sestavení pomocí modelu COM.  
   
-5. Použijte nástroj Global Assembly Cache (Gacutil.exe) Chcete-li přidat sestavení do globální mezipaměti sestavení.  
+5. K přidání sestavení do globální mezipaměti sestavení (GAC) použijte nástroj Global Assembly Cache (Gacutil. exe).  
   
     > [!NOTE]
-    >  Podepisování sestavení a jeho přidání do globální mezipaměti sestavení jsou volitelné kroky, ale jejich může zjednodušit proces načítání sestavení ze správné místo v době běhu.  
+    > Podpis sestavení a jeho přidání do globální mezipaměti sestavení (GAC) je volitelný postup, ale může zjednodušit proces načítání sestavení ze správného umístění za běhu.  
   
-### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>Konfigurace aplikace COM a zástupný název s konfigurací požadované vazby  
+### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>Konfigurace aplikace COM a monikeru s požadovanou konfigurací vazby  
   
-- Umístit definic vazeb (generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) v konfiguračním souboru aplikace generovaného klienta) v konfiguračním souboru aplikace klienta. Například pro Visual Basic 6.0 spustitelný soubor s názvem CallCenterClient.exe, by měl umístit konfiguraci do souboru s názvem CallCenterConfig.exe.config v rámci stejného adresáře jako spustitelný soubor. Klientská aplikace teď můžete použít zástupný název. Všimněte si, že konfigurace vazby není povinný, pokud pomocí jedné z standardních vazby typy poskytované službou WCF.  
+- Vložte definice vazeb (generované [nástrojem Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) do generovaného konfiguračního souboru klientské aplikace) v konfiguračním souboru klientské aplikace. Například pro spustitelný soubor Visual Basic 6,0 s názvem CallCenterClient. exe by měla být konfigurace umístěna do souboru s názvem CallCenterConfig. exe. config v rámci stejného adresáře jako spustitelný soubor. Klientská aplikace může nyní použít moniker. Všimněte si, že konfigurace vazby není vyžadována, pokud používáte jeden ze standardních typů vazby poskytovaných službou WCF.  
   
-     Následující typ je registrován.  
+     Následující typ je zaregistrován.  
   
     ```  
     using System.ServiceModel;  
@@ -55,7 +55,7 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
     }  
     ```  
   
-     Aplikace je přístupné přes `wsHttpBinding` vazby. Pro daný typ a konfigurace aplikace se používají následující řetězce monikeru příklad.  
+     Aplikace je vystavena pomocí `wsHttpBinding` vazby. Pro daný typ a konfiguraci aplikace jsou použity následující příklady řetězců monikeru.  
   
     ```  
     service4:address=http://localhost/MathService, binding=wsHttpBinding, bindingConfiguration=Binding1  
@@ -67,7 +67,7 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
     service4:address=http://localhost/MathService, binding=wsHttpBinding, bindingConfiguration=Binding1, contract={36ADAD5A-A944-4d5c-9B7C-967E4F00A090}  
     ```  
   
-     Můžete použít kteroukoli z těchto řetězců moniker z aplikace Visual Basic 6.0, po přidání odkazu na sestavení, které obsahuje `IMathService` typů, jak je znázorněno v následujícím ukázkovém kódu.  
+     Můžete použít kterýkoli z těchto řetězců monikeru z aplikace Visual Basic 6,0 po přidání odkazu na sestavení, které obsahuje `IMathService` typy, jak je znázorněno v následujícím ukázkovém kódu.  
   
     ```  
     Dim MathProxy As IMathService  
@@ -81,21 +81,21 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
     result = MathProxy.Add(3, 5)  
     ```  
   
-     V tomto příkladu definici pro konfiguraci vazby `Binding1` je uložen v vhodně pojmenované konfigurační soubor pro klientskou aplikaci, jako je například vb6appname.exe.config.  
+     V tomto příkladu je definice konfigurace `Binding1` vazby uložená v vhodně pojmenovaném konfiguračním souboru pro klientskou aplikaci, jako je vb6appname. exe. config.  
   
     > [!NOTE]
-    >  Podobný kód v C#, C++ nebo jakékoli jiné aplikace jazyk .NET můžete použít.  
+    > Můžete použít podobný kód v C#, C++nebo v jakékoli jiné aplikaci jazyka .NET.  
   
     > [!NOTE]
-    >  : Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chybu "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
+    > : Pokud je moniker poškozený nebo pokud není služba k dispozici, volání `GetObject` vrátí chybu "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že moniker, který používáte, je správný a služba je k dispozici.  
   
-     I když toto téma se zaměřuje na použití monikeru služby z kódu jazyka Visual Basic 6.0, je použití monikeru služby z jiných jazyků. Při použití monikeru z C++ kódu Svcutil.exe generovaného sestavení by měly být naimportovány s "no_namespace named_guids – raw_interfaces_only", jak je znázorněno v následujícím kódu.  
+     I když se toto téma zaměřuje na použití monikeru služby z kódu VB 6,0, můžete použít moniker služby z jiných jazyků. Při použití monikeru z C++ kódu by se sestavení vygenerované pomocí Svcutil. exe mělo importovat s "no_namespace named_guids raw_interfaces_only", jak je znázorněno v následujícím kódu.  
   
     ```  
     #import "ComTestProxy.tlb" no_namespace named_guids  
     ```  
   
-     To definice importované rozhraní upraví tak, aby všechny metody vrátit `HResult`. Všechny ostatní vrácené hodnoty se převedou na výstupní parametry. Celkové provádění metody zůstává stejná. To umožňuje určit, proč výjimku při volání metody na proxy serveru. Tato funkce je dostupná pouze z kódu jazyka C++.  
+     Tím se upraví importované definice rozhraní tak, aby všechny metody `HResult`vracely. Jakékoli jiné návratové hodnoty jsou převedeny na výstupní parametry. Celkové provedení metod zůstává stejné. To umožňuje určit příčinu výjimky při volání metody na proxy serveru. Tato funkce je k dispozici C++ pouze z kódu.  
   
 ## <a name="see-also"></a>Viz také:
 

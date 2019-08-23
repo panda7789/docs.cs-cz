@@ -2,20 +2,20 @@
 title: <webHttp>
 ms.date: 03/30/2017
 ms.assetid: 1f9d0754-d41e-44ce-a298-e51cb3096c64
-ms.openlocfilehash: 795e61b9054d2ea9276970988018c50099bcbe17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 366def5d0f4cc82b0ff0a5127701b0b5a6adb6a0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769795"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940494"
 ---
 # <a name="webhttp"></a>\<webHttp>
-Tento prvek určuje, <xref:System.ServiceModel.Description.WebHttpBehavior> koncového bodu prostřednictvím konfigurace. Toto chování při použití ve spojení s [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) standardní vazbu, umožňuje programovacího modelu webové služby Windows Communication Foundation (WCF).  
+Tento prvek určuje <xref:System.ServiceModel.Description.WebHttpBehavior> u koncového bodu prostřednictvím konfigurace. Toto chování, při použití ve spojení s [ \<WebHttpBinding >](webhttpbinding.md) standardní vazbou, povoluje webový programovací model pro službu Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<webHttp>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,11 +31,11 @@ Tento prvek určuje, <xref:System.ServiceModel.Description.WebHttpBehavior> konc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|automaticFormatSelectionEnabled|Pokud je tato vlastnost nastavena na `true`, určuje nejvhodnější formát infrastruktura WCF. Automatický výběr formátu je zakázané ve výchozím nastavení pro zpětnou kompatibilitu. Automatický výběr formátu je možné povolit programově nebo prostřednictvím konfigurace.|  
-|defaultBodyStyle|Určuje výchozí styl textu vrácených zpráv. Další informace najdete v tématu <xref:System.ServiceModel.Web.WebMessageBodyStyle> a [WCF Web HTTP formátování](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).|  
-|defaultOutgoingResponseFormat|Určuje výchozí formát odchozích odpovědi pro zprávy. Další informace najdete v tématu [WCF Web HTTP formátování](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).|  
-|faultExceptionEnabled|Získá nebo nastaví příznak určující, zda FaultException se vygeneruje, když vnitřní chybě serveru (stavový kód HTTP: 500) nastane.|  
-|helpEnabled|Získá nebo nastaví hodnotu, která určuje, zda je povoleno na stránce nápovědy.|  
+|automaticFormatSelectionEnabled|Pokud je tato vlastnost nastavena na `true`hodnotu, infrastruktura WCF určí nejvhodnější formát, který se má použít. Automatický výběr formátu je ve výchozím nastavení zakázán pro účely zpětné kompatibility. Automatický výběr formátu lze povolit prostřednictvím kódu programu nebo prostřednictvím konfigurace.|  
+|defaultBodyStyle|Určuje výchozí styl textu vrácených zpráv. Další informace najdete v tématech <xref:System.ServiceModel.Web.WebMessageBodyStyle> a [formátování webového HTTP WCF](../../../wcf/feature-details/wcf-web-http-formatting.md).|  
+|defaultOutgoingResponseFormat|Určuje výchozí formát odchozí odpovědi pro zprávy. Další informace najdete v tématu [formátování webového HTTP WCF](../../../wcf/feature-details/wcf-web-http-formatting.md).|  
+|faultExceptionEnabled|Získá nebo nastaví příznak určující, zda je FaultException generována při vnitřní chybě serveru (kód stavu HTTP: 500) dojde k chybě.|  
+|helpEnabled|Získává nebo nastavuje hodnotu, která určuje, jestli je povolená stránka pro usnadnění.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -44,11 +44,11 @@ Tento prvek určuje, <xref:System.ServiceModel.Description.WebHttpBehavior> konc
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje sadu chování koncového bodu.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje sadu chování koncového bodu.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.WebHttpElement>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
-- [Integrace jazyka AJAX a podpora JSON](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)
-- [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)
+- [Integrace jazyka AJAX a podpora JSON](../../../wcf/feature-details/ajax-integration-and-json-support.md)
+- [\<webHttpBinding>](webhttpbinding.md)

@@ -2,114 +2,114 @@
 title: Fronty ve WCF
 ms.date: 03/30/2017
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
-ms.openlocfilehash: c390970d66e442eb413d238691896608dcf27e03
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 27c92b0f728b909de16a059485a38ff7fb0fb765
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643499"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913392"
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
-Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communication Foundation (WCF).  
+Tato část popisuje, jak používat komunikaci ve frontě v Windows Communication Foundation (WCF).  
   
-## <a name="queues-as-a-wcf-transport-binding"></a>Vazby přenosu fronty jako WCF  
- Ve službě WCF kontrakty určit, co vyměňují. Kontrakty se výměny zpráv závislé na firmy nebo specifické pro aplikaci. Mechanismus, který se používá k výměně zpráv (nebo "o") je zadán v vazby. Vazby WCF zapouzdřit podrobnosti o výměně zpráv. Zveřejňovaly knoflíky konfigurace pro uživatele k řízení různých aspektů přenos nebo protokolu, které představují vazby. Fronty ve WCF se zachází stejně jako jakékoli jiné přenosu vázání, jež je velkým přínosem pro spoustu aplikací na zařazování do fronty. V současné době se mnoho aplikací služby Řízení front zapisují odlišně od jiných vzdálené volání procedur (RPC)-style distribuovaných aplikací, kvůli tomu je těžší sledovat a udržovat. S použitím technologie WCF styl psaní distribuované aplikace je skoro stejné, snadněji sledovat a udržovat. Ve které budou zohledňovat si mechanismus exchange nezávisle na obchodní logiku, je navíc jednodušší konfigurovat přenos nebo provést změny bez ovlivnění kódu konkrétní aplikace. Následující obrázek znázorňuje strukturu pomocí služby MSMQ jako přenosového mechanismu klienta a služby WCF.  
+## <a name="queues-as-a-wcf-transport-binding"></a>Fronty jako transportní vazba WCF  
+ Ve službě WCF smlouvy určují, co se má vyměňovat. Kontrakty jsou v závislosti na podnikovém nebo specifickém výměnou zpráv. Mechanismus použitý k výměně zpráv (nebo "How") je zadán ve vazbách. Vazby v WCF zapouzdřují podrobnosti výměny zpráv. Zpřístupňují konfigurační ovladače pro uživatele k řízení různých aspektů přenosu nebo protokolu, který vazby představují. Zařazení do fronty ve službě WCF se považuje za jakoukoliv jinou přenosovou vazbu, což je velkou výhodou pro mnoho aplikací služby Řízení front. V současné době se mnoho aplikací služby Řízení front zapisuje odlišně od jiných distribuovaných aplikací ve stylu vzdáleného volání procedur (RPC), což usnadňuje sledování a údržbu. Pomocí služby WCF je styl psaní distribuované aplikace mnohem stejný, což usnadňuje sledování a údržbu. Kromě toho tím, že se mechanizmus výměny nezávisle na obchodní logice nakonfiguruje, je snazší nakonfigurovat přenos nebo provádět změny, aniž by to ovlivnilo kód specifický pro aplikaci. Následující obrázek znázorňuje strukturu služby WCF a klienta pomocí služby MSMQ jako přenosu.  
   
- ![Ve frontě diagramu aplikace](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
+ ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
   
- Jak je vidět z předchozí obrázek, klient a služba musí definovat jenom aplikace sémantiku, to znamená, kontrakt a implementaci. Služba nakonfiguruje pomocí nastavení vazbu s frontou. Klient použije [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta WCF na službu a vygenerovat konfigurační soubor, který popisuje vazby na použití pro odesílání zpráv do služby. Odeslat zprávu ve frontě, proto klient vytvoří instanci klienta WCF a vyvolá operaci na něj. To způsobí, že zpráva, která má být odeslána do fronty přenosu a přenést do cílové fronty. Všem složitosti komunikaci ve frontě jsou skryté aplikace, která je odeslání a příjem zpráv.  
+ Jak vidíte předchozí obrázek, klient a služba musí definovat pouze sémantiku aplikace, to znamená kontrakt a implementaci. Služba konfiguruje vazbu ve frontě s preferovaným nastavením. Klient nástroje používá nástroj pro dokládání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta WCF pro službu a k vygenerování konfiguračního souboru, který popisuje vazby, které se mají použít k posílání zpráv do služby. Proto klient pro odeslání zprávy ve frontě vytvoří instanci klienta WCF a vyvolá na něm operaci. Tím dojde k odeslání zprávy do fronty přenosů a přenos do cílové fronty. Všechny složitosti komunikace ve frontě jsou skryté od aplikace, která odesílá a přijímá zprávy.  
   
- Upozornění o vazbách zařazených do fronty ve WCF patří:  
+ Mezi upozornění týkající se vazby ve frontě ve službě WCF patří:  
   
-- Všechny služby, které operace musí být jednosměrné, protože výchozí vazby ve službě WCF zařazených do fronty nepodporuje duplexní komunikaci pomocí front. Ukázka obousměrnou komunikaci ([obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md)) ukazuje, jak můžete implementovat pomocí front duplexní komunikaci dva jednosměrné kontrakty.  
+- Všechny operace služby musí být jednosměrné, protože výchozí vazba zařazená do fronty ve službě WCF nepodporuje duplexní komunikaci pomocí front. Obousměrný způsob komunikace ([Obousměrná komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md)) ukazuje, jak používat 2 1 kontrakty k implementaci duplexní komunikace pomocí front.  
   
-- Ke generování WCF klienta pomocí výměny metadat vyžaduje další koncový bod protokolu HTTP na službu, takže může být dotazována přímo k generování klienta WCF a získat informace o vazbě správně nakonfigurovat komunikaci ve frontě.  
+- Generování klienta WCF pomocí výměny metadat vyžaduje pro službu další koncový bod HTTP, aby se mohla dotazovat přímo za účelem generování klienta WCF a získání informací o vazbě ke správné konfiguraci komunikace zařazené do fronty.  
   
-- Podle vazbu s frontou, není nutná další konfigurace mimo WCF. Například <xref:System.ServiceModel.NetMsmqBinding> třídy, který je dodáván s použitím technologie WCF vyžaduje, abyste nakonfigurujte vazby také provedli minimální konfiguraci služby Řízení front zpráv (MSMQ).  
+- V závislosti na vazbě zařazené do fronty je vyžadována další konfigurace mimo WCF. Například <xref:System.ServiceModel.NetMsmqBinding> třída, která je dodávána s rozhraním WCF, vyžaduje, abyste nakonfigurovali vazby a nakonfigurovali také minimální konfiguraci služby Řízení front zpráv (MSMQ).  
   
- Následující části popisují konkrétní zařazených do fronty vazby součástí WCF, které jsou založeny na služby MSMQ.  
+ Následující části popisují konkrétní vazby zařazené do fronty dodávané se službou WCF založené na službě MSMQ.  
   
 ### <a name="msmq"></a>MSMQ  
- Přenos zařazených do fronty ve WCF využívá služby MSMQ pro jeho komunikaci ve frontě.  
+ Přenos ve frontě ve službě WCF používá ke své komunikaci ve frontě službu MSMQ.  
   
- Fronta MSMQ se dodává jako volitelnou komponentu s Windows a běží jako služba NT. Zachycení zpráv pro předávání v přenosové frontě a doručování do cílové fronty. Správci fronty MSMQ implementovat spolehlivé přenos zpráv protokolu, aby se zprávy nejsou ztraceno v přenosu. Protokol může být nativní nebo založený na protokolu SOAP, jako je například spolehlivé zprávy protokolu (SRMP) protokolu SOAP.  
+ Služba MSMQ je dodávána jako volitelná součást se systémem Windows a spouští se jako služba NT. Zachycuje zprávy pro přenos ve frontě přenosu a pro doručení do cílové fronty. Správci fronty MSMQ implementují spolehlivý protokol pro přenos zpráv, aby se zprávy během přenosu neztratily. Protokol může být buď nativní, nebo založený na protokolu SOAP, jako je protokol SRMP (SOAP Reliable Message Protocol).  
   
- Služby MSMQ může být fronty transakcí nebo není transakční. Transakční fronta umožňuje zachytit a doručit v transakci a potom ukládají odolným způsobem ve frontě zpráv. Zprávy odeslané do transakční fronty přenosu právě jednou v pořadí. Netransakční fronta můžete použít k odesílání zpráv volatile a odolnost. Zpráva odeslaná do netransakční fronta neobsahuje žádnou záruku spolehlivé přenos; Proto může dojít ke ztrátě zpráv.  
+ Ve službě MSMQ můžou být fronty transakční nebo netransakční. Transakční fronta umožňuje zaznamenávat a doručovat zprávy v transakci a následně ukládat trvale ve frontě. Zprávy odeslané do transakční fronty jsou přenášeny právě jednou v daném pořadí. K posílání stálých i trvalých zpráv můžete použít netransakční frontu. Zpráva odeslaná do netransakční fronty neprovádí žádné spolehlivé záruky přenosu. zprávy proto mohou být ztraceny.  
   
- Fronty MSMQ zabezpečit je také možné pomocí Windows identity registraci ve službě Active Directory directory. Při instalaci služby MSMQ, můžete nainstalovat integrace služby Active Directory, která vyžaduje, aby počítač jako součást síťové domény Windows.  
+ Fronty MSMQ je taky možné zabezpečit pomocí identity Windows registrované v adresářové službě Active Directory. Při instalaci služby MSMQ můžete nainstalovat integraci služby Active Directory, která vyžaduje, aby počítač byl součástí doménové sítě systému Windows.  
   
- Další informace o MSMQ najdete v tématu [instalace řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
+ Další informace o službě MSMQ najdete v tématu [instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
   
 ### <a name="netmsmqbinding"></a>NetMsmqBinding  
- [ \<NetMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) je ve frontě vazby WCF poskytuje dva koncové body služby WCF pro komunikaci pomocí služby MSMQ. Vazba, proto zpřístupní vlastnosti, které jsou specifické pro službu MSMQ. Ale ne všechny funkce služby MSMQ a vlastnosti nejsou zveřejněné v žádném `NetMsmqBinding`. Komprese `NetMsmqBinding` je navržená s optimální sadu funkcí, které většina zákazníků byste najít dostatečná.  
+ NetMsmqBinding > je vazba WCF ve frontě poskytuje dvěma koncovým bodům WCF ke komunikaci pomocí služby MSMQ. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) Vazba proto zpřístupňuje vlastnosti, které jsou specifické pro službu MSMQ. Ne všechny funkce a vlastnosti služby MSMQ nejsou ale k dispozici `NetMsmqBinding`v. Kompaktní `NetMsmqBinding` je navržený s optimální sadou funkcí, které by většina zákazníků měla najít dostatečná.  
   
- `NetMsmqBinding` Manifesty základní koncepty služby Řízení front doposud popsané ve formě vlastnosti na vazby. Tyto vlastnosti zase komunikaci služby MSMQ přenosu a doručovat zprávy. Diskuzi o vlastnosti kategorie je v následujících částech. Další informace najdete v tématu koncepční témata, které popisují konkrétní vlastnosti komplexněji.  
+ `NetMsmqBinding` Manifesty základních konceptů zařazených do fronty, které jsou zde popsané, ve formě vlastností vazeb. Tyto vlastnosti zase komunikují se službou MSMQ při přenosu a doručování zpráv. Diskuze o kategoriích vlastností je v následujících oddílech. Další informace najdete v koncepčních tématech s úplným popisem specifických vlastností.  
   
-#### <a name="exactlyonce-and-durable-properties"></a>ExactlyOnce a trvalý vlastnosti  
- `ExactlyOnce` a `Durable` vlastnosti vliv na způsob přenosu zpráv mezi fronty:  
+#### <a name="exactlyonce-and-durable-properties"></a>ExactlyOnce a trvalé vlastnosti  
+ Vlastnosti `ExactlyOnce` a`Durable` ovlivňují přenos zpráv mezi frontami:  
   
-- `ExactlyOnce`: Pokud je nastavena na `true` (výchozí), kanálu ve frontě zajistí, že není duplicitní zprávy, pokud doručena. Také zajistí, že nedojde ke ztrátě zprávy. Pokud zprávu nelze doručit nebo zprávy čas – Chcete-li vyprší zprávu můžou doručit, neúspěšné zprávy spolu s doručování důvod selhání se zaznamená do fronty nedoručených zpráv. Pokud je nastavena na `false`, kanálu ve frontě nevyvine přenášet zprávy. V takovém případě můžete volitelně zvolit fronty nedoručených zpráv.  
+- `ExactlyOnce`: Když se nastaví `true` na (výchozí), kanál zařazený do fronty zajistí, že se zpráva, pokud je dodána, nebude duplikována. Také zajišťuje, že nedojde ke ztrátě zprávy. Pokud zprávu nelze doručit nebo pokud doba platnosti zprávy vypršela před doručením zprávy, chybová zpráva spolu s důvodem selhání doručení je zaznamenána ve frontě nedoručených zpráv. Při nastavení na `false`se kanál ve frontě snaží přenést zprávu. V takovém případě můžete volitelně zvolit frontu nedoručených zpráv.  
   
-- `Durable:` Pokud je nastavena na `true` (výchozí), kanálu ve frontě zajistí, že služba MSMQ ukládá zprávy trvale na disk. Proto šlo zastavit a restartovat službu MSMQ zprávy na disku je přenést do cílové fronty nebo odeslaná do služby. Pokud je nastavena na `false`, zprávy se ukládají v úložišti volatile a jsou ztraceny na zastavení a restartování služby MSMQ.  
+- `Durable:`Když se nastaví `true` na (výchozí nastavení), kanál zařazený do fronty zajistí, že služba MSMQ ukládá zprávu trvale na disk. Pokud se tedy služba MSMQ zastavila a restartuje, zprávy na disku se přenesou do cílové fronty nebo se doručí službě. Při nastavení na `false`se zprávy ukládají do stálého úložiště a při zastavení a restartování služby MSMQ se ztratí.  
   
- Pro `ExactlyOnce` spolehlivé přenosu služby MSMQ vyžaduje fronty využívat transakce. MSMQ také vyžaduje transakce čtení z transakční frontu. V důsledku toho při použití `NetMsmqBinding`, mějte na paměti, že transakce je nutný k odeslání nebo přijetí zprávy, když `ExactlyOnce` je nastavena na `true`. Obdobně vyžaduje MSMQ fronty bude netransakční pro záruky best effort, například kdy `ExactlyOnce` je `false` a pro těkavých zasílání zpráv. Proto při nastavování `ExactlyOnce` k `false` nebo trvalý k `false`, nelze odesílat ani přijímat pomocí transakce.  
+ V `ExactlyOnce` případě spolehlivého přenosu vyžaduje MSMQ transakční frontu. Služba MSMQ také vyžaduje transakci pro čtení z transakční fronty. V takovém případě, když použijete `NetMsmqBinding`, si zapamatujte, že transakce je vyžadována k odesílání nebo přijímání zpráv, když `ExactlyOnce` je nastavena na `true`. Podobně služba MSMQ vyžaduje, aby fronta byla netransakční pro zajištění co nejlepšího úsilí, například když `ExactlyOnce` je `false` a pro nestálé zasílání zpráv. Proto když nastavíte `ExactlyOnce` `false` nebo netrvalo `false`, nelze odeslat ani přijmout pomocí transakce.  
   
 > [!NOTE]
->  Ověřte, zda správné fronty (transakční či netransakční) je vytvořen na základě nastavení ve vazbách. Pokud `ExactlyOnce` je `true`, použít transakční frontu; v opačném případě použijte netransakční fronta.  
+> Zajistěte, aby byla na základě nastavení v vazbách vytvořena správná fronta (transakční nebo netransakční). Pokud `ExactlyOnce` je`true`, použijte transakční frontu. v opačném případě použijte netransakční frontu.  
   
 #### <a name="dead-letter-queue-properties"></a>Vlastnosti fronty nedoručených zpráv  
- Fronty nedoručených zpráv se používá k ukládání zpráv, které nesplní doručování. Uživatel můžete napsat kompenzační logiku, která čte zprávy z fronty nedoručených zpráv.  
+ Fronta nedoručených zpráv se používá k ukládání zpráv, které nedoručení doplní. Uživatel může napsat kompenzační logiku, která čte zprávy z fronty nedoručených zpráv.  
   
- Mnoho systémů zařazování do fronty poskytuje fronty nedoručených zpráv celý systém. Služby MSMQ obsahuje systémová netransakční onta nedoručených zpráv fronty zpráv, které nesplní doručování transakční fronty a systémová Transakční nedoručené zprávy fronty zpráv, které nesplní doručování transakční fronty.  
+ Řada systémů řízení front poskytuje pro frontu nedoručených zpráv pro celé systémy. Služba MSMQ poskytuje frontu netransakčních netransakčních zpráv pro zprávy, které selžou doručení do netransakčních front a frontu nedoručených transakčních zpráv v rámci systému pro zprávy, které selžou doručení do transakčních front.  
   
- Pokud více klientů, které odesílání zpráv do fronty jiné cílové sdílené složky služby MSMQ, všechny zprávy od klientů použít stejné fronty nedoručených zpráv. To není vždy vhodnější. Pro lepší izolaci, WCF a služby MSMQ v [!INCLUDE[wv](../../../../includes/wv-md.md)] poskytnout vlastní frontu nedoručených zpráv (nebo frontu nedoručených zpráv specifické pro aplikaci), může uživatel zadat k ukládání zpráv, které nesplní doručování. Proto různých klientů Nesdílejte stejné fronty nedoručených zpráv.  
+ Pokud více klientů odesílajících zprávy do různých cílových front sdílí službu MSMQ, všechny zprávy odesílané klienty přejdou do stejné fronty nedoručených zpráv. To není vždy vhodnější. Pro lepší izolaci služba WCF a MSMQ [!INCLUDE[wv](../../../../includes/wv-md.md)] v produktu poskytují vlastní frontu nedoručených zpráv (nebo frontu nedoručených zpráv specifickou pro aplikaci), kterou může uživatel zadat pro ukládání zpráv, u kterých dojde k selhání doručení. Proto Různí klienti nesdílejí stejnou frontu nedoručených zpráv.  
   
- Vazba má dvě vlastnosti, které vás zajímají:  
+ Vazba má dvě vlastnosti zájmu:  
   
-- `DeadLetterQueue`: Tato vlastnost je výčet, který označuje, zda je požadována fronty nedoručených zpráv. Výčet obsahuje také typ fronty nedoručených zpráv, pokud požadovaná. Hodnoty jsou `None`, `System`, a `Custom`. Další informace o interpretaci těchto vlastností najdete v tématu [pomocí fronty nedoručených zpráv pro zpracování selhání přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+- `DeadLetterQueue`: Tato vlastnost je výčet, který označuje, zda je požadována fronta nedoručených zpráv. Výčet také obsahuje druh fronty nedoručených zpráv, pokud je požadován. Hodnoty jsou `None`, `System`a. `Custom` Další informace o interpretaci těchto vlastností najdete v tématu [použití front nedoručených zpráv pro zpracování selhání přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md) .  
   
-- `CustomDeadLetterQueue`: Tato vlastnost je identifikátor URI (Uniform Resource) adresa fronty nedoručených zpráv specifické pro aplikaci. To je potřeba, pokud `DeadLetterQueue`.`Custom` je vybrán.  
+- `CustomDeadLetterQueue`: Tato vlastnost je adresa identifikátoru URI (Uniform Resource Identifier) fronty nedoručených zpráv pro konkrétní aplikaci. To je nutné v `DeadLetterQueue`případě, že.`Custom` je zvolena.  
   
-#### <a name="poison-message-handling-properties"></a>Zacházení s nezpracovatelnými vlastnosti zpracování zpráv  
- Když služba načte zprávy z cílové fronty v rámci transakce, služba nemusí podařit zprávu zpracovat z různých důvodů. Zpráva se pak znovu umístěny do fronty se znovu přečíst. Se zprávy, které nesplní opakovaně, sadu zpracování zpráv poison vlastnosti mohou být konfigurovány ve vazbě. Existují čtyři vlastnosti: `ReceiveRetryCount`, `MaxRetryCycles`, `RetryCycleDelay`, a `ReceiveErrorHandling`. Další informace o těchto vlastnostech najdete v tématu [zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
+#### <a name="poison-message-handling-properties"></a>Vlastnosti zpracování nezpracovatelných zpráv  
+ Když služba přečte zprávy z cílové fronty v transakci, služba se nemusí podařit zpracovat zprávu z různých důvodů. Zpráva se pak vrátí zpátky do fronty pro opětovné čtení. Chcete-li se zabývat se zprávami, které se opakují opakovaně, lze ve vazbě nakonfigurovat sadu vlastností zpracování nefunkčních zpráv. Existují čtyři vlastnosti `ReceiveRetryCount`:, `MaxRetryCycles`, `RetryCycleDelay`a `ReceiveErrorHandling`. Další informace o těchto vlastnostech naleznete v tématu [manipulace](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)s nezpracovatelovou zprávou.  
   
 #### <a name="security-properties"></a>Vlastnosti zabezpečení  
- MSMQ zpřístupňuje svůj vlastní model zabezpečení, jako jsou například seznamy řízení přístupu (ACL) ve frontě nebo odeslání ověřené zprávy. `NetMsmqBinding` Zpřístupní tyto vlastnosti zabezpečení jako součást jeho nastavení zabezpečení přenosu. Existují dvě vlastnosti ve vazbě pro zabezpečení přenosu: `MsmqAuthenticationMode` a `MsmqProtectionLevel`. Nastavení na tyto vlastnosti závisí na konfiguraci služby MSMQ. Další informace najdete v tématu [zabezpečení zabezpečení zprávy přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
+ Služba MSMQ zpřístupňuje svůj vlastní model zabezpečení, například seznamy řízení přístupu (ACL) ve frontě nebo odesílání ověřených zpráv. `NetMsmqBinding` Zpřístupňuje tyto vlastnosti zabezpečení jako součást nastavení zabezpečení přenosu. Existují dvě vlastnosti ve vazbě pro zabezpečení přenosu: `MsmqAuthenticationMode` a. `MsmqProtectionLevel` Nastavení v těchto vlastnostech závisí na konfiguraci služby MSMQ. Další informace najdete v tématu [zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
   
- Kromě zabezpečení přenosu je možné zabezpečit skutečné vlastní zprávě SOAP pomocí zabezpečení zpráv. Další informace najdete v tématu [zabezpečení zabezpečení zprávy zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md).  
+ Kromě zabezpečení přenosu je možné samotnou vlastní zprávu SOAP zabezpečit pomocí zabezpečení zpráv. Další informace najdete v tématu [zabezpečení zpráv pomocí zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md).  
   
- `MsmqTransportSecurity` také poskytuje dvě vlastnosti `MsmqEncryptionAlgorithm` a `MsmqHashAlgorithm`. Jedná se o výčty různých algoritmů pro výběr pro algoritmu hash podpisů a šifrování přenosu k frontě zpráv.  
+ `MsmqTransportSecurity`také zpřístupňuje dvě vlastnosti `MsmqEncryptionAlgorithm` a `MsmqHashAlgorithm`. Jedná se o výčty různých algoritmů pro výběr přenosu zpráv z fronty do fronty a jejich hashování u podpisů.  
   
 #### <a name="other-properties"></a>Další vlastnosti  
- Kromě předchozích vlastností další vlastnosti specifické pro službu MSMQ v vazby zahrnout:  
+ Kromě předchozích vlastností jsou k dispozici i další vlastnosti specifické pro službu MSMQ uvedené ve vazbě:  
   
-- `UseSourceJournal`: Je povolena vlastnost umožňující označit, že záznamu do deníku zdroje. Záznamu do deníku zdroje je funkce služby MSMQ, která uchovává informace o zprávy, které byly úspěšně odeslány z fronty přenosu.  
+- `UseSourceJournal`: Vlastnost, která označuje, že je zapnuto ukládání zdrojů do deníku. Deníkování zdrojů je funkce služby MSMQ, která sleduje zprávy, které byly úspěšně přeneseny z fronty přenosu.  
   
-- `UseMsmqTracing`: Vlastnost umožňující označit, že je zapnutá trasování služby MSMQ. Trasování služby MSMQ odešle zprávy do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítače hostujícího správce fronty MSMQ.  
+- `UseMsmqTracing`: Vlastnost, která označuje, že trasování služby MSMQ je zapnuté. Trasování služby MSMQ odesílá zprávy sestavy do fronty sestav pokaždé, když se zpráva opustí nebo dorazí na počítač, který je hostitelem správce fronty MSMQ.  
   
-- `QueueTransferProtocol`: Výčet protokol bude použit pro přenos zpráv k frontě. MSMQ – implementuje nativní k frontě přenosový protokol a názvem protokol spolehlivého zasílání zpráv na SOAP (SRMP) protokol založený na protokolu SOAP. SRMP se používá při použití přenosového protokolu HTTP pro přenos k frontě. SRMP zabezpečení se používá při použití protokolu HTTPS pro přenosy na frontě.  
+- `QueueTransferProtocol`: Výčet protokolu, který se má použít pro přenosy zpráv z fronty do fronty. Služba MSMQ implementuje nativní přenosovou protokol front-Queue a protokol SOAP nazvaný protokolu SOAP Reliable Messaging Protocol (SRMP). Protokol SRMP se používá při přenosu protokolu HTTP pro přenosy front-Queue. Protokol SRMP se používá při použití protokolu HTTPS k přenosům front-Queue.  
   
-- `UseActiveDirectory`: Logická hodnota označující, zda služba Active Directory musí být použito pro rozpoznání adresy fronty. Ve výchozím nastavení toto je vypnuto. Další informace najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
+- `UseActiveDirectory`: Logická hodnota určující, zda se má služba Active Directory používat k překladu adres fronty. Ve výchozím nastavení je to vypnuté. Další informace najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
- `MsmqIntegrationBinding` Se používá, když chcete, aby ke komunikaci s existující služby MSMQ aplikace napsané v jazyce C, C++, COM nebo rozhraní API System.Messaging koncového bodu WCF.  
+ Používá `MsmqIntegrationBinding` se, pokud chcete, aby koncový bod WCF komunikoval s existující aplikací služby MSMQ napsanou v rozhraních API jazyka C, C++, com nebo System. Messaging.  
   
- Vazby vlastnosti jsou stejné jako v případě `NetMsmqBinding`. Nicméně platí následující rozdíly:  
+ Vlastnosti vazby jsou stejné jako pro `NetMsmqBinding`. Platí ale následující rozdíly:  
   
-- Kontrakt pro `MsmqIntegrationBinding` je omezen na pořízení jeden parametr typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> kde parametr typu je typ těla zprávy.  
+- Kontrakt operace pro `MsmqIntegrationBinding` je omezen, aby převzal jeden parametr typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> , kde parametr typu je typ těla.  
   
-- Velká část vlastnosti nativních zpráv MSMQ jsou přístupné <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> pro použití.  
+- Většina vlastností nativní zprávy služby MSMQ se zveřejňuje v <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> pro použití.  
   
-- Smyslem serializaci a deserializaci textu zprávy, jsou k dispozici serializátory, jako jsou XML a ActiveX.  
+- Pro usnadnění serializace a deserializace těla zprávy je k dispozici serializátory, jako je XML a ActiveX.  
   
 ### <a name="sample-code"></a>Vzorový kód  
- Podrobné pokyny o tom, jak napsat WCF služby, které používají služby MSMQ naleznete v následujících tématech:  
+ Podrobné pokyny k psaní služeb WCF, které používají službu MSMQ, najdete v následujících tématech:  
   
 - [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
   
 - [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
   
- Dokončený kód v ukázce použití služby MSMQ ve službě WCF najdete v následujících tématech:  
+ Kompletní vzorek kódu, který ilustruje použití služby MSMQ ve službě WCF, najdete v následujících tématech:  
   
 - [Zpracované vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
   

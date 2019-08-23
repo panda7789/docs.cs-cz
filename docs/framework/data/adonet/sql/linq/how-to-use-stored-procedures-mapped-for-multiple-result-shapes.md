@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2b84dfe-7fec-489a-92de-45215cec4518
-ms.openlocfilehash: 406e44a0ee3b086ceb47b25a80c4fd0ff5a92607
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 22614be8e53d975c4efdf7004f41906c58639c61
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902652"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938693"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Postupy: Použití uložených procedur mapovaných pro vícečetné tvary výsledků
-Při vícečetné tvary výsledků můžete vrátit uložené procedury, návratový typ nelze silně typováno do obrazec jeden projekce. I když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvářet všechny typy možných projekce, se nemůže vědět, pořadí, ve kterém bude vrácen.  
+Pokud uložená procedura může vracet více tvarů výsledků, nemůže být návratový typ silným typem pro jeden obrazec projekce. I [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] když může generovat všechny možné typy projekce, nemůže znát pořadí, ve kterém se budou vracet.  
   
- Tento scénář s uloženými procedurami, které postupně vyvolávají vícečetné tvary výsledků kontrast. Další informace najdete v tématu [jak: Použití uložených procedur mapovaných pro sekvenční tvary výsledků](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md).  
+ Porovnejte tento scénář s uloženými procedurami, které vydávají více výsledných tvarů postupně. Další informace najdete v tématu [jak: Použijte uložené procedury mapované pro obrazce](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md)sekvenčních výsledků.  
   
- <xref:System.Data.Linq.Mapping.ResultTypeAttribute> Atributu se použije pro uložené procedury, které vrací více typů výsledků pro určení sady typů procedura může vrátit.  
+ <xref:System.Data.Linq.Mapping.ResultTypeAttribute> Atribut je použit pro uložené procedury, které vracejí více výsledků typů pro určení sady typů, které může procedura vracet.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu kódu SQL, tvar výsledek závisí na vstupu (`shape =1` nebo `shape = 2`). Nevíte, které projekce bude vrácen první.  
+ V následujícím příkladu kódu SQL závisí obrazec výsledek na vstupu (`shape =1` nebo `shape = 2`). Nevíte, které projekce se budou vracet jako první.  
   
 ```  
 CREATE PROCEDURE VariableResultShapes(@shape int)  
@@ -35,10 +35,10 @@ else if(@shape = 2)
  [!code-vb[DLinqSprox#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#4)]  
   
 ## <a name="example"></a>Příklad  
- Podobně jako následujícím kódu můžete použít k provedení tuto uloženou proceduru.  
+ Chcete-li provést tuto uloženou proceduru, použijte kód podobný následujícímu.  
   
 > [!NOTE]
->  Je nutné použít <xref:System.Data.Linq.IMultipleResults.GetResult%2A> vzor, který má získat enumerátor správný typ, na základě vašich znalostí uložené procedury.  
+> Je nutné použít <xref:System.Data.Linq.IMultipleResults.GetResult%2A> vzor pro získání výčtu správného typu na základě vaší znalosti uložené procedury.  
   
  [!code-csharp[DLinqSprox#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#5)]
  [!code-vb[DLinqSprox#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#5)]  

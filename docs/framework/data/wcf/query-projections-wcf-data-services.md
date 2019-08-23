@@ -10,60 +10,60 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 2e4c40d6c71a254d5f40ea42788608e10c5872a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44e99db2d75fcd8e84f91f0afc8da54ff6c3f707
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774618"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931168"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
 
-Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Výběr možností dotazu systému ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).
+Projekce poskytuje mechanizmus [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] pro snížení objemu dat v informačním kanálu vrácených dotazem zadáním, že v odpovědi jsou vráceny pouze některé vlastnosti entity. Další informace najdete v tématu [OData: Vyberte možnost dotaz na systém ($select](https://go.microsoft.com/fwlink/?LinkId=186076)).
 
-Toto téma popisuje, jak k definici projekce dotazů, jaké požadavky jsou pro entitu a nonentity typy, což aktualizuje na předpokládané výsledky, vytváření předpokládané typů a jsou uvedeny některé důležité informace o projekci.
+Toto téma popisuje, jak definovat projekci dotazu, jaké jsou požadavky pro entity a typy bez entit, které provádějí aktualizace s plánovanými výsledky, vytváření projektových typů a uvádí některé informace o projekci.
 
 ## <a name="defining-a-query-projection"></a>Definování projekce dotazu
 
-Můžete přidat klauzuli projekce pro dotaz s použitím `$select` možnosti v identifikátoru URI nebo pomocí dotazu [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) – klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ. Vrátí entitu, kterou můžete použít k projekci dat do entity typy nebo typy nonentity na straně klienta. Příklady v tomto tématu ukazují, jak používat `select` klauzule v dotazu LINQ.
+Klauzuli projekce můžete k dotazu přidat buď pomocí `$select` možnosti dotazu v identifikátoru URI, nebo pomocí klauzule [Select](../../../csharp/language-reference/keywords/select-clause.md) ([Select](../../../visual-basic/language-reference/queries/select-clause.md) in Visual Basic) v dotazu LINQ. Vrácená data entity lze v klientovi promítnout buď na typy entit, nebo na typy bez entit. Příklady v tomto tématu ukazují, jak použít `select` klauzuli v dotazu LINQ.
 
 > [!IMPORTANT]
-> Může dojít ke ztrátě dat ve službě dat při ukládání aktualizací, které byly provedeny na předpokládané typy. Další informace najdete v tématu [projekce aspekty](#considerations).
+> Při ukládání aktualizací, které byly provedeny s plánovanými typy, může dojít ke ztrátě dat v datové službě. Další informace najdete v tématu [](#considerations)věnovaném projekčním hlediskům.
 
-## <a name="requirements-for-entity-and-non-entity-types"></a>Požadavky pro Entity a typy bez entit
+## <a name="requirements-for-entity-and-non-entity-types"></a>Požadavky na typy entit a jiných entit
 
-Typy entit musí mít jednu nebo více vlastností identity, které společně tvoří klíč entity. Typy entit jsou definovány na klientských počítačích v jednom z následujících způsobů:
+Typy entit musí mít jednu nebo více vlastností identity, které tvoří klíč entity. Typy entit jsou definovány v klientech jedním z následujících způsobů:
 
-- Použitím <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> typu.
+- <xref:System.Data.Services.Common.DataServiceKeyAttribute> Použitím nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> na typ.
 
-- Pokud má vlastnost s názvem typu `ID`.
+- Když typ obsahuje vlastnost s názvem `ID`.
 
-- Pokud má vlastnost s názvem typu *typ*`ID`, kde *typ* je název typu.
+- Když typ obsahuje vlastnost s názvem *Type*`ID`, kde *Type* je název typu.
 
-Ve výchozím nastavení při projektu výsledků dotazu do typ definovaný v klientském počítači, musí vlastnosti požadované v projekci existovat v typu klienta. Pokud však zadáte hodnotu `true` pro <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>, vlastnostmi zadanými v projekci není nutné vyskytuje v typu klienta.
+Ve výchozím nastavení se při dotazování výsledků dotazu na typ definovaný v klientovi musí v typu klienta vyskytovat vlastnosti požadované v projekci. Pokud však zadáte hodnotu `true` <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> pro vlastnost <xref:System.Data.Services.Client.DataServiceContext>, vlastnosti zadané v projekci nejsou požadovány pro výskyt v typu klienta.
 
-### <a name="making-updates-to-projected-results"></a>Provádění aktualizací na předpokládané výsledky
+### <a name="making-updates-to-projected-results"></a>Provádění aktualizací s plánovanými výsledky
 
-Když projekt výsledků dotazu do typů entit v klientském počítači, <xref:System.Data.Services.Client.DataServiceContext> můžete sledovat tyto objekty s aktualizacemi k odeslání zpět k datům provozu, jestliže <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda je volána. Aktualizace, které se provedly data promítnout do jiných entit typy na straně klienta však nelze odeslat zpět do datové služby. Je to proto, že bez klíče k identifikaci entity instance služby data nelze aktualizovat správné entitu ve zdroji dat. Typy bez entit nejsou připojené k <xref:System.Data.Services.Client.DataServiceContext>.
+Při dotazování výsledků dotazu na typy entit v klientovi <xref:System.Data.Services.Client.DataServiceContext> může aplikace sledovat tyto objekty s aktualizacemi, které se mají odeslat zpět do datové služby <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> při volání metody. Aktualizace provedené v datech, které se procházejí na typy neentitované v klientovi, se ale nedají poslat zpátky do datové služby. Důvodem je to, že bez klíče k identifikaci instance entity nemůže datová služba aktualizovat správnou entitu ve zdroji dat. Typy, které nejsou entitou, nejsou připojeny <xref:System.Data.Services.Client.DataServiceContext>k.
 
-Pokud jeden nebo více vlastností typu entity definované ve službě data nejsou dojde k typu klienta, do kterého se plánovaných entity, vloží nové entity nesmí obsahovat tyto chybějící vlastnosti. V takovém případě budou aktualizace, které se provedly existující entity **také** obsahovat tyto chybějící vlastnosti. Když existuje hodnoty těchto vlastností, aktualizace vynuluje ji na výchozí hodnotu pro vlastnost, jak je definováno ve zdroji dat.
+V případě, že jedna nebo více vlastností typu entity definovaného v datové službě se neobjeví v typu klienta, do kterého je entita provedená, vkládání nových entit nebudou obsahovat tyto chybějící vlastnosti. V takovém případě nebudou aktualizace provedené u stávajících entit obsahovat **také** tyto chybějící vlastnosti. Pokud pro takovou vlastnost existuje hodnota, aktualizace ji obnoví na výchozí hodnotu vlastnosti, jak je definováno ve zdroji dat.
 
-### <a name="creating-projected-types"></a>Vytváření předpokládané typů
+### <a name="creating-projected-types"></a>Vytváření projektových typů
 
-Následující příklad používá anonymní dotaz LINQ, který projekty vlastností souvisejících s adresou `Customers` typ do nového `CustomerAddress` typ, který je definován na straně klienta a atributy retrievable a searchable typ entity:
+V následujícím příkladu je použit anonymní dotaz LINQ, který projektuje vlastnosti `Customers` související s adresou typu do nového `CustomerAddress` typu, který je definován v klientovi a má atribut jako typ entity:
 
 [!code-csharp[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#selectcustomeraddressspecific)]
 [!code-vb[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#selectcustomeraddressspecific)]
 
-V tomto příkladu vzor inicializátoru objektu umožňuje vytvořit novou instanci třídy `CustomerAddress` typ namísto volání konstruktoru. Konstruktory nejsou podporovány při projekci na typy entit, ale je možné použít při projekci na jiné entity a anonymní typy. Protože `CustomerAddress` je typ entity, změny můžou provedené a odesílaných zpět do datové služby.
+V tomto příkladu je použit vzor inicializátoru objektu k vytvoření nové instance `CustomerAddress` typu namísto volání konstruktoru. Konstruktory nejsou podporovány při projekci do typů entit, ale lze je použít při projekci na jiné než entity a anonymní typy. Vzhledem `CustomerAddress` k tomu, že je typ entity, lze provádět změny a odesílat je zpět do datové služby.
 
-Kromě toho data z `Customer` typ je promítnout do instance `CustomerAddress` typ entity místo anonymního typu. Projekce do anonymních typů je podporován, ale dat je jen pro čtení, protože anonymní typy se považují za typy nonentity.
+Data z tohoto `Customer` typu se také prochází do instance `CustomerAddress` typu entity namísto anonymního typu. Projekce na anonymní typy je podporována, ale data jsou jen pro čtení, protože anonymní typy jsou považovány za typy bez entit.
 
-<xref:System.Data.Services.Client.MergeOption> Nastavení <xref:System.Data.Services.Client.DataServiceContext> slouží k rozlišení identity během projekce dotazu. To znamená, že pokud instance `Customer` typu již existuje v <xref:System.Data.Services.Client.DataServiceContext>, instance `CustomerAddress` se stejnou identitou bude následovat rozlišení identity pravidla nastavená organizací <xref:System.Data.Services.Client.MergeOption>
+<xref:System.Data.Services.Client.MergeOption> Nastavení ,<xref:System.Data.Services.Client.DataServiceContext> které se používá pro překlad identity během projekce dotazu. To znamená, že pokud instance `Customer` typu již v rozhraní <xref:System.Data.Services.Client.DataServiceContext>existuje, bude instance `CustomerAddress` se stejnou identitou dodržovat pravidla překladu identit nastavená<xref:System.Data.Services.Client.MergeOption>
 
-Následující část popisuje chování při projekci výsledků do entity a nonentity typů:
+Následující článek popisuje chování při projekci výsledků do entit a typů bez entit:
 
-**Vytvoření nové instance předpokládané pomocí inicializátory**
+**Vytvoření nové plánované instance pomocí inicializátorů**
 
 - Příklad:
 
@@ -72,49 +72,49 @@ Následující část popisuje chování při projekci výsledků do entity a no
 
 - Typ entity: Podporováno
 
-- Typ bez entity: Podporováno
+- Typ, který není entitou: Podporováno
 
-**Vytvoření nové instance předpokládané pomocí konstruktorů**
+**Vytvoření nové projektové instance pomocí konstruktorů**
 
 - Příklad:
 
    [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithconstructor)]
    [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithconstructor)]
 
-- Typ entity: A <xref:System.NotSupportedException> je vyvolána.
+- Typ entity: <xref:System.NotSupportedException> Je vyvolána výjimka.
 
-- Typ bez entity: Podporováno
+- Typ, který není entitou: Podporováno
 
-**Použití projekce transformace hodnoty vlastnosti**
+**Transformace hodnoty vlastnosti pomocí projekce**
 
 - Příklad:
 
    [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithtransform)]
    [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithtransform)]
 
-- Typ entity: Tato transformace není podporována pro typy entit, protože to může vést k záměně a potenciálně přepisovat data ve zdroji dat, který patří do jiné entity. A <xref:System.NotSupportedException> je vyvolána.
+- Typ entity: Tato transformace není u typů entit podporovaná, protože může vést k nejasnostem a potenciálně přepsat data ve zdroji dat, který patří do jiné entity. <xref:System.NotSupportedException> Je vyvolána výjimka.
 
-- Typ bez entity: Podporováno
+- Typ, který není entitou: Podporováno
 
 <a name="considerations"></a>
 
-## <a name="projection-considerations"></a>Důležité informace o projekce
+## <a name="projection-considerations"></a>Posouzení projekce
 
-Při definování projekce dotazu, platí následující další aspekty.
+Při definování projekce dotazu platí následující další požadavky.
 
-- Když definujete vlastní informační kanály pro formát Atom, musíte zkontrolovat, že všechny vlastnosti entity, které mají vlastní mapování definovaná jsou zahrnuty v projekci. Vlastnost mapované entity není obsažen v projekci, může dojít ke ztrátě dat. Další informace najdete v tématu [přizpůsobení informačního kanálu](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).
+- Když definujete vlastní kanály pro formát Atom, musíte se ujistit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [přizpůsobení informačního kanálu](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).
 
-- Při vkládání do očekávaného typu, který neobsahuje všechny vlastnosti entity v datovém modelu služby data si vlastnosti nejsou zahrnuty v projekci na straně klienta jsou nastaveny na výchozí hodnoty.
+- Když jsou vloženy do projektového typu, který neobsahuje všechny vlastnosti entity v datovém modelu datové služby, vlastnosti nezahrnuté do projekce v klientovi jsou nastaveny na výchozí hodnoty.
 
-- Když jsou provedeny aktualizace očekávaného typu, který neobsahuje všechny vlastnosti entity v datovém modelu datové služby, bude přepsán existující hodnoty, které nejsou zahrnuty v projekci na straně klienta neinicializované výchozí hodnoty.
+- Když se provedou aktualizace na základě předpokládaného typu, který neobsahuje všechny vlastnosti entity v datovém modelu datové služby, existující hodnoty, které nejsou zahrnuté do projekce na straně klienta, budou přepsány neinicializovanými výchozími hodnotami.
 
-- Při projekci zahrnuje komplexní vlastnost, musí být vrácena celá komplexního objektu.
+- Pokud projekce obsahuje komplexní vlastnost, musí být vrácen celý komplexní objekt.
 
-- Při projekci obsahuje vlastnost navigace, jsou implicitně načteny související objekty bez nutnosti volat <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metody. <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> Metoda není podporována pro použití v předpokládané dotazu.
+- Pokud projekce obsahuje navigační vlastnost, související objekty jsou načteny implicitně bez nutnosti volání <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metody. <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> Metoda není podporována pro použití v projektovém dotazu.
 
-- Dotaz projekce dotazů na straně klienta jsou přeloženy na použití `$select` možnosti v identifikátoru URI požadavku dotazu. Při spouštění dotazů s projekce se oproti předchozí verzi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] , který není podporován `$select` povolena možnost dotazu, je vrácena chyba. K tomu může dojít také při <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> z <xref:System.Data.Services.DataServiceBehavior> dat služby je nastavena na hodnotu <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).
+- Dotazy na projekce dotazů na klientovi se překládají na použití `$select` možnosti dotazu v identifikátoru URI požadavku. Když se dotaz se projekcí provede v předchozí verzi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nástroje, která `$select` nepodporuje možnost dotaz, vrátí se chyba. K tomu může dojít také v <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> případě <xref:System.Data.Services.DataServiceBehavior> , že je služba pro datovou službu <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>nastavena na hodnotu. Další informace najdete v tématu [Správa verzí datových služeb](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).
 
-Další informace najdete v tématu [jak: Výsledky dotazů na projekt](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md).
+Další informace najdete v tématu [jak: Výsledky](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)dotazu projektu.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,19 +2,19 @@
 title: <endToEndTracing>
 ms.date: 03/30/2017
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-ms.openlocfilehash: 266b33e9b0386d0346a86ba8bd82cc65def4f0c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b23728451a051f21ad3863b9a29e6290c3c837a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673053"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919001"
 ---
-# <a name="endtoendtracing"></a>\<endToEndTracing>
-Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty začátku do konce trasování za běhu aplikace služby.  
+# <a name="endtoendtracing"></a>\<endToEndTracing >
+Prvek konfigurace, který umožňuje povolit nebo zakázat různé aspekty komplexního trasování během běžící aplikace služby.  
   
  \<system.ServiceModel>  
-\<diagnostic>  
-\<endToEndTracing>  
+\<> diagnostiky  
+\<endToEndTracing >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,9 +35,9 @@ Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty za�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`activityTracing`|Logická hodnota určující, zda je povoleno trasování činnosti.|  
-|`messageFlowTracing`|Logická hodnota určující, zda je povoleno sledování toku zprávy.|  
-|`propagateActivity`|Logická hodnota, která určuje, zda je atribut propagate nastaven na hodnotu true.|  
+|`activityTracing`|Logická hodnota, která určuje, zda je povoleno trasování aktivit.|  
+|`messageFlowTracing`|Logická hodnota, která určuje, zda je povoleno sledování toku zprávy.|  
+|`propagateActivity`|Logická hodnota určující, zda je atribut rozšíření nastaven na hodnotu true.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,7 +46,7 @@ Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty za�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<diagnostics>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Definuje nastavení kontroly runtime WCF a ovládací prvek pro správce.|  
+|[\<diagnostics>](diagnostics.md)|Definuje nastavení WCF pro kontrolu a kontrolu za běhu pro správce.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -54,4 +54,4 @@ Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty za�
 - <xref:System.ServiceModel.Diagnostics>
 - <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>
 - <xref:System.ServiceModel.Configuration.EndToEndTracingElement>
-- [Komplexní trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)
+- [Komplexní trasování](../../../wcf/diagnostics/tracing/end-to-end-tracing.md)

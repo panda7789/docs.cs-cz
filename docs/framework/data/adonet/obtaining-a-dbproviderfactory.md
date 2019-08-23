@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: c84229dc1c32217099eb7ed8b90accc04cc66148
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd4bca48c35b9b636a96fe5d4a724272abc4f71d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772190"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934406"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
-Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o zprostředkovateli dat k <xref:System.Data.Common.DbProviderFactories> třídy. Na základě těchto informací, <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří objekt pro vytváření zprostředkovatele silného typu. Například, chcete-li vytvořit <xref:System.Data.SqlClient.SqlClientFactory>, můžete předat `GetFactory` řetězec s názvem zprostředkovatele zadán jako "System.Data.SqlClient". Další přetížení `GetFactory` přijímá <xref:System.Data.DataRow>. Jakmile vytvoříte objekt pro vytváření zprostředkovatele, pak můžete jeho metody vytvářet další objekty. Některé z metod `SqlClientFactory` zahrnují <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
+Proces získání a <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o poskytovateli dat <xref:System.Data.Common.DbProviderFactories> do třídy. Na základě těchto informací <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří továrnu poskytovatele silného typu. Například pro vytvoření <xref:System.Data.SqlClient.SqlClientFactory>můžete předat `GetFactory` řetězec s názvem poskytovatele zadaným jako "System. data. SqlClient". Druhé přetížení `GetFactory` <xref:System.Data.DataRow>přebírá. Po vytvoření továrny poskytovatele pak můžete použít jeho metody k vytvoření dalších objektů. Některé metody `SqlClientFactory` zahrnutí <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
   
 > [!NOTE]
->  Rozhraní .NET Framework <xref:System.Data.OracleClient.OracleClientFactory>, <xref:System.Data.Odbc.OdbcFactory>, a <xref:System.Data.OleDb.OleDbFactory> třídy také poskytuje podobné funkce.  
+> Třídy .NET Framework <xref:System.Data.OracleClient.OracleClientFactory>, <xref:System.Data.Odbc.OdbcFactory>a <xref:System.Data.OleDb.OleDbFactory> také poskytují podobné funkce.  
   
 ## <a name="registering-dbproviderfactories"></a>Registrace DbProviderFactories  
- Každý zprostředkovatele dat .NET Framework, která podporuje třídy založený na objekt pro vytváření zaregistruje informace o konfiguraci v **DbProviderFactories** část **machine.config** souboru na místním počítači. Následující fragment konfigurační soubor ukazuje syntaxi a formát pro <xref:System.Data.SqlClient>.  
+ Každý zprostředkovatel dat .NET Framework, který podporuje třídu založenou na výrobě, registruje informace o konfiguraci v části **DbProviderFactories** souboru **Machine. config** v místním počítači. Následující fragment konfiguračního souboru ukazuje syntaxi a formát pro <xref:System.Data.SqlClient>.  
   
 ```xml  
 <system.data>  
@@ -34,30 +34,30 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
 </system.data>  
 ```  
   
- **Invariantní** atribut identifikuje základní data zprostředkovatele. Tato syntaxe názvů třemi částmi slouží také při vytváření nový objekt pro vytváření a k identifikaci zprostředkovatele v konfiguračním souboru aplikace tak, aby název zprostředkovatele, společně s jeho přidružený připojovací řetězec, je možné načíst za běhu.  
+ Invariantní atribut identifikuje základního zprostředkovatele dat. Tato syntaxe názvů se třemi částmi se používá také při vytváření nového objektu pro vytváření a identifikaci poskytovatele v konfiguračním souboru aplikace tak, aby se v době běhu mohl načíst název poskytovatele společně s jeho přidruženým připojovacím řetězcem.  
   
-## <a name="retrieving-provider-information"></a>Načítají se informace o poskytovateli  
- Můžete načíst informace o všech nainstalované na místním počítači pomocí zprostředkovatele dat <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metody. Vrátí <xref:System.Data.DataTable> s názvem **DbProviderFactories** , která obsahuje sloupce, které jsou popsané v následující tabulce.  
+## <a name="retrieving-provider-information"></a>Načítání informací o poskytovateli  
+ Informace o všech poskytovatelích dat nainstalovaných v místním počítači můžete získat pomocí <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metody. Vrátí <xref:System.Data.DataTable> název s názvem **DbProviderFactories** , který obsahuje sloupce popsané v následující tabulce.  
   
-|Pořadí sloupce|Název sloupce|Příklad výstupu|Popis|  
+|Ordinální číslo sloupce|Název sloupce|Příklad výstupu|Popis|  
 |--------------------|-----------------|--------------------|-----------------|  
-|0|**Název**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
-|1|**Popis**|.NET framework Data Provider pro SqlServer|Čitelný Popis zprostředkovatele dat|  
-|2|**InvariantName**|System.Data.SqlClient|Název, který je možné prostřednictvím kódu programu k odkazování na poskytovatele dat|  
-|3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Plně kvalifikovaný název třídy factory, který obsahuje dostatek informací pro vytvoření instance objektu|  
+|0|**Název**|Zprostředkovatel dat SqlClient|Čitelný název poskytovatele dat|  
+|1|**Popis**|Zprostředkovatel dat rozhraní .NET Framework pro SqlServer|Čitelný Popis poskytovatele dat|  
+|2|**InvariantName**|System.Data.SqlClient|Název, který se dá použít programově pro odkazování na poskytovatele dat|  
+|3|**AssemblyQualifiedName**|System. data. SqlClient. SqlClientFactory, System. data, verze = 2.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089|Plně kvalifikovaný název třídy Factory, která obsahuje dostatek informací pro vytvoření instance objektu|  
   
- To `DataTable` je možné povolit uživateli, aby vybral <xref:System.Data.DataRow> v době běhu. Vybrané `DataRow` je pak možné předat do <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metodu pro vytvoření silného typu <xref:System.Data.Common.DbProviderFactory>. Vybrané <xref:System.Data.DataRow> mohou být předány `GetFactory` metodu pro vytvoření požadované `DbProviderFactory` objektu.  
+ Dá se použít k tomu, aby uživatel mohl <xref:System.Data.DataRow> vybrat v době běhu. `DataTable` Vybraný `DataRow` lze následně předat <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metodě pro vytvoření silného typu <xref:System.Data.Common.DbProviderFactory>. Vybraná <xref:System.Data.DataRow> `GetFactory` metoda může být předána metodě pro vytvoření požadovaného `DbProviderFactory` objektu.  
   
-## <a name="listing-the-installed-provider-factory-classes"></a>Seznam tříd objektů pro vytváření nainstalovaného poskytovatele  
- Tento příklad ukazuje, jak používat <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metodu pro návrat <xref:System.Data.DataTable> obsahující informace o nainstalovaných zprostředkovatelů. Kód prochází každý řádek `DataTable`, zobrazení informací pro každý nainstalovaný poskytovatel v okně konzoly.  
+## <a name="listing-the-installed-provider-factory-classes"></a>Výpis instalovaných tříd objektů pro vytváření zprostředkovatele  
+ Tento příklad ukazuje, jak použít <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metodu k <xref:System.Data.DataTable> vrácení obsahující informace o nainstalovaných poskytovatelích. Kód projde každým řádkem v `DataTable`a zobrazí informace pro každého nainstalovaného poskytovatele v okně konzoly.  
   
  [!code-csharp[DataWorks DbProviderFactories#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/VB/source.vb#1)]  
   
-## <a name="using-application-configuration-files-to-store-factory-information"></a>Použití konfiguračních souborů aplikace pro Store Factory informace  
- Vzor návrhu používané pro práci s objekty pro vytváření zahrnuje ukládání zprostředkovatel a řetězec informace o připojení v konfiguračním souboru aplikace, jako například **app.config** pro aplikace Windows a **web.config**  pro aplikaci ASP.NET.  
+## <a name="using-application-configuration-files-to-store-factory-information"></a>Použití konfiguračních souborů aplikace k ukládání informací o výrobě  
+ Vzor návrhu používaný pro práci s továrnami zahrnuje ukládání informací o poskytovateli a připojovacím řetězci do konfiguračního souboru aplikace, jako je například **App. config** pro aplikace systému Windows a **Web. config** pro aplikaci ASP.NET.  
   
- Následující fragment konfigurační soubor ukazuje, jak uložit dva pojmenovaného připojovacího řetězce "NorthwindSQL" pro připojení k databázi Northwind v systému SQL Server a "NorthwindAccess" pro připojení k databázi Northwind v přístup/Jet. **Invariantní** název se používá pro **providerName** atribut.  
+ Následující fragment konfiguračního souboru ukazuje, jak uložit dva pojmenované připojovací řetězce, "NorthwindSQL" pro připojení k databázi Northwind v SQL Server a "NorthwindAccess" pro připojení k databázi Northwind v Accessu a stroji Jet. **Neutrální** název se používá pro atribut **ProviderName** .  
   
 ```xml  
 <configuration>  
@@ -78,19 +78,19 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
 </configuration>  
 ```  
   
-### <a name="retrieving-a-connection-string-by-provider-name"></a>Načtení připojovacího řetězce podle názvu zprostředkovatele  
- Chcete-li vytvořit objekt poskytovatele, musíte zadat připojovací řetězec jako název zprostředkovatele. Tento příklad ukazuje, jak se načtení připojovacího řetězce z konfiguračního souboru aplikace předáním názvu zprostředkovatele v neutrálním formátu "*System.Data.ProviderName*". Kód prochází <xref:System.Configuration.ConnectionStringSettingsCollection>. Vrátí <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> v případě úspěchu; jinak `null` (`Nothing` v jazyce Visual Basic). Pokud existuje více položek pro zprostředkovatele, vrátí se první z nich najít. Další informace a příklady načítání připojovacích řetězců z konfiguračních souborů naleznete v tématu [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+### <a name="retrieving-a-connection-string-by-provider-name"></a>Načítání připojovacího řetězce podle názvu poskytovatele  
+ Aby bylo možné vytvořit továrnu poskytovatele, je nutné dodat připojovací řetězec i název poskytovatele. Tento příklad ukazuje, jak načíst připojovací řetězec z konfiguračního souboru aplikace předáním názvu poskytovatele v neutrálním formátu "*System. data. ProviderName*". Kód prochází pomocí <xref:System.Configuration.ConnectionStringSettingsCollection>. Vrátí <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> při úspěchu, jinak `null` (`Nothing` v Visual Basic). Pokud je pro poskytovatele k dispozici více položek, vrátí se první nalezený. Další informace a příklady načítání připojovacích řetězců z konfiguračních souborů najdete v tématu [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
   
 > [!NOTE]
->  Odkaz na `System.Configuration.dll` je nutná pro spuštění kódu.  
+> Odkaz na `System.Configuration.dll` je vyžadován, aby bylo možné kód spustit.  
   
  [!code-csharp[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="creating-the-dbproviderfactory-and-dbconnection"></a>Vytváření DbProviderFactory a DbConnection  
- Tento příklad ukazuje, jak vytvořit <xref:System.Data.Common.DbProviderFactory> a <xref:System.Data.Common.DbConnection> objektu s předáním názvu zprostředkovatele rozhraní ve formátu "*System.Data.ProviderName*" a připojovací řetězec. A `DbConnection` objekt je vrácen v případě úspěchu; `null` (`Nothing` v jazyce Visual Basic) na všechny chyby.  
+ Tento příklad ukazuje, jak vytvořit <xref:System.Data.Common.DbProviderFactory> objekt a <xref:System.Data.Common.DbConnection> pomocí předání názvu poskytovatele ve formátu "*System. data. ProviderName*" a připojovací řetězec. `DbConnection` Objekt je vrácen při úspěchu; `null` (`Nothing` v Visual Basic) na jakékoli chybě.  
   
- Získá kód `DbProviderFactory` voláním <xref:System.Data.Common.DbProviderFactories.GetFactory%2A>. Pak bude <xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> metoda vytvoří <xref:System.Data.Common.DbConnection> objektu a <xref:System.Data.Common.DbConnection.ConnectionString%2A> je nastavena na připojovací řetězec.  
+ Kód získá `DbProviderFactory` voláním <xref:System.Data.Common.DbProviderFactories.GetFactory%2A>. Pak metoda vytvoří objekt a <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost je nastavena na připojovací řetězec. <xref:System.Data.Common.DbConnection> <xref:System.Data.Common.DbProviderFactory.CreateConnection%2A>  
   
  [!code-csharp[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/VB/source.vb#1)]  

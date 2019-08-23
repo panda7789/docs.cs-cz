@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 5b3aca6a71f88762084934d0d9c7cea15b5366c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 56f6e13763b5230e046c0838892393b3672a54be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034460"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937040"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
-**WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžnou úlohou je potom převede tento XML do jiného formátu pomocí transformace XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> vám umožní aplikovat šablonu stylů XSLT s obsahem **datovou sadu** bez nutnosti nejprve psát obsah  **Datová sada** jako dat XML pomocí **WriteXml**.  
+Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **datové sady** jako data XML. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** se <xref:System.Xml.XmlDataDocument> sadou vám ale umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž byste museli nejdřív zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
   
- V následujícím příkladu **datovou sadu** tabulky a vztahy, synchronizuje **datovou sadu** s **XmlDataDocument**a bude je tam část  **Datová sada** jako HTML soubor pomocí šablonu stylů XSLT. Následují obsah šablony stylů XSLT.  
+ Následující příklad naplní datovou **sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Následuje obsah šablony stylů XSLT.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -56,10 +56,10 @@ ms.locfileid: "62034460"
 </xsl:stylesheet>  
 ```  
   
- Následující kód výplně **datovou sadu** a použije šablony stylů XSLT.  
+ Následující kód vyplní **datovou sadu** a použije šablonu stylů XSLT.  
   
 > [!NOTE]
->  Pokud jste se má použít k šabloně stylů XSLT **datovou sadu** , která obsahuje vztahy, dosažení nejlepšího výkonu dosáhnete, pokud nastavíte **vnořené** vlastnost <xref:System.Data.DataRelation> k **true**pro jednotlivé vnořené relace. Díky tomu můžete použít šablony stylů XSLT implementovat fyzické shora dolů zpracování navigace v hierarchii a transformace dat, na rozdíl od použití náročné na výkon XPath umístění osy (třeba předcházející na stejné úrovni a následující na stejné úrovni ve stylu seznam uzlu test výrazy) ho můžete procházet. Další informace o vnořených relacích najdete v tématu [vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** <xref:System.Data.DataRelation> vlastnost na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -126,4 +126,4 @@ writer.Close();
 ## <a name="see-also"></a>Viz také:
 
 - [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

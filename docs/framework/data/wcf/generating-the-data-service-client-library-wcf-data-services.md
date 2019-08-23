@@ -6,35 +6,35 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: bf0a74bd010a188f38cf1a2088a449d97405fa0f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 14ea550715c1b224945137f123eed3b53e56cead
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626387"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918640"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generování klientské knihovny datové služby (WCF Data Services)
-Datové služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] může vrátit metadata dokumentu služby, které popisují datový model vystavené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [OData: Dokument metadat služby](https://go.microsoft.com/fwlink/?LinkId=186070). Můžete použít **přidat odkaz na službu** dialogového okna v sadě Visual Studio se přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby. Při použití tohoto nástroje se přidat odkaz na metadata vrácený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu klientský projekt, provede následující akce:  
+Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] , může vracet dokument metadat služby, který popisuje datový model vystavený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem. Další informace najdete v tématu [OData: Dokument](https://go.microsoft.com/fwlink/?LinkId=186070)metadat služby Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]službu založenou na službě. Při použití tohoto nástroje k přidání odkazu na metadata vrácená [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem v klientském projektu provede následující akce:  
   
-- Požadavky služby dokument metadat z datové služby a interpretuje vrácených metadat.  
+- Požádá o dokument metadat služby z datové služby a interpretuje vrácená metadata.  
   
     > [!NOTE]
-    >  Vrácené metadata jsou uložena v klientském projektu jako soubor .edmx. Nelze otevřít tento soubor .edmx s použitím modelu Entity Data Model designer, protože nemá stejný formát souboru .edmx používá Entity Framework. Zobrazí se tento soubor metadat pomocí editoru XML nebo libovolného textového editoru. Další informace najdete v tématu [ \[MC EDMX\]: Model Entity Data Model pro formát dat služby balení](https://go.microsoft.com/fwlink/?LinkID=178833) specifikace  
+    > Vrácená metadata jsou uložena v projektu klienta jako soubor. edmx. Tento soubor. edmx nejde otevřít pomocí návrháře model EDM (Entity Data Model), protože nemá stejný formát jako soubor. edmx, který používá Entity Framework. Tento soubor metadat můžete zobrazit pomocí editoru XML nebo libovolného textového editoru. Další informace najdete v tématu [ \[MC-EDMX\]: Specifikace formátu](https://go.microsoft.com/fwlink/?LinkID=178833) balíčku pro Data Services model EDM (Entity Data Model)  
   
-- Generuje reprezentaci služby jako třídu kontejneru entity, která dědí z <xref:System.Data.Services.Client.DataServiceContext>. Tato třída kontejneru generované entity se podobá kontejneru entity, které generují nástroje modelu Entity Data Model. Další informace najdete v tématu [Přehled služby objektů (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
+- Generuje reprezentace služby jako třídu kontejneru entity, ze <xref:System.Data.Services.Client.DataServiceContext>které dědí. Tato generovaná třída kontejneru entity se podobá kontejneru entit, který generují nástroje model EDM (Entity Data Model). Další informace najdete v tématu [Přehled služby Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
-- Vygeneruje třídy dat pro datové typy modelů, které zjistí v metadata služby.  
+- Generuje datové třídy pro typy datových modelů, které zjišťuje v metadatech služby.  
   
-- Přidá odkaz na `System.Data.Services.Client` sestavení do projektu.  
+- Přidá do projektu odkaz na `System.Data.Services.Client` sestavení.  
   
- Další informace najdete v tématu [jak: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Přidejte odkaz](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu.  
   
- Tříd klientské datové služby může být také generovány pomocí [DataSvcUtil.exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) nástroj příkazového řádku. Další informace najdete v tématu [jak: Ruční generování tříd klientské datové služby](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
+ Třídy klientské datové služby je také možné vygenerovat pomocí nástroje [DataSvcUtil. exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) v příkazovém řádku. Další informace najdete v tématu [jak: Ručně vygenerujte třídy](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)datové služby klienta.  
   
-## <a name="client-data-type-mapping"></a>Mapování datového typu klienta  
- Při použití **přidat odkaz na službu** dialogového okna v sadě Visual Studio nebo `DataSvcUtil.exe` nástroj pro generování klienta datových tříd, které jsou založeny na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, datové typy rozhraní .NET Framework, které jsou mapovány na primitivní typy z datový model následujícím způsobem:  
+## <a name="client-data-type-mapping"></a>Mapování datových typů klienta  
+ Při použití dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio nebo `DataSvcUtil.exe` v nástroji ke generování datových tříd klienta, které [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou založeny na informačním kanálu, jsou .NET Framework datové typy mapovány na primitivní typy z datového modelu následujícím způsobem:  
   
-|Typ datového modelu|Datový typ rozhraní .NET framework|  
+|Typ datového modelu|.NET Framework datový typ|  
 |---------------------|------------------------------|  
 |`Edm.Binary`|<xref:System.Byte>`[]`|  
 |`Edm.Boolean`|<xref:System.Boolean>|  

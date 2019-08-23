@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: e3abb868ff9c9418c7cc565ae667b8225ac9e6e4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 21605b30867d7be0b906b431253c183e655bea82
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69603036"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922485"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (C# možnosti kompilátoru)
 Možnost **-doc** slouží k umístění dokumentačních komentářů do souboru XML.  
@@ -46,7 +46,7 @@ Možnost **-doc** slouží k umístění dokumentačních komentářů do soubor
  Pokud nezkompilujete s [-target: Module](./target-module-compiler-option.md), bude \<obsahovat sestavení\<>/Assembly je > značky, `file` které určují název souboru obsahujícího manifest sestavení pro výstupní soubor kompilace.  
   
 > [!NOTE]
->  Možnost-doc se vztahuje na všechny vstupní soubory; nebo, pokud je nastavena v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentačními komentáři pro určitý soubor nebo oddíl kódu, použijte [#pragma upozornění](../preprocessor-directives/preprocessor-pragma-warning.md).  
+> Možnost-doc se vztahuje na všechny vstupní soubory; nebo, pokud je nastavena v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentačními komentáři pro určitý soubor nebo oddíl kódu, použijte [#pragma upozornění](../preprocessor-directives/preprocessor-pragma-warning.md).  
   
  Způsoby, jak generovat dokumentaci z komentářů v kódu, najdete v tématu [Doporučené značky pro dokumentační komentáře](../../programming-guide/xmldoc/recommended-tags-for-documentation-comments.md) .  
   

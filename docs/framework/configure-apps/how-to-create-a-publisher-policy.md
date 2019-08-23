@@ -7,25 +7,25 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: b37b00cfbeee10f217d1dbe1c754c50b65e31de9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf5b55eb01a31106fcc7cb0d79212416ab0c898d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625867"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913050"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
-Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější verze sestavení zahrnutím souboru zásad vydavatele s upgradovaný sestavení. Soubor zásad vydavatele, který určuje přesměrování sestavení a nastavení základní kód a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele, který je zkompilován sestavení a umístěn v globální mezipaměti sestavení.  
+Dodavatelé sestavení mohou stanovit, že aplikace by měly používat novější verzi sestavení zahrnutím souboru zásad vydavatele s upgradovaným sestavením. Soubor zásad vydavatele určuje přesměrování sestavení a základní nastavení kódu a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele je zkompilován do sestavení a umístěn do globální mezipaměti sestavení (GAC).  
   
- Při vytváření zásad vydavatele jsou tři kroky:  
+ Existují tři kroky, které se týkají vytváření zásad vydavatele:  
   
 1. Vytvořte soubor zásad vydavatele.  
   
 2. Vytvořte sestavení zásad vydavatele.  
   
-3. Přidáte sestavení zásad vydavatele do globální mezipaměti sestavení.  
+3. Přidejte sestavení zásad vydavatele do globální mezipaměti sestavení (GAC).  
   
- Schéma pro zásady vydavatele je popsána v [přesměrování verze sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md). Následující příklad ukazuje vydavatele souboru zásad, který přesměruje jednu verzi `myAssembly` do jiného.  
+ Schéma pro zásady vydavatele je popsáno v tématu [Přesměrování verzí sestavení](redirect-assembly-versions.md). Následující příklad ukazuje soubor zásad vydavatele, který přesměruje jednu verzi `myAssembly` na jinou.  
   
 ```xml  
 <configuration>  
@@ -44,67 +44,67 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
 </configuration>  
 ```  
   
- Zjistěte, jak určit základ kódu, naleznete v tématu [určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md).  
+ Informace o tom, jak zadat základ kódu, naleznete v tématu [určení umístění sestavení](specify-assembly-location.md).  
   
 ## <a name="creating-the-publisher-policy-assembly"></a>Vytváření sestavení zásad vydavatele  
- Použití [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) k vytvoření sestavení zásad vydavatele.  
+ Pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) vytvořte sestavení zásad vydavatele.  
   
-#### <a name="to-create-a-publisher-policy-assembly"></a>Chcete-li vytvořit sestavení zásady vydavatele  
+#### <a name="to-create-a-publisher-policy-assembly"></a>Vytvoření sestavení zásad vydavatele  
   
-1. Na příkazovém řádku zadejte následující příkaz:  
+1. Do příkazového řádku zadejte následující příkaz:  
   
-     **Al/Link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:**  *keyPairFile* **/Platform:** *processorArchitecture*  
+     **Al/Link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:** *keyPairFile* **/Platform:** *ProcessorArchitecture*  
   
      V tomto příkazu:  
   
-    - *PublisherPolicyFile* argumentem je název souboru zásad vydavatele.  
+    - Argument *publisherPolicyFile* je název souboru zásad vydavatele.  
   
-    - *PublisherPolicyAssemblyFile* argumentem je název sestavení zásad vydavatele, která je výsledkem tohoto příkazu. Název souboru sestavení musí vyhovovat formátu:  
+    - Argument *publisherPolicyAssemblyFile* je název sestavení zásad vydavatele, které je výsledkem tohoto příkazu. Název souboru sestavení musí odpovídat formátu:  
   
-         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
+         **politických.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
-    - *KeyPairFile* argumentem je název souboru, který obsahuje pár klíčů. Musíte podepsat sestavení a sestavení zásad vydavatele s stejného páru klíčů.  
+    - Argument *keyPairFile* je název souboru, který obsahuje dvojici klíčů. Sestavení zásad sestavení a vydavatel je nutné podepsat se stejnou dvojicí klíčů.  
   
-    - *ProcessorArchitecture* argument určuje platformu cílem sestavení specifické pro procesor.  
+    - Argument *ProcessorArchitecture* identifikuje platformu, na kterou cílí sestavení specifické pro procesor.  
   
         > [!NOTE]
-        >  Možnost Cílová architektura procesoru je v rozhraní .NET Framework verze 2.0 nový.  
+        >  Možnost zaměřit se na konkrétní architekturu procesoru je nová verze .NET Framework 2,0.  
   
-     Následující příkaz vytvoří sestavení zásad vydavatele volá `policy.1.0.myAssembly` ze souboru zásad vydavatele volá `pub.config`, přiřadí silný název sestavení pomocí páru klíčů v `sgKey.snk` souboru a určí, že sestavení, zaměřuje x86 Architektura procesoru.  
+     Následující příkaz vytvoří sestavení zásad vydavatele nazvané `policy.1.0.myAssembly` ze souboru zásad vydavatele s názvem `pub.config`, přiřadí sestavení silný název pomocí páru klíčů v `sgKey.snk` souboru a určí, že sestavení cílí na x86. Architektura procesoru.  
   
     ```  
     al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86  
     ```  
   
-     Sestavení zásad vydavatele musí odpovídat architektuře procesoru, který se vztahuje na sestavení. Proto pokud vaše sestavení <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> hodnotu <xref:System.Reflection.ProcessorArchitecture.MSIL>, sestavení zásady vydavatele pro toto sestavení je potřeba vytvořit s `/platform:anycpu`. Je nutné zadat samostatné sestavení zásady vydavatele pro každé sestavení specifické pro procesor.  
+     Sestavení zásad vydavatele se musí shodovat s architekturou procesoru sestavení, na které se vztahuje. Proto pokud má <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> vaše sestavení <xref:System.Reflection.ProcessorArchitecture.MSIL>hodnotu, musí být sestavení zásad vydavatele pro toto sestavení vytvořeno pomocí `/platform:anycpu`. Pro každé sestavení specifické pro procesor musíte zadat samostatné sestavení zásad vydavatele.  
   
-     V důsledku tohoto pravidla je, že chcete-li změnit na architektuře procesoru pro sestavení, je nutné změnit hlavních nebo vedlejších součást čísla verze, tak, že zadáte nové sestavení zásad vydavatele s správnou architekturu procesoru. Staré sestavení zásad vydavatele nelze služby sestavení, jakmile vaše sestavení obsahuje jinou architekturu procesoru.  
+     V důsledku tohoto pravidla je, že pro změnu architektury procesoru pro sestavení je nutné změnit hlavní nebo dílčí komponentu čísla verze, abyste mohli dodat nové sestavení zásad vydavatele se správnou architekturou procesoru. Sestavení původní zásady vydavatele nemůže obsluhovat sestavení, jakmile má vaše sestavení jinou architekturu procesoru.  
   
-     Jiné důsledkem je, že má linker verze 2.0 nelze použít k vytvoření sestavení zásady vydavatele pro sestavení zkompilovaného pomocí starší verze rozhraní .NET Framework, protože vždycky určuje architekturu procesoru.  
+     Další příčinou je, že linker verze 2,0 nelze použít k vytvoření sestavení zásad vydavatele pro sestavení zkompilované pomocí dřívější verze .NET Framework, protože vždy určuje architekturu procesoru.  
   
-## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Přidání sestavení zásad vydavatele do globální mezipaměti sestavení  
- Použití [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) přidání sestavení zásad vydavatele do globální mezipaměti sestavení.  
+## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Přidání sestavení zásad vydavatele do globální mezipaměti sestavení (GAC)  
+ K přidání sestavení zásad vydavatele do globální mezipaměti sestavení [(GAC) použijte nástroj Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) .  
   
-#### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Přidání sestavení zásad vydavatele do globální mezipaměti sestavení  
+#### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Chcete-li přidat sestavení zásad vydavatele do globální mezipaměti sestavení (GAC)  
   
-1. Na příkazovém řádku zadejte následující příkaz:  
+1. Do příkazového řádku zadejte následující příkaz:  
   
      **Gacutil /i** *publisherPolicyAssemblyFile*  
   
-     Následující příkaz přidá `policy.1.0.myAssembly.dll` do globální mezipaměti sestavení.  
+     Následující příkaz přidá `policy.1.0.myAssembly.dll` do globální mezipaměti sestavení (GAC).  
   
     ```  
     gacutil /i policy.1.0.myAssembly.dll  
     ```  
   
     > [!IMPORTANT]
-    >  Sestavení zásad vydavatele nelze přidat do globální mezipaměti sestavení, pokud původní soubor zásad vydavatele se nachází ve stejném adresáři jako sestavení.  
+    >  Sestavení zásady vydavatele nelze přidat do globální mezipaměti sestavení (GAC), pokud původní soubor zásad vydavatele není umístěn ve stejném adresáři jako sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Konfigurace aplikací pomocí konfiguračních souborů](../../../docs/framework/configure-apps/index.md)
-- [Schéma nastavení běhového prostředí](../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Programování se sestaveními](../app-domains/programming-with-assemblies.md)
+- [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
+- [Konfigurace aplikací pomocí konfiguračních souborů](index.md)
+- [Schéma nastavení běhového prostředí](./file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](./file-schema/index.md)
+- [Přesměrování verzí sestavení](redirect-assembly-versions.md)

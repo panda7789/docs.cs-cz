@@ -2,19 +2,19 @@
 title: <wsdlImporter>
 ms.date: 03/30/2017
 ms.assetid: 986b2165-8430-4dba-b1b8-00396841bb96
-ms.openlocfilehash: 1f34486296465b3ea0b5b05bd9492062c85ad8c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 13c9400874f1e02fac3ce0c3010153ad7806288c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670245"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915191"
 ---
 # <a name="wsdlimporter"></a>\<wsdlImporter>
-Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy.  
+Určuje všechny nástroje pro Import WSDL, které importují metadata jazyka WSDL (Web Services Description Language) 1,1 s přílohami WS-Policy.  
   
 \<system.ServiceModel>  
-\<client>  
-\<metadata >  
+\<> klienta  
+\<> metadat  
 \<wsdlImporters>  
 \<wsdlImporter>  
   
@@ -44,10 +44,10 @@ Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<wsdlImporters>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)|Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy.|  
+|[\<wsdlImporters>](wsdlimporters.md)|Určuje všechny nástroje pro Import WSDL, které importují metadata jazyka WSDL (Web Services Description Language) 1,1 s přílohami WS-Policy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Programu pro import WSDL umožňuje importovat metadata a také převést, které informace do různých tříd, které představují smlouvy a informace o koncovém bodu. Selektivně mohl importovat informace o smlouvě a koncový bod a vlastnosti, které zveřejnit jakékoli chyby importu a přijímat informace o typu relevantní pro import a převod balíčků. Podporuje také importovat informace o vazbě a vlastnosti, které poskytují přístup k dokumentům zásad, dokumenty WSDL, rozšíření WSDL a dokumentů schématu XML.  
+ Import WSDL slouží k importu metadat a také k převedení těchto informací do různých tříd, které reprezentují informace o kontraktech a koncových bodech. Může selektivně importovat informace o kontraktech a koncových bodech a vlastnosti, které zveřejňují chyby importu a přijímají informace o typu relevantní pro proces importu a převodu. Podporuje také import informací o vazbách a vlastností, které poskytují přístup k jakýmkoli dokumentům zásad, dokumentům WSDL, rozšířením WSDL a dokumentům XML schématu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,5 +56,5 @@ Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL 
 - <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>
 - <xref:System.ServiceModel.Description.MetadataImporter>
 - <xref:System.ServiceModel.Description.WsdlImporter>
-- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Konfigurace klienta WCF](../../../wcf/feature-details/client-configuration.md)
+- [Klienti](../../../wcf/feature-details/clients.md)

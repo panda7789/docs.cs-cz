@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Office programming [C#], indexed properties
 - properties [C#], indexed
 ms.assetid: 756bfc1e-7c28-4d4d-b114-ac9288c73882
-ms.openlocfilehash: 29132fa8d788f59178237be2c03adc1de4ac5c4f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: c39b9a313d265187605d51a2c78c7d3d3dcdb056
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589119"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923922"
 ---
 # <a name="how-to-use-indexed-properties-in-com-interop-programming-c-programming-guide"></a>Postupy: Použití indexovaných vlastností v programování zprostředkovatele komunikaceC# s objekty COM (Průvodce programováním)
 *Indexované vlastnosti* zlepšují způsob, jakým jsou vlastnosti modelu COM, které mají C# parametry spotřebované při programování. Indexované vlastnosti pracují společně s dalšími funkcemi v vizuálu C#, jako jsou [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md), nový typ ([dynamický](../../language-reference/keywords/dynamic.md)) a [vložené informace o typu](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md), aby bylo možné vylepšit systém Microsoft Office programování.  
@@ -26,7 +26,7 @@ ms.locfileid: "69589119"
  [!code-csharp[csProgGuideIndexedProperties#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideindexedproperties/cs/program.cs#2)]  
   
 > [!NOTE]
->  Předchozí příklad také používá funkci [volitelné argumenty](../classes-and-structs/named-and-optional-arguments.md) , která umožňuje vynechat `Type.Missing`.  
+> Předchozí příklad také používá funkci [volitelné argumenty](../classes-and-structs/named-and-optional-arguments.md) , která umožňuje vynechat `Type.Missing`.  
   
  Podobně pro nastavení hodnoty `Value` vlastnosti <xref:Microsoft.Office.Interop.Excel.Range> objektu v C# 3,0 a starších verzích jsou vyžadovány dva argumenty. Jeden zadá argument pro volitelný parametr, který určuje typ hodnoty rozsahu. Druhý zadá hodnotu `Value` vlastnosti. Následující příklady ilustrují tyto techniky. Nastavte hodnotu buňky a1 na `Name`.
   

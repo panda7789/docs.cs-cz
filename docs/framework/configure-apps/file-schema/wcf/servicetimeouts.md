@@ -2,21 +2,21 @@
 title: <serviceTimeouts>
 ms.date: 03/30/2017
 ms.assetid: ada536cf-97dc-4cd7-89ec-ed1466c1c557
-ms.openlocfilehash: 5c2f0ef7ad509eb5d6c686802c3fe5a75ea1a258
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1792fec4f86c9ac31107c043b976cfafcfa4c13
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758090"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937098"
 ---
-# <a name="servicetimeouts"></a>\<serviceTimeouts>
-Určuje časový limit pro službu.  
+# <a name="servicetimeouts"></a>\<serviceTimeouts >
+Určuje časový limit služby.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
-\<serviceTimeouts>  
+\<> chování  
+\<serviceTimeouts >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,7 +24,7 @@ Určuje časový limit pro službu.
 <serviceTimeouts transactionTimeout="TimeSpan" />
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -34,7 +34,7 @@ Určuje časový limit pro službu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`transactionTimeout`|A <xref:System.TimeSpan> hodnota, která určuje dobu toku transakce z klienta na server. Výchozí hodnota je "00: 00:00".|  
+|`transactionTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval, po který musí transakce z klienta na server přesměrovat. Výchozí hodnota je "00:00:00".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,7 +43,7 @@ Určuje časový limit pro službu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 

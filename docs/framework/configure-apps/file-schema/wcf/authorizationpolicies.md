@@ -2,15 +2,15 @@
 title: <authorizationPolicies>
 ms.date: 03/30/2017
 ms.assetid: 5b367489-54d7-408b-8f56-cb157dd68eaf
-ms.openlocfilehash: 2910f47b85ee67694cae0c3a725c3c7c7b3803c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 38d123a53b344ff1e4d781115093d0d1de5ae679
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701720"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926463"
 ---
 # <a name="authorizationpolicies"></a>\<authorizationPolicies>
-Tento oddíl konfigurace obsahuje kolekci typů zásad autorizací, které lze přidat pomocí `add` – klíčové slovo. Každá zásada autorizace obsahuje jediný vyžaduje `policyType` atribut, který není řetězec. Atribut určuje zásadu autorizace, který umožňuje transformovat jednu sadu vstupních deklarací identity do jiné sady deklarací identity. Může být povolen nebo odepřen řízení přístupu na základě. Další informace o tom, jak funguje zásad autorizace najdete v tématu <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a [zásad autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md).  
+Tento oddíl konfigurace obsahuje kolekci typů zásad autorizací, které lze přidat pomocí `add` klíčového slova. Každá zásada autorizace obsahuje jeden povinný `policyType` atribut, který je řetězec. Atribut určuje zásadu autorizace, která umožňuje transformaci jedné sady vstupních deklarací do jiné sady deklarací. Řízení přístupu lze na základě této aplikace udělit nebo odepřít. Další informace o tom, jak zásady autorizace fungují, najdete <xref:System.IdentityModel.Policy.IAuthorizationPolicy> v tématu a [zásadách autorizace](../../../wcf/samples/authorization-policy.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -21,7 +21,7 @@ Tento oddíl konfigurace obsahuje kolekci typů zásad autorizací, které lze p
 - <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement.AuthorizationPolicies%2A>
 - <xref:System.ServiceModel.Configuration.AuthorizationPolicyTypeElementCollection>
 - <xref:System.IdentityModel.Policy.IAuthorizationPolicy>
-- [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)
-- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
-- [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-authorizationpolicies.md)
-- [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Autorizace přístupu k operacím služby](../../../wcf/samples/authorizing-access-to-service-operations.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [\<add>](add-of-authorizationpolicies.md)
+- [Zásady autorizace](../../../wcf/samples/authorization-policy.md)

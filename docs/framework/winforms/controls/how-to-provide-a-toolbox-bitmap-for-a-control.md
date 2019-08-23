@@ -9,21 +9,21 @@ helpviewer_keywords:
 - custom controls [Windows Forms], Toolbox bitmaps
 - bitmaps [Windows Forms], custom controls
 ms.assetid: 0ed0840a-616d-41ba-a27d-3573241932ad
-ms.openlocfilehash: 7c26e00acd4278ced53ad29c748ac076e0215a23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 428af7e4396fde8ac29046d73adda95dbe2182f0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913208"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910472"
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek
-Pokud chcete mít speciální ikonu ovládacího prvku se zobrazí v **nástrojů**, můžete zadat pomocí konkrétní image <xref:System.Drawing.ToolboxBitmapAttribute>. Tato třída je *atribut*, zvláštním druhem třídy lze připojit k jiné třídy. Další informace o atributech najdete v tématu [Přehled atributů (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md) v jazyce Visual Basic nebo [atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md) pro jazyk C#.  
+Pokud chcete mít pro ovládací prvek speciální ikonu, která se zobrazí v sadě **nástrojů**, můžete určit konkrétní obrázek pomocí <xref:System.Drawing.ToolboxBitmapAttribute>. Tato třída je *atributem*, speciální druh třídy, kterou lze připojit k jiným třídám. Další informace o atributech naleznete v tématu [Přehled atributů (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md) pro Visual Basic nebo [atributyC#()](../../../csharp/programming-guide/concepts/attributes/index.md) pro. C#  
   
- Použití <xref:System.Drawing.ToolboxBitmapAttribute>, můžete zadat řetězec, který určuje název a cesta k souboru rastrového obrázku 16 × 16 pixelů. Tento rastrový obrázek se pak objeví vedle vašeho ovládacího prvku, když se přidá **nástrojů**. Můžete také určit <xref:System.Type>, v takovém případě je načtena rastrový obrázek přidružený k typu. Pokud zadáte oba <xref:System.Type> a řetězec, ovládací prvek vyhledá obrázkový prostředek s názvem zadaným parametrem řetězce v sestavení obsahující typ zadaný <xref:System.Type> parametru.  
+ <xref:System.Drawing.ToolboxBitmapAttribute>Pomocí můžete zadat řetězec, který označuje cestu a název souboru rastrového obrázku o velikosti 16 až 16 pixelů. Tento rastrový obrázek se pak zobrazí vedle ovládacího prvku, když se přidá do **sady nástrojů**. Můžete také zadat a <xref:System.Type>, v takovém případě je načten rastrový obrázek přidružený k tomuto typu. Zadáte- <xref:System.Type> li i řetězec, ovládací prvek vyhledá prostředek obrázku s názvem určeným parametrem řetězce v sestavení, které obsahuje typ určený <xref:System.Type> parametrem.  
   
-### <a name="to-specify-a-toolbox-bitmap-for-your-control"></a>Chcete-li určit rastrového obrázku panelu nástrojů pro ovládací prvek  
+### <a name="to-specify-a-toolbox-bitmap-for-your-control"></a>Určení rastrového obrázku panelu nástrojů pro ovládací prvek  
   
-1. Přidat <xref:System.Drawing.ToolboxBitmapAttribute> deklarace třídy ovládacího prvku před `Class` – klíčové slovo v jazyce visual Basic a nad deklaraci třídy pro jazyk Visual C#.  
+1. Přidejte do deklarace třídy ovládacího prvku `Class` před klíčovým slovem jazyka Visual Basic a nad deklarací třídy pro vizuál. C# <xref:System.Drawing.ToolboxBitmapAttribute>  
   
     ```vb  
     ' Specifies the bitmap associated with the Button type.  
@@ -58,15 +58,15 @@ Pokud chcete mít speciální ikonu ovládacího prvku se zobrazí v **nástroj�
     }  
     ```  
   
-2. Sestavte projekt znovu.  
+2. Znovu sestavte projekt.  
   
     > [!NOTE]
-    >  Rastrový obrázek se nezobrazí v sadě nástrojů pro automaticky generované ovládacích prvků a komponent. Rastrový obrázek zobrazíte načtěte pomocí ovládacího prvku **zvolit položky nástrojů** dialogové okno. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
+    > Rastr se nezobrazí v sadě nástrojů pro automaticky vygenerované ovládací prvky a součásti. Chcete-li zobrazit rastrový obrázek, načtěte ovládací prvek znovu pomocí dialogového okna **zvolit položky sady nástrojů** . Další informace najdete v tématu [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Drawing.ToolboxBitmapAttribute>
-- [Návod: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+- [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)
 - [Přehled atributů (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md)
 - [Atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)

@@ -4,71 +4,71 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-ms.openlocfilehash: 0ab071bf7996a296563fbda68dfdc731e95ed897
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 334e9fe7ca6931f87c75023f3322638b36001b6a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425362"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923057"
 ---
 # <a name="routing-scenarios"></a>Scénáře směrování
-Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhnout efektivní logiku směrování při vytváření nové konfigurace od začátku.  Existují však několik běžných scénářů, které následují většina konfigurací směrovací služby. Zatímco tyto scénáře se nemusí vztahovat přímo na konkrétní konfiguraci, pochopení, jak lze konfigurovat směrovací služba pro zpracování těchto scénářů bude pomoc při Princip služby směrování.  
+I když je služba Směrování vysoce přizpůsobitelná, může být při vytváření nové konfigurace od začátku výzvou pro návrh efektivní logiky směrování.  Existuje však několik běžných scénářů, které následují konfigurace služby směrování. I když se tyto scénáře nemusí vztahovat přímo na konkrétní konfiguraci, porozumět tomu, jak se dá služba Směrování nakonfigurovat pro zpracování těchto scénářů, která vám pomůže pochopit směrovací službu.  
   
-## <a name="common-scenarios"></a>Obvyklé scénáře  
- Základní použití směrovací služba je agregovat více cílové koncové body a snížit počet koncových bodů, které jsou vystaveny pro klientské aplikace a pak pomocí filtry zpráv pro každou zprávu směrování do správné cíl. Zprávy mohou být směrována na základě fyzické nebo logické zpracování požadavků, jako je například typ zprávy, které musí být zpracovány určité služby, nebo na základě libovolného obchodních potřeb, jako je například poskytnutí prioritu zpracování zprávy z konkrétního zdroje. V následující tabulce jsou uvedeny některé obvyklé scénáře a při jejich výskytu:  
+## <a name="common-scenarios"></a>Běžné scénáře  
+ Nejzákladnější použití směrovací služby je agregované několik cílových koncových bodů, aby se snížil počet koncových bodů vystavených klientským aplikacím, a pak pomocí filtrů zpráv směrují jednotlivé zprávy do správného cíle. Zprávy mohou být směrovány na základě logických nebo fyzických požadavků na zpracování, jako je například typ zprávy, který musí být zpracován konkrétní službou, nebo založený na libovolných obchodních potřebách, jako je například poskytování prioritních zpracování zpráv z konkrétního zdroje. V následující tabulce jsou uvedeny některé běžné scénáře a jejich zjištění:  
   
-|Scénář|Kdy použít|  
+|Scénář|Použít, když|  
 |--------------|--------------|  
-|Správa verzí služby|Můžete potřebovat pro podporu více verzí služby nebo může v budoucnu nasazení aktualizace služby|  
-|Vytvoření oddílů dat služby|Služba musí oddílů napříč více hostiteli|  
-|Dynamická aktualizace|Je nutné překonfigurovat dynamicky logiku směrování za běhu pro zpracování Změna nasazení služby|  
-|Vícesměrové vysílání|Jednu zprávu je nutné odeslat do více koncových bodů|  
-|Protokol přemostění|Příjem zpráv jeden přenosový protokol a cílový koncový bod používá jiný protokol|  
-|Zpracování chyb|Je potřeba zadat odolnost výpadky sítě nebo selhání komunikace|  
+|Správa verzí služeb|Je potřeba, abyste podporovali víc verzí služby nebo v budoucnu mohli nasadit aktualizovanou službu.|  
+|Vytváření oddílů dat služby|Je nutné rozdělit službu mezi několik hostitelů.|  
+|Dynamická aktualizace|Pro zpracování změn nasazení služby je potřeba dynamicky znovu nakonfigurovat logiku směrování za běhu.|  
+|Odesílání|Je nutné odeslat jednu zprávu do více koncových bodů.|  
+|Přemostění protokolů|Přijímáte zprávy přes jeden transportní protokol a cílový koncový bod používá jiný protokol.|  
+|Zpracování chyb|Je potřeba zajistit odolnost proti výpadkům sítě a selháním komunikace.|  
   
 > [!NOTE]
->  Přestože mnoho scénářů zobrazí jsou specifické pro určité obchodní potřeby nebo požadavků na zpracování, plánování pro podporu dynamické aktualizace a využití zpracování chyb můžete často považovat za osvědčených postupů umožňují upravit logiku směrování za běhu a zotavení z chyb při přechodných síťových a komunikace.  
+> I když je mnoho z uvedených scénářů specifické pro konkrétní obchodní potřeby nebo požadavky na zpracování, plánování podpory dynamických aktualizací a využití zpracování chyb se často považuje za osvědčené postupy, protože umožňují upravit logiku směrování za běhu. a obnovení z přechodného selhání sítě a komunikace.  
   
 ### <a name="service-versioning"></a>Verze služby  
- Při zavádění nové verze služby, musí často zachovat předchozí verze, dokud všichni klienti přešla na novou službu. To je zvlášť zásadní v případě, že služba je dlouho běžící proces, který zabere dny, týdny nebo dokonce měsíce. Obvykle vyžaduje implementace novou adresu koncového bodu pro novou službu a přitom původní koncový bod pro předchozí verze.  
+ Když zavádíte novou verzi služby, musíte často zachovat předchozí verzi, dokud všichni klienti nepřešli do nové služby. To je obzvláště důležité, pokud je služba dlouhodobě spuštěným procesem, který vybírá dny, týdny nebo dokonce měsíce. Obvykle vyžaduje implementaci nové adresy koncového bodu pro novou službu při zachování původního koncového bodu pro předchozí verzi.  
   
- S použitím služby směrování, můžete zveřejnit jeden koncový bod pro příjem zpráv z klientských aplikací a pak směrovat na správné služby verzi na základě obsahu zpráv každou zprávu. Základní implementaci zahrnuje přidání vlastní hlavičky zprávy, která určuje verzi služby, který je zprávu zpracovat. Směrovací služba můžete použít XPathMessageFilter ke kontrole přítomnosti vlastní hlavičce každou zprávu a směrování zprávy do příslušné cílové koncového bodu.  
+ Pomocí směrovací služby můžete vystavit jeden koncový bod pro příjem zpráv z klientských aplikací a potom každou zprávu směrovat na správnou verzi služby na základě obsahu zprávy. Nejzákladnější implementace zahrnuje přidání vlastní hlavičky do zprávy, která označuje verzi služby, pomocí které se má zpráva zpracovat. Směrovací služba může použít XPathMessageFilter ke kontrole každé zprávy pro přítomnost vlastní hlavičky a ke směrování zprávy do příslušného cílového koncového bodu.  
   
- Postup použitý k vytvoření konfigurace správy verzí služby najdete v tématu [How To: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).
+ Postup pro vytvoření konfigurace správy verzí služby najdete v tématu [How to: Verze](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)služby.
   
 ### <a name="service-data-partitioning"></a>Vytvoření oddílů dat služby  
- Když navrhujete distribuované prostředí, je často žádoucí rozložit zatížení mezi více počítačů za účelem poskytnutí vysoké dostupnosti, snížení zatížení na jednotlivých počítačích, nebo k poskytování prostředků vyhrazených pro určitou podmnožinu zpráv. Zatímco služba Směrování nenahrazuje vyhrazené řešení vyrovnávání zatížení, schopnost provést směrování obsahu na základě je možné pro směrování zpráv v opačném případě podobné určitým příjemcům. Například může mít požadavek na zpracování zpráv z konkrétního klienta nezávisle na zprávy přijaté z jiných klientů.  
+ Při návrhu distribuovaného prostředí je často žádoucí rozprostřít zátěžové zatížení mezi více počítači, aby se zajistila vysoká dostupnost, aby se snížilo zatížení jednotlivých počítačů nebo aby poskytovalo vyhrazené prostředky pro určitou podmnožinu. zpráv. I když směrovací služba nenahrazuje vyhrazené řešení vyrovnávání zatížení, je možné použít směrování na základě obsahu ke směrování jiných podobných zpráv do konkrétních míst. Například můžete mít požadavek na zpracování zpráv z konkrétního klienta odděleně od zpráv přijatých z jiných klientů.  
   
- Postup použitý k vytvoření datové služby dělení konfigurace najdete v tématu [How To: Vytvoření oddílů dat služby](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md).  
+ Postup pro vytvoření konfigurace oddílů dat služby najdete v tématu [How to: Vytváření oddílů](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)dat služby.  
   
 ### <a name="dynamic-routing"></a>Dynamické směrování  
- Často je žádoucí, aby změny konfigurace směrování splnit měnící se potřeby organizace, jako je například přidávání trasu na novější verzi služby, změnou kritérií směrování nebo změna koncového bodu cílové konkrétní zprávu, která filtr přesměruje. Směrovací služba umožňuje udělat prostřednictvím <xref:System.ServiceModel.Routing.RoutingExtension>, což vám umožňuje poskytovat nová konfigurace RoutingConfiguration za běhu. Nová konfigurace projeví se okamžitě, ale pouze ovlivňuje všechny nové relace zpracovaných službou směrování.  
+ Často je žádoucí změnit konfiguraci směrování tak, aby vyhovovala měnícím se potřebám podniku, jako je například přidání trasy k novější verzi služby, změna kritérií směrování nebo změna cílového koncového bodu na konkrétní zprávu, na kterou filtr odkazuje. Směrovací služba vám umožní provést to prostřednictvím <xref:System.ServiceModel.Routing.RoutingExtension>, což vám umožní během běhu poskytnout nové konfigurace RoutingConfiguration. Nová konfigurace se projeví okamžitě, ale má vliv jenom na nové relace zpracovávané směrovací službou.  
   
- Postup používaný k implementaci dynamického směrování najdete v tématu [How To: Dynamická aktualizace](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md).
+ Postup pro implementaci dynamického směrování najdete v tématu [How to: Dynamická aktualizace](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md).
   
-### <a name="multicast"></a>Vícesměrové vysílání  
- Při směrování zpráv, obvykle můžete směrování každou zprávu do koncového bodu konkrétní cílové.  Však může čas od času potřeba směrovat kopie zprávy na víc cílové koncové body. Chcete-li provést směrování vícesměrového vysílání, musí být splněné následující podmínky:  
+### <a name="multicast"></a>Odesílání  
+ Při směrování zpráv obvykle směrujete jednotlivé zprávy do jednoho konkrétního cílového koncového bodu.  Občas ale budete muset směrovat kopii zprávy na více cílových koncových bodů. Chcete-li provést směrování vícesměrového vysílání, musí být splněny následující podmínky:  
   
-- Tvar kanálu nesmí být požadavek odpověď (i když může být jednosměrné nebo obousměrné,) vzhledem k tomu, že požadavek odpověď, určuje, že pouze jednu odpověď lze přijímat pomocí klientské aplikace v odpovědi na požadavek.  
+- Obrazec kanálu nesmí být požadavkem na odpověď (i když může být jednosměrný nebo duplexní), protože klientská aplikace může v reakci na požadavek přijmout jenom jednu odpověď.  
   
-- Několik filtrů musí vracet **true** při vyhodnocování zprávy.  
+- Při vyhodnocování zprávy musí být vráceno více filtrů na **hodnotu true** .  
   
- Pokud jsou tyto podmínky splněny, každý cílový koncový bod, který je přidružený filtr, který vrací hodnotu true, obdrží kopii zprávy.  
+ Pokud jsou tyto podmínky splněny, obdrží každý cílový koncový bod přidružený k filtru, který vrací hodnotu true, kopii zprávy.  
   
-### <a name="protocol-bridging"></a>Protokol přemostění  
- Při směrování zpráv mezi rozdílných protokolů SOAP, směrovací služba používá rozhraní API WCF převést zprávy z jednoho protokolu na druhý. K tomu dojde automaticky při vystavený koncových bodů služby pomocí směrovací služba jiného protokolu než koncových bodů klienta, které zprávy jsou směrovány na. Je možné toto chování zakázat, pokud nejsou protokoly používá standardní; ale musíte pak zadat vlastní přemostění kódu.
+### <a name="protocol-bridging"></a>Přemostění protokolů  
+ Při směrování zpráv mezi odlišnými protokoly SOAP služba Směrování používá rozhraní API WCF k převedení zprávy z jednoho protokolu na druhý. K tomu dochází automaticky v případě, že koncový bod služby vystavený směrovací službou používá jiný protokol než koncový bod klienta, na který jsou zprávy směrovány. Toto chování je možné zakázat, pokud používané protokoly nejsou standardní. je však nutné zadat vlastní kód přemostění.
   
 ### <a name="error-handling"></a>Zpracování chyb  
- V distribuovaném prostředí není nic neobvyklého, když dojde k selhání přechodné síťové nebo komunikace. Bez zprostředkující služby, jako je například služba Směrování zatížení zpracovávat takové chyby klesne na klientské aplikaci. Pokud klientská aplikace neobsahuje konkrétní logiku pro opakování v případě sítě nebo selhání komunikace a znalosti o alternativních umístění, uživatel může dojít scénáře, ve kterém zpráva musí být předloženy více než jednou předtím, než je úspěšně zpracovává cílové služby. To může vést k jejich nespokojenost zákazníka s aplikací, protože to může být vnímané jako nespolehlivé.  
+ V distribuovaném prostředí není běžné, že dojde k přechodným chybám sítě nebo komunikace. Bez zprostředkující služby, jako je směrovací služba, by režie zpracování takových selhání mohla spadat do klientské aplikace. Pokud klientská aplikace neobsahuje konkrétní logiku pro opakování v případě výpadku sítě nebo selhání komunikace a znalostí alternativních umístění, může se stát, že se uživateli v případě, že je nutné zprávu před tím, než bude úspěšně odešle, objeví několik scénářů. zpracováno cílovou službou. To může vést k nespokojenosti zákazníků s aplikací, jak je možné ho vnímat jako nespolehlivější.  
   
- Směrovací služba se pokusí napravit tento scénář tím, že poskytuje robustní Chyba funkce zpracování zprávy, které dojde k síti nebo chyby týkající se komunikace. Vytvořením seznamu možných cílové koncové body a tento seznam přidružení každý filtr zpráv, odebrat jediný bod selhání vzniklé v souvislosti s pouze jeden možný cíl. V případě selhání směrovací služba se pokusí doručit zprávu další koncový bod v seznamu, dokud nebyly dodány zprávy, dojde k selhání bez komunikace, nebo všechny koncové body byly vyčerpány.  
+ Směrovací služba se pokusí tento scénář napravit tím, že poskytuje robustní funkce zpracování chyb pro zprávy, které nastanou při selhání souvisejícím se sítí nebo komunikací. Vytvořením seznamu možných cílových koncových bodů a přidružením tohoto seznamu ke každému filtru zpráv odeberete jediný bod selhání, který by měl mít jenom jeden možný cíl. V případě selhání se směrovací služba pokusí doručit zprávu do dalšího koncového bodu v seznamu, dokud se nevydá zpráva, dojde k selhání nekomunikace nebo byly vyčerpány všechny koncové body.  
   
- Postup slouží ke konfiguraci zpracování chyb najdete v tématu [How To: Zpracování chyb](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md).
+ Postup pro konfiguraci zpracování chyb naleznete v tématu [How to: Zpracování](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)chyb.
   
 ### <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [Postupy: Správa verzí služeb](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
- [Postupy: Vytvoření oddílů dat služby](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [Postupy: Vytváření oddílů dat služby](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
  [Postupy: Dynamická aktualizace](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
   

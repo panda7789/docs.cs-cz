@@ -2,21 +2,21 @@
 title: Základní ukázka
 ms.date: 03/30/2017
 ms.assetid: c1910bc1-3d0a-4fa6-b12a-4ed6fe759620
-ms.openlocfilehash: 1ceee6dd11b59ab9b43797ca8b1fd80c232fc8ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d227b3ac64108901b8280ac7887adc30b0fab13e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002635"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915452"
 ---
 # <a name="basic-sample"></a>Základní ukázka
-Tato ukázka předvádí, jak je nechat zjistitelné služby a jak vyhledat a volat zjistitelné služby. Tento příklad se skládá ze dvou projektů: klienta a služby.
+V této ukázce se dozvíte, jak nastavit službu jako zjistitelnou a jak hledat a volat zjistitelnou službu. Tato ukázka se skládá ze dvou projektů: služby a klienta.
 
 > [!NOTE]
->  Tato ukázka implementuje zjišťování v kódu.  Ukázku, která implementuje zjišťování v konfiguraci najdete v tématu [konfigurace](../../../../docs/framework/wcf/samples/configuration-sample.md).  
+> Tato ukázka implementuje zjišťování v kódu.  Ukázku, která implementuje zjišťování v konfiguraci, najdete v tématu [Configuration](../../../../docs/framework/wcf/samples/configuration-sample.md).  
   
 ## <a name="service"></a>Služba  
- Toto je implementace služby jednoduchou kalkulačku. Zjišťování týkající se kód lze nalézt v `Main` kde <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> se přidá k hostiteli služby a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> se přidá, jak je znázorněno v následujícím kódu.  
+ Toto je jednoduchá implementace služby Kalkulačka. Kód související se zjišťováním lze nalézt v `Main` <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> umístění, kde je přidán do hostitele služby a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> je přidán, jak je znázorněno v následujícím kódu.  
   
 ```csharp
 using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))  
@@ -34,7 +34,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
 ```  
   
 ## <a name="client"></a>Klient  
- Klient použije <xref:System.ServiceModel.Discovery.DynamicEndpoint> najít službu. <xref:System.ServiceModel.Discovery.DynamicEndpoint>, Je standardní koncový bod, řeší koncový bod služby při otevření klienta. V takovém případě <xref:System.ServiceModel.Discovery.DynamicEndpoint> vyhledá službu, kterou kontrakt služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Provádí hledání nad <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> ve výchozím nastavení. Jakmile je možné vyhledat koncového bodu služby, klient se připojí k této službě přes určenou vazbu.  
+ Klient nástroje používá <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vyhledání služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint>Standardní koncový bod při otevření klienta vyřeší koncový bod služby. V takovém případě <xref:System.ServiceModel.Discovery.DynamicEndpoint> vyhledá službu na základě kontraktu služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Provádí hledání<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> ve výchozím nastavení. Jakmile nalezne koncový bod služby, klient se k této službě připojí přes určenou vazbu.  
   
 ```csharp  
 public static void Main()  
@@ -44,7 +44,7 @@ public static void Main()
 }              
 ```  
   
- Klient definuje metodu nazvanou `InvokeCalculatorService` , která používá <xref:System.ServiceModel.Discovery.DiscoveryClient> třídy pro vyhledání služeb. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Dědí z <xref:System.ServiceModel.Description.ServiceEndpoint>, takže mohou být předány `InvokeCalculatorService` metody. Příklad poté použije <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vytvoření instance `CalculatorServiceClient` a volá různé operace objektu službu kalkulačky.  
+ Klient definuje metodu s názvem `InvokeCalculatorService` , která <xref:System.ServiceModel.Discovery.DiscoveryClient> používá třídu pro hledání služeb. Dědí z <xref:System.ServiceModel.Description.ServiceEndpoint>, takže`InvokeCalculatorService` může být předán metodě. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Příklad následně používá <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vytvoření `CalculatorServiceClient` instance a volání různých operací služby kalkulačky.  
   
 ```csharp  
 static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)  
@@ -80,23 +80,23 @@ static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)
 }  
 ```  
   
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
+#### <a name="to-use-this-sample"></a>Použití této ukázky  
   
-1. Tato ukázka používá koncové body HTTP a pokud chcete tuto ukázku spustit, musíte přidat správné seznamy ACL adresy URL. Další informace najdete v tématu [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353). Provádění se zvýšenými oprávněními následující příkaz by měl přidat příslušné seznamy ACL. Můžete nahradit doména a uživatelské jméno pro následující argumenty, pokud příkaz nefunguje, jak je. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1. Tato ukázka používá koncové body HTTP a ke spuštění této ukázky musí být přidány správné seznamy ACL adres URL. Další informace najdete v tématu [Konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353). Spuštění následujícího příkazu u zvýšeného oprávnění by mělo přidat příslušné seznamy ACL. Pokud příkaz nefunguje tak, jak je, je vhodné nahradit doménu a uživatelské jméno pro následující argumenty. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
-2. Pomocí sady Visual Studio 2012, otevřete Basic.sln a sestavit ukázku.  
+2. Pomocí sady Visual Studio 2012 otevřete základní. sln a sestavte ukázku.  
   
-3. Spusťte aplikaci service.exe.  
+3. Spusťte aplikaci Service. exe.  
   
-4. Po spuštění služby, spusťte client.exe.  
+4. Po spuštění služby spusťte soubor Client. exe.  
   
-5. Podívejte se, že byl klient nemůže najít službu bez znalosti jeho adresu.  
+5. Pozor, aby klient mohl najít službu bez znalosti její adresy.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Basic`  

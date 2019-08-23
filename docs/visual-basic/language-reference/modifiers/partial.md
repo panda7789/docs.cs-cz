@@ -14,20 +14,20 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-ms.openlocfilehash: da5679c3e69a938e9735922bcf4f912428024610
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dd7550b8b1e164c55bd97828d395b43a60c87cfb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642791"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929938"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
-Označuje, že deklarace typu je částečnou definici typu.  
+Označuje, že deklarace typu je částečná definice typu.  
   
- Definice typu mezi několik deklarací můžete rozdělit pomocí `Partial` – klíčové slovo. Můžete použít tolik částečné deklarace chcete v tolika jiných zdrojových souborů. Všechny deklarace však musí být ve stejném sestavení a stejný obor názvů.  
+ Definici typu můžete rozdělit mezi několik deklarací pomocí `Partial` klíčového slova. Můžete použít libovolný počet částečných deklarací v libovolných různých zdrojových souborech, kolik chcete. Nicméně všechny deklarace musí být ve stejném sestavení a stejném oboru názvů.  
   
 > [!NOTE]
->  Visual Basic podporuje *částečné metody*, které jsou zpravidla implementovaní v částečné třídy. Další informace najdete v tématu [částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) a [příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md).  
+> Visual Basic podporuje *částečné metody*, které jsou obvykle implementovány v dílčích třídách. Další informace naleznete v tématu [částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) a [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,53 +45,53 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
 |Termín|Definice|  
 |---|---|  
-|`attrlist`|Volitelné. Seznam atributů, které se vztahují k tomuto typu. Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách (`< >`).|  
-|`accessmodifier`|Volitelné. Určuje, jaký kód může přistupovat k tohoto typu. Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|  
-|`MustInherit`|Volitelné. Zobrazit [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).|  
-|`NotInheritable`|Volitelné. Zobrazit [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).|  
-|`name`|Povinný parametr. Název tohoto typu. Musí odpovídat názvu definovaný v jiné částečné deklarace stejného typu.|  
-|`Of`|Volitelné. Určuje, že se jedná o obecného typu. Zobrazit [obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).|  
-|`typelist`|Povinné, pokud používáte [z](../../../visual-basic/language-reference/statements/of-clause.md). Zobrazit [seznamu](../../../visual-basic/language-reference/statements/type-list.md).|  
-|`Inherits`|Volitelné. Zobrazit [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
-|`classname`|Povinné, pokud používáte `Inherits`. Název třídy nebo rozhraní, ze kterého tato třída je odvozena.|  
-|`Implements`|Volitelné. Zobrazit [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).|  
-|`interfacenames`|Povinné, pokud používáte `Implements`. Názvy, které tento typ implementuje rozhraní.|  
-|`variabledeclarations`|Volitelné. Příkazy, které deklarace události pro typ a další proměnné.|  
-|`proceduredeclarations`|Volitelné. Příkazy, které deklarace a definovat další postupy pro typ.|  
-|`End Class` Nebo `End Structure`|Končí tento částečné `Class` nebo `Structure` definice.|  
+|`attrlist`|Volitelný parametr. Seznam atributů, které se vztahují na tento typ. [Seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) musíte uzavřít do lomených závorek (`< >`).|  
+|`accessmodifier`|Volitelný parametr. Určuje, jaký kód má k tomuto typu přístup. Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Volitelný parametr. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
+|`MustInherit`|Volitelný parametr. Viz [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).|  
+|`NotInheritable`|Volitelný parametr. Viz [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).|  
+|`name`|Povinný parametr. Název tohoto typu Musí odpovídat názvu definovanému ve všech ostatních částečných deklaracích stejného typu.|  
+|`Of`|Volitelný parametr. Určuje, že se jedná o obecný typ. Viz [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).|  
+|`typelist`|Vyžaduje se, pokud [](../../../visual-basic/language-reference/statements/of-clause.md)používáte. Viz [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).|  
+|`Inherits`|Volitelný parametr. Viz [příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
+|`classname`|Vyžaduje se `Inherits`, pokud používáte. Název třídy nebo rozhraní, ze kterého je tato třída odvozena.|  
+|`Implements`|Volitelný parametr. Viz [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md).|  
+|`interfacenames`|Vyžaduje se `Implements`, pokud používáte. Názvy rozhraní, které tento typ implementuje.|  
+|`variabledeclarations`|Volitelný parametr. Příkazy, které deklarují další proměnné a události pro daný typ.|  
+|`proceduredeclarations`|Volitelný parametr. Příkazy, které deklarují a definují další postupy pro typ.|  
+|`End Class` Nebo `End Structure`|Ukončí tento částečný `Class` nebo `Structure` definice.|  
   
 ## <a name="remarks"></a>Poznámky  
- Visual Basic používá definicí částečné třídy pro oddělení generovaný kód z kódu uživatelem definovaných v samostatných zdrojové soubory. Například **Návrhář formulářů Windows** definuje částečné třídy pro ovládací prvky, jako <xref:System.Windows.Forms.Form>. Generovaný kód v těchto ovládacích prvků byste neměli měnit.  
+ Visual Basic používá definice částečné třídy pro oddělení vygenerovaného kódu od uživatelem vytvořeného kódu v samostatných zdrojových souborech. Například **Návrhář formuláře Windows** definuje částečné třídy pro ovládací prvky, <xref:System.Windows.Forms.Form>jako například. V těchto ovládacích prvcích byste neměli upravovat generovaný kód.  
   
- Všechna pravidla pro třídu, strukturu, rozhraní a vytváření modulu, třeba kroky týkající se použití modifikátoru a dědičnost, použít při vytváření částečného typu.  
+ Všechna pravidla pro třídu, strukturu, rozhraní a vytváření modulů, jako jsou například pro použití modifikátoru a dědičnosti, se použijí při vytváření částečného typu.  
   
 ## <a name="best-practices"></a>Doporučené postupy  
   
-- Za normálních podmínek by neměl vývoj jeden typ rozdělit mezi dva nebo více deklarací. Proto se ve většině případů není nutné `Partial` – klíčové slovo.  
+- Za běžných okolností byste neměli rozdělit vývoj jednoho typu ve dvou nebo více deklaracích. Ve většině případů proto `Partial` klíčové slovo nepotřebujete.  
   
-- Pro lepší čitelnost, by měl obsahovat všechny částečné deklaraci typu `Partial` – klíčové slovo. Kompilátor povoluje nejvýše jedna částečná deklarace chcete vynechat, nechte – klíčové slovo; Pokud ji vynechte nejméně dva signály kompilátor chybu.  
+- Z důvodu čitelnosti by měla každá částečná deklarace typu zahrnovat `Partial` klíčové slovo. Kompilátor umožňuje nejvýše jednu částečnou deklaraci, aby klíčové slovo bylo vynecháno. Pokud je vynecháte dva nebo více, kompilátor signalizuje chybu.  
   
 ## <a name="behavior"></a>Chování  
   
-- **Deklarace sjednocení.** Kompilátor zpracovává typ jako její částečné deklarace sjednocení. Každý modifikátor z každé Částečná definice platí pro celý typ a je k dispozici pro celý typ každého člena z každé částečnou definici.  
+- **Sjednocení deklarací.** Kompilátor považuje typ za sjednocení všech jeho částečných deklarací. Všechny modifikátory od každé částečné definice platí pro celý typ a každý člen z každé částečné definice je k dispozici pro celý typ.  
   
-- **Propagace typu není povolený pro částečné typy v modulech.** Pokud je částečnou definici uvnitř modulu, typu povýšení tohoto typu není automaticky zrušena. V takovém případě sada částečné definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Další informace najdete v tématu [propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
+- **Pro částečné typy v modulech není povolena propagace typu.** Pokud je v modulu Částečná definice, typ propagace tohoto typu je automaticky připraven. V takovém případě může sada částečných definic způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Další informace najdete v tématu o [typu propagace](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
   
-     Kompilátor sloučí částečné definice pouze v případě jejich úplné cesty jsou identické.  
+     Kompilátor sloučí částečné definice pouze v případě, že jsou jejich plně kvalifikované cesty identické.  
   
- `Partial` – Klíčové slovo lze použít v těchto kontextech:  
+ `Partial` Klíčové slovo lze použít v těchto kontextech:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
  [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
 ## <a name="example"></a>Příklad  
- Následující příklad rozdělí definice třídy `sampleClass` do dvě deklarace, z nichž každý definuje jiný `Sub` postup.  
+ V následujícím příkladu je rozdělena definice třídy `sampleClass` do dvou deklarací, z nichž každá definuje jiný `Sub` postup.  
   
  [!code-vb[VbVbalrKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#3)]  
   
- Dvě Částečná definice v předchozím příkladu může být ve stejném zdrojovém souboru nebo ve dvou různých zdrojových souborů.  
+ Dvě částečné definice v předchozím příkladu můžou být ve stejném zdrojovém souboru nebo ve dvou různých zdrojových souborech.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -99,5 +99,5 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
 - [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
 - [Propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)
 - [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)

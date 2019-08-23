@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 5c57d86b2f08733dc4a729bf6091eab23c6035f2
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 7ee603fa5350ef81c6d32d2f22119bbe526295df
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039711"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912615"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do Windows Forms
 Většina formulářů je navržena přidáním ovládacích prvků na plochu formuláře k definování uživatelského rozhraní (UI). *Ovládací prvek* je komponenta na formuláři sloužící k zobrazení informací nebo přijetí vstupu uživatele. Další informace o ovládacích prvcích naleznete v tématu [model Windows Forms Controls](index.md).
@@ -30,7 +30,7 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
      Ovládací prvek je přidán do formuláře se zadaným umístěním a velikostí.
 
     > [!NOTE]
-    >  U každého ovládacího prvku je definována výchozí velikost. Ovládací prvek lze přidat do formuláře ve výchozí velikosti ovládacího prvku přetažením z **panelu nástrojů** do formuláře.
+    > U každého ovládacího prvku je definována výchozí velikost. Ovládací prvek lze přidat do formuláře ve výchozí velikosti ovládacího prvku přetažením z **panelu nástrojů** do formuláře.
 
 ## <a name="to-drag-a-control-to-a-form"></a>Přetažení ovládacího prvku do formuláře
 
@@ -41,12 +41,12 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
      Ovládací prvek je přidán do formuláře v zadaném umístění ve výchozí velikosti.
 
     > [!NOTE]
-    >  Můžete dvakrát kliknout na ovládací prvek v **sadě nástrojů** a přidat ho do levého horního rohu formuláře ve výchozí velikosti.
+    > Můžete dvakrát kliknout na ovládací prvek v **sadě nástrojů** a přidat ho do levého horního rohu formuláře ve výchozí velikosti.
 
      Ovládací prvky lze také dynamicky přidávat do formuláře za běhu. V následujícím příkladu <xref:System.Windows.Forms.TextBox> kódu bude ovládací prvek přidán do formuláře <xref:System.Windows.Forms.Button> při kliknutí na ovládací prvek.
 
     > [!NOTE]
-    >  Následující postup vyžaduje existenci formuláře s ovládacím prvkem `Button1` **tlačítko** , na kterém je již umístěn.
+    > Následující postup vyžaduje existenci formuláře s ovládacím prvkem `Button1` **tlačítko** , na kterém je již umístěn.
 
 ## <a name="to-add-a-control-to-a-form-programmatically"></a>Postup pro přidání ovládacího prvku do formuláře prostřednictvím kódu programu
 
@@ -81,7 +81,7 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
     ```
 
     > [!NOTE]
-    >  Můžete také přidat kód pro inicializaci dalších vlastností ovládacího prvku.
+    > Můžete také přidat kód pro inicializaci dalších vlastností ovládacího prvku.
 
     > [!IMPORTANT]
     >  Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě, a to tak, že `UserControl`se na něj odkazuje škodlivá aktivita. To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.

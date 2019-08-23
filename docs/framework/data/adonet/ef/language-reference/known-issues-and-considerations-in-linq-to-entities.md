@@ -5,76 +5,76 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: d7d87a3e95cf66efb91b71f6ff3c7c9bb1fbb311
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 66af3395d7ba7271323ad6461e8e1fb8c823a1c6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662152"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913905"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Známé problémy a aspekty u LINQ to Entities
-Tato část obsahuje informace o známých problémech s dotazy LINQ na dotazy na entity.  
+V této části najdete informace o známých problémech s LINQ to Entities dotazy.  
   
-- [Dotazy LINQ, nelze uložit do mezipaměti](#LINQQueriesThatAreNotCached)  
+- [Dotazy LINQ, které nelze uložit do mezipaměti](#LINQQueriesThatAreNotCached)  
   
-- [Informace o ztrátě objednávce](#OrderingInfoLost)  
+- [Došlo ke ztrátě informací o objednávání.](#OrderingInfoLost)  
   
-- [Celá čísla bez znaménka není podporován](#UnsignedIntsUnsupported)  
+- [Celá čísla bez znaménka nejsou podporovaná.](#UnsignedIntsUnsupported)  
   
-- [Chyby převodu typů](#TypeConversionErrors)  
+- [Chyby konverze typu](#TypeConversionErrors)  
   
-- [Odkazuje na Neskalární proměnné není podporován](#RefNonScalarClosures)  
+- [Odkazování na jiné než skalární proměnné se nepodporuje.](#RefNonScalarClosures)  
   
-- [Vnořené dotazy může selhat s SQL Server 2000](#NestedQueriesSQL2000)  
+- [Vnořené dotazy mohou selhat s SQL Server 2000](#NestedQueriesSQL2000)  
   
-- [Promítání na anonymního typu](#ProjectToAnonymousType)  
+- [Projektování na anonymní typ](#ProjectToAnonymousType)  
   
 <a name="LINQQueriesThatAreNotCached"></a>   
-## <a name="linq-queries-that-cannot-be-cached"></a>Dotazy LINQ, nelze uložit do mezipaměti  
- Od verze rozhraní .NET Framework 4.5, dotazech LINQ to Entities jsou automaticky uloží do mezipaměti. Ale dotazech LINQ to Entities, které se týkají `Enumerable.Contains` nejsou v operátoru na kolekce v paměti automaticky uložené v mezipaměti. Také Parametrizace kolekce v paměti v kompilované dotazy LINQ není povoleno.  
+## <a name="linq-queries-that-cannot-be-cached"></a>Dotazy LINQ, které nelze uložit do mezipaměti  
+ Počínaje .NET Framework 4,5 jsou dotazy LINQ to Entities automaticky ukládány do mezipaměti. Nicméně LINQ to Entities dotazy, které aplikují `Enumerable.Contains` operátor na kolekce v paměti, nejsou automaticky ukládány do mezipaměti. V kompilovaných dotazech LINQ se taky Parametrizace kolekce v paměti, které se nepovolují.  
   
 <a name="OrderingInfoLost"></a>   
-## <a name="ordering-information-lost"></a>Informace o ztrátě objednávce  
- Projekce sloupce do anonymního typu způsobí, že pořadí informace, které ztraceno v nějaké dotazy, které jsou vykonávány na databázi systému SQL Server 2005 nastavené na úroveň kompatibility "80".  Proběhne, když název sloupce v seznamu order by odpovídá názvu sloupce v modulu pro výběr, jak je znázorněno v následujícím příkladu:  
+## <a name="ordering-information-lost"></a>Došlo ke ztrátě informací o objednávání.  
+ Při projednávání sloupců do anonymního typu dojde ke ztrátě informací o objednávce v některých dotazech, které jsou spouštěny s databází SQL Server 2005 nastavenou na úroveň kompatibility "80".  K tomu dochází, když název sloupce v seznamu ORDER-by odpovídá názvu sloupce v selektoru, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt543840)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt543840)]  
   
 <a name="UnsignedIntsUnsupported"></a>   
-## <a name="unsigned-integers-not-supported"></a>Celá čísla bez znaménka není podporován  
- Určení typu celé číslo bez znaménka v technologii LINQ to Entities dotaz se nepodporuje, protože [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] nepodporuje celých čísel bez znaménka. Pokud zadáte celé číslo bez znaménka, <xref:System.ArgumentException> bude vyvolána výjimka při překladu výrazu dotazu, jak je znázorněno v následujícím příkladu. Tento příklad dotazy pro objednávky s ID 48000.  
+## <a name="unsigned-integers-not-supported"></a>Celá čísla bez znaménka nejsou podporovaná.  
+ Určení typu unsigned integer v dotazu LINQ to Entities není podporováno, protože [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] nepodporuje celá čísla bez znaménka. Zadáte-li unsigned integer, <xref:System.ArgumentException> bude vyvolána výjimka během překladu výrazu dotazu, jak je znázorněno v následujícím příkladu. V tomto příkladu se dotazuje na objednávku s ID 48000.  
   
  [!code-csharp[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#uintasqueryparam)]
  [!code-vb[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#uintasqueryparam)]  
   
 <a name="TypeConversionErrors"></a>   
-## <a name="type-conversion-errors"></a>Chyby převodu typů  
- V jazyce Visual Basic, když vlastnost je mapováno na sloupec typu verze SQL serveru s hodnotou 1 pomocí `CByte` funkce, <xref:System.Data.SqlClient.SqlException> je vyvolána výjimka se zpráva "Chyba aritmetického přetečení". Následující příklady dotazů `Product.MakeFlag` sloupec v ukázkové databázi AdventureWorks a výjimka je vyvolána, když jsou procházen výsledky dotazu.  
+## <a name="type-conversion-errors"></a>Chyby konverze typu  
+ V Visual Basic `CByte` <xref:System.Data.SqlClient.SqlException> je při mapování vlastnosti na sloupec SQL Server bitového typu s hodnotou 1 pomocí funkce vyvolána zpráva "Chyba aritmetického přetečení". Následující příklad provede dotaz na `Product.MakeFlag` sloupec v ukázkové databázi AdventureWorks a vyvolá výjimku při iteraci výsledků dotazu.  
   
  [!code-vb[DP L2E Conceptual Examples#SBUDT544355](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt544355)]  
   
 <a name="RefNonScalarClosures"></a>   
-## <a name="referencing-non-scalar-variables-not-supported"></a>Odkazuje na Neskalární proměnné není podporován  
- Odkazování na neskalární proměnných, například entitu v dotazu se nepodporuje. Když takový dotaz spuštěn, <xref:System.NotSupportedException> je vyvolána výjimka a zobrazí se zpráva s oznámením "nelze vytvořit konstantní hodnotu typu `EntityType`. Pouze primitivní typy ("například Int32, String a Guid") jsou v tomto kontextu podporován."  
+## <a name="referencing-non-scalar-variables-not-supported"></a>Odkazování na jiné než skalární proměnné se nepodporuje.  
+ Odkazování na jiné než skalární proměnné, jako je například entita, není v dotazu podporováno. Pokud se takový dotaz spustí, <xref:System.NotSupportedException> je vyvolána výjimka se zprávou, že se zobrazí zpráva "nelze vytvořit konstantní hodnotu typu. `EntityType` V tomto kontextu jsou podporovány pouze primitivní typy (například Int32, String a GUID). "  
   
 > [!NOTE]
->  Odkazování na sadu skalární proměnné je podporována.  
+> Odkazování na kolekci skalárních proměnných je podporováno.  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT555877](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt555877)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT555877](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt555877)]  
   
 <a name="NestedQueriesSQL2000"></a>   
-## <a name="nested-queries-may-fail-with-sql-server-2000"></a>Vnořené dotazy může selhat s SQL Server 2000  
- S SQL Server 2000 dotazech LINQ to Entities může selhat, pokud vytvářejí vnořené dotazy Transact-SQL, které jsou tři nebo více úrovní do hloubky.  
+## <a name="nested-queries-may-fail-with-sql-server-2000"></a>Vnořené dotazy mohou selhat s SQL Server 2000  
+ V případě SQL Server 2000 mohou dotazy LINQ to Entities selhat, pokud budou vyprodukovány vnořené dotazy Transact-SQL, které mají hloubku tři nebo více úrovní.  
   
 <a name="ProjectToAnonymousType"></a>   
-## <a name="projecting-to-an-anonymous-type"></a>Promítání na anonymního typu  
- Pokud definujete vaší cesty počátečního dotazu, aby zahrnovala související objekty pomocí <xref:System.Data.Objects.ObjectQuery%601.Include%2A> metodu <xref:System.Data.Objects.ObjectQuery%601> a poté použít k projekci vrácených objektů na anonymní typ LINQ, objekty zadané v metodě zahrnout nejsou zahrnuty v dotazu výsledky.  
+## <a name="projecting-to-an-anonymous-type"></a>Projektování na anonymní typ  
+ Definujete-li počáteční cestu dotazu pro zahrnutí souvisejících objektů pomocí <xref:System.Data.Objects.ObjectQuery%601.Include%2A> metody <xref:System.Data.Objects.ObjectQuery%601> v a poté pomocí LINQ k navrácení vrácených objektů do anonymního typu, objekty zadané v metodě include nejsou zahrnuty v dotazu. důsledk.  
   
  [!code-csharp[DP L2E Conceptual Examples#ProjToAnonType1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#projtoanontype1)]
  [!code-vb[DP L2E Conceptual Examples#ProjToAnonType1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#projtoanontype1)]  
   
- Chcete-li získat související objekty, nejsou vrácené typy projektů do anonymního typu.  
+ Chcete-li získat související objekty, neprojekt vrátí typy do anonymního typu.  
   
  [!code-csharp[DP L2E Conceptual Examples#ProjToAnonType2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#projtoanontype2)]
  [!code-vb[DP L2E Conceptual Examples#ProjToAnonType2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#projtoanontype2)]  

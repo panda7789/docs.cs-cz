@@ -10,26 +10,26 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolStrip control [Windows Forms], rendering
 ms.assetid: 88a804ba-679f-4ba3-938a-0dc396199c5b
-ms.openlocfilehash: ca1a7444c029632f83b1600e5855a13c83777594
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c354ace3a7d3ce43f549dd1295a85fbee004eb22
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772902"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929731"
 ---
 # <a name="how-to-create-and-set-a-custom-renderer-for-the-toolstrip-control-in-windows-forms"></a>Postupy: Vytvoření a nastavení vlastního rendereru pro ovládací prvek ToolStrip ve Windows Forms
-<xref:System.Windows.Forms.ToolStrip> ovládací prvky umožňují snadno podporu k používání motivů a stylů. Zcela vlastní vzhled a chování (vzhled a chování) můžete dosáhnout tím, že buď nastavíte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.  
+<xref:System.Windows.Forms.ToolStrip>ovládací prvky umožňují snadnou podporu motivů a stylů. Můžete dosáhnout úplného vlastního vzhledu a chování (vzhled a chování) nastavením <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnosti <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> nebo vlastnosti na vlastní zobrazovací jednotku.  
   
- Můžete přiřadit renderery jednotlivých <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>, nebo <xref:System.Windows.Forms.StatusStrip> ovládacího prvku, nebo můžete použít <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> vlastnost má vliv na všechny objekty tak, že nastavíte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.  
+ Můžete přiřadit zobrazovací jednotky každému <xref:System.Windows.Forms.ToolStrip>jednotlivci <xref:System.Windows.Forms.ContextMenuStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> nebo <xref:System.Windows.Forms.StatusStrip> ovládacímu prvku nebo <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> můžete použít vlastnost pro ovlivnění všech objektů nastavením vlastnosti na <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> Vrátí <xref:System.Windows.Forms.ToolStripRenderMode.Custom> pouze tehdy, pokud hodnota <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> není `null`.  
+> <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>Vrátí <xref:System.Windows.Forms.ToolStripRenderMode.Custom> pouze v případě, že <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> hodnota `null`není.  
   
-### <a name="to-create-a-custom-renderer"></a>Chcete-li vytvořit vlastní zobrazovací jednotky  
+### <a name="to-create-a-custom-renderer"></a>Vytvoření vlastního zobrazovací jednotky  
   
-1. Rozšíření <xref:System.Windows.Forms.ToolStripRenderer> třídy.  
+1. <xref:System.Windows.Forms.ToolStripRenderer> Zvětšete třídu.  
   
-2. Implementovat požadované vlastní vykreslování tak, že přepíšete odpovídající *na...* členy  
+2. Implementujte požadované vlastní vykreslování přepsáním vhodného *na...* členy  
   
     ```vb  
     Public Class RedTextRenderer  
@@ -57,9 +57,9 @@ ms.locfileid: "61772902"
     }  
     ```  
   
-### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a>Nastavení vlastního rendereru bude aktuální zobrazovací jednotky  
+### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a>Nastavení vlastního zobrazovacího modulu jako aktuálního zobrazovací jednotky  
   
-1. Nastavení vlastního rendereru pro jeden <xref:System.Windows.Forms.ToolStrip>, nastavte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.  
+1. Chcete-li nastavit vlastní vykreslovací modul pro <xref:System.Windows.Forms.ToolStrip>jeden, <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> nastavte vlastnost na vlastní zobrazovací jednotku.  
   
     ```vb  
     toolStrip1.Renderer = New RedTextRenderer()  
@@ -69,7 +69,7 @@ ms.locfileid: "61772902"
     toolStrip1.Renderer = new RedTextRenderer();  
     ```  
   
-2. Nebo k nastavení vlastní zobrazovací jednotky pro všechny <xref:System.Windows.Forms.ToolStrip> třídy obsažené ve vaší aplikaci: Nastavte <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> do vlastní zobrazovací jednotky a nastavte vlastnost <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.  
+2. Nebo chcete-li nastavit vlastní vykreslovací modul pro <xref:System.Windows.Forms.ToolStrip> všechny třídy obsažené v aplikaci: Nastavte vlastnost na vlastní zobrazovací jednotku a <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> nastavte vlastnost na <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>hodnotu. <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType>  
   
     ```vb  
     toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode  

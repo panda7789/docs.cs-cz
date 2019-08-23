@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 3264be0ae6159563ae19ac8aeb1bf3dc90ac68df
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 345840ad45add21c6088abd0fb45e2e591b7df21
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588934"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923888"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty `Main` metody lze odeslat definováním metody v jednom z následujících způsobů:  
@@ -20,7 +20,7 @@ Argumenty `Main` metody lze odeslat definováním metody v jednom z následujíc
  [!code-csharp[csProgGuideMain#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#3)]  
   
 > [!NOTE]
->  Chcete-li povolit argumenty příkazového řádku `Main` v metodě model Windows Forms aplikace, je nutné ručně upravit `Main` signaturu v program.cs. Kód generovaný návrhářem model Windows Forms vytvoří `Main` bez vstupního parametru. Můžete také použít <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> nebo <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pro přístup k argumentům příkazového řádku z libovolného bodu v konzole nebo v aplikaci systému Windows.  
+> Chcete-li povolit argumenty příkazového řádku `Main` v metodě model Windows Forms aplikace, je nutné ručně upravit `Main` signaturu v program.cs. Kód generovaný návrhářem model Windows Forms vytvoří `Main` bez vstupního parametru. Můžete také použít <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> nebo <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pro přístup k argumentům příkazového řádku z libovolného bodu v konzole nebo v aplikaci systému Windows.  
   
  Parametr `Main` metody<xref:System.String> je pole, které představuje argumenty příkazového řádku. Obvykle určíte, zda argumenty existují, otestováním `Length` vlastnosti, například:  
   
@@ -70,7 +70,7 @@ long num = Convert.ToInt64(s);
 5. Příkaz vytvoří tento výstup:`The factorial of 3 is 6.`  
   
 > [!NOTE]
->  Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).  
+> Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).  
   
  Další příklady použití argumentů příkazového řádku naleznete v tématu [How to: Vytvořte a použijte sestavení pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   

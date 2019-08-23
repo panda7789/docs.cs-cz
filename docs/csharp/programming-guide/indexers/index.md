@@ -8,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 130cc68906be433afc906cfb22759f4ae3dba447
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 5b135fee12ac5b78b41a657f2eb458ea104143fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589456"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923937"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -24,7 +24,7 @@ Indexery umožňují, aby byly instance třídy nebo struktury indexovány stejn
  [!code-csharp[indexers#1](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-1.cs)]  
   
 > [!NOTE]
->  Další příklady najdete v části [související oddíly](./index.md#BKMK_RelatedSections).  
+> Další příklady najdete v části [související oddíly](./index.md#BKMK_RelatedSections).  
   
 ## <a name="expression-body-definitions"></a>Definice textu výrazu  
  

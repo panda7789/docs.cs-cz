@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: 8eda59a911e0a69936a69f2b04ba5fbf2023e8ff
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 266ece1e63bf6d32bf59406dbc72a9e6bd92eb45
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597199"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924542"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda lze použít z jiného kódu v sestavení nebo v jiných sestaveních. Následující modifikátory přístupu můžete použít k určení přístupnosti typu nebo člena při jeho deklaraci:  
@@ -62,7 +62,7 @@ Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda l
  [!code-csharp[csProgGuideObjects#73](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#73)]  
   
 > [!NOTE]
->  Chráněná interní úroveň přístupnosti znamená chráněný nebo interní, nechráněnou a interní. Jinými slovy, chráněný interní člen může být k dispozici z libovolné třídy ve stejném sestavení, včetně odvozených tříd. Chcete-li omezit přístupnost jenom na odvozené třídy ve stejném sestavení, deklarujte samotnou třídu jako interní a deklarujte její členy jako chráněnou. Počínaje verzí C# 7,2 můžete také použít modifikátor privátního chráněného přístupu, abyste dosáhli stejného výsledku bez nutnosti vytvořit interní obsahující třídu.  
+> Chráněná interní úroveň přístupnosti znamená chráněný nebo interní, nechráněnou a interní. Jinými slovy, chráněný interní člen může být k dispozici z libovolné třídy ve stejném sestavení, včetně odvozených tříd. Chcete-li omezit přístupnost jenom na odvozené třídy ve stejném sestavení, deklarujte samotnou třídu jako interní a deklarujte její členy jako chráněnou. Počínaje verzí C# 7,2 můžete také použít modifikátor privátního chráněného přístupu, abyste dosáhli stejného výsledku bez nutnosti vytvořit interní obsahující třídu.  
   
 ## <a name="other-types"></a>Další typy  
  Rozhraní deklarovaná přímo v rámci oboru názvů lze deklarovat jako veřejné nebo interní a stejně jako třídy a struktury, výchozí nastavení rozhraní pro interní přístup. Členy rozhraní jsou vždy veřejné, protože účelem rozhraní je povolit jiným typům přístup ke třídě nebo struktuře. Pro členy rozhraní nelze použít žádné modifikátory přístupu.  

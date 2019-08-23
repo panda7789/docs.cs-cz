@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 550b85474c1ccd7e125549e86df906439caf410e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ae65c59efe1d925b5e058e8664d1e093fdfec875
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621502"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917205"
 ---
 # <a name="icordebugfunction-interface"></a>ICorDebugFunction – rozhraní
 
@@ -32,34 +32,34 @@ Představuje spravovanou funkci nebo metodu.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-createbreakpoint-method.md)|Vytvoří zarážku na začátku této funkce.|  
-|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getclass-method.md)|Získá ICorDebugClass objekt, který představuje třídu, tato funkce je členem skupiny.|  
-|[GetCurrentVersionNumber – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getcurrentversionnumber-method.md)|Získá číslo verze nejnovější úpravy provedené v této funkce.|  
-|[GetILCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getilcode-method.md)|Získá kód Microsoft intermediate language (MSIL) pro tuto funkci.|  
-|[GetLocalVarSigToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getlocalvarsigtoken-method.md)|Získá metadata pro místní proměnné podpis funkce, která je reprezentována tento token `ICorDebugFunction` instance.|  
-|[GetModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getmodule-method.md)|Získá modul, ve kterém je definována funkce.|  
+|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getclass-method.md)|Získá objekt ICorDebugClass, který představuje třídu, na kterou je tato funkce členem.|  
+|[GetCurrentVersionNumber – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getcurrentversionnumber-method.md)|Získá číslo verze poslední úpravy provedené u této funkce.|  
+|[GetILCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getilcode-method.md)|Získá kód jazyka MSIL (Microsoft Intermediate Language) pro tuto funkci.|  
+|[GetLocalVarSigToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getlocalvarsigtoken-method.md)|Získá token metadat pro podpis místní proměnné funkce, která je reprezentovaná touto `ICorDebugFunction` instancí.|  
+|[GetModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getmodule-method.md)|Získá modul, ve kterém je tato funkce definovaná.|  
 |[GetNativeCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getnativecode-method.md)|Získá nativní kód pro tuto funkci.|  
 |[GetToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-gettoken-method.md)|Získá token metadat pro tuto funkci.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugFunction` Rozhraní nepředstavuje funkce s parametry obecného typu. Například `ICorDebugFunction` představuje instanci `Func<T>` , ale ne `Func<string>`. Volání [icordebugilframe2::enumeratetypeparameters –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md) zobrazíte parametry obecného typu.  
+ `ICorDebugFunction` Rozhraní nepředstavuje funkci s parametry obecného typu. Například `ICorDebugFunction` instance by představovala `Func<T>` , ale ne `Func<string>`. Chcete-li získat parametry obecného typu, zavolejte [ICorDebugILFrame2:: EnumerateTypeParameters –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md) .  
   
- Vztah mezi tokenu metadat metodu, `mdMethodDef`a metody `ICorDebugFunction` objektu je závislá na Určuje, zda je povoleno upravit a pokračovat na funkci:  
+ Vztah mezi tokenem metadat metody, `mdMethodDef`a `ICorDebugFunction` objektem metody je závislý na tom, zda je povolena funkce upravit a pokračovat pro funkci:  
   
-- Pokud funkce upravit a pokračovat není povoleno ve funkci, po jejím obnovení relace existuje mezi `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, že funkce má jeden `ICorDebugFunction` objekt a jeden `mdMethodDef` token.  
+- Pokud funkce upravit a pokračovat není u této funkce povolená, relace 1:1 mezi `ICorDebugFunction` objektem `mdMethodDef` a tokenem existuje. To znamená, že funkce má jeden `ICorDebugFunction` objekt a jeden `mdMethodDef` token.  
   
-- Pokud je povoleno upravit a pokračovat na funkce, mezi existuje vztah mnoha k jednomu jinému `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, funkce může mít mnoho instancí `ICorDebugFunction`, jeden pro každou verzi funkce, ale pouze jeden `mdMethodDef` token.  
+- Pokud je u této funkce povolená možnost upravit a pokračovat, existuje relace n:n mezi `ICorDebugFunction` objektem `mdMethodDef` a tokenem. To znamená, že funkce může mít mnoho instancí `ICorDebugFunction`, jednu pro každou verzi funkce, ale pouze jeden `mdMethodDef` token.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:**  CorGuids.lib  
+ **Knihovna**  CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: d3253dced5f2f1fe04c76b46a6b360b24aabb43e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 831f0fc83c8a7066b40d64e4765a312b8b4847bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588502"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921779"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec představuje číselnou hodnotu (C# Průvodce programováním)
 Chcete-li zjistit, zda je řetězec platnou reprezentací zadaného číselného typu, použijte statickou `TryParse` metodu, která je implementována všemi primitivními číselnými typy a také podle <xref:System.DateTime> typů <xref:System.Net.IPAddress>, jako jsou a. Následující příklad ukazuje, jak určit, zda je "108" platný [int](../../language-reference/builtin-types/integral-numeric-types.md).  
@@ -26,7 +26,7 @@ bool result = int.TryParse(s, out i); //i now = 108
  Pokud řetězec obsahuje nenumerické znaky nebo číselná hodnota je pro konkrétní typ, který jste zadali, příliš velká nebo příliš malá, `TryParse` vrátí hodnotu false a nastaví výstupní parametr na hodnotu nula. V opačném případě vrátí hodnotu true a nastaví výstupní parametr na číselnou hodnotu řetězce.  
   
 > [!NOTE]
->  Řetězec může obsahovat pouze číselné znaky a stále není platný pro typ, jehož `TryParse` metodu používáte. Například "256" není platná hodnota `byte` , ale je platná pro. `int` "98,6" není platná hodnota `int` , ale je platná. `decimal`  
+> Řetězec může obsahovat pouze číselné znaky a stále není platný pro typ, jehož `TryParse` metodu používáte. Například "256" není platná hodnota `byte` , ale je platná pro. `int` "98,6" není platná hodnota `int` , ale je platná. `decimal`  
   
 ## <a name="example"></a>Příklad  
  Následující `TryParse` příklady ukazují `long`, jak používat s řetězcovými reprezentacemi hodnot, `byte`a `decimal` .  

@@ -1,25 +1,25 @@
 ---
-title: <faultPropagationQuery> služby WCF
+title: <faultPropagationQuery>služby WCF
 ms.date: 03/30/2017
 ms.assetid: fabafbc8-3e45-4feb-8321-0725e9f4079c
-ms.openlocfilehash: e5793852d49a052d05f6cb2f4efbe166d67afc62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ba6478ca500c0a8ef150966a97898f8743ffdf8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701044"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925623"
 ---
-# <a name="faultpropagationquery-of-wcf"></a>\<faultPropagationQuery > služby WCF
+# <a name="faultpropagationquery-of-wcf"></a>\<faultPropagationQuery > WCF
 
-Představuje dotaz, který se používá ke sledování zpracování chyb, ke kterým dochází v rámci aktivity.  Pokaždé, když FaultHandler zpracovává chyby, dojde k této události. Takový dotaz byste měli používat ke sledování zpracování chyb, k nimž došlo v rámci aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru chyby šíření hodnoty záznamů.
+Představuje dotaz, který se používá ke sledování manipulace s chybami, ke kterým dojde v rámci aktivity.  K této události dochází pokaždé, když když FaultHandler zpracovává chybu. Takový dotaz byste měli používat ke sledování zpracování chyb, k nimž došlo v rámci aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru chyby šíření hodnoty záznamů.
 
-Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).
+Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md).
 
 \<system.serviceModel>\
 \<sledování > \
-\<profiles>\
-\<trackingProfile>\
-\<pracovní postup > \
+\<> profilů \
+\<Profil TrackingProfile > \
+\<> pracovního postupu \
 \<faultPropagationQueries>\
 \<faultPropagationQuery>
 
@@ -48,7 +48,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`faultSourceActivityName`|Řetězec, který určuje název aktivity obslužná rutina chyby, která chybu. Výchozí hodnota je \*, což znamená, že chyby šíření záznamy budou vráceny pro všechny aktivity.|
+|`faultSourceActivityName`|Řetězec, který určuje název aktivity obslužné rutiny chyb, která rozšířila chybu. Výchozí hodnota je \*, což znamená, že jsou vraceny záznamy o šíření chyb pro všechny aktivity.|
 |`faultHandlerActivityName`|Řetězec, který určuje název aktivity, který byl zdroj chyby.|
 
 ### <a name="child-elements"></a>Podřízené prvky
@@ -59,11 +59,11 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<faultPropagationQueries>](faultpropagationqueries-of-wcf.md)|Představuje seznam konfigurační prvky, které se používají ke sledování zpracování chyb, ke kterým dochází v rámci aktivity.  Pokaždé, když FaultHandler zpracovává chyby, dojde k této události.|
+|[\<faultPropagationQueries>](faultpropagationqueries-of-wcf.md)|Představuje seznam elementů konfigurace, které se používají ke sledování manipulace s chybami, ke kterým dojde v rámci aktivity.  K této události dochází pokaždé, když když FaultHandler zpracovává chybu.|
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.FaultPropagationQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.FaultPropagationQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

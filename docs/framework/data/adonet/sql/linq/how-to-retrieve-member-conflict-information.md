@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
-ms.openlocfilehash: fae1513e7a7ead98318d907b220b7510758c9ffe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d63b0b2c7d513d9f4db526b88a7c4e852637343
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037599"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928636"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>Postupy: Načtení informací o konfliktech členů
-Můžete použít <xref:System.Data.Linq.MemberChangeConflict> třídy k načtení informací o jednotlivých členů v konfliktu. V tomto kontextu stejné můžete zadat vlastní zpracování konflikt pro žádného člena. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+<xref:System.Data.Linq.MemberChangeConflict> Třídu můžete použít k načtení informací o jednotlivých členech v konfliktu. V tomto stejném kontextu můžete poskytnout vlastní zpracování konfliktu pro libovolného člena. Další informace najdete v tématu [Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
 ## <a name="example"></a>Příklad  
- Následující kód prochází <xref:System.Data.Linq.ObjectChangeConflict> objekty. Pro každý objekt, pak prochází <xref:System.Data.Linq.MemberChangeConflict> objekty.  
+ Následující kód prochází <xref:System.Data.Linq.ObjectChangeConflict> objekty. Pro každý objekt pak prochází <xref:System.Data.Linq.MemberChangeConflict> objekty.  
   
 > [!NOTE]
->  Zahrnout <xref:System.Reflection> negace <xref:System.Data.Linq.MemberChangeConflict.Member%2A> informace.  
+> Zahrňte <xref:System.Reflection> do poskytování <xref:System.Data.Linq.MemberChangeConflict.Member%2A> informací.  
   
  [!code-csharp[System.Data.Linq.MemberChangeConflict#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/system.data.linq.memberchangeconflict/cs/program.cs#1)]
  [!code-vb[System.Data.Linq.MemberChangeConflict#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.memberchangeconflict/vb/module1.vb#1)]  

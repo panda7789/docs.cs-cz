@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-ms.openlocfilehash: 272976d3c581d3e8a5860ba5cf3f9695ca370d8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b56d2f8cd46f3184f1001c8bd6a70dbfc4968968
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034408"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937034"
 ---
 # <a name="creating-a-datatable"></a>Vytvoření datové tabulky
-A <xref:System.Data.DataTable>, která představuje jednu tabulku relační data v paměti, lze vytvořit a používat samostatně nebo mohou využívat jiné objekty rozhraní .NET Framework nejčastěji jako člen <xref:System.Data.DataSet>.  
+, Který představuje jednu tabulku relačních dat v paměti, lze vytvořit a použít nezávisle, nebo mohou být použity jinými .NET Framework objekty, nejčastěji jako člen <xref:System.Data.DataSet>. <xref:System.Data.DataTable>  
   
- Můžete vytvořit **DataTable** s použitím příslušná **DataTable** konstruktoru. Můžete přidat tak **datovou sadu** pomocí **přidat** metoda a přidejte ji tak **DataTable** objektu **tabulky** kolekce.  
+ Objekt **DataTable** lze vytvořit pomocí příslušného konstruktoru **DataTable** . Můžete ji přidat do **datové sady** pomocí metody **Add** pro její přidání do kolekce **tabulek** objektu **DataTable** .  
   
- Můžete také vytvořit **DataTable** objekty v rámci **datovou sadu** pomocí **vyplnit** nebo **FillSchema** metody  **Vlastnost DataAdapter** objektu, nebo z předdefinovaných nebo odvozené XML schématu pomocí **ReadXml**, **ReadXmlSchema**, nebo **InferXmlSchema** metody **datovou sadu**. Všimněte si, že po přidání **DataTable** jako člen **tabulky** kolekce jednoho **datovou sadu**, ho nemůžete přidat do kolekce tabulek jiných **Datovou sadu**.  
+ Můžete také vytvořit objekty **DataTable** v rámci **datové sady** pomocí metod **Fill** nebo **FillSchema** objektu **DataAdapter** nebo z předdefinovaného nebo odvozeného schématu XML pomocí **ReadXml**, **ReadXmlSchema** nebo metody **InferXmlSchema** **objektu DataSet**. Všimněte si, že poté, co jste přidali **DataTable** jako člena kolekce **Tables** jedné **datové sady**, nelze ji přidat do kolekce tabulek žádné jiné **datové sady**.  
   
- Při prvním vytvoření **DataTable**, nemá schématu (to znamená, že struktura). Definovat schéma tabulky, můžete vytvořit a přidat <xref:System.Data.DataColumn> objektů **sloupce** kolekce v tabulce. Můžete také definujte sloupec primárního klíče pro tabulku a vytvoříte a přidáte **omezení** objektů **omezení** kolekce v tabulce. Po definování schématu **DataTable**, řádky dat do tabulky můžete přidat tak, že přidáte **DataRow** objektů **řádky** kolekce tabulky.  
+ Při prvním vytvoření **objektu DataTable**nemá schéma (to znamená struktury). Chcete-li definovat schéma tabulky, je nutné vytvořit a přidat <xref:System.Data.DataColumn> objekty do kolekce **Columns** v tabulce. Můžete také definovat sloupec primárního klíče pro tabulku a vytvořit a přidat objekty **omezení** do kolekce **omezení** v tabulce. Po definování schématu pro **objekt DataTable**můžete do tabulky přidat řádky dat přidáním objektů **DataRow** do kolekce **řádků** tabulky.  
   
- Není nutné zadat hodnotu <xref:System.Data.DataTable.TableName%2A> vlastnost při vytváření **DataTable**; můžete zadat vlastnost později, nebo můžete nechat prázdné. Ale při přidání tabulky bez **TableName** hodnota, která se **datovou sadu**, tabulce dostanou přírůstkové výchozí název tabulky*N*počínaje "Table" pro Table0.  
+ Při vytváření <xref:System.Data.DataTable.TableName%2A> **objektu DataTable**není nutné zadávat hodnotu vlastnosti. vlastnost lze zadat v jinou dobu nebo ji můžete ponechat prázdnou. Pokud však přidáte tabulku bez hodnoty **TableName** do **datové sady**, bude se tabulce předávat přírůstkový výchozí název tabulky*N*, počínaje "Table" pro TABLE0.  
   
 > [!NOTE]
->  Doporučujeme, abyste "tabulky*N*" zásady vytváření názvů, když zadáte **TableName** hodnotu, protože název zadáte dojít ke konfliktu s existujícím názvem výchozí tabulky v **datové sady** . Pokud zadaný název již existuje, je vyvolána výjimka.  
+> Doporučujeme vyhnout se konvenci pojmenování tabulky*N*při zadání hodnoty **TableName** , protože název, který zadáte, může být v konfliktu s existujícím názvem výchozí tabulky v **datové sadě**. Pokud zadaný název již existuje, je vyvolána výjimka.  
   
- Následující příklad vytvoří instanci **DataTable** objektu a přiřazuje mu název "Zákazníků."  
+ Následující příklad vytvoří instanci objektu **DataTable** a přiřadí mu název "Customers".  
   
 ```vb  
 Dim workTable as DataTable = New DataTable("Customers")  
@@ -36,7 +36,7 @@ Dim workTable as DataTable = New DataTable("Customers")
 DataTable workTable = new DataTable("Customers");  
 ```  
   
- Následující příklad vytvoří instanci **DataTable** tak, že ji přidáte **tabulky** kolekce **datovou sadu**.  
+ Následující příklad vytvoří instanci **objektu DataTable** přidáním do kolekce **Tables** **objektu DataSet**.  
   
 ```vb  
 Dim customers As DataSet = New DataSet  
@@ -57,4 +57,4 @@ DataTable customersTable = customers.Tables.Add("CustomersTable");
 - [Naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

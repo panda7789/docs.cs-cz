@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 4c3421f7165a0b1a3d1c3678fe28334fd8632472
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0ec741d085ca52d52999d2e10cf5f687cc885219
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588622"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921795"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které program přijímá, jsou vyjádřeny v příkazech. Mezi běžné akce patří deklarace proměnných, přiřazování hodnot, volání metod, smyčky přes kolekce a větvení do jednoho nebo jiného bloku kódu v závislosti na dané podmínce. Pořadí, ve kterém se příkazy spouštějí v programu, se nazývá tok řízení nebo tok provádění. Tok řízení se může při každém spuštění programu lišit v závislosti na tom, jak program reaguje na vstup, který obdrží v době běhu.  
@@ -81,17 +81,12 @@ Následující příklady znázorňují dva způsoby použití prázdného pří
   
  [!code-csharp[csProgGuideStatements#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#22)]  
   
-## <a name="related-sections"></a>Související oddíly  
-  
-- [Klíčová slova příkazů](../../language-reference/keywords/statement-keywords.md)  
-  
-- [Výrazy](./expressions.md)  
-  
-- [Operátory](./operators.md)  
-  
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace naleznete v části [příkazy](~/_csharplang/spec/statements.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
+- [Klíčová slova příkazu](../../language-reference/keywords/statement-keywords.md)  
+- [Výrazy](expressions.md)  

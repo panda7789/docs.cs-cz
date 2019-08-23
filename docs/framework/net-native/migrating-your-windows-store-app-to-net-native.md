@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c830b7097d12017348d8669071ec6d7c122bfe44
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: ac21e8aa67eabcb3e837cb5eca02d1145b765946
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68364074"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941735"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
 
@@ -55,7 +55,7 @@ ms.locfileid: "68364074"
 
 Datová vazba například vyžaduje, aby aplikace mohla mapovat názvy vlastností na funkce. V rozhraní .NET pro aplikace pro Windows Store modul CLR (Common Language Runtime) automaticky používá reflexi k poskytnutí této možnosti pro spravované typy a veřejně dostupné nativní typy. V .NET Native kompilátor automaticky obsahuje metadata pro typy, na které svážete data.
 
-Kompilátor .NET Native může také zpracovat běžně používané obecné typy, jako jsou <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602>, které fungují bez vyžadování jakýchkoli pomocných parametrů nebo direktiv. [Dynamické](~/docs/csharp/language-reference/keywords/dynamic.md) klíčové slovo je podporováno i v určitých omezeních.
+Kompilátor .NET Native může také zpracovat běžně používané obecné typy, jako jsou <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602>, které fungují bez vyžadování jakýchkoli pomocných parametrů nebo direktiv. [Dynamické](../../csharp/language-reference/keywords/dynamic.md) klíčové slovo je podporováno i v určitých omezeních.
 
 > [!NOTE]
 > Všechny cesty dynamického kódu by měly být důkladně testovány při přenosu vaší aplikace do .NET Native.
@@ -129,7 +129,7 @@ V následujících částech najdete seznam nepodporovaných scénářů a rozhr
 
 - Dynamické vytváření multidimenzionálních polí se nepodporuje. Taková pole jsou obvykle vytvořena voláním přetížení <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> metody, která `lengths` obsahuje parametr <xref:System.Type.MakeArrayType%28System.Int32%29?displayProperty=nameWithType> , nebo voláním metody.
 
-- Multidimenzionální pole se čtyřmi nebo více dimenzemi nejsou podporována. To znamená, že <xref:System.Array.Rank%2A?displayProperty=nameWithType> jejich hodnota vlastnosti je čtyři nebo větší. Místo toho použijte [vícenásobná pole](~/docs/csharp/programming-guide/arrays/jagged-arrays.md) (pole polí). Například `array[x,y,z]` je neplatný, ale `array[x][y][z]` není.
+- Multidimenzionální pole se čtyřmi nebo více dimenzemi nejsou podporována. To znamená, že <xref:System.Array.Rank%2A?displayProperty=nameWithType> jejich hodnota vlastnosti je čtyři nebo větší. Místo toho použijte [vícenásobná pole](../../csharp/programming-guide/arrays/jagged-arrays.md) (pole polí). Například `array[x,y,z]` je neplatný, ale `array[x][y][z]` není.
 
 - Variance pro multidimenzionální pole není podporována a v době <xref:System.InvalidCastException> běhu způsobuje výjimku.
 
@@ -668,4 +668,4 @@ Povolení .NET Native v knihovně testů jednotek pro projekt aplikací pro Wind
 - [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Přehled aplikace .NET pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
-- [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

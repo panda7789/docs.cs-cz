@@ -10,48 +10,48 @@ helpviewer_keywords:
 - validation of PrintTickets [WPF]
 - PrintTicket [WPF], validation
 ms.assetid: 4fe2d501-d0b0-4fef-86af-6ffe6c162532
-ms.openlocfilehash: be8b299c99515394bc676cfd7a715cb82ac4d58c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e5242c07179501e6b39840a36f8dd6364d65b84
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051104"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918349"
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] [Tisk schématu](https://go.microsoft.com/fwlink/?LinkId=186397) zahrnuje flexibilní a rozšiřitelné <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> elementy. Předchozí najdete výčet možností zařízení pro tisk a druhá možnost určuje, jak zařízení používali tyto možnosti s ohledem na konkrétní pořadí dokumentů, jednotlivý dokument nebo jednotlivých stránek.  
+Schéma tisku zahrnuje flexibilní a rozšiřitelnost <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> prvky. [](https://go.microsoft.com/fwlink/?LinkId=186397) [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] Předchozí rozepisuje možnosti tiskového zařízení a druhého nastavení určují, jak by mělo zařízení používat tyto možnosti s ohledem na konkrétní posloupnost dokumentů, jednotlivé dokumenty nebo jednotlivé stránky.  
   
- Typická posloupnost úloh pro aplikace, která podporuje tisk by měl vypadat takto.  
+ Typická posloupnost úloh pro aplikaci, která podporuje tisk, by byla následující.  
   
-1. Určení možnosti tiskárny.  
+1. Určete schopnosti tiskárny.  
   
-2. Konfigurace <xref:System.Printing.PrintTicket> používání těchto možností.  
+2. Nakonfigurujte, <xref:System.Printing.PrintTicket> aby se tyto možnosti používaly.  
   
-3. Ověření <xref:System.Printing.PrintTicket>.  
+3. <xref:System.Printing.PrintTicket>Ověřte.  
   
  Tento článek ukazuje, jak to provést.  
   
 ## <a name="example"></a>Příklad  
- V následujícím jednoduchém příkladu nás zajímají pouze určuje, zda tiskárnu může podporovat duplexní – oboustranný tisk. Hlavní kroky jsou následující.  
+ V následujícím příkladu vás zajímá pouze to, jestli tiskárna podporuje oboustranný tisk – oboustranný tisk. Hlavní kroky jsou následující.  
   
-1. Získat <xref:System.Printing.PrintCapabilities> objektu <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> metody.  
+1. <xref:System.Printing.PrintCapabilities> Získat objekt<xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> s metodou.  
   
-2. Testovat přítomnost schopností, který chcete. V následujícím příkladu testujeme <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> vlastnost <xref:System.Printing.PrintCapabilities> objektu přítomnost možnosti tisku na obou stranách list papíru s měnící"stránky" po dlouhé straně stylů. Protože <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> je kolekce, můžeme použít `Contains` metoda <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>.  
+2. Otestujte přítomnost požadované schopnosti. V následujícím příkladu testujeme <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> vlastnost <xref:System.Printing.PrintCapabilities> objektu pro přítomnost možnosti tisku na obou stranách listu papíru s "otáčením stránky" podél pravé strany listu. Vzhledem <xref:System.Printing.PrintCapabilities.DuplexingCapability%2A> k tomu, že `Contains` je kolekce, používáme <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>metodu.  
   
     > [!NOTE]
-    >  Tento krok není nezbytně nutné. <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> Metoda používá pod kontrola za každý požadavek <xref:System.Printing.PrintTicket> s možnostmi tiskárny. Pokud požadované funkce nepodporuje tiskárny, ovladač tiskárny nahradí alternativní žádosti v <xref:System.Printing.PrintTicket> vrácený metodou.  
+    > Tento krok není nezbytně nezbytný. <xref:System.Printing.PrintTicket> Níže uvedená <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> metoda zkontroluje všechny požadavky v s funkcemi tiskárny. Pokud není požadovaná schopnost tiskárny podporována, ovladač tiskárny nahradí alternativní požadavek <xref:System.Printing.PrintTicket> vrácený metodou.  
   
-3. Pokud je podpora duplexní, ukázkový kód vytvoří <xref:System.Printing.PrintTicket> , která požádá o duplexní. Aplikace, nemůžou ale zadat nastavení k dispozici v každé možné tiskárny <xref:System.Printing.PrintTicket> elementu. Bylo by plýtváním programátorů i čas programu. Místo toho kód nastaví pouze duplexní požadavek a pak sloučí to <xref:System.Printing.PrintTicket> s existujícím, plně nakonfigurované a ověřit, <xref:System.Printing.PrintTicket>, v tomto případě výchozí uživatele <xref:System.Printing.PrintTicket>.  
+3. Pokud tiskárna podporuje duplexní režim, vzorový kód vytvoří a <xref:System.Printing.PrintTicket> požádá o oboustranný přenos. Aplikace ale neurčuje všechna možná nastavení tiskárny, která jsou k dispozici v <xref:System.Printing.PrintTicket> elementu. To by bylo wasteful programátora i času programu. Místo toho kód nastaví pouze duplexní požadavek a pak ho sloučí <xref:System.Printing.PrintTicket> s existujícím, plně nakonfigurovaným a <xref:System.Printing.PrintTicket>ověřeným, v tomto případě jako výchozí nastavení <xref:System.Printing.PrintTicket>uživatele.  
   
-4. Odpovídajícím způsobem, ukázka zavolá <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> metoda sloučit nové, minimal, <xref:System.Printing.PrintTicket> s výchozí uživatele <xref:System.Printing.PrintTicket>. Tím se vrátí <xref:System.Printing.ValidationResult> , který obsahuje novou <xref:System.Printing.PrintTicket> jako jedna z jeho vlastností.  
+4. Proto ukázka volá <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> metodu pro sloučení nového, <xref:System.Printing.PrintTicket> minimálního s výchozím nastavením <xref:System.Printing.PrintTicket>uživatele. Vrátí <xref:System.Printing.ValidationResult> , který obsahuje nový <xref:System.Printing.PrintTicket> jako jednu z jeho vlastností.  
   
-5. Ukázka pak testy, které nový <xref:System.Printing.PrintTicket> požadavků duplexní. Pokud ano, pak vzorku umožňuje nový lístek výchozí tisku pro daného uživatele. Bylo vynecháno kroku 2 výše a tiskárny nepodporuje duplexní po dlouhé straně a pak test by vznikla `false`. (Viz poznámka výše.)  
+5. Ukázka potom testuje, zda nové <xref:System.Printing.PrintTicket> požadavky přibyly duplexní. V takovém případě ukázka vytvoří nový výchozí tiskový lístek pro uživatele. Pokud byl krok 2 výše popsaný a tiskárna nepodporovala oboustranně, pak test by byl výsledkem `false`. (Viz poznámka výše.)  
   
-6. Je poslední významný krok k potvrzení změn do <xref:System.Printing.PrintQueue.UserPrintTicket%2A> vlastnost <xref:System.Printing.PrintQueue> s <xref:System.Printing.PrintQueue.Commit%2A> metody.  
+6. Posledním významným krokem je potvrzení změny <xref:System.Printing.PrintQueue.UserPrintTicket%2A> vlastnosti <xref:System.Printing.PrintQueue> <xref:System.Printing.PrintQueue.Commit%2A> metody s metodou.  
   
  [!code-csharp[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#usingmergeandvalidate)]
  [!code-vb[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#usingmergeandvalidate)]  
   
- Takže můžete rychle otestovat v tomto příkladu, zbytek je uveden níže. Vytvoření projektu a obor názvů a pak vložte fragmenty kódu v tomto článku do bloku oboru názvů.  
+ Aby bylo možné rychle otestovat tento příklad, zbývající část je uvedena níže. Vytvořte projekt a obor názvů a vložte oba fragmenty kódu v tomto článku do bloku oboru názvů.  
   
  [!code-csharp[PrintTicketManagment#UIForMergeAndValidatePTUtility](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#uiformergeandvalidateptutility)]
  [!code-vb[PrintTicketManagment#UIForMergeAndValidatePTUtility](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#uiformergeandvalidateptutility)]  

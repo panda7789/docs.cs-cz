@@ -9,34 +9,34 @@ helpviewer_keywords:
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 46e2e1c327a683782b68069ace2ad6c40bbc856e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb5727bab8e06decde6ccff8b84515f82c3d491a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868989"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910691"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
-Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítače. Procházení zásobníku zabezpečení přístupu kódu, ale nemůže překročit hranice procesu nebo počítače (platí mezi doménami aplikace stejného procesu).  
+Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítači. Procházení zásobníku zabezpečení přístupu kódu ale nemůže mezi procesy nebo počítači překročit hranice (používá se mezi aplikačními doménami stejného procesu).  
   
- Všechny třídy, která se dá použít vzdáleně (odvozený od <xref:System.MarshalByRefObject> třídy) musí nést odpovědnost za zabezpečení. Buď kód byste měli použít pouze ve uzavřené prostředí, kde volající kód může být implicitně důvěryhodné, nebo Vzdálená volání by se měly navrhovat tak, aby se nevztahují chráněného kódem mimo položku, která se dá použít speciálně.  
+ Jakákoliv třída, která je vzdáleně (odvozená od <xref:System.MarshalByRefObject> třídy), musí převzít zodpovědnost za zabezpečení. Kód by měl být použit pouze v uzavřených prostředích, kde může být volající kód implicitně důvěryhodný, nebo by volání vzdálené komunikace měla být navržena tak, aby nepředmětoval chráněný kód na vnější položku, která by mohla být použita škodlivě.  
   
- Obecně platí, které byste nikdy neměli zveřejňovat metody, vlastnosti nebo události, které jsou chráněné službou deklarativní [LinkDemand](../../../docs/framework/misc/link-demands.md) a <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> kontroly zabezpečení. U vzdálené komunikace nejsou vynucená těmito kontrolami. Další kontroly zabezpečení, jako například <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](../../../docs/framework/misc/using-the-assert-method.md), a tak dále fungovat mezi doménami aplikace v rámci procesu, ale nebudou fungovat ve scénářích mezi procesy nebo mezi počítači.  
+ Obecně by nikdy neměly vystavovat metody, vlastnosti nebo události, které jsou chráněny pomocí deklarativního [LinkDemand](../../../docs/framework/misc/link-demands.md) a <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> kontroly zabezpečení. U vzdálené komunikace nejsou tyto kontroly vynutily. Další kontroly zabezpečení, například <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](../../../docs/framework/misc/using-the-assert-method.md)a tak dále, pracují mezi doménami aplikace v rámci procesu, ale nefungují ve scénářích mezi procesy a mezi počítači.  
   
 ## <a name="protected-objects"></a>Chráněné objekty  
- Některé objekty uložení stavu zabezpečení sama o sobě. Tyto objekty by neměl být předán nedůvěryhodný kód, který by pak získat autorizační zabezpečení nad rámec své vlastní oprávnění.  
+ Některé objekty samy uchovávají stav zabezpečení. Tyto objekty by neměly být předány nedůvěryhodnému kódu, což by pak získalo autorizaci zabezpečení nad rámec svých vlastních oprávnění.  
   
- Jedním z příkladů je vytváření <xref:System.IO.FileStream> objektu. <xref:System.Security.Permissions.FileIOPermission> Je požadováno v okamžiku vytvoření a pokud se aktivace podaří, je vrácen objekt souboru. Ale pokud tento odkaz na objekt je předán do kódu bez oprávnění k souboru, objekt bude moct číst a zapisovat do tohoto konkrétního souboru.  
+ Jedním z příkladů je vytvoření <xref:System.IO.FileStream> objektu. <xref:System.Security.Permissions.FileIOPermission> Je vyžádané v době vytvoření a v případě úspěchu je vrácen objekt File. Pokud je však tento odkaz na objekt předán do kódu bez oprávnění k souboru, bude objekt moci číst a zapisovat do tohoto konkrétního souboru.  
   
- Nejjednodušší defense pro takový objekt je stejný požadovat **FileIOPermission** jakéhokoli kódu, který se snaží získat odkaz na objekt prostřednictvím veřejného rozhraní API elementu.  
+ Nejjednodušší obrana takového objektu je požadovat stejné **FileIOPermission** jakéhokoli kódu, který se snaží získat odkaz na objekt prostřednictvím veřejného prvku rozhraní API.  
   
-## <a name="application-domain-crossing-issues"></a>Problémy křížení domén aplikace  
- Izolace kódu ve spravovaném hostitelském prostředí, je běžné vytvořit více podřízených domén aplikace s explicitní zásady snížení úrovně oprávnění pro různá sestavení. Ale zásady pro tato sestavení zůstane beze změny ve výchozí doméně aplikace. Pokud jeden z podřízených domén aplikace lze vynutit výchozí domény aplikace se načíst sestavení, dojde ke ztrátě efekt izolace kódu a typy nuceně načtené sestavení budou moct spouštět kód na vyšší úrovni důvěryhodnosti.  
+## <a name="application-domain-crossing-issues"></a>Problémy při křížení domény aplikace  
+ Chcete-li izolovat kód ve spravovaných hostujících prostředích, je běžné generovat více domén podřízené aplikace s explicitními zásadami, které snižují úrovně oprávnění pro různá sestavení. Nicméně zásady pro tato sestavení zůstávají beze změny ve výchozí aplikační doméně. Pokud jedna z podřízených domén aplikace může vynutit, aby výchozí doména aplikace načetla sestavení, účinek izolace kódu je ztracen a typy v nuceně načteném sestavení budou moci spustit kód na vyšší úrovni důvěryhodnosti.  
   
- Domény aplikace můžete vynutit jiné doméně aplikace k načtení sestavení a spuštění kódu obsažených voláním proxy objekt hostované v jiné doméně aplikace. Získat proxy aplikací. mezi doménami, musíte distribuovat doménu aplikace objektu hostování jedna prostřednictvím volání parametr nebo návratovou hodnotu metody. Nebo, pokud doména aplikace byla právě vytvořena, má autor proxy <xref:System.AppDomain> objektu ve výchozím nastavení. Pokud chcete vyhnout přerušení izolace kódu, proto by neměl domény aplikace s vyšší úroveň důvěryhodnosti distribuovat odkazy na objekty zařazen podle odkazu (instance tříd odvozených z <xref:System.MarshalByRefObject>) ve své doméně do domény aplikace s nižší úrovně důvěryhodnosti.  
+ Doména aplikace může vynutit jinou aplikační doménu, aby načetla sestavení a kód, který je v něm obsažený, voláním proxy na objekt hostovaný v jiné doméně aplikace. Aby bylo možné získat proxy server mezi aplikačními aplikacemi, musí doména aplikace, která je hostitelem objektu, distribuovat jednu prostřednictvím parametru volání metody nebo návratové hodnoty. Nebo, pokud byla doména aplikace právě vytvořena, tvůrce má ve výchozím nastavení proxy <xref:System.AppDomain> objekt k objektu. Proto by aplikační doména s vyšší úrovní důvěryhodnosti neměla distribuovat odkazy na objekty zařazené podle odkazu (instance tříd odvozené z <xref:System.MarshalByRefObject>) ve své doméně do domén aplikace s nižšími verzemi. úrovně důvěryhodnosti.  
   
- Výchozí domény aplikace obvykle vytvoří podřízené domény aplikace s objekt ovládacího prvku v každém z nich. Objekt ovládacího prvku spravuje nové aplikační doméně a někdy trvá objednávky z výchozí domény aplikace, ale nemůže kontaktovat doménu přímo. V některých případech výchozí domény aplikace volá jeho proxy objekt ovládacího prvku. Mohou však existovat případy, ve které je nezbytné pro objekt ovládacího prvku pro zpětné volání do výchozí domény aplikace. V těchto případech výchozí domény aplikace předá objekt zpětného volání marshal-by-reference do konstruktoru objektu ovládacího prvku. Je odpovědností objekt ovládacího prvku k ochraně tohoto proxy serveru. Pokud objekt ovládacího prvku umístit proxy serveru na veřejné statické pole veřejné třídy nebo jinak veřejně zpřístupnit proxy server, to by otevřete nebezpečné mechanismus pro jiný kód zavolá zpět do výchozí domény aplikace. Z tohoto důvodu jsou vždy objekty ovládací prvek implicitně důvěryhodná udržovat privátní proxy serveru.  
+ Výchozí aplikační doména obvykle vytváří podřízené domény aplikace s objektem ovládacího prvku v každém z nich. Řídicí objekt spravuje novou doménu aplikace a občas bere objednávky z výchozí domény aplikace, ale nemůže ve skutečnosti kontaktovat doménu přímo. V některých případech výchozí doména aplikace volá svůj proxy do objektu Control. Nicméně mohou nastat případy, kdy je nutné, aby objekt ovládacího prvku volal zpět do výchozí domény aplikace. V těchto případech výchozí doména aplikace předá objekt zpětného volání zařazovacího odkazu do konstruktoru objektu ovládacího prvku. Je zodpovědností za objekt Control k ochraně tohoto proxy serveru. Pokud měl řídicí objekt umístit proxy na veřejné statické pole veřejné třídy nebo jinak veřejně vystavení proxy serveru, tím by se otevřel nebezpečný mechanismus pro jiný kód pro volání zpět do výchozí domény aplikace. Z tohoto důvodu jsou objekty ovládacího prvku vždy implicitně důvěryhodné, aby zůstaly proxy privátní.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Pokyny pro zabezpečené kódování](../../standard/security/secure-coding-guidelines.md)

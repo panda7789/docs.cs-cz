@@ -2,18 +2,18 @@
 title: Zjednodušená konfigurace
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: 13cf8bd46ef3aabb011cb2ddd207963235468662
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 5aaca8ae8c456e2377326ee2e9e22c3dcf6a21a7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967892"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923001"
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
-Konfigurace služby Windows Communication Foundation (WCF) může být složitý úkol. Spousta různých možností, a to není vždy jednoduché určit nastavení, které jsou požadovány. Konfigurační soubory zvýšit flexibilitu služeb WCF, ale také jsou zdroje pro mnoho obtížné najít problémy. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak zmenšit velikost a složitost konfigurace služby.  
+Konfigurace služeb Windows Communication Foundation (WCF) může být složitý úkol. Existuje mnoho různých možností a není vždy snadné určit, která nastavení se vyžadují. Přestože konfigurační soubory zvyšují flexibilitu služeb WCF, jsou také zdrojem mnoha obtíží při hledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]řeší tyto problémy a poskytuje způsob, jak omezit velikost a složitost konfigurace služby.  
   
 ## <a name="simplified-configuration"></a>Zjednodušená konfigurace  
- V souborech konfigurace služby WCF <`system.serviceModel`> obsahuje oddíl <`service`> – element pro každé služby hostované. <`service`> Kolekce obsahuje element <`endpoint`> elementy, které určují koncových bodů pro každou službu a volitelně také sadu chování služby. <`endpoint`> Elementy zadejte adresy, vazby a kontrakt vystavit koncový bod a volitelně konfigurace vazby a chování koncového bodu. <`system.serviceModel`> Obsahuje také <`behaviors`> element, který vám umožní určit chování služby nebo koncového bodu. Následující příklad ukazuje <`system.serviceModel`> oddílu konfiguračního souboru.  
+ V konfiguračních souborech služby WCF obsahuje oddíl <`system.serviceModel`> <`service`prvek > pro každou hostovanou službu. Prvek <`service`> obsahuje kolekci prvků <`endpoint`>, které určují koncové body vystavené pro každou službu a volitelně také chování sady služeb. Prvky <`endpoint`> určují adresu, vazbu a kontrakt vystavený koncovým bodem a volitelně naváže chování konfigurace a koncového bodu. Oddíl <`system.serviceModel`> obsahuje také prvek <`behaviors`>, který umožňuje určit chování služby nebo koncového bodu. Následující příklad ukazuje oddíl <`system.serviceModel`> konfiguračního souboru.  
   
 ```  
 <system.serviceModel>  
@@ -46,13 +46,13 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Díky konfigurace služby WCF jednodušší odebráním požadavek <`service`> element. Pokud nepřidáte <`service`> části nebo přidat žádné koncové body v <`service`> části a vaše služba nedefinuje programově žádné koncové body a pak sadu výchozí koncové body jsou automaticky přidány do vaší služby, jeden pro každou Základní adresa služby a pro každou smlouvu implementované vaší služby. V každém z těchto koncových bodů adresu koncového bodu odpovídá základní adresa, vazba se určuje podle schématu základní adresu a kontrakt je implementované vaše služba. Pokud není potřeba zadat všechny koncové body nebo chování služby nebo provést změny nastavení vazby, není potřeba zadat konfigurační soubor služby vůbec. Pokud služba implementuje dva kontrakty a hostitele umožňuje přenosy HTTP i protokol TCP hostitele služby vytvoří čtyři výchozí koncové body, jeden pro každou smlouvu pomocí jednotlivých přenosu. Vytvořit výchozí koncové body hostitele služby musíte vědět, jaké vazby použít. Tato nastavení jsou určené v <`protocolMappings`> části v rámci <`system.serviceModel`> oddílu. <`protocolMappings`> Oddíl obsahuje seznam z namapované na typů vazeb schématy přenosových protokolů. Hostitel služby používá základní adresy do něho předaný k určení použité vazby. V následujícím příkladu <`protocolMappings`> element.  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]zjednodušuje konfiguraci služby WCF odebráním požadavku na <`service`> elementu. Pokud nepřidáte oddíl <`service`> nebo přidáte žádné koncové body do oddílu <`service`> a vaše služba programově nedefinuje žádné koncové body, pak se do vaší služby automaticky přidají sada výchozích koncových bodů, jednu pro každou základní adresa služby a pro každý kontrakt implementovaný vaší službou. V každém z těchto koncových bodů adresa koncového bodu odpovídá základní adrese. vazba je určena základním adresním schématem a smlouva je ta, kterou implementuje vaše služba. Pokud nepotřebujete zadat žádné koncové body nebo chování služby nebo provést žádné změny nastavení vazby, nemusíte vůbec zadávat konfigurační soubor služby. Pokud služba implementuje dvě smlouvy a hostitel povolí přenos přes protokol HTTP i TCP, vytvoří hostitel služby čtyři výchozí koncové body, jednu pro každou kontrakt pomocí každého přenosu. Chcete-li vytvořit výchozí koncové body, musí hostitel služby zjistit, jaké vazby se mají použít. Tato nastavení jsou uvedena v části <`protocolMappings`> v části <`system.serviceModel`>. Oddíl <`protocolMappings`> obsahuje seznam schémat přenosových protokolů mapovaných na typy vazeb. Hostitel služby používá předaných základních adres k určení, která vazba se má použít. Následující příklad používá prvek <`protocolMappings`>.  
   
 > [!WARNING]
->  Změna výchozí konfigurační prvky, jako je například vazby nebo chování, může mít vliv na služby definované v nižších úrovních hierarchie konfigurace, protože by mohly používat tyto výchozí vazby a chování. Tím, kdo mění výchozí vazby a chování musí mějte na paměti, že tyto změny mohou ovlivnit ostatní služby v hierarchii.  
+>  Změna výchozích prvků konfigurace, jako jsou vazby nebo chování, může ovlivnit služby definované v nižších úrovních konfigurační hierarchie, protože by mohly používat tyto výchozí vazby a chování. I když se jim budou měnit výchozí vazby a chování, je třeba si uvědomit, že tyto změny mohou ovlivnit jiné služby v hierarchii.  
   
 > [!NOTE]
->  Služby hostované v rámci Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS) použít virtuální adresář jako svoje základní adresa.  
+> Služby hostované v rámci služby Internetová informační služba (IIS) nebo aktivační služba procesů systému Windows (WAS) používají jako základní adresu virtuální adresář.  
   
 ```xml  
 <protocolMapping>  
@@ -63,11 +63,11 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
 </protocolMapping>  
 ```  
   
- V předchozím příkladu používá koncový bod s základní adresa, která začíná textem "http" schéma <xref:System.ServiceModel.BasicHttpBinding>. Koncový bod s základní adresa, která začíná textem "net.tcp" schéma používá <xref:System.ServiceModel.NetTcpBinding>. Můžete přepsat nastavení v místním souboru App.config nebo Web.config.  
+ V předchozím příkladu koncový bod se základní adresou začínající schématem HTTP používá <xref:System.ServiceModel.BasicHttpBinding>. Koncový bod se základní adresou začínající schématem NET. TCP používá <xref:System.ServiceModel.NetTcpBinding>. Nastavení můžete přepsat v souboru Local App. config nebo Web. config.  
   
- Každý prvek v rámci <`protocolMappings`> části musíte zadat schéma a vazbu. Volitelně můžete zadat `bindingConfiguration` atribut, který určuje konfiguraci vazby v rámci <`bindings`> oddílu konfiguračního souboru. Pokud ne `bindingConfiguration` není zadána, bude použita konfigurace anonymní vytváření vazby typu odpovídající vazby.  
+ Každý prvek v oddílu <`protocolMappings`> musí určovat schéma a vazbu. Volitelně můžete určit `bindingConfiguration` atribut, který určuje konfiguraci vazby v rámci <`bindings`> oddílu konfiguračního souboru. `bindingConfiguration` Pokud není zadaný, použije se konfigurace anonymní vazby příslušného typu vazby.  
   
- Chování služby se konfigurují pro výchozí koncové body pomocí anonymní <`behavior`> v rámci oddílu <`serviceBehaviors`> oddíly. Žádné nepojmenované <`behavior`> elementů v rámci <`serviceBehaviors`> se používají ke konfiguraci chování služby. Například následující konfigurační soubor umožňuje publikování metadat služby pro všechny služby v rámci hostitele.  
+ Chování služby je konfigurováno pro výchozí koncové body pomocí anonymních`behavior`< > sekcí v`serviceBehaviors`rámci <ch >ch sekcí. Ke konfiguraci chování služby se`behavior`používají všechny nepojmenované < > prvky v <`serviceBehaviors`>. Například následující konfigurační soubor umožňuje publikování metadat služby pro všechny služby v rámci hostitele.  
   
 ```xml  
 <system.serviceModel>  
@@ -82,9 +82,9 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
  </system.serviceModel>  
 ```  
   
- Chování koncového bodu se konfigurují přes anonymní <`behavior`> v rámci oddílu <`serviceBehaviors`> oddíly.  
+ Chování koncového bodu se konfiguruje pomocí anonymních <`behavior`> sekcí v rámci <ch`serviceBehaviors`> sekcí.  
   
- Následující příklad je ekvivalentní je na začátku tohoto tématu, který používá zjednodušené konfigurační model konfiguračního souboru.  
+ Následující příklad je konfigurační soubor, který je ekvivalentní k tomu na začátku tohoto tématu, které používá zjednodušený konfigurační model.  
   
 ```xml  
 <system.serviceModel>
@@ -111,7 +111,7 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
 ```  
   
 > [!IMPORTANT]
->  Tato funkce se týká pouze konfigurace služby WCF, není konfigurace klienta. Většinu času konfigurace klienta WCF se vygeneruje pomocí nástroje, jako je svcutil.exe nebo přidáním odkazu na službu v sadě Visual Studio. Při ruční konfiguraci klienta WCF je potřeba přidat \<klienta > element konfigurace a určete žádné koncové body, kterou chcete volat.  
+> Tato funkce se týká pouze konfigurace služby WCF, nikoli konfigurace klienta. Ve většině případů bude konfigurace klienta WCF vygenerována nástrojem, jako je Svcutil. exe, nebo přidáním odkazu na službu ze sady Visual Studio. Pokud ručně konfigurujete klienta WCF, bude nutné přidat \<do konfigurace klienta > element a zadat všechny koncové body, které chcete zavolat.  
   
 ## <a name="see-also"></a>Viz také:
 

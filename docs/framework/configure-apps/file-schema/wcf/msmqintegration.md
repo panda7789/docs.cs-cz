@@ -2,20 +2,20 @@
 title: <msmqIntegration>
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-ms.openlocfilehash: 850d117ca17b5929c219c3b7d6453cf76136bad3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 899d66e23d0f5d27277bfc2905bc73bc95752527
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772527"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915686"
 ---
 # <a name="msmqintegration"></a>\<msmqIntegration>
 Určuje přenos služby MSMQ pro vlastní vazbu.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<msmqIntegration>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +41,7 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
 </msmqIntegration>
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -51,21 +51,21 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|customDeadLetterQueue|Identifikátor URI, který označuje umístění fronty nedoručených zpráv jednotlivým aplikacím, kde se přenáší zprávy, které mají platnost nebo se nepodařilo doručit do aplikace.<br /><br /> Pro zprávy, které vyžadují záruky ExactlyOnce (to znamená `exactlyOnce` je nastavena na `true`), výchozí hodnota tohoto atributu celý systém transakční fronty nedoručených zpráv služby MSMQ.<br /><br /> Pro zprávy, které vyžadují žádné záruky (to znamená `exactlyOnce` je nastavena na `false`), výchozí hodnota tohoto atributu `null`.<br /><br /> Hodnota musí používat schéma net.msmq. Výchozí hodnota je `null`.<br /><br /> Pokud `deadLetterQueue` je nastavena na `None` nebo `System`, tento atribut musí být nastaven na `null`. Pokud tento atribut není `null`, pak `deadLetterQueue` musí být nastaveno na `Custom`.|  
-|deadLetterQueue|Určuje typ fronty nepoužívaných dopisů používat.<br /><br /> Platné hodnoty jsou<br /><br /> – Vlastní: Fronty nedoručených zpráv vlastní.<br />-Žádný: Žádné fronty nedoručených zpráv se má použít.<br />– System: Použití fronty nedoručených zpráv systému.<br /><br /> Tento atribut je typu DeadLetterQueue.|  
-|trvalý|Logická hodnota určující, zda zprávy zpracované touto vazbou jsou trvalé nebo přechodné. Výchozí hodnota je `true`.<br /><br /> Zpráv trvalý odolává chybovému ukončení správce fronty, ale volatile zpráva nikoli. Volatile zprávy jsou užitečné, pokud aplikace vyžaduje nižší latenci a která tolerují občasné ztracené zprávy.<br /><br /> Pokud `exactlyOnce` je nastavena na `true`, zprávy musí být trvalý.|  
-|exactlyOnce|Logická hodnota, která určuje, zda zprávy zpracované touto vazbou budou obdrženy pouze jednou. Výchozí hodnota je `true`.<br /><br /> S nebo bez záruky, může být odeslána zpráva. Zajištění umožňuje aplikaci zajistit, že odeslaná zpráva dorazila přijímající fronty zpráv nebo pokud tomu tak není, používání této služby můžete zjistit načtením do fronty nedoručených zpráv.<br /><br /> `exactlyOnce`, pokud je nastavena na `true`, označuje, že služby MSMQ zajistí, že odeslané zprávy se doručí do fronty zpráv přijímací pouze jednou a jednou, a pokud selže doručování je zpráva odeslána do fronty nedoručených zpráv.<br /><br /> Zprávy odeslané s `exactlyOnce` nastavena na `true` se musí odeslat na transakční frontu.|  
-|Vlastnost manualAddressing|Logická hodnota, která umožňuje uživateli řídit adresování zpráv. Tato vlastnost se obvykle používá ve scénářích směrovače, kde aplikace určuje, který z nich několik cílů odeslat zprávu do.<br /><br /> Pokud je nastavena na `true`, kanál se předpokládá zprávu už nemá řešení a k němu nepřidává žádné další informace. Uživatel může pak Adresujte všechny zprávy jednotlivě.<br /><br /> Pokud je nastavena na `false`, výchozího mechanismu adresování Windows Communication Foundation (WCF) automaticky vytvoří adresy pro všechny zprávy.<br /><br /> Výchozí hodnota je `false`.|  
-|maxBufferPoolSize|Kladné celé číslo, které určuje maximální velikost fondu vyrovnávacích pamětí. Výchozí hodnota je 524288.<br /><br /> Mnoho částí WCF pomocí vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
-|maxImmediateRetries|Celé číslo, které určuje maximální počet okamžitých opakovaných pokusů o zprávu, která je načtena z fronty aplikace. Výchozí hodnota je 5.<br /><br /> Pokud dojde k pokusu o maximální počet okamžité opakování u zprávy a zprávy není používané aplikace, je zpráva odeslána do fronty opakování pro opakování někdy později v čase. Pokud nejsou zadány žádné cyklů opakování, pak buď odesílají zprávy do fronty nezpracovatelných zpráv nebo negativní potvrzení budou odeslána zpět do odesílatele.|  
-|maxReceivedMessageSize|Kladné celé číslo, které určuje maximální velikost zprávy v bajtech, včetně záhlaví. Odesílatel zprávy obdrží chybu protokolu SOAP v případě, že zprávy je příliš velký pro příjemce. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
-|maxRetryCycles|Celé číslo, které určuje maximální počet opakovaných cyklů pokusů o doručení zpráv do přijímající aplikace. Výchozí hodnota je <xref:System.Int32.MaxValue>.<br /><br /> Jednoho opakování cyklu pokusí o doručení zprávy do aplikace zadaného počtu opakování. Počet pokusů o se nastavil `maxImmediateRetries` atribut. Pokud aplikace po vyčerpání pokusů na doručování využívat zprávy, zprávu odeslat do fronty zkuste to znovu. Dalším pokusem cykly se skládají zprávy se do fronty aplikace vrací z fronty opakování pokusu o doručení pro aplikaci znovu spustit, po době určené `retryCycleDelay` atribut. `maxRetryCycles` Atribut určuje počet cyklů opakování pokusu o doručení zprávy používá aplikace.|  
-|rejectAfterLastRetry|Logická hodnota, která určuje, jaká akce má být zprávy, která se nezdařila doručování po maximální počet opakování pokusů.<br /><br /> `true` znamená, že negativní potvrzení se vrátí do odesílatele a zprávy se zahodí; `false` znamená, že je zpráva odeslána do fronty nezpracovatelných zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, přijímající aplikace může číst nezpracovatelných zpráv fronty ke zpracování nezpracovatelných zpráv (to znamená, zprávy, které selhaly doručování).<br /><br /> Služba MSMQ 3.0 nepodporuje vrácení negativní potvrzení odesílateli, takže tento atribut se bude ignorovat ve službě MSMQ 3.0.|  
-|retryCycleDelay|A <xref:System.TimeSpan> , která určuje časovou prodlevu mezi cyklů opakování při pokusu o doručení zprávy, která nemohla být doručena okamžitě. Výchozí hodnota je 00:10:00.<br /><br /> Pro doručení zprávy do přijímající aplikace zadaného počtu opakování pokusů o jednoho opakování cyklu. Je určený počet pokusů o `maxImmediateRetries` atribut. Pokud aplikace využívat zprávy po zadaný počet okamžité opakování, je zpráva odeslána do fronty zkuste to znovu. Dalším pokusem cykly se skládají zprávy se do fronty aplikace vrací z fronty opakování pokusu o doručení pro aplikaci znovu spustit, po době určené `retryCycleDelay` atribut. Počet cyklů opakování je určená `maxRetryCycles` atribut.|  
-|třídu serializationFormat|Určuje formátování, který se používá k serializaci objektů, které jsou odeslány jako součást zprávy MSMQ. Platné hodnoty jsou<br /><br /> -ActiveX: Formátovací modul ActiveX se používá při serializaci objektů COM.<br />-Binární:  Serializuje objekt do binární paketů.<br />-ByteArray:  Serializuje objekt na pole bajtů.<br />-Stream:  Serializuje objekt do datového proudu.<br />-   Xml:  Serializuje objekt, který má paket XML. Výchozí hodnota je XML.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
-|timeToLive|A <xref:System.TimeSpan> , která určuje, jak dlouho jsou zprávy platné předtím, než platnost a jsou vloženy do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená, že 1 den.<br /><br /> Tento atribut je nastaven na Ujistěte se, že časově zprávy není zastaralá předtím, než se zpracovávají přijímajícími aplikacemi. Zprávy ve frontě, které se přijímající aplikací v rámci zadaného časového intervalu se říká, že platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut nebo na vhodné výchozí nastavení, v závislosti na záruky.|  
-|useMsmqTracing|Logická hodnota, která určuje, zda zprávy zpracované touto vazbou mají být vyvolány. Výchozí hodnota je `false`.<br /><br /> Když je povoleno trasování, zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
-|useSourceJournal|Logická hodnota určující, zda kopie zpráv zpracovaných touto vazbou uskladněny ve frontě deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikace, které chcete sledovat zpráv, které ještě zbývá fronty odesílaných zpráv počítače můžete zkopírovat zprávy do fronty deníku. Jakmile opustí zprávu fronty odesílaných zpráv a přijetí potvrzení, že byla přijata zpráva v cílovém počítači, kopie zprávy, zůstane ve frontě deníků odesílající počítač systému.|  
+|customDeadLetterQueue|Identifikátor URI, který označuje umístění fronty nedoručených zpráv pro jednotlivé aplikace, ve které se přenáší zprávy, jejichž platnost vypršela nebo se nepodařilo doručit do aplikace.<br /><br /> Pro zprávy, které vyžadují ujištění ExactlyOnce ( `exactlyOnce` tj. je nastaveno na `true`), je tento atribut ve výchozím nastavení nastaven na transakční frontu nedoručených transakčních zpráv v rámci služby MSMQ.<br /><br /> Pro zprávy, které nevyžadují žádné záruky ( `exactlyOnce` tj. je nastaveno na `false`), je tento atribut nastaven na `null`hodnotu.<br /><br /> Hodnota musí používat schéma NET. MSMQ. Výchozí hodnota je `null`.<br /><br /> Pokud `deadLetterQueue` je nastaven na `None` nebo `System`, pak tento atribut musí být nastaven na `null`. Pokud tento atribut `null`není `deadLetterQueue` , musí být nastaven na `Custom`.|  
+|deadLetterQueue|Určuje typ fronty nedoručených zpráv, která se má použít.<br /><br /> Platné hodnoty zahrnují<br /><br /> Uživatelská Vlastní fronta nedoručených zpráv.<br />NTato Nemusíte používat žádnou frontu nedoručených zpráv.<br />Souborů Použijte frontu nedoručených zpráv systému.<br /><br /> Tento atribut je typu DeadLetterQueue.|  
+|durable|Logická hodnota určující, zda zprávy zpracované touto vazbou jsou trvalé nebo nestálé. Výchozí hodnota je `true`.<br /><br /> Trvalá zpráva se zachováním správce front dojde k chybě, zatímco nestálá zpráva. Nestálé zprávy jsou užitečné v případě, že aplikace vyžadují nižší latenci a můžou tolerovat občasné ztracené zprávy.<br /><br /> Pokud `exactlyOnce` je nastaveno na `true`, musí být zprávy trvalé.|  
+|Třída|Logická hodnota, která určuje, zda zprávy zpracované touto vazbou budou přijímány právě jednou. Výchozí hodnota je `true`.<br /><br /> Zprávu je možné odeslat s ujištěním nebo bez ní. Záruka umožňuje aplikaci zajistit, aby se odeslaná zpráva dostala do fronty přijímání zpráv, nebo pokud nebyla, aplikace ji může zjistit čtením fronty nedoručených zpráv.<br /><br /> `exactlyOnce`, pokud je nastaveno `true`na, označuje, že služba MSMQ zajistí doručování odeslané zprávy do fronty příjmu zpráv pouze jednou a v případě, že doručení selže, zpráva je odeslána do fronty nedoručených zpráv.<br /><br /> Zprávy odeslané s `exactlyOnce` nastavením na `true` musí být odesílány pouze do transakční fronty.|  
+|Jeho|Logická hodnota, která umožňuje uživateli převzít kontrolu nad adresováním zpráv. Tato vlastnost se obvykle používá ve scénářích směrovačů, kde aplikace určuje, do kterého jednoho z několika míst má poslat zprávu.<br /><br /> Když nastavíte `true`na, kanál předpokládá, že zpráva již byla adresována a do ní nepřidá žádné další informace. Uživatel pak může každou zprávu adresovat jednotlivě.<br /><br /> Když je nastaveno `false`na, výchozí mechanismus adresování Windows Communication Foundation (WCF) automaticky vytvoří adresy pro všechny zprávy.<br /><br /> Výchozí hodnota je `false`.|  
+|maxBufferPoolSize|Kladné celé číslo, které určuje maximální velikost fondu vyrovnávací paměti. Výchozí hodnota je 524288.<br /><br /> Mnoho částí služby WCF používá vyrovnávací paměti. Vytváření a zničení vyrovnávacích pamětí pokaždé, když se používají, jsou nákladné a uvolňování paměti pro vyrovnávací paměti je také nákladné. Pomocí fondů vyrovnávacích pamětí můžete z fondu získat vyrovnávací paměť, použít ji a až budete hotovi, vrátit ji do fondu. Proto se zabrání režie v vytváření a zničení vyrovnávacích pamětí.|  
+|maxImmediateRetries|Celé číslo, které určuje maximální počet okamžitých opakovaných pokusů o zprávu, která je čtena z fronty aplikace. Výchozí hodnota je 5.<br /><br /> Pokud je proveden pokus o maximální počet okamžitých opakovaných pokusů o zprávu a zpráva není aplikací spotřebována, zpráva je odeslána do fronty opakovaných pokusů o opakování v pozdějším časovém bodě. Pokud nejsou zadány žádné cykly opakování, zprávy jsou buď odesílány do fronty nezpracovatelných zpráv, nebo se do odesilatele pošle negativní potvrzení.|  
+|maxReceivedMessageSize|Celé kladné číslo určující maximální velikost zprávy v bajtech, včetně záhlaví. Odesílatel zprávy obdrží chybu protokolu SOAP, pokud je zpráva pro příjemce příliš velká. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
+|maxRetryCycles|Celé číslo, které určuje maximální počet opakovaných cyklů pro pokus o doručení zpráv do přijímající aplikace. Výchozí hodnota je <xref:System.Int32.MaxValue>.<br /><br /> Jeden cyklus opakování se pokusí o doručení zprávy do aplikace zadaného počtu opakování. Počet pokusů, které provedete, `maxImmediateRetries` je nastaven atributem. Pokud aplikace nedokáže tuto zprávu spotřebovat po vyčerpání pokusů o doručení, zpráva se odešle do fronty opakování. Další cykly opakování se skládají z zprávy vracené z fronty opakování do fronty aplikace, aby se znovu pokusily o doručení do aplikace po zpoždění určeném `retryCycleDelay` atributem. `maxRetryCycles` Atribut určuje počet opakovaných cyklů opakování, které aplikace používá k pokusu o doručení zprávy.|  
+|rejectAfterLastRetry|Logická hodnota, která určuje, jaká akce má být provedena pro zprávu s neúspěšným doručením po pokusu o maximální počet opakovaných pokusů.<br /><br /> `true`znamená, že odesílateli je vráceno záporné potvrzení a zpráva je vyřazena; `false` znamená, že zpráva je odeslána do fronty nezpracovatelných zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je `false`hodnota, přijímající aplikace může číst nepoškozenou frontu zpráv pro zpracování škodlivých zpráv (tj. zprávy s neúspěšným doručením).<br /><br /> Služba MSMQ 3,0 nepodporuje vrácení negativního potvrzení odesilateli, takže tento atribut bude v MSMQ 3,0 ignorován.|  
+|retryCycleDelay|<xref:System.TimeSpan> Určuje časovou prodlevu mezi opakovanými cykly při pokusu o doručení zprávy, která nemohla být doručena okamžitě. Výchozí hodnota je 00:10:00.<br /><br /> Jeden cyklus opakování se pokusí o doručení zprávy do přijímající aplikace zadaného počtu opakování. Počet pokusů, které byly zadány `maxImmediateRetries` atributem. Pokud aplikace nedokáže tuto zprávu spotřebovat po zadaném počtu okamžitých pokusů, zpráva se odešle do fronty opakování. Další cykly opakování se skládají z zprávy vracené z fronty opakování do fronty aplikace, aby se znovu pokusily o doručení do aplikace po zpoždění určeném `retryCycleDelay` atributem. Počet cyklů opakování je určen `maxRetryCycles` atributem.|  
+|serializationFormat|Určuje formátovací modul, který slouží k serializaci objektů, které jsou odeslány jako součást zprávy služby MSMQ. Platné hodnoty jsou<br /><br /> ActiveX Formátovací modul ActiveX se používá při serializaci objektů COM.<br />Tvaru  Serializace objektu do binárního paketu.<br />ByteArray  Serializace objektu na pole bajtů.<br />Stream  Serializace objektu do datového proudu.<br />-   Xml:  Serializace objektu do paketu XML. Výchozí hodnota je XML.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
+|timeToLive|A <xref:System.TimeSpan> určuje, jak dlouho jsou zprávy platné, než vyprší jejich platnost a jsou vloženy do fronty nedoručených zpráv. Výchozí hodnota je 1,00:00:00, což znamená 1 den.<br /><br /> Tento atribut je nastaven tak, aby bylo zajištěno, že zprávy citlivé na čas nejsou před zpracováním přijímajícími aplikacemi zastaraly. U zprávy ve frontě, kterou přijímající aplikace nespotřebovává v zadaném časovém intervalu, se říká, že platnost vypršela. Zprávy s vypršenou platností se odesílají do speciální fronty označované jako fronta nedoručených zpráv. Umístění fronty nedoručených zpráv je nastaveno s `customDeadLetterQueue` atributem nebo na odpovídající výchozí hodnotu na základě ujištění.|  
+|useMsmqTracing|Logická hodnota určující, zda mají být zprávy zpracované touto vazbou sledovány. Výchozí hodnota je `false`.<br /><br /> Je-li povoleno trasování, jsou vytvořeny zprávy sestavy a odesílány do fronty sestav pokaždé, když zpráva opustí nebo dorazí na počítač služby Řízení front zpráv.|  
+|useSourceJournal|Logická hodnota určující, zda mají být kopie zpráv zpracovaných touto vazbou uloženy ve frontě deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Aplikace ve frontě, které chtějí uchovávat záznam zpráv, které opustily odchozí fronty počítače, mohou kopírovat zprávy do fronty deníku. Jakmile zpráva opustí odchozí frontu a potvrzení, že byla zpráva přijata v cílovém počítači, bude uložena kopie zprávy ve frontě deníku systému odesílajícího počítače.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -77,17 +77,17 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Přenosy](../../../wcf/feature-details/transports.md)
+- [Fronty ve WCF](../../../wcf/feature-details/queues-in-wcf.md)
+- [Volba přenosu](../../../wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 5d4d96143dbd1db440de2247a7dc2f0c66f20403
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 5d5da531bff3a0e9e198ba9b5ab6cf2b52bf36b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301302"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921316"
 ---
-# <a name="clear-element-for-appsettings"></a>\<Vymazat > – element pro \<appSettings >
+# <a name="clear-element-for-appsettings"></a>\<Clear – element > \<pro appSettings >
 
-Vymaže nastavení vlastní aplikace.
+Vymaže vlastní nastavení aplikace.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
+[ **\<> Konfigurace**](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
@@ -40,15 +40,15 @@ Vymaže nastavení vlastní aplikace.
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací konfigurace vlastní aplikace. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci aplikace. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádný
+Žádné
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak vymazat nastavení vlastní konfigurace:
+Následující příklad ukazuje, jak vymazat vlastní nastavení konfigurace:
 
 ```xml
 <appSettings>
@@ -58,4 +58,4 @@ Následující příklad ukazuje, jak vymazat nastavení vlastní konfigurace:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](../index.md)

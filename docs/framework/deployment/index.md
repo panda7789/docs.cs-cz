@@ -11,167 +11,167 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b7380556e13e17e26ffb2f8c5fbbc7136a1fb5e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7da023c5ab9247cde0ccd1126d4d639c6f355e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771855"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910975"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 
-Tento článek pomůže začít nasazení rozhraní .NET Framework s vaší aplikací. Většina informací je určená pro vývojáře, výrobci OEM a enterprise administrators. Uživatelé, kteří chtějí nainstalovat rozhraní .NET Framework na svých počítačích byste si přečíst [instalace rozhraní .NET Framework](~/docs/framework/install/index.md).
+Tento článek vám pomůže začít s nasazením .NET Framework s vaší aplikací. Většina informací je určená vývojářům, výrobcům OEM a podnikovým správcům. Uživatelé, kteří chtějí instalovat .NET Framework na svých počítačích, by si měli přečíst [instalaci .NET Framework](../install/index.md).
 
-## <a name="key-deployment-resources"></a>Klíče nasazení prostředků
+## <a name="key-deployment-resources"></a>Prostředky nasazení klíčů
 
-Použijte následující odkazy na další témata MSDN pro konkrétní informace o nasazení a údržba rozhraní .NET Framework.
+Pro konkrétní informace o nasazení a údržbě .NET Framework použijte následující odkazy na další témata MSDN.
 
-**Instalace a nasazení**
+**Nastavení a nasazení**
 
-- Obecné informace Instalační program a nasazení:
+- Obecné informace o instalačním programu a nasazení:
 
-  - Instalační program možnosti:
+  - Možnosti instalačního programu:
 
-    - [Webová instalační služba](~/docs/framework/install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [Webová instalační služba](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
-    - [Offline instalační program](~/docs/framework/install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [Offline instalační program](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
   - Režimy instalace:
 
-    - [Bezobslužná instalace](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_custom)
+    - [Tichá instalace](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_custom)
 
     - [Zobrazení uživatelského rozhraní](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_default)
 
-  - [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)
+  - [Snížení restartu systému během instalací .NET Framework 4,5](../../../docs/framework/deployment/reducing-system-restarts.md)
 
-  - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+  - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
 
-- Nasazení rozhraní .NET Framework pomocí klientské aplikace (pro vývojáře):
+- Nasazení .NET Framework pomocí klientské aplikace (pro vývojáře):
 
-  - [Pomocí programu InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) v projektu instalace a nasazení
+  - [Používání programu InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) v projektu instalace a nasazení
 
-  - [Pomocí aplikace Visual Studio ClickOnce](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)
+  - [Použití aplikace Visual Studio ClickOnce](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)
 
-  - [Vytvoření balíčku instalace WiX](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)
+  - [Vytvoření instalačního balíčku WiX](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)
 
-  - [Pomocí vlastního instalačního programu](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining)
+  - [Použití vlastního instalačního programu](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining)
 
-  - [Další informace o](../../../docs/framework/deployment/deployment-guide-for-developers.md) pro vývojáře
+  - [Další informace](../../../docs/framework/deployment/deployment-guide-for-developers.md) pro vývojáře
 
-- Nasazení rozhraní .NET Framework (pro výrobce OEM a správce):
+- Nasazení .NET Framework (pro výrobce OEM a správce):
 
-  - [Windows Assessment and Deployment Kit (ADK)](https://go.microsoft.com/fwlink/p/?LinkId=254976)
+  - [Sada Windows Assessment and Deployment Kit (ADK)](https://go.microsoft.com/fwlink/p/?LinkId=254976)
 
   - [Příručka pro správce](../../../docs/framework/deployment/guide-for-administrators.md)
 
 **Údržba**
 
-- Obecné informace najdete v tématu [blogu .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977)
+- Obecné informace najdete na [blogu .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977) .
 
-- [Zjištění verze](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)
+- [Zjišťují se verze](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)
 
-- [Zjišťování aktualizací service Pack a aktualizace](../../../docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
+- [Zjišťování aktualizací Service Pack a aktualizací](../../../docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
 
 ## <a name="features-that-simplify-deployment"></a>Funkce, které zjednodušují nasazení
 
-Rozhraní .NET Framework poskytuje řadu základních funkcí, které zjednodušují nasazení aplikací:
+.NET Framework poskytuje řadu základních funkcí, které usnadňují nasazení aplikací:
 
 - Aplikace bez dopadu.
 
-     Tato funkce zajišťuje izolaci aplikace a eliminuje DLL – konflikty. Ve výchozím nastavení komponenty nemají vliv na jiné aplikace.
+     Tato funkce poskytuje izolaci aplikace a eliminuje konflikty knihoven DLL. Ve výchozím nastavení komponenty neovlivňují jiné aplikace.
 
-- Součásti ve výchozím nastavení je privátní.
+- Ve výchozím nastavení soukromé součásti.
 
-     Ve výchozím nastavení komponenty jsou nasazené do adresáře aplikace a jsou viditelné pouze pro obsahující aplikaci.
+     Ve výchozím nastavení jsou komponenty nasazeny do adresáře aplikace a jsou viditelné pouze pro aplikaci, která ji obsahuje.
 
-- Řízené sdílení kódu.
+- Řízená sdílení kódu.
 
-     Sdílení kódu, musíte explicitně zpřístupnit kód pro sdílení obsahu namísto výchozího chování.
+     Sdílení kódu vyžaduje explicitní zpřístupnění kódu pro sdílení namísto výchozího chování.
 
-- Správa verzí vedle sebe.
+- Souběžná Správa verzí.
 
-     Více verzí aplikace nebo součásti mohou existovat vedle sebe, můžete zvolit, které verze používat, a modul common language runtime vynucuje zásad správy verzí.
+     Několik verzí komponenty nebo aplikace může existovat současně, můžete zvolit, které verze se mají použít, a modul CLR (Common Language Runtime) vynutil zásady správy verzí.
 
-- Replikace a nasazení XCOPY.
+- Nasazení a replikace XCOPY.
 
-     Samostatná a místním popisu komponent a aplikací můžete nasadit bez položky registru nebo závislosti.
+     Samostatné a samostatně uzavřené komponenty a aplikace lze nasadit bez položek registru nebo závislostí.
 
-- Na průběžné aktualizace.
+- Průběžné aktualizace.
 
-     Správci můžou použít hostitele, jako je ASP.NET, k aktualizaci aplikace knihovny DLL, i na vzdálených počítačích.
+     Správci můžou použít hostitele, jako je ASP.NET, k aktualizaci knihoven DLL programu, i na vzdálených počítačích.
 
-- Integrace pomocí Instalační služby systému Windows.
+- Integrace s Instalační služba systému Windows.
 
-     Oznámení o inzerovaném programu, publikování, opravy a instalaci na vyžádání jsou všechny dostupné při nasazování aplikace.
+     Inzerce, publikování, opravy a instalace na vyžádání jsou dostupné při nasazení aplikace.
 
-- Nasazení v podniku.
+- Podnikové nasazení.
 
-     Tato funkce poskytuje distribuce snadno softwaru, včetně použití služby Active Directory.
+     Tato funkce poskytuje jednoduchou distribuci softwaru, včetně používání služby Active Directory.
 
 - Stahování a ukládání do mezipaměti.
 
-     Přírůstková stahování zachovat menší soubory ke stažení a komponenty můžou být izolované pro použití pouze pomocí aplikace pro nasazení nízkým dopadem na koncové uživatele.
+     Přírůstkové stahování udržuje menší soubory ke stažení a součásti lze izolovat pouze pro použití v aplikaci pro nasazení s nízkým dopadem.
 
-- Částečně důvěryhodným kódem.
+- Částečně důvěryhodný kód.
 
-     Identita je založena na kódu, nikoli na uživatele a dialogová žádný certifikát.
+     Identita je založena na kódu namísto uživatele a nezobrazují se dialogová okna certifikátu.
 
-## <a name="packaging-and-distributing-net-framework-applications"></a>Balení a distribuce aplikací rozhraní .NET Framework
+## <a name="packaging-and-distributing-net-framework-applications"></a>Balení a distribuce .NET Frameworkch aplikací
 
-Některé balení a informace o nasazení pro rozhraní .NET Framework je popsané v dalších částech v dokumentaci. Tyto části obsahují informace o popisující samy sebe jednotky nazvané [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md), které vyžadují žádné položky registru [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md), který zajistí jedinečnost názvu a zabránit název falšování identity, a [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md), které řeší celou řadu problémy související s DLL – konflikty. Následující části obsahují informace o balení a distribuce aplikací rozhraní .NET Framework.
+Některé informace o balení a nasazení pro .NET Framework jsou popsány v dalších částech dokumentace. Tyto části poskytují informace o jednotkách, které jsou označovány jako [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md), které nevyžadují žádné položky registru, [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md), která zajišťují jedinečnost názvů a brání falšování názvů a [správu verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md) , který řeší mnohé problémy spojené se konflikty knihoven DLL. Následující části obsahují informace o balení a distribuci .NET Frameworkch aplikací.
 
 ### <a name="packaging"></a>Balení
 
-Rozhraní .NET Framework poskytuje následující možnosti pro vytváření balíčků aplikací:
+.NET Framework poskytuje následující možnosti pro vytváření balíčků aplikací:
 
-- Jako jednoho sestavení nebo jako kolekci sestavení.
+- Jako jedno sestavení nebo jako kolekce sestavení.
 
-     Když je tato možnost jednoduše používáte soubory .dll nebo .exe jako byly vytvořeny.
+     Pomocí této možnosti jednoduše použijete soubory. dll nebo. exe, jak byly sestaveny.
 
-- Jako soubory CAB (CAB).
+- Jako soubory CAB.
 
-     Pomocí této možnosti komprimovat soubor do souborů .cab distribuce nebo stáhnout méně časově náročné.
+     Pomocí této možnosti zkomprimujete soubory do souborů. cab, abyste mohli distribuovat nebo stahovat méně času náročného.
 
-- Jako balíček Instalační služby systému Windows nebo v jiných formátů Instalační služby.
+- Jako balíček Instalační služba systému Windows nebo v jiných formátech instalačního programu.
 
-     Pomocí této možnosti vytvoříte soubory .msi pro použití Instalační služby systému Windows nebo balíček aplikace pro použití s další instalační služby.
+     Pomocí této možnosti vytvoříte soubory. msi pro použití s Instalační služba systému Windows nebo zabalíte aplikaci pro použití s nějakým jiným instalačním programem.
 
 ### <a name="distribution"></a>Distribuce
 
-Rozhraní .NET Framework poskytuje následující možnosti distribuce aplikací:
+.NET Framework poskytuje následující možnosti pro distribuci aplikací:
 
-- Pomocí příkazu XCOPY nebo FTP.
+- Použijte XCOPY nebo FTP.
 
-     Protože common language runtime aplikace jsou samovysvětlující a vyžadují žádné položky registru, jednoduše zkopírujte aplikaci do příslušného adresáře můžete použít příkazu XCOPY nebo FTP. Aplikace se dá spustit pak z tohoto adresáře.
+     Vzhledem k tomu, že aplikace modulu CLR (Common Language Runtime) samy popisují a nevyžadují žádné položky registru, můžete pomocí příkazu XCOPY nebo FTP jednoduše zkopírovat aplikaci do příslušného adresáře. Aplikaci lze následně spustit z tohoto adresáře.
 
-- Použijte kód ke stažení.
+- Použijte stahování kódu.
 
-     Pokud distribuujete aplikaci přes Internet nebo prostřednictvím podnikové síti, do počítače stáhnout kód a spusťte aplikaci existuje.
+     Pokud distribuujete aplikaci přes Internet nebo prostřednictvím podnikového intranetu, můžete jednoduše stáhnout kód do počítače a spustit aplikaci.
 
-- Pomocí instalačního programu jako 2.0 Instalační služby systému Windows.
+- Použijte instalační program, například Instalační služba systému Windows 2,0.
 
-     2.0 Instalační služby systému Windows můžete nainstalovat, opravit nebo odebrat sestavení rozhraní .NET Framework v globální mezipaměti sestavení a privátní adresáře.
+     Instalační služba systému Windows 2,0 může instalovat, opravovat nebo odebírat .NET Framework sestavení v globální mezipaměti sestavení (GAC) a v privátních adresářích.
 
 ### <a name="installation-location"></a>Umístění instalace
 
-Pokud chcete zjistit, jak nasadíte sestavení vaší aplikace, takže najdete modulem runtime, naleznete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).
+Chcete-li určit, kam se mají nasadit sestavení vaší aplikace, aby je bylo možné najít modulem runtime, přečtěte si téma [jak modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).
 
-Důležité informace o zabezpečení může také ovlivnit způsob nasazení vaší aplikace. Spravovaný kód podle toho, kde je kód umístěn udělují oprávnění zabezpečení. Nasazení aplikace nebo komponenty do umístění, ve kterém přijímá trochu vztahu důvěryhodnosti, jako je například Internet, omezení aplikace nebo komponenta přínosech. Další informace o nasazení a důležité informace o zabezpečení najdete v tématu [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md).
+Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Oprávnění zabezpečení se udělují spravovanému kódu podle toho, kde se nachází kód. Nasazení aplikace nebo komponenty do umístění, kde obdrží malý vztah důvěryhodnosti, jako je například Internet, omezuje, co může aplikace nebo komponenta dělat. Další informace o možnostech nasazení a zabezpečení najdete v tématu [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md).
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Popisuje, jak modul common language runtime určuje sestavení, které použít ke splnění požadavků vazby.|
-|[Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, který může mít za následek <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a další chyby.|
-|[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Popisuje správce restartování se zabránilo restartuje kdykoli je to možné a vysvětluje, jak aplikace, které instalace rozhraní .NET Framework můžete využívat jejich výhod.|
-|[Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)|Vysvětluje, jak může správce systému můžete nasadit rozhraní .NET Framework a jeho systémové závislosti napříč sítí pomocí System Center Configuration Manageru (SCCM).|
-|[Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Vysvětluje, jak vývojáři můžete nainstalovat rozhraní .NET Framework na jejich uživatele, počítače s jejich aplikacemi.|
-|[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Tento článek popisuje možnosti nasazení v sadě Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a instalační služby systému Windows.|
-|[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak zabalit aplikace modelu Windows Forms a nasazení pomocí technologie ClickOnce pro klientské počítače v síti.|
-|[Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje model střed a paprsek, balení a nasazení prostředků; využívající rozhraní .NET Framework popisuje konvence, proces získávání náhradních a balení alternativy pojmenování prostředků.|
-|[Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)|Vysvětluje způsob dodání a nainstalujte spolupráce – aplikace, které sestavení klienta rozhraní .NET Framework, obvykle zahrnují jeden nebo více sestavení vzájemné spolupráce reprezentující různé knihovny typů modelu COM, a jeden nebo víc registrovaných komponent COM.|
-|[Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.|
+|[Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Popisuje, jak modul CLR (Common Language Runtime) určuje, které sestavení se má použít ke splnění požadavku vazby.|
+|[Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může <xref:System.InvalidCastException>vést <xref:System.MissingMethodException>k chybám, a.|
+|[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.|
+|[Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).|
+|[Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.|
+|[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Popisuje možnosti nasazení v aplikaci Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a Instalační služba systému Windows.|
+|[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak zabalit aplikaci model Windows Forms a nasadit ji pomocí technologie ClickOnce na klientské počítače v síti.|
+|[Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje model hvězdicové a paprsky, které .NET Framework používá k zabalení a nasazení prostředků. Popisuje zásady vytváření názvů prostředků, záložní proces a alternativy balení.|
+|[Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)|Vysvětluje, jak dodávat a instalovat aplikace spolupráce, které obvykle zahrnují .NET Framework sestavení klienta, jedno nebo více definičních sestavení představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM.|
+|[Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.|
 
 ## <a name="see-also"></a>Viz také:
 

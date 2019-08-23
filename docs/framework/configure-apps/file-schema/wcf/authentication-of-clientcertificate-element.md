@@ -1,24 +1,24 @@
 ---
-title: <authentication> z <clientCertificate> – Element
+title: <authentication><clientCertificate> elementu
 ms.date: 03/30/2017
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
-ms.openlocfilehash: 2cbc850331dc6bf76c352f975fda834a309564c6
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 4a7fee3bd8441a9612e954160397cc56aca163d1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423241"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926512"
 ---
-# <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > – Element
+# <a name="authentication-of-clientcertificate-element"></a>\<ověřování > \<elementu ClientCertificate >
 Určuje chování ověřování pro klientské certifikáty používané službou.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<clientCertificate>  
-\<ověřování >  
+\<> ověřování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,42 +32,42 @@ Určuje chování ověřování pro klientské certifikáty používané službo
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|customCertificateValidatorType|Volitelný řetězec. Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
-|certificateValidationMode|Volitelný výčet. Určuje jeden z režimů pro ověření pověření. Tento atribut je <xref:System.ServiceModel.Security.X509CertificateValidationMode> typu. Pokud hodnotu <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom?displayProperty=nameWithType>, o `customCertificateValidator` musí být rovněž dodán. Výchozí hodnota je <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust?displayProperty=nameWithType>.|  
-|includeWindowsGroups|Nepovinný datový typ Boolean. Určuje, pokud jsou skupiny Windows zahrnuty v kontextu zabezpečení. Nastavení tohoto atributu na `true` má dopad na výkon, protože výsledkem rozšíření celé skupiny. Tento atribut nastavte na `false` Pokud není potřeba vytvořit seznam skupin uživatel patří.|  
-|mapClientCertificateToWindowsAccount|Datový typ Boolean. Určuje, zda klient je možné mapovat na Windows identity pomocí certifikátu. K tomu musí být povolené služby Active Directory.|  
-|revocationMode|Volitelný výčet. Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (RCL). Výchozí hodnota je `Online`. Tato hodnota se ignoruje při použití zabezpečení přenosu HTTP.|  
-|trustedStoreLocation|Volitelný výčet. Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště. Výchozí hodnota je `CurrentUser`.|  
+|customCertificateValidatorType|Volitelný řetězec. Typ a sestavení, které slouží k ověření vlastního typu. Tento atribut musí být nastaven, `certificateValidationMode` je-li `Custom`nastavena na hodnotu.|  
+|certificateValidationMode|Volitelný výčet. Určuje jeden z režimů používaných k ověření přihlašovacích údajů. Tento atribut je <xref:System.ServiceModel.Security.X509CertificateValidationMode> typu. Je-li <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom?displayProperty=nameWithType>nastaveno na hodnotu, musí být zadána také. `customCertificateValidator` Výchozí hodnota je <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust?displayProperty=nameWithType>.|  
+|includeWindowsGroups|Volitelná logická hodnota. Určuje, zda jsou skupiny systému Windows zahrnuty v kontextu zabezpečení. Nastavení tohoto atributu na `true` má vliv na výkon, protože má za následek rozšíření celé skupiny. Nastavte tento atribut na `false` , pokud nepotřebujete vytvořit seznam skupin, do kterých uživatel patří.|  
+|mapClientCertificateToWindowsAccount|Datového. Určuje, jestli je možné klienta namapovat na identitu Windows pomocí certifikátu. K tomu musí být povolená služba Active Directory.|  
+|revocationMode|Volitelný výčet. Jeden z režimů, který slouží ke kontrole seznamů odvolaných certifikátů (RCL). Výchozí hodnota je `Online`. Tato hodnota se při použití zabezpečení přenosu HTTP ignoruje.|  
+|trustedStoreLocation|Volitelný výčet. Jedno ze dvou umístění úložiště systému: `LocalMachine` nebo. `CurrentUser` Tato hodnota se používá, když je certifikát služby vyjednán klientovi. Ověřování se provádí pro úložiště **důvěryhodných osob** v zadaném umístění úložiště. Výchozí hodnota je `CurrentUser`.|  
   
-## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
-  
-|Value|Popis|  
-|-----------|-----------------|  
-|String|Určuje název typu a sestavení a další data použít k vyhledání typu.|  
-  
-## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode atribut  
-  
-|Hodnota|Popis|  
-|-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: NONE, PeerTrust, ChainTrust, PeerOrChainTrust, vlastní.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
-  
-## <a name="revocationmode-attribute"></a>revocationMode atribut  
+## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: NoCheck, Online, Offline. Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|String|Určuje název typu a sestavení a další data, která se používají k vyhledání typu.|  
   
-## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
+## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`.|  
+|Výčet|Jedna z následujících hodnot: None, PeerTrust, ChainTrust, PeerOrChainTrust, Custom.<br /><br /> Další informace najdete v tématu [práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md).|  
+  
+## <a name="revocationmode-attribute"></a>revocationMode – atribut  
+  
+|Value|Popis|  
+|-----------|-----------------|  
+|Výčet|Jedna z následujících hodnot: Nekontrolujte, online, offline. Další informace najdete v tématu [práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md).|  
+  
+## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation – atribut  
+  
+|Value|Popis|  
+|-----------|-----------------|  
+|Výčet|Jedna z následujících hodnot: `LocalMachine` nebo. `CurrentUser` Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikát se obvykle nachází v části `LocalMachine`. Pokud klientská aplikace běží pod uživatelským účtem, bude certifikát typicky v `CurrentUser`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -76,15 +76,15 @@ Určuje chování ověřování pro klientské certifikáty používané službo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)|Určuje certifikát X.509 použitý k ověření klienta ke službě.|  
+|[\<clientCertificate>](clientcertificate-of-servicecredentials.md)|Definuje certifikát X. 509, který se používá k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<authentication>` Odpovídá elementu <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy. Umožňuje přizpůsobit, jak se budou ověřovat klienti. Můžete nastavit `certificateValidationMode` atribut `None`, `ChainTrust`, `PeerOrChainTrust`, `PeerTrust`, nebo `Custom`. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`, která určuje, že každý certifikát musí být nalezena v hierarchii certifikátů končí na *kořenová autorita* na začátku řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že jsou přijímány samostatně vydané certifikáty (peer vztahu důvěryhodnosti) a také certifikáty, které jsou v důvěryhodným řetězem. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samostatně vydané certifikáty nemusí být zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty.  
+ `<authentication>` Prvek odpovídá<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídě. Umožňuje vám přizpůsobit způsob ověřování klientů. Můžete nastavit `certificateValidationMode` atribut na `None`, `ChainTrust` `PeerOrChainTrust` ,,`Custom`nebo. `PeerTrust` Ve výchozím nastavení je úroveň nastavena na `ChainTrust`hodnotu, která určuje, že každý certifikát musí být nalezen v hierarchii certifikátů končících kořenovou *autoritou* v horní části řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu na `PeerOrChainTrust`, což znamená, že jsou přijímány certifikáty vystavené svým držitelem (vztah důvěryhodnosti peering) i certifikáty, které jsou v důvěryhodném řetězci. Tato hodnota se používá při vývoji a ladění klientů a služeb vzhledem k tomu, že certifikáty vystavené svým držitelem nemusejí být zakoupeny důvěryhodnou autoritou. Při nasazování klienta použijte `ChainTrust` místo něj hodnotu.  
   
- Můžete také nastavit hodnotu `Custom`. Pokud je nastavena na `Custom` hodnotu, je nutné nastavit také `customCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [jak: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ Můžete také nastavit hodnotu na `Custom`. Pokud je nastaveno na `Custom` hodnotu, je nutné také `customCertificateValidatorType` nastavit atribut na sestavení a typ použitý k ověření certifikátu. Chcete-li vytvořit vlastní validátor, je nutné dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [jak: Vytvořte službu, která využívá vlastní validátor](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)certifikátů.  
   
 ## <a name="example"></a>Příklad  
- Následující kód Určuje certifikát X.509 a zadejte vlastní ověření v `<authentication>` elementu.  
+ Následující kód Určuje certifikát X. 509 a typ vlastního ověřování v `<authentication>` elementu.  
   
 ```xml  
 <serviceBehaviors>
@@ -111,6 +111,6 @@ Určuje chování ověřování pro klientské certifikáty používané službo
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.Authentication%2A>
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Authentication%2A>
 - <xref:System.ServiceModel.Configuration.X509ClientCertificateAuthenticationElement>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Postupy: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Postupy: Vytvoření služby, která používá vlastní validátor certifikátů](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)

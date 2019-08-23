@@ -10,30 +10,30 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview
 - examples [Windows Forms], print preview
 ms.assetid: e394134c-0886-4517-bd8d-edc4a3749eb5
-ms.openlocfilehash: 9efccc220bb27706448ae555db8958afb0ccd9fa
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 8252906de9a574f49617609a4cb08a1e8aa6a992
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053598"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929011"
 ---
 # <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Postupy: Zobrazení náhledu tisku v aplikacích Windows Forms
-Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek umožňující uživatelům často zobrazení dokumentu, než které se mají vytisknout.  
+Pomocí <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku můžete uživatelům umožnit zobrazit dokument, často ještě předtím, než bude vytištěn.  
   
- K tomuto účelu, budete muset zadat instanci <xref:System.Drawing.Printing.PrintDocument> třídy; jedná o dokument, které se mají vytisknout. Další informace o použití náhledu tisku s <xref:System.Drawing.Printing.PrintDocument> komponenty, naleznete v tématu [jak: Tisk ve Windows Forms pomocí náhledu tisku](../advanced/how-to-print-in-windows-forms-using-print-preview.md).  
+ K tomu je nutné zadat instanci <xref:System.Drawing.Printing.PrintDocument> třídy; jedná se o dokument, který se má vytisknout. Další informace o použití náhledu tisku s <xref:System.Drawing.Printing.PrintDocument> komponentou najdete v tématu [How to: Tisk v model Windows Forms pomocí náhledu](../advanced/how-to-print-in-windows-forms-using-print-preview.md)tisku.  
   
 > [!NOTE]
->  Použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku za běhu, uživatelé musí mít tiskárny nainstalované v počítači, místně nebo prostřednictvím sítě, protože je částečně jak <xref:System.Windows.Forms.PrintPreviewDialog> komponenty Určuje, jak bude dokument vypadat po vytištění.  
+> Chcete-li <xref:System.Windows.Forms.PrintPreviewDialog> použít ovládací prvek v době běhu, musí mít uživatelé na svém počítači nainstalovanou tiskárnu, a to buď místně, nebo prostřednictvím sítě, protože tato <xref:System.Windows.Forms.PrintPreviewDialog> součást Určuje, jak bude dokument vypadat po vytištění.  
   
- <xref:System.Windows.Forms.PrintPreviewDialog> Používá ovládací prvek <xref:System.Drawing.Printing.PrinterSettings> třídy. Kromě toho <xref:System.Windows.Forms.PrintPreviewDialog> používá ovládací prvek <xref:System.Drawing.Printing.PageSettings> třídu, stejně jako <xref:System.Windows.Forms.PrintPreviewDialog> komponenty dělají. Vytištěný dokument podle <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> vlastnost odkazuje na oba výskyty <xref:System.Drawing.Printing.PrinterSettings> a <xref:System.Drawing.Printing.PageSettings> třídy a ty se používají k vykreslení dokumentu v okně verze preview.  
+ <xref:System.Windows.Forms.PrintPreviewDialog> Ovládací prvek<xref:System.Drawing.Printing.PrinterSettings> používá třídu. Kromě toho <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek <xref:System.Drawing.Printing.PageSettings> používá <xref:System.Windows.Forms.PrintPreviewDialog> třídu, stejně jako komponenta. <xref:System.Windows.Forms.PrintPreviewDialog> Tiskový dokument zadaný ve <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> vlastnosti ovládacího prvku odkazuje <xref:System.Drawing.Printing.PrinterSettings> na instance třídy a <xref:System.Drawing.Printing.PageSettings> , a slouží k vykreslení dokumentu v okně náhledu.  
   
-### <a name="to-view-pages-using-the-printpreviewdialog-control"></a>Chcete-li zobrazit stránky s využitím printpreviewdialog – ovládací prvek  
+### <a name="to-view-pages-using-the-printpreviewdialog-control"></a>Zobrazení stránek pomocí ovládacího prvku PrintPreviewDialog –  
   
-- Použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogu zadání <xref:System.Drawing.Printing.PrintDocument> používat.  
+- Použijte metodu k zobrazení dialogového okna a <xref:System.Drawing.Printing.PrintDocument> určení, které má být použito. <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>  
   
-     V následujícím příkladu kódu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevírá instanci <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku. Vytištěný dokument je určen v <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost. V následujícím příkladu je zadána žádná vytištěný dokument.  
+     V následujícím příkladu <xref:System.Windows.Forms.Button> kódu obslužná rutina <xref:System.Windows.Forms.Control.Click> události ovládacího prvku <xref:System.Windows.Forms.PrintPreviewDialog> otevře instanci ovládacího prvku. Tisk dokumentu je zadán ve <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnosti. V následujícím příkladu není zadán žádný dokument pro tisk.  
   
-     V příkladu vyžaduje, že váš formulář má <xref:System.Windows.Forms.Button> ovládací prvek, <xref:System.Drawing.Printing.PrintDocument> součást s názvem `myDocument`a <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  
+     Příklad vyžaduje, <xref:System.Windows.Forms.Button> aby formulář měl ovládací prvek <xref:System.Drawing.Printing.PrintDocument> , <xref:System.Windows.Forms.PrintPreviewDialog> komponentu s názvem `myDocument`a ovládací prvek.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -70,7 +70,7 @@ Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prve
        }  
     ```  
   
-     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuál C#, vizuál C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  

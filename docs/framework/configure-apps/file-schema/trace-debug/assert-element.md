@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: 2f3823265e358976f970cdfa36772d2251894280
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ba781598542d271f41476b1a1e9d61faeb6ff74
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701356"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927185"
 ---
-# <a name="assert-element"></a>\<Assert – > – Element
-Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.  
+# <a name="assert-element"></a>\<Assert – > element
+Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metody zobrazit okno se zprávou. určuje také název souboru, do kterého budou zapsány zprávy.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
 \<assert>  
   
@@ -35,12 +35,12 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`assertuienabled`|Nepovinný atribut.<br /><br /> Určuje, zda chcete-li zobrazit zprávu pole při **Debug.Assert –** vyhodnotí jako metoda **false**.|  
-|`logfilename`|Nepovinný atribut.<br /><br /> Určuje název souboru pro zápis zprávy, když **Debug.Assert –** vyhodnotí jako **false**.|  
+|`assertuienabled`|Nepovinný atribut.<br /><br /> Určuje, zda se má zobrazit okno se zprávou, když je metoda **Debug. Assert** vyhodnocena jako **false**.|  
+|`logfilename`|Nepovinný atribut.<br /><br /> Určuje název souboru, do kterého se má zpráva zapsat, pokud je hodnota **Debug. Assert** vyhodnocena jako **false**.|  
   
-## <a name="assertuienabled-attribute"></a>assertuienabled atribut  
+## <a name="assertuienabled-attribute"></a>AssertUiEnabled – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`true`|Zobrazí okno se zprávou. Toto nastavení je výchozí.|  
 |`false`|Nezobrazuje okno se zprávou.|  
@@ -53,13 +53,13 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Oba atributy v  **\<vyhodnocení >** elementu jsou volitelné. Zakážete okna se zprávou bez zadání soubor pro zápis zprávy, které mají, nebo můžete určit soubor k zapsání zprávy při opuštění zprávy pole povolená.  
+ Oba atributy v rámci  **\<kontrolního elementu >** jsou nepovinné. Okna se zprávou můžete zakázat bez určení souboru, do kterého se mají zprávy zapisovat, nebo můžete zadat soubor, do kterého se mají zapisovat zprávy, a nechat okna zpráv zapnutá.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat zobrazování okna se zprávou, když voláte **Debug.Assert –** a zápis zpráv do `c:\log.txt`.  
+ Následující příklad ukazuje, jak zakázat zobrazování oken zpráv při volání metody **Debug. Assert** a zapsat zprávy do `c:\log.txt`.  
   
 ```xml  
 <configuration>  
@@ -72,4 +72,4 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Diagnostics.Debug>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

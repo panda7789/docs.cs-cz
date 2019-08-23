@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b07c3eb9d96bb6f675a6a2ca742cc9bdf3c3826
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c3fa2238976df9f570fad9eb6947790565a4b0c5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364063"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935715"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
-Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použít C# `+=` funkce jazyka jako operátor nebo [příkaz Visual Basic AddHandler](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) k připojení událostí. Následující postupy ukazují, jak připojit existující metodu k události tím, že získá všechny nezbytné typy prostřednictvím reflexe a jak vytvořit dynamickou metodu pomocí generování reflexe a připojit ji k události.  
+Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použít C# `+=` funkce jazyka jako operátor nebo [příkaz Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) k připojení událostí. Následující postupy ukazují, jak připojit existující metodu k události tím, že získá všechny nezbytné typy prostřednictvím reflexe a jak vytvořit dynamickou metodu pomocí generování reflexe a připojit ji k události.  
   
 > [!NOTE]
->  Další způsob, jak připojit delegáta zpracování událostí, naleznete v příkladu kódu pro <xref:System.Reflection.EventInfo.AddEventHandler%2A> metodu <xref:System.Reflection.EventInfo> třídy.  
+> Další způsob, jak připojit delegáta zpracování událostí, naleznete v příkladu kódu pro <xref:System.Reflection.EventInfo.AddEventHandler%2A> metodu <xref:System.Reflection.EventInfo> třídy.  
   
 ### <a name="to-hook-up-a-delegate-using-reflection"></a>Připojení delegáta pomocí reflexe  
   
@@ -57,7 +57,7 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
      [!code-csharp[HookUpDelegate#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#7)]
      [!code-vb[HookUpDelegate#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#7)]  
   
-6. `add` Získat přístupovou metodu a vyvolat ji pro zapojení události. Všechny události mají `add` přistupující objekt `remove` a přistupující objekt, který je skryt syntaxí jazyků vysoké úrovně. Například C# používá `+=` operátor k zapojení událostí a Visual Basic používá [příkaz AddHandler](~/docs/visual-basic/language-reference/statements/addhandler-statement.md). Následující kód získá `add` přistupující objekt <xref:System.Windows.Forms.Control.Click> události a vyvolá pozdní vazbu s předáním do instance delegáta. Argumenty musí být předány jako pole.  
+6. `add` Získat přístupovou metodu a vyvolat ji pro zapojení události. Všechny události mají `add` přistupující objekt `remove` a přistupující objekt, který je skryt syntaxí jazyků vysoké úrovně. Například C# používá `+=` operátor k zapojení událostí a Visual Basic používá [příkaz AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md). Následující kód získá `add` přistupující objekt <xref:System.Windows.Forms.Control.Click> události a vyvolá pozdní vazbu s předáním do instance delegáta. Argumenty musí být předány jako pole.  
   
      [!code-cpp[HookUpDelegate#8](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#8)]
      [!code-csharp[HookUpDelegate#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#8)]

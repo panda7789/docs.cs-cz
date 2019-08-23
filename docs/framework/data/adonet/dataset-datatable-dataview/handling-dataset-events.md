@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54edefe0-bc38-419b-b486-3d8a0c356f13
-ms.openlocfilehash: 5e1de3effcae5700aa25f5dbb84f2dec3a0b20f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b93b0564bbd6d760193f11d23d97ccb2cb4c943
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879681"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928519"
 ---
 # <a name="handling-dataset-events"></a>Zpracování událostí datové sady
-<xref:System.Data.DataSet> Objekt poskytuje tři události: <xref:System.ComponentModel.MarshalByValueComponent.Disposed>, <xref:System.Data.DataSet.Initialized>, a <xref:System.Data.DataSet.MergeFailed>.  
+Objekt poskytuje tři události: <xref:System.ComponentModel.MarshalByValueComponent.Disposed>, <xref:System.Data.DataSet.Initialized>, a <xref:System.Data.DataSet.MergeFailed>. <xref:System.Data.DataSet>  
   
-## <a name="the-mergefailed-event"></a>MergeFailed události  
- Nejběžněji používané událost `DataSet` objekt `MergeFailed`, které se vyvolá, když schéma `DataSet` objekty, které jsou slučovány, je v konfliktu. K tomu dojde, pokud zdrojové a cílové <xref:System.Data.DataRow> mají stejnou hodnotu primárního klíče a <xref:System.Data.DataSet.EnforceConstraints%2A> je nastavena na `true`. Pokud se sloučí sloupce primárního klíče tabulky jsou například stejné mezi tabulkami ve dvou `DataSet` objektů, dojde k výjimce a `MergeFailed` událost se vyvolá. <xref:System.Data.MergeFailedEventArgs> Předán objekt `MergeFailed` událost mít <xref:System.Data.MergeFailedEventArgs.Conflict%2A> vlastnost, která identifikuje konflikt ve schématu mezi těmito dvěma `DataSet` objekty a <xref:System.Data.MergeFailedEventArgs.Table%2A> vlastnost, která identifikuje název tabulky v konfliktu.  
+## <a name="the-mergefailed-event"></a>Událost MergeFailed  
+ Nejčastěji používaná událost `DataSet` objektu je `MergeFailed`, která je vyvolána `DataSet` při konfliktu schématu objektů, které jsou sloučeny. K tomu dochází, pokud má cíl <xref:System.Data.DataRow> a zdroj stejnou hodnotu primárního klíče <xref:System.Data.DataSet.EnforceConstraints%2A> a vlastnost je nastavena na `true`. Například pokud jsou sloupce primárního klíče sloučené tabulky stejné mezi tabulkami v obou `DataSet` objektech, je vyvolána výjimka `MergeFailed` a událost je vyvolána. `MergeFailed` <xref:System.Data.MergeFailedEventArgs.Conflict%2A> <xref:System.Data.MergeFailedEventArgs.Table%2A> Objekt předaný události má vlastnost, která identifikuje konflikt ve schématu mezi dvěma `DataSet` objekty a vlastnost, která identifikuje název konfliktní tabulky. <xref:System.Data.MergeFailedEventArgs>  
   
- Následující fragment kódu ukazuje, jak přidat obslužnou rutinu události pro `MergeFailed` událostí.  
+ Následující fragment kódu ukazuje, jak přidat obslužnou rutinu události pro `MergeFailed` událost.  
   
 ```vb  
 AddHandler workDS.MergeFailed, New MergeFailedEventHandler( _  
@@ -42,22 +42,22 @@ private static void DataSetMergeFailed(
 }  
 ```  
   
-## <a name="the-initialized-event"></a>Inicializovanou událost  
- <xref:System.Data.DataSet.Initialized> Po dojde k události `DataSet` konstruktor inicializuje novou instanci třídy `DataSet`.  
+## <a name="the-initialized-event"></a>Inicializovaná událost  
+ K události dochází poté, `DataSet` co konstruktor inicializuje novou instanci `DataSet`. <xref:System.Data.DataSet.Initialized>  
   
- <xref:System.Data.DataSet.IsInitialized%2A> Vrátí vlastnost `true` Pokud `DataSet` dokončení inicializace; v opačném případě vrátí `false`. <xref:System.Data.DataSet.BeginInit%2A> Metodu, která začíná inicializace `DataSet`, nastaví <xref:System.Data.DataSet.IsInitialized%2A> k `false`. <xref:System.Data.DataSet.EndInit%2A> Metoda, která končí v inicializaci `DataSet`, nastaví na `true`. Tyto metody jsou používány návrhové prostředí sady Visual Studio k inicializaci `DataSet` , který je používán jinou komponentou. Že služby nebudete používat běžně ve vašem kódu.  
+ <xref:System.Data.DataSet.IsInitialized%2A> Vlastnost vrátí `false`, zda `DataSet` byla dokončena inicializace; v opačném případě vrátí. `true` Metoda, která zahájí inicializaci a `DataSet`, nastaví <xref:System.Data.DataSet.IsInitialized%2A> na `false`. <xref:System.Data.DataSet.BeginInit%2A> Metoda, která ukončí inicializaci `DataSet`, nastaví na `true`. <xref:System.Data.DataSet.EndInit%2A> Tyto metody jsou používány prostředím pro návrh sady Visual Studio k inicializaci `DataSet` , který je používán jinou komponentou. Nebudete je běžně používat ve svém kódu.  
   
-## <a name="the-disposed-event"></a>Uvolněné události  
- `DataSet` je odvozen z <xref:System.ComponentModel.MarshalByValueComponent> třídu, která zpřístupňuje jak <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda a <xref:System.ComponentModel.MarshalByValueComponent.Disposed> událostí. <xref:System.ComponentModel.MarshalByValueComponent.Disposed> Událost přidá obslužnou rutinu události tak, aby naslouchala na vyřazený událost na komponentu. Můžete použít <xref:System.ComponentModel.MarshalByValueComponent.Disposed> události `DataSet` Pokud budete chtít spustit kód při <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> metoda je volána. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> uvolní prostředky využívané třídou <xref:System.ComponentModel.MarshalByValueComponent>.  
+## <a name="the-disposed-event"></a>Vyřazená událost  
+ `DataSet`je odvozen z <xref:System.ComponentModel.MarshalByValueComponent> třídy, která zpřístupňuje <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> jak metodu <xref:System.ComponentModel.MarshalByValueComponent.Disposed> , tak událost. <xref:System.ComponentModel.MarshalByValueComponent.Disposed> Událost přidá obslužnou rutinu události, která bude naslouchat vyřazené události na komponentě. Můžete použít <xref:System.ComponentModel.MarshalByValueComponent.Disposed> událost `DataSet` , pokud chcete spustit kód při <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A> volání metody. <xref:System.ComponentModel.MarshalByValueComponent.Dispose%2A>Uvolňuje prostředky používané v <xref:System.ComponentModel.MarshalByValueComponent>.  
   
 > [!NOTE]
->  `DataSet` a `DataTable` objekty dědit z <xref:System.ComponentModel.MarshalByValueComponent> a podporu <xref:System.Runtime.Serialization.ISerializable> rozhraní pro vzdálenou komunikaci. Jedná se pouze objekty ADO.NET, které lze používat vzdáleně. Další informace najdete v tématu [vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)).  
+> Objekty `DataSet` a `DataTable` dědíz<xref:System.ComponentModel.MarshalByValueComponent> rozhraní a podporují ho pro vzdálenou komunikaci. <xref:System.Runtime.Serialization.ISerializable> Toto jsou jediné ADO.NET objekty, které je možné vzdáleně vymezit. Další informace najdete v tématu [Vzdálená komunikace rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)).  
   
- Informace o dalších událostí, které jsou k dispozici při práci s `DataSet`, naleznete v tématu [zpracování událostí datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md) a [zpracování událostí adaptéru dat](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ Informace o dalších událostech, které jsou k dispozici při práci s a `DataSet`, naleznete v tématu [zpracování událostí DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md) a [zpracování událostí DataAdapter](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [Ověřování dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/t3b36awf(v=vs.120))
 - [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

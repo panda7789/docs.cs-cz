@@ -8,21 +8,21 @@ helpviewer_keywords:
 - KnownTypes
 - <declaredTypes> element
 ms.assetid: f35184e4-9d9e-4d37-8fb4-d5b58220eb3e
-ms.openlocfilehash: 8919ee717012f8badcf7015bf8d850ed431c5943
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cef34a8836c7b17fe9a85cac190090f42653df14
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701161"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919238"
 ---
-# <a name="declaredtypes"></a>\<declaredTypes>
+# <a name="declaredtypes"></a>\<declaredTypes >
 Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSerializer> používá při deserializaci.  
   
- Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktu dat](../../../wcf/feature-details/data-contract-known-types.md).  
   
  system.runtime.serialization  
 \<dataContractSerializer>  
-\<declaredTypes>  
+\<declaredTypes >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,19 +52,19 @@ Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSer
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)|Přidá typy, které vyžadují známých typů.|  
+|[\<add>](add-of-declaredtypes-element.md)|Přidá typy, které vyžadují známé typy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<dataContractSerializer>](datacontractserializer-of-system-runtime-serialization.md)|Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ Další informace o známých typech naleznete v tématu [známé typy kontraktů dat](../../../wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje deklarované typy a známé typy, které jsou přidány do `DataContractSerializer` elementu. Příklad ukazuje přidání tří typů. První je to vlastní typ s názvem "Orders", který používá známý typ s názvem "Item". Druhá deklarovaný typ je <xref:System.Collections.Generic.List%601> , která používá `Item` jako známý typ. Nakonec třetí deklarovaný typ je <xref:System.Collections.Generic.Dictionary%602>. <xref:System.Collections.Generic.Dictionary%602> Typu třídy je obecný typ s dva parametry typu. První představuje klíč, a druhá představuje hodnotu. Následující příklad přidá <xref:System.Collections.Generic.List%601> druhého typu (hodnota) do seznamu známých typů. Je nutné použít `index` atribut k určení, které parametr typu pro použití v známého typu. V takovém případě je typ hodnoty označen atribut indexu nastavena na hodnotu "1" (kolekce je založený na nule).  
+ Následující kód XML ukazuje deklarované typy a známé typy přidané do `DataContractSerializer` prvku. V příkladu se zobrazují tři přidávané typy. První je vlastní typ pojmenovaný "Orders", který používá známý typ s názvem "Item". Druhý deklarovaný typ je <xref:System.Collections.Generic.List%601> , který používá `Item` jako známý typ. Nakonec třetí deklarovaný typ je <xref:System.Collections.Generic.Dictionary%602>. Typ <xref:System.Collections.Generic.Dictionary%602> třídy je obecný typ se dvěma parametry typu. První představuje klíč a druhý představuje hodnotu. Následující příklad přidá <xref:System.Collections.Generic.List%601> druhý typ (hodnota) do seznamu známých typů. Je nutné použít `index` atribut k určení, který parametr typu má být použit v známém typu. V tomto případě je typ hodnoty označen atributem index nastaveným na hodnotu "1" (kolekce je počítána od nuly).  
   
 ```xml  
 <configuration>
@@ -91,6 +91,6 @@ Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSer
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
-- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+- [\<dataContractSerializer>](datacontractserializer-element.md)
+- [Známé typy kontraktů dat](../../../wcf/feature-details/data-contract-known-types.md)
+- [\<add>](add-of-declaredtypes-element.md)

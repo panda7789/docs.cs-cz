@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: bf94f090-5265-4112-8e57-5b4e20e070d0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f21ea449cf30bd9c07b7ae9b382877ce18f102d9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c818b196f3252138f2a9c601b04f1d7a6727bc6b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736417"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912742"
 ---
 # <a name="icordebugprocess6markdebuggerattached-method"></a>ICorDebugProcess6::MarkDebuggerAttached – metoda
-Vnitřní stav laděného objektu se změní tak, aby <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> vrátí metoda v knihovně tříd rozhraní .NET Framework `true`.  
+Změní vnitřní stav laděného objektu tak, že <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> metoda v knihovně třídy .NET Framework vrátí. `true`  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,30 +24,30 @@ HRESULT MarkDebuggerAttached(
   
 ## <a name="parameters"></a>Parametry  
  `fIsAttached`  
- `true` Pokud <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> metoda měl označovat, že je připojen ladicí program; `false` jinak.  
+ `true`Pokud by <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> metoda měla označovat, že je připojen ladicí program; `false` v opačném případě.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Metoda může vrátit hodnoty uvedené v následující tabulce.  
+ Metoda může vracet hodnoty uvedené v následující tabulce.  
   
 |Návratová hodnota|Popis|  
 |------------------|-----------------|  
-|`S_OK`|Laděný proces byl úspěšně aktualizován.|  
-|`CORDBG_E_MODULE_NOT_LOADED`|Sestavení obsahující <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> metoda nebyla načtena, nebo některé jiné chyby, jako je například chybějící metadata, brání to bude rozpoznán.<br /><br /> Tato chyba je běžné a neškodné. Metoda by měla volat znovu, když načíst další sestavení.|  
-|Další selhání `HRESULT` hodnoty.|Jiné hodnoty může znamenat identifikovala ladicího programu nebo komponenty kompilátoru.|  
+|`S_OK`|Laděného procesu se úspěšně aktualizoval.|  
+|`CORDBG_E_MODULE_NOT_LOADED`|Sestavení, které obsahuje <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> metodu, není načteno nebo došlo k nějaké jiné chybě, například chybějící metadata, brání jejímu rozpoznání.<br /><br /> Tato chyba je běžná a neškodná. Metodu byste měli zavolat znovu, až se načtou další sestavení.|  
+|Jiné neúspěšné `HRESULT` hodnoty.|Jiné hodnoty nejspíš naznačují, že se nechovají ladicí program nebo komponenty kompilátoru.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

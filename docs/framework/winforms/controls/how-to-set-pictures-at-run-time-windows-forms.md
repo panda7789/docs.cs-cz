@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení obrázků za běhu (Windows Forms)'
+title: 'Postupy: Nastavit obrázky v době běhu (model Windows Forms)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,21 +13,21 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: 8275961a8f11332a04f89561fac779f4cdf9f8d8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 99d78a275c8ad8f55d9b0832a794545b65da7e20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609405"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917531"
 ---
-# <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
-Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
+# <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavit obrázky v době běhu (model Windows Forms)
+Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.PictureBox> můžete programově nastavit.  
   
-### <a name="to-set-a-picture-programmatically"></a>Chcete-li nastavit obrázek prostřednictvím kódu programu  
+### <a name="to-set-a-picture-programmatically"></a>Postup při nastavování obrázku prostřednictvím kódu programu  
   
-- Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.  
+- <xref:System.Windows.Forms.PictureBox.Image%2A> Nastavte vlastnost<xref:System.Drawing.Image.FromFile%2A> pomocí metody<xref:System.Drawing.Image> třídy.  
   
-     V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
+     V následujícím příkladu je cesta nastavená pro umístění obrázku složkou Dokumenty. To se provádí, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s <xref:System.Windows.Forms.PictureBox> ovládacím prvkem již byl přidán.  
   
     ```vb  
     Private Sub LoadNewPict()  
@@ -65,9 +65,9 @@ Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms
        }  
     ```  
   
-### <a name="to-clear-a-graphic"></a>Vymazat obrázek  
+### <a name="to-clear-a-graphic"></a>Vymazání grafiky  
   
-- Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku. Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.  
+- Nejdřív uvolněte paměť, kterou image používá, a pak obrázek vymažte. Uvolňování paměti uvolní paměť později, pokud dojde k potížím se správou paměti.  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  
@@ -93,9 +93,9 @@ Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms
     ```  
   
     > [!NOTE]
-    >  Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).  
+    > Další informace o tom, proč byste měli <xref:System.Drawing.Image.Dispose%2A> metodu použít tímto způsobem, najdete v tématu Vymazání nespravovaných [prostředků](../../../standard/garbage-collection/unmanaged.md).  
   
-     Tento kód se vymažou bitovou kopii, i v případě, že grafický objekt byl načten do ovládacího prvku v době návrhu.  
+     Tento kód vymaže obrázek, i když byl obrázek načten do ovládacího prvku v době návrhu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -103,5 +103,5 @@ Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
 - [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
 - [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Postupy: Změna velikosti nebo umístění obrázku v době běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
 - [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

@@ -5,69 +5,69 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1d50c8b4-f550-4775-bbb6-eab6e874cb43
-ms.openlocfilehash: 5d812ae9b5fd0a796588d3366b8546ef84c982c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 50887acefdd5d0feaf9d0885e9ee842f44f0ef65
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877354"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915055"
 ---
 # <a name="group-elements-in-a-sequence"></a>Seskupení prvků v posloupnosti
-<xref:System.Linq.Enumerable.GroupBy%2A> Operátor seskupuje prvky sady sekvenci. Následující příklady používají databázi Northwind.  
+<xref:System.Linq.Enumerable.GroupBy%2A> Operátor seskupí prvky sekvence. V následujících příkladech se používá databáze Northwind.  
   
 > [!NOTE]
->  Hodnota Null, hodnot sloupce v <xref:System.Linq.Enumerable.GroupBy%2A> někdy může vyvolat dotazů <xref:System.InvalidOperationException>. Další informace najdete v tématu v části "GroupBy InvalidOperationException" [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> Hodnoty null sloupce v <xref:System.Linq.Enumerable.GroupBy%2A> dotazech mohou někdy <xref:System.InvalidOperationException>vyvolat. Další informace najdete v části "GroupBy InvalidOperationException" tématu [řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad oddíly `Products` podle `CategoryID`.  
+ Následující příklady oddílů `Products` podle `CategoryID`.  
   
  [!code-csharp[DLinqQueryExamples#27](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#27)]
  [!code-vb[DLinqQueryExamples#27](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#27)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Linq.Enumerable.Max%2A> k vyhledání maximální jednotkové ceny pro každý `CategoryID`.  
+ Následující příklad používá <xref:System.Linq.Enumerable.Max%2A> k vyhledání maximální jednotkové ceny pro každý z `CategoryID`nich.  
   
  [!code-csharp[DLinqQueryExamples#28](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#28)]
  [!code-vb[DLinqQueryExamples#28](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#28)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá průměr Pokud chcete vypočítat průměr `UnitPrice` pro každou `CategoryID`.  
+ Následující příklad používá průměr pro nalezení průměru `UnitPrice` pro každý z nich. `CategoryID`  
   
  [!code-csharp[DLinqQueryExamples#29](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#29)]
  [!code-vb[DLinqQueryExamples#29](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#29)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Linq.Queryable.Sum%2A> najít celkové `UnitPrice` pro každou `CategoryID`.  
+ Následující příklad používá <xref:System.Linq.Queryable.Sum%2A> k vyhledání celkového součtu `UnitPrice` pro každý `CategoryID`z nich.  
   
  [!code-csharp[DLinqQueryExamples#30](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#30)]
  [!code-vb[DLinqQueryExamples#30](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#30)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Linq.Queryable.Count%2A> zjistí počet ukončena `Products` v každém `CategoryID`.  
+ Následující příklad používá <xref:System.Linq.Queryable.Count%2A> k vyhledání počtu `Products` vyřazených v každé z nich `CategoryID`.  
   
  [!code-csharp[DLinqQueryExamples#31](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#31)]
  [!code-vb[DLinqQueryExamples#31](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#31)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá následující `where` klauzule k vyhledání všech kategorií, které mají alespoň 10 produkty.  
+ Následující příklad používá následující `where` klauzuli k vyhledání všech kategorií, které mají alespoň 10 produktů.  
   
  [!code-csharp[DLinqQueryExamples#32](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#32)]
  [!code-vb[DLinqQueryExamples#32](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#32)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad skupin produkty v jednotlivých `CategoryID` a `SupplierID`.  
+ Následující příklad seskupuje produkty podle `CategoryID` a `SupplierID`.  
   
  [!code-csharp[DLinqQueryExamples#33](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#33)]
  [!code-vb[DLinqQueryExamples#33](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#33)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí dvou sekvencí produktů. První sekvence obsahuje produkty se cena za jednotku menší než nebo rovno 10. Druhá sekvence obsahuje produkty se cena za jednotku větší než 10.  
+ Následující příklad vrátí dvě sekvence produktů. První sekvence obsahuje produkty s jednotkovou cenou menší nebo rovnou 10. Druhá sekvence obsahuje produkty s jednotkovou cenou větší než 10.  
   
  [!code-csharp[DLinqQueryExamples#34](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#34)]
  [!code-vb[DLinqQueryExamples#34](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#34)]  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Linq.Queryable.GroupBy%2A> Operátor může trvat pouze jeden argument klíče. Pokud potřebujete seskupit podle více než jeden klíč, musíte vytvořit anonymního typu, jako v následujícím příkladu:  
+ <xref:System.Linq.Queryable.GroupBy%2A> Operátor může převzít pouze jeden argument Key. Pokud potřebujete seskupit podle více než jednoho klíče, je nutné vytvořit anonymní typ, jak je uvedeno v následujícím příkladu:  
   
  [!code-csharp[DLinqQueryExamples#35](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#35)]
  [!code-vb[DLinqQueryExamples#35](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#35)]  

@@ -2,15 +2,15 @@
 title: <allowAccounts>
 ms.date: 03/30/2017
 ms.assetid: 166923a9-a8ac-478f-92f9-529d9667f3a6
-ms.openlocfilehash: f9def3004b116afdc629de136cdfe0b0eb6e75c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c62f29c53d807cab397ff09c6163d924a71ea319
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673534"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926602"
 ---
 # <a name="allowaccounts"></a>\<allowAccounts>
-Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro procesy, které hostují služby Windows Communication Foundation (WCF) a jímž je udělen přístup ke službě sdílení.  
+Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro procesy, které hostují služby Windows Communication Foundation (WCF) a kterým je udělen přístup ke službě sdílení.  
   
  \<system.serviceModel.activation>  
   
@@ -32,13 +32,13 @@ Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro pr
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowaccounts.md)|Přidá uživatelský účet pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě Sdílení|  
+|[\<add>](add-of-allowaccounts.md)|Přidá uživatelský účet pro procesy, které hostují služby WCF, a uděluje přístup ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<NET.pipe >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-pipe.md) nebo [ \<net.tcp >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)|Určuje nastavení konfigurace pro Net kanálu nebo služby Sdílení TCP.|  
+|NET. pipe > nebo [ \<](net-pipe.md) [ \<NET. TCP >](net-tcp.md)|Určuje nastavení konfigurace pro síťové kanály nebo služby sdílení protokolu TCP.|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,23 +1,23 @@
 ---
-title: <clear> z <claimTypeRequirements> – element
+title: <clear><claimTypeRequirements> elementu
 ms.date: 03/30/2017
 ms.assetid: ef42fde7-f292-4610-9111-9fea382c3b5f
-ms.openlocfilehash: 35d0391951204bd352918d3004f0cc4f9480b0e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7e3bebd85decbaa4d216743f9bea9e135b87995
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704268"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926138"
 ---
-# <a name="clear-of-claimtyperequirements-element"></a>\<Vymazat > z \<claimTypeRequirements > – element
-Určuje, že všechny typy deklarací, jenž budou odebrány z federovaného pověření. Tím se zajistí, že začne prázdnou kolekci.  
+# <a name="clear-of-claimtyperequirements-element"></a>\<Vymazat > \<elementu claimTypeRequirements >
+Určuje, že všechny typy deklarací, které mají být odebrány v rámci federovaného pověření. Tím se zajistí, že kolekce začne být prázdná.  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<wsFederatedBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<Zpráva >  
+\<> vazby  
+\<> zabezpečení  
+\<> zprávy  
 \<claimTypeRequirements>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +41,7 @@ Určuje, že všechny typy deklarací, jenž budou odebrány z federovaného pov
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|Určuje kolekci požadovaných typů deklarací. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít sadu typů deklarací identity. Každý prvek v této kolekci Určuje typy požadovaných a volitelných deklarací, očekává se objeví federovaného pověření.|  
+|[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Určuje kolekci požadovaných typů deklarací. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> Ve federovaném scénáři služby stavují požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít určitou sadu typů deklarací. Každý prvek v této kolekci určuje typy požadovaných a volitelných deklarací, které mají být zobrazeny ve federovaném pověření.|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,28 +16,28 @@ helpviewer_keywords:
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2ba3172b1a82c0a9f624a49eb63a193dd29faac1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3bde5b18437cc9890f660f018e81582a4d708d2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750730"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910921"
 ---
 # <a name="link-demands"></a>Požadavky na odkaz
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Požadavek na propojení způsobí, že kontrola zabezpečení během kompilace just-in-time a zkontroluje pouze okamžitého volajícího sestavení vašeho kódu. Propojení nastane, pokud váš kód je vázán na odkaz na typ, včetně odkazů na ukazatel funkce a volání metody. Pokud volající sestavení nemá dostatečná oprávnění k propojení vašeho kódu, na odkaz není povolen a je vyvolána výjimka za běhu, když je načten a spustit kód. Požadavky propojení lze přepsat ve třídách, které dědí z vašeho kódu.  
+ Požadavek propojení způsobí kontrolu zabezpečení během kompilace za běhu a kontroluje pouze okamžité volání sestavení kódu. Propojení nastane, pokud je váš kód svázán s odkazem na typ, včetně odkazů na ukazatel funkce a volání metod. Pokud volající sestavení nemá dostatečná oprávnění pro odkazování na váš kód, není odkaz povolen a výjimka za běhu je vyvolána, když je kód načten a spuštěn. Požadavky na propojení lze přepsat v třídách, které dědí z vašeho kódu.  
   
- Všimněte si, že se neprovede úplné zásobníku s tímto typem vyžádání a že váš kód je přesto náchylné k útokům luring. Například pokud metodu v sestavení A je chráněn pomocí požadavku propojení, přímému volajícímu v sestavení B je vyhodnotí na základě oprávnění sestavení B.  Ale požadavek propojení nebude vyhodnotit metodu v sestavení C nepřímo volá metodu v sestavení pomocí metody v sestavení B. Požadavek propojení určuje že jenom oprávnění přímý volající v okamžitého volajícího sestavení musí mít odkaz na váš kód. Neurčuje oprávnění všichni volající musí mít pro spouštění vašeho kódu.  
+ Všimněte si, že se s tímto typem požadavku neprovádí kompletní procházení zásobníku a že váš kód je stále náchylný k luring útokům. Například pokud je metoda v sestavení A chráněna požadavkem propojení, je přímý volající v sestavení B vyhodnocován na základě oprávnění sestavení B.  Požadavek propojení však nevyhodnotí metodu v sestavení C, pokud nepřímo volá metodu v sestavení A pomocí metody v sestavení B. Požadavek propojení určuje pouze oprávnění přímí volající v bezprostředním volajícím sestavení musí mít odkaz na váš kód. Neurčuje oprávnění, která všichni volající musí mít ke spuštění kódu.  
   
- <xref:System.Security.CodeAccessPermission.Assert%2A>, <xref:System.Security.CodeAccessPermission.Deny%2A>, A <xref:System.Security.CodeAccessPermission.PermitOnly%2A> zásobníku funkce walk modifikátory nemají vliv na hodnocení požadavků propojení.  Protože požadavky propojení neprovádějte procházení zásobníku, modifikátory procházení zásobníku nemají žádný vliv na požadavky propojení.  
+ Modifikátory <xref:System.Security.CodeAccessPermission.Deny%2A>procházení zásobníku <xref:System.Security.CodeAccessPermission.PermitOnly%2A> , a nejsou ovlivněny vyhodnocením požadavků propojení. <xref:System.Security.CodeAccessPermission.Assert%2A>  Vzhledem k tomu, že požadavky na propojení neprovádějí procházení zásobníku, modifikátory procházení zásobníku nemají žádný vliv na požadavky propojení.  
   
- Pokud metoda chráněn pomocí požadavku propojení je přístupný prostřednictvím [reflexe](../../../docs/framework/reflection-and-codedom/reflection.md), pak požadavek propojení kontroluje okamžitého volajícího kódu přístupné prostřednictvím reflexe. To platí pro metody zjišťování a pro volání metody provést pomocí operace reflection. Předpokládejme například, že kód používá reflexi se vraťte <xref:System.Reflection.MethodInfo> objekt představující metodu chráněn pomocí požadavku propojení a potom předává, který **MethodInfo** objektu na jiný kód, který používá objekt volání původní metody. V tomto případě ověření požadavku propojení dojde k dvakrát: jednou pro kód, který vrátí **MethodInfo** objekt a jednou pro kód, který vyvolá ji.  
+ Pokud je metoda chráněná požadavkem propojení k dispozici [](../../../docs/framework/reflection-and-codedom/reflection.md)prostřednictvím reflexe, pak požadavek na propojení zkontroluje bezprostředního volajícího kódu, ke kterému se přistupoval prostřednictvím reflexe. To platí jak pro zjišťování metod, tak pro volání metod prováděná pomocí reflexe. Předpokládejme například, že kód používá reflexi k <xref:System.Reflection.MethodInfo> vrácení objektu, který představuje metodu chráněnou požadavkem propojení a poté předá tento objekt **MethodInfo** do nějakého jiného kódu, který používá objekt k vyvolání původní metody. V tomto případě proběhne ověření požadavku propojení dvakrát: jednou pro kód, který vrátí objekt **MethodInfo** a jednou pro kód, který ho vyvolá.  
   
 > [!NOTE]
->  Požadavek propojení provést ve statickém konstruktoru třídy nechrání konstruktoru, protože statické konstruktory jsou volány aplikací systému mimo cesta provádění kódu vaší aplikace. V důsledku toho při požadavku na propojení platí pro celou třídu, nemůže chránit přístup k statický konstruktor, přestože chrání zbytek třídy.  
+> Požadavek propojení prováděný u konstruktoru statické třídy nechrání konstruktor, protože statické konstruktory jsou volány systémem, mimo cestu spuštění kódu aplikace. V důsledku toho, pokud je požadavek na propojení aplikován na celou třídu, nemůže chránit přístup ke statickému konstruktoru, i když chrání zbytek třídy.  
   
- Následující fragment kódu deklarativně určuje, že jakékoli propojení do kódu `ReadData` metoda musí mít `CustomPermission` oprávnění. Toto oprávnění je hypotetický vlastní oprávnění a neexistuje v rozhraní .NET Framework. Předáním je vznesen požadavek **SecurityAction.LinkDemand** příznak, který `CustomPermissionAttribute`.  
+ Následující fragment kódu deklarativně určuje, že jakýkoli kód spojující `ReadData` metodu musí `CustomPermission` mít oprávnění. Toto oprávnění je hypotetické vlastní oprávnění a neexistuje v .NET Framework. Požadavek je proveden předáním příznaku **SecurityAction. LinkDemand** do `CustomPermissionAttribute`.  
   
 ```vb  
 <CustomPermissionAttribute(SecurityAction.LinkDemand)> _  
@@ -56,5 +56,5 @@ public static string ReadData()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Atributy](../../../docs/standard/attributes/index.md)
+- [Atributy](../../standard/attributes/index.md)
 - [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)

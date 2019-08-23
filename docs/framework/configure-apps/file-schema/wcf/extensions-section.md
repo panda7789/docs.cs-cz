@@ -1,16 +1,16 @@
 ---
-title: <extensions> Oddíl
+title: <extensions>section
 ms.date: 03/30/2017
 ms.assetid: 53a59fb6-dede-47ec-9384-b3c2e8f0c1fa
-ms.openlocfilehash: 0f77f621bbf9bbef00b206ef43a174f6f69364d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4c8b5fe6eef1863ee3f02cb761a3aac61406e446
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673001"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918973"
 ---
-# <a name="extensions-section"></a>\<Rozšíření > části
-Tento oddíl konfigurace obsahuje kolekci rozšíření, které umožňují uživateli vytvořit uživatelem definované vazby, chování a další aspekty rozšíření.  
+# <a name="extensions-section"></a>\<oddíl rozšíření >
+Tento oddíl konfigurace obsahuje kolekci rozšíření, která umožňují uživateli vytvořit uživatelsky definované vazby, chování a další aspekty rozšíření.  
   
 \<system.ServiceModel>  
   
@@ -41,13 +41,13 @@ Tento oddíl konfigurace obsahuje kolekci rozšíření, které umožňují uži
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behaviorExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md)|Tato část obsahuje podřízené prvky, které určují chování rozšíření, které umožňují uživatelům přizpůsobit chování služby nebo koncového bodu.|  
-|[\<bindingElementExtensions >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md)|Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfiguračního souboru aplikace.|  
-|[\<bindingExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindingextensions.md)|Tato část obsahuje podřízené prvky, které určují rozšíření vazby, které umožňují uživateli upravit vazby.|  
-|[\<endpointExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointextensions.md)|Tato část obsahuje podřízené prvky, které se zaregistruje standardních koncových bodů.|  
+|[\<behaviorExtensions>](behaviorextensions.md)|Tato část obsahuje podřízené prvky, které určují rozšíření chování, které umožňuje uživateli přizpůsobit chování služby nebo koncového bodu.|  
+|[\<bindingElementExtensions >](bindingelementextensions.md)|Tato část umožňuje použití vlastního prvku vazby z počítače nebo konfiguračního souboru aplikace.|  
+|[\<bindingExtensions >](bindingextensions.md)|Tato část obsahuje podřízené prvky, které určují rozšíření vazby, které umožňuje uživateli přizpůsobit vazby.|  
+|[\<endpointExtensions>](endpointextensions.md)|Tato část obsahuje podřízené prvky, které registrují standardní koncové body.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|systém.ServiceModel|Kořenový element všechny elementy konfigurace WCF.|
+|systém.ServiceModel|Kořenový element všech elementů konfigurace služby WCF.|

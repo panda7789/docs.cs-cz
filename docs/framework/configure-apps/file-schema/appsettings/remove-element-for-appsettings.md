@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 62913face910ae9500aa5e6f2f443db67ffd4240
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 121b1c4b124ba07ff3bd312fd3832d3da592f486
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301282"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921285"
 ---
-# <a name="remove-element-for-appsettings"></a>\<Odebrat > – element pro \<appSettings >
+# <a name="remove-element-for-appsettings"></a>\<Odebrat element > pro \<appSettings >
 
 Odebere vlastní nastavení aplikace.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+[ **\<> Konfigurace**](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,13 +36,13 @@ Odebere vlastní nastavení aplikace.
 
 |         | Popis |
 | ------- | ----------- |
-| **key** | Požadovaný atribut.<br><br>Určuje název klíč k odebrání. |
+| **key** | Požadovaný atribut.<br><br>Určuje název klíče, který se má odebrat. |
 
 ### <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikaci. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -50,7 +50,7 @@ Odebere vlastní nastavení aplikace.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak odebrat vlastní nastavení pro `ApplicationName`:
+Následující příklad ukazuje, jak odebrat vlastní nastavení konfigurace pro `ApplicationName`:
 
 ```xml
 <appSettings>
@@ -60,4 +60,4 @@ Následující příklad ukazuje, jak odebrat vlastní nastavení pro `Applicati
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](../index.md)

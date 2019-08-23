@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7726164e998ea917c8f539b5768aa7e3f1ae12c
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 7b68d079413168b042412a67e8732e8afed66ffa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053200"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915880"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Provádění porovnávání řetězců nezávislých na jazykové verzi
-Ve výchozím nastavení <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda provádí porovnání citlivé na jazykovou verzi a malá a velká písmena. Tato metoda zahrnuje také několik přetížení, které poskytují `culture` parametr, který umožňuje zadat jazykovou verzi, pokud chcete použít, a `comparisonType` parametr, který umožňuje určit použitá pravidla porovnávání. Volání těchto metod namísto výchozího přetížení odstraní jakoukoli nejednoznačnost týkající se pravidel používaných při volání konkrétní metody a objasňuje, zda je konkrétní porovnání závislé na jazykové verzi či nikoli.  
+Ve výchozím nastavení tato <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda provádí porovnání zohledňující jazykovou verzi a rozlišuje velká a malá písmena. Tato metoda také obsahuje několik přetížení, která poskytují `culture` parametr, který umožňuje určit jazykovou verzi, která se má použít, `comparisonType` a parametr, který umožňuje zadat pravidla porovnávání, která chcete použít. Volání těchto metod namísto výchozího přetížení odstraní jakoukoli nejednoznačnost týkající se pravidel používaných při volání konkrétní metody a objasňuje, zda je konkrétní porovnání závislé na jazykové verzi či nikoli.  
   
 > [!NOTE]
->  Obě přetížení <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metoda provést porovnání citlivé na jazykovou verzi a malá a velká písmena; tuto metodu nelze použít k provádění porovnání nezávislá na jazykové verzi. Přehlednosti kódu doporučujeme použít <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda místo.  
+> Obě přetížení <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody provádějí porovnání zohledňující jazykovou verzi a rozlišování velkých a malých písmen; tuto metodu nelze použít pro porovnání nezávislé na jazykové verzi. Pro přehlednost kódu doporučujeme místo toho použít <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu.  
   
- Operace zohledňující jazykovou verzi, zadejte <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> nebo <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> hodnotu výčtu, jako `comparisonType` parametru. Pokud chcete provést porovnání citlivé na jazykovou verzi pomocí jiné určené jazykové verze než aktuální jazykovou verzi, zadejte <xref:System.Globalization.CultureInfo> objekt, který představuje tuto jazykovou verzi jako `culture` parametru.  
+ V případě operací závislých na jazykové verzi <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> zadejte <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> hodnotu výčtu nebo jako `comparisonType` parametr. Chcete-li provést porovnání zohledňující jazykovou verzi pomocí určené kultury jiné než aktuální jazykové verze, určete <xref:System.Globalization.CultureInfo> objekt, který představuje tuto jazykovou verzi `culture` jako parametr.  
   
- Porovnání řetězců nezávislá na jazykové verzi, podporuje <xref:System.String.Compare%2A?displayProperty=nameWithType> jsou buď jazyková (založená na konvencích řazení invariantní jazyková verze) nebo nejazyková (založená na pořadovém čísle znaků v řetězci). Většina porovnání řetězců nezávislých na jazykové verzi je nejazykových. Pro tato porovnání zadejte <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> hodnotu výčtu, jako `comparisonType` parametru. Pokud je například bezpečnostní rozhodnutí (jako je porovnání uživatelského jména a hesla) založeno na výsledku porovnání řetězců, operace by měla být nezávislá na jazykové verzi a jazyce, aby výsledek nemohl být ovlivněn konvencemi konkrétní jazykové verze nebo jazyka.  
+ Porovnávání řetězců nezávislé na jazykové verzi, které <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda podporuje, je jazyk (založený na konvencích řazení neutrální jazykové verze) nebo nelingvisted (na základě pořadových hodnot znaků v řetězci). Většina porovnání řetězců nezávislých na jazykové verzi je nejazykových. Pro tato porovnání zadejte <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> hodnotu výčtu nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> jako `comparisonType` parametr. Pokud je například bezpečnostní rozhodnutí (jako je porovnání uživatelského jména a hesla) založeno na výsledku porovnání řetězců, operace by měla být nezávislá na jazykové verzi a jazyce, aby výsledek nemohl být ovlivněn konvencemi konkrétní jazykové verze nebo jazyka.  
   
- Pokud chcete zpracovávat jazykově odpovídající řetězce z několika jazykových verzí konzistentním způsobem, použijte porovnání lingvistických řetězců nezávislé na jazykové verzi. Jestliže vaše aplikace zobrazuje například slova, která používají více znakových sad v seznamu, budete pravděpodobně chtít zobrazit slova ve stejném pořadí bez ohledu na aktuální jazykovou verzi. Pro jazyková porovnání nezávislá na jazykových verzích definuje rozhraní .NET Framework neutrální jazykovou verzi, která bude založena na jazykových konvencích angličtiny. Chcete-li provést jazykové porovnání nezávislé na jazykové verzi, zadejte <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> nebo <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> jako `comparisonType` parametru.  
+ Pokud chcete zpracovávat jazykově odpovídající řetězce z několika jazykových verzí konzistentním způsobem, použijte porovnání lingvistických řetězců nezávislé na jazykové verzi. Jestliže vaše aplikace zobrazuje například slova, která používají více znakových sad v seznamu, budete pravděpodobně chtít zobrazit slova ve stejném pořadí bez ohledu na aktuální jazykovou verzi. Pro jazyková porovnání nezávislá na jazykových verzích definuje rozhraní .NET Framework neutrální jazykovou verzi, která bude založena na jazykových konvencích angličtiny. Chcete-li provést jazykové porovnání nezávislé na jazykové verzi, <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> zadejte <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> nebo jako `comparisonType` parametr.  
   
  Následující příklad provádí dvě nejazyková porovnání řetězců nezávislá na jazykové verzi. V prvním porovnání se rozlišují velká a malá písmena, ve druhém nikoli.  
   
  [!code-csharp[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/cs/cultureinsensitive1.cs#1)]
  [!code-vb[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/vb/cultureinsensitive1.vb#1)]  
 
-Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), tabulka váhy řazení pro systémy Linux a macOS.
+Můžete si stáhnout [tabulky váhy řazení](https://www.microsoft.com/download/details.aspx?id=10921), sadu textových souborů, které obsahují informace o váhu znaků používaných při řazení a porovnávání operací pro operační systémy Windows, a [výchozí tabulku prvků kolace sady Unicode](https://www.unicode.org/Public/UCA/latest/allkeys.txt), řazení Tabulka váhy pro Linux a macOS.
 
 ## <a name="see-also"></a>Viz také:
 

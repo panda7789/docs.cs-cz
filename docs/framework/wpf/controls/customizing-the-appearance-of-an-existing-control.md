@@ -12,251 +12,251 @@ helpviewer_keywords:
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
-ms.openlocfilehash: 563f4a9fefe86b58f0dc6f0a4aec5cb285630616
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 63a0b724b71c4a4901c2dedcf502045a75ec405c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593408"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933721"
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
-<a name="introduction"></a> A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální struktury a chování ovládacího prvku visual. Můžete přizpůsobit vzhled ovládacího prvku tak, že udělíte it nový <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhledu stávajícího ovládacího prvku beze změny jeho funkce. Například měli tlačítka ve vaší aplikaci round místo výchozí Čtvereček tvar, ale stále na tlačítko vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+<a name="introduction"></a><xref:System.Windows.Controls.ControlTemplate> Určuje vizuální strukturu a vizuální chování ovládacího prvku. Vzhled ovládacího prvku můžete přizpůsobit tak, že mu přiřadíte nový <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, nahradíte vzhled existujícího ovládacího prvku beze změny jeho funkce. Například můžete nastavit, aby se tlačítka v aplikaci vyvolala místo výchozího čtvercového tvaru, ale tlačítko stále vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost.  
   
- Toto téma vysvětluje různé součásti <xref:System.Windows.Controls.ControlTemplate>, popisuje vytvoření jednoduchého <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>a vysvětluje, jak můžete porozumět kontrakt ovládacího prvku ovládacího prvku tak, aby si můžete přizpůsobit její vzhled. Vzhledem k tomu, že vytvoříte <xref:System.Windows.Controls.ControlTemplate> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], aniž byste museli psát jakýkoli kód, můžete změnit vzhled ovládacího prvku. Návrháře, jako je například Microsoft Expression Blend, můžete také použít k vytvoření šablony vlastního ovládacího prvku. Příklady v tomto tématu si ukážeme [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , přizpůsobit vzhled <xref:System.Windows.Controls.Button> a uvádí úplném příkladu na konci tohoto tématu. Další informace o používání Expression Blend, naleznete v tématu [práce se styly ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
+ Toto téma vysvětluje různé části <xref:System.Windows.Controls.ControlTemplate>nástroje, ukazuje vytvoření jednoduchého <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>a vysvětluje, jak porozumět kontraktu ovládacího prvku ovládacího prvku, abyste mohli přizpůsobit jeho vzhled. Vzhledem k <xref:System.Windows.Controls.ControlTemplate> tomu, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]vytvoříte v, můžete změnit vzhled ovládacího prvku bez psaní kódu. K vytvoření vlastních šablon ovládacích prvků můžete také použít návrháře, jako je například Microsoft Expression Blend. Toto téma ukazuje příklady v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , které přizpůsobují vzhled <xref:System.Windows.Controls.Button> a a uvádí kompletní příklad na konci tématu. Další informace o použití Blendu výrazů naleznete v tématu [stylování ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
   
- Následující ilustrace <xref:System.Windows.Controls.Button> , která používá <xref:System.Windows.Controls.ControlTemplate> vytvořený v tomto tématu.  
+ Následující ilustrace znázorňují <xref:System.Windows.Controls.Button> , který <xref:System.Windows.Controls.ControlTemplate> používá, který je vytvořen v tomto tématu.  
   
- ![Tlačítko se šablonou vlastního ovládacího prvku. ](./media/ndp-buttonnormal.png "NDP_ButtonNormal")  
-Tlačítko, které používá šablonu vlastního ovládacího prvku  
+ ![Tlačítko s šablonou vlastního ovládacího prvku.](./media/ndp-buttonnormal.png "NDP_ButtonNormal")  
+Tlačítko, které používá vlastní šablonu ovládacího prvku  
   
- ![Tlačítko se červené ohraničení. ](./media/ndp-buttonmouseover.png "NDP_ButtonMouseOver")  
-Tlačítko, které používá šablonu vlastního ovládacího prvku a má ukazatel myši nad ním  
+ ![Tlačítko s červeným ohraničením.](./media/ndp-buttonmouseover.png "NDP_ButtonMouseOver")  
+Tlačítko, které používá vlastní šablonu ovládacího prvku a má nad ním ukazatel myši  
 
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že vám pochopit, jak vytvořit a používat ovládací prvky a stylů, jak je popsáno v [ovládací prvky](index.md). Principy probírané v tomto tématu platí pro prvky, které dědí <xref:System.Windows.Controls.Control> třídy, s výjimkou <xref:System.Windows.Controls.UserControl>. Nelze použít <xref:System.Windows.Controls.ControlTemplate> k <xref:System.Windows.Controls.UserControl>.  
+ Toto téma předpokládá, že rozumíte tomu, jak vytvořit a používat ovládací prvky a styly, jak je popsáno v [ovládacích prvcích](index.md). Koncepty popsané v tomto tématu se vztahují na prvky, které dědí z <xref:System.Windows.Controls.Control> třídy, s výjimkou <xref:System.Windows.Controls.UserControl>. Nelze použít <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.UserControl>pro.  
   
 <a name="when_you_should_create_a_controltemplate"></a>   
-## <a name="when-you-should-create-a-controltemplate"></a>Pokud byste měli vytvořit objektu ControlTemplate  
- Ovládací prvky, jako mají mnoho vlastností <xref:System.Windows.Controls.Border.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>, a <xref:System.Windows.Controls.Control.FontFamily%2A>, můžete nastavit na určit různé aspekty vzhledu ovládacího prvku, ale změny, které můžete vytvořit pomocí nastavení těchto vlastností jsou omezené. Například můžete nastavit <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost na modrou a <xref:System.Windows.Controls.Control.FontStyle%2A> na kurzíva na <xref:System.Windows.Controls.CheckBox>.  
+## <a name="when-you-should-create-a-controltemplate"></a>Pokud byste měli vytvořit ControlTemplate  
+ Ovládací prvky mají mnoho vlastností, <xref:System.Windows.Controls.Border.Background%2A>jako jsou, <xref:System.Windows.Controls.Control.Foreground%2A>a <xref:System.Windows.Controls.Control.FontFamily%2A>, které lze nastavit, chcete-li určit různé aspekty vzhledu ovládacího prvku, ale změny, které lze provést nastavením těchto vlastností, jsou omezeny. Můžete například nastavit <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost na modrou a <xref:System.Windows.Controls.Control.FontStyle%2A> na kurzívu na <xref:System.Windows.Controls.CheckBox>.  
   
- Kdybychom neměli možnost vytvořit novou <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvky, všechny ovládací prvky v každé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace bude mít stejný celkový vzhled, který omezí možnost vytvářet aplikace s vlastní vzhled a chování. Ve výchozím nastavení každý <xref:System.Windows.Controls.CheckBox> má podobnou charakteristikou. Například obsah <xref:System.Windows.Controls.CheckBox> je vždy napravo od indikátor výběru a zaškrtávací políčko se vždy používá k označení, že <xref:System.Windows.Controls.CheckBox> zaškrtnuto.  
+ Bez možnosti vytvářet nové <xref:System.Windows.Controls.ControlTemplate> ovládací prvky by měly mít všechny ovládací prvky v každé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikaci stejný vzhled, což by mělo omezit schopnost vytvořit aplikaci s vlastním vzhledem a chováním. Ve výchozím nastavení má <xref:System.Windows.Controls.CheckBox> každý z nich podobné charakteristiky. Například obsah <xref:System.Windows.Controls.CheckBox> je vždy napravo od indikátoru výběru a zaškrtnutí je vždy použito k označení <xref:System.Windows.Controls.CheckBox> toho, že je vybrána položka.  
   
- Vytváření <xref:System.Windows.Controls.ControlTemplate> Pokud chcete přizpůsobit vzhled ovládacího prvku nad rámec doporučení dělají, jaká nastavení vlastnosti na ovládacím prvku. V příkladu <xref:System.Windows.Controls.CheckBox>, Předpokládejme, že chcete, aby obsah zaškrtnutím políčka být vyšší než indikátor výběru a chcete, aby X označuje, že <xref:System.Windows.Controls.CheckBox> zaškrtnuto. Zadejte tyto změny v <xref:System.Windows.Controls.ControlTemplate> z <xref:System.Windows.Controls.CheckBox>.  
+ Vytvoříte <xref:System.Windows.Controls.ControlTemplate> , pokud chcete přizpůsobit vzhled ovládacího prvku nad rámec toho, co nastavení dalších vlastností ovládacího prvku provede. V příkladu <xref:System.Windows.Controls.CheckBox>Předpokládejme, že chcete, aby obsah zaškrtávacího políčka byl nad indikátorem výběru a chcete <xref:System.Windows.Controls.CheckBox> , aby X označovala, že je vybrána položka. Tyto změny zadáte v <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.CheckBox>části.  
   
  Následující ilustrace ukazuje <xref:System.Windows.Controls.CheckBox> , který používá výchozí <xref:System.Windows.Controls.ControlTemplate>.  
   
- ![Zaškrtávací políčko pomocí výchozí šablony ovládacího prvku. ](./media/ndp-checkboxdefault.png "NDP_CheckBoxDefault")  
-Zaškrtávací políčko, který používá výchozí šablonu ovládacího prvku  
+ ![Zaškrtávací políčko s výchozí šablonou ovládacího prvku.](./media/ndp-checkboxdefault.png "NDP_CheckBoxDefault")  
+Zaškrtávací políčko, které používá výchozí šablonu ovládacího prvku  
   
- Následující ilustrace ukazuje <xref:System.Windows.Controls.CheckBox> , která používá vlastní <xref:System.Windows.Controls.ControlTemplate> umístit obsah <xref:System.Windows.Controls.CheckBox> nad indikátor výběru a zobrazí X při <xref:System.Windows.Controls.CheckBox> je vybraná.  
+ Následující ilustrace znázorňuje <xref:System.Windows.Controls.CheckBox> , který používá vlastní <xref:System.Windows.Controls.ControlTemplate> obsah k <xref:System.Windows.Controls.CheckBox> umístění obsahu nad ukazatel <xref:System.Windows.Controls.CheckBox> výběru a při výběru je zobrazen X.  
   
- ![Zaškrtávací políčko se šablonou vlastního ovládacího prvku. ](./media/ndp-checkboxcustom.png "NDP_CheckBoxCustom")  
-Zaškrtávací políčko, který používá šablonu vlastního ovládacího prvku  
+ ![Zaškrtávací políčko s šablonou vlastního ovládacího prvku.](./media/ndp-checkboxcustom.png "NDP_CheckBoxCustom")  
+Zaškrtávací políčko, které používá vlastní šablonu ovládacího prvku  
   
- <xref:System.Windows.Controls.ControlTemplate> Pro <xref:System.Windows.Controls.CheckBox> v tomto příkladu je poměrně složité, takže toto téma používá jednodušší příklad vytvoření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>.  
+ V této ukázce je poměrně složité, takže toto téma používá <xref:System.Windows.Controls.ControlTemplate> jednodušší příklad vytvoření pro <xref:System.Windows.Controls.Button>. <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.CheckBox>  
   
 <a name="changing_the_visual_structure_of_a_control"></a>   
 ## <a name="changing-the-visual-structure-of-a-control"></a>Změna vizuální struktury ovládacího prvku  
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], ovládací prvek je často složeného <xref:System.Windows.FrameworkElement> objekty. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, můžete kombinovat <xref:System.Windows.FrameworkElement> objekty sestavit jeden ovládací prvek. A <xref:System.Windows.Controls.ControlTemplate> musí obsahovat pouze jeden <xref:System.Windows.FrameworkElement> jako jeho kořenový element. Kořenový element obvykle obsahuje další <xref:System.Windows.FrameworkElement> objekty. Kombinace objekty tvoří vizuální struktury ovládacího prvku.  
+ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]je ovládací prvek často složených <xref:System.Windows.FrameworkElement> objektů. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, zkombinujete <xref:System.Windows.FrameworkElement> objekty pro vytvoření jednoho ovládacího prvku. Musí mít pouze jeden <xref:System.Windows.FrameworkElement> kořenový element. <xref:System.Windows.Controls.ControlTemplate> Kořenový element obvykle obsahuje jiné <xref:System.Windows.FrameworkElement> objekty. Kombinace objektů tvoří vizuální strukturu ovládacího prvku.  
   
- Následující příklad vytvoří vlastní <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>. <xref:System.Windows.Controls.ControlTemplate> Vytvoří vizuální struktury <xref:System.Windows.Controls.Button>. V tomto příkladu se nezmění jeho vzhled při přesunutí ukazatele myši nad ním nebo klikněte na něj. Změna vzhledu tlačítka, když je v jiném stavu jsou popsány dále v tomto tématu.  
+ Následující příklad vytvoří vlastní <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Button>pro. Vytvoří vizuální strukturu <xref:System.Windows.Controls.Button>. <xref:System.Windows.Controls.ControlTemplate> V tomto příkladu se vzhled tlačítka nezmění, když na něj přesunete ukazatel myši nebo na něj kliknete. Změna vzhledu tlačítka, pokud je v jiném stavu, je popsána dále v tomto tématu.  
   
- V tomto příkladu vizuální struktury se skládá z následujících částí:  
+ V tomto příkladu se vizuální struktura skládá z následujících částí:  
   
-- A <xref:System.Windows.Controls.Border> s názvem `RootElement` , který slouží jako kořen šablony <xref:System.Windows.FrameworkElement>.  
+- Název, který slouží jako kořen <xref:System.Windows.FrameworkElement>šablony. `RootElement` <xref:System.Windows.Controls.Border>  
   
-- A <xref:System.Windows.Controls.Grid> , který je podřízený `RootElement`.  
+- Objekt <xref:System.Windows.Controls.Grid> , který je `RootElement`podřízenou položkou.  
   
-- A <xref:System.Windows.Controls.ContentPresenter> , který zobrazí obsah na tlačítko. <xref:System.Windows.Controls.ContentPresenter> Umožňuje jakéhokoli typu objektu, který se má zobrazit.  
+- A <xref:System.Windows.Controls.ContentPresenter> zobrazuje obsah tlačítka. <xref:System.Windows.Controls.ContentPresenter> Umožňuje zobrazit libovolný typ objektu.  
   
  [!code-xaml[VSMButtonTemplate#BasicTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#basictemplate)]  
   
-### <a name="preserving-the-functionality-of-a-controls-properties-by-using-templatebinding"></a>Zachování funkce vlastností ovládacího prvku s použitím TemplateBinding  
- Když vytvoříte nový <xref:System.Windows.Controls.ControlTemplate>, stále můžete pomocí veřejné vlastnosti můžete změnit vzhled ovládacího prvku. [TemplateBinding](../advanced/templatebinding-markup-extension.md) vlastnost elementu, který se váže – rozšíření značek <xref:System.Windows.Controls.ControlTemplate> veřejnou vlastnost, která je definována v ovládacím prvku. Při použití [TemplateBinding](../advanced/templatebinding-markup-extension.md), povolení vlastností ovládacího prvku tak, aby fungoval jako parametry šablony. To znamená, když je nastavena vlastnost v ovládacím prvku, tato hodnota je předán na element, který má [TemplateBinding](../advanced/templatebinding-markup-extension.md) na něj.  
+### <a name="preserving-the-functionality-of-a-controls-properties-by-using-templatebinding"></a>Zachování funkčnosti vlastností ovládacího prvku pomocí TemplateBinding  
+ Když vytvoříte nový <xref:System.Windows.Controls.ControlTemplate>, můžete přesto chtít použít veřejné vlastnosti ke změně vzhledu ovládacího prvku. Rozšíření značek [TemplateBinding](../advanced/templatebinding-markup-extension.md) váže vlastnost prvku, který je v <xref:System.Windows.Controls.ControlTemplate> vlastnosti Public, která je definována ovládacím prvkem. Pokud používáte [TemplateBinding](../advanced/templatebinding-markup-extension.md), povolíte vlastnosti ovládacího prvku tak, aby sloužily jako parametry šablony. To znamená, že když je nastavena vlastnost ovládacího prvku, je tato hodnota předána prvku, který má [TemplateBinding](../advanced/templatebinding-markup-extension.md) .  
   
- V následujícím příkladu se opakuje součástí předchozí příklad, který používá [TemplateBinding](../advanced/templatebinding-markup-extension.md) – rozšíření značek pro vazbu vlastnosti prvků, které jsou v <xref:System.Windows.Controls.ControlTemplate> na veřejné vlastnosti, které jsou definovány na tlačítko.  
+ Následující příklad opakuje část předchozího příkladu, který používá rozšíření značek [TemplateBinding](../advanced/templatebinding-markup-extension.md) k vázání vlastností prvků, které jsou ve <xref:System.Windows.Controls.ControlTemplate> vlastnostech Public, které jsou definovány tlačítkem.  
   
  [!code-xaml[VSMButtonTemplate#TemplateBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#templatebinding)]  
   
- V tomto příkladu <xref:System.Windows.Controls.Grid> má jeho <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> šablony vlastnost vázána na <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>. Protože <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> je šablona vázán, můžete vytvořit více tlačítek, které používají stejné <xref:System.Windows.Controls.ControlTemplate> a nastavit <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> na různé hodnoty v každé tlačítko. Pokud <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> byla šablona není vázána na vlastnost elementu v <xref:System.Windows.Controls.ControlTemplate>a nastavte <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> tlačítko by mít žádný vliv na vzhled na tlačítko.  
+ V tomto příkladu <xref:System.Windows.Controls.Grid> <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> má vlastnost navázánou na <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>šablonu. Vzhledem <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType> k tomu, že je vázaný na šablonu, můžete vytvořit více tlačítek <xref:System.Windows.Controls.ControlTemplate> , která používají <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> stejnou hodnotu, a nastavit na každé tlačítko jiné hodnoty. Pokud <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> nebyla vytvořena vazba šablony k vlastnosti prvku <xref:System.Windows.Controls.ControlTemplate>v, nastavení <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> tlačítka by neměla mít žádný vliv na vzhled tlačítka.  
   
- Všimněte si, že názvy dvou vlastností nemusí být identické. V předchozím příkladu <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.Button> šablony je vázán na <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Controls.ContentPresenter>. To umožňuje obsahu tlačítka, který se umístil vodorovně. <xref:System.Windows.Controls.ContentPresenter> nemá vlastnost s názvem `HorizontalContentAlignment`, ale <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> může být vázaný na <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>. Když šablony můžete vytvořit vazbu vlastnosti, ujistěte se, že zdrojové a cílové vlastnosti jsou stejného typu.  
+ Všimněte si, že názvy dvou vlastností nemusejí být identické. V předchozím příkladu <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> je vlastnost <xref:System.Windows.Controls.Button> šablony svázána <xref:System.Windows.Controls.ContentPresenter>s <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType> vlastností třídy. Tím umožníte, aby byl obsah tlačítka umístěn vodorovně. <xref:System.Windows.Controls.ContentPresenter>neobsahuje vlastnost s názvem `HorizontalContentAlignment`, ale <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType> může být svázána s <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>. Když šablonu svážete s vlastností, ujistěte se, že vlastnosti target a Source jsou stejného typu.  
   
- <xref:System.Windows.Controls.Control> Třída definuje několik vlastností, které musí používat šablonu ovládacího prvku mají nějaký efekt na ovládacím prvku, když jsou nastavené. Jak <xref:System.Windows.Controls.ControlTemplate> používá vlastnost závisí na vlastnost. <xref:System.Windows.Controls.ControlTemplate> Musíte použít vlastnost v jednom z následujících způsobů:  
+ <xref:System.Windows.Controls.Control> Třída definuje několik vlastností, které musí být použity šablonou ovládacího prvku, aby měly vliv na ovládací prvek, když jsou nastaveny. Způsob, <xref:System.Windows.Controls.ControlTemplate> jakým tato vlastnost používá, závisí na vlastnosti. Vlastnost <xref:System.Windows.Controls.ControlTemplate> musí používat v jednom z následujících způsobů:  
   
-- V elementu <xref:System.Windows.Controls.ControlTemplate> šablona vytvoří vazbu na vlastnost.  
+- Prvek v <xref:System.Windows.Controls.ControlTemplate> šabloně se váže k vlastnosti.  
   
-- V elementu <xref:System.Windows.Controls.ControlTemplate> dědí vlastnosti z nadřazené položky <xref:System.Windows.FrameworkElement>.  
+- Element ve <xref:System.Windows.Controls.ControlTemplate> dědí vlastnost z nadřazené <xref:System.Windows.FrameworkElement>třídy.  
   
- Následující tabulka uvádí vizuální vlastnosti zděděna z ovládacího prvku <xref:System.Windows.Controls.Control> třídy. Také to značí, zda ovládací prvek výchozí šablonu ovládacího prvku, použije se hodnota zděděné vlastnosti nebo musí být vázán šablony.  
+ V následující tabulce jsou uvedeny vlastnosti vizuálu zděděné ovládacím prvkem z <xref:System.Windows.Controls.Control> třídy. Označuje také, zda výchozí šablona ovládacího prvku ovládacího prvku používá zděděnou hodnotu vlastnosti nebo zda musí být vázaná na šablonu.  
   
-|Vlastnost|Využití – metoda|  
+|Vlastnost|Metoda použití|  
 |--------------|------------------|  
 |<xref:System.Windows.Controls.Control.Background%2A>|Vazba šablony|  
 |<xref:System.Windows.Controls.Control.BorderThickness%2A>|Vazba šablony|  
 |<xref:System.Windows.Controls.Control.BorderBrush%2A>|Vazba šablony|  
-|<xref:System.Windows.Controls.Control.FontFamily%2A>|Dědičnost vlastnosti nebo vazba šablony|  
-|<xref:System.Windows.Controls.Control.FontSize%2A>|Dědičnost vlastnosti nebo vazba šablony|  
-|<xref:System.Windows.Controls.Control.FontStretch%2A>|Dědičnost vlastnosti nebo vazba šablony|  
-|<xref:System.Windows.Controls.Control.FontWeight%2A>|Dědičnost vlastnosti nebo vazba šablony|  
-|<xref:System.Windows.Controls.Control.Foreground%2A>|Dědičnost vlastnosti nebo vazba šablony|  
+|<xref:System.Windows.Controls.Control.FontFamily%2A>|Dědičnost vlastností nebo vazba šablony|  
+|<xref:System.Windows.Controls.Control.FontSize%2A>|Dědičnost vlastností nebo vazba šablony|  
+|<xref:System.Windows.Controls.Control.FontStretch%2A>|Dědičnost vlastností nebo vazba šablony|  
+|<xref:System.Windows.Controls.Control.FontWeight%2A>|Dědičnost vlastností nebo vazba šablony|  
+|<xref:System.Windows.Controls.Control.Foreground%2A>|Dědičnost vlastností nebo vazba šablony|  
 |<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>|Vazba šablony|  
 |<xref:System.Windows.Controls.Control.Padding%2A>|Vazba šablony|  
 |<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>|Vazba šablony|  
   
- V tabulce jsou uvedeny pouze visual vlastnosti zděděné od <xref:System.Windows.Controls.Control> třídy. Kromě vlastností uvedených v tabulce, mohou také dědit ovládacího prvku <xref:System.Windows.FrameworkElement.DataContext%2A>, <xref:System.Windows.FrameworkElement.Language%2A>, a <xref:System.Windows.Controls.TextBlock.TextDecorations%2A> vlastnosti z nadřazeného elementu framework.  
+ V tabulce jsou uvedeny pouze vlastnosti vizuálu zděděné z <xref:System.Windows.Controls.Control> třídy. Kromě vlastností uvedených v tabulce může ovládací prvek také dědit <xref:System.Windows.FrameworkElement.DataContext%2A>vlastnosti, <xref:System.Windows.FrameworkElement.Language%2A>a <xref:System.Windows.Controls.TextBlock.TextDecorations%2A> z nadřazeného prvku rozhraní.  
   
- Také pokud <xref:System.Windows.Controls.ContentPresenter> probíhá <xref:System.Windows.Controls.ControlTemplate> z <xref:System.Windows.Controls.ContentControl>, <xref:System.Windows.Controls.ContentPresenter> bude automaticky svázán s <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> a <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnosti. Podobně <xref:System.Windows.Controls.ItemsPresenter> , který je v <xref:System.Windows.Controls.ControlTemplate> z <xref:System.Windows.Controls.ItemsControl> bude automaticky svázán s <xref:System.Windows.Controls.ItemsControl.Items%2A> a <xref:System.Windows.Controls.ItemsPresenter> vlastnosti.  
+ Kromě toho, pokud <xref:System.Windows.Controls.ContentPresenter> je <xref:System.Windows.Controls.ControlTemplate> v <xref:System.Windows.Controls.ContentControl>,, <xref:System.Windows.Controls.ContentPresenter> se automaticky vytvoří vazba s <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnostmi a <xref:System.Windows.Controls.ContentControl.Content%2A> . Podobně <xref:System.Windows.Controls.ItemsPresenter> ,,,, který je <xref:System.Windows.Controls.ControlTemplate> v z <xref:System.Windows.Controls.ItemsControl> , bude automaticky svázán s <xref:System.Windows.Controls.ItemsControl.Items%2A> vlastnostmi a <xref:System.Windows.Controls.ItemsPresenter> .  
   
- Následující příklad vytvoří dvě tlačítka, které používají <xref:System.Windows.Controls.ControlTemplate> definované v předchozím příkladu. V příkladu je nastavena <xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>, a <xref:System.Windows.Controls.Control.FontSize%2A> vlastnosti na každé tlačítko. Nastavení <xref:System.Windows.Controls.Control.Background%2A> vlastnost má efekt, protože je vázán v šabloně <xref:System.Windows.Controls.ControlTemplate>. I v případě, <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.Control.FontSize%2A> vlastnosti nejsou šablony vázán, je nastavení má vliv, protože jejich hodnoty jsou zděděny.  
+ Následující příklad vytvoří dvě tlačítka, která používají <xref:System.Windows.Controls.ControlTemplate> definované v předchozím příkladu. Příklad nastaví <xref:System.Windows.Controls.Control.Background%2A>vlastnosti, <xref:System.Windows.Controls.Control.Foreground%2A>a <xref:System.Windows.Controls.Control.FontSize%2A> na každém tlačítku. Nastavení vlastnosti má vliv, protože se jedná o šablonu svázanou <xref:System.Windows.Controls.ControlTemplate>v. <xref:System.Windows.Controls.Control.Background%2A> I když vlastnosti <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.Control.FontSize%2A> nejsou vázané na šablonu, jejich nastavení má vliv, protože jejich hodnoty jsou zděděné.  
   
  [!code-xaml[VSMButtonTemplate#ButtonDeclaration](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#buttondeclaration)]  
   
- V předchozím příkladu vytvoří výstup, který se podobá následující obrázek.  
+ Předchozí příklad vytvoří výstup podobný následujícímu obrázku.  
   
- ![Dvě tlačítka, jeden modrého tlačítka a jeden nachová. ](./media/ndp-buttontwo.png "NDP_ButtonTwo")  
+ ![Dvě tlačítka, jedna modrá a jedna fialová.](./media/ndp-buttontwo.png "NDP_ButtonTwo")  
 Dvě tlačítka s různými barvami pozadí  
   
 <a name="changing_the_appearance_of_a_control_depending_on_its_state"></a>   
-## <a name="changing-the-appearance-of-a-control-depending-on-its-state"></a>Změna vzhledu ovládacího prvku v závislosti na stavu  
- Rozdíl mezi tlačítka s jeho výchozímu vzhledu a v předchozím příkladu je, že výchozí tlačítko mírně změní, když je v různých stavech. Například tlačítko výchozí vzhled změní při stisknutí tlačítka nebo když ukazatel myši je nad tlačítko. I když <xref:System.Windows.Controls.ControlTemplate> nezmění funkce ovládacího prvku, mění chování ovládacího prvku visual. Vizuální chování popisuje vzhled ovládacího prvku, až bude ve a jejich určitého stavu. Abyste pochopili rozdíl mezi visual chování ovládacího prvku a funkcí, podívejte se na příklad tlačítko. Funkce na tlačítko je zvýšit <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, když dojde ke kliknutí na, ale je změnit její vzhled, když je na kterou ukazuje nebo stisknutí tlačítka visual chování.  
+## <a name="changing-the-appearance-of-a-control-depending-on-its-state"></a>Změna vzhledu ovládacího prvku v závislosti na jeho stavu  
+ Rozdíl mezi tlačítkem s výchozím zobrazením a tlačítkem v předchozím příkladu je, že výchozí tlačítko se při různých stavech mírně mění. Například vzhled výchozího tlačítka se změní, když je stisknuto tlačítko, nebo když je ukazatel myši nad tlačítkem. <xref:System.Windows.Controls.ControlTemplate> Ačkoliv nemění funkčnost ovládacího prvku, změní vizuální chování ovládacího prvku. Vizuální chování popisuje vzhled ovládacího prvku, když je v určitém stavu. Chcete-li pochopit rozdíl mezi funkcí a vizuální chování ovládacího prvku, zvažte příklad tlačítka. Funkce tlačítka je vyvolat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost při kliknutí, ale vizuální chování tlačítka je změnit jeho vzhled, pokud je odkazováno nebo stisknuto.  
   
- Použijete <xref:System.Windows.VisualState> objekty k určení vzhledu ovládacího prvku, pokud je v určitých stavu. A <xref:System.Windows.VisualState> obsahuje <xref:System.Windows.Media.Animation.Storyboard> , který změní vzhled elementů, které jsou v <xref:System.Windows.Controls.ControlTemplate>. Není potřeba psát jakýkoli kód, abychom způsobeny tím, že logiky ovládacího prvku pomocí změní stav <xref:System.Windows.VisualStateManager>. Když ovládací prvek přejde do stavu, která je zadána <xref:System.Windows.VisualState.Name%2A?displayProperty=nameWithType> vlastnost, <xref:System.Windows.Media.Animation.Storyboard> začíná. Při ukončení ovládací prvek stavu, <xref:System.Windows.Media.Animation.Storyboard> zastaví.  
+ Objekty lze <xref:System.Windows.VisualState> použít k určení vzhledu ovládacího prvku, pokud je v určitém stavu. Obsahuje objekt <xref:System.Windows.Media.Animation.Storyboard> , který mění vzhled <xref:System.Windows.Controls.ControlTemplate>prvků, které jsou v. <xref:System.Windows.VisualState> Nemusíte psát žádný kód, aby k tomu došlo, protože logika ovládacího prvku mění stav pomocí <xref:System.Windows.VisualStateManager>. Když ovládací prvek vstoupí do stavu, který je určen <xref:System.Windows.VisualState.Name%2A?displayProperty=nameWithType> vlastností <xref:System.Windows.Media.Animation.Storyboard> , začne. Když ovládací prvek ukončí stav, zastaví se <xref:System.Windows.Media.Animation.Storyboard> .  
   
- Následující příklad ukazuje <xref:System.Windows.VisualState> , který změní vzhled <xref:System.Windows.Controls.Button> při umístění ukazatele myši nad ním. <xref:System.Windows.Media.Animation.Storyboard> Změní barvu ohraničení tlačítka tak, že změníte barvu `BorderBrush`. Pokud odkazujete <xref:System.Windows.Controls.ControlTemplate> příklad na začátku tohoto tématu, které bude Vzpomeňte si, že `BorderBrush` je název <xref:System.Windows.Media.SolidColorBrush> přiřazené <xref:System.Windows.Controls.Border.Background%2A> z <xref:System.Windows.Controls.Border>.  
+ Následující příklad ukazuje <xref:System.Windows.VisualState> , že se změní vzhled <xref:System.Windows.Controls.Button> , když je ukazatel myši nad ním. Změní barvu ohraničení tlačítka změnou barvy `BorderBrush`. <xref:System.Windows.Media.Animation.Storyboard> Pokud <xref:System.Windows.Controls.ControlTemplate> odkazujete na příklad na začátku tohoto tématu, budete si vypomenout, `BorderBrush` že <xref:System.Windows.Media.SolidColorBrush> se jedná o název, který je přiřazený ke službě <xref:System.Windows.Controls.Border.Background%2A>. <xref:System.Windows.Controls.Border>  
   
  [!code-xaml[VSMButtonTemplate#4](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#4)]  
   
- Ovládací prvek je zodpovědný za definování stavy jako součást jeho kontrakt ovládacího prvku, který je podrobně popsány v [přizpůsobení ostatní ovládací prvky Pochopením kontrakt ovládacího prvku](#customizing_other_controls_by_understanding_the_control_contract) dále v tomto tématu. V následující tabulce jsou uvedeny stavy, které jsou určené pro <xref:System.Windows.Controls.Button>.  
+ Tento ovládací prvek zodpovídá za definování států v rámci své kontrolní smlouvy, která je podrobněji popsána v tématu [přizpůsobení dalších ovládacích prvků pomocí porozumění kontraktu řízení](#customizing_other_controls_by_understanding_the_control_contract) dále v tomto tématu. V následující tabulce jsou uvedeny stavy, které jsou určeny pro <xref:System.Windows.Controls.Button>.  
   
-|Název vizuálního stavu|Název VisualStateGroup|Popis|  
+|Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|  
-|Stisknutí|CommonStates|Stisknutí ovládacího prvku.|  
-|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
-|Fokus|FocusStates|Ovládací prvek má fokus.|  
+|Normální|CommonStates|Výchozí stav.|  
+|MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
+|Stisknutí|CommonStates|Ovládací prvek se stiskne.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
+|Zaměřil|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
   
- <xref:System.Windows.Controls.Button> Definuje dvě skupiny stavů: `CommonStates` skupina obsahuje `Normal`, `MouseOver`, `Pressed`, a `Disabled` stavy. `FocusStates` Skupina obsahuje `Focused` a `Unfocused` stavy. Stavy ve stejné skupině stavů se vzájemně vylučují. Ovládací prvek, je vždy přesně jednoho stavu na skupinu. Například <xref:System.Windows.Controls.Button> i v případě, že ukazatel myši není nad ním, takže můžete mít fokus <xref:System.Windows.Controls.Button> v `Focused` stav může být v `MouseOver`, `Pressed`, nebo `Normal` stavu.  
+ `CommonStates` `Normal` Definujedvě`Disabled` skupiny stavů `MouseOver` :`Pressed`skupina obsahuje stavy,, a. <xref:System.Windows.Controls.Button> Skupina obsahuje stavy`Unfocused` a `Focused`. `FocusStates` Stavy ve stejné skupině stavů se vzájemně vylučují. Ovládací prvek je vždy v přesně jednom stavu na skupinu. <xref:System.Windows.Controls.Button> Například `Pressed`může mít fokus i `Focused` <xref:System.Windows.Controls.Button> v případě, že ukazatel myši není nad ním, takže ve stavu může být `MouseOver`ve stavu, nebo `Normal` .  
   
- Přidáte <xref:System.Windows.VisualState> objektů <xref:System.Windows.VisualStateGroup> objekty. Přidáte <xref:System.Windows.VisualStateGroup> objektů <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost. Následující příklad definuje <xref:System.Windows.VisualState> objekty pro `Normal`, `MouseOver`, a `Pressed` stavy, které jsou všechny na `CommonStates` skupiny. <xref:System.Windows.VisualState.Name%2A> Jednotlivých <xref:System.Windows.VisualState> odpovídá názvu v předchozí tabulce. `Disabled` Stavu a stavu ve `FocusStates` skupiny jsou vynechány udržovat v příkladu krátký, ale jsou zahrnuty v celé příkladu na konci tohoto tématu.  
+ Přidáte <xref:System.Windows.VisualState> objekty do <xref:System.Windows.VisualStateGroup> objektů. Přidáte <xref:System.Windows.VisualStateGroup> objekty<xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> do připojené vlastnosti. Následující <xref:System.Windows.VisualState> příklad definuje objekty `MouseOver` `Normal`pro stavy, `Pressed` a,kteréjsouveskupiněvšechny.`CommonStates` <xref:System.Windows.VisualState.Name%2A> U každého<xref:System.Windows.VisualState> odpovídá názvu v předchozí tabulce. Stav a stavy `FocusStates` ve skupině jsou vynechány, aby byl příklad krátký, ale jsou obsaženy v celém příkladu na konci tohoto tématu. `Disabled`  
   
 > [!NOTE]
->  Nezapomeňte nastavit <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost v kořenovém adresáři <xref:System.Windows.FrameworkElement> z <xref:System.Windows.Controls.ControlTemplate>.  
+> Ujistěte se, že jste <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> nastavili připojenou <xref:System.Windows.FrameworkElement> vlastnost v <xref:System.Windows.Controls.ControlTemplate>kořenu.  
   
  [!code-xaml[VSMButtonTemplate#VisualStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#visualstates)]  
   
- V předchozím příkladu vytvoří výstup, který je podobný na následujících obrázcích.  
+ Předchozí příklad vytvoří výstup podobný následujícímu obrázku.  
   
- ![Tlačítko se šablonou vlastního ovládacího prvku. ](./media/ndp-buttonnormal.png "NDP_ButtonNormal")  
-Tlačítko, které používá šablonu vlastního ovládacího prvku v normálním stavu  
+ ![Tlačítko s šablonou vlastního ovládacího prvku.](./media/ndp-buttonnormal.png "NDP_ButtonNormal")  
+Tlačítko, které používá vlastní šablonu ovládacího prvku v normálním stavu  
   
- ![Tlačítko se červené ohraničení. ](./media/ndp-buttonmouseover.png "NDP_ButtonMouseOver")  
-Tlačítko, které používá šablonu vlastního ovládacího prvku v myši nad stavu  
+ ![Tlačítko s červeným ohraničením.](./media/ndp-buttonmouseover.png "NDP_ButtonMouseOver")  
+Tlačítko, které používá vlastní šablonu ovládacího prvku ve stavu přetažení myší  
   
- ![Ohraničení je transparentní při stisknutí tlačítka. ](./media/ndp-buttonpressed.png "NDP_ButtonPressed")  
-Který používá šablonu vlastního ovládacího prvku ve stavu při stisknutí tlačítka  
+ ![Ohraničení je transparentní pro tlačítko stisknuté.](./media/ndp-buttonpressed.png "NDP_ButtonPressed")  
+Tlačítko, které používá vlastní šablonu ovládacího prvku ve stisknutém stavu  
   
- K vyhledání vizuálních stavů pro ovládací prvky, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [– styly ovládacích prvků a šablon](control-styles-and-templates.md).  
+ Chcete-li najít vizuální stavy pro ovládací prvky, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]jsou součástí nástroje, viz téma [styly a šablony ovládacích prvků](control-styles-and-templates.md).  
   
 <a name="specifying_the_behavior_of_a_control_when_it_transitions_between_states"></a>   
-## <a name="specifying-the-behavior-of-a-control-when-it-transitions-between-states"></a>Určení chování ovládacího prvku, bude přecházet mezi stavy  
- V předchozím příkladu změní vzhled tlačítka také když na něj uživatel klikne, ale pokud stisknutí tlačítka pro celou sekundu uživatel není vidět její účinek. Ve výchozím nastavení trvá animace dojde k jedné sekundy. Vzhledem k tomu, že uživatelé budou pravděpodobně klikněte na tlačítko a uvolněte tlačítko v mnohem kratší dobu, vizuální zpětnou vazbu začnou platit, pokud jste nechali <xref:System.Windows.Controls.ControlTemplate> ve svém výchozím stavu.  
+## <a name="specifying-the-behavior-of-a-control-when-it-transitions-between-states"></a>Určení chování ovládacího prvku při přechodu mezi stavy  
+ V předchozím příkladu se vzhled tlačítka také změní, když na něj uživatel klikne, ale pokud se tlačítko nestiskne po celou sekundu, uživatel se neprojeví. Ve výchozím nastavení trvá animace jedna sekunda. Vzhledem k tomu, že uživatelé budou mít pravděpodobně tlačítko a uvolní tlačítko v mnohem kratší dobu, nebude vaše vizuální vazba účinná, pokud <xref:System.Windows.Controls.ControlTemplate> ve svém výchozím stavu odejdete.  
   
- Můžete zadat dobu, kterou trvá animace každý hladký přechod ovládacího prvku z jednoho stavu do jiného tak, že přidáte <xref:System.Windows.VisualTransition> objektů <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.VisualTransition>, můžete zadat jednu nebo víc z následujících akcí:  
+ Můžete zadat dobu, po kterou bude trvat animace pro plynulé přesunutí ovládacího prvku z jednoho stavu do druhého přidáním <xref:System.Windows.VisualTransition> objektů <xref:System.Windows.Controls.ControlTemplate>do objektu. Při vytváření <xref:System.Windows.VisualTransition>zadejte jednu nebo více z následujících možností:  
   
-- Čas potřebný pro přechod mezi stavy, dojde k.  
+- Čas potřebný k přechodu mezi stavy, které mají být provedeny.  
   
-- Další změny vzhled ovládacího prvku, ke kterým dochází při přechodu.  
+- Další změny vzhledu ovládacího prvku, ke kterým dojde v době přechodu.  
   
-- Které stavy <xref:System.Windows.VisualTransition> platí pro.  
+- Který uvádí, <xref:System.Windows.VisualTransition> že se používá.  
   
 ### <a name="specifying-the-duration-of-a-transition"></a>Určení doby trvání přechodu  
- Můžete určit, jak dlouho trvá přechod tak, že nastavíte <xref:System.Windows.VisualTransition.GeneratedDuration%2A> vlastnost. V předchozím příkladu má <xref:System.Windows.VisualState> , která určuje, že okraj tlačítka viditelný, při stisknutí tlačítka, ale animace trvá příliš dlouho být patrné, pokud je tlačítko rychle stisknutí a vydání. Můžete použít <xref:System.Windows.VisualTransition> určit dobu, trvá přechod do stavu při stisknutí ovládacího prvku. Následující příklad určuje, že ovládací prvek získá setiny sekundy přejde do stavu při stisknutí tlačítka.  
+ Nastavením <xref:System.Windows.VisualTransition.GeneratedDuration%2A> vlastnosti můžete určit, jak dlouho trvá přechod. Předchozí příklad má hodnotu <xref:System.Windows.VisualState> , která určuje, že ohraničení tlačítka bude při stisknutí tlačítka transparentní, ale pokud se tlačítko rychle stiskne a uvolní, animace trvá příliš dlouho. Můžete použít <xref:System.Windows.VisualTransition> k určení doby, po kterou má ovládací prvek přejít do stisknutého stavu. Následující příklad určuje, že ovládací prvek převezme jedno setiny sekundy, aby přešl do stavu stisknuto.  
   
  [!code-xaml[VSMButtonTemplate#PressedTransition](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#pressedtransition)]  
   
-### <a name="specifying-changes-to-the-controls-appearance-during-a-transition"></a>Určení změn vzhled ovládacího prvku během přechodu  
- <xref:System.Windows.VisualTransition> Obsahuje <xref:System.Windows.Media.Animation.Storyboard> , který začíná, když ovládací prvek přechody mezi stavy. Například můžete určit, že některé animace nastane, pokud ovládací prvek se změní z `MouseOver` do stavu `Normal` stavu. Následující příklad vytvoří <xref:System.Windows.VisualTransition> , která určuje, že když uživatel přesune ukazatel myši mimo tlačítko, okraj tlačítka se změnami na modrou, pak na žlutou, pak na černou půl sekundy.  
+### <a name="specifying-changes-to-the-controls-appearance-during-a-transition"></a>Určení změn vzhledu ovládacího prvku během přechodu  
+ <xref:System.Windows.VisualTransition> Obsahuje,kterýzačínápřipřechodu<xref:System.Windows.Media.Animation.Storyboard> ovládacího prvku mezi stavy. Můžete například určit, že k určité animaci dojde, když ovládací prvek přejde ze `MouseOver` stavu `Normal` do stavu. Následující příklad vytvoří <xref:System.Windows.VisualTransition> , který určuje, že když uživatel přesune ukazatel myši na tlačítko, změní se ohraničení tlačítka na modroo a potom na žlutou, a to na černou během 1,5 sekund.  
   
  [!code-xaml[VSMButtonTemplate#8](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#8)]  
   
-### <a name="specifying-when-a-visualtransition-is-applied"></a>Určení, kdy použít VisualTransition  
- A <xref:System.Windows.VisualTransition> je možné omezit použití pouze určité stavy nebo jej lze použít pokaždé, když ovládací prvek přechodů mezi stavy. V předchozím příkladu <xref:System.Windows.VisualTransition> se použije, když se ovládací prvek dostane od `MouseOver` do stavu `Normal` stavu v příkladu, <xref:System.Windows.VisualTransition> se použije, když se ovládací prvek dostane do `Pressed` stavu. Když omezíte <xref:System.Windows.VisualTransition> platí tak, že nastavíte <xref:System.Windows.VisualTransition.To%2A> a <xref:System.Windows.VisualTransition.From%2A> vlastnosti. Následující tabulka popisuje limity omezení od nejvíce omezující nejméně omezující.  
+### <a name="specifying-when-a-visualtransition-is-applied"></a>Určení, kdy se používá VisualTransition  
+ <xref:System.Windows.VisualTransition> Může být omezeno na použití pouze v určitých stavech nebo může být použito kdykoli při přechodu ovládacího prvku mezi stavy. <xref:System.Windows.VisualTransition> V předchozím příkladu je použita v případě, kdy ovládací prvek přejde `Normal` `MouseOver` ze stavu do stavu <xref:System.Windows.VisualTransition> ; v příkladu je použita, když ovládací prvek přejde do `Pressed` stavu. Omezením, kdy <xref:System.Windows.VisualTransition> se používá, můžete omezit <xref:System.Windows.VisualTransition.To%2A> nastavením <xref:System.Windows.VisualTransition.From%2A> vlastností a. V následující tabulce jsou popsány úrovně omezení od nejvíce omezující po nejméně omezující.  
   
-|Typ omezení|Hodnota z|Hodnota pro|  
+|Typ omezení|Hodnota z|Hodnota do|  
 |-------------------------|-------------------|-----------------|  
-|V zadaném stavu do jiného zadaného stavu|Název <xref:System.Windows.VisualState>|Název <xref:System.Windows.VisualState>|  
-|Z některému ze stavů do zadaného stavu|Nenastaveno|Název <xref:System.Windows.VisualState>|  
-|V zadaném stavu k některému ze stavů|Název <xref:System.Windows.VisualState>|Nenastaveno|  
-|Z některému ze stavů do jakéhokoli jiného stavu|Nenastaveno|Nenastaveno|  
+|Z určeného stavu do jiného zadaného stavu|Název<xref:System.Windows.VisualState>|Název<xref:System.Windows.VisualState>|  
+|Ze všech stavů do zadaného stavu|Nenastaveno|Název<xref:System.Windows.VisualState>|  
+|Z určeného stavu do libovolného stavu|Název<xref:System.Windows.VisualState>|Nenastaveno|  
+|Z libovolného stavu do jakéhokoli jiného stavu|Nenastaveno|Nenastaveno|  
   
- Můžete mít více <xref:System.Windows.VisualTransition> objekty v <xref:System.Windows.VisualStateGroup> , který se podívat do stejného stavu, ale je použijete v pořadí, ve kterém určuje v předchozí tabulce. V následujícím příkladu jsou dva <xref:System.Windows.VisualTransition> objekty. Když ovládací prvek změní z `Pressed` do stavu `MouseOver` stavu, <xref:System.Windows.VisualTransition> , který má obě <xref:System.Windows.VisualTransition.From%2A> a <xref:System.Windows.VisualTransition.To%2A> sada se používá. Když ovládací prvek přejde ze stavu, který není `Pressed` k `MouseOver` stavu stav se používá.  
+ Můžete mít více <xref:System.Windows.VisualTransition> objektů <xref:System.Windows.VisualStateGroup> v objektu, které odkazují na stejný stav, ale budou použity v pořadí, v jakém má předchozí tabulka. V následujícím příkladu jsou dva <xref:System.Windows.VisualTransition> objekty. Když ovládací prvek přechází ze `Pressed` stavu `MouseOver` do stavu, <xref:System.Windows.VisualTransition> je použita sada, která <xref:System.Windows.VisualTransition.From%2A> obsahuje <xref:System.Windows.VisualTransition.To%2A> obě i sady. Když ovládací prvek přejde ze stavu, který `Pressed` není `MouseOver` do stavu, je použit druhý stav.  
   
  [!code-xaml[VSMButtonTemplate#7](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#7)]  
   
- <xref:System.Windows.VisualStateGroup> Má <xref:System.Windows.VisualStateGroup.Transitions%2A> vlastnost, která obsahuje <xref:System.Windows.VisualTransition> objekty, které se vztahují <xref:System.Windows.VisualState> objekty v <xref:System.Windows.VisualStateGroup>. Jako <xref:System.Windows.Controls.ControlTemplate> Autor, můžete libovolně k zahrnutí všech <xref:System.Windows.VisualTransition> chcete. Ale pokud <xref:System.Windows.VisualTransition.To%2A> a <xref:System.Windows.VisualTransition.From%2A> vlastnosti jsou nastaveny na názvy států, které nejsou <xref:System.Windows.VisualStateGroup>, <xref:System.Windows.VisualTransition> se ignoruje.  
+ <xref:System.Windows.VisualState> Mávlastnost,<xref:System.Windows.VisualStateGroup>která obsahuje <xref:System.Windows.VisualTransition> objekty, které se vztahují na objekty v. <xref:System.Windows.VisualStateGroup.Transitions%2A> <xref:System.Windows.VisualStateGroup> Jako autor můžete zahrnout všechny <xref:System.Windows.VisualTransition> požadované. <xref:System.Windows.Controls.ControlTemplate> Nicméně pokud <xref:System.Windows.VisualTransition.To%2A> jsou vlastnosti a <xref:System.Windows.VisualTransition.From%2A> nastaveny na názvy stavů <xref:System.Windows.VisualStateGroup>, které nejsou v, <xref:System.Windows.VisualTransition> je ignorována.  
   
- Následující příklad ukazuje <xref:System.Windows.VisualStateGroup> pro `CommonStates`. V příkladu je definována <xref:System.Windows.VisualTransition> pro každé z následujících tlačítka přechody.  
+ Následující příklad ukazuje <xref:System.Windows.VisualStateGroup> `CommonStates`pro. Příklad definuje <xref:System.Windows.VisualTransition> pro každé z následujících přechodů tlačítek.  
   
-- Chcete `Pressed` stavu.  
+- `Pressed` Do stavu.  
   
-- Chcete `MouseOver` stavu.  
+- `MouseOver` Do stavu.  
   
-- Z `Pressed` do stavu `MouseOver` stavu.  
+- `Pressed` Ze stavu`MouseOver` do stavu.  
   
-- Z `MouseOver` do stavu `Normal` stavu.  
+- `MouseOver` Ze stavu`Normal` do stavu.  
   
  [!code-xaml[VSMButtonTemplate#VisualTransitions](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/buttonstages.xaml#visualtransitions)]  
   
 <a name="customizing_other_controls_by_understanding_the_control_contract"></a>   
-## <a name="customizing-other-controls-by-understanding-the-control-contract"></a>Přizpůsobení dalších ovládacích prvků Pochopením kontrakt ovládacího prvku  
- Ovládací prvek, který se používá <xref:System.Windows.Controls.ControlTemplate> k určení jeho vizuální struktury (pomocí <xref:System.Windows.FrameworkElement> objekty) a visual chování (pomocí <xref:System.Windows.VisualState> objekty) používá model části ovládacího prvku. Mnoho ovládacích prvků, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 4 použijte tento model. Části, která <xref:System.Windows.Controls.ControlTemplate> Autor je potřeba mít na paměti, které se předávají prostřednictvím kontrakt ovládacího prvku. Při částí kontrakt ovládacího prvku porozumíte, můžete přizpůsobit vzhled libovolný ovládací prvek, který používá model části ovládacího prvku.  
+## <a name="customizing-other-controls-by-understanding-the-control-contract"></a>Přizpůsobení dalších ovládacích prvků pomocí porozumění kontraktu řízení  
+ Ovládací prvek, který používá <xref:System.Windows.Controls.ControlTemplate> k určení jeho vizuální struktury ( <xref:System.Windows.FrameworkElement> pomocí objektů) a <xref:System.Windows.VisualState> vizuální chování (pomocí objektů), používá model řízení částí. Tento model používá mnoho ovládacích prvků, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou součástí 4. Části, o kterých <xref:System.Windows.Controls.ControlTemplate> autor potřebuje vědět, se sdělují prostřednictvím smlouvy o řízení. Pokud rozumíte částem kontraktu ovládacího prvku, můžete přizpůsobit vzhled libovolného ovládacího prvku, který používá model ovládacího prvku součásti.  
   
  Kontrakt ovládacího prvku má tři prvky:  
   
-- Vizuální prvky, které používá logiky ovládacího prvku.  
+- Vizuální prvky, které logika ovládacího prvku používá.  
   
-- Stavy ovládacího prvku a skupiny, do které patří každý stav.  
+- Stavy ovládacího prvku a skupiny, do kterých každý stav patří.  
   
-- Veřejné vlastnosti, které ovlivňují vizuální ovládací prvek.  
+- Veřejné vlastnosti, které vizuálně ovlivňují ovládací prvek.  
   
-### <a name="visual-elements-in-the-control-contract"></a>Vizuální prvky v kontrakt ovládacího prvku  
- Někdy logiky ovládacího prvku komunikuje <xref:System.Windows.FrameworkElement> , který je v <xref:System.Windows.Controls.ControlTemplate>. Například ovládací prvek může zpracovat událost jednoho z jeho prvků. Pokud se očekává, že ovládací prvek najít konkrétní <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate>, je nutné sdělit <xref:System.Windows.Controls.ControlTemplate> Autor. Ovládací prvek používá <xref:System.Windows.TemplatePartAttribute> k předání typu prvku, který se očekává a co by měl být název elementu. <xref:System.Windows.Controls.Button> Nemá <xref:System.Windows.FrameworkElement> částí v jeho kontrakt ovládacího prvku, ale další ovládací prvky, jako <xref:System.Windows.Controls.ComboBox>, provést.  
+### <a name="visual-elements-in-the-control-contract"></a>Vizuální prvky v kontraktu řízení  
+ V některých případech logika ovládacího prvku komunikuje s objektem <xref:System.Windows.FrameworkElement> , který je v. <xref:System.Windows.Controls.ControlTemplate> Například ovládací prvek může zpracovat událost jednoho z jeho prvků. Když ovládací prvek očekává <xref:System.Windows.FrameworkElement> <xref:System.Windows.Controls.ControlTemplate>, že najde konkrétní informace v, musí <xref:System.Windows.Controls.ControlTemplate> předat tyto informace autorovi. Ovládací prvek používá <xref:System.Windows.TemplatePartAttribute> pro vyjádření typu prvku, který je očekáván a jaký má název elementu. Neobsahuje části v rámci kontraktu řízení, ale jiné ovládací prvky, jako je <xref:System.Windows.Controls.ComboBox>například. <xref:System.Windows.FrameworkElement> <xref:System.Windows.Controls.Button>  
   
- Následující příklad ukazuje <xref:System.Windows.TemplatePartAttribute> objekty, které jsou určeny na <xref:System.Windows.Controls.ComboBox> třídy. Logiku <xref:System.Windows.Controls.ComboBox> očekává <xref:System.Windows.Controls.TextBox> s názvem `PART_EditableTextBox` a <xref:System.Windows.Controls.Primitives.Popup> s názvem `PART_Popup` v jeho <xref:System.Windows.Controls.ControlTemplate>.  
+ Následující příklad ukazuje <xref:System.Windows.TemplatePartAttribute> objekty, které jsou zadány <xref:System.Windows.Controls.ComboBox> ve třídě. <xref:System.Windows.Controls.ComboBox> Logika očekává, že se ve svém <xref:System.Windows.Controls.TextBox> `PART_Popup` `PART_EditableTextBox` <xref:System.Windows.Controls.Primitives.Popup> polinajdepojmenovanéapojmenované<xref:System.Windows.Controls.ControlTemplate>.  
   
  [!code-csharp[VSMButtonTemplate#ComboBoxContract](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/controlcontracts.cs#comboboxcontract)]
  [!code-vb[VSMButtonTemplate#ComboBoxContract](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmbuttontemplate/visualbasic/window1.xaml.vb#comboboxcontract)]  
   
- Následující příklad ukazuje je zjednodušená <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ComboBox> , který obsahuje prvky, které jsou určeny <xref:System.Windows.TemplatePartAttribute> objektů <xref:System.Windows.Controls.ComboBox> třídy.  
+ Následující příklad ukazuje zjednodušenou <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.ComboBox> pro, který obsahuje prvky <xref:System.Windows.TemplatePartAttribute> , které jsou určeny objekty ve <xref:System.Windows.Controls.ComboBox> třídě.  
   
  [!code-xaml[VSMButtonTemplate#ComboBoxTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/window1.xaml#comboboxtemplate)]  
   
-### <a name="states-in-the-control-contract"></a>Stavy v kontrakt ovládacího prvku  
- Stavy ovládacího prvku jsou taky součástí kontrakt ovládacího prvku. Příklad vytvoření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button> ukazuje, jak určit vzhled <xref:System.Windows.Controls.Button> v závislosti na stavech. Vytváření <xref:System.Windows.VisualState> pro každý zadaný stav a uveďte všechny <xref:System.Windows.VisualState> objekty tuto sdílenou složku <xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A> v <xref:System.Windows.VisualStateGroup>, jak je popsáno v [Změna vzhledu ovládacího prvku závisí na jeho stavu](#changing_the_appearance_of_a_control_depending_on_its_state) starší v tomto téma. Ovládací prvky třetích stran by měl určit stavy pomocí <xref:System.Windows.TemplateVisualStateAttribute>, což umožňuje návrhářské nástroje, jako je například Expression Blend, ke zveřejnění stavy ovládacího prvku pro vytváření šablon ovládacích prvků.  
+### <a name="states-in-the-control-contract"></a>Stavy v rámci kontraktu řízení  
+ Stavy ovládacího prvku jsou také součástí kontraktu ovládacího prvku. Příklad vytvoření <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Button> pro pro ukazuje, jak <xref:System.Windows.Controls.Button> určit vzhled v závislosti na jeho stavech. Vytvoříte <xref:System.Windows.VisualState> pro každý zadaný stav a zadáte všechny <xref:System.Windows.VisualState> objekty <xref:System.Windows.VisualStateGroup>, které sdílí a <xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A> , jak je popsáno v části [Změna vzhledu ovládacího prvku v závislosti na jeho stavu](#changing_the_appearance_of_a_control_depending_on_its_state) dříve v tomto tématu. Ovládací prvky třetích stran by měly určovat stavy pomocí <xref:System.Windows.TemplateVisualStateAttribute>nástroje, který umožňuje nástrojům návrháře, jako je například Blend Expressions, vystavovat stavy ovládacích prvků pro vytváření šablon ovládacích prvků.  
   
- K vyhledání kontrakt ovládacího prvku pro ovládací prvky, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [– styly ovládacích prvků a šablon](control-styles-and-templates.md).  
+ Chcete-li najít kontrakt řízení pro ovládací prvky, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]jsou součástí nástroje, viz téma [styly a šablony ovládacích prvků](control-styles-and-templates.md).  
   
-### <a name="properties-in-the-control-contract"></a>Vlastnosti v kontrakt ovládacího prvku  
- Veřejné vlastnosti, které ovlivňují vizuálně ovládacího prvku jsou taky součástí kontrakt ovládacího prvku. Můžete nastavit tyto vlastnosti můžete změnit vzhled ovládacího prvku bez vytvoření nového <xref:System.Windows.Controls.ControlTemplate>. Můžete také použít [TemplateBinding](../advanced/templatebinding-markup-extension.md) – rozšíření značek pro vazbu vlastnosti prvků, které jsou v <xref:System.Windows.Controls.ControlTemplate> na veřejné vlastnosti, které jsou definovány <xref:System.Windows.Controls.Button>.  
+### <a name="properties-in-the-control-contract"></a>Vlastnosti v kontraktu řízení  
+ Veřejné vlastnosti, které vizuálně ovlivňují ovládací prvek, jsou zahrnuty i v rámci kontraktu řízení. Nastavením těchto vlastností lze změnit vzhled ovládacího prvku bez vytvoření nového <xref:System.Windows.Controls.ControlTemplate>. Můžete také použít rozšíření značek [TemplateBinding](../advanced/templatebinding-markup-extension.md) k vázání vlastností prvků, které jsou ve <xref:System.Windows.Controls.ControlTemplate> vlastnostech veřejné vlastnosti, které jsou definovány v. <xref:System.Windows.Controls.Button>  
   
- Následující příklad ukazuje kontrakt ovládacího prvku tlačítka.  
+ Následující příklad ukazuje kontrakt ovládacího prvku pro tlačítko.  
   
  [!code-csharp[VSMButtonTemplate#ButtonContract](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/controlcontracts.cs#buttoncontract)]
  [!code-vb[VSMButtonTemplate#ButtonContract](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmbuttontemplate/visualbasic/window1.xaml.vb#buttoncontract)]  
   
- Při vytváření <xref:System.Windows.Controls.ControlTemplate>, často je nejjednodušší začít s existujícím <xref:System.Windows.Controls.ControlTemplate> a provádět změny. Můžete provést jednu z následujících akcí, chcete-li změnit existující <xref:System.Windows.Controls.ControlTemplate>:  
+ Při vytváření <xref:System.Windows.Controls.ControlTemplate>je často nejjednodušší začít s existujícím <xref:System.Windows.Controls.ControlTemplate> a provádět v něm změny. Chcete-li změnit existující <xref:System.Windows.Controls.ControlTemplate>, můžete provést jednu z následujících akcí:  
   
-- Použití návrháře, jako je například Expression Blend, který poskytuje grafické uživatelské rozhraní pro vytváření šablon ovládacích prvků. Další informace najdete v tématu [práce se styly ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
+- Použijte návrháře, jako je například výraz Blend, který poskytuje grafické uživatelské rozhraní pro vytváření šablon ovládacích prvků. Další informace naleznete v tématu [stylování ovládacího prvku, který podporuje šablony](https://go.microsoft.com/fwlink/?LinkId=161153).  
   
-- Získání výchozí <xref:System.Windows.Controls.ControlTemplate> a upravit ho. Najít výchozí šablony ovládacích prvků, které jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [výchozí WPF motivy](https://go.microsoft.com/fwlink/?LinkID=158252).  
+- Získejte výchozí hodnotu <xref:System.Windows.Controls.ControlTemplate> a upravte ji. Chcete-li najít výchozí šablony ovládacích prvků, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]jsou součástí nástroje, přečtěte si téma [výchozí motivy WPF](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
 <a name="complete_example"></a>   
 ## <a name="complete-example"></a>Kompletní příklad  
- Následující příklad ukazuje kompletní <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.ControlTemplate> , která je popsána v tomto tématu.  
+ Následující příklad ukazuje kompletní <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.ControlTemplate> popis, který je popsán v tomto tématu.  
   
  [!code-xaml[VSMButtonTemplate#3](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#3)]  
   

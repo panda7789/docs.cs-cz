@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-ms.openlocfilehash: 47f27b71b282fad9d285143bf8306d7bdbb60da2
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: d13f4ce37dba45dc99f0481043d80640e73d833d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671930"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917475"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
 Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] s kódem. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější použít některý z těchto kódů.  
@@ -44,7 +44,7 @@ Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](
  Použijte libovolný přístup, který vám vyhovuje.  
   
 > [!NOTE]
->  Pokud jste ještě nepoužili C++/CLI, můžete si všimnout některých klíčových slov `gcnew` "New", jako jsou například a `nullptr` v příkladech kódu mezioperace. Tato klíčová slova nahrazují starší syntaxi s dvojitým podtržítkem (`__gc`) a poskytují přirozenější syntaxi pro spravovaný kód v. C++  Další informace o spravovaných C++funkcích/CLI najdete v tématu [rozšíření komponent pro běhové platformy](/cpp/windows/component-extensions-for-runtime-platforms) a [Hello C++,/CLI](https://go.microsoft.com/fwlink/?LinkId=98739).  
+> Pokud jste ještě nepoužili C++/CLI, můžete si všimnout některých klíčových slov `gcnew` "New", jako jsou například a `nullptr` v příkladech kódu mezioperace. Tato klíčová slova nahrazují starší syntaxi s dvojitým podtržítkem (`__gc`) a poskytují přirozenější syntaxi pro spravovaný kód v. C++  Další informace o spravovaných C++funkcích/CLI najdete v tématu [rozšíření komponent pro běhové platformy](/cpp/windows/component-extensions-for-runtime-platforms) a [Hello C++,/CLI](https://go.microsoft.com/fwlink/?LinkId=98739).  
   
 <a name="hwnds"></a>   
 ## <a name="how-wpf-uses-hwnds"></a>Jak WPF používá HWND  
@@ -83,7 +83,7 @@ Toto téma poskytuje přehled o tom, jak pracovat [!INCLUDE[TLA2#tla_winclient](
 8. Komunikujte s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektem Content pomocí odkazu, který jste uložili do statického pole pro nastavení vlastností, metod volání atd.  
   
 > [!NOTE]
->  Můžete provést některé nebo všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] definice třídy obsahu pro krok 1 v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použití výchozí částečné třídy třídy obsahu, pokud vytváříte samostatné sestavení a pak na něj odkazuje. I když obvykle zahrnete <xref:System.Windows.Application> objekt jako součást [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kompilace do sestavení, neukončíte ho jako součást spolupráce, stačí použít <xref:System.Windows.Application> jednu nebo více kořenových tříd pro soubory, na [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] které odkazuje. do aplikace a odkazují na jejich dílčí třídy. Zbytek postupu je v podstatě podobný jako uvedený výše.  
+> Můžete provést některé nebo všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] definice třídy obsahu pro krok 1 v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použití výchozí částečné třídy třídy obsahu, pokud vytváříte samostatné sestavení a pak na něj odkazuje. I když obvykle zahrnete <xref:System.Windows.Application> objekt jako součást [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kompilace do sestavení, neukončíte ho jako součást spolupráce, stačí použít <xref:System.Windows.Application> jednu nebo více kořenových tříd pro soubory, na [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] které odkazuje. do aplikace a odkazují na jejich dílčí třídy. Zbytek postupu je v podstatě podobný jako uvedený výše.  
 >   
 >  Každý z těchto kroků je znázorněn prostřednictvím kódu v tématu [Návod: Hostování obsahu WPF v systému](walkthrough-hosting-wpf-content-in-win32.md)Win32.  
   

@@ -8,34 +8,34 @@ dev_langs:
 ms.assetid: 9f436bca-1b96-494b-a6d2-e102c7551752
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9a94e0db3598cb5e2d00298144fa4826035a8e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27c19c82270b9d67b6cd308386aa93c6112d59ee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698739"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69909685"
 ---
 # <a name="remove-xml-data-using-xpathnavigator"></a>Odebrání dat XML pomocí XPathNavigator
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k odebrání uzlů a hodnot z dokumentu XML. Chcete-li používat tyto metody <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí být vlastnost `true`.  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k odebrání uzlů a hodnot z dokumentu XML. Aby bylo možné tyto metody použít, <xref:System.Xml.XPath.XPathNavigator> musí být objekt upravitelný, to znamená, že jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastnost musí `true`být.  
   
- <xref:System.Xml.XPath.XPathNavigator> objekty, které můžete upravit dokument XML jsou vytvářeny <xref:System.Xml.XmlDocument.CreateNavigator%2A> metodu <xref:System.Xml.XmlDocument> třídy. <xref:System.Xml.XPath.XPathNavigator> objekty vytvořené <xref:System.Xml.XPath.XPathDocument> třídy jsou jen pro čtení a žádný pokus o použití metod pro posunutí úprav <xref:System.Xml.XPath.XPathNavigator> objekt vytvořený pomocí <xref:System.Xml.XPath.XPathDocument> výsledkem objektu <xref:System.NotSupportedException>.  
+ <xref:System.Xml.XPath.XPathNavigator>objekty, které mohou upravovat dokument XML, jsou vytvořeny <xref:System.Xml.XmlDocument.CreateNavigator%2A> metodou <xref:System.Xml.XmlDocument> třídy. <xref:System.Xml.XPath.XPathNavigator>objekty vytvořené <xref:System.Xml.XPath.XPathDocument> třídou jsou jen pro čtení a všechny pokusy o použití metod <xref:System.Xml.XPath.XPathNavigator> úprav objektu vytvořeného <xref:System.Xml.XPath.XPathDocument> objektem mají za <xref:System.NotSupportedException>následek.  
   
- Další informace o vytváření upravitelné <xref:System.Xml.XPath.XPathNavigator> objekty, najdete [čtení dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md).  
+ Další informace o vytváření upravitelných <xref:System.Xml.XPath.XPathNavigator> objektů najdete v tématu [čtení dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
-## <a name="removing-nodes"></a>Odebrání uzlů  
- <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metoda odebrání uzlů z dokumentu XML.  
+## <a name="removing-nodes"></a>Odebírání uzlů  
+ <xref:System.Xml.XPath.XPathNavigator> Třída<xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> poskytuje metodu pro odebrání uzlů z dokumentu XML.  
   
 ### <a name="removing-a-node"></a>Odebrání uzlu  
- <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metoda odstranit aktuální uzel <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na z dokumentu XML.  
+ Třída poskytuje metodu pro<xref:System.Xml.XPath.XPathNavigator> odstranění aktuálního uzlu, na kterém je objekt aktuálně umístěný z dokumentu XML. <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> <xref:System.Xml.XPath.XPathNavigator>  
   
- Poté, co uzel byl odstraněn pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metoda, už nejsou dostupné z kořenového adresáře <xref:System.Xml.XmlDocument> objektu. Po odstranění uzlu <xref:System.Xml.XPath.XPathNavigator> je umístěn na nadřazený uzel z odstraněného uzlu.  
+ Poté, co byl uzel odstraněn pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metody, již není dosažitelný z kořenu <xref:System.Xml.XmlDocument> objektu. Po odstranění <xref:System.Xml.XPath.XPathNavigator> uzlu je umístěn v nadřazeném uzlu odstraněného uzlu.  
   
- Operace odstranění nemá vliv na pozici žádné <xref:System.Xml.XPath.XPathNavigator> objektu umístěn na odstraněného uzlu. Tyto <xref:System.Xml.XPath.XPathNavigator> objekty jsou platné v tom smyslu, že můžete přesouvat v rámci podstrom odstranila, ale nelze přesunout do hlavního uzlu stromové struktury pomocí regulárních uzel nastavení metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Operace odstranění nemá vliv na pozici žádného <xref:System.Xml.XPath.XPathNavigator> objektu umístěného na odstraněném uzlu. Tyto <xref:System.Xml.XPath.XPathNavigator> objekty jsou platné v tom smyslu, že mohou být přesunuty v odstraněném podstromu, ale nelze je přesunout do hlavního stromu uzlu pomocí regulárních metod <xref:System.Xml.XPath.XPathNavigator> navigace pro třídu.  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A> Metodu <xref:System.Xml.XPath.XPathNavigator> třídy lze použít k přesunutí těchto <xref:System.Xml.XPath.XPathNavigator> objektů zpět do hlavního uzlu stromu, nebo je z hlavního uzlu stromu odstraněné podstrom.  
+> Metodu třídy lze použít k přesunutí těchto <xref:System.Xml.XPath.XPathNavigator> objektů zpět do hlavního stromu uzlu nebo z hlavního stromu uzlu do odstraněného podstromu. <xref:System.Xml.XPath.XPathNavigator> <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>  
   
- V následujícím příkladu `price` prvek první `book` elementu `contosoBooks.xml` soubor se odstraní pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metoda. Pozice <xref:System.Xml.XPath.XPathNavigator> objektu po `price` odstranit prvek je v nadřazené `book` elementu.  
+ V následujícím příkladu `price` je prvek prvního `book` prvku `contosoBooks.xml` souboru odstraněn pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metody. Pozice <xref:System.Xml.XPath.XPathNavigator> objektu `book` po odstranění elementu je v nadřazeném elementu. `price`  
   
 ```vb  
 Dim document As XmlDocument = New XmlDocument()  
@@ -67,25 +67,25 @@ Console.WriteLine("Position after delete: {0}", navigator.Name);
 Console.WriteLine(navigator.OuterXml);  
 ```  
   
- V příkladu přebírá `contosoBooks.xml` soubor jako vstup.  
+ Tento příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ### <a name="removing-an-attribute-node"></a>Odebrání uzlu atributu  
- Odeberou se z dokumentu XML pomocí uzlů atributů <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metody.  
+ Uzly atributů jsou odebrány z dokumentu XML pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metody.  
   
- Po odstranění uzlu atributu, již není dosažitelný z kořenového uzlu <xref:System.Xml.XmlDocument> objektu a <xref:System.Xml.XPath.XPathNavigator> objekt je umístěn na nadřazený element.  
+ Po odstranění uzlu atributu již není dosažitelný z kořenového uzlu <xref:System.Xml.XmlDocument> objektu <xref:System.Xml.XPath.XPathNavigator> a objekt je umístěn v nadřazeném elementu.  
   
 #### <a name="default-attributes"></a>Výchozí atributy  
- Bez ohledu na použitou k odebrání atributů metodu jsou zvláštní omezení týkající se odebrání atributů, které jsou definovány jako výchozí atributy v souboru DTD nebo schématu XML pro dokument XML. Výchozí atributy nelze odebrat, pokud je odebrána také elementu, do kterých patří. Výchozí atributy jsou vždy k dispozici pro prvky, které mají výchozí atributy deklarovány a proto odstranění výchozí atribut výsledky v nahrazení atributu do elementu a inicializovat na výchozí hodnotu, která byla deklarována.  
+ Bez ohledu na metodu použitou k odebrání atributů existují zvláštní omezení na odebrání atributů, které jsou definovány jako výchozí atributy ve schématu DTD nebo XML pro dokument XML. Výchozí atributy nelze odebrat, pokud je odebrán také element, ke kterému patří. Výchozí atributy jsou vždy přítomny pro prvky, které mají deklarované výchozí atributy, a v důsledku toho odstranění výchozího atributu má za následek vložení nahrazujícího atributu do elementu a inicializovaného na výchozí hodnotu, která byla deklarována.  
   
-## <a name="removing-values"></a>Odebrání hodnoty  
- <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> a <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metody odebrat netypová a zadané hodnoty z dokumentu XML.  
+## <a name="removing-values"></a>Odebírají se hodnoty.  
+ Třída poskytuje metody<xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> a k odebrání netypových a typových hodnot z dokumentu XML. <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> <xref:System.Xml.XPath.XPathNavigator>  
   
-### <a name="removing-untyped-values"></a>Odebrání Netypové hodnoty  
- <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> Metoda jednoduše vloží netypové `string` předanou jako parametr jako hodnotu uzlu <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na. Prázdný řetězec k předání <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> metoda odebere hodnotu pro aktuální uzel.  
+### <a name="removing-untyped-values"></a>Odebrání netypových hodnot  
+ Metoda jednoduše vloží `string` netypové hodnoty předané jako parametr jako hodnotu uzlu, na kterém <xref:System.Xml.XPath.XPathNavigator> je objekt aktuálně umístěn. <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> Předáním prázdného řetězce <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> metodě dojde k odebrání hodnoty aktuálního uzlu.  
   
- Následující příklad odebere hodnotu `price` prvek první `book` element v `contosoBooks.xml` soubor pomocí <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> metody.  
+ Následující `price` příklad odebere hodnotu prvku prvního `book` prvku <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> v `contosoBooks.xml` souboru pomocí metody.  
   
 ```vb  
 Dim document As XmlDocument = New XmlDocument()  
@@ -117,14 +117,14 @@ navigator.MoveToRoot();
 Console.WriteLine(navigator.OuterXml);  
 ```  
   
- V příkladu přebírá `contosoBooks.xml` soubor jako vstup.  
+ Tento příklad přebírá `contosoBooks.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
-### <a name="removing-typed-values"></a>Odebrání zadaných hodnot  
- Pokud je typ uzlu W3C XML schématu jednoduché zadejte, nová hodnota vkládat stisknutím <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metoda je porovnávána s omezující vlastnosti pro jednoduchý typ. předtím, než je hodnota nastavena. Pokud je nová hodnota není platná pro typ uzlu (například nastavíte hodnotu `-1` na element, jehož typ je `xs:positiveInteger`), je výsledkem výjimky. <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> Metody nelze předat také `null` jako parametr. V důsledku odstranění hodnotu typu uzlu musí být v souladu s typem schématu uzlu.  
+### <a name="removing-typed-values"></a>Odebírají se typové hodnoty.  
+ Pokud je typ uzlu jednoduchý typ schématu W3C XML, je nová hodnota vložená <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metodou zkontrolována proti omezující vlastnosti jednoduchého typu před nastavením hodnoty. Pokud nová hodnota není platná podle typu uzlu (například nastavení hodnoty `-1` na elementu, jehož typ je `xs:positiveInteger`), výsledkem je výjimka. Metodu nelze předat `null` také jako parametr. <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> Výsledkem odebrání hodnoty typového uzlu musí odpovídat typu schématu uzlu.  
   
- Následující příklad odebere hodnotu `price` prvek první `book` element v `contosoBooks.xml` soubor pomocí <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metoda nastavením hodnoty `0`. Hodnota uzlu se neodebere, ale podle jeho datového typu byla odebrána cena knihu `xs:decimal`.  
+ `price` Následující příklad odebere hodnotu prvku prvního `book` prvku <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> v `contosoBooks.xml` souboru pomocí metody nastavením hodnoty na `0`. Hodnota uzlu není odebrána, ale cena knihy byla odebrána podle jeho datového typu `xs:decimal`.  
   
 ```vb  
 Dim settings As XmlReaderSettings = New XmlReaderSettings()  
@@ -168,18 +168,18 @@ navigator.MoveToRoot();
 Console.WriteLine(navigator.OuterXml);  
 ```  
   
-## <a name="namespace-nodes"></a>Namespace uzly  
- Namespace uzly nelze odstranit ze <xref:System.Xml.XmlDocument> objektu. Pokusí se odstranit obor názvů uzlů pomocí <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> metodu vede k výjimce.  
+## <a name="namespace-nodes"></a>Uzly oboru názvů  
+ Uzly oboru názvů nelze odstranit z <xref:System.Xml.XmlDocument> objektu. Při pokusu o odstranění uzlů oboru <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> názvů pomocí metody dojde k výjimce.  
   
-## <a name="the-innerxml-and-outerxml-properties"></a>InnerXml a OuterXml vlastnosti  
- <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> a <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> vlastnosti <xref:System.Xml.XPath.XPathNavigator> třídy změnit kód XML uzlů <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na.  
+## <a name="the-innerxml-and-outerxml-properties"></a>Vlastnosti InnerXml a OuterXml  
+ Vlastnosti <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A>třídya třídy<xref:System.Xml.XPath.XPathNavigator> mění kód XML uzlů, na kterých je objekt aktuálně umístěn. <xref:System.Xml.XPath.XPathNavigator>  
   
- <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> Vlastnost se změní kód XML podřízených uzlů <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na s analyzovaný obsah XML daného `string`. Podobně <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> vlastnost se změní kód XML podřízených uzlů <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na i samotný uzel aktuální.  
+ Vlastnost změní kód XML podřízených <xref:System.Xml.XPath.XPathNavigator> uzlů, na kterých je objekt aktuálně umístěn, s analyzovaným obsahem daného XML `string`. <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> Podobně vlastnost mění kód XML podřízených <xref:System.Xml.XPath.XPathNavigator> uzlů, na kterých je objekt aktuálně umístěn, i v samotném aktuálním uzlu. <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A>  
   
- Kromě metod popsaných v tomto tématu <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> a <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> vlastnosti můžete použít k odebrání uzlů a hodnot z dokumentu XML. Další informace o používání <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> a <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> vlastnosti, které chcete upravit uzly, najdete v článku [upravit dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md) tématu.  
+ Kromě metod popsaných v tomto tématu <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> lze vlastnosti a <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> použít k odebrání uzlů a hodnot z dokumentu XML. Další informace o použití <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> vlastností a <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> pro úpravu uzlů naleznete v tématu [Úprava dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md) .  
   
 ## <a name="saving-an-xml-document"></a>Uložení dokumentu XML  
- Ukládají se změny provedené <xref:System.Xml.XmlDocument> objekt výsledku z metod popsaných v tomto tématu se provádí pomocí metody <xref:System.Xml.XmlDocument> třídy. Další informace o uložení změny <xref:System.Xml.XmlDocument> objektu, najdete v článku [ukládání a zápis dokumentu](../../../../docs/standard/data/xml/saving-and-writing-a-document.md).  
+ Uložení změn provedených <xref:System.Xml.XmlDocument> v objektu jako výsledek metod popsaných v tomto tématu se provádí pomocí metod <xref:System.Xml.XmlDocument> třídy. Další informace o ukládání změn provedených <xref:System.Xml.XmlDocument> v objektu naleznete v tématu [ukládání a zápis dokumentu](../../../../docs/standard/data/xml/saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Viz také:
 

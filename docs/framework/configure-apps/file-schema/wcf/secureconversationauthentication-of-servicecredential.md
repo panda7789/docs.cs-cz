@@ -2,20 +2,20 @@
 title: <secureConversationAuthentication> z <serviceCredential>
 ms.date: 03/30/2017
 ms.assetid: 0bd3fac7-befd-4a45-ba51-c200b33be0fd
-ms.openlocfilehash: f35392b91d047c46e65ce433ef544b86cf6c88c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61034c2c66a6d8e27a87ec5380aa7297247eb31e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670609"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935834"
 ---
-# <a name="secureconversationauthentication-of-servicecredential"></a>\<secureConversationAuthentication> of \<serviceCredential>
-Určuje nastavení pro služby zabezpečené konverzace.  
+# <a name="secureconversationauthentication-of-servicecredential"></a>\<secureConversationAuthentication > \<serviceCredential >
+Určuje nastavení pro službu zabezpečené konverzace.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<secureConversationAuthentication>  
   
@@ -32,7 +32,7 @@ Určuje nastavení pro služby zabezpečené konverzace.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`securityStateEncoderType`|Řetězec, který určuje typ <xref:System.ServiceModel.Security.SecurityStateEncoder> má být použit.|  
+|`securityStateEncoderType`|Řetězec, který určuje typ <xref:System.ServiceModel.Security.SecurityStateEncoder> , který se má použít.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -41,10 +41,10 @@ Určuje nastavení pro služby zabezpečené konverzace.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
+|[\<serviceCredentials>](servicecredentials.md)|Určuje přihlašovací údaje, které se mají použít při ověřování služby, a nastavení související s ověřením přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použijte tento prvek konfigurace pro zadání seznamu známé deklarace typů pro serializaci soubory cookie zabezpečení kontextu Token (SCT), stejně jako kodéru pro kódování a zabezpečit informace soubory cookie. Další informace o SCT najdete v tématu <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
+ Tento prvek konfigurace slouží k určení seznamu známých typů deklarací pro serializaci souborů cookie tokenu zabezpečení (SCT) a také kodéru ke kódování a zabezpečení informací o souborech cookie. Další informace o SCT naleznete v tématu <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -25,12 +25,12 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: 763fdb442fa0037dafd51f89badd04436e24d254
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 5ff5e68fbce320076e6d18e9e139b418a15bba77
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566830"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924645"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# referenční)
 
@@ -145,7 +145,7 @@ Při vyvolání [konstruktoru](../../programming-guide/classes-and-structs/const
 
 ### <a name="other-usages-of-"></a>Další použití pro ()
 
-K určení pořadí, ve kterém se mají vyhodnotit operace ve výrazu, můžete také použít kulaté závorky. Další informace naleznete v části [Přidání závorek](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) v článku věnovaném [operátorům](../../programming-guide/statements-expressions-operators/operators.md) . Seznam operátorů seřazených podle priority najdete v tématu [ C# operátory](index.md).
+Pomocí závorek můžete také upravit pořadí, ve kterém se mají vyhodnocovat operace ve výrazu. Další informace najdete v tématu [ C# operátory](index.md).
 
 [Výrazy přetypování](type-testing-and-cast.md#cast-operator-), které provádějí explicitní převody typů, používají také závorky.
 

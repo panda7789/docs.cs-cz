@@ -8,45 +8,45 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-ms.openlocfilehash: c053c14bb06d1bb28c7b7e6652ccc6e41af9c4e5
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: f0d4b99f9ee0134fc7334a941dd5ef4fd7ba3df3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170609"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930196"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
-Vykreslení ve Windows Forms, který je také označován jako vlastní kreslení, vlastníka je postup pro změnu vizuálního vzhledu některé ovládací prvky.  
+Vlastní kreslení v model Windows Forms, který se také označuje jako vlastní kreslení, je technika pro změnu vzhledu některých ovládacích prvků.  
   
 > [!NOTE]
->  Slovo "control" v tomto tématu se používá k označení tříd, které jsou odvozeny z buď <xref:System.Windows.Forms.Control> nebo <xref:System.ComponentModel.Component>.  
+> Slovo "ovládací prvek" v tomto tématu se používá jako třídy, které jsou odvozeny <xref:System.Windows.Forms.Control> z <xref:System.ComponentModel.Component>buď nebo.  
   
- Obvykle Windows zpracovává Malování automaticky pomocí nastavení vlastností, jako <xref:System.Windows.Forms.Control.BackColor%2A> k určení vzhledu ovládacího prvku. Pomocí vykreslení vlastníka můžete převzít kontrolu nad procesu Malování Změna vzhledu prvky, které nejsou k dispozici s použitím vlastností. Například mnoho ovládacích prvků můžete tak nastavit barvu textu, který se zobrazí, ale pro vás platí omezení na jednu barvu. Kreslení vlastníka můžete třeba zobrazit část textu v černé a část červeně.  
+ Systém Windows obvykle zpracovává automatické malování pomocí nastavení vlastností, jako je <xref:System.Windows.Forms.Control.BackColor%2A> například k určení vzhledu ovládacího prvku. Při kreslení vlastníka převezmete proces Malování a změníte prvky vzhledu, které nejsou k dispozici pomocí vlastností. Mnoho ovládacích prvků například umožňuje nastavit barvu zobrazeného textu, ale budete omezeni na jednu barvu. Vlastní vykreslování umožňuje provádět akce, jako je například zobrazení části textu černě a částečně.  
   
- V praxi se podobá vykreslování grafiky ve formuláři vykreslení vlastníka. Například můžete použít grafické metody v obslužné rutině pro daný formulář <xref:System.Windows.Forms.Control.Paint> událostí k emulaci `ListBox` ovládacího prvku, ale byste museli napsat vlastní kód pro zpracování všechny interakce s uživatelem. Pomocí vykreslení vlastníka ovládací prvek nakreslit jeho obsah pomocí kódu, ale jinak uchovává všechny vnitřní funkce. Metody grafiky můžete použít k vykreslení každou položku v ovládacím prvku nebo přizpůsobit některé aspekty každou položku, když použijete výchozí vzhled jiných aspektů každé položky.  
+ V praxi je kreslení vlastníka podobné kreslení grafik na formuláři. Například můžete použít grafické metody v obslužné rutině pro <xref:System.Windows.Forms.Control.Paint> událost formuláře k emulaci `ListBox` ovládacího prvku, ale budete muset napsat vlastní kód pro zpracování interakce všech uživatelů. Při kreslení vlastníka používá ovládací prvek váš kód k nakreslení jeho obsahu, ale jinak uchovává všechny jeho vnitřní funkce. Můžete použít grafické metody pro vykreslení každé položky v ovládacím prvku nebo pro přizpůsobení některých aspektů každé položky, zatímco používáte výchozí vzhled pro jiné aspekty každé položky.  
   
-## <a name="owner-drawing-in-windows-forms-controls"></a>Kreslení vlastníka ve Windows Forms ovládací prvky  
- K provedení vlastníka kreslení v ovládacích prvcích, které ho podporují, bude obvykle jednu vlastnost a zpracovat jeden nebo více událostí.  
+## <a name="owner-drawing-in-windows-forms-controls"></a>Vlastní kreslení v ovládacích prvcích model Windows Forms  
+ Chcete-li provést vykreslování vlastníka v ovládacích prvcích, které ho podporují, obvykle nastavíte jednu vlastnost a zpracujete jednu nebo více událostí.  
   
- Většina ovládací prvky mají tento vlastník podporu kreslení `OwnerDraw` nebo `DrawMode` vlastnost, která označuje, zda ovládací prvek vyvolá jeho události související s kreslení nebo události, kdy ho jsou vykreslovány samotný.  
+ Většina ovládacích prvků, které podporují kreslení vlastníka `OwnerDraw` , `DrawMode` mají vlastnost nebo, která označuje, zda ovládací prvek při malování sám vyvolá událost související s kreslením nebo události.  
   
- Ovládací prvky, které nemají `OwnerDraw` nebo `DrawMode` zahrnují vlastnosti `DataGridView` ovládací prvek, který poskytuje výkresu události, které se automaticky provedou, a `ToolStrip` ovládací prvek, který je vykreslen třídu externí vykreslování, který má vlastní Kreslení související události.  
+ `OwnerDraw` Ovládací prvky, které nemají vlastnost nebo `DrawMode` , obsahují `DataGridView` ovládací prvek, který poskytuje události `ToolStrip` kreslení, ke kterým dochází automaticky, a ovládací prvek, který je vykreslen pomocí externí třídy vykreslování, která má vlastní. události související s vykreslováním.  
   
- Existuje mnoho různých druhů kreslení události, ale typické výkresu události dojde k vykreslení jednu položku v ovládacím prvku. Obslužná rutina události obdrží `EventArgs` objekt, který obsahuje informace o položkách, které je cílem vykreslování a nástrojích, které můžete použít k vykreslení ho. Například tento objekt obvykle obsahuje položky číslo indexu v rámci kolekce jeho nadřazených prvků <xref:System.Drawing.Rectangle> , který určuje položky zobrazit hranice a <xref:System.Drawing.Graphics> objekt pro volání metod Malování. Pro některé události `EventArgs` objekt poskytuje další informace o položky a metody, které můžete volat za účelem vykreslení některé aspekty položky ve výchozím nastavení, jako je například na pozadí nebo rámečku fokusu.  
+ Existuje mnoho různých typů událostí kreslení, ale k typické události kreslení dojde, pokud chcete nakreslit jednu položku v rámci ovládacího prvku. Obslužná rutina události obdrží `EventArgs` objekt, který obsahuje informace o vykreslené položce a o nástrojích, které můžete použít k vykreslení. Například tento objekt obvykle obsahuje číslo indexu položky v rámci své nadřazené kolekce, <xref:System.Drawing.Rectangle> která označuje hranice zobrazení položky <xref:System.Drawing.Graphics> a objekt pro volání metod vybarvení. U některých událostí `EventArgs` objekt poskytuje další informace o položce a metodách, které lze volat k malování některých aspektů položky ve výchozím nastavení, jako je například pozadí nebo obdélník výběru.  
   
- Vytvoření opakovaně použitelné ovládací prvek, který obsahuje vaše vlastní nastavení vykreslovaných vlastníkem, vytvořte novou třídu, která je odvozena z třídy ovládacího prvku, který podporuje vykreslení vlastníka. Namísto zpracování událostí výkresu, zahrnout kód vykreslování vlastníkem přepsání pro odpovídající `On` *EventName* metodu nebo metody v této nové třídě. Ujistěte se, že můžete volat základní třídy `On` *EventName* metodu nebo metody v tomto případě tak, aby uživatelé ovládacího prvku může zpracovávat události vykreslování vlastníkem a poskytují líp přizpůsobte.  
+ Chcete-li vytvořit opakovaně použitelný ovládací prvek, který obsahuje vlastní nastavení vykreslené uživatelem, vytvořte novou třídu, která je odvozena z třídy ovládacího prvku, která podporuje vykreslování vlastníka. Místo zpracování událostí vykreslování zahrňte do přepsání kód pro vykreslení vlastníka pro příslušnou `On`metodu nebo metody *EventName* v nové třídě. Ujistěte se, že v tomto případě zavoláte metodu nebo metody `On` *EventName* základní třídy, aby uživatelé vašeho ovládacího prvku mohli zpracovávat události vykreslování vlastníka a poskytnout další přizpůsobení.  
   
- Následující Windows Forms – ovládací prvky podporu vlastníka kreslení ve všech verzích rozhraní .NET Framework:  
+ Následující model Windows Forms řídí vykreslování vlastníků ve všech verzích .NET Framework:  
   
 - <xref:System.Windows.Forms.ListBox>  
   
 - <xref:System.Windows.Forms.ComboBox>  
   
-- <xref:System.Windows.Forms.MenuItem> (používají <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>)  
+- <xref:System.Windows.Forms.MenuItem>(používá se <xref:System.Windows.Forms.MainMenu> v <xref:System.Windows.Forms.ContextMenu>a)  
   
 - <xref:System.Windows.Forms.TabControl>  
   
- Následující ovládací prvky podporují pouze v rozhraní .NET Framework 2.0 kreslení vlastníka:  
+ Následující ovládací prvky podporují kreslení vlastníka pouze v .NET Framework 2,0:  
   
 - <xref:System.Windows.Forms.ToolTip>  
   
@@ -54,25 +54,25 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 - <xref:System.Windows.Forms.TreeView>  
   
- Následující ovládací prvky podporují kreslení vlastníka a jsou nové v rozhraní .NET Framework 2.0:  
+ Následující ovládací prvky podporují kreslení vlastníka a jsou v .NET Framework 2,0 nové:  
   
 - <xref:System.Windows.Forms.DataGridView>  
   
 - <xref:System.Windows.Forms.ToolStrip>  
   
- Následující části obsahují další podrobnosti pro každou z těchto ovládacích prvků.  
+ Následující části obsahují další podrobnosti o každém z těchto ovládacích prvků.  
   
-### <a name="listbox-and-combobox-controls"></a>ListBox – a ovládací prvky pole se seznamem  
- <xref:System.Windows.Forms.ListBox> a <xref:System.Windows.Forms.ComboBox> ovládací prvky umožňují nakreslete jednotlivých položek v ovládacím prvku vše na velikosti, nebo v různých velikostí.  
+### <a name="listbox-and-combobox-controls"></a>Ovládací prvky ListBox a ComboBox  
+ Ovládací prvky <xref:System.Windows.Forms.ComboBox> a umožňují kreslit jednotlivé položky v ovládacím prvku buď v jedné velikosti, nebo v různých velikostech. <xref:System.Windows.Forms.ListBox>  
   
 > [!NOTE]
->  I když <xref:System.Windows.Forms.CheckedListBox> ovládací prvek je odvozený z <xref:System.Windows.Forms.ListBox> ovládacího prvku, a proto není podporována vykreslení vlastníka.  
+> I když je <xref:System.Windows.Forms.ListBox> ovládací prvek odvozen z ovládacího prvku, nepodporuje vykreslování vlastníka. <xref:System.Windows.Forms.CheckedListBox>  
   
- Chcete-li nakreslit každou položku se stejnou velikostí, nastavte `DrawMode` vlastnost <xref:System.Windows.Forms.DrawMode.OwnerDrawFixed> a zpracovat `DrawItem` událostí.  
+ Chcete-li každou položku nakreslit na stejnou velikost `DrawMode` , nastavte <xref:System.Windows.Forms.DrawMode.OwnerDrawFixed> vlastnost na a `DrawItem` zpracujte událost.  
   
- Chcete-li nakreslit každou položku pomocí různých velikostí, nastavte `DrawMode` vlastnost <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable> a zpracovat oba `MeasureItem` a `DrawItem` události. `MeasureItem` Událostí umožňuje určit velikost položky před `DrawItem` dojde k události pro danou položku.  
+ Pro vykreslení každé položky pomocí `DrawMode` jiné velikosti nastavte vlastnost na <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable> a zpracujte `MeasureItem` události a `DrawItem` . Událost umožňuje určit velikost položky `DrawItem` před tím, než dojde k události pro tuto položku. `MeasureItem`  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících tématech:  
   
 - <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=nameWithType>  
   
@@ -88,12 +88,12 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 - [Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox](how-to-create-variable-sized-text-in-a-combobox-control.md)  
   
-### <a name="menuitem-component"></a>Komponenta položku nabídky  
- <xref:System.Windows.Forms.MenuItem> Představuje samostatnou položku nabídky v součásti <xref:System.Windows.Forms.MainMenu> nebo <xref:System.Windows.Forms.ContextMenu> komponenty.  
+### <a name="menuitem-component"></a>Komponenta MenuItem  
+ Komponenta představuje jednu položku nabídky <xref:System.Windows.Forms.MainMenu> v součásti nebo <xref:System.Windows.Forms.ContextMenu>. <xref:System.Windows.Forms.MenuItem>  
   
- Chcete-li nakreslit <xref:System.Windows.Forms.MenuItem>, nastavte jeho `OwnerDraw` vlastnost `true` a zpracovat jeho `DrawItem` událostí. Chcete-li přizpůsobit velikost položky nabídky před `DrawItem` dojde k události, zpracování položky `MeasureItem` událostí.  
+ Chcete-li <xref:System.Windows.Forms.MenuItem>nakreslit, `OwnerDraw` nastavte jeho `true` vlastnost na a `DrawItem` zpracujte její událost. Chcete-li přizpůsobit velikost položky nabídky před `DrawItem` výskytem události, zpracujte `MeasureItem` událost položky.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících referenčních tématech:  
   
 - <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=nameWithType>  
   
@@ -102,22 +102,22 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
 - <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=nameWithType>  
   
 ### <a name="tabcontrol-control"></a>TabControl – ovládací prvek  
- <xref:System.Windows.Forms.TabControl> Ovládací prvek umožňuje nakreslit jednotlivé karty v ovládacím prvku. Kreslení vlastníka má vliv pouze na karty; <xref:System.Windows.Forms.TabPage> obsah to nebude mít vliv.  
+ <xref:System.Windows.Forms.TabControl> Ovládací prvek umožňuje kreslit jednotlivé karty v ovládacím prvku. Vlastní kresba má vliv pouze na karty; <xref:System.Windows.Forms.TabPage> obsah není ovlivněn.  
   
- Chcete-li nakreslit každá karta <xref:System.Windows.Forms.TabControl>, nastavte `DrawMode` vlastnost <xref:System.Windows.Forms.TabDrawMode.OwnerDrawFixed> a zpracování `DrawItem` událostí. Tato událost akce proběhne jednou pro každou kartu pouze v případě, že na kartě zobrazený v ovládacím prvku.  
+ Chcete-li nakreslit každou <xref:System.Windows.Forms.TabControl>kartu v, `DrawMode` nastavte `DrawItem` vlastnost <xref:System.Windows.Forms.TabDrawMode.OwnerDrawFixed> na a zpracujte událost. Tato událost nastane jednou pro každou kartu pouze v případě, že je karta viditelná v ovládacím prvku.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících referenčních tématech:  
   
 - <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=nameWithType>  
   
 - <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=nameWithType>  
   
 ### <a name="tooltip-component"></a>ToolTip – komponenta  
- <xref:System.Windows.Forms.ToolTip> Komponenty umožňuje nakreslit celý popis, jakmile se zobrazí.  
+ <xref:System.Windows.Forms.ToolTip> Komponenta umožňuje při zobrazení zobrazit celý popis tlačítka.  
   
- Chcete-li nakreslit <xref:System.Windows.Forms.ToolTip>, nastavte jeho `OwnerDraw` vlastnost `true` a zpracovat jeho `Draw` událostí. Přizpůsobit velikost <xref:System.Windows.Forms.ToolTip> před `Draw` dojde k události, zpracování `Popup` událostí a nastavte <xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A> vlastnost v obslužné rutině události.  
+ Chcete-li <xref:System.Windows.Forms.ToolTip>nakreslit, `OwnerDraw` nastavte jeho `true` vlastnost na a `Draw` zpracujte její událost. Chcete-li přizpůsobit <xref:System.Windows.Forms.ToolTip> velikost, `Draw` než dojde k `Popup` události, zpracujte událost a nastavte <xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A> vlastnost v obslužné rutině události.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících referenčních tématech:  
   
 - <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>  
   
@@ -126,15 +126,15 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
 - <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>  
   
 ### <a name="listview-control"></a>ListView – ovládací prvek  
- <xref:System.Windows.Forms.ListView> Ovládací prvek umožňuje nakreslit jednotlivých položek, podřízené položky a záhlaví sloupců v ovládacím prvku.  
+ <xref:System.Windows.Forms.ListView> Ovládací prvek umožňuje v ovládacím prvku nakreslit jednotlivé položky, podpoložky a záhlaví sloupců.  
   
- Pokud chcete povolit vlastníka výkres v ovládacím prvku, nastavte `OwnerDraw` vlastnost `true`.  
+ Chcete-li povolit vykreslování vlastníka v ovládacím prvku, `OwnerDraw` nastavte vlastnost `true`na hodnotu.  
   
- Chcete-li nakreslit každou položku v ovládacím prvku, zpracovat `DrawItem` událostí.  
+ Chcete-li nakreslit každou položku v ovládacím prvku `DrawItem` , zpracujte událost.  
   
- Chcete-li nakreslit záhlaví každého sloupce nebo podřízenou položku v ovládacím prvku při <xref:System.Windows.Forms.ListView.View%2A> je nastavena na <xref:System.Windows.Forms.View.Details>, zpracovat `DrawSubItem` a `DrawColumnHeader` události.  
+ Chcete-li v ovládacím prvku nakreslit jednotlivá záhlaví podpoložky nebo <xref:System.Windows.Forms.ListView.View%2A> sloupce, když je <xref:System.Windows.Forms.View.Details>vlastnost nastavena na `DrawSubItem` , `DrawColumnHeader` zpracujte události a.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících referenčních tématech:  
   
 - <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>  
   
@@ -145,26 +145,26 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
 - <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>  
   
 ### <a name="treeview-control"></a>TreeView – ovládací prvek  
- <xref:System.Windows.Forms.TreeView> Ovládací prvek umožňuje nakreslit jednotlivé uzly v ovládacím prvku.  
+ <xref:System.Windows.Forms.TreeView> Ovládací prvek umožňuje kreslit jednotlivé uzly v ovládacím prvku.  
   
- Chcete-li nakreslit pouze text zobrazený v každém uzlu, nastavte `DrawMode` vlastnost <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText> a zpracovat `DrawNode` události vykreslování textu.  
+ Chcete-li nakreslit pouze text zobrazený v každém uzlu `DrawMode` , nastavte <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText> vlastnost na a `DrawNode` zpracujte událost pro vykreslení textu.  
   
- Chcete-li nakreslit všechny prvky každého uzlu, nastavte `DrawMode` vlastnost <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll> a zpracovat `DrawNode` událost k vykreslení elementů, podle toho, která budete potřebovat, jako například text, ikony, zaškrtněte políčka, plus a minus a čáry spojující uzly.  
+ Chcete-li nakreslit všechny prvky každého uzlu, `DrawMode` nastavte vlastnost <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll> na a zpracujte `DrawNode` událost pro vykreslení všech potřebných prvků, jako jsou text, ikony, zaškrtávací políčka, znaménka plus a mínus a čáry připojující uzly.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících referenčních tématech:  
   
 - <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>  
   
 - <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>  
   
 ### <a name="datagridview-control"></a>DataGridView – ovládací prvek  
- <xref:System.Windows.Forms.DataGridView> Ovládací prvek umožňuje nakreslit jednotlivé buňky a řádků v ovládacím prvku.  
+ <xref:System.Windows.Forms.DataGridView> Ovládací prvek umožňuje kreslit jednotlivé buňky a řádky v ovládacím prvku.  
   
- Chcete-li nakreslit jednotlivé buňky, zpracovat `CellPainting` událostí.  
+ Chcete-li nakreslit jednotlivé buňky `CellPainting` , zpracujte událost.  
   
- Chcete-li nakreslit jednotlivé řádky nebo řádků, zpracovat jeden nebo oba `RowPrePaint` a `RowPostPaint` události. `RowPrePaint` Předtím, než jsou překreslit buňky v řádku, dojde k události a `RowPostPaint` po buňky jsou překreslit dojde k události. Dokáže zpracovat oba události a `CellPainting` událost k vykreslení pozadí řádku, jednotlivé buňky a řádek popředí samostatně, nebo můžete zadat konkrétní přizpůsobení, kde je potřebujete a použijte výchozí zobrazení pro další prvky řádku.  
+ Chcete-li nakreslit jednotlivé řádky nebo prvky řádků, zpracujte jednu nebo obě `RowPrePaint` události `RowPostPaint` a. K události dojde před vykreslením buněk v řádku `RowPostPaint` a událost nastane po vykreslení buněk. `RowPrePaint` Můžete zpracovávat obě události a `CellPainting` událost pro malování pozadí řádku, jednotlivé buňky a popředí řádku samostatně nebo můžete zadat konkrétní vlastní nastavení, kde je potřebujete, a použít výchozí zobrazení pro jiné prvky řádku.  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících tématech:  
   
 - <xref:System.Windows.Forms.DataGridView.CellPainting>  
   
@@ -172,20 +172,20 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 - <xref:System.Windows.Forms.DataGridView.RowPostPaint>  
   
-- [Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md)  
+- [Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku DataGridView model Windows Forms](customize-the-appearance-of-cells-in-the-datagrid.md)  
   
-- [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-rows-in-the-datagrid.md)  
+- [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku DataGridView model Windows Forms](customize-the-appearance-of-rows-in-the-datagrid.md)  
   
 ### <a name="toolstrip-control"></a>ToolStrip – ovládací prvek  
- <xref:System.Windows.Forms.ToolStrip> a odvozené ovládací prvky umožňují přizpůsobit jiného aspektu jejich výskytu.  
+ <xref:System.Windows.Forms.ToolStrip>a odvozené ovládací prvky umožňují přizpůsobit libovolný aspekt jejich vzhledu.  
   
- Poskytnout vlastní vykreslování pro <xref:System.Windows.Forms.ToolStrip> ovládací prvky, nastavit `Renderer` vlastnost <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.ToolStripManager>, <xref:System.Windows.Forms.ToolStripPanel>, nebo <xref:System.Windows.Forms.ToolStripContentPanel> k `ToolStripRenderer` objektu a zpracovat jeden nebo více mnoho událostí výkresu poskytované `ToolStripRenderer` třídy. Můžete také nastavit `Renderer` vlastnost instance vlastní třídy odvozené z `ToolStripRenderer`, <xref:System.Windows.Forms.ToolStripProfessionalRenderer>, nebo <xref:System.Windows.Forms.ToolStripSystemRenderer> , který implementuje nebo přepíše konkrétní `On` *EventName* metody.  
+ Chcete-li poskytnout vlastní <xref:System.Windows.Forms.ToolStrip> vykreslování pro ovládací prvky `Renderer` , nastavte <xref:System.Windows.Forms.ToolStripPanel>vlastnost <xref:System.Windows.Forms.ToolStrip> `ToolStripRenderer` objektu <xref:System.Windows.Forms.ToolStripManager>,, nebo <xref:System.Windows.Forms.ToolStripContentPanel> na objekt a zpracujte jednu nebo více mnoha událostí kreslení poskytovaných `ToolStripRenderer` třída. Případně můžete `Renderer` nastavit vlastnost na instanci vaší vlastní třídy odvozené z `ToolStripRenderer`, <xref:System.Windows.Forms.ToolStripProfessionalRenderer>nebo <xref:System.Windows.Forms.ToolStripSystemRenderer> , která implementuje nebo Přepisuje konkrétní `On`metody *EventName* .  
   
- Další informace, včetně příkladů kódu naleznete v následujících tématech:  
+ Další informace, včetně příkladů kódu, najdete v následujících tématech:  
   
 - <xref:System.Windows.Forms.ToolStripRenderer>  
   
-- [Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
+- [Postupy: Vytvoření a nastavení vlastního zobrazovací jednotky pro ovládací prvek ToolStrip v model Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
   
 - [Postupy: Vlastní vykreslení ovládacího prvku ToolStrip](how-to-custom-draw-a-toolstrip-control.md)  
   

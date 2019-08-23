@@ -2,22 +2,22 @@
 title: Klient ASMX se službou WCF
 ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
-ms.openlocfilehash: 1eee814b17a7547bbbc07e17dd675c5f37860341
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c4728eae56a46c620499a1c0ba709e50c255d6c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002739"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925284"
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>Klient ASMX se službou WCF
-Tento příklad ukazuje, jak vytvořit službu pomocí Windows Communication Foundation (WCF) a potom z klienta bez WCF, jako je například klient ASMX se přístup ke službě.  
+Tento příklad ukazuje, jak vytvořit službu pomocí Windows Communication Foundation (WCF) a pak přistupovat ke službě z klienta jiného typu než WCF, jako je například klient ASMX.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (`Add`, `Subtract`, `Multiply`, a `Divide`). Klient ASMX díky synchronní žádosti a odpovědi služby s výsledkem matematické operace.  
+ Tato ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt `ICalculator` je definován rozhraním, které zpřístupňuje matematické operace ( `Subtract``Add`,, `Multiply`a `Divide`). Klient ASMX provede synchronní požadavky na matematickou operaci a službu s výsledkem.  
   
- Implementuje služby `ICalculator` smlouvy, jak je definováno v následujícím kódu.  
+ Služba implementuje `ICalculator` kontrakt, jak je definováno v následujícím kódu.  
   
 ```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"), XmlSerializerFormat]  
@@ -34,9 +34,9 @@ public interface ICalculator
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> Mapovat typy CLR pro reprezentaci v jazyce XML. <xref:System.Runtime.Serialization.DataContractSerializer> Jinak než XmlSerializer interpretuje některé reprezentace XML. Generátory non-WCF proxy serveru, jako je například Wsdl.exe, generovat dala lépe využít rozhraní, pokud je použit XmlSerializer. <xref:System.ServiceModel.XmlSerializerFormatAttribute> Platí pro `ICalculator` rozhraní, chcete-li zajistit, aby používal XmlSerializer pro mapování typů CLR do formátu XML. Implementace služby vypočítá a vrátí odpovídající výsledek.  
+ <xref:System.Runtime.Serialization.DataContractSerializer> A<xref:System.Xml.Serialization.XmlSerializer> mapují typy CLR na reprezentace XML. <xref:System.Runtime.Serialization.DataContractSerializer> Interpretuje některé reprezentace XML jinak než XmlSerializer. Generátory proxy jiných než WCF, jako je WSDL. exe, vygenerují při použití objektu XmlSerializer užitečnější rozhraní. <xref:System.ServiceModel.XmlSerializerFormatAttribute> Je použita`ICalculator` na rozhraní, aby bylo zajištěno, že se XmlSerializer používá pro mapování typů CLR na XML. Implementace služby vypočítá a vrátí příslušný výsledek.  
   
- Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí souboru konfigurace (Web.config). Koncový bod se skládá z adresy, vazby a kontrakt. Služba zpřístupňuje koncový bod na základní adrese poskytované hostitelem Internetové informační služby (IIS). `binding` Atribut je nastaven na basicHttpBinding, která poskytuje komunikaci HTTP přes protokol SOAP 1.1, který je kompatibilní s WS-I BasicProfile 1.1, jak je znázorněno v následující ukázková konfigurace.  
+ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru (Web. config). Koncový bod se skládá z adresy, vazby a kontraktu. Služba zpřístupňuje koncový bod na základní adrese poskytnuté hostitelem služby Internetová informační služba (IIS). `binding` Atribut je nastaven na BasicHttpBinding, který poskytuje komunikaci HTTP pomocí protokolu SOAP 1,1, který je kompatibilní s WS-I BasicProfile 1,1, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <services>  
@@ -50,7 +50,7 @@ public interface ICalculator
 </services>  
 ```  
   
- Klient ASMX komunikuje se službou WCF pomocí typové proxy, který je generován nástroj webové služby WSDL (Description Language) (Wsdl.exe). Typové proxy je obsažen v souboru generatedClient.cs. Nástroj WSDL načte metadata pro zadanou službu a generuje zadaný proxy server pro použití klientem pro komunikaci. Standardně nevystavuje rozhraní žádná metadata. Ke zveřejnění metadat vyžadovaných ke generování proxy server, je nutné přidat [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) a nastavte jeho `httpGetEnabled` atribut `True` jak je znázorněno v následující konfiguraci.  
+ Klient ASMX komunikuje se službou WCF pomocí typovaného proxy, který je generovaný nástrojem WSDL (Web Services Description Language) (WSDL. exe). Zadaný proxy server je obsažený v souboru generatedClient.cs. Nástroj WSDL načte metadata pro zadanou službu a vygeneruje typový proxy pro použití klientem ke komunikaci. Ve výchozím nastavení rozhraní nevystavuje žádná metadata. Chcete-li zveřejnit metadata požadovaná pro vygenerování proxy serveru, je nutné přidat [ \<> oddílu serviceMetadata](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) a nastavit `httpGetEnabled` jeho atribut `True` na, jak je znázorněno v následující konfiguraci.  
   
 ```xml  
 <behaviors>  
@@ -66,13 +66,13 @@ public interface ICalculator
 </behaviors>  
 ```  
   
- Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typové proxy.  
+ Spusťte následující příkaz z příkazového řádku v adresáři klienta pro vygenerování typovaného proxy serveru.  
   
 ```console  
 wsdl /n:Microsoft.ServiceModel.Samples /o:generatedClient.cs /urlkey:CalculatorServiceAddress http://localhost/servicemodelsamples/service.svc?wsdl  
 ```  
   
- Pomocí generovaného typové proxy má klient přístup nakonfigurováním uvedenou příslušnou adresu koncového bodu dané služby. Klient používá k určení koncový bod pro komunikaci s konfigurační soubor (App.config).  
+ Pomocí generovaného typovaného proxy serveru může klient získat přístup k danému koncovému bodu služby nakonfigurováním příslušné adresy. Klient používá konfigurační soubor (App. config) k určení koncového bodu ke komunikaci.  
   
 ```xml  
 <appSettings>  
@@ -81,7 +81,7 @@ wsdl /n:Microsoft.ServiceModel.Samples /o:generatedClient.cs /urlkey:CalculatorS
 </appSettings>  
 ```  
   
- Implementace klienta vytvoří instanci objektu typu proxy server při zahájení komunikace se službou.  
+ Implementace klienta vytvoří instanci typového proxy serveru pro zahájení komunikace se službou.  
   
 ```csharp
 // Create a client to the CalculatorService.  
@@ -118,7 +118,7 @@ Console.WriteLine("Press <ENTER> to terminate client.");
 Console.ReadLine();  
 ```  
   
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console 
 Add(100,15.99) = 115.99  
@@ -129,22 +129,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Další informace o předávání a vracení komplexní datové typy naleznete v tématu: [Datové vazby v Windows Forms klienta](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [datové vazby v klientovi Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md), a [datové vazby v klientovi ASP.NET](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
+> Další informace o předávání a vracení složitých datových typů najdete v těchto tématech: [Datové vazby v klientovi model Windows Forms](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [datové vazby v klientovi Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md)a [datové vazby v klientovi ASP.NET](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\ASMX`  

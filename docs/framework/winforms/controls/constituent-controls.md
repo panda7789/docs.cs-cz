@@ -9,15 +9,15 @@ helpviewer_keywords:
 - constituent controls [Windows Forms]
 - user controls [Windows Forms], constituent controls
 ms.assetid: 5565e720-198b-4bbd-a2bd-c447ba641798
-ms.openlocfilehash: 76a5a4f9b02a71616d247a1bb0f03cc0aec1d70d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 522a1012fc7bdd54860b0538064ee073f7a761f7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956068"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918430"
 ---
 # <a name="constituent-controls"></a>Základní ovládací prvky
-Ovládací prvky, které tvoří uživatelský ovládací prvek nebo *základní ovládací prvky* jsou označovány jako, jsou relativně nepřizpůsobitelným při rozhodování o vykreslování grafiky vlastní. Všechny ovládací prvky Windows Forms zpracovávat své vlastní vykreslování prostřednictvím vlastní <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Vzhledem k tomu, že tato metoda je chráněný, není přístupná pro vývojáře a proto ji nelze zabránit spuštění při vykreslení ovládacího prvku. To neznamená, ale, že nemůžete přidat kód pro vliv na vzhled základních ovládacích prvků. Další vykreslování dosáhnete tak, že přidáte obslužné rutiny události. Předpokládejme například, že byly pro vytváření <xref:System.Windows.Forms.UserControl> s tlačítkem `MyButton`. Pokud jste si přáli mít další vykreslování nad rámec je zadán <xref:System.Web.UI.WebControls.Button>, by přidejte kód do vašeho uživatelského ovládacího prvku podobný následujícímu:  
+Ovládací prvky, které tvoří uživatelský ovládací prvek nebo *ovládací prvky prvku* , když jsou vyvolány, jsou relativně neflexibilní, pokud jsou k dispozici pro vlastní vykreslování grafiky. Všechny model Windows Forms ovládací prvky zpracovávají své vlastní vykreslení prostřednictvím své <xref:System.Windows.Forms.Control.OnPaint%2A> vlastní metody. Vzhledem k tomu, že je tato metoda chráněná, není vývojářům přístupná, takže se nedá zabránit ve spuštění, když je ovládací prvek vykreslený. To však neznamená, že nemůžete přidat kód, který by ovlivnil vzhled prvků prvku. Další vykreslování lze provést přidáním obslužné rutiny události. Předpokládejme například, že jste provedli <xref:System.Windows.Forms.UserControl> vytváření pomocí tlačítka s `MyButton`názvem. Pokud chcete mít další vykreslování nad rámec toho <xref:System.Web.UI.WebControls.Button>, co bylo poskytnuto, měli byste přidat kód do uživatelského ovládacího prvku, který bude vypadat přibližně takto:  
   
 ```vb  
 Public Sub MyPaint(ByVal sender as Object, e as PaintEventArgs) Handles _  
@@ -39,14 +39,14 @@ System.Windows.Forms.PaintEventArgs e)
 ```  
   
 > [!NOTE]
->  Ovládací prvky některé formulářů Windows, jako například <xref:System.Windows.Forms.TextBox>, jsou přímo kresleno Windows. V těchto případech <xref:System.Windows.Forms.Control.OnPaint%2A> se nikdy nevolá metodu, a proto výše uvedeném příkladu již nikdy nebudou voláni.  
+> Některé ovládací prvky model Windows Forms, například <xref:System.Windows.Forms.TextBox>, jsou vykresleny přímo v systému Windows. V těchto instancích <xref:System.Windows.Forms.Control.OnPaint%2A> není metoda nikdy volána, takže výše uvedený příklad nebude nikdy volán.  
   
- Tím se vytvoří metodu, která se spustí pokaždé, když `MyButton.Paint` spustí událost, a tím přidáte další grafické vyjádření do ovládacího prvku. Všimněte si, že tím byste nezabránili provádění `MyButton.OnPaint`, a proto všechny Malování obvykle provádí tlačítko bude stále provádět kromě vlastního vykreslování. Podrobnosti o rozhraní GDI + technologie a vlastního vykreslování, najdete v článku [grafické vytváření obrázků pomocí GDI +](../advanced/how-to-create-graphics-objects-for-drawing.md). Pokud budete chtít mít jedinečné reprezentace vašeho ovládacího prvku, je vaší nejlíp zděděný ovládací prvek a napsat kód pro vlastní vykreslování pro něj. Podrobnosti najdete v tématu [ovládací prvky User-Drawn](user-drawn-controls.md).  
+ Tím se vytvoří metoda, která se spustí pokaždé, když se `MyButton.Paint` událost spustí, a přidá další grafické znázornění ovládacího prvku. Všimněte si, že to nebrání spuštění `MyButton.OnPaint`, a proto veškeré vykreslování obvykle prováděné tlačítkem bude i nadále provedeno kromě vlastního malování. Podrobnosti o technologii rozhraní GDI+ a vlastním vykreslování naleznete v tématu [vytváření grafických imagí s rozhraním GDI+](../advanced/how-to-create-graphics-objects-for-drawing.md). Pokud chcete mít jedinečný reprezentace vašeho ovládacího prvku, je nejlepší postup vytvořit Zděděný ovládací prvek a napsat pro něj vlastní kód pro vykreslování. Podrobnosti najdete v tématu [ovládací prvky vykreslené uživatelem](user-drawn-controls.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.UserControl>
 - <xref:System.Windows.Forms.Control.OnPaint%2A>
 - [Ovládací prvky vykreslované uživatelem](user-drawn-controls.md)
-- [Postupy: Vytváření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)
+- [Postupy: Vytvoření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

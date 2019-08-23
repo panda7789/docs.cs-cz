@@ -1,5 +1,5 @@
 ---
-title: <filter> – Element pro <add> pro <sharedListeners>
+title: <filter>Element pro <add> pro<sharedListeners>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add/filter
@@ -10,21 +10,21 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-ms.openlocfilehash: 2bef729f179b41509d3c0381b26e38e364dbf86b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 571a3add232f3e4f9747040dc104b85e8cc3085e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673716"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920510"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a>\<Filtr > – Element pro \<Přidat > pro \<sharedListeners >
-Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.  
+# <a name="filter-element-for-add-for-sharedlisteners"></a>\<Filtrovat > element pro \<přidání > pro \<sharedListeners >
+Přidá filtr do naslouchacího procesu v `sharedListeners` kolekci.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<sharedListeners > – Element  
+\<sharedListeners – > element  
 \<add>  
-\<Filtr >  
+\<Filtrovat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,8 +40,8 @@ Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**type**|Požadovaný atribut.<br /><br /> Určuje typ filtru. Můžete použít pouze úplný název typu (ve formátu <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> vlastnost). Informace o vytvoření plně kvalifikovaného názvu typu, najdete v tématu [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|**initializeData**|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro zadanou třídu.|  
+|**type**|Požadovaný atribut.<br /><br /> Určuje typ filtru. Můžete použít pouze úplný název typu (ve formátu <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnosti), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> vlastnosti). Informace o vytvoření plně kvalifikovaného názvu typu naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|**initializeData**|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro určenou třídu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,17 +51,17 @@ Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`sharedListeners`|Kolekce naslouchacích procesů, které všechny zdroje nebo trasování – element může odkazovat.|  
-|`add`|Přidá naslouchací proces pro **sharedListeners** kolekce.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`sharedListeners`|Kolekce posluchačů, na které může odkazovat jakýkoliv element source nebo Trace.|  
+|`add`|Přidá naslouchací proces do kolekce **sharedListeners** .|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud naslouchací proces je definována v `<add>` elementu `<sharedListeners>` elementu, filtr pro tuto naslouchací proces musí být definován v `<filter>` element, který je podřízeným prvkem `<add>` elementu.  
+ Pokud je naslouchací proces definován `<add>` v prvku `<sharedListeners>` elementu, filtr pro tento naslouchací proces `<filter>` by měl být definován v prvku, který je podřízeným `<add>` elementu.  
   
- Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<filter>` prvek, který chcete přidat filtr na naslouchací proces trasování `console` v `sharedListeners` kolekce.  
+ Následující příklad ukazuje, jak použít `<filter>` element pro přidání filtru do naslouchacího procesu `console` trasování v `sharedListeners` kolekci.  
   
 ```xml  
 <configuration>  
@@ -90,4 +90,4 @@ Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.
 - <xref:System.Diagnostics.TraceFilter>
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.TraceSource>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

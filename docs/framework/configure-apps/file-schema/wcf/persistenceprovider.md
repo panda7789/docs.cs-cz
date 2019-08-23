@@ -2,21 +2,21 @@
 title: <persistenceProvider>
 ms.date: 03/30/2017
 ms.assetid: a37049c5-a7ea-4519-94f2-912eeb010380
-ms.openlocfilehash: dc8dea0ddd1ea074c08952e3e2ebfef2d12f7183
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fc9e1332effc51e183a84cf2d3653357277d2ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783289"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934142"
 ---
-# <a name="persistenceprovider"></a>\<persistenceProvider>
-Určuje typ implementace poskytovatele trvalého použít, jakož i časový limit pro operace trvalého uložení.  
+# <a name="persistenceprovider"></a>\<persistenceProvider >
+Určuje typ používané implementace poskytovatele trvalosti a také časový limit pro operace trvalého uložení.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
-\<persistenceProvider>  
+\<> chování  
+\<persistenceProvider >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,8 +32,8 @@ Určuje typ implementace poskytovatele trvalého použít, jakož i časový lim
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|persistenceOperationTimeout|A <xref:System.TimeSpan> hodnota, která určuje časový limit pro operace trvalého uložení. Výchozí hodnota je "00: 00:30".|  
-| – typ|Řetězec, který určuje typ továrny poskytovatele trvalosti používat.|  
+|persistenceOperationTimeout|<xref:System.TimeSpan> Hodnota, která určuje časový limit, který se používá pro operace trvalosti. Výchozí hodnota je "00:00:30".|  
+|– typ|Řetězec, který určuje typ továrny poskytovatele trvalosti, který se má použít.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,10 +42,10 @@ Určuje typ implementace poskytovatele trvalého použít, jakož i časový lim
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek určuje poskytovatele trvalého chování, který se má použít k serializaci stav služby WCF. Mělo by se používat společně s `wsHttpContextBinding` které předává informace o stavu v hlavičkách protokolu HTTP.  
+ Tento prvek určuje poskytovatele trvalosti, který se použije k serializaci stavu služby WCF. Měl by se používat společně s tím `wsHttpContextBinding` , který předává informace o stavu v hlavičkách protokolu HTTP.  
   
 ## <a name="see-also"></a>Viz také:
 

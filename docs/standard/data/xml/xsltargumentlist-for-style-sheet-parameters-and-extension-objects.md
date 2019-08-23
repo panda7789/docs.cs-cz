@@ -8,56 +8,56 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2c9a3b43f81f00a7b6a3a0b3a8e1c102aafe0c0e
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 9d08399933f37c4110639bf1f4a81f222dd597b4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170947"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910321"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
-<xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
+<xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelné parametry jazyka StyleSheet (XSLT) a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody mohou být tyto parametry a objekty rozšíření vyvolány ze šablon stylů.  
   
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> a <xref:System.Xml.Xsl.XsltArgumentList> třídy jsou zastaralé v rozhraní .NET Framework 2.0. Můžete provádět pomocí transformace XSLT <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+> Třídy <xref:System.Xml.Xsl.XslTransform> a<xref:System.Xml.Xsl.XsltArgumentList> jsou zastaralé v .NET Framework 2,0. Transformace XSLT lze provádět pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje parametry XSLT a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
+ <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje parametry XSLT a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody mohou být tyto parametry a objekty rozšíření vyvolány ze šablon stylů.  
   
- Následují výhody pro předávání objektů, spíše než pomocí vloženého skriptu:  
+ Níže jsou uvedené výhody pro předání objektu místo použití vloženého skriptu:  
   
 - Poskytuje lepší zapouzdření a opakované použití tříd.  
   
-- Povoluje stylů, aby bylo menší a jednodušší údržbu.  
+- Povoluje, aby byly šablony stylů menší a udržovatelnější.  
   
-- Podporuje volání metody u třídy, které patří do oborů názvů, než jsou definované v rámci sady podporované <xref:System> obory názvů.  
+- Podporuje volání metod u tříd patřících do oborů názvů, které jsou definovány v rámci sady <xref:System> podporovaných oborů názvů.  
   
-- Podporuje předávání výsledků fragmenty stromu s použitím šablony stylů <xref:System.Xml.XPath.XPathNodeIterator>.  
+- Podporuje předávání fragmentů stromu výsledků do šablon stylů s použitím <xref:System.Xml.XPath.XPathNodeIterator>.  
   
-## <a name="xslt-style-sheet-parameters"></a>Parametry list Styl XSLT  
- Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody. Úplný název a obor názvů identifikátoru URI (Uniform Resource) jsou spojeny s parametrem objektu v daném čase.  
+## <a name="xslt-style-sheet-parameters"></a>Parametry šablony stylů XSLT  
+ Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody pomocí metody. Úplný název a identifikátor URI oboru názvů (Uniform Resource Identifier) jsou v daném okamžiku přidruženy k objektu Parameter.  
   
- Parametr objektu by měl odpovídat typu World Wide Web Consortium (W3C). Následující tabulka uvádí odpovídající typy W3C odpovídající třídy rozhraní .NET Framework (typ), a určuje, zda je typ W3C jazyk XML Path (XPath) nebo XSLT.  
+ Objekt Parameter by měl odpovídat typu konsorcium World Wide Web (W3C). V následující tabulce jsou uvedeny odpovídající typy W3C, ekvivalentní .NET Framework třídy (Type) a zda je typ W3C typu jazyk XML Path (XPath) nebo typu XSLT.  
   
-|Typ W3C|Ekvivalentní třída rozhraní .NET Framework (typ)|Výraz XPath typ nebo typ XSLT|  
+|Typ W3C|Ekvivalentní třída .NET Framework (typ)|Typ XPath nebo typ XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
-|String|System.String|XPath|  
-|Boolean|System.Boolean|XPath|  
+|String|System. String|XPath|  
+|Boolean|System. Boolean|XPath|  
 |Číslo|System.Double|XPath|  
-|Fragment stromu výsledek|System.Xml.XPath.XPathNavigator|XSLT|  
-|Sada uzlů.|System.Xml.XPath.XPathNodeIterator|XPath|  
+|Fragment stromu výsledků|System.Xml.XPath.XPathNavigator|XSLT|  
+|Sada uzlů|System.Xml.XPath.XPathNodeIterator|XPath|  
   
- Pokud parametr objektu není jeden z výše uvedených tříd, je vynucena na dvojitou hodnotu nebo řetězec, podle potřeby. Int16, UInt16, Int32, UInt32, Int64, UInt64, jednou a desetinných typy jsou vynutit na dvojitou hodnotu. Všechny ostatní typy jsou vynuceně na řetězec pomocí `ToString` metody.  
+ Pokud objekt Parameter není jedna z výše uvedených tříd, je podle potřeby vynucen buď Double, nebo řetězec. Typy Int16, UInt16, Int32, UInt32, Int64, UInt64, Single a Decimal jsou vynuceny na hodnotu Double. Všechny ostatní typy jsou vynuceny řetězcem pomocí `ToString` metody.  
   
-#### <a name="to-use-the-xslt-parameter-the-user-needs-to-do-the-following"></a>Pokud chcete použít parametr XSLT, uživatel musí provést následující kroky:  
+#### <a name="to-use-the-xslt-parameter-the-user-needs-to-do-the-following"></a>Chcete-li použít parametr XSLT, musí uživatel provést následující akce:  
   
-1. Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.  
+1. Vytvořte a přidejte objekty pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>. <xref:System.Xml.Xsl.XsltArgumentList>  
   
-2. Parametry volání z šablony stylů.  
+2. Volání parametrů ze šablon stylů.  
   
-3. Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
+3. <xref:System.Xml.Xsl.XsltArgumentList> Předat<xref:System.Xml.Xsl.XslTransform.Transform%2A> metodě.  
   
 ### <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení data počítané slevy. Slevy se počítá na 20 dní od data objednávky.  
+ Následující příklad používá <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu k vytvoření parametru pro uchování počítaného data slevy. Datum slevy se počítá jako 20 dní od data objednávky.  
   
 ```vb  
 Imports System  
@@ -140,7 +140,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Vstup  
- order.xml  
+ Order. XML  
   
 ```xml  
 <!--Represents a customer order-->  
@@ -156,7 +156,7 @@ public class Sample
 </order>  
 ```  
   
- discount.xsl  
+ sleva. xsl  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  
@@ -181,24 +181,24 @@ public class Sample
 ```  
   
 ## <a name="xslt-extension-objects"></a>Objekty rozšíření XSLT  
- Objekty rozšíření XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody. Úplný název a identifikátor URI oboru názvů jsou přidruženy k rozšíření objektu v daném čase.  
+ Objekty rozšíření XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> objektu <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> pomocí metody. Úplný název a identifikátor URI oboru názvů jsou v daném čase přidruženy k objektu rozšíření.  
   
- Když je objekt přidán, volající <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> v zásadách zabezpečení musí být plně důvěryhodné. Pokud je částečně důvěryhodné volající, přidání se nezdaří.  
+ Když je přidán objekt, volající <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> musí být plně důvěryhodný v zásadách zabezpečení. Pokud je volající částečně důvěryhodný, přidání se nezdaří.  
   
- I když je objekt úspěšně přidán, není zaručeno, že bude úspěšné provedení příkazu. Když <xref:System.Xml.Xsl.XslTransform.Transform%2A> metoda je volána, oprávnění se počítají proti důkazu v <xref:System.Xml.Xsl.XslTransform.Load%2A> čas a aby sada oprávnění přiřazený k transformaci celý proces. Pokud se objekt rozšíření se pokusí spustit akci, která vyžaduje oprávnění nebyla nalezena v sadě, je vyvolána výjimka.  
+ I když je objekt úspěšně přidán, není zaručeno, že spuštění bude úspěšné. Při volání <xref:System.Xml.Xsl.XslTransform.Load%2A> metody se oprávnění vypočítávají proti legitimaci poskytnuté v čase a tato sada oprávnění je přiřazena k celému procesu transformace. <xref:System.Xml.Xsl.XslTransform.Transform%2A> Pokud se objekt rozšíření pokusí iniciovat akci, která vyžaduje oprávnění, která nebyla v sadě nalezena, je vyvolána výjimka.  
   
- Datové typy vrácených objektů rozšíření jsou jedním ze čtyř typů základní XPath dat sady číslo, řetězec, logická hodnota a uzel.  
+ Datové typy vrácené z objektů rozšíření jsou jedním ze čtyř základních datových typů XPath číslo, řetězec, logická hodnota a sada uzlů.  
   
-#### <a name="to-use-the-xslt-extension-object-the-user-needs-to-do-the-following"></a>Chcete-li použít objekt rozšíření XSLT, uživatel musí provést následující kroky:  
+#### <a name="to-use-the-xslt-extension-object-the-user-needs-to-do-the-following"></a>Chcete-li použít objekt rozšíření XSLT, musí uživatel provést následující akce:  
   
-1. Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.  
+1. Vytvořte a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>. <xref:System.Xml.Xsl.XsltArgumentList>  
   
-2. Vyvolejte objekt rozšíření ze šablony stylů.  
+2. Vyvolá objekt rozšíření ze seznamu stylů.  
   
-3. Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
+3. <xref:System.Xml.Xsl.XsltArgumentList> Předat<xref:System.Xml.Xsl.XslTransform.Transform%2A> metodě.  
   
 ### <a name="example"></a>Příklad  
- Následující příklad vypočítá obvod kruhu uveden jeho radius.  
+ Následující příklad vypočítá obvodu kružnice s daným poloměrem.  
   
 ```vb  
 Imports System  
@@ -308,7 +308,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Vstup  
- Number.XML  
+ Number. XML  
   
 ```xml  
 <?xml version='1.0'?>  
@@ -322,7 +322,7 @@ public class Sample
 </data>    
 ```  
   
- Circle.xsl  
+ Circle. xsl  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  

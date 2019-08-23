@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 354c8b4c-7d23-45c6-a7d7-3be4c2a5b772
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a983561f34bee96f5de1e05d608bff930c7ec8c0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5445fb223e34aa82d4b93032bb059093978f6bd1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750242"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910336"
 ---
 # <a name="icordebugdatatarget2createvirtualunwinder-method"></a>ICorDebugDataTarget2::CreateVirtualUnwinder – metoda
-Vytvoří nový unwinder zásobníku, který se spustí uvolnění z počáteční kontextu, (což není nutně listu vlákno).  
+Vytvoří novou odvinoutho zásobníku, který spustí odvinutí z počátečního kontextu (což není nutně listem vlákna).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,36 +28,36 @@ HRESULT CreateVirtualUnwinder(
   
 ## <a name="parameters"></a>Parametry  
  nativeThreadID  
- [in] ID nativní vlákna vlákna, jehož zásobník má být oddělen.  
+ pro ID nativního vlákna vlákna, jehož zásobník má být oddělitelné.  
   
  contextFlags  
- [in] Příznaky, které určují, které části kontextu jsou definovány v `initialContext`.  
+ pro Příznaky, které určují, které části kontextu jsou definovány v `initialContext`.  
   
  cbContext  
- [in] Velikost `initialContext`.  
+ pro Velikost `initialContext`.  
   
  initialContext  
- [in] Data v kontextu.  
+ pro Data v kontextu.  
   
  ppUnwinder  
- [out] Ukazatel na adresu objektu rozhraní ICorDebugVirtualUnwinder.  
+ mimo Ukazatel na adresu objektu rozhraní ICorDebugVirtualUnwinder.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` v případě úspěšného ověření. Jakýkoli jiný `HRESULT` označuje chybu. Všechny neúspěšné `HRESULT` přijatých mscordbi se považuje za závažné a způsobí, že [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody k vrácení `CORDBG_E_DATA_TARGET_ERROR`.  
+ `S_OK`v případě úspěchu. Jakýkoli jiný `HRESULT` indikuje selhání. Jakékoli selhání `HRESULT` přijaté službou mscordbi se považuje za závažné a způsobí, že [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

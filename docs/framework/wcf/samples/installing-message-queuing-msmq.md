@@ -2,65 +2,65 @@
 title: Instalace služby Řízení front zpráv (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 813de350c3fd32bb4698384d6b770af8a0913739
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42e66029f8538877ded424f72cb6c829444d1ee0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935983"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalace služby Řízení front zpráv (MSMQ)
-Následující postupy ukazují, jak nainstalovat 4.0 služby Řízení front zpráv a 3.0 služby Řízení front zpráv.  
+Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv 4,0 a službu Řízení front zpráv 3,0.  
   
 > [!NOTE]
->  Zprávy služby Řízení front 4.0 není k dispozici v [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+> Služba Řízení front zpráv 4,0 není dostupná [!INCLUDE[wxp](../../../../includes/wxp-md.md)] v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]a.  
   
-#### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>K instalaci na Windows Server 2008 nebo Windows Server 2008 R2 4.0 služby Řízení front zpráv  
+#### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>Instalace služby Řízení front zpráv 4,0 v systému Windows Server 2008 nebo Windows Server 2008 R2  
   
-1. Ve Správci serveru klikněte na tlačítko **funkce**.  
+1. V Správce serveru klikněte na **funkce**.  
   
-2. V pravém podokně v části **Souhrn funkcí**, klikněte na tlačítko **přidat funkce**.  
+2. V pravém podokně v části **Souhrn funkcí**klikněte na **Přidat funkce**.  
   
-3. V okně výsledný rozbalte **služby Řízení front zpráv**.  
+3. Ve výsledném okně rozbalte položku **Řízení front zpráv**.  
   
-4. Rozbalte **služba Řízení front zpráv**.  
+4. Rozbalte položku **služby Řízení front zpráv**.  
   
-5. Klikněte na tlačítko **Integrace adresářové služby** (pro počítače připojené k doméně), potom klikněte na **podpora protokolu HTTP**.  
+5. Klikněte na **integrace adresářových služeb** (pro počítače připojené k doméně) a pak klikněte na **Podpora protokolu HTTP**.  
   
-6. Klikněte na tlačítko **Další**, pak klikněte na tlačítko **nainstalovat**.  
+6. Klikněte na **Další**a pak klikněte na **nainstalovat**.  
   
-#### <a name="to-install-message-queuing-40-on-windows-7-or-windows-vista"></a>K instalaci na Windows 7 nebo Windows Vista 4.0 služby Řízení front zpráv  
+#### <a name="to-install-message-queuing-40-on-windows-7-or-windows-vista"></a>Instalace služby Řízení front zpráv 4,0 v systému Windows 7 nebo Windows Vista  
   
 1. Otevřete **Ovládací panely**.  
   
-2. Klikněte na tlačítko **programy** a pak v části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
+2. Klikněte na **programy** a potom v části **programy a funkce**klikněte na **zapnout nebo vypnout funkce systému Windows**.  
   
-3. Rozbalíte Server Microsoft Message Queue (MSMQ), rozbalte Server Core Microsoft Message Queue (MSMQ) a poté zaškrtněte políčka pro následující funkce služby Řízení front zpráv k instalaci:  
+3. Rozbalte server MSMQ (Microsoft Message Queue), rozbalte jádro serveru MSMQ (Microsoft Message Queue) a potom zaškrtněte políčka u následujících funkcí služby Řízení front zpráv pro instalaci:  
   
-    - MSMQ domény služby integrace služby Active Directory (pro počítače připojené k doméně).  
+    - Integrace služby MSMQ Active Directory Domain Services (pro počítače připojené k doméně).  
   
-    - MSMQ HTTP Support.  
+    - Podpora protokolu HTTP služby MSMQ.  
   
 4. Klikněte na **OK**.  
   
-5. Pokud se zobrazí výzva k restartování počítače, klikněte na tlačítko **OK** k dokončení instalace.  
+5. Pokud se zobrazí výzva k restartování počítače, kliknutím na tlačítko **OK** dokončete instalaci.  
   
-#### <a name="to-install-message-queuing-30-on-windows-xp-and-windows-server-2003"></a>K instalaci na Windows XP a Windows Server 2003 3.0 služby Řízení front zpráv  
+#### <a name="to-install-message-queuing-30-on-windows-xp-and-windows-server-2003"></a>Instalace služby Řízení front zpráv 3,0 v systému Windows XP a Windows Server 2003  
   
 1. Otevřete **Ovládací panely**.  
   
-2. Klikněte na tlačítko **přidat nebo odebrat programy** a potom klikněte na tlačítko **přidat součásti Windows**.  
+2. Klikněte na **Přidat odebrat programy** a pak klikněte na **přidat součásti systému Windows**.  
   
-3. Vyberte služby Řízení front zpráv a klikněte na tlačítko **podrobnosti**.  
+3. Vyberte možnost Služba Řízení front zpráv a klikněte na tlačítko **Podrobnosti**.  
   
     > [!NOTE]
-    >  Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vyberte aplikační Server pro přístup k řízení front zpráv.  
+    >  Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vyberte aplikační server pro přístup do služby Řízení front zpráv.  
   
-4. Ujistěte se, že možnost vybraných na stránce s podrobnostmi MSMQ – podpora protokolu HTTP.  
+4. Zajistěte, aby byla na stránce podrobností vybrána možnost Podpora služby MSMQ HTTP.  
   
-5. Klikněte na tlačítko **OK** opustili stránku podrobností, a potom klikněte na **Další**. Dokončete instalaci.  
+5. Kliknutím na tlačítko **OK** zavřete stránku s podrobnostmi a pak klikněte na tlačítko **Další**. Dokončete instalaci.  
   
-6. Pokud se zobrazí výzva k restartování počítače, klikněte na tlačítko **OK** k dokončení instalace.  
+6. Pokud se zobrazí výzva k restartování počítače, kliknutím na tlačítko **OK** dokončete instalaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-ms.openlocfilehash: 030fd2bd3286bd4f25513e26b3de9e87eaee9029
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ba732930d08c74433d6ea7b38e7dc3a9fddf594c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588900"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923853"
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Postupy: Zobrazit argumenty příkazového řádkuC# (Průvodce programováním)
 Argumenty poskytované spustitelnému souboru na příkazovém řádku jsou přístupné prostřednictvím volitelného parametru `Main`. Argumenty jsou k dispozici ve formě pole řetězců. Každý prvek pole obsahuje jeden argument. Odeberou se prázdné místo mezi argumenty. Například zvažte tyto vyvolání příkazového řádku fiktivního spustitelného souboru:  
@@ -22,7 +22,7 @@ Argumenty poskytované spustitelnému souboru na příkazovém řádku jsou př�
 |**spustitelný soubor. exe "1 2" 3**|"one two"<br /><br /> 3|  
   
 > [!NOTE]
->  Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).  
+> Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).  
   
 ## <a name="example"></a>Příklad  
  Tento příklad zobrazuje argumenty příkazového řádku předané aplikaci příkazového řádku. Zobrazený výstup je pro první položku v tabulce výše.  

@@ -2,21 +2,21 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 630afb728726fb81bbefa2f2cd34b9481b788f6f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f476e94ec3229ee7f5433d54d286165d108e5e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663418"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930753"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
-Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. k  
+Tato ukázka předvádí, jak může aplikace služby Řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF) a jak se dají mezi aplikacemi odesílatele a přijímače sladit zprávy ve scénáři požadavků a odpovědí. V této ukázce se používá vazba msmqIntegrationBinding. Tato služba je v tomto případě samoobslužná Konzolová aplikace, která umožňuje sledovat službu, která přijímá zprávy ve frontě. k  
   
- Služba zpracovává zprávu přijatou od odesílatele a odešle odpověď zpět do odesílatele. Odesílatel koreluje odpovědí, žádost, u které původně odeslán přijaty. `MessageID` a `CorrelationID` vlastnosti zprávy jsou používány ke korelaci zprávy požadavků a odpovědí.  
+ Služba zpracuje zprávu přijatou od odesílatele a pošle zprávu odpovědi zpět odesilateli. Odesilatel koreluje odpověď, kterou obdržel, na žádost, kterou odeslal původně. Vlastnosti `MessageID` a`CorrelationID` zprávy se používají ke korelaci požadavků a zpráv odpovědí.  
   
- `IOrderProcessor` Operace jednosměrné služby, který je vhodný pro použití se službou Řízení front definuje kontrakt služby. Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ pro operaci smlouvy. Proto může existovat pouze jeden kontrakt operace v tomto případě. Pokud chcete definovat další operace smluv týkajících se služby, aplikace musíte zadat informace jako záhlaví, které v služby MSMQ zprávy (třeba popisek, nebo ID korelace) umožňuje rozhodnout, kterou kontrakt k odeslání. 
+ Kontrakt `IOrderProcessor` služby definuje jednosměrnou operaci služby, která je vhodná pro použití při zařazování do fronty. Zpráva služby MSMQ neobsahuje záhlaví akce, takže není možné automaticky mapovat různé zprávy MSMQ na provozní kontrakty. V tomto případě může v tomto případě existovat pouze jedna kontrakt operace. Chcete-li ve službě definovat více kontraktů operací, aplikace musí poskytnout informace o tom, které záhlaví ve zprávě služby MSMQ (například popisek nebo ID korelace) lze použít k rozhodnutí, který kontrakt operace se má odeslat. 
   
- Zprávy služby MSMQ také neobsahuje informace ohledně toho, která hlavičky jsou namapovány na různé parametry kontrakt. Proto může existovat jenom jeden parametr v kontrakt. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, která obsahuje základní zprávy služby MSMQ. Typ "T" v `MsmqMessage<T>` třída reprezentuje data, která je serializován do textu zprávy MSMQ. V této ukázce `PurchaseOrder` je typ serializován do textu zprávy MSMQ.  
+ Zpráva služby MSMQ neobsahuje také informace o tom, která záhlaví jsou namapována na různé parametry kontraktu operace. Proto může být v kontraktu operace pouze jeden parametr. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, který obsahuje podkladovou zprávu služby MSMQ. Typ "T" ve `MsmqMessage<T>` třídě představuje data serializovaná do těla zprávy služby MSMQ. V této ukázce `PurchaseOrder` je typ serializován do těla zprávy služby MSMQ.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -28,7 +28,7 @@ public interface IOrderProcessor
 }
 ```
 
- Operace služby nákupní objednávku zpracovává a zobrazí se obsah nákupní objednávky a jeho stav v okně konzoly služby. <xref:System.ServiceModel.OperationBehaviorAttribute> Nakonfiguruje operaci zařazení v transakci s frontou a označit dokončení transakce po návratu operaci. `PurchaseOrder` Obsahuje podrobnosti objednávky, které musí být zpracovány služby.
+ Operace služby zpracuje objednávku nákupu a zobrazí obsah nákupní objednávky a její stav v okně konzoly služby. <xref:System.ServiceModel.OperationBehaviorAttribute> Nakonfiguruje operaci k zařazení do transakce s frontou a k označení transakce, která je dokončena, když operace vrátí. `PurchaseOrder` Obsahuje podrobnosti o objednávce, které musí služba zpracovat.
 
 ```csharp
 // Service class that implements the service contract.
@@ -65,9 +65,9 @@ public class OrderProcessorService : IOrderProcessor
 }
 ```
 
- Služba používá vlastní klienta `OrderResponseClient` do fronty odesílat zprávy služby MSMQ. Protože se aplikace, který přijímá a zpracovává zprávy služby MSMQ aplikace a aplikace WCF, neexistuje žádný implicitní smlouvu mezi těmito dvěma aplikacemi. Takže nemůžeme vytvořit proxy server pomocí nástroje Svcutil.exe v tomto scénáři.
+ Služba používá vlastního klienta `OrderResponseClient` k odeslání zprávy služby MSMQ do fronty. Vzhledem k tomu, že aplikace, která přijímá a zpracovává zprávu, je aplikace služby MSMQ a ne aplikace WCF, není mezi těmito dvěma aplikacemi žádný implicitní kontrakt služby. Proto nemůžeme vytvořit proxy pomocí nástroje Svcutil. exe v tomto scénáři.
 
- Vlastní proxy server je v podstatě stejný pro všechny aplikace WCF, které používají `msmqIntegrationBinding` vazby pro odesílání zpráv. Na rozdíl od jiných proxy neobsahoval celou řadu operací služby. Odeslat zprávu tato operace je pouze.
+ Vlastní proxy server je v podstatě stejný pro všechny aplikace WCF, které používají `msmqIntegrationBinding` vazbu k posílání zpráv. Na rozdíl od jiných proxy serverů nezahrnuje rozsah operací služby. Jedná se pouze o operaci Odeslat zprávu.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -99,7 +99,7 @@ public partial class OrderResponseClient : System.ServiceModel.ClientBase<IOrder
 }
 ```
 
- Tato služba je vlastní hostované. Při použití transport integrace MSMQ fronty používají se musí vytvořit předem. To můžete udělat ručně nebo prostřednictvím kódu. V této ukázce obsahuje službu <xref:System.Messaging> kód pro provedení kontroly existence fronty a v případě potřeby ji vytvořit. Název fronty načítají z konfiguračního souboru.
+ Služba je hostována svým hostitelem. Při použití přenosu integrace služby MSMQ musí být použitá fronta předem vytvořena. To lze provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje <xref:System.Messaging> kód pro kontrolu existence fronty a v případě potřeby ji vytvoří. Název fronty se načte z konfiguračního souboru.
 
 ```csharp
 public static void Main()
@@ -125,7 +125,7 @@ public static void Main()
 }
 ```
 
- Fronta MSMQ, ke které se odesílají požadavky pořadí je definováno v sekci appSettings konfiguračního souboru. Koncové body klienta a služby jsou definovány v sekci system.serviceModel konfiguračního souboru. Jak určit `msmqIntegrationbinding` vazby.
+ Fronta MSMQ, na kterou jsou odesílány požadavky objednávky, je zadána v oddílu appSettings konfiguračního souboru. Koncové body klienta a služby jsou definovány v oddílu System. serviceModel konfiguračního souboru. Obě zadejte `msmqIntegrationbinding` vazbu.
 
 ```xml
 <appSettings>
@@ -164,7 +164,7 @@ public static void Main()
 </system.serviceModel>
 ```
 
- Klientská aplikace používá <xref:System.Messaging> odeslat odolné a transakční zprávu do fronty. Tělo zprávy obsahuje nákupní objednávky.
+ Klientská aplikace používá <xref:System.Messaging> k odeslání trvalé a transakční zprávy do fronty. Tělo zprávy obsahuje nákupní objednávku.
 
 ```csharp
 static void PlaceOrder()
@@ -210,10 +210,10 @@ static void PlaceOrder()
 }
 ```
 
- Fronta MSMQ, ze kterého jsou přijaty odpovědi pořadí je zadán v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázková konfigurace.
+ Fronta MSMQ, ze které jsou přijímány odpovědi objednávek, je zadána v oddílu appSettings konfiguračního souboru, jak je znázorněno v následující ukázkové konfiguraci.
 
 > [!NOTE]
->  Název fronty používá tečku (.) pro místní počítače a zpětné lomítko oddělovače v cestě. Adresa koncového bodu WCF Určuje schéma msmq.formatname a používá "localhost" v místním počítači. Název formátu správně vytvořená následuje msmq.formatname v identifikátoru URI podle pokynů služby MSMQ.
+> Název fronty pro místní počítač a oddělovače zpětného lomítka v cestě používá tečku (.). Adresa koncového bodu WCF Určuje schéma služby MSMQ. formatname a pro místní počítač používá localhost. Název formátu správně vytvořeného v závislosti na pokynech služby MSMQ dodržuje formát MSMQ. FormatName v identifikátoru URI.
 
 ```xml
 <appSettings>
@@ -221,7 +221,7 @@ static void PlaceOrder()
 </appSettings>
 ```
 
- Uloží klientské aplikace `messageID` zprávy s požadavkem pořadí, který odešle do služby a čeká na odpověď ze služby. Po přijetí odpovědi ve frontě klienta, koreluje ji s zpráv pořadí je odeslat pomocí `correlationID` vlastnosti zprávy, která obsahuje `messageID` pořadí, zprávy, které klient původně odeslána do služby.
+ Klientská aplikace uloží `messageID` zprávu žádosti o objednávku, kterou pošle službě, a počká na odpověď od služby. Jakmile odpověď dorazí do fronty, bude ji klient korelovat se zprávou objednávky, kterou odeslal, pomocí `correlationID` vlastnosti zprávy, která `messageID` obsahuje zprávu objednávky, kterou klient původně odeslal službě.
 
 ```csharp
 static void DisplayOrderStatus()
@@ -264,55 +264,55 @@ static void DisplayOrderStatus()
 }
 ```
 
- Při spuštění ukázky činnosti klienta a služby se zobrazují v oknech konzoly služby a klienta. Zobrazí se služby přijmout zprávy z klienta a odešle odpověď zpět klientovi. Klient se zobrazí odpověď ze služby. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby.
+ Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta a odesílá odpověď zpátky klientovi. Klient zobrazuje odpověď přijatou od služby. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.
 
 > [!NOTE]
->  Tato ukázka vyžaduje instalaci sady řízení front zpráv (MSMQ). MSMQ instalační pokyny naleznete v části Viz také.
+> Tato ukázka vyžaduje instalaci služby Řízení front zpráv (MSMQ). Pokyny k instalaci služby MSMQ najdete v části Viz také.
 
 ### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
+2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.
 
-    1. Otevřete správce serveru v sadě Visual Studio 2012.
+    1. Otevřete Správce serveru v aplikaci Visual Studio 2012.
 
-    2. Rozbalte **funkce** kartu.
+    2. Rozbalte kartu **funkce** .
 
-    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **Nový**, **soukromá fronta**.
 
-    4. Zkontrolujte, **transakční** pole.
+    4. Zaškrtněte políčko **transakční** .
 
-    5. Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
+    5. Jako `ServiceModelSamplesTransacted` název nové fronty zadejte.
 
-3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4. Spusťte ukázku v jednom počítači konfiguraci, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
-### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích
+### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači
 
-1. Zkopírujte soubory programu služby ze složky \service\bin\ v rámci složky specifické pro jazyk, k počítači služby.
+1. Zkopírujte programové soubory služby ze složky \service\bin\ ve složce specifické pro daný jazyk do počítače služby.
 
-2. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.
+2. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce specifické pro daný jazyk do klientského počítače.
 
-3. V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba namísto ".".
+3. V souboru Client. exe. config změňte orderQueueName a zadejte název počítače služby místo ".".
 
-4. V souboru Service.exe.config, změňte adresu koncového bodu klienta k určení názvu klientského počítače namísto ".".
+4. V souboru Service. exe. config změňte adresu koncového bodu klienta tak, aby určovala název klientského počítače místo ".".
 
-5. Na počítači se službou spusťte z příkazového řádku Service.exe.
+5. Na počítači služby spusťte z příkazového řádku Service. exe.
 
-6. Na klientském počítači spusťte Client.exe z příkazového řádku.
+6. V klientském počítači spusťte z příkazového řádku soubor Client. exe.
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)
+- [Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)

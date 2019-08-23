@@ -2,18 +2,18 @@
 title: <identity>
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
-ms.openlocfilehash: 0f5eace346fd0ed2c0532fb602585c4593d97291
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: d5d06953c67b90e8367f2c0d01a670a46f487526
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756686"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925415"
 ---
-# <a name="identity"></a>\<identity>
-Prvek identita umožňuje vývojáři klientského programu zadat v době návrhu očekávané identity služby. V procesu metody handshake mezi klientem a službou Windows Communication Foundation (WCF) infrastruktura zajistí, aby identitu shod očekávanou službu hodnoty tohoto elementu a proto mohou být ověřeni. Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+# <a name="identity"></a>\<> identity
+Prvek identita umožňuje vývojáři klienta zadat v době návrhu očekávanou identitu služby. V procesu handshake mezi klientem a službou infrastruktura Windows Communication Foundation (WCF) zajistí, že identita očekávané služby bude odpovídat hodnotám tohoto prvku, a proto může být ověřena. Další informace najdete v tématu [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
  \<system.ServiceModel>  
-\<client>  
+\<> klienta  
 \<endpoint>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,29 +43,29 @@ Prvek identita umožňuje vývojáři klientského programu zadat v době návrh
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|certificate|Určuje nastavení certifikátu X.509. Tento prvek je typu <xref:System.ServiceModel.Configuration.CertificateElement>. Obsahuje atribut `encodedValue` , který je řetězec, který určuje hodnotu kódovaný pomocí tohoto certifikátu.|  
-|certificateReference|Určuje nastavení pro ověřování certifikátu X.509. Tento prvek je typu <xref:System.ServiceModel.Configuration.CertificateReferenceElement>.|  
-|dns|Určuje certifikát X.509 sloužící k ověření služby DNS. Tento prvek obsahuje atribut `value` , který je řetězec a obsahuje skutečnou identitu.|  
-|rsa|Určuje hodnotu pole RSA certifikát X.509 sloužící k ověření služby ke klientovi. Tento prvek obsahuje atribut `value` , který je řetězec a obsahuje skutečnou identitu|  
-|servicePrincipalName|Určuje identitu hlavní název (SPN) serveru, který je zadaný hlavní název, který klient používá k jednoznačné identifikaci instance služby. Tento prvek obsahuje atribut `value` , který je řetězec a obsahuje skutečný název instančního objektu. Tento prvek je typu <xref:System.ServiceModel.Configuration.ServicePrincipalNameElement>.|  
-|userPrincipalName|Určuje identitu hlavní název (UPN) uživatele, což je název typ přihlášení uživatele v síti. Hlavní název uživatele se skládá z použít ve službě Active Directory, za nímž následuje název objektu uživatele v symbolu (\@) a pak, obvykle v systému názvů domény nadřazené domény. Jan v stromu domény Fabrikam.com může mít například hlavní název uživatele [ jeff@fabrikam.com ](mailto:jeffsmith@fabrikam.com).  Tento prvek obsahuje atribut `value` , který je řetězec a obsahuje skutečný název instančního objektu. Tento prvek je typu <xref:System.ServiceModel.Configuration.UserPrincipalNameElement>.|  
+|certificate|Určuje nastavení certifikátu X. 509. Tento prvek je typu <xref:System.ServiceModel.Configuration.CertificateElement>. Obsahuje atribut `encodedValue` , který je řetězec, který určuje hodnotu zakódovanou tímto certifikátem.|  
+|certificateReference|Určuje nastavení pro ověřování certifikátu X. 509. Tento prvek je typu <xref:System.ServiceModel.Configuration.CertificateReferenceElement>.|  
+|dns|Určuje DNS certifikátu X. 509, který se používá k ověření služby. Tento element obsahuje atribut `value` , který je řetězec, a obsahuje skutečnou identitu.|  
+|rsa|Určuje hodnotu pole RSA certifikátu X. 509, která se používá k ověření služby klientovi. Tento element obsahuje atribut `value` , který je řetězec, a obsahuje skutečnou identitu.|  
+|servicePrincipalName|Určuje identitu hlavního názvu serveru (SPN), což je hlavní název, který klient používá k jednoznačné identifikaci instance služby. Tento prvek obsahuje atribut `value` , který je řetězec, a obsahuje skutečný hlavní název. Tento prvek je typu <xref:System.ServiceModel.Configuration.ServicePrincipalNameElement>.|  
+|userPrincipalName|Určuje identitu hlavního názvu uživatele (UPN), což je typ přihlašovacího jména uživatele v síti. Hlavní název uživatele se skládá z názvu uživatelského objektu používaného ve službě Active Directory, po kterém následuje symbol (\@) a pak obvykle nadřazená doména systému názvů domén. Například Jan ve stromu domény Fabrikam.com může mít hlavní název [jeff@fabrikam.com](mailto:jeffsmith@fabrikam.com)uživatele (UPN).  Tento prvek obsahuje atribut `value` , který je řetězec, a obsahuje skutečný hlavní název. Tento prvek je typu <xref:System.ServiceModel.Configuration.UserPrincipalNameElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<custom>](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje mechanismus rozpoznávání partnera vlastní pro netPeerTcpBinding.|  
-|[\<endpoint>](endpoint-element.md)|Nakonfiguruje koncových bodů služby.|  
-|[\<koncový bod > z \<klienta >](endpoint-of-client.md)|Nakonfiguruje kanál koncových bodů.|  
-|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje Token služba zabezpečení (STS) pro federované služby.|  
-|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Určuje koncový bod metadat pro Token služba zabezpečení (STS) federované služby.|  
-|[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Definuje parametry pro vydaný token ve vlastní vazby.|  
-|[\<localIssuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)|Určuje místní tokenů zabezpečení služby (STS).|  
+|[\<custom>](custom.md)|Určuje vlastní překladač rovnocenných uzlů pro netPeerTcpBinding.|  
+|[\<endpoint>](endpoint-element.md)|Nakonfiguruje koncové body služby.|  
+|[\<koncový bod > \<> klienta](endpoint-of-client.md)|Nakonfiguruje koncové body kanálu.|  
+|[\<issuer>](issuer.md)|Určuje službu tokenů zabezpečení (STS) pro federované služby.|  
+|[\<issuerMetadata>](issuermetadata.md)|Určuje koncový bod metadat pro službu tokenů zabezpečení (STS) federované služby.|  
+|[\<issuedTokenParameters>](issuedtokenparameters.md)|Definuje parametry pro vydaný token ve vlastní vazbě.|  
+|[\<localIssuer>](localissuer.md)|Určuje místní službu tokenů zabezpečení (STS).|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Bod Adresy, vazby a kontrakty](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

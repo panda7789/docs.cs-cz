@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvořit hlavní podrobných seznamů pomocí ovládacího prvku Windows Forms DataGrid'
+title: 'Postupy: Vytvoření seznamu hlavní-podrobnosti pomocí model Windows Forms ovládacího prvku DataGrid'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,34 +10,34 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 20388c6a-94f9-4d96-be18-8c200491247f
-ms.openlocfilehash: 92b4a7d9513ce0ec9b7c02f57c23fa4267fb26ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f0fd95cf0cd66e9a5105c0b8ff77d8c536a5822d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052164"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914754"
 ---
 # <a name="how-to-create-masterdetail-lists-with-the-windows-forms-datagrid-control"></a>Postupy: Vytvoření hlavního/podrobného seznamu pomocí ovládacího prvku Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Pokud vaše <xref:System.Data.DataSet> obsahuje řadu souvisejících tabulek, můžete použít dvě <xref:System.Windows.Forms.DataGrid> ovládacích prvků pro zobrazení dat ve formátu hlavního záznamu/podrobností. Jeden <xref:System.Windows.Forms.DataGrid> je určen jako hlavní mřížky, a druhý je určený být mřížku podrobnosti. Když vyberete položku v seznamu hlavních, všechny související podřízené položky jsou uvedeny v seznamu podrobnosti. Například pokud vaše <xref:System.Data.DataSet> obsahuje tabulku zákazníků a související tabulku Orders, zadali byste na hlavní mřížka tabulky Zákazníci a být mřížku podrobnosti o objednávkách. Když je zákazník vybrán z hlavní mřížky, všech objednávek tohoto zákazníka v tabulce objednávky přidružené by zobrazí v mřížce podrobností.  
+ Pokud obsahuje řadu souvisejících tabulek, můžete použít dva <xref:System.Windows.Forms.DataGrid> ovládací prvky k zobrazení dat v hlavním nebo podrobném formátu. <xref:System.Data.DataSet> Jedna <xref:System.Windows.Forms.DataGrid> je určena jako hlavní mřížka a druhá je označena jako mřížka podrobností. Když vyberete položku v seznamu hlavní seznam, zobrazí se v seznamu podrobnosti všechny související podřízené položky. Pokud <xref:System.Data.DataSet> například obsahuje tabulku Customers (zákazníci) a související tabulky objednávek, zadali byste tabulku Customers (zákazníci), která bude hlavní mřížkou, a tabulkou Orders, která bude mřížka podrobností. Když je zákazník vybraný z hlavní mřížky, v mřížce podrobností se zobrazí všechny objednávky přidružené k tomuto zákazníkovi v tabulce Orders.  
   
-### <a name="to-set-a-masterdetail-relationship-programmatically"></a>Chcete-li nastavit vztah záznamů master/detail prostřednictvím kódu programu  
+### <a name="to-set-a-masterdetail-relationship-programmatically"></a>Programové nastavení vztahu hlavní/podrobnosti  
   
-1. Vytvořit dvě nové <xref:System.Windows.Forms.DataGrid> ovládací prvky a nastavte jejich vlastnosti.  
+1. Vytvořte dva nové <xref:System.Windows.Forms.DataGrid> ovládací prvky a nastavte jejich vlastnosti.  
   
-2. Přidání tabulek do datové sady.  
+2. Přidejte tabulky do datové sady.  
   
-3. Deklarovat proměnnou typu <xref:System.Data.DataRelation> k vyjádření vztahu, kterou chcete vytvořit.  
+3. Deklarujte proměnnou typu <xref:System.Data.DataRelation> představující relaci, kterou chcete vytvořit.  
   
-4. Zadejte název pro relaci a určením tabulky, sloupce a položku, která bude tyto dvě tabulky spojit vytvořit instanci relace.  
+4. Vytvořte instanci vztahu zadáním názvu pro relaci a zadáním tabulky, sloupce a položky, které budou spojovat tyto dvě tabulky.  
   
-5. Přidat vztah k <xref:System.Data.DataSet> objektu <xref:System.Data.DataSet.Relations%2A> kolekce.  
+5. Přidejte relaci do <xref:System.Data.DataSet> <xref:System.Data.DataSet.Relations%2A> kolekce objektu.  
   
-6. Použití <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu <xref:System.Windows.Forms.DataGrid> pro každý z mřížky pro vazbu <xref:System.Data.DataSet>.  
+6. <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> Použijte metodu <xref:System.Windows.Forms.DataGrid> pro svázání všech mřížek s <xref:System.Data.DataSet>.  
   
-     Následující příklad ukazuje, jak nastavit záznamů master/detail relace mezi tabulkami Zákazníci a objednávky v dříve vytvořenou <xref:System.Data.DataSet> (`ds`).  
+     Následující příklad ukazuje, jak nastavit relaci hlavního/podrobného vztahu mezi tabulkami Zákazníci a objednávky v dříve generované <xref:System.Data.DataSet> (`ds`).  
   
     ```vb  
     Dim myDataRelation As DataRelation  
@@ -74,4 +74,4 @@ ms.locfileid: "62052164"
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
-- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+- [Postupy: Navázání model Windows Forms ovládacího prvku DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)

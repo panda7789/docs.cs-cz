@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - resource keys [WPF], SystemFonts class
 ms.assetid: 036ebea7-5677-4f60-8ba4-56c9f9d9b8bd
-ms.openlocfilehash: e924f4c14d98380d9f4c0defe27d9f98c3293114
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7283e4225b75909322fa312583e9f1a0679762e2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62001608"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918390"
 ---
 # <a name="how-to-use-system-fonts-keys"></a>Postupy: Používání klíčů systémových písem
-Systémové prostředky vystavit řadu systémových metrik jako prostředky, které usnadní vývojářům vytvářet vizuály, které jsou konzistentní s nastavení systému. <xref:System.Windows.SystemFonts> je třída, která obsahuje systémové písmo hodnoty a systémové písmo prostředky, kteří jsou navázáni na hodnoty – například <xref:System.Windows.SystemFonts.CaptionFontFamily%2A> a <xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A>.  
+Systémové prostředky zveřejňují řadu systémových metrik jako prostředků, které vývojářům pomůžou vytvářet vizuály, které jsou konzistentní s nastavením systému. <xref:System.Windows.SystemFonts>je třída, která obsahuje systémové hodnoty písma a systémové prostředky písma, které jsou vázány na hodnoty, například <xref:System.Windows.SystemFonts.CaptionFontFamily%2A> a. <xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A>  
   
- Metriky písma systému může sloužit jako statickou nebo dynamickou prostředky. Použijte dynamický prostředek, pokud chcete, aby metriky písma automaticky aktualizovat při aplikaci spustí; Jinak použijte statických prostředků.  
+ Systémové metriky písma lze použít buď jako statické, nebo jako dynamické prostředky. Použijte dynamický prostředek, pokud chcete, aby se metrika písma automaticky aktualizovala při spuštění aplikace; Jinak použijte statický prostředek.  
   
 > [!NOTE]
->  Dynamické prostředky mají klíčové slovo *klíč* připojeným k názvu vlastnosti.  
+> Dynamické prostředky mají *klíč* klíčového slova připojený k názvu vlastnosti.  
   
- Následující příklad ukazuje, jak přistupovat k prostředkům a používat systém písma dynamické stylu nebo tlačítko Přizpůsobit. To [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad vytvoří styl tlačítka, který přiřazuje <xref:System.Windows.SystemFonts> hodnoty k tlačítku.  
+ Následující příklad ukazuje, jak získat přístup k systémovým dynamickým prostředkům a používat je k nastavení stylu nebo přizpůsobení tlačítka. Tento [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad vytvoří styl tlačítka, který tlačítku přiřadí <xref:System.Windows.SystemFonts> hodnoty.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[SystemRes_snip#FontDynamicResources](~/samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/MyApp.xaml#fontdynamicresources)]  

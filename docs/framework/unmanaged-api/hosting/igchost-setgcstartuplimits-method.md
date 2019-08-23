@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9104550438a2a066cdf052b8d6592e86b831194
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87ba947b9564f82f8daf8cd2ba0acac5cc3587ca
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749995"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928663"
 ---
 # <a name="igchostsetgcstartuplimits-method"></a>IGCHost::SetGCStartupLimits – metoda
-Nastaví velikost segmentu a maximální velikost pro 0. generace.  
+Nastaví velikost segmentu a maximální velikost pro generaci 0.  
   
 > [!IMPORTANT]
->  Od verze rozhraní .NET Framework 4.5, můžete nastavit velikost segmentu a maximální 0. generace, velikost na hodnoty vyšší než `DWORD` pomocí [igchost2::setgcstartuplimitsex –](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) metody.  
+> Počínaje .NET Framework 4,5 můžete nastavit velikost segmentu a maximální velikost generace 0 na hodnoty větší než `DWORD` pomocí metody [IGCHost2 –:: SetGCStartupLimitsEx –](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +41,22 @@ HRESULT SetGCStartupLimits (
   
 ## <a name="parameters"></a>Parametry  
  `SegmentSize`  
- [in] Velikost segmentu používá systém uvolňování paměti kolekce.  
+ pro Velikost segmentu používaného systémem uvolňování paměti.  
   
  `MaxGen0Size`  
- [in] Maximální velikost 0. generace.  
+ pro Maximální velikost pro generaci 0  
   
 ## <a name="remarks"></a>Poznámky  
- `SetGCStartupLimits` Metoda může být volána pouze jednou. Tyto hodnoty není možné později změnit.  
+ `SetGCStartupLimits` Metodu lze volat pouze jednou. Tyto hodnoty nelze později změnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl, GCHost.h  
+ **Hlaviček** GCHost.idl, GCHost.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

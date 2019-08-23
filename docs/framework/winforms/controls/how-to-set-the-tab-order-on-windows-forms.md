@@ -10,12 +10,12 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: 5559a3a3e4e62ce9e620de23feef3cbfa0ab8f60
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 0a6cd8b16148d28049549b241b568966239b9b01
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039857"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923615"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí ovládacích prvků ve Windows Forms
 Pořadí prvků je pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má vlastní pořadí karet. Ve výchozím nastavení je pořadí karet stejné jako pořadí, ve kterém jste ovládací prvky vytvořili. Číslování pořadí karet začíná nulou.
@@ -29,12 +29,12 @@ Pořadí prvků je pořadí, ve kterém uživatel přesune fokus z jednoho ovlá
 2. Chcete-li vytvořit požadované pořadí karet, klikněte na ovládací prvky postupně.
 
     > [!NOTE]
-    >  Místo na ovládacím prvku v pořadí prvků lze nastavit na libovolnou hodnotu větší nebo rovnou 0. Pokud dojde k duplicitě, je vyhodnocen pořadí vykreslování dvou ovládacích prvků a ovládací prvek nahoře je zobrazen na kartách jako první. (Pořadí vykreslování je vizuální vrstvení ovládacích prvků na formuláři podél osy z (hloubka) formuláře. Pořadí vykreslování určuje, které ovládací prvky jsou před dalšími ovládacími prvky.) Další informace o pořadí vykreslování naleznete v tématu [vrstvení Objects on model Windows Forms](how-to-layer-objects-on-windows-forms.md).
+    > Místo na ovládacím prvku v pořadí prvků lze nastavit na libovolnou hodnotu větší nebo rovnou 0. Pokud dojde k duplicitě, je vyhodnocen pořadí vykreslování dvou ovládacích prvků a ovládací prvek nahoře je zobrazen na kartách jako první. (Pořadí vykreslování je vizuální vrstvení ovládacích prvků na formuláři podél osy z (hloubka) formuláře. Pořadí vykreslování určuje, které ovládací prvky jsou před dalšími ovládacími prvky.) Další informace o pořadí vykreslování naleznete v tématu [vrstvení Objects on model Windows Forms](how-to-layer-objects-on-windows-forms.md).
 
 3. Po dokončení klikněte na tlačítko **pořadí prvků** v nabídce **zobrazení** a nechejte tak režim pořadí tabulátoru.
 
     > [!NOTE]
-    >  Ovládací prvky, které nemohou získat fokus, a také zakázané a neviditelné ovládací prvky, <xref:System.Windows.Forms.Control.TabIndex%2A> nemají vlastnost a nejsou zahrnuty v pořadí prvků. Když uživatel stiskne klávesu TAB, tyto ovládací prvky se přeskočí.
+    > Ovládací prvky, které nemohou získat fokus, a také zakázané a neviditelné ovládací prvky, <xref:System.Windows.Forms.Control.TabIndex%2A> nemají vlastnost a nejsou zahrnuty v pořadí prvků. Když uživatel stiskne klávesu TAB, tyto ovládací prvky se přeskočí.
 
  Alternativně lze pořadí prvků nastavit v okno Vlastnosti pomocí <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnosti. <xref:System.Windows.Forms.Control.TabIndex%2A> Vlastnost ovládacího prvku určuje, kde je umístěn v pořadí prvků. Ve výchozím nastavení má <xref:System.Windows.Forms.Control.TabIndex%2A> první vykreslený ovládací prvek hodnotu 0, druhá <xref:System.Windows.Forms.Control.TabIndex%2A> má 1, a tak dále.
 
@@ -49,7 +49,7 @@ Pořadí prvků je pořadí, ve kterém uživatel přesune fokus z jednoho ovlá
      Ovládací prvek, <xref:System.Windows.Forms.Control.TabStop%2A> jehož vlastnost byla nastavena tak `false` , aby nadále zachoval pozici v pořadí prvků, i když je ovládací prvek vynechán při cyklickém procházení ovládacími prvky pomocí klávesy TAB.
 
     > [!NOTE]
-    >  Skupina přepínačů má v době běhu jednu zarážku tabulátoru. Vybrané tlačítko (to znamená, že <xref:System.Windows.Forms.RadioButton.Checked%2A> tlačítko s vlastností nastavenou na `true`hodnotu) má svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost automaticky nastavenou `true`na hodnotu, zatímco ostatní tlačítka mají <xref:System.Windows.Forms.Control.TabStop%2A> svou vlastnost nastavenou na `false`. Další informace o ovládacích prvcích <xref:System.Windows.Forms.RadioButton> seskupení naleznete v tématu [seskupení model Windows Forms ovládací prvky RadioButton pro fungování jako sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
+    > Skupina přepínačů má v době běhu jednu zarážku tabulátoru. Vybrané tlačítko (to znamená, že <xref:System.Windows.Forms.RadioButton.Checked%2A> tlačítko s vlastností nastavenou na `true`hodnotu) má svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost automaticky nastavenou `true`na hodnotu, zatímco ostatní tlačítka mají <xref:System.Windows.Forms.Control.TabStop%2A> svou vlastnost nastavenou na `false`. Další informace o ovládacích prvcích <xref:System.Windows.Forms.RadioButton> seskupení naleznete v tématu [seskupení model Windows Forms ovládací prvky RadioButton pro fungování jako sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
 
 ## <a name="see-also"></a>Viz také:
 

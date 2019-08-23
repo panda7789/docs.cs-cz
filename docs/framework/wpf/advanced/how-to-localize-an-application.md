@@ -9,18 +9,18 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 4d7271e792c96dd896d73a52a31ad136acc19e26
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b3ad3d0c3223d5baf937ca22fd48d46a80979aac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666790"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913674"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroje LocBaml.  
   
 > [!NOTE]
->  Nástroj LocBaml není aplikací připravenou pro produkční prostředí. Je prezentován jako ukázka, která používá některá z rozhraní API lokalizace a ukazuje, jak můžete napsat nástroj pro lokalizaci.  
+> Nástroj LocBaml není aplikací připravenou pro produkční prostředí. Je prezentován jako ukázka, která používá některá z rozhraní API lokalizace a ukazuje, jak můžete napsat nástroj pro lokalizaci.  
   
 <a name="Introduction"></a>   
 ## <a name="overview"></a>Přehled  
@@ -28,9 +28,9 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
   
 <a name="Requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
- V průběhu této diskuze použijete [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)], což je kompilátor spouštěný z příkazového řádku.  
+ V průběhu této diskuze budete používat Microsoft Build Engine (MSBuild), což je kompilátor spouštěný z příkazového řádku.  
   
- Také budete vyzváni k použití souboru projektu. Pokyny k používání [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] a projektových souborů najdete v tématu [sestavení a nasazení](../app-development/building-and-deploying-wpf-applications.md).  
+ Také budete vyzváni k použití souboru projektu. Pokyny k použití nástroje MSBuild a soubory projektu naleznete v tématu [sestavení a nasazení](../app-development/building-and-deploying-wpf-applications.md).  
   
  Všechny příklady v této diskuzi používají jako jazykovou verzi en-US (Čeština-US). To vám umožní pracovat s jednotlivými kroky v příkladech bez nutnosti instalovat jiný jazyk.  
   
@@ -40,7 +40,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
   
 1. Vyvine aplikaci do bodu, kde chcete spustit lokalizaci.  
   
-2. Určete vývojový jazyk v souboru projektu tak, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] aby vygeneroval hlavní sestavení a satelitní sestavení (soubor s příponou. Resources. dll), který obsahuje prostředky neutrálního jazyka. Soubor projektu v ukázce HelloApp je HelloApp. csproj. V tomto souboru najdete jazyk vývoje identifikovaný následujícím způsobem:  
+2. Určete vývojový jazyk v souboru projektu tak, aby nástroj MSBuild vygeneroval hlavní sestavení a satelitní sestavení (soubor s příponou. Resources. dll), aby obsahoval prostředky neutrálního jazyka. Soubor projektu v ukázce HelloApp je HelloApp. csproj. V tomto souboru najdete jazyk vývoje identifikovaný následujícím způsobem:  
   
      `<UICulture>en-US</UICulture>`  
   
@@ -108,7 +108,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
     - **Podrobné** Zobrazí podrobné informace o režimu.  
   
     > [!NOTE]
-    >  Pokud při spuštění nástroje potřebujete seznam možností, zadejte **LocBaml. exe** a stiskněte klávesu ENTER.  
+    > Pokud při spuštění nástroje potřebujete seznam možností, zadejte **LocBaml. exe** a stiskněte klávesu ENTER.  
   
 <a name="parse_dll"></a>   
 ## <a name="use-locbaml-to-parse-a-file"></a>Použití LocBaml k analýze souboru  
@@ -121,7 +121,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
      **LocBaml. exe/Parse HelloApp. Resources. dll/out: Hello. csv**  
   
     > [!NOTE]
-    >  Pokud vstupní soubor HelloApp. Resources. dll není ve stejném adresáři jako LocBaml. exe, přesuňte jeden ze souborů tak, aby oba soubory byly ve stejném adresáři.  
+    > Pokud vstupní soubor HelloApp. Resources. dll není ve stejném adresáři jako LocBaml. exe, přesuňte jeden ze souborů tak, aby oba soubory byly ve stejném adresáři.  
   
 3. Když spustíte LocBaml k analýze souborů, výstup se skládá ze sedmi polí oddělených čárkami (soubory. csv) nebo karet (soubory. txt). Následující příklad ukazuje analyzovaný soubor. CSV pro HelloApp. Resources. dll:
 
@@ -172,7 +172,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
      **LocBaml. exe/Generate HelloApp. Resources. dll/trans: Hello. csv/out: c:\/CUL: en-US**  
   
     > [!NOTE]
-    >  Pokud vstupní soubor Hello. csv není ve stejném adresáři jako spustitelný soubor LocBaml. exe, přesuňte jeden ze souborů tak, aby oba soubory byly ve stejném adresáři.  
+    > Pokud vstupní soubor Hello. csv není ve stejném adresáři jako spustitelný soubor LocBaml. exe, přesuňte jeden ze souborů tak, aby oba soubory byly ve stejném adresáři.  
   
 2. Nahraďte starý soubor HelloApp. Resources. dll v adresáři C:\HelloApp\Bin\Debug\en-US\HelloApp.resources.dll nově vytvořeným souborem HelloApp. Resources. dll.  
   

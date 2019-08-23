@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: ba238a129eddcca606e411a82f04d8da8640bdb2
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 724a848d4c31b2c4f6fc3427d70fc84f4fd944c6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602813"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924765"
 ---
 # <a name="-link-c-compiler-options"></a>-Link (C# možnosti kompilátoru)
 Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestaveních pro projekt, který právě kompilujete.  
@@ -41,7 +41,7 @@ Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestav
  `-link` Možnost vloží pouze rozhraní, struktury a delegáty. Vkládání tříd modelu COM není podporováno.  
   
 > [!NOTE]
->  Při vytváření instance vloženého typu modelu COM v kódu, je nutné vytvořit instanci pomocí příslušného rozhraní. Při pokusu o vytvoření instance vloženého typu modelu COM pomocí třídy coclass dojde k chybě.  
+> Při vytváření instance vloženého typu modelu COM v kódu, je nutné vytvořit instanci pomocí příslušného rozhraní. Při pokusu o vytvoření instance vloženého typu modelu COM pomocí třídy coclass dojde k chybě.  
   
  Chcete-li `-link` nastavit možnost v aplikaci Visual Studio, přidejte odkaz na sestavení a `Embed Interop Types` nastavte vlastnost na **hodnotu true**. Výchozí hodnota `Embed Interop Types` vlastnosti je **false**.  
   

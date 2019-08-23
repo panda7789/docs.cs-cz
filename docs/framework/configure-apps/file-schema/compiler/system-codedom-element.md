@@ -9,12 +9,12 @@ helpviewer_keywords:
 - system.codedom element
 - <system.codedom> element
 ms.assetid: 672a68f7-e69f-4479-ac30-e980085ec4fe
-ms.openlocfilehash: 2bbd81867b3c20d8ac16bdd79fcc9a3cc7bbb55c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 43bc3c40bfc0b0ce4c0b18683092faf8b67e1c04
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659687"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927697"
 ---
 # <a name="systemcodedom-element"></a>\<system.codedom> Element
 Určuje nastavení konfigurace kompilátoru pro dostupné poskytovatele jazyků.  
@@ -56,7 +56,7 @@ Určuje nastavení konfigurace kompilátoru pro dostupné poskytovatele jazyků.
  Vývojáři a dodavatelé kompilátoru můžou přidat konfigurační nastavení do konfiguračního souboru počítače (Machine. config) pro novou <xref:System.CodeDom.Compiler.CodeDomProvider> implementaci. <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> Použijte metodu pro programové vytvoření výčtu výchozích zprostředkovatelů jazyků a poskytovatelů jazyka identifikovaných nastavením konfigurace kompilátoru v počítači.  
   
 > [!NOTE]
->  Ve verzích .NET Framework 1,0 a 1,1 jsou výchozí poskytovatelé jazyka dodané .NET Framework identifikováni v [ \<prvku > kompilátoru](compilers-element.md) . V .NET Framework verze 2,0 nejsou výchozí poskytovatelé jazyků identifikováni v [ \<>](compilers-element.md) elementu compilers, ale lze je <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> vyčíslit pomocí metody.  
+> Ve verzích .NET Framework 1,0 a 1,1 jsou výchozí poskytovatelé jazyka dodané .NET Framework identifikováni v [ \<prvku > kompilátoru](compilers-element.md) . V .NET Framework verze 2,0 nejsou výchozí poskytovatelé jazyků identifikováni v [ \<>](compilers-element.md) elementu compilers, ale lze je <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> vyčíslit pomocí metody.  
   
 ## <a name="net-framework-versions-10-and-11"></a>.NET Framework verze 1,0 a 1,1  
  Element [System. CodeDom > obsahuje nastavení konfigurace kompilátoru pro poskytovatele jazyků v počítači. \<](system-codedom-element.md) Kompilátory > element obsahuje nula nebo více [ \<elementů > kompilátoru](compiler-element.md) . [ \<](compilers-element.md) [ Každý\<kompilátor >](compiler-element.md) element určuje atributy konfigurace kompilátoru pro konkrétního poskytovatele jazyka.  

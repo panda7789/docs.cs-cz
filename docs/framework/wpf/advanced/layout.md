@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 648adb34664ccb2a475e32aba4d0d76d99cf49d8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: eb254503f5ce2240a03179da693c66f7ada876be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666766"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918289"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje systém rozložení Windows Presentation Foundation (WPF). Porozumění tomu, jak a kdy dochází k výpočtům rozložení, je zásadní pro vytváření uživatelských rozhraní v WPF.  
@@ -89,7 +89,7 @@ Toto téma popisuje systém rozložení Windows Presentation Foundation (WPF). P
  Druhý, vlastnosti rozhraní definované na <xref:System.Windows.FrameworkElement> jsou zpracovávány, což má vliv na `constraintSize`hodnotu. Tyto vlastnosti obecně <xref:System.Windows.UIElement>popisují charakteristiky velikosti základního, jako <xref:System.Windows.FrameworkElement.Height%2A>je například, <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.Margin%2A>, a <xref:System.Windows.FrameworkElement.Style%2A>. Každá z těchto vlastností může změnit prostor, který je nezbytný k zobrazení elementu. <xref:System.Windows.FrameworkElement.MeasureOverride%2A>je pak volána s `constraintSize` parametrem.  
   
 > [!NOTE]
->  <xref:System.Windows.FrameworkElement.Height%2A> Existuje rozdíl mezi vlastnostmi <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.ActualHeight%2A> a a a. <xref:System.Windows.FrameworkElement.ActualWidth%2A> Například <xref:System.Windows.FrameworkElement.ActualHeight%2A> vlastnost je vypočtená hodnota založená na dalších vstupech výšky a v systému rozložení. Hodnota je nastavena samotným systémem rozložení na základě skutečného průchodu vykreslování a může proto mírně prodleva za nastavenou hodnotou vlastností, například <xref:System.Windows.FrameworkElement.Height%2A>, které jsou základem změny vstupu.  
+> <xref:System.Windows.FrameworkElement.Height%2A> Existuje rozdíl mezi vlastnostmi <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.ActualHeight%2A> a a a. <xref:System.Windows.FrameworkElement.ActualWidth%2A> Například <xref:System.Windows.FrameworkElement.ActualHeight%2A> vlastnost je vypočtená hodnota založená na dalších vstupech výšky a v systému rozložení. Hodnota je nastavena samotným systémem rozložení na základě skutečného průchodu vykreslování a může proto mírně prodleva za nastavenou hodnotou vlastností, například <xref:System.Windows.FrameworkElement.Height%2A>, které jsou základem změny vstupu.  
 >   
 >  Vzhledem <xref:System.Windows.FrameworkElement.ActualHeight%2A> k tomu, že je vypočtená hodnota, měli byste si uvědomit, že v důsledku různých operací se systémem rozložení může dojít k několika nebo přírůstkovým změnám. Systém rozložení může vypočítat požadované místo měření pro podřízené elementy, omezení nadřazeného elementu atd.  
   

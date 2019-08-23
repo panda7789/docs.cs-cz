@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [WPF], custom classes
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-ms.openlocfilehash: 8b47c43e897004a6c7eb3d2f8b2a2b9bb625e158
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 9fe53ed4d677f5604911c02d0426ed1b567d51e1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400830"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917324"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 XAML, jak je implementováno v architekturách modulu CLR (Common Language Runtime), podporuje možnost definovat vlastní třídu nebo strukturu v jakémkoli jazyce modulu CLR (Common Language Runtime) a pak k této třídě přistupovat pomocí kódu XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]definovaných typů a vlastních typů v rámci stejného souboru s označením, obvykle mapováním vlastních typů na předponu oboru názvů XAML. Toto téma popisuje požadavky, které musí vlastní třída splňovat, aby ji bylo možné použít jako prvek XAML.  
@@ -69,7 +69,7 @@ XAML, jak je implementováno v architekturách modulu CLR (Common Language Runti
  Aby bylo možné použít jako událost CLR, musí být událost vystavena jako veřejná událost ve třídě, která podporuje konstruktor bez parametrů, nebo na abstraktní třídě, kde je k události možné přistupovat v odvozených třídách. Aby bylo možné používat pohodlný postup jako směrované události, měla by vaše událost CLR implementovat `add` explicitní a `remove` metody, které přidávají a odebírají obslužné rutiny pro podpis události CLR a <xref:System.Windows.UIElement.AddHandler%2A> předají tyto obslužné rutiny do a <xref:System.Windows.UIElement.RemoveHandler%2A> . způsobů. Tyto metody přidávají nebo odebírají obslužné rutiny do úložiště obslužné rutiny směrované události v instanci, ke které je událost připojena.  
   
 > [!NOTE]
->  Je možné registrovat obslužné rutiny přímo pro směrované události pomocí <xref:System.Windows.UIElement.AddHandler%2A>a záměrně nedefinovat událost CLR, která zpřístupňuje směrovanou událost. Obecně se to nedoporučuje, protože událost nepovoluje syntaxi atributu XAML pro připojení obslužných rutin a výsledná třída nabízí méně transparentní zobrazení XAML pro tyto možnosti typu.  
+> Je možné registrovat obslužné rutiny přímo pro směrované události pomocí <xref:System.Windows.UIElement.AddHandler%2A>a záměrně nedefinovat událost CLR, která zpřístupňuje směrovanou událost. Obecně se to nedoporučuje, protože událost nepovoluje syntaxi atributu XAML pro připojení obslužných rutin a výsledná třída nabízí méně transparentní zobrazení XAML pro tyto možnosti typu.  
   
 <a name="Collection_Properties"></a>   
 ## <a name="writing-collection-properties"></a>Zápis vlastností kolekce  
@@ -92,7 +92,7 @@ XAML, jak je implementováno v architekturách modulu CLR (Common Language Runti
  Každý z těchto typů v modulu CLR má `Add` metodu, která je používána procesorem XAML k přidávání položek do základní kolekce při vytváření grafu objektu.  
   
 > [!NOTE]
->  Obecné `List` rozhraní a `Dictionary` rozhraní (<xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IDictionary%602>) nejsou podporovány pro detekci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kolekce procesorem XAML. <xref:System.Collections.Generic.List%601> Třídu však můžete použít jako základní třídu, protože implementuje <xref:System.Collections.IList> přímo nebo <xref:System.Collections.Generic.Dictionary%602> jako základní třídu, protože implementuje <xref:System.Collections.IDictionary> přímo.  
+> Obecné `List` rozhraní a `Dictionary` rozhraní (<xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IDictionary%602>) nejsou podporovány pro detekci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kolekce procesorem XAML. <xref:System.Collections.Generic.List%601> Třídu však můžete použít jako základní třídu, protože implementuje <xref:System.Collections.IList> přímo nebo <xref:System.Collections.Generic.Dictionary%602> jako základní třídu, protože implementuje <xref:System.Collections.IDictionary> přímo.  
   
  Pokud deklarujete vlastnost, která přebírá kolekci, buďte opatrní při inicializaci této hodnoty vlastnosti v nových instancích typu. Pokud vlastnost neimplementujete jako vlastnost závislosti, pak vlastnost používá pole pro zálohování, které volá konstruktor typu kolekce. Pokud je vlastnost závislá na vlastnosti, může být nutné inicializovat vlastnost kolekce jako součást výchozího konstruktoru typu. Důvodem je to, že vlastnost závislosti přebírá svou výchozí hodnotu z metadat a obvykle nechcete, aby byla počáteční hodnota vlastnosti kolekce statická, sdílená kolekce. Měla by existovat instance kolekce pro každý z nich obsahující instanci typu. Další informace najdete v tématu [vlastnosti vlastních závislostí](custom-dependency-properties.md).  
   
