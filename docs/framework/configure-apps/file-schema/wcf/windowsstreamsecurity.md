@@ -2,55 +2,55 @@
 title: <windowsStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
-ms.openlocfilehash: 32e8ed6b70a23462fac3c53d1bc353167ff67560
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f1dfd523e593c82727354db7ce39ffc992bdfb4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769704"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932808"
 ---
-# <a name="windowsstreamsecurity"></a><span data-ttu-id="5c646-101">\<windowsStreamSecurity></span><span class="sxs-lookup"><span data-stu-id="5c646-101">\<windowsStreamSecurity></span></span>
-<span data-ttu-id="5c646-102">Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.</span><span class="sxs-lookup"><span data-stu-id="5c646-102">Specify Windows stream security settings of the custom binding.</span></span>  
+# <a name="windowsstreamsecurity"></a><span data-ttu-id="5d5e1-101">\<windowsStreamSecurity></span><span class="sxs-lookup"><span data-stu-id="5d5e1-101">\<windowsStreamSecurity></span></span>
+<span data-ttu-id="5d5e1-102">Zadejte nastavení zabezpečení Windows Stream pro vlastní vazbu.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-102">Specify Windows stream security settings of the custom binding.</span></span>  
   
- <span data-ttu-id="5c646-103">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="5c646-103">\<system.serviceModel></span></span>  
-<span data-ttu-id="5c646-104">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="5c646-104">\<bindings></span></span>  
-<span data-ttu-id="5c646-105">\<customBinding></span><span class="sxs-lookup"><span data-stu-id="5c646-105">\<customBinding></span></span>  
-<span data-ttu-id="5c646-106">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="5c646-106">\<binding></span></span>  
-<span data-ttu-id="5c646-107">\<windowsStreamSecurity></span><span class="sxs-lookup"><span data-stu-id="5c646-107">\<windowsStreamSecurity></span></span>  
+ <span data-ttu-id="5d5e1-103">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="5d5e1-103">\<system.serviceModel></span></span>  
+<span data-ttu-id="5d5e1-104">\<> vazeb</span><span class="sxs-lookup"><span data-stu-id="5d5e1-104">\<bindings></span></span>  
+<span data-ttu-id="5d5e1-105">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="5d5e1-105">\<customBinding></span></span>  
+<span data-ttu-id="5d5e1-106">\<> vazby</span><span class="sxs-lookup"><span data-stu-id="5d5e1-106">\<binding></span></span>  
+<span data-ttu-id="5d5e1-107">\<windowsStreamSecurity></span><span class="sxs-lookup"><span data-stu-id="5d5e1-107">\<windowsStreamSecurity></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5c646-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5c646-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5d5e1-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5d5e1-108">Syntax</span></span>  
   
 ```xml  
 <windowsStreamSecurity protectionLevel="None/Sign/EncryptAndSign" />
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="5c646-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="5c646-109">Attributes and Elements</span></span>  
- <span data-ttu-id="5c646-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="5c646-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="5d5e1-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="5d5e1-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="5d5e1-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="5c646-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="5c646-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="5d5e1-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="5d5e1-111">Attributes</span></span>  
   
-|<span data-ttu-id="5c646-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="5c646-112">Attribute</span></span>|<span data-ttu-id="5c646-113">Popis</span><span class="sxs-lookup"><span data-stu-id="5c646-113">Description</span></span>|  
+|<span data-ttu-id="5d5e1-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="5d5e1-112">Attribute</span></span>|<span data-ttu-id="5d5e1-113">Popis</span><span class="sxs-lookup"><span data-stu-id="5d5e1-113">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="5c646-114">Třída protectionLevel</span><span class="sxs-lookup"><span data-stu-id="5c646-114">protectionLevel</span></span>|<span data-ttu-id="5c646-115">Definuje zabezpečení na úrovni zprávy.</span><span class="sxs-lookup"><span data-stu-id="5c646-115">Defines message-level security.</span></span> <span data-ttu-id="5c646-116">Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů.</span><span class="sxs-lookup"><span data-stu-id="5c646-116">Signing messages mitigates the risk of a third party tampering with the message while it is being transferred.</span></span> <span data-ttu-id="5c646-117">Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu.</span><span class="sxs-lookup"><span data-stu-id="5c646-117">Encryption provides data-level privacy during transport.</span></span> <span data-ttu-id="5c646-118">Platné hodnoty patří:</span><span class="sxs-lookup"><span data-stu-id="5c646-118">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="5c646-119">-Žádný: Žádná ochrana.</span><span class="sxs-lookup"><span data-stu-id="5c646-119">-   None: No protection.</span></span><br /><span data-ttu-id="5c646-120">– Přihlášení: Zprávy jsou podepsané.</span><span class="sxs-lookup"><span data-stu-id="5c646-120">-   Sign: Messages are signed.</span></span><br /><span data-ttu-id="5c646-121">-EncryptAndSign: Zprávy jsou podepsaný a zašifrovaný.</span><span class="sxs-lookup"><span data-stu-id="5c646-121">-   EncryptAndSign: Messages are signed and encrypted.</span></span><br /><br /> <span data-ttu-id="5c646-122">Výchozí hodnota je EncryptAndSign.</span><span class="sxs-lookup"><span data-stu-id="5c646-122">The default is EncryptAndSign.</span></span><br /><br /> <span data-ttu-id="5c646-123">Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.</span><span class="sxs-lookup"><span data-stu-id="5c646-123">This attribute is of type <xref:System.Net.Security.ProtectionLevel>.</span></span>|  
+|<span data-ttu-id="5d5e1-114">Platné</span><span class="sxs-lookup"><span data-stu-id="5d5e1-114">protectionLevel</span></span>|<span data-ttu-id="5d5e1-115">Definuje zabezpečení na úrovni zprávy.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-115">Defines message-level security.</span></span> <span data-ttu-id="5d5e1-116">Podepisování zpráv snižuje riziko manipulace třetí strany při přenosu zprávy.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-116">Signing messages mitigates the risk of a third party tampering with the message while it is being transferred.</span></span> <span data-ttu-id="5d5e1-117">Šifrování poskytuje během přenosu soukromí na úrovni dat.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-117">Encryption provides data-level privacy during transport.</span></span> <span data-ttu-id="5d5e1-118">Platné hodnoty jsou následující:</span><span class="sxs-lookup"><span data-stu-id="5d5e1-118">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="5d5e1-119">NTato Žádná ochrana.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-119">-   None: No protection.</span></span><br /><span data-ttu-id="5d5e1-120">Osobě Zprávy jsou podepsány.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-120">-   Sign: Messages are signed.</span></span><br /><span data-ttu-id="5d5e1-121">EncryptAndSign Zprávy jsou podepsané a šifrované.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-121">-   EncryptAndSign: Messages are signed and encrypted.</span></span><br /><br /> <span data-ttu-id="5d5e1-122">Výchozí hodnota je EncryptAndSign.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-122">The default is EncryptAndSign.</span></span><br /><br /> <span data-ttu-id="5d5e1-123">Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-123">This attribute is of type <xref:System.Net.Security.ProtectionLevel>.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="5c646-124">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="5c646-124">Child Elements</span></span>  
- <span data-ttu-id="5c646-125">Žádné</span><span class="sxs-lookup"><span data-stu-id="5c646-125">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="5d5e1-124">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="5d5e1-124">Child Elements</span></span>  
+ <span data-ttu-id="5d5e1-125">Žádné</span><span class="sxs-lookup"><span data-stu-id="5d5e1-125">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="5c646-126">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="5c646-126">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="5d5e1-126">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="5d5e1-126">Parent Elements</span></span>  
   
-|<span data-ttu-id="5c646-127">Prvek</span><span class="sxs-lookup"><span data-stu-id="5c646-127">Element</span></span>|<span data-ttu-id="5c646-128">Popis</span><span class="sxs-lookup"><span data-stu-id="5c646-128">Description</span></span>|  
+|<span data-ttu-id="5d5e1-127">Prvek</span><span class="sxs-lookup"><span data-stu-id="5d5e1-127">Element</span></span>|<span data-ttu-id="5d5e1-128">Popis</span><span class="sxs-lookup"><span data-stu-id="5d5e1-128">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="5c646-129">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="5c646-129">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="5c646-130">Definuje všechny možnosti vázání pro vlastní vazbu.</span><span class="sxs-lookup"><span data-stu-id="5c646-130">Defines all binding capabilities of the custom binding.</span></span>|  
+|[<span data-ttu-id="5d5e1-129">\<> vazby</span><span class="sxs-lookup"><span data-stu-id="5d5e1-129">\<binding></span></span>](../../../misc/binding.md)|<span data-ttu-id="5d5e1-130">Definuje všechny schopnosti vazby vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-130">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="5c646-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5c646-131">Remarks</span></span>  
- <span data-ttu-id="5c646-132">Na základě datového proudu přenosu inovace podporují přenosy, které používají protokol orientovaný na stream jako je například TCP a pojmenované kanály.</span><span class="sxs-lookup"><span data-stu-id="5c646-132">Transports that use a stream-oriented protocol such as TCP and named pipes support stream-based transport upgrades.</span></span> <span data-ttu-id="5c646-133">Konkrétně WCF poskytuje upgradů zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="5c646-133">Specifically, WCF provides security upgrades.</span></span> <span data-ttu-id="5c646-134">Konfigurace tohoto zabezpečení přenosu jsou zapouzdřena objektem tento prvek konfigurace a také zobrazením [ \<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), které se konfigurují a přidat do vlastní vazby</span><span class="sxs-lookup"><span data-stu-id="5c646-134">The configuration of this transport security is encapsulated by this configuration element  as well as by [\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), which can be configured and added to a custom binding</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5d5e1-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5d5e1-131">Remarks</span></span>  
+ <span data-ttu-id="5d5e1-132">Přenosy, které používají protokol orientovaný na proud, jako je TCP a pojmenované kanály, podporují upgrady přenosu na základě datového proudu.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-132">Transports that use a stream-oriented protocol such as TCP and named pipes support stream-based transport upgrades.</span></span> <span data-ttu-id="5d5e1-133">Konkrétně WCF zajišťuje upgrady zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-133">Specifically, WCF provides security upgrades.</span></span> <span data-ttu-id="5d5e1-134">Konfigurace tohoto transportního zabezpečení se zapouzdřuje pomocí tohoto elementu [ \<konfigurace a > sslStreamSecurity](sslstreamsecurity.md), který se dá nakonfigurovat a přidat k vlastní vazbě.</span><span class="sxs-lookup"><span data-stu-id="5d5e1-134">The configuration of this transport security is encapsulated by this configuration element  as well as by [\<sslStreamSecurity>](sslstreamsecurity.md), which can be configured and added to a custom binding</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5c646-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5c646-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5d5e1-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5d5e1-135">See also</span></span>
 
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>
 - <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>
-- [<span data-ttu-id="5c646-136">Vazby</span><span class="sxs-lookup"><span data-stu-id="5c646-136">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)
-- [<span data-ttu-id="5c646-137">Rozšíření vazeb</span><span class="sxs-lookup"><span data-stu-id="5c646-137">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [<span data-ttu-id="5c646-138">Vlastní vazby</span><span class="sxs-lookup"><span data-stu-id="5c646-138">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [<span data-ttu-id="5c646-139">\<customBinding></span><span class="sxs-lookup"><span data-stu-id="5c646-139">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [<span data-ttu-id="5d5e1-136">Vazby</span><span class="sxs-lookup"><span data-stu-id="5d5e1-136">Bindings</span></span>](../../../wcf/bindings.md)
+- [<span data-ttu-id="5d5e1-137">Rozšíření vazeb</span><span class="sxs-lookup"><span data-stu-id="5d5e1-137">Extending Bindings</span></span>](../../../wcf/extending/extending-bindings.md)
+- [<span data-ttu-id="5d5e1-138">Vlastní vazby</span><span class="sxs-lookup"><span data-stu-id="5d5e1-138">Custom Bindings</span></span>](../../../wcf/extending/custom-bindings.md)
+- [<span data-ttu-id="5d5e1-139">\<customBinding></span><span class="sxs-lookup"><span data-stu-id="5d5e1-139">\<customBinding></span></span>](custombinding.md)

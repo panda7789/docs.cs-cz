@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cb8c232e63d1f3066737ff755d5911c185abe6fb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f323e91e60c9735a51e955eaab6673ca167f294d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755367"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951869"
 ---
-# <a name="imetadataimportresolvetyperef-method"></a><span data-ttu-id="5752d-102">IMetaDataImport::ResolveTypeRef – metoda</span><span class="sxs-lookup"><span data-stu-id="5752d-102">IMetaDataImport::ResolveTypeRef Method</span></span>
-<span data-ttu-id="5752d-103">Řeší <xref:System.Type> odkaz reprezentována zadaný token TypeRef.</span><span class="sxs-lookup"><span data-stu-id="5752d-103">Resolves a <xref:System.Type> reference represented by the specified TypeRef token.</span></span>  
+# <a name="imetadataimportresolvetyperef-method"></a><span data-ttu-id="33a2f-102">IMetaDataImport::ResolveTypeRef – metoda</span><span class="sxs-lookup"><span data-stu-id="33a2f-102">IMetaDataImport::ResolveTypeRef Method</span></span>
+<span data-ttu-id="33a2f-103"><xref:System.Type> Vyřeší odkaz reprezentovaný zadaným tokenem TypeRef.</span><span class="sxs-lookup"><span data-stu-id="33a2f-103">Resolves a <xref:System.Type> reference represented by the specified TypeRef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5752d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5752d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="33a2f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="33a2f-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ResolveTypeRef (  
@@ -38,38 +38,38 @@ HRESULT ResolveTypeRef (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5752d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5752d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="33a2f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="33a2f-105">Parameters</span></span>  
  `tr`  
- <span data-ttu-id="5752d-106">[in] Token TypeRef metadat nevrátil informace odkazovaného typu pro.</span><span class="sxs-lookup"><span data-stu-id="5752d-106">[in] The TypeRef metadata token to return the referenced type information for.</span></span>  
+ <span data-ttu-id="33a2f-106">pro Token metadat TypeRef, pro který se mají vrátit odkazované informace o typu pro.</span><span class="sxs-lookup"><span data-stu-id="33a2f-106">[in] The TypeRef metadata token to return the referenced type information for.</span></span>  
   
  `riid`  
- <span data-ttu-id="5752d-107">[in] Identifikátor IID rozhraní vrátit v `ppIScope`.</span><span class="sxs-lookup"><span data-stu-id="5752d-107">[in] The IID of the interface to return in `ppIScope`.</span></span> <span data-ttu-id="5752d-108">Obvykle by to IID_IMetaDataImport.</span><span class="sxs-lookup"><span data-stu-id="5752d-108">Typically, this would be IID_IMetaDataImport.</span></span>  
+ <span data-ttu-id="33a2f-107">pro IID rozhraní, které se má vrátit `ppIScope`.</span><span class="sxs-lookup"><span data-stu-id="33a2f-107">[in] The IID of the interface to return in `ppIScope`.</span></span> <span data-ttu-id="33a2f-108">Obvykle by to bylo IID_IMetaDataImport.</span><span class="sxs-lookup"><span data-stu-id="33a2f-108">Typically, this would be IID_IMetaDataImport.</span></span>  
   
  `ppIScope`  
- <span data-ttu-id="5752d-109">[out] Rozhraní pro rozsah modulu, ve kterém odkazovaný typ je definován.</span><span class="sxs-lookup"><span data-stu-id="5752d-109">[out] An interface to the module scope in which the referenced type is defined.</span></span>  
+ <span data-ttu-id="33a2f-109">mimo Rozhraní pro obor modulu, ve kterém je definován odkazovaný typ.</span><span class="sxs-lookup"><span data-stu-id="33a2f-109">[out] An interface to the module scope in which the referenced type is defined.</span></span>  
   
  `ptd`  
- <span data-ttu-id="5752d-110">[out] Ukazatel na token TypeDef, který představuje odkazovaného typu.</span><span class="sxs-lookup"><span data-stu-id="5752d-110">[out] A pointer to a TypeDef token that represents the referenced type.</span></span>  
+ <span data-ttu-id="33a2f-110">mimo Ukazatel na token TypeDef, který představuje odkazovaný typ.</span><span class="sxs-lookup"><span data-stu-id="33a2f-110">[out] A pointer to a TypeDef token that represents the referenced type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="5752d-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5752d-111">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="33a2f-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="33a2f-111">Remarks</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="5752d-112">Nepoužívejte tuto metodu, pokud jsou načteny více domén aplikace.</span><span class="sxs-lookup"><span data-stu-id="5752d-112">Do not use this method if multiple application domains are loaded.</span></span> <span data-ttu-id="5752d-113">Metoda nerespektuje hranice aplikační domény.</span><span class="sxs-lookup"><span data-stu-id="5752d-113">The method does not respect application domain boundaries.</span></span> <span data-ttu-id="5752d-114">Pokud jsou načteno více verzí sestavení a obsahují stejný typ s stejný obor názvů, metoda vrátí rozsah modulu první typu, které nalezne.</span><span class="sxs-lookup"><span data-stu-id="5752d-114">If multiple versions of an assembly are loaded, and they contain the same type with the same namespace, the method returns the module scope of the first type it finds.</span></span>  
+> <span data-ttu-id="33a2f-112">Tuto metodu nepoužívejte, pokud je načteno více domén aplikace.</span><span class="sxs-lookup"><span data-stu-id="33a2f-112">Do not use this method if multiple application domains are loaded.</span></span> <span data-ttu-id="33a2f-113">Metoda nerespektuje hranice aplikační domény.</span><span class="sxs-lookup"><span data-stu-id="33a2f-113">The method does not respect application domain boundaries.</span></span> <span data-ttu-id="33a2f-114">Je-li načteno více verzí sestavení a obsahují stejný typ se stejným oborem názvů, metoda vrátí rozsah modulu prvního hledaného typu.</span><span class="sxs-lookup"><span data-stu-id="33a2f-114">If multiple versions of an assembly are loaded, and they contain the same type with the same namespace, the method returns the module scope of the first type it finds.</span></span>  
   
- <span data-ttu-id="5752d-115">`ResolveTypeRef` Metoda vyhledá do definice typu v dalších modulů.</span><span class="sxs-lookup"><span data-stu-id="5752d-115">The `ResolveTypeRef` method searches for the type definition in other modules.</span></span> <span data-ttu-id="5752d-116">Pokud se najde definici typu `ResolveTypeRef` vrátí rozsah tohoto modulu, jakož i token TypeDef pro typ rozhraní.</span><span class="sxs-lookup"><span data-stu-id="5752d-116">If the type definition is found, `ResolveTypeRef` returns an interface to that module scope as well as the TypeDef token for the type.</span></span>  
+ <span data-ttu-id="33a2f-115">`ResolveTypeRef` Metoda hledá definici typu v jiných modulech.</span><span class="sxs-lookup"><span data-stu-id="33a2f-115">The `ResolveTypeRef` method searches for the type definition in other modules.</span></span> <span data-ttu-id="33a2f-116">Pokud je nalezena definice typu, `ResolveTypeRef` vrátí rozhraní do tohoto oboru modulu a také token typedef pro typ.</span><span class="sxs-lookup"><span data-stu-id="33a2f-116">If the type definition is found, `ResolveTypeRef` returns an interface to that module scope as well as the TypeDef token for the type.</span></span>  
   
- <span data-ttu-id="5752d-117">Pokud má rozlišení oboru odkaz AssemblyRef, které je potřeba vyřešit odkaz na typ `ResolveTypeRef` metoda vyhledá shodu pouze v obory metadat, které již byly otevřeny pomocí volání na buď [imetadatadispenser::openscope –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md)metoda nebo [imetadatadispenser::openscopeonmemory –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="5752d-117">If the type reference to be resolved has a resolution scope of AssemblyRef, the `ResolveTypeRef` method searches for a match only in the metadata scopes that have already been opened with calls to either the [IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) method or the [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) method.</span></span> <span data-ttu-id="5752d-118">Důvodem je, že `ResolveTypeRef` nelze určit ze pouze odkaz AssemblyRef obor na disk nebo do globální mezipaměti sestavení sestavení se mají ukládat.</span><span class="sxs-lookup"><span data-stu-id="5752d-118">This is because `ResolveTypeRef` cannot determine from only the AssemblyRef scope where on disk or in the global assembly cache the assembly is stored.</span></span>  
+ <span data-ttu-id="33a2f-117">Pokud odkaz na typ, který má být vyřešen, má obor rozlišení AssemblyRef, `ResolveTypeRef` metoda vyhledá shodu pouze v oborech metadat, které již byly otevřeny s voláním metody [IMetaDataDispenser:: OpenScope –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) nebo [ IMetaDataDispenser:: OpenScopeOnMemory – –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) metoda</span><span class="sxs-lookup"><span data-stu-id="33a2f-117">If the type reference to be resolved has a resolution scope of AssemblyRef, the `ResolveTypeRef` method searches for a match only in the metadata scopes that have already been opened with calls to either the [IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) method or the [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) method.</span></span> <span data-ttu-id="33a2f-118">Důvodem je, `ResolveTypeRef` že nelze určit pouze z oboru AssemblyRef, kde na disku nebo v globální mezipaměti sestavení (GAC) sestavení je uloženo.</span><span class="sxs-lookup"><span data-stu-id="33a2f-118">This is because `ResolveTypeRef` cannot determine from only the AssemblyRef scope where on disk or in the global assembly cache the assembly is stored.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5752d-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5752d-119">Requirements</span></span>  
- <span data-ttu-id="5752d-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5752d-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="33a2f-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="33a2f-119">Requirements</span></span>  
+ <span data-ttu-id="33a2f-120">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="33a2f-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5752d-121">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="5752d-121">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="33a2f-121">**Hlaviček** Cor. h</span><span class="sxs-lookup"><span data-stu-id="33a2f-121">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="5752d-122">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5752d-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="33a2f-122">**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="33a2f-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="5752d-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5752d-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="33a2f-123">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="33a2f-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5752d-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5752d-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="33a2f-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="33a2f-124">See also</span></span>
 
-- [<span data-ttu-id="5752d-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5752d-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="5752d-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5752d-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="33a2f-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="33a2f-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="33a2f-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="33a2f-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
