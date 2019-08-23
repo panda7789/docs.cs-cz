@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 9ab046c6f7c070ade9d3e474309b33afbf78370e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 03a35d26fd1917d926f9a26d25ae8a8e32c476f4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629645"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917632"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF ve Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce do aplikace namísto přepisu původního kódu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v okně.  
@@ -25,7 +25,7 @@ ms.locfileid: "68629645"
  Vzhledem k tomu, že je ukázka, která doprovází C++tento kurz, implementována ve verzi/CLI, v tomto C++ kurzu se předpokládá znalost použití nástroje k programování rozhraní Windows API a porozumění programování spravovaného kódu. Znalost C++/CLI je užitečná, ale není nezbytná.  
   
 > [!NOTE]
->  Tento kurz obsahuje několik příkladů kódu z přidruženého vzorku. Pro čitelnost ale nezahrnuje kompletní vzorový kód. Úplný vzorový kód naleznete v tématu [hostování obsahu WPF v ukázce okna Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
+> Tento kurz obsahuje několik příkladů kódu z přidruženého vzorku. Pro čitelnost ale nezahrnuje kompletní vzorový kód. Úplný vzorový kód naleznete v tématu [hostování obsahu WPF v ukázce okna Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>Základní postup  
@@ -58,7 +58,7 @@ ms.locfileid: "68629645"
 8. Komunikujte s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahem pomocí odkazu, který jste uložili do statického pole pro nastavení vlastností a tak dále.  
   
 > [!NOTE]
->  K implementaci vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít také. Bude však nutné jej zkompilovat samostatně jako dynamickou knihovnu (DLL) a odkazovat na tuto knihovnu DLL z vaší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Zbytek postupu je podobný jako uvedený výše.
+> K implementaci vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít také. Bude však nutné jej zkompilovat samostatně jako dynamickou knihovnu (DLL) a odkazovat na tuto knihovnu DLL z vaší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Zbytek postupu je podobný jako uvedený výše.
 
 <a name="implementing_the_application"></a>
 ## <a name="implementing-the-host-application"></a>Implementace hostitelské aplikace
@@ -106,7 +106,7 @@ ms.locfileid: "68629645"
 4. V rozevíracím seznamu vyberte možnost **Podpora Common Language Runtime (/CLR)** .
 
 > [!NOTE]
->  Tento příznak kompilátoru umožňuje použít spravovaný kód v aplikaci, ale váš nespravovaný kód bude zkompilován jako dříve.
+> Tento příznak kompilátoru umožňuje použít spravovaný kód v aplikaci, ale váš nespravovaný kód bude zkompilován jako dříve.
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používá model vláken s jedním vláknem (STA). Aby bylo možné správně pracovat s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kódem obsahu, je nutné nastavit model vláken aplikace na sta tím, že použijete atribut na vstupní bod.
 
@@ -123,7 +123,7 @@ ms.locfileid: "68629645"
  Metoda přebírá informace o velikosti a umístění spolu s popisovačem nadřazeného okna a vrací popisovač okna hostovaného [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu. `GetHwnd`
 
 > [!NOTE]
->  Pro obor názvů nelze `#using`použít direktivu.`System::Windows::Interop` Tím se vytvoří kolize názvů mezi <xref:System.Windows.Interop.MSG> strukturou v tomto oboru názvů a strukturou MSG deklarovanou v Winuser. h. Místo toho je nutné použít plně kvalifikované názvy pro přístup k obsahu tohoto oboru názvů.
+> Pro obor názvů nelze `#using`použít direktivu.`System::Windows::Interop` Tím se vytvoří kolize názvů mezi <xref:System.Windows.Interop.MSG> strukturou v tomto oboru názvů a strukturou MSG deklarovanou v Winuser. h. Místo toho je nutné použít plně kvalifikované názvy pro přístup k obsahu tohoto oboru názvů.
 
  [!code-cpp[Win32HostingWPFPage#GetHwnd](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#gethwnd)]
 

@@ -2,37 +2,37 @@
 title: Zprostředkovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-ms.openlocfilehash: b3f56ed46507d68092268c3202cee6234fda7b42
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: e1520ef3e2faca88b06cc82ef5ab3035a857314a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487472"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969361"
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
-Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se zprostředkovateli token CardSpace. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:
+Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenů. Poskytovatel tokenu v Windows Communication Foundation (WCF) se používá k poskytnutí přihlašovacích údajů infrastruktuře zabezpečení. Poskytovatel tokenů v nástroji General prověřuje cíl a vydá odpovídající přihlašovací údaje, aby mohla infrastruktura zabezpečení zabezpečit zprávu. WCF se dodává s výchozím poskytovatelem tokenu správce přihlašovacích údajů. WCF se dodává i s poskytovatelem tokenů služby CardSpace. Vlastní zprostředkovatelé tokeny jsou užitečné v následujících případech:
 
-- Pokud máte úložiště přihlašovacích údajů, které tyto poskytovatele tokenů nemůže pracovat s.
+- Pokud máte úložiště přihlašovacích údajů, pomocí kterého tyto poskytovatelé tokenů nemůžou pracovat s nástrojem.
 
-- Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel zadá podrobnosti, které chcete při Architektura klienta WCF používá přihlašovací údaje.
+- Pokud chcete poskytnout vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel poskytne informace, když klient rozhraní WCF použije přihlašovací údaje.
 
 - Pokud vytváříte vlastní token.
 
- Tento příklad ukazuje, jak vytvořit vlastního zprostředkovatele tokenů, který transformuje vstup od uživatele do jiného formátu.
+ V této ukázce se dozvíte, jak vytvořit vlastního poskytovatele tokenů, který transformuje vstup od uživatele do jiného formátu.
 
- Souhrnně řečeno, tento příklad znázorňuje následující:
+ Pro Shrnutí Tato ukázka demonstruje následující:
 
-- Jak klient může ověřit pomocí dvojice uživatelského jména a hesla.
+- Jak se může klient ověřit pomocí dvojice uživatelského jména a hesla.
 
-- Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.
+- Jak lze nakonfigurovat klienta s vlastním poskytovatelem tokenů.
 
-- Jak na serveru můžete ověřit pomocí hesla s vlastní přihlašovací údaje klienta <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> , který ověří, že uživatelské jméno a heslo odpovídat.
+- Jak může server ověřit přihlašovací údaje klienta pomocí hesla s vlastními <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> , které ověří, že se uživatelské jméno a heslo shodují.
 
-- Jak ověření serveru klientem pomocí certifikátu X.509 serveru.
+- Způsob ověřování serveru klientem pomocí certifikátu X. 509 serveru.
 
- Tento příklad také ukazuje, jak identitu volajícího, jež je přístupné po dokončení procesu vlastních tokenů ověřování.
+ Tato ukázka také ukazuje, jak je identita volajícího přístupná po procesu ověřování vlastního tokenu.
 
- Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding`, který používá zabezpečení zpráv ve výchozím nastavení. Tato ukázka nastaví standardní `wsHttpBinding` používat uživatelské jméno ověřování klientů. Služba nakonfiguruje taky certifikát služby pomocí chování serviceCredentials. Chování serviceCredentials umožňuje nakonfigurovat certifikát služby. Certifikát služby se používá pro klienta k ověření služby a zajistit ochranu zprávy. Následující konfigurace odkazuje nainstalovat během instalace ukázka, jak je popsáno v následující pokyny k instalaci certifikátu localhost.
+ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurovaná se standardem `wsHttpBinding`, který ve výchozím nastavení používá zabezpečení zpráv. Tato ukázka nastavuje standard `wsHttpBinding` pro použití ověřování uživatelského jména klienta. Služba také nakonfiguruje certifikát služby pomocí chování serviceCredentials. Chování serviceCredentials vám umožňuje nakonfigurovat certifikát služby. Certifikát služby používá klient k ověření služby a poskytování ochrany zpráv. Následující konfigurace odkazuje na certifikát localhost nainstalovaný během ukázkové instalace, jak je popsáno v následujících pokynech k instalaci.
 
 ```xml
 <system.serviceModel>
@@ -82,7 +82,7 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
   </system.serviceModel>
 ```
 
- Konfigurace koncového bodu klienta se skládá z názvu konfigurace absolutní adresu pro koncový bod služby, vazba a kontrakt. Klient vazby je nakonfigurovaný s příslušnou `Mode` a zpráva `clientCredentialType`.
+ Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s použitím příslušné `Mode` zprávy `clientCredentialType`a.
 
 ```xml
 <system.serviceModel>
@@ -107,13 +107,13 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
 </system.serviceModel>
 ```
 
- Následující kroky ukazují, jak vytvořit vlastního zprostředkovatele tokenů a integrovat architektury WCF zabezpečení:
+ Následující kroky ukazují, jak vyvíjet vlastního poskytovatele tokenů a integrovat ho s architekturou zabezpečení WCF:
 
-1. Napište vlastního zprostředkovatele tokenů.
+1. Napište vlastního poskytovatele tokenů.
 
-     Ukázka implementuje vlastního zprostředkovatele tokenů, který získá uživatelské jméno a heslo. Heslo musí odpovídat toto uživatelské jméno. Tento vlastní zprostředkovatel tokenu je pouze pro demonstrační účely a nedoporučuje se používat pro reálné nasazení.
+     Ukázka implementuje vlastního poskytovatele tokenu, který získá uživatelské jméno a heslo. Heslo se musí shodovat s tímto uživatelským jménem. Tento vlastní poskytovatel tokenu je určen pouze pro demonstrační účely a nedoporučuje se pro reálné nasazení.
 
-     K provedení této úlohy je odvozen vlastního zprostředkovatele tokenů <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a přepsání <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> metody. Tato metoda vytvoří a vrátí nový `UserNameSecurityToken`.
+     Chcete-li provést tuto úlohu, zprostředkovatel vlastního tokenu odvodí <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídu a <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> přepíše metodu. Tato metoda vytvoří a vrátí nový `UserNameSecurityToken`.
 
     ```csharp
     protected override SecurityToken GetTokenCore(TimeSpan timeout)
@@ -128,9 +128,9 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
     }
     ```
 
-2. Správce tokenů zabezpečení vlastního zápisu.
+2. Napsat vlastního správce tokenů zabezpečení.
 
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager> Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , který je do ní předán v `CreateSecurityTokenProvider` metody. Správce tokenů zabezpečení se také používá k vytvoření ověřovací data tokenu a serializátor, ale nejsou uvedené v této ukázce. V této ukázce Správce tokenů zabezpečení vlastní dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` požadovaná metoda vracet poskytovatele tokenu, kterého vlastní uživatelské jméno předané požadavky tokenu určit uživatelské jméno zprostředkovatele.
+     Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , který je předán v `CreateSecurityTokenProvider` metodě. <xref:System.IdentityModel.Selectors.SecurityTokenManager> Správce tokenů zabezpečení se používá také k vytváření ověřovatelů tokenů a serializátoru tokenů, ale u těch se tato ukázka nezabývá. V této ukázce vlastní Správce tokenů zabezpečení dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a `CreateSecurityTokenProvider` přepíše metodu, která vrátí vlastního poskytovatele tokenu uživatelského jména, pokud požadavky na předaný token označují, že poskytovatel uživatelského jména je požadován.
 
     ```csharp
     public class MyUserNameSecurityTokenManager : ClientCredentialsSecurityTokenManager
@@ -159,9 +159,9 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
     }
     ```
 
-3. Zápis vlastních klientských přihlašovacích údajů.
+3. Napište vlastní přihlašovací údaje klienta.
 
-     Třída přihlašovacích údajů klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří token správce, který se používá k získání ověřovací data tokenu, poskytovatele tokenů a serializátoru tokenů zabezpečení.
+     Třída pověření klienta slouží k reprezentaci přihlašovacích údajů, které jsou nakonfigurovány pro klienta proxy a vytvoří Správce tokenů zabezpečení, který se používá k získání ověřovatelů tokenů, poskytovatelů tokenů a serializátoru tokenů.
 
     ```csharp
     public class MyUserNameClientCredentials : ClientCredentials
@@ -184,9 +184,9 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
     }
     ```
 
-4. Konfigurace klienta pro použití vlastního klienta přihlašovacích údajů.
+4. Nakonfigurujte klienta tak, aby používal vlastní přihlašovací údaje klienta.
 
-     Aby klienti měli používat přihlašovací údaje, které vlastní vzorek odstraní výchozí třídu přihlašovacích údajů klienta a poskytuje novou třídu přihlašovacích údajů klienta.
+     Aby klient mohl používat vlastní přihlašovací údaje klienta, vzorek odstraní výchozí třídu přihlašovacích údajů klienta a dodá novou třídu přihlašovacích údajů klienta.
 
     ```csharp
     static void Main()
@@ -202,7 +202,7 @@ Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. P
     }
     ```
 
- Na službu, použijte k zobrazení informací volajícího, <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> jak je znázorněno v následujícím příkladu kódu. <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> Obsahuje deklarace identity informace o aktuální volajícím.
+ Chcete-li ve službě zobrazit informace o volajícím, použijte <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> , jak je znázorněno v následujícím příkladu kódu. <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> Obsahuje informace o deklaracích aktuálního volajícího.
 
 ```csharp
 static void DisplayIdentityInformation()
@@ -212,16 +212,16 @@ static void DisplayIdentityInformation()
 }
 ```
 
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
-## <a name="setup-batch-file"></a>Instalační dávkový soubor
- Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušný certifikát ke spuštění aplikace v místním prostředí, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.
+## <a name="setup-batch-file"></a>Nastavení dávkového souboru
+ Dávkový soubor Setup. bat, který je součástí této ukázky, vám umožní nakonfigurovat server s relevantním certifikátem pro spuštění samoobslužné aplikace, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upraven pro práci napříč počítači nebo pro práci v nehostovaném případě.
 
- Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v příslušné konfiguraci:
+ Níže najdete stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby se spouštěla v příslušné konfiguraci:
 
 - Vytváří se certifikát serveru.
 
-     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota v tomto souboru služby batch je localhost.
+     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
 
     ```
     echo ************
@@ -233,62 +233,62 @@ static void DisplayIdentityInformation()
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
-- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
+- Instalace certifikátu serveru do důvěryhodného úložiště certifikátů klienta:
 
-     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
+     Následující řádky v dávkovém souboru Setup. bat kopírují certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty vygenerované pomocí nástroje MakeCert. exe nejsou implicitně důvěryhodné klientským systémem. Pokud už máte certifikát, který je rootem klienta důvěryhodných kořenových certifikátů, například certifikát vydaný společností Microsoft – tento krok naplnění klientského úložiště certifikátů pomocí certifikátu serveru není vyžadován.
 
     ```
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
 > [!NOTE]
->  Dávkový soubor Setup.bat je navržena pro spouštění na příkazovém řádku sady SDK Windows. To vyžaduje, aby proměnné prostředí MSSDK bodu do adresáře, ve kterém je nainstalována sada SDK. Tato proměnná prostředí je nastavena automaticky v příkazovém řádku Windows SDK.
+> Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku.
 
-#### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku
+#### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-#### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
+#### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 
-1. Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku aplikace Visual Studio 2012 otevřeného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+1. Spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012 otevřené s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory.  
+    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat.  
   
-2. Spusťte service.exe z service\bin.  
+2. Spustit Service. exe z service\bin.  
   
-3. Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+3. Spustit soubor Client. exe z \client\bin. Aktivita klienta se zobrazí v klientské aplikaci konzoly.  
   
-4. Do příkazového řádku uživatelské jméno zadejte uživatelské jméno.  
+4. Do výzvy uživatelské jméno zadejte uživatelské jméno.  
   
-5. Na výzvu k zadání hesla použijte stejný řetězec, který byl zadán pro řádek uživatelské jméno.  
+5. Na výzvu k zadání hesla použijte stejný řetězec, který byl zadán pro výzvu k zadání uživatelského jména.  
   
-6. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+6. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-#### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
+#### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači  
   
-1. Vytvoření adresáře na počítači se službou pro binární soubory služby.  
+1. Vytvořte adresář v počítači služby pro binární soubory služby.  
   
-2. Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
+2. Zkopírujte programové soubory služby do adresáře služby na počítači služby. Zkopírujte také soubory Setup. bat a Cleanup. bat do počítače služby.  
   
-3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service.exe.config musí aktualizovat tak, aby odrážely tento nový název certifikátu. Certifikát serveru můžete vytvořit tak, že upravíte dávkový soubor Setup.bat. Všimněte si, že se soubor setup.bat musí spustit na příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce. Je nutné nastavit `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, který se používá k hostování služby.  
+3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service. exe. config je třeba aktualizovat, aby odrážel tento nový název certifikátu. Certifikát serveru můžete vytvořit úpravou dávkového souboru Setup. bat. Všimněte si, že soubor Setup. bat musí být spuštěný z Developer Command Prompt pro Visual Studio, který se otevřel s oprávněními správce. Je nutné nastavit `%SERVER_NAME%` proměnnou na plně kvalifikovaný název hostitele počítače, který se používá k hostování služby.  
   
-4. Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Nemusíte to dělat, když certifikátu serveru vydanému klienta důvěryhodného vystavitele.  
+4. Zkopírujte certifikát serveru do úložiště CurrentUser-TrustedPeople klienta. Nemusíte to dělat, když certifikát serveru vydává důvěryhodný vydavatel klienta.  
   
-5. V souboru Service.exe.config na počítači se službou změňte hodnotu z bázové adresy pro zadejte název počítače plně kvalifikovaný, místo localhost.  
+5. V souboru Service. exe. config v počítači služby změňte hodnotu základní adresy tak, aby místo názvu localhost určovala plně kvalifikovaný název počítače.  
   
-6. Na počítači se službou spusťte z příkazového řádku service.exe.  
+6. Na počítači služby spusťte z příkazového řádku Service. exe.  
   
-7. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
+7. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce specifické pro daný jazyk do klientského počítače.  
   
-8. V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
+8. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby.  
   
-9. Na klientském počítači spusťte `Client.exe` z okna příkazového řádku.  
+9. V klientském počítači spusťte `Client.exe` z okna příkazového řádku.  
   
-10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
   
-1. Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+1. Po dokončení ukázky spusťte na složce Samples Cleanup. bat.  

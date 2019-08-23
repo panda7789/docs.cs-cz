@@ -5,45 +5,45 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fb7f23c4-4572-4c38-9898-a287807d070c
-ms.openlocfilehash: e5d66b49782d5f26b6d487e655aca6fbd6bdfb1a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 92db9bdb209a542cc4fa269b35bfa98f8f20d2b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623866"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940077"
 ---
 # <a name="how-to-dynamically-create-a-database"></a>Postupy: Dynamické vytvoření databáze
-V technologii LINQ to SQL objektový model je namapována na relační databáze. Mapování je povolit pomocí podle atributů mapování nebo souboru externí mapování k popisu struktury relační databáze. V obou případech je dostatek informací o relační databázi, můžete vytvořit novou instanci používat databázi <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metody.  
+V LINQ to SQL objektový model je namapován na relační databázi. Mapování je povoleno pomocí mapování založeného na atributech nebo souboru externího mapování pro popis struktury relační databáze. V obou scénářích je k dispozici dostatek informací o relační databázi, kterou můžete vytvořit novou instanci databáze pomocí <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metody.  
   
- <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metoda vytvoří replika databáze rozsah informace kódovaný v objektovém modelu. Mapování souborů a atributy z objektového modelu nemusí kódování všechno o struktuře existující databázi. Informace o mapování neobsahuje představují obsah uživatelsky definovaných funkcí, uložené procedury, triggery, nebo kontrola omezení. Toto chování je dostatečná pro širokou škálu databází.  
+ <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metoda vytvoří repliku databáze pouze v rozsahu informací zakódovaných v objektovém modelu. Mapování souborů a atributů z objektového modelu nemusí zakódovat vše o struktuře existující databáze. Informace o mapování nepředstavuje obsah uživatelsky definovaných funkcí, uložených procedur, triggerů nebo omezení CHECK. Toto chování je dostatečné pro nejrůznější databáze.  
   
- Můžete použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda v jakémkoli počtu scénářů, zejména v případě, že zprostředkovatel známé dat, jako je Microsoft SQL Server 2008 je k dispozici. Typické scénáře zahrnují následující:  
+ <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metodu můžete použít v jakémkoli počtu scénářů, zejména pokud je k dispozici známý poskytovatel dat, jako je Microsoft SQL Server 2008. Mezi typické scénáře patří následující:  
   
-- Vytváříte aplikaci, která se automaticky nainstaluje na systému zákazníky.  
+- Vytváříte aplikaci, která se automaticky nainstaluje do zákaznického systému.  
   
-- Sestavujete klientské aplikace, která potřebuje místní databáze pro uložení stavu offline.  
+- Vytváříte klientskou aplikaci, která potřebuje místní databázi pro uložení stavu offline.  
   
- Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda s SQL serverem pomocí souboru .mdf nebo název katalogu, v závislosti na tom, aby váš připojovací řetězec. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] použití připojovacího řetězce k definování databáze, kterou chcete vytvořit, a na serveru, který se má vytvořit databázi.  
+ <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metodu můžete také použít s SQL Server pomocí souboru. MDF nebo názvu katalogu v závislosti na vašem připojovacím řetězci. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pomocí připojovacího řetězce definuje databázi, která se má vytvořit, a na kterých serveru se databáze má vytvořit.  
   
 > [!NOTE]
->  Kdykoli je to možné, použijte integrované zabezpečení Windows pro připojení k databázi tak, aby hesla nejsou vyžadovány v připojovacím řetězci.  
+> Kdykoli je to možné, použijte integrované zabezpečení systému Windows pro připojení k databázi, aby se v připojovacím řetězci nevyžadovala hesla.  
   
 ## <a name="example"></a>Příklad  
- Následující kód obsahuje příklad toho, jak vytvořit novou databázi s názvem MyDVDs.mdf.  
+ Následující kód poskytuje příklad vytvoření nové databáze s názvem MyDVDs. mdf.  
   
  [!code-csharp[DLinqSubmittingChanges#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#5)]
  [!code-vb[DLinqSubmittingChanges#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#5)]  
   
 ## <a name="example"></a>Příklad  
- Objektový model můžete použít k vytvoření databáze následujícím způsobem:  
+ Objektový model můžete použít k vytvoření databáze pomocí následujícího postupu:  
   
  [!code-csharp[DLinqSubmittingChanges#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#6)]
  [!code-vb[DLinqSubmittingChanges#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Při vytváření aplikace, které automaticky nainstaluje sám systému zákazníků, najdete v článku Pokud databáze již existuje a umístěte jej před vytvořením nového. <xref:System.Data.Linq.DataContext> Třída poskytuje <xref:System.Data.Linq.DataContext.DatabaseExists%2A> a <xref:System.Data.Linq.DataContext.DeleteDatabase%2A> metody, které vám pomůžou se tento proces.  
+ Při sestavování aplikace, která se automaticky nainstaluje do systému zákazníka, si přečtěte téma, jestli databáze už existuje, a vyřaďte ji ještě předtím, než vytvoříte novou. Třída poskytuje metody<xref:System.Data.Linq.DataContext.DeleteDatabase%2A> a, které vám pomůžou s tímto procesem. <xref:System.Data.Linq.DataContext.DatabaseExists%2A> <xref:System.Data.Linq.DataContext>  
   
- Následující příklad ukazuje jeden způsob, jakým tyto metody slouží k implementaci tohoto přístupu:  
+ Následující příklad ukazuje jeden ze způsobů, jak lze tyto metody použít k implementaci tohoto přístupu:  
   
  [!code-csharp[DLinqSubmittingChanges#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#7)]
  [!code-vb[DLinqSubmittingChanges#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#7)]  

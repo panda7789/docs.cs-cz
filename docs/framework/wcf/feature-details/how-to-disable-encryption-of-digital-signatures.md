@@ -2,28 +2,28 @@
 title: 'Postupy: Zákaz šifrování digitálních podpisů'
 ms.date: 03/30/2017
 ms.assetid: fd174313-ad81-4dca-898a-016ccaff8187
-ms.openlocfilehash: e2fd2a058e636ebf398f9d0c71a93788ccd7dfa0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 461c5af2c7fbb98486a8decbe4aa998d8d21070d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773188"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911181"
 ---
 # <a name="how-to-disable-encryption-of-digital-signatures"></a>Postupy: Zákaz šifrování digitálních podpisů
-Ve výchozím nastavení zprávy je podepsaná a digitálně podpis zašifrují. Toto se řídí vytváření vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces využívá až 30 procent déle než jednoduše podepisování a šifrování založené na celkovou velikost zprávy (Čím menší zprávy, tím větší dopad na výkon). Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash před šifrování těla zprávy. Pokud sadu možných hodnot pro část šifrovaný a podepsaný držitelem je nízká, útočník může být možné odvodit obsah podle hodnoty hash. Šifrování podpis zmírňuje tohoto útoku.  
+Ve výchozím nastavení je zpráva podepsaná a podpis je digitálně zašifrovaný. To je řízeno vytvořením vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo a nastavením `MessageProtectionOrder` vlastnosti obou tříd na <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnotu výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces spotřebovává až 30 procent více času, než jednoduše přihlašujete a šifrujete na základě celkové velikosti zprávy (zmenšením zprávy, větší dopad na výkon). Zakázání šifrování podpisu ale může útočníkovi umožnit odhadnout obsah zprávy. To je možné, protože element signatura obsahuje hodnotu hash prostého textu každé podepsané části ve zprávě. I když je text zprávy ve výchozím nastavení zašifrovaný, nešifrovaný podpis obsahuje před šifrováním kód hash těla zprávy. Pokud je sada možných hodnot pro odstraněnou a šifrovanou část malá, útočník může obsah odvodit, protože si vyhledá hodnotu hash. Šifrování signatury zmírnit tento vektor útoku.  
   
- Proto zákaz šifrování podpis, pouze pokud je hodnota obsah s nízkou nebo sadu možných hodnot obsahu je Nedeterministický i velké a výkonový zisk plynoucí je mnohem důležitější než zmírnění útoků popsané výše.  
+ Proto zakažte šifrování signatury pouze v případě, že je hodnota obsahu nízká nebo když je množina možných hodnot obsahu velká a nedeterministické a zisk výkonu je důležitější než zmírnění výše popsaného útoku.  
   
 > [!NOTE]
->  Pokud není nic ve zprávě, která je zašifrovaná, prvek podpisu není zašifrovaný, i když <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> je nastavena na <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. K tomuto chování dochází i s vazeb poskytovaných systémem; všechny vazby poskytované systémem mají pořadí ochrany zprávy, nastavte na `SignBeforeEncryptAndEncryptSignature`. Ale na webové služby WSDL (Description Language) WCF vygeneruje se pořád neobsahuje `<sp:EncryptSignature>` kontrolní výraz.  
+> Pokud není v zašifrované zprávě žádná zpráva, element signatura není zašifrovaný, i když <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> je vlastnost nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> nastavená na <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. K tomuto chování dochází i u vazeb poskytovaných systémem. všechny vazby poskytnuté systémem mají pořadí ochrany zpráv nastavené na `SignBeforeEncryptAndEncryptSignature`. Technologie WCF vygeneruje Web Services Description Language (WSDL), ale bude stále obsahovat `<sp:EncryptSignature>` kontrolní výraz.  
   
-### <a name="to-disable-digital-signing"></a>Chcete-li zakázat digitální podpis  
+### <a name="to-disable-digital-signing"></a>Zakázání digitálního podepisování  
   
-1. Vytvoření <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+1. Vytvoření <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [jak: Vytvořte vlastní vazbu pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
-2. Buď přidejte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> ke kolekci vazby.  
+2. Přidejte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> do kolekce <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> vazeb buď nebo, a.  
   
-3. Nastavte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>, nebo nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.  
+3. Nastavte vlastnost na <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>nebo nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost na <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>. <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>Viz také:
 

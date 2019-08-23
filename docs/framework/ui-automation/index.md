@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - UI Automation
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
-ms.openlocfilehash: 9b6d594a3d92a7b666e52c92221d60956e718b42
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 61f3e52476f5003218f8b741db99dfa4df2c9c2c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68237544"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968196"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový rámec usnadnění pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. To řeší potřeby produktů využívajících technologie usnadnění a rozhraní automatizovaných testů tím, že poskytuje programový přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje vývojářům ovládacího prvku a aplikace pro zpřístupnění svých produktů.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]je novým rozhraním usnadnění pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. Řeší potřeby produktů pro usnadnění a automatizované testovací architektury tím, že poskytuje programový přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje vývojářům ovládacích prvků a aplikací zpřístupnit jejich produkty.  
   
- Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] rozhraní API pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v jazyce C++, naleznete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).  
+ Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] rozhraní API pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v C++nástroji najdete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Usnadnění – doporučené postupy](../../../docs/framework/ui-automation/accessibility-best-practices.md)  
@@ -32,4 +32,4 @@ ms.locfileid: "68237544"
  [Specifikace automatizace uživatelského rozhraní a příslib komunitě](../../../docs/framework/ui-automation/ui-automation-specification-and-community-promise.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
-- [Ukázky pro usnadnění](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility) 
+- [Ukázky usnadnění](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility) 

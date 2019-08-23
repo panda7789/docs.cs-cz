@@ -2,19 +2,19 @@
 title: <policyImporter>
 ms.date: 03/30/2017
 ms.assetid: b0d03456-546f-44bb-ab12-1b2ce7f98fca
-ms.openlocfilehash: 81f38d2a163163ca7255ca546bbddbbb58fa3a1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 273bd0d5e68a661c639b82264b440b83d8127427
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783178"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933794"
 ---
 # <a name="policyimporter"></a>\<policyImporter>
-Určuje programu pro import zásady, které řídí import kontrolních výrazů vlastních zásad o vazbách.  
+Určuje dovozce zásad, který řídí import vlastních výrazů zásad o vazbách.  
   
  \<system.ServiceModel>  
-\<client>  
-\<metadata >  
+\<> klienta  
+\<> metadat  
 \<policyImporters>  
 \<policyImporter>  
   
@@ -44,10 +44,10 @@ Určuje programu pro import zásady, které řídí import kontrolních výrazů
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<policyImporters>](../../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md)|Určuje všechny nástroje pro import, které řídí import kontrolních výrazů vlastních zásad o vazbách.|  
+|[\<policyImporters>](policyimporters.md)|Určuje všechny zásady pro import, které řídí import vlastních výrazů zásad o vazbách.|  
   
 ## <a name="remarks"></a>Poznámky  
- Import zásady se používá k hledání kontrolních výrazů vlastních zásad o vazbách funkce, jakož i připojit vlastní prvek vazby, který implementuje funkce, které vyžaduje kontrolního výrazu.  
+ Importér zásad slouží k hledání vlastních kontrolních výrazů zásad o funkcích vazby a také k připojení vlastního elementu vazby, který implementuje funkce vyžadované kontrolním výrazem.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -55,5 +55,5 @@ Určuje programu pro import zásady, které řídí import kontrolních výrazů
 - <xref:System.ServiceModel.Configuration.PolicyImporterElement>
 - <xref:System.ServiceModel.Configuration.MetadataElement>
 - <xref:System.ServiceModel.Description.MetadataImporter>
-- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Konfigurace klienta WCF](../../../wcf/feature-details/client-configuration.md)
+- [Klienti](../../../wcf/feature-details/clients.md)

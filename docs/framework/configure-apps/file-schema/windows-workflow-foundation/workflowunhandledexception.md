@@ -3,20 +3,20 @@ title: <workflowUnhandledException>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 57adeab5-f06a-44b2-916b-0e177cf0f4a6
-ms.openlocfilehash: cfe3350ac42d1e0e837b79f25753f62dc2051dd2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c46d1fb9eb853e57c7ad1b97eb9a22556cdfb7d8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613388"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913100"
 ---
 # <a name="workflowunhandledexception"></a>\<workflowUnhandledException>
 Chování služby, který umožňuje určit akci, která má provést při dojde k neošetřené výjimce v rámci pracovního postupu služby.  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<workflowUnhandledException>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,7 +47,7 @@ Chování služby, který umožňuje určit akci, která má provést při dojde
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování > z \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
+|[\<chování > \<serviceBehaviors >](behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 

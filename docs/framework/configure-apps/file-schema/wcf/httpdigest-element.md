@@ -2,20 +2,20 @@
 title: Element <httpDigest>
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-ms.openlocfilehash: 914711e4d6c3dbb1ccc741af1b3abd6b8de716a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ceefdd7fab82025e89ad08d8423d57524c2e4d8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61751043"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925561"
 ---
-# <a name="httpdigest-element"></a>\<httpDigest> Element
-Určuje výběru pověření používaný při ověřování klienta ke službě zadejte.  
+# <a name="httpdigest-element"></a>\<httpDigest – element >
+Určuje typ Digest, který se použije při ověřování klienta ke službě.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<clientCredentials>  
 \<httpDigest>  
   
@@ -32,7 +32,7 @@ Určuje výběru pověření používaný při ověřování klienta ke službě
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`impersonationLevel`|Nastavuje předvolbu zosobnění, který klient komunikuje na server. Režim zosobnění, který klient vybere nevynucuje na serveru. Platné hodnoty patří:<br /><br /> -Identifikace: Na serveru můžete získat identit a oprávnění klienta, ale nelze zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />-Anonymní: Server nelze zosobnit nebo identifikaci klienta.<br />-Žádný: Úroveň zosobnění není přiřazen.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
+|`impersonationLevel`|Nastaví předvolbu zosobnění, kterou klient komunikuje se serverem. Režim zosobnění, který klient vybere, není na serveru vynutil. Platné hodnoty jsou následující:<br /><br /> Identifikace Server může získat identitu a oprávnění klienta, ale nemůže zosobnit klienta.<br />Zosobnění Server může zosobnit kontext zabezpečení klienta v místním systému.<br />Delegování Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />Anonymous Server nemůže zosobnit nebo identifikovat klienta.<br />NTato Úroveň zosobnění není přiřazena.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -41,12 +41,12 @@ Určuje výběru pověření používaný při ověřování klienta ke službě
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
+|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přehled je hodnota hash určit pomocí algoritmu a sadu vstupů. Ověřovacích a ověřeného odsouhlaste algoritmus a výměnu dat použít jako vstupy. Klient může vypočítat hodnotu hash a odesílat do služby. Služba také vypočítá hodnotu hash a porovnává hodnoty. Shoda ověří klienta.  
+ Výtah je hodnota hash určená pomocí algoritmu a sady vstupů. Ověřovatel a ověřené souhlas s algoritmem a vyměňují data použitá jako vstupy. Klient může vypočítat hodnotu hash a odeslat ji do služby. Služba také vypočítá hodnotu hash a porovná hodnoty. Shoda ověří klienta.  
   
- Musí být povolena tato funkce se službou Active Directory na Windows a Internetové informační služby (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88443).  
+ Tato funkce musí být povolená se službou Active Directory ve Windows a Internetová informační služba (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6,0](https://go.microsoft.com/fwlink/?LinkId=88443).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,7 +56,7 @@ Určuje výběru pověření používaný při ověřování klienta ke službě
 - <xref:System.ServiceModel.Description.ClientCredentials.HttpDigest%2A>
 - <xref:System.ServiceModel.Configuration.HttpDigestClientElement>
 - <xref:System.ServiceModel.Security.HttpDigestClientCredential>
-- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení klientů](../../../wcf/securing-clients.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

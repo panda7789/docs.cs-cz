@@ -2,20 +2,20 @@
 title: <transactedBatching>
 ms.date: 03/30/2017
 ms.assetid: 2f790a0d-8f03-4b86-81b5-ce1bc1a6c575
-ms.openlocfilehash: 43415d9eac5e61f42006aecb3248dec9811eb3e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12369f1053638583a3864fab396869d0e7045732
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758129"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918668"
 ---
 # <a name="transactedbatching"></a>\<transactedBatching >
 
-Určuje, zda jsou podporovány dávkové transakce pro operace příjmu.
+Určuje, zda je pro operace Receive podporována dávkování transakcí.
 
 \<system.ServiceModel>\
-\<chování > \
-\<endpointBehaviors>\
+\<> chování \
+\<endpointBehaviors > \
 \<chování > \
 \<transactedBatching >
 
@@ -33,7 +33,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`maxBatchSize`|Celé číslo, které určuje maximální počet operací příjmu, které lze sjednotit společně v rámci jedné transakce. Výchozí hodnota je 0.|
+|`maxBatchSize`|Celé číslo, které určuje maximální počet operací příjmu, které mohou být v jedné transakci dávkově spojeny. Výchozí hodnota je 0.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -43,15 +43,15 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|
 
 ## <a name="remarks"></a>Poznámky
 
-Přenos, který je nakonfigurovaný s transakcí dávkování pokusy o dávkové několik operací do jedné transakce příjmu. Tímto způsobem, relativně vysoké náklady na vytváření transakcí a potvrzení v každé přijímat vyhnout operaci.
+Přenos, který je nakonfigurován s dávkování transakce, se pokusí o dávkování několika operací Receive do jedné transakce. Tím se vyhnete poměrně vysokým nákladům na vytvoření transakce a jejím potvrzením v každé operaci přijetí.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak přidat chování dávkového zpracování do služby v konfiguračním souboru.
+Následující příklad ukazuje, jak přidat transakční chování dávkování do služby v konfiguračním souboru.
 
 ```xml
 <system.serviceModel>

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05b1d80887186466044acdb088d7f45a386b37f7
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: eb16097ab5a452a554cc7dfe039db1858e46de00
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364042"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967206"
 ---
 # <a name="reflection-and-generic-types"></a>Reflexe a obecné typy
 <a name="top"></a>Z hlediska reflexe rozdíl mezi obecným typem a běžným typem je, že obecný typ je přidružen k sadě parametrů typu (Pokud se jedná o definici obecného typu) nebo k argumentům typu (Pokud se jedná o konstruovaný typ). Obecná metoda se od běžné metody liší stejným způsobem.  
@@ -32,7 +32,7 @@ ms.locfileid: "68364042"
 - Parametry typu definic obecných typů a definice obecných metod jsou reprezentovány instancemi <xref:System.Type> třídy.  
   
     > [!NOTE]
-    >  Mnoho vlastností a metod <xref:System.Type> má jiné chování, <xref:System.Type> Pokud objekt představuje parametr obecného typu. Tyto rozdíly jsou zdokumentovány v tématech vlastností a metod. Například viz <xref:System.Type.IsAutoClass%2A> a <xref:System.Type.DeclaringType%2A>. Kromě toho jsou některé členy platné pouze v případě <xref:System.Type> , že objekt představuje parametr obecného typu. Příklad naleznete v tématu <xref:System.Type.GetGenericTypeDefinition%2A>.  
+    > Mnoho vlastností a metod <xref:System.Type> má jiné chování, <xref:System.Type> Pokud objekt představuje parametr obecného typu. Tyto rozdíly jsou zdokumentovány v tématech vlastností a metod. Například viz <xref:System.Type.IsAutoClass%2A> a <xref:System.Type.DeclaringType%2A>. Kromě toho jsou některé členy platné pouze v případě <xref:System.Type> , že objekt představuje parametr obecného typu. Příklad naleznete v tématu <xref:System.Type.GetGenericTypeDefinition%2A>.  
   
 - Pokud instance <xref:System.Type> představuje obecný typ, obsahuje pole typů, které představují parametry typu (pro definice obecného typu), nebo argumenty typu (pro konstruované typy). Totéž platí pro instanci <xref:System.Reflection.MethodInfo> třídy, která představuje obecnou metodu.  
   
@@ -40,7 +40,7 @@ ms.locfileid: "68364042"
   
  Příklad kódu, který demonstruje popsané metody, naleznete [v tématu How to: Prověřte a vytvořte instanci obecných typů pomocí](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
   
- Následující diskuze předpokládá znalost s terminologií generických typů, například rozdíl mezi parametry typu a argumenty a otevřenými nebo uzavřenými konstruovanými typy. Další informace najdete v tématu [Obecné typy](../../../docs/standard/generics/index.md).  
+ Následující diskuze předpokládá znalost s terminologií generických typů, například rozdíl mezi parametry typu a argumenty a otevřenými nebo uzavřenými konstruovanými typy. Další informace najdete v tématu [Obecné typy](../../standard/generics/index.md).  
   
  Tento přehled obsahuje následující oddíly:  
   
@@ -131,7 +131,7 @@ generic<typename V, typename W> ref class D : B<int, V> {};
  <xref:System.Type.GenericParameterAttributes%2A> Vlastnost<xref:System.Reflection.GenericParameterAttributes> vrací hodnotu, která označuje odchylku (kovarianci nebo kontravariance) a zvláštní omezení parametru typu.  
   
 #### <a name="covariance-and-contravariance"></a>Kovariance a kontravariance  
- Chcete-li určit, zda je parametr typu kovariantní nebo kontravariantní <xref:System.Reflection.GenericParameterAttributes.VarianceMask?displayProperty=nameWithType> , použijte masku <xref:System.Reflection.GenericParameterAttributes> na hodnotu <xref:System.Type.GenericParameterAttributes%2A> , která je vrácena vlastností. Pokud je <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>výsledek, parametr typu je invariantní. Viz [kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+ Chcete-li určit, zda je parametr typu kovariantní nebo kontravariantní <xref:System.Reflection.GenericParameterAttributes.VarianceMask?displayProperty=nameWithType> , použijte masku <xref:System.Reflection.GenericParameterAttributes> na hodnotu <xref:System.Type.GenericParameterAttributes%2A> , která je vrácena vlastností. Pokud je <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>výsledek, parametr typu je invariantní. Viz [kovariance a kontravariance](../../standard/generics/covariance-and-contravariance.md).  
   
 #### <a name="special-constraints"></a>Speciální omezení  
  Chcete-li určit zvláštní omezení parametru typu, použijte <xref:System.Reflection.GenericParameterAttributes.SpecialConstraintMask?displayProperty=nameWithType> masku <xref:System.Reflection.GenericParameterAttributes> na hodnotu <xref:System.Type.GenericParameterAttributes%2A> , která je vrácena vlastností. Pokud je <xref:System.Reflection.GenericParameterAttributes.None?displayProperty=nameWithType>výsledkem, neexistují žádná zvláštní omezení. Parametr typu může být omezen na typ odkazu, na typ hodnoty neumožňující hodnotu null a musí mít konstruktor bez parametrů.  
@@ -150,6 +150,6 @@ generic<typename V, typename W> ref class D : B<int, V> {};
 |Název|Popis|  
 |-----------|-----------------|  
 |[Postupy: Kontrola a vytváření instancí obecných typů pomocí reflexe](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)|Ukazuje, jak používat vlastnosti a metody <xref:System.Type> a <xref:System.Reflection.MethodInfo> k prozkoumávání obecných typů.|  
-|[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkci Generics a způsob jejího podporování v .NET Framework.|  
+|[Obecné typy](../../standard/generics/index.md)|Popisuje funkci Generics a způsob jejího podporování v .NET Framework.|  
 |[Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Ukazuje, jak pomocí generování reflexe generovat obecné typy v dynamických sestaveních.|  
 |[Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)|Popisuje třídu a poskytuje příklady kódu, které ilustrují, jak použít <xref:System.Type> s různými třídami reflexe k získání informací o konstruktorech, metodách, polích, vlastnostech a událostech. <xref:System.Type>|

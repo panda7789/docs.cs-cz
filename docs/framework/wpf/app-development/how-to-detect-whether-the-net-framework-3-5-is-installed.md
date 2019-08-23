@@ -7,24 +7,24 @@ helpviewer_keywords:
 - detecting whether.NET Framework 3.5 is installed [WPF]
 - determining whether.NET Framework 3.5 is installed [WPF]
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
-ms.openlocfilehash: 69dfa0eb8d9ad9b780d258a874d255484f270cfe
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 220fb3236786eb894bb78d12104025d24c9876ba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690434"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960897"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5
-Správci mohli nasadit aplikace Windows Presentation Foundation (WPF) v systému, který cílí na rozhraní .NET Framework 3.5, se musí nejdřív ověřit, zda modul runtime rozhraní .NET Framework 3.5 je k dispozici. Toto téma obsahuje skript napsané v HTML/JavaScript, mohou správci zjistit, jestli je rozhraní .NET Framework 3.5 v systému k dispozici.  
+Než můžou správci nasadit aplikace Windows Presentation Foundation (WPF) v systému, který cílí na .NET Framework 3,5, musí nejdřív ověřit, že je přítomen modul runtime .NET Framework 3,5. Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda je v systému k dispozici .NET Framework 3,5.  
   
 > [!NOTE]
->  Podrobnější informace o instalaci, nasazení a zjištění rozhraní .NET Framework najdete v článku [nainstalovat rozhraní .NET Framework pro vývojáře](../../install/guide-for-developers.md).  
+> Podrobnější informace o instalaci, nasazení a detekci .NET Framework najdete v tématu [instalace .NET Framework pro vývojáře](../../install/guide-for-developers.md).  
   
 ## <a name="example"></a>Příklad  
- Při instalaci rozhraní .NET Framework 3.5 MSI přidá řetězec UserAgent ".NET CLR" a čísla verze. Následující příklad ukazuje skript součástí jednoduché stránky HTML. Skript hledá řetězec UserAgent k určení, jestli je nainstalované rozhraní .NET Framework 3.5 a stavová zpráva se zobrazí ve výsledcích hledání.  
+ Pokud je nainstalovaná .NET Framework 3,5, soubor MSI přidá ".NET CLR" a číslo verze do řetězce UserAgent. Následující příklad ukazuje skript vložený do jednoduché stránky HTML. Skript vyhledá řetězec UserAgent a určí, zda je nainstalovaná .NET Framework 3,5, a zobrazí stavovou zprávu výsledků hledání.  
   
 > [!NOTE]
->  Tento skript je určená pro aplikaci Internet Explorer. Jiné prohlížeče nemusí obsahovat informace o .NET CLR v řetězec UserAgent.  
+> Tento skript je určený pro Internet Explorer. Jiné prohlížeče nemusí obsahovat informace .NET CLR v řetězci UserAgent.  
   
 ```  
 <HTML>  
@@ -116,13 +116,13 @@ Správci mohli nasadit aplikace Windows Presentation Foundation (WPF) v systému
 </HTML>  
 ```  
   
- Pokud hledání pro verzi ".NET CLR" je úspěšné, zobrazí se následující typ stavová zpráva:  
+ Pokud je vyhledávání verze .NET CLR úspěšné, zobrazí se následující typ stavové zprávy:  
   
  `This machine has the correct version of the .NET Framework 3.5.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; .NET CLR 3.5.20726; MS-RTC LM 8).`  
   
- V opačném případě se zobrazí následující typ stavová zpráva:  
+ V opačném případě se zobrazí následující typ stavové zprávy:  
   
  `This machine does not have the correct version of the .NET Framework 3.5. The required version is v3.5.0.0.`  
   

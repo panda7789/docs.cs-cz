@@ -7,48 +7,48 @@ helpviewer_keywords:
 - controls [Windows Forms], child
 - child controls [Windows Forms], anchoring and docking
 ms.assetid: a2bcdfca-9b63-45e6-9c0e-3411015cba98
-ms.openlocfilehash: f67733b89d2bde652449e2338362868fdb84bcf3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 9a00fcd53211dd126c0e9203d6d577959b971e70
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592950"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922910"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel
-<xref:System.Windows.Forms.FlowLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti v jeho podřízených ovládacích prvků.  
+Ovládací prvek podporuje vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> a v jeho podřízených ovládacích prvcích. <xref:System.Windows.Forms.Control.Anchor%2A> <xref:System.Windows.Forms.FlowLayoutPanel>  
   
-### <a name="to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>A ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel  
+### <a name="to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>Ukotvení a ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel  
   
-1. Vytvoření <xref:System.Windows.Forms.FlowLayoutPanel> ovládací prvek na formuláři.  
+1. Vytvořte na formuláři ovládací prvek. <xref:System.Windows.Forms.FlowLayoutPanel>  
   
-2. Nastavte <xref:System.Windows.Forms.Control.Width%2A> z <xref:System.Windows.Forms.FlowLayoutPanel> mít pod kontrolou **300**a nastavte jeho <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> k <xref:System.Windows.Forms.FlowDirection.TopDown>.  
+2. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> <xref:System.Windows.Forms.FlowDirection.TopDown>Nastavte ovládací prvek na 300 a nastavte jeho na. <xref:System.Windows.Forms.FlowLayoutPanel> <xref:System.Windows.Forms.Control.Width%2A>  
   
-3. Pak vytvoříte další dva <xref:System.Windows.Forms.Button> ovládací prvky a umístit je <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
+3. Vytvořte dva <xref:System.Windows.Forms.Button> ovládací prvky a umístěte je <xref:System.Windows.Forms.FlowLayoutPanel> do ovládacího prvku.  
   
-4. Nastavte <xref:System.Windows.Forms.Control.Width%2A> první tlačítka **200**.  
+4. Nastavte první tlačítko na **200.** <xref:System.Windows.Forms.Control.Width%2A>  
   
-5. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost druhé tlačítko do <xref:System.Windows.Forms.DockStyle.Fill>.  
+5. Nastavte vlastnost druhého tlačítka na <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Control.Dock%2A>  
   
     > [!NOTE]
-    >  Na druhé tlačítko předpokládá stejnou šířku prvního tlačítka. Není roztáhnout na šířku <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
+    > Druhé tlačítko předpokládá stejnou šířku jako první tlačítko. Neprovádí roztažení mezi celou šířkou <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
   
-6. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost druhé tlačítko do `None`. To způsobí, že tlačítko předpokládat, že jeho původní šířka.  
+6. Nastavte vlastnost druhého tlačítka na `None`. <xref:System.Windows.Forms.Control.Dock%2A> Tím dojde k tomu, že tlačítko bude předpokládat původní šířku.  
   
-7. Nastavte <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost druhé tlačítko do `Left, Right`.  
+7. Nastavte vlastnost druhého tlačítka na `Left, Right`. <xref:System.Windows.Forms.Control.Anchor%2A>  
   
     > [!IMPORTANT]
-    >  Na druhé tlačítko předpokládá stejnou šířku prvního tlačítka. Není roztáhnout na šířku <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Toto je obecné pravidlo pro ukotvení a dokování v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku: směrech svislé tok <xref:System.Windows.Forms.FlowLayoutPanel> ovládací prvek vypočítá šířku implicitní sloupce z nejširší podřízený ovládací prvek ve sloupci. Všechny ostatní ovládací prvky v tomto sloupci se <xref:System.Windows.Forms.Control.Anchor%2A> nebo <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti jsou zarovnána, nebo roztažená do přizpůsobit tento sloupec implicitní. Chování funguje podobným způsobem jako směry vodorovné toku. <xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek vypočítá výška implicitní řádek z nejvyšší podřízený ovládací prvek v řádku, a všechny ukotvené nebo ukotvené podřízené ovládací prvky v tomto řádku jsou zarovnána nebo velikostí podle předpokládané řádek.  
+    >  Druhé tlačítko předpokládá stejnou šířku jako první tlačítko. Neprovádí roztažení mezi celou šířkou <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Toto je obecné pravidlo pro ukotvení a ukotvení v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacím prvku: pro směr <xref:System.Windows.Forms.FlowLayoutPanel> svislého toku ovládací prvek vypočítá šířku implicitního sloupce z nejširšího podřízeného ovládacího prvku ve sloupci. Všechny ostatní ovládací prvky v tomto sloupci <xref:System.Windows.Forms.Control.Anchor%2A> s <xref:System.Windows.Forms.Control.Dock%2A> vlastnostmi nebo se zarovnají nebo roztáhnou tak, aby se vešly do tohoto implicitního sloupce. Chování funguje podobným způsobem jako u horizontálních směrů toku. <xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek vypočítá výšku implicitního řádku z největšího podřízeného ovládacího prvku na řádku a všechny ukotvené nebo ukotvené podřízené ovládací prvky na tomto řádku jsou zarovnány nebo upraveny tak, aby odpovídaly předpokládanému řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující obrázek znázorňuje čtyři tlačítka, které jsou ukotvena a ukotven vzhledem k modrého tlačítka v <xref:System.Windows.Forms.FlowLayoutPanel>. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> Je <xref:System.Windows.Forms.FlowDirection.LeftToRight>.  
+ Následující ilustrace znázorňuje čtyři tlačítka, která jsou ukotvená a ukotvená relativně k modrému tlačítku v <xref:System.Windows.Forms.FlowLayoutPanel>. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> Je .<xref:System.Windows.Forms.FlowDirection.LeftToRight>  
   
  ![Ukotvení FlowLayoutPanel](./media/net-flpanchorexp.gif "NET_FLPanchorExp")  
   
- Následující obrázek znázorňuje čtyři tlačítka, které jsou ukotvena a ukotven vzhledem k modrého tlačítka v <xref:System.Windows.Forms.FlowLayoutPanel>. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> Je <xref:System.Windows.Forms.FlowDirection.TopDown>.  
+ Následující ilustrace znázorňuje čtyři tlačítka, která jsou ukotvená a ukotvená relativně k modrému tlačítku v <xref:System.Windows.Forms.FlowLayoutPanel>. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> Je .<xref:System.Windows.Forms.FlowDirection.TopDown>  
   
  ![Ukotvení FlowLayoutPanel](./media/vs-flpanchor2.gif "VS_FLPanchor2")  
   
- Následující příklad kódu ukazuje různé <xref:System.Windows.Forms.Control.Anchor%2A> hodnot vlastností pro <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
+ Následující příklad kódu ukazuje různé <xref:System.Windows.Forms.Control.Anchor%2A> hodnoty <xref:System.Windows.Forms.Button> vlastností ovládacího prvku v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacím prvku.  
   
  [!code-csharp[System.Windows.Forms.FlowLayoutPanel.AnchorExampleForm#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlowLayoutPanel.AnchorExampleForm/CS/FlpAnchorExampleForm.cs#1)]
  [!code-vb[System.Windows.Forms.FlowLayoutPanel.AnchorExampleForm#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlowLayoutPanel.AnchorExampleForm/VB/FlpAnchorExampleForm.vb#1)]  
@@ -56,7 +56,7 @@ ms.locfileid: "65592950"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. data, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

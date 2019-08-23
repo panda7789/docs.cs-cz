@@ -8,28 +8,28 @@ helpviewer_keywords:
 - shortcut menus [Windows Forms], ContextMenuStrip control [Windows Forms]
 - ContextMenuStrip control [Windows Forms], about ContextMenuStrip control
 ms.assetid: 9787cdb3-88f1-4198-972f-eefd9524ce39
-ms.openlocfilehash: 23699c67de616ba3f535d2527a315aebe7448d3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4a6add5297ba7db606ca1891e9279141f8d6d20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61955984"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962161"
 ---
 # <a name="contextmenustrip-control-overview"></a>ContextMenuStrip – přehled ovládacího prvku
 > [!NOTE]
->  <xref:System.Windows.Forms.ContextMenuStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ContextMenu> řízení; však <xref:System.Windows.Forms.ContextMenu> ovládací prvek je zachován z důvodu zpětné kompatibility a budoucí použití, pokud se rozhodnete.  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ContextMenu> ovládacímu prvku. ovládací prvek však <xref:System.Windows.Forms.ContextMenu> zůstává zachován z důvodu zpětné kompatibility a budoucího použití, pokud zvolíte. <xref:System.Windows.Forms.ContextMenuStrip>  
   
- Místní nabídky, také nazývané kontextové nabídky, se zobrazí pod kurzor myši, když uživatel klikne pravým tlačítkem myši. Místní *nabídky* poskytují možnosti pro klientské oblasti nebo ovládacího prvku při umístění ukazatele myši.  
+ Místní nabídky, označované také jako kontextové nabídky, se zobrazí na pozici myši, když uživatel klikne pravým tlačítkem myši. Místní *nabídky* poskytují možnosti pro oblast klienta nebo ovládací prvek v umístění ukazatele myši.  
   
- <xref:System.Windows.Forms.ContextMenuStrip> Ovládací prvek je určen pro bezproblémově fungují s novou <xref:System.Windows.Forms.ToolStrip> a související ovládací prvky, ale můžete přiřadit <xref:System.Windows.Forms.ContextMenuStrip> s jinými ovládacími prvky stejně snadno.  
+ Ovládací prvek je navržen tak, aby fungoval bez problémů s <xref:System.Windows.Forms.ToolStrip> novými a souvisejícími ovládacími prvky, <xref:System.Windows.Forms.ContextMenuStrip> ale můžete k němu přidružit jiné ovládací prvky stejně jako snadno. <xref:System.Windows.Forms.ContextMenuStrip>  
   
  V následující tabulce jsou uvedeny důležité <xref:System.Windows.Forms.ContextMenuStrip> doprovodné třídy.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.ToolStripMenuItem>|Představuje volitelnou možnost zobrazí na <xref:System.Windows.Forms.MenuStrip> nebo <xref:System.Windows.Forms.ContextMenuStrip>.|  
-|<xref:System.Windows.Forms.ToolStripDropDown>|Představuje ovládací prvek, který umožňuje uživateli vybrat jednu položku ze seznamu, který se zobrazí, když uživatel klikne <xref:System.Windows.Forms.ToolStripDropDownButton> nebo vyšší úrovně položku nabídky.|  
-|<xref:System.Windows.Forms.ToolStripDropDownItem>|Poskytuje základní funkce pro ovládací prvky je odvozena z <xref:System.Windows.Forms.ToolStripItem> , který zobrazí rozevírací seznam položek při kliknutí na.|  
+|<xref:System.Windows.Forms.ToolStripMenuItem>|Představuje možnost s možností volby, která se <xref:System.Windows.Forms.MenuStrip> zobrazí <xref:System.Windows.Forms.ContextMenuStrip>na nebo.|  
+|<xref:System.Windows.Forms.ToolStripDropDown>|Představuje ovládací prvek, který umožňuje uživateli vybrat jednu položku ze seznamu, který se zobrazí, když uživatel klikne na <xref:System.Windows.Forms.ToolStripDropDownButton> položku nabídky nebo na vyšší úroveň.|  
+|<xref:System.Windows.Forms.ToolStripDropDownItem>|Poskytuje základní funkce pro ovládací prvky odvozené <xref:System.Windows.Forms.ToolStripItem> z těchto zobrazených rozevíracích položek při kliknutí.|  
   
 ## <a name="see-also"></a>Viz také:
 

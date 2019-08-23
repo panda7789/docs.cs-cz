@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83bb52f7f2035605914e2fe72ce2daf78de5bc1e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 363d8f7d8cf960fb23210225c4545f73d597d663
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749913"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912847"
 ---
 # <a name="icordebugcontrollerstop-method"></a>ICorDebugController::Stop – metoda
-Provádí kooperativní stop na všech vláknech, na kterých běží spravovaný kód v procesu.  
+Provede kooperativní zastavení na všech vláknech, na kterých běží spravovaný kód v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +40,20 @@ HRESULT Stop (
  Nepoužívá se.  
   
 ## <a name="remarks"></a>Poznámky  
- `Stop` provádí kooperativní stop na všech vláknech spuštění spravovaného kódu v procesu. Během ladicí relace pouze pro spravované, nespravované vláken může pokračovat se zrušeným (ale zablokuje při pokusu o volání spravovaného kódu). Během interop relaci ladění se také zastaví nespravovaného vlákna. `dwTimeoutIgnored` Hodnota je aktuálně ignorována a považována jako NEKONEČNÉ (-1). Pokud kooperativní stop nezdaří z důvodu zablokování, všechna vlákna jsou pozastavena a E_TIMEOUT se vrátí.  
+ `Stop`provede kooperativní zastavení na všech vláknech spouštějících spravovaný kód v procesu. Během relace ladění jenom spravovaného kódu se můžou nespravované podprocesy dál spouštět (při pokusu o volání spravovaného kódu se ale zablokuje). Během relace ladění spolupráce dojde také k zastavení nespravovaných vláken. `dwTimeoutIgnored` Hodnota je aktuálně ignorována a považována za infinitou (-1). Pokud se kooperativní zastavení nepovede kvůli zablokování, všechna vlákna se pozastaví a vrátí se E_TIMEOUT.  
   
 > [!NOTE]
->  `Stop` je jenom synchronní metoda v rozhraní API pro ladění. Když `Stop` vrátí hodnotu S_OK, proces se zastaví. Upozorní moduly pro naslouchání ukončení dostane bez zpětného volání. Ladicí program musí volat [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) povolit pokračování procesu.  
+> `Stop`je jedinou synchronní metodou v rozhraní API pro ladění. Při `Stop` vrácení S_OK se proces zastaví. Pro upozornění naslouchacího procesu zastavení není zadáno žádné zpětné volání. Aby bylo možné pokračovat v procesu, musí ladicí program volat funkci [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) .  
   
- Ladicí program udržuje čítač stop. Pokud se čítač sníží na nulu, kontroleru se obnoví. Každé volání `Stop` nebo každého odeslaného zpětného volání zvýší čítač. Každé volání `ICorDebugController::Continue` dekrementuje čítače.  
+ Ladicí program udržuje čítač zastavení. Když počítadlo dosáhne nuly, kontroler se obnoví. Každé volání `Stop` nebo každé odeslané zpětné volání zvýší hodnotu čítače. Každé volání `ICorDebugController::Continue` snižující počítadlo.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

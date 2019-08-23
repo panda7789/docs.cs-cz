@@ -2,59 +2,59 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 83c100459ca5cf522b9040a807008e66e1a5c9d8
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 16e7c564373eaf241b500c0e3de40ee8fb38f05a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425426"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964595"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
-Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
+Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communication Foundation (WCF) souvisejících se zabezpečením pomocí:  
   
 - Šifrování citlivých informací v konfiguračním souboru služby.  
   
-- Uzamčení elementů v konfiguračním souboru tak, aby vnořené podadresářů služby nelze přepsat nastavení.  
+- Uzamykání prvků v konfiguračním souboru, aby vnořené podadresáře služby nemohly přepsat nastavení.  
   
-- Řízení přihlašování z identifikovatelné osobní údaje (PII) v protokolech trasování a zprávy.  
+- Řízení protokolování identifikovatelné osobní údaje (PII) v protokolech trasování a zpráv.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
-## <a name="discussion"></a>Diskuse  
- Každá z těchto funkcí může být používat samostatně nebo společně k řízení aspektů zabezpečení služby. Nejedná se úplnou příručku k zabezpečení ve službě WCF.  
+## <a name="discussion"></a>Účely  
+ Každá z těchto funkcí se dá použít samostatně nebo společně k řízení aspektů zabezpečení služby. Nejedná se o nekonečný Průvodce zabezpečením služby WCF.  
   
- Konfigurační soubory rozhraní .NET Framework mohou obsahovat citlivé údaje, jako je například připojovací řetězce k připojení k databázím. Ve sdílené, hostovaný Web scénářích může být žádoucí k zašifrování těchto informací v konfiguračním souboru služby tak, aby data obsažená v konfiguračním souboru byla odolná vůči příležitostné zobrazení. Rozhraní .NET framework 2.0 a novější má možnost šifrování části konfiguračního souboru pomocí rozhraní Windows Data Protection application programming rozhraní DPAPI nebo zprostředkovatel RSA kryptografických služeb. Vyberte část konfigurační soubor můžete šifrovat aspnet_regiis.exe pomocí rozhraní DPAPI nebo RSA.  
+ Konfigurační soubory .NET Framework můžou obsahovat citlivé informace, jako jsou připojovací řetězce pro připojení k databázím. Ve sdílených scénářích hostovaných na webu může být žádoucí zašifrovat tyto informace v konfiguračním souboru pro službu, aby data obsažená v konfiguračním souboru byla odolná vůči příležitostnému zobrazení. .NET Framework 2,0 a novější má schopnost šifrovat části konfiguračního souboru pomocí rozhraní DPAPI (Windows Data Protection Application Programming Interface) nebo zprostředkovatele kryptografických služeb RSA. Nástroj Aspnet_regiis. exe, který používá rozhraní DPAPI nebo RSA, může šifrovat vybrané části konfiguračního souboru.  
   
- V hostované Web scénářích je možné mít služby v podadresářích dalších služeb. Výchozí sémantické pro určení hodnoty konfigurace umožňuje konfigurační soubory v adresářích vnořené přepsat hodnoty konfigurace v nadřazeném adresáři. V některých situacích může nežádoucí u z různých důvodů. Podporuje konfigurace služby WCF uzamčení konfigurační hodnoty tak, aby vnořené konfigurace generuje výjimky při spuštění pomocí služby vnořené přepsat hodnoty konfigurace.  
+ Ve scénářích hostovaných na webu je možné mít služby v podadresářích jiných služeb. Výchozí sémantika pro určení hodnot konfigurace umožňuje, aby konfigurační soubory ve vnořených adresářích přepsaly konfigurační hodnoty v nadřazeném adresáři. V některých situacích může být to nežádoucí z nejrůznějších důvodů. Konfigurace služby WCF podporuje uzamykání hodnot konfigurace, aby vnořená konfigurace generovala výjimky při spuštění vnořené služby pomocí přepsaných hodnot konfigurace.  
   
- Tento příklad ukazuje, jak řízení protokolování ze známých identifikovatelné osobní údaje (PII) v protokolech trasování a zprávy, jako je například uživatelské jméno a heslo. Ve výchozím nastavení je zakázáno přihlášení známého PII, ale v některých situacích může být důležité při ladění aplikace protokolování identifikovatelné osobní údaje. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kromě toho tato ukázka používá trasování a protokolování zpráv. Další informace najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) vzorku.  
+ Tato ukázka předvádí, jak řídit protokolování známých identifikovatelných osobních údajů (PII) v protokolech trasování a zpráv, jako je uživatelské jméno a heslo. Ve výchozím nastavení je protokolování známého PII zakázáno, ale v některých situacích může být protokolování PII důležité při ladění aplikace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kromě toho tato ukázka používá trasování a protokolování zpráv. Další informace najdete v ukázce [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) .  
   
-## <a name="encrypting-configuration-file-elements"></a>Šifrování souboru elementy konfigurace  
- Z bezpečnostních důvodů ve sdíleném prostředí hostování webů může být žádoucí šifrovat určité konfigurační prvky, jako jsou databázové připojovací řetězce, které mohou obsahovat citlivé informace. Prvek konfigurace je možné zašifrovat pomocí aspnet_regiis.exe nástroj nachází ve složce % například WINDIR%\Microsoft.NET\Framework\v4.0.20728 rozhraní .NET Framework.  
+## <a name="encrypting-configuration-file-elements"></a>Šifrování elementů konfiguračního souboru  
+ Pro účely zabezpečení ve sdíleném prostředí pro hostování webů může být vhodné zašifrovat určité konfigurační prvky, například databázové připojovací řetězce, které mohou obsahovat citlivé informace. Element konfigurace může být zašifrovaný pomocí nástroje Aspnet_regiis. exe, který se nachází ve složce .NET Framework, například%WINDIR%\Microsoft.NET\Framework\v4.0.20728.  
   
-#### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>K šifrování hodnoty v oddíle appSettings souboru Web.config pro ukázku  
+#### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>Chcete-li zašifrovat hodnoty v oddílu appSettings v souboru Web. config pro ukázku  
   
-1. Otevřete příkazový řádek s použitím Start -> spustit... Zadejte `cmd` a klikněte na tlačítko **OK**.  
+1. Otevřete příkazový řádek pomocí rutiny Start-> Spustit.... Zadejte a klikněte na **OK.** `cmd`  
   
-2. Přejděte do aktuálního adresáře rozhraní .NET Framework pomocí následujícího příkazu: `cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`.  
+2. Přejděte do aktuálního adresáře .NET Framework tím, že vydáváte následující `cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`příkaz:.  
   
-3. Nastavení konfigurace appSettings ve složce Web.config šifrovat pomocí následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
+3. Zašifrujte konfigurační nastavení appSettings ve složce Web. config vyvoláním následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
- Další informace o šifrování oddíly konfiguračních souborů můžete zobrazit tak čtení postupy na rozhraní DPAPI v konfiguraci technologie ASP.NET ([vytváření bezpečných aplikací technologie ASP.NET: Ověřování, autorizaci a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a postupy v RSA v konfiguraci technologie ASP.NET ([How To: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
+ Další informace o šifrování oddílů konfiguračních souborů najdete v tématu věnovaném použití rozhraní DPAPI v konfiguraci ASP.NET ([sestavování zabezpečených aplikací ASP.NET: Ověřování, autorizace a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a postup v tématu Konfigurace šifrování RSA v ASP.NET ([postupy: Zašifrujte konfigurační oddíly v ASP.NET 2,0](https://go.microsoft.com/fwlink/?LinkId=95138)pomocí RSA.  
   
-## <a name="locking-configuration-file-elements"></a>Zamykání souborů elementy konfigurace  
- V hostované Web scénářích je možné mít služby v podadresářích služeb. V těchto situacích se počítají hodnoty konfigurace pro službu v podadresáři kontrolou hodnoty v souboru Machine.config a postupně se žádné soubory Web.config v nadřazené adresáře přesunutí dolů ve stromu adresáře a nakonec slučování sloučení Soubor Web.config v adresáře, který obsahuje službu. Výchozí chování pro většinu prvků konfigurace je umožnit konfiguračních souborů v podadresářích přepisují hodnoty nastavené v nadřazené adresáře. V některých situacích může být žádoucí konfiguračních souborů v podadresářích zabránit potlačení hodnot nastavených v konfiguraci nadřazené adresáře.  
+## <a name="locking-configuration-file-elements"></a>Zamykání elementů konfiguračního souboru  
+ Ve scénářích hostovaných na webu je možné mít služby v podadresářích služeb. V těchto situacích se hodnoty konfigurace pro službu v podadresáři vypočítávají prozkoumáním hodnot v souboru Machine. config a následným sloučením se soubory Web. config v nadřazených adresářích, které přesunují strom adresářů a nakonec sloučí Soubor Web. config v adresáři, který obsahuje službu. Výchozím chováním pro většinu konfiguračních elementů je umožnit, aby konfigurační soubory v podadresářích přepsaly hodnoty nastavené v nadřazených adresářích. V některých situacích může být žádoucí zabránit konfiguračním souborům v podadresářích z přepsání hodnot nastavených v konfiguraci nadřazeného adresáře.  
   
- Rozhraní .NET Framework poskytuje způsob, jak uzamknout soubor elementů konfigurace tak, aby konfigurace, které přepíší elementy uzamčené konfigurace vyvolat výjimky za běhu.  
+ .NET Framework poskytuje způsob, jak uzamknout prvky konfiguračního souboru tak, aby konfigurace, které přepíší uzamčené konfigurační prvky, vyvolaly výjimky za běhu.  
   
- Prvek konfigurace můžete uzamknout tak, že zadáte `lockItem` atribut pro uzel v konfiguračním souboru, například k uzamčení CalculatorServiceBehavior uzlu v konfiguračním souboru tak, aby Kalkulačka služby ve vnořené konfiguračních souborů nelze změnit chování následující konfigurace můžete použít.  
+ Element konfigurace může být uzamčen zadáním `lockItem` atributu pro uzel v konfiguračním souboru, například pro uzamknutí uzlu CalculatorServiceBehavior v konfiguračním souboru, aby byly služby kalkulačky ve vnořených konfiguračních souborech. chování nelze změnit, lze použít následující konfiguraci.  
   
 ```xml  
 <configuration>  
@@ -71,12 +71,12 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
 </configuration>  
 ```  
   
- Uzamčení elementů konfigurace může být konkrétnější. Seznam prvků se dá nastavit jako hodnota, která má `lockElements` uzamknout sadu elementů v rámci kolekce podřízených elementů. Seznam atributů lze zadat jako hodnota, která má `lockAttributes` uzamknout sadu atributů v rámci elementu. S výjimkou zadaného seznamu jde zamknout celou kolekci elementů nebo atributů tak, že zadáte `lockAllElementsExcept` nebo `lockAllAttributesExcept` atributy uzlu.  
+ Uzamykání konfiguračních elementů může být konkrétnější. Seznam elementů lze zadat jako hodnotu `lockElements` pro uzamknutí sady prvků v kolekci dílčích prvků. Seznam atributů lze zadat jako hodnotu `lockAttributes` pro uzamknutí sady atributů v rámci elementu. Celá kolekce prvků nebo atributů může být uzamčena s výjimkou zadaného seznamu zadáním `lockAllElementsExcept` atributů nebo `lockAllAttributesExcept` v uzlu.  
   
-## <a name="pii-logging-configuration"></a>Konfigurace protokolování identifikovatelné osobní údaje  
- Protokolování identifikovatelné osobní údaje se řídí dva přepínače: nastavení celý počítač se nenašel v souboru Machine.config, který umožňuje správci počítače můžete povolit nebo zakázat protokolování identifikovatelné osobní údaje a nastavení aplikace, která umožňuje správci aplikace přepnout protokolování identifikovatelné osobní údaje pro každou zdroj v souboru Web.config nebo App.config.  
+## <a name="pii-logging-configuration"></a>Konfigurace protokolování PII  
+ Přihlášení k PII je řízeno dvěma přepínači: nastavení v rámci počítače, které se nachází v souboru Machine. config, který umožňuje správci počítače povolit nebo odepřít protokolování PII a nastavení aplikace, které umožňuje správci aplikace přepnout protokolování PII pro každý zdroj v souboru Web. config nebo App. config.  
   
- Nastavení pro celý počítač je řízena nastavením `enableLoggingKnownPii` k `true` nebo `false`v `machineSettings` element v souboru Machine.config. Následující příklad umožňuje aplikacím zapnout protokolování identifikovatelné osobní údaje.  
+ Nastavení na úrovni `enableLoggingKnownPii` počítače je řízeno nastavením na `true` nebo `false`, v `machineSettings` elementu v souboru Machine. config. Následující příklad umožňuje aplikacím zapnout protokolování PII.  
   
 ```xml  
 <configuration>  
@@ -87,11 +87,11 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
 ```  
   
 > [!NOTE]
->  Soubor Machine.config obsahuje výchozí umístění: % WINDIR%\Microsoft.NET\Framework\v2.0.50727\CONFIG.  
+> Soubor Machine. config má výchozí umístění:%WINDIR%\Microsoft.NET\Framework\v2.0.50727\CONFIG.  
   
- Pokud `enableLoggingKnownPii` atribut není k dispozici v souboru Machine.config, není povoleno protokolování identifikovatelné osobní údaje.  
+ `enableLoggingKnownPii` Pokud atribut není přítomen v souboru Machine. config, není povoleno protokolování PII.  
   
- Povolení protokolování identifikovatelné osobní údaje pro aplikaci se provádí tak, že nastavíte `logKnownPii` atribut zdrojového elementu na `true` nebo `false` v souboru Web.config nebo App.config. Následující příklad umožňuje protokolování identifikovatelné osobní údaje pro protokolování trasování a protokolování zpráv.  
+ Povolení protokolování PII pro aplikaci je provedeno `logKnownPii` nastavením atributu zdrojového prvku na `true` nebo `false` v souboru Web. config nebo App. config. Následující příklad umožňuje protokolování PII pro protokolování zpráv a protokolování trasování.  
   
 ```xml  
 <configuration>  
@@ -112,36 +112,36 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
 </configuration>  
 ```  
   
- Pokud `logKnownPii` není zadán atribut, pak identifikovatelné osobní údaje se neprotokolují.  
+ `logKnownPii` Pokud atribut není zadán, pak PII není protokolován.  
   
- Identifikovatelné osobní údaje se jenom protokoluje, pokud mají oba `enableLoggingKnownPii` je nastavena na `true`, a `logKnownPii` je nastavena na `true`.  
+ PII je protokolováno pouze `enableLoggingKnownPii` `true`v případě, že je nastavena `logKnownPii` na hodnotu a `true`je nastavena na.  
   
 > [!NOTE]
->  System.Diagnostics ignoruje všechny atributy pro všechny zdroje s výjimkou první z nich uvedená v konfiguračním souboru. Přidávání `logKnownPii` atribut do druhého zdroje v konfiguračním souboru nemá žádný vliv.  
+> System. Diagnostics ignoruje všechny atributy všech zdrojů s výjimkou prvního, který je uveden v konfiguračním souboru. `logKnownPii` Přidání atributu k druhému zdroji v konfiguračním souboru nemá žádný vliv.  
   
 > [!IMPORTANT]
->  Chcete-li spustit tento příklad zahrnuje ruční úpravy souboru Machine.config. Při úpravě souboru Machine.config jako nesprávné hodnoty nebo syntaxe může zabránit spouštění všech aplikací rozhraní .NET Framework by měl být věnovat pozornost.  
+>  Spuštění této ukázky zahrnuje ruční úpravu souboru Machine. config. Při úpravách Machine. config jako nesprávné hodnoty nebo syntaxe může zabránit spuštění všech aplikací .NET Framework.  
   
- Je také možné šifrovat konfigurační prvky souboru pomocí DPAPI a RSA. Další informace najdete v následujících tématech:  
+ Je také možné zašifrovat prvky konfiguračního souboru pomocí DPAPI a RSA. Další informace najdete na následujících odkazech:  
   
-- [Vytváření aplikací ASP.NET zabezpečení: Ověřování, autorizaci a zabezpečenou komunikaci](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [Vytváření zabezpečených aplikací ASP.NET: Ověřování, autorizace a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)  
   
-- [Postupy: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [Postupy: Šifrování konfiguračních oddílů v ASP.NET 2,0 pomocí RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `true`, v případě potřeby přidává uzly nadřazených objektů.  
+2. Úpravou Machine. config nastavte `enableLoggingKnownPii` atribut na `true`, pokud je to nutné, přidejte nadřazené uzly.  
   
-3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-#### <a name="to-clean-up-the-sample"></a>Vyčistit vzorku  
+#### <a name="to-clean-up-the-sample"></a>Vyčištění ukázky  
   
-1. Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `false`.  
+1. Úpravou souboru Machine. config nastavte `enableLoggingKnownPii` atribut na `false`hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

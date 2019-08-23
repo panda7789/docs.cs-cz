@@ -11,41 +11,41 @@ helpviewer_keywords:
 - CurrencyManager class [Windows Forms], navigating Windows Forms data
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-ms.openlocfilehash: 452aacab4580a3b07168daa6b7c03740dc98620b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: eb973497f51592b5d34c22e62da77612aec23c35
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583742"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964280"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
-V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdroji dat pro vazbu <xref:System.Windows.Forms.BindingSource> zdroj dat a vazby ovládacích prvků pro komponentu <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Použití těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> odpovídajícím způsobem. Můžete také najít položku a nastavte ji jako aktuální položky tak, že nastavíte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  
+V aplikaci pro Windows nejjednodušší způsob, jak procházet záznamy ve zdroji dat, je vytvořit vazby <xref:System.Windows.Forms.BindingSource> komponenty ke zdroji dat a potom navazovat ovládací prvky <xref:System.Windows.Forms.BindingSource>na. Pak můžete použít integrovanou navigační metodu <xref:System.Windows.Forms.BindingSource> pro <xref:System.Windows.Forms.BindingSource.MoveNext%2A>tyto metody, <xref:System.Windows.Forms.BindingSource.MoveLast%2A> <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Pomocí těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnosti <xref:System.Windows.Forms.BindingSource.Current%2A> <xref:System.Windows.Forms.BindingSource> a odpovídajícím způsobem. Můžete také najít položku a nastavit ji jako aktuální položku <xref:System.Windows.Forms.BindingSource.Position%2A> nastavením vlastnosti.  
   
-### <a name="to-increment-the-position-in-a-data-source"></a>Pro zvýšení pozice ve zdroji dat.  
+### <a name="to-increment-the-position-in-a-data-source"></a>Zvýšení pozice ve zdroji dat  
   
-1. Nastavte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost <xref:System.Windows.Forms.BindingSource> pro vaše data vázaná na pozici záznam přejdete na. Následující příklad ukazuje použití <xref:System.Windows.Forms.BindingSource.MoveNext%2A> metodu <xref:System.Windows.Forms.BindingSource> vyšší <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost při `nextButton` dojde ke kliknutí na. <xref:System.Windows.Forms.BindingSource> Je přidružený `Customers` tabulku z datové sady `Northwind`.  
+1. <xref:System.Windows.Forms.BindingSource.Position%2A> Nastavte vlastnost <xref:System.Windows.Forms.BindingSource> pro vázaná data na umístění záznamu, na který chcete přejít. Následující příklad ukazuje <xref:System.Windows.Forms.BindingSource.MoveNext%2A> použití metody <xref:System.Windows.Forms.BindingSource> pro <xref:System.Windows.Forms.BindingSource.Position%2A> zvýšení vlastnosti při kliknutí. `nextButton` Je spojen s tabulkou datové sady `Northwind`. `Customers` <xref:System.Windows.Forms.BindingSource>  
   
     > [!NOTE]
-    >  Nastavení <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost na hodnotu za první nebo poslední záznam nemá za následek chybu, jak rozhraní .NET Framework nedovolí vám umožní nastavit pozice na hodnotu mimo rozsah seznamu. Pokud je to důležité ve vaší aplikaci vědět, jestli jste došli za první nebo poslední záznam, obsahují logiku pro ověření, zda překročí počet prvků data.  
+    > <xref:System.Windows.Forms.BindingSource.Position%2A> Nastavení vlastnosti na hodnotu mimo první nebo poslední záznam nevede k chybě, protože .NET Framework neumožní nastavit pozici na hodnotu mimo hranice seznamu. Pokud je důležité ve vaší aplikaci zjistit, zda jste prošli za prvním nebo posledním záznamem, zahrňte logiku pro otestování, zda budete přesáhnout počet datových prvků.  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.NavigatingData#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
   
-### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>Chcete-li zkontrolovat, jestli jste předali koncové nebo počáteční  
+### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>Chcete-li ověřit, zda jste prošli koncem nebo začátkem  
   
-1. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.BindingSource.PositionChanged> událostí. V obslužné rutině můžete zkontrolovat, jestli hodnota navrhované umístění překročil počet prvků skutečná data.  
+1. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.BindingSource.PositionChanged> událost. V obslužné rutině můžete testovat, zda hodnota navrhované pozice překročila skutečný počet datových elementů.  
   
-     Následující příklad ukazuje, jak můžete zkontrolovat, jestli jste dosáhli poslední datový element. V příkladu, pokud jste v poslední prvek **Další** tlačítko ve formuláři je zakázané.  
+     Následující příklad ukazuje, jak můžete testovat, zda jste dosáhli posledního datového prvku. V příkladu, pokud jste na posledním prvku, je tlačítko **Další** ve formuláři zakázané.  
   
     > [!NOTE]
-    >  Mějte na paměti, že můžete změnit v seznamu jsou navigace v kódu, měli byste znovu povolit **Další** tlačítko, takže uživatelé můžou procházet celou délku nového seznamu. Kromě toho mějte na paměti, která výše <xref:System.Windows.Forms.BindingSource.PositionChanged> události pro konkrétní <xref:System.Windows.Forms.BindingSource> pracujete se musí přiřadit pomocí jeho metody zpracování událostí. Následuje příklad metody pro zpracování <xref:System.Windows.Forms.BindingSource.PositionChanged> události:  
+    > Pamatujte na to, že pokud změníte seznam, který v kódu procházíte, měli byste znovu povolit tlačítko **Další** , aby uživatelé mohli procházet celou délku nového seznamu. Kromě toho mějte na paměti, že <xref:System.Windows.Forms.BindingSource.PositionChanged> výše uvedená událost pro <xref:System.Windows.Forms.BindingSource> konkrétní, se kterou pracujete, musí být přidružená ke své metodě zpracování událostí. Následuje příklad metody pro zpracování <xref:System.Windows.Forms.BindingSource.PositionChanged> události:  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.NavigatingData#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#3)]  
   
-### <a name="to-find-an-item-and-set-it-as-the-current-item"></a>K vyhledání položky a nastavte ji jako aktuální položky  
+### <a name="to-find-an-item-and-set-it-as-the-current-item"></a>Vyhledání položky a její nastavení jako aktuální položky  
   
-1. Najděte záznam, který chcete nastavit jako aktuální položku. Můžete provést pomocí <xref:System.Windows.Forms.BindingSource.Find%2A> metodu <xref:System.Windows.Forms.BindingSource>, pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList>. Některé příklady datového zdroje, které implementují <xref:System.ComponentModel.IBindingList> jsou <xref:System.ComponentModel.BindingList%601> a <xref:System.Data.DataView>.  
+1. Vyhledejte záznam, který chcete nastavit jako aktuální položku. To lze provést pomocí <xref:System.Windows.Forms.BindingSource.Find%2A> metody <xref:System.Windows.Forms.BindingSource>, pokud váš zdroj dat implementuje <xref:System.ComponentModel.IBindingList>. Některé příklady zdrojů dat, které implementují <xref:System.ComponentModel.IBindingList> , <xref:System.Data.DataView>jsou <xref:System.ComponentModel.BindingList%601> a.  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.NavigatingData#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  

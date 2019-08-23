@@ -5,40 +5,40 @@ ms.technology: dotnet-standard
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 744c97e8728d0a65bff8e7bb7a7dbb298afe1800
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e08c86ebdd71746520085844de5743692e84640e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934547"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965931"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Kopírování existujících uzlů z jednoho dokumentu do jiného
-**ImportNode** metoda je mechanismus, podle kterého je zkopírován uzlu nebo celého uzlu podstrom z jednoho **XmlDocument** do jiného. Uzel vrácená z volání je kopie uzlu z zdrojový dokument, včetně hodnoty atributů, název uzlu, typ uzlu a všechny atributy oboru názvů souvisejících například předponu, místní název a obor názvů identifikátoru URI (Uniform Resource). Zdrojový dokument se nezmění. Po importu uzlu máte stále ho přidat do stromu pomocí jedné z metod používaných k vložení uzlů.  
+Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstrom uzlu kopíruje z jednoho **XmlDocument** do jiného. Uzel vrácený voláním je kopie uzlu ze zdrojového dokumentu, včetně hodnot atributů, názvu uzlu, typu uzlu a všech atributů souvisejících s oborem názvů, jako je předpona, místní název a identifikátor URI (Uniform Resource Identifier). Zdrojový dokument se nemění. Po dokončení importu uzlu je stále nutné ho přidat do stromu pomocí jedné z metod, které se používají pro vkládání uzlů.  
   
- Když uzel je připojen k jeho nový dokument, nový dokument vlastní uzlu. Důvodem je, že každý uzel, po vytvoření má dokument vlastnící i v případě, že uzly se vytvoří v samostatných dokumentu fragmenty. To je požadavek z XML Document Object Model (DOM) a vynucování záměrné vytváření továrny na **XmlDocument** třídy. Například **CreateElement**, je jediný způsob, jak vytvořit nové uzly.  
+ Když je uzel připojen k novému dokumentu, nový dokument vlastní daný uzel. Důvodem je, že každý uzel, který je vytvořen, má vlastní dokument, i když jsou uzly vytvořeny v samostatných fragmentech dokumentů. Toto je požadavek XML model DOM (Document Object Model) (DOM) a je vynutil návrhem vytváření továrny ve třídě **XmlDocument** . Například **CreateElement**je jediným způsobem, jak vytvořit nové uzly.  
   
- V závislosti na uzlu typu importované uzlu a hodnota *hloubkové* parametr, další informace se zkopíruje podle potřeby. Tato metoda se pokusí zrcadlí chování, pokud se fragment kódu XML nebo HTML zdroj byl zkopírován z jednoho dokumentu do jiného připadajících na skutečnost, že pro formát XML, může mít dva dokumenty jiného dokumentu typ definice (DTD).  
+ V závislosti na typu uzlu importovaného uzlu a hodnotě hlubokého parametru se další informace zkopírují podle potřeby. Tato metoda se pokusí zrcadlit očekávané chování v případě, že fragment kódu XML nebo HTML byl zkopírován z jednoho dokumentu do jiného, účetní oddělení pro skutečnost, že v jazyce XML mohou mít dva dokumenty různé definice typu dokumentu (DTD).  
   
- Následující tabulka popisuje specifické chování pro každý typ uzlu, který lze naimportovat.  
+ Následující tabulka popisuje konkrétní chování pro každý typ uzlu, který lze importovat.  
   
-|Typ uzlu|*hloubkové* parametr má hodnotu true|*hloubkové* parametr má hodnotu false|  
+|Typ uzlu|*hluboký* parametr má hodnotu true.|*hluboký* parametr má hodnotu false.|  
 |---------------|------------------------------|-------------------------------|  
-|XmlAttribute|<xref:System.Xml.XmlAttribute.Specified%2A> Je nastavena na **true** na XmlAttribute. Následníky zdroje **XmlAttribute** jsou sestaveny rekurzivně importovány a výsledné uzly k vytvoření odpovídající podstrom.|*Hloubkové* parametru se nedá použít u **XmlAttribute** uzly, proto, že vždy provádějí jejich podřízené uzly s nimi při importu.|  
-|XmlCDataSection|Zkopíruje uzel, včetně jeho data.|Zkopíruje uzel, včetně jeho data.|  
-|XmlComment|Zkopíruje uzel, včetně jeho data.|Zkopíruje uzel, včetně jeho data.|  
-|XmlDocumentFragment|Zdrojový uzel následníky jsou rekurzivně importovány a výsledné uzly sestaveny a vytvoří odpovídající podstrom.|Prázdná **XmlDocumentFragment** se vytvoří.|  
-|XmlDocumentType|Zkopíruje uzel, včetně jeho data.*|Zkopíruje uzel, včetně jeho data.*|  
-|Třída XmlElement|Následníky elementu zdroje jsou rekurzivně importovány a výsledné uzly sestaveny a vytvoří odpovídající podstrom. **Poznámka:**  Výchozí atributy nejsou zkopírovány. Pokud dokument importují do definuje výchozí atributy pro tento název elementu, ty jsou přiřazeny.|Zadaný atribut uzly source element importují a vygenerovaný **XmlAttribute** uzly jsou připojeny k nového elementu. Nejsou zkopírovány podřízených uzlů. **Poznámka:**  Výchozí atributy nejsou zkopírovány. Pokud dokument importují do definuje výchozí atributy pro tento název elementu, ty jsou přiřazeny.|  
-|XmlEntityReference|Protože dokumenty zdroj a cíl může mít definovány rozdílně entity, tato metoda pouze zkopíruje **XmlEntityReference** uzlu. Náhradní text není zahrnut. Pokud má dokument cílové entity definované, jeho hodnota přiřazena.|Protože dokumenty zdroj a cíl může mít definovány rozdílně entity, tato metoda pouze zkopíruje **XmlEntityReference** uzlu. Náhradní text není zahrnut. Pokud má dokument cílové entity definované, jeho hodnota přiřazena.|  
-|XmlProcessingInstruction|Zkopíruje hodnoty cíle a dat z importovaných uzlu.|Zkopíruje hodnoty cíle a dat z importovaných uzlu.|  
-|XmlText|Zkopíruje uzel, včetně jeho data.|Zkopíruje uzel, včetně jeho data.|  
-|XmlSignificantWhitespace|Zkopíruje uzel, včetně jeho data.|Zkopíruje uzel, včetně jeho data.|  
-|XmlWhitespace|Zkopíruje uzel, včetně jeho data.|Zkopíruje uzel, včetně jeho data.|  
-|XmlDeclaration|Zkopíruje hodnoty cíle a dat z importovaných uzlu.|Zkopíruje hodnoty cíle a dat z importovaných uzlu.|  
-|Všechny ostatní typy uzlů|Tyto typy uzlů se nedají importovat.|Tyto typy uzlů se nedají importovat.|  
+|XmlAttribute|Vlastnost je nastavena na **hodnotu true** na atributu XmlAttribute. <xref:System.Xml.XmlAttribute.Specified%2A> Následníky zdroje **XmlAttribute** jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|*Hluboký* parametr se nevztahuje na uzly **XmlAttribute** , protože při importu vždy přenesou jejich podřízené uzly.|  
+|XmlCDataSection|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
+|XmlComment|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
+|XmlDocumentFragment|Následníky zdrojového uzlu jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|Vytvoří se prázdná **XmlDocumentFragment** .|  
+|XmlDocumentType|Zkopíruje uzel, včetně jeho dat. *|Zkopíruje uzel, včetně jeho dat. *|  
+|Třída|Následníky zdrojového elementu jsou rekurzivně importováni a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom. **Poznámka:**  Výchozí atributy se nekopírují. Pokud dokument, který je importován do, definuje výchozí atributy pro tento název elementu, jsou přiřazeny.|Určené uzly atributu zdrojového elementu jsou importovány a generované uzly **XmlAttribute** jsou připojeny k novému elementu. Podřízené uzly nejsou zkopírovány. **Poznámka:**  Výchozí atributy se nekopírují. Pokud dokument, který je importován do, definuje výchozí atributy pro tento název elementu, jsou přiřazeny.|  
+|XmlEntityReference|Vzhledem k tomu, že zdrojové a cílové dokumenty mohou mít jiné definované entity, tato metoda zkopíruje pouze uzel **XmlEntityReference** . Náhradní text není zahrnutý. Je-li v cílovém dokumentu definována entita, je přiřazena jeho hodnota.|Vzhledem k tomu, že zdrojové a cílové dokumenty mohou mít jiné definované entity, tato metoda zkopíruje pouze uzel **XmlEntityReference** . Náhradní text není zahrnutý. Je-li v cílovém dokumentu definována entita, je přiřazena jeho hodnota.|  
+|XmlProcessingInstruction|Zkopíruje cíl a datovou hodnotu z importovaného uzlu.|Zkopíruje cíl a datovou hodnotu z importovaného uzlu.|  
+|XmlText|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
+|XmlSignificantWhitespace|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
+|XmlWhitespace|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
+|XmlDeclaration|Zkopíruje cíl a datovou hodnotu z importovaného uzlu.|Zkopíruje cíl a datovou hodnotu z importovaného uzlu.|  
+|Všechny ostatní typy uzlů|Tyto typy uzlů nelze importovat.|Tyto typy uzlů nelze importovat.|  
   
 > [!NOTE]
->  I když DocumentType uzly je možné importovat, dokument může mít pouze jeden DocumentType. Ano Jakmile naimportujete typ dokumentu před vložením do stromu, budete muset Ujistěte se, že neexistuje žádný dokument typ v dokumentu. Informace o odebírání uzlů najdete v tématu [odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).  
+> I když lze importovat uzly DocumentType, může mít dokument pouze jeden DocumentType. Takže po importu typu dokumentu před jeho vložením do stromu je nutné se ujistit, že v dokumentu není žádný typ dokumentu. Informace o odebírání uzlů najdete v tématu [Odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).  
   
 ## <a name="see-also"></a>Viz také:
 

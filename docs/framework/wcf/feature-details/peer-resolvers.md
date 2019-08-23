@@ -2,37 +2,37 @@
 title: Překladače partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-ms.openlocfilehash: de19e08c1c001076c56e26020584d17079f1a45f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0547bb37b03235c61f43cec365551438f7931ad1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038698"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69909917"
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
-Aby bylo možné připojit k sítě, vyžaduje partnerský uzel IP adresy z ostatních uzlů. Získávají se IP adresy kontaktováním překladač služby, která přijímá ID sítě a vrátí seznam hodnot adresy odpovídající uzly zaregistrovaný s ID tohoto konkrétního sítě. Překladač udržuje seznam registrovaných adresy, které se vytvoří tak, že každý uzel v mřížce zaregistrovat do služby.  
+Aby bylo možné se připojit k síti, partnerský uzel vyžaduje IP adresy jiných uzlů. IP adresy se získávají kontaktováním služby překladače, která přijímá ID sítě a vrací seznam adres odpovídajících uzlům zaregistrovaným s tímto ID sítě. Překladač uchovává seznam registrovaných adres, které vytvoří tak, že se všechny uzly v síti registrují spolu se službou.  
   
- Můžete určit, které služby PeerResolver prostřednictvím `Resolver` vlastnost <xref:System.ServiceModel.NetPeerTcpBinding>.  
+ Můžete určit, která služba PeerResolver se má použít `Resolver` , pomocí vlastnosti. <xref:System.ServiceModel.NetPeerTcpBinding>  
   
-## <a name="supported-peer-resolvers"></a>Překladače podporované partnerských uzlů  
- Protokolu peer Channel podporuje dva typy překladače: Překlad protokolu PNRP (Peer Name) a vlastní mechanismus rozpoznávání služeb.  
+## <a name="supported-peer-resolvers"></a>Podporované překladače rovnocenných zařízení  
+ Partnerský kanál podporuje dva typy překladačů: Protokol PNRP (Peer Name Resolution Protocol) a vlastní služby překladače.  
   
- Ve výchozím nastavení používá protokolu Peer Channel služba překladač PNRP peer pro zjišťování partnerské uzly a okolí v mřížce. Pro situace/platformy, kde PNRP není k dispozici nebo není vhodná, Windows Communication Foundation (WCF) poskytuje službu zjišťování alternativní, serverových - <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>. Můžete také explicitně definovat vlastní mechanismus rozpoznávání služby napsáním třídu, která implementuje <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní.  
+ Ve výchozím nastavení používá rovnocenný kanál službu překladače PNRP peering pro zjišťování partnerských vztahů a sousedů v síti. V <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>situacích a platformách, kde PNRP není k dispozici nebo je možné, Windows Communication Foundation (WCF) poskytuje alternativní službu zjišťování na základě serverů –. Můžete také explicitně definovat vlastní službu překladače, a to tak, že zapíšete třídu, která implementuje <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní.  
   
-### <a name="peer-name-resolution-protocol-pnrp"></a>Protokol PNRP (PNRP)  
- Protokol PNRP, výchozí překladač pro [!INCLUDE[wv](../../../../includes/wv-md.md)], je služba překladač distribuované, bez serveru. Protokol PNRP lze také na [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nainstalováním sady rozšířeného sítě. Žádné dva se stejnou verzí PNRP mohli klienti najít navzájem pomocí tohoto protokolu, pokud splňují určité podmínky (například chybějící použitá podniková brána firewall). Všimněte si, že verze PNRP, který je součástí [!INCLUDE[wv](../../../../includes/wv-md.md)] je novější než verze součástí balíčku rozšířeného sítě. Zkontrolujte webu Microsoft Download Center aktualizace PNRP pro [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)].  
+### <a name="peer-name-resolution-protocol-pnrp"></a>Protokol PNRP (Peer Name Resolution Protocol)  
+ Protokol PNRP je výchozím překladačem [!INCLUDE[wv](../../../../includes/wv-md.md)]pro, který je distribuovaná služba pro překládání názvů bez serveru. Protokol PNRP se dá použít taky [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] v případě, že nainstalujete pokročilou síťovou sadu. Každý ze dvou klientů, na kterých běží stejná verze PNRP, může každý jiný tento protokol najít za předpokladu, že splňují určité podmínky (například nedostatek používané podnikové brány firewall). Všimněte si, že verze protokolu PNRP, která [!INCLUDE[wv](../../../../includes/wv-md.md)] je dodávána, je novější než verze obsažená v sadě Advanced Networking Pack. Informace o aktualizacích PNRP pro [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]najdete na webu Microsoft Download Center.  
   
-### <a name="custom-resolver-services"></a>Vlastní mechanismus rozpoznávání služeb  
- Když Služba PNRP není k dispozici, nebo chcete úplnou kontrolu nad tvarování sítě, můžete použít vlastní, serverových překladač služby. Tuto službu můžete definovat explicitně napsáním překladač třída implementace <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní nebo pomocí integrované výchozí implementace <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>.  
+### <a name="custom-resolver-services"></a>Vlastní služby překladače  
+ Pokud není Služba PNRP k dispozici nebo chcete plnou kontrolu nad mřížkou, můžete použít vlastní službu překladače založené na serveru. Tuto službu můžete explicitně definovat tak, že napíšete třídu překladače implementující <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> rozhraní nebo pomocí integrované výchozí <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>implementace.  
   
- Pod výchozí implementace služby registrace klienta vyprší po určitou dobu Pokud klient neaktualizuje explicitně registrace. Klienti, kteří používají službě překládání musí mít přehled o horní mez na latenci klient server aby bylo možné úspěšně obnovit registrace v čase. To znamená příslušnou aktualizaci časového limitu (`RefreshInterval`) ve službě překládání. (Další informace najdete v tématu [uvnitř CustomPeerResolverService: Registrace klienta](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md).)  
+ V rámci výchozí implementace služby vyprší platnost registrace klientů po určitém časovém limitu, pokud klient explicitně neaktualizuje registraci. Klienti, kteří používají službu překladače, musí znát horní mez při latenci klienta a serveru, aby bylo možné úspěšně aktualizovat registrace v čase. To zahrnuje výběr vhodného časového limitu aktualizace (`RefreshInterval`) ve službě překladače. (Další informace najdete v tématu [CustomPeerResolverService: Registrace](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)klienta.)  
   
- Zapisovač aplikace musíte taky zvážit zabezpečení připojení mezi klienty a službě vlastní překládání. Může to provést pomocí nastavení zabezpečení na <xref:System.ServiceModel.NetTcpBinding> , že klienti používají navázání kontaktu se službou překladač. Je nutné zadat přihlašovací údaje (Pokud se používá) na `ChannelFactory` použitý k vytvoření protokolu Peer Channel. Tyto přihlašovací údaje jsou předány `ChannelFactory` použitý k vytvoření kanálů pro vlastní překládání.  
+ Zapisovač aplikace musí také zvážit zabezpečení spojení mezi klienty a vlastní službou překladače. To můžete provést pomocí nastavení zabezpečení na <xref:System.ServiceModel.NetTcpBinding> klientech, kteří používají ke kontaktování služby překladače. Je nutné zadat přihlašovací údaje (Pokud se `ChannelFactory` používají) na základě použitého k vytvoření rovnocenného kanálu. Tyto přihlašovací údaje jsou předány `ChannelFactory` k použití k vytvoření kanálů pro vlastní překladač.  
   
 > [!NOTE]
->  Pokud používáte vlastní mechanismus rozpoznávání neocenitelní a místní sítí, se důrazně doporučuje, že aplikace používá nebo specifická pro připojení nebo neocenitelní sítě obsahují logiku, která vybere jedna adresa specifická pro připojení používat při připojování. To zabraňuje záměny potenciálně způsobené počítače s více adresami specifická pro připojení. V souladu s touto protokolu Peer Channel podporuje pouze pomocí jedné adresy specifická pro připojení v daný okamžik. Můžete zadat tuto adresu se `ListenIpAddress` vlastnost <xref:System.ServiceModel.NetPeerTcpBinding>.  
+> Pokud používáte místní a Impromptu sítě s vlastním překladačem, důrazně se doporučuje, aby aplikace využívající nebo podporovaly místní nebo Impromptu sítě zahrnovaly logiku, která při připojování vybere jednu místní adresu propojení. Zabráníte tak případné záměně, které by mohly být způsobeny počítači s více adresami místních odkazů. V souladu s tímto kanálem peer Channel podporuje v jednom okamžiku jenom použití jediné místní adresy. Tuto adresu můžete zadat s `ListenIpAddress` vlastností <xref:System.ServiceModel.NetPeerTcpBinding>na.  
   
- Ukázku toho, jak implementovat vlastní mechanismus rozpoznávání, naleznete v tématu [Peer Channel vlastní rozpoznávání partnera](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90)).  
+ Ukázku implementace vlastního překladače najdete v tématu [překladač peer Channel Custom peer resolver](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90)).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Uvnitř CustomPeerResolverService: Registrace klienta](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)  

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 745917af176de47999737c87833c23df9c75ea7b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfd29067f819ba69305f7ae8620729cd443915a0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995953"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931939"
 ---
 # <a name="icordebugeval-interface"></a>ICorDebugEval – rozhraní
 
@@ -31,37 +31,37 @@ Poskytuje metody povolující ladicímu programu spouštět kód v kontextu lad�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Abort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md)|Zruší výpočtu to `ICorDebugEval` objektu v tuto chvíli provádí.|  
-|[CallFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md)|Nastaví zadanou funkci volání. (Zastaralé v rozhraní .NET Framework verze 2.0; použijte [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.)|  
-|[CreateValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Získá ukazatel rozhraní na "ICorDebugValue" objekt zadaného typu, s počáteční hodnotou nula nebo hodnotu null. (Zastaralé v rozhraní .NET Framework 2.0; použijte [icordebugeval2::createvaluefortype –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) místo.)|  
-|[GetResult – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getresult-method.md)|Získá ukazatel rozhraní k `ICorDebugValue` , která obsahuje výsledky hodnocení.|  
-|[GetThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Získá ukazatel rozhraní "ICorDebugThread", kde se toto vyhodnocení provádí nebo spustí.|  
-|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-isactive-method.md)|Získá hodnotu, která určuje, jestli to `ICorDebugEval` objekt aktuálně spouští.|  
-|[NewArray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newarray-method.md)|Přidělí nové pole typu zadaného elementu a dimenze. (Zastaralé v rozhraní .NET Framework 2.0; použijte [icordebugeval2::newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) místo.)|  
-|[NewObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobject-method.md)|Přidělí novou instanci objektu a volá metodu zadaný konstruktor. (Zastaralé v rozhraní .NET Framework 2.0; použijte [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.)|  
-|[NewObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Přidělí novou instanci objektu zadaného typu, bez pokusu o volání metody konstruktoru. (Zastaralé v rozhraní .NET Framework 2.0; použijte [icordebugeval2::newparameterizedobjectnoconstructor –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) místo.)|  
-|[NewString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Přidělí nový řetězec objekt se zadaným obsahem.|  
+|[Abort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md)|Přeruší výpočet, který `ICorDebugEval` tento objekt právě provádí.|  
+|[CallFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md)|Nastaví volání zadané funkce. (Zastaralé ve verzi .NET Framework 2,0; místo toho použijte [ICorDebugEval2:: CallParameterizedFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) .)|  
+|[CreateValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Získá ukazatel rozhraní na objekt "ICorDebugValue" zadaného typu s počáteční hodnotou 0 nebo null. (Zastaralé v .NET Framework 2,0; místo toho použijte [ICorDebugEval2:: createvaluefortype –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) .)|  
+|[GetResult – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getresult-method.md)|Získá ukazatel `ICorDebugValue` rozhraní, které obsahuje výsledky vyhodnocení.|  
+|[GetThread – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Získá ukazatel rozhraní na "ICorDebugThread", kde toto vyhodnocení provádí nebo spustí.|  
+|[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-isactive-method.md)|Získá hodnotu, která označuje, zda `ICorDebugEval` je tento objekt aktuálně spuštěn.|  
+|[NewArray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newarray-method.md)|Přidělí nové pole zadaného typu a dimenzí prvku. (Zastaralé v .NET Framework 2,0; místo toho použijte [ICorDebugEval2:: newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) .)|  
+|[NewObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobject-method.md)|Přidělí novou instanci objektu a zavolá specifikovanou metodu konstruktoru. (Zastaralé v .NET Framework 2,0; místo toho použijte [ICorDebugEval2:: newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) .)|  
+|[NewObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Přidělí novou instanci objektu zadaného typu bez pokusu o volání metody konstruktoru. (Zastaralé v .NET Framework 2,0; místo toho použijte [ICorDebugEval2:: NewParameterizedObjectNoConstructor –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) .)|  
+|[NewString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Přidělí nový objekt řetězce se zadaným obsahem.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugEval` Objekt je vytvořen v kontextu konkrétní vlákno, které se používá k provedení vyhodnocení. Všechny objekty a typy použité v daném hodnocení se musí nacházet ve stejné doméně aplikace. Tuto doménu aplikace nemusí být stejný jako aktuální domény aplikace vlákna. Mohou být vnořené hodnocení.  
+ `ICorDebugEval` Objekt je vytvořen v kontextu konkrétního vlákna, které se používá k provedení vyhodnocení. Všechny objekty a typy používané v daném vyhodnocení musí být umístěny ve stejné doméně aplikace. Doména aplikace nemusí být stejná jako aktuální doména aplikace vlákna. Hodnocení lze vnořovat.  
   
- Operace hodnocení nedokončí až do volání ladicího programu [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md)a potom přijímá [icordebugmanagedcallback::evalcomplete –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md) zpětného volání. Pokud potřebujete použít funkci vyhodnocení bez povolení jiných podprocesů pro spuštění, pozastavení vláken pomocí [icordebugcontroller::setallthreadsdebugstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) nebo [icordebugcontroller::stop –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)před voláním [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).  
+ Operace vyhodnocení nejsou dokončeny, dokud ladicí program nevolá metodu [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md)a poté obdrží zpětné volání [ICorDebugManagedCallback:: EvalComplete –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md) . Pokud potřebujete použít funkci hodnocení bez povolení spuštění jiných vláken, pozastavte vlákna pomocí [ICorDebugController:: SetAllThreadsDebugState –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) nebo [ICorDebugController:: stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md) před voláním [. ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).  
   
- Vzhledem k tomu, že uživatelský kód běží, když probíhá vyhodnocení, může dojít všechny výjimky ladění, včetně načtení třídy a zarážky. Ladicí program se zobrazí jako za normálních okolností, tyto události zpětná volání. Jako součást kontroly stavu normální programu se zobrazí stav vyhodnocení. Řetěz zásobníku bude `CHAIN_FUNC_EVAL` řetězce (naleznete v tématu "Cordebugstepreason –" výčet a [icordebugchain::getreason –](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) metoda). Úplné ladicí program rozhraní API bude nadále fungovat jako obvykle.  
+ Vzhledem k tomu, že uživatelský kód je spuštěn, když probíhá vyhodnocení, může dojít k jakýmkoli událostem ladění, včetně načtených tříd a zarážek. Ladicí program bude pro tyto události přijímat zpětná volání jako normální. Stav vyhodnocení bude zobrazen jako součást kontroly normálního stavu programu. Řetěz zásobníku bude `CHAIN_FUNC_EVAL` řetěz (viz "výčet" CorDebugStepReason – a metoda [ICorDebugChain:: getdůvod](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) ). Úplné rozhraní API ladicího programu bude i nadále fungovat jako normální.  
   
- Pokud jeví jako zablokované nebo nekonečné smyčky situace nastane, může dokončení nikdy uživatelského kódu. V takovém případě je nutné volat [icordebugeval::Abort –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md) před obnovením program.  
+ Pokud dojde k zablokování nebo nekonečné situaci ve smyčce, nemusí být kód uživatele nikdy dokončen. V takovém případě je nutné volat [ICorDebugEval:: Abort](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md) před pokračováním programu.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

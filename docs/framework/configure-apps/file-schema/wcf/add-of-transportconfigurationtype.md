@@ -2,19 +2,19 @@
 title: <add> z <transportConfigurationType>
 ms.date: 03/30/2017
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-ms.openlocfilehash: c71a58b13e89bedb5eed24d784c82fb1525f7625
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 483ede53df13c896b88171910031dbe9793d66dc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701434"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920038"
 ---
-# <a name="add-of-transportconfigurationtype"></a>\<add> of \<transportConfigurationType>
-Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní přenos.  
+# <a name="add-of-transportconfigurationtype"></a>\<Přidat > \<> transportConfigurationType
+Tento prvek je dvojice klíč/hodnota, která určuje typ konkrétního přenosu.  
   
  \<system.ServiceModel>  
 \<ServiceHostingEnvironment>  
-\<transportConfigurationTypes>  
+\<transportConfigurationTypes >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,17 +35,17 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Povinný atribut řetězce.<br /><br /> Obsahuje klíč definovaný uživatelem, který jednoznačně identifikuje typ přenosu.|  
-|transportConfigurationType|Řetězec, který obsahuje typ, který implementuje konkrétní přenos.|  
+|name|Povinný atribut řetězce.<br /><br /> Obsahuje uživatelsky definovaný klíč, který jednoznačně identifikuje typ přenosu.|  
+|transportConfigurationType|Řetězec obsahující typ, který implementuje konkrétní přenos.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transportConfigurationTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce typů, které implementují konkrétní přenos.|  
+|[\<transportConfigurationTypes >](transportconfigurationtypes.md)|Kolekce typů, které implementují konkrétní přenos.|  
   
 ## <a name="example"></a>Příklad  
   
@@ -63,4 +63,4 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
 - <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>
 - <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>
 - <xref:System.ServiceModel.ServiceHostingEnvironment>
-- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+- [Hostování](../../../wcf/feature-details/hosting.md)

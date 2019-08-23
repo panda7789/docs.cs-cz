@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: d719b5c65eda8299170705cede81907a51b12e79
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d847ffd4c1e3d924b9c45497c1b2ee172887e8b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780926"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933010"
 ---
 # <a name="nettcpbinding"></a>\<netTcpBinding>
 
-Určuje zabezpečená, spolehlivá a optimalizovaná vazby vhodné pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje zásobník modulu runtime komunikace s Windows zabezpečení pro zabezpečení zpráv a ověřování protokolu TCP pro doručování zpráv a kódování binární zprávy.
+Určuje zabezpečenou, spolehlivou a optimalizovanou vazbu vhodnou pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje komunikační zásobník za běhu s zabezpečením systému Windows za účelem zabezpečení a ověřování zpráv, TCP pro doručování zpráv a kódování binárních zpráv.
 
 \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<netTcpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -64,45 +64,45 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`closeTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`hostNameComparisonMode`|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|  
-|`listenBacklog`|Kladné celé číslo, určující maximální počet kanálů čekat na přijetí na naslouchací proces. Připojení překračující tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit. `connectionTimeout` Atribut omezuje času, klient bude čekat před vyvolání výjimky připojení připojený k Internetu. Výchozí hodnota je 10.|  
-|`maxBufferPoolSize`|Celé číslo, které určuje velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 512 * 1024 bajtů. Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
-|`maxBufferSize`|Kladné celé číslo, které určuje maximální velikost v bajtech, vyrovnávací paměti používané k ukládání zpráv v paměti.<br /><br /> Pokud `transferMode` atributu rovná `Buffered`, tento atribut by měl být roven `maxReceivedMessageSize` hodnotu atributu.<br /><br /> Pokud `transferMode` atributu rovná `Streamed`, tento atribut nemůže být více než `maxReceivedMessageSize` hodnotu atributu a by měl mít velikost záhlaví.<br /><br /> Výchozí hodnota je 65536. Další informace naleznete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
-|`maxConnections`|Celé číslo, které určuje maximální počet odchozí a příchozí připojení služby vytvořit/přijme. Příchozí a odchozí připojení se započítávají i samostatné limit specifikovaný pro tento atribut.<br /><br /> Příchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Odchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Výchozí hodnota je 10.|  
-|`maxReceivedMessageSize`|Kladné celé číslo, které určuje maximální velikost zprávy, v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou. Odesílatel zprávy překračující tento limit se zobrazí chyba protokolu SOAP. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
-|`name`|Řetězec, který obsahuje konfigurační název vazby. Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
-|`openTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`portSharingEnabled`|Logická hodnota určující, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je to `false`, každá vazba používá výhradně portu. Toto nastavení je relevantní pouze pro služby, protože klienti to nebude mít vliv.|  
-|`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
-|`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`transactionFlow`|Logická hodnota určující, zda vazba podporuje průchodu WS-transakce. Výchozí hodnota je `false`.|  
-|`transactionProtocol`|Určuje protokol transakce, jenž má být použit s touto vazbou. Platné hodnoty jsou<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> Výchozí hodnota je OleTransactions. Tento atribut je typu <xref:System.ServiceModel.TransactionProtocol>.|  
-|`transferMode`|A <xref:System.ServiceModel.TransferMode> hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavek nebo odpověď.|  
+|`closeTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
+|`hostNameComparisonMode`|Určuje režim porovnání názvu hostitele HTTP, který se používá k analýze identifikátorů URI. Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, který označuje, zda je název hostitele použit pro dosažení služby při shodě s identifikátorem URI. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, která ignoruje název hostitele v shodě.|  
+|`listenBacklog`|Celé kladné číslo určující maximální počet kanálů, které čekají na přijetí na naslouchací službě. Překročení tohoto limitu se zařadí do fronty, dokud nebude k dispozici mezera pod limitem. `connectionTimeout` Atribut omezuje dobu, po kterou bude klient čekat na připojení, než dojde k výjimce připojení. Výchozí hodnota je 10.|  
+|`maxBufferPoolSize`|Celé číslo, které určuje maximální velikost fondu vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 512 × 1024 bajtů. Mnoho částí Windows Communication Foundation (WCF) používá vyrovnávací paměti. Vytváření a zničení vyrovnávacích pamětí pokaždé, když se používají, jsou nákladné a uvolňování paměti pro vyrovnávací paměti je také nákladné. Pomocí fondů vyrovnávacích pamětí můžete z fondu získat vyrovnávací paměť, použít ji a až budete hotovi, vrátit ji do fondu. Proto se zabrání režie v vytváření a zničení vyrovnávacích pamětí.|  
+|`maxBufferSize`|Celé kladné číslo určující maximální velikost vyrovnávací paměti, která se používá k ukládání zpráv v paměti, v bajtech.<br /><br /> Pokud se `transferMode` atribut rovná `Buffered`, tento atribut `maxReceivedMessageSize` by měl být roven hodnotě atributu.<br /><br /> Pokud se `transferMode` atribut rovná `Streamed`, tento atribut `maxReceivedMessageSize` nemůže být větší než hodnota atributu a měla by být alespoň velikost záhlaví.<br /><br /> Výchozí hodnota je 65536. Další informace naleznete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
+|`maxConnections`|Celé číslo, které určuje maximální počet odchozích a příchozích připojení, které služba vytvoří nebo přijme. Příchozí a odchozí připojení se počítají na základě zvláštního limitu určeného tímto atributem.<br /><br /> Příchozí připojení přesahující tento limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Odchozí připojení přesahující limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Výchozí hodnota je 10.|  
+|`maxReceivedMessageSize`|Celé kladné číslo určující maximální velikost zprávy v bajtech, včetně hlaviček, které lze přijmout na kanálu nakonfigurovaném pomocí této vazby. Odesílateli zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
+|`name`|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|`openTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
+|`portSharingEnabled`|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. `false`V takovém případě Každá vazba používá vlastní výhradní port. Toto nastavení je relevantní pouze pro služby, protože nejsou ovlivněni klienti.|  
+|`receiveTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
+|`sendTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
+|`transactionFlow`|Logická hodnota určující, zda vazba podporuje tok dat WS-Transactions. Výchozí hodnota je `false`.|  
+|`transactionProtocol`|Určuje transakční protokol, který se má použít s touto vazbou. Platné hodnoty jsou<br /><br /> – OleTransactions<br />- WSAtomicTransactionOctober2004<br /><br /> Výchozí hodnota je OleTransactions. Tento atribut je typu <xref:System.ServiceModel.TransactionProtocol>.|  
+|`transferMode`|<xref:System.ServiceModel.TransferMode> Hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány nebo jsou požadavkem či odpovědí.|  
   
 ### <a name="child-elements"></a>Podřízené prvky  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>.|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, pokud jsou mezi koncovými body kanál navázat spolehlivé relace.|  
+|[\<> zabezpečení](security-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>.|  
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovanými s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, jestli se mezi koncovými body kanálu navázaly spolehlivé relace.|  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<> vazeb](bindings.md)|Tento prvek obsahuje kolekci standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky
 
-Tato vazba generuje runtime komunikačního balíku ve výchozím nastavení, která používá zabezpečení přenosu protokolu TCP pro doručování zpráv a zprávy v binární kódování. Tato vazba je vhodné Windows Communication Foundation (WCF) poskytované systémem volbou pro komunikaci přes Intranet.  
+Tato vazba generuje ve výchozím nastavení zásobník pro komunikaci za běhu, který používá zabezpečení přenosu, TCP pro doručování zpráv a binární kódování zpráv. Tato vazba je vhodným uživatelem určeným Windows Communication Foundation (WCF) pro komunikaci přes intranet.  
   
- Výchozí konfigurace pro `netTcpBinding` je rychlejší než konfigurace poskytované `wsHttpBinding`, ale je určena pouze pro komunikaci WCF. Chování zabezpečení je možné konfigurovat pomocí volitelného `securityMode` atribut. Použití WS-ReliableMessaging je možné konfigurovat pomocí volitelného `reliableSessionEnabled` atribut. Ale spolehlivé zasílání zpráv je vypnuto ve výchozím nastavení. Obecně platí, HTTP vazeb poskytovaných systémem, jako `wsHttpBinding` a `basicHttpBinding` umožňují zapnout věci ve výchozím nastavení, že `netTcpBinding` vazby vypne věci ve výchozím nastavení tak, že budete muset přihlásit k získání podpory, třeba pro jeden z WS-* specifikace. To znamená, že je výchozí konfigurace pro protokol TCP rychlejší při výměně zpráv mezi koncovými body než ty, které ve výchozím nastavení nakonfigurované pro vazby protokolu HTTP.  
+ Výchozí konfigurace pro `netTcpBinding` je rychlejší než konfigurace `wsHttpBinding`, kterou poskytuje, ale je určena pouze pro komunikaci WCF. Chování zabezpečení lze konfigurovat pomocí volitelného `securityMode` atributu. Použití WS-ReliableMessaging se dá konfigurovat pomocí volitelného `reliableSessionEnabled` atributu. Ale spolehlivé zasílání zpráv je ve výchozím nastavení vypnuté. Obecně platí, že vazby `wsHttpBinding` poskytované systémem http, jako jsou a `basicHttpBinding` , jsou nakonfigurovány tak, aby ve výchozím nastavení zapnuly hodnoty, zatímco `netTcpBinding` vazba ve výchozím nastavení vypíná možnosti, takže je nutné se přihlásit k podpoře, například pro jednu z specifikace WS-*. To znamená, že výchozí konfigurace pro protokol TCP je rychlejší při výměně zpráv mezi koncovými body, než jsou nastavené pro vazby HTTP ve výchozím nastavení.  
   
 ## <a name="example"></a>Příklad
 
-Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut `<endpoint>` elementu. Pokud chcete konfiguraci vazby netTcpBinding a některé z nastavení změnit, je potřeba definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby `bindingConfiguration` atribut. V následujícím příkladu je definován konfiguraci vazby.  
+Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby je určen v `binding` atributu `<endpoint>` elementu. Pokud chcete nakonfigurovat vazbu netTcpBinding a změnit některá její nastavení, je nutné definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby s `bindingConfiguration` atributem. V následujícím příkladu je definována konfigurace vazby.  
   
 ```xml  
 <services>
@@ -150,7 +150,7 @@ Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je
 
 - <xref:System.ServiceModel.NetTcpBinding>
 - <xref:System.ServiceModel.Configuration.NetTcpBindingElement>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

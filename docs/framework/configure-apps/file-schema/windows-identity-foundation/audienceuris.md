@@ -3,15 +3,15 @@ title: <audienceUris>
 ms.date: 03/30/2017
 ms.assetid: 7a3d8515-d756-4afe-a22d-07cbe2217ee3
 author: BrucePerlerMS
-ms.openlocfilehash: 556c444d5e48e27036c4b49338f6e70de7ef5c5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 003221ed4dc7f4ccf72d2e0d3a91265e13172813
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750745"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941957"
 ---
 # <a name="audienceuris"></a>\<audienceUris>
-Určuje sadu identifikátorů URI, které jsou přípustné identifikátory předávající strany (RP). Tokeny nebudou přijímány, pokud jsou určená pro jeden z identifikátorů URI povolená cílová skupina.  
+Určuje sadu identifikátorů URI, které jsou přijatelné identifikátory předávající strany (RP). Tokeny nebudou přijaty, pokud nejsou vymezeny pro některý z povolených identifikátorů URI cílové skupiny.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -44,32 +44,32 @@ Určuje sadu identifikátorů URI, které jsou přípustné identifikátory pře
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|<xref:System.IdentityModel.Selectors.AudienceUriMode> Hodnota, která určuje, zda má být použita omezení cílovou skupinu na příchozí token. Možné hodnoty jsou "Always", "Nikdy" a "BearerKeyOnly". Výchozí hodnota je "Always". Volitelné.|  
+|režim|<xref:System.IdentityModel.Selectors.AudienceUriMode> Hodnota, která určuje, jestli se má omezení cílové skupiny použít u příchozího tokenu. Možné hodnoty jsou "Always", "Never" a "BearerKeyOnly". Výchozí hodnota je "Always". Volitelný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`<add value=xs:string>`|Přidá určený identifikátor URI `value` atribut audienceUris kolekce. `value` Atribut je vyžadován. Identifikátor URI je velká a malá písmena.|  
-|`<clear>`|Vymaže kolekci audienceUris. Všechny identifikátory se odeberou z kolekce.|  
-|`<remove value=xs:string>`|Odstraní určený identifikátor URI `value` atribut z kolekce audienceUris. `value` Atribut je vyžadován. Identifikátor URI je velká a malá písmena.|  
+|`<add value=xs:string>`|Přidá identifikátor URI určený `value` atributem do kolekce audienceUris. `value` Atribut je vyžadován. Identifikátor URI rozlišuje velká a malá písmena.|  
+|`<clear>`|Vymaže kolekci audienceUris. Všechny identifikátory jsou z kolekce odebrané.|  
+|`<remove value=xs:string>`|Odstraní identifikátor URI určený `value` atributem z kolekce audienceUris. `value` Atribut je vyžadován. Identifikátor URI rozlišuje velká a malá písmena.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
+|[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Poskytuje konfiguraci pro kolekci obslužných rutin tokenů zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení je kolekce prázdná. použít `<add>`, `<clear>`, a `<remove>` prvků, které se změnit kolekci. <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> a <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> objektů použijte hodnoty v cílové skupině identifikátor URI kolekce ke konfiguraci libovolné povolené cílové skupiny omezení identifikátor URI v <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> objekty.  
+ Ve výchozím nastavení je kolekce prázdná. pro `<add>`úpravu `<clear>`kolekce použijte `<remove>` prvky, a. <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>objekty <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> a používají hodnoty v kolekci identifikátorů URI cílové skupiny ke konfiguraci libovolných povolených omezení <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> identifikátorů URI cílové skupiny v objektech.  
   
- `<audienceUris>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.AudienceUriElementCollection> třídy. Je reprezentován jednotlivé identifikátor URI přidat do kolekce <xref:System.IdentityModel.Configuration.AudienceUriElement> třídy.  
+ Element je reprezentován <xref:System.IdentityModel.Configuration.AudienceUriElementCollection>třídou. `<audienceUris>` Jednotlivé identifikátory URI přidané do kolekce jsou reprezentovány <xref:System.IdentityModel.Configuration.AudienceUriElement> třídou.  
   
 > [!NOTE]
->  Použití `<audienceUris>` prvek jako podřízený prvek [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) prvek se už nepoužívá, ale je z důvodu zpětné kompatibility stále podporována. Nastavení `<securityTokenHandlerConfiguration>` element mají přednost před akcemi na `<identityConfiguration>` elementu.  
+> Použití `<audienceUris>` prvku jako podřízeného prvku [ \<prvku IdentityConfiguration >](identityconfiguration.md) bylo zastaralé, ale je stále podporováno pro zpětnou kompatibilitu. Nastavení na `<securityTokenHandlerConfiguration>` elementu přepíší tyto prvky `<identityConfiguration>` na elementu.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje, jak nakonfigurovat přijatelné cílovou skupinu identifikátory URI pro aplikaci. Tento příklad konfiguruje jednoho identifikátoru URI. Přijme tokeny oboru pro tento identifikátor URI, všechny ostatní budou odmítnuty.  
+ Následující kód XML ukazuje, jak nakonfigurovat přijatelné identifikátory URI cílové skupiny pro aplikaci. Tento příklad nakonfiguruje jeden identifikátor URI. Tokeny vymezené pro tento identifikátor URI budou přijaty, ostatní budou odmítnuty.  
   
 ```xml  
 <audienceUris>  

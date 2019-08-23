@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 5b4da744151d8b667c0f944b1a0d51d1251bfae5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8a51381db71f528bf3cf25f5c84d18aee805c57e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64652002"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948362"
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
-Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scénáře.  
+Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.  
   
 ## <a name="enabling-message-logging"></a>Povolení protokolování zpráv  
- Windows Communication Foundation (WCF) protokolu zpráv ve výchozím nastavení. K aktivaci protokolování zpráv, musíte přidat naslouchací proces trasování do `System.ServiceModel.MessageLogging` trasování a nastavte atributy `<messagelogging>` element v konfiguračním souboru.  
+ Windows Communication Foundation (WCF) neprotokoluje zprávy ve výchozím nastavení. Chcete-li aktivovat protokolování zpráv, je nutné přidat naslouchací proces trasování `System.ServiceModel.MessageLogging` do zdroje trasování a nastavit atributy `<messagelogging>` prvku v konfiguračním souboru.  
   
- Následující příklad ukazuje, jak povolit protokolování a určit další možnosti.  
+ Následující příklad ukazuje, jak povolit protokolování a zadat další možnosti.  
   
 ```xml  
 <system.diagnostics>  
@@ -45,83 +45,83 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
 </system.serviceModel>  
 ```  
   
- Další informace o nastavení protokolování zpráv najdete v tématu [doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
+ Další informace o nastavení protokolování zpráv najdete v tématu [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
   
- Můžete použít `add` zadat název a typ naslouchací proces, který chcete použít. V konfiguraci příkladu naslouchací proces má název "zprávy" a přidá standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který má použít. Pokud používáte `System.Diagnostics.XmlWriterTraceListener`, musíte zadat název a umístění souboru výstupu v konfiguračním souboru. To se provádí nastavením `initializeData` k názvu souboru protokolu. Jinak systém vyvolá výjimku. Můžete také implementovat vlastní naslouchací proces, který vysílá protokoluje události do souboru výchozí.  
+ Můžete použít `add` k zadání názvu a typu naslouchacího procesu, který chcete použít. V ukázkové konfiguraci má naslouchací proces název "zprávy" a přidává standardní .NET Framework trasování trasování (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který se má použít. Pokud používáte, musíte zadat umístění a název výstupního souboru do konfiguračního souboru. `System.Diagnostics.XmlWriterTraceListener` To se provádí nastavením `initializeData` na název souboru protokolu. V opačném případě systém vyvolá výjimku. Můžete také implementovat vlastní naslouchací proces, který vysílá protokoly do výchozího souboru.  
   
 > [!NOTE]
->  Protože protokolování zpráv přistupuje k místa na disku, byste měli omezit počet zpráv, které se zapisují na disk pro konkrétní službu. Při dosažení limitu zprávy trasování na úrovni informace je vytvořen a zastavte všechny aktivity. protokolování zpráv.  
+> Vzhledem k tomu, že protokolování zpráv přistupuje místo na disku, měli byste omezit počet zpráv zapsaných na disk pro konkrétní službu. Po dosažení limitu zpráv se vyprodukuje trasování na úrovni informací a zastaví se všechny aktivity protokolování zpráv.  
   
- Úroveň protokolování, jakož i další možnosti jsou popsány v části Možnosti a úrovně protokolování.  
+ Úroveň protokolování, jakož i další možnosti, jsou popsány v části úroveň protokolování a možnosti.  
   
- `switchValue` Atribut `source` je platná pouze pro trasování. Pokud zadáte `switchValue` atribut pro `System.ServiceModel.MessageLogging` zdroj trasování jako následující, nemá žádný vliv.  
+ `switchValue` Atribut`source` je platný pouze pro trasování. Pokud zadáte `switchValue` atribut `System.ServiceModel.MessageLogging` pro zdroj trasování následujícím způsobem, nemá žádný vliv.  
   
 ```xml  
 <source name="System.ServiceModel.MessageLogging" switchValue="Verbose">  
 ```  
   
- Pokud chcete zakázat zdroj trasování, měli byste použít `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` element místo. Tyto atributy byste měli nastavit na `false`. To můžete udělat pomocí konfiguračního souboru v předcházejícím příkladu, přes uživatelské rozhraní editoru konfigurace rozhraní nebo pomocí rozhraní WMI. Další informace o nástroji pro Editor konfigurace najdete v tématu [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Další informace o rozhraní WMI najdete v tématu [pomocí Windows Management Instrumentation k diagnostice](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ Chcete-li zakázat zdroj trasování `logMessagesAtServiceLevel`, použijte místo toho atributy `messageLogging` , `logMalformedMessages`a `logMessagesAtTransportLevel` elementu. Všechny tyto atributy byste měli nastavit na `false`. To lze provést pomocí konfiguračního souboru v předchozím příkladu kódu, prostřednictvím rozhraní Editor konfigurací uživatelského rozhraní nebo pomocí rozhraní WMI. Další informace o nástroji Editor konfigurací naleznete v tématu [Nástroj Configuration Editor (SvcConfigEditor. exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Další informace o rozhraní WMI najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
-## <a name="logging-levels-and-options"></a>Možnosti a úrovně protokolování  
- Pro příchozí zprávy se stane protokolování ihned poté, co je vytvořen zprávy, okamžitě předtím, než získá zprávu do uživatelského kódu na úrovni služby, a když se zjistí špatně vytvořené zprávy.  
+## <a name="logging-levels-and-options"></a>Úrovně a možnosti protokolování  
+ Pro příchozí zprávy probíhá protokolování ihned po vytvoření zprávy, bezprostředně před tím, než se zpráva dostane do uživatelského kódu na úrovni služby a při zjištění poškozených zpráv.  
   
- Odchozí zprávy protokolování se stane hned po zpráva opustí uživatelský kód a bezprostředně před zprávy přejde na lince.  
+ U odchozích zpráv probíhá protokolování ihned poté, co zpráva opustí uživatelský kód a hned před tím, než se zpráva dostane na kabel.  
   
- Zprávy ve dvou různých úrovních, služby a přenosu protokolu WCF. Špatně vytvořené zprávy jsou také zaznamenána. Tři kategorie jsou na sobě nezávislé a může být aktivováno zvlášť v konfiguraci.  
+ WCF protokoluje zprávy na dvou různých úrovních, službách a přenosu. Protokolují se také poškozené zprávy. Tři kategorie jsou vzájemně nezávislé a je možné je aktivovat samostatně v konfiguraci.  
   
- Úroveň protokolování můžete řídit tak, že nastavíte `logMessagesAtServiceLevel`, `logMalformedMessages`, a `logMessagesAtTransportLevel` atributy `messageLogging` elementu.  
+ Úroveň protokolování můžete řídit `logMessagesAtServiceLevel`nastavením atributů `logMalformedMessages` `logMessagesAtTransportLevel` , a `messageLogging` elementu.  
   
-### <a name="service-level"></a>Úrovně služeb  
- Chystáte se aktivovalo (přijímání) nebo ponechat (odesílání) jsou zprávy zaprotokolované v této vrstvě uživatelského kódu. Pokud filtry jste definovali, budou protokolovány jen zprávy, které odpovídají filtrům. V opačném případě se protokolují všechny zprávy na úrovni služby. Na této úrovni, s výjimkou zpráv spolehlivého zasílání zpráv jsou také zaznamenány infrastruktury zprávy (transakce, protokolu peer channel a zabezpečení). U zpráv s datovým proudem se protokolují pouze záhlaví. Kromě toho zabezpečených zpráv jsou protokolovány dešifrovat na této úrovni.  
+### <a name="service-level"></a>Úroveň služby  
+ Zprávy zaznamenávané v této vrstvě se chystá zadat (při přijetí) nebo nechávají (při odesílání) uživatelský kód. Pokud byly definovány filtry, budou protokolovány pouze zprávy, které odpovídají filtrům. V opačném případě budou všechny zprávy na úrovni služby protokolovány. Zprávy infrastruktury (transakce, rovnocenný kanál a zabezpečení) se protokolují i na této úrovni, s výjimkou zpráv spolehlivého zasílání zpráv. U zpráv v proudu jsou protokolovány pouze hlavičky. Kromě toho se na této úrovni šifrují protokolované zabezpečené zprávy.  
   
-### <a name="transport-level"></a>Úroveň přenosu  
- Zprávy zaprotokolované v této vrstvě připraveni být kódován nebo dekódován pro nebo po letenky na lince. Pokud filtry jste definovali, budou protokolovány jen zprávy, které odpovídají filtrům. V opačném případě se protokolují všechny zprávy v přenosové vrstvě. Všechny zprávy infrastruktury jsou protokolovány v této vrstvě, včetně zpráv spolehlivého zasílání zpráv. U zpráv s datovým proudem se protokolují pouze záhlaví. Kromě toho zabezpečených zpráv jsou protokolovány jako zašifrovaná na této úrovni, kromě případu, kdy zabezpečeného přenosu, jako se používá protokol HTTPS.  
+### <a name="transport-level"></a>Úroveň transportu  
+ Zprávy zaznamenávané v této vrstvě jsou připravené k kódování nebo dekódování pro nebo po přepravení na drátě. Pokud byly definovány filtry, budou protokolovány pouze zprávy, které odpovídají filtrům. V opačném případě jsou všechny zprávy na transportní vrstvě protokolovány. Všechny zprávy infrastruktury jsou protokolovány v této vrstvě, včetně spolehlivých zpráv o zasílání zpráv. U zpráv v proudu jsou protokolovány pouze hlavičky. Zabezpečené zprávy se navíc protokolují jako šifrované na této úrovni, s výjimkou případů, kdy se používá zabezpečená přeprava, jako je HTTPS.  
   
 ### <a name="malformed-level"></a>Poškozená úroveň  
- Špatně vytvořené zprávy jsou zpráv, které jsou odmítnuty zásobníkem WCF v jakékoli fázi zpracování. Jsou špatně vytvořené zprávy zaznamenány jako-se: šifrovaná, pokud jsou, bez správných XML a tak dále. `maxSizeOfMessageToLog` definovaná velikost zprávy, která se zaznamená jako CDATA. Ve výchozím nastavení `maxSizeOfMessageToLog` je rovna 256 kB. Další informace o tomto atributu naleznete v části Další možnosti.  
+ Poškozené zprávy jsou zprávy, které jsou odmítnuty zásobníkem WCF v jakékoli fázi zpracování. Poškozené zprávy jsou protokolovány tak, jak jsou: šifrované, pokud jsou tak, s nesprávnými XML a tak dále. `maxSizeOfMessageToLog`definuje velikost zprávy, která má být zaznamenána jako CDATA. Ve výchozím nastavení `maxSizeOfMessageToLog` se rovná 256. Další informace o tomto atributu naleznete v části Další možnosti.  
   
 ### <a name="other-options"></a>Další možnosti  
  Kromě úrovní protokolování může uživatel zadat následující možnosti:  
   
-- Protokolovat celá zpráva (`logEntireMessage` atribut): Tato hodnota určuje, zda je zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je zaznamenána pouze záhlaví. Toto nastavení má vliv na služby a přenosu úrovně protokolování zpráv...  
+- Protokolovat celou zprávu`logEntireMessage` (atribut): Tato hodnota určuje, zda má být zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je protokolována pouze hlavička. Toto nastavení má vliv na úrovně protokolování zpráv služby a přenosu.  
   
-- Maximální počet zaznamenavaných zpráv (`maxMessagesToLog` atribut): Tato hodnota určuje maximální počet zaznamenavaných zpráv. Všechny zprávy (služba, přenos a špatně vytvořené zprávy) se započítává této kvóty. Po dosažení kvóty trasování je vygenerován a je zaznamenána žádná další zpráva. Výchozí hodnota je 10000.  
+- Maximální počet zpráv k protokolování`maxMessagesToLog` (atribut): Tato hodnota určuje maximální počet zpráv, které se mají protokolovat. K této kvótě se počítají všechny zprávy (služba, přenos a poškozené zprávy). Po dosažení kvóty je vygenerováno trasování a nebude zaznamenána žádná další zpráva. Výchozí hodnota je 10000.  
   
-- Maximální velikost zaznamenávané zprávy (`maxSizeOfMessageToLog` atribut): Tato hodnota určuje maximální velikost zprávy do protokolu v bajtech. Nejsou zaznamenána zprávy, které překračují omezení velikosti a žádná další aktivita se provádí pro tuto zprávu. Toto nastavení ovlivňuje všechny úrovně trasování. Je-li ServiceModel trasování na, úroveň trasování varování je vygenerován v prvním bodu protokolování (ServiceModelSend * nebo TransportReceive) a upozorňovaly uživatele. Výchozí hodnota pro služby úrovně a přenosu úrovně zprávy je 256 kB, výchozí hodnota pro špatně vytvořené zprávy je 4 kB.  
+- Maximální velikost zprávy na protokol (`maxSizeOfMessageToLog` atribut): Tato hodnota určuje maximální velikost zpráv pro přihlášení v bajtech. Zprávy, které překračují limit velikosti, se neprotokolují a u této zprávy se neprovádí žádná jiná aktivita. Toto nastavení má vliv na všechny úrovně trasování. Pokud je zapnuto trasování ServiceModel, vygeneruje se trasování úrovně upozornění v prvním bodu protokolování (ServiceModelSend * nebo TransportReceive), které uživatele upozorní. Výchozí hodnota pro zprávy na úrovni služby a na úrovni přenosu je 256, zatímco výchozí hodnota pro poškozené zprávy je 4K.  
   
     > [!CAUTION]
-    >  Velikost zprávy, které je vypočítán nímž bude porovnáváno `maxSizeOfMessageToLog` je velikosti zprávy v paměti před serializací. Tato velikost se může lišit od skutečná délka řetězce zprávy, která není přihlašováno a v mnoha případech je větší než skutečná velikost. V důsledku toho nemusí zaznamenávané zprávy. Můžete pro tuto skutečnost tak, že zadáte účet `maxSizeOfMessageToLog` atribut 10 % je větší než velikost očekávaná zpráva. Kromě toho, pokud jsou špatně vytvořené zprávy zaznamenány, místo na disku skutečné využívaných protokolů zpráv může být až 5krát velikost hodnotu zadanou pomocí `maxSizeOfMessageToLog`.  
+    >  Velikost zprávy, která je vypočítána pro `maxSizeOfMessageToLog` porovnání, je velikost zprávy v paměti před serializací. Tato velikost se může lišit od skutečné délky zaznamenaného řetězce zprávy a v mnoha případech je větší než skutečná velikost. V důsledku toho nemusí být zprávy protokolovány. K tomuto faktu se můžete přihlédnout zadáním `maxSizeOfMessageToLog` atributu, který bude větší než očekávaná velikost zprávy: 10%. Kromě toho, pokud jsou poškozené zprávy protokolovány, skutečné místo na disku využité protokoly zpráv může být až o 5 časů velikosti hodnoty určené parametrem `maxSizeOfMessageToLog`.  
   
- Pokud v konfiguračním souboru není definován žádný naslouchací proces trasování, nebude vygenerován žádný výstup protokolování bez ohledu na zadanou úroveň.  
+ Pokud v konfiguračním souboru není definován naslouchací proces trasování, negeneruje se výstup protokolování bez ohledu na zadanou úroveň protokolování.  
   
- Možnosti protokolování zprávy, jako je například atributy popsané v této části můžete změnit za běhu pomocí Windows Management Instrumentation (WMI). To můžete udělat přechodem k [AppDomainInfo](../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) instanci, která poskytuje tyto logické vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`, a `LogMalformedMessages`. Proto pokud nakonfigurovat naslouchací proces trasování pro protokolování zpráv, ale nastavit tyto možnosti na `false` v konfiguraci, můžete později změnit jejich `true` při spouštění aplikace. To umožňuje efektivní protokolování zpráv za běhu. Podobně pokud povolíte protokolování. v konfiguračním souboru, můžete ho zakázat za běhu pomocí rozhraní WMI. Další informace najdete v tématu [pomocí Windows Management Instrumentation k diagnostice](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ Možnosti protokolování zpráv, například atributy popsané v této části, lze změnit za běhu pomocí rozhraní WMI (Windows Management Instrumentation) (WMI). To lze provést přístupem k instanci [AppDomainInfo](../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`a `LogMalformedMessages`. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. To efektivně povoluje protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI. Další informace najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
- `source` Určuje pole v protokolu zpráv v daném kontextu se protokoluje zprávy: při odesílání nebo přijímání zprávu požadavku pro požadavek odpověď nebo způsob 1 žádost, ve vrstvě služeb modelu nebo přenosu nebo v případě poškozená zpráva.  
+ `source` Pole v protokolu zpráv určuje, v němž kontextu je zpráva zaznamenána: při odesílání/přijímání zprávy požadavku, pro požadavek-odpověď nebo na jednosměrnou žádost, v modelu služby nebo transportní vrstvě nebo v případě poškozené zprávy.  
   
- Pro špatně vytvořené zprávy `source` rovná `Malformed`. V opačném případě zdroj má následující hodnoty na základě kontextu.  
+ Pro poškozené zprávy `source` se `Malformed`rovná. V opačném případě má zdroj následující hodnoty na základě kontextu.  
   
- Pro žádost odpověď  
+ Pro požadavek nebo odpověď  
   
-||Odeslání požadavku|Požadavku přijetí|Odeslání odpovědi|Přijmout odpověď|  
+||Odeslat žádost|Žádost o přijetí|Odeslat odpověď|Přijmout odpověď|  
 |-|------------------|---------------------|----------------|-------------------|  
-|Vrstva modelu služby|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Request|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Request|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Odpověď|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Odpověď|  
-|přenosové vrstvy|Přenos<br /><br /> Odeslat|Přenos<br /><br /> Zobrazit|Přenos<br /><br /> Odeslat|Přenos<br /><br /> Zobrazit|  
+|Vrstva modelu služby|Služba<br /><br /> Level<br /><br /> Send<br /><br /> Request|Služba<br /><br /> Level<br /><br /> Receive<br /><br /> Request|Služba<br /><br /> Level<br /><br /> Send<br /><br /> Zpáteční|Služba<br /><br /> Level<br /><br /> Receive<br /><br /> Zpáteční|  
+|Transportní vrstva|Přepravu<br /><br /> Send|Přepravu<br /><br /> Receive|Přepravu<br /><br /> Send|Přepravu<br /><br /> Receive|  
   
- Pro jednosměrný požadavek  
+ Jednosměrná žádost  
   
-||Odeslání požadavku|Požadavku přijetí|  
+||Odeslat žádost|Žádost o přijetí|  
 |-|------------------|---------------------|  
-|Vrstva modelu služby|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Datagram|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Datagram|  
-|přenosové vrstvy|Přenos<br /><br /> Odeslat|Přenos<br /><br /> Zobrazit|  
+|Vrstva modelu služby|Služba<br /><br /> Level<br /><br /> Send<br /><br /> Datagram|Služba<br /><br /> Level<br /><br /> Receive<br /><br /> Datagram|  
+|Transportní vrstva|Přepravu<br /><br /> Send|Přepravu<br /><br /> Receive|  
   
 ## <a name="message-filters"></a>Filtry zpráv  
- Filtry zpráv jsou definovány v `messageLogging` element konfigurace `diagnostics` konfigurační oddíl. Tato nastavení použijí na úrovni služby a přenosu. Když jsou definovány jeden nebo více filtrů, jsou protokolovány jen zprávy, které odpovídají alespoň jeden z filtrů. Pokud není definován žádný filtr, všechny zprávy předávání.  
+ Filtry zpráv jsou definovány v `messageLogging` konfiguračním elementu `diagnostics` konfiguračního oddílu. Jsou aplikovány na úrovni služby a přenosu. Při definování jednoho nebo více filtrů jsou protokolovány pouze zprávy, které odpovídají alespoň jednomu z filtrů. Pokud není definován žádný filtr, všechny zprávy procházejí.  
   
- Filtry podporuje úplnou syntaxi XPath a nastavení se použijí v pořadí, ve kterém se zobrazují v konfiguračním souboru. Filtr syntakticky nesprávný výsledkem výjimka v konfiguraci.  
+ Filtry podporují úplnou syntaxi XPath a jsou aplikovány v pořadí, v jakém jsou uvedeny v konfiguračním souboru. Syntakticky nesprávný filtr má za následek výjimku konfigurace.  
   
- Také poskytnout filtry, pomocí funkci bezpečnosti `nodeQuota` atribut, který omezí maximální počet uzlů v modelu DOM jazyka XPath, které se dají prozkoumat tak, aby odpovídaly filtru.  
+ Filtry také poskytují bezpečnostní funkci s použitím `nodeQuota` atributu, který omezuje maximální počet uzlů v modelu DOM elementu XPath, které lze prozkoumat tak, aby odpovídaly filtru.  
   
- Následující příklad ukazuje, jak konfigurovat filtr pouze zprávy této záznamy, které mají záhlaví SOAP.  
+ Následující příklad ukazuje, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají hlavičku SOAP.  
   
 ```xml  
 <messageLogging logEntireMessage="true"  
@@ -137,14 +137,14 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
 </messageLogging>  
 ```  
   
- Filtry nelze použít pro text zprávy. Filtry, které se pokoušejí k manipulaci s text zprávy se odeberou ze seznamu filtrů. Událost je také vygenerován, která označuje to. Například následující filtr se odeberou ze tabulce filtrů.  
+ Filtry nelze použít pro tělo zprávy. Filtry, které se pokoušejí manipulovat s textem zprávy, se ze seznamu filtrů odeberou. Vygeneruje se taky událost, která to indikuje. Například následující filtr by byl odebrán z tabulky filtru.  
   
 ```xml  
 <add xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">/s:Envelope/s:Body[contains(text(), "Hello")]</add>  
 ```  
   
-## <a name="configuring-a-custom-listener"></a>Konfigurace vlastní naslouchací proces  
- Můžete také nakonfigurovat vlastní naslouchací proces s dalšími možnostmi. Vlastní naslouchací proces může být užitečné při filtrování elementy identifikovatelné osobní údaje specifické pro aplikace ze zprávy před přihlášením. Následující příklad ukazuje vlastní naslouchací proces konfigurace.  
+## <a name="configuring-a-custom-listener"></a>Konfigurace vlastního naslouchacího procesu  
+ Můžete také nakonfigurovat vlastní naslouchací proces s dalšími možnostmi. Vlastní naslouchací proces může být užitečný pro filtrování prvků PII specifických pro aplikaci ze zpráv před přihlášením. Následující příklad ukazuje vlastní konfiguraci naslouchacího procesu.  
   
 ```xml  
 <system.diagnostics>  
@@ -161,10 +161,10 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
 </system.diagnostics>  
 ```  
   
- Byste měli vědět, `type` atribut by měl být nastaven na kvalifikovaný název typu.  
+ Měli byste si uvědomit, že `type` atribut by měl být nastaven na kvalifikovaný název sestavení typu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<messageLogging>](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
+- [\<messageLogging >](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
 - [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
 - [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)

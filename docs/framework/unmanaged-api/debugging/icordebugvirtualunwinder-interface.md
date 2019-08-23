@@ -4,37 +4,37 @@ ms.date: 03/30/2017
 ms.assetid: a09e9ccc-0b37-43e3-95c1-bc5fa7ee5f42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 639cfc514d2a206f0de72db4b0bac02b53305ae3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f78417d613023bb4fb7325560c0c06abe0874aba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946156"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967944"
 ---
 # <a name="icordebugvirtualunwinder-interface"></a>Rozhraní ICorDebugVirtualUnwinder
-Poskytuje metody, které vám pomůžou odvíjení zásobníku.  
+Poskytuje metody, které vám pomůžou při odvíjení zásobníku.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Název|  
+|Metoda|Name|  
 |------------|----------|  
-|[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvirtualunwinder-getcontext-method.md)|Získá aktuální kontext tohoto unwinder.|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvirtualunwinder-next-method.md)|Přejde k kontextu volajícího.|  
+|[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvirtualunwinder-getcontext-method.md)|Získá aktuální kontext tohoto unwind.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvirtualunwinder-next-method.md)|Přejde do kontextu volajícího.|  
   
 ## <a name="remarks"></a>Poznámky  
- Členové `ICorDebugVirtualUnwinder` rozhraní jsou implementovány pomocí ladicího programu, které vám pomůžou odvíjení zásobníku.  
+ Členové `ICorDebugVirtualUnwinder` rozhraní jsou implementováni pomocí ladicího programu, aby mohli pomáhat při uvolňování zásobníku.  
   
 > [!NOTE]
->  Toto rozhraní je pouze k dispozici s .NET Native. Pokud se rozhodnete implementovat toto rozhraní ICorDebug scénářích mimo .NET Native, modul common language runtime bude ignorovat toto rozhraní.  
+> Toto rozhraní je dostupné jenom pro .NET Native. Pokud implementujete Toto rozhraní pro ICorDebug scénáře mimo .NET Native, modul CLR (Common Language Runtime) bude toto rozhraní ignorovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

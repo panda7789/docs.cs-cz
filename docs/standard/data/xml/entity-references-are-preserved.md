@@ -5,34 +5,34 @@ ms.technology: dotnet-standard
 ms.assetid: 000a6cae-5972-40d6-bd6c-a9b7d9649b3c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b1c48e42e55025aff0ce1a24a3ef45ddf8005eab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e512f2077c2e6b9feba5024c4eabc2568357ecab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934525"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965917"
 ---
 # <a name="entity-references-are-preserved"></a>Odkazy na entity jsou zachované
-Pokud odkaz na entitu není rozbalen, ale zachovají, sestavení XML Document Object Model (DOM) **XmlEntityReference** uzlu, pokud se setká s odkazu na entitu.  
+Pokud odkaz na entitu není rozbalený, ale zachová, model DOM (Document Object Model) XML (DOM) vytvoří uzel **XmlEntityReference** , když dojde k odkazování na entitu.  
   
- Pomocí následující kód XML  
+ Pomocí následujícího kódu XML  
   
 ```xml  
 <author>Fred</author>  
 <pubinfo>Published by &publisher;</pubinfo>  
 ```  
   
- sestavení modelu DOM **XmlEntityReference** uzlu, pokud se setká `&publisher;` odkaz. **XmlEntityReference** obsahuje podřízené uzly, které jsou kopírovány z obsahu entity prohlášení. Předchozí příklad kódu obsahuje text v entity prohlášení, takže **XmlText** uzel je vytvořen jako podřízený uzel uzlu odkazu entity.  
+ model DOM vytvoří uzel **XmlEntityReference** , když nalezne `&publisher;` odkaz. **XmlEntityReference** obsahuje podřízené uzly zkopírované z obsahu v deklaraci entity. Předchozí příklad kódu obsahuje text v deklaraci entity, takže se vytvoří uzel **XmlText** jako podřízený uzel uzlu odkazu na entitu.  
   
- ![Stromová struktura pro odkazy na entity zachovaných](../../../../docs/standard/data/xml/media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
-Stromovou strukturu pro odkazy na entity, které jsou zachovány  
+ ![Stromová struktura pro zachované odkazy na entity](../../../../docs/standard/data/xml/media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
+Stromová struktura pro Nezachované odkazy entit  
   
- Podřízené uzly **XmlEntityReference** jsou kopie všech podřízených uzlů vytvořené z **XmlEntity** uzlu, když došlo k deklaraci entity.  
+ Podřízené uzly **XmlEntityReference** jsou kopie všech podřízených uzlů vytvořených z uzlu **XmlEntity** při zjištění deklarace entity.  
   
 > [!NOTE]
->  Uzly zkopírovanými z **XmlEntity** nejsou vždy přesné kopie jednou umístit odkaz uzlu entity. Může být obory názvů, které jsou v rozsahu v uzlu odkazu entity a, který má vliv na konečnou konfiguraci podřízené uzly.  
+> Uzly zkopírované z **XmlEntity** nejsou vždy přesně zkopírovány po umístění do uzlu odkaz na entitu. V uzlu odkazu na entitu můžou být obory názvů, které mají vliv na konečnou konfiguraci podřízených uzlů.  
   
- Ve výchozím nastavení, jako jsou obecné entity `&abc;` jsou zachovány a **XmlEntityReference** vždy vytvoří uzly.  
+ Ve výchozím nastavení jsou obecné entity `&abc;` jako zachované a **XmlEntityReference** uzly se vždycky vytvářejí.  
   
 ## <a name="see-also"></a>Viz také:
 

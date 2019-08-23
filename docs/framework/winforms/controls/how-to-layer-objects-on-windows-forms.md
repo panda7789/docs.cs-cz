@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-ms.openlocfilehash: 80973e16445079876e01c89f20b5ecbdca602eb8
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 818f36633575b248d92da475c462cc0f211fe969
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039728"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966542"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Postupy: Vrstvení objektů ve Windows Forms
 Když vytváříte složité uživatelské rozhraní nebo pracujete s formulářem MDI (Multiple Document Interface), často budete chtít navrstvit ovládací prvky i podřízené formuláře pro vytváření složitějších uživatelských rozhraní (UI). Chcete-li přesunout a sledovat ovládací prvky a okna v kontextu skupiny, budete pracovat s jejich pořadím z. *Pořadí vykreslování* je vizuální vrstvení ovládacích prvků na formuláři podél osy z (hloubka) formuláře. Okno v horní části pořadí vykreslování překrývá všechna ostatní okna. Všechna ostatní okna překrývají okno v dolní části pořadí vykreslování.
@@ -47,7 +47,7 @@ Když vytváříte složité uživatelské rozhraní nebo pracujete s formulář
     ```
 
 > [!NOTE]
->  Model Windows Forms podporuje *omezení ovládacího prvku*. Zahrnutí ovládacího prvku zahrnuje vložení řady ovládacích prvků v rámci obsahujícího ovládacího prvku, jako je například počet <xref:System.Windows.Forms.RadioButton> ovládacích prvků <xref:System.Windows.Forms.GroupBox> v rámci ovládacího prvku. Ovládací prvky lze následně rozvrstvit v rámci nadřazeného ovládacího prvku. Přesunutím skupinového pole se přesunou i ovládací prvky, protože jsou uvnitř ní obsažené.
+> Model Windows Forms podporuje *omezení ovládacího prvku*. Zahrnutí ovládacího prvku zahrnuje vložení řady ovládacích prvků v rámci obsahujícího ovládacího prvku, jako je například počet <xref:System.Windows.Forms.RadioButton> ovládacích prvků <xref:System.Windows.Forms.GroupBox> v rámci ovládacího prvku. Ovládací prvky lze následně rozvrstvit v rámci nadřazeného ovládacího prvku. Přesunutím skupinového pole se přesunou i ovládací prvky, protože jsou uvnitř ní obsažené.
 
 ## <a name="see-also"></a>Viz také:
 

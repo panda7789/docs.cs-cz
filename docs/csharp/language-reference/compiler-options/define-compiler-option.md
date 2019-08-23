@@ -11,12 +11,12 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: d56907493ed24e2ea9fa6568af7441fc81ba1a78
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: cb9de387b319ff4b81dcd1ccc37f04d8b6b3123a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606959"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924798"
 ---
 # <a name="-define-c-compiler-options"></a>-defineC# (možnosti kompilátoru)
 Možnost **-define** definuje `name` jako symbol ve všech souborech zdrojového kódu váš program.  
@@ -47,7 +47,7 @@ Možnost **-define** definuje `name` jako symbol ve všech souborech zdrojového
  Samotný C# kompilátor nedefinuje žádné symboly nebo makra, které lze použít ve zdrojovém kódu; všechny definice symbolů musí být definované uživatelem.  
   
 > [!NOTE]
->  Nepovoluje, aby se k symbolu dostala hodnota, jako v jazycích, jako je C++například. C# `#define` Například `#define` nelze použít k vytvoření makra nebo k definování konstanty. Pokud potřebujete definovat konstantu, použijte `enum` proměnnou. Chcete-li vytvořit makro C++ stylu, zvažte alternativy jako obecné. Vzhledem k tomu, že makra jsou obvykle odlaďuje náchylná k chybám, neumožňuje jejich použití, C# ale poskytuje bezpečnější alternativy.  
+> Nepovoluje, aby se k symbolu dostala hodnota, jako v jazycích, jako je C++například. C# `#define` Například `#define` nelze použít k vytvoření makra nebo k definování konstanty. Pokud potřebujete definovat konstantu, použijte `enum` proměnnou. Chcete-li vytvořit makro C++ stylu, zvažte alternativy jako obecné. Vzhledem k tomu, že makra jsou obvykle odlaďuje náchylná k chybám, neumožňuje jejich použití, C# ale poskytuje bezpečnější alternativy.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   

@@ -2,38 +2,38 @@
 title: Datové vazby v klientovi Windows Forms
 ms.date: 03/30/2017
 ms.assetid: a2a30b37-d6e2-4552-820e-e60b2bbe8829
-ms.openlocfilehash: 6ad71555148ed4f907483b677097e1f673373d87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a21721536542d2c338dfdad444e128087a18f57
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990636"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953564"
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Datové vazby v klientovi Windows Forms
-Tento příklad ukazuje, jak svázat s daty vrácenými službou Windows Communication Foundation (WCF) v aplikaci Windows Forms.  
+Tento příklad ukazuje, jak vytvořit propojení s daty vrácenými službou Windows Communication Foundation (WCF) v model Windows Forms aplikaci.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto článku.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto článku.  
   
- V této ukázce je služba, která implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Ukázka se skládá z klientské aplikace Windows Forms (.exe) a služby WCF hostované v Internetové informační služby (IIS).  
+ Tato ukázka demonstruje službu, která implementuje kontrakt definující způsob komunikace požadavek-odpověď. Ukázka se skládá z klientské model Windows Forms aplikace (. exe) a služby WCF hostované službou Internetová informační služba (IIS).  
   
- Smlouva je definován `IWeatherService` rozhraní, které uvádí operace s názvem `GetWeatherData`. Tato operace přijímá pole města a vrátí pole `WeatherData` objekty, které představují vysoké a nízké předpokládaných teploty pro město.  
+ Kontrakt je definován `IWeatherService` rozhraním, které zveřejňuje operaci s názvem `GetWeatherData`. Tato operace přijme pole měst a vrátí pole `WeatherData` objektů, které reprezentují vysokou a nízkou předpokládanou teplotu pro město.  
   
- Nastane, datové vazby v klientovi v aplikaci Windows Forms. A `DataGridView` je definován v Návrháři formulářů Windows, což je grafická reprezentace data. Zprostředkovatel s názvem `BindingSource` se vytvoří také. Zdroj dat `BindingSource` nastavená na pole dat vrácených službou. Účelem `BindingSource` je zajistit určitou úroveň dereference mezi daty a data zobrazení. Všechny interakce s daty, jako je například navigace, řazení, filtrování a aktualizace, se provádí pomocí volání `BindingSource` komponenty. K provedení vazby dat k `DataGridView`, `datasource` z `DataGridView` je nastaven na `BindingSource` objektu. Všechna data vrácená ze služby WCF se následně zobrazí graficky uživateli.  Pokaždé, když uživatel klikne na tlačítko, vrácená data se automaticky aktualizuje v vázaného na data `DataGridView`.  
+ Datová vazba probíhá na klientovi v aplikaci model Windows Forms. A `DataGridView` je definován v Návrháři model Windows Forms, což je grafické znázornění dat. Vytvoří se také zprostředkovatel `BindingSource` s názvem. Zdroj `BindingSource` dat je nastaven na datové pole vrácené službou. Účelem `BindingSource` je poskytnout vrstvu indirekce mezi daty a zobrazením dat. Veškerá interakce s daty, jako je navigace, řazení, filtrování a aktualizace, se provádí s voláním `BindingSource` komponenty. Chcete-li provést datovou `DataGridView`vazbu na `datasource` ,, `DataGridView` a pak nastavte na `BindingSource` objekt. Všechna data vrácená ze služby WCF se pak graficky zobrazují pro uživatele.  Pokaždé, když uživatel klikne na tlačítko, vrácená data se automaticky aktualizují v datové vazbě `DataGridView`.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WindowsForms`  

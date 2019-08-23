@@ -3,15 +3,15 @@ title: <chunkedCookieHandler>
 ms.date: 03/30/2017
 ms.assetid: 7220de45-1d14-4aec-a29e-4a2ea8ac861f
 author: BrucePerlerMS
-ms.openlocfilehash: d9c81d5de7bea343f0d67fa00037763fbae7b8c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3b4cf0d7c2748079af7a94534622b1dbadd3ab5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667337"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941894"
 ---
 # <a name="chunkedcookiehandler"></a>\<chunkedCookieHandler>
-Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Výchozí" nebo "Rozdělený do bloků dat".  
+Nakonfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být k dispozici pouze `mode` v případě, `<cookieHandler>` že atribut elementu je "výchozí" nebo "v bloku".  
   
  \<system.identityModel.services>  
 \<federationConfiguration>  
@@ -38,7 +38,7 @@ Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento ele
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|chunkSize|Maximální velikost ve znacích dat souboru cookie HTTP pro všechny jednoho souboru cookie HTTP. Musíte být opatrní při nastavování velikosti bloku. Webových prohlížečů mají různá omezení velikosti souborů cookie a počet povolený v každé doméně. Například původní Netscape specifikace, které stanovila tato omezení: Celkový počet souborů cookie 300, 4096 bajtů na hlavička cookie (včetně metadat, ne jenom hodnoty souboru cookie) a 20 souborů cookie na jednu doménu. Výchozí hodnota je 2000. Povinný parametr.|  
+|Mění|Maximální velikost dat souborů cookie protokolu HTTP v znacích pro libovolný soubor cookie HTTP. Při upravování velikosti bloku dat musíte být opatrní. Webové prohlížeče mají různá omezení velikosti souborů cookie a počtu povolených v každé doméně. Například původní specifikace Netscape tato omezení stanovila: 300 souborů cookie celkem, 4096 bajtů na hlavičku souboru cookie (včetně metadat, nikoli jenom hodnoty cookie) a 20 souborů cookie na doménu. Výchozí hodnota je 2000. Povinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -47,15 +47,15 @@ Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento ele
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cookieHandler>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , který <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) používá ke čtení a zápis souborů cookie.|  
+|[\<cookieHandler>](cookiehandler.md)|<xref:System.IdentityModel.Services.SessionAuthenticationModule> Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , jak bude (SAM) používat ke čtení a zápisu souborů cookie.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při zadání <xref:System.IdentityModel.Services.ChunkedCookieHandler> nastavením `mode` atribut `<cookieHandler>` prvků "Výchozí" nebo "Bloku dat", můžete zadat velikost bloku dat, která soubor cookie obslužná rutina se používá ke čtení a zápis souborů cookie zahrnutím `<chunkedCookieHandler>` podřízený element a nastavení jeho `chunkSize` atribut. Pokud `<chunkedCookieHandler>` prvek není k dispozici, je použit výchozí velikost bloku 2 000 bajtů. Tento element nemůže být zadán při `mode` atribut je nastaven na "Vlastní".  
+ <xref:System.IdentityModel.Services.ChunkedCookieHandler> Pokud určíte `mode` nastavením atributu `<cookieHandler>` elementu na "výchozí" nebo "bloků", můžete určit velikost bloku dat, kterou obslužná rutina souborů cookie používá `<chunkedCookieHandler>` ke čtení a zápisu souborů cookie zahrnutím podřízeného prvku a nastavení jeho `chunkSize` atributu. `<chunkedCookieHandler>` Pokud element není přítomen, je použita výchozí velikost bloku 2000 bajtů. Tento element nejde zadat, pokud `mode` je atribut nastavený na Custom (vlastní).  
   
- `<chunkedCookieHandler>` Prvek je reprezentován <xref:System.IdentityModel.Services.ChunkedCookieHandlerElement> třídy.  
+ Element je reprezentován <xref:System.IdentityModel.Services.ChunkedCookieHandlerElement>třídou. `<chunkedCookieHandler>`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastaví bloku dat souboru cookie obslužnou rutinu, která zapisuje soubory cookie v blocích 3000 bajtů.  
+ V následujícím příkladu se konfiguruje obslužná rutina souborů cookie s proměnlivým blokem, která zapisuje soubory cookie v blocích po 3000 bajtech.  
   
 ```xml  
 <cookieHandler mode="Chunked">  

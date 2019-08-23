@@ -5,43 +5,43 @@ helpviewer_keywords:
 - splitter windows
 - SplitContainer control [Windows Forms]
 ms.assetid: 2e36f17f-5c39-4fb4-bb09-7ce3ef823402
-ms.openlocfilehash: 504a2396902fecf2ac17c2db434fef68ff2ece45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d860763e935c88619e3355661038757d00247dfd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009718"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963593"
 ---
 # <a name="splitcontainer-control-windows-forms"></a>SplitContainer – ovládací prvek (Windows Forms)
-Windows Forms `SplitContainer` ovládací prvek lze považovat za složeného; je dva panely oddělené přesouvatelný panelu. Když je ukazatel myši nad panelu, ukazatel se změní tvar, který má zobrazit, že panel je přesouvatelný.  
+Ovládací prvek `SplitContainer` model Windows Forms lze představit jako složený; jedná se o dva panely oddělené pohyblivým pruhem. Když je ukazatel myši nad pruhem, ukazatel se změní na obrazec, který ukazuje, že je pruh přesunutý.  
   
 > [!NOTE]
->  V **nástrojů**, tento ovládací prvek nahradí <xref:System.Windows.Forms.Splitter> ovládací prvek, který byl existuje v předchozí verzi sady Visual Studio. `SplitContainer` Je mnohem upřednostňované nad ovládací prvek <xref:System.Windows.Forms.Splitter> ovládacího prvku. <xref:System.Windows.Forms.Splitter> Tříd je zahrnutá v rozhraní .NET Framework z důvodu kompatibility se stávajícími aplikacemi, ale důrazně doporučujeme použít `SplitContainer` ovládací prvek pro nové projekty.  
+> V **sadě nástrojů**tento ovládací prvek nahrazuje <xref:System.Windows.Forms.Splitter> ovládací prvek, který byl v předchozí verzi sady Visual Studio. Ovládací prvek je mnohem upřednostňovaný <xref:System.Windows.Forms.Splitter> nad ovládacím prvkem. `SplitContainer` Třída je stále zahrnuta v .NET Framework z důvodu kompatibility s existujícími aplikacemi, ale důrazně doporučujeme `SplitContainer` používat ovládací prvek pro nové projekty. <xref:System.Windows.Forms.Splitter>  
   
- `SplitContainer` Řízení umožňuje vytvářet komplexní uživatelské rozhraní; často, výběr v jeden panel Určuje, jaké objekty jsou uvedeny na panelu. Toto uspořádání se velice efektivní pro zobrazení informací o procházení. Dva panely umožňují souhrnné informace v oblastech s panelu, nebo "rozdělovač," usnadňuje uživatelům změnit velikost panelů.  
+ `SplitContainer` Ovládací prvek umožňuje vytvářet složitá uživatelská rozhraní, často výběr na jednom panelu určuje, které objekty se zobrazí na druhém panelu. Toto uspořádání je velmi efektivní pro zobrazení a informace o procházení. Když máte dva panely, umožníte si agregovat informace v oblastech a pruh nebo "rozdělovač", aby uživatelé mohli měnit velikost panelů snadno.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku SplitContainer](splitcontainer-control-overview-windows-forms.md)  
- Zavádí `SplitContainer` řídit a popisuje běžně používané vlastnosti, metody a události.  
+ `SplitContainer` Zavádí ovládací prvek a popisuje běžně používané vlastnosti, metody a události.  
   
- [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
- Popisuje, jak řídit rozdělovač v rámci `SplitContainer` ovládacího prvku.  
+ [Postupy: Definování chování změny velikosti a umístění v rozděleném okně](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
+ Popisuje způsob řízení rozdělovače v rámci `SplitContainer` ovládacího prvku.  
   
  [Postupy: Vodorovné rozdělení okna](how-to-split-a-window-horizontally.md)  
- Popisuje, jak řídit orientaci ovládacího prvku rozdělovač v rámci `SplitContainer` ovládacího prvku.  
+ Popisuje způsob řízení orientace rozdělovače v rámci `SplitContainer` ovládacího prvku.  
   
- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)  
- Vytvoří více podokně uživatelské rozhraní, který je podobný tomu použitému v aplikaci Microsoft Outlook.  
+ [Postupy: Vytvoření uživatelského rozhraní s více podokny pomocí model Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)  
+ Vytvoří uživatelské rozhraní s více podokny, které se podobá tomu, který se používá v aplikaci Microsoft Outlook.  
   
- Viz také [jak: Rozdělení okna pomocí návrháře vodorovně](how-to-split-a-window-horizontally-using-the-designer.md), [jak: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms](how-to-create-a-windows-explorer-style-interface-on-a-windows-form.md), [jak: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md).  
+ Podívejte [se také na postupy: Rozdělení okna vodorovně pomocí návrháře](how-to-split-a-window-horizontally-using-the-designer.md), [postupy: Postup vytvoření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Form](how-to-create-a-windows-explorer-style-interface-on-a-windows-form.md): [ Pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md)vytvořte uživatelské rozhraní s více podokny pomocí model Windows Forms.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.SplitContainer> Třída  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+## <a name="reference"></a>Reference  
+ <xref:System.Windows.Forms.SplitContainer>Deník  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Windows Forms – ovládací prvky](index.md)  
- Obsahuje odkazy na témata o ovládacích prvcích určený konkrétně pro práci s formuláři Windows.  
+ Obsahuje odkazy na témata týkající se ovládacích prvků, které jsou určeny konkrétně pro práci s model Windows Forms.  
   
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

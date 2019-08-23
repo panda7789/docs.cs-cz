@@ -2,22 +2,22 @@
 title: <scopes>
 ms.date: 03/30/2017
 ms.assetid: 9a0dd3ce-e383-4ac3-b7be-7d604388304a
-ms.openlocfilehash: 8bc720238ca3039106345783381cd26134fc46b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd6513930798e9e1ab263f75c9350511c2dcdcd5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670622"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935185"
 ---
-# <a name="scopes"></a>\<obory >
-Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifikátoru URI, který lze použít k fitrování koncových bodů služby během dotazu.  
+# <a name="scopes"></a>\<> oborů
+Obsahuje kolekci prvků konfigurace, které určují identifikátory URI vlastního oboru, které lze použít k filtrování koncových bodů služby během dotazu.  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<endpointDiscovery>  
-\<obory >  
+\<> oborů  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,13 +45,13 @@ Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifik�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopes.md)|Přidá informace o rozsahu koncového bodu, který lze použít v kritériích přiřazování pro vyhledání služeb.|  
+|[\<add>](add-of-scopes.md)|Přidá informace o oboru pro koncový bod, který lze použít v porovnání kritérií pro hledání služeb.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endpointDiscovery>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
+|[\<endpointDiscovery>](endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho zjistitelnost, obory a jakákoli vlastní rozšíření pro jeho metadata.|  
   
 ## <a name="see-also"></a>Viz také:
 

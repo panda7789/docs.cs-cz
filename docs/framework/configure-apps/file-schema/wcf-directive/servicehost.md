@@ -2,15 +2,15 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: 3102ae8d8c28be43883eeaff6c4f829b355384a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a56fb1bb9395425222347914fe3f4c17f1a451b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701421"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920340"
 ---
-# <a name="servicehost"></a>\@ServiceHost
-Přidruží objekt pro vytváření použitý k vytvoření hostitele služby pomocí ní zajistit také jejich hostování a ostatní programovací aspekty vyžaduje přístup k nebo zkompilovat kód hostování zadaný v souboru SVC.  
+# <a name="servicehost"></a>\@Hostiteli
+Přidruží továrnu, která se používá k vytváření hostitele služby pro hostování služby, a dalších aspektů programování potřebných pro přístup k nebo zkompilování hostujícího kódu, který je k dispozici v souboru. svc.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,34 +26,34 @@ CodeBehind = "CodeBehind"%>
 ## <a name="attributes"></a>Atributy  
   
 #### <a name="service"></a>Služba  
- Název typu CLR hostované služby. To by měl být úplný název typu, který implementuje jednu nebo více kontakty ke službě.  
+ Název typu CLR hostované služby. Mělo by se jednat o kvalifikovaný název typu, který implementuje jeden nebo více kontaktů služby.  
   
-#### <a name="factory"></a>objekt pro vytváření  
- Název typu CLR objektu pro vytváření hostitele služby použít k vytvoření instance hostitele služby. Tento atribut je volitelný. Pokud tento parametr zadán, výchozí <xref:System.ServiceModel.Activation.ServiceHostFactory> se používá, která vrací instanci <xref:System.ServiceModel.ServiceHost>.  
+#### <a name="factory"></a>Instalací  
+ Název typu CLR objektu pro vytváření hostitele služby, který se používá k vytvoření instance hostitele služby. Tento atribut je nepovinný. Je-li tento parametr zadán <xref:System.ServiceModel.Activation.ServiceHostFactory> , je použita výchozí hodnota, která vrací <xref:System.ServiceModel.ServiceHost>instanci.  
   
-#### <a name="debug"></a>Ladit  
- Určuje, zda služby Windows Communication Foundation (WCF) by měl být kompilována se symboly ladění. `true` Pokud se služba WCF by měl být kompilována se symboly ladění; v opačném případě `false`.  
+#### <a name="debug"></a>Ladění  
+ Určuje, zda má být služba Windows Communication Foundation (WCF) zkompilována se symboly ladění. `true`Pokud má být služba WCF zkompilována se symboly ladění; v opačném případě. `false`  
   
 #### <a name="language"></a>Jazyk  
- Určuje jazyk použitý při kompilaci všech vložených kódu v souboru (.svc). Hodnoty mohou představovat všechny. NET – podporované jazyky, včetně C#, VB a JS, které se odkazují na C#, Visual Basic .NET a JScript .NET, v uvedeném pořadí. Tento atribut je volitelný.  
+ Určuje jazyk použitý při kompilaci veškerého vloženého kódu v rámci souboru (. svc). Hodnoty mohou představovat libovolný. Podporovaný jazyk, včetně C#jazyků, VB a js, které odkazují na C#, Visual Basic .NET a JScript .NET, v uvedeném pořadí. Tento atribut je nepovinný.  
   
 #### <a name="codebehind"></a>CodeBehind  
- Určuje zdrojový soubor, který implementuje webové služby XML, třídy, která implementuje webové služby XML není umístěný ve stejném souboru a nebyl po kompilovány do sestavení a umístěn v adresáři \Bin.  
+ Určuje zdrojový soubor, který implementuje webovou službu XML, pokud třída, která implementuje webovou službu XML, není umístěna ve stejném souboru a nebyla zkompilována do sestavení a umístěna do adresáře \Bin.  
   
 ## <a name="remarks"></a>Poznámky  
- <xref:System.ServiceModel.ServiceHost> Použít k hostování služby je bodu rozšiřitelnosti v rámci programovací model Windows Communication Foundation (WCF). Objekt pro vytváření vzorek se používá k vytvoření instance <xref:System.ServiceModel.ServiceHost> protože se jedná, případně polymorfní typ, který by neměl přímo vytvořit instanci hostitelského prostředí.  
+ <xref:System.ServiceModel.ServiceHost> Použití pro hostování služby je bod rozšíření v rámci programovacího modelu Windows Communication Foundation (WCF). Model továrny se používá k vytvoření instance <xref:System.ServiceModel.ServiceHost> , protože je, potenciálně polymorfního typu, který by hostitelský prostředí nemělo vytvářet přímo.  
   
- Výchozí implementace používá <xref:System.ServiceModel.Activation.ServiceHostFactory> k vytvoření instance <xref:System.ServiceModel.ServiceHost>. Ale můžete zadat vlastní objekt pro vytváření (jedna, která vrací odvozené hostitelů) tak, že zadáte název typu CLR továrny implementace v [ \@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice.  
+ Výchozí implementace používá <xref:System.ServiceModel.Activation.ServiceHostFactory> k vytvoření <xref:System.ServiceModel.ServiceHost>instance. Můžete ale zadat vlastní továrnu (jednu, která vrací vašeho odvozeného hostitele) zadáním názvu typu CLR implementace továrny v [ \@](servicehost.md) direktivě ServiceHost.  
   
- Pokud chcete použít objekt pro vytváření hostitele služby vlastní vlastní místo výchozí objekt pro vytváření, stačí zadat název typu v [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice následujícím způsobem:  
+ Pokud chcete použít vlastní objekt pro vytváření hostitele služby místo výchozího objektu pro vytváření, stačí zadat název typu v [@ServiceHost](servicehost.md) direktivě následujícím způsobem:  
   
 ```xml  
 <% @ServiceHost Factory="DerivedFactory" Service="MyService" %>  
 ```  
   
- Udržujte co nejlehčí factory implementace. Pokud máte velké množství vlastní logiku, váš kód je více opakovaně použitelné, pokud jste tuto logiku umístěte hostitele místo uvnitř objekt pro vytváření.  
+ Udržujte implementace továrny co nejblíže. Pokud máte spoustu vlastní logiky, váš kód je více použitelný, pokud tuto logiku vložíte do svého hostitele místo do objektu factory.  
   
- Například pro povolení koncového bodu s povoleným AJAX pro `MyService`, zadejte <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> pro hodnotu vlastnosti `Factory` atribut místo výchozího <xref:System.ServiceModel.Activation.ServiceHostFactory>v [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktiv jako je znázorněno v následujícím příkladu.  
+ Chcete-li například povolit koncový bod s povoleným AJAX `MyService`pro, <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> zadejte `Factory` pro hodnotu atributu místo výchozí <xref:System.ServiceModel.Activation.ServiceHostFactory>v [@ServiceHost](servicehost.md) direktivě, jak je znázorněno v následujícím příkladu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -68,4 +68,4 @@ Factory="WebScriptServiceHostFactory"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vlastní hostitel služby](../../../../../docs/framework/wcf/samples/custom-service-host.md)
+- [Vlastní hostitel služby](../../../wcf/samples/custom-service-host.md)

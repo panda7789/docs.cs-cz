@@ -4,106 +4,106 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 6f677d067ea0a93310036b13dba90e43731e8094
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 9677e516ef6c91ef344e10bc8f608a397a4ed157
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606488"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966140"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Postupy: Použití nástroje pro konfiguraci modelu služby COM+
-Jakmile vyberete příslušné hostující režim, použijte nástroj příkazového řádku konfiguraci modelu služby COM + (ComSvcConfig.exe) ke konfiguraci rozhraní aplikací, které se zveřejní jako webové služby.  
+Po výběru vhodného hostitelského režimu použijte nástroj příkazového řádku konfigurace modelu COM+ (ComSvcConfig. exe) ke konfiguraci rozhraní aplikace, která budou vystavena jako webové služby.  
   
 > [!NOTE]
->  Musíte být správcem na počítači lze provádět následující úlohy.  
+> Abyste mohli provádět některé z následujících úkolů, musíte být správcem počítače.  
   
- Při použití ComSvcConfig.exe konfigurovat webovou službu, která používá nejnovější verze modelu služby (aktuálně v4.5) na počítači s Windows 7, proveďte následující kroky:  
+ Při použití nástroje ComSvcConfig. exe na počítači se systémem Windows 7 ke konfiguraci webové služby pro použití nejnovější verze modelu služby (aktuálně v 4.5) proveďte následující kroky:  
   
-1. Nastavte klíč registru `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` na hodnotu DWORD 0x00000001  
+1. Nastavte klíč `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` registru na hodnotu DWORD 0x00000001.  
   
-2. Spustit comsvcconfig.exe  
+2. Spusťte ComSvcConfig. exe.  
   
-3. Vrátit přidali v kroku 1 zpět na původní hodnotu klíče registru nebo odstranit, pokud neexistuje.  
+3. Vrátí klíč registru přidaný v kroku 1 zpátky do původní hodnoty nebo ho odstraňte, pokud neexistuje.  
   
 > [!IMPORTANT]
->  Při vrácení tohoto klíče registru je důležité. Toto je kompatibility klíče. Není při vrácení této změny může způsobit problémy s jinými aplikacemi .NET na počítači spuštěná).  
+> Vrácení tohoto klíče registru je důležité. Toto je klíč kompatibility. Nevrácení této změny může způsobit problémy s jinými aplikacemi .NET běžícími v počítači.  
   
 > [!WARNING]
->  Při použití ComSvcConfig.exe/install na počítači s Windows 8 dialogové okno se zobrazí s oznámením "aplikace ve vašem počítači potřebuje následující funkce Windows: rozhraní .NET Framework 3.5 (zahrnuje .NET 2.0 a .NET 3.0" Pokud není nainstalované rozhraní .NET Framework 3.5. Toto dialogové okno může být ignorován. Případně můžete sed OnlyUseLatestCLR klíče registru na hodnotu DWORD 0x00000001  
+>  Při použití ComSvcConfig. exe/install v počítači s Windows 8 se zobrazí dialogové okno s informacemi o tom, že aplikace na vašem počítači potřebuje tuto funkci Windows: .NET Framework 3,5 (zahrnuje .NET 2,0 a .NET 3,0, pokud není nainstalovaná .NET Framework 3,5. Toto dialogové okno může být ignorováno. Alternativně můžete klíč registru OnlyUseLatestCLR SED na hodnotu DWORD 0x00000001.  
   
-### <a name="to-add-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-com-hosting-mode"></a>Chcete-li přidat rozhraní do sady rozhraní, které mají být vystavena jako webové služby, pomocí hostující režim modelu COM +  
+### <a name="to-add-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-com-hosting-mode"></a>Přidání rozhraní do sady rozhraní, které mají být zveřejněny jako webové služby, pomocí hostitelského režimu COM+  
   
-- Spuštění pomocí ComSvcConfig / `/install` a `/hosting:complus` možnosti, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/install` možností a `/hosting:complus` , jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financial,IFinances /hosting:complus /verbose  
     ```  
   
-     Přidá příkaz `IFinances` rozhraní `ItemOrders.IFinancial` komponenty (z OnlineStore aplikace COM +) do sady rozhraní, která bude vystavena jako webové služby. Služba používá hostující režim modelu COM + a proto vyžaduje aktivaci explicitní aplikace.  
+     Příkaz přidá `IFinances` rozhraní `ItemOrders.IFinancial` komponenty (z aplikace OnlineStore com+) do sady rozhraní, které budou zveřejněny jako webové služby. Služba používá hostitelský režim modelu COM+, takže vyžaduje explicitní aktivaci aplikace.  
   
-     Zástupný znak hvězdička (*) můžete využít pro komponentu a rozhraní, vyhněte se ho používat, protože můžete chtít pouze vybranou funkci jako webovou službu. Spuštění v budoucí verzi této součásti, pomocí zástupného znaku může nechtěně vystavit rozhraní, která nemusí být k dispozici, pokud bylo zjištěno syntaxe konfigurace.  
+     I když se znak hvězdičky (*) dá použít pro komponentu a rozhraní, nepoužívejte ho, protože možná budete chtít vystavit jenom vybrané funkce jako webovou službu. Pokud se spustí s budoucí verzí této součásti, může použití zástupného znaku neúmyslně vystavit rozhraní, které nemusí být k dispozici při určení syntaxe konfigurace.  
   
-     / Verbose – možnost instruuje nástroj, který zobrazí upozornění kromě nějaké chyby.  
+     Možnost/verbose dá nástroji pokyn, aby zobrazoval upozornění spolu s případnými chybami.  
   
-     Kontrakt služby vystavené bude obsahovat všechny metody z `IFinances` rozhraní.  
+     Kontrakt pro vydanou službu bude obsahovat všechny metody z `IFinances` rozhraní.  
   
-### <a name="to-add-only-specific-methods-from-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-com-hosting-mode"></a>Můžete přidat pouze konkrétní metody z rozhraní do sady rozhraní, které mají být vystavena jako webové služby, pomocí hostující režim modelu COM +  
+### <a name="to-add-only-specific-methods-from-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-com-hosting-mode"></a>Chcete-li přidat pouze konkrétní metody z rozhraní do sady rozhraní, které mají být zveřejněny jako webové služby, pomocí hostitelského režimu COM+  
   
-- Spuštění pomocí ComSvcConfig / `/install` a `/hosting:complus` možnosti s explicitní názvy z požadovaných metod, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/install` možností a `/hosting:complus` s explicitním pojmenování požadovaných metod, jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financial,IFinances.{Credit,Debit} /hosting:complus /verbose  
     ```  
   
-     Tento příkaz přidá pouze `Credit` a `Debit` metody ze `IFinances` rozhraní jako operace pro kontrakt vystavené služby. Všechny metody v rozhraní budou vypuštěny ze smlouvy a nebudou volány z klienty webové služby.  
+     Příkaz přidá pouze `Credit` metody a `Debit` z `IFinances` rozhraní jako operace do vystavené kontraktu služby. Všechny ostatní metody rozhraní budou z kontraktu vynechány a nebude možné je volat od klientů webové služby.  
   
-### <a name="to-add-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-web-hosting-mode"></a>Chcete-li přidat rozhraní do sady rozhraní, které mají být vystavena jako webové služby, pomocí hostující režim webu  
+### <a name="to-add-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-web-hosting-mode"></a>Přidání rozhraní do sady rozhraní, které mají být zveřejněny jako webové služby, pomocí režimu hostování webu  
   
-- Spuštění pomocí ComSvcConfig / `/install` možnost a `/hosting:was` možnosti, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/install` možnosti `/hosting:was` a možnosti, jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /install /application:OnlineWarehouse /contract:ItemInventory.Warehouse,IStockLevels /hosting:was /webDirectory:root/OnlineWarehouse /mex /verbose  
     ```  
   
-     Přidá příkaz `IStockLevels` rozhraní na `ItemInventory.Warehouse` komponenty (z OnlineWarehouse aplikace COM +) do sady rozhraní, která bude vystavena jako webové služby. Služba je hostovaná v OnlineWarehouse virtuální adresář služby IIS, nikoli v modelu COM + na webu, a proto se automaticky aktivuje aplikace podle potřeby.  
+     Příkaz přidá `IStockLevels` rozhraní `ItemInventory.Warehouse` součásti (z aplikace OnlineWarehouse com+) do sady rozhraní, které budou zveřejněny jako webové služby. Služba je web hostovaný ve virtuálním adresáři OnlineWarehouse služby IIS, nikoli v modelu COM+, a proto je aplikace automaticky aktivována podle potřeby.  
   
-     K použití v procesu konfigurace hostované webové aplikace modelu COM + nastavené ke spuštění jako knihovny aplikace spíše než serverové aplikace pomocí konzoly pro správu služby Component Services. Aplikace, konfigurované jako Server aplikace použít standardní režim hostované webové a proces směrování pro zpracování každého požadavku se vám účtovat.  
+     Chcete-li použít konfiguraci v rámci procesu hostovaného v rámci webu, musí být aplikace modelu COM+ nakonfigurována tak, aby běžela jako aplikace knihovny, nikoli serverová aplikace pomocí konzoly pro správu služby Component Services. Aplikace nakonfigurované jako serverové aplikace používají standardní režim v rámci webu a při zpracování jednotlivých požadavků naúčtují směrování procesu.  
   
-     `/mex` Možnost přidá další koncový bod služby Metadata Exchange (MEX), který používá stejné přenosové jako koncový bod služby vaší aplikace pro podporu klientů, které chcete načíst definici kontraktu služby.  
+     Tato `/mex` možnost přidá koncový bod služby pro výměnu metadat (MEX), který používá stejný přenos jako koncový bod služby aplikace, aby podporoval klienty, kteří chtějí z této služby načíst definici smlouvy.  
   
-### <a name="to-remove-a-web-service-for-a-specified-interface"></a>Chcete-li odebrat webovou službu pro zadané rozhraní  
+### <a name="to-remove-a-web-service-for-a-specified-interface"></a>Odebrání webové služby pro zadané rozhraní  
   
-- Spuštění pomocí ComSvcConfig / `/uninstall` možnosti, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/uninstall` možnosti, jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /uninstall /application:OnlineStore /contract:ItemOrders.Financial,IFinances /hosting:complus  
     ```  
   
-     Příkaz odebere `IFinances` rozhraní na `ItemOrders.Financial` (z OnlineStore aplikace COM +).  
+     Příkaz odebere `IFinances` rozhraní `ItemOrders.Financial` součásti (z aplikace modelu COM+ OnlineStore).  
   
-### <a name="to-list-currently-exposed-interfaces"></a>Na seznamu aktuálně vystavit rozhraní  
+### <a name="to-list-currently-exposed-interfaces"></a>Výpis aktuálně vystavených rozhraní  
   
-- Spuštění pomocí ComSvcConfig / `/list` možnosti, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/list` možnosti, jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /list  
     ```  
   
-     Příkaz vypíše aktuálně vystavené rozhraní spolu s příslušnou adresou a podrobnosti o vazbu, omezená na místním počítači.  
+     Příkaz vypíše aktuálně vystavená rozhraní spolu s odpovídajícími podrobnostmi adres a vazeb v oboru pro místní počítač.  
   
-### <a name="to-list-specific-currently-exposed-interfaces"></a>Seznam aktuálně konkrétní vystavit rozhraní  
+### <a name="to-list-specific-currently-exposed-interfaces"></a>Seznam konkrétních aktuálně vystavených rozhraní  
   
-- Spuštění pomocí ComSvcConfig / `/list` možnosti, jak je znázorněno v následujícím příkladu.  
+- Spusťte ComSvcConfig pomocí `/list` možnosti, jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /list /application:OnlineStore /hosting:complus  
     ```  
   
-     Seznamy příkazů aktuálně vystavena COM +.-hostované rozhraní spolu s příslušnou adresou a podrobnosti o vazbu pro aplikaci OnlineStore modelu COM + v místním počítači.  
+     Příkaz vypíše aktuálně vystavená rozhraní založená na modelu COM+ spolu s odpovídajícími podrobnostmi adres a vazeb pro aplikaci OnlineStore COM+ na místním počítači.  
   
-### <a name="to-display-help-on-the-options-that-can-be-used-with-the-utility"></a>Chcete-li zobrazit nápovědu pro možnosti, které je možné pomocí nástroje  
+### <a name="to-display-help-on-the-options-that-can-be-used-with-the-utility"></a>Zobrazení pomocníka s možnostmi, které lze použít s nástrojem  
   
-- Spuštění pomocí ComSvcConfig / /? možnost, jak je znázorněno v následujícím příkladu.  
+- Spustit ComSvcConfig pomocí/? , jak je znázorněno v následujícím příkladu.  
   
     ```  
     ComSvcConfig.exe /?  

@@ -2,12 +2,12 @@
 title: Události
 description: Zjistěte, F# jak události umožňují přidružit volání funkcí k akcím uživatele, které jsou důležité při programování v grafickém uživatelském rozhraní.
 ms.date: 05/16/2016
-ms.openlocfilehash: eed2caff569638ea5aa972a000dfa71a3b64f60b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7c3f16204b762609323fc2bcdc05f80e85a298e8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627576"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917279"
 ---
 # <a name="events"></a>Události
 
@@ -175,7 +175,7 @@ Application.Run(appForm)
 ## <a name="see-also"></a>Viz také:
 
 - [Členové](index.md)
-- [Zpracování a vyvolávání událostí](../../../../docs/standard/events/index.md)
+- [Zpracování a vyvolávání událostí](../../../standard/events/index.md)
 - [Výrazy lambda: Klíčové slovo `fun`](../functions/lambda-expressions-the-fun-keyword.md)
 - [Control. Event – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
 - [Control. Event&#60;–&#62; třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)

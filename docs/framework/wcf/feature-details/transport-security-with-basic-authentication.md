@@ -5,43 +5,43 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: 5cbe6ce6e8e36fc9460295c454014d6f3fbf3983
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3340a0f455646357035b0999a12e78acb08c2572
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635121"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962632"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
-Následující obrázek znázorňuje klienta a služby Windows Communication Foundation (WCF). Server potřebuje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Dále webová služba již má implementace protokolu SSL, který lze použít. Další informace o povolení základního ověřování v Internetové informační služby (IIS) najdete v tématu <https://go.microsoft.com/fwlink/?LinkId=83822>.  
+Následující ilustrace znázorňuje službu Windows Communication Foundation (WCF) a klienta. Server potřebuje platný certifikát X. 509, který se dá použít pro SSL (Secure Sockets Layer) (SSL), a klienti musí důvěřovat certifikátu serveru. Kromě toho webová služba už používá implementaci SSL, kterou je možné použít. Další informace o povolení základního ověřování na Internetová informační služba (IIS) najdete v tématu <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication>.  
   
- ![Snímek obrazovky, který ukazuje zabezpečení přenosu pomocí základního ověřování.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
+ ![Snímek obrazovky, který zobrazuje zabezpečení přenosu pomocí základního ověřování.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
   
-|Vlastnost|Popis|  
+|Charakteristiku|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Přenos|  
-|Interoperabilita|Stávající klienty webové služby a služby|  
-|Ověření (Server)<br /><br /> Ověření (klient)|Ano (pomocí protokolu HTTPS)<br /><br /> Ano (prostřednictvím uživatelské jméno a heslo)|  
-|Integrita|Ano|  
-|Důvěrnost|Ano|  
-|Přenos|HTTPS|  
+|Režim zabezpečení|Přepravu|  
+|Interoperabilita|S existujícími klienty a službami webové služby|  
+|Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí HTTPS)<br /><br /> Ano (pomocí uživatelského jména a hesla)|  
+|Způsobilost|Ano|  
+|Chovávat|Ano|  
+|Přepravu|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Služba  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby, který používá Windows doména uživatelské jméno a heslo pro zabezpečení přenosu. Všimněte si, že služba vyžaduje, aby certifikát X.509 k ověření klienta. Další informace najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Následující kód ukazuje, jak vytvořit koncový bod služby, který používá uživatelské jméno a heslo domény systému Windows pro přenos zabezpečení. Všimněte si, že služba vyžaduje pro ověření klienta certifikát X. 509. Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postupy: Konfigurace portu s certifikátem](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)SSL.  
   
  [!code-csharp[C_SecurityScenarios#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#1)]
  [!code-vb[C_SecurityScenarios#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#1)]  
   
-## <a name="configuration"></a>Konfigurace  
- Následující konfiguruje službu pomocí základního ověřování zabezpečení transportní vrstvy:  
+## <a name="configuration"></a>Konfiguraci  
+ Následující nakonfiguruje službu tak, aby používala základní ověřování s zabezpečením na úrovni přenosu:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -72,19 +72,19 @@ Následující obrázek znázorňuje klienta a služby Windows Communication Fou
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje kód klienta, která obsahuje uživatelské jméno a heslo. Všimněte si, že uživatel musí zadat platné Windows uživatelské jméno a heslo. Zde není zobrazen kód vrátí uživatelské jméno a heslo. Použijte dialogové okno nebo jiné rozhraní k dotazování uživatele.  
+ Následující kód ukazuje kód klienta, který obsahuje uživatelské jméno a heslo. Všimněte si, že uživatel musí zadat platné uživatelské jméno a heslo systému Windows. Zde není zobrazen kód pro vrácení uživatelského jména a hesla. Použijte dialogové okno nebo jiné rozhraní k dotazování uživatele na informace.  
   
 > [!NOTE]
->  Uživatelské jméno a heslo lze nastavit pouze pomocí kódu.  
+> Uživatelské jméno a heslo lze nastavit pouze pomocí kódu.  
   
  [!code-csharp[C_SecurityScenarios#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#2)]
  [!code-vb[C_SecurityScenarios#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfigurace  
+### <a name="configuration"></a>Konfiguraci  
  Následující kód ukazuje konfiguraci klienta.  
   
 > [!NOTE]
->  Konfiguraci nelze použít k nastavení uživatelského jména a hesla. Konfigurace je vidět tady musí rozšířit pomocí kódu pro nastavení uživatelského jména a hesla.  
+> Konfiguraci nelze použít k nastavení uživatelského jména a hesla. Zde uvedená konfigurace musí být rozšířena pomocí kódu pro nastavení uživatelského jména a hesla.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

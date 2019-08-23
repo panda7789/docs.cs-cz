@@ -5,50 +5,50 @@ helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-ms.openlocfilehash: 58e65ee9d95329c3583515b99db47b87b3749c8f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b4d566d377a3cda73bf8422caa798134d356f63
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973781"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962572"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a>Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- V následující tabulce jsou uvedeny klávesové zkratky, které lze použít pro navigaci v rámci formuláře Windows <xref:System.Windows.Forms.DataGrid> ovládacího prvku:  
+ V následující tabulce jsou uvedeny klávesové zkratky, které lze použít pro navigaci v rámci ovládacího <xref:System.Windows.Forms.DataGrid> prvku model Windows Forms:  
   
 |Akce|Zástupce|  
 |------------|--------------|  
-|Vložení hodnoty buňky a přesunout dolů na další buňku.<br /><br /> Pokud je fokus na odkaz podřízené tabulky, přejděte na tuto tabulku.|ZADEJTE|  
-|Zrušte úpravy buňky v režimu úprav buňky.<br /><br /> Pokud v výběr, zrušte úpravy na řádku.|ESC|  
-|Odstraníte znak před kurzoru při úpravách buňky.|BACKSPACE|  
-|Odstraňte znak za kurzorem při úpravách buňky.|DELETE|  
-|Přesunout do první buňky v aktuálním řádku.|DOMOVSKÁ STRÁNKA|  
-|Přesuňte na poslední buňky v aktuálním řádku.|END|  
-|Zvýrazněte znaků v aktuální buňky a umístěte kurzor na konec řádku. Stejné chování jako dvakrát kliknout na buňku.|F2|  
-|Pokud je fokus na buňku, přejděte na další buňku v řádku.<br /><br /> Pokud je fokus na poslední buňky v řádku, přesunout na první odkaz podřízené tabulky řádku a rozbalte ho.<br /><br /> Pokud je fokus na podřízené propojení, přesuňte do podřízený odkaz na další.<br /><br /> Pokud je fokus na poslední podřízený propojení, přesuňte do první buňky dalším řádku.|TAB|  
-|Pokud je fokus na buňku, přesune předcházejí buňky v řádku.<br /><br /> Pokud je fokus na první buňky v řádku, přesunout na poslední odkaz Rozšířené podřízené tabulky z předchozí řádek nebo přesunout na poslední buňky v předchozím řádku.<br /><br /> Pokud je fokus na podřízené propojení, přesuňte do předchozího propojení podřízeného.<br /><br /> Pokud je fokus na první podřízený odkaz, přesuňte na poslední buňky v předchozím řádku.|SHIFT+TAB|  
-|Přesunout na další ovládací prvek v pořadí.|CTRL+TAB|  
-|Přesunout na předchozí ovládací prvek v pořadí.|CTRL+SHIFT+TAB|  
-|Posunout nahoru do nadřazené tabulky v podřízené tabulce. Stejné chování jako při kliknutí na tlačítko Zpět.|ALT + ŠIPKA DOLEVA|  
-|Rozbalte podřízené tabulky odkazy. ALT + Šipka dolů rozbalí všechny odkazy, nikoli jen vybraných.|ALT + Šipka dolů nebo CTRL + Plus|  
-|Sbalení odkazů podřízené tabulky. ALT + Šipka nahoru sbalí všechny odkazy, nikoli jen vybraných.|ALT + Šipka nahoru nebo CTRL + minus|  
-|Přesunout na nejvíce neprázdných buněk směrem šipky.|CTRL + ŠIPKA|  
-|Rozšiřte výběr jeden řádek ve směru šipka (s výjimkou podřízené odkazy tabulky).|SHIFT + ŠIPKA NAHORU/ŠIPKA|  
-|Rozšíření výběru na nejvíce neprázdných řádků ve směru šipka (s výjimkou podřízené odkazy tabulky).|CTRL + SHIFT + NAHORU/ŠIPKA DOLŮ|  
-|Přesunout do levé horní buňky.|CTRL + HOME|  
-|Přesuňte do pravé spodní buňce.|CTRL+END|  
-|Rozšíření výběru na začátek řádku.|CTRL + SHIFT + HOME|  
-|Rozšiřte výběr na řádek dole.|CTRL+SHIFT+END|  
-|Vyberte aktuální řádek (s výjimkou podřízené odkazy tabulky).|SHIFT + MEZERNÍK|  
-|Vyberte celý mřížky (s výjimkou podřízené odkazy tabulky).|CTRL+A|  
-|Zobrazte nadřazený řádek v podřízené tabulce.|CTRL + PAGE DOWN|  
-|Skryjte nadřazený řádek v podřízené tabulce.|CTRL + PAGE UP|  
-|Rozšíření výběru o jednu obrazovku (s výjimkou podřízené tabulky odkazy) dolů.|SHIFT + PAGE DOWN|  
-|Rozšíření výběru o jednu obrazovku (s výjimkou podřízené tabulky odkazy) nahoru.|SHIFT + PAGE UP|  
-|Volání <xref:System.Windows.Forms.DataGrid.EndEdit%2A> metodu pro aktuální řádek.|CTRL+ENTER|  
-|Zadejte <xref:System.DBNull.Value?displayProperty=nameWithType> hodnoty do buňky v režimu úprav.|CTRL+0|  
+|Dokončete zadání buňky a přejděte dolů na další buňku.<br /><br /> Pokud se fokus zaměřuje na odkaz na podřízenou tabulku, přejděte k této tabulce.|NAPIŠTE|  
+|Zruší úpravu buňky, pokud je v režimu úprav buňky.<br /><br /> Pokud je výběr v rámečku, zrušte úpravy na řádku.|ESC|  
+|Odstraní znak před kurzorem při úpravě buňky.|BACKSPACE|  
+|Odstraní znak za vloženým bodem při úpravě buňky.|DELETE|  
+|Přesune se na první buňku aktuálního řádku.|DOMOVSKÉ|  
+|Přesune se do poslední buňky na aktuálním řádku.|END|  
+|Zvýrazněte znaky v aktuální buňce a umístěte kurzor na konec řádku. Stejné chování jako při dvojitém kliknutí na buňku.|F2|  
+|Pokud je fokus na buňce, přejděte na další buňku na řádku.<br /><br /> Pokud je fokus na poslední buňce v řádku, přejděte na odkaz první podřízené tabulky řádku a rozbalte ho.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na další podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na poslední podřízený odkaz, přejdete na první buňku dalšího řádku.|RÁŽKY|  
+|Pokud je fokus na buňce, přejděte na předchozí buňku na řádku.<br /><br /> Pokud je fokus v první buňce řádku, přejděte na poslední rozbalenou podřízenou tabulku předchozího řádku nebo přejděte na poslední buňku předchozího řádku.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na předchozí podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na první podřízený odkaz, přejdete na poslední buňku předchozího řádku.|SHIFT + TAB|  
+|Přesune se na další ovládací prvek v pořadí prvků.|CTRL+TAB|  
+|Přesune se na předchozí ovládací prvek v pořadí prvků.|CTRL+SHIFT+TAB|  
+|Pokud je v podřízené tabulce, přesuňte se k nadřazené tabulce. Stejné chování jako při kliknutí na tlačítko zpět.|ALT + ŠIPKA VLEVO|  
+|Rozbalte odkaz na podřízenou tabulku. Kombinace kláves ALT + Šipka dolů rozbalí všechny odkazy, nikoli pouze ty, které jsou vybrány.|ALT + Šipka dolů nebo CTRL + PLUS – ZNAMÉNKo|  
+|Sbalení odkazů na podřízenou tabulku. ALT + šipka nahoru sbalí všechny odkazy, nikoli jenom ty, které jsou vybrané.|ALT + šipka nahoru nebo CTRL + mínus – symbol|  
+|Přesune se na nejvzdálenější neprázdnou buňku ve směru šipky.|CTRL + ŠIPKA|  
+|Rozšíří výběr jednoho řádku ve směru šipky (Kromě odkazů na podřízené tabulky).|SHIFT + ŠIPKA NAHORU/DOLŮ|  
+|Rozšíří výběr na nejvzdálenější neprázdný řádek ve směru šipky (Kromě odkazů na podřízené tabulky).|CTRL + SHIFT + ŠIPKA NAHORU/DOLŮ|  
+|Přesune se do levé horní buňky.|CTRL + HOME|  
+|Přejděte do pravé dolní buňky.|CTRL + END|  
+|Rozšiřuje výběr na horní řádek.|CTRL + SHIFT + HOME|  
+|Rozšiřuje výběr na spodní řádek.|CTRL + SHIFT + END|  
+|Vyberte aktuální řádek (Kromě odkazů na podřízenou tabulku).|SHIFT + MEZERNÍK|  
+|Vyberte celou mřížku (Kromě odkazů na podřízenou tabulku).|CTRL + A|  
+|Zobrazí nadřazený řádek, pokud je v podřízené tabulce.|CTRL + PAGEDOWN|  
+|Skryje nadřazený řádek, pokud je v podřízené tabulce.|CTRL + PAGE UP|  
+|Rozšíří výběr o jednu obrazovku dolů (Kromě odkazů na podřízenou tabulku).|SHIFT + PAGEDOWN|  
+|Rozšíří výběr o jednu obrazovku nahoru (Kromě odkazů na podřízenou tabulku).|SHIFT + PAGE UP|  
+|<xref:System.Windows.Forms.DataGrid.EndEdit%2A> Volejte metodu pro aktuální řádek.|CTRL + ENTER|  
+|<xref:System.DBNull.Value?displayProperty=nameWithType> Zadejte hodnotu do buňky v režimu úprav.|CTRL + 0|  
   
 ## <a name="see-also"></a>Viz také:
 

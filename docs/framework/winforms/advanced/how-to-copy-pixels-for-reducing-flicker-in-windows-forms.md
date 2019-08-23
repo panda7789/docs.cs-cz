@@ -13,22 +13,22 @@ helpviewer_keywords:
 - flicker
 - bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-ms.openlocfilehash: e3d1c2b681e98dc7c45467683924dd4022eb377e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a18539153c64a5059d8079f6e245115b026bb91
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937745"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950139"
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Postupy: Kopírování pixelů pro omezení blikání v modelu Windows Forms
-Při animaci jednoduchý obrázek uživatele může někdy dojít blikání nebo jiné nežádoucí vizuálních efektů. Jeden způsob, jak omezit tento problém je použití procesu "přenos bitových bloků" na obrázku. Přenos bitových bloků je "bitového bloku přenos" barvy dat ze původu obdélník pixelů do cílového obdélníku v pixelech.  
+Při animaci jednoduché grafiky mohou uživatelé někdy narazit na blikání nebo jiné nežádoucí vizuální efekty. Jedním ze způsobů, jak tento problém omezit, je použití procesu "BitBlt" na obrázku. BitBlt je přenos "bitového bloku" dat barvy z počátečního obdélníku v pixelech na cílový obdélník pixelů.  
   
- Pomocí Windows Forms, přenos bitových bloků využívá se při něm <xref:System.Drawing.Graphics.CopyFromScreen%2A> metodu <xref:System.Drawing.Graphics> třídy. V parametrech metody je třeba zadat zdroj a cíl (jako body), velikost oblasti, které se mají zkopírovat a grafiky objekt použitý k vykreslení nový tvar.  
+ Pomocí model Windows Forms je BitBlt provedeno pomocí <xref:System.Drawing.Graphics.CopyFromScreen%2A> metody <xref:System.Drawing.Graphics> třídy. V parametrech metody zadáte zdroj a cíl (jako body), velikost oblasti, která se má zkopírovat, a objekt Graphics, který se používá k vykreslení nového obrazce.  
   
- V následujícím příkladu je vykreslen obrazec na formulář v nástrojích pro jeho <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Pak, bude <xref:System.Drawing.Graphics.CopyFromScreen%2A> metoda se používá k duplicitní tvaru.  
+ V následujícím příkladu je tvar vykreslen ve formuláři v jeho <xref:System.Windows.Forms.Control.Paint> obslužné rutině události. Pak je metoda použita k duplikaci tvaru. <xref:System.Drawing.Graphics.CopyFromScreen%2A>  
   
 > [!NOTE]
->  Nastavení formuláře <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost `true` způsobí, že kód založený na grafickém v <xref:System.Windows.Forms.Control.Paint> událost být dvojitou vyrovnávací pamětí. Při použití níže uvedeného kódu to nebude mít žádné zvýšení výkonu a jasně, je něco, co vzít v úvahu při práci s složitější grafiky manipulace s kódem.  
+> Nastavením <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnosti formuláře na nastavíte `true` , aby byl kód založený na grafickém <xref:System.Windows.Forms.Control.Paint> objektu v události dvakrát uložený do vyrovnávací paměti. I když při použití níže uvedeného kódu nebudou discernible žádné zvýšení výkonu, je třeba vzít v úvahu, že při práci s komplexnějším kódem pro manipulaci s grafikou nemusíte mít na paměti něco.  
   
 ## <a name="example"></a>Příklad  
   
@@ -60,7 +60,7 @@ private void Form1_Paint(System.Object sender,
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Výše uvedený kód běží v formuláře <xref:System.Windows.Forms.Control.Paint> obslužná rutina události tak, aby grafiky zachovat při překreslení formuláře. V důsledku toho nebude volat metody související grafiky <xref:System.Windows.Forms.Form.Load> obslužná rutina události, protože vykreslený obsah nebude překreslení, pokud je velikost nebo zakryto jiný formulář. formuláře.  
+ Výše uvedený kód je spuštěn v obslužné rutině <xref:System.Windows.Forms.Control.Paint> události formuláře, aby grafika zůstala při překreslení formuláře zachovaná. V takovém případě Nevolejte metody související s grafikou v <xref:System.Windows.Forms.Form.Load> obslužné rutině události, protože vykreslený obsah nebude překreslen v případě, že dojde ke změně velikosti formuláře nebo jeho skrytí jiným formulářem.  
   
 ## <a name="see-also"></a>Viz také:
 

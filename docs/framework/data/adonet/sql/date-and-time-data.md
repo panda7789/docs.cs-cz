@@ -5,51 +5,51 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: f93f215f7be27196217fd506796fd58c4e11d796
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 016e2efae68c02c8c5a10ab74419599bc41be3a8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619188"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959389"
 ---
 # <a name="date-and-time-data"></a>Kalendářní a časová data
-SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové datové typy zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Od verze rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje plnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití těchto nových funkcí s SqlClient.  
+SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové typy dat zahrnují samostatné typy pro datum a čas a rozšířené datové typy s větším rozsahem, přesností a vědomím časového pásma. Počínaje verzí 3,5 .NET Framework Service Pack (SP) 1, .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>) poskytuje plnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Abyste mohli používat tyto nové funkce s SqlClient, musíte nainstalovat .NET Framework 3,5 SP1 (nebo novější).  
   
- Verze systému SQL Server starších než SQL Server 2008 platili jen dva datové typy pro práci s hodnotami data a času: `datetime` a `smalldatetime`. Oba tyto typy dat obsahovat hodnotu data a hodnotu času, které je těžké pracovat pouze datum nebo pouze hodnoty času. Tyto typy dat také podporují jenom data, ke kterým dochází po zavedení gregoriánského kalendáře v Anglii v 1753. Další omezení je, že tyto starší typy dat nejsou časového pásma vědět, které je těžké pracovat s daty, která pochází z více časových pásem.  
+ Verze SQL Server starších než SQL Server 2008 obsahovaly jenom dva typy dat pro práci s hodnotami data a času: `datetime` a `smalldatetime`. Oba tyto datové typy obsahují jak hodnotu data, tak časovou hodnotu, což usnadňuje práci s pouze hodnotami data a času. Tyto datové typy také podporují data, ke kterým dochází po zavedení gregoriánského kalendáře v Anglii v 1753. Dalším omezením je, že tyto starší datové typy nejsou v časovém pásmu. díky tomu je obtížné pracovat s daty, která pocházejí z několika časových pásem.  
   
- Úplnou dokumentaci pro datové typy serveru SQL Server je k dispozici v SQL Server Books Online. V následující tabulce jsou uvedeny základní témata specifické pro verzi pro data a času.  
+ Kompletní dokumentace pro SQL Server datové typy jsou k dispozici v SQL Server Knihy online. V následující tabulce jsou uvedena témata o vstupní úrovni pro konkrétní verzi pro data data a času.  
   
  **SQL Server Books Online**  
   
-1. [Pomocí kalendářní a časová Data](https://go.microsoft.com/fwlink/?LinkID=98361)  
+1. [Použití dat data a času](https://go.microsoft.com/fwlink/?LinkID=98361)  
   
-## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>Datum a čas datové typy zavedena v systému SQL Server 2008  
+## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>Datové typy data a času zavedené v SQL Server 2008  
  Následující tabulka popisuje nové datové typy data a času.  
   
-|Datový typ SQL serveru|Popis|  
+|SQL Server datový typ|Popis|  
 |--------------------------|-----------------|  
-|`date`|`date` Datový typ má rozsah od 1. ledna, 01 do 31. prosince 9999 s přesností na 1 den. Výchozí hodnota je 1. ledna 1900. Velikost úložiště je 3 bajtů.|  
-|`time`|`time` Datový typ ukládá časové hodnoty, podle 24 hodin. `time` Typ dat nabízí řadu 00:00:00.0000000 prostřednictvím 23:59:59.9999999 s přesností na 100 nanosekund. Výchozí hodnota je 00:00:00.0000000 (půlnoc). `time` Podporuje uživatelem definované zlomková přesnost pro sekundy datový typ a velikost úložiště se liší od 3 do 6 bajtů podle Zadaná přesnost.|  
-|`datetime2`|`datetime2` Datový typ kombinuje rozsah a přesnost `date` a `time` datové typy do jednoho datového typu.<br /><br /> Výchozí hodnoty a řetězec literálu formáty jsou stejné jako s těmi definovanými ve `date` a `time` datové typy.|  
-|`datetimeoffset`|`datetimeoffset` Datového typu obsahuje všechny funkce `datetime2` s posunem další časové pásmo. Posun časového pásma je vyjádřena jako [+&#124;-] hh: mm. HH jsou 2 číslic od 00 do 14, které představují počet hodin v posun časového pásma. MM je 2 soustavě v rozsahu od 00 do 59 představující počet dalších minut v posun časového pásma. Formáty času jsou podporovány na 100 nanosekund. Povinné + nebo - znak označuje, zda je posun v časových pásmech přičíst nebo odečíst od času UTC (světový čas koordinovat nebo greenwichský střední čas) k získání místní čas.|  
+|`date`|`date` Datový typ je v rozsahu od 1. ledna 01 do 31. prosince 9999 s přesností 1 den. Výchozí hodnota je 1. ledna 1900. Velikost úložiště je 3 bajty.|  
+|`time`|`time` Datový typ ukládá pouze hodnoty času na základě 24hodinovém času. `time` Datový typ má rozsah 00:00:00.0000000 až 23:59:59.9999999 s přesností 100 nanosekund. Výchozí hodnota je 00:00:00.0000000 (půlnoc). `time` Datový typ podporuje uživatelem definovanou zlomkovou přesnost druhé a velikost úložiště se v závislosti na zadané přesnosti liší od 3 do 6 bajtů.|  
+|`datetime2`|Datový typ kombinuje rozsah a přesnost `date` datových typů a `time` do jediného datového typu. `datetime2`<br /><br /> Výchozí hodnoty a formáty řetězcového literálu jsou stejné jako definice v `date` datových typech a. `time`|  
+|`datetimeoffset`|Datový typ obsahuje všechny `datetime2` funkce s dalším posunem časového pásma. `datetimeoffset` Posun časového pásma je reprezentován jako [+&#124;-] hh: mm. HH je 2 číslice od 00 do 14, které reprezentují počet hodin v posunu časového pásma. MM je 2 číslice od 00 do 59, které reprezentují počet dalších minut v posunu časového pásma. Formáty času jsou podporovány až 100 nanosekund. Povinný symbol + nebo-označuje, zda je posunutí časového pásma přidáno nebo odečteno od času UTC (univerzální časová souřadnice nebo Greenwichský střední čas) k získání místního času.|  
   
 > [!NOTE]
->  Další informace o používání `Type System Version` – klíčové slovo, naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
+> Další informace o použití `Type System Version` klíčového slova naleznete v tématu. <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>  
   
-## <a name="date-format-and-date-order"></a>Formát data a pořadí v datu  
- Jak analyzuje hodnoty data a času v systému SQL Server závisí nejen na verzi systému typu a verzi serveru, ale také na jazyk a formát výchozí nastavení serveru. Řetězec data, může být nelze rozpoznat, pokud se dotaz provádí na připojení funguje pro formáty data z jednoho jazyka, který používá jiný jazyk a formát data nastavení.  
+## <a name="date-format-and-date-order"></a>Formát data a pořadí data  
+ Způsob, jakým SQL Server analyzují hodnoty data a času, nezávisí pouze na typu verze systému a verzi serveru, ale také na výchozím jazykovém nastavení serveru a formátu. Řetězec kalendářního data, který funguje pro formáty data v jednom jazyku, může být nerozpoznatelný, pokud je dotaz spuštěn pomocí připojení, které používá jiný jazyk a nastavení formátu data.  
   
- Příkaz jazyka Transact-SQL příkaz SET LANGUAGE se implicitně nastaví parametr DATEFORMAT, který určuje pořadí částí data. Příkaz nastavit parametr DATEFORMAT příkazů jazyka Transact-SQL můžete použít na připojení k rozlišení hodnot data podle pořadí částí data v objednávce MDR, DMY, RMD, typy, MYD nebo DYM.  
+ Příkaz jazyka Transact-SQL SET implicitně nastaví parametr DateFormat, který určuje pořadí částí data. Pomocí příkazu Transact-SQL SET parametr DateFormat pro připojení můžete určit hodnoty data řazením částí data v pořadí MDY, DMY, YMD, není, MYD nebo DYM.  
   
- Pokud nezadáte žádné parametr DATEFORMAT pro připojení, SQL Server používá výchozí jazyk přidružený k připojení. Například řetězec data 01/02/03 "je interpretován jako formát MDR (2. ledna 2003) na serveru s nastavením jazyk angličtinu Spojených států a jako DMY (1. února 2003) na serveru s nastavením jazyka britské angličtiny. Rok je určen pomocí systému SQL Server přerušení rok pravidla, která definuje než datum přerušení pro přiřazení hodnoty století. Další informace najdete v tématu [dvě číslici roce přerušení možnost](https://go.microsoft.com/fwlink/?LinkId=120473) v SQL Server Books Online.  
+ Pokud pro připojení nezadáte žádné parametr DateFormat, používá SQL Server výchozí jazyk přidružený k tomuto připojení. Například řetězec data "01/02/03" by byl interpretován jako MDY (2. ledna 2003) na serveru s nastavením jazyka USA angličtinu a jako DMY (1. února 2003) na serveru s nastavením jazyka britské angličtiny. Rok je určen pomocí pravidla pro přerušení roku SQL Server, které definuje datum přerušení pro přiřazení hodnoty století. Další informace najdete v tématu [možnost přerušení dvou číslic v roce](https://go.microsoft.com/fwlink/?LinkId=120473) SQL Server Knihy online.  
   
 > [!NOTE]
->  Formát data typy není podporován při převodu z formátu řetězce na `date`, `time`, `datetime2`, nebo `datetimeoffset`.  
+> Formát data není není podporován při převodu z formátu `date`řetězce na `datetime2`, `time`, nebo `datetimeoffset`.  
   
- Další informace o interpretace data a času v systému SQL Server najdete v tématu [pomocí kalendářní a časová Data](https://go.microsoft.com/fwlink/?LinkID=98361) SQL Server 2008 Books Online.  
+ Další informace o tom, jak SQL Server interpretuje data data a času, najdete v tématu [použití dat data a času](https://go.microsoft.com/fwlink/?LinkID=98361) v SQL Server 2008 Knihy online.  
   
-## <a name="datetime-data-types-and-parameters"></a>Datum/čas typy a parametry  
- Následující výčty jsou přidané do <xref:System.Data.SqlDbType> pro podporu nové datové typy data a času.  
+## <a name="datetime-data-types-and-parameters"></a>Datové typy a parametry typu datum/čas  
+ Následující výčty byly přidány do <xref:System.Data.SqlDbType> pro podporu nových datových typů data a času.  
   
 - `SqlDbType.Date`  
   
@@ -59,25 +59,25 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
   
 - `SqlDbType.DateTimeOffSet`  
 
-Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jednoho z předchozích <xref:System.Data.SqlDbType> výčty. 
+Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pro pomocí jednoho z předchozích <xref:System.Data.SqlDbType> výčtů. 
 
 > [!NOTE]
-> Nelze nastavit `DbType` vlastnost `SqlParameter` k `SqlDbType.Date`.
+> `DbType` Vlastnost`SqlParameter` nelze nastavit na`SqlDbType.Date`hodnotu.
 
- Můžete také zadat typ <xref:System.Data.SqlClient.SqlParameter> obecně tak, že nastavíte <xref:System.Data.SqlClient.SqlParameter.DbType%2A> vlastnost `SqlParameter` objekt ke konkrétní <xref:System.Data.DbType> hodnota výčtu. Následující hodnoty výčtu jsou přidané do <xref:System.Data.DbType> pro podporu `datetime2` a `datetimeoffset` datové typy:  
+ Můžete také určit <xref:System.Data.SqlClient.SqlParameter> typ obecného <xref:System.Data.SqlClient.SqlParameter.DbType%2A> typu nastavením vlastnosti `SqlParameter` objektu na konkrétní <xref:System.Data.DbType> hodnotu výčtu. Následující hodnoty výčtu byly přidány do <xref:System.Data.DbType> pro `datetime2` podporu datových typů a `datetimeoffset` :  
   
 - DbType.DateTime2  
   
 - DbType.DateTimeOffset  
   
- Tyto nové výčty doplnit `Date`, `Time`, a `DateTime` výčty, které existovaly ve starších verzích rozhraní .NET Framework.  
+ Tyto nové výčty doplňují `Date`výčty, `DateTime` `Time`a, které existovaly v dřívějších verzích .NET Framework.  
   
- Typ zprostředkovatele dat .NET Framework parametr objektu je odvozen z rozhraní .NET Framework typ hodnoty parametru objektu nebo z `DbType` parametr objektu. Žádná nová <xref:System.Data.SqlTypes> byly uvedeny datové typy pro podporu nové datové typy data a času. Následující tabulka popisuje mapování mezi SQL Server 2008 datum a čas datových typů a datové typy CLR.  
+ Typ zprostředkovatele dat .NET Framework objektu parametru je odvozen z .NET Frameworkho typu hodnoty objektu Parameter nebo z `DbType` objektu Parameter. Nebyly zavedeny žádné nové <xref:System.Data.SqlTypes> datové typy pro podporu nových datových typů data a času. Následující tabulka popisuje mapování mezi datovými typy data a času SQL Server 2008 a datovými typy CLR.  
   
-|Datový typ SQL serveru|Typ rozhraní .NET Framework|System.Data.SqlDbType|System.Data.DbType|  
+|SQL Server datový typ|Typ rozhraní .NET Framework|System.Data.SqlDbType|System.Data.DbType|  
 |--------------------------|-------------------------|---------------------------|------------------------|  
 |Datum|System.DateTime|Datum|Datum|  
-|čas|System.TimeSpan|Time|Time|  
+|čas|System. TimeSpan|Time|Time|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
 |DateTimeOffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
 |datetime|System.DateTime|DateTime|DateTime|  
@@ -88,23 +88,23 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jed
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Získá nebo nastaví, zda je hodnota s možnou hodnotou Null. Pokud je hodnota null parametru posíláte na server, je třeba zadat <xref:System.DBNull>, spíše než `null` (`Nothing` v jazyce Visual Basic). Další informace o databázi hodnoty Null, naleznete v tématu [zpracování hodnot Null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md).|  
-|<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|Získá nebo nastaví maximální počet číslic, na které se používá k reprezentování hodnota. Toto nastavení se ignoruje pro datové typy data a času.|  
-|<xref:System.Data.SqlClient.SqlParameter.Scale%2A>|Získá nebo nastaví počet desetinných míst, na které je časová část hodnoty pro `Time`, `DateTime2`, a `DateTimeOffset`. Výchozí hodnota je 0, což znamená, že skutečné škálování je odvozen z hodnoty a odeslat na server.|  
-|<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Ignorovat pro datové typy data a času.|  
+|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Získává nebo nastavuje, jestli je hodnota null. Když odešlete hodnotu parametru s hodnotou null na server, je nutné zadat <xref:System.DBNull> `null` místo (`Nothing` v Visual Basic). Další informace o hodnotách null databáze naleznete v tématu [zpracování hodnot null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md).|  
+|<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|Získá nebo nastaví maximální počet číslic, které se použijí k reprezentaci hodnoty. Toto nastavení se ignoruje u datových typů data a času.|  
+|<xref:System.Data.SqlClient.SqlParameter.Scale%2A>|Získá nebo nastaví počet desetinných míst, na které se vyřeší časová část hodnoty pro `Time`, `DateTime2`a `DateTimeOffset`. Výchozí hodnota je 0, což znamená, že skutečné měřítko je odvozeno od hodnoty a odesláno na server.|  
+|<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Ignoruje se pro datové typy data a času.|  
 |<xref:System.Data.SqlClient.SqlParameter.Value%2A>|Získá nebo nastaví hodnotu parametru.|  
 |<xref:System.Data.SqlClient.SqlParameter.SqlValue%2A>|Získá nebo nastaví hodnotu parametru.|  
   
 > [!NOTE]
->  Vyvolá výjimku časové hodnoty, které jsou menší než nula nebo větší než nebo roven 24 hodin <xref:System.ArgumentException>.  
+> Hodnoty času, které jsou menší než nula nebo větší než nebo rovny 24 hodinám, <xref:System.ArgumentException>budou vyvolat.  
   
-### <a name="creating-parameters"></a>Vytváří se parametry  
- Můžete vytvořit <xref:System.Data.SqlClient.SqlParameter> objektu pomocí jeho konstruktoru, nebo jejím přidáním na <xref:System.Data.SqlClient.SqlCommand> <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce voláním `Add` metodu <xref:System.Data.SqlClient.SqlParameterCollection>. `Add` Metoda vezme jako vstupní argumenty konstruktoru nebo existující objekt parametru.  
+### <a name="creating-parameters"></a>Vytváření parametrů  
+ Můžete <xref:System.Data.SqlClient.SqlParameter> vytvořit objekt pomocí jeho konstruktoru nebo jeho přidáním <xref:System.Data.SqlClient.SqlCommand> <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> do kolekce voláním `Add` metody <xref:System.Data.SqlClient.SqlParameterCollection>. `Add` Metoda provede jako vstup buď argumenty konstruktoru, nebo existující objekt parametru.  
   
- Další části v tomto tématu obsahují příklady toho, jak zadat datum a čas parametry. Další příklady práce s parametry, naleznete v tématu [parametry konfigurace a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md) a [parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
+ Následující části tohoto tématu obsahují příklady, jak zadat parametry data a času. Další příklady práce s parametry najdete v tématu [Konfigurace parametrů a datových typů parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md) a [parametrů DataAdapter](../../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
   
-### <a name="date-example"></a>Příklad datum  
- Následující fragment kódu ukazuje, jak určit `date` parametru.  
+### <a name="date-example"></a>Příklad data  
+ Následující fragment kódu ukazuje, jak zadat `date` parametr.  
   
 ```csharp  
 SqlParameter parameter = new SqlParameter();  
@@ -120,8 +120,8 @@ parameter.SqlDbType = SqlDbType.Date
 parameter.Value = "2007/12/1"  
 ```  
   
-### <a name="time-example"></a>Příklad čas  
- Následující fragment kódu ukazuje, jak určit `time` parametru.  
+### <a name="time-example"></a>Příklad času  
+ Následující fragment kódu ukazuje, jak zadat `time` parametr.  
   
 ```csharp  
 SqlParameter parameter = new SqlParameter();  
@@ -138,7 +138,7 @@ parameter.Value = DateTime.Parse("23:59:59").TimeOfDay;
 ```  
   
 ### <a name="datetime2-example"></a>Příklad Datetime2  
- Následující fragment kódu ukazuje, jak určit `datetime2` parametr s částmi datum a čas.  
+ Následující fragment kódu ukazuje, jak určit `datetime2` parametr s částmi data a času.  
   
 ```csharp  
 SqlParameter parameter = new SqlParameter();  
@@ -154,8 +154,8 @@ parameter.SqlDbType = SqlDbType.DateTime2
 parameter.Value = DateTime.Parse("1666-09-02 1:00:00");  
 ```  
   
-### <a name="datetimeoffset-example"></a>Příklad DateTimeOffSet  
- Následující fragment kódu ukazuje, jak určit `DateTimeOffSet` datum, čas a posun časového pásma z 0.  
+### <a name="datetimeoffset-example"></a>Datový příklad DateTimeOffSet  
+ Následující fragment kódu ukazuje, jak zadat `DateTimeOffSet` parametr s datem, časem a posunem časového pásma 0.  
   
 ```csharp  
 SqlParameter parameter = new SqlParameter();  
@@ -172,7 +172,7 @@ parameter.Value = DateTimeOffset.Parse("1666-09-02 1:00:00+0");
 ```  
   
 ### <a name="addwithvalue"></a>AddWithValue  
- Parametry lze také zadat pomocí `AddWithValue` metodu <xref:System.Data.SqlClient.SqlCommand>, jak je znázorněno v následujícím fragmentu kódu. Ale `AddWithValue` metoda neumožňuje zadat <xref:System.Data.SqlClient.SqlParameter.DbType%2A> nebo <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> parametru.  
+ Parametry lze také zadávat pomocí `AddWithValue` metody <xref:System.Data.SqlClient.SqlCommand>, jak je znázorněno v následujícím fragmentu kódu. Metoda ale neumožňuje <xref:System.Data.SqlClient.SqlParameter.DbType%2A> zadat nebo <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> pro parametr. `AddWithValue`  
   
 ```csharp  
 command.Parameters.AddWithValue(   
@@ -184,64 +184,64 @@ command.Parameters.AddWithValue( _
     "@date", DateTimeOffset.Parse("16660902"))  
 ```  
   
- `@date` Parametr namapovat na `date`, `datetime`, nebo `datetime2` datový typ na serveru. Při práci s novými `datetime` datové typy, musíte explicitně nastavit parametr <xref:System.Data.SqlDbType> vlastnost na datový typ instance. Pomocí <xref:System.Data.SqlDbType.Variant> nebo implicitně zadáním hodnot parametrů může způsobit problémy se zpětnou kompatibilitu s `datetime` a `smalldatetime` datové typy.  
+ Parametr může `datetime` `datetime2` být namapován na datový typ ,nebonaserveru.`date` `@date` Při práci s novými `datetime` datovými typy musíte explicitně nastavit <xref:System.Data.SqlDbType> vlastnost parametru na datový typ instance. Použití <xref:System.Data.SqlDbType.Variant> nebo implicitní zadání hodnot parametrů může způsobit problémy s zpětnou kompatibilitou `datetime` s datovými `smalldatetime` typy a.  
   
- Následující tabulka uvádí, které `SqlDbTypes` jsou odvozeny z jaké typy CLR:  
+ Následující tabulka ukazuje, které `SqlDbTypes` typy CLR jsou odvozeny:  
   
-|Typ CLR|Odvozené SqlDbType|  
+|Typ CLR|Odvozená SqlDbType|  
 |--------------|------------------------|  
 |DateTime|SqlDbType.DateTime|  
 |TimeSpan|SqlDbType.Time|  
 |DateTimeOffset|SqlDbType.DateTimeOffset|  
   
-## <a name="retrieving-date-and-time-data"></a>Načítají se kalendářní a časová Data  
- Následující tabulka popisuje metody, které slouží k načtení hodnoty data a času v systému SQL Server 2008.  
+## <a name="retrieving-date-and-time-data"></a>Načítání dat data a času  
+ Následující tabulka popisuje metody, které slouží k načtení hodnot data a času SQL Server 2008.  
   
 |SqlClient – metoda|Popis|  
 |----------------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|Načte hodnotu zadaného sloupce jako <xref:System.DateTime> struktury.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetDateTimeOffset%2A>|Načte hodnotu zadaného sloupce jako <xref:System.DateTimeOffset> struktury.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificFieldType%2A>|Vrátí typ, který je základní typ pro pole specifické pro zprostředkovatele. Vrátí stejné typy jako `GetFieldType` pro nové typy data a času.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValue%2A>|Načte hodnotu pro určený sloupec. Vrátí stejné typy jako `GetValue` pro nové typy data a času.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValues%2A>|Načte hodnoty v určeném poli.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetSqlString%2A>|Načte se hodnota sloupce jako <xref:System.Data.SqlTypes.SqlString>. <xref:System.InvalidCastException> Nastane, pokud data nelze vyjádřen jako `SqlString`.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetSqlValue%2A>|Načte data sloupce jako svou výchozí hodnotu `SqlDbType`. Vrátí stejné typy jako `GetValue` pro nové typy data a času.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetSqlValues%2A>|Načte hodnoty v určeném poli.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetString%2A>|Pokud Type System Version nastavena na SQL Server 2005, načte se hodnota sloupce jako řetězec. <xref:System.InvalidCastException> Nastane, pokud data nelze vyjádřen jako řetězec.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetTimeSpan%2A>|Načte hodnotu zadaného sloupce jako <xref:System.TimeSpan> struktury.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>|Načte hodnotu zadaného sloupce jako jeho základní typ CLR.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetValues%2A>|Načte hodnoty sloupců v poli.|  
-|<xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A>|Vrátí <xref:System.Data.DataTable> , který popisuje metadata sady výsledků dotazu.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|Načte zadanou hodnotu sloupce jako <xref:System.DateTime> strukturu.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetDateTimeOffset%2A>|Načte zadanou hodnotu sloupce jako <xref:System.DateTimeOffset> strukturu.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificFieldType%2A>|Vrátí typ, který je pro pole základní typ specifický pro poskytovatele. Vrátí stejné typy jako `GetFieldType` pro nové typy data a času.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValue%2A>|Načte hodnotu zadaného sloupce. Vrátí stejné typy jako `GetValue` pro nové typy data a času.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValues%2A>|Načte hodnoty v zadaném poli.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetSqlString%2A>|Načte hodnotu sloupce jako <xref:System.Data.SqlTypes.SqlString>. Dojde k tomu v případě, že data nelze vyjádřit `SqlString`jako. <xref:System.InvalidCastException>|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetSqlValue%2A>|Načte data sloupce jako výchozí `SqlDbType`. Vrátí stejné typy jako `GetValue` pro nové typy data a času.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetSqlValues%2A>|Načte hodnoty v zadaném poli.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetString%2A>|Načte hodnotu sloupce jako řetězec, pokud je systémová verze typu nastavená na SQL Server 2005. <xref:System.InvalidCastException> Dojde k tomu v případě, že data nelze vyjádřit jako řetězec.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetTimeSpan%2A>|Načte zadanou hodnotu sloupce jako <xref:System.TimeSpan> strukturu.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>|Načte zadanou hodnotu sloupce jako svůj základní typ CLR.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetValues%2A>|Načte hodnoty sloupce v poli.|  
+|<xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A>|<xref:System.Data.DataTable> Vrátí, který popisuje metadata sady výsledků dotazu.|  
   
 > [!NOTE]
->  Nové datum a čas `SqlDbTypes` nejsou podporovány pro kód, který je spouštěn v procesu v systému SQL Server. Bude vyvolána výjimka, pokud jeden z těchto typů je předán serveru.  
+> Nové datum a čas `SqlDbTypes` nejsou podporovány pro kód, který je spuštěn v procesu SQL Server. Pokud je jeden z těchto typů předán serveru, bude vyvolána výjimka.  
   
-## <a name="specifying-date-and-time-values-as-literals"></a>Určení hodnoty data a času jako literály  
- Můžete určit datum a čas datové typy s použitím různých formátech různých řetězcového literálu, který SQL Server pak vyhodnotí za běhu, převod na datum/čas vnitřního struktury. SQL Server rozpozná data pro datum a čas, který je uzavřen v jednoduchých uvozovkách ('). Následující příklady ukazují některé formáty:  
+## <a name="specifying-date-and-time-values-as-literals"></a>Zadání hodnot data a času jako literálů  
+ Datové typy data a času lze zadat pomocí různých různých formátů řetězcového literálu, které SQL Server poté vyhodnocovány v době běhu a jejich převodem do interních struktur data a času. SQL Server rozpoznává data data a času uzavřená v jednoduchých uvozovkách ('). Následující příklady ukazují některé formáty:  
   
-- Abecední datum formáty, jako například `'October 15, 2006'`.  
+- Formáty abecedního data, například `'October 15, 2006'`.  
   
-- Číselná data formátů, jako například `'10/15/2006'`.  
+- Číselné formáty kalendářních dat, `'10/15/2006'`například.  
   
-- Oddělené formáty řetězců, jako například `'20061015'`, které by být interpretován jako 15. října 2006, pokud používáte formát data ISO.  
+- Neoddělené formáty řetězců, například `'20061015'`, které by byly interpretovány jako 15. října 2006, pokud používáte standardní formát data standardu ISO.  
   
 > [!NOTE]
->  Úplnou dokumentaci najdete pro všechny formáty řetězcového literálu a dalších funkcí datové typy data a času v SQL Server Books Online.  
+> Kompletní dokumentaci pro všechny řetězcové literálové formáty a další funkce datových typů data a času můžete najít v SQL Server Knihy online.  
   
- Vyvolá výjimku časové hodnoty, které jsou menší než nula nebo větší než nebo roven 24 hodin <xref:System.ArgumentException>.  
+ Hodnoty času, které jsou menší než nula nebo větší než nebo rovny 24 hodinám, <xref:System.ArgumentException>budou vyvolat.  
   
-## <a name="resources-in-sql-server-2008-books-online"></a>Prostředky v SQL Server 2008 Books Online  
- Další informace o práci s hodnotami data a času v systému SQL Server 2008 najdete v následujících zdrojích v SQL Server 2008 Books Online.  
+## <a name="resources-in-sql-server-2008-books-online"></a>Prostředky v SQL Server 2008 Knihy online  
+ Další informace o práci s hodnotami data a času v SQL Server 2008 naleznete v následujících zdrojích SQL Server 2008 Knihy online.  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Datum a čas Data typy a funkce (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98360)|Poskytuje přehled příkazů jazyka Transact-SQL data a času datové typy a funkce.|  
-|[Pomocí kalendářní a časová Data](https://go.microsoft.com/fwlink/?LinkId=98361)|Poskytuje informace o datum a čas datové typy a funkce a příklady jejich použití.|  
-|[Data Types (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje datové typy systému SQL Server 2008.|  
+|[Datové typy a funkce data a času (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98360)|Poskytuje přehled všech datových typů a funkcí data a času v jazyce Transact-SQL.|  
+|[Použití dat data a času](https://go.microsoft.com/fwlink/?LinkId=98361)|Poskytuje informace o datových typech a funkcích data a času a příklady jejich použití.|  
+|[Datové typy (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje systémové datové typy v SQL Server 2008.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
 - [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
 - [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

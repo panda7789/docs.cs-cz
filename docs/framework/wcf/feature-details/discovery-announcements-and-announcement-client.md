@@ -2,29 +2,29 @@
 title: Oznámení zjišťování a klient oznámení
 ms.date: 03/30/2017
 ms.assetid: 426c6437-f8d2-4968-b23a-18afd671aa4b
-ms.openlocfilehash: c32aca5e6deab01423d61c516ee924d00bc041ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74362343dc1fd5df6d1b91537f7fed5bc08f8fe0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856582"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968814"
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>Oznámení zjišťování a klient oznámení
-Funkce zjišťování WCF umožňuje součásti oznamujeme jejich dostupnost. Pokud nakonfigurované k tomu, odešle služba Hello a Bye oznámení. Klienti ani jiné součásti může naslouchat zprávám takové oznámení a na jejich základě reagovat. To poskytuje alternativní metoda pro klienty, je potřeba vědět služby. Funkce oznámení má několik využití, například pokud služby vstupu a opuštění síti často, oznámení může být lepší alternativou než hledání služeb. S tímto přístupem snižuje síťový provoz a klient se můžou seznámit přítomnost nebo odeslání služby co nejdříve po přijetí oznámení.  
+Funkce zjišťování WCF umožňuje součástem oznamovat dostupnost. Pokud je tato služba nakonfigurovaná, pošle vám oznámení Hello a bye. Klienti nebo jiné součásti mohou naslouchat takovým zprávám oznámení a reagovat na ně. To poskytuje alternativní způsob, jak mohou klienti znát služby. Funkce oznámení má několik použití, například pokud služba zadává a opouští síť často, může být oznámení lepší alternativou než hledání služeb. S tímto přístupem se snižuje síťový provoz a klient se může dozvědět o přítomnosti nebo odchodu služby hned po přijetí oznámení.  
   
 ## <a name="discovery-announcements"></a>Oznámení zjišťování  
- Když služba nakonfigurována pro oznámení týkající se připojí k síti a stane zjistitelné, odešle do služby zprávu Hello oznamujeme dostupnost naslouchání klientů. Zpráva obsahuje spojené obory a související informace o službě, jako je například její smlouvy, adresa koncového bodu zjišťování. Můžete určit, kde je odeslána zpráva oznámení s <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> třídy. Pokud je koncový bod oznámení <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> potom Hello a Bye jsou odpovídajícím způsobem vícesměrového vysílání, nebo pokud je koncový bod oznámení jednosměrového vysílání, zprávy se odešlou přímo na zadaný koncový bod.  
+ Když je služba nakonfigurovaná pro oznámení připojená k síti a může být zjistitelná, pošle zprávu Hello s oznámením o jeho dostupnosti pro naslouchající klienty. Zpráva obsahuje informace o službě související se zjišťováním, jako je například její smlouva, adresa koncového bodu a přidružené obory. Můžete určit, kam se zpráva oznámení pošle s <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> třídou. Pokud je <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> koncovým bodem oznámení, že Hello a bye jsou vhodné pro vícesměrové vysílání, nebo pokud je koncový bod oznámení jednosměrovým vysíláním, zprávy se odesílají přímo do určeného koncového bodu.  
   
 > [!NOTE]
->  Oznámení jsou odesílána při otevření hostitele služby a zavře. Pokud tato volání nebylo dokončeno správně nemusí posílat zprávy oznámení. Například pokud služba chyb stránkování, pak nejsou odesílány zprávy oznámení Bye.  
+> Oznámení se odesílají při otevření a ukončení hostitele služby. Pokud tato volání nejsou správně dokončena, zpráva oznámení nemusí být odeslána. Například pokud dojde k chybám služby, zpráva oznámení bye se nepošle.  
   
 > [!TIP]
->  Můžete přizpůsobit funkce oznámení umožňuje posílat oznámení pokaždé, když zvolíte.  
+>  Můžete přizpůsobit funkce oznámení, což vám umožní posílat oznámení, kdykoli si zvolíte.  
   
- [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] definuje <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> jako standardní koncové body k povolení služeb a klientů snadno odesílat Hello a Bye oznámení.  
+ [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]definuje koncové body <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> standard a,kteréumožňujíslužbámaklientůmsnadnoodesílatoznámeníHelloabye.<xref:System.ServiceModel.Discovery.AnnouncementEndpoint>  
   
-### <a name="announcements-on-the-service"></a>Oznámení služby  
- Pokud chcete nakonfigurovat službu pro odeslání oznámení, přidat <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> pomocí koncového bodu oznámení. Následující příklad ukazuje, jak programově přidat toto chování k hostiteli služby. V tomto příkladu `UdpAnnouncementEndpoint`, což znamená, že jsou oznámení vícesměrového vysílání do umístění určeného proměnnou tohoto standardního koncového bodu.  
+### <a name="announcements-on-the-service"></a>Oznámení na službě  
+ Pokud chcete službu nakonfigurovat tak, aby odesílala oznámení <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> , přidejte s koncovým bodem oznámení. Následující příklad ukazuje, jak programově přidat toto chování k hostiteli služby. V `UdpAnnouncementEndpoint`tomto příkladu se používá, což znamená, že oznámení jsou vícesměrové vysílání do umístění určeného tímto standardním koncovým bodem.  
   
 ```  
 ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();
@@ -32,7 +32,7 @@ serviceDiscoveryBehavior.AnnouncementEndpoints.Add(new UdpAnnouncementEndpoint()
 serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);
 ```  
   
- Chování lze nastavit v konfiguračním souboru i, jak je znázorněno v následujícím příkladu.  
+ Chování lze nakonfigurovat také v konfiguračním souboru, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <services>
@@ -55,10 +55,10 @@ serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);
 </behaviors>  
 ```  
   
- V předchozích příkladech konfigurace automaticky odesílat zprávy oznámení ve službě. Můžete také odeslat oznámení zprávy explicitně pomocí <xref:System.ServiceModel.Discovery.AnnouncementClient> třídy.  
+ Předchozí příklady nakonfigurují službu tak, aby automaticky odesílala oznamovací zprávy. Zprávy oznámení můžete také odesílat explicitně pomocí <xref:System.ServiceModel.Discovery.AnnouncementClient> třídy.  
   
-### <a name="announcements-on-the-client"></a>Oznámení na straně klienta  
- Klientská aplikace musí být hostitelem služby oznámení můžete reagovat na zprávy Hello a Bye a přihlaste se k odběru <xref:System.ServiceModel.Discovery.AnnouncementService.OnlineAnnouncementReceived> a <xref:System.ServiceModel.Discovery.AnnouncementService.OfflineAnnouncementReceived> události. Následující příklad ukazuje, jak to provést.  
+### <a name="announcements-on-the-client"></a>Oznámení na klientovi  
+ Klientská aplikace musí hostovat službu oznámení, aby reagovala na zprávy Hello a bye a aby se <xref:System.ServiceModel.Discovery.AnnouncementService.OnlineAnnouncementReceived> přihlásila k odběru událostí a <xref:System.ServiceModel.Discovery.AnnouncementService.OfflineAnnouncementReceived> . Následující příklad ukazuje, jak to provést.  
   
 ```  
 // Create an AnnouncementService instance
@@ -80,7 +80,7 @@ using (ServiceHost announcementServiceHost = new ServiceHost(announcementService
 }  
 ```  
   
- Při doručení zprávy do Hello nebo Bye, lze použít koncový bod metadat zjišťování prostřednictvím <xref:System.ServiceModel.Discovery.AnnouncementEventArgs> jak je znázorněno v následujícím příkladu.  
+ Když se přijme zpráva Hello nebo Bye, můžete získat přístup k metadatům zjišťování koncových bodů prostřednictvím <xref:System.ServiceModel.Discovery.AnnouncementEventArgs> , jak je znázorněno v následujícím příkladu.  
   
 ```  
 static void OnOnlineEvent(object sender, AnnouncementEventArgs e)

@@ -2,21 +2,21 @@
 title: <timeOuts>
 ms.date: 03/30/2017
 ms.assetid: 7fccd436-b326-48ec-8de1-c16817a09e0d
-ms.openlocfilehash: b6ae5faa2dd2ffef9669a0245a75227b0f669cf7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b159488efa2a80a9dea625e4c6dfe2f215dfc457
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758220"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939190"
 ---
-# <a name="timeouts"></a>\<vypršení časových limitů >
-Představuje prvek konfigurace, který určuje dobu hostitel služby otevřít nebo zavřít.  
+# <a name="timeouts"></a>\<Časové limity >
+Představuje prvek konfigurace, který určuje časový interval, po který může hostitel služby otevřít nebo zavřít.  
   
  \<system.ServiceModel>  
-\<client>  
+\<> klienta  
 \<endpoint>  
 \<host>  
-\<vypršení časových limitů >  
+\<Časové limity >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,8 +32,8 @@ Představuje prvek konfigurace, který určuje dobu hostitel služby otevřít n
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`closeTimeout`|A <xref:System.TimeSpan> hodnota, která určuje časový interval povolený pro hostitel služby zavřít.|  
-|`openTimeout`|A <xref:System.TimeSpan> hodnota, která určuje časový interval povolený pro hostitel služby otevřít.|  
+|`closeTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval, po který může hostitel služby zavřít.|  
+|`openTimeout`|<xref:System.TimeSpan> Hodnota, která určuje časový interval, po který může hostitel služby otevřít.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,10 +42,10 @@ Představuje prvek konfigurace, který určuje dobu hostitel služby otevřít n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Konfigurace element, který určuje nastavení pro hostitele služby.|  
+|[\<host>](host.md)|Prvek konfigurace, který určuje nastavení pro hostitele služby.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>
-- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+- [Hostování](../../../wcf/feature-details/hosting.md)

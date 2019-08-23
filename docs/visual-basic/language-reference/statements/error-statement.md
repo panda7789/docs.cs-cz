@@ -10,12 +10,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-ms.openlocfilehash: 8ac7cee2f9959bc75df165d00d3a0a67e1dd9af0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7b926214d3be7f5f57783a8599acf1bb1042f956
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982394"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944447"
 ---
 # <a name="error-statement"></a>Error – příkaz
 Simuluje výskyt chyby.  
@@ -28,29 +28,29 @@ Error errornumber
   
 ## <a name="parts"></a>Součásti  
  `errornumber`  
- Povinný parametr. Může být libovolné platné číslo chyby.  
+ Povinný parametr. Může to být jakékoli platné číslo chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- `Error` Příkaz je podporován z důvodu zpětné kompatibility. V novém kódu, zejména při vytváření objektů, použijte `Err` objektu `Raise` metoda vygeneruje chyby za běhu.  
+ `Error` Příkaz se podporuje kvůli zpětné kompatibilitě. V novém kódu, zejména při vytváření objektů, použijte `Err` `Raise` metodu objektu pro generování běhových chyb.  
   
- Pokud `errornumber` je definován `Error` příkaz volá obslužná rutina chyb po vlastnosti `Err` objektu jsou přiřazeny následující výchozí hodnoty:  
+ Pokud `errornumber` je definován `Error` , příkaz zavolá obslužnou rutinu chyby `Err` poté, co jsou vlastnosti objektu přiřazeny následující výchozí hodnoty:  
   
 |Vlastnost|Value|  
 |--------------|-----------|  
-|`Number`|Hodnota zadaná jako argument `Error` příkaz. Může být libovolné platné číslo chyby.|  
-|`Source`|Název aktuálního projektu jazyka Visual Basic.|  
-|`Description`|Výraz odpovídající návratovou hodnotu z řetězce `Error` funkce pro zadaný rozbočovač `Number`, pokud existuje tento řetězec. Pokud řetězec neexistuje, `Description` obsahuje řetězec nulové délky ("").|  
-|`HelpFile`|Plně kvalifikovaný jednotky, cestu a název souboru odpovídající souboru nápovědy jazyka Visual Basic.|  
-|`HelpContext`|Odpovídající Nápověda jazyka Visual Basic ID kontextu pro příslušné chyby do souboru `Number` vlastnost.|  
-|`LastDLLError`|Nula.|  
+|`Number`|Hodnota zadaná jako argument `Error` into příkazu Může to být jakékoli platné číslo chyby.|  
+|`Source`|Název aktuálního projektu Visual Basic.|  
+|`Description`|Řetězcový výraz odpovídající vrácené hodnotě `Error` funkce pro zadanou `Number`hodnotu, pokud tento řetězec existuje. Pokud řetězec neexistuje, `Description` obsahuje řetězec s nulovou délkou ("").|  
+|`HelpFile`|Plně kvalifikovaná jednotka, cesta a název souboru pro příslušný soubor s Visual Basic Help.|  
+|`HelpContext`|Příslušné ID kontextového souboru Help Visual Basic pro chybu odpovídající `Number` vlastnosti.|  
+|`LastDLLError`|Vynulujte.|  
   
- Pokud neexistuje žádná obslužná rutina chyby, nebo pokud je zapnuta žádná chybová zpráva se vytvoří a zobrazí z `Err` vlastností objektu.  
+ Pokud neexistují žádné obslužné rutiny chyb nebo pokud není žádná povolená, vytvoří se chybová zpráva, která `Err` se zobrazí z vlastností objektu.  
   
 > [!NOTE]
->  Některé hostování aplikací Visual Basic nelze vytvořit objekty. V dokumentaci k hostitelské aplikace k určení, zda je možné vytvořit tříd a objektů.  
+> Některé hostitelské aplikace Visual Basic nemůžou vytvářet objekty. Informace o tom, zda může vytvořit třídy a objekty, naleznete v dokumentaci hostitelské aplikace.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `Error` příkaz k vygenerování číslo chyby 11.  
+ V tomto příkladu se `Error` pomocí příkazu vygeneruje chybová zpráva číslo 11.  
   
 ```  
 On Error Resume Next   ' Defer error handling.  
@@ -58,9 +58,9 @@ Error 11   ' Simulate the "Division by zero" error.
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+ **Hosting** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Shromážděním** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

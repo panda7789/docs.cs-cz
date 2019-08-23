@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: e79def513637937262d00b0edb1b0f7676fd120b
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: c06fca8b83638fb47bedb21863cb9b200cd211f3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300807"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927733"
 ---
-# <a name="clear-element-for-configsections"></a>\<Vymazat > – element pro \<configSections >
+# <a name="clear-element-for-configsections"></a>\<Clear – element > \<pro configSections >
 
-Vymaže všechny dříve definované oddíly a skupin oddílů.
+Vymaže všechny dříve definované oddíly a skupiny oddílů.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<Vymazat >**
 
 ## <a name="syntax"></a>Syntaxe
@@ -34,13 +34,13 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **name**  | Požadovaný atribut.<br><br>Určuje název sekce nebo skupiny části odebrat. |
+| **name**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [configSections – > element  **\<** ](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -52,9 +52,9 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje způsob použití  **\<vymazat >** prvku v konfiguračním souboru aplikace, zrušte dříve definované v části konfigurační soubor počítače.
+Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak pomocí  **\<elementu Clear >** v konfiguračním souboru aplikace vymazat oddíly dříve definované v konfiguraci počítače. souborů.
 
-Následující počítače konfigurační soubor kód deklaruje dvě části  **\<sampleSection >** a  **\<anotherSampleSection >** , které jsou přečteny před aplikace konfigurační soubor:
+Následující kód konfiguračního souboru počítače deklaruje dva oddíly,  **\<sampleSection >** a  **\<> anotherSampleSection**, které jsou čteny před konfiguračním souborem aplikace:
 
 ```xml
 <!-- Machine.config file -->
@@ -71,7 +71,7 @@ Následující počítače konfigurační soubor kód deklaruje dvě části  **
 </configuration>
 ```
 
-Následující kód souboru konfigurace aplikace vymaže všechny dříve deklarovaný oddíly. Aplikaci nejde použít nebo načíst nastavení v některém z části, které byly deklarovány v konfiguračním souboru počítače. Ale můžete použít nastavení z  **\<anotherSection >** vzhledem k tomu, že jde o po  **\<vymazat >** elementu.
+Následující kód konfiguračního souboru aplikace vymaže všechny dříve deklarované oddíly. Aplikace nemůže použít nebo načíst nastavení v některé z oddílů, které byly deklarovány v konfiguračním souboru počítače. Může však použít nastavení z  **\<anotherSection >**  **\<** , protože se nachází po elementu Clear >.
 
 ```xml
 <!-- Application configuration file -->
@@ -89,8 +89,8 @@ Následující kód souboru konfigurace aplikace vymaže všechny dříve deklar
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

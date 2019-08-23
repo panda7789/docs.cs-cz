@@ -2,25 +2,25 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: f644d0098ddb09ee115c6d6429ce7b005ee0b77a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8512dbddc5d27e75d98d281c0bdccf142a113d7f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650105"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961729"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
-Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou součástí procesu zjišťování. Rozšíření zjišťování zpráv pomocí zabezpečení zmírní různé typy útoků (zpráva změnou, útok DOS, znovu přehrát, falšování identity). Tato ukázka implementuje vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](https://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](https://go.microsoft.com/fwlink/?LinkId=179677).  
+Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování, byly zabezpečené. Zvýšením počtu zpráv zjišťování se zabezpečením sníží riziko různých typů útoků (Změna zprávy, odmítnutí služby, opětovné přehrání, falšování identity). Tato ukázka implementuje vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery). Ukázka podporuje [specifikaci zjišťování 2005](https://go.microsoft.com/fwlink/?LinkId=177912) i [verzi 1,1](https://go.microsoft.com/fwlink/?LinkId=179677).  
   
- Vlastní kanál se použije nad rámec zásobníku existující kanál pro koncové body pro zjišťování a oznámení. Podpis záhlaví tímto způsobem, platí pro všechny zprávy odeslané. Podpis se neověřuje na přijaté zprávy a když neodpovídá nebo zprávy podpisy nejsou, se zahodí zprávy. Ukázka používá k podepisování a ověření zprávy, certifikáty.  
+ Vlastní kanál se použije na začátku existujícího zásobníku kanálů pro zjišťování a koncové body oznámení. Tímto způsobem se pro každou odeslanou zprávu použije záhlaví podpisu. Podpis se ověřuje u přijatých zpráv, a pokud se neshoduje nebo pokud zprávy nemají podpis, zprávy se zahozeny. Ukázka používá certifikáty, aby bylo možné podepsat a ověřit zprávy.  
   
-## <a name="discussion"></a>Diskuse  
- WCF je velmi rozšiřitelný a umožňuje uživatelům možnost přizpůsobit kanálů podle potřeby. Ukázka implementuje element bezpečnou vazbu a zjišťování, který vytváří zabezpečené kanály. Zabezpečené kanály použít a ověřit podpisy zpráv a se použije nad rámec aktuálního zásobníku.  
+## <a name="discussion"></a>Účely  
+ WCF je velmi rozšiřitelné a umožňuje uživatelům přizpůsobit kanály podle potřeby. Ukázka implementuje zabezpečený prvek vazby zjišťování, který vytváří zabezpečené kanály. Zabezpečené kanály používají a ověřují podpisy zpráv a jsou použity na začátku aktuálního zásobníku.  
   
- Element vazby zabezpečení sestavení objekty pro vytváření zabezpečeného kanálu a moduly pro naslouchání kanálů.  
+ Element Secure Binding vytváří objekty pro vytváření zabezpečených kanálů a naslouchací procesy kanálu.  
   
 ## <a name="secure-channel-factory"></a>Objekt pro vytváření zabezpečeného kanálu  
- Objekt pro vytváření zabezpečeného kanálu vytvoří výstup nebo duplexní kanály, které aplikacím dodávají compact podpis záhlaví zpráv. Zpráv pro zachování co nejmenší compact podpis formátu se používá. V následujícím příkladu se zobrazí strukturu compact podpis.  
+ Objekt pro vytváření zabezpečeného kanálu vytváří výstupní nebo duplexní kanály, které přidávají kompaktní podpis do záhlaví zpráv. Chcete-li zachovat zprávy co nejmenším možným způsobem, je použit formát kompaktního podpisu. V následujícím příkladu je uvedena struktura kompaktního podpisu.  
   
 ```xml  
 <d:Security ... >   
@@ -35,42 +35,42 @@ Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou
 ```  
   
 > [!NOTE]
->  `PrefixList` Se přidal ve verzi protokolu zjišťování 2008.  
+> `PrefixList` Byla přidána do protokolu verze zjišťování 2008.  
   
- Vypočítat podpis, určuje ukázku rozšířené podpis položky. Podpis XML (`SignedInfo`) je vytvořený pomocí `ds` předponu oboru názvů, podle potřeb specifikaci WS-Discovery. Text a všechny hlavičky v zjišťování a adresování obory názvů jsou odkazovány v signatuře, aby nemohlo být manipulováno s. Každý prvek je transformovat pomocí exkluzivní převodu do kanonického tvaru (http://www.w3.org/2001/10/xml-exc-c14n# ), a pak je vypočítán hodnotu hodnotou hash SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). Na základě všechny odkazované elementy a jejich hodnoty ověřování algoritmem digest, hodnota podpisu je vypočítán s použitím algoritmu RSA (http://www.w3.org/2000/09/xmldsig#rsa-sha1 ).  
+ Pro výpočet podpisu ukázka určuje rozšířené položky podpisu. Signatura XML (`SignedInfo`) se vytvoří `ds` pomocí předpony oboru názvů, jak vyžaduje specifikace WS-Discovery. V podpisu je odkazováno tělo a všechny hlavičky v názvech oborů zjišťování a adresování, takže je nelze považovat za neoprávněně. Každý odkazovaný element je transformován pomocí exkluzivního kanonikalizace (http://www.w3.org/2001/10/xml-exc-c14n# ) a pak je vypočítána hodnota digest SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). V závislosti na všech odkazovaných prvcích a jejich hodnotách Digest se hodnota signatury vypočítá pomocí algoritmu http://www.w3.org/2000/09/xmldsig#rsa-sha1 RSA ().  
   
- Zprávy jsou podepsané certifikátem zadaného klienta. Umístění úložiště, název a název subjektu certifikátu musí zadat při vytváření elementu vazby. `KeyId` Compact podpis představuje identifikátor klíče podpisu tokenu a je předmět klíč identifikátor (identifikátor klíče subjektu) podpisového tokenu nebo (Pokud identifikátor klíče subjektu neexistuje) hodnotu hash SHA-1 podpisového tokenu veřejného klíče.  
+ Zprávy jsou podepsány pomocí certifikátu zadaného klientem. Při vytvoření prvku vazby je nutné zadat umístění úložiště, název a název subjektu certifikátu. `KeyId` V kompaktním podpisu představuje identifikátor klíče podpisového tokenu, který je identifikátorem klíče subjektu (Ski) podpisového tokenu, nebo (Pokud není k dispozici) hodnota hash SHA-1 veřejného klíče podpisového tokenu.  
   
-## <a name="secure-channel-listener"></a>Modul pro naslouchání kanálu zabezpečení  
- Modul pro naslouchání kanálu zabezpečení vytváří vstupní nebo duplexní kanály, které ověřují compact podpis v přijaté zprávy. Ověření podpisu, `KeyId` podle zkomprimovat podpisu připojeného ke zprávě se používá k výběru certifikátu z určeného úložiště. Pokud zpráva nemá podpis nebo kontrolu podpisu selže, se zahodí zprávy. Použít zabezpečené vazby, ukázka definuje objekt factory, který vytvoří vlastní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> s elementem přidání zjišťování zabezpečené vazby. Naslouchací procesy oznámení zjišťování a zjistitelné služby je možné tyto zabezpečené koncové body.  
+## <a name="secure-channel-listener"></a>Naslouchací proces zabezpečeného kanálu  
+ Naslouchací proces zabezpečeného kanálu vytváří vstupní nebo duplexní kanály, které ověřují kompaktní podpis v přijatých zprávách. Chcete-li ověřit podpis, `KeyId` je k výběru certifikátu ze zadaného úložiště použit parametr zadaný v kompaktním podpisu připojeném ke zprávě. Pokud zpráva nemá podpis nebo se její podpis nepovede, jsou zprávy vyřazené. Chcete-li použít zabezpečenou vazbu, ukázka definuje objekt pro vytváření, <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> který <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> vytvoří vlastní a s přidaným prvkem zabezpečené vazby zjišťování. Tyto zabezpečené koncové body lze použít v posluchačích oznámení zjišťování a zjistitelných službách.  
   
-## <a name="sample-details"></a>Ukázka podrobnosti  
+## <a name="sample-details"></a>Podrobnosti ukázky  
  Ukázka zahrnuje knihovny a 4 konzolové aplikace:  
   
-- **DiscoverySecurityChannels**: Knihovna, která poskytuje zabezpečené vazby. Knihovny vypočítá a ověří podpis compact odchozích/příchozích zpráv.  
+- **DiscoverySecurityChannels**: Knihovna, která zveřejňuje zabezpečenou vazbu. Knihovna vypočítá a ověří kompaktní podpis pro odchozí a příchozí zprávy.  
   
-- **Služba**: Služba zveřejňující ICalculatorService smlouvy, vlastní hostované. Služba je označena jako zjistitelné. Uživatel zadá podrobnosti certifikátu použitého k podepsání zprávy tak, že zadáte umístění úložiště a název a název subjektu nebo jiný jedinečný identifikátor pro tento certifikát a úložiště, kde jsou klientské certifikáty nachází (certifikátů používaných pro Kontrola podpisu pro příchozí zprávy). Na základě těchto podrobností, je UdpDiscoveryEndpoint s vyššího zabezpečení vytvořené a použít.  
+- **Služba**: Služba, která zveřejňuje kontrakt ICalculatorService, který je hostován v místním prostředí. Služba je označená jako zjistitelná. Uživatel Určuje podrobnosti certifikátu používaného k podepisování zpráv zadáním umístění úložiště a názvu subjektu nebo jiného jedinečného identifikátoru pro certifikát a úložištěm, kde jsou umístěny klientské certifikáty (certifikáty použité pro kontrolovat podpis příchozích zpráv). Na základě těchto informací se sestaví a použije UdpDiscoveryEndpoint s přidaným zabezpečením.  
   
-- **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> s přidali zabezpečení je integrované a používá k podepsání a ověřte, zprávy.  
+- **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu se vytvoří <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a s přidaným zabezpečením se sestaví a použije k podepsání a ověření zpráv.  
   
-- **AnnouncementListener**: V místním prostředí služby, který naslouchá oznámení týkající se online i offline a používá koncový bod zabezpečené oznámení.  
+- **AnnouncementListener**: Samoobslužná služba, která naslouchá online a offline oznámením a používá koncový bod zabezpečeného oznámení.  
   
 > [!NOTE]
->  Pokud Setup.bat spustí více než jednou, správce certifikátů zobrazí výzvu pro výběr certifikátu, který chcete přidat, protože existují duplicitní certifikáty. V takovém případě by měl být přerušen Setup.bat a Cleanup.bat by měla být volána, protože tyto duplikáty již byly vytvořeny. CleanUp.bat také výzva k výběru certifikát k odstranění. Vyberte certifikát ze seznamu a pokračovat v provádění Cleanup.bat, dokud nezbývají žádné certifikáty.  
+> Pokud se instalační program. bat spustí víckrát, správce certifikátů vás vyzve k výběru certifikátu, který se má přidat, protože jsou k dispozici duplicitní certifikáty. V takovém případě by měl být Setup. bat přerušen a měl by být volán program Cleanup. bat, protože duplicity již byly vytvořeny. Vyčištění. bat vás také vyzve k výběru certifikátu, který chcete odstranit. Vyberte certifikát ze seznamu a pokračujte v provádění nástroje CleanUp. bat, dokud nebudou žádné certifikáty zbývající.  
   
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
+#### <a name="to-use-this-sample"></a>Použití této ukázky  
   
-1. Spusťte skript Setup.bat na příkazovém řádku pro vývojáře pro sadu Visual Studio. Ukázka používá certifikáty pro podepsání a ověření zprávy. Tento skript vytvoří certifikát pomocí Makecert.exe a nainstaluje je pomocí Certmgr.exe. Skript musí být spuštěn s oprávněním správce.  
+1. Spusťte skript Setup. bat z Developer Command Prompt pro Visual Studio. Ukázka používá certifikáty k podepisování a ověřování zpráv. Skript vytvoří certifikáty pomocí nástroje MakeCert. exe a pak je nainstaluje pomocí nástroje Certmgr. exe. Skript musí být spuštěn s oprávněními správce.  
   
-2. Sestavte a spusťte ukázku, otevřete soubor Security.sln v sadě Visual Studio a zvolte **sestavit vše znovu**. Aktualizovat vlastnosti řešení, které chcete spustit více projektů: vyberte **Start** pro všechny projekty s výjimkou DiscoverySecureChannels. Normální spuštění řešení.  
+2. Chcete-li vytvořit a spustit ukázku, otevřete soubor Security. sln v aplikaci Visual Studio a vyberte možnost **znovu sestavit vše**. Aktualizovat vlastnosti řešení, aby bylo možné spustit více projektů: vyberte možnost **Spustit** pro všechny projekty s výjimkou DiscoverySecureChannels. Řešení spouštějte normálně.  
   
-3. Jakmile budete hotovi s ukázkou, spusťte Cleanup.bat skript, který odstraní certifikáty vytvořené pro tuto ukázku.  
+3. Až budete s ukázkou hotovi, spusťte skript Cleanup. bat, který odebere certifikáty vytvořené pro tuto ukázku.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  

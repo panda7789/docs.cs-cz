@@ -1,5 +1,5 @@
 ---
-title: '#If... Then... #Else – direktivy (Visual Basic)'
+title: '#Pokud... Then... #Else – direktivy (Visual Basic)'
 ms.date: 04/11/2018
 f1_keywords:
 - vb.#EndIf
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - else directive (#else)
 - '#Else directive [Visual Basic]'
 ms.assetid: 10bba104-e3fd-451b-b672-faa472530502
-ms.openlocfilehash: 8c0aece749edf144fdd5c8ede9ec7e2e4c96ad54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 697521276e2d5a8d0a4aaae38789a21b7aa87fcb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746714"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940757"
 ---
 # <a name="ifthenelse-directives"></a>#If...Then...#Else – direktivy
-Podmíněně zkompiluje vybrané bloky kódu jazyka Visual Basic.  
+Podmíněně zkompiluje vybrané bloky kódu Visual Basic.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,25 +45,25 @@ Podmíněně zkompiluje vybrané bloky kódu jazyka Visual Basic.
   
 ## <a name="parts"></a>Součásti  
  `expression`  
- Vyžaduje se pro `#If` a `#ElseIf` příkazy, volitelné jinde. Libovolný výraz, který se skládá pouze z jedné nebo více podmíněné konstanty kompilátoru, literály a operátory, které vyhodnotí jako `True` nebo `False`.  
+ Požadováno pro `#If` příkazy `#ElseIf` a, volitelně jinde. Libovolný výraz, který obsahuje výhradně jednu nebo více podmíněné konstanty kompilátoru, literály a operátory, které jsou vyhodnoceny `False`jako `True` nebo.  
   
  `statements`  
- Vyžaduje se pro `#If` příkaz blokovat, volitelné jinde. Řádky programu jazyka Visual Basic nebo direktivy kompilátoru, které jsou kompilovány, pokud přidružený výraz je vyhodnocen jako `True`.  
+ Vyžadováno pro `#If` blok příkazu, volitelně jinde. Visual Basic řádky programu nebo direktivy kompilátoru, které jsou kompilovány, pokud je přidružený `True`výraz vyhodnocen jako.  
   
  `#End If`  
- Ukončuje `#If` blok příkazů.  
+ Ukončí blok příkazu `#If` .  
   
 ## <a name="remarks"></a>Poznámky  
- Na ploše, chování `#If...Then...#Else` direktivy vypadá stejně jako u `If...Then...Else` příkazy. Ale `#If...Then...#Else` direktivy vyhodnotit, co je kompilovány pomocí kompilátoru, že `If...Then...Else` příkazy vyhodnotí podmínky za běhu.  
+ Na povrchu se chování `#If...Then...#Else` direktiv zobrazí stejně jako `If...Then...Else` u příkazů. Nicméně direktivy vyhodnotí, co je zkompilováno kompilátorem, `If...Then...Else` zatímco příkazy vyhodnotí podmínky v době běhu. `#If...Then...#Else`  
   
- Podmíněná kompilace se obvykle používá ke kompilaci stejného programu pro různé platformy. Používá se také aby se zabránilo ladění kódu povolí, spustitelný soubor. Kód při podmíněné kompilace je zcela vynecháno z konečný spustitelný soubor, takže nemá žádný vliv na výkon nebo velikost.  
+ Podmíněná kompilace se obvykle používá ke kompilaci stejného programu pro různé platformy. Slouží také k tomu, aby se zabránilo zobrazování kódu ladění ve spustitelném souboru. Kód vyloučený během podmíněné kompilace je zcela vynechán z finálního spustitelného souboru, takže nemá žádný vliv na velikost nebo výkon.  
   
- Bez ohledu na výsledek jakékoli hodnocení, všechny výrazy jsou vyhodnocovány pomocí `Option Compare Binary`. `Option Compare` Příkazu nemá vliv na výrazy v `#If` a `#ElseIf` příkazy.  
+ Bez ohledu na výsledek všech vyhodnocení jsou všechny výrazy vyhodnocovány pomocí `Option Compare Binary`. Příkaz nemá vliv na výrazy v `#If` příkazech `#ElseIf`a. `Option Compare`  
   
 > [!NOTE]
->  Žádné jedním řádkem formu `#If`, `#Else`, `#ElseIf`, a `#End If` direktivy existuje. Žádný další kód se nemůže objevit na stejném řádku jako některý z direktivy. 
+> Neexistuje `#If`žádný jednořádkový tvar direktiv, `#Else`, `#ElseIf`a `#End If` . Žádný jiný kód se nemůže zobrazit na stejném řádku jako kterákoli ze direktiv. 
 
-Příkazy v rámci bloku podmíněné kompilace musí být úplná logické prohlášení. Například nelze Podmíněná kompilace pouze atributy funkce, ale je možné deklarovat podmíněně funkce společně s jeho atributy:
+Příkazy v bloku podmíněné kompilace musí být dokončeny pomocí logických příkazů. Například nemůžete podmíněně kompilovat pouze atributy funkce, ale můžete podmíněně deklarovat funkci spolu s jejími atributy:
 
 ```vb
    #If DEBUG Then
@@ -76,7 +76,7 @@ Příkazy v rámci bloku podmíněné kompilace musí být úplná logické proh
 ```
 
 ## <a name="example"></a>Příklad
- V tomto příkladu `#If...Then...#Else` konstrukce k určení, jestli se má zkompilovat určité příkazy.  
+ V tomto příkladu je `#If...Then...#Else` použita konstrukce k určení, zda mají být zkompilovány určité příkazy.  
   
  [!code-vb[VbVbalrConditionalComp#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#1)]  
   

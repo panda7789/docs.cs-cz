@@ -2,30 +2,30 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: fba9a44342da5b064897b3ab81f34fa39498d379
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: a8464d7f32b52152b5371ff9edbb396578df6a57
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964474"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
-Ukázka podporuje tokeny ukazuje, jak přidat další tokeny na zprávu, která používá WS-Security. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán do záhlaví zprávy WS-Security z klienta ke službě a část zprávy jsou podepsány pomocí soukromého klíče přidružené k tokenu zabezpečení X.509 prokázat získáním certifikát X.509 příjemci. To je užitečné v případě, když je potřeba mít více deklarací identity přidružené k zprávy na ověřování nebo autorizaci odesílatele. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
+Ukázka pomocných tokenů ukazuje, jak přidat další tokeny do zprávy, která používá WS-Security. V příkladu se kromě tokenu zabezpečení uživatelského jména přidá i binární token zabezpečení X. 509. Token se předává v hlavičce zprávy WS-Security od klienta ke službě a část zprávy je podepsána pomocí privátního klíče přidruženého k tokenu zabezpečení X. 509, aby bylo možné prokázat vlastnictví certifikátu X. 509 pro příjemce. To je užitečné v případě, kdy je potřeba mít k ověření nebo autorizaci odesílatele více deklarací přidružených ke zprávě. Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď.
 
 ## <a name="demonstrates"></a>Demonstruje
- Ukázce:
+ Ukázka ukazuje:
 
-- Jak klienta lze předat další bezpečnostní tokeny služby.
+- Jak může klient předat službě další tokeny zabezpečení.
 
-- Jak má server přístup související s tokeny zabezpečení další deklarace identity.
+- Způsob, jakým může server přistupovat k deklaracím přidruženým k dalším tokenům zabezpečení
 
-- Jak certifikát X.509 serveru slouží k ochraně symetrický klíč použitý k podpisu a šifrování zpráv.
+- Způsob, jakým se používá certifikát X. 509 serveru k ochraně symetrického klíče použitého pro šifrování a podpis zprávy.
 
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
-## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>Klient se ověří pomocí Token uživatelského jména a podpůrné Token zabezpečení X.509
- Služba poskytuje jeden koncový bod pro komunikaci, která je vytvořena prostřednictvím kódu programu pomocí `BindingHelper` a `EchoServiceHost` třídy. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována s vlastními vazbami pomocí `SymmetricSecurityBindingElement` a `HttpTransportBindingElement`. Tato ukázka nastaví `SymmetricSecurityBindingElement` chránit symetrický klíč během přenosu a předat pomocí certifikátu X.509 služby `UserNameToken` spolu se podporu `X509SecurityToken` v záhlaví zprávy WS-Security. Symetrický klíč se používá k šifrování těla zprávy a token zabezpečení uživatelské jméno. Podpůrný token je předán jako token další binární zabezpečení v záhlaví zprávy WS-Security. Pravosti podpůrný token prokázat podepsáním část zprávy s privátním klíčem podpůrné X.509 zabezpečení přidružené k tokenu.
+## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>Klient se ověřuje pomocí tokenu uživatelského jména a podporuje token zabezpečení X. 509.
+ Služba zpřístupňuje jeden koncový bod pro komunikaci, která je programově vytvořena pomocí `BindingHelper` tříd `EchoServiceHost` a. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována s vlastní vazbou pomocí `SymmetricSecurityBindingElement` a. `HttpTransportBindingElement` Tato ukázka nastaví `SymmetricSecurityBindingElement` použití certifikátu Service X. 509 k ochraně symetrického klíče během přenosu a k `UserNameToken` předání a spolu s podporou `X509SecurityToken` v hlavičce zprávy WS-Security. Symetrický klíč se používá k šifrování textu zprávy a tokenu zabezpečení uživatelského jména. Token podpory se předává jako další binární token zabezpečení v hlavičce zprávy WS-Security. Pravost podpůrného tokenu je prokázána tím, že podepisuje část zprávy s privátním klíčem přidruženým k podpůrnému tokenu zabezpečení X. 509.
 
 ```csharp
 public static Binding CreateMultiFactorAuthenticationBinding()
@@ -53,7 +53,7 @@ public static Binding CreateMultiFactorAuthenticationBinding()
 }
 ```
 
- Chování Určuje přihlašovací údaje služby, které se mají použít pro ověřování klientů a také informace o certifikát služby X.509. Ukázka používá `CN=localhost` jako název subjektu v certifikátu X.509 služby.
+ Chování Určuje pověření služby, které se má použít pro ověřování klientů a také informace o certifikátu služby X. 509. Ukázka používá `CN=localhost` jako název subjektu v certifikátu služby X. 509.
 
 ```csharp
 override protected void InitializeRuntime()
@@ -171,7 +171,7 @@ public class EchoService : IEchoService
 }
 ```
 
- Podobným způsobem jako do koncového bodu služby je nakonfigurovaný koncový bod klienta. Klient používá stejný `BindingHelper` třídy za účelem vytvoření vazby. Zbývající část nastavení se nachází v `Client` třídy. Klient nastaví informace o tokenu zabezpečení jméno uživatele, podpůrný token zabezpečení X.509 a informace o certifikát služby X.509 v kódu instalační program do kolekce chování koncového bodu klienta.
+ Koncový bod klienta je nakonfigurován podobným způsobem jako koncový bod služby. Klient používá stejnou `BindingHelper` třídu k vytvoření vazby. Zbývající část instalace je umístěna ve `Client` třídě. Klient nastaví informace o tokenu zabezpečení uživatelského jména, podpoře tokenu zabezpečení X. 509 a informace o certifikátu X. 509 v instalačním kódu pro kolekci chování koncového bodu klienta.
 
 ```csharp
  static void Main()
@@ -281,8 +281,8 @@ public class EchoService : IEchoService
 }
 ```
 
-## <a name="displaying-callers-information"></a>Zobrazení informací o volajícím.
- Chcete-li zobrazit informace volajícího, můžete použít `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak je znázorněno v následujícím kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje autorizaci deklarací identity přidružené k aktuální volajícího. Tyto deklarace identit se automaticky poskytne Windows Communication Foundation (WCF) pro každý token přijatý ve zprávě.
+## <a name="displaying-callers-information"></a>Zobrazení informací o volajícím
+ Chcete-li zobrazit informace o volajícím, můžete použít `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` , jak je znázorněno v následujícím kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje autorizační deklarace přidružené k aktuálnímu volajícímu. Tyto deklarace jsou dodány automaticky pomocí Windows Communication Foundation (WCF) pro každý token přijatý ve zprávě.
 
 ```csharp
 bool TryGetClaimValue<TClaimResource>(ClaimSet claimSet, string
@@ -345,17 +345,17 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 ```
 
 ## <a name="running-the-sample"></a>Spuštění ukázky
- Při spuštění ukázky, klient nejdřív vás vyzve k zadání uživatelského jména a hesla pro název token uživatele. Nezapomeňte zadat správné hodnoty pro váš účet systému protože WCF na službu mapuje hodnoty poskytnuté v název tokenu uživatele do identity poskytované systémem. Po tomto klient se zobrazí odpověď ze služby. Stisknutím klávesy ENTER v okně Klient vypnutí klient.
+ Při spuštění ukázky se klient poprvé vyzve k zadání uživatelského jména a hesla pro token uživatelského jména. Nezapomeňte zadat správné hodnoty pro systémový účet, protože služba WCF ve službě mapuje hodnoty zadané v tokenu uživatelského jména do identity poskytnuté systémem. Potom klient zobrazí odpověď ze služby. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
-## <a name="setup-batch-file"></a>Instalační dávkový soubor
- Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušné certifikáty ke spuštění aplikace hostované Internetové informační služby (IIS), která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.
+## <a name="setup-batch-file"></a>Nastavení dávkového souboru
+ Dávkový soubor Setup. bat, který je součástí této ukázky, vám umožní nakonfigurovat server s relevantními certifikáty pro spuštění aplikace hostované v Internetová informační služba (IIS), která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upraven pro práci napříč počítači nebo pro práci v nehostovaném případě.
 
- Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.
+ Níže najdete stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby se spouštěla v příslušné konfiguraci.
 
-### <a name="creating-the-client-certificate"></a>Vytváří se certifikát klienta
- Následující řádky z dávkový soubor Setup.bat vytvořit klientský certifikát, který se má použít. `%CLIENT_NAME%` Proměnná Určuje předmětu certifikátu klienta. Tato ukázka používá "client.com" jako název subjektu.
+### <a name="creating-the-client-certificate"></a>Vytváření klientského certifikátu
+ Následující řádky z dávkového souboru Setup. bat vytvoří klientský certifikát, který se má použít. `%CLIENT_NAME%` Proměnná Určuje předmět klientského certifikátu. V této ukázce se jako název předmětu používá "client.com".
 
- Certifikát je uložen v úložišti (osobních) v části `CurrentUser` umístění úložiště.
+ Certifikát je uložený v osobním úložišti (osobní) v `CurrentUser` umístění úložiště.
 
 ```
 echo ************
@@ -364,8 +364,8 @@ echo ************
 makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe
 ```
 
-### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>Instalaci klientského certifikátu do důvěryhodného Store na Server
- Následující řádek v dávkový soubor Setup.bat zkopíruje klientský certifikát do úložiště důvěryhodných osob serveru. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému serveru. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
+### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>Instalace klientského certifikátu do důvěryhodného úložiště serveru
+ Následující řádek v dávkovém souboru Setup. bat kopíruje klientský certifikát do úložiště důvěryhodných osob serveru. Tento krok je povinný, protože pro systém serveru nejsou implicitně důvěryhodné certifikáty vygenerované pomocí nástroje MakeCert. exe. Pokud už máte certifikát, který je rootem klienta důvěryhodných kořenových certifikátů, například certifikát vydaný společností Microsoft – tento krok naplnění klientského úložiště certifikátů pomocí certifikátu serveru není vyžadován.
 
 ```
 echo ************
@@ -374,10 +374,10 @@ echo ************
 certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople
 ```
 
-### <a name="creating-the-server-certificate"></a>Vytváří se certifikát serveru
- Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. V tomto souboru batch výchozí hodnota je localhost.
+### <a name="creating-the-server-certificate"></a>Vytvoření certifikátu serveru
+ Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
 
- Certifikát je uložen v úložišti (osobních) v části umístění úložiště LocalMachine. Certifikát je uložen v úložišti LocalMachine pro služby hostované v IIS. V místním prostředí služby upravte dávkový soubor pro uložení certifikátu serveru v umístění úložiště CurrentUser nahrazením řetězec LocalMachine CurrentUser.
+ Certifikát je uložený v osobním úložišti (osobní) v umístění úložiště LocalMachine. Certifikát je uložený v úložišti LocalMachine pro služby hostované službou IIS. Pro samoobslužné služby byste měli soubor Batch upravit tak, aby ukládal certifikát serveru do umístění úložiště CurrentUser, a to tak, že nahradíte řetězec LocalMachine řetězcem CurrentUser.
 
 ```
 echo ************
@@ -389,8 +389,8 @@ echo ************
 makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
 ```
 
-### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>Instalace certifikátu serveru do klienta důvěryhodný certifikát Store
- Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
+### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>Instalace certifikátu serveru do důvěryhodného úložiště certifikátů klienta
+ Následující řádky v dávkovém souboru Setup. bat kopírují certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty vygenerované pomocí nástroje MakeCert. exe nejsou implicitně důvěryhodné klientským systémem. Pokud už máte certifikát, který je rootem klienta důvěryhodných kořenových certifikátů, například certifikát vydaný společností Microsoft – tento krok naplnění klientského úložiště certifikátů pomocí certifikátu serveru není vyžadován.
 
 ```
 echo ************
@@ -398,8 +398,8 @@ echo copying server cert to client's TrustedPeople store
 echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
 ```
 
-### <a name="enabling-access-to-the-certificates-private-key"></a>Povolení přístupu k privátnímu klíči certifikátu
- Povolit přístup k privátnímu klíči certifikátu ze služby hostované v IIS, musíte uživatelský účet, pod kterým je spuštěn proces hostované službou IIS udělena příslušná oprávnění pro privátní klíč. Toho lze dosáhnout poslední kroky v skript Setup.bat.
+### <a name="enabling-access-to-the-certificates-private-key"></a>Povoluje se přístup k privátnímu klíči certifikátu.
+ Aby bylo možné povolit přístup k privátnímu klíči certifikátu ze služby hostované službou IIS, musí mít uživatelský účet, pod kterým je spuštěný proces hostovaný službou IIS, udělena příslušná oprávnění pro privátní klíč. To se provádí v posledních krocích skriptu Setup. bat.
 
 ```
 echo ************
@@ -412,56 +412,56 @@ echo Y|cacls.exe "%PRIVATE_KEY_FILE%" /E /G "%WP_ACCOUNT%":R
 iisreset
 ```
 
-##### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+##### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení Windows Communication Foundation ukázek](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3. Ke spuštění ukázky v konfiguraci s jedním nebo více počítačů, použijte následující pokyny.
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.
 
-##### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači
+##### <a name="to-run-the-sample-on-the-same-machine"></a>Spuštění ukázky na stejném počítači
 
-1. Spusťte Setup.bat ve složce instalace ukázkové uvnitř příkazový řádek sady Visual Studio 2012, spusťte s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+1. Spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012 spustit s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory. Je potřeba certifikáty odebrat spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
+    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat. Nezapomeňte odebrat certifikáty spuštěním souboru Cleanup. bat po dokončení ukázky. Další ukázky zabezpečení používají stejné certifikáty.  
   
-2. Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+2. Spustit soubor Client. exe z \client\bin. Aktivita klienta se zobrazí v klientské aplikaci konzoly.  
   
-3. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+3. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-##### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
+##### <a name="to-run-the-sample-across-machines"></a>Spuštění ukázky napříč počítači  
   
-1. Vytvoření adresáře v počítači služby. Vytvořte virtuální aplikaci s názvem servicemodelsamples pro tento adresář pomocí nástroje pro správu Internetové informační služby (IIS).  
+1. Vytvořte adresář na počítači služby. Pomocí nástroje pro správu služby Internetová informační služba (IIS) vytvořte virtuální aplikaci s názvem ServiceModelSamples pro tento adresář.  
   
-2. Zkopírujte soubory programu služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači služby. Ujistěte se, že zkopírujete soubory v podadresáři \bin. Také kopírovat soubory Setup.bat Cleanup.bat a ImportClientCert.bat k počítači služby.  
+2. Zkopírujte programové soubory služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači služby. Ujistěte se, že jste zkopírovali soubory do podadresáře \Bin. Zkopírujte také soubory Setup. bat, Cleanup. bat a ImportClientCert. bat do počítače služby.  
   
-3. Vytvoření adresáře na klientský počítač určený k binárních souborů klienta.  
+3. Vytvořte v klientském počítači adresář pro binární soubory klienta.  
   
-4. Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
+4. Zkopírujte soubory klientských programů do adresáře klienta v klientském počítači. Zkopírujte také do klienta soubory Setup. bat, Cleanup. bat a ImportServiceCert. bat.  
   
-5. Na serveru, spusťte `setup.bat service` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
+5. Na serveru spusťte `setup.bat service` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při `setup.bat` spuštění`service` s argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
   
-6. Upravit soubor Web.config tak, aby odrážely nový název certifikátu (v `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) která je stejná jako plně kvalifikovaný název domény počítače.  
+6. Upravte soubor Web. config tak, aby odrážel nový název certifikátu ( `findValue` v atributu [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), který je stejný jako plně kvalifikovaný název domény počítače.  
   
-7. Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
+7. Zkopírujte soubor Service. cer z adresáře služby do adresáře klienta v klientském počítači.  
   
-8. Na straně klienta, spouštění `setup.bat client` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `client` argument vytvoří klientský certifikát s názvem client.com a exportuje certifikát klienta do souboru s názvem Client.cer.  
+8. Na straně klienta spusťte `setup.bat client` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při `setup.bat` spuštění`client` s argumentem se vytvoří klientský certifikát s názvem Client.com a exportuje se klientský certifikát do souboru s názvem Client. cer.  
   
-9. V souboru Client.exe.config v klientském počítači. Změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby. Proveďte to nahrazením localhost plně kvalifikovaný název domény serveru.  
+9. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. Provedete to tak, že nahradíte localhost názvem domény na plně kvalifikovaném názvu domény serveru.  
   
-10. Zkopírujte soubor Client.cer z adresáře klienta do adresáře služby na serveru.  
+10. Zkopírujte soubor Client. cer z adresáře klienta do adresáře služby na serveru.  
   
-11. Na straně klienta spouštění ImportServiceCert.bat. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
+11. Na straně klienta spusťte ImportServiceCert. bat. Tím se certifikát služby importuje ze souboru Service. cer do úložiště CurrentUser-TrustedPeople.  
   
-12. Na serveru, spusťte ImportClientCert.bat to importuje klientský certifikát ze souboru Client.cer do úložiště LocalMachine - TrustedPeople úložiště.  
+12. Na serveru spusťte ImportClientCert. bat. tím se certifikát klienta importuje ze souboru Client. cer do úložiště LocalMachine-TrustedPeople.  
   
-13. Na klientském počítači a spusťte Client.exe z okna příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+13. Na klientském počítači spusťte soubor Client. exe z okna příkazového řádku. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-##### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
+##### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
   
-- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Po dokončení ukázky spusťte na složce Samples Cleanup. bat.  
   
 > [!NOTE]
->  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli Ukázky WCF, které certifikáty využívají napříč počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+> Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky WCF, které používají certifikáty napříč počítači, ujistěte se, že jste vymazali certifikáty služby nainstalované v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

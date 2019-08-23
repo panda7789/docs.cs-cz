@@ -10,19 +10,19 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: 5faf352dce2a459a999b3cf54209f6bd9793bde0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fd90d271591a47849b3f70aea50cbe909b6fd613
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673794"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920402"
 ---
-# <a name="trace-element"></a>\<trasování > – Element
-Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.  
+# <a name="trace-element"></a>\<Trace – element > elementu
+Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<trasování >  
+\<> trasování  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +39,39 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`autoflush`|Nepovinný atribut.<br /><br /> Určuje, zda naslouchacími procesy trasování automaticky vyprázdní výstupní vyrovnávací paměť po každé operaci zápisu.|  
-|`indentsize`|Nepovinný atribut.<br /><br /> Určuje počet mezer pro odsazení.|  
-|`useGlobalLock`|Nepovinný atribut.<br /><br /> Označuje, zda má být použita globální zámku.|  
+|`autoflush`|Nepovinný atribut.<br /><br /> Určuje, zda naslouchací proces trasování po každé operaci zápisu automaticky vyprázdní výstupní vyrovnávací paměť.|  
+|`indentsize`|Nepovinný atribut.<br /><br /> Určuje počet mezer, které mají být odsazeny.|  
+|`useGlobalLock`|Nepovinný atribut.<br /><br /> Určuje, zda má být použit globální zámek.|  
   
-## <a name="autoflush-attribute"></a>autoflush atribut  
+## <a name="autoflush-attribute"></a>AutoFlush – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`false`|Není vyprázdnění automaticky výstupní vyrovnávací paměť. Toto nastavení je výchozí.|  
-|`true`|Automaticky vyprázdní vyrovnávací paměť pro výstup.|  
+|`false`|Nevyprázdní výstupní vyrovnávací paměť automaticky. Toto nastavení je výchozí.|  
+|`true`|Automaticky vyprázdní výstupní vyrovnávací paměť.|  
   
-## <a name="usegloballock-attribute"></a>useGlobalLock atribut  
+## <a name="usegloballock-attribute"></a>useGlobalLock – atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|`false`|Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.|  
-|`true`|Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces. Toto nastavení je výchozí.|  
+|`false`|Nepoužívá globální zámek, pokud naslouchací proces je bezpečný pro přístup z více vláken; v opačném případě používá globální zámek.|  
+|`true`|Používá globální zámek bez ohledu na to, zda je naslouchací proces bezpečný pro přístup z více vláken. Toto nastavení je výchozí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.|  
+|[\<> naslouchací proces](listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<trace>` prvek a přidat naslouchací proces `MyListener` k `Listeners` kolekce. `MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `useGlobalLock` Atribut je nastaven na `false`, což způsobí, že globální zámek nechcete použít, pokud je bezpečná pro posluchače trasování. `autoflush` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování pro zápis do souboru bez ohledu na to, zda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána. `indentsize` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.  
+ Následující příklad ukazuje, jak použít `<trace>` element k přidání naslouchacího procesu `MyListener` do `Listeners` kolekce. `MyListener`Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. Atribut je nastaven na `false`, což způsobí, že globální zámek nebude použit, pokud je naslouchací proces trasování bezpečný pro přístup z více vláken. `useGlobalLock` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování zapisuje do souboru <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> bez ohledu na to, zda je metoda volána. `autoflush` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> při volání metody odsadí nula mezer. `indentsize`  
   
 ```xml  
 <configuration>  
@@ -91,4 +91,4 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

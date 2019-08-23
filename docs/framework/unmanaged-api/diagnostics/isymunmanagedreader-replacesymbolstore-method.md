@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 525ec4828fb942aeb447940ea68a523cd7c69140
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8721f7c30061fbfd4a761bed090b761762c3c13c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736737"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939025"
 ---
 # <a name="isymunmanagedreaderreplacesymbolstore-method"></a>ISymUnmanagedReader::ReplaceSymbolStore – metoda
-Nahradí existující úložiště symbolů do úložiště symbolů delta. Tato metoda je podobný [updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) metody, s tím rozdílem, že daný delta funguje jako o úplné nahrazení spíše než aktualizace.  
+Nahradí existující úložiště symbolů rozdílovým úložištěm symbolů. Tato metoda je podobná metodě [UpdateSymbolStore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) , s tím rozdílem, že daný rozdíl funguje jako kompletní náhrada, nikoli jako aktualizace.  
   
 > [!NOTE]
->  Je nutné zadat pouze jeden z `filename` nebo `pIStream` parametrů, ne obojí. Pokud `filename` není zadán, aktualizuje úložiště symbolů se symboly v daném souboru. Pokud `pIStream` není zadána, úložiště se aktualizuje s daty z <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
+> Je nutné zadat pouze jeden z `filename` parametrů nebo `pIStream` , nikoli obojí. Je `filename` -li parametr zadán, bude úložiště symbolů Aktualizováno symboly v tomto souboru. Je `pIStream` -li parametr zadán, bude úložiště Aktualizováno daty <xref:System.Runtime.InteropServices.ComTypes.IStream>z.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT ReplaceSymbolStore (
   
 ## <a name="parameters"></a>Parametry  
  `filename`  
- [in] Název souboru, který obsahuje úložiště symbolů.  
+ pro Název souboru, který obsahuje úložiště symbolů.  
   
  `pIStream`  
- [in] Datový proud souboru použít jako alternativu k `filename` parametru.  
+ pro Datový proud souboru, který se používá jako alternativa `filename` k parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlaviček** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

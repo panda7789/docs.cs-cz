@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03bc5584d24efa790989f93426251f9f38e65904
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ab44ce8f51620d83084d1dd16e98b2b310feb76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768533"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968939"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim – funkce
-Načte zadanou verzi knihovny DLL, která je součástí Distribuovatelný balíček rozhraní .NET Framework.  
+Načte zadanou verzi knihovny DLL, která je součástí .NET Framework Distribuovatelný balíček.  
   
- Tato funkce se již nepoužívá v rozhraní .NET Framework 4. Použití [iclrruntimeinfo::LoadLibrary –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-loadlibrary-method.md) metoda místo.  
+ Tato funkce se už nepoužívá v .NET Framework 4. Místo toho použijte metodu [ICLRRuntimeInfo:: LoadLibrary](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-loadlibrary-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT LoadLibraryShim (
   
 ## <a name="parameters"></a>Parametry  
  `szDllName`  
- [in] Ukončit nulou řetězec představující název knihovny DLL, který se má načíst z knihovny rozhraní .NET Framework.  
+ pro Řetězec zakončený nulou, který představuje název knihovny DLL, která má být načtena z knihovny .NET Framework.  
   
  `szVersion`  
- [in] Ukončit nulou řetězec, který představuje verzi knihovny DLL, který se má načíst. Pokud `szVersion` je null, verze vybrali pro načítání je nejnovější verzi určenou knihovnu DLL, která je nižší než verze 4. To znamená, jsou ignorovány všechny verze roven nebo větší než verze 4, pokud `szVersion` má hodnotu null, a pokud je nainstalována žádná verze a menší než verze 4, se nepodaří načíst knihovnu DLL. Tím je zajištěno, že instalace rozhraní .NET Framework 4 nemá vliv na existující aplikace nebo komponenty. Viz položka [SxS InProc a migrace s rychlým startem](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
+ pro Řetězec zakončený nulou, který představuje verzi knihovny DLL, která má být načtena. Pokud `szVersion` je null, verze vybraná pro načtení je nejnovější verze zadané knihovny DLL, která je menší než verze 4. To znamená, že všechny verze, které se rovnají nebo jsou vyšší než verze `szVersion` 4, jsou ignorovány, pokud je hodnota null a není-li nainstalována žádná verze, která je nižší než verze 4, knihovna DLL se nepodařilo načíst. K tomu je potřeba zajistit, aby instalace .NET Framework 4 neovlivnila stávající aplikace nebo komponenty. Podívejte se na záznam [v rámci proc SxS a migrace rychlé zprovoznění](https://go.microsoft.com/fwlink/?LinkId=200329) na blogu týmu CLR.  
   
  `pvReserved`  
  Vyhrazeno pro budoucí použití.  
   
  `phModDll`  
- [out] Ukazatel na popisovač modulu.  
+ mimo Ukazatel na popisovač modulu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|CLR_E_SHIM_RUNTIMELOAD|Načítání `szDllName` vyžaduje načítání common language runtime (CLR) a potřebnou verzi modulu CLR nelze načíst.|  
+|CLR_E_SHIM_RUNTIMELOAD|Načítání `szDllName` vyžaduje načtení modulu CLR (Common Language Runtime) a potřebnou verzi modulu CLR nelze načíst.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce slouží k načtení knihovny DLL, které jsou součástí Distribuovatelný balíček rozhraní .NET Framework. Tato možnost nenačte uživatelem generovaný knihovny DLL.  
+ Tato funkce se používá k načtení knihoven DLL, které jsou součástí .NET Framework Distribuovatelný balíček. Nenačítá uživatelem generované knihovny DLL.  
   
 > [!NOTE]
->  Od verze rozhraní .NET Framework verze 2.0, načítají se soubor Fusion.dll způsobí, že modul CLR, který se má načíst. Je to proto, že funkce v soubor Fusion.dll jsou nyní obálky, jehož implementace jsou k dispozici v modulu runtime.  
+> Počínaje verzí 2,0 .NET Framework, načtení souboru Fusion. dll způsobí načtení modulu CLR. Důvodem je, že funkce v Fusion. dll jsou nyní obálky, jejichž implementace jsou poskytovány modulem runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

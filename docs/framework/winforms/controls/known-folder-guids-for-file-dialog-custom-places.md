@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: 09c51341a2b81c21804bcca3b244bbebdb7342b6
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: ae4b89eb45a82299b6f35827eb576968f6cc5bae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962588"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
-Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] známé složky při přidání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nejsou velká a malá písmena a jsou definovány v souboru KnownFolders.h v sadě Windows SDK.  
+Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] určíte známou složku při přidávání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nerozlišují velká a malá písmena a jsou definovány v souboru KnownFolders. h v Windows SDK.  
   
 > [!NOTE]
->  V některých případech známé složky přidat do <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> se nezobrazí v **Oblíbené odkazy** oblasti. Například pokud není zadané známé složky v počítači, na kterém běží aplikace, známé složky se nezobrazí.  
+> V některých případech se v oblasti **Oblíbené odkazy** nezobrazí známá <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> složka přidaná do. Pokud například zadaná známá složka není v počítači, na kterém je spuštěná aplikace, uvedena, není zobrazená známá složka.  
   
 ## <a name="list-of-guids"></a>Seznam identifikátorů GUID  
- Následující tabulka uvádí [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] známé složky a jejich přidružených <xref:System.Guid>.  
+ V následující tabulce jsou [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] uvedeny známé složky a jejich <xref:System.Guid>přidružené.  
   
  AddNewPrograms  
  DE61D971-5EBC-4F02-A3A9-6C82895E5C04  
@@ -91,7 +91,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  Písma  
  FD228CB7-AE11-4AE3-864C-16F3910AB8FE  
   
- Hry  
+ Videohr  
  CAC52C1A-B53D-4EDC-92D7-6B2E8AC19434  
   
  GameTasks  
@@ -127,19 +127,19 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  OriginalImages  
  2C36C0AA-5812-4B87-BFD0-4CD0DFB19B39  
   
- PhotoAlbums  
+ Fotoalba  
  69D2CF90-FC33-4FB7-9A0C-EBB0F0FCB43C  
   
- Obrázky  
+ Snímk  
  33E28130-4E1E-4676-835A-98395C3BC3BB  
   
- Seznamy stop  
+ Seznamy skladeb  
  DE92C1C7-837F-4F69-A3BB-86E631204A23  
   
  Tiskárny  
  76FC4E2D-D6AD-4519-A663-37BD56068185  
   
- Recent  
+ PrintHood  
  9274BD8D-CFD1-41C3-B35E-B13F55A758F4  
   
  Profil  
@@ -202,7 +202,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  RecordedTV  
  BD85E001-112E-431E-983B-7B15AC09FFF1  
   
- Odpadkový koš  
+ RecycleBin  
  B7534046-3ECB-4C18-BE4E-64CD4CB7D6AC  
   
  ResourceDir  
@@ -223,7 +223,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  SampleVideos  
  859EAD94-2E85-48AD-A71A-0969CB56A6CD  
   
- Otevře  
+ SavedGames  
  4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4  
   
  SavedSearches  
@@ -238,7 +238,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  SearchHome  
  190337D1-B8CA-4121-A639-6D472D16972A  
   
- SendTo  
+ Odeslat  
  8983036C-27C0-404B-8F08-102D10DCFD74  
   
  SidebarDefaultParts  
@@ -274,7 +274,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  TreeProperties  
  5B3749AD-B49F-49C1-83EB-15370FBD4882  
   
- UserProfiles  
+ UserProfile  
  0762D272-C50A-4BB0-A382-697DCD729B80  
   
  UsersFiles  
@@ -289,4 +289,4 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Postupy: Přidání vlastního prostoru do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Postupy: Přidat vlastní místo do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)

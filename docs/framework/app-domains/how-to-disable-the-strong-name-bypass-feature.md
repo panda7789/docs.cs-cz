@@ -7,36 +7,36 @@ helpviewer_keywords:
 ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20b482ee94446ffa863697d8c25276658a4bb122
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7484e67202c430df6ec2d4bea9cff5a850720ff5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593617"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921561"
 ---
 # <a name="how-to-disable-the-strong-name-bypass-feature"></a>Postupy: Zákaz funkce obejití silného názvu
-Počínaje verzí rozhraní .NET Framework 3.5 Service Pack 1 (SP1), podpisy se silným názvem nejsou ověřovány, pokud je sestavení načteno do plně důvěryhodné <xref:System.AppDomain> objektu, například výchozí <xref:System.AppDomain> pro `MyComputer` zóny. To se označuje jako silného názvu obejít funkce. V prostředí úplného vztahu důvěryhodnosti vyžaduje pro <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsané sestavení úplného vztahu důvěryhodnosti, bez ohledu na jejich podpisu. Jediným omezením je, že sestavení musí být plně důvěryhodné, protože jeho zóna je plně důvěryhodné. Protože silný název není určujícím faktorem za těchto podmínek, neexistuje žádný důvod pro něj má být ověřen. Vynechání ověřování podpisy se silným názvem poskytuje výrazné zlepšení výkonu.  
+.NET Framework počínaje verzí 3,5 a Service Pack 1 (SP1) se signatury silného názvu neověřují, pokud je sestavení načteno do objektu s úplným <xref:System.AppDomain> vztahem důvěryhodnosti, jako je <xref:System.AppDomain> například výchozí `MyComputer` hodnota pro zónu. To se označuje jako funkce obcházení silného názvu. V prostředí s úplným vztahem důvěryhodnosti požadavky <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsaná, plně důvěryhodná sestavení bez ohledu na jejich podpis. Jediným omezením je, že sestavení musí být plně důvěryhodné, protože jeho zóna je plně důvěryhodná. Vzhledem k tomu, že silný název není určujícím faktorem za těchto podmínek, neexistuje žádný důvod, aby jej bylo možné ověřit. Obejít ověřování podpisů se silným názvem přináší významná vylepšení výkonu.  
   
- Jednorázové přihlášení funkce se vztahuje na všechny sestavení úplného vztahu důvěryhodnosti, který se zpožděným podpisem a, který je načten do jakékoli úplného vztahu důvěryhodnosti <xref:System.AppDomain> z adresáře zadaného parametrem jeho <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost.  
+ Funkce bypass se vztahuje na jakékoli sestavení s úplným vztahem důvěryhodnosti, které není podepsané zpožděním a které je načteno do <xref:System.AppDomain> jakékoli plně důvěryhodné z adresáře určeného <xref:System.AppDomainSetup.ApplicationBase%2A> jeho vlastností.  
   
- Funkce obejití pro všechny aplikace na počítači můžete přepsat tak, že nastavíte hodnotu klíče registru. Nastavení pro jednu aplikaci lze přepsat pomocí konfiguračního souboru aplikace. Funkce obejití pro jednu aplikaci nelze obnovit, pokud byla zakázaná pomocí klíče registru.  
+ Funkci obcházení můžete pro všechny aplikace v počítači přepsat nastavením hodnoty klíče registru. Nastavení pro jednu aplikaci můžete přepsat pomocí konfiguračního souboru aplikace. Funkci vynechání nemůžete obnovit pro jednu aplikaci, pokud byla zakázána klíčem registru.  
   
- Při přepsání funkce obejití silného názvu je ověřen pouze pro správnosti; není zaškrtnuté políčko pro <xref:System.Security.Permissions.StrongNameIdentityPermission>. Pokud chcete potvrdit specifický silný název, budete muset provést kontroly samostatně.  
+ Pokud přepíšete funkci bypass, silný název se ověří jenom pro správnost. není zaškrtnuta <xref:System.Security.Permissions.StrongNameIdentityPermission>. Pokud chcete potvrdit konkrétní silný název, je nutné provést tuto kontrolu samostatně.  
   
 > [!IMPORTANT]
->  Schopnost vynutit ověřování silných názvů závisí na klíč registru, jak je popsáno v následujícím postupu. Pokud aplikace běží pod účtem, který nemá přístup k ovládacího prvku seznam (ACL) oprávnění pro přístup k tomuto klíči registru, nastavení je neefektivní. Musí zkontrolovat, jestli seznam ACL práva konfigurované pro tento klíč tak, že bude načtena pro všechna sestavení.  
+> Možnost vynutit ověřování silného názvu závisí na klíči registru, jak je popsáno v následujícím postupu. Pokud aplikace běží pod účtem, který nemá oprávnění seznamu řízení přístupu (ACL) pro přístup k tomuto klíči registru, nastavení se neprojeví. Je nutné zajistit, aby byla pro tento klíč nakonfigurovaná oprávnění ACL, aby je bylo možné číst pro všechna sestavení.  
   
-### <a name="to-disable-the-strong-name-bypass-feature-for-all-applications"></a>Zakázat obejití silného názvu funkce pro všechny aplikace  
+### <a name="to-disable-the-strong-name-bypass-feature-for-all-applications"></a>Zakázání funkce obcházení silného názvu pro všechny aplikace  
   
-- Na 32bitových počítačích, v systémovém registru vytvořte položku DWORD s hodnotou 0 s názvem `AllowStrongNameBypass` pod HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
+- Na 32 počítačích v systémovém registru vytvořte položku DWORD s hodnotou 0 s názvem `AllowStrongNameBypass` v rámci HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft.\\ NETFramework klíč.  
   
-- Na 64bitových počítačích, v systémovém registru vytvořte položku DWORD s hodnotou 0 s názvem `AllowStrongNameBypass` pod HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework a HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework klíče.  
+- Na 64 počítačích v systémovém registru vytvořte položku DWORD s hodnotou 0 s názvem `AllowStrongNameBypass` v rámci HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft.\\ NETFramework a HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework klíče.  
   
-### <a name="to-disable-the-strong-name-bypass-feature-for-a-single-application"></a>Zakázat obejití silného názvu funkce pro jednu aplikaci  
+### <a name="to-disable-the-strong-name-bypass-feature-for-a-single-application"></a>Zakázání funkce obcházení silného názvu pro jednu aplikaci  
   
 1. Otevřete nebo vytvořte konfigurační soubor aplikace.  
   
-     Další informace o tomto souboru najdete v části konfiguračních souborů aplikace v [konfigurace aplikace](../../../docs/framework/configure-apps/index.md).  
+     Další informace o tomto souboru naleznete v části konfigurační soubory aplikace v tématu [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md).  
   
 2. Přidejte následující položku:  
   
@@ -48,10 +48,10 @@ Počínaje verzí rozhraní .NET Framework 3.5 Service Pack 1 (SP1), podpisy se 
     </configuration>  
     ```  
   
- Funkce jednorázové přihlášení pro aplikaci můžete obnovit tak, že odeberete nastavení konfiguračního souboru nebo nastavením atributu na hodnotu "true".  
+ Funkci pro obejití aplikace můžete obnovit odebráním nastavení konfiguračního souboru nebo nastavením atributu na hodnotu "true".  
   
 > [!NOTE]
->  Ověření silných názvů zapnutí a vypnutí pro aplikaci můžete vypnout jenom v případě, že je povolena funkce jednorázové přihlášení pro počítač. Pokud jsou vypnuté funkci jednorázové přihlášení pro počítač, se ověří silné názvy pro všechny aplikace a nemůže obejít ověření pro jednu aplikaci.  
+> Ověřování silných názvů můžete u aplikace zapnout a vypnout jenom v případě, že je pro počítač povolená funkce obcházení. Pokud byla funkce obcházení pro počítač vypnuta, silné názvy jsou ověřeny pro všechny aplikace a nelze obejít ověřování pro jednu aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,20 +3,20 @@ title: <sqlWorkflowInstanceStore>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 8a4e4214-fc51-4f4d-b968-0427c37a9520
-ms.openlocfilehash: 5073d27ed2bea0b4d48d0568c30113cbe3d478e0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 7a6f9fb5b2b98d2951343b5a529507b3fcd88dc8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422871"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947513"
 ---
 # <a name="sqlworkflowinstancestore"></a>\<sqlWorkflowInstanceStore>
-Chování služby, která můžete nakonfigurovat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci, která podporuje zachovává informace o stavu pro instance služby pracovního postupu do databáze serveru SQL Server 2005 nebo SQL Server 2008. Další informace o této funkci najdete v tématu [Store Instance pracovního postupu SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
+Chování služby, které umožňuje nakonfigurovat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci, která podporuje informace o stavu pro instance služby pracovního postupu do databáze SQL Server 2005 nebo SQL Server 2008. Další informace o této funkci najdete v tématu [úložiště instancí pracovních postupů SQL](../../../windows-workflow-foundation/sql-workflow-instance-store.md).  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<sqlWorkflowInstanceStore>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,12 +43,12 @@ Chování služby, která můžete nakonfigurovat <xref:System.Activities.Durabl
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|připojovací řetězec|Řetězec, který obsahuje připojovací řetězec použitý pro připojení k databázi aplikace základní stálost.|  
-|PřipojovacíŘetězecNázev|Řetězec, který obsahuje název připojovacího řetězce k databázovému serveru. Příkladem pojmenovaného připojovacího řetězce je "DefaultConnectionString".|  
-|hostLockRenewalPeriod|Časový interval hodnotu, která určuje časové období, ve kterém musí obnovit hostitele zámku v instanci. Pokud hostitel nebyly v určeném časovém intervalu uzamčení prodlužují instance odemknut a může být vyzvednutí jiného hostitele.<br /><br /> Uvolňování pracovního postupu znamená, že je také zachována. Pokud tento atribut je nastaven na hodnotu nula instance pracovního postupu je trvalá a odpojeno ihned po pracovního postupu změní nečinnosti. Nastavení tohoto atributu na hodnotu TimeSpan.MaxValue efektivně zakáže operace uvolnění. Instance nečinných pracovních postupů jsou nikdy uvolněna.|  
+|připojovací řetězec|Řetězec, který obsahuje připojovací řetězec, který slouží k připojení k základní databázi trvalosti.|  
+|PřipojovacíŘetězecNázev|Řetězec, který obsahuje pojmenovaný připojovací řetězec k databázovému serveru. Příkladem pojmenovaného připojovacího řetězce je "DefaultConnectionString".|  
+|hostLockRenewalPeriod|Časový interval hodnotu, která určuje časové období, ve kterém musí obnovit hostitele zámku v instanci. Pokud hostitel nebyly v určeném časovém intervalu uzamčení prodlužují instance odemknut a může být vyzvednutí jiného hostitele.<br /><br /> Uvolňování pracovního postupu znamená, že je také zachována. Pokud je tento atribut nastaven na hodnotu nula, instance pracovního postupu je trvalá a uvolněna ihned po nečinnosti pracovního postupu. Nastavení tohoto atributu na hodnotu TimeSpan. MaxValue efektivně zakáže operaci uvolnění. Instance nečinných pracovních postupů jsou nikdy uvolněna.|  
 |instanceCompletionAction|Hodnota, která určuje, zda data instance pracovního postupu uchovány v úložišti stálost po dokončení instance pracovního postupu nebo pokud je v tomto okamžiku odstraněny. Tato hodnota je typu <xref:System.Activities.DurableInstancing.InstanceCompletionAction>.<br /><br /> Výčet akce se skládají ze odstranění instance data z úložiště stálosti nebo není odstranění instance data z úložiště stálost instance po dokončení jeho operace.<br /><br /> Udržování instancí po dokončení způsobí, že databáze stálost k rozvoji rychle a tato akce ovlivní výkon databáze. Měli byste nakonfigurovat zásadu vymazání databáze, která má odstranit tyto záznamy pravidelně tak, aby byl výkon databáze na úrovni, které odpovídají vašim požadavkům výkonu.|  
-|instanceEncodingOption|Volitelné hodnotu, která určuje, zda informace o stavu instance je komprimován pomocí algoritmu GZip před informace jsou uloženy v úložišti stálost... Tato hodnota je typu <xref:System.Activities.DurableInstancing.InstanceEncodingOption>. Možné hodnoty této vlastnosti jsou <xref:System.Activities.DurableInstancing.InstanceEncodingOption.None>, který určuje bez komprese a <xref:System.Activities.DurableInstancing.InstanceEncodingOption.GZip>, která určuje, že instance data je komprimován a používá algoritmus gzip.|  
-|instanceLockedExceptionAction|Hodnota, která určuje akci, k níž dojde v reakci na výjimku, která je vyvolána, pokud hostitel se pokusí Uzamknout instanci, protože instance je aktuálně uzamčen jiného hostitele. Tato hodnota je typu <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction>.<br /><br /> Možnosti povoleny pro toto pole jsou: NONE, Basic opakujte a účinnou opakovat. Výchozí hodnota je žádné. V následujícím seznamu vám poskytuje popisy těchto tří možností:<br /><br /> -Žádný. Hostitele služby nepokouší uzamknout instance a předá <xref:System.Runtime.DurableInstancing.InstanceLockedException> do volajícího.<br />-Základní opakovat. Hostitele služby reattempts k uzamčení instanci s lineární intervalu a předá výjimku volajícího na konci sekvence.<br />-Účinnou opakovat. Hostitele služby reattempts k uzamčení instanci s geometrickou řadou rostoucí zpoždění a předá <xref:System.Runtime.DurableInstancing.InstanceLockedException> do volajícího na konci sekvence.|  
+|instanceEncodingOption|Volitelné hodnotu, která určuje, zda informace o stavu instance je komprimován pomocí algoritmu GZip před informace jsou uloženy v úložišti stálost... Tato hodnota je typu <xref:System.Activities.DurableInstancing.InstanceEncodingOption>. Možné hodnoty pro tuto vlastnost jsou <xref:System.Activities.DurableInstancing.InstanceEncodingOption.None>, které neobsahují kompresi <xref:System.Activities.DurableInstancing.InstanceEncodingOption.GZip>a které určují, že se data instance komprimují a používají algoritmus gzip.|  
+|instanceLockedExceptionAction|Hodnota, která určuje akci, k níž dojde v reakci na výjimku, která je vyvolána, pokud hostitel se pokusí Uzamknout instanci, protože instance je aktuálně uzamčen jiného hostitele. Tato hodnota je typu <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction>.<br /><br /> Možnosti povolené pro toto pole jsou: Žádné, základní opakování a agresivní opakování. Výchozí hodnota je žádné. V následujícím seznamu vám poskytuje popisy těchto tří možností:<br /><br /> NTato. Hostitele služby nepokouší uzamknout instance a předá <xref:System.Runtime.DurableInstancing.InstanceLockedException> do volajícího.<br />– Základní opakování Hostitele služby reattempts k uzamčení instanci s lineární intervalu a předá výjimku volajícího na konci sekvence.<br />-Agresivní opakování. Hostitele služby reattempts k uzamčení instanci s geometrickou řadou rostoucí zpoždění a předá <xref:System.Runtime.DurableInstancing.InstanceLockedException> do volajícího na konci sekvence.|  
 |runnableInstancesDetectionPeriod||  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -58,11 +58,11 @@ Chování služby, která můžete nakonfigurovat <xref:System.Activities.Durabl
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování > z \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
+|[\<chování > \<serviceBehaviors >](behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>
 - <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>
-- [Úložiště instancí pracovních postupů SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)
+- [Úložiště instancí pracovních postupů SQL](../../../windows-workflow-foundation/sql-workflow-instance-store.md)

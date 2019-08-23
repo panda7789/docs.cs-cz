@@ -5,62 +5,62 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-ms.openlocfilehash: 09fcf3f1a7e58a4bd8c2c6b0d25c24f32ea5ec5e
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 25b443d8234909a4d8525c2ce2b4e70c3baa337b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880584"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965222"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Integrace System.Transactions s SQL Serverem
-Rozhraní .NET Framework verze 2.0 zavedená, který je přístupný prostřednictvím rozhraní transakce <xref:System.Transactions> oboru názvů. Toto rozhraní poskytuje transakce způsobem, který je plně integrováno v rozhraní .NET Framework, ADO.NET.  
+.NET Framework verze 2,0 představila transakční rozhraní, ke kterému lze přistupovat <xref:System.Transactions> prostřednictvím oboru názvů. Toto rozhraní zpřístupňuje transakce způsobem, který je plně integrovaný do .NET Framework, včetně ADO.NET.  
   
- Kromě vylepšení programovatelnosti <xref:System.Transactions> a ADO.NET můžou spolupracovat a koordinovat optimalizace při práci s transakcí. Možné zařazení transakce je zjednodušené transakce (místní), která bude automaticky povýšen na plně distribuované transakce podle potřeby.  
+ Kromě vylepšení <xref:System.Transactions> programovatelnosti a ADO.NET můžou při práci s transakcemi spolupracovat při koordinaci optimalizací. Transakce promoící je odlehčená (místní) transakce, kterou lze automaticky zvýšit na plně distribuovanou transakci podle potřeby.  
   
- Od verze ADO.NET 2.0 <xref:System.Data.SqlClient> podporuje možné zařazení transakce při práci se serverem SQL Server. Možné zařazení transakce vyvolat není přidaný režie distribuované transakce, pokud přidaného zatížení je povinný. Možné zařazení transakce jsou automatické a vyžadují bez nutnosti zásahu od vývojáře.  
+ Počínaje verzí ADO.NET 2,0 <xref:System.Data.SqlClient> podporuje transakce promoící při práci s SQL Server. Transakce promoící nevyvolává přidanou režii distribuované transakce, pokud není nutná přidaná režie. Transakce s propagačními akcemi jsou automatické a od vývojářů nevyžadují žádný zásah.  
   
- Možné zařazení transakce jsou k dispozici pouze při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) se systémem SQL Server.  
+ Transakce s přístupnými transakcemi jsou k dispozici, pouze pokud používáte`SqlClient`.NET Framework Zprostředkovatel dat pro SQL Server () s SQL Server.  
   
-## <a name="creating-promotable-transactions"></a>Vytváření možné zařazení transakce  
- Zprostředkovatele .NET Framework pro SQL Server poskytuje podporu pro možné zařazení transakce, které jsou zpracovány prostřednictvím třídy v rozhraní .NET Framework <xref:System.Transactions> oboru názvů. Možné zařazení transakce odložené vytváření distribuovaných transakcí, dokud je potřeba optimalizovat distribuované transakce. Pokud pouze jedna resource manager je potřeba, dojde k žádné distribuované transakce.  
+## <a name="creating-promotable-transactions"></a>Vytváření transakcí promoce  
+ Poskytovatel .NET Framework pro SQL Server poskytuje podporu pro transakce, které jsou zpracovávány prostřednictvím tříd v oboru názvů .NET Framework <xref:System.Transactions> . Transakce Promote optimalizuje distribuované transakce odložením vytvoření distribuované transakce, dokud ji nepotřebujete. Pokud je vyžadován pouze jeden správce prostředků, neprobíhá žádná distribuovaná transakce.  
   
 > [!NOTE]
->  Ve scénáři částečně důvěryhodné <xref:System.Transactions.DistributedTransactionPermission> se vyžaduje při povýšení transakce na distribuovanou transakci.  
+> V částečně důvěryhodném scénáři <xref:System.Transactions.DistributedTransactionPermission> je vyžadován při povýšení transakce na distribuovanou transakci.  
   
-## <a name="promotable-transaction-scenarios"></a>Možné zařazení transakce scénáře  
- Distribuované transakce obvykle spotřebovat významné systémových prostředků spravuje Microsoft Distributed Transaction Coordinator (MS DTC), která integruje všechny správce prostředků přistupovat v transakci. Možné zařazení transakce je zvláštní forma <xref:System.Transactions> transakce, která efektivně deleguje práce, kterou jednoduché transakce systému SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient>, a SQL Server koordinovat činnost zahrnuté ve zpracování transakcí, zvýšení jeho úrovně je úplná distribuované transakce podle potřeby.  
+## <a name="promotable-transaction-scenarios"></a>Scénáře transakcí s možností použití  
+ Distribuované transakce obvykle využívají významné systémové prostředky spravované službou Microsoft DTC (Distributed Transaction Coordinator) (MS DTC), která integruje všechny správce prostředků, ke kterým se přistupovalo v transakci. Transakce typu promoe je speciální forma <xref:System.Transactions> transakce, která efektivně deleguje práci do jednoduché transakce SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient>a SQL Server koordinovat práci, která je zapojená do zpracování transakce, a podle potřeby ji propagovat na úplnou distribuovanou transakci.  
   
- Výhodou použití možné zařazení transakce je, že při otevření připojení pomocí aktivní <xref:System.Transactions.TransactionScope> transakce a žádná další připojení jsou otevřené, potvrzení transakcí jako jednoduchý transakce, místo něho další režie úplná distribuované transakce.  
+ Výhodou použití transakcí s více instancemi je, že když je připojení otevřeno pomocí aktivní <xref:System.Transactions.TransactionScope> transakce a žádné jiné připojení není otevřeno, transakce je považována za odlehčenou transakci místo toho, aby vyplatila další Režie plné distribuované transakce.  
   
-### <a name="connection-string-keywords"></a>Klíčová slova připojovací řetězec  
- <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> Vlastnost podporuje klíčového slova `Enlist`, což znamená, zda <xref:System.Data.SqlClient> zjistí Transakční kontextu a automaticky zařazení připojení v distribuované transakci. Pokud `Enlist=true`, připojení se automaticky uveden v otevírání vlákno aktuální kontext transakce. Pokud `Enlist=false`, `SqlClient` připojení nekomunikuje s distribuovanou transakci. Výchozí hodnota pro `Enlist` má hodnotu true. Pokud `Enlist` není zadaná v připojovacím řetězci připojení automaticky zařazena v distribuované transakci je-li jeden zjištěna při otevření připojení.  
+### <a name="connection-string-keywords"></a>Klíčová slova připojovacího řetězce  
+ Vlastnost podporuje klíčové slovo, které označuje, zda <xref:System.Data.SqlClient> bude detekovat transakční kontexty a automaticky zařadit připojení v distribuované transakci. `Enlist` <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> Pokud `Enlist=true`se připojení automaticky zařadí do kontextu aktuálního transakce otevřeného vlákna. Pokud `Enlist=false`připojenínekomunikuje sdistribuovanoutransakcí.`SqlClient` Výchozí hodnota pro `Enlist` je true. Pokud `Enlist` není zadán v připojovacím řetězci, připojení je automaticky zařazeno do distribuované transakce, pokud je zjištěno při otevření připojení.  
   
- `Transaction Binding` Klíčových slov v <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec řízení připojení k přidružení zařazených `System.Transactions` transakce. Je také k dispozici prostřednictvím <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> vlastnost <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.  
+ Klíčová slova <xref:System.Data.SqlClient.SqlConnection> v připojovacím řetězci řídí `System.Transactions` přidružení připojení k zařazené transakci. `Transaction Binding` Je také k dispozici prostřednictvím <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> vlastnosti. <xref:System.Data.SqlClient.SqlConnectionStringBuilder>  
   
  Následující tabulka popisuje možné hodnoty.  
   
 |Klíčové slovo|Popis|  
 |-------------|-----------------|  
-|Implicitní zrušení vazby|Výchozí nastavení Připojení se odpojí od transakce při ukončení, přepnete zpět do režimu automatický zápis.|  
-|Explicitní odpojení|Připojení zůstane připojený k transakci, dokud není zavřena transakce. Připojení se nezdaří, pokud přidružené transakce není aktivní nebo se neshoduje s <xref:System.Transactions.Transaction.Current%2A>.|  
+|Implicitní zrušení vazby|Výchozí nastavení Připojení se odpojí z transakce, když skončí, a přepne zpět do režimu autocommit.|  
+|Explicitní zrušení vazby|Připojení zůstane připojené k transakci, dokud transakce není uzavřená. Pokud není přidružená transakce aktivní nebo se neshoduje <xref:System.Transactions.Transaction.Current%2A>, připojení se nezdaří.|  
   
-## <a name="using-transactionscope"></a>Pomocí objektu TransactionScope  
- <xref:System.Transactions.TransactionScope> Třída umožňuje blok kódu transakční pomocí implicitně zapsání připojení v distribuované transakci. Je třeba zavolat <xref:System.Transactions.TransactionScope.Complete%2A> metoda na konci <xref:System.Transactions.TransactionScope> blok před se v něm. Opuštění bloku volá <xref:System.Transactions.TransactionScope.Dispose%2A> metody. Pokud byla vyvolána výjimka, že příčiny, které se považuje za kód, který ponechte oboru transakce zrušena.  
+## <a name="using-transactionscope"></a>Použití TransactionScope  
+ <xref:System.Transactions.TransactionScope> Třída vytváří transakční blok kódu implicitně zařazováním připojení v distribuované transakci. Před zavoláním <xref:System.Transactions.TransactionScope.Complete%2A> metody je nutné volat metodu na <xref:System.Transactions.TransactionScope> konci bloku. Ukončení bloku vyvolá <xref:System.Transactions.TransactionScope.Dispose%2A> metodu. Pokud byla vyvolána výjimka, která způsobí, že kód opustí rozsah, transakce je považována za přerušenou.  
   
- Doporučujeme používat `using` blok k Ujistěte se, že <xref:System.Transactions.TransactionScope.Dispose%2A> je volán na <xref:System.Transactions.TransactionScope> objektu na pomocí když je v bloku je byl ukončen. Selhání potvrzení nebo vrácení zpět čekajících transakce mohou výrazně poškodit výkonu, protože výchozí časový limit pro <xref:System.Transactions.TransactionScope> je jedna minuta. Pokud použijete `using` příkaz, je nutné provést veškerou práci v `Try` blokovat a explicitně volat <xref:System.Transactions.TransactionScope.Dispose%2A> metoda ve `Finally` bloku.  
+ Doporučujeme, abyste pomocí `using` bloku zajistili, že <xref:System.Transactions.TransactionScope.Dispose%2A> se zavolá na <xref:System.Transactions.TransactionScope> objekt při ukončení bloku using. Nepovedlo se zapsat nebo vrátit zpět nevyřízené transakce může významně poškodit výkon, protože výchozí časový limit <xref:System.Transactions.TransactionScope> je 1 minuta. Pokud nepoužijete `using` příkaz, musíte provést veškerou práci `Try` v <xref:System.Transactions.TransactionScope.Dispose%2A> bloku a explicitně `Finally` volat metodu v bloku.  
   
- Pokud dojde k výjimce v <xref:System.Transactions.TransactionScope>, transakce je označena jako nekonzistentní a opuštění. Bude vrácena zpět, když <xref:System.Transactions.TransactionScope> je uvolněn. Pokud dojde k žádné výjimce, potvrzení zúčastněných transakce.  
-  
-> [!NOTE]
->  `TransactionScope` Třída vytvoří transakce s <xref:System.Transactions.Transaction.IsolationLevel%2A> z `Serializable` ve výchozím nastavení. V závislosti na vaší aplikaci můžete chtít zvážit snížení úrovně izolace, aby se zabránilo vysoké kolize ve vaší aplikaci.  
+ Pokud dojde k výjimce v <xref:System.Transactions.TransactionScope>, transakce je označena jako nekonzistentní a je opuštěna. Bude vrácena zpět, jakmile <xref:System.Transactions.TransactionScope> bude uvolněna. Pokud nedojde k žádné výjimce, připustí se účastnící se transakce.  
   
 > [!NOTE]
->  Doporučujeme provádět jenom aktualizace, vložení, a odstraní v distribuované transakce, protože mohou spotřebovat významné databázových prostředků. Příkazy SELECT může zbytečně zamknout databázových prostředků, a v některých případech bude pravděpodobně nutné použít transakce pro vybere. Veškerá práce bez databáze má počítat mimo obor transakce, pokud zahrnuje další správci prostředků transakčního. I když výjimku v oboru transakce zabraňují transakce potvrzení, <xref:System.Transactions.TransactionScope> třída nemá žádné ustanovení pro vrácení zpět všechny změny kódu provedl nad rámec vlastní transakce. Pokud budete muset provést některé akce, když transakce je vrácena zpět, je nutné napsat vlastní implementaci <xref:System.Transactions.IEnlistmentNotification> rozhraní a explicitně uvést v transakci.  
+> Třída vytvoří `Serializable` ve výchozím nastavení transakci s <xref:System.Transactions.Transaction.IsolationLevel%2A>hodnotou. `TransactionScope` V závislosti na vaší aplikaci můžete zvážit snížení úrovně izolace, abyste se vyhnuli vysokému kolizí ve vaší aplikaci.  
+  
+> [!NOTE]
+> Doporučujeme, abyste v rámci distribuovaných transakcí prováděli pouze aktualizace, vkládání a odstraňování, protože využívají významné databázové prostředky. Příkazy SELECT můžou nenutně uzamknout databázové prostředky a v některých scénářích může být nutné použít transakce pro výběr. Jakákoli nedatabázová práce by se měla provádět mimo rozsah transakce, pokud nezahrnuje další správce prostředků s podporou transakcí. I když výjimka v oboru transakce brání v potvrzení transakce, třída nemá žádné zřízení pro vrácení <xref:System.Transactions.TransactionScope> zpět všech změn, které kód provedl mimo rozsah samotné transakce. Pokud je nutné provést určitou akci při vrácení transakce zpět, musíte napsat vlastní implementaci <xref:System.Transactions.IEnlistmentNotification> rozhraní a explicitně uvést do transakce.  
   
 ## <a name="example"></a>Příklad  
- Práce s <xref:System.Transactions> vyžaduje, abyste měli odkaz na System.Transactions.dll.  
+ Práce s <xref:System.Transactions> vyžaduje odkaz na System. Transactions. dll.  
   
- Následující funkce ukazuje, jak vytvořit možné zařazení transakce na dvou různých instancích systému SQL Server, reprezentovány ve dvou různých <xref:System.Data.SqlClient.SqlConnection> objekty, které jsou obaleny <xref:System.Transactions.TransactionScope> bloku. Kód vytvoří <xref:System.Transactions.TransactionScope> blokovat s `using` příkazu a otevře první připojení, které automaticky využívá ho <xref:System.Transactions.TransactionScope>. Transakce je původně zapsán jako jednoduchý transakce, není úplná distribuované transakce. Druhé připojení je uveden v <xref:System.Transactions.TransactionScope> pouze v případě, že příkaz v prvním připojení nevyvolá výjimku. Po otevření druhé připojení transakce je automaticky povýšen na úplná distribuované transakce. <xref:System.Transactions.TransactionScope.Complete%2A> Je vyvolána metoda, která potvrzení transakce, pouze v případě, že máte nebyly vytvořeny žádné výjimky. Pokud byla vyvolána výjimka v libovolném bodě <xref:System.Transactions.TransactionScope> bloku `Complete` se nebude volat a distribuované transakce se vrátit zpět, když <xref:System.Transactions.TransactionScope> je uvolněna na konci jeho `using` bloku.  
+ Následující funkce ukazuje, jak vytvořit transakci typu promoce na dvou různých instancích SQL Server reprezentovaných dvěma různými <xref:System.Data.SqlClient.SqlConnection> objekty, které jsou zabaleny <xref:System.Transactions.TransactionScope> do bloku. Kód vytvoří <xref:System.Transactions.TransactionScope> blok `using` s příkazem a otevře první připojení, které je automaticky <xref:System.Transactions.TransactionScope>zařadí do. Transakce je zpočátku zařazena jako odlehčená transakce, nikoli plná distribuovaná transakce. Druhé připojení je zařazeno <xref:System.Transactions.TransactionScope> pouze v případě, že příkaz v prvním připojení nevyvolá výjimku. Když je otevřeno druhé připojení, transakce je automaticky povýšena na úplnou distribuovanou transakci. <xref:System.Transactions.TransactionScope.Complete%2A> Metoda je vyvolána, která provádí transakci pouze v případě, že nebyly vyvolány žádné výjimky. Pokud byla výjimka vyvolána <xref:System.Transactions.TransactionScope> v jakémkoli bodě bloku, `Complete` nebude volána a distribuovaná transakce <xref:System.Transactions.TransactionScope> bude vrácena zpět, když je uvolněna na konci svého `using` bloku.  
   
 ```csharp  
 // This function takes arguments for the 2 connection strings and commands in order  
@@ -231,4 +231,4 @@ End Function
 ## <a name="see-also"></a>Viz také:
 
 - [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

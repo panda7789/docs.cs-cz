@@ -9,47 +9,47 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
-ms.openlocfilehash: f92b35757feed0dbe75394f183420780a1366ced
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 220b86c0de57e60036527bb49f2d8de46390a9ed
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661845"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929781"
 ---
 # <a name="how-to-validate-application-settings"></a>Postupy: Ověření nastavení aplikace
 
-Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trvalé.
+Toto téma ukazuje, jak ověřit nastavení aplikace před tím, než budou trvalá.
 
-Nastavení aplikace jsou silného typu, takže máte některé jistotu, že uživatelé nejde přiřadit data nesprávný typ daného nastavení. Však uživatel stále může pokus o přiřazení hodnoty k nastavení, která spadá mimo přijatelné meze – například poskytnutí datum narození, která nastane v budoucnosti. <xref:System.Configuration.ApplicationSettingsBase>, nadřazené třídu všechny třídy nastavení aplikace, zpřístupní čtyři události umožňující takové kontroly hranic. Zpracování těchto událostí umístí všechny ověřovací kód na jednom místě, nikoli rozptylu v celém projektu.
+Vzhledem k tomu, že nastavení aplikace jsou silného typu, máte jistotu, že uživatelé nemůžou přiřadit k danému nastavení data nesprávného typu. Uživatel se ale stále může pokusit přiřadit hodnotu k nastavení, které spadá mimo přijatelné hranice – například zadáním data narození, které nastane v budoucnu. <xref:System.Configuration.ApplicationSettingsBase>, nadřazená třída všech tříd nastavení aplikace zpřístupňuje čtyři události, aby bylo možné tuto kontrolu vazeb povolit. Zpracování těchto událostí vloží veškerý ověřovací kód do jednoho umístění, nikoli v celém projektu.
 
-Události, kterou použijete, závisí na když budete chtít ověřit nastavení, jak je popsáno v následující tabulce.
+Událost, kterou použijete, závisí na tom, kdy potřebujete ověřit nastavení, jak je popsáno v následující tabulce.
 
-|Událost|Výskytu a použití|
+|Událost|Výskyt a použití|
 |-----------|------------------------|
-|<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|Vyvolá se po počátečním načtení skupiny vlastností nastavení.<br /><br /> Pomocí této události lze ověřit počáteční hodnoty pro skupinu pro celou vlastnost předtím, než se používají v rámci aplikace.|
-|<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|Vyvolá se před změnou hodnoty vlastnosti jednoho nastavení.<br /><br /> Pomocí této události lze ověřit jedné vlastnosti předtím, než se změnilo. To můžete poskytnout okamžitou zpětnou vazbu uživatelům týkající se jejich akce a možnosti.|
-|<xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>|Vyvolá se po změně hodnoty vlastnosti jednoho nastavení.<br /><br /> Pomocí této události lze ověřit jedné vlastnosti poté, co se změnilo. Tato událost se jen zřídka použije pro ověření, pokud proces dlouhý a asynchronní ověření je povinný.|
-|<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>|Vyvolá se před uložené skupiny vlastností nastavení.<br /><br /> Pomocí této události lze ověřit hodnoty pro skupinu pro celou vlastnost předtím, než jsou trvalé na disk.|
+|<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|Vyvolá se po počátečním načtení skupiny vlastností nastavení.<br /><br /> Tuto událost použijte k ověření počátečních hodnot pro celou skupinu vlastností předtím, než se použijí v rámci aplikace.|
+|<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|Proběhne před změnou hodnoty vlastnosti s jedním nastavením.<br /><br /> Pomocí této události lze před změnou ověřit jednu vlastnost. Může uživatelům poskytnout okamžitou zpětnou vazbu ohledně jejich akcí a možností.|
+|<xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>|Nastane po změně hodnoty vlastnosti s jedním nastavením.<br /><br /> Tuto událost použijte k ověření jedné vlastnosti poté, co se změní. Tato událost se používá zřídka pro ověřování, pokud není vyžadován zdlouhavý proces asynchronního ověření.|
+|<xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>|Vyvolá se před uložením skupiny vlastností nastavení.<br /><br /> Tuto událost použijte k ověření hodnot pro celou skupinu vlastností před jejich uložením na disk.|
 
-Nebudou všechny tyto události v rámci stejné aplikace obvykle používají pro účely ověření. Například, často je možné ke splnění všech požadavků na ověření zpracovává pouze <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> událostí.
+Obvykle nebudete používat všechny tyto události v rámci stejné aplikace pro účely ověření. Například je často možné splnit všechny požadavky na ověření tím, že zpracuje pouze <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> událost.
 
-Obslužná rutina události obvykle provádí, jeden z následujících akcí při zjistí neplatnou hodnotu:
+Obslužná rutina události obvykle provádí jednu z následujících akcí, když zjistí neplatnou hodnotu:
 
-- Automaticky poskytuje hodnotu ví, že je správný, jako je například výchozí hodnota.
+- Automaticky poskytuje hodnotu známou jako správnou, jako je například výchozí hodnota.
 
-- Znovu se dotazuje uživatele serverový kód pro informace.
+- Znovu zadá dotaz na informace o uživateli kódu serveru.
 
-- Pro události vyvolané před jejich přidružených akcí, jako například <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> a <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>, používá <xref:System.ComponentModel.CancelEventArgs> argument pro operaci zrušit.
+- Pro události, které byly vyvolány před jejich <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> přidruženými akcemi <xref:System.ComponentModel.CancelEventArgs> , jako například a <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>, používá argument pro zrušení operace.
 
 Další informace o zpracování událostí naleznete v tématu [Přehled obslužných rutin událostí](../event-handlers-overview-windows-forms.md).
 
-Následující postupy ukazují, jak otestovat platné datum narození buď pomocí <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> nebo <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí. Postupy byly určeny za předpokladu, že jste již vytvořili nastavení aplikace; v tomto příkladu budeme provádět kontrolu na nastavení s názvem hranic `DateOfBirth`. Další informace o vytváření nastavení najdete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).
+Následující postupy ukazují, jak otestovat platné datum narození pomocí <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> události nebo. Postupy byly zapsány v rámci předpokladu, že jste již vytvořili nastavení aplikace. v tomto příkladu provedeme kontrolu vazeb u nastavení s názvem `DateOfBirth`. Další informace o vytváření nastavení naleznete v tématu [How to: Vytvořte nastavení](how-to-create-application-settings.md)aplikace.
 
-### <a name="to-obtain-the-application-settings-object"></a>K získání objektu nastavení aplikace
+### <a name="to-obtain-the-application-settings-object"></a>Získání objektu nastavení aplikace
 
-- Získejte odkaz na objekt nastavení aplikace (Obálka instance) dokončení jedné z následujících položek seznamu s odrážkami:
+- Vyžádejte si odkaz na objekt nastavení aplikace (Obálková instance) tím, že vyplníte jednu z následujících položek s odrážkami:
 
-  - Pokud jste vytvořili pomocí dialogového okna nastavení aplikace Visual Studio v nastavení **Editor vlastností**, můžete načíst objekt nastavení výchozí vygenerovaný pro váš jazyk prostřednictvím následující výraz.
+  - Pokud jste vytvořili nastavení pomocí dialogového okna nastavení aplikace Visual Studio v **editoru vlastností**, můžete načíst objekt výchozí nastavení generovaný pro váš jazyk pomocí následujícího výrazu.
 
     ```csharp
     Configuration.Settings.Default
@@ -61,11 +61,11 @@ Následující postupy ukazují, jak otestovat platné datum narození buď pomo
 
     -nebo-
 
-  - Pokud jste vývojář Visual Basic a vytvoříte nastavení aplikace pomocí Návrháře projektu, můžete načíst nastavení pomocí [My.Settings – objekt](~/docs/visual-basic/language-reference/objects/my-settings-object.md).
+  - Pokud jste vývojář Visual Basic a vytvořili jste nastavení aplikace pomocí Návrháře projektu, můžete načíst nastavení pomocí [objektu My. Settings](../../../visual-basic/language-reference/objects/my-settings-object.md).
 
     -nebo-
 
-  - Pokud jste vytvořili nastavení odvozením z <xref:System.Configuration.ApplicationSettingsBase> přímo, budete muset ručně vytvořit instanci své třídy.
+  - Pokud jste vytvořili nastavení odvozením <xref:System.Configuration.ApplicationSettingsBase> přímo, je nutné vytvořit instanci třídy ručně.
 
     ```csharp
     MyCustomSettings settings = new MyCustomSettings();
@@ -75,15 +75,15 @@ Následující postupy ukazují, jak otestovat platné datum narození buď pomo
     Dim Settings as New MyCustomSettings()
     ```
 
-Následující postupy byly vytvořeny v rámci za předpokladu, že byl získán objekt nastavení aplikace vyplněním poslední seznamy s odrážkami položky v tomto postupu.
+Následující postupy byly zapsány v rámci předpokladu, že byl objekt nastavení aplikace získán dokončením poslední položky s odrážkami v tomto postupu.
 
 ### <a name="to-validate-application-settings-when-a-setting-is-changing"></a>Ověření nastavení aplikace při změně nastavení
 
-1. Pokud jste C# vývojářkou formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> událostí.
+1. Pokud jste C# vývojář, v `Load` události formuláře nebo ovládacího prvku přidejte obslužnou rutinu <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> události pro událost.
 
     -nebo-
 
-    Pokud jste vývojář Visual Basic, by měla deklarovat `Settings` pomocí proměnných `WithEvents` – klíčové slovo.
+    Pokud jste vývojář Visual Basic, měli byste deklarovat `Settings` proměnnou `WithEvents` pomocí klíčového slova.
 
     ```csharp
     public void Form1_Load(Object sender, EventArgs e)
@@ -98,7 +98,7 @@ Následující postupy byly vytvořeny v rámci za předpokladu, že byl získá
     End Sub
     ```
 
-2. Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.
+2. Definujte obslužnou rutinu události a napište do ní kód, který provede kontrolu hranic pro datum narození.
 
     ```csharp
     private void MyCustomSettings_SettingChanging(Object sender, SettingChangingEventArgs e)
@@ -125,9 +125,9 @@ Následující postupy byly vytvořeny v rámci za předpokladu, že byl získá
     End Sub
     ```
 
-### <a name="to-validate-application-settings-when-a-save-occurs"></a>Ověření nastavení aplikace při uložení dojde k
+### <a name="to-validate-application-settings-when-a-save-occurs"></a>Ověření nastavení aplikace, když dojde k uložení
 
-1. Do formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí.
+1. V `Load` události formuláře nebo ovládacího prvku přidejte obslužnou rutinu události <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> pro událost.
 
     ```csharp
     public void Form1_Load(Object sender, EventArgs e)
@@ -142,7 +142,7 @@ Následující postupy byly vytvořeny v rámci za předpokladu, že byl získá
     End Sub
     ```
 
-2. Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.
+2. Definujte obslužnou rutinu události a napište do ní kód, který provede kontrolu hranic pro datum narození.
 
     ```csharp
     private void MyCustomSettings_SettingsSaving(Object sender, SettingsSavingEventArgs e)

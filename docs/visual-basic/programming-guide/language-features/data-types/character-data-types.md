@@ -8,32 +8,32 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-ms.openlocfilehash: 14085172a8f9f9d60af0495a36dd4ba7592213fa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d29e8771d61c04cf35aa71b5ba7fbba0d308c730
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907228"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965681"
 ---
 # <a name="character-data-types-visual-basic"></a>Datové typy znaků (Visual Basic)
-Visual Basic poskytuje *znakové datové typy* řešit tisknutelný a zobrazitelný znaků. Přestože oba vypořádat se znaky Unicode, `Char` obsahuje jeden znak, zatímco `String` obsahuje nekonečný počet znaků.  
+Visual Basic poskytuje *znakové datové typy* pro práci s tisknutelnými a zobrazitelnými znaky. I když se zaměří se znaky Unicode `Char` , `String` obsahuje jeden znak, který obsahuje nekonečný počet znaků.  
   
- Tabulka, která zobrazuje vedle sebe porovnání datových typů jazyka Visual Basic, naleznete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
+ Tabulku, která zobrazuje souběžné porovnání Visual Basicch datových typů, najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
-## <a name="char-type"></a>Znakový typ  
- `Char` Datový typ je jeden znak Unicode (16-bit) dva bajty. Pokud proměnná uchovává vždy přesně jeden znak, deklarujte ho jako `Char`. Příklad:  
+## <a name="char-type"></a>Typ znaku  
+ `Char` Datový typ je jeden dvoubajtový (16bitový) znak Unicode. Pokud proměnná vždy ukládá přesně jeden znak, deklarujte ho jako `Char`. Příklad:  
   
  [!code-vb[VbVbalrCharTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#1)]
   
- Jednotlivé možné vlastnosti v `Char` nebo `String` proměnná je *kódu bodu*, nebo kód znaku ve znakové sadě Unicode. Znaky Unicode obsahovat základní znakové sadě ASCII, různé jiné písmena abecedy, zvýraznění, symboly měny, zlomky, diakritiku a technické a matematické symboly.  
+ Každá možná hodnota v `Char` proměnné nebo `String` je *bod kódu*nebo kód znaku v sadě znaků Unicode. Mezi znaky Unicode patří základní znaková sada ASCII, různá další písmena abecedy, zvýraznění, symboly měn, zlomky, diakritická znaménka a matematické a technické symboly.  
   
 > [!NOTE]
->  Znaková sada Unicode rezervy kód odkazuje D800 prostřednictvím DFFF (55296 prostřednictvím 55551 decimal) pro *náhradní páry*, které vyžadují dvě hodnoty 16bitové představuje bod jeden kód. A `Char` proměnná nemůže obsahovat náhradní pár a `String` používá dvě místa k uložení těchto pár.  
+> Znaková sada Unicode rezervuje body kódu D800 prostřednictvím DFFF (55296 až 55551 desítk) pro *náhradní páry*, které vyžadují, aby hodnoty 2 16-bit představovaly jediný bod kódu. Proměnná nemůže obsahovat náhradní pár `String` a k uchování takového páru používá dvě pozice. `Char`  
   
- Další informace najdete v tématu [Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md).  
+ Další informace naleznete v tématu [char data Type](../../../../visual-basic/language-reference/data-types/char-data-type.md).  
   
-## <a name="string-type"></a>String – typ  
- `String` Datový typ je posloupnost nula nebo více znaků Unicode (16-bit) dva bajty. Pokud proměnná může obsahovat nekonečný počet znaků, deklarujte ho jako `String`. Příklad:  
+## <a name="string-type"></a>Typ řetězce  
+ `String` Datový typ je sekvence nula nebo více dvoubajtových (16 bitů) znaků Unicode. Pokud proměnná může obsahovat nekonečný počet znaků, deklarujte ji jako `String`. Příklad:  
   
  [!code-vb[VbVbalrCharTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#2)]
   
@@ -43,8 +43,8 @@ Visual Basic poskytuje *znakové datové typy* řešit tisknutelný a zobrazitel
 
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

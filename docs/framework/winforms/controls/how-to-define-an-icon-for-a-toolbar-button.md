@@ -13,30 +13,30 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-ms.openlocfilehash: 2c1c3d8529662c1e1f1a3d28e3853d31f5d940ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b85f734a5f8b31531cfe48f87681d98304db09b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054273"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929633"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button"></a>Postupy: Definování ikony pro tlačítko ToolBar
 > [!NOTE]
->  <xref:System.Windows.Forms.ToolStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
+> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> <xref:System.Windows.Forms.ToolBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStrip>  
   
- <xref:System.Windows.Forms.ToolBar> tlačítka budou moct zobrazit ikony v nich pro snadnou identifikaci uživatelů. Toho můžete dosáhnout přidávání obrázků [ImageList – komponenta](imagelist-component-windows-forms.md) komponentu a potom přidružení <xref:System.Windows.Forms.ImageList> komponentu s <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+ <xref:System.Windows.Forms.ToolBar>tlačítka jsou schopna zobrazit ikony, aby je uživatelé mohli snadno identifikovat. Toho lze dosáhnout přidáním obrázků do komponenty [komponenty ImageList](imagelist-component-windows-forms.md) a následným přiřazením <xref:System.Windows.Forms.ImageList> komponenty <xref:System.Windows.Forms.ToolBar> k ovládacímu prvku.  
   
-### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>Chcete-li nastavit ikonu pro tlačítko toolbar prostřednictvím kódu programu  
+### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>Nastavení ikony pro tlačítko panelu nástrojů prostřednictvím kódu programu  
   
-1. V postupu, vytvořit instanci <xref:System.Windows.Forms.ImageList> komponenty a <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+1. V proceduře vytvořte instanci <xref:System.Windows.Forms.ImageList> komponenty <xref:System.Windows.Forms.ToolBar> a ovládacího prvku.  
   
-2. Ve stejné proceduře přiřadit obrázku, který má <xref:System.Windows.Forms.ImageList> komponenty.  
+2. Ve stejném postupu přiřaďte k <xref:System.Windows.Forms.ImageList> komponentě obrázek.  
   
-3. Ve stejné proceduře přiřadit <xref:System.Windows.Forms.ImageList> ovládací prvek <xref:System.Windows.Forms.ToolBar> řídit a přiřadit <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A> vlastnosti tlačítka panelu nástrojů.  
+3. Ve stejném postupu přiřaďte <xref:System.Windows.Forms.ImageList> ovládací <xref:System.Windows.Forms.ToolBar> prvek ovládacímu prvku a přiřaďte <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A> vlastnost jednotlivých tlačítek panelu nástrojů.  
   
-     V následujícím příkladu kódu nastavena cesta pro umístění image je **dokumenty** složky. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
+     V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** . To se provádí, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s <xref:System.Windows.Forms.PictureBox> ovládacím prvkem již byl přidán.  
   
-     Po výše uvedených kroků by měl jste napsali kód, který se zobrazí pod podobný.  
+     Podle výše uvedených kroků byste měli mít napsaný kód podobný tomu, který je zobrazený níže.  
   
     ```vb  
     Public Sub InitializeMyToolBar()  
@@ -118,6 +118,6 @@ ms.locfileid: "62054273"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Postupy: Aktivace událostí nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
 - [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
 - [Komponenta ImageList](imagelist-component-windows-forms.md)

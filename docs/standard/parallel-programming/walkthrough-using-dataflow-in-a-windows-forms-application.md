@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4dc433b83fd086a1e3e165a85b6bfe64b781f45b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: dbe5b5db580e06bfd3e5723addd404eae7950e6c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666340"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946352"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování imagí v aplikaci model Windows Forms.  
@@ -82,7 +82,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  C# Verze`CreateCompositeBitmap` metody používá ukazatele k umožnění <xref:System.Drawing.Bitmap?displayProperty=nameWithType> efektivního zpracování objektů. Proto je nutné povolit možnost **Povolit nezabezpečený kód** v projektu, aby bylo možné použít klíčové [](../../csharp/language-reference/keywords/unsafe.md) slovo unsafe. Další informace o tom, jak povolit nezabezpečený kód ve C# vizuálním projektu, naleznete na [stránce sestavení,C#Návrhář projektu ()](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+    > C# Verze`CreateCompositeBitmap` metody používá ukazatele k umožnění <xref:System.Drawing.Bitmap?displayProperty=nameWithType> efektivního zpracování objektů. Proto je nutné povolit možnost **Povolit nezabezpečený kód** v projektu, aby bylo možné použít klíčové [](../../csharp/language-reference/keywords/unsafe.md) slovo unsafe. Další informace o tom, jak povolit nezabezpečený kód ve C# vizuálním projektu, naleznete na [stránce sestavení,C#Návrhář projektu ()](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
  V následující tabulce jsou popsány členové sítě.  
   

@@ -6,73 +6,73 @@ helpviewer_keywords:
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-ms.openlocfilehash: ddc2f3338b231ab3ae59e65bc82c00bb8f663540
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 369c434f5443334ccb8b136ce50ff2d5db8ece01
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966964"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963450"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
-Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](using-keyboard-events.md).  
+Model Windows Forms zpracovává vstup klávesnice tím, že vyvolává události klávesnice v reakci na zprávy systému Windows. Většina model Windows Forms aplikací zpracovává vstup z klávesnice výhradně tím, že zpracovává události klávesnice. Je však třeba pochopit, jak fungují zprávy klávesnice, abyste mohli implementovat pokročilejší scénáře zadávání klávesnice, jako je zachycení klíčů předtím, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíčových dat, která model Windows Forms rozpoznat, a poskytuje přehled o směrování zpráv z klávesnice. Informace o událostech klávesnice najdete v tématu [použití událostí klávesnice](using-keyboard-events.md).  
   
 ## <a name="types-of-keys"></a>Typy klíčů  
- Windows Forms identifikuje vstup z klávesnice jako virtuální klíč kódy, které jsou reprezentovány pomocí bitového <xref:System.Windows.Forms.Keys> výčtu. S <xref:System.Windows.Forms.Keys> výčet, můžete kombinovat řadu při stisknutí klávesy za následek jednu hodnotu. Tyto hodnoty odpovídají hodnotám, které nejsou poskytnuty WM_KEYDOWN a WM_SYSKEYDOWN Windows zprávy. Můžete zjistit většiny fyzických stisknutí kláves zpracování <xref:System.Windows.Forms.Control.KeyDown> nebo <xref:System.Windows.Forms.Control.KeyUp> události. Znaky jsou podmnožinou <xref:System.Windows.Forms.Keys> výčet a odpovídají hodnotám, které nejsou poskytnuty WM_CHAR a WM_SYSCHAR Windows zprávy. Pokud je výsledkem kombinace při stisknutí kláves je znak, můžete zjistit znak zpracování <xref:System.Windows.Forms.Control.KeyPress> událostí. Alternativně můžete použít <xref:Microsoft.VisualBasic.Devices.Keyboard>, vystavené pomocí programovacího rozhraní jazyka Visual Basic, a zjistit, které jsou stisknuty poslat klíči. Další informace najdete v tématu [přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
+ Model Windows Forms identifikuje vstup z klávesnice jako kódy virtuálních klíčů, které jsou reprezentovány <xref:System.Windows.Forms.Keys> bitovým výčtem. Pomocí výčtu <xref:System.Windows.Forms.Keys> můžete kombinovat řadu stisknutých kláves, aby byla výsledkem jediná hodnota. Tyto hodnoty odpovídají hodnotám, které doprovázejí zprávy Windows WM_KEYDOWN a WM_SYSKEYDOWN. Většinu fyzických klíčů můžete zjistit zpracováním <xref:System.Windows.Forms.Control.KeyDown> událostí nebo. <xref:System.Windows.Forms.Control.KeyUp> Znakové klíče jsou podmnožinou <xref:System.Windows.Forms.Keys> výčtu a odpovídají hodnotám, které doprovázejí zprávy systému Windows WM_CHAR a WM_SYSCHAR. Pokud kombinace stisknutých kláves zavede znak, můžete rozpoznat znak tím, že se <xref:System.Windows.Forms.Control.KeyPress> událost zpracuje. Alternativně můžete použít <xref:Microsoft.VisualBasic.Devices.Keyboard>a vystavit Visual Basic programovací rozhraní, abyste zjistili, které klávesy byly stisknuté a odesílané klíče. Další informace najdete v tématu [přístup k klávesnici](../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
   
-## <a name="order-of-keyboard-events"></a>Řazení událostí klávesnice  
- Jak je uvedeno dříve, existují 3 související události, které se může vyskytnout u ovládacího prvku pomocí klávesnice. Následující sekvence zobrazuje obecné pořadí událostí:  
+## <a name="order-of-keyboard-events"></a>Pořadí událostí klávesnice  
+ Jak je uvedeno výše, existují 3 události související s klávesnicí, ke kterým může dojít na ovládacím prvku. Následující sekvence zobrazuje obecné pořadí událostí:  
   
-1. Uživatel nabízených oznámení "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyDown> dojde k události.  
+1. Uživatel přehraje klíč "a", klíč se předzpracováním, odešle a <xref:System.Windows.Forms.Control.KeyDown> dojde k události.  
   
-2. Uživatel obsahuje "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyPress> dojde k události.  
+2. Uživatel drží klíč "a", klíč je předzpracovaný, odeslán a <xref:System.Windows.Forms.Control.KeyPress> dojde k události.  
   
-     Jako uživatel obsahuje klíč, dojde k této události více než jednou.  
+     Tato událost nastane víckrát, protože uživatel drží klíč.  
   
-3. Odeslat uživatele verze je Předzpracovaný "a" klíč klíč, a <xref:System.Windows.Forms.Control.KeyUp> dojde k události.  
+3. Uživatel uvolní klíč "a", klíč je předzpracovaný, byl odeslán a <xref:System.Windows.Forms.Control.KeyUp> dojde k události.  
   
-## <a name="preprocessing-keys"></a>Předzpracování klíče  
- Stejně jako ostatní zprávy se zpracovávají zprávy týkající se klávesnice v <xref:System.Windows.Forms.Control.WndProc%2A> metody formuláře nebo ovládacího prvku. Nicméně před klávesnice zpracování zpráv, <xref:System.Windows.Forms.Control.PreProcessMessage%2A> metoda volá jeden nebo více metod, které může být potlačena za účelem zpracování speciální znak a fyzické klíče. Můžete přepsat tyto metody pro detekci a filtrování určité klíče předtím, než zprávy zpracuje ovládacím prvkem. Následující tabulka uvádí akce, která se provádí a související metody, ke které dochází, v pořadí, metoda vyvolá.  
+## <a name="preprocessing-keys"></a>Klíče předběžného zpracování  
+ Podobně jako jiné zprávy jsou zprávy klávesnice zpracovávány v <xref:System.Windows.Forms.Control.WndProc%2A> metodě formuláře nebo ovládacího prvku. Před zpracováním <xref:System.Windows.Forms.Control.PreProcessMessage%2A> zpráv klávesnice však metoda volá jednu nebo více metod, které lze přepsat za účelem zpracování speciálních znakových klíčů a fyzických klíčů. Tyto metody můžete přepsat pro detekci a filtrování určitých klíčů předtím, než je zpráva zpracována ovládacím prvkem. Následující tabulka ukazuje prováděnou akci a související metodu, ke které dojde, v pořadí, ve kterém se metoda vyskytuje.  
   
-### <a name="preprocessing-for-a-keydown-event"></a>Předzpracování pro zpracování události KeyDown.  
+### <a name="preprocessing-for-a-keydown-event"></a>Předzpracování pro událost KeyDown  
   
-|Akce|Související metody|Poznámky|  
+|Akce|Související metoda|Poznámky|  
 |------------|--------------------|-----------|  
-|Vyhledejte klíč příkaz například akcelerátoru nebo zástupce v nabídce.|<xref:System.Windows.Forms.Control.ProcessCmdKey%2A>|Tato metoda zpracovává příkaz klíč, který má přednost před regulární klíče. Pokud tato metoda vrátí `true`, není klíčové zpráva odeslána a klíče události nedochází. Vrátí-li `false`, <xref:System.Windows.Forms.Control.IsInputKey%2A> nazývá`.`|  
-|Kontrolovat speciální klíč, který vyžaduje předběžného zpracování nebo klíč běžný znak, který by měla vyvolat <xref:System.Windows.Forms.Control.KeyDown> událostí a odeslaných do ovládacího prvku.|<xref:System.Windows.Forms.Control.IsInputKey%2A>|Pokud metoda vrátí `true`, to znamená, že ovládací prvek je znak regulárního a <xref:System.Windows.Forms.Control.KeyDown> událost se vyvolá. Pokud `false`, <xref:System.Windows.Forms.Control.ProcessDialogKey%2A> je volána. **Poznámka:**  Aby ovládací prvek získá klíč nebo kombinace kláves, dokáže zpracovat <xref:System.Windows.Forms.Control.PreviewKeyDown> událostí a nastavte <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A> z <xref:System.Windows.Forms.PreviewKeyDownEventArgs> k `true` klíče nebo klíče, které chcete.|  
-|Vyhledejte klíč navigace (klávesy ESC, TAB, Return nebo šipka).|<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|Tato metoda zpracovává fyzické klíč, který využívá speciální funkce v rámci ovládacího prvku, jako je například přepínání mezi ovládacím prvkem a jeho nadřazený objekt. Pokud ztratíte kontrolu nad klíči, nezpracovává <xref:System.Windows.Forms.Control.ProcessDialogKey%2A> je volán na nadřazený ovládací prvek a tak dále do ovládacího prvku nejvyšší v hierarchii. Pokud tato metoda vrátí `true`předběžného zpracování je kompletní a klíče události se nevygeneroval. Vrátí-li `false`, <xref:System.Windows.Forms.Control.KeyDown> dojde k události.|  
+|Vyhledejte příkazový klíč, jako je například akcelerátor nebo zástupce nabídky.|<xref:System.Windows.Forms.Control.ProcessCmdKey%2A>|Tato metoda zpracovává klíč příkazu, který má přednost před běžnými klíči. Pokud tato metoda vrátí `true`hodnotu, zpráva Key není odeslána a událost klíče se neobjeví. Pokud se vrátí `false`, <xref:System.Windows.Forms.Control.IsInputKey%2A> je volána`.`|  
+|Kontrola speciálního klíče, který vyžaduje předzpracování nebo normální klíč znaku, který by měl vyvolat <xref:System.Windows.Forms.Control.KeyDown> událost a být odeslán do ovládacího prvku.|<xref:System.Windows.Forms.Control.IsInputKey%2A>|Pokud se metoda vrátí `true`, znamená to, že je ovládací prvek běžným znakem <xref:System.Windows.Forms.Control.KeyDown> a je vyvolána událost. Pokud `false`jevolána. <xref:System.Windows.Forms.Control.ProcessDialogKey%2A> **Poznámka:**  Chcete-li zajistit, že ovládací prvek získá klíč nebo kombinaci klíčů, můžete zpracovat <xref:System.Windows.Forms.Control.PreviewKeyDown> událost a sadu <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A> <xref:System.Windows.Forms.PreviewKeyDownEventArgs> `true` pro klíč nebo klíče, které chcete.|  
+|Vyhledejte navigační klíč (klávesy ESC, TAB, Return nebo šipky).|<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|Tato metoda zpracovává fyzický klíč, který využívá speciální funkce v rámci ovládacího prvku, jako je Přepnutí fokusu mezi ovládacím prvkem a jeho nadřazeným prvkem. Pokud přímý ovládací prvek nezpracovává klíč, <xref:System.Windows.Forms.Control.ProcessDialogKey%2A> je vyvolána v nadřazeném ovládacím prvku a tak dále k nejvyššímu ovládacímu prvku v hierarchii. Pokud tato metoda vrátí `true`, předzpracování je dokončeno a událost klíče se nevygeneruje. Pokud se vrátí `false` <xref:System.Windows.Forms.Control.KeyDown> , dojde k události.|  
   
-### <a name="preprocessing-for-a-keypress-event"></a>Předzpracování pro zpracování události KeyPress.  
+### <a name="preprocessing-for-a-keypress-event"></a>Předzpracování pro událost KeyPress  
   
-|Akce|Související metody|Poznámky|  
+|Akce|Související metoda|Poznámky|  
 |------------|--------------------|-----------|  
-|Zaškrtněte, pokud chcete vidět, že klíč je běžný znak, který má být zpracován ovládacím prvkem|<xref:System.Windows.Forms.Control.IsInputChar%2A>|Pokud je znak, který běžný znak, vrátí tato metoda `true`, <xref:System.Windows.Forms.Control.KeyPress> událost se vyvolá a žádné další předběžné zpracování proběhne. V opačném případě <xref:System.Windows.Forms.Control.ProcessDialogChar%2A> , zavolá se.|  
-|Zaškrtněte, pokud chcete zjistit, zda znak je symbol (například & OK na tlačítko)|<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|Tato metoda je podobný <xref:System.Windows.Forms.Control.ProcessDialogKey%2A>, zavolá se hierarchii ovládacího prvku. Pokud je ovládací prvek ovládacího prvku kontejneru, kontrole klávesových zkratek voláním <xref:System.Windows.Forms.Control.ProcessMnemonic%2A> na sebe sama a jeho podřízených ovládacích prvků. Pokud <xref:System.Windows.Forms.Control.ProcessDialogChar%2A> vrátí `true`, <xref:System.Windows.Forms.Control.KeyPress> události nedochází.|  
+|Zkontrolujte, zda je klíč normálním znakem, který by měl být zpracován ovládacím prvkem.|<xref:System.Windows.Forms.Control.IsInputChar%2A>|Pokud je znak normálním znakem, vrátí `true`Tato metoda <xref:System.Windows.Forms.Control.KeyPress> , událost je vyvolána a nedojde k žádnému dalšímu předběžnému zpracování. V <xref:System.Windows.Forms.Control.ProcessDialogChar%2A> opačném případě bude volána.|  
+|Zkontrolujte, zda je znak symbolický (například & OK na tlačítku).|<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|Tato metoda, podobně jako <xref:System.Windows.Forms.Control.ProcessDialogKey%2A>, bude volána v hierarchii ovládacích prvků. Je-li ovládací prvek kontejner ovládacího prvku, kontroluje, zda jsou volány <xref:System.Windows.Forms.Control.ProcessMnemonic%2A> pomocí sebe sama a jeho podřízených ovládacích prvků. Pokud <xref:System.Windows.Forms.Control.ProcessDialogChar%2A> vrátí `true` ,<xref:System.Windows.Forms.Control.KeyPress> událost neproběhne.|  
   
-## <a name="processing-keyboard-messages"></a>Zpracování zprávy týkající se klávesnice  
- Po klávesnice zprávy dosahu <xref:System.Windows.Forms.Control.WndProc%2A> metody formuláře nebo ovládacího prvku, se zpracovávají podle sadu metod, které mohou být přepsána nastaveními. Každá z těchto metod vrací <xref:System.Boolean> hodnotu určující, zda zpráva klávesnice zpracování a používané ovládací prvek. Pokud některou z metod vrátí `true`, pak zprávy se považuje za zpracování a není předaný do základní nebo nadřazeného ovládacího prvku pro další zpracování. V opačném případě zpráva zůstane ve frontě zpráv a mohou být zpracovány v jinou metodu v základní nebo nadřazeného ovládacího prvku. Následující tabulka představuje metody, které zpracovávají zprávy týkající se klávesnice.  
+## <a name="processing-keyboard-messages"></a>Zpracování zpráv klávesnice  
+ Po tom, co klávesové <xref:System.Windows.Forms.Control.WndProc%2A> zprávy dosáhnou metody formuláře nebo ovládacího prvku, jsou zpracovány sadou metod, které lze přepsat. Každá z těchto metod vrátí <xref:System.Boolean> hodnotu určující, zda byla zpráva klávesnice zpracována a spotřebována ovládacím prvkem. Pokud se jedna z metod vrátí `true`, je zpráva považována za zpracovanou a není předána základnímu nebo nadřazenému ovládacímu prvku pro další zpracování. V opačném případě zpráva zůstane ve frontě zpráv a může být zpracována jinou metodou v základní nebo nadřazené části ovládacího prvku. Následující tabulka uvádí metody, které zpracovávají zprávy z klávesnice.  
   
 |Metoda|Poznámky|  
 |------------|-----------|  
-|<xref:System.Windows.Forms.Control.ProcessKeyMessage%2A>|Tato metoda zpracovává všechny zprávy týkající se klávesnice, které dostávají <xref:System.Windows.Forms.Control.WndProc%2A> metody ovládacího prvku.|  
-|<xref:System.Windows.Forms.Control.ProcessKeyPreview%2A>|Tato metoda odesílá zprávy klávesnice do nadřazeného ovládacího prvku. Pokud <xref:System.Windows.Forms.Control.ProcessKeyPreview%2A> vrátí `true`, není-li generována žádná událost klíče, jinak <xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A> je volána.|  
-|<xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A>|Tato metoda vyvolá <xref:System.Windows.Forms.Control.KeyDown>, <xref:System.Windows.Forms.Control.KeyPress>, a <xref:System.Windows.Forms.Control.KeyUp> události podle potřeby.|  
+|<xref:System.Windows.Forms.Control.ProcessKeyMessage%2A>|Tato metoda zpracovává všechny zprávy klávesnice, které jsou přijímány <xref:System.Windows.Forms.Control.WndProc%2A> metodou ovládacího prvku.|  
+|<xref:System.Windows.Forms.Control.ProcessKeyPreview%2A>|Tato metoda pošle zprávu klávesnice nadřazenému ovládacímu prvku. Pokud <xref:System.Windows.Forms.Control.ProcessKeyPreview%2A> se `true`vrátí, nevygeneruje se žádná klíčová <xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A> událost, jinak se zavolá.|  
+|<xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A>|Tato metoda v případě <xref:System.Windows.Forms.Control.KeyDown>potřeby <xref:System.Windows.Forms.Control.KeyPress>vyvolává události <xref:System.Windows.Forms.Control.KeyUp> , a.|  
   
-## <a name="overriding-keyboard-methods"></a>Přepsání metody klávesnice  
- Nejsou k dispozici pro přepsání při zprávu klávesnice předzpracovaná a zpracuje; mnoho metod Některé metody jsou však mnohem lepší možnosti než jiné. Následující tabulka uvádí úlohy, které můžete chtít provést a nejlepší způsob, jak přepsat metody klávesnice. Další informace o přepsání metody, naleznete v tématu [přepsání vlastnostem a metodám v odvozených třídách](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md#overriding-properties-and-methods-in-derived-classes).  
+## <a name="overriding-keyboard-methods"></a>Přepsání metod klávesnice  
+ Existuje mnoho metod, které lze přepsat při předzpracování a zpracování zprávy klávesnice; Některé metody jsou však mnohem lepší než jiné. V následující tabulce jsou uvedeny úlohy, které můžete chtít provést, a nejlepší způsob, jak potlačit metody klávesnice. Další informace o přepsání metod naleznete v tématu [přepisování vlastností a metod v odvozených třídách](../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md#overriding-properties-and-methods-in-derived-classes).  
   
 |Úloha|Metoda|  
 |----------|------------|  
-|Zachytit klíč navigace a zvýšit <xref:System.Windows.Forms.Control.KeyDown> událostí. Můžete například chtít kartu a vraťte se ke zpracování v textovém poli.|Přepsat <xref:System.Windows.Forms.Control.IsInputKey%2A>. **Poznámka:**  Alternativně můžete zpracovávat <xref:System.Windows.Forms.Control.PreviewKeyDown> událostí a nastavte <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A> z <xref:System.Windows.Forms.PreviewKeyDownEventArgs> k `true` klíče nebo klíče, které chcete.|  
-|Proveďte zvláštní zpracování vstupu nebo navigaci v ovládacím prvku. Například kterou chcete použít klávesy se šipkami v ovládacím prvku seznamu změnit vybrané položky.|přepsání <xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|  
-|Zachytit klíč navigace a zvýšit <xref:System.Windows.Forms.Control.KeyPress> událostí. V ovládacím prvku číselník – můžete například chtít, že klíč k vícenásobné šipku stiskne ke zrychlení průběh prostřednictvím položky.|Přepsat <xref:System.Windows.Forms.Control.IsInputChar%2A>.|  
-|Speciální zpracování vstupu nebo navigace během provádění <xref:System.Windows.Forms.Control.KeyPress> událostí. V seznamu se například ovládací prvek, podržte klávesu "r" přeskočí mezi položkami, které začínají písmenem r.|přepsání <xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|  
-|Provést vlastní symbol manipulace; například chcete zpracovávat klávesových zkratek vykreslovaných vlastníkem tlačítek obsažených v panelu nástrojů.|Přepsat <xref:System.Windows.Forms.Control.ProcessMnemonic%2A>.|  
+|Zachytit navigační klíč a vyvolat <xref:System.Windows.Forms.Control.KeyDown> událost. Například požadujete, aby byla karta zpracována v textovém poli.|Přepsat <xref:System.Windows.Forms.Control.IsInputKey%2A>. **Poznámka:**  Alternativně můžete zpracovat <xref:System.Windows.Forms.Control.PreviewKeyDown> událost a <xref:System.Windows.Forms.PreviewKeyDownEventArgs> sadu <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A> `true` pro klíč nebo klíče, které chcete.|  
+|Provedení speciálního zpracování vstupu nebo navigace na ovládacím prvku. Například chcete změnit vybranou položku pomocí kláves se šipkami v ovládacím prvku seznam.|Prioritu<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|  
+|Zachytit navigační klíč a vyvolat <xref:System.Windows.Forms.Control.KeyPress> událost. Například v ovládacím prvku s číselníkem, který požadujete vícenásobnou klávesovou zkratku pro zrychlení průběhu položek.|Přepsat <xref:System.Windows.Forms.Control.IsInputChar%2A>.|  
+|Provedení speciálního zpracování vstupu nebo navigace během <xref:System.Windows.Forms.Control.KeyPress> události. Například v ovládacím prvku seznamu, který uchovává klíč "r", přeskočí položky, které začínají písmenem r.|Prioritu<xref:System.Windows.Forms.Control.ProcessDialogChar%2A>|  
+|Provádět vlastní zpracování instrukcí; například chcete zpracovat klávesové zkratky na tlačítkách vydaných vlastníkem, která jsou obsažena na panelu nástrojů.|Přepsat <xref:System.Windows.Forms.Control.ProcessMnemonic%2A>.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Keys>
 - <xref:System.Windows.Forms.Control.WndProc%2A>
 - <xref:System.Windows.Forms.Control.PreProcessMessage%2A>
-- [Objekt My.Computer.Keyboard](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
-- [Přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)
+- [Objekt My.Computer.Keyboard](../../visual-basic/language-reference/objects/my-computer-keyboard-object.md)
+- [Přístup ke klávesnici](../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)
 - [Použití událostí klávesnice](using-keyboard-events.md)

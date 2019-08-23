@@ -11,24 +11,24 @@ helpviewer_keywords:
 - drop and drag [Windows Forms], insertion marks
 - insertion marks
 ms.assetid: 88d0a15b-25fd-4dc3-a685-297351311940
-ms.openlocfilehash: f3dff351052eaaf70737c6410c1367ab568f6fd0
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f5de00fd41b24fc1a7f1ff4484c3a126e98952a1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586516"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967837"
 ---
 # <a name="how-to-display-an-insertion-mark-in-a-windows-forms-listview-control"></a>Postupy: Zobrazení značky vložení v ovládacím prvku Windows Forms ListView
-Značky vložení v <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje uživatele, kteří bodu vloženy Přetahované položky. Když uživatel přetáhne položku do bodu mezi dvě další položky, značky vložení ukazuje očekávané nové umístění položky.  
+Značka vložení v <xref:System.Windows.Forms.ListView> ovládacím prvku zobrazí uživatele bodu, kam budou vloženy přetažené položky. Když uživatel přetáhne položku do bodu mezi dvěma ostatními položkami, zobrazí se na této značce očekávané nové umístění.  
   
 > [!NOTE]
->  Označit funkce vložení dostupná pouze na [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] když vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody. Ve starších operačních systémech jakýkoli kód týkající se značky vložení nemá žádný vliv a značky vložení nezobrazí. Další informace naleznete v tématu <xref:System.Windows.Forms.ListViewInsertionMark>.  
+> Funkce značek vložení je k dispozici pouze [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] v případě, <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> že vaše aplikace volá metodu. V předchozích operačních systémech žádný kód týkající se značky vložení nemá žádný vliv a značka vložení se nezobrazí. Další informace naleznete v tématu <xref:System.Windows.Forms.ListViewInsertionMark>.  
   
- Následující obrázek ukazuje značky vložení:  
+ Následující obrázek ukazuje značku vložení:  
   
- ![Snímek obrazovky zobrazující značky vložení ListView. ](./media/how-to-display-an-insertion-mark-in-a-windows-forms-listview-control/listview-insertion-mark.gif "ListViewInsertion")  
+ ![Snímek obrazovky zobrazující značku vložení ListView](./media/how-to-display-an-insertion-mark-in-a-windows-forms-listview-control/listview-insertion-mark.gif "ListViewInsertion")  
   
- Následující příklad kódu ukazuje, jak tuto funkci používat.  
+ Následující příklad kódu ukazuje, jak používat tuto funkci.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Windows.Forms.ListView.InsertionMark#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.InsertionMark/CPP/listviewinsertionmarkexample.cpp#1)]
@@ -38,7 +38,7 @@ Značky vložení v <xref:System.Windows.Forms.ListView> ovládací prvek zobraz
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení System a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -47,4 +47,4 @@ Značky vložení v <xref:System.Windows.Forms.ListView> ovládací prvek zobraz
 - <xref:System.Windows.Forms.ListViewInsertionMark>
 - [Ovládací prvek ListView](listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
-- [Návod: Operace a přetažení ve Windows Forms](../advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)
+- [Návod: Provádění operace přetažení v model Windows Forms](../advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)

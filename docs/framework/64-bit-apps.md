@@ -8,59 +8,59 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 11295f4b0d1a425fd3859c904b8ebc7830c64d1f
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
-ms.translationtype: MT
+ms.openlocfilehash: 62d14b422ccaf963c5488498be430a0a9c4770c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66815942"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928013"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
-Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
+Když kompilujete aplikaci, můžete určit, že má běžet v operačním systému Windows 64 jako nativní aplikace nebo v modulu WOW64 (Windows 32-bit v systému Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, které umožňuje spuštění 32 aplikace v systému 64. Subsystém WOW64 je součástí všech 64 bitových verzí operačního systému Windows.  
   
-## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Spuštění 32bitové vs. 64bitové aplikace na Windows  
- Všechny aplikace, které jsou založené na rozhraní .NET Framework 1.0 nebo 1.1 jsou považovány za 32bitové aplikace na 64bitový operační systém a jsou vždy spouštěny pod WOW64 a 32bitová verze common language runtime (CLR). 32bitových aplikací, které jsou založené na rozhraní .NET Framework 4 nebo novější verze také spuštěna v modulu WOW64 v 64bitových systémech.  
+## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Spouštění 32 bitů vs. 64 – bitové aplikace ve Windows  
+ Všechny aplikace, které jsou postavené na .NET Framework 1,0 nebo 1,1, se považují za 32 aplikace 64 v 16bitovém operačním systému a jsou vždy spouštěny v prostředí WOW64 a 32 v modulu CLR (Common Language Runtime). 32 bitové aplikace, které jsou postavené na .NET Framework 4 nebo novějších verzích, se spouštějí také v modulu WOW64 v systémech 64.  
   
- Visual Studio nainstaluje 32bitová verze modulu CLR na x x86 počítače a 32bitové verze i odpovídající 64bitovou verzi modulu CLR v počítači Windows 64-bit. (Protože Visual Studio je 32bitová aplikace, když se nainstaluje na 64bitový systém, běží pod WOW64.)  
+ Visual Studio nainstaluje 32 verzi modulu CLR na počítač s procesorem x86 a jak 32 verzi, tak i 64 příslušnou jazykovou verzi modulu CLR na počítač s 64 bitovými systémy Windows. (Vzhledem k tomu, že Visual Studio je 32 aplikace, když je nainstalovaná na 64 systému, běží pod WOW64.)  
   
 > [!NOTE]
->  Z důvodu návrhu x86 emulace a subsystém WOW64 pro rodiny procesorů Itanium aplikace jsou omezeny na provádění na jeden procesor. Tyto faktory snížit výkon a škálovatelnost 32bitových aplikací rozhraní .NET Framework, které běží na systémy s procesorem Itanium. Doporučujeme použít rozhraní .NET Framework 4, která zahrnuje nativní 64bitová podpora pro systémy s procesorem Itanium, vyšší výkon a škálovatelnost.  
+> Vzhledem k tomu, že se jedná o návrh emulace x86 a subsystému WOW64 pro rodinu procesorů s procesorem Itanium, jsou aplikace omezené na spouštění v jednom procesoru. Tyto faktory omezují výkon a škálovatelnost 32 .NET Framework aplikací, které běží na systémech založených na procesorech Itanium. Pro zvýšení výkonu a škálovatelnosti doporučujeme použít .NET Framework 4, která zahrnuje nativní podporu 64 pro systémy s procesorem Itanium.  
   
- Ve výchozím nastavení když spustíte 64bitové spravované aplikace v operačním systému Windows 64-bit, můžete vytvořit objekt více než 2 gigabajty (GB). V rozhraní .NET Framework 4.5, ale můžete tento limit zvýšit.  Další informace najdete v tématu [ \<gcAllowVeryLargeObjects > element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
+ Ve výchozím nastavení platí, že při spuštění 64 spravované aplikace na 64 operačním systému Windows můžete vytvořit objekt, který nemá více než 2 gigabajty (GB). V .NET Framework 4,5 však můžete tento limit zvýšit.  Další informace naleznete v [ \<tématu gcAllowVeryLargeObjects > element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
   
- Mnoho sestavení spustit stejně jako na modul CLR 32bitová verze a 64bitová verze CLR. Nicméně některé programy může chovat jinak, v závislosti na modulu CLR, pokud obsahují jeden nebo více z následujících akcí:  
+ Mnoho sestavení běží stejným způsobem na 32 CLR a 64-bit CLR. Některé programy se však mohou chovat jinak, v závislosti na modulu CLR, pokud obsahují jednu nebo více následujících možností:  
   
-- Struktury, které obsahují členy, které se mění velikost podle platformy (například libovolný typ ukazatele).  
+- Struktury, které obsahují členy, které mění velikost v závislosti na platformě (například libovolný typ ukazatele).  
   
-- Aritmetika ukazatele, který obsahuje konstantní velikostí.  
+- Aritmetický ukazatel, který obsahuje konstantní velikosti.  
   
-- Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Int32` pro popisovače místo `IntPtr`.  
+- Nesprávné vyvolání platformy nebo deklarace com, které `Int32` používají pro popisovače `IntPtr`místo.  
   
-- Kód, který přetypování `IntPtr` k `Int32`.  
+- Kód, který `IntPtr` se přetypování na `Int32`.  
   
- Další informace o vytvoření portu 32bitové aplikace ke spuštění v 64bitovém modulu CLR najdete v tématu [přenesení 32bitového spravovaného kódu na 64bitovou verzi](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
+ Další informace o tom, jak nasměrovat 32-bitovou aplikaci pro spuštění na 64 modulu CLR, najdete v tématu [migrace 32-bitového spravovaného kódu na 64](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## <a name="general-64-bit-programming-information"></a>Obecné informace o 64bitovém programování  
- Obecné informace o 64bitové programování najdete v následujících dokumentech:  
+ Obecné informace o 64 programování najdete v následujících dokumentech:  
   
-- Další informace o 64bitové verzi modulu CLR v počítači Windows 64-bit, najdete v článku [středisko pro vývojáře rozhraní .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) na webu MSDN.  
+- Další informace o 64 verze modulu CLR na počítači se systémem Windows na 64 naleznete v [centru pro vývojáře .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) na webu MSDN.  
   
-- V dokumentaci Windows SDK, naleznete v tématu [Průvodce programováním pro Windows 64-bit](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
+- V dokumentaci k Windows SDK najdete informace v tématu [Průvodce programováním pro 64-bit Windows](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
   
-- Informace o tom, jak stáhnout 64bitovou verzi modulu CLR najdete v tématu [rozhraní .NET Framework Developer Center stáhne](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
+- Informace o tom, jak stáhnout 64 verze modulu CLR, najdete v tématu [.NET Framework stažení centra pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
   
-- Informace o Visual Studio – podpora pro vytváření 64bitových aplikací najdete v tématu [podporu služby Visual Studio IDE 64-Bit](/visualstudio/ide/visual-studio-ide-64-bit-support).  
+- Informace o podpoře sady Visual Studio pro vytváření 64 aplikací naleznete v tématu [Podpora sady Visual Studio IDE pro 64](/visualstudio/ide/visual-studio-ide-64-bit-support).  
   
 ## <a name="compiler-support-for-creating-64-bit-applications"></a>Podpora kompilátoru pro vytváření 64bitových aplikací  
- Ve výchozím nastavení, při použití rozhraní .NET Framework a začít vytvářet aplikace pro 32bitové nebo 64bitové počítače, aplikace bude spuštěna na 64bitovém počítači jako nativní aplikaci (tedy ne v modulu WOW64). V následující tabulce jsou uvedeny dokumenty, které popisují, jak použít kompilátory sady Visual Studio k vytvoření 64bitových aplikací, které se spustí jako nativní v prostředí WOW64, nebo obojí.  
+ Ve výchozím nastavení platí, že když použijete .NET Framework k sestavení aplikace na 32 nebo na 64 počítači, aplikace se spustí v počítači s 64 jako nativní aplikaci (tj. není pod WOW64). V následující tabulce jsou uvedeny dokumenty, které vysvětlují použití kompilátorů sady Visual Studio k vytváření 64 aplikací, které budou spouštěny jako nativní, v modulu WOW64 nebo v obou.  
   
-|Kompilátor|– možnost kompilátoru|  
+|Přepínač|Možnost kompilátoru|  
 |--------------|---------------------|  
-|Visual Basic|[/ Platform (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/platform.md)|  
-|Visual C#|[/ Platform (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/platform-compiler-option.md)|  
-|Visual C++|Můžete vytvořit více platforem, aplikace Microsoft intermediate language (MSIL) s použitím **/CLR: safe**. Další informace najdete v tématu [/CLR (kompilace Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ obsahuje samostatný kompilátor pro jednotlivé operační systémy 64-bit. Další informace o tom, jak používat Visual C++ vytvářet nativní aplikace, které běží v operačním systému Windows 64-bit, naleznete v tématu [64bitové programování](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
+|Visual Basic|[/Platform (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/platform.md)|  
+|Visual C#|[/Platform (C# možnosti kompilátoru)](~/docs/csharp/language-reference/compiler-options/platform-compiler-option.md)|  
+|Visual C++|Pomocí **/clr: Safe**můžete vytvářet aplikace nezávislá platforem a aplikací jazyka MSIL (Microsoft Intermediate Language). Další informace naleznete v tématu [/CLR (Common Language Runtime Compilation)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Vizuál C++ obsahuje samostatný kompilátor pro každý 64 operační systém. Další informace o tom, jak používat vizuál C++ k vytváření nativních aplikací, které běží na 64 operačním systému Windows, najdete v tématu [64-bitové programování](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
   
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Určení stavu souboru EXE nebo DLL  
- Chcete-li zjistit, zda souboru .exe nebo .dll soubor je určen ke spouštění jenom na konkrétní platformě nebo v modulu WOW64, použijte [CorFlags.exe (corflags – převodní nástroj)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) bez parametrů. CorFlags.exe můžete také použít ke změně stavu platformy souboru .exe nebo .dll soubor. Záhlaví modulu CLR sestavení sady Visual Studio obsahuje verzi modulu runtime hlavní číslo nastavená na hodnotu 2 a dílčí modul runtime verze číslo nastavené na 5. Aplikace, které mají dílčí modul runtime verze nastavena na hodnotu 0 jsou považovány za starší verze aplikací a jsou vždy spouštěny v modulu WOW64.  
+ Chcete-li zjistit, zda je soubor. exe nebo soubor. dll určen pro spuštění pouze na konkrétní platformě nebo v modulu WOW64, použijte [nástroj CorFlags. exe (CorFlags Conversion Tool)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) bez možností. Pomocí nástroje CorFlags. exe můžete také změnit stav platformy souboru. exe nebo souboru. dll. Hlavička CLR sestavení sady Visual Studio má hlavní číslo verze modulu runtime nastavenou na hodnotu 2 a vedlejší číslo verze modulu runtime nastaveno na hodnotu 5. Aplikace, které mají vedlejší verzi modulu runtime nastavenou na hodnotu 0, jsou považovány za starší aplikace a jsou vždy spouštěny v prostředí WOW64.  
   
- Chcete-li programově odeslat dotaz s příponou .exe nebo .dll, které chcete zobrazit, zda je určená ke spuštění pouze na konkrétní platformě nebo v modulu WOW64, použijte <xref:System.Reflection.Module.GetPEKind%2A?displayProperty=nameWithType> metody.
+ Chcete-li se programově dotazovat na soubor. exe nebo. dll, aby bylo možné spustit pouze konkrétní platformu nebo v modulu WOW64, použijte <xref:System.Reflection.Module.GetPEKind%2A?displayProperty=nameWithType> metodu.

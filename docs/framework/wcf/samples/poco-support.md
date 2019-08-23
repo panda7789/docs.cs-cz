@@ -2,12 +2,12 @@
 title: Podpora objektů POCO
 ms.date: 03/30/2017
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-ms.openlocfilehash: 8f65f6d2131941d02c773f61f70084059293187c
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 90b55362c1958ea5677e3bc0cdca906bb3af6b3d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363092"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965556"
 ---
 # <a name="poco-support"></a>Podpora objektů POCO
 Tato ukázka demonstruje podporu serializace pro neoznačené typy; To znamená, že typy, které atributy serializace nebyly aplikovány, se někdy označují jako prosté staré typy objektů CLR (POCO). <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontrakt dat pro všechny veřejné neoznačené typy, které mají konstruktor bez parametrů. Kontrakty dat umožňují předat strukturovaná data službám a ze služeb. Další informace o neoznačených typech naleznete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
@@ -17,7 +17,7 @@ Tato ukázka demonstruje podporu serializace pro neoznačené typy; To znamená,
  Služba je hostována službou Internetová informační služba (IIS) a klientem je Konzolová aplikace (. exe).  
   
 > [!NOTE]
->  Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
  Třída se používá `ServiceContract`v. `ComplexNumber` Typ nemá atributy<xref:System.Runtime.Serialization.DataMemberAttribute> a, jak je znázorněno v následujícím ukázkovém kódu. <xref:System.Runtime.Serialization.DataContractAttribute> `ComplexNumber` Ve výchozím nastavení jsou serializovány všechny veřejné vlastnosti a pole.  
   

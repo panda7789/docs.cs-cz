@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], changing column type
 - data [Windows Forms], displaying
 ms.assetid: 7f994d45-600d-4190-a187-35803214b40c
-ms.openlocfilehash: f40ab6fe000f9104b10d5841f52eadf102a91a6b
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: e0b0b01a3c6da0680a3ec5fcd591344e04658a37
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040471"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917625"
 ---
 # <a name="how-to-change-the-type-of-a-windows-forms-datagridview-column-using-the-designer"></a>Postupy: Změna typu sloupce Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít změnit typ sloupce, který již byl přidán do ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DataGridView> . Například můžete chtít upravit typy některých sloupců, které jsou generovány automaticky při svázání ovládacího prvku se zdrojem dat. To je užitečné v případě, že zobrazená tabulka obsahuje sloupce, které obsahují cizí klíče, do řádků v tabulce v relaci. V takovém případě možná budete chtít nahradit sloupce textového pole, které zobrazují tyto cizí klíče, sloupci pole se seznamem, které zobrazují smysluplnější hodnoty ze související tabulky.
@@ -28,7 +28,7 @@ Někdy budete chtít změnit typ sloupce, který již byl přidán do ovládací
 3. V mřížce **vlastnosti sloupce** nastavte `ColumnType` vlastnost na nový typ sloupce.
 
     > [!NOTE]
-    >  `ColumnType` Vlastnost je vlastnost pouze pro dobu návrhu, která označuje třídu reprezentující typ sloupce. Nejedná se o skutečnou vlastnost definovanou ve třídě Column.
+    > `ColumnType` Vlastnost je vlastnost pouze pro dobu návrhu, která označuje třídu reprezentující typ sloupce. Nejedná se o skutečnou vlastnost definovanou ve třídě Column.
 
 ## <a name="see-also"></a>Viz také:
 

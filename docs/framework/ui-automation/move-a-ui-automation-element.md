@@ -9,21 +9,21 @@ helpviewer_keywords:
 - elements, moving
 - UI Automation, moving elements
 ms.assetid: 4042cb44-e27e-4a03-ac36-9be1eed65b47
-ms.openlocfilehash: 7ecc272ceefe6755daa002eafd19c7e5d1c192f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 43b1e005cdb499fae920a0999feaa56c5409f653
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949172"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964696"
 ---
 # <a name="move-a-ui-automation-element"></a>Přesunutí elementu automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Tento příklad ukazuje, jak se přesunout [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] element na zadanou obrazovku umístění.  
+ Tento příklad ukazuje, jak přesunout [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prvek do zadaného umístění obrazovky.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Windows.Automation.WindowPattern> a <xref:System.Windows.Automation.TransformPattern> ovládací prvek vzorů pro přesouvání prostřednictvím kódu programu [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] cílová aplikace na samostatné obrazovce umístění a sledovat <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent>.  
+ <xref:System.Windows.Automation.WindowPattern> Následující příklad používá <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.TransformPattern> vzoryovládacích<xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent>prvků a k programovému přesunutí cílovéaplikacenaumístěnídiskrétníobrazovkyasledování.[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]  
   
  [!code-csharp[WindowMove#1301](../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowMove/CSharp/WindowMove.cs#1301)]
  [!code-vb[WindowMove#1301](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowMove/VisualBasic/windowmove.vb#1301)]  
@@ -32,4 +32,4 @@ ms.locfileid: "61949172"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Třídu WindowPattern vzorku](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/WindowMove)
+- [Ukázka třídu WindowPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/WindowMove)

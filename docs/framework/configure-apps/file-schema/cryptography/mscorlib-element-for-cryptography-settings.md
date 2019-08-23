@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: 312db8ea5ae4b66fd00faad1b788eac0356aeaa7
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: c780087246ea91846896037a245b82493251e538
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659601"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921065"
 ---
 # <a name="mscorlib-element-for-cryptography-settings"></a>\<Element > mscorlib pro nastavení kryptografie
 Obsahuje element cryptographySettings >. [ \<](cryptographysettings-element.md)  
@@ -74,5 +74,5 @@ Obsahuje element cryptographySettings >. [ \<](cryptographysettings-element.md)
 - <xref:System.Security.Cryptography>
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)

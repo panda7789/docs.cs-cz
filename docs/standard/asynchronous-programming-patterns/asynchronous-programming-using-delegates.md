@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 41c9793900c3e7accd5463a19de10d1cb81afd59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce77e57eb049c031ed506e8812fff59ba97a978e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61870120"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950865"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Asynchronní programování pomocí delegátů
-Delegáty umožňují volání v asynchronním režimu synchronní metody. Při volání delegáta synchronně, `Invoke` metoda volá metodu cíl přímo u aktuálního vlákna. Pokud `BeginInvoke` metoda je volána, common language runtime (CLR) zařadí do fronty požadavek a okamžitě vrací volajícímu. Cílové metody je volána asynchronně na vlákně z fondu podprocesů. Původní podproces, který danou žádost odeslal, je zdarma má pokračovat provedením souběžně s cílovou metodu. Pokud byl zadán metody zpětného volání při volání `BeginInvoke` metody, metody zpětného volání je volána, když skončí cílové metody. V metodě zpětného volání `EndInvoke` metoda získá návratovou hodnotu a vstup/výstup nebo jen pro výstupní parametry. Pokud žádná metoda zpětného volání je zadán při volání metody `BeginInvoke`, `EndInvoke` lze volat z vlákna, která se nazývá `BeginInvoke`.  
+Delegáti umožňují volat synchronní metodu asynchronním způsobem. Při synchronním `Invoke` volání delegáta metoda volá cílovou metodu přímo v aktuálním vlákně. Pokud je `BeginInvoke` metoda volána, modul CLR (Common Language Runtime) zařadí do fronty požadavek a okamžitě se vrátí volajícímu. Cílová metoda se volá asynchronně ve vlákně z fondu vláken. Původní vlákno, které odeslalo požadavek, je zdarma pro pokračování v provádění paralelně s cílovou metodou. Pokud byla metoda zpětného volání určena při volání `BeginInvoke` metody, je volána metoda zpětného volání při ukončení cílové metody. V metodě `EndInvoke` zpětného volání metoda získá vrácenou hodnotu a všechny vstupní/výstupní nebo výstupní parametry. Pokud při volání `BeginInvoke`není zadána žádná metoda zpětného `EndInvoke` volání, lze ji volat z vlákna, `BeginInvoke`které je voláno.  
   
 > [!IMPORTANT]
->  Kompilátory by měly vydávat třídy delegáta s `Invoke`, `BeginInvoke`, a `EndInvoke` metod pomocí delegáta specifikovaných uživatelem. `BeginInvoke` a `EndInvoke` metody by měly být doplněny jako nativní. Protože tyto metody jsou označeny jako nativní, modul CLR automaticky poskytuje implementaci v okamžiku načtení třídy. Zavaděč zajistí, že nejsou přepsána.  
+> Kompilátory by měly generovat třídy delegátů pomocí `Invoke`metod `EndInvoke` , `BeginInvoke`a pomocí podpisu delegáta zadaného uživatelem. Metody `BeginInvoke` a`EndInvoke` by měly být dekorované jako nativní. Vzhledem k tomu, že jsou tyto metody označeny jako nativní, modul CLR automaticky poskytne implementaci v době načítání třídy. Zavaděč zajišťuje, že nejsou přepsány.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Asynchronní volání synchronních metod](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
- Tento článek popisuje použití delegátů pro asynchronní volání běžné metody a poskytuje příklady jednoduchého kódu, které ukazují čtyři způsoby čekání na asynchronní volání k vrácení.  
+ Popisuje použití delegátů k asynchronnímu volání běžných metod a poskytuje jednoduché příklady kódu, které znázorňují čtyři způsoby čekání na vrácení asynchronního volání.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
- Popisuje asynchronní programování s rozhraním .NET Framework.  
+ Popisuje asynchronní programování s .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 

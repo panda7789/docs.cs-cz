@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Visual Basic, functions
 - functions [Visual Basic]
 ms.assetid: d86fc51f-f46e-4941-8ae2-6262da3d2688
-ms.openlocfilehash: d76e02676d3921231b3fe4bf5cc1015540e6bafc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e38768e191d8b0e05e4dcc5081444737da759bf0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802515"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930062"
 ---
 # <a name="functions-visual-basic"></a>Funkce (Visual Basic)
-Témata v této části obsahují tabulky za běhu členských funkcí jazyka Visual Basic.  
+Témata v této části obsahují tabulky Visual Basic členských funkcí run-time.  
   
 > [!NOTE]
->  Můžete také vytvořit funkce a jejich volání. Další informace najdete v tématu [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md) a [jak: Vytvořit proceduru, která vrací hodnotu](../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md).  
+> Můžete také vytvořit funkce a volat je. Další informace naleznete v tématech [příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md) a [How to: Vytvoří proceduru, která vrátí hodnotu](../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Převodní funkce](../../../visual-basic/language-reference/functions/conversion-functions.md)  

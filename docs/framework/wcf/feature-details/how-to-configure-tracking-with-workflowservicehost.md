@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: e0631cdb47bc88f7f588f4dfe6c44ea3d44f4e60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5781878270272f5ef894c68dc23b9433029e1d41
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039361"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968496"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost
-Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Prostřednictvím souboru Web.config je nakonfigurován tak, že zadáte chování služby.  
+Toto téma vysvětluje, jak nakonfigurovat sledování pro pracovní [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] postup, který <xref:System.ServiceModel.Activities.WorkflowServiceHost>je hostovaný v. Je nakonfigurována pomocí souboru Web. config zadáním chování služby.  
   
 ### <a name="configure-tracking-in-configuration"></a>Konfigurace sledování v konfiguraci  
   
-1. Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.  
+1. Přidejte pomocí elementu <`behavior`> v konfiguračním souboru, jak je znázorněno v následujícím příkladu. <xref:System.Activities.Tracking.EtwTrackingParticipant>  
   
     ```xml  
     <behaviors>  
@@ -27,9 +27,9 @@ Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_lo
     ```  
   
     > [!NOTE]
-    >  Zjednodušená konfigurace používá předchozí ukázka konfigurace. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
+    > Předchozí konfigurační ukázka používá zjednodušenou konfiguraci. Další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md).  
   
-     Přidá předchozí ukázka konfigurace <xref:System.Activities.Tracking.EtwTrackingParticipant> a sleduje Určuje název profilu. Sledování profily jsou vytvořené v <`trackingProfile`> v elementu <`tracking`> element. Profil sledování obsahuje sledování dotazy, které umožňují sledování účastník přihlásit k odběru události pracovních postupů, které jsou emitovány při změně stavu instance pracovního postupu za běhu. Následující příklad ukazuje postup vytvoření profilu sledování.  
+     Předchozí konfigurační ukázka přidá <xref:System.Activities.Tracking.EtwTrackingParticipant> a určí název sledovacího profilu. Sledování profilů se vytváří v <`trackingProfile`> elementu v rámci elementu <`tracking`>. Profil sledování obsahuje sledovací dotazy, které umožňují sledování účastníka přihlásit k odběru událostí pracovního postupu, které jsou emitovány při změně stavu instance pracovního postupu za běhu. Následující příklad ukazuje, jak vytvořit profil sledování.  
   
     ```xml  
     <system.serviceModel>  
@@ -52,21 +52,21 @@ Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_lo
   
      Další informace o sledování profilů najdete v tématu [sledování profilů](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
   
-     Další informace o sledování obecně naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  
+     Další informace o obecném sledování najdete v tématu [sledování a trasování pracovních postupů](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  
   
 ### <a name="configure-tracking-in-code"></a>Konfigurace sledování v kódu  
   
-1. Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior> chování v kódu, jak je znázorněno v následujícím příkladu.  
+1. <xref:System.Activities.Tracking.EtwTrackingParticipant> Přidejte<xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior> pomocí chování v kódu, jak je znázorněno v následujícím příkladu.  
   
     ```csharp  
     host.Description.Behaviors.Add(new EtwTrackingBehavior { ProfileName = "Sample Tracking Profile" });  
     ```  
   
-     Předchozí příklad kódu přidá <xref:System.Activities.Tracking.EtwTrackingParticipant> a sleduje Určuje název profilu. Sledování profily jsou vytvořené v <`trackingProfile`> v elementu <`tracking`> element, jak je znázorněno v předchozí části.  
+     Předchozí ukázka kódu přidá <xref:System.Activities.Tracking.EtwTrackingParticipant> a určí název sledovacího profilu. Sledování profilů se vytváří v <`trackingProfile`> elementu v prvku <`tracking`>, jak je znázorněno v předchozí části.  
   
      Další informace o sledování profilů najdete v tématu [sledování profilů](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
   
-     Další informace o sledování obecně naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Příklad konfigurace sledování prostřednictvím kódu programu najdete v části [konfigurace sledování pracovního postupu](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
+     Další informace o obecném sledování najdete v tématu [sledování a trasování pracovních postupů](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Příklad konfigurace sledování programově najdete v tématu [Konfigurace sledování pracovního postupu](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také:
 

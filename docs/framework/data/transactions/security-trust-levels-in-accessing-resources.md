@@ -2,31 +2,31 @@
 title: Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
 ms.date: 03/30/2017
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
-ms.openlocfilehash: 847467b964e86f6d13be6ba103162512270fa684
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4cd229737d7569afe84d945dce0fbb6867f3ef76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596760"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948709"
 ---
 # <a name="security-trust-levels-in-accessing-resources"></a>Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
 Toto téma popisuje, jak je omezen přístup na studijních materiálech, které <xref:System.Transactions> zveřejňuje.  
   
  Existují tři hlavní úrovně důvěryhodnosti pro <xref:System.Transactions>. Úrovně důvěryhodnosti jsou definovány v závislosti na studijních materiálech, které <xref:System.Transactions> zpřístupňuje a úroveň vztahu důvěryhodnosti, který je třeba získat přístup k těmto prostředkům. Materiály, <xref:System.Transactions> poskytuje přístup k jsou systémové paměti, sdílený proces wide materiály a široké systémových prostředků. Úrovně jsou:  
   
-- **AllowPartiallyTrustedCallers** (APTCA) pro použití transakcí v rámci jedné aplikace domény aplikace.  
+- **AllowPartiallyTrustedCallers** (APTCA) pro aplikace, které používají transakce v rámci jedné domény aplikace.  
   
 - **DistributedTransactionPermission** (DTP) pro aplikace, které používají distribuované transakce.  
   
 - Úplný vztah důvěryhodnosti pro trvalý zdroje, aplikace pro správu konfigurace a starší definiční aplikace.  
   
 > [!NOTE]
->  Neměli volat některý z rozhraní zařazení s zosobněným kontexty.  
+> Neměli volat některý z rozhraní zařazení s zosobněným kontexty.  
   
 ## <a name="trust-levels"></a>Úrovně důvěryhodnosti  
   
 ### <a name="aptca-partial-trust"></a>APTCA (částečným vztahem důvěryhodnosti)  
- <xref:System.Transactions> Sestavení lze volat částečně důvěryhodným kódem, protože byla označena atributem **AllowPartiallyTrustedCallers** atribut (APTCA). Tento atribut v podstatě odebere implicitní <xref:System.Security.Permissions.SecurityAction.LinkDemand> pro **FullTrust** oprávnění, který je nastavena opačném případě automaticky umisťovat na každou metodu veřejně dostupný v jednotlivých typů. Nicméně některé typy a členy stále vyžadují bezpečnějších oprávnění.  
+ Sestavení může být voláno částečně důvěryhodným kódem, protože bylo označeno atributem AllowPartiallyTrustedCallers (APTCA). <xref:System.Transactions> Tento atribut v podstatě odstraní implicitní <xref:System.Security.Permissions.SecurityAction.LinkDemand> pro sadu oprávnění **FullTrust** , která je jinak automaticky umístěna do každé veřejně přístupné metody v každém typu. Nicméně některé typy a členy stále vyžadují bezpečnějších oprávnění.  
   
  Atribut APTCA umožňuje aplikacím používat transakcí v částečným vztahem důvěryhodnosti v rámci jediné doméně aplikace. To umožňuje-eskalován transakce a Nestálá zařazení, které lze použít pro zpracování chyb. Příkladem je tabulka transacted hash a aplikace, která ji používá. Data lze přidat do a odebrán z tabulky hash v rámci jedné transakce. Pokud později transakce vrácena zpět, všechny změny provedené v tabulce hash v rámci dané transakce lze vrátit zpět.  
   
@@ -38,11 +38,11 @@ Toto téma popisuje, jak je omezen přístup na studijních materiálech, které
   
  Chcete-li povolit obnovení, tento typ aplikace má možnost trvale spotřebovávat systémové prostředky. Toto je vzhledem k tomu, že správce obnovitelných transakcí musí mějte na paměti, transakcí, které mají potvrzeny, dokud můžete ověřit, že všechny správce trvalý prostředků, které se účastní transakce přijali výsledek. Proto tento typ aplikace vyžaduje plnou důvěryhodnost a by neměl být spuštěn, není-li poskytovaná úroveň vztahu důvěryhodnosti.  
   
- Další informace o trvalý zařazení a obnovení najdete v tématu [uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) a [provádění obnovení](../../../../docs/framework/data/transactions/performing-recovery.md) témata.  
+ Další informace o trvalých zařazení a obnovení najdete v tématu [zařazení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) a [provádění témat pro obnovení](../../../../docs/framework/data/transactions/performing-recovery.md) .  
   
  Aplikace, které provádějí starší verze definiční pracovat s modelu COM + jsou také nutné mít plnou důvěryhodnost.  
   
- Následuje seznam typy a členy, které nejsou skriptem částečně důvěryhodný kód, protože jsou vybaveny **FullTrust** atribut deklarativní zabezpečení:  
+ Následuje seznam typů a členů, které nelze volat částečně důvěryhodným kódem, protože jsou upraveny pomocí deklarativního atributu zabezpečení **FullTrust** :  
   
  `PermissionSetAttribute(SecurityAction.LinkDemand, Name := "FullTrust")`  
   
@@ -62,4 +62,4 @@ Toto téma popisuje, jak je omezen přístup na studijních materiálech, které
   
 - <xref:System.Transactions.TransactionScope.%23ctor%28System.Transactions.TransactionScopeOption%2CSystem.Transactions.TransactionOptions%2CSystem.Transactions.EnterpriseServicesInteropOption%29>  
   
- Jen pro okamžitého volajícího je nutné mít **FullTrust** oprávnění nastavena pro použití výše uvedené typy a metody.
+ Pro oprávnění **FullTrust** nastavené na používání výše uvedených typů nebo metod je potřeba jenom okamžitého volajícího.

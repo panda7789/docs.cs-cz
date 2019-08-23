@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bc22de2d30d0f928653206ab9e356577a84c572c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c437d1856e1aa9526516c0a1d1ca931d8ed25c80
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044917"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965778"
 ---
 # <a name="ihostfilter-interface"></a>IHostFilter – rozhraní
-Poskytuje metodu k označení, že se zpracuje zadaného tokenu.  
+Poskytuje metodu pro indikaci, že se zpracuje zadaný token.  
   
 > [!NOTE]
->  `IHostFilter` Pomocí klienta musí implementovat rozhraní.  
+> `IHostFilter` Rozhraní musí být implementováno klientem.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[MarkToken – metoda](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-marktoken-method.md)|Označuje, že se zpracuje token Zadaná metadata.|  
+|[MarkToken – metoda](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-marktoken-method.md)|Indikuje, že se zpracuje zadaný token metadat.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

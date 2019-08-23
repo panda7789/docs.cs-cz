@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro NameValueSectionHandler a DictionarySectionHandler
+title: <remove>– element pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 062aa3921d29cffd33db2d96096ef25c2b819030
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: cd338ff2d613be31ab1524f6baed6107f803a688
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300702"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920950"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Odebrat > – element pro NameValueSectionHandler a DictionarySectionHandler
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Odebrat element > pro NameValueSectionHandler a DictionarySectionHandler
 
-Odstraní dříve definované nastavení.
+Odebere dříve definované nastavení.
 
-[ **\<Konfigurace >** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
+[ **\<> Konfigurace**](configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,13 +34,13 @@ Odstraní dříve definované nastavení.
 
 |           | Popis |
 | --------- | ----------- |
-| **key**   | Požadovaný atribut.<br><br>Určuje název tohoto nastavení odebrat. |
+| **key**   | Požadovaný atribut.<br><br>Určuje název nastavení, které se má odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 | Prvek | Popis |
 | ------- | ------------|
-| [ **\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy. |
+| [ **sectionGroup>\<** element](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> třídy <xref:System.Configuration.DictionarySectionHandler> a. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -48,13 +48,13 @@ Odstraní dříve definované nastavení.
 
 ## <a name="remarks"></a>Poznámky
 
-Můžete použít  **\<odebrat >** prvek, který chcete odebrat nastavení z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfigurační soubor.
+Pomocí elementu Remove > můžete odebrat nastavení z aplikace, které bylo definováno na vyšší úrovni v hierarchii konfiguračního souboru.  **\<**
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití  **\<odebrat >** prvku v konfiguračním souboru aplikace k odebrání nastavení dříve definovaných v konfiguračním souboru počítače.
+Následující příklad ukazuje, jak pomocí  **\<elementu Remove >** v konfiguračním souboru aplikace odebrat nastavení dříve definované v konfiguračním souboru počítače.
 
-Následující počítače konfigurační soubor kód deklaruje části  **\<mySection >** a přidá dvě nastavení `key1` a `key2`, do něj:
+Následující kód konfiguračního souboru počítače deklaruje oddíl  **\<mySection >** a `key1` přidá dvě nastavení a `key2`do něj:
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Následující počítače konfigurační soubor kód deklaruje části  **\<myS
 </configuration>
 ```
 
-Následující kód souboru konfigurace aplikace odebere `key2` nastavení z  **\<mySection >** :
+Následující kód konfiguračního souboru aplikace odebere `key2` nastavení z  **\<mySection >** :
 
 ```xml
 <!--Application configuration file -->
@@ -82,8 +82,8 @@ Následující kód souboru konfigurace aplikace odebere `key2` nastavení z  **
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

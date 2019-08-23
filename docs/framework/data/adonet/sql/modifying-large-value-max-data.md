@@ -5,41 +5,41 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 134759d729d6f291db61e6f64ebd51dfe5a4443b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19d0c78221f35bd36edce85a60a4a7a2f985bc38
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648712"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947012"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
-Rozsáhlého objektu (LOB) datové typy jsou ty, které překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, `nvarchar`, a `varbinary` datové typy, aby umožňovala ukládání hodnoty větší než 2 ^ 32 bajtů. Zadat sloupce tabulky a proměnných jazyka Transact-SQL `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` datové typy. V ADO.NET `max` datové typy lze načíst pomocí `DataReader`a je taky možné specifikovat jako obě hodnoty vstupní a výstupní parametr bez žádným zvláštním způsobem. Pro velké `varchar` datové typy dat, dají se načíst a přírůstkově aktualizovat.  
+Datové typy large object (LOB) překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, a `nvarchar` `varbinary` datové typy, které umožňují úložiště hodnot až do velikosti 2 ^ 32 bajtů. Sloupce tabulky a proměnné Transact-SQL mohou určovat `varchar(max)`, `nvarchar(max)`nebo `varbinary(max)` datové typy. V ADO.NET `max` lze datové typy načíst `DataReader`pomocí a a lze je také zadat jako vstupní i výstupní hodnoty parametrů bez speciálního zpracování. U velkých `varchar` datových typů lze data načíst a aktualizovat přírůstkově.  
   
- `max` Datových typů lze použít pro porovnání, jako proměnné jazyka Transact-SQL a pro zřetězení. Také je možné použít v DISTINCT, ORDER BY, klauzule GROUP BY příkazu SELECT, stejně jako v agregace, spojení a poddotazy.  
+ `max` Datové typy lze použít pro porovnání, jako proměnné Transact-SQL a pro zřetězení. Lze je také použít v klauzulích DISTINCT, ORDER BY, GROUP BY příkazu SELECT a také v agregacích, spojeních a poddotazech.  
   
- Následující tabulka obsahuje odkazy na dokumentaci SQL Server Books Online.  
+ Následující tabulka obsahuje odkazy na dokumentaci v SQL Server Knihy online.  
   
  **SQL Server Books Online**  
   
-1. [Použití vysoké hodnoty datových typů](https://go.microsoft.com/fwlink/?LinkId=120498)  
+1. [Použití datových typů s velkými hodnotami](https://go.microsoft.com/fwlink/?LinkId=120498)  
   
-## <a name="large-value-type-restrictions"></a>Typ velké hodnoty omezení  
- Následující omezení platí pro `max` datové typy, které neexistují pro menší datové typy:  
+## <a name="large-value-type-restrictions"></a>Omezení typu s velkou hodnotou  
+ Následující omezení platí `max` pro datové typy, které neexistují pro menší datové typy:  
   
-- A `sql_variant` nemůže obsahovat velké `varchar` datového typu.  
+- Objekt `sql_variant` nemůže obsahovat velký `varchar` datový typ.  
   
-- Velké `varchar` sloupců nemůže být určen jako klíčový sloupec v indexu. Můžou v zahrnutý sloupec v neclusterovaný index.  
+- Velké `varchar` sloupce nelze zadat jako klíčový sloupec v indexu. Jsou povoleny v zahrnutém sloupci v neclusterovaných indexech.  
   
-- Velké `varchar` sloupce nelze použít jako dělení klíčových sloupců.  
+- Jako `varchar` klíčové sloupce dělení na oddíly nelze použít velké sloupce.  
   
-## <a name="working-with-large-value-types-in-transact-sql"></a>Práce s typy velké hodnoty v jazycích Transact-SQL  
- Příkazů jazyka Transact-SQL `OPENROWSET` funkce je jednorázový metoda připojování a přístup ke vzdáleným datům. Obsahuje všechny informace o připojení, která je nezbytná pro přístup ke vzdáleným datům ze zdroje dat OLE DB. `OPENROWSET` může být odkazováno v klauzuli FROM dotazu, jako by šlo název tabulky. Lze také odkazovat jako cílové tabulce příkazu INSERT, UPDATE, nebo odstraňte příkaz, v souladu s možností zprostředkovatele OLE DB.  
+## <a name="working-with-large-value-types-in-transact-sql"></a>Práce s typy velkých hodnot v jazyce Transact-SQL  
+ Funkce jazyka Transact- `OPENROWSET` SQL je jednorázová metoda připojení a přístupu ke vzdáleným datům. Zahrnuje všechny informace o připojení potřebné pro přístup ke vzdáleným datům z OLE DBho zdroje dat. `OPENROWSET`může být odkazován v klauzuli FROM dotazu, jako by šlo o název tabulky. Může být také odkazován jako cílová tabulka příkazu INSERT, UPDATE nebo DELETE, který podléhá schopnostem poskytovatele OLE DB.  
   
- `OPENROWSET` Zahrnuje funkce `BULK` poskytovatel sady řádků, které umožňuje číst data přímo ze souboru bez načítání dat do cílové tabulky. To umožňuje používat `OPENROWSET` v jednoduchý příkaz INSERT SELECT.  
+ `OPENROWSET` Funkce obsahujeposkytovatelesadyřádků,kterýumožňuječístdatapřímozesouborubeznačtení`BULK` dat do cílové tabulky. To umožňuje použití `OPENROWSET` v jednoduchém příkazu INSERT SELECT.  
   
- `OPENROWSET BULK` Argumenty možnost poskytnout významnou kontrolu nad tím, kam se začínají i končí čtení dat, jak zacházet s chybami a jak interpretovat data. Například můžete určit, že datový soubor přečíst jako jeden řádek, jeden sloupec sady řádků typu `varbinary`, `varchar`, nebo `nvarchar`. Pro úplnou syntaxi a možnosti najdete v tématu knihy Online SQL Server.  
+ Argumenty `OPENROWSET BULK` možností poskytují významnou kontrolu nad tím, kde začít a koncovým čtením dat, jak pracovat s chybami a jak se interpretují data. Můžete například určit, že se má datový soubor číst jako sada řádků s jedním řádkem, jeden sloupec typu `varbinary`, `varchar`nebo `nvarchar`. Úplnou syntaxi a možnosti naleznete v tématu SQL Server Books Online.  
   
- V následujícím příkladu vloží fotografii do ProductPhoto tabulky v ukázkové databázi AdventureWorks. Při použití `BULK OPENROWSET` poskytovatele, je nutné zadat pojmenovaný seznam sloupců, i pokud nejsou vkládání hodnot do každý sloupec. Primární klíč v tomto případě je definován jako sloupec identity a může být vynechán ze seznamu sloupců. Všimněte si, že je třeba zadat také název korelace na konci `OPENROWSET` příkazu, který v tomto případě je thumbnailphoto nastavuje. To souvisí se sloupcem v `ProductPhoto` tabulku, do které se načítá soubor.  
+ Následující příklad vloží fotografii do tabulky ProductPhoto v ukázkové databázi AdventureWorks. Při použití `BULK OPENROWSET` zprostředkovatele je nutné dodat pojmenovaný seznam sloupců i v případě, že do každého sloupce nevložíte hodnoty. Primární klíč v tomto případě je definován jako sloupec identity a může být vynechán ze seznamu sloupců. Všimněte si, že je nutné na konci `OPENROWSET` příkazu také uvést název korelace, který je v tomto případě thumbnailPhoto. Tím se koreluje se sloupcem v `ProductPhoto` tabulce, do které se soubor načítá.  
   
 ```  
 INSERT Production.ProductPhoto (  
@@ -52,31 +52,31 @@ FROM OPENROWSET
     (BULK 'c:\images\tricycle.jpg', SINGLE_BLOB) ThumbnailPhoto  
 ```  
   
-## <a name="updating-data-using-update-write"></a>Aktualizace dat používání aktualizace. ZÁPIS  
- Příkaz jazyka Transact-SQL pro sadu VS11 má nové syntaxe zápisu pro úpravu obsahu `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` sloupce. To umožňuje provádět částečné aktualizace data. AKTUALIZACE. Zápis syntaxe se tady zobrazí ve zkrácené formě:  
+## <a name="updating-data-using-update-write"></a>Aktualizace dat pomocí aktualizace. PSAL  
+ Příkaz Update jazyka Transact-SQL obsahuje novou syntaxi zápisu pro úpravu obsahu `varchar(max)`sloupců, `nvarchar(max)`nebo `varbinary(max)` . Díky tomu můžete provádět částečné aktualizace dat. AKTUALIZACE. Syntaxe zápisu se tady zobrazuje ve zkrácené podobě:  
   
  UPDATE  
   
- {  *\<objektu >* }  
+ *{\<Object >* }  
   
  SET  
   
- { *column_name* = {. ZÁPIS ( *výraz* , @Offset , @Length )}  
+ { *column_name* = {. WRITE ( *výraz* , @Offset ; @Length )}  
   
- Metody zápisu určuje, že část hodnoty *column_name* budou upraveny. Výraz je hodnota, kterou bude zkopírován do *column_name*, `@Offset` se počáteční bod, ve kterém se zapíše výraz, a `@Length` argument je délku části ve sloupci.  
+ Metoda WRITE určuje, že se upraví sekce hodnoty *column_name* . Výraz je hodnota, která bude zkopírována do *column_name*, `@Offset` je počátečním bodem, ve kterém bude výraz `@Length` napsán, a argumentem je délka oddílu ve sloupci.  
   
 |If|Pak...|  
 |--------|----------|  
-|Výraz je nastavena na hodnotu NULL|`@Length` je ignorována a hodnotou v *column_name* zkrácen v zadaném `@Offset`.|  
-|`@Offset` je rovno hodnotě NULL|Operace update připojí výraz na konci existujícího *column_name* hodnotu a `@Length` se ignoruje.|  
-|`@Offset` je větší než délka hodnoty column_name|SQL Server vrátí chybu.|  
-|`@Length` je rovno hodnotě NULL|Operace aktualizace odebere všechna data z `@Offset` na konec objektu `column_name` hodnotu.|  
+|Výraz je nastaven na hodnotu NULL.|`@Length`se ignoruje a hodnota v *column_name* se zkrátí na zadanou `@Offset`hodnotu.|  
+|`@Offset`má hodnotu NULL|Operace aktualizace připojí výraz na konci existující hodnoty *column_name* a `@Length` ignoruje se.|  
+|`@Offset`je větší než délka hodnoty column_name|SQL Server vrátí chybu.|  
+|`@Length`má hodnotu NULL|Operace aktualizace odebere všechna data z `@Offset` na konec `column_name` hodnoty.|  
   
 > [!NOTE]
->  Ani `@Offset` ani `@Length` může být záporné číslo.  
+> Ani `@Offset` ani`@Length` nemůže být záporné číslo.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu příkazů jazyka Transact-SQL aktualizuje hodnotu do částečné DocumentSummary, `nvarchar(max)` sloupec v tabulce dokument v databázi AdventureWorks. Slovo "součástmi" se nahrazuje slovo "funkce" tak, že určíte slovo nahrazení, počáteční umístění (posun) slova, třeba nahradit stávající data a počet znaků, které mají být nahrazeny (délka). Příklad obsahuje příkazy SELECT, před a po příkazu UPDATE k porovnání výsledků.  
+ Tento příklad Transact-SQL aktualizuje částečnou hodnotu v DocumentSummary, `nvarchar(max)` sloupec v tabulce dokumentů v databázi AdventureWorks. Slovo ' součásti ' je nahrazeno slovem ' Features ' zadáním nahrazujícího slova, počátečního umístění (posunu) slova, které má být nahrazeno existujícími daty, a počtem znaků, které mají být nahrazeny (délka). Příklad obsahuje příkazy SELECT před a za příkazem UPDATE pro porovnání výsledků.  
   
 ```  
 USE AdventureWorks;  
@@ -104,10 +104,10 @@ GO
 ```  
   
 ## <a name="working-with-large-value-types-in-adonet"></a>Práce s typy velkých hodnot v ADO.NET  
- Můžete pracovat s typů velkých hodnot v ADO.NET zadáním typů velkých hodnot jako <xref:System.Data.SqlClient.SqlParameter> objekty v <xref:System.Data.SqlClient.SqlDataReader> vrátit požadovaný výsledek, nastavení, nebo pomocí <xref:System.Data.SqlClient.SqlDataAdapter> tak, aby vyplnil `DataSet` / `DataTable`. Není žádný rozdíl mezi stejným způsobem jako při práci s typem velké hodnoty a jeho souvisejících, menší hodnota datového typu.  
+ Můžete pracovat s velkými typy hodnot v ADO.NET zadáním velkých hodnot typu <xref:System.Data.SqlClient.SqlParameter> jako objektů <xref:System.Data.SqlClient.SqlDataReader> v, chcete-li vrátit sadu výsledků dotazu <xref:System.Data.SqlClient.SqlDataAdapter> , nebo `DataSet` / `DataTable`pomocí a vyplnit. Neexistuje žádný rozdíl mezi způsobem, jakým pracujete s velkým typem hodnoty a jeho souvisejícím datovým typem s menší hodnotou.  
   
-### <a name="using-getsqlbytes-to-retrieve-data"></a>Použití GetSqlBytes k načtení dat  
- `GetSqlBytes` Metodu <xref:System.Data.SqlClient.SqlDataReader> slouží k načtení obsahu `varbinary(max)` sloupce. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlCommand> objekt s názvem `cmd` , který vybere `varbinary(max)` data z tabulky a <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` načítající data jako <xref:System.Data.SqlTypes.SqlBytes>.  
+### <a name="using-getsqlbytes-to-retrieve-data"></a>Načtení dat pomocí GetSqlBytes  
+ Metodu lze použít k`varbinary(max)`načteníobsahusloupce. `GetSqlBytes` <xref:System.Data.SqlClient.SqlDataReader> Následující fragment <xref:System.Data.SqlClient.SqlCommand> kódu předpokládá objekt s názvem `cmd` , který vybere `varbinary(max)` data z tabulky, a <xref:System.Data.SqlClient.SqlDataReader> objektu s názvem `reader` , který načte data jako <xref:System.Data.SqlTypes.SqlBytes>.  
   
 ```vb  
 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)  
@@ -124,8 +124,8 @@ while (reader.Read())
     }  
 ```  
   
-### <a name="using-getsqlchars-to-retrieve-data"></a>Použití GetSqlChars k načtení dat  
- `GetSqlChars` Metodu <xref:System.Data.SqlClient.SqlDataReader> slouží k načtení obsahu `varchar(max)` nebo `nvarchar(max)` sloupce. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlCommand> objekt s názvem `cmd` , který vybere `nvarchar(max)` data z tabulky a <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , který načítá data.  
+### <a name="using-getsqlchars-to-retrieve-data"></a>Načtení dat pomocí GetSqlChars  
+ Metodu lze použít `nvarchar(max)` k`varchar(max)` načtení obsahu sloupce nebo. <xref:System.Data.SqlClient.SqlDataReader> `GetSqlChars` Následující fragment <xref:System.Data.SqlClient.SqlCommand> kódu předpokládá objekt s názvem `cmd` , který vybere `nvarchar(max)` data z tabulky, a <xref:System.Data.SqlClient.SqlDataReader> objektu s názvem `reader` , který načte data.  
   
 ```vb  
 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)  
@@ -142,8 +142,8 @@ while (reader.Read())
 }  
 ```  
   
-### <a name="using-getsqlbinary-to-retrieve-data"></a>Použití GetSqlBinary k načtení dat  
- `GetSqlBinary` Metodu <xref:System.Data.SqlClient.SqlDataReader> slouží k načtení obsahu `varbinary(max)` sloupce. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlCommand> objekt s názvem `cmd` , který vybere `varbinary(max)` data z tabulky a <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` načítající data jako <xref:System.Data.SqlTypes.SqlBinary> datového proudu.  
+### <a name="using-getsqlbinary-to-retrieve-data"></a>Načtení dat pomocí GetSqlBinary  
+ Metodu lze použít k`varbinary(max)`načteníobsahusloupce. `GetSqlBinary` <xref:System.Data.SqlClient.SqlDataReader> Následující fragment <xref:System.Data.SqlClient.SqlCommand> kódu předpokládá objekt s názvem `cmd` , který vybere `varbinary(max)` data z tabulky, a <xref:System.Data.SqlClient.SqlDataReader> objektu s názvem `reader` , který načte data jako <xref:System.Data.SqlTypes.SqlBinary> datový proud.  
   
 ```vb  
 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)  
@@ -160,8 +160,8 @@ while (reader.Read())
     }  
 ```  
   
-### <a name="using-getbytes-to-retrieve-data"></a>Použití GetBytes k načtení dat  
- `GetBytes` Metodu <xref:System.Data.SqlClient.SqlDataReader> načteme posun určený sloupec datového proudu bajtů do bajtového pole začínající na posunu určeného pole. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` bajtů, který načte do bajtového pole. Všimněte si, že na rozdíl od `GetSqlBytes`, `GetBytes` vyžaduje zadání velikosti pole vyrovnávací paměti.  
+### <a name="using-getbytes-to-retrieve-data"></a>Načtení dat pomocí GetBytes  
+ `GetBytes` Metoda<xref:System.Data.SqlClient.SqlDataReader> načte datový proud bajtů ze zadaného sloupce posunutý na pole bajtů začínající posunem zadaného pole. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , který načte bajty do pole bajtů. Všimněte si, že na `GetSqlBytes`rozdíl `GetBytes` od vyžaduje velikost pro vyrovnávací paměť pole.  
   
 ```vb  
 While reader.Read()  
@@ -179,8 +179,8 @@ while (reader.Read())
 }  
 ```  
   
-### <a name="using-getvalue-to-retrieve-data"></a>Použití GetValue k načtení dat  
- `GetValue` Metodu <xref:System.Data.SqlClient.SqlDataReader> přečte hodnotu do pole počínaje posunutím zadaný sloupec. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , posun binární data načte z prvního sloupce a potom data z druhé posun sloupce řetězce.  
+### <a name="using-getvalue-to-retrieve-data"></a>Načtení dat pomocí GetValue  
+ `GetValue` Metoda<xref:System.Data.SqlClient.SqlDataReader> načte hodnotu z určeného posunutí sloupce do pole. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , který načte binární data z prvního posunutí sloupce a pak řetězcová data z druhého posunutí sloupce.  
   
 ```vb  
 While reader.Read()  
@@ -203,8 +203,8 @@ while (reader.Read())
 }  
 ```  
   
-## <a name="converting-from-large-value-types-to-clr-types"></a>Převod z typů velkých hodnot na typy CLR  
- Můžete převést obsah `varchar(max)` nebo `nvarchar(max)` sloupec některou z metod pro převod řetězce, jako například `ToString`. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , který načítá data.  
+## <a name="converting-from-large-value-types-to-clr-types"></a>Převod z typů s velkými hodnotami na typy CLR  
+ Můžete převést obsah `varchar(max)` sloupce nebo `nvarchar(max)` pomocí libovolné metody `ToString`převodu řetězce, jako je například. Následující fragment kódu předpokládá <xref:System.Data.SqlClient.SqlDataReader> objekt s názvem `reader` , který načte data.  
   
 ```vb  
 While reader.Read()  
@@ -222,13 +222,13 @@ while (reader.Read())
 ```  
   
 ### <a name="example"></a>Příklad  
- Následující kód načte název a `LargePhoto` objektu z `ProductPhoto` v tabulku `AdventureWorks` databáze a uloží jej do souboru. Sestavení musí být zkompilovány s odkazem na <xref:System.Drawing> oboru názvů.  <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> Metodu <xref:System.Data.SqlClient.SqlDataReader> vrátí <xref:System.Data.SqlTypes.SqlBytes> objekt, který zpřístupňuje `Stream` vlastnost. Tento kód používá k vytvoření nového `Bitmap` objekt a uloží ho do Gif `ImageFormat`.  
+ Následující kód načte název a `LargePhoto` objekt `ProductPhoto` z tabulky v `AdventureWorks` databázi a uloží jej do souboru. Sestavení musí být zkompilováno s odkazem na <xref:System.Drawing> obor názvů.  Metoda vrátí objekt, který zpřístupňuje `Stream` vlastnost. <xref:System.Data.SqlTypes.SqlBytes> <xref:System.Data.SqlClient.SqlDataReader> <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> Kód používá tuto operaci k vytvoření nového `Bitmap` objektu a poté jej uloží ve formátu GIF. `ImageFormat`  
   
  [!code-csharp[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/VB/source.vb#1)]  
   
-## <a name="using-large-value-type-parameters"></a>Pomocí parametrů typ velké hodnoty  
- Může být používáno velké hodnoty <xref:System.Data.SqlClient.SqlParameter> objekty stejným způsobem použít menší hodnotu napíše <xref:System.Data.SqlClient.SqlParameter> objekty. Můžete načíst typy velké hodnoty jako <xref:System.Data.SqlClient.SqlParameter> hodnoty, jak je znázorněno v následujícím příkladu. Kód předpokládá, že následující GetDocumentSummary uložené procedury existuje v ukázkové databázi AdventureWorks. Uložené procedury přijímá vstupní parametr s názvem @DocumentID a vrátí obsah DocumentSummary sloupec v @DocumentSummary výstupní parametr.  
+## <a name="using-large-value-type-parameters"></a>Použití parametrů velkých hodnotových typů  
+ Typy velkých hodnot lze v <xref:System.Data.SqlClient.SqlParameter> objektech použít stejným způsobem, jakým používáte menší typy hodnot v <xref:System.Data.SqlClient.SqlParameter> objektech. Můžete načíst typy velkých hodnot jako <xref:System.Data.SqlClient.SqlParameter> hodnoty, jak je znázorněno v následujícím příkladu. Kód předpokládá, že následující uložená procedura GetDocumentSummary existuje v ukázkové databázi AdventureWorks. Uložená procedura převezme vstupní parametr s názvem @DocumentID a vrátí obsah sloupce DocumentSummary @DocumentSummary ve výstupním parametru.  
   
 ```  
 CREATE PROCEDURE GetDocumentSummary   
@@ -244,7 +244,7 @@ WHERE   DocumentID=@DocumentID
 ```  
   
 ### <a name="example"></a>Příklad  
- Vytvoří kód ADO.NET <xref:System.Data.SqlClient.SqlConnection> a <xref:System.Data.SqlClient.SqlCommand> objekty spuštění GetDocumentSummary uložené procedury a načíst shrnutí, dokumentů, které se ukládá jako typ velké hodnoty. Kód předá hodnotu @DocumentID vstupní parametr a zobrazí výsledky se předat zpátky @DocumentSummary výstupní parametr v okně konzoly.  
+ Kód ADO.NET vytvoří a <xref:System.Data.SqlClient.SqlConnection> <xref:System.Data.SqlClient.SqlCommand> vytvoří objekty pro spuštění uložené procedury GetDocumentSummary a načte souhrn dokumentu, který je uložen jako velký typ hodnoty. Kód předá hodnotu pro @DocumentID vstupní parametr a zobrazí výsledky předané zpátky @DocumentSummary v parametru Output v okně konzoly.  
   
  [!code-csharp[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/VB/source.vb#1)]  
@@ -254,4 +254,4 @@ WHERE   DocumentID=@DocumentID
 - [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
 - [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
 - [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

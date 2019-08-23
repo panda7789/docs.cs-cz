@@ -5,22 +5,22 @@ ms.technology: dotnet-standard
 ms.assetid: a42f81b3-0403-4e34-b346-7d2129804e54
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67fdbcdbff64bcd91c80fbeaec0c41982b68d98f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d8d4e9e1e2dfd9882504c935912bcf235608485
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934488"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965897"
 ---
 # <a name="creating-new-entity-references"></a>Vytváření nových odkazů na entity
-**CreateEntityReference** metoda vytvoří nový **XmlEntityReference** uzlu. Pokud chcete zobrazit, pokud je už deklarovaný název entity, na kterou se odkazuje vypadá XML Document Object Model (DOM). Pokud ano, podřízené uzly **XmlEntityReference** uzlu jsou zkopírovány z uzlu entity prohlášení. Pokud neexistuje žádná deklarace entity, který odpovídá, prázdný textový uzel je připojen jako jediný podřízený uzel odkazu entity. Protože podřízené uzly **XmlEntityReference** uzlu jsou kopie jiných uzlech, tyto podřízené uzly jsou jen pro čtení a nelze ji změnit.  
+Metoda **CreateEntityReference** vytvoří nový uzel **XmlEntityReference** . Model DOM (Document Object Model) XML (DOM) zjistí, zda již byl deklarován název entity, který je odkazován. Pokud má, podřízené uzly uzlu **XmlEntityReference** se zkopírují z uzlu deklarace entity. Pokud neexistuje žádná deklarace entity, která by odpovídala, je prázdný textový uzel připojen jako jediný podřízený uzel odkazu na entitu. Vzhledem k tomu, že podřízené uzly uzlu **XmlEntityReference** jsou kopiemi jiných uzlů, jsou tyto podřízené uzly určeny jen pro čtení a nelze je upravit.  
   
- Když se zkopírují uzly, může být oboru názvů v oboru místě odkaz na entitu. Tento obor názvů má vliv na konfiguraci jakéhokoli uzlu elementu nebo atributu vygenerována.  
+ Po zkopírování uzlů může existovat obor názvů v oboru v místě odkazu na entitu. Tento obor názvů ovlivňuje konfiguraci všech generovaných uzlů elementu nebo atributů.  
   
 > [!NOTE]
->  Přidá podřízené uzly modelu DOM **EntityReference** pouze při vložení **EntityReference** uzel v dokumentu. Nově vytvořené **EntityReference** uzly obsahovat podřízené uzly.  
+> DOM přidá podřízené uzly do objektu **EntityReference** pouze při vložení uzlu **EntityReference** do dokumentu. Nově vytvořené uzly **EntityReference** nemají podřízené uzly.  
   
- I když **XmlDataDocument** je odvozenou třídu **třídou XMLDocument nastavenou na**, **objektu XmlDataDocument** nepodporuje vytváření odkazů na entity. Důvodem je, že **EntityReference** podřízené objekty jsou jen pro čtení. Podřízené objekty daného **EntityReference** uzel může zahrnovat více než jedné oblasti. V takovém případě část řádku přidružené k oblasti, která obsahuje součást **EntityReference** budou jen pro čtení.  
+ I když je **objektu XmlDataDocument** odvozenou třídou **XmlDocument**, **objektu XmlDataDocument** nepodporuje vytváření odkazů na entity. Důvodem je, že podřízené objekty **EntityReference** jsou jen pro čtení. Podřízené položky uzlu **EntityReference** mohou být rozloženy do více než jedné oblasti. V tomto případě bude část řádku přidružená k oblasti, která obsahuje část objektu **EntityReference** , jen pro čtení.  
   
 ## <a name="see-also"></a>Viz také:
 

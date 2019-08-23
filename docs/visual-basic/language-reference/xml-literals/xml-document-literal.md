@@ -9,15 +9,15 @@ helpviewer_keywords:
 - XML documents [Visual Basic], creating
 - document literal [Visual Basic]
 ms.assetid: f7bbee56-0911-41de-b907-96f20450137b
-ms.openlocfilehash: f58c1365e145166dfe122d455854d44526300a1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a489be46295c213b7a8b355eb3c9786d49dd8f1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61799304"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958505"
 ---
 # <a name="xml-document-literal-visual-basic"></a>Literál dokumentu XML (Visual Basic)
-Literál představující <xref:System.Xml.Linq.XDocument> objektu.  
+Literál představující <xref:System.Xml.Linq.XDocument> objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,26 +32,26 @@ rootElement
   
 |Termín|Definice|  
 |---|---|  
-|`encoding`|Volitelné. Deklarace kódování, které používá dokumentu prostý text.|  
-|`standalone`|Volitelné. Prostý text. Musí být "Ano" nebo "Ne".|  
-|`piCommentList`|Volitelné. Seznam pokyny pro zpracování XML a komentáře XML. Má následující formát:<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> Každý `piComment` může být jedna z následujících akcí:<br /><br /> -   [Literál instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md).<br />-   [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md).|  
-|`rootElement`|Povinný parametr. Kořenový element dokumentu. Formát je jeden z následujících akcí:<br /><br /> <ul><li>[Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).</li><li>Vložený výraz ve tvaru `<%=` `elementExp` `%>`. `elementExp` Vrátí jednu z následujících akcí:<br /><br /> <ul><li><xref:System.Xml.Linq.XElement> Objektu.</li><li>Kolekce, která obsahuje jeden <xref:System.Xml.Linq.XElement> objektu a libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> a <xref:System.Xml.Linq.XComment> objekty.</li></ul></li></ul><br /> Další informace najdete v tématu [vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).|  
+|`encoding`|Volitelný parametr. Textový literál, který deklaruje, který kódování dokumentu používá.|  
+|`standalone`|Volitelný parametr. Textový literál Musí být "Ano" nebo "ne".|  
+|`piCommentList`|Volitelný parametr. Seznam instrukcí pro zpracování XML a komentářů XML Má následující formát:<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> Každá `piComment` z těchto možností může být jedna z následujících:<br /><br /> -   [Literál instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)<br />-   [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|  
+|`rootElement`|Povinný parametr. Kořenový element dokumentu Formát je jeden z následujících:<br /><br /> <ul><li>[Literál elementu XML](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).</li><li>Vložený výraz formuláře `<%=` `elementExp` `%>` `elementExp` Vrátí jednu z následujících možností:<br /><br /> <ul><li><xref:System.Xml.Linq.XElement> Objekt.</li><li>Kolekce, která obsahuje jeden <xref:System.Xml.Linq.XElement> objekt a libovolný <xref:System.Xml.Linq.XProcessingInstruction> počet objektů a <xref:System.Xml.Linq.XComment> .</li></ul></li></ul><br /> Další informace najdete v tématu [vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- <xref:System.Xml.Linq.XDocument> Objektu.  
+ <xref:System.Xml.Linq.XDocument> Objekt.  
   
 ## <a name="remarks"></a>Poznámky  
- Literál dokumentu XML je identifikován deklarace XML na začátek literálu. I když každá literál dokumentu XML musí mít přesně jeden kořenový element XML, může mít libovolný počet pokyny pro zpracování XML a komentáře XML.  
+ Literál dokumentu XML je identifikován deklarací XML na začátku literálu. I když každý literál dokumentu XML musí mít přesně jeden kořenový element XML, může mít libovolný počet instrukcí pro zpracování XML a komentáře XML.  
   
- Literál dokumentu XML se nemůže objevit v elementu jazyka XML.  
+ Literál dokumentu XML nemůže být použit v elementu XML.  
   
 > [!NOTE]
->  Literál XML může zahrnovat více řádků bez použití znaků pokračování řádku. To umožňuje kopírovat obsah z dokumentu XML a vložte ho přímo do programu Visual Basic.  
+> Literál XML může zahrnovat více řádků bez použití znaků pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
   
- Kompilátor jazyka Visual Basic převede literál dokumentu XML na volání <xref:System.Xml.Linq.XDocument.%23ctor%2A> a <xref:System.Xml.Linq.XDeclaration.%23ctor%2A> konstruktory.  
+ Kompilátor Visual Basic převádí literál dokumentu XML na volání <xref:System.Xml.Linq.XDocument.%23ctor%2A> konstruktorů a. <xref:System.Xml.Linq.XDeclaration.%23ctor%2A>  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dokument XML, který má deklarace XML, instrukce pro zpracování, komentáře a element, který obsahuje jiný prvek.  
+ Následující příklad vytvoří dokument XML, který má deklaraci XML, instrukci zpracování, komentář a prvek, který obsahuje jiný element.  
   
  [!code-vb[VbXMLSamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#30)]  
   
@@ -65,5 +65,5 @@ rootElement
 - [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)
 - [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)

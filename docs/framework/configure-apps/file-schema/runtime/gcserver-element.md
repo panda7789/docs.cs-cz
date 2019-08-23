@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61b4076a72dbc17ffc800a1a8d37a22d1435e02b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 19ebad32ad8c7018b910a3d230f43031008dcdc7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663685"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927387"
 ---
 # <a name="gcserver-element"></a>\<gcServer – element >
 Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti serveru.  
@@ -65,7 +65,7 @@ Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti
  Tento element lze použít pouze v konfiguračním souboru aplikace; ignoruje se, pokud je v konfiguračním souboru počítače.  
   
 > [!NOTE]
->  V .NET Framework 4 a starších verzích není souběžné uvolňování paměti k dispozici, když je povoleno uvolňování paměti serveru. Počínaje .NET Framework 4,5 je shromažďování paměti serveru souběžné. Chcete-li použít nesouběžné uvolňování paměti serveru `<gcServer>` , nastavte `true` element na a [ \<gcConcurrent > element](gcconcurrent-element.md) na. `false`  
+> V .NET Framework 4 a starších verzích není souběžné uvolňování paměti k dispozici, když je povoleno uvolňování paměti serveru. Počínaje .NET Framework 4,5 je shromažďování paměti serveru souběžné. Chcete-li použít nesouběžné uvolňování paměti serveru `<gcServer>` , nastavte `true` element na a [ \<gcConcurrent > element](gcconcurrent-element.md) na. `false`  
   
 ## <a name="example"></a>Příklad  
  Následující příklad povoluje uvolňování paměti serveru.  

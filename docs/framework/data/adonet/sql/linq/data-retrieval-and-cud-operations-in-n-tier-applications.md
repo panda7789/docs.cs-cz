@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-ms.openlocfilehash: 570b3d382157d4be832f57265ad3a064fcd3df9e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ccd30e3d1b0d716b6393fdb093d47cddf7302f8d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743471"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963279"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
-Při serializaci objektů entity jako je například Zákazníci a objednávky na klienta přes síť, tyto entity jsou odpojeny od jejich místní data. Datový kontext již sleduje jejich změny nebo jejich přidružení s jinými objekty. To není problém, tak dlouho, dokud klienti jsou jen ke čtení data. Také je poměrně jednoduchá, aby mohli klienti k přidání nových řádků do databáze. Nicméně pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je nutné připojit entity k nový kontext dat před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Navíc pokud použijete kontrolu optimistického řízení souběžnosti s původní hodnoty, pak musíte také poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metody jsou k dispozici umožňuje entity přejde do nového kontextu dat byla odpojena.  
+Při serializaci objektů entit, jako jsou například zákazníci nebo objednávky, na klienta prostřednictvím sítě, jsou tyto entity odpojeny od kontextu dat. Kontext dat již nesleduje jejich změny nebo jejich přidružení s jinými objekty. Nejedná se o problém, pokud klienti čtou pouze data. Je také poměrně snadné povolit klientům přidávat nové řádky do databáze. Pokud však vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstraňovat data, je nutné před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>připojit entity k novému datovému kontextu. Pokud navíc používáte optimistickou kontrolu souběžnosti s původními hodnotami, budete také potřebovat způsob, jak poskytnout databázi jak původní entitu, tak i entitu jako upravenou. `Attach` Metody jsou k dispozici, aby bylo možné vkládat entity do nového kontextu dat poté, co byly odpojeny.  
   
- I když je serializována objekty proxy místo [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] entity, stále musíte vytvořit entitu na vrstvy přístupu k datům (DAL) a připojit ho k nové <xref:System.Data.Linq.DataContext?displayProperty=nameWithType>, aby bylo možné odeslat data do databáze.  
+ I v případě, že provádíte serializaci objektů proxy místo [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] entit, je stále nutné vytvořit entitu na vrstvě pro přístup k datům (dal) a připojit ji k novému <xref:System.Data.Linq.DataContext?displayProperty=nameWithType>, aby bylo možné odeslat data do databáze.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je zcela je mi to o způsob, jakým serializují entity. Další informace o tom, jak pomocí nástroje Návrhář relací objektů a SQLMetal vygeneruje třídy, které jsou serializovatelné s použitím Windows Communication Foundation (WCF) najdete v tématu [jak: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je zcela nerozdílný na způsobu serializace entit. Další informace o použití nástrojů Návrhář relací objektů a SqlMetal ke generování tříd, které jsou serializovatelný pomocí Windows Communication Foundation (WCF), naleznete v tématu [How to: Proveďte serializaci](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)entit.  
   
 > [!NOTE]
->  Volat pouze `Attach` metod v nové nebo deserializovat entit. Jediným způsobem, který se má odpojit z jeho původního kontextu dat entity je pro ni mají být serializován. Pokud dané entity má stále odložení zavaděče z jeho předchozí kontext dat, a pokusíte připojit entitu undetached nový kontext dat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] bude vyvolána výjimka. Entita s odložené zavaděče ze dvou různých datových kontextech může způsobit nežádoucí výsledky, když provádíte insert, update a operace odstranění na dané entitě. Další informace o odložených zavaděče, naleznete v tématu [odložené versus okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+> Volejte `Attach` pouze metody pro nové nebo deserializovatelné entity. Jediným způsobem, jak se entita odpojit od původního kontextu dat, je pro její serializaci. Pokud se pokusíte připojit neodpojenou entitu k novému datovému kontextu a tato entita stále obsahuje odložené zavaděče z předchozího kontextu dat, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyvolá výjimku. Entita s odloženými zavaděči ze dvou různých kontextů dat může při provádění operací vložení, aktualizace a odstranění v této entitě způsobit nechtěné výsledky. Další informace o odložených zavaděčích naleznete v tématu Odložené a [okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
   
 ## <a name="retrieving-data"></a>Načítání dat  
   
 ### <a name="client-method-call"></a>Volání metody klienta  
- Následující příklady ukazují volání metody ukázka vrstvy Dal z klienta Windows Forms. V tomto příkladu je DAL implementován jako knihovna služby Windows:  
+ Následující příklady ukazují ukázkovou metodu volání metody DAL z klienta model Windows Forms. V tomto příkladu je DAL implementován jako knihovna služby systému Windows:  
   
 ```vb  
 Private Function GetProdsByCat_Click(ByVal sender As Object, ByVal e _  
@@ -83,11 +83,11 @@ private void GetProdsByCat_Click(object sender, EventArgs e)
 ```  
   
 ### <a name="middle-tier-implementation"></a>Implementace střední vrstvy  
- Následující příklad ukazuje implementaci metody rozhraní ve střední vrstvě. Tady jsou dva hlavní body k mějte na paměti:  
+ Následující příklad ukazuje implementaci metody rozhraní na střední úrovni. Níže jsou uvedené dva hlavní body:  
   
-- <xref:System.Data.Linq.DataContext> Je deklarována v rozsahu metody.  
+- <xref:System.Data.Linq.DataContext> Je deklarována v oboru metody.  
   
-- Metoda vrátí <xref:System.Collections.IEnumerable> kolekce skutečné výsledky. Serializátor spustí dotaz pro výsledky odeslat zpět do klienta a prezentační vrstvy. Pro přístup k místně ve střední vrstvě. výsledky dotazu, můžete vynutit spuštění voláním `ToList` nebo `ToArray` v proměnné dotazu. Potom tento seznam nebo pole jako `IEnumerable`.  
+- Metoda vrátí <xref:System.Collections.IEnumerable> kolekci skutečných výsledků. Serializátor spustí dotaz k odeslání výsledků zpět do vrstvy klienta nebo prezentace. Chcete-li získat přístup k výsledkům dotazu místně na střední úrovni, můžete vynutit `ToList` provádění `ToArray` voláním nebo na proměnné dotazu. Pak můžete tento seznam nebo pole vrátit jako `IEnumerable`.  
   
 ```vb  
 Public Function GetProductsByCategory(ByVal categoryID As Integer) _  
@@ -119,15 +119,15 @@ public IEnumerable<Product> GetProductsByCategory(int categoryID)
 }  
 ```  
   
- Instance kontextu dat má životnost jeden "jednotku práce." V prostředí s minimálním počtem vazeb určitou jednotku práce je obvykle malý, případně jeden optimistické transakce, včetně jedním voláním `SubmitChanges`. Proto kontext dat je vytvořen a uvolněn v oboru metody. Pokud jednotku práce zahrnuje volání obchodní logiku pravidla a potom obvykle budete chtít zachovat `DataContext` instance pro danou celou operaci. V každém případě `DataContext` instance nemají být zachováno po dlouhou dobu mezi libovolného počtu transakcí.  
+ Instance kontextu dat by měla mít životnost jedné "pracovní jednotky". V volně odděleném prostředí je jednotka práce obvykle malá, možná jedna optimistická transakce, včetně jednoho volání `SubmitChanges`. Proto je datový kontext vytvořen a odstraněn v oboru metody. Pokud pracovní jednotka obsahuje volání logiky obchodních pravidel, pak obecně budete chtít zachovat `DataContext` instanci pro tuto celou operaci. V žádném případě `DataContext` instance nejsou určeny k udržování naživu po dlouhou dobu napříč libovolným počtem transakcí.  
   
- Tato metoda vrátí objekty produktu, ale ne na kolekci z Order_Detail objekty, které jsou spojeny s každého produktu. Použití <xref:System.Data.Linq.DataLoadOptions> objektu, chcete-li změnit toto výchozí chování. Další informace najdete v tématu [jak: Ovládací prvek, kolik souvisejících dat](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md).  
+ Tato metoda vrátí objekty produktu, ale ne kolekci objektů Order_Detail, které jsou spojeny s každým produktem. Toto výchozí chování můžete změnit pomocí objektu.<xref:System.Data.Linq.DataLoadOptions> Další informace najdete v tématu [jak: Určuje, kolik souvisejících dat se načítají](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md).  
   
 ## <a name="inserting-data"></a>Vkládání dat  
- Vložit nový objekt, prezentační vrstvy jen volá metodu relevantní na střední vrstvu rozhraní a předá nový objekt pro vložení. V některých případech může být efektivnější pro klienta a předejte pouze některé hodnoty mají střední vrstva, sestavit úplný objekt.  
+ Chcete-li vložit nový objekt, prezentační vrstva pouze volá příslušnou metodu v rozhraní střední vrstvy a předá do nového objektu pro vložení. V některých případech může být efektivnější, aby klient předával jenom některé hodnoty a aby měl úplný objekt konstrukce prostřední vrstvy.  
   
 ### <a name="middle-tier-implementation"></a>Implementace střední vrstvy  
- Ve střední vrstvě nový <xref:System.Data.Linq.DataContext> je vytvořen, objekt je připojen ke <xref:System.Data.Linq.DataContext> pomocí <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> metoda a objekt při vložení <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. Stejně jako u jakékoli jiné scénář webových služeb mohou zpracovat výjimky, zpětná volání a chybové stavy.  
+ Na střední úrovni <xref:System.Data.Linq.DataContext> se vytvoří nový objekt, který je připojen <xref:System.Data.Linq.DataContext> k <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> objektu pomocí metody, a objekt je vložen při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volání. Výjimky, zpětná volání a chybové podmínky lze zpracovat stejně jako v jakémkoli jiném scénáři webové služby.  
   
 ```vb  
 ' No call to Attach is necessary for inserts.  
@@ -155,11 +155,11 @@ End Sub
 ```  
   
 ## <a name="deleting-data"></a>Odstranění dat  
- Z databáze odstranit existující objekt, prezentační vrstvy volá metodu relevantní na střední vrstvě rozhraní a předá v jeho kopii, která obsahuje původní hodnoty objekt, který chcete odstranit.  
+ Chcete-li odstranit existující objekt z databáze, prezentační vrstva volá příslušnou metodu v rozhraní střední vrstvy a předá její kopii, která obsahuje původní hodnoty objektu, který má být odstraněn.  
   
- Odstranit operace zahrnují kontroly optimistického řízení souběžnosti a objekt, který chcete odstranit, musí být nejprve připojený k nový datový kontext. V tomto příkladu `Boolean` parametr je nastaven na `false` k označení, že objekt nemá časové razítko (RowVersion). Pokud vaše databázové tabulky generovat časová razítka pro každý záznam, kontrolách souběžnosti jsou mnohem jednodušší, zejména u klienta. Stačí předat do původního nebo upravené objektu a nastavit `Boolean` parametr `true`. V každém případě ve střední vrstvě je obvykle potřeba zachytit <xref:System.Data.Linq.ChangeConflictException>. Další informace o tom, jak se řeší konflikty optimistického řízení souběžnosti, naleznete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+ Operace odstranění zahrnují optimistické kontroly souběžnosti a objekt, který má být odstraněn, musí být nejprve připojen k novému datovému kontextu. V tomto příkladu `Boolean` je parametr `false` nastaven na hodnotu, aby označoval, že objekt nemá časové razítko (rowversion). Pokud vaše databázová tabulka vygeneruje časová razítka pro každý záznam, jsou kontroly souběžnosti mnohem jednodušší, zejména pro klienta. Stačí předat buď původní nebo upravený objekt, a nastavit `Boolean` parametr na. `true` V každém případě je obvykle nutné zachytit <xref:System.Data.Linq.ChangeConflictException>na střední úrovni. Další informace o tom, jak zpracovat optimistické konflikty souběžnosti, naleznete [v tématu Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
- Při odstraňování entity, které mají omezení cizího klíče v přidružené tabulky, musíte nejprve odstranit všechny objekty v jeho <xref:System.Data.Linq.EntitySet%601> kolekce.  
+ Při odstraňování entit, které mají omezení cizího klíče v přidružených tabulkách, je nutné nejprve odstranit všechny objekty ve <xref:System.Data.Linq.EntitySet%601> svých kolekcích.  
   
 ```vb  
 ' Attach is necessary for deletes.  
@@ -208,21 +208,21 @@ public void DeleteOrder(Order order)
 ```  
   
 ## <a name="updating-data"></a>Aktualizace dat  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v těchto scénářích zahrnující optimistického řízení souběžnosti podporuje aktualizace:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje aktualizace v těchto scénářích, které zahrnují optimistickou souběžnost:  
   
-- Optimistického řízení souběžnosti na základě časových razítek nebo RowVersion čísla.  
+- Optimistická souběžnost na základě časových razítek nebo RowVersion čísel.  
   
-- Optimistického řízení souběžnosti založené na původní hodnoty podmnožinu vlastností entity.  
+- Optimistická souběžnost na základě původních hodnot podmnožiny vlastností entity.  
   
-- Optimistického řízení souběžnosti založené na dokončení původní a změny entity.  
+- Optimistická souběžnost založená na kompletní původní a upravené entitě.  
   
- Aktualizace nebo odstranění můžete provést také s entitou společně s jeho vztahy, například zákazník a kolekce jejích přidružených objektů pořadí. Pokud provedete změny v klientském počítači do grafu objekty entity a jejich podřízené (`EntitySet`) kolekce a kontroly optimistického řízení souběžnosti vyžadují původní hodnoty, klient musí poskytnout tyto původní hodnoty pro každou entitu a <xref:System.Data.Linq.EntitySet%601> objekt. Pokud chcete povolit klientským počítačům provádět sadu související aktualizace, odstranění a vložení v rámci jednoho volání metody, je nutné zadat klienta způsob, jak určit, jaký typ operace se má provést u každé entity. Ve střední vrstvě, pak musíte volat odpovídající <xref:System.Data.Linq.ITable.Attach%2A> metodu a poté <xref:System.Data.Linq.ITable.InsertOnSubmit%2A>, <xref:System.Data.Linq.ITable.DeleteAllOnSubmit%2A>, nebo <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> (bez `Attach`, pro vložení) pro každou entitu před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. Nelze načíst data z databáze jako způsob, jak získat původní hodnoty, než se pokusíte aktualizace.  
+ V entitě můžete také provádět aktualizace nebo je odstranit spolu s jejími vztahy, například zákazníkem a kolekcí svých přidružených objektů objednávky. Když provedete úpravy klienta na graf objektů entit a jejich podřízených (`EntitySet`) kolekcí a optimistická kontrola souběžnosti vyžaduje původní hodnoty, klient musí poskytnout tyto původní hodnoty pro každou entitu a <xref:System.Data.Linq.EntitySet%601> předmětů. Pokud chcete klientům povolit sadu souvisejících aktualizací, odstranění a vkládání v rámci jediného volání metody, je nutné klientovi poskytnout způsob, jak určit, jaký typ operace se má v každé entitě provést. Na střední úrovni je nutné před <xref:System.Data.Linq.ITable.Attach%2A> voláním <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> `Attach` <xref:System.Data.Linq.ITable.InsertOnSubmit%2A> <xref:System.Data.Linq.ITable.DeleteAllOnSubmit%2A> volat<xref:System.Data.Linq.DataContext.SubmitChanges%2A>odpovídající metodu a pak, nebo (bez pro vložení) pro každou entitu. Neobnovujte data z databáze jako způsob získání původních hodnot před tím, než zkusíte aktualizace.  
   
- Další informace o optimistického řízení souběžnosti, naleznete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md). Podrobné informace o řešení optimistického řízení souběžnosti změna je v konfliktu, najdete v článku [jak: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md).  
+ Další informace o optimistické souběžnosti najdete v tématu [Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md). Podrobné informace o řešení konfliktů změn optimistického řízení souběžnosti naleznete [v tématu How to: Spravujte konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)změn.  
   
- Následující příklady ukazují jednotlivých scénářů:  
+ Následující příklady znázorňují jednotlivé scénáře:  
   
-### <a name="optimistic-concurrency-with-timestamps"></a>Optimistického řízení souběžnosti ovládacím prvkem časová razítka  
+### <a name="optimistic-concurrency-with-timestamps"></a>Optimistická souběžnost s časovými razítky  
   
 ```vb  
 ' Assume that "customer" has been sent by client.  
@@ -263,8 +263,8 @@ catch(ChangeConflictException e)
 }  
 ```  
   
-### <a name="with-subset-of-original-values"></a>S podmnožinou původní hodnoty  
- V takovém případě vrátí klientovi kompletní serializovaný objekt spolu s hodnotami, které má být upraven.  
+### <a name="with-subset-of-original-values"></a>S podmnožinou původních hodnot  
+ V tomto přístupu klient vrátí kompletní serializovaný objekt spolu s hodnotami, které mají být změněny.  
   
 ```vb  
 Public Sub UpdateProductInventory(ByVal p As Product, ByVal _  
@@ -324,7 +324,7 @@ public void UpdateProductInventory(Product p, short? unitsInStock, short? unitsO
 }  
 ```  
   
-### <a name="with-complete-entities"></a>S kompletní entity  
+### <a name="with-complete-entities"></a>S dokončenými entitami  
   
 ```vb  
 Public Sub UpdateProductInfo(ByVal newProd As Product, ByVal _  
@@ -374,37 +374,37 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
 }  
 ```  
   
- Chcete-li aktualizovat kolekci, zavolejte <xref:System.Data.Linq.ITable.AttachAll%2A> místo `Attach`.  
+ Chcete-li aktualizovat kolekci, <xref:System.Data.Linq.ITable.AttachAll%2A> zavolejte `Attach`místo.  
   
-### <a name="expected-entity-members"></a>Členové očekávanou entitu  
- Jak bylo uvedeno dříve, jsou jen některé členy objektu entity musí být nastavena dříve než zavoláte `Attach` metody. Členové entit, které je potřeba nastavit musí splňovat následující kritéria:  
+### <a name="expected-entity-members"></a>Očekávané členy entity  
+ Jak bylo uvedeno dříve, musí být před voláním `Attach` metod nastaveny pouze určité členy objektu entity. Členy entity, které je třeba nastavit, musí splňovat následující kritéria:  
   
-- Být součástí identity subjektu.  
+- Být součástí identity entity.  
   
-- Očekávat, že se změnil.  
+- Očekává se, že se má změnit.  
   
-- Časové razítko nebo má jeho <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> atribut nastaven na něco kromě `Never`.  
+- Být časové razítko nebo mít <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> jeho atribut nastaven na něco `Never`kromě.  
   
- Pokud tabulka používá číslo verze nebo časové razítko pro kontrolu optimistického řízení souběžnosti, musíte nastavit tyto členy před voláním <xref:System.Data.Linq.ITable.Attach%2A>. Člen je vyhrazený pro optimistického řízení souběžnosti při kontrole <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> je nastavena na hodnotu true u tohoto sloupce atributu. Všechny požadované aktualizace budou odeslány pouze v případě, že hodnoty, číslo nebo časového razítka verze jsou stejné pro databázi.  
+ Pokud tabulka používá časové razítko nebo číslo verze pro optimistickou kontrolu souběžnosti, musíte tyto členy nastavit před voláním <xref:System.Data.Linq.ITable.Attach%2A>. Člen je vyhrazen pro kontrolu optimistického souběžnosti, pokud <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A> je vlastnost nastavena na hodnotu true u daného atributu sloupce. Všechny požadované aktualizace budou odeslány pouze v případě, že je číslo verze nebo hodnoty časového razítka v databázi stejné.  
   
- Člen se používá také v kontroly optimistického řízení souběžnosti, tak dlouho, dokud člen nemá <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> nastavena na `Never`. Výchozí hodnota je `Always` Pokud není zadána žádná hodnota.  
+ Člen se používá také v kontrole optimistického řízení souběžnosti, pokud člen <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A> nemá `Never`nastavenou hodnotu. Výchozí hodnota je `Always` , pokud není zadána jiná hodnota.  
   
- V případě potřeby některou z těchto členů chybí, <xref:System.Data.Linq.ChangeConflictException> dojde během <xref:System.Data.Linq.DataContext.SubmitChanges%2A> ("řádek nebyl nalezen nebo změněn").  
+ Pokud některý z požadovaných členů chybí, je vyvolána výjimka v <xref:System.Data.Linq.ChangeConflictException> průběhu <xref:System.Data.Linq.DataContext.SubmitChanges%2A> ("řádek nebyl nalezen nebo změněn").  
   
 ### <a name="state"></a>Stav  
- Po entity je přiřazena objektu <xref:System.Data.Linq.DataContext> instance, objekt je považován za v `PossiblyModified` stavu. Existují tři způsoby, jak vynutit připojeného objektu považovat `Modified`.  
+ Po připojení objektu entity k <xref:System.Data.Linq.DataContext> instanci je objekt považován za `PossiblyModified` ve stavu. Existují tři způsoby, jak vynutit zvážení `Modified`připojeného objektu.  
   
-1. Připojit jako nezměněný a přímo upravit pole.  
+1. Připojte jej jako nezměněný a potom přímo upravte pole.  
   
-2. Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající aktuální a původní objekt instance. To poskytuje modul sledování změny pomocí staré a nové hodnoty tak, že bude automaticky znát, pole, která jste změnili.  
+2. Připojte ho k <xref:System.Data.Linq.Table%601.Attach%2A> přetížení, které přebírá aktuální a původní instance objektů. To poskytuje sledování změn se starými a novými hodnotami tak, aby se automaticky vědělo, která pole se změnila.  
   
-3. Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající druhý parametr logické hodnoty (nastavenou na hodnotu true). Se tak dozví, modul sledování změny, které byste měli zvážit objektu změnit, aniž by bylo nutné zadat všechny původní hodnoty. V takovém případě musí mít objekt pole verze/časové razítko.  
+3. Připojte jej k <xref:System.Data.Linq.Table%601.Attach%2A> přetížení, které přijímá Druhý logický parametr (nastaveno na hodnotu true). Tím se nástroj pro sledování změn upozorní, že se objekt změnil, aniž by musel zadávat žádné původní hodnoty. V tomto přístupu musí mít objekt pole verze nebo časové razítko.  
   
- Další informace najdete v tématu [stavy objektů a sledování změn](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md).  
+ Další informace najdete v tématech [stavy objektů a sledování změn](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md).  
   
- Dojde-li objekt entity již v mezipaměti ID se stejnou identitou jako objekt připojovaný, <xref:System.Data.Linq.DuplicateKeyException> je vyvolána výjimka.  
+ Pokud objekt entity již v mezipaměti ID existuje se stejnou identitou jako připojenému objektu, <xref:System.Data.Linq.DuplicateKeyException> je vyvolána výjimka.  
   
- Jestliže se pokusíte připojit s `IEnumerable` sadu objektů, <xref:System.Data.Linq.DuplicateKeyException> je vyvolána, když je k dispozici již existujícího klíče. Zbývající objekty nejsou připojeny.  
+ Když se připojíte se `IEnumerable` sadou objektů <xref:System.Data.Linq.DuplicateKeyException> , vyvolá se, když je přítomen již existující klíč. Zbývající objekty nejsou připojeny.  
   
 ## <a name="see-also"></a>Viz také:
 

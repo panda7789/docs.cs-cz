@@ -13,45 +13,45 @@ helpviewer_keywords:
 - data [Windows Forms], sorting
 - ADO.NET [Windows Forms]
 ms.assetid: 6c206daf-d706-4602-9dbe-435343052063
-ms.openlocfilehash: d270155fa1e6b61d8537096a07a4b93fa3b79b35
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: ae331ca9e3fd2aed654659e11434454874eff8fa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882195"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960410"
 ---
 # <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource
-Můžete zveřejnit řazení a filtrování schopnost <xref:System.Windows.Forms.BindingSource> řídit prostřednictvím <xref:System.Windows.Forms.BindingSource.Sort%2A> a <xref:System.Windows.Forms.BindingSource.Filter%2A> vlastnosti. Můžete provést jednoduché řazení podkladovým zdrojem dat je <xref:System.ComponentModel.IBindingList>, a můžete použít filtrování a rozšířené řazení, pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>. <xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost vyžaduje standardní syntaxe ADO.NET: řetězec představující název sloupce dat ve zdroji dat, za nímž následuje `ASC` nebo `DESC` označující, zda mají být řazeny seznam ve vzestupném nebo sestupném pořadí. Můžete nastavit rozšířené řazení nebo řazení více sloupců tak, že oddělíte každý sloupec s oddělovačem čárkou. <xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost přebírá řetězcového výrazu.  
+Schopnost <xref:System.Windows.Forms.BindingSource> řazení a filtrování ovládacího prvku můžete vystavit <xref:System.Windows.Forms.BindingSource.Sort%2A> prostřednictvím vlastností a <xref:System.Windows.Forms.BindingSource.Filter%2A> . Když je <xref:System.ComponentModel.IBindingList>podkladový zdroj dat, můžete použít jednoduché řazení <xref:System.ComponentModel.IBindingListView>. Pokud je zdrojem dat, můžete použít filtrování a rozšířené řazení. Vlastnost vyžaduje standardní syntaxi ADO.NET: řetězec představující název sloupce dat ve zdroji dat `ASC` následovaný nebo `DESC` , který označuje, jestli se má seznam seřadit ve vzestupném nebo sestupném pořadí. <xref:System.Windows.Forms.BindingSource.Sort%2A> Můžete nastavit pokročilé řazení nebo řazení více sloupců tím, že každý sloupec oddělíte oddělovačem čárky. <xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost přebírá řetězcový výraz.  
   
 > [!NOTE]
->  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../data/adonet/protecting-connection-information.md).  
+> Ukládání citlivých informací, jako je například heslo, v rámci připojovacího řetězce může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [ochrana informací o připojení](../../data/adonet/protecting-connection-information.md).  
   
-### <a name="to-filter-data-with-the-bindingsource"></a>K filtrování dat pomocí objektu BindingSource  
+### <a name="to-filter-data-with-the-bindingsource"></a>Filtrování dat pomocí objektu BindingSource  
   
-- Nastavte <xref:System.Windows.Forms.BindingSource.Filter%2A> vlastnost pro výraz, který chcete.  
+- <xref:System.Windows.Forms.BindingSource.Filter%2A> Nastavte vlastnost na výraz, který chcete.  
   
-     Výraz v následujícím příkladu kódu je název sloupce zadáte hodnotu, která chcete použít pro sloupec.  
+     V následujícím příkladu kódu je výraz název sloupce následovaný hodnotou, kterou chcete pro sloupec.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#11)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#11)]  
   
-### <a name="to-sort-data-with-the-bindingsource"></a>Řazení dat pomocí BindingSource  
+### <a name="to-sort-data-with-the-bindingsource"></a>Řazení dat pomocí objektu BindingSource  
   
-1. Nastavte <xref:System.Windows.Forms.BindingSource.Sort%2A> nastavte na název sloupce, který chcete, za nímž následuje `ASC` nebo `DESC` označíte, vzestupném nebo sestupném pořadí.  
+1. Nastavte vlastnost na název sloupce, který požadujete, a `ASC` za něj `DESC` určete vzestupné nebo sestupné pořadí. <xref:System.Windows.Forms.BindingSource.Sort%2A>  
   
-2. Oddělte čárkou více sloupců.  
+2. Oddělte více sloupců čárkou.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#12)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#12)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu načte data z tabulky Customers v ukázkové databázi Northwind <xref:System.Windows.Forms.DataGridView> ovládací prvek a filtry a seřadí zobrazená data.  
+ Následující příklad kódu načte data z tabulky Customers ukázkové databáze Northwind do <xref:System.Windows.Forms.DataGridView> ovládacího prvku a filtruje a seřadí zobrazená data.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li spustit tento příklad, vložte kód do formuláře, který obsahuje <xref:System.Windows.Forms.BindingSource> s názvem `BindingSource1` a <xref:System.Windows.Forms.DataGridView> s názvem `dataGridView1`. Zpracování <xref:System.Windows.Forms.Form.Load> událost pro formulář opravdu zavřít a volání `InitializeSortedFilteredBindingSource` v metodě obslužné rutiny události load.  
+ Chcete-li spustit tento příklad, vložte kód <xref:System.Windows.Forms.BindingSource> do formuláře obsahujícího pojmenované `BindingSource1` a <xref:System.Windows.Forms.DataGridView> pojmenované `dataGridView1`. Zpracujte událost pro formulář a zavolejte `InitializeSortedFilteredBindingSource` metodu obslužné rutiny události načtení. <xref:System.Windows.Forms.Form.Load>  
   
 ## <a name="see-also"></a>Viz také:
 

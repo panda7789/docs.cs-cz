@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 32a4f4f3735c8952cf1458c63655eb56a82fd18f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5c9f15a7ff30d5647338bf1954aca441b47281b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666437"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948745"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
@@ -128,7 +128,7 @@ ms.locfileid: "69666437"
 - V Visual Basic, C#a C++, nelze vytvořit instanci vnořeného typu, který je uzavřen v obecném typu, pokud typy nejsou přiřazeny k parametrům typu všech nadřazených typů. Dalším způsobem, jak to vyjádřit, je vnořený typ, který je definován pomocí těchto jazyků, obsahuje parametry typu všech nadřazených typů. To umožňuje, aby parametry typu nadřazených typů byly použity v definicích členů vnořeného typu. Další informace naleznete v části "vnořené typy" v <xref:System.Type.MakeGenericType%2A>tématu.  
   
     > [!NOTE]
-    >  Vnořený typ, který je definován vygenerováním kódu v dynamickém sestavení nebo pomocí nástroje [Ilasm. exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) , není vyžadován pro zahrnutí parametrů typu svých nadřazených typů. Pokud je však neobsahuje, parametry typu nejsou v oboru vnořené třídy.  
+    > Vnořený typ, který je definován vygenerováním kódu v dynamickém sestavení nebo pomocí nástroje [Ilasm. exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) , není vyžadován pro zahrnutí parametrů typu svých nadřazených typů. Pokud je však neobsahuje, parametry typu nejsou v oboru vnořené třídy.  
   
      Další informace naleznete v části "vnořené typy" v <xref:System.Type.MakeGenericType%2A>tématu.  
   

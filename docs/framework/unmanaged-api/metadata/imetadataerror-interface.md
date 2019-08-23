@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 37f1f6055ec8fa68fe804780d2893d20c978e6bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 277b93267f0537c8e499a8d8f3b456c4396a975c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663750"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966343"
 ---
 # <a name="imetadataerror-interface"></a>IMetaDataError – rozhraní
-Poskytuje mechanismus zpětného volání pro zasílání zpráv o chybách během metadat sloučení.  
+Poskytuje mechanismus zpětného volání pro hlášení chyb během sloučení metadat.  
   
 > [!NOTE]
->  `IMetaDataError` Pomocí klienta musí implementovat rozhraní.  
+> `IMetaDataError` Rozhraní musí být implementováno klientem.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[OnError – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Poskytuje oznámení chyb, k nimž došlo při sloučení metadat.|  
+|[OnError – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Poskytuje oznámení o chybách, ke kterým došlo během sloučení metadat.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

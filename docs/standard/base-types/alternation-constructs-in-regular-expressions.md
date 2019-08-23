@@ -18,12 +18,12 @@ ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 61f1b93d2f54923f0dfc4832a79fe35dc319d0f6
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 560597770d667cf8c7668bf2338ac4bac3eb192f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331754"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968577"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
 <a name="top"></a>Konstrukce alternace upravují regulární výraz pro povolení nebo podmíněné porovnání. Rozhraní .NET podporuje tři konstrukce alternace:  
@@ -71,16 +71,16 @@ ms.locfileid: "68331754"
 ## <a name="conditional-matching-with-an-expression"></a>Podmíněné porovnání s výrazem  
  Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom, zda se může shodovat s počátečním vzorem. Jeho syntaxe je:  
   
- `(?(`*výraz* `)`  Ano –`|` *ne*`)`  
+ `(?(`*výraz* `)` Ano –`|` *ne*`)`  
   
  *výraz* WHERE je počáteční vzorek, který se má shodovat, *Ano* je vzor, který se má shodovat, pokud se *výraz* shoduje, a *ne* je volitelný vzor, který by odpovídal, pokud se *výraz* neshoduje. Modul regulárních výrazů považuje *výraz* za kontrolní výraz s nulovou šířkou; To znamená, že modul regulárních výrazů není ve vstupním datovém proudu před vyhodnocením *výrazu*. Proto je tato konstrukce ekvivalentní následujícímu:  
   
- `(?(?=`*výraz* `)`  Ano –`|` *ne*`)`  
+ `(?(?=`*výraz* `)` Ano –`|` *ne*`)`  
   
  výraz `(?=`Where`)` je konstrukce kontrolního výrazu s nulovou šířkou. (Další informace naleznete v tématu [seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).) Vzhledem k tomu, že modul regulárních výrazů interpretuje *výraz* jako kotvu (kontrolní výraz s nulovou šířkou), musí být *výraz* buď kontrolní výraz s nulovou šířkou (Další informace naleznete v tématu [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md)) nebo dílčí výraz, který je také obsažen v *Ano*. V opačném případě nelze porovnat vzor *Ano* .  
   
 > [!NOTE]
->  Pokud je *výraz*pojmenovanou nebo číslovanou zachytávající skupinou, konstrukce alternace je interpretována jako test Capture; Další informace najdete v další části s podmíněným [porovnáním na základě platné skupiny zachycení](#Conditional_Group). Jinými slovy, modul regulárních výrazů se nepokusí porovnat zachycený dílčí řetězec, ale místo toho testuje přítomnost nebo nepřítomnost skupiny.  
+> Pokud je *výraz*pojmenovanou nebo číslovanou zachytávající skupinou, konstrukce alternace je interpretována jako test Capture; Další informace najdete v další části s podmíněným [porovnáním na základě platné skupiny zachycení](#Conditional_Group). Jinými slovy, modul regulárních výrazů se nepokusí porovnat zachycený dílčí řetězec, ale místo toho testuje přítomnost nebo nepřítomnost skupiny.  
   
  V následujícím příkladu je variace příkladu, který se zobrazí v sekci [se &#124; porovnáváním](#Either_Or) nebo vzorem. Pomocí podmíněného porovnání Určuje, zda první tři znaky po hranici slova jsou dvě číslice následované spojovníkem. Pokud jsou, pokusí se porovnat USA Identifikační číslo zaměstnavatele (EIN). Pokud tomu tak není, pokusí se porovnat americký Rodné číslo (sociální zabezpečení).  
   
@@ -103,11 +103,11 @@ ms.locfileid: "68331754"
 ## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Podmíněné porovnání na základě platné zachycené skupiny  
  Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom, zda se shodoval se zadanou zachytávající skupinou. Jeho syntaxe je:  
   
- `(?(`*název* `)`  Ano –`|` *ne*`)`  
+ `(?(`*název* `)` Ano –`|` *ne*`)`  
   
  or  
   
- `(?(`*číslo* `)`  Ano –`|` *ne*`)`  
+ `(?(`*číslo* `)` Ano –`|` *ne*`)`  
   
  kde *Name* je název a *číslo* je číslo zachytávající skupiny, *Ano* je výraz, který se má shodovat, pokud má *název* nebo *číslo* shodu a *ne* není volitelný výraz, který by odpovídal, pokud není.  
   

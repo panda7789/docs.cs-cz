@@ -2,22 +2,22 @@
 title: Použití čítačů výkonu
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 2c5042d497a09984a6f6c398a943b443ee9aafb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d714af8802bd290b54d0bf3667220b25b24c3fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007601"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966770"
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
-Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Communication Foundation (WCF) a jak vytvořit uživatelsky definovaným výkonem čítače. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Tato ukázka předvádí, jak získat přístup k čítačům výkonu služby Windows Communication Foundation (WCF) a jak vytvořit uživatelsky definované čítače výkonu. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- V této ukázce, klient volá čtyři metody `ICalculator` služby. Klient i nadále to provést, dokud je přerušeno uživatelem. Služba zůstane beze změny.  
+ V této ukázce klient volá čtyři metody `ICalculator` služby. Klient to bude pokračovat, dokud ho uživatel nepřerušil. Služba zůstane beze změny.  
   
- V části Diagnostika souboru Web.config pro službu, jsou povoleny čítače výkonu, jak je znázorněno v následující ukázková konfigurace.  
+ Čítače výkonu jsou povoleny v části Diagnostika v souboru Web. config pro službu, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <configuration>  
@@ -27,55 +27,55 @@ Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Comm
 </configuration>  
 ```  
   
- Tato úloha je možné provést pomocí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
+ Tuto úlohu lze provést také pomocí [nástroje Configuration Editor (SvcConfigEditor. exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
   
- Když jsou povoleny čítače výkonu, celou sadu čítače výkonu WCF je povolen pro službu. Rozhraní .NET Framework automaticky udržuje data o výkonu na třech úrovních: `ServiceModelService`, `ServiceModelEndpoint` a `ServiceModelOperation`. Každá z těchto úrovní obsahuje čítače výkonu, jako je například "Volání", "Volání za sekundu" a "Zabezpečení volání nemáte oprávnění".  
+ Pokud jsou povoleny čítače výkonu, je pro službu povolena celá sada čítačů výkonu služby WCF. .NET Framework automaticky udržuje údaje o výkonu na třech úrovních: `ServiceModelService` `ServiceModelEndpoint` a `ServiceModelOperation`. Každá z těchto úrovní má čítače výkonu, jako jsou volání "hovory", "hovory za sekundu" a "volání zabezpečení nejsou autorizována".  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-### <a name="to-view-performance-data"></a>Chcete-li zobrazit údaje o výkonu  
+### <a name="to-view-performance-data"></a>Zobrazení údajů o výkonu  
   
-1. Spustit nástroj Sledování výkonu kliknutím **Start**, **spuštění...** , zadejte `perfmon` a klikněte na tlačítko **OK,** nebo v Ovládacích panelech vyberte **nástroje pro správu** a dvakrát klikněte na panel **výkonu**.  
-  
-    > [!NOTE]
-    >  Nelze přidat čítače, dokud vzorový kód je spuštěný.  
-  
-2. Odeberte čítačů výkonu, které jsou uvedeny tak, že je vyberete a stisknutím klávesy Delete.  
-  
-3. Přidání čítačů WCF kliknutím pravým tlačítkem v podokně grafu a výběr **přidat čítače**. V **přidat čítače** dialogu **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** v objektu výkonu rozevírací seznam pole se seznamem. Vyberte čítače, které chcete zobrazit v seznamu.  
+1. Spusťte nástroj sledování výkonu kliknutím na tlačítko **Start**, **Spustit...** , zadejte `perfmon` a klikněte na tlačítko **OK** nebo v Ovládacích panelech vyberte možnost **Nástroje pro správu** a dvakrát klikněte na položku **výkon**.  
   
     > [!NOTE]
-    >  Pokud nejsou žádné WCF služby spuštěné v počítači nejsou žádné čítače výkonu WCF pro službu.  
+    >  Čítače nelze přidat, dokud není spuštěn vzorový kód.  
   
-### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Použití editoru konfigurace pro povolení čítačů  
+2. Odeberte čítače výkonu, které jsou uvedeny výběrem a stisknutím klávesy DELETE.  
   
-1. Spusťte instanci SvcConfigEditor.exe.  
+3. Přidejte čítače WCF kliknutím pravým tlačítkem myši na Podokno grafu a výběrem možnosti **Přidat čítače**. V dialogovém okně **Přidat čítače** vyberte v rozevíracím seznamu objekt výkonu možnost **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** . V seznamu vyberte čítače, které chcete zobrazit.  
   
-2. V nabídce Soubor klikněte na tlačítko **otevřít** a potom klikněte na tlačítko **konfiguračního souboru...** .  
+    > [!NOTE]
+    >  Nejsou-li v počítači žádné služby WCF spuštěné, neexistují žádné čítače výkonu WCF pro službu.  
   
-3. Přejděte do složky služby ukázkovou aplikaci a otevřete soubor Web.config.  
+### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Použití editoru konfigurace k povolení čítačů  
   
-4. Klikněte na tlačítko **diagnostiky** ve stromové struktuře konfigurace.  
+1. Otevřete instanci SvcConfigEditor. exe.  
   
-5. Přepnout **čítač výkonu** v **diagnostiky** okno k zobrazení "Vše".  
+2. V nabídce soubor klikněte na **otevřít** a pak klikněte na **konfigurační soubor...** .  
   
-6. Konfigurační soubor uložte a ukončete editor.  
+3. Přejděte do složky služby ukázkové aplikace a otevřete soubor Web. config.  
+  
+4. Ve stromové struktuře konfigurace klikněte na **Diagnostika** .  
+  
+5. Přepnutím **čítače výkonu** v okně diagnostiky zobrazíte možnost vše.  
+  
+6. Uložte konfigurační soubor a ukončete Editor.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\PerfCounters`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

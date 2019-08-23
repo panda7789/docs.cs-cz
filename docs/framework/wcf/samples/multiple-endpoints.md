@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
-ms.openlocfilehash: 90b8c3cb49ff7b246b6bf7799d6b76f8549b23e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7fe38e685b662a0dbfe6f818a597776802eada42
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755958"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930340"
 ---
 # <a name="multiple-endpoints"></a>Víc koncových bodů
-Více koncových bodů Ukázka předvádí, jak konfigurovat několik koncových bodů ve službě a komunikovat s každého koncového bodu z klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Chcete-li definovat dva koncové body, které podporují byla změněna konfigurace služby `ICalculator` smlouvy, ale každý na jinou adresu pomocí jinou vazbou. Konfigurace klienta a kód se upravila tak komunikovat s oběma koncových bodů služby.  
+Ukázka více koncových bodů ukazuje, jak nakonfigurovat více koncových bodů ve službě a jak komunikovat s každým koncovým bodem z klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurace služby byla změněna tak, aby definovala dva koncové body, `ICalculator` které podporují kontrakt, ale každou na jiné adrese s použitím jiné vazby. Konfigurace a kód klienta byly upraveny tak, aby komunikovaly s oběma koncovými body služby.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Soubor Web.config služby byla změněna definovat dva koncové body, nichž každá podporuje stejné `ICalculator` smlouvy, ale na různé adresy pomocí různých vazeb. První koncový bod je definována na základní adresu pomocí `basicHttpBinding` vazby, který nemá povoleno zabezpečení. Druhý je definovaný v {baseaddress} / zabezpečené pomocí `wsHttpBinding` vazby, který je ve výchozím nastavení zabezpečený, pomocí WS-Security s ověřováním Windows.  
+ Soubor Web. config služby byl změněn tak, aby definoval dva koncové body, z nichž každá `ICalculator` podporuje stejný kontrakt, ale na různých adresách pomocí různých vazeb. První koncový bod je definován na základní adrese pomocí `basicHttpBinding` vazby, která nemá povolenou možnost zabezpečení. Druhý koncový bod je definovaný na adrese {BaseAddress}/Secure pomocí `wsHttpBinding` vazby, která je standardně zabezpečená pomocí ověřování WS-Security s ověřováním systému Windows.  
   
 ```xml  
 <service   
@@ -37,7 +37,7 @@ Více koncových bodů Ukázka předvádí, jak konfigurovat několik koncových
 </service>  
 ```  
   
- Oba koncové body jsou také nakonfigurovaná na straně klienta. Tyto koncové body jsou křestní jména, aby volající můžete předat název požadovaného koncového bodu do konstruktoru objektu klienta.  
+ Oba koncové body jsou také nakonfigurovány na klientovi. Tyto koncové body mají křestní jména, aby volající mohl předat do konstruktoru klienta požadovaný název koncového bodu.  
   
 ```xml  
 <client>  
@@ -56,7 +56,7 @@ Více koncových bodů Ukázka předvádí, jak konfigurovat několik koncových
 </client>  
 ```  
   
- Klient použije oba koncové body, jak je znázorněno v následujícím kódu.  
+ Klient používá oba koncové body, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 static void Main()  
@@ -85,7 +85,7 @@ static void Main()
 }  
 ```  
   
- Když spustíte klienta, zobrazí se interakce se oba koncové body.  
+ Když spustíte klienta nástroje, zobrazí se interakce s oběma koncovými body.  
   
 ```  
 Communicate with basic endpoint.  
@@ -102,19 +102,19 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleEndpoints`  

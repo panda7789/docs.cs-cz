@@ -2,18 +2,18 @@
 title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 1101d021f3c7436c4f45a22a48e50f6d1553f753
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c9dbec13dd0d71ba1b92ea971d067540013b6f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769743"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940318"
 ---
 # <a name="websocketsettings"></a>\<webSocketSettings>
-Prvek konfigurace určuje nastavení Websocket.  
+Prvek konfigurace, který slouží k zadání nastavení webového soketu.  
   
 \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<netHttpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,22 +40,22 @@ Prvek konfigurace určuje nastavení Websocket.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|createNotificationOnConnection|Určuje, zda jsou oznámení odesílána při připojení.|  
-|disablePayloadMasking|Určuje, zda je zakázaný maskování Websocket.|  
-|keepAliveInterval|Určuje keep alive interval.|  
-|maxPendingConnections|Určuje maximální počet připojení čeká na odeslání ve službě.|  
+|createNotificationOnConnection|Určuje, zda je při připojení odesláno oznámení.|  
+|disablePayloadMasking|Určuje, jestli je zakázané maskování webového soketu.|  
+|keepAliveInterval|Určuje interval Keep Alive.|  
+|maxPendingConnections|Určuje maximální počet připojení čekajících na odeslání ve službě.|  
 |receiveBufferSize|Určuje velikost vyrovnávací paměti pro příjem.|  
-|sendBufferSize|Určuje velikost vyrovnávací paměti pro odesílání.|  
-|dílčí protokol|Určuje dílčí protokol Websocket.|  
-|transportUsage|Určuje, kdy se má použít objekty Websocket.|  
+|sendBufferSize|Určuje velikost vyrovnávací paměti pro odeslání.|  
+|Dílčí protokol|Určuje dílčí protokol webového soketu.|  
+|transportUsage|Určuje, kdy se mají používat webové sokety.|  
   
-## <a name="transportusage-attribute"></a>transportUsage atribut  
+## <a name="transportusage-attribute"></a>transportUsage – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|WhenDuplex|Protokol Websocket po duplexní kontrakt.|  
-|Vždy|Vždy používejte protokol Websocket bez ohledu na to, kontrakt.|  
-|Nikdy|Nikdy nepoužívejte protokolu Websocket.|  
+|WhenDuplex|Protokol webového soketu použijte v případě, že je kontrakt duplexní.|  
+|Vždy|Vždy používejte protokol webového soketu bez ohledu na kontrakt.|  
+|Nikdy|Nikdy nepoužívejte protokol webového soketu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -64,10 +64,10 @@ Prvek konfigurace určuje nastavení Websocket.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|\<netHttpBinding>|Určuje vazeb NetHttpBinding|  
+|\<netHttpBinding>|Určuje NetHttpBinding|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití \<webSocketSettings > element.  
+ Následující příklad ukazuje použití \<prvku webSocketSettings >.  
   
 ```xml  
 <netHttpBinding>
@@ -90,7 +90,7 @@ Prvek konfigurace určuje nastavení Websocket.
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<> vazby](../../../misc/binding.md)

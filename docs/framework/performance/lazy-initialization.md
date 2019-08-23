@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aef3105844ee61607bbc85332a76611c91a4198a
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 1c13445b8b7c72d1c66efe5a9db3aaa027001ecf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364045"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943808"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že jeho vytvoření je odloženo až do prvního použití. (Pro toto téma jsou výrazy *opožděné inicializace* a *opožděné vytváření instancí* synonymní.) Opožděná inicializace se primárně používá ke zvýšení výkonu, vyhněte se výpočtu wasteful a snížení požadavků na paměť programu. Jedná se o nejběžnější scénáře:  
@@ -62,7 +62,7 @@ ms.locfileid: "68364045"
  Ve výchozím nastavení <xref:System.Lazy%601> jsou objekty bezpečné pro přístup z více vláken. To znamená, že pokud konstruktor neurčí druh zabezpečení vlákna, objekty, které vytváří <xref:System.Lazy%601> , jsou bezpečné pro přístup z více vláken. Ve scénářích s více vlákny inicializuje první vlákno přístup <xref:System.Lazy%601.Value%2A> k vlastnosti objektu bezpečného <xref:System.Lazy%601> pro přístup z více vláken pro všechny následné přístupy na všechna vlákna a všechna vlákna sdílejí stejná data. Proto nezáleží na tom, které vlákno inicializuje objekt a konflikty časování jsou neškodné.  
   
 > [!NOTE]
->  Tuto konzistenci můžete roztáhnout na chybové podmínky pomocí ukládání výjimek do mezipaměti. Další informace naleznete v další části [výjimky v opožděných objektech](../../../docs/framework/performance/lazy-initialization.md#ExceptionsInLazyObjects).  
+> Tuto konzistenci můžete roztáhnout na chybové podmínky pomocí ukládání výjimek do mezipaměti. Další informace naleznete v další části [výjimky v opožděných objektech](../../../docs/framework/performance/lazy-initialization.md#ExceptionsInLazyObjects).  
   
  Následující příklad ukazuje, že stejná `Lazy<int>` instance má stejnou hodnotu pro tři samostatná vlákna.  
   
@@ -92,7 +92,7 @@ ms.locfileid: "68364045"
  Ukládání výjimek do mezipaměti je povoleno, je <xref:System.Lazy%601?displayProperty=nameWithType> -li použit libovolný konstruktor, který`valueFactory` přebírá metodu inicializace (parametr); například je `Lazy(T)(Func(T))`povolen při použití konstruktoru. <xref:System.Threading.LazyThreadSafetyMode> Pokud konstruktor také převezme hodnotu (`mode` parametr), zadejte <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> nebo <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>. Zadání inicializační metody povoluje ukládání výjimek do mezipaměti pro tyto dva režimy. Inicializační metoda může být velmi jednoduchá. Například může volat konstruktor bez parametrů `T`pro: `new Lazy<Contents>(() => new Contents(), mode)` in C#, nebo `New Lazy(Of Contents)(Function() New Contents())` v Visual Basic. Pokud použijete <xref:System.Lazy%601?displayProperty=nameWithType> konstruktor, který neurčuje metodu inicializace, výjimky, které jsou vyvolány konstruktor bez parametrů pro `T` , nejsou ukládány do mezipaměti. Další informace najdete v tématu <xref:System.Threading.LazyThreadSafetyMode> výčet.  
   
 > [!NOTE]
->  <xref:System.Lazy%601> Vytvoříte- <xref:System.Lazy%601> li objekt `isThreadSafe` s `false` parametrem<xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>konstruktoru nastaveným na nebo parametrem konstruktorunastavenýmnahodnotu,musítezískatpřístupkobjektuzjednohovláknanebozadatvlastní`mode` sladěn. To platí pro všechny aspekty objektu, včetně ukládání výjimek do mezipaměti.  
+> <xref:System.Lazy%601> Vytvoříte- <xref:System.Lazy%601> li objekt `isThreadSafe` s `false` parametrem<xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>konstruktoru nastaveným na nebo parametrem konstruktorunastavenýmnahodnotu,musítezískatpřístupkobjektuzjednohovláknanebozadatvlastní`mode` sladěn. To platí pro všechny aspekty objektu, včetně ukládání výjimek do mezipaměti.  
   
  Jak je uvedeno v předchozí části, <xref:System.Lazy%601> objekty vytvořené zadáním <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly?displayProperty=nameWithType> považovat výjimky odlišně. V <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly>nástroji může více vláken konkurovat <xref:System.Lazy%601> inicializaci instance. V takovém případě se výjimky neukládají do mezipaměti a pokusy o <xref:System.Lazy%601.Value%2A> přístup k vlastnosti mohou pokračovat, dokud nebude inicializace úspěšná.  
   
@@ -140,7 +140,7 @@ ms.locfileid: "68364045"
  [!code-vb[Lazy#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#9)]  
   
 ## <a name="thread-local-variables-in-parallelfor-and-foreach"></a>Místní proměnné vlákna paralelně. for a ForEach  
- Použijete- <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> li metodunebometoduproiteracizdrojůdatparalelně,můžetepoužítpřetížení,kterámajíintegrovanoupodporupromístnídatavlákna.<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> V těchto metodách je možné dosáhnout lokálního vlákna pomocí místních delegátů k vytváření, přístupu a vyčištění dat. Další informace najdete v tématu [jak: Napište Parallel. for Loop s proměnnými](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) místně vlákna a [postupy: Zapište smyčku Parallel. ForEach pomocí proměnných](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)lokálních na oddíl.  
+ Použijete- <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> li metodunebometoduproiteracizdrojůdatparalelně,můžetepoužítpřetížení,kterámajíintegrovanoupodporupromístnídatavlákna.<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> V těchto metodách je možné dosáhnout lokálního vlákna pomocí místních delegátů k vytváření, přístupu a vyčištění dat. Další informace najdete v tématu [jak: Napište Parallel. for Loop s proměnnými](../../standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) místně vlákna a [postupy: Zapište smyčku Parallel. ForEach pomocí proměnných](../../standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)lokálních na oddíl.  
   
 ## <a name="using-lazy-initialization-for-low-overhead-scenarios"></a>Použití opožděné inicializace pro scénáře s nízkou režií  
  Ve scénářích, kdy je nutné provést opožděnou inicializaci velkého počtu objektů, se můžete rozhodnout, že balení každého objektu v <xref:System.Lazy%601> vyžaduje příliš mnoho paměti nebo příliš mnoho výpočetních prostředků. Nebo je možné, že máte přísné požadavky na to, jak je k dispozici opožděná inicializace. V takových `static` případech můžete použít metody (`Shared` v <xref:System.Threading.LazyInitializer?displayProperty=nameWithType> Visual Basic) třídy k opožděné inicializaci každého <xref:System.Lazy%601>objektu bez jeho zabalení v instanci.  
@@ -154,7 +154,7 @@ ms.locfileid: "68364045"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)
-- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)
-- [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [Základy dělení na spravovaná vlákna](../../standard/threading/managed-threading-basics.md)
+- [Vlákna a dělení na vlákna](../../standard/threading/threads-and-threading.md)
+- [Task Parallel Library (TPL)](../../standard/parallel-programming/task-parallel-library-tpl.md)
 - [Postupy: Provést opožděnou inicializaci objektů](../../../docs/framework/performance/how-to-perform-lazy-initialization-of-objects.md)

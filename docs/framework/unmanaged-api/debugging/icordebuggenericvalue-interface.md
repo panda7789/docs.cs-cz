@@ -16,42 +16,42 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ad2209c6e28c7749bd149902e5b696955ee7f13f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36c2ed5529151a7ea18ccaffc2202ad6c69bcbd9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988673"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910234"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue – rozhraní
 
-Podtřída ICorDebugValue"", která se vztahuje na všechny hodnoty. Toto rozhraní poskytuje metody Get a Set pro hodnotu.  
+Podtřída "ICorDebugValue", která se vztahuje na všechny hodnoty. Toto rozhraní poskytuje metody Get a Set pro hodnotu.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-getvalue-method.md)|Hodnota se zkopíruje do zadané vyrovnávací paměti.|  
-|[SetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Zkopíruje nové hodnoty ze zadané vyrovnávací paměti.|  
+|[GetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-getvalue-method.md)|Zkopíruje hodnotu do zadané vyrovnávací paměti.|  
+|[SetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Zkopíruje novou hodnotu ze zadané vyrovnávací paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugGenericValue` je dílčí rozhraní, protože je bez podpory vzdáleného přístupu.  
+ `ICorDebugGenericValue`je dílčí rozhraní, protože se nejedná o nevzdáleněu.  
   
- Pro typy odkazů hodnota je odkaz, nikoli obsah odkazu.  
+ U typů odkazů je hodnota odkaz spíše než obsah odkazu.  
   
- Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+ Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

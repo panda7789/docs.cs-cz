@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b17b36f66a9b8b78b16057ec37d3ee5f484f7ae2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dd5d2e820bd1d733bb4ab968a89174124bc91357
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779754"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962939"
 ---
 # <a name="iclrmetahostgetversionfromfile-method"></a>ICLRMetaHost::GetVersionFromFile – metoda
-Získá sestavení původní verzi rozhraní .NET Framework kompilace (uložené v metadatech) zadané cesty k souboru. Tato metoda nahrazuje [getfileversion –](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) funkce.  
+Získá původní verzi .NET Framework kompilace sestavení (uloženou v metadatech), která má za následek cestu k souboru. Tato metoda nahrazuje funkci [GetFileVersion –](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,36 +39,36 @@ HRESULT GetVersionFromFile (
   
 ## <a name="parameters"></a>Parametry  
  `pwzFilePath`  
- [in] Cesta k souboru dokončení sestavení.  
+ pro Úplná cesta k souboru sestavení.  
   
  `pwzbuffer`  
- [out] Kompilace verzi rozhraní .NET Framework uložena v metadatech ve formátu "v*A*. *B*[. *X*] ". *A*, *B*, a *X* jsou desetinná čísla, která odpovídá hlavní verze, podverze a číslo sestavení. Délka tohoto řetězce je omezená na MAX_PATH.  
+ mimo Verze kompilace .NET Framework uložená v metadatech ve formátu "v*A*. *B* [. *X*] ". A, *B*a *X* jsou desítková čísla, která odpovídají hlavní verzi, dílčí verzi a číslo buildu. Délka tohoto řetězce je omezená na MAX_PATH.  
   
 > [!NOTE]
->  Tento výstup odpovídá názvu adresáře pro verzi rozhraní .NET Framework, jak se zobrazí v části C:\Windows\Microsoft.NET\Framework.  
+> Tento výstup se shoduje s názvem adresáře pro .NET Framework verzi, jak se zobrazuje v části C:\Windows\Microsoft.NET\Framework.  
   
- Příklad hodnoty jsou "v1.0.3705", "v1.1.4322", "v2.0.50727" a "v4.0. *X*", kde *X* závisí na číslo sestavení nainstalována. Mějte na paměti, že předpona "v" je povinný.  
+ Příklady hodnot jsou "v 1.0.3705", "v 1.1.4322", "v 2.0.50727" a "v 4.0". *X*, kde *x* závisí na nainstalovaném čísle sestavení. Všimněte si, že je vyžadována předpona "v".  
   
  `pcchBuffer`  
- [out v] Velikost `pwzbuffer` , aby přetečení vyrovnávací paměti.  
+ [in, out] Velikost `pwzbuffer` , která se má vyhnout přetečení vyrovnávací paměti.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pwzbuffer` nebo `pcchBuffer` má hodnotu null.|  
+|E_POINTER|`pwzbuffer`nebo `pcchBuffer` má hodnotu null.|  
 |HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|Vyrovnávací paměť je příliš malá.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlaviček** MetaHost.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

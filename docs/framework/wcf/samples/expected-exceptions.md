@@ -2,28 +2,28 @@
 title: Očekávané výjimky
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: 3add9faa9a07249639c1ff3e83469d0634008472
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7611b070df31b7a0997a94c07594716ee264af5e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990194"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961598"
 ---
 # <a name="expected-exceptions"></a>Očekávané výjimky
-Tento příklad ukazuje, jak zachytit očekávané výjimky, při použití typu klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
+Tato ukázka předvádí, jak zachytit očekávané výjimky při použití typového klienta. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tato ukázka předvádí, zachycení a zpracování dva typy očekávané výjimky, které opravte programy musí zpracovat: `TimeoutException` a `CommunicationException`.  
+ Tento příklad znázorňuje zachycení a zpracování dvou očekávaných typů výjimek, které musí zpracovat správné programy: `TimeoutException` a `CommunicationException`.  
   
- Výjimky, které jsou vyvolány z metody komunikace klienta Windows Communication Foundation (WCF) jsou očekávané nebo neočekávané. Neočekávané výjimky zahrnují katastrofických selhání jako `OutOfMemoryException` a programové chyby, jako jsou `ArgumentNullException` nebo `InvalidOperationException`. Obvykle se nedají užitečné pro zpracování neočekávaných chyb, takže obvykle že při volání metody komunikace klienta WCF, neměli byste je zachytit.  
+ Výjimky, které jsou vyvolány ze způsobů komunikace u klienta služby Windows Communication Foundation (WCF), jsou buď očekávány, nebo neočekávané. Neočekávané výjimky zahrnují závažná `OutOfMemoryException` selhání jako a chyby `ArgumentNullException` programování `InvalidOperationException`jako nebo. Obvykle neexistuje žádný užitečný způsob, jak zpracovat neočekávané chyby, takže byste je neměli zachytit při volání metody komunikace klienta WCF.  
   
- Očekávané výjimky z metody komunikace na klienta WCF zahrnují `TimeoutException`, `CommunicationException`, a všechny odvozené třídy `CommunicationException`. Ty naznačují problém při komunikaci, která může bezpečně ošetřit přerušení klienta WCF a hlášení selhání komunikace. Protože vnější faktory mohou způsobit tyto chyby v jakékoli aplikaci, správné aplikace musí zachytit tyto výjimky a obnovit, když k nim dojde.  
+ Očekávané výjimky ze způsobů komunikace na klientovi WCF zahrnují `TimeoutException`, `CommunicationException` `CommunicationException`a jakékoliv odvozené třídy. Ty naznačují problém během komunikace, který je možné bezpečně zpracovat přerušením klienta WCF a odesláním chyby komunikace. Vzhledem k tomu, že externí faktory mohou způsobovat tyto chyby v jakékoli aplikaci, správné aplikace musí zachytit tyto výjimky a obnovit ji, když k nim dojde.  
   
- Existuje několik odvozené třídy `CommunicationException` , který může klient vyvolat. V některých případech může aplikace také catch některé z nich proveďte zvláštní zpracování, ale umožněte ostatním zacházet jako `CommunicationException`. To můžete udělat nejdřív zachytávání konkrétnější typ výjimky a následné zachycování `CommunicationException` v pozdější klauzule catch.  
+ Existuje několik odvozených tříd `CommunicationException` , které může klient vyvolat. V některých případech aplikace také zachytit některé z nich, aby provedla speciální zpracování, ale ostatní budou zpracována jako `CommunicationException`. To lze provést tak, že nejprve zachytíte konkrétnější typ výjimky a pak zachytíte `CommunicationException` v pozdější klauzuli catch.  
   
- Musíte zachytit kód, který volá metodu komunikaci klienta `TimeoutException` a `CommunicationException`. Jedním ze způsobů zpracování těchto chyb je přerušit klienta a tvorba sestav selhání komunikace.  
+ Kód, který volá metodu komunikace klienta, musí zachytit `TimeoutException` a `CommunicationException`. Jedním ze způsobů, jak tyto chyby zpracovat, je přerušit klienta a ohlásit selhání komunikace.  
   
 ```csharp   
 try  
@@ -45,14 +45,14 @@ catch (CommunicationException exception)
 }  
 ```  
   
- Pokud dojde k očekávané výjimky, klient může nebo nemusí být použitelné později. Pokud chcete zjistit, pokud je klient stále možné použít, zkontrolujte, že `State` vlastnost `CommunicationState`. Otevřít. Pokud je stále otevřen, je stále možné použít. V opačném případě by měl přerušení klienta a uvolnit všechny odkazy na ni.  
+ Pokud dojde k očekávané výjimce, klient může nebo nemusí být použitelný později. Chcete-li zjistit, zda je klient stále použitelný, zkontrolujte `State` , zda `CommunicationState`je vlastnost nastavena na hodnotu. Otevřít. Pokud je stále otevřený, je stále možné ho použít. V opačném případě byste měli klienta přerušit a uvolnit všechny odkazy na něj.  
   
 > [!CAUTION]
->  Podívat se, že klienti, kteří mají relaci často již nejsou použitelné po výjimce a klienti, které nemají relaci stále často použitelné po výjimce. Ale ani jeden z nich je zaručeno, tak pokud budete chtít pokračovat i po výjimce by měla vaše aplikace provádět pomocí klienta `State` vlastnost ověření klienta je stále otevřen.  
+>  Můžete se setkat s tím, že klienti, kteří mají relaci, již nejsou po výjimce použitelné, a klienti, kteří relaci nemají, jsou často i nadále použitelné i po výjimce. Ani jedna z těchto možností není zaručena, takže pokud se chcete pokusit nadále používat klienta po výjimce, měla by aplikace zkontrolovat `State` vlastnost a ověřit, zda je klient stále otevřen.  
   
- Při spuštění ukázky operace odpovědi a výjimky jsou zobrazeny v okně konzoly klienta.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí odezvy operace a výjimky.  
   
- Spustí proces klienta dva scénáře, každý z které pokusy o volání `Add` následovaný `Divide`. První scénář simuluje potíže se sítí přerušením klient před provedením volání `Divide`. Druhý scénář způsobí, že vypršení časového limitu podmínku tak, že nastavíte časový limit příliš krátká pro metodu k dokončení. Očekávaný výstup z procesu klienta je:  
+ Proces klienta spouští dva scénáře, z nichž každý se pokusí zavolat `Add` `Divide`za ním. První scénář simuluje problém se sítí přerušením klienta před uskutečněním volání `Divide`. Druhý scénář způsobí vypršení časového limitu tím, že nastaví časový limit příliš krátký pro dokončení metody. Očekávaný výstup z klientského procesu je:  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -63,19 +63,19 @@ Set timeout too short for method to complete...
 Got System.TimeoutException  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ExpectedExceptions`  

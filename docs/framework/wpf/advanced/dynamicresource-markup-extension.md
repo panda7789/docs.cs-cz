@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XAML [WPF], DynamicResource markup extension
 - DynamicResource markup extensions [WPF]
 ms.assetid: 7324f243-03af-4c2b-b0db-26ac6cdfcbe4
-ms.openlocfilehash: 90768a0c816e790138ba60bd24afee242e41e652
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 06355c64d36d2688ef027c1940688d4c87e51ec8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67860286"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964800"
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource – rozšíření značek
-Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atributu odložením tuto hodnotu jako odkaz na prostředek definovaný. Chování při vyhledávání pro daný prostředek je obdobou vyhledávání za běhu.  
+Poskytuje hodnotu pro libovolný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atribut vlastnosti odložením této hodnoty jako odkaz na definovaný prostředek. Chování vyhledávání pro tento prostředek je analogické pro vyhledávání za běhu.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -38,39 +38,39 @@ Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla
   
 |||  
 |-|-|  
-|`key`|Klíč pro požadovaný prostředek. Tento klíč byl zpočátku přiřadil [x: Key – direktiva](../../xaml-services/x-key-directive.md) prostředek byl vytvořen v označení, zda byla poskytnuta jako `key` parametru při volání metody <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> Pokud prostředek se vytvořil v kódu.|  
+|`key`|Klíč pro požadovaný prostředek. Tento klíč byl původně přiřazen direktivou [x:Key –](../../xaml-services/x-key-directive.md) , pokud byl prostředek vytvořen v kódu, nebo byl zadán jako `key` parametr při volání <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> , pokud byl prostředek vytvořen v kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- A `DynamicResource` vytvoří dočasné výraz během počáteční kompilace a vyhledávání prostředků tedy odložit, dokud hodnota požadovaný prostředek je skutečně potřeba, abyste mohli vytvořit objekt. To může být potenciálně po [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] načtení stránky. Hodnota prostředku se najít podle klíčových vyhledávání na všechny aktivní zdrojové slovníky od aktuální obor page a nahradí zástupný symbol výrazu z kompilace.  
+ Vytvoří `DynamicResource` během počáteční kompilace dočasný výraz, čímž se odloží vyhledávání prostředků, dokud není požadovaná hodnota prostředku skutečně potřebná k vytvoření objektu. To může být potenciálně po [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] načtení stránky. Hodnota prostředku bude nalezena na základě hledání klíčů proti všem aktivním slovníkům prostředků počínaje aktuálním rozsahem stránky a je nahrazena zástupným výrazem z kompilace.  
   
 > [!IMPORTANT]
->  Z hlediska Priorita vlastností závislosti `DynamicResource` výraz je ekvivalentní k umístění, kde použít odkaz na prostředek dynamické. Pokud nastavíte hodnotu místní vlastnosti, které dříve měly `DynamicResource` výraz jako místní hodnota `DynamicResource` úplně Odebereme. Podrobnosti najdete v tématu [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md).  
+> V souladu s prioritou vlastnosti závislosti je `DynamicResource` výraz ekvivalentem pozice, kde je použit odkaz na dynamický prostředek. Pokud nastavíte místní hodnotu pro vlastnost, která dříve obsahovala `DynamicResource` výraz jako místní hodnotu, dojde k `DynamicResource` úplnému odebrání. Podrobnosti najdete v tématu [Priorita hodnoty vlastností závislosti](dependency-property-value-precedence.md).  
   
- Jsou zvlášť vhodná pro určité scénáře přístupu prostředků `DynamicResource` nikoli [– rozšíření značek StaticResource](staticresource-markup-extension.md). Zobrazit [prostředky XAML](xaml-resources.md) diskuzi o relativní věci a rozbor aspektů výkonu `DynamicResource` a `StaticResource`.  
+ Některé scénáře přístupu k prostředkům jsou zvláště vhodné `DynamicResource` pro [rozšíření značek StaticResource](staticresource-markup-extension.md). Diskuzi o relativních aspektech a vlivech `DynamicResource` na výkon a `StaticResource`najdete v tématu [zdroje XAML](xaml-resources.md) .  
   
- Zadaný <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> určené existující prostředek, musí odpovídat [x: Key – direktiva](../../xaml-services/x-key-directive.md) na určité úrovni v vaše stránka, aplikace, ovládací prvek dostupné motivy a externí prostředky nebo systémové prostředky a vyhledání prostředku se stane v tomto pořadí. Další informace o vyhledání prostředku pro statické a dynamické prostředky, najdete v části [prostředky XAML](xaml-resources.md).  
+ Zadaný <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> parametr by měl odpovídat existujícímu prostředku, který je stanoven [direktivou x:Key –](../../xaml-services/x-key-directive.md) na některé úrovni stránky, aplikaci, dostupných motivech ovládacích prvků a externích prostředků nebo systémových prostředků, a vyhledávání prostředků se stane. v tomto pořadí. Další informace o vyhledávání prostředků pro statické a dynamické prostředky naleznete v tématu [prostředky XAML](xaml-resources.md).  
   
- Klíč prostředku může být libovolný řetězec podle [xamlname – gramatika](../../xaml-services/xamlname-grammar.md). Klíč prostředku může být také další typy objektů, například <xref:System.Type>. A <xref:System.Type> klíč je základní jak může být ovládací prvky ve stylu podle motivů. Další informace najdete v tématu [Přehled vytváření ovládacího prvku](../controls/control-authoring-overview.md).  
+ Klíč prostředku může být libovolný řetězec definovaný v gramatice v kódu [XAML](../../xaml-services/xamlname-grammar.md). Klíč prostředku může být také jiné typy objektů, jako je <xref:System.Type>například. <xref:System.Type> Klíč je zásadní pro to, jak lze ovládací prvky stylovat pomocí motivů. Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).  
   
- Hodnoty rozhraní API pro vyhledávání prostředků, jako například <xref:System.Windows.FrameworkElement.FindResource%2A>, se řídí stejnou logikou vyhledávání prostředků jako používá `DynamicResource`.  
+ Rozhraní API pro vyhledávání hodnot prostředků, <xref:System.Windows.FrameworkElement.FindResource%2A>jako je, sledují stejnou logiku vyhledávání prostředků jako `DynamicResource`používá.  
   
- Alternativní deklarativní způsob odkazuje na prostředek je jako [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
+ Alternativním deklarativním způsobem, který odkazuje na prostředek, je [rozšíření značek StaticResource](staticresource-markup-extension.md).  
   
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Řetězec s tokenem uvedený za `DynamicResource` řetězec identifikátoru je přiřazen jako <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> hodnoty základního <xref:System.Windows.DynamicResourceExtension> rozšíření třídy.  
+ Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce poskytnutý po `DynamicResource` řetězci identifikátoru je přiřazen <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> jako hodnota základní <xref:System.Windows.DynamicResourceExtension> třídy rozšíření.  
   
- `DynamicResource` můžete použít v syntaxi elementu objektu. V takovém případě zadáte hodnotu <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> vlastnost je povinná.  
+ `DynamicResource`lze použít v syntaxi elementu Object. V takovém případě je nutné zadat hodnotu <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> vlastnosti.  
   
- `DynamicResource` je také možné využití podrobné atribut, který určuje <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> vlastnost jako vlastnost = hodnota pár:  
+ `DynamicResource`lze také použít v podrobném použití atributu, které určuje <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> vlastnost jako dvojici vlastnost = hodnota:  
   
 ```xml  
 <object property="{DynamicResource ResourceKey=key}" .../>  
 ```  
   
- Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `DynamicResource` má jen jednu nastavitelnou vlastnost, která je požadována, toto použití podrobné syntaxe není typické.  
+ Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `DynamicResource` má pouze jednu nastavitelnou vlastnost, která je povinná, toto podrobné použití není typické.  
   
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru, zpracování tohoto rozšíření značek definováno <xref:System.Windows.DynamicResourceExtension> třídy.  
+ V implementaci procesoru je zpracování tohoto <xref:System.Windows.DynamicResourceExtension> rozšíření značek definováno třídou. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
   
- `DynamicResource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
+ `DynamicResource`je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek používají znaky {a} v jejich syntaxi atributu, což je konvence, podle [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] které procesor rozpozná, že je nutné zpracovat atribut v rozšíření značek. Další informace naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,37 +2,37 @@
 title: Literály (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 092ef693-6e5f-41b4-b868-5b9e82928abf
-ms.openlocfilehash: bff9b1907d3424dc2e3df80480b6ab12f5ab9261
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6196c1b026b49847bd06cc9cda5ea6b6af289858
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760659"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953292"
 ---
 # <a name="literals-entity-sql"></a>Literály (Entity SQL)
 Toto téma popisuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporu pro literály.  
   
 ## <a name="null"></a>Null  
- Literál s hodnotou null se používá k reprezentování hodnota null pro libovolného typu. Literál null je kompatibilní s žádným typem.  
+ Literál null se používá k reprezentaci hodnoty null pro libovolný typ. Literál s hodnotou null je kompatibilní s jakýmkoli typem.  
   
- Zadané hodnoty Null lze vytvořit pomocí přetypování nad literál s hodnotou null. Další informace najdete v tématu [PŘETYPOVÁNÍ](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md).  
+ Typové hodnoty null lze vytvořit přetypováním přes literál s hodnotou null. Další informace najdete v tématu [přetypování](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md).  
   
- Pro pravidla o tom, kde zdarma s plovoucí desetinnou čárkou literály s hodnotou null lze použít, najdete v článku [literály s hodnotou Null a odvození typu proměnné](../../../../../../docs/framework/data/adonet/ef/language-reference/null-literals-and-type-inference-entity-sql.md).  
+ Pravidla o tom, kde lze použít bezplatné plovoucí literály null, naleznete v tématu [literály s hodnotou null a odvození typu](../../../../../../docs/framework/data/adonet/ef/language-reference/null-literals-and-type-inference-entity-sql.md).  
   
 ## <a name="boolean"></a>Boolean  
- Logická literály jsou reprezentovány klíčová slova `true` a `false`.  
+ Logické literály jsou reprezentovány klíčovými `false`slovy `true` a.  
   
 ## <a name="integer"></a>Integer  
- Literály celých čísel může být typu <xref:System.Int32> nebo <xref:System.Int64>. <xref:System.Int32> Literálu je řady číselných znaků. <xref:System.Int64> Literálu je řady číselných znaků, za nímž následuje velké písmeno L.  
+ Celočíselné literály mohou být typu <xref:System.Int32> nebo <xref:System.Int64>. <xref:System.Int32> Literál je řada číselných znaků. <xref:System.Int64> Literál je série číselných znaků následovaných velkým L.  
   
 ## <a name="decimal"></a>Desetinné číslo  
- Číslo s pevnou desetinnou čárkou (decimální) je řady číselných znaků, tečku (.) a další řady číselných znaků, za nímž následuje velká písmena "M".  
+ Číslo s pevnou desetinnou čárkou (desítkově) je série číselných znaků, tečka (.) a další řada číselných znaků následovaných velkým písmenem "M".  
   
 ## <a name="float-double"></a>Float, Double  
- Číslo dvojité přesnosti s plovoucí desetinnou čárkou bod je řada číselné znaky, tečky (.) a jiné řady číselných znaků může být za nímž následuje exponent. Jedné přesnosti čísla syntaxe, za nímž následuje malé f bod, čísla (nebo float) dvojité přesnosti s plovoucí desetinnou čárkou plovoucí desetinnou čárkou.  
+ Číslo s plovoucí desetinnou čárkou a dvojitou přesností je řada číselných znaků, tečka (.) a další řada číselných znaků, které jsou pravděpodobně následovány exponentem. Číslo s plovoucí desetinnou čárkou s jednoduchou přesností (neboli float) je syntaxe čísla s plovoucí desetinnou čárkou s dvojitou přesností následovaný malým písmenem f.  
   
 ## <a name="string"></a>String  
- Řetězec je posloupnost znaků uzavřený do uvozovek nahoře. Nabídek může být buď oba jedním uvozovky (`'`) nebo obě dvojité uvozovky ("). Znakové literály řetězce může být ve formátu Unicode nebo kódování Unicode. Chcete-li deklarovat literálu jako Unicode řetězec znaků, předpona literálu se velká písmena "N". Výchozí hodnota je řetězec literálů kódování Unicode. Může být žádné mezery mezi N a řetězcovou datovou část a N musí být uváděny velkými písmeny.  
+ Řetězec je řada znaků uzavřených v uvozovkách. Uvozovky mohou být buď jednoduché uvozovky (`'`), nebo obě dvojité uvozovky ("). Řetězcové literály znaků můžou být Unicode nebo jiné než Unicode. Chcete-li deklarovat řetězcový literál znaků jako Unicode, zaprefixujte literál s velkým písmenem "N". Výchozí hodnoty jsou řetězcové literály, které nejsou znakové sady Unicode. Mezi N a datovou částí literálu řetězce nemůže být žádná mezera a N musí být velká.  
   
 ```  
 'hello' -- non-Unicode character string literal  
@@ -43,23 +43,23 @@ N"This is a string!"
 ```  
   
 ## <a name="datetime"></a>DateTime  
- Literál datum a čas je nezávislý na národním prostředí a se skládá z část data a času část. Datum a čas jsou povinné a neexistují žádné výchozí hodnoty.  
+ Literál DateTime je nezávislý na národním prostředí a skládá se z části data a času. Části data a času jsou povinné a nejsou k dispozici žádné výchozí hodnoty.  
   
- Část data musí mít formát: `YYYY` - `MM` - `DD`, kde `YYYY` je hodnota roku čtyřmístné 0001 až 9999, `MM` měsíc od 1 do 12 a `DD` je hodnota dne, který je platný pro daný měsíc `MM`.  
+ `YYYY`Část data musí mít formát: - `DD` `MM` , kde je`YYYY` čtyři číslo roku v rozsahu 0001 až 9999, je měsíc mezi 1 `MM`a12 a-je `DD` hodnota dne platná pro daný měsíc `MM`.  
   
- Časovou část musí mít formát: `HH`:`MM`[:`SS`[.fffffff]], kde `HH` je hodina hodnota mezi 0 a 23, `MM` minut hodnotu od 0 do 59, `SS` je druhá hodnota mezi 0 a 59 a fffffff je desetinná druhá hodnota mezi 0 a 9999999. Všechny hodnoty rozsahy jsou včetně. Desetinné části sekund jsou volitelné. Pokud jsou uvedeny desetinné části sekund; jsou volitelné sekundy v takovém případě se vyžadují sekund. Pokud nejsou zadané sekund nebo zlomků sekund, použije se místo toho výchozí hodnotu nula.  
+ Časový interval musí mít formát: `HH`:`MM`[:`SS`[. fffffff]], kde `HH` je hodnota hodiny mezi 0 a `SS` 23, `MM` hodnotou minuty mezi 0 a 59 je druhá hodnota mezi 0 a 59. a fffffff je desetinná sekundová hodnota mezi 0 a 9999999. Všechny rozsahy hodnot jsou včetně. Zlomky sekund jsou volitelné. Sekundy jsou volitelné, pokud nejsou zadány zlomky sekund; v tomto případě se vyžadují sekundy. Pokud nejsou zadány sekundy nebo zlomky sekund, použije se místo toho výchozí hodnota nula.  
   
- Může existovat libovolný počet mezery mezi symboly data a času a datovou část, ale žádné nové řádky.  
+ Mezi symbolem DATETIME a datovou částí literálu může být libovolný počet mezer, ale žádné nové řádky.  
   
 ```  
 DATETIME'2006-10-1 23:11'  
 DATETIME'2006-12-25 01:01:00.0000000' -- same as DATETIME'2006-12-25 01:01'  
 ```  
   
-## <a name="time"></a>Čas  
- Časový literál je nezávislý na národním prostředí a skládá z pouze část času. Časovou část je povinná a není žádná výchozí hodnota. Musí mít ve formátu hh: mm [: SS [.fffffff]], kde je hodina hodnotu mezi 0 a 23, MM je minuta hodnotu od 0 do 59, SS je druhá hodnota mezi 0 a 59 a fffffff je druhá část HH hodnotu mezi 0 a 9999999. Všechny hodnoty rozsahy jsou včetně. Desetinné části sekund jsou volitelné. Pokud jsou uvedeny desetinné části sekund; jsou volitelné sekundy v takovém případě se vyžadují sekund. Při sekund nebo zlomky nejsou zadané, použije se místo toho nastavená výchozí hodnota nula.  
+## <a name="time"></a>Time  
+ Časový literál je nezávislý na národním prostředí a skládá se pouze z časových částí. Časová část je povinná a neexistuje žádná výchozí hodnota. Musí mít formát HH: MM [: SS [. fffffff]], kde HH je hodnota hodiny mezi 0 a 23, MM je minutová hodnota mezi 0 a 59, SS je druhá hodnota mezi 0 a 59 a fffffff je druhá hodnota zlomku mezi 0 a 9999999. Všechny rozsahy hodnot jsou včetně. Zlomky sekund jsou volitelné. Sekundy jsou volitelné, pokud nejsou zadány zlomky sekund; v tomto případě se vyžadují sekundy. Pokud nejsou zadány sekundy nebo zlomky, použije se místo toho výchozí hodnota nula.  
   
- Může existovat libovolný počet mezer mezi symbol čas a datovou část, ale žádné nové řádky.  
+ Mezi symbolem času a datovou částí literálu může být libovolný počet mezer, ale žádné nové řádky.  
   
 ```  
 TIME‘23:11’  
@@ -67,9 +67,9 @@ TIME‘01:01:00.1234567’
 ```  
   
 ## <a name="datetimeoffset"></a>DateTimeOffset  
- Datetimeoffset literálu je nezávislý na národním prostředí a skládá z část data, času část a posunu část. Datum, čas a posunu části jsou povinné a neexistují žádné výchozí hodnoty. Datum část musí mít formát rrrr-MM-DD, rrrr kde je hodnota roku čtyřmístné 0001 až 9999, MM je měsíc od 1 do 12 a DD je hodnota dne, který je platný pro daný měsíc. Část času, musí mít ve formátu hh: mm [: SS [.fffffff]], kde HH je hodina hodnotu mezi 0 a 23, MM minuty hodnotu mezi 0 a 59, SS je druhá hodnota mezi 0 a 59 a fffffff je desetinná druhá hodnota mezi 0 a 9999999. Všechny hodnoty rozsahy jsou včetně. Desetinné části sekund jsou volitelné. Pokud jsou uvedeny desetinné části sekund; jsou volitelné sekundy v takovém případě se vyžadují sekund. Při sekund nebo zlomky nejsou zadané, použije se místo toho nastavená výchozí hodnota nula. Posunutí část musí mít formát {+&#124;-} hh: mm, kde HH a MM mají stejný význam jako část času. Rozsah posunu, ale musí být mezi -14:00 a + 14:00  
+ Literál DateTimeOffset je nezávislý na národním prostředí a skládá se z části data, časové části a posunuté části. Všechny části data, času a posunu jsou povinné a nejsou k dispozici žádné výchozí hodnoty. Část data musí mít formát RRRR-MM-DD, kde RRRR představuje čtyři číslo roku v hodnotě 0001 až 9999, MM je měsíc mezi 1 a 12 a DD je hodnota dne platná pro daný měsíc. Časová část musí mít formát HH: MM [: SS [. fffffff]], kde HH je hodnota hodiny mezi 0 a 23, MM je hodnota minuty mezi 0 a 59, SS je druhá hodnota mezi 0 a 59 a hodnota fffffff je desetinná sekunda mezi 0 a 9999999. Všechny rozsahy hodnot jsou včetně. Zlomky sekund jsou volitelné. Sekundy jsou volitelné, pokud nejsou zadány zlomky sekund; v tomto případě se vyžadují sekundy. Pokud nejsou zadány sekundy nebo zlomky, použije se místo toho výchozí hodnota nula. Část posunu musí mít formát {+&#124;-} hh: mm, kde hh a mm mají stejný význam jako v časové části. Rozsah posunu však musí být mezi-14:00 a + 14:00.  
   
- Může existovat libovolný počet mezery mezi symboly DATETIMEOFFSET a datovou část, ale žádné nové řádky.  
+ Mezi symbolem DATETIMEOFFSET a datovou částí literálu může být libovolný počet mezer, ale žádné nové řádky.  
   
 ```  
 DATETIMEOFFSET‘2006-10-1 23:11 +02:00’  
@@ -77,12 +77,12 @@ DATETIMEOFFSET‘2006-12-25 01:01:00.0000000 -08:30’
 ```  
   
 > [!NOTE]
->  Platná hodnota literálu Entity SQL nebude mimo podporovaný rozsah pro CLR nebo zdroj dat. To může způsobit výjimku  
+> Platná hodnota literálu Entity SQL může klesnout mimo podporované rozsahy pro CLR nebo zdroj dat. Výsledkem může být výjimka  
   
 ## <a name="binary"></a>binární  
- Binární řetězcového literálu je posloupnost šestnáctkových číslic oddělených jednoduchých uvozovek a být následující binární klíčové slovo nebo symbol místní `X` nebo `x`. Symbol místní `X` velká a malá písmena. Nula nebo více mezer, které jsou povolené mezi klíčové slovo `binary` a binární řetězcovou hodnotu.  
+ Binární řetězcový literál je posloupnost hexadecimálních číslic oddělených jednoduchými uvozovkami za binárním znakem nebo symbolem `X` zástupce nebo. `x` Symbol `X` zkratky rozlišuje velká a malá písmena. Mezi klíčovým slovem `binary` a hodnotou binárního řetězce je povoleno nula nebo více mezer.  
   
- Šestnáctkové znaky jsou také malá a velká písmena. Pokud literál skládá z lichý počet šestnáctkových číslic, literál budou zarovnané na další i hexadecimální číslici vložením prefixu literál s hexadecimální nulu. Neexistuje žádné formální limit velikost binárního řetězce.  
+ Šestnáctkové znaky se rozlišují i bez rozlišení velkých a malých písmen. Pokud se literál skládá z lichého počtu šestnáctkových číslic, bude literál zarovnán na další sudé číslo v šestnáctkové soustavě pomocí předpony literálu s hexadecimální nulou. Velikost binárního řetězce není v žádném formálním limitu.  
   
 ```  
 Binary'00ffaabb'  
@@ -92,9 +92,9 @@ X'' –- empty binary string
 ```  
   
 ## <a name="guid"></a>Guid  
- A `GUID` literál představuje globálně jedinečný identifikátor. Je sekvence tvořen přidáním klíčového slova `GUID` a šestnáctkovými číslicemi ve formuláři říká *registru* formátu: 8-4-4-4-12 uzavřena do jednoduchých uvozovek. Hexadecimální číslice jsou malá a velká písmena.  
+ `GUID` Literál představuje globálně jedinečný identifikátor. Je sekvence vytvořená klíčovým slovem `GUID` , po kterém následují hexadecimální číslice ve formátu, který je známý jako formát *registru* : 8-4-4-4-12 uzavřená v jednoduchých uvozovkách. Hexadecimální číslice rozlišují malá a velká písmena.  
   
- Může existovat libovolný počet mezer mezi GUID symbol a datovou část, ale žádné nové řádky.  
+ Mezi symbolem GUID a datovou částí literálu může být libovolný počet mezer, ale žádné nové řádky.  
   
 ```  
 Guid'1afc7f5c-ffa0-4741-81cf-f12eAAb822bf'  

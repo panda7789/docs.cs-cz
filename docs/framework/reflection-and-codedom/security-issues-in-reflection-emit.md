@@ -13,145 +13,145 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4579e00bdaf89b4cf5d0da24a343fb5070609863
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: f7b1f6798f1aaa778eaf95de996584848c672351
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347318"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956683"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
-Rozhraní .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk Microsoft intermediate language (MSIL), každý s vlastní problémy se zabezpečením:  
+.NET Framework poskytuje tři způsoby, jak vygenerovat jazyk MSIL (Microsoft Intermediate Language), z nichž každá má vlastní problémy se zabezpečením:  
   
 - [Dynamická sestavení](#Dynamic_Assemblies)  
   
 - [Anonymně hostované dynamické metody](#Anonymously_Hosted_Dynamic_Methods)  
   
-- [Dynamické metody, které jsou přidružené k existující sestavení](#Dynamic_Methods_Associated_with_Existing_Assemblies)  
+- [Dynamické metody přidružené k existujícím sestavením](#Dynamic_Methods_Associated_with_Existing_Assemblies)  
   
- Bez ohledu na způsob generování dynamických kódu spouštění generovaný kód vyžaduje všechna oprávnění, které jsou vyžadovány typy a metody, které používá generovaného kódu.  
+ Bez ohledu na způsob generování dynamického kódu vyžaduje spuštění vygenerovaného kódu všechna oprávnění, která jsou vyžadována typy a metodami, které vygenerovaný kód používá.  
   
 > [!NOTE]
->  S následných verzích rozhraní .NET Framework došlo ke změně oprávnění, které jsou požadovány pro odráží v kódu a vytváření kódu. Zobrazit [informace o verzi](#Version_Information)dále v tomto tématu.  
+> Oprávnění, která jsou vyžadována pro reflektování kódu a vygenerování kódu, se změnila pomocí následujících vydání .NET Framework. Viz [informace o verzi](#Version_Information)dále v tomto tématu.  
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Dynamická sestavení  
- Dynamické sestavení se vytvářejí pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody jsou zastaralé v rozhraní .NET Framework 4, z důvodu odstranění zásad zabezpečení počítače. (Viz [změny zabezpečení](../../../docs/framework/security/security-changes.md).) Zbývající přetížení může provést všechny kódu, bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: ty, které určují seznam atributů, které chcete použít na dynamické sestavení při jeho vytváření a ty, které nepodporují. Pokud nezadáte model transparentnosti pro sestavení, s použitím <xref:System.Security.SecurityRulesAttribute> atribut při vytváření, model transparentnosti je zděděno od emitujícího sestavení.  
+ Dynamická sestavení jsou vytvořena pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody je zastaralá v .NET Framework 4 z důvodu eliminace zásad zabezpečení na úrovni počítače. (Viz [změny zabezpečení](../../../docs/framework/security/security-changes.md).) Zbývající přetížení lze spustit libovolným kódem bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: těch, které určují seznam atributů, které mají být použity pro dynamické sestavení při jeho vytvoření, a těch, které ne. Pokud nezadáte model transparentnosti pro sestavení, při použití <xref:System.Security.SecurityRulesAttribute> atributu při jeho vytváření, je model transparentnosti zděděn z vygenerování sestavení.  
   
 > [!NOTE]
->  Atributy, které se vztahují na dynamické sestavení po vytvoření s použitím <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> metody neprojeví až do sestavení byl uložen na disk a opětovném načtení do paměti.  
+> Atributy, které lze použít na dynamické sestavení po vytvoření pomocí <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> metody, se neprojeví, dokud nebylo sestavení uloženo na disk a znovu načteno do paměti.  
   
- Kód v dynamickém sestavení můžete přistupovat k viditelné typy a členy v jiných sestaveních.  
+ Kód v dynamickém sestavení může přistupovat ke viditelným typům a členům v jiných sestaveních.  
   
 > [!NOTE]
->  Nepoužívejte dynamické sestavení <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> a <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznaky, které umožňují dynamickým metodám přístup k neveřejným typům a členům.  
+> Dynamická sestavení nepoužívají <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznaky a <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> , které umožňují dynamickým metodám přístup k NonPublic typům a členům.  
   
- Přechodné dynamické sestavení jsou vytvořené v paměti a nikdy uloženo na disk, takže vyžadují žádné přístupová oprávnění k souboru. Uložení na disk dynamického sestavení vyžaduje <xref:System.Security.Permissions.FileIOPermission> s příslušnými příznaky.  
+ Přechodná dynamická sestavení se vytvoří v paměti a nikdy se neukládají na disk, takže nevyžadují oprávnění k přístupu k souboru. Uložení dynamického sestavení na disk vyžaduje <xref:System.Security.Permissions.FileIOPermission> s příslušnými příznaky.  
   
 ### <a name="generating-dynamic-assemblies-from-partially-trusted-code"></a>Generování dynamických sestavení z částečně důvěryhodného kódu  
- Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními Internet generovat přechodné dynamické sestavení a jeho kód spustit:  
+ Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními k Internetu může generovat přechodné dynamické sestavení a provést svůj kód:  
   
-- Dynamické sestavení používá pouze veřejné typy a členy jiná sestavení.  
+- Dynamické sestavení používá pouze veřejné typy a členy jiných sestavení.  
   
-- Oprávnění potřebnou pro tyto typy a členy jsou součástí sady udělení částečně důvěryhodné sestavení.  
+- Oprávnění vydaná těmito typy a členy jsou obsažena v sadě udělení částečně důvěryhodného sestavení.  
   
-- Sestavení není uložen na disk.  
+- Sestavení není uloženo na disk.  
   
-- Ladění nejsou generovány symboly. (`Internet` a `LocalIntranet` sady oprávnění nezahrnují potřebná oprávnění.)  
+- Symboly ladění nejsou vygenerovány. (`Internet` a`LocalIntranet` sady oprávnění nezahrnují potřebná oprávnění.)  
   
 <a name="Anonymously_Hosted_Dynamic_Methods"></a>   
 ## <a name="anonymously-hosted-dynamic-methods"></a>Anonymně hostované dynamické metody  
- Anonymně hostované dynamické metody jsou vytvořeny pomocí dvou <xref:System.Reflection.Emit.DynamicMethod> konstruktory, které zadejte přidruženého typu nebo modulu, <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%29> a <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29>. Tyto konstruktory umístěte dynamických metod poskytovaných systémem, plně důvěryhodné, transparentnost zabezpečení sestavení. Nejsou žádná oprávnění vyžaduje použití těchto konstruktorů nebo vygenerujte kód pro dynamické metody.  
+ Anonymně hostované dynamické metody jsou vytvořeny pomocí dvou <xref:System.Reflection.Emit.DynamicMethod> konstruktorů, které nespecifikují přidružený typ nebo <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%29> modul a <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29>. Tyto konstruktory umísťují dynamické metody do plně důvěryhodného sestavení v rámci systému, které je transparentní pro zabezpečení. K použití těchto konstruktorů nebo k vygenerování kódu pro dynamické metody nejsou nutná žádná oprávnění.  
   
- Místo toho když se anonymně hostovaná dynamická metoda, jsou zachyceny zásobníku volání. Když je metoda, požadavky na zabezpečení se provádí na zachycených volání zásobníku.  
+ Místo toho, když je vytvořena anonymně hostovaná dynamická metoda, je zachycen zásobník volání. Při konstrukci metody jsou požadavky na zabezpečení provedeny proti zachycenému zásobníku volání.  
   
 > [!NOTE]
->  Požadavky jsou koncepčně provedené během procesu vytváření metody. To znamená požadavky se může provést podle jednotlivých instrukce jazyka MSIL je vygenerován. V aktuální implementaci jsou všechny požadavky provedené při <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A?displayProperty=nameWithType> metoda je volána, nebo když je vyvolán kompilátor just-in-time (JIT), pokud je metoda vyvolána bez volání <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>.  
+> V koncepčních případech jsou požadavky provedeny během konstrukce metody. To znamená, že požadavky mohou být provedeny při vygenerování každé instrukce jazyka MSIL. V aktuální implementaci jsou všechny požadavky provedeny při <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A?displayProperty=nameWithType> volání metody nebo při vyvolání kompilátoru JIT (just-in-time), pokud je metoda vyvolána bez volání. <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>  
   
- Pokud doména aplikace to umožňuje, můžou anonymně hostované dynamické metody přeskočí kontroly viditelnosti JIT, vztahují následující omezení: Neveřejné typy a členy přistupuje anonymně hostovaná dynamická metoda musí být v sestaveních jehož sady jsou stejné pro udělení nebo podmnožiny sady udělení generování zásobníku volání. Tuto omezenou schopnost přeskočit test viditelnosti JIT kontroluje, je povoleno, pokud doména aplikace uděluje <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak.  
+ Pokud to doména aplikace povoluje, mohou anonymně hostované dynamické metody přeskočit kontroly viditelnosti JIT, a to v souladu s následujícím omezením: Typy NonPublic a členy, ke kterým přistupovala anonymně hostovaná dynamická metoda, musí být v sestaveních, jejichž sady udělení oprávnění jsou rovny, nebo podmnožinám, udělení sady volání zásobníku volání. Tato omezená schopnost přeskočit kontroly viditelnosti JIT je povolená, pokud doména aplikace <xref:System.Security.Permissions.ReflectionPermission> udělí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak.  
   
 - Pokud vaše metoda používá pouze veřejné typy a členy, během konstrukce nejsou požadována žádná oprávnění.  
   
-- Pokud chcete zadat, že kontroly viditelnosti JIT přeskočen, požadavek, který je proveden, jakmile je vytvořena metoda obsahuje <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak a udělená sada oprávnění sestavení, které obsahuje neveřejný člen, která se právě využívají.  
+- Pokud určíte, že se mají přeskočit kontroly viditelnosti JIT, požadavek, který je proveden při <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> sestavování metody, zahrnuje s příznakem a sadou udělení sestavení obsahujícího člena NonPublic, ke kterému se přistupoval.  
   
- Protože je udělená množina neveřejný člen se bere v úvahu, částečně důvěryhodný kód, který bylo uděleno <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> spuštěním neveřejné členy důvěryhodných sestavení nelze zvýšit jeho oprávnění.  
+ Vzhledem k tomu, že se udělí sada udělení NonPublic člena, částečně důvěryhodný kód, který byl udělen <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> , nemůže zvýšit jeho oprávnění tím, že spouští NonPublic členy důvěryhodných sestavení.  
   
- Jako další emitovaný kód, spouštění dynamická metoda vyžaduje oprávnění jsou vyžadována metody, které používá dynamickou metodu.  
+ Stejně jako u jakéhokoli jiného vygenerovaného kódu vyžaduje spuštění dynamické metody libovolné oprávnění metody, které používá dynamická metoda.  
   
- Používá systém sestavení, který je hostitelem anonymně hostované dynamické metody <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType> model transparentnosti, což je model transparentnosti, která byla použita v rozhraní .NET Framework před rozhraní .NET Framework 4.  
+ Systémové sestavení, které je hostitelem anonymních dynamických metod, používá <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType> model transparentnosti, což je model transparentnosti, který byl použit v .NET Framework před .NET Framework 4.  
   
- Další informace najdete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy.  
+ Další informace naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třída.  
   
-### <a name="generating-anonymously-hosted-dynamic-methods-from-partially-trusted-code"></a>Generuje se anonymně hostovaných dynamických metod z částečně důvěryhodného kódu  
- Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními Internet generovat anonymně hostovaná dynamická metoda a spusťte ho:  
+### <a name="generating-anonymously-hosted-dynamic-methods-from-partially-trusted-code"></a>Generování anonymně hostovaných dynamických metod z částečně důvěryhodného kódu  
+ Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními k Internetu může generovat anonymně hostovanou dynamickou metodu a provést ji:  
   
-- Dynamická metoda používá pouze veřejné typy a členy. Pokud obsahuje jeho udělené sady <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>, může použít neveřejné typy a členy libovolné sestavení, jejichž udělení nastavit je rovno nebo podmnožinu, sady udělení emitujícího sestavení.  
+- Dynamická metoda používá pouze veřejné typy a členy. Pokud jeho sada udělení grantů zahrnuje <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>, může použít typy NonPublic a členy jakékoli sestavení, jejichž udělená sada je rovna nebo podmnožině sady, udělení sestavení pro generování.  
   
-- Oprávnění, která jsou vyžadované všechny typy a členy, které používají dynamické metody jsou součástí sady udělení částečně důvěryhodné sestavení.  
+- Oprávnění, která jsou vyžadována všemi typy a členy použitými dynamickou metodou, jsou součástí sady udělení částečně důvěryhodného sestavení.  
   
 > [!NOTE]
->  Dynamické metody nepodporují symboly ladění.  
+> Dynamické metody nepodporují symboly ladění.  
   
 <a name="Dynamic_Methods_Associated_with_Existing_Assemblies"></a>   
-## <a name="dynamic-methods-associated-with-existing-assemblies"></a>Dynamické metody, které jsou přidružené k existující sestavení  
- Chcete-li přidružit dynamickou metodu typu nebo modulu v existující sestavení, použijte některý z <xref:System.Reflection.Emit.DynamicMethod> konstruktory, které určují přidruženého typu nebo modulu. Oprávnění, která jsou vyžadována pro volání těchto konstruktorů lišit, protože přidružení dynamickou metodu k existujícímu typu nebo modulu poskytuje dynamická metoda přístup k neveřejným typům a členům:  
+## <a name="dynamic-methods-associated-with-existing-assemblies"></a>Dynamické metody přidružené k existujícím sestavením  
+ Chcete-li přidružit dynamickou metodu k typu nebo modulu v existujícím sestavení, použijte libovolný <xref:System.Reflection.Emit.DynamicMethod> konstruktor, který určuje přidružený typ nebo modul. Oprávnění, která jsou vyžadována pro volání těchto konstruktorů, se liší, protože přidružení dynamické metody s existujícím typem nebo modul poskytuje přístup dynamické metody k NonPublic typům a členům:  
   
-- Dynamickou metodu, který je přidružený k typu má přístup na všechny členy tohoto typu, dokonce i privátní členy, a všechny vnitřní typy a členy v sestavení, který obsahuje přidruženého typu.  
+- Dynamická metoda, která je přidružena k typu, má přístup ke všem členům daného typu, dokonce i k soukromým členům a všem interním typům a členům v sestavení, které obsahují přidružený typ.  
   
-- Dynamická metoda, která souvisí s modulu má přístup ke všem `internal` typů a členů (`Friend` v jazyce Visual Basic `assembly` v common language runtime metadata) v modulu.  
+- Dynamická metoda, která je přidružená k modulu, má přístup ke všem `internal` typům a členům`Friend` (v Visual Basic `assembly` v metadatech Common Language Runtime) v modulu.  
   
- Kromě toho můžete použít konstruktor, který určuje, že kontroluje schopnost přeskočit viditelnost JIT kompilátoru. To poskytuje přístup vaše dynamickou metodu pro všechny typy a členy ve všech sestaveních, bez ohledu na úroveň přístupu.  
+ Kromě toho můžete použít konstruktor, který určuje schopnost přeskočit kontroly viditelnosti kompilátoru JIT. Tím zajistíte přístup k dynamické metodě všem typům a členům ve všech sestaveních bez ohledu na úroveň přístupu.  
   
- Oprávnění vyžadované pomocí konstruktoru, závisí na tom, kolik přístup rozhodnete poskytnout dynamickou metodu:  
+ Oprávnění, která jsou vyvolána konstruktorem závisí na tom, kolik přístupu se rozhodnete poskytnout dynamickou metodu:  
   
-- Pokud vaše metoda používá pouze veřejné typy a členy a přidružíte ho k vlastní typ nebo vlastní modul, nejsou požadována žádná oprávnění.  
+- Pokud vaše metoda používá pouze veřejné typy a členy a přidružíte ji k vlastnímu typu nebo vlastnímu modulu, nejsou vyžadována žádná oprávnění.  
   
-- Pokud určíte, že by měl vynechány kontroly viditelnosti JIT, konstruktor požaduje <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak.  
+- Pokud určíte, že mají být vynechány kontroly viditelnosti JIT, konstruktor <xref:System.Security.Permissions.ReflectionPermission> požaduje <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak.  
   
-- Přidružit dynamickou metodu s jiným typem, i jiný typ ve vlastním sestavení vyžaduje konstruktor <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak a <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType> příznak.  
+- Pokud přidružíte dynamickou metodu k jinému typu, dokonce i jiný typ ve vašem vlastním sestavení, konstruktor požaduje <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak a <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType> příznakem.  
   
-- Pokud přiřadíte dynamickou metodu typu nebo modulu v jiném sestavení, konstruktoru vyžaduje dvě věci: <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak a sadu sestavení, který obsahuje další modul. To znamená, vaším zásobníkem volání musí obsahovat všechna oprávnění v sadě udělení modulu cílový plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
+- Pokud přidružíte dynamickou metodu k typu nebo modulu v jiném sestavení, konstruktor požaduje dvě věci: <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> s příznakem a sadou udělení sestavení, která obsahuje jiný modul. To znamená, že váš zásobník volání musí zahrnovat všechna oprávnění v sadě udělení cílového modulu plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
   
     > [!NOTE]
-    >  Z důvodu zpětné kompatibility, pokud sada udělení oprávnění požadavky na cílový plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> selže, požadavky konstruktor <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType> příznak.  
+    > Z důvodu zpětné kompatibility, pokud poptávka pro cílovou sadu udělení a <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> neproběhne úspěšně, konstruktor vyžaduje <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType> příznakem.  
   
- I když se položky v tomto seznamu jsou popsány z hlediska sady udělení emitujícího sestavení, mějte na paměti, že požadavky se provádí na úplného zásobníku volání, včetně hranice domény aplikace.  
+ I když jsou položky v tomto seznamu popsány v tématu udělení sady pro udělení sestavení, mějte na paměti, že požadavky jsou provedeny proti úplnému zásobníku volání, včetně hranice domény aplikace.  
   
- Další informace najdete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy.  
+ Další informace naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třída.  
   
 ### <a name="generating-dynamic-methods-from-partially-trusted-code"></a>Generování dynamických metod z částečně důvěryhodného kódu  
   
 > [!NOTE]
->  Doporučený postup pro generování dynamických metod z částečně důvěryhodného kódu je použití [anonymně hostované dynamické metody](#Anonymously_Hosted_Dynamic_Methods).  
+> Doporučený způsob, jak generovat dynamické metody z částečně důvěryhodného kódu, je použití [anonymně hostovaných dynamických metod](#Anonymously_Hosted_Dynamic_Methods).  
   
- Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními Internet generovat dynamickou metodu a spusťte ho:  
+ Vezměte v úvahu podmínky, ve kterých sestavení s oprávněními k Internetu může generovat dynamickou metodu a provést ji:  
   
-- Dynamická metoda, je přidružena k modulu nebo typ, který ho vytváří nebo jeho udělené sady obsahuje <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a je přidružen k modulu v sestavení, jejichž udělení sada je rovna nebo podmnožinu, sady udělení emitujícího sestavení.  
+- Buď je dynamická metoda asociována s modulem nebo typem, který ji emituje, nebo její sada udělení <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> zahrnuje a je spojena s modulem v sestavení, jehož sada udělení je rovna nebo podmnožině, pro udělení sestavení pro generování.  
   
-- Dynamická metoda používá pouze veřejné typy a členy. Pokud obsahuje jeho udělené sady <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a je přidružen k modulu v sestavení, jejichž udělení sada je rovna nebo podmnožinu, sady udělení emitujícího sestavení, můžete použít typy a členy označené `internal` (`Friend` v jazyce Visual Basic `assembly`v common language runtime metadata) v modulu přidružené.  
+- Dynamická metoda používá pouze veřejné typy a členy. Pokud jeho sada udělení zahrnuje <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a je spojena s modulem v sestavení, jehož sada udělení je rovna nebo podmnožině, sada udělení sestavení pro generování, může použít typy a členy označené `internal` (`Friend` v Visual Basic, `assembly`v modulu CLR (Common Language Runtime metadata) v přidruženém modulu.  
   
-- Oprávnění potřebnou pro všechny typy a členy používá dynamické metody jsou součástí sady udělení částečně důvěryhodné sestavení.  
+- Oprávnění požadovaná všemi typy a členy, které používá dynamická metoda, jsou součástí sady udělení částečně důvěryhodného sestavení.  
   
-- Dynamická metoda není přeskočit kontroly viditelnosti JIT.  
+- Dynamická metoda neskočí kontroly viditelnosti JIT.  
   
 > [!NOTE]
->  Dynamické metody nepodporují symboly ladění.  
+> Dynamické metody nepodporují symboly ladění.  
   
 <a name="Version_Information"></a>   
 ## <a name="version-information"></a>Informace o verzi  
- Od verze rozhraní .NET Framework 4, zásady zabezpečení pro celý počítač odstraněny a změní výchozí mechanismus pro vynucení transparentnosti zabezpečení. Zobrazit [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Počínaje .NET Framework 4 jsou zásady zabezpečení na úrovni počítače eliminovány a transparentnost zabezpečení se bude nacházet jako s výchozím mechanismem vynucování. Viz téma [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
- Od verze rozhraní .NET Framework 2.0 Service Pack 1 <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak se už nevyžaduje při generování dynamických sestavení a dynamické metody. Tento příznak je potřeba ve všech dřívějších verzích rozhraní .NET Framework.  
+ Počínaje verzí .NET Framework 2,0 Service Pack 1 <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> se příznak již nepožaduje při generování dynamických sestavení a dynamických metod. Tento příznak je vyžadován ve všech starších verzích .NET Framework.  
   
 > [!NOTE]
->  <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznak je zahrnutá ve výchozím nastavení `FullTrust` a `LocalIntranet` sad pojmenovaných oprávnění, ale ne `Internet` sadu oprávnění. Proto v dřívějších verzích rozhraní .NET Framework, knihovnu je možné s Internetová oprávnění pouze v případě, že se provede <xref:System.Security.PermissionSet.Assert%2A> pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Tyto knihovny vyžadují pečlivé ověření zabezpečení, protože chyby kódování mohou mít za následek bezpečnostní díry. Rozhraní .NET Framework 2.0 SP1 umožňuje emitování kódu ve scénářích s částečnou důvěryhodností bez vydávání požadavků na zabezpečení, protože generování kódu není ze své podstaty Privilegovaná operace. To znamená že generovaný kód nemá více oprávnění než sestavení, která ho vytváří. To umožňuje knihovny, které emitují kód transparentní z hlediska zabezpečení a odstraňuje nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
+> <xref:System.Security.Permissions.ReflectionPermission>označení s příznakem je ve výchozím nastavení `FullTrust` zahrnuté v sadách a `LocalIntranet` `Internet` pojmenovaných oprávněních, ale ne v sadě oprávnění. <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> Proto v dřívějších verzích .NET Framework knihovna může být použita s oprávněními k Internetu pouze v případě, že spustí <xref:System.Security.PermissionSet.Assert%2A> pro. <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> Tyto knihovny vyžadují pečlivou kontrolu zabezpečení, protože chyby kódování můžou vést k bezpečnostním otvorům. .NET Framework 2,0 SP1 umožňuje, aby byl kód generován ve scénářích s částečnou důvěryhodností bez nutnosti vydávat požadavky na zabezpečení, protože generování kódu není podstatou privilegované operace. To znamená, že generovaný kód nemá žádná další oprávnění, než sestavení, které ho emituje. To umožňuje, aby knihovny, které generují kód, byly transparentní pro zabezpečení a odebraly nutnost vyhodnocení <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, což zjednodušuje úlohu psaní zabezpečené knihovny.  
   
- Kromě toho rozhraní .NET Framework 2.0 SP1 zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k neveřejným typům a členům z částečně důvěryhodného dynamických metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přístup k neveřejným typům a členům; jde o oprávnění, které nikdy udělení částečně důvěryhodným kódem.  
+ Kromě toho .NET Framework 2,0 SP1 zavádí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak pro přístup k NonPublic typům a členům z částečně důvěryhodných dynamických metod. Starší verze .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> příznak pro dynamické metody, které přistupují k NonPublic typům a členům; jedná se o oprávnění, které by nikdy nemělo být uděleno částečně důvěryhodnému kódu.  
   
- A konečně rozhraní .NET Framework 2.0 SP1 zavádí anonymně hostované metody.  
+ Nakonec .NET Framework 2,0 SP1 zavádí anonymně hostované metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Získání informací o typech a členech  
- Od verze rozhraní .NET Framework 2.0, žádná oprávnění nejsou vyžadována k získání informací o neveřejným typům a členům. Reflexe slouží k získání informací potřebných k emitování dynamické metody. Například <xref:System.Reflection.MethodInfo> objekty se používají ke generování volání metod. Starší verze rozhraní .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak. Další informace najdete v tématu [Security Considerations for Reflection](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
+ Počínaje .NET Framework 2,0 nejsou k získání informací o typech a členech NonPublic potřeba žádná oprávnění. Reflexe se používá k získání informací potřebných k vygenerování dynamických metod. Například <xref:System.Reflection.MethodInfo> objekty slouží k vygenerování volání metody. Starší verze .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> s příznakem. Další informace najdete v tématu [požadavky na zabezpečení pro](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)reflexi.  
   
 ## <a name="see-also"></a>Viz také:
 

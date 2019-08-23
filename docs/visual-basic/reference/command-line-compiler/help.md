@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -? compiler option [Visual Basic]
 - '? compiler option [Visual Basic]'
 ms.assetid: eb984aa5-ac98-4d0b-a0d2-24238d7bc8dc
-ms.openlocfilehash: adfde0bd420ccb7af4c4872affe09e5f6cf47e71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 287a2ed3f54f85435a986d3a6ecd77f7009fb195
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051686"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938226"
 ---
 # <a name="-help---visual-basic"></a>-help, -? (Visual Basic)
 Zobrazí možnosti kompilátoru.  
@@ -28,13 +28,13 @@ Zobrazí možnosti kompilátoru.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud kompilace zahrnout tuto možnost, nevytvoří se žádný výstupní soubor a bez kompilace probíhá.  
+ Pokud zahrnete tuto možnost do kompilace, není vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
   
 > [!NOTE]
->  `-help` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
+> Tato `-help` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zobrazuje nápovědu z příkazového řádku.  
+ Následující kód zobrazí pomocníka z příkazového řádku.  
   
 ```  
 vbc -help  
@@ -42,5 +42,5 @@ vbc -help
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

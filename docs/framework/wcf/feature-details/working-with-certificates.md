@@ -7,63 +7,63 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 55d78ed9bf839d66b3487f91d71d7a07a2123c5f
-ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
+ms.openlocfilehash: 706ba06e214448f63b13d1098f6f3664b2b61e76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569559"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968632"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
-Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
+Pro programové zabezpečení služby Windows Communication Foundation (WCF) se běžně používají digitální certifikáty X. 509 k ověřování klientů a serverů, k šifrování a digitálnímu podepisování zpráv. Toto téma stručně vysvětluje funkce digitálního certifikátu X. 509 a jejich použití ve službě WCF a obsahuje odkazy na témata, která tyto koncepce vysvětlují, nebo které ukazují, jak provádět běžné úlohy pomocí WCF a certifikátů.  
   
- Stručně řečeno, digitálního certifikátu je součástí *infrastruktury veřejných klíčů* (PKI), což je systém digitální certifikáty, certifikační autority a další registrační autority, které ověřují platnost Každá ze smluvních stran součástí elektronické transakce pomocí kryptografii využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu polí, které obsahují data, jako například *subjektu* (entity, ke kterému je vydaný certifikát), data platnosti (Pokud je certifikát platný), Vystavitel () entity, která vydala certifikát) a veřejný klíč. Ve službě WCF, každá z těchto vlastností je zpracován jako <xref:System.IdentityModel.Claims.Claim>, a každá deklarace je dále rozdělen do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Další informace o deklaracích identity a autorizace ve WCF najdete v části [správa deklarací identity a autorizace s modelem Identity](managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [infrastruktury veřejných KLÍČŮ rozlehlé sítě s Windows serverem 2012 R2 Active Directory Certificate Services](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/).  
+ V krátké době je digitální certifikát součástí *infrastruktury veřejných klíčů* (PKI), která je systémem digitálních certifikátů, certifikačních autorit a dalších registračních autorit, které ověřují a ověřují platnost všech stran zapojených do Elektronický transakce pomocí kryptografie s veřejným klíčem. Certifikační autorita vystavuje certifikáty a každý certifikát obsahuje sadu polí, která obsahují data, jako je například *Předmět* (entita, na kterou je certifikát vystavený), datum platnosti (Pokud je certifikát platný), Vystavitel (entita, která vystavila certifikát) a veřejný klíč. V rámci WCF je každá z těchto vlastností zpracována jako <xref:System.IdentityModel.Claims.Claim>a každá deklarace je dále rozdělena do dvou typů: identita a právo. Další informace o certifikátech X. 509 najdete v tématu [certifikáty s veřejným klíčem x. 509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Další informace o deklaracích identity a autorizaci v WCF najdete v tématu [Správa deklarací identity a autorizace pomocí modelu identity](managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných klíčů najdete v tématu [Infrastruktura veřejných klíčů rozlehlé sítě s Windows serverem 2012 R2 Active Directory Certificate Services](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/).  
   
- Primární funkce certifikát je k ověření identity vlastníka certifikátu ostatním uživatelům. Certifikát obsahuje *veřejný klíč* vlastníka, zatímco vlastníkem ponechá privátní klíč. Veřejný klíč slouží k šifrování zpráv, pošle se vlastníkovi certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může dešifrovat tyto zprávy.  
+ Primární funkcí certifikátu je ověření identity vlastníka certifikátu ostatním uživatelům. Certifikát obsahuje *veřejný klíč* vlastníka, zatímco vlastník zachovává privátní klíč. Veřejný klíč lze použít k šifrování zpráv odesílaných vlastníkovi certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může tyto zprávy dešifrovat.  
   
- Certifikáty musí být vystavené certifikační autority, což se často stává třetích stran vystavitelů certifikátů. V doméně Windows je součástí certifikační autority, který slouží k vydávání certifikátů pro počítače v doméně.  
+ Certifikáty musí vystavit certifikační autorita, což je často Vystavitel certifikátů třetích stran. V doméně systému Windows je k dispozici certifikační autorita, která se dá použít k vystavování certifikátů počítačům v doméně.  
   
 ## <a name="viewing-certificates"></a>Zobrazení certifikátů  
- Pro práci s certifikáty, je často potřeba je zobrazit a prozkoumat jejich vlastnosti. Snadno to provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md).  
+ Pro práci s certifikáty je často nutné je zobrazit a prozkoumávat jejich vlastnosti. To se dá snadno udělat pomocí nástroje pro modul snap-in konzoly MMC (Microsoft Management Console). Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu snap-in](how-to-view-certificates-with-the-mmc-snap-in.md)konzoly MMC.  
   
 ## <a name="certificate-stores"></a>Úložiště certifikátů  
- Certifikáty se nacházejí v úložištích. Dvěma umístěními velké úložiště existují, které se dále dělí do dílčí úložišť. Pokud jste správce v počítači, se zobrazí oba hlavní úložiště pomocí nástroje modulu snap-in konzoly MMC. Bez správci mohou zobrazit pouze aktuální úložiště uživatele.  
+ Certifikáty se nacházejí v úložištích. Existují dvě hlavní umístění úložiště, která jsou dále rozdělena do dílčích obchodů. Pokud jste správcem počítače, můžete si prohlédnout hlavní úložiště pomocí nástroje pro modul snap-in konzoly MMC. Uživatelé bez oprávnění správce můžou zobrazit jenom úložiště aktuálního uživatele.  
   
-- **Úložiště místního počítače**. Tato položka obsahuje certifikáty přistupuje počítač procesy, jako je například technologie ASP.NET. Toto umístění slouží k ukládání certifikátů, které ověření serveru vůči klientům.  
+- **Úložiště v místním počítači**. Obsahuje certifikáty, ke kterým přistupovaly počítačové procesy, jako je ASP.NET. Toto umístění použijte k ukládání certifikátů, které ověřují server pro klienty.  
   
-- **Úložiště pro aktuálního uživatele**. Interaktivní aplikace obvykle umístit certifikáty pro aktuálního uživatele počítače. Pokud vytvoříte klientskou aplikaci, je obvykle umístění certifikáty, které se ověřují uživatele ke službě.  
+- **Aktuální uživatelské úložiště** Interaktivní aplikace obvykle umísťují certifikáty pro aktuálního uživatele počítače. Pokud vytváříte klientskou aplikaci, je to místo, kde obvykle umístíte certifikáty, které ověřují uživatele pro službu.  
   
- Tyto dvě úložiště se dále dělí do dílčí úložišť. Nejdůležitější z těchto při programování s použitím technologie WCF patří:  
+ Tyto dva obchody jsou dále rozděleny do dílčích obchodů. Nejdůležitější z nich při programování v rámci WCF zahrnují:  
   
-- **Důvěryhodné kořenové certifikační autority**. Certifikáty můžete použít v tomto úložišti vytvořit řetěz certifikátů, které lze sledovat zpět k certifikátu certifikačního úřadu v tomto úložišti.  
+- **Důvěryhodné kořenové certifikační autority**. Certifikáty v tomto úložišti můžete použít k vytvoření řetězce certifikátů, které se dají trasovat zpátky do certifikátu certifikační autority v tomto úložišti.  
   
     > [!IMPORTANT]
-    >  Místní počítač některý z certifikátů umístěny v tomto úložišti implicitně důvěřuje i v případě, že certifikát nepochází od důvěryhodné certifikační autority. Z tohoto důvodu Neumísťujte některý z certifikátů do tohoto úložiště není-li plně důvěřovat vystavitele a nerozumíte jeho následkům.  
+    >  Místní počítač implicitně důvěřuje jakémukoli certifikátu umístěnému v tomto úložišti, a to i v případě, že certifikát nepochází od důvěryhodné certifikační autority třetí strany. Z tohoto důvodu neumísťujte do tohoto úložiště žádné certifikáty, pokud plně nedůvěřujete vystaviteli a pochopíte důsledky.  
   
-- **Osobní**. Toto úložiště se používá pro certifikáty, které jsou spojeny s konkrétním uživatelem počítače. Toto úložiště se obvykle používá pro certifikáty vydané certifikáty certifikační autority v úložišti Důvěryhodné kořenové certifikační autority. Certifikát, najdete tady také může samostatně vydané a důvěryhodné aplikace.  
+- **Osobní**. Toto úložiště se používá pro certifikáty přidružené k uživateli počítače. Toto úložiště se obvykle používá pro certifikáty vydané jedním z certifikátů certifikační autority, které se nacházejí v úložišti důvěryhodných kořenových certifikačních autorit. Případně může certifikát, který tady najde, být vystavený svým držitelem a důvěryhodný pro aplikaci.  
   
- Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](/windows/desktop/secauthn/certificate-stores).  
+ Další informace o úložištích certifikátů najdete v tématu [úložiště certifikátů](/windows/desktop/secauthn/certificate-stores).  
   
-### <a name="selecting-a-store"></a>Výběr Store  
- Výběr umístění pro uložení certifikátu závisí jak a kdy bude spuštěna služba nebo klient. Platí následující obecná pravidla:  
+### <a name="selecting-a-store"></a>Výběr úložiště  
+ Výběr místa uložení certifikátu závisí na tom, jak a kdy se služba nebo klient spouští. Platí následující obecná pravidla:  
   
-- Pokud je služba WCF hostovaná používá službu Windows **místního počítače** ukládat. Všimněte si, že jsou nutná oprávnění správce k instalaci certifikátů do úložiště místního počítače.  
+- Pokud je služba WCF hostovaná ve službě systému Windows, použijte úložiště **místního počítače** . Mějte na paměti, že k instalaci certifikátů do úložiště místního počítače jsou nutná oprávnění správce.  
   
-- Pokud služba nebo klient je aplikace, na kterém běží pod účtem uživatele, použijte **aktuálního uživatele** ukládat.  
+- Pokud je služba nebo klient aplikace, která běží pod uživatelským účtem, použijte úložiště **aktuálního uživatele** .  
   
-### <a name="accessing-stores"></a>Přístup k úložišti  
- Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby hostované v Internetové informační služby (IIS), proces ASP.NET běží pod účtem technologie ASP.NET. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [jak: Vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://support.microsoft.com/en-us/help/901183/how-to-call-a-web-service-by-using-a-client-certificate-for-authentica).  
+### <a name="accessing-stores"></a>Přístup k obchodům  
+ Úložiště jsou chráněná pomocí seznamů řízení přístupu (ACL), stejně jako složky v počítači. Při vytváření služby hostované službou Internetová informační služba (IIS) se proces ASP.NET spouští pod účtem ASP.NET. Tento účet musí mít přístup k úložišti, které obsahuje certifikáty, které služba používá. Každé z hlavních úložišť je chráněno pomocí výchozího seznamu přístupu, ale seznamy lze upravit. Pokud vytvoříte samostatnou roli pro přístup k úložišti, musíte této roli udělit oprávnění k přístupu. Informace o tom, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig. exe, najdete v [tématu How to: Vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md). Další informace o použití klientských certifikátů se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci v ASP.NET](https://support.microsoft.com/en-us/help/901183/how-to-call-a-web-service-by-using-a-client-certificate-for-authentica).  
   
-## <a name="chain-trust-and-certificate-authorities"></a>Řetězce důvěryhodnosti a certifikační autority  
- Certifikáty jsou vytvořeny v hierarchii, kde je každý jednotlivý certifikát certifikační Autority, která vydala certifikát propojen. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority pak odkazy na certifikační Autoritu, která vydala certifikát původní CA. Tento postup se opakuje, dokud nenastane certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je ze své podstaty důvěryhodný.  
+## <a name="chain-trust-and-certificate-authorities"></a>Důvěryhodnost řetězení a certifikační autority  
+ Certifikáty se vytvářejí v hierarchii, kde je každý jednotlivý certifikát propojený s certifikační autoritou, která certifikát vystavila. Tento odkaz je na certifikát certifikační autority. Certifikát certifikační autority potom odkazuje na certifikační autoritu, která vydala certifikát původní certifikační autority. Tento proces se opakuje, dokud nedosáhnete certifikátu kořenové certifikační autority. Certifikát kořenové certifikační autority je v podstatě důvěryhodný.  
   
- Digitální certifikáty se používají k ověřování entity spoléhání se na tuto hierarchii, také nazývané *řetězu certifikátů*. Můžete zobrazit řetězec některý z certifikátů pomocí modulu snap-in konzoly MMC poklepáním na některý z certifikátů a pak kliknete **cesta k certifikátu** kartu. Další informace o importu řetězy certifikátů certifikační autority najdete v tématu [jak: Zadejte řetězu certifikátů certifikační autority certifikátu používaného k ověřování podpisů](specify-the-certificate-authority-chain-verify-signatures-wcf.md).  
+ Digitální certifikáty slouží k ověřování entity, které se spoléhají na tuto hierarchii, která se označuje také jako *řetěz důvěryhodnosti*. Řetěz certifikátů můžete zobrazit pomocí modulu snap-in konzoly MMC tak, že dvakrát kliknete na libovolný certifikát a potom kliknete na kartu **cesta k certifikátu** . Další informace o importu řetězů certifikátů pro certifikační autoritu najdete v [tématu How to: Zadejte řetěz certifikátů certifikační autority, který se používá](specify-the-certificate-authority-chain-verify-signatures-wcf.md)k ověření podpisů.  
   
 > [!NOTE]
->  Všechny vystavitele lze označit důvěryhodné kořenové autority tak, že vystavitele certifikátu v úložišti certifikátů důvěryhodných kořenových autorit.  
+> V úložišti certifikátů důvěryhodné kořenové certifikační autority je možné určit každého vystavitele důvěryhodnou kořenovou autoritu tím, že umístíte certifikát vystavitele.  
   
-### <a name="disabling-chain-trust"></a>Zakázání řetězce důvěryhodnosti  
- Při vytváření nové služby, pravděpodobně používáte certifikát, který není vystavený důvěryhodný kořenový certifikát, nebo vlastní certifikát vydávající nemusí být v úložišti Důvěryhodné kořenové certifikační autority. Pro účely vývoje můžete dočasně zakázat mechanismus, který kontroluje, řetěz certifikátů pro certifikát. Chcete-li to provést, nastavte `CertificateValidationMode` vlastnost buď `PeerTrust` nebo `PeerOrChainTrust`. Režim určuje, že certifikát můžete buď samostatně vydat (peer vztahu důvěryhodnosti) nebo jeho část řetěz certifikátů. Nastavte vlastnost na žádném z následujících tříd.  
+### <a name="disabling-chain-trust"></a>Zakázání vztahu důvěryhodnosti řetězu  
+ Při vytváření nové služby můžete použít certifikát, který není vydán důvěryhodným kořenovým certifikátem, nebo samotný vydávající certifikát nemusí být v úložišti důvěryhodných kořenových certifikačních autorit. Pouze pro účely vývoje můžete dočasně zakázat mechanismus, který kontroluje řetěz důvěryhodnosti pro certifikát. Chcete-li to provést, `CertificateValidationMode` nastavte vlastnost na `PeerTrust` hodnotu `PeerOrChainTrust`nebo. V obou režimech se určuje, že certifikát může být vystavený svým držitelem (vztah důvěryhodnosti partnera) nebo část řetězu důvěryhodnosti. Vlastnost lze nastavit na kterékoli z následujících tříd.  
   
 |Třída|Vlastnost|  
 |-----------|--------------|  
@@ -72,59 +72,59 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 |<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|  
 |<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>|<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A?displayProperty=nameWithType>|  
   
- Můžete také nastavit vlastnost pomocí konfigurace. Tyto prvky se používají k určení režimu ověřování:  
+ Vlastnost můžete také nastavit pomocí konfigurace. K určení režimu ověřování se používají následující elementy:  
   
-- [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+- [\<> ověřování](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
   
 - [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
   
 - [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
   
 ## <a name="custom-authentication"></a>Vlastní ověřování  
- `CertificateValidationMode` Vlastnost také umožňuje přizpůsobit způsob ověřování certifikátů. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`. Použít <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> hodnotu, je nutné nastavit také `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
+ `CertificateValidationMode` Vlastnost také umožňuje upravit způsob ověřování certifikátů. Ve výchozím nastavení je úroveň nastavena na `ChainTrust`. Chcete-li <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> použít hodnotu, je nutné také `CustomCertificateValidatorType` nastavit atribut na sestavení a typ použitý k ověření certifikátu. Chcete-li vytvořit vlastní validátor, je nutné dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
- Při vytváření vlastní ověřovací data, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metody. Příklad vlastní ověřování, najdete v článku [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) vzorku. Další informace najdete v tématu [vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
+ Při vytváření vlastního ověřovatele je <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> nejdůležitější metodou přepsání metoda. Příklad vlastního ověřování najdete v ukázce ověřování [certifikátů X. 509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) . Další informace najdete v tématu [vlastní ověření přihlašovacích údajů a přihlašovacích údajů](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
-## <a name="using-the-powershell-new-selfsignedcertificate-cmdlet-to-build-a-certificate-chain"></a>Pomocí rutiny Powershellu New-SelfSignedCertificate Sestavit řetěz certifikátů  
- Rutiny Powershellu New-SelfSignedCertificate vytvoří privátní klíče párů klíč/veřejný a certifikáty X.509. Můžete uložit privátní klíč, aby na disku a použít ho k vystavení a podepsat nové certifikáty, proto budete jen simulovat hierarchii zřetězené certifikátů. Rutina je určena pro použití pouze jako vodítko při vývoji služeb a byste nikdy neměli používat k vytvoření certifikátů pro skutečné nasazení. Při vývoji služeb WCF, sestavit řetěz certifikátů pomocí rutiny New-SelfSignedCertificate pomocí následujících kroků.  
+## <a name="using-the-powershell-new-selfsignedcertificate-cmdlet-to-build-a-certificate-chain"></a>Vytvoření řetězu certifikátů pomocí rutiny New-SelfSignedCertificate prostředí PowerShell  
+ Rutina New-SelfSignedCertificate pro PowerShell vytváří páry certifikátů X. 509 a privátního klíče/veřejného klíče. Privátní klíč můžete uložit na disk a pak ho použít k vystavení a podepsání nových certifikátů, což simuluje hierarchii zřetězených certifikátů. Rutina je určena pouze pro použití jako pomůcka při vývoji služeb a neměla by být používána k vytváření certifikátů pro skutečné nasazení. Při vývoji služby WCF použijte následující postup k vytvoření řetězu důvěry pomocí rutiny New-SelfSignedCertificate.  
   
-#### <a name="to-build-a-chain-of-trust-with-the-new-selfsignedcertificate-cmdlet"></a>Sestavit řetěz certifikátů pomocí rutiny New-SelfSignedCertificate  
+#### <a name="to-build-a-chain-of-trust-with-the-new-selfsignedcertificate-cmdlet"></a>Sestavení řetězu vztahu důvěryhodnosti pomocí rutiny New-SelfSignedCertificate  
   
-1. Vytvořte dočasný kořenové autoritě (certifikát podepsaný svým držitelem) pomocí rutiny New-SelfSignedCertificate. Privátní klíč uložte na disk.  
+1. Pomocí rutiny New-SelfSignedCertificate vytvořte dočasný certifikát kořenové autority (s podpisem držitele). Uložte privátní klíč na disk.  
   
-2. Použití nového certifikátu k vystavení dalšího certifikátu, který obsahuje veřejný klíč.  
+2. Pomocí nového certifikátu vydejte jiný certifikát, který obsahuje veřejný klíč.  
   
-3. Kořenový certifikát autority naimportujte do úložiště Důvěryhodné kořenové certifikační autority.  
+3. Importujte certifikát kořenové autority do úložiště důvěryhodných kořenových certifikačních autorit.  
   
-4. Podrobné pokyny najdete v tématu [jak: Vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md).  
+4. Podrobné pokyny najdete v tématu [postup: Vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md).  
   
 ## <a name="which-certificate-to-use"></a>Který certifikát se má použít?  
- Běžné dotazy týkající se certifikátů jsou který certifikát se má použít a proč. Odpověď závisí na tom, jestli jsou programování klienta nebo služby. Tyto informace obsahuje obecných pokynů a není vyčerpávající odpovědi na tyto otázky.  
+ Nejčastější dotazy k certifikátům, které certifikát použít a proč. Odpověď závisí na tom, jestli programujete klienta nebo službu. Následující informace obsahují obecný pokyn a nejedná se o vyčerpávající odpověď na tyto otázky.  
   
-### <a name="service-certificates"></a>Certifikáty služeb  
- Certifikáty služby mají primární úlohy ověřování serveru vůči klientům. Jedním z úvodních kontrol, když se klient ověřuje server je porovnat hodnotu **subjektu** pole na identifikátor URI (Uniform Resource) používá ke kontaktování služby: DNS obou se musí shodovat. Například, pokud je identifikátor URI služby `http://www.contoso.com/endpoint/` pak bude **subjektu** pole musí obsahovat také hodnota `www.contoso.com`.  
+### <a name="service-certificates"></a>Certifikáty služby  
+ Certifikáty služeb mají primární úlohu ověřování serveru pro klienty. Jedna z počátečních kontrol, kdy klient ověřuje server, je porovnat hodnotu pole **subjekt** s IDENTIFIKÁTORem URI, který se používá ke kontaktování služby: DNS obou musí odpovídat. Například pokud je `http://www.contoso.com/endpoint/` identifikátor URI služby, pak pole **subjektu** musí obsahovat také hodnotu `www.contoso.com`.  
   
- Všimněte si, že pole může obsahovat několik hodnot, každý s předponou inicializace k označení hodnoty. Nejčastěji inicializace je "CN" pro běžný název, například `CN = www.contoso.com`. Je také možné, **subjektu** pole jako prázdné, v takovém případě **alternativní název předmětu** pole může obsahovat **název DNS** hodnotu.  
+ Všimněte si, že pole může obsahovat několik hodnot, každý s předponou inicializace k označení hodnoty. Nejčastěji je inicializace "CN" pro běžný název, například `CN = www.contoso.com`. Je také možné, že pole **subjekt** bude prázdné. v takovém případě může pole **alternativní název subjektu** obsahovat hodnotu **názvu DNS** .  
   
- Všimněte si také hodnotu **zamýšlené účely** pole certifikátu by měl obsahovat správnou hodnotu, jako je například "Ověřování serveru" nebo "Ověření klienta".  
+ Všimněte si také, že hodnota pole **zamýšlené účely** certifikátu by měla obsahovat odpovídající hodnotu, například "ověřování serveru" nebo "ověřování klientů".  
   
 ### <a name="client-certificates"></a>Klientské certifikáty  
- Klientské certifikáty nejsou obvykle vydaný certifikační autoritou. Místo toho osobním úložišti aktuální polohu uživatele obvykle obsahuje certifikáty umísťují kořenovou autoritou, zamýšlený účel "Ověření klienta". Klienta můžete použít tento certifikát, pokud je nutné použít vzájemného ověřování.  
+ Klientské certifikáty nejsou většinou vydávány certifikační autoritou jiného výrobce. Místo toho osobní úložiště aktuálního umístění uživatele obvykle obsahuje certifikáty, které jsou umístěny v kořenové autoritě, s určeným účelem "ověřování klienta". Klient může takový certifikát použít, pokud je vyžadováno vzájemné ověření.  
   
-## <a name="online-revocation-and-offline-revocation"></a>Odvolání online a Offline odvolání  
+## <a name="online-revocation-and-offline-revocation"></a>Online odvolání a odvolání offline  
   
-### <a name="certificate-validity"></a>Platnost certifikátu.  
- Každý certifikát je platný pouze pro daný časový úsek, volá se, *období platnosti*. Doba platnosti je definován **platné od** a **platné do** pole certifikátu X.509. Během ověřování je certifikát zkontrolována k určení, zda certifikát je stále v rámci doby platnosti.  
+### <a name="certificate-validity"></a>Platnost certifikátu  
+ Každý certifikát je platný jenom po určitou dobu, která se nazývá *období platnosti*. Období platnosti je definováno poli **platné od** a **platné k** certifikátu X. 509. Při ověřování se certifikát kontroluje, aby se zjistilo, jestli je certifikát stále v období platnosti.  
   
 ### <a name="certificate-revocation-list"></a>Seznam odvolaných certifikátů  
- Kdykoli během doby platnosti certifikační autority můžete odvolat certifikát. Tato situace může nastat z mnoha důvodů, jako je například ohrožení zabezpečení privátní klíč certifikátu.  
+ Certifikační autorita může během období platnosti certifikát odvolat. K tomu může dojít z mnoha důvodů, jako je například ohrožení soukromého klíče certifikátu.  
   
- V takovém případě všechny řetězce, které sestup od odvolaný certifikát jsou neplatné a nejsou důvěryhodné během postupů ověřování. Chcete-li zjistit, které certifikáty byly odvolány, každý Vystavitel publikuje čas a datum razítkem *seznam odvolaných certifikátů* (CRL). Seznamu můžete zkontrolovat pomocí odvolání online nebo offline odvolání nastavením `RevocationMode` nebo `DefaultRevocationMode` vlastnost na jednu z následujících tříd <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> hodnot výčtu: <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>, <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>, <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> a <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy. Výchozí hodnota pro všechny vlastnosti je `Online`.  
+ V takovém případě jsou všechny řetězy od odvolaného certifikátu také neplatné a během ověřovacích procedur nejsou důvěryhodné. Chcete-li zjistit, které certifikáty byly odvolány, každý Vystavitel zveřejňuje *seznam odvolaných certifikátů* s časovým razítkem (CRL). Seznam lze kontrolovat buď pomocí online odvolání, nebo `RevocationMode` pomocí offline odvolání nastavením vlastnosti nebo `DefaultRevocationMode` v následujících <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> třídách na jednu z hodnot výčtu: <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>,, <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> a <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy. Výchozí hodnota pro všechny vlastnosti je `Online`.  
   
- Můžete také nastavit režim konfigurace pomocí `revocationMode` atribut obou [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (nástroje [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)) a [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (nástroje [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)).  
+ Můžete také nastavit režim v konfiguraci `revocationMode` pomocí atributu [ \<> ověřování](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) ( [ \<> serviceBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)) a [ \<ověřovacího >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) ( [ endpointBehaviors\<>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)).  
   
-## <a name="the-setcertificate-method"></a>SetCertificate – metoda  
- Ve službě WCF často musíte zadat certifikát nebo nastavit certifikátů službu nebo klienta je nutné použít k ověření, šifrování nebo podepsání zprávy. Můžete to provést prostřednictvím kódu programu pomocí `SetCertificate` metoda různých tříd, které představují certifikáty X.509. Následující třídy použijte `SetCertificate` metoda zadat certifikát.  
+## <a name="the-setcertificate-method"></a>Metoda SetCertificate  
+ V rámci WCF musíte často zadat certifikát nebo sadu certifikátů, které služba nebo klient používá k ověřování, šifrování nebo digitálnímu podepisování zprávy. To můžete provést programově `SetCertificate` pomocí metody různých tříd, které reprezentují certifikáty X. 509. Následující třídy používají `SetCertificate` metodu k určení certifikátu.  
   
 |Třída|Metoda|  
 |-----------|------------|  
@@ -134,23 +134,23 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential>|  
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A>|  
   
- `SetCertificate` Metoda funguje tak, že označující umístění úložiště a úložiště typu "najít" (`x509FindType` parametr), který určuje pole certifikátu a hodnotu k vyhledání v poli. Například následující kód vytvoří <xref:System.ServiceModel.ServiceHost> instance a certifikát služby používaný k ověření služby klientů, kteří se nastaví `SetCertificate` metoda.  
+ Metoda funguje podle určení umístění úložiště a úložiště, typu "Find" (`x509FindType` parametr), který určuje pole certifikátu a hodnotu, která se má najít v poli. `SetCertificate` Například následující kód vytvoří <xref:System.ServiceModel.ServiceHost> instanci a nastaví certifikát služby použitý k ověření služby pro klienty `SetCertificate` s metodou.  
   
  [!code-csharp[c_WorkingWithCertificates#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_workingwithcertificates/cs/source.cs#1)]
  [!code-vb[c_WorkingWithCertificates#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_workingwithcertificates/vb/source.vb#1)]  
   
-### <a name="multiple-certificates-with-the-same-value"></a>Více certifikátů se stejnou hodnotou  
- Úložiště může obsahovat více certifikátů se stejným názvem subjektu. To znamená, že pokud určíte, `x509FindType` je <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> nebo <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>a více než jeden certifikát má stejnou hodnotu, je vyvolána výjimka, protože neexistuje žádný způsob k rozlišení, který certifikát se vyžaduje. To můžete zmírnit tím, že nastavíte `x509FindType` k <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>. Kryptografický otisk pole obsahuje jedinečnou hodnotu, která slouží k vyhledání konkrétního certifikátu v úložišti. Tato akce však nemá vlastní nevýhodou: Pokud je certifikát odvolán nebo obnovení `SetCertificate` metoda selže, protože kryptografický otisk je pryč. Nebo, pokud již není platný certifikát, ověření se nezdaří. Způsob, jak tento problém zmírnit, je nastavit `x590FindType` parametr <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> a zadejte název vystavitele. Pokud žádný konkrétní vydavatel je potřeba, můžete také nastavit jednoho z jiných <xref:System.Security.Cryptography.X509Certificates.X509FindType> hodnot výčtu, například <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid>.  
+### <a name="multiple-certificates-with-the-same-value"></a>Víc certifikátů se stejnou hodnotou  
+ Úložiště může obsahovat více certifikátů se stejným názvem subjektu. To znamená, že pokud určíte, `x509FindType` že <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> je <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>nebo a více než jeden certifikát má stejnou hodnotu, je vyvolána výjimka, protože neexistuje způsob, jak rozlišovat požadovaný certifikát. Můžete to zmírnit nastavením `x509FindType` <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>na. Pole kryptografický otisk obsahuje jedinečnou hodnotu, která se dá použít k vyhledání konkrétního certifikátu v úložišti. Má však svou vlastní nevýhodu: Pokud je certifikát odvolán nebo obnoven, `SetCertificate` metoda se nezdařila, protože kryptografický otisk je také pryč. Nebo, pokud certifikát již není platný, ověřování se nezdařilo. Způsob, jak to zmírnit, je nastavení `x590FindType` parametru na <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> a zadání názvu vystavitele. Pokud není vyžadován žádný konkrétní Vydavatel, můžete také nastavit jednu z dalších <xref:System.Security.Cryptography.X509Certificates.X509FindType> hodnot výčtu, <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid>například.  
   
 ## <a name="certificates-in-configuration"></a>Certifikáty v konfiguraci  
- Můžete také nastavit certifikáty pomocí konfigurace. Při vytváření služby, přihlašovací údaje, včetně certifikátů jsou specifikovány pod [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Při programování klienta, certifikáty jsou určené v rámci [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).  
+ Můžete také nastavit certifikáty pomocí konfigurace. Pokud vytváříte službu, přihlašovací údaje, včetně certifikátů, jsou určené [ \<> serviceBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Při programování klienta jsou certifikáty zadány v [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).  
   
-## <a name="mapping-a-certificate-to-a-user-account"></a>Mapování certifikátu s uživatelskými účty  
- Funkce služby IIS a služby Active Directory je schopnost mapování certifikátu uživatelský účet Windows. Další informace o funkci najdete v tématu [mapování certifikátů uživatelským účtům](https://go.microsoft.com/fwlink/?LinkId=88917).  
+## <a name="mapping-a-certificate-to-a-user-account"></a>Mapování certifikátu na uživatelský účet  
+ Funkce služby IIS a Active Directory umožňuje mapovat certifikát na uživatelský účet systému Windows. Další informace o této funkci najdete v tématu [mapování certifikátů na uživatelské účty](https://go.microsoft.com/fwlink/?LinkId=88917).  
   
- Další informace o používání služby Active Directory mapování najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](https://go.microsoft.com/fwlink/?LinkId=88918).  
+ Další informace o použití mapování služby Active Directory najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](https://go.microsoft.com/fwlink/?LinkId=88918).  
   
- Díky této funkci povoleny, můžete nastavit <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> vlastnost <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídu `true`. V konfiguraci, můžete nastavit `mapClientCertificateToWindowsAccount` atribut [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element `true`, jak je znázorněno v následujícím kódu.  
+ Když je tato funkce povolená, můžete nastavit <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> vlastnost <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy na `true`. V části konfigurace můžete nastavit `mapClientCertificateToWindowsAccount` atribut [ \<> elementu ověřování](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) na `true`, jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <serviceBehaviors>  
@@ -164,11 +164,11 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 </serviceBehaviors>  
 ```  
   
- Mapování certifikátu X.509 na token, který představuje uživatelský účet Windows se považuje za zvýšení úrovně oprávnění proto, že jakmile mapován, Windows token je možné získat přístup k chráněným prostředkům. Proto se zásada domény vyžaduje certifikát X.509 dodržovat její zásady před mapování. *SChannel* balíček zabezpečení vynucuje tento požadavek.  
+ Mapování certifikátu X. 509 na token, který představuje uživatelský účet systému Windows, se považuje za zvýšení oprávnění, protože po namapování se token systému Windows dá použít k získání přístupu k chráněným prostředkům. Proto zásady domény před mapováním vyžadují, aby byl certifikát X. 509 dodržen zásadou. Balíček zabezpečení *Schannel* tento požadavek vynutil.  
   
- Při použití [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo později, WCF zajišťuje certifikát odpovídá zásada domény předtím, než je namapován na účet Windows.  
+ Při použití [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo novějším, WCF zajišťuje, aby certifikát splňoval zásady domény předtím, než se namapuje na účet systému Windows.  
   
- V první verzi WCF mapování se provádí bez konzultace zásada domény. Proto je možné, že starší aplikace, které používají k práci při spuštění v prvním vydání se nepovede, pokud je povoleno mapování a certifikát X.509 nesplňuje zásady domény.  
+ V první verzi služby WCF se mapování provádí bez konzultace s doménovou zásadou. Proto je možné, že starší aplikace, které se používají při práci v rámci první verze, selžou, pokud je mapování povolené a certifikát X. 509 nevyhovuje zásadám domény.  
   
 ## <a name="see-also"></a>Viz také:
 

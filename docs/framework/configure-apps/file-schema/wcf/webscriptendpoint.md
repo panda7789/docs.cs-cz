@@ -2,18 +2,18 @@
 title: <webScriptEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 85cb5ecf-351b-45f3-aa29-aa2e4b64bcdd
-ms.openlocfilehash: 9619c27c8c6d41250eeaeccabebe611e94b7d874
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc69029d9830fd12df5a4070f11847fadf4c60bb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769730"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940406"
 ---
 # <a name="webscriptendpoint"></a>\<webScriptEndpoint>
-Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) vazby, která automaticky přidá [ \<enableWebScript >](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) chování. Používejte tento koncový bod, když vytváříte službu, která je volána z aplikace technologie ASP.NET AJAX.  
+Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<vazbou WebHttpBinding >](webhttpbinding.md) [ \<](enablewebscript.md) , která automaticky přidá chování enableWebScript >. Tento koncový bod použijte při psaní služby, která se volá z aplikace ASP.NET AJAX.  
   
 \<system.ServiceModel>  
-\<standardEndpoints>  
+\<Oddílu StandardEndpoints >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBi
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
+|[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
 ## <a name="see-also"></a>Viz také:
 

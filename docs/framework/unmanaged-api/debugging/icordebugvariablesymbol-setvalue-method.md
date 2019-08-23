@@ -1,18 +1,18 @@
 ---
-title: ICorDebugVariableSymbol::SetValue – metoda
+title: 'ICorDebugVariableSymbol:: SetValue – metoda'
 ms.date: 03/30/2017
 ms.assetid: 4609418d-71fa-44bc-9618-4d529d25cabb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c5c1c77b92d94062206cf9eb38981f38ff2a1cad
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5436f56d3dcad7de3df2296485b0a36e5b3cfd79
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775451"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967969"
 ---
-# <a name="icordebugvariablesymbolsetvalue-method"></a>ICorDebugVariableSymbol::SetValue – metoda
-Přiřadí hodnotu pole bajtů na proměnnou.  
+# <a name="icordebugvariablesymbolsetvalue-method"></a>ICorDebugVariableSymbol:: SetValue – metoda
+Přiřadí hodnotu bajtového pole proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,36 +29,36 @@ HRESULT SetValue(
   
 ## <a name="parameters"></a>Parametry  
  `offset`  
- [in] Počáteční posun v proměnné, ve kterém se má nastavit hodnotu. Tento parametr se používá při zápisu do pole člena v objektu.  
+ pro Počáteční posun v proměnné, při které má být nastavena hodnota. Tento parametr se používá při zápisu do polí členů v objektu.  
   
  `threadID`  
- [in] Identifikátor vlákna, jehož kontext musí být aktualizovány tak, aby odrážely novou hodnotu.  
+ pro Identifikátor vlákna vlákna, jehož kontext musí být aktualizován, aby odrážel novou hodnotu.  
   
  `cbContext`  
- [in] Velikost v bajtech kontext vlákna.  
+ pro Velikost v bajtech kontextu vlákna.  
   
  `context`  
- [in] Kontext vlákna používá pro zápis hodnoty.  
+ pro Kontext vlákna použitý k zápisu hodnoty.  
   
  `cbValue`  
- [in] Velikost v bajtech `pValue` vyrovnávací paměti.  
+ pro Velikost `pValue` vyrovnávací paměti v bajtech.  
   
  `pValue`  
- [in] Vyrovnávací paměť, která obsahuje hodnotu pro nastavení.  
+ pro Vyrovnávací paměť obsahující hodnotu, kterou chcete nastavit.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

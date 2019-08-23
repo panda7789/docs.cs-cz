@@ -13,57 +13,57 @@ helpviewer_keywords:
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16e500a645df2b58fb2d2fd402120556922d1800
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3c03a6dadae98d75b06b96bb3cde67db4747b8c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628943"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950873"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Model asynchronního programování (APM)
-Asynchronní operace, která používá <xref:System.IAsyncResult> vzoru návrhu je implementovaný jako dvě metody s názvem `BeginOperationName` a `EndOperationName` , začínat a končit asynchronní operace *OperationName* v uvedeném pořadí. Například <xref:System.IO.FileStream> třída poskytuje <xref:System.IO.FileStream.BeginRead%2A> a <xref:System.IO.FileStream.EndRead%2A> metody pro asynchronní čtení bajtů ze souboru. Tyto metody implementovat asynchronní verze <xref:System.IO.FileStream.Read%2A> metody.  
+Asynchronní operace <xref:System.IAsyncResult> , která používá vzor návrhu, je implementována jako dvě metody `BeginOperationName` `EndOperationName` s názvem, které začínají a končí *operací* asynchronní operace. Například <xref:System.IO.FileStream> třída <xref:System.IO.FileStream.EndRead%2A> poskytuje metody a pro asynchronní čtení bajtů ze souboru. <xref:System.IO.FileStream.BeginRead%2A> Tyto metody implementují asynchronní verze <xref:System.IO.FileStream.Read%2A> metody.  
   
 > [!NOTE]
->  Od verze rozhraní .NET Framework 4, poskytuje Task Parallel Library nový model pro asynchronní a paralelní programování. Další informace najdete v tématu [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) a [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)).  
+> Počínaje .NET Framework 4 poskytuje úloha paralelní knihovna nový model pro asynchronní a paralelní programování. Další informace naleznete v tématu [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) a [asynchronní vzor založený na úlohách (klepněte)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)).  
   
- Po volání `BeginOperationName`, aplikace může pokračovat v provádění pokyny na volajícím vlákně, zatímco probíhá asynchronní operace v jiném vlákně. Pro každé volání `BeginOperationName`, také by aplikace měla zavolat `EndOperationName` získat výsledky operace.  
+ Po volání `BeginOperationName`může aplikace pokračovat ve zpracování instrukcí volajícího vlákna, zatímco asynchronní operace probíhá v jiném vlákně. Pro každé volání `BeginOperationName`aplikace by měla aplikace také volat `EndOperationName` , aby získala výsledky operace.  
   
-## <a name="beginning-an-asynchronous-operation"></a>Od asynchronní operace  
- `BeginOperationName` Metoda zahájí asynchronní operaci *OperationName* a vrátí objekt, který implementuje <xref:System.IAsyncResult> rozhraní. <xref:System.IAsyncResult> objekty ukládání informací o asynchronní operaci. V následující tabulce jsou uvedeny informace o asynchronní operaci.  
+## <a name="beginning-an-asynchronous-operation"></a>Zahájení asynchronní operace  
+ Metoda spustí *operaci* asynchronní operace a vrátí <xref:System.IAsyncResult> objekt, který implementuje rozhraní. `BeginOperationName` <xref:System.IAsyncResult>objekty ukládají informace o asynchronní operaci. Následující tabulka obsahuje informace o asynchronní operaci.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.IAsyncResult.AsyncState%2A>|Volitelný objekt specifické pro aplikaci, která obsahuje informace o asynchronní operaci.|  
-|<xref:System.IAsyncResult.AsyncWaitHandle%2A>|A <xref:System.Threading.WaitHandle> , který lze použít k blokování provádění aplikací až po dokončení asynchronní operace.|  
-|<xref:System.IAsyncResult.CompletedSynchronously%2A>|Hodnota, která určuje, zda asynchronní operace se dokončila ve vlákně použít k volání `BeginOperationName` místo dokončení na samostatném <xref:System.Threading.ThreadPool> vlákna.|  
-|<xref:System.IAsyncResult.IsCompleted%2A>|Hodnota, která určuje, zda asynchronní operace byla dokončena.|  
+|<xref:System.IAsyncResult.AsyncState%2A>|Volitelný objekt specifický pro aplikaci, který obsahuje informace o asynchronní operaci.|  
+|<xref:System.IAsyncResult.AsyncWaitHandle%2A>|Objekt <xref:System.Threading.WaitHandle> , který lze použít k blokování provádění aplikace až do dokončení asynchronní operace.|  
+|<xref:System.IAsyncResult.CompletedSynchronously%2A>|Hodnota, která označuje, zda byla asynchronní operace dokončena ve vlákně použitém `BeginOperationName` pro volání namísto dokončení v samostatném <xref:System.Threading.ThreadPool> vlákně.|  
+|<xref:System.IAsyncResult.IsCompleted%2A>|Hodnota, která označuje, zda byla asynchronní operace dokončena.|  
   
- A `BeginOperationName` metoda přijímá všechny parametry deklarovanými jako v podpisu synchronní verzi metody, které jsou předány podle hodnoty nebo odkazu. Žádné výstupní parametry nejsou součástí `BeginOperationName` podpis metody. `BeginOperationName` Podpis metody zahrnuje také dvě další parametry. První z těchto definuje <xref:System.AsyncCallback> delegáta, který odkazuje na metodu, která je volána po dokončení asynchronní operace. Můžete určit volající `null` (`Nothing` v jazyce Visual Basic) Pokud nechce metodou vyvolán po dokončení operace. Druhý parametr další je uživatelsky definovaného objektu. Tento objekt slouží k předání informací o stavu specifické pro aplikaci metodou vyvolán po dokončení asynchronní operace. Pokud `BeginOperationName` metoda přijímá další parametry specifické pro operace, například bajtové pole pro uložení načtených ze souboru, bajtů <xref:System.AsyncCallback> a objekt stavu aplikace jsou posledními parametry v `BeginOperationName` podpis metody.  
+ `BeginOperationName` Metoda přebírá všechny parametry deklarované v signatuře synchronní verze metody, která je předána hodnotou nebo odkazem. Parametry out nejsou součástí `BeginOperationName` signatury metody. Signatura `BeginOperationName` metody také obsahuje dva další parametry. První z těchto definuje <xref:System.AsyncCallback> delegát, který odkazuje na metodu, která je volána po dokončení asynchronní operace. Volající může určit `null` (`Nothing` v Visual Basic), pokud nechce, aby metoda vyvolala po dokončení operace. Druhým dalším parametrem je objekt definovaný uživatelem. Tento objekt lze použít k předání informací o stavu specifického pro aplikaci do metody vyvolané při dokončení asynchronní operace. Pokud metoda přijímá další parametry specifické pro operaci, jako je například bajtové pole pro uložení bajtů čtených ze souboru <xref:System.AsyncCallback> , objekt stavu aplikace a jsou poslední parametry v `BeginOperationName` signatuře metody. `BeginOperationName`  
   
- `BeginOperationName` vrátí ovládací prvek do volajícího vlákna okamžitě. Pokud `BeginOperationName` metoda vyvolá výjimek, výjimky jsou vyvolány před spuštěním asynchronní operace. Pokud `BeginOperationName` metoda vyvolá výjimky, není vyvolána metoda zpětného volání.  
+ `BeginOperationName`vrátí řízení volajícímu vláknu okamžitě. `BeginOperationName` Pokud metoda vyvolá výjimky, výjimky jsou vyvolány před zahájením asynchronní operace. `BeginOperationName` Pokud metoda vyvolá výjimky, metoda zpětného volání není vyvolána.  
   
 ## <a name="ending-an-asynchronous-operation"></a>Ukončení asynchronní operace  
- `EndOperationName` Metoda ukončí asynchronní operaci *OperationName*. Návratová hodnota `EndOperationName` metoda má stejný typ vrácený jejího synchronního protějšku a je specifické pro asynchronní operace. Například <xref:System.IO.FileStream.EndRead%2A> metoda vrátí počet bajtů přečtených z <xref:System.IO.FileStream> a <xref:System.Net.Dns.EndGetHostByName%2A> vrátí metoda <xref:System.Net.IPHostEntry> objekt, který obsahuje informace o hostitelském počítači. `EndOperationName` Metoda přijímá libovolné navýšení kapacity nebo parametry předávané odkazem deklarované v podpisu verzi pro synchronní metody. Kromě parametrů z synchronní metody `EndOperationName` metoda zahrnuje také <xref:System.IAsyncResult> parametru. Volající musejí předat instanci vrácenou odpovídající volání `BeginOperationName`.  
+ Metoda ukončí operaci asynchronní operace. `EndOperationName` Návratová hodnota `EndOperationName` metody je stejný typ vrácený jeho synchronním protějškem a je specifický pro asynchronní operaci. Například <xref:System.IO.FileStream.EndRead%2A> metoda vrátí počet bajtů načtených <xref:System.IO.FileStream> z <xref:System.Net.IPHostEntry> a a <xref:System.Net.Dns.EndGetHostByName%2A> metoda vrátí objekt, který obsahuje informace o hostitelském počítači. `EndOperationName` Metoda přebírá jakékoli nebo ref parametry deklarované v signatuře synchronní verze metody. Kromě parametrů z synchronní metody `EndOperationName` <xref:System.IAsyncResult> obsahuje metoda také parametr. Volající musí předat instanci vrácenou odpovídajícím voláním metody `BeginOperationName`.  
   
- Pokud asynchronní operace reprezentována <xref:System.IAsyncResult> objektu nebyl dokončen, když `EndOperationName` je volána, `EndOperationName` blokuje volající vlákno, dokud se asynchronní operace nebude dokončena. Výjimky vyvolané asynchronní operace jsou vyvolány z `EndOperationName` metody. Efekt volání `EndOperationName` metoda víckrát se stejným <xref:System.IAsyncResult> není definován. Podobně, volání `EndOperationName` metodou <xref:System.IAsyncResult> nevrátil související Begin také není definována metoda.  
-  
-> [!NOTE]
->  Buď nedefinované scénářů pro implementátory zvažte vyvolání <xref:System.InvalidOperationException>.  
+ Pokud se asynchronní operace reprezentované <xref:System.IAsyncResult> objektem nedokončila při `EndOperationName` volání metody, blokuje volající vlákno, `EndOperationName` dokud nebude dokončena asynchronní operace. Výjimky vyvolané asynchronní operací jsou vyvolány z `EndOperationName` metody. Účinek volání `EndOperationName` metody víckrát se stejným <xref:System.IAsyncResult> způsobem není definován. Podobně není definováno volání `EndOperationName` metody s objektem <xref:System.IAsyncResult> , který nebyl vrácen související metodou Begin.  
   
 > [!NOTE]
->  Implementátoři tohoto vzoru návrhu by měl oznámit volajícímu, dokončení asynchronní operace tak, že nastavíte <xref:System.IAsyncResult.IsCompleted%2A> na hodnotu true, volá metodu asynchronní zpětné volání (Pokud je zadaný) a signalizace <xref:System.IAsyncResult.AsyncWaitHandle%2A>.  
+> Pro některý z nedefinovaných scénářů by měly implementátori zvážit vyvolání <xref:System.InvalidOperationException>.  
   
- Vývojáři aplikací k dispozici několik možností návrhu pro přístup k výsledky asynchronní operace. Správný výběr závisí na tom, jestli má aplikace pokyny, které můžete provést při dokončení operace. Pokud aplikace nemůže provádět žádné další práce, dokud přijímá výsledky asynchronní operaci, musí aplikace blokovat, dokud výsledky jsou k dispozici. Blokovat, dokud se asynchronní operace skončí, můžete použít jednu z následujících postupů:  
+> [!NOTE]
+> Implementátori tohoto návrhového vzoru by měl oznámit volajícímu, že asynchronní operace byla dokončena <xref:System.IAsyncResult.IsCompleted%2A> , nastavením na hodnotu true, volání asynchronní metody zpětného volání (Pokud byla zadána) a <xref:System.IAsyncResult.AsyncWaitHandle%2A>signalizace.  
   
-- Volání `EndOperationName` z hlavního vlákna aplikace, je blokování provádění aplikací, dokud nebude operace dokončena. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
+ Vývojáři aplikací mají několik možností návrhu pro přístup k výsledkům asynchronní operace. Správná volba závisí na tom, zda má aplikace pokyny, které mohou být provedeny při dokončení operace. Pokud aplikace nemůže provést žádnou další práci, dokud neobdrží výsledky asynchronní operace, aplikace musí blokovat, dokud nebudou k dispozici výsledky. Chcete-li zablokovat až po dokončení asynchronní operace, můžete použít jeden z následujících přístupů:  
   
-- Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> k provádění aplikace bloku, dokud nebudou dokončeny jednu nebo více operací. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování aplikace spuštění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
+- Zavolejte `EndOperationName` z hlavního vlákna aplikace a zablokujte spuštění aplikace až do dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
   
- Aplikace, které není potřeba blokovat, zatímco se dokončují asynchronní operace můžete použít jednu z následujících postupů:  
+- Použijte k <xref:System.IAsyncResult.AsyncWaitHandle%2A> blokování provádění aplikace, dokud nebude dokončena jedna nebo více operací. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování spuštění aplikace pomocí AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
   
-- Dotazování na provozní stav dokončení kontrolou <xref:System.IAsyncResult.IsCompleted%2A> vlastnost pravidelně a volání `EndOperationName` po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
+ Aplikace, které nepotřebují blokovat během dokončení asynchronní operace, mohou použít jeden z následujících přístupů:  
   
-- Použití <xref:System.AsyncCallback> delegáta určíte metodu má být volána po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
+- Cyklické dotazování na stav <xref:System.IAsyncResult.IsCompleted%2A> dokončení operace zaškrtnutím vlastnosti pravidelně a volání `EndOperationName` po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [cyklické dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
+  
+- <xref:System.AsyncCallback> Použijte delegáta k určení metody, která se má vyvolat po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="see-also"></a>Viz také:
 

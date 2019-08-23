@@ -9,24 +9,24 @@ helpviewer_keywords:
 - UI Automation, exposing content of tables
 - exposing content of tables using UI Automation
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
-ms.openlocfilehash: a9867a07207f825f3f4a781f1c05607fc6b071b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c82041058bfa90079c5d1d0f4de4ff40faae699
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61983447"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965188"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma ukazuje, jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je možné vystavit obsahu a vnitřní vlastnosti buněk v rámci ovládacího prvku tabulky.  
+ Toto téma ukazuje, [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] jak lze použít k vystavení obsahu a vnitřních vlastností každé buňky v rámci tabulkového ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak získat <xref:System.Windows.Automation.AutomationElement> , která představuje obsah buňky tabulky; jsou také získat vlastnosti buňky jako jsou indexy řádků a sloupců, rozpětí řádků a sloupců a řádků a sloupců informace záhlaví. V tomto příkladu je obslužnou rutinu události změnit fokus klávesnice procházení tabulkové ovládacího prvku, který implementuje simulace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Informace pro každou položku tabulky je vystaven na událost změny fokusu.  
+ Následující příklad kódu ukazuje <xref:System.Windows.Automation.AutomationElement> , jak získat obsah buňky tabulky; vlastnosti buňky, jako jsou řádky a sloupce, jako jsou například indexy řádků a sloupců, rozsah řádků a sloupců a informace o záhlaví řádků a sloupců jsou také získány. V tomto příkladu se používá obslužná rutina události změny fokusu pro simulaci přecházení mezi ovládacími [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]prvky tabulkového ovládacího prvku, který implementuje. Informace pro každou položku tabulky jsou zveřejněny na události změny fokusu.  
   
 > [!NOTE]
->  Protože změní fokus jsou globální události klasické pracovní plochy, se mají filtrovat události změnit fokus mimo tabulku. Najdete v článku [TrackFocus ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) související implementace.  
+> Vzhledem k tomu, že se změny fokusu nacházejí v globálních událostech plochy, je nutné filtrovat události změny fokusu mimo tabulku. Související implementaci najdete v [ukázce TrackFocus](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) .  
   
  [!code-csharp[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#starttarget)]
  [!code-vb[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#starttarget)]  

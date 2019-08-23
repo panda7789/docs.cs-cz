@@ -8,12 +8,12 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-ms.openlocfilehash: 535827db660ab1113a25a01b7a0553a1c4414c74
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 0cb63be6774fd82cd94a1bc59b8a1025efa47df5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037792"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966572"
 ---
 # <a name="how-to-inherit-from-the-control-class"></a>Postupy: Dědění ze třídy Control
 Chcete-li vytvořit zcela vlastní ovládací prvek pro použití ve formuláři Windows, měli byste dědit z <xref:System.Windows.Forms.Control> třídy. Dědění od <xref:System.Windows.Forms.Control> třídy vyžaduje, abyste provedli další plánování a implementaci, ale poskytuje také největší rozsah možností. Při dědění z <xref:System.Windows.Forms.Control>je děděna velmi základní funkce, která ovládací prvky usnadňují práci. Funkce, které jsou <xref:System.Windows.Forms.Control> součástí třídy, zpracovává vstup uživatele prostřednictvím klávesnice a myši, definuje meze a velikost ovládacího prvku, nabízí popisovač systému Windows a poskytuje řízení a zabezpečení zpráv. Nezahrnuje žádné vykreslování, což je v tomto případě skutečné vykreslování grafického rozhraní ovládacího prvku, ani nezahrnuje žádné konkrétní funkce interakce s uživatelem. Všechny tyto aspekty je nutné poskytnout prostřednictvím vlastního kódu.
@@ -46,5 +46,5 @@ Chcete-li vytvořit zcela vlastní ovládací prvek pro použití ve formuláři
 - [Postupy: Zdědit z třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
 - [Postupy: Zdědit z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
 - [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
-- [Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
+- [Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)

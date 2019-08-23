@@ -10,22 +10,22 @@ helpviewer_keywords:
 - BC36644
 - BC36647
 ms.assetid: 0e0050f2-2039-4311-b260-f0ebfde84189
-ms.openlocfilehash: 4167905ca6ddab66b2cbc6c8c40dc7c984e94b8b
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 81535e3272eaed587288c26c4a4b9649467abed8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913196"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963565"
 ---
 # <a name="data-types-of-the-type-parameters-cannot-be-inferred-from-these-arguments"></a>Z těchto argumentů nelze odvodit datové typy parametrů typu.
-Z těchto argumentů nelze odvodit datové typy parametrů typu. Zadání dat explicitně podaří k této chybě.  
+Z těchto argumentů nelze odvodit datové typy parametrů typu. Je možné, že se chybu podaří odstranit explicitním zadáním datových typů.  
   
- Tato chyba nastane, pokud řešení přetížení se nezdařilo. Vyskytuje se jako podřízené zprávu s oznámením, proč se odstranilo kandidát konkrétní přetížení. Chybová zpráva vysvětluje, že kompilátor nelze použít odvození typu najít datové typy parametrů typu.  
+ K této chybě dojde v případě, že se nepovedlo vyřešit přetížení. K tomu dochází jako podřízená zpráva, která uvádí, proč byl vyloučen konkrétní kandidát na přetížení. Chybová zpráva vysvětluje, že kompilátor nemůže použít odvození typu k nalezení datových typů pro parametry typu.  
   
 > [!NOTE]
->  Při zadání argumentů není možné zvolit (například pro operátory dotazu ve výrazech dotazů), zobrazí se chybová zpráva bez druhý věty.  
+> Pokud se zadáním argumentů nejedná o možnost (například pro operátory dotazu ve výrazech dotazu), zobrazí se chybová zpráva bez druhé věty.  
   
- Následující kód ukazuje chybu.  
+ Následující kód demonstruje chybu.  
   
 ```vb  
 Module Module1  
@@ -55,10 +55,10 @@ End Interface
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Lze zadat datový typ pro parametr typu nebo parametrů, aniž byste museli spoléhat na odvození typu proměnné.  
+- Možná budete moct zadat datový typ pro parametr typu nebo parametry a nemusíte se spoléhat na odvození typu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [Obecné procedury v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [Převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Obecné procedury v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
+- [Převody typu v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

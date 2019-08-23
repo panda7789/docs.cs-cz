@@ -5,30 +5,30 @@ helpviewer_keywords:
 - data binding [WPF], getting binding objects from bound target properties
 - properties [WPF], getting binding objects from
 ms.assetid: 87974c5f-136b-4de7-b07d-9285b62ab123
-ms.openlocfilehash: 7c7392bc11af57b2e9f27e2302f36efb59d40e9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7aacc2145ffe98ec7b58afb3b2e3dca151ef0ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933403"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965438"
 ---
 # <a name="how-to-get-the-binding-object-from-a-bound-target-property"></a>Postupy: Získání objektu vazby ze vlastnosti cíle vazby
-Tento příklad ukazuje, jak získat objekt binding z vlastnosti cílového vázané na data.  
+Tento příklad ukazuje, jak získat objekt vazby z vlastnosti target vázaného na data.  
   
 ## <a name="example"></a>Příklad  
- Můžete dělat tyto věci zobrazíte <xref:System.Windows.Data.Binding> objektu:  
+ K získání <xref:System.Windows.Data.Binding> objektu můžete provést následující akce:  
   
  [!code-csharp[BindValidation#GetBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml.cs#getbinding)]  
   
 > [!NOTE]
->  Je nutné zadat vlastnost závislosti pro vazbu, kterou chcete, protože je možné, že více než jednu vlastnost cílového objektu je použití datových vazeb.  
+> Je nutné zadat vlastnost závislosti požadované vazby, protože je možné, že více než jedna vlastnost cílového objektu používá datovou vazbu.  
   
- Alternativně můžete získat <xref:System.Windows.Data.BindingExpression> a potom získat hodnotu <xref:System.Windows.Data.BindingExpression.ParentBinding%2A> vlastnost.  
+ Alternativně můžete získat <xref:System.Windows.Data.BindingExpression> a získat hodnotu <xref:System.Windows.Data.BindingExpression.ParentBinding%2A> vlastnosti.  
   
- Kompletní příklad naleznete v tématu [vazby Ukázka ověřování](https://go.microsoft.com/fwlink/?LinkID=159972).  
+ Kompletní příklad naleznete v tématu [Ukázka ověřování vazby](https://go.microsoft.com/fwlink/?LinkID=159972).  
   
 > [!NOTE]
->  Pokud je vaše vazby <xref:System.Windows.Data.MultiBinding>, použijte <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A>. Pokud se jedná <xref:System.Windows.Data.PriorityBinding>, použijte <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A>. Pokud si nejste jisti, zda je vlastnost target svázán pomocí <xref:System.Windows.Data.Binding>, <xref:System.Windows.Data.MultiBinding>, nebo <xref:System.Windows.Data.PriorityBinding>, můžete použít <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetBindingBase%2A>.  
+> Pokud je <xref:System.Windows.Data.MultiBinding>vaše vazba, použijte <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A>. Pokud je <xref:System.Windows.Data.PriorityBinding>, použijte <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A>. Pokud si nejste jistí, jestli je cílová vlastnost svázaná pomocí <xref:System.Windows.Data.Binding>, a <xref:System.Windows.Data.MultiBinding>, nebo <xref:System.Windows.Data.PriorityBinding>, můžete použít <xref:System.Windows.Data.BindingOperations>.<xref:System.Windows.Data.BindingOperations.GetBindingBase%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

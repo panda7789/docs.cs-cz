@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 6bd597cd2719fb96b8633f724da46a76e416b454
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 019035247b1316eb236b025d4527c42bb6ef526c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817891"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962825"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]samostatné aplikace se spouštějí s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit částečnou důvěryhodnost <xref:System.AppDomain> pomocí modelu doplňku .NET Framework. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -65,7 +65,7 @@ ms.locfileid: "68817891"
 |Kód aplikace|Prostředky XAML, které mají zkompilovaný kód na pozadí.<br /><br /> -nebo-<br /><br /> Soubory XAML, které jsou přidány do projektu s typem sestavení **Page**.|`pack://application:,,,/MyResourceFile``.xaml`|  
   
 > [!NOTE]
->  Další informace o souborech a sadě [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)]dat aplikací naleznete v tématu [prostředky aplikace WPF, obsah a datové soubory](./app-development/wpf-application-resource-content-and-data-files.md).  
+> Další informace o souborech a sadě [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)]dat aplikací naleznete v tématu [prostředky aplikace WPF, obsah a datové soubory](./app-development/wpf-application-resource-content-and-data-files.md).  
   
  Na soubory těchto typů obsahu se dá přejít buď uživatelem, nebo programově:  
   
@@ -118,7 +118,7 @@ ms.locfileid: "68817891"
      ![Snímek obrazovky, který zobrazuje dialogové okno nastavení zabezpečení.](./media/security-wpf/windows-presentation-foundation-security-settings.png)  
   
 > [!NOTE]
->  K dialogovému oknu Možnosti Internetu se můžete dostat taky z Internet Exploreru. Klikněte na **nástroje** a pak na **Možnosti Internetu**.  
+> K dialogovému oknu Možnosti Internetu se můžete dostat taky z Internet Exploreru. Klikněte na **nástroje** a pak na **Možnosti Internetu**.  
   
  Od aplikace Windows Internet Explorer 7 jsou zahrnuta následující nastavení zabezpečení konkrétně pro .NET Framework:  
   
@@ -151,7 +151,7 @@ ms.locfileid: "68817891"
  Ovládací prvek <xref:System.Windows.Controls.WebBrowser> WPF lze použít k hostování webového obsahu. Ovládací prvek <xref:System.Windows.Controls.WebBrowser> WPF zabalí základní ovládací prvek ActiveX WebBrowser. WPF poskytuje určitou podporu pro zabezpečení vaší aplikace při použití ovládacího prvku WPF <xref:System.Windows.Controls.WebBrowser> k hostování nedůvěryhodného webového obsahu. Některé funkce zabezpečení však musí použít přímo aplikace pomocí <xref:System.Windows.Controls.WebBrowser> ovládacího prvku. Další informace o ovládacím prvku ActiveX WebBrowser najdete v tématu [přehledy a kurzy ovládacích prvků WebBrowser](https://go.microsoft.com/fwlink/?LinkId=179388).  
   
 > [!NOTE]
->  Tato část platí také pro <xref:System.Windows.Controls.Frame> ovládací prvek, protože <xref:System.Windows.Controls.WebBrowser> používá pro přechod k obsahu HTML.  
+> Tato část platí také pro <xref:System.Windows.Controls.Frame> ovládací prvek, protože <xref:System.Windows.Controls.WebBrowser> používá pro přechod k obsahu HTML.  
   
  Pokud se ovládací <xref:System.Windows.Controls.WebBrowser> prvek WPF používá k hostování nedůvěryhodného webového obsahu, měla by vaše aplikace používat částečný vztah důvěryhodnosti <xref:System.AppDomain> , aby bylo možné s izolací kódu aplikace z potenciálně škodlivého kódu skriptu HTML. To platí zejména v případě, že vaše aplikace pracuje s hostovaným skriptem pomocí <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> metody <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A> a vlastnosti. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
   
@@ -184,7 +184,7 @@ ms.locfileid: "68817891"
  Ovládací prvky funkcí jsou aplikovány procesem vytvoření instance objektu ActiveX WebBrowser. Proto pokud vytváříte samostatnou aplikaci, která může přejít na nedůvěryhodný obsah, měli byste zvážit možnost povolit další ovládací prvky funkcí.  
   
 > [!NOTE]
->  Toto doporučení je založené na obecných doporučeních pro zabezpečení hostitelů MSHTML a SHDOCVW. Další informace najdete v tématu [Nejčastější dotazy k zabezpečení hostitele MSHTML: Část I z II](https://go.microsoft.com/fwlink/?LinkId=179396) a [Nejčastější dotazy týkající se zabezpečení hostitele MSHTML: Část II z II](https://go.microsoft.com/fwlink/?LinkId=179415)  
+> Toto doporučení je založené na obecných doporučeních pro zabezpečení hostitelů MSHTML a SHDOCVW. Další informace najdete v tématu [Nejčastější dotazy k zabezpečení hostitele MSHTML: Část I z II](https://go.microsoft.com/fwlink/?LinkId=179396) a [Nejčastější dotazy týkající se zabezpečení hostitele MSHTML: Část II z II](https://go.microsoft.com/fwlink/?LinkId=179415)  
   
  Pro váš spustitelný soubor zvažte povolení následujících ovládacích prvků funkce nastavením hodnoty registru na 1.  
   
@@ -212,7 +212,7 @@ ms.locfileid: "68817891"
  Aplikace XBAP spuštěné v aplikaci Internet Explorer také dostanou další úroveň zabezpečení ve srovnání se standardními samostatnými aplikacemi. Toto dodatečné zabezpečení je způsobeno tím, že aplikace Internet Explorer, a proto ovládací prvek ActiveX WebBrowser, běží v [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] chráněném režimu ve výchozím nastavení v systémech a. [!INCLUDE[win7](../../../includes/win7-md.md)] Další informace o chráněném režimu najdete v tématu [porozumění a práce v chráněném režimu Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=179393).  
   
 > [!NOTE]
->  Pokud se pokusíte spustit XBAP, který obsahuje ovládací prvek <xref:System.Windows.Controls.WebBrowser> WPF v prohlížeči Firefox, zatímco v zóně Internet <xref:System.Security.SecurityException> , bude vyvolána výjimka. Důvodem je zásada zabezpečení WPF.  
+> Pokud se pokusíte spustit XBAP, který obsahuje ovládací prvek <xref:System.Windows.Controls.WebBrowser> WPF v prohlížeči Firefox, zatímco v zóně Internet <xref:System.Security.SecurityException> , bude vyvolána výjimka. Důvodem je zásada zabezpečení WPF.  
   
 <a name="APTCA"></a>   
 ## <a name="disabling-aptca-assemblies-for-partially-trusted-client-applications"></a>Zakázání sestavení APTCA pro částečně důvěryhodné klientské aplikace  
@@ -241,7 +241,7 @@ ms.locfileid: "68817891"
  Pokud je nutné pro částečně důvěryhodné klientské aplikace zakázat sestavení, můžete napsat aktualizaci, která vytvoří klíč registru a hodnotu.  
   
 > [!NOTE]
->  Základní .NET Framework sestavení nejsou ovlivněna tímto způsobem, protože jsou vyžadovány ke spuštění spravovaných aplikací. Podpora pro zakázání sestavení APTCA je primárně zaměřená na aplikace třetích stran.  
+> Základní .NET Framework sestavení nejsou ovlivněna tímto způsobem, protože jsou vyžadovány ke spuštění spravovaných aplikací. Podpora pro zakázání sestavení APTCA je primárně zaměřená na aplikace třetích stran.  
   
 <a name="LooseContentSandboxing"></a>   
 ## <a name="sandbox-behavior-for-loose-xaml-files"></a>Chování izolovaného prostoru pro volné soubory XAML  
@@ -258,7 +258,7 @@ ms.locfileid: "68817891"
  Pomocí tohoto nastavení se externí obsah načte do procesu, který je oddělený od procesu, který hostuje aplikaci. Tento proces je omezený na výchozí sadu oprávnění internetové zóny a efektivně izoluje z hostující aplikace a klientského počítače.  
   
 > [!NOTE]
->  I když je navigace na [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] volné soubory z <xref:System.Windows.Navigation.NavigationWindow> nebo <xref:System.Windows.Controls.Frame> samostatné aplikace implementována na základě infrastruktury hostování v prohlížeči WPF, včetně procesu PresentationHost, je úroveň zabezpečení méně, než když je obsah načten přímo v aplikaci Internet Explorer na [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] a [!INCLUDE[win7](../../../includes/win7-md.md)] (který by byl stále PresentationHost). Je to proto, že samostatná aplikace WPF používající webový prohlížeč neposkytuje další funkci zabezpečení chráněného režimu v aplikaci Internet Explorer.  
+> I když je navigace na [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] volné soubory z <xref:System.Windows.Navigation.NavigationWindow> nebo <xref:System.Windows.Controls.Frame> samostatné aplikace implementována na základě infrastruktury hostování v prohlížeči WPF, včetně procesu PresentationHost, je úroveň zabezpečení méně, než když je obsah načten přímo v aplikaci Internet Explorer na [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] a [!INCLUDE[win7](../../../includes/win7-md.md)] (který by byl stále PresentationHost). Je to proto, že samostatná aplikace WPF používající webový prohlížeč neposkytuje další funkci zabezpečení chráněného režimu v aplikaci Internet Explorer.  
   
 <a name="BestPractices"></a>   
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>Prostředky pro vývoj aplikací WPF, které podporují zabezpečení  

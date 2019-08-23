@@ -2,20 +2,20 @@
 title: <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: 64801766-01b7-4c65-9ce6-70ad5af67689
-ms.openlocfilehash: ee7a0c23adca883af279addf9d1f221bd4056d00
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0316e983446644671ead2f8f843dc91b493b29c9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772408"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933172"
 ---
 # <a name="namespacetable"></a>\<namespaceTable>
 
-Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze použít ve filtrech XPath pro směrování.
+Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze následně použít ve filtrech XPath pro směrování.
 
-**\<system.serviceModel>**   
-&nbsp;&nbsp;**\<směrování >**   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<namespaceTable>**
+**\<system.serviceModel>**    
+&nbsp;&nbsp; **\<> směrování**   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<namespaceTable>**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,13 +42,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |     | Popis |
 | --- | ----------- |
-| [**\<Filtr >**](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md) | Definuje mapování předpony oboru názvů pro výrazy XPath. |
+| [ **\<Filtrovat >** ](filter.md) | Definuje mapování předpony oboru názvů používané pro výrazy XPath. |
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**\<směrování >**](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definujjí koncové body do odesílání zpráv do při shodě s filtrem. |
+| [ **\<> směrování**](routing.md) | Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> , který se má použít při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definují cílové koncové body. Odeslat zprávy, když odpovídá filtr. |
 
 ## <a name="see-also"></a>Viz také:
 

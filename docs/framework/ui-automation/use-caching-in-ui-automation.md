@@ -8,57 +8,57 @@ helpviewer_keywords:
 - caching, UI Automation
 - UI Automation, caching
 ms.assetid: ec722dff-6009-4279-b86a-e18d3fa94ebf
-ms.openlocfilehash: b63d94789d081ce7337b5f9c2abca3f7d9e99eeb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 38c7742f3e4691f29490e73b05616754415eac58
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775721"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953905"
 ---
 # <a name="use-caching-in-ui-automation"></a>Použití mezipaměti při automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Tato část ukazuje, jak implementovat ukládání do mezipaměti <xref:System.Windows.Automation.AutomationElement> vzory vlastností a ovládacího prvku.  
+ V této části se dozvíte, jak <xref:System.Windows.Automation.AutomationElement> implementovat ukládání vlastností a vzorů ovládacích prvků do mezipaměti.  
   
-### <a name="activate-a-cache-request"></a>Aktivovat žádost o mezipaměti  
+### <a name="activate-a-cache-request"></a>Aktivace žádosti o mezipaměť  
   
 1. Vytvoření <xref:System.Windows.Automation.CacheRequest>.  
   
-2. Zadejte vlastnosti a vzorce do mezipaměti pomocí <xref:System.Windows.Automation.CacheRequest.Add%2A>.  
+2. Zadejte vlastnosti a vzory pro ukládání do mezipaměti <xref:System.Windows.Automation.CacheRequest.Add%2A>pomocí.  
   
-3. Zadejte rozsah ukládání do mezipaměti tak, že nastavíte <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> vlastnost.  
+3. Určete rozsah ukládání do mezipaměti <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> nastavením vlastnosti.  
   
-4. Určete zobrazení podstrom nastavením <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A> vlastnost.  
+4. Určete zobrazení podstromu <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A> nastavením vlastnosti.  
   
-5. Nastavte <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> vlastnost <xref:System.Windows.Automation.AutomationElementMode.None> Pokud chcete zvýšit efektivitu nenačítání úplný odkaz na objekty. (To znamená, že není možné načíst aktuální hodnoty z těchto objektů.)  
+5. Nastavte vlastnost na <xref:System.Windows.Automation.AutomationElementMode.None> hodnotu, pokud chcete zvýšit efektivitu tím, že nenačtete úplný odkaz na objekty. <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> (Díky tomu nebude možné načíst aktuální hodnoty z těchto objektů.)  
   
-6. Aktivovat žádost pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> v rámci `using` blok (`Using` v aplikaci Microsoft Visual Basic .NET).  
+6. Aktivujte žádost pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> `using` bloku (`Using` v Microsoft Visual Basic .NET).  
   
- Po získání <xref:System.Windows.Automation.AutomationElement> objekty nebo přihlášení k odběru událostí, deaktivovat žádost pomocí <xref:System.Windows.Automation.CacheRequest.Pop%2A> (Pokud <xref:System.Windows.Automation.CacheRequest.Push%2A> byla použita) nebo uvolnění objektu vytvořeného <xref:System.Windows.Automation.CacheRequest.Activate%2A>. (Použití <xref:System.Windows.Automation.CacheRequest.Activate%2A> v `using` blok (`Using` v aplikaci Microsoft Visual Basic .NET).  
+ Po získání <xref:System.Windows.Automation.AutomationElement> objektů nebo přihlášení k odběru událostí dezaktivujte požadavek pomocí <xref:System.Windows.Automation.CacheRequest.Pop%2A> (Pokud <xref:System.Windows.Automation.CacheRequest.Push%2A> bylo použito) nebo likvidací objektu vytvořeného pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A>. (Použijte <xref:System.Windows.Automation.CacheRequest.Activate%2A> `using` v bloku (`Using` v Microsoft Visual Basic .NET).  
   
-### <a name="cache-automationelement-properties"></a>Třída AutomationElement vlastnosti mezipaměti  
+### <a name="cache-automationelement-properties"></a>Vlastnosti třída AutomationElement neobsahuje mezipaměti  
   
-1. Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
+1. <xref:System.Windows.Automation.AutomationElement.FindAll%2A> <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> <xref:System.Windows.Automation.AutomationElement> Když je aktivní, získá <xref:System.Windows.Automation.AutomationElement> objekty pomocí nebo; nebo získá jako zdroj události, kterou jste zaregistrovali v okamžiku, kdy <xref:System.Windows.Automation.CacheRequest> byla aktivní. <xref:System.Windows.Automation.CacheRequest> (Mezipaměť můžete vytvořit také předáním <xref:System.Windows.Automation.CacheRequest> do GetUpdatedCache nebo jedné <xref:System.Windows.Automation.TreeWalker> z metod.)  
   
-2. Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A> nebo načtení vlastnosti z <xref:System.Windows.Automation.AutomationElement.Cached%2A> vlastnost <xref:System.Windows.Automation.AutomationElement>.  
+2. Použijte <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A> nebo načtěte vlastnost <xref:System.Windows.Automation.AutomationElement.Cached%2A> z vlastnosti <xref:System.Windows.Automation.AutomationElement>.  
   
-### <a name="obtain-cached-patterns-and-their-properties"></a>Získat vzory v mezipaměti a jejich vlastnosti  
+### <a name="obtain-cached-patterns-and-their-properties"></a>Získání vzorů v mezipaměti a jejich vlastností  
   
-1. Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
+1. <xref:System.Windows.Automation.AutomationElement.FindAll%2A> <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> <xref:System.Windows.Automation.AutomationElement> Když je aktivní, získá <xref:System.Windows.Automation.AutomationElement> objekty pomocí nebo; nebo získá jako zdroj události, kterou jste zaregistrovali v okamžiku, kdy <xref:System.Windows.Automation.CacheRequest> byla aktivní. <xref:System.Windows.Automation.CacheRequest> (Mezipaměť můžete vytvořit také předáním <xref:System.Windows.Automation.CacheRequest> do GetUpdatedCache nebo jedné <xref:System.Windows.Automation.TreeWalker> z metod.)  
   
-2. Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> načíst vzor uložený v mezipaměti.  
+2. Použijte <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo<xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> k načtení vzoru uloženého v mezipaměti.  
   
-3. Načíst hodnoty vlastností z `Cached` vlastnost vzor ovládacích prvků.  
+3. Načte hodnoty vlastností z `Cached` vlastnosti vzoru ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje různé aspekty ukládání do mezipaměti, pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> aktivovat <xref:System.Windows.Automation.CacheRequest>.  
+ Následující příklad kódu ukazuje různé aspekty ukládání do mezipaměti pomocí nástroje <xref:System.Windows.Automation.CacheRequest.Activate%2A> pro <xref:System.Windows.Automation.CacheRequest>aktivaci.  
   
  [!code-csharp[UIAClient_snip#107](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#107)]
  [!code-vb[UIAClient_snip#107](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#107)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje různé aspekty ukládání do mezipaměti, pomocí <xref:System.Windows.Automation.CacheRequest.Push%2A> aktivovat <xref:System.Windows.Automation.CacheRequest>. S výjimkou toho, když budete chtít vnořit požadavků mezipaměti, je vhodnější použít <xref:System.Windows.Automation.CacheRequest.Activate%2A>.  
+ Následující příklad kódu ukazuje různé aspekty ukládání do mezipaměti pomocí nástroje <xref:System.Windows.Automation.CacheRequest.Push%2A> pro <xref:System.Windows.Automation.CacheRequest>aktivaci. S výjimkou případů, kdy chcete vnořit požadavky do mezipaměti, je vhodnější použít <xref:System.Windows.Automation.CacheRequest.Activate%2A>.  
   
  [!code-csharp[UIAClient_snip#108](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
  [!code-vb[UIAClient_snip#108](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  

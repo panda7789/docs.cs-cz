@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 405d06a8da8ec5c428c1565bcd08236de0f1fa88
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 11019d564e7e658b745aec4254ad9a0c582b8416
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672049"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964931"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma poskytuje přehled technologie Microsoft ClearType, kterou najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]tématu.  
@@ -55,7 +55,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
 ## <a name="hardware-acceleration"></a>Hardwarová akcelerace  
  Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v systému může využít hardwarovou akceleraci pro lepší výkon a snížení zatížení procesoru a systémových požadavků na paměť. Pomocí funkce pixel shadery a grafické paměti na kartě grafiky poskytuje technologie ClearType rychlejší vykreslování textu, zejména při použití animace.  
   
- Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji neupravuje nastavení technologie ClearType v rámci systému. Zakázání technologie [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v sadě antialiasing do režimu stupňů šedi. Kromě toho technologie ClearType v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neupravuje nastavení [PowerToy tuneru ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
+ Technologie ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v nástroji neupravuje nastavení technologie ClearType v rámci systému. Zakázání technologie ClearType v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému Windows nastaví antialiasing do režimu stupňů šedi. Kromě toho technologie ClearType v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] neupravuje nastavení [PowerToy tuneru ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
   
  Jedním z [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhodnutí o návrhu architektury je mít řešení nezávislé na rozlišení lépe podporovat monitory DPI s vyšším rozlišením, které se stávají širším řešením. To má [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] za následek nepodporu vykreslování textu s aliasy nebo rastrových obrázků v některých východoasijských písmech, protože obě rozlišení jsou závislé.  
   

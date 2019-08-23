@@ -8,62 +8,62 @@ helpviewer_keywords:
 - MaxClockSkew property
 - WCF, custom bindings
 ms.assetid: 491d1705-eb29-43c2-a44c-c0cf996f74eb
-ms.openlocfilehash: 1a8d99e5d2bd21a74318718f43b5d1c091ed073e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bcd128e6e9f53f662dd3fc99336b5b45faebf5f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047539"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943120"
 ---
 # <a name="how-to-set-a-max-clock-skew"></a>Postupy: Nastvení hodnoty vlastnosti MaxClockSkew
-Kritického pro čas funkce můžete kolejnic, pokud se nastavení hodin na dva počítače liší. Pro zmírnění této možnosti můžete nastavit `MaxClockSkew` vlastnost <xref:System.TimeSpan>. Tato vlastnost je k dispozici na dvou tříd:  
+V případě, že se nastavení hodin ve dvou počítačích liší, je možné časově kritické funkce dekolejnice. Pro zmírnění této možnosti můžete nastavit `MaxClockSkew` vlastnost <xref:System.TimeSpan>na. Tato vlastnost je k dispozici na dvou třídách:  
   
  <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>  
   
  <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
   
 > [!IMPORTANT]
->  Důležité pro zabezpečené konverzace, změní `MaxClockSkew` vlastnost musí vzít v úvahu si připravili službu nebo klienta. Chcete-li to provést, musíte nastavit vlastnost na <xref:System.ServiceModel.Channels.SecurityBindingElement> vrácených <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement%2A>.  
+> V případě zabezpečené konverzace je třeba provést změny `MaxClockSkew` vlastnosti při zavedení služby nebo klienta. K tomu je nutné nastavit vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> vrácenou <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement%2A?displayProperty=nameWithType> vlastností.  
   
- Chcete-li změnit vlastnosti na jednom z vazeb poskytovaných systémem, musíte najít element vazby zabezpečení v kolekci vazby a nastavit `MaxClockSkew` vlastnost na novou hodnotu. Dvě třídy odvozovat <xref:System.ServiceModel.Channels.SecurityBindingElement>: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Při načítání vazby zabezpečení z kolekce, musíte přetypovat na jeden z těchto typů aby bylo možné správně nastavená `MaxClockSkew` vlastnost. Následující příklad používá <xref:System.ServiceModel.WSHttpBinding>, který používá <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>. Seznam, který určuje, který typ zabezpečení vazby pro použití v jednotlivých vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
+ Chcete-li změnit vlastnost u jedné z vazeb poskytovaných systémem, je nutné najít prvek vazby zabezpečení v kolekci vazeb a nastavit `MaxClockSkew` vlastnost na novou hodnotu. Dvě třídy jsou odvozeny <xref:System.ServiceModel.Channels.SecurityBindingElement>z <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> : <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>a. Při načítání vazby zabezpečení z kolekce je třeba přetypovat na jeden z těchto typů, aby bylo možné správně nastavit `MaxClockSkew` vlastnost. Následující příklad používá <xref:System.ServiceModel.WSHttpBinding>, který <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>používá. Seznam, který určuje typ vazby zabezpečení, který se má použít v každé vazbě poskytované systémem, najdete v tématu [vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md).  
   
-### <a name="to-create-a-custom-binding-with-a-new-clock-skew-value-in-code"></a>K vytvoření vlastní vazby s novou hodinami zkosení hodnotu v kódu  
+## <a name="to-create-a-custom-binding-with-a-new-clock-skew-value-in-code"></a>Vytvoření vlastní vazby s novou hodnotou asymetrie hodin v kódu  
   
-1. > [!WARNING]
-    >  Všimněte si přidat odkazy na následující obory názvů v kódu: <xref:System.ServiceModel.Channels>, <xref:System.ServiceModel.Description>, <xref:System.Security.Permissions>, a <xref:System.ServiceModel.Security.Tokens>.  
+> [!WARNING]
+> Do kódu přidejte odkazy na následující obory názvů: <xref:System.ServiceModel.Channels>, <xref:System.ServiceModel.Description>, <xref:System.Security.Permissions>a <xref:System.ServiceModel.Security.Tokens>.  
   
-     Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte jeho režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message>.  
+1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte její režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message?displayProperty=nameWithType>.  
   
-2. Vytvořit novou instanci třídy <xref:System.ServiceModel.Channels.BindingElementCollection> třídy voláním <xref:System.ServiceModel.WSHttpBinding.CreateBindingElements%2A> metody.  
+2. Vytvořte novou instanci <xref:System.ServiceModel.Channels.BindingElementCollection> třídy <xref:System.ServiceModel.WSHttpBinding.CreateBindingElements%2A> voláním metody.  
   
-3. Použití <xref:System.ServiceModel.Channels.BindingElementCollection.Find%2A> metodu <xref:System.ServiceModel.Channels.BindingElementCollection> třídy najít element vazby zabezpečení.  
+3. K nalezení elementu vazby zabezpečení <xref:System.ServiceModel.Channels.BindingElementCollection> použijte metodutřídy.<xref:System.ServiceModel.Channels.BindingElementCollection.Find%2A>  
   
-4. Při použití <xref:System.ServiceModel.Channels.BindingElementCollection.Find%2A> metoda přetypovat na skutečný typ. V příkladu níže přetypování <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> typu.  
+4. Při použití <xref:System.ServiceModel.Channels.BindingElementCollection.Find%2A> metody přetypovat na skutečný typ. Níže uvedený příklad přetypování na <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> typ.  
   
-5. Nastavte <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxClockSkew%2A> vlastnosti prvku vazby zabezpečení.  
+5. <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxClockSkew%2A> Nastavte vlastnost na elementu vazby zabezpečení.  
   
-6. Vytvoření <xref:System.ServiceModel.ServiceHost> typ a základní adresou příslušnou službu.  
+6. <xref:System.ServiceModel.ServiceHost> Vytvořte s příslušným typem služby a základní adresou.  
   
-7. Použití <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> způsob přidání koncového bodu a zahrnout <xref:System.ServiceModel.Channels.CustomBinding>.  
+7. Použijte metodu pro přidání koncového bodu a <xref:System.ServiceModel.Channels.CustomBinding>zahrnutí. <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A>  
   
      [!code-csharp[c_MaxClockSkew#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_maxclockskew/cs/source.cs#1)]
      [!code-vb[c_MaxClockSkew#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_maxclockskew/vb/source.vb#1)]  
   
-### <a name="to-set-the-maxclockskew-in-configuration"></a>Chcete-li nastavit maxclockskew – v konfiguraci  
+## <a name="to-set-the-maxclockskew-in-configuration"></a>Nastavení MaxClockSkew v konfiguraci  
   
-1. Vytvoření [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) v [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) sekce prvku.  
+1. Vytvořte > CustomBinding v části > elementu [ Bindings.\<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
   
-2. Vytvoření [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu a nastavte `name` atribut na odpovídající hodnotu. Následující příklad nastaví na `MaxClockSkewBinding`.  
+2. Vytvořte vazbu [ >elementuanastavteatributnaodpovídajícíhodnotu.\<](../../../../docs/framework/misc/binding.md) `name` Následující příklad nastaví na `MaxClockSkewBinding`.  
   
-3. Přidáte element kódování. Následující příklad přidá [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
+3. Přidejte element Encoding. Následující příklad přidá [ \<> textMessageEncoding](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
   
-4. Přidat [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) elementu a nastavte `authenticationMode` atribut se vhodným nastavením. V následujícím příkladu nastavte atribut na `Kerberos` určující, zda služba ověřování Windows.  
+4. Přidejte element [Security > a nastavte atribut na příslušné nastavení. \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) `authenticationMode` Následující příklad nastaví atribut tak `Kerberos` , aby určoval, že služba používá ověřování systému Windows.  
   
-5. Přidat [ \<localServiceSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md) a nastavit `maxClockSkew` atribut na hodnotu ve formě `"##:##:##"`. Následující příklad nastaví ji na 7 minut. Volitelně můžete přidat [ \<localServiceSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md) a nastavit `maxClockSkew` atribut se vhodným nastavením.  
+5. Přidejte > `maxClockSkew` `"##:##:##"`localServiceSettings a nastavte atribut na hodnotu ve formě. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md) V následujícím příkladu se nastaví na 7 minut. Volitelně přidejte [ \<> localServiceSettings](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md) a nastavte `maxClockSkew` atribut na příslušné nastavení.  
   
-6. Přidáte element přenosu. Následující příklad používá [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
+6. Přidejte transportní element. Následující příklad používá [ \<> HttpTransport](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
   
-7. Pro zabezpečené konverzace, nastavení zabezpečení se musí vyskytovat na spuštění v [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) elementu.  
+7. Pro zabezpečenou konverzaci musí být nastavení zabezpečení provedeno při spuštění v [ \<elementu secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) .  
   
     ```xml  
     <bindings>  
@@ -89,4 +89,4 @@ Kritického pro čas funkce můžete kolejnic, pokud se nastavení hodin na dva 
 - <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

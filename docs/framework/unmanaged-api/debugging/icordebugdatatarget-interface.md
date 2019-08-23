@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9a87ae4381ec5bc0d8c416ef4ee4c13b04a862f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c6a8ee1bcc65e640ef871e57acdeef21acd7896
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606901"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930821"
 ---
 # <a name="icordebugdatatarget-interface"></a>ICorDebugDataTarget – rozhraní
 Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétnímu cílovému procesu.  
@@ -30,34 +30,34 @@ Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétn
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetPlatform – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md)|Poskytuje informace o platformě, včetně architektury procesoru a operačního systému, na kterém je spuštěný Cílový proces.|  
-|[ReadVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-readvirtual-method.md)|Získá blok souvislé paměti začínající na zadané adrese a vrátí jej v poskytnutá vyrovnávací paměť.|  
-|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getthreadcontext-method.md)|Požádá o kontext aktuálního vlákna pro zadaný podproces.|  
+|[GetPlatform – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md)|Obsahuje informace o platformě, včetně architektury procesoru a operačního systému, na kterých je spuštěn cílový proces.|  
+|[ReadVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-readvirtual-method.md)|Načte blok souvislé paměti začínající na zadané adrese a vrátí ji do zadané vyrovnávací paměti.|  
+|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getthreadcontext-method.md)|Vyžádá aktuální kontext vlákna pro zadané vlákno.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugDataTarget` a její metody mají následující vlastnosti:  
+ `ICorDebugDataTarget`a jeho metody mají následující vlastnosti:  
   
-- Ladění služby volají metody na tomto rozhraní pro přístup k paměti a další data v cílovém procesu.  
+- Metody volání služby ladění v tomto rozhraní pro přístup k paměti a dalším datům v cílovém procesu.  
   
-- Klient ladicího programu musí implementovat toto rozhraní podle potřeby pro konkrétní cíl (například živý proces nebo výpis stavu paměti).  
+- Klient ladicího programu musí implementovat toto rozhraní v závislosti na konkrétním cíli (například při živém procesu nebo výpisu paměti).  
   
-- `ICorDebugDataTarget` Metody lze volat pouze z v rámci metody implementované v ostatních `ICorDebug*` rozhraní. Tím se zajistí, že klient ladicího programu má řídit, přes které vlákno je vyvolána na a kdy.  
+- Metody lze vyvolat pouze v rámci metod implementovaných v jiných `ICorDebug*` rozhraních. `ICorDebugDataTarget` Tím je zajištěno, že klient ladicího programu má kontrolu nad tím, ve kterém vlákně je vyvoláno, a kdy.  
   
-- `ICorDebugDataTarget` Implementace musí vracet vždycky aktuální informace o cíli.  
+- `ICorDebugDataTarget` Implementace musí vždycky vracet aktuální informace o cíli.  
   
- Cílový proces by měl být zastaven a nebyl změněn. žádným způsobem při `ICorDebug*` rozhraní (a tedy `ICorDebugDataTarget` metody) jsou volány. Pokud je cílem živý proces a jeho změn stavu [iclrdebugging::openvirtualprocess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) musí být znovu volána k poskytnutí instance ICorDebugProcess nahrazení.  
+ Při `ICorDebug*` volání rozhraní (a tudíž `ICorDebugDataTarget` metod) by se měl cílový proces zastavit a nijak beze změny. Pokud je cílem živý proces a jeho změny stavu, metoda [ICLRDebugging:: OpenVirtualProcess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) musí být znovu volána, aby poskytovala náhradní instanci ICorDebugProcess.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

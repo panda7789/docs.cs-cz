@@ -9,153 +9,153 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: 4ee973eb5a81a6428ee5a5fcfc00e28425ff2a44
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 2609a54ce8ba2076c35567fe5bc1d9961f6fef3f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457512"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942063"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
-Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
+Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup. Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje. To může zvýšit výkon a škálovatelnost. Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.
 
- Rozhraní .NET Framework poskytuje třídy, které vám umožní používat ukládání do mezipaměti v aplikacích .NET Framework. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
+ .NET Framework poskytuje třídy, které umožňují používat ukládání do mezipaměti v aplikacích .NET Framework. Tyto třídy jsou umístěny v <xref:System.Runtime.Caching> oboru názvů.
 
 > [!NOTE]
->  <xref:System.Runtime.Caching> Obor názvů je nového v rozhraní .NET Framework 4. Tento obor názvů umožňuje ukládání do mezipaměti je k dispozici pro všechny aplikace rozhraní .NET Framework. V předchozích verzích rozhraní .NET Framework, ukládání do mezipaměti byla k dispozici pouze ve <xref:System.Web> obor názvů a proto požadovaná závislost na třídách technologie ASP.NET.
+> <xref:System.Runtime.Caching> Obor názvů je v .NET Framework 4 nový. Tento obor názvů zpřístupňuje ukládání do mezipaměti pro všechny .NET Framework aplikace. V předchozích verzích .NET Framework bylo ukládání do mezipaměti k dispozici pouze v <xref:System.Web> oboru názvů, a proto je vyžadována závislost na třídách ASP.NET.
 
- Tento návod ukazuje, jak používat ukládání do mezipaměti, která je k dispozici v rozhraní .NET Framework jako součást funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. V tomto návodu můžete ukládat do mezipaměti obsah textového souboru.
+ V tomto návodu se dozvíte, jak používat funkce ukládání do mezipaměti, které jsou k dispozici v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] .NET Framework jako součást aplikace. V tomto návodu ukládáte obsah textového souboru do mezipaměti.
 
  Tento návod obsahuje následující úlohy:
 
 - Vytvoření projektu aplikace WPF.
 
-- Přidává se odkaz na rozhraní .NET Framework 4.
+- Přidání odkazu na .NET Framework 4.
 
 - Inicializuje se mezipaměť.
 
-- Přidává se položka v mezipaměti, který obsahuje obsah textového souboru.
+- Přidání položky mezipaměti, která obsahuje obsah textového souboru.
 
-- Poskytování zásadu vyřazení pro položku mezipaměti.
+- Poskytnutí zásad vyřazení pro položku mezipaměti.
 
-- Monitorování cestu k souboru v mezipaměti a upozornit na instanci mezipaměti se změní na maximální počet monitorovaných položek.
+- Monitorování cesty k souboru uloženého v mezipaměti a oznamování instance mezipaměti o změnách monitorované položky.
 
 ## <a name="prerequisites"></a>Požadavky
- K dokončení tohoto návodu budete potřebovat:
+ Aby bylo možné dokončit tento návod, budete potřebovat:
 
 - Microsoft Visual Studio 2010.
 
-- Textový soubor, který obsahuje malé množství textu. (Obsah textového souboru se zobrazí v okně se zprávou.) Kód popsaných v tomto návodu se předpokládá, že pracujete s následující soubor:
+- Textový soubor, který obsahuje malé množství textu. (Obsah textového souboru se zobrazí v okně se zprávou.) Kód, který je znázorněn v návodu, předpokládá, že pracujete s následujícím souborem:
 
      `c:\cache\cacheText.txt`
 
-     Můžete však použít libovolný textový soubor a dělat malé změny kódu v tomto názorném postupu.
+     V tomto návodu ale můžete použít libovolný textový soubor a udělat drobné změny kódu.
 
 ## <a name="creating-a-wpf-application-project"></a>Vytvoření projektu aplikace WPF
- Začněte vytvořením projektu aplikace WPF.
+ Začnete vytvořením projektu aplikace WPF.
 
 #### <a name="to-create-a-wpf-application"></a>Vytvoření aplikace WPF
 
 1. Spusťte Visual Studio.
 
-2. V **souboru** nabídky, klikněte na tlačítko **nový**a potom klikněte na tlačítko **nový projekt**.
+2. V nabídce **soubor** klikněte na příkaz **Nový**a potom klikněte na **Nový projekt**.
 
      **Nový projekt** se zobrazí dialogové okno.
 
-3. V části **nainstalované šablony**, vyberte programovací jazyk, který chcete použít (**jazyka Visual Basic** nebo **Visual C#** ).
+3. V části **Nainstalované šablony**vyberte programovací jazyk, který chcete použít (**Visual Basic** nebo **vizuál C#** ).
 
-4. V **nový projekt** dialogu **aplikace WPF**.
+4. V dialogovém okně **Nový projekt** vyberte **aplikace WPF**.
 
     > [!NOTE]
-    >  Pokud se nezobrazí **aplikace WPF** šablonu, ujistěte se, zda cílíte na verzi rozhraní .NET Framework, která podporuje WPF. V **nový projekt** dialogové okno, vyberte možnost rozhraní .NET Framework 4 ze seznamu.
+    > Pokud nevidíte šablonu **aplikace WPF** , ujistěte se, že cílíte na verzi .NET Framework, která podporuje WPF. V dialogovém okně **Nový projekt** vyberte ze seznamu položku .NET Framework 4.
 
-5. V **název** textové pole, zadejte název pro váš projekt. Například můžete zadat **WPFCaching**.
+5. Do textového pole **název** zadejte název projektu. Můžete například zadat **WPFCaching**.
 
-6. Vyberte **vytvořit adresář pro řešení** zaškrtávací políčko.
+6. Zaškrtněte políčko **vytvořit adresář pro řešení** .
 
 7. Klikněte na **OK**.
 
-     Otevře se Návrhář WPF v **návrhu** zobrazení a zobrazí soubor MainWindow.xaml. Visual Studio vytvoří **Můj projekt** složka, soubor Application.xaml a souboru MainWindow.xaml.
+     Návrhář WPF se otevře v **návrhovém** zobrazení a zobrazí soubor MainWindow. XAML. Visual Studio vytvoří složku **moje projekt** , soubor Application. XAML a soubor MainWindow. XAML.
 
-## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Cílení na rozhraní .NET Framework a přidání odkazu na ukládání do mezipaměti sestavení
- Ve výchozím nastavení, cílové aplikace WPF [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Použít <xref:System.Runtime.Caching> oboru názvů v aplikaci WPF, aplikace musí cílit na rozhraní .NET Framework 4 (ne [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí obsahovat odkaz na obor názvů.
+## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Cílení na .NET Framework a přidání odkazu na sestavení pro ukládání do mezipaměti
+ Ve výchozím nastavení aplikace WPF cílí na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Chcete-li <xref:System.Runtime.Caching> použít obor názvů v aplikaci WPF, musí aplikace cílit na .NET Framework 4 (ne na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí zahrnovat odkaz na obor názvů.
 
- Proto, dalším krokem je změnit cílové rozhraní .NET Framework a přidejte odkaz na <xref:System.Runtime.Caching> oboru názvů.
+ Proto je dalším krokem Změna cíle .NET Framework a přidání odkazu na <xref:System.Runtime.Caching> obor názvů.
 
 > [!NOTE]
->  Postup pro změnu cílové rozhraní .NET Framework se liší v projektu jazyka Visual Basic a v projektu jazyka Visual C#.
+> Postup změny cíle .NET Framework se liší v projektu Visual Basic a ve vizuálním C# projektu.
 
-#### <a name="to-change-the-target-net-framework-in-visual-basic"></a>Chcete-li změnit cílové rozhraní .NET Framework v jazyce Visual Basic
+#### <a name="to-change-the-target-net-framework-in-visual-basic"></a>Změna cílového .NET Framework v Visual Basic
 
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **vlastnosti**.
+1. V **Průzkumníku řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **vlastnosti**.
 
-     Zobrazí se okno Vlastnosti pro aplikaci.
+     Zobrazí se okno Vlastnosti aplikace.
 
-2. Klikněte na tlačítko **kompilaci** kartu.
+2. Klikněte na kartu **kompilovat** .
 
-3. V dolní části okna klikněte na tlačítko **Upřesnit možnosti kompilace...** .
+3. V dolní části okna klikněte na možnost **Pokročilé možnosti kompilace...** .
 
-     **Pokročilé nastavení kompilátoru** se zobrazí dialogové okno.
+     Zobrazí se dialogové okno **Upřesnit nastavení kompilátoru** .
 
-4. V **cílového rozhraní (všechny konfigurace)** vyberte rozhraní .NET Framework 4. (Nesmí být zvolen [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
+4. V seznamu **cílové rozhraní (všechny konfigurace)** vyberte .NET Framework 4. (Nevybírejte [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
 
 5. Klikněte na **OK**.
 
      **Změnit cílový rámec** se zobrazí dialogové okno.
 
-6. V **změnit cílový rámec** dialogové okno, klikněte na tlačítko **Ano**.
+6. V dialogovém okně **změnit cílovou architekturu** klikněte na tlačítko **Ano**.
 
-     Projekt je uzavřen a pak znovu otevřelo.
+     Projekt je uzavřený a pak se znovu otevřel.
 
-7. Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:
+7. Pomocí následujících kroků přidejte odkaz na sestavení pro ukládání do mezipaměti:
 
-    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **přidat odkaz**.
+    1. V **Průzkumník řešení**klikněte pravým tlačítkem na název projektu a pak klikněte na **Přidat odkaz**.
 
-    2. Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
+    2. Vyberte kartu **.NET** , vyberte `System.Runtime.Caching`a pak klikněte na **OK**.
 
-#### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a>Chcete-li změnit cílové rozhraní .NET Framework v projektu jazyka Visual C#
+#### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a>Změna cílového .NET Framework ve vizuálním C# projektu
 
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu a pak klikněte na tlačítko **vlastnosti**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **vlastnosti**.
 
-     Zobrazí se okno Vlastnosti pro aplikaci.
+     Zobrazí se okno Vlastnosti aplikace.
 
-2. Klikněte na tlačítko **aplikace** kartu.
+2. Klikněte na kartu **aplikace** .
 
-3. V **Cílová architektura** vyberte rozhraní .NET Framework 4. (Nesmí být zvolen **rozhraní .NET Framework 4 Client Profile**.)
+3. V seznamu **cílové rozhraní** vyberte .NET Framework 4. (Nevybírejte **.NET Framework 4 profil klienta**.)
 
-4. Přidáte odkaz na sestavení ukládání do mezipaměti pomocí následujících kroků:
+4. Pomocí následujících kroků přidejte odkaz na sestavení pro ukládání do mezipaměti:
 
-    1. Klikněte pravým tlačítkem myši **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.
+    1. Klikněte pravým tlačítkem na složku **odkazy** a pak klikněte na **Přidat odkaz**.
 
-    2. Vyberte **.NET** kartu, vyberte možnost `System.Runtime.Caching`a potom klikněte na tlačítko **OK**.
+    2. Vyberte kartu **.NET** , vyberte `System.Runtime.Caching`a pak klikněte na **OK**.
 
 ## <a name="adding-a-button-to-the-wpf-window"></a>Přidání tlačítka do okna WPF
- V dalším kroku přidáte ovládací prvek button a vytvořit obslužnou rutinu události pro tlačítka `Click` událostí. Kód, který později přidáte tak, aby po kliknutí na tlačítko, jsou uložené v mezipaměti a zobrazí obsah textového souboru.
+ Dále přidáte ovládací prvek tlačítko a vytvoříte obslužnou rutinu události pro `Click` událost tlačítka. Později přidáte kód, takže když kliknete na tlačítko, obsah textového souboru se uloží do mezipaměti a zobrazí se.
 
-#### <a name="to-add-a-button-control"></a>Chcete-li přidat ovládací prvek button
+#### <a name="to-add-a-button-control"></a>Přidání ovládacího prvku tlačítko
 
-1. V **Průzkumníka řešení**, poklikejte na soubor MainWindow.xaml a otevřete ho.
+1. V **Průzkumník řešení**dvakrát klikněte na soubor MainWindow. XAML a otevřete ho.
 
-2. Z **nástrojů**v části **běžných ovládacích prvků WPF**, přetáhněte `Button` ovládací prvek `MainWindow` okna.
+2. Z **panelu nástrojů**v části **běžné ovládací prvky WPF**přetáhněte `Button` ovládací prvek do `MainWindow` okna.
 
-3. V **vlastnosti** okno, nastaveno `Content` vlastnost `Button` mít pod kontrolou **získat mezipaměti**.
+3. V okně **vlastnosti** nastavte `Content` vlastnost `Button` ovládacího prvku na **získat mezipaměť**.
 
-## <a name="initializing-the-cache-and-caching-an-entry"></a>Inicializace mezipaměti a ukládání do mezipaměti položku
- V dalším kroku přidáte kód k provádění následujících úloh:
+## <a name="initializing-the-cache-and-caching-an-entry"></a>Inicializuje se mezipaměť a zapíše do mezipaměti záznam.
+ V dalším kroku přidáte kód, který provede následující úlohy:
 
-- Vytvoření instance třídy mezipaměti – to znamená, že jste se vytvořit novou instanci <xref:System.Runtime.Caching.MemoryCache> objektu.
+- Vytvořte instanci třídy cache – to znamená, že vytvoříte instanci nového <xref:System.Runtime.Caching.MemoryCache> objektu.
 
-- Určete, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objektů pro sledování změn v textovém souboru.
+- Určuje, že mezipaměť používá <xref:System.Runtime.Caching.HostFileChangeMonitor> objekt k monitorování změn v textovém souboru.
 
-- Čtení textového souboru a jeho obsah v mezipaměti jako položka v mezipaměti.
+- Přečtěte si textový soubor a zapíšete jeho obsah do mezipaměti jako položku mezipaměti.
 
-- Zobrazte obsah v mezipaměti textového souboru.
+- Zobrazí obsah textového souboru v mezipaměti.
 
-#### <a name="to-create-the-cache-object"></a>Chcete-li vytvořit objekt mezipaměti
+#### <a name="to-create-the-cache-object"></a>Vytvoření objektu mezipaměti
 
-1. Dvakrát klikněte na tlačítko, které jste právě přidali, chcete-li vytvořit obslužnou rutinu události v souboru MainWindow.xaml.cs nebo soubor MainWindow.Xaml.vb.
+1. Dvakrát klikněte na tlačítko, které jste právě přidali, aby se vytvořila obslužná rutina události v souboru MainWindow.xaml.cs nebo MainWindow. XAML. vb.
 
-2. V horní části souboru (před deklaraci třídy), přidejte následující `Imports` (Visual Basic) nebo `using` příkazy (C#):
+2. V horní části souboru (před deklarací třídy) přidejte následující `Imports` příkazy (Visual Basic) nebo `using` (C#):
 
     ```csharp
     using System.Runtime.Caching;
@@ -167,7 +167,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     Imports System.IO
     ```
 
-3. V obslužné rutině události přidejte následující kód k vytvoření instance objektu mezipaměti:
+3. V obslužné rutině události přidejte následující kód pro vytvoření instance objektu Cache:
 
     ```csharp
     ObjectCache cache = MemoryCache.Default;
@@ -177,9 +177,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     Dim cache As ObjectCache = MemoryCache.Default
     ```
 
-     <xref:System.Runtime.Caching.ObjectCache> Třída je integrované třídu, která poskytuje mezipaměti objektů v paměti do mezipaměti.
+     <xref:System.Runtime.Caching.ObjectCache> Třída je vestavěná třída, která poskytuje mezipaměť objektů v paměti.
 
-4. Přidejte následující kód k načtení obsahu položky mezipaměti s názvem `filecontents`:
+4. Přidejte následující kód pro čtení obsahu položky mezipaměti s názvem `filecontents`:
 
     ```vb
     Dim fileContents As String = TryCast(cache("filecontents"), String)
@@ -189,7 +189,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     string fileContents = cache["filecontents"] as string;
     ```
 
-5. Přidejte následující kód, který zkontrolujte, zda položka mezipaměti s názvem `filecontents` existuje:
+5. Přidejte následující kód, který zkontroluje, zda existuje položka mezipaměti `filecontents` s názvem:
 
     ```vb
     If fileContents Is Nothing Then
@@ -204,9 +204,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     }
     ```
 
-     Určená položka mezipaměti neexistuje, musíte přečíst textový soubor a přidejte jej jako položka v mezipaměti do mezipaměti.
+     Pokud zadaná položka mezipaměti neexistuje, musíte si přečíst textový soubor a přidat ho jako položku mezipaměti do mezipaměti.
 
-6. V `if/then` blokovat, přidejte následující kód k vytvoření nového <xref:System.Runtime.Caching.CacheItemPolicy> objekt, který určuje, že položka mezipaměti vyprší po 10 sekundách.
+6. V bloku přidejte následující kód pro vytvoření nového <xref:System.Runtime.Caching.CacheItemPolicy> objektu, který určuje, že platnost položky mezipaměti vyprší po 10 sekundách. `if/then`
 
     ```vb
     Dim policy As New CacheItemPolicy()
@@ -218,9 +218,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     policy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(10.0);
     ```
 
-     Pokud je k dispozici žádné informace o vyřazení nebo vypršení platnosti, výchozí hodnota je <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, což znamená, že položky mezipaměti nikdy nevyprší závislosti pouze na absolutním čase. Místo toho platnost položky mezipaměti pouze v případě nedostatku paměti. Jako osvědčený postup byste měli vždy explicitně poskytnout buď absolutní, nebo klouzavé vypršení platnosti.
+     Pokud nejsou k dispozici žádné informace o vyřazení nebo vypršení <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>platnosti, výchozí hodnota je, což znamená, že položky mezipaměti nikdy neprošly platností na základě pouze absolutního času. Místo toho vyprší platnost položek mezipaměti pouze v případě, že dojde k tlaku na paměť. V souladu s osvědčeným postupem byste vždy měli explicitně zadat absolutní nebo klouzavé vypršení platnosti.
 
-7. Uvnitř `if/then` blokovat a následující kód, kterou jste přidali v předchozím kroku, přidejte následující kód k vytvoření kolekce pro cesty k souborům, které chcete monitorovat a přidejte cestu k souboru text do kolekce:
+7. `if/then` Uvnitř bloku a za kódem, který jste přidali v předchozím kroku, přidejte následující kód, který vytvoří kolekci pro cesty k souborům, které chcete monitorovat, a přidejte cestu k textovému souboru do kolekce:
 
     ```vb
     Dim filePaths As New List(Of String)()
@@ -233,9 +233,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     ```
 
     > [!NOTE]
-    >  Pokud není textový soubor, který chcete použít `c:\cache\cacheText.txt`, zadejte cestu k umístění textového souboru, kterou chcete použít.
+    > Pokud textový soubor, který chcete použít `c:\cache\cacheText.txt`, není, zadejte cestu, kde je textový soubor, který chcete použít.
 
-8. Následující kód, který jste přidali v předchozím kroku, přidejte následující kód přidejte nový <xref:System.Runtime.Caching.HostFileChangeMonitor> do kolekce změnu monitoruje položky mezipaměti:
+8. Po kódu, který jste přidali v předchozím kroku, přidejte následující kód pro přidání nového <xref:System.Runtime.Caching.HostFileChangeMonitor> objektu do kolekce monitorování změn pro položku mezipaměti:
 
     ```vb
     policy.ChangeMonitors.Add(New HostFileChangeMonitor(filePaths))
@@ -245,9 +245,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     policy.ChangeMonitors.Add(new HostFileChangeMonitor(filePaths));
     ```
 
-     <xref:System.Runtime.Caching.HostFileChangeMonitor> Objekt cesta k souboru text sleduje a upozorní mezipaměti, pokud dojde ke změnám. V tomto příkladu položky uložené v mezipaměti vyprší, pokud se změní obsah souboru.
+     <xref:System.Runtime.Caching.HostFileChangeMonitor> Objekt sleduje cestu k textovému souboru a upozorní mezipaměť, pokud dojde k provedeným změnám. V tomto příkladu vyprší platnost položky mezipaměti, pokud dojde ke změně obsahu souboru.
 
-9. Následující kód, který jste přidali v předchozím kroku přidejte následující kód k načtení obsahu textového souboru:
+9. Po kódu, který jste přidali v předchozím kroku, přidejte následující kód, který přečte obsah textového souboru:
 
     ```vb
     fileContents = File.ReadAllText("c:\cache\cacheText.txt") & vbCrLf & DateTime.Now.ToString()
@@ -257,9 +257,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     fileContents = File.ReadAllText("c:\\cache\\cacheText.txt") + "\n" + DateTime.Now;
     ```
 
-     Časové razítko data a času je přidán, takže budete moci zobrazit, když vyprší platnost položky mezipaměti.
+     Časové razítko pro datum a čas je přidané, takže budete moct zobrazit, kdy vyprší platnost položky mezipaměti.
 
-10. Následující kód, který jste přidali v předchozím kroku, přidejte následující kód k vložení obsahu souboru do objektu mezipaměti jako <xref:System.Runtime.Caching.CacheItem> instance:
+10. Po kódu, který jste přidali v předchozím kroku, přidejte následující kód pro vložení obsahu souboru do objektu mezipaměti jako <xref:System.Runtime.Caching.CacheItem> instanci:
 
     ```vb
     cache.Set("filecontents", fileContents, policy)
@@ -269,9 +269,9 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     cache.Set("filecontents", fileContents, policy);
     ```
 
-     Zadejte informace o tom, jak položka mezipaměti by měla být vyřazena předáním <xref:System.Runtime.Caching.CacheItemPolicy> objekt, který jste vytvořili dříve jako parametr.
+     Informace o tom, jak by měla být položka mezipaměti vyřazena, zadáte <xref:System.Runtime.Caching.CacheItemPolicy> předáním objektu, který jste vytvořili dříve jako parametr.
 
-11. Po `if/then` blokovat, přidejte následující kód k zobrazení obsahu v mezipaměti souborů v okně se zprávou:
+11. `if/then` Po bloku přidejte následující kód pro zobrazení obsahu souboru uloženého v mezipaměti v okně se zprávou:
 
     ```vb
     MessageBox.Show(fileContents)
@@ -281,46 +281,46 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     MessageBox.Show(fileContents);
     ```
 
-12. V **sestavení** nabídky, klikněte na tlačítko **sestavení WPFCaching** k sestavení projektu.
+12. V nabídce **sestavení** klikněte na **sestavit WPFCaching** a sestavte projekt.
 
 ## <a name="testing-caching-in-the-wpf-application"></a>Testování ukládání do mezipaměti v aplikaci WPF
- Teď můžete aplikaci otestovat.
+ Nyní můžete aplikaci otestovat.
 
-#### <a name="to-test-caching-in-the-wpf-application"></a>K testování ukládání do mezipaměti v aplikaci WPF
+#### <a name="to-test-caching-in-the-wpf-application"></a>Testování ukládání do mezipaměti v aplikaci WPF
 
-1. Stisknutím kláves CTRL + F5 spusťte aplikaci.
+1. Stisknutím kombinace kláves CTRL + F5 spusťte aplikaci.
 
-     `MainWindow` Se zobrazí okno.
+     Zobrazí `MainWindow` se okno.
 
-2. Klikněte na tlačítko **získat mezipaměti**.
+2. Klikněte na **získat mezipaměť**.
 
-     Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou. Všimněte si, že časové razítko souboru.
+     Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou. Všimněte si časového razítka v souboru.
 
-3. Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.
+3. Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .
 
-     Časové razítko je beze změny. To znamená, že je zobrazen obsah uložený v mezipaměti.
+     Časové razítko je beze změny. To znamená, že se zobrazí obsah uložený v mezipaměti.
 
-4. Počkejte 10 sekund nebo informace a pak klikněte na tlačítko **získat mezipaměti** znovu.
+4. Počkejte 10 sekund nebo více a pak znovu klikněte na **načíst mezipaměť** .
 
-     Tentokrát se zobrazí nové časové razítko. To znamená, že umožňují zásady vypršení platnosti položky mezipaměti a zobrazí se nový obsah uložený v mezipaměti.
+     Tentokrát se zobrazí nové časové razítko. To znamená, že zásada umožňuje vypršení platnosti položky mezipaměti a zobrazí se nový obsah uložený v mezipaměti.
 
-5. V textovém editoru otevřete textový soubor, který jste vytvořili. Ještě neprovádějte žádné změny.
+5. V textovém editoru otevřete textový soubor, který jste vytvořili. Zatím žádné změny neprovádějte.
 
-6. Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.
+6. Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .
 
-     Všimněte si, že časové razítko znovu.
+     Všimněte si časového razítka znovu.
 
-7. Proveďte změnu do textového souboru a pak soubor uložte.
+7. Proveďte změnu v textovém souboru a pak soubor uložte.
 
-8. Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.
+8. Zavřete okno se zprávou a pak znovu klikněte na **načíst mezipaměť** .
 
-     Toto okno se zprávou obsahuje aktualizovaný obsah z textového souboru a nové časové razítko. To znamená, že sledování změn souboru hostitele vyřazení položka mezipaměti okamžitě při změně souboru i v případě, kdyby absolutní časový limit vypršel.
+     Toto okno se zprávou obsahuje aktualizovaný obsah z textového souboru a nové časové razítko. To znamená, že sledování změn v hostitelském souboru vyřadí položku mezipaměti hned po změně souboru, a to i v případě, že nevypršela absolutní doba časového limitu.
 
     > [!NOTE]
-    >  Vám může prodloužit dobu vyřazení na 20 sekund nebo více a více času, abyste provedli změnu v souboru.
+    > Dobu vyřazení můžete zvýšit na 20 sekund nebo více, aby bylo možné provést změnu v souboru více času.
 
 ## <a name="code-example"></a>Příklad kódu
- Po dokončení tohoto návodu, kód, který jste vytvořili projekt bude vypadat podobně jako v následujícím příkladu.
+ Po dokončení tohoto návodu se kód projektu, který jste vytvořili, podobá následujícímu příkladu.
 
  [!code-csharp[CachingWPFApplications#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]

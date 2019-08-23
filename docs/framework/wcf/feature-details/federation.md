@@ -8,96 +8,96 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-ms.openlocfilehash: 295e4bd5eca58bc190b31fd96e79f97678e381a4
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 2331e484f22be7e3154a4cff981ee320a9b143a5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948156"
 ---
 # <a name="federation"></a>Federace
-Toto téma nabízí stručný přehled konceptů zabezpečení. Popisuje také podporu Windows Communication Foundation (WCF) pro nasazení architektury zabezpečení. Ukázková aplikace, které ukazuje, federace, naleznete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+Toto téma poskytuje stručný přehled konceptu federovaného zabezpečení. Popisuje také podporu Windows Communication Foundation (WCF) pro nasazení federovaných architektur zabezpečení. Ukázkovou aplikaci, která demonstruje federaci, najdete v tématu [federace – ukázka](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
-## <a name="definition-of-federated-security"></a>Definice zabezpečení  
- Zabezpečení umožňuje čisté oddělení mezi službu, kterou klient přistupuje a přidružené procedury ověřování a autorizace. Zabezpečení také umožňuje spolupráci mezi více systémy, sítě a organizací ve sférách různých důvěryhodnosti.  
+## <a name="definition-of-federated-security"></a>Definice federovaného zabezpečení  
+ Federované zabezpečení umožňuje čisté oddělení mezi službou, ke které klient přistupuje, a přidruženými postupy ověřování a autorizace. Federované zabezpečení také umožňuje spolupráci napříč různými systémy, sítěmi a organizacemi v různých sférách vztahů důvěryhodnosti.  
   
- WCF poskytuje podporu pro sestavování a nasazování distribuovaných systémů, které využívají zabezpečení.  
+ WCF poskytuje podporu pro sestavování a nasazování distribuovaných systémů, které využívají federované zabezpečení.  
   
-### <a name="elements-of-a-federated-security-architecture"></a>Prvky architektury zabezpečení  
- Architektura zabezpečení má tři klíčové prvky, jak je popsáno v následující tabulce.  
+### <a name="elements-of-a-federated-security-architecture"></a>Prvky federované architektury zabezpečení  
+ Architektura federovaného zabezpečení má tři klíčové prvky, jak je popsáno v následující tabulce.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|Domain/realm|Jedna jednotka správy zabezpečení nebo vztah důvěryhodnosti. Typické domény může obsahovat jednu organizaci.|  
-|Federace|Sada domény, které mají vztah důvěryhodnosti. Úroveň důvěryhodnosti mohou lišit, ale obvykle zahrnuje ověřování a téměř vždy obsahuje autorizaci. Typické federace může obsahovat několik organizací, které mají vztah důvěryhodnosti pro sdílený přístup k sadu prostředků.|  
-|Služba tokenů zabezpečení (STS)|Webová služba, která vydává tokeny zabezpečení; To znamená je založen na důkaz, že důvěřuje na všechny uživatele, kteří důvěřuje kontrolní výrazy. Tento balíček je základem zprostředkování vztahu důvěryhodnosti mezi doménami.|  
+|Doména nebo sféra|Jediná jednotka správy zabezpečení nebo vztahu důvěryhodnosti. Typická doména může zahrnovat jednu organizaci.|  
+|Federace|Kolekce domén, které mají zavedený vztah důvěryhodnosti. Úroveň důvěryhodnosti mohou lišit, ale obvykle zahrnuje ověřování a téměř vždy obsahuje autorizaci. Typické federace může obsahovat několik organizací, které mají vztah důvěryhodnosti pro sdílený přístup k sadu prostředků.|  
+|Služba tokenů zabezpečení (STS)|Webová služba, která vydává tokeny zabezpečení. To znamená, že provádí kontrolní výrazy na základě legitimace, kterou důvěřuje, aby ji whomever důvěřuje. Tato forma je základem vztahu důvěryhodnosti mezi doménami.|  
   
-### <a name="example-scenario"></a>Příklad scénáře  
- Následující obrázek znázorňuje příklad zabezpečení:  
+### <a name="example-scenario"></a>Ukázkový scénář  
+ Následující ilustrace znázorňuje příklad federovaného zabezpečení:  
   
- ![Diagram znázorňující scénář typické federovaného zabezpečení.](./media/federation/typical-federated-security-scenario.gif)  
+ ![Diagram znázorňující Typický scénář federovaného zabezpečení](./media/federation/typical-federated-security-scenario.gif)  
   
- Tento scénář obsahuje dvě organizace: A a B B. organizace má webový prostředek (webová služba), někteří uživatelé v organizaci A najít užitečné.  
+ Tento scénář zahrnuje dvě organizace: A a B. organizace B má webový prostředek (webovou službu), který někteří uživatelé v organizaci vyhledali jako cenné.  
   
 > [!NOTE]
->  Tato část používá podmínky *prostředků*, *služby*, a *webovou službu* Zaměnitelně.  
+> V této části se používají *prostředky*, *služby*a *webové služby* , které jsou zaměnitelné.  
   
- Organizace B obvykle vyžaduje, že uživatel z organizace A zadat nějakou platnou formu ověřování před přístupu ke službě. Kromě toho organizace může také vyžadovat, že uživatel oprávnění k přístupu na příslušném konkrétního prostředku. Jedním ze způsobů řešení tohoto problému a umožňují uživatelům v organizaci A pro přístup k prostředku v organizaci B je následujícím způsobem:  
+ Organizace B obvykle vyžaduje, aby uživatel z organizace A před přístupem ke službě poskytoval určitou platnou formu ověřování. Kromě toho může organizace také vyžadovat, aby uživatel byl autorizovaný pro přístup k příslušnému prostředku. Jedním ze způsobů, jak tento problém vyřešit, a umožnit uživatelům v organizaci A přístup k prostředkům v organizaci B je následující:  
   
-- Uživatelé v organizaci A zaregistrovat své přihlašovací údaje (uživatelské jméno a heslo) s organizací B.  
+- Uživatelé z organizace registrují svá pověření (uživatelské jméno a heslo) s organizací B.  
   
-- Během přístupu k prostředkům uživatelů z organizace A poskytl svá pověření pro organizaci B a ověření před přístupem k prostředku.  
+- Během přístupu k prostředkům uživatelé z organizace A předloží své přihlašovací údaje organizaci B a ověřují se před přístupem k prostředku.  
   
  Tento přístup má tři významné nevýhody:  
   
-- Organizace B má ke správě přihlašovacích údajů pro uživatele z organizace A kromě správy pověření své místní uživatelé.  
+- Organizace B musí spravovat přihlašovací údaje pro uživatele z organizace A navíc ke správě přihlašovacích údajů místních uživatelů.  
   
-- Uživatelé v organizaci A nemusíte Udržovat další sadu pověření (to znamená, nezapomeňte další uživatelské jméno a heslo) kromě přihlašovací údaje, obvykle používají pro získání přístupu k prostředkům v rámci organizace A. To obvykle doporučuje praxe používání stejné uživatelské jméno a heslo ve víc lokalitách služby, který je slabé bezpečnostní opatření.  
+- Uživatelé v organizaci potřebují zachovat další sadu přihlašovacích údajů (to znamená, že si zapamatuje dodatečné uživatelské jméno a heslo) Kromě přihlašovacích údajů, které běžně používají k získání přístupu k prostředkům v organizaci A. To obvykle podporuje postup použití stejného uživatelského jména a hesla v několika lokalitách služby, což je slabé bezpečnostní opatření.  
   
-- Architektura nejsou adekvátní jako víc organizací vnímat prostředek na organizace B tak, jak se některé hodnoty.  
+- Architektura se neškáluje jako více organizací, které by vnímaty prostředek v organizaci B, pokud se jedná o nějakou hodnotu.  
   
- Alternativním přístupem, což reaguje na výše uvedené nevýhody, má odlišnou úroveň zabezpečení. V takovém případě organizací A a B navázání vztahu důvěryhodnosti a využívat službu tokenů zabezpečení (STS) umožňující ručním vytvořen vztah důvěryhodnosti.  
+ Alternativním přístupem, který řeší výše zmíněné nevýhody, je využívání federovaného zabezpečení. V tomto přístupu organizace a a B navážou vztah důvěryhodnosti a využívají službu tokenů zabezpečení (STS), aby umožnila zprostředkovateli zavedeného vztahu důvěryhodnosti.  
   
- V architektuře zabezpečení uživatelům v organizaci A vědět, že pokud chtějí přístup k webové službě v organizaci B, který se musí poskytnout token platný zabezpečení ze služby STS na organizaci B, která ověřuje a autorizuje jeho přístup k konkrétní službu.  
+ V rámci federované architektury zabezpečení uživatelé z organizace ví, že pokud chtějí přistupovat k webové službě v organizaci B, že musí předložit platný token zabezpečení ze služby STS v organizaci B, která ověřuje a autorizuje svůj přístup k konkrétní služba.  
   
- O kontaktování služby tokenů zabezpečení B, uživatelé dostanou jinou úroveň dereference ze zásady přidružené k Služba tokenů zabezpečení. Platný zabezpečení se musí poskytnout token od služby STS A (to znamená, sféry klienta vztahu důvěryhodnosti) před B služby tokenů zabezpečení můžete jim nabídnete token zabezpečení. Toto je důsledkem této vztah důvěryhodnosti mezi dvěma organizacemi a znamená, že organizace B nemá ke správě identit uživatelů z organizace A. V praxi, služba tokenů zabezpečení B obvykle má hodnotu null `issuerAddress` a `issuerMetadataAddress`. Další informace najdete v tématu [jak: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). V takovém případě klienta consults místních zásad vyhledejte STS A. Tato konfigurace se nazývá *domovskou sféru federace* a škáluje líp, protože není nutné udržovat informace o STS A. B služby tokenů zabezpečení  
+ Při kontaktování služby tokenů zabezpečení (STS B) získají uživatelé další úroveň nepřímých odkazů ze zásad přidružených ke službě STS. Před tím, než služba STS B může vydávat token zabezpečení, musí mít platný token zabezpečení ze služby STS A (tj. sféra vztahu důvěryhodnosti klienta). Jedná se o Corollary vztah důvěryhodnosti mezi dvěma organizacemi a naznačuje, že organizace B nemusí spravovat identity pro uživatele z organizace A. V praxi má STS B obvykle hodnotu null `issuerAddress` a. `issuerMetadataAddress` Další informace najdete v tématu [jak: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). V takovém případě klient prohledává službu STS A pomocí místních zásad. Tato konfigurace se nazývá *federace domovské sféry* a je lepší škálovat, protože služba STS B nemusí spravovat informace o STS A.  
   
- Uživatelé pak obraťte se na službu tokenů zabezpečení v organizaci A a získat token zabezpečení tím, že předloží přihlašovacími údaji, které běžně používáte pro přístup k žádnému jinému prostředku v rámci organizace A. To také řeší problém uživatelé museli udržovat několik sad přihlašovacích údajů nebo ve víc lokalitách služby pomocí jednou sadou přihlašovacích údajů.  
+ Uživatelé pak budou kontaktovat službu STS v organizaci a a získat token zabezpečení tím, že prezentují ověřovací přihlašovací údaje, které běžně používají k získání přístupu k jakémukoli jinému prostředku v organizaci A. Tím se také řeší problém uživatelů, kteří si mají zachovat více sad přihlašovacích údajů nebo používají stejnou sadu přihlašovacích údajů na více lokalitách služby.  
   
- Jakmile uživatelé získat token zabezpečení ze služby STS A jsou k dispozici token, který má služba tokenů zabezpečení B. organizace B pokračuje k autorizaci požadavků uživatelů a vydá token zabezpečení pro uživatele ze své vlastní sada tokenů zabezpečení. Uživatele můžete předložit jejich token prostředku v organizaci B a přístup ke službě.  
+ Jakmile uživatelé získají token zabezpečení ze služby STS A, prezentují token službě STS B. organizace B pokračuje v provádění autorizace požadavků uživatelů a vydá token zabezpečení uživatelům z vlastní sady tokenů zabezpečení. Uživatelé pak mohou svůj token prezentovat k prostředkům v organizaci B a přistupovat ke službě.  
   
-## <a name="support-for-federated-security-in-wcf"></a>Podpora pro zabezpečení ve WCF  
- WCF poskytuje kompletní podpory pro nasazení architektury zabezpečení prostřednictvím [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+## <a name="support-for-federated-security-in-wcf"></a>Podpora federovaného zabezpečení ve službě WCF  
+ WCF poskytuje podporu klíč pro nasazení federovaných architektur zabezpečení prostřednictvím [ \<> WSFederationHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
- [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) element poskytuje pro zabezpečené, spolehlivé a interoperabilní vazbu, která zahrnuje použití protokolu HTTP jako podkladový přenosový mechanismus pro komunikaci styl požadavek odpověď, Když text a XML jako přenosový formát pro kódování.  
+ Element [WSFederationHttpBinding > poskytuje zabezpečenou, spolehlivou a interoperabilní vazbu, která zahrnuje použití http jako základního přenosového mechanismu pro styl komunikace požadavek-odpověď, který používá text a XML jako \<](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) Formát drátěného formátu pro kódování.  
   
- Použití [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) federovaného zabezpečení scénář mohou být oddělené do dvou logicky nezávislý fází, jak je popsáno v následujících částech.  
+ [ Použití\<> WSFederationHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) ve federovaném scénáři zabezpečení lze oddělit do dvou logicky nezávislých fází, jak je popsáno v následujících částech.  
   
 ### <a name="phase-1-design-phase"></a>Fáze 1: Fáze návrhu  
- Během fáze návrhu, klient použije [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) zásadách zpřístupňuje koncový bod služby a shromažďování požadavky služby ověřování a autorizaci. Příslušný proxy servery jsou sestavené tak, aby vytvořit následující vzor komunikace zabezpečení u klienta:  
+ Ve fázi návrhu používá klient Nástroj pro dokládání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k přečtení zásad, které zpřístupňuje koncový bod služby, a ke shromažďování požadavků na ověřování a autorizaci služby. Příslušné proxy servery jsou vytvořeny tak, aby na klientovi vytvořily následující vzor federovaného zabezpečení:  
   
-- Získáte token zabezpečení ze služby STS ve vztahu důvěryhodnosti sféry klienta.  
+- Získejte token zabezpečení ze služby STS ve sféře vztahu důvěryhodnosti klienta.  
   
-- K dispozici token na službu STS ve sféře vztah důvěryhodnosti služby.  
+- Prezentovat token ke službě STS ve sféře vztahu důvěryhodnosti služby.  
   
-- Získáte token zabezpečení ze služby STS ve sféře vztah důvěryhodnosti služby.  
+- Získejte token zabezpečení ze služby STS ve sféře vztahu důvěryhodnosti služby.  
   
-- K dispozici token, který má služba pro přístup ke službě.  
+- Prezentovat token službě pro přístup ke službě.  
   
-### <a name="phase-2-run-time-phase"></a>Fáze 2: Fáze za běhu  
- Během fáze za běhu klient vytvoří instanci objektu třídy klienta WCF a provede volání pomocí klienta WCF. Základní architektury WCF zpracovává výše uvedené kroky v modelu zabezpečení komunikace a umožňuje klientovi bez problémů využívat služby.  
+### <a name="phase-2-run-time-phase"></a>Fáze 2: Fáze run-time  
+ Během fáze běhu klient vytvoří instanci objektu třídy klienta WCF a provede volání pomocí klienta WCF. Základní architektura služby WCF zpracovává dříve zmíněné kroky v rámci modelu federované zabezpečení komunikace a umožňuje klientovi bezproblémové využívání služby.  
   
-## <a name="sample-implementation-using-wcf"></a>Ukázková implementace pomocí technologie WCF  
- Následující obrázek znázorňuje ukázku implementace pro architekturu zabezpečení s využitím nativní podpory z WCF.  
+## <a name="sample-implementation-using-wcf"></a>Ukázková implementace pomocí WCF  
+ Následující ilustrace znázorňuje ukázkovou implementaci pro federované architektury zabezpečení pomocí nativní podpory služby WCF.  
   
- ![Diagram znázorňující ukázku implementace zabezpečení federace.](./media/federation/federated-security-implementation.gif)  
+ ![Diagram znázorňující ukázkovou implementaci zabezpečení federace](./media/federation/federated-security-implementation.gif)  
   
-### <a name="example-myservice"></a>Příklad Moje_služba  
- Služba `MyService` poskytuje jeden koncový bod prostřednictvím `MyServiceEndpoint`. Následující obrázek znázorňuje adresa, vazba a kontrakt přidružený k koncový bod.  
+### <a name="example-myservice"></a>Příklad Mojesluzba  
+ Služba `MyService` zpřístupňuje jeden koncový bod prostřednictvím `MyServiceEndpoint`. Na následujícím obrázku je znázorněna adresa, vazba a kontrakt spojený s koncovým bodem.  
   
  ![Diagram znázorňující MyServiceEndpoint podrobnosti.](./media/federation/myserviceendpoint-details.gif)  
   
- Koncový bod služby `MyServiceEndpoint` používá [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a vyžaduje platný token zabezpečení kontrolní výrazy SAML (Markup Language) pomocí `accessAuthorized` vydané služby serveru B. služby tokenů zabezpečení deklarace identity To je určeno deklarativně v konfiguraci služby.  
+ Koncový bod `MyServiceEndpoint` služby `accessAuthorized` [ \<používá > WSFederationHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a vyžaduje platný token SAML (Security Assert Markup Language) s deklarací, kterou vystavila služba STS B. Tato deklarace je deklarativně specifikovaná v konfiguraci služby.  
   
 ```xml  
 <system.serviceModel>  
@@ -148,9 +148,9 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
->  Bod drobným potřeba poznamenat týkající se deklarací vyžadované `MyService`. Druhý obrázek označuje, že `MyService` vyžaduje token SAML se `accessAuthorized` deklarací identity. Přesněji, určuje typ deklarace identity, aby `MyService` vyžaduje. Plně kvalifikovaný název tohoto typu deklarace identity je `http://tempuri.org:accessAuthorized` (spolu s přidružené oboru názvů), který se používá v konfiguračním souboru služby. Hodnota této deklarace indikuje přítomnost této deklarace identity a předpokládá, že je nastavena na `true` službou STS B.  
+> Je třeba si poznamenat jemný bod o deklaracích vyžadovaných nástrojem `MyService`. Druhý obrázek ukazuje, že `MyService` vyžaduje token SAML `accessAuthorized` s deklarací identity. Aby bylo přesnější, určuje typ deklarace identity, který `MyService` vyžaduje. Plně kvalifikovaný název tohoto typu deklarace identity je `http://tempuri.org:accessAuthorized` (spolu s přidruženým oborem názvů), který se používá v konfiguračním souboru služby. Hodnota této deklarace identity označuje přítomnost této deklarace identity a předpokládá se, že je nastavena na `true` službu STS B.  
   
- V době běhu je vynucuje tuto zásadu `MyServiceOperationRequirement` třídu, která je implementovaná jako součást `MyService`.  
+ Za běhu se tato zásada vynutila `MyServiceOperationRequirement` třídou, která je implementovaná jako součást. `MyService`  
   
  [!code-csharp[C_Federation#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#0)]
  [!code-vb[C_Federation#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#0)]  
@@ -158,11 +158,11 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 [!code-vb[C_Federation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#1)]  
   
 #### <a name="sts-b"></a>STS B  
- Následující obrázek znázorňuje STS B. Jak bylo uvedeno dříve, služby tokenů zabezpečení (STS) je také webovou službu a může mít jeho přidruženými koncovými body, zásad a tak dále.  
+ Na následujícím obrázku je znázorněná služba tokenů zabezpečení (STS) B. Jak je uvedeno výše, služba tokenů zabezpečení (STS) je také webová služba a může mít přidružené koncové body, zásady a tak dále.  
   
- ![Diagram znázorňující služby tokenů zabezpečení B.](./media/federation/myservice-security-token-service-b.gif)  
+ ![Diagram znázorňující službu tokenu zabezpečení B.](./media/federation/myservice-security-token-service-b.gif)  
   
- Služba tokenů zabezpečení B poskytuje jeden koncový bod, volá se `STSEndpoint` , který lze použít k žádosti o tokeny zabezpečení. Konkrétně STS B vystavuje tokeny SAML s `accessAuthorized` deklarace identity, které lze zobrazit na `MyService` služeb – web pro přístupu ke službě. Však vyžaduje, aby službu STS B uživatelé, předložit platný token SAML vydané A Služba tokenů zabezpečení, který obsahuje `userAuthenticated` deklarací identity. To je určeno deklarativně v konfiguraci služby tokenů zabezpečení.  
+ Služba STS B zpřístupňuje jeden koncový bod `STSEndpoint` , který je možné použít k vyžádání tokenů zabezpečení. Konkrétně `MyService` služba tokenů zabezpečení (STS B) `accessAuthorized` vystavuje tokeny SAML s deklarací identity, které mohou být uvedeny na webu služby pro přístup k této službě. Služba STS B ale vyžaduje, aby uživatelé prezentují platný token SAML vydaný službou STS a, `userAuthenticated` který obsahuje deklaraci identity. Tato deklarace je deklarativně specifikovaná v konfiguraci služby STS.  
   
 ```xml  
 <system.serviceModel>  
@@ -207,24 +207,24 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
->  Znovu `userAuthenticated` deklarace identity je typ deklarace identity, který vyžaduje službu STS B. Plně kvalifikovaný název tohoto typu deklarace identity je `http://tempuri.org:userAuthenticated` (spolu s přidružené oboru názvů), který se používá v konfiguračním souboru služby tokenů zabezpečení. Hodnota této deklarace indikuje přítomnost této deklarace identity a předpokládá, že je nastavena na `true` službou STS A.  
+> `userAuthenticated` Deklarace identity je znovu typu deklarace identity, který vyžaduje služba tokenů zabezpečení (STS) B. Plně kvalifikovaný název tohoto typu deklarace identity je `http://tempuri.org:userAuthenticated` (spolu s přidruženým oborem názvů), který se používá v konfiguračním souboru STS. Hodnota této deklarace identity označuje přítomnost této deklarace identity a předpokládá se, že ji nastaví `true` služba STS a.  
   
- V době běhu `STS_B_OperationRequirement` třídě vynucuje tuto zásadu, která je implementovaná jako součást služby serveru B. služby tokenů zabezpečení  
+ V době běhu `STS_B_OperationRequirement` třída vynutila tuto zásadu, která je implementována jako součást služby tokenů zabezpečení (STS) B.  
   
  [!code-csharp[C_Federation#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#2)]
  [!code-vb[C_Federation#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#2)]  
   
- Pokud kontrola přístupu je jasné, služba tokenů zabezpečení B vydá token SAML s `accessAuthorized` deklarací identity.  
+ Pokud je kontroler přístupu jasný, služba tokenů zabezpečení (STS B) `accessAuthorized` vydá token SAML s deklarací identity.  
   
  [!code-csharp[C_Federation#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#3)]
  [!code-vb[C_Federation#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#3)]  
   
 #### <a name="sts-a"></a>STS A  
- Následující obrázek znázorňuje STS A.  
+ Na následujícím obrázku je znázorněna služba STS A.  
   
  ![Federace](../../../../docs/framework/wcf/feature-details/media/sts-b.gif "STS_B")  
   
- Podobně jako služba tokenů zabezpečení B, A Služba tokenů zabezpečení je také webovou službu, která vydává tokeny zabezpečení a poskytuje jeden koncový bod pro tento účel. Ale používá jinou vazbou (`wsHttpBinding`) a vyžaduje, aby uživatelé k dispozici platný CardSpace s `emailAddress` deklarací identity. V odpovědi, vystavuje tokeny SAML s `userAuthenticated` deklarací identity. To je určeno deklarativně v konfiguraci služby.  
+ Podobně jako služba STS B, STS A je také webová služba, která vydává tokeny zabezpečení a zpřístupňuje jeden koncový bod pro tento účel. Používá ale jinou vazbu (`wsHttpBinding`) a vyžaduje, aby uživatelé mohli prezentovat platnou službu CardSpace `emailAddress` s deklarací identity. V reakci vydá tokeny SAML s `userAuthenticated` deklarací identity. Tato deklarace je deklarativně specifikovaná v konfiguraci služby.  
   
 ```xml  
 <system.serviceModel>  
@@ -271,23 +271,23 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 </system.serviceModel>  
 ```  
   
- V době běhu `STS_A_OperationRequirement` třídy vynucuje tuto zásadu, která je implementovaná jako součást služby tokenů zabezpečení A.  
+ V době běhu `STS_A_OperationRequirement` třída vynutila tuto zásadu, která je implementována jako součást služby STS a.  
   
  [!code-csharp[C_Federation#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#4)]
  [!code-vb[C_Federation#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#4)]  
   
- Pokud je přístup `true`, služba tokenů zabezpečení A vydá token SAML s `userAuthenticated` deklarací identity.  
+ Pokud je `true`přístup, STS a vydá token SAML s `userAuthenticated` deklarací identity.  
   
  [!code-csharp[C_Federation#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federation/cs/source.cs#5)]
  [!code-vb[C_Federation#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#5)]  
   
 ### <a name="client-at-organization-a"></a>Klient v organizaci A  
- Následující obrázek znázorňuje klienta v organizaci A spolu s jednotlivými kroky při vytváření `MyService` volání. Funkční součásti jsou také zahrnuté pro úplnost.  
+ Následující ilustrace znázorňuje klienta v organizaci a spolu s postupem, který je součástí provádění `MyService` volání služby. Další funkční komponenty jsou také zahrnuty pro úplnost.  
   
- ![Diagram znázorňující kroky při volání služby Moje_služba.](./media/federation/federation-myservice-service-call-process.gif)  
+ ![Diagram znázorňující kroky ve volání služby Mojesluzba](./media/federation/federation-myservice-service-call-process.gif)  
   
 ## <a name="summary"></a>Souhrn  
- Zabezpečení nabízí čisté dělení zodpovědnosti a pomáhá vytvářet zabezpečené, škálovatelné služby architektury. Jako platformu pro sestavování a nasazování distribuovaných aplikací WCF poskytuje nativní podporu pro implementaci zabezpečení.  
+ Federované zabezpečení poskytuje čistou divizi zodpovědnosti a pomáhá sestavovat zabezpečené a škálovatelné architektury služeb. Jako platforma pro sestavování a nasazování distribuovaných aplikací poskytuje WCF nativní podporu pro implementaci federovaného zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-ms.openlocfilehash: df88f9ae0b32ecd3b79686f3271e09b92ad7d4fd
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c06639ef2f2ced8bd128adea636efe8be1715764
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040191"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931024"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-c"></a>Návod: Dědění z ovládacího prvku model Windows Forms s Visual C\#
 Pomocí vizuálu C#můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti můžete vytvářet ovládací prvky, které budou uchovávat veškerou základní funkci standardních model Windows Formsch ovládacích prvků, ale také zahrnovat vlastní funkce. V tomto návodu vytvoříte jednoduchý Zděděný ovládací prvek s názvem `ValueButton`. Toto tlačítko zdědí funkce ze standardního ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> a zpřístupní vlastní vlastnost s názvem. `ButtonValue`
@@ -42,7 +42,7 @@ Pomocí vizuálu C#můžete vytvořit výkonné vlastní ovládací prvky prost�
 8. V nabídce **soubor** klikněte na příkaz **Uložit vše** a projekt uložte.
 
     > [!NOTE]
-    >  Vizuální Návrhář již není k dispozici. Vzhledem k tomu, že ovládacíprvekprovedevlastnímalování,nemůžetezměnitjehovzhledvnávrháři.<xref:System.Windows.Forms.Button> Jeho vizuální reprezentace bude přesně stejná jako třída, ze které dědí ( <xref:System.Windows.Forms.Button>tj.), pokud není upravena v kódu. Na návrhovou plochu stále můžete přidat komponenty, které nemají žádné prvky uživatelského rozhraní.
+    > Vizuální Návrhář již není k dispozici. Vzhledem k tomu, že ovládacíprvekprovedevlastnímalování,nemůžetezměnitjehovzhledvnávrháři.<xref:System.Windows.Forms.Button> Jeho vizuální reprezentace bude přesně stejná jako třída, ze které dědí ( <xref:System.Windows.Forms.Button>tj.), pokud není upravena v kódu. Na návrhovou plochu stále můžete přidat komponenty, které nemají žádné prvky uživatelského rozhraní.
 
 ## <a name="adding-a-property-to-your-inherited-control"></a>Přidání vlastnosti do zděděného ovládacího prvku
  Jedním z možných použití děděných ovládacích prvků model Windows Forms je vytváření ovládacích prvků, které jsou identické ve vzhledu a chování standardních model Windows Formsch ovládacích prvků, ale zpřístupňují vlastní vlastnosti. V této části přidáte k ovládacímu prvku vlastnost s `ButtonValue` názvem.

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: 2f907d097f52f13e733713d8ad68cc2390b051ed
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: a264ec3fa1232a058a3bfbabbe8b84712cf87322
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364231"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956414"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje atributy modulu CLR (Common Language Runtime), které jsou definovány pomocí .NET Framework služby XAML. Popisuje také jiné atributy CLR, které jsou definovány v .NET Framework, které mají scénář související s XAML pro aplikaci do sestavení nebo typů. Přizpůsobování sestavení, typů nebo členů pomocí těchto atributů CLR poskytuje typy informací o systému typu XAML, které souvisejí s vašimi typy. Informace jsou k dispozici libovolnému spotřebiteli XAML, který používá .NET Framework služby XAML pro zpracování datového proudu uzlu XAML přímo nebo prostřednictvím vyhrazeného čtecího modulu XAML a zapisovače XAML.  
@@ -266,7 +266,7 @@ Toto téma popisuje atributy modulu CLR (Common Language Runtime), které jsou d
 - Definujete podporu jazyka XAML v sestavení a máte <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pro. `http://schemas.microsoft.com/winfx/2006/xaml` V takovém případě byste obvykle měli propagovat předponu `x`.  
   
 > [!NOTE]
->  .NET Framework služby XAML také definují atribut <xref:System.Windows.Markup.RootNamespaceAttribute>související s jazykem XAML. Tento atribut je atribut na úrovni sestavení pro podporu systému projektu a není relevantní pro vlastní typy XAML.  
+> .NET Framework služby XAML také definují atribut <xref:System.Windows.Markup.RootNamespaceAttribute>související s jazykem XAML. Tento atribut je atribut na úrovni sestavení pro podporu systému projektu a není relevantní pro vlastní typy XAML.  
   
 ## <a name="see-also"></a>Viz také:
 

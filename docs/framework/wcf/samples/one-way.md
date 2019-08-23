@@ -2,20 +2,20 @@
 title: Jednosměrný
 ms.date: 03/30/2017
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-ms.openlocfilehash: e82034a79610ea7956b3ef07508295578461de1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0035b64b14b0d32f39974e8eaa28242290d665c0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008030"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957247"
 ---
 # <a name="one-way"></a>Jednosměrný
-Tato ukázka předvádí, služba kontaktovat s operací jednosměrné služby. Klient nečeká servisní operace dokončit, protože v případě obousměrné servisní operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služby v této ukázce je aplikace v místním prostředí konzoly, která vám umožní sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolovou aplikaci.  
+Tato ukázka demonstruje kontakt služby pomocí jednosměrných operací služby. Klient nečeká na dokončení operací služby, protože se jedná o případ s obousměrnou operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazbu. Služba v této ukázce je samoobslužná Konzolová aplikace, která vám umožní sledovat službu, která přijímá a zpracovává požadavky. Klient je také Konzolová aplikace.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Vytvoření kontraktu služby jednosměrné, definování váš kontraktu služby, použije <xref:System.ServiceModel.OperationContractAttribute> třídy pro každou operaci a nastavte <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> k `true` jak je znázorněno v následujícím ukázkovém kódu:  
+ Chcete-li vytvořit jednosměrný kontrakt služby, definujte kontrakt služby, použijte <xref:System.ServiceModel.OperationContractAttribute> pro každou operaci třídu a nastavte <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> na `true` jak je znázorněno v následujícím ukázkovém kódu:  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -32,7 +32,7 @@ public interface IOneWayCalculator
 }  
 ```  
   
- Abychom si předvedli, že klient nečeká na dokončení operací služby, implementuje kódu služby v této ukázce zpoždění pěti sekund, jak je znázorněno v následujícím ukázkovém kódu:  
+ Chcete-li předvést, že klient nečeká na dokončení operací služby, kód služby v této ukázce implementuje zpoždění pět sekund, jak je znázorněno v následujícím ukázkovém kódu:  
   
 ```csharp
 // This service class implements the service contract.  
@@ -52,11 +52,11 @@ public class CalculatorService : IOneWayCalculator
 }  
 ```  
   
- Když klient zavolá službu, volání se vrátí bez čekání na dokončení operace služby.  
+ Když klient volá službu, volání se vrátí bez čekání na dokončení operace služby.  
   
- Při spuštění ukázky činnosti klienta a služby se zobrazují v oknech konzoly služby a klienta. Můžete zobrazit přijetí zprávy služby z klienta. Stisknutím klávesy ENTER v okně konzoly se každý vypnout službu a klienta.  
+ Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta. V každém okně konzoly stiskněte klávesu ENTER a ukončete tak službu i klienta.  
   
- Klient dokončí náskok před službu, představením toho, že klient nečeká na dokončení operací jednosměrné služby. Výstup klienta vypadá takto:  
+ Klient se dokončí před službou a demonstruje, že klient nečeká na dokončení jednosměrných operací služby. Výstup klienta je následující:  
   
 ```console  
 Add(100,15.99)  
@@ -67,7 +67,7 @@ Divide(22,7)
 Press <ENTER> to terminate client.  
 ```  
   
- Se zobrazí následující výstup služby:  
+ Zobrazí se následující výstup služby:  
   
 ```console  
 The service is ready.  
@@ -84,24 +84,24 @@ Processing Divide(22,7) - result: 3.14285714285714
 ```  
   
 > [!NOTE]
->  HTTP je podle definice požadavků/odpovědí protokolu; Po provedení požadavku se vrátí odpověď. To platí i pro operaci jednosměrné služby, která je přístupná přes protokol HTTP. Při volání operace služby vrátí stavový kód HTTP 202 předtím, než se spustí operace služby. Tímto stavovým kódem znamená, že požadavek přijal ke zpracování, ale zpracování nebyla dosud dokončena. Klient, který volá operace blokuje až do obdržení odpovědi 202 ze služby. Při více jednosměrné zprávy odesílat pomocí vazby, který je nakonfigurován pro použití relací to může způsobit nějaké neočekávané chování. `wsHttpBinding` Vazba používané v tomto příkladu je nakonfigurována pro použití relací ve výchozím nastavení k vytvoření kontextu zabezpečení. Ve výchozím nastavení je zaručena doručeny v pořadí, ve kterém jsou odesílány zprávy v relaci. Z tohoto důvodu odeslání druhé zprávy v relaci není dokud byla zpracována na první zprávu zpracovat. Výsledek tohoto je, že klient neobdrží odpovědi 202 zprávy dokud se nedokončí zpracování předchozí zprávu. Klient se proto zobrazí do bloku na každé následné operace volání. Chcete-li toto chování vyhnout, tento vzorovým kódem se nakonfiguruje runtime k odeslání zpráv souběžně, což umožňuje jedinečných instancí pro zpracování. Ukázka sady <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> k `PerCall` tak, aby každá zpráva mohou být zpracovány do jiné instance. <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> je nastavena na `Multiple` umožňuje více než jedno vlákno k odeslání zprávy v čase.  
+> HTTP je, podle definice, protokolu požadavků a odpovědí. po podání žádosti se vrátí odpověď. To platí i pro jednosměrnou operaci služby, která je vystavená přes protokol HTTP. Při volání operace vrátí služba stavový kód HTTP 202 před provedením operace služby. Tento stavový kód znamená, že žádost byla přijata ke zpracování, ale zpracování ještě nebylo dokončeno. Klient, který se nazývá operace, zablokuje, dokud nepřijme odpověď 202 od služby. To může způsobit neočekávané chování při posílání více jednosměrných zpráv pomocí vazby, která je nakonfigurována pro použití relací. `wsHttpBinding` Vazba použitá v této ukázce je nakonfigurována tak, aby ve výchozím nastavení používala relace pro vytvoření kontextu zabezpečení. Ve výchozím nastavení jsou zprávy v relaci zaručeny k doručení v pořadí, ve kterém jsou odesílány. Z tohoto důvodu se při odeslání druhé zprávy v relaci nezpracovává, dokud se nezpracuje první zpráva. Výsledkem je, že klient neobdrží odpověď 202 pro zprávu, dokud nebude dokončeno zpracování předchozí zprávy. Klient se proto zobrazí při každém následném volání operace. Chcete-li se tomuto chování vyhnout, Tato ukázka nakonfiguruje modul runtime tak, aby odesílal zprávy souběžně na samostatné instance pro zpracování. Ukázka nastaví <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> na `PerCall` tak, aby každá zpráva mohla být zpracována jinou instancí. <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>je nastaveno `Multiple` na, aby bylo možné odesílat zprávy najednou více než jedno vlákno.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Spusťte službu, před spuštěním klienta a vypnout klienta před ukončením služby. Tím předejdete výjimka klienta, pokud nelze klienta ukončete relaci zabezpečení přímo, protože tato služba je pryč.  
+> Před ukončením služby spusťte službu před spuštěním klienta nástroje a vypněte klienta. Tím se zabrání výjimka klienta, pokud klient nemůže relaci zabezpečení vyčistit, protože služba zmizela.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  

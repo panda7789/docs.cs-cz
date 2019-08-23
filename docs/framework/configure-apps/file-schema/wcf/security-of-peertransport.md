@@ -2,22 +2,22 @@
 title: <security> z <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
-ms.openlocfilehash: 1aff79bf5867a3a1ebe05e3f812475dac4b413e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bdd3b236c9bae198f8027c4ca0c0fa5b70d30342
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670492"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936642"
 ---
-# <a name="security-of-peertransport"></a>\<zabezpečení > z \<peerTransport >
-Obsahuje nastavení zabezpečení související s rovnocenným kanálem, zahrnující typ použitého ověřování a zabezpečení pro přenos zpráv.  
+# <a name="security-of-peertransport"></a>\<> zabezpečení > \<peerTransport
+Obsahuje nastavení zabezpečení související s rovnocenným kanálem, včetně typu použitého ověřování a zabezpečení používaného pro přenos zpráv.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<peerTransport >  
-\<security>  
+\<> zabezpečení  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,38 +34,38 @@ Obsahuje nastavení zabezpečení související s rovnocenným kanálem, zahrnuj
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`mode`|Určuje typ zabezpečení má být použita. Výchozí hodnota je zpráva. Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
+|`mode`|Určuje typ zabezpečení, který má být použit. Výchozí hodnota je zpráva. Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
   
-## <a name="mode-attribute"></a>režim atribut  
+## <a name="mode-attribute"></a>mode – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|`None`|Zabezpečení je zakázaná.|  
+|`None`|Zabezpečení je zakázané.|  
 |`Transport`|Zabezpečení je k dispozici pomocí protokolu HTTPS.|  
-|`Message`|Zabezpečení protokolu SOAP poskytuje ověřování, integritu a důvěrnost.|  
-|`TransportWithMessageCredential`|HTTPS zajišťuje ověřování a zachováním důvěrnosti. Zprávy protokolu SOAP poskytuje typy bohaté přihlašovacích údajů.|  
+|`Message`|Zabezpečení SOAP zajišťuje ověřování, integritu a důvěrnost.|  
+|`TransportWithMessageCredential`|Protokol HTTPS zajišťuje ověřování a důvěrnost. Zprávy SOAP poskytují bohatě typy přihlašovacích údajů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-peertransport.md)|Definuje rovnocenný přenos pro vlastní vazbu. Tento element nemá `clientCredentialType` atribut, který určuje přihlašovací údaje, které se použije při komunikaci se službou. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
+|[\<> přenosu](transport-of-peertransport.md)|Definuje partnerský přenos pro vlastní vazbu. Tento prvek má `clientCredentialType` atribut, který určuje pověření, která mají být použita při interakci se službou. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<peerTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/peertransport.md)|Definuje rovnocenný přenos pro vlastní vazbu.|  
+|[\<peerTransport >](peertransport.md)|Definuje partnerský přenos pro vlastní vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Zabezpečení přenosu](../../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Zabezpečení přenosu](../../../wcf/feature-details/transport-security.md)
+- [Přenosy](../../../wcf/feature-details/transports.md)
+- [Volba přenosu](../../../wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

@@ -2,65 +2,65 @@
 title: Stavy objektů a sledování změn
 ms.date: 03/30/2017
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-ms.openlocfilehash: 704c5271f71c3709bbf48cf6a5af0a60828e6244
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8de415ba68ca1b0a5c4214e586ad2a4d4940690a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610100"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953220"
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, je objekt v `Unchanged` stavu. Nový objekt, který sami vytvoříte není znám <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které jsou známé [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou ve `Deleted` stavu takže nepůjdou použít v tomto <xref:System.Data.Linq.DataContext> instance.)  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objekty se vždycky účastní vněkterých stavech. Například při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytváření nového objektu je objekt ve `Unchanged` stavu. Nový objekt, který sami vytvoříte, není známý pro <xref:System.Data.Linq.DataContext> a je ve `Untracked` stavu. Po úspěšném provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>se všechny objekty, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jsou v `Unchanged` tomto stavu, ví. (Jediná výjimka je reprezentovaná prvky, které byly úspěšně odstraněny z databáze, které jsou ve `Deleted` stavu a nepoužitelné v této <xref:System.Data.Linq.DataContext> instanci.)  
   
 ## <a name="object-states"></a>Stavy objektů  
- V následující tabulce jsou uvedeny možné stavy pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty.  
+ V následující tabulce jsou uvedené možné stavy pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty.  
   
 |Stav|Popis|  
 |-----------|-----------------|  
-|`Untracked`|Objekt není sledován pomocí funkce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Mezi příklady patří následující:<br /><br /> -Není zasílat dotazy prostřednictvím aktuální objekt <xref:System.Data.Linq.DataContext> (například nově vytvořený objekt).<br />-Vytvořených prostřednictvím deserializace objektu<br />-Zasílat dotazy prostřednictvím jiného objektu <xref:System.Data.Linq.DataContext>.|  
-|`Unchanged`|Objekt, načíst pomocí aktuálního <xref:System.Data.Linq.DataContext> a není známo, že se změnily, protože byl vytvořen.|  
-|`PossiblyModified`|Objekt, který *připojené* k <xref:System.Data.Linq.DataContext>. Další informace najdete v tématu [CUD operace v N-vrstvé aplikace (LINQ to SQL) a načítání dat](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).|  
-|`ToBeInserted`|Objekt nelze načíst pomocí aktuálního <xref:System.Data.Linq.DataContext>. To způsobí, že databáze `INSERT` během <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|  
-|`ToBeUpdated`|Objekt je známo, že byly změněny od načtení. To způsobí, že databáze `UPDATE` během <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|  
-|`ToBeDeleted`|Objekt označený k odstranění, způsobí databázi `DELETE` během <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|  
-|`Deleted`|Objekt, který byl odstraněn v databázi. Tento stav je finální a není povoleno pro další přechody.|  
+|`Untracked`|Objekt, který není sledován [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástrojem. Mezi příklady patří následující:<br /><br /> – Objekt, na který se nedotazuje <xref:System.Data.Linq.DataContext> pomocí aktuálního (například nově vytvořeného objektu).<br />-Objekt vytvořený prostřednictvím deserializace<br />– Objekt, na který se dotazoval <xref:System.Data.Linq.DataContext>, je jiný.|  
+|`Unchanged`|Objekt načtený pomocí aktuálního <xref:System.Data.Linq.DataContext> a neznámého objektu byl od vytvoření změněn.|  
+|`PossiblyModified`|Objekt, který je *připojen* k <xref:System.Data.Linq.DataContext>. Další informace najdete v tématu [načtení dat a operace CUD v N-vrstvých aplikacích (LINQ to SQL)](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).|  
+|`ToBeInserted`|Objekt, který nebyl načten pomocí aktuálního <xref:System.Data.Linq.DataContext>. Tím dojde k vytvoření `INSERT` databáze <xref:System.Data.Linq.DataContext.SubmitChanges%2A>během.|  
+|`ToBeUpdated`|Objekt, který měl být od načtení změněn. Tím dojde k vytvoření `UPDATE` databáze <xref:System.Data.Linq.DataContext.SubmitChanges%2A>během.|  
+|`ToBeDeleted`|Objekt označený k odstranění, který způsobuje databázi `DELETE` během. <xref:System.Data.Linq.DataContext.SubmitChanges%2A>|  
+|`Deleted`|Objekt, který byl odstraněn v databázi. Tento stav je finální a neumožňuje další přechody.|  
   
 ## <a name="inserting-objects"></a>Vkládání objektů  
- Můžete explicitně vyžádat `Inserts` pomocí <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>. Alternativně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] lze odvodit `Inserts` hledáním objekty, které jsou připojené k některé z známé objekty, které se musí aktualizovat. Například, pokud chcete přidat `Untracked` objektu <xref:System.Data.Linq.EntitySet%601> nebo nastavte <xref:System.Data.Linq.EntityRef%601> do `Untracked` objektu, provedete `Untracked` objekt dostupný prostřednictvím sledovaných objektů v grafu. Při zpracování <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projde sledované objekty a vyhledá všechny dostupné trvalé objekty, které nebudou pro účely. Tyto objekty jsou kandidáty pro vložení do databáze.  
+ Můžete explicitně požádat `Inserts` o použití <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>. `Inserts` Alternativně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] lze odvodit pomocí hledání objektů připojených k jednomu ze známých objektů, které je třeba aktualizovat. Například `Untracked` Pokud přidáte `Untracked` objekt <xref:System.Data.Linq.EntitySet%601> do <xref:System.Data.Linq.EntityRef%601> objektu`Untracked` nebo nastavíte objekt, provedete ho pomocí sledovaných objektů v grafu. Při zpracování <xref:System.Data.Linq.DataContext.SubmitChanges%2A> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projde sledované objekty a zjistí všechny dostupné trvalé trvalé objekty, které nejsou sledovány. Tyto objekty jsou kandidáty na vložení do databáze.  
   
- Pro třídy v hierarchii dědičnosti <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>(`o`) nastaví hodnotu člen označený jako *diskriminátoru* tak, aby odpovídaly typu objektu `o`. V případě typ odpovídající výchozí hodnota diskriminátoru tato akce způsobí, že hodnota diskriminátoru přepsat výchozí hodnotu. Další informace najdete v tématu [podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md).  
+ Pro <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>třídy v hierarchii dědičnosti (`o`) také nastaví hodnotu člena určenou jako *diskriminátor* tak, aby odpovídala typu objektu `o`. V případě typu, který odpovídá výchozí hodnotě diskriminátoru, tato akce způsobí přepsání hodnoty diskriminátoru výchozí hodnotou. Další informace najdete v tématu [Podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md).  
   
 > [!IMPORTANT]
->  Přidat do objektu `Table` není v mezipaměti identit. Mezipaměti identit odráží, co je načíst pouze z databáze. Po volání <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>, přidání entity se nezobrazí v dotazech databázi do <xref:System.Data.Linq.DataContext.SubmitChanges%2A> se úspěšně dokončila.  
+> Objekt přidaný do `Table` není v mezipaměti identit. Mezipaměť identity odráží pouze to, co je načteno z databáze. Po volání <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>se přidaná entita nezobrazí v dotazech na databázi, dokud <xref:System.Data.Linq.DataContext.SubmitChanges%2A> není úspěšně dokončena.  
   
-## <a name="deleting-objects"></a>Odstranění objektů  
- Označit objekt sledované `o` k odstranění voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(o) na příslušný <xref:System.Data.Linq.Table%601>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] bere v úvahu odebrání objektu z <xref:System.Data.Linq.EntitySet%601> jako aktualizace operace a hodnotě odpovídající cizího klíče nastavena na hodnotu null. Cíl operace (`o`) neodstranil z příslušné tabulky. Například `cust.Orders.DeleteOnSubmit(ord)` označuje aktualizaci kde vztah mezi `cust` a `ord` porušeno nastavením cizí klíč `ord.CustomerID` na hodnotu null. Nezpůsobí odstranění řádku odpovídající `ord`.  
+## <a name="deleting-objects"></a>Odstraňování objektů  
+ Sledovaný objekt `o` můžete označit k odstranění voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(o) na příslušné <xref:System.Data.Linq.Table%601>straně. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]považuje odebrání objektu <xref:System.Data.Linq.EntitySet%601> za operaci aktualizace a odpovídající hodnota cizího klíče je nastavena na hodnotu null. Cíl operace (`o`) není ze své tabulky odstraněn. Například `cust.Orders.DeleteOnSubmit(ord)` označuje aktualizaci, kde je relace mezi `cust` a `ord` vážně narušena nastavením cizího klíče `ord.CustomerID` na hodnotu null. Nezpůsobí odstranění řádku odpovídajícího `ord`.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provádí následující zpracováním, když je objekt odstraněný (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) z jeho tabulky:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]provádí následující zpracování, když je objekt odstraněn (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) z tabulky:  
   
-- Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je zavolána, `DELETE` operace pro tento objekt.  
+- Při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volání`DELETE` funkce je provedena operace pro tento objekt.  
   
-- Pokud chcete odebrání se nerozšíří do bez ohledu na to, zda jsou načteny související objekty. Konkrétně nejsou načteny související objekty pro aktualizaci vlastnost vztahu.  
+- Odebrání není rozšířeno na související objekty bez ohledu na to, zda jsou načteny. Konkrétně nejsou načteny související objekty pro aktualizaci vlastnosti Relationship.  
   
-- Po úspěšném spuštění <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, objekty jsou nastaveny na `Deleted` stavu. V důsledku toho nelze použít objekt nebo jeho `id` v tom, že <xref:System.Data.Linq.DataContext>. Udržuje interní mezipaměť <xref:System.Data.Linq.DataContext> instance nebude odstraněn objekty, které jsou načteny, nebo přidat jako nový, i když se odstranily objekty v databázi.  
+- Po úspěšném provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>se objekty nastaví `Deleted` do stavu. V důsledku toho nemůžete použít objekt nebo jeho `id` v. <xref:System.Data.Linq.DataContext> Interní mezipaměť udržované <xref:System.Data.Linq.DataContext> instancí neeliminuje objekty, které jsou načteny nebo přidány jako nové, i po odstranění objektů v databázi.  
   
- Můžete volat <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> jenom u objektu sledován pomocí funkce <xref:System.Data.Linq.DataContext>. Pro `Untracked` objektu, je nutné volat <xref:System.Data.Linq.Table%601.Attach%2A> před voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>. Volání <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> na `Untracked` objektu vyvolá výjimku.  
+ Můžete zavolat <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> pouze na objekt, který je <xref:System.Data.Linq.DataContext>sledován. V případě <xref:System.Data.Linq.Table%601.Attach%2A> <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>objektu je nutné volat před voláním. `Untracked` Volání <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>objektuvyvolávýjimku `Untracked` .  
   
 > [!NOTE]
->  Odebrání objektu z tabulky říká [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ke generování odpovídající SQL `DELETE` příkaz v době <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. Tato akce odebere objekt z mezipaměti ani šíření se odstraňování souvisejících objektů.  
+> Při odebrání objektu z tabulky [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se vygeneruje odpovídající <xref:System.Data.Linq.DataContext.SubmitChanges%2A>příkaz SQL `DELETE` v čase. Tato akce neodebere objekt z mezipaměti ani nerozšíří odstranění do souvisejících objektů.  
 >   
->  Získat zpět `id` odstraněného objektu použít novou <xref:System.Data.Linq.DataContext> instance. Pro čištění souvisejících objektů, můžete použít *kaskádové odstranění* funkce databáze, jinak ručně odstranit související objekty.  
+>  Chcete-li uvolnit `id` odstraněný objekt, použijte novou <xref:System.Data.Linq.DataContext> instanci. Pro vyčištění souvisejících objektů můžete použít funkci *kaskádového odstranění* databáze nebo odstranit související objekty ručně.  
 >   
->  Související objekty není nutné odstranit v libovolném pořadí speciální (na rozdíl od v databázi).  
+>  Související objekty není nutné odstraňovat v žádném speciálním pořadí (na rozdíl od databáze).  
   
 ## <a name="updating-objects"></a>Aktualizace objektů  
- Můžete zjistit `Updates` pozorováním oznámení změn. Oznámení jsou k dispozici prostřednictvím <xref:System.ComponentModel.INotifyPropertyChanging.PropertyChanging> událost v nastavením vlastností. Když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] oznámení o první změně na objekt, vytvoří kopii objektu a považuje za objekt kandidát pro generování `Update` příkaz.  
+ Můžete zjistit `Updates` pozorováním oznámení změn. Oznámení jsou k dispozici <xref:System.ComponentModel.INotifyPropertyChanging.PropertyChanging> prostřednictvím události v rámci setter vlastností. Když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je upozorněn na první změnu objektu, vytvoří kopii objektu a vezme objekt jako kandidát pro `Update` vygenerování příkazu.  
   
- Pro objekty, které neimplementují <xref:System.ComponentModel.INotifyPropertyChanging>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neuchovává kopii hodnoty, které objekty měly při prvním vyhodnocena. Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] porovná aktuální a původní hodnoty se rozhodnout, zda byl změněn na objekt.  
+ U objektů, které <xref:System.ComponentModel.INotifyPropertyChanging>neimplementují [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , uchovává kopii hodnot, které měly objekty v době, kdy byly vyhodnoceny jako první. Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>porovná [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aktuální a původní hodnoty a určí, zda byl objekt změněn.  
   
- Aktualizace relace z podřízený odkaz na nadřazený prvek (tedy odkaz odpovídající cizí klíč) se považuje za oprávnění. Odkaz v opačném směru (to znamená z nadřazené do podřízené) je volitelný. Vztah tříd (<xref:System.Data.Linq.EntitySet%601> a <xref:System.Data.Linq.EntityRef%601>) zaručit, že jsou odkazy obousměrné konzistentní u vztahů jednoho k několika a 1: 1. Je-li objektový model nepoužívá <xref:System.Data.Linq.EntitySet%601> nebo <xref:System.Data.Linq.EntityRef%601>, a pokud je k dispozici zpětné reference, je vaší zodpovědností uchovávat konzistentní s dopředným odkazem při aktualizaci vztahu.  
+ Pro aktualizace vztahů je odkaz z podřízeného objektu na nadřazený (tj. odkaz odpovídající cizímu klíči) považován za autoritu. Odkaz v opačném směru (tj. z nadřazené položky na podřízený) je volitelný. Třídy vztahů (<xref:System.Data.Linq.EntitySet%601> a <xref:System.Data.Linq.EntityRef%601>) zaručují, že obousměrné odkazy jsou konzistentní pro relace 1: n a 1:1. Pokud objektový model nepoužívá <xref:System.Data.Linq.EntitySet%601> nebo <xref:System.Data.Linq.EntityRef%601>a je-li k dispozici zpětný odkaz, je vaše zodpovědnost za to, že při aktualizaci vztahu zůstane v souladu s dopředným odkazem.  
   
- Při aktualizaci požadovaný odkaz a odpovídající cizí klíč, musí se ujistěte, že souhlasí. <xref:System.InvalidOperationException> Je vyvolána výjimka, pokud nejsou dva synchronizaci v době, kterou je možné volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. I když změny hodnoty cizího klíče jsou dostačující pro ovlivnění aktualizace základní řádky, měli byste změnit odkaz umožňující zachovat připojení objektu grafu a obousměrné konzistence relace.  
+ Pokud aktualizujete požadovaný odkaz i odpovídající cizí klíč, musíte se ujistit, že souhlasí. Výjimka je vyvolána, pokud tyto dvě nejsou synchronizovány v době volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. <xref:System.InvalidOperationException> I když jsou změny hodnoty cizího klíče dostačující pro ovlivnění aktualizace podkladového řádku, měli byste změnit odkaz na zachování připojení grafu objektů a obousměrné konzistence vztahů.  
   
 ## <a name="see-also"></a>Viz také:
 

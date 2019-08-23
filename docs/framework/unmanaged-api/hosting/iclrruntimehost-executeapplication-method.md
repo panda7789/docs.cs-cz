@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ca8db6fd1296420011dcbfbbb0e5682f8a484dc9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38938de335e5f0d7cb8051554c400f16df012362
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768810"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965360"
 ---
 # <a name="iclrruntimehostexecuteapplication-method"></a>ICLRRuntimeHost::ExecuteApplication – metoda
-Použít ve scénářích nasazení na bázi manifest ClickOnce k určení aktivovat v nové doméně aplikace. Další informace o těchto scénářích najdete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
+Používá se ve scénářích nasazení ClickOnce založených na manifestech k určení aplikace, která se má aktivovat v nové doméně. Další informace o těchto scénářích najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,50 +42,50 @@ HRESULT ExecuteApplication(
   
 ## <a name="parameters"></a>Parametry  
  `pwzAppFullName`  
- [in] Úplný název aplikace, jak jsou definovány pro <xref:System.ApplicationIdentity>.  
+ pro Úplný název aplikace definovaný pro <xref:System.ApplicationIdentity>.  
   
  `dwManifestPaths`  
- [in] Počet součástí řetězce `ppwzManifestPaths` pole.  
+ pro Počet řetězců obsažených v `ppwzManifestPaths` poli.  
   
  `ppwzManifestPaths`  
- [in] Volitelné. Pole řetězců obsahující cesty k manifestu aplikace.  
+ pro Volitelné. Pole řetězců, které obsahuje cesty manifestu pro aplikaci.  
   
  `dwActivationData`  
- [in] Počet součástí řetězce `ppwzActivationData` pole.  
+ pro Počet řetězců obsažených v `ppwzActivationData` poli.  
   
  `ppwzActivationData`  
- [in] Volitelné. Pole řetězců obsahující data aktivace aplikace, jako je například část řetězec dotazu adresy URL pro aplikace nasazené prostřednictvím webu.  
+ pro Volitelné. Pole řetězců, které obsahuje aktivační data aplikace, jako je například část řetězce dotazu adresy URL pro aplikace nasazené na webu.  
   
  `pReturnValue`  
- [out] Hodnota vrácená ze vstupního bodu aplikace.  
+ mimo Hodnota vrácená vstupním bodem aplikace  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ExecuteApplication` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`ExecuteApplication`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ExecuteApplication` slouží k aktivaci aplikací ClickOnce v doméně se nově vytvořená aplikace.  
+ `ExecuteApplication`slouží k aktivaci aplikací ClickOnce v nově vytvořené doméně aplikace.  
   
- `pReturnValue` Výstupní parametr je nastaven na hodnotu vrácenou příkazem aplikace. Pokud zadáte hodnotu null pro `pReturnValue`, `ExecuteApplication` není selže, ale nevrací hodnotu.  
+ `pReturnValue` Výstupní parametr je nastaven na hodnotu vrácenou aplikací. Pokud zadáte hodnotu null pro `pReturnValue`, `ExecuteApplication` neselže, ale nevrátí hodnotu.  
   
 > [!IMPORTANT]
->  Nevolejte [metoda Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) před voláním metody `ExecuteApplication` metodu aktivace manifest aplikace. Pokud `Start` metoda je volána nejprve `ExecuteApplication` volání metody se nezdaří.  
+> Nevolejte metodu [počáteční metody](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) před voláním `ExecuteApplication` metody pro aktivaci aplikace založené na manifestu. `ExecuteApplication` Pokud je `Start` metoda volána jako první, volání metody se nezdaří.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

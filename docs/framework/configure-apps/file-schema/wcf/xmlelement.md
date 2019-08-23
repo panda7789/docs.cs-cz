@@ -2,23 +2,23 @@
 title: <xmlElement>
 ms.date: 03/30/2017
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
-ms.openlocfilehash: a72641b438801cfd493c322297e7c384e83e687c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc178dcc3684ab338282acc369e0ab5c789c15e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698457"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941441"
 ---
 # <a name="xmlelement"></a>\<xmlElement>
-Určuje element XML, který posílá v těle zprávy služby tokenů zabezpečení při vyžádání tokenu.  
+Určuje element XML, který je odeslán v těle zprávy do služby tokenu zabezpečení při žádosti o token.  
   
  \<system.ServiceModel>  
-\<vazby >  
+\<> vazeb  
 \<wsFederatedBinding>  
-\<Vytvoření vazby >  
-\<security>  
-\<Zpráva >  
-\<tokenRequestParameters>  
+\<> vazby  
+\<> zabezpečení  
+\<> zprávy  
+\<tokenRequestParameters >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ Určuje element XML, který posílá v těle zprávy služby tokenů zabezpečen
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|xmlElement|Řetězec určující element XML, který posílá v těle zprávy služby tokenů zabezpečení při vyžádání tokenu.|  
+|xmlElement|Řetězec určující element XML, který je odeslán v těle zprávy do služby tokenu zabezpečení při vyžádání tokenu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -44,14 +44,14 @@ Určuje element XML, který posílá v těle zprávy služby tokenů zabezpečen
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je platný element XML.|  
+|[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>
-- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Možnosti zabezpečení u vlastních vazeb](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Vazby](../../../wcf/bindings.md)

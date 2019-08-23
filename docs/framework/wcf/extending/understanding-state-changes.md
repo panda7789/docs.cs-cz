@@ -2,12 +2,12 @@
 title: Principy změn stavů
 ms.date: 03/30/2017
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
-ms.openlocfilehash: 549620ee5317e68735b392ce35b73c92f2474eab
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 154f49e7da059d20d0751a73c664aa2a0f89be12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363943"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963075"
 ---
 # <a name="understanding-state-changes"></a>Principy změn stavů
 Toto téma popisuje stavy a přechody, které kanály obsahují, typy používané ke strukturování stavů kanálů a jejich implementaci.  
@@ -58,7 +58,7 @@ Obrázek 2. Implementace CommunicationObject stavového počítače objekt IComm
  <xref:System.ServiceModel.Channels.CommunicationObject>poskytuje implementace přerušení, zavření a otevření. Poskytuje také metodu selhání, která způsobuje přechod stavu do chybového stavu. Obrázek 2 ukazuje <xref:System.ServiceModel.ICommunicationObject> Stavový počítač s každým přechodem označeným metodou, která způsobí, že se přechody provedou v rámci implementace metody, která způsobila poslední přechod popisku.  
   
 > [!NOTE]
->  Všechny <xref:System.ServiceModel.Channels.CommunicationObject> implementace Get/Sets stavu komunikace jsou synchronizovány vláknem.  
+> Všechny <xref:System.ServiceModel.Channels.CommunicationObject> implementace Get/Sets stavu komunikace jsou synchronizovány vláknem.  
   
  Konstruktor  
   

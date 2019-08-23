@@ -6,25 +6,25 @@ helpviewer_keywords:
 - custom controls [Windows Forms], transparent background
 - transparency [Windows Forms], Windows Forms custom controls
 ms.assetid: 32433e63-f4e9-4305-9857-6de3edeb944a
-ms.openlocfilehash: 8a03d9afec5340cd77af465c4470b7484b8926be
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a82807ea3873b2217d1f05f6c720c599ea79abdd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609706"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966643"
 ---
 # <a name="how-to-give-your-control-a-transparent-background"></a>Postupy: Nastavení průhledného pozadí pro vlastní ovládací prvek
-V dřívějších verzích rozhraní .NET Framework, ovládací prvky nepodporoval nastavení transparentní backcolors bez první nastavení <xref:System.Windows.Forms.Control.SetStyle%2A> metoda v konstruktoru formulářích. V aktuální verzi rozhraní framework backcolor pro většinu ovládacích prvků lze nastavit na <xref:System.Drawing.Color.Transparent%2A> v **vlastnosti** okno v době návrhu nebo v kódu v konstruktoru formuláře.  
+V dřívějších verzích .NET Framework ovládací prvky nepodporovaly nastavení průhledných BackColor BackColor bez prvotního nastavení <xref:System.Windows.Forms.Control.SetStyle%2A> metody v konstruktoru formuláře. V aktuální verzi rozhraní může být barva BackColor pro většinu ovládacích prvků nastavena na <xref:System.Drawing.Color.Transparent%2A> hodnotu v okně **vlastnosti** v době návrhu nebo v kódu v konstruktoru formuláře.  
   
 > [!NOTE]
->  Ovládací prvky Windows Forms nepodporují true průhlednost. Na pozadí ovládacího prvku Windows Forms transparentní kresleno svého nadřazeného objektu.  
+> Ovládací prvky model Windows Forms nepodporují skutečnou průhlednost. Pozadí transparentního ovládacího prvku model Windows Forms je vykresleno jeho nadřazenou položkou.  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.Button> Ovládací prvek nepodporuje průhlednou barvu backcolor i v případě <xref:System.Windows.Forms.ButtonBase.BackColor%2A> je nastavena na <xref:System.Drawing.Color.Transparent%2A>.  
+> Ovládací prvek nepodporuje průhlednou barvu BackColor i v případě, že <xref:System.Windows.Forms.ButtonBase.BackColor%2A> je vlastnost nastavena na <xref:System.Drawing.Color.Transparent%2A>hodnotu. <xref:System.Windows.Controls.Button>  
   
-### <a name="to-give-your-control-a-transparent-backcolor"></a>Poskytnout průhlednou barvu backcolor ovládacího prvku  
+### <a name="to-give-your-control-a-transparent-backcolor"></a>Poskytnutí průhledné barvy pozadí vašemu ovládacímu prvku  
   
-- V okně Vlastnosti zvolte <xref:System.Windows.Forms.ButtonBase.BackColor%2A> vlastnost a nastavte ho na <xref:System.Drawing.Color.Transparent%2A>  
+- V okno Vlastnosti vyberte <xref:System.Windows.Forms.ButtonBase.BackColor%2A> vlastnost a nastavte ji na<xref:System.Drawing.Color.Transparent%2A>  
   
 ## <a name="see-also"></a>Viz také:
 

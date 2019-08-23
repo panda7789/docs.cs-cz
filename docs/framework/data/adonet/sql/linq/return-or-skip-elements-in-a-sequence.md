@@ -5,58 +5,58 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
-ms.openlocfilehash: e0f2c6300f8dccb8cc316527af9c75f6a40ff2df
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 75cb5ea166c36de5c0921fbbd830021719497cda
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661900"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963863"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrácení nebo přeskočení prvků v posloupnosti
-Použití <xref:System.Linq.Queryable.Take%2A> operátor potom přeskočit zbývající a vrátí daný počet prvků v sekvenci.  
+<xref:System.Linq.Queryable.Take%2A> Operátor můžete použít k vrácení daného počtu prvků v sekvenci a následném přeskočení na zbytek.  
   
- Použití <xref:System.Linq.Queryable.Skip%2A> operátor přeskočit daný počet prvků v posloupnosti a pak se vraťte zbytek.  
+ <xref:System.Linq.Queryable.Skip%2A> Operátor můžete použít k přeskočení určitého počtu prvků v sekvenci a následnému vrácení zbytku.  
   
 > [!NOTE]
->  <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, když se používají v dotazech pro SQL Server 2000. Další informace najdete v tématu "Přeskočit a převzít výjimky v systému SQL Server 2000" položka v [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> <xref:System.Linq.Enumerable.Take%2A>a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, pokud se používají v dotazech proti SQL Server 2000. Další informace najdete v části "přeskočení a přijetí výjimek v SQL Server 2000" v tématu [řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží <xref:System.Linq.Queryable.Skip%2A> pomocí poddotazu SQL `NOT EXISTS` klauzuli. Tento překlad má následující omezení:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]překládá <xref:System.Linq.Queryable.Skip%2A> se pomocí poddotazu s klauzulí SQL `NOT EXISTS` . Tento převod má následující omezení:  
   
-- Argument musí být sada. Multisets nejsou podporovány, i v případě, že řazení.  
+- Argument musí být sada. Množiny s více sadami se nepodporují, i když jsou seřazené.  
   
-- Generování dotazu může být mnohem složitější než dotaz vygenerovaný pro základní dotaz, na kterém <xref:System.Linq.Queryable.Skip%2A> platí. Tato složitost může způsobit snížení výkonu nebo dokonce i vypršení časového limitu.  
+- Vygenerovaný dotaz může být mnohem složitější než dotaz vygenerovaný pro základní dotaz, na kterém <xref:System.Linq.Queryable.Skip%2A> se používá. Tato složitost může způsobit snížení výkonu nebo dokonce i vypršení časového limitu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Take` vybrat prvních pět `Employees` pověřili. Všimněte si, že kolekce je nejprve seřazené podle `HireDate`.  
+ Následující příklad používá `Take` k výběru prvních pět `Employees` najatých. Všimněte si, že kolekce je nejprve seřazena podle `HireDate`.  
   
  [!code-csharp[DLinqQueryExamples#16](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#16)]
  [!code-vb[DLinqQueryExamples#16](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#16)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Linq.Queryable.Skip%2A> vybrat všechny s výjimkou nejdražší 10 `Products`.  
+ Následující příklad používá <xref:System.Linq.Queryable.Skip%2A> k výběru vše kromě nejdražšího `Products`10.  
   
  [!code-csharp[DLinqQueryExamples#17](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#17)]
  [!code-vb[DLinqQueryExamples#17](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#17)]  
   
 ## <a name="example"></a>Příklad  
- Kombinuje v následujícím příkladu <xref:System.Linq.Queryable.Skip%2A> a <xref:System.Linq.Queryable.Take%2A> metody přeskočte prvních 50 záznamy a vrátíte se na další 10.  
+ Následující příklad kombinuje <xref:System.Linq.Queryable.Skip%2A> metody a <xref:System.Linq.Queryable.Take%2A> pro přeskočení prvních 50 záznamů a potom vrátí další 10.  
   
  [!code-csharp[DLinqQueryExamples#18](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#18)]
  [!code-vb[DLinqQueryExamples#18](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#18)]  
   
- <xref:System.Linq.Queryable.Take%2A> a <xref:System.Linq.Queryable.Skip%2A> operace jsou dobře definované pouze proti seřazené sady. Sémantika pro Neseřazený sady nebo multisets není definován.  
+ <xref:System.Linq.Queryable.Take%2A>a <xref:System.Linq.Queryable.Skip%2A> operace jsou dobře definovány pouze proti seřazeným sadám. Sémantika pro neuspořádané sady nebo více sad není definována.  
   
- Z důvodu omezení na pořadí v SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí přesunout řazení v argumentu <xref:System.Linq.Queryable.Take%2A> nebo <xref:System.Linq.Queryable.Skip%2A> operátor má výsledek operátoru.  
+ Z důvodu omezení řazení v SQL se [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pokusí přesunout pořadí argumentu <xref:System.Linq.Queryable.Take%2A> operátoru OR <xref:System.Linq.Queryable.Skip%2A> na výsledek operátoru.  
   
 > [!NOTE]
->  Překlad se liší pro SQL Server 2000 a SQL Server 2005. Pokud budete chtít použít <xref:System.Linq.Queryable.Skip%2A> pomocí dotazu jakékoli složitosti, SQL Server 2005.  
+> Překlad se liší od SQL Server 2000 a SQL Server 2005. Pokud plánujete použití <xref:System.Linq.Queryable.Skip%2A> s dotazem jakékoli složitosti, použijte SQL Server 2005.  
   
- Vezměte v úvahu následující [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz pro SQL Server 2000:  
+ Vezměte v úvahu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] následující dotaz SQL Server 2000:  
   
  [!code-csharp[DLinqQueryExamples#19](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#19)]
  [!code-vb[DLinqQueryExamples#19](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#19)]  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přesune řazení za účelem do kódu SQL, následujícím způsobem:  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Přesune řazení na konec v kódu SQL následujícím způsobem:  
   
 ```  
 SELECT TOP 1 [t0].[CustomerID], [t0].[CompanyName],  
@@ -74,9 +74,9 @@ WHERE (NOT (EXISTS(
 ORDER BY [t0].[CustomerID]  
 ```  
   
- Když <xref:System.Linq.Queryable.Take%2A> a <xref:System.Linq.Queryable.Skip%2A> jsou zřetězen dohromady, všechny zadané řazení musí být konzistentní vzhledem k aplikacím. V opačném případě nejsou výsledky definovány.  
+ Když <xref:System.Linq.Queryable.Take%2A> a<xref:System.Linq.Queryable.Skip%2A> jsou zřetězeny, všechna zadaná řazení musí být konzistentní. V opačném případě nejsou výsledky definovány.  
   
- Pro záporná, konstantní celočíselné argumenty podle specifikace SQL i <xref:System.Linq.Queryable.Take%2A> a <xref:System.Linq.Queryable.Skip%2A> jsou dobře definované.  
+ Pro nezáporné konstantní celočíselné argumenty založené na specifikaci SQL, <xref:System.Linq.Queryable.Take%2A> a <xref:System.Linq.Queryable.Skip%2A> jsou dobře definovány.  
   
 ## <a name="see-also"></a>Viz také:
 

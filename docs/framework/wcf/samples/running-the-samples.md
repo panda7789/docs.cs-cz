@@ -2,84 +2,84 @@
 title: Spouštění ukázek Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: f2d28ac8c1cfc13a8d2f17c9d4e1bcc92cf559e3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df984f2464084948cdaa51dab96554de9400911f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664747"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965502"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
-Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci jednoho počítače nebo mezi počítači. Jako zadán, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je nutné upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak ve stejném počítači a mezi počítači konfiguracích spuštění ukázky. Všimněte si, že jsou změny v postupu pro služby hostované v Internetové informační služby (IIS) a ukázky v místním prostředí. Většina ukázek, které jsou hostované ve službě IIS; Podívejte se ukázkovými informacemi o souboru readme k určení, jak je hostovaná.  
+Ukázky Windows Communication Foundation (WCF) je možné spustit v konfiguraci s jedním počítačem nebo mezi počítači. Jak je uvedeno, ukázky jsou připravené k provozu na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení konfiguračního souboru ukázky. Následující postupy vysvětlují, jak spustit ukázku ve stejném počítači a konfiguracích pro více počítačů. Všimněte si, že existují změny v krocích pro služby hostované v Internetová informační služba (IIS) a ve vzorcích pro místní hostování. Většina ukázek je hostována ve službě IIS; informace o tom, jak je hostovaný, najdete v ukázkovém souboru Readme.  
   
- Na [!INCLUDE[wv](../../../../includes/wv-md.md)], ukázky, které se nehostují ve službě IIS vyžadují zvýšená oprávnění k registraci naslouchací proces se souborem Http.sys. Použít Httpcfg.exe zaregistrovat naslouchání adresy služby u účtu, který je služba spuštěná pod nebo spusťte službu z příkazového řádku s oprávněními správce.  
+ V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému se v ukázkách, které nejsou hostované ve službě IIS, vyžaduje zvýšená oprávnění k registraci naslouchacího procesu pomocí HTTP. sys. Použijte Httpcfg. exe k registraci adres naslouchání služby u účtu, pod kterým je služba spuštěná, nebo spusťte službu z příkazového řádku spuštěného s oprávněními správce.  
   
 > [!NOTE]
->  Před vytvářejí nebo s některým z ukázky WCF, ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+> Před vytvořením nebo spuštěním kterékoli z ukázek služby WCF se ujistěte, že jste provedli [jednorázovou proceduru nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
+### <a name="to-run-the-sample-on-the-same-machine"></a>Spuštění ukázky na stejném počítači  
   
-1. Pokud je služba hostována službou IIS, ujistěte se, že jste přístup ke službě pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi. Pokud se nezobrazí na stránce potvrzení, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+1. Pokud je služba hostovaná službou IIS, ujistěte se, že ke službě můžete přistupovat pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. V odpovědi by se měla zobrazit Stránka s potvrzením. Pokud se nezobrazí stránka s potvrzením, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-2. Pokud služba je samoobslužně hostovaná, spusťte Service.exe z \service\bin ze složky specifické pro jazyk. Aktivita služby se zobrazí v okně konzoly služby.  
+2. Pokud je služba v místním prostředí, spusťte Service. exe z \service\bin ze složky specifické pro daný jazyk. Aktivita služby se zobrazí v okně konzoly služby.  
   
-3. Spustit Client.exe z \client\bin\\, ze složky specifické pro jazyk. Činnost klienta se zobrazí v okně konzoly klienta.  
+3. Spusťte soubor Client. exe z\\\client\bin ze složky specifické pro jazyk. Aktivita klienta se zobrazí v okně konzoly klienta.  
   
-4. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
+### <a name="to-run-the-sample-across-machines"></a>Spuštění ukázky napříč počítači  
   
-1. Pokud služba je hostována ve službě IIS:  
+1. Pokud je služba hostovaná ve službě IIS:  
   
-    1. Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Dávkový soubor, který je součástí Setupvroot.bat [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) je možné vytvořit na disku a virtuální adresář.  
+    1. Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Dávkový soubor Setupvroot. bat, který [je součástí procesu jednorázového nastavení pro Windows Communication Foundation ukázky,](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) lze použít k vytvoření adresáře disku a virtuálního adresáře.  
   
-    2. Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači služby. Ujistěte se, že složku zahrnujete soubory v adresáři \bin.  
+    2. Zkopírujte programové soubory služby z%SystemDrive%\Inetpub\wwwroot\servicemodelsamples do virtuálního adresáře ServiceModelSamples na počítači služby. Ujistěte se, že jste do adresáře \Bin zahrnuli soubory.  
   
-    3. Testovací službě můžete dostat z klientského počítače pomocí prohlížeče.  
+    3. Otestujte, zda ke službě můžete přistupovat z klientského počítače pomocí prohlížeče.  
   
      Pokud je služba v místním prostředí:  
   
-    1. Na počítači, služby vytvořte adresář pro uložení souborů služby.  
+    1. Na počítači služby vytvořte adresář, ve kterém se budou uchovávat soubory služby.  
   
-    2. Zkopírujte soubory programu služby ze složky \service\bin\ v rámci složky specifické pro jazyk do počítače služba.  
+    2. Zkopírujte programové soubory služby ze složky \service\bin\ ve složce specifické pro daný jazyk do počítače služby.  
   
-    3. V konfiguračním souboru služby změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    3. V konfiguračním souboru služby změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adrese vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaným názvem domény v adrese.  
   
-    4. Service.exe spusťte z příkazového řádku.  
+    4. Z příkazového řádku spusťte Service. exe.  
   
-2. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
+2. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce specifické pro daný jazyk do klientského počítače.  
   
 3. Nastavte adresu koncového bodu.  
   
-    1. Pokud služba není spuštěna pod účtem domény, otevřete soubor konfigurace klienta a změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    1. Pokud služba není spuštěná pod účtem domény, otevřete soubor konfigurace klienta a změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adrese vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaným názvem domény v adrese.  
   
-    2. Pokud je služba spuštěna pod účtem domény, znovu vygenerovat konfiguraci klienta spuštěním Svcutil.exe na službu. Další informace o spouštění Svcutil.exe najdete v tématu [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Vygenerovaný soubor nahrazujícím konfiguračního souboru ve vzorku. Vygenerovaný konfigurační soubor obsahuje informace o dalších identity a obsahuje všechna nastavení požadovaná pro připojení ke koncovému bodu služby, i když jde o výchozí nastavení. Další informace o informace o identitě, naleznete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md), a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
+    2. Pokud je služba spuštěna pod účtem domény, znovu vygenerujte konfiguraci klienta spuštěním Svcutil. exe proti této službě. Další informace o spuštění Svcutil. exe najdete v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Místo konfiguračního souboru v ukázce použijte vygenerovaný soubor. Vygenerovaný konfigurační soubor obsahuje další informace o identitě a obsahuje všechna nastavení potřebná pro připojení ke koncovému bodu služby, i když se jedná o výchozí nastavení. Další informace o identitě najdete v tématu Identita [a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)a [ \<> identity](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
   
-4. Na klientském počítači a spusťte Client.exe z příkazového řádku.  
+4. Na klientském počítači spusťte soubor Client. exe z příkazového řádku.  
   
 ### <a name="to-debug-a-service"></a>Ladění služby  
   
-1. Sestavení řešení (klient a služba) používá **sestavení** nabídky nebo CTRL + SHIFT + B.  
+1. Sestavte řešení (klienta i služby) pomocí nabídky **sestavení** nebo CTRL + SHIFT + B.  
   
-2. Pokud služba je hostována ve službě IIS:  
+2. Pokud je služba hostovaná ve službě IIS:  
   
-    1. Aktivace služby pomocí prohlížeče tak, že zadáte adresu `http://localhost/servicemodelsamples/service.svc`.  
+    1. Aktivujte službu pomocí prohlížeče zadáním adresy `http://localhost/servicemodelsamples/service.svc`.  
   
-    2. V řešení, zvolte **ladění** nabídky a **připojit k procesu** položky nabídky.  
+    2. V řešení vyberte nabídku **ladění** a položku nabídky **připojit k procesu** .  
   
-    3. Vyberte **Zobrazit procesy všech uživatelů** zaškrtávací políčko.  
+    3. Zaškrtněte políčko **Zobrazit procesy všech uživatelů** .  
   
-    4. Vyberte hostitele pracovní proces W3wp.exe ladění (vyberte ASPNet_wp.exe na Windows XP).  
+    4. Vyberte hostitelský pracovní proces W3wp. exe, který se má ladit (v systému Windows XP vyberte program ASPNet_wp. exe).  
   
-3. Teď můžete nastavit zarážky v kódu služby a povolit zarážky na výjimky.  
+3. Nyní můžete nastavit zarážky v kódu služby a povolit zarážky na výjimky.  
   
-4. Klikněte pravým tlačítkem na položku projektu klienta a zvolte **ladění**, **zahájit novou instanci**.  
+4. Klikněte pravým tlačítkem myši na položku klientského projektu a vyberte možnost **ladit**, **spustit novou instanci**.  
   
-### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
+### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
   
-- Pokud služba je hostována ve službě IIS pro účely zabezpečení, odeberte definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  
+- Pokud je služba hostovaná ve službě IIS z důvodu zabezpečení, odeberte definici virtuálního adresáře a oprávnění udělená v krocích instalace po dokončení práce s ukázkami.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)
-- [Řešení potíží s tipy pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))
+- [Tipy pro řešení potíží s ukázkami WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))

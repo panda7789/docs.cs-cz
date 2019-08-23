@@ -1,13 +1,13 @@
 ---
 title: Externí funkce
-description: Další informace o F# jazykovou podporu pro volání funkcí v nativním kódu.
+description: Přečtěte si F# o podpoře jazyků pro volání funkcí v nativním kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 73e38d8942bfc8ddb3c51d126d7678e84903326b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3c8edaba25e07b6ca2c44a58c4b55dc98a13b4fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642050"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968733"
 ---
 # <a name="external-functions"></a>Externí funkce
 
@@ -22,9 +22,9 @@ extern declaration
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *argumenty* představuje argumenty, které jsou předány `System.Runtime.InteropServices.DllImportAttribute` atribut. První argument je řetězec, který představuje název knihovny DLL, která obsahuje tato funkce bez přípony DLL. Lze je zadat další argumenty pro všechny veřejné vlastnosti `System.Runtime.InteropServices.DllImportAttribute` třídy, jako je konvence volání.
+V předchozí syntaxi *argumenty* představují argumenty, které jsou dodány `System.Runtime.InteropServices.DllImportAttribute` atributu. První argument je řetězec, který představuje název knihovny DLL, která obsahuje tuto funkci, bez přípony. dll. Další argumenty lze zadat pro libovolnou veřejnou vlastnost `System.Runtime.InteropServices.DllImportAttribute` třídy, jako je například konvence volání.
 
-Předpokládejme, že máte nativní knihovny DLL jazyka C++, který obsahuje následující exportované funkce.
+Předpokládejme, že máte nativní C++ knihovnu DLL, která obsahuje následující exportovanou funkci.
 
 ```cpp
 #include <stdio.h>
@@ -34,7 +34,7 @@ extern "C" void __declspec(dllexport) HelloWorld()
 }
 ```
 
-Můžete volat tuto funkci z F# pomocí následujícího kódu.
+Tuto funkci můžete volat z F# pomocí následujícího kódu.
 
 ```fsharp
 open System.Runtime.InteropServices
@@ -46,7 +46,7 @@ module InteropWithNative =
 InteropWithNative.HelloWorld()
 ```
 
-Vzájemná funkční spolupráce s nativním kódem se označuje jako *vyvolání platformy* a je funkce modulu CLR. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md). Informace v této části se vztahuje na F#.
+Interoperabilita s nativním kódem je označována jako *vyvolání platformy* a je funkcí CLR. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../framework/interop/index.md). Informace v této části se vztahují na F#.
 
 ## <a name="see-also"></a>Viz také:
 

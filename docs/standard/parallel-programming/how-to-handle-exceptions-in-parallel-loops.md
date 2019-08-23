@@ -10,23 +10,23 @@ helpviewer_keywords:
 ms.assetid: 512f0d5a-4636-4875-b766-88f20044f143
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ef883f37587948871b222ca03a4032bea2109bf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ffc522b2ab13ae2098c01e6716e00aef5bef8e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638295"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962501"
 ---
 # <a name="how-to-handle-exceptions-in-parallel-loops"></a>Postupy: Zpracování výjimek v paralelních smyčkách
-<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> přetížení nemají žádný zvláštní mechanismus zpracování výjimek, které mohou být vyvolány. V tomto ohledu se podobají pravidelně `for` a `foreach` smyčky (`For` a `For Each` v jazyce Visual Basic); neošetřené výjimky způsobí, že smyčku ukončit okamžitě.  
+Přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> nemají žádný zvláštní mechanismus pro zpracování výjimek, které mohou být vyvolány. V tomto `for` ohledu se podobají regulárním cyklům a `foreach` smyčkám`For` ( `For Each` a v Visual Basic); Neošetřená výjimka způsobí, že se smyčka okamžitě ukončí.  
   
- Když přidáte vlastní logiku zpracování výjimek pro paralelní smyčky, zpracovávat tento případ, ve kterém může být podobné výjimky vyvolána z více vláken současně a tento případ, ve kterém výjimce v jednom vlákně způsobí, že další výjimku, která je vyvolána na jiném vlákno. Obou případech může zpracovávat všechny výjimky ze smyčky v zabalení <xref:System.AggregateException?displayProperty=nameWithType>. Následující příklad ukazuje jednu z možných způsobů.  
+ Když přidáte vlastní logiku zpracování výjimek do paralelních smyček, zpracujte případ, ve kterém mohou být podobné výjimky vyvolány na více vláknech souběžně, a případ, ve kterém výjimka vyvolaná v jednom vlákně způsobí vyvolání jiné výjimky na jiném Doporučujeme. Oba případy můžete zpracovat tak, že zabalíte všechny výjimky ze smyčky <xref:System.AggregateException?displayProperty=nameWithType>v. Následující příklad ukazuje jeden možný přístup.  
   
 > [!NOTE]
->  Pokud je povolena vlastnost „Pouze vlastní kód“, zastaví se sada Visual Studio v některých případech na řádce, která výjimku vyvolá, a zobrazí chybovou zprávu s upozorněním, že „výjimka není zpracována uživatelským kódem“. Tato chyba je neškodná. Můžete stisknutím klávesy F5 pokračovat z něj a najdete v chování zpracování výjimek, který je znázorněn v následujícím příkladu. Pokud chcete zabránit přerušení nebo první chybě sady Visual Studio, zrušte zaškrtnutí políčka "Jen můj kód" v části **nástroje, možnosti, ladění, Obecné**.  
+> Pokud je povolena vlastnost „Pouze vlastní kód“, zastaví se sada Visual Studio v některých případech na řádce, která výjimku vyvolá, a zobrazí chybovou zprávu s upozorněním, že „výjimka není zpracována uživatelským kódem“. Tato chyba je neškodná. Stiskem klávesy F5 můžete pokračovat a zobrazit chování zpracování výjimek, které je znázorněno v následujícím příkladu. Chcete-li aplikaci Visual Studio zabránit v přerušení první chyby, zrušte zaškrtnutí políčka Pouze můj kód v části **nástroje, možnosti, ladění, obecné**.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu jsou všechny výjimky zachycena a potom zabalené v <xref:System.AggregateException?displayProperty=nameWithType> která je vyvolána výjimka. Volající může rozhodnout, které výjimky pro zpracování.  
+ V tomto příkladu jsou zachyceny všechny výjimky a poté zabaleny do <xref:System.AggregateException?displayProperty=nameWithType> , který je vyvolána. Volající může rozhodnout, jaké výjimky se mají zpracovat.  
   
  [!code-csharp[TPL_Exceptions#08](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptions.cs#08)]
  [!code-vb[TPL_Exceptions#08](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/exceptionsinloops.vb#08)]  

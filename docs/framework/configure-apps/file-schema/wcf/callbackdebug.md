@@ -2,20 +2,20 @@
 title: <callbackDebug>
 ms.date: 03/30/2017
 ms.assetid: 4073feda-1857-4be4-9947-227afb847ced
-ms.openlocfilehash: a1190eb1c015ba07488ff5a5952f2f5f1b10974c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91e7bd63bf496f2c38776d88173ed2ac12a3b888
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704515"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926306"
 ---
 # <a name="callbackdebug"></a>\<callbackDebug >
-Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).  
+Určuje ladění služby pro objekt zpětného volání služby Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<endpointBehaviors>  
-\<chování >  
+\<> chování  
 \<callbackDebug >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,7 +24,7 @@ Určuje ladění služby pro objekt zpětného volání Windows Communication Fo
 <callbackDebug includeExceptionDetailInFaults="Boolean" />
 ```  
   
-## <a name="type"></a>Type  
+## <a name="type"></a>type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -34,7 +34,7 @@ Určuje ladění služby pro objekt zpětného volání Windows Communication Fo
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`includeExceptionDetailInFaults`|Hodnota, která určuje, zda objekty zpětného volání klienta vrátí informace o spravované výjimce v chyb SOAP zpět do služby.<br /><br /> Pokud tento atribut nastavíte na `true` můžete prostřednictvím kódu programu, může být povolen tok informací o řízené výjimce do objektu zpětného volání klienta zpět do služby pro účely ladění. **Upozornění:**  Vracející informace o spravované výjimce klientům může představovat bezpečnostní riziko. Je to proto, že podrobnosti o výjimce zveřejnit informace o implementaci vnitřní chybě služby, které by mohly používat neoprávněným klientů.|  
+|`includeExceptionDetailInFaults`|Hodnota, která určuje, zda objekty zpětného volání klienta vracejí informace o spravované výjimce v chybách protokolu SOAP zpět do služby.<br /><br /> Pokud tento atribut nastavíte na `true` programové, můžete povolit tok informací o spravovaných výjimkách v objektu zpětného volání klienta zpátky do služby pro účely ladění. **Upozornění**  Vrácení informací o spravované výjimce klientům může představovat bezpečnostní riziko. Důvodem je skutečnost, že podrobnosti o výjimce zpřístupňují informace o implementaci interní služby, které by mohly být používány neautorizovanými klienty.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,7 +43,7 @@ Určuje ladění služby pro objekt zpětného volání Windows Communication Fo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="see-also"></a>Viz také:
 

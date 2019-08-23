@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-ms.openlocfilehash: 2f9de32eb8637e58c17aba2309eed33dcfdd42a7
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: d9dd9306980b80f7845c10e8c0ccb59f29821245
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400766"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940841"
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by se obecně měly považovat za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností zabraňuje možnosti provádět záruky zabezpečení týkající se hodnoty vlastnosti závislosti.  
@@ -29,7 +29,7 @@ Vlastnosti závislosti by se obecně měly považovat za veřejné vlastnosti. P
  U vlastní vlastnosti závislosti můžete vlastnost zaregistrovat jako vlastnost závislosti jen pro čtení. to poskytuje efektivní způsob, jak zabránit tomu, aby se vlastnost nastavila kýmkoli, kdo nedrží odkaz na danou <xref:System.Windows.DependencyPropertyKey> vlastnost. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md).  
   
 > [!NOTE]
->  Deklarace pole <xref:System.Windows.DependencyProperty> identifikátoru Private není zakázaná a dá se použít k omezení okamžitě vystaveného oboru názvů vlastní třídy, ale taková vlastnost by se neměla považovat za "soukromou" ve stejném smyslu jako společný jazyk. jazykové definice modulu runtime (CLR) definují úroveň přístupu z důvodů popsaných v následující části.  
+> Deklarace pole <xref:System.Windows.DependencyProperty> identifikátoru Private není zakázaná a dá se použít k omezení okamžitě vystaveného oboru názvů vlastní třídy, ale taková vlastnost by se neměla považovat za "soukromou" ve stejném smyslu jako společný jazyk. jazykové definice modulu runtime (CLR) definují úroveň přístupu z důvodů popsaných v následující části.  
   
 <a name="PropertySystemExposure"></a>   
 ## <a name="property-system-exposure-of-dependency-properties"></a>Stav expozice vlastností závislosti v systému vlastností  

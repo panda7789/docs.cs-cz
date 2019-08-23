@@ -2,20 +2,20 @@
 title: <pnrpPeerResolver>
 ms.date: 03/30/2017
 ms.assetid: c1b34f3b-68e5-4911-a367-de49fb61dbc6
-ms.openlocfilehash: 2404f00b2a3ba03e89c1e21fb25e13cabb8feed3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7e82117304ac133e5e84c0fc36b987560bcef96
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783276"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933799"
 ---
 # <a name="pnrppeerresolver"></a>\<pnrpPeerResolver>
-Určuje, že se má použít jako překladač překladač PNRP (Peer Name Resolution Protocol). Tento element je volitelný, protože je výchozí překladač PNRP.  
+Určuje, že jako překladač se použije překladač PNRP (Peer Name Resolution Protocol). Tento prvek je nepovinný, protože PNRP je výchozí překladač.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<pnrpResolver>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,16 +31,16 @@ Určuje, že se má použít jako překladač překladač PNRP (Peer Name Resolu
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|resolverType|Řetězec, který určuje překladače, který má být použit. Tento atribut je volitelný. Pokud není nastavená nebo pokud je nastavena na prázdný řetězec se používá PNRP.|  
+|Typ překladače|Řetězec, který určuje překladač, který se má použít. Tento atribut je nepovinný. Pokud není nastavená, nebo pokud je nastavená na prázdný řetězec, použije se PNRP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="example"></a>Příklad  
   
@@ -53,8 +53,8 @@ Určuje, že se má použít jako překladač překladač PNRP (Peer Name Resolu
 - <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>
 - <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Překladače partnerských uzlů](../../../wcf/feature-details/peer-resolvers.md)

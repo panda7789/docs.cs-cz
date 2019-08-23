@@ -8,36 +8,36 @@ helpviewer_keywords:
 - text [Windows Forms], drawing with tab stops
 - tabs [Windows Forms], drawn text
 ms.assetid: 64878f98-39ba-4303-b63f-0859ab682eeb
-ms.openlocfilehash: 8e8f1bf193a41530a19e1046e3907b4c926b779f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8821f6170b8ba588e3197ef54eab14c2719a6cc3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637036"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947823"
 ---
 # <a name="how-to-set-tab-stops-in-drawn-text"></a>Postupy: Nastavení zarážek v kresleném textu
-Tabulátoru pro text můžete nastavit pomocí volání <xref:System.Drawing.StringFormat.SetTabStops%2A> metodu <xref:System.Drawing.StringFormat> objektu a následné předání, který <xref:System.Drawing.StringFormat> objektu <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics> třídy.  
+Můžete nastavit zarážky tabulátoru pro text voláním <xref:System.Drawing.StringFormat.SetTabStops%2A> metody <xref:System.Drawing.StringFormat> objektu a následným <xref:System.Drawing.Graphics.DrawString%2A> předáním tohoto <xref:System.Drawing.StringFormat> objektu metodě <xref:System.Drawing.Graphics> třídy.  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.TextRenderer?displayProperty=nameWithType> Fakturuje se nepodporuje přidání zarážky kresleném textu, i když rozšiřujete existující kartu přestane používat <xref:System.Windows.Forms.TextFormatFlags.ExpandTabs?displayProperty=nameWithType> příznak.  
+> Nepodporuje přidání zarážek tabulátoru do vykresleného textu, i když můžete rozbalit existující zarážku tabulátoru <xref:System.Windows.Forms.TextFormatFlags.ExpandTabs?displayProperty=nameWithType> pomocí příznaku. <xref:System.Windows.Forms.TextRenderer?displayProperty=nameWithType>  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastaví zarážek na 150, 250 a 350. Potom kód zobrazí seznam s kartami názvy a skóre v testech.  
+ Následující příklad nastaví zarážky tabulátoru na 150, 250 a 350. Kód pak zobrazuje seznam názvů a hodnocení testů s kartami.  
   
- Následující obrázek znázorňuje následující text:  
+ Následující ilustrace znázorňuje text s kartami:  
   
- ![Snímek obrazovky zobrazující seznam s kartami názvy a skóre.](./media/how-to-set-tab-stops-in-drawn-text/tab-list-names-test-scores.png)  
+ ![Snímek obrazovky zobrazující seznam názvů a skóre s kartami](./media/how-to-set-tab-stops-in-drawn-text/tab-list-names-test-scores.png)  
   
- Následující kód předá dva argumenty <xref:System.Drawing.StringFormat.SetTabStops%2A> metody. Druhý argument je pole, která obsahuje kartu posunů. První argument předaný metodě <xref:System.Drawing.StringFormat.SetTabStops%2A> je 0, což znamená, že první posunutí v poli se měří z pozice 0, je levý okraj ohraničující obdélník.  
+ Následující kód předá do <xref:System.Drawing.StringFormat.SetTabStops%2A> metody dva argumenty. Druhým argumentem je pole, které obsahuje posuny tabulátoru. První argument předaný do <xref:System.Drawing.StringFormat.SetTabStops%2A> je 0, což znamená, že první posun v poli je měřen od pozice 0, levého okraje ohraničovacího rámečku.  
   
  [!code-csharp[System.Drawing.FontsAndText#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.FontsAndText#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+- Předchozí příklad je navržen pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, <xref:System.Windows.Forms.PaintEventHandler>což je parametr.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Použití písem a textu](using-fonts-and-text.md)
-- [Postupy: Kreslení textu pomocí GDI](how-to-draw-text-with-gdi.md)
+- [Postupy: Nakreslit text pomocí GDI](how-to-draw-text-with-gdi.md)

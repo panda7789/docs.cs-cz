@@ -2,21 +2,21 @@
 title: <add> z <services>
 ms.date: 03/30/2017
 ms.assetid: 6bdc4590-aa9c-4ec8-9345-879d780cd141
-ms.openlocfilehash: c07b3377db4f5b434fd021b09de510c1d43ec832
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 38dec132626b97accacea1b7007d914edcab0abc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673573"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926649"
 ---
-# <a name="add-of-services"></a>\<Přidat > z \<služby >
-Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služby Windows Communication Foundation (WCF) založené na pracovních postupech. Tento prvek je typu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
+# <a name="add-of-services"></a>\<Přidat > \<služeb >
+Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služeb Windows Communication Foundation založených na pracovních postupech (WCF). Tento prvek je typu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
-\<services>  
+\<> chování  
+\<> služeb  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,7 +36,7 @@ Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> p
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-| – typ|Řetězec určující název typu kvalifikovaného pro sestavení služby mají být inicializovány. Zadaná služba musí dodržovat určitá pravidla o podpisech jejich konstruktory. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
+|– typ|Řetězec, který určuje název typu kvalifikovaného pro sestavení služby, která má být inicializována. Zadaná služba musí dodržovat určitá pravidla týkající se signatur jejich konstruktorů. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,10 +45,10 @@ Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> p
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services-of-workflowruntime.md)|Kolekce služeb, které budou přidány do <xref:System.Workflow.Runtime.WorkflowRuntime> modul. Prvky jsou typu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  Služby uvedené v kolekci inicializoval modul runtime pracovního postupu, který se přidá do jeho služby při odpovídající <xref:System.Workflow.Runtime.WorkflowRuntime> volání konstruktoru. Proto služby uvedené v kolekci musí následovat některá pravidla týkající se podpisy jejich konstruktory. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
+|[\<services>](services-of-workflowruntime.md)|Kolekce služeb, které budou přidány do <xref:System.Workflow.Runtime.WorkflowRuntime> modulu. Prvky jsou typu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  Služby zadané v kolekci budou inicializovány modulem runtime pracovního postupu a přidány ke svým službám při volání příslušného <xref:System.Workflow.Runtime.WorkflowRuntime> konstruktoru. Proto musí služby zadané v kolekci dodržovat určitá pravidla týkající se signatur jejich konstruktorů. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Služba zadaná v tomto elementu se inicializovat modul runtime pracovního postupu a přidat do své služby při odpovídající <xref:System.Workflow.Runtime.WorkflowRuntime> volání konstruktoru. Zadaná služba, proto musí následovat některá pravidla týkající se podpisy jejich konstruktory. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
+ Služba zadaná v tomto elementu bude inicializována modulem runtime pracovního postupu a přidána ke svým službám při volání příslušného <xref:System.Workflow.Runtime.WorkflowRuntime> konstruktoru. Proto je nutné, aby Zadaná služba dodržovala určitá pravidla týkající se signatur jejich konstruktorů. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
   
 ## <a name="example"></a>Příklad  
   

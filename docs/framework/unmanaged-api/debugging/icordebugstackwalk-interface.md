@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e33e9be112a6a10f89b88005496ce2e63dff2d54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06ce2da435df9458ca59d76fa426becbede2e619
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782678"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959677"
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk – rozhraní
 Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku vlákna.  
@@ -31,23 +31,23 @@ Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku v
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Vrátí kontext pro aktuální rámec v `ICorDebugStackWalk` objektu.|  
-|[SetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Nastaví `ICorDebugStackWalk` aktuální kontext objektu na platný kontext pro vlákno.|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|Přesune `ICorDebugStackWalk` objektu do dalšího snímku.|  
+|[SetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Nastaví aktuální kontext objektu na platný kontext pro vlákno. `ICorDebugStackWalk`|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|`ICorDebugStackWalk` Přesune objekt k dalšímu snímku.|  
 |[GetFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Získá aktuální rámec v `ICorDebugStackWalk` objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
+> Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

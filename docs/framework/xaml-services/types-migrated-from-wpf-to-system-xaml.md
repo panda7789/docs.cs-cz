@@ -6,26 +6,26 @@ helpviewer_keywords:
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-ms.openlocfilehash: 37433768c1bca3c013fb1e505d55bd7295f34933
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 943cdb2a21cbf2f95ef7fe2feefe6c0e71f57be4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758025"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939685"
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>Typy migrované z prostředí WPF do oboru názvů System.Xaml
-V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Windows Workflow Foundation součástí implementace jazyka XAML. V sestavení WindowsBase PresentationCore a PresentationFramework existuje mnoho veřejných typů, které rozšíření k dispozici pro implementaci WPF XAML. Obdobně veřejných typů, které poskytuje rozšíření pro Windows Workflow Foundation XAML existoval v System.Workflow.ComponentModel sestavení. V rozhraní .NET Framework 4 některé typy související s XAML se migrují do oboru názvů System.Xaml sestavení. Běžnou implementaci rozhraní .NET Framework jazykových služeb XAML umožňuje mnoho scénářů rozšíření XAML, které byly původně definované implementací konkrétního rozhraní XAML, ale jsou teď součástí celkového jazykovou podporu rozhraní .NET Framework 4 XAML. Toto téma obsahuje seznam typů, které se migrují a popisuje problémy související s migrací.  
+V .NET Framework 3,5 a .NET Framework 3,0 zahrnuje i [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] programovací model Windows Workflow Foundation implementaci jazyka XAML. Mnohé z veřejných typů, které poskytly rozšíření pro implementaci WPF XAML, existují v sestaveních WindowsBase, PresentationCore a PresentationFramework. Podobně veřejné typy, které v sestavení System. Workflow. ComponentModel poskytly rozšíření pro programovací model Windows Workflow Foundation XAML. V .NET Framework 4 jsou některé typy související s jazykem XAML migrovány do sestavení System. XAML. Společná implementace .NET Framework jazykových služeb jazyka XAML umožňuje mnoho scénářů rozšiřitelnosti XAML, které byly původně definovány implementací XAML konkrétního rozhraní, ale nyní jsou součástí celkové podpory jazyka XAML .NET Framework 4. Toto téma obsahuje seznam typů, které se migrují, a popisuje problémy související s migrací.  
   
 <a name="assemblies_and_namespaces"></a>   
 ## <a name="assemblies-and-namespaces"></a>Sestavení a obory názvů  
- V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 se obecně v typy, které WPF implementovány pro podporu XAML <xref:System.Windows.Markup> oboru názvů. Většina z těchto typů byly v WindowsBase sestavení.  
+ V .NET Framework 3,5 a .NET Framework 3,0 byly v <xref:System.Windows.Markup> oboru názvů obecně implementovány typy, které WPF implementovaly pro podporu XAML. Většina těchto typů byla v WindowsBase sestavení.  
   
- V rozhraní .NET Framework 4, je tu nový <xref:System.Xaml> obor názvů a vytvoření nového oboru názvů System.Xaml sestavení. Mnoho typů, které byly původně implementované pro WPF XAML se teď poskytují jako body rozšiřitelnosti nebo služby pro žádnou implementaci XAML. Jako součást zpřístupňuje je pro obecnější scénáře typy jsou předány typu z jeho původní sestavení WPF do oboru názvů System.Xaml sestavení. To umožňuje scénáře rozšiřitelnost XAML bez nutnosti zahrnout sestavení další platformy (jako je například WPF a Windows Workflow Foundation).  
+ V .NET Framework 4 existuje nový <xref:System.Xaml> obor názvů a nové sestavení System. XAML. Mnohé z typů, které byly původně implementovány pro WPF XAML, jsou nyní poskytovány jako body rozšiřitelnosti nebo služby pro jakoukoli implementaci jazyka XAML. V rámci zpřístupnění pro obecnější scénáře jsou typy typu předávány z původního sestavení WPF do sestavení System. XAML. To umožňuje scénáře rozšiřitelnosti XAML bez nutnosti zahrnutí sestavení jiných rozhraní (například WPF a programovací model Windows Workflow Foundation).  
   
- Pro migrované typů většina typů zůstat v <xref:System.Windows.Markup> oboru názvů. To bylo částečně vyhnuli narušení funkčnosti mapování názvového prostoru CLR v existujících implementací na základě podle souborů. V důsledku toho <xref:System.Windows.Markup> obor názvů v rozhraní .NET Framework 4 obsahuje kombinaci obecné typy podporu jazyka XAML (z oboru názvů System.Xaml sestavení) a typy, které jsou specifické pro implementaci WPF XAML (z WindowsBase a jiných sestavení WPF). Libovolný typ, který se migrovat do oboru názvů System.Xaml, ale dříve ve WPF sestavení, má podporu předávání typů v WPF sestavení verze 4.  
+ U migrovaných typů zůstává většina typů v <xref:System.Windows.Markup> oboru názvů. Bylo by částečně zabráněno přerušení mapování oboru názvů CLR ve stávajících implementacích pro jednotlivé soubory. V důsledku toho <xref:System.Windows.Markup> obor názvů v .NET Framework 4 obsahuje kombinaci obecných typů podpory jazyka XAML (ze sestavení System. XAML) a typů, které jsou specifické pro implementaci WPF XAML (z WindowsBase a dalších sestavení WPF). Jakýkoli typ, který byl migrován do System. XAML, ale dříve existoval v sestavení WPF, má podporu předávání typů ve verzi 4 sestavení WPF.  
   
-### <a name="workflow-xaml-support-types"></a>Typy podporu XAML workflowu  
- Windows Workflow Foundation také poskytované typy podporu XAML a v mnoha případech tyto měl stejné krátké názvy do WPF ekvivalentní. Následuje seznam typy podporu Windows Workflow Foundation XAML:  
+### <a name="workflow-xaml-support-types"></a>Typy podpory jazyka XAML v pracovním postupu  
+ Programovací model Windows Workflow Foundation také poskytnuté typy podpory XAML a v mnoha případech mají stejné krátké názvy jako ekvivalent WPF. Následuje seznam programovací model Windows Workflow Foundation typy podpory jazyka XAML:  
   
 - <xref:System.Workflow.ComponentModel.Serialization.ContentPropertyAttribute>  
   
@@ -33,15 +33,15 @@ V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA
   
 - <xref:System.Workflow.ComponentModel.Serialization.XmlnsPrefixAttribute>  
   
- Tato podpora typy stále existují v sestaveních Windows Workflow Foundation pro .NET Framework 4 a stále můžete použít pro konkrétní aplikace Windows Workflow Foundation; Nicméně, neměly by být odkazovány aplikace nebo rozhraní, které nepoužívají model Windows Workflow Foundation.  
+ Tyto typy podpory stále existují v programovací model Windows Workflow Foundation sestavení pro .NET Framework 4 a lze je nadále používat pro konkrétní programovací model Windows Workflow Foundation aplikace. neměly by však být odkazovány aplikacemi nebo architekturami, které nepoužívají programovací model Windows Workflow Foundation.  
   
 <a name="markupextension"></a>   
 ## <a name="markupextension"></a>MarkupExtension  
- V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 <xref:System.Windows.Markup.MarkupExtension> třídy pro WPF v WindowsBase sestavení. Paralelní třídy pro Windows Workflow Foundation <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>, byl vytvořen v System.Workflow.ComponentModel sestavení. V rozhraní .NET Framework 4 <xref:System.Windows.Markup.MarkupExtension> třídy je migrovat do oboru názvů System.Xaml sestavení. V rozhraní .NET Framework 4 <xref:System.Windows.Markup.MarkupExtension> je určená pro jakýkoli scénář rozšiřitelnost XAML, který používá rozhraní .NET Framework XAML Services, ne jenom pro ty, které sestavení na konkrétní rozhraní. Pokud je to možné, konkrétní rozhraní nebo uživatelský kód v rámci má také sestavit <xref:System.Windows.Markup.MarkupExtension> třídy pro rozšíření XAML.  
+ V .NET Framework 3,5 a .NET Framework 3,0 <xref:System.Windows.Markup.MarkupExtension> byla třída pro WPF v WindowsBase sestavení. V sestavení System. Workflow. <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>ComponentModel existovala paralelní třída pro programovací model Windows Workflow Foundation. V .NET Framework 4 <xref:System.Windows.Markup.MarkupExtension> je třída migrována do sestavení System. XAML. V .NET Framework 4 <xref:System.Windows.Markup.MarkupExtension> je určena pro jakýkoli scénář rozšiřitelnosti XAML, který používá služby .NET Framework XAML, nikoli jenom pro ty, které se vytvářejí v konkrétních rozhraních. Pokud je to možné, konkrétní architektury nebo uživatelský kód v rozhraní by měly také sestavit <xref:System.Windows.Markup.MarkupExtension> třídu pro rozšíření XAML.  
   
 <a name="markupextension_supporting_service_classes"></a>   
-## <a name="markupextension-supporting-service-classes"></a>Třídy MarkupExtension podpora  
- Rozhraní .NET framework 3.5 a rozhraní .NET Framework 3.0 pro WPF poskytuje několik služeb, které byly k dispozici <xref:System.Windows.Markup.MarkupExtension> implementátory a <xref:System.ComponentModel.TypeConverter> implementace pro podporu použití typu nebo vlastnosti v XAML. Tyto služby jsou následující:  
+## <a name="markupextension-supporting-service-classes"></a>Třídy MarkupExtension podporující třídy služeb  
+ .NET Framework 3,5 a .NET Framework 3,0 pro WPF poskytuje několik služeb, které byly k <xref:System.Windows.Markup.MarkupExtension> dispozici pro <xref:System.ComponentModel.TypeConverter> implementátory a implementace pro podporu typu a vlastností v jazyce XAML. Tyto služby jsou následující:  
   
 - <xref:System.Windows.Markup.IProvideValueTarget>  
   
@@ -50,13 +50,13 @@ V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA
 - <xref:System.Windows.Markup.IXamlTypeResolver>  
   
 > [!NOTE]
->  Jiná služba v rozhraní .NET Framework 3.5, která souvisí s – rozšíření značek <xref:System.Windows.Markup.IReceiveMarkupExtension> rozhraní. <xref:System.Windows.Markup.IReceiveMarkupExtension> nebyl migrován a je označen `[Obsolete]` pro rozhraní .NET Framework 4. Scénáře, které se dřív používal <xref:System.Windows.Markup.IReceiveMarkupExtension> vhodné použít <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute> s atributy zpětná volání. <xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute> je také označena `[Obsolete]`.  
+> Další službou z .NET Framework 3,5, která souvisí s rozšířeními značek, <xref:System.Windows.Markup.IReceiveMarkupExtension> je rozhraní. <xref:System.Windows.Markup.IReceiveMarkupExtension>nebyla migrována a je označena `[Obsolete]` pro .NET Framework 4. Ve scénářích, <xref:System.Windows.Markup.IReceiveMarkupExtension> které dřív použili <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute> , by místo toho měly používat zpětná volání s atributy. <xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute>je také označeno `[Obsolete]`.  
   
 <a name="xaml_language_features"></a>   
 ## <a name="xaml-language-features"></a>Funkce jazyka XAML  
- Několik funkcí jazyka XAML a komponenty pro WPF dříve existoval PresentationFramework sestavení. Tyto byly implementovány jako <xref:System.Windows.Markup.MarkupExtension> podtřídy vystavit použití rozšíření značky ve značkách XAML. V rozhraní .NET Framework 4 existují v oboru názvů System.Xaml sestavení tak, aby projekty, které neobsahují WPF sestavení můžete použít tyto funkce na úrovni jazyka XAML. WPF tyto stejné implementace používá pro aplikace rozhraní .NET Framework 4. Jak s další případy, které jsou uvedeny v tomto tématu, nadále existovat v podpůrných typy <xref:System.Windows.Markup> obor názvů, abyste se vyhnuli narušení funkčnosti předchozí odkazy.  
+ Několik funkcí jazyka XAML a komponent pro WPF existovalo v PresentationFramework sestavení. Tyto byly implementovány jako <xref:System.Windows.Markup.MarkupExtension> podtřídou pro zveřejnění použití rozšíření značek v kódu XAML. V .NET Framework 4 existují v sestavení System. XAML tak, aby projekty, které neobsahují sestavení WPF, mohly používat tyto funkce na úrovni jazyka XAML. WPF používá stejné implementace pro aplikace .NET Framework 4. Stejně jako ostatní případy, které jsou uvedeny v tomto tématu, pomocné typy nadále existují v <xref:System.Windows.Markup> oboru názvů, aby nedošlo k přerušení předchozích odkazů.  
   
- Následující tabulka obsahuje seznam podporovaných funkcích třídy XAML, které jsou definovány v oboru názvů System.Xaml.  
+ Následující tabulka obsahuje seznam tříd podpory funkce XAML, které jsou definovány v souboru System. XAML.  
   
 |Funkce jazyka XAML|Použití|  
 |---------------------------|-----------|  
@@ -65,15 +65,15 @@ V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA
 |<xref:System.Windows.Markup.StaticExtension>|`{x:Static ...}`|  
 |<xref:System.Windows.Markup.TypeExtension>|`{x:Type ...}`|  
   
- I když oboru názvů System.Xaml nemusí mít třídy, které konkrétní podporují, obecné logiku pro zpracování funkcí jazyka pro jazyk XAML nyní nachází v oboru názvů System.Xaml a jeho implementované XAML čtečky a zapisovače XAML. Například `x:TypeArguments` je atribut, který zpracovává XAML čtečky a zapisovače XAML z oboru názvů System.Xaml implementací; můžete jste si poznamenali v datovém proudu uzlu XAML, má zpracování ve výchozí kontext schématu XAML (založený na modulu CLR), má o typu systému XAML znázornění a tak dále. V důsledku toho referenční dokumentaci pro všechny funkce na úrovni jazyka XAML je Tematická pro [XAML Services](index.md) této sadě dokumentace rozhraní .NET Framework, namísto části dokumentace WPF nastavit jako obecné oblasti a Tematická z [Upřesnit (Windows Presentation Foundation)](../wpf/advanced/index.md) (což je stále písmena v 3.5 sady dokumentace).  
+ I když System. XAML nemůže mít konkrétní třídy podpory, je obecná logika pro zpracování jazykových funkcí pro jazyk XAML nyní uložena v souboru System. XAML a v jeho implementovaných čtecích modulech XAML a zapisovači XAML. Například `x:TypeArguments` je atribut, který je zpracován modulem XAML Readers a moduly pro zápis XAML z implementace System. XAML; lze jej poznamenat v datovém proudu uzlu XAML, který zpracovává ve výchozím kontextu schématu XAML (CLR-based), má typ XAML-System. reprezentace a tak dále. V důsledku toho je referenční dokumentace pro všechny funkce na úrovni jazyka XAML dílčí téma pro [služby XAML](index.md) a obecné místo sady dokumentace pro .NET Framework, místo aby bylo součástí dokumentace k WPF jako dílčí téma [pokročilého ( Windows Presentation Foundation)](../wpf/advanced/index.md) (jak je stále v sadě dokumentace 3,5).  
   
 <a name="valueserializer_and_supporting_classes"></a>   
-## <a name="valueserializer-and-supporting-classes"></a>ValueSerializer a podporu tříd  
- <xref:System.Windows.Markup.ValueSerializer> Třída podporuje typ převodu na řetězec, zejména pro XAML serializace případy, kdy serializace může vyžadovat více režimů nebo uzly ve výstupu. V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 <xref:System.Windows.Markup.ValueSerializer> pro WPF v WindowsBase sestavení. V rozhraní .NET Framework 4 <xref:System.Windows.Markup.ValueSerializer> třída je v oboru názvů System.Xaml a je určená pro jakýkoli scénář rozšiřitelnost XAML, ne jenom pro ty, jejichž základem WPF. <xref:System.Windows.Markup.IValueSerializerContext> (podpůrná služba) a <xref:System.Windows.Markup.DateTimeValueSerializer> (konkrétní podtřídy) migrují do oboru názvů System.Xaml.  
+## <a name="valueserializer-and-supporting-classes"></a>Objekt ValueSerializer nemůže a podpůrné třídy  
+ <xref:System.Windows.Markup.ValueSerializer> Třída podporuje převod typu na řetězec, zejména pro případy serializace XAML, kde serializace může vyžadovat více režimů nebo uzlů ve výstupu. V .NET Framework 3,5 a .NET Framework 3,0 <xref:System.Windows.Markup.ValueSerializer> byl pro WPF v WindowsBase sestavení. V .NET Framework 4 <xref:System.Windows.Markup.ValueSerializer> je třída v System. XAML a je určena pro jakýkoli scénář rozšiřitelnosti XAML, nikoli pouze pro ty, které se vytvářejí v WPF. <xref:System.Windows.Markup.IValueSerializerContext>(podpůrná služba) a <xref:System.Windows.Markup.DateTimeValueSerializer> (konkrétní podtřída) se migrují také na System. XAML.  
   
 <a name="xamlrelated_attributes"></a>   
-## <a name="xaml-related-attributes"></a>Atributy vztahující se k XAML  
- WPF XAML zahrnuté několik atributů, které lze použít u typů CLR k označení něco o své chování pro XAML. Následuje seznam atributů, které existují v sestaveních WPF v rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0. Tyto atributy se migrují do oboru názvů System.Xaml v rozhraní .NET Framework 4.  
+## <a name="xaml-related-attributes"></a>Atributy související s jazykem XAML  
+ WPF XAML obsahuje několik atributů, které lze použít na typy CLR pro indikaci toho, jak se chování XAML. Následuje seznam atributů, které existovaly v sestaveních WPF v .NET Framework 3,5 a .NET Framework 3,0. Tyto atributy jsou migrovány do souboru System. XAML v .NET Framework 4.  
   
 - <xref:System.Windows.Markup.AmbientAttribute>  
   
@@ -107,13 +107,13 @@ V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA
   
 <a name="miscellaneous_classes"></a>   
 ## <a name="miscellaneous-classes"></a>Různé třídy  
- <xref:System.Windows.Markup.IComponentConnector> Rozhraní existovala v WindowsBase v rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0, ale neexistuje v oboru názvů System.Xaml v rozhraní .NET Framework 4. <xref:System.Windows.Markup.IComponentConnector> je primárně určena pro nástroje podpory a kompilátory značek XAML.  
+ <xref:System.Windows.Markup.IComponentConnector> Rozhraní existovalo v WindowsBase v .NET Framework 3,5 a .NET Framework 3,0, ale existuje v souboru System. XAML v .NET Framework 4. <xref:System.Windows.Markup.IComponentConnector>je primárně určena pro podporu nástrojů a kompilátory kódu XAML.  
   
- <xref:System.Windows.Markup.INameScope> Rozhraní existovala v WindowsBase v rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0, ale neexistuje v oboru názvů System.Xaml v rozhraní .NET Framework 4. <xref:System.Windows.Markup.INameScope> definuje základní operace pro obor namescope XAML.  
+ <xref:System.Windows.Markup.INameScope> Rozhraní existovalo v WindowsBase v .NET Framework 3,5 a .NET Framework 3,0, ale existuje v souboru System. XAML v .NET Framework 4. <xref:System.Windows.Markup.INameScope>definuje základní operace pro namescope XAML.  
   
 <a name="xamlrelated_classes_with_shared_names_that_exist_in_wpf_and_systemxaml"></a>   
-## <a name="xaml-related-classes-with-shared-names-that-exist-in-wpf-and-systemxaml"></a>Třídy související s XAML s sdílené názvy, které existují v projektech WPF a oboru názvů System.Xaml  
- V WPF sestavení a oboru názvů System.Xaml sestavení v rozhraní .NET Framework 4 existují následující třídy:  
+## <a name="xaml-related-classes-with-shared-names-that-exist-in-wpf-and-systemxaml"></a>Třídy související s jazykem XAML se sdílenými názvy, které existují v jazyce WPF a System. XAML  
+ Následující třídy existují v sestaveních WPF i v sestavení System. XAML v .NET Framework 4:  
   
  `XamlReader`  
   
@@ -121,9 +121,9 @@ V rozhraní .NET Framework 3.5 a rozhraní .NET Framework 3.0 obě [!INCLUDE[TLA
   
  `XamlParseException`  
   
- Implementaci WPF se nachází v <xref:System.Windows.Markup> obor názvů a PresentationFramework sestavení. Je součástí implementace oboru názvů System.Xaml <xref:System.Xaml> oboru názvů. Pokud používáte typy WPF nebo jsou odvozené od typy WPF, používejte obvykle implementace WPF <xref:System.Windows.Markup.XamlReader> a <xref:System.Windows.Markup.XamlWriter> místo oboru názvů System.Xaml implementace. Další informace najdete v části poznámky v <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> a <xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>.  
+ Implementace WPF se nachází v <xref:System.Windows.Markup> oboru názvů a v PresentationFramework sestavení. V <xref:System.Xaml> oboru názvů se nachází implementace System. XAML. Pokud používáte typy WPF nebo jsou odvozeny z typů WPF, měli byste obvykle použít implementace WPF pro <xref:System.Windows.Markup.XamlReader> a <xref:System.Windows.Markup.XamlWriter> namísto implementace System. XAML. Další informace najdete v tématu poznámky v <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> a <xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>.  
   
- Pokud jsou včetně odkazů na sestavení WPF a oboru názvů System.Xaml a také používáte `include` příkazy pro obě <xref:System.Windows.Markup> a <xref:System.Xaml> obory názvů, musíte k plnému určení volání těchto rozhraní API pro překlad typů bez nejednoznačnost.  
+ Pokud zahrnujete odkazy na sestavení WPF a System. XAML a používáte také `include` příkazy pro <xref:System.Windows.Markup> obory názvů a <xref:System.Xaml> , možná budete muset plně kvalifikovat volání těchto rozhraní API, aby bylo možné tyto typy přeložit. bez nejednoznačnosti.  
   
 ## <a name="see-also"></a>Viz také:
 

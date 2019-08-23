@@ -1,18 +1,18 @@
 ---
-title: ICorDebugVariableSymbol::GetSlotIndex – metoda
+title: 'ICorDebugVariableSymbol:: GetSlotIndex – metoda'
 ms.date: 03/30/2017
 ms.assetid: 09c19f5f-afc4-4e0c-bffe-cd7147bc7a43
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84d9e30a2baf08f6b7ff530f2fce049d49386a60
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 58bb2cc63f2336ca9cfbed8ebeac0d607c18b2c4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774842"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968160"
 ---
-# <a name="icordebugvariablesymbolgetslotindex-method"></a>ICorDebugVariableSymbol::GetSlotIndex – metoda
-Získá index spravované slotu místní proměnné.  
+# <a name="icordebugvariablesymbolgetslotindex-method"></a>ICorDebugVariableSymbol:: GetSlotIndex – metoda
+Načte index spravovaného slotu místní proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,25 +24,25 @@ HRESULT GetSlotIndex(
   
 ## <a name="parameters"></a>Parametry  
  `pSlotIndex`  
- [out] Ukazatel na lokální proměnná pozici indexu.  
+ mimo Ukazatel na index slotu místní proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` v případě úspěšného ověření. `E_FAIL` Pokud je proměnná argumentu funkce.  
+ `S_OK`v případě úspěchu. `E_FAIL`je-li proměnná argumentem funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Spravované slotu index lokální proměnná slouží k načtení informací o metadatech proměnné  
+ K načtení informací o metadatech proměnné lze použít index spravované patice místní proměnné.  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,62 +6,62 @@ helpviewer_keywords:
 - grid control pattern
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
-ms.openlocfilehash: 9d38d7db33b44f22cf9e8f714581cce1d271ce96
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5eceafee4d02478c9e011a473ee1d036df91075d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622978"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932182"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IGridProvider>, včetně informací o vlastnosti, metody a události. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
+ Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IGridProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- <xref:System.Windows.Automation.GridPattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které fungují jako kontejnery pro kolekci podřízených elementů. Podřízené objekty tohoto elementu musí implementovat <xref:System.Windows.Automation.Provider.IGridItemProvider> a uspořádané v dvojrozměrné logické systém souřadnic, který můžete procházet podle řádků a sloupců. Příklady ovládacích prvků, které tento ovládací prvek model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.GridPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené objekty tohoto elementu musí být implementovány <xref:System.Windows.Automation.Provider.IGridItemProvider> a uspořádány do dvojrozměrného logického systému souřadnic, který lze procházet podle řádků a sloupců. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
- Při implementaci vzoru ovládacích prvků mřížka, mějte na paměti následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzorového ovládacího prvku mřížky si všimněte následujících pokynů a konvencí:  
   
-- Souřadnice mřížky jsou počítány od nuly s vlevo nahoře (nebo horním pravém buňky v závislosti na národním prostředí) s souřadnice (0, 0).  
+- Souřadnice mřížky jsou založené na nule s horní levou (nebo pravou horní buňkou v závislosti na národním prostředí), která má souřadnice (0, 0).  
   
-- Pokud je prázdná buňka, prvku automatizace uživatelského rozhraní musí být vrácena stále za účelem podpory <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> vlastnosti pro tuto buňku. To je možné, pokud je podobný nepravidelné pole rozložení podřízených elementů mřížky (viz následující příklad).  
+- Je-li buňka prázdná, musí být objekt automatizace uživatelského rozhraní nadále vrácen, aby podporoval <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> vlastnost pro tuto buňku. To je možné v případě, že rozložení podřízených prvků v mřížce je podobné nezarovnanému poli (viz příklad níže).  
   
- ![Průzkumník Windows zobrazení zobrazuje nepravidelné rozložení. ](../../../docs/framework/ui-automation/media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
-Příklad ovládací prvek mřížky s prázdnou souřadnice  
+ ![Zobrazení Průzkumníka Windows zobrazující nerovnoměrné rozložení](../../../docs/framework/ui-automation/media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
+Příklad ovládacího prvku mřížky s prázdnými souřadnicemi  
   
-- Mřížka s jednu položku se stále vyžadují k implementaci <xref:System.Windows.Automation.Provider.IGridProvider> Pokud logicky má se za to být mřížku. Počet podřízených položek v mřížce je důležité.  
+- K implementaci mřížky s jednou položkou je stále potřeba implementovat <xref:System.Windows.Automation.Provider.IGridProvider> ji, pokud je logicky považována za mřížku. Počet podřízených položek v mřížce je nemateriálný.  
   
-- Skryté řádků a sloupců, v závislosti na implementaci zprostředkovatele mohou být načteny v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu a proto se projeví ve <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> a <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A> vlastnosti. Pokud skrytý řádků a sloupců ještě nebyly načteny, by neměly být započítány.  
+- Skryté řádky a sloupce, v závislosti na implementaci poskytovatele, mohou být načteny ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktuře, a proto se projeví <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> ve vlastnostech a. <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A> Pokud skryté řádky a sloupce ještě nebyly načteny, neměly by se počítat.  
   
-- <xref:System.Windows.Automation.Provider.IGridProvider> nepovolí aktivní zpracování mřížky; <xref:System.Windows.Automation.Provider.ITransformProvider> musí být implementován pro povolení této funkce.  
+- <xref:System.Windows.Automation.Provider.IGridProvider>nepovoluje aktivní manipulaci s mřížkou. <xref:System.Windows.Automation.Provider.ITransformProvider> pro povolení této funkce je nutné implementovat implementaci.  
   
-- Použití <xref:System.Windows.Automation.StructureChangedEventHandler> pro naslouchání strukturální nebo rozložení mřížky, jako je například buňky, které byly přidány, odebrány nebo sloučit změny.  
+- <xref:System.Windows.Automation.StructureChangedEventHandler> Použijte k naslouchání strukturálním nebo rozmístění změn v mřížce, například buněk, které byly přidány, odebrány nebo sloučeny.  
   
-- Použití <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> ke sledování přechod zálohovaných položek nebo buňky mřížky.  
+- <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> Použijte ke sledování procházení položek nebo buněk v mřížce.  
   
 <a name="Required_Members_for_IGridProvider"></a>   
-## <a name="required-members-for-igridprovider"></a>Požadované členy pro IGridProvider  
- Následující vlastnosti a metody jsou požadovány pro implementaci rozhraní IGridProvider.  
+## <a name="required-members-for-igridprovider"></a>Vyžadovaná členové pro IGridProvider  
+ Pro implementaci rozhraní IGridProvider jsou vyžadovány následující vlastnosti a metody.  
   
-|Požadované členy|Type|Poznámky|  
+|Vyžadovaná členové|type|Poznámky|  
 |----------------------|----------|-----------|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Metoda|Žádné|  
   
- Tento model ovládací prvek nemá žádné přidružené události.  
+ Tento vzor ovládacího prvku nemá žádné přidružené události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Poskytovatelé musí vyvolání následující výjimky.  
+ Zprostředkovatelé musí vyvolat následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud je větší než požadovaný řádek souřadnice <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> nebo souřadnice sloupec je větší než <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud požadovaný řádek nebo sloupec souřadnice je menší než nula.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud je požadovaná souřadnice řádku větší než <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> nebo souřadnice sloupce větší <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>než.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud je jedna z požadovaných souřadnic řádku nebo sloupce menší než nula.|  
   
 ## <a name="see-also"></a>Viz také:
 

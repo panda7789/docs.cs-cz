@@ -7,24 +7,24 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: d9d50433e3bc24df7cda137a145ab3f0f0302a1f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3bfafaa696955422c381aa1c17bc96591b44985
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608661"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962001"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
-Můžete použít `Await` operátor operandem v asynchronní metodě nebo výrazu lambda výraz k pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  
+`Await` Operátor lze použít pro operand v asynchronní metodě nebo výrazu lambda pro pozastavení provádění metody, dokud není dokončen očekávaný úkol. Úkol představuje probíhající práci.  
   
- Metody, ve které `Await` slouží musí mít [asynchronní](../../../visual-basic/language-reference/modifiers/async.md) modifikátor. Tato metoda, definována pomocí `Async` modifikátor a obvykle obsahuje jeden nebo více `Await` výrazy, se označuje jako *asynchronní metoda*.  
+ Metoda, ve které `Await` se používá, musí mít modifikátor [Async](../../../visual-basic/language-reference/modifiers/async.md) . Taková metoda, která je definována pomocí `Async` modifikátoru a obvykle obsahuje jeden nebo více `Await` výrazů, je označována jako *asynchronní metoda*.  
   
 > [!NOTE]
->  Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012. Úvod do asynchronního programování naleznete v tématu [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md).  
+> Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012. Úvod do asynchronního programování naleznete v tématu [asynchronní programování s Async a await](../../../visual-basic/programming-guide/concepts/async/index.md).  
   
- Obvykle, úkol, na který je použit `Await` operátor je návratová hodnota z volání metody, která implementuje [Task-Based Asynchronous Pattern](https://go.microsoft.com/fwlink/?LinkId=204847), která je <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.  
+ Úkol, na `Await` který operátor použijete, je obvykle návratovou hodnotou z volání metody, která implementuje [asynchronní vzor založený na úlohách](https://go.microsoft.com/fwlink/?LinkId=204847), <xref:System.Threading.Tasks.Task> to znamená <xref:System.Threading.Tasks.Task%601>, nebo.  
   
- V následujícím kódu <xref:System.Net.Http.HttpClient> metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> vrátí `getContentsTask`, `Task(Of Byte())`. Úkol je příslib z k vytvoření pole bajtů po dokončení operace. `Await` Je použit operátor `getContentsTask` k pozastavení provádění v `SumPageSizesAsync` dokud `getContentsTask` je dokončena. Do té doby se ovládací prvek vrátí volajícímu metody `SumPageSizesAsync`. Když `getContentsTask` dokončení `Await` výraz vyhodnocen jako bajtové pole.  
+ V následujícím kódu <xref:System.Net.Http.HttpClient> metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> vrátí `getContentsTask`hodnotu, `Task(Of Byte())`. Úkol je příslib, který vytvoří skutečné bajtové pole po dokončení operace. Operátor je použit na `getContentsTask` pro pozastavení provádění v, `SumPageSizesAsync` dokud `getContentsTask` není dokončeno. `Await` Mezitím se ovládací prvek vrátí volajícímu `SumPageSizesAsync`. Po `getContentsTask` dokončení`Await` se výraz vyhodnotí jako bajtové pole.  
   
 ```vb  
 Private Async Function SumPageSizesAsync() As Task  
@@ -43,9 +43,9 @@ End Function
 ```  
   
 > [!IMPORTANT]
->  Kompletní příklad naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
+> Úplný příklad najdete v tématu [Návod: Přístup k webu pomocí modifikátoru Async a](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)operátoru await Ukázku si můžete stáhnout z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu Microsoftu. Příklad je v projektu AsyncWalkthrough_HttpClient.  
   
- Pokud `Await` se použije na výsledek volání metody, která vrací `Task(Of TResult)`, typ `Await` výraz je TResult. Pokud `Await` se použije na výsledek volání metody, která vrací `Task`, `Await` výraz nevrací hodnotu. Následující příklad ukazuje rozdíl.  
+ Pokud `Await` je použita na výsledek volání metody, která `Task(Of TResult)`vrací `Await` , je typ výrazu TResult. Pokud `Await` je použita na výsledek volání metody, která `Task`vrací, `Await` výraz nevrátí hodnotu. Rozdíl je znázorněn v následujícím příkladu.  
   
 ```vb  
 ' Await used with a method that returns a Task(Of TResult).  
@@ -55,23 +55,23 @@ Dim result As TResult = Await AsyncMethodThatReturnsTaskTResult()
 Await AsyncMethodThatReturnsTask()  
 ```  
   
- `Await` Výraz nebo příkaz neblokuje vlákno, na kterém je spuštěn. Místo toho to způsobí, že kompilátor zapíše zbytek asynchronní metody po `Await` výraz jako pokračování očekávané úlohy. Ovládací prvek vrátí volajícímu asynchronní metody. Po dokončení úkolu vyvolá jeho pokračování a provádění asynchronní metody pokračuje tam, kde skončila.  
+ `Await` Výraz nebo příkaz neblokuje vlákno, ve kterém je prováděno. Místo toho způsobí, že kompilátor zaregistruje zbytek asynchronní metody za `Await` výraz, jako pokračování na očekávaném úkolu. Ovládací prvek se pak vrátí volajícímu asynchronní metody. Po dokončení úkolu vyvolá jeho pokračování a spuštění asynchronní metody pokračuje tam, kde skončila.  
   
- `Await` Výraz může dojít pouze v těle bezprostředně vložená metoda nebo lambda výraz, který je označen `Async` modifikátor. Termín *Await* slouží jako klíčové slovo pouze v tomto kontextu. Jinde je interpretován jako identifikátor. V rámci asynchronní metody nebo lambda výrazu `Await` výraz nemůže nastat ve výrazu dotazu v `catch` nebo `finally` bloku [zkuste... Catch... Nakonec](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) výroky ovládací prvek proměnné výraz smyčky `For` nebo `For Each` smyčku, nebo v těle [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) příkazu.  
+ Výraz může nastat pouze v těle přímo ohraničující metody nebo lambda výraz, který je označen `Async` modifikátorem. `Await` Termín *await* slouží jako klíčové slovo pouze v tomto kontextu. Jinde je interpretován jako identifikátor. V rámci asynchronní metody nebo výrazu lambda se `Await` výraz nemůže vyskytovat ve výrazu dotazu `catch` v bloku nebo `finally` bloku [Try... Zachytit... Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) , ve výrazu `For` řídicí proměnné smyčky smyčky nebo `For Each` nebo v těle [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) příkazu.  
   
 ## <a name="exceptions"></a>Výjimky  
- Většina asynchronních metod vrátí <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Vlastnosti vrácené úlohy nesou informaci o jejím stavu a historii, např. Určuje, zda je úkol dokončený, zda asynchronní metoda způsobila výjimku nebo byla zrušena a co je konečný výsledek je. `Await` Operátor má přístup k těmto vlastnostem.  
+ Většina asynchronních metod vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Vlastnosti vrácené úlohy obsahují informace o jeho stavu a historii, například o tom, zda je úloha dokončena, zda asynchronní metoda způsobila výjimku nebo byla zrušena a co je konečný výsledek. Tento `Await` operátor přistupuje k těmto vlastnostem.  
   
- Pokud očekáváte vracející úlohy asynchronní metodu, která způsobí výjimku, `Await` operátor znovu vyvolá výjimku.  
+ Pokud očekáváte asynchronní metodu vracející úlohu, která způsobí výjimku, `Await` operátor znovu vyvolá výjimku.  
   
- Pokud očekáváte vracející úlohy asynchronní metody, která je zrušena, `Await` znovu vyvolá operátor <xref:System.OperationCanceledException>.  
+ Pokud očekáváte asynchronní metodu vracející úlohu, která je zrušena, `Await` operátor znovu vyvolá. <xref:System.OperationCanceledException>  
   
- Jeden úkol, který je v chybovém stavu, může odrážet více výjimek.  Úloha může být například výsledek volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Když budete očekávat takový úkol, operace await vrátí pouze jednu z výjimek. Nelze však předpovědět, které výjimky je znovu vyvolána.  
+ Jeden úkol, který je v chybovém stavu, může odrážet více výjimek.  Například úloha může být výsledkem volání metody <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Pokud očekáváte takovou úlohu, operace Await znovu vyvolá pouze jednu výjimku. Nemůžete však odhadnout, které výjimky jsou znovu vyvolány.  
   
- Příklady zpracování chyb v asynchronních metodách, naleznete v tématu [zkuste... Catch... Příkaz finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Příklady zpracování chyb v asynchronních metodách naleznete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad Windows Forms ukazuje použití `Await` v asynchronní metodě, `WaitAsynchronouslyAsync`. Kontrast v chování dané metody s chováním `WaitSynchronously`. Bez `Await` operátor `WaitSynchronously` pracuje synchronně navzdory použití `Async` modifikátoru v definici a volání <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> v jeho textu.  
+ Následující příklad model Windows Forms ukazuje použití `Await` v asynchronní metodě,. `WaitAsynchronouslyAsync` Kontrast s chováním této metody s chováním `WaitSynchronously`. `Await` Bez `Async` <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> operátora běžísynchronněnavzdorypoužitímodifikátoruvdefiniciavolání`WaitSynchronously` do jeho těla.  
   
 ```vb  
 Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click  
@@ -106,5 +106,5 @@ End Function
 ## <a name="see-also"></a>Viz také:
 
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Async](../../../visual-basic/language-reference/modifiers/async.md)

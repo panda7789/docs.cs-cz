@@ -2,20 +2,20 @@
 title: <add> z <knownCertificates>
 ms.date: 03/30/2017
 ms.assetid: 128aaabe-3f1a-4c3b-b59f-898d0f02910f
-ms.openlocfilehash: 3eb5bf74f909e6036154b7f5f7c6181b09fefbff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 939718e8dacca2698b6f71a3bdc1262a5dc3ee20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704697"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926684"
 ---
-# <a name="add-of-knowncertificates"></a>\<Přidat > z \<knownCertificates >
-Do kolekce známých certifikátů přidává certifikát X.509.  
+# <a name="add-of-knowncertificates"></a>\<Přidat > \<> knownCertificates
+Přidá certifikát X. 509 do kolekce známých certifikátů.  
   
  \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceCredentials>  
 \<issuedTokenAuthentication>  
 \<knownCertificates>  
@@ -39,34 +39,34 @@ Do kolekce známých certifikátů přidává certifikát X.509.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|findValue|řetězec. Hodnota, kterou chcete vyhledat.|  
-|storeLocation|Výčet. Jedno ze dvou umístění úložišť k prohledání.|  
-|storeName|Výčet. Jedno ze systémových úložišť k prohledání.|  
-|x509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
+|findValue|Řetezce. Hodnota, kterou chcete vyhledat.|  
+|storeLocation|Enumeration. Jedno ze dvou umístění úložiště, které chcete vyhledat.|  
+|storeName|Enumeration. Jedno ze systémových úložišť, které chcete vyhledat.|  
+|x509FindType|Enumeration. Jedno z polí certifikátu, které chcete vyhledat.|  
   
-## <a name="findvalue-attribute"></a>findValue atribut  
-  
-|Hodnota|Popis|  
-|-----------|-----------------|  
-|String|Hodnota závisí na poli (určenému atributem X509FindType) být vyhledán. Například pokud hledání kryptografickým otiskem, hodnota musí být řetězec šestnáctkových čísel.|  
-  
-## <a name="x509findtype-attribute"></a>Atribut x509FindType  
+## <a name="findvalue-attribute"></a>findValue – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Mezi hodnoty patří: FindByThumbprint FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+|String|Hodnota závisí na poli (určené atributem X509FindType), který je prohledáván. Například pokud hledáte kryptografický otisk, hodnota musí být řetězec hexadecimálních čísel.|  
   
-## <a name="storelocation-attribute"></a>storeLocation atribut  
+## <a name="x509findtype-attribute"></a>x509FindType – atribut  
+  
+|Value|Popis|  
+|-----------|-----------------|  
+|Výčet|Mezi hodnoty patří: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+  
+## <a name="storelocation-attribute"></a>storeLocation – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
 |Výčet|CurrentUser nebo LocalMachine.|  
   
-## <a name="storename-attribute"></a>storeName atribut  
+## <a name="storename-attribute"></a>storeName – atribut  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Výčet|Mezi hodnoty patří: Adresáře, AuthRoot, CertificateAuthority zakázané, My, Root, TrustedPeople a TrustedPublisher.|  
+|Výčet|Mezi hodnoty patří: AddressBook, AuthRoot, CertificateAuthority, Nepovoleno, my, root, TrustedPeople a TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -75,12 +75,12 @@ Do kolekce známých certifikátů přidává certifikát X.509.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<knownCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md)|Představuje kolekci certifikátů X.509, které jsou k dispozici pomocí tokenu služby zabezpečení (STS) pro ověřování tokenů zabezpečení.|  
+|[\<knownCertificates>](knowncertificates.md)|Představuje kolekci certifikátů X. 509, které poskytuje služba tokenů zabezpečení (STS) pro ověřování tokenů zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vydaný token scénář má tři fáze. V první fázi se klient pokouší o přístup ke službě označuje *služby tokenů zabezpečení*. Služba tokenů zabezpečení pak ověří klienta a následně vydá klienta token, obvykle token zabezpečení kontrolní výrazy SAML (Markup Language). Klient pak vrátí ke službě s tokenem. Služba zkontroluje token pro data, která umožňuje službě ověření tokenu a proto klienta. K ověření tokenu, certifikát používá služba tokenů zabezpečení musí být známo ke službě.  
+ Scénář vydaného tokenu má tři fáze. V první fázi se klientovi, který se pokouší o přístup ke službě, říká *služba tokenů zabezpečení*. Služba tokenů zabezpečení potom ověří klienta a následně vydá token klienta, obvykle token SAML (Security Assert Markup Language). Klient se pak vrátí ke službě s tokenem. Služba prověřuje token pro data, která umožňují službě ověřit token, a tedy klienta. Chcete-li ověřit token, je nutné, aby služba používala certifikát, který používá služba tokenů zabezpečení.  
   
- [ \<IssuedTokenAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) element je úložiště pro tyto certifikáty služba tokenů zabezpečení. Chcete-li přidat certifikáty použít [ \<knownCertificates >](../../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Vložit [ \<Přidat > element \<knownCertificates > Element](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) pro každý certifikát, jak je znázorněno v následujícím příkladu.  
+ Element [IssuedTokenAuthentication > je úložištěm těchto certifikátů služby tokenů zabezpečení. \<](issuedtokenauthentication-of-servicecredentials.md) K přidání certifikátů použijte [ \<> knownCertificates](knowncertificates.md). Pro každý certifikát vložte element [ \<Add > elementu knownCertificates >, jak je znázorněno v následujícím příkladu. \<](add-of-knowncertificates.md)  
   
 ```xml  
 <issuedTokenAuthentication>
@@ -93,12 +93,12 @@ Do kolekce známých certifikátů přidává certifikát X.509.
 </issuedTokenAuthentication>
 ```  
   
- Ve výchozím nastavení certifikáty musí pocházet od Služba tokenů zabezpečení. Tyto certifikáty, ujistěte se, že, který klientům pouze bezpečných "známé" můžete přístup ke službě.  
+ Ve výchozím nastavení se certifikáty musí získat ze služby zabezpečeného tokenu. Tyto "známé" certifikáty zajistí, že ke službě budou mít přístup jenom legitimní klienti.  
   
- Podmínky pro klienta ověřit federované služby, jakož i další informace o použití tento prvek konfigurace najdete v tématu [jak: Konfigurace pověření ve službě Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md). Další informace o federovaných scénářích najdete v tématu [federace a vydané tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+ Chcete-li zkontrolovat podmínky požadované pro ověření klienta federované službou a další informace o použití tohoto prvku konfigurace, přečtěte si téma [How to: Konfigurace přihlašovacích údajů na](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)služba FS (Federation Service). Další informace o federovaných scénářích najdete v tématu [federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá certifikát do úložiště pro všechny certifikáty služby tokenů zabezpečení.  
+ Následující příklad přidá certifikát do úložiště pro všechny certifikáty STS.  
   
 ```xml  
 <serviceBehaviors>
@@ -126,8 +126,8 @@ Do kolekce známých certifikátů přidává certifikát X.509.
 - <xref:System.ServiceModel.Configuration.X509CertificateTrustedIssuerElementCollection>
 - <xref:System.ServiceModel.Configuration.X509CertificateTrustedIssuerElement>
 - <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A>
-- [\<knownCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md)
-- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Postupy: Konfigurace pověření ve službě Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [\<knownCertificates>](knowncertificates.md)
+- [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
+- [Federace a vystavené tokeny](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Postupy: Konfigurace přihlašovacích údajů na služba FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

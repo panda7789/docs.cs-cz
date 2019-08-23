@@ -5,12 +5,12 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: 29cf4e03c1e4f91cd4390b84dd62c07268fe0189
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 5c29899846e7210c02b6bcc2b677b05581a5c6b1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364328"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939710"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek představují techniku XAML pro získání hodnoty, která není primitivní ani konkrétního typu XAML. Pro použití atributů rozšíření značek používají sekvenci známého znaku levé složené závorky `{` k zadání rozsahu rozšíření značek a uzavírací složené `}` závorky pro ukončení. Při použití .NET Framework služby XAML můžete použít některé z předdefinovaných rozšíření značek jazyka XAML ze sestavení System. XAML. Můžete také podtřídou z <xref:System.Windows.Markup.MarkupExtension> třídy definované v souboru System. XAML a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované konkrétní architekturou, pokud již odkazujete na tuto architekturu.  
@@ -22,7 +22,7 @@ Rozšíření značek představují techniku XAML pro získání hodnoty, která
  Několik rozšíření značek je implementováno pomocí .NET Framework služby XAML pro podporu jazyka XAML. Tato rozšíření značek odpovídají částem specifikace XAML jako jazyka. Ty jsou obvykle identifikovatelné `x:` předponou v syntaxi, jak je vidět v tématu běžné použití. Implementace .NET Framework XAML Services pro tyto prvky jazyka XAML jsou odvozeny ze <xref:System.Windows.Markup.MarkupExtension> základní třídy.  
   
 > [!NOTE]
->  `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML v oboru názvů jazyka XAML v kořenovém elementu v produkci XAML. Například projekt sady Visual Studio a šablony stránky pro různá konkrétní rozhraní iniciují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML jazyka XAML, na rozdíl od výchozí obor názvů jazyka XAML konkrétního rozhraní nebo jiný libovolný obor názvů CLR nebo XML.  
+> `x:` Předpona se používá pro typické mapování oboru názvů jazyka XAML v oboru názvů jazyka XAML v kořenovém elementu v produkci XAML. Například projekt sady Visual Studio a šablony stránky pro různá konkrétní rozhraní iniciují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML jazyka XAML, na rozdíl od výchozí obor názvů jazyka XAML konkrétního rozhraní nebo jiný libovolný obor názvů CLR nebo XML.  
   
 ### <a name="xtype"></a>x:Type  
  `x:Type`<xref:System.Type> poskytuje objekt pro pojmenovaný typ. Tato funkce se používá nejčastěji v mechanizmu odložení, který používá základní typ CLR a odvození typu jako moniker seskupení nebo identifikátor. Konkrétní příklad jsou styly a šablony WPF a jejich `TargetType` použití vlastností. Další informace najdete v tématu [rozšíření značek x:Type](x-type-markup-extension.md).  

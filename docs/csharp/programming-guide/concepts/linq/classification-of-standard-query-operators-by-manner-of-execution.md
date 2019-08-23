@@ -2,12 +2,12 @@
 title: Klasifikace standardních operátorů dotazu podle způsobu provedení (C#)
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
-ms.openlocfilehash: 82058e0baf2a253f8594b1af27c99eb6909bae96
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ccf8fced5c92ceaaf84f9240e235da0e2b56ac1e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594758"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924282"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Klasifikace standardních operátorů dotazu podle způsobu provedení (C#)
 LINQ to Objects implementace standardních metod operátoru dotazu se spouštějí jedním ze dvou hlavních způsobů: Immediate nebo odloženo. Operátory dotazů, které používají odložené provádění, lze dále rozdělit do dvou kategorií: streaming a non-stream. Pokud víte, jak se spouštějí různé operátory dotazu, může vám porozumět výsledkům, které získáte z daného dotazu. To platí zejména v případě, že se změnil zdroj dat nebo pokud vytváříte dotaz nad jiným dotazem. Toto téma klasifikuje standardní operátory dotazu podle jejich způsobu provádění.  
@@ -32,7 +32,7 @@ LINQ to Objects implementace standardních metod operátoru dotazu se spouštěj
  Následující tabulka klasifikuje jednotlivé standardní metody operátoru dotazu podle jeho metody provádění.  
   
 > [!NOTE]
->  Pokud je operátor označený ve dvou sloupcích, jsou v operaci zapojeny dvě vstupní sekvence a každá sekvence je vyhodnocena jinak. V těchto případech je vždy první posloupnost v seznamu parametrů, která je vyhodnocena způsobem, který je vyhodnocen jako odvoditelné streamování.  
+> Pokud je operátor označený ve dvou sloupcích, jsou v operaci zapojeny dvě vstupní sekvence a každá sekvence je vyhodnocena jinak. V těchto případech je vždy první posloupnost v seznamu parametrů, která je vyhodnocena způsobem, který je vyhodnocen jako odvoditelné streamování.  
   
 |Standardní operátor dotazu|Návratový typ|Okamžité provedení|Provádění odloženého streamování|Odložené provádění bez streamování|  
 |-----------------------------|-----------------|-------------------------|----------------------------------|---------------------------------------|  

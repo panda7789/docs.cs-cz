@@ -12,39 +12,39 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: 92430f23b3d4d6237d0b6ec606ce2cb9b945f6f8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0683047865f520a09b2d2fe196096286b7d78714
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590027"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965400"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Volání vlastnosti nebo metody pomocí názvu řetězce (Visual Basic)
-Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód pro jejich zpracování. Ale v některých případech nemusí o vlastnostech a metodách objektu předem znáte, nebo budete chtít právě flexibilitu povolení koncového uživatele k zadání vlastností nebo provádění metod v době běhu.  
+Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód, který je zpracovává. V některých případech však nemusíte znát informace o vlastnostech a metodách objektu předem nebo můžete chtít flexibilitu povolit koncovému uživateli, aby v době běhu určili vlastnosti nebo metody spouštění.  
   
 ## <a name="callbyname-function"></a>CallByName – funkce  
- Zvažte například klientská aplikace, která vyhodnotí výrazy zadané uživatelem předáním operátor komponenty modelu COM. Předpokládejme, že jsou neustále přidává nové funkce do komponenty, které vyžadují nové operátory. Při použití techniky přístupu k objektu standardní musíte znovu zkompilovat a znovu distribuovat klientská aplikace, než může využívat nových operátorů. Abyste tomu předešli, můžete použít `CallByName` funkce k předání nových operátorů jako řetězce, beze změny aplikace.  
+ Vezměte v úvahu například klientskou aplikaci, která vyhodnotí výrazy zadané uživatelem předáním operátoru komponentě COM. Předpokládejme, že neustále přidáváte nové funkce do komponenty, která vyžaduje nové operátory. Použijete-li standardní techniky přístupu k objektům, je nutné znovu zkompilovat a distribuovat klientskou aplikaci předtím, než bude možné použít nové operátory. Aby k tomu nedošlo, můžete `CallByName` funkci použít k předání nových operátorů jako řetězců bez změny aplikace.  
   
- `CallByName` Funkce umožňuje používat řetězce k určení vlastnosti nebo metody v době běhu. Podpis pro `CallByName` funkce vypadá takto:  
+ `CallByName` Funkce umožňuje použít řetězec k určení vlastnosti nebo metody v době běhu. Signatura `CallByName` funkce vypadá takto:  
   
- *Výsledek* = `CallByName`(*objekt*, *Název_procedury*, *CallType*, *argumenty*())  
+ *Výsledek*(Object, Procedure, CallType, argumenty ()) = `CallByName`  
   
- První argument *objekt*, přebírá název objektu, který má k provedení akce. *Název_procedury* přebírá argument řetězec obsahující název metody nebo vlastnosti postup má být volána. *CallType* konstantu, která představuje typ postup, který má být vyvolán přebírá argument: metody (`Microsoft.VisualBasic.CallType.Method`), číst vlastnosti (`Microsoft.VisualBasic.CallType.Get`), nebo určitá vlastnost nastavila (`Microsoft.VisualBasic.CallType.Set`). *Argumenty* přebírá argument, který je volitelný, pole typu `Object` , která obsahuje všechny argumenty do procedury.  
+ První argument *objektu*, přebírá název objektu, na kterém chcete pracovat. Argument *procedury* má řetězec, který obsahuje název metody nebo procedury vlastnosti, která má být vyvolána. Argument *CallType* má konstantu, která představuje typ procedury, která se má vyvolat: metoda (`Microsoft.VisualBasic.CallType.Method`), vlastnost Read (`Microsoft.VisualBasic.CallType.Get`) nebo sadu vlastností (`Microsoft.VisualBasic.CallType.Set`). Argument *argumenty* , který je nepovinný, přebírá pole typu `Object` , které obsahuje všechny argumenty procedury.  
   
- Můžete použít `CallByName` s třídami v aktuálním řešení, ale je nejčastěji používají pro přístup k modelu COM objekty nebo objekty ze sestavení rozhraní .NET Framework.  
+ Můžete použít `CallByName` s třídami v aktuálním řešení, ale nejčastěji se používá pro přístup k objektům COM nebo objektům z .NET Framework sestavení.  
   
- Předpokládejme, že přidáte odkaz na sestavení, které obsahuje třídu s názvem `MathClass`, který má novou funkci s názvem `SquareRoot`, jak je znázorněno v následujícím kódu:  
+ Předpokládejme, že přidáte odkaz na sestavení, které obsahuje třídu s názvem `MathClass`, která má novou funkci s názvem `SquareRoot`, jak je znázorněno v následujícím kódu:  
   
  [!code-vb[VbVbalrOOP#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#53)]  
   
- Vaše aplikace může používat ovládací prvky textové pole ovládacího prvku, která metoda bude volána a argumentů. Například pokud `TextBox1` obsahuje výraz, který se má vyhodnotit, a `TextBox2` je použít k zadání názvu funkce, můžete použít následující kód k vyvolání `SquareRoot` funkci na výrazu v `TextBox1`:  
+ Vaše aplikace by mohla používat ovládací prvky textového pole k řízení, která metoda bude volána a její argumenty. Například pokud `TextBox1` obsahuje výraz, který má být vyhodnocen a `TextBox2` který slouží k zadání názvu funkce, můžete použít `SquareRoot` následující kód k vyvolání funkce ve výrazu v `TextBox1`:  
   
  [!code-vb[VbVbalrOOP#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#54)]  
   
- Pokud zadáte "64" do `TextBox1`, "SquareRoot" v `TextBox2`a následně zavolat `CallMath` procedury, druhou odmocninu čísla v `TextBox1` vyhodnocena. Vyvolá kódem v příkladu `SquareRoot` funkci (desetinný řetězec, který obsahuje výraz, který má být vyhodnocen jako povinný argument) a vrátí "8" v `TextBox1` (odmocninu 64). Samozřejmě, pokud uživatel zadá neplatný řetězec v `TextBox2`, pokud řetězec obsahuje název vlastnosti namísto metody nebo pokud metoda další požadovaný argument, dojde k chybě za běhu. Je třeba přidat robustní kód pro zpracování chyb při použití `CallByName` předvídat těchto nebo jiné chyby.  
+ Pokud zadáte "64" v `TextBox1`"SquareRoot" v `TextBox2`"a potom zavoláte `CallMath` proceduru, bude vyhodnocena druhá odmocnina čísla v `TextBox1` . Kód v příkladu vyvolá `SquareRoot` funkci (která přijímá řetězec, který obsahuje výraz, který má být vyhodnocen jako požadovaný argument) a vrátí "8" v `TextBox1` (druhá odmocnina 64). Samozřejmě, pokud uživatel zadá neplatný řetězec v `TextBox2`, pokud řetězec obsahuje název vlastnosti namísto metody, nebo pokud má metoda další požadovaný argument, dojde k chybě za běhu. Je nutné přidat robustní kód pro zpracování chyb, když použijete `CallByName` k předvídání těchto nebo jakýchkoli jiných chyb.  
   
 > [!NOTE]
->  Zatímco `CallByName` funkce může být užitečné v některých případech, třeba zvažte jeho užitečnost proti vliv na výkon – pomocí `CallByName` k vyvolání procedury je o něco pomalejší než volání s pozdní vazbou. Pokud jsou volání funkce, která se nazývá opakovaně, například jako uvnitř smyčky, `CallByName` může mít vážné vliv na výkon.  
+> I když `CallByName` funkce může být užitečná v některých případech, je nutné zvážit její užitečnost proti vlivu na výkon – použití pro vyvolání procedury je mírně pomalejší než volání s pozdní vazbou. `CallByName` Pokud vyvoláte funkci, která je volána opakovaně, například uvnitř smyčky, `CallByName` může mít vážný vliv na výkon.  
   
 ## <a name="see-also"></a>Viz také:
 

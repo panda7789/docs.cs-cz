@@ -10,25 +10,25 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], iterating through nodes
 - tree nodes in TreeView control [Windows Forms], iterating through
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
-ms.openlocfilehash: 4b287cecddd63ec6535feb70118c3466c8960531
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00a0f19803967f02795e3eade767786eecc1f4dd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941086"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966549"
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView
-Někdy je užitečné si prohlédnout každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládacího prvku, aby bylo možné provést některé výpočtu pro hodnoty uzlu. Tuto operaci lze provést pomocí rekurzivní procedury (rekurzivní metodu v C# a C++), který prochází každý uzel v každé z kolekcí stromu.  
+Někdy je vhodné prostudovat každý uzel v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.TreeView> , aby bylo možné provést určitý výpočet hodnot uzlů. Tuto operaci lze provést pomocí rekurzivní procedury (rekurzivní metody v C# a C++), která projde každým uzlem v každé kolekci stromu.  
   
- Každý <xref:System.Windows.Forms.TreeNode> objektu ve stromovém zobrazení má vlastnosti, které můžete použít k navigaci ve stromovém zobrazení: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>, a <xref:System.Windows.Forms.TreeNode.Parent%2A>. Hodnota <xref:System.Windows.Forms.TreeNode.Parent%2A> vlastnost je nadřazený uzel pro aktuální uzel. Podřízené uzly pro aktuální uzel, pokud existují, jsou uvedeny v jeho <xref:System.Windows.Forms.TreeNode.Nodes%2A> vlastnost. <xref:System.Windows.Forms.TreeView> Samotný ovládací prvek má <xref:System.Windows.Forms.TreeView.TopNode%2A> vlastnost, která je kořenový uzel celý strom.  
+ Každý <xref:System.Windows.Forms.TreeNode> objekt ve stromovém zobrazení má vlastnosti, které lze použít k procházení stromového zobrazení: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>a <xref:System.Windows.Forms.TreeNode.Parent%2A>. Hodnota <xref:System.Windows.Forms.TreeNode.Parent%2A> vlastnosti je nadřazeným uzlem aktuálního uzlu. Podřízené uzly aktuálního uzlu, pokud existují, jsou uvedeny ve své <xref:System.Windows.Forms.TreeNode.Nodes%2A> vlastnosti. Samotný ovládací prvek <xref:System.Windows.Forms.TreeView.TopNode%2A> má vlastnost, která je kořenovým uzlem celého stromového zobrazení. <xref:System.Windows.Forms.TreeView>  
   
-### <a name="to-iterate-through-all-nodes-of-the-treeview-control"></a>K iteraci v rámci všech uzlů v ovládacím prvku TreeView  
+### <a name="to-iterate-through-all-nodes-of-the-treeview-control"></a>Iterace všemi uzly ovládacího prvku TreeView  
   
-1. Vytvoření rekurzivní procedury (rekurzivní metodu v C# a C++), který testuje každý uzel.  
+1. Vytvořte rekurzivní proceduru (rekurzivní metodu v C# a C++), která testuje každý uzel.  
   
 2. Zavolejte proceduru.  
   
-     Následující příklad ukazuje, jak vytisknout každý <xref:System.Windows.Forms.TreeNode> objektu <xref:System.Windows.Forms.TreeNode.Text%2A> vlastnost:  
+     Následující příklad ukazuje, jak vytisknout <xref:System.Windows.Forms.TreeNode> <xref:System.Windows.Forms.TreeNode.Text%2A> vlastnost jednotlivých objektů:  
   
     ```vb  
     Private Sub PrintRecursive(ByVal n As TreeNode)  
@@ -126,4 +126,4 @@ Někdy je užitečné si prohlédnout každý uzel ve Windows Forms <xref:System
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)
-- [Rekurzivní procedury](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)
+- [Rekurzivní procedury](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

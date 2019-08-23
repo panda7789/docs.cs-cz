@@ -6,16 +6,16 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: 3fb5d1107a2dacdc4dfd2210322c312becdfd90b
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: d973dd59c1f0612962b89775e1fb2cf6bdd756ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566942"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953933"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
->  Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
  Tento přehled popisuje, [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] jak lze využít jako rozhraní pro programový přístup v rámci automatizovaných testovacích scénářů.  
   
@@ -26,7 +26,7 @@ ms.locfileid: "69566942"
  Zprostředkovatel i klient musí implementovat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , aby mohl být užitečný jako Automatizovaný testovací nástroj. Zprostředkovatelé automatizace uživatelského rozhraní jsou aplikace, jako je Microsoft Word, Excel a další aplikace nebo ovládací prvky třetích stran založené [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] na operačním systému. Mezi klienty automatizace uživatelského rozhraní patří automatizované testovací skripty a aplikace technologie pro usnadnění.  
   
 > [!NOTE]
->  Záměrem tohoto přehledu je prezentovat nové a vylepšené funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]automatizovaného testování. Tento přehled není určený k poskytování informací o funkcích usnadnění a nebude řešit přístupnost jiným způsobem, než v případě potřeby.  
+> Záměrem tohoto přehledu je prezentovat nové a vylepšené funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]automatizovaného testování. Tento přehled není určený k poskytování informací o funkcích usnadnění a nebude řešit přístupnost jiným způsobem, než v případě potřeby.  
   
 <a name="Using_UI_Automation_During_Development"></a>   
 ## <a name="ui-automation-in-a-provider"></a>Automatizace uživatelského rozhraní ve zprostředkovateli  
@@ -35,7 +35,7 @@ ms.locfileid: "69566942"
  Jakmile jsou tyto klíčové akce identifikovány, měly by [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] být v ovládacím prvku implementovány odpovídající vzory ovládacích prvků (tj. vzory ovládacích prvků, [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] které zrcadlí funkce a chování elementu). Například interakce uživatele s ovládacím prvkem pole se seznamem (například dialog Spustit) obvykle zahrnuje rozbalení a sbalení pole se seznamem pro skrytí nebo zobrazení seznamu položek, výběr položky z tohoto seznamu nebo přidání nové hodnoty prostřednictvím vstupu z klávesnice.  
   
 > [!NOTE]
->  S jinými modely usnadnění musí vývojáři shromažďovat informace přímo z jednotlivých tlačítek, nabídek nebo jiných ovládacích prvků. Každý typ ovládacího prvku bohužel přichází v desítkách malých variant. Jinými slovy, i když deset variací (pushbutton) může fungovat stejným způsobem a provádět stejnou funkci, musí být všechny zpracovány jako jedinečné ovládací prvky. Neexistuje žádný způsob, jak zjistit, že tyto ovládací prvky jsou funkčně ekvivalentní. Byly vyvinuty vzory ovládacích prvků, které by představovaly toto chování obecného ovládacího prvku. Další informace najdete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+> S jinými modely usnadnění musí vývojáři shromažďovat informace přímo z jednotlivých tlačítek, nabídek nebo jiných ovládacích prvků. Každý typ ovládacího prvku bohužel přichází v desítkách malých variant. Jinými slovy, i když deset variací (pushbutton) může fungovat stejným způsobem a provádět stejnou funkci, musí být všechny zpracovány jako jedinečné ovládací prvky. Neexistuje žádný způsob, jak zjistit, že tyto ovládací prvky jsou funkčně ekvivalentní. Byly vyvinuty vzory ovládacích prvků, které by představovaly toto chování obecného ovládacího prvku. Další informace najdete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
 <a name="Implementing_UI_Automation"></a>   
 ### <a name="implementing-ui-automation"></a>Implementace automatizace uživatelského rozhraní  
@@ -79,7 +79,7 @@ ms.locfileid: "69566942"
  Jednoznačně identifikuje element automatizace ze svých sourozenců. <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>není lokalizován na rozdíl od vlastnosti <xref:System.Windows.Automation.AutomationElement.NameProperty> , která je obvykle lokalizována v případě, že je produkt dodán v několika jazycích. Viz [použití vlastnosti AutomationId](../../../docs/framework/ui-automation/use-the-automationid-property.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nezaručuje jedinečnou identitu v rámci stromu automatizace. Například aplikace může obsahovat ovládací prvek nabídky s více položkami nabídky nejvyšší úrovně, které zase mají více podřízených položek nabídky. Tyto sekundární položky nabídky mohou být identifikovány pomocí obecného schématu, jako je například "Item1 –, Item 2, Item3 – atd.", umožňující duplicitní identifikátory pro podřízené položky v rámci položek nabídky nejvyšší úrovně.  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nezaručuje jedinečnou identitu v rámci stromu automatizace. Například aplikace může obsahovat ovládací prvek nabídky s více položkami nabídky nejvyšší úrovně, které zase mají více podřízených položek nabídky. Tyto sekundární položky nabídky mohou být identifikovány pomocí obecného schématu, jako je například "Item1 –, Item 2, Item3 – atd.", umožňující duplicitní identifikátory pro podřízené položky v rámci položek nabídky nejvyšší úrovně.  
   
 #### <a name="controltype"></a>ControlType  
  Určuje typ ovládacího prvku reprezentovaný prvkem automatizace. Významné informace lze odvodit ze znalostí typu ovládacího prvku. Viz [Přehled typů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md).  

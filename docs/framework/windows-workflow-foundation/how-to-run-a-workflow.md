@@ -5,50 +5,50 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: a7784f37c9e8009adc3735974a6fb0423f24ea37
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 3badda7afeb25b44b0de574f97452d05efe75bfc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238518"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962290"
 ---
 # <a name="how-to-run-a-workflow"></a>Postupy: Spuštění pracovního postupu
-Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md) tématu.
+Toto téma je pokračováním v kurzu programovací model Windows Workflow Foundation Začínáme a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [postupu: Vytvořte téma pracovního](how-to-create-a-workflow.md) postupu.
 
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](how-to-create-an-activity.md) a [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md).
+> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je [nutné nejprve provést následující kroky: Vytvoření aktivity](how-to-create-an-activity.md) a [postup: Vytvořte pracovní postup](how-to-create-a-workflow.md).
 
 > [!NOTE]
->  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
+> Pokud si chcete stáhnout dokončenou verzi kurzu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45) – začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
-### <a name="to-create-the-workflow-host-project"></a>Chcete-li vytvořit projekt hostitele pracovního postupu  
+### <a name="to-create-the-workflow-host-project"></a>Vytvoření projektu hostitele pracovního postupu  
   
-1. Otevřete řešení od předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu pomocí sady Visual Studio 2012.  
+1. Otevřete řešení z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) pomocí sady Visual Studio 2012.  
   
-2. Klikněte pravým tlačítkem myši **WF45GettingStartedTutorial** řešení v **Průzkumníka řešení** a vyberte **přidat**, **nový projekt**.  
+2. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení **WF45GettingStartedTutorial** a vyberte **Přidat**, **Nový projekt**.  
   
     > [!TIP]
-    >  Pokud **Průzkumníka řešení** okno nezobrazí, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.
+    >  Pokud se okno **Průzkumník řešení** nezobrazí, vyberte v nabídce **zobrazení** položku **Průzkumník řešení** .
 
-3. V **nainstalováno** uzlu, vyberte **Visual C#** , **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**).
+3. V **nainstalovaném** uzlu vyberte možnost **Visual C#** , **Workflow** (nebo **Visual Basic**, **pracovní postup**).
 
     > [!NOTE]
-    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.
+    > V závislosti na tom, který programovací jazyk je nakonfigurován jako primární jazyk v aplikaci Visual Studio, může být uzel **vizuálu C#**  nebo **Visual Basic** pod uzlem **ostatní jazyky** v **nainstalovaném** uzlu.
 
-     Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework. Vyberte **Konzolová aplikace pracovního postupu** z **pracovního postupu** seznamu. Typ `NumberGuessWorkflowHost` do **název** pole a klikněte na tlačítko **OK**. Tím vytvoříte základní pracovní postup podpora hostování aplikace starter pracovního postupu. Tento základní kód hostování je změnit a použít ke spuštění aplikace pracovního postupu.
+     V rozevíracím seznamu .NET Framework verze se ujistěte, že je vybraná možnost **.NET Framework 4,5** . V seznamu **pracovních postupů** vyberte **Konzolová aplikace pracovního postupu** . Do `NumberGuessWorkflowHost` pole **název** zadejte a klikněte na **OK**. Tím se vytvoří aplikace pracovního postupu Starter se základní podporou hostování pracovního postupu. Tento základní kód pro hostování se upraví a použije ke spuštění aplikace pracovního postupu.
 
-4. Klikněte pravým tlačítkem na nově přidaných **NumberGuessWorkflowHost** projekt **Průzkumníka řešení** a vyberte **přidat odkaz**. Vyberte **řešení** z **přidat odkaz** seznam, zaškrtněte políčko vedle **NumberGuessWorkflowActivities**a potom klikněte na tlačítko **OK** .
+4. Klikněte pravým tlačítkem na nově přidaný projekt **NumberGuessWorkflowHost** v **Průzkumník řešení** a vyberte **Přidat odkaz**. V seznamu **Přidat odkaz** vyberte **řešení** , zaškrtněte políčko vedle **NumberGuessWorkflowActivities**a potom klikněte na tlačítko **OK**.
 
-5. Klikněte pravým tlačítkem na **Workflow1.xaml** v **Průzkumníka řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** potvrďte.
+5. V **Průzkumník řešení** klikněte pravým tlačítkem na **Workflow1. XAML** a vyberte **Odstranit**. Potvrďte kliknutím na tlačítko **OK** .
 
-### <a name="to-modify-the-workflow-hosting-code"></a>Chcete-li změnit hostování kódu pracovního postupu
+### <a name="to-modify-the-workflow-hosting-code"></a>Úprava kódu hostování pracovního postupu
 
-1. Dvakrát klikněte na panel **Program.cs** nebo **Module1.vb** v **Průzkumníka řešení** zobrazíte kód této.
+1. Poklikejte na **program.cs** nebo **Module1. vb** v **Průzkumník řešení** pro zobrazení kódu.
 
     > [!TIP]
-    >  Pokud **Průzkumníka řešení** okno nezobrazí, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.
+    >  Pokud se okno **Průzkumník řešení** nezobrazí, vyberte v nabídce **zobrazení** položku **Průzkumník řešení** .
 
-     Protože tento projekt byl vytvořen pomocí **Konzolová aplikace pracovního postupu** šablony, **Program.cs** nebo **Module1.vb** obsahuje následující základní pracovní postup hostování kód.
+     Vzhledem k tomu, že tento projekt byl vytvořen pomocí šablony **konzolové aplikace pracovního postupu** , **program.cs** nebo **Module1. vb** obsahuje následující základní kód pro hostování pracovního postupu.
 
     ```vb
     ' Create and cache the workflow definition.
@@ -62,7 +62,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
     WorkflowInvoker.Invoke(workflow1);
     ```
 
-     Tato vygenerována hostování kód používá <xref:System.Activities.WorkflowInvoker>. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro volání pracovního postupu, jako kdyby byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalosti. <xref:System.Activities.WorkflowApplication> poskytuje širší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, záložku obnovení a trvalost. Tento příklad používá záložek a <xref:System.Activities.WorkflowApplication> slouží k hostování pracovního postupu. Přidejte následující `using` nebo **importy** příkazu v horní části **Program.cs** nebo **Module1.vb** pod řádek **pomocí** nebo **importy** příkazy.
+     Tento generovaný kód pro hostování <xref:System.Activities.WorkflowInvoker>používá. <xref:System.Activities.WorkflowInvoker>poskytuje jednoduchý způsob, jak vyvolat pracovní postup, jako by šlo o volání metody a dá se použít jenom pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication>poskytuje bohatší model pro spouštění pracovních postupů, které obsahují oznámení o událostech životního cyklu, řízení spouštění, opětovném obnovení záložek a persistenci. V tomto příkladu se používají <xref:System.Activities.WorkflowApplication> záložky a slouží k hostování pracovního postupu. Přidejte `using` následující příkaz nebo **importy** na začátek **program.cs** nebo **Module1. vb** pod existující příkazy **using** nebo Imports .
 
     ```vb
     Imports NumberGuessWorkflowActivities
@@ -74,87 +74,87 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
     using System.Threading;
     ```
 
-     Nahraďte řádků kódu, které používají <xref:System.Activities.WorkflowInvoker> s následující basic <xref:System.Activities.WorkflowApplication> hostování kódu. Tato ukázka hostování kód ukazuje základní kroky pro hostování a volání pracovního postupu, ale ještě neobsahuje funkce k úspěšnému spuštění pracovního postupu v tomto tématu. V následujících krocích se upraví tento základní kód a další funkce se přidají, dokud se nedokončí aplikace.
+     Nahraďte řádky kódu, které jsou <xref:System.Activities.WorkflowInvoker> používány, pomocí následujícího <xref:System.Activities.WorkflowApplication> základního hostujícího kódu. Tento ukázkový hostující kód znázorňuje základní kroky pro hostování a vyvolání pracovního postupu, ale ještě neobsahuje funkce pro úspěšné spuštění pracovního postupu z tohoto tématu. V následujících krocích se tento základní kód upraví a přidají se další funkce, dokud se aplikace nedokončí.
 
     > [!NOTE]
-    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+    > Nahraďte `Workflow1` je v těchto příkladech `SequentialNumberGuessWorkflow`pomocí `FlowchartNumberGuessWorkflow`, `StateMachineNumberGuessWorkflow`nebo v závislosti na tom, který pracovní postup jste dokončili v předchozím [postupu: Vytvořte krok pracovního](how-to-create-a-workflow.md) postupu. Pokud se nenahradíte `Workflow1` , zobrazí se při pokusu o vytvoření nebo spuštění pracovního postupu chyby sestavení.
 
      [!code-csharp[CFX_WF_GettingStarted#4](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/extrasnippets.cs#4)]
      [!code-vb[CFX_WF_GettingStarted#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/extrasnippets.vb#4)]
 
-     Tento kód vytvoří <xref:System.Activities.WorkflowApplication>, přihlásí na tři události životního cyklu pracovního postupu, spustí pracovní postup voláním <xref:System.Activities.WorkflowApplication.Run%2A>a potom počká na dokončení pracovního postupu. Po dokončení pracovního postupu <xref:System.Threading.AutoResetEvent> a Hostitel aplikace dokončí.
+     Tento kód vytvoří <xref:System.Activities.WorkflowApplication>přihlášení k odběru tří událostí životního cyklu pracovního postupu, spustí pracovní postup s <xref:System.Activities.WorkflowApplication.Run%2A>voláním a potom počká, až se pracovní postup dokončí. Po dokončení <xref:System.Threading.AutoResetEvent> pracovního postupu se nastaví a hostitelská aplikace se dokončí.
 
-### <a name="to-set-input-arguments-of-a-workflow"></a>Chcete-li nastavit vstupní argumenty pracovního postupu
+### <a name="to-set-input-arguments-of-a-workflow"></a>Nastavení vstupních argumentů pracovního postupu
 
-1. Přidejte následující příkaz v horní části **Program.cs** nebo **Module1.vb** pod řádek `using` nebo `Imports` příkazy.
+1. Přidejte následující příkaz na začátek **program.cs** nebo **Module1. vb** pod existující `using` příkazy nebo `Imports` .
 
      [!code-csharp[CFX_WF_GettingStarted#5](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#5)]
      [!code-vb[CFX_WF_GettingStarted#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#5)]
 
-2. Nahraďte řádek kódu, který vytvoří nový <xref:System.Activities.WorkflowApplication> následujícím kódem, které vytváří a předává slovník parametrů do pracovního postupu při jeho vytvoření.
+2. Nahraďte řádek kódu, který vytvoří nový <xref:System.Activities.WorkflowApplication> , pomocí následujícího kódu, který vytvoří a předá do pracovního postupu slovník parametrů při jeho vytvoření.
 
     > [!NOTE]
-    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+    > Nahraďte `Workflow1` je v těchto příkladech `SequentialNumberGuessWorkflow`pomocí `FlowchartNumberGuessWorkflow`, `StateMachineNumberGuessWorkflow`nebo v závislosti na tom, který pracovní postup jste dokončili v předchozím [postupu: Vytvořte krok pracovního](how-to-create-a-workflow.md) postupu. Pokud se nenahradíte `Workflow1` , zobrazí se při pokusu o vytvoření nebo spuštění pracovního postupu chyby sestavení.
 
      [!code-csharp[CFX_WF_GettingStarted#6](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
 
-     Tento slovník obsahuje jeden element s klíčem `MaxNumber`. Klíče ve slovníku vstupní odpovídají vstupní argumenty kořenové aktivity pracovního postupu. `MaxNumber` tímto pracovním postupem se používá k určení horní mez pro náhodně generovaným číslem.
+     Tento slovník obsahuje jeden element s klíčem `MaxNumber`. Klíče ve vstupním slovníku odpovídají vstupním argumentům pro kořenovou aktivitu pracovního postupu. `MaxNumber`používá pracovní postup k určení horní meze pro náhodně generované číslo.
 
-### <a name="to-retrieve-output-arguments-of-a-workflow"></a>K načtení výstupu argumentů pracovního postupu
+### <a name="to-retrieve-output-arguments-of-a-workflow"></a>Načtení výstupních argumentů pracovního postupu
 
-1. Upravit <xref:System.Activities.WorkflowApplication.Completed%2A> obslužná rutina se má načíst a zobrazit počet zapne používá pracovní postup.
+1. <xref:System.Activities.WorkflowApplication.Completed%2A> Upravte obslužnou rutinu tak, aby načetla a zobrazila počet zapínání pomocí pracovního postupu.
 
      [!code-csharp[CFX_WF_GettingStarted#7](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#7)]
      [!code-vb[CFX_WF_GettingStarted#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#7)]
 
-### <a name="to-resume-a-bookmark"></a>Chcete-li obnovit záložku
+### <a name="to-resume-a-bookmark"></a>Obnovení záložky
 
-1. Přidejte následující kód v horní části `Main` metoda bezprostředně po existující <xref:System.Threading.AutoResetEvent> deklarace.
+1. Do vrcholu `Main` metody přidejte následující kód hned po existující <xref:System.Threading.AutoResetEvent> deklaraci.
 
      [!code-csharp[CFX_WF_GettingStarted#8](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#8)]
      [!code-vb[CFX_WF_GettingStarted#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#8)]
 
-2. Přidejte následující <xref:System.Activities.WorkflowApplication.Idle%2A> obslužná rutina pod existující tři pracovní postup životním cyklu obslužných rutin v `Main`.
+2. Přidejte následující <xref:System.Activities.WorkflowApplication.Idle%2A> obslužnou rutinu hned pod stávající tři obslužné rutiny životního cyklu `Main`pracovního postupu v.
 
      [!code-csharp[CFX_WF_GettingStarted#9](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#9)]
      [!code-vb[CFX_WF_GettingStarted#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#9)]
 
-     Pokaždé, když pracovního postupu změní nečinnosti čekání na další odhad Tato obslužná rutina se nazývá a `idleAction` <xref:System.Threading.AutoResetEvent> nastavena. Tento kód v následujícím kroku použije `idleEvent` a `syncEvent` k určení, zda pracovní postup čeká další uhádnout nebo dokončení.
+     Pokaždé, když se pracovní postup nečinný čeká na další odhad, je tato obslužná rutina volána a `idleAction` <xref:System.Threading.AutoResetEvent> je nastavena. Kód v následujícím kroku používá `idleEvent` a `syncEvent` k určení, zda pracovní postup čeká na další odhad nebo je dokončen.
 
     > [!NOTE]
-    >  V tomto příkladu hostitelská aplikace používá automatické obnovení události v <xref:System.Activities.WorkflowApplication.Completed%2A> a <xref:System.Activities.WorkflowApplication.Idle%2A> obslužné rutiny pro synchronizaci hostitelská aplikace se průběh pracovního postupu. Není nutné a blokovat čekání pracovního postupu na nečinnost před obnovením záložku, ale v tomto příkladu jsou požadované události synchronizace, tak hostitele pozná, zda dokončení pracovního postupu nebo určuje, zda je čekání na další vstupu uživatele s použitím <xref:System.Activities.Bookmark>. Další informace najdete v tématu [záložky](bookmarks.md).
+    > V tomto příkladu hostitelská aplikace používá události automatického resetu v <xref:System.Activities.WorkflowApplication.Completed%2A> obslužných rutinách a <xref:System.Activities.WorkflowApplication.Idle%2A> k synchronizaci hostitelské aplikace s průběhem pracovního postupu. Není nutné a blokovat čekání pracovního postupu na nečinnost před obnovením záložku, ale v tomto příkladu jsou požadované události synchronizace, tak hostitele pozná, zda dokončení pracovního postupu nebo určuje, zda je čekání na další vstupu uživatele s použitím <xref:System.Activities.Bookmark>. Další informace najdete v tématu [záložky](bookmarks.md).
 
-3. Odeberte volání `WaitOne`a nahraďte kód, shromažďovat vstup od uživatele a pokračovat <xref:System.Activities.Bookmark>.
+3. Odeberte volání `WaitOne`a nahraďte ho kódem pro shromáždění vstupu od uživatele a pokračování v <xref:System.Activities.Bookmark>.
 
      Odeberte následující řádek kódu.
 
      [!code-csharp[CFX_WF_GettingStarted#10](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/extrasnippets.cs#10)]
      [!code-vb[CFX_WF_GettingStarted#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/extrasnippets.vb#10)]
 
-     V následujícím příkladu nahraďte ho.
+     Nahraďte následujícím příkladem.
 
      [!code-csharp[CFX_WF_GettingStarted#11](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#11)]
      [!code-vb[CFX_WF_GettingStarted#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#11)]
 
-## <a name="BKMK_ToRunTheApplication"></a> Sestavení a spuštění aplikace
+## <a name="BKMK_ToRunTheApplication"></a>Sestavení a spuštění aplikace
 
-1. Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a vyberte **nastavit jako spouštěný projekt**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **nastavit jako spouštěný projekt**.
 
-2. Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci. Došlo k pokusu o uhodnutí číslo na oplátku co nejrychleji.
+2. Stisknutím kombinace kláves CTRL + F5 Sestavte a spusťte aplikaci. Zkuste číslo uhodnout v co nejkratší míře.
 
-     Pokud chcete vyzkoušet aplikace s jedním z jiné styly pracovního postupu, nahraďte `Workflow1` v kódu, který vytvoří <xref:System.Activities.WorkflowApplication> s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`, v závislosti na styl pracovního postupu, který očekáváte.
+     Chcete-li aplikaci vyzkoušet s jedním z dalších stylů pracovního postupu, nahraďte `Workflow1` v kódu, který <xref:System.Activities.WorkflowApplication> vytváří s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`nebo `StateMachineNumberGuessWorkflow`, podle toho, který styl pracovního postupu si přejete.
 
      [!code-csharp[CFX_WF_GettingStarted#6](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
 
-     Pokyny ohledně toho, jak přidat do aplikace pracovního postupu, trvalosti najdete v dalším tématu s názvem [jak: Vytvoření a spuštění dlouhodobého spuštění pracovního postupu](how-to-create-and-run-a-long-running-workflow.md).
+     Pokyny, jak přidat trvalost do aplikace pracovního postupu, najdete v dalším tématu [postup: Vytvořte a spusťte dlouhodobě běžící pracovní](how-to-create-and-run-a-long-running-workflow.md)postup.
 
 ## <a name="example"></a>Příklad
- V následujícím příkladu je kompletní kód pro výpis `Main` metody.
+ Následující příklad je úplný výpis kódu pro `Main` metodu.
 
 > [!NOTE]
->  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+> Nahraďte `Workflow1` je v těchto příkladech `SequentialNumberGuessWorkflow`pomocí `FlowchartNumberGuessWorkflow`, `StateMachineNumberGuessWorkflow`nebo v závislosti na tom, který pracovní postup jste dokončili v předchozím [postupu: Vytvořte krok pracovního](how-to-create-a-workflow.md) postupu. Pokud se nenahradíte `Workflow1` , zobrazí se při pokusu o vytvoření nebo spuštění pracovního postupu chyby sestavení.
 
  [!code-csharp[CFX_WF_GettingStarted#12](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#12)]
  [!code-vb[CFX_WF_GettingStarted#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#12)]
@@ -165,7 +165,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
 - <xref:System.Activities.Bookmark>
 - [Programování Windows Workflow Foundation](programming.md)
 - [Kurz Začínáme](getting-started-tutorial.md)
-- [Postupy: Vytvoření pracovního postupu](how-to-create-a-workflow.md)
-- [Postupy: Vytvoření a spuštění dlouhodobého spuštění pracovního postupu](how-to-create-and-run-a-long-running-workflow.md)
+- [Postupy: Vytvořit pracovní postup](how-to-create-a-workflow.md)
+- [Postupy: Vytvoření a spuštění dlouhého běžícího pracovního postupu](how-to-create-and-run-a-long-running-workflow.md)
 - [Čekání na zadání v pracovním postupu](waiting-for-input-in-a-workflow.md)
 - [Hostování pracovních postupů](hosting-workflows.md)

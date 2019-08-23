@@ -5,15 +5,15 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: 7717c6c2-85fc-418b-a8ed-bad8e61cec5c
-ms.openlocfilehash: 6d0967355e64640e0fd5c81f04a5bf4f33c7b3f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 89462d05b9da7fc63bda58955517bfa9f0c50ab9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608837"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964192"
 ---
 # <a name="com-service-model-configuration-tool-comsvcconfigexe"></a>Nástroj COM+ Service Model Configuration (ComSvcConfig.exe)
-Nástroj příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) můžete nakonfigurovat rozhraní COM +. Chcete-li být vystavena jako webové služby.  
+Nástroj příkazového řádku konfigurace modelu COM+ (ComSvcConfig. exe) umožňuje konfigurovat rozhraní modelu COM+, která se zveřejňují jako webové služby.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,42 +24,42 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Musíte být správce na místním počítači použít ComSvcConfig.exe.  
+> Abyste mohli používat ComSvcConfig. exe, musíte být správce na místním počítači.  
   
- Nástroj najdete v následujícím umístění  
+ Tento nástroj najdete v následujícím umístění:  
   
- %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
+ %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation \  
   
- Další informace o ComSvcConfig.exe najdete v tématu [jak: Použijte nástroj pro konfiguraci modelu služby COM +](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
+ Další informace o ComSvcConfig. exe naleznete v tématu [How to: Použijte nástroj](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)pro konfiguraci modelu služby com+.  
   
- Následující tabulka popisuje režimy, které lze použít s ComSvcConfig.exe.  
-  
-|Možnost|Popis|  
-|------------|-----------------|  
-|`install`|Nainstaluje konfigurační rozhraní modelu COM + pro integraci Service Model.<br /><br /> Krátký tvar `/i`.|  
-|`uninstall`|Odinstaluje z integrace Service Model configuration pro rozhraní modelu COM +.<br /><br /> Krátký tvar `/u`.|  
-|`list`|Obsahuje informace o modelu COM + aplikace a komponenty, které mají rozhraní, které jsou nakonfigurované pro integraci Service Model.<br /><br /> Krátký tvar `/l`.|  
-  
- Následující tabulka popisuje příznaky, které lze použít s ComSvcConfig.exe.  
+ Následující tabulka popisuje režimy, které lze použít s ComSvcConfig. exe.  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|`/application:` \<*ApplicationID* &#124; *ApplicationName*\>|Určuje aplikaci COM +. ke konfiguraci.<br /><br /> Krátký tvar `/a`.|  
-|`/contract:` \<*ID třídy* &#124; *ProgID* &#124; \*,*InterfaceID* &#124; *InterfaceName*    &#124; \*\>|Určuje komponenty modelu COM + a rozhraní, které budou nakonfigurované jako kontrakt služby.<br /><br /> Krátký tvar `/c`.<br /><br /> Zatímco zástupný znak (\*) lze použít při zadávání názvů součásti a rozhraní, doporučujeme vám, že je velmi riskantní používat, protože může vystavit rozhraní, které jste neměli v úmyslu.|  
-|`/hosting:` \<*ComPlus* &#124; *byl*\>|Určuje, zda určený hostující režim nebo režim hostování webu modelu COM +.<br /><br /> Krátký tvar `/h`.<br /><br /> Používání modelu COM + hostující režim vyžaduje explicitní aktivace aplikace modelu COM +. Použití webového hostingu režim umožňuje aplikace modelu COM + automaticky aktivaci jako povinné. Pokud je aplikace modelu COM + aplikace knihovny, běží v procesu Internetové informační služby (IIS). Pokud aplikace modelu COM + je serverová aplikace, spustí se v procesu Dllhost.exe.|  
-|`/webSite:` \<*Název webu*\>|Určuje, se používá na webu pro hostování při hostování režimu webu (najdete v článku `/hosting` příznak).<br /><br /> Krátký tvar `/w`.<br /><br /> Pokud není zadán žádný web, použije se výchozí webový server.|  
-|`/webDirectory:` \<*WebDirectoryName*\>|Určuje virtuální adresář pro hostování při hostování webu se používá (viz `/hosting` příznak).<br /><br /> Krátký tvar `/d`.|  
-|`/mex`|Přidá do výchozí konfigurace služby pro podporu klientů, které chcete načíst definici kontraktu služby koncového bodu služby Metadata Exchange (MEX).<br /><br /> Krátký tvar `/x`.|  
-|`/id`|Zobrazí aplikace, komponenty a informace o rozhraní jako identifikátory.<br /><br /> Krátký tvar `/k`.|  
-|`/nologo`|Zabrání zobrazení loga. jeho ComSvcConfig.exe.<br /><br /> Krátký tvar `/n`.|  
-|`/verbose`|Vypíše všechna upozornění nebo informační text kromě jakékoli došlo k chybám.<br /><br /> Krátký tvar `/v`.|  
-|`/help`|Zobrazí zprávu o použití.<br /><br /> Krátký tvar `/?`.|  
-|`/partial`|Konfigurace služby generuje, pokud zadané rozhraní obsahuje jeden nebo více podpisy metod, které mohou být zveřejněny. Během inicializace služby kompatibilní metody se zobrazí jako operace v kontraktu služby, a metody není kompatibilní se ignorují a chybí kontrakt služby.<br /><br /> Pokud tento příznak chybí, nástroj se nevygeneruje konfigurace služby při zadané rozhraní obsahuje jednu nebo více nekompatibilních metod.|  
+|`install`|Nainstaluje konfiguraci pro rozhraní COM+ pro integraci modelu služby.<br /><br /> Krátká forma `/i`.|  
+|`uninstall`|Odinstaluje konfiguraci rozhraní modelu COM+ z integrace modelu služby.<br /><br /> Krátká forma `/u`.|  
+|`list`|Obsahuje seznam informací o aplikacích a součástech modelu COM+, které mají rozhraní konfigurovaná pro integraci Service Model.<br /><br /> Krátká forma `/l`.|  
+  
+ Následující tabulka popisuje příznaky, které lze použít s ComSvcConfig. exe.  
+  
+|Možnost|Popis|  
+|------------|-----------------|  
+|`/application:`&#124; ApplicationId \<ApplicationName\>|Určuje aplikaci COM+, která se má nakonfigurovat.<br /><br /> Krátká forma `/a`.|  
+|`/contract:`&#124; &#124; &#124; ClassID ProgID&#124; , InterfaceID Název_rozhraní\* \<    \*\>|Určuje komponentu a rozhraní COM+, které budou nakonfigurovány jako kontrakt pro službu.<br /><br /> Krátká forma `/c`.<br /><br /> I když se zástupný znak\*() dá použít při zadání názvu komponenty a rozhraní, doporučujeme, abyste ho nepoužívali, protože můžete vystavovat rozhraní, které jste nechtěli mít.|  
+|`/hosting:`&#124; ComPlus \<byl  \>|Určuje, zda se má použít režim hostování modelu COM+ nebo webový hostující režim.<br /><br /> Krátká forma `/h`.<br /><br /> Použití hostitelského režimu modelu COM+ vyžaduje explicitní aktivaci aplikace modelu COM+. Použití režimu hostování webu umožňuje, aby se aplikace COM+ automaticky aktivovala podle potřeby. Pokud je aplikace modelu COM+ knihovnou aplikace, běží v procesu Internetová informační služba (IIS). Pokud je aplikace modelu COM+ aplikace serveru, běží v procesu Dllhost. exe.|  
+|`/webSite:`\< *Webový server*\>|Určuje web pro hostování při použití režimu hostování webu (viz `/hosting` příznak).<br /><br /> Krátká forma `/w`.<br /><br /> Pokud není zadán žádný web, použije se výchozí web.|  
+|`/webDirectory:` \<*WebDirectoryName*\>|Určuje virtuální adresář pro hostování při použití webového hostování (viz `/hosting` příznak).<br /><br /> Krátká forma `/d`.|  
+|`/mex`|Přidá koncový bod služby Metadata Exchange (MEX) do výchozí konfigurace služby pro podporu klientů, kteří chtějí načíst definici smlouvy ze služby.<br /><br /> Krátká forma `/x`.|  
+|`/id`|Zobrazí informace o aplikaci, součásti a rozhraní jako ID.<br /><br /> Krátká forma `/k`.|  
+|`/nologo`|Zabraňuje souboru ComSvcConfig. exe zobrazovat jeho logo.<br /><br /> Krátká forma `/n`.|  
+|`/verbose`|Vypíše všechna upozornění nebo informativní text kromě všech zjištěných chyb.<br /><br /> Krátká forma `/v`.|  
+|`/help`|Zobrazí zprávu o využití.<br /><br /> Krátká forma `/?`.|  
+|`/partial`|Vygeneruje konfiguraci služby, když zadané rozhraní obsahuje jeden nebo více podpisů metody, které mohou být vystaveny. V okamžiku inicializace služby se kompatibilní metody zobrazí jako operace v kontraktu služby a nekompatibilní metody jsou ignorovány a chybí od kontraktu služby.<br /><br /> Pokud tento příznak chybí, nástroj nebude generovat konfiguraci služby, když zadané rozhraní obsahuje jednu nebo více nekompatibilních metod.|  
   
 ## <a name="examples"></a>Příklady  
   
 ### <a name="description"></a>Popis  
- Následující příklad přidá `IFinances` rozhraní `ItemOrders.IFinancial` komponenty (z OnlineStore aplikace COM +) do sady rozhraní, které jsou vystaveny jako webové služby pomocí hostující režim modelu COM +. Všechna upozornění vydá kromě jakékoli došlo k chybám.  
+ Následující příklad přidá `IFinances` rozhraní `ItemOrders.IFinancial` komponenty (z aplikace OnlineStore com+) do sady rozhraní, které jsou zpřístupněny jako webové služby, pomocí hostitelského režimu com+. Všechna upozornění budou kromě všech zjištěných chyb i výstupy.  
   
 ### <a name="code"></a>Kód  
   
@@ -68,7 +68,7 @@ ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financia
 ```  
   
 ### <a name="description"></a>Popis  
- Následující příklad přidá `IStockLevels` rozhraní `ItemInventory.Warehouse` komponenty (z OnlineWarehouse aplikace COM +) do sady rozhraní, které jsou vystaveny jako webové služby pomocí webového hostující režim. Webová služba je že web hostovaný ve virtuálním adresáři OnlineWarehouse služby IIS.  
+ Následující příklad přidá `IStockLevels` rozhraní `ItemInventory.Warehouse` komponenty (z aplikace OnlineWarehouse com+) do sady rozhraní, které jsou zpřístupněny jako webové služby, pomocí režimu hostování webu. Webová služba je hostitelem webu ve virtuálním adresáři OnlineWarehouse služby IIS.  
   
 ### <a name="code"></a>Kód  
   
@@ -77,7 +77,7 @@ ComSvcConfig.exe /install /application:OnlineWarehouse /contract:ItemInventory.W
 ```  
   
 ### <a name="description"></a>Popis  
- Následující příklad odebere `IFinances` rozhraní `ItemOrders.Financial` součásti (z OnlineStore aplikace COM +) ze sady rozhraní, které jsou vystaveny jako webové služby.  
+ Následující příklad odebere `IFinances` rozhraní `ItemOrders.Financial` součásti (z aplikace OnlineStore com+) ze sady rozhraní, které jsou zpřístupněny jako webové služby.  
   
 ### <a name="code"></a>Kód  
   
@@ -86,7 +86,7 @@ ComSvcConfig.exe /uninstall /application:OnlineStore /interface:ItemOrders.Finan
 ```  
   
 ### <a name="description"></a>Popis  
- Následující příklad zobrazí aktuálně vystavit rozhraní modelu COM + hostované, spolu s příslušnou adresou a podrobnosti o vazbu pro aplikaci OnlineStore modelu COM + v místním počítači.  
+ Následující příklad uvádí seznam aktuálně vydaných hostovaných rozhraní COM+ spolu s odpovídajícími podrobnostmi adres a vazeb pro aplikaci OnlineStore COM+ na místním počítači.  
   
 ### <a name="code"></a>Kód  
   
@@ -96,4 +96,4 @@ ComSvcConfig.exe /list /application:OnlineStore /hosting:complus
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Použijte nástroj pro konfiguraci modelu služby COM +](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)
+- [Postupy: Použití nástroje pro konfiguraci modelu služby COM+](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)

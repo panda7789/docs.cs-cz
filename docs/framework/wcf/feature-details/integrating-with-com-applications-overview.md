@@ -4,54 +4,54 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
-ms.openlocfilehash: 2be428f0ae83596a4398fc9830af40d05f6ab191
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6e6ff29e7d292a291c2cb4984a80c5a0927f18d2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638656"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934968"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Přehled integrace s aplikacemi modelu COM
-Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kódu s bohaté prostředí pro vytváření propojených aplikací. Nicméně pokud máte značné investice v nespravovaném kódu na základě modelu COM a nechcete, aby k migraci, můžete stále integrovat webových služeb WCF přímo do vašeho existujícího kódu pomocí monikeru služby WCF. Moniker služby je možné z široký rozsah COM vývoj prostředí, jako je například Office VBA, Visual Basic 6.0 nebo Visual C++ 6.0.  
+Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kódu prostředí s bohatým prostředím pro vytváření připojených aplikací. Nicméně pokud máte významnou investici do nespravovaného kódu založeného na modelu COM a nechcete migrovat, můžete i nadále integrovat webové služby WCF přímo do stávajícího kódu pomocí monikeru služby WCF. Moniker služby lze použít z široké škály vývojových prostředí založených na modelu COM, jako je například Office VBA, Visual Basic 6,0 nebo Visual C++ 6,0.  
   
 > [!NOTE]
->  Moniker služby používá komunikační kanál WCF pro veškerou komunikaci. Mechanismy zabezpečení a identity pro tento kanál se liší od těch, které ve standardní proxy modelu COM a DCOM používá. Navíc vzhledem k tomu monikeru služby používá komunikační kanál WCF výchozího časového limitu je jedna minuta pro všechna volání.  
+> Moniker služby používá komunikační kanál WCF pro veškerou komunikaci. Mechanismy zabezpečení a identity pro tento kanál se liší od těch, které se používají ve standardních proxy serverech COM a DCOM. Kromě toho, protože moniker služby používá komunikační kanál WCF, je výchozí časový limit jedna minuta pro všechna volání.  
   
- Moniker služby se používá s `GetObject` funkce nespravované developer poskytnout přístup silného typu, COM specifické pro volání webových služeb WCF. Tento postup vyžaduje místní, viditelný modulem COM definici kontraktu služby WCF Web a vazbu, která se má použít. Stejně jako ostatní klienti WCF monikeru služby nezbytné vytvořit zadaný kanál ke službě, i když dojde k vytváření tohoto kanálu transparentně na programátorovi modelu COM, při prvním volání metody.  
+ Moniker služby se používá spolu s `GetObject` funkcí k poskytnutí nespravovaného vývojáře se silným typem, který je specifický pro rozhraní COM pro volání webových služeb WCF. To vyžaduje místní definici kontraktu webové služby WCF, která je viditelná v modelu COM, a vazbu, která se má použít. Podobně jako ostatní klienti WCF musí moniker služby pro službu vytvořit typový kanál, i když se tato konstrukce kanálu transparentně nacházela programátorům COM při prvním volání metody.  
   
- Společné s ostatními WCF klienty, při použití monikeru zadejte aplikace, adresa, vazba a kontrakt ke komunikaci se službou. Kontrakt lze zadat v jednom z následujících způsobů:  
+ V běžných případech s jinými klienty WCF při použití monikeru aplikace určují adresu, vazbu a kontrakt ke komunikaci se službou. Kontrakt lze zadat jedním z následujících způsobů:  
   
-- Typu kontraktu – smlouvy je zaregistrovaný jako typ viditelné modelu COM v klientském počítači.  
+- Typ kontraktu – kontrakt se na klientském počítači zaregistruje jako viditelný typ modelu COM.  
   
-- Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
+- Smlouva WSDL – smlouva je dodávána ve formě dokumentu WSDL.  
   
-- Smlouva MEX – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
+- Služba MEX – kontrakt se načítá za běhu z koncového bodu výměny metadat (MEX).  
   
-## <a name="parameters-supported-by-the-service-moniker"></a>Parametry nepodporuje Monikeru služby  
- V následující tabulce jsou uvedeny parametry, které jsou podporovány monikeru služby.  
+## <a name="parameters-supported-by-the-service-moniker"></a>Parametry podporované Monikerem služby  
+ V následující tabulce jsou uvedeny parametry, které jsou podporovány monikerem služby.  
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`address`|Adresa URL umístění služby.|  
+|`address`|Umístění adresy URL služby.|  
 |`binding`|Název oddílu vazby z konfigurace aplikace.|  
-|`bindingConfiguration`|Instance s názvem vazby z v rámci oddílu s názvem vazby.|  
-|`contract`|Identifikátor rozhraní (IID), která představuje kontraktu služby nebo název kontraktu (ze MEX).|  
-|`wsdl`|Dokument WSDL, který poskytuje alternativní formy definici kontraktu.|  
-|`spnIdentity`|Identita serveru hlavní název (SPN) který se má použít ke komunikaci se službou.|  
-|`upnIdentity`|Hlavní název (UPN) identity uživatele se použije ke komunikaci se službou.|  
-|`dnsIdentity`|Identitu DNS, který se má použít ke komunikaci se službou.|  
-|`mexAddress`|Adresa URL umístění metadat Exchange (MEX) koncového bodu služby.|  
+|`bindingConfiguration`|Pojmenovaná instance vazby v rámci pojmenované vazby oddílu.|  
+|`contract`|Identifikátor rozhraní (IID), který představuje kontrakt služby nebo název kontraktu (ze MEX).|  
+|`wsdl`|Dokument WSDL, který poskytuje alternativní formu definice smlouvy.|  
+|`spnIdentity`|Identita hlavního názvu serveru (SPN), která se má použít ke komunikaci se službou.|  
+|`upnIdentity`|Identita hlavního názvu uživatele (UPN), která se má použít ke komunikaci se službou.|  
+|`dnsIdentity`|Identita DNS, která se má použít ke komunikaci se službou.|  
+|`mexAddress`|Umístění adresy URL koncového bodu výměny metadat (MEX) služby.|  
 |`mexBinding`|Název oddílu vazby z konfigurace aplikace pro připojení ke koncovému bodu MEX.|  
-|`mexBindingConfiguration`|Instance s názvem vazby z v rámci oddílu s názvem vazby pro připojení ke koncovému bodu MEX.|  
-|`bindingNamespace`|Namespace názvu oddílu vazby z načtené MEX|  
-|`contractNamespace`|Namespace kontraktu v MEX načtené|  
-|`mexSpnIdentity`|Identita serveru hlavní název (SPN) který se má použít ke komunikaci s koncovým bodem MEX.|  
-|`mexUpnIdentity`|Hlavní název (UPN) identity uživatele se použije ke komunikaci s koncovým bodem MEX.|  
-|`mexDnsIdentity`|Identitu DNS, který se má použít ke komunikaci s koncovým bodem MEX.|  
-|`serializer`|Vyžaduje použití aplikace "xml" nebo "kontraktu dat datacontract" serializátor.|  
+|`mexBindingConfiguration`|Pojmenovaná instance vazby z pojmenovaného oddílu vazby pro připojení ke koncovému bodu MEX.|  
+|`bindingNamespace`|Obor názvů názvu oddílu vazby z načteného MEX|  
+|`contractNamespace`|Obor názvů kontraktu z načteného MEX|  
+|`mexSpnIdentity`|Identita hlavního názvu serveru (SPN), která se má použít ke komunikaci s koncovým bodem MEX.|  
+|`mexUpnIdentity`|Identita hlavního názvu uživatele (UPN), která se má použít ke komunikaci s koncovým bodem MEX.|  
+|`mexDnsIdentity`|Identita DNS, která se má použít ke komunikaci s koncovým bodem MEX.|  
+|`serializer`|Zadejte použití serializátoru "XML" nebo "DataContract".|  
   
 > [!NOTE]
->  I když používají klienti zcela založená na modelu COM, vyžaduje monikeru služby WCF a podpory .NET Framework 2.0 nainstalované v klientském počítači. Je velmi důležité, aby klientské aplikace, které použití monikeru služby načíst příslušnou verzi modulu runtime rozhraní .NET Framework. Při použití monikeru v rámci aplikace Office, může být nutný k zajištění, že je načtena správná framework verze konfiguračního souboru. Například s Excelem, následující text by měl umístit do souboru s názvem Excel.exe.config ve stejném adresáři jako soubor Excel.exe:  
+> I v případě, že se používá výhradně u klientů založených na modelu COM, moniker služby vyžaduje službu WCF a podporu .NET Framework 2,0 pro instalaci do klientského počítače. Je také důležité, aby klientské aplikace, které používají moniker služby, načetly příslušnou verzi .NET Framework runtime. Při použití monikeru v aplikacích Office může být vyžadován konfigurační soubor, aby bylo zajištěno, že bude načtena správná verze rozhraní. Například v aplikaci Excel by měl být následující text umístěn do souboru s názvem Excel. exe. config ve stejném adresáři jako soubor aplikace Excel. exe:  
 >   
 >  `<?xml version="1.0" encoding="utf-8"?>`  
 >   
@@ -67,4 +67,4 @@ Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kó
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

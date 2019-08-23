@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdcc2eccbb24a92643415db8e5d267033ac1ca0a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 75004f646c01897ef3e3016b073220ad33a0d925
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67758749"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967582"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction – metoda
-Změní funkce se upravila tak, že zadáte nové posun Microsoft intermediate language (MSIL)  
+Přemapuje upravenou funkci zadáním nového posunu jazyka MSIL (Microsoft Intermediate Language).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT RemapFunction (
   
 ## <a name="parameters"></a>Parametry  
  `newILOffset`  
- [in] Rámec zásobníku bylo jakou by měl být umístěn ukazatel na instrukci nové posun jazyka MSIL. Tato hodnota musí být bodu sekvence.  
+ pro Nový posun MSIL rámce zásobníku, na kterém by měl být umístěn ukazatel na instrukci. Tato hodnota musí být bod sekvence.  
   
- Je odpovědností volajícího cílem zajistit platnost této hodnoty. Například posun MSIL není platný, pokud je mimo rozsah funkce.  
+ Je zodpovědností volajícího, aby zajistila platnost této hodnoty. Například posun jazyka MSIL není platný, pokud je mimo hranice funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Při funkce rámec byl upraven, můžete volat ladicí program `RemapFunction` metoda do odkládacího souboru v nejnovější verzi funkce rámce, proto mohou být provedeny. Spuštění kódu se začne daným posunem jazyka MSIL.  
+ Když je upravena funkce rámce, ladicí program může zavolat `RemapFunction` metodu pro prohození v nejnovější verzi funkce rámce, aby ji bylo možné spustit. Spuštění kódu bude zahájeno v daném posunu MSIL.  
   
 > [!NOTE]
->  Volání `RemapFunction`, třeba volání [icordebugilframe::setip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md), okamžitě skončí platnost všech ladění rozhraní, které se vztahují k vygenerování trasování zásobníku pro vlákno. Tato rozhraní zahrnují [icordebugchain –](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-interface.md), ICorDebugILFrame icordebuginternalframe – a icordebugnativeframe –.  
+> Volání `RemapFunction`, podobně jako volání [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md), okamžitě zruší platnost všech ladicích rozhraní, která souvisí s generováním trasování zásobníku pro vlákno. Mezi tato rozhraní patří [ICorDebugChain](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-interface.md), ICorDebugILFrame, ICorDebugInternalFrame a ICorDebugNativeFrame.  
   
- `RemapFunction` Metodu lze volat pouze v kontextu aktuálního rámce a pouze v jednom z následujících případech:  
+ `RemapFunction` Metodu lze volat pouze v kontextu aktuálního rámce a pouze v jednom z následujících případů:  
   
-- Po přijetí [icordebugmanagedcallback2::functionremapopportunity –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-functionremapopportunity-method.md) zpětné volání, které nebylo dosud pokračování.  
+- Po přijetí zpětného volání [ICorDebugManagedCallback2:: FunctionRemapOpportunity –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-functionremapopportunity-method.md) , které ještě nepokračovalo.  
   
-- Když je z důvodu zastaví provádění kódu [icordebugmanagedcallback::editandcontinueremap –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md) události pro tento rámec.  
+- Při provádění kódu je zastaveno z důvodu události [ICorDebugManagedCallback:: EditAndContinueRemap –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md) pro tento rámec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

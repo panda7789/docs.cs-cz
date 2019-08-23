@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: b6c8ec4052d834d410df7fef12e59434f5fdfb44
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 19c6fcb04a373d782db3deafc732f69bf20e7f0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039981"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962764"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
 Každá aplikace Visual Basic musí obsahovat proceduru nazvanou `Main`. Tato procedura slouží jako výchozí bod a celkový ovládací prvek pro vaši aplikaci. .NET Framework volá `Main` proceduru, když načte vaši aplikaci a je připravena k předání řízení. Pokud nevytváříte aplikaci model Windows Forms, musíte napsat `Main` postup pro aplikace, které se spouštějí sami.
@@ -33,7 +33,7 @@ Každá aplikace Visual Basic musí obsahovat proceduru nazvanou `Main`. Tato pr
  Existují čtyři způsoby, jak deklarovat `Main` proceduru. Může přijmout argumenty nebo ne a může vrátit hodnotu nebo ne.
 
 > [!NOTE]
->  Pokud deklarujete `Main` ve třídě, je nutné `Shared` použít klíčové slovo. V modulu `Main` nemusí být `Shared`.
+> Pokud deklarujete `Main` ve třídě, je nutné `Shared` použít klíčové slovo. V modulu `Main` nemusí být `Shared`.
 
 - Nejjednodušší způsob je deklarovat `Sub` proceduru, která nepřijímá argumenty nebo vrací hodnotu.
 

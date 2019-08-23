@@ -10,52 +10,52 @@ helpviewer_keywords:
 - Windows Forms, modifying keyboard input
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 626d3712-d866-4988-bcda-a2d5b36ec0ba
-ms.openlocfilehash: 8ac04a94fb567afa184172c0685438e26834fe5b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1aa22501eb3d15b30be4ea4918473cf5a48cfe94
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589229"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964293"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a>Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku
-Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využívání klíč odkazuje na zpracování klíč v rámci obslužnou rutinu metody nebo události tak, aby jiné metody a události, které dolů fronty zpráv neobdrží hodnotu klíče. Úprava klíč odkazuje na úpravy hodnoty vlastnosti klíč tak, aby metody a obslužné rutiny událostí další dolů fronty zpráv dostávat na jinou hodnotu klíče. Toto téma ukazuje, jak provádět tyto úlohy.  
+Model Windows Forms poskytuje možnost využívat a upravovat vstup z klávesnice. Spotřebovávání klíče odkazuje na zpracování klíče v rámci metody nebo obslužné rutiny události, aby jiné metody a události v nižší části fronty zpráv neobdržely hodnotu klíče. Změna klíče odkazuje na úpravu hodnoty klíče tak, aby metody a obslužné rutiny událostí dále v dolní části fronty zpráv přijímaly jinou hodnotu klíče. V tomto tématu se dozvíte, jak tyto úlohy provést.  
   
-### <a name="to-consume-a-key"></a>Používat klíče  
+### <a name="to-consume-a-key"></a>Využití klíče  
   
-- V <xref:System.Windows.Forms.Control.KeyPress> nastavena obslužná rutina události, <xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A> vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> třídu `true`.  
+- V obslužné rutině <xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A> <xref:System.Windows.Forms.KeyPressEventArgs> události nastavte vlastnost třídy na `true`. <xref:System.Windows.Forms.Control.KeyPress>  
   
      -nebo-  
   
-     V <xref:System.Windows.Forms.Control.KeyDown> nastavena obslužná rutina události, <xref:System.Windows.Forms.KeyEventArgs.Handled%2A> vlastnost <xref:System.Windows.Forms.KeyEventArgs> třídu `true`.  
+     V obslužné rutině <xref:System.Windows.Forms.KeyEventArgs.Handled%2A> <xref:System.Windows.Forms.KeyEventArgs> události nastavte vlastnost třídy na `true`. <xref:System.Windows.Forms.Control.KeyDown>  
   
     > [!NOTE]
-    >  Nastavení <xref:System.Windows.Forms.KeyEventArgs.Handled%2A> vlastnost <xref:System.Windows.Forms.Control.KeyDown> obslužná rutina události byste nezabránili <xref:System.Windows.Forms.Control.KeyPress> a <xref:System.Windows.Forms.Control.KeyUp> událostí vyvolaných pro aktuální stisknutí klávesy. Použití <xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> vlastnost pro tento účel.  
+    > Nastavení vlastnosti v obslužné rutině události nebrání <xref:System.Windows.Forms.Control.KeyUp> vyvolání událostí aproaktuálníklávesovouzkratku.<xref:System.Windows.Forms.Control.KeyPress> <xref:System.Windows.Forms.Control.KeyDown> <xref:System.Windows.Forms.KeyEventArgs.Handled%2A> Pro tento účel použijte vlastnost.<xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A>  
   
-     Následující příklad je výpisem z `switch` příkaz, který prověří <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> přijatých <xref:System.Windows.Forms.Control.KeyPress> obslužné rutiny události. Tento kód využívá "A" a "a" klávesy znaku.  
+     Následující `switch` příklad je výpis z příkazu, který <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> prochází vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> přijímanou <xref:System.Windows.Forms.Control.KeyPress> obslužnou rutinou události. Tento kód využívá klíče "A" a "a".  
   
      [!code-csharp[System.Windows.Forms.KeyBoardInput#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/CS/form1.cs#6)]
      [!code-vb[System.Windows.Forms.KeyBoardInput#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/VB/form1.vb#6)]  
   
-### <a name="to-modify-a-standard-character-key"></a>Chcete-li změnit klíč standardnímu znaku  
+### <a name="to-modify-a-standard-character-key"></a>Postup úpravy standardního znakového klíče  
   
-- V <xref:System.Windows.Forms.Control.KeyPress> nastavena obslužná rutina události, <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> třídy k hodnotě nový klíč znak.  
+- V obslužné rutině <xref:System.Windows.Forms.KeyPressEventArgs> <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> <xref:System.Windows.Forms.Control.KeyPress> události nastavte vlastnost třídy na hodnotu nového znakového klíče.  
   
-     Následující příklad je výpisem z `switch` příkaz, který upravuje "B" do "A" a "b" do "a". Všimněte si, že <xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A> vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> parametr je nastaven na `false`, aby se nová hodnota klíče je postoupena do jiné metody a události do fronty zpráv.  
+     Následující příklad je výňatek z `switch` příkazu, který upravuje b ' a ' a ' b ' na ' a '. Všimněte si, <xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A> že vlastnost <xref:System.Windows.Forms.KeyPressEventArgs> parametru je nastavena na `false`hodnotu, takže nová hodnota klíče je šířena do jiných metod a událostí ve frontě zpráv.  
   
      [!code-csharp[System.Windows.Forms.KeyBoardInput#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/CS/form1.cs#7)]
      [!code-vb[System.Windows.Forms.KeyBoardInput#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/VB/form1.vb#7)]  
   
-### <a name="to-modify-a-noncharacter-key"></a>Chcete-li změnit neznakové klávesy  
+### <a name="to-modify-a-noncharacter-key"></a>Postup úpravy neznakového klíče  
   
-- Přepsat <xref:System.Windows.Forms.Control> metodu, která zpracovává zprávy Windows detekovat zpráva WM_KEYDOWN nebo WM_SYSKEYDOWN a nastavit <xref:System.Windows.Forms.Message.WParam%2A> vlastnost <xref:System.Windows.Forms.Message> parametr <xref:System.Windows.Forms.Keys> hodnotu, která představuje nový neznakové klíč.  
+- Přepište <xref:System.Windows.Forms.Message.WParam%2A> <xref:System.Windows.Forms.Message> <xref:System.Windows.Forms.Keys> metodu, která zpracovává zprávy systému Windows, detekuje zprávu WM_KEYDOWN nebo WM_SYSKEYDOWN a nastavte vlastnost parametru na hodnotu, která představuje nový neznakový klíč. <xref:System.Windows.Forms.Control>  
   
-     Následující příklad kódu ukazuje, jak přepsat <xref:System.Windows.Forms.Control.PreProcessMessage%2A> metoda ovládacího prvku na detekci klávesy F1 až F9 a upravit F3 stisknutí klávesy F1. Další informace o <xref:System.Windows.Forms.Control> metody, které můžete přepsat, aby se zachytily zprávy týkající se klávesnice, naleznete v tématu [uživatelský vstup ve formulářové aplikaci Windows](user-input-in-a-windows-forms-application.md) a [jak funguje vstup klávesnice](how-keyboard-input-works.md).  
+     Následující příklad kódu ukazuje, jak přepsat <xref:System.Windows.Forms.Control.PreProcessMessage%2A> metodu ovládacího prvku pro detekci klíčů F1 po F9 a změnit všechny klávesy F3 stisknutím klávesy F1. Další informace o <xref:System.Windows.Forms.Control> metodách, které lze přepsat pro zachycení zpráv klávesnice, najdete [v tématu vstup uživatele v aplikaci model Windows Forms](user-input-in-a-windows-forms-application.md) a [Jak funguje vstup z klávesnice](how-keyboard-input-works.md).  
   
      [!code-csharp[System.Windows.Forms.KeyBoardInput#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/CS/form1.cs#12)]
      [!code-vb[System.Windows.Forms.KeyBoardInput#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/VB/form1.vb#12)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu je je aplikace dokončena a příklady kódu v předchozích částech. Aplikace používá vlastní ovládací prvek odvozen od <xref:System.Windows.Forms.TextBox> třídy využívat a úprava vstupu klávesnice.  
+ Následující příklad kódu je úplná aplikace pro příklady kódu v předchozích částech. Aplikace používá vlastní ovládací prvek odvozený od <xref:System.Windows.Forms.TextBox> třídy pro využívání a úpravy vstupu z klávesnice.  
   
  [!code-csharp[System.Windows.Forms.KeyBoardInput#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/CS/form1.cs#0)]
  [!code-vb[System.Windows.Forms.KeyBoardInput#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyboardInput/VB/form1.vb#0)]  
@@ -63,7 +63,7 @@ Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využ�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

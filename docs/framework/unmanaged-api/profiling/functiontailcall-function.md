@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4686710c105ef002fe30f8b6e167d760088913ce
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: afc0929b8f1b12f4e0b4551d826b8a1d59990154
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587001"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952891"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall – funkce
-Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.  
+Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce.  
   
 > [!NOTE]
->  `FunctionTailcall` Funkce je zastaralé v rozhraní .NET Framework verze 2.0. Bude nadále fungovat, ale bude mít za následek snížení výkonu. Použití [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) namísto toho funkci.  
+> `FunctionTailcall` Funkce je zastaralá ve verzi .NET Framework 2,0. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ void __stdcall FunctionTailcall (
   
 ## <a name="parameters"></a>Parametry  
  `funcID`  
- [in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.  
+ pro Identifikátor aktuálně vykonávané funkce, která má být volána pro volání funkce tail.  
   
 ## <a name="remarks"></a>Poznámky  
- Cílová funkce volání funkce tail použije aktuální rámec zásobníku a vrátí přímo do volajícího, který vytvořil tail volání funkce. To znamená, že [functionleave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) zpětného volání nebude vydán pro funkci, která je cílem volání funkce tail.  
+ Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
   
- `FunctionTailcall` Funkce je zpětné volání, je nutné implementovat. Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.  
+ `FunctionTailcall` Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec`atribut třídy úložiště`naked`().  
   
- Prováděcí modul nelze uložit žádné registry před voláním této funkce.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Provádění `FunctionTailcall` by neměla blokovat, protože způsobí zpoždění uvolnění paměti. Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti. Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionTailcall` vrátí.  
+ Implementace `FunctionTailcall` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud `FunctionTailcall` se nevrátí.  
   
- Také `FunctionTailcall` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.  
+ `FunctionTailcall` Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Hlaviček** CorProf.idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

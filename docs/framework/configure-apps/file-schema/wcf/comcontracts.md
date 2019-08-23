@@ -2,20 +2,20 @@
 title: <comContracts>
 ms.date: 03/30/2017
 ms.assetid: 42e74148-223d-4888-a8ed-1d928527eb09
-ms.openlocfilehash: 47a7d862cf85254f88373d582169ff421be2b5b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d061d48374a8745dc61e1ca156e4fcbbccee5ef7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673287"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919479"
 ---
 # <a name="comcontracts"></a>\<comContracts>
-`comContracts` Oddíl konfigurace obsahuje prvky, které vám umožňují určit různé vlastnosti kontraktu služby integrace modelu COM +.  
+`comContracts` Konfigurační oddíl obsahuje prvky, které umožňují zadat různé vlastnosti smlouvy služby COM+ Integration Service.  
   
-## <a name="specifying-namespace-and-contract"></a>Určení Namespace a smlouvy  
- Kontrakty služby integrace modelu COM + jsou momentálně omezené jenom na `http://tempuri.org` oboru názvů a název smlouvy je odvozen z rozhraní COM podpůrné. Můžete však určit alternativy pomocí `comContracts` oddílu v konfiguračním souboru.  
+## <a name="specifying-namespace-and-contract"></a>Zadání oboru názvů a kontraktu  
+ Kontrakty integrační služby com+ jsou aktuálně omezeny `http://tempuri.org` na obor názvů a název kontraktu je odvozen z doprovodného rozhraní modelu COM. Můžete však zadat alternativy pomocí `comContracts` oddílu v konfiguračním souboru.  
   
- Například můžete použít následující konfigurace k určení oboru názvů a kontrakt název kontraktu služby, stejně jako možnost vynutit použití vazby s relacemi.  
+ Pomocí následující konfigurace můžete například zadat obor názvů a název kontraktu služby a také možnost vyhodnotit využití u vazeb s relacemi.  
   
 ```xml  
 <comContracts>
@@ -27,19 +27,19 @@ ms.locfileid: "61673287"
 </comContracts>
 ```  
   
- Při inicializaci služby zadaných oborů názvů trasy a názvy kontraktů se použijí na popis generované služeb.  
+ Po inicializaci služby se zadané obory názvů a názvy kontraktů aplikují na vygenerované popisy služby.  
   
- Když tato část je prázdná, inicializace služby se uplatní výchozí obor názvů a kontrakt název z podpůrné ID modelu COM rozhraní.  
+ Pokud je tato část prázdná, použije se pro inicializaci služby výchozí obor názvů a název kontraktu z doprovodného IDENTIFIKÁTORu rozhraní COM.  
   
- Kromě toho můžete použít [ \<exposedMethod >](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elementu k určení modelu COM + metody, které jsou vystaveny při vystavení rozhraní komponenty COM + jako webovou službu. Můžete také použít [ \<persistableTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/persistabletypes.md) k určení trvalé typy používané v integraci. Nakonec můžete použít [ \<typu userDefinedType >](../../../../../docs/framework/configure-apps/file-schema/wcf/userdefinedtype.md) element patří uživateli definované typy (UDT), které se mají být součástí kontraktu služby.  
+ Kromě toho můžete pomocí [ \<elementu prvků exposedMethod >](exposedmethod.md) určit metody com+, které jsou vystaveny v případě, že je rozhraní komponenty modelu COM vystaveno jako webová služba. [ \<> PersistableTypes](persistabletypes.md) můžete použít také k určení trvalých typů, které se používají v integraci. Nakonec můžete pomocí [ \<elementu typu UserDefinedType >](userdefinedtype.md) zahrnout uživatelsky definované typy (UDT), které mají být zahrnuty do kontraktu služby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElement>
-- [\<exposedMethod>](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md)
-- [\<persistableTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/persistabletypes.md)
-- [\<userDefinedType>](../../../../../docs/framework/configure-apps/file-schema/wcf/userdefinedtype.md)
-- [\<comContract>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontract.md)
-- [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<Prvků exposedMethod >](exposedmethod.md)
+- [\<persistableTypes >](persistabletypes.md)
+- [\<userDefinedType>](userdefinedtype.md)
+- [\<comContract>](comcontract.md)
+- [Integrace s aplikacemi modelu COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Postupy: Konfigurace nastavení služby modelu COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

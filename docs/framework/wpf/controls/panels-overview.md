@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: 4f54596e1ce3ed40f3a029ea6703147a97be992f
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 5fe464f2b79fa1f7b0674c049110d32f2ad32335
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545266"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944809"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel>prvky jsou komponenty, které řídí vykreslování prvků – jejich velikost a rozměry, jejich umístění a uspořádání jejich podřízeného obsahu. Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> prvků, jakož i možnost vytvářet vlastní <xref:System.Windows.Controls.Panel> prvky. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]  
@@ -149,7 +149,7 @@ ms.locfileid: "69545266"
  Sloupce a řádky, které jsou <xref:System.Windows.Controls.Grid> definovány v rámci, <xref:System.Windows.GridUnitType.Star> můžou využít výhod velikosti, aby bylo možné rozdělit zbývající prostor proporcionálně. Když <xref:System.Windows.GridUnitType.Star> je vybrána možnost jako výška nebo šířka řádku nebo sloupce, obdrží tento sloupec nebo řádek vážený poměr zbývající dostupné místo. To je na rozdíl od <xref:System.Windows.GridUnitType.Auto>, což rozšíří prostor rovnoměrně na základě velikosti obsahu v rámci sloupce nebo řádku. Tato hodnota je vyjádřena `*` jako `2*` nebo při [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]použití. V prvním případě by se řádek nebo sloupec dostal vícekrát k dostupnému místu, ve druhém případě dvakrát a tak dále. Kombinací této techniky k rozdělení prostoru s <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> hodnotou `Stretch` a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> je možné rozdělit prostor na rozložení podle procenta místa na obrazovce. <xref:System.Windows.Controls.Grid>je jediným panelem rozložení, který může distribuovat místo tímto způsobem.  
   
 #### <a name="defining-and-using-a-grid"></a>Definování a použití mřížky  
- Následující příklad ukazuje, jak vytvořit [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] podobný příkaz, který najdete v dialogovém okně Spustit, který je k dispozici [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] v nabídce Start.  
+ Následující příklad ukazuje, jak vytvořit [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] podobný příkaz, který najdete v dialogovém okně Spustit, který je k dispozici v nabídce Start systému Windows.  
   
  [!code-csharp[GridRunDialog#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GridRunDialog/CSharp/window1.xaml.cs#1)]
  [!code-vb[GridRunDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridRunDialog/VisualBasic/grid_vb.vb#1)]  

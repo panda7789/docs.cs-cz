@@ -5,17 +5,17 @@ ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8480e2d6817d0367e89542c0e6c89cd26183dd5e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8a0c34eebda789f6561195c89e2660ae77603dc0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774897"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923286"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
-Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Zkompilované šablony stylů je pak možné předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Podepsaná sestavení s xsltc.exe nelze generovat.  
+Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Kompilovaná šablona stylů může být předána přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Nelze generovat podepsaná sestavení pomocí xsltc. exe.  
   
- Nástroj xsltc.exe je součástí sady Visual Studio. Další informace najdete v tématu [stahování sady Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
+ Nástroj xsltc. exe je součástí sady Visual Studio. Další informace najdete v tématu [soubory ke stažení pro Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,56 +27,56 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|`sourceFile`|Určuje název šablony stylů. Šablona stylů musí být místní soubor nebo umístěného v intranetu.|  
+|`sourceFile`|Určuje název předlohy se styly. Šablona stylů musí být místní soubor nebo se nachází na intranetu.|  
   
 ## <a name="options"></a>Možnosti  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|`/c[lass]:``name`|Určuje název třídy pro následující šablony stylů. Může být plně kvalifikovaný název třídy.<br /><br /> Výchozí název třídy na název šablony stylů. Například pokud je kompilován customers.xsl list stylu, výchozí název třídy je zákazníkům.|  
-|`/debug[`+&#124;-`]`|Určuje, jestli se má generovat ladicí informace.<br /><br /> Určení `+` nebo `/debug`, způsobí, že kompilátor generovat ladicí informace a vložit ho do souboru databáze (PDB) programu. Název generovaného souboru PDB je `assemblyName`.pdb.<br /><br /> Určení `-`, který je v platnosti, pokud nezadáte `/debug`, způsobí, že žádné informace o ladění, který se má vytvořit. Maloobchodní sestavení je generováno. **Poznámka:**  Kompilace v režimu ladění může ovlivnit výkon XSLT pouze výrazně.|  
+|`/c[lass]:``name`|Určuje název třídy pro následující šablonu stylů. Název třídy může být plně kvalifikovaný.<br /><br /> Název třídy je ve výchozím nastavení název předlohy se styly. Například pokud je tabulka stylů Customers. XSL je kompilována, výchozí název třídy je Customers.|  
+|`/debug[`+&#124;-`]`|Určuje, zda se mají generovat ladicí informace.<br /><br /> Při `+` zadání `/debug`nebo způsobí, že kompilátor vygeneruje ladicí informace a umístí je do souboru programu databáze (PDB). Název generovaného souboru PDB je `assemblyName`. pdb.<br /><br /> Určení `-`, které platí v případě, že neurčíte `/debug`, nezpůsobí vytváření ladicích informací. Vygeneruje se maloobchodní sestavení. **Poznámka:**  Kompilace v režimu ladění může významně ovlivnit výkon XSLT.|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|`/nologo`|Potlačí zprávu o autorských právech kompilátoru ze zobrazení.|  
-|`/platform:``string`|Určuje sestavení můžete spustit na platformách. Následující část popisuje hodnoty platné platformy:<br /><br /> `x86` kompiluje sestavení ke spuštění v 32bitové, které je kompatibilní x86 common language runtime<br /><br /> `x64` kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.<br /><br /> Itanium kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítač s procesorem Itanium.<br /><br /> `anycpu` Kompiluje sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
-|`/out:``assemblyName`|Určuje název sestavení, které je výstup. Název sestavení použije výchozí název hlavní šablony stylů nebo první šablony stylů, pokud jsou k dispozici více šablony stylů.<br /><br /> Pokud šablona stylů obsahuje skripty, skripty se uloží do samostatného sestavení. Názvy sestavení skriptu se generují z názvu hlavní sestavení. Například pokud jste zadali pro název vašeho sestavení CustOrders.dll, první skript sestavení je pojmenováno CustOrders_Script1.dll.|  
-|`/settings:``document+-, script+-, DTD+-,`|Určuje, jestli se má povolit `document()` funkce XSLT skriptu nebo dokumentu typ definice (DTD) v šabloně stylů.<br /><br /> Výchozí chování zakáže podporu pro DTD, `document()` funkce a skriptování.|  
-|`@``file`|Umožňuje určit soubor obsahující možnosti kompilátoru.|  
+|`/nologo`|Potlačí zobrazení zprávy o autorských právech kompilátoru.|  
+|`/platform:``string`|Určuje platformy, na kterých lze spustit sestavení. Následující popis obsahuje platné hodnoty platformy:<br /><br /> `x86`zkompiluje sestavení tak, aby běželo 32 modul CLR (Common Language Runtime) kompatibilním s platformou x86.<br /><br /> `x64`zkompiluje sestavení tak, aby běželo pomocí 64 modulu CLR (Common Language Runtime) v počítači, který podporuje instrukční sady AMD64 nebo EM64T.<br /><br /> Procesory Itanium zkompiluje vaše sestavení tak, aby bylo spuštěno pomocí 64 modulu CLR (Common Language Runtime) v počítači, který má procesor s procesorem Itanium.<br /><br /> `anycpu`zkompiluje sestavení pro spuštění na libovolné platformě. Toto nastavení je výchozí.|  
+|`/out:``assemblyName`|Určuje název sestavení, které je výstupem. Název sestavení je výchozím názvem pro hlavní šablonu stylů nebo první šablonu stylů, pokud je k dispozici více šablon stylů.<br /><br /> Pokud šablona stylů obsahuje skripty, skripty jsou uloženy do samostatného sestavení. Názvy sestavení skriptu jsou generovány z hlavního názvu sestavení. Například pokud jste pro název sestavení zadali CustOrders. dll, první sestavení skriptu má název CustOrders_Script1. dll.|  
+|`/settings:``document+-, script+-, DTD+-,`|Určuje, zda mají `document()` být v šabloně stylů povoleny funkce, skripty XSLT nebo definice typu dokumentu (DTD).<br /><br /> Výchozí chování zakáže podporu DTD, `document()` funkce a skriptování.|  
+|`@``file`|Umožňuje zadat soubor, který obsahuje možnosti kompilátoru.|  
 |`?`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Řešení XSLT se může skládat z více modulů list stylu. Nástroj xsltc.exe generuje sestavení ze šablony stylů. Sestavení je pak možné předat do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. To může pomoct snížit náklady na výkon v některých scénářích nasazení XSLT.  
+ Řešení XSLT se mohou skládat z několika modulů šablon stylů. Nástroj xsltc. exe generuje sestavení ze šablon stylů. Sestavení lze následně předat do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. To může přispět ke snížení nákladů na výkon v některých scénářích nasazení XSLT.  
   
 > [!NOTE]
->  Je také nutné uvést zkompilovaného sestavení jako odkaz ve vaší aplikaci.  
+> Také je nutné zahrnout zkompilované sestavení jako odkaz do aplikace.  
   
- Nástroj xsltc.exe nelze ověřit třídu (`/class:`*název*) nebo sestavení (`/out:`*assemblyName*) názvy. Chyby jsou vyvolány pomocí modul common language runtime, pokud názvy nejsou platné.  
+ Nástroj xsltc.`/class:`exe neověřuje názvy tříd (*Name*) nebo Assembly (`/out:`*AssemblyName*). Pokud názvy nejsou platné, jsou chyby vyvolány modulem CLR (Common Language Runtime).  
   
 ## <a name="examples"></a>Příklady  
- Následující příkaz zkompiluje šablony stylů a vytvoří sestavení s názvem booksort.dll.  
+ Následující příkaz zkompiluje šablonu stylů a vytvoří sestavení s názvem booksort. dll.  
   
 ```  
 xsltc booksort.xsl  
 ```  
   
- Následující příkaz zkompiluje šablony stylů a vytvoří sestavení a soubor PDB, které jsou pojmenovány booksort.dll a booksort.pdb v uvedeném pořadí.  
+ Následující příkaz zkompiluje šablonu stylů a vytvoří sestavení a soubor PDB s názvem booksort. dll a booksort. pdb v uvedeném pořadí.  
   
 ```  
 xsltc booksort.xsl /debug  
 ```  
   
- Následující příkaz zkompiluje šablony stylů, která obsahuje element msxsl: Script a vytvoří dvě sestavení s názvem calc.dll a calc_Script1.dll.  
+ Následující příkaz zkompiluje šablonu stylů obsahující element msxsl: Script a vytvoří dvě sestavení s názvem Calc. dll a calc_Script1. dll.  
   
 ```  
 xsltc /settings:script+ calc.xsl  
 ```  
   
- Následující příkaz povolí zpracování a skript podporu specifikace DTD a vytvoří dvě sestavení s názvem myTest.dll a myTest_Script1.dll.  
+ Následující příkaz umožňuje zpracování a podporu skriptu DTD a vytváří dvě sestavení s názvem myTest. dll a myTest_Script1. dll.  
   
 ```  
 xsltc /settings:DTD+,script+ /out:myTest calc.xsl  
 ```  
   
- Následující příkaz pro kompilaci dvou modulů list stylu a vytvoří jednoho sestavení s názvem booksort.dll.  
+ Následující příkaz zkompiluje dva moduly šablon stylů a vytvoří jedno sestavení s názvem booksort. dll.  
   
 ```  
 xsltc booksort.xsl output.xsl  

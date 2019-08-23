@@ -7,12 +7,12 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 9fa15f1506d2fb22ef6c693508a2cd045f920add
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 9b6592405d3047c8663b48137aa5b1f0eb14bdb4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590897"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924108"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
 Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů dotazů LINQ.  
@@ -20,7 +20,7 @@ Tento návod ukazuje funkce C# jazyka, které se používají k zápisu výrazů
 ## <a name="create-a-c-project"></a>Vytvoření projektu v jazyce C#  
   
 > [!NOTE]
->  Následující pokyny jsou pro Visual Studio. Pokud používáte jiné vývojové prostředí, vytvořte projekt konzoly s odkazem na System. Core. dll a `using` direktivou <xref:System.Linq?displayProperty=nameWithType> pro obor názvů.  
+> Následující pokyny jsou pro Visual Studio. Pokud používáte jiné vývojové prostředí, vytvořte projekt konzoly s odkazem na System. Core. dll a `using` direktivou <xref:System.Linq?displayProperty=nameWithType> pro obor názvů.  
   
 #### <a name="to-create-a-project-in-visual-studio"></a>Vytvoření projektu v aplikaci Visual Studio  
   

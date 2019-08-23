@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 6966d0b7a4f8a96bddb17ce2017fd53fc07ae922
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 62186409fdc1abb2275af535be3ae939a1e63323
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69572330"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922286"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>Operátory testování typů a přetypování (C# Referenční dokumentace)
 
@@ -115,7 +115,7 @@ Informace o podporovaných explicitních převodech naleznete v části [explici
 
 K [volání metody nebo vyvolání delegáta](member-access-operators.md#invocation-operator-)můžete také použít kulaté závorky.
 
-Jiné použití závorek je určit pořadí, ve kterém se mají vyhodnocovat operace ve výrazu. Další informace naleznete v části [Přidání závorek](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) v článku věnovaném [operátorům](../../programming-guide/statements-expressions-operators/operators.md) . Seznam operátorů seřazených podle priority najdete v tématu [ C# operátory](index.md).
+Jiné použití závorek je upravit pořadí, ve kterém se mají vyhodnocovat operace ve výrazu. Další informace najdete v tématu [ C# operátory](index.md).
 
 ## <a name="typeof-operator"></a>typeof – operátor
 

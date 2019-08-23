@@ -1,5 +1,5 @@
 ---
-title: Instalace balíčku pro vývojáře rozhraní .NET Framework nebo distribuovatelné součásti
+title: Instalace sady .NET Framework Developer Pack nebo Redistributable
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 helpviewer_keywords:
@@ -10,207 +10,207 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3839848aec47edef63a0080bf649f452b9d662a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de7df6ae2d6463d05d1680c288dd202edc639b09
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644072"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949121"
 ---
-# <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
+# <a name="install-the-net-framework-for-developers"></a>Instalace .NET Framework pro vývojáře
 
-.NET je nedílnou součástí mnoha aplikace běžící na Windows a poskytuje běžné funkce pro spouštění těchto aplikací. Pro vývojáře v rozhraní .NET Framework poskytuje komplexní a konzistentní programovací model pro vytváření aplikací, které mají vizuálně přitažlivé uživatelské prostředí a bezproblémovou a bezpečnou komunikaci.
+.NET je nedílnou součástí mnoha aplikací běžících na Windows a poskytuje společné funkce pro spouštění těchto aplikací. Pro vývojáře .NET Framework poskytuje komplexní a konzistentní programovací model pro vytváření aplikací, které mají vizuálně působivé uživatelské prostředí a bezproblémové a zabezpečené komunikace.
 
 > [!NOTE]
-> Toto téma je určeno pro **vývojáři** chtějí buď nainstalovat rozhraní .NET Framework na svůj vlastní systém nebo kteří chtějí nainstalovat pomocí svých aplikací. Pro **uživatelé** uvažujete o instalaci rozhraní .NET Framework naleznete v jednotlivých tématech, které popisují instalaci rozhraní .NET Framework na konkrétní operační systémy, jako například [nainstalovat rozhraní .NET Framework v systému Windows 10 a Windows Server 2016](on-windows-10.md).
+> Toto téma je určené pro **vývojáře** , kteří chtějí nainstalovat .NET Framework do svého vlastního systému, nebo si ho chtějí nainstalovat s aplikacemi. Pro **uživatele** , kteří mají zájem o instalaci .NET Framework, přečtěte si jednotlivá témata týkající se instalace .NET Framework na konkrétní operační systémy, jako je například [instalace .NET Framework ve Windows 10 a Windows Server 2016](on-windows-10.md).
 
-Tento článek obsahuje odkazy na instalaci všechny verze rozhraní .NET Framework v rozhraní .NET Framework 4.5 na .NET Framework 4.8 ve vašem počítači. Pokud jste vývojář, můžete také použít tyto odkazy ke stažení a redistribuci rozhraní .NET Framework s vaší aplikací. Informace o nasazení na verzi rozhraní .NET Framework s vaší aplikací naleznete v tématu [rozhraní .NET Framework – Průvodce nasazením pro vývojáře](../deployment/deployment-guide-for-developers.md).
+Tento článek obsahuje odkazy na instalaci všech verzí .NET Framework z .NET Framework 4,5 až do .NET Framework 4,8 v počítači. Pokud jste vývojář, můžete tyto odkazy použít také ke stažení a distribuci .NET Framework s vašimi aplikacemi. Informace o nasazení verze .NET Framework s vaší aplikací najdete v [Průvodci nasazením .NET Framework pro vývojáře](../deployment/deployment-guide-for-developers.md).
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Další informace o verzích rozhraní .NET Framework a jak určit, jaké verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md) a [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).
+Další informace o verzích .NET Framework a o tom, jak určit, které verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](../migration-guide/versions-and-dependencies.md) a [postupy: Určete, které verze .NET Framework jsou](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)nainstalovány.
 
 > [!NOTE]
-> Informace o rozhraní .NET Framework 3.5 najdete v tématu [nainstalovat rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](~/docs/framework/install/dotnet-35-windows-10.md).
+> Informace o .NET Framework 3,5 najdete v tématu [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](dotnet-35-windows-10.md).
 
-Použijte následující tabulku pro rychlé odkazy nebo si přečtěte další podrobnosti. Požadavky na systém pro rozhraní .NET Framework před instalací najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Pomoc při řešení potíží, najdete v části [Poradce při potížích s](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md).
+Použijte následující tabulku pro rychlé odkazy nebo si přečtěte podrobnosti. Chcete-li zobrazit požadavky na systém pro .NET Framework před instalací, přečtěte si téma [požadavky na systém](../get-started/system-requirements.md). Pomoc při řešení potíží najdete v tématu [řešení potíží](troubleshoot-blocked-installations-and-uninstallations.md).
 
-|Verze rozhraní .NET Framework|Instalace pro vývojáře|Distribuovatelné součásti instalace|Podpora platforem|
+|Verze rozhraní .NET Framework|Instalace pro vývojáře|Redistribuovatelná instalace|Podpora platforem|
 |----------------------------|----------------------------|----------------------------------|----------------------|
-|**4.8**|[Rozhraní .NET framework 4.8 Developer Pack](https://go.microsoft.com/fwlink/?linkid=2088517)|[Webová instalační služba Stažení softwaru 4.8](http://go.microsoft.com/fwlink/?LinkId=2085155)<br/><br/>[Stažení softwaru 4.8 offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631)|**Součástí:**<br/><br/>Windows 10. května 2019 Update<br /><br /> **Můžete nainstalovat na:**<br/><br/>Windows 10. října 2018 Update<br/>Aktualizace Windows 10. dubna 2018<br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server. 2019<br/>Windows Server verze 1809<br/>Windows Server, Version 1803<br /><br/> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)|[Webová instalační služba Stažení softwaru 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=863265)|**Součástí:** <br/><br/>Windows 10. října 2018 Update<br/>Aktualizace Windows 10. dubna 2018<br/>Windows Server. 2019<br/>Windows Server verze 1809<br/>Windows Server, Version 1803<br /><br /> **Můžete nainstalovat na:**<br/> <br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server verze 1709 a starší<br /><br/> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.7.1**|[.NET Framework 4.7.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=852105)|[Stránka pro 4.7.1 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Stránka pro 4.7.1 stažení offline instalační program](https://go.microsoft.com/fwlink/?LinkId=852107)|**Součástí:** <br/><br/>Windows 10 Fall Creators Update<br/>Windows Server verze 1709<br /><br /> **Můžete nainstalovat na:**<br/><br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.7**|[.NET Framework 4.7 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stáhněte si stránku pro 4.7 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=825303)|**Součástí:** <br/><br/>Windows 10 Creators Update<br /><br /> **Můžete nainstalovat na:**<br /><br/> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
-|**4.6.2**|[.NET Framework 4.6.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=780617)|[Stránka pro 4.6.2 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Stránka pro 4.6.2 stažení offline instalační program](https://go.microsoft.com/fwlink/?LinkId=780601)|**Součástí:** <br/><br /> Windows 10 Anniversary Update<br /><br /> **Můžete nainstalovat na:**<br /><br/> Windows 10 November Update <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.6.1**|[.NET Framework 4.6.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=690706)|[Stránka pro 4.6.1 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [Stránka pro 4.6.1 stažení offline instalační program](https://go.microsoft.com/fwlink/?LinkId=671744)|**Můžete nainstalovat na:**<br /><br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.6**|Součástí sady Visual Studio 2015.<br /><br /> [Microsoft .NET Framework 4.6 targeting pack](https://go.microsoft.com/fwlink/?LinkId=528261)|[Stáhněte si stránku pro 4.6 Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [Stáhněte si stránku pro 4.6 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=528233)|**Součástí:** <br/><br /> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.5.2**|[Microsoft .NET Framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Pro použití se službou Visual Studio 2013, Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí|[Stránka pro 4.5.2 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [Stránka pro 4.5.2 stažení offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=397706)|**Můžete nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.5.1**|[Microsoft .NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213)<br /><br /> Pro použití se službou Visual Studio 2013, Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí|[Stránka pro stahování 4.5.1 Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br /><br /> [Stránka pro stahování 4.5.1 offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=310159)|**Součástí:**<br /> <br/>[!INCLUDE[win81](../../../includes/win81-md.md)]<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> [!INCLUDE[win8](../../../includes/win8-md.md)] a starší<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] a starší<br />(Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.5**|Zahrnuté v sadě Visual Studio 2012<br /><br /> Také k dispozici jako součást sady SDK pro Windows 8|[Stáhněte si stránky pro webové instalační služby 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**Součástí:** <br/><br /> [!INCLUDE[win8](../../../includes/win8-md.md)]<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **Můžete také nainstalovat na:**<br/><br /> Windows 7 a starší<br /> Windows Server 2008 SP2 a starší<br />(Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
+|**4,8**|[.NET Framework 4,8 Developer Pack](https://go.microsoft.com/fwlink/?linkid=2088517)|[Webová instalační služba centra Stažení softwaru 4,8](http://go.microsoft.com/fwlink/?LinkId=2085155)<br/><br/>[Instalační program služby Stažení softwaru 4,8 offline](https://go.microsoft.com/fwlink/?linkid=2088631)|**Zahrnuto v:**<br/><br/>Windows 10 Květen 2019 Update<br /><br /> **Můžete nainstalovat na:**<br/><br/>Windows 10 říjen 2018 – aktualizace<br/>Aktualizace Windows 10. dubna 2018<br/>Aktualizace Creators v systému Windows 10<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server. 2019<br/>Windows Server verze 1809<br/>Windows Server verze 1803<br /><br/> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))||
+|**4.7.2**|[.NET Framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)|[Služba Stažení softwaru 4.7.2 Web Installer](https://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Instalační program služby Stažení softwaru 4.7.2 offline](https://go.microsoft.com/fwlink/?LinkId=863265)|**Zahrnuto v:** <br/><br/>Windows 10 říjen 2018 – aktualizace<br/>Aktualizace Windows 10. dubna 2018<br/>Windows Server. 2019<br/>Windows Server verze 1809<br/>Windows Server verze 1803<br /><br /> **Můžete nainstalovat na:**<br/> <br/>Aktualizace Creators v systému Windows 10<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server verze 1709 a starší<br /><br/> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))||
+|**4.7.1**|[.NET Framework 4.7.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=852105)|[Stránka pro stažení webové instalační služby 4.7.1](https://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Stránka pro stažení offline instalační služby 4.7.1](https://go.microsoft.com/fwlink/?LinkId=852107)|**Zahrnuto v:** <br/><br/>Aktualizace Creators v systému Windows 10<br/>Windows Server verze 1709<br /><br /> **Můžete nainstalovat na:**<br/><br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))||
+|**4.7**|[.NET Framework 4,7 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=825319)|[Stránka pro stažení webové instalační služby 4,7](https://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stránka pro stažení pro offline instalační program 4,7](https://go.microsoft.com/fwlink/?LinkId=825303)|**Zahrnuto v:** <br/><br/>Windows 10 Creators Update<br /><br /> **Můžete nainstalovat na:**<br /><br/> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))||
+|**4.6.2**|[.NET Framework 4.6.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=780617)|[Stránka pro stažení webové instalační služby 4.6.2](https://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Stránka pro stažení offline instalační služby 4.6.2](https://go.microsoft.com/fwlink/?LinkId=780601)|**Zahrnuto v:** <br/><br /> Windows 10 Anniversary Update<br /><br /> **Můžete nainstalovat na:**<br /><br/> Listopadová aktualizace pro Windows 10 <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
+|**4.6.1**|[NET Framework 4.6.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=690706)|[Stránka pro stažení webové instalační služby 4.6.1](https://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [Stránka pro stažení offline instalačního programu 4.6.1](https://go.microsoft.com/fwlink/?LinkId=671744)|**Můžete nainstalovat na:**<br /><br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
+|**4.6**|Zahrnuto v aplikaci Visual Studio 2015.<br /><br /> [Sada Microsoft .NET Framework 4,6 targeting pack](https://go.microsoft.com/fwlink/?LinkId=528261)|[Stránka pro stažení webové instalační služby 4,6](https://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [Stránka pro stažení pro offline instalační program 4,6](https://go.microsoft.com/fwlink/?LinkId=528233)|**Zahrnuto v:** <br/><br /> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
+|**4.5.2**|[Microsoft .NET Framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Pro použití s Visual Studio 2013, Visual Studio 2012 nebo jiné IDEs|[Stránka pro stažení webové instalační služby 4.5.2](https://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [Stránka pro stažení offline instalátoru 4.5.2](https://go.microsoft.com/fwlink/p/?LinkId=397706)|**Můžete nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a starší<br /> (úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
+|**4.5.1**|[Microsoft .NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213)<br /><br /> Pro použití s Visual Studio 2013, Visual Studio 2012 nebo jiné IDEs|[Stránka pro stažení webové instalační služby 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br /><br /> [Stránka pro stažení offline instalátoru 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=310159)|**Zahrnuto v:**<br /> <br/>[!INCLUDE[win81](../../../includes/win81-md.md)]<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> [!INCLUDE[win8](../../../includes/win8-md.md)]a starší<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]a starší<br />(úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
+|**4.5**|Zahrnuto v aplikaci Visual Studio 2012<br /><br /> K dispozici také jako součást sady Windows 8 SDK|[Stránka pro stažení webové instalační služby 4,5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**Zahrnuto v:** <br/><br /> [!INCLUDE[win8](../../../includes/win8-md.md)]<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **Můžete také nainstalovat na:**<br/><br /> Windows 7 a starší<br /> Windows Server 2008 SP2 a starší<br />(úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md))|
 
-Můžete nainstalovat **Developer Pack** na konkrétní verzi rozhraní .NET Framework, pokud je k dispozici na všech podporovaných platformách.
+**Sadu Developer Pack** můžete nainstalovat na určitou verzi .NET Framework, pokud je k dispozici na všech podporovaných platformách.
 
-Můžete nainstalovat **Web nebo Offline instalační program** na:
+**Web nebo offline instalační program** můžete nainstalovat na:
 
 - Windows 8.1 a starší
 
-- Windows Server 2012 R2 a dřívějších verzí
+- Windows Server 2012 R2 a starší
 
-Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md).
+Úplný seznam najdete v tématu [požadavky na systém](../get-started/system-requirements.md).
 
-Obecný úvod k rozhraní .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](../get-started/index.md). Informace o nasazení rozhraní .NET Framework s vaší aplikací, najdete v článku [Průvodce nasazením](~/docs/framework/deployment/deployment-guide-for-developers.md). Přečtěte si informace o architektuře a klíčových funkcích rozhraní .NET Framework, najdete v článku [přehled](~/docs/framework/get-started/overview.md).
+Obecný úvod k .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](../get-started/index.md). Informace o nasazení .NET Framework s vaší aplikací najdete v [Průvodci nasazením](../deployment/deployment-guide-for-developers.md). Informace o architektuře a klíčových funkcích .NET Framework najdete v [přehledu](../get-started/overview.md).
 
 ## <a name="installation-choices"></a>Možnosti instalace
 
-Vývojář targeting pack pro vývoj pro nejnovější verzi rozhraní .NET Framework v sadě Visual Studio nebo jiné vývojové prostředí nainstalovat nebo stáhnout rozhraní .NET Framework, distribuovatelné součásti pro rozdělení dat s vaší aplikace nebo ovládacího prvku.
+Nainstalujte sadu targeting Developer Pack pro vývoj na nejnovější verzi .NET Framework v sadě Visual Studio nebo v jiném vývojovém prostředí nebo si stáhněte .NET Framework distribuovatelné pro distribuci s vaší aplikací nebo ovládacím prvkem.
 
-### <a name="to-install-the-net-framework-developer-pack-or-targeting-pack"></a>Chcete-li nainstalovat rozhraní .NET Framework Developer Pack nebo Targeting Pack
+### <a name="to-install-the-net-framework-developer-pack-or-targeting-pack"></a>Instalace sady .NET Framework Developer Pack nebo sady targeting pack
 
-A *targeting pack* umožníte tím aplikaci cílení na konkrétní verzi rozhraní .NET Framework při vývoji v sadě Visual Studio a jiných vývojových prostředích. A *developer pack* obsahuje konkrétní verzi rozhraní .NET Framework a její související SDK společně s jeho odpovídající sady targeting pack.
+*Sada targeting pack* umožňuje vaší aplikaci cílit na konkrétní verzi .NET Framework při vývoji v sadě Visual Studio a některých jiných vývojových prostředích. Sada *Developer Pack* zahrnuje konkrétní verzi .NET Framework a její doprovodnou sadu SDK spolu s odpovídajícím balíčkem targeting pack.
 
-Sadu Nástroje pro vývojáře pro rozhraní .NET Framework 4.5.1 a 4.5.2 targeting pack pro rozhraní .NET Framework 4.6 a developer pack pro rozhraní .NET Framework 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 nebo 4.8 poskytuje konkrétní Framework .NET verze referenční sestavení jazyka balíčky a soubory IntelliSense pro použití v integrovaném vývojovém prostředí, jako je Visual Studio.  Pokud používáte Visual Studio developer pack nebo targeting pack nainstalovaná verze rozhraní .NET Framework také přidá do cílové možnosti při vytváření nového projektu.  Vyberte jednu z následujících možností:
+Sada Developer Pack pro .NET Framework 4.5.1 nebo 4.5.2, sada Targeting Pack for .NET Framework 4,6 a sada Developer Pack pro .NET Framework 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 nebo 4,8 poskytuje konkrétní verzi .NET Framework referenčních sestavení, jazyk sady a soubory IntelliSense pro použití v integrovaném vývojovém prostředí, jako je například Visual Studio.  Pokud používáte sadu Visual Studio, sada Developer Pack nebo sada targeting pack také přidá nainstalovanou verzi .NET Framework k cílovým volbám při vytváření nového projektu.  Vyberte jednu z následujících možností:
 
-- [Microsoft .NET Framework 4.8 Developer Pack](https://go.microsoft.com/fwlink/?linkid=2088517)
+- [Sada Microsoft .NET Framework 4,8 Developer Pack](https://go.microsoft.com/fwlink/?linkid=2088517)
 
-- [Microsoft .NET Framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)
+- [Sada Microsoft .NET Framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)
 
-- [Microsoft .NET Framework 4.7.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=852105)
+- [Sada Microsoft .NET Framework 4.7.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=852105)
 
-- [Microsoft .NET Framework 4.7 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=825319)
+- [Sada Microsoft .NET Framework 4,7 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=825319)
 
 - [Microsoft .NET Framework 4.6.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=780617)
 
 - [Microsoft .NET Framework 4.6.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=690706)
 
-- [Microsoft .NET Framework 4.6 Targeting Pack](https://go.microsoft.com/fwlink/?LinkId=528261)
+- [Sada Microsoft .NET Framework 4,6 targeting pack](https://go.microsoft.com/fwlink/?LinkId=528261)
 
-- [Rozhraní .NET framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702) k instalaci na Windows 8.1 nebo starší verze 4.5.2, Visual Studio 2013, Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí.
+- [.NET Framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702) pro instalaci verze 4.5.2 do Windows 8.1 nebo starší verze, Visual Studio 2013, Visual Studio 2012 nebo jiného prostředí pro správu.
 
-- [Rozhraní .NET framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213) k instalaci verze 4.5.1 v sadě Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí.
+- [.NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213) pro instalaci verze 4.5.1 pro Visual Studio 2012 nebo jiné prostředí pro správu.
 
-Na stránce pro stahování aktualizací Service pack pro vývojáře, zvolte **Stáhnout**. Dále vyberte **spustit** nebo **Uložit**a postupujte podle pokynů po zobrazení výzvy. Můžete také nainstalovat developer pack nebo tak, že ji vyberete volitelné součásti v targeting pack pro konkrétní verzi rozhraní .NET Framework **vývoj desktopových aplikací .NET** úloh ve Visual Studio Installer, jako Následující obrázek ukazuje.
+Na stránce stažení sady Developer Pack vyberte možnost **Stáhnout**. Dále vyberte možnost **Spustit** nebo **Uložit**a po zobrazení výzvy postupujte podle pokynů. Můžete také nainstalovat sadu Developer Pack nebo sadu targeting pack pro konkrétní verzi .NET Framework tím, že ji vyberete z volitelných komponent v úloze **vývoj desktopových aplikací .NET** v instalační program pro Visual Studio, jak ukazuje následující obrázek.
 
-   ![Instalační program sady Visual Studio s úlohou vývoj desktopových aplikací .NET](./media/visual-studio-installer.jpg)
+   ![Instalační program pro Visual Studio s úlohou vývoj desktopových aplikací .NET](./media/visual-studio-installer.jpg)
 
-Při cílení na konkrétní verzi rozhraní .NET Framework, vaše aplikace je sestavena pomocí referenčních sestavení, které jsou součástí této verze developer pack. Za běhu jsou vyřešeny sestavení z globální mezipaměti sestavení a nepoužívají se referenční sestavení.
+Při cílení na konkrétní verzi .NET Framework je aplikace sestavena pomocí referenčních sestavení, která jsou součástí sady Developer Pack dané verze. V době běhu jsou sestavení přeložena z globální mezipaměti sestavení (GAC) a referenční sestavení nejsou použita.
 
-Při sestavování aplikace ze sady Visual Studio nebo pomocí nástroje MSBuild z příkazového řádku, MSBuild může zobrazit chyba MSB3644 "Referenční sestavení pro architekturu"*verzi rozhraní framework*"nebyly nalezeny." Chcete-li vyřešit chybu, stáhněte developer pack nebo targeting pack pro danou verzi rozhraní .NET Framework.
+Při sestavování aplikace ze sady Visual Studio nebo použití nástroje MSBuild z příkazového řádku může nástroj MSBuild zobrazit chybu MSB3644, "referenční sestavení pro architekturu"*Framework-Version*"nebyla nalezena." Chcete-li tuto chybu vyřešit, Stáhněte sadu Developer Pack nebo sadu Target Pack pro danou verzi .NET Framework.
 
-### <a name="to-install-or-download-the-net-framework-redistributable"></a>Instalace a stažení rozhraní .NET Framework, distribuovatelné součásti
+### <a name="to-install-or-download-the-net-framework-redistributable"></a>Instalace nebo stažení .NET Framework redistributable
 
-Instalační programy stáhnou součásti rozhraní .NET Framework pro aplikaci nebo ovládací prvek, který se zaměřuje na tyto verze rozhraní .NET Framework. Tyto komponenty musí být nainstalována na každém počítači, kde běží aplikace nebo ovládacího prvku. Tyto instalační programy jsou šiřitelné, takže je možné je zahrnout v instalačním programu pro vaši aplikaci.
+Instalační programy stáhnou .NET Framework komponenty pro aplikaci nebo ovládací prvek, který cílí na tyto verze .NET Framework. Tyto komponenty musí být nainstalovány v každém počítači, kde běží aplikace nebo ovládací prvek. Tyto instalační programy jsou distribuovatelné, takže je můžete zahrnout do instalačního programu pro vaši aplikaci.
 
-Stránka ke stažení je k dispozici v několika jazycích, ale většina soubory ke stažení jsou k dispozici v angličtině pouze. Pro další jazykovou podporu musíte nainstalovat jazykovou sadu.
+Stránka pro stažení je k dispozici v několika jazycích, ale většina souborů ke stažení je k dispozici pouze v angličtině. Pro další jazykovou podporu je nutné nainstalovat jazykovou sadu.
 
-K dispozici jsou dva typy Distribuovatelný instalační programy:
+K dispozici jsou dva typy redistribuovatelných instalačních programů:
 
-- **Webová instalační služba** (webový samozavaděč) stáhne požadované součásti a jazykovou sadu, která odpovídá operačnímu systému instalačního počítače z webu. Tento balíček je mnohem menší než offline instalační program ale vyžaduje konzistentní připojení k Internetu. Můžete stáhnout [samostatné jazykové sady](#to-install-language-packs) k instalaci podpory dalších jazyků.
+- **Webová instalační služba** (webový zaváděcí nástroj) stáhne požadované součásti a jazykové sady, které odpovídají operačnímu systému instalačního počítače z webu. Tento balíček je mnohem menší než instalační program v režimu offline, ale vyžaduje konzistentní připojení k Internetu. Můžete stáhnout [samostatné jazykové sady](#to-install-language-packs) pro instalaci další jazykové podpory.
 
-- **Offline instalační program** (samostatně redistribuovatelný) obsahuje všechny součásti potřebné pro instalaci rozhraní .NET Framework, ale neobsahuje jazykové sady. Tento soubor ke stažení je větší než webová instalační služba. Instalátor offline nevyžaduje připojení k Internetu. Po spuštění offline instalátoru můžete stáhnout [samostatné jazykové sady](#to-install-language-packs) k instalaci podpory jazyků. Tento instalátor offline použijte, pokud nelze spoléhat na konzistentní připojení k Internetu.
+- **Offline instalační program** (samostatný Distribuovatelný) obsahuje všechny požadované součásti pro instalaci .NET Framework, ale neobsahují jazykové sady. Tento soubor ke stažení je větší než webový instalační program. Instalační program v režimu offline nevyžaduje připojení k Internetu. Po spuštění offline instalátoru můžete stáhnout [samostatné jazykové sady](#to-install-language-packs) pro instalaci jazykové podpory. Pokud nemůžete spoléhat na konzistentní připojení k Internetu, použijte instalační program v režimu offline.
 
-Web a instalační programy jsou určeny pro počítače s x86 a x64 (viz [požadavky na systém](~/docs/framework/get-started/system-requirements.md)), ale nepodporují počítače s procesorem Itanium.
+Webové i offline instalační programy jsou navržené pro počítače na platformě x86 a x64 (viz [požadavky na systém](../get-started/system-requirements.md)), ale nepodporují počítače s procesorem Itanium.
 
-1. Otevřete stránku ke stažení pro verzi rozhraní .NET Framework, kterou chcete nainstalovat:
+1. Otevřete stránku pro stažení .NET Framework verze, kterou chcete nainstalovat:
 
-   - 4.8 rozhraní .NET framework ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
+   - .NET Framework 4,8 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=2085155) nebo [offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631))
 
-   - Rozhraní .NET framework 4.7.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=863265))
+   - .NET Framework 4.7.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=863265))
 
-   - Rozhraní .NET framework 4.7.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=852095) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=852107))
+   - .NET Framework 4.7.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=852095) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=852107))
 
-   - Rozhraní .NET framework 4.7 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=825299) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=825303))
+   - .NET Framework 4,7 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=825299) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=825303))
 
-   - Rozhraní .NET framework 4.6.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=780597) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=780601))
+   - .NET Framework 4.6.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=780597) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=780601))
 
-   - Rozhraní .NET framework 4.6.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=671729) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=671744))
+   - .NET Framework 4.6.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=671729) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=671744))
 
-   - Rozhraní .NET framework 4.6 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=528259) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=528233))
+   - .NET Framework 4,6 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=528259) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=528233))
 
-   - Rozhraní .NET framework 4.5.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=397703) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=397706))
+   - .NET Framework 4.5.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=397703) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=397706))
 
-   - Rozhraní .NET framework 4.5.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=310158) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=310159))
+   - .NET Framework 4.5.1 ([Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=310158) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=310159))
 
-   - [.NET Framework 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245484)
+   - [.NET Framework 4,5](https://go.microsoft.com/fwlink/p/?LinkId=245484)
 
-1. Vyberte jazyk pro stránku ke stažení. Tato možnost nebude stahovat lokalizované prostředky rozhraní .NET Framework. ovlivní pouze text zobrazený na stránce pro stahování.
+1. Vyberte jazyk pro stránku pro stažení. Tato možnost nestáhne lokalizované prostředky .NET Framework; ovlivňuje pouze text zobrazený na stránce pro stahování.
 
-1. Zvolte **Stáhnout**.
+1. Klikněte na tlačítko **Stáhnout**.
 
-1. Pokud se zobrazí výzva, vyberte odpovídající systém v architektuře stahování a pak zvolte **Další**.
+1. Pokud se zobrazí výzva, vyberte stažený soubor, který odpovídá vaší architektuře systému, a pak zvolte **Další**.
 
-1. Jakmile se zobrazí výzva ke stažení provést **jeden** z následujících akcí:
+1. Po zobrazení výzvy ke stažení proveďte **jednu** z následujících akcí:
 
-   - Pokud chcete nainstalovat rozhraní .NET Framework v počítači, zvolte **spustit**a potom postupujte podle pokynů na obrazovce.
+   - Chcete-li nainstalovat .NET Framework do počítače, zvolte možnost **Spustit**a poté postupujte podle pokynů na obrazovce.
 
-   - Pokud chcete stáhnout rozhraní .NET Framework pro redistribuci, zvolte **Uložit**a potom postupujte podle pokynů na obrazovce.
+   - Pokud chcete stáhnout .NET Framework pro opětovnou distribuci, zvolte **Uložit**a pak postupujte podle pokynů na obrazovce.
 
-1. Pokud chcete stáhnout prostředky pro další jazyky, postupujte podle pokynů v další části a nainstalovat jeden nebo více jazykových sad.
+1. Pokud chcete stáhnout prostředky pro další jazyky, postupujte podle pokynů v následující části a nainstalujte jednu nebo více jazykových sad.
 
 > [!NOTE]
-> Pokud zaznamenáte jakékoli problémy během instalace, přečtěte si téma [Poradce při potížích s](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md).
+> Pokud narazíte na problémy při instalaci, přečtěte si téma [řešení potíží](troubleshoot-blocked-installations-and-uninstallations.md).
 
 **Poznámky k instalaci:**
 
-- Rozhraní .NET framework 4.5.1 a 4.5.2, jakož i rozhraní .NET Framework 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 a 4.8 jsou aktualizace nahrazující rozhraní .NET Framework 4.5.
+- .NET Framework 4.5.1 a 4.5.2, jakož i .NET Framework 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8, jsou místní aktualizace .NET Framework 4,5.
 
-- Rozhraní .NET framework 4.5, jeho vydání bodu, rozhraní .NET Framework 4.6 a jeho vydání bodu, rozhraní .NET Framework 4.7 a jeho vydání bodu a rozhraní .NET Framework 4.8 nahradit rozhraní .NET Framework 4. Při instalaci těchto verzí systému, který má nainstalováno rozhraní .NET Framework 4, jsou nahrazeny sestavení.
+- .NET Framework 4,5, verze .NET Framework 4,6 a jejich verze, .NET Framework 4,7 a její verze, a .NET Framework 4,8 Replace .NET Framework 4. Při instalaci těchto verzí do systému, který má nainstalován .NET Framework 4, budou sestavení nahrazena.
 
-- Odinstalování rozhraní .NET Framework 4.5, jeho verze, rozhraní .NET Framework 4.6 a jeho bodu vydané verze, .NET Framework 4.7 a jeho vydání bodu nebo 4.8 rozhraní .NET Framework odebere také stávající soubory rozhraní .NET Framework 4. Pokud chcete přejít zpět na rozhraní .NET Framework 4, je třeba přeinstalovat ho a všechny aktualizace. (Viz [instalace rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/p/?LinkId=230665).)
+- Odinstalování .NET Framework 4,5, jeho vydání .NET Framework 4,6 a jeho vydání, .NET Framework 4,7 a jeho vydání, nebo .NET Framework 4,8 také odstraní existující soubory .NET Framework 4. Pokud se chcete vrátit na .NET Framework 4, je nutné ji znovu nainstalovat a všechny její aktualizace. (Viz [instalace .NET Framework 4](https://go.microsoft.com/fwlink/p/?LinkId=230665).)
 
-- Musíte mít pověření správce pro instalaci rozhraní .NET Framework 4.5, jeho vydání bodu, rozhraní .NET Framework 4.6 a jeho novější vydání, rozhraní .NET Framework 4.7 a jeho vydání bodu a 4.8 rozhraní .NET Framework.
+- Aby bylo možné nainstalovat .NET Framework 4,5, jeho vydání .NET Framework 4,6 a jeho vydání, .NET Framework 4,7 a jeho vydání a .NET Framework 4,8, musíte mít pověření správce.
 
-- Rozhraní .NET Framework 4.5 redistributable byl aktualizován na 9. října 2012 Chcete-li opravit problém související s nesprávným časovým razítkem v digitálním certifikátu, která způsobila digitální podpis souborů vytvořila a podepsala společnost Microsoft vyprší předčasně ukončen. Pokud jste dříve nainstalovali rozhraní .NET Framework 4.5 redistributable package s datem 16. srpna 2012, doporučujeme aktualizovat kopii nejnovější redistributovatelnou z [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v tématu [Microsoft Security Advisory 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655) a [znalostní báze Knowledge Base 2770445](https://support.microsoft.com/kb/2770445).
+- Distribuovatelný balíček .NET Framework 4,5 byl od 9. října 2012 aktualizován, aby opravil problém týkající se nesprávného časového razítka v digitálním certifikátu, což způsobilo, že digitální podpis u souborů vytvořených a podepsaných společností Microsoft vyprší předčasně. Pokud jste dříve nainstalovali balíček .NET Framework 4,5 Redistributable, který je vydaný 16. srpna 2012, doporučujeme, abyste aktualizovali kopii pomocí nejnovější distribuovatelné verze z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v článku znalostní báze [Microsoft Security advisor 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655) a [Knowledge Base 2770445](https://support.microsoft.com/kb/2770445).
 
-## <a name="to-install-language-packs"></a>Chcete-li nainstalovat jazykové sady
+## <a name="to-install-language-packs"></a>Instalace jazykových sad
 
-Jazykové sady jsou spustitelné soubory, které obsahují lokalizované prostředky pro podporované jazyky (například přeložené chybové zprávy a texty uživatelského rozhraní). Pokud nenainstalujete jazykovou sadu, zobrazí se chybové zprávy rozhraní .NET Framework a další texty v angličtině.  Všimněte si, že webová instalační služba automaticky nainstaluje jazykový balíček, který odpovídá operačnímu systému, ale další jazykové sady si můžete stáhnout do počítače. Offline instalační programy neobsahují žádné jazykové sady.
+Jazykové sady jsou spustitelné soubory, které obsahují lokalizované prostředky (například přeložené chybové zprávy a text uživatelského rozhraní) pro podporované jazyky. Pokud nenainstalujete jazykovou sadu, .NET Framework chybové zprávy a další text se zobrazí v angličtině.  Všimněte si, že webová instalační služba automaticky nainstaluje jazykovou sadu odpovídající vašemu operačnímu systému, ale do svého počítače můžete stáhnout další jazykové sady. Offline instalátory neobsahují žádné jazykové sady.
 
 > [!IMPORTANT]
-> Jazykové sady neobsahují součásti rozhraní .NET Framework, které jsou nutné ke spuštění aplikace, takže před instalací jazykové sady je nutné spustit web nebo offline instalační program. Pokud jste již nainstalovali jazykovou sadu, odinstalujte ho, nainstalujte rozhraní .NET Framework a opětovnou instalací této jazykové sady.
+> Jazykové sady neobsahují .NET Framework komponenty, které jsou nutné ke spuštění aplikace, takže před instalací jazykové sady je nutné spustit webový nebo offline instalační program. Pokud jste již nainstalovali jazykovou sadu, odinstalujte ji, nainstalujte .NET Framework a pak znovu nainstalujte jazykovou sadu.
 
-1. Otevřete stránku ke stažení language pack pro verzi rozhraní .NET Framework, kterou jste nainstalovali:
+1. Otevřete stránku pro stažení jazykové sady pro .NET Framework verzi, kterou jste nainstalovali:
 
-    - [Rozhraní .NET framework 4.8 jazykových sad](http://go.microsoft.com/fwlink/?LinkId=2053984)
+    - [Jazykové sady .NET Framework 4,8](http://go.microsoft.com/fwlink/?LinkId=2053984)
 
-    - [Jazykové sady rozhraní .NET framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863258)
+    - [Jazykové sady .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863258)
 
-    - [Jazykové sady rozhraní .NET framework 4.7.1](https://go.microsoft.com/fwlink/?LinkID=852090)
+    - [Jazykové sady .NET Framework 4.7.1](https://go.microsoft.com/fwlink/?LinkID=852090)
 
-    - [Jazykové sady rozhraní .NET framework 4.7](https://go.microsoft.com/fwlink/?LinkID=825306)
+    - [Jazykové sady .NET Framework 4,7](https://go.microsoft.com/fwlink/?LinkID=825306)
 
-    - [Rozhraní .NET framework 4.6.2 language Pack](https://go.microsoft.com/fwlink/?LinkID=780604)
+    - [Jazykové sady .NET Framework 4.6.2](https://go.microsoft.com/fwlink/?LinkID=780604)
 
-    - [Rozhraní .NET framework 4.6.1 language Pack](https://go.microsoft.com/fwlink/?LinkID=671747)
+    - [.NET Framework jazykové sady 4.6.1](https://go.microsoft.com/fwlink/?LinkID=671747)
 
-    - [Rozhraní .NET framework 4.6 language Pack](https://go.microsoft.com/fwlink/?LinkID=528314)
+    - [Jazykové sady .NET Framework 4,6](https://go.microsoft.com/fwlink/?LinkID=528314)
 
-    - [Jazykové sady rozhraní .NET framework 4.5.2](https://go.microsoft.com/fwlink/?LinkId=397701)
+    - [.NET Framework jazykové sady 4.5.2](https://go.microsoft.com/fwlink/?LinkId=397701)
 
-    - [Rozhraní .NET framework 4.5.1 language Pack](https://go.microsoft.com/fwlink/?LinkId=322101)
+    - [Jazykové sady .NET Framework 4.5.1](https://go.microsoft.com/fwlink/?LinkId=322101)
 
-    - [Jazykové sady rozhraní .NET framework 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245451)
+    - [Jazykové sady .NET Framework 4,5](https://go.microsoft.com/fwlink/p/?LinkId=245451)
 
-2. V seznamu jazyků vyberte jazyk, který chcete stáhnout a počkejte několik sekund pro stránku znovu načte v daném jazyce.
+2. V seznamu jazyk vyberte jazyk, který chcete stáhnout, a počkejte několik sekund, než se stránka znovu načte do daného jazyka.
 
-3. Zvolte **Stáhnout**.
+3. Klikněte na tlačítko **Stáhnout**.
 
 V následující tabulce jsou uvedeny podporované jazyky.
 
 | Jazyk              | Jazyková verze |
 | --------------------- | :-----: |
-| Arabština                | ar      |
+| Arabština                | snížen      |
 | Čeština                 | cs      |
 | dánština                | da      |
 | Holandština                 | nl      |
 | Finština               | fi      |
 | Angličtina (USA)         | en-US   |
 | Francouzština                | fr      |
-| Němčina                | de      |
+| Němčina                | &      |
 | Řečtina                 | el      |
-| Hebrejština                | mu      |
+| Hebrejština                | uvede      |
 | Maďarština             | hu      |
-| Italština               | it      |
-| Japonština              | Japonsko      |
+| Italština               | její      |
+| Japonština              | dža      |
 | Korejština                | Ko      |
 | norština             | Ne      |
 | Polština                | pl      |
@@ -218,28 +218,28 @@ V následující tabulce jsou uvedeny podporované jazyky.
 | Portugalština (Portugalsko) | pt-PT   |
 | Ruština               | ru      |
 | Zjednodušená čínština    | zh-CHS  |
-| Španělština               | es      |
+| Španělština               | jednomu      |
 | švédština               | sv      |
 | Tradiční čínština   | zh-CHT  |
-| Turečtina               | tr      |
+| Turečtina               | recenzent      |
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-- Pokud jste novými uživateli rozhraní .NET Framework, přečtěte si článek [přehled](~/docs/framework/get-started/overview.md) Úvod do klíčových konceptů a částí.
+- Pokud s .NET Frameworkem začínáte, přečtěte si [Přehled](../get-started/overview.md) úvodu k klíčovým koncepcím a komponentám.
 
-- Nové funkce a vylepšení v rozhraní .NET Framework 4.5 a všech novějších verzích najdete v tématu [novinky](../../../docs/framework/whats-new/index.md).
+- Nové funkce a vylepšení .NET Framework 4,5 a všech novějších verzích najdete v tématu [co je nového](../../../docs/framework/whats-new/index.md).
 
-- Podrobné informace o nasazení rozhraní .NET Framework s vaší aplikací, najdete v části [Průvodce nasazením pro vývojáře](~/docs/framework/deployment/deployment-guide-for-developers.md).
+- Podrobné informace o nasazení .NET Framework s vaší aplikací najdete v tématu [Průvodce nasazením pro vývojáře](../deployment/deployment-guide-for-developers.md).
 
-- Změny, které ovlivňují zavedení rozhraní .NET Framework s vaší aplikací, najdete v části [snížení systému restartování během 4.5 instalaci rozhraní .NET Framework](~/docs/framework/deployment/reducing-system-restarts.md).
+- Změny, které mají vliv na nasazení .NET Framework s vaší aplikací, najdete v tématu zmenšování restartu [systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
 
-- Informace o migraci aplikace z rozhraní .NET Framework 4 na rozhraní .NET Framework 4.5 nebo jeden z jeho vydání bodu najdete v tématu [Průvodce migrací](~/docs/framework/migration-guide/index.md).
+- Informace o migraci vaší aplikace z .NET Framework 4 na .NET Framework 4,5 nebo některé z jejích vydání najdete v [Průvodci migrací](../migration-guide/index.md).
 
-- Zobrazit [referenční zdroje rozhraní .NET Framework](https://referencesource.microsoft.com/) procházet zdrojový kód rozhraní .NET Framework online. Zdroj odkazu je také k dispozici na [Githubu](https://github.com/Microsoft/referencesource). Je možné [stáhnout zdroj odkazu](https://referencesource.microsoft.com/download.html) pro prohlížení v režimu offline a procházení zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v příspěvku na blogu [nový vzhled pro zdroj odkazu .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
+- V tématu [.NET Framework reference source](https://referencesource.microsoft.com/) můžete procházet .NET Framework zdrojového kódu v režimu online. Zdroj odkazů je také k dispozici [](https://github.com/Microsoft/referencesource)na GitHubu. Můžete [Stáhnout referenční zdroj](https://referencesource.microsoft.com/download.html) pro zobrazení v režimu offline a procházet zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v blogu o [novém hledání zdroje odkazů .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce nasazením pro vývojáře](~/docs/framework/deployment/deployment-guide-for-developers.md)
-- [Příručka nasazení pro administrátory](~/docs/framework/deployment/guide-for-administrators.md)
-- [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](~/docs/framework/install/dotnet-35-windows-10.md)
-- [Řešení potíží s instalacemi a Odinstalacemi blokované rozhraní .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Průvodce nasazením pro vývojáře](../deployment/deployment-guide-for-developers.md)
+- [Příručka nasazení pro administrátory](../deployment/guide-for-administrators.md)
+- [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](dotnet-35-windows-10.md)
+- [Řešení potíží se zablokovanými .NET Framework instalací a odinstalací](troubleshoot-blocked-installations-and-uninstallations.md)

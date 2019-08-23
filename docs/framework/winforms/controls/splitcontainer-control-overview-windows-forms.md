@@ -6,48 +6,48 @@ f1_keywords:
 helpviewer_keywords:
 - SplitContainer control [Windows Forms], about SplitContainer control
 ms.assetid: 6de5a5f7-97a5-402d-be6d-7e2785483db5
-ms.openlocfilehash: f6dcdbde480c1900ea488c6db3cc320b20f9f182
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 76299d9bbd2b3eac4e765dfacf579c9979721fff
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591494"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963212"
 ---
 # <a name="splitcontainer-control-overview-windows-forms"></a>SplitContainer – přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.SplitContainer> ovládací prvek lze považovat za složeného; je dva panely oddělené přesouvatelný panelu. Když je ukazatel myši nad panelu, ukazatel se změní tvar, který má zobrazit, že panel je přesouvatelný.  
+Ovládací prvek <xref:System.Windows.Forms.SplitContainer> model Windows Forms lze představit jako složený; jedná se o dva panely oddělené pohyblivým pruhem. Když je ukazatel myši nad pruhem, ukazatel se změní na obrazec, který ukazuje, že je pruh přesunutý.  
   
 > [!IMPORTANT]
->  V **nástrojů**, <xref:System.Windows.Forms.SplitContainer> řídit nahradí <xref:System.Windows.Forms.Splitter> ovládací prvek, který byl existuje v předchozí verzi sady Visual Studio. <xref:System.Windows.Forms.SplitContainer> Je mnohem upřednostňované nad ovládací prvek <xref:System.Windows.Forms.Splitter> ovládacího prvku. <xref:System.Windows.Forms.Splitter> Tříd je zahrnutá v rozhraní .NET Framework z důvodu kompatibility se stávajícími aplikacemi, ale důrazně doporučujeme použít <xref:System.Windows.Forms.SplitContainer> ovládací prvek pro nové projekty.  
+> Ovládací prvek v <xref:System.Windows.Forms.Splitter> **sadě nástrojů** <xref:System.Windows.Forms.SplitContainer> nahradí ovládací prvek, který byl v předchozí verzi sady Visual Studio. Ovládací prvek je mnohem upřednostňovaný <xref:System.Windows.Forms.Splitter> nad ovládacím prvkem. <xref:System.Windows.Forms.SplitContainer> Třída je stále zahrnuta v .NET Framework z důvodu kompatibility s existujícími aplikacemi, ale důrazně doporučujeme <xref:System.Windows.Forms.SplitContainer> používat ovládací prvek pro nové projekty. <xref:System.Windows.Forms.Splitter>  
   
- S <xref:System.Windows.Forms.SplitContainer> ovládacího prvku, můžete vytvořit komplexní uživatelská rozhraní; často, výběr v jeden panel Určuje, jaké objekty jsou uvedeny na panelu. Toto uspořádání se velice efektivní pro zobrazení informací o procházení. Dva panely umožňuje agregovat informace v oblastech s panelu, nebo "rozdělovač," usnadňuje uživatelům změnit velikost panelů.  
+ <xref:System.Windows.Forms.SplitContainer> Pomocí ovládacího prvku můžete vytvářet složitá uživatelská rozhraní, často výběr na jednom panelu určuje, které objekty se zobrazí na druhém panelu. Toto uspořádání je velmi efektivní pro zobrazení a informace o procházení. Když máte dva panely, můžete agregovat informace v oblastech a pruh nebo "rozdělovač", aby uživatelé mohli snadno měnit velikost panelů.  
   
- Více než jeden <xref:System.Windows.Forms.SplitContainer> ovládací prvek lze také vnořit, s druhým <xref:System.Windows.Forms.SplitContainer> ovládací prvek orientovaný vodorovně, chcete-li vytvořit panely horní a dolní.  
+ Více než jeden <xref:System.Windows.Forms.SplitContainer> ovládací prvek může být vnořen také s druhým <xref:System.Windows.Forms.SplitContainer> ovládacím prvkem orientovaným vodorovně, aby bylo možné vytvořit horní a dolní panel.  
   
- Mějte na paměti, která <xref:System.Windows.Forms.SplitContainer> ovládací prvek je přístupná z klávesnice ve výchozím nastavení; uživatelé stisknutím klávesy se šipkami přesunutí příčky, pokud je <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> je nastavena na `false`.  
+ Mějte na <xref:System.Windows.Forms.SplitContainer> paměti, že ve výchozím nastavení je ovládací prvek přístupný pro přístup k klávesnicím. <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> Pokud je vlastnost nastavena na `false`hodnotu, mohou uživatelé pomocí kláves se šipkami přesunout rozdělovač.  
   
- <xref:System.Windows.Forms.SplitContainer.Orientation%2A> Vlastnost <xref:System.Windows.Forms.SplitContainer> ovládací prvek určuje směr příčky, nikoli samotného ovládacího prvku. Proto pokud tato vlastnost nastavena na <xref:System.Windows.Forms.Orientation.Vertical>, příčky spustí shora dolů, vytváření panely vlevo a vpravo.  
+ <xref:System.Windows.Forms.SplitContainer.Orientation%2A> Vlastnost<xref:System.Windows.Forms.SplitContainer> ovládacího prvku určuje směr rozdělovače, nikoli samotného ovládacího prvku. Proto pokud je tato vlastnost nastavena na <xref:System.Windows.Forms.Orientation.Vertical>, je příčka spuštěna shora dolů a vytvoří levé a pravé panely.  
   
- Navíc mějte na paměti, která hodnota <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> vlastnost se liší v závislosti na hodnotu <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnost. Další informace najdete v tématu <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> vlastnost.  
+ Kromě toho mějte na paměti, že hodnota <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> vlastnosti se liší v závislosti na hodnotě <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnosti. Další informace najdete v tématu <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> vlastnost.  
   
- Můžete taky omezit velikost a přesun <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. <xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> Určuje vlastnost panelu zůstane stejné velikosti po <xref:System.Windows.Forms.SplitContainer> změně velikosti ovládacího prvku a <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> vlastnost určuje, zda je příčka přesouvatelný pomocí klávesnice nebo myši.  
+ Můžete také omezit velikost a pohyb <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. Vlastnost určuje, který panel zůstane <xref:System.Windows.Forms.SplitContainer> po <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> změně velikosti ovládacího prvku stejné velikosti a vlastnost určuje, zda je příčka přesunuta pomocí klávesnice nebo myši. <xref:System.Windows.Forms.SplitContainer.FixedPanel%2A>  
   
 > [!NOTE]
->  I v případě <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> je nastavena na `true`, příčky může stále přesunout prostřednictvím kódu programu, například pomocí <xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> vlastnost.  
+> I v případě <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> , že je vlastnost `true`nastavena na, může být rozdělovač stále přesunut programově, <xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> například pomocí vlastnosti.  
   
- A konečně, jednotlivé panely <xref:System.Windows.Forms.SplitContainer> ovládací prvek má vlastnosti k určení jeho jednotlivé velikosti.  
+ Nakonec mají jednotlivé panely <xref:System.Windows.Forms.SplitContainer> ovládacího prvku vlastnosti pro určení jeho individuální velikosti.  
   
 ## <a name="commonly-used-properties-methods-and-events"></a>Běžně používané vlastnosti, metody a události  
   
 |Name|Popis|  
 |----------|-----------------|  
-|<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> Vlastnost|Určuje panelu zůstanou stejné velikosti po <xref:System.Windows.Forms.SplitContainer> změně velikosti ovládacího prvku.|  
-|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> Vlastnost|Určuje, zda lze přesunout příčky pomocí klávesnice nebo myši.|  
-|<xref:System.Windows.Forms.SplitContainer.Orientation%2A> Vlastnost|Určuje, pokud je příčky uspořádat vodorovně nebo svisle.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> Vlastnost|Určuje vzdálenost v pixelech přesouvatelný příčky od levého nebo horního okraje.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> Vlastnost|Určuje minimální vzdálenost v pixelech, může uživatel přesune příčky.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A> Vlastnost|Určuje tloušťku v pixelech, od rozdělovače.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterMoving> Události|Vyvolá se při přesunutí příčky.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterMoved> Události|Nastane, pokud má přesunutí příčky.|  
+|<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A>majetek|Určuje, která paleta zůstane po <xref:System.Windows.Forms.SplitContainer> změně velikosti ovládacího prvku stejná.|  
+|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>majetek|Určuje, zda lze příčku přesunout pomocí klávesnice nebo myši.|  
+|<xref:System.Windows.Forms.SplitContainer.Orientation%2A>majetek|Určuje, zda je příčka uspořádána svisle nebo vodorovně.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>majetek|Určuje vzdálenost v pixelech od levého nebo horního okraje až po Pohyblivý dělicí panel.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>majetek|Určuje minimální vzdálenost (v pixelech), po kterou může být příčka přesunuta uživatelem.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A>majetek|Určuje tloušťku příčky (v pixelech).|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterMoving>událostí|Vyvolá se při přesunutí příčky.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterMoved>událostí|Vyvolá se v případě, že došlo k přesunutí příčky.|  
   
 ## <a name="see-also"></a>Viz také:
 

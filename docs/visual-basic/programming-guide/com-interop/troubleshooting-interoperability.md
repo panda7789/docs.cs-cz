@@ -16,61 +16,61 @@ helpviewer_keywords:
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-ms.openlocfilehash: 60a61dfa7302611800c0b808a31a386e46304756
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c04cd0928eb83aabcd1f0f4b1b43f8ae6d356d20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592168"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969328"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
-Při můžete zajistit vzájemnou funkční spolupráci mezi modelem COM a spravovaného kódu rozhraní .NET Framework, může dojít k některé z těchto běžných problémů.  
+Když pracujete s modelem COM a spravovaným kódem .NET Framework, může dojít k jednomu nebo několika následujícím běžným problémům.  
   
-## <a name="vbconinteroperabilitymarshalinganchor1"></a> Zařazování spolupráce  
- V některých případech bude pravděpodobně nutné použít datové typy, které nejsou součástí rozhraní .NET Framework. Sestavení vzájemné spolupráce zpracovat většinu práce s objekty COM, ale možná budete muset určit datové typy, které se používají při spravované objekty jsou vystaveny objektům modelu COM. Například musíte zadat struktury v knihovnách tříd `BStr` nespravovaný typ na řetězce zaslána com. objekty vytvořené pomocí jazyka Visual Basic 6.0 a starší verze. V takovém případě můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut způsobí spravované typy zpřístupní jako nespravované typy.  
+## <a name="vbconinteroperabilitymarshalinganchor1"></a>Zařazování spolupráce  
+ V některých případech možná budete muset použít datové typy, které nejsou součástí .NET Framework. Definiční sestavení zpracovává většinu práce pro objekty modelu COM, ale může být nutné řídit datové typy, které se používají, když jsou spravované objekty vystaveny modelu COM. Například struktury knihovny tříd musí určovat `BStr` nespravovaný typ u řetězců odesílaných do objektů COM vytvořených pomocí Visual Basic 6,0 a starších verzí. V takových případech můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut, který způsobí, že spravované typy budou vystaveny jako nespravované typy.  
   
-## <a name="vbconinteroperabilitymarshalinganchor2"></a> Export řetězce pevné délky na nespravovaný kód  
- V jazyce Visual Basic verze 6.0 a starší jsou exportovány řetězců na objekty modelu COM jako sekvence bajtů bez ukončení hodnotou null znaků. Z důvodu kompatibility s jinými jazyky Visual Basic .NET obsahuje znak ukončení při exportu řetězce. Nejlepší způsob, jak vyřešit k této nekompatibilitě je exportovat řetězce, které chybí ukončovací znak jako pole `Byte` nebo `Char`.  
+## <a name="vbconinteroperabilitymarshalinganchor2"></a>Export řetězců s pevnou délkou do nespravovaného kódu  
+ V Visual Basic 6,0 a dřívějších verzích jsou řetězce exportovány do objektů COM jako sekvence bajtů bez ukončovacího znaku null. Pro kompatibilitu s jinými jazyky Visual Basic .NET zahrnuje ukončovací znak při exportování řetězců. Nejlepším způsobem, jak tuto nekompatibilitu vyřešit, je exportovat řetězce, které chybí znak ukončení jako pole `Byte` nebo. `Char`  
   
-## <a name="vbconinteroperabilitymarshalinganchor3"></a> Export hierarchie dědičnosti  
- Spravované třídy, které hierarchie sloučit si při vystavení jako objekty modelu COM. Například pokud definujete základní třídu se členem a potom dědit základní třídy v odvozené třídě, která je vystavena jako objekt modelu COM, klienty, kteří používají odvozené třídy v objektu modelu COM nebudou moct používat zděděné členy. Členy základní třídy je přístupný z objektů COM pouze jako instance základní třídy a pak pouze v případě, že základní třídy se také vytvoří jako objekt modelu COM.  
+## <a name="vbconinteroperabilitymarshalinganchor3"></a>Exportování hierarchií dědičnosti  
+ Hierarchie spravované třídy jsou shrnuty, pokud jsou vystaveny jako objekty modelu COM. Například pokud definujete základní třídu se členem a poté zdědíte základní třídu v odvozené třídě, která je vystavena jako objekt modelu COM, klienti používající odvozenou třídu v objektu COM nebudou moci použít zděděné členy. Ke členům základní třídy lze přivodit z objektů COM pouze jako instancí základní třídy a poté pouze v případě, že je základní třída vytvořena také jako objekt modelu COM.  
   
 ## <a name="overloaded-methods"></a>Přetížené metody  
- I když přetížené metody můžete vytvořit pomocí jazyka Visual Basic, nejsou podporovány modelu COM. Když je třídu, která obsahuje přetížené metody vystaveny jako objekt modelu COM, nové názvy metod jsou generovány pro přetížené metody.  
+ I když můžete vytvořit přetížené metody pomocí Visual Basic, nejsou v modelu COM podporovány. Pokud je třída, která obsahuje přetížené metody, vystavena jako objekt modelu COM, jsou pro přetížené metody generovány nové názvy metod.  
   
- Představte si třeba třídu, která má dvě přetížení `Synch` metody. Pokud třída je vystavená jako objekt modelu COM, může být nové názvy vytvořena metoda `Synch` a `Synch_2`.  
+ Zvažte například třídu, která má dvě přetížení `Synch` metody. Když je třída vystavena jako objekt modelu COM, mohou být `Synch` nově vygenerované názvy metody a. `Synch_2`  
   
- Přejmenování může způsobit dva problémy pro spotřebitele objektu COM.  
+ Přejmenování může pro uživatele objektu COM způsobit dva problémy.  
   
-1. Klienti nemusí očekávat, že názvy vytvořena metoda.  
+1. Klienti nemusí očekávat názvy generovaných metod.  
   
-2. Vytvořena metoda názvy ve třídě vystavena jako objekt modelu COM lze změnit nová přetížení se přidají do třídy nebo její základní třídě. To může způsobit problémy se správou verzí.  
+2. Vygenerované názvy metod ve třídě vystavené jako objekt modelu COM se mohou změnit, pokud jsou nová přetížení přidána do třídy nebo její základní třídy. To může způsobit problémy se správou verzí.  
   
- K řešení problémů, obě, zadejte jednotlivé metody jedinečný název, namísto použití přetížení, při vývoji objekty, které se zveřejní jako objekty modelu COM.  
+ Chcete-li vyřešit oba problémy, poskytněte každému z metod jedinečný název namísto použití přetížení při vývoji objektů, které budou zveřejněny jako objekty modelu COM.  
   
-## <a name="vbconinteroperabilitymarshalinganchor4"></a> Použití objektů modelu COM sestaveních vzájemné spolupráce  
- Téměř jako by šlo spravovaného kódu při nahrazování objekty modelu COM, které představují, používají spolupracující sestavení. Protože jde o obálkách a ne skutečné objekty modelu COM, existují však určité rozdíly mezi použitím nástrojů sestavení vzájemné spolupráce a standardní sestavení. Patří sem rozdílu vystavení tříd a datové typy parametrů a návratové hodnoty.  
+## <a name="vbconinteroperabilitymarshalinganchor4"></a>Použití objektů modelu COM prostřednictvím definičních sestavení  
+ Spolupracujete s sestaveními spolupráce, jako kdyby se jedná o nahrazení spravovaného kódu pro objekty modelu COM, které představují. Vzhledem k tomu, že se jedná o obálky a nikoli skutečné objekty COM, existují rozdíly mezi použitím sestavení interop a standardních sestavení. Tyto oblasti rozdílu zahrnují expozici tříd a datové typy pro parametry a návratové hodnoty.  
   
-## <a name="vbconinteroperabilitymarshalinganchor5"></a> Vystavené jako obě rozhraní třídy a třídy  
- Na rozdíl od tříd v standardní sestavení jsou přístupné třídy modelu COM ve spolupracujícím sestavení jako rozhraní a třídy, která představuje třídu COM. Název rozhraní je stejný jako u třídy modelu COM. Název třídy spolupráce je stejný jako původní třídy modelu COM, ale slovo "Třída" připojí. Předpokládejme například, že máte projekt s odkazem na sestavení vzájemné spolupráce pro objekt modelu COM. Pokud je název třídy modelu COM `MyComClass`, technologie IntelliSense a prohlížeče objektů zobrazit rozhraní s názvem `MyComClass` a třídu s názvem `MyComClassClass`.  
+## <a name="vbconinteroperabilitymarshalinganchor5"></a>Třídy vystavené jako rozhraní a třídy  
+ Na rozdíl od tříd ve standardních sestaveních jsou třídy COM vystaveny v sestaveních spolupráce jako rozhraní a třída, která představuje třídu modelu COM. Název rozhraní je stejný jako třída modelu COM. Název třídy interoperability je stejný jako původní třída COM, ale je připojená slova "Class". Předpokládejme například, že máte projekt s odkazem na definiční sestavení pro objekt modelu COM. Pokud je třída com pojmenována `MyComClass`, technologie IntelliSense a prohlížeč objektů zobrazí rozhraní s `MyComClass` názvem a třídu s názvem. `MyComClassClass`  
   
-## <a name="vbconinteroperabilitymarshalinganchor6"></a> Vytvoření instance třídy rozhraní .NET Framework  
- Obecně platí, vytvoření instance třídy pomocí rozhraní .NET Framework `New` příkaz s názvem třídy. Třída modelu COM reprezentované definiční sestavení je jeden případ, ve kterém můžete použít `New` příkaz s rozhraním. Pokud použijete třídu modelu COM s `Inherits` příkazu, můžete použít rozhraní, stejně jako třídy. Následující kód ukazuje, jak vytvořit `Command` objektu v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM:  
+## <a name="vbconinteroperabilitymarshalinganchor6"></a>Vytváření instancí třídy .NET Framework  
+ Obecně se vytvoří instance .NET Framework třídy pomocí `New` příkazu s názvem třídy. Pokud je třída modelu COM reprezentovaná definičním sestavením, jedná se o jeden případ, ve `New` kterém můžete použít příkaz s rozhraním. Pokud nepoužíváte třídu com s `Inherits` příkazem, můžete použít rozhraní stejně jako třídu. Následující kód ukazuje, jak vytvořit `Command` objekt v projektu, který má odkaz na objekt COM knihovny Microsoft rozhraní ADO (ActiveX Data Objects) 2,8:  
   
  [!code-vb[VbVbalrInterop#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#20)]  
   
- Pokud použijete třídu modelu COM jako základ pro odvozenou třídu, však musíte použít třídu spolupráce, který představuje třídu COM, stejně jako v následujícím kódu:  
+ Pokud však používáte třídu COM jako základ pro odvozenou třídu, je nutné použít třídu interoperability, která představuje třídu modelu COM, jak je uvedeno v následujícím kódu:  
   
  [!code-vb[VbVbalrInterop#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#21)]  
   
 > [!NOTE]
->  Sestavení vzájemné spolupráce implicitně implementovat rozhraní, které představují třídy modelu COM. By se neměl pokoušet použít `Implements` způsobí příkaz k implementaci těchto rozhraní nebo došlo k chybě.  
+> Sestavení vzájemné spolupráce implicitně implementují rozhraní, která reprezentují třídy COM. Neměli byste se pokoušet použít `Implements` příkaz k implementaci těchto rozhraní nebo výsledkem bude chyba.  
   
-## <a name="vbconinteroperabilitymarshalinganchor7"></a> Datové typy parametrů a návratové hodnoty  
- Na rozdíl od členů standardní sestavení může sestavení vzájemné spolupráce členů mají datové typy, které se liší od těch, které používají v původní deklaraci objektu. I když sestavení vzájemné spolupráce implicitně převést na kompatibilní běžných typů modulu runtime jazyka typy modelu COM, měli věnovat pozornost datové typy, které jsou používány obě strany aby se zabránilo chybám za běhu. Například v modelu COM objekty vytvořené v jazyce Visual Basic verze 6.0 a starší, hodnoty typu `Integer` ekvivalentní typ rozhraní .NET Framework, se předpokládá `Short`. Doporučuje se použít Prohlížeč objektů prozkoumat charakteristiky členů importované před jejich použitím.  
+## <a name="vbconinteroperabilitymarshalinganchor7"></a>Datové typy pro parametry a návratové hodnoty  
+ Na rozdíl od členů standardních sestavení mohou členové definičního sestavení mít datové typy, které se liší od těch, které jsou použity v původní deklaraci objektu. I když definiční sestavení implicitně převádějí typy modelu COM na kompatibilní typy modulu CLR (Common Language Runtime), měli byste věnovat pozornost datovým typům, které jsou používány oběma stranami, a zabránit tak chybám za běhu. Například v objektech com vytvořených v Visual Basic 6,0 a starších verzích hodnoty typu `Integer` předpokládají .NET Framework ekvivalentní typ,. `Short` Doporučuje se použít Prohlížeč objektů k prohlédnutí charakteristiky importovaných členů před jejich použitím.  
   
-## <a name="vbconinteroperabilitymarshalinganchor8"></a> Modul metody na úrovni modelu COM  
- Většina objektů COM se používají tak, že vytvoříte instanci třídy pomocí modelu COM `New` – klíčové slovo a následným voláním metod objektu. Jedinou výjimkou tohoto pravidla zahrnuje objekty modelu COM, které obsahují `AppObj` nebo `GlobalMultiUse` tříd modelu COM. Takové třídy vypadat podobně jako na úrovni metod modulu ve třídách jazyka Visual Basic .NET. Visual Basic 6.0 a starší verze implicitně vytvoření instancí těchto objektů můžete při prvním volání jedné z jejich metod. Například v jazyce Visual Basic 6.0 můžete přidat odkaz na knihovnu objektů 3.6 Microsoft DAO a volání `DBEngine` metody bez vytvoření instance:  
+## <a name="vbconinteroperabilitymarshalinganchor8"></a>Metody modulu COM na úrovni modulů  
+ Většina objektů com je používána vytvořením instance třídy COM pomocí `New` klíčového slova a následným voláním metod objektu. Jedinou výjimkou z tohoto pravidla jsou objekty COM, `AppObj` které `GlobalMultiUse` obsahují nebo třídy com. Takové třídy se podobají metodám na úrovni modulu v Visual Basic třídy .NET. Visual Basic 6,0 a starší verze implicitně vytvářejí instance těchto objektů, při prvním volání jedné z jejich metod. Například v Visual Basic 6,0 můžete přidat odkaz na knihovnu objektů Microsoft DAO 3,6 a volat `DBEngine` metodu bez prvotního vytvoření instance:  
   
 ```vb  
 Dim db As DAO.Database  
@@ -79,52 +79,52 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
 ' Use the database object.  
 ```  
   
- Visual Basic .NET vyžaduje, abyste mohli používat své metody vždy vytvořit instance objektů COM. Používat tyto metody v jazyce Visual Basic, deklarovat proměnnou požadovanou třídu a použijte klíčové slovo new k přiřazení objektu k proměnné objektu. `Shared` – Klíčové slovo lze použít, když chcete Ujistěte se, že se vytvoří tento pouze jedna instance třídy.  
+ Visual Basic .NET vyžaduje, abyste vždy vytvořili instance objektů COM předtím, než budete moci použít jejich metody. Chcete-li použít tyto metody v Visual Basic, deklarujte proměnnou požadované třídy a použijte klíčové slovo New k přiřazení objektu proměnné objektu. `Shared` Klíčové slovo lze použít, pokud chcete zajistit, aby byla vytvořena pouze jedna instance třídy.  
   
  [!code-vb[VbVbalrInterop#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#23)]  
   
-## <a name="vbconinteroperabilitymarshalinganchor9"></a> Neošetřené chyby v obslužných rutinách událostí  
- Jeden běžný problém spolupráce zahrnuje chyby v obslužných rutinách událostí, které zpracovávají události vyvolané objektů COM. Tyto chyby se ignorovaly, pokud výslovně ověřujete chyby pomocí `On Error` nebo `Try...Catch...Finally` příkazy. Například následující příklad je z projektu jazyka Visual Basic .NET, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM.  
+## <a name="vbconinteroperabilitymarshalinganchor9"></a>Neošetřené chyby v obslužných rutinách událostí  
+ Mezi běžné problémy s interoperabilitou patří chyby obslužných rutin událostí, které zpracovávají události vyvolané objekty COM. Takové chyby jsou ignorovány, pokud nezjistíte chyby `On Error` pomocí `Try...Catch...Finally` příkazů nebo. Například následující příklad je z projektu Visual Basic .NET, který má odkaz na objekt COM knihovny Microsoft rozhraní ADO (ActiveX Data Objects) 2,8.  
   
  [!code-vb[VbVbalrInterop#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#24)]  
   
- V tomto příkladu vyvolává chybu podle očekávání. Ale pokud se pokusíte stejný příklad bez `Try...Catch...Finally` bloku, chyba se ignoruje, protože, pokud jste použili `OnError Resume Next` příkazu. Bez zpracování chyb bez upozornění selže dělení nulou. Protože tyto chyby nikdy vyvolat chyby neošetřená výjimka, je důležité, abyste používali určitou formu zpracování výjimek v obslužné rutiny událostí, které zpracovávají události od objektů COM.  
+ Tento příklad vyvolává chybu podle očekávání. Nicméně pokud se pokusíte použít stejný příklad bez `Try...Catch...Finally` bloku, je Chyba ignorována, jako kdybyste `OnError Resume Next` použili příkaz. Bez zpracování chyb se dělení nulou nezdařilo. Vzhledem k tomu, že tyto chyby nikdy nevyvolávají chyby neošetřené výjimky, je důležité použít určitou formu zpracování výjimek v obslužných rutinách událostí, které zpracovávají události z objektů COM.  
   
-### <a name="understanding-com-interop-errors"></a>Vysvětlení chyb vzájemné spolupráce COM  
- Bez zpracování chyb, generování spolupráce volání často chyby, které poskytují pár informací. Kdykoli je to možné, použijte strukturované zpracování vám poskytneme Další informace o problémech, které se objeví chyby. To může být zvláště užitečné při ladění aplikace. Příklad:  
+### <a name="understanding-com-interop-errors"></a>Porozumění chybám komunikace s objekty COM  
+ Bez zpracování chyb se v volání spolupráce často generují chyby, které poskytují málo informací. Kdykoli je to možné, použijte strukturované zpracování chyb k poskytnutí dalších informací o problémech, když k nim dojde. To může být obzvláště užitečné při ladění aplikací. Příklad:  
   
  [!code-vb[VbVbalrInterop#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#25)]  
   
- Informace, např. popis chyby, HRESULT a příčiny chyby modelu COM. získáte zkoumání obsahu výjimek objektu.  
+ Můžete najít informace, jako je popis chyby, HRESULT a zdroj chyb COM, prozkoumáním obsahu objektu výjimky.  
   
-## <a name="vbconinteroperabilitymarshalinganchor10"></a> Problémy s ovládacího prvku ActiveX  
- Většina ovládacích prvků ActiveX, které využívají službu jazyka Visual Basic 6.0 fungovat bez potíže v jazyce Visual Basic .NET. Hlavní výjimky jsou ovládací prvky kontejneru nebo ovládací prvky, které vizuálně obsahují další ovládací prvky. Některé příklady starší ovládacích prvků, které nebudou správně fungovat se sadou Visual Studio jsou následující:  
+## <a name="vbconinteroperabilitymarshalinganchor10"></a>Problémy s ovládacím prvkem ActiveX  
+ Většina ovládacích prvků ActiveX, které pracují s Visual Basic 6,0, pracuje s Visual Basic .NET bez problémů. Hlavní výjimky jsou ovládací prvky kontejneru nebo ovládací prvky, které vizuálně obsahují jiné ovládací prvky. Některé příklady starších ovládacích prvků, které nefungují správně se sadou Visual Studio, jsou následující:  
   
-- Microsoft Forms 2.0 Frame – ovládací prvek  
+- Microsoft Forms 2,0 – ovládací prvek rámce  
   
-- Ovládací prvek směrem nahoru a dolů, označované také jako otočný ovládací prvek  
+- Ovládací prvek rozevíracího seznamu, označovaný také jako otočný ovládací prvek  
   
-- Ovládací prvek karty Sheridan  
+- Ovládací prvek karta Sheridan  
   
- Existuje pouze několik řešení pro nepodporované problémy ovládacího prvku ActiveX. Pokud původní zdrojový kód vlastníte, můžete migrovat existující ovládací prvky do sady Visual Studio. V opačném případě můžete kontaktovat dodavatele softwaru aktualizovaná. NET kompatibilní s verzí ovládacích prvků k nahrazení nepodporované ovládací prvky ActiveX.  
+ Pro nepodporované problémy s ovládacími prvky ActiveX existuje pouze několik alternativních řešení. Existující ovládací prvky můžete migrovat do sady Visual Studio, pokud vlastníte původní zdrojový kód. V opačném případě můžete zkontrolovat, jestli se dodavatelé softwaru aktualizovaly. Verze ovládacích prvků, které jsou kompatibilní s NET, aby nahradily nepodporované ovládací prvky ActiveX.  
   
-## <a name="vbconinteroperabilitymarshalinganchor11"></a> Vlastnosti jen pro čtení předání ByRef ovládacích prvků  
- Visual Basic .NET někdy vyvolává chyby modelu COM jako je například "Chyba 0x800A017F CTL_E_SETNOTSUPPORTED", při předání `ReadOnly` vlastnosti některé starší ovládací prvky ActiveX jako `ByRef` parametry pro další postupy. Podobně jako volání procedur Visual Basic 6.0 nevyvolávejte chybu a parametry jsou zpracovávány jako by to předán podle hodnoty. Visual Basic .NET chybová zpráva znamená, že se pokoušíte změnit vlastnost, která nemá vlastnost `Set` postup.  
+## <a name="vbconinteroperabilitymarshalinganchor11"></a>Předávání vlastností jen pro čtení u ovládacích prvků ByRef  
+ Visual Basic .NET někdy vyvolá chyby modelu COM, jako je například Error 0x800A017F CTL_E_SETNOTSUPPORTED, při předání `ReadOnly` vlastností některých starších ovládacích prvků ActiveX jako `ByRef` parametrů jiným postupům. Podobná volání procedur z Visual Basic 6,0 nevyvolávají chybu a parametry se považují za, pokud jste je předali podle hodnoty. Chybová zpráva Visual Basic .NET označuje, že se pokoušíte změnit vlastnost, která nemá proceduru vlastnosti `Set` .  
   
- Pokud máte přístup do volané procedury tuto chybu můžete zabránit pomocí `ByVal` klíčového slova pro deklarování parametrů, které přijímají `ReadOnly` vlastnosti. Příklad:  
+ Máte-li přístup k proceduře, která je volána, můžete tuto chybu zabránit pomocí `ByVal` klíčového slova k deklaraci parametrů, které přijímají `ReadOnly` vlastnosti. Příklad:  
   
  [!code-vb[VbVbalrInterop#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#26)]  
   
- Pokud nemáte přístup ke zdrojovému kódu pro procedura volána, můžete vynutit vlastnost, která má být předán podle hodnoty tak, že přidáte další sadu závorek volající procedury. Například v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM, můžete použít:  
+ Pokud nemáte přístup ke zdrojovému kódu pro volání procedury, můžete vynutit, aby vlastnost byla předána hodnotou přidáním nadbytečné sady hranatých závorek kolem volajícího postupu. Například v projektu, který má odkaz na objekt COM knihovny Microsoft rozhraní ADO (ActiveX Data Objects) 2,8, můžete použít:  
   
  [!code-vb[VbVbalrInterop#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#27)]  
   
-## <a name="vbconinteroperabilitymarshalinganchor12"></a> Nasazení sestavení, která zpřístupňují zprostředkovatele komunikace s objekty  
- Nasazení sestavení, které vystavit rozhraní COM prezentuje některé jedinečné výzvy. Například potenciální problém nastane, pokud samostatné aplikace odkazovat na stejné sestavení modelu COM. Tato situace je běžné při instalaci nové verze sestavení a stará verze sestavení je stále používá jiná aplikace. Pokud odinstalujete sestavení, které sdílí knihovnu DLL, můžete neúmyslně si je k dispozici pro jiná sestavení.  
+## <a name="vbconinteroperabilitymarshalinganchor12"></a>Nasazení sestavení, která zveřejňují spolupráci  
+ Nasazení sestavení, která zveřejňují rozhraní modelu COM, představují některé jedinečné výzvy. Například potenciální problém nastane, pokud samostatné aplikace odkazují na stejné sestavení COM. Tato situace je obvyklá, pokud je nainstalována nová verze sestavení a jiná aplikace stále používá starou verzi sestavení. Pokud odinstalujete sestavení, které sdílí knihovnu DLL, můžete ji neúmyslně znepřístupnit pro ostatní sestavení.  
   
- K tomuto problému vyhnout, by měl instalaci sdílené sestavení do globální mezipaměti sestavení (GAC) a použít MergeModule pro složku. Pokud aplikaci nejde nainstalovat v mezipaměti GAC, ho chcete nainstalovat CommonFilesFolder v podadresáři specifické pro verzi.  
+ Chcete-li se tomuto problému vyhnout, měli byste nainstalovat sdílená sestavení do globální mezipaměti sestavení (GAC) a použít pro komponentu MergeModule. Pokud nemůžete nainstalovat aplikaci do mezipaměti GAC, měla by být nainstalována do CommonFilesFolder v podadresáři specifické pro danou verzi.  
   
- Sestavení, která se nesdílejí musí nacházet v adresáři s volající aplikace vedle sebe.  
+ Sestavení, která nejsou sdílena, by měla být umístěná vedle sebe v adresáři pomocí volající aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

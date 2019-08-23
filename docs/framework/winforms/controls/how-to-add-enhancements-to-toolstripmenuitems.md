@@ -24,63 +24,63 @@ helpviewer_keywords:
 - images [Windows Forms], adding to menus
 - ToolStripMenuItems [Windows Forms], showing separator bars
 ms.assetid: aa5f19bb-b545-4378-bfa6-36ba592f0d7c
-ms.openlocfilehash: 2aa2315667b34ac448ac34cd29402e39d59e79dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9e95c3623bf9bad8395f586392a0557ad1cde880
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624102"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912588"
 ---
 # <a name="how-to-add-enhancements-to-toolstripmenuitems"></a>Postupy: Přidání vylepšení do ToolStripMenuItems
-Můžete zlepšit použitelnost <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků následujícími způsoby:  
+Použitelnost <xref:System.Windows.Forms.MenuStrip> a<xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků lze rozšířit následujícími způsoby:  
   
-- Přidání značek zaškrtnutí k určení, zda funkce je zapnout nebo vypnout, například zda pravítka se zobrazují podél na okraji aplikace pro zpracování textu, nebo k označení, který soubor v seznamu souborů, která má být zobrazeny, například jako na **okno** nabídka.  
+- Přidáním značek zaškrtnutí můžete určit, zda je funkce zapnuta nebo vypnuta, například zda je zobrazeno pravítko podél okraje aplikace pro zpracování textu, nebo určit, který soubor je zobrazen v seznamu souborů, například v nabídce **okna** .  
   
-- Přidání bitové kopie, které vizuálně představují příkazy nabídky.  
+- Přidejte obrázky, které vizuálně reprezentují příkazy nabídky.  
   
-- Zobrazí klávesové zkratky, které poskytují alternativní klávesnice k myši pro provádění příkazů. Například provádí kombinace kláves CTRL + C **kopírování** příkazu.  
+- Zobrazení klávesových zkratek pro alternativní použití myši k provádění příkazů Například stisknutím kombinace kláves CTRL + C provede příkaz **Kopírovat** .  
   
-- Zobrazení přístupových klíčů k poskytnutí klávesnice alternativou k myši pro navigační nabídky. Například stisknutím klávesy ALT + F klikne **souboru** nabídky.  
+- Zobrazení přístupových kláves pro klávesovou zkratku myši pro navigaci v nabídce Například stisknutím kombinace kláves ALT + F zvolíte nabídku **soubor** .  
   
-- Zobrazení oddělovacích pruhů seskupovat související příkazy a nabídky čitelnost.  
+- Zobrazením oddělovacích pruhů můžete seskupit související příkazy a usnadnit čtení nabídek.  
   
-### <a name="to-display-a-check-mark-on-a-menu-command"></a>Chcete-li zobrazit značku zaškrtnutí v příkazu nabídky  
+### <a name="to-display-a-check-mark-on-a-menu-command"></a>Zobrazení značky zaškrtnutí u příkazu nabídky  
   
-- Nastavte jeho <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> vlastnost `true`.  
+- Nastavte vlastnost na `true`hodnotu. <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A>  
   
-     Zároveň se nastaví <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> vlastnost `true`. Pokud chcete, aby příkaz nabídky zobrazí jako zaškrtnuté ve výchozím nastavení, bez ohledu na to, zda je zaškrtnuto, pomocí tohoto postupu.  
+     Tím se také nastaví <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> vlastnost na `true`. Tento postup použijte pouze v případě, že se má příkaz nabídky Zobrazit jako zaškrtnutý ve výchozím nastavení, bez ohledu na to, zda je vybrán.  
   
-### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a>Zobrazit značku zaškrtnutí, která změní stav každého kliknutím  
+### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a>Chcete-li zobrazit zaškrtnutí, že při každém kliknutí se mění stav  
   
-- Nastavení příkazu nabídky <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> vlastnost `true`.  
+- Nastavte <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> vlastnost příkazu nabídky na `true`.  
   
-### <a name="to-add-an-image-to-a-menu-command"></a>Chcete-li přidat bitovou kopii k příkazu nabídky  
+### <a name="to-add-an-image-to-a-menu-command"></a>Přidání obrázku do příkazu nabídky  
   
-- Nastavení příkazu nabídky <xref:System.Windows.Forms.ToolStripItem.Image%2A> vlastnost na název obrázku. Pokud <xref:System.Windows.Forms.ToolStripItemDisplayStyle> tohoto příkazu nabídky je nastavena na <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> nebo <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>, nelze zobrazit obrázek.  
-  
-> [!NOTE]
->  Okraji pro obrázek můžete také zobrazit zaškrtávací políčko Pokud se pro to rozhodnete. Kromě toho můžete nastavit <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> vlastnosti obrázku, který se `true`, a image se zobrazí s šrafované ohraničení kolem něj v době běhu.  
-  
-### <a name="to-display-a-shortcut-key-for-a-menu-command"></a>Chcete-li zobrazit klávesovou zkratku pro příkaz nabídky  
-  
-- Nastavení příkazu nabídky <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> vlastnost kombinaci požadované klávesnice, jako je například CTRL + O pro **otevřít** příkaz nabídky a nastavte <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> vlastnost `true`.  
-  
-### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a>Chcete-li zobrazit vlastní klávesové zkratky pro příkaz nabídky  
-  
-- Nastavení příkazu nabídky <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> kombinaci požadované klávesnice, jako je například CTRL + SHIFT + O spíše než CTRL + SHIFT + O a nastavte vlastnost <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> vlastnost `true`.  
-  
-### <a name="to-display-an-access-key-for-a-menu-command"></a>Chcete-li zobrazit přístupový klíč pro příkaz nabídky  
-  
-- Při nastavení <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost pro příkaz nabídky zadejte znak ampersand (&) před písmeno chcete podtržena jako přístupový klíč. Například zadáte `&Open` jako <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastností položky nabídky bude výsledkem příkazu nabídky, která se zobrazí jako <u>O</u>pera.
-  
-     Přejděte na tento příkaz nabídky, stiskněte klávesu ALT k nastavení fokusu na <xref:System.Windows.Forms.MenuStrip>a stiskněte klávesu přístupový klíč název nabídky. Když v nabídce se otevře a zobrazí položky se přístupové klíče, stačí ke stisknutí přístupové klávesy vyberete příkaz nabídky.  
+- Nastavte <xref:System.Windows.Forms.ToolStripItem.Image%2A> vlastnost příkazu nabídky na název obrázku. Pokud je <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>vlastnost tohoto příkazu nabídky nastavená na nebo, obrázek se nedá zobrazit. <xref:System.Windows.Forms.ToolStripItemDisplayStyle>  
   
 > [!NOTE]
->  Vyhněte se definování duplicitní přístupové klávesy, jako je například definování ALT + F dvakrát ve stejném systému nabídky. Nelze zaručit pořadí výběru duplicitní přístupové klávesy.  
+> Pokud si zvolíte, okraj pro obrázek může také zobrazit značku zaškrtnutí. Také můžete nastavit <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> vlastnost obrázku na `true`a obrázek se zobrazí s šrafované ohraničení v době běhu.  
   
-### <a name="to-display-a-separator-bar-between-menu-commands"></a>Chcete-li zobrazit oddělovač mezi příkazy nabídky  
+### <a name="to-display-a-shortcut-key-for-a-menu-command"></a>Zobrazení klávesových zkratek pro příkaz nabídky  
   
-- Po definování vašich <xref:System.Windows.Forms.MenuStrip> a v položkách, bude obsahovat, použijte <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> nebo <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> metoda pro přidání příkazů nabídky a <xref:System.Windows.Forms.ToolStripSeparator> ovládacích prvků do <xref:System.Windows.Forms.MenuStrip> v pořadí, které chcete.  
+- Nastavte <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> vlastnost příkazu nabídky na požadovanou kombinaci kláves, jako je například CTRL + O pro příkaz **otevřít** nabídku a nastavte <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> vlastnost na `true`hodnotu.  
+  
+### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a>Zobrazení vlastních klávesových zkratek pro příkaz nabídky  
+  
+- Nastavte <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> vlastnost příkazu nabídky na požadovanou kombinaci kláves, například CTRL + SHIFT + o, místo kombinace kláves Shift + Ctrl + o a <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> nastavte vlastnost na `true`hodnotu.  
+  
+### <a name="to-display-an-access-key-for-a-menu-command"></a>Zobrazení přístupové klávesy pro příkaz nabídky  
+  
+- Když nastavíte <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost příkazu nabídky, zadejte ampersand (&) před písmeno, které má být podtržené jako přístupový klíč. Například zadání `&Open` <xref:System.Windows.Forms.ToolStripItem.Text%2A> jako vlastnost položky nabídky má za následek příkaz nabídky, který se zobrazí jako <u>O</u>Peru.
+  
+     Chcete-li přejít do tohoto příkazu nabídky, stiskněte klávesu ALT <xref:System.Windows.Forms.MenuStrip>, aby se zadala fokus, a stiskněte přístupový klíč názvu nabídky. Po otevření nabídky a zobrazení položek s přístupovými klíči stačí stisknout přístupovou klávesu a vybrat příkaz nabídky.  
+  
+> [!NOTE]
+> Vyhněte se definování duplicitních přístupových klíčů, například definování ALT + F dvakrát ve stejném systému nabídek. Nelze zaručit pořadí výběru duplicitních přístupových klíčů.  
+  
+### <a name="to-display-a-separator-bar-between-menu-commands"></a>Zobrazení oddělovacího panelu mezi příkazy nabídky  
+  
+- Po <xref:System.Windows.Forms.MenuStrip> definování a položek, které bude obsahovat, <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> použijte metodu nebo <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> pro <xref:System.Windows.Forms.MenuStrip> Přidání příkazů nabídky a <xref:System.Windows.Forms.ToolStripSeparator> ovládacích prvků do v požadovaném pořadí.  
   
     ```vb  
     ' This code adds a top-level File menu to the MenuStrip.  

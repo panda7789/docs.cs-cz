@@ -1,41 +1,41 @@
 ---
-title: Úprava velikosti a měřítka Windows Forms
+title: Úprava velikosti a rozsahu model Windows Forms
 ms.date: 04/07/2017
 helpviewer_keywords:
 - Windows Forms, changing size
 - Windows Forms, adjusting size
 - Windows Forms, changing scale
 ms.assetid: a014d2b3-3273-4521-95e1-00171033bf58
-ms.openlocfilehash: f4e793c3e007e74a33c691cddefa321df6ca6879
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1334d87b3c911edc6a416ca004581025b0de8fb9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960924"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916739"
 ---
-# <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a měřítka Windows Forms
-Toto téma obsahuje odkazy na informace o změně velikosti Windows Forms.  
+# <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a rozsahu model Windows Forms
+Toto téma obsahuje odkazy na informace o změně velikosti model Windows Forms.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Změna velikosti Windows Forms](~/docs/framework/winforms/how-to-resize-windows-forms.md)  
- Obsahuje pokyny pro určení velikosti Windows Forms.  
+ [Postupy: Změnit velikost model Windows Forms](how-to-resize-windows-forms.md)  
+ Poskytuje pokyny pro určení velikosti model Windows Forms.  
   
- [Automatická změna měřítka ve Windows Forms](~/docs/framework/winforms/automatic-scaling-in-windows-forms.md)  
- Tento článek popisuje, jak automatické škálování umožňuje formulář a jejích ovládacích prvků, který se má zobrazit odpovídajícím způsobem mezi počítači.  
+ [Automatická změna měřítka ve Windows Forms](automatic-scaling-in-windows-forms.md)  
+ Popisuje, jak automatické škálování umožňuje, aby se formulář a jeho ovládací prvky zobrazovaly správně mezi počítači.  
   
- [Podpora vysokého nastavení DPI ve Windows Forms](high-dpi-support-in-windows-forms.md)    
- Tento článek popisuje Windows Forms podpora vysokého nastavení DPI a dynamické škálování. 
+ [Podpora vysokého rozlišení DPI v model Windows Forms](high-dpi-support-in-windows-forms.md)    
+ Popisuje podporu model Windows Forms s vysokým rozlišením DPI a dynamickým škálováním. 
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Drawing.Size>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.TableLayoutPanel>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.FlowLayoutPanel>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Změna vzhledu Windows Forms](~/docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- Obsahuje odkazy na témata popisující další způsoby, jak změnit vzhledu Windows Forms.
+ [Změna vzhledu model Windows Forms](changing-the-appearance-of-windows-forms.md)  
+ Obsahuje odkazy na témata, která popisují jiné způsoby, jak změnit vzhled model Windows Forms.

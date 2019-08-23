@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 684d5e41e1d7cee2775aa0988d33a974315eac4e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 16d146766786f129d6da38bde1126ce8afe5e70f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772738"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963693"
 ---
 # <a name="ihostmemorymanagervirtualquery-method"></a>IHostMemoryManager::VirtualQuery – metoda
-Slouží jako logické obálku pro odpovídající funkci Win32. Implementace Win32 `VirtualQuery` načte informace o rozsahu stránek v virtuálního adresového prostoru volajícího procesu.  
+Slouží jako logická obálka odpovídající funkce Win32. Implementace `VirtualQuery` Win32 načte informace o rozsahu stránek ve virtuálním adresním prostoru volajícího procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,42 +40,42 @@ HRESULT VirtualQuery (
   
 ## <a name="parameters"></a>Parametry  
  `lpAddress`  
- [in] Ukazatel na adresu ve virtuální paměti, aby se dalo dotazovat.  
+ pro Ukazatel na adresu ve virtuální paměti, která se má dotazovat.  
   
  `lpBuffer`  
- [out] Ukazatel na strukturu, která obsahuje informace o zadané paměťové oblasti.  
+ mimo Ukazatel na strukturu, která obsahuje informace o zadané oblasti paměti.  
   
  `dwLength`  
- [in] Velikost v bajtech, vyrovnávací paměti, která `lpBuffer` odkazuje na.  
+ pro Velikost vyrovnávací paměti (v bajtech), na `lpBuffer` kterou odkazuje.  
   
  `pResult`  
- [out] Ukazatel na počet bajtů vrácených informace vyrovnávací paměti.  
+ mimo Ukazatel na počet bajtů vrácených vyrovnávací pamětí informací.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`VirtualQuery` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`VirtualQuery`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `VirtualQuery` poskytuje informace o rozsahu stránek v virtuálního adresového prostoru volajícího procesu. Tato implementace nastaví hodnotu vlastnosti `pResult` parametr počet bajtů, vrátí ve vyrovnávací paměti informace a vrací hodnotu HRESULT. V rozhraní Win32 `VirtualQuery` funkce, vrácená hodnota je velikost vyrovnávací paměti. Další informace najdete v dokumentaci k platformě Windows.  
+ `VirtualQuery`poskytuje informace o rozsahu stránek ve virtuálním adresním prostoru volajícího procesu. Tato implementace nastaví hodnotu `pResult` parametru na počet bajtů vrácených v zásobníku informací a vrátí hodnotu HRESULT. Ve funkci Win32 `VirtualQuery` je návratovou hodnotou velikost vyrovnávací paměti. Další informace najdete v dokumentaci k platformě Windows.  
   
 > [!IMPORTANT]
->  Operační systém provádění `VirtualQuery` nesnižuje zablokování a můžete spustit až do ukončení se náhodný vlákna pozastaveno v uživatelském kódu. Používejte opatrní při implementaci verze prostředí této metody.  
+> Implementace `VirtualQuery` operačního systému nenese zablokování a může běžet k dokončení náhodných vláken pozastavených v uživatelském kódu. Při implementaci hostované verze této metody používejte skvělou opatrnost.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

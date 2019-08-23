@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider::GetAssemblyImageBytes – metoda
+title: 'ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda'
 ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aaecbe3640e5da78c13a077611887c6b62d355a4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bf6e707b6176ccd205785aafa6c5a1adf0a3fc78
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771514"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964666"
 ---
-# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider::GetAssemblyImageBytes – metoda
-Přečte data ze sloučeného sestavení sloučeného sestavení podle relativní virtuální adresu (RVA).  
+# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda
+Načte data ze sloučeného sestavení s ohledem na relativní virtuální adresu (RVA) ve sloučeném sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,27 +26,27 @@ HRESULT GetAssemblyImageBytes(
   
 ## <a name="parameters"></a>Parametry  
  `rva`  
- [in] Relativní virtuální adresu (RVA) ve sloučené sestavení.  
+ pro Relativní virtuální adresa (RVA) ve sloučeném sestavení.  
   
  `length`  
- Počet bajtů ke čtení ze sloučeného sestavení.  
+ Počet bajtů, které mají být čteny ze sloučeného sestavení.  
   
  `ppMemoryBuffer`  
- Ukazatel na adresu [icordebugmemorybuffer –](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) objekt, který obsahuje informace o vyrovnávací paměti s metadaty sloučené sestavení.  
+ Ukazatel na adresu objektu [ICorDebugMemoryBuffer](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) , který obsahuje informace o vyrovnávací paměti pro Sloučená metadata sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

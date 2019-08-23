@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d89b26016213872250bcb4dbee96d7376afd3fcb
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 8fc88b06ee1e206208e6d6950f640966f53df3a1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666401"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924908"
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 <a name="top"></a>Task Parallel Library (TPL) poskytuje součásti toku dat, které vám pomůžou zvýšit odolnost aplikací s podporou souběžného zpracování. Tyto komponenty toku dat jsou souhrnně označovány jako *Knihovna rozhraní TPL Dataflow*. Tento model toku dat propaguje programování založené na objektu actor tím, že zajišťuje předávání zpráv v procesu pro hrubý úlohy toku dat a zřetězení. Komponenty toku dat se vytvářejí na typech a plánování infrastruktury aplikace TPL a integrují se s podporou C#, Visual Basic a F# jazykovou podporou pro asynchronní programování. Tyto součásti toku dat jsou užitečné v případě, že máte více operací, které musí komunikovat s jiným asynchronním nebo pokud chcete data zpracovat, jakmile budou k dispozici. Zvažte například aplikaci, která zpracovává obrazová data z webové kamery. Pomocí modelu toku dat aplikace může zpracovat snímky imagí, jakmile budou k dispozici. Pokud aplikace vylepšuje snímky obrázků, například provedením světlé nápravy nebo snížení červeného oka, můžete vytvořit *kanál* komponent toku dat. Každá fáze kanálu může použít více hrubých paralelních funkcí, jako jsou funkce, které poskytuje TPL, k transformaci image.  
@@ -53,7 +53,7 @@ ms.locfileid: "69666401"
  Při volání <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A?displayProperty=nameWithType> metody pro propojení zdroje s cílem můžete zadat delegáta, který určuje, zda cílový blok přijme nebo odmítne zprávu na základě hodnoty této zprávy. Tento mechanismus filtrování je užitečný způsob, jak zajistit, aby blok toku dat přijímal jenom určité hodnoty. Pro většinu předdefinovaných typů bloku toku dat je-li zdrojový blok připojen k více cílovým blokům, poté, co cílový blok odmítne zprávu, zdroj nabídne tuto zprávu dalšímu cíli. Pořadí, ve kterém zdroj nabízí zprávy na cíle, je definováno zdrojem a může se lišit podle typu zdroje. Většina typů zdrojových bloků zastaví nabízenou zprávu po tom, co jeden cíl přijme tuto zprávu. Jedinou výjimkou z tohoto pravidla je <xref:System.Threading.Tasks.Dataflow.BroadcastBlock%601> třída, která nabízí každou zprávu všem cílům, i když některé cíle odmítnou zprávu. Příklad, který používá filtrování pro zpracování pouze určitých zpráv, naleznete v [tématu Návod: Použití toku dat v aplikaci](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)model Windows Forms.  
   
 > [!IMPORTANT]
->  Vzhledem k tomu, že každý předdefinovaný typ bloku toku dat zaručuje, že se zprávy šíří v pořadí, ve kterém byly přijaty, musí být každá zpráva načtena ze zdrojového bloku předtím, než může zdrojový blok zpracovat další zprávu. Proto když použijete filtrování k připojení více cílů ke zdroji, ujistěte se, že alespoň jeden cílový blok obdrží každou zprávu. V opačném případě se aplikace může zablokovat.  
+> Vzhledem k tomu, že každý předdefinovaný typ bloku toku dat zaručuje, že se zprávy šíří v pořadí, ve kterém byly přijaty, musí být každá zpráva načtena ze zdrojového bloku předtím, než může zdrojový blok zpracovat další zprávu. Proto když použijete filtrování k připojení více cílů ke zdroji, ujistěte se, že alespoň jeden cílový blok obdrží každou zprávu. V opačném případě se aplikace může zablokovat.  
   
 ### <a name="message-passing"></a>Předávání zpráv  
  Programovací model Dataflow se vztahuje na pojem *předávání zpráv*, kde nezávislé komponenty programu spolu komunikují prostřednictvím posílání zpráv. Jedním ze způsobů, jak šířit zprávy mezi součástmi aplikace, je <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> volat <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> metody a k odesílání zpráv do cílového bloku toku dat (<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> operace funguje synchronně; pracuje asynchronně) <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A>a metody, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A>a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A> pro příjem zpráv ze zdrojových bloků. <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> Tyto metody můžete kombinovat s kanály toku dat nebo sítěmi tím, že odesíláte vstupní data do hlavního uzlu (cílový blok) a přijímáte výstupní data z uzlu terminálu kanálu nebo uzlů terminálů sítě (jeden nebo více zdrojových bloků). Můžete také použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Choose%2A> metodu ke čtení z první z poskytnutých zdrojů, které mají data k dispozici a k provádění akcí u těchto dat.  
@@ -235,7 +235,7 @@ ms.locfileid: "69666401"
  Výchozí hodnota <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.MaxDegreeOfParallelism%2A> je 1, což zaručuje, že blok toku dat zpracuje jednu zprávu současně. Když nastavíte tuto vlastnost na hodnotu, která je větší než 1, povolí blok toku dat souběžně zpracovávat více zpráv. Nastavením této vlastnosti <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.Unbounded?displayProperty=nameWithType> umožníte základnímu Plánovači úloh spravovat maximální stupeň souběžnosti.  
   
 > [!IMPORTANT]
->  Když zadáte maximální stupeň paralelismu, který je větší než 1, zpracovává se souběžně několik zpráv, takže zprávy nemusejí být zpracovány v pořadí, ve kterém byly přijaty. Pořadí, ve kterém jsou zprávy výstupem z bloku, je však stejné jako v tom, v jakém byly přijaty.  
+> Když zadáte maximální stupeň paralelismu, který je větší než 1, zpracovává se souběžně několik zpráv, takže zprávy nemusejí být zpracovány v pořadí, ve kterém byly přijaty. Pořadí, ve kterém jsou zprávy výstupem z bloku, je však stejné jako v tom, v jakém byly přijaty.  
   
  Vzhledem k tomu, že vlastnostpředstavujemaximálnístupeňparalelismu,můžebýtbloktokudatprovedensmenšímstupněmparalelismu,nežurčíte.<xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.MaxDegreeOfParallelism%2A> Blok toku dat může používat menší stupeň paralelismu k splnění jeho funkčních požadavků nebo nedostatku dostupných systémových prostředků. Blok toku dat nikdy nevolí více paralelismu, než zadáte.  
   

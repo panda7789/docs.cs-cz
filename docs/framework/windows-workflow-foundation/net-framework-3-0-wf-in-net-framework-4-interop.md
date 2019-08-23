@@ -2,18 +2,18 @@
 title: Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 ms.date: 03/30/2017
 ms.assetid: 71f112ba-abb0-46f7-b05f-a5d2eb9d0c5c
-ms.openlocfilehash: baca65da29fd0b18bd61f9b79ce82429faaed432
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 3e7382b25e68c1b01bd11e015b9864ae32f25f9b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364146"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965957"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 Aktivita je aktivita [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] (WF[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 4,5), která zabalí aktivitu (WF 3,5) v rámci pracovního postupu. [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] <xref:System.Activities.Statements.Interop> Aktivita WF 3 může být jedna koncová aktivita nebo celá struktura aktivit. Spuštění (včetně zrušení a zpracování výjimek) a trvalost [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivity dojde v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, která je spuštěna.  
   
 > [!NOTE]
->  Tato <xref:System.Activities.Statements.Interop> aktivita se nezobrazuje v sadě nástrojů návrháře pracovních postupů, pokud má projekt pracovního postupu nastavenou **cílovou architekturu** na hodnotu **.NET Framework 4,5**.  
+> Tato <xref:System.Activities.Statements.Interop> aktivita se nezobrazuje v sadě nástrojů návrháře pracovních postupů, pokud má projekt pracovního postupu nastavenou **cílovou architekturu** na hodnotu **.NET Framework 4,5**.  
   
 ## <a name="criteria-for-using-a-wf-3-activity-with-an-interop-activity"></a>Kritéria pro použití aktivity WF 3 s aktivitou spolupráce  
  Aby aktivita WF 3 mohla úspěšně běžet v rámci <xref:System.Activities.Statements.Interop> aktivity, musí být splněné následující kritérium:  

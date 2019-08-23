@@ -1,27 +1,27 @@
 ---
-title: <states> služby WCF, <workflowInstanceQuery>
+title: <states>služby WCF,<workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: d17f7525-8035-4e9e-85a0-4cddae59f85d
-ms.openlocfilehash: fad6f9c8871f79e4a1e26c893eed86ba168f6d01
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ef4ce4b6fa6e60ead10b196b10a7c1489e15ac25
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757947"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938984"
 ---
-# <a name="states-of-wcf-workflowinstancequery"></a>\<stavy > služby WCF, \<workflowInstanceQuery >
+# <a name="states-of-wcf-workflowinstancequery"></a>\<stavy > WCF, \<workflowInstanceQuery >
 
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  
   
-Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
 \<system.serviceModel> \<tracking>  
 \<profiles>  
-\<trackingProfile>  
-\<pracovní postup >  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
 \<workflowInstanceQueries>  
 \<workflowInstanceQuery>  
-\<states>  
+\<stavy >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,7 +61,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflowInstanceQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|Dotaz, který sleduje změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.|  
+|[\<workflowInstanceQuery>](../windows-workflow-foundation/workflowinstancequery.md)|Dotaz, který sleduje změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.|  
   
 ## <a name="remarks"></a>Poznámky
 
@@ -104,5 +104,5 @@ Následující konfigurace přihlásí na úrovni instance sledování záznamů
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

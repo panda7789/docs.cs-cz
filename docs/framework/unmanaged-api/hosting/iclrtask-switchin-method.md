@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccc08ae210dd02bc71a1d83bc81525a7308c20e1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f408dd5e4d383040d9e3c03cd5bba8ebd320610f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770381"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938370"
 ---
 # <a name="iclrtaskswitchin-method"></a>ICLRTask::SwitchIn – metoda
-Upozorní common language runtime (CLR), která úkol, který aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) představuje instanci je teď v provozuschopného stavu.  
+Upozorní modul CLR (Common Language Runtime) na to, že úloha, kterou aktuální instance [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) představuje, je teď v provozuschopném stavu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ HRESULT SwitchIn (
   
 ## <a name="parameters"></a>Parametry  
  `threadHandle`  
- [in] Popisovač na fyzické vlákno, na kterém úloha reprezentována aktuální `ICLRTask` provádění instance.  
+ pro Popisovač fyzického vlákna, na kterém je spuštěna úloha reprezentovaná aktuální `ICLRTask` instancí.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SwitchIn` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`SwitchIn`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_INVALIDOPERATION|`SwitchIn` byla volána bez dřívějším volání [switchout – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md).|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_INVALIDOPERATION|`SwitchIn`byla volána bez předchozího volání [metody Switch](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- `threadHandle` Parametr představuje popisovač vlákna operačního systému, na kterém úloha reprezentována aktuální `ICLRTask` instance je naplánovaná. Pokud v tomto vlákně došlo k zosobnění, musíte zavolat [ihostsecuritymanager::RevertToSelf –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-reverttoself-method.md) před přepnutím v úloze.  
+ Parametr představuje popisovač vlákna operačního systému, na kterém byla naplánována úloha reprezentovaná aktuální `ICLRTask` instancí. `threadHandle` Pokud došlo k zosobnění v tomto vláknu, musíte před přepnutím do úlohy zavolat [IHostSecurityManager:: RevertToSelf –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-reverttoself-method.md) .  
   
 > [!NOTE]
->  Volání `SwitchIn` bez dřívějším volání `SwitchOut` s hodnotou HRESULT HOST_E_INVALIDOPERATION se nezdaří.  
+> Volání `SwitchIn` bez předchozího `SwitchOut` volání se nezdařila s hodnotou HRESULT HOST_E_INVALIDOPERATION.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,45 +9,45 @@ dev_langs:
 ms.assetid: fa09c8e5-c2b9-49d2-bb0d-40330cd13e4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 119c4c13c90aeca8c14d2725d927c38be32212a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3d0d67c82e753b044f759b4d1139c5f6b4837b31
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934456"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948485"
 ---
 # <a name="editing-xml-schemas"></a>Úpravy schémat XML
-Úprava schématu XML je jednou z vašich nejdůležitějších funkcí z modelu objektu schématu (SOM). Všechny vlastnosti vedlejší schema kompilace SOM lze použít ke změně existujícího hodnot ve schématu XML. Schéma XML můžete pak překompilovány tak, aby odrážely změny.  
+Úprava schématu XML je jednou z nejdůležitějších funkcí modelu SOM (Schema Object Model). Ke změně stávajících hodnot ve schématu XML lze použít všechny vlastnosti rozhraní SOM před schématem-Schema-Compilation. Schéma XML lze poté znovu zkompilovat, aby odráželo změny.  
   
- Prvním krokem při úpravách schématu načtená SOM je procházení schématu. Měli byste se seznámit s procházení schématu pomocí rozhraní API SOM, než se pokusíte upravit schéma. Také byste měli být obeznámeni s vlastností před instrumentací a po schema kompilace po-schema-kompilace – informační sada (PSCI).  
+ Prvním krokem při úpravách schématu načteného do modelu SOM je procházení schématu. Předtím, než se pokusíte upravit schéma, byste měli být obeznámeni s procházením schématu pomocí rozhraní API modelu SOM. Měli byste být také obeznámeni s vlastnostmi předběžného a post-Schema-Compilation-PSCI (post-Schema-Compilation-informační sada).  
   
-## <a name="editing-an-xml-schema"></a>Úpravy schématu XML  
- V této části jsou k dispozici dva příklady kódu, které upravit schéma zákazníka vytvoří v [sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md) tématu. První příklad kódu přidá nový `PhoneNumber` elementu `Customer` prvku a druhý příklad kódu přidá nový `Title` atribut `FirstName` elementu. První příklad používá také po-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> kolekce jako způsob procházení schématu zákazníků při druhý příklad kódu používá předprodukční-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> kolekce.  
+## <a name="editing-an-xml-schema"></a>Úprava schématu XML  
+ V této části jsou k dispozici dva příklady kódu, jak upravit schéma zákazníka vytvořené v tématu [sestavení XML schémat](../../../../docs/standard/data/xml/building-xml-schemas.md) . První příklad kódu přidá `PhoneNumber` nový prvek `Customer` do prvku a druhý příklad kódu přidá nový `Title` atribut `FirstName` elementu. První vzorek také používá kolekci po kompilaci <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> po schématu jako způsob procházení schématu zákazníka, zatímco druhý příklad kódu používá kolekci předběžného schématu kompilace. <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType>  
   
-### <a name="phonenumber-element-example"></a>Příklad prvek PhoneNumber  
- Tento první příklad kódu přidá nový `PhoneNumber` elementu `Customer` prvek schématu zákazníka. Příklad kódu upraví schéma zákazníka v následujících krocích.  
+### <a name="phonenumber-element-example"></a>Příklad prvku PhoneNumber  
+ Tento první příklad kódu přidá nový `PhoneNumber` prvek `Customer` do prvku schématu zákazníka. Příklad kódu upravuje schéma zákazníka v následujících krocích.  
   
-1. Přidá schématu zákazníků na novou <xref:System.Xml.Schema.XmlSchemaSet> objekt a potom jej zkompiluje. Žádné schéma ověření upozornění a chyb zjištěných čtení nebo kompilaci schématu jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
+1. Přidá schéma zákazníka do nového <xref:System.Xml.Schema.XmlSchemaSet> objektu a potom jej zkompiluje. <xref:System.Xml.Schema.ValidationEventHandler> Delegát zpracovává všechna upozornění ověřování schématu a chyby, ke kterým došlo při čtení nebo kompilování schématu.  
   
-2. Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objektu z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Protože kompilaci schématu, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
+2. Načte kompilovaný <xref:System.Xml.Schema.XmlSchema> objekt z rozhraní <xref:System.Xml.Schema.XmlSchemaSet> iterací přes <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Vzhledem k tomu, že schéma je kompilováno, jsou k dispozici vlastnosti po PSCI (post-Schema-Compilation-informační sada).  
   
-3. Vytvoří `PhoneNumber` pomocí elementu <xref:System.Xml.Schema.XmlSchemaElement> třídy, `xs:string` jednoduchého typu pomocí omezení <xref:System.Xml.Schema.XmlSchemaSimpleType> a <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> třídy, přidá vlastnost pattern k <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction.Facets%2A> vlastnost omezení a přidá omezení <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A> vlastnost jednoduchý typ a jednoduchý typ, který má <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> z `PhoneNumber` elementu.  
+3. `xs:string` <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> <xref:System.Xml.Schema.XmlSchemaSimpleType> Vytvoří element pomocí třídy, jednoduché omezení typu pomocí tříd a, přidá omezující <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction.Facets%2A> vlastnost vzoru do vlastnosti omezení a přidá <xref:System.Xml.Schema.XmlSchemaElement> `PhoneNumber` omezení na <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A> vlastnost jednoduchého typu a jednoduchý typ <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> pro `PhoneNumber` element.  
   
-4. Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaElement> v <xref:System.Xml.Schema.XmlSchemaObjectTable.Values%2A> kolekce po-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> kolekce.  
+4. Provede iteraci každého <xref:System.Xml.Schema.XmlSchemaElement> <xref:System.Xml.Schema.XmlSchemaObjectTable.Values%2A> v kolekci kolekce post-Schema-Compilation <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> .  
   
-5. Pokud <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A> elementu, který je `"Customer"`, získá komplexní typ `Customer` pomocí elementu <xref:System.Xml.Schema.XmlSchemaComplexType> třídy a částice sequence komplexní typ použití <xref:System.Xml.Schema.XmlSchemaSequence> třídy.  
+5. <xref:System.Xml.Schema.XmlSchemaSequence> <xref:System.Xml.Schema.XmlSchemaComplexType> Pokud je `"Customer"`element, získá komplexní typ `Customer` elementu pomocí třídy a částice sekvence komplexního typu pomocí třídy. <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A>  
   
-6. Přidá novou `PhoneNumber` element obsahující existující pořadí `FirstName` a `LastName` prvky pomocí předprodukční-schema-kompilace <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A> kolekce pořadí.  
+6. Přidá nový `PhoneNumber` prvek do sekvence obsahující existující `FirstName` prvky a `LastName` pomocí kolekce předběžného schématu kompilace <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A> sekvence.  
   
-7. Nakonec znovu zpracuje a zkompiluje upravené <xref:System.Xml.Schema.XmlSchema> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metody <xref:System.Xml.Schema.XmlSchemaSet> třídy a zapíše jej do konzoly.  
+7. Nakonec znovu zpracuje <xref:System.Xml.Schema.XmlSchema> a zkompiluje upravený objekt <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> pomocí metod <xref:System.Xml.Schema.XmlSchemaSet> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> třídy a zapíše jej do konzoly.  
   
- Tady je příklad úplného kódu.  
+ Následuje příklad kompletního příkladu kódu.  
   
  [!code-cpp[XmlSchemaEditExample1#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaEditExample1/CPP/XmlSchemaEditExample1.cpp#1)]
  [!code-csharp[XmlSchemaEditExample1#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaEditExample1/CS/XmlSchemaEditExample1.cs#1)]
  [!code-vb[XmlSchemaEditExample1#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaEditExample1/VB/XmlSchemaEditExample1.vb#1)]  
   
- Tady je upravený zákazníka schéma se vytvořilo v [sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md) tématu.  
+ Toto je upravené schéma zákazníka vytvořené v tématu sestavování [schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md) .  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -71,47 +71,47 @@ ms.locfileid: "61934456"
 </xs:schema>  
 ```  
   
-### <a name="title-attribute-example"></a>Příklad název atributu  
- Tento druhý příklad kódu přidá nový `Title` atribut `FirstName` prvek schématu zákazníka. V prvním příkladu kódu, typ `FirstName` element je `xs:string`. Pro `FirstName` element má atribut spolu s řetězec obsahu, jeho typ musí být změněn na složitý typ s jednoduchým rozšířením obsahu obsahu modelu.  
+### <a name="title-attribute-example"></a>Příklad atributu title  
+ Tento druhý příklad kódu přidá nový `Title` atribut `FirstName` do elementu schématu zákazníka. V prvním příkladu kódu je `FirstName` `xs:string`typ elementu. `FirstName` Aby element měl atribut spolu s obsahem řetězce, musí být jeho typ změněn na komplexní typ s jednoduchým obsahem obsahu rozšíření obsahu.  
   
- Příklad kódu upraví schéma zákazníka v následujících krocích.  
+ Příklad kódu upravuje schéma zákazníka v následujících krocích.  
   
-1. Přidá schématu zákazníků na novou <xref:System.Xml.Schema.XmlSchemaSet> objekt a potom jej zkompiluje. Žádné schéma ověření upozornění a chyb zjištěných čtení nebo kompilaci schématu jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
+1. Přidá schéma zákazníka do nového <xref:System.Xml.Schema.XmlSchemaSet> objektu a potom jej zkompiluje. <xref:System.Xml.Schema.ValidationEventHandler> Delegát zpracovává všechna upozornění ověřování schématu a chyby, ke kterým došlo při čtení nebo kompilování schématu.  
   
-2. Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objektu z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Protože kompilaci schématu, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
+2. Načte kompilovaný <xref:System.Xml.Schema.XmlSchema> objekt z rozhraní <xref:System.Xml.Schema.XmlSchemaSet> iterací přes <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Vzhledem k tomu, že schéma je kompilováno, jsou k dispozici vlastnosti po PSCI (post-Schema-Compilation-informační sada).  
   
-3. Vytvoří nový komplexní typ pro `FirstName` pomocí elementu <xref:System.Xml.Schema.XmlSchemaComplexType> třídy.  
+3. Vytvoří nový komplexní typ pro `FirstName` element <xref:System.Xml.Schema.XmlSchemaComplexType> pomocí třídy.  
   
-4. Vytvoří nový jednoduchým rozšířením obsahu, se jako základní typ `xs:string`, použije <xref:System.Xml.Schema.XmlSchemaSimpleContent> a <xref:System.Xml.Schema.XmlSchemaSimpleContentExtension> třídy.  
+4. Vytvoří nové jednoduché rozšíření obsahu se základním typem `xs:string`, <xref:System.Xml.Schema.XmlSchemaSimpleContent> pomocí tříd a <xref:System.Xml.Schema.XmlSchemaSimpleContentExtension> .  
   
-5. Vytvoří nový `Title` atribut, pomocí <xref:System.Xml.Schema.XmlSchemaAttribute> třídy, se <xref:System.Xml.Schema.XmlSchemaAttribute.SchemaTypeName%2A> z `xs:string` a přidá atribut k jednoduchým rozšířením obsahu.  
+5. Vytvoří nový `Title` atribut <xref:System.Xml.Schema.XmlSchemaAttribute> <xref:System.Xml.Schema.XmlSchemaAttribute.SchemaTypeName%2A> pomocí`xs:string` třídy s a a přidá do jednoduchého rozšíření obsahu atribut.  
   
-6. Nastaví model obsahu jednoduchý obsah k jednoduchým rozšířením obsahu a obsahu modelu komplexní typ, který má jednoduchý obsah.  
+6. Nastaví model obsahu jednoduchého obsahu na jednoduché rozšíření obsahu a model obsahu komplexního typu na jednoduchý obsah.  
   
-7. Přidá nový komplexní typ do předprodukční-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> kolekce.  
+7. Přidá nový komplexní typ do kolekce předběžného schématu kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> .  
   
-8. Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaObject> v předprodukčním-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> kolekce.  
+8. Iteruje u každého <xref:System.Xml.Schema.XmlSchemaObject> v kolekci kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> před schématy.  
   
 > [!NOTE]
->  Vzhledem k tomu, `FirstName` element není globální element ve schématu, není k dispozici v <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> nebo <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> kolekce. Příklad kódu vyhledá `FirstName` elementu první vyhledáním `Customer` elementu.  
+> Vzhledem k tomu, že <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> elementneníglobálnímprvkemveschématu,neníkdispoziciv`FirstName` kolekcích ani. Příklad kódu vyhledá `FirstName` element tak, že nejprve `Customer` najde element.  
 >   
->  První příklad kódu provázán schématu pomocí po-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> kolekce. V této ukázce předprodukční-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> kolekce se používá k procházení schématu. Obě kolekce nabízejí přístup ke globální prvky ve schématu, iterace <xref:System.Xml.Schema.XmlSchema.Items%2A> kolekce je časově náročnější, protože nutné iterovat všechny globální elementy ve schématu a nemá žádné vlastnosti PSCI. Kolekce PSCI (<xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType>, <xref:System.Xml.Schema.XmlSchema.Attributes%2A?displayProperty=nameWithType>, <xref:System.Xml.Schema.XmlSchema.SchemaTypes%2A?displayProperty=nameWithType>, a tak dále) poskytuje přímý přístup k jejich globální prvky, atributy a typy a jejich vlastnosti PSCI.  
+>  První příklad kódu procházel schéma pomocí kolekce post-Schema-Compilation <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> . V této ukázce se k procházení schématu používá kolekce předběžného schématu kompilace <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> . Zatímco obě kolekce poskytují přístup k globálním prvkům ve schématu, iterace <xref:System.Xml.Schema.XmlSchema.Items%2A> v kolekci je více časově náročná, protože je nutné iterovat všechny globální prvky ve schématu a nemá žádné vlastnosti pSCI. Kolekce pSCI (<xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> <xref:System.Xml.Schema.XmlSchema.Attributes%2A?displayProperty=nameWithType>,, a tak dále) poskytují přímý přístup ke svým globálním prvkům, atributům a typům a jejich PSCIm vlastnostem. <xref:System.Xml.Schema.XmlSchema.SchemaTypes%2A?displayProperty=nameWithType>  
   
-1. Pokud <xref:System.Xml.Schema.XmlSchemaObject> je prvek, jehož <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A> je `"Customer"`, získá komplexní typ `Customer` pomocí elementu <xref:System.Xml.Schema.XmlSchemaComplexType> třídy a částice sequence komplexní typ použití <xref:System.Xml.Schema.XmlSchemaSequence> třídy.  
+1. `Customer` `"Customer"` <xref:System.Xml.Schema.XmlSchemaComplexType> <xref:System.Xml.Schema.XmlSchemaSequence> Pokud je element, jehož <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A> typ je, získá komplexní typ elementu pomocí třídy a částice sekvence komplexního typu pomocí třídy. <xref:System.Xml.Schema.XmlSchemaObject>  
   
-2. Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaParticle> v předprodukčním-schema-kompilace <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A?displayProperty=nameWithType> kolekce.  
+2. Iteruje u každého <xref:System.Xml.Schema.XmlSchemaParticle> v kolekci kompilace <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A?displayProperty=nameWithType> před schématy.  
   
-3. Pokud <xref:System.Xml.Schema.XmlSchemaParticle> je prvek, který vaší <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A> je `"FirstName"`, nastaví <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> z `FirstName` elementu do nového `FirstName` komplexního typu.  
+3. <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> `"FirstName"` `FirstName` Pokud je prvek, <xref:System.Xml.Schema.XmlSchemaElement.QualifiedName%2A> který je, je nastaveno na nový `FirstName` komplexní typ elementu. <xref:System.Xml.Schema.XmlSchemaParticle>  
   
-4. Nakonec znovu zpracuje a zkompiluje upravené <xref:System.Xml.Schema.XmlSchema> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metody <xref:System.Xml.Schema.XmlSchemaSet> třídy a zapíše jej do konzoly.  
+4. Nakonec znovu zpracuje <xref:System.Xml.Schema.XmlSchema> a zkompiluje upravený objekt <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> pomocí metod <xref:System.Xml.Schema.XmlSchemaSet> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> třídy a zapíše jej do konzoly.  
   
- Tady je příklad úplného kódu.  
+ Následuje příklad kompletního příkladu kódu.  
   
  [!code-cpp[XmlSchemaEditExample2#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaEditExample2/CPP/XmlSchemaEditExample2.cpp#1)]
  [!code-csharp[XmlSchemaEditExample2#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaEditExample2/CS/XmlSchemaEditExample2.cs#1)]
  [!code-vb[XmlSchemaEditExample2#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaEditExample2/VB/XmlSchemaEditExample2.vb#1)]  
   
- Tady je upravený zákazníka schéma se vytvořilo v [sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md) tématu.  
+ Toto je upravené schéma zákazníka vytvořené v tématu sestavování [schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md) .  
   
 ```xml  
 <?xml version="1.0" encoding=" utf-8"?>  

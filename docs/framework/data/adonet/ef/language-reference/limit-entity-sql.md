@@ -2,15 +2,15 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: b267e97860a2cb071b857224455f01b73115c72d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e637218bb3db69d4b09fd734b939fd30f50ed806
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760672"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961878"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
-Fyzické stránkování lze provést pomocí dílčí klauzuli LIMIT v klauzuli ORDER by. OMEZENÍ nemůže být použita samostatně z klauzule ORDER by.  
+Fyzické stránkování lze provést pomocí dílčí klauzule LIMIT v klauzuli ORDER BY. LIMIT nelze použít odděleně od klauzule ORDER BY.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,25 +20,25 @@ Fyzické stránkování lze provést pomocí dílčí klauzuli LIMIT v klauzuli 
   
 ## <a name="arguments"></a>Arguments  
  `n`  
- Počet položek, které bude vybrána.  
+ Počet položek, které budou vybrány.  
   
- Pokud dílčí klauzuli LIMIT výrazu je přítomna v klauzuli ORDER BY, dotazu budou seřazeny podle specifikace řazení a výsledný počet řádků se omezí výrazu omezení. LIMIT 5, omezí výsledek nastavena na 5 instancí nebo řádků. LIMIT je funkčně srovnatelný s nejvyšší s tím rozdílem, že LIMIT vyžaduje klauzuli ORDER by nacházet. Přeskočit a LIMIT je možné nezávisle na sobě spolu s klauzulí ORDER BY.  
+ Pokud je dílčí klauzule výrazu omezení přítomna v klauzuli ORDER BY, dotaz se seřadí podle specifikace řazení a výsledný počet řádků bude omezen výrazem LIMIT. Například omezení 5 omezí výsledek sady výsledků na 5 instancí nebo řádků. LIMIT je funkčně ekvivalentní k hodnotě TOP s výjimkou, která omezuje omezení vyžaduje, aby klauzule ORDER BY byla k dispozici. Klauzuli SKIP a LIMIT lze použít nezávisle spolu s klauzulí ORDER BY.  
   
 > [!NOTE]
->  Dotazu Entity Sql se budou považovat za modifikátor neplatný, pokud je to hlavní a dílčí klauzuli SKIP je k dispozici ve stejném výrazu dotazu. Dotaz by měl být přepsán změnou výraz TOP na LIMITU výrazu.  
+> Dotaz Entity SQL se považuje za neplatný, pokud je ve stejném výrazu dotazu přítomný modifikátor TOP a SKIP – dílčí klauzule. Dotaz by měl být přepsán změnou výrazu TOP na výraz omezení.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá operátor klauzule ORDER BY s LIMITEM k určení pořadí řazení použít u objektů vrácených v příkazu SELECT. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá operátor ORDER BY s LIMITem k určení pořadí řazení používaného u objektů vrácených v příkazu SELECT. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#LIMIT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#limit)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)
-- [Postupy: Stránkovat výsledky dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
+- [Postupy: Stránka prostřednictvím výsledků dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
 - [Stránkování](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)
 - [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

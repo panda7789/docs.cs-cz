@@ -6,76 +6,76 @@ helpviewer_keywords:
 - WCF [WCF], system-provided bindings
 - bindings [WCF], system-provided
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
-ms.openlocfilehash: 49aacdc7db6bc9e8b951f69bcd880835bb9182f2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c2c1f468fba404768fe01e84260125843964fea0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654511"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949628"
 ---
 # <a name="configuring-system-provided-bindings"></a>Konfigurace vazeb poskytovaných systémem
-Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit do koncového bodu. Vazby obsahovat prvky, které definují, jak kanálů Windows Communication Foundation (WCF) jsou rozloženy do vrstev nahoru a zajistit tak funkce požadovanou komunikaci. Vazba obsahuje tři typy prvků:  
+Vazby určují komunikační mechanismus, který se má použít při komunikaci s koncovým bodem, a označuje, jak se připojit ke koncovému bodu. Vazby se skládají z prvků, které definují, jak jsou kanály Windows Communication Foundation (WCF) vrstveny, aby poskytovaly požadované funkce komunikace. Vazba obsahuje tři typy prvků:  
   
-- Elementy vazby kanálu protokolu, které určují nastavení zabezpečení, spolehlivost, nastavení toku kontextu nebo uživatelem definované protokolů pro použití s zprávy odeslané do koncového bodu.  
+- Prvky vazby kanálu, které určují zabezpečení, spolehlivost, nastavení toku kontextu nebo uživatelsky definované protokoly pro použití se zprávami odesílanými do koncového bodu.  
   
-- Kanál elementů přenosové vazby, které určují základní přenos protokol se má použít při odesílání zpráv do koncových bodů, například TCP nebo HTTP.  
+- Prvky vazby přenosového kanálu, které určují podkladový transportní protokol, který se má použít při odesílání zpráv do koncového bodu, například TCP nebo HTTP.  
   
-- Kódování elementy vazby, které určují při přenosu kódování použité pro zprávy odeslané do koncového bodu, například text/XML, binární, zprávy nebo zprávy přenosu optimalizace mechanismus (MTOM).  
+- Prvky vazby kódování zpráv, které určují kódování přenosů, které se mají použít pro zprávy odesílané do koncového bodu, například text/XML, binární nebo mechanismus optimalizace přenosu zpráv (MTOM).  
   
- Toto téma představuje všechny vazby poskytované systémem Windows Communication Foundation (WCF). Pokud žádná z nich nesplňuje přesných požadavcích pro vaši aplikaci, můžete vytvořit vazbu pomocí <xref:System.ServiceModel.Channels.CustomBinding> třídy. Další informace o vytváření vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md).  
-  
-> [!IMPORTANT]
->  Vyberte vazbu s povoleným zabezpečením. Ve výchozím nastavení všechny vazby, s výjimkou <xref:System.ServiceModel.BasicHttpBinding> vazby, mají povoleno zabezpečení. Pokud vyberete bezpečnou vazbu, nebo pokud zakážete, zabezpečení, ujistěte se, že vaše síť výměny jsou chráněné jiným způsobem, jako je například v zabezpečené datovém centru nebo v izolované síti.  
+ V tomto tématu jsou uvedeny všechny vazby Windows Communication Foundation poskytované systémem (WCF). Pokud žádný z těchto kroků nesplňuje přesné požadavky vaší aplikace, můžete vytvořit vazbu pomocí <xref:System.ServiceModel.Channels.CustomBinding> třídy. Další informace o vytváření vlastních vazeb najdete v tématu [Custom Bindings](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 > [!IMPORTANT]
->  Nepoužívejte duplexní kontrakty s vazbami, které nepodporují zabezpečení nebo mají zabezpečení zakázán, pokud síť exchange je zabezpečený jiným způsobem.  
+> Vyberte vazbu s povoleným zabezpečením. Ve výchozím nastavení mají všechny vazby s výjimkou <xref:System.ServiceModel.BasicHttpBinding> vazby zapnuté zabezpečení. Pokud nevyberete zabezpečenou vazbu nebo pokud zakážete zabezpečení, ujistěte se, že jsou vaše síťové výměny chráněny jiným způsobem, například v zabezpečeném datovém centru nebo v izolované síti.  
+  
+> [!IMPORTANT]
+> Nepoužívejte oboustranné smlouvy s vazbami, které nepodporují zabezpečení, nebo které mají zakázané zabezpečení, pokud není síť zabezpečená jiným způsobem.  
   
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
- Tyto vazby se dodávají s použitím technologie WCF.  
+ Následující vazby jsou dodávány pomocí WCF.  
   
-|Vazba|Element konfigurace|Popis|  
+|Vazba|Konfigurační element|Popis|  
 |-------------|---------------------------|-----------------|  
-|<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Vazby, který je vhodný pro komunikaci s profilu WS-Basic vyhovující webové služby, například webových služeb ASP.NET (ASMX) – na základě služeb. Tato vazba používá protokol HTTP jako přenosu a text/XML jako výchozí kódování zprávy.|  
-|<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Zabezpečená a interoperabilní vazbu, která je vhodné pro neduplexní servisní smlouvy.|  
-|<xref:System.ServiceModel.WS2007HttpBinding>|[\<ws2007HttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)|Zabezpečená a interoperabilní vazbu, která poskytuje podporu pro správné verze prvků <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>, a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> elementů vazby.|  
-|<xref:System.ServiceModel.WSDualHttpBinding>|[\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)|Zabezpečená a interoperabilní vazbu, která je vhodná pro duplexní kontrakty služeb nebo komunikace prostřednictvím zprostředkovatelů SOAP.|  
-|<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Zabezpečená a interoperabilní vazba, která podporuje protokol WS-Federation, umožňujících organizacím, které jsou ve federaci efektivně ověřovat a autorizovat uživatele.|  
-|<xref:System.ServiceModel.WS2007FederationHttpBinding>|[\<ws2007FederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md)|Zabezpečená a interoperabilní vazbu, která je odvozena z <xref:System.ServiceModel.WS2007HttpBinding> a podporuje zabezpečení.|  
-|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Zabezpečené a optimalizované vazby vhodné pro komunikaci mezi počítači mezi aplikací služby WCF.|  
-|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<netNamedPipeBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|Zabezpečená, spolehlivá a optimalizovaná vazby, který je vhodný pro komunikaci na počítači mezi aplikací služby WCF.|  
-|<xref:System.ServiceModel.NetMsmqBinding>|[\<netMsmqBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Vazbu s frontou, který je vhodný pro komunikaci mezi počítači mezi aplikací služby WCF.|  
-|<xref:System.ServiceModel.NetPeerTcpBinding>|[\<netPeerTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)|Vazba, která umožňuje zabezpečenou a více počítači komunikaci.|  
-|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba použitá ke konfiguraci koncových bodů webových služeb WCF, které jsou přístupné přes požadavky HTTP namísto zpráv SOAP.|  
-|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Vazby, který je vhodný pro komunikaci mezi počítači mezi aplikace WCF a stávající služby Řízení front zpráv (MSMQ) aplikace.|  
+|<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Vazba, která je vhodná pro komunikaci s profilem WS-Basic, který splňuje webové služby, například služby založené na ASP.NET Web Services (ASMX). Tato vazba používá jako výchozí kódování zprávy HTTP jako Transport a text/XML.|  
+|<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Zabezpečená a interoperabilní vazba, která je vhodná pro neduplexní kontrakty služeb.|  
+|<xref:System.ServiceModel.WS2007HttpBinding>|[\<ws2007HttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)|Zabezpečená a interoperabilní vazba, která poskytuje podporu pro správné verze <xref:System.ServiceModel.WSHttpBinding.Security%2A>prvků, <xref:System.ServiceModel.ReliableSession>a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> vazby.|  
+|<xref:System.ServiceModel.WSDualHttpBinding>|[\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)|Zabezpečená a interoperabilní vazba, která je vhodná pro duplexní kontrakty služeb nebo komunikace prostřednictvím zprostředkovatelů SOAP.|  
+|<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Zabezpečená a interoperabilní vazba, která podporuje protokol WS-Federation umožňující organizacím ve federaci efektivně ověřovat a autorizovat uživatele.|  
+|<xref:System.ServiceModel.WS2007FederationHttpBinding>|[\<ws2007FederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md)|Zabezpečená a interoperabilní vazba, která je odvozena <xref:System.ServiceModel.WS2007HttpBinding> z a podporuje federované zabezpečení.|  
+|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Zabezpečená a optimalizovaná vazba vhodná pro komunikaci mezi počítači mezi aplikacemi WCF.|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<netNamedPipeBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|Zabezpečená, spolehlivá a optimalizovaná vazba, která je vhodná pro komunikaci na počítači mezi aplikacemi WCF.|  
+|<xref:System.ServiceModel.NetMsmqBinding>|[\<netMsmqBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Vazba zařazená do fronty, která je vhodná pro komunikaci mezi počítači mezi aplikacemi WCF.|  
+|<xref:System.ServiceModel.NetPeerTcpBinding>|[\<netPeerTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)|Vazba, která umožňuje zabezpečenou komunikaci s více počítači.|  
+|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Vazba používaná ke konfiguraci koncových bodů pro webové služby WCF, které jsou vystaveny prostřednictvím požadavků HTTP namísto zpráv SOAP.|  
+|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Vazba, která je vhodná pro komunikaci mezi počítači mezi aplikací WCF a stávajícími službami řízení front zpráv (označované také jako MSMQ).|  
   
-## <a name="binding-features"></a>Vazba funkce  
- V následující tabulce jsou uvedeny některé klíčové funkce všech vazeb poskytovaných systémem, který je k dispozici. Vazby jsou uvedeny v prvním sloupci a informace týkající se funkcí jsou popsány v tabulce. Následující tabulka poskytuje klíč pro zkratky vazba používá. Vyberte vazbu, určete, který sloupec splňuje všechny funkce řádků, které potřebujete.  
+## <a name="binding-features"></a>Funkce vazby  
+ V následující tabulce jsou uvedeny některé klíčové funkce pro každou ze zadaných vazeb poskytovaných systémem. Vazby jsou uvedeny v prvním sloupci a informace týkající se funkcí jsou popsány v tabulce. Následující tabulka poskytuje klíč pro použité zkratky vazby. Pokud chcete vybrat vazbu, určete, který sloupec bude vyhovovat všem funkcím řádku, které potřebujete.  
   
 |Vazba|Interoperabilita|Režim zabezpečení (výchozí)|Relace<br /><br /> (Výchozí)|Transakce|Duplex|  
 |-------------|----------------------|----------------------------------|-----------------------------|------------------|------------|  
-|<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(Žádné), přenos zpráv, smíšené|NONE, (None)|(Žádné)|není k dispozici|  
-|<xref:System.ServiceModel.WSHttpBinding>|WS|NONE, přenosu, (zpráva), smíšené|(Žádné), přenosu, spolehlivé relace|Ano (žádné)|není k dispozici|  
-|<xref:System.ServiceModel.WS2007HttpBinding>|WS-Security, WS-Trust, WS-SecureConversation, WS-SecurityPolicy|NONE, přenosu, (zpráva), smíšené|(Žádné), přenosu, spolehlivé relace|Ano (žádné)|není k dispozici|  
-|<xref:System.ServiceModel.WSDualHttpBinding>|WS|Žádný (zprávy)|(Stabilní relace)|Ano (žádné)|Ano|  
-|<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|Žádný (zpráva), smíšené|(Žádné), spolehlivé relace|Ano (žádné)|Ne|  
-|<xref:System.ServiceModel.WS2007FederationHttpBinding>|WS-Federation|Žádný (zpráva), smíšené|(Žádné), spolehlivé relace|Ano (žádné)|Ne|  
-|<xref:System.ServiceModel.NetTcpBinding>|.NET|Žádný (přenos), zprávy,<br /><br /> Smíšené|Spolehlivá relace (přenos)|Ano (žádné)|Ano|  
-|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|NONE,<br /><br /> (Přenos)|Žádný (přenos)|Ano (žádné)|Ano|  
-|<xref:System.ServiceModel.NetMsmqBinding>|.NET|Žádné, zprávu, (přenos), obojí|(Žádné)|Ano (žádné)|Ne|  
-|<xref:System.ServiceModel.NetPeerTcpBinding>|Peer|Žádné, zprávu, (přenos), smíšené|(Žádné)|(Žádné)|Ano|  
-|<xref:System.ServiceModel.WebHttpBinding>|.Net|NONE, přenosu, TransportCredentialOnly|(Žádné)|(Žádné)|není k dispozici|  
-|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|Žádný (přenos)|(Žádné)|Ano (žádné)|není k dispozici|  
+|<xref:System.ServiceModel.BasicHttpBinding>|Základní profil 1,1|(Žádné), přenos, zpráva, smíšená|Žádné, (žádné)|NTato|není k dispozici|  
+|<xref:System.ServiceModel.WSHttpBinding>|WS|Žádná, přenosová, (zpráva), smíšená|(Žádné), přenos, Spolehlivá relace|(Žádné), ano|není k dispozici|  
+|<xref:System.ServiceModel.WS2007HttpBinding>|WS-Security, WS-Trust, WS-SecureConversation, WS-SecurityPolicy|Žádná, přenosová, (zpráva), smíšená|(Žádné), přenos, Spolehlivá relace|(Žádné), ano|není k dispozici|  
+|<xref:System.ServiceModel.WSDualHttpBinding>|WS|Žádné, (zpráva)|(Spolehlivá relace)|(Žádné), ano|Ano|  
+|<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|Žádná, (zpráva), smíšená|(Žádné), Spolehlivá relace|(Žádné), ano|Ne|  
+|<xref:System.ServiceModel.WS2007FederationHttpBinding>|WS-Federation|Žádná, (zpráva), smíšená|(Žádné), Spolehlivá relace|(Žádné), ano|Ne|  
+|<xref:System.ServiceModel.NetTcpBinding>|.NET|Žádné, (Transport), zpráva,<br /><br /> Smíšený|Spolehlivá relace, (přenos)|(Žádné), ano|Ano|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|NTato<br /><br /> Přepravu|Žádné, (Transport)|(Žádné), ano|Ano|  
+|<xref:System.ServiceModel.NetMsmqBinding>|.NET|Žádná, zpráva, (Transport), obojí|NTato|(Žádné), ano|Ne|  
+|<xref:System.ServiceModel.NetPeerTcpBinding>|Zařízeními|Žádná, zpráva, (Transport), smíšené|NTato|NTato|Ano|  
+|<xref:System.ServiceModel.WebHttpBinding>|.Net|Žádný, přenos, TransportCredentialOnly|NTato|NTato|není k dispozici|  
+|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|Žádné, (Transport)|NTato|(Žádné), ano|není k dispozici|  
   
- Následující tabulka popisuje možnosti, které najdete v předchozí tabulce.  
+ V následující tabulce jsou vysvětleny funkce, které najdete v předchozí tabulce.  
   
 |Funkce|Popis|  
 |-------------|-----------------|  
-|Vzájemná funkční spolupráce typu|Název protokolu nebo technologie, pomocí kterého se vazba zajistí vzájemná spolupráce grafického subsystému.|  
-|Zabezpečení|Určuje, jak je zabezpečený kanál:<br /><br /> -Žádný: Není zabezpečen zprávu protokolu SOAP a klient není ověřený.<br />-Přenos: V přenosové vrstvě jsou splněny požadavky na zabezpečení.<br />– Zprávy: Ve vrstvě zprávy jsou splněny požadavky na zabezpečení.<br />-Smíšené: Tento režim zabezpečení se označuje jako `TransportWithMessageCredentials`. Zpracovává přihlašovací údaje na úrovni zpráv a integritu a důvěrnost požadavky splněny přenosové vrstvy.<br />-Obojí: Obě úrovně a přenosu zabezpečením úrovně zprávy se používají. Tato možnost je jedinečné pro <xref:System.ServiceModel.NetMsmqBinding>.|  
-|Relace|Určuje, zda tato vazba podporuje kontrakty relací.|  
-|Transakce|Určuje, zda je povoleno transakce.|  
-|Duplex|Určuje, zda jsou podporovány duplexní kontrakty. Všimněte si, že tato funkce vyžaduje podporu pro relace ve vazbě.|  
-|Streamování|Určuje, zda je podporováno datové proudy zpráv.|  
+|Typ interoperability|Pojmenuje protokol nebo technologii, se kterými vazba zajišťuje meziprovozu.|  
+|Zabezpečení|Určuje, jak je kanál zabezpečený:<br /><br /> NTato Zpráva SOAP není zabezpečená a klient není ověřen.<br />Přepravu Požadavky na zabezpečení jsou splněné na transportní vrstvě.<br />Zpráva Požadavky na zabezpečení jsou splněné ve vrstvě zpráv.<br />Smíšený Tento režim zabezpečení je známý jako `TransportWithMessageCredentials`. Zpracovává přihlašovací údaje na úrovni zprávy a požadavky na integritu a důvěrnost jsou splněné přenosovou vrstvou.<br />Protokoly Je použita úroveň zprávy i zabezpečení na úrovni přenosu. Tato možnost je jedinečná pro <xref:System.ServiceModel.NetMsmqBinding>.|  
+|Relace|Určuje, zda tato vazba podporuje kontrakty relace.|  
+|Transakce|Určuje, zda jsou povoleny transakce.|  
+|Duplex|Určuje, zda jsou podporovány duplexní kontrakty. Poznámka: Tato funkce vyžaduje podporu pro relace ve vazbě.|  
+|Streamování|Určuje, jestli je podporované streamování zpráv.|  
   
 ## <a name="see-also"></a>Viz také:
 

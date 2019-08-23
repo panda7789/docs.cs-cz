@@ -2,21 +2,21 @@
 title: Výběr filtru
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: 76875cd56f74bd555133253beda97b30ee3fa90a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73901ff312722605cceff2a0448511b0055fc120
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784459"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935026"
 ---
 # <a name="choosing-a-filter"></a>Výběr filtru
-Při konfiguraci služby směrování, je důležité vybrat správnou zprávu filtry a nakonfigurujete je, aby bylo možné provést přesné shody proti přijímaných zpráv. Pokud filtry, které jste vybrali příliš rozsáhlá v jejich odpovídá nebo jsou nakonfigurovány nesprávně, zprávy jsou směrovány nesprávně. Pokud jsou příliš omezující filtry, pravděpodobně nemáte všechny platné trasy, které jsou k dispozici pro některé zprávy.  
+Při konfiguraci směrovací služby je důležité vybrat správné filtry zpráv a nakonfigurovat je tak, aby vám umožnily přesně odpovídat na zprávy, které obdržíte. Pokud jsou filtry, které vyberete, příliš široké v jejich shodách nebo jsou nesprávně nakonfigurované, zprávy se nesprávně směrují. Pokud jsou filtry příliš omezující, nemusí být pro některé z vašich zpráv k dispozici žádné platné trasy.  
   
 ## <a name="filter-types"></a>Typy filtrů  
- Při výběru filtry, které používá služba směrování, je důležité pochopit, jak každý filtr funguje a jaké informace jsou k dispozici jako součást příchozí zprávy. Například pokud jsou všechny zprávy přes stejný koncový bod, filtry adres a Název_koncového_bodu nejsou užitečné protože těmto filtrům neodpovídají všechny zprávy.  
+ Když vyberete filtry, které služba Směrování používá, je důležité pochopit, jak každý filtr funguje, a jaké informace jsou k dispozici jako součást příchozích zpráv. Pokud jsou například všechny zprávy přijímány přes stejný koncový bod, nejsou filtry adresa a koncový bod užitečné, protože všechny zprávy odpovídají těmto filtrům.  
   
 ### <a name="action"></a>Akce  
- Zkontroluje filtr akce <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> vlastnost. Pokud obsah záhlaví akce ve zprávě odpovídají hodnotě dat filtru zadaná v konfiguraci filtr a potom tento filtr vrátí `true`. Následující příklad definuje `FilterElement` filtru akce, která používá tak, aby odpovídaly zprávy s hlavičkou akce, která obsahuje hodnotu `http://namespace/contract/operation/`.
+ Filtr akcí kontroluje <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> vlastnost. Pokud se obsah záhlaví akce ve zprávě shoduje s hodnotou dat filtru zadanou v konfiguraci filtru, pak tento filtr vrátí `true`. Následující příklad definuje `FilterElement` , který používá filtr akcí, aby odpovídal zprávám s hlavičkou akce, která obsahuje `http://namespace/contract/operation/`hodnotu.
   
 ```xml  
 <filter name="action1" filterType="Action" filterData="http://namespace/contract/operation/" />  
@@ -26,10 +26,10 @@ Při konfiguraci služby směrování, je důležité vybrat správnou zprávu f
 ActionMessageFilter action1 = new ActionMessageFilter(new string[] { "http://namespace/contract/operation" });  
 ```  
   
- Tento filtr by měla sloužit při směrování zpráv, které obsahují jedinečné záhlaví akce.  
+ Tento filtr by měl být použit při směrování zpráv, které obsahují jedinečnou hlavičku akce.  
   
-### <a name="endpointaddress"></a>EndpointAddress  
- Filtr EndpointAddress kontroluje EndpointAddress, který v byla přijata zpráva. Pokud na adresu, kterou se zpráva dorazí na přesně odpovídá adrese filtr zadaný v konfiguraci filtr a potom tento filtr vrátí `true`. Následující příklad definuje `FilterElement` , která používá filtr adres tak, aby odpovídaly všechny zprávy adresované na "http://\<název_hostitele > / vdir/s.svc/b".  
+### <a name="endpointaddress"></a>Parametry  
+ Filtr EndpointAddress zkontroluje adresu EndpointAddress, na které byla zpráva přijata. Pokud adresa, kterou zpráva dorazí, přesně odpovídá adrese filtru zadané v konfiguraci filtru, pak tento filtr vrátí `true`. Následující příklad definuje `FilterElement` , který používá filtr adres, aby odpovídal všem zprávám, které jsou adresovány "http://\<hostname >/vdir/s.svc/b".  
   
 ```xml  
 <filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b" />  
@@ -40,14 +40,14 @@ EndpointAddressMessageFilter address1 = new EndpointAddressMessageFilter(new End
 ```  
   
 > [!NOTE]
->  Je důležité si uvědomit, že část názvu hostitele adresy se může lišit podle toho, zda klient používá plně kvalifikovaný název domény, název NetBIOS, IP adresu nebo jiný název. Protože různé hodnoty mohou odkazovat na stejného hostitele, je výchozí chování pro tuto chvíli nechcete použít část názvu hostitele adresy při provádění shody.  
+> Je důležité si uvědomit, že část s názvem hostitele v adrese se může lišit v závislosti na tom, zda klient používá plně kvalifikovaný název domény, název rozhraní NetBIOS, IP adresu nebo jiný název. Vzhledem k tomu, že rozdílné hodnoty mohou odkazovat na stejného hostitele, výchozí chování pro toto porovnání není použití části názvu hostitele v této adrese při provádění shody.  
 >   
->  Toto chování lze upravit umožňující porovnání k vyhodnocení názvu hostitele, při konfiguraci služby směrování prostřednictvím kódu programu.  
+>  Toto chování je možné upravit, aby při programové konfiguraci směrovací služby bylo porovnání vyhodnoceno jako název hostitele.  
   
- Tento filtr by měla sloužit, když jsou příchozí zprávy adresované jedinečnou adresu.  
+ Tento filtr by měl být použit při adresování příchozích zpráv na jedinečnou adresu.  
   
 ### <a name="endpointaddressprefix"></a>EndpointAddressPrefix  
- Filtr EndpointAddressPrefix je podobný filtrování EndpointAddress. Filtr EndpointAddressPrefix kontroluje EndpointAddress, který v byla přijata zpráva. Ale EndpointAddressPrefix filtr funguje jako zástupný znak to provede spárováním odpovídajících adresy, které začínají hodnotu zadanou v konfiguraci filtru. Následující příklad definuje `FilterElement` EndpointAddressPrefix filtr, který používá tak, aby odpovídaly všechny zprávy adresované `http://<hostname>/vdir*`.  
+ Filtr EndpointAddressPrefix se podobá filtru EndpointAddress. Filtr EndpointAddressPrefix zkontroluje adresu EndpointAddress, na které byla zpráva přijata. Filtr EndpointAddressPrefix ale funguje jako zástupný znak odpovídajícími adresami, které začínají hodnotou zadanou v konfiguraci filtru. Následující příklad definuje `FilterElement` , který používá filtr EndpointAddressPrefix k vyhledání všech zpráv, které jsou `http://<hostname>/vdir*`adresovány.  
   
 ```xml  
 <filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/vdir" />  
@@ -58,12 +58,12 @@ PrefixEndpointAddressMessageFilter prefix1 = new PrefixEndpointAddressMessageFil
 ```  
   
 > [!NOTE]
->  Je důležité si uvědomit, že část názvu hostitele adresy se může lišit podle toho, zda klient používá plně kvalifikovaný název domény, název NetBIOS, IP adresu nebo jiný název. Protože různé hodnoty mohou odkazovat na stejného hostitele, je výchozí chování pro tuto chvíli nechcete použít část názvu hostitele adresy při provádění shody.  
+> Je důležité si uvědomit, že část s názvem hostitele v adrese se může lišit v závislosti na tom, zda klient používá plně kvalifikovaný název domény, název rozhraní NetBIOS, IP adresu nebo jiný název. Vzhledem k tomu, že rozdílné hodnoty mohou odkazovat na stejného hostitele, výchozí chování pro toto porovnání není použití části názvu hostitele v této adrese při provádění shody.  
   
- Tento filtr by měla sloužit při směrování příchozích zpráv, které sdílejí běžnou předponu adresy.  
+ Tento filtr by měl být použit při směrování příchozích zpráv, které sdílejí společnou předponu adresy.  
   
 ### <a name="and"></a>AND  
- Filtr a nefiltruje přímo na základě hodnot v rámci zprávy, ale můžete kombinovat dva filtry k vytvoření `AND` kde oba filtry musí odpovídat zprávu před vyhodnotí jako filtr a podmínka `true`. To umožňuje vytvořit komplexní filtry, které odpovídá pouze pokud se shodují všechny dílčí filtry. Následující příklad definuje filtr adresy a filtru akce a pak definuje filtr a, který se vyhodnotí zprávu před filtry adresu a akce. Pokud adresu a filtrů Akce shodují, pak filtr a vrátí `true`.  
+ Filtr and přímo nefiltruje na hodnotu v rámci zprávy, ale umožňuje zkombinovat dva další filtry a vytvořit `AND` tak podmínku, že oba filtry musí odpovídat zprávě předtím, než se filtr a vyhodnotí. `true` To vám umožňuje vytvářet komplexní filtry, které se shodují jenom v případě, že se všechny dílčí filtry shodují. Následující příklad definuje filtr adresy a filtr akcí a pak definuje filtr a, který vyhodnocuje zprávu proti filtrům adresa a akce. Pokud adresa i filtr akce souhlasí, pak vrátí `true`filtr a.  
   
 ```xml  
 <filter name="address1" filterType="AddressPrefix" filterData="http://host/vdir"/>  
@@ -77,10 +77,10 @@ ActionMessageFilter action1 = new ActionMessageFilter(new string[] { "http://nam
 StrictAndMessageFilter and1=new StrictAndMessageFilter(address1, action1);  
 ```  
   
- Tento filtr by měla sloužit, když zkombinujete musí logiku z více filtrů k určení, kdy je třeba shodu. Například pokud máte více cílů, které musí přijmout jenom určité kombinace akcí a zprávy pro konkrétní adresy, můžete použít filtr a potřebné akce a adresu filtry zkombinovat.  
+ Tento filtr by měl být použit v případě, že je nutné zkombinovat logiku z více filtrů, aby bylo možné určit, kdy má být provedeno porovnávání. Například pokud máte více cílů, které musí přijímat pouze určité kombinace akcí a zpráv pro konkrétní adresy, můžete použít filtr a ke kombinování potřebných filtrů akcí a adres.  
   
 ### <a name="custom"></a>Vlastní  
- Když vyberete vlastní typ filtru, je nutné zadat customtype – hodnota, která obsahuje typ, který obsahuje sestavení **MessageFilter** implementace má být použit pro tento filtr. Kromě toho fulltextových dat filtru musí obsahovat všechny hodnoty, které vlastní filtr může vyžadovat jeho vyhodnocení zpráv. Následující příklad definuje `FilterElement` , která používá `CustomAssembly.MyCustomMsgFilter` MessageFilter implementace.  
+ Při výběru vlastního typu filtru je nutné zadat hodnotu customType, která obsahuje typ sestavení, které obsahuje implementaci **MessageFilter** , která se má použít pro tento filtr. Kromě toho musí fulltextových obsahovat všechny hodnoty, které může vlastní filtr vyžadovat při vyhodnocování zpráv. Následující příklad definuje `FilterElement` , který `CustomAssembly.MyCustomMsgFilter` používá implementaci MessageFilter.  
   
 ```xml  
 <filter name="custom1" filterType="Custom" customType="CustomAssembly.MyCustomMsgFilter, CustomAssembly" filterData="Custom Data" />  
@@ -90,10 +90,10 @@ StrictAndMessageFilter and1=new StrictAndMessageFilter(address1, action1);
 MyCustomMsgFilter custom1=new MyCustomMsgFilter("Custom Data");  
 ```  
   
- Pokud je potřeba provést vlastní logiku odpovídající proti zprávu, která není předmětem filtry, opatřeného [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], musíte vytvořit vlastní filtr, který je implementace **MessageFilter** třídy. Například může vytvořit vlastní filtr, který porovnává pole v příchozí zprávě seznam se známými hodnot na základě předané do filtru jako konfigurace, nebo se hashuje prvek konkrétní zprávy a zkontroluje tuto hodnotu k určení, zda filtr by měla vrátit `true` nebo `false`.  
+ Pokud potřebujete provést vlastní odpovídající logiku proti zprávě, která není pokryta filtry poskytnutými pomocí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], je nutné vytvořit vlastní filtr, který je implementací třídy **MessageFilter** . Můžete například vytvořit vlastní filtr, který porovná pole v příchozí zprávě se seznamem známých hodnot poskytnutým filtru jako konfigurací, nebo, který určí hodnotu hash konkrétního prvku zprávy, a pak prověřuje tuto hodnotu, abyste zjistili, zda filtr měla by `true` vracet `false`nebo.  
   
 ### <a name="endpointname"></a>EndpointName  
- Filtr Název_koncového_bodu kontroluje název koncového bodu, která se zobrazila zpráva. Následující příklad definuje `FilterElement` , který využívá filtr Název_koncového_bodu pro směrování zpráv byla přijata na "SvcEndpoint".  
+ Filtr koncového bodu kontroluje název koncového bodu, který zprávu přijal. Následující příklad definuje `FilterElement` , který používá filtr koncového bodu ke směrování zpráv přijatých na "SvcEndpoint".  
   
 ```xml  
 <filter name="name1" filterType="Endpoint" filterData="SvcEndpoint" />  
@@ -103,12 +103,12 @@ MyCustomMsgFilter custom1=new MyCustomMsgFilter("Custom Data");
 EndpointNameMessageFilter name1 = new EndpointNameMessageFilter("SvcEndpoint");  
 ```  
   
- Tento filtr je užitečný při směrovací služba poskytuje více než jeden koncový bod s názvem služby. Například může zveřejnit dva koncové body, které směrovací služba používá pro příjem zprávy. jeden používá priority zákazníci, kteří požadují zpracování jejich zpráv při jiný koncový bod v reálném čase přijímá zprávy, které nejsou citlivé na čas.  
+ Tento filtr je užitečný, když směrovací služba zveřejňuje více než jeden pojmenovaný koncový bod služby. Můžete například vystavit dva koncové body, které služba Směrování používá pro příjem zpráv. jednu používá přednostní zákazníci, kteří vyžadují zpracování svých zpráv v reálném čase, zatímco druhý koncový bod přijímá zprávy, které nejsou citlivé na čas.  
   
- I když můžete často použít úplnou adresu odpovídající k určení koncového bodu byla přijata zpráva, místo toho použít název definovaný koncový bod je pohodlný zástupce, který je často nižší náchylné k chybám, zejména při konfiguraci pomocí konfigurace služby Směrování soubor (kde názvy koncových bodů se požadovaný atribut).  
+ I když můžete často použít úplnou spárování adres k určení, který koncový bod přijal zprávu, je místo toho pohodlný zástupce, který je často méně náchylné k chybám, zejména při konfiguraci směrovací služby s použitím konfigurace. soubor (kde jsou požadovány názvy koncových bodů).  
   
 ### <a name="matchall"></a>MatchAll  
- MatchAll filtr hledá shodu ve všech přijaté zprávy. To je užitečné, pokud všechny přijaté zprávy musí vždy směrovat do určitého koncového bodu, jako je například protokolování služby, která ukládá jejich kopii všechny přijaté zprávy. Následující příklad definuje `FilterElement` , která používá MatchAll filtru.  
+ Filtr MatchAll odpovídá jakékoli přijaté zprávě. To je užitečné v případě, že musíte vždy směrovat všechny přijaté zprávy do konkrétního koncového bodu, například protokolovací služby, která ukládá kopii všech přijatých zpráv. Následující příklad definuje `FilterElement` , který používá filtr MatchAll.  
   
 ```xml  
 <filter name="matchAll1" filterType="MatchAll" />  
@@ -119,7 +119,7 @@ MatchAllMessageFilter matchAll1 = new MatchAllMessageFilter();
 ```  
   
 ### <a name="xpath"></a>XPath  
- Filtr XPath umožňuje zadat dotaz XPath, který se používá ke kontrole určitého prvku zprávy. Filtrování XPath je efektivní filtrování možnost, která umožňuje přímo zkontrolovat všechny adresovatelný položky XML do zprávy. ale vyžaduje, že máte specifické znalosti struktury zprávy, které jste dostali. Následující příklad definuje `FilterElement` filtr XPath, který používá ke kontrole zprávu pro element s názvem "element" v rámci oboru názvů odkazuje předponu oboru názvů "ns".  
+ Filtr XPath umožňuje zadat dotaz XPath, který se používá ke kontrole konkrétního prvku v rámci zprávy. Filtrování XPath je výkonné možnosti filtrování, které vám umožní přímo zkontrolovat v rámci zprávy jakoukoli položku, která je schopná adresovat kód XML. vyžaduje ale, abyste měli konkrétní znalosti struktury zpráv, které přijímáte. Následující příklad definuje `FilterElement` , který používá filtr XPath ke kontrole zprávy pro element s názvem "element" v oboru názvů, na který odkazuje předpona oboru názvů "NS".  
   
 ```xml  
 <filter name="xpath1" filterType="XPath" filterData="//ns:element" />  
@@ -129,11 +129,11 @@ MatchAllMessageFilter matchAll1 = new MatchAllMessageFilter();
 XPathMessageFilter xpath1=new XPathMessageFilter("//ns:element");  
 ```  
   
- Tento filtr je užitečný, pokud víte, že zprávy, které jste obdrželi, obsahují určitou hodnotu. Pokud hostujete dvě verze stejné služby a víte, že zprávy adresované na novější verzi služby obsahují jedinečnou hodnotu ve vlastní hlavičce, je třeba vytvořit filtr, který používá výraz XPath pro navigaci k této hlavičce a porovnává hodnotu stisknutím ent v záhlaví na jiný zadaný v konfiguraci filtr k určení, jestli tento filtr odpovídá.  
+ Tento filtr je užitečný, pokud víte, že zprávy, které přijímáte, obsahují konkrétní hodnotu. Pokud například používáte dvě verze stejné služby a víte, že zprávy adresované do novější verze služby obsahují ve vlastní hlavičce jedinečnou hodnotu, můžete vytvořit filtr, který používá XPath k přechodu na tuto hlavičku a porovná hodnotu pres. k určení, zda filtr odpovídá, můžete v hlavičce k druhému uvedenému v konfiguraci filtru.  
   
- Protože dotazy XPath často obsahovat jedinečný obory názvů, které jsou často dlouhé nebo komplexní řetězcové hodnoty filtr XPath vám umožní definovat jedinečný předpony pro obory názvů pomocí oboru názvů tabulky. Další informace o tabulce obor názvů, naleznete v tématu [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
+ Vzhledem k tomu, že dotazy XPath často obsahují jedinečné obory názvů, které jsou často dlouhé nebo složité řetězcové hodnoty, umožňuje filtr XPath definovat jedinečné předpony pro vaše obory názvů. Další informace o tabulce oboru názvů najdete v tématu [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
   
- Další informace o navrhování dotazů XPath, naleznete v tématu [syntaxi XPath](https://go.microsoft.com/fwlink/?LinkId=164592).  
+ Další informace o návrhu dotazů XPath naleznete v tématu [syntax XPath](https://go.microsoft.com/fwlink/?LinkId=164592).  
   
 ## <a name="see-also"></a>Viz také:
 
