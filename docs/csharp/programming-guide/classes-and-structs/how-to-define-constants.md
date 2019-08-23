@@ -5,28 +5,28 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: 5ef5e3622840e69175163461a06f6b0de31231f9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ba5bc3d03dcaf5c8be94936a453a439670e8dc1f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596897"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924478"
 ---
-# <a name="how-to-define-constants-in-c"></a><span data-ttu-id="bc768-102">Postupy: Definování konstant v jazyce C\#</span><span class="sxs-lookup"><span data-stu-id="bc768-102">How to: Define Constants in C\#</span></span>
-<span data-ttu-id="bc768-103">Konstanty jsou pole, jejichž hodnoty jsou nastaveny v době kompilace a nelze je nikdy změnit.</span><span class="sxs-lookup"><span data-stu-id="bc768-103">Constants are fields whose values are set at compile time and can never be changed.</span></span> <span data-ttu-id="bc768-104">Použijte konstanty k poskytnutí smysluplných názvů namísto číselných literálů ("Magic Numbers") pro speciální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="bc768-104">Use constants to provide meaningful names instead of numeric literals ("magic numbers") for special values.</span></span>  
+# <a name="how-to-define-constants-in-c"></a><span data-ttu-id="bf215-102">Postupy: Definování konstant v jazyce C\#</span><span class="sxs-lookup"><span data-stu-id="bf215-102">How to: Define Constants in C\#</span></span>
+<span data-ttu-id="bf215-103">Konstanty jsou pole, jejichž hodnoty jsou nastaveny v době kompilace a nelze je nikdy změnit.</span><span class="sxs-lookup"><span data-stu-id="bf215-103">Constants are fields whose values are set at compile time and can never be changed.</span></span> <span data-ttu-id="bf215-104">Použijte konstanty k poskytnutí smysluplných názvů namísto číselných literálů ("Magic Numbers") pro speciální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="bf215-104">Use constants to provide meaningful names instead of numeric literals ("magic numbers") for special values.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="bc768-105">V C# direktivě preprocesoru [#define](../../language-reference/preprocessor-directives/preprocessor-define.md) nelze použít k definování konstant způsobem, který se obvykle používá v C a C++.</span><span class="sxs-lookup"><span data-stu-id="bc768-105">In C# the [#define](../../language-reference/preprocessor-directives/preprocessor-define.md) preprocessor directive cannot be used to define constants in the way that is typically used in C and C++.</span></span>  
+> <span data-ttu-id="bf215-105">V C# direktivě preprocesoru [#define](../../language-reference/preprocessor-directives/preprocessor-define.md) nelze použít k definování konstant způsobem, který se obvykle používá v C a C++.</span><span class="sxs-lookup"><span data-stu-id="bf215-105">In C# the [#define](../../language-reference/preprocessor-directives/preprocessor-define.md) preprocessor directive cannot be used to define constants in the way that is typically used in C and C++.</span></span>  
   
- <span data-ttu-id="bc768-106">Pro definování konstantních hodnot integrálních typů`int`( `byte`, a tak dále) použijte Výčtový typ.</span><span class="sxs-lookup"><span data-stu-id="bc768-106">To define constant values of integral types (`int`, `byte`, and so on) use an enumerated type.</span></span> <span data-ttu-id="bc768-107">Další informace naleznete v tématu [Enum](../../language-reference/keywords/enum.md).</span><span class="sxs-lookup"><span data-stu-id="bc768-107">For more information, see [enum](../../language-reference/keywords/enum.md).</span></span>  
+ <span data-ttu-id="bf215-106">Pro definování konstantních hodnot integrálních typů`int`( `byte`, a tak dále) použijte Výčtový typ.</span><span class="sxs-lookup"><span data-stu-id="bf215-106">To define constant values of integral types (`int`, `byte`, and so on) use an enumerated type.</span></span> <span data-ttu-id="bf215-107">Další informace naleznete v tématu [Enum](../../language-reference/keywords/enum.md).</span><span class="sxs-lookup"><span data-stu-id="bf215-107">For more information, see [enum](../../language-reference/keywords/enum.md).</span></span>  
   
- <span data-ttu-id="bc768-108">Chcete-li definovat Neceločíselné konstanty, jedním z přístupů je seskupit do jedné statické třídy `Constants`s názvem.</span><span class="sxs-lookup"><span data-stu-id="bc768-108">To define non-integral constants, one approach is to group them in a single static class named `Constants`.</span></span> <span data-ttu-id="bc768-109">To bude vyžadovat, aby všechny odkazy na konstanty byly uvozeny názvem třídy, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="bc768-109">This will require that all references to the constants be prefaced with the class name, as shown in the following example.</span></span>  
+ <span data-ttu-id="bf215-108">Chcete-li definovat Neceločíselné konstanty, jedním z přístupů je seskupit do jedné statické třídy `Constants`s názvem.</span><span class="sxs-lookup"><span data-stu-id="bf215-108">To define non-integral constants, one approach is to group them in a single static class named `Constants`.</span></span> <span data-ttu-id="bf215-109">To bude vyžadovat, aby všechny odkazy na konstanty byly uvozeny názvem třídy, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="bf215-109">This will require that all references to the constants be prefaced with the class name, as shown in the following example.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="bc768-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="bc768-110">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="bf215-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="bf215-110">Example</span></span>  
  [!code-csharp[csProgGuideObjects#89](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#89)]  
   
- <span data-ttu-id="bc768-111">Použití kvalifikátoru názvu třídy pomáhá zajistit, aby vy a ostatní uživatelé používali konstantu, což znamená, že je konstantní a nelze ji upravit.</span><span class="sxs-lookup"><span data-stu-id="bc768-111">The use of the class name qualifier helps ensure that you and others who use the constant understand that it is constant and cannot be modified.</span></span>  
+ <span data-ttu-id="bf215-111">Použití kvalifikátoru názvu třídy pomáhá zajistit, aby vy a ostatní uživatelé používali konstantu, což znamená, že je konstantní a nelze ji upravit.</span><span class="sxs-lookup"><span data-stu-id="bf215-111">The use of the class name qualifier helps ensure that you and others who use the constant understand that it is constant and cannot be modified.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bc768-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc768-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bf215-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bf215-112">See also</span></span>
 
-- [<span data-ttu-id="bc768-113">Třídy a struktury</span><span class="sxs-lookup"><span data-stu-id="bc768-113">Classes and Structs</span></span>](./index.md)
+- [<span data-ttu-id="bf215-113">Třídy a struktury</span><span class="sxs-lookup"><span data-stu-id="bf215-113">Classes and Structs</span></span>](./index.md)

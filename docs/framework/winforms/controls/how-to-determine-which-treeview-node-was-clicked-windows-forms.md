@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)'
+title: 'Postupy: Určit, na který uzel TreeView se kliknul (model Windows Forms)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,21 +12,21 @@ helpviewer_keywords:
 - tree nodes in TreeView control [Windows Forms], determining node clicked
 - TreeView control [Windows Forms], determining node clicked
 ms.assetid: 06a4a191-d918-42af-9f49-956c93eff261
-ms.openlocfilehash: 71f13c7b160822c92475d4d03e923b40d4f0454d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab93158daf987e2f19516b8fb3abf80bfe79a12c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771043"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967333"
 ---
-# <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a><span data-ttu-id="2add1-102">Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="2add1-102">How to: Determine Which TreeView Node Was Clicked (Windows Forms)</span></span>
-<span data-ttu-id="2add1-103">Při práci s formuláři Windows <xref:System.Windows.Forms.TreeView> ovládacího prvku, běžné úlohy je určit došlo ke kliknutí na který uzel a reagují odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="2add1-103">When working with the Windows Forms <xref:System.Windows.Forms.TreeView> control, a common task is to determine which node was clicked, and respond appropriately.</span></span>  
+# <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a><span data-ttu-id="d714c-102">Postupy: Určit, na který uzel TreeView se kliknul (model Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="d714c-102">How to: Determine Which TreeView Node Was Clicked (Windows Forms)</span></span>
+<span data-ttu-id="d714c-103">Při práci s ovládacím prvkem <xref:System.Windows.Forms.TreeView> model Windows Forms je běžnou úlohou určit, na který uzel byl kliknuto, a odpovídajícím způsobem reagovat.</span><span class="sxs-lookup"><span data-stu-id="d714c-103">When working with the Windows Forms <xref:System.Windows.Forms.TreeView> control, a common task is to determine which node was clicked, and respond appropriately.</span></span>  
   
-### <a name="to-determine-which-treeview-node-was-clicked"></a><span data-ttu-id="2add1-104">K určení uzlu TreeView označeného kliknutím</span><span class="sxs-lookup"><span data-stu-id="2add1-104">To determine which TreeView node was clicked</span></span>  
+### <a name="to-determine-which-treeview-node-was-clicked"></a><span data-ttu-id="d714c-104">Určení, který uzel TreeView byl kliknuto</span><span class="sxs-lookup"><span data-stu-id="d714c-104">To determine which TreeView node was clicked</span></span>  
   
-1. <span data-ttu-id="2add1-105">Použití <xref:System.EventArgs> objekt vrací odkaz na objekt kliknutí na uzel.</span><span class="sxs-lookup"><span data-stu-id="2add1-105">Use the <xref:System.EventArgs> object to return a reference to the clicked node object.</span></span>  
+1. <span data-ttu-id="d714c-105"><xref:System.EventArgs> Pomocí objektu vraťte odkaz na kliknuto na objekt uzlu.</span><span class="sxs-lookup"><span data-stu-id="d714c-105">Use the <xref:System.EventArgs> object to return a reference to the clicked node object.</span></span>  
   
-2. <span data-ttu-id="2add1-106">Určit, který uzel došlo ke kliknutí na kontrolou <xref:System.Windows.Forms.TreeViewEventArgs> třídu, která obsahuje data týkající se události.</span><span class="sxs-lookup"><span data-stu-id="2add1-106">Determine which node was clicked by checking the <xref:System.Windows.Forms.TreeViewEventArgs> class, which contains data related to the event.</span></span>  
+2. <span data-ttu-id="d714c-106">Určete, na který uzel byl kliknuto, <xref:System.Windows.Forms.TreeViewEventArgs> kontrolou třídy, která obsahuje data související s událostí.</span><span class="sxs-lookup"><span data-stu-id="d714c-106">Determine which node was clicked by checking the <xref:System.Windows.Forms.TreeViewEventArgs> class, which contains data related to the event.</span></span>  
   
     ```vb  
     Private Sub TreeView1_AfterSelect(ByVal sender As System.Object, _  
@@ -56,8 +56,8 @@ ms.locfileid: "61771043"
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="2add1-107">Jako alternativu můžete použít <xref:System.Windows.Forms.MouseEventArgs> z <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.MouseUp> událostí zobrazíte <xref:System.Drawing.Point.X%2A> a <xref:System.Drawing.Point.Y%2A> koordinovat hodnoty <xref:System.Drawing.Point> kde došlo k kliknutím na.</span><span class="sxs-lookup"><span data-stu-id="2add1-107">As an alternative, you can use the <xref:System.Windows.Forms.MouseEventArgs> of the <xref:System.Windows.Forms.Control.MouseDown> or <xref:System.Windows.Forms.Control.MouseUp> event to get the <xref:System.Drawing.Point.X%2A> and <xref:System.Drawing.Point.Y%2A> coordinate values of the <xref:System.Drawing.Point> where the click occurred.</span></span> <span data-ttu-id="2add1-108">Potom použijte <xref:System.Windows.Forms.TreeView> ovládacího prvku <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metodou ke zjištění, který uzel došlo ke kliknutí na.</span><span class="sxs-lookup"><span data-stu-id="2add1-108">Then, use the <xref:System.Windows.Forms.TreeView> control's <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> method to determine which node was clicked.</span></span>  
+    > <span data-ttu-id="d714c-107">Jako alternativu můžete <xref:System.Windows.Forms.MouseEventArgs> použít <xref:System.Windows.Forms.Control.MouseDown> událost <xref:System.Windows.Forms.Control.MouseUp> <xref:System.Drawing.Point.Y%2A> <xref:System.Drawing.Point> nebo a získat tak hodnoty asouřadnici,kdesekliknutíobjevilo.<xref:System.Drawing.Point.X%2A></span><span class="sxs-lookup"><span data-stu-id="d714c-107">As an alternative, you can use the <xref:System.Windows.Forms.MouseEventArgs> of the <xref:System.Windows.Forms.Control.MouseDown> or <xref:System.Windows.Forms.Control.MouseUp> event to get the <xref:System.Drawing.Point.X%2A> and <xref:System.Drawing.Point.Y%2A> coordinate values of the <xref:System.Drawing.Point> where the click occurred.</span></span> <span data-ttu-id="d714c-108">Poté pomocí <xref:System.Windows.Forms.TreeView> <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metody ovládacího prvku určete, který uzel byl kliknuto.</span><span class="sxs-lookup"><span data-stu-id="d714c-108">Then, use the <xref:System.Windows.Forms.TreeView> control's <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> method to determine which node was clicked.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2add1-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2add1-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d714c-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d714c-109">See also</span></span>
 
-- [<span data-ttu-id="2add1-110">Ovládací prvek TreeView</span><span class="sxs-lookup"><span data-stu-id="2add1-110">TreeView Control</span></span>](treeview-control-windows-forms.md)
+- [<span data-ttu-id="d714c-110">Ovládací prvek TreeView</span><span class="sxs-lookup"><span data-stu-id="d714c-110">TreeView Control</span></span>](treeview-control-windows-forms.md)
