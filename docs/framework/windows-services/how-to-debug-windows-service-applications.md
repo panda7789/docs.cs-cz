@@ -9,75 +9,75 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 1abb64f7d76b772168ed97024f5f1381670c6882
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 27f75ea274cfdffc85a997a40b3dcfcafb7c9b1c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914066"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952447"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
-Služba musí být spuštěna v rámci kontextu správce řízení služeb spíše než v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak přímočaré jako ladění jiných typů aplikací Visual Studio. Chcete-li ladit službu, musíte spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěná. Potom můžete ladit svoji aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
+Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak jednoduché jako ladění jiných typů aplikací sady Visual Studio. Chcete-li ladit službu, je nutné spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěna. Pak můžete ladit aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
   
 > [!CAUTION]
->  Byste neměli připojovat k procesu, pokud si nejste jisti, co proces je a nerozumíte jeho následkům připojením a pravděpodobně tento proces se ruší. Například pokud jste se připojit k procesu přihlašování do systému Windows a poté zastavte ladění, systém bude pozastaven, protože nemůže pracovat bez přihlašování do systému Windows.  
+>  K procesu se nemusíte připojovat, Pokud nevíte, co proces je, a porozumět důsledkům připojení a případně usmrcení tohoto procesu. Například pokud se připojíte k procesu WinLogon a pak zastavíte ladění, systém se zastaví, protože nemůže pracovat bez procesu WinLogon.  
   
- Ladicí program lze připojit pouze ke spuštěné službě. Proces připojení přeruší aktuální fungování služby; není ve skutečnosti nezastaví ani nepozastaví zpracování služby. To znamená pokud vaše služba je spuštěna při zahájení ladění, je technicky vzato stále ve stavu spuštěno jako ladění, ale jeho zpracování bylo pozastaveno.  
+ Ladicí program lze připojit pouze ke spuštěné službě. Proces přílohy přerušuje aktuální fungování vaší služby. ve skutečnosti se nezastaví nebo nezastaví zpracování služby. To znamená, že pokud vaše služba běží při zahájení ladění, je při ladění stále technicky ve stavu spuštěno, ale jeho zpracování bylo pozastaveno.  
   
- Po připojení k procesu, můžete nastavit zarážky a tyto použít k ladění kódu. Jakmile ukončíte dialogové okno, které slouží k připojení k procesu, jste skutečně v režimu ladění. Správce řízení služeb můžete použít pro spuštění, zastavení, pozastavení a pokračování ve službě a tím zasáhnutím zarážek, které jste nastavili. Tuto fiktivní službu můžete později odeberete po úspěšném ladění.  
+ Po připojení k procesu můžete nastavit zarážky a použít je k ladění kódu. Po zavření dialogového okna, které použijete k připojení k procesu, budete efektivně v režimu ladění. Správce řízení služeb můžete použít ke spuštění, zastavení, pozastavení a pokračování služby, čímž se zastaví zarážky, které jste nastavili. Po úspěšném ladění můžete tuto fiktivní službu odebrat později.  
   
- Tento článek se týká ladění služby, na kterém běží na místním počítači, ale můžete také ladit službách Windows, které jsou spuštěné ve vzdáleném počítači. Zobrazit [vzdálené ladění](/visualstudio/debugger/debug-installed-app-package).  
+ Tento článek popisuje ladění služby spuštěné v místním počítači, ale můžete také ladit služby systému Windows, které jsou spuštěny na vzdáleném počítači. Viz téma [vzdálené ladění](/visualstudio/debugger/debug-installed-app-package).  
   
 > [!NOTE]
->  Ladění <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda může být obtížné, protože správce řízení služeb má omezení 30 sekundách na všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+> <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Ladění metody může být obtížné, protože správce řízení služeb má za následek limit 30 sekund pro všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md)systému Windows.  
   
 > [!WARNING]
->  Chcete-li získat důležité informace pro ladění, ladicího programu sady Visual Studio potřebuje k vyhledání souborů symbolů pro binární soubory, které jsou právě laděny. Pokud ladíte službu, kterou jste vytvořili v sadě Visual Studio, jsou soubory symbolů (soubory PDB) ve stejné složce jako knihovna nebo spustitelný soubor a automaticky ladicí program je načte. Pokud ladíte služba, která se nepovedlo vytvořit, musí nejprve najít symboly pro službu a ujistěte se, že jsou dostupné pomocí ladicího programu. Zobrazit [zadání symbolu (.pdb) a zdrojové soubory v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Zobrazit [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
+>  Chcete-li získat smysluplné informace pro ladění, ladicí program sady Visual Studio potřebuje najít soubory symbolů pro binární soubory, které jsou laděny. Pokud ladíte službu, kterou jste vytvořili v aplikaci Visual Studio, soubory symbolů (soubory. pdb) jsou ve stejné složce jako spustitelný soubor nebo knihovna a ladicí program je načte automaticky. Pokud ladíte službu, kterou jste nesestavili, měli byste nejprve vyhledat symboly pro službu a ověřit, zda je lze najít pomocí ladicího programu. Viz [určení symbolu (. pdb) a zdrojových souborů v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Viz [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
   
 ### <a name="to-debug-a-service"></a>Ladění služby  
   
-1. Vytvoření služby v konfiguraci ladění.  
+1. Sestavte službu v konfiguraci ladění.  
   
-2. Nainstalujte svoji službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+2. Nainstalujte svoji službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)služby.  
   
-3. Spusťte službu buď ze **správce řízení služeb**, **Průzkumníka serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md).  
+3. Spusťte službu, buď ze **správce řízení služeb**, **Průzkumník serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spusťte služby](../../../docs/framework/windows-services/how-to-start-services.md).  
   
-4. Spuštění sady Visual Studio s přihlašovacími údaji správce, takže se můžete připojit k systémovým procesům.  
+4. Spusťte Visual Studio s přihlašovacími údaji správce, abyste se mohli připojit k systémovým procesům.  
   
-5. (Volitelné) Na řádku nabídek sady Visual Studio, zvolte **nástroje**, **možnosti**. V **možnosti** dialogového okna zvolte **ladění**, **symboly**, vyberte **Microsoft Symbol Servers** zaškrtněte políčko a klikněte na tlačítko **OK** tlačítko.  
+5. Volitelné Na řádku nabídek sady Visual Studio vyberte **nástroje**, **Možnosti**. V dialogovém okně **Možnosti** zvolte možnost **ladění**, **symboly**, zaškrtněte políčko **Microsoft Symbol Servers** a pak klikněte na tlačítko **OK** .  
   
-6. V panelu nabídky zvolte **připojit k procesu** z **ladění** nebo **nástroje** nabídky. (Klávesnice: Ctrl+Alt+P)  
+6. Na panelu nabídek vyberte v nabídce **ladit** nebo **nástroje** možnost **připojit k procesu** . Kombinace CTRL + ALT + P)  
   
-     **Procesy** zobrazí se dialogové okno.  
+     Zobrazí se dialogové okno **procesy** .  
   
-7. Vyberte **Zobrazit procesy všech uživatelů** zaškrtávací políčko.  
+7. Zaškrtněte políčko **Zobrazit procesy všech uživatelů** .  
   
-8. V **procesy k dispozici** části, vyberte proces pro vaši službu a pak zvolte **připojit**.  
+8. V části **Dostupné procesy** zvolte proces pro vaši službu a pak zvolte **připojit**.  
   
     > [!TIP]
-    >  Proces bude mít stejný název jako spustitelný soubor pro vaši službu.  
+    >  Tento proces bude mít stejný název jako spustitelný soubor pro vaši službu.  
   
      **Připojit k procesu** zobrazí se dialogové okno.  
   
-9. Vyberte příslušné možnosti a klikněte na tlačítko **OK** zavřete dialogové okno.  
+9. Zvolte příslušné možnosti a pak kliknutím na **tlačítko OK** zavřete dialogové okno.  
   
     > [!NOTE]
-    >  Nyní jste v režimu ladění.  
+    > Nyní jste v režimu ladění.  
   
-10. Nastavte všechny zarážky, které chcete použít ve vašem kódu.  
+10. Nastavte všechny zarážky, které chcete použít ve svém kódu.  
   
-11. Přístup ke správci řízení služeb a manipulaci s vaší služby, zastavení odesílání, pozastavení a pokračovat příkazy, aby narazily na zarážky. Další informace o spuštění Správce řízení služeb, naleznete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md). Viz také [řešení potíží: Ladění služeb Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+11. Přístup ke Správci řízení služeb a manipulaci se službou, odesílání příkazů zastavit, pozastavit a pokračovat, aby byly zasaženy vaše zarážky. Další informace o spuštění Správce řízení služeb naleznete v tématu [How to: Spusťte služby](../../../docs/framework/windows-services/how-to-start-services.md). Přečtěte si [také téma řešení potíží: Ladění služeb](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md)systému Windows.  
   
-## <a name="debugging-tips-for-windows-services"></a>Tipy pro ladění pro služby Windows  
- Připojení k procesu služby umožňuje ladit nejvíce, ale ne všechny kód za danou službu. Například protože služba již byla spuštěna, nelze ladit kód v služby <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody nebo kód v `Main` metodu, která slouží k zavedení služby tímto způsobem. Jedním ze způsobů, chcete-li toto omezení je vytvořit dočasnou druhou službu v aplikaci služby, která existuje pouze pro ladění. Můžete nainstalovat obě služby a potom spusťte tuto fiktivní službu k načtení procesu služby. Jakmile dočasná služba spustí proces, můžete použít **ladění** nabídky v sadě Visual Studio se připojit k procesu služby.  
+## <a name="debugging-tips-for-windows-services"></a>Tipy pro ladění pro služby systému Windows  
+ Připojení k procesu služby vám umožní ladit většinu, ale ne vše, kód pro tuto službu. Například vzhledem k tomu, že služba již byla spuštěna, nelze ladit kód v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodě služby nebo kód `Main` v metodě, která slouží k načtení služby tímto způsobem. Jedním ze způsobů, jak toto omezení obejít, je vytvořit dočasnou druhou službu ve vaší aplikaci služby, která existuje jenom k podpoře ladění. Můžete nainstalovat obě služby a potom spustit tuto fiktivní službu pro načtení procesu služby. Jakmile dočasná služba spustí proces, můžete použít nabídku **ladit** v aplikaci Visual Studio k připojení k procesu služby.  
   
- Pokuste se přidat volání <xref:System.Threading.Thread.Sleep%2A> metodu pro akci zpoždění, dokud se vám nedaří připojit k procesu.  
+ Zkuste přidat volání do <xref:System.Threading.Thread.Sleep%2A> metody pro zpoždění akce, dokud se nebudete moct připojit k procesu.  
   
- Zkuste zobrazení změnit program regulární konzolové aplikace. Chcete-li to provést, přepište `Main` metodu následujícím způsobem, takže může běžet jako služba Windows i konzolovou aplikaci, v závislosti na tom, jak je spuštěno.  
+ Zkuste změnit program na běžnou konzolovou aplikaci. Pokud to chcete provést, přepište `Main` metodu následujícím způsobem, aby ji bylo možné spustit jak jako službu systému Windows, tak jako konzolovou aplikaci v závislosti na tom, jak je spuštěna.  
   
-#### <a name="how-to-run-a-windows-service-as-a-console-application"></a>Postupy: Spuštění služby Windows jako konzolové aplikace  
+#### <a name="how-to-run-a-windows-service-as-a-console-application"></a>Postupy: Spuštění služby systému Windows jako konzolové aplikace  
   
-1. Přidejte metodu k službě, na kterém běží <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody:  
+1. Přidejte do služby metodu, která spouští <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody a: <xref:System.ServiceProcess.ServiceBase.OnStop%2A>  
   
     ```csharp  
     internal void TestStartupAndStop(string[] args)  
@@ -88,7 +88,7 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
     }  
     ```  
   
-2. Přepsání `Main` metodu následujícím způsobem:  
+2. Přepište `Main` metodu následujícím způsobem:  
   
     ```csharp  
     static void Main(string[] args)  
@@ -105,17 +105,17 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
     }
     ```  
   
-3. V **aplikace** karta Vlastnosti projektu, nastavte **typ výstupu** k **konzolovou aplikaci**.  
+3. Na kartě **aplikace** vlastností projektu nastavte **Typ výstupu** na **konzolovou aplikaci**.  
   
-4. Zvolte **spustit ladění** (F5).  
+4. Vyberte možnost **Spustit ladění** (F5).  
   
-5. Znovu spustit program jako službu Windows, nainstalujte ji a spusťte jej jako obvykle pro službu Windows. Není nutné tyto změny vrátit.  
+5. Chcete-li program znovu spustit jako službu systému Windows, nainstalujte jej a spusťte jej obvyklým způsobem pro službu systému Windows. Nemusíte tyto změny měnit.  
   
- V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program Windows. [Stáhněte si Windows Driver Kit (WDK)](/windows-hardware/drivers/download-the-wdk) uvidíme [jak ladit služby Windows](https://support.microsoft.com/kb/824344).  
+ V některých případech, například pokud chcete ladit problém, ke kterému dochází pouze při spuštění systému, je nutné použít ladicí program systému Windows. [Stáhněte si sadu Windows Driver Kit (WDK)](/windows-hardware/drivers/download-the-wdk) a podívejte se, [jak ladit služby systému Windows](https://support.microsoft.com/kb/824344).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
-- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Spustit služby](../../../docs/framework/windows-services/how-to-start-services.md)
 - [Ladění služby](/windows/desktop/Services/debugging-a-service)

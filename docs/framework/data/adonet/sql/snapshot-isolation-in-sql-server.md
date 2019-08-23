@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 0ff89f2d5ffa177b9413f6a2925bb05729e053a3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9f9dfd4f1f299817aa424716aac4408a0b77a240
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592900"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958012"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL Serveru
-Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním transakcí.  
+Izolace snímků vylepšuje souběžnost pro aplikace OLTP.  
   
-## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Principy izolaci snímku a správy verzí řádku  
- Jakmile je povolena izolace snímku, verze aktualizovaný řádek pro každou transakci jsou zachována ve **tempdb**. Pořadové číslo jedinečný transakce identifikuje každou transakci a Tato jedinečná čísla jsou zaznamenány pro každou verzi řádku. Transakce funguje s nejnovější verze řádků s pořadovým číslem než pořadové číslo transakce. Novější verze řádků po zahájení transakce jsou ignorovány transakcí.  
+## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Principy izolace snímků a správy verzí řádků  
+ Po povolení izolace snímku se v **databázi tempdb**uchovávají aktualizované verze řádků pro každou transakci. Jedinečné pořadové číslo transakce identifikuje každou transakci a tato jedinečná čísla se zaznamenávají pro každou verzi řádku. Transakce funguje s nejnovějšími verzemi řádků, které mají pořadové číslo před pořadovým číslem transakce. Novější verze řádků vytvořené po zahájení transakce jsou transakce ignorovány.  
   
- Termín "snímku" odráží fakt, že všechny dotazy v transakci naleznete v tématu stejnou verzi nebo snímek databáze, na základě stavu databáze v okamžiku v čase zahájení transakce. Žádné zámky pořízené na základní řádky dat nebo datových stránek v transakci snímku, která umožňuje ostatní transakce provést bez blokována předchozí nedokončené transakce. Transakcí, které upravují data neblokují transakcí, které načítají data a transakcí, které načítají data neblokují transakcí, které budou zapisovat data, jako obvykle zadají v části výchozí úrovní izolace READ COMMITTED v systému SQL Server. Toto chování neblokující také významně snižuje pravděpodobnost, že zablokování pro složité transakce.  
+ Pojem "snímek" odráží skutečnost, že všechny dotazy v transakci jsou ve stejné verzi nebo snímku databáze, na základě stavu databáze v okamžiku, kdy transakce začíná. Na podkladové datové řádky nebo datové stránky v transakci snímku se nezískávají žádné zámky, což umožňuje provádět jiné transakce bez zablokování předchozí nedokončená transakce. Transakce, které upravují data, neblokují transakce, které čtou data, a transakce, které čtou data, neblokují transakce, které zapisují data, protože normálně mají pod výchozí úroveň izolace POTVRZENé pro čtení v SQL Server. Toto neblokující chování také významně snižuje pravděpodobnost zablokování pro komplexní transakce.  
   
- Izolace snímku používá model optimistického řízení souběžnosti. Pokud transakce snímku se pokusí o potvrzení změny dat, které se změnily od zahájení transakce, transakce se vrátit zpět a bude vyvolána k chybě. Tomu lze zabránit pomocí UPDLOCK tipů pro příkazy SELECT, které přístup k datům, která má být upraven. Další informace naleznete v tématu "Pomocné parametry zámku" SQL Server Books Online.  
+ Izolace snímku používá optimistický model souběžnosti. Pokud se transakce snímku pokusí potvrdit změny dat, která se změnila od zahájení transakce, transakce se vrátí zpět a bude vyvolána chyba. K tomu se můžete vyhnout použitím UPDLOCK tipů pro příkazy SELECT, které přistupují k datům, která se mají upravit. Další informace najdete v tématu věnovaném přepínacím pokynům na webu SQL Server Books Online.  
   
- Nastavením je možnost databáze dále ALLOW_SNAPSHOT_ISOLATION předtím, než je použit v transakcích musí být povolena izolace snímku. Tím dojde k aktivaci mechanismus pro ukládání verze řádků v dočasné databázi (**tempdb**). Je nutné povolit izolaci snímku v každé databázi, která používá s příkazem jazyka Transact-SQL ALTER DATABASE. Izolace snímku se v tomto ohledu liší od úrovně tradiční izolace READ COMMITTED, REPEATABLE READ, SERIALIZABLE a READ UNCOMMITTED, které není potřeba konfigurovat. Následující příkazy aktivovat izolaci snímku a nahraďte výchozí chování READ COMMITTED SNAPSHOT:  
+ Aby bylo možné použít izolaci snímku, musí být povoleno nastavení možnosti ALLOW_SNAPSHOT_ISOLATION ON Database, než se použije v transakcích. Tím se aktivuje mechanismus pro ukládání verzí řádků v dočasné databázi (**tempdb**). Je nutné povolit izolaci snímku v každé databázi, která ji používá, pomocí příkazu Transact-SQL ALTER DATABASE. V tomto ohledu se izolace snímku liší od tradičních úrovní izolace, které jsou POTVRZENé, je nutné je znovu načíst, SERIALIZOVAT a číst nepotvrzené, které nevyžadují žádnou konfiguraci. Následující příkazy aktivují izolaci snímků a nahradí výchozí chování při čtení pomocí snímku:  
   
 ```sql  
 ALTER DATABASE MyDatabase  
@@ -32,51 +32,51 @@ ALTER DATABASE MyDatabase
 SET READ_COMMITTED_SNAPSHOT ON  
 ```  
   
- Pod úrovní izolace READ COMMITTED výchozí nastavení možnost READ_COMMITTED_SNAPSHOT dále umožňuje přístup k řádkům. Pokud je možnost READ_COMMITTED_SNAPSHOT nastavena na hodnotu OFF, musíte explicitně nastavit úroveň izolace snímku pro každou relaci za účelem přístupu k řádkům.  
+ Nastavení možnosti READ_COMMITTED_SNAPSHOT ON povolí přístup k řádkům s verzí pod výchozí úrovní izolace READ. Pokud je možnost READ_COMMITTED_SNAPSHOT nastavena na vypnuto, je nutné explicitně nastavit úroveň izolace snímku pro každou relaci, aby bylo možné přistupovat k řádkům se správou verzí.  
   
-## <a name="managing-concurrency-with-isolation-levels"></a>Správa souběžnosti s úrovní izolace  
- Úroveň izolace, pod kterým provádí příkaz jazyka Transact-SQL určuje jeho verzí chování zámku a řádek. Úroveň izolace má připojení oboru a po nastavení připojení pomocí příkazu nastavte úroveň izolace transakce, zůstává v platnosti, dokud se připojení uzavře nebo nastavte jinou úroveň izolace. Při zavření připojení a vrácen do fondu se uchovávají úroveň izolace z posledního příkazu nastavte úroveň izolace transakce. Další připojení, opětovné použití použití připojení z fondu, který je ve fondu úroveň izolace, která je v platnosti v době připojení.  
+## <a name="managing-concurrency-with-isolation-levels"></a>Správa souběžnosti s úrovněmi izolace  
+ Úroveň izolace, pod kterou se spouští příkaz jazyka Transact-SQL, určuje chování při zamykání a nastavování řádků. Úroveň izolace má rozsah pro celé připojení a po nastavení připojení pomocí příkazu nastavit úroveň izolace transakce zůstane v platnosti, dokud nebude připojení uzavřeno nebo nastavena jiná úroveň izolace. Když je připojení ukončeno a vráceno do fondu, bude zachována úroveň izolace z poslední NASTAVENé úrovně izolace transakce. Následná připojení, která znovu používají sdružené připojení, používají úroveň izolace, která byla platná v době, kdy je připojení ve fondu.  
   
- Jednotlivé dotazy odeslané v rámci určitého připojení může obsahovat pomocné parametry zámku, která upravit izolaci pro jeden příkaz nebo transakce, ale nemají vliv na úroveň izolace připojení. Úrovně izolace nebo pomocné parametry zámku nastavit uložené procedury nebo funkce neměňte úroveň izolace, která je volá připojení a jsou platné jenom po dobu trvání volání uložené procedury nebo funkce.  
+ Jednotlivé dotazy vydané v rámci připojení mohou obsahovat pomocný parametr zámku, který mění izolaci pro jeden příkaz nebo transakci, ale nemá vliv na úroveň izolace připojení. Úrovně izolace nebo pomocného parametru zámku nastavené v uložených procedurách nebo funkcích nemění úroveň izolace připojení, která je volá a jsou platné pouze pro dobu trvání uložené procedury nebo volání funkce.  
   
- Čtyři úrovně izolace definované ve standardu SQL 92 byly podporované v dřívějších verzích systému SQL Server:  
+ V počátečních verzích SQL Server byly podporovány čtyři úrovně izolace definované ve standardu SQL-92:  
   
-- READ UNCOMMITTED se nejméně omezující úroveň izolace, protože ignoruje zámků jinými transakcemi. Provádění v rámci čtení NEPOTVRZENÉ transakce může číst změny datových hodnot, které nebyly dosud byla potvrzena dalšími transakcemi; ty se nazývají "hrubé" čtení.  
+- ČTENÍ nepotvrzené je nejméně omezující úroveň izolace, protože ignoruje zámky, které jsou umístěny v jiných transakcích. Transakce spouštěné v nepotvrzené čtení mohou číst změněné hodnoty dat, které ještě nebyly potvrzeny jinými transakcemi. Tyto možnosti se nazývají "nečistých" čtení.  
   
-- READ COMMITTED je výchozí úroveň izolace pro SQL Server. Ta brání nepřesné tak, že určíte, že příkazy nemůže číst hodnoty dat, které byla upravena, ale ještě nebyla potvrzena dalšími transakcemi. Ostatní transakce stále můžete změnit, vložení nebo odstranění dat mezi spuštěními jednotlivé příkazy v rámci aktuální transakce, což vede k-opakovatelné operace čtení nebo "fiktivní" data.  
+- Hodnota čtení POTVRZENá je výchozí úroveň izolace pro SQL Server. Zabraňuje nečistým čtením zadáním, že příkazy nemohou číst hodnoty dat, které byly změněny, ale nebyly dosud potvrzeny jinými transakcemi. Jiné transakce mohou i nadále upravovat, vkládat nebo odstraňovat data mezi prováděním jednotlivých příkazů v rámci aktuální transakce, což vede k tomu, že neopakuje čtení nebo "fiktivní" data.  
   
-- REPEATABLE READ je více omezující úroveň izolace než READ COMMITTED. Zahrnuje potvrzené pro čtení a kromě toho určuje, že žádné další transakce můžete upravit nebo odstranit data, která byla načtena pomocí aktuální transakce dokud aktuální transakce potvrzena. Souběžnost je nižší než pro čtení potvrzené, protože sdílené na čtení dat zámky po dobu trvání transakce místo se vydávají na konci každého příkazu.  
+- OPAKOVATELNOST čtení je přísnější úroveň izolace než čtení POTVRZENé. Zahrnuje potvrzování čtení a dále určuje, že žádné jiné transakce nemohou upravovat nebo odstraňovat data, která byla přečtena aktuální transakcí, dokud aktuální transakce neproběhne. Souběžnost je nižší než pro čtení POTVRZENé, protože sdílené zámky při čtení dat jsou uchovávány po dobu trvání transakce namísto uvolnění na konci každého příkazu.  
   
-- SERIALIZOVATELNÝ je nejvíce omezující úroveň izolace, protože uzamkne celých rozsahů klíče a až do dokončení transakce obsahuje zámky. Zahrnuje OPAKOVATELNÉ čtení a přidá omezení, ostatní transakce nelze vložit nové řádky do oblastí, které byly načteny transakce až do dokončení transakce.  
+- SERIALIZOVATELNÝ je nejvyšší omezující úroveň izolace, protože zamkne celé rozsahy klíčů a drží zámky, dokud transakce není dokončena. Zahrnuje opakované čtení a přidává omezení, které ostatní transakce nemohou vkládat nové řádky do rozsahů, které transakce četly, dokud transakce není dokončena.  
   
- Další informace najdete [průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide).  
+ Další informace najdete v [Průvodci zámkem transakcí a správou verzí řádků](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide).  
   
-### <a name="snapshot-isolation-level-extensions"></a>Rozšíření úrovni izolace snímku  
- SQL Server zavádí rozšíření na úrovních izolace SQL 92 s po zavedení služby na úrovni izolace SNÍMKU a další provádění READ COMMITTED. Úroveň izolace READ_COMMITTED_SNAPSHOT můžete transparentně nahradit READ COMMITTED pro všechny transakce.  
+### <a name="snapshot-isolation-level-extensions"></a>Rozšíření úrovně izolace snímku  
+ SQL Server zavedla rozšíření na úrovně izolace SQL-92 s představením úrovně izolace snímku a další implementace pro čtení POTVRZENá. Úroveň izolace READ_COMMITTED_SNAPSHOT může transparentně nahradit POTVRZENé čtení pro všechny transakce.  
   
-- Izolace SNÍMKU Určuje, že data načtená v rámci transakce nikdy odrážejí změny provedené jinými souběžných transakcemi. Transakce používá verze řádků dat, které existují při zahájení transakce. Žádné zámky jsou umístěny na data při je pro čtení, takže transakcí SNÍMKŮ neblokují ostatní transakce od vytváření dat. Transakcí, které zápis dat nedochází k blokování transakcí snímků z dat pro čtení. Je potřeba povolit izolaci snímku nastavením možnosti ALLOW_SNAPSHOT_ISOLATION databáze použít.  
+- Izolace snímků určuje, že data přečtená v rámci transakce nikdy nereflektují změny provedené jinými souběžnými transakcemi. Transakce používá verze datových řádků, které existují při zahájení transakce. Při čtení nejsou do dat vloženy žádné zámky, takže transakce snímků neblokují žádné další transakce v zápisu dat. Transakce, které zapisují data, neblokují transakce snímků od čtení dat. Je nutné povolit izolaci snímků nastavením možnosti databáze ALLOW_SNAPSHOT_ISOLATION, aby ji bylo možné použít.  
   
-- Možnost databáze READ_COMMITTED_SNAPSHOT určuje chování výchozí úroveň izolace READ COMMITTED, pokud je povolena izolace snímku v databázi. Pokud možnost READ_COMMITTED_SNAPSHOT ON není explicitně zadán, READ COMMITTED platí pro všechny implicitní transakce. To vytváří stejné chování jako nastavení READ_COMMITTED_SNAPSHOT vypnuto (výchozí). Když READ_COMMITTED_SNAPSHOT vypnout je v platnosti, databázový stroj používá sdílené uzamčení k vynucení výchozí úroveň izolace. Pokud nastavíte možnost databáze READ_COMMITTED_SNAPSHOT na ON, databázový stroj řádek správy verzí a snímek izolace použije jako výchozí, místo použití zámků k ochraně dat.  
+- Možnost databáze READ_COMMITTED_SNAPSHOT určuje chování výchozí úrovně izolace při čtení v případě, že je v databázi povolená izolace snímku. Pokud explicitně neurčíte READ_COMMITTED_SNAPSHOT, použije se pro všechny implicitní transakce čtení POTVRZENé. To přináší stejné chování jako nastavení READ_COMMITTED_SNAPSHOT vypnuto (výchozí nastavení). Pokud je aktivní READ_COMMITTED_SNAPSHOT, databázový stroj používá ke vykonání výchozí úrovně izolace sdílené zámky. Pokud nastavíte možnost databáze READ_COMMITTED_SNAPSHOT na ZAPNUTo, databázový stroj použije jako výchozí izolaci verzí řádků a jako výchozí místo používání zámků k ochraně dat.  
   
-## <a name="how-snapshot-isolation-and-row-versioning-work"></a>Jak snímek izolace a řádek pracovní správy verzí  
- Pokud je povolena úroveň izolace SNÍMKU, pokaždé, když se aktualizuje řádek, databázový stroj SQL serveru ukládá jejich kopii původní řádek v **tempdb**a přidá číslo sekvence transakce na řádek. Posloupnost událostí, ke které dochází, je následující:  
+## <a name="how-snapshot-isolation-and-row-versioning-work"></a>Jak funguje izolace snímku a správa verzí řádků  
+ Když je povolena úroveň izolace snímku, při každém aktualizaci řádku ukládá databázový stroj SQL Server kopii původního řádku v **databázi tempdb**a do řádku přidá číslo sekvence transakce. Následuje posloupnost událostí, ke kterým dochází:  
   
-- Zahájené novou transakci a má přiřazené pořadové číslo transakce.  
+- Je iniciována nová transakce a je jí přiřazeno pořadové číslo transakce.  
   
-- Databázový stroj přečte řádek v rámci transakce a načte verze řádku z **tempdb** jehož pořadové číslo je nejblíže a nižší transakce pořadové číslo.  
+- Databázový stroj přečte řádek v rámci transakce a načte verzi řádku z **databáze tempdb** , jejíž číslo sekvence je nejbližší a nižší než číslo sekvence transakce.  
   
-- Databázový stroj zkontroluje, zda transakce pořadové číslo není v seznamu číslem nepotvrzené transakce aktivní transakce, při zahájení transakce snímku.  
+- Databázový stroj zkontroluje, zda není pořadové číslo transakce v seznamu čísel pořadí transakcí nepotvrzených transakcí aktivních při spuštění transakce snímku.  
   
-- Transakce čtení verzi řádku z **tempdb** , který byl aktuální v době spuštění transakce. Neuvidí vložené po transakce bylo spuštěno, protože tyto hodnoty čísla pořadí bude vyšší než hodnota transakce pořadové číslo nové řádky.  
+- Transakce načte verzi řádku z **databáze tempdb** , která byla aktuální od začátku transakce. Po spuštění transakce se nebudou zobrazovat nové řádky, protože tyto hodnoty pořadových čísel budou vyšší než hodnota v pořadí transakcí.  
   
-- Aktuální transakce se zobrazí řádky, které byly odstraněny po zahájení transakce, protože budou verze řádku v **tempdb** s nižší hodnotou číslo sekvence.  
+- Aktuální transakce uvidí řádky, které byly odstraněny po zahájení transakce, protože v **databázi tempdb** bude verze řádku s nižší hodnotou pořadového čísla.  
   
- Čistým důsledkem toho izolaci snímku je, že transakce se zobrazí všechna data tak, jak byly na začátku transakce, bez příslušných nebo umístění žádné zámky na základní tabulky. Může dojít k vylepšení výkonu v situacích, kde je nutné vyřešit.  
+ Čistým účinkem izolace snímků je to, že transakce vidí všechna data, protože existovala na začátku transakce, aniž by se musela dodržet nebo umístit zámky na podkladové tabulky. To může mít za následek vylepšení výkonu v situacích, kdy dochází k sporům.  
   
- Transakce snapshot vždy používá optimistického řízení souběžnosti, odmítnutí žádné zámky, které by jinak znemožňovaly ostatní transakce z aktualizace řádků. Pokud transakce snímku se pokusí provést aktualizace řádku, který byl změněn po zahájení transakce, transakce se zrušila a dojde k chybě.  
+ Transakce snímku vždy používá optimistické řízení souběžnosti, což odpírá všechny zámky, které by zabránily aktualizaci řádků v jiných transakcích. Pokud se transakce snímku pokusí Potvrdit aktualizaci na řádek, který byl změněn po zahájení transakce, transakce se vrátí zpět a vyvolá se chyba.  
   
 ## <a name="working-with-snapshot-isolation-in-adonet"></a>Práce s izolací snímku v ADO.NET  
- Izolace snímku se podporuje v ADO.NET pomocí <xref:System.Data.SqlClient.SqlTransaction> třídy. Pokud databázi byl povolen pro izolaci snímku, ale není nakonfigurovaný pro možnost READ_COMMITTED_SNAPSHOT ON, je nutné inicializovat <xref:System.Data.SqlClient.SqlTransaction> pomocí **IsolationLevel.Snapshot** hodnota výčtu při volání <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> Metoda. Tento fragment kódu předpokládá, že připojení je otevřený <xref:System.Data.SqlClient.SqlConnection> objektu.  
+ Izolace snímků je podporována <xref:System.Data.SqlClient.SqlTransaction> třídou v ADO.NET. Pokud byla pro izolaci snímků povolena databáze, ale není nakonfigurována pro READ_COMMITTED_SNAPSHOT on, je nutné při volání <xref:System.Data.SqlClient.SqlTransaction> <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metody inicializovat použití hodnoty výčtu **IsolationLevel. Snapshot** . Tento fragment kódu předpokládá, že připojení je otevřený <xref:System.Data.SqlClient.SqlConnection> objekt.  
   
 ```vb  
 Dim sqlTran As SqlTransaction = _  
@@ -89,60 +89,60 @@ SqlTransaction sqlTran =
 ```  
   
 ### <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak se chovají úrovních různé izolace pokusem o přístup k datům uzamčené a není určena pro použití v produkčním kódu.  
+ Následující příklad ukazuje, jak se chovají různé úrovně izolace, při pokusu o přístup k uzamčeným datům a není určena pro použití v produkčním kódu.  
   
- Kód se připojí k **AdventureWorks** ukázková databáze na SQL serveru a vytvoří tabulku s názvem **TestSnapshot** a vloží jeden řádek dat. Tento kód použije příkaz ALTER DATABASE jazyka Transact-SQL k zapnutí nastavení v izolaci snímku databáze, ale není nastavena možnost READ_COMMITTED_SNAPSHOT ponechat výchozí chování úroveň izolace READ COMMITTED v platnosti. Kód poté provede následující akce:  
+ Kód se připojí k ukázkové databázi **AdventureWorks** v SQL Server a vytvoří tabulku s názvem **TestSnapshot** a vloží jeden řádek dat. Kód používá příkaz jazyka Transact-SQL příkazu ALTER DATABASE k zapnutí izolace snímků pro databázi, ale nenastavuje možnost READ_COMMITTED_SNAPSHOT, takže výchozí čtení napsaného stavu na úrovni izolace zůstane v platnosti. Kód pak provede následující akce:  
   
-- Začne, ale nebude dokončen, sqlTransaction1, který používá ke spuštění transakce aktualizace úrovně izolace SERIALIZABLE. To má vliv na uzamčení v tabulce.  
+- Začíná, ale nedokončil, sqlTransaction1, který používá serializovatelný úroveň izolace ke spuštění transakce aktualizace. To má vliv na uzamykání tabulky.  
   
-- Otevře se druhé připojení a inicializuje druhý pomocí na úrovni izolace SNÍMKU číst data v transakci **TestSnapshot** tabulky. Protože je povolena izolace snímku, tuto transakci může číst data, která existovala předtím, než sqlTransaction1 spuštěna.  
+- Otevře se druhé připojení a inicializuje druhou transakci pomocí úrovně izolace snímku pro čtení dat v tabulce **TestSnapshot** . Vzhledem k tomu, že je povolena izolace snímku, může tato transakce číst data, která existovala před spuštěním sqlTransaction1.  
   
-- Otevře se třetí připojení a zahájí transakci pro čtení úrovně izolace pomocí pokus o čtení dat v tabulce. Kód v tomto případě nelze číst data, protože nelze přečíst poslední zámků v tabulce v první transakce a vyprší. Stejného výsledku ke kterým by úrovně izolace OPAKOVATELNÉ čtení a SERIALIZABLE byly použít, protože tyto úrovně izolace nelze také čtení za zámků v první transakce.  
+- Otevře se třetí připojení a zahájí transakci s použitím úrovně izolace READ POTVRZENé k pokusu o čtení dat v tabulce. V tomto případě kód nemůže číst data, protože nemůže číst za zámky umístěnými v tabulce v první transakci a vypršení časového limitu. Stejný výsledek nastane, pokud byly použity opakující se úrovně izolace READ a serializovatelný, protože tyto úrovně izolace také nemohou číst za zámky, které jsou umístěny v první transakci.  
   
-- Otevře čtvrtý připojení a zahájí pomocí NEPOTVRZENÉ čtení úroveň izolace, která vede sqlTransaction1 nepřesný hodnotu nepotvrzené transakce. Tato hodnota může nikdy skutečně existují v databázi, pokud první transakce není potvrzená.  
+- Otevře se čtvrté připojení a inicializuje transakci pomocí čtení nepotvrzené úrovně izolace, které provádí nevyřízené čtení nepotvrzené hodnoty v sqlTransaction1. Tato hodnota nemusí nikdy v databázi existovat, pokud není první transakce potvrzena.  
   
-- Vrátí první transakce a vyčistí odstraněním **TestSnapshot** izolace pro tabulky a vypnutí snímku **AdventureWorks** databáze.  
+- Vrátí zpět první transakci a vyčistí odstraněním tabulky **TestSnapshot** a vypnutím izolace snímků pro databázi **AdventureWorks** .  
   
 > [!NOTE]
->  Následující příklady používají stejný připojovací řetězec s sdružování připojení vypnuté. Pokud je ve fondu připojení, resetování jeho úroveň izolace není resetovaný úroveň izolace na serveru. V důsledku toho další připojení, které používají stejné připojení ve fondu vnitřní začínat jejich izolace úrovně nastavena na hodnotu, která ve fondu připojení. Alternativa k vypnutí sdružování připojení je nastavit úroveň izolace explicitně pro každé připojení.  
+> V následujících příkladech je použití stejného připojovacího řetězce při sdružování připojení vypnuto. Pokud je připojení ve fondu, resetování jeho úrovně izolace neobnoví úroveň izolace na serveru. V důsledku toho budou následná připojení, která používají stejné vnitřní připojení ve fondu, zahájena s úrovněmi izolace nastavenými na skupinu připojení. Alternativou k vypnutí sdružování připojení je nastavení úrovně izolace explicitně pro každé připojení.  
   
  [!code-csharp[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/CS/source.cs#1)]
  [!code-vb[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/VB/source.vb#1)]  
   
 ### <a name="example"></a>Příklad  
- Následující příklad ukazuje chování izolace snímku, když se změní data. Kód provede následující akce:  
+ Následující příklad ukazuje chování izolace snímku při úpravě dat. Kód provádí následující akce:  
   
-- Se připojí k **AdventureWorks** ukázkové databáze a umožňuje izolaci SNÍMKU.  
+- Připojí se k ukázkové databázi **AdventureWorks** a povolí izolaci snímků.  
   
-- Vytvoří tabulku s názvem **TestSnapshotUpdate** a vloží tři řádky ukázková data.  
+- Vytvoří tabulku s názvem **TestSnapshotUpdate** a vloží tři řádky ukázkových dat.  
   
-- Začne, ale nebude dokončen, sqlTransaction1 pomocí izolace SNÍMKU. Tří řádků dat jsou vybrány v transakci.  
+- Začíná, ale není dokončený, sqlTransaction1 pomocí izolace snímků. V transakci jsou vybrány tři řádky dat.  
   
-- Vytvoří druhou **SqlConnection** k **AdventureWorks** a vytvoří druhý transakci pomocí úrovní izolace READ COMMITTED, která aktualizuje hodnotu v jednom z vybraných v sqlTransaction1 řádků.  
+- Vytvoří druhý **SqlConnection** k **AdventureWorks** a vytvoří druhou transakci pomocí úrovně izolace Read potvrzené, která aktualizuje hodnotu v jednom z řádků vybraných v sqlTransaction1.  
   
-- SqlTransaction2 potvrzení změn.  
+- Potvrdí sqlTransaction2.  
   
-- Vrátí sqlTransaction1 a pokusy o aktualizaci na stejném řádku tohoto sqlTransaction1 už je potvrzená. Je vyvolána chyba 3960 a sqlTransaction1 se vrátí zpět automaticky. **SqlException.Number** a **SqlException.Message** jsou zobrazeny v okně konzoly.  
+- Vrátí se do sqlTransaction1 a pokusí se aktualizovat stejný řádek, který sqlTransaction1 už potvrzený. Dojde k chybě 3960 a sqlTransaction1 se vrátí automaticky. V okně konzoly se zobrazí **SqlException. Number** a **SqlException. Message** .  
   
-- Spustí kód pro vyčištění k vypnutí možnosti izolace snímku v **AdventureWorks** a odstranit **TestSnapshotUpdate** tabulky.  
+- Spustí čistý kód, který vypne izolaci snímků v **AdventureWorks** a odstraní tabulku **TestSnapshotUpdate** .  
   
  [!code-csharp[DataWorks SnapshotIsolation.DemoUpdate#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.DemoUpdate/CS/source.cs#1)]
  [!code-vb[DataWorks SnapshotIsolation.DemoUpdate#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.DemoUpdate/VB/source.vb#1)]  
   
-### <a name="using-lock-hints-with-snapshot-isolation"></a>Použití pomocné parametry zámku s izolací snímku  
- V předchozím příkladu vybere první transakce data, a druhá transakce aktualizuje data před první transakce je možné dokončit, způsobí došlo ke konfliktu aktualizací, když se první transakce pokusí aktualizovat na stejném řádku. Zadáním pomocné parametry zámku na začátku transakce můžete snížit pravděpodobnost konfliktů při aktualizacích v dlouhotrvajících transakcí snímku. Následující příkaz SELECT pomocí pomocný parametr UPDLOCK uzamkne vybrané řádky:  
+### <a name="using-lock-hints-with-snapshot-isolation"></a>Použití pomocných parametrů zámku s izolací snímku  
+ V předchozím příkladu první transakce vybere data a druhá transakce aktualizuje data před tím, než se první transakce bude moci dokončit, což způsobí konflikt aktualizace, když se první transakce pokusí aktualizovat stejný řádek. Můžete snížit pravděpodobnost konfliktů aktualizací v dlouhotrvajících transakcích snímku tím, že zadáte pomocné parametry zámku na začátku transakce. Následující příkaz SELECT používá pomocný parametr UPDLOCK k uzamknutí vybraných řádků:  
   
 ```sql  
 SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)   
   WHERE PriKey BETWEEN 1 AND 3  
 ```  
   
- Pomocí bloků pomocný parametr zámku UPDLOCK všechny řádky, pokus o aktualizaci řádků před první transakce dokončena. Zaručí se tak, že mají vybrané řádky žádné konflikty. když se aktualizují později v transakci. Viz "Pomocné parametry zámku" v SQL Server Books Online.  
+ Použití pomocného parametru UPDLOCK Lock blokuje všechny řádky, které se pokoušejí aktualizovat řádky před dokončením první transakce. To zaručuje, že vybrané řádky nebudou při aktualizaci později v transakci žádné konflikty. Přečtěte si téma "zamykání tipů" v tématu SQL Server Books Online.  
   
- Pokud vaše aplikace obsahuje mnoho konflikty, izolaci snímku nemusí být nejlepší volbou. Pomocné parametry by měla sloužit pouze při opravdu potřebujete. Aplikace by neměl být navržený tak, aby neustále spoléhá na pomocné parametry zámku pro jeho operace.  
+ Pokud má vaše aplikace mnoho konfliktů, nemusí být izolace snímku nejlepší volbou. Hinty by se měly používat jenom v případě, že skutečně potřebujete. Vaše aplikace by neměla být navržena tak, aby se neustále spoléhá na pomocné parametry zámku pro jeho operaci.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
-- [Průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Průvodce zámkem transakcí a správou verzí řádků](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

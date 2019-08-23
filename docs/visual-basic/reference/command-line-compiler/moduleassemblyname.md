@@ -6,15 +6,15 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: 70cef109e4f2947fb4e38b9bfd19433257cce136
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 052d6937846df39bd94d532e1b63ebe522dbf6c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663508"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964679"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
-Určuje název sestavení, které bude tento modul součástí.  
+Určuje název sestavení, jehož součástí bude tento modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,29 +26,29 @@ Určuje název sestavení, které bude tento modul součástí.
   
 |Termín|Definice|  
 |---|---|  
-|`assembly_name`|Název sestavení, které bude tento modul součástí.|  
+|`assembly_name`|Název sestavení, jehož součástí bude tento modul.|  
   
 ## <a name="remarks"></a>Poznámky  
- Procesy, které kompilátor `-moduleassemblyname` možnost pouze tehdy, pokud `-target:module` byla zadána možnost. To způsobí, že kompilátor vytvoří modul. Modul vytvořený kompilátorem je platná pouze pro sestavení zadaným `-moduleassemblyname` možnost. Pokud umístíte modulu v jiném sestavení, bude docházet k chybám za běhu.  
+ Kompilátor zpracuje `-moduleassemblyname` možnost pouze v případě, `-target:module` že byla zadána možnost. Způsobí to, že kompilátor vytvoří modul. Modul vytvořený kompilátorem je platný pouze pro sestavení zadané s `-moduleassemblyname` možností. Pokud umístíte modul do jiného sestavení, dojde k chybám za běhu.  
   
- `-moduleassemblyname` Možnost je vyžadována, pouze v případě, že jsou splněny následující:  
+ `-moduleassemblyname` Možnost je nutná pouze v případě, že jsou splněny následující podmínky:  
   
-- Datový typ v modulu potřebuje přístup k `Friend` typ v odkazovaném sestavení.  
+- Datový typ v modulu potřebuje přístup k `Friend` typu v odkazovaném sestavení.  
   
-- Odkazované sestavení má udělen Přátelský přístup sestavení k sestavení, do kterého bude sestaven modul.  
+- Odkazované sestavení udělilo přístup přítel k sestavení, do kterého bude modul sestaven.  
   
- Další informace o vytváření modulu najdete v tématu [/Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o přátelských sestavení naleznete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
+ Další informace o vytváření modulu naleznete v tématu [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o Friend sestaveních naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
   
 > [!NOTE]
->  `-moduleassemblyname` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici, pouze pokud kompilujete z příkazového řádku.  
+> Tato `-moduleassemblyname` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytváření vícesouborového sestavení](../../../framework/app-domains/how-to-build-a-multifile-assembly.md)
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [Postupy: Sestavení vícesouborového sestavení](../../../framework/app-domains/how-to-build-a-multifile-assembly.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
-- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

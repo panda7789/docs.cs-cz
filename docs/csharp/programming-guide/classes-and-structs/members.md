@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-ms.openlocfilehash: 64df7d6be09ae670307fa1cf1d66dfdf8e78a7a6
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: acd992cba67a79f2a63c28c1d9d9ac70e4f4d029
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596410"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922162"
 ---
 # <a name="members-c-programming-guide"></a>Členové (Průvodce programováním v C#)
 
@@ -26,7 +26,7 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 |[Vlastnosti](./properties.md)|Vlastnosti jsou metody ve třídě, které jsou přístupné, jako kdyby byly poli v dané třídě. Vlastnost může poskytovat ochranu pro pole třídy před změnou bez vědomí objektu.|  
 |[Metody](./methods.md)|Metody definují akce, které mohou třídy provádět. Metody mohou přijímat parametry, které poskytují vstupní data, a mohou prostřednictvím parametrů vracet data. Metody mohou také vrátit hodnotu přímo, bez použití parametru.|  
 |[Události](../events/index.md)|Události poskytují upozorňování na různé události, jako například kliknutí na tlačítko nebo úspěšné dokončení metody, jiným objektům. Události jsou definovány a spouštěny pomocí delegátů.|  
-|[Operátory](../statements-expressions-operators/operators.md)|Přetížené operátory jsou považovány za členy typu. Při přetížení operátoru, je třeba jej definovat jako veřejnou statickou metodu v typu. Další informace naleznete v tématu [přetížení operátoru](../../language-reference/operators/operator-overloading.md).|  
+|[Operátory](../../language-reference/operators/index.md)|Přetížené operátory jsou považovány za členy typu. Při přetížení operátoru, je třeba jej definovat jako veřejnou statickou metodu v typu. Další informace naleznete v tématu [přetížení operátoru](../../language-reference/operators/operator-overloading.md).|  
 |[Indexery](../indexers/index.md)|Indexery povolují objektu indexování způsobem podobným polím.|  
 |[Konstruktory](./constructors.md)|Konstruktory jsou metody, které jsou volány při prvním vytvoření objektu. Často se používají k inicializaci dat objektu.|  
 |[Finalizační metody](./destructors.md)|Finalizační metody se používají jen zřídka v C#. Jsou to metody, které jsou volány spouštěcím modulem modulu runtime, když má být objekt odstraněn z paměti. Používají se obvykle k zajištění, aby veškeré prostředky, které musí být uvolněny, byly zpracovány správným způsobem.|  
@@ -36,12 +36,3 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Třídy](./classes.md)
-- [Metody](./methods.md)
-- [Konstruktory](./constructors.md)
-- [Finalizační metody](./destructors.md)
-- [Vlastnosti](./properties.md)
-- [Pole](./fields.md)
-- [Indexery](../indexers/index.md)
-- [Události](../events/index.md)
-- [Vnořené typy](./nested-types.md)
-- [Operátory](../statements-expressions-operators/operators.md)

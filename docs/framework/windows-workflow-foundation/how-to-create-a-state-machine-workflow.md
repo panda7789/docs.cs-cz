@@ -5,73 +5,73 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 84d2355a78c7d33bf712baf158f28861e59e75d1
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3f1c1beda7519a113ea15c5fed84bcb017afae12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881943"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962353"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Postupy: Vytvoření pracovního postupu stavového stroje
-Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Toto téma se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.StateMachine> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
+Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.StateMachine> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.  
   
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](how-to-create-an-activity.md).  
+> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je nutné [nejprve provést následující kroky: Vytvoří aktivitu](how-to-create-an-activity.md).  
   
 > [!NOTE]
->  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
+> Pokud si chcete stáhnout dokončenou verzi kurzu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45) – začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ### <a name="to-create-the-workflow"></a>Vytvoření pracovního postupu  
   
-1. Klikněte pravým tlačítkem na **NumberGuessWorkflowActivities** v **Průzkumníka řešení** a vyberte **přidat**, **nová položka**.  
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowActivities** a vyberte **Přidat**, **Nová položka**.  
   
-2. V **nainstalováno**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.  
+2. V uzlu **nainstalované**, **běžné položky** vyberte **pracovní postup**. V seznamu **pracovních postupů** vyberte **aktivita** .  
   
-3. Typ `StateMachineNumberGuessWorkflow` do **název** pole a klikněte na tlačítko **přidat**.  
+3. Do `StateMachineNumberGuessWorkflow` pole **název** zadejte a klikněte na **Přidat**.  
   
-4. Přetáhněte **stavový stroj StateMachine** aktivita z **stavového stroje** část **nástrojů** a umístěte ho do **Sem přetáhněte aktivitu** popisek pracovní postup návrhovou plochu.  
+4. Přetáhněte aktivitu **StateMachine** z části **Stavový počítač** v **sadě nástrojů** a přetáhněte ji na popisek **sem přetáhněte aktivitu** na návrhové ploše pracovního postupu.  
   
-### <a name="to-create-the-workflow-variables-and-arguments"></a>Chcete-li vytvořit pracovní postup proměnné a argumenty  
+### <a name="to-create-the-workflow-variables-and-arguments"></a>Postup vytvoření proměnných a argumentů pracovního postupu  
   
-1. Dvakrát klikněte na panel **StateMachineNumberGuessWorkflow.xaml** v **Průzkumníka řešení** zobrazíte pracovního postupu v návrháři, pokud se už nezobrazí.  
+1. Dvojím kliknutím na **StateMachineNumberGuessWorkflow. XAML** v **Průzkumník řešení** zobrazíte pracovní postup v návrháři, pokud ještě není zobrazený.  
   
-2. Klikněte na tlačítko **argumenty** v levém dolním rohu návrháře postupu provádění zobrazit **argumenty** podokně.  
+2. Kliknutím na **argumenty** v levé dolní části návrháře pracovních postupů zobrazíte podokno **argumenty** .  
   
-3. Klikněte na tlačítko **vytvořit Argument**.  
+3. Klikněte na **vytvořit argument**.  
   
-4. Typ `MaxNumber` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **Int32** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER k uložení argument.  
+4. Do `MaxNumber` pole **název** zadejte, v rozevíracím seznamu **směr** vyberte možnost **v vyberte v** rozevíracím seznamu **typ argumentu** možnost **Int32** a potom stiskněte klávesu ENTER a argument uložte.  
   
-5. Klikněte na tlačítko **vytvořit Argument**.  
+5. Klikněte na **vytvořit argument**.  
   
-6. Typ `Turns` do **název** pole, které je pod nově přidaný `MaxNumber` argument, vyberte **si** z **směr** rozevíracího seznamu vyberte  **Datový typ Int32** z **typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER.  
+6. `MaxNumber` Do pole název, které se nachází pod nově přidaným argumentem, vyberte out v rozevíracím seznamu směr, v rozevíracím seznamu typ argumentu vyberte Int32 a potom stiskněte klávesu ENTER. `Turns`  
   
-7. Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit, zavřete **argumenty** podokně.  
+7. Kliknutím na **argumenty** v levé dolní části návrháře aktivit zavřete podokno **argumenty** .  
   
-8. Klikněte na tlačítko **proměnné** v levém dolním rohu návrháře postupu provádění zobrazit **proměnné** podokně.  
+8. Kliknutím na **proměnné** v levém dolním rohu návrháře pracovních postupů zobrazíte podokno **proměnné** .  
   
-9. Klikněte na tlačítko **vytvořit proměnnou**.  
+9. Klikněte na **vytvořit proměnnou**.  
   
     > [!TIP]
-    >  Pokud ne **vytvořit proměnnou** pole se zobrazí, klikněte na tlačítko <xref:System.Activities.Statements.StateMachine> aktivity na plochu návrháře pracovního postupu a vyberte ji.  
+    >  Pokud se nezobrazí žádné pole **vytvořit proměnnou** , klikněte <xref:System.Activities.Statements.StateMachine> na aktivitu na ploše návrháře pracovního postupu a vyberte ji.  
   
-10. Typ `Guess` do **název** vyberte **Int32** z **typ proměnné** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení proměnné.  
+10. Do `Guess` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.  
   
-11. Klikněte na tlačítko **vytvořit proměnnou**.  
+11. Klikněte na **vytvořit proměnnou**.  
   
-12. Typ `Target` do **název** vyberte **Int32** z **typ proměnné** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení proměnné.  
+12. Do `Target` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.  
   
-13. Klikněte na tlačítko **proměnné** v levého dolního rohu návrháře aktivit, zavřete **proměnné** podokně.  
+13. Kliknutím na **proměnné** v levém dolním rohu návrháře aktivit zavřete podokno **proměnné** .  
   
 ### <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu  
   
-1. Klikněte na tlačítko **nazvané State1** ji vyberte. V **okno vlastností**, změnit **DisplayName** k `Initialize Target`.  
+1. Klikněte na **State1** a vyberte ji. V **okně Vlastnosti**změňte **Zobrazovaný** název na `Initialize Target`.  
   
     > [!TIP]
-    >  Pokud **okno vlastností** není zobrazený, vyberte **okno vlastností** z **zobrazení** nabídky.  
+    >  Pokud se **okno Vlastnosti** nezobrazí, v nabídce **zobrazení** vyberte **okno Vlastnosti** .  
   
-2. Dvakrát klikněte na nově pojmenovaném **inicializovat cílové** stavu v Návrháři pracovních postupů a rozbalte ho.  
+2. Dvakrát klikněte na nově přejmenovaný **cílový stav inicializace** v Návrháři pracovních postupů a rozbalte ho.  
   
-3. Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a umístěte ho do **položka** oddíl stavu. Typ `Target` do **k** pole a následující výraz, který **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
+3. Přetáhněte aktivitu **přiřazení** z oddílu **primitivních** prvků v **sadě nástrojů** a přetáhněte ji do části pro **zadání** daného stavu. Zadejte `Target` do pole **do** a následující výraz do pole **Zadejte C# výraz** nebo **Zadejte výraz VB** .  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -82,17 +82,17 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     ```  
   
     > [!TIP]
-    >  Pokud **nástrojů** okno nezobrazí, vyberte **nástrojů** z **zobrazení** nabídky.  
+    >  Pokud okno **panelu nástrojů** není zobrazeno, vyberte z nabídky **zobrazení** možnost **Sada nástrojů** .  
   
-4. Vraťte se do celkového stavu počítače zobrazení v Návrháři postupu provádění kliknutím **stavový stroj StateMachine** z jeho zobrazení v horní části návrháře postupu provádění.  
+4. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   
-5. Přetáhněte **stavu** aktivita z **stavového stroje** část **nástrojů** do návrháře postupu provádění a najeďte myší na **inicializovat cíl** stavu. Všimněte si, že čtyři trojúhelníky zobrazí kolem **inicializovat cílové** stav, když je nový stav nad ním. Vyřadit nový stav na trojúhelník, který je hned pod **inicializovat cílové** stavu. To umístí nového stavu do pracovního postupu a vytvoří přechod z **inicializovat cílové** stavu do nového stavu.  
+5. Přetáhněte aktivitu **stavu** z části **Stavový počítač** v **sadě nástrojů** do návrháře pracovních postupů a najeďte myší na **cílový stav inicializace** . Všimněte si, že kolem **cílového stavu inicializace** se zobrazí čtyři trojúhelníky, když je tento nový stav nad ním. Nový stav umístěte na trojúhelník, který je hned pod cílovým stavem **inicializace** . Tím se nový stav umístí do pracovního postupu a vytvoří se přechod z **cílového stavu Initialize** do nového stavu.  
   
-6. Klikněte na tlačítko **nazvané State1** vybraný a změňte **DisplayName** k `Enter Guess`a potom dvakrát klikněte na stav v Návrháři pracovních postupů a rozbalte ho.  
+6. Kliknutím na **State1** ho vyberte, změňte **Zobrazovaný** název na `Enter Guess`a pak dvakrát klikněte na stav v Návrháři pracovních postupů a rozbalte ho.  
   
-7. Přetáhněte **WriteLine** aktivita z **primitiv** část **nástrojů** a umístěte ho do **položka** oddíl stavu.  
+7. Přetáhněte aktivitu **WriteLine** z oddílu **primitivních** prvků v **sadě nástrojů** a přetáhněte ji do části pro **zadání** daného stavu.  
   
-8. Zadejte následující výraz do **Text** vlastnosti **WriteLine**.  
+8. Do pole vlastnost **text** v poli **WriteLine**zadejte následující výraz.  
   
     ```vb  
     "Please enter a number between 1 and " & MaxNumber  
@@ -102,23 +102,23 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     "Please enter a number between 1 and " + MaxNumber  
     ```  
   
-9. Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a umístěte na **ukončovací** oddíl stavu.  
+9. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji do části **Exit** (stav).  
   
-10. Typ `Turns` do **k** pole a `Turns + 1` do **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
+10. `Turns + 1` **C#** Do pole do zadejte a do pole zadejte výraz nebo zadejte výraz VB. `Turns`  
   
-11. Vraťte se do celkového stavu počítače zobrazení v Návrháři postupu provádění kliknutím **stavový stroj StateMachine** z jeho zobrazení v horní části návrháře postupu provádění.  
+11. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   
-12. Přetáhněte **FinalState** aktivity z **stavového stroje** část **nástrojů**, najeďte myší **zadejte odhad** stavu a umístěte ho na trojúhelník, který se zobrazí napravo od **zadejte uhodnout** stavu tak, aby se vytvoří s přechodem mezi **zadejte uhodnout** a **FinalState**.  
+12. Přetáhněte aktivitu **FinalState** z části **Stavový počítač** v **sadě nástrojů**, najeďte ji na stav **odhadu ENTER** a přetáhněte ji na trojúhelník, který se zobrazí vpravo od stavu **ENTER odhad** , aby byl přechod vytvořené mezi **zadáním odhadu** a **FinalState**.  
   
-13. Výchozí název přechodu je **T2**. Klikněte na tlačítko přechodu v Návrháři postupu provádění jej vyberte a nastavte jeho **DisplayName** k **odhad správný**. Potom klikněte na tlačítko a vyberte **FinalState**a přetáhněte ji na pravé straně tak, aby uvolnil prostor pro úplný přechod název zobrazený aniž zakreslovat buď dva stavy. To usnadní dokončete zbývající kroky v tomto kurzu.  
+13. Výchozí název přechodu je **T2**. Kliknutím na přechod v Návrháři pracovního postupu ho vyberte a nastavte jeho **Zobrazovaný** název na **správný odhad**. Potom klikněte na **FinalState**a vyberte ho a přetáhněte ho na pravé straně, aby se zobrazil prostor pro zobrazení úplného názvu přechodu bez překryvu obou stavů. To usnadňuje dokončení zbývajících kroků v tomto kurzu.  
   
-14. Dvakrát klikněte na nově pojmenovaném **odhad správný** přechodu v Návrháři pracovních postupů a rozbalte ho.  
+14. Dvojitým kliknutím na nově přejmenovaný **odhad správného** přechodu v Návrháři pracovního postupu ho rozbalte.  
   
-15. Přetáhněte **readint –** aktivita z **NumberGuessWorkflowActivities** část **nástrojů** a umístěte jej do **aktivační událost** oddílu přechodu.  
+15. Přetáhněte aktivitu **ReadInt** z oddílu **NumberGuessWorkflowActivities** **panelu nástrojů** a přetáhněte ji do oddílu triggeru přechodu .  
   
-16. V **okno vlastností** pro **readint –** aktivity, typ `"EnterGuess"` včetně uvozovek do **BookmarkName** vlastnost hodnoty pole a typ `Guess`do **výsledek** vlastnost hodnota – pole  
+16. V **okně Vlastnosti** aktivity **ReadInt** zadejte `"EnterGuess"` včetně uvozovek do pole hodnota vlastnosti **Bookmark** a do pole hodnota vlastnosti `Guess` **výsledku** zadejte.  
   
-17. Zadejte následující výraz do **odhad správný** přechod na **podmínku** pole s hodnotou vlastnosti.  
+17. Do pole **odhad správné** hodnoty vlastnosti **podmínky** přechodu zadejte následující výraz.  
   
     ```vb  
     Guess = Target  
@@ -128,22 +128,22 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     Guess == Target  
     ```  
   
-18. Vraťte se do celkového stavu počítače zobrazení v Návrháři postupu provádění kliknutím **stavový stroj StateMachine** z jeho zobrazení v horní části návrháře postupu provádění.  
+18. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   
     > [!NOTE]
-    >  Přechod nastane aktivační událost přijetí a <xref:System.Activities.Statements.Transition.Condition%2A>, pokud jsou k dispozici, je vyhodnocen jako `True`. Pro tohoto přechodu je Pokud uživatele `Guess` odpovídá náhodně generované `Target`, pak řízení se předá **FinalState** a dokončení pracovního postupu.  
+    > K přechodu dojde v případě, že událost triggeru je <xref:System.Activities.Statements.Transition.Condition%2A>přijata a je-li k `True`dispozici, je vyhodnocena jako. V případě tohoto přechodu se v případě, `Guess` že uživatel odpovídá náhodně `Target`generovanému objektu, řídí průchod **FinalState** a pracovní postup se dokončí.  
   
-19. V závislosti na tom, zda je odhad správný, by měl pracovní postup buď na přechod **FinalState** nebo zpět **zadejte odhad** stavu pro jinou akci. Obě přechody sdílet stejnou spouštěcí událost trigger čekání na odhad uživatele k přijetí prostřednictvím **readint –** aktivity. Tomu se říká sdílené přechodu. Vytvořit sdílené přechod, klikněte na kruh, který označuje začátek **odhad správný** přechod a přetáhněte ho do požadovaného stavu. V tomto případě je přechod přechod, takže přetáhněte počáteční bod **odhad správný** přechod a umístěte ho zpátky do dolní části **zadejte uhodnout** stavu. Po vytvoření přechodu, vyberte ho v Návrháři pracovních postupů a nastavte jeho **DisplayName** vlastnost **uhodnout nesprávné**.  
-  
-    > [!NOTE]
-    >  Sdílené přechody lze také vytvořit z v rámci přechodu návrháře kliknutím **přidat sdílené triggeru, přechod** v dolní části návrháře přechod a pak vyberete požadovanou cílovou stavu z  **Dostupné stavy připojení** rozevíracího seznamu.  
+19. V závislosti na tom, zda je odhad správný, by měl pracovní postup přejít buď na **FinalState** , nebo zpět do stavu **zadejte odhad** pro jiný pokus. Oba přechody sdílejí stejnou aktivační událost, která čeká na přijetí odhadu uživatele prostřednictvím aktivity **ReadInt** . Označuje se jako sdílený přechod. Chcete-li vytvořit sdílený přechod, klikněte na kroužek, který indikuje začátek **odhadu správného** přechodu a přetáhněte ho do požadovaného stavu. V tomto případě je přechodem Automatický přechod, takže přetáhněte počáteční bod pro **správný** přechod a přetáhněte ho zpátky do dolní části stavu **zadejte odhad** . Po vytvoření přechodu ho vyberte v Návrháři pracovních postupů a nastavte jeho vlastnost **DisplayName** na hodnotu nesprávného **odhadu**.  
   
     > [!NOTE]
-    >  Všimněte si, že pokud <xref:System.Activities.Statements.Transition.Condition%2A> přechodu vyhodnocen `false` (nebo vyhodnotit všechny podmínky sdílené spouštěcí události přechodu `false`), nedojde k přechodu a budou všechny aktivační události pro všechny přechody ze stavu znovu naplánována. V tomto kurzu, nemůže tato situace nastat z důvodu způsob, jakým jsou podmínky nakonfigurované (máme konkrétní akce pro Určuje, zda je odhad správný nebo není správná).  
+    > Sdílené přechody je také možné vytvořit v Návrháři přechodu kliknutím na **přidat přechod sdílené triggery** v dolní části návrháře přechodu a následným výběrem požadovaného cílového stavu ze stavů k **připojení** . rozevírací seznam.  
   
-20. Dvakrát klikněte **uhodnout nesprávné** přechodu v Návrháři pracovních postupů a rozbalte ho. Všimněte si, že **aktivační událost** je již nastaven na stejnou **readint –** aktivitu, která byla použita **odhad správný** přechodu.  
+    > [!NOTE]
+    > Všimněte si, že <xref:System.Activities.Statements.Transition.Condition%2A> Pokud je z přechodu vyhodnocen `false` (nebo všechny podmínky přechodu na sdílený Trigger vyhodnoceny na `false`hodnotu), přechod nebude proveden a všechny aktivační události pro všechny přechody ze stavu budou změněn. V tomto kurzu nemůžete k této situaci dojít kvůli způsobu konfigurace podmínek (máme konkrétní akce, ať už je odhad správný nebo nesprávný).  
   
-21. Zadejte následující výraz do **podmínku** pole s hodnotou vlastnosti.  
+20. Poklikejte na **odhad** nesprávného přechodu v Návrháři pracovních postupů a rozbalte ho. Všimněte si, že **Trigger** je již nastaven na stejnou aktivitu **ReadInt** , jakou používal správný přechod **odhad** .  
+  
+21. Do pole hodnota vlastnosti **podmínky** zadejte následující výraz.  
   
     ```vb  
     Guess <> Target  
@@ -153,39 +153,39 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
     Guess != Target  
     ```  
   
-22. Přetáhněte **Pokud** aktivita z **tok řízení** část **nástrojů** a umístěte jej do **akce** části přechodu.  
+22. Přetáhněte aktivitu **if** z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do části **Akce** přechodu.  
   
-23. Zadejte následující výraz do **Pokud** aktivity **podmínku** pole s hodnotou vlastnosti.  
+23. Do pole hodnota vlastnosti **Podmínka** pro aktivitu **if** aktivity zadejte následující výraz.  
   
     ```
     Guess < Target  
     ```  
   
-24. Přetáhněte dva **WriteLine** aktivity z **primitiv** část **nástrojů** a umístit je tak, že jeden je v **pak** část **Pokud** aktivity a jeden je v **Else** oddílu.  
+24. Přetáhněte dvě aktivity **WriteLine** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte je tak, aby jedna byla v oddílu **then** aktivity **if** a jedna je v části **Else** .  
   
-25. Klikněte na tlačítko **WriteLine** aktivity v **pak** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
+25. Kliknutím na aktivitu **WriteLine** v části **pak** ji vyberete a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
     ```
     "Your guess is too low."  
     ```  
   
-26. Klikněte na tlačítko **WriteLine** aktivity v **Else** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
+26. Kliknutím na aktivitu **WriteLine** v části **Else** ji vyberte a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
     ```
     "Your guess is too high."  
     ```  
   
-27. Vraťte se do celkového stavu počítače zobrazení v Návrháři postupu provádění kliknutím **stavový stroj StateMachine** z jeho zobrazení v horní části návrháře postupu provádění.  
+27. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   
-     Následující příklad ukazuje dokončený pracovní postup.  
+     Následující příklad znázorňuje dokončený pracovní postup.  
   
-     ![Obrázek, na kterém pracovní postup dokončený stav stroje.](./media/how-to-create-a-state-machine-workflow/complete-state-machine-workflow.jpg)  
+     ![Obrázek zobrazující pracovní postup dokončeného stavového počítače.](./media/how-to-create-a-state-machine-workflow/complete-state-machine-workflow.jpg)  
   
-### <a name="to-build-the-workflow"></a>K vytvoření pracovního postupu  
+### <a name="to-build-the-workflow"></a>Postup sestavení pracovního postupu  
   
-1. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+1. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.  
   
-     Návod, jak spustit workflow, najdete dalším tématu s názvem [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste už dokončili [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí pracovní postup stavového stroje z tohoto kroku, přeskočte k části [sestavíte a spustíte aplikaci](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) část [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md).  
+     Pokyny ke spuštění pracovního postupu najdete v dalším tématu [postup: Spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste již dokončili [postupy: Spusťte krok pracovního](how-to-run-a-workflow.md) postupu s jiným stylem pracovního postupu a přejete si ho spustit pomocí pracovního postupu stavového stroje z tohoto kroku, Přeskočit k [sestavení a spustit](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) [aplikaci v tématu Postupy: Spuštění pracovního postupu](how-to-run-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také:
 

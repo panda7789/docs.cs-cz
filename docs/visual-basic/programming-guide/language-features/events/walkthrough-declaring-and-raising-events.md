@@ -9,69 +9,69 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-ms.openlocfilehash: fe96e54e92c09cf65c312306214e4460550c685d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 20e2b0efbf40597049c515134f408927f18d5603
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626446"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956337"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
-Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s názvem `Widget`. Po dokončení kroků se můžete chtít přečíst téma doprovodná [názorný postup: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje, jak používat události z `Widget` objekty poskytnout informace o stavu v aplikaci.  
+Tento návod ukazuje, jak deklarovat a vyvolat události pro třídu s názvem `Widget`. Po dokončení tohoto postupu si můžete přečíst doprovodný článek, [Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), které ukazují, jak používat události z `Widget` objektů k poskytnutí informací o stavu v aplikaci.  
   
-## <a name="the-widget-class"></a>Třída widgetu  
- Předpokládejme, že máte nyní `Widget` třídy. Vaše `Widget` třída nemá metodu, která může trvat dlouhou dobu spuštění, a chcete, aby vaše aplikace bude moct vyvěste určitého druhu dokončení indikátoru.  
+## <a name="the-widget-class"></a>Widget – třída  
+ Předpokládejme, kdy máte `Widget` třídu. Vaše `Widget` třída má metodu, která může trvat dlouhou dobu, a chcete, aby aplikace mohla sestavit nějaký typ indikátoru dokončení.  
   
- Samozřejmě můžete provést `Widget` objekt zobrazit dokončeno % dialogovému oknu, ale pak jste by zablokuje se tohoto dialogového okna v každém projektu, ve které jste použili `Widget` třídy. Dobré zásady navrhování objektu je umožnit aplikaci, která používá popisovač objektu uživatelského rozhraní – Pokud je účelem objektu ke správě pole formuláře nebo dialogového okna.  
+ Samozřejmě je možné nastavit, aby se `Widget` v objektu zobrazilo dialogové okno procento dokončení, ale pak byste zablokovali toto dialogové okno v každém projektu, ve kterém jste `Widget` použili třídu. Dobrým principem návrhu objektu je umožnit aplikaci, která používá objekt, zpracovat uživatelské rozhraní – Pokud celý účel objektu není spravovat formulář nebo dialogové okno.  
   
- Účelem `Widget` je a provádět další úlohy, tak, aby byl lepší přidat `PercentDone` událostí a umožňují proceduru, která volá `Widget`uživatele metody zpracovávají, události a zobrazení stavu aktualizace. `PercentDone` Události můžete taky mělo poskytovat mechanismus pro zrušení úkolu.  
+ Účelem `Widget` je provést jiné úkoly, takže je lepší `PercentDone` přidat událost a nechat proceduru, která volá `Widget`metody, zpracovávat tuto událost a zobrazovat aktualizace stavu. `PercentDone` Událost může také poskytovat mechanismus pro zrušení úlohy.  
   
-#### <a name="to-build-the-code-example-for-this-topic"></a>Chcete-li vytvořit příklad kódu pro toto téma  
+#### <a name="to-build-the-code-example-for-this-topic"></a>Postup sestavení příkladu kódu pro toto téma  
   
-1. Otevřete nový projekt aplikace Windows jazyka Visual Basic a vytvořte formulář s názvem `Form1`.  
+1. Otevřete nový Visual Basic projekt aplikace pro Windows a vytvořte formulář s názvem `Form1`.  
   
-2. Přidání dvou tlačítek a popisek pro `Form1`.  
+2. Přidejte dvě tlačítka a popisky do `Form1`.  
   
-3. Jak je znázorněno v následující tabulce, pojmenujte objekty.  
+3. Pojmenujte objekty, jak je uvedeno v následující tabulce.  
   
     |Objekt|Vlastnost|Nastavení|  
     |------------|--------------|-------------|  
-    |`Button1`|`Text`|Spouštěcí úkol|  
+    |`Button1`|`Text`|Spustit úkol|  
     |`Button2`|`Text`|Zrušit|  
     |`Label`|`(Name)`, `Text`|lblPercentDone, 0|  
   
-4. Na **projektu** nabídce zvolte **přidat třídu** přidat třídu s názvem `Widget.vb` do projektu.  
+4. V nabídce **projekt** vyberte možnost **Přidat třídu** a přidejte do projektu třídu s `Widget.vb` názvem.  
   
-#### <a name="to-declare-an-event-for-the-widget-class"></a>Chcete-li deklarovat události pro třídu widgetu  
+#### <a name="to-declare-an-event-for-the-widget-class"></a>Deklarace události pro třídu widgetu  
   
-- Použití `Event` – klíčové slovo pro deklaraci události v `Widget` třídy. Všimněte si, že událost může mít `ByVal` a `ByRef` argumenty, jako `Widget`společnosti `PercentDone` ukazuje událostí:  
+- Použijte klíčové slovo k deklaraci události `Widget` ve třídě. `Event` Všimněte si, že událost může `ByVal` mít `ByRef` argumenty a a `Widget`jako `PercentDone` událost ukazuje:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#1)]  
   
- Když se obdrží objektem neúčastnícím se volání `PercentDone` událostí, `Percent` argument obsahuje procento dokončení úkolu. `Cancel` Argument může být nastaven na `True` zrušit metodu, která vyvolala událost.  
+ Když volající objekt obdrží `PercentDone` událost `Percent` , argument obsahuje procento dokončeného úkolu. Argument lze nastavit na `True` hodnotu, chcete-li zrušit metodu, která událost vyvolala. `Cancel`  
   
 > [!NOTE]
->  Je možné deklarovat argumenty události, stejně jako argumenty procedur, s následujícími výjimkami: Události nemohou mít `Optional` nebo `ParamArray` argumenty a události nemají návratové hodnoty.  
+> Argumenty události lze deklarovat stejně jako argumenty procedur, s následujícími výjimkami: Události nemohou mít `Optional` argumenty `ParamArray` nebo a události neobsahují návratové hodnoty.  
   
- `PercentDone` Vyvolá událost `LongTask` metodu `Widget` třídy. `LongTask` přebírá dva argumenty: doba metodu předstírá, že se to práci a minimální časový interval před `LongTask` možné zvýšit `PercentDone` událostí.  
+ Událost je vyvolána `LongTask` metodou`Widget`třídy. `PercentDone` `LongTask`přebírá dva argumenty: dobu, po kterou metoda zamýšlí pracovat, a minimální časový interval před `LongTask` pauzou pro `PercentDone` vyvolání události.  
   
-#### <a name="to-raise-the-percentdone-event"></a>Aby se vyvolala událost PercentDone  
+#### <a name="to-raise-the-percentdone-event"></a>Vyvolání události PercentDone  
   
-1. Pro zjednodušení přístupu k `Timer` přidat vlastnost použitou touto třídou `Imports` příkaz do horní části deklarace třídy modulu, výše `Class Widget` příkazu.  
+1. Chcete-li zjednodušit `Timer` přístup k vlastnosti, kterou používá tato třída `Imports` , přidejte příkaz na začátek oddílu deklarace v modulu `Class Widget` třídy nad rámec příkazu.  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#2)]  
   
-2. Přidejte následující kód, který `Widget` třídy:  
+2. Do `Widget` třídy přidejte následující kód:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#3)]  
   
- Když vaše aplikace volá `LongTask` metody `Widget` třídy vyvolá `PercentDone` událost každých `MinimumInterval` sekund. Po návratu události `LongTask` kontroluje, jestli `Cancel` argument byl nastaven na `True`.  
+ Když vaše aplikace `LongTask` volá metodu `Widget` , třída vyvolá `PercentDone` událost každou `MinimumInterval` sekundou. Jakmile se událost vrátí, `LongTask` zkontroluje, `Cancel` zda byl argument nastaven na `True`hodnotu.  
   
- Zde je potřeba několik omezení. Pro zjednodušení `LongTask` postupu se předpokládá můžete předem vědět, jak dlouho bude trvat úkolu. To platí téměř nikdy. Dělení do bloků velikosti i úlohy může být složité a často to nejdůležitější uživatelů je jednoduše množství času, který uplyne, než se jim zobrazí jako ukazatel toho, že se něco děje.  
+ Tady je potřeba pár omezení. V zájmu jednoduchosti `LongTask` postup předpokládá, že jste předem věděli, jak dlouho bude úkol trvat. To téměř nikdy neplatí. Rozdělování úkolů do bloků rovnoměrné velikosti může být obtížné a často se jedná o většinu uživatelů, což je jednoduše doba, která se předá před tím, než získá indikaci, že se něco děje.  
   
- Může mít další vadou nanese v této ukázce. `Timer` Vlastnost vrátí počet sekund, které uplynuly od půlnoci; proto aplikace zasekne, pokud je spuštěna těsně před půlnocí. Více opatrní přístup k měření doby by přijmout podmínky hranice takovou situaci v úvahu, nebo jim zabránit zcela, například pomocí vlastnosti `Now`.  
+ V této ukázce jste pravděpodobně spottedi jinou chybu. `Timer` Vlastnost vrátí počet sekund, které byly předány od půlnoci. proto je aplikace zablokovaná, pokud je spuštěna těsně před půlnocí. Lepším přístupem k měření času by došlo k tomu, že se jedná o podmínky pro hranici, jako je to vhodné, nebo se `Now`jim vyhnete úplně, a to pomocí vlastností jako.  
   
- Teď, když `Widget` třída může vyvolat události, můžete přesunout do dalšího názorného postupu. [Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md) ukazuje, jak používat `WithEvents` přidružení obslužné rutiny události s `PercentDone` událostí.  
+ Teď, `Widget` když třída může vyvolávat události, můžete přejít k dalšímu návodu. [Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md) ukazuje, jak použít `WithEvents` k přidružení obslužné rutiny `PercentDone` události k události.  
   
 ## <a name="see-also"></a>Viz také:
 

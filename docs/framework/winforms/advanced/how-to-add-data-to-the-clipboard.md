@@ -8,52 +8,52 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], copying data to
 - data [Windows Forms], copying to Clipboard
 ms.assetid: 25152454-0e78-40a9-8a9e-a2a5a274e517
-ms.openlocfilehash: 06ce64de5e2a6b4aa299b9ad9c41982b7c1924c7
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: d4afcd6ce942d1cd2286e3f393ce61436821bb3a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348280"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955129"
 ---
 # <a name="how-to-add-data-to-the-clipboard"></a>Postupy: Přidání dat do schránky
-<xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které vám umožní pracovat s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové procesory použít schránky během operací vyjmutí a vložení. Schránka je také užitečné pro přenos dat z jedné aplikace do jiné.  
+<xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které můžete použít k interakci s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránku jako dočasné úložiště pro data. Například procesory aplikace Word používají schránku během operací vyjmutí a vložení. Schránka je užitečná také pro přenos dat z jedné aplikace do jiné.  
   
- Když přidáte data do schránky, můžete určit formát dat tak, aby další aplikace dokáže rozpoznat data, pokud používají tento formát. Můžete také přidat data do schránky v několika různých formátech. zvyšte počet jiných aplikací, které mohou potenciálně používat data.  
+ Když do schránky přidáte data, můžete určit formát dat, aby ostatní aplikace mohli rozpoznat data v případě, že mohou použít tento formát. Můžete také přidat data do schránky v různých formátech a zvýšit tak počet dalších aplikací, které mohou data potenciálně používat.  
   
- Formát schránky není řetězec, který určuje formát tak, aby aplikace, která se použije tento formát můžete načíst související data. <xref:System.Windows.Forms.DataFormats> Třída poskytující předdefinovaný formát názvy používat. Můžete také použít vlastní názvy ve formátu nebo použít objekt typu jako jeho formát.  
+ Formát schránky je řetězec, který určuje formát, aby aplikace, která používá tento formát, mohla načíst přidružená data. <xref:System.Windows.Forms.DataFormats> Třída poskytuje předdefinované názvy formátů pro použití. Můžete také použít vlastní názvy formátů nebo jako svůj formát použít typ objektu.  
   
- Chcete-li přidat data do schránky. v jeden nebo více formátů, použijte <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> metody. Libovolný objekt můžete předat této metodě, ale můžete přidat data v různých formátech, musíte nejprve přidat data do samostatný objekt navrženy pro práci s více formátů. Obvykle přidáte data <xref:System.Windows.Forms.DataObject>, ale můžete použít libovolný typ, který implementuje <xref:System.Windows.Forms.IDataObject> rozhraní.  
+ Chcete-li přidat data do schránky v jednom nebo více formátech, použijte <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> metodu. Do této metody můžete předat libovolný objekt, ale chcete-li přidat data do více formátů, je nutné nejprve přidat data do samostatného objektu navrženého pro práci s více formáty. Obvykle budete přidávat data do <xref:System.Windows.Forms.DataObject>, ale můžete použít jakýkoli typ, který <xref:System.Windows.Forms.IDataObject> implementuje rozhraní.  
   
- V rozhraní .NET Framework 2.0 můžete přidat data přímo do schránky s použitím nové metody, které jsou navržené tak, aby základní úlohy schránky jednodušší. Tyto metody používejte při práci s daty ve formátu jeden, běžné například podle textu.  
+ V .NET Framework 2,0 můžete přidat data přímo do schránky pomocí nových metod, které jsou navržené tak, aby byly snadno základní úlohy schránky. Tyto metody použijte při práci s daty v jednom, běžném formátu, jako je text.  
   
 > [!NOTE]
->  Všechny aplikace pro systém Windows sdílení schránky. Obsah, proto se mohou změnit po přepnutí na jinou aplikaci.  
+> Všechny aplikace založené na systému Windows sdílejí schránku. Proto se obsah může změnit při přepnutí na jinou aplikaci.  
 >   
->  <xref:System.Windows.Forms.Clipboard> Třídu jde použít jenom ve vláknech nastavit na jedno vlákno režim apartment (STA). Pokud chcete použít tuto třídu, ujistěte se, že vaše `Main` metoda je označena <xref:System.STAThreadAttribute> atribut.  
+>  Třída <xref:System.Windows.Forms.Clipboard> se dá použít jenom v vláknech nastavených na režim sta (Single Thread Apartment). Chcete-li použít tuto třídu, ujistěte `Main` se, že je vaše <xref:System.STAThreadAttribute> Metoda označena atributem.  
 >   
->  Objekt musí být serializovatelný, které budou umístěny do schránky. Chcete-li typ serializovatelný, označte ji pomocí <xref:System.SerializableAttribute> atribut. Pokud předáte metodě schránky není serializovatelný objekt, metoda selže bez vyvolání výjimky. Další informace o serializaci naleznete v tématu <xref:System.Runtime.Serialization>.  
+>  Objekt musí být serializovatelný, aby jej bylo možné umístit do schránky. Chcete-li vytvořit serializovatelný typ, označte jej <xref:System.SerializableAttribute> atributem. Pokud předáte Neserializovatelný objekt metodě schránky, metoda selže bez vyvolání výjimky. Další informace o serializaci naleznete v <xref:System.Runtime.Serialization>tématu.  
   
-### <a name="to-add-data-to-the-clipboard-in-a-single-common-format"></a>Jak přidat data do schránky. v jedné, běžné formátu  
+### <a name="to-add-data-to-the-clipboard-in-a-single-common-format"></a>Přidání dat do schránky v jednom společném formátu  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.SetAudio%2A>, <xref:System.Windows.Forms.Clipboard.SetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.SetImage%2A>, nebo <xref:System.Windows.Forms.Clipboard.SetText%2A> metody. Tyto metody jsou k dispozici pouze v rozhraní .NET Framework 2.0.  
+1. Použijte metodu <xref:System.Windows.Forms.Clipboard.SetFileDropList%2A> ,,<xref:System.Windows.Forms.Clipboard.SetImage%2A>nebo .<xref:System.Windows.Forms.Clipboard.SetText%2A> <xref:System.Windows.Forms.Clipboard.SetAudio%2A> Tyto metody jsou k dispozici pouze v .NET Framework 2,0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#2)]
      [!code-vb[System.Windows.Forms.Clipboard#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#2)]  
   
-### <a name="to-add-data-to-the-clipboard-in-a-custom-format"></a>Chcete-li přidat data do schránky ve vlastním formátu  
+### <a name="to-add-data-to-the-clipboard-in-a-custom-format"></a>Přidání dat do schránky ve vlastním formátu  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.SetData%2A> metodu s názvem vlastního formátu. Tato metoda je k dispozici pouze v rozhraní .NET Framework 2.0.  
+1. <xref:System.Windows.Forms.Clipboard.SetData%2A> Použijte metodu s názvem vlastního formátu. Tato metoda je k dispozici pouze v .NET Framework 2,0.  
   
-     Můžete také použít předdefinovaný formát názvů s <xref:System.Windows.Forms.Clipboard.SetData%2A> metody. Další informace naleznete v tématu <xref:System.Windows.Forms.DataFormats>.  
+     Můžete také použít předdefinované názvy formátů s <xref:System.Windows.Forms.Clipboard.SetData%2A> metodou. Další informace naleznete v tématu <xref:System.Windows.Forms.DataFormats>.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#3)]
      [!code-vb[System.Windows.Forms.Clipboard#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#3)]  
     [!code-csharp[System.Windows.Forms.Clipboard#100](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#100)]
     [!code-vb[System.Windows.Forms.Clipboard#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#100)]  
   
-### <a name="to-add-data-to-the-clipboard-in-multiple-formats"></a>Chcete-li přidat data do schránky ve více formátech  
+### <a name="to-add-data-to-the-clipboard-in-multiple-formats"></a>Přidání dat do schránky v několika formátech  
   
-1. Použití <xref:System.Windows.Forms.Clipboard.SetDataObject%2A?displayProperty=nameWithType> metoda a předejte jí <xref:System.Windows.Forms.DataObject> , který obsahuje vaše data. Tato metoda musíte použít k přidání dat do schránky u verzí dřívějších než rozhraní .NET Framework 2.0.  
+1. Použijte metodu <xref:System.Windows.Forms.Clipboard.SetDataObject%2A?displayProperty=nameWithType> a předejte <xref:System.Windows.Forms.DataObject> ji, která obsahuje vaše data. Tuto metodu je nutné použít, pokud chcete do schránky přidat data ve verzích starších než .NET Framework 2,0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.Clipboard#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#4)]  

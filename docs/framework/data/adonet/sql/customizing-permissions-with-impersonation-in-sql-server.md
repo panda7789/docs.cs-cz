@@ -2,68 +2,68 @@
 title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: d44e410727924260640f0f50aea5ea41f264f3af
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 52e11bd983a8c9155d90659834df03dea6449a8e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650347"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961114"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
-Mnoho aplikací používá pro přístup k datům, spoléhat na řetězení vlastnictví můžete omezit přístup k základní tabulky uložené procedury. Můžete udělit oprávnění spouštět na uložené procedury, odvolání nebo odepřením oprávnění u základní tabulky. SQL Server oprávnění volající nekontroluje, pokud uložené procedury a tabulky mají stejné vlastníka. Ale řetězení vlastnictví nefunguje Pokud objekty mají různé vlastníci nebo v případě dynamické SQL.  
+Mnoho aplikací používá pro přístup k datům uložené procedury, které se spoléhají na zřetězení vlastnictví, aby se omezil přístup k základním tabulkám. Můžete udělit oprávnění pro spouštění uložených procedur, odvolat nebo odepřít oprávnění pro základní tabulky. SQL Server nekontrolují oprávnění volajícího, pokud má uložená procedura a tabulky stejného vlastníka. Řetězení vlastnictví ale nefunguje, pokud objekty mají různé vlastníky nebo v případě dynamického SQL.  
   
- Můžete použít EXECUTE AS klauzule v uložené proceduře když volající nemá oprávnění u objektů odkazovaná databáze. Účinek EXECUTE AS klauzule je, že kontextu spuštění přepnutí na uživatele proxy serveru. Veškerý kód, stejně jako všechna volání vnořených uložených procedur a aktivačních událostí, spustí v kontextu zabezpečení uživatele proxy serveru. Kontext spuštění se vrátí zpět na původní volajícího až po provádění procedury nebo při vydání příkazu obnovit.  
+ V uložené proceduře můžete použít klauzuli EXECUTE AS, pokud volající nemá oprávnění k objektům odkazované databáze. Výsledkem klauzule EXECUTE AS je přepnutí kontextu spuštění na uživatele proxy serveru. Veškerý kód, stejně jako všechna volání vnořených uložených procedur nebo triggerů, se spustí v kontextu zabezpečení uživatele proxy serveru. Kontext spuštění se vrátí původnímu volajícímu až po provedení procedury nebo při vydání příkazu REVERT.  
   
-## <a name="context-switching-with-the-execute-as-statement"></a>Kontext přímé přepnutí s EXECUTE AS – příkaz  
- Příkaz umožňuje přepínat kontext spuštění příkazu pomocí zosobnění jiného uživatele přihlášení nebo databáze AS spuštění příkazů jazyka Transact-SQL. To je užitečná technika pro testování dotazů a procedur jako jiný uživatel.  
+## <a name="context-switching-with-the-execute-as-statement"></a>Přepínání kontextu pomocí příkazu Spustit jako  
+ Příkaz Transact-SQL EXECUTE AS umožňuje přepnout kontext provádění příkazu zosobněním jiného uživatele nebo uživatele databáze. Toto je užitečnou technikou pro testování dotazů a postupů jako jiný uživatel.  
   
 ```  
 EXECUTE AS LOGIN = 'loginName';  
 EXECUTE AS USER = 'userName';  
 ```  
   
- Musíte mít oprávnění k přihlášení nebo uživatele, kterého jsou zosobnění ZOSOBNIT. Toto oprávnění je vyjádřena pro `sysadmin` pro všechny databáze, a `db_owner` členů role v databázích, které vlastní.  
+ Musíte mít oprávnění k ZOSOBNĚNí nebo k zosobnění uživatele. Toto oprávnění je odvozené pro `sysadmin` všechny databáze a `db_owner` členy rolí v databázích, které vlastní.  
   
-## <a name="granting-permissions-with-the-execute-as-clause"></a>Udělení oprávnění EXECUTE AS – klauzule  
- Můžete použít EXECUTE AS klauzuli v definici hlavičky uložené procedury, aktivační události nebo uživatelem definované funkce (s výjimkou vložené funkce vracející tabulku). To způsobí, že postup provést v kontextu uživatelské jméno nebo podle EXECUTE AS – klíčové slovo klauzuli. Můžete vytvořit proxy uživatele v databázi, která není namapován na přihlášení, udělena potřebná oprávnění pouze u objektů procedura přistupuje. Pouze proxy uživatele zadaného v EXECUTE jako klauzule musí mít oprávnění u všech objektů přistupuje modulu.  
+## <a name="granting-permissions-with-the-execute-as-clause"></a>Udělování oprávnění s klauzulí EXECUTE AS  
+ Můžete použít klauzuli EXECUTE AS v hlavičce definice uložené procedury, triggeru nebo uživatelsky definované funkce (s výjimkou vložených funkcí vracející tabulky). To způsobí, že se procedura spustí v kontextu uživatelského jména nebo klíčového slova zadaného v klauzuli EXECUTE AS. Můžete vytvořit uživatele proxy v databázi, která není namapována na přihlašovací údaje, a udělit tak pouze potřebná oprávnění k objektům, ke kterým má přístup tento postup. Jenom uživatel proxy, který je zadaný v klauzuli spustit jako, musí mít oprávnění pro všechny objekty, ke kterým přistupoval modul.  
   
 > [!NOTE]
->  Některé akce, jako je například TRUNCATE TABLE nemají udělitelným oprávnění. Začlenění příkaz v rámci procedury a zadání uživatele proxy serveru, který má oprávnění k příkazu ALTER TABLE, můžete rozšířit oprávnění došlo ke zkrácení tabulky volajícím, kteří mají jenom oprávnění spouštět v postupu.  
+> Některé akce, například TRUNCATE TABLE, nemají udělená oprávnění. Zahrnutím příkazu v rámci procedury a zadáním uživatele proxy, který má oprávnění ALTER TABLE, můžete oprávnění zkrátit pro zkrácení tabulky na volající, kteří mají pouze oprávnění k provedení procedury.  
   
- Kontext zadaný v EXECUTE jako klauzuli je platný po dobu trvání tento postup, včetně vnořených procedur a aktivačních událostí. Kontext se vrátí volajícímu při spuštění je dokončena nebo je vydán příkaz REVERT.  
+ Kontext zadaný v klauzuli EXECUTE AS je platný po dobu trvání procedury, včetně vnořených procedur a triggerů. Kontext se vrátí volajícímu, pokud je spuštění dokončeno nebo je vydán příkaz REVERT.  
   
- Existují tři kroky při použití EXECUTE AS klauzule v postupu.  
+ Existují tři kroky, které se týkají použití klauzule EXECUTE AS v proceduře.  
   
-1. Vytvoření uživatele proxy serveru v databázi, která není namapován na přihlášení. Tento krok není povinný, ale pomáhá při správě oprávnění.  
+1. Vytvořte uživatele proxy v databázi, která není namapovaná na přihlašovací jméno. To není povinné, ale pomáhá při správě oprávnění.  
   
 ```  
 CREATE USER proxyUser WITHOUT LOGIN  
 ```  
   
-1. Proxy uživateli udělte potřebná oprávnění.  
+1. Udělte uživateli proxy potřebná oprávnění.  
   
-2. Přidat EXECUTE AS klauzule uloženou proceduru nebo uživatelem definované funkce.  
+2. Přidejte klauzuli EXECUTE AS do uložené procedury nebo uživatelsky definované funkce.  
   
 ```  
 CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...  
 ```  
   
 > [!NOTE]
->  Aplikace, které vyžadují auditování můžete zrušit, protože není zachováno původní kontext zabezpečení volajícího. Integrované funkce, které vracejí identity aktuálního uživatele, jako je například SESSION_USER, uživatele nebo uzivatelske_jmeno, vrátí uživatele přidruženého k EXECUTE AS klauzule, nikoli původní volající.  
+> Aplikace, které vyžadují auditování, můžou přerušit, protože původní kontext zabezpečení volajícího se nezachová. Integrované funkce, které vracejí identitu aktuálního uživatele, jako je SESSION_USER, uživatel nebo uživatelské_jméno, vrátí uživatele přidruženého k klauzuli EXECUTE AS, nikoli původnímu volajícímu.  
   
-### <a name="using-execute-as-with-revert"></a>Použití EXECUTE AS s vrácení  
- Příkaz vrátit příkazů jazyka Transact-SQL můžete vrátit na původní kontext spuštění.  
+### <a name="using-execute-as-with-revert"></a>Použití příkazu Spustit jako s příkazem REVERT  
+ Pomocí příkazu Transact-SQL REVERT se můžete vrátit k původnímu kontextu spuštění.  
   
- Volitelná klauzule s ne vrátit soubor COOKIE = @variableName, umožňuje přepnout kontext spuštění zpět do volajícího, pokud @variableName proměnná obsahuje platnou hodnotu. To umožňuje jste museli přepínat kontext spuštění zpět volajícímu v prostředích, kde se používá sdružování připojení. Protože hodnota @variableName je znám pouze volajícímu metody EXECUTE AS prohlášení, volající může zaručit, že koncový uživatel, který volá aplikaci nelze změnit kontext spuštění. Když se připojení uzavře, je vrácen do fondu. Další informace o připojení sdružování v ADO.NET, naleznete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Volitelná klauzule bez revertu souborů cookie @variableName= umožňuje přepnout kontext spuštění zpět na volajícího, @variableName Pokud proměnná obsahuje správnou hodnotu. To umožňuje přepnout kontext spuštění zpět na volající v prostředích, kde se používá sdružování připojení. Vzhledem k tomu, @variableName že hodnota je známa pouze volajícímu příkazu Spustit jako, volající může zaručit, že kontext spuštění nemůže být změněn koncovým uživatelem, který aplikaci vyvolá. Po zavření připojení se vrátí do fondu. Další informace o sdružování připojení v ADO.NET najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
   
 ### <a name="specifying-the-execution-context"></a>Určení kontextu spuštění  
- Kromě zadání uživatele, můžete také použít EXECUTE AS s jakoukoli následující klíčová slova.  
+ Kromě určení uživatele můžete také použít příkaz Spustit jako s některým z následujících klíčových slov.  
   
-- VOLAJÍCÍ. Spouštění jako VOLAJÍCÍ je výchozí hodnota; Pokud není zadána žádná další možnost, postup spustí v kontextu zabezpečení volajícího.  
+- VOLAJÍCÍ. Spuštění jako volající je výchozí. Pokud není zadána žádná jiná možnost, pak se procedura provede v kontextu zabezpečení volajícího.  
   
-- VLASTNÍK. Postup spuštění jako vlastník spustí v kontextu postupu vlastníka. Pokud postupu je vytvořena ve schématu vlastněné `dbo` nebo vlastník databáze postupu budou spouštěny s neomezenými oprávněními.  
+- OWNER. Spuštění jako vlastník provede proceduru v kontextu vlastníka procedury. Pokud je procedura vytvořena ve schématu vlastněném nástrojem `dbo` nebo vlastníkem databáze, postup bude proveden s neomezenými oprávněními.  
   
-- VLASTNÍ. Spuštění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jedná se o ekvivalent spuštění jako určitý uživatel, pokud zadaný uživatel je osoba, vytvoření či změna postup.  
+- SAMOROZBALUJÍCÍ. Spouští se jako samostatně spouštěné v kontextu zabezpečení tvůrce uložené procedury. Jedná se o ekvivalentní spuštění jako zadaný uživatel, kde zadaný uživatel je osoba, která tuto proceduru vytvořila nebo mění.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -74,4 +74,4 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 - [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
 - [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
 - [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

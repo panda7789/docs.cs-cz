@@ -7,40 +7,40 @@ dev_langs:
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-ms.openlocfilehash: 0727bb8ac4f0ff25640ae6f8e292d89f903e4eb5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: faa1fbad85acf5788c10de7750c6a7c32b535bf5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627324"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957037"
 ---
 # <a name="controls"></a>Ovládací prvky
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] se dodává s mnoha běžných součásti uživatelského rozhraní, které se používají v téměř všechny aplikace Windows, jako například <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.ListBox>. Tyto objekty mají byla v minulosti uvedené jako ovládací prvky. Zatímco [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK pořád používá termín "control" volně rozumí jakékoli třídy, která představuje viditelného objektu v aplikaci, je důležité si uvědomit, že třídu není potřeba dědit z <xref:System.Windows.Controls.Control> třídě budou mít viditelné přítomnost. Třídy odvozené z <xref:System.Windows.Controls.Control> třída obsahovat <xref:System.Windows.Controls.ControlTemplate>, která umožňuje příjemci ovládacího prvku výrazně změnit vzhled ovládacího prvku bez nutnosti vytvořit novou podtřídu.  Toto téma popisuje, jak ovládací prvky (i těch, které dědí z <xref:System.Windows.Controls.Control> třídy a ty, které nejsou) se obvykle používají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]dodává se s mnoha běžnými součástmi uživatelského rozhraní, které se používají téměř v každé aplikaci pro <xref:System.Windows.Controls.Button>Windows <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>například <xref:System.Windows.Controls.Menu>,, <xref:System.Windows.Controls.ListBox>, a. Historicky tyto objekty byly označovány jako ovládací prvky. I když <xref:System.Windows.Controls.Control> sada SDK stále používá termín "ovládací prvek" k volnému znamená jakékoli třídy, která představuje viditelný objekt v aplikaci, je důležité si uvědomit, že třída nemusí dědit od třídy, aby měla viditelné přítomnosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Třídy, které dědí z <xref:System.Windows.Controls.Control> třídy, obsahují <xref:System.Windows.Controls.ControlTemplate>a, což umožňuje spotřebiteli ovládacího prvku odvodit, že se vzhled ovládacího prvku bude měnit bez nutnosti vytvořit novou podtřídu.  Toto téma popisuje, jak se používají ovládací prvky (obě metody, <xref:System.Windows.Controls.Control> které dědí z třídy i těch, které nejsou) se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]běžně používají v.  
 
 <a name="creating_an_instance_of_a_control"></a>   
-## <a name="creating-an-instance-of-a-control"></a>Vytvoření Instance ovládacího prvku  
- Můžete přidat ovládací prvek k aplikaci pomocí buď [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] nebo kódu.  Následující příklad ukazuje, jak vytvořit jednoduchou aplikaci, která uživatele vyzve k zadání jména a příjmení.  Tento příklad vytvoří šesti ovládacích prvků: dva popisky, dvě textová pole a dvě tlačítka v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Podobně je možné vytvořit všechny ovládací prvky.  
+## <a name="creating-an-instance-of-a-control"></a>Vytvoření instance ovládacího prvku  
+ Můžete přidat ovládací prvek do aplikace pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] kódu nebo.  Následující příklad ukazuje, jak vytvořit jednoduchou aplikaci, která žádá uživatele o jejich křestní jméno a příjmení.  Tento příklad vytvoří šest ovládacích prvků: dva popisky, dvě textová pole a dvě tlačítka v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Všechny ovládací prvky lze vytvořit podobně.  
   
  [!code-xaml[ControlsOverview#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
   
- Následující příklad vytvoří stejné aplikace v kódu. Pro zkrácení vytváření <xref:System.Windows.Controls.Grid>, `grid1`, byly vyloučeny z ukázky. `grid1` má stejné definice sloupců a řádků, jak je znázorněno v předchozím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.  
+ Následující příklad vytvoří stejnou aplikaci v kódu. Pro zkrácení bylo z ukázky vyloučeno <xref:System.Windows.Controls.Grid>vytváření `grid1`,. `grid1`má stejné definice sloupců a řádků, jak je znázorněno v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] předchozím příkladu.  
   
  [!code-csharp[ControlsOverview#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
  [!code-vb[ControlsOverview#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
   
 <a name="changing_the_appearance_of_a_control"></a>   
 ## <a name="changing-the-appearance-of-a-control"></a>Změna vzhledu ovládacího prvku  
- Je běžné, chcete-li změnit vzhled ovládacího prvku pro přizpůsobení vzhledu a chování vaší aplikace. Můžete změnit vzhled ovládacího prvku pomocí jedné z těchto možností podle toho, co chcete dosáhnout:  
+ Je běžné, že změníte vzhled ovládacího prvku tak, aby odpovídal vzhledu a chování vaší aplikace. Vzhled ovládacího prvku lze změnit jedním z následujících způsobů v závislosti na tom, co chcete provést:  
   
 - Změňte hodnotu vlastnosti ovládacího prvku.  
   
-- Vytvoření <xref:System.Windows.Style> pro ovládací prvek.  
+- <xref:System.Windows.Style> Vytvořte pro ovládací prvek.  
   
 - Vytvořte nový <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek.  
   
 ### <a name="changing-a-controls-property-value"></a>Změna hodnoty vlastnosti ovládacího prvku  
- Mnoho ovládacích prvků mají vlastnosti, které umožňují změnit, jak ovládací prvek zobrazuje, jako <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button>. Můžete nastavit hodnotu vlastnosti v obou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Následující příklad nastaví <xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontWeight%2A> vlastnosti <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ Mnohé ovládací prvky mají vlastnosti, které umožňují změnit způsob zobrazení ovládacího prvku, jako je <xref:System.Windows.Controls.Control.Background%2A> například <xref:System.Windows.Controls.Button>z. Můžete nastavit vlastnosti hodnoty v kódu i [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] . Následující <xref:System.Windows.Controls.Control.Background%2A>příklad nastaví vlastnosti <xref:System.Windows.Controls.Control.FontWeight%2A> , <xref:System.Windows.Controls.Control.FontSize%2A>av [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]v. <xref:System.Windows.Controls.Button>  
   
  [!code-xaml[ControlsOverview#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#3)]  
   
@@ -50,52 +50,52 @@ ms.locfileid: "64627324"
  [!code-vb[ControlsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
   
 ### <a name="creating-a-style-for-a-control"></a>Vytvoření stylu pro ovládací prvek  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje možnost určit vzhled ovládacích prvků velkoobchodních, místo nastavování vlastností pro každou instanci aplikace, tak, že vytvoříte <xref:System.Windows.Style>. Následující příklad vytvoří <xref:System.Windows.Style> , která je použita na každý <xref:System.Windows.Controls.Button> v aplikaci. <xref:System.Windows.Style> definice jsou obvykle definovány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v <xref:System.Windows.ResourceDictionary>, například <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost <xref:System.Windows.FrameworkElement>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]umožňuje určit vzhled pro velkoobchodní řízení, místo nastavení vlastností každé instance aplikace vytvořením <xref:System.Windows.Style>. Následující příklad vytvoří <xref:System.Windows.Style> , který je použit pro každý <xref:System.Windows.Controls.Button> v aplikaci. <xref:System.Windows.Style>definice jsou obvykle definovány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] <xref:System.Windows.ResourceDictionary>v, jako <xref:System.Windows.FrameworkElement.Resources%2A> je například vlastnost třídy <xref:System.Windows.FrameworkElement>.  
   
  [!code-xaml[ControlsOverview#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
- Můžete také použít styl na pouze některé ovládací prvky určitého typu přiřazením klíč stylu a zadáte tento klíč v `Style` vlastnost ovládacího prvku.  Další informace o stylech najdete v tématu [styly a šablony](styling-and-templating.md).  
+ Můžete také použít styl pouze na určité ovládací prvky určitého typu přiřazením klíče ke stylu a zadáním klíče ve `Style` vlastnosti ovládacího prvku.  Další informace o stylech naleznete v tématu [stylování and šablonování](styling-and-templating.md).  
   
 ### <a name="creating-a-controltemplate"></a>Vytvoření objektu ControlTemplate  
- A <xref:System.Windows.Style> vám umožní nastavit vlastnosti na více ovládacích prvků v čase, ale někdy může být vhodné přizpůsobit vzhled <xref:System.Windows.Controls.Control> rámec toho, co můžete udělat tak, že vytvoříte <xref:System.Windows.Style>. Třídy odvozené z <xref:System.Windows.Controls.Control> třídy <xref:System.Windows.Controls.ControlTemplate>, která definuje strukturu a vzhled <xref:System.Windows.Controls.Control>. <xref:System.Windows.Controls.Control.Template%2A> Vlastnost <xref:System.Windows.Controls.Control> je veřejné, takže můžete poskytnout <xref:System.Windows.Controls.Control> <xref:System.Windows.Controls.ControlTemplate> , která je jiná než výchozí. Často můžete zadat nový <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Control> namísto dědění z ovládacího prvku pro přizpůsobení vzhledu <xref:System.Windows.Controls.Control>.  
+ Umožňuje nastavit vlastnosti pro více ovládacích prvků najednou, ale v některých případech můžete chtít přizpůsobit vzhled <xref:System.Windows.Controls.Control> nad rámec toho, co <xref:System.Windows.Style>můžete udělat vytvořením. <xref:System.Windows.Style> Třídy, které dědí z <xref:System.Windows.Controls.Control> třídy <xref:System.Windows.Controls.ControlTemplate>, mají třídu, která definuje <xref:System.Windows.Controls.Control>strukturu a vzhled. Vlastnost je veřejná <xref:System.Windows.Controls.ControlTemplate> ,<xref:System.Windows.Controls.Control> takže můžete předat a, která se liší od výchozí hodnoty. <xref:System.Windows.Controls.Control> <xref:System.Windows.Controls.Control.Template%2A> Můžete často zadat nové <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Control> místo dědění z ovládacího prvku pro <xref:System.Windows.Controls.Control>přizpůsobení vzhledu.  
   
- Vezměte v úvahu velmi běžný ovládací prvek <xref:System.Windows.Controls.Button>.  Primární chování <xref:System.Windows.Controls.Button> je umožnit aplikaci provést některé akce, když na něj uživatel klikne.  Ve výchozím nastavení <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se zobrazí jako zvýšené obdélník.  Při vývoji aplikace, můžete chtít využít výhod chování <xref:System.Windows.Controls.Button>– to znamená, že pomocí manipulace klikněte na tlačítko události – ale můžete změnit vzhled na tlačítko rámec toho, co můžete dělat to změnou na tlačítko Vlastnosti.  V takovém případě můžete vytvořit nový <xref:System.Windows.Controls.ControlTemplate>.  
+ Vezměte v úvahu velmi běžný ovládací <xref:System.Windows.Controls.Button>prvek.  Primární chování <xref:System.Windows.Controls.Button> funkce je, aby aplikace mohla provést nějakou akci, když na ni uživatel klikne.  Ve výchozím nastavení <xref:System.Windows.Controls.Button> se v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zobrazí jako vystouplý obdélník.  Při vývoji aplikace můžete chtít využít výhod chování a <xref:System.Windows.Controls.Button>– to znamená provedením události kliknutí na tlačítko, ale můžete změnit vzhled tlačítka nad rámec toho, co můžete udělat změnou vlastností tlačítka.  V takovém případě můžete vytvořit nový <xref:System.Windows.Controls.ControlTemplate>.  
   
- Následující příklad vytvoří <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>.  <xref:System.Windows.Controls.ControlTemplate> Vytvoří <xref:System.Windows.Controls.Button> oblých rohů a barevného přechodu pozadí.  <xref:System.Windows.Controls.ControlTemplate> Obsahuje <xref:System.Windows.Controls.Border> jehož <xref:System.Windows.Controls.Border.Background%2A> je <xref:System.Windows.Media.LinearGradientBrush> se dvěma <xref:System.Windows.Media.GradientStop> objekty.  První <xref:System.Windows.Media.GradientStop> používá datové vazby k vytvoření vazby <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost <xref:System.Windows.Media.GradientStop> na barvu pozadí tlačítka.  Při nastavení <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Button>, barva tato hodnota se použije jako první <xref:System.Windows.Media.GradientStop>. Další informace o datové vazbě naleznete v tématu [Data Binding Overview](../data/data-binding-overview.md). Tento příklad také vytvoří <xref:System.Windows.Trigger> , který změní vzhled <xref:System.Windows.Controls.Button> při <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> je `true`.  
+ Následující příklad vytvoří <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Button>pro.  <xref:System.Windows.Controls.ControlTemplate> Vytvořísezaoblenýmirohya<xref:System.Windows.Controls.Button> přechodem na pozadí.  <xref:System.Windows.Controls.ControlTemplate> Obsahuje, jehož<xref:System.Windows.Controls.Border.Background%2A> je a<xref:System.Windows.Media.LinearGradientBrush> má dva<xref:System.Windows.Media.GradientStop> objekty. <xref:System.Windows.Controls.Border>  První <xref:System.Windows.Media.GradientStop> používá datovou vazbu pro <xref:System.Windows.Media.GradientStop.Color%2A> svázání vlastnosti <xref:System.Windows.Media.GradientStop> s barvou pozadí tlačítka.  Když nastavíte <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Button>, bude použita barva této hodnoty jako první <xref:System.Windows.Media.GradientStop>. Další informace o datové vazbě najdete v tématu [Přehled datových vazeb](../data/data-binding-overview.md). V tomto příkladu se vytvoří <xref:System.Windows.Trigger> také, který změní vzhled v <xref:System.Windows.Controls.Button> případě <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> , `true`kdy je.  
   
  [!code-xaml[ControlsOverview#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#6)]  
 [!code-xaml[ControlsOverview#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#7)]  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.Control.Background%2A> Vlastnost <xref:System.Windows.Controls.Button> musí být nastaveno na <xref:System.Windows.Media.SolidColorBrush> například fungovala správně.  
+> Vlastnost musí být nastavena na hodnotu <xref:System.Windows.Media.SolidColorBrush> , aby mohl příklad správně fungovat. <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Control.Background%2A>  
   
 <a name="subscribing_to_events"></a>   
 ## <a name="subscribing-to-events"></a>Přihlášení k odběru událostí  
- Vám může přihlásit k odběru události ovládacího prvku buď pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nebo kód, ale může zpracovat pouze událost v kódu.  Následující příklad ukazuje, jak se přihlásit k odběru `Click` události <xref:System.Windows.Controls.Button>.  
+ Můžete se přihlásit k odběru události ovládacího prvku pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu nebo, ale můžete zpracovat pouze událost v kódu.  Následující příklad ukazuje, jak se přihlásit k odběru `Click` události. <xref:System.Windows.Controls.Button>  
   
  [!code-xaml[ControlsOverview#10](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#10)]  
   
  [!code-csharp[ControlsOverview#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#8)]
  [!code-vb[ControlsOverview#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#8)]  
   
- Následující příklad popisovače `Click` události <xref:System.Windows.Controls.Button>.  
+ Následující příklad zpracovává `Click` událost <xref:System.Windows.Controls.Button>.  
   
  [!code-csharp[ControlsOverview#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#9)]
  [!code-vb[ControlsOverview#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#9)]  
   
 <a name="rich_content_in_controls"></a>   
-## <a name="rich-content-in-controls"></a>Formátovaný obsah v ovládacích prvcích  
- Většina tříd, které dědí <xref:System.Windows.Controls.Control> třídy mají kapacitu tak, aby obsahovala formátovaný obsah. Například <xref:System.Windows.Controls.Label> může obsahovat libovolný objekt, jako je řetězec, <xref:System.Windows.Controls.Image>, nebo <xref:System.Windows.Controls.Panel>.  Následující třídy poskytovat podporu pro formátovaný obsah a plnit funkci základní třídy pro většinu prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+## <a name="rich-content-in-controls"></a>Bohatý obsah v ovládacích prvcích  
+ Většina tříd, které dědí z <xref:System.Windows.Controls.Control> třídy, má kapacitu obsahující bohatou velikost obsahu. Například <xref:System.Windows.Controls.Label> může obsahovat libovolný objekt, jako je například řetězec <xref:System.Windows.Controls.Image>, nebo <xref:System.Windows.Controls.Panel>.  Následující třídy poskytují podporu pro bohatou velikost obsahu a fungují jako základní třídy pro většinu ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-- <xref:System.Windows.Controls.ContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>, a <xref:System.Windows.Controls.ToolTip>.  
+- <xref:System.Windows.Controls.ContentControl>– Některé příklady tříd, které dědí z této třídy, jsou <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>a <xref:System.Windows.Controls.ToolTip>.  
   
-- <xref:System.Windows.Controls.ItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.Primitives.StatusBar>.  
+- <xref:System.Windows.Controls.ItemsControl>– Některé příklady tříd, které dědí z této třídy, jsou <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.Menu>a <xref:System.Windows.Controls.Primitives.StatusBar>.  
   
-- <xref:System.Windows.Controls.HeaderedContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.GroupBox>, a <xref:System.Windows.Controls.Expander>.  
+- <xref:System.Windows.Controls.HeaderedContentControl>– Některé příklady tříd, které dědí z této třídy, jsou <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.GroupBox>a <xref:System.Windows.Controls.Expander>.  
   
-- <xref:System.Windows.Controls.HeaderedItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>, a <xref:System.Windows.Controls.ToolBar>.  
+- <xref:System.Windows.Controls.HeaderedItemsControl>– Některé příklady tříd, které dědí z této třídy, jsou <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>a <xref:System.Windows.Controls.ToolBar>.  
 
- Další informace o těchto základních třídách naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
+ Další informace o těchto základních třídách naleznete v tématu [model obsahu WPF](wpf-content-model.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -106,5 +106,5 @@ ms.locfileid: "64627324"
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Vstup](../advanced/input-wpf.md)
 - [Povolení příkazu](../advanced/how-to-enable-a-command.md)
-- [Návody: Vytvoření tlačítka s vlastní animací](walkthroughs-create-a-custom-animated-button.md)
+- [Návody: Vytvoření vlastního animovaného tlačítka](walkthroughs-create-a-custom-animated-button.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

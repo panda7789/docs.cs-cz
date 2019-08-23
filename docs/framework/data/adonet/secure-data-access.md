@@ -2,96 +2,96 @@
 title: Zabezpečený přístup k datům
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 32106f83785759f4e9aaadcf2198afdcdb24363d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7aa68842ab3733943f84e9d6d9157f7a3d65cac7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664217"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963142"
 ---
 # <a name="secure-data-access"></a>Zabezpečený přístup k datům
-Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezpečení k dispozici v základní úložiště dat nebo databázi. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo komponenty, které vaše aplikace může obsahovat.  
+Chcete-li napsat zabezpečený ADO.NET kód, musíte pochopit mechanismy zabezpečení, které jsou k dispozici v podkladovém úložišti dat nebo databázi. Také je nutné vzít v úvahu důsledky zabezpečení dalších funkcí nebo součástí, které vaše aplikace může obsahovat.  
   
 ## <a name="authentication-authorization-and-permissions"></a>Ověřování, autorizace a oprávnění  
- Při připojování k serveru Microsoft SQL Server, můžete použít ověřování Windows, označované také jako integrované zabezpečení, které používá identity aktuální aktivního uživatele Windows namísto předání ID uživatele a heslo. Ověřování Windows je důrazně doporučujeme, protože přihlašovací údaje uživatele nejsou zveřejněné v připojovacím řetězci. Pokud pro připojení k serveru SQL Server nemůže používat ověřování Windows, zvažte vytvoření připojovací řetězce za běhu pomocí <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.  
+ Při připojování k Microsoft SQL Server můžete použít ověřování systému Windows (označované také jako integrované zabezpečení), které místo předání ID uživatele a hesla používá identitu aktuálního aktivního uživatele systému Windows. Použití ověřování systému Windows se důrazně doporučuje, protože přihlašovací údaje uživatele nejsou zveřejněné v připojovacím řetězci. Pokud se k připojení k SQL Server nemůžete použít ověřování systému Windows, zvažte vytvoření připojovacích řetězců za běhu <xref:System.Data.SqlClient.SqlConnectionStringBuilder>pomocí.  
   
- Přihlašovací údaje použité pro ověřování musí být zpracována různě v závislosti na typu aplikace. Například v aplikaci Windows Forms, uživatel může být vyzváni k zadání ověřovacích informací nebo přihlašovacích údajů uživatele Windows je možné. Však webovou aplikaci často přistupuje k datům pomocí pověření podle samotná aplikace, nikoli podle uživatele.  
+ Přihlašovací údaje, které se používají pro ověřování, se musí zpracovat odlišně v závislosti na typu aplikace. Například v aplikaci model Windows Forms se uživateli zobrazí výzva k zadání ověřovacích informací nebo můžete použít přihlašovací údaje systému Windows uživatele. Nicméně webová aplikace často přistupuje k datům pomocí přihlašovacích údajů, které zadala samotná aplikace, a ne podle uživatele.  
   
- Po ověření uživatele oboru jejich akce závisí na, které jste udělili oprávnění k nim. Vždy postupujte podle principu nejnižší úrovně oprávnění a udělit pouze oprávnění, která jsou naprosto nezbytná.  
-  
- Další informace najdete v následujících materiálech.  
-  
-|Prostředek|Popis|  
-|--------------|-----------------|  
-|[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Popisuje osvědčené postupy zabezpečení a techniky pro ochranu informací o připojení, jako je třeba použití chráněné konfigurace šifrování připojovací řetězce.|  
-|[Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
-|[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak sestavit připojovací řetězce ze vstupu uživatele v době běhu.|  
-|[Přehled zabezpečení SQL Serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení systému SQL Server.|  
-  
-## <a name="parameterized-commands-and-sql-injection"></a>Příkazy s parametry a útok prostřednictvím injektáže SQL  
- Používat příkazy s parametry pomáhá chránit před útoky prostřednictvím injektáže SQL, ve kterých útočník "vkládá" příkaz do příkazu SQL tohoto ohrožení zabezpečení na serveru. Příkazy s parametry pomáhalo chránit před útoky prostřednictvím injektáže SQL tím, že zajišťuje, že hodnoty přijatých z externího zdroje jsou předány jako pouze hodnoty a není součástí příkazu jazyka Transact-SQL. V důsledku toho příkazy Transact-SQL, které jsou vloženy do hodnoty nebudou provedeny ve zdroji dat. Místo toho jsou vyhodnoceny výhradně jako hodnotu parametru. Kromě výhod zabezpečení příkazy s parametry poskytují vhodnou metodu pro uspořádání hodnoty předané s příkazem jazyka Transact-SQL nebo uloženou proceduru.  
-  
- Další informace o použití příkazy s parametry najdete v následující prostředky.  
-  
-|Prostředek|Popis|  
-|--------------|-----------------|  
-|[Parametry adaptéru dat](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Popisuje, jak používat parametry `DataAdapter`.|  
-|[Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Popisuje, jak určit parametry a získat návratovou hodnotu.|  
-|[Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Popisuje způsob použití uložených procedur SQL serveru k zapouzdření přístup k datům.|  
-  
-## <a name="script-exploits"></a>Zneužití skriptu  
- Zneužití skriptu je jiná forma vkládání, který používá škodlivé znaků vložen do webové stránky. Prohlížeč nelze ověřit vložené znaky a zpracuje je v rámci stránky.  
+ Po ověření uživatelů rozsah jejich akcí závisí na oprávněních, která jim byla udělena. Vždy postupujte podle principu nejnižší oprávnění a udělte pouze oprávnění, která jsou nezbytně nutná.  
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
-|[Přehled zneužití skriptu](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100))|Popisuje, jak můžete chránit proti skriptování a příkazu jazyka SQL zneužití.|  
+|[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Popisuje osvědčené postupy a techniky zabezpečení pro ochranu informací o připojení, jako je například použití chráněné konfigurace k šifrování připojovacích řetězců.|  
+|[Doporučení pro strategie přístupu k datům](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
+|[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak vytvořit připojovací řetězce z uživatelského vstupu za běhu.|  
+|[Přehled zabezpečení SQL Serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení SQL Server.|  
   
-## <a name="probing-attacks"></a>Zjišťování útoků  
- Informace z výjimky, jako je například název serveru, databáze nebo tabulky, útočníci často používají k připojení útoku na systém. Protože výjimky může obsahovat specifické informace o aplikaci nebo zdroj dat, můžete pomoct chránit vaše aplikace a zdroj dat lépe chráněné zveřejněním pouze základní informace o klientovi.  
+## <a name="parameterized-commands-and-sql-injection"></a>Parametrizované příkazy a injektáže SQL  
+ Použití parametrizovaných příkazů pomáhá chránit před útoky prostřednictvím injektáže SQL, kdy útočník "Vloží příkaz do příkazu jazyka SQL, který ohrozí zabezpečení na serveru. Parametrizované příkazy Guard proti útoku prostřednictvím injektáže SQL zajišťuje, že hodnoty přijaté z externího zdroje jsou předávány pouze jako hodnoty a nikoli jako součást příkazu jazyka Transact-SQL. V důsledku toho příkazy jazyka Transact-SQL vložené do hodnoty nebudou provedeny ve zdroji dat. Místo toho jsou vyhodnocovány výhradně jako hodnota parametru. Kromě výhod zabezpečení poskytují parametrizované příkazy pohodlný způsob uspořádání hodnot předaných pomocí příkazu jazyka Transact-SQL nebo uložené procedury.  
+  
+ Další informace o použití parametrizovaných příkazů naleznete v následujících zdrojích informací.  
+  
+|Resource|Popis|  
+|--------------|-----------------|  
+|[Parametry adaptéru dat](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Popisuje, jak použít parametry s `DataAdapter`.|  
+|[Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Popisuje, jak zadat parametry a získat návratovou hodnotu.|  
+|[Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Popisuje způsob použití SQL Server uložených procedur k zapouzdření přístupu k datům.|  
+  
+## <a name="script-exploits"></a>Zneužití skriptů  
+ Zneužití skriptu je další forma injektáže, která používá škodlivé znaky vložené do webové stránky. Prohlížeč neověřuje vložené znaky a zpracuje je jako součást stránky.  
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
-|[Základy zpracování výjimek](../../../../docs/standard/exceptions/exception-handling-fundamentals.md)|Popisuje základní formy konstrukce try/catch/finally strukturované zpracování výjimek.|  
-|[Doporučené postupy pro výjimky](../../../../docs/standard/exceptions/best-practices-for-exceptions.md)|Popisuje osvědčené postupy pro zpracování výjimek.|  
+|[Přehled zneužití skriptů](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100))|Popisuje, jak chránit před zneužitím skriptování a příkazů SQL.|  
   
-## <a name="protecting-microsoft-access-and-excel-data-sources"></a>Ochrana aplikace Microsoft Access a zdroje dat aplikace Excel  
- Aplikace Microsoft Access a Microsoft Excel může fungovat jako úložiště dat pro aplikaci ADO.NET při požadavky na zabezpečení jsou minimální, nebo neexistuje. Platí pro dětí jejich funkce zabezpečení, ale byste se neměli spoléhat na více než bránit meddling uninformed uživatelé. Fyzických datových souborů pro přístup a Excel existovat v systému souborů a musí být přístupný pro všechny uživatele. Díky tomu je zranitelný vůči útokům, které může vést ke ztrátě odcizení nebo data, protože soubory můžete snadno zkopírovat ani změnit. Když je potřeba robustního zabezpečení, pomocí SQL Server nebo jiné databáze na serveru kde fyzické datové soubory nejsou čitelné ze systému souborů.  
+## <a name="probing-attacks"></a>Útoky probingem  
+ Útočníci často používají informace z výjimky, jako je název serveru, databáze nebo tabulky, pro připojení útoku do systému. Vzhledem k tomu, že výjimky mohou obsahovat konkrétní informace o vaší aplikaci nebo zdroji dat, můžete přispět k lepší ochraně vašich aplikací a zdrojů dat pouze tím, že klientovi vystavíte podstatné informace.  
   
- Další informace o ochraně přístupu a Excelových dat najdete v následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
-|[Důležité informace a pokyny pro Access 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Popisuje postupy zabezpečení pro Access 2007 takové šifrování souborů, Správa hesel, převodu databáze na nové formáty ACCDB a ACCDE a pomocí jiné možnosti zabezpečení.|  
-|[Principy Role pracovní skupiny souborů informací o zabezpečení přístupu](https://support.microsoft.com/kb/305542)|Popisuje role a vztah informační soubor pracovní skupiny v zabezpečení přístupu 2003.|  
-|[Často nejčastější dotazy o Microsoft zabezpečení přístupu pro aplikace Microsoft Access verze 2.0 až 2000](https://go.microsoft.com/fwlink/?LinkId=47698)|Verzi ke stažení aplikace Microsoft Access Security – nejčastější dotazy.|  
-## <a name="enterprise-services"></a>Enterprise Services  
- COM + obsahuje vlastní model zabezpečení, která se spoléhá na účty systému Windows NT a zosobnění, procesu nebo vlákna. <xref:System.EnterpriseServices> Obor názvů obsahuje obálky, která umožňují aplikacím .NET pro integraci spravovaného kódu pomocí modelu COM + služeb zabezpečení prostřednictvím <xref:System.EnterpriseServices.ServicedComponent> třídy.  
+|[Základy zpracování výjimek](../../../standard/exceptions/exception-handling-fundamentals.md)|Popisuje základní formy zpracování strukturované výjimky try/catch/finally.|  
+|[Doporučené postupy pro výjimky](../../../standard/exceptions/best-practices-for-exceptions.md)|Popisuje osvědčené postupy pro zpracování výjimek.|  
   
- Další informace najdete v následujících prostředků.  
+## <a name="protecting-microsoft-access-and-excel-data-sources"></a>Ochrana datových zdrojů aplikace Microsoft Access a Excelu  
+ Microsoft Access a Microsoft Excel můžou fungovat jako úložiště dat pro ADO.NET aplikaci, pokud jsou požadavky na zabezpečení minimální nebo neexistující. Jejich funkce zabezpečení jsou platné pro Deterrence, ale neměly by se spoléhat na to, že by neinformovali uživatele o více než Zabraňte meddling. Fyzické datové soubory pro přístup a Excel existují v systému souborů a musí být přístupné pro všechny uživatele. Díky tomu je to zranitelné vůči útokům, které by mohly vést ke krádeži nebo ztrátě dat, protože soubory je možné snadno zkopírovat nebo změnit. Je-li vyžadováno robustní zabezpečení, použijte SQL Server nebo jinou databázi založenou na serveru, kde nelze přečíst fyzické datové soubory ze systému souborů.  
   
-|Prostředek|Popis|  
+ Další informace o ochraně přístupu a dat aplikace Excel naleznete v následujících zdrojích informací.  
+  
+|Resource|Popis|  
 |--------------|-----------------|  
-|[Zabezpečení na základě rolí](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/s6y8k15h(v=vs.71))|Tento článek popisuje postup pro integraci spravovaného kódu zabezpečení služby COM +.|  
+|[Požadavky na zabezpečení a pokyny pro přístup 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Popisuje techniky zabezpečení pro přístup 2007 takovým šifrováním souborů, správě hesel, převádění databází do nových formátů ACCDB a ACCDE a používání dalších možností zabezpečení.|  
+|[Princip role souborů s informacemi pracovní skupiny v zabezpečení přístupu](https://support.microsoft.com/kb/305542)|Vysvětluje roli a vztah souboru s informacemi pracovní skupiny v zabezpečení Access 2003.|  
+|[Nejčastější dotazy týkající se zabezpečení Microsoft Accessu pro verze Microsoft Access 2,0 až 2000](https://go.microsoft.com/fwlink/?LinkId=47698)|Verze služby Microsoft Access pro zabezpečení služby ke stažení – Nejčastější dotazy.|  
+## <a name="enterprise-services"></a>Podnikové služby  
+ COM+ obsahuje svůj vlastní model zabezpečení, který spoléhá na účty systému Windows NT a proces/zosobnění vláken. Obor názvů poskytuje obálky, které umožňují aplikacím .NET integraci spravovaného kódu se službami zabezpečení modelu COM+ <xref:System.EnterpriseServices.ServicedComponent> přes třídu. <xref:System.EnterpriseServices>  
+  
+ Další informace najdete v následujícím prostředku.  
+  
+|Resource|Popis|  
+|--------------|-----------------|  
+|[Zabezpečení na základě rolí](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/s6y8k15h(v=vs.71))|Popisuje, jak integrovat spravovaný kód se službami zabezpečení služby COM+.|  
   
 ## <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem  
- Rozhraní .NET Framework poskytuje pro interakci s nespravovaným kódem, včetně modelu COM komponenty modelu COM + služby, externí knihovny typů a řadě služeb operačního systému. Práce s nespravovaným kódem zahrnuje přejít mimo zónu zabezpečení pro spravovaný kód. Váš kód a jakýkoli kód, který volá musí mít povolení pro nespravovaný kód (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> příznak zadán). Nespravovaný kód můžou představovat ohrožení zabezpečení nežádoucí na vaší aplikace. Proto byste se měli vyhnout spolupráce s nespravovaným kódem, pokud to není nezbytně nutné.  
+ .NET Framework poskytuje interakci s nespravovaným kódem, včetně komponent modelu COM, služeb modelu COM+, externích knihoven typů a mnoha služeb operačního systému. Práce s nespravovaným kódem zahrnuje mimo hranice zabezpečení pro spravovaný kód. Jak váš kód, tak i jakýkoli kód, který ho volá, musí mít<xref:System.Security.Permissions.SecurityPermission> oprávnění nespravovaného kódu ( <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> se zadaným příznakem). Nespravovaný kód může do aplikace zavádět nezamýšlená ohrožení zabezpečení. Proto byste se měli vyhnout spolupráci s nespravovaným kódem, pokud to není nezbytně nutné.  
   
  Další informace najdete v následujících materiálech.  
   
-|Prostředek|Popis|  
+|Resource|Popis|  
 |--------------|-----------------|  
-|[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak k vystavení komponent COM pro rozhraní .NET Framework a jak k vystavení součástí .NET Framework do modelu COM.|
-|[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje Pokročilá témata, jako je například primárních sestavení vzájemné spolupráce, práce s vlákny a vlastní zařazování.|
+|[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak vystavit komponenty modelu COM .NET Framework a jak zpřístupnit komponenty .NET Framework modelu COM.|
+|[Pokročilá interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje Pokročilá témata, jako jsou primární spolupracující sestavení, dělení na vlákna a vlastní zařazování.|
 
 ## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
-- [Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
+- [Doporučení pro strategie přístupu k datům](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
 - [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

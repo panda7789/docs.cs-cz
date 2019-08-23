@@ -10,20 +10,20 @@ helpviewer_keywords:
 - Windows Service applications, troubleshooting
 ms.assetid: 45c48e2e-b97d-44bc-8896-14f328e0ce33
 author: ghogen
-ms.openlocfilehash: f75a2f33ecde408d2d8e2f2343197ba56c4b8c21
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d04a0ddcef9ff7c31abd422f7f9fba34e804d2b1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925096"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935417"
 ---
 # <a name="troubleshooting-service-application-wont-install"></a>Řešení potíží: Aplikace služby se nenainstaluje
-Pokud vaše aplikace služby se nenainstaluje správně, zkontrolujte, ujistěte se, že <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> pro třídu služby je nastavena na stejnou hodnotu uvedené v instalačním programu pro danou službu. Hodnota musí být stejné v obou případech v pořadí pro vaši službu nenainstaluje správně.  
+Pokud nebude aplikace služby správně nainstalována, zkontrolujte, <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> zda je vlastnost pro třídu služby nastavena na stejnou hodnotu, jako je uvedena v instalačním programu této služby. Aby se služba správně nainstalovala, musí být tato hodnota v obou instancích stejná.  
   
 > [!NOTE]
->  Můžete se také podívat na protokoly instalace získat zpětnou vazbu týkající se procesu instalace.  
+> Můžete se také podívat na protokoly instalace a získat zpětnou vazbu k procesu instalace.  
   
- Měli byste zkontrolovat také k určení, jestli máte jiné služby se stejným názvem už nainstalovaná. Názvy služeb musí být jedinečný pro aby byla instalace úspěšná.  
+ Měli byste také ověřit, jestli už máte nainstalovanou jinou službu se stejným názvem. Aby instalace proběhla úspěšně, musí být názvy služby jedinečné.  
   
 ## <a name="see-also"></a>Viz také:
 

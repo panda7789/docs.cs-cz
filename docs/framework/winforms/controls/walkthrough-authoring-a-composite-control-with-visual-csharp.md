@@ -8,12 +8,12 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 12b506e859579a0755c2e9842e792c59968c94a8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 1de1ff4147ddb8cb3316795aefd38622de205a73
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666756"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950054"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytváření složeného ovládacího prvku pomocí Visual C\#
 
@@ -187,7 +187,7 @@ Prvním krokem při vytváření zděděného ovládacího prvku je jeho odvozen
 5. V Průzkumník řešení Procházet aktuální projekty.
 
     > [!NOTE]
-    >  Do aktuálního projektu byl přidán soubor s názvem **ctlAlarmClock.cs** .
+    > Do aktuálního projektu byl přidán soubor s názvem **ctlAlarmClock.cs** .
 
 ### <a name="adding-the-alarm-properties"></a>Přidání vlastností alarmu
 

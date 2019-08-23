@@ -2,34 +2,34 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: 1714b58d290b3dd85e105c60399dabe6c107b50b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 6de513db82c49821c8f6758509f1bd356035b9c6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878562"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951009"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
-Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  
+Při posílání velkých zpráv pomocí Windows Communication Foundation (WCF) je často žádoucí omezit množství paměti využité k ukládání těchto zpráv do vyrovnávací paměti. Jedním z možných řešení je vysílat datový proud zprávy (za předpokladu, že část dat je v těle). Některé protokoly ale vyžadují ukládání celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou dva příklady. Dalším možným řešením je rozdělit velkou zprávu na menší zprávy s názvem bloky dat, odeslat tyto bloky v jednom okamžiku a znovu vytvořit velkou zprávu na straně příjmu. Samotná aplikace by mohla provádět tyto bloky dat a neblokování nebo by k tomu mohla použít vlastní kanál. Ukázka kanálu pro dělení na bloky dat ukazuje, jak lze použít vlastní protokol nebo vrstvený kanál k provádění bloků dat a rozblokování libovolně velkých zpráv.  
   
- Dělením dat do bloků by měl vždy být použity až poté, co byl vytvořen celé zprávy k odeslání. Vytváření bloků kanálu by měl vždy vrstvy pod zabezpečení kanálu a jeho kanál stabilní relace.  
+ Blokování by mělo být vždy použito až po sestavení celé zprávy, která má být odeslána. Kanál bloků dat by měl být vždy vrstven pod kanálem zabezpečení a spolehlivým kanálem relace.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ChunkingChannel`  
   
-## <a name="chunking-channel-assumptions-and-limitations"></a>Vytváření bloků kanál předpoklady a omezení  
+## <a name="chunking-channel-assumptions-and-limitations"></a>Předpoklady a omezení kanálu pro vytváření bloků dat  
   
 ### <a name="message-structure"></a>Struktura zprávy  
- Vytváření bloků kanálu se předpokládá následující strukturu zprávu pro zprávy být rozdělený do bloků dat:  
+ Kanál pro zpracování zpráv předpokládá, že pro zprávy, které mají být v bloku dat, má následující strukturu zpráv:  
   
 ```xml  
 <soap:Envelope ...>  
@@ -42,7 +42,7 @@ Při odesílání velkých zpráv pomocí služby Windows Communication Foundati
 </soap:Envelope>  
 ```  
   
- Při použití modelu, kontrakt operace, které mají 1 vstupní parametr v souladu s tohoto obrazce zprávy pro jejich vstupní zprávy. Podobně kontrakt operace, které mají 1 výstupní parametr nebo návratovou hodnotu v souladu s tohoto obrazce zprávy pro jejich výstupní zprávu. Následují příklady takových operací:  
+ Při použití třídy ServiceModel musí operace kontraktu s 1 vstupním parametrem odpovídat tomuto obrazci zprávy pro svou vstupní zprávu. Podobně operace kontraktu, které mají 1 výstupní parametr nebo návratovou hodnotu, jsou v rozporu s tímto tvarem zprávy pro výstupní zprávu. Následují příklady takových operací:  
   
 ```  
 [ServiceContract]  
@@ -60,15 +60,15 @@ interface ITestService
 ```  
   
 ### <a name="sessions"></a>Relace  
- Vytváření bloků kanálu vyžaduje zprávy v pořadí doručení zpráv (bloky) doručit přesně jednou. To znamená, že musí být základní zásobník kanál s relacemi. Relace je možné poskytnou přenosu (například přenosu protokolu TCP) nebo kanál s relacemi protokolu (například ReliableSession kanál).  
+ Kanál pro dělení na bloky dat vyžaduje, aby se zprávy přesně předávaly v seřazeném doručování zpráv (bloků dat). To znamená, že musí být příslušný zásobník kanálů relace. Relace můžou být poskytovány přenosem (například přenos TCP) nebo kanálem protokolu relace (například ReliableSession Channel).  
   
-### <a name="asynchronous-send-and-receive"></a>Asynchronní odesílání a přijímání  
- Asynchronní odesílání a příjem metody nejsou v této verzi bloků ukázkový kanál implementovány.  
+### <a name="asynchronous-send-and-receive"></a>Asynchronní odesílání a příjem  
+ Asynchronní metody Send a Receive nejsou v této verzi ukázky kanálu bloků dat implementovány.  
   
-## <a name="chunking-protocol"></a>Vytváření bloků protokolu  
- Vytváření bloků kanál definuje protokol, který označuje začátek a konec řadu bloky dat, a také pořadové číslo od každého bloku. Následující tři příklad zprávy ukazují spuštění, bloků dat a end zprávy s komentáři, které popisují klíčové aspekty každého.  
+## <a name="chunking-protocol"></a>Protokol bloků dat  
+ Kanál pro dělení na bloky dat definuje protokol, který indikuje začátek a konec série bloků dat a také pořadové číslo každého bloku. V následujících třech příkladech se zprávy ukazují na úvodní, blokové a koncové zprávy s komentáři, které popisují klíčové aspekty každého z nich.  
   
-### <a name="start-message"></a>Zpráva spuštění  
+### <a name="start-message"></a>Spustit zprávu  
   
 ```xml  
 <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing"   
@@ -114,7 +114,7 @@ the data to be chunked.
 </s:Envelope>  
 ```  
   
-### <a name="chunk-message"></a>Blok zpráv  
+### <a name="chunk-message"></a>Zpráva bloku  
   
 ```xml  
 <s:Envelope   
@@ -156,7 +156,7 @@ kfSr2QcBlkHTvQ==
 </s:Envelope>  
 ```  
   
-### <a name="end-message"></a>Zpráva ukončení  
+### <a name="end-message"></a>Koncová zpráva  
   
 ```xml  
 <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing"   
@@ -198,19 +198,19 @@ as the ChunkingStart message.
 </s:Envelope>  
 ```  
   
-## <a name="chunking-channel-architecture"></a>Vytváření bloků architektura kanálů  
- Vytváření bloků kanál `IDuplexSessionChannel` , na vysoké úrovni, následuje architektura typické kanálu. Je `ChunkingBindingElement` , které můžete vytvářet `ChunkingChannelFactory` a `ChunkingChannelListener`. `ChunkingChannelFactory` Vytváří instance `ChunkingChannel` když je vyzván k. `ChunkingChannelListener` Vytváří instance `ChunkingChannel` při přijetí nového vnitřního kanálu. `ChunkingChannel` Samotného je zodpovědná za odesílání a příjem zpráv.  
+## <a name="chunking-channel-architecture"></a>Architektura kanálu bloků dat  
+ Kanál pro dělení na bloky dat `IDuplexSessionChannel` je na nejvyšší úrovni, který následuje za typickou architekturou kanálů. Existuje, který může `ChunkingChannelFactory` vytvořit a `ChunkingChannelListener`. `ChunkingBindingElement` `ChunkingChannelFactory` Vytvoří instance,když`ChunkingChannel` se na ni žádá. `ChunkingChannelListener` Vytvoří`ChunkingChannel` instance při přijetí nového vnitřního kanálu. K posílání a přijímání zpráv zodpovídá sámsebe.`ChunkingChannel`  
   
- Na další úrovni, `ChunkingChannel` spoléhá na několik komponent k implementaci bloků protokolu. Na straně odesílání kanál používá vlastní <xref:System.Xml.XmlDictionaryWriter> volá `ChunkingWriter` , který neodpovídá skutečné bloků. `ChunkingWriter` používá vnitřního kanálu přímo k odesílání bloků. Použití vlastní `XmlDictionaryWriter` , umožníte nám odeslat bloky dat jako rozsáhlý na původní zprávu o průběhu zapisování. To znamená, že jsme neukládaného ve vyrovnávací paměti celý původní zprávy.  
+ Na další úrovni `ChunkingChannel` spoléhá na několik komponent k implementaci protokolu bloků dat. Na straně odeslání kanál používá vlastní <xref:System.Xml.XmlDictionaryWriter> volanou `ChunkingWriter` zprávu, která provádí skutečné zpracování dat. `ChunkingWriter`používá vnitřní kanál přímo k odesílání bloků dat. Pomocí vlastního `XmlDictionaryWriter` obsahu můžeme poslat bloky dat, když se zapisuje velký text původní zprávy. To znamená, že neuložíme do vyrovnávací paměti celou původní zprávu.  
   
- ![Diagram zobrazující průběh vytváření bloků kanálu odeslat architektury.](./media/chunking-channel/chunking-channel-send.gif)  
+ ![Diagram znázorňující architekturu odesílání kanálu bloků dat.](./media/chunking-channel/chunking-channel-send.gif)  
   
- Na straně příjmu `ChunkingChannel` přetáhne zprávy z vnitřního kanálu a předá je do vlastní <xref:System.Xml.XmlDictionaryReader> volá `ChunkingReader`, který reconstitutes původní zprávu z příchozí datové dávky. `ChunkingChannel` zabalí to `ChunkingReader` ve vlastním `Message` volaná implementaci `ChunkingMessage` a vrátí tuto zprávu vrstvě nad ní. Tato kombinace `ChunkingReader` a `ChunkingMessage` umožňuje zrušení bloku dat původní text zprávy, jako je čten stranou vrstvu nad namísto toho, aby do vyrovnávací paměti celý původní text zprávy. `ChunkingReader` má fronty, kde vyrovnávacích pamětí příchozí bloky dat až po maximální Konfigurovatelný počet bloků dat ve vyrovnávací paměti. Po dosažení maximální limit čtečky čeká na zprávy z fronty vybíjet ve vrstvě nad ní (to znamená podle jen pro čtení z původní text zprávy) nebo dokud se zobrazí maximální počet je dosaženo časového limitu.  
+ Na straně příjmu se `ChunkingChannel` stáhnou zprávy z vnitřního kanálu a zadají se do vlastního <xref:System.Xml.XmlDictionaryReader> volaného `ChunkingReader`, který znovu vytvoří původní zprávu z příchozích bloků dat. `ChunkingChannel`zabalí `Message`dovlastní implementace s názvem `ChunkingMessage` a vrátí tuto zprávu do vrstvy výše. `ChunkingReader` Tato kombinace `ChunkingReader` a `ChunkingMessage` umožňuje nám deserializovat původní text zprávy, který je čten vrstvou výše, místo abyste museli ukládat celý původní text zprávy do vyrovnávací paměti. `ChunkingReader`má frontu, ve které vyrovnávací paměti ukládají příchozí bloky až do maximálního konfigurovatelného počtu bloků v bufferu. Když je dosaženo tohoto maximálního limitu, čtečka čeká na vyřazení zpráv z fronty výše uvedenou vrstvou (to znamená pouhým čtením z původního těla zprávy) nebo až do dosažení maximálního časového limitu příjmu.  
   
- ![Diagram zobrazující průběh vytváření bloků kanál přijímat architektury.](./media/chunking-channel/chunking-channel-receive.gif)  
+ ![Diagram znázorňující architekturu příjmu kanálu bloků dat.](./media/chunking-channel/chunking-channel-receive.gif)  
   
-## <a name="chunking-programming-model"></a>Dělením dat do bloků programovací Model  
- Vývojáři služeb můžete zadat zprávy, které mají být blokové použitím `ChunkingBehavior` atribut do operací v rámci smlouvy. Poskytuje atribut `AppliesTo` vlastnost, která umožňuje vývojářům k určení, jestli dat platí pro vstupní zprávy, výstupní zpráva nebo obojí. Následující příklad ukazuje použití `ChunkingBehavior` atribut:  
+## <a name="chunking-programming-model"></a>Model programování bloků dat  
+ Vývojáři služeb mohou určit, které zprávy mají být v bloku, použitím `ChunkingBehavior` atributu na operace v rámci kontraktu. Atribut zpřístupňuje `AppliesTo` vlastnost, která vývojářům umožňuje určit, zda se má použít pro vstupní zprávu, výstupní zprávu nebo obojí. Následující příklad ukazuje použití `ChunkingBehavior` atributu:  
   
 ```  
 [ServiceContract]  
@@ -231,99 +231,99 @@ interface ITestService
 }  
 ```  
   
- V tomto programovacím modelu `ChunkingBindingElement` sestaví seznam identifikátorů URI, který identifikuje tak ty být rozdělený do bloků dat akce. Akce každé odchozí zprávy se porovná tento seznam a určují, jestli zprávy by měl být rozdělený do bloků dat nebo odesílají přímo.  
+ Z tohoto programovacího modelu `ChunkingBindingElement` zkompiluje seznam identifikátorů URI akcí, které identifikují zprávy, které mají být zablokované. Akce každé odchozí zprávy je porovnána s tímto seznamem, aby bylo možné určit, zda má být zpráva v bloku nebo odeslána přímo.  
   
-## <a name="implementing-the-send-operation"></a>Implementace operace odeslání  
- Na vysoké úrovni operace odeslání nejprve zkontroluje, zda odchozí zprávy musí být rozdělený do bloků dat a pokud ne, odešle zprávu přímo pomocí vnitřního kanálu.  
+## <a name="implementing-the-send-operation"></a>Implementace operace Send  
+ Na vysoké úrovni operace odeslání nejprve zkontroluje, zda musí být odchozí zpráva v bloku, a pokud ne, odesílá zprávu přímo pomocí vnitřního kanálu.  
   
- Pokud zpráva musí být rozdělený do bloků dat, vytvoří novou odeslat `ChunkingWriter` a volání `WriteBodyContents` v odchozí zprávě předají se jí to `ChunkingWriter`. `ChunkingWriter` Neodpovídá zprávu dělením dat do bloků (včetně kopírování původní záhlaví zpráv do bloku zpráva spuštění) a odešle bloky dat pomocí vnitřního kanálu.  
+ Pokud je zpráva musí obsahovat bloky dat, odešle se nové `ChunkingWriter` a zavolá se na `ChunkingWriter`odchozí zprávu, která to přesměruje `WriteBodyContents` . V `ChunkingWriter` takovém případě nakopíruje do bloku zprávy (včetně kopírování původních hlaviček zpráv do zprávy spustit blok) a odešle bloky dat pomocí vnitřního kanálu.  
   
- Za zmínku několik podrobností:  
+ Je potřeba poznamenat si několik podrobností:  
   
-- Poslat prvním volání `ThrowIfDisposedOrNotOpened` zajistit, `CommunicationState` je otevřen.  
+- Odešlete první `ThrowIfDisposedOrNotOpened` volání, aby `CommunicationState` se zajistilo, že se otevře.  
   
-- Odesílání se synchronizuje, aby tento pouze jedna zpráva byla odeslána současně pro každou relaci. Je `ManualResetEvent` s názvem `sendingDone` , která se resetuje při odesílání bloku zprávy. Jakmile je odeslána zpráva koncovým bloků dat, je tato událost nastavit. Tato událost nastavit před pokusem o odeslání odchozí zprávy čeká metody Send.  
+- Odesílání je synchronizováno, aby bylo možné každou relaci odeslat současně pouze jednu zprávu. Při posílání `ManualResetEvent` zprávy `sendingDone` se systémem se zobrazí název, který se resetuje. Po odeslání zprávy koncového bloku se tato událost nastaví. Metoda send počká na nastavení této události, než se pokusí odeslat odchozí zprávu.  
   
-- Odeslat zámky `CommunicationObject.ThisLock` zabránit nesynchronizuje, změny stavu při odesílání. Najdete v článku <xref:System.ServiceModel.Channels.CommunicationObject> dokumentaci pro další informace o <xref:System.ServiceModel.Channels.CommunicationObject> stavy a stavového stroje.  
+- Odeslat zamkne, `CommunicationObject.ThisLock` aby se zabránilo synchronizovaným změnám stavu při odesílání. Další informace o <xref:System.ServiceModel.Channels.CommunicationObject> stavech a stavu počítače najdete v dokumentaci.<xref:System.ServiceModel.Channels.CommunicationObject>  
   
-- Časový limit předaný k odeslání se používá jako časový limit operace celý odeslání, který obsahuje všechny bloky dat odesílání.  
+- Časový limit odeslaný do odeslání se používá jako časový limit pro celou operaci odeslání, která zahrnuje odesílání všech bloků dat.  
   
-- Vlastní <xref:System.Xml.XmlDictionaryWriter> návrh byl zvolen ke Vyhněte se ukládání do vyrovnávací paměti celý původní text zprávy. Pokud se nám získat <xref:System.Xml.XmlDictionaryReader> na text pomocí `message.GetReaderAtBodyContents` celého obsahu by být ukládány do vyrovnávací paměti. Místo toho budeme mít vlastní <xref:System.Xml.XmlDictionaryWriter> , který je předán `message.WriteBodyContents`. Jako zprávu, která volá WriteBase64 zapisovače zapisovač zabalí bloků dat do zpráv a odešle je pomocí vnitřního kanálu. WriteBase64 blokuje, dokud se nepošle bloků.  
+- Vlastní <xref:System.Xml.XmlDictionaryWriter> návrh byl vybrán, aby nedošlo k ukládání do vyrovnávací paměti pro celý původní text zprávy. <xref:System.Xml.XmlDictionaryReader> V případě, že jsme se dostali na tělo s `message.GetReaderAtBodyContents` použitím celého těla, bude uloženo do vyrovnávací paměti. Místo toho máme vlastní <xref:System.Xml.XmlDictionaryWriter> předaný do. `message.WriteBodyContents` Když zpráva volá WriteBase64, zapisovač zabalí do zpráv bloky a pošle je pomocí vnitřního kanálu. WriteBase64 bloky až do odeslání bloku dat.  
   
-## <a name="implementing-the-receive-operation"></a>Implementace operace přijetí  
- Na vysoké úrovni operace obdržení nejprve zkontroluje, že příchozí zpráva není `null` a, který je akcí `ChunkingAction`. Pokud obě kritéria nesplňuje, je vrácená zpráva beze změny z parametru Receive. Jinak, vytvoří novou Receive `ChunkingReader` a nový `ChunkingMessage` zabalené kolem něj (pomocí volání `GetNewChunkingMessage`). Teprve potom se informuje, že noví `ChunkingMessage`, příjmu používá ke spouštění vláken fondu vláken `ReceiveChunkLoop`, který volá `innerChannel.Receive` ve smyčce a praktické vypnout bloků dat na `ChunkingReader` dokud přijatá zpráva ukončení bloku nebo dosažení časový limit přijetí.  
+## <a name="implementing-the-receive-operation"></a>Implementace operace Receive  
+ V případě vysoké úrovně operace Receive nejprve zkontroluje, že příchozí zpráva `null` není a že se jedná o `ChunkingAction`akci. Pokud nesplňuje obě kritéria, zpráva se z příjmu vrátí beze změny. V opačném případě příjem vytvoří `ChunkingReader` nový a `ChunkingMessage` kolem něj obtékající (voláním `GetNewChunkingMessage`). Před vrácením tohoto `ChunkingMessage`nového příkazu obdrží použití vlákna podprocesu `ReceiveChunkLoop`ke spuštění, `innerChannel.Receive` které volá `ChunkingReader` smyčku a předá bloky dat do doby, než je obdržena zpráva koncového bloku nebo dojde k vypršení časového limitu příjmu.  
   
- Za zmínku několik podrobností:  
+ Je potřeba poznamenat si několik podrobností:  
   
-- Jako je odesílání, příjem první volání `ThrowIfDisposedOrNotOepned` zajistit, `CommunicationState` je otevřen.  
+- Podobně jako u Send přijímají `ThrowIfDisposedOrNotOepned` první volání, `CommunicationState` aby se zajistilo, že se otevře.  
   
-- Zobrazí se synchronizují také tak, že pouze jeden zpráva může dostat současně z relace. To je obzvláště důležité, protože po doručení zprávy do začátku bloku dat, všechny následné přijaté zprávy jsou očekávány bloků dat v rámci tohoto nového pořadí bloků dokud přijal zprávu ukončení bloku. Přijímat nelze vytahují zprávy z vnitřního kanálu, dokud se všechny bloky dat, které patří k aktuálně Probíhá zrušení rozdělený do bloků dat zprávy jsou přijímány. Chcete-li to provést, obdržet používá `ManualResetEvent` s názvem `currentMessageCompleted`, který je nastaven při zpráva ukončení bloku dat je přijetí a resetovat při doručení zprávy do nového bloku start.  
+- Příjem je také synchronizovaný, aby bylo možné současně přijmout jenom jednu zprávu z relace. To je obzvláště důležité, protože po přijetí zprávy počátečního bloku se očekává, že všechny následné přijaté zprávy budou obsahovat bloky dat v této nové sekvenci bloků dat, dokud se nepřijme zpráva koncového bloku dat. Příjem nemůže přijímat zprávy z vnitřního kanálu, dokud nebudou přijaty všechny bloky, které patří do zprávy, která je v současné době deblokovaná. K tomu je potřeba přijmout pomocí `ManualResetEvent` pojmenovaného `currentMessageCompleted`, který se nastaví, když se přijme zpráva o ukončení bloku dat a resetování, když se přijme nová zpráva o počátečním bloku.  
   
-- Na rozdíl od odeslání přijetí nezabraňuje synchronizované přechodů mezi stavy při příjmu. Například Zavřít lze volat při přijímání a čeká, až do dokončení čeká na příjem původní zpráva nebo zadaný časový limit.  
+- Na rozdíl od odeslání nebrání přijímání synchronizovaného stavu při příjmu. Například možnost Zavřít může být volána při přijímání a čeká na dokončení probíhajícího příjmu původní zprávy nebo dosažení zadané hodnoty časového limitu.  
   
-- Časový limit předaný k příjmu se používá jako vypršení časového limitu pro celý přijímat operace, která zahrnuje příjem všechny bloky dat.  
+- Časový limit předaný do přijetí se používá jako časový limit pro celou operaci přijetí, která zahrnuje příjem všech bloků dat.  
   
-- Pokud vrstva, která zpracovává zprávy spotřebovává text zprávy s rychlostí nižší než počet příchozích zpráv bloků dat `ChunkingReader` ukládá do vyrovnávací paměti tyto příchozí bloky až do limitu určeném `ChunkingBindingElement.MaxBufferedChunks`. Po dosažení tohoto limitu, nemá nečistoty, se berou z nižší vrstvě, dokud nebude využívat ve vyrovnávací paměti datových dávek nebo je dosaženo časového limitu příjmu.  
+- Pokud vrstva, která využívá zprávu, spotřebovává tělo zprávy o sazbě nižší, než je počet příchozích zpráv bloku dat, `ChunkingReader` vyrovnávací paměti těchto vstupních bloků až do limitu určeného parametrem. `ChunkingBindingElement.MaxBufferedChunks` Po dosažení tohoto limitu nebudou z nižší vrstvy načítány žádné další bloky, dokud se nespotřebovává blok dat ve vyrovnávací paměti nebo dokud nedosáhnete časového limitu příjmu.  
   
-## <a name="communicationobject-overrides"></a>V objektu CommunicationObject přepsání  
+## <a name="communicationobject-overrides"></a>CommunicationObject přepsání  
   
-### <a name="onopen"></a>Při otevření  
- `OnOpen` volání `innerChannel.Open` vnitřního kanálu otevřít.  
+### <a name="onopen"></a>Otevřít  
+ `OnOpen`volání `innerChannel.Open` pro otevření vnitřního kanálu.  
   
-### <a name="onclose"></a>Při zavření  
- `OnClose` nejprve nastaví `stopReceive` k `true` který signalizuje, že čeká na `ReceiveChunkLoop` zastavit. Pak čeká `receiveStopped` <xref:System.Threading.ManualResetEvent>, která je nastavena, když `ReceiveChunkLoop` zastaví. Za předpokladu, že `ReceiveChunkLoop` zastaví v rámci zadaného časového limitu, `OnClose` volání `innerChannel.Close` s zbývající časový limit.  
+### <a name="onclose"></a>OnClose –  
+ `OnClose`nejprve nastaví `stopReceive` , `true` aby bylo signalizaci `ReceiveChunkLoop` čekání na zastavení. Potom počká `receiveStopped` <xref:System.Threading.ManualResetEvent>na, který je nastaven při `ReceiveChunkLoop` zastavení. Za předpokladu, že se `ReceiveChunkLoop` zastaví v rámci zadaného časového limitu, `OnClose` volání `innerChannel.Close` se zbývajícím časovým limitem  
   
-### <a name="onabort"></a>OnAbort  
- `OnAbort` volání `innerChannel.Abort` přerušit vnitřního kanálu. Pokud je na čekající `ReceiveChunkLoop` získá výjimku z na čekající `innerChannel.Receive` volání.  
+### <a name="onabort"></a>Přerušení  
+ `OnAbort`volání `innerChannel.Abort` přeruší vnitřní kanál. V případě, že se `ReceiveChunkLoop` čeká na vyřízení, získá výjimku `innerChannel.Receive` z nedokončeného volání.  
   
-### <a name="onfaulted"></a>OnFaulted  
- `ChunkingChannel` Nevyžaduje zvláštní chování, pokud je v kanálu došlo k chybě tak `OnFaulted` nepřepíše.  
+### <a name="onfaulted"></a>Došlo k chybě  
+ Při chybě kanálu není nutné speciální chování, takže `OnFaulted` není přepsán. `ChunkingChannel`  
   
 ## <a name="implementing-channel-factory"></a>Implementace objektu pro vytváření kanálů  
- `ChunkingChannelFactory` Je zodpovědný za vytváření instancí `ChunkingDuplexSessionChannel` a pro kaskádové přechodů mezi stavy k výroba vnitřního kanálu.  
+ Je zodpovědný za vytváření instancí a pro `ChunkingDuplexSessionChannel` přechody mezi stavy do továrny vnitřního kanálu. `ChunkingChannelFactory`  
   
- `OnCreateChannel` Výroba vnitřního kanálu použije k vytvoření `IDuplexSessionChannel` vnitřního kanálu. Potom vytvoří nový `ChunkingDuplexSessionChannel` předáním tohoto vnitřního kanálu společně se seznamem zpráva akce, které mají být rozdělený do bloků dat a maximální počet bloků dat do vyrovnávací paměti při příjmu. Seznam zpráv akce, které mají být rozdělený do bloků dat a maximální počet bloků dat do vyrovnávací paměti jsou dva parametry předány `ChunkingChannelFactory` 've svém konstruktoru. V sekci `ChunkingBindingElement` popisuje, odkud pocházejí tyto hodnoty.  
+ `OnCreateChannel`vytvoří `IDuplexSessionChannel` vnitřní kanál pomocí továrny vnitřního kanálu. Pak vytvoří nové `ChunkingDuplexSessionChannel` předání tohoto vnitřního kanálu společně se seznamem akcí zpráv, které mají být v bloku, a maximální počet bloků dat, které se po přijetí ukládají do vyrovnávací paměti. Seznam akcí zprávy, které mají být `ChunkingChannelFactory` v bloku, a maximální počet bloků na vyrovnávací paměť jsou dva parametry předané do svého konstruktoru. Část `ChunkingBindingElement` popisující, kde tyto hodnoty pocházejí.  
   
- `OnOpen`, `OnClose`, `OnAbort` a ekvivalenty asynchronní volání odpovídající metody přechod stavu na výroba vnitřního kanálu.  
+ Rozhraní `OnOpen` ,`OnClose`a jejich asynchronní ekvivalenty volají odpovídající metodu přechodu stavu na objektu pro vytváření vnitřních kanálů. `OnAbort`  
   
-## <a name="implementing-channel-listener"></a>Prováděcí modul pro naslouchání kanálu  
- `ChunkingChannelListener` Představuje obálku kolem naslouchací proces vnitřního kanálu. Jeho hlavním smyslem, kromě volání delegáta pro tuto naslouchací proces vnitřního kanálu je zabalit nové `ChunkingDuplexSessionChannels` kolem kanály přijímán z vnitřního kanálu naslouchacího procesu. To se provádí v `OnAcceptChannel` a `OnEndAcceptChannel`. Nově vytvořený `ChunkingDuplexSessionChannel` je předán vnitřního kanálu společně s další parametry popsaných výše.  
+## <a name="implementing-channel-listener"></a>Implementace naslouchacího procesu kanálu  
+ `ChunkingChannelListener` Je Obálka kolem naslouchacího procesu vnitřního kanálu. Jeho hlavní funkce, kromě volání delegátů do tohoto naslouchacího procesu interního kanálu, je `ChunkingDuplexSessionChannels` zabalit nové kolem kanálů přijatých od naslouchacího procesu vnitřního kanálu. To se provádí v `OnAcceptChannel` a `OnEndAcceptChannel`. Nově vytvořená `ChunkingDuplexSessionChannel` se předává vnitřní kanál spolu s dalšími parametry uvedenými výše.  
   
-## <a name="implementing-binding-element-and-binding"></a>Implementující Element vazby a vazby  
- `ChunkingBindingElement` zodpovídá za vytvoření `ChunkingChannelFactory` a `ChunkingChannelListener`. `ChunkingBindingElement` Kontroluje, zda T v `CanBuildChannelFactory` \<T > a `CanBuildChannelListener` \<T > je typu `IDuplexSessionChannel` (pouze kanál nepodporuje vytváření bloků kanálu) a další prvky vazby ve vazbě podporu tohoto Typ kanálu.  
+## <a name="implementing-binding-element-and-binding"></a>Implementace elementu vazby a vazby  
+ `ChunkingBindingElement`zodpovídá za vytváření `ChunkingChannelFactory` a `ChunkingChannelListener`. \< `CanBuildChannelListener` `IDuplexSessionChannel` Kontroluje, zda t in `CanBuildChannelFactory`t > a \<t > je typu (jediný kanál podporovaný kanálem bloků dat) a že ostatní prvky vazby ve vazbě tuto možnost podporují. `ChunkingBindingElement` typ kanálu.  
   
- `BuildChannelFactory`\<T > nejprve zkontroluje, že typ požadované kanálu může být sestaven a potom získá seznam zpráv akce, které mají být rozdělený do bloků dat. Další informace najdete v následující části. Potom vytvoří nový `ChunkingChannelFactory` předáním výroba vnitřního kanálu (vrácená `context.BuildInnerChannelFactory<IDuplexSessionChannel>`), seznam zpráv akce a maximální počet bloků dat do vyrovnávací paměti. Maximální počet bloků, které pocházejí z vlastnost s názvem `MaxBufferedChunks` vystavené `ChunkingBindingElement`.  
+ `BuildChannelFactory`\<T > nejdřív zkontroluje, jestli jde sestavit požadovaný typ kanálu, a pak získá seznam akcí zprávy, které se mají zablokovat. Další informace najdete v následující části. Potom vytvoří nový `ChunkingChannelFactory` průchod objektem pro vytváření vnitřního kanálu (vráceným ze `context.BuildInnerChannelFactory<IDuplexSessionChannel>`seznamu), seznamem akcí zpráv a maximálním počtem bloků, které mají být uloženy do vyrovnávací paměti. Maximální počet bloků dat pochází z vlastnosti s názvem `MaxBufferedChunks` vystaveno. `ChunkingBindingElement`  
   
- `BuildChannelListener<T>` má podobné implementace pro vytvoření `ChunkingChannelListener` a předají se jí vnitřního kanálu naslouchacího procesu.  
+ `BuildChannelListener<T>`má podobnou implementaci pro vytvoření `ChunkingChannelListener` a předání naslouchací proces vnitřního kanálu.  
   
- Je vazbu příklad zahrnuté v této ukázce s názvem `TcpChunkingBinding`. Tato vazba se skládá ze dvou elementů vazby: `TcpTransportBindingElement` a `ChunkingBindingElement`. Kromě vystavení `MaxBufferedChunks` vlastnost vazby také nastaví některá `TcpTransportBindingElement` vlastnosti, jako `MaxReceivedMessageSize` (nastaví na `ChunkingUtils.ChunkSize` + 100 KB bajtů pro záhlaví).  
+ V této ukázce je obsažena příklad vazby s názvem `TcpChunkingBinding`. Tato vazba se skládá ze dvou prvků vazby `TcpTransportBindingElement` : `ChunkingBindingElement`a. Kromě `MaxBufferedChunks` vystavení vlastnosti vazba také nastaví některé `TcpTransportBindingElement` vlastnosti, například `MaxReceivedMessageSize` (nastaví ji na `ChunkingUtils.ChunkSize` + 100 KB bajty pro záhlaví).  
   
- `TcpChunkingBinding` také implementuje `IBindingRuntimePreferences` a vrátí hodnotu true z `ReceiveSynchronously` metoda označující, že jsou implementovány pouze synchronní volání Receive.  
+ `TcpChunkingBinding`také implementuje `IBindingRuntimePreferences` a vrátí hodnotu true `ReceiveSynchronously` z metody, což znamená, že jsou implementována pouze synchronní volání Receive.  
   
-### <a name="determining-which-messages-to-chunk"></a>Určení, které zprávy do bloků dat  
- Vytváření bloků kanál chunks pouze zprávy identifikován `ChunkingBehavior` atribut. `ChunkingBehavior` Implementuje třída `IOperationBehavior` a je implementována pomocí volání `AddBindingParameter` metody. V této metodě `ChunkingBehavior` ověří hodnotu jeho `AppliesTo` vlastnosti (`InMessage`, `OutMessage` nebo obojí) k určení, které zprávy by měl být rozdělený do bloků dat. Potom získá akce pro každou z těchto zpráv z (z kolekce zpráv na `OperationDescription`) a přidá jej do kolekce řetězců obsažených v rámci instance `ChunkingBindingParameter`. To potom přidá `ChunkingBindingParameter` zadanému `BindingParameterCollection`.  
+### <a name="determining-which-messages-to-chunk"></a>Určení zpráv pro blok dat  
+ Kanál bloků dat zablokuje pouze zprávy identifikované pomocí `ChunkingBehavior` atributu. Třída implementuje `IOperationBehavior` a`AddBindingParameter` je implementována voláním metody. `ChunkingBehavior` V této metodě `ChunkingBehavior` ověřuje hodnota své `AppliesTo` vlastnosti (`InMessage` `OutMessage` nebo obou) k určení, které zprávy mají být v bloku. Pak získá akci každé z těchto zpráv (z kolekce messages on `OperationDescription`) a přidá je do kolekce řetězců obsažené v `ChunkingBindingParameter`instanci. Pak to `ChunkingBindingParameter` přidá k poskytnutému `BindingParameterCollection`.  
   
- To `BindingParameterCollection` je předáno uvnitř `BindingContext` na každý prvek vazby ve vazbě při tento element vazby sestavení výrobu kanálu nebo modul pro naslouchání kanálu. `ChunkingBindingElement`Vaší implementace `BuildChannelFactory<T>` a `BuildChannelListener<T>` toto vyžádat `ChunkingBindingParameter` z celkového počtu `BindingContext’`s `BindingParameterCollection`. Kolekci akcí, které jsou obsažené `ChunkingBindingParameter` je pak předán `ChunkingChannelFactory` nebo `ChunkingChannelListener`, který pak předává jej do `ChunkingDuplexSessionChannel`.  
+ Tato `BindingParameterCollection` třída je předána `BindingContext` do každého prvku vazby ve vazbě, pokud prvek vazby vytvoří objekt pro vytváření kanálu nebo naslouchací proces kanálu. `ChunkingBindingElement` Implementacea`BuildChannelListener<T>`vyžádá si tento `ChunkingBindingParameter` výstup z`BindingContext’`s `BindingParameterCollection`. `BuildChannelFactory<T>` Kolekce `ChunkingBindingParameter` akcí obsažených v rámci je pak předána `ChunkingChannelFactory` do nebo `ChunkingChannelListener` `ChunkingDuplexSessionChannel`, která je následně předává do.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Instalace technologie ASP.NET 4.0 pomocí následujícího příkazu.  
+1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5. Nejprve spustit Service.exe, spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
+5. Nejprve spusťte Service. exe a potom spusťte soubor Client. exe a Sledujte výstup oken konzoly.  
   
- Při spuštění ukázky, očekává se následující výstup.  
+ Při spuštění ukázky se očekává následující výstup.  
   
  Klient:  
   
@@ -352,7 +352,7 @@ Press enter when service is available
  < Received chunk 10 of message 5b226ad5-c088-4988-b737-6a565e0563dd  
 ```  
   
- Server:  
+ WebServer  
   
 ```  
 Service started, press enter to exit  

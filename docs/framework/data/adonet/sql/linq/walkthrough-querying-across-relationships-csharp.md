@@ -2,91 +2,91 @@
 title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: f36f618cfcb82847f6763641ee64565dcdedd919
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a9e0583b14c07df2b1de23ba37fa88552a4c5c7c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742645"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946944"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
-Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
+Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* pro reprezentaci vztahů cizího klíče v databázi.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
- Tento návod byl napsán s použitím Visual C# vývojovým nastavením.  
+ Tento návod byl napsán s použitím nastavení C# vizuálního vývoje.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Je nutné dokončit [názorný postup: Jednoduchý objektový Model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Tento návod vychází, že jedna, včetně přítomnost souboru northwnd.mdf c:\linqtest5.  
+ Musíte mít dokončený [Návod: Jednoduchý objektový model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Tento návod sestaví sestavení, včetně přítomnosti souboru northwnd. mdf v c:\linqtest5.  
   
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze tří hlavních úloh:  
   
-- Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
+- Přidání třídy entity, která představuje tabulku Orders v ukázkové databázi Northwind.  
   
-- Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
+- Doplnění poznámek ke `Customer` třídě za účelem vylepšení vztahů `Customer` mezi třídami a `Order` .  
   
-- Vytváření a spouštění dotazů k otestování získání `Order` informace s použitím `Customer` třídy.  
+- Vytvoření a spuštění dotazu pro otestování získání `Order` informací `Customer` pomocí třídy.  
   
-## <a name="mapping-relationships-across-tables"></a>Mapování relací mezi tabulkami  
- Po `Customer` definici třídy, vytvořte `Order` definici třídy, která obsahuje následující kód, což znamená, že `Order.Customer` souvisí jako cizí klíč k `Customer.CustomerID`.  
+## <a name="mapping-relationships-across-tables"></a>Mapování vztahů mezi tabulkami  
+ Po definici `Order` `Order.Customer` třídy vytvořte definici třídy entity, která obsahuje následující kód, který označuje, že se týká cizího klíče `Customer.CustomerID`. `Customer`  
   
-### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
+### <a name="to-add-the-order-entity-class"></a>Přidání třídy Order entity  
   
-- Zadejte nebo vložte následující kód za `Customer` třídy:  
+- Zadejte nebo vložte následující kód za `Customer` třídu:  
   
      [!code-csharp[DLinqWalk2CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#1)]  
   
-## <a name="annotating-the-customer-class"></a>Zadávání poznámek ke třídě zákazníka  
- V tomto kroku přidáte poznámky `Customer` třídy k jeho vztah k označení `Order` třídy. (Toto přidání není nezbytně nutné, protože definováním relace v obou směrech je dostatečná pro vytvoření odkazu. Ale přidání tato poznámka umožňují snadno procházet objekty v obou směrech.)  
+## <a name="annotating-the-customer-class"></a>Anotace třídy zákazníka  
+ V tomto kroku označíte `Customer` třídu tak, aby označovala její vztah `Order` ke třídě. (Toto přidání není bezpodmínečně nutné, protože definování vztahu v obou směrech stačí pro vytvoření odkazu. Přidání této poznámky vám ale umožní snadno procházet objekty v obou směrech.)  
   
-### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
+### <a name="to-annotate-the-customer-class"></a>Anotace třídy zákazníka  
   
-- Zadejte nebo vložte následující kód do `Customer` třídy:  
+- Do `Customer` třídy zadejte nebo vložte následující kód:  
   
      [!code-csharp[DLinqWalk2CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#2)]  
   
-## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Vytvoření a spuštění dotazu v relaci Zákazník objednávky  
- Teď umožňuje přistupovat k `Order` objekty přímo `Customer` objektů, nebo v opačném pořadí. Není nutné explicitně *spojení* mezi zákazníci a objednávky.  
+## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Vytvoření a spuštění dotazu ve vztahu zákazníka – objednávky  
+ Nyní můžete přistupovat k `Order` objektům přímo `Customer` z objektů, nebo v opačném pořadí. Mezi zákazníky a objednávkami nemusíte explicitní *spojení* .  
   
-### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí objektů zákazníka  
+### <a name="to-access-order-objects-by-using-customer-objects"></a>Přístup k objektům pořadí pomocí zákaznických objektů  
   
-1. Upravit `Main` metoda zadáním nebo vložením následujícího kódu do metody:  
+1. `Main` Upravte metodu zadáním nebo vložením následujícího kódu do metody:  
   
      [!code-csharp[DLinqWalk2CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#3)]  
   
-2. Stisknutím klávesy F5 pro ladění vaší aplikace.  
+2. Pro ladění aplikace stiskněte klávesu F5.  
   
     > [!NOTE]
-    >  Můžete eliminovat kód SQL z okna konzoly tak `db.Log = Console.Out;`.  
+    > Kód SQL můžete v okně konzoly eliminovat tím, že naplníte `db.Log = Console.Out;`komentáře.  
   
-3. Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
+3. V okně konzoly stiskněte klávesu ENTER a zastavte ladění.  
   
-## <a name="creating-a-strongly-typed-view-of-your-database"></a>Vytvoření zobrazení se silnými typy vaší databáze  
- Je mnohem jednodušší začínat zobrazení se silnými typy vaší databáze. Důrazně zadáním <xref:System.Data.Linq.DataContext> objektu, není nutné volání <xref:System.Data.Linq.DataContext.GetTable%2A>. Můžete použít silného typu tabulky ve všech dotazů při použití silného typu <xref:System.Data.Linq.DataContext> objektu.  
+## <a name="creating-a-strongly-typed-view-of-your-database"></a>Vytvoření zobrazení databáze silného typu  
+ Je mnohem snazší začít s zobrazením silného typu vaší databáze. Silným zadáním <xref:System.Data.Linq.DataContext> objektu není nutné <xref:System.Data.Linq.DataContext.GetTable%2A>volat. Při použití objektu silného typu <xref:System.Data.Linq.DataContext> můžete ve všech dotazech použít tabulky se silnými typy.  
   
- V následujících krocích vytvoříte `Customers` jako tabulku silného typu, který se mapuje na tabulku Customers v databázi.  
+ V následujících krocích vytvoříte `Customers` jako tabulku se silným typem, která bude mapována na tabulku Customers v databázi.  
   
-### <a name="to-strongly-type-the-datacontext-object"></a>Chcete-li silného typu DataContext object  
+### <a name="to-strongly-type-the-datacontext-object"></a>Silného typu objektu DataContext  
   
-1. Přidejte následující kód nad `Customer` deklarace třídy.  
+1. Do deklarace `Customer` třídy přidejte následující kód.  
   
      [!code-csharp[DLinqWalk2CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#4)]  
   
-2. Upravit `Main` metodu použít silného typu <xref:System.Data.Linq.DataContext> následujícím způsobem:  
+2. Upravte metodu pro použití silného typu <xref:System.Data.Linq.DataContext> následujícím způsobem: `Main`  
   
      [!code-csharp[DLinqWalk2CS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#5)]  
   
-3. Stisknutím klávesy F5 pro ladění vaší aplikace.  
+3. Pro ladění aplikace stiskněte klávesu F5.  
   
-     Výstup okna konzoly je:  
+     Výstup okna konzoly:  
   
      `ID=WHITC`  
   
-4. Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
+4. V okně konzoly stiskněte klávesu ENTER a zastavte ladění.  
   
 ## <a name="next-steps"></a>Další kroky  
- Dalšího názorného postupu ([názorný postup: Zpracování dat (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) ukazuje, jak pracovat s daty. Tento názorný postup nevyžaduje uložit dva postupy v této sérii, které již byly dokončeny.  
+ V dalším návodu ([Návod: Manipulace s daty (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) ukazuje, jak manipulovat s daty. Tento návod nevyžaduje, abyste uložili dva návody v této sérii, které jste již dokončili.  
   
 ## <a name="see-also"></a>Viz také:
 

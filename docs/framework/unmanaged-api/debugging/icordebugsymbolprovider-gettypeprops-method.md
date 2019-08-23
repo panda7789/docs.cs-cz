@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider::GetTypeProps – metoda
+title: 'ICorDebugSymbolProvider:: GetTypeProps – metoda'
 ms.date: 03/30/2017
 ms.assetid: 35ac4140-91ea-4c77-b1c4-1daf41986ca5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 435a814d20e039c794f4f9eeb024d5afbfcd6dbd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8c8ea3a201cc94ef7bdf679371ef43ab2641b791
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771195"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955558"
 ---
-# <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider::GetTypeProps – metoda
-Vrátí informace o typu vlastnosti, jako je počet podpis jeho obecné parametry-li zadána relativní virtuální adresu (RVA) v tabulku vtable.  
+# <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider:: GetTypeProps – metoda
+Vrátí informace o vlastnostech typu, jako je například počet podpisů svých obecných parametrů, s ohledem na relativní virtuální adresu (RVA) v tabulce vtable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,31 +27,31 @@ HRESULT GetTypeProps(
   
 ## <a name="parameters"></a>Parametry  
  `tableRva`  
- [in] Relativní virtuální adresu (RVA) v tabulku vtable.  
+ pro Relativní virtuální adresa (RVA) v tabulce vtable.  
   
  `cbSignature`  
- [in] Velikost `signature` pole. V části poznámky.  
+ pro Velikost `signature` pole. Viz část poznámky.  
   
  `pcbSignature`  
- [out] [out] Ukazatel na velikost vráceného `signature` pole.  
+ mimo mimo Ukazatel na velikost vráceného `signature` pole.  
   
  `signature`  
- [out] Vyrovnávací paměti, který obsahuje token typespec podpisy všechny obecné parametry.  
+ mimo Vyrovnávací paměť, která obsahuje token TypeSpec podpisy všech obecných parametrů.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li získat požadovaná velikost tohoto typu `signature` pole, nastavte `cbSignature` argumentu na hodnotu 0 a `signature` k **null**. Po návratu metody `pcbSignature` bude obsahovat počet bajtů potřebných pro `signature` pole.  
+ Chcete- `signature` li získat požadovanou velikost pole typu, `cbSignature` nastavte argument na hodnotu 0 a `signature` na **hodnotu null**. Když se metoda vrátí, `pcbSignature` bude obsahovat počet bajtů vyžadovaných `signature` pro pole.  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

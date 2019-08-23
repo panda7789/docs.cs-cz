@@ -1,5 +1,5 @@
 ---
-title: <filter> – Element pro <add> pro <listeners> pro <trace>
+title: <filter><add> Element<listeners> pro pro pro<trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add/filter
@@ -8,22 +8,22 @@ helpviewer_keywords:
 - filter element for <add> for <listeners> for <trace>
 - <filter> element for <add> for <listeners> for <trace>
 ms.assetid: eb9c18f5-dfa8-47c5-b91b-e4b93e76e1cc
-ms.openlocfilehash: 5961125e1b8d0d0f5711f8b942b68ba71d61888f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: afde5381a7dd7dfe6a1a9d238a2029511bd9bae2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701304"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927139"
 ---
-# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<Filtr > – Element pro \<Přidat > pro \<naslouchacích procesů > pro \<trasování >
-Přidá filtr do naslouchacího procesu v `Listeners` kolekce pro trasování.  
+# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<Filter > element pro \<Add > for \<Listeners > \<for trace >
+Přidá filtr pro naslouchací proces v `Listeners` kolekci pro trasování.  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<trasování >  
-\<naslouchací procesy >  
+\<> trasování  
+\<> naslouchací proces  
 \<add>  
-\<Filtr >  
+\<Filtrovat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,8 +40,8 @@ Přidá filtr do naslouchacího procesu v `Listeners` kolekce pro trasování.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`type`|Požadovaný atribut.<br /><br /> Určuje typ filtru, která by měla dědit z <xref:System.Diagnostics.TraceFilter> třídy. Můžete použít název kvalifikovaný v oboru názvů typu, který odpovídá typu <xref:System.Type.FullName%2A> vlastnost, nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení, která odpovídá <xref:System.Type.AssemblyQualifiedName%2A> vlastnost. Informace o úplných názvů typů najdete v tématu [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro třídu zadaný filtr.|  
+|`type`|Požadovaný atribut.<br /><br /> Určuje typ filtru, který by měl dědit z <xref:System.Diagnostics.TraceFilter> třídy. Můžete použít název kvalifikovaný obor názvů typu, který odpovídá <xref:System.Type.FullName%2A> vlastnosti typu, nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení, které odpovídají <xref:System.Type.AssemblyQualifiedName%2A> vlastnosti. Informace o plně kvalifikovaných názvech typů naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro určenou třídu filtru.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,18 +51,18 @@ Přidá filtr do naslouchacího procesu v `Listeners` kolekce pro trasování.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`trace`|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.|  
-|`listeners`|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy. Posluchači přímý výstup trasování příslušný cíli.|  
-|`add`|Přidá naslouchací proces pro `Listeners` kolekce.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`trace`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
+|`listeners`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.|  
+|`add`|Přidá naslouchací proces do `Listeners` kolekce.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<filter>` Elementu musí být součástí `<add>` – element pro naslouchací proces trasování, který určuje typ naslouchací proces, ne jenom název naslouchacího procesu definované v [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md). Pokud je definován naslouchací proces ve [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md), filtr pro tuto naslouchací proces musí být definován v tomto elementu.  
+ Element musí být obsažen `<add>` v elementu pro naslouchací proces trasování, který určuje typ naslouchacího procesu, nikoli pouze název naslouchacího procesu definovaného v [ \<> sharedListeners.](sharedlisteners-element.md) `<filter>` Pokud je naslouchací proces definován v [ \<> sharedListeners](sharedlisteners-element.md), filtr pro tento naslouchací proces musí být definován v tomto elementu.  
   
- Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<filter>` prvek přidejte filtr k naslouchacímu procesu `console` v `Listeners` kolekce pro trasování a zadejte úroveň filtru událostí jako `Error`.  
+ Následující příklad ukazuje, jak `<filter>` použít element pro přidání filtru do naslouchacího procesu `console` v `Listeners` kolekci pro trasování, určení úrovně události filtru jako `Error`.  
   
 ```xml  
 <configuration>  
@@ -87,4 +87,4 @@ Přidá filtr do naslouchacího procesu v `Listeners` kolekce pro trasování.
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.TraceFilter>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

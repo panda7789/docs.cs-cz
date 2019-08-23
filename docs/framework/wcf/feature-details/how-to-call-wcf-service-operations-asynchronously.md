@@ -5,52 +5,52 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: aba41d707426f29c2bcd626dbbe13d16d9e1b1f7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d075bfebf7b5cbd2b2ce031a1c3855a925405a2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624510"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964031"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
-Toto téma popisuje, jak má přístup klient služby operace asynchronně. Implementuje služby v tomto tématu `ICalculator` rozhraní. Klient může asynchronní volání operací na tomto rozhraní za použití založený na událostech asynchronní volání modelu. (Další informace o založený na událostech asynchronní volání modelu najdete v tématu [vícevláknové programování s asynchronní vzor založený na událostech](https://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak implementace operace asynchronní služby, najdete v části [jak: Implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Další informace o synchronní a asynchronní operace, najdete v části [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronně. Služba v tomto tématu implementuje `ICalculator` rozhraní. Klient může volat operace v tomto rozhraní asynchronně pomocí asynchronního modelu volání založeného na událostech. (Další informace o asynchronním volání modelu založeném na událostech naleznete v tématu [vícevláknové programování s asynchronním vzorem založeným](https://go.microsoft.com/fwlink/?LinkId=248184)na událostech). Příklad, který ukazuje, jak provést asynchronní implementaci operace ve službě, naleznete v tématu [How to: Implementujte asynchronní operaci](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)služby. Další informace o synchronních a asynchronních operacích naleznete v tématu [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 > [!NOTE]
->  Založený na událostech asynchronní volání modelu není podporováno při použití <xref:System.ServiceModel.ChannelFactory%601>. Informace o tom, že byla zahájena asynchronní volání pomocí <xref:System.ServiceModel.ChannelFactory%601>, naleznete v tématu [jak: Asynchronní volání operací pomocí objektu pro vytváření kanálů](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md).  
+> Asynchronní volající model řízený událostmi není podporován při použití <xref:System.ServiceModel.ChannelFactory%601>. Informace o tom <xref:System.ServiceModel.ChannelFactory%601>, jak provádět asynchronní volání pomocí, [naleznete v tématu How to: Asynchronní volání operací pomocí objektu pro vytváření](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)kanálů.  
   
 ## <a name="procedure"></a>Postup  
   
-#### <a name="to-call-wcf-service-operations-asynchronously"></a>Pro asynchronní volání operací služby WCF  
+#### <a name="to-call-wcf-service-operations-asynchronously"></a>Asynchronní volání operací služby WCF  
   
-1. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj s oběma `/async` a `/tcv:Version35` možnosti příkazu společně, jak je znázorněno v následujícím příkazu.  
+1. Spusťte nástroj Nástroj pro dodané [metadata (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí `/async` možností a `/tcv:Version35` příkazu společně, jak je znázorněno v následujícím příkazu.  
   
     ```  
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   
-     Tím se vygeneruje, kromě synchronní a standardní delegáta asynchronních operací, třída klienta WCF, která obsahuje:  
+     Vygeneruje se kromě synchronních a standardních asynchronních operací založených na delegátech Třída klienta WCF, která obsahuje:  
   
-    - Dva <`operationName` > `Async` operace pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - Dvě operace`operationName` <>propoužitís přístupemkasynchronnímuvolánízaloženémunaudálostech.`Async` Příklad:  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    - Operace se dokončila událostí ve formátu <`operationName` > `Completed` pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - Operace dokončila události <`operationName` > `Completed` formuláře pro použití s přístupem k asynchronnímu volání založenému na událostech. Příklad:  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    - <xref:System.EventArgs?displayProperty=nameWithType> typy pro každou operaci (ve formátu <`operationName`>`CompletedEventArgs`) pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - <xref:System.EventArgs?displayProperty=nameWithType>typy pro každou operaci (<`operationName`>`CompletedEventArgs`formuláře) pro použití s přístupem k asynchronnímu volání založenému na událostech. Příklad:  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
   
-2. Ve volání aplikace vytvořte metody zpětného volání se volá, když asynchronní operace nebude dokončena, jak je znázorněno v následujícím ukázkovém kódu.  
+2. V volající aplikaci vytvořte metodu zpětného volání, která bude volána po dokončení asynchronní operace, jak je znázorněno v následujícím ukázkovém kódu.  
   
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3. Před voláním operace, používají nový obecný <xref:System.EventHandler%601?displayProperty=nameWithType> typu <`operationName` > `EventArgs` přidáte do metodu obslužné rutiny (vytvořený v předchozím kroku) <`operationName` > `Completed` událostí. Zavolejte <`operationName` > `Async` metody. Příklad:  
+3. Před <xref:System.EventHandler%601?displayProperty=nameWithType> voláním operace použijte nový obecný typ <`operationName` > `EventArgs` pro přidání metody obslužné rutiny (vytvořené v předchozím kroku) do události <`operationName`. > `Completed` Pak zavolejte metodu <`operationName`. > `Async` Příklad:  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  
@@ -58,11 +58,11 @@ Toto téma popisuje, jak má přístup klient služby operace asynchronně. Impl
 ## <a name="example"></a>Příklad  
   
 > [!NOTE]
->  Pokyny návrhu pro asynchronní model založený na událostech stát, že pokud se vrátí více než jednu hodnotu, se vrátí jednu hodnotu jako `Result` vlastnosti a ostatní jsou vrácena jako vlastnosti na <xref:System.EventArgs> objektu. Jeden výsledek tohoto je, že pokud klient naimportuje metadata pomocí možnosti založené na událostech asynchronního příkazu a operace vrátí více než jednu hodnotu, výchozí <xref:System.EventArgs> objekt vrátí jednu hodnotu jako `Result` vlastnost a zbývající jsou vlastnosti <xref:System.EventArgs> objektu. Pokud chcete přijímat zprávy objektu jako `Result` vlastnost a vrácené hodnoty jako vlastnosti objektu, použijte `/messageContract` možnost příkazu. Tím se vygeneruje podpis, který vrací zprávy s odpovědí jako `Result` vlastnost <xref:System.EventArgs> objektu. Všechny interní vrácené hodnoty jsou pak vlastnosti objektu zprávu odpovědi.  
+> Pokyny pro návrh pro stav asynchronního modelu založeného na událostech, pokud je vrácena více než jedna hodnota, jako `Result` vlastnost se vrátí jedna hodnota a ostatní jsou vráceny jako vlastnosti <xref:System.EventArgs> objektu. Jedním z těchto výsledků je, že pokud klient Importuje metadata pomocí parametrů asynchronního příkazu založeného na událostech a operace vrátí více než jednu hodnotu, výchozí <xref:System.EventArgs> objekt vrátí jednu hodnotu `Result` jako vlastnost a zbytek je <xref:System.EventArgs> vlastnosti objektu Pokud chcete jako `Result` vlastnost přijmout objekt zprávy a vracet hodnoty jako vlastnosti tohoto objektu, `/messageContract` použijte možnost Command. Tím se vygeneruje podpis, který vrátí zprávu odpovědi jako `Result` vlastnost <xref:System.EventArgs> objektu. Všechny interní návratové hodnoty jsou potom vlastnostmi objektu zprávy odpovědi.  
   
  [!code-csharp[EventAsync#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#6)]
  [!code-vb[EventAsync#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)
+- [Postupy: Implementace asynchronní operace služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)

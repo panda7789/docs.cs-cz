@@ -3,24 +3,24 @@ title: <activityScheduledQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: a8bcd6d4-b389-4daf-86bf-1ade85fec114
-ms.openlocfilehash: d49c6d933a09dce5d657746358f1a5f716ab639b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dc04405204be7c5484d47b4a3767f846b11abf9f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790413"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945505"
 ---
-# <a name="activityscheduledquery"></a>\<activityScheduledQuery>
+# <a name="activityscheduledquery"></a>\<activityScheduledQuery >
 Představuje kolekci dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záznamů aktivit naplánována.  
   
- Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
 \<system.serviceModel>  
 \<sledování >  
-\<trackingProfile>  
-\<pracovní postup >  
-\<activityScheduledQueries>  
-\<activityScheduledQuery>  
+\<Profil TrackingProfile >  
+\<> pracovního postupu  
+\<activityScheduledQueries >  
+\<activityScheduledQuery >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,11 +54,11 @@ Představuje kolekci dotazů, které se používají ke sledování aktivitu nap
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<activityScheduledQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activityscheduledquery.md)|Dotaz, který se používá ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený.|  
+|[\<activityScheduledQuery>](activityscheduledquery.md)|Dotaz, který se používá ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityScheduledQuery?displayProperty=nameWithType>
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)

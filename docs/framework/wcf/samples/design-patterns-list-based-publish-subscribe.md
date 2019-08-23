@@ -2,26 +2,26 @@
 title: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 1b99908c1b83bb0d75e295b7a12e8c5933fe86a1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cf6fe2da3101918e25aa9548fd18973088f348a7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650123"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961736"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Vzor publikování–odběr založený na seznamu
-Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  
+Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu, který je implementovaný jako program Windows Communication Foundation (WCF).  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Návrhový vzor založený na seznamu publikování a odběru je popsán v publikaci Microsoft Patterns a postupy [vzory integrace](https://go.microsoft.com/fwlink/?LinkId=95894). Model publikování a odběru předává informace do kolekce příjemců, kteří se přihlásili k odběru tématu informace. Na základě seznamu publikování a odběru udržuje seznam předplatitelů. Po informace sdílet kopii posílá každému odběrateli v seznamu. V této ukázce dynamické na základě seznamu vzorec, kde můžou klienti přihlášení k odběru nebo odběr tak často, podle potřeby publikování a odběru.  
+ Vzor návrhu pro publikování a odběr založený na seznamu je popsaný v tématu publikace Microsoft Patterns & Practices – [vzory pro integraci](https://go.microsoft.com/fwlink/?LinkId=95894). Vzor publikování a odběru předává informace do kolekce příjemců, kteří se přihlásili k odběru informačního tématu. Publikování na základě seznamu – odběr uchovává seznam předplatitelů. Pokud jsou k dispozici informace, které je potřeba sdílet, pošle se každému odběrateli v seznamu kopie. Tato ukázka předvádí dynamický vzor pro publikování a odběr založený na seznamu, ve kterém se klienti můžou přihlásit k odběru nebo odhlásit, jak často potřebujete.  
   
- Ukázka založený na seznamu publikování a odběru se skládá z klienta, služby a data zdrojového programu. Může existovat více než jednoho klienta a s více než jeden data zdrojového programu. Klienti předplatné ke službě, dostávat oznámení a odhlášení odběru. Programy pro zdroj dat odeslat informace o službě a sdílené s všichni aktuální předplatitelé.  
+ Ukázka publikovat a odběr založený na seznamu se skládá z klienta, služby a programu zdroje dat. Může existovat více než jeden klient a je spuštěn více než jeden program zdroje dat. Klienti se přihlásí k odběru služby, dostanou oznámení a zruší odběr. Programy zdroje dat odesílají informace službě, aby se sdílely se všemi aktuálními předplatiteli.  
   
- V tomto zdroji ukázka, klient a data jsou programy konzoly (soubory .exe) a služba je knihovna (.dll) hostované v Internetové informační služby (IIS). Zdrojová aktivita klienta a data jsou viditelné v klientských počítačích.  
+ V této ukázce klient a zdroj dat jsou programy konzoly (soubory. exe) a služba je knihovna (. dll) hostovaná ve službě Internetová informační služba (IIS). Aktivita klient a zdroj dat se zobrazuje na ploše.  
   
- Služba používá duplexní komunikaci. `ISampleContract` Kontrakt služby s oblastí `ISampleClientCallback` kontrakt zpětného volání. Služba implementuje přihlásit k odběru a zrušení odběru operace služby, které klienti používají k připojení nebo ponechte seznam předplatitelů. Služba také implementuje `PublishPriceChange` operace služby, která volá program zdroje dat k poskytování služby novými informacemi. Implementuje klientskou aplikaci `PriceChange` operace služby, která volá službu oznámit všichni předplatitelé změna ceny.  
+ Služba používá duplexní komunikaci. Kontrakt služby se spáruje `ISampleClientCallback` se smlouvou zpětného volání. `ISampleContract` Služba implementuje operace odběru a zrušení odběru služby, které klienti používají pro připojení k seznamu předplatitelů nebo jejich opuštění. Služba také implementuje `PublishPriceChange` operaci služby, kterou program zdroje dat volá k poskytování služby novým informacím. Klientský program implementuje `PriceChange` operaci služby, kterou služba volá, aby upozornila všechny předplatitele změny ceny.  
   
 ```  
 // Create a service contract and define the service operations.  
@@ -46,7 +46,7 @@ public interface ISampleClientContract
 }  
 ```  
   
- Služba události rozhraní .NET Framework používá jako mechanismus k informování všichni předplatitelé o nové informace. Když se klient připojuje služby podle volání přihlásit k odběru, poskytuje obslužné rutiny události. Když klient opustí, zrušení odběru své obslužné rutině události z události. Když zdroji dat volá Služba hlášení změna ceny, službu vyvolává událost. Volá se každá instance služby, jednu pro každého klienta, která se připojila a způsobí, že jejich obslužných rutin událostí k provedení. Každá obslužná rutina události předá informace o jeho klienta pomocí funkce zpětného volání.  
+ Služba používá událost .NET Framework jako mechanismus pro informování všech předplatitelů o nových informacích. Když klient připojí službu voláním odběru, poskytne obslužnou rutinu události. Když klient opustí, zruší odběr své obslužné rutiny události od události. Když zdroj dat volá službu, aby nahlásila změnu ceny, služba událost vyvolá. Tato akce volá každou instanci služby, jednu pro každého klienta, který má předplatné, a způsobí, že se obslužné rutiny událostí spustí. Každá obslužná rutina události do svého klienta předává informace prostřednictvím funkce zpětného volání.  
   
 ```  
 public class PriceChangeEventArgs : EventArgs  
@@ -108,55 +108,55 @@ public class PriceChangeEventArgs : EventArgs
     }  
 ```  
   
- Při spuštění ukázku spusťte několik klientů. Klienti přihlásit ke službě. Spusťte program zdroje dat, který odesílá informace do služby. Služba předá informace všichni předplatitelé. Zobrazit aktivitu na každého klienta konzoly potvrzení, přijímání informace. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Po spuštění ukázky spusťte několik klientů. Klienti se přihlásí k odběru služby. Pak spusťte program zdroje dat, který odesílá informace službě. Služba předá tyto informace všem předplatitelům. V každé konzole klienta můžete zobrazit aktivitu s potvrzením, že informace byly přijaty. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
-### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
+### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
+### <a name="to-run-the-sample-on-the-same-machine"></a>Spuštění ukázky na stejném počítači  
   
-1. Test, můžete přístup ke službě pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi.  
+1. Otestujte, zda ke službě můžete přistupovat pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. V odpovědi by se měla zobrazit Stránka s potvrzením.  
   
-2. Spustit Client.exe z \client\bin\\, ze složky specifické pro jazyk. Činnost klienta se zobrazí v okně konzoly klienta. Spuštění několika klienty.  
+2. Spusťte soubor Client. exe z\\\client\bin ze složky specifické pro jazyk. Aktivita klienta se zobrazí v okně konzoly klienta. Spusťte několik klientů.  
   
-3. Spustit Datasource.exe z \datasource\bin\\, ze složky specifické pro jazyk. Aktivita zdroje dat se zobrazí v okně konzoly. Jakmile se zdroje dat se odesílá informace do služby, jeho by měly být předány každého klienta.  
+3. Spusťte DataSource. exe z \datasource\bin\\ze složky specifické pro jazyk. Aktivita zdroj dat se zobrazí v okně konzoly. Jakmile zdroj dat odešle službě informace, měla by být předána každému klientovi.  
   
-4. Pokud klient, zdroj dat a aplikací služby nejsou schopné komunikovat, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Pokud klient, zdroj dat a programy nemůžou komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
-### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
+### <a name="to-run-the-sample-across-machines"></a>Spuštění ukázky napříč počítači  
   
-1. Nastavení služby počítače:  
+1. Nastavte počítač služby:  
   
-    1. Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Soubor Setupvroot.bat ze služby batch [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) je možné vytvořit na disku a virtuální adresář.  
+    1. Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Dávkový soubor Setupvroot. bat se dá použít k vytvoření adresáře disku a virtuálního adresáře z [procesu jednorázového nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) .  
   
-    2. Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači služby. Nezapomeňte zahrnout soubory v adresáři \bin.  
+    2. Zkopírujte programové soubory služby z%SystemDrive%\Inetpub\wwwroot\servicemodelsamples do virtuálního adresáře ServiceModelSamples na počítači služby. Nezapomeňte zahrnout soubory do adresáře \Bin.  
   
-    3. Testovací službě můžete dostat z klientského počítače pomocí prohlížeče.  
+    3. Otestujte, zda ke službě můžete přistupovat z klientského počítače pomocí prohlížeče.  
   
-2. Nastavte klientské počítače:  
+2. Nastavení klientských počítačů:  
   
-    1. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientských počítačů.  
+    1. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce pro konkrétní jazyk do klientských počítačů.  
   
-    2. V konfiguračním souboru každý klient změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    2. V každém konfiguračním souboru klienta změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adrese vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaným názvem domény v adrese.  
   
-3. Nastavte počítač pro zdroj dat:  
+3. Nastavte počítač zdroje dat:  
   
-    1. Zkopírujte soubory programu zdroje dat ze složky \datasource\bin\ v rámci složky specifické pro jazyk, na počítač pro datové zdroje.  
+    1. Zkopírujte soubory programu zdroje dat ze složky \datasource\bin\ ve složce specifické pro daný jazyk do počítače zdroje dat.  
   
-    2. V souboru konfigurace zdroje dat změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    2. V konfiguračním souboru zdroje dat změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adrese vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaným názvem domény v adrese.  
   
-4. Na klientské počítače spusťte z příkazového řádku Client.exe.  
+4. Na klientských počítačích spusťte soubor Client. exe z příkazového řádku.  
   
-5. Na zdrojovém počítači data spusťte z příkazového řádku Datasource.exe.  
+5. Na počítači zdroje dat spusťte soubor DataSource. exe z příkazového řádku.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+>  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  

@@ -9,87 +9,87 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f50a469327a06eabdb6a80821203f2222dcd2921
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 46dd9c0c1f9f5759bc9160aadeb0538b5403fb52
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878031"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917975"
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 
-Rozhraní .NET Framework je technologií podporující vytváření a spouštění aplikací a webových služeb XML nové generace. Rozhraní .NET Framework je určen ke splnění následujících cílů:
+.NET Framework je technologie, která podporuje sestavování a spouštění nové generace aplikací a webových služeb XML. .NET Framework je navržena tak, aby splňovala následující cíle:
 
-- Poskytnout konzistentní objektově orientované programovací prostředí, kde je kód objektu uložen a spuštěn lokálně, spuštěn lokálně ale distribuován Internetu, nebo spuštěn vzdáleně.
+- K poskytnutí konzistentního programovacího prostředí orientovaného na objekty bez ohledu na to, jestli je kód objektu uložený a spuštěný místně, spuštěný místně, ale prostřednictvím Internetu nebo vzdáleně prováděný.
 
-- Poskytnout prostředí pro provádění kódu, které minimalizuje konflikty nasazení a správy verzí softwaru.
+- Aby bylo možné poskytovat prostředí pro spouštění kódu, které minimalizuje nasazení softwaru a konflikty verzí.
 
-- Poskytnout prostředí pro zpracování kódu, který propaguje bezpečné zpracování kódu včetně kódu vytvoří neznámou nebo částečně důvěryhodnou třetí stranou.
+- Aby bylo možné poskytovat prostředí pro provádění kódu, které propaguje bezpečné spuštění kódu, včetně kódu vytvořeného neznámou nebo částečně důvěryhodnou třetí stranou.
 
-- Spuštění kódu prostředí, které eliminuje výkonostní problémy skripty nebo interpretovaných prostředí.
+- Pro zajištění prostředí pro provádění kódu, které eliminuje problémy s výkonem skriptovacích nebo interpretovaných prostředí.
 
-- Chcete-li činit vývojářské zkušenosti konzistentní napříč nejrůznějšími typy aplikací, jako jsou aplikace založené na Windows a webová aplikace.
+- Aby bylo prostředí pro vývojáře konzistentní v nejrůznějších různých typech aplikací, jako jsou aplikace založené na Windows a webové aplikace.
 
-- Vytvářet veškerou komunikaci na průmyslových standardech, ujistěte se, že kód založený na rozhraní .NET Framework se integruje s jakýmkoliv jiným kódem.
+- Chcete-li vytvořit veškerou komunikaci v oborových standardech a zajistit tak, že kód na základě .NET Framework bude integrován s jakýmkoli jiným kódem.
 
 > [!NOTE]
-> Obecný úvod k rozhraní .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](../../../docs/framework/get-started/index.md).
+> Obecný úvod k .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](../../../docs/framework/get-started/index.md).
 
-Rozhraní .NET Framework se skládá z common language runtime (CLR) a knihovně tříd rozhraní .NET Framework. Modul common language runtime je základem rozhraní .NET Framework. Modul runtime můžete představit jako agenta, který spravuje kód v době provádění, poskytuje základní služby, jako je například správa paměti, správa vláken a vzdálené komunikace, současně také zajišťuje přísnou bezpečnost typů a další formy přesnosti kódu, které podporují zabezpečení a robustnost. Ve skutečnosti koncept správy kódu je základní princip modulu runtime. Kód, cílů modulu runtime je znám jako spravovaný kód, zatímco kód, který není zaměřují na modul runtime je znám jako nespravovaný kód. Knihovna tříd je komplexní, objektově orientovaná kolekce opakovaně použitelných typů, které používáte pro vývoj aplikací od tradiční příkazového řádku nebo grafické uživatelské rozhraní (GUI) aplikace až po aplikace založené na nejnovějších inovacích poskytovaných technologií ASP.NET, jako jsou webové Formuláře a webové služby XML.
+.NET Framework se skládá z modulu CLR (Common Language Runtime) a knihovny tříd .NET Framework. Modul CLR (Common Language Runtime) je základem .NET Framework. Představte si modul runtime jako agenta, který spravuje kód v době spuštění a poskytuje základní služby, jako je například Správa paměti, Správa vláken a Vzdálená komunikace, a zároveň vynucování striktního zabezpečení typu a dalších forem přesnosti kódu, které podporují zabezpečení a odolnost. Ve skutečnosti koncept správy kódu je základní princip modulu runtime. Kód, který cílí na modul runtime, je označován jako spravovaný kód, zatímco kód, který necílí na modul runtime, je označován jako nespravovaný kód. Knihovna tříd je komplexní, objektově orientované kolekce opakovaně použitelných typů, které slouží k vývoji aplikací od tradičních aplikací z příkazového řádku nebo grafického uživatelského rozhraní (GUI) do aplikací na základě nejnovějších inovací poskytovaných službou ASP.NET, jako je například web. Formuláře a webové služby XML.
 
-Rozhraní .NET Framework může být hostováno nespravovanými komponentami, které načtou modul common language runtime do svých procesů a zahájí provádění spravovaného kódu, a tím vytváří softwarové prostředí, který zneužívá spravovaných i nespravovaných funkcí. Rozhraní .NET Framework nejen poskytuje několik hostitelských prostředí modulu runtime, ale také podporuje vývoj hostitelských prostředí modulu runtime třetích stran.
+.NET Framework mohou být hostovány nespravovanými komponentami, které načítají modul CLR (Common Language Runtime) do procesů a iniciují provádění spravovaného kódu, čímž se vytvoří softwarové prostředí, které zneužije spravované i nespravované funkce. .NET Framework neposkytuje pouze několik hostitelů modulu runtime, ale podporuje také vývoj hostitelů modulu runtime třetích stran.
 
-Například technologie ASP.NET je hostitelem modulu runtime poskytuje škálovatelné a serverové prostředí pro spravovaný kód. Technologie ASP.NET pracuje přímo s modulem runtime a povolit aplikace ASP.NET a webové služby XML, které jsou popsány dále v tomto tématu.
+Například ASP.NET hostuje modul runtime, aby poskytoval škálovatelné prostředí na straně serveru pro spravovaný kód. ASP.NET pracuje přímo s modulem runtime a povoluje ASP.NET aplikace a webové služby XML, které jsou popsány dále v tomto tématu.
 
-Aplikace Internet Explorer je příkladem nespravované aplikace, který je hostitelem modulu runtime (ve formě rozšíření typu standardu MIME). Pomocí aplikace Internet Explorer jako hostitele modulu runtime umožňuje vložit do HTML dokumentů spravovanou komponentu nebo ovládací prvky Windows Forms. Hostování modulu runtime tímto způsobem umožňuje spravovaný mobilní kód, ale s významnými vylepšeními této pouze spravovaný kód nabízí, jako je například částečně důvěryhodné spouštění a izolované úložiště souboru.
+Internet Explorer je příkladem nespravované aplikace, která je hostitelem modulu runtime (ve formě rozšíření typu MIME). Použití aplikace Internet Explorer k hostování modulu runtime umožňuje vkládat spravované součásti nebo ovládací prvky model Windows Forms v dokumentech HTML. Hostování modulu runtime tímto způsobem zpřístupňuje spravovaný mobilní kód, ale s významnými vylepšeními, které nabízí jenom spravované kód, jako je částečně důvěryhodné spuštění a izolované úložiště souborů.
 
-Následující obrázek znázorňuje relaci modulu common language runtime a knihovně tříd k vašim aplikacím a celkovému systému. Ilustraci je také znázorněno jak spravovaný kód pracuje v rámci větší architektury.
+Následující ilustrace znázorňuje vztah společného jazykového modulu runtime a knihovny tříd k vašim aplikacím a celkovému systému. Ilustrace také ukazuje, jak spravovaný kód funguje v rámci větší architektury.
 
-![Snímek obrazovky, který ukazuje, jak spravovaný kód pracuje v rámci větší architektury.](./media/overview/language-runtime-class-library-relationship.gif)
+![Snímek obrazovky, který ukazuje, jak spravovaný kód funguje v rámci větší architektury.](./media/overview/language-runtime-class-library-relationship.gif)
 
-Následující části popisují hlavní funkce rozhraní .NET Framework podrobněji.
+V následujících částech jsou podrobněji popsány hlavní funkce .NET Framework.
 
-## <a name="features-of-the-common-language-runtime"></a>Funkce modulu common language runtime
+## <a name="features-of-the-common-language-runtime"></a>Funkce modulu CLR (Common Language Runtime)
 
-Modul CLR spravuje paměť, spouštění vláken, provádění kódu, ověření bezpečnosti kódu, kompilace a jiných služeb system. Tyto vlastnosti jsou přirozené pro spravovaný kód, který běží na modulu common language runtime.
+Modul CLR (Common Language Runtime) spravuje paměť, provádění vlákna, provádění kódu, ověřování v zabezpečení kódu, kompilaci a další systémové služby. Tyto funkce jsou vnitřní pro spravovaný kód, který běží v modulu CLR (Common Language Runtime).
 
-Týkající se zabezpečení jsou spravované komponenty oceňovány různým stupněm důvěryhodnosti závisící na řadě faktorů, které zahrnují jejich původ (jako je například Internet, podniková síť nebo místní počítač). To znamená, že spravovaná komponenta může nebo nemusí být schopna provádět operace přístupu k souborům, operace přístupu k registru nebo jiné citlivé funkce, i když se používá ve stejné aktivní aplikaci.
+V souvislosti s zabezpečením jsou spravované komponenty přidávány různě stupni důvěryhodnosti v závislosti na řadě faktorů, které zahrnují jejich původ (například Internet, podniková síť nebo místní počítač). To znamená, že spravovaná součást může nebo nemusí být schopná provádět operace přístupu k souborům, operace přístupu k registru nebo jiné citlivé funkce, i když se používá ve stejné aktivní aplikaci.
 
-Runtime modul vynucuje také odolnost kódu díky implementaci přísné typ a kódové ověřovací infrastruktury volá obecný systém typů (CTS). Specifikace CTS zajišťuje, že všechen spravovaný kód je samo-popisující. Různé kompilátory třetích stran a Microsoft generují spravovaný kód, který odpovídá specifikaci CTS. To znamená, že spravovaný kód může spotřebovat jiné spravované typy a instance při důsledném prosazování typ spolehlivosti a bezpečnosti typů.
+Modul runtime také vynutil odolnost kódu implementací infrastruktury striktního typu a-Code-ověřování označované jako CTS (Common Type System). CTS zajišťuje, aby veškerý spravovaný kód byl samy popisující. Různé kompilátory jazyka Microsoft a třetích stran generují spravovaný kód, který odpovídá CTS. To znamená, že spravovaný kód může spotřebovávat jiné spravované typy a instance a přitom striktně vynucuje věrnost typu a bezpečnost typů.
 
-Spravované prostředí modulu runtime navíc eliminuje mnoho běžných softwarových problémů. Například modul runtime automaticky zpracovává rozložení objektů a spravuje odkazy na objekty. uvolňuje je, když jsou již používány. Tato automatická správa paměti řeší dvě nejběžnější chyby aplikace, nevrácenou paměť a neplatné odkazy paměti.
+Spravované prostředí modulu runtime navíc eliminuje mnoho běžných problémů se softwarem. Například modul runtime automaticky zpracovává rozložení objektů a spravuje odkazy na objekty a uvolňuje je, když již nejsou používány. Tato automatická správa paměti řeší dvě nejběžnější chyby aplikací, nevracení paměti a neplatné odkazy na paměť.
 
-Modul runtime také zrychluje produktivitu vývojáře. Například programátoři zápis aplikací v jejich zvoleném vývojovém jazyce dosud plně využít modul runtime, knihovny tříd a komponent, které jsou napsané v jiných jazycích ostatní vývojáři. Jakýkoliv dodavatel kompilátoru, který se rozhodne zaměřit na modul runtime může tak učinit. Kompilátory, které jsou cíleny rozhraní .NET Framework zpřístupnit funkce rozhraní .NET Framework existujícímu kódu napsanému v tomto jazyce. značně zmírňují proces migrace pro existující aplikace.
+Modul runtime také zrychluje produktivitu vývojářů. Například programátoři zapisují aplikace v jejich vývojovém jazyce, ale ještě plně využívají výhod modulu runtime, knihovny tříd a komponent napsaných v jiných jazycích jinými vývojáři. Každý dodavatel s kompilátorem, který se rozhodne cílit na modul runtime, může to provést. Kompilátory jazyka, které cílí na .NET Framework zpřístupňují funkce .NET Framework existujícímu kódu napsanému v daném jazyce, což výrazně zjednodušuje proces migrace pro stávající aplikace.
 
-Když runtime modul navržen pro software budoucnosti, podporuje také dnešní a dřívější software. Vzájemná funkční spolupráce mezi spravovaným a nespravovaným kódem umožňuje vývojářům nadále používat potřebné komponenty modelu COM a knihovny DLL.
+I když je modul runtime navržený pro software v budoucnu, podporuje také dnešní a včerejší software. Vzájemná funkční spolupráce mezi spravovaným a nespravovaným kódem umožňuje vývojářům pokračovat v používání nezbytných komponent modelu COM a knihoven DLL.
 
-Modul runtime je navržen k zvýšení výkonu. Přestože modul common language runtime poskytuje mnoho standardních služeb modulu runtime, spravovaný kód není nikdy interpretován. Funkci just-in-time (JIT) kompilaci umožňuje veškerému spravovanému kódu ke spuštění v nativním strojovém jazyku systému, na kterém je spuštěn. Mezitím správce paměti odstraňuje možnost fragmentace paměti a zvyšuje paměť lokality referenčního abyste dále zvýšili výkon.
+Modul runtime je navržený tak, aby zvýšil výkon. I když modul CLR (Common Language Runtime) poskytuje mnoho standardních služeb runtime, spravovaný kód není nikdy interpretován. Funkce označovaná jako JIT (just-in-time) umožňuje veškerému spravovanému kódu běžet v nativním strojovém jazyce systému, ve kterém je prováděna. Mezitím správce paměti odebírá možnosti fragmentované paměti a zvyšuje místní paměť – odkaz na další zvýšení výkonu.
 
-Nakonec modul runtime může být hostován vysoce výkonné, serverové aplikace, jako je například Microsoft SQL Server a Internetové informační služby (IIS). Tato infrastruktura umožňuje používat spravovaný kód k psaní obchodní logiky, zároveň si užívat vynikajícího výkonu v oboru nejlepších podnikových serverů, které podporují hostování modulu runtime.
+Nakonec lze modul runtime hostovat pomocí vysoce výkonných aplikací na straně serveru, například Microsoft SQL Server a Internetová informační služba (IIS). Tato infrastruktura vám umožňuje používat spravovaný kód k psaní obchodní logiky a stále využívat vynikající výkon nejlepších podnikových serverů, které podporují hostování modulu runtime.
 
 ## <a name="net-framework-class-library"></a>.NET Framework – knihovna tříd
 
-Knihovna tříd rozhraní .NET Framework je kolekce opakovaně použitelných typů, které jsou úzce integrovány s common language runtime. Knihovna tříd je objektově orientovaná, poskytující typy, z něhož pochází spravovaného kódu funkce. To nejen umožňuje snadno použitelné typy rozhraní .NET Framework, ale také snižuje dobu spojenou s učením nových vlastností rozhraní .NET Framework. Navíc komponenty třetích stran se hladce integrují s třídami v rozhraní .NET Framework.
+Knihovna tříd .NET Framework je kolekce opakovaně použitelných typů, které se úzce integrují s modulem CLR (Common Language Runtime). Knihovna tříd je objektově orientované a poskytuje typy, ze kterých vlastní spravovaný kód odvodí funkčnost. To nejen usnadňuje použití typů .NET Framework, ale také zkracuje čas spojený s učením nových funkcí .NET Framework. Kromě toho komponenty třetích stran integrují plynule s třídami v .NET Framework.
 
-Například kolekce tříd rozhraní .NET Framework implementuje sadu rozhraní pro vývoj vlastní kolekce tříd. Vaše kolekce tříd bezproblémově prolínat s třídami v rozhraní .NET Framework.
+Třídy kolekce .NET Framework například implementují sadu rozhraní pro vývoj vlastních tříd kolekcí. Vaše kolekce tříd se hladce promísí se třídami v .NET Framework.
 
-Jak by jste očekávali od objektově orientované třídy knihovny, typy rozhraní .NET Framework umožňují provádět řadu běžných programovacích úkolů, včetně úloh, jako je například správa řetězců, shromažďování dat, připojení k databázi a přístup k souborům. Kromě těchto běžných úkolů zahrnuje knihovna tříd typy podporující různé specializované vývojové scénáře. Rozhraní .NET Framework můžete vyvíjet následující typy aplikací a služeb:
+Vzhledem k tomu, že byste očekávali od objektově orientované knihovny tříd, .NET Framework typy umožňují provádět řadu běžných programovacích úloh, včetně úloh, jako je správa řetězců, shromažďování dat, připojení k databázi a přístup k souborům. Kromě těchto běžných úkolů zahrnuje knihovna tříd typy, které podporují různé specializované vývojové scénáře. .NET Framework můžete použít k vývoji následujících typů aplikací a služeb:
 
-- Aplikace konzoly. Zobrazit [vytváření konzolových aplikací](../../../docs/standard/building-console-apps.md).
+- Konzolové aplikace. Viz [Sestavování konzolových aplikací](../../standard/building-console-apps.md).
 
-- Windows grafickým uživatelským rozhraním aplikace (Windows Forms). Zobrazit [Windows Forms](../../../docs/framework/winforms/index.md).
+- Aplikace Windows GUI (model Windows Forms). Viz [model Windows Forms](../../../docs/framework/winforms/index.md).
 
-- Windows Presentation Foundation (WPF) aplikace. Zobrazit [Windows Presentation Foundation](../../../docs/framework/wpf/index.md).
+- Aplikace Windows Presentation Foundation (WPF). Viz [Windows Presentation Foundation](../../../docs/framework/wpf/index.md).
 
-- Aplikace v ASP.NET. Zobrazit [webové aplikace s ASP.NET](../../../docs/framework/develop-web-apps-with-aspnet.md).
+- ASP.NET aplikace. Viz [webové aplikace s ASP.NET](../../../docs/framework/develop-web-apps-with-aspnet.md).
 
-- Služby systému Windows. Zobrazit [Úvod do služby Windows Service aplikace](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md).
+- Služby systému Windows. Viz [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md).
 
-- Aplikace orientované na služby s využitím Windows Communication Foundation (WCF). Zobrazit [aplikace orientované na služby s použitím technologie WCF](../../../docs/framework/wcf/index.md).
+- Aplikace orientované na služby využívající Windows Communication Foundation (WCF). Přečtěte si téma [aplikace orientované na služby se službou WCF](../../../docs/framework/wcf/index.md).
 
-- Aplikace podporující pracovní postupy s využitím Windows Workflow Foundation (WF). Zobrazit [Windows Workflow Foundation](../windows-workflow-foundation/index.md).
+- Aplikace podporující pracovní postupy používající programovací model Windows Workflow Foundation (WF). Viz [programovací model Windows Workflow Foundation](../windows-workflow-foundation/index.md).
 
-Třídy modelu Windows Forms jsou komplexní sadou opakovaně použitelných typů, které obrovsky zjednodušují vývoj grafického uživatelského rozhraní Windows. Pokud píšete aplikaci technologie ASP.NET webové formuláře, můžete použít třídy webového formuláře.
+Třídy model Windows Forms jsou komplexní sada opakovaně použitelných typů, které zjednodušují vývoj grafického uživatelského rozhraní systému Windows. Pokud napíšete aplikaci webového formuláře ASP.NET, můžete použít třídy webových formulářů.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -97,5 +97,5 @@ Třídy modelu Windows Forms jsou komplexní sadou opakovaně použitelných typ
 - [Průvodce instalací](../../../docs/framework/install/index.md)
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [.NET ukázky a kurzy](../../samples-and-tutorials/index.md)
-- [Knihovna tříd rozhraní .NET framework](https://go.microsoft.com/fwlink/?LinkID=227195)
+- [Ukázky a kurzy .NET](../../samples-and-tutorials/index.md)
+- [Knihovna tříd .NET Framework](https://go.microsoft.com/fwlink/?LinkID=227195)

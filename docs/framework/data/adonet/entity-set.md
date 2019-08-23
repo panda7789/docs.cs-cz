@@ -2,45 +2,45 @@
 title: entity set
 ms.date: 03/30/2017
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
-ms.openlocfilehash: da70d25790918340e92df83b1c2c704c5dc54226
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4473b74a4142bb49076068b50dc8b6f9c2c0d54a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599639"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959237"
 ---
 # <a name="entity-set"></a>entity set
-*Sadu entit* je logický kontejner pro instance [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sady entit je obdobou vztah mezi řádek a tabulky v relační databázi: Jako řádek typ entity, který popisuje strukturu dat a jako tabulka, obsahuje sadu entit instance dané struktury. Sadu entit není konstrukce; modelování dat strukturu dat nepopisuje. Místo toho sadu entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do instance typu entity skupiny tak, že je možné mapovat do úložiště dat.  
+*Sada entit* je logický kontejner pro instance [typu entity](../../../../docs/framework/data/adonet/entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v [tématu model EDM (Entity Data Model): Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sadou entit je podobný relaci mezi řádkem a tabulkou v relační databázi: Podobně jako u řádku typ entity popisuje datovou strukturu a, podobně jako tabulka, sada entit obsahuje instance dané struktury. Sada entit není konstrukcí modelování dat; nepopisuje strukturu dat. Místo toho sada entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například modul CLR (Common Language Runtime) nebo databáze SQL Server) k seskupení instancí typů entit tak, aby bylo možné je namapovat na úložiště dat.  
   
- Sadu entit je definována v rámci [kontejneru entity](../../../../docs/framework/data/adonet/entity-container.md), což je logické seskupení sady entit a [sad přidružení](../../../../docs/framework/data/adonet/association-set.md).  
+ Sada entit je definována v rámci [kontejneru entit](../../../../docs/framework/data/adonet/entity-container.md), což je logické seskupení sad entit a [sad přidružení](../../../../docs/framework/data/adonet/association-set.md).  
   
- Pro instanci entity typu existovat v sadu entit musí být splněné následující podmínky:  
+ Aby v sadě entit existovala instance typu entity, musí být splněny následující podmínky:  
   
-- Typ instance je buď stejná jako typ entity, na kterém je na základě sady entit nebo typ instance je podtypem typu entity.  
+- Typ instance je buď stejný jako typ entity, na které je založena sada entit, nebo typ instance je podtypem typu entity.  
   
-- [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) pro instanci je jedinečný v rámci sady entit.  
+- [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) pro instanci je v sadě entit jedinečný.  
   
-- Instance neexistuje v jiné sadě entit.  
+- Instance neexistuje v žádné jiné sadě entit.  
   
     > [!NOTE]
-    >  Více sad entit můžete definovat pomocí stejného typu entity, ale může existovat pouze instance typu danou entitu v sadě entit.  
+    > Pomocí stejného typu entity lze definovat více sad entit, ale instance daného typu entity může existovat pouze v jedné sadě entit.  
   
- Není nutné definovat nastavení pro každý typ entity v konceptuálním modelu entity.  
+ Pro každý typ entity v koncepčním modelu nemusíte definovat sadu entit.  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`.  
+ Následující diagram znázorňuje koncepční model se třemi typy entit: `Book`, `Publisher` `Author`a.  
   
- ![Příklad modelu s tři typy entit](./media/entity-set/example-model-three-entity-types.gif)  
+ ![Vzorový model se třemi typy entit](./media/entity-set/example-model-three-entity-types.gif)  
   
- Následující diagram znázorňuje dvě sady entit (`Books` a `Publishers`) a sada přidružení (`PublishedBy`) založené na konceptuální model, uvedené výše. BI v `Books` sadu entit představuje instanci `Book` typ entity v době běhu. Obdobně Pj představují `Publisher` instance v `Publishers` sady entit. BiPj představuje instanci `PublishedBy` přidružení v `PublishedBy` sada přidružení.  
+ Následující diagram znázorňuje dvě sady entit (`Books` a `Publishers`) a sadu přidružení (`PublishedBy`) založenou na koncepčním modelu uvedeném výše. BI v `Books` sadě entit představuje instanci `Book` typu entity v době běhu. Podobně PJ představuje `Publisher` instanci `Publishers` v sadě entit. BiPj představuje instanci `PublishedBy` přidružení `PublishedBy` v sadě přidružení.  
   
- ![Snímek obrazovky zobrazující příklad sady.](./media/entity-set/sets-example-association.gif)  
+ ![Snímek obrazovky, který zobrazuje příklad sady.](./media/entity-set/sets-example-association.gif)  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje kontejneru entity s entitami nastavit pro každý typ entity v konceptuálním modelu uvedené výše. Všimněte si, že název a entita, zadejte pro každou sadu entit, jsou definovány pomocí atributů XML.  
+ [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje kontejner entit s jednou sadou entit pro každý typ entity v koncepčním modelu uvedeném výše. Všimněte si, že název a typ entity pro každou sadu entit jsou definovány pomocí atributů XML.  
   
  [!code-xml[EDM_Example_Model#EntityContainerExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entitycontainerexample)]  
   
- Je možné definovat více sad entit podle typu (MEST). Definuje kontejner služby entity se dvěma sadami entity pro následující CSDL `Book` typ entity:  
+ Je možné definovat několik sad entit na typ (MEST). Následující CSDL definuje kontejner entit se dvěma sadami entit pro `Book` typ entity:  
   
  [!code-xml[EDM_Example_Model#MESTExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books2.edmx#mestexample)]  
   

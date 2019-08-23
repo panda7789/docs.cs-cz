@@ -8,27 +8,27 @@ helpviewer_keywords:
 - handwriting recognition [WPF]
 - recognition of handwriting [WPF]
 ms.assetid: f4e8576d-e731-4bac-9818-22e2ae636636
-ms.openlocfilehash: 417af272514ac9ce68c8faa72339f2befc2dd7c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d6c09f063b6bd0eef2cb9f6bb444eac980ad4832
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923380"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956534"
 ---
 # <a name="handwriting-recognition"></a>Rozpoznávání textu psaného rukou
-Tato část popisuje základní informace o rozpoznávání, protože se týkají digitálních inkoust v platformě WPF.  
+Tato část popisuje základy rozpoznávání, protože se týkají digitálního inkoustu v platformě WPF.  
   
-## <a name="recognition-solutions"></a>Rozpoznávání řešení  
- Následující příklad ukazuje, jak rozpoznávání rukopisu pomocí [Microsoft.Ink.InkCollector](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms583683(v=vs.90)) třídy.  
+## <a name="recognition-solutions"></a>Řešení pro rozpoznávání  
+ Následující příklad ukazuje, jak rozpoznat rukopis pomocí třídy [Microsoft. Ink. InkCollector](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms583683(v=vs.90)) .  
   
 > [!NOTE]
->  Tato ukázka vyžaduje nainstalované nástroje pro rozpoznávání rukopisu v systému.  
+> Tato ukázka vyžaduje, aby byly v systému nainstalovány nástroje pro rozpoznávání rukopisu.  
   
- Vytvoření nového projektu aplikace WPF v sadě Visual Studio volá **InkRecognition**. Nahraďte obsah souboru Window1.xaml následující kód XAML. Tento kód vykreslí uživatelské rozhraní vaší aplikace.  
+ Vytvořte nový projekt aplikace WPF v aplikaci Visual Studio s názvem **InkRecognition**. Obsah souboru Window1. xaml nahraďte následujícím kódem XAML. Tento kód vykreslí uživatelské rozhraní aplikace.  
   
  [!code-xaml[InkRecognition#1](~/samples/snippets/csharp/VS_Snippets_Wpf/InkRecognition/CSharp/Window1.xaml#1)]  
   
- Přidáte odkaz na sestavení Microsoft Ink, Microsoft.Ink.dll, který se nachází v \Program Files\Microsoft Shared\Ink. Nahraďte obsah souboru kódu na pozadí s následujícím kódem.  
+ Přidat odkaz na sestavení Microsoft Ink, Microsoft. Ink. dll, které najdete v \Program Files\Common Files\Microsoft Shared\Ink. Obsah souboru kódu na pozadí nahraďte následujícím kódem.  
   
  [!code-csharp[InkRecognition#2](~/samples/snippets/csharp/VS_Snippets_Wpf/InkRecognition/CSharp/Window1.xaml.cs#2)]
  [!code-vb[InkRecognition#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkRecognition/VisualBasic/Window1.xaml.vb#2)]  

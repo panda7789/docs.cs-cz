@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: be82b64581ee178b463950d4b8cdae1f98949161
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 43b0ddc8f683e7069207bbb1c47af73976bc4a5a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545300"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958544"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]nástroje jsou některé z těchto vylepšení systému pro tisk k dispozici také [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vývojářům, kteří vytvářejí aplikace a vývojáře pomocí nespravovaného kódu. Základem této nové funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a cesta pro [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tisk.  
@@ -35,11 +35,11 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
   
 <a name="XPS_print_path_intro"></a>   
 ## <a name="xps-print-path"></a>Cesta tisku XPS  
- Cesta tisku XPS (XML Paper Specification) je nová [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] funkce, která předefinuje způsob zpracování tisku v aplikacích systému Windows. Vzhledem [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] k tomu, že může nahradit jazyk prezentace dokumentu (například RTF), formát zařazování tisku (například WMF) a jazyk popisu stránky (například PCL nebo PostScript); nová cesta tisku udržuje formát XPS z publikace aplikace do Konečné zpracování v ovladači tiskárny nebo zařízení.  
+ Cesta tisku XPS (XML Paper Specification) je nová funkce systému Windows, která mění definici způsobu zpracování tisku v aplikacích systému Windows. Vzhledem [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] k tomu, že může nahradit jazyk prezentace dokumentu (například RTF), formát zařazování tisku (například WMF) a jazyk popisu stránky (například PCL nebo PostScript); nová cesta tisku udržuje formát XPS z publikace aplikace do Konečné zpracování v ovladači tiskárny nebo zařízení.  
   
  Tisková cesta XPS je postavená na modelu XPSDrv (XPS Printer Driver Model), který poskytuje několik výhod pro vývojáře [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] , jako je tisk, vylepšená podpora barev a výrazně vyšší výkon tisku. (Další informace o XPSDrv najdete v [dokumentaci k sadě Windows Driver Kit](/windows-hardware/drivers/).)  
   
- Operace zařazování tisku pro dokumenty XPS je v podstatě stejná jako v předchozích verzích Windows. Kromě existující cesty pro tisk v rozhraní GDI se ale vylepšila podpora cesty k tisku XPS. Nová cesta pro tisk nativně spotřebovává soubor zařazování XPS. Přestože ovladače tiskárny v uživatelském režimu napsané pro předchozí verze [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nástroje budou fungovat i nadále, je potřeba ovladač tiskárny XPS (XPSDrv), aby bylo možné použít cestu k tisku ve formátu XPS.  
+ Operace zařazování tisku pro dokumenty XPS je v podstatě stejná jako v předchozích verzích Windows. Kromě existující cesty pro tisk v rozhraní GDI se ale vylepšila podpora cesty k tisku XPS. Nová cesta pro tisk nativně spotřebovává soubor zařazování XPS. I když budou ovladače tiskáren v uživatelském režimu napsané pro předchozí verze Windows i nadále fungovat, vyžaduje se ovladač tiskárny XPS (XPSDrv), aby bylo možné použít tiskovou cestu XPS.  
   
  Výhody tiskové cesty XPS jsou významné a zahrnují:  
   

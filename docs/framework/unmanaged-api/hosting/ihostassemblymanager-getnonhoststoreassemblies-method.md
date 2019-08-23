@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3680721c70ab69776c973913d929f7bdd9db3909
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ccd73963302ae99c7d5d1a7201bc77c4544363f5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779444"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937899"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies – metoda
-Získá ukazatel rozhraní k [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , která představuje seznam sestavení, které hostitele očekává, že modul CLR (CLR) pro načtení.  
+Získá ukazatel rozhraní na [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který představuje seznam sestavení, která hostitel očekává načtení modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,44 +37,44 @@ HRESULT GetNonHostStoreAssemblies (
   
 ## <a name="parameters"></a>Parametry  
  `ppReferenceList`  
- [out] Ukazatel na adresu `ICLRAssemblyReferenceList` , který obsahuje seznam odkazů na sestavení, která očekává hostitele CLR pro načtení.  
+ mimo Ukazatel na adresu `ICLRAssemblyReferenceList` obsahující seznam odkazů na sestavení, která hostitel očekává načtení CLR.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetNonHostStoreAssemblies` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`GetNonHostStoreAssemblies`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Nedostatek paměti nebyl k dispozici k vytvoření seznamu odkazů pro požadovanou `ICLRAssemblyReferenceList`.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Není k dispozici dostatek paměti pro vytvoření seznamu odkazů pro požadovaný `ICLRAssemblyReferenceList`počet.|  
   
 ## <a name="remarks"></a>Poznámky  
- Odkazy pomocí následující sadu pokynů, které překládá CLR:  
+ CLR vyřeší odkazy pomocí následující sady pokynů:  
   
-- Nejprve consults seznam odkazů na sestavení vrácené `GetNonHostStoreAssemblies`.  
+- Nejprve se poraďte se seznamem odkazů na sestavení vrácených `GetNonHostStoreAssemblies`.  
   
-- Pokud sestavení se zobrazí v seznamu, CLR vytvoří vazbu k němu normálně.  
+- Pokud se v seznamu objeví sestavení, CLR se k němu váže normálně.  
   
-- Pokud sestavení se nezobrazují v seznamu a hostitel poskytuje implementaci [ihostassemblystore –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), volání CLR [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) umožňující hostitele slouží k poskytování sestavení k vytvoření vazby.  
+- Pokud se sestavení v seznamu nezobrazí a hostitel zavedl implementaci [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), CLR volá [IHostAssemblyStore::P rovideassembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) , aby hostitel mohl poskytnout sestavení pro svázání.  
   
-- V opačném případě CLR nezdaří k vytvoření vazby na sestavení.  
+- V opačném případě se modul CLR nemůže připojit k sestavení.  
   
- Pokud hostitel nastaví `ppReferenceList` na hodnotu null, první sond CLR volá do globální mezipaměti sestavení, `ProvideAssembly`a potom sondy základ cesty aplikace přeložit odkaz na sestavení.  
+ Pokud hostitel nastaví `ppReferenceList` hodnotu null, modul CLR nejprve testuje globální mezipaměť sestavení (GAC), `ProvideAssembly`zavolá a pak vyhledá základ aplikace, aby vyřešil odkaz na sestavení.  
   
 > [!NOTE]
->  Při inicializaci, kterou volá CLR `GetNonHostStoreAssemblies` pouze jednou. Metoda není volána znovu.  
+> Po inicializaci vyvolá `GetNonHostStoreAssemblies` CLR pouze jednou. Metoda není volána znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

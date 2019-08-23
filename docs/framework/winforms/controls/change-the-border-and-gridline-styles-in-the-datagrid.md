@@ -11,36 +11,36 @@ helpviewer_keywords:
 - data grids [Windows Forms], changing border styles
 - DataGridView control [Windows Forms], gridline styles
 ms.assetid: 2f413c7a-4025-4171-8e3a-66ef908ea583
-ms.openlocfilehash: 7e68bb2f6a3bff0a0a5ff7f8011c2642c141eaf3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ebeca5f933eac4da2bf3d4f300866fd2ff52b32a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917676"
 ---
 # <a name="how-to-change-the-border-and-gridline-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView
-S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze přizpůsobit vzhled ohraničení a mřížky vylepšit uživatelské prostředí ovládacího prvku. Můžete změnit barvu mřížky a styl ohraničení ovládacího prvku kromě styly ohraničení buněk v ovládacím prvku. Můžete také použít jinou buňku styly ohraničení pro běžné buněk, buněk záhlaví řádku a buňky záhlaví sloupce.  
+<xref:System.Windows.Forms.DataGridView> Pomocí ovládacího prvku můžete přizpůsobit vzhled ohraničení a mřížky ovládacího prvku pro zlepšení uživatelského prostředí. Kromě stylů ohraničení buněk v ovládacím prvku můžete měnit barvu mřížky a styl ohraničení ovládacího prvku. Pro obyčejné buňky, buňky záhlaví řádku a buňky záhlaví sloupce můžete také použít jiné styly ohraničení buňky.  
   
 > [!NOTE]
->  Barvu mřížky se používá jenom s <xref:System.Windows.Forms.DataGridViewCellBorderStyle.Single>, <xref:System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal>, a <xref:System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical> hodnoty <xref:System.Windows.Forms.DataGridViewCellBorderStyle> výčet a <xref:System.Windows.Forms.DataGridViewHeaderBorderStyle.Single> hodnotu <xref:System.Windows.Forms.DataGridViewHeaderBorderStyle> výčtu. Ostatní hodnoty těchto výčty používat barvy definované v operačním systému. Kromě toho, když je vizuální styly povoleno na Windows XP a Windows Server 2003 až <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody, <xref:System.Windows.Forms.DataGridView.GridColor%2A> hodnota vlastnosti se nepoužívá.  
+> Barva mřížky se používá pouze s <xref:System.Windows.Forms.DataGridViewCellBorderStyle.Single> <xref:System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical> hodnotami <xref:System.Windows.Forms.DataGridViewCellBorderStyle> , <xref:System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal>a výčtů a <xref:System.Windows.Forms.DataGridViewHeaderBorderStyle.Single> hodnotou <xref:System.Windows.Forms.DataGridViewHeaderBorderStyle> výčtu. Ostatní hodnoty těchto výčtů používají barvy určené operačním systémem. Kromě toho, pokud jsou vizuální styly povoleny v systému Windows XP a řada Windows Server 2003 pomocí <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody <xref:System.Windows.Forms.DataGridView.GridColor%2A> , není použita hodnota vlastnosti.  
   
-### <a name="to-change-the-gridline-color-programmatically"></a>Chcete-li změnit barvu mřížky prostřednictvím kódu programu  
+### <a name="to-change-the-gridline-color-programmatically"></a>Chcete-li změnit barvu mřížky programově  
   
-- Nastavte <xref:System.Windows.Forms.DataGridView.GridColor%2A> vlastnost.  
+- <xref:System.Windows.Forms.DataGridView.GridColor%2A> Nastavte vlastnost.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#031](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#031)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#031](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#031)]  
   
-### <a name="to-change-the-border-style-of-the-entire-datagridview-control-programmatically"></a>Chcete-li změnit styl ohraničení celý ovládací prvek DataGridView prostřednictvím kódu programu  
+### <a name="to-change-the-border-style-of-the-entire-datagridview-control-programmatically"></a>Změna stylu ohraničení celého ovládacího prvku DataGridView prostřednictvím kódu programu  
   
-- Nastavte <xref:System.Windows.Forms.DataGridView.BorderStyle%2A> vlastnost na jednu z <xref:System.Windows.Forms.BorderStyle> hodnot výčtu.  
+- Nastavte vlastnost na jednu z hodnot <xref:System.Windows.Forms.BorderStyle> výčtu. <xref:System.Windows.Forms.DataGridView.BorderStyle%2A>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#032](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#032)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#032](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#032)]  
   
-### <a name="to-change-the-border-styles-for-datagridview-cells-programmatically"></a>Změna stylů ohraničení buněk DataGridView prostřednictvím kódu programu  
+### <a name="to-change-the-border-styles-for-datagridview-cells-programmatically"></a>Chcete-li změnit styly ohraničení pro buňky DataGridView programově  
   
-- Nastavte <xref:System.Windows.Forms.DataGridView.CellBorderStyle%2A>, <xref:System.Windows.Forms.DataGridView.RowHeadersBorderStyle%2A>, a <xref:System.Windows.Forms.DataGridView.ColumnHeadersBorderStyle%2A> vlastnosti.  
+- Nastavte vlastnosti <xref:System.Windows.Forms.DataGridView.CellBorderStyle%2A>, <xref:System.Windows.Forms.DataGridView.RowHeadersBorderStyle%2A>a <xref:System.Windows.Forms.DataGridView.ColumnHeadersBorderStyle%2A> .  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#033](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#033)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#033](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#033)]  
@@ -52,9 +52,9 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze přizpůsobit
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- Ovládací prvek s `dataGridView1`názvem. <xref:System.Windows.Forms.DataGridView>  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, a <xref:System.Drawing?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType>sestavení, <xref:System.Windows.Forms?displayProperty=nameWithType>a. <xref:System.Drawing?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>Viz také:
 

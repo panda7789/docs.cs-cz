@@ -2,26 +2,26 @@
 title: Přenos WS s pověřením zpráv
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: 54bd025db4da8ed1d1484b11666a37c2c14a6023
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2eade01ff3397d8f7ea790558909111c43b131d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949627"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959796"
 ---
 # <a name="ws-transport-with-message-credential"></a>Přenos WS s pověřením zpráv
-Tento příklad ukazuje použití zabezpečení přenosu SSL v kombinaci pomocí provádí ve zprávě pověření klienta. Tento příklad používá `wsHttpBinding` vazby.  
+Tato ukázka demonstruje použití zabezpečení přenosu SSL v kombinaci s přihlašovacími údaji klienta, které jsou přenášeny ve zprávě. Tato ukázka používá `wsHttpBinding` vazbu.  
   
- Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když je nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. HTTPS zajišťuje důvěrnost a ochrana integrity pro zprávy, které jsou přenášeny přenosu. Je ale omezený na přenos HTTPS podporuje sadu ověřovacích mechanismů, které lze použít k ověření klienta ke službě. Nabízí Windows Communication Foundation (WCF) `TransportWithMessageCredential` režim zabezpečení, která slouží k překonání tohoto omezení. Pokud je nakonfigurovaný tento režim zabezpečení, se používá zabezpečení přenosu důvěrnost a integrita stanovit přenášené zprávy a provádět ověřování služby. Ověření klienta je ale provést vložením pověření klienta přímo ve zprávě. To umožňuje použít libovolný typ přihlašovacích údajů, který podporuje režim zabezpečených zpráv pro ověřování klientů a zajistit přitom ochranu plynoucí z režim zabezpečení transport.  
+ Ve výchozím nastavení `wsHttpBinding` vazba poskytuje komunikaci pomocí protokolu HTTP. Pokud je nakonfigurovaná pro zabezpečení přenosu, vazba podporuje komunikaci pomocí protokolu HTTPS. Protokol HTTPS poskytuje ochranu proti utajení a integritě zpráv, které jsou přenášeny přes drát. Sada ověřovacích mechanismů, které lze použít k ověření klienta ke službě, je však omezená na to, co podporuje přenos HTTPS. Windows Communication Foundation (WCF) nabízí `TransportWithMessageCredential` režim zabezpečení, který je navržený k překonání tohoto omezení. Pokud je tento režim zabezpečení nakonfigurovaný, použije se k zajištění důvěrnosti a integrity odesílaných zpráv a k provedení ověření služby zabezpečení přenosu. Ověřování klienta se ale provádí tak, že přihlašovací údaje klienta vložíte přímo do zprávy. To vám umožní používat libovolný typ přihlašovacích údajů, který je podporovaný režimem zabezpečení zpráv pro ověřování klientů, a přitom zachovat výhody režimu zabezpečení přenosu.  
   
- V této ukázce `UserName` typ přihlašovacích údajů se používá k ověření klienta ke službě.  
+ V této ukázce `UserName` se k ověření klienta pro službu používá typ přihlašovacích údajů.  
   
- Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. `wsHttpBinding` Vazby je zadán a nakonfigurovat v konfiguračních souborech aplikace pro klienta a služby.  
+ Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding` Vazba je určena a nakonfigurována v konfiguračních souborech aplikace pro klienta a službu.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Programového kódu v ukázce je téměř shodná s [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) služby. Jeden další operace poskytované kontrakt služby - `GetCallerIdentity`. Tato operace vrátí název identity volajícího volajícímu.  
+ Kód programu v ukázce je skoro stejný jako služba [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Kontrakt služby poskytuje ještě jednu další operaci – `GetCallerIdentity`. Tato operace vrátí název volajícího volajícímu.  
 
 ```csharp
 public string GetCallerIdentity()  
@@ -31,7 +31,7 @@ public string GetCallerIdentity()
 }  
 ```
 
- Musíte vytvořit certifikát a přiřaďte ho pomocí Průvodce certifikát webového serveru před sestavováním a spouštěním vzorku. Definice koncového bodu a definice vazby v konfiguraci souboru nastavení Povolit `TransportWithMessageCredential` režim zabezpečení, jak je znázorněno v následující ukázková konfigurace pro klienta.  
+ Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují `TransportWithMessageCredential` režim zabezpečení, jak je znázorněno v následující ukázkové konfiguraci pro klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -59,9 +59,9 @@ public string GetCallerIdentity()
 </system.serviceModel>  
 ```  
   
- Zadaná adresa používá schéma https://. Konfigurace vazby nastaví režim zabezpečení na `TransportWithMessageCredential`. Stejný režim zabezpečení musí být zadaný v souboru Web.config dané služby.  
+ Zadaná adresa používá schéma https://. Konfigurace vazby nastaví režim zabezpečení na `TransportWithMessageCredential`. V souboru Web. config služby musí být zadaný stejný režim zabezpečení.  
   
- Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, výstrahu zabezpečení se zobrazí při pokusu o přístup protokolu https: adresy, jako například `https://localhost/servicemodelsamples/service.svc`, v prohlížeči. Povolit klienta WCF pro práci s testovací certifikát na místě, byla přidána další kód klienta pro potlačení výstrahy zabezpečení. Tento kód a související třídy se nevyžaduje při použití certifikátů produkčního prostředí.  
+ Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k protokolu HTTPS `https://localhost/servicemodelsamples/service.svc`: adresa, například, z prohlížeče. Aby mohl klient služby WCF pracovat s testovacím certifikátem, byl do klienta přidán nějaký další kód, který výstrahu zabezpečení potlačí. Tento kód a doprovodná třída nejsou při použití produkčních certifikátů vyžadovány.  
 
 ```csharp
 // WARNING: This code is only needed for test certificates such as those created by makecert. It is   
@@ -69,7 +69,7 @@ public string GetCallerIdentity()
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
 ```
   
- Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```  
 Username authentication required.  
@@ -87,12 +87,12 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+2. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
-3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

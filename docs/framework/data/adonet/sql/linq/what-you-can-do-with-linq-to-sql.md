@@ -5,47 +5,47 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: efb7b86c3add99e596e6798c8267c09689899d56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21ed620ab5b7a78fc4f396cc474e7c62b70f1ddd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923926"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946625"
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Možnosti použití LINQ to SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje všechny klíčové funkce, které očekáváte jako vývojář SQL. Můžete dotazovat na informace a vložit, aktualizovat a odstranit informace z tabulky.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje všechny klíčové funkce, které byste očekávali jako vývojář SQL. Můžete zadávat dotazy na informace a vkládat, aktualizovat a odstraňovat informace z tabulek.  
   
 ## <a name="selecting"></a>Výběr  
- Výběr (*projekce*) můžete vytvořit jenom zápis [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazování v programovacím jazyce a pak spouštějící tento dotaz k načtení výsledků. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] samotný přeloží všechny potřebné operace do nezbytné úkony SQL, které znáte. Další informace najdete v tématu [technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md).  
+ Výběr (*projekce*) se dosahuje pouhým zápisem [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazu ve vlastním programovacím jazyce a následným spuštěním tohoto dotazu, který načte výsledky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]sám sebe převede všechny nezbytné operace na nezbytné operace SQL, se kterými jste se seznámili. Další informace najdete v tématu [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md).  
   
- V následujícím příkladu se názvy společností zákazníků z Londýna načte a zobrazí v okně konzoly.  
+ V následujícím příkladu se v okně konzoly načtou a zobrazují názvy společností zákazníků z Londýna.  
   
  [!code-csharp[DLinqGettingStarted#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqGettingStarted/cs/Program.cs#1)]
  [!code-vb[DLinqGettingStarted#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#1)]  
   
-## <a name="inserting"></a>Vložení  
- K provedení SQL `Insert`, stačí přidat objekty do modelu objektu, který jste vytvořili a volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext>.  
+## <a name="inserting"></a>Vkládání  
+ Chcete-li spustit `Insert`SQL, stačí přidat objekty do objektového modelu, který jste vytvořili, <xref:System.Data.Linq.DataContext.SubmitChanges%2A> a zavolat <xref:System.Data.Linq.DataContext>na.  
   
- V následujícím příkladu nového zákazníka a informace o zákazníkovi, přidá se do `Customers` tabulky s použitím <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>.  
+ V následujícím příkladu je nový zákazník a informace o zákazníkovi přidány do `Customers` tabulky pomocí. <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>  
   
  [!code-csharp[DLinqGettingStarted#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqGettingStarted/cs/Program.cs#2)]
  [!code-vb[DLinqGettingStarted#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#2)]  
   
-## <a name="updating"></a>Aktualizace  
- K `Update` položky databáze, nejdřív načíst položku a upravte jej přímo v objektovém modelu. Poté, co jste změnili objektu, volejte <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext> aktualizaci databáze.  
+## <a name="updating"></a>Doplnění  
+ K `Update` položce databáze nejprve Načtěte položku a upravte ji přímo v objektovém modelu. Po úpravě objektu zavolejte <xref:System.Data.Linq.DataContext.SubmitChanges%2A> <xref:System.Data.Linq.DataContext> na, aby se aktualizovala databáze.  
   
- V následujícím příkladu jsou načteny všechny zákazníky, kteří jsou z Londýna. Potom název města, se změní z "Londýn" na "Londýn – Metro". Nakonec <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána k odeslání změn do databáze.  
+ V následujícím příkladu jsou načteni všichni zákazníci z Londýna. Pak se název města změní z "Londýn" na "Londýn-Metro". <xref:System.Data.Linq.DataContext.SubmitChanges%2A> Nakonec je volána k odeslání změn do databáze.  
   
  [!code-csharp[DLinqGettingStarted#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqGettingStarted/cs/Program.cs#3)]
  [!code-vb[DLinqGettingStarted#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#3)]  
   
-## <a name="deleting"></a>Odstraňuje se  
- K `Delete` některou položku, odeberte položku z kolekce, do které patří a poté zavolejte <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext> potvrzení změn.  
+## <a name="deleting"></a>Odstraňuje  
+ Na `Delete` položku, odeberte položku z kolekce, do které patří, a potom zavolejte <xref:System.Data.Linq.DataContext.SubmitChanges%2A> <xref:System.Data.Linq.DataContext> na k potvrzení změny.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] operace kaskádové odstranění nebyl rozpoznán. Pokud chcete odstranit řádek v tabulce, která má omezení pro to, najdete v článku [jak: Odstranit řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nerozpozná operace kaskádového odstranění. Pokud chcete odstranit řádek v tabulce s omezeními, přečtěte si téma [How to: Odstraní řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
   
- V následujícím příkladu zákazníka, který má `CustomerID` z `98128` je načtena z databáze. Po potvrzení, že se načetla řádku zákazníka, pak <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> je volána k odebrání objektu z kolekce. Nakonec <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána k předávání odstranění do databáze.  
+ V následujícím příkladu je zákazník, který `CustomerID` je z `98128` databáze načten. Po potvrzení, že se řádek zákazníka načetl, <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> se pak zavolá, aby se tento objekt odebral z kolekce. Nakonec se <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volá, aby se odstranění předalo do databáze.  
   
  [!code-csharp[DLinqGettingStarted#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqGettingStarted/cs/Program.cs#4)]
  [!code-vb[DLinqGettingStarted#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#4)]  

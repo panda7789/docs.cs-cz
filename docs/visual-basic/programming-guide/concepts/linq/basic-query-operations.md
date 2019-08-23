@@ -15,122 +15,122 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-ms.openlocfilehash: af99a6c22239be1f9f03bafd8323c73f83df5c51
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 12f10f30dd767f3435044f2bbebe0eb865c29d0c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642264"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939364"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Základní operace dotazů (Visual Basic)
-Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy v jazyce Visual Basic a některé typické druhy operací, které provedete v dotazu. Další informace naleznete v následujících tématech:  
+V tomto tématu najdete stručný úvod k [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazům v Visual Basic a k některým z typických druhů operací, které v dotazu provedete. Další informace naleznete v následujících tématech:  
   
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
  [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
   
- [Návod: Zápis dotazů v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
+ [Návod: Zápis dotazů v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
   
 ## <a name="specifying-the-data-source-from"></a>Určení zdroje dat (From)  
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, prvním krokem je určení zdroje dat, který chcete zadat dotaz. Proto `From` klauzule v dotazu vždy nastane dřív. Operátory dotazu vyberte a tvar výsledku založená na typu zdroje.  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] V dotazu je prvním krokem určení zdroje dat, který chcete dotazovat. Proto je `From` klauzule v dotazu vždy první. Operátory dotazu vyberou a tvarují výsledek na základě typu zdroje.  
   
  [!code-vb[VbLINQBasicOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#1)]  
   
- `From` Klauzule určuje zdroje dat, `customers`a *proměnnou rozsahu*, `cust`. Proměnná rozsahu je jako proměnné iterace smyčky, s tím rozdílem, že ve výrazu dotazu, dojde k žádné skutečné iterace. Při spuštění dotazu, často pomocí `For Each` smyčky, proměnná rozsahu slouží jako odkaz na každý prvek po sobě jdoucích `customers`. Protože kompilátor může odvodit typ `cust`, není potřeba explicitně zadat. Příklady dotazů zapisovat a nemusíte explicitní zadání, najdete v článku [vztahy typů v operacích dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ Klauzule určuje `customers`zdroj dat, `cust`a *proměnnou rozsahu.* `From` Proměnná rozsahu je jako proměnná iterace smyčky, s výjimkou toho, že ve výrazu dotazu není k dispozici žádná skutečná iterace. Když je dotaz proveden, často pomocí `For Each` smyčky, proměnná rozsahu slouží jako odkaz na každý následný prvek v. `customers` Vzhledem k tomu `cust`, že kompilátor může odvodit typ, nemusíte ho explicitně určovat. Příklady dotazů napsaných pomocí a bez explicitního zadávání najdete v tématu [vztahy typů v operacích dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
   
- Další informace o tom, jak používat `From` klauzule v jazyce Visual Basic naleznete v tématu [klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md).  
+ Další informace o použití `From` klauzule v Visual Basic naleznete v části [from klauzule](../../../../visual-basic/language-reference/queries/from-clause.md).  
   
 ## <a name="filtering-data-where"></a>Filtrování dat (Where)  
- Pravděpodobně nejběžnější operace dotazu je použití filtru ve formě logický výraz. Dotaz vrátí pouze prvky, pro které má výraz hodnotu true. A `Where` klauzule se používá k provedení filtrování. Filtr určuje prvky, které ve zdroji dat chcete zahrnout do výsledné pořadí. V následujícím příkladu jsou zahrnuty pouze zákazníci, kteří mají adresu v Londýně.  
+ Pravděpodobně nejběžnější operace dotazu používá filtr ve formě logického výrazu. Dotaz pak vrátí pouze prvky, pro které je výraz pravdivý. K provedení filtrování se používá klauzule.`Where` Filtr určuje, které prvky ve zdroji dat mají být zahrnuty ve výsledné sekvenci. V následujícím příkladu jsou zahrnuti pouze zákazníci, kteří mají adresu v Londýně.  
   
  [!code-vb[VbLINQBasicOps#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#2)]  
   
- Můžete například použít logické operátory `And` a `Or` kombinování výrazů filtru v `Where` klauzuli. Například pokud chcete vrátit pouze tito zákazníci, kteří jsou z Londýna a jejíž název je Devon, použijte následující kód:  
+ Pomocí logických operátorů, jako `And` jsou `Or` a, můžete `Where` kombinovat výrazy filtru v klauzuli. Pokud například chcete vracet pouze ty zákazníky, kteří jsou z Londýna a jejichž název je Devon, použijte následující kód:  
   
 ```vb  
 Where cust.City = "London" And cust.Name = "Devon"   
 ```  
   
- Chcete-li vrátit zákazníci z Londýna nebo Paříž, použijte následující kód:  
+ Chcete-li vracet zákazníky z Brna nebo Paříž, použijte následující kód:  
   
 ```vb  
 Where cust.City = "London" Or cust.City = "Paris"   
 ```  
   
- Další informace o tom, jak používat `Where` klauzule v jazyce Visual Basic naleznete v tématu [klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md).  
+ Další informace o použití `Where` klauzule v Visual Basic naleznete v tématu [Where klauzule](../../../../visual-basic/language-reference/queries/where-clause.md).  
   
 ## <a name="ordering-data-order-by"></a>Řazení dat (Order By)  
- Často je vhodné seřaďte vrácená data do určitého pořadí. `Order By` Klauzule způsobí prvky ve vrácené posloupnosti, která má být seřazená podle určitého pole nebo pole. Například následující dotaz řadí výsledky podle `Name` vlastnost. Protože `Name` je řetězec, vrácená data se budou řadit abecedně, z A do Z.  
+ Často je vhodné řadit vracená data do konkrétního pořadí. `Order By` Klauzule způsobí, že prvky v vrácené sekvenci budou seřazeny podle zadaného pole nebo polí. Například následující dotaz seřadí výsledky na základě `Name` vlastnosti. Vzhledem `Name` k tomu, že je řetězec, vrácená data budou řazena abecedně, od a do Z.  
   
  [!code-vb[VbLINQBasicOps#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#3)]  
   
- Chcete-li v obráceném pořadí řazení výsledků od Z do A, použijte `Order By...Descending` klauzuli. Výchozí hodnota je `Ascending` při ani `Ascending` ani `Descending` je zadán.  
+ Pro seřazení výsledků v opačném pořadí z z na a použijte `Order By...Descending` klauzuli. Výchozí hodnota je `Ascending` , `Ascending` Pokud není `Descending` zadána ani ani.  
   
- Další informace o tom, jak používat `Order By` klauzule v jazyce Visual Basic naleznete v tématu [klauzuli ORDER by](../../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Další informace o použití `Order By` klauzule v Visual Basic naleznete v tématu [ORDER by klauzule](../../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
 ## <a name="selecting-data-select"></a>Výběr dat (Select)  
- `Select` Klauzule určuje formulář opravdu zavřít a obsah vrácených prvků. Například můžete určit, zda vaše výsledky se skládají z kompletní `Customer` objekty jen jeden `Customer` vlastnosti, podmnožinu vlastností, kombinací vlastností z různých zdrojů dat, nebo nový typ výsledku na základě výpočtu. Když `Select` klauzule vytváří něco jiného než kopii zdrojového elementu, operace se nazývá *projekce*.  
+ `Select` Klauzule určuje formulář a obsah vrácených elementů. Například můžete určit, zda budou výsledky obsahovat kompletní `Customer` objekty, pouze jednu `Customer` vlastnost, podmnožinu vlastností, kombinaci vlastností z různých zdrojů dat nebo některý nový typ výsledku na základě výpočtu. Když klauzule vytvoří jinou než kopii zdrojového elementu, operace se nazývá *projekce.* `Select`  
   
- K načtení kolekce, která se skládá z kompletní `Customer` objektů, vyberte vlastní proměnnou rozsahu:  
+ Chcete-li načíst kolekci, která se `Customer` skládá z kompletních objektů, vyberte proměnnou rozsahu samotné:  
   
  [!code-vb[VbLINQBasicOps#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#4)]  
   
- Pokud `Customer` instance je velký objekt, který má velký počet polí, a vše, co chcete načíst je název, můžete vybrat `cust.Name`, jak je znázorněno v následujícím příkladu. Odvození místního typu rozpozná, že změní typ výsledku z kolekce `Customer` objekty kolekce řetězců.  
+ Pokud je `cust.Name`instancí velký objekt, který má mnoho polí a všechny, které chcete načíst, je název, můžete vybrat, jak je znázorněno v následujícím příkladu. `Customer` Odvození místního typu rozpoznává, že se změní výsledný typ z kolekce `Customer` objektů na kolekci řetězců.  
   
  [!code-vb[VbLINQBasicOps#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#5)]  
   
- Pokud chcete vybrat více polí ze zdroje dat, máte dvě možnosti:  
+ Chcete-li vybrat více polí ze zdroje dat, máte dvě možnosti:  
   
-- V `Select` klauzule, určete pole, které chcete zahrnout do výsledku. Kompilátor bude definovat anonymní typ, který má tato pole jako její vlastnosti. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+- `Select` V klauzuli zadejte pole, která chcete zahrnout do výsledku. Kompilátor definuje anonymní typ, který bude mít tato pole jako své vlastnosti. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
-     Protože vrácených prvků v následujícím příkladu jsou instancemi anonymního typu, nelze odkazovat na typ podle názvu jinde ve vašem kódu. Název typu určen kompilátor obsahuje znaky, které nejsou platné v normální kódu jazyka Visual Basic. V následujícím příkladu elementů v kolekci, která je vrácena dotazem v `londonCusts4` jsou instancemi anonymního typu  
+     Vzhledem k tomu, že vrácené elementy v následujícím příkladu jsou instancemi anonymního typu, nelze odkazovat na typ podle názvu jinde v kódu. Název určený pro kompilátor pro typ obsahuje znaky, které nejsou platné v normálním Visual Basic kódu. V následujícím příkladu elementy v kolekci, které jsou vráceny dotazem v `londonCusts4` , jsou instancemi anonymního typu.  
   
      [!code-vb[VbLINQBasicOps#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#6)]  
   
      -nebo-  
   
-- Definování typu s názvem, který obsahuje konkrétní pole, které chcete zahrnout do výsledku a vytváření a inicializace instancí typu `Select` klauzuli. Tuto možnost použijte jenom v případě, že budete muset použít jednotlivé výsledky mimo kolekce, ve kterém jsou vráceny, nebo pokud musíte předat jako parametry volání metody. Typ `londonCusts5` v následujícím příkladu je IEnumerable (Of NamePhone).  
+- Definujte pojmenovaný typ obsahující konkrétní pole, která chcete zahrnout do výsledku, a v `Select` klauzuli vytvořte a inicializujte instance typu. Tuto možnost použijte pouze v případě, že je nutné použít jednotlivé výsledky mimo kolekci, ve které jsou vráceny, nebo pokud je třeba je předat jako parametry v volání metody. Typ `londonCusts5` v následujícím příkladu je IEnumerable (of NamePhone).  
   
      [!code-vb[VbLINQBasicOps#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#7)]  
   
      [!code-vb[VbLINQBasicOps#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#8)]  
   
- Další informace o tom, jak používat `Select` klauzule v jazyce Visual Basic naleznete v tématu [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md).  
+ Další informace o použití `Select` klauzule v Visual Basic naleznete v tématu [Select klauzule](../../../../visual-basic/language-reference/queries/select-clause.md).  
   
 ## <a name="joining-data-join-and-group-join"></a>Spojování dat (Join a Group Join)  
- Můžete zkombinovat více než jeden zdroj dat v `From` klauzule několika způsoby. Například následující kód používá dva zdroje dat a implicitně kombinuje vlastnosti z obou z nich ve výsledku. Dotaz vybere studenty, jejichž příjmení začínají samohláskou.  
+ V `From` klauzuli můžete několik způsobů kombinovat více než jeden zdroj dat. Například následující kód používá dva zdroje dat a implicitně kombinuje vlastnosti z obou z nich ve výsledku. Dotaz vybírá studenty, jejichž příjmení začínají znakem samohlásky.  
   
  [!code-vb[VbLINQBasicOps#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#9)]  
   
 > [!NOTE]
->  Můžete spustit tento kód se seznamem studenti vytvořili v [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md).  
+> Tento kód můžete spustit se seznamem studentů vytvořených v [tématu Postupy: Vytvoří seznam položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md).  
   
- `Join` – Klíčové slovo je ekvivalentní `INNER JOIN` v SQL. Kombinuje dvě kolekce založené na odpovídající hodnoty klíče mezi prvky ve dvou kolekcích. Dotaz vrátí všechny nebo část elementů kolekce, které mají odpovídající hodnoty klíče. Například následující kód duplikuje akce předchozí implicitní spojení.  
+ Klíčové slovo je ekvivalentem `INNER JOIN` v SQL. `Join` Kombinuje dvě kolekce na základě shodných klíčových hodnot mezi prvky ve dvou kolekcích. Dotaz vrátí všechny prvky kolekce nebo jejich část, které mají odpovídající hodnoty klíče. Například následující kód duplikuje akci předchozího implicitního spojení.  
   
  [!code-vb[VbLINQBasicOps#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#10)]  
   
- `Group Join` kombinuje kolekce do jedné hierarchické kolekce, stejně jako `LEFT JOIN` v SQL. Další informace najdete v tématu [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md) a [Group Join – klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md).  
+ `Group Join`kombinuje kolekce do jedné hierarchické kolekce stejně jako `LEFT JOIN` v SQL. Další informace najdete v tématu [klauzule JOIN](../../../../visual-basic/language-reference/queries/join-clause.md) a [klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md).  
   
 ## <a name="grouping-data-group-by"></a>Seskupování dat (Group By)  
- Můžete přidat `Group By` klauzule seskupit elementy ve výsledku dotazu podle polí jednoho nebo více prvků. Následující kód například skupiny studentů podle roku třídy.  
+ Můžete přidat `Group By` klauzuli pro seskupení prvků ve výsledku dotazu v závislosti na jednom nebo více polích prvků. Například následující kód seskupuje studenty podle třídy year.  
   
  [!code-vb[VbLINQBasicOps#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#11)]  
   
- Pokud jste spuštění tohoto kódu pomocí seznamu studentů vytvořené v [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md), výstup `For Each` příkaz je:  
+ Pokud tento kód spustíte pomocí seznamu studentů vytvořených v [tématu Postupy: Vytvořte seznam položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md), výstup `For Each` z příkazu je:  
   
- Rok: Nižší  
+ Jednolet Nižší  
   
  Tucker, Michael  
   
  Garcia, Hugo  
   
- Garcia Debra  
+ Garcia, Debra  
   
- Tucker Lance  
+ Tucker, Lance  
   
- Rok: Senior  
+ Jednolet Vrchní  
   
- Omelchenko Svetlana  
+ Omelchenko, Svetlana  
   
  Osada, Michiko  
   
@@ -140,22 +140,22 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  Adams, Terry  
   
- Rok: Freshman  
+ Jednolet Čerstvý  
   
- Mortensen Sven  
+ Mortensen, Sven  
   
- Garcia Cesarovi  
+ Garcia, Cesar  
   
- Varianta je znázorněno v následujícím kódu orders let třídy a pak podle příjmení orders studenty v rámci každý rok.  
+ Variace znázorněné v následujícím kódu řadí roky třídy a potom jednotlivé studenty vyřadí do každého roku podle příjmení.  
   
  [!code-vb[VbLINQBasicOps#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#12)]  
   
- Další informace o `Group By`, naleznete v tématu [klauzule Group](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
+ Další informace o `Group By`najdete v tématu [klauzule GROUP by](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
-- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)

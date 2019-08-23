@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider::GetStaticFieldSymbols – metoda
+title: 'ICorDebugSymbolProvider:: GetStaticFieldSymbols – metoda'
 ms.date: 03/30/2017
 ms.assetid: b178367f-a6e4-413c-b06f-daf3804b456b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9379a335130242918f6fe200eeda5e4c262fd020
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6bd3442adf58250a423438666ec1092bab61958b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771305"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955538"
 ---
-# <a name="icordebugsymbolprovidergetstaticfieldsymbols-method"></a>ICorDebugSymbolProvider::GetStaticFieldSymbols – metoda
-Získá statické pole symboly, které odpovídají token typespec podpis.  
+# <a name="icordebugsymbolprovidergetstaticfieldsymbols-method"></a>ICorDebugSymbolProvider:: GetStaticFieldSymbols – metoda
+Získá symboly statického pole, které odpovídají token TypeSpec podpisu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,33 +28,33 @@ HRESULT GetStaticFieldSymbols(
   
 ## <a name="parameters"></a>Parametry  
  `cbSignature`  
- [in] Počet bajtů `typeSig` pole.  
+ pro Počet bajtů v `typeSig` poli.  
   
  `typeSig`  
- [in] Bajtové pole obsahující `typespec` podpis.  
+ pro Bajtové pole `typespec` obsahující podpis.  
   
  `cRequestedSymbols`  
- [in] Počet symbolů požadavku.  
+ pro Počet požadovaných symbolů.  
   
  `pcFetchedSymbols`  
- [out] Ukazatel na počet symbolů načíst pomocí metody.  
+ mimo Ukazatel na počet symbolů načtených metodou.  
   
  `pSymbols`  
- [out] Ukazatel [icordebugstaticfieldsymbol –](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md) pole, které obsahuje symboly požadovaný statické pole.  
+ mimo Ukazatel na pole [ICorDebugStaticFieldSymbol](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md) , které obsahuje požadované symboly statických polí.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

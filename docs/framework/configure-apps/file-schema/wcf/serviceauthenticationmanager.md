@@ -2,20 +2,20 @@
 title: <serviceAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 5d69e64f-f325-4d55-8e2d-0fb30f222dda
-ms.openlocfilehash: 0940248364488bb38a329c5e461d72463c574e74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 65488c34931f6d7c424ece58a4855e746ea455bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670375"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936413"
 ---
 # <a name="serviceauthenticationmanager"></a>\<serviceAuthenticationManager>
-Poskytuje pracovní postup konfigurace element, který vytváří platnosti přenosu, původce nebo zpráv na úrovni služby.  
+Poskytuje prvek konfigurace pracovního postupu, který na úrovni služby stanovuje platnost přenosu, zprávy nebo původce.  
   
 \<system.ServiceModel>  
-\<chování >  
+\<> chování  
 \<serviceBehaviors>  
-\<chování >  
+\<> chování  
 \<serviceAuthenticationManager>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,7 +37,7 @@ Poskytuje pracovní postup konfigurace element, který vytváří platnosti pře
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|serviceAuthenticationManagerType|Řetězec, který určuje typ zásady ověřování pro aktuální chování.|  
+|serviceAuthenticationManagerType|Řetězec, který určuje typ zásad ověřování pro aktuální chování.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,7 +46,7 @@ Poskytuje pracovní postup konfigurace element, který vytváří platnosti pře
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
 

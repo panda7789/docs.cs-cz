@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: a5808261ec9fe957ee993177590446389f219609
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 448c212e4afe547dc6342b000fe06d5340db112c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68818020"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958743"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají za následek sdílení společné sady funkcí, které se vztahují k implementaci a správě aplikací. Toto téma poskytuje přehled funkcí ve <xref:System.Windows.Application> třídě pro vytváření a správu aplikací.  
@@ -74,7 +74,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
 - V kódu na pozadí třída musí být `partial` třída se stejným názvem, který je určen `x:Class` atributem v označení a musí odvozovat z <xref:System.Windows.Application>. To umožňuje, aby soubor s kódem na pozadí byl přidružen `partial` ke třídě, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).  
   
 > [!NOTE]
->  Když vytvoříte nový projekt aplikace WPF nebo projekt WPF aplikace pomocí sady Visual Studio, definice aplikace je součástí výchozího nastavení a je definována pomocí kódu a kódu na pozadí.  
+> Když vytvoříte nový projekt aplikace WPF nebo projekt WPF aplikace pomocí sady Visual Studio, definice aplikace je součástí výchozího nastavení a je definována pomocí kódu a kódu na pozadí.  
   
  Tento kód je minimální, který je požadován k implementaci definice aplikace. Před vytvořením a spuštěním aplikace je však nutné provést další konfiguraci nástroje MSBuild v definici aplikace.  
   
@@ -148,7 +148,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  [!code-vb[AppShowWindowHardSnippets#StartupEventCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AppShowWindowHardSnippets/VisualBasic/Application.xaml.vb#startupeventcodebehind)]  
   
 > [!NOTE]
->  První <xref:System.Windows.Window> instance, která má být vytvořena v samostatné aplikaci, se ve výchozím nastavení stal hlavním oknem aplikace. <xref:System.Windows.Window> Na<xref:System.Windows.Application.MainWindow%2A?displayProperty=nameWithType> tento objekt odkazuje vlastnost. Hodnota <xref:System.Windows.Application.MainWindow%2A> vlastnosti může být změněna programově, pokud <xref:System.Windows.Window> by jiné okno než první instance mělo být hlavním oknem.  
+> První <xref:System.Windows.Window> instance, která má být vytvořena v samostatné aplikaci, se ve výchozím nastavení stal hlavním oknem aplikace. <xref:System.Windows.Window> Na<xref:System.Windows.Application.MainWindow%2A?displayProperty=nameWithType> tento objekt odkazuje vlastnost. Hodnota <xref:System.Windows.Application.MainWindow%2A> vlastnosti může být změněna programově, pokud <xref:System.Windows.Window> by jiné okno než první instance mělo být hlavním oknem.  
   
  Při prvním spuštění aplikace XBAP bude pravděpodobně možné přejít na <xref:System.Windows.Controls.Page>. Tento kód je zobrazen v následujícím kódu.  
   
@@ -170,7 +170,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  Tento kód má stejný účinek jako předchozí kód pro otevření okna.  
   
 > [!NOTE]
->  Další informace o navigaci najdete v tématu [Přehled navigace](navigation-overview.md).  
+> Další informace o navigaci najdete v tématu [Přehled navigace](navigation-overview.md).  
   
  Je nutné zpracovat <xref:System.Windows.Application.Startup> událost pro <xref:System.Windows.Window> otevření, pokud je třeba ji vytvořit pomocí konstruktoru bez parametrů, nebo musíte nastavit její vlastnosti nebo se přihlásit k odběru jejích událostí, než je zobrazíte, nebo potřebujete zpracovat argumenty příkazového řádku. které byly zadány při spuštění aplikace.  
   
@@ -219,7 +219,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  <xref:System.Windows.Window> Lze také aktivovat a deaktivovat. Další <xref:System.Windows.Window.Activated?displayProperty=nameWithType> informace <xref:System.Windows.Window.Deactivated?displayProperty=nameWithType> najdete v tématu a.  
   
 > [!NOTE]
->  Pro XBAP <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> není anivyvolána.<xref:System.Windows.Application.Activated?displayProperty=nameWithType>  
+> Pro XBAP <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> není anivyvolána.<xref:System.Windows.Application.Activated?displayProperty=nameWithType>  
   
 <a name="Application_Shutdown"></a>   
 ### <a name="application-shutdown"></a>Vypnutí aplikace  
@@ -236,7 +236,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  Pro usnadnění správy vypnutí <xref:System.Windows.Application> aplikace <xref:System.Windows.Application.Shutdown%2A> poskytuje metoda, <xref:System.Windows.Application.ShutdownMode%2A> vlastnost a <xref:System.Windows.Application.SessionEnding> události a <xref:System.Windows.Application.Exit> .  
   
 > [!NOTE]
->  <xref:System.Windows.Application.Shutdown%2A>lze ji volat pouze z aplikací, které <xref:System.Security.Permissions.UIPermission>mají. Samostatná aplikace WPF mají vždy toto oprávnění. Aplikace XBAP spuštěné v izolovaném prostoru zabezpečení zóny Internet Zone ale nepodporují.  
+> <xref:System.Windows.Application.Shutdown%2A>lze ji volat pouze z aplikací, které <xref:System.Security.Permissions.UIPermission>mají. Samostatná aplikace WPF mají vždy toto oprávnění. Aplikace XBAP spuštěné v izolovaném prostoru zabezpečení zóny Internet Zone ale nepodporují.  
   
 #### <a name="shutdown-mode"></a>Režim vypnutí  
  Většina aplikací se vypne buď při zavření všech oken nebo při zavření hlavního okna. Někdy ale jiné podmínky specifické pro aplikace mohou určit, kdy se aplikace vypíná. Můžete určit podmínky, za kterých se vaše aplikace vypne, nastavením <xref:System.Windows.Application.ShutdownMode%2A> jedné z následujících <xref:System.Windows.ShutdownMode> hodnot výčtu:  
@@ -254,7 +254,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  Pokud máte podmínky pro vypnutí specifické pro aplikaci, nastavte <xref:System.Windows.Application.ShutdownMode%2A> na. <xref:System.Windows.ShutdownMode.OnExplicitShutdown> V tomto případě je vaší zodpovědností ukončit aplikaci tím, že explicitně zavoláte <xref:System.Windows.Application.Shutdown%2A> metodu. v opačném případě bude aplikace dál běžet i v případě, že jsou všechna okna zavřena. Všimněte si <xref:System.Windows.Application.Shutdown%2A> , že implicitně se volá <xref:System.Windows.Application.ShutdownMode%2A> , když <xref:System.Windows.ShutdownMode.OnLastWindowClose> je <xref:System.Windows.ShutdownMode.OnMainWindowClose>buď nebo.  
   
 > [!NOTE]
->  <xref:System.Windows.Application.ShutdownMode%2A>dá se nastavit z XBAP, ale ignoruje se. XBAP je vždy vypnuta, když je přecházení v prohlížeči nebo když je zavřen prohlížeč, který je hostitelem aplikace XBAP. Další informace najdete v tématu [Přehled navigace](navigation-overview.md).  
+> <xref:System.Windows.Application.ShutdownMode%2A>dá se nastavit z XBAP, ale ignoruje se. XBAP je vždy vypnuta, když je přecházení v prohlížeči nebo když je zavřen prohlížeč, který je hostitelem aplikace XBAP. Další informace najdete v tématu [Přehled navigace](navigation-overview.md).  
   
 #### <a name="session-ending"></a>Ukončení relace  
  Podmínky vypnutí, které jsou popsány <xref:System.Windows.Application.ShutdownMode%2A> vlastností, jsou specifické pro aplikaci. V některých případech ale může dojít k vypnutí aplikace v důsledku externí podmínky. Nejběžnější externí podmínka nastane, když uživatel ukončí relaci systému Windows následujícími akcemi:  
@@ -277,7 +277,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  V tomto příkladu kód zkontroluje <xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A> vlastnost a určí, jak probíhá ukončování relace systému Windows. Tato hodnota se používá k zobrazení potvrzovací zprávy uživateli. Pokud uživatel nechce ukončit relaci, kód nastaví <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> `true` , aby nedošlo k ukončení relace systému Windows.  
   
 > [!NOTE]
->  <xref:System.Windows.Application.SessionEnding>není vyvoláno pro XBAP.
+> <xref:System.Windows.Application.SessionEnding>není vyvoláno pro XBAP.
 
 #### <a name="exit"></a>Ukončit  
  Když se aplikace ukončí, může být nutné provést nějaké konečné zpracování, jako je například zachování stavu aplikace. V těchto situacích lze <xref:System.Windows.Application.Exit> událost zpracovat, `App_Exit` jako obslužná rutina události, v následujícím příkladu. Je definován jako obslužná rutina události v souboru *App. XAML* . Jeho implementace je zvýrazněna v souborech *App.XAML.cs* a *Application. XAML. vb* .
@@ -301,7 +301,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  Aplikace jsou většinou spuštěné operačním systémem v reakci na požadavek uživatele. Aplikaci však lze spustit jinou aplikací k provedení určitého úkolu. Po ukončení spuštěné aplikace může spuštění aplikace chtít znát podmínku, za kterou se spuštěné aplikace vypnula. V těchto situacích systém Windows umožňuje aplikacím vracet ukončovací kód aplikace při vypnutí. Ve výchozím nastavení aplikace WPF vrátí ukončovací kód s hodnotou 0.  
   
 > [!NOTE]
->  Při ladění ze sady Visual Studio se ukončovací kód aplikace zobrazuje v okně **výstup** , když se aplikace ukončí, ve zprávě, která vypadá takto:  
+> Při ladění ze sady Visual Studio se ukončovací kód aplikace zobrazuje v okně **výstup** , když se aplikace ukončí, ve zprávě, která vypadá takto:  
 >   
 >  `The program '[5340] AWPFApp.vshost.exe: Managed' has exited with code 0 (0x0).`  
 >   
@@ -315,7 +315,7 @@ Všechny aplikace mají za následek sdílení společné sady funkcí, které s
  Můžete zjistit hodnotu ukončovacího kódu a změnit ji pomocí zpracování <xref:System.Windows.Application.Exit> události. Obslužná rutina <xref:System.Windows.ExitEventArgs>událostije předána, která poskytuje přístup k ukončovacímu kódu <xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A> s vlastností. <xref:System.Windows.Application.Exit> Další informace naleznete v tématu <xref:System.Windows.Application.Exit>.  
   
 > [!NOTE]
->  Ukončovací kód můžete nastavit jak v samostatných aplikacích, tak v XBAP. Hodnota ukončovacího kódu se ale pro aplikace XBAP ignoruje.  
+> Ukončovací kód můžete nastavit jak v samostatných aplikacích, tak v XBAP. Hodnota ukončovacího kódu se ale pro aplikace XBAP ignoruje.  
   
 <a name="Unhandled_Exceptions"></a>   
 ### <a name="unhandled-exceptions"></a>Neošetřené výjimky  

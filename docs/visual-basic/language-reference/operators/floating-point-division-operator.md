@@ -16,15 +16,15 @@ helpviewer_keywords:
 - / operator [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 335e97f2-c434-439e-9064-76973a051101
-ms.openlocfilehash: af2316f92e2904eee1e8c046b34b8147e40cb513
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d30d871d48bc87e050a072cd01a38065be20616c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778479"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933263"
 ---
 # <a name="-operator-visual-basic"></a>/ – operátor (Visual Basic)
-Provede podíl dvou čísel a vrátí výsledek, s plovoucí desetinnou čárkou.  
+Vydělí dvě čísla a vrátí výsledek s plovoucí desetinnou čárkou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,58 +34,58 @@ expression1 / expression2
   
 ## <a name="parts"></a>Součásti  
  `expression1`  
- Povinný parametr. Jakýkoli číselný výraz.  
+ Povinný parametr. Libovolný číselný výraz.  
   
  `expression2`  
- Povinný parametr. Jakýkoli číselný výraz.  
+ Povinný parametr. Libovolný číselný výraz.  
   
 ## <a name="supported-types"></a>Podporované typy  
- Všechny číselné typy, včetně typů bez znaménka a s plovoucí desetinnou čárkou a `Decimal`.  
+ Všechny číselné typy, včetně typů unsigned a float-Point a `Decimal`.  
   
 ## <a name="result"></a>Výsledek  
- Výsledkem je úplné podíl `expression1` dělený `expression2`, včetně všech zbytek.  
+ Výsledkem je celý podíl `expression1` dělený hodnotou `expression2`, včetně všech zbytků.  
   
- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí podíl celé číslo, které zbytek zahodí.  
+ [Operátor \ (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí celočíselný podíl, který zbytek zruší.  
   
 ## <a name="remarks"></a>Poznámky  
- Datový typ výsledku závisí na typy operandů. Následující tabulka ukazuje, jak je určen datový typ výsledku.  
+ Datový typ výsledku závisí na typech operandů. Následující tabulka ukazuje, jak je určen datový typ výsledku.  
   
-|Operand datové typy|Datový typ výsledku|  
+|Datové typy operandů|Výsledný datový typ|  
 |------------------------|----------------------|  
-|Integrální datové typy jsou oba výrazy ([SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [bajtů](../../../visual-basic/language-reference/data-types/byte-data-type.md), [krátký](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md), [celé číslo](../../../visual-basic/language-reference/data-types/integer-data-type.md), [Uinteger –](../../../visual-basic/language-reference/data-types/uinteger-data-type.md), [dlouhé](../../../visual-basic/language-reference/data-types/long-data-type.md), [ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md))|`Double`|  
-|Je jeden výraz [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) datový typ a druhý není [Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|`Single`|  
-|Je jeden výraz [desetinné](../../../visual-basic/language-reference/data-types/decimal-data-type.md) datový typ a druhý není [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) nebo [Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|`Decimal`|  
-|Buď výraz [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) datový typ|`Double`|  
+|Oba výrazy jsou integrální datové typy ([SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md), [short](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md), [Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md), [UInteger –](../../../visual-basic/language-reference/data-types/uinteger-data-type.md), [Long](../../../visual-basic/language-reference/data-types/long-data-type.md), [ulong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)).|`Double`|  
+|Jeden výraz je [jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) datový typ a druhý není typu [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) .|`Single`|  
+|Jeden výraz je datový typ [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md) a druhý není typu [Single](../../../visual-basic/language-reference/data-types/single-data-type.md) nebo [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) .|`Decimal`|  
+|Jeden z výrazů je datový typ [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) .|`Double`|  
   
- Před provedením rozdělení libovolný integrální číselné výrazy jsou rozšířeny na `Double`. Pokud přiřadíte výsledek celočíselný datový typ, se pokusí převést výsledek z jazyka Visual Basic `Double` k danému typu. To může vyvolat výjimku, pokud výsledek nevejde do tohoto typu. Zejména naleznete v tématu "K pokusu o dělení nulou" na tuto stránku nápovědy.  
+ Před provedením dělení se rozšíří všechny celočíselné číselné výrazy na `Double`. Pokud přiřadíte výsledek celočíselnému datovému typu, Visual Basic se pokusí převést výsledek z `Double` na tento typ. To může vyvolat výjimku, pokud výsledek se nevejde do tohoto typu. Konkrétně naleznete na této stránce s touto stránkou "pokusy o dělení nulou".  
   
- Pokud `expression1` nebo `expression2` vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), je považován za nulu.  
+ Pokud `expression1` je `expression2` nebo se vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), bude se zacházet jako nula.  
   
-## <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
- Pokud `expression2` vyhodnocen jako nula, `/` operátor chová odlišně pro různé operand datové typy. V následující tabulce jsou uvedeny možné chování.  
+## <a name="attempted-division-by-zero"></a>Došlo k pokusu o dělení nulou.  
+ Pokud `expression2` je hodnota vyhodnocena jako `/` nula, operátor se chová jinak pro různé datové typy operandů. V následující tabulce je uvedeno možné chování.  
   
-|Operand datové typy|Chování Pokud `expression2` je nula|  
+|Datové typy operandů|Chování, `expression2` Pokud je nula|  
 |------------------------|---------------------------------------|  
-|S plovoucí desetinnou čárkou (`Single` nebo `Double`)|Vrátí nekonečno (<xref:System.Double.PositiveInfinity> nebo <xref:System.Double.NegativeInfinity>), nebo <xref:System.Double.NaN> (není číslo) Pokud `expression1` je také nula|  
-|`Decimal`|Vyvolá výjimku <xref:System.DivideByZeroException>|  
-|Celé číslo (podepsaný nebo nepodepsaný řetězec)|Pokus o převod zpátky na celočíselný typ vyvolá <xref:System.OverflowException> protože celočíselných typů nemůže přijmout <xref:System.Double.PositiveInfinity>, <xref:System.Double.NegativeInfinity>, nebo <xref:System.Double.NaN>|  
+|Plovoucí desetinná čárka `Double`(`Single` nebo)|Vrátí nekonečno <xref:System.Double.NegativeInfinity>(<xref:System.Double.PositiveInfinity> nebo) <xref:System.Double.NaN> , nebo (není číslo) `expression1` , pokud je také nula.|  
+|`Decimal`|Vyvolá<xref:System.DivideByZeroException>|  
+|Celočíselný (podepsaný nebo nepodepsaný)|Pokus o převod zpět na celočíselný typ <xref:System.OverflowException> se vyvolá, protože integrální <xref:System.Double.PositiveInfinity>typy <xref:System.Double.NegativeInfinity>nemůžou přijmout, nebo.<xref:System.Double.NaN>|  
   
 > [!NOTE]
->  `/` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Pokud váš kód používá tento operátor na takové třídy nebo struktury, ujistěte se, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor může být přetížen, což znamená, že třída nebo struktura může předefinovat své chování, pokud má operand typ této třídy nebo struktury. `/` Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `/` operátor dělení s pohyblivou čárkou. Výsledkem je podíl dvou operandů.  
+ V tomto příkladu se `/` používá operátor k provádění dělení s plovoucí desetinnou čárkou. Výsledkem je podíl dvou operandů.  
   
  [!code-vb[VbVbalrOperators#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#16)]  
   
- Výrazy uvedené v předchozím příkladu vrátí hodnoty 2.5 a 3.333333. Všimněte si, že výsledek je vždy s plovoucí desetinnou čárkou (`Double`), i když jsou oba operandy konstanty typu integer.  
+ Výrazy v předchozím příkladu vrací hodnoty 2,5 a 3,333333. Všimněte si, že výsledek je vždy plovoucí desetinná`Double`čárka (), i když oba operandy jsou celočíselné konstanty.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
+- [/= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
 - [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)
 - [Datové typy výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

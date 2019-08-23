@@ -10,12 +10,12 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - configuration settings [.NET Framework], cryptography
 ms.assetid: 1f55050a-b2a3-4868-a3c0-da20826150f3
-ms.openlocfilehash: a2aa56f8b2a92f906293adfae9d23ed8959336fb
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: a7964d01905be4e3dd6e8149e5533e9a2cfd9a71
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664299"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927634"
 ---
 # <a name="cryptography-settings-schema"></a>Schéma nastavení šifrování
 Schéma nastavení kryptografie obsahuje prvky, které určují způsob mapování popisných názvů algoritmů na třídy, které implementují algoritmy kryptografie.  
@@ -52,4 +52,4 @@ Schéma nastavení kryptografie obsahuje prvky, které určují způsob mapován
 ## <a name="see-also"></a>Viz také:
 
 - [Schéma konfiguračního souboru](../index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../standard/security/cryptographic-services.md)

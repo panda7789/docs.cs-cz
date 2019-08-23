@@ -2,30 +2,30 @@
 title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-ms.openlocfilehash: 2a837e446ec65caa6d481d3a5f141f87fe509910
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
-ms.translationtype: MT
+ms.openlocfilehash: 7926c5a8ce1ca1ba3e24c4d1681ae12c18039924
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66421900"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963344"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
-Služby pracovních postupů a klienti mohou účastnit transakce.  Operace služeb se stanou součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Všechna volání prováděných <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také možné v rámci ambientní transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí okolí transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí okolí transakce. Toto téma vás provede procesem vytvoření služby pracovních postupů a pracovních postupů klienta, který se podílet na transakcích.  
+Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby se operace služby stala součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu <xref:System.ServiceModel.Activities.TransactedReceiveScope> do aktivity. Všechna volání prováděná <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.SendReply> aktivitou nebo v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> budou také vytvořena v rámci okolí transakce. Klientská aplikace pracovního postupu může vytvořit okolí transakce <xref:System.Activities.Statements.TransactionScope> pomocí aktivity služby a volat operace služeb pomocí ambientní transakce. Toto téma vás provede vytvořením služby pracovního postupu a klienta pracovního postupu, který se účastní transakcí.  
   
 > [!WARNING]
->  Pokud instance služby pracovního postupu je načten v rámci transakce a obsahuje pracovní postup <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu bude blokovat, dokud transakce vyprší časový limit.  
+>  Pokud je instance služby pracovního postupu načtená v rámci transakce a pracovní postup obsahuje <xref:System.Activities.Statements.Persist> aktivitu, instance pracovního postupu se zablokuje, dokud nevyprší časový limit transakce.  
   
 > [!IMPORTANT]
->  Vždy, když použijete <xref:System.ServiceModel.Activities.TransactedReceiveScope> doporučujeme umístit všechny přijme v pracovním postupu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity.  
+> Pokaždé, když <xref:System.ServiceModel.Activities.TransactedReceiveScope> použijete pracovní postup, se doporučuje umístit všechny přijaté aktivity <xref:System.ServiceModel.Activities.TransactedReceiveScope> do pracovního postupu v rámci aktivit.  
   
 > [!IMPORTANT]
->  Při použití <xref:System.ServiceModel.Activities.TransactedReceiveScope> a doručování zpráv v nesprávném pořadí, pracovní postup přeruší se při pokusu doručit první zprávu mimo pořadí. Můžete třeba Ujistěte se, že váš pracovní postup je vždy na konzistentního koncový bod při pracovního postupu nečinné po dlouhou dobu. To vám umožní restartovat pracovní postup z předchozího bodu trvalosti by měl pracovní postup přeruší.  
+> Při použití <xref:System.ServiceModel.Activities.TransactedReceiveScope> a doručení zpráv v nesprávném pořadí bude pracovní postup při pokusu o doručení první zprávy mimo pořadí přerušen. Je nutné zajistit, aby byl pracovní postup vždy v konzistentním bodu zastavení v případě nečinnosti pracovního postupu. To vám umožní restartovat pracovní postup z předchozího bodu trvalosti, aby se pracovní postup přerušil.  
   
-### <a name="create-a-shared-library"></a>Vytvořte sdílenou knihovnu  
+### <a name="create-a-shared-library"></a>Vytvoření sdílené knihovny  
   
-1. Vytvoření nové prázdné řešení sady Visual Studio.  
+1. Vytvořte nové prázdné řešení sady Visual Studio.  
   
-2. Přidat nový projekt knihovny tříd s názvem `Common`. Přidejte odkazy na následující sestavení:  
+2. Přidejte nový projekt knihovny tříd s názvem `Common`. Přidejte odkazy na následující sestavení:  
   
     - System.Activities.dll  
   
@@ -35,7 +35,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
     - System.Transactions.dll  
   
-3. Přidejte novou třídu s názvem `PrintTransactionInfo` k `Common` projektu. Tato třída je odvozena z <xref:System.Activities.NativeActivity> a přetížení <xref:System.Activities.NativeActivity.Execute%2A> metody.  
+3. `PrintTransactionInfo` Přidejte`Common` do projektu novou třídu s názvem. Tato třída je odvozena <xref:System.Activities.NativeActivity> z a přetížení <xref:System.Activities.NativeActivity.Execute%2A> metody.  
   
     ```  
     using System;  
@@ -72,148 +72,148 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
     }  
     ```  
   
-     Toto je nativní aktivitu, která zobrazí informace o okolí transakce a používá se v pracovních postupech služby a klient používat v tomto tématu. Sestavte řešení, které chcete zpřístupnit tuto aktivitu v **běžné** část **nástrojů**.  
+     Toto je nativní aktivita, která zobrazuje informace o okolí transakce a používá se v pracovních postupech služby i klienta, které jsou používány v tomto tématu. Sestavte řešení, aby tato aktivita byla k dispozici v části **společná** v **sadě nástrojů**.  
   
 ### <a name="implement-the-workflow-service"></a>Implementace služby pracovního postupu  
   
-1. Přidejte novou službu pracovního postupu WCF volá `WorkflowService` k `Common` projektu. Klikněte na tlačítko vpravo `Common` projekt, vyberte **přidat**, **novou položku...** Vyberte **pracovního postupu** pod **nainstalované šablony** a vyberte **služby pracovního postupu WCF**.  
+1. `WorkflowService` Přidejte`Common` do projektu novou službu pracovního postupu WCF volanou. Provedete to tak, `Common` že kliknete pravým tlačítkem na projekt, vyberte **Přidat**, **Nová položka...** , vyberte **pracovní postup** v části **Nainstalované šablony** a vyberte **Služba pracovního postupu WCF**.  
   
-     ![Přidání služby pracovních postupů](./media/flowing-transactions-into-and-out-of-workflow-services/add-workflow-service.jpg)  
+     ![Přidání služby pracovního postupu](./media/flowing-transactions-into-and-out-of-workflow-services/add-workflow-service.jpg)  
   
-2. Odstranit výchozí `ReceiveRequest` a `SendResponse` aktivity.  
+2. Odstraňte výchozí `ReceiveRequest` aktivity a `SendResponse` .  
   
-3. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivitu `Sequential Service` aktivity. Nastavte vlastnost text na `"Workflow Service starting ..."` jak je znázorněno v následujícím příkladu.  
+3. <xref:System.Activities.Statements.WriteLine> Přetáhněte aktivitu`Sequential Service` do aktivity. Nastavte vlastnost text na `"Workflow Service starting ..."` , jak je znázorněno v následujícím příkladu.  
   
-     ! [Přidání aktivity WriteLine activity(./media/flowing-transactions-into-and-out-of-workflow-services/add-writeline-sequential-service.jpg) sekvenční služba  
+     ! [Přidání aktivity WriteLine do aktivity sekvenční služby (./Media/Flowing-Transactions-into-and-out-of-Workflow-Services/Add-WriteLine-Sequential-Service.jpg)  
   
-4. Přetáhnout myší <xref:System.ServiceModel.Activities.TransactedReceiveScope> po <xref:System.Activities.Statements.WriteLine> aktivity. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivit najdete v **zasílání zpráv** část **nástrojů**. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivity se skládá ze dvou částí **žádosti** a **tělo**. **Žádosti** oddíl obsahuje <xref:System.ServiceModel.Activities.Receive> aktivity. **Tělo** oddíl obsahuje aktivity ke spuštění v rámci transakce po byla přijata zpráva.  
+4. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Přetáhněte<xref:System.Activities.Statements.WriteLine> za aktivitu. Aktivitu najdete v části pro zasílání **zpráv** v **sadě nástrojů.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivita se skládá ze dvou částí **žádosti** a **textu.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Část **žádosti** obsahuje <xref:System.ServiceModel.Activities.Receive> aktivitu. Oddíl **text** obsahuje aktivity, které se mají provést v rámci transakce po přijetí zprávy.  
   
      ![Přidání aktivity TransactedReceiveScope](./media/flowing-transactions-into-and-out-of-workflow-services/transactedreceivescope-activity.jpg)  
   
-5. Vyberte <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity a kliknutím **proměnné** tlačítko. Přidejte následující proměnné.  
+5. Vyberte aktivitu a klikněte na tlačítko **proměnné.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Přidejte následující proměnné.  
   
      ![Přidávání proměnných do TransactedReceiveScope](./media/flowing-transactions-into-and-out-of-workflow-services/add-transactedreceivescope-variables.jpg)  
   
     > [!NOTE]
-    >  Můžete odstranit datovou proměnnou, která je k dispozici ve výchozím nastavení. Můžete také použít existující proměnnou popisovač.  
+    > Můžete odstranit datovou proměnnou, která je ve výchozím nastavení. Můžete také použít existující proměnnou popisovače.  
   
-6. Přetáhnout myší <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci **žádosti** část <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Nastavte následující vlastnosti:  
+6. Přetáhněte aktivitu v části <xref:System.ServiceModel.Activities.TransactedReceiveScope> žádosti aktivity. <xref:System.ServiceModel.Activities.Receive> Nastavte následující vlastnosti:  
   
     |Vlastnost|Value|  
     |--------------|-----------|  
-    |CanCreateInstance|True (zaškrtávací políčko)|  
+    |CanCreateInstance|Pravda (zaškrtněte políčko)|  
     |OperationName|StartSample|  
-    |ServiceContractName|ITransactionSample|  
+    |Stejnými ServiceContractName|ITransactionSample|  
   
-     Pracovní postup by měl vypadat nějak takto:  
+     Pracovní postup by měl vypadat takto:  
   
      ![Přidání aktivity Receive](./media/flowing-transactions-into-and-out-of-workflow-services/add-receive-activity.jpg)  
   
-7. Klikněte na tlačítko **definovat...**  propojit <xref:System.ServiceModel.Activities.Receive> aktivity a proveďte následující nastavení:  
+7. V<xref:System.ServiceModel.Activities.Receive> aktivitě klikněte na odkaz **definovat...** a proveďte následující nastavení:  
   
-     ![Nastavení zpráv aktivity Receive](./media/flowing-transactions-into-and-out-of-workflow-services/receive-message-settings.jpg)  
+     ![Nastavení nastavení zpráv pro aktivitu Receive](./media/flowing-transactions-into-and-out-of-workflow-services/receive-message-settings.jpg)  
   
-8. Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity do těla oddílu <xref:System.ServiceModel.Activities.TransactedReceiveScope>. V rámci <xref:System.Activities.Statements.Sequence> aktivity přetáhnout myší dvě <xref:System.Activities.Statements.WriteLine> aktivity a nastavte <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnosti, jak je znázorněno v následující tabulce.  
+8. Přetáhněte aktivitu do části text v <xref:System.ServiceModel.Activities.TransactedReceiveScope>. <xref:System.Activities.Statements.Sequence> V rámci <xref:System.Activities.Statements.WriteLine> <xref:System.Activities.Statements.WriteLine.Text%2A> aktivity přetahujte a přetáhněte dvě aktivity a nastavte vlastnosti, jak je znázorněno v následující tabulce. <xref:System.Activities.Statements.Sequence>  
   
-    |Aktivita|Hodnota|  
+    |Aktivita|Value|  
     |--------------|-----------|  
-    |1. WriteLine|"Service: Zobrazit dokončené"|  
-    |2. WriteLine|"Service: Přijata = "+ requestMessage|  
+    |1\. WriteLine|Službám Přijetí dokončeno|  
+    |druhý WriteLine|Službám Přijato = "+ requestMessage|  
   
      Pracovní postup by teď měl vypadat takto:  
   
-     ![Pořadí po přidání aktivity WriteLine](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-writelines.jpg)  
+     ![Sekvence po přidání aktivit WriteLine](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-writelines.jpg)  
   
-9. Přetáhnout myší `PrintTransactionInfo` aktivitu po druhé <xref:System.Activities.Statements.WriteLine> aktivity v **tělo** v <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity.  
+9. Přetáhněte aktivitu za druhou <xref:System.Activities.Statements.WriteLine> aktivitu <xref:System.ServiceModel.Activities.TransactedReceiveScope> v těle aktivity. `PrintTransactionInfo`  
   
-     ![Po přidání PrintTransactionInfo pořadí](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-printtransactioninfo.jpg )  
+     ![Sekvence po přidání PrintTransactionInfo](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-printtransactioninfo.jpg )  
   
-10. Přetáhnout myší <xref:System.Activities.Statements.Assign> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho vlastnosti podle následující tabulky.  
+10. <xref:System.Activities.Statements.Assign> Přetáhněte aktivitu`PrintTransactionInfo` za aktivitu a nastavte její vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
     |Chcete-li|replyMessage|  
-    |Value|"Service: Odeslání odpovědi."|  
+    |Value|Službám Posílá se odpověď.|  
   
-11. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Začněte odpověď."  
+11. Přetáhněte aktivitu za aktivitou a nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na "Service: <xref:System.Activities.Statements.Assign> <xref:System.Activities.Statements.WriteLine> Zahajte odpověď.  
   
      Pracovní postup by teď měl vypadat takto:  
   
-     ![Po přidání přiřadit a WriteLine](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-sbr-writeline.jpg)  
+     ![Po přidání přiřadit a odwriteline](./media/flowing-transactions-into-and-out-of-workflow-services/after-adding-sbr-writeline.jpg)  
   
-12. Klikněte pravým tlačítkem myši <xref:System.ServiceModel.Activities.Receive> aktivitu a vyberte **vytvořit odeslání odpovědi SendReply** a vložte za poslední <xref:System.Activities.Statements.WriteLine> aktivity. Klikněte na tlačítko **definovat...**  propojit `SendReplyToReceive` aktivity a proveďte následující nastavení.  
+12. Klikněte pravým <xref:System.ServiceModel.Activities.Receive> tlačítkem na aktivitu a vyberte **vytvořit aktivitu SendReply** a vložte ji <xref:System.Activities.Statements.WriteLine> za poslední aktivitu. V`SendReplyToReceive` aktivitě klikněte na odkaz **definovat...** a proveďte následující nastavení.  
   
-     ![Nastavení zpráva odpovědi](./media/flowing-transactions-into-and-out-of-workflow-services/reply-message-settings.jpg)  
+     ![Nastavení zprávy s odpovědí](./media/flowing-transactions-into-and-out-of-workflow-services/reply-message-settings.jpg)  
   
-13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `SendReplyToReceive` aktivity a nastavte má <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Byla odeslána odpověď."  
+13. Přetáhněte aktivitu za `SendReplyToReceive` aktivitou a nastavte její vlastnostna"služba:<xref:System.Activities.Statements.WriteLine.Text%2A> <xref:System.Activities.Statements.WriteLine> Odeslala se odpověď. "  
   
-14. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity v dolní části pracovního postupu a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Pracovní postup skončí, stisknutím klávesy ENTER ukončete."  
+14. Přetáhněte aktivitu do dolní části pracovního postupu a nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na "Service: <xref:System.Activities.Statements.WriteLine> Pracovní postup skončí, stisknutím klávesy ENTER ukončete. "  
   
-     Pracovní postup dokončený služby by měl vypadat nějak takto:  
+     Dokončený pracovní postup služby by měl vypadat takto:  
   
      ![Dokončení pracovního postupu služby](./media/flowing-transactions-into-and-out-of-workflow-services/service-complete-workflow.jpg)  
   
 ### <a name="implement-the-workflow-client"></a>Implementace klienta pracovního postupu  
   
-1. Přidat novou aplikaci pracovního postupu WCF, s názvem `WorkflowClient` k `Common` projektu. Klikněte na tlačítko vpravo `Common` projekt, vyberte **přidat**, **novou položku...** Vyberte **pracovního postupu** pod **nainstalované šablony** a vyberte **aktivity**.  
+1. Přidejte novou aplikaci pracovního postupu WCF, `WorkflowClient` `Common` která se volá do projektu. Chcete-li to provést, `Common` klikněte pravým tlačítkem myši na projekt, vyberte možnost **Přidat**, **Nová položka...** , vyberte možnost **pracovní postup** v části **Nainstalované šablony** a vyberte **aktivita**.  
   
-     ![Přidání aktivity projektu](./media/flowing-transactions-into-and-out-of-workflow-services/add-activity-project.jpg)  
+     ![Přidat projekt aktivity](./media/flowing-transactions-into-and-out-of-workflow-services/add-activity-project.jpg)  
   
-2. Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity na návrhovou plochu.  
+2. <xref:System.Activities.Statements.Sequence> Přetáhněte aktivitu na návrhovou plochu.  
   
-3. V rámci <xref:System.Activities.Statements.Sequence> přetáhnout aktivity <xref:System.Activities.Statements.WriteLine> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost `"Client: Workflow starting"`. Pracovní postup by teď měl vypadat takto:  
+3. V rámci <xref:System.Activities.Statements.WriteLine> <xref:System.Activities.Statements.WriteLine.Text%2A> aktivity přetáhněte aktivitu a nastavte její vlastnost na `"Client: Workflow starting"`. <xref:System.Activities.Statements.Sequence> Pracovní postup by teď měl vypadat takto:  
   
      ![Přidání aktivity WriteLine](./media/flowing-transactions-into-and-out-of-workflow-services/add-writeline-activity.jpg)  
   
-4. Přetáhnout myší <xref:System.Activities.Statements.TransactionScope> aktivity po <xref:System.Activities.Statements.WriteLine> aktivity.  Vyberte <xref:System.Activities.Statements.TransactionScope> aktivity, klikněte na tlačítko proměnné a přidejte následující proměnné.  
+4. <xref:System.Activities.Statements.TransactionScope> Přetáhněte aktivitu <xref:System.Activities.Statements.WriteLine> za aktivitou.  <xref:System.Activities.Statements.TransactionScope> Vyberte aktivitu, klikněte na tlačítko proměnné a přidejte následující proměnné.  
   
-     ![Přidejte proměnné do objektu TransactionScope](./media/flowing-transactions-into-and-out-of-workflow-services/transactionscope-variables.jpg)  
+     ![Přidat proměnné do objektu TransactionScope](./media/flowing-transactions-into-and-out-of-workflow-services/transactionscope-variables.jpg)  
   
-5. Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity do textu <xref:System.Activities.Statements.TransactionScope> aktivity.  
+5. Přetáhněte aktivitu do těla <xref:System.Activities.Statements.TransactionScope>aktivity. <xref:System.Activities.Statements.Sequence>  
   
-6. Přetáhnout myší `PrintTransactionInfo` aktivitu v rámci <xref:System.Activities.Statements.Sequence>  
+6. `PrintTransactionInfo` Přetáhněte aktivitu v rámci<xref:System.Activities.Statements.Sequence>  
   
-7. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "klienta: Od odeslání". Pracovní postup by teď měl vypadat takto:  
+7. Přetáhněte aktivitu za aktivitou a nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na "klient: `PrintTransactionInfo` <xref:System.Activities.Statements.WriteLine> Začíná se odesílat. Pracovní postup by teď měl vypadat takto:  
   
-     ![Přidání klienta: Od aktivity odesílání](./media/flowing-transactions-into-and-out-of-workflow-services/client-add-cbs-writeline.jpg)  
+     ![Přidávání klienta: Zahájení aktivit odeslání](./media/flowing-transactions-into-and-out-of-workflow-services/client-add-cbs-writeline.jpg)  
   
-8. Přetáhnout myší <xref:System.ServiceModel.Activities.Send> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte následující vlastnosti:  
+8. <xref:System.ServiceModel.Activities.Send> Přetáhněte aktivitu<xref:System.Activities.Statements.Assign> za aktivitu a nastavte následující vlastnosti:  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  
-    |ServiceContractName|ITransactionSample|  
+    |Stejnými ServiceContractName|ITransactionSample|  
   
      Pracovní postup by teď měl vypadat takto:  
   
-     ![Nastavení vlastnosti aktivity Send](./media/flowing-transactions-into-and-out-of-workflow-services/client-send-activity-settings.jpg)  
+     ![Nastavení vlastností aktivity odeslání](./media/flowing-transactions-into-and-out-of-workflow-services/client-send-activity-settings.jpg)  
   
-9. Klikněte na tlačítko **definovat...**  odkaz a proveďte následující nastavení:  
+9. Klikněte na odkaz **definovat...** a proveďte následující nastavení:  
   
-     ![Odeslání zprávy nastavení aktivity](./media/flowing-transactions-into-and-out-of-workflow-services/send-message-settings.jpg)  
+     ![Odeslat nastavení zprávy o aktivitě](./media/flowing-transactions-into-and-out-of-workflow-services/send-message-settings.jpg)  
   
-10. Klikněte pravým tlačítkem myši <xref:System.ServiceModel.Activities.Send> aktivitu a vyberte **vytvořit ReceiveReply**. <xref:System.ServiceModel.Activities.ReceiveReply> Aktivity se automaticky umístí po <xref:System.ServiceModel.Activities.Send> aktivity.  
+10. Klikněte pravým <xref:System.ServiceModel.Activities.Send> tlačítkem na aktivitu a vyberte **vytvořit ReceiveReply**. Aktivita se automaticky umístí <xref:System.ServiceModel.Activities.Send> za aktivitu. <xref:System.ServiceModel.Activities.ReceiveReply>  
   
-11. Klikněte na tlačítko... definovat odkaz na aktivitu ReceiveReplyForSend a proveďte následující nastavení:  
+11. Klikněte na definovat... Propojte aktivitu ReceiveReplyForSend a proveďte následující nastavení:  
   
-     ![Nastavení ReceiveForSend zprávy](./media/flowing-transactions-into-and-out-of-workflow-services/client-reply-message-settings.jpg)  
+     ![Nastavení zprávy ReceiveForSend](./media/flowing-transactions-into-and-out-of-workflow-services/client-reply-message-settings.jpg)  
   
-12. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity mezi <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "klienta: Odeslat kompletní."  
+12. Přetáhněte aktivitu mezi aktivitami <xref:System.ServiceModel.Activities.ReceiveReply>aa nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na Client: <xref:System.ServiceModel.Activities.Send> <xref:System.Activities.Statements.WriteLine> Odeslat dokončeno. "  
   
-13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "na straně klienta: Přijatá odpověď = "+ replyMessage  
+13. Přetáhněte aktivitu za aktivitou a nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na stranu klienta: <xref:System.ServiceModel.Activities.ReceiveReply> <xref:System.Activities.Statements.WriteLine> Přijatá odpověď = "+ replyMessage  
   
-14. Přetáhnout myší `PrintTransactionInfo` aktivity po <xref:System.Activities.Statements.WriteLine> aktivity.  
+14. `PrintTransactionInfo` Přetáhněte aktivitu <xref:System.Activities.Statements.WriteLine> za aktivitou.  
   
-15. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity na konci pracovního postupu a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Klienta pracovní postup ukončen." Pracovní postup dokončený klienta by mělo vypadat jako na následujícím diagramu.  
+15. Přetáhněte aktivitu na konci pracovního postupu a nastavte její <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost na "pracovní postup klienta končí." <xref:System.Activities.Statements.WriteLine> Dokončený pracovní postup klienta by měl vypadat jako v následujícím diagramu.  
   
-     ![Pracovní postup dokončený klienta](./media/flowing-transactions-into-and-out-of-workflow-services/client-complete-workflow.jpg)  
+     ![Dokončený pracovní postup klienta](./media/flowing-transactions-into-and-out-of-workflow-services/client-complete-workflow.jpg)  
   
 16. Sestavte řešení.  
   
 ### <a name="create-the-service-application"></a>Vytvoření aplikace služby  
   
-1. Přidat nový projekt konzolové aplikace s názvem `Service` do řešení. Přidejte odkazy na následující sestavení:  
+1. Přidejte do řešení nový projekt konzolové `Service` aplikace s názvem. Přidejte odkazy na následující sestavení:  
   
     1. System.Activities.dll  
   
@@ -241,7 +241,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
           }  
     ```  
   
-3. Následující soubor app.config přidejte do projektu.  
+3. Do projektu přidejte následující soubor App. config.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -259,7 +259,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 ### <a name="create-the-client-application"></a>Vytvoření klientské aplikace  
   
-1. Přidat nový projekt konzolové aplikace s názvem `Client` do řešení. Přidejte odkaz na System.Activities.dll.  
+1. Přidejte do řešení nový projekt konzolové `Client` aplikace s názvem. Přidejte odkaz na System. Activities. dll.  
   
 2. Otevřete soubor program.cs a přidejte následující kód.  
   

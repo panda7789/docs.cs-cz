@@ -8,21 +8,21 @@ helpviewer_keywords:
 - MainMenu control [Windows Forms], about MainMenu control
 - menus
 ms.assetid: b41cc5a3-cc59-4996-aa3c-8dd9c17d3c90
-ms.openlocfilehash: da1b76a7019f364e7463a8345aa80d9a9bd6089e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe46683faee13bad951d5a7185aad8a687c290ef
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012781"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952138"
 ---
 # <a name="mainmenu-component-overview-windows-forms"></a>MainMenu – přehled komponenty (Windows Forms)
 > [!IMPORTANT]
->  I když <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> nahradit a přidání funkce, které <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> ovládací prvky z předchozích verzí <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete.  
+> I <xref:System.Windows.Forms.MenuStrip> když <xref:System.Windows.Forms.ContextMenuStrip> a <xref:System.Windows.Forms.ContextMenu> v <xref:System.Windows.Forms.MainMenu> případě potřeby nahrazují a přidávají funkce do ovládacích prvků <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> v předchozích verzích a jsou zachované pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
- Windows Forms <xref:System.Windows.Forms.MainMenu> komponenty zobrazí nabídku v době běhu. Všechny dílčích nabídek z hlavní nabídky a jednotlivé položky <xref:System.Windows.Forms.MenuItem> objekty.  
+ Komponenta model Windows Forms <xref:System.Windows.Forms.MainMenu> zobrazuje v době běhu nabídku. Všechny podnabídky hlavní nabídky a jednotlivé položky jsou <xref:System.Windows.Forms.MenuItem> objekty.  
   
 ## <a name="key-properties"></a>Vlastnosti klíče  
- Položka nabídky lze označit jako výchozí položku tak, že nastavíte <xref:System.Windows.Forms.MenuItem.DefaultItem%2A> vlastnost `true`. Výchozí položka se zobrazí tučně, když dojde ke kliknutí na nabídky. Položka nabídky <xref:System.Windows.Forms.MenuItem.Checked%2A> vlastnost je buď `true` nebo `false`a označuje, zda je vybrána položka nabídky. Položka nabídky <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> vlastnost přizpůsobí vzhledu vybrané položky: Pokud <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> je nastavena na `true`, přepínač se zobrazí vedle položky; v případě <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> je nastavena na `false`, se zobrazí zaškrtávací políčko vedle položky.  
+ Položka nabídky může být označena jako výchozí položka <xref:System.Windows.Forms.MenuItem.DefaultItem%2A> nastavením vlastnosti na. `true` Výchozí položka se při kliknutí na nabídku zobrazí tučným textem. <xref:System.Windows.Forms.MenuItem.Checked%2A> Vlastnost položky nabídky je buď `true` nebo `false`, a označuje, zda je vybrána položka nabídky. <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> Vlastnost položky nabídky přizpůsobí vzhled vybrané položky: je-li <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> parametr nastaven na `true`hodnotu, zobrazí se vedle položky přepínač. Pokud <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> je nastavena na `false`hodnotu, zobrazí se vedle položky značka zaškrtnutí.  
   
 ## <a name="see-also"></a>Viz také:
 

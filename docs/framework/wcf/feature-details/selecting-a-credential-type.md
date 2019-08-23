@@ -2,100 +2,100 @@
 title: Výběr typu pověření
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 20c070e9351219a649735ac404231cf6f265d814
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b5dd757328fc04ccbbce7eaed2bd1a28b3e1282e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586129"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949227"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
-*Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které státní instituce problémy prokázání citizenship v zemi nebo oblast. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například název tokeny uživatele a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v WCF a tom, jak vybrat správné přihlašovací údaje pro vaše aplikace.  
+*Přihlašovací údaje* jsou pomocí služby data Windows Communication Foundation (WCF) navázány buď požadované identity, nebo schopnosti. Například Passport je přihlašovací údaje, které jsou státními záležitostmi k prokázání občanství v zemi nebo oblasti. V rámci WCF můžou přihlašovací údaje trvat mnoho forem, jako jsou tokeny uživatelských jmen a certifikáty X. 509. Toto téma popisuje přihlašovací údaje, jak se používají ve službě WCF a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
   
- V mnoha zemích a oblastech licence ovladače je příkladem přihlašovacích údajů. Licence obsahuje data, která představuje identitu uživatele a možnosti. Obsahuje doklad o vlastnictví v podobě obrázku vlastníka. Licence je vydán důvěryhodnou autoritou, obvykle vládní oddělení licencování. Licence je zapečetěná a může obsahovat hologram, zobrazuje, že nebyla úmyslně nebo padělat.  
+ V mnoha zemích a oblastech je licence ovladače příkladem přihlašovacích údajů. Licence obsahuje data, která představují identitu a možnosti osoby. Obsahuje důkaz o vlastnictví ve formě obrázku svého držitele. Licence je vydaná důvěryhodnou autoritou, obvykle státním oddělením licencí. Licence je zapečetěná a může obsahovat hologram, který ukazuje, že není úmyslně poškozen nebo padělaný.  
   
- Zobrazení přihlašovacích údajů zahrnuje prezentace dat i doklad o vlastnictví dat. WCF podporuje celou řadu typů přihlašovacích údajů při přenosu i zpráva úrovně zabezpečení. Představte si třeba dva typy přihlašovacích údajů, které jsou podporované ve službě WCF: uživatelské jméno a (X.509) certifikát přihlašovacích údajů.  
+ Předložení přihlašovacích údajů zahrnuje prezentaci dat i kontrolu jejich držení. WCF podporuje různé typy přihlašovacích údajů na úrovni zabezpečení Transport i zpráva. Zvažte například dva typy přihlašovacích údajů, které podporuje WCF: uživatelské jméno a (X. 509) přihlašovací údaje certifikátu.  
   
- Pro přístupové uživatelské jméno uživatelské jméno představuje nárokován identitu a heslo zajišťuje důkazy o vlastnictví. Jako důvěryhodnou autoritu v tomto případě je systém, který ověří uživatelské jméno a heslo.  
+ Pro přihlašovací údaje uživatelského jména představuje uživatelské jméno deklaraci identity a heslo poskytne důkaz o vlastnictví. Důvěryhodná autorita v tomto případě je systém, který ověřuje uživatelské jméno a heslo.  
   
- S přihlašovacími údaji pro certifikát X.509, název subjektu nebo alternativní název subjektu konkrétních polí v rámci certifikát může sloužit jako deklarace identity, zatímco jiné polí, jako `Valid From` a `Valid To` pole, zadejte jeho platnost certifikát.  
+ Pomocí přihlašovacích údajů certifikátu X. 509 se dá název subjektu, alternativní název subjektu nebo konkrétní pole v rámci certifikátu použít jako deklarace identity, zatímco další pole, jako jsou `Valid From` pole a `Valid To` , určují platnost certifikát.  
   
-## <a name="transport-credential-types"></a>Typy přenosu přihlašovacích údajů  
- Následující tabulka uvádí možné typy přihlašovacích údajů klienta, které mohou být využívána vazbu v režim zabezpečení transport. Při vytváření služby, nastavte `ClientCredentialType` vlastnost na jednu z těchto hodnot k určení typu přihlašovacích údajů, které klient musíte dodávat ke komunikaci s vaší službou. Typy lze nastavit v kódu nebo konfiguračního souboru.  
-  
-|Nastavení|Popis|  
-|-------------|-----------------|  
-|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
-|Základní|Určuje základní ověřování klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|ověřování algoritmem Digest|Určuje ověřování algoritmem digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|Ntlm|Určuje NT LAN Manager (NTLM) authentication. Používá se, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Jeho použití jako záložní můžete také zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, což způsobí, že WCF, aby se snažíme vyvolá výjimku, pokud je použit protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemůže zabránit odeslání při přenosu přihlašovacích údajů protokolů NTLM.|  
-|Windows|Určuje ověřování Windows. Chcete-li zadat pouze protokol Kerberos v doméně Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false` (výchozí hodnota je `true`).|  
-|Certifikát|Provádí ověření klienta pomocí certifikátu X.509.|  
-|Heslo|Uživatel musí zadat uživatelské jméno a heslo. Ověření páru jméno/heslo uživatele pomocí ověřování Windows nebo jiné vlastní řešení.|  
-  
-### <a name="message-client-credential-types"></a>Typy zpráv klienta přihlašovacích údajů  
- V následující tabulce jsou uvedeny typy možných přihlašovacích údajů, které můžete použít při vytváření aplikace, který používá zabezpečení zpráv. Tyto hodnoty můžete použít v kódu nebo konfiguračního souboru.  
+## <a name="transport-credential-types"></a>Typy přenosových údajů  
+ V následující tabulce jsou uvedeny možné typy přihlašovacích údajů klienta, které mohou být použity v rámci vazby v režimu zabezpečení přenosu. Při vytváření služby nastavte `ClientCredentialType` vlastnost na jednu z těchto hodnot, abyste určili typ přihlašovacích údajů, které musí klient zadat ke komunikaci s vaší službou. Můžete nastavit typy buď v kódu, nebo v konfiguračních souborech.  
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient nemusí představovat přihlašovací údaje. Výsledkem je k anonymní klienta.|  
-|Windows|Umožňuje výměny zpráv SOAP probíhá v kontextu zabezpečení vytvořen se přihlašovací údaje Windows.|  
-|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generuje podpis nebo šifrovat data. WCF se zajistí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
-|Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu X.509.|  
-|Vydaný Token|Vlastní token typu nakonfigurovaný podle zásady zabezpečení. Výchozí typ tokenu je zabezpečení kontrolní výrazy SAML (Markup Language). Token, který je vystaven Služba tokenů zabezpečení. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Žádné|Určuje, že klient nemusí prezentovat žádné přihlašovací údaje. To se týká anonymního klienta.|  
+|Základní|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: Základní ověřování a ověřování](https://go.microsoft.com/fwlink/?LinkID=88313)algoritmem Digest.|  
+|Otisk|Určuje ověřování algoritmem Digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: Základní ověřování a ověřování](https://go.microsoft.com/fwlink/?LinkID=88313)algoritmem Digest.|  
+|NTLM|Určuje ověřování v systému NT LAN Manager (NTLM). Tato část se používá, pokud z nějakého důvodu nemůžete použít ověřování pomocí protokolu Kerberos. Můžete také zakázat použití jako Fallback <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> nastavením vlastnosti na `false`, což způsobí, že služba WCF vygeneruje výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této `false` vlastnosti na nemusí bránit v posílání přihlašovacích údajů NTLM přes tento kabel.|  
+|Windows|Určuje ověřování systému Windows. Chcete-li zadat pouze protokol Kerberos v doméně systému Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost na `false` hodnotu (výchozí nastavení `true`je).|  
+|Certifikát|Provádí ověřování klientů pomocí certifikátu X. 509.|  
+|Heslo|Uživatel musí zadávat uživatelské jméno a heslo. Ověřte dvojici uživatelského jména a hesla pomocí ověřování systému Windows nebo jiného vlastního řešení.|  
   
-### <a name="negotiation-model-of-service-credentials"></a>Model vyjednávání přihlašovacích údajů služby  
- *Vyjednávání* je proces vytvoření vztahu důvěryhodnosti mezi klientem a službou výměnou přihlašovacích údajů. Proces se provádí opakované mezi klientem a služby, aby zpřístupnit pouze informace potřebné k dalším krokem v procesu vyjednávání. V praxi konečný výsledek je doručování přihlašovacích údajů pro služby klienta, který se má použít v následných operací.  
+### <a name="message-client-credential-types"></a>Typy přihlašovacích údajů klienta zprávy  
+ Následující tabulka uvádí možné typy přihlašovacích údajů, které můžete použít při vytváření aplikace, která používá zabezpečení zpráv. Tyto hodnoty můžete použít buď v kódu, nebo v konfiguračních souborech.  
   
- S jednou výjimkou ve výchozím nastavení vazeb poskytovaných systémem ve službě WCF vyjednávání přihlašovacích údajů služby automaticky při použití zabezpečení na úrovni zprávy. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>, což není povoleno zabezpečení ve výchozím nastavení.) Chcete-li toto chování zakázat, přečtěte si téma <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> vlastnosti.  
+|Nastavení|Popis|  
+|-------------|-----------------|  
+|Žádné|Určuje, že klient nemusí prezentovat přihlašovací údaje. To se týká anonymního klienta.|  
+|Windows|Umožňuje výměnu zpráv SOAP v rámci kontextu zabezpečení vytvořeného pomocí pověření systému Windows.|  
+|Uživatelské jméno|Umožňuje službě, aby vyžadovala ověření klienta pomocí přihlašovacích údajů uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generování podpisu nebo šifrování dat. WCF zajišťuje zabezpečený přenos při použití přihlašovacích údajů uživatelského jména.|  
+|Certifikát|Umožňuje službě, aby vyžadovala ověření klienta pomocí certifikátu X. 509.|  
+|Vydaný token|Vlastní typ tokenu konfigurovaný podle zásad zabezpečení. Výchozí typ tokenu je SAML (Security Assert Markup Language). Token je vydaný službou tokenů zabezpečení. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+  
+### <a name="negotiation-model-of-service-credentials"></a>Model vyjednávání pověření služby  
+ *Vyjednávání* je proces navázání vztahu důvěryhodnosti mezi klientem a službou výměnou přihlašovacích údajů. Proces se provádí iterativním způsobem mezi klientem a službou, aby bylo možné zveřejnit pouze informace potřebné k dalšímu kroku procesu vyjednávání. V praxi je konečným výsledkem doručení přihlašovacích údajů služby klientovi, který se má použít v dalších operacích.  
+  
+ S jednou výjimkou jsou ve výchozím nastavení vazby poskytované systémem ve službě WCF vyjednávat pověření služby automaticky při použití zabezpečení na úrovni zprávy. (Výjimka je <xref:System.ServiceModel.BasicHttpBinding>, která ve výchozím nastavení nepovoluje zabezpečení.) Pokud chcete toto chování zakázat, přečtěte <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> si téma <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a – vlastnosti.  
   
 > [!NOTE]
->  Při použití zabezpečení SSL v rozhraní .NET Framework 3.5 nebo novější, klienta WCF používá i zprostředkující certifikáty ve své vlastní úložiště certifikátů a zprostředkujících certifikátů přijatých během vyjednávání SSL k provedení ověřování řetězu certifikátů na služby certifikát. Rozhraní .NET framework 3.0 využívá jenom nainstalované v místním úložišti certifikátů zprostředkující certifikáty.  
+> Když se zabezpečení SSL používá s .NET Framework 3,5 a novějším, používá klient WCF jak zprostředkující certifikáty v úložišti certifikátů, tak zprostředkující certifikáty přijaté během vyjednávání SSL k provedení ověření řetězu certifikátů na úrovni služby. certifikát. .NET Framework 3,0 používá pouze zprostředkující certifikáty nainstalované v místním úložišti certifikátů.  
   
-#### <a name="out-of-band-negotiation"></a>Vyjednávání Out-of-Band  
- Pokud je zakázané automatické vyjednávání, přihlašovací údaje služby musí být zřízená v klientském počítači před odesláním jakýchkoli zpráv do služby. To se také označuje jako *out-of-band* zřizování. Například pokud je typ zadané přihlašovací údaje certifikát, a je zakázáno automatické vyjednávání, klient musí kontaktujte vlastníka služby pro příjem a nainstalujte certifikát na počítači se systémem klientské aplikace. To můžete udělat, třeba když chcete striktně řídit, které klienti mají přístup k nějaké službě v případě business-to-business. V tomto out z-obsluhy vzdálené správy – vyjednávání lze provést v e-mailu a certifikátu X.509 je uložen v úložišti certifikátů Windows, pomocí nástroje, jako je modul snap-in Certifikáty konzoly Microsoft Management Console (MMC).  
+#### <a name="out-of-band-negotiation"></a>Vzdálené vyjednávání  
+ Pokud je automatické vyjednávání zakázané, musí se přihlašovací údaje služby zřídit v klientovi předtím, než se odešlou zprávy do služby. Tato možnost se označuje také jako *vzdálené* zřizování. Pokud je například zadaný typ přihlašovacích údajů certifikát a automatické vyjednávání je zakázané, musí se klient obrátit na vlastníka služby a přijmout a nainstalovat certifikát na počítači, na kterém je spuštěná klientská aplikace. To se dá udělat například v případě, že chcete přesně určit, kteří klienti budou mít přístup ke službě ve scénáři Business-to-Business. Toto vzdálené vyjednávání se dá provést v e-mailu a certifikát X. 509 je uložený v úložišti certifikátů Windows pomocí nástroje, jako je modul snap-in Certifikáty konzoly MMC (Microsoft Management Console).  
   
 > [!NOTE]
->  <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> Vlastnost se používá k poskytování služby pomocí certifikátu, který bylo dosaženo pomocí out-of-band vyjednávání. To je nezbytné, při použití <xref:System.ServiceModel.BasicHttpBinding> třídy, protože vazba nepovoluje automatizované vyjednávání. Vlastnost se používá také ve scénáři bez korelace nejsou duplexní. Toto je scénář, kde server odešle zprávu do klienta bez nutnosti klient nejdřív odešlete požadavek na server. Protože server nemá žádné žádosti z klienta, musí používat certifikát klienta pro šifrování zprávy do klienta.  
+> Tato <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost slouží k poskytování služby s certifikátem, který byl dosažen prostřednictvím vzdáleného vyjednávání. To je nezbytné při použití <xref:System.ServiceModel.BasicHttpBinding> třídy, protože vazba nepovoluje automatizované vyjednávání. Tato vlastnost se používá také v nerelačním scénáři. Jedná se o scénář, kdy server pošle klientovi zprávu, aniž by musela nejdřív odeslat požadavek na server. Vzhledem k tomu, že server nemá požadavek od klienta, musí použít certifikát klienta k zašifrování zprávy klientovi.  
   
 ## <a name="setting-credential-values"></a>Nastavení hodnot přihlašovacích údajů  
- Jakmile vyberete režim zabezpečení, je nutné zadat samotné přihlašovací údaje. Například pokud typ přihlašovacích údajů nastavená na "certifikáty", pak musíte přidružit konkrétní přihlašovací údaje (například konkrétní certifikát X.509) služba nebo klient.  
+ Po výběru režimu zabezpečení musíte zadat vlastní přihlašovací údaje. Pokud je například typ přihlašovacích údajů nastavený na "certifikát", musíte ke službě nebo klientovi přidružit konkrétní přihlašovací údaje (třeba konkrétní certifikát X. 509).  
   
- V závislosti na tom, zda jsou programovací službu nebo klienta metoda pro nastavení hodnoty přihlašovacích údajů se mírně liší.  
+ V závislosti na tom, jestli programujete službu nebo klienta, se metoda nastavení hodnoty přihlašovacích údajů mírně liší.  
   
-### <a name="setting-service-credentials"></a>Nastavení přihlašovacích údajů služby  
- Pokud používáte režim přenosu a používáte jako přenosového protokolu HTTP, musíte použít buď Internetové informační služby (IIS) nebo konfigurace portu s certifikátem. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md) a [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+### <a name="setting-service-credentials"></a>Nastavování přihlašovacích údajů služby  
+ Pokud používáte transportní režim a jako přenos používáte protokol HTTP, musíte použít buď Internetová informační služba (IIS), nebo nakonfigurovat port s certifikátem. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md) a [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
- Při zřizování služby pomocí přihlašovacích údajů v kódu, vytvořte instanci <xref:System.ServiceModel.ServiceHost> třídy a zadejte příslušná pověření pomocí <xref:System.ServiceModel.Description.ServiceCredentials> třídy přistupovat prostřednictvím <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost.  
-  
-#### <a name="setting-a-certificate"></a>Nastavení certifikátu  
- Chcete-li zřídit službu společně s certifikátem X.509, který se má použít k ověřování klientů, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> třídy.  
-  
- Při zřizování služby pomocí klientského certifikátu, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential> třídy.  
-  
-#### <a name="setting-windows-credentials"></a>Nastavení přihlašovacích údajů Windows  
- Pokud klient Určuje platné uživatelské jméno a heslo, tyto přihlašovací údaje se používá k ověření klienta. V opačném případě se používají přihlašovací údaje aktuálního přihlášeného uživatele.  
-  
-### <a name="setting-client-credentials"></a>Nastavení přihlašovacích údajů klienta  
- Ve službě WCF klientské aplikace připojit ke službám pomocí klienta WCF. Každý klient je odvozen od <xref:System.ServiceModel.ClientBase%601> třídy a <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost na klientovi umožňuje specifikaci různých hodnot přihlašovacích údajů klienta.  
+ Chcete-li zřídit službu s přihlašovacími údaji v kódu, vytvořte instanci <xref:System.ServiceModel.ServiceHost> třídy a určete příslušné přihlašovací údaje <xref:System.ServiceModel.Description.ServiceCredentials> pomocí <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> třídy, která je přístupná prostřednictvím vlastnosti.  
   
 #### <a name="setting-a-certificate"></a>Nastavení certifikátu  
- Při zřizování služby certifikátem X.509, který se používá k ověření klienta ke službě, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> třídy.  
+ Pokud chcete zřídit službu s certifikátem X. 509, který se má použít k ověření služby pro klienty, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> třídy.  
   
-## <a name="how-client-credentials-are-used-to-authenticate-a-client-to-the-service"></a>Jak se používají přihlašovací údaje pro klienta k ověření klienta ke službě  
- Poskytuje informace o klientech přihlašovacích údajů potřebných pro komunikaci se službou buď pomocí <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost. Zabezpečený kanál používá tyto informace k ověření klienta ke službě. Ověřování se provádí prostřednictvím jednoho ze dvou režimů:  
+ Chcete-li zřídit službu s klientským certifikátem, <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> použijte metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential> třídy.  
   
-- Přihlašovací údaje klienta se používají jednou před odesláním první zprávu pomocí instance klienta WCF k vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou pak zabezpečené skrze kontext zabezpečení.  
+#### <a name="setting-windows-credentials"></a>Nastavení přihlašovacích údajů systému Windows  
+ Pokud klient zadá platné uživatelské jméno a heslo, použije se k ověření klienta přihlašovací údaje. V opačném případě se použijí přihlašovací údaje aktuálně přihlášeného uživatele.  
   
-- Přihlašovací údaje klienta slouží k ověření každé aplikace zpráva odeslaná do služby. V tomto případě žádný kontext pokládáme stav, mezi klientem a službou.  
+### <a name="setting-client-credentials"></a>Nastavování přihlašovacích údajů klienta  
+ V rámci WCF klientské aplikace používají pro připojení ke službám klienta WCF. Každý klient je odvozen z <xref:System.ServiceModel.ClientBase%601> třídy <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> a vlastnost v klientovi umožňuje zadání různých hodnot přihlašovacích údajů klienta.  
   
-### <a name="established-identities-cannot-be-changed"></a>Zavedené identity nejde změnit.  
- Při použití první způsob je trvale přidružený identity klienta vytvořeným kontextem. Po vytvoření kontextu zabezpečení, to znamená, nemůže být změněna identita přidružené ke klientovi.  
+#### <a name="setting-a-certificate"></a>Nastavení certifikátu  
+ Chcete-li zřídit službu s certifikátem X. 509, který slouží k ověření klienta ke službě, použijte <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> třídy.  
+  
+## <a name="how-client-credentials-are-used-to-authenticate-a-client-to-the-service"></a>Způsob použití přihlašovacích údajů klienta k ověření klienta ke službě  
+ Informace o přihlašovacích údajích klienta požadovaných ke komunikaci se službou jsou k <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> dispozici pomocí <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnosti nebo vlastnosti. Kanál zabezpečení používá tyto informace k ověření klienta ke službě. Ověřování se provádí prostřednictvím jednoho ze dvou režimů:  
+  
+- Pověření klienta se používají před odesláním první zprávy pomocí instance klienta služby WCF pro vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou poté zabezpečeny prostřednictvím kontextu zabezpečení.  
+  
+- Pověření klienta slouží k ověření každé zprávy aplikace odeslané službě. V takovém případě není mezi klientem a službou vytvořen žádný kontext.  
+  
+### <a name="established-identities-cannot-be-changed"></a>Zavedené identity nelze změnit.  
+ Při použití první metody je vytvořený kontext trvale přidružen k identitě klienta. To znamená, že jakmile je kontext zabezpečení vytvořen, nelze změnit identitu přidruženou k klientovi.  
   
 > [!IMPORTANT]
->  Neexistuje situace je potřeba vědět po nelze Přepnutí identity (to znamená, když vytvořit bezpečnostní kontext je na výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou službu, identity používá k otevření klienta WFG pro druhý služby nelze změnit. To stane problém, pokud více klientů můžou používat první služby a služby zosobňuje klienty při přístupu ke službě druhý. Pokud služba opakované používání stejného klienta pro všechny volající, všechna volání do druhé služby se provádějí s identitou první volajícího, která byla použita k otevření klienta ke službě druhý. Jinými slovy služba používá identity první klient pro své klienty komunikovat se službou druhý. To může vést ke zvýšení oprávnění. Pokud to není požadované chování služby, musíte sledovat jednotliví volající a vytvořit nového klienta do druhé služby pro každý jedinečných volajícího a zajistit, aby používal službu pouze správné klienta pro správné volajícího komunikovat se službou druhý.  
+> Je potřeba vědět, kdy identitu nejde přepnout (to znamená, že při navazování kontextu zabezpečení je výchozí chování). Pokud vytvoříte službu, která komunikuje s druhou službou, nelze změnit identitu použitou k otevření klienta služby WCF pro druhou službu. Tato chyba se může nacházet v případě, že více klientů smí používat první službu a služba zosobňuje klienty při přístupu k druhé službě. Pokud služba znovu používá stejného klienta pro všechny volající, všechna volání druhé služby se provádějí v rámci identity prvního volajícího, který se použil k otevření klienta pro druhou službu. Jinými slovy, služba používá identitu prvního klienta, aby všichni klienti komunikovali s druhou službou. To může vést ke zvýšení oprávnění. Pokud se nejedná o požadované chování vaší služby, musíte sledovat každého volajícího a vytvořit nového klienta k druhé službě pro každého jiného volajícího a zajistit, aby služba používala správného klienta pro správného volajícího, aby komunikoval s druhou službou.  
   
- Další informace o přihlašovací údaje a zabezpečených relací najdete v tématu [aspekty zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
+ Další informace o přihlašovacích údajích a zabezpečených relacích najdete v tématu [požadavky na zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
 ## <a name="see-also"></a>Viz také:
 

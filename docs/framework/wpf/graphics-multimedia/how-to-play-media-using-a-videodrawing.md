@@ -5,32 +5,32 @@ helpviewer_keywords:
 - playback of media [WPF]
 - classes [WPF], MediaPlayer
 ms.assetid: 165d47ed-22ce-4ded-aa6a-aa9b7467de87
-ms.openlocfilehash: 186c9ae8167dafd09f029418c1d23f81f7a9e906
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e2007525be770186a17cf9d2d42a7c52ba93fba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926064"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956957"
 ---
 # <a name="how-to-play-media-using-a-videodrawing"></a>Postupy: Přehrání média pomocí VideoDrawing
-Chcete-li přehrát zvuk nebo video soubor, je použít <xref:System.Windows.Media.VideoDrawing> a <xref:System.Windows.Media.MediaPlayer>. Existují dva způsoby, jak načíst a přehrávání médií. První je použití <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing> sami a druhý je způsob, jak vytvořit vlastní <xref:System.Windows.Media.MediaTimeline> pro použití s <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing>.  
+Pro přehrání zvukového souboru nebo videosouboru použijte <xref:System.Windows.Media.VideoDrawing> <xref:System.Windows.Media.MediaPlayer>a. Existují dva způsoby, jak načítat a přehrávat média. <xref:System.Windows.Media.MediaPlayer> První je použít <xref:System.Windows.Media.VideoDrawing> <xref:System.Windows.Media.MediaPlayer> <xref:System.Windows.Media.MediaTimeline> a sám sebe a druhý způsob, jak vytvořit vlastní pro použití s a. <xref:System.Windows.Media.VideoDrawing>  
   
 > [!NOTE]
->  Při distribuci média s aplikací, nelze použít mediální soubor jako projekt prostředků, stejně jako obrázek. V souboru projektu, musíte místo toho nastavte typ média na `Content` a nastavte `CopyToOutputDirectory` k `PreserveNewest` nebo `Always`.  
+> Při distribuci médií do aplikace nemůžete použít mediální soubor jako prostředek projektu, jako by to byl obrázek. V souboru projektu je nutné místo toho `Content` nastavit typ média na `CopyToOutputDirectory` `PreserveNewest` hodnotu nebo `Always`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Windows.Media.VideoDrawing> a <xref:System.Windows.Media.MediaPlayer> pro přehrání videa souboru jednou.  
+ Následující příklad používá <xref:System.Windows.Media.VideoDrawing> <xref:System.Windows.Media.MediaPlayer> k přehrání videosouboru soubor a.  
   
  [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline)]  
   
- Chcete-li získat další časování ovládat média, použijte <xref:System.Windows.Media.MediaTimeline> s <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing> objekty. <xref:System.Windows.Media.MediaTimeline> Umožňuje určit, zda by měla opakovat na video.  
+ Chcete-li získat další ovládací prvek časování pro médium, <xref:System.Windows.Media.MediaTimeline> použijte <xref:System.Windows.Media.MediaPlayer> s objekty <xref:System.Windows.Media.VideoDrawing> a. <xref:System.Windows.Media.MediaTimeline> Umožňuje určit, zda se má video opakovat.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Windows.Media.MediaTimeline> s <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing> objektů na opakovaně přehrát video.  
+ Následující příklad používá <xref:System.Windows.Media.MediaTimeline> <xref:System.Windows.Media.MediaPlayer> s objekty a <xref:System.Windows.Media.VideoDrawing> k opakovanému přehrání videa.  
   
  [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline)]  
   
- Všimněte si, že při použití <xref:System.Windows.Media.MediaTimeline>, je použít interaktivní <xref:System.Windows.Media.Animation.ClockController> vrácená z <xref:System.Windows.Media.Animation.Clock.Controller%2A> vlastnost <xref:System.Windows.Media.MediaClock> ovládací prvek přehrávání médií místo metody interaktivní <xref:System.Windows.Media.MediaPlayer>.  
+ Všimněte si, že když použijete <xref:System.Windows.Media.MediaTimeline>, použijete interaktivní <xref:System.Windows.Media.Animation.ClockController> vrácenou <xref:System.Windows.Media.MediaClock> z <xref:System.Windows.Media.Animation.Clock.Controller%2A> vlastnosti ovládacího prvku k řízení přehrávání média namísto interaktivních metod <xref:System.Windows.Media.MediaPlayer>.  
   
 ## <a name="see-also"></a>Viz také:
 

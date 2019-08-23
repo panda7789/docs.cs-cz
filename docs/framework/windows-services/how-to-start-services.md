@@ -6,79 +6,79 @@ helpviewer_keywords:
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 8ad61eaa292ec4cce17ba029186caf1536afacdb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3544f7d846ecf68ed5ed01812b9c69b295c63c69
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591460"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952416"
 ---
 # <a name="how-to-start-services"></a>Postupy: Spuštění služby
-Po dokončení instalace služby musí být spuštěna. Od volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu na třídu služby. Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečnou práci, služba bude provádět. Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.  
+Po instalaci služby je nutné ji spustit. Spouští se <xref:System.ServiceProcess.ServiceBase.OnStart%2A> volání metody třídy služby. <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Metoda obvykle definuje užitečnou práci, kterou bude služba provádět. Po spuštění služby zůstane aktivní, dokud není ručně pozastavená nebo zastavená.  
   
- Služby můžete nastavit spustit automaticky nebo ručně. Služba, která se spustí automaticky spustí se při restartování nebo počítače, na kterém je nainstalovaný se nejprve zapnuté. Uživatel musí spustit služba, která se spouští ručně.  
+ Služby je možné nastavit tak, aby se spouštěly automaticky nebo ručně. Služba, která se spustí automaticky, se spustí při restartování počítače, ve kterém je nainstalovaný, nebo nejdřív zapnutý. Uživatel musí spustit službu, která se spustí ručně.  
   
 > [!NOTE]
->  Ve výchozím nastavení služby vytvořené pomocí sady Visual Studio jsou nastaveny na Manuální spuštění.  
+> Ve výchozím nastavení se služby vytvořené pomocí sady Visual Studio nastaví tak, aby se spouštěly ručně.  
   
- Službu můžete ručně spustit několika způsoby – z **Průzkumníka serveru**, z **správce řízení služeb**, nebo z kódu pomocí komponentu volána <xref:System.ServiceProcess.ServiceController>.  
+ Existuje několik způsobů, jak ručně spustit službu – od **Průzkumník serveru**, od **správce řízení služeb**nebo z kódu pomocí <xref:System.ServiceProcess.ServiceController>komponenty s názvem.  
   
- Můžete nastavit <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceInstaller> třídu k určení, zda by měl službu spustit ručně nebo automaticky.  
+ Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnosti<xref:System.ServiceProcess.ServiceInstaller> třídy určíte, zda má být služba spuštěna ručně nebo automaticky.  
   
-### <a name="to-specify-how-a-service-should-start"></a>Chcete-li určit, jak by měl spustit službu  
+### <a name="to-specify-how-a-service-should-start"></a>Určení způsobu spuštění služby  
   
-1. Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)služby.  
   
-2. V Návrháři klikněte na instalační program služby pro službu, kterou pracujete.  
+2. V návrháři klikněte na instalační program služby pro službu, se kterou pracujete.  
   
-3. V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost na jednu z následujících akcí:  
+3. V okně **vlastnosti** nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost na jednu z následujících možností:  
   
-    |Služba instalace|Nastavte tuto hodnotu|  
+    |Instalace služby|Nastavit tuto hodnotu|  
     |----------------------------------|--------------------|  
     |Po restartování počítače|**Automatické**|  
-    |Při spuštění akce explicitní uživatel služby|**Ruční**|  
+    |Když akce explicitního uživatele spustí službu|**Zásah**|  
   
     > [!TIP]
-    >  Chcete-li zabránit spuštění vůbec vaši službu, můžete nastavit <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost **zakázané**. To může provést, pokud se chystáte několikrát restartuje server a chcete ušetřit čas tím, že zabráníte služby, které by normálně spustit spuštění.  
+    >  Pokud chcete zabránit tomu, aby se služba spustila vůbec, můžete <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost nastavit na **zakázáno**. To můžete provést, pokud budete Server několikrát restartovat a chcete ušetřit čas tím, že znemožníte službám, které by normálně začaly začít.  
   
     > [!NOTE]
-    >  Po instalaci služby lze změnit tyto a další vlastnosti.  
+    > Tyto a další vlastnosti se dají po instalaci služby změnit.  
   
-     Existuje několik způsobů, jak můžete spustit službu, která má jeho <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> procesu nastavena na **ruční** – od **Průzkumníka serveru**, z **správce řízení služeb Windows**, nebo z kódu. Je důležité si uvědomit, že některé z těchto metod ve skutečnosti spustit službu v kontextu **správce řízení služeb**; **Průzkumníka serveru** a programové metody spouštění služby ve skutečnosti manipulaci s řadičem.  
+     Existuje několik způsobů, jak můžete spustit službu, která má svůj <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> proces nastavený na **Ruční** – od **Průzkumník serveru**, od **správce řízení služeb systému Windows**nebo z kódu. Je důležité si uvědomit, že ne všechny tyto metody ve skutečnosti zahájí službu v kontextu **správce řízení služeb**; **Průzkumník serveru** a programové metody spuštění služby skutečně manipulují s řadičem.  
   
-### <a name="to-manually-start-a-service-from-server-explorer"></a>Chcete-li službu spustit ručně z Průzkumníka serveru  
+### <a name="to-manually-start-a-service-from-server-explorer"></a>Ruční spuštění služby z Průzkumník serveru  
   
-1. V **Průzkumníka serveru**, přidání serveru, je-li dosud není uložen. Další informace najdete v tématu Postupy: Přístup a inicializace Průzkumníka serveru Průzkumníka databáze.  
+1. V **Průzkumník serveru**přidejte server, který chcete, pokud již není uveden. Další informace naleznete v tématu How to: Přístup a inicializace Průzkumník serveru – Průzkumník databáze  
   
-2. Rozbalte **služby** uzel a pak vyhledejte service, které chcete spustit.  
+2. Rozbalte uzel **služby** a vyhledejte službu, kterou chcete spustit.  
   
-3. Klikněte pravým tlačítkem na název služby a klikněte na tlačítko **Start**.  
+3. Klikněte pravým tlačítkem na název služby a pak klikněte na **Spustit**.  
   
-### <a name="to-manually-start-a-service-from-services-control-manager"></a>Ruční spuštění služby od správce řízení služeb  
+### <a name="to-manually-start-a-service-from-services-control-manager"></a>Ruční spuštění služby ze Správce řízení služeb  
   
-1. Otevřít **správce řízení služeb** pomocí jedné z následujících akcí:  
+1. Pomocí jedné z následujících akcí otevřete **správce řízení služeb** :  
   
-    - V systémech Windows XP a 2000 Professional, klikněte pravým tlačítkem na **tento počítač** na ploše a pak klikněte na tlačítko **spravovat**. V dialogovém okně, které se zobrazí, rozbalte **služeb a aplikací** uzlu.  
+    - V systému Windows XP a 2000 Professional klikněte pravým tlačítkem na položku **Tento počítač** na ploše a pak klikněte na možnost **Spravovat**. V dialogovém okně, které se zobrazí, rozbalte uzel **služby a aplikace** .  
   
          \- nebo –  
   
-    - V systému Windows Server 2003 a Windows 2000 Server, klikněte na tlačítko **Start**, přejděte na **programy**, klikněte na tlačítko **nástroje pro správu**a potom klikněte na tlačítko **služby**.  
+    - V systému Windows Server 2003 a Windows 2000 Server klikněte na **Start**, přejděte na **programy**, klikněte na **Nástroje pro správu**a potom klikněte na **služby**.  
   
         > [!NOTE]
-        >  V systému Windows NT verze 4.0, můžete otevřít toto dialogové z **ovládací panely**.  
+        >  V systému Windows NT verze 4,0 můžete toto dialogové okno otevřít z **ovládacích panelů**.  
   
-     Teď byste měli vidět vaše služba uvedená v **služby** části okna.  
+     Teď by se měla zobrazit vaše služba uvedená v části **služby** v okně.  
   
-2. Vyberte svoji službu v seznamu pravým tlačítkem myši a potom klikněte na tlačítko **Start**.  
+2. V seznamu vyberte svou službu, klikněte na ni pravým tlačítkem myši a pak klikněte na **Spustit**.  
   
-### <a name="to-manually-start-a-service-from-code"></a>Chcete-li službu spustit ručně z kódu  
+### <a name="to-manually-start-a-service-from-code"></a>Ruční spuštění služby z kódu  
   
-1. Vytvoření instance <xref:System.ServiceProcess.ServiceController> třídy a jeho konfigurace pro interakci se službou, kterou chcete spravovat.  
+1. Vytvořte instanci <xref:System.ServiceProcess.ServiceController> třídy a nakonfigurujte ji pro interakci se službou, kterou chcete spravovat.  
   
-2. Volání <xref:System.ServiceProcess.ServiceController.Start%2A> metoda ke spuštění služby.  
+2. <xref:System.ServiceProcess.ServiceController.Start%2A> Zavolejte metodu pro spuštění služby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Postupy: Vytvořit služby systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

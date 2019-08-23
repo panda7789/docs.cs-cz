@@ -9,41 +9,41 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f020e50cfe53c2b6ba134308ed6587876ca21a42
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c4177faca86fab9934f1cae57f02f8e42a2ae0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616301"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943369"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
-Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy můžete zvýšit rychlost provádění dodržováním určitých základních pravidel ve zdrojovém kódu. V některých aplikacích je třeba pečlivě zkoumat kód a ujistěte se, že běží tak rychle za pomocí profilerů. V jiných programech není nutné provést takovou optimalizaci, protože je kód spuštěn přijatelně rychle při zápisu. Tento článek uvádí některé běžné oblasti, kde může být výkon negativně a tipy pro zlepšení ji taky odkazy na další témata výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  
+Pojem *výkon* obecně označuje rychlost spuštění programu. V některých základních pravidlech ve zdrojovém kódu můžete někdy zvýšit rychlost provádění. V některých programech je důležité prozkoumávat kód pečlivě a používat profilery k zajištění co nejrychlejšího provozu. V jiných programech není nutné provádět takovou optimalizaci, protože kód je spuštěný přijatelně rychle při zápisu. V tomto článku jsou uvedené některé běžné oblasti, ve kterých výkon může být zhoršený, a také tipy pro jejich vylepšení a odkazy na další témata týkající se výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkon](../../../docs/framework/performance/index.md) .  
   
 ## <a name="boxing-and-unboxing"></a>Zabalení a rozbalení  
- Je nejvhodnější hodnot typů v situacích, kdy musí být Častokrát zabaleny časů, například v obecné kolekce tříd, jako <xref:System.Collections.ArrayList?displayProperty=nameWithType>. Zabalení typů hodnot se můžete vyhnout použitím obecných kolekcí <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Zabalení a rozbalení jsou výpočetně náročné procesy. Když je typ hodnoty v poli, je nutné vytvořit zcela nový objekt. Může to trvat až 20krát déle než jednoduché přidělení odkazu. Při rozbalení přetypování proces může trvat čtyřikrát co nejdelší přiřazení. Další informace najdete v tématu [zabalení a rozbalení](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Je nejlepší se vyhnout použití typů hodnot v situacích, kdy musí být v krabici vysoký počet, například v neobecných třídách kolekcí, jako je <xref:System.Collections.ArrayList?displayProperty=nameWithType>. Zabalení typů hodnot lze zabránit pomocí obecných kolekcí, jako je například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Zabalení a rozbalení jsou výpočty náročnými procesy. Pokud je hodnotový typ zabalený, musí být vytvořen zcela nový objekt. To může trvat až 20 krát déle než jednoduché přiřazení odkazu. Při rozbalení může proces přetypování trvat čtyřikrát, pokud je přiřazení. Další informace naleznete v tématu [zabalení a rozbalení](../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
 ## <a name="strings"></a>Řetězce  
- Při zřetězení velkého počtu proměnných řetězce například v těsné smyčce použijte <xref:System.Text.StringBuilder?displayProperty=nameWithType> místo C# [+ – operátor](~/docs/csharp/language-reference/operators/addition-operator.md) nebo Visual Basic [operátory zřetězení](~/docs/visual-basic/language-reference/operators/concatenation-operators.md). Další informace najdete v tématu [jak: Řetězení více řetězců](../../csharp/how-to/concatenate-multiple-strings.md) a [operátory řetězení v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).  
+ Když zřetězete velký počet proměnných řetězce, například v těsné smyčce, použijte <xref:System.Text.StringBuilder?displayProperty=nameWithType> místo [](../../csharp/language-reference/operators/addition-operator.md) C# operátoru + nebo operátorů [zřetězení](../../visual-basic/language-reference/operators/concatenation-operators.md)Visual Basic. Další informace najdete v tématu [jak: Zřetězení více řetězců](../../csharp/how-to/concatenate-multiple-strings.md) a [operátorů zřetězení v Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).  
   
 ## <a name="destructors"></a>Destruktory  
- Prázdné destruktory se nesmí používat. Pokud třída obsahuje destruktor, je vytvořena položka ve frontě dokončit. Pokud je volán destruktor, je vyvolána systému uvolňování paměti ke zpracování fronty. Pokud je destruktor prázdný, jednoduše vede ke ztrátě výkonu. Další informace najdete v tématu [destruktory](~/docs/csharp/programming-guide/classes-and-structs/destructors.md) a [doba života objektu: Způsob vytváření a zničení objektů](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
+ Nemusíte používat prázdné destruktory. Pokud třída obsahuje destruktor, je ve frontě Finalize vytvořena položka. Při volání destruktoru je vyvolán systém uvolňování paměti pro zpracování fronty. Pokud je destruktor prázdný, znamená to, že dojde ke ztrátě výkonu. Další informace naleznete v tématu [destruktory](../../csharp/programming-guide/classes-and-structs/destructors.md) a [životnost objektu: Způsob vytváření a zničení](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)objektů.  
   
 ## <a name="other-resources"></a>Další zdroje  
   
-- [Rychlejší psaní spravovaného kódu: Vědět, kolik věci stojí](https://go.microsoft.com/fwlink/?LinkId=99294)  
+- [Psaní rychlejšího spravovaného kódu: Informace o tom, co všechno stojí](https://go.microsoft.com/fwlink/?LinkId=99294)  
   
-- [Vytváření vysoce výkonné spravované aplikace: A Primer](https://go.microsoft.com/fwlink/?LinkId=99295)  
+- [Vytváření vysoce výkonných spravovaných aplikací: A Primer](https://go.microsoft.com/fwlink/?LinkId=99295)  
   
-- [Základní informace o uvolňování paměti a typech výkonu](https://go.microsoft.com/fwlink/?LinkId=99296)  
+- [Základní informace o systému uvolňování paměti a Nápověda k výkonu](https://go.microsoft.com/fwlink/?LinkId=99296)  
   
-- [Tipy ke zvýšení výkonu a tipy v aplikacích .NET](https://go.microsoft.com/fwlink/?LinkId=99297)  
+- [Tipy a triky pro výkon v aplikacích .NET](https://go.microsoft.com/fwlink/?LinkId=99297)  
 
-- [Výkon Tidbits pro Rico Mariani](https://go.microsoft.com/fwlink/?LinkId=115679)  
+- [Pikantní výkonu Mariani](https://go.microsoft.com/fwlink/?LinkId=115679)  
 
-- [Blog daňové Morrison](https://blogs.msdn.microsoft.com/vancem/)
+- [Blog Vance Morrison](https://blogs.msdn.microsoft.com/vancem/)
   
 ## <a name="see-also"></a>Viz také:
 
 - [Výkon](../../../docs/framework/performance/index.md)
-- [Průvodce programováním v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../visual-basic/programming-guide/index.md)
 - [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)

@@ -30,62 +30,62 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-ms.openlocfilehash: 65fcd10521742e287c7934080b3352a06668df7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 95bef937912e35cd828bf0090b4cf48ccb3290cc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967978"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962466"
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
-Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které nejsou čísla. Interpunkce a speciální znaky znakové sady Visual Basic mají různé možnosti použití, z uspořádání textu programu k definování úkolů, které kompilátor nebo zkompilovaný program provede. Nezadávejte operaci, která se má provést.  
+Někdy je nutné použít ve svém kódu speciální znaky, tj. znaky, které nejsou abecední nebo číselné. Interpunkční znaménka a speciální znaky ve znakové sadě Visual Basic mají různá použití, od uspořádání textu programu k definování úkolů, které kompilátor nebo zkompilovaný program provádí. Neurčují operaci, která má být provedena.  
   
 ## <a name="parentheses"></a>Závorky  
- Používejte závorky definuje proceduru, třeba `Sub` nebo `Function`. Všechny seznamy argumentů postupu je nutné uzavřít do závorek. Také při použití závorek k uvedení proměnných nebo argumentů do logických skupin, zejména pro přepsání výchozí pořadí podle priority operátoru ve výrazu komplexní. Toto dokládá následující příklad.  
+ Při definování procedury, jako je `Sub` například nebo `Function`, použijte závorky. Všechny seznamy argumentů procedury musí být uzavřeny v závorkách. Můžete také použít kulaté závorky pro vložení proměnných nebo argumentů do logických skupin, zejména pro přepsání výchozího pořadí priorit operátoru ve složitém výrazu. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbcnConventions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#11)]  
   
- Po spuštění předchozího kódu, hodnota `d` je 8.225 a hodnota `e` je 3. Výpočet pro `d` používá výchozí prioritu `/` přes `+` a je ekvivalentní `d = b + (c / a)`. Závorky ve výpočtu pro `e` změnit výchozí prioritu.  
+ Po provedení předchozího kódu se `d` jedná o hodnotu 8,225 a `e` hodnota je 3. Výpočet pro `d` používá výchozí `/` prioritu přes `+` a je ekvivalentní s `d = b + (c / a)`. Závorky ve výpočtu pro `e` přepsání výchozí priority.  
   
 ## <a name="separators"></a>Oddělovače  
- Oddělovače udělat, co jejich název napovídá: oddělují části kódu. V jazyce Visual Basic je oddělovací znak dvojtečky (`:`). Používejte oddělovače, při které chcete zahrnout více příkazů na jednom řádku namísto samostatné řádky. To šetří místo a zlepšuje čitelnost kódu. Následující příklad ukazuje tři příkazy, které jsou odděleny dvojtečkami.  
+ Oddělovače podle jejich názvu: oddělují oddíly kódu. V Visual Basic je znak oddělovače dvojtečkou (`:`). Oddělovače použijte, pokud chcete zahrnout více příkazů na jeden řádek místo samostatných řádků. Tím ušetříte místo a zlepšíte čitelnost kódu. Následující příklad ukazuje tři příkazy oddělené dvojtečkami.  
   
  [!code-vb[VbVbcnConventions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#12)]  
   
- Další informace najdete v tématu [jak: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
+ Další informace najdete v tématu [jak: Přerušit a kombinovat příkazy v](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)kódu.  
   
- Dvojtečka (`:`) znaků se také používá k identifikaci popisek příkazu. Další informace najdete v tématu [jak: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ Znak dvojtečky`:`() slouží také k identifikaci popisku příkazu. Další informace najdete v tématu [jak: Příkazy](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)Label.  
   
 ## <a name="concatenation"></a>Zřetězení  
- Použití `&` operátor pro *zřetězení*, nebo propojení řetězce. Nepleťte si jej `+` operátor, který přidá společně číselné hodnoty. Pokud používáte `+` operátor zřetězení při pracovat na číselné hodnoty, můžete získat nesprávné výsledky. Následující příklad ukazuje to.  
+ Použijte operátor pro zřetězení nebo propojení řetězců dohromady. `&` Nepleťte si ho s `+` operátorem, který přidá dohromady číselné hodnoty. Použijete-li `+` operátor k zřetězení při práci s číselnými hodnotami, můžete získat nesprávné výsledky. Následující příklad ukazuje to.  
   
  [!code-vb[VbVbcnConventions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#13)]  
   
- Po spuštění předchozího kódu, hodnota `resultA` 21.01 a hodnota `resultB` je "10.0111".  
+ Po provedení předchozího kódu se `resultA` jedná o hodnotu 21,01 a `resultB` hodnota je "10,0111".  
   
 ## <a name="member-access-operators"></a>Operátory přístupu členů  
- Chcete-li přístup ke členu typu, použijte tečku (`.`) nebo vykřičník (`!`) – operátor mezi název typu a název člena.  
+ Chcete-li získat přístup ke členu typu, použijte operátor tečka`.`() nebo vykřičník (`!`) mezi názvem typu a názvem člena.  
   
 ### <a name="dot--operator"></a>Tečka (.) Operátor  
- Použití `.` operátor na třídu, strukturu, rozhraní nebo výčet jako operátor přístupu členů. Člen může být pole, vlastnosti, události nebo metody. Toto dokládá následující příklad.  
+ `.` Použijte operátor pro třídu, strukturu, rozhraní nebo výčet jako operátor přístupu členů. Členem může být pole, vlastnost, událost nebo metoda. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbcnConventions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#14)]  
   
 ### <a name="exclamation-point--operator"></a>Vykřičník (!) Operátor  
- Použití `!` operátor pouze pro třídu nebo rozhraní jako slovník – operátor přístupu. Třída nebo rozhraní musí mít výchozí vlastnost, která přijímá jeden `String` argument. Identifikátor hned za `!` operátor stane hodnota argumentu předaného výchozí vlastnosti jako řetězec proměnné. Následující příklad ukazuje to.  
+ `!` Použijte operátor pouze pro třídu nebo rozhraní jako operátor přístupu ke slovníku. Třída nebo rozhraní musí mít výchozí vlastnost, která přijímá jeden `String` argument. Identifikátor hned za `!` operátorem se bude hodnotou argumentu předanou výchozí vlastnosti jako řetězec. Následující příklad ukazuje to.  
   
  [!code-vb[VbVbcnConventions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#15)]  
   
- Tři výstupní řádky `MsgBox` všechny zobrazit hodnotu `32856`. První řádek využívá tradiční přístup k vlastnosti `index`, druhý používá faktu, který `index` je výchozí vlastnost třídy `hasDefault`, a třetí použije slovníkový přístup ke třídě.  
+ Tři výstupní řádky `MsgBox` všech zobrazuje hodnotu `32856`. První řádek používá tradiční přístup k vlastnosti `index`, druhá využívá fakt, který `index` je výchozí vlastností třídy `hasDefault`, a třetí používá slovník přístup ke třídě.  
   
- Všimněte si, že druhý operand `!` operator musí být platným identifikátorem jazyka Visual Basic není uzavřen do dvojitých uvozovek (`" "`). Jinými slovy nelze použít textový literál nebo proměnná řetězce. Následující změnit na poslední řádek `MsgBox` volání dojde k chybě, protože `"X"` je uzavřené řetězec literálu.  
+ Všimněte si, že druhý operand `!` operátoru musí být platný identifikátor Visual Basic, který není uzavřen v uvozovkách (`" "`). Jinými slovy, nelze použít řetězcový literál nebo řetězcovou proměnnou. Následující změna na poslední řádek `MsgBox` volání vygeneruje chybu, protože `"X"` je uzavřený řetězcový literál.  
   
  `"Dictionary access returns " & hD!"X")`  
   
 > [!NOTE]
->  Odkazy na výchozích kolekcí musí být explicitní. Zejména, nelze použít `!` operátor u proměnné s pozdní vazbou.  
+> Odkazy na výchozí kolekce musí být explicitní. Konkrétně nemůžete použít `!` operátor pro proměnnou s pozdní vazbou.  
   
- `!` Znak slouží také jako `Single` znak.  
+ Znak je také použit `Single` jako znak typu. `!`  
   
 ## <a name="see-also"></a>Viz také:
 

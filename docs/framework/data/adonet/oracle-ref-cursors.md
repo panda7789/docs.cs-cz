@@ -2,47 +2,47 @@
 title: Soubory Oracle REF CURSOR
 ms.date: 03/30/2017
 ms.assetid: c6b25b8b-0bdd-41b2-9c7c-661f070c2247
-ms.openlocfilehash: 0a98bfd401aaabfb754c422cc753bc5092f9f76c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7c6b326b15a2af58da9206adf28070e57fec600c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963504"
 ---
 # <a name="oracle-ref-cursors"></a>Soubory Oracle REF CURSOR
-Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF CURSOR** datového typu. Při použití zprostředkovatele dat pro práci se soubory Oracle REF CURSOR, měli byste zvážit následující chování.  
+Zprostředkovatel dat .NET Framework pro Oracle podporuje datový typ **textový kurzor Oracle ref** . Pokud používáte zprostředkovatele dat pro práci s REFERENČNÍmi KURZORy Oracle, měli byste zvážit následující chování.  
   
 > [!NOTE]
->  Některá chování se liší od těch, které zprostředkovatel Microsoft OLE DB pro Oracle (MSDAORA).  
+> Některé chování se liší od Zprostředkovatel Microsoft OLE DB pro Oracle (MADAORA).  
   
-- Z důvodů výkonu Data Provider pro Oracle nemá vazbu automaticky **REF CURSOR** datové typy, stejně jako MSDAORA, pokud je explicitně neurčíte.  
+- Z důvodů výkonu Zprostředkovatel dat pro Oracle automaticky navazovat datové typy **REF CURSOR** , jako madaora, pokud je explicitně neurčíte.  
   
-- Poskytovatel dat nepodporuje žádné ODBC řídicí sekvence, včetně řídicí {třídy resultset} používá k určení parametry REF CURSOR.  
+- Zprostředkovatel dat nepodporuje žádné řídicí sekvence ODBC, včetně řídicího panelu {resultset}, který slouží k zadání parametrů REF CURSOR.  
   
-- K provedení uložené procedury, která vrací typů REF CURSOR, je nutné definovat parametry <xref:System.Data.OracleClient.OracleParameterCollection> s <xref:System.Data.OracleClient.OracleType> z **kurzor** a <xref:System.Data.OracleClient.OracleParameter.Direction%2A> z **výstup**. Zprostředkovatel dat podporuje jako výstupní parametry pouze vazby typů REF CURSOR. Zprostředkovatel nepodporuje typů REF CURSOR jako vstupní parametry.  
+- Chcete-li spustit uloženou proceduru, která vrací referenční kurzory, je nutné definovat <xref:System.Data.OracleClient.OracleParameterCollection> parametry v <xref:System.Data.OracleClient.OracleType> prvku s kurzorem <xref:System.Data.OracleClient.OracleParameter.Direction%2A> a **výstupem**. Zprostředkovatel dat podporuje vazby referenčních odkazů pouze jako výstupní parametry. Zprostředkovatel nepodporuje referenční KURZORy jako vstupní parametry.  
   
-- Získání <xref:System.Data.OracleClient.OracleDataReader> z parametru hodnota není podporována. Hodnoty jsou typu <xref:System.DBNull> po spuštění příkazu.  
+- Získání hodnoty <xref:System.Data.OracleClient.OracleDataReader> z parametru není podporováno. Hodnoty jsou typu <xref:System.DBNull> po provedení příkazu.  
   
-- Jediná **CommandBehavior** hodnota výčtu, která funguje s typů REF CURSOR (například při volání metody <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>) je **CloseConnection**; případné další se ignorují.  
+- Jediná hodnota výčtu **CommandBehavior** , která funguje s referenčními kurzory (například při volání <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>), je **CloseConnection**; všechny ostatní jsou ignorovány.  
   
-- Pořadí typů REF CURSOR v **připojení OracleDataReader** pořadí parametrů v závisí **OracleParameterCollection**. <xref:System.Data.OracleClient.OracleParameter.ParameterName%2A> Vlastnost se ignoruje.  
+- Pořadí REFERENČNÍch KURZORů v **OracleDataReader** závisí na pořadí parametrů v **OracleParameterCollection**. <xref:System.Data.OracleClient.OracleParameter.ParameterName%2A> Vlastnost je ignorována.  
   
-- PL/SQL **tabulky** datový typ není podporován. Typů REF CURSOR jsou však efektivnější. Pokud je nutné použít **tabulky** datový typ, použijte zprostředkovatele OLE DB .NET Data Provider s MSDAORA.  
+- Datový typ **tabulka** PL/SQL není podporován. Nicméně referenční KURZORy jsou efektivnější. Pokud je nutné použít datový typ **tabulka** , použijte OLE DB .NET zprostředkovatel dat s madaora.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Příklady REF CURSOR](../../../../docs/framework/data/adonet/ref-cursor-examples.md)  
- Obsahuje tři příklady, které ukazují používání typů REF CURSOR.  
+ Obsahuje tři příklady, které ukazují použití REF CURSOR.  
   
  [Parametry REF CURSOR v čtečce OracleDataReader](../../../../docs/framework/data/adonet/ref-cursor-parameters-in-an-oracledatareader.md)  
- Ukazuje, jak provést PL/uložené procedury SQL, který vrací parametr REF CURSOR a přečte hodnotu jako **připojení OracleDataReader**.  
+ Ukazuje, jak spustit uloženou proceduru PL/SQL, která vrací parametr REF CURSOR, a přečte hodnotu jako **OracleDataReader**.  
   
  [Načítání dat z více typů REF CURSOR pomocí čtečky OracleDataReader](../../../../docs/framework/data/adonet/retrieving-data-from-multiple-ref-cursors.md)  
- Ukazuje, jak provést PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a čte hodnoty pomocí **připojení OracleDataReader**.  
+ Ukazuje, jak spustit uloženou proceduru PL/SQL, která vrací dva parametry REF CURSOR a přečte hodnoty pomocí **OracleDataReader**.  
   
  [Naplnění datové sady pomocí jednoho nebo více typů REF CURSOR](../../../../docs/framework/data/adonet/filling-a-dataset-using-one-or-more-ref-cursors.md)  
- Ukazuje, jak provést PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a doplní <xref:System.Data.DataSet> s řádky, které jsou vráceny.  
+ Ukazuje, jak spustit uloženou proceduru PL/SQL, která vrací dva parametry REF CURSOR a vyplní <xref:System.Data.DataSet> řádky, které jsou vráceny.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

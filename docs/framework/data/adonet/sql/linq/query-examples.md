@@ -2,22 +2,22 @@
 title: Příklady dotazů
 ms.date: 03/30/2017
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
-ms.openlocfilehash: 74664dd98ac067153894edc934c8f15eec407261
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7be01abf568ed089089b1bc25d2a175f78ae7f7f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783107"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962746"
 ---
 # <a name="query-examples"></a>Příklady dotazů
-Tato část obsahuje příklady jazyka Visual Basic a C# z typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy. Vývojářům používajícím Visual Studio můžete najít mnoho dalších příkladů v ukázkovém řešení, která je k dispozici v části Ukázky. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  
+Tato část poskytuje Visual Basic a C# Příklady typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazů. Vývojáři, kteří používají Visual Studio, mohou najít mnoho dalších příkladů v ukázkovém řešení, které je k dispozici v části ukázky. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  
   
 > [!IMPORTANT]
->  *DB* se často používá v příkladech kódu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci. *DB* je považován za instanci *Northwind* třída, která dědí z <xref:System.Data.Linq.DataContext>.  
+> *DB* se často používá v příkladech kódu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v dokumentaci. *databáze* se předpokládá jako instance třídy *Northwind* , která dědí z <xref:System.Data.Linq.DataContext>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
- Popisuje způsob použití <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>a tak dále.  
+ Popisuje, jak používat <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>a tak dále.  
   
  [Vrácení prvního prvku v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-the-first-element-in-a-sequence.md)  
  Poskytuje příklady použití <xref:System.Linq.Enumerable.First%2A>.  
@@ -59,20 +59,20 @@ Tato část obsahuje příklady jazyka Visual Basic a C# z typických [!INCLUDE[
  Poskytuje příklady použití <xref:System.Linq.Enumerable.AsEnumerable%2A>.  
   
  [Formulování spojení a dotazů napříč produkty](../../../../../../docs/framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)  
- Poskytuje příklady použití navigace cizího klíče `from`, `where`, a `select` klauzule.  
+ Poskytuje příklady použití navigace pomocí cizího klíče v `from`klauzulích, `where`a `select` .  
   
  [Formulování projekcí](../../../../../../docs/framework/data/adonet/sql/linq/formulate-projections.md)  
- Obsahuje příklady kombinování `select` s jinými funkcemi (například *anonymní typy*) do formuláře projekce dotazů.  
+ Obsahuje příklady kombinace `select` s dalšími funkcemi (například *anonymní typy*) pro vytvoření projekce dotazů.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled standardních operátorů dotazu (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- Vysvětluje pojem standardních operátorů dotazu pomocí C#.  
+ [Přehled standardních operátorů dotazůC#()](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ Vysvětluje koncept standardních operátorů dotazu pomocí C#.  
   
- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- Vysvětluje pojem standardních operátorů pro dotazování pomocí jazyka Visual Basic.  
+ [Přehled standardních operátorů dotazů (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ Vysvětluje koncept standardních operátorů dotazu pomocí Visual Basic.  
   
  [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
- Vysvětluje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá koncepty, které se vztahují na dotazy.  
+ Vysvětluje způsob [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] použití konceptů, které se vztahují na dotazy.  
   
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
- Poskytuje portál na témata, která vysvětluje koncepty programování související s [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].
+ Poskytuje portál pro témata, která vysvětlují koncepty programování [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]související se službou.

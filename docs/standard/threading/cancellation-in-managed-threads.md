@@ -10,143 +10,143 @@ helpviewer_keywords:
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdf8d41a99328a8c8fd31eca974e52082abb7e79
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 3e39ee597f5142f2b3ccbd4ded49e59d6700ec8a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490784"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960146"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
-Od verze rozhraní .NET Framework 4, .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  
+Počínaje .NET Framework 4 používá .NET Framework jednotný model pro spolupráci se zrušením asynchronních nebo dlouhodobě spuštěných synchronních operací. Tento model je založen na odlehčeném objektu nazývaném token zrušení. Objekt, který vyvolá jednu nebo více operací, které lze zrušit, například vytvořením nových vláken nebo úkolů, předá token každé operaci. Jednotlivé operace mohou v nástroji předat kopie tokenu jiným operacím. V některých případech může objekt, který vytvořil token, použít ho k vyžádání, že operace přestanou dělat, co dělají. Pouze žádající objekt může vystavit žádost o zrušení a každý naslouchací proces zodpovídá za všímáteí žádosti a na ni včas reagovat.  
   
- Je obecný vzor implementace vzoru kooperativní zrušení:  
+ Obecný vzor pro implementaci modelu zrušení spolupráce je:  
   
-- Vytvořit instanci <xref:System.Threading.CancellationTokenSource> objektu, který spravuje a odešle oznámení o zrušení tokenů jednotlivé zrušení.  
+- Vytvořte instanci objektu, který spravuje a odesílá oznámení o zrušení na jednotlivé tokeny zrušení. <xref:System.Threading.CancellationTokenSource>  
   
-- Předat token vrácený <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost pro každý úkol nebo vláknem, které čeká na zrušení.  
+- Předání tokenu vráceného <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastností každému úkolu nebo vláknu, který naslouchá ke zrušení.  
   
-- Poskytuje mechanismus pro každý úkol nebo vlákno reagovat na zrušení.  
+- Poskytněte mechanismus pro každý úkol nebo vlákno, které budou reagovat na zrušení.  
   
-- Volání <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k dispozici oznámení o zrušení.  
+- <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> Zavolejte metodu pro poskytnutí oznámení o zrušení.  
   
 > [!IMPORTANT]
->  <xref:System.Threading.CancellationTokenSource> Implementuje třída <xref:System.IDisposable> rozhraní. By měl nezapomeňte volat <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> metoda po dokončení používání zdroje tokenu zrušení uvolnit žádné nespravované prostředky, které obsahuje.  
+> <xref:System.Threading.CancellationTokenSource> Třída<xref:System.IDisposable> implementuje rozhraní. Měli byste být schopni zavolat <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> metodu po dokončení použití zdroje tokenu zrušení pro uvolnění jakýchkoli nespravovaných prostředků, které obsahuje.  
   
- Následující ilustrace znázorňuje vztah mezi zdrojem tokenu a všechny kopie svůj token.  
+ Následující ilustrace znázorňuje vztah mezi zdrojem tokenu a všemi kopiemi jeho tokenu.  
   
- ![CancellationTokenSource – a zrušení tokenů](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
+ ![CancellationTokenSource a zrušení tokenů](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")  
   
- Nový model zrušení usnadňuje vytváření aplikací pracujících s zrušení a knihoven a podporuje následující funkce:  
+ Nový model zrušení usnadňuje vytváření aplikací a knihoven s podporou zrušení a podporuje následující funkce:  
   
-- Zrušení je spolupráce a nebude se vynucovat na naslouchací proces. Naslouchací proces určuje, jak v reakci na žádost o zrušení řádně ukončit.  
+- Zrušení je kooperativní a není vynuceno na naslouchací službě. Naslouchací proces určuje, jak se má řádně ukončit reakce na žádost o zrušení.  
   
-- Požaduje se liší od naslouchání. Objekt, který vyvolá zrušitelnou operaci můžete řídit, kdy (Pokud) je požadováno zrušení.  
+- Požadavek se liší od naslouchání. Objekt, který vyvolá operaci s možnou metodou zrušení, může řídit, kdy se požaduje zrušení zrušení.  
   
-- Žádost o objekt vydá požadavek na zrušení u všech kopií token s použitím pouze jedné metody volání.  
+- Žádající objekt vydá žádost o zrušení všem kopiím tokenu pomocí volání pouze jednoho volání metody.  
   
-- Naslouchací proces mohl naslouchat více tokenů současně jejich sloučením do jedné *propojené token*.  
+- Naslouchací proces může naslouchat více tokeny současně jejich připojením k jednomu *odkazovanému tokenu*.  
   
-- Uživatelský kód můžete zaznamenat a odpovědět na požadavky zrušení z knihovny kódu a kód knihovny můžete zaznamenat a odpovědět na požadavky zrušení z uživatelského kódu.  
+- Uživatelský kód může všimnout a reagovat na žádosti o zrušení z kódu knihovny a kód knihovny může všimnout a reagovat na žádosti o zrušení z uživatelského kódu.  
   
-- Naslouchací procesy můžete dostávat oznámení žádostí o zrušení dotazování, registrace zpětného volání a čekání na obslužné rutiny čekání.  
+- Naslouchací procesy mohou být upozorňovány na žádosti o zrušení pomocí cyklického dotazování, registrace zpětného volání nebo čekání na obslužné rutiny čekání.  
   
 ## <a name="cancellation-types"></a>Typy zrušení  
- Zrušení framework je implementované jako sada souvisejících typů, které jsou uvedeny v následující tabulce.  
+ Rozhraní zrušení je implementováno jako sada souvisejících typů, které jsou uvedeny v následující tabulce.  
   
 |Název typu|Popis|  
 |---------------|-----------------|  
-|<xref:System.Threading.CancellationTokenSource>|Objekt, který vytvoří token zrušení a také vystaví žádost o zrušení pro všechny kopie tohoto tokenu.|  
-|<xref:System.Threading.CancellationToken>|Zjednodušené hodnotu předán typ na jeden nebo více naslouchacích procesů, obvykle jako parametr metody. Naslouchací procesy monitorování hodnoty `IsCancellationRequested` vlastnost tokenu dotazování, zpětné volání nebo popisovač čekání.|  
-|<xref:System.OperationCanceledException>|Přetížení konstruktoru tuto výjimku přijmout <xref:System.Threading.CancellationToken> jako parametr. Naslouchacích procesů může volitelně vyvolat tuto výjimku ověřit zdroj zrušení a informovat ostatní, které odpověděl na požadavek na zrušení.|  
+|<xref:System.Threading.CancellationTokenSource>|Objekt, který vytvoří token zrušení, a také vydá požadavek na zrušení pro všechny kopie tohoto tokenu.|  
+|<xref:System.Threading.CancellationToken>|Nenáročný typ hodnoty předaný jednomu nebo více posluchačům, obvykle jako parametr metody. Naslouchací procesy monitorují hodnotu `IsCancellationRequested` vlastnosti tokenu pomocí cyklického dotazování, zpětného volání nebo popisovače čekání.|  
+|<xref:System.OperationCanceledException>|Přetížení konstruktoru této výjimky přijímají <xref:System.Threading.CancellationToken> jako parametr. Naslouchací procesy mohou volitelně vyvolat tuto výjimku za účelem ověření zdroje zrušení a informování dalších uživatelů, že odpověděli na žádost o zrušení.|  
   
- Nový model zrušení je integrovaná v rozhraní .NET Framework v několika typech. Nejdůležitější ty jsou <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>. Doporučujeme použít tento nový model zrušení pro všechny nové kód knihovny a aplikace.  
+ Nový model zrušení je integrován do .NET Framework v několika typech. Nejdůležitějšími <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>těmi jsou <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , a .<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> Pro všechny nové knihovny a kód aplikace doporučujeme použít tento nový model zrušení.  
   
 ## <a name="code-example"></a>Příklad kódu  
- V následujícím příkladu se vytvoří žádost o objekt <xref:System.Threading.CancellationTokenSource> objektu a předává jeho <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost zrušitelnou operaci. Operace, která obdrží požadavek monitoruje hodnotu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost tokenu cyklického dotazování. Pokud tato hodnota začne `true`, můžete ve svých ukončí naslouchací proces. V tomto příkladu metoda právě ukončí, což je vše, co je nutné v mnoha případech.  
+ V následujícím příkladu žádající objekt vytvoří <xref:System.Threading.CancellationTokenSource> objekt a poté předá jeho <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost operaci, kterou lze zrušit. Operace, která přijme požadavek, monitoruje hodnotu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnosti tokenu pomocí cyklického dotazování. Když se hodnota přestanou `true`, naslouchací proces může skončit jakýmkoli způsobem. V tomto příkladu metoda pouze ukončí, což je vše vyžadované v mnoha případech.  
   
 > [!NOTE]
->  V příkladu se používá <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> metoda prokázat, že je kompatibilní s starší verze rozhraní API rozhraní nové zrušení. Příklad, který používá nový, upřednostňované <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> zadejte naleznete v tématu [jak: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+> V příkladu se používá <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> metoda k předvedení, že nové rozhraní zrušení je kompatibilní se staršími rozhraními API. Příklad, který používá nový preferovaný <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typ, naleznete v tématu [How to: Zruší úlohu a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
  [!code-csharp[Cancellation#1](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex1.cs#1)]
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  
   
-## <a name="operation-cancellation-versus-object-cancellation"></a>Operace zrušení a zrušení objektu  
- V rámci nové zrušení zrušení odkazuje na operace, ne objekty. Žádost o zrušení znamená, že by se měla operaci zastavit co nejdříve po provedení všechny potřebné vyčištění. Jeden token zrušení by měla odkazovat na jeden "zrušitelnou operaci,", ale tuto operaci mohou být implementovány v aplikaci. Po <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost tokenu je nastavená na `true`, nelze jej obnovit do `false`. Proto tokeny zrušení nemůže být znovu použité po byla zrušena.  
+## <a name="operation-cancellation-versus-object-cancellation"></a>Zrušení operace versus zrušení objektu  
+ V novém rozhraní zrušení odkazuje zrušení na operace, nikoli na objekty. Žádost o zrušení znamená, že operace by se měla zastavit co nejdříve po provedení veškerého potřebného vyčištění. Jeden token zrušení by měl odkazovat na jednu operaci, kterou lze zrušit, tato operace však může být implementována v programu. Po nastavení `true` `false`vlastnosti tokenu na hodnotu nemůže být obnovena. <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> Proto se tokeny zrušení po zrušení nedají znovu použít.  
   
- Pokud budete potřebovat mechanismus zrušení objektu, můžete založit ho na mechanismu zrušení operace voláním <xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType> způsob, jak je znázorněno v následujícím příkladu.  
+ Pokud vyžadujete mechanismus zrušení objektu, můžete ho založit na mechanismu zrušení operace voláním <xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType> metody, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[Cancellation#2](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/objectcancellation1.cs#2)]
  [!code-vb[Cancellation#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/objectcancellation1.vb#2)]  
   
- Pokud objekt podporuje víc souběžných zrušitelnou operaci, předejte samostatný token jako vstup pro každý jedinečných zrušitelnou operaci. Tímto způsobem, aniž by to ovlivnilo ostatní lze zrušit jednu operaci.  
+ Pokud objekt podporuje více než jednu souběžnou operaci, která může být zrušena, předejte samostatný token jako vstup do každé samostatné operace zrušení. Tímto způsobem je možné zrušit jednu operaci, aniž by to ovlivnilo ostatní.  
   
-## <a name="listening-and-responding-to-cancellation-requests"></a>Naslouchání a reagovat na požadavky zrušení  
- Implementátor zrušitelnou operaci v uživatelském delegátu, určuje, jak ukončit operaci v reakci na žádost o zrušení. V mnoha případech můžete uživatelský delegát provést všechny potřebné vyčištění a vrátíte se okamžitě.  
+## <a name="listening-and-responding-to-cancellation-requests"></a>Naslouchat a reagovat na žádosti o zrušení  
+ V uživatelském delegátu může implementátor operace s zrušením určit, jak ukončit operaci v reakci na žádost o zrušení. V mnoha případech může delegát uživatele provést pouze požadované vyčištění a pak hned vrátit.  
   
- Nicméně v složitějších případech bude pravděpodobně nutné pro uživatelský delegát oznámit kód knihovny, který má došlo ke zrušení. V takovém případě je správný způsob ukončení operace pro delegáta pro volání <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, metodu, která způsobí, že <xref:System.OperationCanceledException> vyvolání. Kód knihovny můžete tuto výjimku zachytit na vlákně uživatelského delegáta a zkontrolujte token této výjimky k určení, zda výjimku označuje kooperativní zrušení nebo některé jiné výjimečné situace.  
+ Ve složitějších případech ale může být nutné, aby uživatel s delegátem upozornil na kód knihovny, ke kterému došlo ke zrušení. V takových případech je správný způsob, jak operaci ukončit, je pro delegáta volat <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>metodu, která <xref:System.OperationCanceledException> způsobí vyvolání. Kód knihovny může zachytit tuto výjimku ve vlákně delegáta uživatele a ověřit token výjimky a zjistit, zda výjimka označuje kooperativní zrušení nebo jinou výjimečnou situaci.  
   
- <xref:System.Threading.Tasks.Task> Třídy obslužné rutiny <xref:System.OperationCanceledException> tímto způsobem. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md).  
+ <xref:System.Threading.Tasks.Task> Třída zpracovává<xref:System.OperationCanceledException> tímto způsobem. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md).  
   
-### <a name="listening-by-polling"></a>Naslouchání cyklického dotazování  
- Pro dlouhodobé výpočtů tuto smyčku nebo recurse, může naslouchat pro žádost o zrušení pomocí pravidelně cyklického dotazování hodnotu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> vlastnost. Pokud je jeho hodnota `true`, metoda by měla vyčistit a ukončit tak rychle. Optimální frekvence cyklického dotazování závisí na typu aplikace. Je pro vývojáře k určení nejlepší četnost pro libovolný daný program dotazování. Dotazování samotný není výrazně ovlivnit výkon. Následující příklad ukazuje jeden možný způsob, jak dotazovat.  
+### <a name="listening-by-polling"></a>Naslouchání pomocí cyklického dotazování  
+ U dlouhotrvajících výpočtů, které cyklují nebo rekurzování můžete poslouchat žádost o zrušení pravidelným dotazování hodnoty <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> vlastnosti. Pokud je `true`jeho hodnota, metoda by měla co nejrychleji vyčistit a ukončit. Optimální frekvence cyklického dotazování závisí na typu aplikace. Aby bylo možné určit nejlepší četnost dotazování pro libovolný daný program, je to pro vývojáře. Cyklické dotazování sama o sobě nijak neovlivňuje výkon. Následující příklad ukazuje jeden možný způsob dotazování.  
   
  [!code-csharp[Cancellation#3](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#3)]
  [!code-vb[Cancellation#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex11.vb#3)]  
   
- Podrobnější příklad naleznete v tématu [jak: Naslouchání požadavkům zrušení dotazováním](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md).  
+ Úplnější příklad naleznete v tématu [How to: Naslouchat žádostem o zrušení pomocí](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md)cyklického dotazování.  
   
-### <a name="listening-by-registering-a-callback"></a>Naslouchání tak, že zaregistrujete zpětné volání  
- Některé operace můžou tak, že se nelze vrátit hodnota tokenu zrušení se změnami tak včas nereflektují zablokování. Pro tyto případy můžete zaregistrovat metodu zpětného volání, která se odblokuje metodu, když je obdržena žádost o zrušení.  
+### <a name="listening-by-registering-a-callback"></a>Naslouchání registrací zpětného volání  
+ Některé operace se mohou zablokovat takovým způsobem, že nemohou včas kontrolovat hodnotu tokenu zrušení. V těchto případech můžete zaregistrovat metodu zpětného volání, která odblokuje metodu při přijetí žádosti o zrušení.  
   
- <xref:System.Threading.CancellationToken.Register%2A> Metoda vrátí hodnotu <xref:System.Threading.CancellationTokenRegistration> objekt, který je speciálně pro tento účel použít. Následující příklad ukazuje způsob použití <xref:System.Threading.CancellationToken.Register%2A> metodu zrušení asynchronní webový požadavek.  
+ <xref:System.Threading.CancellationToken.Register%2A> Metoda<xref:System.Threading.CancellationTokenRegistration> vrátí objekt, který se používá specificky pro tento účel. Následující příklad ukazuje, jak použít <xref:System.Threading.CancellationToken.Register%2A> metodu pro zrušení asynchronního webového požadavku.  
   
  [!code-csharp[Cancellation#4](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex4.cs#4)]
  [!code-vb[Cancellation#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex4.vb#4)]  
   
- <xref:System.Threading.CancellationTokenRegistration> Objekt spravuje synchronizaci vláken a zajistí, že zpětné volání se zastaví provádění na konkrétním místě v čase.  
+ <xref:System.Threading.CancellationTokenRegistration> Objekt spravuje synchronizaci vláken a zajišťuje, že zpětné volání přestane být spuštěno v přesném bodě v čase.  
   
- Aby bylo možné zajistit rychlost odezvy systému a aby se zabránilo zablokování podle následujících pokynů musí následovat při registraci zpětná volání:  
+ Aby se zajistila odezva systému a aby se zabránilo zablokování, při registraci zpětných volání musí být dodrženy následující pokyny:  
   
-- Metoda zpětného volání by mělo být rychle, protože je volána synchronně a proto volání <xref:System.Threading.CancellationTokenSource.Cancel%2A> nevrací až do zpětného volání vrátí.  
+- Metoda zpětného volání by měla být rychlá, protože je volána synchronně, proto volání <xref:System.Threading.CancellationTokenSource.Cancel%2A> nevrátí, dokud zpětné volání nevrátí.  
   
-- Při volání <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> zpětného volání je spuštěn a uchování, která zpětné volání čeká na zámek, váš program může zablokování. Po `Dispose` vrátí, můžete uvolnit všechny prostředky vyžadované zpětného volání.  
+- Pokud zavoláte <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> na běhu zpětného volání a podržíte zámek, na kterém zpětné volání čeká, váš program může zablokovat. Po `Dispose` návratu můžete uvolnit všechny prostředky, které zpětné volání vyžaduje.  
   
-- Zpětná volání neměli provádět jakékoli ruční vlákno nebo <xref:System.Threading.SynchronizationContext> využití ve zpětném volání. Pokud zpětné volání, musíte spustit na konkrétní vlákno, použijte <xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> konstruktor, který vám umožňuje určit, že cíl syncContext je aktivní <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType>. Provádění ruční práce s vlákny ve zpětném volání může způsobit zablokování.  
+- Zpětná volání by neměla provádět žádné ruční vlákno <xref:System.Threading.SynchronizationContext> nebo použití ve zpětném volání. Pokud zpětné volání musí být spuštěno v konkrétním vlákně, <xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> použijte konstruktor, který umožňuje určit, že cílový syncContext je aktivní. <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> Ruční provádění vláken ve zpětném volání může způsobit zablokování.  
   
- Podrobnější příklad naleznete v tématu [jak: Registrace zpětných volání pro požadavky zrušení](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md).  
+ Úplnější příklad naleznete v tématu [How to: Zaregistrujte zpětná volání](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md)pro žádosti o zrušení.  
   
-### <a name="listening-by-using-a-wait-handle"></a>Naslouchání pomocí popisovač čekání  
- Pokud můžete zablokovat zrušitelnou operaci během čekání v rámci synchronizačního primitiva, jako <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> nebo <xref:System.Threading.Semaphore?displayProperty=nameWithType>, můžete použít <xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> vlastností pro povolení operace čekání na události a žádost o zrušení. Popisovač čekání token zrušení bude stát signalizovanými v reakci na žádost o zrušení a metodu můžete použít na návratový typ <xref:System.Threading.WaitHandle.WaitAny%2A> metodou ke zjištění, zda byla zrušení token, který signál. Operace následně právě ukončete, nebo vyvolat <xref:System.OperationCanceledException>podle potřeby.  
+### <a name="listening-by-using-a-wait-handle"></a>Poslech pomocí popisovače čekání  
+ Když se může zrušit operace, která může být zablokovaná, zatímco čeká na primitivu <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> synchronizace <xref:System.Threading.Semaphore?displayProperty=nameWithType>, jako je nebo <xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> , můžete vlastnost použít k povolení operace počkat na událost i na žádost o zrušení. Obslužná rutina čekání na token zrušení se bude signalizovat jako odpověď na žádost o zrušení a metoda může použít návratovou hodnotu <xref:System.Threading.WaitHandle.WaitAny%2A> metody k určení, zda se jednalo o token zrušení, který signalizace. Operace pak může pouze skončit nebo vyvolat <xref:System.OperationCanceledException>, podle potřeby.  
   
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
  [!code-vb[Cancellation#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#5)]  
   
- V novém kódu, který cílí na rozhraní .NET Framework 4 <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> a <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> podporovaly nový rámec zrušení v jejich `Wait` metody. Můžete předat <xref:System.Threading.CancellationToken> metody, a pokud se požaduje zrušení, události probudí a vyvolá výjimku <xref:System.OperationCanceledException>.  
+ V novém kódu, který cílí na .NET Framework 4 <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> , <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> a obě podporují nové rozhraní zrušení v jejich `Wait` metodách. Můžete předat <xref:System.Threading.CancellationToken> metodě a když je požadováno zrušení, událost se probudí a <xref:System.OperationCanceledException>vyvolá.  
   
  [!code-csharp[Cancellation#6](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#6)]
  [!code-vb[Cancellation#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex10.vb#6)]  
   
- Podrobnější příklad naleznete v tématu [jak: Naslouchání požadavkům zrušení, které mají obslužné rutiny čekání](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md).  
+ Úplnější příklad naleznete v tématu [How to: Naslouchat žádostem o zrušení, které](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md)mají obslužné rutiny čekání.  
   
-### <a name="listening-to-multiple-tokens-simultaneously"></a>Naslouchání současně více tokenů  
- V některých případech může mít naslouchací proces nenaslouchá na více tokenů zrušení současně. Například může mít zrušitelnou operaci monitorování token zrušení interní kromě token předaný externě jako argument pro parametr metody. K tomu vytvořte zdroj propojené token, který se můžete zapojit do dvou nebo více tokenů do jednoho tokenu, jak je znázorněno v následujícím příkladu.  
+### <a name="listening-to-multiple-tokens-simultaneously"></a>Souběžné naslouchat více tokenům  
+ V některých případech může naslouchací proces naslouchat více tokenům zrušení současně. Například operace s zrušením může být nutné monitorovat interní token zrušení kromě tokenu předaného externě jako argument parametru metody. Chcete-li to provést, vytvořte propojený zdroj tokenu, který může spojit dva nebo více tokenů do jednoho tokenu, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[Cancellation#7](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#7)]
  [!code-vb[Cancellation#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex13.vb#7)]  
   
- Všimněte si, že je nutné volat `Dispose` na propojený zdroj tokenu, až budete hotovi s ním. Podrobnější příklad naleznete v tématu [jak: Naslouchání více požadavkům zrušení](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md).  
+ Všimněte si, že když `Dispose` s ním budete hotovi, musíte zavolat na propojený zdroj tokenu. Úplnější příklad naleznete v tématu [How to: Naslouchat více žádostem](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md)o zrušení.  
   
-## <a name="cooperation-between-library-code-and-user-code"></a>Spolupráce mezi kód knihovny a kód uživatele  
- Rozhraní unified zrušení umožňuje kód knihovny zrušit uživatelský kód a kód uživatele zrušit kód knihovny na způsob spolupráce za. Smooth spolupráce, závisí na každé straně držet těchto pokynů:  
+## <a name="cooperation-between-library-code-and-user-code"></a>Spolupráce mezi kódem knihovny a uživatelským kódem  
+ Jednotná architektura zrušení umožňuje kódu knihovny zrušit kód uživatele a kód pro zrušení kódu knihovny. Bezproblémová spolupráce závisí na každé ze strany těchto pokynů:  
   
-- Pokud kód knihovny poskytuje operace zaslána, měl by také poskytovat veřejné metody, které přijímají token zrušení externí tak, aby uživatelský kód, můžete požádat o zrušení.  
+- Pokud kód knihovny poskytuje operace, které lze zrušit, měla by také poskytovat veřejné metody, které přijímají externí token zrušení, aby mohl kód uživatele požádat o zrušení.  
   
-- Volá-li kód knihovny do uživatelského kódu, kód knihovny by měl interpretovat OperationCanceledException(externalToken) jako *kooperativní zrušení*a nikoli jako výjimky na chyby.  
+- Pokud kód knihovny volá do uživatelského kódu, kód knihovny by měl interpretovat OperationCanceledException (externalToken) jako *kooperativní zrušení*a nemusí nutně znamenat výjimku selhání.  
   
-- Uživatelské delegáty mají pokusit odpovědět na požadavky zrušení z kódu knihovny včas.  
+- Delegáti uživatele by se měli snažit včas odpovědět na žádosti o zrušení z kódu knihovny.  
   
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady tříd, které postupujte podle následujících pokynů. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [jak: Zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
+ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady tříd, které následují podle těchto pokynů. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [postup: Zruší dotaz](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)PLINQ.  
   
 ## <a name="see-also"></a>Viz také:
 

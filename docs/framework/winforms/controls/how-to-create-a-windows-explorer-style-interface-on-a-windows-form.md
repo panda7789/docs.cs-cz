@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], Explorer-style interface
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
-ms.openlocfilehash: db2c5431dfb0156c1508a18ef13d2af80eb4981b
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 34a5cd735c350688d9e83003806668e213932c85
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039537"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960627"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms
 Průzkumník Windows je běžná volba uživatelského rozhraní pro aplikace z důvodu své připravenosti.
@@ -35,7 +35,7 @@ Průzkumník Windows je běžná volba uživatelského rozhraní pro aplikace z 
 3. Vyberte všechny tři ovládací prvky tak, že stisknete klávesu CTRL a pak je kliknete zase. Když vyberete <xref:System.Windows.Forms.SplitContainer> ovládací prvek, klikněte na rozdělovač, nikoli na panely.
 
     > [!NOTE]
-    >  V nabídce **Úpravy** nepoužívejte příkaz **Select All** . Pokud tak učiníte, vlastnost potřebná v dalším kroku se nezobrazí v okně **vlastnosti** .
+    > V nabídce **Úpravy** nepoužívejte příkaz **Select All** . Pokud tak učiníte, vlastnost potřebná v dalším kroku se nezobrazí v okně **vlastnosti** .
 
 4. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost na <xref:System.Windows.Forms.DockStyle.Fill>hodnotu.
 
@@ -44,7 +44,7 @@ Průzkumník Windows je běžná volba uživatelského rozhraní pro aplikace z 
      Ve formuláři se zobrazí uživatelské rozhraní se dvěma částmi, podobně jako v Průzkumníkovi Windows.
 
     > [!NOTE]
-    >  Při přetahování rozdělovače se panely změní samy na sebe.
+    > Při přetahování rozdělovače se panely změní samy na sebe.
 
 ## <a name="see-also"></a>Viz také:
 

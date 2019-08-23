@@ -4,47 +4,47 @@ ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 833d31c48220e2d2b5d07ee482325df090714329
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 69a4addbd00c119af4336faae2cd0f8fc31f8852
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052422"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941616"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
-.NET native zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), and [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  
+.NET Native obsahuje tři nové typy výjimek: [System. Runtime. CompilerServices. MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)a [System. Reflection. MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Všimněte si následujících informací o všech třech typech výjimek:  
   
  Tyto typy jsou pouze pro interní použití.  
- Tyto typy tři výjimek jsou pro použití pouze .NET Native řetězec nástroje. Výjimky jsou vyvolány, když zjistí chybí data, která neumožňuje pokračovat v provádění programu .NET Native řetězec nástroje.  
+ Tyto tři typy výjimek jsou pouze pro použití řetězu nástroje .NET Native. Výjimky jsou vyvolány, když řetěz nástrojů .NET Native detekuje chybějící data, která neumožňují spuštění programu pokračovat.  
   
- Ke zpracování těchto výjimek v kódu.  
- Tyto výjimky signalizují, obou těchto metadat, které vaše aplikace vyžaduje chybí ( [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky) nebo že implementační kód vyžadované vaší aplikaci chybí ( [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimka). Opravte tyto podmínky výjimek tak, že upravíte direktivy modulu runtime (. rd.xml) soubor zpřístupnit požadované metadata nebo provádění kódu za běhu. Další informace najdete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Jsou k dispozici dva Poradce při potížích, zadejte odpovídající položky k nahrání souboru direktiv modulu runtime, který odstraní [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky:  
+ Tyto výjimky v kódu nezpracujte.  
+ Tyto výjimky signalizují, že metadata potřebná vaší aplikací nejsou k dispozici (výjimky [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) ) nebo že chybí implementační kód vyžadovaný vaší aplikací ( [ Výjimka MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) ). Tyto podmínky výjimky opravíte úpravou souboru direktiv modulu runtime (. Rd. XML), aby byla požadovaná metadata nebo implementační kód k dispozici za běhu. Další informace najdete v tématu [Referenční dokumentace ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). K dispozici jsou dva poradci při potížích, které poskytují vhodné položky pro soubor direktiv runtime, který eliminuje výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) :  
   
-- [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
+- [Poradce při potížích s MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
   
-- [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
+- Metody [Poradce při potížích s MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) .  
   
 > [!NOTE]
->  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro .NET Native. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v článku <xref:System.Reflection>, <xref:System.Reflection.Context> a <xref:System.Reflection.Emit> obory názvů. Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  
+> Tento odkaz odkazuje na tři typy výjimek, které jsou jedinečné pro .NET Native. Referenční dokumentaci pro rozhraní API pro základní reflexi .NET Framework naleznete <xref:System.Reflection>v <xref:System.Reflection.Context> tématu <xref:System.Reflection.Emit> a v oborech názvů. Referenční dokumentaci k rozhraní API pro interoperabilitu .NET Framework Core najdete <xref:System.Runtime.InteropServices>v tématu.  
   
-## <a name="systemreflection-namespace"></a>Obor názvů System.Reflection  
- <xref:System.Reflection> Obor názvů obsahuje základní typy použité pro účely reflexe v rozhraní .NET Framework. Pro .NET Native zahrnuje také dva nové typy výjimek:  
-  
-|Třída|Popis|  
-|-----------|-----------------|  
-|[MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)|Výjimka, která je vyvolána při reflexi slouží k načtení metadat, která není k dispozici.|  
-|[MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)|Výjimka, která je vyvolána, když je k dispozici metadat pro typ nebo člen typu, ale byla odebrána jeho implementace.|  
-  
- Dokumentaci o ostatních typech v tomto oboru názvů, najdete v článku <xref:System.Reflection> odkazují na stránky v sadě dokumentace rozhraní .NET Framework.  
-  
-## <a name="systemruntimecompilerservices-namespace"></a>System.Runtime.CompilerServices namespace  
- <xref:System.Runtime.CompilerServices> Obor názvů obsahuje typy určený pro uživatele pomocí kompilátorů jazyka. Pro .NET Native také zahrnuje nový typ výjimky:  
+## <a name="systemreflection-namespace"></a>Obor názvů System. Reflection  
+ <xref:System.Reflection> Obor názvů obsahuje základní typy používané pro reflexi v .NET Framework. Pro .NET Native obsahuje také dva nové typy výjimek:  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|[MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)|Výjimka, která je vyvolána při zařazování metoda ruční nazývá, ale metadata pro typ nebyl nalezen ve statické analýzy nebo do souboru direktiv modulu runtime.|  
+|[MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)|Výjimka, která je vyvolána, když je použita reflexe k načtení metadat, která nejsou k dispozici.|  
+|[MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)|Výjimka, která je vyvolána, když jsou k dispozici metadata pro typ nebo člen typu, ale jeho implementace byla odebrána.|  
   
- Dokumentaci o ostatních typech v tomto oboru názvů, najdete v článku <xref:System.Runtime.CompilerServices> odkazují na stránky v sadě dokumentace rozhraní .NET Framework.  
+ Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Reflection> referenční stránky v sadě .NET Framework dokumentace.  
+  
+## <a name="systemruntimecompilerservices-namespace"></a>Obor názvů System. Runtime. CompilerServices  
+ <xref:System.Runtime.CompilerServices> Obor názvů obsahuje typy určené pro uživatele v kompilátorech jazyka. Pro .NET Native obsahuje také nový typ výjimky:  
+  
+|Třída|Popis|  
+|-----------|-----------------|  
+|[MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)|Výjimka, která je vyvolána při volání metody ručního zařazování, ale metadata pro typ nejsou nalezena statickou analýzou nebo v souboru direktiv modulu runtime.|  
+  
+ Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Runtime.CompilerServices> referenční stránky v sadě .NET Framework dokumentace.  
   
 ## <a name="see-also"></a>Viz také:
 

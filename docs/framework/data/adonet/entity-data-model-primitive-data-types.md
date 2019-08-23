@@ -2,41 +2,41 @@
 title: Model EDM (Entity Data Model) Primitivní datové typy
 ms.date: 03/30/2017
 ms.assetid: 7635168e-0566-4fdd-8391-7941b0d9f787
-ms.openlocfilehash: 044a0ed981bb9cda3550fb3a3a9f1cb9bff96f25
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c58a3db1eb7ffdb65c7e603d9a76ac7f19f2230f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667129"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959288"
 ---
 # <a name="entity-data-model-primitive-data-types"></a>Model EDM (Entity Data Model) Primitivní datové typy
-Entity Data Model (EDM) podporuje sadu abstraktní primitivní datové typy (například řetězce, Boolean, Int32 a tak dále), které se používají k definování [vlastnosti](../../../../docs/framework/data/adonet/property.md) v konceptuálním modelu. Tyto primitivní datové typy jsou proxy servery pro skutečné primitivní datové typy, které jsou podporovány ve službě storage nebo hostitelské prostředí, jako je například do databáze serveru SQL nebo common language runtime (CLR). Modelu EDM primitivní datové typy; nedefinuje sémantiku operací nebo převody Tyto sémantiku jsou definovány úložiště nebo hostitelského prostředí. V modelu EDM primitivní datové typy se obvykle mapují na odpovídající primitivní datové typy ve službě storage nebo hostitelského prostředí. Informace o způsobu, jakým rozhraní Entity Framework mapuje primitivní typy v modelu EDM na datové typy serveru SQL Server najdete v tématu [SqlClient pro typy Entity Framework](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).  
+Model EDM (Entity Data Model) (EDM) podporuje sadu abstraktních primitivních datových typů (například String, Boolean, Int32 atd.), které se používají k definování [vlastností](../../../../docs/framework/data/adonet/property.md) v koncepčním modelu. Tyto primitivní datové typy jsou proxy pro skutečné primitivní datové typy, které jsou podporovány v úložišti nebo hostitelském prostředí, jako je například databáze SQL Server nebo modul CLR (Common Language Runtime). Model EDM nedefinuje sémantiku operací nebo převody prostřednictvím primitivních datových typů; Tyto sémantiky jsou definovány úložištěm nebo hostitelským prostředím. Základní datové typy v modelu EDM jsou obvykle mapovány na odpovídající primitivní datové typy v úložišti nebo hostitelském prostředí. Informace o tom, jak Entity Framework mapuje primitivní typy v EDM na SQL Server datové typy, najdete v tématu [SqlClient pro Entity Framework](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).  
   
 > [!NOTE]
->  Modelu EDM není podporována kolekcí primitivních datových typů.  
+> Model EDM nepodporuje kolekce primitivních datových typů.  
   
- Informace o typech strukturovaných dat v modelu EDM najdete v tématu [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a [komplexní typ](../../../../docs/framework/data/adonet/complex-type.md).  
+ Informace o strukturovaných datových typech v modelu EDM naleznete v tématu [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a [komplexní typ](../../../../docs/framework/data/adonet/complex-type.md).  
   
-## <a name="primitive-data-types-supported-in-the-entity-data-model"></a>Primitivní datové typy podporované v modelu Entity Data Model  
- Následující tabulka uvádí podporované EDM primitivní datové typy. V tabulce jsou také uvedeny [omezující vlastnosti](../../../../docs/framework/data/adonet/facet.md) , který můžete použít pro všechny primitivní datové typy.  
+## <a name="primitive-data-types-supported-in-the-entity-data-model"></a>Primitivní datové typy podporované v model EDM (Entity Data Model)  
+ V následující tabulce jsou uvedeny primitivní datové typy, které model EDM podporuje. Tabulka obsahuje také seznam [omezujících vlastností](../../../../docs/framework/data/adonet/facet.md) , které lze použít pro každý primitivní datový typ.  
   
-|Primitivní datový typ|Popis|Použít omezující vlastnosti|  
+|Primitivní datový typ|Popis|Použitelné omezující vlastnosti|  
 |-------------------------|-----------------|-----------------------|  
-|binární|Obsahuje binární data.|MaxLength, hodnoty, s možnou hodnotou Null, výchozí|  
-|Boolean|Obsahuje hodnotu `true` nebo `false`.|S povolenou hodnotou Null, výchozí|  
-|Byte|Obsahuje hodnotu bez znaménka 8bitové celé číslo.|Přesnost, s možnou hodnotou Null, výchozí|  
-|DateTime|Představuje datum a čas.|Přesnost, s možnou hodnotou Null, výchozí|  
-|DateTimeOffset|Obsahuje data a času jako posun během několika minut od GMT.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Desetinné číslo|Obsahuje číselná hodnota s pevnou hodnot precision a scale.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Double|Obsahuje plovoucí desetinnou čárkou s přesností na 15 číslic čísla.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Float|Obsahuje plovoucí desetinnou čárkou s přesností na sedm číslice čísla.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Guid|Obsahuje jedinečný identifikátor 16 bajtů.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Int16|Obsahuje hodnotu se znaménkem 16 bitů.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Int32|Obsahuje hodnotu se znaménkem 32-bit.|Přesnost, s možnou hodnotou Null, výchozí|  
-|Int64|Obsahuje hodnotu se znaménkem 64-bit.|Přesnost, s možnou hodnotou Null, výchozí|  
-|SByte|Obsahuje hodnotu se znaménkem 8 bitů.|Přesnost, s možnou hodnotou Null, výchozí|  
-|String|Obsahuje znaková data.|Výchozí kódování Unicode, hodnoty, MaxLength, kolace, přesností, s možnou hodnotou Null,|  
-|Čas|Obsahuje denní dobu.|Přesnost, s možnou hodnotou Null, výchozí|  
+|binární|Obsahuje binární data.|MaxLength, FixedLength, Nullable, default|  
+|Boolean|Obsahuje hodnotu `true` nebo `false`.|Nullable, výchozí|  
+|Byte|Obsahuje 8bitové celočíselnou hodnotu bez znaménka.|Přesnost, Nullable, výchozí|  
+|DateTime|Představuje datum a čas.|Přesnost, Nullable, výchozí|  
+|DateTimeOffset|Obsahuje datum a čas jako posun v minutách od času GMT.|Přesnost, Nullable, výchozí|  
+|Desetinné číslo|Obsahuje číselnou hodnotu s pevnou přesností a škálováním.|Přesnost, Nullable, výchozí|  
+|Double|Obsahuje číslo s plovoucí desetinnou čárkou s 15 číslicemi přesnosti.|Přesnost, Nullable, výchozí|  
+|Float|Obsahuje číslo s plovoucí desetinnou čárkou s přesností na sedm číslic.|Přesnost, Nullable, výchozí|  
+|Guid|Obsahuje jedinečný identifikátor o velikosti 16 bajtů.|Přesnost, Nullable, výchozí|  
+|Int16|Obsahuje 16bitová celočíselnou hodnotu se znaménkem.|Přesnost, Nullable, výchozí|  
+|Int32|Obsahuje podepsaná 32 celočíselná hodnota.|Přesnost, Nullable, výchozí|  
+|Int64|Obsahuje podepsaná 64 celočíselná hodnota.|Přesnost, Nullable, výchozí|  
+|SByte|Obsahuje 8bitové celočíselnou hodnotu se znaménkem.|Přesnost, Nullable, výchozí|  
+|String|Obsahuje znaková data.|Unicode, FixedLength, MaxLength, kolace, přesnost, Nullable, default|  
+|Time|Obsahuje denní dobu.|Přesnost, Nullable, výchozí|  
   
 ## <a name="see-also"></a>Viz také:
 

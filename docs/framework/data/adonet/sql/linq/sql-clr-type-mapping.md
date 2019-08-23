@@ -2,94 +2,94 @@
 title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: d2ec70d014198299bd911b1a72ab8eb26c096ba9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0ac2c62388e554dad31beb54966fa2a4d5ffea2e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592464"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945018"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
-V technologii LINQ to SQL datový model relační databáze mapuje na objektový model vyjádřený v programovacím jazyce podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL integrovaný jazyk dotazů v objektovém modelu převádí na SQL a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, které můžete pracovat s vlastními programovací jazyk.  
+V LINQ to SQL datový model relační databáze mapuje na objektový model, který je vyjádřen v programovacím jazyce podle vašeho výběru. Když se aplikace spustí, LINQ to SQL přeloží dotazy integrované v jazyce v objektovém modelu do SQL a pošle je do databáze ke spuštění. Když databáze vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, se kterými můžete pracovat ve vlastním programovacím jazyce.  
   
- Aby bylo možné přeložit data mezi objektový model a databáze, *mapování typu* musí být definovaný. Technologie LINQ to SQL využívá mapování typu tak, aby odpovídaly každý společný typ language runtime (CLR) s určitým typem systému SQL Server. Můžete definovat mapování typů a dalších informací o mapování jako je například databáze strukturu a tabulka vztahů uvnitř objektový model založený na atributu mapování. Alternativně můžete zadat informace o mapování mimo objektový model se souborem externích mapování. Další informace najdete v tématu [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+ Aby bylo možné přeložit data mezi objektovým modelem a databází, musí být definováno *mapování typů* . LINQ to SQL používá mapování typů ke spárování každého typu modulu CLR (Common Language Runtime) s konkrétním typem SQL Server. V objektovém modelu s mapováním založeném na atributech můžete definovat mapování typů a další informace o mapování, jako je struktura databáze a vztahy mezi tabulkami. Alternativně můžete zadat informace o mapování mimo objektový model s externím mapovacím souborem. Další informace najdete v tématu [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
  Toto téma popisuje následující body:  
   
-- [Výchozí typ mapování](#DefaultTypeMapping)  
+- [Výchozí mapování typů](#DefaultTypeMapping)  
   
-- [Typ mapování matice chování za běhu](#BehaviorMatrix)  
+- [Matice chování mapování typů za běhu](#BehaviorMatrix)  
   
-- [Rozdíly v chování modulu CLR a provedení SQL](#BehaviorDiffs)  
+- [Rozdíly v chování při provádění CLR a SQL](#BehaviorDiffs)  
   
 - [Mapování výčtu](#EnumMapping)  
   
 - [Číselné mapování](#NumericMapping)  
   
-- [Text a mapování XML](#TextMapping)  
+- [Mapování textu a XML](#TextMapping)  
   
-- [Datum a čas mapování](#DateMapping)  
+- [Mapování data a času](#DateMapping)  
   
-- [Binární mapování](#BinaryMapping)  
+- [Mapování binárních souborů](#BinaryMapping)  
   
-- [Různé mapování](#MiscMapping)  
+- [Různá mapování](#MiscMapping)  
   
 <a name="DefaultTypeMapping"></a>   
-## <a name="default-type-mapping"></a>Výchozí typ mapování  
- Objektový model nebo externí mapování souboru můžete vytvořit automaticky pomocí Návrháře relací objektů (O/R Designer) nebo nástroj příkazového řádku SQLMetal. Výchozí mapování typů pro tyto nástroje definovat, jaké typy CLR je možné zvolit mapovat na sloupce v databázi serveru SQL Server. Další informace o použití těchto nástrojů najdete v tématu [vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md).  
+## <a name="default-type-mapping"></a>Výchozí mapování typů  
+ Pomocí Návrhář relací objektů (O/R Designer) nebo nástroje příkazového řádku SQLMetal můžete automaticky vytvořit objektový model nebo externí mapování souboru. Výchozí mapování typů pro tyto nástroje definují, které typy CLR jsou zvoleny k mapování sloupců v rámci databáze SQL Server. Další informace o použití těchto nástrojů naleznete v tématu [Creating a Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md).  
   
- Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu pro vytvoření databáze SQL serveru na základě mapování informací v objektovém modelu nebo externí mapování souboru. Výchozí typ mapování <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metoda definování typu SQL Server se sloupce vytvářejí pro mapování na modul CLR typy v objektovém modelu. Další informace najdete v tématu [jak: Dynamické vytvoření databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
+ Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu k vytvoření databáze SQL Server na základě informací o mapování v objektovém modelu nebo v externím souboru mapování. Výchozí mapování typů pro <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu definují, který typ SQL Server sloupců je vytvořen pro mapování na typy CLR v objektovém modelu. Další informace najdete v tématu [jak: Dynamicky vytvořit databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
   
 <a name="BehaviorMatrix"></a>   
-## <a name="type-mapping-run-time-behavior-matrix"></a>Typ mapování matice chování za běhu  
- Následující diagram znázorňuje očekávané chování za běhu mapování určitého typu, když se data načítají z nebo uloží do databáze. Kromě serializaci LINQ to SQL nepodporuje mapování mezi všechna CLR nebo SQL Server data typů, které nejsou uvedeny v této matici. Další informace o podpoře serializace naleznete v tématu [binární serializace](#BinarySerialization).  
+## <a name="type-mapping-run-time-behavior-matrix"></a>Matice chování mapování typů za běhu  
+ Následující diagram znázorňuje očekávané chování konkrétního mapování typů v době, kdy jsou data načtena nebo ukládána do databáze. S výjimkou serializace nepodporuje LINQ to SQL mapování mezi žádnými datovými typy CLR nebo SQL Server, které nejsou uvedeny v této matici. Další informace o podpoře serializace naleznete v tématu [binární serializace](#BinarySerialization).  
  
-![SQL Server do tabulky mapování typů dat SQL CLR](media/sql-clr-type-mapping.png)
+![SQL Server k tabulce mapování datových typů SQL CLR](media/sql-clr-type-mapping.png)
 
 > [!NOTE]
->  Některé mapování typu může vést ke ztrátě výjimky přetečení nebo dat při překladu do nebo z databáze.  
+> Některé mapování typů může způsobit přetečení nebo výjimky ztráty dat při převodu do nebo z databáze.  
   
-### <a name="custom-type-mapping"></a>Mapování vlastních typů  
- Pomocí LINQ to SQL, nejste omezeni na výchozí mapování typu používané návrhářem relací objektů, SQLMetal a <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metoda. Můžete vytvořit vlastní typ mapování tak, že je explicitně zadáte v souboru DBML. Pak můžete použít tohoto souboru DBML vytvořit objekt modelu kódu a mapování souboru. Další informace najdete v tématu [mapování typů SQL a CLR vlastní](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+### <a name="custom-type-mapping"></a>Mapování vlastního typu  
+ U LINQ to SQL nebudete omezeni na výchozí mapování typu používaného návrhářem s/R, SQLMetal a <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodou. Můžete vytvořit mapování vlastního typu explicitním zadáním v souboru DBML. Pak můžete použít tento soubor DBML k vytvoření kódu a souboru mapování objektu modelu. Další informace najdete v tématu [mapování vlastních typů SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
   
 <a name="BehaviorDiffs"></a>   
-## <a name="behavior-differences-between-clr-and-sql-execution"></a>Rozdíly v chování modulu CLR a provedení SQL  
- Z důvodu rozdílů v přesnosti a provádění mezi CLR a systému SQL Server může přijímat odlišné výsledky nebo vyzkoušet různé chování v závislosti na tom, kde provádět výpočty. Výpočty provádět dotazy SQL v technologii LINQ jsou ve skutečnosti přeložit do jazyka Transact-SQL a pak spustit pro databázi systému SQL Server. Výpočty provést mimo LINQ dotazy SQL jsou spuštěny v rámci modulu CLR.  
+## <a name="behavior-differences-between-clr-and-sql-execution"></a>Rozdíly v chování při provádění CLR a SQL  
+ Z důvodu rozdílů v přesnosti a provádění mezi CLR a SQL Server může docházet k různým výsledkům nebo různým chováním v závislosti na tom, kde provádíte výpočty. Výpočty provedené v LINQ to SQLch dotazech jsou ve skutečnosti přeloženy do jazyka Transact-SQL a následně provedeny v databázi SQL Server. Výpočty provedené mimo LINQ to SQL dotazy jsou spouštěny v kontextu CLR.  
   
- Následující příklad, jsou určité rozdíly v chování mezi CLR a systému SQL Server:  
+ Například následuje několik rozdílů v chování mezi CLR a SQL Server:  
   
-- Některé typy dat systému SQL Server odlišně od datového typu ekvivalentní objednávky v CLR. Například data systému SQL Server typu `UNIQUEIDENTIFIER` jinak než typ dat CLR je seřazen <xref:System.Guid?displayProperty=nameWithType>.  
+- SQL Server řadí některé typy dat jinak než data ekvivalentního typu v modulu CLR. Například SQL Server data typu `UNIQUEIDENTIFIER` jsou seřazena jinak než data CLR typu. <xref:System.Guid?displayProperty=nameWithType>  
   
-- SQL Server provede některé operace porovnání řetězců jinak než CLR. V systému SQL Server chování porovnání řetězců závisí na nastavení řazení na serveru. Další informace najdete v tématu [práce s kolací](https://go.microsoft.com/fwlink/?LinkId=115330) v Online knihách systému Microsoft SQL Server.  
+- SQL Server zpracovává některé operace porovnání řetězců jinak než CLR. V SQL Server chování porovnávání řetězců závisí na nastavení kolace na serveru. Další informace najdete v tématu [práce s kolací](https://go.microsoft.com/fwlink/?LinkId=115330) na webu knihy Online pro Microsoft SQL Server.  
   
-- SQL Server může vracet různé hodnoty pro některé z namapované funkce než CLR. Například se bude lišit rovnosti funkce, protože systém SQL Server považuje dva řetězce rovny, pokud se liší pouze v prázdný znak; bude Zatímco CLR je považuje za se nesmí rovnat.  
+- SQL Server mohou vracet jiné hodnoty pro některé mapované funkce než CLR. Například funkce rovnosti se budou lišit, protože SQL Server považují dva řetězce za stejné, pokud se liší pouze na konci prázdného místa; vzhledem k tomu, že CLR považuje za nerovné.  
   
 <a name="EnumMapping"></a>   
 ## <a name="enum-mapping"></a>Mapování výčtu  
- Technologie LINQ to SQL podporuje mapování CLR <xref:System.Enum?displayProperty=nameWithType> typu na typy serveru SQL Server dvěma způsoby:  
+ LINQ to SQL podporuje mapování typu CLR <xref:System.Enum?displayProperty=nameWithType> na typy SQL Server dvěma způsoby:  
   
 - Mapování na číselné typy SQL (`TINYINT`, `SMALLINT`, `INT`, `BIGINT`)  
   
-     Při mapování modul CLR <xref:System.Enum?displayProperty=nameWithType> typu na číselný typ SQL, můžete namapovat základní celočíselnou hodnotu CLR <xref:System.Enum?displayProperty=nameWithType> k hodnotě sloupce databáze systému SQL Server. Například pokud <xref:System.Enum?displayProperty=nameWithType> s názvem `DaysOfWeek` obsahuje člen s názvem `Tue` se základní hodnotou celé číslo 3, tento člen mapuje na databázi hodnotu 3.  
+     Pokud namapujete typ <xref:System.Enum?displayProperty=nameWithType> CLR na číselný typ SQL, namapujete základní celočíselnou hodnotu CLR <xref:System.Enum?displayProperty=nameWithType> na hodnotu sloupce databáze SQL Server. Například pokud <xref:System.Enum?displayProperty=nameWithType> pojmenovaný `DaysOfWeek` obsahuje člena s názvem `Tue` s podkladovou celočíselnou hodnotou 3, tento člen se mapuje na hodnotu databáze 3.  
   
-- Mapování typů SQL textu (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`)  
+- Mapování na textové typy SQL (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`)  
   
-     Při mapování modul CLR <xref:System.Enum?displayProperty=nameWithType> typu na typ textu SQL, hodnota databáze SQL se mapuje na název modulu CLR <xref:System.Enum?displayProperty=nameWithType> členy. Například pokud <xref:System.Enum?displayProperty=nameWithType> s názvem `DaysOfWeek` obsahuje člen s názvem `Tue` se základní hodnotou celé číslo 3, tento člen mapuje na hodnotu databáze `Tue`.  
+     Při mapování typu CLR <xref:System.Enum?displayProperty=nameWithType> na typ textu SQL je hodnota databáze SQL namapována na názvy členů CLR. <xref:System.Enum?displayProperty=nameWithType> Například pokud <xref:System.Enum?displayProperty=nameWithType> pojmenovaný `DaysOfWeek` obsahuje člena s názvem `Tue` s podkladovou celočíselnou hodnotou 3, `Tue`tento člen se mapuje na hodnotu databáze.  
   
 > [!NOTE]
->  Při mapování typů SQL textu na modul CLR <xref:System.Enum?displayProperty=nameWithType>, obsahovat jenom názvy <xref:System.Enum> členy ve sloupci pro mapovanou SQL. Jiné hodnoty nejsou podporovány v <xref:System.Enum>-mapovat sloupce SQL.  
+> Při mapování typů textu SQL na CLR <xref:System.Enum?displayProperty=nameWithType>zahrňte pouze názvy <xref:System.Enum> členů do namapovaného sloupce SQL. Další hodnoty nejsou podporovány ve sloupci mapovaném na <xref:System.Enum>server SQL.  
   
- Nástroj příkazového řádku O/R Designer a SQLMetal nelze mapovat automaticky typu SQL CLR <xref:System.Enum> třídy. Toto mapování je nutné explicitně nakonfigurovat úpravou souboru DBML pro Návrháře relací objektů a SQLMetal. Další informace o mapování vlastního typu, najdete v části [mapování vlastních typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+ Nástroj příkazového řádku pro/R Designer a SQLMetal nemůže automaticky mapovat typ SQL na třídu CLR <xref:System.Enum> . Toto mapování je nutné explicitně nakonfigurovat přizpůsobením souboru DBML pro použití v Návrháři O/R a v SQLMetal. Další informace o mapování vlastních typů naleznete v tématu [mapování vlastních typů SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
   
- Protože sloupec SQL určených pro výčet budou stejného typu jako ostatní číselné a textové sloupce; Tyto nástroje jej nerozpozná záměr a výchozí mapování, jak je popsáno v následujícím [číselné mapování](#NumericMapping) a [Text a mapování XML](#TextMapping) oddíly. Další informace o generování kódu pomocí souboru DBML, v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+ Vzhledem k tomu, že sloupec SQL určený pro výčet bude stejného typu jako jiné číselné a textové sloupce; Tyto nástroje nerozpoznají váš záměr a výchozí mapování, jak je popsáno v následujícím [číselném mapování](#NumericMapping) a oddílech [mapování XML](#TextMapping) . Další informace o generování kódu se souborem DBML naleznete [v tématu generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
   
- <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Metoda vytvoří číselný typ pro mapování modul CLR. sloupec SQL <xref:System.Enum?displayProperty=nameWithType> typu.  
+ Metoda vytvoří sloupec SQL číselného typu pro mapování typu CLR <xref:System.Enum?displayProperty=nameWithType>. <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>  
   
 <a name="NumericMapping"></a>   
 ## <a name="numeric-mapping"></a>Číselné mapování  
- Technologie LINQ to SQL umožňuje mapovat mnoho CLR a systému SQL Server číselné typy. Následující tabulka uvádí typy CLR, že O/R Designer a SQLMetal vybrat při vytváření objektový model nebo externí mapování souboru podle vaší databáze.  
+ LINQ to SQL umožňuje mapovat mnoho typů CLR a SQL Server číselné typy. V následující tabulce jsou uvedeny typy CLR, které pro/R Designer a SQLMetal vyberte při sestavování objektového modelu nebo externího mapování na základě vaší databáze.  
   
-|SQL Server Type|Výchozí mapování typu CLR používané O/R Designer a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používaného v/R designeru a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`BIT`|<xref:System.Boolean?displayProperty=nameWithType>|  
 |`TINYINT`|<xref:System.Int16?displayProperty=nameWithType>|  
@@ -102,9 +102,9 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 |`REAL/FLOAT(24)`|<xref:System.Single?displayProperty=nameWithType>|  
 |`FLOAT/FLOAT(53)`|<xref:System.Double?displayProperty=nameWithType>|  
   
- V následující tabulce jsou uvedeny výchozí mapování typu používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda k definování typů SQL sloupce, které jsou vytvořeny pro mapování pro typy CLR definovaný v objektovém modelu nebo externí mapování souboru.  
+ Následující tabulka ukazuje výchozí mapování typů používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metodou k definování, který typ sloupců SQL je vytvořen pro mapování na typy CLR definované v objektovém modelu nebo v externím souboru mapování.  
   
-|Typ CLR|Výchozí SQL serveru typ používaný <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
+|Typ CLR|Výchozí typ SQL Server používaný nástrojem<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Boolean?displayProperty=nameWithType>|`BIT`|  
 |<xref:System.Byte?displayProperty=nameWithType>|`TINYINT`|  
@@ -119,18 +119,18 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 |<xref:System.Single?displayProperty=nameWithType>|`REAL`|  
 |<xref:System.Double?displayProperty=nameWithType>|`FLOAT`|  
   
- Existuje mnoho dalších číselných mapování, které můžete, ale některé může vést k přetečení nebo data ztráty výjimky při převodu do nebo z databáze. Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
+ Existuje mnoho dalších číselných mapování, která můžete zvolit, ale některé můžou mít za následek přetečení nebo výjimky ztráty dat při převodu do nebo z databáze. Další informace naleznete v [matici chování mapování typu běhu](#BehaviorMatrix).  
   
-### <a name="decimal-and-money-types"></a>Decimal a typy peníze  
- Výchozí přesnost systému SQL Server `DECIMAL` typ (18 desítkových číslic vlevo a vpravo od desetinné čárky) je mnohem menší než přesnost CLR <xref:System.Decimal?displayProperty=nameWithType> typ, který je spárovaná s ve výchozím nastavení. To může způsobit ztrátu přesnosti při ukládání dat do databáze. Však stačí opak může dojít, pokud SQL Server `DECIMAL` typ je nakonfigurován s víc než 29 platnými číslicemi přesnosti. Pokud SQL Server `DECIMAL` typ byl nakonfigurován s větší přesností než CLR <xref:System.Decimal?displayProperty=nameWithType>, může dojít ke ztrátě přesnosti, při načítání dat z databáze.  
+### <a name="decimal-and-money-types"></a>Typy Decimal a Money  
+ Výchozí přesnost typu SQL Server `DECIMAL` (18 desítkových číslic vlevo a vpravo od desetinné čárky) je mnohem menší než přesnost typu CLR <xref:System.Decimal?displayProperty=nameWithType> , ke kterému je párována ve výchozím nastavení. To může mít za následek ztrátu přesnosti při ukládání dat do databáze. Pouze opak se však může vyskytnout, pokud je `DECIMAL` typ SQL Server nakonfigurovaný s více než 29 číslicemi přesnosti. Pokud SQL Server `DECIMAL` typ byl nakonfigurován s větší přesností než CLR <xref:System.Decimal?displayProperty=nameWithType>, může dojít ke ztrátě přesnosti při načítání dat z databáze.  
   
- SQL Server `MONEY` a `SMALLMONEY` typy, které jsou také spárovat s modulem CLR <xref:System.Decimal?displayProperty=nameWithType> zadejte ve výchozím nastavení, mají mnohem menší přesností, což může vést ke ztrátě výjimky přetečení nebo dat při ukládání dat do databáze.  
+ Typy SQL Server `MONEY` a `SMALLMONEY` , které jsou ve výchozím nastavení spárovány s typem <xref:System.Decimal?displayProperty=nameWithType> CLR, mají mnohem menší přesnost, což může způsobit přetečení nebo výjimky ztráty dat při ukládání dat do databáze.  
   
 <a name="TextMapping"></a>   
-## <a name="text-and-xml-mapping"></a>Text a mapování XML  
- Existují také mnoho založený na textu a typy XML, namapované pomocí LINQ to SQL. Následující tabulka uvádí typy CLR, že O/R Designer a SQLMetal vybrat při vytváření objektový model nebo externí mapování souboru podle vaší databáze.  
+## <a name="text-and-xml-mapping"></a>Mapování textu a XML  
+ Existuje také mnoho typů založených na textu a XML, které lze namapovat pomocí LINQ to SQL. V následující tabulce jsou uvedeny typy CLR, které pro/R Designer a SQLMetal vyberte při sestavování objektového modelu nebo externího mapování na základě vaší databáze.  
   
-|SQL Server Type|Výchozí mapování typu CLR používané O/R Designer a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používaného v/R designeru a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`CHAR`|<xref:System.String?displayProperty=nameWithType>|  
 |`NCHAR`|<xref:System.String?displayProperty=nameWithType>|  
@@ -140,41 +140,41 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 |`NTEXT`|<xref:System.String?displayProperty=nameWithType>|  
 |`XML`|<xref:System.Xml.Linq.XElement?displayProperty=nameWithType>|  
   
- V následující tabulce jsou uvedeny výchozí mapování typu používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda k definování typů SQL sloupce, které jsou vytvořeny pro mapování pro typy CLR definovaný v objektovém modelu nebo externí mapování souboru.  
+ Následující tabulka ukazuje výchozí mapování typů používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metodou k definování, který typ sloupců SQL je vytvořen pro mapování na typy CLR definované v objektovém modelu nebo v externím souboru mapování.  
   
-|Typ CLR|Výchozí SQL serveru typ používaný <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
+|Typ CLR|Výchozí typ SQL Server používaný nástrojem<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Char?displayProperty=nameWithType>|`NCHAR(1)`|  
 |<xref:System.String?displayProperty=nameWithType>|`NVARCHAR(4000)`|  
 |<xref:System.Char?displayProperty=nameWithType>[]|`NVARCHAR(4000)`|  
-|Implementace vlastního typu `Parse()` a `ToString()`|`NVARCHAR(MAX)`|  
+|Implementace `Parse()` vlastního typu a`ToString()`|`NVARCHAR(MAX)`|  
   
- Existuje mnoho dalších založený na textu a mapování XML můžete, ale některé může vést k přetečení nebo data ztráty výjimky při převodu do nebo z databáze. Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
+ Existuje mnoho dalších textových mapování XML, které si můžete vybrat, ale některé můžou mít za následek přetečení nebo výjimky ztráty dat při převodu do nebo z databáze. Další informace naleznete v [matici chování mapování typu běhu](#BehaviorMatrix).  
   
 ### <a name="xml-types"></a>Typy XML  
- SQL Server `XML` datový typ je k dispozici od verze Microsoft SQL Server 2005. SQL Server můžete namapovat `XML` datový typ, který <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XDocument>, nebo <xref:System.String>. Pokud sloupec obsahuje fragmenty XML, které nelze načíst do <xref:System.Xml.Linq.XElement>, sloupec musí být namapována na <xref:System.String> aby nedocházelo k chybám za běhu. Fragmenty XML, které musí být namapována na <xref:System.String> patří následující:  
+ Datový typ `XML` SQL Server je k dispozici od Microsoft SQL Server 2005. Datový typ SQL Server `XML` lze namapovat na <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XDocument>nebo <xref:System.String>. Pokud sloupec ukládá fragmenty XML, které nelze číst do <xref:System.Xml.Linq.XElement>, sloupec musí být namapován na <xref:System.String> , aby se předešlo chybám za běhu. Fragmenty kódu XML, které musí <xref:System.String> být namapovány tak, aby obsahovaly následující:  
   
 - Sekvence elementů XML  
   
 - Atributy  
   
-- Veřejné identifikátory (PÍ)  
+- Veřejné identifikátory (PI)  
   
 - Komentáře  
   
- I když můžete namapovat <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> k systému SQL Server, jak je znázorněno [matice chování čas spuštění mapování typu](#BehaviorMatrix), <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nemá žádné výchozí mapování typu SQL Server pro tyto typy.  
+ I když lze <xref:System.Xml.Linq.XElement> namapovat <xref:System.Xml.Linq.XDocument> a na SQL Server, jak je znázorněno v [matici chování při mapování typů](#BehaviorMatrix), <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nemá pro tyto typy žádné výchozí mapování typu SQL Server.  
   
 ### <a name="custom-types"></a>Vlastní typy  
- Pokud třída implementuje `Parse()` a `ToString()`, objekt můžete namapovat na libovolný typ textu SQL (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`, `TEXT`, `NTEXT`, `XML`). Objekt se uloží v databázi odesláním hodnoty vrácené `ToString()` k sloupci z namapované databáze. Objekt je znovu vytvořena vyvoláním `Parse()` na řetězec vrácený funkcí databáze.  
+ Pokud `Parse()` třída implementuje a `ToString()`, můžete objekt namapovat na libovolný textový typ SQL (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`, `TEXT`, `NTEXT`, `XML`). Objekt je uložen v databázi odesláním hodnoty vrácené `ToString()` do sloupce mapované databáze. Objekt je znovu vytvořen vyvoláním `Parse()` u řetězce vráceného databází.  
   
 > [!NOTE]
->  Technologie LINQ to SQL nepodporuje serializaci pomocí <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>.  
+> LINQ to SQL nepodporuje serializaci pomocí <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>.  
   
 <a name="DateMapping"></a>   
-## <a name="date-and-time-mapping"></a>Datum a čas mapování  
- Pomocí LINQ to SQL můžete namapovat mnoho typů systému SQL Server data a času. Následující tabulka uvádí typy CLR, že O/R Designer a SQLMetal vybrat při vytváření objektový model nebo externí mapování souboru podle vaší databáze.  
+## <a name="date-and-time-mapping"></a>Mapování data a času  
+ Pomocí LINQ to SQL můžete namapovat mnoho SQL Serverch typů data a času. V následující tabulce jsou uvedeny typy CLR, které pro/R Designer a SQLMetal vyberte při sestavování objektového modelu nebo externího mapování na základě vaší databáze.  
   
-|SQL Server Type|Výchozí mapování typu CLR používané O/R Designer a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používaného v/R designeru a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`SMALLDATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
 |`DATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
@@ -183,78 +183,78 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 |`DATE`|<xref:System.DateTime?displayProperty=nameWithType>|  
 |`TIME`|<xref:System.TimeSpan?displayProperty=nameWithType>|  
   
- V následující tabulce jsou uvedeny výchozí mapování typu používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda k definování typů SQL sloupce, které jsou vytvořeny pro mapování pro typy CLR definovaný v objektovém modelu nebo externí mapování souboru.  
+ Následující tabulka ukazuje výchozí mapování typů používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metodou k definování, který typ sloupců SQL je vytvořen pro mapování na typy CLR definované v objektovém modelu nebo v externím souboru mapování.  
   
-|Typ CLR|Výchozí SQL serveru typ používaný <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
+|Typ CLR|Výchozí typ SQL Server používaný nástrojem<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.DateTime?displayProperty=nameWithType>|`DATETIME`|  
 |<xref:System.DateTimeOffset?displayProperty=nameWithType>|`DATETIMEOFFSET`|  
 |<xref:System.TimeSpan?displayProperty=nameWithType>|`TIME`|  
   
- Existuje mnoho dalších datum a čas mapování, které můžete, ale některé může vést k přetečení nebo data ztráty výjimky při převodu do nebo z databáze. Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
+ Existuje mnoho dalších mapování data a času, které můžete vybrat, ale některé můžou mít za následek přetečení nebo výjimky ztráty dat při převodu do nebo z databáze. Další informace naleznete v [matici chování mapování typu běhu](#BehaviorMatrix).  
   
 > [!NOTE]
->  Typy serveru SQL Server `DATETIME2`, `DATETIMEOFFSET`, `DATE`, a `TIME` jsou k dispozici od verze Microsoft SQL Server 2008. Technologie LINQ to SQL podporuje mapování na tyto nové typy od verze rozhraní .NET Framework verze 3.5 SP1.  
+> `DATETIME2`SQL Server typy `DATETIMEOFFSET` ,,a`TIME` jsou k dispozici od Microsoft SQL Server 2008. `DATE` LINQ to SQL podporuje mapování na tyto nové typy od .NET Framework verze 3,5 SP1.  
   
 ### <a name="systemdatetime"></a>System.Datetime  
- Rozsah a přesnost modulu CLR <xref:System.DateTime?displayProperty=nameWithType> typ je větší než rozsah a přesnost systému SQL Server `DATETIME` typ, který je výchozím typem mapování pro <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metody. Chcete-li výjimky související s daty mimo rozsah `DATETIME`, použijte `DATETIME2`, která je k dispozici od verze Microsoft SQL Server 2008. `DATETIME2` rozsah a přesnost modulu CLR odpovídá <xref:System.DateTime?displayProperty=nameWithType>.  
+ Rozsah a přesnost typu CLR <xref:System.DateTime?displayProperty=nameWithType> je větší než rozsah a přesnost typu SQL Server `DATETIME` , což je <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> výchozí mapování typu pro metodu. Aby nedocházelo k výjimkám s výjimkami souvisejícími `DATETIME`s daty `DATETIME2`mimo rozsah, použijte, který je k dispozici od Microsoft SQL Server 2008. `DATETIME2`může odpovídat rozsahu a přesnosti CLR <xref:System.DateTime?displayProperty=nameWithType>.  
   
- SQL Server data nemají žádný koncept <xref:System.TimeZone>, funkce, která je velmi podporována v modulu CLR. <xref:System.TimeZone> hodnoty jsou uloženy, protože je databáze, aniž byste <xref:System.TimeZone> převod, bez ohledu na původní <xref:System.DateTimeKind> informace. Když <xref:System.DateTime> hodnoty jsou načteny z databáze, jejich hodnoty se načítají podle do <xref:System.DateTime> s <xref:System.DateTimeKind> z <xref:System.DateTimeKind.Unspecified>. Další informace o podporované <xref:System.DateTime?displayProperty=nameWithType> metody, naleznete v tématu [metody System.DateTime](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md).  
+ SQL Server data nemají koncept <xref:System.TimeZone>, funkce, která je bohatě podporovaná v modulu CLR. <xref:System.TimeZone>hodnoty se ukládají do databáze bez převodu bez <xref:System.TimeZone> ohledu na původní <xref:System.DateTimeKind> informace. Při <xref:System.DateTime> načítání hodnot z databáze je jejich hodnota načtena jako je do a <xref:System.DateTime> <xref:System.DateTimeKind>. <xref:System.DateTimeKind.Unspecified> Další informace o podporovaných <xref:System.DateTime?displayProperty=nameWithType> metodách naleznete v tématu [System. DateTime Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md).  
   
-### <a name="systemtimespan"></a>System.TimeSpan  
- Microsoft SQL Server 2008 a rozhraní .NET Framework 3.5 SP1 umožňuje mapovat CLR <xref:System.TimeSpan?displayProperty=nameWithType> typu SQL Server `TIME` typu. Existuje ale velký rozdíl v rozsahu od, který modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> podporuje a co systému SQL Server `TIME` zadejte podporuje. Mapování hodnoty menší než 0 nebo větší než hodiny 23:59:59.9999999 SQL `TIME` výsledkem bude výjimky přetečení. Další informace najdete v tématu [metody System.TimeSpan](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md).  
+### <a name="systemtimespan"></a>System. TimeSpan  
+ Microsoft SQL Server 2008 a .NET Framework 3,5 SP1 vám umožní namapovat typ CLR <xref:System.TimeSpan?displayProperty=nameWithType> na typ SQL Server. `TIME` Existuje však velký rozdíl mezi rozsahem, který modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> podporuje, a jaký typ SQL Server `TIME` podporuje. Mapování hodnot menší než 0 nebo větší než 23:59:59.9999999 hodin do SQL `TIME` bude mít za následek výjimky přetečení. Další informace naleznete v tématu [metody System. TimeSpan](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md).  
   
- V systému Microsoft SQL Server 2000 a SQL Server 2005, nelze mapovat pole databáze <xref:System.TimeSpan>. Však operace <xref:System.TimeSpan> jsou podporované, protože <xref:System.TimeSpan> hodnoty mohou být vráceny od <xref:System.DateTime> odčítání nebo zařadit do výrazu jako literál nebo vazby proměnné.  
+ V Microsoft SQL Server 2000 a SQL Server 2005 nemůžete mapovat pole databáze na <xref:System.TimeSpan>. Operace na <xref:System.TimeSpan> jsou však podporovány, protože <xref:System.TimeSpan> hodnoty mohou být vráceny z <xref:System.DateTime> odčítání nebo zavedeny do výrazu jako literál nebo vázaná proměnná.  
   
 <a name="BinaryMapping"></a>   
-## <a name="binary-mapping"></a>Binární mapování  
- Existuje mnoho typů systému SQL Server, které lze mapovat na typ CLR <xref:System.Data.Linq.Binary?displayProperty=nameWithType>. V následující tabulce jsou uvedeny typy serveru SQL Server, které způsobují O/R Designer a SQLMetal k definování modul CLR. <xref:System.Data.Linq.Binary?displayProperty=nameWithType> zadejte při vytváření objektový model nebo externí mapování souboru podle vaší databáze.  
+## <a name="binary-mapping"></a>Mapování binárních souborů  
+ Existuje mnoho typů SQL Server, které mohou být mapovány na typ <xref:System.Data.Linq.Binary?displayProperty=nameWithType>CLR. V následující tabulce jsou uvedeny typy SQL Server, které způsobují, že v/R Designer a SQLMetal definuje <xref:System.Data.Linq.Binary?displayProperty=nameWithType> typ CLR při vytváření objektového modelu nebo externího mapování na základě vaší databáze.  
   
-|SQL Server Type|Výchozí mapování typu CLR používané O/R Designer a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používaného v/R designeru a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`BINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`VARBINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`VARBINARY(MAX)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
-|`VARBINARY(MAX)` s `FILESTREAM` atribut|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`VARBINARY(MAX)``FILESTREAM` s atributem|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`IMAGE`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`TIMESTAMP`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
   
- V následující tabulce jsou uvedeny výchozí mapování typu používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda k definování typů SQL sloupce, které jsou vytvořeny pro mapování pro typy CLR definovaný v objektovém modelu nebo externí mapování souboru.  
+ Následující tabulka ukazuje výchozí mapování typů používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metodou k definování, který typ sloupců SQL je vytvořen pro mapování na typy CLR definované v objektovém modelu nebo v externím souboru mapování.  
   
-|Typ CLR|Výchozí SQL serveru typ používaný <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
+|Typ CLR|Výchozí typ SQL Server používaný nástrojem<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
 |<xref:System.Byte?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
 |<xref:System.Runtime.Serialization.ISerializable?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
   
- Existuje mnoho dalších binární mapování, které můžete, ale některé může vést k přetečení nebo data ztráty výjimky při převodu do nebo z databáze. Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
+ Existuje mnoho dalších binárních mapování, které si můžete vybrat, ale některé můžou mít za následek přetečení nebo výjimky ztráty dat při převodu do nebo z databáze. Další informace naleznete v [matici chování mapování typu běhu](#BehaviorMatrix).  
   
 ### <a name="sql-server-filestream"></a>SQL Server FILESTREAM  
- `FILESTREAM` Atributu `VARBINARY(MAX)` sloupce je k dispozici od verze Microsoft SQL Server 2008, můžete namapovat ho pomocí LINQ to SQL, od verze rozhraní .NET Framework verze 3.5 SP1.  
+ `FILESTREAM` Atribut pro`VARBINARY(MAX)` sloupce je k dispozici počínaje Microsoft SQL Server 2008. můžete k němu namapovat LINQ to SQL počínaje verzí .NET Framework 3,5 SP1.  
   
- I když můžete namapovat `VARBINARY(MAX)` sloupce s `FILESTREAM` atribut <xref:System.Data.Linq.Binary> objekty, <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nelze automaticky vytvořit sloupce s `FILESTREAM` atribut. Další informace o `FILESTREAM`, naleznete v tématu [FILESTREAM přehled](https://go.microsoft.com/fwlink/?LinkId=115291) na Microsoft SQL Server Books Online.  
+ I když můžete mapovat `VARBINARY(MAX)` sloupce `FILESTREAM` s <xref:System.Data.Linq.Binary> `FILESTREAM` atributem na objekty, metodaneníschopnaautomatickyvytvořitsloupcesatributem.<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> Další informace o `FILESTREAM`najdete v tématu [Přehled FILESTREAM](https://go.microsoft.com/fwlink/?LinkId=115291) na webu knihy online Microsoft SQL Server.  
   
 <a name="BinarySerialization"></a>   
 ### <a name="binary-serialization"></a>Binární serializace  
- Pokud třída implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní, může serializovat objekt některého z polí binární SQL (`BINARY`, `VARBINARY`, `IMAGE`). Objekt je serializaci a deserializaci podle jak <xref:System.Runtime.Serialization.ISerializable> rozhraní je implementováno. Další informace najdete v tématu [binární serializace](https://go.microsoft.com/fwlink/?LinkId=115581).  
+ Pokud třída implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní, můžete serializovat objekt do libovolného binárního pole SQL (`BINARY`, `VARBINARY`, `IMAGE`). Objekt je serializován a rekonstruován podle toho, <xref:System.Runtime.Serialization.ISerializable> jak je rozhraní implementováno. Další informace naleznete v tématu [binární serializace](https://go.microsoft.com/fwlink/?LinkId=115581).  
   
 <a name="MiscMapping"></a>   
-## <a name="miscellaneous-mapping"></a>Různé mapování  
- V následující tabulce jsou uvedeny výchozí mapování typů pro některé různé typy, které ještě nebyly bylo zmíněno. Následující tabulka uvádí typy CLR, že O/R Designer a SQLMetal vybrat při vytváření objektový model nebo externí mapování souboru podle vaší databáze.  
+## <a name="miscellaneous-mapping"></a>Různá mapování  
+ Následující tabulka ukazuje výchozí mapování typů pro některé různé typy, které ještě nebyly zmíněny. V následující tabulce jsou uvedeny typy CLR, které pro/R Designer a SQLMetal vyberte při sestavování objektového modelu nebo externího mapování na základě vaší databáze.  
   
-|SQL Server Type|Výchozí mapování typu CLR používané O/R Designer a SQLMetal|  
+|SQL Server Type|Výchozí mapování typu CLR používaného v/R designeru a SQLMetal|  
 |---------------------|-----------------------------------------------------------------|  
 |`UNIQUEIDENTIFIER`|<xref:System.Guid?displayProperty=nameWithType>|  
 |`SQL_VARIANT`|<xref:System.Object?displayProperty=nameWithType>|  
   
- V následující tabulce jsou uvedeny výchozí mapování typu používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda k definování typů SQL sloupce, které jsou vytvořeny pro mapování pro typy CLR definovaný v objektovém modelu nebo externí mapování souboru.  
+ Následující tabulka ukazuje výchozí mapování typů používané <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metodou k definování, který typ sloupců SQL je vytvořen pro mapování na typy CLR definované v objektovém modelu nebo v externím souboru mapování.  
   
-|Typ CLR|Výchozí SQL serveru typ používaný <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
+|Typ CLR|Výchozí typ SQL Server používaný nástrojem<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>|  
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Guid?displayProperty=nameWithType>|`UNIQUEIDENTIFIER`|  
 |<xref:System.Object?displayProperty=nameWithType>|`SQL_VARIANT`|  
   
- Technologie LINQ to SQL nepodporuje žádné jiné mapování typů pro tyto různé typy.  Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
+ LINQ to SQL nepodporuje žádné jiné mapování typů pro tyto různé typy.  Další informace naleznete v [matici chování mapování typu běhu](#BehaviorMatrix).  
   
 ## <a name="see-also"></a>Viz také:
 

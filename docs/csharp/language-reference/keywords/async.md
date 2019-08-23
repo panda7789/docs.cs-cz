@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: e2755dc6db655a632685b45a7cfe600808eba2b6
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e0c8f52193639c067252878127ee95a0897b9582
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602282"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922445"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 
@@ -64,7 +64,7 @@ Spuštění kódu jako aplikace pro Windows Store:
 [!code-csharp[wpf-async](../../../../samples/snippets/csharp/language-reference/keywords/async/wpf/mainwindow.xaml.cs#1)]
   
 > [!IMPORTANT]
->  Další informace o úlohách a kódu, který se spouští při čekání na úlohu, naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../programming-guide/concepts/async/index.md). Úplný příklad WPF, který používá podobné prvky, naleznete v [tématu Návod: Přístup k webu pomocí modifikátoru Async a](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)operátoru await  
+> Další informace o úlohách a kódu, který se spouští při čekání na úlohu, naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../programming-guide/concepts/async/index.md). Úplný příklad WPF, který používá podobné prvky, naleznete v [tématu Návod: Přístup k webu pomocí modifikátoru Async a](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)operátoru await  
   
 ## <a name="return-types"></a>Návratové typy  
 Asynchronní metoda může mít následující návratové typy:

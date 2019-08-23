@@ -12,88 +12,88 @@ helpviewer_keywords:
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9b60cdef2af25ce712fcb2401b7f776d3add5b5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df1f1c7e28464781a73a0939c3413f4c9d620d7d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942383"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
-Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual Studio vaší trasování a ladění výstupu. Ale musíte zahrnout funkce sledování nasazených aplikací, zkompilovat instrumentované aplikace s využitím **trasování** direktivy kompilátoru povolena. To umožňuje trasování kódu se zkompiluje do verze vaší aplikace. Pokud nepovolíte **trasování** direktiv, všechna trasování kódu je ignorována během kompilace a není součástí spustitelný kód, který nasadíte.  
+Při ladění aplikace během vývoje přejde výstup trasování i ladění do okna výstup v aplikaci Visual Studio. Chcete-li však do nasazené aplikace zahrnout funkce trasování, je nutné zkompilovat vaše instrumentované aplikace s povolenou direktivou překladače **trasování** . To umožňuje zkompilovat kód pro vydanou verzi aplikace. Pokud nepovolíte direktivu **Trace** , veškerý trasovací kód se během kompilace ignoruje a není zahrnutý do spustitelného kódu, který nasadíte.  
   
- Trasování a ladění metody mají přiřazeny podmíněné atributy. Například pokud podmíněný atribut pro trasování je **true**, všechny příkazy trasování jsou zahrnuty v rámci sestavení (soubor zkompilovaný .exe nebo .dll); Pokud **trasování** atribut conditional je **false**, příkazů trasování nejsou zahrnuty.  
+ Metody trasování i ladění mají přidružené podmíněné atributy. Například pokud má podmíněný atribut pro trasování **hodnotu true**, všechny příkazy trasování jsou zahrnuty v rámci sestavení (zkompilovaného souboru. exe nebo. dll); Pokud má atribut **Trace** podmíněný **hodnotu false**, nejsou k dispozici příkazy TRACE.  
   
- Může mít buď **trasování** nebo **ladění** atribut conditional zapnuté pro sestavení, nebo obou nebo ani jeden. Proto existují čtyři typy sestavení: **Ladění**, **trasování**obou nebo ani jedna. Některé buildy vydaných verzí pro produkční nasazení mohou obsahovat ani; většinu ladicích sestavení obsahují.  
+ Můžete mít pro sestavení zapnutý podmíněný atribut **trasování** nebo **ladění** , nebo ani jeden z nich. Proto existují čtyři typy sestavení: **Ladění**, **trasování**, obojí nebo ani jeden z nich. Některá sestavení vydaných verzí pro produkční nasazení mohou obsahovat ani jednu z těchto možností: Většina sestavení ladění obsahuje obě.  
   
- Můžete zadat nastavení kompilátoru pro vaši aplikaci několika způsoby:  
+ Nastavení kompilátoru pro aplikaci můžete zadat několika způsoby:  
   
 - Stránky vlastností  
   
 - Příkazový řádek  
   
-- **#CONST** (pro jazyk Visual Basic) a **#define** (pro C#)  
+- **#CONST** (pro Visual Basic) a **#define** (pro C#)  
   
-### <a name="to-change-compile-settings-from-the-property-pages-dialog-box"></a>Chcete-li změnit nastavení kompilace z dialogového okna stránky vlastností  
+### <a name="to-change-compile-settings-from-the-property-pages-dialog-box"></a>Změna nastavení kompilace z dialogového okna stránky vlastností  
   
-1. Klikněte pravým tlačítkem na uzel projektu v **Průzkumníka řešení**.  
+1. Klikněte pravým tlačítkem myši na uzel projektu v **Průzkumník řešení**.  
   
-2. Zvolte **vlastnosti** z místní nabídky.  
+2. V místní nabídce vyberte možnost **vlastnosti** .  
   
-    - V jazyce Visual Basic, klikněte na tlačítko **kompilace** kartu v levém podokně na stránce vlastností a pak klikněte na tlačítko **Upřesnit možnosti kompilace** tlačítka pro zobrazení **pokročilé nastavení kompilátoru**dialogové okno. Zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
+    - V Visual Basic klikněte v levém podokně stránky vlastností na kartu **kompilovat** a pak klikněte na tlačítko **Upřesnit možnosti kompilace** . zobrazí se dialogové okno **Upřesnit nastavení kompilátoru** . Zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
   
-    - V C#, klikněte na tlačítko **sestavení** kartu v levém podokně na stránce vlastností a pak zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
+    - V C#klikněte na kartu **sestavení** v levém podokně stránky vlastností a zaškrtněte políčka pro nastavení kompilátoru, která chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
   
-### <a name="to-compile-instrumented-code-using-the-command-line"></a>Chcete-li zkompilovat instrumentované kódu pomocí příkazového řádku  
+### <a name="to-compile-instrumented-code-using-the-command-line"></a>Kompilace instrumentované kódu pomocí příkazového řádku  
   
-1. Nastavení přepínače podmíněné kompilátoru na příkazovém řádku. Kompilátor bude zahrnovat trasování nebo ladění kódu ve spustitelném souboru.  
+1. Nastavte podmíněný přepínač kompilátoru na příkazovém řádku. Kompilátor bude obsahovat kód trasování nebo ladění ve spustitelném souboru.  
   
-     Například následující pokyn kompilátoru zadané na příkazovém řádku by zahrnout trasování kódu do zkompilovaného spustitelného souboru:  
+     Například následující instrukce kompilátoru, která je zadána v příkazovém řádku, by zahrnovala váš kód trasování ve zkompilovaném spustitelném souboru:  
   
-     V jazyce Visual Basic: **Vbc –-r:System.dll -d: trasování = TRUE -d: DEBUG = FALSE MyApplication.vb**  
+     Pro Visual Basic: **Vbc-r:System.dll-d:TRACE = True-d:Debug = false MyApplication. vb**  
   
-     Pro C#: **csc-r:System.dll -d: trasování -d: DEBUG = FALSE MyApplication.cs**  
+     Pro C#: **CSC-r:System.dll-d:Trace-d:Debug = false MyApplication.cs**  
   
     > [!TIP]
-    >  Chcete-li zkompilovat více než jeden soubor aplikace, ponechte prázdné místo mezi názvy souborů, například **MyApplication1.vb MyApplication2.vb MyApplication3.vb** nebo **MyApplication1.cs MyApplication2.cs MyApplication3.cs**.  
+    >  Chcete-li zkompilovat více než jeden soubor aplikace, ponechte prázdné místo mezi názvy souborů, například **MyApplication1. vb MyApplication2. vb MyApplication3. vb** nebo **MyApplication1.cs MyApplication2.cs MyApplication3.cs**.  
   
-     Význam direktivy podmíněné kompilace použité v předchozích příkladech je následujícím způsobem:  
+     Význam direktiv podmíněné kompilace použitých ve výše uvedených příkladech je následující:  
   
     |– Direktiva|Význam|  
     |---------------|-------------|  
     |`vbc`|Visual Basic – kompilátor|  
-    |`csc`|C#Kompilátor|  
-    |`-r:`|Odkazuje na externí sestavení (EXE nebo DLL)|  
-    |`-d:`|Definuje symbol podmíněné kompilace|  
+    |`csc`|C#přepínač|  
+    |`-r:`|Odkazuje na externí sestavení (EXE nebo DLL).|  
+    |`-d:`|Definuje symbol podmíněné kompilace.|  
   
     > [!NOTE]
-    >  Je nutné zadat trasování a ladění se velká písmena. Další informace o příkazech podmíněné kompilace, zadejte `vbc /?` (pro jazyk Visual Basic) nebo `csc /?` (pro C#) na příkazovém řádku. Další informace najdete v tématu [sestavení z příkazového řádku](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) (C#) nebo [volání kompilátoru příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) (Visual Basic).  
+    > Je nutné provést trasování nebo ladění velkými písmeny. Další informace o příkazech podmíněné kompilace získáte zadáním `vbc /?` příkazu (pro Visual Basic) `csc /?` nebo ( C#pro) v příkazovém řádku. Další informace naleznete v tématu [sestavování z příkazového řádku](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) (C#) nebo [vyvolání kompilátoru příkazového řádku](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) (Visual Basic).  
   
-### <a name="to-perform-conditional-compilation-using-const-or-define"></a>K provedení podmíněné kompilace pomocí #CONST nebo #define  
+### <a name="to-perform-conditional-compilation-using-const-or-define"></a>Provedení podmíněné kompilace pomocí #CONST nebo #define  
   
-1. Zadejte odpovídající příkaz pro svůj oblíbený programovací jazyk v horní části souboru se zdrojovým kódem.  
+1. Zadejte odpovídající příkaz pro programovací jazyk v horní části souboru zdrojového kódu.  
   
     |Jazyk|Příkaz|Výsledek|  
     |--------------|---------------|------------|  
-    |**Visual Basic**|**#CONST trasování = true**|Umožňuje trasování|  
-    ||**#CONST trasování = false**|Zakáže trasování|  
-    ||**#CONST ladění = true**|Povolí ladění|  
-    ||**#CONST ladění = false**|Zakáže ladění|  
-    |**C#**|**#define trasování**|Umožňuje trasování|  
-    ||**#undef trasování**|Zakáže trasování|  
+    |**Visual Basic**|**#CONST TRACE = True**|Povolí trasování|  
+    ||**#CONST TRACE = false**|Zakáže trasování|  
+    ||**#CONST DEBUG = true**|Povolí ladění|  
+    ||**#CONST DEBUG = false**|Zakáže ladění.|  
+    |**C#**|**TRASOVÁNÍ #define**|Povolí trasování|  
+    ||**TRASOVÁNÍ #undef**|Zakáže trasování|  
     ||**#define ladění**|Povolí ladění|  
-    ||**#undef ladění**|Zakáže ladění|  
+    ||**#undef ladění**|Zakáže ladění.|  
   
-### <a name="to-disable-tracing-or-debugging"></a>Chcete-li zakázat trasování a ladění  
+### <a name="to-disable-tracing-or-debugging"></a>Zakázání trasování nebo ladění  
   
-Direktivy kompilátoru odstraňte ze zdrojového kódu.  
+Odstraní direktivu kompilátoru ze zdrojového kódu.  
   
 \- nebo –  
   
-Okomentujte direktivy kompilátoru.  
+Odkomentujte direktivu kompilátoru.  
   
 > [!NOTE]
->  Až budete připravení ke kompilaci, můžete buď zvolit **sestavení** z **sestavení** nabídce nebo pomocí příkazového řádku, ale bez zadání **d:** k definování podmíněné symboly kompilace.  
+> Až budete připraveni kompilovat, můžete buď zvolit možnost **sestavit** z nabídky **sestavení** , nebo použít metodu příkazového řádku, ale bez zadání **d:** pro definování symbolů podmíněné kompilace.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -102,5 +102,5 @@ Okomentujte direktivy kompilátoru.
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
 - [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-- [Postupy: Volání kompilátoru příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)
+- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Postupy: Volání kompilátoru příkazového řádku](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

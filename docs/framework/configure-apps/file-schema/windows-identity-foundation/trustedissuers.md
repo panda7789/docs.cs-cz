@@ -3,15 +3,15 @@ title: <trustedIssuers>
 ms.date: 03/30/2017
 ms.assetid: d818c917-07b4-40db-9801-8676561859fd
 author: BrucePerlerMS
-ms.openlocfilehash: cebfc2f3598f32f233db6039dfe82076d2ffce46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32aad3529ded6d0234b1bcb388ecbbc3b0a11c87
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790478"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944263"
 ---
 # <a name="trustedissuers"></a>\<trustedIssuers>
-Nakonfiguruje seznam důvěryhodných vystavitelů certifikátů používané registru názvu vystavitele založená na konfiguraci (<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>).  
+Nakonfiguruje seznam certifikátů důvěryhodných vystavitelů, které používá registr názvů vystavitelů na<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>základě konfigurace ().  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -50,23 +50,23 @@ Nakonfiguruje seznam důvěryhodných vystavitelů certifikátů používané re
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`<add thumbprint=xs:string name=xs:string>`|Přidá certifikát do kolekce důvěryhodných vystavitelů. Certifikát se zadaným `thumbprint` atribut. Tento atribut je vyžadován a musí obsahovat ASN.1 kódované podobě kryptografický otisk certifikátu. `name` Atribut je volitelný a je možné zadat popisný název certifikátu.|  
+|`<add thumbprint=xs:string name=xs:string>`|Přidá certifikát do kolekce důvěryhodných vystavitelů. Certifikát je zadán s `thumbprint` atributem. Tento atribut je povinný a měl by obsahovat formát ASN. 1 kódovaný v rámci kryptografického otisku certifikátu. `name` Atribut je nepovinný a dá se použít k zadání popisného názvu pro certifikát.|  
 |`<clear>`|Vymaže všechny certifikáty z kolekce důvěryhodných vystavitelů.|  
-|`<remove thumbprint=xs:string>`|Certifikát se odebere z kolekce důvěryhodných vystavitelů. Certifikát se zadaným `thumbprint` atribut. Tento atribut je vyžadován.|  
+|`<remove thumbprint=xs:string>`|Odebere certifikát z kolekce důvěryhodných vystavitelů. Certifikát je zadán s `thumbprint` atributem. Tento atribut je vyžadován.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuerNameRegistry>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)|Nakonfiguruje registru názvu vystavitele. **Důležité:**  `type` Atribut `<issuerNameRegistry>` prvek musí odkazovat <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídy pro `<trustedIssuers>` element platný.|  
+|[\<issuerNameRegistry>](issuernameregistry.md)|Nakonfiguruje registr názvu vystavitele. **Důležité:**  Atribut elementu musí odkazovat na <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídu, aby byl elementplatný.`<trustedIssuers>` `<issuerNameRegistry>` `type`|  
   
 ## <a name="remarks"></a>Poznámky  
- Technologie Windows Identity Foundation (WIF) poskytuje jedna implementace položky <xref:System.IdentityModel.Tokens.IssuerNameRegistry> třídy hned po spuštění <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídy. Konfigurace registru názvu vystavitele udržuje seznam důvěryhodných vystavitelů, který je načten z konfigurace. V seznamu přidruží každý název vystavitele, která je potřeba ověřit podpis tokeny vytvářených vystavitele certifikátu X.509. Seznam důvěryhodných vystavitelů certifikátů se zadává v části `<trustedIssuers>` elementu. Každý prvek v seznamu přidruží mnemonická vystavitele certifikátu X.509, který je potřeba k ověření podpisu tokeny vytvářených tohoto vydavatele. Důvěryhodné certifikáty jsou zadány pomocí ASN.1 kódovaný formu kryptografický otisk certifikátu a jsou přidány do kolekce pomocí `<add>` elementu. Můžete vymazat nebo odebrání vystavitele (certifikáty) ze seznamu pomocí `<clear>` a `<remove>` elementy.  
+ Windows Identity Foundation (WIF) poskytuje jednu implementaci <xref:System.IdentityModel.Tokens.IssuerNameRegistry> třídy mimo pole <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> , třídu. Registr názvů vystavitele konfigurace uchovává seznam důvěryhodných vystavitelů načtených z konfigurace. Seznam přidruží jednotlivé názvy vystavitelů k certifikátu X. 509, který je nezbytný k ověření podpisu tokenů vyprodukovaných vystavitelem. Seznam certifikátů důvěryhodných vystavitelů je určen pod `<trustedIssuers>` prvkem. Každý prvek v seznamu přidruží název vystavitele pomocí certifikátu X. 509, který je nezbytný k ověření podpisu tokenů vyprodukovaných tímto vystavitelem. Důvěryhodné certifikáty jsou zadány pomocí formátu ASN. 1 kódovaného otisku certifikátu a jsou přidány do kolekce pomocí `<add>` elementu. Můžete vymazat nebo odebrat vystavitele (certifikáty) ze seznamu pomocí `<clear>` prvků a. `<remove>`  
   
- `type` Atribut `<issuerNameRegistry>` prvek musí odkazovat <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídy pro `<trustedIssuers>` element platný.  
+ Atribut elementu musí odkazovat na <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídu, aby byl elementplatný.`<trustedIssuers>` `<issuerNameRegistry>` `type`  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje, jak zadat vystavitele konfigurace na základě názvu registru.  
+ Následující kód XML ukazuje, jak zadat registr názvů vystavitelů na základě konfigurace.  
   
 ```xml  
 <issuerNameRegistry type="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">  

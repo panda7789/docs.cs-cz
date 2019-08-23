@@ -11,41 +11,41 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: 633d378b2336b3ee166375a923252e0477e75127
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 88dc9c40a2b8ff0ac9bba26c991ba2a4ac2dcb43
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591659"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952434"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Postupy: Určení kontextu zabezpečení pro služby
-Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než přihlášeným uživatelem. Volá se spouštějí v kontextu systému výchozí účet služby `LocalSystem`, která jim udělí různá přístupová oprávnění k systémových prostředků, než uživatel. Toto chování k určení jiného uživatelského účtu, pod kterým se vaše služba spouštět můžete změnit.  
+Ve výchozím nastavení se služby spouštějí v jiném kontextu zabezpečení než přihlášený uživatel. Služby jsou spuštěny v kontextu výchozího systémového účtu, který je `LocalSystem`volán s různými přístupovými oprávněními k systémovým prostředkům, než uživatel. Toto chování můžete změnit tak, aby určovalo jiný uživatelský účet, pod kterým by měla služba běžet.  
   
- Nastavte kontext zabezpečení manipulací <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost pro proces, ve kterém je služba spuštěna. Tato vlastnost umožňuje nastavit službu do jedné ze čtyř typů účtu:  
+ Kontext zabezpečení můžete nastavit tak, že budete pracovat <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> s vlastností procesu, ve kterém je služba spuštěná. Tato vlastnost umožňuje nastavit službu na jeden ze čtyř typů účtů:  
   
-- `User`, což způsobí, že systém výzvy platné uživatelské jméno a heslo, pokud služba je nainstalována a spuštěna v kontextu účet specifikovaný v síti; jedním uživatelem  
+- `User`, což způsobí, že systém vyzve k zadání platného uživatelského jména a hesla, když je služba nainstalovaná a běží v kontextu účtu zadaného jedním uživatelem v síti.  
   
-- `LocalService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru;  
+- `LocalService`, který běží v kontextu účtu, který funguje jako Neprivilegovaný uživatel v místním počítači, a prezentuje anonymní přihlašovací údaje pro všechny vzdálené servery.  
   
-- `LocalSystem`, která se spouští v kontextu účtu, který poskytuje rozsáhlé místní oprávnění a zobrazení přihlašovacích údajů počítače a jakémukoli vzdálenému serveru;  
+- `LocalSystem`, které běží v kontextu účtu, který poskytuje rozsáhlá místní oprávnění, a prezentuje přihlašovací údaje počítače na jakémkoli vzdáleném serveru.  
   
-- `NetworkService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a uvede přihlašovacích údajů počítače a jakémukoli vzdálenému serveru.  
+- `NetworkService`, která běží v kontextu účtu, který funguje jako Neprivilegovaný uživatel v místním počítači, a prezentuje přihlašovací údaje počítače k jakémukoli vzdálenému serveru.  
   
- Další informace najdete v tématu <xref:System.ServiceProcess.ServiceAccount> výčtu.  
+ Další informace najdete v tématu <xref:System.ServiceProcess.ServiceAccount> výčet.  
   
-### <a name="to-specify-the-security-context-for-a-service"></a>K určení kontextu zabezpečení pro službu  
+### <a name="to-specify-the-security-context-for-a-service"></a>Určení kontextu zabezpečení pro službu  
   
-1. Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)služby.  
   
-2. V návrháři pro přístup `ProjectInstaller` třídy a klikněte na instalační program služby procesu pro službu pracujete.  
+2. V Návrháři přejděte ke `ProjectInstaller` třídě a klikněte na instalační program procesu služby pro službu, se kterou pracujete.  
   
     > [!NOTE]
-    >  Pro každou aplikaci služby existují alespoň dvě součásti instalace v `ProjectInstaller` třídy – ten, který nainstaluje procesy pro všechny služby v projektu a jednoho instalačního programu pro každou službu, která obsahuje aplikaci. V této instanci, kterou chcete vybrat <xref:System.ServiceProcess.ServiceProcessInstaller>.  
+    > Pro každou aplikaci služby je ve `ProjectInstaller` třídě k dispozici alespoň dvě součásti instalace – jeden, který nainstaluje procesy pro všechny služby v projektu, a jeden instalační program pro každou službu, kterou aplikace obsahuje. V této instanci chcete vybrat <xref:System.ServiceProcess.ServiceProcessInstaller>.  
   
-3. V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
+3. V okně **vlastnosti** nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Postupy: Vytvořit služby systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)

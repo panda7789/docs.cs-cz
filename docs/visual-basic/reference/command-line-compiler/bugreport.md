@@ -6,15 +6,15 @@ helpviewer_keywords:
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-ms.openlocfilehash: 440e583b55765d680ee72f8574f929e335e10cdb
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 75c3e5842447a8f0812d5a90d7157f7a6a496936
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590630"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962448"
 ---
 # <a name="-bugreport"></a>-bugreport
-Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.  
+Vytvoří soubor, který můžete použít při zaznamenání zprávy o chybě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,35 +26,35 @@ Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.
   
 |Termín|Definice|  
 |---|---|  
-|`file`|Povinný parametr. Název souboru, který bude obsahovat vaše hlášení o chybě. Název souboru uzavřete do uvozovek ("") Pokud název obsahuje mezery.|  
+|`file`|Povinný parametr. Název souboru, který bude obsahovat zprávu o chybě. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Následující informace se přidají do `file`:  
+ Do `file`této části jsou přidány následující informace:  
   
-- Zkopírujte všechny soubory zdrojového kódu dané kompilace.  
+- Kopii všech souborů zdrojového kódu v kompilaci.  
   
-- Seznam možností kompilátoru použita při kompilaci.  
+- Seznam možností kompilátoru použitých v kompilaci.  
   
-- Informace o verzi kompilátoru, modul common language runtime a operačního systému.  
+- Informace o verzi pro kompilátor, modul CLR (Common Language Runtime) a operační systém.  
   
 - Výstup kompilátoru, pokud existuje.  
   
 - Popis problému, pro který se zobrazí výzva.  
   
-- Popis jak domníváte, že problém je třeba stanovit, pro který se zobrazí výzva.  
+- Popis toho, jak si myslíte problém, by měl být vyřešen, pro který se zobrazí výzva.  
   
- Vzhledem k tomu, že kopie všech souborů zdrojového kódu je součástí `file`, možná budete chtít reprodukovat (podezřelý) kód v nejkratší možné program.  
+ Vzhledem k tomu `file`, že je do aplikace zahrnutá kopie všech souborů zdrojového kódu, můžete v nejbližším programu chtít reprodukování vady kódu (podezřelé).  
   
 > [!IMPORTANT]
->  `-bugreport` Možnost vytvoří soubor, který obsahuje potenciálně citlivé informace. To zahrnuje aktuální čas, verze kompilátoru, verze rozhraní .NET Framework, verze operačního systému, uživatelské jméno, argumenty příkazového řádku, se kterými byla spuštěna kompilátor, s veškerým zdrojovým kódem a binární forma všechny odkazované sestavení. Tuto možnost můžete přistupovat zadáním možnosti příkazového řádku v souboru Web.config pro kompilaci aplikací technologie ASP.NET na straně serveru. Chcete-li tomu zabránit, upravte soubor Machine.config chcete zakázat uživatelům v kompilaci na serveru.  
+> `-bugreport` Možnost vytvoří soubor, který obsahuje potenciálně citlivé informace. Patří sem aktuální čas, verze kompilátoru, verze .NET Framework, verze operačního systému, uživatelské jméno, argumenty příkazového řádku, s nimiž byl kompilátor spuštěn, veškerý zdrojový kód a binární forma libovolného odkazovaného sestavení. Tato možnost je k dispozici při zadání možností příkazového řádku v souboru Web. config pro kompilaci ASP.NET aplikace na straně serveru. Chcete-li tomu zabránit, upravte soubor Machine. config tak, aby nedocházelo k tomu, aby uživatelé mohli kompilovat na serveru.  
   
- Pokud tato možnost se používá s `-errorreport:prompt`, `-errorreport:queue`, nebo `-errorreport:send`, a aplikace zaznamená chybu kompilátoru, informace v `file` odeslány společnosti Microsoft Corporation. Tyto informace vám pomohou určit příčinu chyby odborníky z Microsoftu a může zvýšit následující verzi jazyka Visual Basic. Ve výchozím nastavení žádné informace se neposílají do Microsoftu. Nicméně pokud kompilujete aplikace s použitím `-errorreport:queue`, který je ve výchozím nastavení povolené, aplikace shromáždí jeho zprávy o chybách. Potom při přihlášení správce počítače, Chyba při vytváření sestav systému zobrazí automaticky otevírané okno, které umožňuje správcům předávání do Microsoftu zprávy o všech chybách, ke které došlo od přihlášení.  
+ Pokud je tato možnost použita s `-errorreport:prompt`, `-errorreport:queue`nebo `-errorreport:send`a vaše aplikace narazí na vnitřní chybu kompilátoru, informace v `file` nástroji se odesílají společnosti Microsoft Corporation. Tyto informace pomohou technikům Microsoftu identifikovat příčinu chyby a mohou pomoci zlepšit další vydání Visual Basic. Ve výchozím nastavení se Microsoftu neodesílají žádné informace. Pokud však zkompilujete aplikaci pomocí nástroje `-errorreport:queue`, který je ve výchozím nastavení povolený, aplikace shromáždí své zprávy o chybách. Až se správce počítače přihlásí, systém zasílání zpráv o chybách zobrazí automaticky otevírané okno, které správci umožní předávat společnosti Microsoft jakékoli zprávy o chybách, ke kterým došlo od přihlášení.  
   
 > [!NOTE]
->  `/bugreport` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici, pouze pokud kompilujete z příkazového řádku.  
+> Tato `/bugreport` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad se zkompiluje `T2.vb` a umístí všechny informace pro hlášení chyb v souboru `Problem.txt`.  
+ Následující příklad zkompiluje `T2.vb` a vloží všechny informace o hlášení chyb v souboru `Problem.txt`.  
   
 ```  
 vbc -bugreport:problem.txt t2.vb  
@@ -62,8 +62,8 @@ vbc -bugreport:problem.txt t2.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-Debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)
 - [-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [trustLevel – Element pro securityPolicy (schéma nastavení technologie ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as399f0x(v=vs.100))
+- [Element trustLevel pro securityPolicy (schéma nastavení ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as399f0x(v=vs.100))

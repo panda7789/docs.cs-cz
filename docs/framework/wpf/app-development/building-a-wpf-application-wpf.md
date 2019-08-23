@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 02a86ea8d8d6b481044d6ca25d29df7edd2c73ee
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a5254de07029e53dd6b72bd2c096c38525a661b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401690"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958709"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 
@@ -24,7 +24,7 @@ Aplikace Windows Presentation Foundation (WPF) mohou být sestaveny jako .NET Fr
 
 Aplikace WPF může být zkompilována následujícími způsoby:
 
-- Příkazový řádek. Aplikace musí obsahovat pouze kód (žádný XAML) a definiční soubor aplikace. Další informace najdete v tématu sestavování z příkazového [řádku pomocí CSc. exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo při sestavování [z příkazového řádku (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
+- Příkazový řádek. Aplikace musí obsahovat pouze kód (žádný XAML) a definiční soubor aplikace. Další informace najdete v tématu sestavování z příkazového [řádku pomocí CSc. exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo při sestavování [z příkazového řádku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
 
 - Microsoft Build Engine (MSBuild). Kromě kódu a souborů XAML musí aplikace obsahovat soubor projektu MSBuild. Další informace naleznete v tématu "MSBuild".
 
@@ -42,7 +42,7 @@ Při sestavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md
 
 ### <a name="pre-build-initializations"></a>Inicializace před sestavením
 
-Před sestavením [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] nástroj určuje umístění důležitých nástrojů a knihoven, včetně následujících:
+Před sestavením nástroj MSBuild určí umístění důležitých nástrojů a knihoven, včetně následujících:
 
 - .NET Framework.
 
@@ -52,7 +52,7 @@ Před sestavením [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-
 
 - Vlastnost pro cesty pro vyhledávání sestavení.
 
-První umístění, kde [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] vyhledávání sestavení je adresář referenčního sestavení (%programfiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Během tohoto kroku proces sestavení také inicializuje různé vlastnosti a skupiny položek a provede všechny potřebné čisticí operace.
+První umístění, kde MSBuild vyhledává sestavení, je referenční adresář sestavení (%ProgramFiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Během tohoto kroku proces sestavení také inicializuje různé vlastnosti a skupiny položek a provede všechny potřebné čisticí operace.
 
 <a name="Resolving_references"></a>
 
@@ -108,7 +108,7 @@ Public Sub InitializeComponent() _
 End Sub
 ```
 
-Ve výchozím nastavení se kompilace kódu spouští ve stejném <xref:System.AppDomain> stavu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] jako modul. Tím je zajištěno výrazné zvýšení výkonu. Toto chování lze zapnout pomocí `AlwaysCompileMarkupFilesInSeparateDomain` vlastnosti. To má výhodu odinstalování všech referenčních sestavení odinstalováním <xref:System.AppDomain>samostatného.
+Ve výchozím nastavení se kompilace kódu spouští ve stejném <xref:System.AppDomain> formátu jako modul MSBuild. Tím je zajištěno výrazné zvýšení výkonu. Toto chování lze zapnout pomocí `AlwaysCompileMarkupFilesInSeparateDomain` vlastnosti. To má výhodu odinstalování všech referenčních sestavení odinstalováním <xref:System.AppDomain>samostatného.
 
 <a name="Pass_2_of_Markup_Compilation"></a>
 

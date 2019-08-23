@@ -5,33 +5,33 @@ helpviewer_keywords:
 - animation [WPF], objects with key frames
 - key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
-ms.openlocfilehash: b0a0f7c00125a43228a2658415b72f4d541f37be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ffbe1845b634c8f94eb6a10dfa44fcf9903e0cd5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020150"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933910"
 ---
 # <a name="how-to-animate-an-object-by-using-key-frames"></a>Postupy: Animace objektu pomocí klíčových snímků
-Tento příklad ukazuje, jak pro animaci objektu, který v tomto příkladu je <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku s použitím klíčových snímků.  
+Tento příklad ukazuje, jak animovat objekt, který v tomto příkladu je <xref:System.Windows.Controls.Page.Background%2A> vlastností <xref:System.Windows.Controls.Page> ovládacího prvku pomocí klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy animace barev změní pro <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku. Příklad animace změní na štětec pozadí různých v pravidelných intervalech. Používá tato animace <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> třídy za účelem vytvoření tří různých klíčových snímků. Animace pomocí klíčových snímků následujícím způsobem:  
+ Následující příklad používá <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídu k animaci změn barvy <xref:System.Windows.Controls.Page.Background%2A> pro vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku. Ukázková animace se v pravidelných intervalech mění na jiný štětec na pozadí. Tato animace používá <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> třídu k vytvoření tří různých klíčových snímků. Animace používá klíčové snímky následujícím způsobem:  
   
-1. Na konci prvního druhé animuje instance <xref:System.Windows.Media.LinearGradientBrush> třídy. Tato část. Příklad se týká lineárního přechodu na barvu pozadí tak, aby změní barvu z žlutá na oranžovou na červenou.  
+1. Na konci první sekundy animuje instanci <xref:System.Windows.Media.LinearGradientBrush> třídy. Tato část příkladu aplikuje lineární přechod na barvu pozadí, aby se barvy od žlutého po oranžová do červené.  
   
-2. Na konci do příští sekundy animuje instance <xref:System.Windows.Media.RadialGradientBrush> třídy. Tato část. Příklad se týká paprskového přechodu na barvu pozadí tak, aby změní barvu z prázdné na modrou na černou.  
+2. Na konci další sekundy animuje instanci <xref:System.Windows.Media.RadialGradientBrush> třídy. Tato část příkladu aplikuje paprskový přechod na barvu pozadí, aby se barvy přechází z bílé na modrou na černou.  
   
-3. Na konci třetího druhé animuje instance <xref:System.Windows.Media.DrawingBrush> třídy. Tato část příklad se týká šachovnicový vzor na pozadí.  
+3. Na konci třetí sekundy animuje instanci <xref:System.Windows.Media.DrawingBrush> třídy. Tato část příkladu aplikuje na pozadí šachovnicový vzor.  
   
-4. Animace začne znovu a opakuje bez omezení.  
+4. Animace se znovu spustí a zopakuje se neomezeně.  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> je jediným typem klíčový snímek, který vám pomůže s <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy. Klíč snímků jako <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> vytvořit náhlých změn v hodnotách, to znamená, změny barev v tomto příkladu dojde k náhlému.  
+> <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame>je jediným typem klíčového snímku, který lze použít s <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídou. Klíčové snímky, <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> jako je vytváření náhlých změn v hodnotách, to znamená, že se změny barev v tomto příkladu vyskytují náhle.  
   
  [!code-xaml[keyframes_snip#ObjectAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ObjectAnimationUsingKeyFramesExample.xaml#objectanimationusingkeyframeswholepage)]  
   
- Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
+ Úplnou ukázku najdete v tématu [Ukázka animace klíčových snímků](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
 ## <a name="see-also"></a>Viz také:
 

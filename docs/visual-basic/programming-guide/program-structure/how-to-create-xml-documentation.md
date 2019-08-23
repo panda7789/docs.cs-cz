@@ -1,40 +1,40 @@
 ---
-title: 'Postupy: Vytvoření dokumentace XML v jazyce Visual Basic'
+title: 'Postupy: Vytvoření dokumentace XML v Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML comments
 - XML documentation [Visual Basic], creating
 ms.assetid: 27b5b06c-09b9-496a-8245-f9542d846230
-ms.openlocfilehash: 95f6c5b23deadc16eb1e81f274e2cc5149598fb7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9380c23ab6cfdbecd519926229b45ed863f07f9e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050428"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947719"
 ---
-# <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v jazyce Visual Basic
-Tento příklad ukazuje, jak přidat komentáře k dokumentaci XML do kódu.  
+# <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v Visual Basic
+Tento příklad ukazuje, jak přidat dokumentační komentáře XML do kódu.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-xml-documentation-for-a-type-or-member"></a>K vytvoření dokumentace XML pro typ nebo člen  
+### <a name="to-create-xml-documentation-for-a-type-or-member"></a>Vytvoření dokumentace XML pro typ nebo člen  
   
-1. V **Editor kódu**, umístěte kurzor na řádek nad tento typ nebo člen, pro kterou chcete vytvořit dokumentaci.  
+1. V **editoru kódu**umístěte kurzor na řádek nad typ nebo člen, pro který chcete vytvořit dokumentaci.  
   
-2. Typ `'''` (tří jednoduchých uvozovek).  
+2. Typ `'''` (tři jednoduché uvozovky).  
   
-     Kostra XML pro typ nebo člen bude přidán do **Editor kódu**.  
+     V **editoru kódu**se přidá kostra XML pro daný typ nebo člen.  
   
-3. Přidáte popisné informace mezi odpovídající značky.  
+3. Přidejte popisné informace mezi příslušné značky.  
   
     > [!NOTE]
-    >  Pokud chcete přidat další řádky v rámci bloku dokumentace XML, musí začínat každého řádku `'''`.  
+    > Pokud přidáte další řádky do bloku dokumentace XML, musí každý řádek začínat `'''`na.  
   
-4. Přidejte další kód, který používá typ nebo člen pomocí nového komentáře k dokumentaci XML.  
+4. Přidejte další kód, který používá typ nebo člen s novými dokumentačními komentáři XML.  
   
-     Technologie IntelliSense zobrazí text z \<summary > značky pro tento typ nebo člen.  
+     IntelliSense zobrazí text z \<značky Summary > pro daný typ nebo člen.  
   
-5. Zkompilujte kód a vygenerovat soubor XML obsahující komentáře k dokumentaci. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
+5. Zkompilujte kód pro vygenerování souboru XML obsahujícího dokumentační komentáře. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
   
 ## <a name="see-also"></a>Viz také:
 

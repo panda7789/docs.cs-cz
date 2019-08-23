@@ -1,5 +1,5 @@
 ---
-title: <remove> – Element pro <listeners> pro <trace>
+title: <remove>Element pro <listeners> pro<trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: adf00394bc0bfe808836e74214003cd2078204e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c5c9efb8a22d26ea5d4467f9628af5935d6dbad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673677"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920473"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<Odebrat > – Element pro \<naslouchacích procesů > pro \<trasování >
-Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.  
+# <a name="remove-element-for-listeners-for-trace"></a>\<Odebrat element > pro \<naslouchací procesy > \<pro > trasování
+Odebere naslouchací proces z kolekce **posluchačů** .  
   
- \<Konfigurace >  
+ \<> Konfigurace  
 \<system.diagnostics>  
-\<trasování >  
-\<naslouchací procesy >  
-\<remove>  
+\<> trasování  
+\<> naslouchací proces  
+\<odebrat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu odebrání **naslouchacích procesů** kolekce.|  
+|**name**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu, který se má odebrat z kolekce posluchačů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,17 +46,17 @@ Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`listeners`|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv. Posluchači přímý výstup trasování příslušný cíli.|  
-|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`trace`|Nakonfiguruje službu sledování technologie ASP.NET.|  
+|`listeners`|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`trace`|Konfiguruje službu trasování ASP.NET.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Odebírá <xref:System.Diagnostics.DefaultTraceListener> z `Listeners` kolekce mění chování <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>, a <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> metody. Volání `Assert` nebo `Fail` metoda normálně ve výsledku zobrazení okna se zprávou, ale okno se zprávou se nezobrazí, pokud <xref:System.Diagnostics.DefaultTraceListener> není v `Listeners` kolekce.  
+> <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>Odebrání zkolekcezmění<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>chování metod,, a .<xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> <xref:System.Diagnostics.DefaultTraceListener> `Listeners` Volání metody `Fail` <xref:System.Diagnostics.DefaultTraceListener> nebo obvykle vede k zobrazení okna se zprávou, avšak okno se zprávou není zobrazeno, pokud není v `Listeners` kolekci. `Assert`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak k odebrání naslouchacího procesu trasování výchozí trasování **naslouchacích procesů** kolekce.  
+ Následující příklad ukazuje, jak odebrat výchozí naslouchací proces trasování z kolekce posluchačů trasování.  
   
 ```xml  
 <configuration>  
@@ -76,4 +76,4 @@ Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a ladění schématu nastavení](index.md)

@@ -3,15 +3,15 @@ title: <customCookieHandler>
 ms.date: 03/30/2017
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
 author: BrucePerlerMS
-ms.openlocfilehash: 0129c63fe17b63889a77ea1a56c0d7e657def859
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ebf1f7f3de1b44dba63977bf524dea9af2690fb1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791726"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942785"
 ---
 # <a name="customcookiehandler"></a>\<customCookieHandler>
-Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Vlastní". Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.  
+Nastaví typ obslužné rutiny vlastního souboru cookie. Tento element může být k dispozici pouze `mode` v případě, `<cookieHandler>` že je atribut elementu "Custom". Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.  
   
  \<system.identityModel.services>  
 \<federationConfiguration>  
@@ -38,7 +38,7 @@ Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element může 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-| – typ|Určuje, která je odvozena z vlastního typu <xref:System.IdentityModel.Services.CookieHandler> třídy. Další informace o tom, jak zadat `type` atributu naleznete v tématu [odkazů na vlastní typy](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).|  
+|– typ|Určuje vlastní typ, který je odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy. Další informace o tom, jak zadat `type` atribut, naleznete v tématu odkazy na [vlastní typ](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -47,15 +47,15 @@ Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element může 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cookieHandler>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , který <xref:System.IdentityModel.Services.SessionAuthenticationModule> používá ke čtení a zápis souborů cookie.|  
+|[\<cookieHandler>](cookiehandler.md)|Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> <xref:System.IdentityModel.Services.SessionAuthenticationModule> , že používá ke čtení a zápisu souborů cookie.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při zadání obslužné rutiny vlastních souborů cookie pomocí nastavení `mode` atribut `<cookieHandler>` element "Vlastní", je třeba zadat typ obslužné rutiny vlastních souborů cookie zahrnutím `<customCookieHandler>` podřízený prvek, který odkazuje na typ obslužné rutiny souborů cookie. Tento element nemůže být zadán při `mode` atribut je nastaven na "Bloku dat" nebo "Výchozí". Vlastní soubor cookie obslužné rutiny musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.  
+ Když zadáte vlastní obslužnou rutinu souborů cookie nastavením `mode` atributu `<cookieHandler>` elementu na "Custom", je nutné zadat typ obslužné rutiny vlastního `<customCookieHandler>` souboru cookie zahrnutím podřízeného prvku, který odkazuje na typ obslužné rutiny cookie. Tento prvek nelze zadat, pokud `mode` je atribut nastaven na hodnotu "v bloku" nebo "default". Vlastní obslužné rutiny souborů cookie musí <xref:System.IdentityModel.Services.CookieHandler> být odvozeny od třídy.  
   
- `<customCookieHandler>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.CustomTypeElement> třídy.  
+ Element je reprezentován <xref:System.IdentityModel.Configuration.CustomTypeElement>třídou. `<customCookieHandler>`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastaví SAM použít vlastní soubor cookie obslužné rutiny typu `MyNamespace.MyCustomCookieHandler`.  
+ Následující příklad nakonfiguruje SAM tak, aby používal vlastní obslužnou rutinu cookie `MyNamespace.MyCustomCookieHandler`typu.  
   
 ```xml  
 <cookieHandler mode="Custom">  

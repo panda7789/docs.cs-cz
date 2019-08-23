@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed8525cad7dd56fe026070786b0f0cf51c0fec2d
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 3134477198f0cd4c821bea456450e98cc73c6ad2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363974"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957461"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači během nasazení vytvoříte v době návrhu soubory manifestu ve stylu Win32, které obsahují informace o vazbách a aktivaci. Tyto soubory manifestu, nikoli klíče registru, nasměrují aktivaci objektu.  
@@ -52,7 +52,7 @@ Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu be
      Aktivace bez registrace je volitelná pro komponenty modelu COM nainstalované v systému Windows XP. Podrobné pokyny týkající se přidání souběžného sestavení do aplikace najdete v tématu [použití souběžných sestavení](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
   
     > [!NOTE]
-    >  Souběžné spouštění je funkce .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, pro spuštění ve stejném počítači současně. Souběžné spouštění a souběžná sestavení jsou různými mechanismy pro poskytování funkcí vedle sebe.  
+    > Souběžné spouštění je funkce .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, pro spuštění ve stejném počítači současně. Souběžné spouštění a souběžná sestavení jsou různými mechanismy pro poskytování funkcí vedle sebe.  
   
 ## <a name="see-also"></a>Viz také:
 

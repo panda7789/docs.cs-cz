@@ -3,15 +3,15 @@ title: <tokenReplayCache>
 ms.date: 03/30/2017
 ms.assetid: 1572ab23-6933-41b5-bfb4-0c4548145500
 author: BrucePerlerMS
-ms.openlocfilehash: 1567c669b5e682a7a771d7bedc95a8effa474e36
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5747a4cfa93118dd41292904b168bbef02fec415
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790504"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944080"
 ---
 # <a name="tokenreplaycache"></a>\<tokenReplayCache>
-Registruje mezipaměti opětovného přehrání tokenu služby nebo kolekci obslužné rutiny tokenů zabezpečení.  
+Zaregistruje mezipaměť opětovného přehrání tokenu pomocí kolekce obslužné rutiny tokenu zabezpečení nebo služby.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -38,22 +38,22 @@ Registruje mezipaměti opětovného přehrání tokenu služby nebo kolekci obsl
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-| – typ|Typ, který je odvozen od <xref:System.IdentityModel.Tokens.TokenReplayCache> třídy. Další informace o tom, jak určit vlastní `type`, najdete v článku [vlastní typ reference].
+|– typ|Typ, který je odvozen od <xref:System.IdentityModel.Tokens.TokenReplayCache> třídy. Další informace o tom, jak zadat vlastní `type`, naleznete v tématu [odkazy na vlastní typ].
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipamětí používá službu nebo kolekci obslužné rutiny tokenů zabezpečení.|  
+|[\<caches>](caches.md)|Zaregistruje mezipaměti používané službou nebo kolekcí obslužné rutiny tokenů zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Mezipaměť opětovného přehrání tokenu slouží ke zjištění přehraná tokeny. Rozpoznání opětovného přehrání tokenu je povoleno podle [ \<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md) element, který také určuje, maximální dobu vypršení platnosti tokenů.  
+ Mezipaměť pro opětovné přehrání tokenu se používá ke zjišťování předaných tokenů. Detekce opětovného přehrání tokenu je povolena [ \<prvkem tokenReplayDetection >](tokenreplaydetection.md) , který také určuje maximální dobu vypršení platnosti tokenů.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje konfiguraci vlastní mezipaměti pro zjišťování přehraná tokeny.  
+ Následující kód XML ukazuje konfiguraci vlastní mezipaměti pro detekci přehráných tokenů.  
   
 ```xml  
 <caches>  
@@ -65,4 +65,4 @@ Registruje mezipaměti opětovného přehrání tokenu služby nebo kolekci obsl
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IdentityModel.Tokens.TokenReplayCache>
-- [\<tokenReplayDetection>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)
+- [\<tokenReplayDetection>](tokenreplaydetection.md)

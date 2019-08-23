@@ -2,80 +2,80 @@
 title: Schéma databáze trvalosti
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 38df4b3d629840f1b5def2eafa0d074a2b2397a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 384a9aceaf0b5619bbc4eca5929b6e6d7855e3d3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864166"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962881"
 ---
 # <a name="persistence-database-schema"></a>Schéma databáze trvalosti
-Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovního postupu SQL.  
+Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pracovního postupu SQL.  
   
 ## <a name="instances-view"></a>Zobrazení instancí  
- **Instance** zobrazení obsahuje obecné informace o všech instancí pracovních postupů v databázi.  
+ Zobrazení **Instances** obsahuje obecné informace o všech instancích pracovního postupu v databázi.  
   
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
-|InstanceId|uniqueidentifier|ID instance pracovního postupu.|  
-|PendingTimer|DateTime|Označuje, že pracovní postup je blokována v aktivitě Delay a bude pokračovat po vypršení platnosti časovač. Tato hodnota může být null, pokud pracovní postup není blokován čekání na časovač vypršení platnosti.|  
-|CreationTime|DateTime|Určuje, kdy byla vytvořena pracovní postup.|  
-|LastUpdatedTime|DateTime|Označuje čas posledního pracovního postupu byla trvale uložena do databáze.|  
-|ServiceDeploymentId|BigInt|Funguje jako cizí klíč k zobrazení [ServiceDeployments]. Pokud se aktuální instance pracovního postupu je instance hostované webové služby, tento sloupec obsahuje hodnotu, jinak je nastavena na hodnotu NULL.|  
-|SuspensionExceptionName|Nvarchar(450)|Určuje typ výjimky (například InvalidOperationException), která způsobila pracovní postup pro dočasné pozastavení.|  
-|SuspensionReason|Nvarchar(max)|Označuje, proč byl pozastaven Instance pracovního postupu. Je-li k výjimce instance, kterou chcete pozastavit, tento sloupec obsahuje zprávy související s výjimkou.<br /><br /> Pokud instance byla ručně pozastavena, tento sloupec obsahuje uživatelem zadané důvod pro pozastavení instance.|  
-|ActiveBookmarks|Nvarchar(max)|Pokud Instance pracovního postupu je nečinný, tato vlastnost určuje, jaké záložky instance je blokována v. Pokud Instance není nečinný, je tento sloupec NULL.|  
-|CurrentMachine|Nvarchar(128)|Označuje, že název počítače má aktuálně pracovního postupu, které Instance načtena do paměti.|  
-|LastMachine|Nvarchar(450)|Označuje poslední počítači, který je načíst instanci pracovního postupu.|  
-|ExecutionStatus|Nvarchar(450)|Označuje aktuální stav provádění pracovního postupu. Možné stavy zahrnout **zpracování**, **nečinný**, **uzavřeno**.|  
-|IsInitialized|bit|Určuje, zda instance pracovního postupu byla inicializována. Instance pracovního postupu inicializované je instance pracovního postupu, který obsahuje alespoň jednou trvalé.|  
-|IsSuspended|bit|Určuje, zda instance pracovního postupu bylo pozastaveno.|  
-|IsCompleted|bit|Určuje, zda Instance pracovního postupu byl dokončen. **Poznámka:**  IIf **InstanceCompletionAction** je nastavena na **DeleteAll**, instance se odeberou ze zobrazení po dokončení.|  
-|EncodingOption|TinyInt|Popisuje kódování použité k serializaci dat vlastnosti.<br /><br /> -0 – bez kódování<br />-   1 – GzipStream|  
-|ReadWritePrimitiveDataProperties|Varbinary(max)|Obsahuje vlastnosti serializovanou instanci dat, které vám poskytneme zpět do modulu Runtime pracovního postupu při načtení instance.<br /><br /> Každý primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu blob nejsou potřeba žádné speciální sestavení.|  
-|WriteOnlyPrimitiveDataProperties|Varbinary(max)|Obsahuje vlastnosti dat serializovanou instanci, které nejsou k dispozici zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Každý primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu blob nejsou potřeba žádné speciální sestavení.|  
-|ReadWriteComplexDataProperties|Varbinary(max)|Obsahuje vlastnosti serializovanou instanci dat, které vám poskytneme zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Deserializátor by vyžadují znalost typů objektů uložených v tento objekt blob.|  
-|WriteOnlyComplexDataProperties|Varbinary(max)|Obsahuje vlastnosti dat serializovanou instanci, které nejsou k dispozici zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Deserializátor by vyžadují znalost typů objektů uložených v tento objekt blob.|  
-|IdentityName|Nvarchar(max)|Název definice pracovního postupu.|  
-|IdentityPackage|Nvarchar(max)|Informace o balíčku zadaný při vytvoření pracovního postupu (jako je název sestavení).|  
-|Sestavení|BigInt|Číslo sestavení verze pracovního postupu.|  
+|InstanceId|uniqueidentifier|ID instance pracovního postupu|  
+|PendingTimer|DateTime|Indikuje, že je pracovní postup zablokovaný u aktivity zpoždění a bude obnoven po vypršení platnosti časovače. Tato hodnota může být null, pokud pracovní postup není blokovaný čekáním na vypršení platnosti časovače.|  
+|CreationTime|DateTime|Určuje, kdy byl pracovní postup vytvořen.|  
+|LastUpdatedTime|DateTime|Označuje čas, kdy byl pracovní postup naposledy trvale uložen do databáze.|  
+|ServiceDeploymentId|BigInt|Slouží jako cizí klíč k zobrazení [ServiceDeployments]. Pokud je aktuální instance pracovního postupu instancí služby hostované na webu, pak má tento sloupec hodnotu, v opačném případě je nastavená na hodnotu NULL.|  
+|SuspensionExceptionName|Nvarchar(450)|Určuje typ výjimky (např. InvalidOperationException), která způsobila pozastavení pracovního postupu.|  
+|SuspensionReason|Nvarchar (max)|Indikuje, proč se instance pracovního postupu pozastavila. Pokud výjimka způsobila pozastavení instance, pak tento sloupec obsahuje zprávu spojenou s výjimkou.<br /><br /> Pokud byla instance ručně pozastavena, pak tento sloupec obsahuje důvod uživatele určený k pozastavení instance.|  
+|ActiveBookmarks|Nvarchar (max)|Pokud je instance pracovního postupu nečinná, tato vlastnost indikuje, na kterých záložkách je instance zablokovaná. Pokud instance není nečinná, je tento sloupec NULL.|  
+|CurrentMachine|Nvarchar (128)|Označuje, že název počítače v současné době má instanci pracovního postupu načtenou v paměti.|  
+|LastMachine|Nvarchar(450)|Označuje poslední počítač, který načte instanci pracovního postupu.|  
+|ExecutionStatus|Nvarchar(450)|Určuje aktuální stav provádění pracovního postupu. Mezi možné stavy patří **provádění**, nečinné, **Uzavřeno**.|  
+|IsInitialized|bit|Označuje, zda instance pracovního postupu byla inicializována. Inicializovaná instance pracovního postupu je instance pracovního postupu, která byla alespoň jednou trvalá.|  
+|Pozastaveno|bit|Označuje, zda byla instance pracovního postupu pozastavena.|  
+|IsCompleted|bit|Označuje, zda byla instance pracovního postupu dokončena. **Poznámka:**  IIF vlastnost **InstanceCompletionAction** je nastavená na **DeleteAll**, instance se po dokončení odeberou ze zobrazení.|  
+|EncodingOption|TinyInt|Popisuje kódování používané k serializaci vlastností dat.<br /><br /> -0 – bez kódování<br />-1 – GzipStream|  
+|ReadWritePrimitiveDataProperties|Varbinary (max)|Obsahuje vlastnosti dat serializované instance, které budou poskytnuty zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Každá primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu BLOB nejsou potřeba žádná speciální sestavení.|  
+|WriteOnlyPrimitiveDataProperties|Varbinary (max)|Obsahuje vlastnosti dat serializované instance, které se při načtení instance neposkytují zpět do modulu runtime pracovního postupu.<br /><br /> Každá primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu BLOB nejsou potřeba žádná speciální sestavení.|  
+|ReadWriteComplexDataProperties|Varbinary (max)|Obsahuje vlastnosti dat serializované instance, které budou poskytnuty zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Odserializátor by vyžadoval znalost všech typů objektů uložených v tomto objektu BLOB.|  
+|WriteOnlyComplexDataProperties|Varbinary (max)|Obsahuje vlastnosti dat serializované instance, které se při načtení instance neposkytují zpět do modulu runtime pracovního postupu.<br /><br /> Odserializátor by vyžadoval znalost všech typů objektů uložených v tomto objektu BLOB.|  
+|IdentityName|Nvarchar (max)|Název definice pracovního postupu|  
+|IdentityPackage|Nvarchar (max)|Informace o balíčku, které byly zadány v době, kdy byl pracovní postup vytvořen (například název sestavení).|  
+|Sestavení|BigInt|Číslo sestavení verze pracovního postupu|  
 |Hlavní|BigInt|Hlavní číslo verze pracovního postupu.|  
-|Vedlejší|BigInt|Vedlejší číslo verze pracovního postupu.|  
-|Revize|BigInt|Číslo revize verze pracovního postupu.|  
+|Vedlejší|BigInt|Vedlejší číslo verze pracovního postupu|  
+|Revize|BigInt|Číslo revize verze pracovního postupu|  
   
 > [!CAUTION]
->  **Instance** zobrazení také obsahuje aktivační události odstranění. Uživatelé s příslušnými oprávněními může provádět příkazy delete pro toto zobrazení, které odeberete vynuceně instancí pracovních postupů z databáze. Doporučujeme odstranit přímo ze zobrazení pouze jako poslední možnost, protože odstranění instance z pod modulu runtime pracovního postupu by mohlo způsobit nežádoucí důsledky. Místo toho použijte koncový bod správy Instance pracovního postupu modulu runtime pracovního postupu ukončení instance. Pokud chcete odstranit ze zobrazení pro velký počet instancí, ujistěte se, že nejsou žádné aktivní moduly runtime, který by mohl pracovat v těchto instancích.  
+>  Zobrazení **Instances** obsahuje také aktivační událost DELETE. Uživatelé s příslušnými oprávněními mohou provádět příkazy odstranit pro toto zobrazení, které bude nuceně odebrat instance pracovního postupu z databáze. Doporučujeme odstranit přímo ze zobrazení jako poslední, protože odstranění instance z pod modulem runtime pracovního postupu by mohlo vést k nezamýšleným důsledkům. Místo toho použijte koncový bod správy instancí pracovního postupu, aby modul runtime pracovního postupu ukončil instanci. Pokud chcete ze zobrazení odstranit velký počet instancí, ujistěte se, že neexistují žádné aktivní moduly runtime, které by mohly na těchto instancích pracovat.  
   
-## <a name="servicedeployments-view"></a>ServiceDeployments zobrazení  
- **ServiceDeployments** zobrazení obsahuje informace o nasazení pro celý Web (služba IIS / WAS) hostovaných služeb pracovního postupu. Každá instance workflowu, který je hostitelem webové bude obsahovat **ServiceDeploymentId** , který odkazuje na řádek v tomto zobrazení.  
+## <a name="servicedeployments-view"></a>Zobrazení ServiceDeployments  
+ Zobrazení **ServiceDeployments** obsahuje informace o nasazení pro všechny webové služby (služba IIS/was) hostované služby pracovního postupu. Každá instance pracovního postupu, která je hostitelem webu, bude obsahovat **ServiceDeploymentId** , který odkazuje na řádek v tomto zobrazení.  
   
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
-|ServiceDeploymentId|BigInt|Primární klíč pro toto zobrazení.|  
-|SiteName|Nvarchar(max)|Představuje název webu, který obsahuje služba pracovního postupu (třeba **výchozí webový server**).|  
-|RelativeServicePath|Nvarchar(max)|Představuje virtuální cestu relativní vzhledem k lokalitě, která odkazuje na službu pracovního postupu. (např.)  **/app1/PurchaseOrderService.svc**).|  
-|RelativeApplicationPath|Nvarchar(max)|Představuje virtuální cestu relativní vzhledem k lokalitě, která odkazuje na aplikaci, která obsahuje službu pracovního postupu. (například **/app1**).|  
-|ServiceName|Nvarchar(max)|Představuje název pracovního postupu služby. (například **PurchaseOrderService**).|  
-|ServiceNamespace|Nvarchar(max)|Představuje obor názvů služby pracovního postupu. (například **společnost**).|  
+|ServiceDeploymentId|BigInt|Primární klíč pro toto zobrazení|  
+|SiteName|Nvarchar (max)|Představuje název webu, který obsahuje službu pracovního postupu (například **výchozí web**).|  
+|RelativeServicePath|Nvarchar (max)|Představuje virtuální cestu relativní k lokalitě, která odkazuje na službu pracovního postupu. například.  **/app1/PurchaseOrderService.svc**).|  
+|RelativeApplicationPath|Nvarchar (max)|Představuje virtuální cestu relativní k lokalitě, která odkazuje na aplikaci, která obsahuje službu pracovního postupu. (např. **/app1**).|  
+|ServiceName|Nvarchar (max)|Představuje název služby pracovního postupu. (např. **PurchaseOrderService**).|  
+|ServiceNamespace|Nvarchar (max)|Představuje obor názvů služby pracovního postupu. (např. **spolecnost**).|  
   
- Zobrazení ServiceDeployments také obsahuje aktivační události odstranění. Uživatelé s příslušnými oprávněními může provádět příkazy delete pro toto zobrazení můžete odebrat ServiceDeployment položky z databáze. Všimněte si, že:  
+ Zobrazení ServiceDeployments obsahuje také aktivační událost DELETE. Uživatelé s příslušnými oprávněními mohou spustit příkazy odstranit v tomto zobrazení a odebrat tak položky ServiceDeployment z databáze. Všimněte si, že:  
   
-1. Odstranění položek z tohoto zobrazení je nákladná, jelikož celé databáze musí být uzamčen před provedením této operace. To je nezbytné Vyhýbejte se situacím, kdy Instance pracovního postupu může odkazovat na neexistující záznam ServiceDeployment. Odstranit z tohoto zobrazení pouze během dolů časy a časová období údržby.  
+1. Odstranění položek z tohoto zobrazení je nákladné, protože před provedením této operace musí být uzamčena celá databáze. To je nezbytné, aby se zabránilo situaci, kdy by mohla instance pracovního postupu odkazovat na neexistující položku ServiceDeployment. Odstranit z tohoto zobrazení pouze během doby mimo špičku nebo okna údržby.  
   
-2. Žádný pokus o odstranění řádku ServiceDeployment, které se odkazuje položky v **instance** zobrazení bude mít za následek no-op. Můžete ho jenom odstranit řádky ServiceDeployment s nulovou odkazy.  
+2. Při každém pokusu o odstranění řádku ServiceDeployment, na který se odkazuje pomocí položek v zobrazení Instances, dojde k tomu, že nebudete mít za následek no-op. ServiceDeployment řádky můžete odstranit pouze s nulovými odkazy.  
   
-## <a name="instancepromotedproperties-view"></a>InstancePromotedProperties zobrazení  
- **InstancePromotedProperties** zobrazení obsahuje informace o propagované vlastnosti, které jsou zadány uživatelem. Propagovanou vlastnost funguje jako vlastnost první třídy, které může uživatel používat v dotazech načtení instancí.  Uživatel může například přidat PurchaseOrder propagační akce, která vždy ukládá náklady na pořadí, v **hodnota1** sloupce. To by umožnilo uživatele k dotazu na všechny nákupních objednávek, jejichž náklady překročí určitou hodnotu.  
+## <a name="instancepromotedproperties-view"></a>Zobrazení InstancePromotedProperties  
+ Zobrazení **InstancePromotedProperties** obsahuje informace pro všechny propagované vlastnosti, které jsou určeny uživatelem. Propagovaná vlastnost je funkce jako vlastnost první třídy, kterou může uživatel použít v dotazech k načtení instancí.  Uživatel například může přidat povýšení PurchaseOrder, která vždy uloží náklady Objednávky do sloupce **hodnota1** . To umožní uživateli dotazovat se na všechny nákupní objednávky, jejichž náklady přesahují určitou hodnotu.  
   
 |Typ sloupce|Typ sloupce|Popis|  
 |-|-|-|  
-|InstanceId|uniqueidentifier|ID Instance pracovního postupu|  
-|EncodingOption|TinyInt|Popisuje kódování použité k serializaci přesunutá binárních vlastností.<br /><br /> -0 – bez kódování<br />-   1 – GZipStream|  
-|PromotionName|Nvarchar(400)|Název přidružený k této instanci podporu. PromotionName je potřeba k přidání kontextu do obecného sloupce v tomto řádku.<br /><br /> Například PromotionName PurchaseOrder může znamenat, že hodnota1 obsahuje náklady na pořadí, hodnota2 obsahuje jméno zákazníka, který objednávku vystavil, obsahuje hodnotu 3 adresu zákazníka a tak dále.|  
-|Hodnota [1-32]|SqlVariant|Hodnota [1-32] obsahuje hodnoty, které mohou být uloženy ve sloupci hodnotu SqlVariant. V rámci jednoho propagační akce nemůže obsahovat více než 32 SqlVariants.|  
-|Hodnota [33-64]|Varbinary(max)|Hodnota [33-64] obsahuje serializované hodnoty. Například Value33 by mohla obsahovat JPEG položky nakupuje. V rámci jednoho propagační akce nemůže obsahovat více než 32 binárních vlastností|  
+|InstanceId|uniqueidentifier|ID instance pracovního postupu|  
+|EncodingOption|TinyInt|Popisuje kódování používané k serializaci propagovaných binárních vlastností.<br /><br /> -0 – bez kódování<br />-   1 – GZipStream|  
+|Povýšení|Nvarchar(400)|Název propagačního povýšení přidruženého k této instanci. K přidání kontextu do obecných sloupců v tomto řádku je potřeba povýšení.<br /><br /> Například povýšení PurchaseOrder by mohlo znamenat, že hodnota1 obsahuje náklady na objednávku, hodnota2 obsahuje jméno zákazníka, který objednávku zadal, hodnota 3 obsahuje adresu zákazníka atd.|  
+|Hodnota [1-32]|Hodnotu SqlVariant|Hodnota [1-32] obsahuje hodnoty, které mohou být uloženy ve sloupci hodnotu SqlVariant. Jedna propagační akce nemůže obsahovat více než 32 SqlVariants.|  
+|Hodnota [33-64]|Varbinary (max)|Hodnota [33-64] obsahuje serializované hodnoty. Například Value33 může obsahovat JPEG položky, která se kupuje. Jedna propagační akce nemůže obsahovat více než 32 binárních vlastností.|  
   
- Zobrazení InstancePromotedProperties je vázán, což znamená, že uživatelé můžou přidávat indexy na jeden nebo více sloupců k optimalizaci dotazů na toto zobrazení schématu.  
+ Zobrazení InstancePromotedProperties je vázáno na schéma, což znamená, že uživatelé mohou přidávat indexy na jeden nebo více sloupců, aby bylo možné optimalizovat dotazy proti tomuto zobrazení.  
   
 > [!NOTE]
->  Indexované zobrazení vyžaduje další úložiště a přidá další nároky na zpracování. Najdete [zlepšení výkonu pomocí SQL Server 2008 indexovaných zobrazení](https://go.microsoft.com/fwlink/?LinkId=179529) Další informace.
+> Indexované zobrazení vyžaduje větší úložiště a zvyšuje režijní náklady na zpracování. Další informace najdete [v tématu zvýšení výkonu pomocí indexovaných zobrazení SQL Server 2008](https://go.microsoft.com/fwlink/?LinkId=179529) .

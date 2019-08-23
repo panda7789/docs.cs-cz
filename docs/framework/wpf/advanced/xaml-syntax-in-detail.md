@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 2c4e7213ddcffdb026d3d6e6b339bfc91b3c27c6
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 3ac7d79660830601ca69951e56763fc923692b0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400783"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958789"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](xaml-overview-wpf.md).  
@@ -86,7 +86,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
  Syntaxe atributu je syntaxe kódu XAML, která nastavuje hodnotu pro vlastnost deklarováním atributu pro existující prvek objektu. Název atributu musí odpovídat názvu člena CLR vlastnosti třídy, která vrátí příslušný prvek objektu. Za názvem atributu následuje operátor přiřazení (=). Hodnota atributu musí být řetězec uzavřený v uvozovkách.  
   
 > [!NOTE]
->  Pomocí střídajících se uvozovek můžete umístit literální znak citace do atributu. Například můžete použít jednoduché uvozovky jako způsob deklarace řetězce, který obsahuje znak dvojité uvozovky v rámci něj. Bez ohledu na to, jestli používáte jednoduché nebo dvojité uvozovky, byste měli použít párové dvojice pro otevření a zavření řetězce hodnoty atributu. K dispozici jsou také řídicí sekvence nebo jiné techniky, které jsou k dispozici pro práci s omezeními znaků zavedenými konkrétní syntaxí XAML. Viz [Entity znaků XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+> Pomocí střídajících se uvozovek můžete umístit literální znak citace do atributu. Například můžete použít jednoduché uvozovky jako způsob deklarace řetězce, který obsahuje znak dvojité uvozovky v rámci něj. Bez ohledu na to, jestli používáte jednoduché nebo dvojité uvozovky, byste měli použít párové dvojice pro otevření a zavření řetězce hodnoty atributu. K dispozici jsou také řídicí sekvence nebo jiné techniky, které jsou k dispozici pro práci s omezeními znaků zavedenými konkrétní syntaxí XAML. Viz [Entity znaků XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
   
  Aby bylo možné nastavit atribut pomocí syntaxe atributu, musí být vlastnost veřejná a musí být zapisovatelná. Hodnota vlastnosti v systému typů zálohování musí být typ hodnoty, nebo musí být odkazový typ, který může být vytvořen nebo odkazován procesorem XAML při přístupu k příslušnému typu zálohování.  
   
@@ -169,7 +169,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
  Implicitní prvek kolekce vytvoří člena v logickém znázornění stromové struktury, i když se nezobrazí v označení jako element. Obvykle konstruktor nadřazeného typu provádí instanci pro kolekci, která je jednou z jejích vlastností, a prvotní prázdná kolekce se stává součástí stromu objektu.  
   
 > [!NOTE]
->  Obecný seznam a rozhraní slovníku (<xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IDictionary%602>) nejsou podporovány pro detekci kolekce. <xref:System.Collections.Generic.List%601> Třídu však můžete použít jako základní třídu, protože implementuje <xref:System.Collections.IList> přímo nebo <xref:System.Collections.Generic.Dictionary%602> jako základní třídu, protože implementuje <xref:System.Collections.IDictionary> přímo.  
+> Obecný seznam a rozhraní slovníku (<xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IDictionary%602>) nejsou podporovány pro detekci kolekce. <xref:System.Collections.Generic.List%601> Třídu však můžete použít jako základní třídu, protože implementuje <xref:System.Collections.IList> přímo nebo <xref:System.Collections.Generic.Dictionary%602> jako základní třídu, protože implementuje <xref:System.Collections.IDictionary> přímo.  
   
  V referenčních stránkách .NET pro typy kolekcí je tato syntaxe s záměrné opomenutím elementu objektu pro kolekci občas uvedena v oddílech Syntaxe XAML jako implicitní syntaxe kolekce.  
   

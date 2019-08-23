@@ -2,20 +2,20 @@
 title: <compositeDuplex>
 ms.date: 03/30/2017
 ms.assetid: 725004d1-ce88-4405-a220-78e89844f81f
-ms.openlocfilehash: 1e5ecc2b937aa0cdb159a6cbd1222fe6d4af79fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e79b3e1aeecc52bf41ae759dc15ebf1c8211beb2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704177"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926070"
 ---
 # <a name="compositeduplex"></a>\<compositeDuplex>
-Definuje prvek vazby, který se používá, když klient musí vystavit koncový bod služby umožňující odesílání zpráv zpět klientovi.  
+Definuje prvek vazby, který se používá v případě, že klient musí vystavit koncový bod, který bude službě odesílat zprávy zpět do klienta.  
   
  \<system.serviceModel>  
-\<vazby >  
-\<customBinding>  
-\<Vytvoření vazby >  
+\<> vazeb  
+\<customBinding >  
+\<> vazby  
 \<compositeDuplex>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,7 +31,7 @@ Definuje prvek vazby, který se používá, když klient musí vystavit koncový
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|clientBaseAddress|Identifikátor URI, který nastaví adresu zpětného kanálu v duplexním režimu. Služba používá tuto adresu kontaktovat a naváže připojení klienta.<br /><br /> Pokud není tento atribut nastaven, výchozí adresa "`full qualified name+default port\TemporaryIndigoAddress\guid`" je generován. Výchozí hodnota je `null`.|  
+|clientBaseAddress|Identifikátor URI, který nastaví adresu back-Channel v duplexovém režimu. Služba používá tuto adresu k tomu, aby kontaktovala a navázala spojení s klientem.<br /><br /> Pokud tento atribut není nastaven, je vygenerována výchozí`full qualified name+default port\TemporaryIndigoAddress\guid`adresa "". Výchozí hodnota je `null`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -40,12 +40,12 @@ Definuje prvek vazby, který se používá, když klient musí vystavit koncový
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
+|[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek konfigurace se používá s přenosy, které neumožňují duplexní komunikaci nativně, například HTTP. TCP, naopak umožňuje nativně duplexní komunikaci a nevyžaduje použití tohoto elementu vazby pro služby umožňující odesílání zpráv zpět klientovi.  
+ Tento prvek konfigurace se používá s přenosy, které nativně neumožňují duplexní komunikaci, například HTTP. Protokol TCP naopak umožňuje nativně duplexní komunikaci nativně a nevyžaduje použití tohoto elementu vazby, aby služba odesílala zprávy zpátky klientovi.  
   
- Klient musí vystavit adresu pro službu kontaktovat a navázat připojení. Tato adresa klienta poskytuje `clientBaseAddress` atribut. Všimněte si, že Windows Communication Foundation (WCF) automaticky generuje ClientBaseAddress Pokud není explicitně nastaven uživatelem.  
+ Klient musí vystavit adresu, aby mohla služba vytvořit kontakt a navázat připojení. Tato adresa klienta je poskytována `clientBaseAddress` atributem. Všimněte si, že Windows Communication Foundation (WCF) automaticky vygeneruje ClientBaseAddress, pokud ho uživatel explicitně nenastaví.  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,7 +58,7 @@ Definuje prvek vazby, který se používá, když klient musí vystavit koncový
 - <xref:System.ServiceModel.Configuration.CompositeDuplexElement>
 - <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Vazby](../../../wcf/bindings.md)
+- [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 12300bf4-c730-4405-9f65-d286f68b5a43
-ms.openlocfilehash: 2aed766e6b2da7ebaf7b5b863375ee95b99eb159
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d55bc0e1ccd45409c09ddeba820ed74d00ae86f5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748463"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949338"
 ---
 # <a name="securitybindingelement-authentication-modes"></a>Režimy ověřování SecurityBindingElement
-Windows Communication Foundation (WCF) poskytuje několik režimů, které služby a klienti ověřování mezi sebou. Můžete vytvořit bezpečnostní prvky vazeb pro tyto režimy ověřování pomocí statické metody na <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy nebo prostřednictvím konfigurace. Tento článek stručně popisuje režimy ověřování 18.  
+Windows Communication Foundation (WCF) poskytuje několik režimů, podle kterých se klienti a služby ověřují mezi sebou. Prvky vazby zabezpečení pro tyto režimy ověřování lze vytvořit pomocí statických metod <xref:System.ServiceModel.Channels.SecurityBindingElement> pro třídu nebo prostřednictvím konfigurace. Toto téma stručně popisuje režimy ověřování 18.  
   
- Příklad použití elementu pro jeden z režimů ověřování najdete v tématu [jak: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ Příklad použití prvku pro jeden z režimů ověřování naleznete v tématu [How to: Vytvoří SecurityBindingElement pro zadaný režim](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)ověřování.  
   
-## <a name="basic-configuration-programming"></a>Základní konfigurace programování  
+## <a name="basic-configuration-programming"></a>Základní programování konfigurace  
  Následující postup popisuje, jak nastavit režim ověřování v konfiguračním souboru.  
   
-#### <a name="to-set-the-authentication-mode-in-configuration"></a>Chcete-li nastavit režim ověřování v konfiguraci  
+#### <a name="to-set-the-authentication-mode-in-configuration"></a>Nastavení režimu ověřování v konfiguraci  
   
-1. K [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element, přidejte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+1. Do prvku > [ vazbypřidejte>CustomBinding.\<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
   
-2. Jako podřízený prvek, přidejte [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu `<customBinding>` elementu.  
+2. Jako podřízený element přidejte [ \<vazbu >](../../../../docs/framework/misc/binding.md) elementu do `<customBinding>` elementu.  
   
-3. Přidat `<security>` elementu `<binding>` elementu.  
+3. `<security>` Přidejte element`<binding>` do elementu.  
   
-4. Nastavte `authenticationMode` atribut na jednu z hodnot je popsáno níže. Například následující kód nastaví režim na `AnonymousForCertificate`.  
+4. `authenticationMode` Nastavte atribut na jednu z hodnot popsaných níže. Například následující kód nastaví režim na `AnonymousForCertificate`.  
   
     ```xml  
     <bindings>  
@@ -40,87 +40,87 @@ Windows Communication Foundation (WCF) poskytuje několik režimů, které služ
     </bindings>  
     ```  
   
-#### <a name="to-set-the-mode-programmatically"></a>Pro nastavení režimu prostřednictvím kódu programu  
+#### <a name="to-set-the-mode-programmatically"></a>Postup při nastavování režimu prostřednictvím kódu programu  
   
-1. Určit návratový typ, který může být jedna z následujících akcí: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>, nebo <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+1. Určete návratový typ, který může být jeden z následujících <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>:, <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>nebo <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
-2. Volat odpovídající statickou metodu <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Například následující kód volá <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metody.  
+2. Zavolejte příslušnou statickou metodu <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Například následující kód volá <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metodu.  
   
      [!code-csharp[c_CustomBindingsAuthMode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#3)]
      [!code-vb[c_CustomBindingsAuthMode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombindingsauthmode/vb/source.vb#3)]  
   
-3. Pro vytvoření vlastní vazby pomocí elementu vazby. Další informace najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+3. K vytvoření vlastní vazby použijte prvek vazby. Další informace najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
-## <a name="mode-descriptions"></a>Popisy režimu  
+## <a name="mode-descriptions"></a>Popisy režimů  
   
 ### <a name="anonymousforcertificate"></a>AnonymousForCertificate  
- Tento režim ověřování klienta je anonymní a ověření služby pomocí certifikátu X.509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut <`security`> element `AnonymousForCertificate`.  
+ V tomto režimu ověřování je klient anonymní a služba se ověřuje pomocí certifikátu X. 509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metodou. Případně můžete nastavit `authenticationMode` atribut <`security`> elementu na `AnonymousForCertificate`.  
   
 ### <a name="anonymousforsslnegotiated"></a>AnonymousForSslNegotiated  
- Tento režim ověřování klienta je anonymní a ověření služby pomocí certifikátu X.509, který se vyjedná v době běhu. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement%2A> metodu po hodnotu `false` je předán jako první parametr. Můžete také nastavit `authenticationMode` atribut `AnonymousForSslNegotiated`.  
+ V tomto režimu ověřování je klient anonymní a služba je ověřena pomocí certifikátu X. 509, který je vyjednáno za běhu. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácen `false` metodou, <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement%2A> Pokud je hodnota předána pro první parametr. Případně nastavte `authenticationMode` atribut na `AnonymousForSslNegotiated`.  
   
 ### <a name="certificateovertransport"></a>CertificateOverTransport  
- S tímto režimem ověřování klient se ověří pomocí certifikátu X.509, který se zobrazí jako potvrzující podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který podepisuje podpis zprávy. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `CertificateOverTransport`.  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token podporující potvrzení; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `CertificateOverTransport`.  
   
 ### <a name="issuedtoken"></a>Třídy IssuedToken  
- S tímto režimem ověřování se klient neověřuje ke službě, jako například; Klient místo toho ověřuje u konkrétního služby tokenů zabezpečení a obdrží token SAML, která potom nabídne server k prokázání své znalosti o sdílený klíč. Službu není ověřený klient v důsledku toho ale služby tokenů zabezpečení tak, aby pouze službu může dešifrovat klíč zašifruje sdílený klíč jako součást vydaný token. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `IssuedToken`.  
+ V tomto režimu ověřování klient neověřuje službu, jako by to bylo. místo toho se klient ověřuje ve službě tokenů zabezpečení a přijímá token SAML, který je pak vydaný serveru, aby prokázal, že vaše znalost sdíleného klíče je. Služba není ověřena pro klienta, ale služba tokenů zabezpečení šifruje sdílený klíč jako součást vydaného tokenu, aby klíč mohl dešifrovat pouze služba. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `IssuedToken`.  
   
 ### <a name="issuedtokenforcertificate"></a>IssuedTokenForCertificate  
- S tímto režimem ověřování se klient neověřuje ke službě, jako například; Klient místo toho ověřuje u konkrétního služby tokenů zabezpečení a obdrží token SAML, která potom nabídne server k prokázání své znalosti o sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje klienta pomocí certifikátu X.509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `IssuedTokenForCertificate`.  
+ V tomto režimu ověřování klient neověřuje službu, jako by to bylo. místo toho se klient ověřuje ve službě tokenů zabezpečení a přijímá token SAML, který je pak vydaný serveru, aby prokázal, že vaše znalost sdíleného klíče je. Vydaný token se zobrazí ve vrstvě SOAP jako buď token podpory, nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje pro klienta pomocí certifikátu X. 509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `IssuedTokenForCertificate`.  
   
 ### <a name="issuedtokenforsslnegotiated"></a>IssuedTokenForSslNegotiated  
- S tímto režimem ověřování se klient neověřuje ke službě, jako například; Klient místo toho ověřuje u konkrétního služby tokenů zabezpečení a obdrží token SAML, která potom nabídne server k prokázání své znalosti o sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba je ověřený pomocí certifikátu X.509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `IssuedTokenForSslnegotiated`.  
+ V tomto režimu ověřování klient neověřuje službu, jako by to bylo. místo toho se klient ověřuje ve službě tokenů zabezpečení a přijímá token SAML, který je pak vydaný serveru, aby prokázal, že vaše znalost sdíleného klíče je. Vydaný token se zobrazí ve vrstvě SOAP jako buď token podpory, nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje pomocí certifikátu X. 509. Element vazby zabezpečení je <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `IssuedTokenForSslnegotiated`.  
   
 ### <a name="issuedtokenovertransport"></a>IssuedTokenOverTransport  
- S tímto režimem ověřování se klient neověřuje ke službě, jako například; Klient místo toho ověřuje u konkrétního služby tokenů zabezpečení a obdrží token SAML, která potom nabídne server k prokázání své znalosti o sdílený klíč. Vydaný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `IssuedTokenOverTransport`.  
+ V tomto režimu ověřování klient neověřuje službu, jako by to bylo. místo toho se klient ověřuje ve službě tokenů zabezpečení a přijímá token SAML, který je pak vydaný serveru, aby prokázal, že vaše znalost sdíleného klíče je. Vydaný token se zobrazí ve vrstvě SOAP jako buď token podpory, nebo nosný token; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `IssuedTokenOverTransport`.  
   
-### <a name="kerberos"></a>Protokol Kerberos  
- S tímto režimem ověřování klient se ověří ve službě pomocí lístku protokolu Kerberos. Tento lístek stejné také poskytuje ověřování serveru. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `Kerberos`.  
-  
-> [!NOTE]
->  Chcete-li použít tento režim ověřování, musí být přidružen hlavní název služby (SPN) účtu služby. K tomuto účelu spuštění služby pod účtem síťové služby nebo účet místní systém. Můžete také pomocí nástroje SetSpn.exe vytvořte SPN pro účet služby. V obou případech musí klient použít správný hlavní název služby v [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktoru. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+### <a name="kerberos"></a>Sdílené  
+ V tomto režimu ověřování se klient ověřuje ve službě pomocí lístku Kerberos. Stejný lístek taky zajišťuje ověřování serveru. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `Kerberos`.  
   
 > [!NOTE]
->  Když `Kerberos` se používá režim ověřování, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous> a <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> úrovní zosobnění se nepodporují.  
+> Aby bylo možné použít tento režim ověřování, musí být účet služby přidružen k hlavnímu názvu služby (SPN). Pokud to chcete provést, spusťte službu pod účtem síťové služby nebo pod účtem místní systém. Případně můžete pomocí nástroje SetSpn. exe vytvořit hlavní název služby (SPN) pro účet služby. V obou případech musí klient používat správný hlavní název služby (SPN) v <xref:System.ServiceModel.EndpointAddress> [ \<elementu servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element nebo pomocí konstruktoru. Další informace najdete v tématu [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+  
+> [!NOTE]
+> Když se použije režim <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous> `Kerberos` ověřování, úrovně a zosobnění se nepodporují.  
   
 ### <a name="kerberosovertransport"></a>KerberosOverTransport  
- S tímto režimem ověřování klient se ověří ve službě pomocí lístku protokolu Kerberos. Token protokolu Kerberos se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token; To znamená, že token, který podepisuje podpis zprávy. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `KerberosOverTransport`.  
+ V tomto režimu ověřování se klient ověřuje ve službě pomocí lístku Kerberos. Token protokolu Kerberos se zobrazí ve vrstvě SOAP jako token podporující potvrzení; To znamená, že token, který podepisuje podpis zprávy. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosOverTransportBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `KerberosOverTransport`.  
   
 > [!NOTE]
->  Chcete-li použít tento režim ověřování, účet služby musí být přidružený název SPN. K tomuto účelu spuštění služby pod účtem síťové služby nebo účet místní systém. Můžete také pomocí nástroje SetSpn.exe vytvořte SPN pro účet služby. V obou případech musí klient použít správný hlavní název služby v [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element, nebo pomocí <xref:System.ServiceModel.EndpointAddress> konstruktoru. Další informace najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+> Aby bylo možné použít tento režim ověřování, musí být účet služby přidružen k hlavnímu názvu služby (SPN). Pokud to chcete provést, spusťte službu pod účtem síťové služby nebo pod účtem místní systém. Případně můžete pomocí nástroje SetSpn. exe vytvořit hlavní název služby (SPN) pro účet služby. V obou případech musí klient používat správný hlavní název služby (SPN) v <xref:System.ServiceModel.EndpointAddress> [ \<elementu servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element nebo pomocí konstruktoru. Další informace najdete v tématu [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ### <a name="mutualcertificate"></a>MutualCertificate  
- S tímto režimem ověřování klient se ověří pomocí certifikátu X.509, který se zobrazí jako potvrzující podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který podepisuje podpis zprávy. Služba je také ověřit pomocí certifikátu X.509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `MutualCertificate`.  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token podporující potvrzení; To znamená, že token, který podepisuje podpis zprávy. Služba je také ověřena pomocí certifikátu X. 509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `MutualCertificate`.  
   
 ### <a name="mutualcertificateduplex"></a>MutualCertificateDuplex  
- S tímto režimem ověřování klient se ověří pomocí certifikátu X.509, který se zobrazí jako potvrzující podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který podepisuje podpis zprávy. Služba je také ověřit pomocí certifikátu X.509. Vazba není `AsymmetricSecurityBindingElement` vrácené <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateDuplexBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `MutualCertificateDuplex`.  
+ V tomto režimu ověřování se klient ověřuje pomocí certifikátu X. 509, který se zobrazí ve vrstvě SOAP jako token podporující potvrzení; To znamená, že token, který podepisuje podpis zprávy. Služba je také ověřena pomocí certifikátu X. 509. Vazba je `AsymmetricSecurityBindingElement` vrácena <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateDuplexBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `MutualCertificateDuplex`.  
   
 ### <a name="mutualsslnegotiated"></a>MutualSslNegotiated  
- S tímto režimem ověřování ověřování klienta a služby pomocí certifikátů X.509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement%2A> metodu po hodnotu `true` je předán jako první parametr. Můžete také nastavit `authenticationMode` atribut `MutualSslNegotiated`.  
+ V tomto režimu ověřování se klient a služba ověřují pomocí certifikátů X. 509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen `true` metodou, <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement%2A> Pokud je hodnota předána pro první parametr. Případně nastavte `authenticationMode` atribut na `MutualSslNegotiated`.  
   
 ### <a name="secureconversation"></a>SecureConversation  
- Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> metoda. Tato metoda přebírá <xref:System.ServiceModel.Channels.SecurityBindingElement> jako parametr, který se používá během inicializace k navázání zabezpečené relace. Můžete také nastavit `authenticationMode` atribut `SecureConversation`.  
+ Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> metodou. Tato metoda přebírá <xref:System.ServiceModel.Channels.SecurityBindingElement> jako parametr, který se používá během inicializace k vytvoření zabezpečené relace. Případně nastavte `authenticationMode` atribut na `SecureConversation`.  
   
- Pokud není zadána žádná vazba bootstrap, pak bude `SspiNegotiated` režim ověřování se používá pro spuštění.  
+ Pokud není zadána žádná počáteční vazba, `SspiNegotiated` použije se pro Bootstrap režim ověřování.  
   
-### <a name="sspinegotiation"></a>Účel třídy SspiNegotiation  
- S tímto režimem ověřování protokolu vyjednávání slouží k provádění ověření klienta a serveru. Protokol Kerberos se používá v případě je to možné. v opačném případě se používá LanMan NT (NTLM). Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `SspiNegotiated`.  
+### <a name="sspinegotiation"></a>SspiNegotiation  
+ V tomto režimu ověřování se k ověřování klienta a serveru používá protokol vyjednávání. Kerberos se používá, pokud je to možné. v opačném případě se použije NT LanMan (NTLM). Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `SspiNegotiated`.  
   
 ### <a name="sspinegotiatedovertransport"></a>SspiNegotiatedOverTransport  
- S tímto režimem ověřování protokolu vyjednávání slouží k provádění ověření klienta a serveru. Pokud je to možné; se používá protokol Kerberos v opačném případě je použit protokol NTLM. Výsledný token se zobrazí ve vrstvě protokolu SOAP jako potvrzující podpůrný token; To znamená, že token, který podepisuje podpis zprávy. Služba je kromě ověřit na transportní vrstvě pomocí certifikátu X.509. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `SspiNegotiatedOverTransport`.  
+ V tomto režimu ověřování se k ověřování klienta a serveru používá protokol vyjednávání. Protokol Kerberos se používá, pokud je to možné. v opačném případě se použije NTLM. Výsledný token se zobrazí ve vrstvě SOAP jako token podporující potvrzení; To znamená, že token, který podepisuje podpis zprávy. Služba se navíc ověřuje na transportní vrstvě pomocí certifikátu X. 509. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `SspiNegotiatedOverTransport`.  
   
 ### <a name="usernameforcertificate"></a>UserNameForCertificate  
- S tímto režimem ověřování klient se ověří ve službě pomocí uživatelského jména Token, který se zobrazí jako podepsaný podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který je podepsaný podpis zprávy. Služba se ověřuje klienta pomocí certifikátu X.509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `UserNameForCertificate`.  
+ V tomto režimu ověřování klient ověřuje službu pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token; To znamená token, který je podepsán podpisem zprávy. Služba se ověřuje pro klienta pomocí certifikátu X. 509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `UserNameForCertificate`.  
   
- Pro `UserNameForCertificate` musí být v režimu ověřování, klient a služba WS-Security 1.1.  
+ Pro režim `UserNameForCertificate` ověřování musí klient i služba používat protokol WS-Security 1,1.  
   
 ### <a name="usernameforsslnegotiated"></a>UserNameForSslNegotiated  
- Tento režim ověřování, klient se ověří pomocí tokenu uživatelské jméno, které se zobrazí jako podepsaný podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který je podepsaný podpis zprávy. Služba je ověřený pomocí certifikátu X.509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForSslBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `UserNameForSslNegotiated`.  
+ V tomto režimu ověřování se klient ověřuje pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token. To znamená token, který je podepsán podpisem zprávy. Služba se ověřuje pomocí certifikátu X. 509. Element vazby zabezpečení je `SymmetricSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForSslBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `UserNameForSslNegotiated`.  
   
 ### <a name="usernameovertransport"></a>UserNameOverTransport  
- S tímto režimem ověřování klient se ověří pomocí uživatelského jména Token, který se zobrazí jako podepsaný podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který je podepsaný podpis zprávy. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `UserNameOverTransport`.  
+ V tomto režimu ověřování se klient ověřuje pomocí tokenu uživatelského jména, který se zobrazí ve vrstvě SOAP jako podepsaný podpůrný token; To znamená token, který je podepsán podpisem zprávy. Služba se ověřuje pomocí certifikátu X. 509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácen <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement%2A> metodou. Případně nastavte `authenticationMode` atribut na `UserNameOverTransport`.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Channels.SecurityBindingElement>
-- [Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Postupy: Vytvoření SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

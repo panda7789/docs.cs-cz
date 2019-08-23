@@ -10,98 +10,98 @@ helpviewer_keywords:
 - padding [WPF]
 - aligning [WPF]
 ms.assetid: 9c6a2009-9b86-4e40-8605-0a2664dc3973
-ms.openlocfilehash: 58af8848a6b8a5e4ded453831f5a7ef985548492
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bf351b6df972dc992f214ddfe899bfa808d0cd53
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032198"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963640"
 ---
 # <a name="alignment-margins-and-padding-overview"></a>Přehled zarovnání, okrajů a odsazení
-<xref:System.Windows.FrameworkElement> Třída zveřejňuje několik vlastností, které se používají k přesné umístění podřízených elementů. Toto téma popisuje čtyři z nejdůležitějších vlastností: <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>. Účinek z těchto vlastností je důležité pochopit, protože poskytují základ pro řízení umístění prvků v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
+<xref:System.Windows.FrameworkElement> Třída zveřejňuje několik vlastností, které se používají k přesnému umístění podřízených elementů. Toto téma popisuje čtyři <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>z nejdůležitějších vlastností:, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A> <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>a. Účinky těchto vlastností jsou důležité pochopit, protože poskytují základ pro řízení pozice prvků v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikacích.  
 
 <a name="wcpsdk_layout_amp_introduction"></a>   
 ## <a name="introduction-to-element-positioning"></a>Úvod do umístění elementu  
- Existuje mnoho způsobů, pokud chcete umístit prvky pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Nicméně dosažení ideální rozložení přesahuje jednoduše Volba správného <xref:System.Windows.Controls.Panel> elementu. Přesné řízení umístění nutné znalosti toho, <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnosti.  
+ Existuje mnoho způsobů, jak umístit prvky pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Nicméně dosažení ideálního rozložení překračuje pouhou volbu správného <xref:System.Windows.Controls.Panel> prvku. Přesné řízení <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>umístění vyžaduje porozumění vlastnostem, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> .  
   
- Následující obrázek znázorňuje rozložení scénáře, který využívá několik vlastností umístění.  
+ Následující ilustrace znázorňuje scénář rozložení, který využívá několik vlastností umístění.  
   
- ![WPF umístění vlastnosti vzorku](./media/layout-margins-padding-alignment-graphic1.PNG "layout_margins_padding_alignment_graphic1")  
+ ![Ukázka vlastnosti umístění WPF](./media/layout-margins-padding-alignment-graphic1.PNG "layout_margins_padding_alignment_graphic1")  
   
- Na první pohled <xref:System.Windows.Controls.Button> může zdát, že prvky na tomto obrázku umístit náhodně. Pozice jsou ale ve skutečnosti přesně řídit ho jde pomocí kombinace okrajů, zarovnání a odsazení.  
+ Na první pohled se může zdát <xref:System.Windows.Controls.Button> , že prvky na tomto obrázku jsou náhodně umístěné. Nicméně jejich pozice jsou ve skutečnosti přesně ovládány pomocí kombinace okrajů, zarovnání a odsazení.  
   
- Následující příklad popisuje, jak vytvořit rozložení v předchozí ilustraci. A <xref:System.Windows.Controls.Border> zapouzdřuje nadřazený element <xref:System.Windows.Controls.StackPanel>, s <xref:System.Windows.Controls.Border.Padding%2A> hodnotu pixelech nezávislých na 15 zařízení. To účty pro úzký <xref:System.Windows.Media.Brushes.LightBlue%2A> pruh, který obklopuje podřízené <xref:System.Windows.Controls.StackPanel>. Podřízené prvky <xref:System.Windows.Controls.StackPanel> se používají pro ilustraci různých umístění vlastnosti, které jsou popsané v tomto tématu. Tři <xref:System.Windows.Controls.Button> elementy se používají k předvedení jak <xref:System.Windows.FrameworkElement.Margin%2A> a <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnosti.  
+ Následující příklad popisuje, jak vytvořit rozložení na předchozí ilustraci. Element zapouzdřuje nadřazenou <xref:System.Windows.Controls.StackPanel>položku s hodnotou <xref:System.Windows.Controls.Border.Padding%2A> 15 pixelů nezávislých na zařízení. <xref:System.Windows.Controls.Border> Tyto účty pro úzký <xref:System.Windows.Media.Brushes.LightBlue%2A> pruh, které obklopují podřízenou položku. <xref:System.Windows.Controls.StackPanel> Podřízené prvky <xref:System.Windows.Controls.StackPanel> jsou použity k ilustraci každé z různých vlastností umístění, které jsou popsány v tomto tématu. Tři <xref:System.Windows.Controls.Button> prvky jsou použity k demonstraci <xref:System.Windows.FrameworkElement.Margin%2A> vlastností <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> a.  
   
  [!code-csharp[MPALayoutSampleIntro#1](~/samples/snippets/csharp/VS_Snippets_Wpf/MPALayoutSampleIntro/CSharp/MPA_Layout_Sample_Intro.cs#1)]
  [!code-vb[MPALayoutSampleIntro#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MPALayoutSampleIntro/VisualBasic/MPALayoutIntro.vb#1)]  
   
- Následující diagram představuje prohlédnout různé vlastnosti umístění, které se používají v předchozím příkladu. Následující části v tomto tématu podrobněji popisují způsob použití každou vlastnost umístění.  
+ Následující diagram poskytuje podrobné zobrazení různých vlastností umístění, které jsou použity v předchozí ukázce. Následující části tohoto tématu popisují podrobněji, jak použít jednotlivé vlastnosti umístění.  
   
- ![Vlastnosti umístění s volání obrazovky&#45;výpisů](./media/layout-margins-padding-alignment-graphic2.PNG "layout_margins_padding_alignment_graphic2")  
+ ![Umístění vlastností s voláními&#45;obrazovky](./media/layout-margins-padding-alignment-graphic2.PNG "layout_margins_padding_alignment_graphic2")  
   
 <a name="wcpsdk_layout_amp_alignment_properties"></a>   
-## <a name="understanding-alignment-properties"></a>Principy vlastnosti zarovnání  
- <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnosti popisují, jak podřízený element by měl být umístěn v rámci nadřazeného elementu přidělené rozložení adresního prostoru. Pomocí těchto vlastností společně, můžete přesně umísťovat podřízené prvky. Například podřízené prvky <xref:System.Windows.Controls.DockPanel> můžete zadat čtyři různé vodorovné zarovnání: <xref:System.Windows.HorizontalAlignment.Left>, <xref:System.Windows.HorizontalAlignment.Right>, nebo <xref:System.Windows.HorizontalAlignment.Center>, nebo <xref:System.Windows.HorizontalAlignment.Stretch> tak, aby vyplnil dostupné místo. Podobně jako hodnoty jsou k dispozici pro svislé umístění.  
+## <a name="understanding-alignment-properties"></a>Porozumění vlastnostem zarovnání  
+ Vlastnosti <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> a<xref:System.Windows.FrameworkElement.VerticalAlignment%2A> popisují, jak by měl být podřízený element umístěn v rámci přiděleného prostoru rozložení nadřazeného elementu. Použitím těchto vlastností společně můžete umístit podřízené prvky přesně. Například podřízené <xref:System.Windows.Controls.DockPanel> prvky prvku mohou určovat čtyři různá vodorovná zarovnání: <xref:System.Windows.HorizontalAlignment.Right> <xref:System.Windows.HorizontalAlignment.Left>, nebo <xref:System.Windows.HorizontalAlignment.Center>, nebo k <xref:System.Windows.HorizontalAlignment.Stretch> vyplnění dostupného místa. Podobné hodnoty jsou k dispozici pro vertikální umístění.  
   
 > [!NOTE]
->  Explicitně sady <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> vlastnosti v elementu přednost před <xref:System.Windows.HorizontalAlignment.Stretch> hodnotu vlastnosti. Pokus o nastavení <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>a <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> hodnotu `Stretch` vede `Stretch` žádostí bude ignorována.  
+> Explicitně nastavené <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> vlastnosti <xref:System.Windows.HorizontalAlignment.Stretch> prvku mají přednost před hodnotou vlastnosti. Při pokusu o <xref:System.Windows.FrameworkElement.Height%2A>nastavení <xref:System.Windows.FrameworkElement.Width%2A>, a <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> hodnota `Stretch` výsledků v `Stretch` požadavku se ignoruje.  
   
 <a name="wcpsdk_layout_amp_horizontalalignment_properties"></a>   
-### <a name="horizontalalignment-property"></a>HorizontalAlignment – vlastnost  
- <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> Vlastnost deklaruje vlastnosti vodorovného zarovnání, které chcete použít pro podřízené prvky. V následující tabulce jsou uvedeny všech možných hodnot <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost.  
+### <a name="horizontalalignment-property"></a>Vlastnost HorizontalAlignment  
+ <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> Vlastnost deklaruje vlastnosti vodorovného zarovnání pro použití u podřízených elementů. V následující tabulce jsou uvedeny všechny možné hodnoty <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnosti.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.HorizontalAlignment.Left>|Podřízené prvky je zarovnán nalevo od místo přidělené rozložení nadřazeného elementu.|  
-|<xref:System.Windows.HorizontalAlignment.Center>|Podřízené prvky je zarovnán do centra pro místo přidělené rozložení nadřazeného elementu.|  
-|<xref:System.Windows.HorizontalAlignment.Right>|Podřízené prvky jsou zarovnaná vpravo od nadřazeného elementu místo přidělené rozložení.|  
-|<xref:System.Windows.HorizontalAlignment.Stretch> (Výchozí)|Podřízené prvky jsou roztažený tak, aby vyplnil místo přidělené rozložení nadřazeného elementu. Explicitní <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> hodnoty přednost.|  
+|<xref:System.Windows.HorizontalAlignment.Left>|Podřízené elementy jsou zarovnány nalevo od přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.HorizontalAlignment.Center>|Podřízené elementy jsou zarovnány do středu přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.HorizontalAlignment.Right>|Podřízené elementy jsou zarovnány napravo od přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.HorizontalAlignment.Stretch>Výchozí|Podřízené prvky jsou roztaženy tak, aby vyplnily přidělené místo rozložení nadřazeného elementu. Explicitní <xref:System.Windows.FrameworkElement.Width%2A> a<xref:System.Windows.FrameworkElement.Height%2A> hodnoty mají přednost.|  
   
- Následující příklad ukazuje, jak použít <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost <xref:System.Windows.Controls.Button> elementy. Každá hodnota atributu se zobrazí, abychom vám lépe předvedli různé chování vykreslování.  
+ Následující příklad ukazuje, jak použít <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost na <xref:System.Windows.Controls.Button> prvky. Pro lepší ilustraci různých chování vykreslování se zobrazí každá hodnota atributu.  
   
  [!code-csharp[MPALayoutHorizontalAlignment#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MPALayoutHorizontalAlignment/CSharp/MPA_Layout_HorizontalAlignment.cs#2)]
  [!code-vb[MPALayoutHorizontalAlignment#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MPALayoutHorizontalAlignment/VisualBasic/MPA_Layout_HorizontalAlignment.vb#2)]  
   
- Předchozí kód provede rozložení podobně jako na následujícím obrázku. Umístění účinky jednotlivých <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> hodnota jsou viditelné na obrázku.  
+ Předchozí kód poskytuje rozložení podobné následujícímu obrázku. Na ilustraci jsou viditelné <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> efekty umístění jednotlivých hodnot.  
   
  ![Ukázka HorizontalAlignment](./media/layout-horizontal-alignment-graphic.PNG "layout_horizontal_alignment_graphic")  
   
 <a name="wcpsdk_layout_amp_verticalalignment_properties"></a>   
-### <a name="verticalalignment-property"></a>VerticalAlignment – vlastnost  
- <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> Vlastnost popisuje charakteristiky svislého zarovnání, které chcete použít pro podřízené prvky. V následující tabulce jsou uvedeny všechny možné hodnoty pro <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnost.  
+### <a name="verticalalignment-property"></a>Vlastnost VerticalAlignment  
+ <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> Vlastnost popisuje vlastnosti svislého zarovnání pro použití u podřízených elementů. V následující tabulce jsou uvedeny všechny možné hodnoty pro <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnost.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.VerticalAlignment.Top>|Podřízené prvky jsou zarovnány k hornímu okraji nadřazeného elementu místo přidělené rozložení.|  
-|<xref:System.Windows.VerticalAlignment.Center>|Podřízené prvky je zarovnán do centra pro místo přidělené rozložení nadřazeného elementu.|  
-|<xref:System.Windows.VerticalAlignment.Bottom>|Podřízené prvky jsou zarovnány k dolnímu okraji nadřazeného elementu místo přidělené rozložení.|  
-|<xref:System.Windows.VerticalAlignment.Stretch> (Výchozí)|Podřízené prvky jsou roztažený tak, aby vyplnil místo přidělené rozložení nadřazeného elementu. Explicitní <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> hodnoty přednost.|  
+|<xref:System.Windows.VerticalAlignment.Top>|Podřízené elementy jsou zarovnány k hornímu okraji přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.VerticalAlignment.Center>|Podřízené elementy jsou zarovnány do středu přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.VerticalAlignment.Bottom>|Podřízené elementy jsou zarovnány k dolnímu okraji přiděleného prostoru rozložení nadřazeného elementu.|  
+|<xref:System.Windows.VerticalAlignment.Stretch>Výchozí|Podřízené prvky jsou roztaženy tak, aby vyplnily přidělené místo rozložení nadřazeného elementu. Explicitní <xref:System.Windows.FrameworkElement.Width%2A> a<xref:System.Windows.FrameworkElement.Height%2A> hodnoty mají přednost.|  
   
- Následující příklad ukazuje, jak použít <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnost <xref:System.Windows.Controls.Button> elementy. Každá hodnota atributu se zobrazí, abychom vám lépe předvedli různé chování vykreslování. Pro účely tohoto příkladu <xref:System.Windows.Controls.Grid> element s viditelné Mřížka slouží jako nadřazenou třídou, abychom vám lépe předvedli rozložení chování všechny hodnoty vlastností.  
+ Následující příklad ukazuje, jak použít <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnost na <xref:System.Windows.Controls.Button> prvky. Pro lepší ilustraci různých chování vykreslování se zobrazí každá hodnota atributu. Pro účely této ukázky <xref:System.Windows.Controls.Grid> se jako nadřazený objekt používá element s viditelnými mřížkami, aby lépe ilustroval chování rozložení každé hodnoty vlastnosti.  
   
  [!code-csharp[MPALayoutVerticalAlignment#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MPALayoutVerticalAlignment/CSharp/MPA_Layout_VerticalAlignment.cs#2)]
  [!code-vb[MPALayoutVerticalAlignment#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MPALayoutVerticalAlignment/VisualBasic/MPA_Layout_VerticalAlignment.vb#2)]
  [!code-xaml[MPALayoutVerticalAlignment#2](~/samples/snippets/xaml/VS_Snippets_Wpf/MPALayoutVerticalAlignment/XAML/default.xaml#2)]  
   
- Předchozí kód provede rozložení podobně jako na následujícím obrázku. Umístění účinky jednotlivých <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> hodnota jsou viditelné na obrázku.  
+ Předchozí kód poskytuje rozložení podobné následujícímu obrázku. Na ilustraci jsou viditelné <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> efekty umístění jednotlivých hodnot.  
   
- ![Vlastnost VerticalAlignment – ukázka](./media/layout-vertical-alignment-graphic.PNG "layout_vertical_alignment_graphic")  
+ ![Ukázka vlastnosti VerticalAlignment](./media/layout-vertical-alignment-graphic.PNG "layout_vertical_alignment_graphic")  
   
 <a name="wcpsdk_layout_amp_margin_properties"></a>   
-## <a name="understanding-margin-properties"></a>Principy vlastnosti okraj  
- <xref:System.Windows.FrameworkElement.Margin%2A> Vlastnost popisuje vzdálenost mezi prvek a jeho podřízené nebo partnerské uzly. <xref:System.Windows.FrameworkElement.Margin%2A> hodnoty mohou být jednotné, pomocí syntaxe jako `Margin="20"`. Pomocí této syntaxe jednotné <xref:System.Windows.FrameworkElement.Margin%2A> 20 zařízení nezávislých na pixelech se použijí pro úhradu elementu. <xref:System.Windows.FrameworkElement.Margin%2A> hodnoty můžete také využít formuláře čtyři různé hodnoty, každá hodnota popisující různé okraj vyrovnat vlevo nahoře, vpravo a dole (v uvedeném pořadí), jako je `Margin="0,10,5,25"`. Pro účely řádné využívání <xref:System.Windows.FrameworkElement.Margin%2A> vlastnost umožní velice přesné řízení pozici vykreslení elementu a pozici vykreslení jeho prvků sousední a podřízené položky.  
+## <a name="understanding-margin-properties"></a>Porozumění vlastnostem okraje  
+ <xref:System.Windows.FrameworkElement.Margin%2A> Vlastnost popisuje vzdálenost mezi prvkem a jeho podřízenými objekty nebo partnery. <xref:System.Windows.FrameworkElement.Margin%2A>hodnoty mohou být uniformně použity syntaxí, `Margin="20"`jako je. V této syntaxi by se pro <xref:System.Windows.FrameworkElement.Margin%2A> element použilo jednotné pixely nezávislé na zařízení. <xref:System.Windows.FrameworkElement.Margin%2A>hodnoty mohou také mít formu čtyř jedinečných hodnot. Každá hodnota, která popisuje samostatný okraj, má být použita vlevo, nahoře, vpravo a dole (v tomto pořadí), například `Margin="0,10,5,25"`. Správné použití <xref:System.Windows.FrameworkElement.Margin%2A> vlastnosti umožňuje velmi přesné řízení pozice vykreslování elementu a umístění vykreslování jeho sousedních prvků a podřízených objektů.  
   
 > [!NOTE]
->  Okraj nenulové použije místo vně elementu <xref:System.Windows.FrameworkElement.ActualWidth%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A>.  
+> Nenulový okraj aplikuje mezeru mimo element <xref:System.Windows.FrameworkElement.ActualWidth%2A> a. <xref:System.Windows.FrameworkElement.ActualHeight%2A>  
   
- Následující příklad ukazuje, jak použít jednotné okraje kolem skupiny <xref:System.Windows.Controls.Button> elementy. <xref:System.Windows.Controls.Button> Prvky jsou rovnoměrně s vyrovnávací pamětí okraj deset pixel v každém směru.  
+ Následující příklad ukazuje, jak použít jednotné okraje kolem skupiny <xref:System.Windows.Controls.Button> prvků. <xref:System.Windows.Controls.Button> Prvky jsou rovnoměrně rozmístěny s mezipamětí okraje 10 pixelů v každém směru.  
   
  [!code-cpp[MarginPaddingAlignmentSample#1](~/samples/snippets/cpp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CPP/Margin_Padding_Alignment_Sample.cpp#1)]
  [!code-csharp[MarginPaddingAlignmentSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CSharp/Margin_Padding_Alignment_Sample.cs#1)]
  [!code-vb[MarginPaddingAlignmentSample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MarginPaddingAlignmentSample/VisualBasic/MarginPaddingAlignment.vb#1)]
  [!code-xaml[MarginPaddingAlignmentSample#1](~/samples/snippets/xaml/VS_Snippets_Wpf/MarginPaddingAlignmentSample/XAML/default.xaml#1)]  
   
- V mnoha případech není vhodné jednotné okraj. V těchto případech je možné použít nerovnoměrné mezery. Následující příklad ukazuje, jak použít nerovnoměrné okraj mezery pro podřízené prvky. Okraje jsou popsané v tomto pořadí: levý, horní, klikněte pravým tlačítkem myši, bottom.  
+ V mnoha případech není jednotné okraje vhodné. V těchto případech lze použít nestejnoměrné mezery. Následující příklad ukazuje, jak použít nerovnoměrné mezery mezi podřízenými prvky. Okraje jsou popsány v tomto pořadí: levý, horní, pravý, dolní.  
   
  [!code-cpp[MarginPaddingAlignmentSample#2](~/samples/snippets/cpp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CPP/Margin_Padding_Alignment_Sample.cpp#2)]
  [!code-csharp[MarginPaddingAlignmentSample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CSharp/Margin_Padding_Alignment_Sample.cs#2)]
@@ -109,10 +109,10 @@ ms.locfileid: "62032198"
  [!code-xaml[MarginPaddingAlignmentSample#2](~/samples/snippets/xaml/VS_Snippets_Wpf/MarginPaddingAlignmentSample/XAML/default.xaml#2)]  
   
 <a name="wcpsdk_layout_amp_padding_properties"></a>   
-## <a name="understanding-the-padding-property"></a>Principy vlastnost odsazení  
- Odsazení se podobá <xref:System.Windows.FrameworkElement.Margin%2A> ve většině ohledech. Vlastnost Padding zpřístupněn na jenom na několik tříd, především pro potřeby: <xref:System.Windows.Documents.Block>, <xref:System.Windows.Controls.Border>, <xref:System.Windows.Controls.Control>, a <xref:System.Windows.Controls.TextBlock> příklady tříd, které zprostředkovávají vlastnost Padding. <xref:System.Windows.Controls.Border.Padding%2A> Vlastnost zvětší efektivní velikost podřízeného elementu zadaný <xref:System.Windows.Thickness> hodnotu.  
+## <a name="understanding-the-padding-property"></a>Princip vlastnosti odsazení  
+ Odsazení je podobné <xref:System.Windows.FrameworkElement.Margin%2A> jako v nejvíc ohledech. Vlastnost odsazení <xref:System.Windows.Documents.Block>je vystavena pouze na několika třídách, primárně jako pohodlí: <xref:System.Windows.Controls.Control>, <xref:System.Windows.Controls.Border>, a <xref:System.Windows.Controls.TextBlock> jsou vzorky tříd, které zpřístupňují vlastnost odsazení. Vlastnost zvětší efektivní velikost podřízeného prvku zadanou <xref:System.Windows.Thickness> hodnotou. <xref:System.Windows.Controls.Border.Padding%2A>  
   
- Následující příklad ukazuje, jak použít <xref:System.Windows.Controls.Border.Padding%2A> s nadřazenou položkou <xref:System.Windows.Controls.Border> elementu.  
+ Následující příklad ukazuje, jak použít <xref:System.Windows.Controls.Border.Padding%2A> na nadřazený <xref:System.Windows.Controls.Border> element.  
   
  [!code-cpp[MarginPaddingAlignmentSample#3](~/samples/snippets/cpp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CPP/Margin_Padding_Alignment_Sample.cpp#3)]
  [!code-csharp[MarginPaddingAlignmentSample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CSharp/Margin_Padding_Alignment_Sample.cs#3)]
@@ -121,24 +121,24 @@ ms.locfileid: "62032198"
   
 <a name="wcpsdk_layout_amp_summary"></a>   
 ## <a name="using-alignment-margins-and-padding-in-an-application"></a>Použití zarovnání, okrajů a odsazení v aplikaci  
- <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> zadejte umístění ovládacího prvku potřebné k vytvoření komplexní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Účinky jednotlivých vlastností můžete změnit podřízený element umístění a poskytuje flexibilitu při vytváření dynamických aplikací a uživatelů.  
+ <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A> [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a Poskytněteovládacíprvekumístěnípotřebnýkvytvořenísložitého<xref:System.Windows.FrameworkElement.VerticalAlignment%2A> . Můžete použít důsledky jednotlivých vlastností a změnit umístění podřízených elementů a umožnit tak flexibilitu při vytváření dynamických aplikací a uživatelského prostředí.  
   
- Následující příklad ukazuje, každý s koncepty, které jsou popsané v tomto tématu. Staví na infrastrukturou v první příklad v tomto tématu, v tomto příkladu přidá <xref:System.Windows.Controls.Grid> element jako podřízený objekt <xref:System.Windows.Controls.Border> v první ukázce. <xref:System.Windows.Controls.Border.Padding%2A> platí pro nadřazený <xref:System.Windows.Controls.Border> elementu. <xref:System.Windows.Controls.Grid> Se používá k rozdělení prostoru mezi tří podřízených <xref:System.Windows.Controls.StackPanel> elementy. <xref:System.Windows.Controls.Button> prvky jsou znovu použity k zobrazit různé účinky <xref:System.Windows.FrameworkElement.Margin%2A> a <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>. <xref:System.Windows.Controls.TextBlock> prvky jsou přidány do každé <xref:System.Windows.Controls.ColumnDefinition> a lépe tak definovat různé vlastnosti u <xref:System.Windows.Controls.Button> prvky v jednotlivých sloupcích.  
+ Následující příklad znázorňuje každou z konceptů, které jsou podrobně popsané v tomto tématu. V tomto tématu se sestavuje infrastruktura, která se nachází v první ukázce v tomto <xref:System.Windows.Controls.Grid> tématu. Tento příklad přidá prvek <xref:System.Windows.Controls.Border> jako podřízenou položku v první ukázce. <xref:System.Windows.Controls.Border.Padding%2A>je použito pro nadřazený <xref:System.Windows.Controls.Border> element. Slouží k rozdělení prostoru mezi tři podřízené <xref:System.Windows.Controls.StackPanel> prvky. <xref:System.Windows.Controls.Grid> <xref:System.Windows.Controls.Button>prvky jsou znovu použity k zobrazení různých efektů <xref:System.Windows.FrameworkElement.Margin%2A> a. <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> <xref:System.Windows.Controls.TextBlock>prvky jsou přidány do každého <xref:System.Windows.Controls.ColumnDefinition> pro lepší definování různých vlastností použitých <xref:System.Windows.Controls.Button> na prvky v jednotlivých sloupcích.  
   
  [!code-cpp[MarginPaddingAlignmentSample#4](~/samples/snippets/cpp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CPP/Margin_Padding_Alignment_Sample.cpp#4)]
  [!code-csharp[MarginPaddingAlignmentSample#4](~/samples/snippets/csharp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CSharp/Margin_Padding_Alignment_Sample.cs#4)]
  [!code-vb[MarginPaddingAlignmentSample#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MarginPaddingAlignmentSample/VisualBasic/MarginPaddingAlignment.vb#4)]
  [!code-xaml[MarginPaddingAlignmentSample#4](~/samples/snippets/xaml/VS_Snippets_Wpf/MarginPaddingAlignmentSample/XAML/default.xaml#4)]  
   
- Při kompilaci, výsledkem předchozí žádosti [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vypadá podobně jako na následujícím obrázku. Účinek různých hodnot vlastností je zřejmé ve mezery mezi elementy a hodnoty vlastností významné prvků v každém sloupci jsou uvedeny v rámci <xref:System.Windows.Controls.TextBlock> elementy.  
+ Při kompilaci předchozí aplikace navede objekt [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , který bude vypadat jako na následujícím obrázku. Účinky různých hodnot vlastností jsou zjevné v odstupech mezi prvky a významné hodnoty vlastností prvků v jednotlivých sloupcích jsou zobrazeny v rámci <xref:System.Windows.Controls.TextBlock> prvků.  
   
  ![Několik vlastností umístění v jedné aplikaci](./media/layout-margins-padding-aligment-graphic3.PNG "layout_margins_padding_aligment_graphic3")  
   
 <a name="wcpsdk_layout_amp_alignment_whatsnext"></a>   
-## <a name="whats-next"></a>Co se chystá  
- Vlastnosti určené umístění <xref:System.Windows.FrameworkElement> třídy povolení přesné řízení umístění prvku v rámci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací. Teď máte několik technik, které vám umožní lépe umístění elementů pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+## <a name="whats-next"></a>Co dál  
+ Umístění vlastností definovaných <xref:System.Windows.FrameworkElement> třídou umožňuje přesné řízení umístění elementu v rámci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací. Nyní máte několik postupů, které můžete použít k lepšímu umístění prvků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pomocí.  
   
- Jsou k dispozici další prostředky, které popisují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozložení podrobněji. [Přehled panelů](../controls/panels-overview.md) téma obsahuje další podrobnosti o jednotlivých <xref:System.Windows.Controls.Panel> elementy. Téma [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md) přináší pokročilé techniky, které používají pro nastavení pozice komponenty a jejich akce svázat zdroje dat elementů rozložení.  
+ K dispozici jsou další prostředky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , které vysvětlují rozložení podrobněji. Téma [Přehled panelů](../controls/panels-overview.md) obsahuje další podrobnosti o různých <xref:System.Windows.Controls.Panel> prvcích. Téma [Návod: Moje první desktopová aplikace](../getting-started/walkthrough-my-first-wpf-desktop-application.md) WPF zavádí pokročilé techniky, které používají prvky rozložení k umístění komponent a vázání jejich akcí na zdroje dat.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -148,4 +148,4 @@ ms.locfileid: "62032198"
 - <xref:System.Windows.FrameworkElement.Margin%2A>
 - [Přehled panelu](../controls/panels-overview.md)
 - [Rozložení](layout.md)
-- [Ukázky WPF rozložení galerie](https://go.microsoft.com/fwlink/?LinkID=160054)
+- [Ukázka Galerie rozložení WPF](https://go.microsoft.com/fwlink/?LinkID=160054)

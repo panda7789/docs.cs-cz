@@ -7,150 +7,150 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-ms.openlocfilehash: f92519ca1f960961f95722bce5c8e1f3b4419292
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 738a4f397b1677b867126c7bb439b027f951baa0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662200"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958820"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
-Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. Příklady prostředků: štětce a styly. Tento přehled popisuje, jak použít zdroje v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo Zaměnitelně mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](resources-and-code.md).  
+Prostředek je objekt, který lze znovu použít na různých místech aplikace. Mezi příklady prostředků patří štětce a styly. Tento přehled popisuje, jak používat prostředky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]nástroji. Můžete také vytvořit a přistupovat k prostředkům pomocí kódu nebo mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](resources-and-code.md).  
   
 > [!NOTE]
->  Soubory prostředků, které jsou popsané v tomto tématu se liší podle soubory prostředků [prostředek aplikace WPF, obsah a datové soubory](../app-development/wpf-application-resource-content-and-data-files.md) a jiné než vložené nebo propojené prostředky podle [spravovat Prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
+> Soubory prostředků popsané v tomto tématu se liší od souborů prostředků popsaných v tématu [prostředek aplikace WPF, obsah a datové soubory](../app-development/wpf-application-resource-content-and-data-files.md) a jiné než vložené nebo propojené prostředky popsané v tématu [Správa prostředků aplikace (.NET). ](/visualstudio/ide/managing-application-resources-dotnet).  
 
 <a name="usingresources"></a>   
-## <a name="using-resources-in-xaml"></a>Použití prostředků v XAML  
- Následující příklad definuje <xref:System.Windows.Media.SolidColorBrush> jako prostředek v kořenovém elementu na stránce. V příkladu se pak odkazuje na prostředek a používá k nastavení vlastností několik podřízených prvků, včetně <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Controls.TextBlock>a <xref:System.Windows.Controls.Button>.  
+## <a name="using-resources-in-xaml"></a>Používání prostředků v jazyce XAML  
+ Následující příklad definuje <xref:System.Windows.Media.SolidColorBrush> jako prostředek v kořenovém elementu stránky. Příklad pak odkazuje na prostředek a použije ho k nastavení vlastností několika podřízených elementů, včetně <xref:System.Windows.Shapes.Ellipse> <xref:System.Windows.Controls.TextBlock>, a a <xref:System.Windows.Controls.Button>.  
   
  [!code-xaml[FEResourceSH_snip#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page1.xaml#xaml)]  
   
- Každý prvek úrovni architektury (<xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>) má <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost, která je vlastnost, která obsahuje prostředky (jako <xref:System.Windows.ResourceDictionary>), který definuje prostředek. Prostředky můžete definovat na libovolný element. Ale zdroje jsou často definovány v kořenovém elementu, který je <xref:System.Windows.Controls.Page> v příkladu.  
+ Každý element na úrovni architektury (<xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>) má <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost, což je <xref:System.Windows.ResourceDictionary>vlastnost, která obsahuje prostředky (jako), kterou definuje prostředek. Můžete definovat prostředky pro libovolný element. Prostředky jsou však nejčastěji definovány na kořenovém prvku, který je <xref:System.Windows.Controls.Page> v příkladu.  
   
- Každý prostředek ve slovníku prostředků musí mít jedinečný klíč. Při definování prostředků v kódu, můžete přiřadit jedinečný klíč prostřednictvím [x: Key – direktiva](../../xaml-services/x-key-directive.md). Klíč je obvykle řetězec; však můžete také nastavit ho na jiné typy objektů pomocí rozšíření odpovídající značky. Neřetězcové klíče pro prostředky používají určité oblasti funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], zejména pro styly, součástí zdroje a používání stylů pro data.  
+ Každý prostředek ve slovníku prostředků musí mít jedinečný klíč. Při definování prostředků v kódu přiřadíte jedinečný klíč prostřednictvím [direktivy x:Key –](../../xaml-services/x-key-directive.md). Klíč je obvykle řetězec. můžete ji však také nastavit na jiné typy objektů pomocí příslušných rozšíření značek. Neřetězcové klíče pro prostředky jsou používány některými oblastmi funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]v nástroji, zejména pro styly, prostředky komponent a stylování dat.  
   
- Potom co definujete prostředek, mohou odkazovat na prostředek použitého pro hodnotu vlastnosti s využitím prostředků rozšíření syntaxe značek, který určuje název klíče, například:  
+ Po definování prostředku můžete odkazovat na prostředek, který se má použít pro hodnotu vlastnosti pomocí syntaxe rozšíření označení prostředku, která určuje název klíče, například:  
   
  [!code-xaml[FEResourceSH_snip#KeyNameUsage](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page2.xaml#keynameusage)]  
   
- V předchozím příkladu při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zavaděč zpracuje hodnotu `{StaticResource MyBrush}` pro <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Button>, logika vyhledávání prostředků nejprve zkontroluje, zda slovník prostředků pro <xref:System.Windows.Controls.Button> elementu. Pokud <xref:System.Windows.Controls.Button> nemá definici klíč prostředku `MyBrush` (tomu tak není, jeho prostředků kolekce je prázdná), vyhledávání příště připojí nadřazený element <xref:System.Windows.Controls.Button>, což je <xref:System.Windows.Controls.Page>. Proto když definujete prostředek na <xref:System.Windows.Controls.Page> kořenový element, všechny prvky v logického stromu <xref:System.Windows.Controls.Page> k němu přístup, a pro nastavení hodnota libovolné vlastnosti, které přijímá můžete znovu použít stejný prostředek <xref:System.Type> , který prostředek představuje. V předchozím příkladu, stejné `MyBrush` nastaví dva různé vlastnosti prostředku: <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button>a <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Rectangle>.  
+ V předchozím příkladu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , když zavaděč zpracovává hodnotu `{StaticResource MyBrush}` pro <xref:System.Windows.Controls.Control.Background%2A> vlastnost na <xref:System.Windows.Controls.Button>, logika vyhledávání prostředků nejprve zkontroluje slovník prostředků pro daný <xref:System.Windows.Controls.Button> element. Pokud <xref:System.Windows.Controls.Button> nemá definici klíče `MyBrush` prostředku (nejedná se o jeho kolekci prostředků je prázdné), vyhledávání provede další <xref:System.Windows.Controls.Button>kontrolu nadřazeného elementu, který je <xref:System.Windows.Controls.Page>. Proto při definování prostředku v <xref:System.Windows.Controls.Page> kořenovém elementu, ke kterému <xref:System.Windows.Controls.Page> mají přístup všechny prvky v logickém stromu, a můžete znovu použít stejný prostředek pro nastavení hodnoty <xref:System.Type> libovolné vlastnosti, která přijímá daný prostředek. roce. `MyBrush` V předchozím příkladu stejný prostředek nastaví dvě různé vlastnosti <xref:System.Windows.Controls.Control.Background%2A> : <xref:System.Windows.Controls.Button>a, a a <xref:System.Windows.Shapes.Shape.Fill%2A>. <xref:System.Windows.Shapes.Rectangle>  
   
 <a name="staticdynamic"></a>   
 ## <a name="static-and-dynamic-resources"></a>Statické a dynamické prostředky  
- Prostředek může být odkazováno jako prostředek statické nebo dynamické prostředek. To se provádí pomocí buď [StaticResource – rozšíření značek](staticresource-markup-extension.md) nebo [– rozšíření značek DynamicResource](dynamicresource-markup-extension.md). Rozšíření značek je funkce [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zajišťovaný zadáte odkaz na objekt tím, že rozšíření značek zpracovat atribut řetězců a vrátí objekt, který má [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zavaděče. Další informace týkající se chování rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
+ Prostředek se může odkazovat buď na statický prostředek, nebo na dynamický prostředek. To se provádí pomocí [rozšíření značek StaticResource](staticresource-markup-extension.md) nebo [rozšíření značek DynamicResource](dynamicresource-markup-extension.md). Rozšíření značek je funkce, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kde můžete zadat odkaz na objekt pomocí rozšíření značek, který zpracovává řetězec atributu a vrátí objekt [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] do zavaděče. Další informace o chování rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
- Při použití rozšíření značek, je obvykle zadat jeden nebo více parametrů v podobě řetězce, které se zpracovávají v tomto rozšíření konkrétní kód, nikoli právě vyhodnocuje v rámci nastavování vlastnosti. [– Rozšíření značek StaticResource](staticresource-markup-extension.md) zpracovává klíč vyhledáním hodnotu pro daný klíč ve všech dostupných zdrojové slovníky. K tomu dojde při načítání, který představuje bod v čase, když je potřeba přiřadit hodnotu, která přebírá odkaz na prostředek statické proces načítání. [– Rozšíření značek DynamicResource](dynamicresource-markup-extension.md) místo toho procesy klíč tak, že vytvoříte výraz a tento výraz zůstane nevyhodnoceném dokud skutečně při spuštění aplikace, po kterém výraz je vyhodnocen a poskytuje hodnotu.  
+ Použijete-li rozšíření značek, obvykle zadáte jeden nebo více parametrů ve formě řetězce, které jsou zpracovány pomocí konkrétní přípony označení, nikoli vyhodnoceny v kontextu nastavené vlastnosti. [Přípona značek StaticResource](staticresource-markup-extension.md) zpracuje klíč tím, že vyhledá hodnotu pro tento klíč ve všech dostupných slovníkech prostředků. K tomu dojde během načítání, což je bod v čase, kdy proces načítání potřebuje přiřadit hodnotu vlastnosti, která přebírá statický odkaz na prostředek. [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md) místo toho zpracovává klíč tím, že vytvoří výraz a tento výraz zůstane nevyhodnocený, dokud nebude aplikace skutečně spuštěna, kdy je výraz vyhodnocen a poskytuje hodnotu.  
   
- Při odkazování na prostředek, mohou ovlivnit následující aspekty, ať už používáte statický prostředek nebo odkaz na dynamický prostředek:  
+ Při odkazování na prostředek mohou následující okolnosti ovlivnit, zda používáte statický odkaz na prostředek nebo dynamický odkaz na prostředek:  
   
-- Celkový návrh, jak vytvořit prostředky pro vaše aplikace (na stránce v aplikaci v volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], v pouze sestavení prostředků).  
+- Celkový návrh způsobu vytváření prostředků pro vaši aplikaci (na stránce v aplikaci, v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]případě, že je v sestavení pouze pro prostředky).  
   
-- Funkčnost aplikace: aktualizuje prostředky v reálném čase součástí požadavků aplikace?  
+- Funkčnost aplikace: aktualizuje prostředky v reálném čase jako součást požadavků vaší aplikace?  
   
-- Chování příslušných vyhledávání tohoto typu odkazu prostředku.  
+- Příslušné chování vyhledávání tohoto typu odkazu na prostředek.  
   
 - Konkrétní vlastnost nebo typ prostředku a nativní chování těchto typů.  
   
 ### <a name="static-resources"></a>Statické prostředky  
- Statický prostředek odkazuje pracovní nejlépe za těchto okolností:  
+ Odkazy statických prostředků fungují nejlépe v následujících případech:  
   
-- Návrh aplikací se soustřeďuje nejvíce všech jeho prostředků do stránky nebo aplikace prostředků s úrovní slovníky. Odkazy na statické prostředky nejsou již znovu podle chování za běhu, jako je například opětovné načítání stránky, a proto může existovat několik výhod výkonu k zamezení velký počet odkazů na dynamický prostředek, pokud nejsou nutné na váš prostředek a návrh aplikace.  
+- Návrh vaší aplikace soustředí ze všech svých prostředků do slovníků prostředků na úrovni stránky nebo aplikace. Statické odkazy na prostředky nejsou znovu vyhodnoceny na základě chování modulu runtime, jako je například opětovné načtení stránky, a proto může docházet k vyzkoušení velkého počtu odkazů na dynamické prostředky, pokud nejsou pro váš prostředek nutné. návrh aplikace  
   
-- Nastavíte hodnotu vlastnosti, které nejsou na <xref:System.Windows.DependencyObject> nebo <xref:System.Windows.Freezable>.  
+- Nastavujete hodnotu vlastnosti, která není na <xref:System.Windows.DependencyObject> <xref:System.Windows.Freezable>nebo.  
   
-- Při vytváření slovník prostředků, který bude zkompilována do knihovny DLL a lze zabalit jako součást aplikace nebo sdílené mezi aplikacemi.  
+- Vytváříte slovník prostředků, který bude zkompilován do knihovny DLL a zabalen jako součást aplikace nebo sdílen mezi aplikacemi.  
   
-- Vytváření motivu pro ovládací prvek vlastní a definování prostředky, které se používají v rámci motivy. V takovém případě obvykle nechcete, aby chování při vyhledávání odkaz dynamický prostředek, místo toho chcete odkaz na chování statických prostředků tak, aby vyhledávání zajišťuje předvídatelný a nezávislý na motiv. Dynamický prostředek neověřené odkaz, dokonce i odkaz v rámci motiv zůstane až do modulu runtime a může se stát, že po motiv použije, některé místní element bude znovu definovat klíč, který motiv se pokouší odkazovat a místní element bude spadat předchozí motiv samotné při vyhledávání. Pokud k tomu dojde, nebude chovat motivu očekávaným způsobem.  
+- Vytváříte motiv pro vlastní ovládací prvek a definujete prostředky, které se používají v rámci motivů. V takovém případě nechcete, aby se nemuselo Hledat v dynamickém vyhledávání odkazů na prostředky, místo toho byste měli mít odkaz na statické prostředky, aby bylo vyhledávání předvídatelné a samoně součástí motivu. S dynamickým odkazem na prostředek, dokonce i odkaz v rámci motivu je nehodnocený až do doby běhu a existuje možnost, že když je motiv použit, některé místní prvky předefinují klíč, na který se váš motiv pokouší odkazovat, a místní prvek se zařadí před na samotný motiv ve vyhledávání. Pokud k tomu dojde, váš motiv se nebude chovat očekávaným způsobem.  
   
-- Používáte prostředky k nastavení velkého množství vlastností závislostí. Vlastnosti závislostí mít platnou hodnotu ukládání do mezipaměti jako povolené vlastnosti systému, takže pokud zadáte hodnotu pro vlastnost závislosti, které mohou být vyhodnoceny v okamžiku načtení, vlastnost závislosti není nutné vyhledávat reevaluated výraz a vrátit poslední platnou hodnotu. Tato technika může být zvýšení výkonu.  
+- Prostředky se používají k nastavení velkého počtu vlastností závislosti. Vlastnosti závislosti mají efektivní ukládání hodnot do mezipaměti, které jsou povolené systémem vlastností, takže pokud zadáte hodnotu pro vlastnost závislosti, kterou je možné vyhodnotit během načítání, vlastnost Dependency nemusí kontrolovat znovu vyhodnocený výraz a může vrátit Poslední efektivní hodnota. Tato technika může být výhodou výkonu.  
   
-- Chcete změnit základní prostředek pro všechny zákazníky, nebo chcete zachovat samostatných instancí pro každého příjemce pomocí [x: sdílený atribut](../../xaml-services/x-shared-attribute.md).  
+- Chcete změnit základní prostředek pro všechny uživatele nebo chcete zachovat samostatné zapisovatelné instance pro každého příjemce pomocí [atributu x:Shared –](../../xaml-services/x-shared-attribute.md).  
   
-#### <a name="static-resource-lookup-behavior"></a>Chování při vyhledávání statický prostředek  
+#### <a name="static-resource-lookup-behavior"></a>Chování vyhledávání statických prostředků  
   
-1. Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
+1. Proces vyhledávání kontroluje požadovaný klíč v rámci slovníku prostředků definovaného prvkem, který nastavuje vlastnost.  
   
-2. Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
+2. Proces vyhledávání pak projde logický strom nahoru do nadřazeného prvku a jeho slovníku prostředků. To pokračuje, dokud není dosaženo kořenového prvku.  
   
-3. V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+3. V dalším kroku jsou zkontrolovány prostředky aplikace. Prostředky aplikace jsou tyto prostředky v rámci slovníku prostředků, které jsou definovány <xref:System.Windows.Application> objektem pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci.  
   
- Odkazy na statické prostředky z v rámci slovníku prostředků musí odkazovat na prostředek, který již byl definován lexikálně před odkaz na prostředek. Dopředné odkazy nemůže přeložit odkaz statických prostředků. Z tohoto důvodu Pokud používáte odkazy na statické prostředky, je třeba navrhnout strukturu slovníku prostředků tak, aby prostředky, které jsou určené pro použití podle prostředků jsou definovány v nebo na začátku každé slovník příslušných prostředků.  
+ Statické odkazy na prostředky v rámci slovníku prostředků musí odkazovat na prostředek, který již byl definován lexikální před odkazem na prostředek. Odkazy na směrování nelze vyřešit pomocí odkazu na statický prostředek. Z tohoto důvodu platí, že pokud používáte statické odkazy na prostředky, je nutné navrhnout strukturu slovníku prostředků tak, aby prostředky určené pro použití podle prostředků byly definovány na začátku každého příslušného slovníku prostředků nebo téměř na nich.  
   
- Statický prostředek vyhledávání můžete rozšířit do motivy, nebo do systémové prostředky, ale tato funkce je podporována pouze, protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zavaděč odloží požadavku. Odložení je nutné, aby modul runtime motiv v době, kdy se stránka načte správně platí pro aplikaci. Statický prostředek však odkazuje na klíče, které se ví, že existují pouze v motivy, nebo jako systém, které prostředky se nedoporučuje. Je to proto, že tyto odkazy se již znovu motiv při změně uživatelem v reálném čase. Dynamický prostředek odkaz je spolehlivější, pokud budete požadovat motiv nebo dostatek systémových prostředků. Výjimkou je, když motiv elementu samotného požádá o jiný prostředek. Tyto odkazy by měl být odkazy na statické prostředky z důvodů již bylo zmíněno dříve.  
+ Statické vyhledávání prostředků může být rozšířeno na motivy nebo do systémových prostředků, ale to je podporováno pouze proto [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , že zavaděč odloží požadavek. Odložení je nezbytné, aby byl motiv modulu runtime v okamžiku, kdy se stránka správně načte, v aplikaci správně načítat. Statické odkazy na prostředky, které jsou známy pouze v motivech nebo jako systémové prostředky, se však nedoporučují. Důvodem je, že tyto odkazy nejsou znovu vyhodnoceny, pokud je motiv změněn uživatelem v reálném čase. Odkaz na dynamický prostředek je spolehlivější, když požádáte o motiv nebo systémové prostředky. Výjimkou je, když prvek motivu sám požaduje jiný prostředek. Tyto odkazy by měly být statickými odkazy na prostředky z výše zmíněných důvodů.  
   
- Se liší chování výjimky, pokud odkaz statický prostředek nebyl nalezen. Pokud byla odložena na prostředek, k výjimce dochází za běhu. Pokud prostředek nebyl odloženo, k výjimce dochází v okamžiku načtení.  
+ Chování výjimky, pokud se nenalezne odkaz na statický prostředek, se liší. Pokud byl prostředek odložen, dojde k výjimce za běhu. Pokud prostředek nebyl odložen, dojde k výjimce v době načítání.  
   
 ### <a name="dynamic-resources"></a>Dynamické prostředky  
- Dynamické prostředky nejvhodnější za těchto okolností:  
+ Dynamické prostředky fungují nejlépe v následujících případech:  
   
-- Hodnota prostředku závisí na podmínkách, které nejsou známy až do modulu runtime. To zahrnuje systémových prostředků nebo prostředky, které jsou jinak uživatel nastavitelná při čekání. Například můžete vytvořit metodu setter hodnoty, které odkazují na vlastnosti systému jako vystavené <xref:System.Windows.SystemColors>, <xref:System.Windows.SystemFonts>, nebo <xref:System.Windows.SystemParameters>. Tyto hodnoty jsou skutečně dynamické, protože nakonec pocházejí z běhové prostředí uživatele a operačního systému. Také může mít motivů na úrovni aplikace, které se mohou měnit, ve kterém přístup k prostředkům na úrovni stránky musí zachytit změny.  
+- Hodnota prostředku závisí na podmínkách, které nejsou známy do modulu runtime. To zahrnuje systémové prostředky nebo prostředky, které jsou jinak nastavitelné uživatelem. Můžete například vytvořit hodnoty Setter, které odkazují na vlastnosti systému, které jsou vystaveny pomocí <xref:System.Windows.SystemColors>, <xref:System.Windows.SystemFonts>nebo <xref:System.Windows.SystemParameters>. Tyto hodnoty jsou skutečně dynamické, protože nakonec pocházejí z běhového prostředí uživatele a operačního systému. Můžete mít také motivy na úrovni aplikace, které mohou být změněny, kde přístup k prostředkům na úrovni stránky musí také zachytit změnu.  
   
-- Vytváříte nebo odkazující na styly motivů pro vlastní ovládací prvek.  
+- Vytváříte nebo odkazujete na styly motivů pro vlastní ovládací prvek.  
   
-- Máte v úmyslu upravte obsah <xref:System.Windows.ResourceDictionary> během dobu životnosti aplikace.  
+- Máte v úmyslu upravit obsah <xref:System.Windows.ResourceDictionary> během životnosti aplikace.  
   
-- Máte složité prostředků strukturu, která má vzájemné závislosti, kde mohou být požadovány dopředný odkaz. Odkazy na statické prostředky nepodporuje odkazy směrem vpřed, ale dynamický prostředek odkazy podporují je vzhledem k tomu, že prostředek není potřeba vyhodnotit až do modulu runtime a dopředné odkazy z tohoto důvodu nejsou relevantní koncept.  
+- Máte složitou strukturu prostředků, která má vzájemné závislosti, kde se může vyžadovat dopředný odkaz. Statické odkazy na prostředky nepodporují dopředné odkazy, ale dynamické odkazy na prostředky je podporují, protože prostředek není nutné vyhodnotit do doby, než je modul runtime, a předávací odkazy nejsou proto relevantní koncept.  
   
-- Odkazujete na prostředek, který je zejména velkých z hlediska kompilace nebo pracovní sady a zdroje nemusí být použity hned po načtení stránky. Odkazy na statické prostředky vždy načítat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] při načtení stránky; však není odkaz dynamický prostředek načítat, dokud se ve skutečnosti používá.  
+- Odkazujete na prostředek, který je zvláště velký z perspektivy kompilace nebo pracovní sady, a prostředek se nemusí použít ihned při načtení stránky. Statické odkazy na prostředky se [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] při načtení stránky vždy načítají; dynamický odkaz na prostředek se ale nenačte, dokud se nepoužije.  
   
-- Vytváření stylu, kde může nastavení hodnoty pocházejí z jiné hodnoty, které jsou ovlivněny motivů nebo jiná nastavení uživatele.  
+- Vytváříte styl, ve kterém mohou být hodnoty setter z jiných hodnot, které jsou ovlivněny motivy nebo jinými uživatelskými nastaveními.  
   
-- Prostředky aplikujete na elementy, které může být v logickém stromu potomkům během životního cyklu aplikace. Změna nadřazeného také potenciálně změní rozsah vyhledávání prostředků, proto pokud chcete prostředek pro prvek reparented se znovu vyhodnotit podle nového oboru, vždy použijte odkaz dynamický prostředek.  
+- Prostředky se aplikují na prvky, které mohou být v logickém stromu během životního cyklu aplikace znovu nadřazené. Změna nadřazené položky také potenciálně změní rozsah vyhledávání prostředků, takže pokud chcete, aby byl prostředek pro předaný element znovu vyhodnocen v závislosti na novém oboru, vždy použijte dynamický odkaz na prostředek.  
   
-#### <a name="dynamic-resource-lookup-behavior"></a>Chování při vyhledávání dynamický prostředek  
- Chování při vyhledávání prostředků pro odkaz na dynamický prostředek parallels chování vyhledávání v kódu při volání <xref:System.Windows.FrameworkElement.FindResource%2A> nebo <xref:System.Windows.FrameworkElement.SetResourceReference%2A>.  
+#### <a name="dynamic-resource-lookup-behavior"></a>Chování při hledání dynamického prostředku  
+ Chování vyhledávání prostředků pro odkaz na dynamický prostředek paralelně vytvoří chování vyhledávání v kódu, pokud voláte <xref:System.Windows.FrameworkElement.FindResource%2A> nebo. <xref:System.Windows.FrameworkElement.SetResourceReference%2A>  
   
-1. Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
+1. Proces vyhledávání kontroluje požadovaný klíč v rámci slovníku prostředků definovaného prvkem, který nastavuje vlastnost.  
   
-    - Pokud element definuje <xref:System.Windows.FrameworkElement.Style%2A> vlastnost, <xref:System.Windows.Style.Resources%2A> slovníku v rámci <xref:System.Windows.Style> je zaškrtnuté políčko.  
+    - Pokud element definuje <xref:System.Windows.FrameworkElement.Style%2A> vlastnost <xref:System.Windows.Style.Resources%2A> , slovník v rámci <xref:System.Windows.Style> je zaškrtnut.  
   
-    - Pokud element definuje <xref:System.Windows.Controls.Control.Template%2A> vlastnost, <xref:System.Windows.FrameworkTemplate.Resources%2A> slovníku v rámci <xref:System.Windows.FrameworkTemplate> je zaškrtnuté políčko.  
+    - Pokud element definuje <xref:System.Windows.Controls.Control.Template%2A> vlastnost <xref:System.Windows.FrameworkTemplate.Resources%2A> , slovník v rámci <xref:System.Windows.FrameworkTemplate> je zaškrtnut.  
   
-2. Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
+2. Proces vyhledávání pak projde logický strom nahoru do nadřazeného prvku a jeho slovníku prostředků. To pokračuje, dokud není dosaženo kořenového prvku.  
   
-3. V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+3. V dalším kroku jsou zkontrolovány prostředky aplikace. Prostředky aplikace jsou tyto prostředky v rámci slovníku prostředků, které jsou definovány <xref:System.Windows.Application> objektem pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci.  
   
-4. Slovník prostředků motiv se kontroluje u aktuálně aktivní motiv. Pokud, motiv se změní za běhu, hodnota je již znovu.  
+4. Slovník prostředků motivu je zaškrtnut pro aktuálně aktivní motiv. Pokud se motiv změní za běhu, hodnota se znovu vyhodnotí.  
   
-5. Systémové prostředky jsou kontrolovány.  
+5. Jsou zaškrtnuté systémové prostředky.  
   
- Výjimka chování (pokud existuje) se liší:  
+ Chování výjimky (pokud existuje) se liší:  
   
-- Pokud byl prostředek požadoval <xref:System.Windows.FrameworkElement.FindResource%2A> volání a nebyla nalezena, je vyvolána výjimka.  
+- Pokud byl prostředek vyžádán <xref:System.Windows.FrameworkElement.FindResource%2A> voláním a nebyl nalezen, je vyvolána výjimka.  
   
-- Pokud byl prostředek požadoval <xref:System.Windows.FrameworkElement.TryFindResource%2A> volání a nebyla nalezena, je vyvolána žádná výjimka, ale vrácená hodnota je `null`. Pokud je vlastnost nastavena nepřijímá `null`, je stále možné, že hlubší výjimka bude vyvolána (záleží na jednotlivé vlastnosti nastavena).  
+- Pokud byl prostředek vyžádán <xref:System.Windows.FrameworkElement.TryFindResource%2A> voláním a nebyl nalezen, není vyvolána žádná výjimka, ale vrácená hodnota je. `null` Pokud je vlastnost nastavena na hodnotu `null`, je stále možné, že bude vyvolána hlubší výjimka (to závisí na nastavené individuální vlastnosti).  
   
-- Pokud prostředek byl požadován odkaz dynamický prostředek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nebyla nalezena, pak chování závisí na obecné vlastnosti systému, ale obecné chování je, jako kdyby žádná operace nastavení vlastností došlo k chybě na úrovni, kde existuje prostředek. Například pokud se pokusíte nastavit na pozadí jednotlivá tlačítka elementu s použitím prostředek, který nemůže být vyhodnocena, pak nastavena žádná hodnota výsledky, ale efektivní hodnotou stále můžou pocházet z účastníci Priorita systému a hodnoty vlastností. Hodnoty na pozadí, stále může pocházet ze styl tlačítka pro místně definovaný, nebo stylu motivu. Pro vlastnosti, které nejsou definovány styly motivů platnou hodnotu po vyhodnocení problémovému prostředku může pocházet z výchozí hodnoty v metadatech vlastnost.  
+- Pokud byl prostředek vyžádán odkazem dynamického prostředku v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a nebyl nalezen, bude chování záviset na obecném systému vlastností, ale obecné chování je, jako by na úrovni, kde existuje prostředek, nedošlo k žádné operaci nastavení vlastnosti. Například pokud se pokusíte nastavit pozadí na jednotlivé prvky tlačítka pomocí prostředku, který nebylo možné vyhodnotit, pak žádná sada hodnot nevrátí hodnotu, ale efektivní hodnota může být stále z jiných účastníků v rámci hodnoty systému vlastností a priority hodnoty. Například hodnota pozadí může být stále pocházet z lokálně definovaného stylu tlačítka nebo ze stylu motivu. Pro vlastnosti, které nejsou definovány styly motivů, může platit efektivní hodnota po neúspěšném vyhodnocení prostředku z výchozí hodnoty v metadatech vlastností.  
   
 #### <a name="restrictions"></a>Omezení  
- Dynamický prostředek odkazy mají některé důležité omezení. Nejméně jednu z následujících musí mít hodnotu true:  
+ Odkazy na dynamické prostředky mají určitá významná omezení. Aspoň jedna z následujících možností musí být true:  
   
-- Vlastnost nastavena, musí být vlastnost na <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>. Vlastnost musí opírá <xref:System.Windows.DependencyProperty>.  
+- Nastavená vlastnost musí být vlastnost v <xref:System.Windows.FrameworkElement> nebo. <xref:System.Windows.FrameworkContentElement> Tato vlastnost musí být zálohována pomocí <xref:System.Windows.DependencyProperty>.  
   
-- Odkaz je pro hodnoty v rámci <xref:System.Windows.Style> <xref:System.Windows.Setter>.  
+- Odkaz je určen pro hodnotu v rámci <xref:System.Windows.Style>. <xref:System.Windows.Setter>  
   
-- Vlastnost nastavena, musí být vlastnost na <xref:System.Windows.Freezable> , který je zadaný jako hodnota buď <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> vlastnost, nebo <xref:System.Windows.Setter> hodnotu.  
+- Vlastnost <xref:System.Windows.Freezable> nastavená musí být vlastnost v, která je k dispozici jako hodnota <xref:System.Windows.FrameworkElement> buď vlastnosti, <xref:System.Windows.Setter> nebo <xref:System.Windows.FrameworkContentElement> nebo hodnoty.  
   
- Protože musí být vlastnost nastavena <xref:System.Windows.DependencyProperty> nebo <xref:System.Windows.Freezable> vlastnost, většina změny vlastností se může rozšířit do uživatelského rozhraní vzhledem k tomu, že změna vlastnosti (hodnota změněné dynamický prostředek) je potvrzen v systému vlastností. Většina ovládací prvky zahrnují logiku, která vynutí jiné rozložení ovládacího prvku, pokud <xref:System.Windows.DependencyProperty> změny a že vlastnost může ovlivnit rozložení. Nicméně jsou všechny vlastnosti, které mají [– rozšíření značek DynamicResource](dynamicresource-markup-extension.md) jako jejich hodnota je zaručeno, zadejte hodnotu tak, že aktualizují v reálném čase v uživatelském rozhraní. Které tuto funkci stále se může lišit v závislosti na vlastnosti, stejně jako v závislosti na typu, který vlastní vlastnost, nebo dokonce logické struktury vaší aplikace.  
+ Vzhledem k tomu, že nastavená vlastnost <xref:System.Windows.DependencyProperty> musí <xref:System.Windows.Freezable> být vlastnost nebo, může se většina změn vlastností šířit do uživatelského rozhraní, protože Změna vlastnosti (změněná hodnota dynamického prostředku) je potvrzena systémem vlastností. Většina ovládacích prvků zahrnuje logiku, která vynutí jiné rozložení ovládacího prvku, <xref:System.Windows.DependencyProperty> Pokud změny a tato vlastnost mohou ovlivnit rozložení. Nicméně ne všechny vlastnosti, které mají [rozšíření značek DynamicResource](dynamicresource-markup-extension.md) jako jejich hodnota, zaručují poskytnutí hodnoty takovým způsobem, že se v uživatelském rozhraní aktualizují v reálném čase. Tato funkce se stále může lišit v závislosti na vlastnosti a také v závislosti na typu, který vlastní vlastnost, nebo dokonce na logické struktuře aplikace.  
   
 <a name="stylesimplicitkeys"></a>   
-## <a name="styles-datatemplates-and-implicit-keys"></a>Styly, DataTemplates a implicitní klíče  
- Dříve bylo uvedeno, že všechny položky v <xref:System.Windows.ResourceDictionary> musí mít klíč. Nicméně to neznamená, že všechny zdroje musí mít explicitní `x:Key`. Několik typů objektů podporují implicitní klíč, když je definována jako prostředek, kde hodnota klíče, která se váže na hodnotě jiné vlastnosti. To se označuje jako implicitní klíč, vzhledem `x:Key` atribut je explicitní klíč. Žádné implicitní klíč můžete přepsat zadáním explicitní klíč.  
+## <a name="styles-datatemplates-and-implicit-keys"></a>Styly, šablony a implicitní klíče  
+ Dříve bylo uvedeno, že všechny položky v <xref:System.Windows.ResourceDictionary> musí mít klíč. To však neznamená, že všechny prostředky musí mít explicitní `x:Key`. Několik typů objektů podporuje implicitní klíč, pokud je definován jako prostředek, kde hodnota klíče je svázána s hodnotou jiné vlastnosti. To se označuje jako implicitní klíč, zatímco `x:Key` atribut je explicitní klíč. Můžete přepsat libovolný implicitní klíč zadáním explicitního klíče.  
   
- Jeden scénář velmi důležité pro zdroje je při definování <xref:System.Windows.Style>. Ve skutečnosti <xref:System.Windows.Style> je téměř vždy definována jako položku ve slovníku prostředků, protože styly jsou ze své podstaty určené pro opakované použití. Další informace o stylech najdete v tématu [styly a šablony](../controls/styling-and-templating.md).  
+ Jedním z velmi důležitých scénářů pro prostředky je při definování <xref:System.Windows.Style>. Ve skutečnosti <xref:System.Windows.Style> je téměř vždy definováno jako položka ve slovníku prostředků, protože styly jsou podstatně určeny k opakovanému použití. Další informace o stylech naleznete v tématu [stylování and šablonování](../controls/styling-and-templating.md).  
   
- Styly pro ovládací prvky mohou být vytvořené pomocí i odkazovaný adresou implicitní klíč. Spolehněte se na tento klíč implicitní styly motivů, které definují výchozí vzhled ovládacího prvku. Implicitní klíč z hlediska požadavku <xref:System.Type> samotného ovládacího prvku. Implicitní klíč z hlediska definice prostředku je <xref:System.Windows.Style.TargetType%2A> daného stylu. Proto pokud vytváříte motivy pro vlastní ovládací prvky, vytváření styly, které pracují s existující styly motivů, nepotřebujete k určení [x: Key – direktiva](../../xaml-services/x-key-directive.md) pro daný <xref:System.Windows.Style>. A pokud chcete použít s motivem styly, není potřeba zadat jakýkoli styl vůbec. Například následující definice stylu funguje, i když <xref:System.Windows.Style> prostředků nezobrazí klíč:  
+ Styly pro ovládací prvky mohou být vytvořeny pomocí a odkazovány pomocí implicitního klíče. Styly motivů, které definují výchozí vzhled ovládacího prvku, spoléhají na tento implicitní klíč. Implicitní klíč z hlediska vyžádání je <xref:System.Type> z hlediska samotného ovládacího prvku. Implicitní klíč z hlediska definování prostředku je <xref:System.Windows.Style.TargetType%2A> stylem. Proto pokud vytváříte motivy pro vlastní ovládací prvky, vytváření stylů, které pracují se stávajícími styly motivů, není nutné zadávat pro <xref:System.Windows.Style>tuto [direktivu x:Key –](../../xaml-services/x-key-directive.md) . A pokud chcete použít styly motivů, nemusíte vůbec zadávat žádný styl. Například následující definice stylu funguje, i když se zdá, že <xref:System.Windows.Style> prostředek nemá klíč:  
   
  [!code-xaml[FEResourceSH_snip#ImplicitStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page2.xaml#implicitstyle)]  
   
- Styl opravdu že klíč: implicitní klíč `typeof(` <xref:System.Windows.Controls.Button> `)`. V kódu, můžete zadat <xref:System.Windows.Style.TargetType%2A> přímo jako typ název (nebo můžete volitelně použít [{x: Type...}](../../xaml-services/x-type-markup-extension.md) Chcete-li vrátit <xref:System.Type>.  
+ Tento styl má ve skutečnosti klíč: implicitní klíč `typeof(`. <xref:System.Windows.Controls.Button> `)` V kódu můžete zadat <xref:System.Windows.Style.TargetType%2A> přímo jako název typu (případně můžete použít [{x:Type...}](../../xaml-services/x-type-markup-extension.md) ). pro vrácení <xref:System.Type>.  
   
- Prostřednictvím mechanismů výchozí motiv styl používaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], stylem jako styl modulu runtime <xref:System.Windows.Controls.Button> na stránce i v případě, <xref:System.Windows.Controls.Button> samotný nebude pokoušet o zadejte jeho <xref:System.Windows.FrameworkElement.Style%2A> vlastnost nebo konkrétní prostředek odkaz na styl. Vašemu stylu na stránce definován najdete výše v pořadí vyhledávání než styl slovníku motivu, pomocí stejného klíče, který má slovníku stylu motivu. Můžete pouze zadat `<Button>Hello</Button>` kamkoli do stránky a styl je definovaný s <xref:System.Windows.Style.TargetType%2A> z `Button` by použít na toto tlačítko. Pokud chcete, můžete stále explicitně klíče styl se stejnou hodnotou typu jako <xref:System.Windows.Style.TargetType%2A>pro přehlednost ve vašem kódu, ale je volitelný.  
+ Pomocí výchozích mechanismů stylu motivů používaných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástrojem je tento styl použit jako styl <xref:System.Windows.Controls.Button> modulu runtime na stránce, i když se <xref:System.Windows.Controls.Button> sám nepokouší zadat jeho <xref:System.Windows.FrameworkElement.Style%2A> vlastnost nebo konkrétní prostředek. odkaz na styl Váš styl definovaný na stránce se nachází dříve v sekvenci vyhledávání než styl slovníku motivu pomocí stejného klíče, který má styl slovníku motivů. Mohli byste jenom zadat `<Button>Hello</Button>` kamkoli na stránce a styl, který jste definovali, <xref:System.Windows.Style.TargetType%2A> `Button` se použije pro toto tlačítko. Pokud chcete, můžete stále explicitně vyklíčovat styl se stejnou hodnotou typu jako <xref:System.Windows.Style.TargetType%2A>pro přehlednost v kódu, ale to je volitelné.  
   
- Implicitní klíče pro stylů se nevztahují na ovládacím prvku Pokud <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> je `true` (Všimněte si také, <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> může být nastaveno jako součást nativní chování pro ovládací prvek třídy, nikoli explicitně na instanci ovládacího prvku). Také, aby bylo možné podporovat implicitní klíče pro scénáře, / / coleserveritem, musí přepsat ovládací prvek <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (všechny existující ovládací prvky, které jsou k dispozici jako součást [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tomu). Další informace o styly, motivy a ovládací prvek návrhu najdete v tématu [pokyny pro návrh s podporou stylů ovládací prvky](../controls/guidelines-for-designing-stylable-controls.md).  
+ Implicitní klíče pro styly neplatí pro ovládací prvek, pokud <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> je `true` (také Upozorňujeme, <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> že je možné nastavit jako součást nativního chování pro třídu ovládacího prvku namísto explicitního použití instance ovládacího prvku). Aby bylo možné podporovat implicitní klíče pro odvozené třídy, ovládací prvek musí přepsat <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (všechny existující ovládací prvky, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou součástí tohoto příkazu). Další informace o stylech, motivech a návrhu ovládacích prvků naleznete v tématu [pokyny pro návrh ovládacích ovládacích prvků](../controls/guidelines-for-designing-stylable-controls.md).  
   
- <xref:System.Windows.DataTemplate> má také implicitní klíč. Implicitní klíč pro <xref:System.Windows.DataTemplate> je <xref:System.Windows.DataTemplate.DataType%2A> hodnotu vlastnosti. <xref:System.Windows.DataTemplate.DataType%2A> Můžete taky možné specifikovat jako název typu, nikoli explicitně pomocí [{x: Type...} ](../../xaml-services/x-type-markup-extension.md). Podrobnosti najdete v tématu [přehled datových šablon](../data/data-templating-overview.md).  
+ <xref:System.Windows.DataTemplate>má také implicitní klíč. Implicitní klíč pro <xref:System.Windows.DataTemplate> <xref:System.Windows.DataTemplate.DataType%2A> je hodnota vlastnosti. <xref:System.Windows.DataTemplate.DataType%2A>lze také zadat jako název typu místo explicitního použití [{x:Type...}](../../xaml-services/x-type-markup-extension.md). Podrobnosti najdete v tématu [Přehled šablonování dat](../data/data-templating-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 
