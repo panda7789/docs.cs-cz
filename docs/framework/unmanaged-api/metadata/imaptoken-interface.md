@@ -16,34 +16,34 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a50f8b13979426b8ea04f1952216afe5de337386
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3fed44fe814ec873cffb1aa4006e11445f8e03db
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59111667"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965775"
 ---
-# <a name="imaptoken-interface"></a><span data-ttu-id="275d4-102">IMapToken – rozhraní</span><span class="sxs-lookup"><span data-stu-id="275d4-102">IMapToken Interface</span></span>
-<span data-ttu-id="275d4-103">Poskytuje funkce mapování mezi sestaveními.</span><span class="sxs-lookup"><span data-stu-id="275d4-103">Provides mapping capabilities between assemblies.</span></span>  
+# <a name="imaptoken-interface"></a><span data-ttu-id="71ed2-102">IMapToken – rozhraní</span><span class="sxs-lookup"><span data-stu-id="71ed2-102">IMapToken Interface</span></span>
+<span data-ttu-id="71ed2-103">Poskytuje možnosti mapování mezi sestaveními.</span><span class="sxs-lookup"><span data-stu-id="71ed2-103">Provides mapping capabilities between assemblies.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="275d4-104">`IMapToken` Pomocí klienta musí implementovat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="275d4-104">The `IMapToken` interface must be implemented by the client.</span></span>  
+> <span data-ttu-id="71ed2-104">`IMapToken` Rozhraní musí být implementováno klientem.</span><span class="sxs-lookup"><span data-stu-id="71ed2-104">The `IMapToken` interface must be implemented by the client.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="275d4-105">Metody</span><span class="sxs-lookup"><span data-stu-id="275d4-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="71ed2-105">Metody</span><span class="sxs-lookup"><span data-stu-id="71ed2-105">Methods</span></span>  
   
-|<span data-ttu-id="275d4-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="275d4-106">Method</span></span>|<span data-ttu-id="275d4-107">Popis</span><span class="sxs-lookup"><span data-stu-id="275d4-107">Description</span></span>|  
+|<span data-ttu-id="71ed2-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="71ed2-106">Method</span></span>|<span data-ttu-id="71ed2-107">Popis</span><span class="sxs-lookup"><span data-stu-id="71ed2-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="275d4-108">Map – metoda</span><span class="sxs-lookup"><span data-stu-id="275d4-108">Map Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/imaptoken-map-method.md)|<span data-ttu-id="275d4-109">Mapuje vztah mezi dvěma sestavení pomocí metadat podpisy.</span><span class="sxs-lookup"><span data-stu-id="275d4-109">Maps a relationship between two assemblies using metadata signatures.</span></span>|  
+|[<span data-ttu-id="71ed2-108">Map – metoda</span><span class="sxs-lookup"><span data-stu-id="71ed2-108">Map Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/imaptoken-map-method.md)|<span data-ttu-id="71ed2-109">Mapuje relaci mezi dvěma sestaveními pomocí podpisů metadat.</span><span class="sxs-lookup"><span data-stu-id="71ed2-109">Maps a relationship between two assemblies using metadata signatures.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="275d4-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="275d4-110">Requirements</span></span>  
- <span data-ttu-id="275d4-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="275d4-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="71ed2-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="71ed2-110">Requirements</span></span>  
+ <span data-ttu-id="71ed2-111">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="71ed2-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="275d4-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="275d4-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="71ed2-112">**Hlaviček** Cor. h</span><span class="sxs-lookup"><span data-stu-id="71ed2-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="275d4-113">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="275d4-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="71ed2-113">**Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="71ed2-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="275d4-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="275d4-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="71ed2-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="71ed2-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="275d4-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="275d4-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="71ed2-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71ed2-115">See also</span></span>
 
-- [<span data-ttu-id="275d4-116">Rozhraní pro metadata</span><span class="sxs-lookup"><span data-stu-id="275d4-116">Metadata Interfaces</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [<span data-ttu-id="71ed2-116">Rozhraní pro metadata</span><span class="sxs-lookup"><span data-stu-id="71ed2-116">Metadata Interfaces</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)

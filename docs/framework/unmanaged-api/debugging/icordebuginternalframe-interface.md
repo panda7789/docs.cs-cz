@@ -16,37 +16,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2f16b4628215bee2410708edeb337b41fbdc0311
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9764cdcd07a09f5192a8f43b9baa5be40305c40b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946364"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910158"
 ---
-# <a name="icordebuginternalframe-interface"></a><span data-ttu-id="4486c-102">ICorDebugInternalFrame – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4486c-102">ICorDebugInternalFrame Interface</span></span>
+# <a name="icordebuginternalframe-interface"></a><span data-ttu-id="0ebca-102">ICorDebugInternalFrame – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0ebca-102">ICorDebugInternalFrame Interface</span></span>
 
-<span data-ttu-id="4486c-103">Představuje modul runtime interní rámec v zásobníku.</span><span class="sxs-lookup"><span data-stu-id="4486c-103">Represents a runtime-internal frame on the stack.</span></span> <span data-ttu-id="4486c-104">Toto rozhraní je podtřídou třídy icordebugframe – rozhraní.</span><span class="sxs-lookup"><span data-stu-id="4486c-104">This interface is a subclass of the ICorDebugFrame interface.</span></span>  
+<span data-ttu-id="0ebca-103">Představuje interní rámec modulu runtime v zásobníku.</span><span class="sxs-lookup"><span data-stu-id="0ebca-103">Represents a runtime-internal frame on the stack.</span></span> <span data-ttu-id="0ebca-104">Toto rozhraní je podtřídou rozhraní ICorDebugFrame.</span><span class="sxs-lookup"><span data-stu-id="0ebca-104">This interface is a subclass of the ICorDebugFrame interface.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="4486c-105">Metody</span><span class="sxs-lookup"><span data-stu-id="4486c-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="0ebca-105">Metody</span><span class="sxs-lookup"><span data-stu-id="0ebca-105">Methods</span></span>  
   
-|<span data-ttu-id="4486c-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="4486c-106">Method</span></span>|<span data-ttu-id="4486c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4486c-107">Description</span></span>|  
+|<span data-ttu-id="0ebca-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="0ebca-106">Method</span></span>|<span data-ttu-id="0ebca-107">Popis</span><span class="sxs-lookup"><span data-stu-id="0ebca-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="4486c-108">GetFrameType – metoda</span><span class="sxs-lookup"><span data-stu-id="4486c-108">GetFrameType Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|<span data-ttu-id="4486c-109">Získá typ této vnitřní rámec.</span><span class="sxs-lookup"><span data-stu-id="4486c-109">Gets the type of this internal frame.</span></span>|  
+|[<span data-ttu-id="0ebca-108">GetFrameType – metoda</span><span class="sxs-lookup"><span data-stu-id="0ebca-108">GetFrameType Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|<span data-ttu-id="0ebca-109">Získá typ tohoto interního rámce.</span><span class="sxs-lookup"><span data-stu-id="0ebca-109">Gets the type of this internal frame.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="4486c-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4486c-110">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0ebca-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0ebca-110">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="4486c-111">Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.</span><span class="sxs-lookup"><span data-stu-id="4486c-111">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+> <span data-ttu-id="0ebca-111">Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.</span><span class="sxs-lookup"><span data-stu-id="0ebca-111">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4486c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4486c-112">Requirements</span></span>  
- <span data-ttu-id="4486c-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4486c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0ebca-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0ebca-112">Requirements</span></span>  
+ <span data-ttu-id="0ebca-113">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0ebca-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4486c-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4486c-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="0ebca-114">**Hlaviček** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="0ebca-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="4486c-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4486c-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0ebca-115">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0ebca-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="4486c-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4486c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="0ebca-116">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0ebca-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4486c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4486c-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0ebca-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0ebca-117">See also</span></span>
 
-- [<span data-ttu-id="4486c-118">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="4486c-118">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="0ebca-118">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="0ebca-118">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
