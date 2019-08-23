@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ee3b8673-a2e7-4b2d-9b5c-4972ff9e665d
-ms.openlocfilehash: eea1439337b29fee51c422238425491fc2345211
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 56fe777a3bca1e2b54b61d1586f78a2df4fb475f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62037554"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963826"
 ---
 # <a name="return-the-average-value-from-a-numeric-sequence"></a>Vrácení průměrné hodnoty z číselné posloupnosti
-<xref:System.Linq.Enumerable.Average%2A> Operátor vypočítá průměr posloupnost číselné hodnoty.  
+<xref:System.Linq.Enumerable.Average%2A> Operátor vypočítá průměr posloupnosti číselných hodnot.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Překlad `Average` celého čísla je vypočítán hodnoty jako celé číslo, ne jako typ double.  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Překlad celočíselnýchhodnotjevypočítánjakoceléčíslo,nikolijakotypDouble.`Average`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí průměrnou hodnotu `Freight` hodnoty v `Orders` tabulky.  
+ Následující příklad vrátí průměr `Freight` hodnot `Orders` v tabulce.  
   
  Výsledky z ukázkové databáze Northwind budou `78.2442`.  
   
@@ -27,7 +27,7 @@ ms.locfileid: "62037554"
  [!code-vb[DLinqQueryExamples#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#1)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí průměrnou hodnotu je cena ze jednotku všech `Products` v `Products` tabulky.  
+ Následující příklad vrátí průměr jednotkové ceny všech `Products` `Products` v tabulce.  
   
  Výsledky z ukázkové databáze Northwind budou `28.8663`.  
   
@@ -35,14 +35,14 @@ ms.locfileid: "62037554"
  [!code-vb[DLinqQueryExamples#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Average` operátor najít ty `Products` jejichž jednotková cena je větší než průměrná jednotková cena za patří do kategorie. Následně příklad zobrazí výsledky ve skupinách.  
+ Následující příklad používá `Average` operátor k vyhledání těch `Products` , jejichž jednotková cena je vyšší než průměrná cena za jednotku kategorie, do které patří. Příklad zobrazí výsledky ve skupinách.  
   
- Všimněte si, že tento příklad vyžaduje použití `var` – klíčové slovo v C#, protože návratový typ je anonymní.  
+ Všimněte si, že tento příklad vyžaduje použití `var` klíčového slova v C#, protože návratový typ je anonymní.  
   
  [!code-csharp[DLinqQueryExamples#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#3)]
  [!code-vb[DLinqQueryExamples#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#3)]  
   
- Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, výsledky by měl vypadat z následujících akcí:  
+ Pokud spustíte tento dotaz proti ukázkové databázi Northwind, výsledky by se měly podobat následujícímu:  
   
  `1`  
   
