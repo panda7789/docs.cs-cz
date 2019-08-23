@@ -16,41 +16,41 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7486a094deab16ebbc05f19f1b652126479ce11c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3633db69877db771d919c9f43da4809f8321f77c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638577"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951200"
 ---
-# <a name="iclroneventmanager-interface"></a><span data-ttu-id="9242b-102">ICLROnEventManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9242b-102">ICLROnEventManager Interface</span></span>
-<span data-ttu-id="9242b-103">Poskytuje metody, které umožňují hostitele tak, aby vytvářet a rušit registraci zpětná volání pro common language runtime (CLR) události.</span><span class="sxs-lookup"><span data-stu-id="9242b-103">Provides methods that allow the host to register and unregister callbacks for common language runtime (CLR) events.</span></span>  
+# <a name="iclroneventmanager-interface"></a><span data-ttu-id="09ec2-102">ICLROnEventManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="09ec2-102">ICLROnEventManager Interface</span></span>
+<span data-ttu-id="09ec2-103">Poskytuje metody, které umožňují hostiteli registrovat a odregistrovat zpětná volání pro události modulu CLR (Common Language Runtime).</span><span class="sxs-lookup"><span data-stu-id="09ec2-103">Provides methods that allow the host to register and unregister callbacks for common language runtime (CLR) events.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="9242b-104">Metody</span><span class="sxs-lookup"><span data-stu-id="9242b-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="09ec2-104">Metody</span><span class="sxs-lookup"><span data-stu-id="09ec2-104">Methods</span></span>  
   
-|<span data-ttu-id="9242b-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="9242b-105">Method</span></span>|<span data-ttu-id="9242b-106">Popis</span><span class="sxs-lookup"><span data-stu-id="9242b-106">Description</span></span>|  
+|<span data-ttu-id="09ec2-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="09ec2-105">Method</span></span>|<span data-ttu-id="09ec2-106">Popis</span><span class="sxs-lookup"><span data-stu-id="09ec2-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="9242b-107">RegisterActionOnEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="9242b-107">RegisterActionOnEvent Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md)|<span data-ttu-id="9242b-108">Zaregistruje zpětné volání ukazatel zadané události.</span><span class="sxs-lookup"><span data-stu-id="9242b-108">Registers a callback pointer for the specified event.</span></span>|  
-|[<span data-ttu-id="9242b-109">UnregisterActionOnEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="9242b-109">UnregisterActionOnEvent Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-unregisteractiononevent-method.md)|<span data-ttu-id="9242b-110">Zrušení registrace již registrovaného zpětného volání ukazatel zadané události.</span><span class="sxs-lookup"><span data-stu-id="9242b-110">Unregisters a previously registered callback pointer for the specified event.</span></span>|  
+|[<span data-ttu-id="09ec2-107">RegisterActionOnEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="09ec2-107">RegisterActionOnEvent Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md)|<span data-ttu-id="09ec2-108">Zaregistruje ukazatel zpětného volání pro zadanou událost.</span><span class="sxs-lookup"><span data-stu-id="09ec2-108">Registers a callback pointer for the specified event.</span></span>|  
+|[<span data-ttu-id="09ec2-109">UnregisterActionOnEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="09ec2-109">UnregisterActionOnEvent Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-unregisteractiononevent-method.md)|<span data-ttu-id="09ec2-110">Zruší registraci dříve registrovaného ukazatele zpětného volání pro zadanou událost.</span><span class="sxs-lookup"><span data-stu-id="09ec2-110">Unregisters a previously registered callback pointer for the specified event.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="9242b-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9242b-111">Remarks</span></span>  
- <span data-ttu-id="9242b-112">Chcete-li vytvářet a rušit registraci zpětná volání události, hostitel získá odkaz na `ICLROnEventManager` voláním [iclrcontrol::getclrmanager –](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="9242b-112">To register and unregister event callbacks, the host gets a reference to `ICLROnEventManager` by calling the [ICLRControl::GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="09ec2-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="09ec2-111">Remarks</span></span>  
+ <span data-ttu-id="09ec2-112">Pro registraci a zrušení registrace zpětných volání událostí hostitel získá odkaz na `ICLROnEventManager` volání metody [ICLRControl:: GetCLRManager –](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) .</span><span class="sxs-lookup"><span data-stu-id="09ec2-112">To register and unregister event callbacks, the host gets a reference to `ICLROnEventManager` by calling the [ICLRControl::GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) method.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="9242b-113">Události popisované v [eclrevent –](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) může být aktivována více než jednou a z různých vláken, který signalizuje, že uvolnění z paměti nebo vypnutí CLR.</span><span class="sxs-lookup"><span data-stu-id="9242b-113">The events described by [EClrEvent](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) can be fired more than once and from different threads to signal an unload or the disabling of the CLR.</span></span>  
+> <span data-ttu-id="09ec2-113">Události popsané v [EClrEvent –](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) lze aktivovat více než jednou a z různých vláken k signalizaci uvolnění nebo zakázání CLR.</span><span class="sxs-lookup"><span data-stu-id="09ec2-113">The events described by [EClrEvent](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) can be fired more than once and from different threads to signal an unload or the disabling of the CLR.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9242b-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9242b-114">Requirements</span></span>  
- <span data-ttu-id="9242b-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9242b-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="09ec2-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="09ec2-114">Requirements</span></span>  
+ <span data-ttu-id="09ec2-115">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="09ec2-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9242b-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9242b-116">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="09ec2-116">**Hlaviček** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="09ec2-116">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="9242b-117">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9242b-117">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="09ec2-117">**Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="09ec2-117">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="9242b-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9242b-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="09ec2-118">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="09ec2-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9242b-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9242b-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="09ec2-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="09ec2-119">See also</span></span>
 
-- [<span data-ttu-id="9242b-120">EClrEvent – výčet</span><span class="sxs-lookup"><span data-stu-id="9242b-120">EClrEvent Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md)
-- [<span data-ttu-id="9242b-121">IActionOnCLREvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9242b-121">IActionOnCLREvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)
-- [<span data-ttu-id="9242b-122">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9242b-122">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [<span data-ttu-id="9242b-123">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="9242b-123">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="09ec2-120">EClrEvent – výčet</span><span class="sxs-lookup"><span data-stu-id="09ec2-120">EClrEvent Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md)
+- [<span data-ttu-id="09ec2-121">IActionOnCLREvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="09ec2-121">IActionOnCLREvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)
+- [<span data-ttu-id="09ec2-122">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="09ec2-122">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [<span data-ttu-id="09ec2-123">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="09ec2-123">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

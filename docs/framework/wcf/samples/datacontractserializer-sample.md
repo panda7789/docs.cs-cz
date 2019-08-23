@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
-ms.openlocfilehash: 3cfa4691376689bb8e7b1f8e8f41ed5d93ba0e61
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4a3779b8351ae30f7c316d37952f208a287d5e0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990350"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961817"
 ---
-# <a name="datacontractserializer-sample"></a><span data-ttu-id="0a8f5-102">Ukázka třídy DataContractSerializer</span><span class="sxs-lookup"><span data-stu-id="0a8f5-102">DataContractSerializer Sample</span></span>
-<span data-ttu-id="0a8f5-103">Ukázka třídy DataContractSerializer ukazuje <xref:System.Runtime.Serialization.DataContractSerializer>, které provádí obecné serializace a deserializace služeb pro data třídy kontraktu.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-103">The DataContractSerializer sample demonstrates the <xref:System.Runtime.Serialization.DataContractSerializer>, which performs general serialization and deserialization services for the data contract classes.</span></span> <span data-ttu-id="0a8f5-104">Ukázka vytvoří `Record` objektu, serializuje do datového proudu paměti a deserializuje zpět do jiného datového proudu paměti `Record` objekt pro demonstraci použití <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-104">The sample creates a `Record` object, serializes it to a memory stream and deserializes the memory stream back to another `Record` object to demonstrate the use of the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="0a8f5-105">Ukázka pak serializuje `Record` pomocí binární zapisovače k předvedení jak zapisovač, který ovlivňuje serializace.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-105">The sample then serializes the `Record` object using a binary writer to demonstrate how the writer affects serialization.</span></span>  
+# <a name="datacontractserializer-sample"></a><span data-ttu-id="fc53e-102">Ukázka třídy DataContractSerializer</span><span class="sxs-lookup"><span data-stu-id="fc53e-102">DataContractSerializer Sample</span></span>
+<span data-ttu-id="fc53e-103">Ukázka DataContractSerializer demonstruje <xref:System.Runtime.Serialization.DataContractSerializer>, který provádí obecné serializace a deserializaci služeb pro třídy kontraktu dat.</span><span class="sxs-lookup"><span data-stu-id="fc53e-103">The DataContractSerializer sample demonstrates the <xref:System.Runtime.Serialization.DataContractSerializer>, which performs general serialization and deserialization services for the data contract classes.</span></span> <span data-ttu-id="fc53e-104">Ukázka vytvoří `Record` objekt, zaserializace jej do paměťového proudu a deserializace paměťového proudu zpět na jiný `Record` objekt k <xref:System.Runtime.Serialization.DataContractSerializer>demonstraci použití.</span><span class="sxs-lookup"><span data-stu-id="fc53e-104">The sample creates a `Record` object, serializes it to a memory stream and deserializes the memory stream back to another `Record` object to demonstrate the use of the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="fc53e-105">Ukázka potom serializaci `Record` objektu pomocí binárního zapisovače k předvedení, jak má zapisovač vliv na serializaci.</span><span class="sxs-lookup"><span data-stu-id="fc53e-105">The sample then serializes the `Record` object using a binary writer to demonstrate how the writer affects serialization.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="0a8f5-106">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+> <span data-ttu-id="fc53e-106">Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="fc53e-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="0a8f5-107">Kontraktu dat pro `Record` je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-107">The data contract for `Record` is shown in the following sample code.</span></span>  
+ <span data-ttu-id="fc53e-107">Kontrakt dat pro `Record` je zobrazen v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="fc53e-107">The data contract for `Record` is shown in the following sample code.</span></span>  
   
 ```csharp  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -71,14 +71,14 @@ internal class Record
 }  
 ```  
   
- <span data-ttu-id="0a8f5-108">Vzorový kód vytvoří `Record` objekt s názvem `record1` zobrazí objekt.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-108">The sample code creates a `Record` object named `record1` then displays the object.</span></span>  
+ <span data-ttu-id="fc53e-108">Vzorový kód vytvoří `Record` objekt s názvem `record1` a potom zobrazí objekt.</span><span class="sxs-lookup"><span data-stu-id="fc53e-108">The sample code creates a `Record` object named `record1` then displays the object.</span></span>  
   
 ```csharp
 Record record1 = new Record(1, 2, "+", 3);  
 Console.WriteLine("Original record: {0}", record1.ToString());  
 ```  
   
- <span data-ttu-id="0a8f5-109">Ukázka pak používá <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci `record1` do datový proud paměti.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-109">The sample then uses the <xref:System.Runtime.Serialization.DataContractSerializer> to serialize `record1` into a memory stream.</span></span>  
+ <span data-ttu-id="fc53e-109">Ukázka potom používá <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci `record1` do paměťového proudu.</span><span class="sxs-lookup"><span data-stu-id="fc53e-109">The sample then uses the <xref:System.Runtime.Serialization.DataContractSerializer> to serialize `record1` into a memory stream.</span></span>  
   
 ```csharp  
 MemoryStream stream1 = new MemoryStream();  
@@ -88,7 +88,7 @@ DataContractSerializer serializer = new DataContractSerializer(typeof(Record));
 serializer.WriteObject(stream1, record1);  
 ```  
   
- <span data-ttu-id="0a8f5-110">Dále Ukázka používá <xref:System.Runtime.Serialization.DataContractSerializer> deserializovat datový proud paměti zpět do nového `Record` objektu a zobrazí ji.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-110">Next, the sample uses the <xref:System.Runtime.Serialization.DataContractSerializer> to deserialize the memory stream back into a new `Record` object and displays it.</span></span>  
+ <span data-ttu-id="fc53e-110">Dále ukázka používá <xref:System.Runtime.Serialization.DataContractSerializer> k deserializaci paměťového proudu zpátky do nového `Record` objektu a zobrazí jej.</span><span class="sxs-lookup"><span data-stu-id="fc53e-110">Next, the sample uses the <xref:System.Runtime.Serialization.DataContractSerializer> to deserialize the memory stream back into a new `Record` object and displays it.</span></span>  
   
 ```csharp  
 stream1.Position = 0;  
@@ -99,7 +99,7 @@ Record record2 = (Record)serializer.ReadObject(stream1);
 Console.WriteLine("Deserialized record: {0}", record2.ToString());  
 ```  
   
- <span data-ttu-id="0a8f5-111">Ve výchozím nastavení `DataContractSerializer` kóduje objekty do datového proudu pomocí textovou reprezentaci řetězce XML.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-111">By default, the `DataContractSerializer` encodes objects into a stream using a textual representation of XML.</span></span> <span data-ttu-id="0a8f5-112">Však můžete ovlivnit kódování XML předáváním různých zapisovače.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-112">However, you can influence the encoding of the XML by passing in a different writer.</span></span> <span data-ttu-id="0a8f5-113">Ukázka vytvoří binární zapisovače voláním <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-113">The sample creates a binary writer by calling <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>.</span></span> <span data-ttu-id="0a8f5-114">Pak předá modul pro zápis a záznam objekt serializátoru, který je při volání <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-114">It then passes the writer and the record object to the serializer when it calls <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>.</span></span> <span data-ttu-id="0a8f5-115">Nakonec vzorku vyprázdní modul pro zápis, informuje o délce datové proudy.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-115">Finally, the sample flushes the writer and reports on the length of the streams.</span></span>  
+ <span data-ttu-id="fc53e-111">Ve výchozím nastavení `DataContractSerializer` kóduje objekty do datového proudu pomocí textové reprezentace XML.</span><span class="sxs-lookup"><span data-stu-id="fc53e-111">By default, the `DataContractSerializer` encodes objects into a stream using a textual representation of XML.</span></span> <span data-ttu-id="fc53e-112">Můžete však ovlivnit kódování XML předáním jiného zapisovače.</span><span class="sxs-lookup"><span data-stu-id="fc53e-112">However, you can influence the encoding of the XML by passing in a different writer.</span></span> <span data-ttu-id="fc53e-113">Ukázka vytvoří binární zapisovač pomocí volání <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>.</span><span class="sxs-lookup"><span data-stu-id="fc53e-113">The sample creates a binary writer by calling <xref:System.Xml.XmlDictionaryWriter.CreateBinaryWriter%2A>.</span></span> <span data-ttu-id="fc53e-114">Pak předá serializátor a objekt záznamu do serializátoru při volání <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>.</span><span class="sxs-lookup"><span data-stu-id="fc53e-114">It then passes the writer and the record object to the serializer when it calls <xref:System.Runtime.Serialization.DataContractSerializer.WriteObjectContent%2A>.</span></span> <span data-ttu-id="fc53e-115">Nakonec ukázka vyprázdní zapisovač a sestavy o délce datových proudů.</span><span class="sxs-lookup"><span data-stu-id="fc53e-115">Finally, the sample flushes the writer and reports on the length of the streams.</span></span>  
   
 ```csharp  
 MemoryStream stream2 = new MemoryStream();  
@@ -113,7 +113,7 @@ Console.WriteLine("Text Stream is {0} bytes long", stream1.Length);
 Console.WriteLine("Binary Stream is {0} bytes long", stream2.Length);  
 ```  
   
- <span data-ttu-id="0a8f5-116">Při spuštění ukázky původní záznam a deserializovat záznam se zobrazí, za nímž následuje porovnání mezi binární kódování a délka kódování textu.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-116">When you run the sample, the original record and the deserialized record are displayed, followed by the comparison between the length of the text encoding and the binary encoding.</span></span> <span data-ttu-id="0a8f5-117">Stisknutím klávesy ENTER v okně Klient vypnutí klient.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-117">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="fc53e-116">Při spuštění ukázky se zobrazí původní záznam a deserializovaný záznam následovaný porovnáváním mezi délkou kódování textu a binárním kódováním.</span><span class="sxs-lookup"><span data-stu-id="fc53e-116">When you run the sample, the original record and the deserialized record are displayed, followed by the comparison between the length of the text encoding and the binary encoding.</span></span> <span data-ttu-id="fc53e-117">V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.</span><span class="sxs-lookup"><span data-stu-id="fc53e-117">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```console  
 Original record: Record: 1 + 2 = 3  
@@ -124,19 +124,19 @@ Binary Stream is 156 bytes long
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="0a8f5-118">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="0a8f5-118">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="fc53e-118">Nastavení, sestavení a spuštění ukázky</span><span class="sxs-lookup"><span data-stu-id="fc53e-118">To set up, build, and run the sample</span></span>  
   
-1. <span data-ttu-id="0a8f5-119">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="0a8f5-119">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1. <span data-ttu-id="fc53e-119">Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="fc53e-119">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2. <span data-ttu-id="0a8f5-120">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="0a8f5-120">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2. <span data-ttu-id="fc53e-120">Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="fc53e-120">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3. <span data-ttu-id="0a8f5-121">Ke spuštění ukázky, spusťte z příkazového řádku zadáním client\bin\client.exe klienta.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-121">To run the sample, start the client from the command prompt by typing client\bin\client.exe.</span></span>  
+3. <span data-ttu-id="fc53e-121">Chcete-li spustit ukázku, spusťte klienta z příkazového řádku zadáním příkazu client\bin\client.exe.</span><span class="sxs-lookup"><span data-stu-id="fc53e-121">To run the sample, start the client from the command prompt by typing client\bin\client.exe.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="0a8f5-122">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-122">The samples may already be installed on your machine.</span></span> <span data-ttu-id="0a8f5-123">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="0a8f5-123">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="fc53e-122">Ukázky už můžou být na vašem počítači nainstalované.</span><span class="sxs-lookup"><span data-stu-id="fc53e-122">The samples may already be installed on your machine.</span></span> <span data-ttu-id="fc53e-123">Než budete pokračovat, vyhledejte následující (výchozí) adresář.</span><span class="sxs-lookup"><span data-stu-id="fc53e-123">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="0a8f5-124">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-124">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="0a8f5-125">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="0a8f5-125">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="fc53e-124">Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek.</span><span class="sxs-lookup"><span data-stu-id="fc53e-124">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="fc53e-125">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="fc53e-125">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractSerializer`  

@@ -10,22 +10,22 @@ helpviewer_keywords:
 - splitter windows [Windows Forms], horizontal
 - windows [Windows Forms], splitting horizontally
 ms.assetid: a1f74f29-048c-4723-85fa-b9d375ab8f4b
-ms.openlocfilehash: a43d632a82678f362a1cdf6b3ee4486a8db5adde
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ef3fe1210ae42c52a4fd7f23633d6566bc102a5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012929"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956063"
 ---
-# <a name="how-to-split-a-window-horizontally"></a><span data-ttu-id="cb6d2-102">Postupy: Vodorovné rozdělení okna</span><span class="sxs-lookup"><span data-stu-id="cb6d2-102">How to: Split a Window Horizontally</span></span>
-<span data-ttu-id="cb6d2-103">Následující příklad kódu vytvoří rozdělovače, který rozděluje <xref:System.Windows.Forms.SplitContainer> vodorovné ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="cb6d2-103">The following code example makes the splitter that divides the <xref:System.Windows.Forms.SplitContainer> control horizontal.</span></span>  
+# <a name="how-to-split-a-window-horizontally"></a><span data-ttu-id="ad5bf-102">Postupy: Vodorovné rozdělení okna</span><span class="sxs-lookup"><span data-stu-id="ad5bf-102">How to: Split a Window Horizontally</span></span>
+<span data-ttu-id="ad5bf-103">Následující příklad kódu nastaví rozdělovač, který rozdělí <xref:System.Windows.Forms.SplitContainer> ovládací prvek vodorovně.</span><span class="sxs-lookup"><span data-stu-id="ad5bf-103">The following code example makes the splitter that divides the <xref:System.Windows.Forms.SplitContainer> control horizontal.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="cb6d2-104"><xref:System.Windows.Forms.SplitContainer.Orientation%2A> Vlastnost <xref:System.Windows.Forms.SplitContainer> ovládací prvek určuje směr příčky, nikoli samotného ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="cb6d2-104">The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself.</span></span>  
+> <span data-ttu-id="ad5bf-104"><xref:System.Windows.Forms.SplitContainer.Orientation%2A> Vlastnost<xref:System.Windows.Forms.SplitContainer> ovládacího prvku určuje směr rozdělovače, nikoli samotného ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="ad5bf-104">The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself.</span></span>  
   
-### <a name="to-split-a-window-horizontally"></a><span data-ttu-id="cb6d2-105">Na vodorovné rozdělení okna</span><span class="sxs-lookup"><span data-stu-id="cb6d2-105">To split a window horizontally</span></span>  
+### <a name="to-split-a-window-horizontally"></a><span data-ttu-id="ad5bf-105">Vodorovné rozdělení okna</span><span class="sxs-lookup"><span data-stu-id="ad5bf-105">To split a window horizontally</span></span>  
   
-1. <span data-ttu-id="cb6d2-106">V rámci procedury, nastavte <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnost <xref:System.Windows.Forms.SplitContainer> mít pod kontrolou <xref:System.Windows.Forms.Orientation.Horizontal>.</span><span class="sxs-lookup"><span data-stu-id="cb6d2-106">Within a procedure, set the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control to <xref:System.Windows.Forms.Orientation.Horizontal>.</span></span>  
+1. <span data-ttu-id="ad5bf-106">V rámci procedury nastavte <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnost <xref:System.Windows.Forms.SplitContainer> ovládacího prvku na <xref:System.Windows.Forms.Orientation.Horizontal>.</span><span class="sxs-lookup"><span data-stu-id="ad5bf-106">Within a procedure, set the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control to <xref:System.Windows.Forms.Orientation.Horizontal>.</span></span>  
   
     ```vb  
     Sub ShowSplitContainer()  
@@ -55,7 +55,7 @@ ms.locfileid: "62012929"
     }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="cb6d2-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb6d2-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ad5bf-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ad5bf-107">See also</span></span>
 
 - <xref:System.Windows.Forms.SplitContainer>
-- [<span data-ttu-id="cb6d2-108">Ovládací prvek SplitContainer</span><span class="sxs-lookup"><span data-stu-id="cb6d2-108">SplitContainer Control</span></span>](splitcontainer-control-windows-forms.md)
+- [<span data-ttu-id="ad5bf-108">Ovládací prvek SplitContainer</span><span class="sxs-lookup"><span data-stu-id="ad5bf-108">SplitContainer Control</span></span>](splitcontainer-control-windows-forms.md)
