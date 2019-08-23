@@ -8,31 +8,31 @@ helpviewer_keywords:
 - UIElements [WPF], binding adorners to
 - adorners [WPF], binding to specified UIElements
 ms.assetid: b2101611-a0ee-4137-bdb8-9b3673d2e6b9
-ms.openlocfilehash: b6909fec466c2b31a7f4156c43b21a0c724f0217
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8c7eb929042bfe1455bfc9bf459fc466de5c397
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018967"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923498"
 ---
-# <a name="how-to-bind-an-adorner-to-an-element"></a><span data-ttu-id="3bfc0-102">Postupy: Svázání doplňku pro úpravy s elementem</span><span class="sxs-lookup"><span data-stu-id="3bfc0-102">How to: Bind an Adorner to an Element</span></span>
-<span data-ttu-id="3bfc0-103">Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplňku k zadané <xref:System.Windows.UIElement>.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-103">This example shows how to programmatically bind an adorner to a specified <xref:System.Windows.UIElement>.</span></span>  
+# <a name="how-to-bind-an-adorner-to-an-element"></a><span data-ttu-id="3f4c5-102">Postupy: Svázání doplňku pro úpravy s elementem</span><span class="sxs-lookup"><span data-stu-id="3f4c5-102">How to: Bind an Adorner to an Element</span></span>
+<span data-ttu-id="3f4c5-103">Tento příklad ukazuje, jak programově navazovat Doplňky na určenou <xref:System.Windows.UIElement>.</span><span class="sxs-lookup"><span data-stu-id="3f4c5-103">This example shows how to programmatically bind an adorner to a specified <xref:System.Windows.UIElement>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3bfc0-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3bfc0-104">Example</span></span>  
- <span data-ttu-id="3bfc0-105">K připojení doplňku k konkrétní <xref:System.Windows.UIElement>, postupujte podle těchto kroků:</span><span class="sxs-lookup"><span data-stu-id="3bfc0-105">To bind an adorner to a particular <xref:System.Windows.UIElement>, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="3f4c5-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3f4c5-104">Example</span></span>  
+ <span data-ttu-id="3f4c5-105">Chcete-li navazovat Doplňky na konkrétní <xref:System.Windows.UIElement>, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="3f4c5-105">To bind an adorner to a particular <xref:System.Windows.UIElement>, follow these steps:</span></span>  
   
-1. <span data-ttu-id="3bfc0-106">Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> získat <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> chcete být opatřený.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-106">Call the `static` method <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> to get an <xref:System.Windows.Documents.AdornerLayer> object for the <xref:System.Windows.UIElement> to be adorned.</span></span> <span data-ttu-id="3bfc0-107"><xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede se vizuální strom začínající v zadaném **UIElement**a vrátí první vrstvu doplněk pro úpravy, které nalezne.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-107"><xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> walks up the visual tree, starting at the specified **UIElement**, and returns the first adorner layer it finds.</span></span> <span data-ttu-id="3bfc0-108">(Pokud se nenajdou žádné vrstvy doplněk pro úpravy, metoda vrátí hodnotu null.)</span><span class="sxs-lookup"><span data-stu-id="3bfc0-108">(If no adorner layers are found, the method returns null.)</span></span>  
+1. <span data-ttu-id="3f4c5-106">`static` Zavolejte metodu <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> pro získání<xref:System.Windows.Documents.AdornerLayer> objektu ,<xref:System.Windows.UIElement> který má být podrobnější.</span><span class="sxs-lookup"><span data-stu-id="3f4c5-106">Call the `static` method <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> to get an <xref:System.Windows.Documents.AdornerLayer> object for the <xref:System.Windows.UIElement> to be adorned.</span></span> <span data-ttu-id="3f4c5-107"><xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>provede sestavování vizuálního stromu, počínaje zadaným prvekem **UIElement**a vrátí první nalezenou vrstvu doplňku.</span><span class="sxs-lookup"><span data-stu-id="3f4c5-107"><xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> walks up the visual tree, starting at the specified **UIElement**, and returns the first adorner layer it finds.</span></span> <span data-ttu-id="3f4c5-108">(Pokud se nenaleznou žádné vrstvy doplňků, vrátí metoda hodnotu null.)</span><span class="sxs-lookup"><span data-stu-id="3f4c5-108">(If no adorner layers are found, the method returns null.)</span></span>  
   
-2. <span data-ttu-id="3bfc0-109">Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro vytvoření vazby doplněk pro úpravy k cíli **UIElement**.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-109">Call the <xref:System.Windows.Documents.AdornerLayer.Add%2A> method to bind the adorner to the target **UIElement**.</span></span>  
+2. <span data-ttu-id="3f4c5-109">Zavolejte metodu pro svázání doplňku k cílovému prvku **UIElement.** <xref:System.Windows.Documents.AdornerLayer.Add%2A></span><span class="sxs-lookup"><span data-stu-id="3f4c5-109">Call the <xref:System.Windows.Documents.AdornerLayer.Add%2A> method to bind the adorner to the target **UIElement**.</span></span>  
   
- <span data-ttu-id="3bfc0-110">Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) k <xref:System.Windows.Controls.TextBox> s názvem *hodnotu myTextBox*.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-110">The following example binds a SimpleCircleAdorner (shown above) to a <xref:System.Windows.Controls.TextBox> named *myTextBox*.</span></span>  
+ <span data-ttu-id="3f4c5-110">Následující příklad váže SimpleCircleAdorner (zobrazený výše) k <xref:System.Windows.Controls.TextBox> pojmenovanému *MyTextBox*.</span><span class="sxs-lookup"><span data-stu-id="3f4c5-110">The following example binds a SimpleCircleAdorner (shown above) to a <xref:System.Windows.Controls.TextBox> named *myTextBox*.</span></span>  
   
  [!code-csharp[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornsingleelement)]
  [!code-vb[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornsingleelement)]  
   
 > [!NOTE]
->  <span data-ttu-id="3bfc0-111">Pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pro vazbu na jiný prvek pro úpravy v tuto chvíli nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="3bfc0-111">Using [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] to bind an adorner to another element is currently not supported.</span></span>  
+> <span data-ttu-id="3f4c5-111">Použití [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pro svázání doplňku s jiným prvkem není aktuálně podporováno.</span><span class="sxs-lookup"><span data-stu-id="3f4c5-111">Using [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] to bind an adorner to another element is currently not supported.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3bfc0-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3bfc0-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3f4c5-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3f4c5-112">See also</span></span>
 
-- [<span data-ttu-id="3bfc0-113">Přehled doplňků pro úpravy</span><span class="sxs-lookup"><span data-stu-id="3bfc0-113">Adorners Overview</span></span>](adorners-overview.md)
+- [<span data-ttu-id="3f4c5-113">Přehled doplňků pro úpravy</span><span class="sxs-lookup"><span data-stu-id="3f4c5-113">Adorners Overview</span></span>](adorners-overview.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf9ecdeb4df6210805490586f1818298025fc036
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 533e3d715b46b4ef6d473795a010fa3ad297ded2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749950"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913755"
 ---
-# <a name="ihosttasksetpriority-method"></a><span data-ttu-id="c8a36-102">IHostTask::SetPriority – metoda</span><span class="sxs-lookup"><span data-stu-id="c8a36-102">IHostTask::SetPriority Method</span></span>
-<span data-ttu-id="c8a36-103">Požadavky, že hostitel upravit priorita vlákna na úrovni úkolů reprezentované aktuální [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance.</span><span class="sxs-lookup"><span data-stu-id="c8a36-103">Requests that the host adjust the thread priority level for the task represented by the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance.</span></span>  
+# <a name="ihosttasksetpriority-method"></a><span data-ttu-id="da237-102">IHostTask::SetPriority – metoda</span><span class="sxs-lookup"><span data-stu-id="da237-102">IHostTask::SetPriority Method</span></span>
+<span data-ttu-id="da237-103">Požaduje, aby hostitel upravil úroveň priority vlákna pro úlohu reprezentovanou aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="da237-103">Requests that the host adjust the thread priority level for the task represented by the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c8a36-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c8a36-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="da237-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da237-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetPriority (  
@@ -35,59 +35,59 @@ HRESULT SetPriority (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c8a36-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c8a36-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="da237-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="da237-105">Parameters</span></span>  
  `newPriority`  
- <span data-ttu-id="c8a36-106">[in] Celé číslo představující hodnotu priority požadovaný vlákno pro úlohu reprezentované aktuální `IHostTask` instance.</span><span class="sxs-lookup"><span data-stu-id="c8a36-106">[in] An integer that represents the requested thread priority value for the task represented by the current `IHostTask` instance.</span></span>  
+ <span data-ttu-id="da237-106">pro Celé číslo, které představuje požadovanou hodnotu priority vlákna pro úlohu reprezentovanou aktuální `IHostTask` instancí.</span><span class="sxs-lookup"><span data-stu-id="da237-106">[in] An integer that represents the requested thread priority value for the task represented by the current `IHostTask` instance.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="c8a36-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c8a36-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="da237-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="da237-107">Return Value</span></span>  
   
-|<span data-ttu-id="c8a36-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c8a36-108">HRESULT</span></span>|<span data-ttu-id="c8a36-109">Popis</span><span class="sxs-lookup"><span data-stu-id="c8a36-109">Description</span></span>|  
+|<span data-ttu-id="da237-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="da237-108">HRESULT</span></span>|<span data-ttu-id="da237-109">Popis</span><span class="sxs-lookup"><span data-stu-id="da237-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="c8a36-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="c8a36-110">S_OK</span></span>|<span data-ttu-id="c8a36-111">`SetPriority` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="c8a36-111">`SetPriority` returned successfully.</span></span>|  
-|<span data-ttu-id="c8a36-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="c8a36-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="c8a36-113">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="c8a36-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="c8a36-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="c8a36-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="c8a36-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="c8a36-115">The call timed out.</span></span>|  
-|<span data-ttu-id="c8a36-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="c8a36-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="c8a36-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="c8a36-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="c8a36-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="c8a36-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="c8a36-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="c8a36-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="c8a36-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="c8a36-120">E_FAIL</span></span>|<span data-ttu-id="c8a36-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="c8a36-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="c8a36-122">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="c8a36-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="c8a36-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="c8a36-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="da237-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="da237-110">S_OK</span></span>|<span data-ttu-id="da237-111">`SetPriority`úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="da237-111">`SetPriority` returned successfully.</span></span>|  
+|<span data-ttu-id="da237-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="da237-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="da237-113">Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="da237-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="da237-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="da237-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="da237-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="da237-115">The call timed out.</span></span>|  
+|<span data-ttu-id="da237-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="da237-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="da237-117">Volající nevlastní zámek.</span><span class="sxs-lookup"><span data-stu-id="da237-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="da237-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="da237-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="da237-119">Událost byla zrušena při čekání na blokované vlákno nebo vlákna.</span><span class="sxs-lookup"><span data-stu-id="da237-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="da237-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="da237-120">E_FAIL</span></span>|<span data-ttu-id="da237-121">Došlo k neznámé chybě závažnosti.</span><span class="sxs-lookup"><span data-stu-id="da237-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="da237-122">Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný.</span><span class="sxs-lookup"><span data-stu-id="da237-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="da237-123">Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="da237-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="c8a36-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c8a36-124">Remarks</span></span>  
- <span data-ttu-id="c8a36-125">Vlákna jsou udělena zpracování čase s použitím systému kruhové dotazování, částečně založenou na úroveň priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="c8a36-125">Threads are granted processing time using a round-robin system that is partly based on a thread's priority level.</span></span> <span data-ttu-id="c8a36-126">`SetPriority` Umožňuje nastavit prioritu tohoto vlákna pro aktuální úlohu na modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="c8a36-126">`SetPriority` allows the CLR to set that thread priority level for the current task.</span></span> <span data-ttu-id="c8a36-127">Následující `newPriority` hodnoty jsou podporovány.</span><span class="sxs-lookup"><span data-stu-id="c8a36-127">The following `newPriority` values are supported.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="da237-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="da237-124">Remarks</span></span>  
+ <span data-ttu-id="da237-125">Vlákna jsou udělena doba zpracování pomocí systému kruhového dotazování, který je částečně založen na úrovni priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="da237-125">Threads are granted processing time using a round-robin system that is partly based on a thread's priority level.</span></span> <span data-ttu-id="da237-126">`SetPriority`umožňuje modulu CLR nastavit pro aktuální úkol úroveň priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="da237-126">`SetPriority` allows the CLR to set that thread priority level for the current task.</span></span> <span data-ttu-id="da237-127">Podporovány jsou `newPriority` následující hodnoty.</span><span class="sxs-lookup"><span data-stu-id="da237-127">The following `newPriority` values are supported.</span></span>  
   
-- <span data-ttu-id="c8a36-128">THREAD_PRIORITY_ABOVE_NORMAL</span><span class="sxs-lookup"><span data-stu-id="c8a36-128">THREAD_PRIORITY_ABOVE_NORMAL</span></span>  
+- <span data-ttu-id="da237-128">THREAD_PRIORITY_ABOVE_NORMAL</span><span class="sxs-lookup"><span data-stu-id="da237-128">THREAD_PRIORITY_ABOVE_NORMAL</span></span>  
   
-- <span data-ttu-id="c8a36-129">THREAD_PRIORITY_BELOW_NORMAL</span><span class="sxs-lookup"><span data-stu-id="c8a36-129">THREAD_PRIORITY_BELOW_NORMAL</span></span>  
+- <span data-ttu-id="da237-129">THREAD_PRIORITY_BELOW_NORMAL</span><span class="sxs-lookup"><span data-stu-id="da237-129">THREAD_PRIORITY_BELOW_NORMAL</span></span>  
   
-- <span data-ttu-id="c8a36-130">THREAD_PRIORITY_HIGHEST</span><span class="sxs-lookup"><span data-stu-id="c8a36-130">THREAD_PRIORITY_HIGHEST</span></span>  
+- <span data-ttu-id="da237-130">THREAD_PRIORITY_HIGHEST</span><span class="sxs-lookup"><span data-stu-id="da237-130">THREAD_PRIORITY_HIGHEST</span></span>  
   
-- <span data-ttu-id="c8a36-131">THREAD_PRIORITY_IDLE</span><span class="sxs-lookup"><span data-stu-id="c8a36-131">THREAD_PRIORITY_IDLE</span></span>  
+- <span data-ttu-id="da237-131">THREAD_PRIORITY_IDLE</span><span class="sxs-lookup"><span data-stu-id="da237-131">THREAD_PRIORITY_IDLE</span></span>  
   
-- <span data-ttu-id="c8a36-132">THREAD_PRIORITY_LOWEST</span><span class="sxs-lookup"><span data-stu-id="c8a36-132">THREAD_PRIORITY_LOWEST</span></span>  
+- <span data-ttu-id="da237-132">THREAD_PRIORITY_LOWEST</span><span class="sxs-lookup"><span data-stu-id="da237-132">THREAD_PRIORITY_LOWEST</span></span>  
   
-- <span data-ttu-id="c8a36-133">THREAD_PRIORITY_NORMAL</span><span class="sxs-lookup"><span data-stu-id="c8a36-133">THREAD_PRIORITY_NORMAL</span></span>  
+- <span data-ttu-id="da237-133">THREAD_PRIORITY_NORMAL</span><span class="sxs-lookup"><span data-stu-id="da237-133">THREAD_PRIORITY_NORMAL</span></span>  
   
-- <span data-ttu-id="c8a36-134">THREAD_PRIORITY_TIME_CRITICAL</span><span class="sxs-lookup"><span data-stu-id="c8a36-134">THREAD_PRIORITY_TIME_CRITICAL</span></span>  
+- <span data-ttu-id="da237-134">THREAD_PRIORITY_TIME_CRITICAL</span><span class="sxs-lookup"><span data-stu-id="da237-134">THREAD_PRIORITY_TIME_CRITICAL</span></span>  
   
- <span data-ttu-id="c8a36-135">Volání CLR `SetPriority` při hodnotu <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> upravit pomocí uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="c8a36-135">The CLR calls `SetPriority` when the value of the <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> is modified by user code.</span></span> <span data-ttu-id="c8a36-136">Hostitele můžete definovat vlastní algoritmy pro přiřazení priority vlákna a je zdarma pro tuto žádost ignorovat.</span><span class="sxs-lookup"><span data-stu-id="c8a36-136">A host can define its own algorithms for thread priority assignment, and is free to ignore this request.</span></span>  
+ <span data-ttu-id="da237-135">CLR volá `SetPriority` , když <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> je hodnota změněna pomocí uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="da237-135">The CLR calls `SetPriority` when the value of the <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> is modified by user code.</span></span> <span data-ttu-id="da237-136">Hostitel může definovat vlastní algoritmy pro přiřazení priority vlákna a je zadarmo ignorovat tento požadavek.</span><span class="sxs-lookup"><span data-stu-id="da237-136">A host can define its own algorithms for thread priority assignment, and is free to ignore this request.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="c8a36-137">`SetPriority` nevytváří sestavu, zda byla změněna úroveň priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="c8a36-137">`SetPriority` does not report whether the thread priority level was changed.</span></span> <span data-ttu-id="c8a36-138">Volání [ihosttask::getpriority –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md) k určení hodnoty úkolu úroveň priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="c8a36-138">Call [IHostTask::GetPriority](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md) to determine the value of the task's thread priority level.</span></span>  
+> <span data-ttu-id="da237-137">`SetPriority`neoznamuje, zda byla změněna úroveň priority vlákna.</span><span class="sxs-lookup"><span data-stu-id="da237-137">`SetPriority` does not report whether the thread priority level was changed.</span></span> <span data-ttu-id="da237-138">Voláním [IHostTask:: GetPriority](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md) určíte hodnotu úrovně priority vlákna úlohy.</span><span class="sxs-lookup"><span data-stu-id="da237-138">Call [IHostTask::GetPriority](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md) to determine the value of the task's thread priority level.</span></span>  
   
- <span data-ttu-id="c8a36-139">Hodnoty úroveň priority vlákna jsou definovány Win32 `SetThreadPriority` funkce.</span><span class="sxs-lookup"><span data-stu-id="c8a36-139">Thread priority level values are defined by the Win32 `SetThreadPriority` function.</span></span> <span data-ttu-id="c8a36-140">Další informace o priorita vlákna v dokumentaci k platformě Windows.</span><span class="sxs-lookup"><span data-stu-id="c8a36-140">For more information about thread priority, see the Windows Platform documentation.</span></span>  
+ <span data-ttu-id="da237-139">Hodnoty úrovně priority vlákna jsou definovány funkcí Win32 `SetThreadPriority` .</span><span class="sxs-lookup"><span data-stu-id="da237-139">Thread priority level values are defined by the Win32 `SetThreadPriority` function.</span></span> <span data-ttu-id="da237-140">Další informace o prioritě vlákna najdete v dokumentaci k platformě Windows.</span><span class="sxs-lookup"><span data-stu-id="da237-140">For more information about thread priority, see the Windows Platform documentation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c8a36-141">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c8a36-141">Requirements</span></span>  
- <span data-ttu-id="c8a36-142">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c8a36-142">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="da237-141">Požadavky</span><span class="sxs-lookup"><span data-stu-id="da237-141">Requirements</span></span>  
+ <span data-ttu-id="da237-142">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="da237-142">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c8a36-143">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c8a36-143">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="da237-143">**Hlaviček** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="da237-143">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="c8a36-144">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c8a36-144">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="da237-144">**Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="da237-144">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="c8a36-145">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c8a36-145">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="da237-145">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="da237-145">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c8a36-146">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c8a36-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da237-146">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da237-146">See also</span></span>
 
 - <xref:System.Threading.Thread>
-- [<span data-ttu-id="c8a36-147">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c8a36-147">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [<span data-ttu-id="c8a36-148">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c8a36-148">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [<span data-ttu-id="c8a36-149">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c8a36-149">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [<span data-ttu-id="c8a36-150">GetPriority – metoda</span><span class="sxs-lookup"><span data-stu-id="c8a36-150">GetPriority Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md)
-- [<span data-ttu-id="c8a36-151">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c8a36-151">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [<span data-ttu-id="da237-147">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da237-147">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [<span data-ttu-id="da237-148">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da237-148">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [<span data-ttu-id="da237-149">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da237-149">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [<span data-ttu-id="da237-150">GetPriority – metoda</span><span class="sxs-lookup"><span data-stu-id="da237-150">GetPriority Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md)
+- [<span data-ttu-id="da237-151">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da237-151">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

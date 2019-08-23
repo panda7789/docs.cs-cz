@@ -10,17 +10,17 @@ helpviewer_keywords:
 - ComboBox control [Windows Forms], examples [C#]
 - ComboBox control [Windows Forms], drawing custom text
 ms.assetid: ce39b9ea-e626-49fe-bd5a-f567f6d157df
-ms.openlocfilehash: 1fa9b04063d8f606f674cc54190dad5a669adbeb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7c0dc40f6cac0af1f88e72089865caa3a17fcf2a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666424"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914751"
 ---
-# <a name="how-to-create-variable-sized-text-in-a-combobox-control"></a><span data-ttu-id="6fe2d-102">Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox</span><span class="sxs-lookup"><span data-stu-id="6fe2d-102">How to: Create Variable Sized Text in a ComboBox Control</span></span>
-<span data-ttu-id="6fe2d-103">Tento příklad ukazuje vlastní kreslení textu v <xref:System.Windows.Forms.ComboBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-103">This example demonstrates custom drawing of text in a <xref:System.Windows.Forms.ComboBox> control.</span></span> <span data-ttu-id="6fe2d-104">Pokud položka splňuje určitá kritéria, je vykreslen v větší písma a zapnout červené.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-104">When an item meets a certain criteria, it is drawn in a larger font and turned red.</span></span>  
+# <a name="how-to-create-variable-sized-text-in-a-combobox-control"></a><span data-ttu-id="70925-102">Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox</span><span class="sxs-lookup"><span data-stu-id="70925-102">How to: Create Variable Sized Text in a ComboBox Control</span></span>
+<span data-ttu-id="70925-103">Tento příklad ukazuje vlastní vykreslování textu v <xref:System.Windows.Forms.ComboBox> ovládacím prvku.</span><span class="sxs-lookup"><span data-stu-id="70925-103">This example demonstrates custom drawing of text in a <xref:System.Windows.Forms.ComboBox> control.</span></span> <span data-ttu-id="70925-104">Pokud položka splňuje určitá kritéria, je vykreslena větším písmem a červeně.</span><span class="sxs-lookup"><span data-stu-id="70925-104">When an item meets a certain criteria, it is drawn in a larger font and turned red.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6fe2d-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="6fe2d-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="70925-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="70925-105">Example</span></span>  
   
 ```vb  
 Private Sub ComboBox1_MeasureItem(ByVal sender As Object, ByVal e As _  
@@ -55,23 +55,23 @@ e.Bounds.X, e.Bounds.Y)
 End Sub  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="6fe2d-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="6fe2d-106">Compiling the Code</span></span>  
- <span data-ttu-id="6fe2d-107">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="6fe2d-107">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="70925-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="70925-106">Compiling the Code</span></span>  
+ <span data-ttu-id="70925-107">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="70925-107">This example requires:</span></span>  
   
-- <span data-ttu-id="6fe2d-108">Formuláře Windows.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-108">A Windows form.</span></span>  
+- <span data-ttu-id="70925-108">Formulář Windows</span><span class="sxs-lookup"><span data-stu-id="70925-108">A Windows form.</span></span>  
   
-- <span data-ttu-id="6fe2d-109">A <xref:System.Windows.Forms.ComboBox> ovládací prvek s názvem `ListBox1` se tři položky v <xref:System.Windows.Forms.ComboBox.Items%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-109">A <xref:System.Windows.Forms.ComboBox> control named `ListBox1` with three items in the <xref:System.Windows.Forms.ComboBox.Items%2A> property.</span></span> <span data-ttu-id="6fe2d-110">V tomto příkladu jsou tři položky s názvem `"One", Two", and Three"`.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-110">In this example, the three items are named `"One", Two", and Three"`.</span></span> <span data-ttu-id="6fe2d-111"><xref:System.Windows.Forms.ComboBox.DrawMode%2A> Vlastnost `ComboBox1` musí být nastaveno na <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-111">The <xref:System.Windows.Forms.ComboBox.DrawMode%2A> property of `ComboBox1` must be set to <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>.</span></span>  
+- <span data-ttu-id="70925-109">Ovládací prvek s `ListBox1` názvem<xref:System.Windows.Forms.ComboBox.Items%2A> se třemi položkami ve vlastnosti. <xref:System.Windows.Forms.ComboBox></span><span class="sxs-lookup"><span data-stu-id="70925-109">A <xref:System.Windows.Forms.ComboBox> control named `ListBox1` with three items in the <xref:System.Windows.Forms.ComboBox.Items%2A> property.</span></span> <span data-ttu-id="70925-110">V tomto příkladu jsou tři položky pojmenovány `"One", Two", and Three"`.</span><span class="sxs-lookup"><span data-stu-id="70925-110">In this example, the three items are named `"One", Two", and Three"`.</span></span> <span data-ttu-id="70925-111">Vlastnost třídy `ComboBox1` musí být nastavena na <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>hodnotu. <xref:System.Windows.Forms.ComboBox.DrawMode%2A></span><span class="sxs-lookup"><span data-stu-id="70925-111">The <xref:System.Windows.Forms.ComboBox.DrawMode%2A> property of `ComboBox1` must be set to <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="6fe2d-112">Tento postup se vztahuje také na <xref:System.Windows.Forms.ListBox> ovládacího prvku – můžete nahradit <xref:System.Windows.Forms.ListBox> pro <xref:System.Windows.Forms.ComboBox>.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-112">This technique is also applicable to the <xref:System.Windows.Forms.ListBox> control — you can substitute a <xref:System.Windows.Forms.ListBox> for the <xref:System.Windows.Forms.ComboBox>.</span></span>  
+    > <span data-ttu-id="70925-112">Tato technika je také platná <xref:System.Windows.Forms.ListBox> pro ovládací prvek – můžete <xref:System.Windows.Forms.ListBox> použít pro <xref:System.Windows.Forms.ComboBox>.</span><span class="sxs-lookup"><span data-stu-id="70925-112">This technique is also applicable to the <xref:System.Windows.Forms.ListBox> control — you can substitute a <xref:System.Windows.Forms.ListBox> for the <xref:System.Windows.Forms.ComboBox>.</span></span>  
   
-- <span data-ttu-id="6fe2d-113">Odkazy <xref:System.Windows.Forms?displayProperty=nameWithType> a <xref:System.Drawing?displayProperty=nameWithType> obory názvů.</span><span class="sxs-lookup"><span data-stu-id="6fe2d-113">References to the <xref:System.Windows.Forms?displayProperty=nameWithType> and <xref:System.Drawing?displayProperty=nameWithType> namespaces.</span></span>  
+- <span data-ttu-id="70925-113">Odkazy na <xref:System.Windows.Forms?displayProperty=nameWithType> obory <xref:System.Drawing?displayProperty=nameWithType> názvů a.</span><span class="sxs-lookup"><span data-stu-id="70925-113">References to the <xref:System.Windows.Forms?displayProperty=nameWithType> and <xref:System.Drawing?displayProperty=nameWithType> namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6fe2d-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6fe2d-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70925-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70925-114">See also</span></span>
 
 - <xref:System.Windows.Forms.ComboBox.DrawItem>
 - <xref:System.Windows.Forms.DrawItemEventArgs>
 - <xref:System.Windows.Forms.ComboBox.MeasureItem>
-- [<span data-ttu-id="6fe2d-115">Ovládací prvky s vestavěnou podporou vykreslování vlastníkem</span><span class="sxs-lookup"><span data-stu-id="6fe2d-115">Controls with Built-In Owner-Drawing Support</span></span>](controls-with-built-in-owner-drawing-support.md)
-- [<span data-ttu-id="6fe2d-116">Ovládací prvek ListBox</span><span class="sxs-lookup"><span data-stu-id="6fe2d-116">ListBox Control</span></span>](listbox-control-windows-forms.md)
-- [<span data-ttu-id="6fe2d-117">Ovládací prvek ComboBox</span><span class="sxs-lookup"><span data-stu-id="6fe2d-117">ComboBox Control</span></span>](combobox-control-windows-forms.md)
+- [<span data-ttu-id="70925-115">Ovládací prvky s vestavěnou podporou vykreslování vlastníkem</span><span class="sxs-lookup"><span data-stu-id="70925-115">Controls with Built-In Owner-Drawing Support</span></span>](controls-with-built-in-owner-drawing-support.md)
+- [<span data-ttu-id="70925-116">Ovládací prvek ListBox</span><span class="sxs-lookup"><span data-stu-id="70925-116">ListBox Control</span></span>](listbox-control-windows-forms.md)
+- [<span data-ttu-id="70925-117">Ovládací prvek ComboBox</span><span class="sxs-lookup"><span data-stu-id="70925-117">ComboBox Control</span></span>](combobox-control-windows-forms.md)

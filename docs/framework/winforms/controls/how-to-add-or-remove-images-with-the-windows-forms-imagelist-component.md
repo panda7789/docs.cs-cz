@@ -13,24 +13,24 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 - images [Windows Forms], displaying with controls
 ms.assetid: c5eacc56-f769-4e2e-bfb7-f756620913db
-ms.openlocfilehash: 31ae91958dbc02a2f64945af896b4a2408224d05
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 430b7f573b115c21b9e2fa87f0ace74205717285
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624025"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925124"
 ---
-# <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a><span data-ttu-id="632a1-102">Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList</span><span class="sxs-lookup"><span data-stu-id="632a1-102">How to: Add or Remove Images with the Windows Forms ImageList Component</span></span>
-<span data-ttu-id="632a1-103">Windows Forms <xref:System.Windows.Forms.ImageList> komponenty se obvykle vyplní imagí dřív, než bude přidružena k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="632a1-103">The Windows Forms <xref:System.Windows.Forms.ImageList> component is typically populated with images before it is associated with a control.</span></span> <span data-ttu-id="632a1-104">Můžete ale přidávat a odebírat Image po přidružení seznamu obrázků s ovládacím prvkem.</span><span class="sxs-lookup"><span data-stu-id="632a1-104">However, you can add and remove images after associating the image list with a control.</span></span>  
+# <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a><span data-ttu-id="34d1f-102">Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList</span><span class="sxs-lookup"><span data-stu-id="34d1f-102">How to: Add or Remove Images with the Windows Forms ImageList Component</span></span>
+<span data-ttu-id="34d1f-103">Komponenta model Windows Forms <xref:System.Windows.Forms.ImageList> obvykle vyplní obrázky předtím, než je přidružena k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="34d1f-103">The Windows Forms <xref:System.Windows.Forms.ImageList> component is typically populated with images before it is associated with a control.</span></span> <span data-ttu-id="34d1f-104">Po přidružení seznamu obrázků k ovládacímu prvku však můžete přidat a odebrat obrázky.</span><span class="sxs-lookup"><span data-stu-id="34d1f-104">However, you can add and remove images after associating the image list with a control.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="632a1-105">Když odeberete Image, ověřte, že <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> vlastnosti všech přidružených ovládacích prvků je stále platný.</span><span class="sxs-lookup"><span data-stu-id="632a1-105">When you remove images, verify that the <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> property of any associated controls is still valid.</span></span>  
+> <span data-ttu-id="34d1f-105">Při odebírání imagí ověřte, zda <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> je vlastnost všech přidružených ovládacích prvků stále platná.</span><span class="sxs-lookup"><span data-stu-id="34d1f-105">When you remove images, verify that the <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> property of any associated controls is still valid.</span></span>  
   
-### <a name="to-add-images-programmatically"></a><span data-ttu-id="632a1-106">Přidání bitové kopie prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="632a1-106">To add images programmatically</span></span>  
+### <a name="to-add-images-programmatically"></a><span data-ttu-id="34d1f-106">Postup při přidávání imagí prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="34d1f-106">To add images programmatically</span></span>  
   
-- <span data-ttu-id="632a1-107">Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metoda seznamu obrázků <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="632a1-107">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> method of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property.</span></span>  
+- <span data-ttu-id="34d1f-107"><xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> Použijte metodu <xref:System.Windows.Forms.ImageList.Images%2A> vlastnosti seznamu obrázků.</span><span class="sxs-lookup"><span data-stu-id="34d1f-107">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> method of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property.</span></span>  
   
-     <span data-ttu-id="632a1-108">V následujícím příkladu kódu nastavena cesta pro umístění image je **dokumenty** složky.</span><span class="sxs-lookup"><span data-stu-id="632a1-108">In the following code example, the path set for the location of the image is the **My Documents** folder.</span></span> <span data-ttu-id="632a1-109">Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows bude obsahovat této složky.</span><span class="sxs-lookup"><span data-stu-id="632a1-109">This location is used because you can assume that most computers that are running the Windows operating system will include this folder.</span></span> <span data-ttu-id="632a1-110">Výběrem tohoto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu Další bezpečné spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="632a1-110">Choosing this location also lets users who have minimal system access levels more safely run the application.</span></span> <span data-ttu-id="632a1-111">Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="632a1-111">The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.</span></span>  
+     <span data-ttu-id="34d1f-108">V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** .</span><span class="sxs-lookup"><span data-stu-id="34d1f-108">In the following code example, the path set for the location of the image is the **My Documents** folder.</span></span> <span data-ttu-id="34d1f-109">Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku.</span><span class="sxs-lookup"><span data-stu-id="34d1f-109">This location is used because you can assume that most computers that are running the Windows operating system will include this folder.</span></span> <span data-ttu-id="34d1f-110">Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci.</span><span class="sxs-lookup"><span data-stu-id="34d1f-110">Choosing this location also lets users who have minimal system access levels more safely run the application.</span></span> <span data-ttu-id="34d1f-111">Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> již přidaným ovládacím prvkem.</span><span class="sxs-lookup"><span data-stu-id="34d1f-111">The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.</span></span>  
   
     ```vb  
     Public Sub LoadImage()  
@@ -74,11 +74,11 @@ ms.locfileid: "64624025"
        }  
     ```  
   
-### <a name="to-add-images-with-a-key-value"></a><span data-ttu-id="632a1-112">Přidání bitové kopie s hodnotou klíče.</span><span class="sxs-lookup"><span data-stu-id="632a1-112">To add images with a key value.</span></span>  
+### <a name="to-add-images-with-a-key-value"></a><span data-ttu-id="34d1f-112">Chcete-li přidat obrázky s hodnotou klíče.</span><span class="sxs-lookup"><span data-stu-id="34d1f-112">To add images with a key value.</span></span>  
   
-- <span data-ttu-id="632a1-113">Použijte jednu z <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metody ze seznamu obrázků <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost, která přebírá hodnotu klíče.</span><span class="sxs-lookup"><span data-stu-id="632a1-113">Use one of the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> methods of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property that takes a key value.</span></span>  
+- <span data-ttu-id="34d1f-113">Použijte jednu z <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metod <xref:System.Windows.Forms.ImageList.Images%2A> vlastnosti seznamu obrázků, která přebírá klíčovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="34d1f-113">Use one of the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> methods of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property that takes a key value.</span></span>  
   
-     <span data-ttu-id="632a1-114">V následujícím příkladu kódu nastavena cesta pro umístění image je **dokumenty** složky.</span><span class="sxs-lookup"><span data-stu-id="632a1-114">In the following code example, the path set for the location of the image is the **My Documents** folder.</span></span> <span data-ttu-id="632a1-115">Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows bude obsahovat této složky.</span><span class="sxs-lookup"><span data-stu-id="632a1-115">This location is used because you can assume that most computers that are running the Windows operating system will include this folder.</span></span> <span data-ttu-id="632a1-116">Výběrem tohoto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu Další bezpečné spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="632a1-116">Choosing this location also lets users who have minimal system access levels more safely run the application.</span></span> <span data-ttu-id="632a1-117">Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="632a1-117">The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.</span></span>  
+     <span data-ttu-id="34d1f-114">V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** .</span><span class="sxs-lookup"><span data-stu-id="34d1f-114">In the following code example, the path set for the location of the image is the **My Documents** folder.</span></span> <span data-ttu-id="34d1f-115">Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku.</span><span class="sxs-lookup"><span data-stu-id="34d1f-115">This location is used because you can assume that most computers that are running the Windows operating system will include this folder.</span></span> <span data-ttu-id="34d1f-116">Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci.</span><span class="sxs-lookup"><span data-stu-id="34d1f-116">Choosing this location also lets users who have minimal system access levels more safely run the application.</span></span> <span data-ttu-id="34d1f-117">Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> již přidaným ovládacím prvkem.</span><span class="sxs-lookup"><span data-stu-id="34d1f-117">The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.</span></span>  
   
     ```vb  
     Public Sub LoadImage()  
@@ -105,13 +105,13 @@ public void addImage()
 }  
 ```  
   
-### <a name="to-remove-all-images-programmatically"></a><span data-ttu-id="632a1-118">Chcete-li odebrat všechny bitové kopie prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="632a1-118">To remove all images programmatically</span></span>  
+### <a name="to-remove-all-images-programmatically"></a><span data-ttu-id="34d1f-118">Chcete-li odebrat všechny bitové kopie programově</span><span class="sxs-lookup"><span data-stu-id="34d1f-118">To remove all images programmatically</span></span>  
   
-- <span data-ttu-id="632a1-119">Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> metoda odebrání jedné image</span><span class="sxs-lookup"><span data-stu-id="632a1-119">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> method to remove a single image</span></span>  
+- <span data-ttu-id="34d1f-119"><xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> Použití metody k odebrání jednoho obrázku</span><span class="sxs-lookup"><span data-stu-id="34d1f-119">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> method to remove a single image</span></span>  
   
-     <span data-ttu-id="632a1-120">, - nebo -</span><span class="sxs-lookup"><span data-stu-id="632a1-120">,-or-</span></span>  
+     <span data-ttu-id="34d1f-120">,-nebo-</span><span class="sxs-lookup"><span data-stu-id="34d1f-120">,-or-</span></span>  
   
-     <span data-ttu-id="632a1-121">Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> metoda zrušte všechny Image v seznamu obrázků.</span><span class="sxs-lookup"><span data-stu-id="632a1-121">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> method to clear all images in the image list.</span></span>  
+     <span data-ttu-id="34d1f-121"><xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> Pomocí metody vymažte všechny obrázky v seznamu obrázků.</span><span class="sxs-lookup"><span data-stu-id="34d1f-121">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> method to clear all images in the image list.</span></span>  
   
     ```vb  
     ' Removes the first image in the image list  
@@ -127,9 +127,9 @@ imageList1.Images.Remove(myImage);
 imageList1.Images.Clear();  
 ```  
   
-### <a name="to-remove-images-by-key"></a><span data-ttu-id="632a1-122">Chcete-li odebrat imagí pomocí klíče</span><span class="sxs-lookup"><span data-stu-id="632a1-122">To remove images by key</span></span>  
+### <a name="to-remove-images-by-key"></a><span data-ttu-id="34d1f-122">Postup odebrání imagí podle klíče</span><span class="sxs-lookup"><span data-stu-id="34d1f-122">To remove images by key</span></span>  
   
-- <span data-ttu-id="632a1-123">Použití <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> metoda odebrání jedné image podle jeho klíče.</span><span class="sxs-lookup"><span data-stu-id="632a1-123">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> method to remove a single image by its key.</span></span>  
+- <span data-ttu-id="34d1f-123"><xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> Pomocí metody odeberte jednu Image pomocí jejího klíče.</span><span class="sxs-lookup"><span data-stu-id="34d1f-123">Use the <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> method to remove a single image by its key.</span></span>  
   
     ```vb  
     ' Removes the image named "myPhoto" from the list.  
@@ -141,8 +141,8 @@ imageList1.Images.Clear();
 imageList1.Images.RemoveByKey("myPhoto");  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="632a1-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="632a1-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="34d1f-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="34d1f-124">See also</span></span>
 
-- [<span data-ttu-id="632a1-125">Komponenta ImageList</span><span class="sxs-lookup"><span data-stu-id="632a1-125">ImageList Component</span></span>](imagelist-component-windows-forms.md)
-- [<span data-ttu-id="632a1-126">Přehled komponenty ImageList</span><span class="sxs-lookup"><span data-stu-id="632a1-126">ImageList Component Overview</span></span>](imagelist-component-overview-windows-forms.md)
-- [<span data-ttu-id="632a1-127">Obrázky, rastrové obrázky a metasoubory</span><span class="sxs-lookup"><span data-stu-id="632a1-127">Images, Bitmaps, and Metafiles</span></span>](../advanced/images-bitmaps-and-metafiles.md)
+- [<span data-ttu-id="34d1f-125">Komponenta ImageList</span><span class="sxs-lookup"><span data-stu-id="34d1f-125">ImageList Component</span></span>](imagelist-component-windows-forms.md)
+- [<span data-ttu-id="34d1f-126">Přehled komponenty ImageList</span><span class="sxs-lookup"><span data-stu-id="34d1f-126">ImageList Component Overview</span></span>](imagelist-component-overview-windows-forms.md)
+- [<span data-ttu-id="34d1f-127">Obrázky, rastrové obrázky a metasoubory</span><span class="sxs-lookup"><span data-stu-id="34d1f-127">Images, Bitmaps, and Metafiles</span></span>](../advanced/images-bitmaps-and-metafiles.md)
